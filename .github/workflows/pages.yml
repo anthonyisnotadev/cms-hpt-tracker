@@ -1,0 +1,101 @@
+# Build the site and publish it to GitHub Pages.
+#
+# Why this exists: tracker.html ships as one self-contained artifact, with the
+# audit data and both stylesheets baked into it, and `npm run build` is what
+# bakes them in. Under a plain branch deploy GitHub serves whatever happens to
+# be committed, so a CSS edit pushed without a local rebuild went live on the
+# three explainer pages, which <link> css/docs.css, while the tracker silently
+# kept the old styles. Building here makes that drift impossible: the published
+# tracker is always built from the css/ and data/ sitting in the same commit.
+#
+# This requires the repository's Pages source to be set to "GitHub Actions"
+# (Settings -> Pages -> Build and deployment -> Source). Until it is, the deploy
+# job below fails and the existing branch deploy carries on serving the site.
+
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deploy at a time, and never cancel one part-way: a half-published site is
+# worse than a stale one.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      # build-tracker.js uses only Node built-ins, so this installs nothing the
+      # build needs today. It is here so that adding a dependency later cannot
+      # quietly break the deploy.
+      - run: npm ci
+
+      # The project's own gate: 72 foreground/background pairs across both
+      # themes. It exits non-zero on a regression, which stops the deploy before
+      # anything unreadable reaches the domain.
+      - name: Check contrast
+        run: node scripts/check-contrast.js
+
+      # Rewrites tracker.html in place: the data block from data/hpt-audit/*.csv,
+      # the <style> block from css/*.css, and cache-busting hashes on the js tags.
+      - name: Build the tracker
+        run: npm run build
+
+      # Only what the site actually serves. The pipeline inputs (scripts/, data/,
+      # and the rest of cms_data/) were publicly reachable under the branch
+      # deploy and merely asked not to be indexed, via robots.txt. Leaving them
+      # out of the artifact means they are not published at all.
+      - name: Assemble the site
+        run: |
+          set -euo pipefail
+          mkdir -p _site/cms_data
+          cp index.html tracker.html mrf.html rules.html pointer.html _site/
+          cp -r css js img _site/
+          # Seeds a fresh browser's outreach log; fetched at runtime by js/outreach.js.
+          cp cms_data/outreach.public.json _site/cms_data/
+          cp CNAME robots.txt LICENSE .nojekyll _site/
+
+      # Fail loudly here rather than publishing a site with a hole in it.
+      - name: Verify the payload
+        run: |
+          set -euo pipefail
+          for f in index.html tracker.html mrf.html rules.html pointer.html \
+                   css/docs.css css/tracker.css js/docs.js js/tracker.js js/outreach.js \
+                   cms_data/outreach.public.json CNAME; do
+            test -s "_site/$f" || { echo "missing or empty: $f"; exit 1; }
+          done
+          # The build must have filled the tracker's injected blocks.
+          grep -q '<script id="tracker-data" type="application/json">{' _site/tracker.html \
+            || { echo 'tracker-data block was not populated'; exit 1; }
+          grep -q '@media (pointer: coarse)' _site/tracker.html \
+            || { echo 'tracker-css block was not populated'; exit 1; }
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
