@@ -1,0 +1,12 @@
+node_modules/
+.DS_Store
+*.log
+
+# Private fieldwork log — never publish. cms_data/outreach.public.json (generated
+# by scripts/outreach-redact.js, auto-refreshed on every store save) is the
+# shareable copy: emails masked, person names replaced.
+cms_data/outreach.json
+cms_data/outreach.backup.json
+
+# Personal tooling config, not part of the public project.
+.claude/

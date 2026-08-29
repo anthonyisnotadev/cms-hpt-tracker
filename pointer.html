@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The cms-hpt.txt pointer file</title>
+<meta name="description" content="Five lines in the root of a hospital's website that say where its price file lives. What CMS requires in it, what real ones look like, and why this whole audit is built on it." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/docs.css" />
+<script>
+/* Theme, restored before the first paint. js/docs.js is deferred, so reading
+   the saved choice there would flash the wrong palette first. */
+(function () {
+  try {
+    var saved = window.localStorage.getItem('cms-hpt-tracker.theme');
+    if (saved === 'dark' || saved === 'light') {
+      document.documentElement.setAttribute('data-theme', saved);
+    }
+  } catch (e) { /* storage blocked; fall through to the OS preference */ }
+})();
+</script>
+<script src="js/docs.js" defer></script>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap masthead-bar">
+    <div class="wordmark">CMS&nbsp;HPT&nbsp;Tracker <span>/ price transparency audit</span></div>
+    <nav class="masthead-links">
+      <a href="tracker.html">Tracker</a>
+      <a href="mrf.html">What an MRF is</a>
+      <a href="rules.html">What CMS requires</a>
+      <a href="pointer.html" aria-current="page">The pointer file</a>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch colour theme">Theme</button>
+    </nav>
+  </div>
+  <div class="wrap masthead-body">
+    <p class="eyebrow">Explainer &middot; 3 of 3</p>
+    <h1>The five lines that make a price file findable</h1>
+    <p class="standfirst">
+      Since January 2024, every hospital website hosting a price file has had to publish
+      <code>/cms-hpt.txt</code> at its root: a plain-text index saying which locations it covers and where
+      their files are. It is the smallest requirement in the rule and <strong>the one this entire audit is
+      built on</strong>.
+    </p>
+    <div class="dateline">
+      <div>Governing rule <b>45 CFR 180.50(d)(6)</b></div>
+      <div>Required since <b>1 January 2024</b></div>
+      <div>Location <b>/cms-hpt.txt</b></div>
+      <div>Fields <b>5</b></div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap doc">
+
+  <nav class="toc" aria-label="On this page">
+    <p class="eyebrow">On this page</p>
+    <ol>
+      <li><a href="#why">The problem it solves</a></li>
+      <li><a href="#spec">What CMS requires</a></li>
+      <li><a href="#example">A file, annotated</a></li>
+      <li><a href="#multi">Systems and shared files</a></li>
+      <li><a href="#naming">The file name is data too</a></li>
+      <li><a href="#footer">The footer link</a></li>
+      <li><a href="#audit">How this audit uses it</a></li>
+      <li><a href="#wild">What real files look like</a></li>
+      <li><a href="#sources">Sources</a></li>
+    </ol>
+  </nav>
+
+  <main class="prose">
+
+    <!-- ===================================================== -->
+    <section id="why">
+      <p class="eyebrow">Rationale</p>
+      <h2>The problem it solves</h2>
+
+      <p class="lead">By 2023, thousands of hospitals were publishing price files that satisfied every
+        accessibility rule in <a href="rules.html#access">&sect;&nbsp;180.50(d)</a> and were still, in
+        practice, unfindable.</p>
+
+      <p>Nothing in the original rule said <em>where</em> a hospital must put its file. So the files went
+         everywhere: four clicks deep under &ldquo;Patients &amp; Visitors&rdquo;, on a billing vendor&rsquo;s
+         domain, behind a page that rendered its download link in JavaScript, on a subdomain nobody linked
+         to. Each individually compliant; collectively, a national dataset that could only be assembled by
+         hand.</p>
+
+      <p>The CY2024 rule&rsquo;s fix was deliberately small. Rather than dictate where the file lives, CMS
+         required an <strong>index at a fixed, predictable address</strong> saying where it lives. CMS was
+         explicit about the purpose: to facilitate automated access to hospital
+         MRFs.<sup class="ref"><a href="#s2">2</a></sup></p>
+
+      <div class="callout">
+        <h4>The same trick as robots.txt</h4>
+        <p>A well-known path at the root of a domain, in a format a five-line parser can read, whose whole
+           job is to say where the interesting thing actually is. The design is borrowed and it works for
+           the same reason: you never have to crawl a site to find the file, you only have to guess the
+           domain.</p>
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <section id="spec">
+      <p class="eyebrow">Specification</p>
+      <h2>What CMS requires
+        <a class="cite" href="https://www.ecfr.gov/current/title-45/part-180/section-180.50#p-180.50(d)(6)">&sect;&nbsp;180.50(d)(6)</a></h2>
+
+      <p class="lead">The regulation names four pieces of information; CMS&rsquo;s technical specification
+        fixes the file name, the location and the exact attribute spellings that carry
+        them.<sup class="ref"><a href="#s1">1</a></sup><sup class="ref"><a href="#s2">2</a></sup></p>
+
+      <div class="scroll-x">
+        <table class="tbl">
+          <thead><tr><th>Attribute</th><th>Regulation calls it</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="t-mono">location-name</td>
+              <td>The hospital location name corresponding to the MRF</td>
+              <td>The name of the facility whose charges are in the file. This is the field that makes the
+                  pointer <em>self-identifying</em>, and everything below depends on it.</td>
+            </tr>
+            <tr>
+              <td class="t-mono">source-page-url</td>
+              <td>The source page URL that hosts the MRF</td>
+              <td>The public web page from which the file can be downloaded &mdash; the human-facing page,
+                  not the file.</td>
+            </tr>
+            <tr>
+              <td class="t-mono">mrf-url</td>
+              <td>A direct link to the machine-readable file</td>
+              <td>The file itself. A URL that returns the CSV or JSON, not a page about it.</td>
+            </tr>
+            <tr>
+              <td class="t-mono">contact-name</td>
+              <td rowspan="2">Hospital point of contact information</td>
+              <td>A person or team able to answer technical questions about the file and its contents.</td>
+            </tr>
+            <tr>
+              <td class="t-mono">contact-email</td>
+              <td>Their email address.</td>
+            </tr>
+          </tbody>
+          <caption>Attribute names are CMS&rsquo;s, from the technical specification behind its TXT File
+            Generator.<sup class="ref"><a href="#s2">2</a></sup> The regulation itself lists four items;
+            the contact splits into two attributes in the specification.</caption>
+        </table>
+      </div>
+
+      <h3>Three mechanical rules</h3>
+      <ul>
+        <li><strong>The file is named <code>cms-hpt.txt</code>.</strong> Not <code>hpt.txt</code>, not
+           <code>cms_hpt.txt</code>.</li>
+        <li><strong>It sits at the root of the domain</strong> hosting the MRF &mdash; in CMS&rsquo;s words,
+           without regard to page structure. A hospital at <code>hospital.com</code> publishes
+           <code>https://hospital.com/cms-hpt.txt</code>, whatever its site&rsquo;s navigation looks
+           like.</li>
+        <li><strong>One entry per location.</strong> Where a file covers several locations, the five
+           attributes repeat for each inpatient location and each standalone emergency department.</li>
+      </ul>
+
+      <p>Note whose obligation this is. The rule binds the hospital to ensure that <em>the website it selects
+         to host its file</em> establishes and maintains these things. A hospital that outsources hosting to a
+         billing vendor has not outsourced the duty &mdash; and in practice this is where a good share of
+         missing pointer files come from.</p>
+    </section>
+
+    <!-- ===================================================== -->
+    <section id="example">
+      <p class="eyebrow">Anatomy</p>
+      <h2>A file, annotated</h2>
+
+      <p class="lead">The whole format. Five <code>attribute: value</code> lines per location, blank line
+        between entries, nothing else.</p>
+
+      <figure class="listing">
+        <figcaption>https://example.org/cms-hpt.txt &mdash; single location</figcaption>
+<pre>location-name: Example Regional Medical Center
+source-page-url: https://example.org/patients/pricing
+mrf-url: https://example.org/files/521234567_Example-Regional-Medical-Center_standardcharges.csv
+contact-name: Dana Whitfield
+contact-email: pricetransparency@example.org</pre>
+        <p class="note">Illustrative, in the layout of CMS&rsquo;s own published
+           examples.<sup class="ref"><a href="#s2">2</a></sup></p>
+      </figure>
+
+      <p>Read it in order and it answers every question a crawler has. <b>Which hospital?</b> The location
+         name &mdash; matched against the CMS registry, this is what tells an automated audit whether it has
+         found the right building. <b>Where do humans go?</b> The source page. <b>Where is the actual
+         file?</b> The <code>mrf-url</code>, which should return a CSV or JSON directly, and whose filename
+         should itself follow <a href="#naming">the naming convention</a>. <b>Who do I ask?</b> The
+         contact.</p>
+    </section>
+
+    <!-- ===================================================== -->
+    <section id="multi">
+      <p class="eyebrow">Health systems</p>
+      <h2>Systems, shared files, and vendors</h2>
+
+      <p class="lead">Most American hospitals belong to a system, and systems publish one pointer file
+        covering many hospitals. This is expressly contemplated by the specification, and it is where the
+        format gets interesting.<sup class="ref"><a href="#s2">2</a></sup></p>
+
+      <h3>Different charges, different files</h3>
+      <p>Where two locations under one licence have different standard charges,
+         <a href="https://www.ecfr.gov/current/title-45/part-180/section-180.50#p-180.50(a)(2)">&sect;&nbsp;180.50(a)(2)</a>
+         requires a separate file for each. They may share a source page, but each entry carries its own
+         <code>mrf-url</code>.</p>
+
+      <figure class="listing">
+        <figcaption>Two locations, two files, one source page</figcaption>
+<pre>location-name: Example Hospital East
+source-page-url: https://example.org/price-transparency
+mrf-url: https://example.org/price-transparency/521234567_Example-Hospital-East_standardcharges.csv
+contact-name: Jordan Ellis
+contact-email: mrf@example.org
+
+location-name: Example Hospital West
+source-page-url: https://example.org/price-transparency
+mrf-url: https://example.org/price-transparency/529876543_Example-Hospital-West_standardcharges.json
+contact-name: Jordan Ellis
+contact-email: mrf@example.org</pre>
+      </figure>
+
+      <h3>Same charges, one file, still two entries</h3>
+      <p>Where a hospital and, say, its standalone emergency department share a set of charges, one file may
+         cover both &mdash; but the pointer still lists each location separately, repeating the shared source
+         page and MRF URL. The entry is per <em>location</em>, not per file. That matters to anyone matching
+         a hospital by name: a location that shares a file is still named.</p>
+
+      <div class="callout" data-tone="warn">
+        <h4>Where the vendor case goes wrong</h4>
+        <p>When a vendor hosts the file, the pointer must give the <em>vendor&rsquo;s</em> source page and
+           MRF URLs &mdash; and the vendor&rsquo;s domain then has to carry a pointer file of its own, since
+           the requirement attaches to the website hosting the MRF. Both halves are frequently missed. The
+           hospital&rsquo;s own domain often has no <code>cms-hpt.txt</code> at all, on the assumption that
+           the vendor handled it.</p>
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <section id="naming">
+      <p class="eyebrow">Convention</p>
+      <h2>The file name is data too
+        <a class="cite" href="https://www.ecfr.gov/current/title-45/part-180/section-180.50#p-180.50(d)(5)">&sect;&nbsp;180.50(d)(5)</a></h2>
+
+      <p class="lead">CMS prescribes the MRF&rsquo;s filename exactly:
+        <code>&lt;ein&gt;_&lt;hospital-name&gt;_standardcharges.[json|csv]</code>.<sup class="ref"><a href="#s1">1</a></sup></p>
+
+      <figure class="listing">
+        <figcaption>Reading a compliant filename</figcaption>
+<pre>521234567_Example-Regional-Medical-Center_standardcharges.csv
+<i>└───┬───┘ └──────────────┬──────────────┘ └──────┬──────┘ └┬┘
+   EIN             hospital name           fixed literal format</i></pre>
+      </figure>
+
+      <p>This is a quiet but useful piece of engineering. The Employer Identification Number is a
+         nationally unique identifier for the filing entity, so a compliant filename identifies its publisher
+         independently of whatever the pointer file claims &mdash; which is exactly what you want when
+         auditing a claim. CMS publishes a naming wizard for hospitals that would rather not get it
+         wrong.<sup class="ref"><a href="#s3">3</a></sup></p>
+    </section>
+
+    <!-- ===================================================== -->
+    <section id="footer">
+      <p class="eyebrow">The other half of (d)(6)</p>
+      <h2>The footer link
+        <a class="cite" href="https://www.ecfr.gov/current/title-45/part-180/section-180.50#p-180.50(d)(6)(ii)">&sect;&nbsp;180.50(d)(6)(ii)</a></h2>
+
+      <p class="lead">The same paragraph that requires the pointer file also requires a link in the footer of
+        the hospital&rsquo;s website &mdash; including the homepage &mdash; labelled exactly
+        <strong>&ldquo;Price Transparency&rdquo;</strong>, pointing to the page that hosts the link to the
+        file.<sup class="ref"><a href="#s1">1</a></sup></p>
+
+      <p>The two requirements are a matched pair, aimed at the two kinds of visitor. The pointer file is for
+         machines; the footer link is for the person who has been told their hospital publishes prices and
+         cannot find them. A prescribed label matters here for the same reason a prescribed path does: it
+         makes the thing searchable across five thousand sites that share no other convention.</p>
+
+      <p>This audit does not test the footer link. Confirming it means rendering a homepage and reading its
+         footer &mdash; a browser-weight operation per hospital, on sites that frequently render navigation
+         in JavaScript, for a check whose failure mode is ambiguous. It is a real gap in coverage rather than
+         a judgement that the requirement does not matter.</p>
+    </section>
+
+    <!-- ===================================================== -->
+    <section id="audit">
+      <p class="eyebrow">Method</p>
+      <h2>How this audit uses it</h2>
+
+      <p class="lead">The CMS hospital registry lists names and street addresses for all
+        <b class="num">5,419</b> hospitals in the country &mdash; and <strong>no website
+        column</strong>.<sup class="ref"><a href="#s5">5</a></sup>
+        So the audit knows exactly what to look for and has no idea where to look. The pointer file is what
+        makes that tractable.<sup class="ref"><a href="#s4">4</a></sup></p>
+
+      <p>Because a pointer file <em>names the locations it covers</em>, it identifies itself. That single
+         property turns domain discovery from an expensive search problem into a cheap verification problem:
+         guess a domain, fetch one small text file, and read whether the hospital you are looking for is
+         named inside it. A wrong guess costs one free request.</p>
+
+      <ol class="timeline">
+        <li>
+          <div class="when">Probe</div>
+          <div class="what">
+            <b>Four URLs per candidate domain</b>
+            <code>/cms-hpt.txt</code> and <code>/.well-known/cms-hpt.txt</code>, each with and without
+            <code>www.</code>. The <code>.well-known</code> paths are not what the specification asks for,
+            but enough hospitals put it there that not checking would produce false negatives.
+          </div>
+        </li>
+        <li>
+          <div class="when">Parse</div>
+          <div class="what">
+            <b>Three formats, because that is what exists</b>
+            The specified repeating <code>key: value</code> blocks; JSON arrays, which some vendors emit
+            instead; and blocks carrying several <code>mrf-url</code> lines under a single location. Keys are
+            normalised across hyphen, underscore and run-together spellings.
+          </div>
+        </li>
+        <li>
+          <div class="when">Match</div>
+          <div class="what">
+            <b>Location name against the CMS registry</b>
+            Hospital names repeat across states, so a name match alone is never enough. Ambiguous cases are
+            adjudicated against the street address, and a language model is used only to decide which listed
+            facility corresponds to a given CCN.
+          </div>
+        </li>
+        <li>
+          <div class="when">Corroborate</div>
+          <div class="what">
+            <b>Against the file&rsquo;s own header</b>
+            The MRF header carries the hospital&rsquo;s address and its
+            <code>license_number | &lt;ST&gt;</code> licensing state. Both are read with a ranged request
+            &mdash; a few kilobytes, not the <a href="mrf.html#scale">164&nbsp;MB average file</a> &mdash; and
+            checked against the registry row before a match is accepted.
+          </div>
+        </li>
+      </ol>
+
+      <p>The last step is the one that keeps the numbers honest. A pointer file is a claim made by a
+         hospital about itself; the MRF header is a second, independent claim in a different document. When
+         they agree, the match is sound. When they don&rsquo;t, the hospital is recorded as
+         <span class="badge" data-tier="unknown">Not assessed</span> rather than assigned to a file that may
+         not be its own.</p>
+    </section>
+
+    <!-- ===================================================== -->
+    <section id="wild">
+      <p class="eyebrow">Findings</p>
+      <h2>What real pointer files look like</h2>
+
+      <p class="lead">Four numbers from the <a href="tracker.html">27&nbsp;August&nbsp;2026 crawl</a>, and
+        what each one is really saying.<sup class="ref"><a href="#s4">4</a></sup></p>
+
+      <div class="scroll-x">
+        <table class="tbl">
+          <thead><tr><th class="t-right">Hospitals</th><th>Outcome</th><th>What it means</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="t-right t-mono">37</td>
+              <td><span class="badge" data-tier="failing">No pointer published</span></td>
+              <td>The website answers, and there is no <code>cms-hpt.txt</code> at any of the four paths.
+                  A clean breach of &sect;&nbsp;180.50(d)(6)(i) &mdash; and strikingly rare, which is the
+                  good news in this dataset.</td>
+            </tr>
+            <tr>
+              <td class="t-right t-mono">6</td>
+              <td><span class="badge" data-tier="failing">Pointer omits the file link</span></td>
+              <td>The file exists and names the hospital but carries no <code>mrf-url</code> for it. The
+                  index without the entry it is an index to.</td>
+            </tr>
+            <tr>
+              <td class="t-right t-mono">119</td>
+              <td><span class="badge" data-tier="blocked">Pointer blocked</span></td>
+              <td>The domain answered the request for a 300-byte text file with 403 or 429. Since
+                  &sect;&nbsp;180.50(d)(3)(iv) requires accessibility to automated searches, this is
+                  suggestive &mdash; but a browser may well succeed, so nothing is asserted.</td>
+            </tr>
+            <tr>
+              <td class="t-right t-mono">379</td>
+              <td><span class="badge" data-tier="unknown">Not named in the file</span></td>
+              <td>A working pointer file was found on the health system&rsquo;s domain and it does not name
+                  this hospital. Either the system omitted a location it was required to list, or the name
+                  matching missed it. Both are plausible, so it counts against nobody.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>The 37 is the number to sit with. Almost every hospital this audit could reach <em>does</em> publish
+         a pointer file. The dominant failure in the dataset is not defiance &mdash; it is that
+         <b class="num">1,057</b> hospitals have no usable website on record at all, so no request was ever
+         sent and no pointer file was ever looked for. The rule&rsquo;s front door works well for the
+         hospitals you can find the front of.</p>
+
+      <div class="callout">
+        <h4>If you run a hospital website</h4>
+        <p>Checking this takes one request: open <code>https://your-domain/cms-hpt.txt</code> in a browser.
+           If it 404s, or if it loads but does not name every inpatient location and standalone emergency
+           department under your licence, that is a live compliance gap. CMS publishes a
+           <a href="https://cmsgov.github.io/hpt-tool/txt-generator">TXT file generator</a> that produces a
+           conforming file from a form.<sup class="ref"><a href="#s3">3</a></sup> If your hospital appears
+           wrongly on <a href="tracker.html">the tracker</a>, its outreach panel takes corrections and keeps
+           them visibly separate from the crawl.</p>
+      </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <section id="sources">
+      <p class="eyebrow">References</p>
+      <h2>Sources</h2>
+      <p class="lead">The requirement itself is one paragraph of regulation; almost all of the operational
+        detail &mdash; the filename, the attribute names, the multi-location rules &mdash; lives in
+        CMS&rsquo;s technical specification rather than in the rule text.</p>
+
+      <ol class="sources">
+        <li id="s1">
+          <b>45 CFR 180.50 &mdash; Requirements for making public hospital standard charges</b>
+          <span class="pub">Electronic Code of Federal Regulations, current text.
+            <a href="https://www.ecfr.gov/current/title-45/part-180/section-180.50">ecfr.gov/current/title-45/part-180/section-180.50</a></span>
+          <span class="used"><em>Used for:</em> the four required items at (d)(6)(i), the footer link at
+            (d)(6)(ii), the naming convention at (d)(5), the separate-file rule at (a)(2), and the
+            automated-access requirement at (d)(3)(iv).</span>
+        </li>
+        <li id="s2">
+          <b>TXT File Generator &mdash; instructions and technical specifications</b>
+          <span class="pub">CMS, <a href="https://cmsgov.github.io/hpt-tool/txt-generator">cmsgov.github.io/hpt-tool/txt-generator</a>.
+            Cites the CY2024 OPPS/ASC final rule discussion at 88 FR 82111&ndash;82113.</span>
+          <span class="used"><em>Used for:</em> the <code>cms-hpt.txt</code> filename, root placement
+            &ldquo;without regard to page structure&rdquo;, the five attribute spellings and their
+            definitions, the one-entry-per-location rule, the shared-file and vendor-hosting cases, and
+            CMS&rsquo;s stated purpose of facilitating automated access.</span>
+        </li>
+        <li id="s3">
+          <b>Hospital Price Transparency tools &mdash; validator, MRF naming wizard, TXT file generator</b>
+          <span class="pub">CMS, <a href="https://cmsgov.github.io/hpt-tool/">cmsgov.github.io/hpt-tool</a></span>
+          <span class="used"><em>Used for:</em> the existence of official tooling for generating a
+            conforming pointer file and filename.</span>
+        </li>
+        <li id="s4">
+          <b>CMS HPT Tracker &mdash; national crawl, 27 August 2026</b>
+          <span class="pub">This project. Pipeline in <code>scripts/hpt/</code>, snapshot in
+            <code>data/hpt-audit/</code>, results at <a href="tracker.html">tracker.html</a>.</span>
+          <span class="used"><em>Used for:</em> the probe paths and parsing behaviour described in
+            &ldquo;How this audit uses it&rdquo;, and every count in &ldquo;What real pointer files look
+            like&rdquo;.</span>
+        </li>
+        <li id="s5">
+          <b>Hospital General Information</b>
+          <span class="pub">CMS provider data catalogue. Committed to this repository at
+            <code>cms_data/Hospital_General_Information.csv</code>.</span>
+          <span class="used"><em>Used for:</em> the registry of 5,419 hospitals, their names and addresses
+            &mdash; and the absence of a website column that makes the pointer file necessary.</span>
+        </li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<div class="wrap">
+  <div class="nextprev">
+    <a href="rules.html">
+      <span class="k">Previous</span>
+      <b>What CMS requires</b>
+      <span>45 CFR 180 end to end: who is covered, what must be published where, the compliance timeline, and what a penalty actually costs.</span>
+    </a>
+    <a href="tracker.html">
+      <span class="k">Back to</span>
+      <b>The tracker</b>
+      <span>All 5,419 hospitals, one mark each &mdash; who publishes, who is stale, and who blocks automated access.</span>
+    </a>
+  </div>
+</div>
+
+<footer class="wrap">
+  <p><b>On sourcing.</b> Regulation citations link to the paragraph in the eCFR as currently in force. The
+     example files on this page are illustrative, written in the layout of CMS&rsquo;s own published
+     examples; they are not copies of any hospital&rsquo;s file.</p>
+  <p>This page is an explainer, not legal advice. Where it paraphrases, the regulation governs.</p>
+</footer>
+
+</body>
+</html>

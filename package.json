@@ -1,0 +1,29 @@
+{
+  "name": "cms-hpt-tracker",
+  "version": "0.1.0",
+  "private": true,
+  "license": "AGPL-3.0-only",
+  "type": "commonjs",
+  "description": "Finds every US hospital's CMS price-transparency file and reports who publishes, who is stale, and who blocks automated access.",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "seed": "node scripts/hpt/run.js seed",
+    "pointers": "node scripts/hpt/run.js pointers",
+    "match": "node scripts/hpt/run.js match",
+    "dates": "node scripts/hpt/run.js dates",
+    "compliance": "node scripts/hpt/run.js compliance",
+    "gaps": "node scripts/hpt/run.js gaps",
+    "report": "node scripts/hpt/run.js report",
+    "audit": "node scripts/hpt/run.js audit",
+    "build": "node scripts/build-tracker.js",
+    "serve": "npx --yes http-server . -p 8081 -c-1",
+    "serve:outreach": "node scripts/outreach-server.js",
+    "outreach": "node scripts/outreach-cli.js",
+    "redact": "node scripts/outreach-redact.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}
