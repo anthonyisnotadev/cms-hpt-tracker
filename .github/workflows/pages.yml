@@ -52,9 +52,12 @@ jobs:
       - name: Check contrast
         run: node scripts/check-contrast.js
 
-      # Rewrites tracker.html in place: the data block from data/hpt-audit/*.csv,
-      # the <style> block from css/*.css, and cache-busting hashes on the js tags.
-      - name: Build the tracker
+      # Two in-place rewrites. build-glossary.js fills the <dl> at the foot of
+      # each explainer page from the shared dictionary in that script, and fails
+      # if a page links to a term that does not exist. build-tracker.js fills
+      # tracker.html: the data block from data/hpt-audit/*.csv, the <style>
+      # block from css/*.css, and cache-busting hashes on the js tags.
+      - name: Build the site
         run: npm run build
 
       # Only what the site actually serves. The pipeline inputs (scripts/, data/,
@@ -65,7 +68,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p _site/cms_data
-          cp index.html tracker.html mrf.html rules.html pointer.html _site/
+          cp index.html tracker.html mrf.html rules.html pointer.html skill.html _site/
           cp -r css js img _site/
           # Seeds a fresh browser's outreach log; fetched at runtime by js/outreach.js.
           cp cms_data/outreach.public.json _site/cms_data/
@@ -75,7 +78,7 @@ jobs:
       - name: Verify the payload
         run: |
           set -euo pipefail
-          for f in index.html tracker.html mrf.html rules.html pointer.html \
+          for f in index.html tracker.html mrf.html rules.html pointer.html skill.html \
                    css/docs.css css/tracker.css js/docs.js js/tracker.js js/outreach.js \
                    cms_data/outreach.public.json CNAME; do
             test -s "_site/$f" || { echo "missing or empty: $f"; exit 1; }
@@ -85,6 +88,11 @@ jobs:
             || { echo 'tracker-data block was not populated'; exit 1; }
           grep -q '@media (pointer: coarse)' _site/tracker.html \
             || { echo 'tracker-css block was not populated'; exit 1; }
+          # And every explainer must have had its glossary filled in.
+          for f in mrf.html rules.html pointer.html; do
+            grep -q '<dl class="defs glossary">' "_site/$f" \
+              || { echo "glossary block was not populated in $f"; exit 1; }
+          done
 
       - uses: actions/upload-pages-artifact@v3
         with:

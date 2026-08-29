@@ -124,6 +124,29 @@ const QUEUE = [
     why: 'Federally owned hospitals are outside the rule and will never publish under it.' },
 ];
 
+/* ---------- coordinates ---------- */
+
+// Written once by scripts/hpt/geocode.js. The map in the outreach drawer needs
+// a point per hospital, and CMS supplies a postal address and nothing else, so
+// the geocoding happens here rather than in the browser. Absent file means no
+// maps, which is a smaller failure than refusing to build the tracker.
+function readCoords() {
+  const file = path.join(__dirname, '..', 'cms_data', 'hpt', 'coords.json');
+  if (!fs.existsSync(file)) {
+    console.warn('cms_data/hpt/coords.json missing — building without hospital maps.\n'
+      + '  Run `node scripts/hpt/geocode.js` to create it.');
+    return {};
+  }
+  return JSON.parse(fs.readFileSync(file, 'utf8'));
+}
+
+// Always three columns, so every row stays the same shape: longitude, latitude,
+// and 1 when the point is a ZIP centroid rather than the address itself.
+function place(c) {
+  if (!c) return [null, null, 0];
+  return [c[0], c[1], c[2] ? 1 : 0];
+}
+
 /* ---------- build ---------- */
 
 function resolveDir(explicit) {
@@ -149,6 +172,7 @@ function main() {
   const gaps = readTable(path.join(srcDir, 'gaps.csv'));
 
   const byCcn = new Map(manifest.map(r => [r.ccn, r]));
+  const coords = readCoords();
 
   const types = [...new Set(compliance.map(r => r.type))].sort();
   const states = [...new Set(compliance.map(r => r.state))].sort();
@@ -174,6 +198,10 @@ function main() {
       m.mrf_format && m.mrf_format !== 'unknown' ? m.mrf_format : '',
       num(m.mrf_bytes),
       m.mrf_last_updated || '',
+      // Where the hospital is, and how sure we are. A 1 in the last column
+      // means the point is its ZIP code's centre rather than its front door,
+      // which the drawer says out loud instead of drawing a false precision.
+      ...place(coords[r.ccn]),
     ];
   });
 

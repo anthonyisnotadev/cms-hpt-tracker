@@ -54,6 +54,7 @@
       <a href="mrf.html">What an MRF is</a>
       <a href="rules.html" aria-current="page">What CMS requires</a>
       <a href="pointer.html">The pointer file</a>
+      <a href="skill.html">The agent skill</a>
       <a href="https://github.com/anthonyisnotadev" target="_blank" rel="noopener noreferrer">GitHub</a>
     </nav>
     <div class="masthead-util">
@@ -93,6 +94,7 @@
       <li><a href="#timeline">The compliance timeline</a></li>
       <li><a href="#enforcement">Enforcement and penalties</a></li>
       <li><a href="#audit">What this audit can see</a></li>
+      <li><a href="#glossary">Glossary</a></li>
       <li><a href="#sources">Sources</a></li>
     </ol>
   </nav>
@@ -100,23 +102,45 @@
   <main class="prose" id="main" tabindex="-1">
 
     <!-- ===================================================== -->
+    <aside class="plain" aria-labelledby="plain-h">
+      <p class="eyebrow" id="plain-h">The short version</p>
+      <ul>
+        <li><b>Every hospital in America has to publish its prices, at least once a year,
+          free, to anyone.</b> No login, no form to fill in, no asking permission. That has
+          been the law since January 2021.</li>
+        <li><b>There are two separate duties, and a hospital can pass one while failing the
+          other.</b> One enormous file of every price, meant for computers. And a plain,
+          readable list of around 300 common services, meant for patients.</li>
+        <li><b>Nobody is fined for getting it wrong. They are fined for refusing to fix
+          it.</b> CMS warns, asks for a written plan, re-checks, and only then charges money
+          &mdash; up to about $2m a year for the largest hospitals.</li>
+        <li><b>This tracker measures the first duty only, and only from the outside.</b>
+          Can the file be found, fetched and read, and is it less than a year old. Whether
+          the prices in it are correct is a question nobody is systematically asking.</li>
+      </ul>
+      <p class="more">Below is the whole rule in order, cited paragraph by paragraph. Words
+        underlined like <a class="gl" href="#g-payer">payer</a> are jargon; hover one, or
+        follow it down to <a href="#glossary">the glossary</a>.</p>
+    </aside>
+
+    <!-- ===================================================== -->
     <section id="basis">
       <p class="eyebrow">Origin</p>
       <h2>Where the rule comes from
         <a class="cite" href="https://www.ecfr.gov/current/title-45/part-180/section-180.10">&sect;&nbsp;180.10</a></h2>
 
-      <p class="lead">Part 180 implements section 2718(e) of the Public Health Service Act, which requires
+      <p class="lead"><a class="gl" href="#g-cfr">Part 180</a> implements <a class="gl" href="#g-statute">section 2718(e) of the Public Health Service Act</a>, which requires
         every hospital in the United States, each year, to establish, update and make public a list of its
         standard charges for the items and services it provides.<sup class="ref"><a href="#s1">1</a></sup></p>
 
-      <p>That statutory sentence sat largely unenforced for years. CMS gave it teeth in the CY2020 hospital
+      <p>That statutory sentence sat largely unenforced for years. <a class="gl abbr" href="#g-cms">CMS</a> gave it teeth in the CY2020 hospital
          outpatient payment rule (final rule CMS-1717-F2, published 27&nbsp;November&nbsp;2019 at
-         84&nbsp;FR&nbsp;65524, with Part 180 beginning at 84&nbsp;FR&nbsp;65602), which took effect on
+         <a class="gl" href="#g-federal-register">84&nbsp;FR&nbsp;65524</a>, with Part 180 beginning at 84&nbsp;FR&nbsp;65602), which took effect on
          <strong>1&nbsp;January&nbsp;2021</strong>.<sup class="ref"><a href="#s2">2</a></sup> The American
          Hospital Association challenged it and lost in the D.C. Circuit; the requirements have been live
          ever since.</p>
 
-      <p>Part 180 has been amended three times since, each time through the annual outpatient payment rule,
+      <p>Part 180 has been amended three times since, each time through the <a class="gl" href="#g-opps">annual outpatient payment rule</a>,
          and each amendment made the requirement more specific rather than broader:</p>
 
       <ul>
@@ -186,7 +210,7 @@
         <a class="cite" href="https://www.ecfr.gov/current/title-45/part-180/section-180.30">&sect;&nbsp;180.30</a></h2>
 
       <p class="lead">The definition is licence-based, not Medicare-based. A &ldquo;hospital&rdquo; is an
-        institution licensed as a hospital under state or local law, or approved as meeting those licensing
+        institution <a class="gl" href="#g-licence">licensed as a hospital</a> under state or local law, or approved as meeting those licensing
         standards.<sup class="ref"><a href="#s1">1</a></sup> That sweeps in facilities that take no Medicare
         money at all.</p>
 
@@ -194,7 +218,7 @@
          Islands, Guam, American Samoa and the Northern Mariana Islands, which is why this audit
          covers <b class="num">56</b> states and territories rather than 50.</p>
 
-      <p>Three classes of hospital are <em>deemed by CMS to be in compliance</em> under
+      <p>Three classes of hospital are <em><a class="gl" href="#g-deemed">deemed by CMS to be in compliance</a></em> under
          <a href="https://www.ecfr.gov/current/title-45/part-180/section-180.30#p-180.30(b)">&sect;&nbsp;180.30(b)</a>,
          which is a subtly different thing from being exempt. In practice the requirement does not bind
          them, and no enforcement follows:</p>
@@ -235,8 +259,8 @@
       <h2>What must be in the file
         <a class="cite" href="https://www.ecfr.gov/current/title-45/part-180/section-180.50#p-180.50(b)">&sect;&nbsp;180.50(b)</a></h2>
 
-      <p class="lead">Section 180.40 sets out two duties: a machine-readable file of all standard charges for
-        all items and services, and a consumer-friendly display of shoppable services. Section 180.50 governs
+      <p class="lead">Section 180.40 sets out two duties: a <a class="gl" href="#g-mrf">machine-readable file</a> of all <a class="gl" href="#g-standard-charge">standard charges</a> for
+        all items and services, and a consumer-friendly display of <a class="gl" href="#g-shoppable">shoppable services</a>. Section 180.50 governs
         the first.<sup class="ref"><a href="#s1">1</a></sup></p>
 
       <p>Since 1&nbsp;July&nbsp;2024 the required content is a fixed list of data elements, grouped into four
@@ -252,25 +276,25 @@
               <td>General</td>
               <td>Hospital name, licence number, every location name and address under that licence, the CMS
                   template version, the date of the most recent update, and, from 1 January 2026, the
-                  Type&nbsp;2 organisational NPIs.</td>
+                  Type&nbsp;2 organisational <a class="gl abbr" href="#g-npi">NPIs</a>.</td>
             </tr>
             <tr>
               <td class="t-mono"><a href="https://www.ecfr.gov/current/title-45/part-180/section-180.50#p-180.50(b)(2)(ii)">(b)(2)(ii)</a></td>
               <td>Standard charges</td>
-              <td>All five charge types. For payer-specific charges, also the payer and plan names, the
-                  methodology used, and whether the figure is a dollar amount or rests on a percentage or
-                  algorithm, with the allowed-amount statistics where it does.</td>
+              <td>All five charge types. For <a class="gl" href="#g-negotiated-charge">payer-specific charges</a>, also the <a class="gl" href="#g-payer">payer</a> and <a class="gl" href="#g-plan">plan</a> names, the
+                  <a class="gl" href="#g-methodology">methodology</a> used, and whether the figure is a dollar amount or rests on a percentage or
+                  algorithm, with the <a class="gl" href="#g-allowed-amount">allowed-amount</a> statistics where it does.</td>
             </tr>
             <tr>
               <td class="t-mono"><a href="https://www.ecfr.gov/current/title-45/part-180/section-180.50#p-180.50(b)(2)(iii)">(b)(2)(iii)</a></td>
               <td>Item description</td>
-              <td>A general description, whether it is inpatient or outpatient, and for drugs the unit and
+              <td>A general description, whether it is <a class="gl" href="#g-setting">inpatient or outpatient</a>, and for drugs the unit and
                   type of measurement.</td>
             </tr>
             <tr>
               <td class="t-mono"><a href="https://www.ecfr.gov/current/title-45/part-180/section-180.50#p-180.50(b)(2)(iv)">(b)(2)(iv)</a></td>
               <td>Coding</td>
-              <td>Every billing or accounting code used for the item, its code type, and any modifiers that
+              <td>Every <a class="gl" href="#g-cpt">billing or accounting code</a> used for the item, its code type, and any <a class="gl" href="#g-modifier">modifiers</a> that
                   change the charge.</td>
             </tr>
           </tbody>
@@ -287,7 +311,7 @@
          encoding.<sup class="ref"><a href="#s1">1</a></sup></p>
 
       <p>That last part is the substantive change. From 2024 to 2025 the requirement was an
-         <em>affirmation</em> attached to a file; from 2026 it is an <em>attestation</em> with a named human
+         <em>affirmation</em> attached to a file; from 2026 it is an <em><a class="gl" href="#g-attestation">attestation</a></em> with a named human
          behind it.<sup class="ref"><a href="#s6">6</a></sup></p>
 
       <h3>Frequency</h3>
@@ -306,12 +330,12 @@
         <a class="cite" href="https://www.ecfr.gov/current/title-45/part-180/section-180.50#p-180.50(c)">&sect;&nbsp;180.50(c)</a></h2>
 
       <p class="lead">Before 1&nbsp;July&nbsp;2024: &ldquo;a single digital file that is in a machine-readable
-        format,&rdquo; and no more. On and after that date: the file <em>must conform to a CMS template
-        layout, data specifications, and data dictionary</em>.<sup class="ref"><a href="#s1">1</a></sup></p>
+        format,&rdquo; and no more. On and after that date: the file <em>must conform to a <a class="gl" href="#g-template">CMS template</a>
+        layout, data specifications, and <a class="gl" href="#g-data-dictionary">data dictionary</a></em>.<sup class="ref"><a href="#s1">1</a></sup></p>
 
       <p>That single sentence is what converted the rule from a disclosure requirement into a data standard.
          CMS maintains the template as a public technical guide, CSV &ldquo;tall&rdquo;, CSV
-         &ldquo;wide&rdquo; and JSON, and publishes a validator that tests a file against
+         &ldquo;wide&rdquo; and JSON, and publishes a <a class="gl" href="#g-validator">validator</a> that tests a file against
          it.<sup class="ref"><a href="#s8">8</a></sup> The current data dictionary is
          <strong>v3.0</strong>, carrying template version <code>3.0.0</code>.</p>
 
@@ -357,7 +381,7 @@
             prescribed exactly, so a file can be identified from its URL alone.</div>
         </div>
         <div>
-          <div class="term">The pointer file <small>(d)(6)(i)</small></div>
+          <div class="term"><a class="gl" href="#g-pointer">The pointer file</a> <small>(d)(6)(i)</small></div>
           <div class="meaning">Since 1 January 2024, a <code>.txt</code> file in the root folder of the
             hosting website naming the location, the page that hosts the file, a direct link to the file, and
             a contact. <a href="pointer.html">A whole page on this one.</a></div>
@@ -392,8 +416,8 @@
          often it actually provides and bills for them.</p>
 
       <p>For each, it must publish a plain-language description, the payer-specific negotiated charge with
-         payer and plan named, the discounted cash price (or the gross charge where no cash price exists),
-         the de-identified minimum and maximum, the location and setting, and the primary billing code.
+         payer and plan named, the <a class="gl" href="#g-cash-price">discounted cash price</a> (or the <a class="gl" href="#g-gross-charge">gross charge</a> where no cash price exists),
+         the <a class="gl" href="#g-de-identified">de-identified minimum and maximum</a>, the location and setting, and the primary billing code.
          Ancillary services get the same treatment. The display must be searchable by description, billing
          code and payer, and updated annually with the update date shown.</p>
 
@@ -464,8 +488,8 @@
           <div class="what">
             <b>Attestation, NPIs, and a distribution instead of an average</b>
             Template v3.0.0. The affirmation becomes an attestation with a named attester. Type&nbsp;2
-            organisational NPIs required. The estimated allowed amount is removed and replaced by the 10th
-            percentile, median and 90th percentile allowed amounts plus a remittance count.
+            organisational NPIs required. The estimated allowed amount is removed and replaced by the <a class="gl" href="#g-percentile">10th
+            percentile, median and 90th percentile</a> allowed amounts plus a <a class="gl" href="#g-remittance">remittance</a> count.
           </div>
         </li>
         <li data-live="1">
@@ -510,7 +534,7 @@
         <li>
           <div class="when">Step 2</div>
           <div class="what">
-            <b>Corrective action plan <span class="cite">&sect; 180.80</span></b>
+            <b><a class="gl" href="#g-cap">Corrective action plan</a> <span class="cite">&sect; 180.80</span></b>
             Requested where the non-compliance is a <em>material violation</em>, expressly including
             failing to make standard charges public at all, and failing to publish them in the required form
             and manner. The hospital submits the actions it will take and the timeframe, subject to CMS
@@ -520,7 +544,7 @@
         <li>
           <div class="when">Step 3</div>
           <div class="what">
-            <b>Civil monetary penalty <span class="cite">&sect; 180.90</span></b>
+            <b><a class="gl" href="#g-cmp">Civil monetary penalty</a> <span class="cite">&sect; 180.90</span></b>
             Available only where the hospital fails to respond to the CAP request or fails to comply with an
             approved plan. Notice by certified mail; the penalty and the hospital&rsquo;s name are published
             on a CMS website.
@@ -528,7 +552,7 @@
         </li>
       </ol>
 
-      <p>CMS may also, where the hospital belongs to a health system, take the matter to system leadership
+      <p>CMS may also, where the hospital belongs to a <a class="gl" href="#g-health-system">health system</a>, take the matter to system leadership
          and work through similar deficiencies across the system&rsquo;s other hospitals
          (<a href="https://www.ecfr.gov/current/title-45/part-180/section-180.70#p-180.70(c)">&sect;&nbsp;180.70(c)</a>).</p>
 
@@ -614,7 +638,7 @@
             </tr>
             <tr>
               <td><span class="badge" data-tier="blocked">Blocked to automation</span></td>
-              <td>The server answers a crawler with 403 or 429. Suggestive under (d)(3)(iv), but a browser may well succeed, so it is recorded as unverifiable rather than as a breach.</td>
+              <td>The server answers a <a class="gl" href="#g-crawler">crawler</a> with <a class="gl" href="#g-http-status">403 or 429</a>. Suggestive under (d)(3)(iv), but a browser may well succeed, so it is recorded as unverifiable rather than as a breach.</td>
               <td class="t-mono t-dim">not asserted</td>
             </tr>
             <tr>
@@ -632,6 +656,155 @@
          the contract behind it. A hospital marked
          <span class="badge" data-tier="compliant">Compliant</span> here has cleared the front door. It has
          not been audited.</p>
+    </section>
+
+    <!-- ===================================================== -->
+    <section id="glossary">
+      <p class="eyebrow">Plain English</p>
+      <h2>Glossary</h2>
+      <p class="lead">Every piece of jargon this page uses, in one sentence each. Built from a
+        single shared dictionary, so a term means the same thing on all three explainers.</p>
+
+<!-- glossary:start -->
+    <dl class="defs glossary">
+      <div id="g-http-status">
+        <dt>403 and 429</dt>
+        <dd>Numeric answers from a web server. 403 means &ldquo;refused&rdquo;; 429 means &ldquo;you are asking too often&rdquo;. Either stops an automated check without revealing whether the file was there.</dd>
+      </div>
+      <div id="g-cfr">
+        <dt>45 CFR Part 180</dt>
+        <dd>The Code of Federal Regulations is the published rulebook of the US government, split into numbered titles and parts. Title 45, Part 180 is the hospital price transparency rule; &ldquo;&sect;&nbsp;180.50&rdquo; is one numbered section inside it.</dd>
+      </div>
+      <div id="g-allowed-amount">
+        <dt>Allowed amount</dt>
+        <dd>What the hospital actually ended up being paid, as opposed to what it charged or what the contract says it should get. The insurer&rsquo;s payment plus the patient&rsquo;s share.</dd>
+      </div>
+      <div id="g-attestation">
+        <dt>Attestation</dt>
+        <dd>A named senior officer of the hospital stating, inside the file itself, that what it contains is true and complete. From 2026 it replaced an unsigned &ldquo;affirmation&rdquo;, so there is now a person attached to the claim.</dd>
+      </div>
+      <div id="g-cmp">
+        <dt>Civil monetary penalty</dt>
+        <dd>A fine imposed by a federal agency directly, without going to court. The hospital can appeal to an administrative judge.</dd>
+      </div>
+      <div id="g-cms">
+        <dt>CMS</dt>
+        <dd>The Centers for Medicare &amp; Medicaid Services: the federal agency that writes these rules, checks them, and issues the fines.</dd>
+      </div>
+      <div id="g-template">
+        <dt>CMS template</dt>
+        <dd>Since July 2024 a hospital may not invent its own layout. CMS publishes the exact columns, in an exact order, with exact names, and every file has to match. Before that, every file was compliant and no two were comparable.</dd>
+      </div>
+      <div id="g-cap">
+        <dt>Corrective action plan</dt>
+        <dd>A written plan a hospital submits to CMS saying how, and by when, it will fix a violation. CMS asks for one before it fines anybody, which is why warnings vastly outnumber penalties.</dd>
+      </div>
+      <div id="g-cpt">
+        <dt>CPT and HCPCS codes</dt>
+        <dd>National numbering systems for medical procedures, so that &ldquo;chest CT without contrast&rdquo; is the same code on every bill in the country. CPT covers procedures; HCPCS adds drugs, supplies and equipment.</dd>
+      </div>
+      <div id="g-crawler">
+        <dt>Crawler</dt>
+        <dd>A program that fetches web pages automatically, the way a search engine does. This audit is one, which is why some hospital websites turn it away.</dd>
+      </div>
+      <div id="g-data-dictionary">
+        <dt>Data dictionary</dt>
+        <dd>The document listing every column in the CMS template, what belongs in it, and which values are legal. It is the specification a file is judged against.</dd>
+      </div>
+      <div id="g-deemed">
+        <dt>Deemed compliant</dt>
+        <dd>Treated as compliant without being examined. Certain federally run facilities are deemed compliant with this rule, so their absence from a price file is not a breach.</dd>
+      </div>
+      <div id="g-de-identified">
+        <dt>De-identified minimum and maximum</dt>
+        <dd>The lowest and the highest price a hospital has agreed with <em>anyone</em> for an item, published without saying which insurer got which. It shows how wide the spread is without naming names.</dd>
+      </div>
+      <div id="g-cash-price">
+        <dt>Discounted cash price</dt>
+        <dd>The price for someone paying out of their own pocket rather than through insurance. It is often far lower than the list price, and sometimes lower than an insured patient&rsquo;s share.</dd>
+      </div>
+      <div id="g-federal-register">
+        <dt>Federal Register</dt>
+        <dd>The US government&rsquo;s daily journal of record, where every new rule appears first. A citation like &ldquo;88&nbsp;FR&nbsp;82184&rdquo; is volume 88, page 82184 of it.</dd>
+      </div>
+      <div id="g-gross-charge">
+        <dt>Gross charge</dt>
+        <dd>The list price, before anybody&rsquo;s discount. The number off the chargemaster.</dd>
+      </div>
+      <div id="g-health-system">
+        <dt>Health system</dt>
+        <dd>A company owning several hospitals. Systems normally publish one pointer file covering all of their hospitals at once, which is why one file can decide the verdict for dozens of rows in the tracker.</dd>
+      </div>
+      <div id="g-licence">
+        <dt>Hospital licence</dt>
+        <dd>The permit a state issues that lets a building operate as a hospital. The rule attaches to the licence rather than to the building, which is why one filing can cover several sites.</dd>
+      </div>
+      <div id="g-setting">
+        <dt>Inpatient and outpatient</dt>
+        <dd>Inpatient means you were formally admitted and stayed. Outpatient means you went home the same day. The identical procedure routinely costs different amounts in each.</dd>
+      </div>
+      <div id="g-mrf">
+        <dt>Machine-readable file (MRF)</dt>
+        <dd>The one big file every hospital has to publish, listing every price it charges. &ldquo;Machine-readable&rdquo; only means a computer can read it without a person retyping anything: a spreadsheet-like file, not a PDF and not a scan.</dd>
+      </div>
+      <div id="g-percentile">
+        <dt>Median, 10th and 90th percentile</dt>
+        <dd>Ways of describing a spread of numbers. The median is the middle value; the 10th and 90th percentiles sit near the bottom and top of the range. Reported together they show whether payments cluster tightly or vary enormously &mdash; which one average number hides.</dd>
+      </div>
+      <div id="g-methodology">
+        <dt>Methodology</dt>
+        <dd>How a price was arrived at rather than what it is: a flat fee, a rate per day, a rate for a whole case, a percentage of the bill, or &ldquo;other&rdquo;. CMS allows exactly those five answers.</dd>
+      </div>
+      <div id="g-modifier">
+        <dt>Modifier</dt>
+        <dd>A short code attached to a procedure code to say something was different: which side of the body, that it was done twice, that it was harder than usual. Modifiers change the price, which is why the file has to list them.</dd>
+      </div>
+      <div id="g-negotiated-charge">
+        <dt>Negotiated charge</dt>
+        <dd>The price one hospital and one insurer privately agreed for one item. Historically a trade secret on both sides; prising these into the open is the point of the whole rule.</dd>
+      </div>
+      <div id="g-npi">
+        <dt>NPI</dt>
+        <dd>National Provider Identifier: a ten-digit number identifying a healthcare provider. A &ldquo;type 2&rdquo; NPI identifies an organisation, such as a hospital, rather than a person.</dd>
+      </div>
+      <div id="g-opps">
+        <dt>OPPS/ASC final rule</dt>
+        <dd>The large Medicare payment regulation CMS issues each November, setting what it pays hospitals for outpatient care. CMS uses it as the vehicle for amending the price transparency rules, which is why they change every year.</dd>
+      </div>
+      <div id="g-payer">
+        <dt>Payer</dt>
+        <dd>Whoever actually pays the hospital. Usually an insurance company, sometimes a government programme such as Medicare, sometimes the patient.</dd>
+      </div>
+      <div id="g-statute">
+        <dt>PHS Act &sect; 2718(e)</dt>
+        <dd>The sentence of federal law, added by the Affordable Care Act, that requires hospitals to publish a list of their charges each year. The CMS rule is the detailed machinery for carrying out that one sentence.</dd>
+      </div>
+      <div id="g-plan">
+        <dt>Plan</dt>
+        <dd>One specific insurance product sold by one payer. The same insurer can sell a dozen plans, and each can have agreed a different price with the same hospital for the same procedure. This is why the files get so large.</dd>
+      </div>
+      <div id="g-pointer">
+        <dt>Pointer file (cms-hpt.txt)</dt>
+        <dd>A small text file at a fixed, predictable web address that says where a hospital&rsquo;s price file actually is. It exists so that nobody &mdash; and no program &mdash; has to search the website to find one.</dd>
+      </div>
+      <div id="g-remittance">
+        <dt>Remittance advice (EDI 835)</dt>
+        <dd>The standard electronic statement an insurer sends a hospital after a claim, setting out what it paid and why. It is the hospital&rsquo;s own record of what it was really paid, which is why CMS makes it the source for the allowed-amount figures.</dd>
+      </div>
+      <div id="g-shoppable">
+        <dt>Shoppable services</dt>
+        <dd>Around 300 common services you can plan ahead for &mdash; an MRI, a birth, a hip replacement. Hospitals must display prices for these in a plain, consumer-facing way. That is a <em>separate</em> duty from the big machine-readable file, and this tracker does not measure it.</dd>
+      </div>
+      <div id="g-standard-charge">
+        <dt>Standard charge</dt>
+        <dd>CMS&rsquo;s umbrella word for <em>all five</em> kinds of price a hospital must publish for every item: the list price, the cash price, the price agreed with each insurer, and the lowest and highest of those agreed prices. There is no single &ldquo;the price&rdquo;.</dd>
+      </div>
+      <div id="g-validator">
+        <dt>Validator</dt>
+        <dd>CMS&rsquo;s own free tool that opens a price file and reports every place it breaks the template&rsquo;s rules. It checks the <em>file</em>; this tracker checks only whether a file can be found and fetched at all.</dd>
+      </div>
+    </dl>
+    <!-- glossary:end -->
     </section>
 
     <!-- ===================================================== -->

@@ -18,7 +18,16 @@
      index * this height, so js/tracker.js carries the same number in
      ROW_H. Change one and change the other. */
   --row-h: 64px;
+
+  /* MapLibre draws its zoom and attribution glyphs as dark SVG data URIs it
+     will not let us recolour. Flipping them is the only way to keep the map's
+     controls legible on a dark surface. */
+  --map-icon: none;
 }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --map-icon: invert(1); }
+}
+:root[data-theme="dark"] { --map-icon: invert(1); }
 
 /* ============================================================
    Sections
@@ -420,7 +429,14 @@ select {
    decoration, it keeps your eye on one row across six columns. Parity comes
    from the row's index in the filtered list, so bands stay put while scrolling. */
 .reg-row[data-band="1"] { background: var(--band); }
-.reg-row:hover, .reg-row[data-band="1"]:hover { background: var(--surface-sunk); }
+/* The row is one target, not six cells. The badge, the name, the finding and
+   the age are all statements about the same hospital, so a click anywhere in
+   the row opens that hospital; only FILE and PTR, which lead off the page
+   entirely, keep a click of their own. The pointer and the existing highlight
+   are the whole affordance. :active is for touch, which has no hover. */
+.reg-row { cursor: pointer; }
+.reg-row:hover, .reg-row[data-band="1"]:hover,
+.reg-row:active, .reg-row[data-band="1"]:active { background: var(--surface-sunk); }
 
 .cell-name { min-width: 0; }
 .cell-name b { display: block; font-weight: 600; font-size: var(--fs-sm); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -587,6 +603,84 @@ select {
   letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 var(--s-3);
 }
 
+/* ---- Location map.
+
+   OpenFreeMap tiles, drawn by MapLibre, which the page fetches only when a
+   drawer opens (js/tracker.js). Positron and its dark counterpart are the two
+   near-achromatic styles OpenFreeMap serves, chosen for the reason everything
+   else on this page is grey: the pin is the one coloured thing, and it is
+   coloured by the audit's verdict. A Liberty basemap would put green parks and
+   blue water next to a red status dot and cost that dot its meaning. ---- */
+.oc-map-wrap { margin: var(--s-5) 0 0; }
+.oc-map {
+  height: 168px;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--rule);
+  background: var(--surface-sunk);
+  overflow: hidden;
+}
+/* Only ever says something when there is something to say: that the pin is the
+   middle of a ZIP code rather than the hospital's door, or that the tiles did
+   not load. Empty the rest of the time. */
+.oc-map-note {
+  font-size: var(--fs-xs); color: var(--ink-3); line-height: 1.5;
+  margin: var(--s-2) 0 0;
+}
+.oc-map-note:empty { display: none; }
+
+/* The pin. A dot in the verdict's colour, ringed in the drawer's own ground so
+   it holds an edge over dark tiles and light ones alike. */
+.oc-pin {
+  display: block; width: 14px; height: 14px; border-radius: 50%;
+  background: var(--st-unknown);
+  border: 2.5px solid var(--surface);
+  box-shadow: 0 1px 3px rgba(0,0,0,.35);
+  cursor: default;
+}
+.oc-pin[data-tier="compliant"] { background: var(--st-compliant); }
+.oc-pin[data-tier="failing"]   { background: var(--st-failing); }
+.oc-pin[data-tier="blocked"]   { background: var(--st-blocked); }
+.oc-pin[data-tier="exempt"]    { background: var(--st-exempt); }
+.oc-pin[data-tier="unknown"]   { background: var(--st-unknown); }
+/* A ZIP centroid is the right town, not the right building. The pin says so by
+   going hollow rather than by being drawn somewhere it does not belong. */
+.oc-pin[data-approx="1"] { background: var(--surface); border-width: 4px; }
+.oc-pin[data-approx="1"][data-tier="compliant"] { border-color: var(--st-compliant); }
+.oc-pin[data-approx="1"][data-tier="failing"]   { border-color: var(--st-failing); }
+.oc-pin[data-approx="1"][data-tier="blocked"]   { border-color: var(--st-blocked); }
+.oc-pin[data-approx="1"][data-tier="exempt"]    { border-color: var(--st-exempt); }
+.oc-pin[data-approx="1"][data-tier="unknown"]   { border-color: var(--st-unknown); }
+
+/* MapLibre ships its own white-and-shadow chrome, sized for a full-page map.
+   Re-dressed here in the page's own tokens, or the controls glow white on a
+   black surface. js/tracker.js inserts MapLibre's stylesheet ABOVE this one so
+   these rules win on order; without that, every one of them ties on specificity
+   and loses. */
+.oc-map .maplibregl-ctrl-group {
+  background: var(--surface); border: 1px solid var(--rule);
+  border-radius: var(--r-md); overflow: hidden;
+}
+.oc-map .maplibregl-ctrl-group:not(:empty) { box-shadow: none; }
+.oc-map .maplibregl-ctrl-group button { width: 28px; height: 28px; background-color: var(--surface); }
+.oc-map .maplibregl-ctrl-group button + button { border-top: 1px solid var(--rule); }
+.oc-map .maplibregl-ctrl-group button:hover { background-color: var(--surface-sunk); }
+/* The glyphs are dark SVG data URIs MapLibre will not let us recolour. The
+   filter goes on the icon and never on the button, or the control flips with
+   it and a dark chip turns into a white one. */
+.oc-map .maplibregl-ctrl-icon { filter: var(--map-icon); }
+
+/* The credit is the tile licence, so it stays put and starts open; the (i)
+   folds it away. Sized to clear one line inside a 375px drawer — wrapped, it
+   took a quarter of a 168px map to say the same thing. */
+.oc-map .maplibregl-ctrl-attrib,
+.oc-map .maplibregl-ctrl-attrib.maplibregl-compact {
+  background-color: var(--surface); color: var(--ink-3);
+  font-family: var(--f-body); font-size: 10px; line-height: 1.8;
+  border-radius: var(--r-sm); margin: var(--s-1);
+}
+.oc-map .maplibregl-ctrl-attrib a { color: var(--ink-2); }
+.oc-map .maplibregl-ctrl-attrib-button { background-color: transparent; filter: var(--map-icon); }
+
 /* ---- Where this stands.
 
    Stage and the follow-up date write to the store the moment they change,
@@ -650,7 +744,7 @@ select {
 /* The coupled side effect, stated in full rather than done silently. */
 .oc-couple {
   display: flex; align-items: flex-start; gap: var(--s-2);
-  margin: var(--s-4) 0 0; padding: var(--s-3);
+  margin: var(--s-5) 0 0; padding: var(--s-3);
   background: var(--surface-sunk); border-radius: var(--r-md);
   font-size: var(--fs-xs); color: var(--ink-2); line-height: 1.45;
   cursor: pointer;
@@ -658,7 +752,13 @@ select {
 .oc-couple input { flex: none; width: 16px; height: 16px; margin: 1px 0 0; accent-color: var(--ink); }
 .oc-couple b { color: var(--ink); font-weight: 600; }
 
-.oc-field { display: grid; gap: var(--s-1); margin-bottom: var(--s-3); }
+/* align-content, not the grid default of stretch. A field is a label over a
+   control, and it is usually a grid item itself, so it gets stretched to the
+   height of the tallest field beside it. That extra height then goes into its
+   own auto rows: in "Where this stands" the Stage select stood 19px taller
+   than the date input next to it, with its label riding 19px lower, because
+   the follow-up field carries two buttons underneath. */
+.oc-field { display: grid; gap: var(--s-1); align-content: start; margin-bottom: var(--s-3); }
 .oc-field > label { font-size: var(--fs-xs); font-weight: 600; color: var(--ink-2); }
 .oc-field input, .oc-field select, .oc-field textarea {
   font-family: var(--f-body); font-size: var(--fs-sm); padding: var(--s-3);
@@ -682,7 +782,11 @@ select {
 }
 .oc-quickset:hover { color: var(--ink); border-color: var(--ink); }
 
-.oc-actions { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-1); }
+/* This margin has to clear .oc-couple, whose own bottom margin is zero, so
+   nothing collapses into it: at var(--s-1) the Save row sat 4px under the
+   checkbox panel and read as part of it. It stays smaller than the space above
+   that panel, because the option and the buttons it changes do belong together. */
+.oc-actions { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-3); }
 .oc-action {
   font-size: var(--fs-xs); font-weight: 600; min-height: 40px; padding: 0 var(--s-4); border-radius: var(--r-md);
   border: 1px solid var(--ink); background: var(--ink); color: var(--paper);

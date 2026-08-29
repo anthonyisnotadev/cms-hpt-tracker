@@ -379,6 +379,49 @@ button { font: inherit; color: inherit; background: none; border: none; padding:
 .lead { font-size: var(--fs-h3) !important; color: var(--ink) !important; line-height: 1.5 !important; letter-spacing: -0.011em; max-width: 60ch; }
 
 /* ============================================================
+   The short version
+
+   A panel at the head of each explainer that states the whole page
+   in four sentences, for the reader who wants the answer and not
+   the regulation. It has to read as "start here" without a colour,
+   because colour means status on this site and nothing else. So it
+   is the only thing in the prose column that is a raised surface
+   with full-strength ink: body prose is --ink-2 on --paper, this is
+   --ink on --surface, and that difference alone carries it.
+   ============================================================ */
+.plain {
+  background: var(--surface);
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--r-xl);
+  padding: var(--s-5) var(--s-6) var(--s-6);
+  margin: 0 0 var(--s-8);
+}
+.plain .eyebrow { margin: 0 0 var(--s-2); }
+/* Hairline-separated rows, the same device as .defs and .sources, rather
+   than bullets: four claims of equal weight, not a list of examples. */
+.plain ul { list-style: none; margin: 0; padding: 0; max-width: 62ch; font-size: var(--fs-body); }
+.plain li {
+  margin: 0; padding: var(--s-4) 0 0;
+  color: var(--ink); line-height: 1.55;
+}
+.plain li + li { border-top: 1px solid var(--rule); }
+.plain li::marker { content: none; }
+.plain li b { font-weight: 600; }
+.plain li code { font-family: var(--f-mono); font-size: 0.85em; }
+/* The hand-off to the long version, and the only place the glossary is
+   advertised before a reader has already tripped over a term. */
+.plain .more {
+  margin: var(--s-5) 0 0; padding-top: var(--s-4);
+  border-top: 1px solid var(--rule);
+  font-size: var(--fs-sm); color: var(--ink-3); max-width: 62ch; line-height: 1.6;
+}
+.plain .more a { color: var(--ink-2); }
+
+@media (max-width: 700px) {
+  .plain { padding: var(--s-4) var(--s-5) var(--s-5); border-radius: var(--r-lg); }
+}
+
+/* ============================================================
    Code / file listings
    ============================================================ */
 figure.listing { margin: var(--s-5) 0 0; }
@@ -518,6 +561,67 @@ sup.ref a::after { content: ']'; }
 }
 
 /* ============================================================
+   Glossary
+
+   Same contract as the source list above it. An inline term is a
+   real anchor to a real entry at the foot of the page, so it works
+   with no JavaScript, on paper, and in a reader view: click the
+   word, land on the definition, :target lights it. js/docs.js then
+   lifts that same definition into a hover panel so a mouse reader
+   never loses their place. Nothing is duplicated; the popover reads
+   the <dd> that is already in the document.
+   ============================================================ */
+
+/* Dotted, so it is visibly a different promise from a prose link,
+   which is solid and goes somewhere else. Matches .prose a[href] on
+   specificity (0,2,1) and wins on source order. */
+.prose a.gl {
+  border-bottom: 1px dotted var(--rule-strong);
+  color: inherit;
+  cursor: help;
+  text-decoration: none;
+}
+.prose a.gl:hover, .prose a.gl:focus-visible {
+  border-bottom-color: var(--ink);
+  color: var(--ink);
+}
+/* The abbreviation cases (MRF, CCN, EIN) read as shouting at full size. */
+.prose a.gl.abbr { font-variant: none; }
+
+/* The list itself is .defs plus a target state and a narrower term
+   column, since a glossary term is a word and not a headed clause. */
+.glossary > div { grid-template-columns: 190px minmax(0, 1fr); scroll-margin-top: var(--s-6); }
+.glossary > div:target { background: var(--surface); box-shadow: inset 3px 0 0 var(--ink); }
+.glossary > div:target dt { color: var(--ink); }
+.glossary dt { color: var(--ink); }
+.glossary dd code { font-family: var(--f-mono); font-size: 0.86em; background: var(--surface-sunk); padding: 2px 6px; border-radius: var(--r-sm); }
+.glossary .also { display: block; margin-top: var(--s-2); font-size: var(--fs-xs); color: var(--ink-3); }
+
+@media (max-width: 700px) {
+  .glossary > div { grid-template-columns: minmax(0, 1fr); }
+  .glossary > div:target { padding-left: var(--s-4); }
+}
+
+/* ---- The hover panel. Genuinely floating, so it gets elevation;
+        matches the tracker's tooltip so the two read as one device. ---- */
+.gl-pop {
+  position: absolute;
+  z-index: 60;
+  max-width: 300px;
+  background: var(--surface);
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--r-lg);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, .22);
+  padding: var(--s-4);
+  font-size: var(--fs-sm); line-height: 1.55; color: var(--ink-2);
+  pointer-events: none;
+}
+.gl-pop b { display: block; color: var(--ink); font-weight: 600; margin-bottom: var(--s-1); }
+.gl-pop code { font-family: var(--f-mono); font-size: 0.86em; }
+.gl-pop .also { display: none; }
+.gl-pop[hidden] { display: none; }
+
+/* ============================================================
    Timeline, dated rows down a rule
    ============================================================ */
 .timeline { margin: var(--s-6) 0 0; padding-left: 0; list-style: none; }
@@ -598,7 +702,13 @@ sup.ref a::after { content: ']'; }
 .nextprev b { display: block; font-size: var(--fs-h3); font-weight: 600; letter-spacing: -0.018em; margin-top: var(--s-2); }
 .nextprev span { display: block; font-size: var(--fs-sm); color: var(--ink-2); margin-top: var(--s-1); line-height: 1.5; }
 
-footer { padding: var(--s-6) 0 var(--s-8); font-size: var(--fs-xs); color: var(--ink-3); border-top: 1px solid var(--rule); }
+footer { font-size: var(--fs-xs); color: var(--ink-3); border-top: 1px solid var(--rule); }
+/* Longhands, and the tag qualifier, on purpose. Every page's footer carries
+   .wrap for its gutter, and .wrap (0,1,0) sets `padding: 0 var(--s-5)`, which
+   beats a `padding: X 0` shorthand on `footer` (0,0,1) on all four sides. The
+   footer text was sitting flush against its own top rule because of it. Same
+   trap as section.wrap in the tracker's sheet, reached from the other side. */
+footer.wrap { padding-top: var(--s-6); padding-bottom: var(--s-8); }
 footer p { margin: 0 0 var(--s-2); max-width: 70ch; line-height: 1.6; }
 footer b { color: var(--ink-2); font-weight: 600; }
 footer a { border-bottom: 1px solid var(--rule-strong); }

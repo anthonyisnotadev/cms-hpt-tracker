@@ -37,11 +37,14 @@ free request, which is why cheap candidate sources beat paid search here.
 scripts/hpt/          the pipeline (self-contained; Node built-ins + dotenv)
   run.js              CLI: every stage
   lib/                fetching, parsing, probing, search, LLM adjudication, audit
-scripts/build-tracker.js   injects the CSVs into tracker.html
+  geocode.js          one-off: roster addresses -> coords.json (see below)
+scripts/build-tracker.js   injects the CSVs and the stylesheets into tracker.html
+scripts/build-glossary.js  injects the glossary into the three explainer pages
 tracker.html          hand-authored page; the build swaps its data block
 js/tracker.js  js/outreach.js   loaded by the page (must sit alongside it)
-mrf.html rules.html pointer.html   the explainer pages (see below)
+mrf.html rules.html pointer.html skill.html   the explainer pages (see below)
 css/docs.css  js/docs.js          shared by the explainers only
+.claude/skills/outreach/SKILL.md   the agent skill; documented by skill.html
 data/hpt-audit/       the CSV snapshot the page is built from
 cms_data/             the CMS roster (committed; see below)
 ```
@@ -52,20 +55,38 @@ page scripts. Editing the page means editing that file.
 
 ## The explainer pages
 
-Three static pages, linked from the tracker's masthead, covering what the
-tracker measures and why:
+Four static pages, linked from the tracker's masthead. The first three cover
+what the tracker measures and why; the fourth covers the tooling that maintains
+it:
 
 | Page | Covers |
 | --- | --- |
 | [`mrf.html`](mrf.html) | What a machine-readable file is: the five standard charge types, the three CMS template layouts, the full data dictionary, and the allowed-amount rules for charges that aren't dollar figures |
 | [`rules.html`](rules.html) | 45 CFR 180 end to end: scope and exemptions, both disclosure duties, the 2021&ndash;2026 compliance timeline, enforcement and penalty arithmetic, and which paragraph each audit finding rests on |
 | [`pointer.html`](pointer.html) | `cms-hpt.txt` &mdash; the required fields, worked examples, the naming convention, and how the crawl uses it to resolve domains |
+| [`skill.html`](skill.html) | The `outreach` agent skill: what a `SKILL.md` is, a worked example from paste to git commit, the guardrails, running the same folder in OpenCode / Codex / Cursor / Gemini CLI, and doing it all with no agent at all |
 
-Every regulatory claim links to its paragraph in the eCFR, and each page ends
-with a numbered source list keyed to inline `[n]` markers. Sources are the
-current [45 CFR 180](https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-E/part-180),
+Each of the first three opens with a **short version**: the whole page in four
+plain sentences, for a reader who wants the answer rather than the regulation.
+Jargon in the prose is a dotted link to a **glossary** entry at the foot of the
+page &mdash; `<a class="gl" href="#g-payer">` &rarr; `<div id="g-payer">` &mdash;
+so a term works as a plain anchor with JavaScript off, and `js/docs.js` only adds
+a hover panel that reads the very same `<dd>`.
+
+The definitions live once, in `TERMS` in
+[`scripts/build-glossary.js`](scripts/build-glossary.js). `npm run build` scans
+each page for the slugs it links to, emits exactly those entries alphabetically
+between the `<!-- glossary:start -->` sentinels, and **fails** on a slug with no
+definition. Add a term by adding it to `TERMS`, linking it in the prose, and
+rebuilding; never hand-edit the generated `<dl>`.
+
+On the first three, every regulatory claim links to its paragraph in the eCFR,
+and each page ends with a numbered source list keyed to inline `[n]` markers.
+Sources are the current [45 CFR 180](https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-E/part-180),
 the Federal Register final rules that amended it, and CMS's
 [technical implementation guide](https://github.com/CMSgov/hospital-price-transparency).
+`skill.html` follows the same source discipline against each agent runtime's own
+documentation, and its terminal output is captured from real dry runs.
 
 These pages carry a **verbatim copy of the tracker's design tokens** in
 `css/docs.css`, because `tracker.html` keeps its CSS inline so the build can
@@ -106,12 +127,35 @@ Every stage is resumable — re-running skips work already recorded.
 
 ```bash
 cp cms_data/hpt/{compliance,manifest,gaps}.csv data/hpt-audit/
-node scripts/build-tracker.js
+npm run build      # glossary into the explainers, then data + CSS into the tracker
 npm run serve      # http://localhost:8081/tracker.html
 ```
 
 `data/hpt-audit/` is a deliberate snapshot, so the published page does not
 change every time the pipeline runs. It must be refreshed explicitly.
+
+### Hospital coordinates
+
+Each hospital's outreach panel draws a small [OpenFreeMap](https://openfreemap.org/)
+map of where it is. CMS gives a postal address and nothing else, so the
+coordinates are resolved once, offline, and committed as
+`cms_data/hpt/coords.json`:
+
+```bash
+npm run geocode                                              # street addresses
+npm run geocode -- --retry --benchmark Public_AR_Census2020  # rural misses
+npm run geocode -- --zip-only                                # the rest, by ZIP
+```
+
+The source is the **US Census batch geocoder** — public domain, no key, and
+built for bulk US address files, which Nominatim's usage policy forbids. The
+three passes place 4,736 hospitals at their address, 650 more at their ZIP
+code's centre (the drawer says so, and zooms out rather than implying a
+building), and leave 33 unplaced whose ZIPs are PO boxes with no tabulation
+area. Those simply get no map.
+
+The file only needs regenerating when the roster gains hospitals; the build
+warns and carries on without maps if it is missing.
 
 ### Outreach notes with persistence
 
@@ -132,6 +176,29 @@ failing with `EADDRINUSE`, so whether the page found the API came down to how
 This backs `js/outreach.js`'s `/api/outreach*` calls and writes everything to
 `cms_data/outreach.json`, so notes survive across browsers and machines that
 hit the same server. No dependencies beyond Node itself.
+
+### Logging outreach from the command line, or from an agent
+
+The same records are writable without the browser. `scripts/outreach-cli.js` is
+the validating write surface — dry run by default, all-or-nothing batches, a
+one-deep backup, and a `discarded:` line for every field it drops:
+
+```bash
+node scripts/outreach-cli.js help
+node scripts/outreach-cli.js find "st anthony summit" --state CO
+node scripts/outreach-cli.js apply plan.json          # dry run
+node scripts/outreach-cli.js apply plan.json --commit
+```
+
+`.claude/skills/outreach/SKILL.md` teaches an agent to drive that CLI from a
+plain description of what you did — *"I emailed them and it bounced"* — and to
+show you the diff before anything is written. It is an
+[Agent Skills](https://agentskills.io/specification) file, so it also loads in
+OpenCode (which reads `.claude/skills/` directly), and in Codex, Cursor and
+Gemini CLI via a symlink into `.agents/skills/`.
+
+[`skill.html`](skill.html) is the full write-up: worked examples, guardrails,
+per-runtime paths, and what changes when you point a different model at it.
 
 ## The CMS roster
 

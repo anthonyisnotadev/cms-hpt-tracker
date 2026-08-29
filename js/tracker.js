@@ -314,7 +314,9 @@
   }).join('');
 
   /* ---------- register ---------- */
-  var C = { CCN: 0, NAME: 1, CITY: 2, STATE: 3, TYPE: 4, FIND: 5, DAYS: 6, TMPL: 7, MRF: 8, PTR: 9, EV: 10, FMT: 11, BYTES: 12, UPD: 13 };
+  // LON/LAT come from scripts/hpt/geocode.js by way of the build. APPROX is 1
+  // when the point is the centre of the hospital's ZIP rather than its address.
+  var C = { CCN: 0, NAME: 1, CITY: 2, STATE: 3, TYPE: 4, FIND: 5, DAYS: 6, TMPL: 7, MRF: 8, PTR: 9, EV: 10, FMT: 11, BYTES: 12, UPD: 13, LON: 14, LAT: 15, APPROX: 16 };
   var findingMeta = D.dict.findings.map(function (k) {
     return D.findings.filter(function (f) { return f.key === k; })[0];
   });
@@ -792,11 +794,11 @@
         + esc(corr.note || ('Crawl found: ' + f.label)) + '</span>'
       : '<b>' + f.label + '</b><span>' + esc(r[C.EV] || f.blurb) + '</span>';
 
-    return '<div class="reg-row" data-band="' + (band ? 1 : 0) + '"'
+    return '<div class="reg-row" data-ccn="' + esc(r[C.CCN]) + '" data-band="' + (band ? 1 : 0) + '"'
       + (narrow.matches ? '' : ' style="top:' + top + 'px"') + '>'
       + '<span class="badge flat" data-tier="' + tier + '"' + badgeExtra + '>'
       + short + '</span>'
-      + '<span class="cell-name oc-open" data-ccn="' + esc(r[C.CCN]) + '"><b>' + esc(titleCase(r[C.NAME])) + '</b>'
+      + '<span class="cell-name"><b>' + esc(titleCase(r[C.NAME])) + '</b>'
       + '<span>' + esc(titleCase(r[C.CITY])) + ', ' + D.dict.states[r[C.STATE]] + ' &middot; ' + esc(r[C.CCN]) + '</span></span>'
       + '<span class="cell-why">' + why + '</span>'
       + ageCell(r, corr)
@@ -961,6 +963,9 @@
       days: r[C.DAYS],
       mrf: r[C.MRF],
       ptr: r[C.PTR],
+      lon: r[C.LON],
+      lat: r[C.LAT],
+      approx: r[C.APPROX] === 1,
     };
   }
 
@@ -1000,6 +1005,171 @@
       subject: 'Price transparency file: ' + h.name + ' (CCN ' + h.ccn + ')',
       body: lines.join('\n'),
     };
+  }
+
+  /* ---- location map ----
+
+     OpenFreeMap serves the tiles: OpenStreetMap data, no key, no per-view
+     tracking, and no quota to keep an eye on. MapLibre draws them, and neither
+     is fetched until a drawer actually opens — the tracker already ships 1.8 MB
+     of audit data, and a map library nobody asked for would be a third of that
+     again on every page load for the people who only read the charts.
+
+     Positron and its dark counterpart are near-achromatic on purpose. This page
+     spends colour on one thing, the audit's verdict, and a basemap with green
+     parks and blue water beside a red status pin would spend it on scenery. */
+
+  var MAP_LIB = {
+    // Pinned and subresource-checked: this is third-party code with the run of
+    // the page, and an unpinned CDN URL is a standing invitation.
+    js: 'https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js',
+    jsHash: 'sha384-5+cfbwT0iiub6VsQAdn6yz16nr6sDiQoHx6tm4O8OVYXHYOxcffFmCJBL0dgdvGp',
+    css: 'https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css',
+    cssHash: 'sha384-uTttxo/aOKbdE5RlD/SPzSDoDmNvGlUYPjONi2MN/b7c9HPSvW07OIuyP7uL6jxK',
+  };
+  var MAP_STYLE = {
+    light: 'https://tiles.openfreemap.org/styles/positron',
+    dark: 'https://tiles.openfreemap.org/styles/dark',
+  };
+  // A located address is worth a street-level view. A ZIP centroid is not: zoom
+  // that far in and the map draws a specific building the data cannot support.
+  var MAP_ZOOM = { exact: 15, approx: 11 };
+
+  var mapWrap = $('oc-map-wrap');
+  var mapEl = $('oc-map');
+  var mapNote = $('oc-map-note');
+  var mapLoad = null;   // the one library load, in flight or finished
+  var mapView = null;   // the one map, reused as the drawer moves between hospitals
+  var mapPin = null;
+  var mapStyled = null; // which theme's style is currently on the map
+
+  function loadMapLibrary() {
+    if (mapLoad) return mapLoad;
+    mapLoad = new Promise(function (resolve, reject) {
+      var css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.href = MAP_LIB.css;
+      css.integrity = MAP_LIB.cssHash;
+      css.crossOrigin = 'anonymous';
+      // Above the page's own stylesheet, not after it. MapLibre's control
+      // chrome is styled at the same specificity this page overrides it with,
+      // so appending would hand every tie to the library and leave a white
+      // attribution bar sitting on a black map.
+      var ours = document.getElementById('tracker-css');
+      if (ours) document.head.insertBefore(css, ours);
+      else document.head.appendChild(css);
+
+      var js = document.createElement('script');
+      js.src = MAP_LIB.js;
+      js.integrity = MAP_LIB.jsHash;
+      js.crossOrigin = 'anonymous';
+      js.onload = function () {
+        if (window.maplibregl) resolve(window.maplibregl);
+        else reject(new Error('map library loaded but did not register'));
+      };
+      js.onerror = function () { reject(new Error('map library did not load')); };
+      document.head.appendChild(js);
+    });
+    return mapLoad;
+  }
+
+  function mapTheme() { return currentTheme() === 'dark' ? 'dark' : 'light'; }
+
+  function pinElement() {
+    var el = document.createElement('span');
+    el.className = 'oc-pin';
+    return el;
+  }
+
+  // Says where the pin came from, and nothing at all when the pin is simply
+  // right. A caption under every map reading "exact location" would be noise.
+  function mapCaption(h) {
+    if (!h.approx) return '';
+    return 'Approximate: the centre of this hospital’s ZIP code. Its street '
+      + 'address is not in the Census address file, so the pin marks the town, not the building.';
+  }
+
+  function renderMap(h, tier) {
+    if (!mapWrap) return;
+    if (!h || h.lat == null || h.lon == null) { mapWrap.hidden = true; return; }
+
+    var at = [h.lon, h.lat];
+    var zoom = h.approx ? MAP_ZOOM.approx : MAP_ZOOM.exact;
+    mapWrap.hidden = false;
+    // A previous failure may have hidden the canvas and written its own note.
+    mapEl.hidden = false;
+    mapNote.textContent = mapCaption(h);
+    mapEl.setAttribute('aria-label', 'Map showing the location of ' + h.name + ', ' + h.city + ', ' + h.state);
+
+    loadMapLibrary().then(function (gl) {
+      // The drawer can have moved to another hospital, or closed, while the
+      // library was still coming down the wire.
+      if (openCcn !== h.ccn) return;
+      if (!mapView) {
+        mapView = new gl.Map({
+          container: mapEl,
+          style: MAP_STYLE[mapTheme()],
+          center: at,
+          zoom: zoom,
+          // Off here and re-added compact below: the default control is a full
+          // bar across a 168px-tall map. The credit itself is not optional —
+          // the tile source supplies its own text and this only folds it into
+          // an (i) once the map has been touched.
+          attributionControl: false,
+          // The drawer is a scrolling column. A map that swallowed the wheel
+          // would trap the scroll every time it passed under the pointer.
+          scrollZoom: false,
+          // Same trap, worse: on a touch screen there is no pointer to move
+          // away, so a thumb that starts its swipe on the map would drag the
+          // map instead of scrolling the panel and the drawer would feel
+          // broken. Dragging stays on where there is a mouse to do it with;
+          // everywhere else the +/- buttons and pinch are enough.
+          dragPan: !window.matchMedia('(pointer: coarse)').matches,
+          // Nothing here is worth reading at an angle.
+          dragRotate: false,
+        });
+        mapView.touchZoomRotate.disableRotation();
+        mapStyled = mapTheme();
+        mapView.addControl(new gl.AttributionControl({ compact: true }));
+        mapView.addControl(new gl.NavigationControl({ showCompass: false, showZoom: true }), 'top-right');
+        mapPin = new gl.Marker({ element: pinElement() }).setLngLat(at).addTo(mapView);
+        // MapLibre measures its container once and then believes itself. The
+        // drawer is min(520px, 100%), so a window resize changes the map's
+        // width without telling it, and a map built while the drawer was still
+        // sliding in measured whatever the container was mid-transition. This
+        // makes it follow the box instead of being reminded to.
+        if (window.ResizeObserver) new ResizeObserver(resizeMap).observe(mapEl);
+      } else {
+        if (mapStyled !== mapTheme()) {
+          // Markers are DOM overlays, so the pin survives a restyle.
+          mapView.setStyle(MAP_STYLE[mapTheme()]);
+          mapStyled = mapTheme();
+        }
+        mapPin.setLngLat(at);
+        // jumpTo, not flyTo: this is a new hospital, not a move across one map,
+        // and an animated swoop between two unrelated towns reads as a glitch.
+        mapView.jumpTo({ center: at, zoom: zoom });
+      }
+      mapPin.getElement().dataset.tier = tier;
+      mapPin.getElement().dataset.approx = h.approx ? '1' : '0';
+      resizeMap();
+    }).catch(function (err) {
+      // Offline, or a blocked CDN. Say so and hand over a map that does work,
+      // rather than leaving an empty grey rectangle to be interpreted.
+      mapEl.hidden = true;
+      mapNote.innerHTML = 'Map unavailable offline. '
+        + '<a href="https://www.openstreetmap.org/?mlat=' + encodeURIComponent(h.lat)
+        + '&amp;mlon=' + encodeURIComponent(h.lon) + '#map=' + zoom + '/' + encodeURIComponent(h.lat)
+        + '/' + encodeURIComponent(h.lon) + '" target="_blank" rel="noopener noreferrer">'
+        + 'Open this location in OpenStreetMap</a>.';
+      warn(err);
+    });
+  }
+
+  // The map is built while the drawer is still translated off-screen, so it
+  // measures its container as zero and draws nothing until told to look again.
+  function resizeMap() {
+    if (mapView && !mapWrap.hidden) mapView.resize();
   }
 
   /* ---- drawer ---- */
@@ -1132,6 +1302,9 @@
         + ' href="' + esc(mrf) + '" target="_blank" rel="noopener noreferrer">FILE</a>';
     }
     $('oc-tags').innerHTML = tags;
+    // Passed the same tier the badge just used, so correcting a verdict
+    // recolours the pin along with everything else.
+    renderMap(h, tier);
     $('oc-status').value = rec ? rec.status : 'none';
     $('oc-followup').value = rec ? (rec.followUpOn || '') : '';
     fillCorrection(force);
@@ -1174,6 +1347,9 @@
       drawer.classList.add('on');
       scrim.classList.add('on');
       $('oc-close').focus();
+      // renderDrawer ran while the drawer was still hidden, so a map that was
+      // already built measured its container as zero.
+      resizeMap();
     });
     document.addEventListener('keydown', onDrawerKey);
   }
@@ -1209,10 +1385,21 @@
   scrim.addEventListener('click', closeDrawer);
   $('oc-close').addEventListener('click', closeDrawer);
 
-  // Rows are re-rendered constantly by the virtualiser, so delegate.
+  // Rows are re-rendered constantly by the virtualiser, so delegate. The whole
+  // row opens the drawer, not just the name: on a 64px row the name was a 34px
+  // target you had to know about, and on the phone card it left most of the
+  // card inert. The Log button needs no case of its own, it sits inside a row
+  // that carries the same CCN.
   canvas.addEventListener('click', function (e) {
-    var target = e.target.closest ? e.target.closest('.oc-btn, .oc-open') : null;
-    if (target && target.dataset.ccn) openDrawer(target.dataset.ccn);
+    if (!e.target.closest) return;
+    // FILE and PTR point at the hospital's own server. Those clicks are theirs.
+    if (e.target.closest('a[href]')) return;
+    // A click that lands at the end of a drag is someone copying a CCN, not
+    // asking for the drawer.
+    var sel = window.getSelection && window.getSelection();
+    if (sel && !sel.isCollapsed && String(sel).trim()) return;
+    var row = e.target.closest('.reg-row');
+    if (row && row.dataset.ccn) openDrawer(row.dataset.ccn);
   });
 
   function seedFields() {
@@ -1818,7 +2005,11 @@
   });
   // The marks are painted from CSS variables, so a theme flip needs a repaint.
   var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
-  if (darkQuery.addEventListener) darkQuery.addEventListener('change', function () { runField(false); });
+  if (darkQuery.addEventListener) darkQuery.addEventListener('change', function () {
+    runField(false);
+    // Same reason the toggle does it: the basemap follows the theme by hand.
+    if (openCcn) renderDrawer();
+  });
 
   applyFilters();
   renderOutreachSection();
@@ -1853,6 +2044,10 @@
     try { window.localStorage.setItem('cms-hpt-tracker.theme', next); } catch (e) { /* private mode */ }
     paintToggle();
     runField(false);
+    // The basemap is a separate stylesheet from the page's, so it has to be
+    // told; a light Positron under a black drawer is the one thing on screen
+    // that would not follow.
+    if (openCcn) renderDrawer();
   });
   // Following the OS while no explicit choice is stored means the label has to
   // follow it too.

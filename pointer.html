@@ -54,6 +54,7 @@
       <a href="mrf.html">What an MRF is</a>
       <a href="rules.html">What CMS requires</a>
       <a href="pointer.html" aria-current="page">The pointer file</a>
+      <a href="skill.html">The agent skill</a>
       <a href="https://github.com/anthonyisnotadev" target="_blank" rel="noopener noreferrer">GitHub</a>
     </nav>
     <div class="masthead-util">
@@ -91,6 +92,7 @@
       <li><a href="#footer">The footer link</a></li>
       <li><a href="#audit">How this audit uses it</a></li>
       <li><a href="#wild">What real files look like</a></li>
+      <li><a href="#glossary">Glossary</a></li>
       <li><a href="#sources">Sources</a></li>
     </ol>
   </nav>
@@ -98,11 +100,33 @@
   <main class="prose" id="main" tabindex="-1">
 
     <!-- ===================================================== -->
+    <aside class="plain" aria-labelledby="plain-h">
+      <p class="eyebrow" id="plain-h">The short version</p>
+      <ul>
+        <li><b>A hospital&rsquo;s price file can sit anywhere on its website, and for years the
+          rule never said where.</b> So they went everywhere. Each one was published, and
+          collectively they were unfindable.</li>
+        <li><b>The fix was a signpost.</b> Any website hosting a price file must also serve a
+          small text file at one fixed, guessable address &mdash;
+          <code>yourhospital.com/cms-hpt.txt</code> &mdash; so that nothing has to go
+          looking.</li>
+        <li><b>It is five lines per hospital.</b> Which hospital, which page, a direct link to
+          the file, who to ask about it, and their email address. That is the entire format.</li>
+        <li><b>It is the reason this audit is possible.</b> Instead of searching five thousand
+          hospital websites, you guess one address per hospital and read a file the size of a
+          text message.</li>
+      </ul>
+      <p class="more">Below is the requirement in full, and how the audit reads it. Words
+        underlined like <a class="gl" href="#g-crawler">crawler</a> are jargon; hover one, or
+        follow it down to <a href="#glossary">the glossary</a>.</p>
+    </aside>
+
+    <!-- ===================================================== -->
     <section id="why">
       <p class="eyebrow">Rationale</p>
       <h2>The problem it solves</h2>
 
-      <p class="lead">By 2023, thousands of hospitals were publishing price files that satisfied every
+      <p class="lead">By 2023, thousands of hospitals were publishing <a class="gl" href="#g-mrf">price files</a> that satisfied every
         accessibility rule in <a href="rules.html#access">&sect;&nbsp;180.50(d)</a> and were still, in
         practice, unfindable.</p>
 
@@ -113,12 +137,12 @@
          hand.</p>
 
       <p>The CY2024 rule&rsquo;s fix was deliberately small. Rather than dictate where the file lives, CMS
-         required an <strong>index at a fixed, predictable address</strong> saying where it lives. CMS was
+         required an <strong>index at a fixed, predictable address</strong> saying where it lives. <a class="gl abbr" href="#g-cms">CMS</a> was
          explicit about the purpose: to facilitate automated access to hospital
          MRFs.<sup class="ref"><a href="#s2">2</a></sup></p>
 
       <div class="callout">
-        <h4>The same trick as robots.txt</h4>
+        <h4>The same trick as <a class="gl" href="#g-robots">robots.txt</a></h4>
         <p>A well-known path at the root of a domain, in a format a five-line parser can read, whose whole
            job is to say where the interesting thing actually is. The design is borrowed and it works for
            the same reason: you never have to crawl a site to find the file, you only have to guess the
@@ -223,12 +247,12 @@ contact-email: pricetransparency@example.org</pre>
       <p class="eyebrow">Health systems</p>
       <h2>Systems, shared files, and vendors</h2>
 
-      <p class="lead">Most American hospitals belong to a system, and systems publish one pointer file
+      <p class="lead">Most American hospitals belong to a <a class="gl" href="#g-health-system">system</a>, and systems publish one pointer file
         covering many hospitals. This is expressly contemplated by the specification, and it is where the
         format gets interesting.<sup class="ref"><a href="#s2">2</a></sup></p>
 
       <h3>Different charges, different files</h3>
-      <p>Where two locations under one licence have different standard charges,
+      <p>Where two locations under one <a class="gl" href="#g-licence">licence</a> have different standard charges,
          <a href="https://www.ecfr.gov/current/title-45/part-180/section-180.50#p-180.50(a)(2)">&sect;&nbsp;180.50(a)(2)</a>
          requires a separate file for each. They may share a source page, but each entry carries its own
          <code>mrf-url</code>.</p>
@@ -280,7 +304,7 @@ contact-email: mrf@example.org</pre>
    EIN             hospital name           fixed literal format</i></pre>
       </figure>
 
-      <p>This is a quiet but useful piece of engineering. The Employer Identification Number is a
+      <p>This is a quiet but useful piece of engineering. The <a class="gl" href="#g-ein">Employer Identification Number</a> is a
          nationally unique identifier for the filing entity, so a compliant filename identifies its publisher
          independently of whatever the pointer file claims, which is exactly what you want when
          auditing a claim. CMS publishes a naming wizard for hospitals that would rather not get it
@@ -331,7 +355,7 @@ contact-email: mrf@example.org</pre>
           <div class="what">
             <b>Four URLs per candidate domain</b>
             <code>/cms-hpt.txt</code> and <code>/.well-known/cms-hpt.txt</code>, each with and without
-            <code>www.</code>. The <code>.well-known</code> paths are not what the specification asks for,
+            <code>www.</code>. The <a class="gl" href="#g-well-known"><code>.well-known</code></a> paths are not what the specification asks for,
             but enough hospitals put it there that not checking would produce false negatives.
           </div>
         </li>
@@ -350,7 +374,7 @@ contact-email: mrf@example.org</pre>
             <b>Location name against the CMS registry</b>
             Hospital names repeat across states, so a name match alone is never enough. Ambiguous cases are
             adjudicated against the street address, and a language model is used only to decide which listed
-            facility corresponds to a given CCN.
+            facility corresponds to a given <a class="gl abbr" href="#g-ccn">CCN</a>.
           </div>
         </li>
         <li>
@@ -358,7 +382,7 @@ contact-email: mrf@example.org</pre>
           <div class="what">
             <b>Against the file&rsquo;s own header</b>
             The MRF header carries the hospital&rsquo;s address and its
-            <code>license_number | &lt;ST&gt;</code> licensing state. Both are read with a ranged request
+            <code>license_number | &lt;ST&gt;</code> licensing state. Both are read with a <a class="gl" href="#g-range-request">ranged request</a>
             (a few kilobytes, not the <a href="mrf.html#scale">164&nbsp;MB average file</a>), and
             checked against the registry row before a match is accepted.
           </div>
@@ -388,7 +412,7 @@ contact-email: mrf@example.org</pre>
               <td class="t-right t-mono">37</td>
               <td><span class="badge" data-tier="failing">No pointer published</span></td>
               <td>The website answers, and there is no <code>cms-hpt.txt</code> at any of the four paths.
-                  A clean breach of &sect;&nbsp;180.50(d)(6)(i), and strikingly rare, which is the
+                  A clean breach of <a class="gl" href="#g-cfr">&sect;&nbsp;180.50(d)(6)(i)</a>, and strikingly rare, which is the
                   good news in this dataset.</td>
             </tr>
             <tr>
@@ -400,8 +424,8 @@ contact-email: mrf@example.org</pre>
             <tr>
               <td class="t-right t-mono">119</td>
               <td><span class="badge" data-tier="blocked">Pointer blocked</span></td>
-              <td>The domain answered the request for a 300-byte text file with 403 or 429. Since
-                  &sect;&nbsp;180.50(d)(3)(iv) requires accessibility to automated searches, this is
+              <td>The domain answered the request for a 300-byte text file with <a class="gl" href="#g-http-status">403 or 429</a>. Since
+                  &sect;&nbsp;180.50(d)(3)(iv) requires accessibility to <a class="gl" href="#g-crawler">automated searches</a>, this is
                   suggestive, but a browser may well succeed, so nothing is asserted.</td>
             </tr>
             <tr>
@@ -431,6 +455,67 @@ contact-email: mrf@example.org</pre>
            wrongly on <a href="tracker.html">the tracker</a>, its outreach panel takes corrections and keeps
            them visibly separate from the crawl.</p>
       </div>
+    </section>
+
+    <!-- ===================================================== -->
+    <section id="glossary">
+      <p class="eyebrow">Plain English</p>
+      <h2>Glossary</h2>
+      <p class="lead">Every piece of jargon this page uses, in one sentence each. Built from a
+        single shared dictionary, so a term means the same thing on all three explainers.</p>
+
+<!-- glossary:start -->
+    <dl class="defs glossary">
+      <div id="g-http-status">
+        <dt>403 and 429</dt>
+        <dd>Numeric answers from a web server. 403 means &ldquo;refused&rdquo;; 429 means &ldquo;you are asking too often&rdquo;. Either stops an automated check without revealing whether the file was there.</dd>
+      </div>
+      <div id="g-cfr">
+        <dt>45 CFR Part 180</dt>
+        <dd>The Code of Federal Regulations is the published rulebook of the US government, split into numbered titles and parts. Title 45, Part 180 is the hospital price transparency rule; &ldquo;&sect;&nbsp;180.50&rdquo; is one numbered section inside it.</dd>
+      </div>
+      <div id="g-ccn">
+        <dt>CCN</dt>
+        <dd>CMS Certification Number: the identifier Medicare uses for a hospital. It is how this tracker tells apart the several hospitals in the country sharing a name.</dd>
+      </div>
+      <div id="g-cms">
+        <dt>CMS</dt>
+        <dd>The Centers for Medicare &amp; Medicaid Services: the federal agency that writes these rules, checks them, and issues the fines.</dd>
+      </div>
+      <div id="g-crawler">
+        <dt>Crawler</dt>
+        <dd>A program that fetches web pages automatically, the way a search engine does. This audit is one, which is why some hospital websites turn it away.</dd>
+      </div>
+      <div id="g-ein">
+        <dt>EIN</dt>
+        <dd>Employer Identification Number: the tax number the IRS issues to a business. CMS requires it at the front of the price file&rsquo;s filename, so you can tell who published a file from its name alone.</dd>
+      </div>
+      <div id="g-health-system">
+        <dt>Health system</dt>
+        <dd>A company owning several hospitals. Systems normally publish one pointer file covering all of their hospitals at once, which is why one file can decide the verdict for dozens of rows in the tracker.</dd>
+      </div>
+      <div id="g-licence">
+        <dt>Hospital licence</dt>
+        <dd>The permit a state issues that lets a building operate as a hospital. The rule attaches to the licence rather than to the building, which is why one filing can cover several sites.</dd>
+      </div>
+      <div id="g-mrf">
+        <dt>Machine-readable file (MRF)</dt>
+        <dd>The one big file every hospital has to publish, listing every price it charges. &ldquo;Machine-readable&rdquo; only means a computer can read it without a person retyping anything: a spreadsheet-like file, not a PDF and not a scan.</dd>
+      </div>
+      <div id="g-range-request">
+        <dt>Range request</dt>
+        <dd>Asking a web server for only the first few kilobytes of a file instead of the whole thing. It is how this audit reads the top of a 164&nbsp;MB price file without downloading 164&nbsp;MB.</dd>
+      </div>
+      <div id="g-robots">
+        <dt>robots.txt</dt>
+        <dd>A long-standing web convention: a plain text file at the root of a site telling automated visitors what they may and may not fetch. The pointer file borrows its design wholesale.</dd>
+      </div>
+      <div id="g-well-known">
+        <dt>/.well-known/</dt>
+        <dd>A folder name reserved by web standards for files meant for machines rather than people. Not where CMS asked for the pointer file, but where enough hospitals put it that this audit looks there too.</dd>
+      </div>
+    </dl>
+    <!-- glossary:end -->
     </section>
 
     <!-- ===================================================== -->
