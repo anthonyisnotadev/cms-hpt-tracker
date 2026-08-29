@@ -546,6 +546,10 @@ select {
 .oc-scrim {
   position: fixed; inset: 0; z-index: 60; background: rgba(0, 0, 0, .35);
   opacity: 0; pointer-events: none; transition: opacity .18s ease;
+  /* The drawer is modal, so a drag on the scrim must not scroll the page
+     behind it. On a phone the drawer covers the screen, and a page that has
+     silently moved on underneath is disorienting when the drawer closes. */
+  touch-action: none;
 }
 .oc-scrim.on { opacity: 1; pointer-events: auto; }
 
@@ -559,7 +563,9 @@ select {
 }
 .oc-drawer.on { transform: none; }
 
-.oc-head { padding: var(--s-5) var(--s-5) var(--s-4); border-bottom: 1px solid var(--rule); }
+/* The header does not scroll, so a drag that starts on it would chain to the
+   page behind the drawer. Taps are unaffected; only panning is blocked. */
+.oc-head { padding: var(--s-5) var(--s-5) var(--s-4); border-bottom: 1px solid var(--rule); touch-action: none; }
 .oc-head-top { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--s-4); }
 .oc-head h3 { font-size: var(--fs-h3); line-height: 1.2; margin: 0; }
 .oc-head .oc-sub { font-size: var(--fs-xs); color: var(--ink-3); margin-top: var(--s-2); }
@@ -571,7 +577,9 @@ select {
 .oc-close:hover { background: var(--surface-sunk); color: var(--ink); }
 .oc-head-tags { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-3); }
 
-.oc-body { flex: 1 1 auto; overflow-y: auto; padding: 0 var(--s-5) var(--s-6); }
+/* overscroll-behavior: contain stops a flick that reaches the end of the
+   drawer from carrying on into the page underneath. */
+.oc-body { flex: 1 1 auto; overflow-y: auto; overscroll-behavior: contain; padding: 0 var(--s-5) var(--s-6); }
 .oc-block { padding: var(--s-5) 0; border-bottom: 1px solid var(--rule); }
 .oc-block:last-child { border-bottom: none; }
 .oc-block > h4 {
@@ -657,6 +665,13 @@ select {
   background: var(--surface); color: var(--ink);
   border: 1px solid var(--rule-strong); border-radius: var(--r-md); width: 100%;
   max-width: none; height: auto;
+  /* min-width: 0, not the auto default. These are grid items (.oc-field is a
+     grid), and an auto minimum refuses to shrink below the control's
+     min-content width. input[type=date] measures ~172px because of its
+     shadow-DOM spinners, so in the 140px track of .oc-row2 it punched straight
+     through the drawer's right edge on a phone. Same trap as 1fr vs
+     minmax(0,1fr) further down, arriving from the other side. */
+  min-width: 0;
 }
 .oc-field textarea { font-size: var(--fs-sm); line-height: 1.55; resize: vertical; min-height: 96px; }
 .oc-field input[type="date"] { font-variant-numeric: tabular-nums; }
@@ -809,19 +824,87 @@ select {
   .wordmark span { display: none; }
   section.wrap { padding-top: var(--s-7); padding-bottom: var(--s-7); }
   /* The histogram's fixed 150px label column does not fit beside a track and a
-     count at phone widths. */
+     count at phone widths, so the bar drops to its own line under the pair.
+     All three are placed explicitly: left to auto-placement the count lands on
+     a third row and right-aligns to the end of the 1fr column, which is short
+     of where the full-width bar ends, so the digits sat in mid-air. */
   .hist-row { grid-template-columns: minmax(0, 1fr) 56px; gap: var(--s-2) var(--s-3); }
-  .hist-track { grid-column: 1 / -1; }
+  .hist-label { grid-area: 1 / 1; }
+  .hist-n     { grid-area: 1 / 2; }
+  .hist-track { grid-area: 2 / 1 / 3 / -1; }
   .finding { grid-template-columns: 3px minmax(0,1fr) 60px; }
   .finding .f-track { display: none; }
   .reg-head { display: none; }
-  .reg-row { grid-template-columns: 128px minmax(0,1fr); grid-template-rows: auto auto; row-gap: var(--s-1); height: auto; padding: var(--s-3) var(--s-4); position: relative; }
+  /* The row turns from a table line into a card: the name gets the full width
+     on top, and the three things that qualify it, verdict, age and the log,
+     share one line under it.
+
+     The name comes first because it is what you are looking for. Sharing the
+     top line with the badge left it 167px on a 375px screen, which truncated
+     "Alaska Native Medical Center" to "Alaska Native Medic..." on every row of
+     an entire screenful. Age and the log each had a full-width line of their
+     own below, so a row cost 127px to say very little. */
+  .reg-row {
+    grid-template-columns: auto auto minmax(0, 1fr);
+    row-gap: var(--s-2); column-gap: var(--s-3);
+    height: auto; padding: var(--s-4); position: relative;
+  }
   .reg-viewport { height: auto; max-height: none; overflow: visible; }
   .reg-canvas { height: auto !important; }
-  .cell-why, .cell-age, .cell-links, .cell-outreach { grid-column: 1 / -1; }
+  .cell-name     { grid-area: 1 / 1 / 2 / -1; }
+  .reg-row .badge.flat { grid-area: 2 / 1; align-self: center; }
+  .cell-age      { grid-area: 2 / 2; text-align: left; }
+  .cell-outreach { grid-area: 2 / 3; justify-self: end; }
+  .cell-why, .cell-links { display: none; }
+  /* With the whole width to itself the name can wrap instead of ellipsing.
+     Rows are variable-height here anyway: layout() renders a capped list on
+     this side of the breakpoint rather than virtualising by --row-h. */
+  .cell-name b { white-space: normal; overflow: visible; }
+  .cell-name span { white-space: normal; }
   .cell-outreach .oc-btn { width: auto; }
   .oc-drawer { width: 100%; border-radius: 0; }
 }
 @media (max-width: 520px) {
   .tiles { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   Touch
+
+   Keyed on the pointer, not the width: an iPad in landscape is 1024px
+   wide and still driven by a thumb, and a 320px desktop window is not.
+   Nothing in here changes what the page looks like under a mouse.
+   ============================================================ */
+@media (pointer: coarse) {
+  /* 16px is not a taste decision. iOS Safari zooms the viewport whenever a
+     form control smaller than 16px takes focus, and it does not zoom back
+     out, so tapping the register's search box left the whole page magnified
+     and scrolling sideways. Every control on the page was 15px.
+
+     Only the control text moves; the page's type scale is untouched. */
+  .search input,
+  .secnav-search input,
+  select,
+  .oc-field input, .oc-field select, .oc-field textarea,
+  .oc-io textarea {
+    font-size: 16px;
+  }
+
+  /* A date input at 16px needs more room than the 15px layout allowed: the
+     year ran under the picker icon in both places one appears. The compose
+     row stacks so "Sent on" gets the full width, and the follow-up field takes
+     a line of its own with its two buttons paired underneath. */
+  .oc-row2 { grid-template-columns: minmax(0, 1fr); }
+  .oc-date-row input[type="date"] { flex: 1 1 100%; min-width: 10em; }
+
+  /* Controls that were sized for a cursor. The register's log button is the
+     one that matters, it is the only per-row action left on a phone and there
+     are sixty of them on screen; the rest live in the drawer. --ctl-h is the
+     scale's existing touch size, so these join it rather than inventing one. */
+  .oc-btn { min-height: var(--ctl-h); }
+  .oc-close { width: var(--ctl-h); height: var(--ctl-h); }
+  .oc-quickset, .oc-edit, .oc-del, .clear-filters, .oc-ev-foot select {
+    min-height: var(--ctl-h);
+  }
+  .oc-action { min-height: var(--ctl-h); }
 }
