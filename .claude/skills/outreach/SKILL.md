@@ -408,14 +408,16 @@ redacted copy is committed, published, and deployed to
 `mrf.anthonyisnota.dev`.
 
 Redaction masks **every email address automatically** (`jdoe@examplehospital.org`
-→ `j***@examplehospital.org`), but **person names are a manual list** — `NAME_SUBS`
-at the top of `scripts/outreach-redact.js`. This is the one maintenance duty
+→ `j***@examplehospital.org`), but **person names are a manual list** —
+`cms_data/redact-names.json` (private, gitignored; see
+`redact-names.example.json` for the format). This is the one maintenance duty
 the split creates:
 
 - Whenever a plan's `to`, `body`, or `note` text contains a **named person**
-  at a hospital, check `NAME_SUBS` covers that name. If not, propose adding
-  it (lowercase key → generic replacement like "the hospital contact") before
-  committing.
+  at a hospital, check `redact-names.json` covers that name. If not, propose
+  adding it (lowercase key → generic replacement like "the hospital contact")
+  before committing. The file is private — name additions stay local and are
+  never committed.
 - After the git commit, glance at what was committed and confirm no unmasked
   person name appears in `outreach.public.json`. Emails are safe by
   construction; names are not.
@@ -428,14 +430,14 @@ intentionally *not* redacted.
 
 ## Committing the public copy
 
-After a `--commit` apply (or a NAME_SUBS edit), make the git commit yourself —
-the user shouldn't have to. The rules:
+After a `--commit` apply (or a `redact-names.json` edit), make the git commit
+yourself — the user shouldn't have to. The rules:
 
 1. Check `git status --short`. Stage **only** the files this write touched:
-   `cms_data/outreach.public.json`, plus `scripts/outreach-redact.js` if you
-   added a NAME_SUBS entry. Never stage anything else the user has in flight, and
-   never `git add -A` — the private `cms_data/outreach.json` is gitignored
-   but force-adding or a broad stage is still on you to avoid.
+   `cms_data/outreach.public.json` and nothing else — `redact-names.json` is
+   gitignored and stays local. Never stage anything else the user has in
+   flight, and never `git add -A` — the private `cms_data/outreach.json` is
+   gitignored but force-adding or a broad stage is still on you to avoid.
 2. Sanity-check the staged diff (`git diff --cached`) for unmasked person
    names before committing. Emails render as `x***@domain` — if you see a
    full address, redaction failed; stop and say so instead of committing.

@@ -7,6 +7,9 @@ node_modules/
 # shareable copy: emails masked, person names replaced.
 cms_data/outreach.json
 cms_data/outreach.backup.json
+# Real staff names to mask — publishing the keys would defeat the masking.
+# Copy redact-names.example.json to redact-names.json and fill it in locally.
+cms_data/redact-names.json
 
 # Personal tooling config. The outreach skill itself is public (sanitized);
 # launch.json is local editor setup.

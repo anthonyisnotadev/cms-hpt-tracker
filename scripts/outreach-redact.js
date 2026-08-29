@@ -2,8 +2,9 @@
 /* Generates cms_data/outreach.public.json from cms_data/outreach.json.
  *
  * The private file never leaves this machine. This script derives a shareable
- * copy from it: every email address has its local part masked (jdoe@examplehospital.org
- * -> j***@examplehospital.org), and the person names in NAME_SUBS are replaced so
+ * copy from it: every email address has its local part masked
+ * (jdoe@examplehospital.org -> j***@examplehospital.org), and the person names
+ * listed in cms_data/redact-names.json (private, gitignored) are replaced so
  * individual hospital staff can't be identified in the public record. The
  * hospital domain stays visible — it is public information and useful context.
  *
@@ -19,14 +20,19 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..');
 const SRC = path.join(ROOT, 'cms_data', 'outreach.json');
 const DST = path.join(ROOT, 'cms_data', 'outreach.public.json');
+const NAMES_FILE = path.join(ROOT, 'cms_data', 'redact-names.json');
 
-/* Person names that appear in notes/emails. Extend as new contacts are logged.
- * Keys must be lowercase for matching; values are the public replacement. */
-const NAME_SUBS = {
-  'jane doe': 'the hospital contact',
-  'john smith': 'the hospital contact',
-  'sam lee': 'the hospital contact',
-};
+/* Person names that appear in notes/emails, as a private
+ * cms_data/redact-names.json map: { "real name": "public replacement" }.
+ * Keys must be lowercase for matching. The file is gitignored — publishing
+ * the keys would defeat the masking. See redact-names.example.json. */
+function loadNameSubs() {
+  try {
+    return JSON.parse(fs.readFileSync(NAMES_FILE, 'utf8'));
+  } catch (e) {
+    return {}; /* no list configured — emails still masked, names pass through */
+  }
+}
 
 const EMAIL_RE = /[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g;
 
@@ -39,15 +45,15 @@ function maskEmail(addr) {
 }
 
 function maskNames(s) {
+  const subs = loadNameSubs();
   let out = s;
-  Object.keys(NAME_SUBS).forEach((name) => {
-    out = out.replace(new RegExp(name, 'gi'), NAME_SUBS[name]);
+  Object.keys(subs).forEach((name) => {
+    out = out.replace(new RegExp(name, 'gi'), subs[name]);
   });
   return out;
 }
 
-/* "Contact: the hospital pricing team (d***@peacehealth.org)" still reads fine;
- * "Emailed d***@norcen.org (bounced ...)" too. Applied to every string field. */
+/* Applied to every string field: names first, then any surviving address. */
 function redactString(s) {
   return maskNames(s).replace(EMAIL_RE, maskEmail);
 }
