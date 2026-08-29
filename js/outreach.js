@@ -1,9 +1,13 @@
 /* Outreach store: notes and a log of emails you sent, keyed by CCN.
  *
- * Talks to /api/outreach when a server is serving the page, and
- * falls back to localStorage when it isn't (the standalone build, file://, or a
- * published copy). The two are never merged — whichever backend answers first
- * owns the data — so `mode` is surfaced in the UI to make that visible.
+ * Talks to /api/outreach when a server is serving the page. Failing that, a
+ * browser that already has local edits keeps using them (localStorage), and
+ * a browser that doesn't seeds itself by fetching cms_data/outreach.public.json
+ * — the redacted copy the outreach skill commits and pushes — so a deployed,
+ * server-less copy of the site (the standalone build, file://, or a published
+ * copy such as GitHub Pages) still shows the logged outreach instead of an
+ * empty log. None of the three are ever merged — whichever backend answers
+ * first owns the data — so `mode` is surfaced in the UI to make that visible.
  *
  * Nothing in here sends mail. Emails are recorded after the fact; composing
  * hands off to the user's own mail client via a mailto: link.
@@ -233,6 +237,35 @@
 
   /* ---------- init ---------- */
 
+  var PUBLIC_JSON = 'cms_data/outreach.public.json';
+
+  function hasLocalRecords() {
+    try {
+      return !!(global.localStorage.getItem(LOCAL_KEY) || global.localStorage.getItem(LEGACY_LOCAL_KEY));
+    } catch (e) { return false; }
+  }
+
+  // Seeds a fresh browser from the published redacted copy. Once this browser
+  // writes anything, localWrite() persists the whole map, so later loads take
+  // the hasLocalRecords() branch below and this seed is never fetched again.
+  function fetchPublished() {
+    return fetch(PUBLIC_JSON, { headers: { Accept: 'application/json' } })
+      .then(function (r) {
+        if (!r.ok) throw new Error('HTTP ' + r.status);
+        return r.json();
+      })
+      .then(function (j) {
+        var next = Object.create(null);
+        Object.keys(j || {}).forEach(function (k) {
+          if (k === '__proto__' || k === 'constructor' || k === 'prototype') return;
+          next[k] = j[k];
+        });
+        records = next;
+        mode = 'published';
+        return 'published';
+      });
+  }
+
   var ready = (function () {
     if (typeof fetch !== 'function' || !/^https?:$/.test(global.location.protocol)) {
       records = localRead();
@@ -251,9 +284,16 @@
         return 'server';
       })
       .catch(function () {
-        records = localRead();
-        mode = 'local';
-        return 'local';
+        if (hasLocalRecords()) {
+          records = localRead();
+          mode = 'local';
+          return 'local';
+        }
+        return fetchPublished().catch(function () {
+          records = localRead();
+          mode = 'local';
+          return 'local';
+        });
       });
   })();
 

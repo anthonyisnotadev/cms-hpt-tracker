@@ -1360,10 +1360,14 @@
 
   /* ---- storage mode + export/import ---- */
   function renderMode() {
-    var server = OC.mode === 'server';
-    $('oc-mode-label').textContent = server ? 'this server' : 'this browser only';
-    $('oc-mode-note').textContent = server
+    var mode = OC.mode;
+    $('oc-mode-label').textContent = mode === 'server' ? 'this server'
+      : mode === 'published' ? 'the published copy'
+      : 'this browser only';
+    $('oc-mode-note').textContent = mode === 'server'
       ? 'Saved to cms_data/outreach.json — shared by every browser that opens this server.'
+      : mode === 'published'
+      ? 'Showing the published log from cms_data/outreach.public.json. No server reachable, so anything you add here stays in this browser only.'
       : 'No server reachable, so records live in this browser’s localStorage. Export to move them.';
   }
   $('oc-export').addEventListener('click', function () {
