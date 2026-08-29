@@ -219,7 +219,9 @@ price files, which average 166 MB each and already total 664 MB locally.
 All optional. With nothing set, the free paths still run to completion and
 anything blocked is recorded for a later pass.
 
-Put credentials in `.env.local`, which is gitignored:
+Put credentials in `.env.local`, which is gitignored. The runner reads `.env`
+first and lets `.env.local` override it; both are ignored, and nothing here
+encrypts either one, so live keys never belong in a commit:
 
 ```bash
 HPT_SEARCH=serper                  # or: decodo | dataforseo | exa

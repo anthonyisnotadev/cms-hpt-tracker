@@ -14,3 +14,11 @@ cms_data/redact-names.json
 # Personal tooling config. The outreach skill itself is public (sanitized);
 # launch.json is local editor setup.
 .claude/launch.json
+
+# Credentials. scripts/hpt/run.js loads .env first, then .env.local on top.
+# Nothing here encrypts either one: there is no .gitattributes, no git-crypt
+# filter and no git-crypt binary, whatever run.js's inherited comment says. A
+# committed .env would go up in the clear, so ignore both and commit only the
+# example.
+.env*
+!.env.example
