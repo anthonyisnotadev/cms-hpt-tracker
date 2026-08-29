@@ -3,11 +3,11 @@
  * Talks to /api/outreach when a server is serving the page. Failing that, a
  * browser that already has local edits keeps using them (localStorage), and
  * a browser that doesn't seeds itself by fetching cms_data/outreach.public.json
- * — the redacted copy the outreach skill commits and pushes — so a deployed,
+ *, the redacted copy the outreach skill commits and pushes, so a deployed,
  * server-less copy of the site (the standalone build, file://, or a published
  * copy such as GitHub Pages) still shows the logged outreach instead of an
- * empty log. None of the three are ever merged — whichever backend answers
- * first owns the data — so `mode` is surfaced in the UI to make that visible.
+ * empty log. None of the three are ever merged, whichever backend answers
+ * first owns the data, so `mode` is surfaced in the UI to make that visible.
  *
  * Nothing in here sends mail. Emails are recorded after the fact; composing
  * hands off to the user's own mail client via a mailto: link.
@@ -48,7 +48,7 @@
 
   /* ---------- discarded input ---------- */
 
-  /* This store coerces silently — a URL without a scheme, a date that isn't
+  /* This store coerces silently, a URL without a scheme, a date that isn't
    * YYYY-MM-DD, or a body past its cap is stored empty, replaced, or clipped
    * with no error. In the drawer that reads as a field quietly emptying itself;
    * through importJson() it is invisible entirely. So after every write we
@@ -70,7 +70,7 @@
 
   // Fields worth comparing by value. name/city/state are deliberately absent from
   // entry/correction: those paths only seed a blank label, so a record that already
-  // has a name is meant to keep it — not a discard, and the drawer passes the
+  // has a name is meant to keep it, not a discard, and the drawer passes the
   // labels on every save.
   var COMPARE_FIELDS = {
     upsert: ['name', 'city', 'state', 'status', 'followUpOn'],
@@ -82,7 +82,7 @@
 
   // Addressing or bookkeeping rather than stored content. id and at are listed
   // because importJson() replays whole entries and this store always mints fresh
-  // ones — expected, not a discard worth reporting per entry.
+  // ones, expected, not a discard worth reporting per entry.
   var SKIP_FIELDS = ['ccn', 'clear', 'id', 'at', 'kind'];
 
   var FIELD_LABEL = {
@@ -107,7 +107,7 @@
 
   function explainDiscard(k, sent, stored) {
     var label = FIELD_LABEL[k] || k;
-    if (!stored) return label + ' was dropped — ' + (FIELD_RULE[k] || 'it did not look valid');
+    if (!stored) return label + ' was dropped: ' + (FIELD_RULE[k] || 'it did not look valid');
     if (stored.length < sent.length && sent.indexOf(stored) === 0) {
       return label + ' was shortened to ' + stored.length + ' characters';
     }
@@ -127,7 +127,7 @@
       }
       if (compare.indexOf(k) === -1) return;
       // A collapsed correction has nothing to compare against, but the rejected
-      // fields are why it collapsed — compare against empty so the cause shows too.
+      // fields are why it collapsed, compare against empty so the cause shows too.
       var target = landed;
       if (!target && kind === 'correction' && !(input && input.clear)) target = {};
       if (!target) return;
@@ -147,7 +147,7 @@
   function reportDiscards(ccn, kind, input, landed) {
     var msgs = discardsFor(kind, input, landed);
     if (kind === 'correction' && !(input && input.clear) && !landed) {
-      msgs.push('the correction was dropped — it needs a verdict, a URL, a domain, '
+      msgs.push('the correction was dropped: it needs a verdict, a URL, a domain, '
         + 'a file date, a template version or a note (a checked date alone is not enough)');
     }
     lastDiscards = msgs;
@@ -170,7 +170,7 @@
 
   /* An outcome says something about the record as a whole: a reply means the
      hospital answered, a bounce means the message never landed. Only
-     awaiting-reply moves — contacted and no-response were set deliberately.
+     awaiting-reply moves, contacted and no-response were set deliberately.
      Shared by setOutcome and editEntry so the rule has one home. */
   function applyOutcomeStatus(rec, outcome) {
     if (outcome === 'replied' && rec.status === 'awaiting-reply') rec.status = 'replied';
@@ -308,7 +308,7 @@
 
     onChange: function (fn) { if (typeof fn === 'function') listeners.push(fn); },
 
-    /* Fires when a write stored something other than what it was handed — a URL
+    /* Fires when a write stored something other than what it was handed, a URL
        without a scheme, a body past its cap. Saves still succeed; this is the
        only signal that part of the input did not survive. */
     onDiscard: function (fn) { if (typeof fn === 'function') discardListeners.push(fn); },
@@ -392,7 +392,7 @@
       return Promise.resolve(entry);
     },
 
-    /* A manual correction to the audit snapshot — the domain or file the crawl
+    /* A manual correction to the audit snapshot, the domain or file the crawl
        missed, and whether you judged it current. Kept in its own block so the
        UI can always show it as your finding rather than the crawler's.
        Pass { clear: true } to drop it. */
@@ -466,7 +466,7 @@
 
        Coercion differs from addEntry on purpose: a malformed sentAt there falls
        back to today, a fair default for a fresh log, but here it would overwrite a
-       date already correct — so it keeps the stored one and reports a discard.
+       date already correct, so it keeps the stored one and reports a discard.
        Mirrors editEntry in scripts/outreach-store.js; keep the two in step. */
     editEntry: function (ccn, id, fields) {
       var rec = records[ccn];

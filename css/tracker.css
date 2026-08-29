@@ -1,0 +1,827 @@
+/* ============================================================
+   Tracker-only styles.
+
+   Everything shared with the explainer pages, tokens, base type,
+   masthead, tables, badges, footer, lives in css/docs.css. This
+   file holds only what exists on tracker.html: the field, the
+   readout, the tiles, the findings list, the state table's extras,
+   the register, the outreach drawer and the tooltip.
+
+   scripts/build-tracker.js concatenates docs.css then this file
+   into tracker.html's <style> block, so rules here win where the
+   two touch the same selector. Keep those overlaps deliberate and
+   few, the point of the split is that there aren't two copies.
+   ============================================================ */
+
+:root {
+  /* The register is virtualised: every row is absolutely positioned at
+     index * this height, so js/tracker.js carries the same number in
+     ROW_H. Change one and change the other. */
+  --row-h: 64px;
+}
+
+/* ============================================================
+   Sections
+   ============================================================ */
+/* Longhand on purpose. `section.wrap` (0,1,1) outranks `.wrap` (0,1,0), so a
+   `padding: X 0` shorthand here silently zeroes the page gutter that .wrap sets
+  , which left every section flush to the edge on a phone and pushed the
+   freshness histogram past the viewport. Set only the axis this rule owns. */
+section.wrap { padding-top: var(--s-8); padding-bottom: var(--s-8); border-bottom: 1px solid var(--rule); }
+section:last-of-type { border-bottom: none; }
+
+.sec-head { margin-bottom: var(--s-6); max-width: 62ch; }
+.sec-head h2 { font-size: var(--fs-h2); line-height: 1.15; margin: var(--s-2) 0 0; }
+.sec-head p { margin: var(--s-3) 0 0; color: var(--ink-2); font-size: var(--fs-body); line-height: 1.55; }
+
+/* ============================================================
+   Section bar, the tracker's in-page navigation.
+
+   The explainer pages get a vertical numbered rail beside the prose.
+   This page cannot: its sections are full-width because the field and
+   the state table need the width. So the rail lies down and docks under
+   the masthead instead. No numbering, in a horizontal strip, position
+   already says how far through you are, so digits would be decoration.
+
+   Solid, not translucent: text sits on it at 13px and a blur would put
+   moving content behind small type.
+   ============================================================ */
+.secnav {
+  position: sticky; top: 0; z-index: 40;
+  background: var(--surface);
+  border-bottom: 1px solid var(--rule);
+}
+.secnav-inner { display: flex; align-items: center; gap: var(--s-4); min-height: 56px; }
+
+.secnav-links {
+  display: flex; align-items: center; gap: var(--s-1);
+  flex: 1 1 auto; min-width: 0;
+  overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none;
+}
+.secnav-links::-webkit-scrollbar { display: none; }
+.secnav-links a {
+  display: inline-flex; align-items: center;
+  min-height: 34px; padding: 0 var(--s-3);
+  border-radius: var(--r-md);
+  font-size: var(--fs-xs); color: var(--ink-3); white-space: nowrap;
+}
+.secnav-links a:hover { color: var(--ink); background: var(--surface-sunk); }
+.secnav-links a.on { color: var(--ink); font-weight: 600; background: var(--surface-sunk); }
+
+/* The lookup, reachable from anywhere on the page rather than only at
+   74% depth. Mirrors the register's own search both ways. */
+.secnav-search { flex: none; position: relative; width: 260px; }
+.secnav-search input {
+  width: 100%; font: inherit; font-size: var(--fs-xs);
+  height: 36px; padding: 0 var(--s-3) 0 var(--s-6);
+  background: var(--paper); color: var(--ink);
+  border: 1px solid var(--rule-strong); border-radius: var(--r-md);
+}
+.secnav-search input::placeholder { color: var(--ink-3); }
+.secnav-search svg { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); color: var(--ink-3); }
+
+@media (max-width: 860px) { .secnav-search { display: none; } }
+
+/* A plain jump link in the hero, so the tool is one action away on
+   landing too, without a second input holding query state. */
+.hero-jump {
+  display: inline-flex; align-items: center; gap: var(--s-2);
+  margin-top: var(--s-5);
+  min-height: var(--ctl-h); padding: 0 var(--s-5);
+  border-radius: var(--r-pill);
+  background: var(--ink); color: var(--paper);
+  font-size: var(--fs-sm); font-weight: 600;
+}
+.hero-jump:hover { opacity: .88; }
+
+/* ============================================================
+   The field, 5,419 marks, one per hospital, drawn to a canvas.
+   Solid marks are hospitals the crawl judged; hollow marks are the
+   ones it never reached. Absence is encoded as shape, not colour,
+   so the second-largest bloc in the data survives any colour
+   blindness and needs no hatch at 7px.
+   ============================================================ */
+/* Tier swatches, shared by the readout and the filter chips. The hollow
+   treatment for "not assessed" is applied by [data-solid="0"] below. */
+.sw-compliant { background: var(--st-compliant); }
+.sw-failing   { background: var(--st-failing); }
+.sw-blocked   { background: var(--st-blocked); }
+.sw-exempt    { background: var(--st-exempt); }
+.sw-unknown   { background: var(--st-unknown); }
+
+.field-fig { margin: 0; }
+
+#field {
+  display: block; width: 100%; height: auto;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--r-lg);
+  cursor: default;
+}
+#field.pickable { cursor: pointer; }
+
+.field-fig figcaption {
+  margin-top: var(--s-3);
+  font-size: var(--fs-xs); line-height: 1.55; color: var(--ink-3);
+  max-width: 74ch;
+}
+.field-fig figcaption b { color: var(--ink-2); font-weight: 600; }
+
+/* ---- Coverage split: what the crawl reached, before what it judged.
+   1,626 hospitals were never reachable at all. That is the largest thing
+   this audit cannot answer, so it is stated before any verdict rate. ---- */
+.coverage {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px; background: var(--rule);
+  border: 1px solid var(--rule); border-radius: var(--r-lg);
+  overflow: hidden; margin-top: var(--s-6);
+}
+.cov { background: var(--surface); padding: var(--s-5); }
+.cov .cov-k { font-size: var(--fs-label); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
+.cov .cov-n { font-size: 40px; font-weight: 600; line-height: 1.05; margin-top: var(--s-2); font-variant-numeric: tabular-nums; letter-spacing: -0.03em; }
+.cov .cov-note { margin-top: var(--s-2); font-size: var(--fs-sm); color: var(--ink-2); line-height: 1.5; }
+/* The unreached half is the finding, so it is the one that carries a mark. */
+.cov[data-role="unreached"] { border-left: 3px solid var(--field-hollow); }
+@media (max-width: 700px) { .coverage { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---- Readout: the printout summary block under the field ---- */
+.readout {
+  margin-top: var(--s-6);
+  border-top: 1px solid var(--rule-strong);
+  border-bottom: 1px solid var(--rule-strong);
+}
+.readout-row {
+  display: grid;
+  grid-template-columns: 18px minmax(0,1fr) 7ch 6ch minmax(90px, 190px);
+  gap: 0 var(--s-4); align-items: center;
+  width: 100%; text-align: left;
+  padding: var(--s-3) var(--s-1);
+  border-top: 1px solid var(--rule);
+  font-size: var(--fs-sm);
+}
+.readout-row:first-child { border-top: none; }
+.readout-row:nth-child(even) { background: var(--band); }
+.readout-row:hover { background: var(--surface-sunk); }
+
+.readout-mark { width: 12px; height: 12px; border-radius: 3px; justify-self: center; }
+.readout-mark[data-solid="0"] { background: none; border: 1.5px solid var(--field-hollow); }
+
+.readout-name {
+  font-size: var(--fs-sm); font-weight: 600;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+/* The note explains what the tier means, so it wraps rather than truncating;
+   five rows can afford uneven heights more than they can afford half a sentence. */
+.readout-name small {
+  display: block; font-size: var(--fs-xs);
+  font-weight: 400; line-height: 1.45; color: var(--ink-3); margin-top: 2px;
+  white-space: normal;
+}
+.readout-n { font-variant-numeric: tabular-nums; text-align: right; font-weight: 600; }
+.readout-pct { font-variant-numeric: tabular-nums; text-align: right; color: var(--ink-3); }
+
+/* Share bar, drawn at the same scale across every row so the rows compare
+   directly rather than each filling its own track. The bar's job is magnitude,
+   so every tier gets a solid fill, hollowing the "not assessed" bar would
+   read as less than 1,626 rather than as an absence. The hollow treatment
+   stays on the swatch, where it carries identity rather than length. */
+.readout-bar { height: 10px; background: var(--surface-sunk); border-radius: var(--r-sm); overflow: hidden; }
+.readout-bar i { display: block; height: 100%; border-radius: var(--r-sm); }
+
+.readout-foot {
+  margin: var(--s-4) 0 0; max-width: 74ch;
+  font-size: var(--fs-sm); line-height: 1.6; color: var(--ink-2);
+}
+.readout-foot b { font-weight: 600; color: var(--ink); font-variant-numeric: tabular-nums; }
+
+@media (max-width: 760px) {
+  .readout-row { grid-template-columns: 18px minmax(0,1fr) 7ch; }
+  .readout-pct, .readout-bar { display: none; }
+}
+
+/* ============================================================
+   Stat tiles
+   ============================================================ */
+.tiles { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: var(--r-lg); overflow: hidden; }
+.tile { background: var(--surface); padding: var(--s-5); }
+.tile .t-label { font-size: var(--fs-label); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
+.tile .t-value { font-weight: 600; font-size: 34px; line-height: 1.1; margin-top: var(--s-2); font-variant-numeric: tabular-nums; letter-spacing: -0.03em; }
+.tile .t-note { margin-top: var(--s-2); font-size: var(--fs-xs); color: var(--ink-2); line-height: 1.5; }
+
+/* ============================================================
+   Findings list
+   ============================================================ */
+.findings { display: grid; gap: 0; }
+.finding {
+  display: grid; grid-template-columns: 3px minmax(220px, 300px) minmax(0,1fr) 64px;
+  gap: 0 var(--s-5); align-items: center;
+  padding: var(--s-4) 0; border-top: 1px solid var(--rule);
+}
+.finding:last-child { border-bottom: 1px solid var(--rule); }
+.f-stripe { align-self: stretch; border-radius: var(--r-sm); }
+.f-stripe[data-tier="compliant"] { background: var(--st-compliant); }
+.f-stripe[data-tier="failing"]   { background: var(--st-failing); }
+.f-stripe[data-tier="blocked"]   { background: var(--st-blocked); }
+.f-stripe[data-tier="exempt"]    { background: var(--st-exempt); }
+.f-stripe[data-tier="unknown"]   { background: var(--st-unknown); }
+.f-name { font-weight: 600; font-size: var(--fs-sm); }
+.f-blurb { display: block; font-weight: 400; font-size: var(--fs-xs); color: var(--ink-3); margin-top: 2px; line-height: 1.5; }
+.f-track { height: 10px; background: var(--surface-sunk); border-radius: var(--r-sm); overflow: hidden; }
+.f-fill { display: block; height: 100%; border-radius: var(--r-sm); }
+.f-fill[data-tier="compliant"] { background: var(--st-compliant); }
+.f-fill[data-tier="failing"]   { background: var(--st-failing); }
+.f-fill[data-tier="blocked"]   { background: var(--st-blocked); }
+.f-fill[data-tier="exempt"]    { background: var(--st-exempt); }
+.f-fill[data-tier="unknown"]   { background: var(--st-unknown); background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.30) 0 3px, transparent 3px 7px); }
+.f-n { font-variant-numeric: tabular-nums; font-size: var(--fs-sm); font-weight: 600; text-align: right; }
+
+/* ============================================================
+   Two-column panels
+   ============================================================ */
+.cols { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: var(--s-8); }
+
+.panel-title { font-weight: 600; font-size: var(--fs-h3); letter-spacing: -0.018em; margin: 0 0 var(--s-1); }
+.panel-sub { margin: 0 0 var(--s-5); font-size: var(--fs-sm); color: var(--ink-2); }
+
+/* Freshness histogram */
+.hist { display: grid; gap: 0; }
+.hist-row { display: grid; grid-template-columns: 150px minmax(0,1fr) 56px; gap: var(--s-4); align-items: center; padding: var(--s-3) 0; border-top: 1px solid var(--rule); }
+.hist-row:last-child { border-bottom: 1px solid var(--rule); }
+.hist-label { font-size: var(--fs-sm); }
+.hist-track { height: 14px; background: var(--surface-sunk); border-radius: var(--r-sm); overflow: hidden; }
+.hist-fill { display: block; height: 100%; border-radius: var(--r-sm); background: var(--st-compliant); }
+.hist-row[data-over="1"] .hist-fill { background: var(--st-failing); }
+.hist-row[data-over="1"] .hist-label { color: var(--st-failing-fg); font-weight: 600; }
+.hist-n { font-variant-numeric: tabular-nums; font-size: var(--fs-sm); text-align: right; }
+
+.quantiles { display: flex; flex-wrap: wrap; gap: var(--s-4) var(--s-6); margin-top: var(--s-5); padding-top: var(--s-4); border-top: 1px solid var(--rule); }
+.quantiles div { font-size: var(--fs-xs); color: var(--ink-3); }
+.quantiles b { display: block; font-weight: 600; font-size: 22px; color: var(--ink); font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+
+/* ============================================================
+   Work queue
+   ============================================================ */
+.queue { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: var(--r-lg); overflow: hidden; }
+.q-card { background: var(--surface); padding: var(--s-5); display: flex; flex-direction: column; gap: var(--s-3); }
+.q-n { font-weight: 600; font-size: 40px; line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: -0.03em; }
+.q-label { font-weight: 600; font-size: var(--fs-body); }
+.q-why { font-size: var(--fs-sm); color: var(--ink-2); line-height: 1.55; }
+.q-action { margin-top: auto; padding-top: var(--s-3); border-top: 1px dashed var(--rule-strong); font-size: var(--fs-xs); color: var(--ink-3); line-height: 1.5; }
+
+/* ============================================================
+   State table, the shared .tbl rules live in docs.css; these are
+   the tracker's additions: sorting affordances and the mix bars.
+   ============================================================ */
+.tbl thead th.sortable { cursor: pointer; }
+.tbl thead th.sortable:hover { color: var(--ink); }
+.tbl thead th[aria-sort]:not([aria-sort="none"]) { color: var(--ink); }
+.tbl thead th .arrow { opacity: .45; margin-left: 3px; }
+.tbl tbody td { vertical-align: middle; }
+.tbl tbody tr:hover, .tbl tbody tr:nth-child(even):hover { background: var(--surface-sunk); }
+
+.state-mini { display: flex; gap: 1.5px; height: 10px; width: 100%; min-width: 90px; border-radius: var(--r-sm); overflow: hidden; }
+.state-mini i { display: block; height: 100%; }
+.state-mini i[data-tier="compliant"] { background: var(--st-compliant); }
+.state-mini i[data-tier="failing"]   { background: var(--st-failing); }
+.state-mini i[data-tier="blocked"]   { background: var(--st-blocked); }
+.state-mini i[data-tier="exempt"]    { background: var(--st-exempt); }
+.state-mini i[data-tier="unknown"]   { background: var(--st-unknown); background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.30) 0 2px, transparent 2px 5px); }
+
+.rate { font-variant-numeric: tabular-nums; font-size: var(--fs-sm); }
+.rate-bar { display: inline-block; vertical-align: middle; width: 54px; height: 6px; background: var(--surface-sunk); border-radius: var(--r-sm); margin-right: var(--s-2); overflow: hidden; }
+.rate-bar i { display: block; height: 100%; background: var(--st-compliant); border-radius: var(--r-sm); }
+/* A rate measured on under half a state is a sample; say so quietly. */
+.tbl tbody td.thin { color: var(--ink-3); }
+.tbl tbody td.thin .rate-bar i { background: var(--st-unknown); }
+.tbl tbody td.thin abbr { text-decoration: none; margin-left: 2px; cursor: help; }
+
+.scroll-y { max-height: 460px; overflow-y: auto; overflow-x: auto; }
+
+/* ============================================================
+   Register
+   ============================================================ */
+.filters { display: flex; flex-wrap: wrap; gap: var(--s-2); align-items: center; margin-bottom: var(--s-1); }
+
+.search { flex: 1 1 260px; min-width: 200px; position: relative; }
+.search input {
+  width: 100%; font: inherit; font-size: var(--fs-sm);
+  height: var(--ctl-h); padding: 0 var(--s-3) 0 var(--s-7);
+  background: var(--surface); color: var(--ink);
+  border: 1px solid var(--rule-strong); border-radius: var(--r-md);
+}
+.search input::placeholder { color: var(--ink-3); }
+.search svg { position: absolute; left: var(--s-4); top: 50%; transform: translateY(-50%); color: var(--ink-3); }
+
+select {
+  font: inherit; font-size: var(--fs-sm);
+  height: var(--ctl-h); padding: 0 var(--s-3);
+  background: var(--surface); color: var(--ink);
+  border: 1px solid var(--rule-strong); border-radius: var(--r-md);
+  max-width: 220px;
+}
+
+/* Four filters see constant use; four are occasional. The occasional ones
+   fold away so the row reads as a handful of controls rather than a wall. */
+.filters-toggle {
+  display: inline-flex; align-items: center; gap: var(--s-2);
+  height: var(--ctl-h); padding: 0 var(--s-4);
+  border: 1px solid var(--rule-strong); border-radius: var(--r-md);
+  font-size: var(--fs-sm); font-weight: 500; color: var(--ink-2);
+  background: var(--surface);
+}
+.filters-toggle:hover { border-color: var(--ink); color: var(--ink); }
+.filters-toggle .fc {
+  font-size: var(--fs-label); font-weight: 700; font-variant-numeric: tabular-nums;
+  min-width: 18px; height: 18px; padding: 0 5px; border-radius: var(--r-pill);
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--ink); color: var(--paper);
+}
+.filters-toggle .chev { font-size: 10px; color: var(--ink-3); }
+.filters-toggle[aria-expanded="true"] { border-color: var(--ink); color: var(--ink); }
+
+.filters-extra { display: flex; flex-wrap: wrap; gap: var(--s-2); align-items: center; width: 100%; margin-top: var(--s-2); }
+.filters-extra[hidden] { display: none; }
+
+.chips { display: flex; flex-wrap: wrap; gap: var(--s-2); margin: var(--s-4) 0 var(--s-3); }
+.chip {
+  display: inline-flex; align-items: center; gap: var(--s-2);
+  font-size: var(--fs-xs); font-weight: 500;
+  min-height: 40px; padding: 0 var(--s-4); border-radius: var(--r-pill);
+  border: 1px solid var(--rule-strong); color: var(--ink-2);
+  background: var(--surface);
+}
+.chip .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+.chip .cn { font-variant-numeric: tabular-nums; font-size: var(--fs-label); color: var(--ink-3); }
+.chip:hover { border-color: var(--ink-3); color: var(--ink); }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.chip[aria-pressed="true"] .cn { color: var(--paper); opacity: .75; }
+/* Audit filters on the left, outreach filters on the right of this rule. */
+.chip-sep { width: 1px; align-self: stretch; background: var(--rule-strong); margin: var(--s-2) var(--s-2); }
+
+/* The result line names every filter that is narrowing the list, so a short
+   list never looks like a short dataset. It is a live region: filtering with
+   no announcement is undetectable to a screen reader. */
+.result-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2) var(--s-3); margin: var(--s-2) 0 var(--s-3); }
+.result-line { font-size: var(--fs-xs); color: var(--ink-3); margin: 0; font-variant-numeric: tabular-nums; }
+.result-line b { color: var(--ink); font-weight: 600; }
+.result-line .rf {
+  display: inline-block; margin-left: var(--s-1); padding: 2px 8px;
+  border-radius: var(--r-pill); background: var(--surface-sunk); color: var(--ink-2);
+  font-size: var(--fs-label); font-weight: 600;
+}
+.clear-filters {
+  display: inline-flex; align-items: center; gap: var(--s-2);
+  min-height: 32px; padding: 0 var(--s-3);
+  border: 1px solid var(--rule-strong); border-radius: var(--r-pill);
+  font-size: var(--fs-label); font-weight: 600; color: var(--ink-2);
+  background: var(--surface);
+}
+.clear-filters:hover { border-color: var(--ink); color: var(--ink); }
+.clear-filters[hidden] { display: none; }
+
+.reg-head {
+  display: grid; align-items: center;
+  grid-template-columns: 124px minmax(0,2fr) minmax(0,1.6fr) 76px 84px 136px;
+  gap: var(--s-4); padding: 0 var(--s-4) var(--s-3);
+  border-bottom: 1px solid var(--rule-strong);
+  font-size: var(--fs-label); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3);
+}
+/* Every column sorts. The header is the control, so it has to read as one:
+   a hover state, an arrow that only appears on the column actually sorting,
+   and ink (not grey) on that column so you can see the order's source. */
+.reg-head .rh {
+  display: inline-flex; align-items: center; gap: var(--s-1);
+  font: inherit; letter-spacing: inherit; text-transform: inherit; color: inherit;
+  justify-self: start; text-align: left; white-space: nowrap;
+  min-height: 32px;
+}
+.reg-head .rh:hover { color: var(--ink); }
+.reg-head .rh:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: var(--r-sm); }
+.reg-head .rh[data-sorted="1"] { color: var(--ink); }
+/* An unsorted column shows its arrow only on hover, where it previews the
+   direction that click would give you. */
+.reg-head .rh-arrow { font-size: 9px; opacity: .55; }
+.reg-head .rh[data-sorted="0"] .rh-arrow { opacity: 0; }
+.reg-head .rh:hover .rh-arrow, .reg-head .rh:focus-visible .rh-arrow { opacity: .55; }
+
+/* Narrow screens lose columns from the header, and below 760px the header
+   itself, so the same sorts are also reachable from a select there. */
+.reg-sort { display: none; width: 100%; max-width: none; margin: var(--s-3) 0 var(--s-1); }
+.reg-viewport { height: 620px; overflow-y: auto; position: relative; border-bottom: 1px solid var(--rule); }
+.reg-canvas { position: relative; width: 100%; }
+.reg-row {
+  position: absolute; left: 0; right: 0; height: var(--row-h);
+  display: grid; align-items: center;
+  grid-template-columns: 124px minmax(0,2fr) minmax(0,1.6fr) 76px 84px 136px;
+  gap: var(--s-4); padding: 0 var(--s-4);
+  border-bottom: 1px solid var(--rule);
+}
+/* Greenbar banding. At 5,419 rows the alternation is a reading aid, not
+   decoration, it keeps your eye on one row across six columns. Parity comes
+   from the row's index in the filtered list, so bands stay put while scrolling. */
+.reg-row[data-band="1"] { background: var(--band); }
+.reg-row:hover, .reg-row[data-band="1"]:hover { background: var(--surface-sunk); }
+
+.cell-name { min-width: 0; }
+.cell-name b { display: block; font-weight: 600; font-size: var(--fs-sm); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cell-name span { display: block; font-size: var(--fs-label); color: var(--ink-3); margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cell-why { min-width: 0; font-size: var(--fs-xs); color: var(--ink-2); }
+.cell-why b { display: block; font-weight: 600; color: var(--ink); font-size: var(--fs-xs); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cell-why span { display: block; font-size: var(--fs-label); color: var(--ink-3); margin-top: 1px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* Right-aligned so the digits line up under each other, tabular figures do
+   nothing for scanning if the column is ragged on the right. */
+.cell-age { font-variant-numeric: tabular-nums; font-size: var(--fs-xs); text-align: right; }
+.reg-head .rh[data-key="age"] { justify-self: end; }
+.cell-age.stale { color: var(--st-failing-fg); font-weight: 600; }
+.cell-age .dash { color: var(--ink-3); }
+.cell-links { display: flex; gap: var(--s-2); }
+.linkbtn {
+  font-size: var(--fs-label); letter-spacing: .02em;
+  padding: 5px 9px; border: 1px solid var(--rule-strong); border-radius: var(--r-sm); color: var(--ink-2);
+}
+.linkbtn:hover { border-color: var(--ink); color: var(--ink); }
+
+.empty { padding: var(--s-8) var(--s-4); text-align: center; color: var(--ink-3); font-size: var(--fs-sm); }
+.empty b { display: block; color: var(--ink); font-weight: 600; font-size: var(--fs-body); margin-bottom: var(--s-2); }
+.empty .clear-filters { margin-top: var(--s-4); }
+
+/* ============================================================
+   Outreach, notes and the log of emails you sent.
+   Outreach state is deliberately achromatic: the five status hues already
+   mean "what the audit found", and a second colour scale on top of them
+   would make the register unreadable. Stage is carried by weight and a
+   small mark instead, with one exception, an overdue follow-up, which
+   is the only thing here that is genuinely a problem.
+   ============================================================ */
+.oc-btn {
+  display: inline-flex; align-items: center; gap: var(--s-2);
+  font-size: var(--fs-label); letter-spacing: .02em;
+  min-height: 32px; padding: 0 var(--s-3);
+  border: 1px solid var(--rule-strong); border-radius: var(--r-md);
+  color: var(--ink-3); white-space: nowrap; width: 100%;
+}
+.oc-btn:hover { border-color: var(--ink); color: var(--ink); }
+/* An empty row's button is pure affordance and there are hundreds of them, so
+   it keeps its label and its hit area but loses the border until you reach for
+   it. Rows that actually carry something stay drawn. */
+.oc-btn[data-has="0"] { border-color: transparent; }
+.oc-btn[data-has="0"]:hover, .oc-btn[data-has="0"]:focus-visible { border-color: var(--rule-strong); color: var(--ink); }
+.oc-btn[data-has="1"] { color: var(--ink); border-color: var(--rule-strong); background: var(--surface-sunk); }
+.oc-btn .oc-mark { width: 6px; height: 6px; border-radius: 50%; background: var(--ink-3); flex: none; }
+.oc-btn[data-has="1"] .oc-mark { background: var(--ink); }
+.oc-btn[data-due="1"] { border-color: var(--st-failing); color: var(--st-failing-fg); }
+.oc-btn[data-due="1"] .oc-mark { background: var(--st-failing); }
+
+.oc-stage {
+  display: inline-block; font-size: var(--fs-label); font-weight: 600;
+  padding: 4px 9px; border-radius: var(--r-sm); border: 1px solid transparent;
+  background: var(--surface-sunk); color: var(--ink-3); border-color: var(--rule);
+}
+.oc-stage[data-stage="contacted"] { background: var(--surface-2); color: var(--ink); border-color: var(--rule-strong); }
+.oc-stage[data-stage="awaiting-reply"] { background: var(--surface-2); color: var(--ink); border-color: var(--rule-strong); font-weight: 700; }
+.oc-stage[data-stage="replied"] { background: var(--st-exempt-bg); color: var(--st-exempt-fg); border-color: transparent; }
+.oc-stage[data-stage="resolved"] { background: var(--st-compliant-bg); color: var(--st-compliant-fg); border-color: transparent; }
+.oc-stage[data-stage="no-response"] { background: var(--st-failing-bg); color: var(--st-failing-fg); border-color: transparent; }
+
+.oc-summary { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: var(--r-lg); overflow: hidden; margin-bottom: var(--s-6); }
+
+/* Anything you corrected by hand is marked so it never reads as a crawl
+   result: a dashed underline on the badge, a rule on the links, a star on
+   the age. The colour still means status; the dashes mean "your finding". */
+.badge[data-edited="1"] { box-shadow: inset 0 -2px 0 currentColor; }
+.badge[data-edited="1"]::after { content: '*'; font-weight: 700; margin-left: 1px; }
+.linkbtn[data-edited="1"] { border-style: dashed; border-color: var(--ink-3); color: var(--ink); }
+.cell-age.edited { border-bottom: 1px dashed var(--ink-3); }
+.cell-age sup { font-size: 9px; }
+.oc-empty { padding: var(--s-7) var(--s-5); text-align: center; color: var(--ink-3); font-size: var(--fs-sm); border: 1px dashed var(--rule-strong); border-radius: var(--r-lg); }
+
+.oc-cols { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: var(--s-8); }
+.oc-list { display: grid; }
+.oc-item {
+  display: grid; grid-template-columns: minmax(0,1fr) auto; gap: var(--s-1) var(--s-4); align-items: baseline;
+  padding: var(--s-3) 0; border-top: 1px solid var(--rule); text-align: left; width: 100%;
+}
+.oc-item:last-child { border-bottom: 1px solid var(--rule); }
+.oc-item:hover { background: var(--surface-2); }
+.oc-item b { font-weight: 600; font-size: var(--fs-sm); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.oc-item .oc-meta { grid-column: 1 / -1; font-size: var(--fs-label); color: var(--ink-3); }
+.oc-item .oc-when { font-size: var(--fs-label); color: var(--ink-3); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.oc-item .oc-when.over { color: var(--st-failing-fg); font-weight: 600; }
+
+/* Follow-up rows carry a dismiss control alongside them. A button cannot nest
+   inside a button, so the rule and the hover tint move up to the wrapper. */
+.oc-item-row { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; }
+.oc-item-row { border-top: 1px solid var(--rule); }
+.oc-item-row:last-child { border-bottom: 1px solid var(--rule); }
+.oc-item-row:hover { background: var(--surface-2); }
+.oc-item-row .oc-item { border-top: 0; }
+.oc-item-row .oc-item:last-child { border-bottom: 0; }
+.oc-item-row .oc-item:hover { background: none; }
+.oc-item-x {
+  margin-left: var(--s-3); padding: 6px 12px; border: 1px solid var(--rule-strong); border-radius: var(--r-pill);
+  font-size: var(--fs-label); letter-spacing: .06em; text-transform: uppercase;
+  color: var(--ink-3); white-space: nowrap;
+}
+.oc-item-x:hover { color: var(--st-failing-fg); border-color: var(--st-failing-fg); }
+
+.oc-mode {
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3) var(--s-4);
+  margin-top: var(--s-6); padding-top: var(--s-4); border-top: 1px solid var(--rule);
+  font-size: var(--fs-xs); color: var(--ink-3);
+}
+.oc-mode b { color: var(--ink-2); font-weight: 600; }
+.oc-mode button {
+  font-size: var(--fs-label); min-height: 32px; padding: 0 var(--s-3);
+  border: 1px solid var(--rule-strong); border-radius: var(--r-md); color: var(--ink-2);
+}
+.oc-mode button:hover { border-color: var(--ink); color: var(--ink); }
+.oc-io { width: 100%; margin-top: var(--s-3); }
+.oc-io textarea {
+  width: 100%; height: 130px; font-family: var(--f-mono); font-size: var(--fs-label); line-height: 1.5;
+  padding: var(--s-3); border: 1px solid var(--rule-strong); border-radius: var(--r-md);
+  background: var(--surface); color: var(--ink); resize: vertical;
+}
+
+/* ---- Drawer ---- */
+.oc-scrim {
+  position: fixed; inset: 0; z-index: 60; background: rgba(0, 0, 0, .35);
+  opacity: 0; pointer-events: none; transition: opacity .18s ease;
+}
+.oc-scrim.on { opacity: 1; pointer-events: auto; }
+
+.oc-drawer {
+  position: fixed; top: 0; right: 0; bottom: 0; z-index: 61;
+  width: min(520px, 100%); display: flex; flex-direction: column;
+  background: var(--surface); border-left: 1px solid var(--rule-strong);
+  border-radius: var(--r-xl) 0 0 var(--r-xl);
+  box-shadow: -12px 0 40px rgba(0,0,0,.14);
+  transform: translateX(100%); transition: transform .22s cubic-bezier(.22,1,.36,1);
+}
+.oc-drawer.on { transform: none; }
+
+.oc-head { padding: var(--s-5) var(--s-5) var(--s-4); border-bottom: 1px solid var(--rule); }
+.oc-head-top { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--s-4); }
+.oc-head h3 { font-size: var(--fs-h3); line-height: 1.2; margin: 0; }
+.oc-head .oc-sub { font-size: var(--fs-xs); color: var(--ink-3); margin-top: var(--s-2); }
+.oc-close {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; flex: none;
+  font-size: 20px; line-height: 1; color: var(--ink-3); border-radius: var(--r-md);
+}
+.oc-close:hover { background: var(--surface-sunk); color: var(--ink); }
+.oc-head-tags { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-3); }
+
+.oc-body { flex: 1 1 auto; overflow-y: auto; padding: 0 var(--s-5) var(--s-6); }
+.oc-block { padding: var(--s-5) 0; border-bottom: 1px solid var(--rule); }
+.oc-block:last-child { border-bottom: none; }
+.oc-block > h4 {
+  font-size: var(--fs-label); font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 var(--s-3);
+}
+
+/* ---- Where this stands.
+
+   Stage and the follow-up date write to the store the moment they change,
+   while everything below waits for a Save. That difference was invisible when
+   all nineteen inputs sat in one column, so these two get their own sunk panel
+   and say outright that they save themselves. ---- */
+.oc-state {
+  margin-top: var(--s-5);
+  padding: var(--s-4);
+  background: var(--surface-sunk);
+  border-radius: var(--r-lg);
+}
+.oc-state-head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--s-3); margin-bottom: var(--s-3); }
+.oc-state-head h4 {
+  font-size: var(--fs-label); font-weight: 600; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--ink-3); margin: 0;
+}
+/* Achromatic on purpose: the five status hues already mean "what the audit
+   found", so a green tick here would be a second colour scale. */
+.oc-saved { font-size: var(--fs-label); font-weight: 600; color: var(--ink-2); opacity: 0; transition: opacity .15s ease; }
+.oc-saved.on { opacity: 1; }
+
+.oc-state-row { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: var(--s-3); }
+.oc-state .oc-field input, .oc-state .oc-field select { background: var(--surface); }
+.oc-state .oc-hint { margin-top: var(--s-3); }
+.oc-date-row { display: flex; flex-wrap: wrap; gap: var(--s-2); align-items: center; }
+.oc-date-row input[type="date"] { flex: 1 1 130px; min-width: 0; }
+@media (max-width: 560px) { .oc-state-row { grid-template-columns: minmax(0,1fr); } }
+
+/* ---- What happened. One form at a time, so there is only ever one primary
+   button on screen and the fields you see match the thing you are recording. ---- */
+.oc-tasks { margin-top: var(--s-5); }
+.oc-tasks-label {
+  font-size: var(--fs-label); font-weight: 600; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--ink-3); margin: 0 0 var(--s-2);
+}
+.oc-task-row {
+  display: flex; gap: 2px; padding: 3px;
+  background: var(--surface-sunk); border-radius: var(--r-pill);
+  overflow-x: auto; scrollbar-width: none;
+}
+.oc-task-row::-webkit-scrollbar { display: none; }
+.oc-task {
+  flex: 1 1 auto; min-width: 0; min-height: 36px; padding: 0 var(--s-3);
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--s-2);
+  border-radius: var(--r-pill); white-space: nowrap;
+  font-size: var(--fs-label); font-weight: 600; color: var(--ink-3);
+}
+.oc-task:hover { color: var(--ink); }
+/* An inset ring rather than a shadow, the selected segment should read as
+   lifted without becoming the only elevated thing in the panel. */
+.oc-task[aria-pressed="true"] {
+  background: var(--surface); color: var(--ink);
+  box-shadow: inset 0 0 0 1px var(--rule-strong);
+}
+.oc-task-mark { width: 6px; height: 6px; border-radius: 50%; background: var(--ink); flex: none; }
+
+.oc-panel { padding: var(--s-5) 0 var(--s-6); border-bottom: 1px solid var(--rule); }
+.oc-panel[hidden] { display: none; }
+
+/* The coupled side effect, stated in full rather than done silently. */
+.oc-couple {
+  display: flex; align-items: flex-start; gap: var(--s-2);
+  margin: var(--s-4) 0 0; padding: var(--s-3);
+  background: var(--surface-sunk); border-radius: var(--r-md);
+  font-size: var(--fs-xs); color: var(--ink-2); line-height: 1.45;
+  cursor: pointer;
+}
+.oc-couple input { flex: none; width: 16px; height: 16px; margin: 1px 0 0; accent-color: var(--ink); }
+.oc-couple b { color: var(--ink); font-weight: 600; }
+
+.oc-field { display: grid; gap: var(--s-1); margin-bottom: var(--s-3); }
+.oc-field > label { font-size: var(--fs-xs); font-weight: 600; color: var(--ink-2); }
+.oc-field input, .oc-field select, .oc-field textarea {
+  font-family: var(--f-body); font-size: var(--fs-sm); padding: var(--s-3);
+  background: var(--surface); color: var(--ink);
+  border: 1px solid var(--rule-strong); border-radius: var(--r-md); width: 100%;
+  max-width: none; height: auto;
+}
+.oc-field textarea { font-size: var(--fs-sm); line-height: 1.55; resize: vertical; min-height: 96px; }
+.oc-field input[type="date"] { font-variant-numeric: tabular-nums; }
+.oc-row2 { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,140px); gap: var(--s-3); }
+.oc-quickset {
+  justify-self: start; font-size: var(--fs-label); color: var(--ink-3);
+  border: 1px solid var(--rule-strong); border-radius: var(--r-md); min-height: 30px; padding: 0 var(--s-2);
+}
+.oc-quickset:hover { color: var(--ink); border-color: var(--ink); }
+
+.oc-actions { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-1); }
+.oc-action {
+  font-size: var(--fs-xs); font-weight: 600; min-height: 40px; padding: 0 var(--s-4); border-radius: var(--r-md);
+  border: 1px solid var(--ink); background: var(--ink); color: var(--paper);
+  display: inline-flex; align-items: center;
+}
+.oc-action:hover { opacity: .88; }
+.oc-action.ghost { background: transparent; color: var(--ink); border-color: var(--rule-strong); }
+.oc-action.ghost:hover { border-color: var(--ink); opacity: 1; }
+.oc-action[disabled] { opacity: .45; cursor: not-allowed; }
+
+.oc-hint { font-size: var(--fs-xs); color: var(--ink-3); margin: var(--s-2) 0 0; line-height: 1.5; }
+
+.oc-tl { display: grid; }
+.oc-ev { padding: var(--s-4) 0; border-top: 1px solid var(--rule); }
+.oc-ev:first-child { border-top: none; padding-top: var(--s-1); }
+.oc-ev-top { display: flex; align-items: baseline; justify-content: space-between; gap: var(--s-3); }
+.oc-ev-kind {
+  font-size: var(--fs-label); letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink-3); border: 1px solid var(--rule-strong); border-radius: var(--r-sm); padding: 2px 7px; flex: none;
+}
+.oc-ev-kind[data-kind="email"] { color: var(--ink); border-color: var(--ink-3); }
+.oc-ev-when { font-size: var(--fs-label); color: var(--ink-3); margin-left: auto; font-variant-numeric: tabular-nums; }
+.oc-ev-subject { font-weight: 600; font-size: var(--fs-sm); margin: var(--s-2) 0 0; }
+.oc-ev-to { font-size: var(--fs-label); color: var(--ink-3); margin: 3px 0 0; }
+.oc-ev-text { font-size: var(--fs-sm); line-height: 1.55; color: var(--ink-2); margin: var(--s-2) 0 0; white-space: pre-wrap; word-break: break-word; }
+.oc-ev-foot { display: flex; align-items: center; gap: var(--s-2); margin-top: var(--s-3); }
+.oc-ev-foot select {
+  font-size: var(--fs-label); min-height: 30px; height: auto; padding: 0 var(--s-2); max-width: 160px;
+  border: 1px solid var(--rule-strong); border-radius: var(--r-sm); background: var(--surface); color: var(--ink-2);
+}
+/* Edit sits left of Delete and only the destructive one keeps the auto margin,
+   so the pair stays anchored right without Edit drifting away from it. */
+.oc-edit { font-size: var(--fs-label); color: var(--ink-3); margin-left: auto; min-height: 30px; padding: 0 var(--s-2); border-radius: var(--r-sm); }
+.oc-edit:hover { color: var(--ink); background: var(--surface-sunk); }
+.oc-edit + .oc-del { margin-left: 0; }
+.oc-del { font-size: var(--fs-label); color: var(--ink-3); margin-left: auto; min-height: 30px; padding: 0 var(--s-2); border-radius: var(--r-sm); }
+.oc-del:hover { color: var(--st-failing-fg); background: var(--st-failing-bg); }
+
+/* An entry that has been revised says so, quietly, the timeline should still
+   read as a log, not as a diff. */
+.oc-ev-edited { font-size: var(--fs-label); color: var(--ink-3); font-style: italic; }
+.oc-ev[data-editing="1"] { background: var(--surface-sunk); padding: var(--s-4) var(--s-3); margin: 0 -12px; border-radius: var(--r-md); }
+.oc-ev-form { margin-top: var(--s-3); }
+.oc-ev-form .oc-field { margin-bottom: var(--s-3); }
+.oc-ev-form textarea { min-height: 120px; }
+.oc-ev-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-3); }
+@media (max-width: 560px) { .oc-ev-row { grid-template-columns: 1fr; } }
+
+@media (max-width: 980px) { .oc-cols { grid-template-columns: minmax(0, 1fr); gap: var(--s-7); } }
+@media (max-width: 1080px) { .oc-summary { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+@media (max-width: 760px) { .oc-summary { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (max-width: 520px) { .oc-summary { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   Tooltip
+   ============================================================ */
+#tip {
+  position: fixed; z-index: 50; pointer-events: none; opacity: 0;
+  transition: opacity .12s ease;
+  background: var(--ink); color: var(--paper);
+  padding: var(--s-3) var(--s-3); border-radius: var(--r-md); font-size: var(--fs-xs); line-height: 1.45;
+  max-width: 260px; box-shadow: 0 6px 22px rgba(0,0,0,.22);
+}
+#tip b { font-weight: 700; display: block; margin-bottom: 2px; }
+#tip .tn { font-variant-numeric: tabular-nums; }
+#tip.on { opacity: 1; }
+
+/* ============================================================
+   Standing notice
+   ------------------------------------------------------------
+   Sits directly under the dateline, because the snapshot date is
+   the single most load-bearing fact on the page. It stays quiet
+   while the crawl is recent and takes on the "blocked" amber once
+   the data is old enough that a reader should stop trusting it.
+   ============================================================ */
+.notice {
+  max-width: 74ch;
+  margin: var(--s-5) 0 0;
+  padding: var(--s-4) var(--s-5);
+  border: none;
+  border-radius: var(--r-lg);
+  background: var(--surface-sunk);
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+.notice b { color: var(--ink); font-weight: 600; }
+/* Once the snapshot is old enough to stop trusting, the whole panel takes the
+   amber. The fill carries that on its own now the stroke is gone. */
+.notice[data-stale="1"] { background: var(--st-blocked-bg); color: var(--st-blocked-fg); }
+.notice[data-stale="1"] b, .notice[data-stale="1"] a { color: var(--st-blocked-fg); }
+
+.dateline .age { color: var(--ink-3); }
+.dateline b[data-stale="1"] { color: var(--st-blocked-fg); }
+
+/* Global `a` is colour-inherit and undecorated, which is right for rows and
+   badges but leaves prose links invisible. These places are prose. */
+.notice a, .limits a, .method a, footer a {
+  text-decoration: underline; text-underline-offset: 2px;
+  text-decoration-color: var(--rule-strong); color: var(--ink);
+}
+.notice a:hover, .limits a:hover, .method a:hover, footer a:hover { text-decoration-color: currentColor; }
+
+/* ============================================================
+   Method + limits
+   ============================================================ */
+.method { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap: var(--s-6); }
+.limits { display: grid; grid-template-columns: repeat(auto-fit, minmax(275px,1fr)); gap: var(--s-6); }
+.method h3, .limits h3 { font-size: var(--fs-body); margin-bottom: var(--s-2); letter-spacing: -0.012em; }
+.method p, .limits p { margin: 0; font-size: var(--fs-sm); color: var(--ink-2); line-height: 1.6; }
+.method code, .limits code { font-family: var(--f-mono); font-size: 0.86em; background: var(--surface-sunk); padding: 2px 6px; border-radius: var(--r-sm); }
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 1080px) {
+  /* Six columns need ~1100px before the hospital name starts truncating to
+     nonsense. Below that, drop Finding and Links: the status badge already
+     carries the verdict, and both live in full inside the drawer. */
+  .reg-head, .reg-row { grid-template-columns: 124px minmax(0,1fr) 76px 136px; }
+  .reg-head :nth-child(3), .reg-head :nth-child(5),
+  .reg-row .cell-why, .reg-row .cell-links { display: none; }
+  /* Those two headers were also their column's sort control, so the select
+     takes over here rather than at the point the header disappears. */
+  .reg-sort { display: block; }
+}
+
+@media (max-width: 980px) {
+  /* minmax(0, 1fr), not 1fr: a bare 1fr is minmax(auto, 1fr), and that auto
+     minimum refuses to shrink below the content's min-content width, which is
+     how a single-column grid ends up wider than the screen. */
+  .cols { grid-template-columns: minmax(0, 1fr); gap: var(--s-7); }
+  .tiles { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 760px) {
+  .wrap { padding: 0 var(--s-4); }
+  /* The qualifier wraps into the nav below this width; the wordmark alone
+     still says where you are. */
+  .wordmark span { display: none; }
+  section.wrap { padding-top: var(--s-7); padding-bottom: var(--s-7); }
+  /* The histogram's fixed 150px label column does not fit beside a track and a
+     count at phone widths. */
+  .hist-row { grid-template-columns: minmax(0, 1fr) 56px; gap: var(--s-2) var(--s-3); }
+  .hist-track { grid-column: 1 / -1; }
+  .finding { grid-template-columns: 3px minmax(0,1fr) 60px; }
+  .finding .f-track { display: none; }
+  .reg-head { display: none; }
+  .reg-row { grid-template-columns: 128px minmax(0,1fr); grid-template-rows: auto auto; row-gap: var(--s-1); height: auto; padding: var(--s-3) var(--s-4); position: relative; }
+  .reg-viewport { height: auto; max-height: none; overflow: visible; }
+  .reg-canvas { height: auto !important; }
+  .cell-why, .cell-age, .cell-links, .cell-outreach { grid-column: 1 / -1; }
+  .cell-outreach .oc-btn { width: auto; }
+  .oc-drawer { width: 100%; border-radius: 0; }
+}
+@media (max-width: 520px) {
+  .tiles { grid-template-columns: 1fr; }
+}

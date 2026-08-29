@@ -16,7 +16,7 @@
       .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
   // CMS records every hospital name in caps. Title-casing makes 5,419 rows
-  // readable, but naively lowercasing turns UPMC into "Upmc" — so keep known
+  // readable, but naively lowercasing turns UPMC into "Upmc", so keep known
   // initialisms, plus anything short and vowelless, in caps.
   var SMALL_WORD = /^(of|and|the|at|for|in|on|to|a|an|by|de|del|la)$/;
   var ACRONYM = /^(VA|HCA|CHI|SSM|ARH|UPMC|CAH|LLC|INC|LLP|PC|USA|UF|UC|UCSF|UCLA|USC|NYU|LSU|UAB|OSF|UNC|UT|UTMB|WVU|ECU|VCU|MUSC|UMC|UMMC|JPS|SCL|HSHS|MHS|IHS|DOD|AFB|JFK|LDS|OU|SIU|SUNY|TMC|UNM|UVA|WCA|II|III|IV)$/;
@@ -86,7 +86,7 @@
   })();
 
   // Days up to two months, then months, then years. The cut is at 60 rather
-  // than 45 so the first month reading is "2 months" — rounding 45 days down to
+  // than 45 so the first month reading is "2 months", rounding 45 days down to
   // "1 month" understates the age at exactly the point a reader starts caring.
   function ageSpan(days) {
     if (days < 60) return { n: days, unit: 'day' };
@@ -124,16 +124,49 @@
   var judged = byTier.compliant + byTier.failing;
   var reached = judged + byTier.blocked;
 
-  // "unknown" is drawn hollow rather than filled — the one tier that is an
+  // "unknown" is drawn hollow rather than filled, the one tier that is an
   // absence of information gets an absence of ink.
   var SOLID = { compliant: 1, failing: 1, blocked: 1, exempt: 1, unknown: 0 };
   var maxTier = Math.max.apply(null, D.tiers.map(function (t) { return t.n; }));
 
   $('field-n').textContent = fmt.format(T.hospitals);
 
+  // The canvas is a picture, so its numbers are also stated in text for anyone
+  // who cannot see it. Built from D.tiers so it can never drift from the field.
+  $('field-counts').innerHTML = ' Of these, '
+    + D.tiers.map(function (t, i) {
+        return (i === D.tiers.length - 1 ? 'and ' : '')
+          + '<b>' + fmt.format(t.n) + '</b> ' + t.label.toLowerCase();
+      }).join(', ')
+    + '.';
+
+  // Reach before verdict. A compliance rate computed on the hospitals we could
+  // open says nothing about the ones we could not, and the ones we could not
+  // are the larger finding, so they get stated first and given a mark.
+  $('coverage').innerHTML = [
+    {
+      role: 'judged',
+      k: 'Reached and judged',
+      n: judged,
+      note: 'A pointer file resolved and a verdict could be formed.',
+    },
+    {
+      role: 'unreached',
+      k: 'Never reached',
+      n: byTier.unknown,
+      note: 'No working website on record, so no request was ever sent.',
+    },
+  ].map(function (c) {
+    return '<div class="cov" data-role="' + c.role + '">'
+      + '<div class="cov-k">' + c.k + '</div>'
+      + '<div class="cov-n">' + fmt.format(c.n) + '</div>'
+      + '<p class="cov-note">' + pct1(c.n, T.hospitals) + ' of the registry. ' + c.note + '</p>'
+      + '</div>';
+  }).join('');
+
   $('legend').innerHTML = D.tiers.map(function (t) {
     var solid = SOLID[t.key];
-    return '<button class="readout-row" type="button" data-key="' + t.key + '" role="row">'
+    return '<button class="readout-row" type="button" data-key="' + t.key + '">'
       + '<span class="readout-mark sw-' + t.key + '" data-solid="' + solid + '"></span>'
       + '<span class="readout-name">' + t.label + '<small>' + t.note + '</small></span>'
       + '<span class="readout-n">' + fmt.format(t.n) + '</span>'
@@ -146,9 +179,11 @@
   $('readout-foot').innerHTML =
     'Of the <b>' + fmt.format(judged) + '</b> hospitals the crawl reached and could judge, '
     + '<b>' + pct(byTier.compliant, judged).toFixed(1) + '%</b> had a live, current file. '
-    + 'But that rate only covers the solid marks. <b>' + fmt.format(byTier.unknown) + '</b> hospitals '
-    + '&mdash; ' + pct1(byTier.unknown, T.hospitals) + ' of the registry, and the single largest bloc '
-    + 'in the data &mdash; have no working website on record, so nobody knows either way.';
+    + 'But that rate only describes the hospitals we could open. <b>'
+    + fmt.format(byTier.unknown) + '</b> more, ' + pct1(byTier.unknown, T.hospitals)
+    + ' of the registry, have no working website on record, so no request was ever sent. '
+    + 'That is the second-largest group in the data, and the largest single thing this audit '
+    + 'cannot answer.';
 
   function tierTip(key) {
     var t = TIER_META[key];
@@ -217,7 +252,7 @@
   $('type-table').querySelector('tbody').innerHTML = D.types.map(function (t) {
     return '<tr><td>' + esc(t.name) + '</td><td>' + mini(t) + '</td>'
       + '<td class="t-right num">' + fmt.format(t.total) + '</td>'
-      + '<td class="t-right rate">' + (t.rate == null ? '&mdash;' : (100 * t.rate).toFixed(0) + '%') + '</td></tr>';
+      + '<td class="t-right rate">' + (t.rate == null ? 'n/a' : (100 * t.rate).toFixed(0) + '%') + '</td></tr>';
   }).join('');
 
   /* ---------- states ---------- */
@@ -249,7 +284,7 @@
         + '<td class="t-right num' + (thin ? ' thin' : '') + '">' + (100 * s.coverage).toFixed(0) + '%</td>'
         + '<td class="t-right rate' + (thin ? ' thin' : '') + '"' + note + '>'
         + '<span class="rate-bar"><i style="width:' + (r == null ? 0 : r).toFixed(1) + '%"></i></span>'
-        + (r == null ? '&mdash;' : r.toFixed(1) + '%')
+        + (r == null ? 'n/a' : r.toFixed(1) + '%')
         + (thin ? '<abbr title="Fewer than half the hospitals in this state could be reached, so treat the rate as a sample.">*</abbr>' : '')
         + '</td>'
         + '</tr>';
@@ -376,7 +411,7 @@
   }
 
   // "Where this stands" is the drawer's own stage field, not the coarser
-  // outreach chips above — this matches it exactly, including "not contacted".
+  // outreach chips above, this matches it exactly, including "not contacted".
   function matchesStage(ccn, stage) {
     var rec = OC.get(ccn);
     return (rec ? rec.status : 'none') === stage;
@@ -399,7 +434,7 @@
 
   /* ---------- sorting the register ----------
      Six columns, three states each: the column's useful direction first, then
-     its reverse, then back to registry order — which is CCN order, so it
+     its reverse, then back to registry order, which is CCN order, so it
      arrives as one block per state and is worth being able to get back to.
      Sorting runs on the filtered index list, not on all 5,419 rows. */
 
@@ -474,7 +509,7 @@
       if (y == null) return -1;
       var c = typeof x === 'string' ? collate(x, y) : x - y;
       // Ties break on registry order, not on where the row happens to sit
-      // now — otherwise re-sorting the already-sorted list drifts.
+      // now, otherwise re-sorting the already-sorted list drifts.
       return c ? dir * c : a.i - b.i;
     });
     filtered = keyed.map(function (k) { return k.i; });
@@ -490,8 +525,8 @@
   var regSortSelect = $('reg-sort');
   regSortSelect.innerHTML = '<option value="">Registry order</option>'
     + SORTS.map(function (s) {
-      return '<option value="' + s.key + ':' + s.first + '">' + esc(s.label + ' — ' + (s.first === 1 ? s.up : s.down)) + '</option>'
-        + '<option value="' + s.key + ':' + (-s.first) + '">' + esc(s.label + ' — ' + (s.first === 1 ? s.down : s.up)) + '</option>';
+      return '<option value="' + s.key + ':' + s.first + '">' + esc(s.label + ': ' + (s.first === 1 ? s.up : s.down)) + '</option>'
+        + '<option value="' + s.key + ':' + (-s.first) + '">' + esc(s.label + ': ' + (s.first === 1 ? s.down : s.up)) + '</option>';
     }).join('');
 
   function paintSort() {
@@ -537,6 +572,66 @@
     layout();
   }
 
+  /* ---------- filter state, named ----------
+     Eighteen controls govern this list. Rather than leaving a reader to work
+     out why it is short, every active one is named in the result line, using
+     the text of its own control so the summary always matches the screen. */
+  var FILTER_SELECTS = [
+    { id: 'f-state', key: 'state' },
+    { id: 'f-type', key: 'type' },
+    { id: 'f-finding', key: 'finding' },
+    { id: 'f-stage', key: 'stage', extra: true },
+    { id: 'f-age', key: 'age', extra: true },
+    { id: 'f-links', key: 'links', extra: true },
+    { id: 'f-corrected', key: 'corrected', extra: true },
+  ];
+
+  function selLabel(id) {
+    var el = $(id);
+    if (!el || !el.value) return null;
+    var o = el.options[el.selectedIndex];
+    return o ? o.textContent.trim() : null;
+  }
+
+  function activeFilters() {
+    var out = [];
+    if (sel.q.trim()) out.push('“' + sel.q.trim() + '”');
+    FILTER_SELECTS.forEach(function (f) {
+      var l = selLabel(f.id);
+      if (l) out.push(l);
+    });
+    D.tiers.forEach(function (t) { if (sel.tiers[t.key]) out.push(t.label); });
+    if (sel.outreach) {
+      OC_CHIPS.forEach(function (c) { if (c.key === sel.outreach) out.push(c.label); });
+    }
+    return out;
+  }
+
+  // How many of the folded-away filters are set, so the disclosure can say so
+  // without being opened.
+  function extraCount() {
+    var n = 0;
+    FILTER_SELECTS.forEach(function (f) { if (f.extra && sel[f.key] !== '') n++; });
+    return n;
+  }
+
+  function clearAllFilters() {
+    sel.q = '';
+    sel.tiers = {};
+    sel.outreach = '';
+    FILTER_SELECTS.forEach(function (f) {
+      sel[f.key] = '';
+      var el = $(f.id);
+      if (el) el.value = '';
+    });
+    if ($('q')) $('q').value = '';
+    if ($('nav-q')) $('nav-q').value = '';
+    [].forEach.call($('tier-chips').querySelectorAll('.chip'), function (b) {
+      b.setAttribute('aria-pressed', 'false');
+    });
+    applyFilters();
+  }
+
   function applyFilters() {
     var q = sel.q.trim().toLowerCase();
     var stateIdx = sel.state ? D.dict.states.indexOf(sel.state) : -1;
@@ -559,22 +654,50 @@
     }
     filtered = out;
     sortFiltered();
-    var line = fmt.format(out.length) + ' of ' + fmt.format(D.rows.length) + ' hospitals';
-    if (regSort.key) line += ' · sorted by ' + sortNote();
-    if (!out.length) line += ' — try a broader filter';
-    else if (narrow.matches && out.length > MOBILE_CAP) {
-      line += ' — showing the first ' + MOBILE_CAP + ', search to narrow';
-    }
-    $('result-line').textContent = line;
-    $('reg-empty').hidden = out.length > 0;
     viewport.scrollTop = 0;
+    relayout();
+  }
+
+  /* The line describes what is actually on screen, including the mobile cap,
+     which depends on the viewport rather than on the filters. So it is painted
+     by the relayout path, not by the filter pass: crossing the 760px breakpoint
+     re-renders the rows without re-filtering, and the count has to follow it or
+     it ends up contradicting the list underneath. */
+  function paintResultLine() {
+    var n = filtered.length;
+    var active = activeFilters();
+    var line = '<b>' + fmt.format(n) + '</b> of ' + fmt.format(D.rows.length) + ' hospitals';
+    active.forEach(function (label) { line += '<span class="rf">' + esc(label) + '</span>'; });
+    if (regSort.key) line += ' · sorted by ' + esc(sortNote());
+    if (n && narrow.matches && n > MOBILE_CAP) {
+      line += ' · showing the first ' + MOBILE_CAP + ', search to narrow';
+    }
+    $('result-line').innerHTML = line;
+    $('reg-empty').hidden = n > 0;
+
+    // The reset only exists when there is something to reset.
+    var extra = extraCount();
+    var countEl = $('filters-count');
+    if (countEl) { countEl.textContent = extra; countEl.hidden = extra === 0; }
+    [].forEach.call(document.querySelectorAll('.clear-filters'), function (b) {
+      b.hidden = active.length === 0;
+    });
+  }
+
+  // Scrolling calls layout() alone, once per frame, it must not rewrite the
+  // line. Everything that changes what the list contains or how much of it is
+  // shown goes through here instead.
+  function relayout() {
     layout();
+    paintResultLine();
   }
 
   var viewport = $('reg-viewport');
   var canvas = $('reg-canvas');
   var regHead = document.querySelector('.reg-head');
-  var ROW_H = 58;
+  // Must match --row-h in css/tracker.css: rows are absolutely positioned at
+  // index * this height, so a mismatch shows as gaps or overlap while scrolling.
+  var ROW_H = 64;
   var OVERSCAN = 6;
   var MOBILE_CAP = 60;
   var narrow = window.matchMedia('(max-width: 760px)');
@@ -600,35 +723,44 @@
       var cd = daysSince(corr.lastUpdatedOn);
       if (cd != null) { d = cd; edited = true; }
     }
-    if (d == null) return '<span class="cell-age"><span class="dash">&mdash;</span></span>';
+    // A blank here is not "fresh", it is "no date was read", worth saying,
+    // because an empty cell in a column of numbers reads as a zero.
+    if (d == null) {
+      return '<span class="cell-age" title="No update date was read for this file">'
+        + '<span class="dash">not read</span></span>';
+    }
     var cls = 'cell-age' + (d > 365 ? ' stale' : '') + (edited ? ' edited' : '');
     return '<span class="' + cls + '"' + (edited ? ' title="From your correction, not the crawl"' : '')
       + '>' + d + 'd' + (edited ? '<sup>*</sup>' : '') + '</span>';
   }
 
-  // Compact outreach marker: counts if there is a file, "Log" if there isn't.
+  // What the column is for is "what do I still owe this one", so it shows the
+  // stage. It used to show "2e 1n" and hide the stage in the tooltip, which put
+  // the trivia on screen and the actionable fact behind a hover that does not
+  // exist on a touchscreen. The counts swapped places with it.
   function outreachCell(ccn) {
     var rec = OC.get(ccn);
     var entries = rec ? (rec.entries || []) : [];
-    var label = 'Log';
-    var has = '0';
-    if (entries.length) {
-      var mails = entries.filter(function (e) { return e.kind === 'email'; }).length;
-      var notes = entries.length - mails;
-      var bits = [];
-      if (mails) bits.push(mails + 'e');
-      if (notes) bits.push(notes + 'n');
-      label = bits.join(' ');
-      has = '1';
-    }
+    var staged = !!(rec && rec.status && rec.status !== 'none');
+    var has = entries.length || staged ? '1' : '0';
+    var label = has === '1' ? (OC_STAGE_LABEL[rec.status] || 'Logged') : 'Log';
+
+    var mails = entries.filter(function (e) { return e.kind === 'email'; }).length;
+    var notes = entries.length - mails;
+    var counts = [];
+    if (mails) counts.push(mails + (mails === 1 ? ' email' : ' emails'));
+    if (notes) counts.push(notes + (notes === 1 ? ' note' : ' notes'));
+
     var due = rec && isDue(rec) ? '1' : '0';
-    var title = rec
-      ? OC_STAGE_LABEL[rec.status] + (rec.followUpOn ? ' · follow up ' + rec.followUpOn : '')
-      : 'No notes or emails logged yet';
+    var title = has === '1'
+      ? label
+        + (counts.length ? ' · ' + counts.join(', ') : '')
+        + (rec.followUpOn ? ' · follow up ' + rec.followUpOn : '')
+      : 'Nothing logged yet. Open to record an email or a note';
     return '<span class="cell-outreach">'
       + '<button class="oc-btn" type="button" data-ccn="' + esc(ccn) + '"'
       + ' data-has="' + has + '" data-due="' + due + '" title="' + esc(title) + '">'
-      + '<span class="oc-mark"></span>' + label + '</button></span>';
+      + '<span class="oc-mark"></span>' + esc(label) + '</button></span>';
   }
 
   function rowHtml(i, top, band) {
@@ -644,7 +776,7 @@
       tier = corr.verdict;
       short = TIER_META[tier].short;
       badgeExtra = ' data-edited="1" title="Your correction of '
-        + esc(corr.checkedOn || '') + ' — the crawl found: ' + esc(f.label) + '"';
+        + esc(corr.checkedOn || '') + '. The crawl found: ' + esc(f.label) + '"';
     }
 
     var mrf = (corr && corr.mrfUrl) || r[C.MRF];
@@ -653,16 +785,16 @@
     var links = '';
     if (mrf) links += '<a class="linkbtn"' + edited + ' href="' + esc(mrf) + '" target="_blank" rel="noopener noreferrer">FILE</a>';
     if (ptr) links += '<a class="linkbtn"' + edited + ' href="' + esc(ptr) + '" target="_blank" rel="noopener noreferrer">PTR</a>';
-    if (!links) links = '<span class="linkbtn" style="border-color:transparent;color:var(--ink-3)">&mdash;</span>';
+    if (!links) links = '<span class="linkbtn" style="border-color:transparent;color:var(--ink-3)">none</span>';
 
     var why = corr && corr.verdict
-      ? '<b>' + esc(TIER_META[tier].label) + ' &mdash; your correction</b><span>'
+      ? '<b>' + esc(TIER_META[tier].label) + ' (your correction)</b><span>'
         + esc(corr.note || ('Crawl found: ' + f.label)) + '</span>'
       : '<b>' + f.label + '</b><span>' + esc(r[C.EV] || f.blurb) + '</span>';
 
     return '<div class="reg-row" data-band="' + (band ? 1 : 0) + '"'
       + (narrow.matches ? '' : ' style="top:' + top + 'px"') + '>'
-      + '<span class="badge" data-tier="' + tier + '"' + badgeExtra + '><span class="dot"></span>'
+      + '<span class="badge flat" data-tier="' + tier + '"' + badgeExtra + '>'
       + short + '</span>'
       + '<span class="cell-name oc-open" data-ccn="' + esc(r[C.CCN]) + '"><b>' + esc(titleCase(r[C.NAME])) + '</b>'
       + '<span>' + esc(titleCase(r[C.CITY])) + ', ' + D.dict.states[r[C.STATE]] + ' &middot; ' + esc(r[C.CCN]) + '</span></span>'
@@ -704,15 +836,55 @@
     ticking = true;
     requestAnimationFrame(function () { layout(); ticking = false; });
   });
-  window.addEventListener('resize', layout);
-  if (narrow.addEventListener) narrow.addEventListener('change', layout);
+  // Both of these can cross the 760px breakpoint, which swaps the virtualised
+  // list for a capped one and changes how many rows are on screen. relayout()
+  // repaints the count alongside the rows so the two cannot disagree.
+  window.addEventListener('resize', relayout);
+  if (narrow.addEventListener) narrow.addEventListener('change', relayout);
 
   var qInput = $('q');
+  var navQ = $('nav-q');
   var debounce;
+
+  // The register's search and the one in the section bar are the same query in
+  // two places. Whichever is typed into wins; the other follows.
+  function setQuery(value, echoTo) {
+    sel.q = value;
+    if (echoTo && echoTo.value !== value) echoTo.value = value;
+    applyFilters();
+  }
   qInput.addEventListener('input', function () {
     clearTimeout(debounce);
-    debounce = setTimeout(function () { sel.q = qInput.value; applyFilters(); }, 120);
+    debounce = setTimeout(function () { setQuery(qInput.value, navQ); }, 120);
   });
+  if (navQ) {
+    navQ.addEventListener('input', function () {
+      clearTimeout(debounce);
+      debounce = setTimeout(function () { setQuery(navQ.value, qInput); }, 120);
+    });
+    // Enter takes you to the results rather than submitting anything.
+    navQ.addEventListener('keydown', function (ev) {
+      if (ev.key !== 'Enter') return;
+      ev.preventDefault();
+      $('register').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+
+  [].forEach.call(document.querySelectorAll('.clear-filters'), function (b) {
+    b.addEventListener('click', function () {
+      clearAllFilters();
+      qInput.focus();
+    });
+  });
+
+  var moreBtn = $('filters-toggle');
+  if (moreBtn) {
+    moreBtn.addEventListener('click', function () {
+      var open = moreBtn.getAttribute('aria-expanded') === 'true';
+      moreBtn.setAttribute('aria-expanded', open ? 'false' : 'true');
+      $('filters-extra').hidden = open;
+    });
+  }
   stateSelect.addEventListener('change', function () { sel.state = stateSelect.value; applyFilters(); });
   typeSelect.addEventListener('change', function () { sel.type = typeSelect.value; applyFilters(); });
   findingSelect.addEventListener('change', function () { sel.finding = findingSelect.value; applyFilters(); });
@@ -794,7 +966,7 @@
 
   /* ---- email template, tailored to what the audit actually found ---- */
   var TEMPLATE_BY_FINDING = {
-    'mrf-url-unreachable': 'The link in your cms-hpt.txt file points to a standard charges file that we could not retrieve — the URL returns an error. Could you confirm the correct location, or update the pointer file?',
+    'mrf-url-unreachable': 'The link in your cms-hpt.txt file points to a standard charges file that we could not retrieve; the URL returns an error. Could you confirm the correct location, or update the pointer file?',
     'mrf-stale-over-365-days': 'The standard charges file we retrieved was last updated more than twelve months ago. 45 CFR 180.50 asks for an update at least once a year. Is a newer version available?',
     'old-template-version': 'The standard charges file we retrieved declares an older CMS template version. The current schema is 3.0.0. Is an updated file available?',
     'no-cms-hpt-txt-published': 'We could reach your website, but found no cms-hpt.txt pointer file at the root or under /.well-known/. Could you confirm where your machine-readable standard charges file is published?',
@@ -825,7 +997,7 @@
     if (h.mrf) lines.push('Charges file: ' + h.mrf);
     lines.push('', 'Thank you,', '');
     return {
-      subject: 'Price transparency file — ' + h.name + ' (CCN ' + h.ccn + ')',
+      subject: 'Price transparency file: ' + h.name + ' (CCN ' + h.ccn + ')',
       body: lines.join('\n'),
     };
   }
@@ -844,7 +1016,7 @@
 
   // Which entry is open for editing, if any. Held here rather than in the DOM so
   // a re-render from any other write keeps the form open with what you typed
-  // still on screen — and cleared whenever the drawer changes hospital.
+  // still on screen, and cleared whenever the drawer changes hospital.
   var editingId = null;
 
   function outcomeOptions(selected) {
@@ -889,7 +1061,7 @@
       $('oc-timeline').innerHTML = '<p class="oc-hint">Nothing logged yet.</p>';
       return;
     }
-    // An entry can be deleted while its form is open — from here or from the
+    // An entry can be deleted while its form is open, from here or from the
     // terminal. Drop the flag rather than rendering a form for nothing.
     if (editingId && !entries.some(function (e) { return e.id === editingId; })) editingId = null;
 
@@ -945,7 +1117,7 @@
       var tier = corr && corr.verdict ? corr.verdict : h.finding.tier;
       tags += '<span class="badge" data-tier="' + tier + '"'
         + (corr && corr.verdict ? ' data-edited="1" title="Your correction"' : '')
-        + '><span class="dot"></span>' + TIER_META[tier].short + '</span>';
+        + '>' + TIER_META[tier].short + '</span>';
       if (corr && corr.verdict && corr.verdict !== h.finding.tier) {
         tags += '<span class="oc-stage" title="What the crawl found on '
           + esc(D.generated) + '">Crawl: ' + esc(TIER_META[h.finding.tier].short) + '</span>';
@@ -983,6 +1155,14 @@
       $('oc-body').value = '';
     }
     $('oc-note').value = '';
+    if ($('oc-email-advance')) $('oc-email-advance').checked = true;
+    // Every hospital opens on the same task. Logging an email is the common
+    // case, and a panel that remembered the last one would mean the form you
+    // get depends on the hospital you happened to open before this one.
+    setTask('email');
+    $('oc-email-state').textContent = '';
+    $('oc-note-state').textContent = '';
+    $('oc-c-discards').textContent = '';
     // An entry form left open belongs to the hospital you were just looking at.
     editingId = null;
     // A different hospital's correction must replace whatever is in the form.
@@ -1045,45 +1225,87 @@
     window.alert('Could not save: ' + (err && err.message ? err.message : err));
   }
 
-  // The store coerces silently — a URL without a scheme is stored empty, a long
+  // The store coerces silently, a URL without a scheme is stored empty, a long
   // body is clipped at 8000 characters. It reports what it dropped; without this
   // the field just quietly empties and the save looks clean.
-  function showDiscards(slotId, prefix) {
+  function showDiscards(slotId, prefix, msgs) {
     var slot = $(slotId);
     if (!slot) return false;
-    var msgs = OC.lastDiscards();
+    msgs = msgs || OC.lastDiscards();
     slot.textContent = msgs.length ? (prefix || 'Saved, but ') + msgs.join('; ') + '.' : '';
     return msgs.length > 0;
   }
 
+  /* ---- one form at a time ----
+     The panel used to show all nineteen inputs at once, organised by the shape
+     of the data rather than by what had happened. These three cover every way a
+     record changes; picking one hides the other two, so there is a single
+     primary button on screen at any moment. */
+  var TASKS = ['email', 'note', 'correction'];
+  function setTask(name) {
+    TASKS.forEach(function (t) {
+      var btn = document.querySelector('.oc-task[data-task="' + t + '"]');
+      var panel = $('oc-panel-' + t);
+      if (btn) btn.setAttribute('aria-pressed', t === name ? 'true' : 'false');
+      if (panel) panel.hidden = t !== name;
+    });
+  }
+  [].forEach.call(document.querySelectorAll('.oc-task'), function (btn) {
+    btn.addEventListener('click', function () { setTask(btn.dataset.task); });
+  });
+
+  // Stage and the follow-up date commit on change, unlike every other field in
+  // the drawer. Saying so out loud is the only thing that makes the difference
+  // legible.
+  var savedTimer;
+  function flashSaved() {
+    var el = $('oc-state-saved');
+    if (!el) return;
+    el.textContent = 'Saved';
+    el.classList.add('on');
+    clearTimeout(savedTimer);
+    savedTimer = setTimeout(function () {
+      el.classList.remove('on');
+      el.textContent = '';
+    }, 1800);
+  }
+
+  // Shared by the +30 days button and by the side effect of logging an email.
+  // Nudges from whatever date is passed in, or today when that is empty, so
+  // clicking +30 days again keeps pushing the date forward.
+  function plusDays(fromIso, n) {
+    var base = /^\d{4}-\d{2}-\d{2}$/.test(fromIso || '') ? new Date(fromIso + 'T00:00:00') : new Date();
+    base.setDate(base.getDate() + n);
+    return base.getFullYear() + '-' + String(base.getMonth() + 1).padStart(2, '0')
+      + '-' + String(base.getDate()).padStart(2, '0');
+  }
+
   $('oc-status').addEventListener('change', function () {
-    OC.upsert(openCcn, Object.assign({ status: $('oc-status').value }, seedFields())).catch(warn);
+    OC.upsert(openCcn, Object.assign({ status: $('oc-status').value }, seedFields()))
+      .then(flashSaved).catch(warn);
   });
   $('oc-followup').addEventListener('change', function () {
-    OC.upsert(openCcn, Object.assign({ followUpOn: $('oc-followup').value }, seedFields())).catch(warn);
+    OC.upsert(openCcn, Object.assign({ followUpOn: $('oc-followup').value }, seedFields()))
+      .then(flashSaved).catch(warn);
   });
-  // Nudges from whatever is already in the field (today if it's empty), so
-  // clicking it again keeps pushing the date forward.
   $('oc-followup-30').addEventListener('click', function () {
-    var cur = $('oc-followup').value;
-    var base = /^\d{4}-\d{2}-\d{2}$/.test(cur) ? new Date(cur + 'T00:00:00') : new Date();
-    base.setDate(base.getDate() + 30);
-    var next = base.getFullYear() + '-' + String(base.getMonth() + 1).padStart(2, '0')
-      + '-' + String(base.getDate()).padStart(2, '0');
+    var next = plusDays($('oc-followup').value, 30);
     $('oc-followup').value = next;
-    OC.upsert(openCcn, Object.assign({ followUpOn: next }, seedFields())).catch(warn);
+    OC.upsert(openCcn, Object.assign({ followUpOn: next }, seedFields()))
+      .then(flashSaved).catch(warn);
   });
   // Emptying a native date field is fiddly enough that people give up on it, so
   // dropping the follow-up gets its own button.
   $('oc-followup-clear').addEventListener('click', function () {
     $('oc-followup').value = '';
-    OC.upsert(openCcn, Object.assign({ followUpOn: '' }, seedFields())).catch(warn);
+    OC.upsert(openCcn, Object.assign({ followUpOn: '' }, seedFields()))
+      .then(flashSaved).catch(warn);
   });
 
   /* ---- corrections ---- */
   var VERDICT_LABEL = {
     '': 'Leave as the audit found it',
-    'compliant': 'Compliant — file found and current',
+    'compliant': 'Compliant: file found and current',
     'failing': 'Not compliant',
     'blocked': 'Blocked to automation',
     'exempt': 'Exempt',
@@ -1094,7 +1316,7 @@
   }).join('');
 
   // Anything that writes to the store re-renders the drawer, and refilling
-  // these inputs from the saved record would wipe a half-typed correction —
+  // these inputs from the saved record would wipe a half-typed correction;
   // change the stage or nudge the follow-up date mid-edit and the work is gone.
   // So the fields are only repopulated when they are not being edited, or when
   // the caller forces it: opening the drawer, and saving or clearing.
@@ -1124,6 +1346,10 @@
       ? ('Correction saved ' + (corr.checkedOn || '') + (age == null ? ''
           : ' · file is ' + age + ' days old' + (age > 365 ? ', past the twelve-month mark' : ', within the year')))
       : 'No correction recorded. The register shows what the crawl found.';
+    // The correction form is folded away by default, so its tab carries a mark
+    // when there is something in it to find.
+    var mark = $('oc-task-mark-correction');
+    if (mark) mark.hidden = !corr;
   }
 
   $('oc-c-save').addEventListener('click', function () {
@@ -1146,9 +1372,11 @@
       checkedOn: $('oc-c-checked').value || todayStr(),
       note: $('oc-c-note').value,
     }, seedFields())).then(function () {
-      // Saved, so the normalised values are now the truth to show.
+      // Saved, so the normalised values are now the truth to show. Discards go
+      // in their own slot: #oc-c-state says what is on record, and letting this
+      // overwrite it meant a clean save blanked its own confirmation.
       renderDrawer(true);
-      showDiscards('oc-c-state');
+      showDiscards('oc-c-discards');
     }).catch(warn);
   });
 
@@ -1182,6 +1410,8 @@
   $('oc-save-email').addEventListener('click', function () {
     var subject = $('oc-subject').value.trim();
     if (!subject) { $('oc-subject').focus(); return; }
+    var advance = $('oc-email-advance') && $('oc-email-advance').checked;
+    var discards = [];
     OC.addEntry(openCcn, Object.assign({
       kind: 'email',
       to: $('oc-to').value.trim(),
@@ -1189,10 +1419,21 @@
       body: $('oc-body').value,
       sentAt: $('oc-sent').value || todayStr(),
     }, seedFields())).then(function () {
+      // Capture before the second write: lastDiscards() reports the most recent
+      // call, and the upsert below would replace the email's report with its own.
+      discards = OC.lastDiscards().slice();
+      // Sending mail is also a stage change. Doing both from one button is what
+      // stops the stage and the log drifting apart.
+      if (!advance) return null;
+      return OC.upsert(openCcn, Object.assign({
+        status: 'awaiting-reply',
+        followUpOn: plusDays('', 30),
+      }, seedFields()));
+    }).then(function () {
       $('oc-to').value = '';
       $('oc-body').value = '';
       renderDrawer();
-      showDiscards('oc-email-state');
+      showDiscards('oc-email-state', null, discards);
     }).catch(warn);
   });
 
@@ -1230,7 +1471,7 @@
       var rec = drawerRecord();
       var entry = rec && (rec.entries || []).filter(function (x) { return x.id === editingId; })[0];
       if (!entry) { editingId = null; renderTimeline(); return; }
-      // Only the fields this kind actually holds — handing an email field to a
+      // Only the fields this kind actually holds, handing an email field to a
       // note would be reported as an unknown field rather than ignored.
       var fields = entry.kind === 'email'
         ? {
@@ -1312,7 +1553,7 @@
         }).join('')
       : '<p class="oc-empty">No follow-up dates set. Open a hospital and pick one to see it here.</p>';
 
-    // Anything touched counts, not just a logged note or email — moving the
+    // Anything touched counts, not just a logged note or email, moving the
     // stage or setting a follow-up date is activity too, and showing nothing
     // after a hospital was clearly worked on reads as broken.
     var touched = all.filter(function (r) {
@@ -1365,7 +1606,7 @@
       : mode === 'published' ? 'the published copy'
       : 'this browser only';
     $('oc-mode-note').textContent = mode === 'server'
-      ? 'Saved to cms_data/outreach.json — shared by every browser that opens this server.'
+      ? 'Saved to cms_data/outreach.json, shared by every browser that opens this server.'
       : mode === 'published'
       ? 'Showing the published log from cms_data/outreach.public.json. No server reachable, so anything you add here stays in this browser only.'
       : 'No server reachable, so records live in this browser’s localStorage. Export to move them.';
@@ -1592,15 +1833,58 @@
      The choice sticks across reloads. The inline script in <head> is what
      applies it before the first paint; this only records it. */
   var toggle = $('theme-toggle');
+
+  function currentTheme() {
+    return document.documentElement.getAttribute('data-theme')
+      || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  }
+  // The control names what it will do, not what it is: pressing "Dark" gives
+  // you dark. "Theme" named the noun and left you to guess the verb.
+  function paintToggle() {
+    var next = currentTheme() === 'dark' ? 'Light' : 'Dark';
+    toggle.textContent = next;
+    toggle.setAttribute('aria-label', 'Switch to ' + next.toLowerCase() + ' theme');
+  }
+  paintToggle();
+
   toggle.addEventListener('click', function () {
-    var root = document.documentElement;
-    var current = root.getAttribute('data-theme');
-    if (!current) {
-      current = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-    var next = current === 'dark' ? 'light' : 'dark';
-    root.setAttribute('data-theme', next);
+    var next = currentTheme() === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
     try { window.localStorage.setItem('cms-hpt-tracker.theme', next); } catch (e) { /* private mode */ }
+    paintToggle();
     runField(false);
   });
+  // Following the OS while no explicit choice is stored means the label has to
+  // follow it too.
+  if (darkQuery.addEventListener) darkQuery.addEventListener('change', paintToggle);
+
+  /* ---------- section bar ----------
+     Same mechanism as the explainer pages' contents rail (js/docs.js): an
+     observer lights the topmost visible section, chosen over scroll-position
+     maths so anchor jumps stay correct. */
+  var navLinks = [].slice.call(document.querySelectorAll('#secnav-links a'));
+  var sections = navLinks
+    .map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); })
+    .filter(Boolean);
+
+  if (sections.length && 'IntersectionObserver' in window) {
+    var visible = {};
+    var markCurrent = function () {
+      var top = null;
+      for (var i = 0; i < sections.length; i++) {
+        if (visible[sections[i].id]) { top = sections[i].id; break; }
+      }
+      navLinks.forEach(function (a) {
+        var on = a.getAttribute('href') === '#' + top;
+        a.classList.toggle('on', on);
+        if (on) a.setAttribute('aria-current', 'true');
+        else a.removeAttribute('aria-current');
+      });
+    };
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { visible[e.target.id] = e.isIntersecting; });
+      markCurrent();
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    sections.forEach(function (s) { obs.observe(s); });
+  }
 })();

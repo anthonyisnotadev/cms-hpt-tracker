@@ -13,20 +13,34 @@
      the OS preference on the first click so that the first press always
      visibly changes something, and remembered under the same storage key the
      tracker uses so one choice covers every page. Re-applying it before the
-     first paint is the inline script's job, not this one's — this file is
+     first paint is the inline script's job, not this one's; this file is
      deferred and would flash the old palette. */
   var toggle = document.getElementById('theme-toggle');
   if (toggle) {
+    var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+    function currentTheme() {
+      return document.documentElement.getAttribute('data-theme')
+        || (darkQuery.matches ? 'dark' : 'light');
+    }
+    // The control names what it will do, not what it is: pressing "Dark" gives
+    // you dark. "Theme" named the noun and left you to guess the verb.
+    function paintToggle() {
+      var next = currentTheme() === 'dark' ? 'Light' : 'Dark';
+      toggle.textContent = next;
+      toggle.setAttribute('aria-label', 'Switch to ' + next.toLowerCase() + ' theme');
+    }
+    paintToggle();
+
     toggle.addEventListener('click', function () {
-      var root = document.documentElement;
-      var current = root.getAttribute('data-theme');
-      if (!current) {
-        current = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      }
-      var next = current === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', next);
+      var next = currentTheme() === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
       try { window.localStorage.setItem('cms-hpt-tracker.theme', next); } catch (e) { /* private mode */ }
+      paintToggle();
     });
+    // Following the OS while no explicit choice is stored means the label has
+    // to follow it too.
+    if (darkQuery.addEventListener) darkQuery.addEventListener('change', paintToggle);
   }
 
   /* ---------- contents rail ---------- */

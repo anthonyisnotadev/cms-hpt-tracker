@@ -1,121 +1,170 @@
 /* ============================================================
-   Shared stylesheet for the explainer pages that sit alongside
-   tracker.html (mrf.html, rules.html, pointer.html).
+   Shared stylesheet for the whole site.
 
-   The tracker keeps its CSS inline because the build rewrites that
-   file in place and ships it as a single self-contained artifact.
-   These pages have no such constraint, so they share one sheet —
-   but they deliberately carry a verbatim copy of the tracker's
-   tokens, masthead and table rules so the two halves of the site
-   read as one document. Change a token here and change it there.
+   mrf.html, rules.html and pointer.html link this file directly.
+   tracker.html cannot: the build rewrites that file in place and
+   ships it as a single self-contained artifact. So scripts/build-
+   tracker.js injects THIS file plus css/tracker.css into the
+   tracker's <style> block. There is one copy of every rule.
+
+   Edit css/*.css, then run `npm run build`. Never hand-edit the
+   <style> block in tracker.html; the build overwrites it.
+
+   Design system
+   -------------
+   Grounds are near-white, pulled a point or two warm so the page
+   is not a hex-for-hex copy of anyone else's. Colour means status
+   and nothing else: the five status hues are the only chroma on
+   the page, which is why links and controls are ink and weight
+   rather than a brand accent. Separation is a hairline, not a
+   shadow; only genuinely floating things (drawer, tooltip) get
+   elevation.
    ============================================================ */
 
 /* ---- Tokens. Light is the base; dark redefines only the values. ---- */
 :root {
-  --paper:        #eef2ed;
-  --band:         #e6ece5;
-  --surface:      #fbfcfa;
-  --surface-2:    #f4f7f3;
-  --surface-sunk: #e2e8e1;
-  --ink:          #131a14;
-  --ink-2:        #48544a;
-  --ink-3:        #5c675d;
-  --rule:         #d5ded3;
-  --rule-strong:  #bcc7ba;
+  /* Grounds and ink */
+  --paper:        #f5f5f3;
+  --band:         #efefec;
+  --surface:      #ffffff;
+  --surface-2:    #fafaf8;
+  --surface-sunk: #e8e8e4;
+  --ink:          #1d1d1f;
+  --ink-2:        #4a4a4f;
+  --ink-3:        #67676c;
+  --rule:         #d9d9d4;
+  --rule-strong:  #c2c2bc;
 
-  --st-compliant: #12805c;
+  /* Status marks, the only chroma on the page. */
+  --st-compliant: #0f7350;
   --st-failing:   #b3271b;
-  --st-blocked:   #c08400;
-  --st-exempt:    #3a6ca6;
-  --st-unknown:   #8b9391;
+  --st-blocked:   #8a5d00;
+  --st-exempt:    #2f6099;
+  --st-unknown:   #6e6e73;
 
-  --st-compliant-bg: #e4f1eb;
-  --st-failing-bg:   #f8e5e3;
+  /* Badge tints. */
+  --st-compliant-bg: #e3f2ea;
+  --st-failing-bg:   #fbe6e3;
   --st-blocked-bg:   #f8eed6;
-  --st-exempt-bg:    #e5edf6;
-  --st-unknown-bg:   #eaedeb;
+  --st-exempt-bg:    #e6eefa;
+  --st-unknown-bg:   #e9e9e6;
 
-  --st-compliant-fg: #117b58;
-  --st-failing-fg:   #b3271b;
-  --st-blocked-fg:   #926400;
-  --st-exempt-fg:    #3a6ca6;
-  --st-unknown-fg:   #4b5552;
+  /* Badge text needs 4.5:1 on its own tint, which is a stricter job
+     than a chart mark on the page ground, so it gets its own steps. */
+  --st-compliant-fg: #0d6647;
+  --st-failing-fg:   #a32318;
+  --st-blocked-fg:   #7a5200;
+  --st-exempt-fg:    #2a5688;
+  --st-unknown-fg:   #55555a;
 
-  --focus: #141917;
+  /* Stroke for a hollow mark in the field. Tuned per ground so "never
+     checked" reads as a punched hole, not as blank paper. */
+  --field-hollow: #82827c;
 
-  --f-display: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif;
-  --f-body: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --f-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --focus: #1d1d1f;
 
+  /* Type. One family, two optical roles: size, weight and tracking do
+     the separating, the way SF Pro Display and Text are one family.
+     Mono is the system stack: SF Mono on Apple, Consolas on Windows,
+     and zero bytes over the wire. */
+  --f-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --f-display: var(--f-body);
+  --f-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+
+  /* Six steps with real separation between them, plus one label step
+     for uppercase eyebrows where caps already read larger. */
+  --fs-display: clamp(40px, 5vw, 64px);
+  --fs-h2:      32px;
+  --fs-h3:      21px;
+  --fs-body:    17px;
+  --fs-sm:      15px;
+  --fs-xs:      13px;
+  --fs-label:   12px;
+
+  /* 4px base. */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px; --s-5: 24px;
+  --s-6: 32px; --s-7: 48px; --s-8: 64px; --s-9: 96px;
+
+  --r-sm:   6px;   /* badges, inline code */
+  --r-md:   8px;   /* inputs, selects, buttons */
+  --r-lg:   12px;  /* cards, tiles, listings */
+  --r-xl:   18px;  /* large panels, the drawer */
+  --r-pill: 980px;
+
+  --ctl-h: 44px;
   --wrap: 1180px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper:        #111111;
-    --band:         #161616;
-    --surface:      #191919;
-    --surface-2:    #1f1f1f;
-    --surface-sunk: #0a0a0a;
-    --ink:          #eaeaea;
-    --ink-2:        #a8a8a8;
-    --ink-3:        #808080;
-    --rule:         #2a2a2a;
-    --rule-strong:  #3d3d3d;
+    --paper:        #000000;
+    --band:         #0e0e0f;
+    --surface:      #1c1c1e;
+    --surface-2:    #2c2c2e;
+    --surface-sunk: #141416;
+    --ink:          #f5f5f7;
+    --ink-2:        #b0b0b6;
+    --ink-3:        #8e8e93;
+    --rule:         #2c2c2e;
+    --rule-strong:  #48484a;
 
-    --st-compliant: #19a377;
-    --st-failing:   #d03a2a;
-    --st-blocked:   #b78c08;
-    --st-exempt:    #4384d6;
-    --st-unknown:   #8a8a8a;
+    --st-compliant: #2ec98f;
+    --st-failing:   #ff6155;
+    --st-blocked:   #e0ac1f;
+    --st-exempt:    #6bb0f5;
+    --st-unknown:   #98989d;
 
-    --st-compliant-bg: #16241f;
-    --st-failing-bg:   #2e1c18;
+    --st-compliant-bg: #13291f;
+    --st-failing-bg:   #2e1a17;
     --st-blocked-bg:   #2b2413;
-    --st-exempt-bg:    #16202c;
-    --st-unknown-bg:   #232323;
+    --st-exempt-bg:    #152232;
+    --st-unknown-bg:   #242426;
 
-    --st-compliant-fg: #19a377;
-    --st-failing-fg:   #db695d;
-    --st-blocked-fg:   #b78c08;
-    --st-exempt-fg:    #4384d6;
-    --st-unknown-fg:   #a8a8a8;
+    --st-compliant-fg: #3ed69b;
+    --st-failing-fg:   #ff7b70;
+    --st-blocked-fg:   #e8b62c;
+    --st-exempt-fg:    #79b9f7;
+    --st-unknown-fg:   #a8a8ae;
 
-    --focus: #eaeaea;
+    --field-hollow: #6e6e73;
+
+    --focus: #f5f5f7;
   }
 }
 
 :root[data-theme="dark"] {
-  --paper:        #111111;
-  --band:         #161616;
-  --surface:      #191919;
-  --surface-2:    #1f1f1f;
-  --surface-sunk: #0a0a0a;
-  --ink:          #eaeaea;
-  --ink-2:        #a8a8a8;
-  --ink-3:        #808080;
-  --rule:         #2a2a2a;
-  --rule-strong:  #3d3d3d;
+  --paper:        #000000;
+  --band:         #0e0e0f;
+  --surface:      #1c1c1e;
+  --surface-2:    #2c2c2e;
+  --surface-sunk: #141416;
+  --ink:          #f5f5f7;
+  --ink-2:        #b0b0b6;
+  --ink-3:        #8e8e93;
+  --rule:         #2c2c2e;
+  --rule-strong:  #48484a;
 
-  --st-compliant: #19a377;
-  --st-failing:   #d03a2a;
-  --st-blocked:   #b78c08;
-  --st-exempt:    #4384d6;
-  --st-unknown:   #8a8a8a;
+  --st-compliant: #2ec98f;
+  --st-failing:   #ff6155;
+  --st-blocked:   #e0ac1f;
+  --st-exempt:    #6bb0f5;
+  --st-unknown:   #98989d;
 
-  --st-compliant-bg: #16241f;
-  --st-failing-bg:   #2e1c18;
+  --st-compliant-bg: #13291f;
+  --st-failing-bg:   #2e1a17;
   --st-blocked-bg:   #2b2413;
-  --st-exempt-bg:    #16202c;
-  --st-unknown-bg:   #232323;
+  --st-exempt-bg:    #152232;
+  --st-unknown-bg:   #242426;
 
-  --st-compliant-fg: #19a377;
-  --st-failing-fg:   #db695d;
-  --st-blocked-fg:   #b78c08;
-  --st-exempt-fg:    #4384d6;
-  --st-unknown-fg:   #a8a8a8;
+  --st-compliant-fg: #3ed69b;
+  --st-failing-fg:   #ff7b70;
+  --st-blocked-fg:   #e8b62c;
+  --st-exempt-fg:    #79b9f7;
+  --st-unknown-fg:   #a8a8ae;
 
-  --focus: #eaeaea;
+  --field-hollow: #6e6e73;
+
+  --focus: #f5f5f7;
 }
 
 /* ============================================================
@@ -130,29 +179,37 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--f-body);
-  font-size: 15px;
-  line-height: 1.55;
+  font-size: var(--fs-body);
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-h1, h2, h3, h4 { font-family: var(--f-display); font-weight: 700; margin: 0; text-wrap: balance; letter-spacing: -0.015em; }
+/* Headings separate from body by size, weight and tracking, not by a
+   second family. Tracking tightens as size grows, as optical sizing does. */
+h1, h2, h3, h4 {
+  font-family: var(--f-display);
+  font-weight: 600;
+  margin: 0;
+  text-wrap: balance;
+  letter-spacing: -0.021em;
+}
 
 a { color: inherit; text-decoration: none; }
 
 button { font: inherit; color: inherit; background: none; border: none; padding: 0; cursor: pointer; }
 
-:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 2px; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: var(--r-sm); }
 
-.num { font-family: var(--f-mono); font-variant-numeric: tabular-nums; font-feature-settings: 'tnum' 1; }
+/* Numbers align in columns whatever the family. */
+.num { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum' 1; }
 
-.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 28px; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--s-5); }
 
 .eyebrow {
-  font-family: var(--f-display);
-  font-size: 11px;
+  font-size: var(--fs-label);
   font-weight: 600;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink-3);
 }
@@ -162,13 +219,30 @@ button { font: inherit; color: inherit; background: none; border: none; padding:
   overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
 }
 
+/* The first thing a keyboard reaches, on every page. Parked off-screen by
+   transform rather than display:none so it stays focusable. */
+.skip {
+  /* Fixed, not absolute: an absolutely-positioned skip link is placed against
+     the document, so it sits thousands of pixels above the viewport once the
+     reader has scrolled. Fixed keeps it reachable wherever focus arrives. */
+  position: fixed; left: var(--s-4); top: var(--s-4); z-index: 100;
+  transform: translateY(-250%);
+  background: var(--ink); color: var(--paper);
+  padding: var(--s-3) var(--s-5);
+  border-radius: var(--r-md);
+  font-size: var(--fs-sm); font-weight: 600;
+  white-space: nowrap;
+}
+.skip:focus { transform: none; }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
 
 /* ============================================================
-   Masthead — same furniture as the tracker, shorter body
+   Masthead, content nav and utility are separate, so the theme
+   control stays put when the links scroll on a narrow screen.
    ============================================================ */
 .masthead {
   border-bottom: 1px solid var(--rule);
@@ -176,172 +250,198 @@ button { font: inherit; color: inherit; background: none; border: none; padding:
 }
 
 .masthead-bar {
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 20px; padding-top: 18px; padding-bottom: 18px;
+  display: flex; align-items: center; gap: var(--s-5);
+  padding-top: var(--s-3); padding-bottom: var(--s-3);
   border-bottom: 1px solid var(--rule);
 }
 
 .wordmark {
-  display: flex; align-items: baseline; gap: 10px;
-  font-family: var(--f-display); font-weight: 700; font-size: 15px; letter-spacing: -0.01em;
+  display: flex; align-items: baseline; gap: var(--s-2);
+  font-weight: 600; font-size: var(--fs-sm); letter-spacing: -0.01em;
+  flex: none;
 }
-.wordmark span { font-family: var(--f-mono); font-size: 11px; font-weight: 400; color: var(--ink-3); letter-spacing: 0; }
+.wordmark span { font-size: var(--fs-label); font-weight: 400; color: var(--ink-3); letter-spacing: 0; }
 
-.masthead-links { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+/* Scrolls at every width, not just below the mobile breakpoint. The links are
+   nowrap, so any viewport too narrow for all five of them, roughly 760–900px,
+   between the breakpoint and where they naturally fit, pushed the last one
+   past the edge and gave the whole page a horizontal scrollbar. */
+.masthead-links {
+  display: flex; align-items: center; gap: var(--s-1);
+  margin-left: auto; min-width: 0;
+  overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none;
+}
+.masthead-links::-webkit-scrollbar { display: none; }
+.masthead-util { display: flex; align-items: center; gap: var(--s-1); flex: none; }
+
 .masthead-links a, .theme-toggle {
-  font-size: 13px; font-weight: 500; color: var(--ink-2);
-  padding: 6px 11px; border-radius: 3px;
+  display: inline-flex; align-items: center;
+  min-height: 36px; padding: 0 var(--s-3);
+  border-radius: var(--r-md);
+  font-size: var(--fs-xs); font-weight: 500; color: var(--ink-2);
+  white-space: nowrap;
 }
 .masthead-links a:hover, .theme-toggle:hover { background: var(--surface-sunk); color: var(--ink); }
 /* The page you are already on stays legible but stops inviting a click. */
 .masthead-links a[aria-current="page"] { color: var(--ink); background: var(--surface-sunk); }
 
-.masthead-body { padding-top: 40px; padding-bottom: 36px; }
+.masthead-body { padding-top: var(--s-8); padding-bottom: var(--s-7); }
 
 .masthead-body h1 {
-  font-size: clamp(32px, 4.6vw, 50px);
-  line-height: 1.04;
+  font-size: var(--fs-display);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
   max-width: 18ch;
-  margin: 14px 0 0;
+  margin: var(--s-3) 0 0;
 }
 
 .standfirst {
-  margin: 20px 0 0;
-  max-width: 64ch;
-  font-size: 17px;
-  line-height: 1.6;
+  margin: var(--s-5) 0 0;
+  max-width: 60ch;
+  font-size: var(--fs-h3);
+  line-height: 1.5;
+  letter-spacing: -0.011em;
   color: var(--ink-2);
 }
 .standfirst strong { color: var(--ink); font-weight: 600; }
-.standfirst code { font-family: var(--f-mono); font-size: 14px; }
+.standfirst code { font-family: var(--f-mono); font-size: 0.85em; }
 
 .dateline {
-  display: flex; flex-wrap: wrap; gap: 8px 22px;
-  margin-top: 26px; padding-top: 18px;
+  display: flex; flex-wrap: wrap; gap: var(--s-2) var(--s-6);
+  margin-top: var(--s-6); padding-top: var(--s-4);
   border-top: 1px solid var(--rule);
-  font-family: var(--f-mono); font-size: 12px; color: var(--ink-3);
+  font-size: var(--fs-xs); color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
 }
 .dateline b { color: var(--ink-2); font-weight: 500; }
 .dateline a { border-bottom: 1px solid var(--rule-strong); }
 .dateline a:hover { color: var(--ink); }
 
+/* Content links scroll as one strip; the theme control never moves. */
+@media (max-width: 760px) {
+  .masthead-bar { flex-wrap: wrap; gap: var(--s-3); }
+  .masthead-links { order: 3; width: 100%; margin-left: 0; }
+  .masthead-util { margin-left: auto; }
+}
+
 /* ============================================================
    Document layout: sticky contents rail beside the prose
    ============================================================ */
-.doc { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 56px; padding: 48px 0 24px; }
+.doc { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: var(--s-8); padding: var(--s-8) 0 var(--s-5); }
 
-.toc { position: sticky; top: 28px; align-self: start; font-size: 13px; }
-.toc p { margin: 0 0 12px; }
+.toc { position: sticky; top: var(--s-5); align-self: start; font-size: var(--fs-xs); }
+.toc p { margin: 0 0 var(--s-3); }
 .toc ol { list-style: none; margin: 0; padding: 0; counter-reset: toc; }
 .toc li { counter-increment: toc; border-top: 1px solid var(--rule); }
-.toc a { display: block; padding: 9px 0 9px 24px; position: relative; color: var(--ink-2); line-height: 1.35; }
+.toc a { display: block; padding: var(--s-3) 0 var(--s-3) var(--s-5); position: relative; color: var(--ink-2); line-height: 1.35; }
 .toc a::before {
   content: counter(toc, decimal-leading-zero);
-  position: absolute; left: 0; top: 9px;
-  font-family: var(--f-mono); font-size: 10.5px; color: var(--ink-3);
+  position: absolute; left: 0; top: var(--s-3);
+  font-variant-numeric: tabular-nums;
+  font-size: 11px; color: var(--ink-3);
 }
 .toc a:hover { color: var(--ink); }
 .toc a.on { color: var(--ink); font-weight: 600; }
 .toc a.on::before { color: var(--ink); }
 
 @media (max-width: 900px) {
-  .doc { grid-template-columns: minmax(0, 1fr); gap: 0; padding-top: 32px; }
-  .toc { position: static; margin-bottom: 34px; padding-bottom: 24px; border-bottom: 1px solid var(--rule); }
+  .doc { grid-template-columns: minmax(0, 1fr); gap: 0; padding-top: var(--s-6); }
+  .toc { position: static; margin-bottom: var(--s-6); padding-bottom: var(--s-5); border-bottom: 1px solid var(--rule); }
 }
 
 /* ============================================================
    Prose
    ============================================================ */
-.prose > section { padding-bottom: 46px; margin-bottom: 46px; border-bottom: 1px solid var(--rule); }
+.prose > section { padding-bottom: var(--s-8); margin-bottom: var(--s-8); border-bottom: 1px solid var(--rule); }
 .prose > section:last-child { border-bottom: none; }
 
 /* Anchored headings clear the sticky rail rather than hiding under it. */
-.prose h2 { font-size: 27px; margin: 0 0 4px; scroll-margin-top: 24px; max-width: 26ch; }
-.prose h3 { font-size: 17px; margin: 34px 0 0; }
-.prose h4 { font-size: 14px; margin: 24px 0 0; color: var(--ink-2); }
+.prose h2 { font-size: var(--fs-h2); line-height: 1.15; margin: 0 0 var(--s-1); scroll-margin-top: var(--s-5); max-width: 26ch; }
+.prose h3 { font-size: var(--fs-h3); line-height: 1.3; letter-spacing: -0.018em; margin: var(--s-7) 0 0; }
+.prose h4 { font-size: var(--fs-sm); letter-spacing: -0.01em; margin: var(--s-5) 0 0; color: var(--ink-2); }
 
-.prose p { margin: 14px 0 0; max-width: 72ch; color: var(--ink-2); line-height: 1.68; font-size: 15.5px; }
-.prose h2 + p { color: var(--ink-2); }
+.prose p { margin: var(--s-4) 0 0; max-width: 68ch; color: var(--ink-2); line-height: 1.6; font-size: var(--fs-body); }
 .prose p strong, .prose li strong { color: var(--ink); font-weight: 600; }
 .prose a[href] { border-bottom: 1px solid var(--rule-strong); color: inherit; }
 .prose a[href]:hover { border-bottom-color: var(--ink); color: var(--ink); }
 
-.prose ul, .prose ol { margin: 14px 0 0; padding-left: 20px; max-width: 72ch; color: var(--ink-2); font-size: 15.5px; line-height: 1.62; }
-.prose li { margin: 7px 0; }
+.prose ul, .prose ol { margin: var(--s-4) 0 0; padding-left: var(--s-5); max-width: 68ch; color: var(--ink-2); font-size: var(--fs-body); line-height: 1.6; }
+.prose li { margin: var(--s-2) 0; }
 .prose li::marker { color: var(--ink-3); }
 
 .prose code {
-  font-family: var(--f-mono); font-size: 13px;
-  background: var(--surface-sunk); padding: 1px 5px; border-radius: 3px;
+  font-family: var(--f-mono); font-size: 0.86em;
+  background: var(--surface-sunk); padding: 2px 6px; border-radius: var(--r-sm);
   overflow-wrap: anywhere;
 }
 
 /* A lead paragraph carries the section's claim before the detail arrives. */
-.lead { font-size: 17px !important; color: var(--ink) !important; line-height: 1.6 !important; max-width: 66ch; }
+.lead { font-size: var(--fs-h3) !important; color: var(--ink) !important; line-height: 1.5 !important; letter-spacing: -0.011em; max-width: 60ch; }
 
 /* ============================================================
    Code / file listings
    ============================================================ */
-figure.listing { margin: 24px 0 0; }
+figure.listing { margin: var(--s-5) 0 0; }
 figure.listing figcaption {
-  font-family: var(--f-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
-  color: var(--ink-3); padding-bottom: 8px;
+  font-size: var(--fs-label); letter-spacing: .06em; text-transform: uppercase;
+  color: var(--ink-3); padding-bottom: var(--s-2);
 }
 pre {
   margin: 0;
   background: var(--surface);
   border: 1px solid var(--rule);
-  border-radius: 4px;
-  padding: 16px 18px;
+  border-radius: var(--r-lg);
+  padding: var(--s-4) var(--s-5);
   overflow-x: auto;
   font-family: var(--f-mono);
-  font-size: 12.5px;
+  font-size: var(--fs-xs);
   line-height: 1.7;
   color: var(--ink);
   tab-size: 2;
 }
 pre b { font-weight: 500; color: var(--st-compliant-fg); }
 pre i { font-style: normal; color: var(--ink-3); }
-figure.listing .note { margin: 10px 0 0; font-size: 13.5px; color: var(--ink-3); max-width: 72ch; }
+figure.listing .note { margin: var(--s-3) 0 0; font-size: var(--fs-sm); color: var(--ink-3); max-width: 68ch; }
 
 /* ============================================================
-   Tables — the tracker's rules, plus a wrapper that scrolls
+   Tables
    ============================================================ */
-.scroll-x { overflow-x: auto; margin-top: 22px; }
+.scroll-x { overflow-x: auto; margin-top: var(--s-5); }
 .tbl { width: 100%; border-collapse: collapse; }
 .tbl thead th {
-  text-align: left; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
-  color: var(--ink-3); padding: 0 14px 10px 0; border-bottom: 1px solid var(--rule-strong);
+  text-align: left; font-size: var(--fs-label); font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--ink-3); padding: 0 var(--s-4) var(--s-3) 0; border-bottom: 1px solid var(--rule-strong);
   white-space: nowrap; vertical-align: bottom;
 }
-.tbl tbody td { padding: 11px 14px 11px 0; border-bottom: 1px solid var(--rule); font-size: 14px; vertical-align: top; line-height: 1.5; }
+.tbl tbody td { padding: var(--s-3) var(--s-4) var(--s-3) 0; border-bottom: 1px solid var(--rule); font-size: var(--fs-sm); vertical-align: top; line-height: 1.5; }
 .tbl tbody tr:nth-child(even) { background: var(--band); }
 .tbl tbody th {
-  text-align: left; font-weight: 600; font-size: 14px;
-  padding: 11px 14px 11px 0; border-bottom: 1px solid var(--rule); vertical-align: top;
+  text-align: left; font-weight: 600; font-size: var(--fs-sm);
+  padding: var(--s-3) var(--s-4) var(--s-3) 0; border-bottom: 1px solid var(--rule); vertical-align: top;
 }
-.tbl code { font-family: var(--f-mono); font-size: 12.5px; background: var(--surface-sunk); padding: 1px 5px; border-radius: 3px; }
-.tbl .t-mono { font-family: var(--f-mono); font-size: 12.5px; white-space: nowrap; }
+.tbl code { font-family: var(--f-mono); font-size: 0.86em; background: var(--surface-sunk); padding: 2px 6px; border-radius: var(--r-sm); }
+.tbl .t-mono { font-family: var(--f-mono); font-size: var(--fs-xs); white-space: nowrap; }
 .tbl .t-dim { color: var(--ink-3); }
 .tbl .t-right { text-align: right; font-variant-numeric: tabular-nums; }
-.tbl caption { caption-side: bottom; text-align: left; padding-top: 12px; font-size: 13px; color: var(--ink-3); max-width: 72ch; }
+.tbl caption { caption-side: bottom; text-align: left; padding-top: var(--s-3); font-size: var(--fs-sm); color: var(--ink-3); max-width: 68ch; }
 
 /* ============================================================
-   Callout — a boxed aside that is not the argument's main line
+   Callout, a boxed aside that is not the argument's main line
    ============================================================ */
+/* A filled panel, not an outlined box. The stroke plus the coloured left bar
+   made every aside read as a warning label; the fill separates it from the
+   prose on its own, and tone rides on the heading colour instead. */
 .callout {
-  margin: 26px 0 0;
-  background: var(--surface);
-  border: 1px solid var(--rule);
-  border-left: 3px solid var(--rule-strong);
-  border-radius: 3px;
-  padding: 18px 20px;
-  max-width: 74ch;
+  margin: var(--s-6) 0 0;
+  background: var(--surface-sunk);
+  border: none;
+  border-radius: var(--r-lg);
+  padding: var(--s-5);
+  max-width: 70ch;
 }
-.callout h4 { font-size: 13px; margin: 0 0 6px; letter-spacing: .02em; }
-.callout p { margin: 0; font-size: 14px; color: var(--ink-2); line-height: 1.6; max-width: none; }
-.callout p + p { margin-top: 10px; }
-.callout[data-tone="warn"] { border-left-color: var(--st-blocked); }
+.callout h4 { font-size: var(--fs-sm); margin: 0 0 var(--s-2); }
+.callout p { margin: 0; font-size: var(--fs-sm); color: var(--ink-2); line-height: 1.6; max-width: none; }
+.callout p + p { margin-top: var(--s-3); }
 .callout[data-tone="warn"] h4 { color: var(--st-blocked-fg); }
 
 /* ============================================================
@@ -354,16 +454,16 @@ figure.listing .note { margin: 10px 0 0; font-size: 13.5px; color: var(--ink-3);
    ============================================================ */
 .cite {
   display: inline-block;
-  font-family: var(--f-mono); font-size: 11px; letter-spacing: .01em;
+  font-family: var(--f-mono); font-size: var(--fs-label);
   color: var(--ink-3);
   background: var(--surface-sunk);
-  padding: 2px 7px; border-radius: 3px;
+  padding: 3px 8px; border-radius: var(--r-sm);
   white-space: nowrap;
   vertical-align: 1px;
 }
 a.cite { border-bottom: none !important; }
 a.cite:hover { color: var(--ink); background: var(--rule); }
-h2 .cite, h3 .cite { margin-left: 8px; vertical-align: 4px; }
+h2 .cite, h3 .cite { margin-left: var(--s-2); vertical-align: 4px; }
 
 sup.ref { line-height: 0; font-size: 0; vertical-align: baseline; }
 sup.ref a {
@@ -378,52 +478,52 @@ sup.ref a::before { content: '['; }
 sup.ref a::after { content: ']'; }
 
 /* ---- The numbered source list itself ---- */
-.sources { counter-reset: src; list-style: none; margin: 24px 0 0; padding: 0; max-width: 78ch; border-top: 1px solid var(--rule-strong); }
+.sources { counter-reset: src; list-style: none; margin: var(--s-5) 0 0; padding: 0; max-width: 74ch; border-top: 1px solid var(--rule-strong); }
 .sources li {
   counter-increment: src;
   position: relative;
-  padding: 14px 0 14px 42px;
+  padding: var(--s-4) 0 var(--s-4) var(--s-7);
   margin: 0;
   border-bottom: 1px solid var(--rule);
-  font-size: 14px; line-height: 1.6; color: var(--ink-2);
+  font-size: var(--fs-sm); line-height: 1.6; color: var(--ink-2);
 }
 .sources li::before {
   content: '[' counter(src) ']';
-  position: absolute; left: 0; top: 14px;
-  font-family: var(--f-mono); font-size: 11.5px; color: var(--ink-3);
+  position: absolute; left: 0; top: var(--s-4);
+  font-family: var(--f-mono); font-size: var(--fs-label); color: var(--ink-3);
 }
 .sources li:target { background: var(--surface); }
 .sources li:target::before { color: var(--ink); }
-.sources b { display: block; color: var(--ink); font-weight: 600; font-size: 14.5px; }
-.sources .pub { display: block; font-size: 13px; color: var(--ink-3); margin-top: 2px; }
-.sources .used { display: block; font-size: 13px; margin-top: 6px; }
+.sources b { display: block; color: var(--ink); font-weight: 600; font-size: var(--fs-sm); }
+.sources .pub { display: block; font-size: var(--fs-xs); color: var(--ink-3); margin-top: 2px; }
+.sources .used { display: block; font-size: var(--fs-xs); margin-top: var(--s-2); }
 .sources .used em { font-style: normal; color: var(--ink-3); }
 .sources a { word-break: break-word; }
 
 /* ============================================================
-   Definition grid — term / meaning pairs
+   Definition grid, term / meaning pairs
    ============================================================ */
-.defs { margin: 24px 0 0; border-top: 1px solid var(--rule-strong); }
+.defs { margin: var(--s-5) 0 0; border-top: 1px solid var(--rule-strong); }
 .defs > div {
-  display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 0 28px;
-  padding: 16px 0; border-bottom: 1px solid var(--rule);
+  display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 0 var(--s-6);
+  padding: var(--s-4) 0; border-bottom: 1px solid var(--rule);
 }
-.defs dt, .defs .term { font-weight: 600; font-size: 14.5px; }
-.defs .term small { display: block; font-family: var(--f-mono); font-size: 11.5px; font-weight: 400; color: var(--ink-3); margin-top: 3px; }
-.defs dd, .defs .meaning { margin: 0; font-size: 14.5px; color: var(--ink-2); line-height: 1.6; }
-.defs .meaning code { font-family: var(--f-mono); font-size: 12.5px; background: var(--surface-sunk); padding: 1px 5px; border-radius: 3px; }
+.defs dt, .defs .term { font-weight: 600; font-size: var(--fs-sm); }
+.defs .term small { display: block; font-family: var(--f-mono); font-size: var(--fs-label); font-weight: 400; color: var(--ink-3); margin-top: 3px; }
+.defs dd, .defs .meaning { margin: 0; font-size: var(--fs-sm); color: var(--ink-2); line-height: 1.6; }
+.defs .meaning code { font-family: var(--f-mono); font-size: 0.86em; background: var(--surface-sunk); padding: 2px 6px; border-radius: var(--r-sm); }
 
 @media (max-width: 700px) {
-  .defs > div { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .defs > div { grid-template-columns: minmax(0, 1fr); gap: var(--s-2); }
 }
 
 /* ============================================================
-   Timeline — dated rows down a rule
+   Timeline, dated rows down a rule
    ============================================================ */
-.timeline { margin: 26px 0 0; padding-left: 0; list-style: none; }
+.timeline { margin: var(--s-6) 0 0; padding-left: 0; list-style: none; }
 .timeline li {
-  display: grid; grid-template-columns: 128px minmax(0, 1fr); gap: 0 26px;
-  padding: 0 0 26px 0; margin: 0; position: relative;
+  display: grid; grid-template-columns: 128px minmax(0, 1fr); gap: 0 var(--s-6);
+  padding: 0 0 var(--s-6) 0; margin: 0; position: relative;
 }
 .timeline li::before {
   content: ''; position: absolute; left: 139px; top: 16px; bottom: 0; width: 1px; background: var(--rule);
@@ -431,8 +531,8 @@ sup.ref a::after { content: ']'; }
 .timeline li:last-child { padding-bottom: 0; }
 .timeline li:last-child::before { display: none; }
 .timeline .when {
-  font-family: var(--f-mono); font-size: 12.5px; color: var(--ink); text-align: right;
-  padding-top: 1px; position: relative;
+  font-variant-numeric: tabular-nums; font-size: var(--fs-xs); color: var(--ink); text-align: right;
+  padding-top: 2px; position: relative;
 }
 .timeline .when::after {
   content: ''; position: absolute; right: -30px; top: 6px;
@@ -440,11 +540,11 @@ sup.ref a::after { content: ']'; }
   background: var(--paper); border: 2px solid var(--rule-strong);
 }
 .timeline li[data-live="1"] .when::after { background: var(--st-compliant); border-color: var(--st-compliant); }
-.timeline .what { font-size: 14.5px; line-height: 1.6; color: var(--ink-2); padding-left: 12px; }
-.timeline .what b { display: block; color: var(--ink); font-weight: 600; font-size: 15px; margin-bottom: 3px; }
+.timeline .what { font-size: var(--fs-sm); line-height: 1.6; color: var(--ink-2); padding-left: var(--s-3); }
+.timeline .what b { display: block; color: var(--ink); font-weight: 600; font-size: var(--fs-body); margin-bottom: 3px; }
 
 @media (max-width: 700px) {
-  .timeline li { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .timeline li { grid-template-columns: minmax(0, 1fr); gap: var(--s-1); }
   .timeline li::before { display: none; }
   .timeline .when { text-align: left; }
   .timeline .when::after { display: none; }
@@ -452,18 +552,28 @@ sup.ref a::after { content: ']'; }
 }
 
 /* ============================================================
-   Cards — parallel items that are not a sequence
+   Cards, parallel items that are not a sequence.
+   The 1px gap over a rule-coloured ground is the separator; these
+   are flat cells sharing a hairline, not floating boxes.
    ============================================================ */
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; margin-top: 26px; }
-.card { background: var(--surface); padding: 22px 20px; }
-.card h4 { font-size: 14px; margin: 0 0 8px; color: var(--ink); }
-.card p { margin: 0; font-size: 13.5px; color: var(--ink-2); line-height: 1.6; max-width: none; }
-.card .k { font-family: var(--f-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); display: block; margin-bottom: 8px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: var(--r-lg); overflow: hidden; margin-top: var(--s-6); }
+.card { background: var(--surface); padding: var(--s-5); }
+.card h4 { font-size: var(--fs-sm); margin: 0 0 var(--s-2); color: var(--ink); }
+.card p { margin: 0; font-size: var(--fs-sm); color: var(--ink-2); line-height: 1.6; max-width: none; }
+.card .k { font-size: var(--fs-label); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); display: block; margin-bottom: var(--s-2); }
 
-/* Status badges, matching the tracker's register. */
+/* ---- Status badges. One definition for the whole site.
+   The dot is a pseudo-element so no markup has to carry it: status is
+   never colour alone, and the explainers get that for free. ---- */
 .badge {
-  display: inline-block; font-size: 11.5px; font-weight: 600; letter-spacing: .02em;
-  padding: 2px 8px; border-radius: 3px; white-space: nowrap;
+  display: inline-flex; align-items: center; gap: var(--s-2);
+  font-size: var(--fs-label); font-weight: 600; letter-spacing: .005em;
+  padding: 4px 10px; border-radius: var(--r-sm); white-space: nowrap;
+}
+.badge::before {
+  content: ''; flex: none;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: currentColor;
 }
 .badge[data-tier="compliant"] { background: var(--st-compliant-bg); color: var(--st-compliant-fg); }
 .badge[data-tier="failing"]   { background: var(--st-failing-bg);   color: var(--st-failing-fg); }
@@ -471,18 +581,25 @@ sup.ref a::after { content: ']'; }
 .badge[data-tier="unknown"]   { background: var(--st-unknown-bg);   color: var(--st-unknown-fg); }
 .badge[data-tier="exempt"]    { background: var(--st-exempt-bg);    color: var(--st-exempt-fg); }
 
+/* Flat variant, for lists. One badge is a label; sixty stacked in a column are
+   stripes that outshout the names beside them, and five different tint widths
+   make a ragged edge. Dropping the tint leaves the dot and the text colour to
+   carry status, and the labels line up. The -fg steps are checked against
+   --paper and --band as well as their own tint (scripts/check-contrast.js). */
+.badge.flat { background: none; padding-left: 0; padding-right: 0; }
+
 /* ============================================================
    Next / previous, and footer
    ============================================================ */
-.nextprev { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; margin: 8px 0 48px; }
-.nextprev a { display: block; background: var(--surface); padding: 20px; }
+.nextprev { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: var(--r-lg); overflow: hidden; margin: var(--s-2) 0 var(--s-7); }
+.nextprev a { display: block; background: var(--surface); padding: var(--s-5); }
 .nextprev a:hover { background: var(--surface-2); }
-.nextprev .k { font-family: var(--f-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
-.nextprev b { display: block; font-family: var(--f-display); font-size: 16px; font-weight: 700; margin-top: 7px; }
-.nextprev span { display: block; font-size: 13.5px; color: var(--ink-2); margin-top: 4px; line-height: 1.5; }
+.nextprev .k { font-size: var(--fs-label); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
+.nextprev b { display: block; font-size: var(--fs-h3); font-weight: 600; letter-spacing: -0.018em; margin-top: var(--s-2); }
+.nextprev span { display: block; font-size: var(--fs-sm); color: var(--ink-2); margin-top: var(--s-1); line-height: 1.5; }
 
-footer { padding: 34px 0 60px; font-size: 12.5px; color: var(--ink-3); border-top: 1px solid var(--rule); }
-footer p { margin: 0 0 6px; max-width: 74ch; line-height: 1.6; }
+footer { padding: var(--s-6) 0 var(--s-8); font-size: var(--fs-xs); color: var(--ink-3); border-top: 1px solid var(--rule); }
+footer p { margin: 0 0 var(--s-2); max-width: 70ch; line-height: 1.6; }
 footer b { color: var(--ink-2); font-weight: 600; }
 footer a { border-bottom: 1px solid var(--rule-strong); }
 footer a:hover { color: var(--ink-2); }

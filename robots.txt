@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Not pages — raw data files and source that feed the tracker, already
+# represented in tracker.html itself. Kept crawlable is anything a renderer
+# or a link-preview bot needs: /js/, /css/, /img/.
+Disallow: /cms_data/
+Disallow: /data/
+Disallow: /scripts/
+Disallow: /.claude/
