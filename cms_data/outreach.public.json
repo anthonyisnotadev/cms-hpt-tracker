@@ -53,6 +53,38 @@
       }
     ]
   },
+  "160112": {
+    "ccn": "160112",
+    "name": "Spencer Municipal Hospital",
+    "city": "Spencer",
+    "state": "IA",
+    "status": "awaiting-reply",
+    "followUpOn": "",
+    "createdAt": "2026-08-30T01:44:19.491Z",
+    "updatedAt": "2026-08-30T01:44:19.491Z",
+    "entries": [
+      {
+        "id": "mtf5c8iq-6owwzz",
+        "kind": "email",
+        "at": "2026-08-30T01:44:19.490Z",
+        "subject": "Your cms-hpt.txt is pointing to an outdated price file",
+        "to": "S***@spencerhospital.org, c***@spencerhospital.org",
+        "body": "Hi S***,\n\nI'm doing some research into hospital price transparency compliance and noticed Spencer Municipal Hospital's cms-hpt.txt file is pointing to this standard charges file:\n\nhttps://www.spencerhospital.org/webres/File/426005883_Spencer-Municipal-Hospital_standard_charges.csv\n\nBut it looks like there's a newer file already up on your pricing page:\n\nhttps://www.spencerhospital.org/webres/File/Pricing/426005883_spencer-municipal-hospital_standardcharges%20(7).csv\n\nMight just be a quick fix to update the pointer in cms-hpt.txt to link to the newer file instead. Wanted to flag it in case it slipped through the cracks!\n\nThanks so much,\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
+        "sentAt": "2026-08-30",
+        "outcome": "none"
+      }
+    ],
+    "correction": {
+      "domain": "spencerhospital.org",
+      "pointerUrl": "https://www.spencerhospital.org/patients-visitors/patients/price-transparency/",
+      "mrfUrl": "https://www.spencerhospital.org/webres/File/426005883_Spencer-Municipal-Hospital_standard_charges.csv",
+      "lastUpdatedOn": "",
+      "templateVersion": "",
+      "verdict": "failing",
+      "checkedOn": "2026-08-30",
+      "note": "cms-hpt.txt points to an outdated file; the source page links a newer one instead (https://www.spencerhospital.org/webres/File/Pricing/426005883_spencer-municipal-hospital_standardcharges%20(7).csv). Emailed S***@spencerhospital.org and c***@spencerhospital.org 2026-08-30."
+    }
+  },
   "190190": {
     "ccn": "190190",
     "name": "Caldwell Memorial Hospital, Inc",
@@ -100,7 +132,7 @@
       "templateVersion": "3.0.0",
       "verdict": "compliant",
       "checkedOn": "2026-08-30",
-      "note": "MRF located via UNC Health's standard-charges source page (not cms-hpt.txt, which was VPN-blocked). CSV header attests to CFR 180.50 compliance, attester the hospital attester, dated 2026-06-04."
+      "note": "MRF located via UNC Health's standard-charges source page (not cms-hpt.txt, which was VPN-blocked). CSV header attests to CFR 180.50 compliance, attester D***, dated 2026-06-04."
     }
   },
   "360029": {
@@ -143,7 +175,7 @@
       "templateVersion": "",
       "verdict": "compliant",
       "checkedOn": "2026-08-28",
-      "note": "MRF accessible via Craneware API. Contact: the hospital pricing team (D***@peacehealth.org)"
+      "note": "MRF accessible via Craneware API. Contact: M*** (D***@peacehealth.org)"
     }
   },
   "381301": {
@@ -164,7 +196,7 @@
       "templateVersion": "",
       "verdict": "compliant",
       "checkedOn": "2026-08-28",
-      "note": "MRF accessible via Craneware API. Contact: the hospital pricing team (D***@peacehealth.org)"
+      "note": "MRF accessible via Craneware API. Contact: M*** (D***@peacehealth.org)"
     }
   },
   "381316": {
@@ -185,7 +217,7 @@
       "templateVersion": "",
       "verdict": "compliant",
       "checkedOn": "2026-08-28",
-      "note": "MRF accessible via Craneware API. Contact: the hospital pricing team (D***@peacehealth.org)"
+      "note": "MRF accessible via Craneware API. Contact: M*** (D***@peacehealth.org)"
     }
   },
   "500030": {
@@ -206,7 +238,7 @@
       "templateVersion": "",
       "verdict": "compliant",
       "checkedOn": "2026-08-28",
-      "note": "MRF accessible via Craneware API. Contact: the hospital pricing team (D***@peacehealth.org)"
+      "note": "MRF accessible via Craneware API. Contact: M*** (D***@peacehealth.org)"
     }
   },
   "500041": {
@@ -227,7 +259,7 @@
       "templateVersion": "",
       "verdict": "compliant",
       "checkedOn": "2026-08-28",
-      "note": "MRF accessible via Craneware API. Contact: the hospital pricing team (D***@peacehealth.org)"
+      "note": "MRF accessible via Craneware API. Contact: M*** (D***@peacehealth.org)"
     }
   },
   "500050": {
@@ -248,7 +280,7 @@
       "templateVersion": "",
       "verdict": "compliant",
       "checkedOn": "2026-08-28",
-      "note": "MRF accessible via Craneware API. Contact: the hospital pricing team (D***@peacehealth.org)"
+      "note": "MRF accessible via Craneware API. Contact: M*** (D***@peacehealth.org)"
     }
   },
   "501329": {
@@ -269,7 +301,7 @@
       "templateVersion": "",
       "verdict": "compliant",
       "checkedOn": "2026-08-28",
-      "note": "MRF accessible via Craneware API. Contact: the hospital pricing team (D***@peacehealth.org)"
+      "note": "MRF accessible via Craneware API. Contact: M*** (D***@peacehealth.org)"
     }
   },
   "501340": {
@@ -290,7 +322,7 @@
       "templateVersion": "",
       "verdict": "compliant",
       "checkedOn": "2026-08-28",
-      "note": "MRF accessible via Craneware API. Contact: the hospital pricing team (D***@peacehealth.org)"
+      "note": "MRF accessible via Craneware API. Contact: M*** (D***@peacehealth.org)"
     }
   },
   "524017": {
@@ -445,7 +477,7 @@
       "templateVersion": "",
       "verdict": "compliant",
       "checkedOn": "2026-08-28",
-      "note": "MRF accessible via Craneware API. Contact: the hospital pricing team (D***@peacehealth.org)"
+      "note": "MRF accessible via Craneware API. Contact: M*** (D***@peacehealth.org)"
     }
   },
   "050292": {
@@ -516,6 +548,150 @@
       "verdict": "failing",
       "checkedOn": "2026-08-30",
       "note": "MRF and site pricing page both point to a file last updated 7/1/2024 — stale, more than a year old at crawl time (8/27/2026). Emailed c***@tanner.org 2026-08-30, following up in 30 days."
+    }
+  },
+  "054146": {
+    "ccn": "054146",
+    "name": "Telecare Heritage Psychiatric Health Facility",
+    "city": "Oakland",
+    "state": "CA",
+    "status": "awaiting-reply",
+    "followUpOn": "2026-09-29",
+    "createdAt": "2026-08-30T01:44:14.531Z",
+    "updatedAt": "2026-08-30T01:44:14.532Z",
+    "entries": [
+      {
+        "id": "mtf5c4p0-do71t6",
+        "kind": "email",
+        "at": "2026-08-30T01:44:14.532Z",
+        "subject": "Fwd: Outdated MRFs across several Telecare facilities",
+        "to": "c***@telecarecorp.com",
+        "body": "Hello,\n\nI was trying to reach Telecare about some outdated price transparency files, but my email to p***@telecarecorp.com bounced. It looks like that inbox only accepts messages from senders already in your organization:\n\nCould you forward this along to the right person or point me to a better contact?\nOriginal message below:\n\nHello,\n\nI'm doing some research into hospital price transparency compliance and noticed several Telecare-operated facilities have standard charges files from 2024 still up, both linked from https://www.telecarecorp.com/price-transparency and in the machine-readable files themselves:\n\nTelecare Heritage Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-heritage-psychiatric-health-facility_standardcharges.csv\n\nTelecare Willow Rock Center\nhttps://www.telecarecorp.com/s/941735271_telecare-willow-rock-center_standardcharges.csv\n\nTelecare Santa Cruz Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-santa-cruz-psychiatric-health-facility_standardcharges.csv\n\nTelecare El Dorado County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-el-dorado-county-psychiatric-health-facility_standardcharges.csv\n\nLa Casa Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_la-casa-psychiatric-health-facility_standardcharges.csv\n\nTelecare Riverside Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-riverside-psychiatric-health-facility_standardcharges.csv\n\nStanislaus County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_stanislaus-county-psychiatric-health-facility_standardcharges.csv\n\nSince these all share the same source page, it might just take one update to refresh the batch.\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if these could get refreshed before then. Happy to help however's useful.\n\n--\n\nThanks so much,\n\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
+        "sentAt": "2026-08-30",
+        "outcome": "none"
+      },
+      {
+        "id": "mtf5c4p0-v3j1t8",
+        "kind": "note",
+        "at": "2026-08-30T01:44:14.532Z",
+        "text": "Bounced: \"The group priceTransparency only accepts messages from people in its organization or on its allowed senders list, and your email address isn't on the list.\" (Office 365, sender not allowed). Need to find an alternate contact or get allowlisted before this reaches Telecare."
+      },
+      {
+        "id": "mtf5c4oy-94k81y",
+        "kind": "email",
+        "at": "2026-08-30T01:44:14.530Z",
+        "subject": "Outdated MRFs across several Telecare facilities",
+        "to": "p***@telecarecorp.com",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed several Telecare-operated facilities have standard charges files from 2024 still up, both linked from https://www.telecarecorp.com/price-transparency and in the machine-readable files themselves:\n\nTelecare Heritage Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-heritage-psychiatric-health-facility_standardcharges.csv\n\nTelecare Willow Rock Center\nhttps://www.telecarecorp.com/s/941735271_telecare-willow-rock-center_standardcharges.csv\n\nTelecare Santa Cruz Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-santa-cruz-psychiatric-health-facility_standardcharges.csv\n\nTelecare El Dorado County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-el-dorado-county-psychiatric-health-facility_standardcharges.csv\n\nLa Casa Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_la-casa-psychiatric-health-facility_standardcharges.csv\n\nTelecare Riverside Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-riverside-psychiatric-health-facility_standardcharges.csv\n\nStanislaus County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_stanislaus-county-psychiatric-health-facility_standardcharges.csv\n\nSince these all share the same source page, it might just take one update to refresh the batch.\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if these could get refreshed before then. Happy to help however's useful.\n\nThanks so much,\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
+        "sentAt": "2026-08-30",
+        "outcome": "bounced"
+      }
+    ],
+    "correction": {
+      "domain": "telecarecorp.com",
+      "pointerUrl": "https://www.telecarecorp.com/price-transparency",
+      "mrfUrl": "https://www.telecarecorp.com/s/941735271_telecare-heritage-psychiatric-health-facility_standardcharges.csv",
+      "lastUpdatedOn": "",
+      "templateVersion": "",
+      "verdict": "failing",
+      "checkedOn": "2026-08-30",
+      "note": "MRF and source page both show a file from 2024, stale at check (crawled 8/27/2026). Attempted email to p***@telecarecorp.com 2026-08-30 (covering 6 other Telecare-operated facilities) bounced — sender not allowlisted; forwarded to c***@telecarecorp.com same day."
+    }
+  },
+  "054149": {
+    "ccn": "054149",
+    "name": "Willow Rock Center",
+    "city": "San Leandro",
+    "state": "CA",
+    "status": "awaiting-reply",
+    "followUpOn": "2026-09-29",
+    "createdAt": "2026-08-30T01:44:14.532Z",
+    "updatedAt": "2026-08-30T01:44:14.532Z",
+    "entries": [
+      {
+        "id": "mtf5c4p0-uh2glp",
+        "kind": "email",
+        "at": "2026-08-30T01:44:14.532Z",
+        "subject": "Fwd: Outdated MRFs across several Telecare facilities",
+        "to": "c***@telecarecorp.com",
+        "body": "Hello,\n\nI was trying to reach Telecare about some outdated price transparency files, but my email to p***@telecarecorp.com bounced. It looks like that inbox only accepts messages from senders already in your organization:\n\nCould you forward this along to the right person or point me to a better contact?\nOriginal message below:\n\nHello,\n\nI'm doing some research into hospital price transparency compliance and noticed several Telecare-operated facilities have standard charges files from 2024 still up, both linked from https://www.telecarecorp.com/price-transparency and in the machine-readable files themselves:\n\nTelecare Heritage Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-heritage-psychiatric-health-facility_standardcharges.csv\n\nTelecare Willow Rock Center\nhttps://www.telecarecorp.com/s/941735271_telecare-willow-rock-center_standardcharges.csv\n\nTelecare Santa Cruz Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-santa-cruz-psychiatric-health-facility_standardcharges.csv\n\nTelecare El Dorado County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-el-dorado-county-psychiatric-health-facility_standardcharges.csv\n\nLa Casa Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_la-casa-psychiatric-health-facility_standardcharges.csv\n\nTelecare Riverside Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-riverside-psychiatric-health-facility_standardcharges.csv\n\nStanislaus County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_stanislaus-county-psychiatric-health-facility_standardcharges.csv\n\nSince these all share the same source page, it might just take one update to refresh the batch.\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if these could get refreshed before then. Happy to help however's useful.\n\n--\n\nThanks so much,\n\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
+        "sentAt": "2026-08-30",
+        "outcome": "none"
+      },
+      {
+        "id": "mtf5c4p0-b4hzla",
+        "kind": "note",
+        "at": "2026-08-30T01:44:14.532Z",
+        "text": "Bounced: \"The group priceTransparency only accepts messages from people in its organization or on its allowed senders list, and your email address isn't on the list.\" (Office 365, sender not allowed). Need to find an alternate contact or get allowlisted before this reaches Telecare."
+      },
+      {
+        "id": "mtf5c4p0-j0926t",
+        "kind": "email",
+        "at": "2026-08-30T01:44:14.532Z",
+        "subject": "Outdated MRFs across several Telecare facilities",
+        "to": "p***@telecarecorp.com",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed several Telecare-operated facilities have standard charges files from 2024 still up, both linked from https://www.telecarecorp.com/price-transparency and in the machine-readable files themselves:\n\nTelecare Heritage Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-heritage-psychiatric-health-facility_standardcharges.csv\n\nTelecare Willow Rock Center\nhttps://www.telecarecorp.com/s/941735271_telecare-willow-rock-center_standardcharges.csv\n\nTelecare Santa Cruz Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-santa-cruz-psychiatric-health-facility_standardcharges.csv\n\nTelecare El Dorado County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-el-dorado-county-psychiatric-health-facility_standardcharges.csv\n\nLa Casa Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_la-casa-psychiatric-health-facility_standardcharges.csv\n\nTelecare Riverside Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-riverside-psychiatric-health-facility_standardcharges.csv\n\nStanislaus County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_stanislaus-county-psychiatric-health-facility_standardcharges.csv\n\nSince these all share the same source page, it might just take one update to refresh the batch.\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if these could get refreshed before then. Happy to help however's useful.\n\nThanks so much,\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
+        "sentAt": "2026-08-30",
+        "outcome": "bounced"
+      }
+    ],
+    "correction": {
+      "domain": "telecarecorp.com",
+      "pointerUrl": "https://www.telecarecorp.com/price-transparency",
+      "mrfUrl": "https://www.telecarecorp.com/s/941735271_telecare-willow-rock-center_standardcharges.csv",
+      "lastUpdatedOn": "",
+      "templateVersion": "",
+      "verdict": "failing",
+      "checkedOn": "2026-08-30",
+      "note": "MRF and source page both show a file from 2024, stale at check (crawled 8/27/2026). Attempted email to p***@telecarecorp.com 2026-08-30 (covering 6 other Telecare-operated facilities) bounced — sender not allowlisted; forwarded to c***@telecarecorp.com same day."
+    }
+  },
+  "054152": {
+    "ccn": "054152",
+    "name": "Santa Cruz County Psychiatric Health Facility",
+    "city": "Santa Cruz",
+    "state": "CA",
+    "status": "awaiting-reply",
+    "followUpOn": "2026-09-29",
+    "createdAt": "2026-08-30T01:44:14.532Z",
+    "updatedAt": "2026-08-30T01:44:14.532Z",
+    "entries": [
+      {
+        "id": "mtf5c4p0-ge9koq",
+        "kind": "email",
+        "at": "2026-08-30T01:44:14.532Z",
+        "subject": "Fwd: Outdated MRFs across several Telecare facilities",
+        "to": "c***@telecarecorp.com",
+        "body": "Hello,\n\nI was trying to reach Telecare about some outdated price transparency files, but my email to p***@telecarecorp.com bounced. It looks like that inbox only accepts messages from senders already in your organization:\n\nCould you forward this along to the right person or point me to a better contact?\nOriginal message below:\n\nHello,\n\nI'm doing some research into hospital price transparency compliance and noticed several Telecare-operated facilities have standard charges files from 2024 still up, both linked from https://www.telecarecorp.com/price-transparency and in the machine-readable files themselves:\n\nTelecare Heritage Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-heritage-psychiatric-health-facility_standardcharges.csv\n\nTelecare Willow Rock Center\nhttps://www.telecarecorp.com/s/941735271_telecare-willow-rock-center_standardcharges.csv\n\nTelecare Santa Cruz Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-santa-cruz-psychiatric-health-facility_standardcharges.csv\n\nTelecare El Dorado County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-el-dorado-county-psychiatric-health-facility_standardcharges.csv\n\nLa Casa Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_la-casa-psychiatric-health-facility_standardcharges.csv\n\nTelecare Riverside Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-riverside-psychiatric-health-facility_standardcharges.csv\n\nStanislaus County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_stanislaus-county-psychiatric-health-facility_standardcharges.csv\n\nSince these all share the same source page, it might just take one update to refresh the batch.\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if these could get refreshed before then. Happy to help however's useful.\n\n--\n\nThanks so much,\n\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
+        "sentAt": "2026-08-30",
+        "outcome": "none"
+      },
+      {
+        "id": "mtf5c4p0-24ow8n",
+        "kind": "note",
+        "at": "2026-08-30T01:44:14.532Z",
+        "text": "Bounced: \"The group priceTransparency only accepts messages from people in its organization or on its allowed senders list, and your email address isn't on the list.\" (Office 365, sender not allowed). Need to find an alternate contact or get allowlisted before this reaches Telecare."
+      },
+      {
+        "id": "mtf5c4p0-7pw0ko",
+        "kind": "email",
+        "at": "2026-08-30T01:44:14.532Z",
+        "subject": "Outdated MRFs across several Telecare facilities",
+        "to": "p***@telecarecorp.com",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed several Telecare-operated facilities have standard charges files from 2024 still up, both linked from https://www.telecarecorp.com/price-transparency and in the machine-readable files themselves:\n\nTelecare Heritage Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-heritage-psychiatric-health-facility_standardcharges.csv\n\nTelecare Willow Rock Center\nhttps://www.telecarecorp.com/s/941735271_telecare-willow-rock-center_standardcharges.csv\n\nTelecare Santa Cruz Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-santa-cruz-psychiatric-health-facility_standardcharges.csv\n\nTelecare El Dorado County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-el-dorado-county-psychiatric-health-facility_standardcharges.csv\n\nLa Casa Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_la-casa-psychiatric-health-facility_standardcharges.csv\n\nTelecare Riverside Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-riverside-psychiatric-health-facility_standardcharges.csv\n\nStanislaus County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_stanislaus-county-psychiatric-health-facility_standardcharges.csv\n\nSince these all share the same source page, it might just take one update to refresh the batch.\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if these could get refreshed before then. Happy to help however's useful.\n\nThanks so much,\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
+        "sentAt": "2026-08-30",
+        "outcome": "bounced"
+      }
+    ],
+    "correction": {
+      "domain": "telecarecorp.com",
+      "pointerUrl": "https://www.telecarecorp.com/price-transparency",
+      "mrfUrl": "https://www.telecarecorp.com/s/941735271_telecare-santa-cruz-psychiatric-health-facility_standardcharges.csv",
+      "lastUpdatedOn": "",
+      "templateVersion": "",
+      "verdict": "failing",
+      "checkedOn": "2026-08-30",
+      "note": "MRF and source page both show a file from 2024, stale at check (crawled 8/27/2026). Attempted email to p***@telecarecorp.com 2026-08-30 (covering 6 other Telecare-operated facilities) bounced — sender not allowlisted; forwarded to c***@telecarecorp.com same day."
     }
   }
 }
