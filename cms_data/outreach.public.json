@@ -21,6 +21,34 @@
       }
     ]
   },
+  "340041": {
+    "ccn": "340041",
+    "name": "Caldwell Memorial Hospital",
+    "city": "Lenoir",
+    "state": "NC",
+    "status": "none",
+    "followUpOn": "",
+    "createdAt": "2026-08-30T00:49:07.006Z",
+    "updatedAt": "2026-08-30T00:49:07.006Z",
+    "entries": [
+      {
+        "id": "mtf3d8l9-fsw9s2",
+        "kind": "note",
+        "at": "2026-08-30T00:49:07.005Z",
+        "text": "Attempted to fetch cms-hpt.txt directly; the site blocks requests coming over VPN, so access failed while on VPN."
+      }
+    ],
+    "correction": {
+      "domain": "unchealthcare.org",
+      "pointerUrl": "https://www.unchealth.org/records-insurance/standard-charges",
+      "mrfUrl": "https://www.unchealthcare.org/app/files/public/938b038b-f5e7-479a-9fd6-c0a571dc4845/caldwell-memorial-hospital_standardcharges.csv",
+      "lastUpdatedOn": "2026-06-04",
+      "templateVersion": "3.0.0",
+      "verdict": "compliant",
+      "checkedOn": "2026-08-30",
+      "note": "MRF located via UNC Health's standard-charges source page (not cms-hpt.txt, which was VPN-blocked). CSV header attests to CFR 180.50 compliance, attester the hospital attester, dated 2026-06-04."
+    }
+  },
   "380102": {
     "ccn": "380102",
     "name": "Sacred Heart Medical Center - Riverbend",
