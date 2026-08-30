@@ -415,9 +415,16 @@ the split creates:
 
 - Whenever a plan's `to`, `body`, or `note` text contains a **named person**
   at a hospital, check `redact-names.json` covers that name. If not, propose
-  adding it (lowercase key → generic replacement like "the hospital contact")
-  before committing. The file is private — name additions stay local and are
-  never committed.
+  adding it (lowercase key → generic replacement, e.g. asterisk-style like
+  "S***") before committing. The file is private — name additions stay local
+  and are never committed.
+- **Names inside an email `body` need the same check as `to`/`note` —
+  don't skip it just because the field is a full email.** The easiest one to
+  miss is the salutation ("Hi Jane,") when you're drafting from a
+  contact-name the user gave you: it's a real name embedded in ordinary
+  prose, not metadata, so it's easy to review the `to` address and the
+  attachment/finding and forget the greeting line entirely. Read the
+  whole body, not just the parts that look like contact info.
 - After the git commit, glance at what was committed and confirm no unmasked
   person name appears in `outreach.public.json`. Emails are safe by
   construction; names are not.
