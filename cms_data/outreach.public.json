@@ -563,17 +563,24 @@
     "status": "awaiting-reply",
     "followUpOn": "2026-09-29",
     "createdAt": "2026-08-30T02:25:21.600Z",
-    "updatedAt": "2026-08-30T02:25:21.600Z",
+    "updatedAt": "2026-08-30T02:30:09.054Z",
     "entries": [
+      {
+        "id": "mtf6z63h-pwilc6",
+        "kind": "note",
+        "at": "2026-08-30T02:30:09.053Z",
+        "text": "CC to c***@westlakehospital.com (correct address from the hospital's site) bounced: 550 5.1.1 Recipient address rejected, User unknown. j***@westlakemedical.com was not reported as bounced."
+      },
       {
         "id": "mtf6t0an-4mhww1",
         "kind": "email",
         "at": "2026-08-30T02:25:21.599Z",
         "subject": "Your cms-hpt.txt is pointing to the wrong file",
-        "to": "j***@westlakemedical.com, c***@westlakemedical.com",
+        "to": "j***@westlakemedical.com, cc: c***@westlakehospital.com",
         "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed The Hospital at Westlake Medical Center's cms-hpt.txt is pointing to this file:\n\nhttps://www.westlakemedical.com/wp-content/uploads/2024/10/820578078_westlake-surgical_standardcharges.csv\n\nBut the correct, current file appears to be the one on your pricing page instead:\n\nhttps://www.westlakemedical.com/wp-content/uploads/2026/05/820578078_westlake-medical-center_standardcharges-2.csv\n\nMight just be a quick fix to update the pointer in cms-hpt.txt. Happy to help however's useful!\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if this could get updated before then.\n\nThanks so much,\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
         "sentAt": "2026-08-30",
-        "outcome": "none"
+        "outcome": "none",
+        "editedAt": "2026-08-30T02:30:09.052Z"
       }
     ],
     "correction": {
@@ -584,7 +591,7 @@
       "templateVersion": "",
       "verdict": "failing",
       "checkedOn": "2026-08-30",
-      "note": "cms-hpt.txt points to the wrong/old file; the correct current one is on the pricing page instead (https://www.westlakemedical.com/wp-content/uploads/2026/05/820578078_westlake-medical-center_standardcharges-2.csv). Emailed j***@westlakemedical.com and c***@westlakemedical.com 2026-08-30, following up in 30 days."
+      "note": "cms-hpt.txt points to the wrong/old file; the correct current one is on the pricing page instead (https://www.westlakemedical.com/wp-content/uploads/2026/05/820578078_westlake-medical-center_standardcharges-2.csv). Emailed j***@westlakemedical.com 2026-08-30 (cc c***@westlakehospital.com bounced), following up in 30 days."
     }
   },
   "010169": {
