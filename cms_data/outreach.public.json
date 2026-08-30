@@ -555,6 +555,38 @@
       "note": "MRF loads fine, no access issue. last_updated_on reads 2024-01-19 (952 days stale as of 2026-08-28); annual refresh under 45 CFR 180.50(b)(2) was due 01/19/2025. Emailed t***@norcen.org (bounced 550 5.4.1 access denied) and i***@norcen.org on 2026-08-28. Verdict left to the crawler."
     }
   },
+  "670006": {
+    "ccn": "670006",
+    "name": "The Hospital At Westlake Medical Center",
+    "city": "Austin",
+    "state": "TX",
+    "status": "awaiting-reply",
+    "followUpOn": "2026-09-29",
+    "createdAt": "2026-08-30T02:25:21.600Z",
+    "updatedAt": "2026-08-30T02:25:21.600Z",
+    "entries": [
+      {
+        "id": "mtf6t0an-4mhww1",
+        "kind": "email",
+        "at": "2026-08-30T02:25:21.599Z",
+        "subject": "Your cms-hpt.txt is pointing to the wrong file",
+        "to": "j***@westlakemedical.com, c***@westlakemedical.com",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed The Hospital at Westlake Medical Center's cms-hpt.txt is pointing to this file:\n\nhttps://www.westlakemedical.com/wp-content/uploads/2024/10/820578078_westlake-surgical_standardcharges.csv\n\nBut the correct, current file appears to be the one on your pricing page instead:\n\nhttps://www.westlakemedical.com/wp-content/uploads/2026/05/820578078_westlake-medical-center_standardcharges-2.csv\n\nMight just be a quick fix to update the pointer in cms-hpt.txt. Happy to help however's useful!\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if this could get updated before then.\n\nThanks so much,\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
+        "sentAt": "2026-08-30",
+        "outcome": "none"
+      }
+    ],
+    "correction": {
+      "domain": "westlakemedical.com",
+      "pointerUrl": "https://www.westlakemedical.com/pricing-transparency-2/",
+      "mrfUrl": "https://www.westlakemedical.com/wp-content/uploads/2024/10/820578078_westlake-surgical_standardcharges.csv",
+      "lastUpdatedOn": "",
+      "templateVersion": "",
+      "verdict": "failing",
+      "checkedOn": "2026-08-30",
+      "note": "cms-hpt.txt points to the wrong/old file; the correct current one is on the pricing page instead (https://www.westlakemedical.com/wp-content/uploads/2026/05/820578078_westlake-medical-center_standardcharges-2.csv). Emailed j***@westlakemedical.com and c***@westlakemedical.com 2026-08-30, following up in 30 days."
+    }
+  },
   "010169": {
     "ccn": "010169",
     "name": "Atmore Community Hospital",
