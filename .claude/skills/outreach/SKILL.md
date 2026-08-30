@@ -418,6 +418,14 @@ the split creates:
   adding it (lowercase key → generic replacement, e.g. asterisk-style like
   "S***") before committing. The file is private — name additions stay local
   and are never committed.
+- **Default every drafted email's salutation to "Hello," — never "Hi
+  &lt;name&gt;,"** even when the user gave you a contact name. The contact
+  name is useful for finding the right person and for `to`, but putting it
+  in the greeting is the single most common way a real name ends up
+  unmasked in a public commit. Only use a name in the salutation if the
+  user explicitly asks for it in that draft — and if they do, treat it
+  exactly like any other named-person text: check/add it to
+  `redact-names.json` before committing.
 - **Names inside an email `body` need the same check as `to`/`note` —
   don't skip it just because the field is a full email.** The easiest one to
   miss is the salutation ("Hi Jane,") when you're drafting from a
