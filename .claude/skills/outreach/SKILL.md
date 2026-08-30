@@ -348,6 +348,48 @@ node scripts/outreach-cli.js list --verdict blocked --json
 Check `show` before proposing an update to an existing record — it prevents
 duplicate entries and shows what a `correction` will merge into.
 
+## Drafting outreach emails
+
+When the user asks for a draft to send to a hospital (not a plan to log — that
+comes after they've actually sent it), keep it short, casual, and free of
+unnecessary claims. Salutation is always "Hello," — see the redaction note
+above. Don't invent urgency, don't mention CMS enforcement unless the user
+asks for it (their own follow-up timeline is not a regulatory deadline — see
+below), and don't editorialize about why the hospital might be behind ("since
+it's been a while, might be worth…") — just state the finding and the ask.
+
+A good template for "the file is stale" outreach, confirmed working well in
+practice:
+
+> Hello,
+>
+> I'm doing some research into hospital price transparency compliance and
+> noticed [Hospital]'s standard charges file is dated [date] — both the file
+> linked from [source page] and the one referenced in cms-hpt.txt:
+>
+> [mrf-url]
+>
+> I'll plan to follow up in 30 days so I can continue my research, but would
+> appreciate it if this could get updated before then. Happy to help however's
+> useful.
+>
+> Thanks so much,
+> [user's name]
+> [user's outreach email]
+> [user's tracker URL]
+
+Adapt the middle paragraph to the actual finding (outdated file, broken link,
+wrong facility, pointer mismatch, etc.) — the opening line, the 30-day
+follow-up framing, and the closing are the reusable parts.
+
+On the 30-day mention: CMS's own enforcement timeline runs far longer (a
+90-day warning period, then a corrective action plan with another 90-day
+compliance window) — filing a CMS complaint doesn't require contacting the
+hospital first at all. So "I'll follow up in 30 days" reads as the user's own
+research cadence, not a threat, and there's no need to attach "for CMS
+compliance purposes" or similar language to it — "so I can continue my
+research" is enough and keeps the tone low-key.
+
 ## Common phrasings
 
 | User says | Plan |
