@@ -71,6 +71,28 @@
       "note": "MRF located via UNC Health's standard-charges source page (not cms-hpt.txt, which was VPN-blocked). CSV header attests to CFR 180.50 compliance, attester the hospital attester, dated 2026-06-04."
     }
   },
+  "360029": {
+    "ccn": "360029",
+    "name": "Wood County Hospital",
+    "city": "Bowling Green",
+    "state": "OH",
+    "status": "awaiting-reply",
+    "followUpOn": "",
+    "createdAt": "2026-08-30T01:05:22.880Z",
+    "updatedAt": "2026-08-30T01:05:22.880Z",
+    "entries": [
+      {
+        "id": "mtf3y5kv-cvvf3v",
+        "kind": "email",
+        "at": "2026-08-30T01:05:22.879Z",
+        "subject": "Your cms-hpt.txt is pointing to an outdated price file",
+        "to": "f***@woodcountyhospital.org, i***@woodcountyhospital.org",
+        "body": "Hi there,\n\nI'm doing some research into hospital price transparency compliance and I noticed that Wood County Hospital's cms-hpt.txt file is currently pointing to a standard charges file dated 6/30/2024:\n\nhttps://www.woodcountyhospital.org/media/0x5fw0tn/344440884_wood-county_standardcharges.csv\n\nBut it looks like you have a newer file already up on your site, linked from your pricing page, dated 12/31/2025:\n\nhttps://www.woodcountyhospital.org/media/kddhfk3m/344440884_wood-county_standardchargescsv.zip\n\nMight just be a quick fix to update the pointer in cms-hpt.txt to link to the newer file instead. Wanted to flag it in case it slipped through the cracks!\n\nThanks for your time,\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
+        "sentAt": "2026-08-30",
+        "outcome": "none"
+      }
+    ]
+  },
   "380102": {
     "ccn": "380102",
     "name": "Sacred Heart Medical Center - Riverbend",
