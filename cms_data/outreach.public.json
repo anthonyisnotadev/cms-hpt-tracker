@@ -1,4 +1,36 @@
 {
+  "110015": {
+    "ccn": "110015",
+    "name": "Tanner Medical Center Villa Rica",
+    "city": "Villa Rica",
+    "state": "GA",
+    "status": "awaiting-reply",
+    "followUpOn": "2026-09-29",
+    "createdAt": "2026-08-30T01:22:39.550Z",
+    "updatedAt": "2026-08-30T01:22:39.550Z",
+    "entries": [
+      {
+        "id": "mtf4kdha-n75rre",
+        "kind": "email",
+        "at": "2026-08-30T01:22:39.550Z",
+        "subject": "Outdated MRFs for Tanner Medical Center-East Alabama and Villa Rica",
+        "to": "c***@tanner.org",
+        "body": "Hi there,\n\nI'm doing some research into hospital price transparency compliance and noticed a couple of Tanner facilities have outdated standard charges files, both on cms-hpt.txt and linked from your billing pages.\n\nTanner Medical Center-East Alabama (Wedowee, AL):\nhttps://www.tanner.org/upload/docs/PDFs/FinancialAssistance/475348597_Tanner-Medical-Center-East-Alabama_standardcharges.csv\nlast updated 7/1/2024, same file linked from https://www.tanner.org/patients-and-visitors/billing-and-financial-resources/price-transparency\n\nTanner Medical Center Inc. (Villa Rica, GA):\nSame situation - the file listed is dated 7/1/2024, both in the MRF and on the site.\n\nI also noticed Willowbrooke's file is dated 7/1/2024 as well - I'm not currently tracking behavioral health facilities, so it's outside the scope of what I'm following, but wanted to flag it while I was looking anyway.\n\nI'll plan to follow up in 30 days so that I can continue my research, but would appreciate it if these could get refreshed before then. Happy to help however's useful.\n\nThanks so much,\n\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
+        "sentAt": "2026-08-30",
+        "outcome": "none"
+      }
+    ],
+    "correction": {
+      "domain": "tanner.org",
+      "pointerUrl": "",
+      "mrfUrl": "",
+      "lastUpdatedOn": "2024-07-01",
+      "templateVersion": "",
+      "verdict": "failing",
+      "checkedOn": "2026-08-30",
+      "note": "MRF and site pricing page both point to a file last updated 7/1/2024 — stale, more than a year old at crawl time (8/27/2026). Emailed c***@tanner.org 2026-08-30, following up in 30 days."
+    }
+  },
   "150065": {
     "ccn": "150065",
     "name": "Schneck Medical Center",
@@ -452,6 +484,38 @@
       "verdict": "",
       "checkedOn": "2026-08-27",
       "note": "File loads fine but last_updated_on reads 2024-02-25, ~915 days stale at check. Flagged annual-update requirement (45 CFR 180.50(b)(2)) to the hospital; will recheck ~Sep 27 and escalate to CMS if unchanged."
+    }
+  },
+  "011306": {
+    "ccn": "011306",
+    "name": "Tanner Medical Center-East Alabama",
+    "city": "Wedowee",
+    "state": "AL",
+    "status": "awaiting-reply",
+    "followUpOn": "2026-09-29",
+    "createdAt": "2026-08-30T01:22:39.549Z",
+    "updatedAt": "2026-08-30T01:22:39.550Z",
+    "entries": [
+      {
+        "id": "mtf4kdh8-ffffk9",
+        "kind": "email",
+        "at": "2026-08-30T01:22:39.548Z",
+        "subject": "Outdated MRFs for Tanner Medical Center-East Alabama and Villa Rica",
+        "to": "c***@tanner.org",
+        "body": "Hi there,\n\nI'm doing some research into hospital price transparency compliance and noticed a couple of Tanner facilities have outdated standard charges files, both on cms-hpt.txt and linked from your billing pages.\n\nTanner Medical Center-East Alabama (Wedowee, AL):\nhttps://www.tanner.org/upload/docs/PDFs/FinancialAssistance/475348597_Tanner-Medical-Center-East-Alabama_standardcharges.csv\nlast updated 7/1/2024, same file linked from https://www.tanner.org/patients-and-visitors/billing-and-financial-resources/price-transparency\n\nTanner Medical Center Inc. (Villa Rica, GA):\nSame situation - the file listed is dated 7/1/2024, both in the MRF and on the site.\n\nI also noticed Willowbrooke's file is dated 7/1/2024 as well - I'm not currently tracking behavioral health facilities, so it's outside the scope of what I'm following, but wanted to flag it while I was looking anyway.\n\nI'll plan to follow up in 30 days so that I can continue my research, but would appreciate it if these could get refreshed before then. Happy to help however's useful.\n\nThanks so much,\n\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
+        "sentAt": "2026-08-30",
+        "outcome": "none"
+      }
+    ],
+    "correction": {
+      "domain": "tanner.org",
+      "pointerUrl": "https://www.tanner.org/patients-and-visitors/billing-and-financial-resources/price-transparency",
+      "mrfUrl": "https://www.tanner.org/upload/docs/PDFs/FinancialAssistance/475348597_Tanner-Medical-Center-East-Alabama_standardcharges.csv",
+      "lastUpdatedOn": "2024-07-01",
+      "templateVersion": "",
+      "verdict": "failing",
+      "checkedOn": "2026-08-30",
+      "note": "MRF and site pricing page both point to a file last updated 7/1/2024 — stale, more than a year old at crawl time (8/27/2026). Emailed c***@tanner.org 2026-08-30, following up in 30 days."
     }
   }
 }
