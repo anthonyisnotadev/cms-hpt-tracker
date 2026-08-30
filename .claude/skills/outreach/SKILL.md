@@ -353,10 +353,12 @@ duplicate entries and shows what a `correction` will merge into.
 When the user asks for a draft to send to a hospital (not a plan to log — that
 comes after they've actually sent it), keep it short, casual, and free of
 unnecessary claims. Salutation is always "Hello," — see the redaction note
-above. Don't invent urgency, don't mention CMS enforcement unless the user
-asks for it (their own follow-up timeline is not a regulatory deadline — see
-below), and don't editorialize about why the hospital might be behind ("since
-it's been a while, might be worth…") — just state the finding and the ask.
+above. **No em dashes in drafted email text** — use a comma, parentheses, or
+a new sentence instead. Don't invent urgency, don't mention CMS enforcement
+unless the user asks for it (their own follow-up timeline is not a regulatory
+deadline — see below), and don't editorialize about why the hospital might be
+behind ("since it's been a while, might be worth…") — just state the finding
+and the ask.
 
 A good template for "the file is stale" outreach, confirmed working well in
 practice:
@@ -364,14 +366,14 @@ practice:
 > Hello,
 >
 > I'm doing some research into hospital price transparency compliance and
-> noticed [Hospital]'s standard charges file is dated [date] — both the file
+> noticed [Hospital]'s standard charges file is dated [date], both the file
 > linked from [source page] and the one referenced in cms-hpt.txt:
 >
 > [mrf-url]
 >
 > I'll plan to follow up in 30 days so I can continue my research, but would
 > appreciate it if this could get updated before then. Happy to help however's
-> useful.
+> useful!
 >
 > Thanks so much,
 > [user's name]
