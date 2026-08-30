@@ -477,6 +477,16 @@ the split creates:
   prose, not metadata, so it's easy to review the `to` address and the
   attachment/finding and forget the greeting line entirely. Read the
   whole body, not just the parts that look like contact info.
+- **A bare username/email local-part in prose is not caught by automatic
+  masking.** The email regex only fires on a full `local@domain` pattern —
+  writing "jdoe no longer works there" or "heard back from jsmith" in a
+  `note` leaves that identifier in plain text even though the same string
+  inside an actual `to`/`body` email address would have been masked. This
+  comes up naturally when describing an auto-reply, a bounce, or a
+  "so-and-so left" update by referencing someone's known address without
+  the `@domain`. Treat it like any other name: add it to
+  `redact-names.json` (the bare local-part, lowercased, e.g. `"jdoe":
+  "J***"`) before committing.
 - After the git commit, glance at what was committed and confirm no unmasked
   person name appears in `outreach.public.json`. Emails are safe by
   construction; names are not.
