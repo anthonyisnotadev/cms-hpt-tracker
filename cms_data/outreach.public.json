@@ -290,6 +290,38 @@
       "note": "MRF accessible via Craneware API. Contact: M*** (D***@peacehealth.org)"
     }
   },
+  "431319": {
+    "ccn": "431319",
+    "name": "Hans P Peterson Memorial Hospital - Cah",
+    "city": "Philip",
+    "state": "SD",
+    "status": "awaiting-reply",
+    "followUpOn": "2026-09-29",
+    "createdAt": "2026-08-30T02:07:30.240Z",
+    "updatedAt": "2026-08-30T02:07:30.241Z",
+    "entries": [
+      {
+        "id": "mtf661mo-wmcamz",
+        "kind": "email",
+        "at": "2026-08-30T02:07:30.240Z",
+        "subject": "Your cms-hpt.txt is pointing to an outdated price file",
+        "to": "m***@monument.health",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed Philip Health's cms-hpt.txt file is pointing to an outdated standard charges file:\n\nhttps://www.philiphealthservices.com/460361016_Philip-Health-Services-Inc_standardcharges.csv\n\nBut it looks like there's a newer file already up on your site:\n\nhttps://www.philiphealthservices.com/wp-content/uploads/2026/02/Philip-Health-Services-Inc_standardcharges-8.csv.zip\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if this could get updated before then. Happy to help however's useful!\n\nThanks so much,\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
+        "sentAt": "2026-08-30",
+        "outcome": "none"
+      }
+    ],
+    "correction": {
+      "domain": "philiphealthservices.com",
+      "pointerUrl": "https://www.philiphealthservices.com/about-us/pricing-transparency/",
+      "mrfUrl": "https://www.philiphealthservices.com/460361016_Philip-Health-Services-Inc_standardcharges.csv",
+      "lastUpdatedOn": "",
+      "templateVersion": "",
+      "verdict": "failing",
+      "checkedOn": "2026-08-30",
+      "note": "cms-hpt.txt points to an outdated file; a newer one is up on the source page instead (https://www.philiphealthservices.com/wp-content/uploads/2026/02/Philip-Health-Services-Inc_standardcharges-8.csv.zip). Operates as \"Philip Health Services\"; CMS-registered as Hans P Peterson Memorial Hospital - CAH. Emailed m***@monument.health 2026-08-30, following up in 30 days."
+    }
+  },
   "500030": {
     "ccn": "500030",
     "name": "Peacehealth St Joseph Medical Center",
