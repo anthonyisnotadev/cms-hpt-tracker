@@ -1,35 +1,217 @@
 # CMS Hospital Price Transparency Tracker
 
+### 🔴 Live at [mrf.anthonyisnota.dev](https://mrf.anthonyisnota.dev)
+
 Finds the machine-readable standard-charges file that every US hospital is
 required to publish under 45 CFR 180, records when each was last updated, and
 reports who publishes, who is stale, and who blocks automated access.
 
 Covers the full CMS registry of **5,419 hospitals**.
 
-```bash
-npm install
-node scripts/hpt/run.js          # list every stage
-```
+---
 
-New to this? Start with [`scripts/hpt/readme.txt`](scripts/hpt/readme.txt),
-which explains the whole thing in plain English. The technical detail is in
-[`scripts/hpt/README.md`](scripts/hpt/README.md).
+## What this is
 
-## The problem
+Every hospital in the United States is required by law to publish its prices
+in a file that computers can read. This tool finds those files.
 
-The CMS hospital registry has names and street addresses but **no website
-column**. So we know exactly what to look for and have no idea where to look.
-Finding the domains is the entire job.
+It starts from the official CMS list of 5,419 hospitals and, for each one,
+tries to answer three questions:
 
-The rules require a pointer file at a fixed location:
+1. What is this hospital's website?
+2. Where is its price file?
+3. When was that price file last updated?
+
+The answers go into a spreadsheet you can open in Excel.
+
+---
+
+## Why it is harder than it sounds
+
+The government's hospital list does not include website addresses. It has
+names and street addresses and nothing else.
+
+So we know exactly what we are looking for, and have no idea where to look.
+Finding the websites IS the job. Everything else follows easily once you
+know a hospital's web address.
+
+---
+
+## How it works
+
+The rules say a hospital must put a small text file at its web address, at
+a fixed spot:
 
 ```
 https://thehospital.com/cms-hpt.txt
 ```
 
-That file lists the locations it covers **by name**, so it identifies itself.
-A guessed domain can therefore be confirmed or discarded for the price of one
-free request, which is why cheap candidate sources beat paid search here.
+That little file says "here is where my price list lives."
+
+The useful part: that file also lists WHICH hospitals it covers, by name. So
+it identifies itself. That means we can simply guess a web address, look for
+the file, and let the file tell us whether we guessed right. A wrong guess
+costs nothing but a moment.
+
+That single fact shapes everything:
+
+- We do not need an expensive search service. Cheap guesses work, because
+  every guess gets checked for free.
+- Guesses come from several places: an open dataset of known price-file
+  links, Wikidata, a web search, and the files of other hospitals.
+- Large hospital chains list every hospital they own in one file. The file
+  at encompasshealth.com names 185 hospitals. One lucky guess can answer the
+  question for dozens of hospitals at once.
+
+---
+
+## The hard part: making sure it is the right hospital
+
+Hospital names repeat constantly. There is a "St. Mary's Hospital" in many
+different states. There are three hospitals named "Mercy Regional Medical
+Center." Matching on the name alone produces wrong answers that look right.
+
+Two things prevent that:
+
+1. Every price file contains the hospital's own street address and the state
+   it is licensed in. We read that and check it agrees. If a file says
+   Virginia and the hospital is in Arizona, it is not a match, no matter how
+   well the names line up.
+2. Hospitals get bought and renamed. "Baptist Health Shelby Hospital" is the
+   same building as "SHELBY BAPTIST MEDICAL CENTER" after a change of owner.
+   Names like that are sent to an AI, which is given the addresses and asked
+   whether it is the same place. Only confident yes answers are accepted.
+
+Everything in the final spreadsheet was checked against the address inside
+the price file. At the last check, 1,237 out of 1,237 checkable rows agreed.
+
+---
+
+## What you get
+
+Three spreadsheets, in the folder `cms_data/hpt/`:
+
+- **`manifest.csv`** &mdash; the answer. One row per hospital: its website,
+  its price file link, and when that file was last updated. 3,486 hospitals
+  so far.
+- **`compliance.csv`** &mdash; who is following the rules and who is not.
+  Every hospital is labelled with what we observed and the evidence for it.
+- **`gaps.csv`** &mdash; the hospitals we could not resolve, each labelled
+  with what would fix it, so the remaining work can be handed off or done
+  later.
+
+---
+
+## What we found
+
+Of 5,419 hospitals:
+
+| | |
+| ---: | --- |
+| 3,486 | price file found and confirmed (64%) |
+| 2,841 | of those also have a last-updated date |
+| 1,933 | not resolved yet (36%) |
+| &nbsp;&nbsp;164 | of those are federal hospitals (VA and military), which the rules exempt, so they have no file to find in the first place |
+
+We could actually assess 3,629 hospitals. Of those, 2,908 were publishing
+their prices (2,473 of them with a confirmed date; for the other 435 the file
+was there but its date could not be read), and 721 had a problem:
+
+| | |
+| ---: | --- |
+| 278 | price file link is broken |
+| 121 | price file more than a year old (the rules require yearly updates) |
+| 119 | website refuses automated visitors on the price-file location |
+| 93 | file uses an outdated government template |
+| 67 | website refuses automated visitors on the price file itself |
+| 37 | publishes no price-file pointer at all, though the site works |
+| 6 | pointer file names the hospital but gives no link to its price file |
+
+The blocking is concentrated. Two hospital chains account for 68 of the 186
+blocked hospitals, across 78 domains in total.
+
+A further 379 hospitals sit in their own category: we found a working price
+file on their health system's website, but that file does not mention them.
+Either the system left them out, or our name matching missed them. Because
+we cannot tell which, they are reported as "not named in file" rather than
+counted against the hospital.
+
+---
+
+## An important distinction
+
+The report carefully separates two different things:
+
+> "This hospital did not publish its prices." &mdash; a finding about them
+>
+> "We could not find this hospital's website." &mdash; a gap in our own work
+
+Only the first is reported as a problem. About 1,600 hospitals fall into the
+second group, and they are marked "not assessed" rather than counted as
+breaking the rules. Mixing those two together would have made the numbers
+look several times worse than reality and the report worthless.
+
+---
+
+## How to run it
+
+You need Node.js installed. From the project folder:
+
+```bash
+node scripts/hpt/run.js seed          # prepare the hospital list
+node scripts/hpt/run.js pointers      # look for price files
+node scripts/hpt/run.js match         # work out which file belongs to whom
+node scripts/hpt/run.js dates         # find when each file was updated
+node scripts/hpt/run.js compliance    # produce the compliance spreadsheet
+node scripts/hpt/run.js audit         # check the results contradict nothing
+node scripts/hpt/run.js report        # show a summary
+```
+
+Every step can be stopped and restarted. It remembers what it already did
+and picks up where it left off. Nothing is lost if you close the window.
+
+For the full list of steps and options, run `node scripts/hpt/run.js` with
+no arguments. The exact command sequence used so far, including the paid
+fallback paths, is under [Running it](#running-it) below.
+
+---
+
+## What it costs
+
+Almost nothing. The work so far cost about zero dollars: the web searches fit
+inside a free allowance, and the AI checking cost a few cents.
+
+Fetching the price files themselves is free. Note that the price files are
+large, often 100 to 300 megabytes each, so downloading all of them would need
+a lot of disk space. This tool reads only the first few kilobytes of each
+file to get the date, which avoids that entirely.
+
+---
+
+## Limits, honestly
+
+100% is not achievable. Some hospitals genuinely do not publish these files,
+federal hospitals are exempt, and some websites cannot be reached at all. The
+realistic ceiling is somewhere in the high eighties as a percentage of
+hospitals that actually have a file to find.
+
+The remaining work is known and listed in `gaps.csv`. Most of it needs either
+a fresh month of free web searches or a service that can get past sites which
+block automated visitors.
+
+---
+
+## Technical details
+
+For anyone running the pipeline or working on the code. Full pipeline
+reference: [`scripts/hpt/README.md`](scripts/hpt/README.md).
+
+```bash
+npm install
+node scripts/hpt/run.js          # list every stage
+```
+
+---
 
 ## Layout
 
@@ -51,51 +233,43 @@ cms_data/             the CMS roster (committed; see below)
 
 `tracker.html` is **source, not output**. The build reads it, replaces the
 `<script id="tracker-data">` payload, and stamps cache-busting hashes on the
-page scripts. Editing the page means editing that file.
+page scripts. Edit the page by editing that file.
+
+---
 
 ## The explainer pages
 
-Four static pages, linked from the tracker's masthead. The first three cover
-what the tracker measures and why; the fourth covers the tooling that maintains
-it:
+Four static pages, linked from the tracker's masthead:
 
 | Page | Covers |
 | --- | --- |
-| [`mrf.html`](mrf.html) | What a machine-readable file is: the five standard charge types, the three CMS template layouts, the full data dictionary, and the allowed-amount rules for charges that aren't dollar figures |
-| [`rules.html`](rules.html) | 45 CFR 180 end to end: scope and exemptions, both disclosure duties, the 2021&ndash;2026 compliance timeline, enforcement and penalty arithmetic, and which paragraph each audit finding rests on |
-| [`pointer.html`](pointer.html) | `cms-hpt.txt` &mdash; the required fields, worked examples, the naming convention, and how the crawl uses it to resolve domains |
-| [`skill.html`](skill.html) | The `outreach` agent skill: what a `SKILL.md` is, a worked example from paste to git commit, the guardrails, running the same folder in OpenCode / Codex / Cursor / Gemini CLI, and doing it all with no agent at all |
+| [`mrf.html`](mrf.html) | What a machine-readable file is: the five charge types, the three CMS template layouts, the data dictionary, allowed-amount rules |
+| [`rules.html`](rules.html) | 45 CFR 180 end to end: scope, exemptions, the compliance timeline, enforcement and penalties |
+| [`pointer.html`](pointer.html) | `cms-hpt.txt`: required fields, worked examples, naming convention |
+| [`skill.html`](skill.html) | The `outreach` agent skill: what it does, a worked example, running it in other agent runtimes |
 
-Each of the first three opens with a **short version**: the whole page in four
-plain sentences, for a reader who wants the answer rather than the regulation.
-Jargon in the prose is a dotted link to a **glossary** entry at the foot of the
-page &mdash; `<a class="gl" href="#g-payer">` &rarr; `<div id="g-payer">` &mdash;
-so a term works as a plain anchor with JavaScript off, and `js/docs.js` only adds
-a hover panel that reads the very same `<dd>`.
+Notes for editing them:
 
-The definitions live once, in `TERMS` in
-[`scripts/build-glossary.js`](scripts/build-glossary.js). `npm run build` scans
-each page for the slugs it links to, emits exactly those entries alphabetically
-between the `<!-- glossary:start -->` sentinels, and **fails** on a slug with no
-definition. Add a term by adding it to `TERMS`, linking it in the prose, and
-rebuilding; never hand-edit the generated `<dl>`.
+- Each of the first three opens with a **short version** (four plain
+  sentences) before the regulatory detail.
+- Jargon links to a **glossary** entry at the foot of the page. Definitions
+  live once, in `TERMS` in [`scripts/build-glossary.js`](scripts/build-glossary.js).
+  `npm run build` generates the glossary `<dl>` from whatever slugs each page
+  links to, and fails on a slug with no definition — never hand-edit the
+  generated `<dl>`.
+- Every regulatory claim links to its paragraph in the eCFR, with a numbered
+  source list at the foot of the page. Sources: the current
+  [45 CFR 180](https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-E/part-180),
+  the Federal Register rules that amended it, and CMS's
+  [technical implementation guide](https://github.com/CMSgov/hospital-price-transparency).
+- `css/docs.css` carries a **verbatim copy of the tracker's design tokens**
+  (`tracker.html` keeps its CSS inline instead of importing this file) —
+  change a token in one, change it in the other. Snapshot figures in the
+  prose are dated by hand and don't update on rebuild.
+- The masthead links between pages are relative and get stripped from
+  `--standalone`/`--artifact` builds, which travel without their siblings.
 
-On the first three, every regulatory claim links to its paragraph in the eCFR,
-and each page ends with a numbered source list keyed to inline `[n]` markers.
-Sources are the current [45 CFR 180](https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-E/part-180),
-the Federal Register final rules that amended it, and CMS's
-[technical implementation guide](https://github.com/CMSgov/hospital-price-transparency).
-`skill.html` follows the same source discipline against each agent runtime's own
-documentation, and its terminal output is captured from real dry runs.
-
-These pages carry a **verbatim copy of the tracker's design tokens** in
-`css/docs.css`, because `tracker.html` keeps its CSS inline so the build can
-ship it as one self-contained file. Change a token in one and change it in the
-other. Snapshot figures quoted in the prose are dated and do not update with a
-rebuild &mdash; they need editing by hand when the numbers move.
-
-The masthead links between these pages are relative, so `--standalone` and
-`--artifact` builds strip them; both outputs travel without their siblings.
+---
 
 ## Running it
 
@@ -147,35 +321,30 @@ npm run geocode -- --retry --benchmark Public_AR_Census2020  # rural misses
 npm run geocode -- --zip-only                                # the rest, by ZIP
 ```
 
-The source is the **US Census batch geocoder** — public domain, no key, and
-built for bulk US address files, which Nominatim's usage policy forbids. The
-three passes place 4,736 hospitals at their address, 650 more at their ZIP
-code's centre (the drawer says so, and zooms out rather than implying a
-building), and leave 33 unplaced whose ZIPs are PO boxes with no tabulation
-area. Those simply get no map.
+Source: the **US Census batch geocoder** — public domain, no key needed, and
+built for bulk US address files (Nominatim's usage policy forbids that use).
+The three passes place 4,736 hospitals at their address, 650 more at their
+ZIP code's centre (labeled as such, zoomed out), and leave 33 unplaced
+because their ZIPs are PO boxes with no mappable area — those just get no map.
 
-The file only needs regenerating when the roster gains hospitals; the build
-warns and carries on without maps if it is missing.
+Regenerate the file only when the roster gains hospitals. The build warns
+and carries on without maps if it's missing.
 
 ### Outreach notes with persistence
 
-`npm run serve` is a plain static server — the outreach notes UI (status,
+`npm run serve` is a plain static server, so the outreach notes UI (status,
 follow-ups, emails logged, corrections) falls back to that browser's
-`localStorage`, per-browser only. To persist those to a shared file instead:
+`localStorage` — per-browser only. To persist notes to a shared file instead:
 
 ```bash
 npm run serve:outreach   # http://localhost:8080/tracker.html
 ```
 
-Run one or the other, never both. `serve:outreach` serves the page *and* the
-API, so it fully replaces `serve`. They deliberately sit on different ports:
-sharing one let each grab a different address family (IPv4 vs IPv6) instead of
-failing with `EADDRINUSE`, so whether the page found the API came down to how
-`localhost` happened to resolve.
-
-This backs `js/outreach.js`'s `/api/outreach*` calls and writes everything to
-`cms_data/outreach.json`, so notes survive across browsers and machines that
-hit the same server. No dependencies beyond Node itself.
+Run one or the other, never both — `serve:outreach` serves the page *and*
+the `/api/outreach*` API that `js/outreach.js` calls, writing everything to
+`cms_data/outreach.json` so notes survive across browsers and machines. No
+dependencies beyond Node itself. (It uses a different port than `serve`
+deliberately, to avoid a port conflict between the two.)
 
 ### Logging outreach from the command line, or from an agent
 
@@ -200,19 +369,23 @@ Gemini CLI via a symlink into `.agents/skills/`.
 [`skill.html`](skill.html) is the full write-up: worked examples, guardrails,
 per-runtime paths, and what changes when you point a different model at it.
 
+---
+
 ## The CMS roster
 
-`cms_data/Hospital_General_Information.csv` — the Hospital General Information
-table from the CMS provider-data catalogue, and the input every run starts
-from. It **is committed**, so the repo is self-contained and any published
-result can be reproduced against the exact roster that produced it.
+`cms_data/Hospital_General_Information.csv` is the CMS provider-data
+catalogue's Hospital General Information table — the input every run starts
+from. It **is committed**, so any published result can be reproduced against
+the exact roster that produced it.
 
-CMS revises the table on its own schedule. To refresh it, replace the file and
-re-run `seed`; the hospital count in the reports will move with it.
+CMS revises the table on its own schedule. To refresh it: replace the file,
+re-run `seed`. The hospital count in the reports moves with it.
 
-What is *not* committed is the pipeline's working state under `cms_data/hpt/`:
-that is all derived, and `cms_data/hpt/mrf/` in particular holds the downloaded
-price files, which average 166 MB each and already total 664 MB locally.
+*Not* committed: the pipeline's working state under `cms_data/hpt/`. That's
+all derived — `cms_data/hpt/mrf/` in particular holds the downloaded price
+files, which average 166 MB each and already total 664 MB locally.
+
+---
 
 ## Configuration
 
@@ -235,47 +408,44 @@ DECODO_USERNAME=...
 DECODO_PASSWORD=...
 ```
 
+---
+
 ## Correctness
 
-Hospital names repeat across states, so no match rests on a name alone. Every
-one is corroborated against the street address and `license_number|<ST>`
-licensing state carried **inside** the MRF header, read via a ranged request
-rather than downloading files that average 166 MB.
+No match rests on a name alone — hospital names repeat across states. Every
+match is corroborated against the street address and licensing state carried
+**inside** the MRF header (read via a ranged request, not a full download).
 
 ```bash
 node scripts/hpt/run.js audit
 ```
 
-`audit` exits non-zero if any output row asserts something its own fields
-refute — a hospital reported as having no domain while holding a pointer URL,
-a row called compliant with no file link, a stale flag disagreeing with its own
-day count. It found four such classes affecting roughly 1,200 rows.
+`audit` exits non-zero if any output row contradicts its own fields — e.g. a
+hospital marked as having no domain while holding a pointer URL. It found
+four such classes, affecting roughly 1,200 rows.
 
 The compliance report keeps a hard line between **"this hospital did not
-publish"** and **"we could not find it"**. Only the former is a finding;
-unresolved hospitals are marked `not-assessed` and excluded from every finding
-count. Conflating the two would make the numbers several times worse than
-reality.
+publish"** and **"we could not find it."** Only the former counts as a
+finding; unresolved hospitals are marked `not-assessed` and excluded from
+every finding count.
+
+---
 
 ## License
 
 [GNU Affero General Public License v3.0](LICENSE).
 
-AGPL rather than GPL because of section 13. This is a tracker meant to be
-*served*, and the ordinary GPL lets someone run a modified copy on a public
-server without ever releasing the changes. Section 13 closes that: if you deploy
-a modified version where others can reach it over a network, you owe its users
-the corresponding source. Fork it, host it, point it at a different registry —
-just pass on the same freedoms.
+AGPL rather than GPL because of section 13: if you deploy a modified version
+where others reach it over a network, you owe its users the source, not just
+users who receive a copy of the binary. Fork it, host it, point it at a
+different registry — just pass on the same freedoms.
 
-`tracker.html` carries the notice and a source link in its footer, which is what
-discharges that obligation for a deployed page. Keep them there if you host your
-own build.
+`tracker.html` carries the notice and a source link in its footer to satisfy
+that. Keep them there if you host your own build.
 
 The license covers **this code, not the data it reports on**.
-`cms_data/Hospital_General_Information.csv` is a US government work from the CMS
-provider-data catalogue, and the `cms-hpt.txt` and standard-charges files belong
-to the hospitals that published them. Neither becomes AGPL by passing through
-here.
+`cms_data/Hospital_General_Information.csv` is a US government work from CMS,
+and the `cms-hpt.txt`/standard-charges files belong to the hospitals that
+published them.
 
 Built by [anthonyisnotadev](https://github.com/anthonyisnotadev).
