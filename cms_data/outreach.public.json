@@ -155,6 +155,38 @@
       "note": "cms-hpt.txt points to an outdated file; the source page links a newer one instead (https://www.spencerhospital.org/webres/File/Pricing/426005883_spencer-municipal-hospital_standardcharges%20(7).csv). Emailed S***@spencerhospital.org and c***@spencerhospital.org 2026-08-30."
     }
   },
+  "170198": {
+    "ccn": "170198",
+    "name": "Summit Surgical, Llc",
+    "city": "Hutchinson",
+    "state": "KS",
+    "status": "awaiting-reply",
+    "followUpOn": "2026-09-30",
+    "createdAt": "2026-08-31T00:39:38.271Z",
+    "updatedAt": "2026-08-31T00:39:38.272Z",
+    "entries": [
+      {
+        "id": "mtgigwf2-muvybq",
+        "kind": "email",
+        "at": "2026-08-31T00:39:38.270Z",
+        "subject": "Your cms-hpt.txt is pointing to the wrong file",
+        "to": "c***@summitks.com",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed Summit Surgical's cms-hpt.txt is pointing to this file:\n\nhttps://summitks.com/wp-content/uploads/203283620_summit-surgical-llc_standardcharges-121125_2.csv\n\nBut the correct, current file appears to be the one on your pricing page instead:\n\nhttps://summitks.com/wp-content/uploads/203283620_summit-surgical-llc_standardcharges_8.25.26.csv\n\nIt looks like it'll just be a quick fix to update the pointer in cms-hpt.txt. Happy to help however's useful!\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if this could get updated before then!\n\nThanks so much,\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
+        "sentAt": "2026-08-31",
+        "outcome": "none"
+      }
+    ],
+    "correction": {
+      "domain": "summitks.com",
+      "pointerUrl": "https://summitks.com/cms-hpt.txt",
+      "mrfUrl": "https://summitks.com/wp-content/uploads/203283620_summit-surgical-llc_standardcharges_8.25.26.csv",
+      "lastUpdatedOn": "",
+      "templateVersion": "",
+      "verdict": "failing",
+      "checkedOn": "2026-08-31",
+      "note": "cms-hpt.txt points to the old file (dated 7/29/2025, 395 days old); the correct current one is on the pricing page instead. Emailed C*** (c***@summitks.com) 2026-08-31, following up in 30 days."
+    }
+  },
   "190190": {
     "ccn": "190190",
     "name": "Caldwell Memorial Hospital, Inc",
