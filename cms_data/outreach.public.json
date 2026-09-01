@@ -69,10 +69,26 @@
     "city": "Chicago",
     "state": "IL",
     "status": "awaiting-reply",
-    "followUpOn": "2026-09-29",
+    "followUpOn": "2026-09-30",
     "createdAt": "2026-08-31T00:25:52.204Z",
-    "updatedAt": "2026-08-31T00:25:52.205Z",
+    "updatedAt": "2026-09-01T03:56:10.396Z",
     "entries": [
+      {
+        "id": "mti4xhy4-kdlk1z",
+        "kind": "email",
+        "at": "2026-09-01T03:56:10.396Z",
+        "subject": "Re: Standard Charges File Out of Date",
+        "to": "j***@uic.edu",
+        "body": "Hello,\n\nThanks so much for the quick update, really appreciate it! Just one more thing to flag: cms-hpt.txt is actually the file CMS requires (under 45 CFR 180.50) to stay current and discoverable, separate from the Billing and Pricing page. I checked just now and it's still pointing to the old file, so the hospital's technically still out of compliance there, and it's actually breaking the automated check my research relies on.\n\nWould you mind having someone update cms-hpt.txt to point to the new one? Happy to help however's useful!\n\nThanks again,\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
+        "sentAt": "2026-08-31",
+        "outcome": "none"
+      },
+      {
+        "id": "mti4xhy4-3mp4my",
+        "kind": "note",
+        "at": "2026-09-01T03:56:10.396Z",
+        "text": "J*** replied: standard charges file refreshed to 4/1/2026, linked from Billing and Pricing > Price Transparency & Estimates: https://hospital.uillinois.edu/documents/PatientAndVisitors/billing/376000511_University-of-Illinois-Hospital-and-Clinics_standardcharges.zip -- note this is a .zip, not the .json/.csv CMS requires. Checked cms-hpt.txt live and it still points to the old .csv file, so still non-compliant on the auto-discovery requirement."
+      },
       {
         "id": "mtghz70r-f8h25m",
         "kind": "email",
@@ -81,7 +97,7 @@
         "to": "j***@uic.edu",
         "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed University of Illinois Hospital & Clinics' standard charges file is dated 8/1/2025, both the file linked from the billing and pricing page and the one referenced in cms-hpt.txt:\n\nhttps://hospital.uillinois.edu/documents/PatientAndVisitors/billing/376000511_University-of-Illinois-Hospital-and-Clinics_standardcharges.csv\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if this could get updated before then. Happy to help however's useful!\n\nThanks so much,\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
         "sentAt": "2026-08-30",
-        "outcome": "none"
+        "outcome": "replied"
       }
     ],
     "correction": {
@@ -92,7 +108,7 @@
       "templateVersion": "",
       "verdict": "failing",
       "checkedOn": "2026-08-31",
-      "note": "MRF last_updated_on 2025-08-01, 392 days old at check per compliance.csv. Emailed J*** (j***@uic.edu) 2026-08-30, following up in 30 days."
+      "note": "MRF last_updated_on 2025-08-01 was 392 days old at first check. Emailed J*** (j***@uic.edu) 2026-08-30; she replied 2026-08-31 that the file was refreshed to 4/1/2026 (as a .zip, not .csv/.json), but cms-hpt.txt still points to the old file -- followed up 2026-08-31 asking for the pointer to be updated, following up again in 30 days."
     }
   },
   "150065": {
