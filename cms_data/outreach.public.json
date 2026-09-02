@@ -1169,5 +1169,26 @@
       "checkedOn": "2026-08-27",
       "note": "No machine-readable standard charges file located. cms-hpt.txt pointer 404s and the PARA-hosted pricing page (Kanakanak_V3.aspx) returns \"no longer in service\". Marking failing pending outreach reply."
     }
+  },
+  "021307": {
+    "ccn": "021307",
+    "name": "Cordova Community Medical Center",
+    "city": "Cordova",
+    "state": "AK",
+    "status": "none",
+    "followUpOn": "",
+    "createdAt": "2026-09-02T02:25:28.655Z",
+    "updatedAt": "2026-09-02T02:25:28.656Z",
+    "entries": [],
+    "correction": {
+      "domain": "cdvcmc.com",
+      "pointerUrl": "https://www.cdvcmc.com/cms-hpt.txt",
+      "mrfUrl": "https://www.cdvcmc.com/wp-content/uploads/2026/03/920139171_cordova-community-medical-center_standardcharges.csv",
+      "lastUpdatedOn": "2026-03-10",
+      "templateVersion": "3.0.0",
+      "verdict": "compliant",
+      "checkedOn": "2026-08-27",
+      "note": "Crawled 2026-08-27. cms-hpt.txt at the site root points to a CSV MRF (source page: patient cost estimator). File carries a valid CMS template header: version 3.0.0, last_updated_on 2026-03-10, attestation TRUE. Hospital name, address (602 Chase Ave, Cordova AK 99574), type_2 NPI 1215035787 and CAH license all match the roster. Compliant."
+    }
   }
 }
