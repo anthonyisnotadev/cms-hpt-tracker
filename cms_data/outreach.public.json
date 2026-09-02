@@ -1232,5 +1232,26 @@
       "checkedOn": "2026-09-01",
       "note": "MRF located via UHS standard-services page https://northstarbehavioral.com/standard-services/ (facility publishes per-location files hosted on uhsfilecdn.eskycity.net). NorthStar Hospital file header matches CCN 024001: address 2530 Debarr Road, Anchorage AK 99508, license 39-4040, type_2_npi 1487629333, version 3.0.0, last_updated_on 2026-04-01, attestation true. Note: the same page also lists a sibling Chris Kyle Patriots Hospital file (1650 South Bragaw St, Anchorage, dated 2026-03-30, same license/NPI) https://uhsfilecdn.eskycity.net/bh/721539530_chris-kyle-patriots_standardcharges.csv - a separate campus with no standalone CCN in the roster."
     }
+  },
+  "021305": {
+    "ccn": "021305",
+    "name": "Searhc Wrangell Medical Center & Ltc",
+    "city": "Wrangell",
+    "state": "AK",
+    "status": "none",
+    "followUpOn": "",
+    "createdAt": "2026-09-02T02:42:21.986Z",
+    "updatedAt": "2026-09-02T02:42:21.987Z",
+    "entries": [],
+    "correction": {
+      "domain": "searhc.org",
+      "pointerUrl": "",
+      "mrfUrl": "https://searhc.org/wp-content/uploads/2026/04/Wrangell-Medical-Center-Standard-Charges.xlsx",
+      "lastUpdatedOn": "2025-09-11",
+      "templateVersion": "2.0.0",
+      "verdict": "failing",
+      "checkedOn": "2026-09-01",
+      "note": "A standard-charges file exists and is publicly reachable, but it is not compliant. (1) Wrong format: it is served as .xlsx (https://searhc.org/wp-content/uploads/2026/04/Wrangell-Medical-Center-Standard-Charges.xlsx). CMS 45 CFR 180.50 requires the machine-readable file be a .csv or .json conforming to the CMS template; .xlsx is not an accepted format. The file's content does follow the CMS template (version 2.0.0, valid 180.50 attestation, standard_charge|... columns, last_updated_on 2025-09-11), so this is a format/packaging failure rather than missing data. (2) No cms-hpt.txt: https://searhc.org/cms-hpt.txt returns 404, so there is no root pointer file as required since 2024-07-01. The file is linked (as 'Wrangell Medical Center Standard Charges') from the Billing & Financing page at https://searhc.org/patient-resources/billing-financing/, not from the homepage or footer, and /price-transparency/ 404s. The sibling SEARHC facility Mt. Edgecumbe Medical Center is published the same way (also .xlsx) on the same page."
+    }
   }
 }
