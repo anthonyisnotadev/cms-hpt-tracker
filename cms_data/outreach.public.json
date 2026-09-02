@@ -1105,11 +1105,22 @@
     "name": "Alaska Psychiatric Institute",
     "city": "Anchorage",
     "state": "AK",
-    "status": "none",
-    "followUpOn": "",
+    "status": "awaiting-reply",
+    "followUpOn": "2026-10-02",
     "createdAt": "2026-09-02T02:10:27.497Z",
-    "updatedAt": "2026-09-02T02:10:27.498Z",
-    "entries": [],
+    "updatedAt": "2026-09-02T02:14:29.684Z",
+    "entries": [
+      {
+        "id": "mtjgql9v-t8kzq5",
+        "kind": "email",
+        "at": "2026-09-02T02:14:29.683Z",
+        "subject": "Alaska Psychiatric Institute standard charges file",
+        "to": "d***@alaska.gov",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and I've been trying to track down Alaska Psychiatric Institute's machine-readable standard charges file.\n\nI looked through the API page and the wider DFCS site and couldn't find one:\n\nhttps://dfcs.alaska.gov/alaska-psychiatric-institute/\n\nThere's also no cms-hpt.txt file at the root of dfcs.alaska.gov, which is the small text file CMS asks each hospital to publish so the charges file can be found automatically. The acute rate matrix PDF on the API page was useful for context, but it isn't the machine-readable (JSON or CSV) file the rule is looking for.\n\nIf you're able to point me to the CSV/JSON file, or forward this along to whoever handles API's billing or compliance pages, I'd really appreciate it. I'll plan to check back in about 30 days so I can keep my research moving, but there's no urgency on my end. Happy to help however's useful.\n\nThanks so much,\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
+        "sentAt": "2026-09-02",
+        "outcome": "none"
+      }
+    ],
     "correction": {
       "domain": "dfcs.alaska.gov",
       "pointerUrl": "",
