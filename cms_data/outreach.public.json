@@ -1238,11 +1238,22 @@
     "name": "Searhc Wrangell Medical Center & Ltc",
     "city": "Wrangell",
     "state": "AK",
-    "status": "none",
-    "followUpOn": "",
+    "status": "awaiting-reply",
+    "followUpOn": "2026-10-01",
     "createdAt": "2026-09-02T02:42:21.986Z",
-    "updatedAt": "2026-09-02T02:42:21.987Z",
-    "entries": [],
+    "updatedAt": "2026-09-02T02:46:46.859Z",
+    "entries": [
+      {
+        "id": "mtjhw40a-olue2d",
+        "kind": "email",
+        "at": "2026-09-02T02:46:46.858Z",
+        "subject": "Wrangell Medical Center standard charges file - format and cms-hpt.txt",
+        "to": "p***@searhc.org",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and had a couple of notes on SEARHC Wrangell Medical Center's machine-readable standard charges file.\n\nThe file linked from your Billing & Financing page is published as an Excel spreadsheet:\n\nhttps://searhc.org/wp-content/uploads/2026/04/Wrangell-Medical-Center-Standard-Charges.xlsx\n\nThe data itself already follows the CMS template, but CMS asks for the machine-readable file to be a .csv or .json rather than .xlsx for compliance. Re-saving the same sheet as CSV should cover that easily.\n\nI also couldn't find a cms-hpt.txt file at https://searhc.org/cms-hpt.txt, which currently returns a 404. That's the text file CMS asks hospitals to place at the root of the website so the charges file can be found automatically.\n\nThe same two things apply to the Mt. Edgecumbe Medical Center file on that page, if it's handled by the same team.\n\nI'll plan to follow up in about 30 days so I can keep my research moving, but would appreciate it if these could be sorted out before then. Happy to help however's useful.\n\n\nThanks so much,\n\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
+        "sentAt": "2026-09-01",
+        "outcome": "none"
+      }
+    ],
     "correction": {
       "domain": "searhc.org",
       "pointerUrl": "",
