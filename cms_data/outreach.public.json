@@ -1190,5 +1190,26 @@
       "checkedOn": "2026-08-27",
       "note": "Crawled 2026-08-27. cms-hpt.txt at the site root points to a CSV MRF (source page: patient cost estimator). File carries a valid CMS template header: version 3.0.0, last_updated_on 2026-03-10, attestation TRUE. Hospital name, address (602 Chase Ave, Cordova AK 99574), type_2 NPI 1215035787 and CAH license all match the roster. Compliant."
     }
+  },
+  "020012": {
+    "ccn": "020012",
+    "name": "Fairbanks Memorial Hospital",
+    "city": "Fairbanks",
+    "state": "AK",
+    "status": "none",
+    "followUpOn": "",
+    "createdAt": "2026-09-02T02:28:00.627Z",
+    "updatedAt": "2026-09-02T02:28:00.628Z",
+    "entries": [],
+    "correction": {
+      "domain": "foundationhealth.org",
+      "pointerUrl": "https://www.foundationhealth.org/cms-hpt.txt",
+      "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbFMHFAIRBANKSAK&type=CDMWithoutLabel&fileType=CSV",
+      "lastUpdatedOn": "2026-06-16",
+      "templateVersion": "3.0.0",
+      "verdict": "compliant",
+      "checkedOn": "2026-09-02",
+      "note": "Found cms-hpt.txt at foundationhealth.org/cms-hpt.txt with a valid pointer: location-name FAIRBANKS MEMORIAL HOSPITAL, source-page-url para-hcfs.com Fairbanks_V2.aspx, mrf-url to a PARA-hosted CDM CSV. CSV header confirms last_updated_on 2026-06-16, template version 3.0.0, valid CFR 180.50 attestation. File is current."
+    }
   }
 }
