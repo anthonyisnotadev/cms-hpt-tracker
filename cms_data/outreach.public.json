@@ -68,11 +68,17 @@
     "name": "University Of Illinois Hospital And Clinics",
     "city": "Chicago",
     "state": "IL",
-    "status": "awaiting-reply",
-    "followUpOn": "2026-09-30",
+    "status": "resolved",
+    "followUpOn": "",
     "createdAt": "2026-08-31T00:25:52.204Z",
-    "updatedAt": "2026-09-01T04:01:30.561Z",
+    "updatedAt": "2026-09-02T01:54:56.779Z",
     "entries": [
+      {
+        "id": "mtjg1g96-6bzylp",
+        "kind": "note",
+        "at": "2026-09-02T01:54:56.778Z",
+        "text": "Reply from J*** (j***@uic.edu), 2026-09-01:\n\nAnthony,\n\nThank you for your concern. You may have to clear your browser cache. Please let me know if you still have issues with accessing the file dated 4/1/2026.\n\nJ***, J.D.\nDirector, Revenue Cycle Optimization\nUI Health\n[phone/address redacted]\n\n-- I replied 2026-09-01 confirming the file/pointer now shows as updated on my end and thanked her. Marking resolved/compliant: cms-hpt.txt now resolves to the 4/1/2026 file."
+      },
       {
         "id": "mti4xhy4-kdlk1z",
         "kind": "email",
@@ -81,7 +87,7 @@
         "to": "j***@uic.edu",
         "body": "Hello,\n\nThanks so much for the quick update, really appreciate it! Just one more thing to flag: cms-hpt.txt is actually the file CMS requires (under 45 CFR 180.50) to stay current and discoverable, separate from the Billing and Pricing page. I checked just now and it's still pointing to the old file, so the hospital's technically still out of compliance there, and it's actually breaking the automated check my research relies on.\n\nWould you mind having someone update cms-hpt.txt to point to the new one? Happy to help however's useful!\n\nThanks again,\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
         "sentAt": "2026-08-31",
-        "outcome": "none"
+        "outcome": "replied"
       },
       {
         "id": "mti4xhy4-3mp4my",
@@ -104,12 +110,12 @@
     "correction": {
       "domain": "hospital.uillinois.edu",
       "pointerUrl": "https://hospital.uillinois.edu/cms-hpt.txt",
-      "mrfUrl": "https://hospital.uillinois.edu/documents/PatientAndVisitors/billing/376000511_University-of-Illinois-Hospital-and-Clinics_standardcharges.csv",
-      "lastUpdatedOn": "2025-08-01",
+      "mrfUrl": "https://hospital.uillinois.edu/documents/PatientAndVisitors/billing/376000511_University-of-Illinois-Hospital-and-Clinics_standardcharges.zip",
+      "lastUpdatedOn": "2026-04-01",
       "templateVersion": "",
-      "verdict": "failing",
-      "checkedOn": "2026-08-31",
-      "note": "MRF last_updated_on 2025-08-01 was 392 days old at first check. Emailed J*** (j***@uic.edu) 2026-08-30; she replied 2026-08-31 that the file was refreshed to 4/1/2026 (as a .zip, not .csv/.json), but cms-hpt.txt still points to the old file -- followed up 2026-08-31 asking for the pointer to be updated, following up again in 30 days."
+      "verdict": "compliant",
+      "checkedOn": "2026-09-01",
+      "note": "Was failing on a 2025-08-01 MRF (392 days old at first check). Emailed J*** (j***@uic.edu) 2026-08-30; she refreshed the file to 4/1/2026. Followed up 2026-08-31 because cms-hpt.txt still pointed to the old .csv; she replied 2026-09-01 (browser cache) and the pointer now resolves to the current file (packaged as .zip). Confirmed updated 2026-09-01 -- resolved."
     }
   },
   "150065": {
