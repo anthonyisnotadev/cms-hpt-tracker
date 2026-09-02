@@ -71,8 +71,14 @@
     "status": "resolved",
     "followUpOn": "",
     "createdAt": "2026-08-31T00:25:52.204Z",
-    "updatedAt": "2026-09-02T01:54:56.779Z",
+    "updatedAt": "2026-09-02T02:00:46.293Z",
     "entries": [
+      {
+        "id": "mtjg8xxv-vixl0y",
+        "kind": "note",
+        "at": "2026-09-02T02:00:46.291Z",
+        "text": "Targeted crawl 2026-09-02 (pipeline libs, direct fetch, no unblocker):\n\ncms-hpt.txt -- https://hospital.uillinois.edu/cms-hpt.txt (fetched direct, not blocked), 1 entry:\n  location-name: University of Illinois Hospital and Clinics\n  source-page-url: https://hospital.uillinois.edu/patients-and-visitors/patient-information/billing-and-pricing/price-and-estimates\n  mrf-url: https://www.hospital.uillinois.edu/documents/PatientAndVisitors/billing/376000511_University-of-Illinois-Hospital-and-Clinics_standardcharges.zip\n  contact: J*** / j***@uic.edu\n\nprobeMrf on that .zip: HTTP 200, 35,305,943 bytes, application/zip -> inner CSV. Declared last_updated_on 4/1/2026 (2026-04-01), CMS schema version 3.0.0, license state IL, hospital name \"University of Illinois Hospital & Clinics\", address 1740 W. Taylor St, Chicago, IL 60612. 154 days old, not stale.\n\nPointer now points at the current file (J***'s fix confirmed). Note the live mrf-url uses the www. host; the record's mrfUrl updated to match."
+      },
       {
         "id": "mtjg1g96-6bzylp",
         "kind": "note",
@@ -110,12 +116,12 @@
     "correction": {
       "domain": "hospital.uillinois.edu",
       "pointerUrl": "https://hospital.uillinois.edu/cms-hpt.txt",
-      "mrfUrl": "https://hospital.uillinois.edu/documents/PatientAndVisitors/billing/376000511_University-of-Illinois-Hospital-and-Clinics_standardcharges.zip",
+      "mrfUrl": "https://www.hospital.uillinois.edu/documents/PatientAndVisitors/billing/376000511_University-of-Illinois-Hospital-and-Clinics_standardcharges.zip",
       "lastUpdatedOn": "2026-04-01",
-      "templateVersion": "",
+      "templateVersion": "3.0.0",
       "verdict": "compliant",
-      "checkedOn": "2026-09-01",
-      "note": "Was failing on a 2025-08-01 MRF (392 days old at first check). Emailed J*** (j***@uic.edu) 2026-08-30; she refreshed the file to 4/1/2026. Followed up 2026-08-31 because cms-hpt.txt still pointed to the old .csv; she replied 2026-09-01 (browser cache) and the pointer now resolves to the current file (packaged as .zip). Confirmed updated 2026-09-01 -- resolved."
+      "checkedOn": "2026-09-02",
+      "note": "Crawled 2026-09-02: cms-hpt.txt resolves direct (not blocked) and points to 376000511_...standardcharges.zip on the www. host. probeMrf reads a valid CMS v3.0.0 CSV inside the zip, last_updated_on 4/1/2026 (154 days old, not stale), license state IL. Was failing on a 2025-08-01 file (392 days old); emailed J*** (j***@uic.edu) 2026-08-30, she refreshed it and (after a 2026-08-31 follow-up) updated the pointer. Resolved."
     }
   },
   "150065": {
