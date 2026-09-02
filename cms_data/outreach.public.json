@@ -1131,5 +1131,43 @@
       "checkedOn": "2026-09-02",
       "note": "State-owned hospital (Alaska Dept. of Family & Community Services), not federally owned, so subject to Hospital Price Transparency. No cms-hpt.txt at dfcs.alaska.gov, alaska.gov, or health.alaska.gov (all 404). No machine-readable standard charges file. Only a PDF 'Charge Matrix' (api-acute-rate-matrix.pdf) on the API page, which is not a compliant MRF. Checked 2026-09-02."
     }
+  },
+  "021309": {
+    "ccn": "021309",
+    "name": "Bristol Bay Dba Kanakanak Hospital",
+    "city": "Dillingham",
+    "state": "AK",
+    "status": "awaiting-reply",
+    "followUpOn": "2026-10-01",
+    "createdAt": "2026-09-02T02:22:19.903Z",
+    "updatedAt": "2026-09-02T02:22:19.903Z",
+    "entries": [
+      {
+        "id": "mtjh0o3j-rov7dh",
+        "kind": "email",
+        "at": "2026-09-02T02:22:19.903Z",
+        "subject": "Missing MRF / Standard Charges",
+        "to": "c***@bbahc.org",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and I've been trying to track down Kanakanak Hospital's machine-readable standard charges file.\n\nThe link that's supposed to point to it, hosted by PARA at apps.para-hcfs.com, now returns an error saying the page is \"no longer in service\":\n\nhttps://apps.para-hcfs.com/PTT/FinalLinks/Kanakanak_V3.aspx\n\nThere's also no working cms-hpt.txt file at bbahc.org. That's the text file CMS asks each hospital to publish so the charges file can be found automatically, and right now it returns a 404.\n\nIf you're able to point me to the current CSV or JSON file, or forward this to whoever handles the hospital's billing or compliance pages, I'd really appreciate it. I'll plan to check back in about 30 days so I can keep my research moving. Happy to help however's useful.\n\nThanks so much,\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
+        "sentAt": "2026-09-01",
+        "outcome": "none"
+      },
+      {
+        "id": "mtjh0o3h-j52v7m",
+        "kind": "note",
+        "at": "2026-09-02T02:22:19.901Z",
+        "text": "Targeted crawl (crawled 2026-08-27): no working MRF found. cms-hpt.txt pointer file returns HTTP 404 (\"The page cannot be found\"). Standard charges link https://apps.para-hcfs.com/PTT/FinalLinks/Kanakanak_V3.aspx returns an ASP.NET error: \"Server Error in '/PTT' Application - The page you requested is no longer in service\" (HttpException from ParaSite.Kanakanak_V3.Page_Load), so the PARA-hosted file appears decommissioned. No direct email address published; only contact path is a SmartForm web form at https://bbahc.org/index.asp?SEC={A810195F-28E3-4A74-A112-2689793E0C96}&Type=SMARTFORM (Bristol Bay Area Health Corporation)."
+      }
+    ],
+    "correction": {
+      "domain": "bbahc.org",
+      "pointerUrl": "",
+      "mrfUrl": "",
+      "lastUpdatedOn": "",
+      "templateVersion": "",
+      "verdict": "failing",
+      "checkedOn": "2026-08-27",
+      "note": "No machine-readable standard charges file located. cms-hpt.txt pointer 404s and the PARA-hosted pricing page (Kanakanak_V3.aspx) returns \"no longer in service\". Marking failing pending outreach reply."
+    }
   }
 }
