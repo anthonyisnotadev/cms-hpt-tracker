@@ -1285,5 +1285,43 @@
       "checkedOn": "2026-09-01",
       "note": "Found pointer file at https://sphosp.org/cms-hpt.txt referencing a PARA HCFS-hosted MRF (dbSPHHOMERAK). Downloaded the CSV: valid CMS v3.0.0 file, hospital_name SOUTH PENINSULA HOSPITAL INC, address 4300 Bartlett St Homer AK 99603, license_number GACH-010 (AK), type_2_npi 1093968372, last_updated_on 2026-05-11. Working MRF, compliant."
     }
+  },
+  "021314": {
+    "ccn": "021314",
+    "name": "Southeast Alaska Regional Health Consortium",
+    "city": "Sitka",
+    "state": "AK",
+    "status": "awaiting-reply",
+    "followUpOn": "2026-10-01",
+    "createdAt": "2026-09-02T02:52:13.270Z",
+    "updatedAt": "2026-09-02T02:52:13.272Z",
+    "entries": [
+      {
+        "id": "mtji33vc-f12ar2",
+        "kind": "note",
+        "at": "2026-09-02T02:52:13.272Z",
+        "text": "The email above is the same single message sent to p***@searhc.org on 2026-09-01 and also logged on CCN 021305 (Wrangell). Its subject line names Wrangell, but the body explicitly covers the Mt. Edgecumbe file too. One follow-up on 2026-10-01 covers both SEARHC hospitals."
+      },
+      {
+        "id": "mtji33vc-5xgj0v",
+        "kind": "email",
+        "at": "2026-09-02T02:52:13.272Z",
+        "subject": "Wrangell Medical Center standard charges file - format and cms-hpt.txt",
+        "to": "p***@searhc.org",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and had a couple of notes on SEARHC Wrangell Medical Center's machine-readable standard charges file.\n\nThe file linked from your Billing & Financing page is published as an Excel spreadsheet:\n\nhttps://searhc.org/wp-content/uploads/2026/04/Wrangell-Medical-Center-Standard-Charges.xlsx\n\nThe data itself already follows the CMS template, but CMS asks for the machine-readable file to be a .csv or .json rather than .xlsx for compliance. Re-saving the same sheet as CSV should cover that easily.\n\nI also couldn't find a cms-hpt.txt file at https://searhc.org/cms-hpt.txt, which currently returns a 404. That's the text file CMS asks hospitals to place at the root of the website so the charges file can be found automatically.\n\nThe same two things apply to the Mt. Edgecumbe Medical Center file on that page, if it's handled by the same team.\n\nI'll plan to follow up in about 30 days so I can keep my research moving, but would appreciate it if these could be sorted out before then. Happy to help however's useful.\n\n\nThanks so much,\n\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
+        "sentAt": "2026-09-01",
+        "outcome": "none"
+      }
+    ],
+    "correction": {
+      "domain": "searhc.org",
+      "pointerUrl": "",
+      "mrfUrl": "https://searhc.org/wp-content/uploads/2026/04/Mt-Edgecumbe-Medical-Center-Standard-Charges.xlsx",
+      "lastUpdatedOn": "2025-09-10",
+      "templateVersion": "2.0.0",
+      "verdict": "failing",
+      "checkedOn": "2026-09-01",
+      "note": "Roster legal name is 'Southeast Alaska Regional Health Consortium'; the hospital operates publicly as Mt. Edgecumbe Medical Center, 222 Tongass Drive, Sitka AK 99835 (the file header confirms that name and address). Same failure mode as the sibling SEARHC facility Wrangell Medical Center (CCN 021305). (1) Wrong format: the standard-charges file is served as .xlsx (https://searhc.org/wp-content/uploads/2026/04/Mt-Edgecumbe-Medical-Center-Standard-Charges.xlsx). CMS 45 CFR 180.50 requires a .csv or .json conforming to the CMS template; .xlsx is not an accepted format. The content does follow the CMS template (version 2.0.0, valid 180.50 attestation, standard_charge|... columns, last_updated_on 2025-09-10), so this is a format/packaging failure, not missing data. (2) No cms-hpt.txt: https://searhc.org/cms-hpt.txt returns 404, so there is no root pointer file as required since 2024-07-01. The file is linked (as 'Mt. Edgecumbe Medical Center Standard Charges') from the Billing & Financing page at https://searhc.org/patient-resources/billing-financing/."
+    }
   }
 }
