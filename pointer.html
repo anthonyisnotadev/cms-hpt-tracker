@@ -3,27 +3,27 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>The cms-hpt.txt pointer file</title>
-<meta name="description" content="Five lines in the root of a hospital's website that say where its price file lives. What CMS requires in it, what real ones look like, and why this whole audit is built on it." />
+<title>How the cms-hpt.txt pointer file works</title>
+<meta name="description" content="A practical guide to cms-hpt.txt: where the hospital price-file pointer belongs, what its five fields mean, how health systems use it, common problems, and how the tracker audits it." />
 <link rel="canonical" href="https://mrf.anthonyisnota.dev/pointer.html" />
 <meta property="og:type" content="article" />
 <meta property="og:site_name" content="CMS Hospital Price Transparency Tracker" />
-<meta property="og:title" content="The cms-hpt.txt pointer file" />
-<meta property="og:description" content="Five lines in the root of a hospital's website that say where its price file lives. What CMS requires in it, what real ones look like, and why this whole audit is built on it." />
+<meta property="og:title" content="How the cms-hpt.txt pointer file works" />
+<meta property="og:description" content="A practical guide to the small text file that connects a hospital website to its complete machine-readable price file." />
 <meta property="og:url" content="https://mrf.anthonyisnota.dev/pointer.html" />
 <meta property="og:image" content="https://mrf.anthonyisnota.dev/img/social-card.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Who actually publishes their prices? Of 5,419 US hospitals, 2,908 publish a machine-readable charges file, 535 do not, and 1,626 have no working website on record." />
+<meta property="og:image:alt" content="The CMS Hospital Price Transparency Tracker covers 5,419 US hospitals and has opened 3,870 machine-readable price files." />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="The cms-hpt.txt pointer file" />
-<meta name="twitter:description" content="Five lines in the root of a hospital's website that say where its price file lives. What CMS requires in it, what real ones look like, and why this whole audit is built on it." />
+<meta name="twitter:title" content="How the cms-hpt.txt pointer file works" />
+<meta name="twitter:description" content="A practical guide to the small text file that connects a hospital website to its complete machine-readable price file." />
 <meta name="twitter:image" content="https://mrf.anthonyisnota.dev/img/social-card.png" />
 <link rel="icon" href="img/favicon.ico" sizes="32x32" />
-  <link rel="icon" type="image/png" href="img/favicon.png" sizes="512x512" />
-  <link rel="apple-touch-icon" href="img/favicon.png" />
-  <meta name="theme-color" content="#f5f5f3" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+<link rel="icon" type="image/png" href="img/favicon.png" sizes="512x512" />
+<link rel="apple-touch-icon" href="img/favicon.png" />
+<meta name="theme-color" content="#f5f5f3" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" rel="stylesheet" />
@@ -64,24 +64,26 @@
   <div class="wrap masthead-body">
     <p class="eyebrow">Explainer &middot; 3 of 3</p>
     <h1>The pointer file</h1>
-    <p class="standfirst"><code>/cms-hpt.txt</code> is a small text file that tells software where a hospital's full price file lives.</p>
+    <p class="standfirst"><code>/cms-hpt.txt</code> gives hospitals one predictable place to identify the price page, the direct machine-readable file, and a contact for that publication.</p>
     <div class="dateline">
       <div>Rule <b>45 CFR 180.50(d)(6)</b></div>
-      <div>Required <b>Since 2024</b></div>
-      <div>Fields <b>5 per location</b></div>
+      <div>Required <b>Since Jan. 2024</b></div>
+      <div>Format <b>Plain text</b></div>
     </div>
   </div>
 </header>
 
 <div class="wrap doc">
-
   <nav class="toc" aria-label="On this page">
     <p class="eyebrow">On this page</p>
     <ol>
-      <li><a href="#purpose">What it does</a></li>
-      <li><a href="#format">What is inside</a></li>
-      <li><a href="#systems">Health systems</a></li>
+      <li><a href="#purpose">Why the pointer exists</a></li>
+      <li><a href="#location">Where it belongs</a></li>
+      <li><a href="#format">What the fields mean</a></li>
+      <li><a href="#systems">Hospitals and health systems</a></li>
+      <li><a href="#problems">What goes wrong</a></li>
       <li><a href="#audit">How the tracker uses it</a></li>
+      <li><a href="#privacy">How contacts are handled</a></li>
       <li><a href="#sources">Sources</a></li>
     </ol>
   </nav>
@@ -89,56 +91,120 @@
   <main class="prose" id="main" tabindex="-1">
     <section id="purpose">
       <p class="eyebrow">Purpose</p>
-      <h2>A standard signpost for price files</h2>
-      <p class="lead">A hospital's price file may sit on its own website, a health system website, or a vendor's server. The pointer gives every site one predictable place to publish the correct link.</p>
-      <p>Websites hosting hospital price files have been required to publish <code>/cms-hpt.txt</code> since January 2024. The address sits at the root of the domain, alongside familiar files such as <code>/robots.txt</code>.</p>
-      <aside class="callout"><b>Plain answer</b><p>The pointer is not the price data. It is a short directory that leads to the price data.</p></aside>
+      <h2>A stable signpost for a moving target</h2>
+      <p class="lead">Hospital price files can live on a hospital website, a health-system site, a storage service, or a vendor platform. The pointer tells software which file the hospital identifies as its publication.</p>
+      <p>Before the pointer requirement, locating an MRF often meant searching menus, scanning a price-transparency page, or guessing filenames. Those approaches are difficult to automate and can confuse a patient estimator, an insurer file, or an old download with the comprehensive hospital MRF.</p>
+      <p>The pointer separates discovery from storage. The hospital maintains a predictable text file on the selected public website, while the much larger MRF can live at a different URL. If the MRF moves, the pointer can be updated without changing the standard place where software starts.</p>
+      <div class="cards">
+        <div class="card"><span class="k">Pointer</span><h4><code>/cms-hpt.txt</code></h4><p>A small plain-text directory that identifies the location, source page, direct MRF URL, and contact.</p></div>
+        <div class="card"><span class="k">Source page</span><h4>Human-readable webpage</h4><p>The public price-transparency page where the hospital presents or links to the MRF.</p></div>
+        <div class="card"><span class="k">MRF</span><h4>Full price data</h4><p>The CSV or JSON download containing the hospital's standard charges.</p></div>
+      </div>
+    </section>
+
+    <section id="location">
+      <p class="eyebrow">Location</p>
+      <h2>The path is simple on purpose</h2>
+      <p class="lead">The selected website places the file in its root folder, producing an address such as <code>https://hospital.example/cms-hpt.txt</code>.</p>
+      <p>The root location matters because it can be checked without knowing the site's navigation, content-management system, or URL structure. It is similar in spirit to other well-known text files used by websites, but <code>cms-hpt.txt</code> has its own CMS-defined purpose and format.</p>
+      <p>The regulation also requires a separate website footer link labeled “Price Transparency.” That link goes to the public source page that hosts the MRF link. The footer link helps people find the page, while the pointer gives software a structured route to the file.</p>
+      <aside class="callout">
+        <h4>The pointer is not the MRF</h4>
+        <p>A working <code>cms-hpt.txt</code> can still lead to a broken, blocked, stale, or outdated MRF. A valid audit follows the pointer and checks the listed file rather than stopping at the text response.</p>
+      </aside>
     </section>
 
     <section id="format">
       <p class="eyebrow">Format</p>
-      <h2>Five fields for each hospital</h2>
-      <pre>location-name: Example Hospital
-source-page-url: https://example.org/prices
-mrf-url: https://example.org/charges.csv
-contact-name: Price Transparency Team
-contact-email: prices@example.org</pre>
-      <div class="fact-list">
-        <div class="fact-row"><b>Location name</b><p>The hospital or campus covered by the entry.</p></div>
-        <div class="fact-row"><b>Source page</b><p>The human-readable webpage where the hospital publishes price information.</p></div>
-        <div class="fact-row"><b>MRF URL</b><p>The direct link to the downloadable price file.</p></div>
-        <div class="fact-row"><b>Contact</b><p>A name and email address for questions about the file.</p></div>
-      </div>
-      <p>Blank lines separate entries when a pointer lists more than one hospital.</p>
+      <h2>Five labeled fields make one entry</h2>
+      <p class="lead">The regulation describes four required pieces of information. The CMS text format represents the point of contact as separate name and email fields, producing five labeled lines for a location.</p>
+      <figure class="listing">
+        <figcaption>Illustrative pointer entry</figcaption>
+        <pre><b>location-name:</b> Example Regional Hospital
+<b>source-page-url:</b> https://hospital.example/price-transparency
+<b>mrf-url:</b> https://files.example/123456789_example_standardcharges.csv
+<b>contact-name:</b> Price Transparency Team
+<b>contact-email:</b> pricing@hospital.example</pre>
+        <p class="note">The names and addresses above are fictional. Field labels are shown in the form used by CMS pointer files.</p>
+      </figure>
+      <dl class="defs">
+        <div>
+          <dt><code>location-name</code></dt>
+          <dd>The hospital or campus whose charges are represented. A specific location name helps connect a system-level pointer to the correct facility.</dd>
+        </div>
+        <div>
+          <dt><code>source-page-url</code></dt>
+          <dd>The public webpage that presents the hospital's price-transparency information and hosts the link to the MRF.</dd>
+        </div>
+        <div>
+          <dt><code>mrf-url</code></dt>
+          <dd>A direct link to the comprehensive CSV or JSON file. It should lead to the file itself rather than a general webpage or search tool.</dd>
+        </div>
+        <div>
+          <dt><code>contact-name</code></dt>
+          <dd>The hospital point of contact responsible for questions about the publication. This may be a role or team rather than a person.</dd>
+        </div>
+        <div>
+          <dt><code>contact-email</code></dt>
+          <dd>An email address for the point of contact.</dd>
+        </div>
+      </dl>
+      <p>Entries are separated by blank lines when a pointer describes more than one location. The text is deliberately lightweight, so a browser, command-line tool, or crawler can read it without running JavaScript.</p>
     </section>
 
     <section id="systems">
-      <p class="eyebrow">Health systems</p>
-      <h2>One pointer can list many hospitals</h2>
-      <p class="lead">Health systems often publish one pointer file for an entire group. Each hospital or location receives its own entry.</p>
-      <p>Different locations may link to separate price files. Locations that share the same charges may point to the same file. When a vendor hosts the download, the pointer still belongs on the hospital or health system domain.</p>
-      <p>The location name matters because it connects a system-level file to an individual hospital in the CMS registry. Weak or ambiguous names may require manual review.</p>
+      <p class="eyebrow">Hospitals and systems</p>
+      <h2>One domain may represent many locations</h2>
+      <p class="lead">A health system can maintain one pointer containing separate entries for hospitals and campuses published through the same website.</p>
+      <p>Different locations may point to different MRFs. Locations can also point to the same MRF when that file genuinely covers them. The location name in each entry is important because a health-system brand alone may not identify the individual hospital in the federal roster.</p>
+      <p>The MRF does not have to be stored on the same domain as the pointer. A hospital may use a vendor or file-hosting service for the large download. In that case, the pointer on the selected hospital or system website remains the declaration that connects the location to the external file.</p>
+      <p>A shared domain is useful evidence of organizational context, but it is not enough by itself to prove that every hospital in a system is covered. The location entry and the identity information inside the MRF are needed to make that connection.</p>
+    </section>
+
+    <section id="problems">
+      <p class="eyebrow">Common problems</p>
+      <h2>A short file can still fail in several ways</h2>
+      <div class="fact-list">
+        <div class="fact-row"><b>Missing at the root</b><p>The website works, but the standard <code>/cms-hpt.txt</code> path returns a not-found page or another unrelated response.</p></div>
+        <div class="fact-row"><b>HTML instead of text</b><p>A security page, site template, or redirect response is returned where the pointer content should be.</p></div>
+        <div class="fact-row"><b>Hospital not listed</b><p>A system pointer opens, but no entry can be matched confidently to the hospital being checked.</p></div>
+        <div class="fact-row"><b>MRF URL omitted or indirect</b><p>The entry lacks a usable <code>mrf-url</code>, or it links to a webpage instead of a direct CSV or JSON download.</p></div>
+        <div class="fact-row"><b>Link no longer works</b><p>The pointer exists, but the listed MRF has moved, expired, or returns an error.</p></div>
+        <div class="fact-row"><b>Automation refused</b><p>The server allows ordinary browsing but rejects the automated request used for a reproducible audit.</p></div>
+      </div>
+      <p>Names also vary. A pointer might use a campus name, legal entity, shortened brand, or all-capitals label while the roster uses something else. The tracker uses names as evidence, but avoids forcing an uncertain match just because two facilities share a domain.</p>
     </section>
 
     <section id="audit">
       <p class="eyebrow">This tracker</p>
-      <h2>How the tracker uses the pointer</h2>
-      <p class="lead">The pointer turns a website search into a short, repeatable check.</p>
+      <h2>The pointer creates a reproducible audit path</h2>
+      <p class="lead">The normal check moves from a known hospital domain to a location-specific pointer entry, then to the MRF named by that entry.</p>
       <div class="fact-list">
-        <div class="fact-row"><b>1 — Request</b><p>Open <code>/cms-hpt.txt</code> on the hospital's known domain.</p></div>
-        <div class="fact-row"><b>2 — Match</b><p>Find the entry that names the hospital or location.</p></div>
-        <div class="fact-row"><b>3 — Follow</b><p>Open the listed price file and read its header.</p></div>
-        <div class="fact-row"><b>4 — Record</b><p>Save the template version, update date, and access result.</p></div>
+        <div class="fact-row"><b>1. Request</b><p>Open <code>/cms-hpt.txt</code> on the known public domain and record the response.</p></div>
+        <div class="fact-row"><b>2. Parse</b><p>Read the labeled fields and separate multiple location entries.</p></div>
+        <div class="fact-row"><b>3. Match</b><p>Connect an entry to a hospital only when the available identity evidence supports that match.</p></div>
+        <div class="fact-row"><b>4. Follow</b><p>Request the declared MRF URL and read a bounded portion of the file rather than downloading the entire data set.</p></div>
+        <div class="fact-row"><b>5. Record</b><p>Save the observed access result, template version, update date, and evidence needed to review the finding.</p></div>
       </div>
-      <p>A website that refuses the request is marked blocked, not failing. A hospital with no known website is marked not assessed. Neither group is included in the compliance rate.</p>
+      <p>A refusal to serve an automated request is recorded as blocked, not treated as proof that the file is missing. If no usable hospital website is known, or a system pointer cannot be matched to a specific hospital, the record remains not assessed. Keeping those outcomes separate makes the limits of the audit visible.</p>
+      <p>The project also preserves reviewed evidence from direct MRF links when the standard pointer path is unavailable. That evidence is labeled by how it was obtained, and a file header must support the facility match. A shared health-system source is not treated as proof on its own.</p>
+    </section>
+
+    <section id="privacy">
+      <p class="eyebrow">Contact privacy</p>
+      <h2>The archive keeps the evidence without publishing easy-to-search contacts</h2>
+      <p class="lead">Hospital pointer files are public, but their contact names and email addresses are not needed for the public tracker interface.</p>
+      <p>The repository retains pointer text for reproducibility and review. Before that archive is stored, values in <code>contact-name</code> and <code>contact-email</code> are obfuscated. The project key is included with the code because this is protection against casual plaintext indexing, not encryption intended to keep the fields secret.</p>
+      <p>Local npm workflows can decode the contact fields when a maintainer needs to review a source or prepare outreach. The generated public tracker data does not expose those contact fields, and the archived pointer directory is not part of the hosted site artifact.</p>
     </section>
 
     <section id="sources">
       <p class="eyebrow">Sources</p>
       <h2>Official references</h2>
       <ul>
-        <li><a href="https://www.ecfr.gov/current/title-45/part-180/section-180.50">45 CFR 180.50(d)(6)</a></li>
-        <li><a href="https://cmsgov.github.io/hpt-tool/txt-generator">CMS pointer-file generator</a></li>
+        <li><a href="https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-E/part-180/subpart-B/section-180.50">45 CFR 180.50(d)(6), pointer and footer requirements</a></li>
+        <li><a href="https://cmsgov.github.io/hpt-tool/txt-generator/">CMS <code>cms-hpt.txt</code> generator</a></li>
+        <li><a href="https://cmsgov.github.io/hpt-tool/">CMS hospital price transparency tools</a></li>
       </ul>
     </section>
   </main>

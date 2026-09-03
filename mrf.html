@@ -3,27 +3,27 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>What a machine-readable file is</title>
-<meta name="description" content="The MRF is one file listing every price a hospital has for every item and service, for every payer. What is inside it, how CMS makes hospitals encode it, and why it is hard to read." />
+<title>What a hospital machine-readable file contains</title>
+<meta name="description" content="A practical guide to hospital machine-readable price files: what the rates mean, how CMS structures the data, what changed in 2026, and what the files cannot predict." />
 <link rel="canonical" href="https://mrf.anthonyisnota.dev/mrf.html" />
 <meta property="og:type" content="article" />
 <meta property="og:site_name" content="CMS Hospital Price Transparency Tracker" />
-<meta property="og:title" content="What a machine-readable file is" />
-<meta property="og:description" content="The MRF is one file listing every price a hospital has for every item and service, for every payer. What is inside it, how CMS makes hospitals encode it, and why it is hard to read." />
+<meta property="og:title" content="What a hospital machine-readable file contains" />
+<meta property="og:description" content="A practical guide to hospital machine-readable price files, the rates inside them, and what those rates do and do not mean." />
 <meta property="og:url" content="https://mrf.anthonyisnota.dev/mrf.html" />
 <meta property="og:image" content="https://mrf.anthonyisnota.dev/img/social-card.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Who actually publishes their prices? Of 5,419 US hospitals, 2,908 publish a machine-readable charges file, 535 do not, and 1,626 have no working website on record." />
+<meta property="og:image:alt" content="The CMS Hospital Price Transparency Tracker covers 5,419 US hospitals and has opened 3,870 machine-readable price files." />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="What a machine-readable file is" />
-<meta name="twitter:description" content="The MRF is one file listing every price a hospital has for every item and service, for every payer. What is inside it, how CMS makes hospitals encode it, and why it is hard to read." />
+<meta name="twitter:title" content="What a hospital machine-readable file contains" />
+<meta name="twitter:description" content="A practical guide to hospital machine-readable price files, the rates inside them, and what those rates do and do not mean." />
 <meta name="twitter:image" content="https://mrf.anthonyisnota.dev/img/social-card.png" />
 <link rel="icon" href="img/favicon.ico" sizes="32x32" />
-  <link rel="icon" type="image/png" href="img/favicon.png" sizes="512x512" />
-  <link rel="apple-touch-icon" href="img/favicon.png" />
-  <meta name="theme-color" content="#f5f5f3" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+<link rel="icon" type="image/png" href="img/favicon.png" sizes="512x512" />
+<link rel="apple-touch-icon" href="img/favicon.png" />
+<meta name="theme-color" content="#f5f5f3" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&amp;display=swap" rel="stylesheet" />
@@ -64,24 +64,26 @@
   <div class="wrap masthead-body">
     <p class="eyebrow">Explainer &middot; 1 of 3</p>
     <h1>Hospital price files</h1>
-    <p class="standfirst">One downloadable file holds a hospital's list prices, cash prices, and negotiated insurance rates. CMS calls it a machine-readable file, or MRF.</p>
+    <p class="standfirst">Hospitals publish a downloadable record of list prices, cash prices, and negotiated insurance rates. CMS calls it a machine-readable file, or MRF.</p>
     <div class="dateline">
       <div>Rule <b>45 CFR 180.50</b></div>
-      <div>Template <b>v3.0.0</b></div>
+      <div>Current template <b>v3.0.0</b></div>
       <div>Formats <b>CSV or JSON</b></div>
     </div>
   </div>
 </header>
 
 <div class="wrap doc">
-
   <nav class="toc" aria-label="On this page">
     <p class="eyebrow">On this page</p>
     <ol>
-      <li><a href="#basics">What the file contains</a></li>
-      <li><a href="#prices">The five price types</a></li>
-      <li><a href="#format">File format</a></li>
+      <li><a href="#basics">What the file is</a></li>
+      <li><a href="#rows">What a record describes</a></li>
+      <li><a href="#prices">The five charge types</a></li>
+      <li><a href="#contracts">Rates that are not simple dollars</a></li>
+      <li><a href="#format">How the file is structured</a></li>
       <li><a href="#limits">What it cannot tell you</a></li>
+      <li><a href="#tracker-scope">What this tracker checks</a></li>
       <li><a href="#sources">Sources</a></li>
     </ol>
   </nav>
@@ -89,49 +91,117 @@
   <main class="prose" id="main" tabindex="-1">
     <section id="basics">
       <p class="eyebrow">The basics</p>
-      <h2>One file, many prices</h2>
-      <p class="lead">The file is a public data set, not a patient-facing price list. It can contain millions of rows because the same service may have a different rate for every insurance plan.</p>
-      <p>Each row identifies an item or service, its billing code, whether it is inpatient or outpatient, and one or more prices. The file also identifies the hospital, the template version, and the date of the last update.</p>
-      <aside class="callout"><b>Plain answer</b><p>The file shows the prices a hospital publishes. It does not show the final amount on a patient's bill.</p></aside>
+      <h2>A public data set, not a price menu</h2>
+      <p class="lead">A machine-readable file is the hospital's most complete public price data. It is designed so software can download and analyze the information in bulk.</p>
+      <p>The file covers the items and services for which the hospital has established a standard charge. That can include supplies, procedures, room and board, facility fees, service packages, and some professional services provided by clinicians employed by the hospital. A hospital may need separate files for locations that operate under one license but use different standard charges.</p>
+      <p>These files are often very large. One service can be repeated for many insurance companies, plans, care settings, billing codes, and contract methods. A file with millions of records is not unusual, even though the hospital may offer far fewer distinct services.</p>
+      <aside class="callout">
+        <h4>The MRF is one of two required publications</h4>
+        <p>The comprehensive MRF is built for bulk access. A separate rule covers a consumer-friendly display or estimator for shoppable services. Meeting one requirement does not automatically satisfy the other.</p>
+      </aside>
+    </section>
+
+    <section id="rows">
+      <p class="eyebrow">Reading the data</p>
+      <h2>What a record describes</h2>
+      <p class="lead">A useful price record needs enough context to identify the service, the setting, the payer and plan when relevant, and the way the charge was established.</p>
+      <dl class="defs">
+        <div>
+          <dt>Item or service</dt>
+          <dd>A description such as an imaging study, laboratory test, supply, drug, room charge, or bundled service.</dd>
+        </div>
+        <div>
+          <dt>Billing code</dt>
+          <dd>A hospital code or a standard code such as CPT, HCPCS, DRG, NDC, or a revenue code. A service can carry more than one code.</dd>
+        </div>
+        <div>
+          <dt>Care setting</dt>
+          <dd>Whether the charge applies to an inpatient admission, an outpatient department visit, or both.</dd>
+        </div>
+        <div>
+          <dt>Payer and plan</dt>
+          <dd>The insurance company and plan tied to a negotiated charge. A plan category may be used when the same rate applies across that category.</dd>
+        </div>
+        <div>
+          <dt>Charge method</dt>
+          <dd>Whether the rate is a dollar amount, percentage, algorithm, or another contract method.</dd>
+        </div>
+      </dl>
+      <p>A billing code helps align similar services across files, but it does not guarantee that two records describe the same clinical situation. Location, setting, modifiers, units, and the contents of a service package can all change what is being priced.</p>
     </section>
 
     <section id="prices">
-      <p class="eyebrow">Prices</p>
-      <h2>The five price types</h2>
-      <p>No single number represents “the price.” CMS requires five kinds of standard charge for each item or service.</p>
-      <div class="fact-list">
-        <div class="fact-row"><b>List price</b><p>The starting amount before discounts. This is often called the gross charge.</p></div>
-        <div class="fact-row"><b>Cash price</b><p>The amount offered to a patient paying without insurance.</p></div>
-        <div class="fact-row"><b>Negotiated price</b><p>The amount agreed with a named insurer and plan.</p></div>
-        <div class="fact-row"><b>Lowest price</b><p>The lowest negotiated rate for that item, without naming the plan.</p></div>
-        <div class="fact-row"><b>Highest price</b><p>The highest negotiated rate for that item, without naming the plan.</p></div>
+      <p class="eyebrow">Standard charges</p>
+      <h2>Five different answers to “what is the price?”</h2>
+      <p class="lead">The regulation defines five types of standard charge. They answer different questions and should not be treated as interchangeable.</p>
+      <div class="scroll-x">
+        <table class="tbl">
+          <thead>
+            <tr><th scope="col">Charge type</th><th scope="col">What it represents</th><th scope="col">What to keep in mind</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Gross charge</th><td>The chargemaster amount before discounts.</td><td>Often called the list price. It may be much higher than the amount usually paid.</td></tr>
+            <tr><th scope="row">Discounted cash price</th><td>The charge offered to someone paying cash or a cash equivalent.</td><td>It is not necessarily the only self-pay option or a personalized estimate.</td></tr>
+            <tr><th scope="row">Payer-specific negotiated charge</th><td>The charge agreed with a named third-party payer and plan.</td><td>There may be many negotiated entries for the same service.</td></tr>
+            <tr><th scope="row">De-identified minimum</th><td>The lowest negotiated charge across third-party payers for the item or service.</td><td>The payer and plan behind the minimum are not identified.</td></tr>
+            <tr><th scope="row">De-identified maximum</th><td>The highest negotiated charge across third-party payers for the item or service.</td><td>The payer and plan behind the maximum are not identified.</td></tr>
+          </tbody>
+          <caption>The five standard charge categories are defined in 45 CFR 180.20.</caption>
+        </table>
       </div>
-      <p>Some contracts use a percentage or formula instead of a fixed dollar amount. The file must identify that method and may also include past payment amounts.</p>
+      <p>The minimum and maximum give a range, not a typical price. They also do not reveal how many rates fall near either end. The payer-specific records carry more detail, but comparisons still require compatible codes, settings, units, and contract methods.</p>
+    </section>
+
+    <section id="contracts">
+      <p class="eyebrow">Contract methods</p>
+      <h2>Not every negotiated rate starts as a dollar amount</h2>
+      <p class="lead">Some contracts set a fixed dollar rate. Others use a percentage, fee schedule, formula, or algorithm that depends on information available when a claim is processed.</p>
+      <p>The file must identify the method used. When a negotiated charge cannot be expressed as a dollar amount or known in advance, the 2026 requirements call for the information needed to derive the amount when that information is available to the hospital.</p>
+      <p>For those non-dollar arrangements, the current template also carries historical allowed-amount statistics: the 10th percentile, median, 90th percentile, and the number of remittances used in the calculation. These describe what the hospital historically received for a payer and service over the required lookback period. They are not a guarantee of a future payment.</p>
+      <aside class="callout">
+        <h4>A blank field needs context</h4>
+        <p>A blank dollar amount can reflect missing data, a rate that does not apply, or a contract that uses another method. The companion fields are necessary before treating the blank as an error.</p>
+      </aside>
     </section>
 
     <section id="format">
-      <p class="eyebrow">Format</p>
-      <h2>CSV or JSON, using the CMS template</h2>
-      <p class="lead">CMS defines the field names, order, and allowed values. Hospitals may use a tall CSV, a wide CSV, or JSON, but the underlying information is the same.</p>
-      <p>The header names the hospital and locations covered by the file. It also includes the update date, template version, identifiers, and an attestation that the information is accurate and complete.</p>
-      <p>CSV files may look unusual in spreadsheet software because metadata can appear above the main table. JSON files arrange the same information as nested objects. Both formats are intended for software and bulk analysis.</p>
+      <p class="eyebrow">File structure</p>
+      <h2>CMS supplies the layout and data dictionary</h2>
+      <p class="lead">Since July 2024, hospitals have had to use a CMS template. The allowed forms are tall CSV, wide CSV, and JSON.</p>
+      <div class="cards">
+        <div class="card"><span class="k">Tall CSV</span><h4>More rows, fewer columns</h4><p>Charge types and payer rates are represented vertically. This is often easier for databases but can produce a very long file.</p></div>
+        <div class="card"><span class="k">Wide CSV</span><h4>More information across columns</h4><p>Related values are spread across a wider row layout. Spreadsheet software may still struggle with the file's width and size.</p></div>
+        <div class="card"><span class="k">JSON</span><h4>Nested structured data</h4><p>Hospital, service, code, and rate information is grouped into objects and arrays rather than table cells.</p></div>
+      </div>
+      <p>Each format includes file-level information such as the hospital name, locations and addresses, license information, CMS template version, and the date of the latest update. Current 2026 requirements also add organizational NPIs, an attestation, and the name of the senior official responsible for overseeing the file's accuracy and completeness.</p>
+      <p>CSV metadata may appear above the main data table, so opening the file in a spreadsheet can look unfamiliar. JSON represents the same concepts through nested records. The CMS data dictionary, rather than the visual appearance in a spreadsheet or text editor, is the reliable guide to interpreting either format.</p>
     </section>
 
     <section id="limits">
       <p class="eyebrow">Limits</p>
-      <h2>This is not your final bill</h2>
-      <p class="lead">A negotiated rate is the amount agreed between a hospital and an insurance plan. It is not necessarily the patient's share.</p>
-      <p>Deductibles, coinsurance, network status, and out-of-pocket limits all affect what a patient owes. Separate bills may also come from physicians, laboratories, or other providers.</p>
-      <p>For a personal estimate, use the hospital's estimator or contact its billing office. The tracker only checks whether the public file can be found, opened, and appears current; individual prices are not verified.</p>
+      <h2>A published rate is not a final bill</h2>
+      <p class="lead">A negotiated charge describes an agreement between a hospital and a health plan. It does not, by itself, state what a particular patient will owe.</p>
+      <p>Deductibles, coinsurance, copayments, network status, benefit limits, and the services actually delivered all affect patient responsibility. A hospital file may include professional charges for employed clinicians, but separate bills can still come from independent physicians, laboratories, anesthesiology groups, ambulance services, or other providers.</p>
+      <p>The files are still valuable. They make negotiated rates available for research, market comparisons, contract analysis, and public oversight. For an individual estimate, the hospital's patient-facing tool and the health plan's benefit information are usually more relevant.</p>
+      <p>There is also a difference between a file being technically reachable and the data being complete or correct. Opening a current-format file does not prove that every required rate is present, every code is accurate, or every contract has been represented properly.</p>
+    </section>
+
+    <section id="tracker-scope">
+      <p class="eyebrow">This tracker</p>
+      <h2>The audit checks publication, not every price</h2>
+      <p class="lead">The tracker follows public links and reads a bounded portion of the file to answer a narrow set of questions.</p>
+      <p>It checks whether the file can be found and opened, whether the declared template version is current, and whether the reported update date is within the annual window. It does not download and validate every rate in every file. It also does not test the separate consumer-facing estimator or shoppable-services display.</p>
+      <p>That is why a tracker status should be read as an observation about public access and basic file metadata. It is useful evidence, but it is not a CMS compliance determination and it is not a judgment about the prices themselves.</p>
     </section>
 
     <section id="sources">
       <p class="eyebrow">Sources</p>
       <h2>Official references</h2>
       <ul>
-        <li><a href="https://www.ecfr.gov/current/title-45/part-180/section-180.50">45 CFR 180.50</a></li>
-        <li><a href="https://github.com/CMSgov/hospital-price-transparency">CMS templates and documentation</a></li>
-        <li><a href="https://cmsgov.github.io/hpt-tool/">CMS file validator</a></li>
+        <li><a href="https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-E/part-180/subpart-B/section-180.50">45 CFR 180.50, comprehensive machine-readable files</a></li>
+        <li><a href="https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-E/part-180/subpart-B/section-180.20">45 CFR 180.20, definitions of standard charges</a></li>
+        <li><a href="https://github.com/CMSgov/hospital-price-transparency">CMS templates, data dictionaries, and implementation timeline</a></li>
+        <li><a href="https://cmsgov.github.io/hpt-tool/">CMS file-naming, pointer, and validation tools</a></li>
       </ul>
     </section>
   </main>
@@ -142,18 +212,18 @@
     <a href="rules.html">
       <span class="k">Next</span>
       <b>CMS rules</b>
-      <span>Who is covered, what hospitals publish, and what the tracker checks.</span>
+      <span>Who is covered, what hospitals publish, and how CMS enforces the rule.</span>
     </a>
     <a href="pointer.html">
       <span class="k">Also</span>
       <b>Pointer files</b>
-      <span>How a five-field text file leads software to the full price data.</span>
+      <span>How a small text file leads software to the full price data.</span>
     </a>
   </div>
 </div>
 
 <footer class="wrap">
-  <p><b>Sources.</b> Regulatory claims link to the current eCFR and CMS documentation. Prices in the hero are illustrative.</p>
+  <p><b>Sources.</b> Regulatory claims link to the current eCFR and CMS technical documentation.</p>
   <p>This guide is not legal or pricing advice. The regulation governs where a summary differs.</p>
 </footer>
 
