@@ -37,6 +37,8 @@ const { probeMrf } = require('./lib/probe');
 const { fetchWikidata, wikidataCandidates, heuristicCandidates, orphanCandidates } = require('./lib/candidates');
 const { searchHospitalDomains, activeSearchProvider } = require('./lib/search');
 const { adjudicatePair, isAccepted } = require('./lib/adjudicate');
+const { recoverViaLlm } = require('./lib/recover-llm');
+const { protectPointerTextIfEnabled } = require('./lib/pointer-obfuscation');
 const { nameSimilarity } = require('./lib/util');
 
 const ROOT = ROOT_DIR;
@@ -165,7 +167,12 @@ async function withDates(rows) {
       mrf_bytes: d.bytes || '',
       mrf_content_type: d.contentType || '',
       mrf_file_kind: d.fileKind || '',
-      mrf_http_status: d.httpStatus === undefined ? '' : d.httpStatus,
+      // Some servers reject HEAD with 404/405 while serving the ranged GET.
+      // Report the successful body-read status when available; that request is
+      // also the one from which the declared date and template were parsed.
+      mrf_http_status: d.rangeStatus >= 200 && d.rangeStatus < 300
+        ? d.rangeStatus
+        : (d.httpStatus === undefined ? '' : d.httpStatus),
       mrf_checked_at: d.checkedAt || ''
     };
   });
@@ -384,7 +391,7 @@ async function cmdPointers(opt) {
     if (r.ok) {
       const parsed = parsePointer(r.body);
       const file = path.join(POINTER_DIR, safeFile(d.domain) + '.txt');
-      await fsp.writeFile(file, r.body);
+      await fsp.writeFile(file, protectPointerTextIfEnabled(r.body));
       store.set(d.domain, {
         ok: true, url: r.url, via: r.via, redirectedTo: r.redirectedTo || null,
         entries: parsed.entries.length, format: parsed.format,
@@ -527,7 +534,7 @@ async function cmdMatch(opt) {
   } catch (_e) {}
   const ambiguous = [];
   const ambigLow = Number(opt.ambiguousFloor || 0.62);
-  const pairKey = (domain, label) => `${domain} ${label}`;
+  const pairKey = (domain, label) => `${domain}\0${label}`;
   let adjudicatedAccepts = 0;
   for (const o of orphans) {
     const label = o.entry.locationName || '';
@@ -722,7 +729,7 @@ async function cmdMatch(opt) {
   // One entry can leave several notes (a rejected cross-state winner plus the
   // in-footprint fallback that also failed), so count distinct entries.
   const distinctUnmatched = new Set(
-    unmatched.entriesWithoutHospital.map(e => `${e.domain} ${e.locationName} ${e.mrfUrl || ''}`)
+    unmatched.entriesWithoutHospital.map(e => `${e.domain}\0${e.locationName}\0${e.mrfUrl || ''}`)
   ).size;
   log(`  pointer entries with no hospital match: ${distinctUnmatched}`);
   log(`  -> ${path.relative(ROOT, F.manifest)}`);
@@ -735,8 +742,12 @@ async function cmdMatch(opt) {
  * a homepage footer link to the standard-charges page. Results land in
  * footer_mrfs.json for review rather than straight into the manifest, because
  * a scraped link is weaker evidence than a hospital-declared mrf-url.
+ *
+ * `--llm` swaps the regex link-hunt for a model-guided two-hop crawl and a
+ * corroboration gate; see cmdRecoverLlm.
  */
 async function cmdRecover(opt) {
+  if (opt.llm) return cmdRecoverLlm(opt);
   const domains = JSON.parse(await fsp.readFile(F.domains, 'utf8'));
   const pointers = JSON.parse(await fsp.readFile(F.pointers, 'utf8'));
   const store = new JsonStore(path.join(OUT, 'footer_mrfs.json'));
@@ -768,6 +779,121 @@ async function cmdRecover(opt) {
   await store.save(true);
   log('');
   log(`Found MRF links on ${found} of ${list.length} domains -> ${path.relative(ROOT, path.join(OUT, 'footer_mrfs.json'))}`);
+}
+
+/**
+ * `recover --llm`: model-guided version of the footer hunt.
+ *
+ * Same input set as `recover` (a working site with no cms-hpt.txt), but instead
+ * of a keyword regex it asks a model which nav links lead to the price page,
+ * then which link on those pages is the machine-readable file. Every candidate
+ * is then run through the header probe and the same state/name corroboration
+ * the `match` stage uses. Accepted rows are written to recovered.csv in
+ * manifest column order for review; the full record (including every rejected
+ * and unconfirmed URL, with the reason) goes to recovered_mrfs.json.
+ *
+ * Nothing here writes the manifest and nothing reaches a paid unblocker.
+ */
+async function cmdRecoverLlm(opt) {
+  if (!process.env.OPENROUTER_API_KEY) {
+    log('OPENROUTER_API_KEY not set; nothing to do.');
+    return;
+  }
+  const roster = JSON.parse(await fsp.readFile(F.roster, 'utf8'));
+  const rosterByCcn = new Map(roster.map(h => [h.ccn, h]));
+  const domains = JSON.parse(await fsp.readFile(F.domains, 'utf8'));
+  const pointers = JSON.parse(await fsp.readFile(F.pointers, 'utf8'));
+  let footer = {};
+  try { footer = JSON.parse(await fsp.readFile(path.join(OUT, 'footer_mrfs.json'), 'utf8')); } catch (_e) {}
+
+  const store = new JsonStore(path.join(OUT, 'recovered_mrfs.json'));
+  await store.load();
+
+  // A working site, no pointer file, not blocked, not already tried here, and
+  // the cheap regex pass didn't already resolve it. Smallest domains first: a
+  // real system almost always has a pointer file, so a pointer-less domain is
+  // usually a single hospital that linked its file straight off its own site.
+  let list = Object.values(domains).filter(d => {
+    const p = pointers[d.domain];
+    if (!p || p.ok || p.reason === 'blocked') return false;
+    if (store.has(d.domain) && !opt.retryFailed) return false;
+    const f = footer[d.domain];
+    if (f && f.ok) return false;
+    return true;
+  });
+  list.sort((a, b) => a.ccns.length - b.ccns.length);
+  if (opt.limit) list = list.slice(0, num(opt.limit));
+  if (!list.length) { log('No pointer-less domains left for LLM recovery.'); return; }
+
+  log(`LLM footer recovery on ${list.length} domains (model: ${opt.model || process.env.OPENROUTER_MODEL || 'default'})...`);
+  let found = 0, accepted = 0, saveCounter = 0;
+  const tick = progressBar('recover-llm');
+  await pooled(list, {
+    concurrency: num(opt.concurrency, 4),
+    keyFn: d => d.domain,
+    onProgress: (d, t) => tick(d, t, `found=${found} accepted=${accepted}`)
+  }, async (d) => {
+    const hospitals = d.ccns.map(c => rosterByCcn.get(c)).filter(Boolean);
+    if (!hospitals.length) {
+      store.set(d.domain, { ok: false, reason: 'no-roster-rows', ccns: d.ccns, at: new Date().toISOString() });
+      return;
+    }
+    let r;
+    try {
+      r = await recoverViaLlm({ domain: d.domain, hospitals }, {
+        timeoutMs: num(opt.timeout, 25000),
+        llmTimeoutMs: num(opt['llm-timeout'], 90000),
+        model: opt.model
+      });
+    } catch (e) {
+      r = { ok: false, reason: 'error', error: String((e && e.message) || e).slice(0, 160) };
+    }
+    store.set(d.domain, { ...r, ccns: d.ccns, at: new Date().toISOString() });
+    if (r.mrfUrl) found++;
+    if (r.ok) accepted++;
+    if (++saveCounter % 10 === 0) await store.save();
+  });
+  await store.save(true);
+  log('');
+
+  // Manifest-shaped CSV of the accepted rows only.
+  const rows = [];
+  for (const [domain, r] of Object.entries(store.data)) {
+    if (!r || !r.ok || !r.mrfUrl) continue;
+    for (const ccn of r.ccns || []) {
+      const h = rosterByCcn.get(ccn);
+      if (!h) continue;
+      rows.push({
+        ccn, hospital_name: h.name, city: h.city, state: h.state, type: h.type,
+        domain, pointer_url: '', pointer_via: 'llm-recover',
+        location_name: (r.probe && r.probe.mrfHospitalName) || '',
+        mrf_url: r.mrfUrl, source_page_url: r.sourcePageUrl || '', extra_mrf_urls: '',
+        mrf_format: r.mrfFormat || guessFormat(r.mrfUrl),
+        match_score: '', match_method: 'llm-recover',
+        match_corroboration: r.corroboration || '',
+        mrf_last_updated: (r.probe && r.probe.declaredLastUpdated) || '',
+        mrf_last_updated_raw: (r.probe && r.probe.declaredRaw) || '',
+        mrf_days_since_update: (r.probe && r.probe.daysSinceUpdate != null) ? r.probe.daysSinceUpdate : '',
+        mrf_stale_over_365: (r.probe && r.probe.staleOver365) ? 'yes' : (r.probe && r.probe.declaredLastUpdated ? 'no' : ''),
+        mrf_cms_version: (r.probe && r.probe.cmsVersion) || '',
+        mrf_file_kind: (r.probe && r.probe.fileKind) || '',
+        corroboration_confidence: r.corroborationConfidence || '',
+        llm_confidence: r.llmConfidence || '',
+        llm_reason: r.llmReason || ''
+      });
+    }
+  }
+  rows.sort((a, b) => a.state.localeCompare(b.state) || a.hospital_name.localeCompare(b.hospital_name));
+  const outCsv = path.join(OUT, 'recovered.csv');
+  await fsp.writeFile(outCsv, toCSV(rows));
+
+  // Reason tally over what was rejected, so the failure modes are visible.
+  const reasons = {};
+  for (const r of Object.values(store.data)) reasons[r.reason || 'unknown'] = (reasons[r.reason || 'unknown'] || 0) + 1;
+  log(`found an MRF link on ${found}/${list.length} domains; ${accepted} passed corroboration.`);
+  log(`  outcomes: ${JSON.stringify(reasons)}`);
+  log(`-> ${path.relative(ROOT, outCsv)}  (${rows.length} hospital rows -- review before importing)`);
+  log(`-> ${path.relative(ROOT, path.join(OUT, 'recovered_mrfs.json'))}  (full detail, incl. rejected)`);
 }
 
 /* ----------------------------------------------------------------- dates -- */
@@ -1014,7 +1140,7 @@ async function cmdVerify(opt) {
     const parsed = parsePointer(r.body);
     hit++;
     const file = path.join(POINTER_DIR, safeFile(w.domain) + '.txt');
-    await fsp.writeFile(file, r.body);
+    await fsp.writeFile(file, protectPointerTextIfEnabled(r.body));
     pointers.set(w.domain, {
       ok: true, url: r.url, via: 'verify', redirectedTo: null,
       entries: parsed.entries.length, format: parsed.format,
@@ -1083,7 +1209,7 @@ async function cmdAdjudicate(opt) {
   const store = new JsonStore(F.adjudicated);
   await store.load();
 
-  const key = q => `${q.domain} ${q.locationName}`;
+  const key = q => `${q.domain}\0${q.locationName}`;
   // Highest-scoring pairs first: they are the likeliest true renames.
   let todo = queue.filter(q => q.ccn && q.locationName && !store.has(key(q)));
   todo.sort((a, b) => b.score - a.score);
@@ -1529,10 +1655,13 @@ async function cmdCompliance(opt) {
       if (!row.mrf_url) {
         finding = FINDING.NO_MRF_URL;
         evidence = `pointer file lists "${row.location_name}" but gives no mrf-url for it`;
-      } else if (probe && probe.blocked) {
+      } else if (probe && probe.blocked && !row.mrf_last_updated
+        && !(probe.rangeStatus >= 200 && probe.rangeStatus < 300)) {
         finding = FINDING.MRF_BLOCKED;
         evidence = `MRF URL refused automated access (HTTP ${probe.httpStatus})`;
-      } else if (probe && probe.httpStatus && probe.httpStatus >= 400) {
+      } else if (probe && probe.httpStatus && probe.httpStatus >= 400
+        && !row.mrf_last_updated
+        && !(probe.rangeStatus >= 200 && probe.rangeStatus < 300)) {
         finding = FINDING.MRF_DEAD;
         evidence = `MRF URL returned HTTP ${probe.httpStatus}`;
       } else if (row.mrf_stale_over_365 === 'yes') {
@@ -1666,6 +1795,7 @@ CMS-HPT harvester
   node scripts/hpt/run.js pointers [--limit=N] fetch /cms-hpt.txt per domain
   node scripts/hpt/run.js match                map entries to CCNs -> manifest.csv
   node scripts/hpt/run.js recover              footer-scan domains that had no pointer file
+  node scripts/hpt/run.js recover --llm        model-guided crawl + corroboration -> recovered.csv
   node scripts/hpt/run.js candidates [--source=wikidata|orphan|heuristic|search|all]
                                                build the candidate-domain pool
   node scripts/hpt/run.js verify               test candidates for free, keep the ones that prove out

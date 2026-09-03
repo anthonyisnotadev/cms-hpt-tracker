@@ -316,7 +316,11 @@ function build() {
 
     const s = html.indexOf(START);
     const e = html.indexOf(END);
-    if (s === -1 || e === -1) throw new Error('no ' + START + ' / ' + END + ' sentinels in ' + page);
+    if (s === -1 && e === -1) {
+      console.log('  ' + page.padEnd(14) + 'no glossary');
+      continue;
+    }
+    if (s === -1 || e === -1) throw new Error('only one glossary sentinel found in ' + page);
     if (e < s) throw new Error('glossary sentinels are the wrong way round in ' + page);
 
     // Only links in the prose count. A slug referenced from inside the
@@ -358,7 +362,7 @@ function build() {
   }
 
   const orphans = Object.keys(TERMS).filter((k) => !used.has(k));
-  if (orphans.length) console.log('  unused entries: ' + orphans.join(', '));
+  if (used.size && orphans.length) console.log('  unused entries: ' + orphans.join(', '));
   console.log('glossary: ' + touched + ' page(s) rewritten');
 }
 

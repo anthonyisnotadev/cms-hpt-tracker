@@ -15,23 +15,11 @@
 'use strict';
 
 const http = require('http');
-const fs = require('fs');
-const path = require('path');
 const store = require('./outreach-store');
+const { serveStatic } = require('./static-files');
 
-const ROOT = path.join(__dirname, '..');
 const PORT = process.env.PORT || 8080;
-
-const MIME = {
-  '.html': 'text/html; charset=utf-8',
-  '.js': 'text/javascript; charset=utf-8',
-  '.css': 'text/css; charset=utf-8',
-  '.json': 'application/json; charset=utf-8',
-  '.csv': 'text/csv; charset=utf-8',
-  '.svg': 'image/svg+xml',
-  '.png': 'image/png',
-  '.ico': 'image/x-icon',
-};
+const HOST = process.env.HOST || '127.0.0.1';
 
 /* Each route re-syncs from disk, mutates, then persists. */
 function persisting(fn) {
@@ -80,19 +68,6 @@ function sendJson(res, status, obj) {
   res.end(body);
 }
 
-function serveStatic(req, res) {
-  const urlPath = decodeURIComponent(req.url.split('?')[0]);
-  const rel = urlPath === '/' ? 'tracker.html' : urlPath.replace(/^\/+/, '');
-  const filePath = path.normalize(path.join(ROOT, rel));
-  if (!filePath.startsWith(ROOT)) { sendJson(res, 403, { error: 'forbidden' }); return; }
-  fs.readFile(filePath, (err, data) => {
-    if (err) { sendJson(res, 404, { error: 'not found' }); return; }
-    const ext = path.extname(filePath).toLowerCase();
-    res.writeHead(200, { 'Content-Type': MIME[ext] || 'application/octet-stream' });
-    res.end(data);
-  });
-}
-
 const server = http.createServer((req, res) => {
   const urlPath = req.url.split('?')[0];
 
@@ -115,7 +90,7 @@ const server = http.createServer((req, res) => {
 });
 
 store.load();
-server.listen(PORT, () => {
+server.listen(PORT, HOST, () => {
   console.log(`http://localhost:${PORT}/tracker.html`);
   console.log(`outreach records: ${store.DATA_FILE}`);
 });

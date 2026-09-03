@@ -44,6 +44,8 @@ state lands in `cms_data/hpt/` (already gitignored).
 | `corroborate` | Reads MRF headers for cross-state candidates `match` deferred on | free |
 | `adjudicate` | LLM ruling on near-miss names that scoring cannot settle | cents |
 | `recover` | Footer-scans domains that had no pointer file | free |
+| `recover --llm` | Model-guided two-hop crawl for the same domains, each hit corroborated against the MRF header before it is kept → `recovered.csv` | cents |
+| `npm run hpt:pointers:corpus` | Archive every reachable current `cms-hpt.txt` and emit one normalized CSV | free |
 | `dates` | Probes each MRF's last-updated date, size and format **without downloading it** | free |
 | `download` | Streams the MRFs listed in the manifest to disk | free, then paid only on a block |
 | `gaps` / `report` | Remediation worklist and coverage summary | free |
@@ -71,6 +73,98 @@ node scripts/hpt/run.js match
 node scripts/hpt/run.js dates                         # last-updated, no downloads
 node scripts/hpt/run.js gaps && node scripts/hpt/run.js report
 ```
+
+## Combined cms-hpt.txt corpus
+
+Build a local, resumable corpus from the current tracker manifest and domain map:
+
+```bash
+npm run hpt:pointers:corpus
+```
+
+Known pointer URLs are fetched first. Domains still lacking a valid pointer are
+then checked at the CMS-permitted root and `.well-known` paths, across apex and
+`www`, including homepage redirects. This command is always direct/free: it
+never uses a search API, an unblocker, or downloads any MRF URL listed inside a
+pointer file.
+
+Raw files, crawl history, and `cms_hpt_entries.csv` are written under
+`cms_data/hpt/pointer-corpus/` and are gitignored. The CSV has one row per MRF
+URL, with a diagnostic row for pointer entries that omit `mrf-url`. Exact MRF
+URL links to CCNs are kept separate from pointer-level related CCNs so a system
+pointer is not misrepresented as a facility match.
+
+The retained raw snapshot under `data/hpt-audit/pointers/` also carries public
+contact names and emails. Run `npm run obfuscate:pointers` to protect only those
+values at rest and `npm run check:pointers-private` to verify none remain in
+plaintext. The key is intentionally tracked for local decoding by every clone;
+this is search-engine obfuscation rather than secret encryption. Once it exists,
+future `pointers` and `verify` writes are protected automatically. Copy newly
+written working files into the retained snapshot before publishing. `npm run
+serve` and `npm run serve:outreach` decrypt raw pointer responses in memory for
+local use.
+
+To build a reviewable corpus from an external domain-candidate CSV without
+importing anything into the tracker, run the two stages separately:
+
+```bash
+node scripts/hpt/pointer-corpus.js --external-only --root-only --domain-csv=cms_data/hpt/external_link_candidates.csv --dataset=external-links --out=cms_data/hpt/external-pointer-corpus --csv=cms_data/hpt/external_cms_hpt_entries.csv
+node scripts/hpt/probe-pointer-corpus.js --input=cms_data/hpt/external_cms_hpt_entries.csv --out=cms_data/hpt/external_cms_hpt_mrf_headers.csv --cache=cms_data/hpt/external-pointer-corpus/mrf-header-cache.json --concurrency=40 --per-host=4
+```
+
+The first CSV preserves every entry and every MRF URL declared by each fetched
+pointer file, together with raw-file hashes and source-domain provenance. The
+`--root-only` option requests only `https://<candidate-domain>/cms-hpt.txt`
+(ordinary HTTP redirects are still followed), which is the appropriate boundary
+when an external list is being used only as a domain lead. The
+second has one row per unique MRF and records only a HEAD request plus a capped
+Range GET. Its `header_matched_ccns` and `review_ccns` are evidence for later
+review, not import instructions; it does not mutate the manifest or domain map.
+
+The default reuses valid cached successes and skips recorded failures. Use
+`--retry-failed` to retry failures or `--refresh` for a fresh crawl. Operational
+controls are `--limit=N`, `--concurrency=N`, and `--timeout=MS`.
+
+After reviewing the header output, import only its conservative `matched` rows
+into the tracker snapshot with the two-phase importer:
+
+```bash
+node scripts/hpt/import-corpus.js --evidence-dir=cms_data/hpt/new
+node scripts/hpt/run.js dates --noUnblocker
+node scripts/hpt/import-corpus.js --evidence-dir=cms_data/hpt/new --publish
+```
+
+The evidence directory may contain `external_cms_hpt_mrf_headers.csv`,
+`direct_mrf_headers.csv`, or both. Duplicate observations of the same
+CCN/MRF pair are collapsed. A CCN tied to multiple distinct MRF URLs is left out
+and listed under `conflictingCcns` in `cms_data/hpt/corpus_import.json`; review,
+unmatched, and unreachable header rows are never imported. Existing manifest
+CCNs are not replaced. The cached header metadata is reused by `dates`, so this
+workflow does not repeat network probes for the new rows.
+
+### Direct MRF link inventory
+
+Third-party CCN and URL inventories are leads rather than import authority.
+Prepare only current-roster hospitals that are still absent from the manifest,
+then probe every distinct MRF with a HEAD request and capped Range GET:
+
+```bash
+npm run hpt:direct-mrf:prepare -- --input=path/to/links.csv
+npm run hpt:direct-mrf:headers
+# or run both stages
+npm run hpt:direct-mrf
+```
+
+Preparation writes `direct_mrf_entries.csv`, `direct_mrf_review.csv`, and
+`direct_mrf_stage.json` under `cms_data/hpt/new`. The original CSV is never
+modified. The header stage writes `direct_mrf_headers.csv` and uses a resumable
+cache under `cms_data/hpt/direct-mrf/`. It never downloads a complete MRF.
+Import accepts a row only when the reachable MRF header independently matches
+the same claimed CCN, including state and facility-location evidence. Existing
+manifest CCNs, state conflicts, unclaimed header matches, ambiguous facilities,
+unreachable links, and CCNs with multiple surviving MRF URLs remain unimported.
+Use the standard two-phase `import-corpus.js` commands above after reviewing the
+header output.
 
 `match`, `corroborate` and `adjudicate` form a loop: each pass surfaces work for
 the next, so re-running `match` after either stage is expected and cheap.
@@ -151,7 +245,7 @@ both expose a realtime scrape endpoint with the same request/response shape, so
 one adapter covers either:
 
 ```bash
-HPT_SEARCH=serper           # or: decodo | dataforseo | exa
+HPT_SEARCH=serper           # or: decodo | exa
 SERPER_API_KEY=...
 OPENROUTER_API_KEY=...      # adjudication; OPENROUTER_MODEL optional
 
@@ -190,6 +284,163 @@ node scripts/hpt/run.js gaps --import=fixed.csv # read hand-corrected domains ba
 
 Each row has a blank `resolved_domain` column: fill it in by hand, import, then
 re-run `pointers && match`. Nothing needs editing JSON directly.
+
+## Finding hospitals with no domain — `find-domains.js`
+
+`gaps.csv`'s largest bucket is hospitals with no working domain at all — nothing
+to crawl and nobody to email. `node scripts/hpt/find-domains.js` attacks that
+list directly, cheapest source first, and gates every hit on evidence:
+
+| phase | what | cost |
+|---|---|---|
+| 1 | heuristic name-slug domains + any `seeded_domain`, one GET to `/cms-hpt.txt` each | free |
+| 2 | optional real web search (`--search`), with every result verified the same way | provider-dependent |
+| 3 | model-proposed domains for whatever is left, batched, verified the same way | cents |
+| 4 | homepage check for hospitals still unresolved → `site-found` | free |
+| 5 | **state corroboration**: probe each matched MRF header, compare `license_number\|<ST>` to the hospital's state | free |
+| 6 | **adjudication**: `lib/adjudicate.js` on any name match under 0.85 | cents |
+
+Phases 5 and 6 are not optional polish, they are the difference between a
+worklist and garbage. Measured on the real 1,283-hospital gap list:
+
+- 181 rows passed the name match at the 0.55 threshold
+- state corroboration demoted **66** of them — `TEXAS COUNTY MEMORIAL HOSPITAL` (MO) had
+  matched `Texas Health Arlington Memorial Hospital`, and two different Kentucky
+  hospitals had both matched the same generic `University Hospital` entry
+- adjudication dropped **13** more that were in-state but the wrong facility —
+  `Ochsner Lafayette General` vs `Ochsner Medical Center - Kenner`,
+  `Essentia Health Duluth` vs `Essentia Health-Ada`, three Baylor Scott & White
+  facilities in different cities
+
+Final: **102 verified** (real `cms-hpt.txt` that names the hospital, plus a live
+`mrf_url`), 79 `unconfirmed` for manual review, 351 `site-found` (website
+confirmed, no pointer file — hand those to `recover --llm`), 751 `none`.
+
+State corroboration also fills in `mrf_last_updated` and `cms_version` for free, so
+newly-found hospitals arrive with their compliance status already known.
+
+```bash
+node scripts/hpt/find-domains.js --limit 25        # trial
+node scripts/hpt/find-domains.js                   # full list, ~45 min
+node scripts/hpt/find-domains.js --free --retry-status=none --no-heuristics
+node scripts/hpt/find-domains.js --search --retry-status=none --no-heuristics
+node scripts/hpt/run.js gaps --import=data/hpt-audit/found_domains.csv
+```
+
+The `--free` command makes one bulk Wikidata request and tests its official-site
+domains only against cached `none` rows. It needs no key and makes no
+per-hospital search request. The next command is the higher-recall search-provider
+pass for anything still missing. Both avoid repeating the already-failed slug
+guesses. The final command imports the `verified` and `site-found` domains into
+the main tracker.
+`unconfirmed` rows deliberately have a blank `resolved_domain` and are not
+imported without manual review. Configure search with
+`HPT_SEARCH=serper|decodo|exa` and that provider's credentials.
+
+Two things worth knowing. Hospitals already in `cms_data/outreach.json` are
+skipped by default (`--include-known` to override) because the gap list goes
+stale against fieldwork done by hand. And the DNS pre-check uses `dns.Resolver`,
+never `dns.lookup`: the OS resolver ignores timeouts and measured 11 seconds per
+NXDOMAIN, worse than the HTTP request it replaces; c-ares with a 1.5s timeout
+does the same lookup in ~20ms and takes the pass from hours to minutes.
+
+The finder itself does not write the manifest, `domains.json`, or
+`outreach.json`; its CSV is import-ready, and the explicit `gaps --import`
+command is the step that updates `domains.json`.
+
+## External link exports as leads — `verify-external-links.js`
+
+An external CSV of public hospital links can improve discovery without making
+the publisher's dataset part of this repository. The export is treated only as
+a disposable lead source:
+
+```bash
+node scripts/hpt/verify-external-links.js --input="C:\path\to\export.csv" --limit=25
+node scripts/hpt/verify-external-links.js --input="C:\path\to\export.csv"
+# after reviewing cms_data/hpt/external_link_evidence.csv
+node scripts/hpt/verify-external-links.js --input="C:\path\to\export.csv" --promote
+node scripts/hpt/run.js pointers && node scripts/hpt/run.js match
+```
+
+Rows are tied to the CMS roster only by CCN or a unique exact normalized
+hospital-name + state match. A public URL then supplies a candidate hospital
+domain, but its file link is never trusted or imported. The verifier performs
+fresh, direct requests and requires all of the following before a domain is
+eligible for promotion:
+
+1. the hospital homepage responds;
+2. the domain publishes a valid `cms-hpt.txt` that strongly names the CMS
+   hospital;
+3. the MRF URL is rediscovered from that pointer file, not copied from the
+   external export;
+4. a ranged read reaches the MRF and its header's licensing state matches the
+   CMS roster state.
+
+Missing header state, weak names, conflicting domains, and pre-existing domain
+assignments go to `external_link_review.csv` instead of being promoted. Explicit
+state disagreement is rejected. `--promote` only adds unconflicted verified
+CCN/domain assignments to `domains.json`; it never replaces an existing one.
+
+The durable files are `external_link_evidence.csv` and
+`external_link_verified_domains.csv`. Their URLs and metadata come from the
+hospital site, `cms-hpt.txt`, the MRF response, and the CMS roster. The staging
+candidate/unmapped CSVs and resumable cache are gitignored, so publisher labels,
+rankings, counts, and other export fields do not enter the tracker.
+
+## LLM footer recovery — `recover --llm`
+
+The free `recover` pass greps the homepage for a link whose text or URL contains
+`price`/`transparen`/`standard-charges`, then greps that page for a `.csv`/`.json`
+link. It misses whenever the nav label is "Patient Financial Resources", the menu
+is script-built, or the file sits two hops in.
+
+`recover --llm` keeps the same input set (a working site, no `cms-hpt.txt`, not
+blocked, not already resolved by the regex pass) and the same premise, but drives
+the two hops with a model: *which nav links lead to the price page*, then *which
+link on those pages is the machine-readable file*. It reads the smallest domains
+first — a real system almost always has a pointer file, so a pointer-less domain
+is usually one hospital that linked its file straight off its own site.
+
+The safety-critical part is what happens next. A scraped link is weaker evidence
+than a hospital-declared `mrf-url`, so every candidate goes through the header
+probe and the **same corroboration gate the `match` stage uses**:
+
+| header evidence | outcome |
+|---|---|
+| `license_number\|<ST>` equals the hospital's state | accept (high) |
+| `license_number\|<ST>` names a different state | **reject** |
+| no state, but `hospital_name` ≈ roster name (≥ 0.6) | accept (medium) |
+| single-hospital domain, file just carries a valid CMS date | accept (low) |
+| anything else | left `unconfirmed` for manual review |
+
+Accepted rows are written to `recovered.csv` in manifest column order.
+`recovered_mrfs.json` keeps the full record including every rejected and
+unconfirmed URL with its reason. **Neither is merged into the manifest
+automatically** — review `recovered.csv`, then feed the good rows in the same way
+as a `gaps` import. Needs `OPENROUTER_API_KEY`; `OPENROUTER_MODEL` optional
+(defaults to `meta-llama/llama-3.1-8b-instruct`, same as `adjudicate`). Nothing
+here reaches a paid unblocker.
+
+## Outreach draft queue — `outreach-prep.js`
+
+`node scripts/hpt/outreach-prep.js` turns the actionable rows of
+`compliance.csv` into a review queue for the `outreach` skill. For each hospital
+with a `stale`, `old-template`, `broken-link`, `no-pointer` or `pointer-no-mrf`
+finding it:
+
+1. classifies the finding into an email variant (deterministic);
+2. fetches the price page plus a couple of contact pages, scrapes every
+   `mailto:`, and asks a model for the best billing / price-transparency address
+   — returning one only if it actually appeared on a page;
+3. renders a draft from the `outreach` skill's template, optionally rewriting the
+   one finding-specific paragraph with the model, then lints it (salutation is
+   `Hello,`, no em dash, the 30-day follow-up line is present).
+
+Output is `outreach_queue.csv`. The script **never sends email and never writes
+`cms_data/outreach.json`** — logging stays a confirmed step in the `outreach`
+skill. It runs without an API key (contact falls back to the first on-domain
+`mailto:`, drafts fall back to the template). Signature block comes from
+`--name` / `--email` / `--url` or `HPT_OUTREACH_NAME` / `_EMAIL` / `_URL`.
 
 ## The output CSV
 

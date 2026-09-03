@@ -51,10 +51,10 @@
     <div class="wordmark">CMS&nbsp;HPT&nbsp;Tracker <span>/ price transparency audit</span></div>
     <nav class="masthead-links" aria-label="Site">
       <a href="tracker.html">Tracker</a>
-      <a href="mrf.html" aria-current="page">What an MRF is</a>
-      <a href="rules.html">What CMS requires</a>
-      <a href="pointer.html">The pointer file</a>
-      <a href="skill.html">The agent skill</a>
+      <a href="mrf.html" aria-current="page">Price files</a>
+      <a href="rules.html">CMS rules</a>
+      <a href="pointer.html">Pointer files</a>
+      <a href="skill.html">Outreach tool</a>
       <a href="https://github.com/anthonyisnotadev" target="_blank" rel="noopener noreferrer">GitHub</a>
     </nav>
     <div class="masthead-util">
@@ -63,18 +63,12 @@
   </div>
   <div class="wrap masthead-body">
     <p class="eyebrow">Explainer &middot; 1 of 3</p>
-    <h1>What a machine-readable file actually is</h1>
-    <p class="standfirst">
-      Every hospital in the country has to publish one file containing <strong>every price it has,
-      for every item and service, for every insurer it contracts with</strong>. That file is the MRF.
-      It is not a bill, not an estimate, and not written for a human to read. Since
-      July&nbsp;2024 its shape is dictated, column by column, by CMS.
-    </p>
+    <h1>Hospital price files</h1>
+    <p class="standfirst">One downloadable file holds a hospital's list prices, cash prices, and negotiated insurance rates. CMS calls it a machine-readable file, or MRF.</p>
     <div class="dateline">
-      <div>Governing rule <b>45 CFR 180.50</b></div>
-      <div>Current CMS template <b>v3.0.0</b></div>
-      <div>Formats <b>CSV tall, CSV wide, JSON</b></div>
-      <div>Figures from the <a href="tracker.html">27 Aug 2026 crawl</a></div>
+      <div>Rule <b>45 CFR 180.50</b></div>
+      <div>Template <b>v3.0.0</b></div>
+      <div>Formats <b>CSV or JSON</b></div>
     </div>
   </div>
 </header>
@@ -84,604 +78,62 @@
   <nav class="toc" aria-label="On this page">
     <p class="eyebrow">On this page</p>
     <ol>
-      <li><a href="#what">The three words</a></li>
-      <li><a href="#five">Five prices for one MRI</a></li>
-      <li><a href="#shape">The shape of the file</a></li>
-      <li><a href="#row">One row, read closely</a></li>
-      <li><a href="#dictionary">The data dictionary</a></li>
-      <li><a href="#algorithms">Prices that are not numbers</a></li>
-      <li><a href="#scale">Why these files are enormous</a></li>
-      <li><a href="#limits">What an MRF cannot tell you</a></li>
-      <li><a href="#glossary">Glossary</a></li>
+      <li><a href="#basics">What the file contains</a></li>
+      <li><a href="#prices">The five price types</a></li>
+      <li><a href="#format">File format</a></li>
+      <li><a href="#limits">What it cannot tell you</a></li>
       <li><a href="#sources">Sources</a></li>
     </ol>
   </nav>
 
   <main class="prose" id="main" tabindex="-1">
-
-    <!-- ===================================================== -->
-    <aside class="plain" aria-labelledby="plain-h">
-      <p class="eyebrow" id="plain-h">The short version</p>
-      <ul>
-        <li><b>Every hospital in the country has to put every price it charges into one file
-          and publish it.</b> That file is the MRF. This page is about what is inside it.</li>
-        <li><b>It is written for computers, not for people.</b> No headings, no explanations,
-          often millions of rows. The average one is 164&nbsp;MB, roughly a hundred thousand
-          pages of text.</li>
-        <li><b>There is no such thing as &ldquo;the price&rdquo;.</b> The same chest scan has a
-          list price, a cash price, and a separate agreed price for every insurance plan the
-          hospital deals with. All of them have to be in the file.</li>
-        <li><b>It tells you what a hospital and an insurer agreed something costs. It does not
-          tell you what you will owe.</b> That depends on your deductible, and on who else
-          sends you a bill afterwards.</li>
-      </ul>
-      <p class="more">Below is the long version, cited to the regulation line by line. Words
-        underlined like <a class="gl" href="#g-payer">payer</a> are jargon; hover one, or follow
-        it down to <a href="#glossary">the glossary</a>.</p>
-    </aside>
-
-    <!-- ===================================================== -->
-    <section id="what">
-      <p class="eyebrow">Definition</p>
-      <h2>The three words, one at a time
-        <a class="cite" href="https://www.ecfr.gov/current/title-45/part-180/section-180.20">&sect;&nbsp;180.20</a></h2>
-
-      <p class="lead"><a class="gl abbr" href="#g-cms">CMS</a> defines a machine-readable file as &ldquo;a single digital file that is in a
-        machine-readable format,&rdquo; and a machine-readable format as a digital representation of data
-        that can be imported or read into a computer system for further processing.<sup class="ref"><a href="#s1">1</a></sup>
-        Each word is doing work.</p>
-
-      <div class="defs">
-        <div>
-          <div class="term">Machine-readable <small>&sect; 180.20</small></div>
-          <div class="meaning">A computer must be able to parse it without a human transcribing anything.
-            A PDF of a price list is not machine-readable. A scanned table is not machine-readable. A CSV,
-            a JSON document, or the CMS template in either is.</div>
-        </div>
-        <div>
-          <div class="term">File <small>&sect; 180.50(c)</small></div>
-          <div class="meaning">One artefact you can download, not a search box that answers one question at
-            a time. A price lookup tool, however good, does not satisfy this requirement; it satisfies
-            the <em>separate</em> shoppable-services requirement at <a href="rules.html#shoppable">&sect;&nbsp;180.60</a>.</div>
-        </div>
-        <div>
-          <div class="term">Single <small>&sect; 180.50(a)(2)</small></div>
-          <div class="meaning">One file per set of standard charges. Where several locations under one
-            hospital licence have <em>different</em> charges, each must be published separately; where they
-            share charges, one file may cover them all and must name every location and address it covers.</div>
-        </div>
-      </div>
-
-      <p>Before July 2024 that was almost the whole specification, and the result was predictable: thousands
-         of files, each internally consistent and mutually incomparable. Hospitals chose their own column
-         names, their own encodings of &ldquo;cash price&rdquo;, their own idea of what counted as an item.
-         The rule was met and the data was unusable in aggregate. The CY2024 <a class="gl" href="#g-opps">OPPS/ASC final rule</a> closed that
-         by requiring a <strong><a class="gl" href="#g-template">CMS template</a></strong> (a fixed layout, fixed column headers and a
-         published <a class="gl" href="#g-data-dictionary">data dictionary</a>) for every file from 1&nbsp;July&nbsp;2024 onward.<sup class="ref"><a href="#s5">5</a></sup></p>
-
-      <div class="callout">
-        <h4>Two obligations, often confused</h4>
-        <p><a class="gl" href="#g-cfr">45 CFR 180.40</a> imposes two separate duties.<sup class="ref"><a href="#s1">1</a></sup>
-           <b>&sect;&nbsp;180.50</b> is the machine-readable
-           file, aimed at researchers, employers, journalists and price-comparison tools. <b>&sect;&nbsp;180.60</b>
-           is a consumer-friendly display of 300 <a class="gl" href="#g-shoppable">shoppable services</a>, aimed at patients. A hospital can
-           do one perfectly and still be in breach for the other. This tracker only measures the first.</p>
-      </div>
+    <section id="basics">
+      <p class="eyebrow">The basics</p>
+      <h2>One file, many prices</h2>
+      <p class="lead">The file is a public data set, not a patient-facing price list. It can contain millions of rows because the same service may have a different rate for every insurance plan.</p>
+      <p>Each row identifies an item or service, its billing code, whether it is inpatient or outpatient, and one or more prices. The file also identifies the hospital, the template version, and the date of the last update.</p>
+      <aside class="callout"><b>Plain answer</b><p>The file shows the prices a hospital publishes. It does not show the final amount on a patient's bill.</p></aside>
     </section>
 
-    <!-- ===================================================== -->
-    <section id="five">
-      <p class="eyebrow">Standard charges</p>
-      <h2>Five prices for the same MRI
-        <a class="cite" href="https://www.ecfr.gov/current/title-45/part-180/section-180.20">&sect;&nbsp;180.20</a></h2>
-
-      <p class="lead">The word &ldquo;price&rdquo; does not survive contact with hospital billing. A single
-        procedure carries a whole family of numbers, and the rule requires all of them. This is the part
-        most readers find surprising: the file does not have a price column.</p>
-
-      <div class="scroll-x">
-        <table class="tbl">
-          <thead>
-            <tr><th>Standard charge</th><th>What it means</th><th>Who ever pays it</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">Gross charge</th>
-              <td>The <a class="gl" href="#g-chargemaster">chargemaster</a> number, absent any discount. The hospital&rsquo;s list price.</td>
-              <td class="t-dim">Almost nobody. It is the anchor everything else is negotiated down from.</td>
-            </tr>
-            <tr>
-              <th scope="row">Discounted cash price</th>
-              <td>The charge that applies to someone paying cash, or a cash equivalent.</td>
-              <td class="t-dim">The uninsured, and the insured who find it is cheaper than their deductible.</td>
-            </tr>
-            <tr>
-              <th scope="row">Payer-specific negotiated charge</th>
-              <td>What the hospital has negotiated with one named third-party <a class="gl" href="#g-payer">payer</a>, for one named <a class="gl" href="#g-plan">plan</a>.</td>
-              <td class="t-dim">That insurer. There is one of these per payer &times; plan &times; item.</td>
-            </tr>
-            <tr>
-              <th scope="row">De-identified minimum</th>
-              <td>The lowest charge negotiated across all payers for that item.</td>
-              <td class="t-dim">Nobody directly; it is a summary statistic over the row above.</td>
-            </tr>
-            <tr>
-              <th scope="row">De-identified maximum</th>
-              <td>The highest charge negotiated across all payers for that item.</td>
-              <td class="t-dim">Nobody directly. Together the pair shows the spread without naming payers.</td>
-            </tr>
-          </tbody>
-          <caption>The five types collectively defined as <a class="gl" href="#g-standard-charge">&ldquo;standard charge&rdquo;</a> at
-            <a href="https://www.ecfr.gov/current/title-45/part-180/section-180.20">&sect;&nbsp;180.20</a> and
-            required at
-            <a href="https://www.ecfr.gov/current/title-45/part-180/section-180.50#p-180.50(b)(2)(ii)">&sect;&nbsp;180.50(b)(2)(ii)</a>.
-            The min and max are derived from the set of negotiated <em>dollar</em> amounts.<sup class="ref"><a href="#s1">1</a></sup></caption>
-        </table>
+    <section id="prices">
+      <p class="eyebrow">Prices</p>
+      <h2>The five price types</h2>
+      <p>No single number represents “the price.” CMS requires five kinds of standard charge for each item or service.</p>
+      <div class="fact-list">
+        <div class="fact-row"><b>List price</b><p>The starting amount before discounts. This is often called the gross charge.</p></div>
+        <div class="fact-row"><b>Cash price</b><p>The amount offered to a patient paying without insurance.</p></div>
+        <div class="fact-row"><b>Negotiated price</b><p>The amount agreed with a named insurer and plan.</p></div>
+        <div class="fact-row"><b>Lowest price</b><p>The lowest negotiated rate for that item, without naming the plan.</p></div>
+        <div class="fact-row"><b>Highest price</b><p>The highest negotiated rate for that item, without naming the plan.</p></div>
       </div>
-
-      <p>So a single chest CT at a single hospital produces one gross charge, one cash price, one min, one
-         max, and one negotiated charge for every plan the hospital contracts with. A mid-sized hospital
-         with forty plans and forty thousand chargeable items is publishing something on the order of a
-         million rows before anyone has argued about what an &ldquo;item&rdquo; is.</p>
+      <p>Some contracts use a percentage or formula instead of a fixed dollar amount. The file must identify that method and may also include past payment amounts.</p>
     </section>
 
-    <!-- ===================================================== -->
-    <section id="shape">
+    <section id="format">
       <p class="eyebrow">Format</p>
-      <h2>Three legal shapes for the same data
-        <a class="cite" href="https://www.ecfr.gov/current/title-45/part-180/section-180.50#p-180.50(c)(2)">&sect;&nbsp;180.50(c)(2)</a></h2>
-
-      <p class="lead">CMS publishes the template in three layouts.<sup class="ref"><a href="#s2">2</a></sup>
-        A hospital picks one. All three carry the same required data elements; they differ only in how the
-        payer dimension is folded.</p>
-
-      <div class="cards">
-        <div class="card">
-          <span class="k">Layout A</span>
-          <h4>CSV &ldquo;tall&rdquo;</h4>
-          <p>One row per item <em>per payer plan</em>. Column count is fixed; row count multiplies. Easiest
-             to generate, easiest to stream, and the reason single files reach tens of millions of rows.</p>
-        </div>
-        <div class="card">
-          <span class="k">Layout B</span>
-          <h4>CSV &ldquo;wide&rdquo;</h4>
-          <p>One row per item, with a repeating block of columns for every payer and plan; the payer
-             and plan names are baked into the column headers. Fewer rows, but files routinely exceed a
-             thousand columns.</p>
-        </div>
-        <div class="card">
-          <span class="k">Layout C</span>
-          <h4>JSON</h4>
-          <p>Nested objects: the hospital, then items, then a list of payer objects under each. The only
-             format that expresses the hierarchy honestly, and the only one that survives repeated
-             modifiers cleanly.</p>
-        </div>
-      </div>
-
-      <p>In the <a href="tracker.html">27&nbsp;August&nbsp;2026 crawl</a>, of the files whose format could be
-         read: <b class="num">1,751</b> were CSV, <b class="num">644</b> were JSON, and two were
-         <code>.xlsx</code>, a format the template does not offer.<sup class="ref"><a href="#s7">7</a></sup></p>
-
-      <h3>The CSV files have a three-row header</h3>
-      <p>This trips up nearly everyone reading one for the first time. A CSV MRF is not a normal CSV.
-         <strong>Row 1</strong> is a set of column headers describing the file and the hospital.
-         <strong>Row 2</strong> holds their values: one row, once, for the whole file.
-         <strong>Row 3</strong> is the real header row for the charge data, and the charge rows begin at
-         row 4.<sup class="ref"><a href="#s3">3</a></sup> Point a naive parser at it and every column name
-         will be wrong.</p>
-
-      <figure class="listing">
-        <figcaption>Rows 1&ndash;2: general data elements, stated once</figcaption>
-<pre><b>hospital_name,last_updated_on,version,location_name,hospital_address,type_2_npi,license_number | MD,attester_name,To the best of its knowledge and belief, this hospital has included all applicable standard charge information&hellip;</b>
-Example Regional Medical Center,2026-01-14,3.0.0,Example Regional Medical Center,120 Mercy Way Baltimore MD 21201,1487654321,21-0143,Dana Whitfield,true</pre>
-        <p class="note">Illustrative, following the CMS CSV data dictionary.<sup class="ref"><a href="#s3">3</a></sup>
-           The attestation is encoded as a column whose <em>header</em> is the full CMS-prescribed sentence
-           and whose value is <code>true</code>. It reads strangely and it is correct.</p>
-      </figure>
+      <h2>CSV or JSON, using the CMS template</h2>
+      <p class="lead">CMS defines the field names, order, and allowed values. Hospitals may use a tall CSV, a wide CSV, or JSON, but the underlying information is the same.</p>
+      <p>The header names the hospital and locations covered by the file. It also includes the update date, template version, identifiers, and an attestation that the information is accurate and complete.</p>
+      <p>CSV files may look unusual in spreadsheet software because metadata can appear above the main table. JSON files arrange the same information as nested objects. Both formats are intended for software and bulk analysis.</p>
     </section>
 
-    <!-- ===================================================== -->
-    <section id="row">
-      <p class="eyebrow">Worked example</p>
-      <h2>One row, read closely</h2>
-
-      <p class="lead">Here is a single item in the CSV &ldquo;tall&rdquo; layout, from row 3 down. Several
-        columns are elided for width; the ones shown are the ones that carry meaning.</p>
-
-      <figure class="listing">
-        <figcaption>Rows 3&ndash;5: charge data (columns abridged)</figcaption>
-<pre><b>description,code | 1,code | 1 | type,setting,standard_charge | gross,standard_charge | discounted_cash,payer_name,plan_name,standard_charge | negotiated_dollar,standard_charge | min,standard_charge | max,standard_charge | methodology,additional_generic_notes</b>
-CT scan chest w/o contrast,71250,CPT,outpatient,2841.00,1136.40,Aetna,Choice POS II,612.75,498.10,1204.00,fee schedule,<i>(empty)</i>
-CT scan chest w/o contrast,71250,CPT,outpatient,2841.00,1136.40,UnitedHealthcare,Choice Plus,498.10,498.10,1204.00,fee schedule,<i>(empty)</i>
-<i>&hellip;one further row per payer plan, for this one CPT code</i></pre>
-        <p class="note">Illustrative figures in the CMS column layout.<sup class="ref"><a href="#s3">3</a></sup>
-           Read across: the list price is $2,841, the cash price is $1,136.40, Aetna pays $612.75 and
-           UnitedHealthcare pays $498.10 for the identical scan. The min and max repeat on every row
-           because they summarise the whole set of negotiated dollars for that item.</p>
-      </figure>
-
-      <p>Three things in that example are worth flagging, because they are where real files go wrong.<sup class="ref"><a href="#s3">3</a></sup></p>
-
-      <ul>
-        <li><strong>Blanks are meaningful.</strong> CMS is explicit that a hospital must leave a cell empty
-           when it has no applicable data: not <code>N/A</code>, not <code>0</code>, not
-           <code>&ndash;</code>. Entering a placeholder is itself a deficiency, as is a dollar sign inside a
-           numeric field.</li>
-        <li><strong>The code column is indexed.</strong> The header is <code>code&nbsp;|&nbsp;1</code> and
-           <code>code&nbsp;|&nbsp;1&nbsp;|&nbsp;type</code>, repeating as <code>code&nbsp;|&nbsp;2</code> and
-           so on, because one item routinely carries a <a class="gl" href="#g-cpt">CPT code</a>, a revenue code and an internal chargemaster
-           code at once. Twenty-one code types are valid values, from <code>CPT</code> and <code>NDC</code>
-           through <code>MS-DRG</code> to <code>LOCAL</code>.</li>
-        <li><strong><a class="gl" href="#g-methodology">Methodology</a> is an enumeration, not prose.</strong> Exactly five values are legal:
-           <code>case rate</code>, <code>fee schedule</code>, <code>percent of total billed charges</code>,
-           <code>per diem</code>, and <code>other</code>, with <code>other</code> requiring an
-           explanation in the notes column.</li>
-      </ul>
-    </section>
-
-    <!-- ===================================================== -->
-    <section id="dictionary">
-      <p class="eyebrow">Required fields</p>
-      <h2>The data dictionary, in full
-        <a class="cite" href="https://www.ecfr.gov/current/title-45/part-180/section-180.50#p-180.50(b)(2)">&sect;&nbsp;180.50(b)(2)</a></h2>
-
-      <p class="lead">These are the data elements a file must encode to conform to CMS template v3.0.0, the
-        version in force since 1&nbsp;January&nbsp;2026.<sup class="ref"><a href="#s3">3</a></sup> Column names
-        are the CSV &ldquo;tall&rdquo; spellings; the wide and JSON layouts carry the same elements under
-        their own conventions.</p>
-
-      <h3>About the file and the hospital</h3>
-      <div class="scroll-x">
-        <table class="tbl">
-          <thead><tr><th>Column</th><th>Element</th><th>Notes</th></tr></thead>
-          <tbody>
-            <tr><td class="t-mono">hospital_name</td><td>Hospital name</td><td>The legal business name.</td></tr>
-            <tr><td class="t-mono">last_updated_on</td><td>MRF date</td><td>ISO&nbsp;8601. This is the field the annual-update requirement is judged against, and the field this tracker reads to compute file age.</td></tr>
-            <tr><td class="t-mono">version</td><td>CMS template version</td><td>Currently <code>3.0.0</code>.</td></tr>
-            <tr><td class="t-mono">location_name</td><td>Hospital location(s)</td><td>Renamed from <code>hospital_location</code> in v3.0. Multiple values separated by <code>|</code>.</td></tr>
-            <tr><td class="t-mono">hospital_address</td><td>Hospital address(es)</td><td>In the same order as the location names. Must cover, at minimum, every inpatient facility and stand-alone emergency department.</td></tr>
-            <tr><td class="t-mono">type_2_npi</td><td>Type&nbsp;2 organisational <a class="gl abbr" href="#g-npi">NPI</a>(s)</td><td>New in v3.0. Only NPIs whose primary taxonomy starts <code>28</code> (hospital) or <code>27</code> (hospital unit).</td></tr>
-            <tr><td class="t-mono">license_number&nbsp;|&nbsp;[state]</td><td>Licensure information</td><td>The licensing state&rsquo;s two-letter code lives in the header. This tracker uses that field to confirm it has matched the right facility.</td></tr>
-            <tr><td class="t-mono">attester_name</td><td>Attester name</td><td>New in v3.0. The CEO, president, or the senior official designated to oversee the encoding.</td></tr>
-            <tr><td class="t-dim">[the attestation sentence]</td><td><a class="gl" href="#g-attestation">Attestation</a> statement</td><td>New in v3.0, replacing the affirmation statement. The header is CMS&rsquo;s prescribed text; the value must be <code>true</code> to satisfy <a href="https://www.ecfr.gov/current/title-45/part-180/section-180.50#p-180.50(a)(3)">&sect;&nbsp;180.50(a)(3)</a>.</td></tr>
-          </tbody>
-          <caption>CSV &ldquo;tall&rdquo; column names, from the CMS data dictionary v3.0.<sup class="ref"><a href="#s3">3</a></sup>
-            Elements marked &ldquo;new in v3.0&rdquo; were added by the CY2026 OPPS/ASC final rule.<sup class="ref"><a href="#s4">4</a></sup></caption>
-        </table>
-      </div>
-
-      <h3>About each item or service</h3>
-      <div class="scroll-x">
-        <table class="tbl">
-          <thead><tr><th>Column</th><th>Element</th><th>Notes</th></tr></thead>
-          <tbody>
-            <tr><td class="t-mono">description</td><td>General description</td><td>Free text.</td></tr>
-            <tr><td class="t-mono">code | [i]</td><td>Billing / accounting code</td><td>Repeating, indexed.</td></tr>
-            <tr><td class="t-mono">code | [i] | type</td><td>Code type</td><td>Enumerated: <code>CPT</code>, <code>HCPCS</code>, <code>NDC</code>, <code>RC</code>, <code>DRG</code>, <code>MS-DRG</code>, <code>APC</code>, <code>CDM</code>, <code>LOCAL</code> and twelve more. <a class="gl" href="#g-cpt">What CPT means</a>; <a class="gl" href="#g-drg">what a DRG is</a>.</td></tr>
-            <tr><td class="t-mono">setting</td><td><a class="gl" href="#g-setting">Setting</a></td><td><code>inpatient</code>, <code>outpatient</code> or <code>both</code>.</td></tr>
-            <tr><td class="t-mono">drug_unit_of_measurement</td><td>Drug unit</td><td>Required since 1&nbsp;Jan&nbsp;2025, for drugs.</td></tr>
-            <tr><td class="t-mono">drug_type_of_measurement</td><td>Drug measurement type</td><td><code>GR</code>, <code>ME</code>, <code>ML</code>, <code>UN</code> and the rest of the NDC/NCPDP set.</td></tr>
-            <tr><td class="t-mono">modifiers</td><td><a class="gl" href="#g-modifier">Modifier</a>(s)</td><td>Required since 1&nbsp;Jan&nbsp;2025, with a description of how each changes the charge.</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h3>About the money</h3>
-      <div class="scroll-x">
-        <table class="tbl">
-          <thead><tr><th>Column</th><th>Element</th><th>Notes</th></tr></thead>
-          <tbody>
-            <tr><td class="t-mono">standard_charge | gross</td><td>Gross charge</td><td rowspan="2">Numeric, positive. A zero or a negative number is a deficiency.</td></tr>
-            <tr><td class="t-mono">standard_charge | discounted_cash</td><td>Discounted cash price</td></tr>
-            <tr><td class="t-mono">payer_name</td><td>Payer name</td><td rowspan="2">In the wide layout these live in the column headers instead. Since v3.0, if either is present at least one payer-specific charge must be too.</td></tr>
-            <tr><td class="t-mono">plan_name</td><td>Plan name</td></tr>
-            <tr><td class="t-mono">standard_charge | negotiated_dollar</td><td>Negotiated charge, dollars</td><td>Required wherever a dollar amount can be calculated at all.</td></tr>
-            <tr><td class="t-mono">standard_charge | negotiated_percentage</td><td>Negotiated charge, percentage</td><td>Encoded as <code>70.5</code>, not <code>.705</code>.</td></tr>
-            <tr><td class="t-mono">standard_charge | negotiated_algorithm</td><td>Negotiated charge, algorithm</td><td>Free text describing the formula.</td></tr>
-            <tr><td class="t-mono">median_amount</td><td>Median allowed amount</td><td rowspan="4">New in v3.0, replacing the single &ldquo;estimated <a class="gl" href="#g-allowed-amount">allowed amount</a>&rdquo;. Required only where the negotiated charge is a percentage or an algorithm. See below.</td></tr>
-            <tr><td class="t-mono">10th_percentile</td><td>10th percentile allowed</td></tr>
-            <tr><td class="t-mono">90th_percentile</td><td>90th percentile allowed</td></tr>
-            <tr><td class="t-mono">count</td><td>Count of allowed amounts</td></tr>
-            <tr><td class="t-mono">standard_charge | min</td><td>De-identified minimum</td><td rowspan="2">Across all payers, from the negotiated dollar amounts.</td></tr>
-            <tr><td class="t-mono">standard_charge | max</td><td>De-identified maximum</td></tr>
-            <tr><td class="t-mono">standard_charge | methodology</td><td>Standard charge methodology</td><td>One of the five enumerated values.</td></tr>
-            <tr><td class="t-mono">additional_generic_notes</td><td>Notes</td><td>Free text. Where a hospital explains its blanks, and the only place <code>other</code> methodology becomes intelligible.</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p>Three optional elements are also defined, so that hospitals which want to disclose them do so
-         uniformly: <code>financial_aid_policy</code>, <code>general_contract_provisions</code> (stop-loss,
-         lesser-of and carve-out terms that apply at claim level rather than line level), and
-         <code>billing_class</code>.<sup class="ref"><a href="#s3">3</a></sup></p>
-    </section>
-
-    <!-- ===================================================== -->
-    <section id="algorithms">
-      <p class="eyebrow">The hard case</p>
-      <h2>When the price is not a number
-        <a class="cite" href="https://www.ecfr.gov/current/title-45/part-180/section-180.50#p-180.50(b)(2)(ii)(C)">&sect;&nbsp;180.50(b)(2)(ii)(C)</a></h2>
-
-      <p class="lead">A large share of hospital contracts do not set a dollar amount for a procedure. They
-        set a rule: a percentage of the Medicare rate, or of billed charges, or a case rate modified by an
-        outlier formula. This is the single hardest problem in the whole regime, and CMS has now changed
-        its answer twice.</p>
-
-      <p>The rule&rsquo;s position is that a hospital must publish a dollar amount whenever a dollar amount
-         can be derived. If the contract says 70% of a known fee schedule, the hospital is required to do
-         the arithmetic and publish the result in <code>negotiated_dollar</code>, not to publish
-         &ldquo;70%&rdquo; and leave the reader to find the schedule.<sup class="ref"><a href="#s3">3</a></sup>
-         The percentage and algorithm columns exist only for charges that genuinely cannot be resolved in
-         advance.</p>
-
-      <p>But a file full of percentages is still a file without prices, so CMS added a requirement to report
-         what the hospital was <em>actually paid</em>:<sup class="ref"><a href="#s1">1</a></sup></p>
-
-      <ul>
-        <li><strong>1 Jan 2025 &ndash; 31 Dec 2025.</strong> An <em>estimated allowed amount</em>: the average
-           dollar amount the hospital had historically received from that payer for that item.</li>
-        <li><strong>From 1 Jan 2026.</strong> That single average is gone. In its place, a distribution:
-           the <strong><a class="gl" href="#g-percentile">10th percentile</a></strong>, the <strong>median</strong> and the <strong>90th percentile</strong>
-           of allowed amounts actually received, plus the <strong>count</strong> of remittances behind them.</li>
-      </ul>
-
-      <p>The mechanics are tightly specified. Amounts come from <a class="gl" href="#g-remittance">EDI 835 electronic remittance advice</a> data,
-         or an equivalent source, over a window no shorter than 12 months and no longer than 15 months
-         before the file is posted. Zero-dollar remittances are excluded. Where a percentile falls between
-         two observations, the next highest observed value is used. The count is encoded as a whole number,
-         except that anything from one to ten must be written as the literal string
-         <code>1 through 10</code>, a small-cell rule that stops the file from re-identifying an
-         individual patient&rsquo;s claim.<sup class="ref"><a href="#s3">3</a></sup></p>
-
-      <div class="callout" data-tone="warn">
-        <h4>Why the swap from an average to a spread matters</h4>
-        <p>An average collapses a bimodal contract into one misleading number. A distribution shows the
-           reader whether a payer&rsquo;s reimbursements for a procedure cluster tightly or range over an
-           order of magnitude, and the count tells them how much weight the figure can bear at all.
-           It is also considerably more work to produce, which is part of why CMS set enforcement of the
-           v3.0 elements at <b>1 April 2026</b>, three months after the 1 January effective
-           date.<sup class="ref"><a href="#s2">2</a></sup></p>
-      </div>
-    </section>
-
-    <!-- ===================================================== -->
-    <section id="scale">
-      <p class="eyebrow">Practicalities</p>
-      <h2>Why these files are enormous</h2>
-
-      <p class="lead">Items &times; payers &times; plans &times; settings, with no compression required and a
-        regulatory duty to keep the whole thing digitally searchable. The arithmetic does the rest.</p>
-
-      <p>Across the <b class="num">3,486</b> files this project fetched and read in the
-         27&nbsp;August&nbsp;2026 crawl, the total came to roughly <b class="num">571&nbsp;GB</b>,
-         an average of about <b class="num">164&nbsp;MB</b> per hospital, with the largest well into the
-         gigabytes.<sup class="ref"><a href="#s7">7</a></sup> That is the raw published price data of the
-         American hospital system, and it is small only by the standards of things that are not
-         spreadsheets.</p>
-
-      <p>Two consequences follow, and both shape how this tracker works. First, you cannot casually download
-         a national sample; the audit reads MRF headers with <a class="gl" href="#g-range-request">HTTP range requests</a> rather than pulling whole
-         files, which is how it can check the template version and <code>last_updated_on</code> for thousands
-         of hospitals without moving hundreds of gigabytes. Second, plenty of hospitals put these files
-         behind a <a class="gl abbr" href="#g-cdn">CDN</a> that treats an automated fetch of a 200&nbsp;MB object as an attack:
-         <b class="num">186</b> hospitals in the last crawl refused automation outright, which is recorded as
-         <span class="badge" data-tier="blocked">Blocked</span> rather than as a failure, because a hospital
-         that blocks a crawler may be perfectly compliant to a human with a browser.<sup class="ref"><a href="#s7">7</a></sup></p>
-
-      <h3>Version drift is real</h3>
-      <p>The <code>version</code> field is self-reported, and hospitals report some remarkable things.
-         In the last crawl, <b class="num">2,630</b> files declared a 3.0 template, but 112 still declared
-         2.0, four declared 1.0, and a scattering claimed versions CMS has never published: 37 files
-         asserted &ldquo;4.0&rdquo; and one &ldquo;2026.1&rdquo;.<sup class="ref"><a href="#s7">7</a></sup>
-         A declared version is a claim about a file, not a fact about it; this audit records the claim and
-         does not <a class="gl" href="#g-validator">validate</a> the file against the schema. CMS publishes an
-         <a href="https://cmsgov.github.io/hpt-tool/">online and command-line validator</a> that
-         does.<sup class="ref"><a href="#s6">6</a></sup></p>
-    </section>
-
-    <!-- ===================================================== -->
     <section id="limits">
-      <p class="eyebrow">Reading the data</p>
-      <h2>What an MRF cannot tell you</h2>
-
-      <p class="lead">The file is a disclosure of contracted rates. It is not a quote, and treating it as one
-        produces confident nonsense.</p>
-
-      <div class="cards">
-        <div class="card">
-          <h4>Not what you will owe</h4>
-          <p>Your share depends on your deductible, coinsurance, out-of-pocket maximum and how far through
-             the plan year you are. The MRF gives the negotiated rate, not the split.</p>
-        </div>
-        <div class="card">
-          <h4>Not the whole bill</h4>
-          <p>The rule covers items and services <em>the hospital</em> charges for. Independent physicians,
-             anaesthesia groups and pathology labs billing separately are outside it.</p>
-        </div>
-        <div class="card">
-          <h4>Not a complete episode</h4>
-          <p>An admission assembles dozens of line items, some unforeseeable. Summing a few rows does not
-             reconstruct a stay.</p>
-        </div>
-        <div class="card">
-          <h4>Not audited</h4>
-          <p>The attestation is the hospital&rsquo;s own. CMS validates form and manner; nobody
-             systematically checks the numbers against the contracts they claim to describe.</p>
-        </div>
-      </div>
-
-      <p>The same caution applies to this tracker, in the other direction. A hospital marked
-         <span class="badge" data-tier="compliant">Compliant</span> here has published a file that could be
-         found, fetched and parsed. Whether its contents are accurate, complete, or even internally
-         consistent is a different question, and one that reading the file, not the pointer to it,
-         is required to answer.</p>
+      <p class="eyebrow">Limits</p>
+      <h2>This is not your final bill</h2>
+      <p class="lead">A negotiated rate is the amount agreed between a hospital and an insurance plan. It is not necessarily the patient's share.</p>
+      <p>Deductibles, coinsurance, network status, and out-of-pocket limits all affect what a patient owes. Separate bills may also come from physicians, laboratories, or other providers.</p>
+      <p>For a personal estimate, use the hospital's estimator or contact its billing office. The tracker only checks whether the public file can be found, opened, and appears current; individual prices are not verified.</p>
     </section>
 
-    <!-- ===================================================== -->
-    <section id="glossary">
-      <p class="eyebrow">Plain English</p>
-      <h2>Glossary</h2>
-      <p class="lead">Every piece of jargon this page uses, in one sentence each. Built from a
-        single shared dictionary, so a term means the same thing on all three explainers.</p>
-
-<!-- glossary:start -->
-    <dl class="defs glossary">
-      <div id="g-cfr">
-        <dt>45 CFR Part 180</dt>
-        <dd>The Code of Federal Regulations is the published rulebook of the US government, split into numbered titles and parts. Title 45, Part 180 is the hospital price transparency rule; &ldquo;&sect;&nbsp;180.50&rdquo; is one numbered section inside it.</dd>
-      </div>
-      <div id="g-allowed-amount">
-        <dt>Allowed amount</dt>
-        <dd>What the hospital actually ended up being paid, as opposed to what it charged or what the contract says it should get. The insurer&rsquo;s payment plus the patient&rsquo;s share.</dd>
-      </div>
-      <div id="g-attestation">
-        <dt>Attestation</dt>
-        <dd>A named senior officer of the hospital stating, inside the file itself, that what it contains is true and complete. From 2026 it replaced an unsigned &ldquo;affirmation&rdquo;, so there is now a person attached to the claim.</dd>
-      </div>
-      <div id="g-cdn">
-        <dt>CDN</dt>
-        <dd>A network of servers placed in front of a website to make it fast and to absorb attacks. Many treat any automated visitor as an attack, which is a common reason a hospital is marked blocked here rather than failing.</dd>
-      </div>
-      <div id="g-chargemaster">
-        <dt>Chargemaster</dt>
-        <dd>The hospital&rsquo;s own master price list, with a list price for every single thing it can bill for. Almost nobody pays these prices; they are the starting point everything else is discounted down from.</dd>
-      </div>
-      <div id="g-cms">
-        <dt>CMS</dt>
-        <dd>The Centers for Medicare &amp; Medicaid Services: the federal agency that writes these rules, checks them, and issues the fines.</dd>
-      </div>
-      <div id="g-template">
-        <dt>CMS template</dt>
-        <dd>Since July 2024 a hospital may not invent its own layout. CMS publishes the exact columns, in an exact order, with exact names, and every file has to match. Before that, every file was compliant and no two were comparable.</dd>
-      </div>
-      <div id="g-cpt">
-        <dt>CPT and HCPCS codes</dt>
-        <dd>National numbering systems for medical procedures, so that &ldquo;chest CT without contrast&rdquo; is the same code on every bill in the country. CPT covers procedures; HCPCS adds drugs, supplies and equipment.</dd>
-      </div>
-      <div id="g-data-dictionary">
-        <dt>Data dictionary</dt>
-        <dd>The document listing every column in the CMS template, what belongs in it, and which values are legal. It is the specification a file is judged against.</dd>
-      </div>
-      <div id="g-drg">
-        <dt>DRG and MS-DRG</dt>
-        <dd>A code for a whole hospital stay rather than a single procedure &mdash; a category such as &ldquo;heart failure, with complications&rdquo; that Medicare pays one flat amount for, however many things happened during it.</dd>
-      </div>
-      <div id="g-setting">
-        <dt>Inpatient and outpatient</dt>
-        <dd>Inpatient means you were formally admitted and stayed. Outpatient means you went home the same day. The identical procedure routinely costs different amounts in each.</dd>
-      </div>
-      <div id="g-percentile">
-        <dt>Median, 10th and 90th percentile</dt>
-        <dd>Ways of describing a spread of numbers. The median is the middle value; the 10th and 90th percentiles sit near the bottom and top of the range. Reported together they show whether payments cluster tightly or vary enormously &mdash; which one average number hides.</dd>
-      </div>
-      <div id="g-methodology">
-        <dt>Methodology</dt>
-        <dd>How a price was arrived at rather than what it is: a flat fee, a rate per day, a rate for a whole case, a percentage of the bill, or &ldquo;other&rdquo;. CMS allows exactly those five answers.</dd>
-      </div>
-      <div id="g-modifier">
-        <dt>Modifier</dt>
-        <dd>A short code attached to a procedure code to say something was different: which side of the body, that it was done twice, that it was harder than usual. Modifiers change the price, which is why the file has to list them.</dd>
-      </div>
-      <div id="g-npi">
-        <dt>NPI</dt>
-        <dd>National Provider Identifier: a ten-digit number identifying a healthcare provider. A &ldquo;type 2&rdquo; NPI identifies an organisation, such as a hospital, rather than a person.</dd>
-      </div>
-      <div id="g-opps">
-        <dt>OPPS/ASC final rule</dt>
-        <dd>The large Medicare payment regulation CMS issues each November, setting what it pays hospitals for outpatient care. CMS uses it as the vehicle for amending the price transparency rules, which is why they change every year.</dd>
-      </div>
-      <div id="g-payer">
-        <dt>Payer</dt>
-        <dd>Whoever actually pays the hospital. Usually an insurance company, sometimes a government programme such as Medicare, sometimes the patient.</dd>
-      </div>
-      <div id="g-plan">
-        <dt>Plan</dt>
-        <dd>One specific insurance product sold by one payer. The same insurer can sell a dozen plans, and each can have agreed a different price with the same hospital for the same procedure. This is why the files get so large.</dd>
-      </div>
-      <div id="g-range-request">
-        <dt>Range request</dt>
-        <dd>Asking a web server for only the first few kilobytes of a file instead of the whole thing. It is how this audit reads the top of a 164&nbsp;MB price file without downloading 164&nbsp;MB.</dd>
-      </div>
-      <div id="g-remittance">
-        <dt>Remittance advice (EDI 835)</dt>
-        <dd>The standard electronic statement an insurer sends a hospital after a claim, setting out what it paid and why. It is the hospital&rsquo;s own record of what it was really paid, which is why CMS makes it the source for the allowed-amount figures.</dd>
-      </div>
-      <div id="g-shoppable">
-        <dt>Shoppable services</dt>
-        <dd>Around 300 common services you can plan ahead for &mdash; an MRI, a birth, a hip replacement. Hospitals must display prices for these in a plain, consumer-facing way. That is a <em>separate</em> duty from the big machine-readable file, and this tracker does not measure it.</dd>
-      </div>
-      <div id="g-standard-charge">
-        <dt>Standard charge</dt>
-        <dd>CMS&rsquo;s umbrella word for <em>all five</em> kinds of price a hospital must publish for every item: the list price, the cash price, the price agreed with each insurer, and the lowest and highest of those agreed prices. There is no single &ldquo;the price&rdquo;.</dd>
-      </div>
-      <div id="g-validator">
-        <dt>Validator</dt>
-        <dd>CMS&rsquo;s own free tool that opens a price file and reports every place it breaks the template&rsquo;s rules. It checks the <em>file</em>; this tracker checks only whether a file can be found and fetched at all.</dd>
-      </div>
-    </dl>
-    <!-- glossary:end -->
-    </section>
-
-    <!-- ===================================================== -->
     <section id="sources">
-      <p class="eyebrow">References</p>
-      <h2>Sources</h2>
-      <p class="lead">Every regulatory claim on this page is cited to its paragraph in the current Code of
-        Federal Regulations. Everything about the template itself comes from CMS&rsquo;s own technical
-        implementation guide, which is the normative specification the regulation points at.</p>
-
-      <ol class="sources">
-        <li id="s1">
-          <b>45 CFR Part 180: Hospital Price Transparency</b>
-          <span class="pub">Electronic Code of Federal Regulations, current text.
-            <a href="https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-E/part-180">ecfr.gov/current/title-45/part-180</a></span>
-          <span class="used"><em>Used for:</em> every definition, requirement, deadline and penalty
-            described on this page. The <span class="cite">&sect;</span> chips beside each heading link
-            straight to the paragraph relied on.</span>
-        </li>
-        <li id="s2">
-          <b>Hospital Price Transparency: technical implementation guide</b>
-          <span class="pub">CMS, <a href="https://github.com/CMSgov/hospital-price-transparency">github.com/CMSgov/hospital-price-transparency</a></span>
-          <span class="used"><em>Used for:</em> the three template layouts, the implementation timeline, and
-            the 1 April 2026 enforcement date for the v3.0 data elements.</span>
-        </li>
-        <li id="s3">
-          <b>Hospital Price Transparency CSV Data Dictionary v3.0</b>
-          <span class="pub">CMS, <a href="https://github.com/CMSgov/hospital-price-transparency/tree/master/documentation/CSV">documentation/CSV</a></span>
-          <span class="used"><em>Used for:</em> column names, the three-row CSV header, valid values for code
-            type and methodology, the treatment of blanks, the percentage-versus-dollar instruction, the
-            allowed-amount calculation window and the <code>1 through 10</code> small-cell rule.</span>
-        </li>
-        <li id="s4">
-          <b>Guide for Updating from Data Dictionary v2.2 to v3.0</b>
-          <span class="pub">CMS, <a href="https://github.com/CMSgov/hospital-price-transparency/blob/master/documentation/UPDATE_GUIDE.md">documentation/UPDATE_GUIDE.md</a></span>
-          <span class="used"><em>Used for:</em> what changed in v3.0: attestation replacing
-            affirmation, the new attester and NPI elements, the renamed location field, and the allowed-amount
-            elements replacing the estimated allowed amount.</span>
-        </li>
-        <li id="s5">
-          <b>CY2024 Hospital Outpatient PPS / ASC final rule</b>
-          <span class="pub">88 FR 82184, 22 November 2023.
-            <a href="https://www.federalregister.gov/documents/2023/11/22/2023-24293/medicare-program-hospital-outpatient-prospective-payment-and-ambulatory-surgical-center-payment">federalregister.gov</a></span>
-          <span class="used"><em>Used for:</em> the introduction of the mandatory CMS template from
-            1 July 2024, and the data elements phased in on 1 January 2025.</span>
-        </li>
-        <li id="s6">
-          <b>Hospital Price Transparency tools: validator, naming wizard, TXT file generator</b>
-          <span class="pub">CMS, <a href="https://cmsgov.github.io/hpt-tool/">cmsgov.github.io/hpt-tool</a></span>
-          <span class="used"><em>Used for:</em> the existence of an official validator that tests a file
-            against the template, which this audit deliberately does not attempt.</span>
-        </li>
-        <li id="s7">
-          <b>CMS HPT Tracker: national crawl, 27 August 2026</b>
-          <span class="pub">This project. Snapshot in <code>data/hpt-audit/</code>; results at
-            <a href="tracker.html">tracker.html</a>.</span>
-          <span class="used"><em>Used for:</em> file counts, formats, total and average file size, declared
-            template versions, and the count of hospitals blocking automated access.</span>
-        </li>
-      </ol>
+      <p class="eyebrow">Sources</p>
+      <h2>Official references</h2>
+      <ul>
+        <li><a href="https://www.ecfr.gov/current/title-45/part-180/section-180.50">45 CFR 180.50</a></li>
+        <li><a href="https://github.com/CMSgov/hospital-price-transparency">CMS templates and documentation</a></li>
+        <li><a href="https://cmsgov.github.io/hpt-tool/">CMS file validator</a></li>
+      </ul>
     </section>
-
   </main>
 </div>
 
@@ -689,22 +141,20 @@ CT scan chest w/o contrast,71250,CPT,outpatient,2841.00,1136.40,UnitedHealthcare
   <div class="nextprev">
     <a href="rules.html">
       <span class="k">Next</span>
-      <b>What CMS requires</b>
-      <span>45 CFR 180 end to end: who is covered, what must be published where, the compliance timeline, and what a penalty actually costs.</span>
+      <b>CMS rules</b>
+      <span>Who is covered, what hospitals publish, and what the tracker checks.</span>
     </a>
     <a href="pointer.html">
       <span class="k">Also</span>
-      <b>The cms-hpt.txt pointer file</b>
-      <span>The four-line file that makes every MRF in the country findable, and the thing this audit is built on.</span>
+      <b>Pointer files</b>
+      <span>How a five-field text file leads software to the full price data.</span>
     </a>
   </div>
 </div>
 
 <footer class="wrap">
-  <p><b>On sourcing.</b> Regulation citations link to the paragraph in the eCFR as currently in force;
-     the eCFR is an unofficial editorial compilation, and the Federal Register documents listed above are
-     the authoritative record of each amendment.</p>
-  <p>This page is an explainer, not legal advice. Where it paraphrases, the regulation governs.</p>
+  <p><b>Sources.</b> Regulatory claims link to the current eCFR and CMS documentation. Prices in the hero are illustrative.</p>
+  <p>This guide is not legal or pricing advice. The regulation governs where a summary differs.</p>
 </footer>
 
 </body>

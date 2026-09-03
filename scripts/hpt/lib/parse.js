@@ -12,8 +12,39 @@ const KEY_ALIASES = {
   'mrf_url': 'mrfUrl',
   'mrfurl': 'mrfUrl',
   'contact-name': 'contactName',
-  'contact-email': 'contactEmail'
+  'contact_name': 'contactName',
+  'contactname': 'contactName',
+  'contact-email': 'contactEmail',
+  'contact_email': 'contactEmail',
+  'contactemail': 'contactEmail'
 };
+
+function valuesOf(value) {
+  return (Array.isArray(value) ? value : [value])
+    .map(v => typeof v === 'string' ? v.trim() : v)
+    .filter(v => v !== null && v !== undefined && v !== '');
+}
+
+function addExtra(entry, key, value) {
+  if (!entry.extraFields) entry.extraFields = {};
+  const prior = entry.extraFields[key];
+  if (prior === undefined) entry.extraFields[key] = value;
+  else entry.extraFields[key] = Array.isArray(prior) ? [...prior, value] : [prior, value];
+}
+
+function finishEntry(entry) {
+  if (!entry) return null;
+  const urls = valuesOf(entry.mrfUrls && entry.mrfUrls.length ? entry.mrfUrls : entry.mrfUrl);
+  if (urls.length) {
+    entry.mrfUrls = [...new Set(urls.map(String))];
+    entry.mrfUrl = entry.mrfUrls[0];
+  } else {
+    delete entry.mrfUrls;
+    delete entry.mrfUrl;
+  }
+  if (entry.extraFields && !Object.keys(entry.extraFields).length) delete entry.extraFields;
+  return entry;
+}
 
 /**
  * Parse a cms-hpt.txt body into location entries.
@@ -32,13 +63,20 @@ function parsePointer(body) {
       const j = JSON.parse(text);
       const arr = Array.isArray(j) ? j : (Array.isArray(j.locations) ? j.locations : [j]);
       const entries = arr.map(o => {
-        const e = {};
+        const e = { mrfUrls: [] };
         for (const [k, v] of Object.entries(o || {})) {
-          const key = KEY_ALIASES[String(k).toLowerCase()] || k;
-          e[key] = typeof v === 'string' ? v.trim() : v;
+          const key = KEY_ALIASES[String(k).toLowerCase()];
+          if (key === 'mrfUrl') {
+            for (const url of valuesOf(v)) if (!e.mrfUrls.includes(String(url))) e.mrfUrls.push(String(url));
+          } else if (key) {
+            const vals = valuesOf(v);
+            e[key] = vals.length <= 1 ? (vals[0] === undefined ? '' : vals[0]) : vals;
+          } else {
+            addExtra(e, k, v);
+          }
         }
-        return e;
-      }).filter(e => e.locationName || e.mrfUrl);
+        return finishEntry(e);
+      }).filter(e => e && (e.locationName || e.mrfUrl || e.sourcePageUrl || e.extraFields));
       if (entries.length) return { entries, format: 'json' };
     } catch (_e) { /* fall through to text parsing */ }
   }
@@ -50,9 +88,10 @@ function parsePointer(body) {
     if (!line || line.startsWith('#')) continue;
     const m = line.match(/^([A-Za-z][A-Za-z0-9_-]*)\s*:\s*(.*)$/);
     if (!m) continue;
-    const key = KEY_ALIASES[m[1].toLowerCase()];
+    const rawKey = m[1];
+    const key = KEY_ALIASES[rawKey.toLowerCase()];
     const val = m[2].trim();
-    if (!key || !val) continue;
+    if (!val) continue;
 
     if (key === 'locationName') {
       if (cur) entries.push(cur);
@@ -61,15 +100,14 @@ function parsePointer(body) {
     }
     if (!cur) cur = { locationName: '', mrfUrls: [] };
     if (key === 'mrfUrl') { if (!cur.mrfUrls.includes(val)) cur.mrfUrls.push(val); }
-    else cur[key] = val;
+    else if (key) cur[key] = val;
+    else addExtra(cur, rawKey, val);
   }
   if (cur) entries.push(cur);
 
-  for (const e of entries) {
-    if (!e.mrfUrl && e.mrfUrls && e.mrfUrls.length) e.mrfUrl = e.mrfUrls[0];
-    if (e.mrfUrls && !e.mrfUrls.length) delete e.mrfUrls;
-  }
-  return { entries: entries.filter(e => e.locationName || e.mrfUrl), format: 'txt' };
+  const finished = entries.map(finishEntry)
+    .filter(e => e && (e.locationName || e.mrfUrl || e.sourcePageUrl || e.extraFields));
+  return { entries: finished, format: 'txt' };
 }
 
 /**

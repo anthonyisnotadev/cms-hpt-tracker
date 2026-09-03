@@ -8,7 +8,7 @@
  * cheapest provider with adequate recall the right choice, and it is why the
  * default is Serper (2,500 free queries) rather than Exa ($7/1k).
  *
- * Select with HPT_SEARCH=serper|decodo|dataforseo|exa.
+ * Select with HPT_SEARCH=serper|decodo|exa.
  */
 
 /** Result hosts that are never a hospital's own site. */
@@ -45,25 +45,6 @@ const PROVIDERS = {
       const content = j && j.results && j.results[0] && j.results[0].content;
       const organic = (content && content.results && content.results.organic) || [];
       return { results: organic.slice(0, num).map(o => ({ url: o.url || o.link, title: o.title || '' })) };
-    }
-  },
-
-  /** DataForSEO — $0.60/1k on the live endpoint used here. */
-  dataforseo: {
-    envKeys: ['DATAFORSEO_LOGIN', 'DATAFORSEO_PASSWORD'],
-    async search(query, { num = 8, timeoutMs = 60000 } = {}) {
-      const auth = Buffer.from(`${process.env.DATAFORSEO_LOGIN}:${process.env.DATAFORSEO_PASSWORD}`).toString('base64');
-      const r = await withTimeout(timeoutMs, signal => fetch('https://api.dataforseo.com/v3/serp/google/organic/live/advanced', {
-        method: 'POST', signal,
-        headers: { Authorization: 'Basic ' + auth, 'Content-Type': 'application/json' },
-        body: JSON.stringify([{ keyword: query, location_code: 2840, language_code: 'en', depth: num }])
-      }));
-      if (!r.ok) return { results: [], error: `dataforseo http ${r.status}` };
-      const j = await r.json();
-      const task = (j.tasks || [])[0] || {};
-      const first = (task.result || [])[0] || {};
-      const items = (first.items || []).filter(it => it && it.type === 'organic' && it.url);
-      return { results: items.slice(0, num).map(it => ({ url: it.url, title: it.title || '' })) };
     }
   },
 

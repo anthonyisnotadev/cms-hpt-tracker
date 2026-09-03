@@ -1,4 +1,4 @@
-/* Outreach store: notes and a log of emails you sent, keyed by CCN.
+/* Outreach store: notes and a log of sent emails, keyed by CCN.
  *
  * Talks to /api/outreach when a server is serving the page. Failing that, a
  * browser that already has local edits keeps using them (localStorage), and
@@ -241,8 +241,35 @@
 
   function hasLocalRecords() {
     try {
-      return !!(global.localStorage.getItem(LOCAL_KEY) || global.localStorage.getItem(LEGACY_LOCAL_KEY));
+      var raw = global.localStorage.getItem(LOCAL_KEY) || global.localStorage.getItem(LEGACY_LOCAL_KEY);
+      if (!raw) return false;
+      var parsed = JSON.parse(raw);
+      return Object.keys(parsed || {}).some(function (key) {
+        return key !== '__proto__' && key !== 'constructor' && key !== 'prototype';
+      });
     } catch (e) { return false; }
+  }
+
+  function usePublished(j) {
+    var next = Object.create(null);
+    Object.keys(j || {}).forEach(function (k) {
+      if (k === '__proto__' || k === 'constructor' || k === 'prototype') return;
+      next[k] = j[k];
+    });
+    records = next;
+    mode = 'published';
+    return 'published';
+  }
+
+  // build-tracker.js embeds the redacted snapshot so tracker.html remains useful
+  // when opened directly from disk, where browsers refuse fetch(file://...).
+  function embeddedPublished() {
+    try {
+      var node = global.document && global.document.getElementById('tracker-data');
+      if (!node) return null;
+      var data = JSON.parse(node.textContent || '{}');
+      return data && data.outreach && Object.keys(data.outreach).length ? data.outreach : null;
+    } catch (e) { return null; }
   }
 
   // Seeds a fresh browser from the published redacted copy. Once this browser
@@ -255,21 +282,19 @@
         return r.json();
       })
       .then(function (j) {
-        var next = Object.create(null);
-        Object.keys(j || {}).forEach(function (k) {
-          if (k === '__proto__' || k === 'constructor' || k === 'prototype') return;
-          next[k] = j[k];
-        });
-        records = next;
-        mode = 'published';
-        return 'published';
+        return usePublished(j);
       });
   }
 
   var ready = (function () {
     if (typeof fetch !== 'function' || !/^https?:$/.test(global.location.protocol)) {
-      records = localRead();
-      return Promise.resolve('local');
+      if (hasLocalRecords()) {
+        records = localRead();
+        mode = 'local';
+        return Promise.resolve('local');
+      }
+      var embedded = embeddedPublished();
+      return Promise.resolve(embedded ? usePublished(embedded) : 'local');
     }
     return fetch('/api/outreach', { headers: { Accept: 'application/json' } })
       .then(function (r) {
@@ -289,6 +314,8 @@
           mode = 'local';
           return 'local';
         }
+        var embedded = embeddedPublished();
+        if (embedded) return usePublished(embedded);
         return fetchPublished().catch(function () {
           records = localRead();
           mode = 'local';
@@ -348,7 +375,7 @@
       return Promise.resolve(rec);
     },
 
-    /* Append a note or an email you already sent. */
+    /* Append a note or an email that was already sent. */
     addEntry: function (ccn, input) {
       if (!ccn) return Promise.reject(new Error('ccn required'));
       input = input || {};
@@ -393,8 +420,8 @@
     },
 
     /* A manual correction to the audit snapshot, the domain or file the crawl
-       missed, and whether you judged it current. Kept in its own block so the
-       UI can always show it as your finding rather than the crawler's.
+       missed, and whether it was judged current. Kept in its own block so the
+       UI can always identify it as a manual finding rather than the crawler's.
        Pass { clear: true } to drop it. */
     setCorrection: function (ccn, fields) {
       if (!ccn) return Promise.reject(new Error('ccn required'));
@@ -460,7 +487,7 @@
     },
 
     /* Correct an entry in place. Delete-then-re-add would mint a new id and a new
-       `at`, quietly rewriting when you logged the thing; here both survive and
+       `at`, quietly rewriting the logged time; here both survive and
        `editedAt` records that it was revised. Omitted fields keep their current
        value, and `kind` cannot change.
 

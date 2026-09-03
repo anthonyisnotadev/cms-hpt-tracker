@@ -17,14 +17,29 @@
     "gaps": "node scripts/hpt/run.js gaps",
     "report": "node scripts/hpt/run.js report",
     "audit": "node scripts/hpt/run.js audit",
+    "recover:llm": "node scripts/hpt/run.js recover --llm",
+    "outreach:prep": "node scripts/hpt/outreach-prep.js",
     "geocode": "node scripts/hpt/geocode.js",
+    "export:pointers": "node scripts/export-pointers.js",
+    "export:pointers:check": "node scripts/export-pointers.js --check",
     "build": "node scripts/build-glossary.js && node scripts/build-tracker.js",
-    "serve": "npx --yes http-server . -p 8081 -c-1",
+    "serve": "node scripts/site-server.js",
     "serve:outreach": "node scripts/outreach-server.js",
     "outreach": "node scripts/outreach-cli.js",
-    "redact": "node scripts/outreach-redact.js"
+    "redact": "node scripts/outreach-redact.js",
+    "find:domains": "node scripts/hpt/find-domains.js",
+    "obfuscate:pointers": "node scripts/hpt/obfuscate-pointers.js",
+    "check:pointers-private": "node scripts/hpt/obfuscate-pointers.js --check",
+    "hpt:pointers:corpus": "node scripts/hpt/pointer-corpus.js",
+    "hpt:pointers:headers": "node scripts/hpt/probe-pointer-corpus.js",
+    "hpt:direct-mrf:prepare": "node scripts/hpt/direct-mrf-corpus.js",
+    "hpt:direct-mrf:headers": "node scripts/hpt/probe-pointer-corpus.js --input=cms_data/hpt/new/direct_mrf_entries.csv --out=cms_data/hpt/new/direct_mrf_headers.csv --cache=cms_data/hpt/direct-mrf/mrf-header-cache.json --concurrency=30 --per-host=4",
+    "hpt:direct-mrf": "npm run hpt:direct-mrf:prepare && npm run hpt:direct-mrf:headers",
+    "hpt:combine-corpus": "node scripts/hpt/combine-corpus.js",
+    "test": "node --test scripts/hpt/test/*.test.js"
   },
   "dependencies": {
+    "cheerio": "^1.0.0",
     "dotenv": "^16.4.5"
   }
 }

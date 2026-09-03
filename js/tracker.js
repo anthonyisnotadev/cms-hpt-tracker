@@ -148,13 +148,13 @@
       role: 'judged',
       k: 'Reached and judged',
       n: judged,
-      note: 'A pointer file resolved and a verdict could be formed.',
+      note: 'Enough files opened to give a result.',
     },
     {
       role: 'unreached',
       k: 'Never reached',
       n: byTier.unknown,
-      note: 'No working website on record, so no request was ever sent.',
+      note: 'No working website was available to check.',
     },
   ].map(function (c) {
     return '<div class="cov" data-role="' + c.role + '">'
@@ -177,13 +177,10 @@
   }).join('');
 
   $('readout-foot').innerHTML =
-    'Of the <b>' + fmt.format(judged) + '</b> hospitals the crawl reached and could judge, '
-    + '<b>' + pct(byTier.compliant, judged).toFixed(1) + '%</b> had a live, current file. '
-    + 'But that rate only describes the hospitals we could open. <b>'
-    + fmt.format(byTier.unknown) + '</b> more, ' + pct1(byTier.unknown, T.hospitals)
-    + ' of the registry, have no working website on record, so no request was ever sent. '
-    + 'That is the second-largest group in the data, and the largest single thing this audit '
-    + 'cannot answer.';
+    'A live, current file was found for <b>' + pct(byTier.compliant, judged).toFixed(1)
+    + '%</b> of the <b>' + fmt.format(judged) + '</b> hospitals with a result. '
+    + 'No result was possible for <b>' + fmt.format(byTier.unknown) + '</b> hospitals ('
+    + pct1(byTier.unknown, T.hospitals) + ' of the registry).';
 
   function tierTip(key) {
     var t = TIER_META[key];
@@ -199,8 +196,8 @@
   /* ---------- tiles ---------- */
   var over = D.freshness[D.freshness.length - 1].n;
   $('tiles').innerHTML = [
-    { l: 'Pointer files fetched', v: fmt.format(T.hospitals), n: 'one request per hospital on the registry' },
-    { l: 'Charge files read', v: fmt.format(T.filesRead), n: 'headers parsed for version and update date' },
+    { l: 'Hospitals checked', v: fmt.format(T.hospitals), n: 'one pointer request per hospital' },
+    { l: 'Charge files opened', v: fmt.format(T.filesRead), n: 'checked for version and update date' },
     { l: 'Data downloaded', v: T.terabytes >= 1 ? T.terabytes.toFixed(2) + ' TB' : Math.round(T.terabytes * 1000) + ' GB',
       n: 'across the charge files that answered' },
     { l: 'Median file age', v: T.medianAge + ' days', n: over + ' files are past the twelve-month mark' }
@@ -316,7 +313,7 @@
   /* ---------- register ---------- */
   // LON/LAT come from scripts/hpt/geocode.js by way of the build. APPROX is 1
   // when the point is the centre of the hospital's ZIP rather than its address.
-  var C = { CCN: 0, NAME: 1, CITY: 2, STATE: 3, TYPE: 4, FIND: 5, DAYS: 6, TMPL: 7, MRF: 8, PTR: 9, EV: 10, FMT: 11, BYTES: 12, UPD: 13, LON: 14, LAT: 15, APPROX: 16 };
+  var C = { CCN: 0, NAME: 1, CITY: 2, STATE: 3, TYPE: 4, FIND: 5, DAYS: 6, TMPL: 7, MRF: 8, PTR: 9, EV: 10, FMT: 11, BYTES: 12, UPD: 13, LON: 14, LAT: 15, APPROX: 16, CHECKED: 17, SOURCE: 18 };
   var findingMeta = D.dict.findings.map(function (k) {
     return D.findings.filter(function (f) { return f.key === k; })[0];
   });
@@ -362,7 +359,7 @@
     { key: 'any', label: 'Has outreach' },
     { key: 'awaiting-reply', label: 'Awaiting reply' },
     { key: 'due', label: 'Follow-up due' },
-    { key: 'corrected', label: 'Corrected by me' },
+    { key: 'corrected', label: 'Manually corrected' },
     { key: 'none', label: 'Not contacted' },
   ];
 
@@ -487,7 +484,8 @@
     }
     if (key === 'links') {
       return (((corr && corr.mrfUrl) || r[C.MRF]) ? 1 : 0)
-        + (((corr && corr.pointerUrl) || r[C.PTR]) ? 1 : 0);
+        + (((corr && corr.pointerUrl) || r[C.PTR]) ? 1 : 0)
+        + (r[C.SOURCE] ? 1 : 0);
     }
     if (key === 'outreach') {
       var rec = OC.get(r[C.CCN]);
@@ -732,7 +730,7 @@
         + '<span class="dash">not read</span></span>';
     }
     var cls = 'cell-age' + (d > 365 ? ' stale' : '') + (edited ? ' edited' : '');
-    return '<span class="' + cls + '"' + (edited ? ' title="From your correction, not the crawl"' : '')
+    return '<span class="' + cls + '"' + (edited ? ' title="From a manual correction, not the crawl"' : '')
       + '>' + d + 'd' + (edited ? '<sup>*</sup>' : '') + '</span>';
   }
 
@@ -770,27 +768,29 @@
     var f = findingMeta[r[C.FIND]];
     var corr = correctionOf(r[C.CCN]);
 
-    // A correction can override the verdict, but it is always badged as yours.
+    // A correction can override the verdict, but it is always identified as manual.
     var tier = f.tier;
     var short = TIER_META[tier].short;
     var badgeExtra = '';
     if (corr && corr.verdict) {
       tier = corr.verdict;
       short = TIER_META[tier].short;
-      badgeExtra = ' data-edited="1" title="Your correction of '
+      badgeExtra = ' data-edited="1" title="Manual correction from '
         + esc(corr.checkedOn || '') + '. The crawl found: ' + esc(f.label) + '"';
     }
 
     var mrf = (corr && corr.mrfUrl) || r[C.MRF];
     var ptr = (corr && corr.pointerUrl) || r[C.PTR];
+    var source = r[C.SOURCE];
     var edited = corr && (corr.mrfUrl || corr.pointerUrl) ? ' data-edited="1"' : '';
     var links = '';
     if (mrf) links += '<a class="linkbtn"' + edited + ' href="' + esc(mrf) + '" target="_blank" rel="noopener noreferrer">FILE</a>';
     if (ptr) links += '<a class="linkbtn"' + edited + ' href="' + esc(ptr) + '" target="_blank" rel="noopener noreferrer">PTR</a>';
+    if (source) links += '<a class="linkbtn" href="' + esc(source) + '" target="_blank" rel="noopener noreferrer">PAGE</a>';
     if (!links) links = '<span class="linkbtn" style="border-color:transparent;color:var(--ink-3)">none</span>';
 
     var why = corr && corr.verdict
-      ? '<b>' + esc(TIER_META[tier].label) + ' (your correction)</b><span>'
+      ? '<b>' + esc(TIER_META[tier].label) + ' (manual correction)</b><span>'
         + esc(corr.note || ('Crawl found: ' + f.label)) + '</span>'
       : '<b>' + f.label + '</b><span>' + esc(r[C.EV] || f.blurb) + '</span>';
 
@@ -864,7 +864,7 @@
       clearTimeout(debounce);
       debounce = setTimeout(function () { setQuery(navQ.value, qInput); }, 120);
     });
-    // Enter takes you to the results rather than submitting anything.
+    // Enter moves focus to the results rather than submitting anything.
     navQ.addEventListener('keydown', function (ev) {
       if (ev.key !== 'Enter') return;
       ev.preventDefault();
@@ -963,41 +963,43 @@
       days: r[C.DAYS],
       mrf: r[C.MRF],
       ptr: r[C.PTR],
+      source: r[C.SOURCE],
       lon: r[C.LON],
       lat: r[C.LAT],
       approx: r[C.APPROX] === 1,
+      checkedAt: r[C.CHECKED] || D.generated || '',
     };
   }
 
   /* ---- email template, tailored to what the audit actually found ---- */
   var TEMPLATE_BY_FINDING = {
-    'mrf-url-unreachable': 'The link in your cms-hpt.txt file points to a standard charges file that we could not retrieve; the URL returns an error. Could you confirm the correct location, or update the pointer file?',
-    'mrf-stale-over-365-days': 'The standard charges file we retrieved was last updated more than twelve months ago. 45 CFR 180.50 asks for an update at least once a year. Is a newer version available?',
-    'old-template-version': 'The standard charges file we retrieved declares an older CMS template version. The current schema is 3.0.0. Is an updated file available?',
-    'no-cms-hpt-txt-published': 'We could reach your website, but found no cms-hpt.txt pointer file at the root or under /.well-known/. Could you confirm where your machine-readable standard charges file is published?',
+    'mrf-url-unreachable': 'The link in your cms-hpt.txt file points to a standard charges file that returned an error. Could you confirm the correct location, or update the pointer file?',
+    'mrf-stale-over-365-days': 'The retrieved standard charges file was last updated more than twelve months ago. 45 CFR 180.50 asks for an update at least once a year. Is a newer version available?',
+    'old-template-version': 'The retrieved standard charges file declares an older CMS template version. The current schema is 3.0.0. Is an updated file available?',
+    'no-cms-hpt-txt-published': 'The website opened, but no cms-hpt.txt pointer file was found at the root or under /.well-known/. Could you confirm where the machine-readable standard charges file is published?',
     'pointer-blocked-to-automation': 'Requests for your cms-hpt.txt file are being refused (HTTP 403/429), which prevents automated retrieval of your standard charges file. Could you confirm the file is publicly reachable without a browser?',
     'mrf-blocked-to-automation': 'Your pointer file resolves, but the standard charges file itself refuses automated requests. Could you confirm it is reachable without a browser?',
-    'not-assessed-domain-unknown': 'We are compiling published hospital standard charges files and could not find a website on record for your facility. Could you point us to where your machine-readable file is published?',
-    'not-assessed-site-unreachable': 'We were unable to reach the website we have on record for your facility. Could you confirm the correct domain and where your machine-readable standard charges file is published?',
+    'not-assessed-domain-unknown': 'No website was found on record for your facility. Could you provide the location of its machine-readable file?',
+    'not-assessed-site-unreachable': 'The website on record for your facility did not open. Could you confirm the correct domain and location of the machine-readable standard charges file?',
     // Deliberately not phrased as a compliance complaint: the omission may be
     // ours. We found their system's file and simply could not see this hospital
     // in it, so the ask is which entry corresponds to this facility.
-    'not-assessed-not-named-in-file': 'We located a cms-hpt.txt pointer file on your health system’s website, but we could not find an entry that corresponds to this facility. Could you tell us which location entry covers it, or where its own machine-readable file is published?',
-    'compliant-date-unverified': 'We retrieved your standard charges file successfully, but could not read a last_updated_on value from it, so we cannot tell when it was last refreshed. Could you confirm the date it was last updated?',
-    'pointer-lists-no-mrf-url': 'Your cms-hpt.txt names this facility, but the entry does not include an mrf-url pointing at the standard charges file. 45 CFR 180.50(d)(6) asks for a direct link. Could you add it, or tell us where the file lives?',
+    'not-assessed-not-named-in-file': 'A cms-hpt.txt pointer file was found on your health system’s website, but no entry could be matched to this facility. Could you identify the entry that covers it, or provide its machine-readable file?',
+    'compliant-date-unverified': 'The standard charges file opened, but no last_updated_on value could be read. Could you confirm the date it was last updated?',
+    'pointer-lists-no-mrf-url': 'Your cms-hpt.txt names this facility, but the entry does not include an mrf-url pointing at the standard charges file. 45 CFR 180.50(d)(6) asks for a direct link. Could you add it, or provide the file location?',
   };
 
   function templateFor(h) {
     var lines = [
       'Hello,',
       '',
-      'I am writing about the machine-readable standard charges file that '
+      'This message concerns the machine-readable standard charges file that '
         + h.name + ' publishes under the Hospital Price Transparency rule (45 CFR 180).',
       '',
       TEMPLATE_BY_FINDING[h.finding.key]
-        || 'I am compiling published hospital standard charges files and had a question about yours.',
+        || 'A question came up while reviewing the published standard charges file.',
     ];
-    if (h.evidence) lines.push('', 'What we observed: ' + h.evidence);
+    if (h.evidence) lines.push('', 'Observed: ' + h.evidence);
     if (h.ptr) lines.push('Pointer file: ' + h.ptr);
     if (h.mrf) lines.push('Charges file: ' + h.mrf);
     lines.push('', 'Thank you,', '');
@@ -1185,7 +1187,7 @@
   function drawerRecord() { return (openCcn && OC.get(openCcn)) || null; }
 
   // Which entry is open for editing, if any. Held here rather than in the DOM so
-  // a re-render from any other write keeps the form open with what you typed
+  // a re-render from any other write keeps the form open with the entered text
   // still on screen, and cleared whenever the drawer changes hospital.
   var editingId = null;
 
@@ -1224,10 +1226,63 @@
       + '</div><p class="oc-hint" id="oc-e-state"></p></div>';
   }
 
+  function findingLinks(pointerUrl, mrfUrl, edited, sourceUrl) {
+    var links = '';
+    if (pointerUrl) links += '<a class="linkbtn"' + (edited ? ' data-edited="1"' : '')
+      + ' href="' + esc(pointerUrl) + '" target="_blank" rel="noopener noreferrer">POINTER</a>';
+    if (mrfUrl) links += '<a class="linkbtn"' + (edited ? ' data-edited="1"' : '')
+      + ' href="' + esc(mrfUrl) + '" target="_blank" rel="noopener noreferrer">FILE</a>';
+    if (sourceUrl) links += '<a class="linkbtn" href="' + esc(sourceUrl)
+      + '" target="_blank" rel="noopener noreferrer">PAGE</a>';
+    return links ? '<div class="oc-ev-links">' + links + '</div>' : '';
+  }
+
+  function findingEntry(item) {
+    var head = '<div class="oc-ev-top">'
+      + '<span class="oc-ev-kind" data-kind="finding" data-tier="' + esc(item.tier) + '">Finding</span>'
+      + (item.source === 'correction' ? '<span class="oc-ev-edited">manual correction</span>' : '<span class="oc-ev-edited">crawl</span>')
+      + '<span class="oc-ev-when">' + esc(item.when) + '</span></div>';
+    return '<div class="oc-ev" data-history-kind="finding">' + head
+      + '<p class="oc-ev-subject">' + esc(item.label) + '</p>'
+      + (item.text ? '<p class="oc-ev-text">' + esc(item.text) + '</p>' : '')
+      + findingLinks(item.pointerUrl, item.mrfUrl, item.source === 'correction', item.sourcePage)
+      + '</div>';
+  }
+
   function renderTimeline() {
+    var h = hospitalOf(openCcn);
     var rec = drawerRecord();
     var entries = rec ? (rec.entries || []) : [];
-    if (!entries.length) {
+    var items = entries.map(function (e, i) {
+      var when = e.kind === 'email' ? (e.sentAt || String(e.at).slice(0, 10)) : String(e.at).slice(0, 10);
+      return { type: 'entry', entry: e, when: when, priority: 2, order: i };
+    });
+
+    // Findings are read-only timeline events. The crawl remains visible when a
+    // manual correction becomes the standing verdict, preserving both pieces
+    // of provenance without copying either one into the editable outreach log.
+    if (h) {
+      items.push({
+        type: 'finding', source: 'crawl', when: String(h.checkedAt || '').slice(0, 10),
+        tier: h.finding.tier, label: h.finding.label,
+        text: h.evidence || h.finding.blurb, pointerUrl: h.ptr, mrfUrl: h.mrf, sourcePage: h.source,
+        priority: 1, order: items.length,
+      });
+    }
+    if (h && rec && rec.correction) {
+      var corr = rec.correction;
+      var corrTier = corr.verdict || h.finding.tier;
+      items.push({
+        type: 'finding', source: 'correction', when: corr.checkedOn || String(rec.updatedAt || '').slice(0, 10),
+        tier: corrTier,
+        label: corr.verdict ? TIER_META[corrTier].short + ' (manual correction)' : 'Manual correction',
+        text: corr.note || 'Manual correction recorded.',
+        pointerUrl: corr.pointerUrl, mrfUrl: corr.mrfUrl,
+        priority: 3, order: items.length,
+      });
+    }
+
+    if (!items.length) {
       $('oc-timeline').innerHTML = '<p class="oc-hint">Nothing logged yet.</p>';
       return;
     }
@@ -1235,13 +1290,20 @@
     // terminal. Drop the flag rather than rendering a form for nothing.
     if (editingId && !entries.some(function (e) { return e.id === editingId; })) editingId = null;
 
-    $('oc-timeline').innerHTML = entries.map(function (e) {
+    items.sort(function (a, b) {
+      if (a.when !== b.when) return a.when < b.when ? 1 : -1;
+      if (a.priority !== b.priority) return b.priority - a.priority;
+      return a.order - b.order;
+    });
+
+    $('oc-timeline').innerHTML = items.map(function (item) {
+      if (item.type === 'finding') return findingEntry(item);
+      var e = item.entry;
       var editing = e.id === editingId;
-      var when = e.kind === 'email' ? (e.sentAt || String(e.at).slice(0, 10)) : String(e.at).slice(0, 10);
       var head = '<div class="oc-ev-top">'
         + '<span class="oc-ev-kind" data-kind="' + e.kind + '">' + (e.kind === 'email' ? 'Email' : 'Note') + '</span>'
         + (e.editedAt ? '<span class="oc-ev-edited">edited ' + esc(String(e.editedAt).slice(0, 10)) + '</span>' : '')
-        + '<span class="oc-ev-when">' + esc(when) + '</span></div>';
+        + '<span class="oc-ev-when">' + esc(item.when) + '</span></div>';
       var open = '<div class="oc-ev" data-id="' + esc(e.id) + '"'
         + (editing ? ' data-editing="1"' : '') + '>' + head;
       if (editing) return open + entryForm(e) + '</div>';
@@ -1286,7 +1348,7 @@
       // original finding stays visible beside it rather than being replaced.
       var tier = corr && corr.verdict ? corr.verdict : h.finding.tier;
       tags += '<span class="badge" data-tier="' + tier + '"'
-        + (corr && corr.verdict ? ' data-edited="1" title="Your correction"' : '')
+        + (corr && corr.verdict ? ' data-edited="1" title="Manual correction"' : '')
         + '>' + TIER_META[tier].short + '</span>';
       if (corr && corr.verdict && corr.verdict !== h.finding.tier) {
         tags += '<span class="oc-stage" title="What the crawl found on '
@@ -1300,6 +1362,8 @@
         + ' href="' + esc(ptr) + '" target="_blank" rel="noopener noreferrer">POINTER</a>';
       if (mrf) tags += '<a class="linkbtn"' + (corr && corr.mrfUrl ? ' data-edited="1"' : '')
         + ' href="' + esc(mrf) + '" target="_blank" rel="noopener noreferrer">FILE</a>';
+      if (h.source) tags += '<a class="linkbtn" href="' + esc(h.source)
+        + '" target="_blank" rel="noopener noreferrer">PAGE</a>';
     }
     $('oc-tags').innerHTML = tags;
     // Passed the same tier the badge just used, so correcting a verdict
@@ -1330,13 +1394,13 @@
     $('oc-note').value = '';
     if ($('oc-email-advance')) $('oc-email-advance').checked = true;
     // Every hospital opens on the same task. Logging an email is the common
-    // case, and a panel that remembered the last one would mean the form you
-    // get depends on the hospital you happened to open before this one.
+    // case, and a panel that remembered the last one would make the form depend
+    // on whichever hospital was opened previously.
     setTask('email');
     $('oc-email-state').textContent = '';
     $('oc-note-state').textContent = '';
     $('oc-c-discards').textContent = '';
-    // An entry form left open belongs to the hospital you were just looking at.
+    // An entry form left open belongs to the previously viewed hospital.
     editingId = null;
     // A different hospital's correction must replace whatever is in the form.
     renderDrawer(true);
@@ -1358,7 +1422,7 @@
     if (!openCcn) return;
     openCcn = null;
     // An edit made in the drawer can change where its row belongs in the
-    // current sort. Moving it while you are still typing would be hostile,
+    // current sort. Moving it during data entry would be hostile,
     // so the re-order waits until the drawer is out of the way.
     if (sortStale) { sortStale = false; resort(); }
     drawer.classList.remove('on');
@@ -1387,7 +1451,7 @@
 
   // Rows are re-rendered constantly by the virtualiser, so delegate. The whole
   // row opens the drawer, not just the name: on a 64px row the name was a 34px
-  // target you had to know about, and on the phone card it left most of the
+  // target that required prior knowledge, and on the phone card it left most of the
   // card inert. The Log button needs no case of its own, it sits inside a row
   // that carries the same CCN.
   canvas.addEventListener('click', function (e) {
@@ -1568,7 +1632,7 @@
   });
 
   $('oc-c-clear').addEventListener('click', function () {
-    if (!window.confirm('Remove your correction and show what the crawl found?')) return;
+    if (!window.confirm('Remove the manual correction and show what the crawl found?')) return;
     OC.setCorrection(openCcn, { clear: true })
       .then(function () { renderDrawer(true); }).catch(warn);
   });
@@ -1671,7 +1735,7 @@
         : { text: $('oc-e-text').value };
       OC.editEntry(openCcn, editingId, fields).then(function () {
         // Stay in the form when something was coerced, so the message has
-        // somewhere to land and you can see what the field became. Render before
+        // somewhere to land and the resulting field value remains visible. Render before
         // reporting, or the re-render wipes the slot the message goes into.
         var coerced = OC.lastDiscards().length > 0;
         if (!coerced) editingId = null;
@@ -1723,7 +1787,7 @@
       { l: 'Hospitals in the file', v: fmt.format(withActivity.length), n: 'with at least one note or email' },
       { l: 'Emails logged', v: fmt.format(emails), n: notes + ' notes alongside them' },
       { l: 'Awaiting reply', v: fmt.format(awaiting), n: 'sent, nothing back yet' },
-      { l: 'Records corrected', v: fmt.format(corrected), n: 'your findings, kept out of the audit totals' },
+      { l: 'Records corrected', v: fmt.format(corrected), n: 'manual findings, excluded from audit totals' },
       { l: 'Follow-ups due', v: fmt.format(due), n: due ? 'on or before today' : 'nothing overdue' },
     ].map(function (t) {
       return '<div class="tile"><div class="t-label">' + t.l + '</div>'
@@ -1795,7 +1859,7 @@
     $('oc-mode-note').textContent = mode === 'server'
       ? 'Saved to cms_data/outreach.json, shared by every browser that opens this server.'
       : mode === 'published'
-      ? 'Showing the published log from cms_data/outreach.public.json. No server reachable, so anything you add here stays in this browser only.'
+      ? 'Showing the published log from cms_data/outreach.public.json. No server is reachable, so new entries remain in this browser only.'
       : 'No server reachable, so records live in this browser’s localStorage. Export to move them.';
   }
   $('oc-export').addEventListener('click', function () {
@@ -1905,7 +1969,7 @@
       fx.strokeRect(m.x + 0.5, m.y + 0.5, m.s - 1, m.s - 1);
     }
     if (t.edited) {
-      // Your corrections carry an ink outline so they read as yours in the texture.
+      // Manual corrections carry an ink outline so their provenance remains visible in the texture.
       fx.strokeStyle = colors.ink;
       fx.lineWidth = 1;
       fx.strokeRect(m.x - 0.5, m.y - 0.5, m.s + 1, m.s + 1);
@@ -1983,7 +2047,7 @@
     showTip('<b>' + esc(titleCase(r[C.NAME])) + '</b>'
       + esc(titleCase(r[C.CITY])) + ', ' + D.dict.states[r[C.STATE]]
       + ' &middot; <span class="tn">' + esc(r[C.CCN]) + '</span><br>'
-      + TIER_META[t.tier].label + (t.edited ? ' (your correction)' : ''), ev);
+      + TIER_META[t.tier].label + (t.edited ? ' (manual correction)' : ''), ev);
   });
   fieldEl.addEventListener('mouseleave', function () {
     hoverIdx = -1;
@@ -2030,7 +2094,7 @@
       || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   }
   // The control names what it will do, not what it is: pressing "Dark" gives
-  // you dark. "Theme" named the noun and left you to guess the verb.
+  // dark mode. "Theme" named the noun without identifying the action.
   function paintToggle() {
     var next = currentTheme() === 'dark' ? 'Light' : 'Dark';
     toggle.textContent = next;

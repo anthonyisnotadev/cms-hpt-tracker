@@ -20,8 +20,11 @@ function looksLikePointer(body) {
   if (/^\s*[[{]/.test(s.trim())) {
     try {
       const j = JSON.parse(s);
-      const arr = Array.isArray(j) ? j : [j];
-      if (arr.some(o => o && (o['mrf-url'] || o.mrfUrl || o['location-name']))) return true;
+      const arr = Array.isArray(j) ? j : (Array.isArray(j && j.locations) ? j.locations : [j]);
+      if (arr.some(o => o && (
+        o['mrf-url'] || o.mrf_url || o.mrfUrl ||
+        o['location-name'] || o.location_name || o.locationName
+      ))) return true;
     } catch (_e) { /* fall through to key:value sniffing */ }
   }
   return /mrf-url\s*:/i.test(s) || (/location-name\s*:/i.test(s) && /source-page-url\s*:/i.test(s));
@@ -41,13 +44,31 @@ function classify(status, body) {
 }
 
 /** Plain, free fetch. No proxy, no cost. */
-async function directGet(url, { timeoutMs = 20000 } = {}) {
+async function readTextCapped(res, maxBytes) {
+  if (!maxBytes) return { body: await res.text(), tooLarge: false };
+  const reader = res.body.getReader();
+  const chunks = [];
+  let total = 0;
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    total += value.byteLength;
+    if (total > maxBytes) {
+      try { await reader.cancel(); } catch (_e) {}
+      return { body: '', tooLarge: true };
+    }
+    chunks.push(Buffer.from(value));
+  }
+  return { body: Buffer.concat(chunks).toString('utf8'), tooLarge: false };
+}
+
+async function directGet(url, { timeoutMs = 20000, maxBytes = 0, fetchImpl = fetch } = {}) {
   const ac = new AbortController();
   const timer = setTimeout(() => ac.abort(), timeoutMs);
   try {
-    const r = await fetch(url, { redirect: 'follow', signal: ac.signal, headers: BROWSER_HEADERS });
-    const body = await r.text();
-    return { status: r.status, body, finalUrl: r.url || url, via: 'direct' };
+    const r = await fetchImpl(url, { redirect: 'follow', signal: ac.signal, headers: BROWSER_HEADERS });
+    const read = await readTextCapped(r, maxBytes);
+    return { status: r.status, body: read.body, tooLarge: read.tooLarge, finalUrl: r.url || url, via: 'direct' };
   } catch (e) {
     return { status: 0, body: '', finalUrl: url, via: 'direct', error: String((e && e.message) || e) };
   } finally { clearTimeout(timer); }
@@ -147,14 +168,14 @@ function pointerCandidates(domain) {
  * Returns the first genuine pointer file, else the most informative failure.
  */
 async function fetchPointer(domain, opts = {}) {
-  const { useUnblocker = true, timeoutMs = 20000, onNote = null } = opts;
+  const { useUnblocker = true, timeoutMs = 20000, maxBytes = 0, fetchImpl = fetch, onNote = null } = opts;
   const note = m => { if (onNote) onNote(m); };
   const attempts = [];
   let sawBlock = false;
 
   for (const url of pointerCandidates(domain)) {
-    const r = await directGet(url, { timeoutMs });
-    const kind = classify(r.status, r.body);
+    const r = await directGet(url, { timeoutMs, maxBytes, fetchImpl });
+    const kind = r.tooLarge ? 'too-large' : classify(r.status, r.body);
     attempts.push({ url, status: r.status, kind, via: r.via });
     if (kind === 'ok') return { ok: true, domain, url, finalUrl: r.finalUrl, body: r.body, via: r.via, attempts };
     if (kind === 'blocked') sawBlock = true;
@@ -162,13 +183,13 @@ async function fetchPointer(domain, opts = {}) {
 
   // Tier 2: the domain may have been folded into a parent system since the seed
   // data was collected. The homepage redirect reveals the new canonical host.
-  const home = await directGet(`https://${domain}/`, { timeoutMs });
+  const home = await directGet(`https://${domain}/`, { timeoutMs, maxBytes, fetchImpl });
   const canon = hostOf(home.finalUrl);
   if (canon && canon !== String(domain).replace(/^www\./, '')) {
     note(`${domain} -> redirects to ${canon}`);
     for (const url of pointerCandidates(canon).slice(0, 2)) {
-      const r = await directGet(url, { timeoutMs });
-      const kind = classify(r.status, r.body);
+      const r = await directGet(url, { timeoutMs, maxBytes, fetchImpl });
+      const kind = r.tooLarge ? 'too-large' : classify(r.status, r.body);
       attempts.push({ url, status: r.status, kind, via: 'redirect' });
       if (kind === 'ok') {
         return { ok: true, domain, redirectedTo: canon, url, finalUrl: r.finalUrl, body: r.body, via: 'redirect', attempts };
@@ -191,6 +212,7 @@ async function fetchPointer(domain, opts = {}) {
 
   const kinds = attempts.map(a => a.kind);
   const reason = kinds.includes('blocked') ? 'blocked'
+    : kinds.includes('too-large') ? 'too-large'
     : kinds.every(k => k === 'notfound') ? 'notfound'
     : kinds.includes('html') ? 'html'
     : kinds.includes('neterr') ? 'neterr' : 'failed';

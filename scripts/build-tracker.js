@@ -48,45 +48,45 @@ function readTable(file) {
 // colours by; the finding is what it explains with.
 const FINDINGS = [
   { key: 'compliant-observed', tier: 'compliant', label: 'Machine-readable file located',
-    blurb: 'A cms-hpt.txt pointer resolved to a standard charges file we could fetch and read.' },
+    blurb: 'A machine-readable standard-charges file opened and reported an update date.' },
   { key: 'compliant-date-unverified', tier: 'compliant', label: 'File located, date unread',
-    blurb: 'The pointer and charges file were both reachable, but the file’s last_updated_on could not be read, so the annual-update requirement is unverified either way.' },
+    blurb: 'A charge file opened, but its declared update date could not be read.' },
   { key: 'pointer-lists-no-mrf-url', tier: 'failing', label: 'Pointer omits the file link',
-    blurb: 'The cms-hpt.txt names this hospital but supplies no mrf-url for it, which 45 CFR 180.50(d)(6) requires.' },
+    blurb: 'The pointer names this hospital but does not link to its charge file.' },
   { key: 'mrf-url-unreachable', tier: 'failing', label: 'File URL is dead',
-    blurb: 'The hospital publishes a pointer, but the file it points at returns an error.' },
+    blurb: 'A reported charge-file URL returned an error.' },
   { key: 'mrf-stale-over-365-days', tier: 'failing', label: 'File older than a year',
-    blurb: 'Section 180.50 requires an update at least once every 12 months.' },
+    blurb: 'CMS requires hospitals to update the file at least once a year.' },
   { key: 'old-template-version', tier: 'failing', label: 'Outdated CMS template',
-    blurb: 'The file declares a superseded schema instead of the current 3.0.0 template.' },
+    blurb: 'The file uses an older CMS format, not version 3.0.0.' },
   { key: 'no-cms-hpt-txt-published', tier: 'failing', label: 'No pointer file published',
     blurb: 'The site is up but has no cms-hpt.txt at the root or under /.well-known/.' },
   { key: 'pointer-blocked-to-automation', tier: 'blocked', label: 'Pointer blocked to automation',
-    blurb: 'The domain answered our request for cms-hpt.txt with a 403 or 429.' },
+    blurb: 'The website refused the automated request for cms-hpt.txt.' },
   { key: 'mrf-blocked-to-automation', tier: 'blocked', label: 'File blocked to automation',
-    blurb: 'The pointer resolved, but the charges file itself refuses automated access.' },
+    blurb: 'The charge file refused the automated request.' },
   { key: 'not-assessed-domain-unknown', tier: 'unknown', label: 'No website on record',
-    blurb: 'The CMS registry carries no domain for this hospital, so nothing could be checked.' },
+    blurb: 'No hospital website was available to check.' },
   { key: 'not-assessed-site-unreachable', tier: 'unknown', label: 'Website unreachable',
-    blurb: 'DNS or TLS failed for the domain on record.' },
+    blurb: 'The website on record did not open.' },
   // This row DOES carry a pointer file, which is why the page can offer a PTR
   // button next to it. The label has to say so, otherwise the badge appears to
   // contradict the button sitting beside it.
   { key: 'not-assessed-not-named-in-file', tier: 'unknown', label: 'Not listed in system file',
-    blurb: 'A working cms-hpt.txt was found on this hospital’s health system domain, but it does not name this hospital. Either the system omitted it or our name matching missed it, so this is recorded as unresolved rather than counted against the hospital.' },
+    blurb: 'The health system’s pointer worked, but this hospital could not be matched to an entry.' },
   { key: 'not-applicable-federal', tier: 'exempt', label: 'Federally owned',
     blurb: 'VA and Department of Defense hospitals sit outside the rule.' },
 ];
 
 const TIERS = [
   { key: 'compliant', label: 'Compliant', short: 'Compliant',
-    note: 'A standard charges file was located and fetched. Most also had a readable update date; where the date could not be read the row says so.' },
+    note: 'The charge file opened. The prices inside it were not verified.' },
   { key: 'failing', label: 'Not compliant', short: 'Failing',
-    note: 'A defect we could observe directly: dead link, stale file, or no pointer.' },
+    note: 'A file was missing, broken, stale, or outdated.' },
   { key: 'blocked', label: 'Blocked', short: 'Blocked',
-    note: 'The hospital refuses automated access, so compliance is unverifiable.' },
+    note: 'The website blocked the request, so no result was possible.' },
   { key: 'unknown', label: 'Not assessed', short: 'Not assessed',
-    note: 'Compliance could not be determined: either no usable website on record, or a file was found that does not name this hospital. Nothing here counts against the hospital.' },
+    note: 'No working website was available, or the hospital could not be matched to a file.' },
   { key: 'exempt', label: 'Exempt', short: 'Exempt',
     note: 'Federally owned hospitals are outside the rule.' },
 ];
@@ -111,14 +111,14 @@ const STATE_NAMES = {
 
 const QUEUE = [
   { key: 'exa-domain-lookup', label: 'Find the website',
-    action: 'Resolve a working domain, then re-run the pointer check.',
-    why: 'These hospitals were never assessed at all. The registry has no usable domain, or the one it has no longer answers.' },
+    action: 'Find the right website, then check it again.',
+    why: 'CMS lists no working website for these hospitals.' },
   { key: 'name-match-review', label: 'Review the name match',
-    action: 'Decide by hand which listed facility belongs to this CCN.',
-    why: 'The pointer file loads and lists facilities, but none of them matched the hospital name CMS has on file.' },
+    action: 'Match each hospital to the right entry by hand.',
+    why: 'The system file opens, but its names do not match the CMS list.' },
   { key: 'unblocker', label: 'Route around the block',
-    action: 'Re-fetch through a residential path, or read the page headfully.',
-    why: 'The domain answers a browser but returns 403 or 429 to automated requests.' },
+    action: 'Open the site in a browser or ask the hospital for access.',
+    why: 'The site works for people but blocks automated requests.' },
   { key: 'exempt-federal', label: 'Close as exempt',
     action: 'No work required. Record the exemption and move on.',
     why: 'Federally owned hospitals are outside the rule and will never publish under it.' },
@@ -170,6 +170,10 @@ function main() {
   const compliance = readTable(path.join(srcDir, 'compliance.csv'));
   const manifest = readTable(path.join(srcDir, 'manifest.csv'));
   const gaps = readTable(path.join(srcDir, 'gaps.csv'));
+  const outreachFile = path.join(__dirname, '..', 'cms_data', 'outreach.public.json');
+  const outreach = fs.existsSync(outreachFile)
+    ? JSON.parse(fs.readFileSync(outreachFile, 'utf8'))
+    : {};
 
   const byCcn = new Map(manifest.map(r => [r.ccn, r]));
   const coords = readCoords();
@@ -202,6 +206,12 @@ function main() {
       // means the point is its ZIP code's centre rather than its front door,
       // which the drawer says out loud instead of drawing a false precision.
       ...place(coords[r.ccn]),
+      // Kept per hospital so its finding can sit at the right point in the
+      // drawer history. `generated` is only the latest date in the crawl.
+      (r.checked_at || '').slice(0, 10),
+      // Human-facing transparency/discovery page. This matters for direct-MRF
+      // evidence where there is intentionally no cms-hpt.txt pointer URL.
+      m.source_page_url || '',
     ];
   });
 
@@ -300,7 +310,9 @@ function main() {
   }
 
   const data = {
-    generated: (checked[0] || '').slice(0, 10),
+    // The dateline is the snapshot's latest observation. The full first/last
+    // crawl interval remains available in `window` for provenance.
+    generated: (checked[checked.length - 1] || '').slice(0, 10),
     window: [checked[0] || null, checked[checked.length - 1] || null],
     tiers: TIERS.map(t => ({ ...t, n: tierCounts[t.key] })),
     findings: FINDINGS.map(f => ({ ...f, n: findingCounts.get(f.key) || 0 })),
@@ -324,6 +336,7 @@ function main() {
     dict: { states, types, findings: findingKeys, queue: QUEUE.map(q => q.key) },
     rows,
     gapRows,
+    outreach,
   };
 
   const json = JSON.stringify(data);

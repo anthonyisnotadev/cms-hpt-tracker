@@ -14,6 +14,32 @@ cms_data/redact-names.json
 # Personal tooling config. The outreach skill itself is public (sanitized);
 # launch.json is local editor setup.
 .claude/launch.json
+.claude/settings.local.json
+
+# Working files for the outreach draft queue and LLM recovery. These hold
+# unreviewed drafts and scraped hospital contact addresses; the reviewed
+# fieldwork is what goes into cms_data/outreach.json via the outreach skill.
+cms_data/hpt/outreach_queue.csv
+cms_data/hpt/outreach_prep.json
+cms_data/hpt/recovered.csv
+cms_data/hpt/recovered_mrfs.json
+cms_data/hpt/footer_mrfs.json
+cms_data/hpt/pointers/
+cms_data/hpt/pointers.json
+cms_data/hpt/mrf_dates.json
+# Legacy working-copy report. The publishable pointer archive, its audit report,
+# and its intentionally shared key live under data/hpt-audit/.
+cms_data/hpt/pointer-obfuscation.json
+# Disposable staging derived from external link exports. Only the independently
+# fetched evidence and verified-domain CSVs are durable tracker outputs.
+cms_data/hpt/external_link_candidates.csv
+cms_data/hpt/external_link_unmapped.csv
+cms_data/hpt/external_link_checks.json
+# Raw cms-hpt.txt corpus, resumable crawl state, and normalized CSV export.
+cms_data/hpt/pointer-corpus/
+cms_data/hpt/external-pointer-corpus/
+# Resumable direct-MRF header cache. Reviewable CSV evidence stays outside it.
+cms_data/hpt/direct-mrf/
 
 # Credentials. scripts/hpt/run.js loads .env first, then .env.local on top.
 # Nothing here encrypts either one: there is no .gitattributes, no git-crypt
@@ -22,3 +48,11 @@ cms_data/redact-names.json
 # example.
 .env*
 !.env.example
+# Working files from find-domains.js / outreach-prep.js run against the audit
+# snapshot. Unreviewed candidate domains and draft emails, not results.
+data/hpt-audit/found_domains.csv
+data/hpt-audit/find_domains.json
+data/hpt-audit/gaps_no_domain.csv
+data/hpt-audit/outreach_queue.csv
+data/hpt-audit/outreach_prep.json
+data/hpt-audit/manifest.json

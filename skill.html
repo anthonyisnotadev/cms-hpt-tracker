@@ -51,10 +51,10 @@
     <div class="wordmark">CMS&nbsp;HPT&nbsp;Tracker <span>/ price transparency audit</span></div>
     <nav class="masthead-links" aria-label="Site">
       <a href="tracker.html">Tracker</a>
-      <a href="mrf.html">What an MRF is</a>
-      <a href="rules.html">What CMS requires</a>
-      <a href="pointer.html">The pointer file</a>
-      <a href="skill.html" aria-current="page">The agent skill</a>
+      <a href="mrf.html">Price files</a>
+      <a href="rules.html">CMS rules</a>
+      <a href="pointer.html">Pointer files</a>
+      <a href="skill.html" aria-current="page">Outreach tool</a>
       <a href="https://github.com/anthonyisnotadev" target="_blank" rel="noopener noreferrer">GitHub</a>
     </nav>
     <div class="masthead-util">
@@ -62,21 +62,13 @@
     </div>
   </div>
   <div class="wrap masthead-body">
-    <p class="eyebrow">Tooling &middot; Agent skill</p>
-    <h1>Logging fieldwork by describing it</h1>
-    <p class="standfirst">
-      Chasing 5,419 hospitals means keeping notes: who was emailed, who wrote back, which
-      &ldquo;blocked&rdquo; verdict turned out to be wrong. Those notes live in a file that is miserable to
-      edit by hand. So this project ships a <strong>skill</strong> &mdash; a page of written instructions
-      that lets an AI assistant keep the notes for you. You say
-      <em>&ldquo;I emailed them and it bounced&rdquo;</em>; it shows you the exact change and waits for a
-      yes.
-    </p>
+    <p class="eyebrow">Project tool</p>
+    <h1>Outreach, without forms</h1>
+    <p class="standfirst">Describe an email, reply, or correction in plain language. The tool finds the hospital, previews the update, and waits for approval.</p>
     <div class="dateline">
       <div>Skill <b>outreach</b></div>
-      <div>Lives at <b>.claude/skills/outreach/</b></div>
-      <div>Also runs in <b>OpenCode, Codex, Cursor, Gemini&nbsp;CLI</b></div>
-      <div>Works with <b>no AI at all</b></div>
+      <div>Input <b>Plain language</b></div>
+      <div>Save rule <b>Approval required</b></div>
     </div>
   </div>
 </header>
@@ -86,696 +78,75 @@
   <nav class="toc" aria-label="On this page">
     <p class="eyebrow">On this page</p>
     <ol>
-      <li><a href="#start">Start here</a></li>
-      <li><a href="#what">What is actually in the folder</a></li>
-      <li><a href="#safety">Why it can&rsquo;t quietly break things</a></li>
-      <li><a href="#install">Turning it on</a></li>
-      <li><a href="#walkthrough">One update, start to finish</a></li>
-      <li><a href="#examples">What to say to it</a></li>
-      <li><a href="#other">Other assistants</a></li>
-      <li><a href="#models">Other models</a></li>
-      <li><a href="#authoring">Building your own</a></li>
+      <li><a href="#use">What it does</a></li>
+      <li><a href="#workflow">How it works</a></li>
+      <li><a href="#setup">Setup</a></li>
+      <li><a href="#examples">Examples</a></li>
+      <li><a href="#safety">Safety</a></li>
       <li><a href="#sources">Sources</a></li>
     </ol>
   </nav>
 
   <main class="prose" id="main" tabindex="-1">
-
-    <!-- ===================================================== -->
-    <section id="start">
-      <p class="eyebrow">The short version</p>
-      <h2>Start here</h2>
-
-      <p class="lead">A <strong>skill</strong> is a set of written instructions, saved in this repository,
-        that an AI coding assistant reads when it is relevant. That is the whole idea. No install, no
-        service, no account &mdash; a text file the assistant knows to follow.</p>
-
-      <p>This one is called <strong>outreach</strong>, and it does a single job: keeping the record of who
-         has been contacted about their missing price file, and what came back.</p>
-
-      <div class="cards">
-        <div class="card">
-          <span class="k">You do this</span>
-          <h4>Describe what happened</h4>
-          <p>&ldquo;I emailed Springfield Regional about their dead file link, and it bounced.&rdquo;
-             Ordinary sentences. No form to fill in.</p>
-        </div>
-        <div class="card">
-          <span class="k">It does this</span>
-          <h4>Shows you the change</h4>
-          <p>It works out which hospital you mean, writes up the change, and prints it for you to read.
-             Nothing is saved yet.</p>
-        </div>
-        <div class="card">
-          <span class="k">Then you</span>
-          <h4>Say yes, or fix it</h4>
-          <p>Only after you agree does anything get written &mdash; and the previous version is kept, so a
-             bad one can be undone.</p>
-        </div>
-      </div>
-
-      <div class="callout">
-        <h4>The one thing worth understanding</h4>
-        <p>The assistant is never allowed to edit the file itself. It can only <em>propose</em> a change and
-           hand it to a separate program that checks it. That program rejects anything malformed and refuses
-           to save unless you have said so explicitly.</p>
-        <p>So the worst a confused assistant can do here is suggest something wrong, which you then read and
-           reject. That is the reason the rest of this page can be fairly relaxed about which AI you
-           use.</p>
-      </div>
-
-      <p>The rest of this page is the detail: what the folder contains, a full worked example, and how to
-         run the same thing in other AI assistants or by hand. If you only wanted to know what it is, you
-         are done.</p>
+    <section id="use">
+      <p class="eyebrow">What it does</p>
+      <h2>Turn a sentence into an outreach update</h2>
+      <p class="lead">The tracker keeps outreach notes beside each hospital record. The skill provides a quicker way to update that log from a coding assistant.</p>
+      <p>A normal sentence can record an email, a reply, a follow-up date, a research note, or a correction to the crawl. Hospital names are matched against the CMS list, so internal identifiers are usually unnecessary.</p>
+      <p>The same records appear in the tracker's hospital drawer. A public export can be generated without exposing the private working file.</p>
     </section>
 
-    <!-- ===================================================== -->
-    <section id="what">
-      <p class="eyebrow">The object</p>
-      <h2>What is actually in the folder
-        <a class="cite" href="https://agentskills.io/specification">Agent&nbsp;Skills</a></h2>
-
-      <p class="lead">One file: <code>.claude/skills/outreach/SKILL.md</code>. It is plain text. You can
-        open it in any editor and read every instruction the assistant is
-        following.<sup class="ref"><a href="#s1">1</a></sup></p>
-
-      <p>It starts with a short header giving the skill a name and, more importantly, a description of
-         <em>when to use it</em>. Then comes the body: the actual instructions.</p>
-
-      <figure class="listing">
-        <figcaption>The opening of SKILL.md</figcaption>
-<pre><b>---
-name: outreach
-description: Log hospital price-transparency fieldwork into cms_data/outreach.json from plain
-  description. Use whenever the user reports something they did or found about a hospital — sent
-  or received an email, found or fixed an MRF or pointer file, a file that was blocked turned out
-  not to be, a hospital went silent, a verdict was wrong <i>… Triggers on phrases like "I sent this
-  email to", "I emailed", "they replied", "I found this MRF" …</i>
----</b>
-
-# Outreach logging
-
-Turn what the user says into records in `cms_data/outreach.json`, keyed by CCN.
-<i>… 450 more lines …</i></pre>
-        <p class="note">Wrapped here to fit; the real description is one long line.</p>
-      </figure>
-
-      <p>That description is doing real work. It is the <em>only</em> thing the assistant reads at the start
-         of a session &mdash; a single sentence, costing almost nothing. It reads the other 450 lines only
-         once something you say matches. That is why the description is written as a list of phrases a
-         person might actually type, rather than a tidy summary.</p>
-
-      <p>It also explains the most common surprise: the skill fires on its own. You never ask for it. You
-         say &ldquo;I emailed Mercy Regional this morning&rdquo; and it recognises that as its cue.</p>
-
-      <div class="callout">
-        <h4>Why write it down instead of retyping it?</h4>
-        <p>Because it lives beside the code it drives. When the underlying tool changes, the instructions
-           change in the same commit. A prompt saved in a note somewhere goes stale silently, and you find
-           out when something is logged wrong.</p>
+    <section id="workflow">
+      <p class="eyebrow">Workflow</p>
+      <h2>You approve every change</h2>
+      <p class="lead">The assistant prepares the change, but the command-line tool controls what can be saved.</p>
+      <div class="fact-list">
+        <div class="fact-row"><b>Describe</b><p>State what happened in ordinary language, with a city or state when the name is ambiguous.</p></div>
+        <div class="fact-row"><b>Match</b><p>The tool searches the hospital list and reports the match and confidence.</p></div>
+        <div class="fact-row"><b>Preview</b><p>A dry run shows every field that would change. Nothing is written at this stage.</p></div>
+        <div class="fact-row"><b>Approve</b><p>Saving begins only after explicit approval. The updated record is checked before completion.</p></div>
       </div>
     </section>
 
-    <!-- ===================================================== -->
-    <section id="safety">
-      <p class="eyebrow">How it holds up</p>
-      <h2>Why it can&rsquo;t quietly break things</h2>
-
-      <p class="lead">There are two halves here, and only one of them is trusted. The skill is
-        instructions. A separate program, <code>scripts/outreach-cli.js</code>, does all the actual
-        writing &mdash; and it checks everything first.</p>
-
-      <p>Put simply: the AI turns your sentence into a proposal, and the program decides whether that
-         proposal is allowed. Neither is asked to do the other&rsquo;s job.</p>
-
-      <div class="scroll-x">
-        <table class="tbl">
-          <thead>
-            <tr><th scope="col">Step</th><th scope="col">Handled by</th><th scope="col">What that means</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">Understanding what you wrote</th>
-              <td>The AI</td>
-              <td>Pulling out the hospital, the dates, the outcome.</td>
-            </tr>
-            <tr>
-              <th scope="row">Working out which hospital</th>
-              <td class="t-dim">The program</td>
-              <td>It searches the official CMS hospital list and reports how confident the match is. The
-                  AI is not allowed to guess.</td>
-            </tr>
-            <tr>
-              <th scope="row">Judging what you meant</th>
-              <td>The AI</td>
-              <td>Is &ldquo;they said they&rsquo;d look into it&rdquo; a note, or a resolution? This is the
-                  real judgement call.</td>
-            </tr>
-            <tr>
-              <th scope="row">Checking every value</th>
-              <td class="t-dim">The program</td>
-              <td>Bad dates, half-written links and invented fields are thrown out and reported.</td>
-            </tr>
-            <tr>
-              <th scope="row">Showing the change</th>
-              <td class="t-dim">The program</td>
-              <td>A preview is the default. Saving needs an extra explicit instruction.</td>
-            </tr>
-            <tr>
-              <th scope="row">Approving it</th>
-              <td>You</td>
-              <td>The step everything else exists to protect.</td>
-            </tr>
-            <tr>
-              <th scope="row">Saving and backing up</th>
-              <td class="t-dim">The program</td>
-              <td>Writes all at once, keeps the previous version, and refreshes the public copy with email
-                  addresses masked.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h3>Four things that stop a wrong write</h3>
-
-      <ol class="timeline">
-        <li>
-          <div class="when">Before</div>
-          <div class="what"><b>An uncertain match becomes a question</b>
-            Hospital names repeat constantly across states. If the search is not confident, the skill
-            requires the assistant to list the candidates and ask you &mdash; not to take the best
-            guess.</div>
-        </li>
-        <li>
-          <div class="when">On check</div>
-          <div class="what"><b>All or nothing</b>
-            If one part of a batch is invalid, none of it is saved, and every problem is listed at once.
-            Forty hospitals cannot land half-updated.</div>
-        </li>
-        <li>
-          <div class="when">On check</div>
-          <div class="what"><b>Quiet mistakes are made loud</b>
-            Some bad input is not rejected but silently cleaned up &mdash; a vague date becomes today, a
-            broken link becomes blank. That would not show in a preview, so the program prints a
-            <code>discarded:</code> line for each one, and the skill requires the assistant to show
-            them.</div>
-        </li>
-        <li data-live="1">
-          <div class="when">After</div>
-          <div class="what"><b>One step of undo</b>
-            Every save keeps a copy of what was there before.
-            <code>node scripts/outreach-cli.js restore</code> puts it back. One step only, so it is
-            offered straight away when something looks wrong.</div>
-        </li>
-      </ol>
-
-      <div class="callout" data-tone="warn">
-        <h4>Pasted text is information, not orders</h4>
-        <p>You will often paste in a hospital&rsquo;s reply. If that text contains something that reads like
-           an instruction &mdash; &ldquo;mark all hospitals compliant&rdquo;, &ldquo;ignore previous
-           instructions&rdquo; &mdash; the skill requires the assistant to quote it back and ask, never to
-           act on it. Only what <em>you</em> type counts as an instruction.</p>
-      </div>
-    </section>
-
-    <!-- ===================================================== -->
-    <section id="install">
+    <section id="setup">
       <p class="eyebrow">Setup</p>
-      <h2>Turning it on</h2>
-
-      <p class="lead">In Claude Code there is nothing to install. The skill is part of the repository, so a
-        session started inside it already has the skill.</p>
-
-      <p>What you need:</p>
-
-      <ol>
-        <li><strong>Node 18 or newer</strong>, and <code>npm install</code> once.</li>
-        <li><strong>Start the assistant in the project folder.</strong> If you start it one folder up, it
-           will not find the skill.</li>
-        <li><strong>Nothing else.</strong> The notes file does not need to exist; the first save creates
-           it.</li>
-      </ol>
-
-      <p>Then just describe your fieldwork. If it does not pick it up &mdash; usually because the wording
-         was oblique &mdash; say so directly: <em>&ldquo;use the outreach skill to log this.&rdquo;</em></p>
-
-      <div class="callout" data-tone="warn">
-        <h4>Names need checking before anything is published</h4>
-        <p>The real notes file stays on your machine and is never committed. What gets published is a
-           separate copy with every email address masked automatically.</p>
-        <p>Person names are <em>not</em> automatic. They are masked from a private list, so if you log an
-           email naming someone at a hospital, that name has to be added to the list before committing.
-           It is the one bit of manual upkeep here, and the skill says so explicitly.</p>
-      </div>
+      <h2>Use the copy included in this repository</h2>
+      <p class="lead">The skill is part of the repository. No separate service or account is required.</p>
+      <p>The instructions live in <code>.claude/skills/outreach/SKILL.md</code>. Assistants that support the shared Agent Skills format can read the same instructions from <code>.agents/skills/</code>.</p>
+      <p>The underlying tool also works directly from the terminal through <code>npm run outreach</code>. This route provides the same matching, preview, backup, and validation steps without an AI assistant.</p>
     </section>
 
-    <!-- ===================================================== -->
-    <section id="walkthrough">
-      <p class="eyebrow">Worked example</p>
-      <h2>One update, start to finish</h2>
-
-      <p class="lead">Everything below is real output from this project. Only the email itself is
-        invented.</p>
-
-      <h3>1. You describe what happened</h3>
-
-      <figure class="listing">
-        <figcaption>What you type</figcaption>
-<pre>I emailed St Anthony Summit today about the 403 on their pointer file. Turns out
-the MRF itself is fine — it's at https://example-hospital.org/standardcharges.csv
-and it loads. Subject was "Machine-readable standard charges file — access
-request", sent to compliance@example-hospital.org. Log it and mark them compliant.</pre>
-        <p class="note">No command and no ID number. Just a sentence.</p>
-      </figure>
-
-      <h3>2. It looks the hospital up rather than guessing</h3>
-
-      <p>&ldquo;St Anthony&rdquo; is one of the most repeated hospital names in the country, so the skill
-         forbids guessing. It searches the official list instead:</p>
-
-      <figure class="listing">
-        <figcaption>The lookup</figcaption>
-<pre><b>"st anthony summit" — exact</b>
-   * 060118  ST ANTHONY SUMMIT MEDICAL CENTER — FRISCO, CO  (1)
-     060015  CENTURA HEALTH-ST ANTHONY HOSPITAL — LAKEWOOD, CO  (0.848)
-     060104  CENTURA HEALTH-ST ANTHONY NORTH HEALTH CAMPUS — WESTMINSTER, CO  (0.848)</pre>
-        <p class="note">The word <code>exact</code> is the confidence, and it is binding. On a weaker match
-           the assistant has to stop and ask you which one, showing the cities &mdash; it is not allowed to
-           quietly take the top line.</p>
-      </figure>
-
-      <h3>3. It writes up the proposed change</h3>
-
-      <figure class="listing">
-        <figcaption>The proposal, in a temporary file</figcaption>
-<pre>[
-  { "op": "email", "ccn": "060118",
-    "to": "compliance@example-hospital.org",
-    "subject": "Machine-readable standard charges file — access request",
-    "sentAt": "2026-08-29" },
-  { "op": "correction", "ccn": "060118", "verdict": "compliant",
-    "mrfUrl": "https://example-hospital.org/standardcharges.csv",
-    "note": "File is up; the 403 was on the pointer only." }
-]</pre>
-        <p class="note">One sentence became two changes, because it stated two different facts: an email
-           went out, and a verdict was wrong. <code>ccn</code> is the six-digit CMS id for that hospital
-           &mdash; the one the lookup returned.</p>
-      </figure>
-
-      <h3>4. It shows you the preview &mdash; which is the default</h3>
-
-      <figure class="listing">
-        <figcaption>Nothing has been saved at this point</figcaption>
-<pre><b>DRY RUN — nothing written · 1 record(s)</b>
-
-  060118  St Anthony Summit Medical Center
-      NEW record
-      name: (empty) -> "St Anthony Summit Medical Center"
-      city: (empty) -> "Frisco"
-      state: (empty) -> "CO"
-      status: (empty) -> "awaiting-reply"
-      correction.mrfUrl: (empty) -> "https://example-hospital.org/standardcharges.csv"
-      correction.verdict: (empty) -> "compliant"
-      correction.checkedOn: (empty) -> "2026-08-29"
-      correction.note: (empty) -> "File is up; the 403 was on the pointer only."
-      + email "Machine-readable standard charges file — access request" to compliance@example-hospital.org sent 2026-08-29
-
-<b>re-run with --commit to write.</b></pre>
-        <p class="note">Three things nobody typed: the hospital&rsquo;s name, city and state, filled in from
-           the official list; the &ldquo;awaiting reply&rdquo; status, which follows automatically from
-           sending an email; and today&rsquo;s date. The last line is the important one &mdash; this
-           command physically cannot save.</p>
-      </figure>
-
-      <h3>5. You read it and say yes</h3>
-
-      <p>The same command runs again with the saving flag. The previous version is copied aside first, the
-         new one is written, and the published copy is rebuilt with the email address masked to
-         <code>c***@example-hospital.org</code>.</p>
-
-      <p>The assistant then makes the git commit itself, staging only the public copy &mdash; never
-         everything, and never the private file. It does not push. Pushing puts it on the live site, so
-         that stays your decision.</p>
-
-      <div class="callout">
-        <h4>Step 4 is the whole point</h4>
-        <p>The skill says so directly: an AI reading &ldquo;they said they&rsquo;d fix it next
-           quarter&rdquo; as a completed fix is exactly where a silent wrong entry would come from. If you
-           tell it to stop asking, it will &mdash; and it still prints what it did afterwards, so the change
-           stays visible.</p>
-      </div>
-    </section>
-
-    <!-- ===================================================== -->
     <section id="examples">
-      <p class="eyebrow">Usage</p>
-      <h2>What to say to it</h2>
-
-      <p class="lead">There is no syntax to learn. Describe the fieldwork the way you would to a colleague.
-        These are the common cases.</p>
-
-      <div class="scroll-x">
-        <table class="tbl">
-          <thead>
-            <tr><th scope="col">You say</th><th scope="col">What gets recorded</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">&ldquo;I sent this to Mercy Regional&rdquo; <span class="t-dim">+ the email</span></th>
-              <td>The email, and the hospital moves to <em>awaiting reply</em> on its own. Paste the whole
-                  thing.</td>
-            </tr>
-            <tr>
-              <th scope="row">&ldquo;they replied, they&rsquo;re fixing it&rdquo;</th>
-              <td>Two facts: that the email got an answer, and what the answer said.</td>
-            </tr>
-            <tr>
-              <th scope="row">&ldquo;that one bounced&rdquo;</th>
-              <td>Marks the email as undelivered, and undoes the <em>awaiting reply</em> &mdash; a message
-                  that never arrived is not one you are waiting on.</td>
-            </tr>
-            <tr>
-              <th scope="row">&ldquo;no response from them&rdquo;</th>
-              <td>The hospital has gone quiet, which is a different fact from one particular email going
-                  unanswered.</td>
-            </tr>
-            <tr>
-              <th scope="row">&ldquo;turns out it wasn&rsquo;t blocked, here&rsquo;s the file&rdquo;</th>
-              <td>A corrected verdict plus the working link. This is the change that actually moves the
-                  hospital&rsquo;s row on <a href="tracker.html">the tracker</a>.</td>
-            </tr>
-            <tr>
-              <th scope="row">&ldquo;this one file covers 40 hospitals&rdquo;</th>
-              <td>Forty corrections sharing one link. Expect it to come back with the names it
-                  <em>couldn&rsquo;t</em> match confidently.</td>
-            </tr>
-            <tr>
-              <th scope="row">&ldquo;this one&rsquo;s a VA hospital&rdquo;</th>
-              <td>Marked exempt. Federally owned hospitals sit outside the rule &mdash; see
-                  <a href="rules.html#who">who must comply</a>.</td>
-            </tr>
-            <tr>
-              <th scope="row">&ldquo;I called them, left a voicemail&rdquo;</th>
-              <td>A note. There is no separate kind of entry for calls.</td>
-            </tr>
-            <tr>
-              <th scope="row">&ldquo;check back in a month&rdquo;</th>
-              <td>A follow-up date. Give it a real one if you can &mdash; it is told to ask rather than
-                  guess at &ldquo;next Tuesday&rdquo;.</td>
-            </tr>
-            <tr>
-              <th scope="row">&ldquo;I logged that twice&rdquo; / &ldquo;fix the date on that&rdquo;</th>
-              <td>Removes the duplicate, or corrects the entry in place. Deletions are always flagged
-                  separately before anything happens.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h3>A prompt worth copying</h3>
-
-      <p>The useful habit is to hand over the raw material and let it do the extraction, rather than
-         tidying anything up first:</p>
-
-      <figure class="listing">
-        <figcaption>Logging an email you just sent</figcaption>
-<pre>Emailed Springfield Regional this morning about their dead file link. Here's
-what went out:
-
-  To: pricing@springfieldregional.example
-  Subject: Standard charges file returns 404
-
-  Hello — the machine-readable file linked from your cms-hpt.txt returns a
-  404. Under 45 CFR 180.50 this needs to resolve to a working file...
-
-Follow up in three weeks if nothing comes back.</pre>
-        <p class="note">You should get back the matched hospital, a preview of the change, the follow-up
-           date set, and a question if the name matched more than one place.</p>
-      </figure>
+      <p class="eyebrow">Examples</p>
+      <h2>Say what happened normally</h2>
+      <pre>Emailed Springfield Regional about its dead file link. The email bounced.</pre>
+      <pre>Mercy replied with a new price-file URL. Follow up next Friday.</pre>
+      <pre>Add a note that the hospital website now redirects to its parent system.</pre>
+      <p>Short statements are enough when the hospital name is unique. Include the city, state, or CMS certification number when several hospitals share a name.</p>
+      <p>Raw replies can also be pasted into the request. The preview should be checked carefully before saving, especially when a message mentions several facilities.</p>
     </section>
 
-    <!-- ===================================================== -->
-    <section id="other">
-      <p class="eyebrow">Portability</p>
-      <h2>Other assistants, and none at all
-        <a class="cite" href="https://agentskills.io/specification">agentskills.io</a></h2>
-
-      <p class="lead">None of this is specific to Claude. The <code>SKILL.md</code> format was published as
-        an open standard in December 2025, and the major AI coding tools all read
-        it.<sup class="ref"><a href="#s1">1</a></sup><sup class="ref"><a href="#s2">2</a></sup> The only
-        difference between them is which folders they look in.</p>
-
-      <div class="scroll-x">
-        <table class="tbl">
-          <thead>
-            <tr>
-              <th scope="col">Assistant</th>
-              <th scope="col">Folders it checks</th>
-              <th scope="col">Works with this project as-is?</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">Claude Code</th>
-              <td class="t-mono">.claude/skills/</td>
-              <td><span class="badge flat" data-tier="compliant">Yes</span> &mdash; this is where it lives.</td>
-            </tr>
-            <tr>
-              <th scope="row">OpenCode<sup class="ref"><a href="#s3">3</a></sup></th>
-              <td class="t-mono">.opencode/skills/<br />.claude/skills/<br />.agents/skills/</td>
-              <td><span class="badge flat" data-tier="compliant">Yes</span> &mdash; it reads Claude&rsquo;s
-                  folder directly. Clone and go.</td>
-            </tr>
-            <tr>
-              <th scope="row">Codex<sup class="ref"><a href="#s4">4</a></sup></th>
-              <td class="t-mono">.agents/skills/</td>
-              <td><span class="badge flat" data-tier="unknown">One shortcut</span> &mdash; see below. Type
-                  <code>$outreach</code> to call it directly.</td>
-            </tr>
-            <tr>
-              <th scope="row">Cursor 2.4+<sup class="ref"><a href="#s5">5</a></sup></th>
-              <td class="t-mono">.cursor/skills/<br />.agents/skills/</td>
-              <td><span class="badge flat" data-tier="unknown">One shortcut</span> &mdash; then it also
-                  appears in the slash-command menu.</td>
-            </tr>
-            <tr>
-              <th scope="row">Gemini CLI<sup class="ref"><a href="#s6">6</a></sup></th>
-              <td class="t-mono">.gemini/skills/<br />.agents/skills/</td>
-              <td><span class="badge flat" data-tier="unknown">One shortcut</span> &mdash; it asks for
-                  confirmation before loading it.</td>
-            </tr>
-          </tbody>
-          <caption>Each one also checks an equivalent folder in your home directory, for skills you want
-            available in every project rather than just this one.</caption>
-        </table>
-      </div>
-
-      <h3>One shortcut covers the other four</h3>
-
-      <p><code>.agents/skills/</code> is the shared, vendor-neutral folder, and OpenCode, Codex, Cursor and
-         Gemini CLI all check it. So the entire porting job is to make the existing folder visible there:</p>
-
-      <figure class="listing">
-        <figcaption>Run once, from the project folder</figcaption>
-<pre>mkdir -p .agents/skills
-ln -s ../../.claude/skills/outreach .agents/skills/outreach</pre>
-        <p class="note">On Windows, use
-           <code>cmd /c mklink /D .agents\skills\outreach ..\..\.claude\skills\outreach</code>, or just copy
-           the folder. A shortcut is better than a copy: a copy is a second file that will drift, and
-           instructions describing an older version of the tool are worse than none.</p>
-      </figure>
-
-      <h3>Assistants that don&rsquo;t do skills</h3>
-
-      <p>For anything else, point its own instructions file at the skill. Three lines is enough, because it
-         can read the rest itself:</p>
-
-      <figure class="listing">
-        <figcaption>AGENTS.md &mdash; and the same text works in GEMINI.md, Cursor rules, or Copilot instructions</figcaption>
-<pre>## Logging outreach
-
-When the user reports hospital fieldwork — an email sent or received, a file
-found, a verdict that was wrong — read `.claude/skills/outreach/SKILL.md` and
-follow it exactly. Never edit `cms_data/outreach.json` by hand.</pre>
-      </figure>
-
-      <h3>No AI at all</h3>
-
-      <p>Underneath the skill is an ordinary command-line tool, and every change it can make you can make
-         yourself:</p>
-
-      <figure class="listing">
-        <figcaption>The same two updates, typed by hand</figcaption>
-<pre><i># which hospital is this?</i>
-node scripts/outreach-cli.js find "st anthony summit" --state CO
-
-<i># log the email — preview first, as always</i>
-node scripts/outreach-cli.js email --ccn 060118 \
-  --subject "Standard charges file — access request" \
-  --to compliance@example-hospital.org --sentAt 2026-08-29
-
-<i># then correct the verdict, and save both</i>
-node scripts/outreach-cli.js correction --ccn 060118 --verdict compliant \
-  --mrfUrl https://example-hospital.org/standardcharges.csv \
-  --note "File is up; the 403 was on the pointer only." <b>--commit</b></pre>
-        <p class="note">There is also a third way in: <code>npm run serve:outreach</code> runs the tracker
-           with an editing panel in the page itself.</p>
-      </figure>
-
-      <p>This is worth knowing if you are weighing up whether to trust the arrangement at all. The skill did
-         not add a capability &mdash; it wraps something a person can already drive. Which makes
-         &ldquo;what if the AI gets it wrong?&rdquo; a dull question: you read the preview, say no, and type
-         it yourself.</p>
-    </section>
-
-    <!-- ===================================================== -->
-    <section id="models">
-      <p class="eyebrow">Model choice</p>
-      <h2>Other models</h2>
-
-      <p class="lead">Because the checking lives in the program rather than the AI, the model you choose
-        affects how often you have to correct a proposal &mdash; not whether a bad one can slip through.
-        That makes it a cost question more than a safety one.</p>
-
-      <p>Most of the hard parts have deliberately been taken away from the model:</p>
-
-      <ul>
-        <li><strong>It does not need to know US hospitals.</strong> The program searches the official list
-           and reports its confidence.</li>
-        <li><strong>It does not need to memorise the format.</strong> Anything it invents is thrown out and
-           reported rather than saved.</li>
-        <li><strong>It does need to read intent.</strong> &ldquo;They said they&rsquo;d look into it&rdquo;
-           is a note, not a fix. This is the part that genuinely varies by model.</li>
-        <li><strong>It does need to resist instructions hidden in pasted text.</strong> Nothing enforces
-           this but the instructions themselves, which is a real reason to use a capable model for material
-           you did not write.</li>
-      </ul>
-
-      <p>In practice: a small or cheap model is fine for logging one email, and the preview tells you
-         immediately if it was not. Reach for a stronger one when a single file covers forty hospitals,
-         where a dropped name is easy to miss in a long list. Local models handle the mechanical cases and
-         are unreliable on the judgement ones.</p>
-
-      <p>One practical limit whatever you use: the instructions are around 5,500 words&rsquo; worth of text
-         before your paste is even added. On a model with a small working memory that runs out sooner than
-         you would expect, and one that has quietly forgotten the format will start inventing field names
-         &mdash; which is exactly what the <code>discarded:</code> warnings are there to catch.</p>
-
-      <div class="callout">
-        <h4>The general shape of this</h4>
-        <p>If a workflow is built so the AI proposes and a checker disposes, model quality becomes a
-           question of how much rework you do. If the AI writes directly, model quality becomes a question
-           of correctness, and every model change is a risk decision. The difference is mostly about where
-           you put the checking &mdash; not how good the prompt is.</p>
+    <section id="safety">
+      <p class="eyebrow">Safety</p>
+      <h2>The assistant proposes; the tool checks</h2>
+      <p class="lead">The skill cannot silently edit the outreach file. All writes pass through the same checked command.</p>
+      <div class="fact-list">
+        <div class="fact-row"><b>Approval</b><p>No data is saved before the preview receives explicit approval.</p></div>
+        <div class="fact-row"><b>Matching</b><p>Weak or ambiguous hospital matches stop for clarification.</p></div>
+        <div class="fact-row"><b>Recovery</b><p>The previous file is backed up before an approved change is written.</p></div>
+        <div class="fact-row"><b>Privacy</b><p>Private notes stay local. Public exports redact configured names and contact details.</p></div>
       </div>
     </section>
 
-    <!-- ===================================================== -->
-    <section id="authoring">
-      <p class="eyebrow">Reuse</p>
-      <h2>Building your own</h2>
-
-      <p class="lead">If you want this arrangement in your own project, the thing to copy is not the
-        wording. It is the decision to build the checking tool first.</p>
-
-      <div class="cards">
-        <div class="card">
-          <span class="k">Rule 1</span>
-          <h4>Give it a command, not a file</h4>
-          <p>Then the checking happens in one place and applies to everyone equally. &ldquo;Edit this file
-             carefully&rdquo; has nothing underneath it.</p>
-        </div>
-        <div class="card">
-          <span class="k">Rule 2</span>
-          <h4>Make preview the default</h4>
-          <p>Not a flag people have to remember. If saving needs the extra word, forgetting the word is
-             safe &mdash; which is the right way round.</p>
-        </div>
-        <div class="card">
-          <span class="k">Rule 3</span>
-          <h4>Make quiet failures loud</h4>
-          <p>Silently cleaned-up input is the mistake that survives review, because the preview looks
-             fine. Print a line for every value dropped.</p>
-        </div>
-        <div class="card">
-          <span class="k">Rule 4</span>
-          <h4>Write the description as a trigger</h4>
-          <p>Not &ldquo;manages outreach records&rdquo;, but the sentences someone would actually type.
-             It is a matching problem, not a summary.</p>
-        </div>
-      </div>
-
-      <p>Two smaller lessons. Document the failure modes rather than the happy path &mdash; more than half
-         this skill is field tables and lists of what gets quietly dropped, and that is the half doing the
-         work. And write down what the system <em>cannot</em> do, because an invented field is discarded
-         without an error, so a model that reaches for one would otherwise fail invisibly.</p>
-
-      <p>The skill itself is the best reference for all of this. It is at
-         <code>.claude/skills/outreach/SKILL.md</code>, and it is meant to be read.</p>
-    </section>
-
-    <!-- ===================================================== -->
     <section id="sources">
       <p class="eyebrow">References</p>
-      <h2>Sources</h2>
-
-      <ol class="sources">
-        <li id="s1">
-          <b>Agent Skills: the format specification</b>
-          <span class="pub">agentskills.io,
-            <a href="https://agentskills.io/specification">agentskills.io/specification</a></span>
-          <span class="used"><em>Used for:</em> the required header fields and their limits, the folder
-            layout, and the way skills are loaded in stages so unused ones cost almost nothing.</span>
-        </li>
-        <li id="s2">
-          <b>Equipping agents for the real world with Agent Skills</b>
-          <span class="pub">Anthropic engineering,
-            <a href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills">anthropic.com/engineering</a>.
-            Published as an open standard in December 2025.</span>
-          <span class="used"><em>Used for:</em> the standard&rsquo;s publication and its adoption by other
-            tools.</span>
-        </li>
-        <li id="s3">
-          <b>Agent Skills</b>
-          <span class="pub">OpenCode documentation,
-            <a href="https://opencode.ai/docs/skills/">opencode.ai/docs/skills</a></span>
-          <span class="used"><em>Used for:</em> the folders it checks, including
-            <code>.claude/skills/</code>, and the header fields it recognises.</span>
-        </li>
-        <li id="s4">
-          <b>Build skills</b>
-          <span class="pub">OpenAI Codex documentation,
-            <a href="https://learn.chatgpt.com/docs/build-skills">learn.chatgpt.com/docs/build-skills</a></span>
-          <span class="used"><em>Used for:</em> the <code>.agents/skills</code> search order and calling a
-            skill directly with <code>$name</code>.</span>
-        </li>
-        <li id="s5">
-          <b>Agent Skills</b>
-          <span class="pub">Cursor documentation,
-            <a href="https://cursor.com/docs/skills">cursor.com/docs/skills</a>. Added in Cursor
-            2.4.</span>
-          <span class="used"><em>Used for:</em> the folders it checks and invocation from the
-            slash-command menu.</span>
-        </li>
-        <li id="s6">
-          <b>Agent Skills in Gemini CLI</b>
-          <span class="pub">Google,
-            <a href="https://github.com/google-gemini/gemini-cli/blob/main/docs/cli/skills.md">github.com/google-gemini/gemini-cli</a></span>
-          <span class="used"><em>Used for:</em> the folders it checks and the confirmation step before a
-            skill is loaded.</span>
-        </li>
-        <li id="s7">
-          <b>The outreach skill and its command-line tool</b>
-          <span class="pub">This project. Instructions at
-            <code>.claude/skills/outreach/SKILL.md</code>; the tool that does the writing and checking at
-            <code>scripts/outreach-cli.js</code>.</span>
-          <span class="used"><em>Used for:</em> everything described on this page. All terminal output shown
-            above is real, captured from this project against the CMS hospital list; only the email
-            contents are invented.</span>
-        </li>
-      </ol>
+      <h2>Skill format</h2>
+      <ul>
+        <li><a href="https://agentskills.io/specification">Agent Skills specification</a></li>
+        <li><a href="https://learn.chatgpt.com/docs/build-skills">Codex skill documentation</a></li>
+        <li><a href="https://github.com/anthonyisnotadev/cms-hpt-tracker">Project source</a></li>
+      </ul>
     </section>
-
   </main>
 </div>
 
@@ -784,23 +155,19 @@ node scripts/outreach-cli.js correction --ccn 060118 --verdict compliant \
     <a href="tracker.html">
       <span class="k">Back to</span>
       <b>The tracker</b>
-      <span>All 5,419 hospitals, one mark each: who publishes, who is stale, and who blocks automated access.</span>
+      <span>Open a hospital record to view or add outreach activity.</span>
     </a>
     <a href="https://github.com/anthonyisnotadev/cms-hpt-tracker" target="_blank" rel="noopener noreferrer">
       <span class="k">Read the source</span>
       <b>The repository</b>
-      <span>The skill, the tool it drives, and the crawl that produces the findings it corrects.</span>
+      <span>The skill instructions, outreach command, and tracker source.</span>
     </a>
   </div>
 </div>
 
 <footer class="wrap">
-  <p><b>On the examples.</b> The terminal output on this page was produced by running the real tool against
-     the real CMS hospital list; the previews shown saved nothing. Email addresses, message text and file
-     links are invented, and <code>example-hospital.org</code> is not a real domain.</p>
-  <p>Other projects&rsquo; documentation moves. The folders listed under &ldquo;other assistants&rdquo; were
-     checked against each tool&rsquo;s own documentation, linked in the sources; where one has changed
-     since, its documentation governs.</p>
+  <p><b>Examples.</b> Hospital names and messages on this page are illustrative.</p>
+  <p>Supported skill locations may change. The linked tool documentation governs.</p>
 </footer>
 
 </body>

@@ -50,7 +50,7 @@ section:last-of-type { border-bottom: none; }
    This page cannot: its sections are full-width because the field and
    the state table need the width. So the rail lies down and docks under
    the masthead instead. No numbering, in a horizontal strip, position
-   already says how far through you are, so digits would be decoration.
+   already shows reading progress, so digits would be decoration.
 
    Solid, not translucent: text sits on it at 13px and a blur would put
    moving content behind small type.
@@ -397,7 +397,7 @@ select {
 }
 /* Every column sorts. The header is the control, so it has to read as one:
    a hover state, an arrow that only appears on the column actually sorting,
-   and ink (not grey) on that column so you can see the order's source. */
+   and ink (not grey) on that column so the order's source stays visible. */
 .reg-head .rh {
   display: inline-flex; align-items: center; gap: var(--s-1);
   font: inherit; letter-spacing: inherit; text-transform: inherit; color: inherit;
@@ -408,7 +408,7 @@ select {
 .reg-head .rh:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: var(--r-sm); }
 .reg-head .rh[data-sorted="1"] { color: var(--ink); }
 /* An unsorted column shows its arrow only on hover, where it previews the
-   direction that click would give you. */
+   direction produced by that click. */
 .reg-head .rh-arrow { font-size: 9px; opacity: .55; }
 .reg-head .rh[data-sorted="0"] .rh-arrow { opacity: 0; }
 .reg-head .rh:hover .rh-arrow, .reg-head .rh:focus-visible .rh-arrow { opacity: .55; }
@@ -426,7 +426,7 @@ select {
   border-bottom: 1px solid var(--rule);
 }
 /* Greenbar banding. At 5,419 rows the alternation is a reading aid, not
-   decoration, it keeps your eye on one row across six columns. Parity comes
+   decoration, it keeps attention on one row across six columns. Parity comes
    from the row's index in the filtered list, so bands stay put while scrolling. */
 .reg-row[data-band="1"] { background: var(--band); }
 /* The row is one target, not six cells. The badge, the name, the finding and
@@ -462,7 +462,7 @@ select {
 .empty .clear-filters { margin-top: var(--s-4); }
 
 /* ============================================================
-   Outreach, notes and the log of emails you sent.
+   Outreach, notes and the log of sent emails.
    Outreach state is deliberately achromatic: the five status hues already
    mean "what the audit found", and a second colour scale on top of them
    would make the register unreadable. Stage is carried by weight and a
@@ -478,7 +478,7 @@ select {
 }
 .oc-btn:hover { border-color: var(--ink); color: var(--ink); }
 /* An empty row's button is pure affordance and there are hundreds of them, so
-   it keeps its label and its hit area but loses the border until you reach for
+   it keeps its label and its hit area but loses the border until hovered or
    it. Rows that actually carry something stay drawn. */
 .oc-btn[data-has="0"] { border-color: transparent; }
 .oc-btn[data-has="0"]:hover, .oc-btn[data-has="0"]:focus-visible { border-color: var(--rule-strong); color: var(--ink); }
@@ -501,9 +501,9 @@ select {
 
 .oc-summary { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: var(--r-lg); overflow: hidden; margin-bottom: var(--s-6); }
 
-/* Anything you corrected by hand is marked so it never reads as a crawl
+/* Anything corrected by hand is marked so it never reads as a crawl
    result: a dashed underline on the badge, a rule on the links, a star on
-   the age. The colour still means status; the dashes mean "your finding". */
+   the age. The colour still means status; the dashes mean "manual finding". */
 .badge[data-edited="1"] { box-shadow: inset 0 -2px 0 currentColor; }
 .badge[data-edited="1"]::after { content: '*'; font-weight: 700; margin-left: 1px; }
 .linkbtn[data-edited="1"] { border-style: dashed; border-color: var(--ink-3); color: var(--ink); }
@@ -711,7 +711,7 @@ select {
 @media (max-width: 560px) { .oc-state-row { grid-template-columns: minmax(0,1fr); } }
 
 /* ---- What happened. One form at a time, so there is only ever one primary
-   button on screen and the fields you see match the thing you are recording. ---- */
+   button on screen and the visible fields match the item being recorded. ---- */
 .oc-tasks { margin-top: var(--s-5); }
 .oc-tasks-label {
   font-size: var(--fs-label); font-weight: 600; letter-spacing: .1em;
@@ -808,10 +808,17 @@ select {
   color: var(--ink-3); border: 1px solid var(--rule-strong); border-radius: var(--r-sm); padding: 2px 7px; flex: none;
 }
 .oc-ev-kind[data-kind="email"] { color: var(--ink); border-color: var(--ink-3); }
+.oc-ev-kind[data-kind="finding"] { font-weight: 600; }
+.oc-ev-kind[data-kind="finding"][data-tier="compliant"] { color: var(--st-compliant-fg); border-color: var(--st-compliant); }
+.oc-ev-kind[data-kind="finding"][data-tier="failing"] { color: var(--st-failing-fg); border-color: var(--st-failing); }
+.oc-ev-kind[data-kind="finding"][data-tier="blocked"] { color: var(--st-blocked-fg); border-color: var(--st-blocked); }
+.oc-ev-kind[data-kind="finding"][data-tier="unknown"] { color: var(--st-unknown-fg); border-color: var(--st-unknown); }
+.oc-ev-kind[data-kind="finding"][data-tier="exempt"] { color: var(--st-exempt-fg); border-color: var(--st-exempt); }
 .oc-ev-when { font-size: var(--fs-label); color: var(--ink-3); margin-left: auto; font-variant-numeric: tabular-nums; }
 .oc-ev-subject { font-weight: 600; font-size: var(--fs-sm); margin: var(--s-2) 0 0; }
 .oc-ev-to { font-size: var(--fs-label); color: var(--ink-3); margin: 3px 0 0; }
 .oc-ev-text { font-size: var(--fs-sm); line-height: 1.55; color: var(--ink-2); margin: var(--s-2) 0 0; white-space: pre-wrap; word-break: break-word; }
+.oc-ev-links { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-3); }
 .oc-ev-foot { display: flex; align-items: center; gap: var(--s-2); margin-top: var(--s-3); }
 .oc-ev-foot select {
   font-size: var(--fs-label); min-height: 30px; height: auto; padding: 0 var(--s-2); max-width: 160px;
@@ -924,7 +931,7 @@ select {
 @media (max-width: 760px) {
   .wrap { padding: 0 var(--s-4); }
   /* The qualifier wraps into the nav below this width; the wordmark alone
-     still says where you are. */
+     still indicates the current position. */
   .wordmark span { display: none; }
   section.wrap { padding-top: var(--s-7); padding-bottom: var(--s-7); }
   /* The histogram's fixed 150px label column does not fit beside a track and a
@@ -943,7 +950,7 @@ select {
      on top, and the three things that qualify it, verdict, age and the log,
      share one line under it.
 
-     The name comes first because it is what you are looking for. Sharing the
+     The name comes first because it is the primary lookup target. Sharing the
      top line with the badge left it 167px on a 375px screen, which truncated
      "Alaska Native Medical Center" to "Alaska Native Medic..." on every row of
      an entire screenful. Age and the log each had a full-width line of their

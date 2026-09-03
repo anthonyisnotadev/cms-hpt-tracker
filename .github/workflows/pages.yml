@@ -52,11 +52,26 @@ jobs:
       - name: Check contrast
         run: node scripts/check-contrast.js
 
-      # Two in-place rewrites. build-glossary.js fills the <dl> at the foot of
-      # each explainer page from the shared dictionary in that script, and fails
-      # if a page links to a term that does not exist. build-tracker.js fills
-      # tracker.html: the data block from data/hpt-audit/*.csv, the <style>
-      # block from css/*.css, and cache-busting hashes on the js tags.
+      # The raw pointer snapshot is retained for reproducibility. Contact names
+      # and emails must remain obfuscated at rest before anything is published.
+      - name: Check pointer contacts are obfuscated
+        run: npm run check:pointers-private
+
+      # pointers.json is the contract other repos read; it is derived from
+      # manifest.csv and committed alongside it, so the two can drift if a data
+      # refresh lands without re-running the export. This catches that.
+      #
+      # It gates the deploy even though a stale pointers.json cannot break the
+      # site, because the alternative is silently serving downstream consumers a
+      # snapshot that disagrees with the tracker. Drop this step if that trade
+      # ever stops being worth a blocked deploy.
+      - name: Check pointers.json is in sync
+        run: npm run export:pointers:check
+
+      # build-glossary.js updates explainer pages that opt into its shared
+      # glossary. build-tracker.js fills tracker.html: the data block from
+      # data/hpt-audit/*.csv, the <style> block from css/*.css, and cache-busting
+      # hashes on the js tags.
       - name: Build the site
         run: npm run build
 
@@ -88,11 +103,6 @@ jobs:
             || { echo 'tracker-data block was not populated'; exit 1; }
           grep -q '@media (pointer: coarse)' _site/tracker.html \
             || { echo 'tracker-css block was not populated'; exit 1; }
-          # And every explainer must have had its glossary filled in.
-          for f in mrf.html rules.html pointer.html; do
-            grep -q '<dl class="defs glossary">' "_site/$f" \
-              || { echo "glossary block was not populated in $f"; exit 1; }
-          done
 
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -35,7 +35,10 @@ function sniffKind(buf, contentType) {
   if (buf.length >= 2 && buf[0] === 0x1f && buf[1] === 0x8b) return 'gzip';
   const head = buf.slice(0, 400).toString('utf8').trimStart();
   if (head.startsWith('{') || head.startsWith('[')) return 'json';
-  if (/^[a-z_]+,[a-z_]+/i.test(head)) return 'csv';
+  // Panacea and several hospital-owned hosts serve fully quoted CSV headers as
+  // application/octet-stream. Content sniffing must therefore accept either
+  // quoted or bare field names instead of relying on the response MIME type.
+  if (/^"?[a-z_][a-z0-9_ ]*"?\s*,\s*"?[a-z_][a-z0-9_ ]*"?/i.test(head)) return 'csv';
   if (/json/i.test(contentType || '')) return 'json';
   if (/csv/i.test(contentType || '')) return 'csv';
   return 'unknown';

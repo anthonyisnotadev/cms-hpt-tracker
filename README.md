@@ -170,6 +170,38 @@ node scripts/hpt/run.js report        # show a summary
 Every step can be stopped and restarted. It remembers what it already did
 and picks up where it left off. Nothing is lost if you close the window.
 
+### Building and joining the `cms-hpt.txt` corpus
+
+The pointer corpus is generated locally and gitignored. It downloads only the
+small `cms-hpt.txt` pointer files, never the large MRF files they reference:
+
+```bash
+npm run hpt:pointers:corpus
+npm run hpt:combine-corpus
+```
+
+The second command performs a full outer join between the current manifest
+(`cms_data/hpt/manifest.csv` when present, otherwise the published
+`data/hpt-audit/manifest.csv`) and the corpus. Its output is
+`cms_data/hpt/pointer-corpus/cms_hpt_full_database.csv`.
+
+The join uses only `matched_ccns`, which are exact MRF-URL links. It never
+promotes pointer-level `related_ccns` into facility matches. Duplicate CCNs
+are disambiguated with the normalized MRF URL when possible and otherwise
+labeled `ambiguous-duplicate-ccn`. Both database-only hospitals and unmatched
+corpus entries remain in the file. Override paths when needed:
+
+```bash
+npm run hpt:combine-corpus -- --manifest=path/to/manifest.csv --corpus=path/to/cms_hpt_entries.csv --out=path/to/combined.csv
+```
+
+External CCN/MRF link inventories have a conservative path for unresolved
+hospitals. `npm run hpt:direct-mrf:prepare -- --input=path/to/links.csv` stages
+current-roster CCN/URL claims, and `npm run hpt:direct-mrf:headers` probes each
+unique MRF with capped requests. Claims are imported only when the MRF header
+independently confirms the same facility; full MRF downloads are not part of
+these commands.
+
 For the full list of steps and options, run `node scripts/hpt/run.js` with
 no arguments. The exact command sequence used so far, including the paid
 fallback paths, is under [Running it](#running-it) below.
@@ -221,7 +253,7 @@ scripts/hpt/          the pipeline (self-contained; Node built-ins + dotenv)
   lib/                fetching, parsing, probing, search, LLM adjudication, audit
   geocode.js          one-off: roster addresses -> coords.json (see below)
 scripts/build-tracker.js   injects the CSVs and the stylesheets into tracker.html
-scripts/build-glossary.js  injects the glossary into the three explainer pages
+scripts/build-glossary.js  updates any explainer page that opts into the glossary
 tracker.html          hand-authored page; the build swaps its data block
 js/tracker.js  js/outreach.js   loaded by the page (must sit alongside it)
 mrf.html rules.html pointer.html skill.html   the explainer pages (see below)
@@ -252,11 +284,10 @@ Notes for editing them:
 
 - Each of the first three opens with a **short version** (four plain
   sentences) before the regulatory detail.
-- Jargon links to a **glossary** entry at the foot of the page. Definitions
-  live once, in `TERMS` in [`scripts/build-glossary.js`](scripts/build-glossary.js).
-  `npm run build` generates the glossary `<dl>` from whatever slugs each page
-  links to, and fails on a slug with no definition — never hand-edit the
-  generated `<dl>`.
+- Explainer pages can opt into the shared glossary with its HTML sentinels.
+  Definitions live in `TERMS` in
+  [`scripts/build-glossary.js`](scripts/build-glossary.js); the current concise
+  pages do not need glossary entries.
 - Every regulatory claim links to its paragraph in the eCFR, with a numbered
   source list at the foot of the page. Sources: the current
   [45 CFR 180](https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-E/part-180),
@@ -301,12 +332,39 @@ Every stage is resumable — re-running skips work already recorded.
 
 ```bash
 cp cms_data/hpt/{compliance,manifest,gaps}.csv data/hpt-audit/
-npm run build      # glossary into the explainers, then data + CSS into the tracker
+npm run build      # validate explainers, then embed data + CSS in the tracker
 npm run serve      # http://localhost:8081/tracker.html
 ```
 
 `data/hpt-audit/` is a deliberate snapshot, so the published page does not
 change every time the pipeline runs. It must be refreshed explicitly.
+
+### Protecting raw pointer contacts
+
+The raw `cms-hpt.txt` files include public `contact-name` and `contact-email`
+fields. To keep those values from being searchable in the working tree while
+retaining the source files, encrypt only those fields in place:
+
+```bash
+npm run obfuscate:pointers
+npm run check:pointers-private
+```
+
+The retained snapshot lives in `data/hpt-audit/pointers/`. The first command
+generates an AES-256-GCM key at
+`data/hpt-audit/.pointer-obfuscation-key`. The key and verification report are
+intentionally tracked so every clone can verify and decode the contacts locally.
+This is search-engine obfuscation, not secret encryption: anyone with the
+repository can use the included key and script to recover the values. Plaintext
+contacts are not checked in. Once the key exists, later `pointers` and `verify`
+runs automatically protect newly written raw files before they are copied into
+the retained snapshot.
+
+Both `npm run serve` and `npm run serve:outreach` bind to the local machine and
+decrypt protected pointer-file responses in memory. They never write plaintext
+contacts back to disk, and they refuse HTTP access to the key and private
+outreach files. To restore plaintext files deliberately, run
+`node scripts/hpt/obfuscate-pointers.js --restore`.
 
 ### Hospital coordinates
 
@@ -332,8 +390,8 @@ and carries on without maps if it's missing.
 
 ### Outreach notes with persistence
 
-`npm run serve` is a plain static server, so the outreach notes UI (status,
-follow-ups, emails logged, corrections) falls back to that browser's
+`npm run serve` does not expose an outreach write API, so the outreach notes UI
+(status, follow-ups, emails logged, corrections) falls back to that browser's
 `localStorage` — per-browser only. To persist notes to a shared file instead:
 
 ```bash
@@ -397,7 +455,7 @@ first and lets `.env.local` override it; both are ignored, and nothing here
 encrypts either one, so live keys never belong in a commit:
 
 ```bash
-HPT_SEARCH=serper                  # or: decodo | dataforseo | exa
+HPT_SEARCH=serper                  # or: decodo | exa
 SERPER_API_KEY=...                 # 2,500 free queries/month
 
 OPENROUTER_API_KEY=...             # adjudicates ambiguous name matches
