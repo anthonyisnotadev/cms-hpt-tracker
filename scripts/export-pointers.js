@@ -79,6 +79,11 @@ const int = v => { const n = Number(v); return Number.isFinite(n) ? n : null; };
 // which is not the same as "not stale" and must not collapse to false.
 const bool = v => (v === 'yes' ? true : v === 'no' ? false : null);
 
+function sourceHash(text) {
+  const normalized = String(text).replace(/\r\n?/g, '\n');
+  return crypto.createHash('sha256').update(normalized, 'utf8').digest('hex');
+}
+
 function facility(r) {
   return {
     ccn: str(r.ccn),
@@ -151,7 +156,10 @@ function main() {
   const srcDir = resolveDir(argv.find(a => !a.startsWith('--') && a !== outFile));
   const srcFile = path.join(srcDir, 'manifest.csv');
 
-  const raw = fs.readFileSync(srcFile);
+  const raw = fs.readFileSync(srcFile, 'utf8');
+  // Git may check text files out with CRLF on Windows and LF on Linux. The
+  // parsed manifest is identical in either case, so its provenance hash must
+  // also describe that logical content instead of platform-specific bytes.
   const manifest = readTable(srcFile);
   const { chains, orphans } = build(manifest);
 
@@ -162,7 +170,7 @@ function main() {
     // bytes and shows no diff. The date this changed is what git log is for.
     source: {
       file: 'data/hpt-audit/manifest.csv',
-      sha256: crypto.createHash('sha256').update(raw).digest('hex'),
+      sha256: sourceHash(raw),
       rows: manifest.length
     },
     counts: {
@@ -200,4 +208,4 @@ function main() {
 }
 
 if (require.main === module) main();
-module.exports = { build, hostOf, SCHEMA_VERSION };
+module.exports = { build, hostOf, sourceHash, SCHEMA_VERSION };
