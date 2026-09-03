@@ -15,7 +15,7 @@
 const BAD_DOMAIN = /(wikipedia|wikimedia|facebook|linkedin|yelp|indeed|glassdoor|healthgrades|usnews|medicare\.gov|cms\.gov|hospitalsafetygrade|vitals\.com|webmd|ratemds|npidb|hipaaspace|bloomberg|zoominfo|mapquest|tripadvisor|instagram|twitter|x\.com|youtube|crunchbase|dnb\.com|bizapedia|manta\.com|apple\.com|google\.|bing\.|amazon\.com|ziprecruiter|monster\.com|careerbuilder|foursquare|nih\.gov|cdc\.gov|census\.gov)/i;
 
 const PROVIDERS = {
-  /** Serper — Google results, 2,500 free queries, $5/1k after. */
+  /** Serper - Google results, 2,500 free queries, $5/1k after. */
   serper: {
     envKeys: ['SERPER_API_KEY'],
     async search(query, { num = 8, timeoutMs = 20000 } = {}) {
@@ -30,7 +30,7 @@ const PROVIDERS = {
     }
   },
 
-  /** Decodo SERP — $0.32/1k, same vendor as the unblocker. */
+  /** Decodo SERP - $0.32/1k, same vendor as the unblocker. */
   decodo: {
     envKeys: ['DECODO_USERNAME', 'DECODO_PASSWORD'],
     async search(query, { num = 8, timeoutMs = 60000 } = {}) {
@@ -48,7 +48,7 @@ const PROVIDERS = {
     }
   },
 
-  /** Exa — kept working, but the most expensive option at $7/1k. */
+  /** Exa - kept working, but the most expensive option at $7/1k. */
   exa: {
     envKeys: ['EXA_API_KEY'],
     async search(query, { num = 8, timeoutMs = 20000 } = {}) {

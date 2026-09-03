@@ -117,7 +117,7 @@ const TERMS = {
   },
   'drg': {
     term: 'DRG and MS-DRG',
-    def: 'A code for a whole hospital stay rather than a single procedure &mdash; a category such as ' +
+    def: 'A code for a whole hospital stay rather than a single procedure - a category such as ' +
          '&ldquo;heart failure, with complications&rdquo; that Medicare pays one flat amount for, ' +
          'however many things happened during it.'
   },
@@ -142,7 +142,7 @@ const TERMS = {
     term: 'Median, 10th and 90th percentile',
     def: 'Ways of describing a spread of numbers. The median is the middle value; the 10th and 90th ' +
          'percentiles sit near the bottom and top of the range. Reported together they show whether ' +
-         'payments cluster tightly or vary enormously &mdash; which one average number hides.'
+         'payments cluster tightly or vary enormously - which one average number hides.'
   },
 
   /* ---- identifiers ---- */
@@ -220,7 +220,7 @@ const TERMS = {
   },
   'shoppable': {
     term: 'Shoppable services',
-    def: 'Around 300 common services you can plan ahead for &mdash; an MRI, a birth, a hip replacement. ' +
+    def: 'Around 300 common services you can plan ahead for - an MRI, a birth, a hip replacement. ' +
          'Hospitals must display prices for these in a plain, consumer-facing way. That is a ' +
          '<em>separate</em> duty from the big machine-readable file, and this tracker does not measure ' +
          'it.'
@@ -251,7 +251,7 @@ const TERMS = {
   'pointer': {
     term: 'Pointer file (cms-hpt.txt)',
     def: 'A small text file at a fixed, predictable web address that says where a hospital&rsquo;s ' +
-         'price file actually is. It exists so that nobody &mdash; and no program &mdash; has to search ' +
+         'price file actually is. It exists so that nobody - and no program - has to search ' +
          'the website to find one.'
   },
   'robots': {

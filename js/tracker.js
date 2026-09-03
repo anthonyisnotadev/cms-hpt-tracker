@@ -1013,7 +1013,7 @@
 
      OpenFreeMap serves the tiles: OpenStreetMap data, no key, no per-view
      tracking, and no quota to keep an eye on. MapLibre draws them, and neither
-     is fetched until a drawer actually opens — the tracker already ships 1.8 MB
+     is fetched until a drawer actually opens - the tracker already ships 1.8 MB
      of audit data, and a map library nobody asked for would be a third of that
      again on every page load for the people who only read the charts.
 
@@ -1114,7 +1114,7 @@
           center: at,
           zoom: zoom,
           // Off here and re-added compact below: the default control is a full
-          // bar across a 168px-tall map. The credit itself is not optional —
+          // bar across a 168px-tall map. The credit itself is not optional -
           // the tile source supplies its own text and this only folds it into
           // an (i) once the map has been touched.
           attributionControl: false,

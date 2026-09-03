@@ -81,7 +81,7 @@ function normalizeName(s) {
     .toLowerCase()
     .replace(/&/g, ' and ')
     // Drop apostrophes before splitting. Otherwise "children's" becomes two
-    // tokens and cannot match "childrens" — which scored 0.13 for
+    // tokens and cannot match "childrens" - which scored 0.13 for
     // "WOMEN'S HOSPITAL" vs "Womens Hospital". Possessives are pervasive in
     // hospital names, so this silently sank a whole class of true matches.
     .replace(/['‘’´`]/g, '')

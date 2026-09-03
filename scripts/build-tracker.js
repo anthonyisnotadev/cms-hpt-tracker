@@ -133,7 +133,7 @@ const QUEUE = [
 function readCoords() {
   const file = path.join(__dirname, '..', 'cms_data', 'hpt', 'coords.json');
   if (!fs.existsSync(file)) {
-    console.warn('cms_data/hpt/coords.json missing — building without hospital maps.\n'
+    console.warn('cms_data/hpt/coords.json missing - building without hospital maps.\n'
       + '  Run `node scripts/hpt/geocode.js` to create it.');
     return {};
   }
@@ -339,7 +339,8 @@ function main() {
     outreach,
   };
 
-  const json = JSON.stringify(data);
+  // Keep em dashes out of the public page without altering the source CSVs.
+  const json = JSON.stringify(data).replace(/\u2014/g, '-');
   const html = fs.readFileSync(outFile, 'utf8');
   const re = /(<script id="tracker-data" type="application\/json">)[\s\S]*?(<\/script>)/;
   if (!re.test(html)) throw new Error('no <script id="tracker-data"> block in ' + outFile);

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* Outreach record store — the single write path for cms_data/outreach.json.
+/* Outreach record store - the single write path for cms_data/outreach.json.
  *
  * The mutation and validation logic used to live in outreach-server.js, which
  * meant it was duplicated with js/outreach.js's local backend. It now lives
@@ -224,7 +224,7 @@ function setCorrection(body) {
 
 /* An outcome says something about the record as a whole: a reply means the
  * hospital answered, a bounce means the message never landed and so is not one
- * you are awaiting a reply to. Only awaiting-reply moves — contacted and
+ * you are awaiting a reply to. Only awaiting-reply moves - contacted and
  * no-response were set deliberately and are left alone. Shared by setOutcome and
  * editEntry so the rule has one home. */
 function applyOutcomeStatus(rec, outcome) {
@@ -244,7 +244,7 @@ function setOutcome(body) {
   return { record: rec, entry };
 }
 
-/* Correct an entry in place. The alternative — delete then re-add — mints a new
+/* Correct an entry in place. The alternative - delete then re-add - mints a new
  * id and a new `at`, which silently rewrites when you logged something and
  * breaks any reference to the old id. Here both survive, and `editedAt` records
  * that the entry is no longer purely what was first written down.
@@ -291,7 +291,7 @@ function editEntry(body) {
   }
 
   // A save that changes nothing is not an edit, and should not stamp editedAt or
-  // move updatedAt — re-saving an untouched form must leave the record alone.
+  // move updatedAt - re-saving an untouched form must leave the record alone.
   const changed = Object.keys(next).filter((k) => entry[k] !== next[k]);
   if (!changed.length) return { record: rec, entry };
 

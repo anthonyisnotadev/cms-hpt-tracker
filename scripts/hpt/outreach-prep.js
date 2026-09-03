@@ -15,7 +15,7 @@
  *   3. renders a draft email from the outreach template, with the one
  *      finding-specific paragraph optionally rewritten by the model  (template + LLM)
  *
- * Output: cms_data/hpt/outreach_queue.csv  — one row per hospital, ready to
+ * Output: cms_data/hpt/outreach_queue.csv  - one row per hospital, ready to
  * read, edit, and hand to the `outreach` skill.
  *
  * WHAT THIS DOES NOT DO, BY DESIGN:
@@ -158,13 +158,13 @@ function renderDraft(paragraph) {
   ].join('\n');
 
   // No em dashes in drafted email text (outreach skill). Swap for a comma.
-  body = body.replace(/\s*—\s*/g, ', ');
+  body = body.replace(/\s*-\s*/g, ', ');
 
   const problems = [];
   if (/^\s*Hi\s+[A-Z][a-z]+,/m.test(body)) problems.push('name-salutation');
   if (!/^Hello,/.test(body)) problems.push('missing-hello');
   if (!body.includes('follow up in 30 days')) problems.push('missing-followup');
-  if (body.includes('—')) problems.push('em-dash');
+  if (body.includes('-')) problems.push('em-dash');
   return { body, problems };
 }
 
@@ -311,7 +311,7 @@ async function findContact(job, opt) {
     }).join('\n\n');
     const res = await chatJson({
       system: CONTACT_SYSTEM,
-      user: `Hospital: ${job.hospital_name} — ${job.city}, ${job.state}\nWeb domain: ${domain || '(unknown)'}\n\n${rendered}`,
+      user: `Hospital: ${job.hospital_name} - ${job.city}, ${job.state}\nWeb domain: ${domain || '(unknown)'}\n\n${rendered}`,
       schema: CONTACT_SCHEMA, model: opt.model, timeoutMs: llmTimeoutMs
     });
     if (res.data && res.data.email) {
@@ -387,7 +387,7 @@ async function draftParagraph(variant, job, opt) {
   // Reject a rewrite that broke a house rule or dropped the file URL. The URL
   // check is whitespace-insensitive: the model often reflows a long URL.
   const bad = !p
-    || p.includes('—')
+    || p.includes('-')
     || /\b(dear|hello|hi|thanks|thank you|regards|sincerely|best regards)\b/i.test(p)
     || (job.mrf_url && !noWs(p).includes(noWs(job.mrf_url)));
   if (bad) return { paragraph: base, source: res.error ? `template (llm ${res.error.slice(0, 40)})` : 'template-fallback' };

@@ -1,7 +1,7 @@
 # CMS-HPT harvester
 
-Finds and downloads the `cms-hpt.txt` pointer file — and the machine-readable
-files (MRFs) it points to — for every hospital in `cms_data/Hospital_General_Information.csv`
+Finds and downloads the `cms-hpt.txt` pointer file - and the machine-readable
+files (MRFs) it points to - for every hospital in `cms_data/Hospital_General_Information.csv`
 (5,419 hospitals).
 
 ```bash
@@ -25,13 +25,13 @@ than assumed:
    unblocking as a narrow exception.
 
 3. **One file often covers a whole system.** `cms-hpt.txt` lists every location
-   an operator owns — `encompasshealth.com` returns 185 of them, `providence.org`
+   an operator owns - `encompasshealth.com` returns 185 of them, `providence.org`
    61. Fetching 150 domains produced pointer data for **1,215 hospitals**. Work
    is therefore scheduled per *domain*, highest hospital-count first.
 
 ## Pipeline
 
-Each stage is resumable — re-running skips anything already recorded — and all
+Each stage is resumable - re-running skips anything already recorded - and all
 state lands in `cms_data/hpt/` (already gitignored).
 
 | Stage | What it does | Cost |
@@ -169,8 +169,8 @@ header output.
 `match`, `corroborate` and `adjudicate` form a loop: each pass surfaces work for
 the next, so re-running `match` after either stage is expected and cheap.
 
-`--retryFailed` on `dates` re-probes anything without a declared date — including
-records probed before compressed files could be read — rather than trusting a
+`--retryFailed` on `dates` re-probes anything without a declared date - including
+records probed before compressed files could be read - rather than trusting a
 stored success flag.
 
 Useful flags: `--limit=N` (trial run), `--concurrency=N`, `--retryFailed`,
@@ -182,7 +182,7 @@ default 512).
 Domain discovery does not need an accurate source, because **`cms-hpt.txt`
 verifies itself**: the file lists its own location names, so a candidate can be
 confirmed or discarded for the price of one HTTP request. Candidate *precision*
-is therefore irrelevant — only recall and cost matter.
+is therefore irrelevant - only recall and cost matter.
 
 ```
 candidates.json   { ccn: [ {domain, source, score}, ... ] }
@@ -201,15 +201,15 @@ a domain:
 | Wikidata (one SPARQL query) | 838 candidates for 642 hospitals | free |
 | Orphan entries | 910 candidates for 446 hospitals | free |
 | Serper search | ~26% of hospitals resolved | free tier (2,500) |
-| Heuristic name guesses | **9%** — below the 15% bar, not run by default | free but ~12 requests/hospital |
+| Heuristic name guesses | **9%** - below the 15% bar, not run by default | free but ~12 requests/hospital |
 
 The heuristic generator stays available behind `--source=heuristic` as a last
 resort: it costs nothing but bandwidth, and every hit it produced scored 1.00.
 
 ## How a name is matched to a CCN
 
-Names alone are not enough — `ST. MARY'S HOSPITAL` scores 1.00 against a
-hospital in another state — so matching climbs a ladder of evidence and stops at
+Names alone are not enough - `ST. MARY'S HOSPITAL` scores 1.00 against a
+hospital in another state - so matching climbs a ladder of evidence and stops at
 the first level that settles it:
 
 1. **Per domain.** Entries are matched greedily and one-to-one against the
@@ -228,14 +228,14 @@ the first level that settles it:
    is accepted, and every verdict is cached.
 
 If the winner fails corroboration, matching falls back to the best in-footprint
-candidate rather than abandoning the entry — otherwise a cross-state collision
+candidate rather than abandoning the entry - otherwise a cross-state collision
 would knock out the correct in-state hospital.
 
 ## Where the pointer file can live
 
 CMS permits the site root **or** `.well-known`, and both apex and `www`. All four
 are tried, plus a homepage-redirect retry that catches systems which have merged
-since the seed data was collected — `mercyhealth.com` now redirects to
+since the seed data was collected - `mercyhealth.com` now redirects to
 `trinityhealthmichigan.org`, `memorial.org` to `commonspirit.org`.
 
 ## Unblocker
@@ -266,13 +266,13 @@ interchangeable, and treating them as one list wastes money:
 | Bucket | Fix | Why not just search for it |
 |---|---|---|
 | `exa-domain-lookup` | `candidates --source=search` (`exa_query` pre-filled) | genuinely no domain, or the seeded one is wrong |
-| `run-pointers-first` | nothing — run the free pass | not a gap yet, just unrun work |
+| `run-pointers-first` | nothing - run the free pass | not a gap yet, just unrun work |
 | `name-match-review` | `adjudicate`, or manual | the pointer file already works; discovery is not the problem |
 | `unblocker` | Decodo / Oxylabs | the domain is right and refusing us; a search returns the same host |
 | `exempt-federal` | skip | VA/DoD are outside 45 CFR 180 |
 
 Two things this prevents. Blocked hospitals are counted per *domain*, not per
-hospital — 124 blocked hospitals were only 66 domains, so pricing them per
+hospital - 124 blocked hospitals were only 66 domains, so pricing them per
 hospital overstates the work. And hospitals whose system publishes a working
 pointer file are never sent to a search API, because the answer is already in
 hand.
@@ -285,9 +285,9 @@ node scripts/hpt/run.js gaps --import=fixed.csv # read hand-corrected domains ba
 Each row has a blank `resolved_domain` column: fill it in by hand, import, then
 re-run `pointers && match`. Nothing needs editing JSON directly.
 
-## Finding hospitals with no domain — `find-domains.js`
+## Finding hospitals with no domain - `find-domains.js`
 
-`gaps.csv`'s largest bucket is hospitals with no working domain at all — nothing
+`gaps.csv`'s largest bucket is hospitals with no working domain at all - nothing
 to crawl and nobody to email. `node scripts/hpt/find-domains.js` attacks that
 list directly, cheapest source first, and gates every hit on evidence:
 
@@ -304,17 +304,17 @@ Phases 5 and 6 are not optional polish, they are the difference between a
 worklist and garbage. Measured on the real 1,283-hospital gap list:
 
 - 181 rows passed the name match at the 0.55 threshold
-- state corroboration demoted **66** of them — `TEXAS COUNTY MEMORIAL HOSPITAL` (MO) had
+- state corroboration demoted **66** of them - `TEXAS COUNTY MEMORIAL HOSPITAL` (MO) had
   matched `Texas Health Arlington Memorial Hospital`, and two different Kentucky
   hospitals had both matched the same generic `University Hospital` entry
-- adjudication dropped **13** more that were in-state but the wrong facility —
+- adjudication dropped **13** more that were in-state but the wrong facility -
   `Ochsner Lafayette General` vs `Ochsner Medical Center - Kenner`,
   `Essentia Health Duluth` vs `Essentia Health-Ada`, three Baylor Scott & White
   facilities in different cities
 
 Final: **102 verified** (real `cms-hpt.txt` that names the hospital, plus a live
 `mrf_url`), 79 `unconfirmed` for manual review, 351 `site-found` (website
-confirmed, no pointer file — hand those to `recover --llm`), 751 `none`.
+confirmed, no pointer file - hand those to `recover --llm`), 751 `none`.
 
 State corroboration also fills in `mrf_last_updated` and `cms_version` for free, so
 newly-found hospitals arrive with their compliance status already known.
@@ -348,7 +348,7 @@ The finder itself does not write the manifest, `domains.json`, or
 `outreach.json`; its CSV is import-ready, and the explicit `gaps --import`
 command is the step that updates `domains.json`.
 
-## External link exports as leads — `verify-external-links.js`
+## External link exports as leads - `verify-external-links.js`
 
 An external CSV of public hospital links can improve discovery without making
 the publisher's dataset part of this repository. The export is treated only as
@@ -387,7 +387,7 @@ hospital site, `cms-hpt.txt`, the MRF response, and the CMS roster. The staging
 candidate/unmapped CSVs and resumable cache are gitignored, so publisher labels,
 rankings, counts, and other export fields do not enter the tracker.
 
-## LLM footer recovery — `recover --llm`
+## LLM footer recovery - `recover --llm`
 
 The free `recover` pass greps the homepage for a link whose text or URL contains
 `price`/`transparen`/`standard-charges`, then greps that page for a `.csv`/`.json`
@@ -398,7 +398,7 @@ is script-built, or the file sits two hops in.
 blocked, not already resolved by the regex pass) and the same premise, but drives
 the two hops with a model: *which nav links lead to the price page*, then *which
 link on those pages is the machine-readable file*. It reads the smallest domains
-first — a real system almost always has a pointer file, so a pointer-less domain
+first - a real system almost always has a pointer file, so a pointer-less domain
 is usually one hospital that linked its file straight off its own site.
 
 The safety-critical part is what happens next. A scraped link is weaker evidence
@@ -416,12 +416,12 @@ probe and the **same corroboration gate the `match` stage uses**:
 Accepted rows are written to `recovered.csv` in manifest column order.
 `recovered_mrfs.json` keeps the full record including every rejected and
 unconfirmed URL with its reason. **Neither is merged into the manifest
-automatically** — review `recovered.csv`, then feed the good rows in the same way
+automatically** - review `recovered.csv`, then feed the good rows in the same way
 as a `gaps` import. Needs `OPENROUTER_API_KEY`; `OPENROUTER_MODEL` optional
 (defaults to `meta-llama/llama-3.1-8b-instruct`, same as `adjudicate`). Nothing
 here reaches a paid unblocker.
 
-## Outreach draft queue — `outreach-prep.js`
+## Outreach draft queue - `outreach-prep.js`
 
 `node scripts/hpt/outreach-prep.js` turns the actionable rows of
 `compliance.csv` into a review queue for the `outreach` skill. For each hospital
@@ -431,13 +431,13 @@ finding it:
 1. classifies the finding into an email variant (deterministic);
 2. fetches the price page plus a couple of contact pages, scrapes every
    `mailto:`, and asks a model for the best billing / price-transparency address
-   — returning one only if it actually appeared on a page;
+   - returning one only if it actually appeared on a page;
 3. renders a draft from the `outreach` skill's template, optionally rewriting the
    one finding-specific paragraph with the model, then lints it (salutation is
    `Hello,`, no em dash, the 30-day follow-up line is present).
 
 Output is `outreach_queue.csv`. The script **never sends email and never writes
-`cms_data/outreach.json`** — logging stays a confirmed step in the `outreach`
+`cms_data/outreach.json`** - logging stays a confirmed step in the `outreach`
 skill. It runs without an API key (contact falls back to the first on-domain
 `mailto:`, drafts fall back to the template). Signature block comes from
 `--name` / `--email` / `--url` or `HPT_OUTREACH_NAME` / `_EMAIL` / `_URL`.
@@ -450,7 +450,7 @@ Everything lands in one row per hospital in `cms_data/hpt/manifest.csv`
 
 | Column | Meaning |
 |---|---|
-| `ccn` | CMS Certification Number — joins to `Facility ID` in the CMS datasets |
+| `ccn` | CMS Certification Number - joins to `Facility ID` in the CMS datasets |
 | `hospital_name`, `city`, `state`, `type` | From `Hospital_General_Information.csv` |
 | `domain` | Host the pointer file was found on |
 | `pointer_url`, `pointer_via` | The `cms-hpt.txt` URL, and how it was fetched (`direct` / `redirect` / `verify` / provider) |
@@ -461,16 +461,16 @@ Everything lands in one row per hospital in `cms_data/hpt/manifest.csv`
 | `mrf_format` | Format guessed from the URL |
 | `match_score`, `match_method` | How the entry was tied to this CCN (`name` / `sole-candidate` / `global-name` / `global-name+corroborated` / `llm-adjudicated`) |
 | `match_corroboration` | The evidence that settled a cross-state or adjudicated match |
-| `mrf_last_updated` | **Date of record** — the file's own `last_updated_on`, ISO |
+| `mrf_last_updated` | **Date of record** - the file's own `last_updated_on`, ISO |
 | `mrf_last_updated_raw` | That value exactly as published (e.g. `3/27/2026`) |
 | `mrf_date_source` | `file-metadata`, or blank when undated |
 | `mrf_days_since_update` | Age in days |
-| `mrf_stale_over_365` | `yes` / `no` — 45 CFR 180.50 requires annual updates |
+| `mrf_stale_over_365` | `yes` / `no` - 45 CFR 180.50 requires annual updates |
 | `mrf_cms_version` | CMS template version, normalized (`V3.0.0` → `3.0.0`) |
 | `mrf_bytes`, `mrf_content_type` | From the response headers |
 | `mrf_file_kind` | Real type from magic bytes (`csv` / `json` / `zip` / `gzip`), not the extension |
 | `mrf_http_status`, `mrf_checked_at` | Probe result and timestamp |
-| `mrf_http_last_modified_diagnostic` | **Diagnostic only** — never the date of record, see below |
+| `mrf_http_last_modified_diagnostic` | **Diagnostic only** - never the date of record, see below |
 
 Rows whose entry could not be tied to a hospital are not dropped; they go to
 `unmatched.json` with the reason and the best rejected guess.
@@ -492,14 +492,14 @@ across 726 files that had both:
 | drift (days) | min −19, median 23, max 249 |
 
 A timestamp that predates the content date in 111 cases is not tracking content
-— it tracks when the bytes were deployed, and it moves on CDN re-uploads, site
+- it tracks when the bytes were deployed, and it moves on CDN re-uploads, site
 migrations and cache refreshes. It is still recorded, as
 `mrf_http_last_modified_diagnostic`, because the gap between the two is a useful
 signal. It never fills `mrf_last_updated`, and rows with no declared date are
 left blank rather than padded with a plausible-looking wrong one.
 
 Reading the date does not require downloading the file. The CMS template puts
-the metadata first, so a ranged request for the first 16 KB is enough — on a
+the metadata first, so a ranged request for the first 16 KB is enough - on a
 120-URL sample this dated **91%** of files while transferring a few KB each
 instead of the ~166 MB average. Compressed MRFs (`.zip`, `.gz`) pull a 256 KB
 window and inflate just the header, which recovers dates that would otherwise be
@@ -519,8 +519,8 @@ This audit is what drove the current rules. The first version matched 96.7%, and
 **every** error sat in the per-domain pass, which had no state check at all: a
 system like Providence lists 61 locations across many states, so a within-domain
 name match happily landed `PROVIDENCE ST JOSEPH HOSPITAL (CA)` on a Washington
-file. Applying the header state to *all* match paths — not just the cross-state
-ones — took it to **1,014/1,014**, at a cost of 0.6 points of coverage. Under a
+file. Applying the header state to *all* match paths - not just the cross-state
+ones - took it to **1,014/1,014**, at a cost of 0.6 points of coverage. Under a
 precision-first manifest that is the right trade: a wrong CCN→MRF row silently
 corrupts any downstream pricing analysis, while a missing one is visible in
 `gaps.csv`.
@@ -534,7 +534,7 @@ storage before running `download` without `--limit`.
 
 ## Known gaps
 
-- **Federal hospitals** (VA, DoD — 164 in the roster) are outside 45 CFR 180, so
+- **Federal hospitals** (VA, DoD - 164 in the roster) are outside 45 CFR 180, so
   they have no pointer file to find. `seed` reports them and `resolve` skips them
   by default.
 - **`entry_date` on the seed dataset is 2022**, so its deep URLs are stale. It is

@@ -18,7 +18,7 @@
  *
  * Cost per domain: at most 2 model calls (pick nav links, then pick the file),
  * at most ~5 plain GETs, and one ranged header probe. Nothing here reaches a
- * paid unblocker — blocked domains are a different bucket.
+ * paid unblocker - blocked domains are a different bucket.
  */
 
 const { directGet } = require('./fetch');
@@ -176,7 +176,7 @@ async function recoverViaLlm({ domain, hospitals }, opts = {}) {
   const ranked = rankLinks(homeLinks, sameHost);
   const pick = await chatJson({
     system: PICK_SYSTEM,
-    user: `Hospital: ${target.name || '(unknown)'} — ${target.city || ''}, ${target.state || ''}\nHomepage: ${finalBase}\n\nLinks:\n${renderLinkList(ranked)}`,
+    user: `Hospital: ${target.name || '(unknown)'} - ${target.city || ''}, ${target.state || ''}\nHomepage: ${finalBase}\n\nLinks:\n${renderLinkList(ranked)}`,
     schema: PICK_SCHEMA, model, timeoutMs: llmTimeoutMs
   });
 
@@ -225,7 +225,7 @@ async function recoverViaLlm({ domain, hospitals }, opts = {}) {
   ).join('\n\n');
   const find = await chatJson({
     system: FIND_SYSTEM,
-    user: `Target hospital: ${target.name || '(unknown)'} — ${target.city || ''}, ${target.state || ''}\n\n${rendered}`,
+    user: `Target hospital: ${target.name || '(unknown)'} - ${target.city || ''}, ${target.state || ''}\n\n${rendered}`,
     schema: FIND_SCHEMA, model, timeoutMs: llmTimeoutMs
   });
 

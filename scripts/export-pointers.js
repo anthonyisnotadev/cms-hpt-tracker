@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Emits data/hpt-audit/pointers.json — the published contract for downstream
+ * Emits data/hpt-audit/pointers.json - the published contract for downstream
  * consumers that want the chain structure without depending on this pipeline.
  *
  *   node scripts/export-pointers.js [sourceDir] [--out FILE] [--check]
@@ -8,8 +8,8 @@
  * Why this file exists rather than "just read manifest.csv": manifest.csv is a
  * pipeline *output*, 28 columns wide, and its schema moves whenever matching is
  * tuned. Anything outside this repo that reads it breaks on a column rename it
- * never asked about. pointers.json is the narrow, deliberate surface instead —
- * the chain grouping and the four fields needed to draw it — so the manifest
+ * never asked about. pointers.json is the narrow, deliberate surface instead -
+ * the chain grouping and the four fields needed to draw it - so the manifest
  * stays free to change.
  *
  * A "chain" here is one cms-hpt.txt. That is the grouping CMS itself defines:
@@ -18,8 +18,8 @@
  * by the regulation's own definition, not by our guess about corporate structure.
  *
  * KNOWN GAP: manifest.csv holds only rows that matched a CCN, so this export
- * inherits that. A cms-hpt.txt naming a facility with no CCN in our roster —
- * a children's hospital inside a larger system, say — is invisible here. Those
+ * inherits that. A cms-hpt.txt naming a facility with no CCN in our roster -
+ * a children's hospital inside a larger system, say - is invisible here. Those
  * live in the retained pointer snapshot (data/hpt-audit/pointers/*.txt). Its
  * contact-name and contact-email values are obfuscated at rest and decoded only
  * by the local server; see scripts/hpt/lib/pointer-obfuscation.js.

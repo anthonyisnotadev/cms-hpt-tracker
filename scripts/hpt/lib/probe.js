@@ -101,7 +101,7 @@ function licenseStateFromHeaders(headers) {
  * Pull the date, template version, and the identifying fields (address,
  * location name, licensing state) out of the file header.
  *
- * The identifying fields cost nothing extra — the header is already in hand —
+ * The identifying fields cost nothing extra - the header is already in hand -
  * and they are what lets an ambiguous name match be settled on evidence instead
  * of string similarity. "St Mary's Hospital" appears in many states; the file
  * itself says which one it is.
@@ -184,7 +184,7 @@ function extractDeclared(buf, kind) {
  *
  * Worth the extra bytes: a compressed file is otherwise undatable, and the only
  * alternative signal (HTTP Last-Modified) is a deployment timestamp, not a
- * content date. Truncated input is expected here — we only need the first rows,
+ * content date. Truncated input is expected here - we only need the first rows,
  * so a mid-stream error still leaves usable output.
  */
 function decompressHead(buf, kind) {
@@ -254,7 +254,7 @@ async function readCapped(res, cap = HEAD_BYTES) {
  * Probe one MRF URL for its date, size and format without downloading it.
  *
  * The date of record is the file's own `last_updated_on`. HTTP Last-Modified is
- * still captured, but only as a diagnostic — it is a deployment timestamp and is
+ * still captured, but only as a diagnostic - it is a deployment timestamp and is
  * never substituted for the declared date.
  */
 async function probeMrf(url, { timeoutMs = 45000, useUnblocker = true } = {}) {

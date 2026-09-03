@@ -4,7 +4,7 @@
  *
  * Every check asks one question: does a row assert something its own fields
  * refute? That is detectable mechanically, needs no domain knowledge, and is
- * how the real bugs here were found — a hospital reported as having no domain
+ * how the real bugs here were found - a hospital reported as having no domain
  * while holding a pointer URL, rows called compliant with no file link, a
  * stale flag disagreeing with its own day count.
  *

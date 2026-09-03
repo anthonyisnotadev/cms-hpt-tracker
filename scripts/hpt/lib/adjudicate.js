@@ -30,14 +30,14 @@ Known rename patterns that ARE the same facility:
 
 Sibling facilities are NOT matches. This is the most common error:
 - Being owned by, affiliated with, or part of the same health system does NOT make two facilities the same hospital. A system's file lists many DIFFERENT hospitals.
-- "Medical West, an affiliate of UAB Health System" is NOT "University of Alabama Hospital" — they are two separate hospitals in one system.
+- "Medical West, an affiliate of UAB Health System" is NOT "University of Alabama Hospital" - they are two separate hospitals in one system.
 - If the two names denote different places (different city, different campus, different named facility), answer false even when they share an owner.
 
 Weighing evidence:
 - A publishing domain built from THIS hospital's own distinctive name (bullockcountyhospital.com for "Bullock County Hospital") is strong evidence FOR a match.
-- A domain belonging to the parent SYSTEM (uabmedicine.org, providence.org, ascension.org) is NOT evidence for any particular hospital — such files list many hospitals.
+- A domain belonging to the parent SYSTEM (uabmedicine.org, providence.org, ascension.org) is NOT evidence for any particular hospital - such files list many hospitals.
 - Answer "high" confidence when the location evidence agrees, or when the names differ only by a known rename pattern AND nothing contradicts it.
-- If you have NO location evidence and the names differ in a way you cannot explain, answer match=false with "low" confidence — not "high". Reserve high confidence for conclusions the evidence actually supports, in either direction.`;
+- If you have NO location evidence and the names differ in a way you cannot explain, answer match=false with "low" confidence - not "high". Reserve high confidence for conclusions the evidence actually supports, in either direction.`;
 
 const SCHEMA = {
   name: 'hospital_match',

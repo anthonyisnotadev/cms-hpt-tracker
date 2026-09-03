@@ -16,7 +16,7 @@
  * Source is the US Census Bureau's batch geocoder: public domain, no API key,
  * and built for exactly this shape of request (a file of US addresses in, a
  * file of coordinates out). Nominatim is the obvious alternative and the wrong
- * one — its usage policy rules out systematic bulk queries like this.
+ * one - its usage policy rules out systematic bulk queries like this.
  *
  * Results are cached in cms_data/hpt/coords.json and written after every batch,
  * so an interrupted run resumes where it stopped. Misses are cached as null: an

@@ -86,7 +86,7 @@ const log = (...m) => console.log(...m);
 /**
  * The date probe deliberately reads only the first bytes of a file and then
  * drops the connection. Some HTTP/2 servers respond by closing the socket, and
- * undici raises that asynchronously as an 'error' event with no listener —
+ * undici raises that asynchronously as an 'error' event with no listener -
  * which terminates the process even though the request itself was already
  * handled. Losing a multi-hour resumable run to one host hanging up is not
  * acceptable, so exactly that class of error is absorbed and counted; anything
@@ -366,7 +366,7 @@ async function cmdPointers(opt) {
   const prov = activeProvider();
   log(useUnblocker && prov
     ? `Unblocker: ${prov.name} (used only after a domain blocks the free request)`
-    : 'Unblocker: none configured — free tier only, blocked domains will be recorded for a later pass');
+    : 'Unblocker: none configured - free tier only, blocked domains will be recorded for a later pass');
 
   let list = Object.values(domains);
   if (!opt.retryFailed) list = list.filter(d => !store.has(d.domain));
@@ -497,8 +497,8 @@ async function cmdMatch(opt) {
 
   // Pointer files fetched but never linked to a CCN. `verify` only claims a
   // domain when an entry clears its threshold, so a hospital that renamed
-  // itself — "Bullock County Hospital" publishing as "Bullock County Rural
-  // Emergency Hospital" — leaves a perfectly good file stranded on disk. Feed
+  // itself - "Bullock County Hospital" publishing as "Bullock County Rural
+  // Emergency Hospital" - leaves a perfectly good file stranded on disk. Feed
   // those entries into the same orphan pool so the evidence is at least
   // considered; with no footprint they carry no state assumption, and the
   // header check still guards them.
@@ -598,8 +598,8 @@ async function cmdMatch(opt) {
       continue;
     }
 
-    // Out-of-footprint candidates are the dangerous ones — "St Mary's Hospital"
-    // exists in many states — so they must be corroborated by the MRF's own
+    // Out-of-footprint candidates are the dangerous ones - "St Mary's Hospital"
+    // exists in many states - so they must be corroborated by the MRF's own
     // header rather than excluded outright. The file states where it operates.
     let corroboration = null;
     const fallbackToFootprint = (reason, note) => {
@@ -1189,8 +1189,8 @@ async function cmdVerify(opt) {
  * Shelby Hospital" scores 0.77 against "SHELBY BAPTIST MEDICAL CENTER" and is
  * the same building). Address and licensing state read from the MRF header go
  * into the prompt, so the model rules on evidence rather than vibes. Only an
- * affirmative high-confidence verdict is stored as accepted — the manifest is
- * precision-first — and every verdict is cached so re-runs cost nothing.
+ * affirmative high-confidence verdict is stored as accepted - the manifest is
+ * precision-first - and every verdict is cached so re-runs cost nothing.
  */
 async function cmdAdjudicate(opt) {
   let queue = [];
@@ -1280,8 +1280,8 @@ async function cmdAdjudicate(opt) {
  *
  * These are cross-state candidates: the name matches, but the hospital is
  * outside the states that domain is known to serve. Rather than guess, `match`
- * queues the MRF URL and this stage reads its header — which states the
- * hospital's own address and licensing state — so the next `match` can decide
+ * queues the MRF URL and this stage reads its header - which states the
+ * hospital's own address and licensing state - so the next `match` can decide
  * on evidence. Same free ranged read as `dates`.
  */
 async function cmdCorroborate(opt) {
@@ -1433,7 +1433,7 @@ async function cmdDownload(opt) {
  * with what would actually fix it.
  *
  * The buckets exist because the fixes are not interchangeable. A blocked domain
- * does not need a new domain — sending it to a search API returns the same host
+ * does not need a new domain - sending it to a search API returns the same host
  * and spends money for nothing. A hospital whose system already publishes a
  * working pointer file does not need discovery at all; it needs its name
  * reconciled. Only genuinely missing or wrong domains are search problems.
@@ -1567,7 +1567,7 @@ async function cmdGapsImport(file) {
  * Findings are stated as observations with the evidence attached and the date
  * checked, not as legal conclusions: a 403 to this client is evidence that
  * automated access was refused, which is worth reporting precisely because CMS
- * created the .txt requirement to make these files machine-readable — but it is
+ * created the .txt requirement to make these files machine-readable - but it is
  * not proof of intent, and the report says so.
  */
 const FINDING = {
@@ -1607,7 +1607,7 @@ async function cmdCompliance(opt) {
 
   // "Site up but no cms-hpt.txt" is the headline finding, and it can only be
   // separated from "site unreachable" by asking the homepage. Records written
-  // before homeStatus existed are filled in here — free, and usually a handful.
+  // before homeStatus existed are filled in here - free, and usually a handful.
   const needHome = Object.entries(pointers)
     .filter(([, p]) => p && !p.ok && (p.reason === 'notfound' || p.reason === 'html')
       && (p.homeStatus === undefined || p.homeStatus === null))
@@ -1635,7 +1635,7 @@ async function cmdCompliance(opt) {
     // The manifest is the authoritative record of what was concluded, and it
     // carries its own domain. domains.json is only the *input* list of domains
     // to go fetch, and the cross-domain and adjudicated match paths never write
-    // back to it — so 402 fully matched hospitals looked domainless when this
+    // back to it - so 402 fully matched hospitals looked domainless when this
     // asked the input store to describe the output.
     const domain = (row && row.domain) || domainOf.get(h.ccn) || '';
     const p = domain ? pointers[domain] : null;
@@ -1671,7 +1671,7 @@ async function cmdCompliance(opt) {
         finding = FINDING.OLD_TEMPLATE;
         evidence = `file declares CMS template version ${row.mrf_cms_version}`;
       } else if (!row.mrf_last_updated) {
-        // Published and reachable, but currency unverified — do not claim both.
+        // Published and reachable, but currency unverified - do not claim both.
         finding = FINDING.OK_NO_DATE;
         evidence = 'cms-hpt.txt and MRF found, but last_updated_on could not be read';
       } else {

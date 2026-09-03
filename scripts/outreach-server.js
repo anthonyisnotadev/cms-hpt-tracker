@@ -3,7 +3,7 @@
  *
  * Serves the repo root (so tracker.html and js/*.js load as-is) and backs
  * js/outreach.js's server contract. All record mutation and validation lives in
- * outreach-store.js, which outreach-cli.js also uses — so the same record shape
+ * outreach-store.js, which outreach-cli.js also uses - so the same record shape
  * comes out whether the write arrived from the browser or the terminal.
  *
  * The store is re-read from disk before every mutation, so a CLI write made

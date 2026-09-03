@@ -6,7 +6,7 @@
  * (jdoe@examplehospital.org -> j***@examplehospital.org), and the person names
  * listed in cms_data/redact-names.json (private, gitignored) are replaced so
  * individual hospital staff can't be identified in the public record. The
- * hospital domain stays visible — it is public information and useful context.
+ * hospital domain stays visible - it is public information and useful context.
  *
  * Run by hand (npm run redact) or automatically after every store save.
  *
@@ -24,13 +24,13 @@ const NAMES_FILE = path.join(ROOT, 'cms_data', 'redact-names.json');
 
 /* Person names that appear in notes/emails, as a private
  * cms_data/redact-names.json map: { "real name": "public replacement" }.
- * Keys must be lowercase for matching. The file is gitignored — publishing
+ * Keys must be lowercase for matching. The file is gitignored - publishing
  * the keys would defeat the masking. See redact-names.example.json. */
 function loadNameSubs() {
   try {
     return JSON.parse(fs.readFileSync(NAMES_FILE, 'utf8'));
   } catch (e) {
-    return {}; /* no list configured — emails still masked, names pass through */
+    return {}; /* no list configured - emails still masked, names pass through */
   }
 }
 
@@ -73,7 +73,8 @@ function generate(src, dst) {
   const data = JSON.parse(fs.readFileSync(src, 'utf8'));
   const redacted = redactValue(data);
   const tmp = `${dst}.${process.pid}.tmp`;
-  fs.writeFileSync(tmp, `${JSON.stringify(redacted, null, 2)}\n`);
+  const publicJson = JSON.stringify(redacted, null, 2).replace(/\u2014/g, '-');
+  fs.writeFileSync(tmp, `${publicJson}\n`);
   fs.renameSync(tmp, dst);
   return dst;
 }
@@ -86,7 +87,7 @@ if (require.main === module) {
     console.log(`wrote ${path.relative(ROOT, DST)}`);
   } catch (e) {
     if (e.code === 'ENOENT') {
-      console.error(`no private file at ${path.relative(ROOT, SRC)} — nothing to redact`);
+      console.error(`no private file at ${path.relative(ROOT, SRC)} - nothing to redact`);
       process.exit(1);
     }
     throw e;

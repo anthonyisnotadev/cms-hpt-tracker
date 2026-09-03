@@ -112,7 +112,7 @@ function resolve(query, opts) {
     let matched = 0;
     for (const t of qToks) if (p.toks.has(t)) matched += weight(t);
     // `base` is how much of the query the name accounts for, and it alone
-    // decides ambiguity. Bonuses only order the tie — a name that happens to
+    // decides ambiguity. Bonuses only order the tie - a name that happens to
     // equal the query must not read as unambiguous when four other hospitals
     // contain every query word too ("st marys hospital").
     const base = matched / total;
@@ -195,7 +195,7 @@ function describeChange(before, after) {
   (b.entries || []).forEach((e) => {
     if (!aIds.has(e.id)) lines.push(`- removed ${e.kind} ${e.id}`);
   });
-  // Field-level changes to an entry that survived — an outcome flip, or anything
+  // Field-level changes to an entry that survived - an outcome flip, or anything
   // edit-entry rewrote. Bodies are truncated: the point is that the field moved,
   // and an 8000-character diff line helps nobody review it.
   (a.entries || []).forEach((e) => {
@@ -236,8 +236,8 @@ function truncate(s, n) {
 /* The store builds records and entries field by field rather than spreading, and
  * silently coerces anything malformed: a US-format sentAt becomes today, a
  * bare-path mrfUrl becomes empty, an unknown key vanishes. None of that reaches
- * describeChange(), so the diff looks clean and the review gate — the point of
- * the whole design — has nothing to catch. These two tables let us compare what
+ * describeChange(), so the diff looks clean and the review gate - the point of
+ * the whole design - has nothing to catch. These two tables let us compare what
  * was sent against what landed and report the difference.
  *
  * Post-hoc comparison, deliberately: outreach-store.js already has to be kept in
@@ -283,12 +283,12 @@ function describeDiscards(op, suppliedKeys, res) {
   suppliedKeys.forEach((k) => {
     if (STRUCTURAL.has(k)) return;
     if (known.indexOf(k) === -1) {
-      out.push(`unknown field "${k}" — the store has no such field`);
+      out.push(`unknown field "${k}" - the store has no such field`);
       return;
     }
     var target = targets[FIELD_TARGET[k]];
     // A collapsed correction leaves nothing to compare against, but the fields
-    // that were rejected are exactly why it collapsed — compare against empty so
+    // that were rejected are exactly why it collapsed - compare against empty so
     // the cause is reported alongside the effect.
     if (!target && FIELD_TARGET[k] === 'correction' && op.op === 'correction' && !op.clear) target = {};
     if (!target) return;
@@ -301,7 +301,7 @@ function describeDiscards(op, suppliedKeys, res) {
   });
 
   if (op.op === 'correction' && !op.clear && !(res && res.correction)) {
-    out.push('the whole correction was dropped — one of domain, pointerUrl, mrfUrl, '
+    out.push('the whole correction was dropped - one of domain, pointerUrl, mrfUrl, '
       + 'lastUpdatedOn, templateVersion, verdict or note must be set (checkedOn alone is not enough)');
   }
   return out;
@@ -344,16 +344,16 @@ function applyPlan(ops, commit) {
     const label = `op ${i + 1} (${op && op.op})`;
     if (!op || !op.op) { problems.push(`${label}: missing "op"`); return; }
     const fn = OPS[op.op];
-    if (!fn) { problems.push(`${label}: unknown op "${op.op}" — expected one of ${Object.keys(OPS).join(', ')}`); return; }
+    if (!fn) { problems.push(`${label}: unknown op "${op.op}" - expected one of ${Object.keys(OPS).join(', ')}`); return; }
     if (!op.ccn) { problems.push(`${label}: missing "ccn"`); return; }
     if (!touched.has(op.ccn)) touched.set(op.ccn, snapshot(store.get(op.ccn)));
 
     const known = R.byCcn.get(op.ccn);
-    if (!known) warnings.push(`${label} [${op.ccn}]: CCN is not in the roster — check it is real`);
+    if (!known) warnings.push(`${label} [${op.ccn}]: CCN is not in the roster - check it is real`);
 
     // A record created by a bare correction/email would otherwise land with an
     // empty name, invisible to `list --state` and blank in the tracker UI. The
-    // roster already has the labels, so fill them in — title-cased, because the
+    // roster already has the labels, so fill them in - title-cased, because the
     // roster stores SHOUTING and the existing records don't.
     // Snapshot the keys before the roster fills any in below, so its title-casing
     // is never reported back as something the caller asked for.
@@ -395,7 +395,7 @@ function applyPlan(ops, commit) {
     return;
   }
 
-  process.stdout.write(`${commit ? 'APPLIED' : 'DRY RUN — nothing written'} · ${report.length} record(s)\n\n`);
+  process.stdout.write(`${commit ? 'APPLIED' : 'DRY RUN - nothing written'} · ${report.length} record(s)\n\n`);
   report.forEach((r) => {
     process.stdout.write(`  ${r.ccn}  ${r.label}\n`);
     r.changes.forEach((c) => process.stdout.write(`      ${c}\n`));
@@ -423,12 +423,12 @@ function cmdFind(args) {
   if (args.json) { process.stdout.write(`${JSON.stringify(results, null, 2)}\n`); return; }
 
   results.forEach((r) => {
-    process.stdout.write(`"${r.query}" — ${r.confidence}\n`);
+    process.stdout.write(`"${r.query}" - ${r.confidence}\n`);
     if (!r.candidates.length) process.stdout.write('    no match\n');
     r.candidates.forEach((c, i) => {
       const rec = store.get(c.ccn);
       const tag = rec ? `  [tracked: ${rec.status}]` : '';
-      process.stdout.write(`   ${i === 0 ? '*' : ' '} ${c.ccn}  ${c.name} — ${c.city}, ${c.state}  (${c.score})${tag}\n`);
+      process.stdout.write(`   ${i === 0 ? '*' : ' '} ${c.ccn}  ${c.name} - ${c.city}, ${c.state}  (${c.score})${tag}\n`);
     });
     process.stdout.write('\n');
   });
@@ -447,10 +447,10 @@ function cmdShow(args) {
   if (args.json) { process.stdout.write(`${JSON.stringify(rec, null, 2)}\n`); return; }
   if (!rec) {
     const known = roster().byCcn.get(ccn);
-    process.stdout.write(`${ccn} — ${known ? `${known.name} (${known.city}, ${known.state})` : 'unknown'} — no outreach record yet\n`);
+    process.stdout.write(`${ccn} - ${known ? `${known.name} (${known.city}, ${known.state})` : 'unknown'} - no outreach record yet\n`);
     return;
   }
-  process.stdout.write(`${rec.ccn}  ${rec.name} — ${rec.city}, ${rec.state}\n`);
+  process.stdout.write(`${rec.ccn}  ${rec.name} - ${rec.city}, ${rec.state}\n`);
   process.stdout.write(`status: ${rec.status}${rec.followUpOn ? `   follow up: ${rec.followUpOn}` : ''}\n`);
   if (rec.correction) {
     process.stdout.write('correction:\n');
@@ -494,7 +494,7 @@ function cmdSingle(opName, args) {
   applyPlan([op], !!args.commit);
 }
 
-const HELP = `outreach-cli — natural-language-friendly writes to cms_data/outreach.json
+const HELP = `outreach-cli - natural-language-friendly writes to cms_data/outreach.json
 
 READ
   find <name...> [--state XX] [--city C] [--limit N] [--json]
@@ -502,7 +502,7 @@ READ
   show <ccn|name> [--json]
   list [--status S] [--state XX] [--verdict V] [--json]
 
-WRITE  (dry run by default — add --commit to actually write)
+WRITE  (dry run by default - add --commit to actually write)
   apply <plan.json|-> [--commit]
   email --ccn C --subject S [--to T] [--body B | --body-file F] [--sentAt YYYY-MM-DD]
         [--outcome O] [--commit]
@@ -534,7 +534,7 @@ PLAN FORMAT
 
   Dates are YYYY-MM-DD and URLs must be absolute http(s); the store silently
   discards anything else. A run prints "discarded:" for every field it dropped or
-  rewrote — read those, they are invisible in the diff itself.
+  rewrote - read those, they are invisible in the diff itself.
 
   edit-entry rewrites an entry in place: it keeps the id and the original logged-at
   time, stamps editedAt, and leaves out every field you omit. It cannot change an
@@ -578,7 +578,7 @@ function main() {
       process.stdout.write(HELP);
       return undefined;
     default:
-      return die(`unknown command "${cmd}" — try \`help\``);
+      return die(`unknown command "${cmd}" - try \`help\``);
   }
 }
 
