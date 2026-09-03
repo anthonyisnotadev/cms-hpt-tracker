@@ -234,6 +234,28 @@
       }
     ]
   },
+  "220029": {
+    "ccn": "220029",
+    "name": "Anna Jaques Hospital",
+    "city": "Newburyport",
+    "state": "MA",
+    "status": "awaiting-reply",
+    "followUpOn": "2026-10-03",
+    "createdAt": "2026-09-03T21:58:52.100Z",
+    "updatedAt": "2026-09-03T21:58:52.100Z",
+    "entries": [
+      {
+        "id": "mtm2hk1v-cnicfs",
+        "kind": "email",
+        "at": "2026-09-03T21:58:52.099Z",
+        "subject": "MRF access blocked for automated tools - Anna Jaques Hospital",
+        "to": "B***@bilh.org",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and ran into an access issue with Anna Jaques Hospital's machine-readable file. The site appears to block traffic from VPN/hosting IP ranges, which is also blocking the automated tool I use to check files like this:\n\nhttps://ajh.org/832671600_anna-jaques-hospital_standardcharges.json\n(linked from https://ajh.org/patients-visitors/billing-financial-services/price-transparency)\n\nJust for reference, 45 CFR 180.50 specifically requires the file to be available to \"automated searches and direct downloads\" through a link on the site, so a VPN-based block ends up affecting that requirement even if the file itself is fine.\n\nWould it be possible to check whether the site's bot/VPN protection is scoped to exclude this file (or the price transparency page generally)? Happy to share more detail on what got blocked if that helps track it down.\n\nI'll plan to follow up in 30 days so I can continue my research.\n\nThanks so much,\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
+        "sentAt": "2026-09-03",
+        "outcome": "none"
+      }
+    ]
+  },
   "330405": {
     "ccn": "330405",
     "name": "Helen Hayes Hospital",
