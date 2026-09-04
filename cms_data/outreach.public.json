@@ -1528,5 +1528,26 @@
         "text": "Plan to call P*** at 256-***-**** to discuss getting the broken cms-hpt.txt file fixed."
       }
     ]
+  },
+  "044005": {
+    "ccn": "044005",
+    "name": "Bridgeway Hospital",
+    "city": "North Little Rock",
+    "state": "AR",
+    "status": "none",
+    "followUpOn": "",
+    "createdAt": "2026-09-04T06:23:30.173Z",
+    "updatedAt": "2026-09-04T06:23:30.174Z",
+    "entries": [],
+    "correction": {
+      "domain": "thebridgeway.com",
+      "pointerUrl": "https://thebridgeway.com/cms-hpt.txt",
+      "mrfUrl": "https://uhsfilecdn.eskycity.net/bh/232238973_bridgeway_standardcharges.csv",
+      "lastUpdatedOn": "2026-05-12",
+      "templateVersion": "3.0.0",
+      "verdict": "failing",
+      "checkedOn": "2026-09-04",
+      "note": "The required root cms-hpt.txt returned HTTP 403 to automated access on 2026-09-04. The direct MRF is accessible by ranged GET (HTTP 206) and was located from https://thebridgeway.com/standard-services/. Its header identifies The BridgeWay at 21 Bridgeway Road, North Little Rock, AR 72113, Arkansas license 5164 and Type 2 NPI 1962473306; it reports last_updated_on 2026-05-12, template version 3.0.0, and a true 45 CFR 180.50 attestation. Contact: UHS Corp Price Transparency Team, U***@uhsinc.com."
+    }
   }
 }
