@@ -1743,5 +1743,47 @@
       "checkedOn": "2026-09-04",
       "note": "The root cms-hpt.txt returned HTTP 403 with Cf-Mitigated: challenge on 2026-09-04, preventing direct automated access. The machine-readable CSV is directly accessible with HTTP 200, and its header identifies Springwoods Behavioral Health, an updated date of 2026-09-01, and CMS template version 3.0.0. The failing determination is based on the blocked pointer, not the CSV contents supplied for review."
     }
+  },
+  "040119": {
+    "ccn": "040119",
+    "name": "White River Medical Center",
+    "city": "Batesville",
+    "state": "AR",
+    "status": "none",
+    "followUpOn": "",
+    "createdAt": "2026-09-04T16:27:59.329Z",
+    "updatedAt": "2026-09-04T16:27:59.330Z",
+    "entries": [],
+    "correction": {
+      "domain": "whiteriverhealth.slicedhealth.io",
+      "pointerUrl": "",
+      "mrfUrl": "https://whiteriverhealth.slicedhealth.io/pricer/71-0411459-1710943881_WhiteRiverHealth_standardcharges.CSV",
+      "lastUpdatedOn": "2026-03-19",
+      "templateVersion": "3.0.0",
+      "verdict": "compliant",
+      "checkedOn": "2026-09-04",
+      "note": "Classified as compliant based on the supplied White River Medical Center machine-readable file header. The file separately identifies White River Medical Center in Batesville, Arkansas, license 000418, type 2 NPI 1710943881, last_updated_on 2026-03-19, and CMS template version 3.0.0. The source page is https://whiteriverhealth.slicedhealth.io/home."
+    }
+  },
+  "041310": {
+    "ccn": "041310",
+    "name": "Stone County Medical Center",
+    "city": "Mountain View",
+    "state": "AR",
+    "status": "none",
+    "followUpOn": "",
+    "createdAt": "2026-09-04T16:27:59.330Z",
+    "updatedAt": "2026-09-04T16:27:59.330Z",
+    "entries": [],
+    "correction": {
+      "domain": "whiteriverhealth.slicedhealth.io",
+      "pointerUrl": "",
+      "mrfUrl": "https://whiteriverhealth.slicedhealth.io/pricer/71-0411459-1417913419_WhiteRiverHealth_standardcharges.CSV",
+      "lastUpdatedOn": "2026-03-19",
+      "templateVersion": "3.0.0",
+      "verdict": "compliant",
+      "checkedOn": "2026-09-04",
+      "note": "Classified as compliant based on the supplied Stone County Medical Center machine-readable file header. The file separately identifies Stone County Medical Center in Mountain View, Arkansas, license AR5036, type 2 NPI 1417913419, last_updated_on 2026-03-19, and CMS template version 3.0.0. The source page is https://whiteriverhealth.slicedhealth.io/home."
+    }
   }
 }
