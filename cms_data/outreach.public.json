@@ -1534,11 +1534,22 @@
     "name": "Bridgeway Hospital",
     "city": "North Little Rock",
     "state": "AR",
-    "status": "none",
-    "followUpOn": "",
+    "status": "awaiting-reply",
+    "followUpOn": "2026-10-04",
     "createdAt": "2026-09-04T06:23:30.173Z",
-    "updatedAt": "2026-09-04T06:23:30.174Z",
-    "entries": [],
+    "updatedAt": "2026-09-04T06:32:06.453Z",
+    "entries": [
+      {
+        "id": "mtmktl4j-dwardv",
+        "kind": "email",
+        "at": "2026-09-04T06:32:06.451Z",
+        "subject": "Blocked cms-hpt.txt Access",
+        "to": "U***@uhsinc.com",
+        "body": "Hello,\n\nI’m doing some research into hospital price transparency and noticed that The BridgeWay’s cms-hpt.txt file is being blocked by a Cloudflare browser challenge:\n\nhttps://thebridgeway.com/cms-hpt.txt\n\nCMS’s Hospital Price Transparency requirements use the cms-hpt.txt file to support automated discovery of a hospital’s machine-readable file. Automated requests to The BridgeWay’s pointer currently receive an HTTP 403 response with Cf-Mitigated: challenge, rather than the text file.\n\nThe hospital’s machine-readable CSV itself remains accessible:\n\nhttps://uhsfilecdn.eskycity.net/bh/232238973_bridgeway_standardcharges.csv\n\nCould the Cloudflare settings be updated to allow direct automated access to /cms-hpt.txt without requiring JavaScript, cookies, or a browser challenge?\n\nI’ll plan to follow up in 30 days so I can continue my research. Happy to provide the response details if useful.\n\nThanks so much,\n\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
+        "sentAt": "2026-09-04",
+        "outcome": "none"
+      }
+    ],
     "correction": {
       "domain": "thebridgeway.com",
       "pointerUrl": "https://thebridgeway.com/cms-hpt.txt",
