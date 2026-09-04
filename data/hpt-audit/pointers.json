@@ -2,14 +2,14 @@
  "schemaVersion": 1,
  "source": {
   "file": "data/hpt-audit/manifest.csv",
-  "sha256": "4c8b1d17443dc0738ee5ba79337b3d8cf9f1ac694a8c683e20d64660199d3224",
-  "rows": 3870
+  "sha256": "38472e829cdcc4384b068861095cd7a0cbd5c398d34a3a2cdd8c8a3c7a6c6547",
+  "rows": 3962
  },
  "counts": {
-  "chains": 1908,
-  "facilities": 3841,
-  "multiFacilityChains": 382,
-  "facilitiesInMultiFacilityChains": 2315,
+  "chains": 1981,
+  "facilities": 3933,
+  "multiFacilityChains": 389,
+  "facilitiesInMultiFacilityChains": 2341,
   "orphans": 29
  },
  "chains": [
@@ -5370,7 +5370,7 @@
     "havenphiladelphia.com",
     "oceanshealthcare.com"
    ],
-   "facilityCount": 28,
+   "facilityCount": 29,
    "facilities": [
     {
      "ccn": "034020",
@@ -5491,6 +5491,20 @@
      "state": "LA",
      "locationName": "Oceans Behavioral Hospital of Greater New Orleans-Marrero",
      "mrfUrl": "https://oceanshealthcare.com/wp-content/uploads/2026/07/262167249_Oceans-Behavioral-Hospital-of-Greater-New-Orleans-Marrero_standardcharges.csv",
+     "mrfHost": "oceanshealthcare.com",
+     "sourcePageUrl": "https://oceanshealthcare.com/financial-guidance/#price-transparency",
+     "lastUpdated": "2026-04-01",
+     "daysSinceUpdate": 155,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "194107",
+     "name": "BATON ROUGE BEHAVIORAL HOSPITAL",
+     "city": "BATON ROUGE",
+     "state": "LA",
+     "locationName": "Oceans Behavioral Hospital of Baton Rouge",
+     "mrfUrl": "https://oceanshealthcare.com/wp-content/uploads/2026/06/203890581_Oceans-Behavioral-Hosptial-of-Baton-Rouge_standardcharges-1.csv",
      "mrfHost": "oceanshealthcare.com",
      "sourcePageUrl": "https://oceanshealthcare.com/financial-guidance/#price-transparency",
      "lastUpdated": "2026-04-01",
@@ -10188,6 +10202,213 @@
    ]
   },
   {
+   "pointerUrl": "https://adventisthealth.org/cms-hpt.txt",
+   "pointerHost": "adventisthealth.org",
+   "domains": [
+    "adventisthealth.org",
+    "mcmc.net"
+   ],
+   "facilityCount": 14,
+   "facilities": [
+    {
+     "ccn": "050013",
+     "name": "ADVENTIST HEALTH ST HELENA",
+     "city": "SAINT HELENA",
+     "state": "CA",
+     "locationName": "ST HELENA HOSPITAL",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHSHSAINTHELENACA&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
+     "lastUpdated": "2026-07-15",
+     "daysSinceUpdate": 50,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "050103",
+     "name": "ADVENTIST HEALTH WHITE MEMoriaL",
+     "city": "LOS ANGELES",
+     "state": "CA",
+     "locationName": "WHITE MEMoriaL MEDICAL CENTER",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHWMLOSANGELESCA&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
+     "lastUpdated": "2026-05-23",
+     "daysSinceUpdate": 103,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "050239",
+     "name": "GLENDALE ADVENTIST MEDICAL CENTER",
+     "city": "GLENDALE",
+     "state": "CA",
+     "locationName": "GLENDALE ADVENTIST MEDICAL CENTER",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbGAMCGLENDALECA&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
+     "lastUpdated": "2026-07-30",
+     "daysSinceUpdate": 35,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "050301",
+     "name": "ADVENTIST HEALTH UKIAH VALLEY",
+     "city": "UKIAH",
+     "state": "CA",
+     "locationName": "UKIAH ADVENTIST HOSPITAL",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbUkiahValleyCA&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
+     "lastUpdated": "2026-05-24",
+     "daysSinceUpdate": 102,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "050336",
+     "name": "ADVENTIST HEALTH LODI MEMoriaL",
+     "city": "LODI",
+     "state": "CA",
+     "locationName": "LODI MEMoriaL HOSPITAL ASSOCIATION INC",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHLMLODICA&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
+     "lastUpdated": "2026-08-02",
+     "daysSinceUpdate": 32,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "050506",
+     "name": "ADVENTIST HEALTH SIERRA VISTA",
+     "city": "SAN LUIS OBISPO",
+     "state": "CA",
+     "locationName": "SIERRA VISTA HOSPITAL, INC.",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbSVRMSANLUISOBISPOCA&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
+     "lastUpdated": "2026-01-10",
+     "daysSinceUpdate": 236,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "050608",
+     "name": "ADVENTIST HEALTH DELANO",
+     "city": "DELANO",
+     "state": "CA",
+     "locationName": "ADVENTIST HEALTH DELANO",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbDRMCDELANOCA&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
+     "lastUpdated": "2026-07-29",
+     "daysSinceUpdate": 36,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "050633",
+     "name": "ADVENTIST HEALTH TWIN CITIES",
+     "city": "TEMPLETON",
+     "state": "CA",
+     "locationName": "TWIN CITIES COMMUNITY HOSPITAL",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbTCCHTEMPLETONCA&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
+     "lastUpdated": "2026-01-10",
+     "daysSinceUpdate": 236,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "050784",
+     "name": "ADVENTIST HEALTH TULARE",
+     "city": "TULARE",
+     "state": "CA",
+     "locationName": "ADVENTIST HEALTH TULARE",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHTTULARECA&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
+     "lastUpdated": "2026-05-22",
+     "daysSinceUpdate": 104,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "051301",
+     "name": "ADVENTIST HEALTH TEHACHAPI VALLEY",
+     "city": "TEHACHAPI",
+     "state": "CA",
+     "locationName": "ADVENTIST HEALTH MEDICAL CENTER TEHACHAPI",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbTHTEHACHAPICA&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
+     "lastUpdated": "2026-05-21",
+     "daysSinceUpdate": 105,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "051317",
+     "name": "ADVENTIST HEALTH CLEARLAKE",
+     "city": "CLEARLAKE",
+     "state": "CA",
+     "locationName": "ADVENTIST HEALTH CLEARLAKE HOSPITAL",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHCLCLEARLAKECA&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
+     "lastUpdated": "2026-07-29",
+     "daysSinceUpdate": 36,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "051325",
+     "name": "ADVENTIST HEALTH MENDOCINO COAST",
+     "city": "FORT BRAGG",
+     "state": "CA",
+     "locationName": "ADVENTIST HEALTH MENDOCINO COAST",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbMCDHFORTBRAGGCA&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
+     "lastUpdated": "2026-08-02",
+     "daysSinceUpdate": 32,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "380001",
+     "name": "MID-COLUMBIA MEDICAL CENTER",
+     "city": "THE DALLES",
+     "state": "OR",
+     "locationName": "MID-COLUMBIA MEDICAL CENTER",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbMidColumbia&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
+     "lastUpdated": "2026-05-13",
+     "daysSinceUpdate": 113,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "380060",
+     "name": "ADVENTIST HEALTH PORTLAND",
+     "city": "PORTLAND",
+     "state": "OR",
+     "locationName": "PORTLAND ADVENTIST MEDICAL CENTER",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAMCPORTLANDOR&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
+     "lastUpdated": "2026-05-26",
+     "daysSinceUpdate": 100,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://aurorahealthcare.org/cms-hpt.txt",
    "pointerHost": "aurorahealthcare.org",
    "domains": [
@@ -11012,6 +11233,212 @@
    ]
   },
   {
+   "pointerUrl": "https://www.baptistonline.org/cms-hpt.txt",
+   "pointerHost": "baptistonline.org",
+   "domains": [
+    "baptistonline.org"
+   ],
+   "facilityCount": 14,
+   "facilities": [
+    {
+     "ccn": "040118",
+     "name": "BAPTIST MEMoriaL HOSPITAL JONESBORO, INC.",
+     "city": "JONESBORO",
+     "state": "AR",
+     "locationName": "26-1214372 NEA Baptist",
+     "mrfUrl": "https://sites.bmhcc.org/-/media/Pricing-Documents/AR/261214372_nea-baptist-memorial-hospital_standardcharges.zip",
+     "mrfHost": "sites.bmhcc.org",
+     "sourcePageUrl": "https://www.baptistonline.org/estimate-my-costs",
+     "lastUpdated": "2026-02-27",
+     "daysSinceUpdate": 188,
+     "staleOver365": false,
+     "httpStatus": 206
+    },
+    {
+     "ccn": "250006",
+     "name": "BAPTIST MEMoriaL HOSPITAL UNION COUNTY",
+     "city": "NEW ALBANY",
+     "state": "MS",
+     "locationName": "63-0997281 BMH Union County",
+     "mrfUrl": "https://sites.bmhcc.org/-/media/Pricing-Documents/MS/630997281_baptist-memorial-hospitalunion-county_standardcharges.zip",
+     "mrfHost": "sites.bmhcc.org",
+     "sourcePageUrl": "https://www.baptistonline.org/estimate-my-costs",
+     "lastUpdated": "2026-02-28",
+     "daysSinceUpdate": 187,
+     "staleOver365": false,
+     "httpStatus": 206
+    },
+    {
+     "ccn": "250044",
+     "name": "BAPTIST MEMoriaL HOSPITAL BOONEVILLE",
+     "city": "BOONEVILLE",
+     "state": "MS",
+     "locationName": "64-0663760 BMH Booneville",
+     "mrfUrl": "https://sites.bmhcc.org/-/media/Pricing-Documents/MS/640663760_baptist-memorial-hospitalbooneville_standardcharges.zip",
+     "mrfHost": "sites.bmhcc.org",
+     "sourcePageUrl": "https://www.baptistonline.org/estimate-my-costs",
+     "lastUpdated": "2026-02-25",
+     "daysSinceUpdate": 190,
+     "staleOver365": false,
+     "httpStatus": 206
+    },
+    {
+     "ccn": "250102",
+     "name": "MISSISSIPPI BAPTIST MEDICAL CENTER",
+     "city": "JACKSON",
+     "state": "MS",
+     "locationName": "64-0881013 MBMC Jackson",
+     "mrfUrl": "https://sites.bmhcc.org/-/media/Pricing-Documents/MS/640881013_mississippi-baptist-medical-center_standardcharges.zip",
+     "mrfHost": "sites.bmhcc.org",
+     "sourcePageUrl": "https://www.baptistonline.org/estimate-my-costs",
+     "lastUpdated": "2026-02-25",
+     "daysSinceUpdate": 190,
+     "staleOver365": false,
+     "httpStatus": 206
+    },
+    {
+     "ccn": "250104",
+     "name": "ANDERSON REGIONAL MEDICAL CENTER",
+     "city": "MERIDIAN",
+     "state": "MS",
+     "locationName": "64-0362400 Anderson Regional Main Campus",
+     "mrfUrl": "https://sites.bmhcc.org/-/media/Pricing-Documents/MS/640362400_baptist-anderson-regional-medical-center_standardcharges.zip",
+     "mrfHost": "sites.bmhcc.org",
+     "sourcePageUrl": "https://www.baptistonline.org/estimate-my-costs",
+     "lastUpdated": "2026-02-25",
+     "daysSinceUpdate": 190,
+     "staleOver365": false,
+     "httpStatus": 206
+    },
+    {
+     "ccn": "250141",
+     "name": "BAPTIST MEMoriaL HOSPITAL DESOTO",
+     "city": "SOUTHAVEN",
+     "state": "MS",
+     "locationName": "64-0682111 BMH DeSoto",
+     "mrfUrl": "https://sites.bmhcc.org/-/media/Pricing-Documents/MS/640682111_baptist-memorial-hospitaldesoto_standardcharges.zip",
+     "mrfHost": "sites.bmhcc.org",
+     "sourcePageUrl": "https://www.baptistonline.org/estimate-my-costs",
+     "lastUpdated": "2026-02-27",
+     "daysSinceUpdate": 188,
+     "staleOver365": false,
+     "httpStatus": 206
+    },
+    {
+     "ccn": "251313",
+     "name": "BAPTIST MEDICAL CENTER-YAZOO",
+     "city": "YAZOO CITY",
+     "state": "MS",
+     "locationName": "64-0844470 MBMC Yazoo",
+     "mrfUrl": "https://sites.bmhcc.org/-/media/Pricing-Documents/MS/640844470_baptist-medical-center--yazoo-inc_standardcharges.zip",
+     "mrfHost": "sites.bmhcc.org",
+     "sourcePageUrl": "https://www.baptistonline.org/estimate-my-costs",
+     "lastUpdated": "2026-02-17",
+     "daysSinceUpdate": 198,
+     "staleOver365": false,
+     "httpStatus": 206
+    },
+    {
+     "ccn": "251315",
+     "name": "BAPTIST MEDICAL CENTER-LEAKE",
+     "city": "CARTHAGE",
+     "state": "MS",
+     "locationName": "45-2896080 MBMC Leake",
+     "mrfUrl": "https://sites.bmhcc.org/-/media/Pricing-Documents/MS/452896080_baptist-medical-center--leake-inc_standardcharges.zip",
+     "mrfHost": "sites.bmhcc.org",
+     "sourcePageUrl": "https://www.baptistonline.org/estimate-my-costs",
+     "lastUpdated": "2026-02-20",
+     "daysSinceUpdate": 195,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "251324",
+     "name": "WALTHALL COUNTY GENERAL HOSPITAL CAH",
+     "city": "TYLERTOWN",
+     "state": "MS",
+     "locationName": "64-0663760 BMH Booneville",
+     "mrfUrl": "https://sites.bmhcc.org/-/media/Pricing-Documents/MS/640663760_baptist-memorial-hospitalbooneville_standardcharges.zip",
+     "mrfHost": "sites.bmhcc.org",
+     "sourcePageUrl": "https://www.baptistonline.org/estimate-my-costs",
+     "lastUpdated": "2026-02-25",
+     "daysSinceUpdate": 190,
+     "staleOver365": false,
+     "httpStatus": 206
+    },
+    {
+     "ccn": "251336",
+     "name": "BAPTIST MEDICAL CENTER ATTALA",
+     "city": "KOSCIUSKO",
+     "state": "MS",
+     "locationName": "47-3684354 MBMC Attala",
+     "mrfUrl": "https://sites.bmhcc.org/-/media/Pricing-Documents/MS/473684354_baptist-medical-center--attala-inc_standardcharges.zip",
+     "mrfHost": "sites.bmhcc.org",
+     "sourcePageUrl": "https://www.baptistonline.org/estimate-my-costs",
+     "lastUpdated": "2026-02-20",
+     "daysSinceUpdate": 195,
+     "staleOver365": false,
+     "httpStatus": 206
+    },
+    {
+     "ccn": "440016",
+     "name": "BAPTIST MEMoriaL HOSPITAL - CARROLL COUNTY",
+     "city": "HUNTINGDON",
+     "state": "TN",
+     "locationName": "62-1166050 BMH Carroll County",
+     "mrfUrl": "https://sites.bmhcc.org/-/media/Pricing-Documents/TN/621166050_baptist-memorial-hospitalcarroll-county_standardcharges.zip",
+     "mrfHost": "sites.bmhcc.org",
+     "sourcePageUrl": "https://www.baptistonline.org/estimate-my-costs",
+     "lastUpdated": "2026-02-27",
+     "daysSinceUpdate": 188,
+     "staleOver365": false,
+     "httpStatus": 206
+    },
+    {
+     "ccn": "440048",
+     "name": "BAPTIST MEMoriaL HOSPITAL",
+     "city": "MEMPHIS",
+     "state": "TN",
+     "locationName": "62-0123940_BMH Memphis",
+     "mrfUrl": "https://sites.bmhcc.org/-/media/Pricing-Documents/TN/620123940_baptist-memorial-hospital_standardcharges.zip",
+     "mrfHost": "sites.bmhcc.org",
+     "sourcePageUrl": "https://www.baptistonline.org/estimate-my-costs",
+     "lastUpdated": "2026-02-28",
+     "daysSinceUpdate": 187,
+     "staleOver365": false,
+     "httpStatus": 206
+    },
+    {
+     "ccn": "440130",
+     "name": "BAPTIST MEMoriaL HOSPITAL UNION CITY",
+     "city": "UNION CITY",
+     "state": "TN",
+     "locationName": "62-1138045 BMH Union City",
+     "mrfUrl": "https://sites.bmhcc.org/-/media/Pricing-Documents/TN/621138045_baptist-memorial-hospitalunion-city_standardcharges.zip",
+     "mrfHost": "sites.bmhcc.org",
+     "sourcePageUrl": "https://www.baptistonline.org/estimate-my-costs",
+     "lastUpdated": "2026-02-25",
+     "daysSinceUpdate": 190,
+     "staleOver365": false,
+     "httpStatus": 206
+    },
+    {
+     "ccn": "440131",
+     "name": "BAPTIST MEMoriaL HOSPITAL TIPTON",
+     "city": "COVINGTON",
+     "state": "TN",
+     "locationName": "62-1113167 BMH Tipton",
+     "mrfUrl": "https://sites.bmhcc.org/-/media/Pricing-Documents/TN/621113167_baptist-memorial-hospitaltipton_standardcharges.zip",
+     "mrfHost": "sites.bmhcc.org",
+     "sourcePageUrl": "https://www.baptistonline.org/estimate-my-costs",
+     "lastUpdated": "2026-02-27",
+     "daysSinceUpdate": 188,
+     "staleOver365": false,
+     "httpStatus": 206
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://www.ohiohealth.com/cms-hpt.txt",
    "pointerHost": "ohiohealth.com",
    "domains": [
@@ -11218,199 +11645,6 @@
    ]
   },
   {
-   "pointerUrl": "https://adventisthealth.org/cms-hpt.txt",
-   "pointerHost": "adventisthealth.org",
-   "domains": [
-    "adventisthealth.org",
-    "mcmc.net"
-   ],
-   "facilityCount": 13,
-   "facilities": [
-    {
-     "ccn": "050013",
-     "name": "ADVENTIST HEALTH ST HELENA",
-     "city": "SAINT HELENA",
-     "state": "CA",
-     "locationName": "ST HELENA HOSPITAL",
-     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHSHSAINTHELENACA&type=CDMWithoutLabel&fileType=CSV",
-     "mrfHost": "apps.para-hcfs.com",
-     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
-     "lastUpdated": "2026-07-15",
-     "daysSinceUpdate": 50,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "050103",
-     "name": "ADVENTIST HEALTH WHITE MEMoriaL",
-     "city": "LOS ANGELES",
-     "state": "CA",
-     "locationName": "WHITE MEMoriaL MEDICAL CENTER",
-     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHWMLOSANGELESCA&type=CDMWithoutLabel&fileType=CSV",
-     "mrfHost": "apps.para-hcfs.com",
-     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
-     "lastUpdated": "2026-05-23",
-     "daysSinceUpdate": 103,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "050239",
-     "name": "GLENDALE ADVENTIST MEDICAL CENTER",
-     "city": "GLENDALE",
-     "state": "CA",
-     "locationName": "GLENDALE ADVENTIST MEDICAL CENTER",
-     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbGAMCGLENDALECA&type=CDMWithoutLabel&fileType=CSV",
-     "mrfHost": "apps.para-hcfs.com",
-     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
-     "lastUpdated": "2026-07-30",
-     "daysSinceUpdate": 35,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "050301",
-     "name": "ADVENTIST HEALTH UKIAH VALLEY",
-     "city": "UKIAH",
-     "state": "CA",
-     "locationName": "UKIAH ADVENTIST HOSPITAL",
-     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbUkiahValleyCA&type=CDMWithoutLabel&fileType=CSV",
-     "mrfHost": "apps.para-hcfs.com",
-     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
-     "lastUpdated": "2026-05-24",
-     "daysSinceUpdate": 102,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "050336",
-     "name": "ADVENTIST HEALTH LODI MEMoriaL",
-     "city": "LODI",
-     "state": "CA",
-     "locationName": "LODI MEMoriaL HOSPITAL ASSOCIATION INC",
-     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHLMLODICA&type=CDMWithoutLabel&fileType=CSV",
-     "mrfHost": "apps.para-hcfs.com",
-     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
-     "lastUpdated": "2026-08-02",
-     "daysSinceUpdate": 32,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "050608",
-     "name": "ADVENTIST HEALTH DELANO",
-     "city": "DELANO",
-     "state": "CA",
-     "locationName": "ADVENTIST HEALTH DELANO",
-     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbDRMCDELANOCA&type=CDMWithoutLabel&fileType=CSV",
-     "mrfHost": "apps.para-hcfs.com",
-     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
-     "lastUpdated": "2026-07-29",
-     "daysSinceUpdate": 36,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "050633",
-     "name": "ADVENTIST HEALTH TWIN CITIES",
-     "city": "TEMPLETON",
-     "state": "CA",
-     "locationName": "TWIN CITIES COMMUNITY HOSPITAL",
-     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbTCCHTEMPLETONCA&type=CDMWithoutLabel&fileType=CSV",
-     "mrfHost": "apps.para-hcfs.com",
-     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
-     "lastUpdated": "2026-01-10",
-     "daysSinceUpdate": 236,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "050784",
-     "name": "ADVENTIST HEALTH TULARE",
-     "city": "TULARE",
-     "state": "CA",
-     "locationName": "ADVENTIST HEALTH TULARE",
-     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHTTULARECA&type=CDMWithoutLabel&fileType=CSV",
-     "mrfHost": "apps.para-hcfs.com",
-     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
-     "lastUpdated": "2026-05-22",
-     "daysSinceUpdate": 104,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "051301",
-     "name": "ADVENTIST HEALTH TEHACHAPI VALLEY",
-     "city": "TEHACHAPI",
-     "state": "CA",
-     "locationName": "ADVENTIST HEALTH MEDICAL CENTER TEHACHAPI",
-     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbTHTEHACHAPICA&type=CDMWithoutLabel&fileType=CSV",
-     "mrfHost": "apps.para-hcfs.com",
-     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
-     "lastUpdated": "2026-05-21",
-     "daysSinceUpdate": 105,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "051317",
-     "name": "ADVENTIST HEALTH CLEARLAKE",
-     "city": "CLEARLAKE",
-     "state": "CA",
-     "locationName": "ADVENTIST HEALTH CLEARLAKE HOSPITAL",
-     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHCLCLEARLAKECA&type=CDMWithoutLabel&fileType=CSV",
-     "mrfHost": "apps.para-hcfs.com",
-     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
-     "lastUpdated": "2026-07-29",
-     "daysSinceUpdate": 36,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "051325",
-     "name": "ADVENTIST HEALTH MENDOCINO COAST",
-     "city": "FORT BRAGG",
-     "state": "CA",
-     "locationName": "ADVENTIST HEALTH MENDOCINO COAST",
-     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbMCDHFORTBRAGGCA&type=CDMWithoutLabel&fileType=CSV",
-     "mrfHost": "apps.para-hcfs.com",
-     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
-     "lastUpdated": "2026-08-02",
-     "daysSinceUpdate": 32,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "380001",
-     "name": "MID-COLUMBIA MEDICAL CENTER",
-     "city": "THE DALLES",
-     "state": "OR",
-     "locationName": "MID-COLUMBIA MEDICAL CENTER",
-     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbMidColumbia&type=CDMWithoutLabel&fileType=CSV",
-     "mrfHost": "apps.para-hcfs.com",
-     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
-     "lastUpdated": "2026-05-13",
-     "daysSinceUpdate": 113,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "380060",
-     "name": "ADVENTIST HEALTH PORTLAND",
-     "city": "PORTLAND",
-     "state": "OR",
-     "locationName": "PORTLAND ADVENTIST MEDICAL CENTER",
-     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAMCPORTLANDOR&type=CDMWithoutLabel&fileType=CSV",
-     "mrfHost": "apps.para-hcfs.com",
-     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
-     "lastUpdated": "2026-05-26",
-     "daysSinceUpdate": 100,
-     "staleOver365": false,
-     "httpStatus": 200
-    }
-   ]
-  },
-  {
    "pointerUrl": "https://arh.org/cms-hpt.txt",
    "pointerHost": "arh.org",
    "domains": [
@@ -11597,6 +11831,198 @@
      "sourcePageUrl": "https://www.arh.org/price-transparency",
      "lastUpdated": "2026-01-01",
      "daysSinceUpdate": 245,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://bjc.org/cms-hpt.txt",
+   "pointerHost": "bjc.org",
+   "domains": [
+    "bjc.org"
+   ],
+   "facilityCount": 13,
+   "facilities": [
+    {
+     "ccn": "140002",
+     "name": "ALTON MEMoriaL HOSPITAL",
+     "city": "ALTON",
+     "state": "IL",
+     "locationName": "Alton Memorial Hospital",
+     "mrfUrl": "https://www.bjc.org/hpt/1/370661172_AltonMemorialHospital_standardcharges.json",
+     "mrfHost": "bjc.org",
+     "sourcePageUrl": "https://www.bjc.org/patients-visitors/billing-and-financial-assistance/hospital-rates-disclosure",
+     "lastUpdated": "2025-12-15",
+     "daysSinceUpdate": 262,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "140185",
+     "name": "MEMORIAL HOSPITAL",
+     "city": "BELLEVILLE",
+     "state": "IL",
+     "locationName": "Memorial Hospital",
+     "mrfUrl": "https://www.bjc.org/hpt/26/370635502_MemorialHospital_standardcharges.json",
+     "mrfHost": "bjc.org",
+     "sourcePageUrl": "https://www.bjc.org/patients-visitors/billing-and-financial-assistance/hospital-rates-disclosure",
+     "lastUpdated": "2025-12-15",
+     "daysSinceUpdate": 263,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "141305",
+     "name": "MEMoriaL HOSPITAL",
+     "city": "CARTHAGE",
+     "state": "IL",
+     "locationName": "Memorial Hospital",
+     "mrfUrl": "https://www.bjc.org/hpt/26/370635502_MemorialHospital_standardcharges.json",
+     "mrfHost": "bjc.org",
+     "sourcePageUrl": "https://www.bjc.org/patients-visitors/billing-and-financial-assistance/hospital-rates-disclosure",
+     "lastUpdated": "2025-12-15",
+     "daysSinceUpdate": 262,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "260032",
+     "name": "BARNES JEWISH HOSPITAL",
+     "city": "SAINT LOUIS",
+     "state": "MO",
+     "locationName": "Barnes Jewish Hospital",
+     "mrfUrl": "https://www.bjc.org/hpt/6/237309937_BarnesJewishHospital_standardcharges.json",
+     "mrfHost": "bjc.org",
+     "sourcePageUrl": "https://www.bjc.org/patients-visitors/billing-and-financial-assistance/hospital-rates-disclosure",
+     "lastUpdated": "2025-12-15",
+     "daysSinceUpdate": 262,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "260108",
+     "name": "MISSOURI BAPTIST MEDICAL CENTER",
+     "city": "SAINT LOUIS",
+     "state": "MO",
+     "locationName": "Missouri Baptist Medical Center",
+     "mrfUrl": "https://www.bjc.org/hpt/31/430652656_MissouriBaptistMedicalCenter_standardcharges.json",
+     "mrfHost": "bjc.org",
+     "sourcePageUrl": "https://www.bjc.org/patients-visitors/billing-and-financial-assistance/hospital-rates-disclosure",
+     "lastUpdated": "2025-12-15",
+     "daysSinceUpdate": 262,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "260162",
+     "name": "BARNES-JEWISH WEST COUNTY HOSPITAL",
+     "city": "CREVE COEUR",
+     "state": "MO",
+     "locationName": "Barnes Jewish West County Hospital",
+     "mrfUrl": "https://www.bjc.org/hpt/16/431527130_BarnesJewishWestCountyHospital_standardcharges.json",
+     "mrfHost": "bjc.org",
+     "sourcePageUrl": "https://www.bjc.org/patients-visitors/billing-and-financial-assistance/hospital-rates-disclosure",
+     "lastUpdated": "2025-12-15",
+     "daysSinceUpdate": 262,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "260163",
+     "name": "PARKLAND HEALTH CENTER",
+     "city": "FARMINGTON",
+     "state": "MO",
+     "locationName": "Parkland Health Center",
+     "mrfUrl": "https://www.bjc.org/hpt/41/431332368_ParklandHealthCenter_standardcharges.json",
+     "mrfHost": "bjc.org",
+     "sourcePageUrl": "https://www.bjc.org/patients-visitors/billing-and-financial-assistance/hospital-rates-disclosure",
+     "lastUpdated": "2025-12-15",
+     "daysSinceUpdate": 262,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "260180",
+     "name": "CHRISTIAN HOSPITAL NORTHEAST",
+     "city": "SAINT LOUIS",
+     "state": "MO",
+     "locationName": "Christian Hospital",
+     "mrfUrl": "https://www.bjc.org/hpt/21/436057893_ChristianHospital_standardcharges.json",
+     "mrfHost": "bjc.org",
+     "sourcePageUrl": "https://www.bjc.org/patients-visitors/billing-and-financial-assistance/hospital-rates-disclosure",
+     "lastUpdated": "2025-12-15",
+     "daysSinceUpdate": 262,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "260191",
+     "name": "BARNES-JEWISH ST PETERS HOSPITAL",
+     "city": "SAINT PETERS",
+     "state": "MO",
+     "locationName": "Barnes Jewish St. Peters Hospital",
+     "mrfUrl": "https://www.bjc.org/hpt/11/431452426_BarnesJewishStPetersHospital_standardcharges.json",
+     "mrfHost": "bjc.org",
+     "sourcePageUrl": "https://www.bjc.org/patients-visitors/billing-and-financial-assistance/hospital-rates-disclosure",
+     "lastUpdated": "2025-12-15",
+     "daysSinceUpdate": 262,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "260219",
+     "name": "PROGRESS WEST HOSPITAL",
+     "city": "OFALLON",
+     "state": "MO",
+     "locationName": "Progress West Hospital",
+     "mrfUrl": "https://www.bjc.org/hpt/46/412140764_ProgressWestHospital_standardcharges.json",
+     "mrfHost": "bjc.org",
+     "sourcePageUrl": "https://www.bjc.org/patients-visitors/billing-and-financial-assistance/hospital-rates-disclosure",
+     "lastUpdated": "2025-12-15",
+     "daysSinceUpdate": 262,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "260779",
+     "name": "PARKLAND HEALTH CENTER - BONNE TERRE",
+     "city": "BONNE TERRE",
+     "state": "MO",
+     "locationName": "Parkland Health Center - Bonne Terre",
+     "mrfUrl": "https://www.bjc.org/hpt/81/431332368_ParklandHealthCenter-BonneTerre_standardcharges.json",
+     "mrfHost": "bjc.org",
+     "sourcePageUrl": "https://www.bjc.org/patients-visitors/billing-and-financial-assistance/hospital-rates-disclosure",
+     "lastUpdated": "2025-12-15",
+     "daysSinceUpdate": 262,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "261337",
+     "name": "MISSOURI BAPTIST SULLIVAN HOSPITAL",
+     "city": "SULLIVAN",
+     "state": "MO",
+     "locationName": "Missouri Baptist Sullivan Hospital",
+     "mrfUrl": "https://www.bjc.org/hpt/36/431459495_MissouriBaptistSullivanHospital_standardcharges.json",
+     "mrfHost": "bjc.org",
+     "sourcePageUrl": "https://www.bjc.org/patients-visitors/billing-and-financial-assistance/hospital-rates-disclosure",
+     "lastUpdated": "2025-12-15",
+     "daysSinceUpdate": 262,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "263301",
+     "name": "ST LOUIS CHILDRENS HOSPITAL",
+     "city": "SAINT LOUIS",
+     "state": "MO",
+     "locationName": "St. Louis Childrens Hospital",
+     "mrfUrl": "https://www.bjc.org/hpt/51/430654870_StLouisChildrensHospital_standardcharges.json",
+     "mrfHost": "bjc.org",
+     "sourcePageUrl": "https://www.bjc.org/patients-visitors/billing-and-financial-assistance/hospital-rates-disclosure",
+     "lastUpdated": "2025-12-15",
+     "daysSinceUpdate": 262,
      "staleOver365": false,
      "httpStatus": 200
     }
@@ -11795,198 +12221,6 @@
    ]
   },
   {
-   "pointerUrl": "https://www.baptistonline.org/cms-hpt.txt",
-   "pointerHost": "baptistonline.org",
-   "domains": [
-    "baptistonline.org"
-   ],
-   "facilityCount": 13,
-   "facilities": [
-    {
-     "ccn": "040118",
-     "name": "BAPTIST MEMoriaL HOSPITAL JONESBORO, INC.",
-     "city": "JONESBORO",
-     "state": "AR",
-     "locationName": "26-1214372 NEA Baptist",
-     "mrfUrl": "https://sites.bmhcc.org/-/media/Pricing-Documents/AR/261214372_nea-baptist-memorial-hospital_standardcharges.zip",
-     "mrfHost": "sites.bmhcc.org",
-     "sourcePageUrl": "https://www.baptistonline.org/estimate-my-costs",
-     "lastUpdated": "2026-02-27",
-     "daysSinceUpdate": 188,
-     "staleOver365": false,
-     "httpStatus": 206
-    },
-    {
-     "ccn": "250006",
-     "name": "BAPTIST MEMoriaL HOSPITAL UNION COUNTY",
-     "city": "NEW ALBANY",
-     "state": "MS",
-     "locationName": "63-0997281 BMH Union County",
-     "mrfUrl": "https://sites.bmhcc.org/-/media/Pricing-Documents/MS/630997281_baptist-memorial-hospitalunion-county_standardcharges.zip",
-     "mrfHost": "sites.bmhcc.org",
-     "sourcePageUrl": "https://www.baptistonline.org/estimate-my-costs",
-     "lastUpdated": "2026-02-28",
-     "daysSinceUpdate": 187,
-     "staleOver365": false,
-     "httpStatus": 206
-    },
-    {
-     "ccn": "250044",
-     "name": "BAPTIST MEMoriaL HOSPITAL BOONEVILLE",
-     "city": "BOONEVILLE",
-     "state": "MS",
-     "locationName": "64-0663760 BMH Booneville",
-     "mrfUrl": "https://sites.bmhcc.org/-/media/Pricing-Documents/MS/640663760_baptist-memorial-hospitalbooneville_standardcharges.zip",
-     "mrfHost": "sites.bmhcc.org",
-     "sourcePageUrl": "https://www.baptistonline.org/estimate-my-costs",
-     "lastUpdated": "2026-02-25",
-     "daysSinceUpdate": 190,
-     "staleOver365": false,
-     "httpStatus": 206
-    },
-    {
-     "ccn": "250102",
-     "name": "MISSISSIPPI BAPTIST MEDICAL CENTER",
-     "city": "JACKSON",
-     "state": "MS",
-     "locationName": "64-0881013 MBMC Jackson",
-     "mrfUrl": "https://sites.bmhcc.org/-/media/Pricing-Documents/MS/640881013_mississippi-baptist-medical-center_standardcharges.zip",
-     "mrfHost": "sites.bmhcc.org",
-     "sourcePageUrl": "https://www.baptistonline.org/estimate-my-costs",
-     "lastUpdated": "2026-02-25",
-     "daysSinceUpdate": 190,
-     "staleOver365": false,
-     "httpStatus": 206
-    },
-    {
-     "ccn": "250104",
-     "name": "ANDERSON REGIONAL MEDICAL CENTER",
-     "city": "MERIDIAN",
-     "state": "MS",
-     "locationName": "64-0362400 Anderson Regional Main Campus",
-     "mrfUrl": "https://sites.bmhcc.org/-/media/Pricing-Documents/MS/640362400_baptist-anderson-regional-medical-center_standardcharges.zip",
-     "mrfHost": "sites.bmhcc.org",
-     "sourcePageUrl": "https://www.baptistonline.org/estimate-my-costs",
-     "lastUpdated": "2026-02-25",
-     "daysSinceUpdate": 190,
-     "staleOver365": false,
-     "httpStatus": 206
-    },
-    {
-     "ccn": "250141",
-     "name": "BAPTIST MEMoriaL HOSPITAL DESOTO",
-     "city": "SOUTHAVEN",
-     "state": "MS",
-     "locationName": "64-0682111 BMH DeSoto",
-     "mrfUrl": "https://sites.bmhcc.org/-/media/Pricing-Documents/MS/640682111_baptist-memorial-hospitaldesoto_standardcharges.zip",
-     "mrfHost": "sites.bmhcc.org",
-     "sourcePageUrl": "https://www.baptistonline.org/estimate-my-costs",
-     "lastUpdated": "2026-02-27",
-     "daysSinceUpdate": 188,
-     "staleOver365": false,
-     "httpStatus": 206
-    },
-    {
-     "ccn": "251313",
-     "name": "BAPTIST MEDICAL CENTER-YAZOO",
-     "city": "YAZOO CITY",
-     "state": "MS",
-     "locationName": "64-0844470 MBMC Yazoo",
-     "mrfUrl": "https://sites.bmhcc.org/-/media/Pricing-Documents/MS/640844470_baptist-medical-center--yazoo-inc_standardcharges.zip",
-     "mrfHost": "sites.bmhcc.org",
-     "sourcePageUrl": "https://www.baptistonline.org/estimate-my-costs",
-     "lastUpdated": "2026-02-17",
-     "daysSinceUpdate": 198,
-     "staleOver365": false,
-     "httpStatus": 206
-    },
-    {
-     "ccn": "251324",
-     "name": "WALTHALL COUNTY GENERAL HOSPITAL CAH",
-     "city": "TYLERTOWN",
-     "state": "MS",
-     "locationName": "64-0663760 BMH Booneville",
-     "mrfUrl": "https://sites.bmhcc.org/-/media/Pricing-Documents/MS/640663760_baptist-memorial-hospitalbooneville_standardcharges.zip",
-     "mrfHost": "sites.bmhcc.org",
-     "sourcePageUrl": "https://www.baptistonline.org/estimate-my-costs",
-     "lastUpdated": "2026-02-25",
-     "daysSinceUpdate": 190,
-     "staleOver365": false,
-     "httpStatus": 206
-    },
-    {
-     "ccn": "251336",
-     "name": "BAPTIST MEDICAL CENTER ATTALA",
-     "city": "KOSCIUSKO",
-     "state": "MS",
-     "locationName": "47-3684354 MBMC Attala",
-     "mrfUrl": "https://sites.bmhcc.org/-/media/Pricing-Documents/MS/473684354_baptist-medical-center--attala-inc_standardcharges.zip",
-     "mrfHost": "sites.bmhcc.org",
-     "sourcePageUrl": "https://www.baptistonline.org/estimate-my-costs",
-     "lastUpdated": "2026-02-20",
-     "daysSinceUpdate": 195,
-     "staleOver365": false,
-     "httpStatus": 206
-    },
-    {
-     "ccn": "440016",
-     "name": "BAPTIST MEMoriaL HOSPITAL - CARROLL COUNTY",
-     "city": "HUNTINGDON",
-     "state": "TN",
-     "locationName": "62-1166050 BMH Carroll County",
-     "mrfUrl": "https://sites.bmhcc.org/-/media/Pricing-Documents/TN/621166050_baptist-memorial-hospitalcarroll-county_standardcharges.zip",
-     "mrfHost": "sites.bmhcc.org",
-     "sourcePageUrl": "https://www.baptistonline.org/estimate-my-costs",
-     "lastUpdated": "2026-02-27",
-     "daysSinceUpdate": 188,
-     "staleOver365": false,
-     "httpStatus": 206
-    },
-    {
-     "ccn": "440048",
-     "name": "BAPTIST MEMoriaL HOSPITAL",
-     "city": "MEMPHIS",
-     "state": "TN",
-     "locationName": "62-0123940_BMH Memphis",
-     "mrfUrl": "https://sites.bmhcc.org/-/media/Pricing-Documents/TN/620123940_baptist-memorial-hospital_standardcharges.zip",
-     "mrfHost": "sites.bmhcc.org",
-     "sourcePageUrl": "https://www.baptistonline.org/estimate-my-costs",
-     "lastUpdated": "2026-02-28",
-     "daysSinceUpdate": 187,
-     "staleOver365": false,
-     "httpStatus": 206
-    },
-    {
-     "ccn": "440130",
-     "name": "BAPTIST MEMoriaL HOSPITAL UNION CITY",
-     "city": "UNION CITY",
-     "state": "TN",
-     "locationName": "62-1138045 BMH Union City",
-     "mrfUrl": "https://sites.bmhcc.org/-/media/Pricing-Documents/TN/621138045_baptist-memorial-hospitalunion-city_standardcharges.zip",
-     "mrfHost": "sites.bmhcc.org",
-     "sourcePageUrl": "https://www.baptistonline.org/estimate-my-costs",
-     "lastUpdated": "2026-02-25",
-     "daysSinceUpdate": 190,
-     "staleOver365": false,
-     "httpStatus": 206
-    },
-    {
-     "ccn": "440131",
-     "name": "BAPTIST MEMoriaL HOSPITAL TIPTON",
-     "city": "COVINGTON",
-     "state": "TN",
-     "locationName": "62-1113167 BMH Tipton",
-     "mrfUrl": "https://sites.bmhcc.org/-/media/Pricing-Documents/TN/621113167_baptist-memorial-hospitaltipton_standardcharges.zip",
-     "mrfHost": "sites.bmhcc.org",
-     "sourcePageUrl": "https://www.baptistonline.org/estimate-my-costs",
-     "lastUpdated": "2026-02-27",
-     "daysSinceUpdate": 188,
-     "staleOver365": false,
-     "httpStatus": 206
-    }
-   ]
-  },
-  {
    "pointerUrl": "https://ahn.org/cms-hpt.txt",
    "pointerHost": "ahn.org",
    "domains": [
@@ -12159,184 +12393,6 @@
      "sourcePageUrl": "https://www.ahn.org/patients-visitors/patients/financial-services/hospital-charges",
      "lastUpdated": "2026-04-14",
      "daysSinceUpdate": 142,
-     "staleOver365": false,
-     "httpStatus": 200
-    }
-   ]
-  },
-  {
-   "pointerUrl": "https://bjc.org/cms-hpt.txt",
-   "pointerHost": "bjc.org",
-   "domains": [
-    "bjc.org"
-   ],
-   "facilityCount": 12,
-   "facilities": [
-    {
-     "ccn": "140002",
-     "name": "ALTON MEMoriaL HOSPITAL",
-     "city": "ALTON",
-     "state": "IL",
-     "locationName": "Alton Memorial Hospital",
-     "mrfUrl": "https://www.bjc.org/hpt/1/370661172_AltonMemorialHospital_standardcharges.json",
-     "mrfHost": "bjc.org",
-     "sourcePageUrl": "https://www.bjc.org/patients-visitors/billing-and-financial-assistance/hospital-rates-disclosure",
-     "lastUpdated": "2025-12-15",
-     "daysSinceUpdate": 262,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "141305",
-     "name": "MEMoriaL HOSPITAL",
-     "city": "CARTHAGE",
-     "state": "IL",
-     "locationName": "Memorial Hospital",
-     "mrfUrl": "https://www.bjc.org/hpt/26/370635502_MemorialHospital_standardcharges.json",
-     "mrfHost": "bjc.org",
-     "sourcePageUrl": "https://www.bjc.org/patients-visitors/billing-and-financial-assistance/hospital-rates-disclosure",
-     "lastUpdated": "2025-12-15",
-     "daysSinceUpdate": 262,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "260032",
-     "name": "BARNES JEWISH HOSPITAL",
-     "city": "SAINT LOUIS",
-     "state": "MO",
-     "locationName": "Barnes Jewish Hospital",
-     "mrfUrl": "https://www.bjc.org/hpt/6/237309937_BarnesJewishHospital_standardcharges.json",
-     "mrfHost": "bjc.org",
-     "sourcePageUrl": "https://www.bjc.org/patients-visitors/billing-and-financial-assistance/hospital-rates-disclosure",
-     "lastUpdated": "2025-12-15",
-     "daysSinceUpdate": 262,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "260108",
-     "name": "MISSOURI BAPTIST MEDICAL CENTER",
-     "city": "SAINT LOUIS",
-     "state": "MO",
-     "locationName": "Missouri Baptist Medical Center",
-     "mrfUrl": "https://www.bjc.org/hpt/31/430652656_MissouriBaptistMedicalCenter_standardcharges.json",
-     "mrfHost": "bjc.org",
-     "sourcePageUrl": "https://www.bjc.org/patients-visitors/billing-and-financial-assistance/hospital-rates-disclosure",
-     "lastUpdated": "2025-12-15",
-     "daysSinceUpdate": 262,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "260162",
-     "name": "BARNES-JEWISH WEST COUNTY HOSPITAL",
-     "city": "CREVE COEUR",
-     "state": "MO",
-     "locationName": "Barnes Jewish West County Hospital",
-     "mrfUrl": "https://www.bjc.org/hpt/16/431527130_BarnesJewishWestCountyHospital_standardcharges.json",
-     "mrfHost": "bjc.org",
-     "sourcePageUrl": "https://www.bjc.org/patients-visitors/billing-and-financial-assistance/hospital-rates-disclosure",
-     "lastUpdated": "2025-12-15",
-     "daysSinceUpdate": 262,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "260163",
-     "name": "PARKLAND HEALTH CENTER",
-     "city": "FARMINGTON",
-     "state": "MO",
-     "locationName": "Parkland Health Center",
-     "mrfUrl": "https://www.bjc.org/hpt/41/431332368_ParklandHealthCenter_standardcharges.json",
-     "mrfHost": "bjc.org",
-     "sourcePageUrl": "https://www.bjc.org/patients-visitors/billing-and-financial-assistance/hospital-rates-disclosure",
-     "lastUpdated": "2025-12-15",
-     "daysSinceUpdate": 262,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "260180",
-     "name": "CHRISTIAN HOSPITAL NORTHEAST",
-     "city": "SAINT LOUIS",
-     "state": "MO",
-     "locationName": "Christian Hospital",
-     "mrfUrl": "https://www.bjc.org/hpt/21/436057893_ChristianHospital_standardcharges.json",
-     "mrfHost": "bjc.org",
-     "sourcePageUrl": "https://www.bjc.org/patients-visitors/billing-and-financial-assistance/hospital-rates-disclosure",
-     "lastUpdated": "2025-12-15",
-     "daysSinceUpdate": 262,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "260191",
-     "name": "BARNES-JEWISH ST PETERS HOSPITAL",
-     "city": "SAINT PETERS",
-     "state": "MO",
-     "locationName": "Barnes Jewish St. Peters Hospital",
-     "mrfUrl": "https://www.bjc.org/hpt/11/431452426_BarnesJewishStPetersHospital_standardcharges.json",
-     "mrfHost": "bjc.org",
-     "sourcePageUrl": "https://www.bjc.org/patients-visitors/billing-and-financial-assistance/hospital-rates-disclosure",
-     "lastUpdated": "2025-12-15",
-     "daysSinceUpdate": 262,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "260219",
-     "name": "PROGRESS WEST HOSPITAL",
-     "city": "OFALLON",
-     "state": "MO",
-     "locationName": "Progress West Hospital",
-     "mrfUrl": "https://www.bjc.org/hpt/46/412140764_ProgressWestHospital_standardcharges.json",
-     "mrfHost": "bjc.org",
-     "sourcePageUrl": "https://www.bjc.org/patients-visitors/billing-and-financial-assistance/hospital-rates-disclosure",
-     "lastUpdated": "2025-12-15",
-     "daysSinceUpdate": 262,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "260779",
-     "name": "PARKLAND HEALTH CENTER - BONNE TERRE",
-     "city": "BONNE TERRE",
-     "state": "MO",
-     "locationName": "Parkland Health Center - Bonne Terre",
-     "mrfUrl": "https://www.bjc.org/hpt/81/431332368_ParklandHealthCenter-BonneTerre_standardcharges.json",
-     "mrfHost": "bjc.org",
-     "sourcePageUrl": "https://www.bjc.org/patients-visitors/billing-and-financial-assistance/hospital-rates-disclosure",
-     "lastUpdated": "2025-12-15",
-     "daysSinceUpdate": 262,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "261337",
-     "name": "MISSOURI BAPTIST SULLIVAN HOSPITAL",
-     "city": "SULLIVAN",
-     "state": "MO",
-     "locationName": "Missouri Baptist Sullivan Hospital",
-     "mrfUrl": "https://www.bjc.org/hpt/36/431459495_MissouriBaptistSullivanHospital_standardcharges.json",
-     "mrfHost": "bjc.org",
-     "sourcePageUrl": "https://www.bjc.org/patients-visitors/billing-and-financial-assistance/hospital-rates-disclosure",
-     "lastUpdated": "2025-12-15",
-     "daysSinceUpdate": 262,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "263301",
-     "name": "ST LOUIS CHILDRENS HOSPITAL",
-     "city": "SAINT LOUIS",
-     "state": "MO",
-     "locationName": "St. Louis Childrens Hospital",
-     "mrfUrl": "https://www.bjc.org/hpt/51/430654870_StLouisChildrensHospital_standardcharges.json",
-     "mrfHost": "bjc.org",
-     "sourcePageUrl": "https://www.bjc.org/patients-visitors/billing-and-financial-assistance/hospital-rates-disclosure",
-     "lastUpdated": "2025-12-15",
-     "daysSinceUpdate": 262,
      "staleOver365": false,
      "httpStatus": 200
     }
@@ -14055,6 +14111,170 @@
    ]
   },
   {
+   "pointerUrl": "https://www.northwell.edu/cms-hpt.txt",
+   "pointerHost": "northwell.edu",
+   "domains": [
+    "northwell.edu"
+   ],
+   "facilityCount": 11,
+   "facilities": [
+    {
+     "ccn": "330045",
+     "name": "NS/LIJ HS HUNTINGTON HOSPITAL",
+     "city": "HUNTINGTON",
+     "state": "NY",
+     "locationName": "Huntington Hospital",
+     "mrfUrl": "https://www.northwell.edu/sites/northwell.edu/files/machine-readable-files/Huntington_Hospital_StandardCharges.zip",
+     "mrfHost": "northwell.edu",
+     "sourcePageUrl": "https://www.northwell.edu/billing-and-insurance/price-estimator-tools",
+     "lastUpdated": "2026-03-31",
+     "daysSinceUpdate": 156,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "330106",
+     "name": "NORTH SHORE UNIVERSITY HOSPITAL",
+     "city": "MANHASSET",
+     "state": "NY",
+     "locationName": "North Shore University Hospital",
+     "mrfUrl": "https://www.northwell.edu/sites/northwell.edu/files/machine-readable-files/North_Shore_University_Hospital_StandardCharges.zip",
+     "mrfHost": "northwell.edu",
+     "sourcePageUrl": "https://www.northwell.edu/billing-and-insurance/price-estimator-tools",
+     "lastUpdated": "2026-03-31",
+     "daysSinceUpdate": 156,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "330107",
+     "name": "PECONIC BAY MEDICAL CENTER",
+     "city": "RIVERHEAD",
+     "state": "NY",
+     "locationName": "Peconic Bay Medical Center",
+     "mrfUrl": "https://www.northwell.edu/sites/northwell.edu/files/machine-readable-files/Peconic_Bay_Medical_Center_StandardCharges.zip",
+     "mrfHost": "northwell.edu",
+     "sourcePageUrl": "https://www.northwell.edu/billing-and-insurance/price-estimator-tools",
+     "lastUpdated": "2026-03-31",
+     "daysSinceUpdate": 156,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "330119",
+     "name": "LENOX HILL HOSPITAL",
+     "city": "NEW YORK",
+     "state": "NY",
+     "locationName": "Lenox Hill Hospital",
+     "mrfUrl": "https://www.northwell.edu/sites/northwell.edu/files/machine-readable-files/Lenox_Hill_Hospital_StandardCharges.zip",
+     "mrfHost": "northwell.edu",
+     "sourcePageUrl": "https://www.northwell.edu/billing-and-insurance/price-estimator-tools",
+     "lastUpdated": "2026-03-31",
+     "daysSinceUpdate": 156,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "330160",
+     "name": "STATEN ISLAND UNIVERSITY HOSPITAL",
+     "city": "STATEN ISLAND",
+     "state": "NY",
+     "locationName": "Staten Island University Hospital",
+     "mrfUrl": "https://www.northwell.edu/sites/northwell.edu/files/machine-readable-files/Staten_Island_University_Hospital_StandardCharges.zip",
+     "mrfHost": "northwell.edu",
+     "sourcePageUrl": "https://www.northwell.edu/billing-and-insurance/price-estimator-tools",
+     "lastUpdated": "2026-03-31",
+     "daysSinceUpdate": 156,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "330162",
+     "name": "NORTHERN WESTCHESTER HOSPITAL",
+     "city": "MOUNT KISCO",
+     "state": "NY",
+     "locationName": "Northern Westchester Hospital",
+     "mrfUrl": "https://www.northwell.edu/sites/northwell.edu/files/machine-readable-files/Northern_Westchester_Hospital_StandardCharges.zip",
+     "mrfHost": "northwell.edu",
+     "sourcePageUrl": "https://www.northwell.edu/billing-and-insurance/price-estimator-tools",
+     "lastUpdated": "2026-03-31",
+     "daysSinceUpdate": 156,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "330181",
+     "name": "NORTHWELL HOSPITAL GLEN COVE",
+     "city": "GLEN COVE",
+     "state": "NY",
+     "locationName": "Glen Cove Hospital",
+     "mrfUrl": "https://www.northwell.edu/sites/northwell.edu/files/machine-readable-files/Glen_Cove_Hospital_StandardCharges.zip",
+     "mrfHost": "northwell.edu",
+     "sourcePageUrl": "https://www.northwell.edu/billing-and-insurance/price-estimator-tools",
+     "lastUpdated": "2026-03-31",
+     "daysSinceUpdate": 156,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "330185",
+     "name": "JOHN T MATHER MEMoriaL HOSPITAL  OF PORT JEFFERSON",
+     "city": "PORT JEFFERSON",
+     "state": "NY",
+     "locationName": "Mather Hospital",
+     "mrfUrl": "https://www.northwell.edu/sites/northwell.edu/files/machine-readable-files/Mather_Hospital_StandardCharges.zip",
+     "mrfHost": "northwell.edu",
+     "sourcePageUrl": "https://www.northwell.edu/billing-and-insurance/price-estimator-tools",
+     "lastUpdated": null,
+     "daysSinceUpdate": 0,
+     "staleOver365": null,
+     "httpStatus": 403
+    },
+    {
+     "ccn": "330195",
+     "name": "LONG ISLAND JEWISH MEDICAL CENTER",
+     "city": "NEW HYDE PARK",
+     "state": "NY",
+     "locationName": "Long Island Jewish Medical Center",
+     "mrfUrl": "https://www.northwell.edu/sites/northwell.edu/files/machine-readable-files/Long_Island_Jewish_Hospital_StandardCharges.zip",
+     "mrfHost": "northwell.edu",
+     "sourcePageUrl": "https://www.northwell.edu/billing-and-insurance/price-estimator-tools",
+     "lastUpdated": "2026-03-31",
+     "daysSinceUpdate": 156,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "330261",
+     "name": "PHELPS HOSPITAL",
+     "city": "SLEEPY HOLLOW",
+     "state": "NY",
+     "locationName": "Phelps Hospital",
+     "mrfUrl": "https://www.northwell.edu/sites/northwell.edu/files/machine-readable-files/Phelps_Hospital_StandardCharges.zip",
+     "mrfHost": "northwell.edu",
+     "sourcePageUrl": "https://www.northwell.edu/billing-and-insurance/price-estimator-tools",
+     "lastUpdated": "2026-03-31",
+     "daysSinceUpdate": 156,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "330331",
+     "name": "PLAINVIEW HOSPITAL",
+     "city": "PLAINVIEW",
+     "state": "NY",
+     "locationName": "Plainview Hospital",
+     "mrfUrl": "https://www.northwell.edu/sites/northwell.edu/files/machine-readable-files/Plainview_Hospital_StandardCharges.zip",
+     "mrfHost": "northwell.edu",
+     "sourcePageUrl": "https://www.northwell.edu/billing-and-insurance/price-estimator-tools",
+     "lastUpdated": "2026-03-31",
+     "daysSinceUpdate": 156,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://www.parkview.com/cms-hpt.txt",
    "pointerHost": "parkview.com",
    "domains": [
@@ -14963,156 +15183,6 @@
      "sourcePageUrl": "https://www.tristarhealth.com/patient-resources/patient-financial-resources/pricing-transparency-cms-required-file-of-standard-charges",
      "lastUpdated": "2026-03-01",
      "daysSinceUpdate": 186,
-     "staleOver365": false,
-     "httpStatus": 200
-    }
-   ]
-  },
-  {
-   "pointerUrl": "https://www.northwell.edu/cms-hpt.txt",
-   "pointerHost": "northwell.edu",
-   "domains": [
-    "northwell.edu"
-   ],
-   "facilityCount": 10,
-   "facilities": [
-    {
-     "ccn": "330106",
-     "name": "NORTH SHORE UNIVERSITY HOSPITAL",
-     "city": "MANHASSET",
-     "state": "NY",
-     "locationName": "North Shore University Hospital",
-     "mrfUrl": "https://www.northwell.edu/sites/northwell.edu/files/machine-readable-files/North_Shore_University_Hospital_StandardCharges.zip",
-     "mrfHost": "northwell.edu",
-     "sourcePageUrl": "https://www.northwell.edu/billing-and-insurance/price-estimator-tools",
-     "lastUpdated": "2026-03-31",
-     "daysSinceUpdate": 156,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "330107",
-     "name": "PECONIC BAY MEDICAL CENTER",
-     "city": "RIVERHEAD",
-     "state": "NY",
-     "locationName": "Peconic Bay Medical Center",
-     "mrfUrl": "https://www.northwell.edu/sites/northwell.edu/files/machine-readable-files/Peconic_Bay_Medical_Center_StandardCharges.zip",
-     "mrfHost": "northwell.edu",
-     "sourcePageUrl": "https://www.northwell.edu/billing-and-insurance/price-estimator-tools",
-     "lastUpdated": "2026-03-31",
-     "daysSinceUpdate": 156,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "330119",
-     "name": "LENOX HILL HOSPITAL",
-     "city": "NEW YORK",
-     "state": "NY",
-     "locationName": "Lenox Hill Hospital",
-     "mrfUrl": "https://www.northwell.edu/sites/northwell.edu/files/machine-readable-files/Lenox_Hill_Hospital_StandardCharges.zip",
-     "mrfHost": "northwell.edu",
-     "sourcePageUrl": "https://www.northwell.edu/billing-and-insurance/price-estimator-tools",
-     "lastUpdated": "2026-03-31",
-     "daysSinceUpdate": 156,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "330160",
-     "name": "STATEN ISLAND UNIVERSITY HOSPITAL",
-     "city": "STATEN ISLAND",
-     "state": "NY",
-     "locationName": "Staten Island University Hospital",
-     "mrfUrl": "https://www.northwell.edu/sites/northwell.edu/files/machine-readable-files/Staten_Island_University_Hospital_StandardCharges.zip",
-     "mrfHost": "northwell.edu",
-     "sourcePageUrl": "https://www.northwell.edu/billing-and-insurance/price-estimator-tools",
-     "lastUpdated": "2026-03-31",
-     "daysSinceUpdate": 156,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "330162",
-     "name": "NORTHERN WESTCHESTER HOSPITAL",
-     "city": "MOUNT KISCO",
-     "state": "NY",
-     "locationName": "Northern Westchester Hospital",
-     "mrfUrl": "https://www.northwell.edu/sites/northwell.edu/files/machine-readable-files/Northern_Westchester_Hospital_StandardCharges.zip",
-     "mrfHost": "northwell.edu",
-     "sourcePageUrl": "https://www.northwell.edu/billing-and-insurance/price-estimator-tools",
-     "lastUpdated": "2026-03-31",
-     "daysSinceUpdate": 156,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "330181",
-     "name": "NORTHWELL HOSPITAL GLEN COVE",
-     "city": "GLEN COVE",
-     "state": "NY",
-     "locationName": "Glen Cove Hospital",
-     "mrfUrl": "https://www.northwell.edu/sites/northwell.edu/files/machine-readable-files/Glen_Cove_Hospital_StandardCharges.zip",
-     "mrfHost": "northwell.edu",
-     "sourcePageUrl": "https://www.northwell.edu/billing-and-insurance/price-estimator-tools",
-     "lastUpdated": "2026-03-31",
-     "daysSinceUpdate": 156,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "330185",
-     "name": "JOHN T MATHER MEMoriaL HOSPITAL  OF PORT JEFFERSON",
-     "city": "PORT JEFFERSON",
-     "state": "NY",
-     "locationName": "Mather Hospital",
-     "mrfUrl": "https://www.northwell.edu/sites/northwell.edu/files/machine-readable-files/Mather_Hospital_StandardCharges.zip",
-     "mrfHost": "northwell.edu",
-     "sourcePageUrl": "https://www.northwell.edu/billing-and-insurance/price-estimator-tools",
-     "lastUpdated": null,
-     "daysSinceUpdate": 0,
-     "staleOver365": null,
-     "httpStatus": 403
-    },
-    {
-     "ccn": "330195",
-     "name": "LONG ISLAND JEWISH MEDICAL CENTER",
-     "city": "NEW HYDE PARK",
-     "state": "NY",
-     "locationName": "Long Island Jewish Medical Center",
-     "mrfUrl": "https://www.northwell.edu/sites/northwell.edu/files/machine-readable-files/Long_Island_Jewish_Hospital_StandardCharges.zip",
-     "mrfHost": "northwell.edu",
-     "sourcePageUrl": "https://www.northwell.edu/billing-and-insurance/price-estimator-tools",
-     "lastUpdated": "2026-03-31",
-     "daysSinceUpdate": 156,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "330261",
-     "name": "PHELPS HOSPITAL",
-     "city": "SLEEPY HOLLOW",
-     "state": "NY",
-     "locationName": "Phelps Hospital",
-     "mrfUrl": "https://www.northwell.edu/sites/northwell.edu/files/machine-readable-files/Phelps_Hospital_StandardCharges.zip",
-     "mrfHost": "northwell.edu",
-     "sourcePageUrl": "https://www.northwell.edu/billing-and-insurance/price-estimator-tools",
-     "lastUpdated": "2026-03-31",
-     "daysSinceUpdate": 156,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "330331",
-     "name": "PLAINVIEW HOSPITAL",
-     "city": "PLAINVIEW",
-     "state": "NY",
-     "locationName": "Plainview Hospital",
-     "mrfUrl": "https://www.northwell.edu/sites/northwell.edu/files/machine-readable-files/Plainview_Hospital_StandardCharges.zip",
-     "mrfHost": "northwell.edu",
-     "sourcePageUrl": "https://www.northwell.edu/billing-and-insurance/price-estimator-tools",
-     "lastUpdated": "2026-03-31",
-     "daysSinceUpdate": 156,
      "staleOver365": false,
      "httpStatus": 200
     }
@@ -19653,6 +19723,128 @@
      "sourcePageUrl": "https://www.vmfh.org/billing-insurance/price-transparency",
      "lastUpdated": "2026-02-28",
      "daysSinceUpdate": 187,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://www.adventisthealth.org/cms-hpt.txt",
+   "pointerHost": "adventisthealth.org",
+   "domains": [
+    "adventisthealth.org"
+   ],
+   "facilityCount": 8,
+   "facilities": [
+    {
+     "ccn": "050121",
+     "name": "ADVENTIST HEALTH HANFORD",
+     "city": "HANFORD",
+     "state": "CA",
+     "locationName": "HANFORD COMMUNITY HOSPITAL",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbHCMCHANFORDCA&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
+     "lastUpdated": "2026-08-01",
+     "daysSinceUpdate": 33,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "050133",
+     "name": "ADVENTIST HEALTH AND RIDEOUT",
+     "city": "MARYSVILLE",
+     "state": "CA",
+     "locationName": "RIDEOUT MEMORIAL HOSPITAL",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbRMHMARYSVILLECA&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
+     "lastUpdated": "2026-07-06",
+     "daysSinceUpdate": 59,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "050192",
+     "name": "ADVENTIST HEALTH REEDLEY",
+     "city": "REEDLEY",
+     "state": "CA",
+     "locationName": "NORTHWEST MEDICAL FOUNDATION OF TILLAMOOK",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHTTILLAMOOKOR&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
+     "lastUpdated": "2026-05-22",
+     "daysSinceUpdate": 104,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "050335",
+     "name": "ADVENTIST HEALTH SONORA",
+     "city": "SONORA",
+     "state": "CA",
+     "locationName": "SONORA COMMUNITY HOSPITAL",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHSSONORACA&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
+     "lastUpdated": "2026-05-23",
+     "daysSinceUpdate": 103,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "051310",
+     "name": "ADVENTIST HEALTH HOWARD MEMoriaL",
+     "city": "WILLITS",
+     "state": "CA",
+     "locationName": "WILLITS HOSPITAL INC",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHHMWILLITSCA&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
+     "lastUpdated": "2026-05-20",
+     "daysSinceUpdate": 106,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "054074",
+     "name": "ADVENTIST HEALTH VALLEJO",
+     "city": "VALLEJO",
+     "state": "CA",
+     "locationName": "ST HELENA HOSPITAL",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHSHSAINTHELENACA&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
+     "lastUpdated": "2026-07-15",
+     "daysSinceUpdate": 50,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "120006",
+     "name": "ADVENTIST HEALTH CASTLE",
+     "city": "KAILUA",
+     "state": "HI",
+     "locationName": "CASTLE MEDICAL CENTER",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHCKAILUAHI&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
+     "lastUpdated": "2026-07-29",
+     "daysSinceUpdate": 36,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "161310",
+     "name": "ADAIR COUNTY MEMoriaL HOSPITAL",
+     "city": "GREENFIELD",
+     "state": "IA",
+     "locationName": "LODI MEMoriaL HOSPITAL ASSOCIATION INC",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHLMLODICA&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
+     "lastUpdated": "2026-08-02",
+     "daysSinceUpdate": 32,
      "staleOver365": false,
      "httpStatus": 200
     }
@@ -27853,72 +28045,6 @@
    ]
   },
   {
-   "pointerUrl": "https://www.adventisthealth.org/cms-hpt.txt",
-   "pointerHost": "adventisthealth.org",
-   "domains": [
-    "adventisthealth.org"
-   ],
-   "facilityCount": 4,
-   "facilities": [
-    {
-     "ccn": "050192",
-     "name": "ADVENTIST HEALTH REEDLEY",
-     "city": "REEDLEY",
-     "state": "CA",
-     "locationName": "NORTHWEST MEDICAL FOUNDATION OF TILLAMOOK",
-     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHTTILLAMOOKOR&type=CDMWithoutLabel&fileType=CSV",
-     "mrfHost": "apps.para-hcfs.com",
-     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
-     "lastUpdated": "2026-05-22",
-     "daysSinceUpdate": 104,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "051310",
-     "name": "ADVENTIST HEALTH HOWARD MEMoriaL",
-     "city": "WILLITS",
-     "state": "CA",
-     "locationName": "WILLITS HOSPITAL INC",
-     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHHMWILLITSCA&type=CDMWithoutLabel&fileType=CSV",
-     "mrfHost": "apps.para-hcfs.com",
-     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
-     "lastUpdated": "2026-05-20",
-     "daysSinceUpdate": 106,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "054074",
-     "name": "ADVENTIST HEALTH VALLEJO",
-     "city": "VALLEJO",
-     "state": "CA",
-     "locationName": "ST HELENA HOSPITAL",
-     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHSHSAINTHELENACA&type=CDMWithoutLabel&fileType=CSV",
-     "mrfHost": "apps.para-hcfs.com",
-     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
-     "lastUpdated": "2026-07-15",
-     "daysSinceUpdate": 50,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "161310",
-     "name": "ADAIR COUNTY MEMoriaL HOSPITAL",
-     "city": "GREENFIELD",
-     "state": "IA",
-     "locationName": "LODI MEMoriaL HOSPITAL ASSOCIATION INC",
-     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHLMLODICA&type=CDMWithoutLabel&fileType=CSV",
-     "mrfHost": "apps.para-hcfs.com",
-     "sourcePageUrl": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
-     "lastUpdated": "2026-08-02",
-     "daysSinceUpdate": 32,
-     "staleOver365": false,
-     "httpStatus": 200
-    }
-   ]
-  },
-  {
    "pointerUrl": "https://www.chisaintjosephhealth.org/cms-hpt.txt",
    "pointerHost": "chisaintjosephhealth.org",
    "domains": [
@@ -30383,6 +30509,58 @@
    ]
   },
   {
+   "pointerUrl": "https://selfregional.org/cms-hpt.txt",
+   "pointerHost": "selfregional.org",
+   "domains": [
+    "selfregional.org"
+   ],
+   "facilityCount": 3,
+   "facilities": [
+    {
+     "ccn": "420071",
+     "name": "SELF REGIONAL HEALTHCARE",
+     "city": "GREENWOOD",
+     "state": "SC",
+     "locationName": "Self Regional Healthcare",
+     "mrfUrl": "https://hospitalpricetransparencyfiles.com/self-regional-healthcare/570331865_Self-Regional-Healthcare_standardcharges.csv",
+     "mrfHost": "hospitalpricetransparencyfiles.com",
+     "sourcePageUrl": "https://www.selfregional.org/billing-insurance/price-transparency/",
+     "lastUpdated": "2026-03-30",
+     "daysSinceUpdate": 157,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "421301",
+     "name": "ABBEVILLE AREA MEDICAL CENTER",
+     "city": "ABBEVILLE",
+     "state": "SC",
+     "locationName": "Abbeville Area Medical Center",
+     "mrfUrl": "https://hospitalpricetransparencyfiles.com/abbeville-area-medical-center/576000003_Abbeville-Area-Medical-Center_standardcharges.csv",
+     "mrfHost": "hospitalpricetransparencyfiles.com",
+     "sourcePageUrl": "https://www.selfregional.org/billing-insurance/price-transparency/",
+     "lastUpdated": "2026-03-30",
+     "daysSinceUpdate": 157,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "421304",
+     "name": "EDGEFIELD COUNTY HEALTHCARE AN AFFILIATE OF SELF R",
+     "city": "EDGEFIELD",
+     "state": "SC",
+     "locationName": "Edgefield County Healthcare",
+     "mrfUrl": "https://hospitalpricetransparencyfiles.com/self-regional-healthcare-partners/830893719_Self-Regional-Healthcare-Partners_standardcharges.csv",
+     "mrfHost": "hospitalpricetransparencyfiles.com",
+     "sourcePageUrl": "https://www.selfregional.org/billing-insurance/price-transparency/",
+     "lastUpdated": "2026-03-30",
+     "daysSinceUpdate": 157,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://sgmc.org/cms-hpt.txt",
    "pointerHost": "sgmc.org",
    "domains": [
@@ -30638,6 +30816,58 @@
      "lastUpdated": "2025-12-11",
      "daysSinceUpdate": 266,
      "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://stmaryshealthcaresystem.org/cms-hpt.txt",
+   "pointerHost": "stmaryshealthcaresystem.org",
+   "domains": [
+    "stmaryshealthcaresystem.org"
+   ],
+   "facilityCount": 3,
+   "facilities": [
+    {
+     "ccn": "110006",
+     "name": "ST MARY'S HOSPITAL",
+     "city": "ATHENS",
+     "state": "GA",
+     "locationName": "St Marys Health Care System",
+     "mrfUrl": "https://trinityhealth.pt.panaceainc.com/MRFDownload/trinityhealth/stmaryshealthcaresystem",
+     "mrfHost": "trinityhealth.pt.panaceainc.com",
+     "sourcePageUrl": "https://hpt.trinity-health.org/580566223_st-marys-health-care-system_standardcharges.zip",
+     "lastUpdated": "2025-01-01",
+     "daysSinceUpdate": 611,
+     "staleOver365": true,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "111329",
+     "name": "ST MARYS GOOD SAMARITAN HOSPITAL",
+     "city": "GREENSBORO",
+     "state": "GA",
+     "locationName": "Good Samaritan Hospital",
+     "mrfUrl": "https://trinityhealth.pt.panaceainc.com/MRFDownload/trinityhealth/stmarys-goodsamaritanhospital",
+     "mrfHost": "trinityhealth.pt.panaceainc.com",
+     "sourcePageUrl": "https://hpt.trinity-health.org/261720984_st-marys-good-samaritan-hospital_standardcharges.zip",
+     "lastUpdated": "2025-01-01",
+     "daysSinceUpdate": 610,
+     "staleOver365": true,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "140166",
+     "name": "ST MARYS HOSPITAL",
+     "city": "DECATUR",
+     "state": "IL",
+     "locationName": "St Marys Health Care System",
+     "mrfUrl": "https://trinityhealth.pt.panaceainc.com/MRFDownload/trinityhealth/stmaryshealthcaresystem",
+     "mrfHost": "trinityhealth.pt.panaceainc.com",
+     "sourcePageUrl": "https://hpt.trinity-health.org/580566223_st-marys-health-care-system_standardcharges.zip",
+     "lastUpdated": null,
+     "daysSinceUpdate": 0,
+     "staleOver365": null,
      "httpStatus": 200
     }
    ]
@@ -31158,6 +31388,58 @@
      "sourcePageUrl": "https://www.adventisthealthcare.com/patients-visitors/billing-financial/price-transparency/",
      "lastUpdated": "2025-12-31",
      "daysSinceUpdate": 246,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://www.bonsecours.com/-/media/bon-secours/cms-hpt.txt",
+   "pointerHost": "bonsecours.com",
+   "domains": [
+    "bonsecours.com"
+   ],
+   "facilityCount": 3,
+   "facilities": [
+    {
+     "ccn": "490017",
+     "name": "BON SECOURS MARYVIEW MEDICAL CENTER",
+     "city": "PORTSMOUTH",
+     "state": "VA",
+     "locationName": "Maryview Hospital",
+     "mrfUrl": "https://www.bonsecours.com/-/media/bon-secours/patients-and-visitors/corporate/pricing/540506463_maryview-hospital-llc_standardcharges.ashx",
+     "mrfHost": "bonsecours.com",
+     "sourcePageUrl": "https://www.bonsecours.com/patient-resources/estimate-your-cost",
+     "lastUpdated": "2026-04-01",
+     "daysSinceUpdate": 155,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "490092",
+     "name": "BON SECOURS SOUTHAMPTON MEMORIAL HOSPITAL",
+     "city": "FRANKLIN",
+     "state": "VA",
+     "locationName": "Southampton Medical Center",
+     "mrfUrl": "https://www.bonsecours.com/-/media/bon-secours/patients-and-visitors/corporate/pricing/843041473_bon-secours-mercy-health-franklin-llc_standardcharges.ashx",
+     "mrfHost": "bonsecours.com",
+     "sourcePageUrl": "https://www.bonsecours.com/patient-resources/estimate-your-cost",
+     "lastUpdated": "2026-04-01",
+     "daysSinceUpdate": 155,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "490094",
+     "name": "BON SECOURS RICHMOND COMMUNITY HOSPITAL",
+     "city": "RICHMOND",
+     "state": "VA",
+     "locationName": "Richmond Community Hospital",
+     "mrfUrl": "https://www.bonsecours.com/-/media/bon-secours/patients-and-visitors/corporate/pricing/540647482_bon-secours-richmond-community-hospital-llc_standardcharges.ashx",
+     "mrfHost": "bonsecours.com",
+     "sourcePageUrl": "https://www.bonsecours.com/patient-resources/estimate-your-cost",
+     "lastUpdated": "2026-04-01",
+     "daysSinceUpdate": 155,
      "staleOver365": false,
      "httpStatus": 200
     }
@@ -33984,6 +34266,44 @@
    ]
   },
   {
+   "pointerUrl": "https://nexushealthsystems.com/cms-hpt.txt",
+   "pointerHost": "nexushealthsystems.com",
+   "domains": [
+    "nexushealthsystems.com"
+   ],
+   "facilityCount": 2,
+   "facilities": [
+    {
+     "ccn": "453309",
+     "name": "HEALTHBRIDGE CHILDRENS'S HOSPITAL OF HOUSTON",
+     "city": "HOUSTON",
+     "state": "TX",
+     "locationName": "Nexus Children's Hospital - Houston",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbNHCHHOHOUSTONTX&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/NexusChildrens.aspx",
+     "lastUpdated": "2026-04-16",
+     "daysSinceUpdate": 141,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "453318",
+     "name": "NEXUS CHILDRENS HOSPITAL DALLAS",
+     "city": "DALLAS",
+     "state": "TX",
+     "locationName": "Nexus Children's Hospital - Dallas",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbNCHDDALLASTX&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/NexusChildrensDallas.aspx",
+     "lastUpdated": "2026-04-28",
+     "daysSinceUpdate": 128,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://norcalbehavioral.com/cms-hpt.txt",
    "pointerHost": "norcalbehavioral.com",
    "domains": [
@@ -34282,44 +34602,6 @@
      "sourcePageUrl": "https://salemhealth.org/patient-guide/billing-and-financial-services/pricing/price-transparency",
      "lastUpdated": "2026-04-01",
      "daysSinceUpdate": 155,
-     "staleOver365": false,
-     "httpStatus": 200
-    }
-   ]
-  },
-  {
-   "pointerUrl": "https://selfregional.org/cms-hpt.txt",
-   "pointerHost": "selfregional.org",
-   "domains": [
-    "selfregional.org"
-   ],
-   "facilityCount": 2,
-   "facilities": [
-    {
-     "ccn": "420071",
-     "name": "SELF REGIONAL HEALTHCARE",
-     "city": "GREENWOOD",
-     "state": "SC",
-     "locationName": "Self Regional Healthcare",
-     "mrfUrl": "https://hospitalpricetransparencyfiles.com/self-regional-healthcare/570331865_Self-Regional-Healthcare_standardcharges.csv",
-     "mrfHost": "hospitalpricetransparencyfiles.com",
-     "sourcePageUrl": "https://www.selfregional.org/billing-insurance/price-transparency/",
-     "lastUpdated": "2026-03-30",
-     "daysSinceUpdate": 157,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "421301",
-     "name": "ABBEVILLE AREA MEDICAL CENTER",
-     "city": "ABBEVILLE",
-     "state": "SC",
-     "locationName": "Abbeville Area Medical Center",
-     "mrfUrl": "https://hospitalpricetransparencyfiles.com/abbeville-area-medical-center/576000003_Abbeville-Area-Medical-Center_standardcharges.csv",
-     "mrfHost": "hospitalpricetransparencyfiles.com",
-     "sourcePageUrl": "https://www.selfregional.org/billing-insurance/price-transparency/",
-     "lastUpdated": "2026-03-30",
-     "daysSinceUpdate": 157,
      "staleOver365": false,
      "httpStatus": 200
     }
@@ -34668,44 +34950,6 @@
    ]
   },
   {
-   "pointerUrl": "https://stmaryshealthcaresystem.org/cms-hpt.txt",
-   "pointerHost": "stmaryshealthcaresystem.org",
-   "domains": [
-    "stmaryshealthcaresystem.org"
-   ],
-   "facilityCount": 2,
-   "facilities": [
-    {
-     "ccn": "111329",
-     "name": "ST MARYS GOOD SAMARITAN HOSPITAL",
-     "city": "GREENSBORO",
-     "state": "GA",
-     "locationName": "Good Samaritan Hospital",
-     "mrfUrl": "https://trinityhealth.pt.panaceainc.com/MRFDownload/trinityhealth/stmarys-goodsamaritanhospital",
-     "mrfHost": "trinityhealth.pt.panaceainc.com",
-     "sourcePageUrl": "https://hpt.trinity-health.org/261720984_st-marys-good-samaritan-hospital_standardcharges.zip",
-     "lastUpdated": "2025-01-01",
-     "daysSinceUpdate": 610,
-     "staleOver365": true,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "140166",
-     "name": "ST MARYS HOSPITAL",
-     "city": "DECATUR",
-     "state": "IL",
-     "locationName": "St Marys Health Care System",
-     "mrfUrl": "https://trinityhealth.pt.panaceainc.com/MRFDownload/trinityhealth/stmaryshealthcaresystem",
-     "mrfHost": "trinityhealth.pt.panaceainc.com",
-     "sourcePageUrl": "https://hpt.trinity-health.org/580566223_st-marys-health-care-system_standardcharges.zip",
-     "lastUpdated": null,
-     "daysSinceUpdate": 0,
-     "staleOver365": null,
-     "httpStatus": 200
-    }
-   ]
-  },
-  {
    "pointerUrl": "https://stmh.org/cms-hpt.txt",
    "pointerHost": "stmh.org",
    "domains": [
@@ -35049,6 +35293,83 @@
    ]
   },
   {
+   "pointerUrl": "https://uihc.org/cms-hpt.txt",
+   "pointerHost": "uihc.org",
+   "domains": [
+    "uihc.org"
+   ],
+   "facilityCount": 2,
+   "facilities": [
+    {
+     "ccn": "160029",
+     "name": "UNIVERSITY OF IOWA HEALTH CARE MEDICAL CENTER DOWN",
+     "city": "IOWA CITY",
+     "state": "IA",
+     "locationName": "UNIVERSITY OF IOWA HEALTH CARE MEDICAL CENTER DOWNTOWN",
+     "mrfUrl": "https://www.healthcare.uiowa.edu/marcom/uihc/billing/426004813-1699541870_state-university-of-iowa_standardcharges.csv",
+     "mrfHost": "healthcare.uiowa.edu",
+     "sourcePageUrl": "https://uihc.org/patient-financial-resources",
+     "lastUpdated": "2026-03-11",
+     "daysSinceUpdate": 176,
+     "staleOver365": false,
+     "httpStatus": 206
+    },
+    {
+     "ccn": "160058",
+     "name": "UNIVERSITY OF IOWA HOSPITAL & CLINICS",
+     "city": "IOWA CITY",
+     "state": "IA",
+     "locationName": "UNIVERSITY OF IOWA HEALTH CARE MEDICAL CENTER",
+     "mrfUrl": "https://www.healthcare.uiowa.edu/marcom/uihc/billing/426004813-1376544320_state-university-of-iowa_standardcharges.csv",
+     "mrfHost": "healthcare.uiowa.edu",
+     "sourcePageUrl": "https://uihc.org/patient-financial-resources",
+     "lastUpdated": "2026-03-11",
+     "daysSinceUpdate": 176,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://umc.edu/cms-hpt.txt",
+   "pointerHost": "umc.edu",
+   "domains": [
+    "merithealthmadison.com",
+    "umc.edu"
+   ],
+   "facilityCount": 2,
+   "facilities": [
+    {
+     "ccn": "250168",
+     "name": "UNIVERSITY OF MISSISSIPPI MEDICAL CENTER- GRENADA",
+     "city": "GRENADA",
+     "state": "MS",
+     "locationName": "UMMC Grenada Hospital",
+     "mrfUrl": "https://www.umc.edu/Healthcare/Patients-and-Visitors/Bill%20Pay/Pricing%20Files/646008520-1558798603_university-of-mississippi-medical-center_standcharges.csv",
+     "mrfHost": "umc.edu",
+     "sourcePageUrl": "https://www.umc.edu/pricing",
+     "lastUpdated": "2026-04-01",
+     "daysSinceUpdate": 156,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "251319",
+     "name": "HOLMES COUNTY HOSPITAL AND CLINICS",
+     "city": "LEXINGTON",
+     "state": "MS",
+     "locationName": "UMMC Holmes County Hospital",
+     "mrfUrl": "https://www.umc.edu/Healthcare/Patients-and-Visitors/Bill%20Pay/Pricing%20Files/646008520-1386630705_university-of-mississippi-medical-center_standardcharges.csv",
+     "mrfHost": "umc.edu",
+     "sourcePageUrl": "https://www.umc.edu/pricing",
+     "lastUpdated": "2026-04-01",
+     "daysSinceUpdate": 155,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://uniongeneralhealthsystem.com/cms-hpt.txt",
    "pointerHost": "uniongeneralhealthsystem.com",
    "domains": [
@@ -35311,6 +35632,44 @@
      "lastUpdated": null,
      "daysSinceUpdate": 0,
      "staleOver365": null,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://wiregrassmedicalcenter.org/cms-hpt.txt",
+   "pointerHost": "wiregrassmedicalcenter.org",
+   "domains": [
+    "wiregrassmedicalcenter.org"
+   ],
+   "facilityCount": 2,
+   "facilities": [
+    {
+     "ccn": "010062",
+     "name": "WIREGRASS MEDICAL CENTER",
+     "city": "GENEVA",
+     "state": "AL",
+     "locationName": "Wiregrass Medical Center",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbWMCGENEVAAL&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Wiregrass_V3.aspx",
+     "lastUpdated": null,
+     "daysSinceUpdate": 0,
+     "staleOver365": null,
+     "httpStatus": 0
+    },
+    {
+     "ccn": "011309",
+     "name": "WIREGRASS MEDICAL CENTER",
+     "city": "GENEVA",
+     "state": "AL",
+     "locationName": "Wiregrass Medical Center",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbWMCGENEVAAL&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Wiregrass_V3.aspx",
+     "lastUpdated": "2026-06-30",
+     "daysSinceUpdate": 66,
+     "staleOver365": false,
      "httpStatus": 200
     }
    ]
@@ -35691,6 +36050,44 @@
      "sourcePageUrl": "https://www.firsthealth.org/patients-visitors/price-transparency/",
      "lastUpdated": "2026-04-01",
      "daysSinceUpdate": 155,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://www.healthpartners.com/cms-hpt.txt",
+   "pointerHost": "healthpartners.com",
+   "domains": [
+    "healthpartners.com"
+   ],
+   "facilityCount": 2,
+   "facilities": [
+    {
+     "ccn": "521308",
+     "name": "AMERY HOSPITAL & CLINIC",
+     "city": "AMERY",
+     "state": "WI",
+     "locationName": "Amery Hospital",
+     "mrfUrl": "https://www.healthpartners.com/content/dam/brand-identity/pdfs/care/390908320_AmeryHospital_HospitalStandardCharges.csv",
+     "mrfHost": "healthpartners.com",
+     "sourcePageUrl": "https://www.healthpartners.com/care/hospitals/amery/patient-guest/patient-information/financial-support/",
+     "lastUpdated": "2026-03-31",
+     "daysSinceUpdate": 156,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "521345",
+     "name": "WESTFIELDS HOSPITAL AND CLINIC",
+     "city": "NEW RICHMOND",
+     "state": "WI",
+     "locationName": "Westfields Hospital",
+     "mrfUrl": "https://www.healthpartners.com/content/dam/brand-identity/pdfs/care/390908320_WestfieldsHospital_standardcharges.csv",
+     "mrfHost": "healthpartners.com",
+     "sourcePageUrl": "https://www.healthpartners.com/care/hospitals/westfields/patient-guest/patient-information/financial-support/",
+     "lastUpdated": "2026-03-31",
+     "daysSinceUpdate": 156,
      "staleOver365": false,
      "httpStatus": 200
     }
@@ -36191,6 +36588,44 @@
    ]
   },
   {
+   "pointerUrl": "https://www.uphealthsystem.com/cms-hpt.txt",
+   "pointerHost": "uphealthsystem.com",
+   "domains": [
+    "uphealthsystem.com"
+   ],
+   "facilityCount": 2,
+   "facilities": [
+    {
+     "ccn": "230108",
+     "name": "UP HEALTH SYSTEM PORTAGE",
+     "city": "HANCOCK",
+     "state": "MI",
+     "locationName": "UP Health System - Portage",
+     "mrfUrl": "https://www.uphealthsystem.com/docs/ahuphealthsystemlibraries/hcl/mrf3q26/900998484_portage-health_standardcharges.csv.zip",
+     "mrfHost": "uphealthsystem.com",
+     "sourcePageUrl": "https://www.uphealthsystem.com/hospital-charge-listings",
+     "lastUpdated": "2026-07-14",
+     "daysSinceUpdate": 51,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "231321",
+     "name": "BELL HOSPITAL",
+     "city": "ISHPEMING",
+     "state": "MI",
+     "locationName": "UP Health System - Bell",
+     "mrfUrl": "https://www.uphealthsystem.com/docs/ahuphealthsystemlibraries/hcl/mrf3q26/800935981_bell-hospital_standardcharges.csv.zip",
+     "mrfHost": "uphealthsystem.com",
+     "sourcePageUrl": "https://www.uphealthsystem.com/hospital-charge-listings",
+     "lastUpdated": "2026-07-10",
+     "daysSinceUpdate": 55,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://www.vistadelmarhospital.com/cms-hpt.txt",
    "pointerHost": "vistadelmarhospital.com",
    "domains": [
@@ -36641,6 +37076,30 @@
    ]
   },
   {
+   "pointerUrl": "https://altavistaregionalhospital.com/cms-hpt.txt",
+   "pointerHost": "altavistaregionalhospital.com",
+   "domains": [
+    "altavistaregionalhospital.com"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "321312",
+     "name": "ALTA VISTA REGIONAL HOSPITAL",
+     "city": "LAS VEGAS",
+     "state": "NM",
+     "locationName": "Alta Vista Regional Hospital",
+     "mrfUrl": "https://cea75026-66bc-472a-a0d7-7ec217c282dd.usrfiles.com/ugd/cea750_94493978988643ae88d1770dfb23e785.csv?dn=742930034_ALTA_VISTA_REGIONAL_HOSPITAL_standardcharges.csv",
+     "mrfHost": "cea75026-66bc-472a-a0d7-7ec217c282dd.usrfiles.com",
+     "sourcePageUrl": "https://www.altavistaregionalhospital.com/pricetransparency",
+     "lastUpdated": "2026-04-16",
+     "daysSinceUpdate": 141,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://altru.org/cms-hpt.txt",
    "pointerHost": "altru.org",
    "domains": [
@@ -36971,6 +37430,30 @@
      "sourcePageUrl": "https://pricetransparency.healthcare/artesia-general-hospital/charges/",
      "lastUpdated": "2026-02-20",
      "daysSinceUpdate": 195,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://ascensionwisconsinhospital.org/cms-hpt.txt",
+   "pointerHost": "ascensionwisconsinhospital.org",
+   "domains": [
+    "ascensionwisconsinhospital.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "520214",
+     "name": "ASCENSION WISCONSIN HOSP MENOMONEE FALLS CAMPUS",
+     "city": "MENOMONEE FALLS",
+     "state": "WI",
+     "locationName": "Ascension Wisconsin Hospital - Menomonee Falls Campus",
+     "mrfUrl": "https://mrfs.hyvehealthcare.com/Emerus/384118568_ascension-wisconsin-emerus-menomonee-falls-llc_standardcharges.csv",
+     "mrfHost": "mrfs.hyvehealthcare.com",
+     "sourcePageUrl": "https://ascensionwisconsinhospital.org/pricing-transparency/",
+     "lastUpdated": "2026-03-24",
+     "daysSinceUpdate": 164,
      "staleOver365": false,
      "httpStatus": 200
     }
@@ -37601,6 +38084,30 @@
    ]
   },
   {
+   "pointerUrl": "https://bassett.org/sites/default/files/price-transparency/cms-hpt.txt",
+   "pointerHost": "bassett.org",
+   "domains": [
+    "bassett.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "330136",
+     "name": "BASSETT HEALTHCARE",
+     "city": "COOPERSTOWN",
+     "state": "NY",
+     "locationName": "Mary Imogene Bassett Hospital",
+     "mrfUrl": "https://rca.elevatepfs.com/ptapp/api/cdm/export/oneclick?recno=638791007d7220c77dfc6b49d7b49d68d4d69a772af088f9448b9759d927eebd",
+     "mrfHost": "rca.elevatepfs.com",
+     "sourcePageUrl": "https://www.bassett.org/about-us/price-transparency",
+     "lastUpdated": "2026-01-01",
+     "daysSinceUpdate": 245,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://baxterhealth.org/cms-hpt.txt",
    "pointerHost": "baxterhealth.org",
    "domains": [
@@ -38100,6 +38607,30 @@
      "lastUpdated": "2026-04-02",
      "daysSinceUpdate": 154,
      "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://bennettcountyhospital.com/cms-hpt.txt",
+   "pointerHost": "bennettcountyhospital.com",
+   "domains": [
+    "bennettcountyhospital.com"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "431314",
+     "name": "BENNETT COUNTY HOSPITAL AND NURSING HOME - CAH",
+     "city": "MARTIN",
+     "state": "SD",
+     "locationName": "Bennett County Hospital",
+     "mrfUrl": "https://bennettcountyhospital.com/wp-content/uploads/2025/01/432040599_bennett-county-hospital-nursing-home_standardcharges.csv",
+     "mrfHost": "bennettcountyhospital.com",
+     "sourcePageUrl": "https://bennettcountyhospital.com/resources/",
+     "lastUpdated": "2025-01-03",
+     "daysSinceUpdate": 609,
+     "staleOver365": true,
      "httpStatus": 200
     }
    ]
@@ -38873,6 +39404,30 @@
    ]
   },
   {
+   "pointerUrl": "https://brightwellmi.com/cms-hpt.txt",
+   "pointerHost": "brightwellmi.com",
+   "domains": [
+    "brightwellmi.com"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "234044",
+     "name": "BRIGHTWELL BEHAVIORAL HEALTH",
+     "city": "EAST LANSING",
+     "state": "MI",
+     "locationName": "Lansing Senior Partners d/b/a Brightwell Behavioral Health",
+     "mrfUrl": "https://brightwellmi.com/wp-content/uploads/2025/09/823868732_brightwellbehavioralhealth_Main_standardcharges.csv",
+     "mrfHost": "brightwellmi.com",
+     "sourcePageUrl": "https://www.brightwellmi.com/price-transparency/",
+     "lastUpdated": "2026-02-16",
+     "daysSinceUpdate": 200,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://broadlawns.org/cms-hpt.txt",
    "pointerHost": "broadlawns.org",
    "domains": [
@@ -39593,6 +40148,30 @@
    ]
   },
   {
+   "pointerUrl": "https://carepointhealth.org/cms-hpt.txt",
+   "pointerHost": "carepointhealth.org",
+   "domains": [
+    "carepointhealth.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "310040",
+     "name": "CAREPOINT HEALTH-HOBOKEN UNIVERSITY MEDICAL CENTER",
+     "city": "HOBOKEN",
+     "state": "NJ",
+     "locationName": "Hoboken University Hospital",
+     "mrfUrl": "https://www.hudsonregionalhospital.com/wp-content/uploads/2026/08/452147328_hoboken-university-hospital_standardcharges-2026.csv",
+     "mrfHost": "hudsonregionalhospital.com",
+     "sourcePageUrl": "https://pricetransparency.healthcare/hoboken-university-medical-center/",
+     "lastUpdated": "2026-08-17",
+     "daysSinceUpdate": 17,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://caromonthealth.org/cms-hpt.txt",
    "pointerHost": "caromonthealth.org",
    "domains": [
@@ -39684,6 +40263,30 @@
      "lastUpdated": null,
      "daysSinceUpdate": 0,
      "staleOver365": null,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://carterethealth.org/cms-hpt.txt",
+   "pointerHost": "carterethealth.org",
+   "domains": [
+    "carterethealth.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "340142",
+     "name": "CARTERET GENERAL HOSPITAL",
+     "city": "MOREHEAD CITY",
+     "state": "NC",
+     "locationName": "Carteret Health Care",
+     "mrfUrl": "https://hospitalpricetransparencyfiles.com/carteret-county-general-hospital-corporation/560952955_Carteret-County-General-Hospital-Corporation_standardcharges.csv",
+     "mrfHost": "hospitalpricetransparencyfiles.com",
+     "sourcePageUrl": "https://ezcost.info/carteret-healthcare/estimate_cost",
+     "lastUpdated": "2026-01-15",
+     "daysSinceUpdate": 232,
+     "staleOver365": false,
      "httpStatus": 200
     }
    ]
@@ -39805,6 +40408,30 @@
      "daysSinceUpdate": 306,
      "staleOver365": false,
      "httpStatus": 206
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://casshealth.org/cms-hpt.txt",
+   "pointerHost": "casshealth.org",
+   "domains": [
+    "casshealth.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "161376",
+     "name": "CASS COUNTY MEMORIAL HOSPITAL",
+     "city": "ATLANTIC",
+     "state": "IA",
+     "locationName": "Cass County Memorial Hospital",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbCassCountyMemorial%20&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Cass_V3.aspx",
+     "lastUpdated": "2026-06-01",
+     "daysSinceUpdate": 95,
+     "staleOver365": false,
+     "httpStatus": 200
     }
    ]
   },
@@ -40025,6 +40652,30 @@
    ]
   },
   {
+   "pointerUrl": "https://ccmhosp.com/cms-hpt.txt",
+   "pointerHost": "ccmhosp.com",
+   "domains": [
+    "ccmhosp.com"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "181310",
+     "name": "CARROLL COUNTY MEMORIAL HOSPITAL",
+     "city": "CARROLLTON",
+     "state": "KY",
+     "locationName": "Carroll County Memorial Hospital",
+     "mrfUrl": "https://www.ccmhosp.com/wp-content/uploads/611297707_CCMH-CORPORATION_standardcharges-7.zip",
+     "mrfHost": "ccmhosp.com",
+     "sourcePageUrl": "https://www.ccmhosp.com/financial-assistance-2/hospital-price-transparency/",
+     "lastUpdated": "2026-08-17",
+     "daysSinceUpdate": 18,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://cdn.prod.website-files.com/614a999fd87898600ee2bc39/679e924e7dc68343a1b102d8_a526a5804c68045151719dd254b06630_cms-hpt.txt",
    "pointerHost": "cdn.prod.website-files.com",
    "domains": [
@@ -40097,6 +40748,30 @@
    ]
   },
   {
+   "pointerUrl": "https://cdvcmc.com/cms-hpt.txt",
+   "pointerHost": "cdvcmc.com",
+   "domains": [
+    "cdvcmc.com"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "021307",
+     "name": "CORDOVA COMMUNITY MEDICAL CENTER",
+     "city": "CORDOVA",
+     "state": "AK",
+     "locationName": "Cordova Community Medical Center",
+     "mrfUrl": "https://www.cdvcmc.com/wp-content/uploads/2026/03/920139171_cordova-community-medical-center_standardcharges.csv",
+     "mrfHost": "cdvcmc.com",
+     "sourcePageUrl": "https://www.cdvcmc.com/for-patients/patient-cost-estimator/",
+     "lastUpdated": "2026-03-10",
+     "daysSinceUpdate": 178,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://cedars-sinai.org/cms-hpt.txt",
    "pointerHost": "cedars-sinai.org",
    "domains": [
@@ -40163,6 +40838,30 @@
      "sourcePageUrl": "https://www.centralcarolinahosp.com/hospital-charges-listing",
      "lastUpdated": "2026-07-20",
      "daysSinceUpdate": 45,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://centralflorida.ufhealth.org/cms-hpt.txt",
+   "pointerHost": "centralflorida.ufhealth.org",
+   "domains": [
+    "centralflorida.ufhealth.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "100290",
+     "name": "VILLAGES REGIONAL HOSPITAL, THE",
+     "city": "THE VILLAGES",
+     "state": "FL",
+     "locationName": "UF Health The Villages Hospital",
+     "mrfUrl": "https://ufhealth.pt.panaceainc.com/MRFDownload/ufhealth/uf-villages",
+     "mrfHost": "ufhealth.pt.panaceainc.com",
+     "sourcePageUrl": "https://ufhealth.org/locations/uf-health-the-villages-hospital/billing#price-lists-standard-charges",
+     "lastUpdated": "2026-03-31",
+     "daysSinceUpdate": 156,
      "staleOver365": false,
      "httpStatus": 200
     }
@@ -40691,6 +41390,30 @@
      "sourcePageUrl": "https://www.childrensmercy.org/your-visit/billing-and-insurance/understanding-health-care-costs/",
      "lastUpdated": "2026-04-01",
      "daysSinceUpdate": 155,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://childrensmn.org/cms-hpt.txt",
+   "pointerHost": "childrensmn.org",
+   "domains": [
+    "childrensmn.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "243302",
+     "name": "CHILDREN'S HOSPITALS & CLINICS OF MN",
+     "city": "MINNEAPOLIS",
+     "state": "MN",
+     "locationName": "Childrens Hospitals and Clinics of Minnesota - Minneapolis Hospital",
+     "mrfUrl": "https://www.childrensmn.org/applications/pricetransparency/411754276_childrens-health-care_standardcharges.csv",
+     "mrfHost": "childrensmn.org",
+     "sourcePageUrl": "https://www.childrensmn.org/your-visit/after-your-visit/billing-and-financial-matters/price-transparency/",
+     "lastUpdated": "2026-05-07",
+     "daysSinceUpdate": 120,
      "staleOver365": false,
      "httpStatus": 200
     }
@@ -41369,6 +42092,30 @@
    ]
   },
   {
+   "pointerUrl": "https://cmchd.org/cms-hpt.txt",
+   "pointerHost": "cmchd.org",
+   "domains": [
+    "cmchd.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "130779",
+     "name": "CASCADE MEDICAL CENTER",
+     "city": "CASCADE",
+     "state": "ID",
+     "locationName": "Cascade Medial Center Hospital District",
+     "mrfUrl": "https://cascademedicalcenter.slicedhealth.io/pricer/820313684_cascade-medical-center-hospital-district_standardcharges.csv",
+     "mrfHost": "cascademedicalcenter.slicedhealth.io",
+     "sourcePageUrl": "https://cascademedicalcenter.slicedhealth.io/home",
+     "lastUpdated": "2026-01-22",
+     "daysSinceUpdate": 225,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://cmciks.com/cms-hpt.txt",
    "pointerHost": "cmciks.com",
    "domains": [
@@ -41411,6 +42158,30 @@
      "sourcePageUrl": "https://cmcphoenix.com/price-transparency/",
      "lastUpdated": "2026-03-11",
      "daysSinceUpdate": 176,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://cmhburke.org/cms-hpt.txt",
+   "pointerHost": "cmhburke.org",
+   "domains": [
+    "cmhburke.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "431309",
+     "name": "COMMUNITY MEMORIAL HOSPITAL",
+     "city": "BURKE",
+     "state": "SD",
+     "locationName": "Community Memorial Hospital",
+     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8021/460219795_community-memorial-hospital,-inc_standardcharges.csv",
+     "mrfHost": "sthpiprd.blob.core.windows.net",
+     "sourcePageUrl": "https://search.hospitalpriceindex.com/hpi2/machineReadable/CommunityMemorialHospitalBurke/8021",
+     "lastUpdated": "2026-03-27",
+     "daysSinceUpdate": 161,
      "staleOver365": false,
      "httpStatus": 200
     }
@@ -41557,6 +42328,30 @@
      "daysSinceUpdate": 157,
      "staleOver365": false,
      "httpStatus": 206
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://codyregionalhealth.org/cms-hpt.txt",
+   "pointerHost": "codyregionalhealth.org",
+   "domains": [
+    "codyregionalhealth.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "531312",
+     "name": "CODY REGIONAL HEALTH",
+     "city": "CODY",
+     "state": "WY",
+     "locationName": "Cody Regional Health",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbWPHCODYWY&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/WestPark_V2.aspx",
+     "lastUpdated": "2026-07-08",
+     "daysSinceUpdate": 58,
+     "staleOver365": false,
+     "httpStatus": 200
     }
    ]
   },
@@ -42377,6 +43172,30 @@
    ]
   },
   {
+   "pointerUrl": "https://covenanthealthcare.com/cms-hpt.txt",
+   "pointerHost": "covenanthealthcare.com",
+   "domains": [
+    "covenanthealthcare.com"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "230070",
+     "name": "COVENANT MEDICAL CENTER",
+     "city": "SAGINAW",
+     "state": "MI",
+     "locationName": "Covenant HealthCare",
+     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8515/383369438_covenant-medical-center-inc_standardcharges.csv",
+     "mrfHost": "sthpiprd.blob.core.windows.net",
+     "sourcePageUrl": "https://m.covenanthealthcare.com/Billing-Information/price-transparency.html",
+     "lastUpdated": "2026-05-15",
+     "daysSinceUpdate": 112,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://cozadhealthcare.com/cms-hpt.txt",
    "pointerHost": "cozadhealthcare.com",
    "domains": [
@@ -43121,6 +43940,30 @@
    ]
   },
   {
+   "pointerUrl": "https://dallascountymedicalcenter.com/cms-hpt.txt",
+   "pointerHost": "dallascountymedicalcenter.com",
+   "domains": [
+    "dallascountymedicalcenter.com"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "041317",
+     "name": "DALLAS COUNTY MEDICAL CENTER",
+     "city": "FORDYCE",
+     "state": "AR",
+     "locationName": "Dallas County Medical Center",
+     "mrfUrl": "https://dallascountymedicalcenter.pg.quadax.revenuemasters.com/cdm-files/270029542_dallas-county-medical-center_standardcharges.csv",
+     "mrfHost": "dallascountymedicalcenter.pg.quadax.revenuemasters.com",
+     "sourcePageUrl": "https://dallascountymedicalcenter.pg.quadax.revenuemasters.com/disclaimer?",
+     "lastUpdated": "2026-03-27",
+     "daysSinceUpdate": 161,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://dallasmedcenter.com/cms-hpt.txt",
    "pointerHost": "dallasmedcenter.com",
    "domains": [
@@ -43549,6 +44392,30 @@
      "daysSinceUpdate": 189,
      "staleOver365": false,
      "httpStatus": 404
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://denverhealth.org/cms-hpt.txt",
+   "pointerHost": "denverhealth.org",
+   "domains": [
+    "denverhealth.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "060011",
+     "name": "DENVER HEALTH & HOSPITAL AUTHORITY",
+     "city": "DENVER",
+     "state": "CO",
+     "locationName": "Denver Health Medical Center",
+     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7840/841343242_denver-health-and-hospital-authority_standardcharges.csv",
+     "mrfHost": "sthpiprd.blob.core.windows.net",
+     "sourcePageUrl": "https://search.hospitalpriceindex.com/hpi2/machineReadable/DenverHealthMedicalCenter/7840",
+     "lastUpdated": "2026-04-30",
+     "daysSinceUpdate": 126,
+     "staleOver365": false,
+     "httpStatus": 200
     }
    ]
   },
@@ -44413,6 +45280,30 @@
      "daysSinceUpdate": 0,
      "staleOver365": null,
      "httpStatus": 500
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://elliothospital.org/cms-hpt.txt",
+   "pointerHost": "elliothospital.org",
+   "domains": [
+    "elliothospital.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "300012",
+     "name": "ELLIOT HOSPITAL",
+     "city": "MANCHESTER",
+     "state": "NH",
+     "locationName": "Elliot Hospital",
+     "mrfUrl": "https://hospitalpricedisclosure.com/download.aspx?pi=f7iBAjlzov5McTIGaTxPpw*-*",
+     "mrfHost": "hospitalpricedisclosure.com",
+     "sourcePageUrl": "https://hospitalpricedisclosure.com/default.aspx?pi=f7iBAjlzov5McTIGaTxPpw*-*",
+     "lastUpdated": "2026-04-01",
+     "daysSinceUpdate": 156,
+     "staleOver365": false,
+     "httpStatus": 200
     }
    ]
   },
@@ -45305,6 +46196,30 @@
    ]
   },
   {
+   "pointerUrl": "https://fmc-cares.com/cms-hpt.txt",
+   "pointerHost": "fmc-cares.com",
+   "domains": [
+    "fmc-cares.com"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "190140",
+     "name": "FRANKLIN MEDICAL CENTER",
+     "city": "WINNSBORO",
+     "state": "LA",
+     "locationName": "Franklin Medical Center",
+     "mrfUrl": "https://franklinmedicalcenter.pg.quadax.revenuemasters.com/cdm-files/720685244_franklin-medical-center_standardcharges.csv",
+     "mrfHost": "franklinmedicalcenter.pg.quadax.revenuemasters.com",
+     "sourcePageUrl": "https://franklinmedicalcenter.pg.quadax.revenuemasters.com/disclaimer",
+     "lastUpdated": "2026-05-21",
+     "daysSinceUpdate": 106,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://fmchealth.org/cms-hpt.txt",
    "pointerHost": "fmchealth.org",
    "domains": [
@@ -45539,6 +46454,30 @@
      "sourcePageUrl": "https://freestonemc.slicedhealth.io/home",
      "lastUpdated": "2026-04-28",
      "daysSinceUpdate": 128,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://frh1.org/cms-hpt.txt",
+   "pointerHost": "frh1.org",
+   "domains": [
+    "frh1.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "171374",
+     "name": "FREDONIA REGIONAL HOSPITAL",
+     "city": "FREDONIA",
+     "state": "KS",
+     "locationName": "Fredonia Regional Hospital",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbFRHFREDONIAKS&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Fredonia_V2.aspx",
+     "lastUpdated": "2026-08-04",
+     "daysSinceUpdate": 31,
      "staleOver365": false,
      "httpStatus": 200
     }
@@ -47801,6 +48740,30 @@
    ]
   },
   {
+   "pointerUrl": "https://hchconline.org/cms-hpt.txt",
+   "pointerHost": "hchconline.org",
+   "domains": [
+    "hchconline.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "171369",
+     "name": "HODGEMAN COUNTY HEALTH CENTER",
+     "city": "JETMORE",
+     "state": "KS",
+     "locationName": "Hodgeman County Health Center",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbHCHCJETMOREKS&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Hodgeman_V2.aspx",
+     "lastUpdated": "2026-08-18",
+     "daysSinceUpdate": 17,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://hchin.org/cms-hpt.txt",
    "pointerHost": "hchin.org",
    "domains": [
@@ -47964,6 +48927,30 @@
      "lastUpdated": "2025-12-24",
      "daysSinceUpdate": 253,
      "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://healthcare.utah.edu/cms-hpt.txt",
+   "pointerHost": "healthcare.utah.edu",
+   "domains": [
+    "healthcare.utah.edu"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "460009",
+     "name": "UNIVERSITY OF UTAH HOSPITAL AND CLINICS",
+     "city": "SALT LAKE CITY",
+     "state": "UT",
+     "locationName": "University of Utah Hospital",
+     "mrfUrl": "https://md.utah.edu/pricing/876000525_UNIVERSITY-OF-UTAH-HOSPITAL-AND-CLINICS_standardcharges.csv",
+     "mrfHost": "md.utah.edu",
+     "sourcePageUrl": "https://healthcare.utah.edu/pricing",
+     "lastUpdated": "2025-07-01",
+     "daysSinceUpdate": 430,
+     "staleOver365": true,
      "httpStatus": 200
     }
    ]
@@ -49337,6 +50324,30 @@
    ]
   },
   {
+   "pointerUrl": "https://intermountainhealthcare.org/sc10media/files/intermountain-health/locations/hospital-prices/price-transparency.txt",
+   "pointerHost": "intermountainhealthcare.org",
+   "domains": [
+    "intermountainhealthcare.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "460006",
+     "name": "LDS HOSPITAL",
+     "city": "SALT LAKE CITY",
+     "state": "UT",
+     "locationName": "Intermountain Health LDS Hospital",
+     "mrfUrl": "https://intermountainhealthcare.org/-/media/files/intermountain-health/locations/hospital-prices/942854057_lds-hospital_standardcharges.ashx",
+     "mrfHost": "intermountainhealthcare.org",
+     "sourcePageUrl": "https://intermountainhealthcare.org/locations/lds-hospital/about/price-transparency",
+     "lastUpdated": "2026-08-05",
+     "daysSinceUpdate": 29,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://ioshospital.com/cms-hpt.txt",
    "pointerHost": "ioshospital.com",
    "domains": [
@@ -50052,6 +51063,30 @@
      "lastUpdated": null,
      "daysSinceUpdate": 0,
      "staleOver365": null,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://jrmc.org/cms-hpt.txt",
+   "pointerHost": "jrmc.org",
+   "domains": [
+    "jrmc.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "040071",
+     "name": "JEFFERSON REGIONAL MEDICAL CENTER",
+     "city": "PINE BLUFF",
+     "state": "AR",
+     "locationName": "Jefferson Regional Medical Center",
+     "mrfUrl": "https://mrfs.hyvehealthcare.com/JeffersonHospitalAssociation/710329353_jefferson-regional-medical-center_standardcharges.csv",
+     "mrfHost": "mrfs.hyvehealthcare.com",
+     "sourcePageUrl": "https://mrfs.hyvehealthcare.com/JeffersonHospitalAssociation/",
+     "lastUpdated": "2026-02-13",
+     "daysSinceUpdate": 203,
+     "staleOver365": false,
      "httpStatus": 200
     }
    ]
@@ -51209,6 +52244,30 @@
    ]
   },
   {
+   "pointerUrl": "https://larabida.org/cms-hpt.txt",
+   "pointerHost": "larabida.org",
+   "domains": [
+    "larabida.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "143301",
+     "name": "LARABIDA CHILDRENS HOSPITAL I",
+     "city": "CHICAGO",
+     "state": "IL",
+     "locationName": "La Rabida Children's Hospital",
+     "mrfUrl": "https://hospitalpricedisclosure.com/Download.aspx?pxi=fVMFe8E56VlQn4j7nOY9Gg*-*&f=iFd*_*cEPwhQHJy3lVvHy9uQ*-*",
+     "mrfHost": "hospitalpricedisclosure.com",
+     "sourcePageUrl": "https://HospitalPriceDisclosure.com/Default.aspx?ci=VH2OXYwReVTiSDRaxGv6Eg*-*",
+     "lastUpdated": "2026-04-01",
+     "daysSinceUpdate": 155,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://lawrencegeneral.org/cms-hpt.txt",
    "pointerHost": "lawrencegeneral.org",
    "domains": [
@@ -52265,6 +53324,30 @@
    ]
   },
   {
+   "pointerUrl": "https://mangoldmemorial.org/cms-hpt.txt",
+   "pointerHost": "mangoldmemorial.org",
+   "domains": [
+    "mangoldmemorial.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "451337",
+     "name": "W J MANGOLD MEMORIAL HOSPITAL",
+     "city": "LOCKNEY",
+     "state": "TX",
+     "locationName": "Wj Mangold Memorial Hospital",
+     "mrfUrl": "https://app.box.com/shared/static/0jormz1192c1a1u3l5zzzyj5fiqsw7lb.csv",
+     "mrfHost": "app.box.com",
+     "sourcePageUrl": "https://us.flow-prod.boomi.com/f2a4d421-8a52-4b09-8a4c-8476aae2d651/play/ptt?flow-id=a91f6d2f-a3ad-4257-9185-99463fe7c6a3&flow-version-id=1c1ee65c-1ada-473e-bde2-3aa7100683ac&hospital-id=37",
+     "lastUpdated": "2025-09-15",
+     "daysSinceUpdate": 354,
+     "staleOver365": false,
+     "httpStatus": 404
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://mangumregional.net/cms-hpt.txt",
    "pointerHost": "mangumregional.net",
    "domains": [
@@ -52697,6 +53780,30 @@
    ]
   },
   {
+   "pointerUrl": "https://mchalbia.com/cms-hpt.txt",
+   "pointerHost": "mchalbia.com",
+   "domains": [
+    "mchalbia.com"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "161342",
+     "name": "MONROE COUNTY HOSPITAL",
+     "city": "ALBIA",
+     "state": "IA",
+     "locationName": "MONROE COUNTY HOSPITAL",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbMCHALBIAIA&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/MonroeCountyIowa.aspx",
+     "lastUpdated": "2026-08-18",
+     "daysSinceUpdate": 17,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://mchcares.com/cms-hpt.txt",
    "pointerHost": "mchcares.com",
    "domains": [
@@ -52793,6 +53900,30 @@
    ]
   },
   {
+   "pointerUrl": "https://mckenziehealth.com/cms-hpt.txt",
+   "pointerHost": "mckenziehealth.com",
+   "domains": [
+    "mckenziehealth.com"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "351302",
+     "name": "MCKENZIE COUNTY HEALTHCARE SYSTEMS INC",
+     "city": "WATFORD CITY",
+     "state": "ND",
+     "locationName": "McKenzie Health",
+     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8104/770637498_mckenzie-county-healthcare-system_standardcharges.csv",
+     "mrfHost": "sthpiprd.blob.core.windows.net",
+     "sourcePageUrl": "https://search.hospitalpriceindex.com/hpi2/machineReadable/McKenzieCountyHealthcareSystem/8104",
+     "lastUpdated": "2026-05-01",
+     "daysSinceUpdate": 126,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://mckenziehealth.org/cms-hpt.txt",
    "pointerHost": "mckenziehealth.org",
    "domains": [
@@ -52861,6 +53992,30 @@
      "daysSinceUpdate": 0,
      "staleOver365": null,
      "httpStatus": 404
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://mcmccares.com/cms-hpt.txt",
+   "pointerHost": "mcmccares.com",
+   "domains": [
+    "mcmccares.com"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "180105",
+     "name": "MONROE COUNTY MEDICAL CENTER",
+     "city": "TOMPKINSVILLE",
+     "state": "KY",
+     "locationName": "Monroe County Medical Center",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbMCMCTOMPKINSVILLEKY&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Monroe_V2.aspx",
+     "lastUpdated": "2026-08-14",
+     "daysSinceUpdate": 21,
+     "staleOver365": false,
+     "httpStatus": 200
     }
    ]
   },
@@ -53412,6 +54567,30 @@
      "lastUpdated": null,
      "daysSinceUpdate": 0,
      "staleOver365": null,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://mercybh.com/cms-hpt.txt",
+   "pointerHost": "mercybh.com",
+   "domains": [
+    "mercybh.com"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "194118",
+     "name": "MERCY BEHAVIORAL HOSPITAL",
+     "city": "LECOMPTE",
+     "state": "LA",
+     "locationName": "Mercy Behavioral Hospital",
+     "mrfUrl": "https://www.mercybh.com/_files/ugd/fc3aaa_1011e766203c487e878b8a194101abe9.csv?dn=84-1783184_Mercy-Behavioral-Hospital-LLC_standardcharges.csv",
+     "mrfHost": "mercybh.com",
+     "sourcePageUrl": "https://www.mercybh.com/transparency",
+     "lastUpdated": "2026-06-15",
+     "daysSinceUpdate": 81,
+     "staleOver365": false,
      "httpStatus": 200
     }
    ]
@@ -56033,6 +57212,54 @@
    ]
   },
   {
+   "pointerUrl": "https://neshobageneral.com/cms-hpt.txt",
+   "pointerHost": "neshobageneral.com",
+   "domains": [
+    "neshobageneral.com"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "251340",
+     "name": "NESHOBA COUNTY GENERAL HOSPITAL",
+     "city": "PHILADELPHIA",
+     "state": "MS",
+     "locationName": "Neshoba County General Hospital",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbNCGHPHILADELPHIAMS&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Neshoba_V3.aspx",
+     "lastUpdated": "2026-06-04",
+     "daysSinceUpdate": 92,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://newberryhealth.org/cms-hpt.txt",
+   "pointerHost": "newberryhealth.org",
+   "domains": [
+    "newberryhealth.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "420053",
+     "name": "NEWBERRY COUNTY MEMORIAL HOSPITAL",
+     "city": "NEWBERRY",
+     "state": "SC",
+     "locationName": "Newberry County Memorial Hospital",
+     "mrfUrl": "https://newberryhealth.slicedhealth.io/pricer/57-0324929-1316030083_NewberryCountyMemorialHospital_standardcharges.CSV",
+     "mrfHost": "newberryhealth.slicedhealth.io",
+     "sourcePageUrl": "https://newberryhealth.slicedhealth.io/home",
+     "lastUpdated": "2026-04-30",
+     "daysSinceUpdate": 127,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://newmanmemorialhospital.org/cms-hpt.txt",
    "pointerHost": "newmanmemorialhospital.org",
    "domains": [
@@ -56081,24 +57308,48 @@
    ]
   },
   {
-   "pointerUrl": "https://nexushealthsystems.com/cms-hpt.txt",
-   "pointerHost": "nexushealthsystems.com",
+   "pointerUrl": "https://newporthospitalandhealth.org/cms-hpt.txt",
+   "pointerHost": "newporthospitalandhealth.org",
    "domains": [
-    "nexushealthsystems.com"
+    "newporthospitalandhealth.org"
    ],
    "facilityCount": 1,
    "facilities": [
     {
-     "ccn": "453318",
-     "name": "NEXUS CHILDRENS HOSPITAL DALLAS",
-     "city": "DALLAS",
-     "state": "TX",
-     "locationName": "Nexus Children's Hospital - Dallas",
-     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbNCHDDALLASTX&type=CDMWithoutLabel&fileType=CSV",
-     "mrfHost": "apps.para-hcfs.com",
-     "sourcePageUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/NexusChildrensDallas.aspx",
-     "lastUpdated": "2026-04-28",
-     "daysSinceUpdate": 128,
+     "ccn": "501310",
+     "name": "NEWPORT COMMUNITY HOSPITAL",
+     "city": "NEWPORT",
+     "state": "WA",
+     "locationName": "Newport Community Hospital",
+     "mrfUrl": "https://newporthospitalandhealth.org/wp-content/uploads/2026/04/910541383_Pend_Oreille_County_Public_Hospital_District_No1_standardcharges.csv",
+     "mrfHost": "newporthospitalandhealth.org",
+     "sourcePageUrl": "https://newporthospitalandhealth.org/price-transparency/",
+     "lastUpdated": "2026-03-30",
+     "daysSinceUpdate": 158,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://nfch.org/cms-hpt.txt",
+   "pointerHost": "nfch.org",
+   "domains": [
+    "nfch.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "101308",
+     "name": "NORTHWEST FLORIDA COMMUNITY HOSPITAL",
+     "city": "CHIPLEY",
+     "state": "FL",
+     "locationName": "Northwest Florida Community Hospital",
+     "mrfUrl": "https://northwestfloridacommunityhospital.pg.quadax.revenuemasters.com/cdm-files/596002711_northwest-florida-community-hospital_standardcharges.csv",
+     "mrfHost": "northwestfloridacommunityhospital.pg.quadax.revenuemasters.com",
+     "sourcePageUrl": "https://northwestfloridacommunityhospital.pg.quadax.revenuemasters.com/disclaimer?",
+     "lastUpdated": "2026-05-19",
+     "daysSinceUpdate": 108,
      "staleOver365": false,
      "httpStatus": 200
     }
@@ -56125,6 +57376,30 @@
      "daysSinceUpdate": 78,
      "staleOver365": false,
      "httpStatus": 404
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://ngcah.com/cms-hpt.txt",
+   "pointerHost": "ngcah.com",
+   "domains": [
+    "ngcah.com"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "251307",
+     "name": "NOXUBEE GENERAL CRITICAL ACCESS HOSP",
+     "city": "MACON",
+     "state": "MS",
+     "locationName": "Noxubee General Hospital",
+     "mrfUrl": "https://a27d8bef-da4e-4fa0-9e3b-83c28b7fb454.usrfiles.com/ugd/a27d8b_9d82b0e8a9ae4bb59d292b04e35ec2f1.csv",
+     "mrfHost": "a27d8bef-da4e-4fa0-9e3b-83c28b7fb454.usrfiles.com",
+     "sourcePageUrl": "https:www.ngcah.com/price-transparency",
+     "lastUpdated": "2024-11-01",
+     "daysSinceUpdate": 672,
+     "staleOver365": true,
+     "httpStatus": 200
     }
    ]
   },
@@ -57641,6 +58916,30 @@
    ]
   },
   {
+   "pointerUrl": "https://ottawacountyhealthcenter.org/cms-hpt.txt",
+   "pointerHost": "ottawacountyhealthcenter.org",
+   "domains": [
+    "ottawacountyhealthcenter.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "171328",
+     "name": "OTTAWA COUNTY HEALTH CENTER",
+     "city": "MINNEAPOLIS",
+     "state": "KS",
+     "locationName": "Ottawa County Health Center",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbOttawaCounty&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Ottawa_V3.aspx",
+     "lastUpdated": "2026-08-05",
+     "daysSinceUpdate": 30,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://ottumwaregionalhealth.com/cms-hpt.txt",
    "pointerHost": "ottumwaregionalhealth.com",
    "domains": [
@@ -58265,6 +59564,30 @@
    ]
   },
   {
+   "pointerUrl": "https://pchospital.us/cms-hpt.txt",
+   "pointerHost": "pchospital.us",
+   "domains": [
+    "pchospital.us"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "271312",
+     "name": "PHILLIPS COUNTY HOSPITAL - CAH",
+     "city": "MALTA",
+     "state": "MT",
+     "locationName": "Phillips County Hospital",
+     "mrfUrl": "https://pchospital.us/wp-content/uploads/2026/06/816016152_phillips-county-hospital-assn_standardcharges2.csv",
+     "mrfHost": "pchospital.us",
+     "sourcePageUrl": "pchospital.us/price-transparency-information/",
+     "lastUpdated": "2026-06-16",
+     "daysSinceUpdate": 80,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://pchsgrant.com/cms-hpt.txt",
    "pointerHost": "pchsgrant.com",
    "domains": [
@@ -58692,6 +60015,54 @@
      "lastUpdated": null,
      "daysSinceUpdate": 0,
      "staleOver365": null,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://pmcky.org/cms-hpt.txt",
+   "pointerHost": "pmcky.org",
+   "domains": [
+    "pmcky.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "180044",
+     "name": "PIKEVILLE MEDICAL CENTER",
+     "city": "PIKEVILLE",
+     "state": "KY",
+     "locationName": "Pikeville Medical Center",
+     "mrfUrl": "https://HospitalPriceDisclosure.com/download.aspx?ci=djj9uXI2o8BV*_*ZNUwGkb7g*-*",
+     "mrfHost": "hospitalpricedisclosure.com",
+     "sourcePageUrl": "https://HospitalPriceDisclosure.com/Default.aspx?ci=djj9uXI2o8BV*_*ZNUwGkb7g*-*",
+     "lastUpdated": "2026-04-01",
+     "daysSinceUpdate": 156,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://pmcregionalhospital.com/cms-hpt.txt",
+   "pointerHost": "pmcregionalhospital.com",
+   "domains": [
+    "pmcregionalhospital.com"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "150172",
+     "name": "PHYSICIANS' MEDICAL CENTER LLC",
+     "city": "NEW ALBANY",
+     "state": "IN",
+     "locationName": "Physicians Medical Center LLC",
+     "mrfUrl": "https://clariti-health.com/csp/clariti/machinereadable/v2/205071967_Physicians-Medical-Center-LLC_standardcharges.csv",
+     "mrfHost": "clariti-health.com",
+     "sourcePageUrl": "https://clariti-health.com/csp/clariti/QuotableService.csp?orgKey=4345WE",
+     "lastUpdated": "2026-04-28",
+     "daysSinceUpdate": 129,
+     "staleOver365": false,
      "httpStatus": 200
     }
    ]
@@ -59249,6 +60620,30 @@
    ]
   },
   {
+   "pointerUrl": "https://putnamgeneral.com/cms-hpt.txt",
+   "pointerHost": "putnamgeneral.com",
+   "domains": [
+    "putnamgeneral.com"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "111313",
+     "name": "PUTNAM GENERAL HOSPITAL",
+     "city": "EATONTON",
+     "state": "GA",
+     "locationName": "Putnam General Hospital",
+     "mrfUrl": "http://www.putnamgeneral.com/docs/581020324_putnam-general-hospital_standardcharges.csv",
+     "mrfHost": "putnamgeneral.com",
+     "sourcePageUrl": "https://www.putnamgeneral.com/getpage.php?name=Pricing_Notification",
+     "lastUpdated": "2026-03-30",
+     "daysSinceUpdate": 158,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://pvhc.org/cms-hpt.txt",
    "pointerHost": "pvhc.org",
    "domains": [
@@ -59459,6 +60854,30 @@
      "sourcePageUrl": "https://rapidesregional.com/patient-resources/patient-financial-resources/pricing-transparency-cms-required-file-of-standard-charges",
      "lastUpdated": "2026-03-01",
      "daysSinceUpdate": 186,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://rchc.us/cms-hpt.txt",
+   "pointerHost": "rchc.us",
+   "domains": [
+    "rchc.us"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "171307",
+     "name": "RAWLINS COUNTY HEALTH CENTER",
+     "city": "ATWOOD",
+     "state": "KS",
+     "locationName": "Rawlins County Health Center",
+     "mrfUrl": "https://rchc.slicedhealth.io/pricer/480545181_rawlins-county-health-center_standardcharges.csv",
+     "mrfHost": "rchc.slicedhealth.io",
+     "sourcePageUrl": "https://rchc.slicedhealth.io/home",
+     "lastUpdated": "2026-07-30",
+     "daysSinceUpdate": 36,
      "staleOver365": false,
      "httpStatus": 200
     }
@@ -59939,6 +61358,30 @@
      "sourcePageUrl": "https://www.yourcareeverywhere.com/content/medhost/your-care-everywhere/pricing-estimator-page.html?facility_id=52d6da24-63d1-48f4-87af-82c3c73b3591",
      "lastUpdated": "2026-04-01",
      "daysSinceUpdate": 155,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://ridgeviewsmyrna.com/cms-hpt.txt",
+   "pointerHost": "ridgeviewsmyrna.com",
+   "domains": [
+    "ridgeviewsmyrna.com"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "114012",
+     "name": "RIDGEVIEW INSTITUTE",
+     "city": "SMYRNA",
+     "state": "GA",
+     "locationName": "Ridgeview Institute of Smyrna",
+     "mrfUrl": "https://s3.amazonaws.com/ycubaa-production-marlin-1-charge-management-public/facilities/42d83c64-f601-40e2-8053-b7046597a2a0/813514517_rv-behavioral-llc_standardcharges.csv",
+     "mrfHost": "s3.amazonaws.com",
+     "sourcePageUrl": "https://www.yourcareeverywhere.com/content/medhost/your-care-everywhere/pricing-estimator-page.html?facility_id=42d83c64-f601-40e2-8053-b7046597a2a0",
+     "lastUpdated": "2026-04-01",
+     "daysSinceUpdate": 156,
      "staleOver365": false,
      "httpStatus": 200
     }
@@ -60689,6 +62132,30 @@
    ]
   },
   {
+   "pointerUrl": "https://rvmc.org/cms-hpt.txt",
+   "pointerHost": "rvmc.org",
+   "domains": [
+    "rvmc.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "271319",
+     "name": "RUBY VALLEY MEDICAL CENTER",
+     "city": "SHERIDAN",
+     "state": "MT",
+     "locationName": "Ruby Valley Medical Center",
+     "mrfUrl": "https://pricetransparency.healthcare/ruby-valley-medical-center/charges/export/",
+     "mrfHost": "pricetransparency.healthcare",
+     "sourcePageUrl": "https://pricetransparency.healthcare/ruby-valley-medical-center/",
+     "lastUpdated": "2026-08-14",
+     "daysSinceUpdate": 21,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://rwhs.org/cms-hpt.txt",
    "pointerHost": "rwhs.org",
    "domains": [
@@ -61289,6 +62756,30 @@
    ]
   },
   {
+   "pointerUrl": "https://sanjuanhealth.org/cms-hpt.txt",
+   "pointerHost": "sanjuanhealth.org",
+   "domains": [
+    "sanjuanhealth.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "461308",
+     "name": "SAN JUAN HOSPITAL",
+     "city": "MONTICELLO",
+     "state": "UT",
+     "locationName": "San Juan Health",
+     "mrfUrl": "https://sanjuanhealth.goredde.com/Estimator/Files/876000616_san-juan-hospital_standardcharges.csv",
+     "mrfHost": "sanjuanhealth.goredde.com",
+     "sourcePageUrl": "https://sanjuanhealth.goredde.com/Estimator/",
+     "lastUpdated": "2026-04-13",
+     "daysSinceUpdate": 144,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://sanjuanregional.com/cms-hpt.txt",
    "pointerHost": "sanjuanregional.com",
    "domains": [
@@ -61307,6 +62798,30 @@
      "sourcePageUrl": "https://www.sanjuanregional.com/transparency",
      "lastUpdated": "2026-06-09",
      "daysSinceUpdate": 86,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://santiamhospital.org/cms-hpt.txt",
+   "pointerHost": "santiamhospital.org",
+   "domains": [
+    "santiamhospital.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "380056",
+     "name": "SANTIAM HOSPITAL & CLINICS",
+     "city": "STAYTON",
+     "state": "OR",
+     "locationName": "Santiam Memorial Hospital",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbSMHSTAYTONOR&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Santiam_Memorial.aspx",
+     "lastUpdated": "2026-08-06",
+     "daysSinceUpdate": 29,
      "staleOver365": false,
      "httpStatus": 200
     }
@@ -61625,6 +63140,30 @@
    ]
   },
   {
+   "pointerUrl": "https://scmhospital.org/cms-hpt.txt",
+   "pointerHost": "scmhospital.org",
+   "domains": [
+    "scmhospital.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "261306",
+     "name": "SULLIVAN COUNTY MEMORIAL HOSPITAL",
+     "city": "MILAN",
+     "state": "MO",
+     "locationName": "Sullivan County Memorial Hospital",
+     "mrfUrl": "https://scmhospital.org/446005595_sullivan-county-memorial-hospital_standardcharges.csv",
+     "mrfHost": "scmhospital.org",
+     "sourcePageUrl": "https://scmhospital.org/",
+     "lastUpdated": "2026-07-01",
+     "daysSinceUpdate": 65,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://scmohospital.net/cms-hpt.txt",
    "pointerHost": "scmohospital.net",
    "domains": [
@@ -61889,6 +63428,30 @@
    ]
   },
   {
+   "pointerUrl": "https://serenityhospital.com/cms-hpt.txt",
+   "pointerHost": "serenityhospital.com",
+   "domains": [
+    "serenityhospital.com"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "194074",
+     "name": "SERENITY SPRINGS SPECIALTY HOSPITAL",
+     "city": "RUSTON",
+     "state": "LA",
+     "locationName": "Serenity Springs Specialty Hospital",
+     "mrfUrl": "https://rest.edit.site/filestorage-api-service/4a56fb3b641cb21ae28d316dd3efb637/price-transparency-tall-csv.csv",
+     "mrfHost": "rest.edit.site",
+     "sourcePageUrl": "https://serenityhospital.com/general/",
+     "lastUpdated": "2024-10-14",
+     "daysSinceUpdate": 690,
+     "staleOver365": true,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://setonharkerheights.net/cms-hpt.txt",
    "pointerHost": "setonharkerheights.net",
    "domains": [
@@ -61909,6 +63472,30 @@
      "daysSinceUpdate": 0,
      "staleOver365": null,
      "httpStatus": 206
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://seviercountymedical.com/cms-hpt.txt",
+   "pointerHost": "seviercountymedical.com",
+   "domains": [
+    "seviercountymedical.com"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "041333",
+     "name": "SEVIER COUNTY MEDICAL CENTER",
+     "city": "DE QUEEN",
+     "state": "AR",
+     "locationName": "Sevier County Medical Center",
+     "mrfUrl": "https://www.seviercountymedical.com/s/853389374_sevier-county-medical-center_standardcharges.csv",
+     "mrfHost": "seviercountymedical.com",
+     "sourcePageUrl": "https://seviercountymedical.com",
+     "lastUpdated": "2026-08-01",
+     "daysSinceUpdate": 34,
+     "staleOver365": false,
+     "httpStatus": 200
     }
    ]
   },
@@ -62051,6 +63638,30 @@
      "sourcePageUrl": "https://shastaregional.com/patients-visitors/price-transparency/",
      "lastUpdated": "2026-03-17",
      "daysSinceUpdate": 170,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://sheppardpratt.org/cms-hpt.txt",
+   "pointerHost": "sheppardpratt.org",
+   "domains": [
+    "sheppardpratt.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "214000",
+     "name": "SHEPPARD AND ENOCH PRATT HOSPITAL, THE",
+     "city": "BALTIMORE",
+     "state": "MD",
+     "locationName": "Sheppard Pratt - Towson Campus",
+     "mrfUrl": "https://www.sheppardpratt.org/files/resources/Sheppard-Pratt-Towson.csv",
+     "mrfHost": "sheppardpratt.org",
+     "sourcePageUrl": "https://www.sheppardpratt.org/cms-price-transparency/",
+     "lastUpdated": "2026-07-13",
+     "daysSinceUpdate": 52,
      "staleOver365": false,
      "httpStatus": 200
     }
@@ -62316,6 +63927,30 @@
      "lastUpdated": "2025-04-30",
      "daysSinceUpdate": 491,
      "staleOver365": true,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://sjbhh.net/cms-hpt.txt",
+   "pointerHost": "sjbhh.net",
+   "domains": [
+    "sjbhh.net"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "194088",
+     "name": "ST JAMES BEHAVIORAL HEALTH HOSPITAL, INC",
+     "city": "GONZALES",
+     "state": "LA",
+     "locationName": "ST JAMES BEHAVIORAL HEALTH HOSPITAL",
+     "mrfUrl": "https://sjbhh.net/870765044-1083637201_st-james-behavioral-health-hospital_standardcharges.csv",
+     "mrfHost": "sjbhh.net",
+     "sourcePageUrl": "https://sjbhh.net/price-transparency",
+     "lastUpdated": "2026-06-01",
+     "daysSinceUpdate": 95,
+     "staleOver365": false,
      "httpStatus": 200
     }
    ]
@@ -62675,6 +64310,30 @@
      "sourcePageUrl": "https://www.yourcareeverywhere.com/content/medhost/your-care-everywhere/pricing-estimator-page.html?facility_id=09d28742-a15d-41ca-9a72-6f1874c29ca0",
      "lastUpdated": "2026-04-01",
      "daysSinceUpdate": 155,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://snhhealth.org/cms-hpt.txt",
+   "pointerHost": "snhhealth.org",
+   "domains": [
+    "snhhealth.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "300020",
+     "name": "SOUTHERN NH MEDICAL CENTER",
+     "city": "NASHUA",
+     "state": "NH",
+     "locationName": "Southern New Hampshire Medical Center",
+     "mrfUrl": "https://hospitalpricedisclosure.com/Download.aspx?pxi=06hFExK19Svl3QLOl*_*Dgkw*-*&f=iFd*_*cEPwhQHJy3lVvHy9uQ*-*",
+     "mrfHost": "hospitalpricedisclosure.com",
+     "sourcePageUrl": "https://urldefense.com/v3/__https://hospitalpricedisclosure.com/default.aspx?pi=06hFExK19Svl3QLOl*_*Dgkw*-*__;KioqKg!!Pi0OxmMDWCk!v9vLFbRWRLUPS-LB4zRFHyek23LQvBuSsf0Ky4iCdg4pCx9gIt475YJiNtMMXErqtdLdVDw8qBD1wbGgWW3DUZ0XQCJh$",
+     "lastUpdated": "2026-04-01",
+     "daysSinceUpdate": 156,
      "staleOver365": false,
      "httpStatus": 200
     }
@@ -63132,6 +64791,30 @@
      "lastUpdated": "2024-07-01",
      "daysSinceUpdate": 794,
      "staleOver365": true,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://sphp.com/sites/default/files/cms-hpt.txt",
+   "pointerHost": "sphp.com",
+   "domains": [
+    "sphp.com"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "330180",
+     "name": "SAMARITAN HOSPITAL OF TROY, NEW YORK",
+     "city": "TROY",
+     "state": "NY",
+     "locationName": "Samaritan Hospital",
+     "mrfUrl": "https://hpt.trinity-health.org/141338544_samaritan-hospital_standardcharges.zip",
+     "mrfHost": "hpt.trinity-health.org",
+     "sourcePageUrl": "https://www.sphp.com/for-patients/billing-information/pricing-information/price-estimate-and-downloadable-list",
+     "lastUpdated": "2026-03-31",
+     "daysSinceUpdate": 156,
+     "staleOver365": false,
      "httpStatus": 200
     }
    ]
@@ -63953,6 +65636,30 @@
    ]
   },
   {
+   "pointerUrl": "https://stmaryskc.com/cms-hpt.txt",
+   "pointerHost": "stmaryskc.com",
+   "domains": [
+    "stmaryskc.com"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "260193",
+     "name": "ST MARY'S MEDICAL CENTER",
+     "city": "BLUE SPRINGS",
+     "state": "MO",
+     "locationName": "St. Mary’s Medical Center",
+     "mrfUrl": "https://stmaryskc.com/wp-content/uploads/2026/09/53611_StMarysMedicalCenter_standardcharges.json",
+     "mrfHost": "stmaryskc.com",
+     "sourcePageUrl": "https://stmaryskc.com/financial-assistance/",
+     "lastUpdated": "2026-03-17",
+     "daysSinceUpdate": 171,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://stmarysmaine.com/cms-hpt.txt",
    "pointerHost": "stmarysmaine.com",
    "domains": [
@@ -64649,6 +66356,30 @@
    ]
   },
   {
+   "pointerUrl": "https://taravista.care/cms-hpt.txt",
+   "pointerHost": "taravista.care",
+   "domains": [
+    "taravista.care"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "224043",
+     "name": "TARAVISTA BEHAVIORAL HEALTH CENTER",
+     "city": "DEVENS",
+     "state": "MA",
+     "locationName": "TaraVista Behavioral Health Center",
+     "mrfUrl": "https://www.taravista.care/price-transparency/TaraVista-Pricing_Guide.csv",
+     "mrfHost": "taravista.care",
+     "sourcePageUrl": "https://www.taravista.care/insurance-and-payment-information/",
+     "lastUpdated": "2026-03-02",
+     "daysSinceUpdate": 186,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://tbh.org/cms-hpt.txt",
    "pointerHost": "tbh.org",
    "domains": [
@@ -64693,6 +66424,30 @@
      "daysSinceUpdate": 0,
      "staleOver365": null,
      "httpStatus": 500
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://tcmh.org/cms-hpt.txt",
+   "pointerHost": "tcmh.org",
+   "domains": [
+    "tcmh.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "260024",
+     "name": "TEXAS COUNTY MEMORIAL HOSPITAL",
+     "city": "HOUSTON",
+     "state": "MO",
+     "locationName": "Texas County Memorial Hospital",
+     "mrfUrl": "https://www.tcmh.org/wp-content/uploads/2026/07/430887928_texas-county-memorial-hospital_standardcharges.csv",
+     "mrfHost": "tcmh.org",
+     "sourcePageUrl": "https://www.tcmh.org/patients-visitors/billing/standard-charges/",
+     "lastUpdated": "2026-07-17",
+     "daysSinceUpdate": 49,
+     "staleOver365": false,
+     "httpStatus": 200
     }
    ]
   },
@@ -65753,30 +67508,6 @@
    ]
   },
   {
-   "pointerUrl": "https://uihc.org/cms-hpt.txt",
-   "pointerHost": "uihc.org",
-   "domains": [
-    "uihc.org"
-   ],
-   "facilityCount": 1,
-   "facilities": [
-    {
-     "ccn": "160029",
-     "name": "UNIVERSITY OF IOWA HEALTH CARE MEDICAL CENTER DOWN",
-     "city": "IOWA CITY",
-     "state": "IA",
-     "locationName": "UNIVERSITY OF IOWA HEALTH CARE MEDICAL CENTER DOWNTOWN",
-     "mrfUrl": "https://www.healthcare.uiowa.edu/marcom/uihc/billing/426004813-1699541870_state-university-of-iowa_standardcharges.csv",
-     "mrfHost": "healthcare.uiowa.edu",
-     "sourcePageUrl": "https://uihc.org/patient-financial-resources",
-     "lastUpdated": "2026-03-11",
-     "daysSinceUpdate": 176,
-     "staleOver365": false,
-     "httpStatus": 206
-    }
-   ]
-  },
-  {
    "pointerUrl": "https://ukhealthcare.uky.edu/cms-hpt.txt",
    "pointerHost": "ukhealthcare.uky.edu",
    "domains": [
@@ -65797,30 +67528,6 @@
      "daysSinceUpdate": 99,
      "staleOver365": false,
      "httpStatus": 206
-    }
-   ]
-  },
-  {
-   "pointerUrl": "https://umc.edu/cms-hpt.txt",
-   "pointerHost": "umc.edu",
-   "domains": [
-    "merithealthmadison.com"
-   ],
-   "facilityCount": 1,
-   "facilities": [
-    {
-     "ccn": "251319",
-     "name": "HOLMES COUNTY HOSPITAL AND CLINICS",
-     "city": "LEXINGTON",
-     "state": "MS",
-     "locationName": "UMMC Holmes County Hospital",
-     "mrfUrl": "https://www.umc.edu/Healthcare/Patients-and-Visitors/Bill%20Pay/Pricing%20Files/646008520-1386630705_university-of-mississippi-medical-center_standardcharges.csv",
-     "mrfHost": "umc.edu",
-     "sourcePageUrl": "https://www.umc.edu/pricing",
-     "lastUpdated": "2026-04-01",
-     "daysSinceUpdate": 155,
-     "staleOver365": false,
-     "httpStatus": 200
     }
    ]
   },
@@ -65945,6 +67652,30 @@
    ]
   },
   {
+   "pointerUrl": "https://unclenoir.org/cms-hpt.txt",
+   "pointerHost": "unclenoir.org",
+   "domains": [
+    "unclenoir.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "340027",
+     "name": "UNC LENOIR HEALTH CARE",
+     "city": "KINSTON",
+     "state": "NC",
+     "locationName": "Lenoir Memorial Hospital",
+     "mrfUrl": "https://www.unchealthcare.org/app/files/public/7c2acb06-cd17-46a5-8a44-f7c1dfc7b3e9/lenoir-memorial-hospital_standardcharges.csv",
+     "mrfHost": "unchealthcare.org",
+     "sourcePageUrl": "https://www.unchealth.org/records-insurance/standard-charges",
+     "lastUpdated": "2026-06-18",
+     "daysSinceUpdate": 77,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://unitedregional.org/cms-hpt.txt",
    "pointerHost": "unitedregional.org",
    "domains": [
@@ -66035,6 +67766,30 @@
      "sourcePageUrl": "https://clariti-health.com/csp/clariti/QuotableService.csp?orgKey=2899VC",
      "lastUpdated": "2026-05-06",
      "daysSinceUpdate": 120,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://universityhealth.com/cms-hpt.txt",
+   "pointerHost": "universityhealth.com",
+   "domains": [
+    "universityhealth.com"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "450213",
+     "name": "UNIVERSITY HEALTH SYSTEM",
+     "city": "SAN ANTONIO",
+     "state": "TX",
+     "locationName": "University Hospital",
+     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/9382/746002164_bexar-county-hospital-district_standardcharges.csv",
+     "mrfHost": "sthpiprd.blob.core.windows.net",
+     "sourcePageUrl": "https://search.hospitalpriceindex.com/hpi2/machineReadable/UniversityHealth/9382",
+     "lastUpdated": "2025-10-14",
+     "daysSinceUpdate": 325,
      "staleOver365": false,
      "httpStatus": 200
     }
@@ -67241,6 +68996,30 @@
    ]
   },
   {
+   "pointerUrl": "https://wellfound.org/cms-hpt.txt",
+   "pointerHost": "wellfound.org",
+   "domains": [
+    "wellfound.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "504016",
+     "name": "WELLFOUND BEHAVIORAL HEALTH HOSPITAL",
+     "city": "TACOMA",
+     "state": "WA",
+     "locationName": "Wellfound Behavioral Health Hospital",
+     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8174/474654897-1891298980_alliance-for-south-sound-health_standardcharges.csv",
+     "mrfHost": "sthpiprd.blob.core.windows.net",
+     "sourcePageUrl": "https://search.hospitalpriceindex.com/hpi2/machineReadable/WellfoundBehavioralHealthHospital/8174",
+     "lastUpdated": "2026-08-27",
+     "daysSinceUpdate": 8,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://wesleymc.com/cms-hpt.txt",
    "pointerHost": "wesleymc.com",
    "domains": [
@@ -67283,6 +69062,30 @@
      "sourcePageUrl": "https://westanaheimmedctr.com/patients-visitors/price-transparency/",
      "lastUpdated": "2026-03-17",
      "daysSinceUpdate": 170,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://westernreservehospital.org/cms-hpt.txt",
+   "pointerHost": "westernreservehospital.org",
+   "domains": [
+    "westernreservehospital.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "360150",
+     "name": "SUMMA WESTERN RESERVE HOSPITAL",
+     "city": "CUYAHOGA FALLS",
+     "state": "OH",
+     "locationName": "Western Reserve Hospital",
+     "mrfUrl": "https://hospitalpricetransparencyfiles.com/western-reserve-llc/263536780_western-reserve-llc_standardcharges.csv",
+     "mrfHost": "hospitalpricetransparencyfiles.com",
+     "sourcePageUrl": "https://ezcost.info/Western-Reserve-Hospital/",
+     "lastUpdated": "2026-01-01",
+     "daysSinceUpdate": 246,
      "staleOver365": false,
      "httpStatus": 200
     }
@@ -67625,6 +69428,30 @@
    ]
   },
   {
+   "pointerUrl": "https://willowcreekbh.com/cms-hpt.txt",
+   "pointerHost": "willowcreekbh.com",
+   "domains": [
+    "willowcreekbh.com"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "524041",
+     "name": "SBH Green Bay, LLC d/b/a WILLOW CREEK BEHAVIORAL HEALTH",
+     "city": "GREEN BAY",
+     "state": "WI",
+     "locationName": "SBH-Green Bay, LLC",
+     "mrfUrl": "https://willowcreekbh.com/473778682_sbh-green-bay-llc_standardcharges.json",
+     "mrfHost": "willowcreekbh.com",
+     "sourcePageUrl": "https://willowcreekbh.com/price-transparency/",
+     "lastUpdated": "2026-05-20",
+     "daysSinceUpdate": 107,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://willseye.org/cms-hpt.txt",
    "pointerHost": "willseye.org",
    "domains": [
@@ -67913,26 +69740,26 @@
    ]
   },
   {
-   "pointerUrl": "https://wiregrassmedicalcenter.org/cms-hpt.txt",
-   "pointerHost": "wiregrassmedicalcenter.org",
+   "pointerUrl": "https://witham.org/cms-hpt.txt",
+   "pointerHost": "witham.org",
    "domains": [
-    "wiregrassmedicalcenter.org"
+    "witham.org"
    ],
    "facilityCount": 1,
    "facilities": [
     {
-     "ccn": "010062",
-     "name": "WIREGRASS MEDICAL CENTER",
-     "city": "GENEVA",
-     "state": "AL",
-     "locationName": "Wiregrass Medical Center",
-     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbWMCGENEVAAL&type=CDMWithoutLabel&fileType=CSV",
+     "ccn": "150104",
+     "name": "WITHAM HEALTH SERVICES",
+     "city": "LEBANON",
+     "state": "IN",
+     "locationName": "Witham Memorial Hospital",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbWithamHospital&type=CDMWithoutLabel&fileType=CSV",
      "mrfHost": "apps.para-hcfs.com",
-     "sourcePageUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Wiregrass_V3.aspx",
-     "lastUpdated": null,
-     "daysSinceUpdate": 0,
-     "staleOver365": null,
-     "httpStatus": 0
+     "sourcePageUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Witham_V2.aspx",
+     "lastUpdated": "2026-03-31",
+     "daysSinceUpdate": 157,
+     "staleOver365": false,
+     "httpStatus": 200
     }
    ]
   },
@@ -68633,6 +70460,30 @@
    ]
   },
   {
+   "pointerUrl": "https://www.bswhealth.com/cms-hpt.txt",
+   "pointerHost": "bswhealth.com",
+   "domains": [
+    "bswhealth.com"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "450893",
+     "name": "THE HEART HOSPITAL BAYLOR DENTON",
+     "city": "DENTON",
+     "state": "TX",
+     "locationName": "BAYLOR SCOTT & WHITE THE HEART HOSPITAL - DENTON",
+     "mrfUrl": "https://wadcdn.azureedge.net/bswhealth/com/siteassets/pricing-transparency/263603862_baylor-scott--white-the-heart-hospital--denton_standardcharges.csv",
+     "mrfHost": "wadcdn.azureedge.net",
+     "sourcePageUrl": "https://www.bswhealth.com/patient-tools/patient-registration-and-billing/estimate-your-cost-care/",
+     "lastUpdated": "2026-06-29",
+     "daysSinceUpdate": 66,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://www.cabinetpeaks.org/cms-hpt.txt",
    "pointerHost": "cabinetpeaks.org",
    "domains": [
@@ -68651,6 +70502,30 @@
      "sourcePageUrl": "https://www.cabinetpeaks.org/",
      "lastUpdated": "2026-04-01",
      "daysSinceUpdate": 155,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://www.carilionclinic.org/sites/default/files/cms-hpt.txt",
+   "pointerHost": "carilionclinic.org",
+   "domains": [
+    "carilionclinic.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "490024",
+     "name": "CARILION MEDICAL CENTER",
+     "city": "ROANOKE",
+     "state": "VA",
+     "locationName": "Carilion Roanoke Memorial Hospital",
+     "mrfUrl": "https://www.carilionclinic.org/540506332_Carilion-Roanoke-Memorial-Hospital_StandardCharges.csv",
+     "mrfHost": "carilionclinic.org",
+     "sourcePageUrl": "https://www.carilionclinic.org/pricing",
+     "lastUpdated": "2026-04-17",
+     "daysSinceUpdate": 139,
      "staleOver365": false,
      "httpStatus": 200
     }
@@ -68843,6 +70718,30 @@
      "sourcePageUrl": "https://www.charteroakhospital.com/price-transparency/",
      "lastUpdated": "2026-06-19",
      "daysSinceUpdate": 76,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://www.christushealth.org/cms-hpt.txt",
+   "pointerHost": "christushealth.org",
+   "domains": [
+    "christushealth.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "453315",
+     "name": "CHILDREN'S HOSPITAL OF SAN ANTONIO",
+     "city": "SAN ANTONIO",
+     "state": "TX",
+     "locationName": "CHRISTUS Children's Hospital",
+     "mrfUrl": "https://www.christushealth.org/-/media/christus-health/plan-care/files/bill-pay/machine-readable-files/741109665_christuschildrenshospital_standardcharges.json",
+     "mrfHost": "christushealth.org",
+     "sourcePageUrl": "https://www.christushealth.org/plan-care/bill-pay/pricing-transparency",
+     "lastUpdated": "2026-01-12",
+     "daysSinceUpdate": 234,
      "staleOver365": false,
      "httpStatus": 200
     }
@@ -69085,6 +70984,30 @@
      "daysSinceUpdate": 246,
      "staleOver365": false,
      "httpStatus": 206
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://www.detar.com/cms-hpt.txt",
+   "pointerHost": "detar.com",
+   "domains": [
+    "detar.com"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "450147",
+     "name": "DE TAR HOSPITAL NAVARRO",
+     "city": "VICTORIA",
+     "state": "TX",
+     "locationName": "Detar Healthcare System Navarro",
+     "mrfUrl": "https://www.detar.com/Uploads/Public/Documents/charge-masters/charge-masters-2024/621754940_detar-healthcare-system-navarro_standardcharges.csv",
+     "mrfHost": "detar.com",
+     "sourcePageUrl": "https://www.detar.com/pricing-information",
+     "lastUpdated": "2026-04-01",
+     "daysSinceUpdate": 155,
+     "staleOver365": false,
+     "httpStatus": 200
     }
    ]
   },
@@ -69417,6 +71340,54 @@
      "mrfUrl": "https://www.greenleafhospital.com/wp-content/uploads/pricing/2026/191/35-2450561_Greenleaf-Center-LLC_standardcharges.csv",
      "mrfHost": "greenleafhospital.com",
      "sourcePageUrl": "https://www.greenleafhospital.com/admissions/insurance-payment/price-transparency/",
+     "lastUpdated": "2025-12-31",
+     "daysSinceUpdate": 246,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://www.gundersenhealth.org/cms-hpt.txt",
+   "pointerHost": "gundersenhealth.org",
+   "domains": [
+    "gundersenhealth.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "241335",
+     "name": "ST ELIZABETH MEDICAL CENTER",
+     "city": "WABASHA",
+     "state": "MN",
+     "locationName": "Gundersen St. Elizabeth Hospital and Clinics",
+     "mrfUrl": "https://bellin-ghs.pt.panaceainc.com/MRFDownload/bellin-ghs/gundersen-st-elizabeths",
+     "mrfHost": "bellin-ghs.pt.panaceainc.com",
+     "sourcePageUrl": "https://www.gundersenhealth.org/cost-estimates/charges",
+     "lastUpdated": "2026-06-27",
+     "daysSinceUpdate": 68,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://www.hackensackmeridianhealth.org/en/cms-hpt.txt",
+   "pointerHost": "hackensackmeridianhealth.org",
+   "domains": [
+    "hackensackmeridianhealth.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "314012",
+     "name": "HACKENSACK MERIDIAN HEALTH CARRIER CLINIC",
+     "city": "BELLE MEAD",
+     "state": "NJ",
+     "locationName": "Carrier Clinic",
+     "mrfUrl": "https://www.hackensackmeridianhealth.org/-/media/project/hmh/hmh/public/files/cdm/20260520/221714106-1225039399_hmh-carrier-behavioral-health-inc_standardcharges.csv",
+     "mrfHost": "hackensackmeridianhealth.org",
+     "sourcePageUrl": "https://www.hackensackmeridianhealth.org/en/pay-bill/price-transparency/",
      "lastUpdated": "2025-12-31",
      "daysSinceUpdate": 246,
      "staleOver365": false,
@@ -70361,6 +72332,30 @@
    ]
   },
   {
+   "pointerUrl": "https://www.mayoclinichealthsystem.org/cms-hpt.txt",
+   "pointerHost": "mayoclinichealthsystem.org",
+   "domains": [
+    "mayoclinichealthsystem.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "521305",
+     "name": "MAYO CLINIC HLTH SYSTM FRANCISCAN HLTHCARE SPARTA",
+     "city": "SPARTA",
+     "state": "WI",
+     "locationName": "Mayo Clinic Health System Sparta",
+     "mrfUrl": "https://mcorgstatic.blob.core.windows.net/cms-price/390806374_mayo-clinic-health-system-sparta_standardcharges.csv",
+     "mrfHost": "mcorgstatic.blob.core.windows.net",
+     "sourcePageUrl": "https://www.mayoclinichealthsystem.org/for-patients-and-visitors/price-transparency",
+     "lastUpdated": "2026-08-14",
+     "daysSinceUpdate": 20,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://www.mcehospital.com/cms-hpt.txt",
    "pointerHost": "mcehospital.com",
    "domains": [
@@ -70453,6 +72448,30 @@
      "daysSinceUpdate": 41,
      "staleOver365": false,
      "httpStatus": 206
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://www.memorialhealth.com/cms-hpt.txt",
+   "pointerHost": "memorialhealth.com",
+   "domains": [
+    "memorialhealth.com"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "110036",
+     "name": "SAVANNAH HEALTH SERVICES LLC DBA MEMORIAL HEALTH UNIVERSITY MEDICAL CENTER",
+     "city": "SAVANNAH",
+     "state": "GA",
+     "locationName": "MEMORIAL HEALTH UMC SAVANNAH",
+     "mrfUrl": "https://stctrprodsnsvc00455826e6.blob.core.windows.net/pt-final-posting-files/82-1969974_MEMORIAL-HEALTH-UNIVERSITY-MEDICAL-CENTER_standardcharges.json?si=dpx-pt-json-access-policy&spr=https&sv=2026-02-06&sr=c&sig=ks%2BgfAjyEHlZmeP2PYJ%2f9NpMuCoRStjTb2bhIy9Y6LM%3D",
+     "mrfHost": "stctrprodsnsvc00455826e6.blob.core.windows.net",
+     "sourcePageUrl": "https://memorialhealth.com/patient-resources/patient-financial-resources/pricing-transparency-cms-required-file-of-standard-charges",
+     "lastUpdated": "2026-03-01",
+     "daysSinceUpdate": 186,
+     "staleOver365": false,
+     "httpStatus": 200
     }
    ]
   },
@@ -71849,6 +73868,30 @@
    ]
   },
   {
+   "pointerUrl": "https://www.slhn.org/cms-hpt.txt",
+   "pointerHost": "slhn.org",
+   "domains": [
+    "slhn.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "390049",
+     "name": "ST LUKES HOSPITAL",
+     "city": "BETHLEHEM",
+     "state": "PA",
+     "locationName": "St Lukes Hospital Bethlehem Campus",
+     "mrfUrl": "https://www.slhn.org/-/media/sluhn/billing/pdf/standard-charges/23-1352213_stlukeshospitalbethlehemcampus_standardcharges.ashx",
+     "mrfHost": "slhn.org",
+     "sourcePageUrl": "https://www.slhn.org/billpay/patient-billing/price-transparency",
+     "lastUpdated": "2026-02-26",
+     "daysSinceUpdate": 189,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://www.sonorabehavioral.com/cms-hpt.txt",
    "pointerHost": "sonorabehavioral.com",
    "domains": [
@@ -72373,30 +74416,6 @@
      "daysSinceUpdate": 155,
      "staleOver365": false,
      "httpStatus": 206
-    }
-   ]
-  },
-  {
-   "pointerUrl": "https://www.uphealthsystem.com/cms-hpt.txt",
-   "pointerHost": "uphealthsystem.com",
-   "domains": [
-    "uphealthsystem.com"
-   ],
-   "facilityCount": 1,
-   "facilities": [
-    {
-     "ccn": "230108",
-     "name": "UP HEALTH SYSTEM PORTAGE",
-     "city": "HANCOCK",
-     "state": "MI",
-     "locationName": "UP Health System - Portage",
-     "mrfUrl": "https://www.uphealthsystem.com/docs/ahuphealthsystemlibraries/hcl/mrf3q26/900998484_portage-health_standardcharges.csv.zip",
-     "mrfHost": "uphealthsystem.com",
-     "sourcePageUrl": "https://www.uphealthsystem.com/hospital-charge-listings",
-     "lastUpdated": "2026-07-14",
-     "daysSinceUpdate": 51,
-     "staleOver365": false,
-     "httpStatus": 200
     }
    ]
   },
