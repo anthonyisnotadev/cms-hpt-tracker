@@ -1645,5 +1645,33 @@
       "checkedOn": "2026-09-04",
       "note": "No hospital price-transparency page or machine-readable standard charges file was located on 2026-09-04. Both https://helenahospital.com/cms-hpt.txt and https://www.helenahospital.com/cms-hpt.txt returned HTTP 404 while the homepage returned HTTP 200. Focused site searches found no indexed price-transparency, standard-charges, machine-readable, or cms-hpt resource. The homepage configuration references a price-transparency label, but the corresponding /price-transparency and /newsite/price-transparency routes returned 404. Contact: R***, R***@HelenaHospital.com."
     }
+  },
+  "040132": {
+    "ccn": "040132",
+    "name": "Levi Hospital",
+    "city": "Hot Springs",
+    "state": "AR",
+    "status": "none",
+    "followUpOn": "2026-10-04",
+    "createdAt": "2026-09-04T06:50:24.298Z",
+    "updatedAt": "2026-09-04T06:50:24.300Z",
+    "entries": [
+      {
+        "id": "mtmlh48c-uawjrf",
+        "kind": "note",
+        "at": "2026-09-04T06:50:24.300Z",
+        "text": "By 2026-10-04, report the stale CMS facility-status record for closed Levi Hospital, CCN 040132, through https://cmsqualitysupport.servicenowservices.com/qnet_qa?id=ask_a_question. Include the official closure notice and ask whether the CCN should be terminated or removed from active hospital listings."
+      }
+    ],
+    "correction": {
+      "domain": "levihospital.com",
+      "pointerUrl": "",
+      "mrfUrl": "",
+      "lastUpdatedOn": "",
+      "templateVersion": "",
+      "verdict": "exempt",
+      "checkedOn": "2026-09-04",
+      "note": "Marked exempt because Levi Hospital ceased operations as a hospital on 2025-08-01. The hospital's official website confirms the closure at https://levihospital.com/. CCN 040132 still appears in the CMS Hospital General Information data refreshed locally on 2026-08-28, so this is treated as a stale facility-status record rather than an active Hospital Price Transparency failure."
+    }
   }
 }
