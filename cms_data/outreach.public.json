@@ -1581,5 +1581,37 @@
       "checkedOn": "2026-09-04",
       "note": "Verified the complete discovery path on 2026-09-04: root cms-hpt.txt returned HTTP 200 and declared the hospital source page and this exact MRF URL; the CSV supports ranged download (HTTP 206, text/csv). The header identifies Delta Memorial Hospital at 811 Highway 65 S, Dumas, AR 71639, Arkansas license AR4392 and Type 2 NPIs 1295767689 and 1952327868; it reports last_updated_on 2026-03-31, template version 3.0.0, and a true 45 CFR 180.50 attestation. Contact: E***, e***@deltamem.net."
     }
+  },
+  "040780": {
+    "ccn": "040780",
+    "name": "Eureka Springs Hospital Commission",
+    "city": "Eureka Springs",
+    "state": "AR",
+    "status": "awaiting-reply",
+    "followUpOn": "2026-10-04",
+    "createdAt": "2026-09-04T06:40:49.198Z",
+    "updatedAt": "2026-09-04T06:40:49.204Z",
+    "entries": [
+      {
+        "id": "mtml4shf-l4u7kt",
+        "kind": "email",
+        "at": "2026-09-04T06:40:49.203Z",
+        "subject": "Eureka Springs Hospital Price Transparency Files",
+        "to": "j***@EurekaSpringsHospital.com",
+        "body": "Hello,\n\nI’m doing some research into hospital price transparency and noticed two issues with Eureka Springs Hospital’s files.\n\nThe required cms-hpt.txt pointer currently returns an HTTP 400 response:\n\nhttps://www.eurekaspringshospital.com/cms-hpt.txt\n\nI also reviewed the CSV contained in the hospital’s ZIP archive:\n\nhttps://s3.amazonaws.com/ycubaa-production-marlin-1-charge-management-public/facilities/7b394f9e-d9c2-4b0b-9109-00d32890267b/710578871_EUREKA%20SPRINGS%20HOSPITAL_standardcharges.zip\n\nAlthough CMS permits MRFs to be compressed as ZIP files, the enclosed CSV appears to use an older custom layout rather than the current CMS CSV template. The reviewed rows also carry an updated timestamp of February 1, 2024.\n\nCould the MRF be updated to the current CMS template and the root cms-hpt.txt file restored with a direct link to it?\n\nI’ll plan to follow up in 30 days so I can continue my research. Happy to provide additional details if useful.\n\nThanks so much,\n\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
+        "sentAt": "2026-09-04",
+        "outcome": "none"
+      }
+    ],
+    "correction": {
+      "domain": "eurekaspringshospital.com",
+      "pointerUrl": "https://www.eurekaspringshospital.com/cms-hpt.txt",
+      "mrfUrl": "https://s3.amazonaws.com/ycubaa-production-marlin-1-charge-management-public/facilities/7b394f9e-d9c2-4b0b-9109-00d32890267b/710578871_EUREKA%20SPRINGS%20HOSPITAL_standardcharges.zip",
+      "lastUpdatedOn": "2024-02-01",
+      "templateVersion": "",
+      "verdict": "failing",
+      "checkedOn": "2026-09-04",
+      "note": "The root cms-hpt.txt returned HTTP 400 on 2026-09-04, preventing automated pointer retrieval. The 41,119,335-byte ZIP is directly accessible and contains one CSV named 710578871_EUREKA SPRINGS HOSPITAL_standardcharges.csv. The supplied CSV header uses a legacy custom layout rather than the current CMS template, and reviewed rows report Updated Timestamp 2024-02-01. ZIP compression itself is permitted; the failing determination is based on pointer access and the outdated CSV layout. Source page: https://www.eurekaspringshospital.com/getpage.php?name=pricetransparency."
+    }
   }
 }
