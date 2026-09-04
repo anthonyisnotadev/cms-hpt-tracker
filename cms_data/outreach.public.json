@@ -1560,5 +1560,26 @@
       "checkedOn": "2026-09-04",
       "note": "The required root cms-hpt.txt returned HTTP 403 to automated access on 2026-09-04. The direct MRF is accessible by ranged GET (HTTP 206) and was located from https://thebridgeway.com/standard-services/. Its header identifies The BridgeWay at 21 Bridgeway Road, North Little Rock, AR 72113, Arkansas license 5164 and Type 2 NPI 1962473306; it reports last_updated_on 2026-05-12, template version 3.0.0, and a true 45 CFR 180.50 attestation. Contact: UHS Corp Price Transparency Team, U***@uhsinc.com."
     }
+  },
+  "041326": {
+    "ccn": "041326",
+    "name": "Delta Memorial Hospital",
+    "city": "Dumas",
+    "state": "AR",
+    "status": "none",
+    "followUpOn": "",
+    "createdAt": "2026-09-04T06:34:32.320Z",
+    "updatedAt": "2026-09-04T06:34:32.321Z",
+    "entries": [],
+    "correction": {
+      "domain": "deltamem.org",
+      "pointerUrl": "https://www.deltamem.org/cms-hpt.txt",
+      "mrfUrl": "https://www.deltamem.org/docs/710276839_DELTA-MEMORIAL-HOSPITAL_STANDARDCHARGES.csv",
+      "lastUpdatedOn": "2026-03-31",
+      "templateVersion": "3.0.0",
+      "verdict": "compliant",
+      "checkedOn": "2026-09-04",
+      "note": "Verified the complete discovery path on 2026-09-04: root cms-hpt.txt returned HTTP 200 and declared the hospital source page and this exact MRF URL; the CSV supports ranged download (HTTP 206, text/csv). The header identifies Delta Memorial Hospital at 811 Highway 65 S, Dumas, AR 71639, Arkansas license AR4392 and Type 2 NPIs 1295767689 and 1952327868; it reports last_updated_on 2026-03-31, template version 3.0.0, and a true 45 CFR 180.50 attestation. Contact: E***, e***@deltamem.net."
+    }
   }
 }
