@@ -1345,5 +1345,170 @@
       "checkedOn": "2026-09-01",
       "note": "Roster legal name is 'Southeast Alaska Regional Health Consortium'; the hospital operates publicly as Mt. Edgecumbe Medical Center, 222 Tongass Drive, Sitka AK 99835 (the file header confirms that name and address). Same failure mode as the sibling SEARHC facility Wrangell Medical Center (CCN 021305). (1) Wrong format: the standard-charges file is served as .xlsx (https://searhc.org/wp-content/uploads/2026/04/Mt-Edgecumbe-Medical-Center-Standard-Charges.xlsx). CMS 45 CFR 180.50 requires a .csv or .json conforming to the CMS template; .xlsx is not an accepted format. The content does follow the CMS template (version 2.0.0, valid 180.50 attestation, standard_charge|... columns, last_updated_on 2025-09-10), so this is a format/packaging failure, not missing data. (2) No cms-hpt.txt: https://searhc.org/cms-hpt.txt returns 404, so there is no root pointer file as required since 2024-07-01. The file is linked (as 'Mt. Edgecumbe Medical Center Standard Charges') from the Billing & Financing page at https://searhc.org/patient-resources/billing-financing/."
     }
+  },
+  "011311": {
+    "ccn": "011311",
+    "name": "Lakeland Community Hospital",
+    "city": "Haleyville",
+    "state": "AL",
+    "status": "none",
+    "followUpOn": "",
+    "createdAt": "2026-09-04T06:05:39.068Z",
+    "updatedAt": "2026-09-04T06:05:39.068Z",
+    "entries": [
+      {
+        "id": "mtmjvkak-7om0dy",
+        "kind": "note",
+        "at": "2026-09-04T06:05:39.068Z",
+        "text": "Plan to call Lakeland Community Hospital at (800) 846-2156 regarding the unavailable cms-hpt.txt file and the PDF-only Standard Charges file."
+      }
+    ]
+  },
+  "014012": {
+    "ccn": "014012",
+    "name": "Mary S Harper Geriatric Psychiatry Center",
+    "city": "Tuscaloosa",
+    "state": "AL",
+    "status": "none",
+    "followUpOn": "",
+    "createdAt": "2026-09-04T06:09:57.114Z",
+    "updatedAt": "2026-09-04T06:09:57.115Z",
+    "entries": [],
+    "correction": {
+      "domain": "mh.alabama.gov",
+      "pointerUrl": "https://mh.alabama.gov/mary-starke-harper-geriatric-psychiatry-center/",
+      "mrfUrl": "",
+      "lastUpdatedOn": "",
+      "templateVersion": "",
+      "verdict": "exempt",
+      "checkedOn": "2026-09-04",
+      "note": "Marked exempt per user determination. Facility is presented as a government-operated Alabama Department of Mental Health center; no pricing-transparency page or machine-readable file was located."
+    }
+  },
+  "010033": {
+    "ccn": "010033",
+    "name": "University Of Alabama Hospital",
+    "city": "Birmingham",
+    "state": "AL",
+    "status": "none",
+    "followUpOn": "",
+    "createdAt": "2026-09-04T06:13:55.865Z",
+    "updatedAt": "2026-09-04T06:16:30.345Z",
+    "entries": [],
+    "correction": {
+      "domain": "uabmedicine.org",
+      "pointerUrl": "",
+      "mrfUrl": "https://cdn.hs.uab.edu/static/63-6005396_University-of-Alabama-Hospital_standardcharges.zip",
+      "lastUpdatedOn": "",
+      "templateVersion": "",
+      "verdict": "unknown",
+      "checkedOn": "2026-09-04",
+      "note": "Compressed MRF archive located at https://cdn.hs.uab.edu/static/63-6005396_University-of-Alabama-Hospital_standardcharges.zip from source page https://www.uabmedicine.org/pay-your-bill/price-transparency/price-transparency-disclaimer/. CMS allows ZIP compression. Pending review of the contained CSV or JSON, CMS template/schema, required fields, and cms-hpt.txt pointer. Contact: B***, Chief Compliance Officer, UAB Health System, b***@uabmc.edu."
+    }
+  },
+  "010056": {
+    "ccn": "010056",
+    "name": "St Vincent's Birmingham",
+    "city": "Birmingham",
+    "state": "AL",
+    "status": "none",
+    "followUpOn": "",
+    "createdAt": "2026-09-04T06:13:55.867Z",
+    "updatedAt": "2026-09-04T06:16:30.347Z",
+    "entries": [],
+    "correction": {
+      "domain": "uabstvincents.org",
+      "pointerUrl": "",
+      "mrfUrl": "https://cdn.hs.uab.edu/static/63-0288864_saint-vincents-birmingham_standardcharges.zip",
+      "lastUpdatedOn": "",
+      "templateVersion": "",
+      "verdict": "unknown",
+      "checkedOn": "2026-09-04",
+      "note": "Compressed MRF archive located from https://uabstvincents.org/billing/price-transparency/. CMS allows ZIP compression. Pending review of the contained CSV or JSON, CMS template/schema, required fields, and cms-hpt.txt pointer. Contact: B***, Chief Compliance Officer, UAB Health System, b***@uabmc.edu."
+    }
+  },
+  "010011": {
+    "ccn": "010011",
+    "name": "St. Vincent's East",
+    "city": "Birmingham",
+    "state": "AL",
+    "status": "none",
+    "followUpOn": "",
+    "createdAt": "2026-09-04T06:13:55.867Z",
+    "updatedAt": "2026-09-04T06:16:30.347Z",
+    "entries": [],
+    "correction": {
+      "domain": "uabstvincents.org",
+      "pointerUrl": "",
+      "mrfUrl": "https://cdn.hs.uab.edu/static/63-0578923_saint-vincents-east_standardcharges.zip",
+      "lastUpdatedOn": "",
+      "templateVersion": "",
+      "verdict": "unknown",
+      "checkedOn": "2026-09-04",
+      "note": "The UAB St. Vincent's source page identifies this archive as St. Vincent's East, CCN 010011, not Medical West. CMS allows ZIP compression. Pending review of the contained CSV or JSON, CMS template/schema, required fields, and cms-hpt.txt pointer. Source: https://uabstvincents.org/billing/price-transparency/. Contact: B***, Chief Compliance Officer, UAB Health System, b***@uabmc.edu."
+    }
+  },
+  "011305": {
+    "ccn": "011305",
+    "name": "St Vincents Blount",
+    "city": "Oneonta",
+    "state": "AL",
+    "status": "none",
+    "followUpOn": "",
+    "createdAt": "2026-09-04T06:13:55.867Z",
+    "updatedAt": "2026-09-04T06:16:30.347Z",
+    "entries": [],
+    "correction": {
+      "domain": "uabstvincents.org",
+      "pointerUrl": "",
+      "mrfUrl": "https://cdn.hs.uab.edu/static/63-0909073_saint-vincents-blount_standardcharges.zip",
+      "lastUpdatedOn": "",
+      "templateVersion": "",
+      "verdict": "unknown",
+      "checkedOn": "2026-09-04",
+      "note": "Compressed MRF archive located from https://uabstvincents.org/billing/price-transparency/. CMS allows ZIP compression. Pending review of the contained CSV or JSON, CMS template/schema, required fields, and cms-hpt.txt pointer. Contact: B***, Chief Compliance Officer, UAB Health System, b***@uabmc.edu."
+    }
+  },
+  "010173": {
+    "ccn": "010173",
+    "name": "St Vincent's Chilton",
+    "city": "Clanton",
+    "state": "AL",
+    "status": "none",
+    "followUpOn": "",
+    "createdAt": "2026-09-04T06:13:55.867Z",
+    "updatedAt": "2026-09-04T06:16:30.347Z",
+    "entries": [],
+    "correction": {
+      "domain": "uabstvincents.org",
+      "pointerUrl": "",
+      "mrfUrl": "https://cdn.hs.uab.edu/static/81-0935368_saint-vincents-chilton_standardcharges.zip",
+      "lastUpdatedOn": "",
+      "templateVersion": "",
+      "verdict": "unknown",
+      "checkedOn": "2026-09-04",
+      "note": "Compressed MRF archive located from https://uabstvincents.org/billing/price-transparency/. CMS allows ZIP compression. Pending review of the contained CSV or JSON, CMS template/schema, required fields, and cms-hpt.txt pointer. Contact: B***, Chief Compliance Officer, UAB Health System, b***@uabmc.edu."
+    }
+  },
+  "010130": {
+    "ccn": "010130",
+    "name": "St Vincent's St Clair",
+    "city": "Pell City",
+    "state": "AL",
+    "status": "none",
+    "followUpOn": "",
+    "createdAt": "2026-09-04T06:13:55.867Z",
+    "updatedAt": "2026-09-04T06:16:30.347Z",
+    "entries": [],
+    "correction": {
+      "domain": "uabstvincents.org",
+      "pointerUrl": "",
+      "mrfUrl": "https://cdn.hs.uab.edu/static/63-1146531_saint-vincents-saint-clair_standardcharges.zip",
+      "lastUpdatedOn": "",
+      "templateVersion": "",
+      "verdict": "unknown",
+      "checkedOn": "2026-09-04",
+      "note": "Compressed MRF archive located from https://uabstvincents.org/billing/price-transparency/. CMS allows ZIP compression. Pending review of the contained CSV or JSON, CMS template/schema, required fields, and cms-hpt.txt pointer. Contact: B***, Chief Compliance Officer, UAB Health System, b***@uabmc.edu."
+    }
   }
 }
