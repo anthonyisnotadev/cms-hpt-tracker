@@ -1590,8 +1590,14 @@
     "status": "awaiting-reply",
     "followUpOn": "2026-10-04",
     "createdAt": "2026-09-04T06:40:49.198Z",
-    "updatedAt": "2026-09-04T06:40:49.204Z",
+    "updatedAt": "2026-09-04T16:27:22.114Z",
     "entries": [
+      {
+        "id": "mtn633i9-yy2yjh",
+        "kind": "note",
+        "at": "2026-09-04T16:27:22.113Z",
+        "text": "Automatic out-of-office reply received from J*** on 2026-09-04. She expects to return Tuesday, 2026-09-08. The message directs urgent inquiries to the hospital at (479) 253-7400. No substantive response to the price-transparency inquiry yet; the existing 2026-10-04 follow-up remains."
+      },
       {
         "id": "mtml4shf-l4u7kt",
         "kind": "email",
@@ -1672,6 +1678,70 @@
       "verdict": "exempt",
       "checkedOn": "2026-09-04",
       "note": "Marked exempt because Levi Hospital ceased operations as a hospital on 2025-08-01. The hospital's official website confirms the closure at https://levihospital.com/. CCN 040132 still appears in the CMS Hospital General Information data refreshed locally on 2026-08-28, so this is treated as a stale facility-status record rather than an active Hospital Price Transparency failure."
+    }
+  },
+  "044007": {
+    "ccn": "044007",
+    "name": "Rivendell Behavioral Health Services",
+    "city": "Benton",
+    "state": "AR",
+    "status": "awaiting-reply",
+    "followUpOn": "2026-10-04",
+    "createdAt": "2026-09-04T16:27:22.114Z",
+    "updatedAt": "2026-09-04T16:27:22.114Z",
+    "entries": [
+      {
+        "id": "mtn633ia-jn5ovn",
+        "kind": "email",
+        "at": "2026-09-04T16:27:22.114Z",
+        "subject": "Rivendell cms-hpt.txt Blocked from Automated Access",
+        "to": "U***@uhsinc.com",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency and noticed that Rivendell Behavioral Health Services of Arkansas's cms-hpt.txt file is being blocked by a Cloudflare browser challenge:\n\nhttps://rivendellofarkansas.com/cms-hpt.txt\n\nAutomated requests receive an HTTP 403 response with Cf-Mitigated: challenge, rather than the text pointer file.\n\nThe hospital's machine-readable CSV itself is accessible:\n\nhttps://uhsfilecdn.eskycity.net/bh/200930981_rivendell-arkansas_standardcharges.csv\n\nCould the Cloudflare settings be updated to allow direct, automated access to /cms-hpt.txt without requiring JavaScript, cookies, or a browser challenge?\n\nCMS's Hospital Price Transparency requirements call for the cms-hpt.txt file to support automated discovery of the hospital's machine-readable file. CMS also requires the pricing file to be accessible to automated searches and direct downloads. I'm flagging this because the current Cloudflare challenge prevents automated tools from reading the pointer, even though the CSV itself is accessible.\n\nI'll plan to follow up in 30 days so I can continue my research. Happy to provide the response details if useful.\n\nThanks so much,\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
+        "sentAt": "2026-09-04",
+        "outcome": "none"
+      }
+    ],
+    "correction": {
+      "domain": "rivendellofarkansas.com",
+      "pointerUrl": "https://rivendellofarkansas.com/cms-hpt.txt",
+      "mrfUrl": "https://uhsfilecdn.eskycity.net/bh/200930981_rivendell-arkansas_standardcharges.csv",
+      "lastUpdatedOn": "2026-06-16",
+      "templateVersion": "3.0.0",
+      "verdict": "failing",
+      "checkedOn": "2026-09-04",
+      "note": "The root cms-hpt.txt and the hospital's standard-services page returned HTTP 403 Cloudflare challenge responses on 2026-09-04, preventing direct automated access. The machine-readable CSV itself is directly accessible and its header identifies Rivendell Behavioral Health Services of Arkansas, an updated date of 2026-06-16, and CMS template version 3.0.0."
+    }
+  },
+  "044019": {
+    "ccn": "044019",
+    "name": "Springwoods Behavioral Health Services",
+    "city": "Fayetteville",
+    "state": "AR",
+    "status": "awaiting-reply",
+    "followUpOn": "2026-10-04",
+    "createdAt": "2026-09-04T16:27:22.114Z",
+    "updatedAt": "2026-09-04T16:27:22.115Z",
+    "entries": [
+      {
+        "id": "mtn633ib-dgidda",
+        "kind": "email",
+        "at": "2026-09-04T16:27:22.115Z",
+        "subject": "Springwoods cms-hpt.txt Blocked from Automated Access",
+        "to": "U***@uhsinc.com",
+        "body": "Hello,\n\nI’m doing some research into hospital price transparency and noticed that Springwoods Behavioral Health’s cms-hpt.txt file is being blocked by a Cloudflare browser challenge:\n\nhttps://springwoodsbehavioral.com/cms-hpt.txt\n\nAutomated requests receive an HTTP 403 response with Cf-Mitigated: challenge, rather than the text pointer file.\n\nThe hospital’s machine-readable CSV itself is accessible:\n\nhttps://uhsfilecdn.eskycity.net/bh/205395878_springwoods_standardcharges.csv\n\nCould the Cloudflare settings be updated to allow direct, automated access to /cms-hpt.txt without requiring JavaScript, cookies, or a browser challenge?\n\nCMS’s Hospital Price Transparency requirements call for the cms-hpt.txt file to support automated discovery of the hospital’s machine-readable file. The current Cloudflare challenge prevents automated tools from reading that pointer, even though the CSV itself is accessible.\n\nI’ll plan to follow up in 30 days so I can continue my research. Happy to provide the response details if useful.\n\nThanks so much,\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
+        "sentAt": "2026-09-04",
+        "outcome": "none"
+      }
+    ],
+    "correction": {
+      "domain": "springwoodsbehavioral.com",
+      "pointerUrl": "https://springwoodsbehavioral.com/cms-hpt.txt",
+      "mrfUrl": "https://uhsfilecdn.eskycity.net/bh/205395878_springwoods_standardcharges.csv",
+      "lastUpdatedOn": "2026-09-01",
+      "templateVersion": "3.0.0",
+      "verdict": "failing",
+      "checkedOn": "2026-09-04",
+      "note": "The root cms-hpt.txt returned HTTP 403 with Cf-Mitigated: challenge on 2026-09-04, preventing direct automated access. The machine-readable CSV is directly accessible with HTTP 200, and its header identifies Springwoods Behavioral Health, an updated date of 2026-09-01, and CMS template version 3.0.0. The failing determination is based on the blocked pointer, not the CSV contents supplied for review."
     }
   }
 }
