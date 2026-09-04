@@ -262,6 +262,46 @@ Optional search, model, and unblocker credentials belong in `.env.local`, which
 is ignored by Git. The runner loads `.env` first and applies `.env.local` as an
 override. Do not commit either file.
 
+Website discovery has a free-first, stage-only trial that uses the retained pointer
+archive, Wikidata, OpenStreetMap, stale-domain redirects, and domain guesses.
+Run `npm run find:domains:trial`. It writes review files under the ignored
+`data/hpt-audit/.domain-discovery/` directory and does not change the published
+tracker unless a reviewed `verified.csv` is promoted explicitly.
+
+When no search provider is available, the same command can reverse-match
+unrepresented pointer-declared MRF headers, retry blocked shared domains, and
+use archived pointer pages as leads for stale domains. Archived content is
+never treated as current proof. Every result must still pass the live pointer
+and MRF evidence checks before it can be added.
+
+Ambiguous public-source names can optionally be reviewed through OpenRouter
+with `--llm-review --model=z-ai/glm-5.3-flash`. These model results only affect
+review priority. They do not establish a verified domain.
+
+For a reviewed candidate set, `--llm-name-match` can ask the same model whether
+a low-scoring pointer location is a rename or alias of the CMS facility. Only a
+high-confidence match satisfies the name gate. Pointer, MRF header, license
+state, location, and uniqueness checks still apply before promotion.
+
+For the remaining unresolved hospitals, `npm run find:domains:relationships`
+adds NPPES organization aliases, resolved sibling facilities, protected pointer
+contact domains, nonprofit Form 990 websites, CMS enrollment relationships when
+the source files are reachable. `npm run find:domains:glm` is a separate,
+resumable GLM candidate pass through OpenRouter. Model output is never accepted
+as proof. Every suggested domain goes through the same live pointer and MRF
+checks.
+
+When Serper is configured, `npm run find:domains:serper` spends at most 579
+search credits on a deterministic, stratified set of missing-domain hospitals.
+It performs one search per hospital, caches every returned domain, and verifies
+only the first domain initially. Later passes can test the cached lower-ranked
+domains without spending another search credit.
+
+The default trial uses public or open-data sources without a paid API account.
+Serper and OpenRouter are separate, account-backed services. Their responses
+remain in the ignored staging directory; only independently verified hospital
+facts are eligible for the public tracker.
+
 See the [pipeline reference](scripts/hpt/README.md) for supported variables.
 
 ## Limitations
@@ -286,5 +326,10 @@ Code is licensed under the
 [GNU Affero General Public License v3.0](LICENSE). The CMS roster is a US
 government work. Hospital pointer and price files remain the work of their
 publishers.
+
+Website candidate discovery may incorporate data from
+[OpenStreetMap contributors](https://www.openstreetmap.org/copyright), available
+under the Open Data Commons Open Database License (ODbL). Wikidata structured
+data is available under CC0.
 
 Built by [anthonyisnotadev](https://github.com/anthonyisnotadev).

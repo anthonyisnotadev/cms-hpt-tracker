@@ -292,9 +292,56 @@ function successfulStatus(value) {
 
 function mrfNameEvidence(probe, hospitalName) {
   const values = [probe && probe.mrfHospitalName, probe && probe.mrfLocationName].filter(Boolean);
-  if (!values.length) return { value: '', score: 0 };
-  return values.map(value => ({ value, score: nameSimilarity(value, hospitalName) }))
-    .sort((a, b) => b.score - a.score)[0];
+  if (!values.length) return { value: '', score: 0, strictScore: 0, exact: false };
+  return values.map(value => ({
+    value,
+    score: nameSimilarity(value, hospitalName),
+    strictScore: strictSimilarity(value, hospitalName),
+    exact: normalizeName(value) === normalizeName(hospitalName)
+  })).sort((a, b) => b.score - a.score || b.strictScore - a.strictScore)[0];
+}
+
+function mrfStreetAddressAgrees(probe, hospital) {
+  const normalizeStreet = value => normalizeName(value)
+    .replace(/\bpo box \d+\b.*$/, '')
+    .replace(/^one\b/, '1')
+    .replace(/\b(first|1st)\b/g, '1st')
+    .replace(/\b(second|2nd)\b/g, '2nd')
+    .replace(/\b(third|3rd)\b/g, '3rd')
+    .replace(/\b(fourth|4th)\b/g, '4th')
+    .replace(/\b(fifth|5th)\b/g, '5th')
+    .replace(/\b(sixth|6th)\b/g, '6th')
+    .replace(/\b(seventh|7th)\b/g, '7th')
+    .replace(/\b(eighth|8th)\b/g, '8th')
+    .replace(/\b(ninth|9th)\b/g, '9th')
+    .replace(/\b(tenth|10th)\b/g, '10th')
+    .replace(/\b(northwest|nw)\b/g, 'nw')
+    .replace(/\b(northeast|ne)\b/g, 'ne')
+    .replace(/\b(southwest|sw)\b/g, 'sw')
+    .replace(/\b(southeast|se)\b/g, 'se')
+    .replace(/\b(north|n)\b/g, 'n')
+    .replace(/\b(south|s)\b/g, 's')
+    .replace(/\b(east|e)\b/g, 'e')
+    .replace(/\b(west|w)\b/g, 'w')
+    .replace(/\b(mountain|mount|mt)\b/g, 'mt')
+    .replace(/\blake\s+shore\b/g, 'lakeshore')
+    .replace(/\b(interstate|i)\s+(\d+)\b/g, 'i $2')
+    .replace(/\b(street|st)\b/g, 'st')
+    .replace(/\b(road|rd)\b/g, 'rd')
+    .replace(/\b(avenue|ave)\b/g, 'ave')
+    .replace(/\b(boulevard|blvd)\b/g, 'blvd')
+    .replace(/\b(drive|dr)\b/g, 'dr')
+    .replace(/\b(lane|ln)\b/g, 'ln')
+    .replace(/\b(place|pl)\b/g, 'pl')
+    .replace(/\b(expressway|expwy)\b/g, 'expwy')
+    .replace(/\b(highway|hwy)\b/g, 'hwy')
+    .replace(/\s+/g, ' ').trim();
+  const roster = normalizeStreet(hospital && hospital.address);
+  const header = normalizeStreet(probe && probe.mrfAddress);
+  const rosterNumber = (roster.match(/^\d+/) || [])[0];
+  const headerNumber = (header.match(/^\d+/) || [])[0];
+  return !!(roster.length >= 6 && header.length >= 6 && rosterNumber
+    && rosterNumber === headerNumber && (header.includes(roster) || roster.includes(header)));
 }
 
 function mrfLocationConflicts(probe, best, hospital) {
@@ -302,23 +349,13 @@ function mrfLocationConflicts(probe, best, hospital) {
   const headerZips = String(probe && probe.mrfAddress || '').match(/\b\d{5}(?:-\d{4})?\b/g) || [];
   if (!rosterZip || !headerZips.length || headerZips.some(zip => zip.slice(0, 5) === rosterZip[0])) return false;
 
-  // Some system MRFs identify the facility in the location name while using a
-  // corporate/main-campus address in the header. Preserve those, but refuse a
-  // same-state, same-generic-name match when the only concrete location points
-  // at a different ZIP (for example Fort Worth vs Sherman).
-  const city = normalizeName(hospital && hospital.city);
-  const identifyingNames = [
-    best && best.entry && best.entry.locationName,
-    probe && probe.mrfHospitalName,
-    probe && probe.mrfLocationName
-  ].filter(Boolean).map(normalizeName);
-  return !city || !identifyingNames.some(name => (` ${name} `).includes(` ${city} `));
+  return true;
 }
 
 function classifyEvidence({ home, pointer, best, probe, hospital, requireHomepage = true }) {
   if (requireHomepage && !successfulStatus(home && home.status)) return { status: 'rejected', reason: 'hospital-homepage-unreachable' };
   if (!pointer || !pointer.ok) return { status: 'rejected', reason: `cms-hpt-${(pointer && pointer.reason) || 'not-found'}` };
-  if (!best || best.score < 0.55) return { status: 'rejected', reason: 'cms-hpt-does-not-name-hospital' };
+  if (!best || (best.score < 0.55 && !best.llmAccepted)) return { status: 'rejected', reason: 'cms-hpt-does-not-name-hospital' };
   const mrfUrl = best.entry.mrfUrl || (best.entry.mrfUrls && best.entry.mrfUrls[0]) || '';
   if (!isPlausibleMrfUrl(mrfUrl)) return { status: 'rejected', reason: 'cms-hpt-entry-has-no-valid-mrf-url' };
   if (!successfulStatus(probe && probe.rangeStatus)) return { status: 'rejected', reason: 'hospital-published-mrf-unreachable' };
@@ -330,11 +367,16 @@ function classifyEvidence({ home, pointer, best, probe, hospital, requireHomepag
   // The pointer name itself must be exact or strong in both matching measures.
   // State alone is not enough because one system can publish sibling hospitals
   // in the same state from the same domain.
-  const pointerIdentityStrong = best.exact || (best.score >= 0.75 && best.strictScore >= 0.60);
+  const pointerIdentityStrong = best.exact
+    || (best.score >= 0.75 && best.strictScore >= 0.60)
+    || best.llmAccepted;
   if (!pointerIdentityStrong) return { status: 'review', reason: 'pointer-name-match-needs-review' };
 
   const headerName = mrfNameEvidence(probe, hospital.hospital_name);
-  if (headerName.value && headerName.score < 0.45) {
+  const headerIdentityStrong = headerName.exact
+    || (headerName.score >= 0.75 && headerName.strictScore >= 0.60)
+    || mrfStreetAddressAgrees(probe, hospital);
+  if (headerName.value && !headerIdentityStrong) {
     return { status: 'review', reason: 'mrf-header-name-conflicts-with-cms-roster' };
   }
   if (mrfLocationConflicts(probe, best, hospital)) {

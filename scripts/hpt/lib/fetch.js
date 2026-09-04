@@ -45,7 +45,10 @@ function classify(status, body) {
 
 /** Plain, free fetch. No proxy, no cost. */
 async function readTextCapped(res, maxBytes) {
-  if (!maxBytes) return { body: await res.text(), tooLarge: false };
+  if (!maxBytes) {
+    const body = await res.text();
+    return { body, tooLarge: false, bytesRead: Buffer.byteLength(body) };
+  }
   const reader = res.body.getReader();
   const chunks = [];
   let total = 0;
@@ -55,11 +58,11 @@ async function readTextCapped(res, maxBytes) {
     total += value.byteLength;
     if (total > maxBytes) {
       try { await reader.cancel(); } catch (_e) {}
-      return { body: '', tooLarge: true };
+      return { body: '', tooLarge: true, bytesRead: total };
     }
     chunks.push(Buffer.from(value));
   }
-  return { body: Buffer.concat(chunks).toString('utf8'), tooLarge: false };
+  return { body: Buffer.concat(chunks).toString('utf8'), tooLarge: false, bytesRead: total };
 }
 
 async function directGet(url, { timeoutMs = 20000, maxBytes = 0, fetchImpl = fetch } = {}) {
@@ -68,7 +71,7 @@ async function directGet(url, { timeoutMs = 20000, maxBytes = 0, fetchImpl = fet
   try {
     const r = await fetchImpl(url, { redirect: 'follow', signal: ac.signal, headers: BROWSER_HEADERS });
     const read = await readTextCapped(r, maxBytes);
-    return { status: r.status, body: read.body, tooLarge: read.tooLarge, finalUrl: r.url || url, via: 'direct' };
+    return { status: r.status, body: read.body, tooLarge: read.tooLarge, bytesRead: read.bytesRead, finalUrl: r.url || url, via: 'direct' };
   } catch (e) {
     return { status: 0, body: '', finalUrl: url, via: 'direct', error: String((e && e.message) || e) };
   } finally { clearTimeout(timer); }
@@ -183,7 +186,13 @@ async function fetchPointer(domain, opts = {}) {
 
   // Tier 2: the domain may have been folded into a parent system since the seed
   // data was collected. The homepage redirect reveals the new canonical host.
-  const home = await directGet(`https://${domain}/`, { timeoutMs, maxBytes, fetchImpl });
+  let home = await directGet(`https://${domain}/`, { timeoutMs, maxBytes, fetchImpl });
+  if (!home.status) {
+    const insecureLead = await directGet(`http://${domain}/`, { timeoutMs, maxBytes, fetchImpl });
+    attempts.push({ url: `http://${domain}/`, status: insecureLead.status,
+      kind: classify(insecureLead.status, insecureLead.body), via: 'http-redirect-lead' });
+    if (insecureLead.status) home = insecureLead;
+  }
   const canon = hostOf(home.finalUrl);
   if (canon && canon !== String(domain).replace(/^www\./, '')) {
     note(`${domain} -> redirects to ${canon}`);
@@ -226,13 +235,13 @@ async function fetchPointer(domain, opts = {}) {
  * domain we believe in but far too expensive when most candidates are guesses.
  * This spends a single request and a short timeout, so a wrong guess is cheap.
  */
-async function quickPointer(domain, { timeoutMs = 8000 } = {}) {
+async function quickPointer(domain, { timeoutMs = 8000, maxBytes = 4194304 } = {}) {
   const d = String(domain).replace(/^www\./, '');
-  const r = await directGet(`https://${d}/cms-hpt.txt`, { timeoutMs });
+  const r = await directGet(`https://${d}/cms-hpt.txt`, { timeoutMs, maxBytes });
   const kind = classify(r.status, r.body);
   return kind === 'ok'
-    ? { ok: true, domain: d, url: `https://${d}/cms-hpt.txt`, body: r.body, via: 'quick' }
-    : { ok: false, domain: d, reason: kind, status: r.status };
+    ? { ok: true, domain: d, url: `https://${d}/cms-hpt.txt`, body: r.body, via: 'quick', bytesRead: r.bytesRead || 0 }
+    : { ok: false, domain: d, reason: kind, status: r.status, bytesRead: r.bytesRead || 0 };
 }
 
 /**

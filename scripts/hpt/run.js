@@ -18,6 +18,7 @@
 const fs = require('fs');
 const fsp = fs.promises;
 const path = require('path');
+const { spawnSync } = require('child_process');
 
 const ROOT_DIR = path.join(__dirname, '..', '..');
 
@@ -1072,111 +1073,18 @@ async function cmdCandidates(opt) {
   for (const list of Object.values(store.data)) for (const c of list) bySource[c.source] = (bySource[c.source] || 0) + 1;
   log('');
   log(`Candidate pool: ${total} candidates across ${store.size} hospitals  ${JSON.stringify(bySource)}`);
-  log(`-> ${path.relative(ROOT, F.candidates)}   next: node scripts/hpt/run.js verify`);
+  log(`-> ${path.relative(ROOT, F.candidates)}   legacy artifact only; use npm run find:domains for staged discovery`);
 }
 
 /* ---------------------------------------------------------------- verify -- */
 
-/**
- * Test candidate domains and keep the ones that prove themselves.
- *
- * A candidate is accepted only when the domain actually serves a pointer file
- * naming that hospital, so a wrong guess is discarded at the cost of one
- * request. Accepted domains are written into domains.json and the fetched file
- * is cached exactly as `pointers` would, so `match` picks it up unchanged.
- */
+/** Route the legacy command through the supported stage-only workflow. */
 async function cmdVerify(opt) {
-  await fsp.mkdir(POINTER_DIR, { recursive: true });
-  const roster = JSON.parse(await fsp.readFile(F.roster, 'utf8'));
-  const byCcn = new Map(roster.map(h => [h.ccn, h]));
-  const candidates = JSON.parse(await fsp.readFile(F.candidates, 'utf8'));
-  const domains = JSON.parse(await fsp.readFile(F.domains, 'utf8'));
-  const pointers = new JsonStore(F.pointers);
-  await pointers.load();
-  const tried = new JsonStore(F.verified);
-  await tried.load();
-
-  // One domain can be proposed by many hospitals; fetch it once.
-  const byDomain = new Map();
-  for (const [ccn, list] of Object.entries(candidates)) {
-    for (const c of list) {
-      if (!byDomain.has(c.domain)) byDomain.set(c.domain, new Set());
-      byDomain.get(c.domain).add(ccn);
-    }
-  }
-
-  const accept = Number(opt.threshold || 0.72);
-  let work = [...byDomain.entries()].map(([domain, ccns]) => ({ domain, ccns: [...ccns] }));
-  // Skip anything already resolved or already tried, unless asked to redo.
-  if (!opt.retryFailed) {
-    work = work.filter(w => !pointers.has(w.domain) && !tried.has(w.domain));
-  } else if (opt.onlyReason) {
-    // Targeted retry. `neterr` in particular is often self-inflicted: a 60-domain
-    // sample re-tested at low concurrency served a pointer file 25% of the time,
-    // so those are worth another attempt while 404s and blocks are not.
-    const want = new Set(String(opt.onlyReason).split(',').map(x => x.trim()));
-    work = work.filter(w => {
-      const t = tried.get(w.domain), p = pointers.get(w.domain);
-      if ((p && p.ok) || (t && t.ok)) return false;
-      const reason = (t && t.reason) || (p && p.reason);
-      return reason && want.has(reason);
-    });
-  }
-  if (opt.limit) work = work.slice(0, num(opt.limit));
-
-  if (!work.length) { log('No candidate domains left to verify.'); return; }
-  log(`Verifying ${work.length} candidate domains (free, one request each)...`);
-
-  let hit = 0, linked = 0, saveCounter = 0;
-  const tick = progressBar('verify');
-  await pooled(work, {
-    concurrency: num(opt.concurrency, 16),
-    keyFn: w => w.domain,
-    onProgress: (d, t) => tick(d, t, `pointers=${hit} hospitals=${linked}`)
-  }, async (w) => {
-    const r = await quickPointer(w.domain, { timeoutMs: num(opt.timeout, 10000) });
-    if (!r.ok) { tried.set(w.domain, { ok: false, reason: r.reason, at: new Date().toISOString() }); return; }
-
-    const parsed = parsePointer(r.body);
-    hit++;
-    const file = path.join(POINTER_DIR, safeFile(w.domain) + '.txt');
-    await fsp.writeFile(file, protectPointerTextIfEnabled(r.body));
-    pointers.set(w.domain, {
-      ok: true, url: r.url, via: 'verify', redirectedTo: null,
-      entries: parsed.entries.length, format: parsed.format,
-      file: path.relative(ROOT, file), fetchedAt: new Date().toISOString()
-    });
-
-    // Link only hospitals the file actually names. `match` still applies the
-    // full strictness rules afterwards; this just decides domain ownership.
-    const names = parsed.entries.map(e => e.locationName || '');
-    const matchedCcns = [];
-    for (const ccn of w.ccns) {
-      const h = byCcn.get(ccn);
-      if (!h) continue;
-      const best = Math.max(0, ...names.map(n => nameSimilarity(n, h.name)));
-      if (best >= accept) matchedCcns.push({ ccn, score: Number(best.toFixed(3)) });
-    }
-    if (matchedCcns.length) {
-      if (!domains[w.domain]) domains[w.domain] = { domain: w.domain, ccns: [], source: 'verified' };
-      for (const m of matchedCcns) {
-        if (!domains[w.domain].ccns.includes(m.ccn)) { domains[w.domain].ccns.push(m.ccn); linked++; }
-      }
-    }
-    tried.set(w.domain, {
-      ok: true, entries: parsed.entries.length,
-      linked: matchedCcns, at: new Date().toISOString()
-    });
-    if (++saveCounter % 20 === 0) { await pointers.save(); await tried.save(); }
+  log('The legacy verify command now runs the staged domain-discovery workflow and does not mutate domains.json.');
+  const result = spawnSync(process.execPath, [path.join(__dirname, 'find-domains.js'), ...process.argv.slice(3)], {
+    cwd: ROOT, stdio: 'inherit'
   });
-
-  await pointers.save(true);
-  await tried.save(true);
-  await fsp.writeFile(F.domains, JSON.stringify(domains, null, 1));
-  log('');
-  log(`Verified: ${hit} domains served a pointer file; ${linked} hospitals linked to a domain.`);
-  if (transientSocketErrors) log(`(absorbed ${transientSocketErrors} transient socket hang-ups)`);
-  log('Next: node scripts/hpt/run.js match');
+  if (result.status !== 0) throw new Error(`Staged domain discovery exited with status ${result.status}`);
 }
 
 /* ------------------------------------------------------------ adjudicate -- */
@@ -1798,7 +1706,7 @@ CMS-HPT harvester
   node scripts/hpt/run.js recover --llm        model-guided crawl + corroboration -> recovered.csv
   node scripts/hpt/run.js candidates [--source=wikidata|orphan|heuristic|search|all]
                                                build the candidate-domain pool
-  node scripts/hpt/run.js verify               test candidates for free, keep the ones that prove out
+  node scripts/hpt/run.js verify [flags]       run the staged domain finder without promotion
   node scripts/hpt/run.js adjudicate           LLM ruling on ambiguous name matches
   node scripts/hpt/run.js corroborate          read headers for deferred cross-state matches
   node scripts/hpt/run.js dates [--limit=N]    probe MRF last-updated dates (no full download)
@@ -1813,8 +1721,6 @@ Common flags
   --concurrency=N   parallel workers (pointers 12, download 6, resolve 5)
   --limit=N         only process the first N items (for trial runs)
   --retryFailed     re-attempt previously failed items instead of new ones
-  --onlyReason=R    with --retryFailed on verify: only retry this failure reason
-                    (e.g. --onlyReason=neterr, which is often just concurrency)
   --noUnblocker     never spend money; free tier only
   --timeout=MS      per-request timeout
   --maxMb=N         skip MRF downloads larger than N megabytes (default 512)

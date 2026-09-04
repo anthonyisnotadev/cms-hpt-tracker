@@ -39,6 +39,18 @@ Weighing evidence:
 - Answer "high" confidence when the location evidence agrees, or when the names differ only by a known rename pattern AND nothing contradicts it.
 - If you have NO location evidence and the names differ in a way you cannot explain, answer match=false with "low" confidence - not "high". Reserve high confidence for conclusions the evidence actually supports, in either direction.`;
 
+const CANDIDATE_SYSTEM = `You decide whether a public website candidate and its source record refer to the same physical hospital as a CMS-registered facility.
+
+Rules:
+- Compare the facility identity, not merely the health system or owner.
+- Sibling hospitals in one health system are different facilities.
+- Exact phone, street address, ZIP, city, and close coordinates are stronger than name similarity.
+- Hospital acquisitions and rural emergency conversions can change a facility name while preserving the same building and CMS identity.
+- A different state, distant location, incompatible address, or incompatible facility type is strong evidence against a match.
+- A generic or shared hospital name without location evidence is ambiguous.
+- The candidate domain and external source are leads only. Do not infer compliance, pointer availability, or MRF ownership.
+- Return high confidence only when the supplied identity evidence supports it.`;
+
 const SCHEMA = {
   name: 'hospital_match',
   strict: true,
@@ -101,11 +113,36 @@ function buildPrompt(hospital, entry, mrfMeta) {
   ].join('\n');
 }
 
+function buildCandidatePrompt(hospital, candidate) {
+  return [
+    'CMS-registered hospital:',
+    `  CCN:     ${hospital.ccn || '(unknown)'}`,
+    `  name:    ${hospital.name || hospital.hospital_name}`,
+    `  type:    ${hospital.type || '(unknown)'}`,
+    `  address: ${hospital.address || '(unknown)'}`,
+    `  city:    ${hospital.city || '(unknown)'}, ${hospital.state || ''} ${hospital.zip || ''}`.trimEnd(),
+    `  phone:   ${hospital.phone || '(unknown)'}`,
+    '',
+    'Public website candidate:',
+    `  domain:          ${candidate.candidate_domain || '(unknown)'}`,
+    `  suggested by:     ${candidate.sources || '(unknown)'}`,
+    `  source names:     ${candidate.source_names || '(unknown)'}`,
+    `  source addresses: ${candidate.source_addresses || '(unknown)'}`,
+    `  source phones:    ${candidate.source_phones || '(unknown)'}`,
+    `  source coordinates:${candidate.source_lat || '(unknown)'}, ${candidate.source_lon || '(unknown)'}`,
+    `  distance km:      ${candidate.distance_km || '(unknown)'}`,
+    `  pointer name:     ${candidate.pointer_location_name || '(not fetched or not matched)'}`,
+    `  deterministic name score: ${candidate.name_score || '(unknown)'}`,
+    '',
+    'Do the source record and candidate domain most likely refer to this same physical CMS hospital?'
+  ].join('\n');
+}
+
 /**
  * Ask the model to rule on one pair. Returns null on any transport failure so
  * the caller can leave the pair unresolved rather than record a false verdict.
  */
-async function adjudicatePair(hospital, entry, mrfMeta, { timeoutMs = 45000, model } = {}) {
+async function requestVerdict(system, prompt, { timeoutMs = 45000, model } = {}) {
   const key = process.env.OPENROUTER_API_KEY;
   if (!key) return null;
   const mdl = model || process.env.OPENROUTER_MODEL || 'meta-llama/llama-3.1-8b-instruct';
@@ -118,8 +155,8 @@ async function adjudicatePair(hospital, entry, mrfMeta, { timeoutMs = 45000, mod
       ? { type: 'json_object' }
       : { type: 'json_schema', json_schema: SCHEMA },
     messages: [
-      { role: 'system', content: SYSTEM },
-      { role: 'user', content: buildPrompt(hospital, entry, mrfMeta) }
+      { role: 'system', content: system },
+      { role: 'user', content: prompt }
     ],
     ...(prefs ? { provider: prefs } : {})
   };
@@ -148,11 +185,22 @@ async function adjudicatePair(hospital, entry, mrfMeta, { timeoutMs = 45000, mod
       match: !!parsed.match,
       confidence: ['high', 'medium', 'low'].includes(parsed.confidence) ? parsed.confidence : 'low',
       reason: String(parsed.reason || '').slice(0, 300),
-      model: mdl
+      model: mdl,
+      promptTokens: Number(j.usage && j.usage.prompt_tokens || 0),
+      completionTokens: Number(j.usage && j.usage.completion_tokens || 0),
+      totalTokens: Number(j.usage && j.usage.total_tokens || 0)
     };
   } catch (e) {
     return { error: String((e && e.message) || e).slice(0, 160) };
   } finally { clearTimeout(timer); }
+}
+
+async function adjudicatePair(hospital, entry, mrfMeta, options = {}) {
+  return requestVerdict(SYSTEM, buildPrompt(hospital, entry, mrfMeta), options);
+}
+
+async function adjudicateCandidate(hospital, candidate, options = {}) {
+  return requestVerdict(CANDIDATE_SYSTEM, buildCandidatePrompt(hospital, candidate), options);
 }
 
 /**
@@ -164,4 +212,7 @@ function isAccepted(verdict) {
   return !!(verdict && !verdict.error && verdict.match === true && verdict.confidence === 'high');
 }
 
-module.exports = { adjudicatePair, isAccepted, buildPrompt, SYSTEM };
+module.exports = {
+  adjudicatePair, adjudicateCandidate, isAccepted, buildPrompt,
+  buildCandidatePrompt, SYSTEM, CANDIDATE_SYSTEM
+};

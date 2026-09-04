@@ -152,7 +152,7 @@ test('same-state generic names with a conflicting MRF ZIP require review', () =>
   });
 });
 
-test('a facility name naming the roster city can override a corporate MRF ZIP', () => {
+test('a facility name cannot override a conflicting MRF ZIP', () => {
   const verdict = classifyEvidence({
     home: { status: 200 }, pointer: { ok: true }, requireHomepage: false,
     best: {
@@ -165,7 +165,58 @@ test('a facility name naming the roster city can override a corporate MRF ZIP', 
       mrfAddress: '101 City Drive South, Orange, CA 92868'
     }
   });
-  assert.equal(verdict.status, 'verified');
+  assert.equal(verdict.status, 'review');
+  assert.equal(verdict.reason, 'mrf-header-location-conflicts-with-cms-roster');
+});
+
+test('equivalent street abbreviations and written ordinals corroborate an MRF identity', () => {
+  const addresses = [
+    ['655 W 8TH ST', '655 West Eighth Street, Jacksonville, FL 32209'],
+    ['8050 WEST NORTHVIEW STREET', '8050 W Northview St, Boise, ID 83704'],
+    ['525 EAST GRANT STREET', '525 E Grant Street, Macomb, IL 61455'],
+    ['9515 HOLY CROSS LN', '9515 Holy Cross Lane, Breese, IL 62230'],
+    ['1401 10TH AVE WEST', '1401 10th Ave W, Mobridge, SD 57601'],
+    ['801 W INTERSTATE 20', '801 West I-20, Arlington, TX 76017'],
+    ['901 MT VIEW DRIVE', '901 Mountain View Drive, Shelton, WA 98584'],
+    ['14700 LAKESHORE DRIVE', '14700 Lake Shore Drive, Charlevoix, MI 49720'],
+    ['ONE HOSPITAL DRIVE', 'One Hospital Drive, Columbia, MO 65212'],
+    ['6800 NW 39TH EXPRESSWAY', '6800 Northwest 39th Expwy, Bethany, OK 73008'],
+    ['1800 PARK PLACE AVENUE', '1800 Park Pl Ave, Fort Worth, TX 76110'],
+    ['600 E INTERSTATE 20 PO BOX 640', '600 East I-20, Stanton, TX 79782'],
+    ['2600 SOUTHWEST HOLDEN', '2600 SW Holden Street, Seattle, WA 98126']
+  ];
+  for (const [rosterAddress, mrfAddress] of addresses) {
+    const verdict = classifyEvidence({
+      home: { status: 200 }, pointer: { ok: true }, requireHomepage: false,
+      best: {
+        exact: true, score: 1, strictScore: 1,
+        entry: { locationName: 'Example Hospital', mrfUrl: 'https://example.test/official.csv' }
+      },
+      hospital: { hospital_name: 'EXAMPLE HOSPITAL', address: rosterAddress, state: 'FL', zip: mrfAddress.match(/\b\d{5}\b/)[0] },
+      probe: { rangeStatus: 206, mrfLicenseState: 'FL', mrfHospitalName: 'Unrelated corporate legal name', mrfAddress }
+    });
+    assert.equal(verdict.status, 'verified', `${rosterAddress} should match ${mrfAddress}`);
+  }
+});
+
+test('a model-supported pointer cannot overcome a sibling MRF address', () => {
+  const verdict = classifyEvidence({
+    home: { status: 200 }, pointer: { ok: true }, requireHomepage: false,
+    best: {
+      exact: true, score: 1, strictScore: 1, llmAccepted: true,
+      entry: { locationName: 'St. Elizabeth Healthcare Grant', mrfUrl: 'https://example.test/official.csv' }
+    },
+    hospital: {
+      hospital_name: 'ST ELIZABETH GRANT', address: '238 BARNES ROAD',
+      city: 'WILLIAMSTOWN', state: 'KY', zip: '41097'
+    },
+    probe: {
+      rangeStatus: 206, mrfLicenseState: 'KY', mrfHospitalName: 'St Elizabeth Edgewood',
+      mrfAddress: '1 Medical Village Drive, Edgewood, KY 41017'
+    }
+  });
+  assert.equal(verdict.status, 'review');
+  assert.equal(verdict.reason, 'mrf-header-name-conflicts-with-cms-roster');
 });
 
 test('weak pointer identity is rejected without probing an unrelated sibling MRF', async () => {

@@ -8,7 +8,8 @@
  * therefore tuned for recall, not precision, and the cheapest sources run
  * before anything that charges per query.
  */
-const { hostOf, isAggregator, nameSimilarity, strictSimilarity } = require('./util');
+const { hostOf, isAggregator, nameSimilarity, strictSimilarity, JsonStore, pooled } = require('./util');
+const { chatJson } = require('./openrouter');
 
 const STATE_ABBREV = {
   alabama: 'AL', alaska: 'AK', arizona: 'AZ', arkansas: 'AR', california: 'CA',
@@ -254,7 +255,120 @@ Rules:
   } finally { clearTimeout(t); }
 }
 
+function llmDomainPrompt(hospitals, aliases = new Map()) {
+  const rows = hospitals.map(hospital => ({
+    ccn: hospital.ccn,
+    cms_name: hospital.hospital_name || hospital.name || '',
+    address: hospital.address || '',
+    city: hospital.city || '',
+    state: hospital.state || '',
+    zip: hospital.zip || '',
+    nppes_organization_aliases: (aliases.get(hospital.ccn) || []).slice(0, 12)
+  }));
+  return JSON.stringify({ hospitals: rows });
+}
+
+/**
+ * Generate resumable domain leads for every selected hospital. These are only
+ * leads: callers must still verify the root pointer and its MRF header.
+ */
+async function runLlmDomainDiscovery({ hospitals, aliases = new Map(), cacheFile,
+  batchSize = 8, concurrency = 2, timeoutMs = 90000,
+  model = 'z-ai/glm-5.3-flash', refresh = false, retryErrors = true,
+  client = chatJson }) {
+  const store = new JsonStore(cacheFile);
+  await store.load();
+  let cacheHits = 0;
+  const pending = [];
+  for (const hospital of hospitals) {
+    const cached = store.get(hospital.ccn);
+    if (!refresh && cached && (!cached.error || !retryErrors)) cacheHits++;
+    else pending.push(hospital);
+  }
+  const batches = [];
+  for (let i = 0; i < pending.length; i += Math.max(1, batchSize)) {
+    batches.push(pending.slice(i, i + Math.max(1, batchSize)));
+  }
+  let requests = 0;
+  let completed = 0;
+  let saveChain = Promise.resolve();
+  await pooled(batches, {
+    concurrency,
+    onProgress: done => {
+      if (done === batches.length || done % 10 === 0) console.log(`GLM domain batches ${done}/${batches.length}`);
+    }
+  }, async batch => {
+    requests++;
+    const result = await client({
+      model,
+      timeoutMs,
+      temperature: 0,
+      system: `Identify likely current official website domains for US hospitals. The CMS identity and NPPES organization aliases are leads. Return up to three bare domains per hospital, ordered from most likely to least likely. Prefer a hospital-owned domain, then its parent health system. Include a plausible low-confidence domain guess when you are uncertain because every answer will be checked live. Use an empty domains array only when no plausible official domain comes to mind. Never return directories, social networks, news sites, storage hosts, or government provider directories. These answers are candidates only and will be verified against the hospital-hosted cms-hpt.txt file and its MRF header.`,
+      user: llmDomainPrompt(batch, aliases),
+      schema: {
+        name: 'hospital_domain_candidates', strict: true,
+        schema: {
+          type: 'object', additionalProperties: false, required: ['hospitals'],
+          properties: {
+            hospitals: {
+              type: 'array', items: {
+                type: 'object', additionalProperties: false,
+                required: ['ccn', 'domains'], properties: {
+                  ccn: { type: 'string' },
+                  domains: {
+                    type: 'array', maxItems: 3, items: {
+                      type: 'object', additionalProperties: false,
+                      required: ['domain', 'confidence', 'reason'], properties: {
+                        domain: { type: 'string' },
+                        confidence: { type: 'string', enum: ['high', 'medium', 'low'] },
+                        reason: { type: 'string' }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    });
+    const byCcn = new Map(((result.data && result.data.hospitals) || [])
+      .map(row => [String(row.ccn || '').trim(), row]));
+    for (const hospital of batch) {
+      const answer = byCcn.get(hospital.ccn);
+      if (result.error) {
+        store.set(hospital.ccn, { ccn: hospital.ccn, domains: [], error: result.error,
+          model, checked_at: new Date().toISOString() });
+        continue;
+      }
+      const seen = new Set();
+      const domains = [];
+      for (const suggestion of (answer && answer.domains || []).slice(0, 3)) {
+        const host = hostOf(/^https?:\/\//i.test(suggestion.domain)
+          ? suggestion.domain : `https://${suggestion.domain}`);
+        if (!host || seen.has(host) || isAggregator(host)) continue;
+        seen.add(host);
+        domains.push({ domain: host,
+          confidence: ['high', 'medium', 'low'].includes(suggestion.confidence) ? suggestion.confidence : 'low',
+          reason: String(suggestion.reason || '').replace(/\s+/g, ' ').trim().slice(0, 300) });
+      }
+      store.set(hospital.ccn, { ccn: hospital.ccn, domains, error: '', model: result.model || model,
+        checked_at: new Date().toISOString() });
+    }
+    if (++completed % 10 === 0) {
+      saveChain = saveChain.then(() => store.save(true));
+      await saveChain;
+    }
+  });
+  await saveChain;
+  await store.save(true);
+  const rows = hospitals.map(hospital => store.get(hospital.ccn)
+    || { ccn: hospital.ccn, domains: [], error: 'not-processed', model });
+  return { rows, requests, cacheHits };
+}
+
 module.exports = {
   fetchWikidata, wikidataCandidates, heuristicCandidates, orphanCandidates,
-  llmDomainCandidates, STATE_ABBREV, GENERIC
+  llmDomainCandidates, llmDomainPrompt, runLlmDomainDiscovery,
+  STATE_ABBREV, GENERIC
 };

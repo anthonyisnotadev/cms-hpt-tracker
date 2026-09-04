@@ -71,7 +71,9 @@ const AGGREGATOR_HOST = new RegExp([
   // domain from one guarantees a 404 and a wasted search lookup later.
   'cloudinary\.com', 'claraprice\.net', 'hospitalpricedisclosure\.com',
   'sitecorecloud\.io', 'sitecorecontenthub\.cloud', 'optimizely\.com',
-  'azurewebsites\.net', 'files\.wordpress', 'netlify\.app', 'vercel\.app'
+  'azurewebsites\.net', 'files\.wordpress', 'netlify\.app', 'vercel\.app',
+  'healthgrades\.com', 'yelp\.com', 'wikipedia\.org', 'usnews\.com',
+  'facebook\.com', 'linkedin\.com', 'mapquest\.com', 'vitals\.com', 'webmd\.com'
 ].join('|'), 'i');
 
 const isAggregator = h => !!h && AGGREGATOR_HOST.test(h);

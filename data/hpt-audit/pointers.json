@@ -2,14 +2,14 @@
  "schemaVersion": 1,
  "source": {
   "file": "data/hpt-audit/manifest.csv",
-  "sha256": "38472e829cdcc4384b068861095cd7a0cbd5c398d34a3a2cdd8c8a3c7a6c6547",
-  "rows": 3962
+  "sha256": "911ec8ba1aaaeaf3771ed2378c6d3cbe9f6929b97abbc60be5279f6a57ba85ea",
+  "rows": 3974
  },
  "counts": {
-  "chains": 1981,
-  "facilities": 3933,
+  "chains": 1990,
+  "facilities": 3945,
   "multiFacilityChains": 389,
-  "facilitiesInMultiFacilityChains": 2341,
+  "facilitiesInMultiFacilityChains": 2344,
   "orphans": 29
  },
  "chains": [
@@ -12578,6 +12578,184 @@
    ]
   },
   {
+   "pointerUrl": "https://hshs.org/cms-hpt.txt",
+   "pointerHost": "hshs.org",
+   "domains": [
+    "hshs.org"
+   ],
+   "facilityCount": 12,
+   "facilities": [
+    {
+     "ccn": "140032",
+     "name": "ST ANTHONYS MEMoriaL HOSPITAL",
+     "city": "EFFINGHAM",
+     "state": "IL",
+     "locationName": "HSHS St. Anthony's Memorial Hospital",
+     "mrfUrl": "https://www.hshs.org/getmedia/c7276038-46f5-487f-b25a-1f430c049844/370661233_st-anthonys-memorial-hospital-of-the-hospital-sisters-of-the-third-order-of-st-francis_standardcharges.zip",
+     "mrfHost": "hshs.org",
+     "sourcePageUrl": "https://www.hshs.org/patients/billing/price",
+     "lastUpdated": "2026-03-24",
+     "daysSinceUpdate": 163,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "140053",
+     "name": "ST JOHNS HOSPITAL",
+     "city": "SPRINGFIELD",
+     "state": "IL",
+     "locationName": "HSHS St. John's Hospital",
+     "mrfUrl": "https://www.hshs.org/getmedia/e495b700-31ce-4936-baaf-af58e043c28c/370661238_st-johns-hospital-of-the-hospital-sisters-of-the-third-order-of-st-francis_standardcharges.zip",
+     "mrfHost": "hshs.org",
+     "sourcePageUrl": "https://www.hshs.org/patients/billing/price",
+     "lastUpdated": "2026-03-24",
+     "daysSinceUpdate": 163,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "140137",
+     "name": "HSHS HOLY FAMILY HOSPITAL INC",
+     "city": "GREENVILLE",
+     "state": "IL",
+     "locationName": "HSHS Holy Family Hospital",
+     "mrfUrl": "https://www.hshs.org/getmedia/8d02779d-f50b-422c-95e1-4f78ffb3c574/370792770_hshs-holy-family-hospital-inc_standardcharges.zip",
+     "mrfHost": "hshs.org",
+     "sourcePageUrl": "https://www.hshs.org/patients/billing/price",
+     "lastUpdated": "2026-03-24",
+     "daysSinceUpdate": 163,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "140145",
+     "name": "ST JOSEPHS HOSPITAL",
+     "city": "BREESE",
+     "state": "IL",
+     "locationName": "HSHS St. Joseph's Hospital",
+     "mrfUrl": "https://www.hshs.org/getmedia/82ef2075-0317-4f2c-9793-6fe1760568af/371208459_st-josephs-hospital-hospital-sisters-third-order-of-st-francis_standardcharges.zip",
+     "mrfHost": "hshs.org",
+     "sourcePageUrl": "https://www.hshs.org/patients/billing/price",
+     "lastUpdated": "2026-03-24",
+     "daysSinceUpdate": 164,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "140187",
+     "name": "HSHS ST ELIZABETH'S HOSPITAL",
+     "city": "O FALLON",
+     "state": "IL",
+     "locationName": "HSHS St. Elizabeth's Hospital",
+     "mrfUrl": "https://www.hshs.org/getmedia/99caf2d8-ca1e-425f-b068-6205c57f9aeb/370663567_st-elizabeths-hospital-of-the-hospital-sisters-of-the-third-order-of-st-francis_standardcharges.zip",
+     "mrfHost": "hshs.org",
+     "sourcePageUrl": "https://www.hshs.org/patients/billing/price",
+     "lastUpdated": "2026-03-24",
+     "daysSinceUpdate": 163,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "141336",
+     "name": "ST JOSEPH'S HOSPITAL",
+     "city": "HIGHLAND",
+     "state": "IL",
+     "locationName": "HSHS St. Joseph's Hospital",
+     "mrfUrl": "https://www.hshs.org/getmedia/67be3ff0-9ea7-4517-8747-0a1671edf25d/370663568_st-josephs-hospital-of-the-hospital-sisters-of-the-third-order-of-st-francis_standardcharges.zip",
+     "mrfHost": "hshs.org",
+     "sourcePageUrl": "https://www.hshs.org/patients/billing/price",
+     "lastUpdated": "2026-03-24",
+     "daysSinceUpdate": 163,
+     "staleOver365": false,
+     "httpStatus": 206
+    },
+    {
+     "ccn": "141350",
+     "name": "ST FRANCIS HOSPITAL",
+     "city": "LITCHFIELD",
+     "state": "IL",
+     "locationName": "HSHS St. Francis Hospital",
+     "mrfUrl": "https://www.hshs.org/getmedia/492da073-285b-4a53-aee0-2523dcb171da/370661236_st-francis-hospital-sisters-of-the-third-order-of-st-francis_standardcharges.zip",
+     "mrfHost": "hshs.org",
+     "sourcePageUrl": "https://www.hshs.org/patients/billing/price",
+     "lastUpdated": "2026-03-24",
+     "daysSinceUpdate": 163,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "141354",
+     "name": "HSHS GOOD SHEPHERD HOSPITAL INC",
+     "city": "SHELBYVILLE",
+     "state": "IL",
+     "locationName": "HSHS Good Shepherd Hospital",
+     "mrfUrl": "https://www.hshs.org/getmedia/f39ae893-96e3-4a40-b5ac-05a580323a91/370512290_hshs-good-shepherd-hospital-inc_standardcharges.zip",
+     "mrfHost": "hshs.org",
+     "sourcePageUrl": "https://www.hshs.org/patients/billing/price",
+     "lastUpdated": "2026-03-24",
+     "daysSinceUpdate": 163,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "520044",
+     "name": "ST NICHOLAS HOSPITAL",
+     "city": "SHEBOYGAN",
+     "state": "WI",
+     "locationName": "HSHS St. Nicholas Hospital",
+     "mrfUrl": "https://www.hshs.org/getmedia/a3a50e01-863e-49b4-857a-94427057dca3/390808480_st-nicholas-hospital-of-the-hospital-sisters-of-the-third-order-of-st-francis_standardcharges.zip",
+     "mrfHost": "hshs.org",
+     "sourcePageUrl": "https://www.hshs.org/patients/billing/price",
+     "lastUpdated": "2026-03-24",
+     "daysSinceUpdate": 163,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "520075",
+     "name": "ST VINCENT HOSPITAL",
+     "city": "GREEN BAY",
+     "state": "WI",
+     "locationName": "HSHS St. Vincent Hospital",
+     "mrfUrl": "https://www.hshs.org/getmedia/c8dc1a34-e326-4062-8f1e-9843345918c1/390817529_st-vincent-hospital-of-the-hospital-sisters-of-the-third-order-of-st-francis_standardcharges.zip",
+     "mrfHost": "hshs.org",
+     "sourcePageUrl": "https://www.hshs.org/patients/billing/price",
+     "lastUpdated": "2026-03-24",
+     "daysSinceUpdate": 163,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "520097",
+     "name": "ST MARYS HOSPITAL MEDICAL CTR",
+     "city": "GREEN BAY",
+     "state": "WI",
+     "locationName": "HSHS St. Mary's Hospital Medical Center",
+     "mrfUrl": "https://www.hshs.org/getmedia/e59a2675-9edb-45da-ac9c-e0a413805ae1/390818682_st-marys-hospital-medical-center-of-green-bay-inc-hospital-sisters_standardcharges.zip",
+     "mrfHost": "hshs.org",
+     "sourcePageUrl": "https://www.hshs.org/patients/billing/price",
+     "lastUpdated": "2026-03-24",
+     "daysSinceUpdate": 163,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "521310",
+     "name": "HSHS ST CLARE MEMoriaL HOSPITAL",
+     "city": "OCONTO FALLS",
+     "state": "WI",
+     "locationName": "HSHS St. Clare Memorial Hospital",
+     "mrfUrl": "https://www.hshs.org/getmedia/aa25aee9-926d-4a3b-9697-b98148e40f18/390848401_st-clare-memorial-hospital-inc_standardcharges.zip",
+     "mrfHost": "hshs.org",
+     "sourcePageUrl": "https://www.hshs.org/patients/billing/price",
+     "lastUpdated": "2026-03-24",
+     "daysSinceUpdate": 163,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://ochsner.org/cms-hpt.txt",
    "pointerHost": "ochsner.org",
    "domains": [
@@ -13613,170 +13791,6 @@
      "sourcePageUrl": "https://www.essentiahealth.org/patients-visitors/billing/price-estimates/",
      "lastUpdated": "2026-01-01",
      "daysSinceUpdate": 245,
-     "staleOver365": false,
-     "httpStatus": 200
-    }
-   ]
-  },
-  {
-   "pointerUrl": "https://hshs.org/cms-hpt.txt",
-   "pointerHost": "hshs.org",
-   "domains": [
-    "hshs.org"
-   ],
-   "facilityCount": 11,
-   "facilities": [
-    {
-     "ccn": "140032",
-     "name": "ST ANTHONYS MEMoriaL HOSPITAL",
-     "city": "EFFINGHAM",
-     "state": "IL",
-     "locationName": "HSHS St. Anthony's Memorial Hospital",
-     "mrfUrl": "https://www.hshs.org/getmedia/c7276038-46f5-487f-b25a-1f430c049844/370661233_st-anthonys-memorial-hospital-of-the-hospital-sisters-of-the-third-order-of-st-francis_standardcharges.zip",
-     "mrfHost": "hshs.org",
-     "sourcePageUrl": "https://www.hshs.org/patients/billing/price",
-     "lastUpdated": "2026-03-24",
-     "daysSinceUpdate": 163,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "140053",
-     "name": "ST JOHNS HOSPITAL",
-     "city": "SPRINGFIELD",
-     "state": "IL",
-     "locationName": "HSHS St. John's Hospital",
-     "mrfUrl": "https://www.hshs.org/getmedia/e495b700-31ce-4936-baaf-af58e043c28c/370661238_st-johns-hospital-of-the-hospital-sisters-of-the-third-order-of-st-francis_standardcharges.zip",
-     "mrfHost": "hshs.org",
-     "sourcePageUrl": "https://www.hshs.org/patients/billing/price",
-     "lastUpdated": "2026-03-24",
-     "daysSinceUpdate": 163,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "140137",
-     "name": "HSHS HOLY FAMILY HOSPITAL INC",
-     "city": "GREENVILLE",
-     "state": "IL",
-     "locationName": "HSHS Holy Family Hospital",
-     "mrfUrl": "https://www.hshs.org/getmedia/8d02779d-f50b-422c-95e1-4f78ffb3c574/370792770_hshs-holy-family-hospital-inc_standardcharges.zip",
-     "mrfHost": "hshs.org",
-     "sourcePageUrl": "https://www.hshs.org/patients/billing/price",
-     "lastUpdated": "2026-03-24",
-     "daysSinceUpdate": 163,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "140187",
-     "name": "HSHS ST ELIZABETH'S HOSPITAL",
-     "city": "O FALLON",
-     "state": "IL",
-     "locationName": "HSHS St. Elizabeth's Hospital",
-     "mrfUrl": "https://www.hshs.org/getmedia/99caf2d8-ca1e-425f-b068-6205c57f9aeb/370663567_st-elizabeths-hospital-of-the-hospital-sisters-of-the-third-order-of-st-francis_standardcharges.zip",
-     "mrfHost": "hshs.org",
-     "sourcePageUrl": "https://www.hshs.org/patients/billing/price",
-     "lastUpdated": "2026-03-24",
-     "daysSinceUpdate": 163,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "141336",
-     "name": "ST JOSEPH'S HOSPITAL",
-     "city": "HIGHLAND",
-     "state": "IL",
-     "locationName": "HSHS St. Joseph's Hospital",
-     "mrfUrl": "https://www.hshs.org/getmedia/67be3ff0-9ea7-4517-8747-0a1671edf25d/370663568_st-josephs-hospital-of-the-hospital-sisters-of-the-third-order-of-st-francis_standardcharges.zip",
-     "mrfHost": "hshs.org",
-     "sourcePageUrl": "https://www.hshs.org/patients/billing/price",
-     "lastUpdated": "2026-03-24",
-     "daysSinceUpdate": 163,
-     "staleOver365": false,
-     "httpStatus": 206
-    },
-    {
-     "ccn": "141350",
-     "name": "ST FRANCIS HOSPITAL",
-     "city": "LITCHFIELD",
-     "state": "IL",
-     "locationName": "HSHS St. Francis Hospital",
-     "mrfUrl": "https://www.hshs.org/getmedia/492da073-285b-4a53-aee0-2523dcb171da/370661236_st-francis-hospital-sisters-of-the-third-order-of-st-francis_standardcharges.zip",
-     "mrfHost": "hshs.org",
-     "sourcePageUrl": "https://www.hshs.org/patients/billing/price",
-     "lastUpdated": "2026-03-24",
-     "daysSinceUpdate": 163,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "141354",
-     "name": "HSHS GOOD SHEPHERD HOSPITAL INC",
-     "city": "SHELBYVILLE",
-     "state": "IL",
-     "locationName": "HSHS Good Shepherd Hospital",
-     "mrfUrl": "https://www.hshs.org/getmedia/f39ae893-96e3-4a40-b5ac-05a580323a91/370512290_hshs-good-shepherd-hospital-inc_standardcharges.zip",
-     "mrfHost": "hshs.org",
-     "sourcePageUrl": "https://www.hshs.org/patients/billing/price",
-     "lastUpdated": "2026-03-24",
-     "daysSinceUpdate": 163,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "520044",
-     "name": "ST NICHOLAS HOSPITAL",
-     "city": "SHEBOYGAN",
-     "state": "WI",
-     "locationName": "HSHS St. Nicholas Hospital",
-     "mrfUrl": "https://www.hshs.org/getmedia/a3a50e01-863e-49b4-857a-94427057dca3/390808480_st-nicholas-hospital-of-the-hospital-sisters-of-the-third-order-of-st-francis_standardcharges.zip",
-     "mrfHost": "hshs.org",
-     "sourcePageUrl": "https://www.hshs.org/patients/billing/price",
-     "lastUpdated": "2026-03-24",
-     "daysSinceUpdate": 163,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "520075",
-     "name": "ST VINCENT HOSPITAL",
-     "city": "GREEN BAY",
-     "state": "WI",
-     "locationName": "HSHS St. Vincent Hospital",
-     "mrfUrl": "https://www.hshs.org/getmedia/c8dc1a34-e326-4062-8f1e-9843345918c1/390817529_st-vincent-hospital-of-the-hospital-sisters-of-the-third-order-of-st-francis_standardcharges.zip",
-     "mrfHost": "hshs.org",
-     "sourcePageUrl": "https://www.hshs.org/patients/billing/price",
-     "lastUpdated": "2026-03-24",
-     "daysSinceUpdate": 163,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "520097",
-     "name": "ST MARYS HOSPITAL MEDICAL CTR",
-     "city": "GREEN BAY",
-     "state": "WI",
-     "locationName": "HSHS St. Mary's Hospital Medical Center",
-     "mrfUrl": "https://www.hshs.org/getmedia/e59a2675-9edb-45da-ac9c-e0a413805ae1/390818682_st-marys-hospital-medical-center-of-green-bay-inc-hospital-sisters_standardcharges.zip",
-     "mrfHost": "hshs.org",
-     "sourcePageUrl": "https://www.hshs.org/patients/billing/price",
-     "lastUpdated": "2026-03-24",
-     "daysSinceUpdate": 163,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "521310",
-     "name": "HSHS ST CLARE MEMoriaL HOSPITAL",
-     "city": "OCONTO FALLS",
-     "state": "WI",
-     "locationName": "HSHS St. Clare Memorial Hospital",
-     "mrfUrl": "https://www.hshs.org/getmedia/aa25aee9-926d-4a3b-9697-b98148e40f18/390848401_st-clare-memorial-hospital-inc_standardcharges.zip",
-     "mrfHost": "hshs.org",
-     "sourcePageUrl": "https://www.hshs.org/patients/billing/price",
-     "lastUpdated": "2026-03-24",
-     "daysSinceUpdate": 163,
      "staleOver365": false,
      "httpStatus": 200
     }
@@ -16688,6 +16702,142 @@
    ]
   },
   {
+   "pointerUrl": "https://multicare.org/cms-hpt.txt",
+   "pointerHost": "multicare.org",
+   "domains": [
+    "multicare.org"
+   ],
+   "facilityCount": 9,
+   "facilities": [
+    {
+     "ccn": "500015",
+     "name": "MULTICARE AUBURN MEDICAL CENTER",
+     "city": "AUBURN",
+     "state": "WA",
+     "locationName": "MultiCare Auburn Medical Center",
+     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8059/911352172-1255327201_multicare-auburn-medical-center_standardcharges.csv",
+     "mrfHost": "sthpiprd.blob.core.windows.net",
+     "sourcePageUrl": "https://search.hospitalpriceindex.com/hpi2/machineReadable/AuburnMedicalCenter/8059",
+     "lastUpdated": "2026-08-27",
+     "daysSinceUpdate": 7,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "500036",
+     "name": "YAKIMA VALLEY MEMoriaL",
+     "city": "YAKIMA",
+     "state": "WA",
+     "locationName": "MultiCare Yakima Memorial Hospital",
+     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/11188/910567263-1053373480_multicare-yakima-valley-memorial-hospital-association_standardcharges.csv",
+     "mrfHost": "sthpiprd.blob.core.windows.net",
+     "sourcePageUrl": "https://search.hospitalpriceindex.com/hpi2/machineReadable/YakimaMemorial/11188",
+     "lastUpdated": "2026-08-27",
+     "daysSinceUpdate": 7,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "500079",
+     "name": "MULTICARE GOOD SAMARITAN HOSPITAL",
+     "city": "PUYALLUP",
+     "state": "WA",
+     "locationName": "MultiCare Good Samaritan Hospital",
+     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8061/911352172-1841231461_good-samaritan-hospital_standardcharges.csv",
+     "mrfHost": "sthpiprd.blob.core.windows.net",
+     "sourcePageUrl": "https://search.hospitalpriceindex.com/hpi2/machineReadable/GoodSamaritanHospital/8061",
+     "lastUpdated": "2026-08-27",
+     "daysSinceUpdate": 7,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "500119",
+     "name": "MULTICARE VALLEY HOSPITAL",
+     "city": "SPOKANE VALLEY",
+     "state": "WA",
+     "locationName": "MultiCare Valley Hospital",
+     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8064/911352172-1538345251_multicare-valley-hospital_standardcharges.csv",
+     "mrfHost": "sthpiprd.blob.core.windows.net",
+     "sourcePageUrl": "https://search.hospitalpriceindex.com/hpi2/machineReadable/ValleyHospital/8064",
+     "lastUpdated": "2025-07-28",
+     "daysSinceUpdate": 402,
+     "staleOver365": true,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "500129",
+     "name": "TACOMA GENERAL ALLENMORE HOSPITAL",
+     "city": "TACOMA",
+     "state": "WA",
+     "locationName": "MultiCare Tacoma General Hospital",
+     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8062/911352172-1366556227_tacoma-general-allenmore-hospital_standardcharges.csv",
+     "mrfHost": "sthpiprd.blob.core.windows.net",
+     "sourcePageUrl": "https://search.hospitalpriceindex.com/hpi2/machineReadable/TacomaGeneralHospital/8062",
+     "lastUpdated": "2026-08-27",
+     "daysSinceUpdate": 7,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "500139",
+     "name": "CAPITAL MEDICAL CENTER",
+     "city": "OLYMPIA",
+     "state": "WA",
+     "locationName": "MultiCare Capital Medical Center",
+     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/9371/911352172-1841258639_multicare-capital-medical-center_standardcharges.csv",
+     "mrfHost": "sthpiprd.blob.core.windows.net",
+     "sourcePageUrl": "https://search.hospitalpriceindex.com/hpi2/machineReadable/CapitalMedicalCenter/9371",
+     "lastUpdated": "2026-08-27",
+     "daysSinceUpdate": 7,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "500154",
+     "name": "MULTICARE COVINGTON MEDICAL CENTER",
+     "city": "COVINGTON",
+     "state": "WA",
+     "locationName": "MultiCare Covington Medical Center",
+     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8060/911352172-1326564071_multicare-covington-medical-center_standardcharges.csv",
+     "mrfHost": "sthpiprd.blob.core.windows.net",
+     "sourcePageUrl": "https://search.hospitalpriceindex.com/hpi2/machineReadable/CovingtonMedicalCenter/8060",
+     "lastUpdated": "2026-08-27",
+     "daysSinceUpdate": 7,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "503301",
+     "name": "MARY BRIDGE CHILDREN'S HOSPITAL",
+     "city": "TACOMA",
+     "state": "WA",
+     "locationName": "MultiCare Mary Bridge Children's Hospital",
+     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8057/911352172-1306952726_mary-bridge-childrens-hospital_standardcharges.csv",
+     "mrfHost": "sthpiprd.blob.core.windows.net",
+     "sourcePageUrl": "https://search.hospitalpriceindex.com/hpi2/machineReadable/MaryBridgeChildrensHospital/8057",
+     "lastUpdated": "2026-08-27",
+     "daysSinceUpdate": 7,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "504009",
+     "name": "NAVOS - INPATIENT SERVICES",
+     "city": "SEATTLE",
+     "state": "WA",
+     "locationName": "Navos Multi-Treatment Center",
+     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8166/910848698-1194728105_navos-multitreatment-center_standardcharges.csv",
+     "mrfHost": "sthpiprd.blob.core.windows.net",
+     "sourcePageUrl": "https://search.hospitalpriceindex.com/hpi2/machineReadable/NavosMultiTreatmentCenter/8166",
+     "lastUpdated": "2026-08-27",
+     "daysSinceUpdate": 8,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://northernlighthealth.org/cms-hpt.txt",
    "pointerHost": "northernlighthealth.org",
    "domains": [
@@ -18866,122 +19016,122 @@
    ]
   },
   {
-   "pointerUrl": "https://multicare.org/cms-hpt.txt",
-   "pointerHost": "multicare.org",
+   "pointerUrl": "https://munsonhealthcare.org/cms-hpt.txt",
+   "pointerHost": "munsonhealthcare.org",
    "domains": [
-    "multicare.org"
+    "munsonhealthcare.org"
    ],
    "facilityCount": 8,
    "facilities": [
     {
-     "ccn": "500015",
-     "name": "MULTICARE AUBURN MEDICAL CENTER",
-     "city": "AUBURN",
-     "state": "WA",
-     "locationName": "MultiCare Auburn Medical Center",
-     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8059/911352172-1255327201_multicare-auburn-medical-center_standardcharges.csv",
+     "ccn": "230058",
+     "name": "MUNSON HEALTHCARE GRAYLING HOSPITAL",
+     "city": "GRAYLING",
+     "state": "MI",
+     "locationName": "Munson Healthcare Grayling",
+     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8135/471161992_munson-healthcare-grayling_standardcharges.csv",
      "mrfHost": "sthpiprd.blob.core.windows.net",
-     "sourcePageUrl": "https://search.hospitalpriceindex.com/hpi2/machineReadable/AuburnMedicalCenter/8059",
-     "lastUpdated": "2026-08-27",
-     "daysSinceUpdate": 7,
+     "sourcePageUrl": "https://www.munsonhealthcare.org/patients-visitors/munson-healthcare-chargemaster-information",
+     "lastUpdated": "2026-04-17",
+     "daysSinceUpdate": 139,
      "staleOver365": false,
      "httpStatus": 200
     },
     {
-     "ccn": "500036",
-     "name": "YAKIMA VALLEY MEMoriaL",
-     "city": "YAKIMA",
-     "state": "WA",
-     "locationName": "MultiCare Yakima Memorial Hospital",
-     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/11188/910567263-1053373480_multicare-yakima-valley-memorial-hospital-association_standardcharges.csv",
+     "ccn": "230081",
+     "name": "MUNSON HEALTHCARE CADILLAC HOSPITAL",
+     "city": "CADILLAC",
+     "state": "MI",
+     "locationName": "Munson Healthcare Cadillac",
+     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8134/471156297_munson-healthcare-cadillac_standardcharges.csv",
      "mrfHost": "sthpiprd.blob.core.windows.net",
-     "sourcePageUrl": "https://search.hospitalpriceindex.com/hpi2/machineReadable/YakimaMemorial/11188",
-     "lastUpdated": "2026-08-27",
-     "daysSinceUpdate": 7,
+     "sourcePageUrl": "https://www.munsonhealthcare.org/patients-visitors/munson-healthcare-chargemaster-information",
+     "lastUpdated": "2026-04-17",
+     "daysSinceUpdate": 139,
      "staleOver365": false,
      "httpStatus": 200
     },
     {
-     "ccn": "500079",
-     "name": "MULTICARE GOOD SAMARITAN HOSPITAL",
-     "city": "PUYALLUP",
-     "state": "WA",
-     "locationName": "MultiCare Good Samaritan Hospital",
-     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8061/911352172-1841231461_good-samaritan-hospital_standardcharges.csv",
+     "ccn": "230097",
+     "name": "MUNSON MEDICAL CENTER",
+     "city": "TRAVERSE CITY",
+     "state": "MI",
+     "locationName": "Munson Medical Center",
+     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8137/381362830_munson-medical-center_standardcharges.csv",
      "mrfHost": "sthpiprd.blob.core.windows.net",
-     "sourcePageUrl": "https://search.hospitalpriceindex.com/hpi2/machineReadable/GoodSamaritanHospital/8061",
-     "lastUpdated": "2026-08-27",
-     "daysSinceUpdate": 7,
+     "sourcePageUrl": "https://www.munsonhealthcare.org/patients-visitors/munson-healthcare-chargemaster-information",
+     "lastUpdated": "2026-04-17",
+     "daysSinceUpdate": 139,
      "staleOver365": false,
      "httpStatus": 200
     },
     {
-     "ccn": "500119",
-     "name": "MULTICARE VALLEY HOSPITAL",
-     "city": "SPOKANE VALLEY",
-     "state": "WA",
-     "locationName": "MultiCare Valley Hospital",
-     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8064/911352172-1538345251_multicare-valley-hospital_standardcharges.csv",
+     "ccn": "230133",
+     "name": "MUNSON HEALTHCARE OTSEGO MEMoriaL HOSPITAL",
+     "city": "GAYLORD",
+     "state": "MI",
+     "locationName": "Munson Healthcare Otsego Memorial Hospital",
+     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8052/381303843_munson-healthcare-otsego-memorial-hospital_standardcharges.csv",
      "mrfHost": "sthpiprd.blob.core.windows.net",
-     "sourcePageUrl": "https://search.hospitalpriceindex.com/hpi2/machineReadable/ValleyHospital/8064",
-     "lastUpdated": "2025-07-28",
-     "daysSinceUpdate": 402,
-     "staleOver365": true,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "500129",
-     "name": "TACOMA GENERAL ALLENMORE HOSPITAL",
-     "city": "TACOMA",
-     "state": "WA",
-     "locationName": "MultiCare Tacoma General Hospital",
-     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8062/911352172-1366556227_tacoma-general-allenmore-hospital_standardcharges.csv",
-     "mrfHost": "sthpiprd.blob.core.windows.net",
-     "sourcePageUrl": "https://search.hospitalpriceindex.com/hpi2/machineReadable/TacomaGeneralHospital/8062",
-     "lastUpdated": "2026-08-27",
-     "daysSinceUpdate": 7,
+     "sourcePageUrl": "https://www.munsonhealthcare.org/patients-visitors/munson-healthcare-chargemaster-information",
+     "lastUpdated": "2026-04-17",
+     "daysSinceUpdate": 139,
      "staleOver365": false,
      "httpStatus": 200
     },
     {
-     "ccn": "500139",
-     "name": "CAPITAL MEDICAL CENTER",
-     "city": "OLYMPIA",
-     "state": "WA",
-     "locationName": "MultiCare Capital Medical Center",
-     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/9371/911352172-1841258639_multicare-capital-medical-center_standardcharges.csv",
+     "ccn": "230303",
+     "name": "MUNSON HEALTHCARE MANISTEE HOSPITAL",
+     "city": "MANISTEE",
+     "state": "MI",
+     "locationName": "Munson Healthcare Manistee",
+     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8130/380350304_munson-healthcare-manistee-hospital_standardcharges.csv",
      "mrfHost": "sthpiprd.blob.core.windows.net",
-     "sourcePageUrl": "https://search.hospitalpriceindex.com/hpi2/machineReadable/CapitalMedicalCenter/9371",
-     "lastUpdated": "2026-08-27",
-     "daysSinceUpdate": 7,
+     "sourcePageUrl": "https://www.munsonhealthcare.org/patients-visitors/munson-healthcare-chargemaster-information",
+     "lastUpdated": "2026-04-17",
+     "daysSinceUpdate": 139,
      "staleOver365": false,
      "httpStatus": 200
     },
     {
-     "ccn": "500154",
-     "name": "MULTICARE COVINGTON MEDICAL CENTER",
-     "city": "COVINGTON",
-     "state": "WA",
-     "locationName": "MultiCare Covington Medical Center",
-     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8060/911352172-1326564071_multicare-covington-medical-center_standardcharges.csv",
+     "ccn": "231300",
+     "name": "PAUL OLIVER MEMoriaL HOSPITAL",
+     "city": "FRANKFORT",
+     "state": "MI",
+     "locationName": "Munson Healthcare Paul Oliver Memorial Hospital",
+     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8138/381415623_paul-oliver-memorial-hospital_standardcharges.csv",
      "mrfHost": "sthpiprd.blob.core.windows.net",
-     "sourcePageUrl": "https://search.hospitalpriceindex.com/hpi2/machineReadable/CovingtonMedicalCenter/8060",
-     "lastUpdated": "2026-08-27",
-     "daysSinceUpdate": 7,
+     "sourcePageUrl": "https://www.munsonhealthcare.org/patients-visitors/munson-healthcare-chargemaster-information",
+     "lastUpdated": "2026-04-17",
+     "daysSinceUpdate": 139,
      "staleOver365": false,
      "httpStatus": 200
     },
     {
-     "ccn": "503301",
-     "name": "MARY BRIDGE CHILDREN'S HOSPITAL",
-     "city": "TACOMA",
-     "state": "WA",
-     "locationName": "MultiCare Mary Bridge Children's Hospital",
-     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8057/911352172-1306952726_mary-bridge-childrens-hospital_standardcharges.csv",
+     "ccn": "231301",
+     "name": "KALKASKA MEMoriaL HEALTH CENTER",
+     "city": "KALKASKA",
+     "state": "MI",
+     "locationName": "Kalkaska Memorial Health Center",
+     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8136/386032904_kalkaska-memorial-health-center_standardcharges.csv",
      "mrfHost": "sthpiprd.blob.core.windows.net",
-     "sourcePageUrl": "https://search.hospitalpriceindex.com/hpi2/machineReadable/MaryBridgeChildrensHospital/8057",
-     "lastUpdated": "2026-08-27",
-     "daysSinceUpdate": 7,
+     "sourcePageUrl": "https://www.munsonhealthcare.org/patients-visitors/munson-healthcare-chargemaster-information",
+     "lastUpdated": "2026-04-17",
+     "daysSinceUpdate": 139,
+     "staleOver365": false,
+     "httpStatus": 200
+    },
+    {
+     "ccn": "231322",
+     "name": "CHARLEVOIX AREA HOSPITAL",
+     "city": "CHARLEVOIX",
+     "state": "MI",
+     "locationName": "Munson Healthcare Charlevoix",
+     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8131/381459366_munson-healthcare-charlevoix-hospital_standardcharges.csv",
+     "mrfHost": "sthpiprd.blob.core.windows.net",
+     "sourcePageUrl": "https://www.munsonhealthcare.org/patients-visitors/munson-healthcare-chargemaster-information",
+     "lastUpdated": "2026-04-17",
+     "daysSinceUpdate": 140,
      "staleOver365": false,
      "httpStatus": 200
     }
@@ -20602,114 +20752,6 @@
      "sourcePageUrl": "https://www.methodisthealthsystem.org/methodist-celina-medical-center/billing-estimates/",
      "lastUpdated": "2026-03-23",
      "daysSinceUpdate": 164,
-     "staleOver365": false,
-     "httpStatus": 200
-    }
-   ]
-  },
-  {
-   "pointerUrl": "https://munsonhealthcare.org/cms-hpt.txt",
-   "pointerHost": "munsonhealthcare.org",
-   "domains": [
-    "munsonhealthcare.org"
-   ],
-   "facilityCount": 7,
-   "facilities": [
-    {
-     "ccn": "230058",
-     "name": "MUNSON HEALTHCARE GRAYLING HOSPITAL",
-     "city": "GRAYLING",
-     "state": "MI",
-     "locationName": "Munson Healthcare Grayling",
-     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8135/471161992_munson-healthcare-grayling_standardcharges.csv",
-     "mrfHost": "sthpiprd.blob.core.windows.net",
-     "sourcePageUrl": "https://www.munsonhealthcare.org/patients-visitors/munson-healthcare-chargemaster-information",
-     "lastUpdated": "2026-04-17",
-     "daysSinceUpdate": 139,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "230081",
-     "name": "MUNSON HEALTHCARE CADILLAC HOSPITAL",
-     "city": "CADILLAC",
-     "state": "MI",
-     "locationName": "Munson Healthcare Cadillac",
-     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8134/471156297_munson-healthcare-cadillac_standardcharges.csv",
-     "mrfHost": "sthpiprd.blob.core.windows.net",
-     "sourcePageUrl": "https://www.munsonhealthcare.org/patients-visitors/munson-healthcare-chargemaster-information",
-     "lastUpdated": "2026-04-17",
-     "daysSinceUpdate": 139,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "230097",
-     "name": "MUNSON MEDICAL CENTER",
-     "city": "TRAVERSE CITY",
-     "state": "MI",
-     "locationName": "Munson Medical Center",
-     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8137/381362830_munson-medical-center_standardcharges.csv",
-     "mrfHost": "sthpiprd.blob.core.windows.net",
-     "sourcePageUrl": "https://www.munsonhealthcare.org/patients-visitors/munson-healthcare-chargemaster-information",
-     "lastUpdated": "2026-04-17",
-     "daysSinceUpdate": 139,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "230133",
-     "name": "MUNSON HEALTHCARE OTSEGO MEMoriaL HOSPITAL",
-     "city": "GAYLORD",
-     "state": "MI",
-     "locationName": "Munson Healthcare Otsego Memorial Hospital",
-     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8052/381303843_munson-healthcare-otsego-memorial-hospital_standardcharges.csv",
-     "mrfHost": "sthpiprd.blob.core.windows.net",
-     "sourcePageUrl": "https://www.munsonhealthcare.org/patients-visitors/munson-healthcare-chargemaster-information",
-     "lastUpdated": "2026-04-17",
-     "daysSinceUpdate": 139,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "230303",
-     "name": "MUNSON HEALTHCARE MANISTEE HOSPITAL",
-     "city": "MANISTEE",
-     "state": "MI",
-     "locationName": "Munson Healthcare Manistee",
-     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8130/380350304_munson-healthcare-manistee-hospital_standardcharges.csv",
-     "mrfHost": "sthpiprd.blob.core.windows.net",
-     "sourcePageUrl": "https://www.munsonhealthcare.org/patients-visitors/munson-healthcare-chargemaster-information",
-     "lastUpdated": "2026-04-17",
-     "daysSinceUpdate": 139,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "231300",
-     "name": "PAUL OLIVER MEMoriaL HOSPITAL",
-     "city": "FRANKFORT",
-     "state": "MI",
-     "locationName": "Munson Healthcare Paul Oliver Memorial Hospital",
-     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8138/381415623_paul-oliver-memorial-hospital_standardcharges.csv",
-     "mrfHost": "sthpiprd.blob.core.windows.net",
-     "sourcePageUrl": "https://www.munsonhealthcare.org/patients-visitors/munson-healthcare-chargemaster-information",
-     "lastUpdated": "2026-04-17",
-     "daysSinceUpdate": 139,
-     "staleOver365": false,
-     "httpStatus": 200
-    },
-    {
-     "ccn": "231301",
-     "name": "KALKASKA MEMoriaL HEALTH CENTER",
-     "city": "KALKASKA",
-     "state": "MI",
-     "locationName": "Kalkaska Memorial Health Center",
-     "mrfUrl": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8136/386032904_kalkaska-memorial-health-center_standardcharges.csv",
-     "mrfHost": "sthpiprd.blob.core.windows.net",
-     "sourcePageUrl": "https://www.munsonhealthcare.org/patients-visitors/munson-healthcare-chargemaster-information",
-     "lastUpdated": "2026-04-17",
-     "daysSinceUpdate": 139,
      "staleOver365": false,
      "httpStatus": 200
     }
@@ -38684,6 +38726,30 @@
    ]
   },
   {
+   "pointerUrl": "https://bethanychildrens.org/cms-hpt.txt",
+   "pointerHost": "bethanychildrens.org",
+   "domains": [
+    "bethanychildrens.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "373303",
+     "name": "THE CHILDREN'S CENTER, INC",
+     "city": "BETHANY",
+     "state": "OK",
+     "locationName": "The Children's Center, Inc.",
+     "mrfUrl": "https://www.bethanychildrens.org/wp-content/uploads/2026/01/bethany-childrens-health-center_standardcharges-v3.0.csv",
+     "mrfHost": "bethanychildrens.org",
+     "sourcePageUrl": "https://www.bethanychildrens.org/family-support/program-pricing/",
+     "lastUpdated": "2025-11-01",
+     "daysSinceUpdate": 307,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://bgh.org/cms-hpt.txt",
    "pointerHost": "bgh.org",
    "domains": [
@@ -39664,6 +39730,30 @@
      "daysSinceUpdate": 306,
      "staleOver365": false,
      "httpStatus": 206
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://bshfw.com/cms-hpt.txt",
+   "pointerHost": "bshfw.com",
+   "domains": [
+    "bshfw.com"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "450880",
+     "name": "BAYLOR SCOTT AND WHITE SURGICAL HOSPITAL FORTWORTH",
+     "city": "FORT WORTH",
+     "state": "TX",
+     "locationName": "Baylor Scott & White Surgical Hospital - Fort Worth",
+     "mrfUrl": "https://mrfs.hyvehealthcare.com/USPI/752658178_fort-worth-surgicare-partners,-ltd._standardcharges.json",
+     "mrfHost": "mrfs.hyvehealthcare.com",
+     "sourcePageUrl": "https://bshfw.com/hospital-pricing-information/",
+     "lastUpdated": "2026-04-14",
+     "daysSinceUpdate": 143,
+     "staleOver365": false,
+     "httpStatus": 200
     }
    ]
   },
@@ -52556,6 +52646,30 @@
    ]
   },
   {
+   "pointerUrl": "https://lifeways.org/cms-hpt.txt",
+   "pointerHost": "lifeways.org",
+   "domains": [
+    "lifeways.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "134009",
+     "name": "LIFEWAYS HOSPITAL",
+     "city": "BOISE",
+     "state": "ID",
+     "locationName": "Lifeways Inc, Boise, Idaho",
+     "mrfUrl": "https://lifeways.org/wp-content/uploads/2026/04/931215381_lifeways-inc_standardcharges.csv",
+     "mrfHost": "lifeways.org",
+     "sourcePageUrl": "https://www.lifeways.org/price-transparency/",
+     "lastUpdated": "2026-03-11",
+     "daysSinceUpdate": 177,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://limamemorial.org/cms-hpt.txt",
    "pointerHost": "limamemorial.org",
    "domains": [
@@ -53536,6 +53650,30 @@
      "daysSinceUpdate": 149,
      "staleOver365": false,
      "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://martincountyhospital.org/cms-hpt.txt",
+   "pointerHost": "martincountyhospital.org",
+   "domains": [
+    "martincountyhospital.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "451333",
+     "name": "MARTIN COUNTY HOSPITAL DISTRICT",
+     "city": "STANTON",
+     "state": "TX",
+     "locationName": "Martin County Hospital",
+     "mrfUrl": "https://app.box.com/shared/static/fzzbomwsviuu1zfrqn1n2hza6fc5p7ul.csv",
+     "mrfHost": "app.box.com",
+     "sourcePageUrl": "https://us.flow-prod.boomi.com/f2a4d421-8a52-4b09-8a4c-8476aae2d651/play/ptt?flow-id=a91f6d2f-a3ad-4257-9185-99463fe7c6a3&flow-version-id=1c1ee65c-1ada-473e-bde2-3aa7100683ac&hospital-id=68",
+     "lastUpdated": "2026-07-01",
+     "daysSinceUpdate": 65,
+     "staleOver365": false,
+     "httpStatus": 404
     }
    ]
   },
@@ -55532,6 +55670,30 @@
    ]
   },
   {
+   "pointerUrl": "https://mobridgehospital.org/cms-hpt.txt",
+   "pointerHost": "mobridgehospital.org",
+   "domains": [
+    "mobridgehospital.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "431325",
+     "name": "MOBRIDGE REGIONAL HOSPITAL - CAH",
+     "city": "MOBRIDGE",
+     "state": "SD",
+     "locationName": "Mobridge Regional Hospital and Clinics",
+     "mrfUrl": "https://urldefense.com/v3/__https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbMRHMOBRIDGESD&type=CDMWithoutLabel&fileType=CSV__;!!CqLityr3mSQ!AKx-M_rG71qkJo1HSQ1yrQTjxN2OZqz2DeKw1lIHrpmqPs9dRB-Fez9jkozXXC7eKx11i0aO49W67_G9SiYNbtWA4XayKl2k$",
+     "mrfHost": "urldefense.com",
+     "sourcePageUrl": "https://urldefense.com/v3/__https://apps.para-hcfs.com/PTT/FinalLinks/Mobridge_Regional.aspx__;!!CqLityr3mSQ!AKx-M_rG71qkJo1HSQ1yrQTjxN2OZqz2DeKw1lIHrpmqPs9dRB-Fez9jkozXXC7eKx11i0aO49W67_G9SiYNbtWA4fueKQLl$",
+     "lastUpdated": "2026-07-16",
+     "daysSinceUpdate": 50,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://modocmedicalcenter.org/cms-hpt.txt",
    "pointerHost": "modocmedicalcenter.org",
    "domains": [
@@ -56199,6 +56361,30 @@
      "lastUpdated": null,
      "daysSinceUpdate": 0,
      "staleOver365": null,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://muhealth.org/cms-hpt.txt",
+   "pointerHost": "muhealth.org",
+   "domains": [
+    "muhealth.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "260141",
+     "name": "UNIVERSITY OF MISSOURI HEALTH CARE",
+     "city": "COLUMBIA",
+     "state": "MO",
+     "locationName": "University of Missouri Health Care",
+     "mrfUrl": "https://www.muhealth.org/sites/default/files/finance/436003859_university-of-missouri-health-care_standardcharges.csv",
+     "mrfHost": "muhealth.org",
+     "sourcePageUrl": "https://www.muhealth.org/billing/pricing",
+     "lastUpdated": "2025-12-15",
+     "daysSinceUpdate": 263,
+     "staleOver365": false,
      "httpStatus": 200
     }
    ]
@@ -57856,6 +58042,30 @@
      "daysSinceUpdate": 0,
      "staleOver365": null,
      "httpStatus": 500
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://northvalleyhealth.org/cms-hpt.txt",
+   "pointerHost": "northvalleyhealth.org",
+   "domains": [
+    "northvalleyhealth.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "241337",
+     "name": "NORTH VALLEY HEALTH CENTER",
+     "city": "WARREN",
+     "state": "MN",
+     "locationName": "Warren Community Hospital, Inc. d/b/a North Valley Health Center",
+     "mrfUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbNVHCWARRENMN&type=CDMWithoutLabel&fileType=CSV",
+     "mrfHost": "apps.para-hcfs.com",
+     "sourcePageUrl": "https://apps.para-hcfs.com/PTT/FinalLinks/North_Valley_V2.aspx",
+     "lastUpdated": "2026-08-03",
+     "daysSinceUpdate": 32,
+     "staleOver365": false,
+     "httpStatus": 200
     }
    ]
   },
@@ -67460,6 +67670,30 @@
    ]
   },
   {
+   "pointerUrl": "https://ufhealthjax.org/cms-hpt.txt",
+   "pointerHost": "ufhealthjax.org",
+   "domains": [
+    "ufhealthjax.org"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "100001",
+     "name": "SHANDS JACKSONVILLE",
+     "city": "JACKSONVILLE",
+     "state": "FL",
+     "locationName": "Shands Jacksonville Medical Center",
+     "mrfUrl": "https://ufhealth.pt.panaceainc.com/MRFDownload/ufhealth/uf-jax",
+     "mrfHost": "ufhealth.pt.panaceainc.com",
+     "sourcePageUrl": "https://ufhealthjax.org/patients-and-visitors/insurance-billing-finance/procedure-cost#standard-charges",
+     "lastUpdated": "2026-03-31",
+     "daysSinceUpdate": 157,
+     "staleOver365": false,
+     "httpStatus": 200
+    }
+   ]
+  },
+  {
    "pointerUrl": "https://uhcc.com/cms-hpt.txt",
    "pointerHost": "uhcc.com",
    "domains": [
@@ -67840,6 +68074,30 @@
      "daysSinceUpdate": 184,
      "staleOver365": false,
      "httpStatus": 206
+    }
+   ]
+  },
+  {
+   "pointerUrl": "https://usmdarlington.com/cms-hpt.txt",
+   "pointerHost": "usmdarlington.com",
+   "domains": [
+    "usmdarlington.com"
+   ],
+   "facilityCount": 1,
+   "facilities": [
+    {
+     "ccn": "450872",
+     "name": "USMD HOSPITAL AT ARLINGTON L P",
+     "city": "ARLINGTON",
+     "state": "TX",
+     "locationName": "USMD Hospital at Arlington LLC",
+     "mrfUrl": "https://assets.usmdarlington.com/Images/Sites/U/USMDArlington/731662763_usmd-hospital-at-arlington-llc_standardcharges.csv",
+     "mrfHost": "assets.usmdarlington.com",
+     "sourcePageUrl": "https://usmdarlington.com/price-transparency",
+     "lastUpdated": "2026-07-13",
+     "daysSinceUpdate": 53,
+     "staleOver365": false,
+     "httpStatus": 200
     }
    ]
   },

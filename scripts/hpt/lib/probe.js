@@ -1,5 +1,7 @@
 'use strict';
 const zlib = require('zlib');
+const http = require('http');
+const https = require('https');
 const { parseCSV } = require('./util');
 const { BROWSER_HEADERS, unblockerGet, activeProvider } = require('./fetch');
 
@@ -223,17 +225,73 @@ function decompressHead(buf, kind) {
 }
 
 async function rangedRead(url, cap, timeoutMs) {
-  const ac = new AbortController();
-  const t = setTimeout(() => ac.abort(), timeoutMs);
   try {
-    const r = await fetch(url, {
-      redirect: 'follow', signal: ac.signal,
-      headers: { ...BROWSER_HEADERS, Range: `bytes=0-${cap - 1}` }
+    const response = await requestCapped(url, {
+      timeoutMs, cap, headers: { ...BROWSER_HEADERS, Range: `bytes=0-${cap - 1}` }
     });
-    if (!r.ok && r.status !== 206) return null;
-    return await readCapped(r, cap);
+    if (response.status < 200 || response.status >= 300) return null;
+    return response.body;
   } catch (_e) { return null; }
-  finally { clearTimeout(t); }
+}
+
+function requestCapped(url, options = {}, redirects = 6) {
+  return new Promise((resolve, reject) => {
+    let parsed;
+    try { parsed = new URL(url); } catch (error) { reject(error); return; }
+    const client = parsed.protocol === 'http:' ? http : https;
+    const method = options.method || 'GET';
+    const cap = Number(options.cap || 0);
+    let settled = false;
+    let deadline = null;
+    const finish = value => {
+      if (!settled) { settled = true; if (deadline) clearTimeout(deadline); resolve(value); }
+    };
+    const fail = error => {
+      if (!settled) { settled = true; if (deadline) clearTimeout(deadline); reject(error); }
+    };
+    const request = client.request(parsed, {
+      method,
+      headers: options.headers || {},
+      timeout: Number(options.timeoutMs || 45000)
+    }, response => {
+      response.on('error', fail);
+      const status = Number(response.statusCode || 0);
+      const location = response.headers.location;
+      if (location && status >= 300 && status < 400 && redirects > 0) {
+        if (deadline) clearTimeout(deadline);
+        response.resume();
+        requestCapped(new URL(location, parsed).toString(), options, redirects - 1).then(finish, fail);
+        return;
+      }
+      if (method === 'HEAD') {
+        response.resume();
+        finish({ status, headers: response.headers, body: Buffer.alloc(0), finalUrl: parsed.toString() });
+        return;
+      }
+      const chunks = [];
+      let total = 0;
+      response.on('data', chunk => {
+        if (settled) return;
+        const buffer = Buffer.from(chunk);
+        const keep = cap ? buffer.slice(0, Math.max(0, cap - total)) : buffer;
+        if (keep.length) chunks.push(keep);
+        total += keep.length;
+        if (cap && total >= cap) {
+          finish({ status, headers: response.headers, body: Buffer.concat(chunks), finalUrl: parsed.toString() });
+          response.destroy();
+          request.destroy();
+        }
+      });
+      response.on('end', () => finish({
+        status, headers: response.headers, body: Buffer.concat(chunks), finalUrl: parsed.toString()
+      }));
+    });
+    request.on('timeout', () => request.destroy(new Error('request timeout')));
+    request.on('error', fail);
+    deadline = setTimeout(() => request.destroy(new Error('request deadline exceeded')),
+      Number(options.timeoutMs || 45000));
+    request.end();
+  });
 }
 
 async function readCapped(res, cap = HEAD_BYTES) {
@@ -258,67 +316,62 @@ async function readCapped(res, cap = HEAD_BYTES) {
  * never substituted for the declared date.
  */
 async function probeMrf(url, { timeoutMs = 45000, useUnblocker = true } = {}) {
-  const out = { url, checkedAt: new Date().toISOString() };
+  const out = { url, checkedAt: new Date().toISOString(), requestCount: 0, bytesRead: 0 };
 
   // HEAD is cheap and gives size + Last-Modified even when Range is refused.
   try {
-    const ac = new AbortController();
-    const t = setTimeout(() => ac.abort(), timeoutMs);
-    try {
-      const r = await fetch(url, { method: 'HEAD', redirect: 'follow', signal: ac.signal, headers: BROWSER_HEADERS });
-      out.httpStatus = r.status;
-      out.httpLastModified = toISODate(r.headers.get('last-modified'));
-      out.httpLastModifiedRaw = r.headers.get('last-modified') || null;
-      out.bytes = Number(r.headers.get('content-length') || 0) || null;
-      out.contentType = r.headers.get('content-type') || null;
-    } finally { clearTimeout(t); }
+    out.requestCount++;
+    const r = await requestCapped(url, { method: 'HEAD', timeoutMs, headers: BROWSER_HEADERS });
+    out.httpStatus = r.status;
+    out.httpLastModified = toISODate(r.headers['last-modified']);
+    out.httpLastModifiedRaw = r.headers['last-modified'] || null;
+    out.bytes = Number(r.headers['content-length'] || 0) || null;
+    out.contentType = r.headers['content-type'] || null;
   } catch (e) {
     out.headError = String((e && e.message) || e).slice(0, 120);
   }
 
   // Ranged GET for the metadata header. Servers that ignore Range return 200
-  // and the full body, so the read is capped and then cancelled either way.
+  // and the full body, so the socket reader enforces the byte cap either way.
   try {
-    const ac = new AbortController();
-    const t = setTimeout(() => ac.abort(), timeoutMs);
-    try {
-      const r = await fetch(url, {
-        redirect: 'follow', signal: ac.signal,
-        headers: { ...BROWSER_HEADERS, Range: `bytes=0-${HEAD_BYTES - 1}` }
-      });
-      out.rangeStatus = r.status;
-      if (out.httpStatus === undefined) out.httpStatus = r.status;
-      if (r.status === 403 || r.status === 429) {
-        out.blocked = true;
-      } else if (r.ok || r.status === 206) {
-        const buf = await readCapped(r, HEAD_BYTES);
-        out.fileKind = sniffKind(buf, out.contentType);
-        if (!out.contentType) out.contentType = r.headers.get('content-type') || null;
-        let payload = buf, payloadKind = out.fileKind;
-        if (out.fileKind === 'zip' || out.fileKind === 'gzip') {
-          // 16 KB of compressed data rarely inflates to a full header row, so
-          // pull a larger window before decompressing.
-          const wide = await rangedRead(url, COMPRESSED_BYTES, timeoutMs);
-          const inflated = await decompressHead(wide || buf, out.fileKind);
-          if (inflated) {
-            payload = inflated;
-            payloadKind = sniffKind(inflated, null);
-            out.innerKind = payloadKind;
-          } else {
-            out.decompressFailed = true;
-          }
+    out.requestCount++;
+    const r = await requestCapped(url, { timeoutMs, cap: HEAD_BYTES,
+      headers: { ...BROWSER_HEADERS, Range: `bytes=0-${HEAD_BYTES - 1}` } });
+    out.rangeStatus = r.status;
+    if (out.httpStatus === undefined) out.httpStatus = r.status;
+    if (r.status === 403 || r.status === 429) {
+      out.blocked = true;
+    } else if (r.status >= 200 && r.status < 300) {
+      const buf = r.body;
+      out.bytesRead += buf.length;
+      out.fileKind = sniffKind(buf, out.contentType);
+      if (!out.contentType) out.contentType = r.headers['content-type'] || null;
+      let payload = buf, payloadKind = out.fileKind;
+      if (out.fileKind === 'zip' || out.fileKind === 'gzip') {
+        // 16 KB of compressed data rarely inflates to a full header row, so
+        // pull a larger window before decompressing.
+        out.requestCount++;
+        const wide = await rangedRead(url, COMPRESSED_BYTES, timeoutMs);
+        out.bytesRead += wide ? wide.length : 0;
+        const inflated = await decompressHead(wide || buf, out.fileKind);
+        if (inflated) {
+          payload = inflated;
+          payloadKind = sniffKind(inflated, null);
+          out.innerKind = payloadKind;
+        } else {
+          out.decompressFailed = true;
         }
-        const meta = extractDeclared(payload, payloadKind);
-        out.declaredRaw = meta.raw;
-        out.declaredLastUpdated = toISODate(meta.raw);
-        out.cmsVersion = meta.version;
-        // Identifying fields, used to corroborate ambiguous name matches.
-        out.mrfAddress = meta.address || null;
-        out.mrfLocationName = meta.locationName || null;
-        out.mrfLicenseState = meta.licenseState || null;
-        out.mrfHospitalName = meta.hospitalName || null;
       }
-    } finally { clearTimeout(t); }
+      const meta = extractDeclared(payload, payloadKind);
+      out.declaredRaw = meta.raw;
+      out.declaredLastUpdated = toISODate(meta.raw);
+      out.cmsVersion = meta.version;
+      // Identifying fields, used to corroborate ambiguous name matches.
+      out.mrfAddress = meta.address || null;
+      out.mrfLocationName = meta.locationName || null;
+      out.mrfLicenseState = meta.licenseState || null;
+      out.mrfHospitalName = meta.hospitalName || null;
+    }
   } catch (e) {
     out.rangeError = String((e && e.message) || e).slice(0, 120);
   }
@@ -360,4 +413,5 @@ async function probeMrf(url, { timeoutMs = 45000, useUnblocker = true } = {}) {
   return out;
 }
 
-module.exports = { probeMrf, toISODate, sniffKind, extractDeclared, normalizeVersion, decompressHead, licenseStateFromHeaders };
+module.exports = { probeMrf, toISODate, sniffKind, extractDeclared, normalizeVersion,
+  decompressHead, licenseStateFromHeaders, requestCapped };

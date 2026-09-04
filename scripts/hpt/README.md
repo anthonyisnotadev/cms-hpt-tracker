@@ -54,7 +54,7 @@ state lands in `cms_data/hpt/` (already gitignored).
 --source=search` supersedes it.
 
 ```bash
-# free: everything discoverable without spending anything
+# public and open-data discovery, with no paid API calls
 node scripts/hpt/run.js seed
 node scripts/hpt/run.js pointers                      # ~1,400 seeded domains
 node scripts/hpt/run.js match
@@ -64,8 +64,8 @@ node scripts/hpt/run.js verify
 node scripts/hpt/run.js corroborate                   # settle cross-state candidates
 node scripts/hpt/run.js match
 
-# then the cheap paths, for whatever is still missing
-node scripts/hpt/run.js candidates --source=search    # Serper free tier
+# then the optional account-backed paths, for whatever is still missing
+node scripts/hpt/run.js candidates --source=search    # configured search provider
 node scripts/hpt/run.js verify
 node scripts/hpt/run.js adjudicate                    # cents
 node scripts/hpt/run.js match
@@ -287,66 +287,140 @@ re-run `pointers && match`. Nothing needs editing JSON directly.
 
 ## Finding hospitals with no domain - `find-domains.js`
 
-`gaps.csv`'s largest bucket is hospitals with no working domain at all - nothing
-to crawl and nobody to email. `node scripts/hpt/find-domains.js` attacks that
-list directly, cheapest source first, and gates every hit on evidence:
+The domain finder starts from the currently published `data/hpt-audit/gaps.csv`.
+It supports four separate queues: hospitals with no domain (`missing`), failed
+old domains (`stale`), unresolved pointer names (`name`), and blocked domains
+(`blocked`). Federal facilities and unrelated remediation buckets are excluded.
 
-| phase | what | cost |
-|---|---|---|
-| 1 | heuristic name-slug domains + any `seeded_domain`, one GET to `/cms-hpt.txt` each | free |
-| 2 | optional real web search (`--search`), with every result verified the same way | provider-dependent |
-| 3 | model-proposed domains for whatever is left, batched, verified the same way | cents |
-| 4 | homepage check for hospitals still unresolved → `site-found` | free |
-| 5 | **state corroboration**: probe each matched MRF header, compare `license_number\|<ST>` to the hospital's state | free |
-| 6 | **adjudication**: `lib/adjudicate.js` on any name match under 0.85 | cents |
-
-Phases 5 and 6 are not optional polish, they are the difference between a
-worklist and garbage. Measured on the real 1,283-hospital gap list:
-
-- 181 rows passed the name match at the 0.55 threshold
-- state corroboration demoted **66** of them - `TEXAS COUNTY MEMORIAL HOSPITAL` (MO) had
-  matched `Texas Health Arlington Memorial Hospital`, and two different Kentucky
-  hospitals had both matched the same generic `University Hospital` entry
-- adjudication dropped **13** more that were in-state but the wrong facility -
-  `Ochsner Lafayette General` vs `Ochsner Medical Center - Kenner`,
-  `Essentia Health Duluth` vs `Essentia Health-Ada`, three Baylor Scott & White
-  facilities in different cities
-
-Final: **102 verified** (real `cms-hpt.txt` that names the hospital, plus a live
-`mrf_url`), 79 `unconfirmed` for manual review, 351 `site-found` (website
-confirmed, no pointer file - hand those to `recover --llm`), 751 `none`.
-
-State corroboration also fills in `mrf_last_updated` and `cms_version` for free, so
-newly-found hospitals arrive with their compliance status already known.
+The normal command is intentionally stage-only:
 
 ```bash
-node scripts/hpt/find-domains.js --limit 25        # trial
-node scripts/hpt/find-domains.js                   # full list, ~45 min
-node scripts/hpt/find-domains.js --free --retry-status=none --no-heuristics
-node scripts/hpt/find-domains.js --search --retry-status=none --no-heuristics
-node scripts/hpt/run.js gaps --import=data/hpt-audit/found_domains.csv
+npm run find:domains:trial
+
+# Equivalent explicit command
+npm run find:domains -- --sources=prior,pointers,wikidata,osm,heuristic --queue=missing,stale --sample=100 --sample-mode=stratified --seed=20260903
 ```
 
-The `--free` command makes one bulk Wikidata request and tests its official-site
-domains only against cached `none` rows. It needs no key and makes no
-per-hospital search request. The next command is the higher-recall search-provider
-pass for anything still missing. Both avoid repeating the already-failed slug
-guesses. The final command imports the `verified` and `site-found` domains into
-the main tracker.
-`unconfirmed` rows deliberately have a blank `resolved_domain` and are not
-imported without manual review. Configure search with
-`HPT_SEARCH=serper|decodo|exa` and that provider's credentials.
+The 100-hospital trial consistently selects 80 missing-domain rows and 20
+stale-domain rows, distributed across states and hospital types. The seed makes
+the selection reproducible. Remove `--sample=100` for the full current queue.
 
-Two things worth knowing. Hospitals already in `cms_data/outreach.json` are
-skipped by default (`--include-known` to override) because the gap list goes
-stale against fieldwork done by hand. And the DNS pre-check uses `dns.Resolver`,
-never `dns.lookup`: the OS resolver ignores timeouts and measured 11 seconds per
-NXDOMAIN, worse than the HTTP request it replaces; c-ares with a 1.5s timeout
-does the same lookup in ~20ms and takes the pass from hours to minutes.
+Candidate sources are treated only as leads. The default trial is free-first;
+Serper and OpenRouter are optional account-backed services.
 
-The finder itself does not write the manifest, `domains.json`, or
-`outreach.json`; its CSV is import-ready, and the explicit `gaps --import`
-command is the step that updates `domains.json`.
+| source | use |
+|---|---|
+| prior local results | recheck older discoveries against the current queue |
+| retained pointers | look for unmatched location names in the protected pointer archive |
+| inverse pointer/MRF pass | inspect unrepresented pointer-declared MRF headers and match them back to roster facilities |
+| stale domains | retry the old site and follow a homepage redirect to a new host |
+| archived pointers | use historical pointer source-page hosts as leads, then verify them live |
+| CMS relationships | connect facilities through enrollment, ownership, and change-of-ownership identifiers |
+| NPPES | use matched organization aliases, public endpoints, and exact resolved siblings |
+| resolved siblings | test domains already verified for a distinctively named same-state sibling facility |
+| protected contacts | test organization email domains in memory without writing contact values |
+| IRS Form 990 | read nonprofit filing websites from cached official batch archives |
+| GLM through OpenRouter | suggest up to three official domains from CMS identity and sanitized NPPES aliases |
+| Serper search | spend one cached query per selected hospital and retain ranked official-domain leads |
+| Wikidata | load official-site candidates in one cached bulk query |
+| OpenStreetMap | match website tags using name, phone, address, ZIP, and distance |
+| heuristics | try name-based `.org` and `.com` guesses last |
+
+OpenStreetMap is queried through Overpass in sequential state-sized batches.
+The script does not use the public Nominatim geocoder or scrape a search engine.
+OpenStreetMap data is provided by OpenStreetMap contributors under the Open Data
+Commons Open Database License (ODbL); see
+<https://www.openstreetmap.org/copyright>. The optional Serper search path uses
+the configured Serper account. The optional `llm-domain`, `--llm-review`, and
+`--llm-name-match` paths use the configured OpenRouter account. Source responses
+and verification results are cached in the ignored staging directory so
+interrupted runs can resume without publishing raw provider output.
+
+A lead becomes `verified` only after all of these checks agree:
+
+1. The domain serves a real root `/cms-hpt.txt`.
+2. A specific pointer entry names the hospital strongly enough.
+3. The MRF URL comes from that same pointer entry.
+4. A capped header request reaches the MRF without downloading the whole file.
+5. The MRF license state agrees with the CMS roster.
+6. The pointer and MRF identity fields do not conflict with the roster.
+
+Generic names such as `Community Hospital` also require concrete city, ZIP, or
+street evidence. A working homepage without the complete pointer and MRF chain
+is `site-found`, not verified, and never receives `resolved_domain`.
+
+All outputs stay under the ignored
+`data/hpt-audit/.domain-discovery/` directory:
+
+- `candidates.csv` records every CCN/domain pair and its source provenance.
+- `evidence.csv` records every direct verification attempt.
+- `verified.csv` contains only fully verified, unconflicted assignments.
+- `review.csv` contains partial, blocked, conflicting, and rejected evidence.
+- `manual_search.csv` supplies exact phone, address, and name searches for what remains.
+- `run.json` records input hashes, settings, request and byte totals, status totals by queue and source, and the stage-only invariant.
+
+The trial hashes `domains.json`, the public audit CSVs, `pointers.json`, and
+`tracker.html` before and after running. It stops with an error if any canonical
+file changes. Fetched pointer contacts are obfuscated before a staged pointer is
+written to disk.
+
+Useful controls:
+
+```bash
+npm run find:domains -- --offline --sample=100
+npm run find:domains -- --retry-status=none,blocked --sample=100
+npm run find:domains -- --retry-reason=network-error --sample=100 --concurrency=4
+npm run find:domains -- --reuse-candidates --retry-reason=network-error --sample=100 --concurrency=4
+npm run find:domains -- --reuse-candidates --sample=100 --llm-review --model=z-ai/glm-5.3-flash
+npm run find:domains -- --reuse-candidates --sample=100 --llm-review --llm-retry-errors --llm-timeout=120000
+npm run find:domains -- --candidate-file=data/hpt-audit/.domain-discovery/llm_priority.csv --stage-dir=data/hpt-audit/.domain-discovery/promotion-ready
+npm run find:domains -- --candidate-file=data/hpt-audit/.domain-discovery/llm_priority.csv --stage-dir=data/hpt-audit/.domain-discovery/promotion-ready-llm --llm-name-match --model=z-ai/glm-5.3-flash
+npm run find:domains -- --sources=prior,pointers --queue=name,blocked --llm-name-match --model=z-ai/glm-5.3-flash
+npm run find:domains -- --sources=inverse --queue=missing,stale --inverse-cache=data/hpt-audit/.domain-discovery/shared-inverse-cache.json --llm-name-match --model=z-ai/glm-5.3-flash
+npm run find:domains -- --sources=archive --queue=stale --llm-name-match --model=z-ai/glm-5.3-flash
+npm run find:domains:relationships
+npm run find:domains:glm
+npm run find:domains:serper
+npm run find:domains -- --sources=nppes,siblings,contacts,irs990,llm-domain --queue=missing --relationship-cache=data/hpt-audit/.domain-discovery/relationships-all/source-cache --llm-name-match --model=z-ai/glm-5.3-flash
+npm run find:domains -- --limit=25
+npm run find:domains -- --max-candidates=8 --concurrency=8
+```
+
+Promotion is a separate, explicit action after review:
+
+```bash
+npm run find:domains -- --promote=data/hpt-audit/.domain-discovery/verified.csv
+npm run find:domains -- --promote-safe=data/hpt-audit/.domain-discovery/verified.csv
+```
+
+Only `verified` rows marked `eligible` are accepted. A verified replacement for
+a stale domain must also be marked `approved=yes`. Promotion refuses multiple
+domains or MRF URLs for one CCN, copies only protected pointer text, updates the
+public manifest/compliance/gap files incrementally, and rebuilds the pointer
+index and tracker. `gaps --import` remains available for deliberate manual
+corrections, but discovery output should not be imported wholesale through it.
+`--promote-safe` filters the file to `eligible` and `already-assigned` rows, so
+replacement candidates and conflicts remain staged for review.
+
+`--llm-review` is an optional OpenRouter name-adjudication pass. It requires
+`OPENROUTER_API_KEY` and defaults to `z-ai/glm-5.3-flash`. The model sees only
+public facility identity and source metadata, never pointer contacts. Results
+are cached in `llm-cache.json` and written to `llm_review.csv`. High-confidence
+matches that pass deterministic guardrails are also written to
+`llm_priority.csv`. A model decision
+can prioritize or deprioritize another verification attempt, but cannot populate
+`resolved_domain`, override a hard identity conflict, or qualify a row for
+promotion. Specialty mismatches are downgraded to manual review even when the
+model returns a high-confidence match. `--llm-retry-errors` retries only cached
+provider errors and timeouts. `--llm-status=review` and
+`--llm-reason=reason-one,reason-two` can restrict the pass to particular staged
+outcomes so unrelated candidates do not consume model calls.
+
+`--llm-name-match` applies at the later verification stage. It lets a
+high-confidence same-facility ruling satisfy only the pointer-name gate for a
+rename or alias. The hospital-hosted pointer, capped MRF-header request, license
+state, location, uniqueness, and conflict checks remain required. The ruling
+and token counts are recorded with the evidence row.
 
 ## External link exports as leads - `verify-external-links.js`
 
