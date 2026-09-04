@@ -1613,5 +1613,37 @@
       "checkedOn": "2026-09-04",
       "note": "The root cms-hpt.txt returned HTTP 400 on 2026-09-04, preventing automated pointer retrieval. The 41,119,335-byte ZIP is directly accessible and contains one CSV named 710578871_EUREKA SPRINGS HOSPITAL_standardcharges.csv. The supplied CSV header uses a legacy custom layout rather than the current CMS template, and reviewed rows report Updated Timestamp 2024-02-01. ZIP compression itself is permitted; the failing determination is based on pointer access and the outdated CSV layout. Source page: https://www.eurekaspringshospital.com/getpage.php?name=pricetransparency."
     }
+  },
+  "040781": {
+    "ccn": "040781",
+    "name": "Helena Regional Medical Center",
+    "city": "Helena",
+    "state": "AR",
+    "status": "awaiting-reply",
+    "followUpOn": "2026-10-04",
+    "createdAt": "2026-09-04T06:45:05.296Z",
+    "updatedAt": "2026-09-04T06:45:05.297Z",
+    "entries": [
+      {
+        "id": "mtmlaa35-4zirkv",
+        "kind": "email",
+        "at": "2026-09-04T06:45:05.297Z",
+        "subject": "Missing Hospital Price Transparency Files",
+        "to": "R***@HelenaHospital.com",
+        "body": "Hello,\n\nI’m doing some research into hospital price transparency and have been trying to locate Helena Regional Medical Center’s machine-readable standard charges file.\n\nI checked the hospital’s website but could not find a price-transparency page or downloadable CSV or JSON file:\n\nhttps://helenahospital.com/\n\nThe required cms-hpt.txt file also returns a not-found response:\n\nhttps://helenahospital.com/cms-hpt.txt\n\nCMS’s Hospital Price Transparency requirements call for hospitals to publish a machine-readable standard charges file and make it discoverable through a root-level cms-hpt.txt file.\n\nCould you point me to the hospital’s current MRF? If one is not currently available, I’d appreciate it if this could be forwarded to whoever handles the hospital’s billing, compliance, or website content.\n\nI’ll plan to follow up in 30 days so I can continue my research. Happy to provide any additional details that would be useful.\n\nThanks so much,\n\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
+        "sentAt": "2026-09-04",
+        "outcome": "none"
+      }
+    ],
+    "correction": {
+      "domain": "helenahospital.com",
+      "pointerUrl": "https://helenahospital.com/cms-hpt.txt",
+      "mrfUrl": "",
+      "lastUpdatedOn": "",
+      "templateVersion": "",
+      "verdict": "failing",
+      "checkedOn": "2026-09-04",
+      "note": "No hospital price-transparency page or machine-readable standard charges file was located on 2026-09-04. Both https://helenahospital.com/cms-hpt.txt and https://www.helenahospital.com/cms-hpt.txt returned HTTP 404 while the homepage returned HTTP 200. Focused site searches found no indexed price-transparency, standard-charges, machine-readable, or cms-hpt resource. The homepage configuration references a price-transparency label, but the corresponding /price-transparency and /newsite/price-transparency routes returned 404. Contact: R***, R***@HelenaHospital.com."
+    }
   }
 }
