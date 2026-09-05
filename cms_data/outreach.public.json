@@ -1785,5 +1785,37 @@
       "checkedOn": "2026-09-04",
       "note": "Classified as compliant based on the supplied Stone County Medical Center machine-readable file header. The file separately identifies Stone County Medical Center in Mountain View, Arkansas, license AR5036, type 2 NPI 1417913419, last_updated_on 2026-03-19, and CMS template version 3.0.0. The source page is https://whiteriverhealth.slicedhealth.io/home."
     }
+  },
+  "044017": {
+    "ccn": "044017",
+    "name": "United Methodist Behavioral Hospital",
+    "city": "Maumelle",
+    "state": "AR",
+    "status": "awaiting-reply",
+    "followUpOn": "2026-10-04",
+    "createdAt": "2026-09-05T00:35:36.529Z",
+    "updatedAt": "2026-09-05T00:35:36.530Z",
+    "entries": [
+      {
+        "id": "mtnniz82-4h1ur7",
+        "kind": "email",
+        "at": "2026-09-05T00:35:36.530Z",
+        "subject": "United Methodist Behavioral Hospital Price Transparency Files",
+        "to": "I***@MethodistFamily.org",
+        "body": "Hello,\n\nI’m doing some research into hospital price transparency and could not locate a price-transparency page or machine-readable standard-charges file for United Methodist Behavioral Hospital in Maumelle.\n\nThe required root pointer currently returns an HTTP 404 response:\n\nhttps://www.methodistfamily.org/cms-hpt.txt\n\nCould you provide the current machine-readable file link or forward this message to the person responsible for hospital price transparency? If the file is available elsewhere, I’d be happy to update my research.\n\nI’ll plan to follow up in 30 days so I can continue my research.\n\nThanks so much,\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
+        "sentAt": "2026-09-04",
+        "outcome": "none"
+      }
+    ],
+    "correction": {
+      "domain": "methodistfamily.org",
+      "pointerUrl": "https://www.methodistfamily.org/cms-hpt.txt",
+      "mrfUrl": "",
+      "lastUpdatedOn": "",
+      "templateVersion": "",
+      "verdict": "failing",
+      "checkedOn": "2026-09-04",
+      "note": "The official root cms-hpt.txt returned HTTP 404 on 2026-09-04. A search of the Methodist Family Health website, including https://www.methodistfamily.org/?s=pricing, did not surface a hospital price-transparency page or machine-readable standard-charge file for United Methodist Behavioral Hospital in Maumelle. No MRF URL was identified."
+    }
   }
 }
