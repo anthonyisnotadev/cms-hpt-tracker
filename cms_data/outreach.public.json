@@ -1817,5 +1817,133 @@
       "checkedOn": "2026-09-04",
       "note": "The official root cms-hpt.txt returned HTTP 404 on 2026-09-04. A search of the Methodist Family Health website, including https://www.methodistfamily.org/?s=pricing, did not surface a hospital price-transparency page or machine-readable standard-charge file for United Methodist Behavioral Hospital in Maumelle. No MRF URL was identified."
     }
+  },
+  "030030": {
+    "ccn": "030030",
+    "name": "Abrazo Central Campus",
+    "city": "Phoenix",
+    "state": "AZ",
+    "status": "awaiting-reply",
+    "followUpOn": "2026-10-04",
+    "createdAt": "2026-09-05T00:51:16.459Z",
+    "updatedAt": "2026-09-05T00:51:16.461Z",
+    "entries": [
+      {
+        "id": "mtno34h9-9q7hd4",
+        "kind": "email",
+        "at": "2026-09-05T00:51:16.461Z",
+        "subject": "Abrazo Price Transparency Access Issue",
+        "to": "R***@abrazohealth.com; N***@abrazohealth.com; K***@abrazohealth.com; j***@abrazohealth.com",
+        "body": "Hello,\n\nI’m doing some research into hospital price transparency and noticed that automated requests to Abrazo’s cms-hpt.txt file and hospital-pricing page receive an HTTP 403 Cloudflare browser challenge:\n\nhttps://www.abrazohealth.com/cms-hpt.txt\nhttps://www.abrazohealth.com/patients/pricing-info-estimates/hospital-pricing-information\n\nThe underlying JSON files hosted through Hyve Healthcare remain accessible and appear current for Abrazo’s seven listed facilities, so this may simply be a Cloudflare configuration issue affecting the discovery pages.\n\nCMS requires hospital machine-readable files to support automated searches and direct downloads, and identifies blocking codes and CAPTCHA challenges as barriers to that access. CMS also requires the root cms-hpt.txt file so users and automated systems can discover the pricing files.\n\nWould your web team be able to adjust the Cloudflare settings so the cms-hpt.txt file and pricing page can be accessed by automated tools without a browser challenge?\n\nI’ll plan to follow up in 30 days so I can continue my research. I’m happy to provide the response headers or any other technical details that might be useful.\n\nThanks so much,\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
+        "sentAt": "2026-09-04",
+        "outcome": "none"
+      }
+    ],
+    "correction": {
+      "domain": "abrazohealth.com",
+      "pointerUrl": "https://www.abrazohealth.com/cms-hpt.txt",
+      "mrfUrl": "https://mrfs.hyvehealthcare.com/TenetHealth/621809851_vhs-of-phoenix-inc_standardcharges.json",
+      "lastUpdatedOn": "2026-07-23",
+      "templateVersion": "3.0.0",
+      "verdict": "blocked",
+      "checkedOn": "2026-09-04",
+      "note": "The root cms-hpt.txt and Abrazo hospital-pricing page returned HTTP 403 with Cf-Mitigated: challenge during automated checks on 2026-09-04. The direct JSON is accessible and identifies Abrazo Central Hospital, 2000 W Bethany Home Rd, Phoenix, AZ 85015, NPI 1477537363, license H0112, last_updated_on 2026-07-23, and template version 3.0.0. The blocked verdict reflects the Cloudflare barrier on the automated discovery routes, not the direct MRF contents."
+    }
+  },
+  "030094": {
+    "ccn": "030094",
+    "name": "Abrazo Arrowhead Hospital",
+    "city": "Glendale",
+    "state": "AZ",
+    "status": "awaiting-reply",
+    "followUpOn": "2026-10-04",
+    "createdAt": "2026-09-05T00:51:16.461Z",
+    "updatedAt": "2026-09-05T00:51:16.461Z",
+    "entries": [
+      {
+        "id": "mtno34h9-a3p35g",
+        "kind": "email",
+        "at": "2026-09-05T00:51:16.461Z",
+        "subject": "Abrazo Price Transparency Access Issue",
+        "to": "R***@abrazohealth.com; N***@abrazohealth.com; K***@abrazohealth.com; j***@abrazohealth.com",
+        "body": "Hello,\n\nI’m doing some research into hospital price transparency and noticed that automated requests to Abrazo’s cms-hpt.txt file and hospital-pricing page receive an HTTP 403 Cloudflare browser challenge:\n\nhttps://www.abrazohealth.com/cms-hpt.txt\nhttps://www.abrazohealth.com/patients/pricing-info-estimates/hospital-pricing-information\n\nThe underlying JSON files hosted through Hyve Healthcare remain accessible and appear current for Abrazo’s seven listed facilities, so this may simply be a Cloudflare configuration issue affecting the discovery pages.\n\nCMS requires hospital machine-readable files to support automated searches and direct downloads, and identifies blocking codes and CAPTCHA challenges as barriers to that access. CMS also requires the root cms-hpt.txt file so users and automated systems can discover the pricing files.\n\nWould your web team be able to adjust the Cloudflare settings so the cms-hpt.txt file and pricing page can be accessed by automated tools without a browser challenge?\n\nI’ll plan to follow up in 30 days so I can continue my research. I’m happy to provide the response headers or any other technical details that might be useful.\n\nThanks so much,\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
+        "sentAt": "2026-09-04",
+        "outcome": "none"
+      }
+    ],
+    "correction": {
+      "domain": "abrazohealth.com",
+      "pointerUrl": "https://www.abrazohealth.com/cms-hpt.txt",
+      "mrfUrl": "https://mrfs.hyvehealthcare.com/TenetHealth/621811285-1326022765_vhs-of-arrowhead%2C-inc_standardcharges.json",
+      "lastUpdatedOn": "2026-07-23",
+      "templateVersion": "3.0.0",
+      "verdict": "blocked",
+      "checkedOn": "2026-09-04",
+      "note": "The root cms-hpt.txt and Abrazo hospital-pricing page returned HTTP 403 with Cf-Mitigated: challenge during automated checks on 2026-09-04. Three accessible version 3.0.0 JSONs share NPI 1326022765 and last_updated_on 2026-07-23: Abrazo Arrowhead Campus, license H0175, at the primary MRF URL; Abrazo Arizona Heart Hospital, license H7326, at https://mrfs.hyvehealthcare.com/TenetHealth/621811285-1255640819_vhs-of-arrowhead%2C-inc_standardcharges.json; and Abrazo Surprise Hospital, license H10402, at https://mrfs.hyvehealthcare.com/TenetHealth/621811285-1447898622_vhs-of-arrowhead%2C-inc_standardcharges.json. The blocked verdict reflects the Cloudflare barrier on the automated discovery routes, not the direct MRF contents."
+    }
+  },
+  "030083": {
+    "ccn": "030083",
+    "name": "Abrazo Scottsdale Campus",
+    "city": "Phoenix",
+    "state": "AZ",
+    "status": "awaiting-reply",
+    "followUpOn": "2026-10-04",
+    "createdAt": "2026-09-05T00:51:16.461Z",
+    "updatedAt": "2026-09-05T00:51:16.461Z",
+    "entries": [
+      {
+        "id": "mtno34h9-nrz6kn",
+        "kind": "email",
+        "at": "2026-09-05T00:51:16.461Z",
+        "subject": "Abrazo Price Transparency Access Issue",
+        "to": "R***@abrazohealth.com; N***@abrazohealth.com; K***@abrazohealth.com; j***@abrazohealth.com",
+        "body": "Hello,\n\nI’m doing some research into hospital price transparency and noticed that automated requests to Abrazo’s cms-hpt.txt file and hospital-pricing page receive an HTTP 403 Cloudflare browser challenge:\n\nhttps://www.abrazohealth.com/cms-hpt.txt\nhttps://www.abrazohealth.com/patients/pricing-info-estimates/hospital-pricing-information\n\nThe underlying JSON files hosted through Hyve Healthcare remain accessible and appear current for Abrazo’s seven listed facilities, so this may simply be a Cloudflare configuration issue affecting the discovery pages.\n\nCMS requires hospital machine-readable files to support automated searches and direct downloads, and identifies blocking codes and CAPTCHA challenges as barriers to that access. CMS also requires the root cms-hpt.txt file so users and automated systems can discover the pricing files.\n\nWould your web team be able to adjust the Cloudflare settings so the cms-hpt.txt file and pricing page can be accessed by automated tools without a browser challenge?\n\nI’ll plan to follow up in 30 days so I can continue my research. I’m happy to provide the response headers or any other technical details that might be useful.\n\nThanks so much,\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
+        "sentAt": "2026-09-04",
+        "outcome": "none"
+      }
+    ],
+    "correction": {
+      "domain": "abrazohealth.com",
+      "pointerUrl": "https://www.abrazohealth.com/cms-hpt.txt",
+      "mrfUrl": "https://mrfs.hyvehealthcare.com/TenetHealth/621861138-1326022732_vhs-acquisition-subsidiary-number-1-inc_standardcharges.json",
+      "lastUpdatedOn": "2026-04-06",
+      "templateVersion": "3.0.0",
+      "verdict": "blocked",
+      "checkedOn": "2026-09-04",
+      "note": "The root cms-hpt.txt and Abrazo hospital-pricing page returned HTTP 403 with Cf-Mitigated: challenge during automated checks on 2026-09-04. Two accessible version 3.0.0 JSONs share NPI 1326022732: Abrazo Scottsdale Campus, license H3027 and last_updated_on 2026-04-06, at the primary MRF URL; and Abrazo Cave Creek Hospital, license H11033 and last_updated_on 2026-04-16, at https://mrfs.hyvehealthcare.com/TenetHealth/621861138-1699357368_vhs-acquisition-subsidiary-number-1-inc_standardcharges.json. The blocked verdict reflects the Cloudflare barrier on the automated discovery routes, not the direct MRF contents."
+    }
+  },
+  "030110": {
+    "ccn": "030110",
+    "name": "Abrazo West Campus",
+    "city": "Goodyear",
+    "state": "AZ",
+    "status": "awaiting-reply",
+    "followUpOn": "2026-10-04",
+    "createdAt": "2026-09-05T00:51:16.461Z",
+    "updatedAt": "2026-09-05T00:51:16.461Z",
+    "entries": [
+      {
+        "id": "mtno34h9-86pz67",
+        "kind": "email",
+        "at": "2026-09-05T00:51:16.461Z",
+        "subject": "Abrazo Price Transparency Access Issue",
+        "to": "R***@abrazohealth.com; N***@abrazohealth.com; K***@abrazohealth.com; j***@abrazohealth.com",
+        "body": "Hello,\n\nI’m doing some research into hospital price transparency and noticed that automated requests to Abrazo’s cms-hpt.txt file and hospital-pricing page receive an HTTP 403 Cloudflare browser challenge:\n\nhttps://www.abrazohealth.com/cms-hpt.txt\nhttps://www.abrazohealth.com/patients/pricing-info-estimates/hospital-pricing-information\n\nThe underlying JSON files hosted through Hyve Healthcare remain accessible and appear current for Abrazo’s seven listed facilities, so this may simply be a Cloudflare configuration issue affecting the discovery pages.\n\nCMS requires hospital machine-readable files to support automated searches and direct downloads, and identifies blocking codes and CAPTCHA challenges as barriers to that access. CMS also requires the root cms-hpt.txt file so users and automated systems can discover the pricing files.\n\nWould your web team be able to adjust the Cloudflare settings so the cms-hpt.txt file and pricing page can be accessed by automated tools without a browser challenge?\n\nI’ll plan to follow up in 30 days so I can continue my research. I’m happy to provide the response headers or any other technical details that might be useful.\n\nThanks so much,\nAnthony\nm***@anthonyisnota.dev\nmrf.anthonyisnota.dev",
+        "sentAt": "2026-09-04",
+        "outcome": "none"
+      }
+    ],
+    "correction": {
+      "domain": "abrazohealth.com",
+      "pointerUrl": "https://www.abrazohealth.com/cms-hpt.txt",
+      "mrfUrl": "https://mrfs.hyvehealthcare.com/TenetHealth/621867232_hospital-development-of-west-phoenix-inc_standardcharges.json",
+      "lastUpdatedOn": "2026-08-27",
+      "templateVersion": "3.0.0",
+      "verdict": "blocked",
+      "checkedOn": "2026-09-04",
+      "note": "The root cms-hpt.txt and Abrazo hospital-pricing page returned HTTP 403 with Cf-Mitigated: challenge during automated checks on 2026-09-04. The direct JSON is accessible and identifies Abrazo West Campus, 13677 W McDowell Rd, Goodyear, AZ 85395, NPI 1093791170, license H3446, last_updated_on 2026-08-27, and template version 3.0.0. The blocked verdict reflects the Cloudflare barrier on the automated discovery routes, not the direct MRF contents."
+    }
   }
 }
