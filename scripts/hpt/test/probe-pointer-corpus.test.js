@@ -39,6 +39,24 @@ test('groupCorpusRows deduplicates MRF URLs and preserves pointer provenance', (
   assert.equal(tasks[0].refs.length, 2);
 });
 
+test('groupCorpusRows accepts production manifest provenance', () => {
+  const tasks = groupCorpusRows([{
+    ccn: '010001', domain: 'one.test',
+    pointer_url: 'https://one.test/cms-hpt.txt', pointer_via: 'direct',
+    location_name: 'One Hospital', source_page_url: 'https://one.test/prices',
+    mrf_url: 'https://files.test/a.csv'
+  }]);
+  assert.equal(tasks.length, 1);
+  assert.deepEqual([...tasks[0].pointerDomains], ['one.test']);
+  assert.deepEqual([...tasks[0].existingMatchedCcns], ['010001']);
+  assert.deepEqual(tasks[0].refs, [{
+    domain: 'one.test', state: '',
+    pointer_url: 'https://one.test/cms-hpt.txt', pointer_via: 'direct',
+    pointer_format: '', location_name: 'One Hospital',
+    source_page_url: 'https://one.test/prices'
+  }]);
+});
+
 test('runHeaderCorpus probes each unique MRF once and exports conservative match fields', async t => {
   const root = await tempRoot(t);
   const input = path.join(root, 'cms_data', 'hpt', 'entries.csv');

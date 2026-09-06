@@ -157,7 +157,18 @@ class JsonStore {
     await fsp.mkdir(path.dirname(this.file), { recursive: true });
     const tmp = this.file + '.tmp';
     await fsp.writeFile(tmp, JSON.stringify(this.data, null, 1));
-    await fsp.rename(tmp, this.file);
+    // Windows scanners and indexers can briefly hold the destination open.
+    // Retrying the same atomic replace keeps resumable production crawls from
+    // losing their final checkpoint because of a transient EPERM/EBUSY.
+    for (let attempt = 0; ; attempt++) {
+      try {
+        await fsp.rename(tmp, this.file);
+        break;
+      } catch (error) {
+        if (!['EPERM', 'EBUSY', 'EACCES'].includes(error && error.code) || attempt >= 5) throw error;
+        await new Promise(resolve => setTimeout(resolve, 50 * (attempt + 1)));
+      }
+    }
     this._dirty = false;
   }
 }

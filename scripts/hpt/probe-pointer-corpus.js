@@ -76,7 +76,11 @@ function groupCorpusRows(rows) {
       });
     }
     const group = groups.get(mrfUrl);
-    const domains = splitValues(row.source_domains || row.pointer_host);
+    // Normalized pointer-corpus rows use source_domains/pointer_host, while the
+    // production manifest stores the already-verified host as domain. Accept
+    // both shapes so a fresh header audit can be run directly from manifest.csv
+    // without manufacturing a lossy intermediate file.
+    const domains = splitValues(row.source_domains || row.pointer_host || row.domain);
     if (!domains.length && row.pointer_host) domains.push(String(row.pointer_host).trim());
     addValues(group.pointerDomains, domains.join('|'));
     addValues(group.pointerUrls, row.final_url || row.pointer_url);
@@ -85,7 +89,7 @@ function groupCorpusRows(rows) {
     addValues(group.rawFiles, row.raw_file);
     addValues(group.sourceDatasets, row.source_datasets);
     addValues(group.relatedCcns, row.related_ccns);
-    addValues(group.existingMatchedCcns, row.matched_ccns);
+    addValues(group.existingMatchedCcns, row.matched_ccns || row.ccn);
     addValues(group.pointerLocationNames, row.location_name);
     addValues(group.sourcePageUrls, row.source_page_url);
     for (const domain of domains.length ? domains : ['']) {
@@ -93,7 +97,7 @@ function groupCorpusRows(rows) {
         domain,
         state: '',
         pointer_url: row.final_url || row.pointer_url || '',
-        pointer_via: row.fetch_via || '',
+        pointer_via: row.fetch_via || row.pointer_via || '',
         pointer_format: row.pointer_format || '',
         location_name: row.location_name || '',
         source_page_url: row.source_page_url || ''
