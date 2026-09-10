@@ -1,0 +1,58 @@
+# curl-style evidence for https://texashealthhuguley.org/
+# fetched 2026-09-07T01:36:06.174Z with the tracker's BROWSER_HEADERS (production client)
+# record: 450235 | MEMORIAL HOSPITAL | TX | finding: pointer-blocked-to-automation
+# record: 451358 | MEMORIAL HOSPITAL | TX | finding: pointer-blocked-to-automation
+# record: 451386 | MEMORIAL HOSPITAL | TX | finding: pointer-blocked-to-automation
+
+* DNS texashealthhuguley.org: 3.84.160.209
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://texashealthhuguley.org/
+< HTTP 301
+< age: 2247522
+< cache-control: max-age=31536000
+< content-length: 243
+< content-type: text/html; charset=iso-8859-1
+< date: Mon, 07 Sep 2026 01:36:07 GMT
+< expires: Thu, 12 Aug 2027 01:17:24 GMT
+< location: https://www.texashealthhuguley.org/
+< server: nginx
+< via: varnish
+< x-cache: HIT
+< x-cache-hits: 43831
+< x-content-type-options: nosniff
+< x-request-id: v-93792284-95eb-11f1-b283-c7ebcad830a9
+* following Location: https://www.texashealthhuguley.org/
+
+* final response: https://www.texashealthhuguley.org/
+< HTTP 403
+< cache-control: max-age=0, no-cache, no-store
+< content-length: 380
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:36:07 GMT
+< expires: Mon, 07 Sep 2026 01:36:07 GMT
+< mime-version: 1.0
+< pragma: no-cache
+< --- body (380 bytes read) ---
+< <HTML><HEAD>
+< <TITLE>Access Denied</TITLE>
+< </HEAD><BODY>
+< <H1>Access Denied</H1>
+<  
+< You don't have permission to access "http&#58;&#47;&#47;www&#46;texashealthhuguley&#46;org&#47;" on this server.<P>
+< Reference&#32;&#35;18&#46;8d813217&#46;1788744967&#46;53264999
+< <P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;8d813217&#46;1788744967&#46;53264999</P>
+< </BODY>
+< </HTML>
+< 
+
+* total time: 191 ms

@@ -1,0 +1,170 @@
+# curl-style evidence for https://malvernbh.com/.well-known/cms-hpt.txt
+# fetched 2026-09-07T01:35:49.250Z with the tracker's BROWSER_HEADERS (production client)
+# record: 394057 | MALVERN BEHAVIORAL HEALTH | PA | finding: no-cms-hpt-txt-published
+
+* DNS malvernbh.com: 162.159.134.42
+
+> GET /.well-known/cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://malvernbh.com/.well-known/cms-hpt.txt
+< HTTP 301
+< alt-svc: h3=":443"; ma=86400
+< cache-control: no-cache, must-revalidate, max-age=0, no-store, private
+< cf-cache-status: DYNAMIC
+< cf-ray: a371faa5dd2a12ce-IAD
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:35:50 GMT
+< expires: Wed, 11 Jan 1984 05:00:00 GMT
+< ki-cache-type: None
+< ki-cf-cache-status: BYPASS
+< ki-edge: v=28.5.0;mv=99.9.9
+< ki-origin: o1i
+< location: https://www.malvernbh.com/.well-known/cms-hpt.txt
+< nel: {"report_to":"cf-nel","success_fraction":0.01,"max_age":604800}
+< report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=pxP65WtTND%2BB%2FFf1LadgSnQf1HdPW%2F%2B9DRveVIOhylIB4e6jSSTtPxd5KH4cdDbamYeO0ubPUYKibCczX4QGutDhZL6t1%2BPFScPrEAgmmJ8jcqoNOUJ05MKxI3WHwSA%3D"}]}
+< server: cloudflare
+< x-content-type-options: nosniff
+< x-edge-location-klb: 1
+< x-kinsta-cache: HIT
+< x-redirect-by: WordPress
+* following Location: https://www.malvernbh.com/.well-known/cms-hpt.txt
+
+* final response: https://www.malvernbh.com/.well-known/cms-hpt.txt
+< HTTP 404
+< alt-svc: h3=":443"; ma=86400
+< cache-control: no-cache, must-revalidate, max-age=0, no-store, private
+< cf-cache-status: DYNAMIC
+< cf-ray: a371faa62fdf8f22-IAD
+< content-encoding: br
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:35:50 GMT
+< expires: Wed, 11 Jan 1984 05:00:00 GMT
+< ki-cache-type: None
+< ki-cf-cache-status: BYPASS
+< ki-edge: v=28.5.0;mv=99.9.9
+< ki-origin: o1i
+< link: <https://www.malvernbh.com/wp-json/>; rel="https://api.w.org/"
+< nel: {"report_to":"cf-nel","success_fraction":0.01,"max_age":604800}
+< report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=Lxzqpl7c62Sep%2BjETyz14h0EVosN3Wd8ElxoslRIb%2FCvHUCArZPkl2VxoovRCfIhoL540sSquew83klRqjI7132RjLbf9LISV60OWXDE8hb%2F4KTOgJLq%2Bm9NhS4Zl8XTklRZ"}]}
+< server: cloudflare
+< vary: Accept-Encoding
+< x-content-type-options: nosniff
+< x-edge-location-klb: 1
+< x-kinsta-cache: EXPIRED
+< --- body (35413 bytes read) ---
+< <!doctype html>
+< <!--[if lt IE 7 ]> <html class="ie ie6 no-js" dir="ltr" lang="en-US"> <![endif]-->
+< <!--[if IE 7 ]>    <html class="ie ie7 no-js" dir="ltr" lang="en-US"> <![endif]-->
+< <!--[if IE 8 ]>    <html class="ie ie8 no-js" dir="ltr" lang="en-US"> <![endif]-->
+< <!--[if IE 9 ]>    <html class="ie ie9 no-js" dir="ltr" lang="en-US"> <![endif]-->
+< <!--[if gt IE 9]><!--><html class="no-js" dir="ltr" lang="en-US"><!--<![endif]-->
+< <head>
+< <meta name="theme-color" content="#82bd41" />
+< <meta name="viewport" content="width=device-width, initial-scale=1" />
+< <meta name="format-detection" content="telephone=no" />
+< <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+< <meta name="google-site-verification" content="Xd8d1PtUJilleU0voo_EusAcaF8_WsPVnnFCS6xdCWc" />
+< <link rel="stylesheet" media="print" onload="this.onload=null;this.media='all';" id="ao_optimized_gfonts" href="https://fonts.googleapis.com/css?family=Lora:400,500,italic400&amp;display=swap"><link rel="preconnect" href="https://fonts.googleapis.com" />
+< <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+< <link rel="preconnect" href="https://googletagmanager.com" />
+< <link rel="preconnect" href="https://google-analytics.com" />
+< <link rel="preconnect" href="https://youtube.com" />
+< 
+< 	<!-- Google tag (gtag.js) --> 
+< 	<script defer src="https://www.googletagmanager.com/gtag/js?id=AW-10982707731"></script> 
+< 	<script> 
+< 		window.dataLayer = window.dataLayer || []; 
+< 		function gtag(){dataLayer.push(arguments);} 
+< 		gtag('js', new Date()); 
+< 		gtag('config', 'AW-10982707731'); 
+< 	</script>
+< 	<!-- End Google tag (gtag.js) -->
+< 	
+<     <!-- Google Tag Manager -->
+<     <script>
+< 		(function (w, d, s, l, i) {
+<             w[l] = w[l] || [];
+<             w[l].push({'gtm.start':
+<                         new Date().getTime(), event: 'gtm.js'});
+<             var f = d.getElementsByTagName(s)[0],
+<                     j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+<             j.async = true;
+<             j.src =
+<                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+<             f.parentNode.insertBefore(j, f);
+<         })(window, document, 'script', 'dataLayer', 'GTM-N3J26BD');
+< 	</script>
+<     <!-- End Google Tag Manager -->
+< <meta name="viewport" content="width=device-width, initial-scale=1" />
+< <script
+< 				type="text/javascript"
+< 				src="https://app.termly.io/resource-blocker/c6f70242-b77e-4292-a6e9-beaf9bf61bb7">
+< 			</script>
+< <!-- Search Engine Optimization by Rank Math PRO - https://rankmath.com/ -->
+< <link media="all" href="https://www.malvernbh.com/wp-content/cache/autoptimize/css/autoptimize_e85eede564c887bfdd8ef802f83f5166.css" rel="stylesheet"><title>Page not found | Malvern Behavioral Health</title>
+< <meta name="robots" content="follow, noindex"/>
+< <meta property="og:locale" content="en_US" />
+< <meta property="og:type" content="article" />
+< <meta property="og:title" content="Page not found | Malvern Behavioral Health" />
+< <meta property="og:site_name" content="Malvern Behavioral Health" />
+< <meta name="twitter:card" content="summary_large_image" />
+< <meta name="twitter:title" content="Page not found | Malvern Behavioral Health" />
+< <script type="application/ld+json" class="rank-math-schema-pro">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.malvernbh.com/#organization","name":"Malvern Behavioral Health","url":"https://www.malvernbh.com","logo":{"@type":"ImageObject","@id":"https://www.malvernbh.com/#logo","url":"https://www.malvernbh.com/wp-content/uploads/2021/03/malvern-behavioral-health-logo.svg","contentUrl":"https://www.malvernbh.com/wp-content/uploads/2021/03/malvern-behavioral-health-logo.svg","caption":"Malvern Behavioral Health","inLanguage":"en-US"}},{"@type":"WebSite","@id":"https://www.malvernbh.com/#website","url":"https://www.malvernbh.com","name":"Malvern Behavioral Health","publisher":{"@id":"https://www.malvernbh.com/#organization"},"inLanguage":"en-US"},{"@type":"WebPage","@id":"#webpage","url":"","name":"Page not found | Malvern Behavioral Health","isPartOf":{"@id":"https://www.malvernbh.com/#website"},"inLanguage":"en-US"}]}</script>
+< <!-- /Rank Math WordPress SEO plugin -->
+< 
+< <link rel='dns-prefetch' href='//www.google.com' />
+< <link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+< <link href='https://fonts.gstatic.com' crossorigin='anonymous' rel='preconnect' />
+< <link rel="alternate" type="application/rss+xml" title="Malvern Behavioral Health &raquo; Feed" href="https://www.malvernbh.com/feed/" />
+< <link rel="alternate" type="application/rss+xml" title="Malvern Behavioral Health &raquo; Comments Feed" href="https://www.malvernbh.com/comments/feed/" />
+< 
+< 
+< 
+< 
+< 
+< <link rel='stylesheet' id='fontawesome-css' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css' media='all' />
+< 
+< <link rel='stylesheet' id='slick-css-css' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css' media='all' />
+< <link rel='stylesheet' id='select2-css-css' href='https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css' media='all' />
+< 
+< <script id="jquery-core-js" src="https://www.malvernbh.com/wp-includes/js/jquery/jquery.min.js"></script>
+< <script defer id="jquery-migrate-js" src="https://www.malvernbh.com/wp-includes/js/jquery/jquery-migrate.min.js"></script>
+< <link rel="https://api.w.org/" href="https://www.malvernbh.com/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.malvernbh.com/xmlrpc.php?rsd" />
+< <meta name="generator" content="WordPress 7.1" />
+< <link rel="Shortcut Icon" href="https://www.malvernbh.com/wp-content/themes/malvernbh/assets/images/favicon/favicon.ico?09/7/26-01:35:50" type="image/x-icon" />
+< <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://www.malvernbh.com/wp-content/themes/malvernbh/assets/images/favicon/apple-touch-icon-152x152.png?09/7/26-01:35:50" />
+< <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.malvernbh.com/wp-content/themes/malvernbh/assets/images/favicon/apple-touch-icon-144x144.png?09/7/26-01:35:50" />
+< <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://www.malvernbh.com/wp-content/themes/malvernbh/assets/images/favicon/apple-touch-icon-120x120.png?09/7/26-01:35:50" />
+< <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://www.malvernbh.com/wp-content/themes/malvernbh/assets/images/favicon/apple-touch-icon-114x114.png?09/7/26-01:35:50" />
+< <link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://www.malvernbh.com/wp-content/themes/malvernbh/assets/images/favicon/apple-touch-icon-76x76.png?09/7/26-01:35:50" />
+< <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://www.malvernbh.com/wp-content/themes/malvernbh/assets/images/favicon/apple-touch-icon-72x72.png?09/7/26-01:35:50" />
+< <link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://www.malvernbh.com/wp-content/themes/malvernbh/assets/images/favicon/apple-touch-icon-57x57.png?09/7/26-01:35:50" />
+< <link rel="apple-touch-icon-precomposed" href="https://www.malvernbh.com/wp-content/themes/malvernbh/assets/images/favicon/apple-touch-icon.png?09/7/26-01:35:50" />
+<     <!-- Begin TVSquared Tracking Code -->
+<     <script type="text/javascript">
+<         var _tvq = window._tvq = window._tvq || [];
+<         (function () {
+<             var u = (("https:" == document.location.protocol) ? "https://collector-25342.tvsquared.com/" : "http://collector-25342.tvsquared.com/");
+<             _tvq.push(['setSiteId', "TV-7245635472-1"]);
+<             _tvq.push(['setTrackerUrl', u + 'tv2track.php']);
+<             _tvq.push([function () {this.deleteCustomVariable(5, 'page')}]);
+<             _tvq.push(['trackPageView']);
+<             var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];g.type = 'text/javascript';g.defer = true;g.async = true;g.src = u + 'tv2track.js';s.parentNode.insertBefore(g, s);
+<         })();
+<     </script>
+<     <!-- End TVSquared Tracking Code -->
+<     <script type="text/javascript">
+<         _linkedin_partner_id = "6049561";
+<         window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+<         wi
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 340 ms

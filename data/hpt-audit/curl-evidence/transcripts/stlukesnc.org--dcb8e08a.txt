@@ -1,0 +1,74 @@
+# curl-style evidence for https://stlukesnc.org/
+# fetched 2026-09-07T01:34:59.365Z with the tracker's BROWSER_HEADERS (production client)
+# record: 341322 | ADVENT HEALTH POLK | NC | finding: not-assessed-not-named-in-file
+
+* DNS stlukesnc.org: 204.139.88.231
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* error: fetch failed (cause: UNABLE_TO_VERIFY_LEAF_SIGNATURE)
+
+* http:// fallback attempt after transport failure:
+* fallback redirect hop 1: http://stlukesnc.org/
+< HTTP 301
+< connection: Keep-Alive
+< content-length: 0
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:35:00 GMT
+< keep-alive: timeout=5, max=98
+< location: https://www.adventhealth.com/hospital/adventhealth-polk
+< server: Apache/2.4.37 (Red Hat Enterprise Linux) OpenSSL/1.1.1k
+< x-powered-by: PHP/8.0.13
+* following Location: https://www.adventhealth.com/hospital/adventhealth-polk
+
+* fallback redirect hop 2: https://www.adventhealth.com/hospital/adventhealth-polk
+< HTTP 301
+< cache-control: max-age=2764800, public
+< content-language: en
+< content-length: 458
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:35:00 GMT
+< etag: "1787862917"
+< expires: Sun, 19 Nov 1978 05:00:00 GMT
+< last-modified: Thu, 27 Aug 2026 20:35:17 GMT
+< location: https://www.adventhealth.com/locations/hospitals/polk
+< vary: Cookie,X-Forwarded-Proto
+< x-age: 881983
+< x-ah-environment: prod
+< x-cache-hits: 43378
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-generator: Drupal 11 (https://www.drupal.org)
+< x-redirect-id: 719426
+< x-request-id: v-d04cd3c8-a256-11f1-b1a2-f7900b976b00
+* following Location: https://www.adventhealth.com/locations/hospitals/polk
+
+* fallback final response: https://www.adventhealth.com/locations/hospitals/polk
+< HTTP 403
+< content-length: 406
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:35:01 GMT
+< expires: Mon, 07 Sep 2026 01:35:01 GMT
+< mime-version: 1.0
+< --- body (406 bytes read) ---
+< <HTML><HEAD>
+< <TITLE>Access Denied</TITLE>
+< </HEAD><BODY>
+< <H1>Access Denied</H1>
+<  
+< You don't have permission to access "http&#58;&#47;&#47;www&#46;adventhealth&#46;com&#47;locations&#47;hospitals&#47;polk" on this server.<P>
+< Reference&#32;&#35;18&#46;8d813217&#46;1788744901&#46;53233ee0
+< <P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;8d813217&#46;1788744901&#46;53233ee0</P>
+< </BODY>
+< </HTML>
+< 
+
+* total time: 14990 ms

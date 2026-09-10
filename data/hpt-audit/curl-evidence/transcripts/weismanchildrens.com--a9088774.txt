@@ -1,0 +1,34 @@
+# curl-style evidence for https://weismanchildrens.com/cms-hpt.txt
+# fetched 2026-09-07T01:35:32.522Z with the tracker's BROWSER_HEADERS (production client)
+# record: 313302 | WEISMAN CHILDRENS REHABILITATION HOSPITAL | NJ | finding: pointer-blocked-to-automation
+
+* DNS weismanchildrens.com: 192.190.221.104
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://weismanchildrens.com/cms-hpt.txt
+< HTTP 403
+< content-encoding: br
+< content-type: text/html; charset=iso-8859-1
+< date: Mon, 07 Sep 2026 01:35:34 GMT
+< server: nginx
+< vary: Accept-Encoding
+< --- body (199 bytes read) ---
+< <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+< <html><head>
+< <title>403 Forbidden</title>
+< </head><body>
+< <h1>Forbidden</h1>
+< <p>You don't have permission to access this resource.</p>
+< </body></html>
+< 
+
+* total time: 401 ms

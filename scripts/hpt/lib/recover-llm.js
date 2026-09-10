@@ -10,11 +10,9 @@
  * with no verification that the file it found is *this* hospital's.
  *
  * This module keeps the same "site footer is the other half of the rule"
- * premise but drives the two hops with a model, then applies the SAME
- * corroboration gate the `match`/`corroborate` stages use before accepting a
- * URL: the MRF header's own licensing state (or failing that, its hospital_name)
- * must agree with the CMS record. A scraped link that cannot be corroborated is
- * returned with ok:false and kept for manual review, never silently trusted.
+ * premise but treats every result as a discovery lead. Header identity is
+ * checked using the shared facility matcher; official pointer linkage must
+ * still be established by the recovery verifier before promotion.
  *
  * Cost per domain: at most 2 model calls (pick nav links, then pick the file),
  * at most ~5 plain GETs, and one ranged header probe. Nothing here reaches a
@@ -112,38 +110,12 @@ function renderLinkList(links) {
   return links.map((l, i) => `${i + 1}. ${l.text ? `[${l.text}] ` : ''}${l.href}`).join('\n');
 }
 
-/**
- * Corroborate a candidate MRF against the hospital(s) the domain is assigned to,
- * using only what the header probe already read for free.
- *
- * Mirrors the ladder in run.js `match`: licensing state is decisive when
- * present, hospital_name similarity is the fallback, and a bare valid CMS date
- * on a single-hospital domain is accepted at low confidence. Anything else is
- * left unconfirmed rather than guessed.
- */
+/** Inspect identity; this legacy pointer-less path never promotes a file. */
 function corroborate(probe, hospitals) {
-  const states = new Set(hospitals.map(h => h.state).filter(Boolean));
-  if (probe && probe.mrfLicenseState) {
-    if (states.has(probe.mrfLicenseState)) {
-      return { accepted: true, confidence: 'high', reason: `MRF header license state ${probe.mrfLicenseState} matches hospital state` };
-    }
-    return { accepted: false, confidence: 'high', reason: `MRF header license state ${probe.mrfLicenseState} != hospital state ${[...states].join('/') || '(unknown)'}` };
-  }
-  if (probe && probe.mrfHospitalName && hospitals.length) {
-    let best = 0, bestName = '';
-    for (const h of hospitals) {
-      const s = nameSimilarity(probe.mrfHospitalName, h.name || '');
-      if (s > best) { best = s; bestName = h.name; }
-    }
-    if (best >= 0.6) {
-      return { accepted: true, confidence: 'medium', reason: `MRF hospital_name "${probe.mrfHospitalName}" ~ "${bestName}" (${best.toFixed(2)}); no license state in header` };
-    }
-    return { accepted: false, confidence: 'medium', reason: `MRF hospital_name "${probe.mrfHospitalName}" does not match roster (best ${best.toFixed(2)})` };
-  }
-  if (hospitals.length === 1 && probe && probe.declaredLastUpdated) {
-    return { accepted: true, confidence: 'low', reason: 'single-hospital domain; file carries a valid CMS last_updated_on but the header had no identifying fields' };
-  }
-  return { accepted: false, confidence: 'low', reason: 'no corroborating evidence in the MRF header' };
+  const match = require('./mrf-header-match').matchMrfHeader({ refs: [] }, probe, hospitals);
+  return { accepted: false, confidence: 'unconfirmed', reason: match.matches.length
+    ? 'File header identity corroborated; official pointer linkage still required'
+    : match.reason };
 }
 
 /**

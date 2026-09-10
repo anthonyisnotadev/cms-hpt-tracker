@@ -57,6 +57,9 @@ jobs:
       - name: Check pointer contacts are obfuscated
         run: npm run check:pointers-private
 
+      - name: Check all public contact details are protected
+        run: npm run check:contacts-private
+
       # pointers.json is the contract other repos read; it is derived from
       # manifest.csv and committed alongside it, so the two can drift if a data
       # refresh lands without re-running the export. This catches that.

@@ -1,0 +1,190 @@
+# curl-style evidence for https://www.etch.com/app/files/public/23fd56f6-43f8-45b4-974b-e7d2a20a228c/Documents/626002604_east-tennessee-childrens-hospital_standardcharges.xml
+# fetched 2026-09-07T01:36:07.214Z with the tracker's BROWSER_HEADERS (production client)
+# record: 443303 | EAST TENNESSEE CHILDRENS HOSPITAL | TN | finding: mrf-blocked-to-automation
+
+* DNS www.etch.com: 89.106.200.142
+
+> GET /app/files/public/23fd56f6-43f8-45b4-974b-e7d2a20a228c/Documents/626002604_east-tennessee-childrens-hospital_standardcharges.xml  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://www.etch.com/app/files/public/23fd56f6-43f8-45b4-974b-e7d2a20a228c/Documents/626002604_east-tennessee-childrens-hospital_standardcharges.xml
+< HTTP 301
+< accept-ch: Sec-CH-DPR, Sec-CH-Width, Sec-CH-Viewport-Width
+< cache-control: max-age=0, no-cache, no-store
+< content-length: 277
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:36:07 GMT
+< expect-ct: max-age=86400
+< expires: Mon, 07 Sep 2026 01:36:07 GMT
+< location: https://dollychildrens.org/app/files/public/23fd56f6-43f8-45b4-974b-e7d2a20a228c/Documents/626002604_east-tennessee-childrens-hospital_standardcharges.xml
+< permissions-policy: geolocation=(self), payment=(self "https://formulate.geonetric.com" "https://forms.geonetric.com"), sync-xhr=(self "https://formulate.geonetric.com" "https://forms.geonetric.com"), camera=(), accelerometer=(), gyroscope=(), magnetometer=(), microphone=()
+< pragma: no-cache
+< referrer-policy: strict-origin-when-cross-origin
+< server-timing: cdn-cache; desc=MISS, edge; dur=287, origin; dur=30, ak_p; desc="1788744967575_389072998_3804355958_31647_12393_0_48_15";dur=1
+< strict-transport-security: max-age=63072000; includeSubDomains;
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-ua-compatible: IE=Edge,chrome=1
+* following Location: https://dollychildrens.org/app/files/public/23fd56f6-43f8-45b4-974b-e7d2a20a228c/Documents/626002604_east-tennessee-childrens-hospital_standardcharges.xml
+
+* redirect hop 2: https://dollychildrens.org/app/files/public/23fd56f6-43f8-45b4-974b-e7d2a20a228c/Documents/626002604_east-tennessee-childrens-hospital_standardcharges.xml
+< HTTP 301
+< content-length: 193
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:36:08 GMT
+< location: https://www.dollychildrens.org/app/files/public/23fd56f6-43f8-45b4-974b-e7d2a20a228c/Documents/626002604_east-tennessee-childrens-hospital_standardcharges.xml
+< permissions-policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
+< referrer-policy: no-referrer-when-downgrade
+< x-content-type-options: nosniff
+< x-server: ewr0.prod.edge
+* following Location: https://www.dollychildrens.org/app/files/public/23fd56f6-43f8-45b4-974b-e7d2a20a228c/Documents/626002604_east-tennessee-childrens-hospital_standardcharges.xml
+
+* final response: https://www.dollychildrens.org/app/files/public/23fd56f6-43f8-45b4-974b-e7d2a20a228c/Documents/626002604_east-tennessee-childrens-hospital_standardcharges.xml
+< HTTP 404
+< accept-ch: Sec-CH-DPR, Sec-CH-Width, Sec-CH-Viewport-Width
+< cache-control: max-age=0, no-cache, no-store
+< content-length: 34192
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:36:08 GMT
+< expect-ct: max-age=86400
+< expires: Mon, 07 Sep 2026 01:36:08 GMT
+< permissions-policy: geolocation=(self), payment=(self "https://formulate.geonetric.com" "https://forms.geonetric.com"), sync-xhr=(self "https://formulate.geonetric.com" "https://forms.geonetric.com"), camera=(), accelerometer=(), gyroscope=(), magnetometer=(), microphone=()
+< pragma: no-cache
+< referrer-policy: strict-origin-when-cross-origin
+< server-timing: cdn-cache; desc=MISS, edge; dur=101, origin; dur=422, ak_p; desc="1788744968323_400425171_2064315040_52261_18511_0_59_15";dur=1
+< strict-transport-security: max-age=63072000; includeSubDomains;
+< x-aspnet-version: 4.0.30319
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-ua-compatible: IE=Edge,chrome=1
+< --- body (34192 bytes read) ---
+< 
+< 
+< <!DOCTYPE html>
+< <html lang="en-US">
+< 
+< <!-- ======================================================================= --> 
+< <!-- Copyright (c)1998 - 2026 Geonetric, Inc.                                --> 
+< <!-- All rights reserved.  http://www.geonetric.com/                         --> 
+< <!-- ======================================================================= -->
+< 
+< <head id="VsMasterPage_HtmlHeader">
+< <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+< <!-- meta content-type added by WebControls.PageAdapter in ~/App_Browsers -->
+< <script type="text/javascript">
+< //<![CDATA[
+< 	window['VitalSite'] = {
+<   "page": {
+<     "Referrer": null,
+<     "Method": "GET",
+<     "IsPostBack": false,
+<     "StatusCode": 404,
+<     "Status": "404 Not Found"
+<   },
+<   "mapBrowserApiKey": "AIzaSyChw_WPzkycnVP5qmZE-JGtRu8__AdEaAQ"
+< };
+< //]]>
+< 
+< </script>
+< <link type="text/css" rel="stylesheet" href="/css-min/etch/etch.css" />
+< <meta name="robots" content="noindex" />
+< <meta name="copyright" content="(c)1998-2026 Geonetric. All Rights Reserved." />
+< 
+< 
+<     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" /><!-- This is needed to keep the iphone from scrolling horizontally -->
+< 
+<     <!-- Favicons -->
+<     <link rel="shortcut icon" href="/imgs/favicon.ico" />
+<     <link rel="apple-touch-icon" sizes="180x180" href="/imgs/apple-touch-icon.png">
+<     <link rel="icon" type="image/png" sizes="32x32" href="/imgs/favicon-32x32.png">
+<     <link rel="icon" type="image/png" sizes="16x16" href="/imgs/favicon-16x16.png">
+<     <link rel="mask-icon" href="/imgs/safari-pinned-tab.svg" color="#00274c">
+<     <meta name="msapplication-TileColor" content="#00274c">
+<     <meta name="theme-color" content="#ffffff">
+< 
+<     <!-- Scripts necessary in head to run first -->
+<     <script type="text/javascript">
+<         document.documentElement.className = 'js';
+<     </script>
+< 
+<     <!-- Webfonts -->
+<     <link rel="stylesheet" href="https://use.typekit.net/soe0ank.css">
+< 
+<     <!-- StyleSheets -->
+<     
+< <!-- Script Name: GTM Head -->
+< <!-- Google Tag Manager -->
+< <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+< new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+< j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+< 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+< })(window,document,'script','dataLayer','GTM-NPW37T');</script>
+< <!-- End Google Tag Manager -->
+< <title>
+< 	ERROR: Page Not Found
+< </title></head>
+< 
+< 
+< <body id="NoColumns" class="Interior ErrorApp">
+<     <script type="text/javascript" src="/scripts/jquery-3.7.0.min.js"></script>
+< <script type="text/javascript" src="/scripts/jquery-migrate-3.4.1.min.js"></script>
+< 
+< <!-- Script Name: GTM Body -->
+< <!-- Google Tag Manager (noscript) -->
+< <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NPW37T"
+< height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+< <!-- End Google Tag Manager (noscript) -->
+< 
+< 
+<     <div id="BodyWrap" class="ClearFix">
+<         
+< <header id="Header">
+< 	<a href="#Content" class="SkipTo">Skip to Content</a>
+< 	<div id="AlertPanel">
+< 		<div class="ClearFix cmspanel" id="PanelAlertSiteWide">
+< 	<div class="Dec1">
+< 		<div class="Dec2">
+< 			<div class="ClearFix BasicPanel">
+< 
+< 			</div>
+< 		</div>
+< 	</div>
+< </div>
+< 	</div>
+< 	<div id="HeaderTop">
+< 		<div id="Logo">
+< 			<div class="ClearFix cmspanel" id="PanelTemplatesLogo">
+< 	<div class="Dec1">
+< 		<div class="Dec2">
+< 			<div class="ClearFix BasicPanel">
+< 				<div class="ClearFix cmsPanelContent">
+< 					<p><a href="/"><img alt="Dolly Parton Children's Hospital" class="LogoDesktop" height="77" src="/app/files/public/7e7e64e3-e269-4fa5-953d-aee36ebf7ada/DPCH/DPCH_Logo_Full_2c_WhitePink_240x77.png" width="240" /><img alt="Dolly Parton Children's Hospital" class="LogoMobile" height="77" src="/app/files/public/57b7ef72-3fcb-4ea3-8a15-1f10dc822181/DPCH/DPCH_Logo_Full_4c_250x77.png" width="240" /> </a></p>
+< 				</div>
+< 			</div>
+< 		</div>
+< 	</div>
+< </div>
+<             <div id="CrumbSpace"></div>
+< 		</div>
+< 
+<         <div class="NavWrap">
+<             <div class="accordion MobileMenuTabs js">
+<                     <div class="phonewrap">
+<                         <button class="toggle Call" aria-selected="false" type="button"><span class="Icon"></span><span class="Text">Call</span></button>
+<                     </div>
+<                     <div class="tablist" role="tablist">
+<                         <button class="toggle Search" aria-selected="false" aria-controls="accordion-tab-1" id="accordion-1" type="button" role="tab" tabindex="0"><span class="Icon"></span><span class="Text">Search</span></button>
+<                         <button class="toggle Menu" aria-selected="false" aria-controls="accordion-tab-2" id="accordion-2" type="button" role="tab" tabindex="-1"><span class="Icon"></span><span class="Text">Menu</span></button>
+<                     </div>
+<                 <div class="listitemphone" aria-hidden="true" style="display: none;">
+<                     <div class="content Call" >
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 12623 ms

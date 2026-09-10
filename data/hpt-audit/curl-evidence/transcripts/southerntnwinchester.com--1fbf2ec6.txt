@@ -1,0 +1,133 @@
+# curl-style evidence for https://southerntnwinchester.com/
+# fetched 2026-09-07T01:36:01.271Z with the tracker's BROWSER_HEADERS (production client)
+# record: 440058 | SOUTHERN TENNESSEE REGIONAL HEALTH SYSTEM WINCHEST | TN | finding: not-assessed-not-named-in-file
+
+* DNS southerntnwinchester.com: 99.83.188.150, 75.2.103.146
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://southerntnwinchester.com/
+< HTTP 301
+< content-length: 83
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:36:02 GMT
+< location: https://www.highpointhealthsystem.com/winchester
+< server: ip-10-123-124-174.ec2.internal
+< vary: Accept-Encoding
+< x-request-id: 4bd0f26a-97c2-4dc2-8ebe-dfc3be414850
+* following Location: https://www.highpointhealthsystem.com/winchester
+
+* final response: https://www.highpointhealthsystem.com/winchester
+< HTTP 200
+< cache-control: public, max-age=120, s-maxage=600
+< content-security-policy: frame-src 'self' www.youtube-nocookie.com lifepointhealth.jotform.com fusion.realtourvision.com widgets.reputation.com *.bugherd.com https://www.google.com/maps/embed https://www.googletagmanager.com https://my.matterport.com https://3dtours.99hills.com https://www.google.com/recaptcha/ form.jotform.com *.olark.com https://intakeforms.sequencehealth.com submit.jotform.com https://login.mdstaff.com https://directory.asm-cloud.com go.kindred.com; script-src * 'unsafe-eval' 'unsafe-inline' blob: *.bugherd.com *.pusher.com https://www.googletagmanager.com https://tagmanager.google.com *.cyranoapp.media go.kindred.com; default-src * 'self'; media-src * blob: 'self'; img-src data: 'self' guideassets.blob.core.windows.net *.loyalhealth.com https://a.mktgcdn.com http://a.mktgcdn.com connectimages.azureedge.net maps.googleapis.com maps.gstatic.com https://www.gstatic.com https://ssl.gstatic.com img.youtube.com d2iiunr5ws5ch1.cloudfront.net bugherd-attachments.s3.amazonaws.com *.bugherd.com www.googletagmanager.com *.cyranoapp.media cdn.cookielaw.org privacyportal.onetrust.com geolocation.onetrust.com *.olark.com static.legitscript.com storage.googleapis.com www.snapengage.com https://*.kyruus.com https://*.healthsparq.com; style-src 'unsafe-inline' * 'self'; font-src * data: blob:; connect-src * data: *.pusher.com sessions.bugsnag.com *.bugherd.com www.googletagmanager.com
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:36:02 GMT
+< x-azure-ref: 20260907T013602Z-17d645df49ckz72qhC1FTY90bg00000006m000000000433d
+< x-cache: TCP_REMOTE_HIT
+< x-cache-info: L2_T2
+< x-fd-int-roxy-purgeid: 0
+< x-origin: 03
+< --- body (70094 bytes read, truncated) ---
+< 
+< 
+< 
+< <!DOCTYPE html>
+< <html id="html" lang="en" data-disable-built-in-consent-box="true">
+< <head>
+<     <meta charset="utf-8" />
+<     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<     <link rel="icon" type="image/png" sizes="48x48" href="/images/ahhighpointhealthlibraries/default-album/favicon.png">
+<     
+<     <title>Highpoint Health - Winchester with Ascension Saint Thomas</title><meta property='og:title' content='Highpoint Health - Winchester with Ascension Saint Thomas'><link rel='canonical' href='https://www.highpointhealthsystem.com/winchester' />
+< 
+<     <style>
+< :root {
+<   --default-font-family: Cabin, sans-serif;
+<   --default-font-weight: normal;
+<   --default-text-color: 0, 0, 0;
+<   --original-default-text-color: var(--default-text-color);
+<   --primary-color: 27, 66, 151;
+<   --secondary-color: 49, 49, 49;
+<   --body-link-color: 27, 66, 151;
+<   --body-link-hover-color: 27, 66, 151;
+<   --original-body-link-color: var(--body-link-color);
+<   --original-body-link-hover-color: var(--body-link-hover-color);
+<   --body-link-underline: underline;
+<   --container-max-width: 1200px;
+<   --container-background-color: #1B4297;
+<   --container-background-overlay-color: 27, 66, 151;
+<   --h1-font-family: Roboto Condensed, sans-serif;
+<   --h1-font-size: 3rem;
+<   --h1-text-color: 10, 10, 10;
+<   --h1-font-style: normal;
+<   --h1-font-weight: bold;
+<   --h2-font-family: Roboto Condensed, sans-serif;
+<   --h2-font-size: 2.5rem;
+<   --h2-text-color: 10, 10, 10;
+<   --h2-font-style: normal;
+<   --h2-font-weight: bold;
+<   --h3-font-family: Roboto Condensed, sans-serif;
+<   --h3-font-size: 2rem;
+<   --h3-text-color: 10, 10, 10;
+<   --h3-font-style: normal;
+<   --h3-font-weight: bold;
+<   --h4-font-family: Roboto Condensed, sans-serif;
+<   --h4-font-size: 1.75rem;
+<   --h4-text-color: 10, 10, 10;
+<   --h4-font-style: normal;
+<   --h4-font-weight: bold;
+<   --h5-font-family: Roboto Condensed, sans-serif;
+<   --h5-font-size: 1.5rem;
+<   --h5-text-color: 10, 10, 10;
+<   --h5-font-style: normal;
+<   --h5-font-weight: bold;
+<   --h6-font-family: Roboto Condensed, sans-serif;
+<   --h6-font-size: 1.35rem;
+<   --h6-text-color: 10, 10, 10;
+<   --h6-font-style: normal;
+<   --h6-font-weight: normal;
+<   --button-primary-background-color: 27, 66, 151;
+<   --button-primary-background-hover-color: 49, 49, 49;
+<   --button-primary-text-color: 255, 255, 255;
+<   --button-primary-text-hover-color: 255, 255, 255;
+<   --button-primary-text-transform: uppercase;
+<   --button-primary-font-size: 1rem;
+<   --button-secondary-background-color: 49, 49, 49;
+<   --button-secondary-background-hover-color: 27, 66, 151;
+<   --button-secondary-text-color: 255, 255, 255;
+<   --button-secondary-text-hover-color: 255, 255, 255;
+<   --button-secondary-text-transform: uppercase;
+<   --button-secondary-font-size: 1rem;
+<   --button-tertiary-background-color: 49, 49, 49;
+<   --button-tertiary-background-hover-color: 27, 66, 151;
+<   --button-tertiary-text-color: 255, 255, 255;
+<   --button-tertiary-text-hover-color: 255, 255, 255;
+<   --button-tertiary-text-transform: uppercase;
+<   --button-tertiary-font-size: 1rem;
+<   --main-nav-font-family: var(--default-font-family);
+<   --main-nav-background-color: 255, 255, 255;
+<   --main-nav-top-level-item-background-color: 255, 255, 255;
+<   --main-nav-top-level-item-background-hover-color: 255, 255, 255;
+<   --main-nav-top-level-item-text-color: 29, 42, 55;
+<   --main-nav-top-level-item-text-hover-color: 29, 42, 55;
+<   --main-nav-sub-item-background-color: 238, 238, 238;
+<   --main-nav-sub-item-background-hover-color: 238, 238, 238;
+<   --main-nav-sub-item-text-color: 29, 42, 55;
+<   --main-nav-sub-item-text-hover-color: 29, 42, 55;
+<   --announcements-bar-background-color: var(--primary-color);
+< }
+< </style>
+< 
+<     <style>@charset "UTF-8";*,:after,:before{box-sizing:border-box}*{margin:0}body{line-height:1.5;-webkit-font-smoothing:antialiased}canvas,img,picture,svg,video{display:block;max-width:100%;height:auto}button,input,select,textarea{font:inherit}h1,h2,h3,h4,h5,h6,p{overflow-wrap:break-word}address{font-style:normal;line-height:1.5}iframe{max-width:100%;width:auto}:root{--grid-col-gap:2rem;--grid-row-gap:1rem;--grid-pad-1:0.25rem;--grid-pad-2:0.5rem;--grid-pad-3:1rem;--grid-pad-4:1.5rem;--grid-pad-5:3rem;--grid-marg-1:0.25rem;--grid-marg-2:0.5rem;--grid-marg-3:1rem;--grid-marg-4:1.5rem;--grid-marg-5:3rem}.row{display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--grid-col-gap);row-gap:var(--grid-row-gap);padding:var(--grid-gap)}.row>*{grid-column-start:auto;grid-column-end:span var(--grid-col-span,12)}.row>:empty{display:none}@media (max-width:576px){.row:has(:not([class*=col-xs])){column-gap:0}}.row.grid-col-gap-0{column-gap:0;row-gap:0}@media (min-width:577px){.row.gap-lg{column-gap:var(--grid-pad-5)}}.row>.align-top{align-self:start}.row>.align-center{align-self:center}.row>.align-end{align-self:end}.row>.align-stretch{display:grid;align-items:stretch}.row>.justify-center{display:grid;place-content:center}@media (min-width:0){.col-xs-1{--grid-col-span:1}.col-xs-2{--grid-col-span:2}.col-xs-2:empty{display:block}.col-xs-3{--grid-col-span:3}.col-xs-3:empty{display:block}.col-xs-4{--grid-col-span:4}.col-xs-4:empty{display:block}.col-xs-5{--grid-col-span:5}.col-xs-5:empty{display:block}.col-xs-6{--grid-col-span:6}.col-xs-6:empty{display:block}.col-xs-7{--grid-col-span:7}.col-xs-7:empty{display:block}.col-xs-8{--grid-col-span:8}.col-xs-8:empty{display:block}.col-xs-9{--grid-col-span:9}.col-xs-9:empty{display:block}.col-xs-10{--grid-col-span:10}.col-xs-10:empty{display:block}.col-xs-11{--grid-col-span:11}.col-xs-11:empty{display:block}.col-xs-12{--grid-col-span:12}.col-xs-12:empty{display:block}}@media (min-width:576px){.col-sm-1{--grid-col-span:1}.col-sm-2{--grid-col-span:2}.col-sm-2:empty{display:block}.col-sm-3{--grid-col-span:3}.col-sm-3:empty{display:block}.col-sm-4{--grid-col-span:4}.col-sm-4:empty{display:block}.col-sm-5{--grid-col-span:5}.col-sm-5:empty{display:block}.col-sm-6{--grid-col-span:6}.col-sm-6:empty{display:block}.col-sm-7{--grid-col-span:7}.col-sm-7:empty{display:block}.col-sm-8{--grid-col-span:8}.col-sm-8:empty{display:block}.col-sm-9{--grid-col-span:9}.col-sm-9:empty{display:block}.col-sm-10{--grid-col-span:10}.col-sm-10:empty{display:block}.col-sm-11{--grid-col-span:11}.col-sm-11:empty{display:block}.col-sm-12{--grid-col-span:12}.col-sm-12:empty{display:block}}@media (min-width:768px){.col-md-1{--grid-col-span:1}.col-md-2{--grid-col-span:2}.col-md-2:empty{display:block}.col-md-3{--grid-col-span:3}.col-md-3:empty{display:block}.col-md-4{--grid-col-span:4}.col-md-4:empty{display:block}.col-md-5{--grid-col-span:5}.col-md-5:empty{display:block}.col-md-6{--grid-col-span:6}.col-md-6:empty{display:block}.col-md-7{--grid-col-span:7}.col-md-7:empty{display:block}.col-md-8{--grid-col-span:8}.col-md-8:empty{display:block}.col-md-9{--grid-col-span:9}.col-md-9:empty{display:block}.col-md-10{--grid-col-span:10}.col-md-10:empty{display:block}.col-md-11{--grid-col-span:11}.col-md-11:empty{display:block}.col-md-12{--grid-col-span:12}.col-md-12:empty{display:block}}@media (min-width:992px){.col-lg-1{--grid-col-span:1}.col-lg-2{--grid-col-span:2}.col-lg-2:empty{display:block}.col-lg-3{--grid-col-span:3}.col-lg-3:empty{display:block}.col-lg-4{--grid-col-span:4}.col-lg-4:empty{display:block}.col-lg-5{--grid-col-span:5}.col-lg-5:empty{display:block}.col-lg-6{--grid-col-span:6}.col-lg-6:empty{display:block}.col-lg-7{--grid-col-span:7}.col-lg-7:empty{display:block}.col-lg-8{--grid-col-span:8}.col-lg-8:empty{display:block}.col-lg-9{--grid-col-span:9}.col-lg-9:empty{display:block}.col-lg-10{--grid-col-span:10}.col-lg-10:empty{display:block}.col-lg-11{--grid-col-span:11}.col-lg-11:empty{display:block}.col-lg-12{--grid-col-span:12}.col-lg-12:empty{display:block}}@media (min-width:1200px){.col-xl-1{--grid-col-span:1}.col-xl-2{--grid-col-span:2}.col-xl-2:empty{display:block}.col-xl-3{--grid-col-span:3}.col-xl-3:empty{display:block}.col-xl-4{--grid-col-span:4}.col-xl-4:empty{display:block}.col-xl-5{--grid-col-span:5}.col-xl-5:empty{display:block}.col-xl-6{--grid-col-span:6}.col-xl-6:empty{display:block}.col-xl-7{--grid-col-span:7}.col-xl-7:empty{display:block}.col-xl-8{--grid-col-span:8}.col-xl-8:empty{display:block}.col-xl-9{--grid-col-span:9}.c
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 585 ms

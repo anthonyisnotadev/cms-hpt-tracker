@@ -1,0 +1,44 @@
+# curl-style evidence for https://www.grh.org/clientfiles/GetFile/930505325_grande-ronde-hospital_standardcharges.csv
+# fetched 2026-09-07T01:35:37.544Z with the tracker's BROWSER_HEADERS (production client)
+# record: 381321 | GRANDE RONDE HOSPITAL | OR | finding: mrf-url-unreachable
+
+* DNS www.grh.org: 100.20.247.252, 100.20.245.150
+
+> GET /clientfiles/GetFile/930505325_grande-ronde-hospital_standardcharges.csv  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://www.grh.org/clientfiles/GetFile/930505325_grande-ronde-hospital_standardcharges.csv
+< HTTP 404
+< cache-control: public, max-age=300, must-revalidate
+< content-length: 162
+< content-security-policy: default-src * 'unsafe-inline' 'unsafe-eval' data: blob:; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests
+< content-type: application/problem+json; charset=utf-8
+< date: Mon, 07 Sep 2026 01:35:39 GMT
+< permissions-policy: camera=(), microphone=(), geolocation=(self), payment=()
+< referrer-policy: strict-origin-when-cross-origin
+< server: Microsoft-IIS/10.0
+< strict-transport-security: max-age=31536000; includeSubDomains
+< user-agent: coffey-sa
+< vary: Accept-Encoding
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-permitted-cross-domain-policies: none
+< x-powered-by: ASP.NET
+< x-sa-instance: i-08ff5c90a70007636
+< x-xss-protection: 1; mode=block
+< --- body (162 bytes read) ---
+< {
+<   "type": "https://tools.ietf.org/html/rfc9110#section-15.5.5",
+<   "title": "Not Found",
+<   "status": 404,
+<   "traceId": "00-46580db6df63684a425dafe416699aee-33037047d339f5a4-00"
+< }
+
+* total time: 535 ms

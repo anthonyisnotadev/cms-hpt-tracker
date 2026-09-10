@@ -1,0 +1,174 @@
+# curl-style evidence for https://kingsdaughtershealth.com/
+# fetched 2026-09-07T01:33:15.850Z with the tracker's BROWSER_HEADERS (production client)
+# record: 180009 | KING'S DAUGHTERS' MEDICAL CENTER | KY | finding: no-cms-hpt-txt-published
+# record: 360361 | KINGS DAUGHTERS MEDICAL CENTER OHIO | OH | finding: no-cms-hpt-txt-published
+
+* DNS kingsdaughtershealth.com: 104.19.144.84, 104.19.255.83
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://kingsdaughtershealth.com/
+< HTTP 301
+< cf-ray: a371f6e69f8ac7c1-IAD
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:33:17 GMT
+< location: https://www.ukkingsdaughters.com/
+< server: cloudflare
+< strict-transport-security: max-age=31536000
+* following Location: https://www.ukkingsdaughters.com/
+
+* final response: https://www.ukkingsdaughters.com/
+< HTTP 200
+< cache-control: max-age=2764800, public
+< cf-cache-status: REVALIDATED
+< cf-ray: a371f6e7f9312bd4-IAD
+< content-encoding: br
+< content-language: en
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:33:17 GMT
+< expires: Sun, 19 Nov 1978 05:00:00 GMT
+< last-modified: Fri, 04 Sep 2026 20:09:24 GMT
+< server: cloudflare
+< strict-transport-security: max-age=31536000
+< vary: Cookie,Accept-Encoding
+< via: varnish
+< x-ah-environment: prod
+< x-cache: MISS
+< x-content-type-options: nosniff
+< x-drupal-cache: MISS
+< x-drupal-dynamic-cache: UNCACHEABLE (poor cacheability)
+< x-frame-options: SAMEORIGIN
+< x-generator: Drupal 11 (https://www.drupal.org)
+< x-request-id: v-86199da8-a89c-11f1-a419-cf4d21a2109e
+< --- body (65536 bytes read, truncated) ---
+< <!DOCTYPE html>
+< <html  lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<   <head>
+<     <script>
+<       var redirectUrl = '';
+<       let checkIE = function () {
+<         var ua = window.navigator.userAgent;
+< 
+<         return ua.indexOf('MSIE ') >= 0 || ua.indexOf('Trident/') >= 0;
+<       }
+< 
+<       if (
+<         checkIE() &&
+<         redirectUrl &&
+<         window.location.pathname != redirectUrl
+<       ) {
+<         window.location.href = redirectUrl;
+<       }
+<     </script>
+<     <meta charset="utf-8" />
+< <script>var _paq = _paq || [];(function(){var u=(("https:" == document.location.protocol) ? "https://analytics.ukhc.org/" : "http://analytics.ukhc.org/");_paq.push(["setSiteId", "21"]);_paq.push(["setTrackerUrl", u+"matomo.php"]);if (!window.matomo_search_results_active) {_paq.push(["trackPageView"]);}_paq.push(["setIgnoreClasses", ["no-tracking","colorbox"]]);_paq.push(["enableLinkTracking"]);var d=document,g=d.createElement("script"),s=d.getElementsByTagName("script")[0];g.type="text/javascript";g.defer=true;g.async=true;g.src=u+"matomo.js";s.parentNode.insertBefore(g,s);})();</script>
+< <meta name="description" content="King&#039;s Daughters Health System – A new era for UK King&#039;s Daughters. A comprehensive healthcare system located in Ashland, Kentucky, providing advanced medical care across multiple specialties and locations." />
+< <link rel="shortlink" href="https://www.ukkingsdaughters.com/" />
+< <link rel="canonical" href="https://www.ukkingsdaughters.com/" />
+< <link rel="image_src" href="https://www.ukkingsdaughters.com/themes/custom/ukkd/images/seo_fallback.png" />
+< <meta property="og:site_name" content="UK King&#039;s Daughters" />
+< <meta property="og:title" content="UK King&#039;s Daughters" />
+< <meta property="og:description" content="King&#039;s Daughters Health System – A new era for UK King&#039;s Daughters. A comprehensive healthcare system located in Ashland, Kentucky, providing advanced medical care across multiple specialties and locations." />
+< <meta property="og:image" content="https://www.ukkingsdaughters.com/themes/custom/ukkd/images/seo_fallback.png" />
+< <meta property="og:image:width" content="700" />
+< <meta property="og:image:height" content="238" />
+< <meta property="og:image:alt" content="UK King&#039;s Daughters logo" />
+< <meta name="twitter:card" content="summary_large_image" />
+< <meta name="twitter:description" content="King&#039;s Daughters Health System – A comprehensive healthcare system in Ashland, Kentucky." />
+< <meta name="twitter:title" content="UK King&#039;s Daughters" />
+< <meta name="twitter:image" content="https://www.ukkingsdaughters.com/themes/custom/ukkd/images/seo_fallback.png" />
+< <meta name="twitter:image:alt" content="UK King&#039;s Daughters logo" />
+< <meta name="Generator" content="Drupal 11 (https://www.drupal.org)" />
+< <meta name="MobileOptimized" content="width" />
+< <meta name="HandheldFriendly" content="true" />
+< <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+< <script type="application/ld+json">{
+<     "@context": "https://schema.org",
+<     "@graph": [
+<         {
+<             "@type": "MedicalOrganization",
+<             "@id": "https://www.ukkingsdaughters.com/",
+<             "name": "UK King\u0027s Daughters",
+<             "description": "King\u0027s Daughters Health System – A comprehensive healthcare system located in Ashland, Kentucky, providing advanced medical care across multiple specialties and locations.",
+<             "url": "https://www.ukkingsdaughters.com/",
+<             "logo": {
+<                 "@type": "ImageObject",
+<                 "url": "https://www.ukkingsdaughters.com/themes/custom/ukkd/logo.png"
+<             },
+<             "image": {
+<                 "@type": "ImageObject",
+<                 "representativeOfPage": "True",
+<                 "url": "https://www.ukkingsdaughters.com/themes/custom/ukkd/images/seo_fallback.png",
+<                 "width": "700",
+<                 "height": "238"
+<             },
+<             "subOrganization": [
+<                 {
+<                     "@type": "MedicalOrganization",
+<                     "@id": "https://www.ukkingsdaughters.com/allergy-immunology",
+<                     "name": "Allergy \u0026 Immunology"
+<                 },
+<                 {
+<                     "@type": "MedicalOrganization",
+<                     "@id": "https://www.ukkingsdaughters.com/services/behavioral-medicine",
+<                     "name": "Behavioral Medicine"
+<                 },
+<                 {
+<                     "@type": "MedicalOrganization",
+<                     "@id": "https://www.ukkingsdaughters.com/center-healthy-living",
+<                     "name": "Center for Healthy Living"
+<                 },
+<                 {
+<                     "@type": "MedicalOrganization",
+<                     "@id": "https://www.ukkingsdaughters.com/community",
+<                     "name": "Community"
+<                 },
+<                 {
+<                     "@type": "MedicalOrganization",
+<                     "@id": "https://www.ukkingsdaughters.com/about/compliance-department",
+<                     "name": "Compliance Department"
+<                 },
+<                 {
+<                     "@type": "MedicalOrganization",
+<                     "@id": "https://www.ukkingsdaughters.com/services/digestive-health",
+<                     "name": "Digestive Health"
+<                 },
+<                 {
+<                     "@type": "MedicalOrganization",
+<                     "@id": "https://www.ukkingsdaughters.com/services/emergency-department",
+<                     "name": "Emergency Department"
+<                 },
+<                 {
+<                     "@type": "MedicalOrganization",
+<                     "@id": "https://www.ukkingsdaughters.com/financial-resources",
+<                     "name": "Financial Services and Resources"
+<                 },
+<                 {
+<                     "@type": "MedicalOrganization",
+<                     "@id": "https://www.ukkingsdaughters.com/services/foot-ankle",
+<                     "name": "Foot \u0026 Ankle"
+<                 },
+<                 {
+<                     "@type": "MedicalOrganization",
+<                     "@id": "https://www.ukkingsdaughters.com/graduate-medical-education-0",
+<                     "name": "Graduate Medical Education"
+<                 },
+<                 {
+<                     "@type": "MedicalOrganization",
+<                     "@id": "https://www.ukkingsdaughters.com/health-foundation",
+<                     "name": "Health Foundation"
+<                 },
+<                 {
+<                     "@type": "MedicalOrganization",
+<                     "@id": "https://www.ukkingsdaughters.com/services/heart-vascular",
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 520 ms

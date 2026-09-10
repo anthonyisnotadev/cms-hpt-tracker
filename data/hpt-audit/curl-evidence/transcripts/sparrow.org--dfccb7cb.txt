@@ -1,0 +1,134 @@
+# curl-style evidence for https://sparrow.org/
+# fetched 2026-09-07T01:34:41.183Z with the tracker's BROWSER_HEADERS (production client)
+# record: 230230 | EDWARD W SPARROW HOSPITAL | MI | finding: not-assessed-not-named-in-file
+# record: 231331 | SPARROW IONIA HOSPITAL | MI | finding: not-assessed-not-named-in-file
+# record: 231327 | UNIVERSITY OF MICHIGAN HEALTH - SPARROW EATON | MI | finding: not-assessed-not-named-in-file
+# record: 231326 | UNIVERSITY OF MICHIGAN HEALTH- SPARROW CLINTON | MI | finding: not-assessed-not-named-in-file
+# record: 230208 | UNIVERSITY OF MICHIGAN HEALTH-SPARROW CARSON | MI | finding: not-assessed-not-named-in-file
+
+* DNS sparrow.org: 52.45.4.157
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://sparrow.org/
+< HTTP 301
+< age: 1142573
+< cache-control: max-age=31536000
+< content-length: 231
+< content-type: text/html; charset=iso-8859-1
+< date: Mon, 07 Sep 2026 01:34:42 GMT
+< expires: Tue, 24 Aug 2027 20:11:48 GMT
+< location: http://www.sparrow.org/
+< server: nginx
+< via: varnish
+< x-cache: HIT
+< x-cache-hits: 15681
+< x-content-type-options: nosniff
+< x-request-id: v-09a8ac2a-9ff8-11f1-9efa-63e56d248d16
+* following Location: http://www.sparrow.org/
+
+* redirect hop 2: http://www.sparrow.org/
+< HTTP 301
+< age: 1142571
+< cache-control: max-age=31536000
+< connection: keep-alive
+< content-length: 232
+< content-type: text/html; charset=iso-8859-1
+< date: Mon, 24 Aug 2026 20:11:50 GMT
+< expires: Tue, 24 Aug 2027 20:11:50 GMT
+< location: https://www.sparrow.org/
+< server: nginx
+< via: varnish
+< x-cache: HIT
+< x-cache-hits: 13285
+< x-content-type-options: nosniff
+< x-request-id: v-0ac37572-9ff8-11f1-bd2d-2b48a2ba99f2
+* following Location: https://www.sparrow.org/
+
+* redirect hop 3: https://www.sparrow.org/
+< HTTP 301
+< age: 1142573
+< cache-control: max-age=31536000
+< content-length: 242
+< content-type: text/html; charset=iso-8859-1
+< date: Mon, 07 Sep 2026 01:34:42 GMT
+< expires: Tue, 24 Aug 2027 20:11:48 GMT
+< location: https://www.uofmhealthsparrow.org/
+< server: nginx
+< via: varnish
+< x-cache: HIT
+< x-cache-hits: 28191
+< x-content-type-options: nosniff
+< x-request-id: v-09c1212e-9ff8-11f1-ad55-27333b7ee075
+* following Location: https://www.uofmhealthsparrow.org/
+
+* final response: https://www.uofmhealthsparrow.org/
+< HTTP 200
+< age: 98682
+< cache-control: max-age=31536000, public
+< cf-cache-status: DYNAMIC
+< cf-ray: a371f8fdef0dda52-IAD
+< content-encoding: gzip
+< content-language: en
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:34:42 GMT
+< expires: Sun, 19 Nov 1978 05:00:00 GMT
+< last-modified: Sat, 05 Sep 2026 22:09:28 GMT
+< server: cloudflare
+< strict-transport-security: max-age=1000; includeSubDomains
+< surrogate-key: 2jjb 6klg 8902 8hdd n2i1 e5te tdki dt82 ibj2 unv5 ltjv 8u5a qkfo 3d2s 0qau a5tc uh4d r0k2 i5qk v8ft s9cd 2jor q9ea n17g qdbm 34ov 39qi p9eu nirt rtdl lv1k tju6 cck5 e9kf 760n 73aa mp74 vt9h 5pjt bnla vfs6 di3r p99s 8tkg d1k9 qg8p lfet ud7u jca3 9nr9 dnuv mekm 7306 mivb bjlk qnoh 95e0 541c it2i ckdi chjo 1r7t 992d 5d3r 9joo vqo5 79u7 q7ik cj4r 8baj mnb7 4bqq vj2b dkau tpl6 q99n u0ac qp8d lama 8asa fpte e79l 84st 9hem bhou 7bfs 2vmc 8ou3 4idm nvtt 49o2 ru2m 2n3h mtml 1qps ds7p s75m ilt4 bsjb 2u24 14uf pnj1 hm9i q95j p1h5 kckc 2ilv vtmc e1tc 9oso 798u 8g6u 355m 673t a5qo 50ts cbmu 350i 3a54 bd66 oo7l 5trk urrt 53p8 45hq 5vac 70mr qrf8 g5g2 7h71 332k 71a8 u0um 5rh1 rhfh 7l4u lhqr pgor cqvu obgg vd5m l6mc rp47 u3ga 580l 546b d1n8 b7rj ds81 avf1 31et k2sh ndv7 ebic jgvc 8ulk 0rmu h6s2 8j9t p2p3 et79 sr61 2tqa 81op hs6f qqnm aslh 5qmm irj3 ekdb 5js2 i1f0 m7ur mvfu sepu jqjq 4j4q 2vbm qh80 9e2j hn6d 3dl5 jtou fsr3 g9d2 hgkk sr32 inuh qv3b 39o1 tdbg 9ggh 0vlb s9eb 4eev dm3o 5ipo 6588 a4sg 0061 duse 60sa 9mpe g5ds 05nm sa03 c74s br7m 7naf lrpf q08j kqbq kt91 g9ht gbmh 0vaf 66fo b1h2 g36q phf9 41f4 qusf e4bv bndq plrb eci4 eame hlth h8bq 1tuo r833 51ap oo8r g672 7qkt 70fr ts8i 0me4 dj2u a60q 47r8 qrim gobn kg6g a8t7 n78s oho2 ilim 068n cil7 upp6 0r1h qe79 pe86 dj75 sjar 7vid flfv l9f6 hge8 6vqn qp6s nqju qb1j khn0 38n5 222i vl8j 4keo 762e lqea v176 n2aq nsha 53qc rb9t imgc fbj3 djgp
+< vary: Cookie,Accept-Encoding
+< via: varnish
+< x-ah-environment: prod
+< x-cache: HIT
+< x-cache-hits: 12523
+< x-content-type-options: nosniff
+< x-drupal-cache: HIT
+< x-drupal-dynamic-cache: UNCACHEABLE (poor cacheability)
+< x-frame-options: SAMEORIGIN
+< x-generator: Drupal 10 (https://www.drupal.org)
+< x-request-id: v-89b40de2-a976-11f1-a95d-f76d98daca23
+< --- body (65536 bytes read, truncated) ---
+< 
+< <!DOCTYPE html>
+< <html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+<   <head>
+<     <meta charset="utf-8" />
+< <noscript><style>form.antibot * :not(.antibot-message) { display: none !important; }</style>
+< </noscript><meta name="description" content="Sparrow is the region&#039;s largest health system offering some of the most advanced medical technology in the world. Find quality care at Sparrow Hospital." />
+< <meta name="keywords" content="sparrow hospital, sparrow hospital lansing mi, sparrow health system, sparrow hospital lansing, lansing michigan hospital, sparrow health, sparrow healthcare, sparrow health system lansing michigan" />
+< <link rel="shortlink" href="https://www.uofmhealthsparrow.org/" />
+< <link rel="canonical" href="https://www.uofmhealthsparrow.org/" />
+< <link rel="image_src" href="https://www.uofmhealthsparrow.org/sites/default/files/styles/3_2_card_crop/public/2024-04/umhs-teaser-tiles-900x600-blue.png?itok=J4sLcthn" />
+< <meta property="og:site_name" content="University of Michigan Sparrow" />
+< <meta property="og:type" content="content" />
+< <meta property="og:url" content="https://www.uofmhealthsparrow.org/home" />
+< <meta property="og:title" content="Home | University of Michigan Sparrow" />
+< <meta property="og:description" content="UM Health-Sparrow is the Lansing area’s only community-owned health system. We provide quality, compassionate care to patients like you." />
+< <meta property="og:image" content="https://www.uofmhealthsparrow.org/sites/default/files/styles/3_2_card_crop/public/2024-04/umhs-teaser-tiles-900x600-blue.png?itok=J4sLcthn" />
+< <meta name="dcterms.title" content="Home" />
+< <meta name="dcterms.description" content="UM Health-Sparrow is the Lansing area’s only community-owned health system. We provide quality, compassionate care to patients like you." />
+< <meta name="twitter:card" content="summary" />
+< <meta name="twitter:title" content="Home" />
+< <meta name="twitter:description" content="UM Health-Sparrow is the Lansing area’s only community-owned health system. We provide quality, compassionate care to patients like you." />
+< <meta name="twitter:image" content="https://www.uofmhealthsparrow.org/sites/default/files/styles/3_2_card_crop/public/2024-04/umhs-teaser-tiles-900x600-blue.png?itok=J4sLcthn" />
+< <meta name="google-site-verification" content="5AsXG9cSnvaLBIW-cS6sd-ieOIApQ6wEyZP3JWWMuaE" />
+< <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+< <meta name="MobileOptimized" content="width" />
+< <meta name="HandheldFriendly" content="true" />
+< <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+< <link href="https://assets.sitescdn.net/answers/v1.5/answers.css" rel="stylesheet" type="text/css" />
+< <script src="https://assets.sitescdn.net/answers/v1.5/answers.min.js" onload="ANSWERS.domReady(initAnswers)" defer></script>
+< <meta http-equiv="X-UA-Compatible" content="IE=edge" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:["bam.nr-data.net"]},distributed_tracing:{enabled:true}};(window.NREUM||(NREUM={})).loader_config={agentID:"1134444660",accountID:"2726268",trustKey:"26315",xpid:"VgEFV1RVABABVFRbAwABX1wJ",licenseKey:"NRJS-36179a3c291a2a1b56d",applicationID:"1059416988",browserID:"1134444660"};;/*! For license information please see nr-loader-spa-1.321.0.min.js.LICENSE.txt */
+< (()=>{var e={8122(e,t,r){"use strict";r.d(t,{a:()=>i});var n=r(944);function i(e,t){try{if(!e||"object"!=typeof e)return(0,n.R)(3);if(!t||"object"!=typeof t)return(0,n.R)(4);const r=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),s=0===Object.keys(r).length?e:r;for(let a in s)if(void 0!==e[a])try{if(null===e[a]){r[a]=null;continue}Array.isArray(e[a])&&Array.isArray(t[a])?r[a]=Array.from(new Set([...e[a],...t[a]])):e[a]instanceof Map||e[a]instanceof Set||e[a]instanceof Date||e[a]instanceof RegExp?r[a]=e[a]:"object"==typeof e[a]&&null!==t[a]&&"object"==typeof t[a]?r[a]=i(e[a],t[a]):r[a]=e[a]}catch(e){r[a]||(0,n.R)(1,e)}return r}catch(e){(0,n.R)(2,e)}}},2555(e,t,r){"use strict";r.d(t,{f:()=>a});var n=r(384),i=r(8122);const s={beacon:n.NT.beacon,errorBeacon:n.NT.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0};function a(e){try{return!!e.licenseKey&&!!e.errorBeacon&&!!e.applicationID}catch(e){return!1}}r.d(t,["D",0,e=>(0,i.a)(e,s)])},7699(e,t,r){"use strict";var n=r(860);const i={[n.K7.logging]:!0,[n.K7.genericEvents]:!0,[n.K7.jserrors]:!0,[n.K7.ajax]:!0};r.d(t,["It",0,1e6,"KC",0,i,"qh",0,"SESSION_ERROR"])},9324(e,t,r){"use strict";r.d(t,["A",0,"@newrelic/rrweb","x",0,"1.321.0"])},981(e,t,r){"use strict";r.d(t,["R",0,{AJAX:"AjaxRequest",PA:"PageAction",UA:"UserAction",BP:"BrowserPerformance",WS:"WebSocket",SPV:"SecurityPolicyViolation",JSE:"JavaScriptError",LOG:"Log",PVE:"PageView",PVT:"PageViewTiming",SR:"SessionReplay",ST:"SessionTrace",BI:"BrowserInteraction"}])},9752(e,t,r){"use strict";const n="newrelic-iframe-",i=n+"timing-update",s=n+"api",a=n+"api-response",o=n+"vitals-update",c=n+"ajax";r.d(t,["$8",0,o,"Gi",0,a,"KU",0,c,"Pl",0,n,"cS",0,s,"cr",0,i])},6154(e,t,r){"use strict";var n=r(1863);const i="undefined"!=typeof window&&!!window.document,s="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),a=i?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),o=Boolean("hidden"===a?.document?.visibilityState),c=""+a?.location,d=/iPad|iPhone|iPod/.test(a.navigator?.userAgent),u=d&&"undefined"==typeof SharedWorker,l=(()=>{const e=a.navigator?.userAgent?.match(/Firefox[/\s](\d+\.\d+)/);return Array.isArray(e)&&e.length>=2?+e[1]:0})(),f=Date.now()-(0,n.t)();r.d(t,["OF",0,d,"RI",0,i,"WN",0,f,"bv",0,s,"gm",0,a,"lR",0,l,"m",0,c,"mw",0,o,"sb",0,u,"zk",0,()=>{const e=a?.performance?.getEntriesByType?.("navigation")?.[0];if(e&&e.responseStart>0&&e.responseStart<a.performance.now())return e}])},7295(e,t,r){"use strict";r.d(t,{Xv:()=>a,gX:()=>i,iW:()=>s});var n=[];function i(e){if(!e||s(e))return!1;if(0===n.length)return!0;if("*"===n[0].hostname)return!1;for(var t=0;t<n.length;t++){var r=n[t];if(r.hostname.test(e.hostname)&&r.pathname.test(e.pathname))return!1}return!0}function s(e){return void 0===e.hostname}function a(e){if(n=[],e&&e.length)for(var t=0;t<e.length;t++){let r=e[t];if(!r)continue;if("*"===r)return void(n=[{hostname:"*"}]);0===r.indexOf("http://")?r=r.substring(7):0===r.indexOf("https://")&&(r=r.substring(8));const i=r.indexOf("/");let s,a;i>0?(s=r.substring(0,i),a=r.substring(i)):(s=r,a="*");let[c]=s.split(":");n.push({hostname:o(c),pathname:o(a,!0)})}}function o(e,t=!1){const r=e.replace(/[.+?^${}()|[\]\\]/g,e=>"\\"+e).replace(/\*/g,".*?");return new RegExp((t?"^":"")+r+"$")}},3241(e,t,r){"use strict";r.d(t,{W:()=>i});var n=r(6154);function i(e={}){try{n.gm.dispatchEvent(new CustomEvent("newrelic",{detail:e}))}catch(e){}}},1687(e,t,r){"use strict";r.d(t,{Ak:()=>o,Ze:()=>d,x3:()=>c});var n=r(3241),i=r(3606),s=r(860),a=r(2646);function o(e,t){if(!e)return;const r={staged:!1,priority:s.P3[t]||0};e.runtime.drainRegistry.get(t)||e.runtime.drainRegistry.set(t,r)}function c(e,t){if(!e)return;const r=e.runtime.drainRegistry;r&&(r.get(t)&&r.delete(t),l(e,t,!1),r.size&&u(e))}function d(e,t="feature",r=!1){if(e){if(!e.runtime.drainRegistry.get(t)||r)return l(e,t);e.runtime.drainRegistry.get(t).staged=!0,u(e)}}function u(e){if(!e)return;const t=Array.from(e.runtime.drainRegistry);t.every(([e,t])=>t.staged)&&(t.sort((e,t)=>e[1].priority-t[1].priority),t.forEach(([t])=>{e.runtime.drainRegistry.delete(t),l(e,t)}))}function l(e,t,r=!0){if(!e)return;const s=e.ee,o=i.i.handlers;if(s&&!s.aborted&&s.backlog&&o){if((0,n.W)({type:"lifecycle",name:"drain",feature:t}),r){const e=
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 733 ms

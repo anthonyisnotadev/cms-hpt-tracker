@@ -1,0 +1,23 @@
+# curl-style evidence for https://choaassets.choa.org/
+# fetched 2026-09-07T01:32:40.320Z with the tracker's BROWSER_HEADERS (production client)
+# record: 113300 | ATHUR M BLANK HOSPITAL | GA | finding: not-assessed-site-unreachable
+# record: 113301 | CHILDREN'S HEALTHCARE OF ATLANTA AT SCOTTISH RITE | GA | finding: not-assessed-site-unreachable
+
+* DNS choaassets.choa.org: ENOTFOUND getaddrinfo ENOTFOUND choaassets.choa.org
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* error: fetch failed (cause: ENOTFOUND)
+
+* http:// fallback attempt after transport failure:
+* fallback error: fetch failed (cause: ENOTFOUND)
+
+* total time: 211 ms

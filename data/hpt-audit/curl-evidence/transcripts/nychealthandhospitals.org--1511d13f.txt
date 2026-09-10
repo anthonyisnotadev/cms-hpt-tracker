@@ -1,0 +1,101 @@
+# curl-style evidence for https://nychealthandhospitals.org/
+# fetched 2026-09-07T01:35:35.578Z with the tracker's BROWSER_HEADERS (production client)
+# record: 330080 | LINCOLN MEDICAL & MENTAL HEALTH CENTER | NY | finding: not-assessed-not-named-in-file
+
+* DNS nychealthandhospitals.org: 64.251.41.89, 64.251.33.89, 20.119.16.45
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://nychealthandhospitals.org/
+< HTTP 301
+< connection: Keep-Alive
+< content-length: 0
+< location: https://www.nychealthandhospitals.org/
+< server: BigIP
+< strict-transport-security: max-age=31536000; includeSubdomains
+* following Location: https://www.nychealthandhospitals.org/
+
+* final response: https://www.nychealthandhospitals.org/
+< HTTP 200
+< content-encoding: gzip
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:35:37 GMT
+< permissions-policy: geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self)
+< referrer-policy: strict-origin
+< strict-transport-security: max-age=31536000; includeSubDomains; preload
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-xss-protection: 1; mode=block
+< --- body (65536 bytes read, truncated) ---
+< <!doctype html>
+< <html lang="en-US">
+< <head>
+< <meta charset="UTF-8">
+< <meta name="viewport" content="width=device-width, initial-scale=1">
+< <link rel="profile" href="https://gmpg.org/xfn/11">
+< <link rel="apple-touch-icon" sizes="180x180" href="/wp-content/themes/bigdrop-theme/dist/images/favicon/apple-touch-icon.png">
+< <link rel="icon" type="image/png" sizes="32x32" href="/wp-content/themes/bigdrop-theme/dist/images/favicon/favicon-32x32.png">
+< <link rel="icon" type="image/png" sizes="16x16" href="/wp-content/themes/bigdrop-theme/dist/images/favicon/favicon-16x16.png">
+< <link rel="mask-icon" href="/wp-content/themes/bigdrop-theme/dist/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+< <meta name="msapplication-TileColor" content="#2b5797">
+< <meta name="theme-color" content="#ffffff">
+< <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+< <!-- This site is optimized with the Yoast SEO plugin v27.5 - https://yoast.com/product/yoast-seo-wordpress/ -->
+< <title>NYC Health + Hospitals - public health care system in the US</title>
+< <meta name="description" content="NYC Health + Hospitals is an integrated health care system of hospitals, neighborhood health centers, long-term care, nursing homes, and home care - the public safety net health care system of New York City." />
+< <link rel="canonical" href="https://www.nychealthandhospitals.org/" />
+< <meta property="og:locale" content="en_US" />
+< <meta property="og:type" content="website" />
+< <meta property="og:title" content="NYC Health + Hospitals - public health care system in the US" />
+< <meta property="og:description" content="NYC Health + Hospitals is an integrated health care system of hospitals, neighborhood health centers, long-term care, nursing homes, and home care - the public safety net health care system of New York City." />
+< <meta property="og:url" content="https://www.nychealthandhospitals.org/" />
+< <meta property="og:site_name" content="NYC Health + Hospitals" />
+< <meta property="article:publisher" content="https://www.facebook.com/NYCHealthSystem" />
+< <meta property="article:modified_time" content="2026-08-18T20:20:00+00:00" />
+< <meta property="og:image" content="https://hhinternet.blob.core.windows.net/uploads/2018/06/nyc-health-hospitals-logo-feature.jpg" />
+< <meta property="og:image:width" content="940" />
+< <meta property="og:image:height" content="470" />
+< <meta property="og:image:type" content="image/jpeg" />
+< <meta name="twitter:card" content="summary_large_image" />
+< <meta name="twitter:site" content="@NYCHealthSystem" />
+< <script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/www.nychealthandhospitals.org\/","url":"https:\/\/www.nychealthandhospitals.org\/","name":"NYC Health + Hospitals - public health care system in the US","isPartOf":{"@id":"https:\/\/www.nychealthandhospitals.org\/#website"},"about":{"@id":"https:\/\/www.nychealthandhospitals.org\/#organization"},"datePublished":"2022-02-01T16:53:26+00:00","dateModified":"2026-08-18T20:20:00+00:00","description":"NYC Health + Hospitals is an integrated health care system of hospitals, neighborhood health centers, long-term care, nursing homes, and home care - the public safety net health care system of New York City.","breadcrumb":{"@id":"https:\/\/www.nychealthandhospitals.org\/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https:\/\/www.nychealthandhospitals.org\/"]}]},{"@type":"BreadcrumbList","@id":"https:\/\/www.nychealthandhospitals.org\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https:\/\/www.nychealthandhospitals.org\/#website","url":"https:\/\/www.nychealthandhospitals.org\/","name":"NYC Health + Hospitals","description":"Public health care system","publisher":{"@id":"https:\/\/www.nychealthandhospitals.org\/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/www.nychealthandhospitals.org\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https:\/\/www.nychealthandhospitals.org\/#organization","name":"NYC Health + Hospitals","url":"https:\/\/www.nychealthandhospitals.org\/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/www.nychealthandhospitals.org\/#\/schema\/logo\/image\/","url":"https:\/\/hhinternet.blob.core.windows.net\/uploads\/2018\/06\/nyc-health-hospitals-logo-feature.jpg","contentUrl":"https:\/\/hhinternet.blob.core.windows.net\/uploads\/2018\/06\/nyc-health-hospitals-logo-feature.jpg","width":940,"height":470,"caption":"NYC Health + Hospitals"},"image":{"@id":"https:\/\/www.nychealthandhospitals.org\/#\/schema\/logo\/image\/"},"sameAs":["https:\/\/www.facebook.com\/NYCHealthSystem","https:\/\/x.com\/NYCHealthSystem","https:\/\/www.instagram.com\/nychealthsystem\/","https:\/\/www.linkedin.com\/company\/nyc-health-and-hospitals-corporation\/"]}]}</script>
+< <!-- / Yoast SEO plugin. -->
+< <style id='wp-img-auto-sizes-contain-inline-css' type='text/css'>
+< img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+< /*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+< </style>
+< <link rel='stylesheet' id='wp-block-library-css' href='https://www.nychealthandhospitals.org/wp-includes/css/dist/block-library/style.min.css?ver=6.9.7' type='text/css' media='all' />
+< <style id='classic-theme-styles-inline-css' type='text/css'>
+< /*! This file is auto-generated */
+< .wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+< /*# sourceURL=/wp-includes/css/classic-themes.min.css */
+< </style>
+< <link rel='stylesheet' id='font-awesome-7-css' href='/wp-content/plugins/counters-block/public/css/font-awesome.min.css?ver=7.1.0' type='text/css' media='all' />
+< <style id='font-awesome-svg-styles-default-inline-css' type='text/css'>
+< .svg-inline--fa {
+< display: inline-block;
+< height: 1em;
+< overflow: visible;
+< vertical-align: -.125em;
+< }
+< /*# sourceURL=font-awesome-svg-styles-default-inline-css */
+< </style>
+< <link rel='stylesheet' id='font-awesome-svg-styles-css' href='/wp-content/uploads/font-awesome/v6.7.2/css/svg-with-js.css' type='text/css' media='all' />
+< <style id='font-awesome-svg-styles-inline-css' type='text/css'>
+< .wp-block-font-awesome-icon svg::before,
+< .wp-rich-text-font-awesome-icon svg::before {content: unset;}
+< /*# sourceURL=font-awesome-svg-styles-inline-css */
+< </style>
+< <style id='global-styles-inline-css' type='text/css'>
+< :root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rg
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 1517 ms

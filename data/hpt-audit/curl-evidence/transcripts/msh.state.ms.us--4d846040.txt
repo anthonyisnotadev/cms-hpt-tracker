@@ -1,0 +1,30 @@
+# curl-style evidence for https://msh.state.ms.us/cms-hpt.txt
+# fetched 2026-09-07T01:34:43.584Z with the tracker's BROWSER_HEADERS (production client)
+# record: 254010 | MS STATE HOSPITAL-WHITFIELD | MS | finding: not-assessed-site-unreachable
+
+* DNS msh.state.ms.us: 205.144.237.37
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* error: fetch failed (cause: ERR_TLS_CERT_ALTNAME_INVALID)
+
+* http:// fallback attempt after transport failure:
+* fallback redirect hop 1: http://msh.state.ms.us/cms-hpt.txt
+< HTTP 302
+< connection: Keep-Alive
+< content-length: 0
+< location: https://msh.state.ms.us/cms-hpt.txt
+< server: BigIP
+* following Location: https://msh.state.ms.us/cms-hpt.txt
+
+* fallback error: fetch failed (cause: ERR_TLS_CERT_ALTNAME_INVALID)
+
+* total time: 459 ms

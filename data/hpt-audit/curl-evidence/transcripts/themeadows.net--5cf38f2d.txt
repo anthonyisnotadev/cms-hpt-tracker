@@ -1,0 +1,45 @@
+# curl-style evidence for https://themeadows.net/cms-hpt.txt
+# fetched 2026-09-07T01:35:48.264Z with the tracker's BROWSER_HEADERS (production client)
+# record: 394040 | MEADOWS PSYCHIATRIC CENTER | PA | finding: pointer-blocked-to-automation
+
+* DNS themeadows.net: 172.67.151.233, 104.21.12.79
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://themeadows.net/cms-hpt.txt
+< HTTP 403
+< accept-ch: Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA
+< cf-mitigated: challenge
+< cf-ray: a371faa1892a2434-IAD
+< content-encoding: br
+< content-security-policy: default-src 'none'; script-src 'nonce-xrW6kuGZPbT3dpcuAFJBLI' 'unsafe-eval' https://challenges.cloudflare.com; script-src-attr 'none'; style-src 'unsafe-inline'; img-src 'self' https://challenges.cloudflare.com; connect-src 'self' https://challenges.cloudflare.com; frame-src 'self' https://challenges.cloudflare.com blob:; child-src 'self' https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri 'self'
+< content-type: text/html; charset=UTF-8
+< critical-ch: Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA
+< cross-origin-embedder-policy: require-corp
+< cross-origin-opener-policy: same-origin
+< cross-origin-resource-policy: same-origin
+< date: Mon, 07 Sep 2026 01:35:50 GMT
+< expect-ct: max-age=86400, enforce
+< nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+< origin-agent-cluster: ?1
+< permissions-policy: accelerometer=(),camera=(),clipboard-read=(),clipboard-write=(),geolocation=(),gyroscope=(),hid=(),magnetometer=(),microphone=(),payment=(),publickey-credentials-get=(),screen-wake-lock=(),serial=(),sync-xhr=(),usb=(),xr-spatial-tracking=*
+< referrer-policy: same-origin
+< report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=929P5lOp9%2FnmMcmdBYcMJ4X8nZa77cl8VkbV4%2FIqURp6BE04lAsz6PiHfaUeg2WC6JZKAXsW5qaOaAewS77lfcQA953Sm9jXI%2FTHMgiv65ccaNTjiVthBXW9qtaJ17iVug%3D%3D"}]}
+< server: cloudflare
+< server-timing: chlray;desc="a371faa1892a2434"
+< strict-transport-security: max-age=31536000; includeSubDomains; preload
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-xss-protection: 1; mode=block
+< --- body (5676 bytes read) ---
+< <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="content-security-policy" content="default-src &#39;none&#39;; script-src &#39;nonce-xrW6kuGZPbT3dpcuAFJBLI&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri &#39;self&#39;"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"}body{display:flex;flex-direction:column;height:100vh;min-height:100vh}.main-content{margin:8rem auto;padding-left:1.5rem;max-width:60rem}@media (width <= 720px){.main-content{margin-top:4rem}}#challenge-error-text{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSI+PHBhdGggZmlsbD0iI0IyMEYwMyIgZD0iTTE2IDNhMTMgMTMgMCAxIDAgMTMgMTNBMTMuMDE1IDEzLjAxNSAwIDAgMCAxNiAzbTAgMjRhMTEgMTEgMCAxIDEgMTEtMTEgMTEuMDEgMTEuMDEgMCAwIDEtMTEgMTEiLz48cGF0aCBmaWxsPSIjQjIwRjAzIiBkPSJNMTcuMDM4IDE4LjYxNUgxNC44N0wxNC41NjMgOS41aDIuNzgzem0tMS4wODQgMS40MjdxLjY2IDAgMS4wNTcuMzg4LjQwNy4zODkuNDA3Ljk5NCAwIC41OTYtLjQwNy45ODQtLjM5Ny4zOS0xLjA1Ny4zODktLjY1IDAtMS4wNTYtLjM4OS0uMzk4LS4zODktLjM5OC0uOTg0IDAtLjU5Ny4zOTgtLjk4NS40MDYtLjM5NyAxLjA1Ni0uMzk3Ii8+PC9zdmc+");background-repeat:no-repeat;background-size:contain;padding-left:34px}</style><meta http-equiv="refresh" content="360"></head><body><div class="main-wrapper" role="main"><div class="main-content"><noscript><div class="h2"><span id="challenge-error-text">Enable JavaScript and cookies to continue</span></div></noscript></div></div><script nonce="xrW6kuGZPbT3dpcuAFJBLI">(function(){window._cf_chl_opt = {cFPWv: 'g',cH: 'y585loS6BfxQN8BOswmA9KjE2Kdj9POXqbyURJ0msCs-1788744950-1.2.1.1-zJhogRI0DZVwtWZHDY_focYboxyFslZNmnvJjGCEHZ1x4D5Ify5WdHQcqJhWpLof',cITimeS: '1788744950',cN: 'xrW6kuGZPbT3dpcuAFJBLI',cRay: 'a371faa1892a2434',cTplB: '0',cTplC:0,cTplO:0,cTplV:5,cType: 'interactive',cUPMDTk:"/cms-hpt.txt?__cf_chl_tk=jvxrngV6WnhhjVeRalv.I7wQR1YAA1srS7Zb1lCed38-1788744950-1.0.1.1-OfvHmpI96d7wzuMUgyw8cOGb4UD8i6FzUUARpZ_5vrU",cvId: '3',cZone: 'themeadows.net',fa:"/cms-hpt.txt?__cf_chl_f_tk=jvxrngV6WnhhjVeRalv.I7wQR1YAA1srS7Zb1lCed38-1788744950-1.0.1.1-OfvHmpI96d7wzuMUgyw8cOGb4UD8i6FzUUARpZ_5vrU",md: 'vsRyGdJTLhdfqDIec31qZISqW0hYGaYN78cIGugRGQM-1788744950-1.2.1.1-cz.viUU4b5AqrCrmfBVLfmc7gH2b1hz3gAnwsno2zcypK8iuhvj8D7MUR9eItlcI1.zsh4ZtY0fQBxMCIXuuSOD4gdhvQqyIcbfSdmNjhMR0Bc_6cxfES2KIzRGfWthV8oLiTJXJGh_a7eoX_Xg7i5Bi36bOCv_ZcdP2ze0YYFanRZH1QgF8ISNGfYIuSssoFRiCMOyRjvzEDWiJH8yfpbfT565S.SjqU0mY_5q5csx1nAXK45F5akfnB84Xwyd_4byOh_Uoy.zZi9ABJaYCuRZEL9pIrs5jaJY4oTDzoF16OD_WJ5sSyA3cFz2wuRX2Iq1mbFY_wyo5BBFAz4o.L3ws6DzBwzB.gstgghBGSEQOJxYVWxtbkm4jsBMByIUdmEwyRtiod_bLGG5rr837Y058_XKOTMpJnl71FtxzK1FzAkW2_ggyCemP1fj2DJrUt9dZuJFGY7IVCupsxFHu7N4cnFJ98jm.pjLdCWWXTcuTB_Yzow.DeNMLmtiEYYDZJXQNoC9h_NV5kPbHPePkiWLs.KD4VtdksH0mnch9FuppJkiWQ7qFb3QK_4SBnGO9jkI2LDh_so07_IiKDNOKLOpIby1N5bfIrIwxIxcH4dg3e5t7DqKFUQlSL_T3W9OvJ9DwFT.7570nHTSUrX3KqbuRs7_NSpYSmislAtjL0dNJijxJ8nHjeknDqoS7jIUF3VddmIO44IxitsAKnHaqaANqUJ7N8c7HcM3nMSLn7Y5Tq_nU8kvzx9rs1B.31WzEnuwB28_xFje9kzXNU9eJiLF8LnJW9n_UYfShjwTipdyFiDsWGmC68f.R0W5XXBmTubc_hDkos6zxRoFlxJInGw8WsqmJCNncdXXEMxoXBPqzQfGt6_fEAHy3TsiwtnWXualkR.ppFPUNXdg9MmgqOW2Hxfz11y1j7_nR8XbLvP.yS1ilaDGze0I0Wx5pnqMEHqDYEywIvWm7EpxP2fAud1BBEMPac_.a_CT2ghQq9y8rPw.iTy9hKaa_n1pGE5E3jgwJiorXPJ.n.rzYuU0kFkiE9RUYWTej6p9jEz.u9QZHZSqhgEbQwP.rGvy7ZDzt',mdrd: 'fH1VZDztcypfT71bdzg1pTpUfzwPYHbwkWfZ1uTpoKc-1788744950-1.2.1.1-4vqQAMcHYP.rdXr8Dq0xdEP_7gnm.f8ihbTh4to_cTp22DmDc1l4iwRh13Ql39hEPaGT2eAGuuK4.Aqv0Y1SyL1j92RChe769RDmHHEvLqbyOLevJsXKWgwC5Kmn2qaM87NmMLVM7V6R.1hx4dwaUOflYhVjIoCDC2WcD_eyn3AZRXSwzs.wzAZblR7x8en4.oJEnCdxIIB63E28ejcY.N.pehnusN54LWEmn5Rk.BM2DfKACLJSi5R9WEIFS5yZoXC_VIjb6wplFlKvjP6yZQeHty16kO8g3F2a4ZySfaPQRF7EkpU0XcNXzfMc72nprDfXi8X5Oz.g3DKOmbyuUQ9MAXbyPvElXJZFNyeCObLran.Qs9jGs1RzuTe6RsDdKQAnV_wy5Z2xuBTxzHuBlobd.S5FBAZbLlUXeKGmcOtd7SZiEeu6alU06AjfQTpfTLRz8WjkZsb.Gja16pZ7pIPkondSUG7OeY5ar09mSnA',};var a = document.createElement('script');a.nonce = 'xrW6kuGZPbT3dpcuAFJBLI';a.src = '/cdn-cgi/challenge-platform/h/g/orchestrate/chl_page/v1?ray=a371faa1892a2434';window._cf_chl_opt.cOgUHash = location.hash === '' && location.href.indexOf('#') !== -1 ? '#' : location.hash;window._cf_chl_opt.cOgUQuery = location.search === '' && location.href.slice(0, location.href.length - window._cf_chl_opt.cOgUHash.length).indexOf('?') !== -1 ? '?' : location.search;if (window.history && window.history.replaceState) {var ogU = location.pathname + window._cf_chl_opt.cOgUQuery + window._cf_chl_opt.cOgUHash;history.replaceState(null, null,"/cms-hpt.txt?__cf_chl_rt_tk=jvxrngV6WnhhjVeRalv.I7wQR1YAA1srS7Zb1lCed38-1788744950-1.0.1.1-OfvHmpI96d7wzuMUgyw8cOGb4UD8i6FzUUARpZ_5vrU"+ window._cf_chl_opt.cOgUHash);a.onload = function() {history.replaceState(null, null, ogU);}}document.getElementsByTagName('head')[0].appendChild(a);}());</script></body></html>
+
+* total time: 155 ms

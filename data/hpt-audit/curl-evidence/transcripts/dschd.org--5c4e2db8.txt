@@ -1,0 +1,49 @@
+# curl-style evidence for https://dschd.org/cms-hpt.txt
+# fetched 2026-09-07T01:36:05.844Z with the tracker's BROWSER_HEADERS (production client)
+# record: 450155 | HEREFORD REGIONAL MEDICAL CENTER | TX | finding: pointer-lists-no-mrf-url
+
+* DNS dschd.org: 192.124.249.168
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://dschd.org/cms-hpt.txt
+< HTTP 200
+< age: 875853
+< alt-svc: h3=":443"; ma=86400
+< cache-control: max-age=86400
+< cf-cache-status: HIT
+< cf-ray: a371732bc8dfb9cf-IAD
+< content-encoding: br
+< content-security-policy: upgrade-insecure-requests;
+< content-type: text/plain
+< date: Mon, 07 Sep 2026 01:36:07 GMT
+< etag: W/"695d9f28-f0"
+< expires: Tue, 08 Sep 2026 01:36:07 GMT
+< last-modified: Tue, 06 Jan 2026 23:47:52 GMT
+< server: Sucuri/Cloudproxy
+< vary: Accept-Encoding, Accept-Encoding
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-gateway-cache-key: 1787860654.742|standard|https|dschd.org|||/cms-hpt.txt
+< x-gateway-cache-status: MISS
+< x-gateway-request-id: 98a882c7bf4a38b51014df82a14f2b93
+< x-gateway-skip-cache: 0
+< x-sucuri-cache: HIT
+< x-sucuri-id: 14017
+< x-xss-protection: 1; mode=block
+< --- body (240 bytes read) ---
+< location-name: Deaf Smith County Hospital District
+< source-page-url:  
+< url: https://dschd.org/wp-content/uploads/2026/01/2026_HRMC_Standard_Charges_Validated_20260101.csv
+< contact-name: hpt-obf:v1:i6iX0046tTuphNiC.6AvWEqwHWQ3bopf0ihEoMw.F8F50x9mOKqFnIlLyA
+< contact-email: hpt-obf:v1:XxoFVfrtv5R5t2c_.G2QVEH_LyxJZ-4nZqvuX3w.252DkBxdT3qciHmvB5EiCDHpmN-PNwY
+
+* total time: 3853 ms

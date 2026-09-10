@@ -1,0 +1,152 @@
+# curl-style evidence for https://ouhealth.com/
+# fetched 2026-09-07T01:35:38.188Z with the tracker's BROWSER_HEADERS (production client)
+# record: 370093 | O U MEDICAL CENTER | OK | finding: not-assessed-not-named-in-file
+
+* DNS ouhealth.com: 52.11.37.152
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://ouhealth.com/
+< HTTP 301
+< connection: keep-alive
+< content-length: 162
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:35:39 GMT
+< location: https://www.ouhealth.com/
+< server: nginx
+< strict-transport-security: max-age=63072000; includeSubDomains; preload
+* following Location: https://www.ouhealth.com/
+
+* final response: https://www.ouhealth.com/
+< HTTP 200
+< cache-control: private
+< content-encoding: gzip
+< content-length: 15597
+< content-security-policy: default-src * blob: data: cid:; img-src * data: cid: 'unsafe-inline'; media-src * data: blob:; script-src * data: blob: 'unsafe-inline' 'unsafe-eval'; style-src * blob: data: 'unsafe-inline'; style-src-elem * blob: data: 'unsafe-inline'; font-src * data:; frame-ancestors *.ouhealth.com
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:35:39 GMT
+< referrer-policy: no-referrer-when-downgrade
+< strict-transport-security: max-age=63072000; includeSubDomains; preload
+< vary: Accept-Encoding
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< --- body (55806 bytes read) ---
+< <!DOCTYPE html>
+< <html class="home-layout" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" data-anim="1" data-prlx="1" data-flr="1" data-i="x37dc20xp4z" data-is="dv5guqmrkyk" data-gmap="AIzaSyD9RxIAFFpAdGvsN49rqOZLQbeZ6BSLoL4" data-sa="XGa4yFDN6c7WDtYXjgfbeWR7KkzyB2CDoO1%2FOYY69r%2B3SVsqrPd5W6AOBp%2F29NUGFICd0qvV%2FnJGUVu8%2BnylbnXWqTpE2aA5J%2FCMZ6EDoH8xGZcc4IpuVpzcKnrJWy1NKvQF7L2Isno1RMht20dsf2D0IJeNxTk2nipsvcSBbExf9h%2FL">
+< <head>
+< 	<title>Healthcare Services in Oklahoma | OU Health</title>
+< 	<link rel="canonical" href="https://www.ouhealth.com/"/>
+< 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+< 	<meta content="initial-scale=1" name="viewport"/>
+< 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+< 	<meta name="format-detection" content="telephone=no"/>
+< 	<meta name="facebook-domain-verification" content="5yo5nam020cp54oh0njdx9vrb3e88y"/>
+< 	<meta name="description" content="Learn more about OU Health services, doctors, and locations. Advancing healthcare, medical education and research for Oklahoma and our region."/>
+< 	<meta property="og:type" content="website"/>
+< 	<meta property="og:site_name" content="OU Health"/>
+< 	<meta property="og:url" content="https://www.ouhealth.com/"/>
+< 	<meta property="og:title" content="Healthcare Services in Oklahoma | OU Health"/>
+< 	<meta property="og:description" content="Learn more about OU Health services, doctors, and locations. Advancing healthcare, medical education and research for Oklahoma and our region."/>
+< 	<meta property="og:image" content="https://www.ouhealth.com/assets/Social-Share.jpg"/>
+< 	<meta name="twitter:card" content="summary_large_image"/>
+< 	<meta name="twitter:site" content="@OU_Health"/>
+< 	<meta name="twitter:title" content="Healthcare Services in Oklahoma | OU Health"/>
+< 	<meta name="twitter:description" content="Learn more about OU Health services, doctors, and locations. Advancing healthcare, medical education and research for Oklahoma and our region."/>
+< 	<meta name="twitter:image" content="https://www.ouhealth.com/assets/Social-Share.jpg"/>
+< 	<meta property="article:publisher" content="https://www.facebook.com/OUHealthServices/"/>
+< 	<meta name="google-site-verification" content="3_Nqejm_4Zq6J4fCJAy09ZUHS9y1EiqkKj7L0SGSHrw"/>
+< 	<meta name="msvalidate.01" content="292C88F7A682FB5EAA18AFAE9D8A3B58"/>
+< 	<link rel="stylesheet" type="text/css" href="/common/css/cms.2412171244510.css"/>
+< 	<link rel="stylesheet" type="text/css" href="/common/css/cms-behave.2412171244510.css"/>
+< 	<link rel="stylesheet" type="text/css" href="/common/make/content-accordion.2412171244524.css"/>
+< 	<link rel="stylesheet" href="https://use.typekit.net/syi6iik.css"/>
+< 	<link href="/includes/content/callouts.2409031630536.css" rel="stylesheet" type="text/css"/>
+< 	<link href="/includes/generalforms.2201050811295.css" rel="stylesheet" type="text/css"/>
+< 	<link href="/includes/global.2512051252368.css" rel="stylesheet" type="text/css"/>
+< 	<link href="/includes/gas.2412091406384.css" rel="stylesheet" type="text/css"/>
+< 	<link href="/includes/variables.2509020726201.css" rel="stylesheet" type="text/css"/>
+< 	<link rel="stylesheet" type="text/css" href="/includes/panels/footer-v1.2511201021388.css"/>
+< 	<link rel="stylesheet" type="text/css" href="/includes/panels/footer-awards.2010131717508.css"/>
+< 	<link rel="stylesheet" type="text/css" href="/includes/panels/header-v1.2510210940104.css"/>
+< 	<link rel="stylesheet" type="text/css" href="/includes/panels/mainstage.2511201019504.css"/>
+< 	<link rel="stylesheet" type="text/css" href="/includes/panels/cta-panel.2511201021546.css"/>
+< 	<link rel="stylesheet" type="text/css" href="/includes/panels/split-panel.2602260728430.css"/>
+< 	<link rel="stylesheet" type="text/css" href="/includes/panels/content-panel.2511201022590.css"/>
+< 	<link rel="stylesheet" type="text/css" href="/includes/panels/value-panel.2605061501494.css"/>
+< 	<link rel="stylesheet" type="text/css" href="/includes/panels/location-panel.2511201020031.css"/>
+< 	<link rel="stylesheet" type="text/css" href="/includes/panels/services-panel.2511201024257.css"/>
+< 	<link rel="stylesheet" type="text/css" href="/includes/panels/events-panel.2307121157258.css"/>
+< 	<link rel="stylesheet" type="text/css" href="/includes/panels/blog-panel.2511201026364.css"/>
+< 	<link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+< 	<script type="text/javascript" src="/common/js/j/process.2412171244523.js"></script>
+< 	<script type="text/javascript" src="/common/js/j/require.2412171244523.js"></script>
+< 	<script type="text/javascript" src="/common/js/j/debug.2412171244523.js"></script>
+< 	<script type="text/javascript" src="/common/js/j/poly.2412171244523.js"></script>
+< 	<script type="text/javascript" src="/common/js/j/modernizr.2412171244523.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/j/jquery.3.x.2412171244523.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/j/jquery.ui.2412171244523.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/j/ui.touch.2412171244523.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/j/ui.wheel.2412171244523.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/j/ui.draw.2412171244523.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/j/ui.mobile.2412171244523.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/j/timezone.2412171244523.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/static.2412171244524.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/j/jquery.cookie.2412171244523.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/extensions.2412171244523.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/uri.2412171244524.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/behaviors.2412171244523.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/c/scrollbar.2412171244523.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/c/loading.2412171244523.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/m/date.2412171244523.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/form.2412171244523.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/adapter.2412171244523.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/v/jwplayer.2412171244524.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/video.2412171244524.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/a/bootstrap.2412171244523.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/svg.2509161620371.js" defer></script>
+< 	<script>(function(){
+< var cook = /(?:^|\b)COOK=(.+?)(?:$|;)/.exec( document.cookie )?.[1];
+< var analytics;
+< var marketing;
+< if(cook==='YES'){analytics=true;marketing=true;}
+< else if(cook==='NO!'){analytics=false;marketing=false;}
+< else if(cook==='ANALYTICS'){analytics=true;marketing=false;}
+< else if(cook==='MARKETING'){analytics=false;marketing=true;}
+< else{analytics=true;marketing=navigator.globalPrivacyControl||window.doNotSell?false:true;}
+< window.$consentState={analytics,marketing};
+< })();</script>
+< <script type="module" src="/common/usc/p/manage-cookies.js"></script>
+< </head>
+< <body style="opacity:0" class="home-page home-branch home" data-config="tmbvm4nn._7l" data-id="12989940" data-t="197948" data-l="113249">
+< <header id="HeaderZone"><div class="header-area v1" universal_="true" id="HeaderAreaV1" data-section>
+< 	
+< 	
+< 	
+< 	
+< 	
+< 	
+< 	<div class="alert-bars">
+< 			<div class="alert-bar red" style="display:none" id="WarningAlert">
+< 				
+< 				<button type="button" class="close" aria-label="Close Warning Alert">
+< 					<svg viewBox="0 0 16 16"><use data-href="/cms/svg/admin/ngbzyxpc75u.16.svg#cancel"></use></svg>
+< 				</button>
+< 			</div>
+< 			<div class="alert-bar red ui-repeater" style="display:none" id="CTAWarningAlert"></div>
+< 			<div class="alert-bar red" style="display:none" id="NoChildrensWarningAlert">
+< 				
+< 				<button type="button" class="close" aria-label="Close Warning Alert">
+< 					<svg viewBox="0 0 16 16"><use data-href="/cms/svg/admin/ngbzyxpc75u.16.svg#cancel"></use></svg>
+< 				</button>
+< 			</div
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 1536 ms

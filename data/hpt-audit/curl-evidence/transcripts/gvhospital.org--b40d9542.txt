@@ -1,0 +1,111 @@
+# curl-style evidence for https://gvhospital.org/cms-hpt.txt
+# fetched 2026-09-07T01:36:13.091Z with the tracker's BROWSER_HEADERS (production client)
+# record: 461306 | GUNNISON VALLEY HOSPITAL | UT | finding: no-cms-hpt-txt-published
+
+* DNS gvhospital.org: 213.109.149.156
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://gvhospital.org/cms-hpt.txt
+< HTTP 303
+< cache-control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+< content-length: 0
+< content-type: text/html; charset=utf-8
+< cross-origin-opener-policy: same-origin
+< date: Mon, 07 Sep 2026 01:36:12 GMT
+< expires: Wed, 17 Aug 2005 00:00:00 GMT
+< last-modified: Mon, 07 Sep 2026 01:36:12 GMT
+< location: https://gvhospital.org/404-error
+< pragma: no-cache
+< referrer-policy: strict-origin-when-cross-origin
+< server: LiteSpeed
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+* following Location: https://gvhospital.org/404-error
+
+* final response: https://gvhospital.org/404-error
+< HTTP 200
+< cache-control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+< content-encoding: gzip
+< content-type: text/html; charset=utf-8
+< cross-origin-opener-policy: same-origin-allow-popups
+< date: Mon, 07 Sep 2026 01:36:14 GMT
+< expires: Wed, 17 Aug 2005 00:00:00 GMT
+< last-modified: Mon, 07 Sep 2026 01:36:14 GMT
+< pragma: no-cache
+< referrer-policy: strict-origin-when-cross-origin
+< server: LiteSpeed
+< vary: Accept-Encoding
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< --- body (65536 bytes read, truncated) ---
+< <!DOCTYPE html>
+< <html lang="en-gb" dir="ltr" data-bs-theme="light">
+< 
+< <head>
+<    <meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="HandheldFriendly" content="true" /><meta name="mobile-web-app-capable" content="YES" /> <!-- document meta -->
+<    <meta charset="utf-8">
+< 	<meta name="robots" content="noindex, nofollow">
+< 	<meta name="description" content="Gunnison Valley Hospital, located in Gunnison, Utah, is a Critical Access Hospital (CAH) and offers many other healthcare services.">
+< 	<title>Gunnison Valley Hospital - 404 Error</title>
+< <link href="/components/com_jrealtimeanalytics/css/mainstyle.css?714d07" rel="stylesheet">
+< 	<link href="https://fonts.gstatic.com?714d07" rel="preconnect">
+< 	<link href="https://fonts.googleapis.com/css2?family=Outfit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&amp;display=swap" rel="stylesheet">
+< 	<link href="/media/astroid/assets/vendor/fontawesome/css/all.min.css?714d07" rel="stylesheet">
+< 	<link href="/media/astroid/assets/vendor/lenis/lenis.css?714d07" rel="stylesheet">
+< 	<link href="/media/templates/site/astroid_template_one_tsbase/css/compiled-6924f342fe066f4003ebb8651e7d6c7e.css?714d07" rel="stylesheet">
+< 	<link href="/media/templates/site/astroid_template_one_tsbase/css/compiled-05423eae66329202af0888581074ae7d.css?714d07" rel="stylesheet">
+< 	<link href="/media/mod_menu/css/mod-menu.min.css?e546284498499b1e597389e151ad7b30" rel="stylesheet">
+< 	<link href="/media/vendor/joomla-custom-elements/css/joomla-alert.min.css?0.4.1" rel="stylesheet">
+< 	<link href="/media/plg_system_jcepro/site/css/content.min.css?86aa0286b6232c4a5b58f892ce080277" rel="stylesheet">
+< 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+< 	<link href="/media/com_ingallery/css/frontend.css?v=3.8.4" rel="stylesheet">
+< 	<link href="/media/com_googlereviewspro/css/frontend.css?v=2.14.2" rel="stylesheet">
+< 	<link href="/plugins/system/djaccessibility/module/assets/css/accessibility.css?1.15" rel="stylesheet">
+< 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet">
+< 	<style>#as-63f924451cd3d894474514{background-image:linear-gradient(180deg,rgba(54, 88, 136, 1) 0%,rgba(18, 48, 84, 1) 100%);color:rgba(255, 255, 255, 1);padding-top:70px;padding-bottom:70px}</style>
+< 	<style>#as-61b5cf11613cc086185689{margin-top:30px}</style>
+< 	<style>.djacc { font-family: Roboto, sans-serif; }</style>
+< 	<style>.djacc--sticky.djacc-popup { margin: 20px 20px; }</style>
+< <script src="/media/astroid/assets/vendor/gsap/gsap.min.js?714d07"></script>
+< 	<script src="/media/vendor/jquery/js/jquery.min.js?3.7.1"></script>
+< 	<script src="/media/vendor/jquery/js/jquery-noconflict.min.js?3.7.1"></script>
+< 	<script src="/components/com_jrealtimeanalytics/js/stream.js?714d07" defer></script>
+< 	<script src="/components/com_jrealtimeanalytics/js/heatmap.js?714d07" defer></script>
+< 	<script src="/media/regularlabs/js/script.min.js?714d07" defer></script>
+< 	<script type="application/json" class="joomla-script-options new">{"joomla.jtext":{"RLTA_BUTTON_SCROLL_LEFT":"Scroll tabs to the left","RLTA_BUTTON_SCROLL_RIGHT":"Scroll tabs to the right","ERROR":"Error","MESSAGE":"Message","NOTICE":"Notice","WARNING":"Warning","SUCCESS":"Success","JCLOSE":"Close","JOK":"OK","JOPEN":"Open"},"system.paths":{"root":"","rootFull":"https:\/\/gvhospital.org\/","base":"","baseFull":"https:\/\/gvhospital.org\/"},"csrf.token":"e68613d60a5ffb2c1b5db1e3500f6fcb"}</script>
+< 	<script src="/media/system/js/core.min.js?e546284498499b1e597389e151ad7b30"></script>
+< 	<script src="/media/astroid/js/megamenu.min.js?714d07"></script>
+< 	<script src="/media/astroid/js/offcanvas.min.js?714d07"></script>
+< 	<script src="/media/astroid/js/mobilemenu.min.js?714d07"></script>
+< 	<script src="/media/astroid/assets/vendor/lenis/lenis.min.js?714d07"></script>
+< 	<script src="/media/vendor/bootstrap/js/carousel.min.js?5.3.8" type="module"></script>
+< 	<script src="/media/vendor/bootstrap/js/scrollspy.min.js?5.3.8" type="module"></script>
+< 	<script src="/media/astroid/js/script.min.js?714d07"></script>
+< 	<script src="/media/mod_menu/js/menu.min.js?e546284498499b1e597389e151ad7b30" type="module"></script>
+< 	<script src="/media/system/js/messages.min.js?e546284498499b1e597389e151ad7b30" type="module"></script>
+< 	<script src="https://cdn.gtranslate.net/widgets/latest/float.js" data-gt-orig-url="/404-error" data-gt-orig-domain="gvhospital.org" data-gt-widget-id="166" defer></script>
+< 	<script src="/media/com_ingallery/js/masonry.pkgd.min.js?v=3.8.4" defer></script>
+< 	<script src="/media/com_ingallery/js/frontend.js?v=3.8.4" defer></script>
+< 	<script src="/media/com_googlereviewspro/js/frontend.js?v=2.14.2" defer></script>
+< 	<script src="/plugins/system/djaccessibility/module/assets/js/accessibility.min.js?1.15"></script>
+< 	<script>				var COM_JREALTIME_NETWORK_ERROR = 'A network error occurred during data stream: '; </script>
+< 	<script>var jrealtimeBaseURI='https://gvhospital.org/';</script>
+< 	<script>var jrealtimeTrackQueryString=1;</script>
+< 	<script>const initSmoothScrollingGSAP = () => {const lenis = new Lenis({duration: 1.2});lenis.on('scroll', ScrollTrigger.update);gsap.ticker.add((time)=>{lenis.raf(time * 1000)});gsap.ticker.lagSmoothing(0);};const initSmoothScrolling = () => {const lenis = new Lenis({duration: 1.2});function raf(time) {lenis.raf(time);requestAnimationFrame(raf);}requestAnimationFrame(raf);};if (typeof ScrollTrigger !== 'undefined') {initSmoothScrollingGSAP()} else {initSmoothScrolling()}</script>
+< 	<script>const TEMPLATE_HASH = "b6358811acf4a12395e88868cae7de71", ASTROID_COLOR_MODE ="light";</script>
+< 	<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://gvhospital.org/#/schema/Organization/base","name":"Gunnison Valley Hospital","url":"https://gvhospital.org/"},{"@type":"WebSite","@id":"https://gvhospital.org/#/schema/WebSite/base","url":"https://gvhospital.org/","name":"Gunnison Valley Hospital","publisher":{"@id":"https://gvhospital.org/#/schema/Organization/base"},"potentialAction":{"@type":"SearchAction","target":"https://gvhospital.org/search?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://gvhospital.org/#/schema/WebPage/base","url":"https://gvhospital.org/404-error","name":"Gunnison Valley Hospital - 404 Error","description":"Gunnison Valley Hospital, located in Gunnison, Utah, is a Critical Access Hospital (CAH) and offers many other healthcare services.","isPartOf":{"@id":"https://gvhospital.org/#/schema/WebSite/base"},"about":{"@id":"https://gvhospital.org/#/schema/Organization/base"},"inLanguage":"en-GB"}]}</script>
+< 	<script>window.gtranslateSettings = window.gtranslateSettings || {};window.gtranslateSettings['166'] = {"default_language":"en","languages":["en","es"],"url_structure":"none","wrapper_selector":"#gt-wrapper-166","globe_size":60,"flag_size":32,"flag_style":"2d","custom_domains":null,"float_switcher_open_direction":"top","switcher_open_direction":"top","native_language_names":1,"add_new_line":1,"select_language_label":"Select Language","detect_browser_language":0,"custom_css":"","alt_flags":{"en":"usa"},"switcher_horizontal_position":"right","switcher_vertical_position":"bottom","horizontal_position":"inline","vertical_position":"inline"};</script>
+< 	<script>new DJAccessibility( {"cms":"joomla","yootheme":false,"position":"sticky","mobile_position":"sticky","layout":"popup","mobile_layout":"popup","align_position_popup":"bottom left","align_position_toolbar":"top center","align_mobile_position":"bottom left","breakpoint":"767","direction":"bottom left","space":"1","version":"dmVyc2lvbnBybw==","speech_pitch":"1","speech_rate":"1","speech_volume":"1","ajax_url":"?option=com_ajax&plugin=Djaccessibility&format=raw"} )</script>
+< 	<meta property="og:type" content="article"><meta name="twitter:card" content="summary_large_image" /><meta property="og:title" content="404 Error"><meta property="og:site_name" content="Gunnison Valley Hospital"><meta property=
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 2045 ms

@@ -1,0 +1,123 @@
+# curl-style evidence for https://logan.org/
+# fetched 2026-09-07T01:34:59.026Z with the tracker's BROWSER_HEADERS (production client)
+# record: 271324 | PONDERA MEDICAL CENTER | MT | finding: not-assessed-not-named-in-file
+
+* DNS logan.org: 141.193.213.10, 141.193.213.11
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://logan.org/
+< HTTP 301
+< alt-svc: h3=":443"; ma=86400
+< cache-control: max-age=600, must-revalidate
+< cf-cache-status: DYNAMIC
+< cf-ray: a371f95a2ce724a2-IAD
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:34:57 GMT
+< expires: Mon, 07 Sep 2026 02:30:32 GMT
+< location: https://www.logan.org/
+< permissions-policy: private-state-token-redemption=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com"), private-state-token-issuance=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com")
+< server: cloudflare
+< status: 301 Moved Permanently
+< x-cache: HIT: 8
+< x-cache-group: normal
+< x-cacheable: non200
+< x-powered-by: WP Engine
+< x-redirect-by: WordPress
+* following Location: https://www.logan.org/
+
+* final response: https://www.logan.org/
+< HTTP 200
+< alt-svc: h3=":443"; ma=86400
+< cache-control: max-age=600, must-revalidate
+< cf-cache-status: DYNAMIC
+< cf-ray: a371f96b9ab33e97-IAD
+< content-encoding: br
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:35:00 GMT
+< link: <https://www.logan.org/wp-json/>; rel="https://api.w.org/", <https://www.logan.org/wp-json/wp/v2/pages/7>; rel="alternate"; title="JSON"; type="application/json", <https://www.logan.org/>; rel=shortlink
+< permissions-policy: private-state-token-redemption=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com"), private-state-token-issuance=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com")
+< server: cloudflare
+< vary: Accept-Encoding, Accept-Encoding,Cookie
+< x-cache: HIT: 11
+< x-cache-group: normal
+< x-cacheable: SHORT
+< x-et-api-origin: https://www.logan.org
+< x-et-api-root: https://www.logan.org/wp-json/tribe/tickets/v1/
+< x-et-api-version: v1
+< x-powered-by: WP Engine
+< x-tec-api-origin: https://www.logan.org
+< x-tec-api-root: https://www.logan.org/wp-json/tribe/events/v1/
+< x-tec-api-version: v1
+< --- body (65536 bytes read, truncated) ---
+< <!DOCTYPE html>
+< <html lang="en-US">
+< <head>
+< 	<meta charset="UTF-8" />
+< <meta http-equiv="X-UA-Compatible" content="IE=edge">
+< 	<link rel="pingback" href="https://www.logan.org/xmlrpc.php" />
+< 
+< 	<script type="text/javascript">
+< 		document.documentElement.className = 'js';
+< 	</script>
+< 	
+< 	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+< 
+< 	<!-- This site is optimized with the Yoast SEO plugin v28.4 - https://yoast.com/product/yoast-seo-wordpress/ -->
+< 	<title>Home - Logan Health</title>
+< 	<link rel="canonical" href="https://www.logan.org/" />
+< 	<meta property="og:locale" content="en_US" />
+< 	<meta property="og:type" content="website" />
+< 	<meta property="og:title" content="Home - Logan Health" />
+< 	<meta property="og:url" content="https://www.logan.org/" />
+< 	<meta property="og:site_name" content="Logan Health" />
+< 	<meta property="article:modified_time" content="2026-08-14T19:26:20+00:00" />
+< 	<meta property="og:image" content="https://www.logan.org/wp-content/uploads/2026/05/moments.png" />
+< 	<meta property="og:image:width" content="1135" />
+< 	<meta property="og:image:height" content="701" />
+< 	<meta property="og:image:type" content="image/png" />
+< 	<meta name="twitter:card" content="summary_large_image" />
+< 	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/www.logan.org\/","url":"https:\/\/www.logan.org\/","name":"Home - Logan Health","isPartOf":{"@id":"https:\/\/www.logan.org\/#website"},"about":{"@id":"https:\/\/www.logan.org\/#organization"},"primaryImageOfPage":{"@id":"https:\/\/www.logan.org\/#primaryimage"},"image":{"@id":"https:\/\/www.logan.org\/#primaryimage"},"thumbnailUrl":"https:\/\/www.logan.org\/wp-content\/uploads\/2026\/05\/moments-1024x632.png","datePublished":"2023-07-09T04:55:24+00:00","dateModified":"2026-08-14T19:26:20+00:00","breadcrumb":{"@id":"https:\/\/www.logan.org\/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https:\/\/www.logan.org\/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/www.logan.org\/#primaryimage","url":"https:\/\/www.logan.org\/wp-content\/uploads\/2026\/05\/moments.png","contentUrl":"https:\/\/www.logan.org\/wp-content\/uploads\/2026\/05\/moments.png","width":1135,"height":701},{"@type":"BreadcrumbList","@id":"https:\/\/www.logan.org\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https:\/\/www.logan.org\/#website","url":"https:\/\/www.logan.org\/","name":"Logan Health","description":"Montana&#039;s Healthcare System","publisher":{"@id":"https:\/\/www.logan.org\/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/www.logan.org\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https:\/\/www.logan.org\/#organization","name":"Logan Health","url":"https:\/\/www.logan.org\/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/www.logan.org\/#\/schema\/logo\/image\/","url":"https:\/\/www.logan.org\/wp-content\/uploads\/2023\/07\/Logan-News.png","contentUrl":"https:\/\/www.logan.org\/wp-content\/uploads\/2023\/07\/Logan-News.png","width":800,"height":533,"caption":"Logan Health"},"image":{"@id":"https:\/\/www.logan.org\/#\/schema\/logo\/image\/"}}]}</script>
+< 	<!-- / Yoast SEO plugin. -->
+< 
+< 
+< <link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+< <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+< <link rel="alternate" type="application/rss+xml" title="Logan Health &raquo; Feed" href="https://www.logan.org/feed/" />
+< <link rel="alternate" type="application/rss+xml" title="Logan Health &raquo; Comments Feed" href="https://www.logan.org/comments/feed/" />
+< <link rel="alternate" type="text/calendar" title="Logan Health &raquo; iCal Feed" href="https://www.logan.org/classes/?ical=1" />
+< <link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.logan.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.logan.org%2F" />
+< <link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.logan.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.logan.org%2F&#038;format=xml" />
+< <script data-cfasync="false" data-wpfc-render="false">
+< 		(function () {
+< 			window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+< 
+< 			// Set the developer ID.
+< 			gtag('set', 'developer_id.dMmRkYz', true);
+< 			// Set default consent state based on plugin settings.
+< 			gtag('consent', 'default', {
+< 				'ad_storage': 'denied',
+< 				'analytics_storage': 'denied',
+< 				'ad_user_data': 'denied',
+< 				'ad_personalization': 'denied',
+< 				'personalization_storage': 'denied',
+< 				'security_storage': 'granted',
+< 				'functionality_storage': 'granted',
+< 				'wait_for_update': 500,
+< 			});
+< 		})();
+< 	</script><meta content="Logan Health - Divi Child v.1.0.1" name="generator"/><link rel='stylesheet' id='tribe-events-pro-mini-calendar-block-styles-css' href='https://www.logan.org/wp-content/plugins/events-calendar-pro/build/css/tribe-events-pro-mini-calendar-block.css?ver=7.8.2' media='all' />
+< 
+< <style id="global-styles-inline-css">
+< :root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--shar
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 14808 ms

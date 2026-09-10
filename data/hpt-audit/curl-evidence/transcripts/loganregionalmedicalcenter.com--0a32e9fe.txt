@@ -1,0 +1,41 @@
+# curl-style evidence for https://loganregionalmedicalcenter.com/
+# fetched 2026-09-07T01:36:11.562Z with the tracker's BROWSER_HEADERS (production client)
+# record: 510048 | LOGAN REGIONAL MEDICAL CENTER | WV | finding: not-assessed-site-unreachable
+
+* DNS loganregionalmedicalcenter.com: 151.101.3.10, 151.101.67.10, 151.101.131.10, 151.101.195.10
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://loganregionalmedicalcenter.com/
+< HTTP 406
+< accept-ranges: bytes
+< content-length: 293
+< date: Mon, 07 Sep 2026 01:36:13 GMT
+< retry-after: 0
+< strict-transport-security: max-age=31557600
+< x-cache: MISS
+< x-served-by: cache-iad-kiad7000030-IAD
+< x-timer: S1788744973.305174,VS0,VE1
+< --- body (293 bytes read) ---
+< <!DOCTYPE html>
+<       <html>
+<         <head>
+<           <title>406 Not Acceptable</title>
+<         </head>
+<         <body>
+<           <h1>Error 406 Not Acceptable</h1>
+<           <p>Not Acceptable</p>
+<           <p>Trace-id: d18e54f1-c5d9-48ef-802f-4fa141e8c93d</p>
+<         </body>
+<       </html>
+<     
+
+* total time: 35 ms

@@ -1,0 +1,124 @@
+[
+  {
+    "domain": "avera.org",
+    "checkedAt": "2026-09-09T02:17:50.334Z",
+    "browser": "Brave",
+    "outcome": "access-denied",
+    "visited": [
+      "https://www.avera.org/",
+      "https://www.avera.org/patients-visitors/price-transparency/"
+    ],
+    "links": [],
+    "note": "Homepage rendered after initial tool navigation timeout; official pricing link rendered Access Denied."
+  },
+  {
+    "domain": "destinysprings.com",
+    "ccn": "034034",
+    "checkedAt": "2026-09-09T02:17:50.335Z",
+    "browser": "Brave",
+    "outcome": "page-read",
+    "visited": [
+      "https://www.destinyspringshealthcare.com/",
+      "https://www.destinyspringshealthcare.com/price-transparency"
+    ],
+    "links": [
+      {
+        "sourcePageUrl": "https://www.destinyspringshealthcare.com/price-transparency",
+        "label": "MRF",
+        "url": "https://www.destinyspringshealthcare.com/_files/ugd/579823_eb7db2b89803407a90b9c18a5c9c739f.csv?dn=81-4160201_Destiny-Springs-Healthcare_standardcharges.csv"
+      }
+    ],
+    "note": "Official homepage identifies 17300 N Dysart Rd, Surprise AZ 85378; pricing page exposes MRF link."
+  },
+  {
+    "domain": "lawrencegeneral.org",
+    "ccn": "041309",
+    "checkedAt": "2026-09-09T02:23:02.139Z",
+    "browser": "Brave",
+    "outcome": "page-read",
+    "visited": [
+      "https://lawrencememorial.info/price-transparency",
+      "https://lawrencememorial.info/contact-us"
+    ],
+    "links": [
+      {
+        "sourcePageUrl": "https://lawrencememorial.info/price-transparency",
+        "label": "Download Standard Charges (CSV)",
+        "url": "https://lawrencememorial.info/storage/cms/library/documents/731547175_lawrence-memorial-health-foundation-inc_standardcharges.csv"
+      }
+    ],
+    "officialIdentity": {
+      "sourcePageUrl": "https://lawrencememorial.info/contact-us",
+      "name": "Lawrence Memorial Hospital",
+      "address": "1309 West Main, Walnut Ridge, Arkansas 72476"
+    }
+  },
+  {
+    "domain": "sanjoaquingeneral.org",
+    "ccn": "050167",
+    "checkedAt": "2026-09-09T02:28:08.994Z",
+    "browser": "Brave",
+    "outcome": "navigation-failed",
+    "visited": [
+      "https://www.sanjoaquingeneral.org/cms-hpt.txt"
+    ],
+    "links": [],
+    "note": "Browser tool returned net::ERR_BLOCKED_BY_CLIENT. This is not evidence of a hospital denial."
+  },
+  {
+    "domain": "chcc.health",
+    "checkedAt": "2026-09-09T02:47:50.433Z",
+    "outcome": "page-read",
+    "visited": [
+      "https://www.chcc.health/",
+      "https://www.chcc.health/cms-hpt.txt"
+    ],
+    "links": [],
+    "note": "Brave rendered the official homepage; pointer page displayed Not Found. Browser evidence does not prove automated accessibility."
+  },
+  {
+    "domain": "ajh.org",
+    "checkedAt": "2026-09-09T02:50:45.936Z",
+    "outcome": "navigation-failed",
+    "visited": [
+      "https://ajh.org/patients-visitors/billing-financial-services/price-transparency"
+    ],
+    "links": [],
+    "note": "Brave showed ERR_CONNECTION_CLOSED; no conclusion about file publication."
+  },
+  {
+    "domain": "allinahealth.org",
+    "checkedAt": "2026-09-09T02:52:13.887Z",
+    "outcome": "page-read",
+    "visited": [
+      "https://www.chistfrancishealth.org/patient-visitor-information/financial-payments/price-transparency/standard-charges"
+    ],
+    "links": [
+      {
+        "sourcePageUrl": "https://www.chistfrancishealth.org/patient-visitor-information/financial-payments/price-transparency/standard-charges",
+        "url": "https://www.chistfrancishealth.org/content/dam/sfcareorg/website/workfiles/410695598-1639162381_st-francis-medical-center_standardcharges.csv",
+        "label": "CHI St. Francis Health Machine Readable Standard Charge File"
+      }
+    ],
+    "note": "Brave rendered a specific MRF download separately from the Excel chargemaster.",
+    "ccn": "241377"
+  },
+  {
+    "domain": "northside.com",
+    "ccn": "110161",
+    "checkedAt": "2026-09-09T03:05:27.944Z",
+    "outcome": "page-read",
+    "visited": [
+      "https://northside.com/",
+      "https://www.northside.com/patients-visitors/billing-and-insurance/price-transparency"
+    ],
+    "links": [
+      {
+        "sourcePageUrl": "https://www.northside.com/patients-visitors/billing-and-insurance/price-transparency",
+        "url": "https://assets.northside.com/price-transparency/581954432-1457396079_northside-hospital-inc_standardcharges.json",
+        "label": "Northside Hospital Atlanta"
+      }
+    ],
+    "note": "Brave rendered the homepage and pricing page with separate facility links. Atlanta link agrees with the pointer URL; file body availability was not established in the browser."
+  }
+]

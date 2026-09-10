@@ -1,0 +1,29 @@
+# curl-style evidence for https://s3.amazonaws.com/ycubaa-production-marlin-1-charge-management-public/facilities/0ddc7794-d4a3-4d17-a674-9187af28aea6/470393176_ANTELOPE%20MEMoriaL%20HOSPITAL_standardcharges.zip
+# fetched 2026-09-07T01:34:59.579Z with the tracker's BROWSER_HEADERS (production client)
+# record: 281326 | ANTELOPE MEMORIAL HOSPITAL | NE | finding: mrf-blocked-to-automation
+
+* DNS s3.amazonaws.com: 16.15.252.71, 16.15.228.98, 52.217.226.88, 52.217.199.80, 52.216.217.232, 54.231.194.224, 54.231.196.120, 16.15.223.68
+
+> GET /ycubaa-production-marlin-1-charge-management-public/facilities/0ddc7794-d4a3-4d17-a674-9187af28aea6/470393176_ANTELOPE%20MEMoriaL%20HOSPITAL_standardcharges.zip  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://s3.amazonaws.com/ycubaa-production-marlin-1-charge-management-public/facilities/0ddc7794-d4a3-4d17-a674-9187af28aea6/470393176_ANTELOPE%20MEMoriaL%20HOSPITAL_standardcharges.zip
+< HTTP 403
+< content-type: application/xml
+< date: Mon, 07 Sep 2026 01:35:00 GMT
+< server: AmazonS3
+< transfer-encoding: chunked
+< x-amz-id-2: nz1j4uZX+xCB8Qw+LADw7p4V5rRy0Q8MGNBqB7VcMQJufCMeZYBf9eqH36gTmtGs3SraDsZPdB2gDfQeXXwyWXnQHwONyaVq
+< x-amz-request-id: B3ZYXAB727JAAXN9
+< --- body (263 bytes read) ---
+< <?xml version="1.0" encoding="UTF-8"?>
+< <Error><Code>AccessDenied</Code><Message>Access Denied</Message><RequestId>B3ZYXAB727JAAXN9</RequestId><HostId>nz1j4uZX+xCB8Qw+LADw7p4V5rRy0Q8MGNBqB7VcMQJufCMeZYBf9eqH36gTmtGs3SraDsZPdB2gDfQeXXwyWXnQHwONyaVq</HostId></Error>
+
+* total time: 212 ms

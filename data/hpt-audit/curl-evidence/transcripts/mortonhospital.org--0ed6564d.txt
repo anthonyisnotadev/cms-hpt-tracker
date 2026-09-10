@@ -1,0 +1,180 @@
+# curl-style evidence for https://mortonhospital.org/
+# fetched 2026-09-07T01:33:58.595Z with the tracker's BROWSER_HEADERS (production client)
+# record: 220073 | BROWN UNIVERSITY HEALTH MORTON HOSPITAL | MA | finding: not-assessed-not-named-in-file
+
+* DNS mortonhospital.org: 104.21.71.144, 172.67.145.123
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://mortonhospital.org/
+< HTTP 301
+< cf-ray: a371f7f17e645187-IAD
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:33:59 GMT
+< location: https://www.brownhealth.org/locations/morton-hospital
+< nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+< report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=RHn3JFbxVD75AuwIoeF0%2Bf9Yxm%2BLZk7qdoJCFCf1MC5EqeuJ6JcfvriNXCUOTQsbYD1nzf418NqayxLhhhye2d6ENcvX2iUohixl6cTUCLUsuB%2B43WkAl9jInvU1QjTJsxe6eMs%3D"}]}
+< server: cloudflare
+* following Location: https://www.brownhealth.org/locations/morton-hospital
+
+* final response: https://www.brownhealth.org/locations/morton-hospital
+< HTTP 200
+< access-control-allow-origin: *
+< cache-control: max-age=31536000, public
+< cf-cache-status: REVALIDATED
+< cf-ray: a371f7f3ac52f72b-IAD
+< content-encoding: gzip
+< content-language: en
+< content-security-policy: report-uri /report-csp-violation
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:34:00 GMT
+< expires: Sun, 19 Nov 1978 05:00:00 GMT
+< last-modified: Fri, 04 Sep 2026 22:33:34 GMT
+< link: </sites/default/files/favicons/apple-touch-icon.png>; rel="apple-touch-icon"; sizes="180x180", </sites/default/files/favicons/favicon-32x32.png>; rel="icon"; type="image/png"; sizes="32x32", </sites/default/files/favicons/favicon-16x16.png>; rel="icon"; type="image/png"; sizes="16x16", </sites/default/files/favicons/site.webmanifest>; rel="manifest", </sites/default/files/favicons/safari-pinned-tab.svg>; rel="mask-icon"; color="#5bbad5"
+< server: cloudflare
+< strict-transport-security: max-age=31536000
+< vary: Cookie,Accept-Encoding
+< via: varnish
+< x-ah-environment: prod
+< x-cache: HIT
+< x-cache-hits: 1
+< x-content-security-policy: report-uri /report-csp-violation
+< x-content-type-options: nosniff
+< x-drupal-cache: MISS
+< x-drupal-dynamic-cache: UNCACHEABLE (poor cacheability)
+< x-frame-options: SAMEORIGIN
+< x-generator: Drupal 10 (https://www.drupal.org)
+< x-request-id: v-aa17a5f6-a8b0-11f1-9f9f-7f65b8f4ee62
+< x-xss-protection: 1
+< --- body (65536 bytes read, truncated) ---
+< <!DOCTYPE html>
+< <html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+<   <head>
+<           <link rel="preconnect" href="https://app.termly.io">
+< <link rel="preconnect" href="https://www.googletagmanager.com">
+<       
+< <!-- Google Tag Manager -->
+< <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+< new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+< j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+< 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+< })(window,document,'script','dataLayer','GTM-TQ66ZZX');</script>
+< <!-- End Google Tag Manager -->
+<         <meta charset="utf-8" />
+< <style>/* @see https://github.com/aFarkas/lazysizes#broken-image-symbol */.js img.lazyload:not([src]) { visibility: hidden; }/* @see https://github.com/aFarkas/lazysizes#automatically-setting-the-sizes-attribute */.js img.lazyloaded[data-sizes=auto] { display: block; width: 100%; }/* Transition effect. */.js .lazyload, .js .lazyloading { opacity: 0; }.js .lazyloaded { opacity: 1; -webkit-transition: opacity 2000ms; transition: opacity 2000ms; }</style>
+< <meta name="description" content="Treating, diagnosing, and caring for our friends and family in need." />
+< <link rel="canonical" href="https://www.brownhealth.org/locations/morton-hospital" />
+< <link rel="image_src" href="https://www.brownhealth.org/sites/default/files/2025-11/morton-location-header-1700x402.jpg" />
+< <meta property="og:site_name" content="Brown University Health" />
+< <meta property="og:description" content="Treating, diagnosing, and caring for our friends and family in need." />
+< <meta property="og:image" content="https://www.brownhealth.org/sites/default/files/2025-11/morton-location-header-1700x402.jpg" />
+< <meta name="msapplication-TileColor" content="#2b5797" />
+< <meta name="theme-color" content="#ffffff" />
+< <script src="https://cdn.jsdelivr.net/gh/au5ton/rosetta@0.6.3/dist/index.js" defer integrity="sha384-grkK+V3y5mFx3dzrZO77FIyYvSncJuG2SwyIfls4Q25efL46zPiXN1z0XWfc1ZJ1" crossorigin="anonymous"></script>
+< <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+< <meta name="MobileOptimized" content="width" />
+< <meta name="HandheldFriendly" content="true" />
+< <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+< <link rel="apple-touch-icon" sizes="180x180" href="/sites/default/files/favicons/apple-touch-icon.png" />
+< <link rel="icon" type="image/png" sizes="32x32" href="/sites/default/files/favicons/favicon-32x32.png" />
+< <link rel="icon" type="image/png" sizes="16x16" href="/sites/default/files/favicons/favicon-16x16.png" />
+< <link rel="manifest" href="/sites/default/files/favicons/site.webmanifest" />
+< <link rel="mask-icon" href="/sites/default/files/favicons/safari-pinned-tab.svg" color="#5bbad5" />
+< <link rel="alternate" hreflang="en" href="https://www.brownhealth.org/locations/morton-hospital" />
+< 
+<     <title>Morton Hospital | Brown University Health</title>
+<     <link rel="stylesheet" media="all" href="/sites/default/files/css/css_9mnDRVIC0wzr-Uo-LVrNS7s8Ia2Q0Ki-jZR4dD7qLMs.css?delta=0&amp;language=en&amp;theme=lifespan&amp;include=eJxFjksKwzAQQy_k2kcqE1tJBvxjZDekp29oKN2Ip6eNYhbyDIsQLt5cQMoG_npt6dqa4SIrkvUNl3UFu9RQlmkb7BFJV5BUwqp5wHyUPrRV18VkM-k7Q7LZJfu_8bP2uWTljuSoA4cmPCXDRtCqw_HkQLnfvRQHwzd9aWlmfADoeUkz" />
+< <link rel="stylesheet" media="all" href="/sites/default/files/css/css_J9aWZSeLQSIyUM88i-tjSWC8OS5XWNC0AilMvm0WNSw.css?delta=1&amp;language=en&amp;theme=lifespan&amp;include=eJxFjksKwzAQQy_k2kcqE1tJBvxjZDekp29oKN2Ip6eNYhbyDIsQLt5cQMoG_npt6dqa4SIrkvUNl3UFu9RQlmkb7BFJV5BUwqp5wHyUPrRV18VkM-k7Q7LZJfu_8bP2uWTljuSoA4cmPCXDRtCqw_HkQLnfvRQHwzd9aWlmfADoeUkz" />
+< 
+<     
+<   </head>
+<   <body class="path-node page-node-type-hospital">
+<           <!-- Google Tag Manager (noscript) -->
+< <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQ66ZZX"
+< height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+< <!-- End Google Tag Manager (noscript) -->
+<             <div role="navigation">
+<       <a href="#main-content" aria-label="Skip To Main Content" class="visually-hidden focusable skip-link">
+<         Skip to main content
+<       </a>
+<     </div>
+<     <div data-sitewide-alert aria-live="polite"></div>
+< 
+<       <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+<     <div class="c-unsupported-browser"></div>
+< <div class="layout-container" id="layout-container">
+<   <div class="c-utility-bar t-background--gray-light">
+<     <div class="l-container">
+<       <div class="c-utility-bar__row l-row--no-columns">
+<         <div class="c-utility-bar__mobile-logo">
+<           <a href="/">
+<             <img src="/themes/custom/lifespan/assets/images/logo-horizontal.svg" alt="Brown University Health">
+<           </a>
+<         </div>
+<         <nav aria-label="utility navigation" class="c-utility-bar__menu-container c-utility-bar__menu-container--utility">
+<           
+< 
+< 
+< 
+<   
+<     
+<     
+<             <ul class="o-menu c-menu-utility">
+<               
+<       
+<                     <li class="o-menu__item c-menu-utility__item c-menu-utility__item--level-0">
+<           <a href="/contact-us" class="o-link c-menu-utility__link c-menu-utility__link--level-0" data-drupal-link-system-path="node/302226">Contact Us</a>
+<                   </li>
+<                 
+<       
+<                     <li class="o-menu__item c-menu-utility__item c-menu-utility__item--level-0">
+<           <a href="https://www.brownhealth.org/centers-services/research-and-clinical-trials" class="o-link c-menu-utility__link c-menu-utility__link--level-0" data-drupal-link-system-path="node/62786">Clinical Trials</a>
+<                   </li>
+<                 
+<       
+<                     <li class="o-menu__item c-menu-utility__item c-menu-utility__item--level-0">
+<           <a href="/careers" class="o-link c-menu-utility__link c-menu-utility__link--level-0" data-drupal-link-system-path="node/86">Careers</a>
+<                   </li>
+<                 
+<       
+<                     <li class="o-menu__item c-menu-utility__item c-menu-utility__item--level-0">
+<           <a href="/patients-visitors/insurance-billing-and-financial-assistance/pay-bill-online" title="Pay a bill online" class="o-link c-menu-utility__link c-menu-utility__link--level-0" data-drupal-link-system-path="node/88746">Pay a Bill</a>
+<                   </li>
+<                 
+<       
+<                             <li class="o-menu__item c-menu-utility__item c-menu-utility__item--level-0 c-menu-utility__item--expanded">
+<           <button
+<             id="Rhode_Island_Hospital2"
+<             class="o-menu-dropdown__toggle dropdown-toggle "
+<             data-toggle="dropdown"
+<             data-display="static"
+<             aria-haspopup="false"
+<             aria-expanded="false"
+<           >
+<                         Ways to Give
+<             <i class="fas fa-chevron-down fa-xs" aria-hidden="true"></i>
+<           </button>
+<                         
+<     
+<     
+<             <ul class="o-menu o-menu-dropdown o-menu-dropdown--utility c-menu-utility__menu-dropdown js-dropdown dropdown-menu">
+<               
+<       
+<                     <li class="o-menu__item c-menu-utility__item c-menu-utility__item--level-1">
+<           <a href="/RIH-giving" class="o-link c-menu-utility__link c-menu-utility__link--level-1" data-drupal-link-system-path="node/167996">Rhode Island Hospital</a>
+<                   </li>
+<                 
+<       
+<                     <li class="o-menu__item c-menu-utility__item c-menu-utility__item--level-1">
+<           <a href="/HCH-giving" class="o-link c-menu-utility__link c-menu-utility__link--level-1" data-drupal-link-system-path="node/167986">Hasbro Children&#039;s</a>
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 22436 ms

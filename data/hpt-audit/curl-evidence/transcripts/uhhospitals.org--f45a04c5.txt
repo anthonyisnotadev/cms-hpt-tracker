@@ -1,0 +1,182 @@
+# curl-style evidence for https://uhhospitals.org/
+# fetched 2026-09-07T01:35:36.046Z with the tracker's BROWSER_HEADERS (production client)
+# record: 360041 | PARMA COMMUNITY GENERAL HOSPITAL | OH | finding: not-assessed-not-named-in-file
+# record: 360075 | UH REGIONAL HOSPITALS | OH | finding: not-assessed-not-named-in-file
+# record: 361307 | UHHS MEMORIAL HOSPITAL OF GENEVA | OH | finding: not-assessed-not-named-in-file
+
+* DNS uhhospitals.org: 150.171.109.73
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://uhhospitals.org/
+< HTTP 301
+< access-control-allow-origin: *
+< cache-control: public, max-age=86400
+< content-length: 151
+< content-security-policy: worker-src blob: *.uhhospitals.org; default-src 'self' *.uhhs.com data: 'unsafe-inline' 'unsafe-eval' *.uhhospitals.org *.uhhs.com *.typekit.net *.siteimproveanalytics.com siteimproveanalytics.com *.bing.com *.youtube.com *.invoca.net s.ytimg.com *.ytimg.com *.facebook.net *.invocacdn.com *.googletagmanager.com *.google-analytics.com *.googleapis.com *.google.com *.facebook.com *.siteimproveanalytics.io *.doubleclick.net *.gstatic.com *.w3.com *.podbean.com *.ads-twitter.com *.twitter.com *.t.co t.co *.alphonso.tv *.calculatestuff.com calculatestuff.com doubleclick.net *.selfcare.info selfcare.info *.digitalmedia.hhs.gov api.digitalmedia.hhs.gov *.appcatalyst.com appcatalyst.com *.staywellsolutionsonline.com staywellsolutionsonline.com *.hhs.gov *.livestream.com livestream.com *.issuu.com issuu.com *.isu.pub isu.pub *.w3.org w3.org *.quantserve.com quantserve.com *.boxcloud.com boxcloud.com *.box.com box.com *.bananatag.com bananatag.com *.alpixtrack.com alpixtrack.com *.adxcel-ec2.com *.data.adxcel-ec2.com data.adxcel-ec2.com adxcel-ec2.com *.cancer.gov cancer.gov *.kramesstaywell.com kramesstaywell.com *.nextdoor.com nextdoor.com *.youtube-nocookie.com youtube-nocookie.com *.licdn.com licdn.com *.stackadapt.com stackadapt.com *.hepdata.com hepdata.com *.jsdelivr.net cdn.jsdelivr.net *.pinimg.com s.pinimg.com *.pinterest.com ct.pinterest.com *.googleoptimize.com *.domo.com domo.com *.marketingcloudapis.com marketingcloudapis.com *.epic.com *.vfpnext.com *.adobedtm.com *.adobedc.net https://adobedc.demdex.net http://edge.adobedc.net https://atlas.microsoft.com *.visualstudio.com atlas.min.js cdnapisec.kaltura.com https://uhhospitals.cdn-v3.conductrics.com https://sqs.us-east-2.amazonaws.com https://uhhospitals.conductrics.com *.azurewebsites.net; frame-ancestors 'self' *.uhhospitals.org *.uhhs.com;
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:35:37 GMT
+< location: https://www.uhhospitals.org/
+< node: 1
+< sitecore-version: 10.3
+< strict-transport-security: max-age=31536000; includeSubDomains; preload
+< x-azure-ref: 20260907T013537Z-154c47b99c4mg7qvhC1IAD20p00000000t5g00000000h9au
+< x-cache: TCP_HIT
+< x-cache-info: L1_T2
+< x-content-type-options: nosniff
+< x-fd-int-roxy-purgeid: 14
+< x-frame-options: sameorigin
+< x-xss-protection: 1; mode=block
+* following Location: https://www.uhhospitals.org/
+
+* final response: https://www.uhhospitals.org/
+< HTTP 200
+< access-control-allow-origin: *
+< cache-control: no-cache, no-store
+< content-encoding: br
+< content-security-policy: worker-src blob: *.uhhospitals.org; default-src 'self' *.uhhs.com data: 'unsafe-inline' 'unsafe-eval' *.uhhospitals.org *.uhhs.com *.typekit.net *.siteimproveanalytics.com siteimproveanalytics.com *.bing.com *.youtube.com *.invoca.net s.ytimg.com *.ytimg.com *.facebook.net *.invocacdn.com *.googletagmanager.com *.google-analytics.com *.googleapis.com *.google.com *.facebook.com *.siteimproveanalytics.io *.doubleclick.net *.gstatic.com *.w3.com *.podbean.com *.ads-twitter.com *.twitter.com *.t.co t.co *.alphonso.tv *.calculatestuff.com calculatestuff.com doubleclick.net *.selfcare.info selfcare.info *.digitalmedia.hhs.gov api.digitalmedia.hhs.gov *.appcatalyst.com appcatalyst.com *.staywellsolutionsonline.com staywellsolutionsonline.com *.hhs.gov *.livestream.com livestream.com *.issuu.com issuu.com *.isu.pub isu.pub *.w3.org w3.org *.quantserve.com quantserve.com *.boxcloud.com boxcloud.com *.box.com box.com *.bananatag.com bananatag.com *.alpixtrack.com alpixtrack.com *.adxcel-ec2.com *.data.adxcel-ec2.com data.adxcel-ec2.com adxcel-ec2.com *.cancer.gov cancer.gov *.kramesstaywell.com kramesstaywell.com *.nextdoor.com nextdoor.com *.youtube-nocookie.com youtube-nocookie.com *.licdn.com licdn.com *.stackadapt.com stackadapt.com *.hepdata.com hepdata.com *.jsdelivr.net cdn.jsdelivr.net *.pinimg.com s.pinimg.com *.pinterest.com ct.pinterest.com *.googleoptimize.com *.domo.com domo.com *.marketingcloudapis.com marketingcloudapis.com *.epic.com *.vfpnext.com *.adobedtm.com *.adobedc.net https://adobedc.demdex.net http://edge.adobedc.net https://atlas.microsoft.com *.visualstudio.com atlas.min.js cdnapisec.kaltura.com https://uhhospitals.cdn-v3.conductrics.com https://sqs.us-east-2.amazonaws.com https://uhhospitals.conductrics.com *.azurewebsites.net; frame-ancestors 'self' *.uhhospitals.org *.uhhs.com;
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:35:37 GMT
+< expires: -1
+< node: 1
+< pragma: no-cache
+< sitecore-version: 10.3
+< strict-transport-security: max-age=31536000; includeSubDomains; preload
+< vary: Accept-Encoding
+< x-azure-ref: 20260907T013537Z-17d645df49cgjfwqhC1FTYqxpw0000000y5g000000006zwf
+< x-cache: CONFIG_NOCACHE
+< x-content-type-options: nosniff
+< x-frame-options: sameorigin
+< x-xss-protection: 1; mode=block
+< --- body (65536 bytes read, truncated) ---
+< 
+< 
+< <!DOCTYPE html>
+< <html lang="en">
+< <head>
+< 
+<     <meta charset="utf-8">
+<     <meta content="IE=edge" http-equiv="X-UA-Compatible">
+<     <meta name="viewport" content="width=device-width, initial-scale=1">
+<     <meta name="google-site-verification" content="zInPOGJxxqieeM5_iFMkS7QGKZks5AQC2qnB6Lm2mO4" />
+< 
+<     
+< 
+< 
+< 
+<     <link rel='stylesheet' href='/FrontEnd/Styles/uh.foundation.theming.min.css?v=0a88defb6725' />
+< 	<link rel='stylesheet' href='/FrontEnd/Styles/uh.feature.genericcontent.min.css?v=a46e5a8e8783' />
+< 	<link rel='stylesheet' href='/FrontEnd/Styles/uh.feature.scheduling.min.css?v=70a3f1eb6121' />
+< 	<link rel='stylesheet' href='/FrontEnd/Styles/uh.feature.navigation.min.css?v=d8c68396a6d3' />
+< 	<link rel='stylesheet' href='/FrontEnd/Styles/uh.feature.heroes.min.css?v=75be8bfd5d63' />
+< 	<link rel='stylesheet' href='/FrontEnd/Styles/uh.feature.identity.min.css?v=1af3cf568e3b' />
+< 	<link rel='stylesheet' href='/FrontEnd/Styles/uh.feature.search.min.css?v=552693ff944c' />
+< 	<link rel='stylesheet' href='/FrontEnd/Styles/uh.project.common.min.css?v=4259735a5e03' />
+< 	<link rel='stylesheet' href='/FrontEnd/Styles/uh.project.uhhospitals.min.css?v=d41d8cd98f00' />
+< 	
+<     
+< 
+< 
+<     <title>Nationally Ranked Healthcare - Largest Network of Hospitals, Doctors &amp; Surgeons in Cleveland &amp; Northeast Ohio | University Hospitals</title>
+< 
+< 
+<     <meta name="description" content="University Hospitals, based in Cleveland, OH, is one of the nation&#39;s leading healthcare systems comprised of expert and renowned surgeons, doctors, and clinicians. With hospitals, health centers, urgent care locations, and other facilities throughout Northeast Ohio, University Hospitals is positioned to provide the best patient-centric medical care to the community. Find a UH doctor or location near you." />
+< 
+< 
+< 
+< 
+<     <link rel="canonical" href="https://www.uhhospitals.org/" />
+< 
+< 
+< 
+< 
+< 
+<     <script src='/FrontEnd/Scripts/Head/uh.foundation.theming.min.js?v=6aac8a26820a'></script>
+< 	
+<     <!-- Test begin -->
+< 
+<     
+<     <!-- Test end -->
+<     <script>
+<         (function (d) {
+<             var config = {
+<                 kitId: 'uqg3jzf',
+<                 scriptTimeout: 3000,
+<                 async: true
+<             },
+<                 h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+<         })(document);
+<     </script>
+< 
+<     <script src="https://assets.adobedtm.com/b41b10febb33/b58aa2b57d00/launch-cb62158726ea.min.js" async></script>
+< <script src="https://uhhospitals.cdn-v3.conductrics.com/ac-fkDohixRFk/v3/agent-api/js/f-LgYynzAoqi/dt-hZyjFC1zU0W1TqjSzr1pKeWZMqYPvj?apikey=api-UzL6gOXQjpv4VLKeKWOkmoxkvV"></script>
+< <style>
+< .UH-Feature-GenericContent-3ColumnCta {
+<     margin-bottom: 2rem;
+<     padding: 0 48px;
+<     margin-top: 3rem;
+< }
+< .UH-Feature-Heroes-AdvancedHeroHeader .UH-Feature-GenericContent-CtaBlock-Action:last-child .UH-Button-Secondary, .UH-Feature-GenericContent-CtaBlock-Action:last-child .UH-Button-Tertiary {
+< background-color: initial;
+< }
+< .UH-Feature-Heroes-AdvancedHeroHeader .UH-Button-Secondary:hover::before {
+< transform: scale3d(0,0,0);
+< }
+< 
+< /*---Browns Banner Styles ---*/
+< .browns-hp-banner {
+<             background-image: url(/-/media/3AE09206197740D785EE97D902C04DE5.ashx);
+<             color: #fff;
+<             border: 8px solid #fff;
+<             display: block;
+<             position: relative;
+<             margin-top: -2rem;
+< margin-bottom: -3rem;
+<         }
+<         .browns-hp-banner  a {
+<             color: #fff;
+<             font-weight: 700;
+<         }
+<          .browns-hp-banner-wrapper p.browns-hp-banner-title {
+<             font-size: 2rem;
+< line-height: 2.2rem;
+<             font-weight: 900;
+<             text-transform: uppercase;
+<         }
+<         .browns-hp-banner-wrapper {
+<             max-width: 1250px;
+<             width: 90%;
+<             margin: 0 auto;
+<             padding: 0;
+<             display: flex;
+<             justify-content: space-between;
+<         }
+<         .browns-hp-banner-wrapper span {
+<             margin-right: 8%;
+<             width: 59%;
+<             padding: 1rem 0;
+< margin-left: 8%;
+< text-align: center;
+<         }
+<         .browns-hp-banner-wrapper p {
+<             margin: 0;
+<             padding: 0;
+< font-weight: 300;
+<         }
+<         .browns-hp-banner-orange-stripes {
+<             width: 100%;
+<             height: 34px;
+<             display: block;
+<             position: relative;
+<         }
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 465 ms

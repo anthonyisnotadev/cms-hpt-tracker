@@ -1,0 +1,141 @@
+# curl-style evidence for https://benefis.org/
+# fetched 2026-09-07T01:34:44.630Z with the tracker's BROWSER_HEADERS (production client)
+# record: 270012 | BENEFIS HOSPITALS INC | MT | finding: not-assessed-not-named-in-file
+
+* DNS benefis.org: 89.106.200.142
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://benefis.org/
+< HTTP 301
+< content-length: 58
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:34:45 GMT
+< location: https://www.benefis.org
+< permissions-policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
+< referrer-policy: no-referrer-when-downgrade
+< x-content-type-options: nosniff
+< x-server: ewr0.prod.edge
+* following Location: https://www.benefis.org
+
+* final response: https://www.benefis.org/
+< HTTP 200
+< accept-ch: Sec-CH-DPR, Sec-CH-Width, Sec-CH-Viewport-Width
+< access-control-allow-headers: Origin, X-API-Version, Content-Type, Accept, AuthenticationToken
+< access-control-allow-origin: *
+< cache-control: max-age=0, no-cache, no-store
+< content-encoding: gzip
+< content-length: 16590
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:34:46 GMT
+< expect-ct: max-age=86400
+< expires: Mon, 07 Sep 2026 01:34:46 GMT
+< permissions-policy: geolocation=(self), payment=(self "https://formulate.geonetric.com" "https://forms.geonetric.com"), sync-xhr=(self "https://formulate.geonetric.com" "https://forms.geonetric.com"), camera=(), accelerometer=(), gyroscope=(), magnetometer=(), microphone=()
+< pragma: no-cache
+< referrer-policy: strict-origin-when-cross-origin
+< server-timing: cdn-cache; desc=REVALIDATE, edge; dur=81, origin; dur=272, ak_p; desc="1788744885925_389073005_598205035_35218_13627_0_58_15";dur=1
+< strict-transport-security: max-age=63072000; includeSubDomains;
+< vary: Accept-Encoding
+< x-akamai-transformed: 9 18848 0 pmb=mRUM,1
+< x-aspnet-version: 4.0.30319
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-ua-compatible: IE=Edge,chrome=1
+< --- body (64039 bytes read) ---
+< 
+< <!DOCTYPE html>
+< <html lang="en-US">
+< 
+< <!-- ====================================================================== --> 
+< <!-- Copyright (c)1998 - 2026 Geonetric, Inc.     --> 
+< <!-- All rights reserved Benefis Health System.  http://www.geonetric.com/                        --> 
+< <!-- ====================================================================== --> 
+< <head id="VsMasterPage_HtmlHeader">
+< <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+< <!-- meta content-type added by WebControls.PageAdapter in ~/App_Browsers -->
+< <script type="text/javascript">
+< //<![CDATA[
+< 	window['VitalSite'] = {
+<   "page": {
+<     "Referrer": null,
+<     "Method": "GET",
+<     "IsPostBack": false,
+<     "StatusCode": 200,
+<     "Status": "200 OK"
+<   },
+<   "mapBrowserApiKey": "AIzaSyCTz_8Yiq695qTLzRU5G5fGQo86CT9WnxI",
+<   "geolocationInHeader": true,
+<   "geolocationOnInitBrowserPrompt": true,
+<   "geolocation": {
+<     "InHeader": true,
+<     "OnInitBrowserPrompt": true,
+<     "CookieExpiration": 0
+<   }
+< };
+< //]]>
+< 
+< </script>
+< <link type="text/css" rel="stylesheet" href="/css-min/this-client/this-client.css" />
+< <meta name="page_display_name" class="elastic" content="Benefis Health System" />
+< <meta name="description" content="Benefis Health System providers offer expertise in more than 40 specialties across central Montana, including Great Falls, Helena, Fort Benton, and Choteau." />
+< <meta name="copyright" content="(c)1998-2026 Geonetric. All Rights Reserved." />
+< 
+<     <meta name="viewport" content="width=device-width, initial-scale=1" /><!-- This is needed to keep the iphone from scrolling horizontally -->
+<     <!-- Favicons -->
+<     <link rel="shortcut icon" href="/favicon.ico" />
+<     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00274c">
+<     <meta name="msapplication-TileColor" content="#00274c">
+<     <meta name="theme-color" content="#ffffff">
+<     <!-- Scripts necessary in head to run first -->
+<     <script type="text/javascript">
+<         document.documentElement.className = 'js';
+<     </script>
+<     <!-- StyleSheets -->
+<     
+< <link rel="canonical" href="https://www.benefis.org/" />
+< <meta name="google-site-verification" content="krAxe5hSjPeBSEnwhsn_ixLi3jeWdEO6pYEBoHEIOZg" />
+< <meta name="google-site-verification" content="B2SbmcUKV_xoBUZu-5oNk5bgRDGP-siVEV1b0vr7ceo" />
+< <meta name="CmsPageId" content="1" />
+< 
+< <!-- Script Name: KRTV -->
+< <noscript><img src="https://jelly.mdhv.io/v1/star.gif?pid=11CKBqebyusPQS79RIcGiMzU6qBA&src=mh&evt=hi"style="display: none;" width="0" height="0"></noscript>
+< 
+< <!-- Script Name: GTM Head - Privacy Filter JS Proxy -->
+< <!-- Google Tag Manager -->
+< <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+< new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+< j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+< 'https://analytics.benefis.org/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+< })(window,document,'script','dataLayer','GTM-PR5SX3C');</script>
+< <!-- End Google Tag Manager -->
+< 
+< <!-- Script Name: MyChart Code -->
+< <script src="https://mychart.benefis.org/Mychart/Scripts/lib/Widget/widget_sdk.js"></script>
+< <title>
+< 	Benefis Health System | Montana
+< </title>
+<                                 <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="6BRQQ-SZMBE-3PNSN-HBBPC-67T4E",function(){function e(){if(!i){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,o.parentNode.appendChild(e),i=!0}}function t(e){i=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(o.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",o.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"6BRQQ-SZMBE-3PNSN-HBBPC-67T4E";var o=document.currentScript||document.getElementsByTagName("script")[0],i=!1,r=document.createElement("link");if(r.relList&&"function"==typeof r.relList.supports&&r.relList.supports("preload")&&"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!i)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),o.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="xgoc45axgdfw22u6cs2q-f-841676247-clientnsv4-s.akamaihd.net",o="false"=="true"?2:1,i={"ak.v":"41","ak.cp":"1518280","ak.ai":parseInt("965123",10),"ak.ol":"0","ak.cr":0,"ak.ipv":4,"ak.proto":"h2","ak.rid":"23a7e26b","ak.r":47485,"ak.a2":n,"ak.m":"","ak.n":"essl","ak.cport":52376,"ak.gh":"23.48.200.109","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.0rtt.ed":"","ak.csrc":"-","ak.acc":"","ak.t":"1788744885","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==aeLJqR+JhAAxPYP4dmhuAHjM7RlcbMXqgVHDGmOmEzqkFFfCdJTxttnsGtkf7b7WqY7OmAuDfEQNMRe2HREIyt8lYa2GXlguKGe9vpBn6+DE49xKHwH48f4CtbVOMhoNuZ/d+UCfVnB0z1aUzwz7WNLCO514tryjiCtmuhBsZM4/0q1K382hNjvHLtzhe2BT+TL/CT3BMc0v0aC0jrFXTVFMzXujHR1Ni7q5ht9Eq0Q1SyoDDhYYJOGpCsg3ez0mEtW4CO5sescGtXujZTZr60TVsaK+U5+ppcllydl8J/c1tHnrIeAgQzcDpZolbb4tqYajNvH1E8w6SdyN4FhztcPorkskzjXSCR5DhgfNkmaVIZ9zmNwaxItsnoYPuC7bf8S9mjSe6w4IqqMbFA37nUurrgEgFengG+iBxWCkEKE=","ak.pv":"12","ak.dpoabenc":"","ak.tf":o};if(""!==t)i["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))i["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(i)},rv:function(){var e=["ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.0rtt.ed","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:i,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+< 
+< <body id="Home">
+<     <script type="text/javascript" src="/scripts/jquery-3.7.0.min.js"></script>
+< <script type="text/javascript" src="/scripts/jquery-migrate-3.4.1.min.js"></script>
+< 
+< <!-- Script Name: GTM Body - Privacy Filter HTML Proxy -->
+< <!-- Google Tag Manager (noscript) -->
+< <noscript><iframe src="https://analytics.benefis.org/ns.html?id=GTM-PR5SX3C"
+< height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+< <!-- End Goo
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 675 ms

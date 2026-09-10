@@ -1,0 +1,55 @@
+# curl-style evidence for https://peacehealth.org/cms-hpt.txt
+# fetched 2026-09-07T01:32:08.578Z with the tracker's BROWSER_HEADERS (production client)
+# record: 021311 | PEACEHEALTH KETCHIKAN MEDICAL CENTER | AK | finding: pointer-blocked-to-automation
+# record: 381316 | PEACE HARBOR MEDICAL CENTER | OR | finding: pointer-blocked-to-automation
+# record: 381301 | PEACEHEALTH COTTAGE GROVE COMMUNITY MEDICAL CENTER | OR | finding: pointer-blocked-to-automation
+# record: 380102 | SACRED HEART MEDICAL CENTER - RIVERBEND | OR | finding: pointer-blocked-to-automation
+# record: 501340 | PEACEHEALTH PEACE ISLAND MEDICAL CENTER | WA | finding: pointer-blocked-to-automation
+# record: 500050 | PEACEHEALTH SOUTHWEST MEDICAL CENTE | WA | finding: pointer-blocked-to-automation
+# record: 500041 | PEACEHEALTH ST JOHN MEDICAL CENTER | WA | finding: pointer-blocked-to-automation
+# record: 500030 | PEACEHEALTH ST JOSEPH MEDICAL CENTER | WA | finding: pointer-blocked-to-automation
+# record: 501329 | PEACEHEALTH UNITED GENERAL MEDICAL CENTER | WA | finding: pointer-blocked-to-automation
+
+* DNS peacehealth.org: 185.178.196.3
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* error: fetch failed (cause: UND_ERR_CONNECT_TIMEOUT)
+
+* http:// fallback attempt after transport failure:
+* fallback redirect hop 1: http://peacehealth.org/cms-hpt.txt
+< HTTP 301
+< cf-ray: a371f4d65debdab8-IAD
+< connection: keep-alive
+< content-length: 167
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:31:52 GMT
+< location: https://peacehealth.org/cms-hpt.txt
+< server: cloudflare
+< strict-transport-security: max-age=300
+< x-metadata-redirect: true
+* following Location: https://peacehealth.org/cms-hpt.txt
+
+* fallback redirect hop 2: https://peacehealth.org/cms-hpt.txt
+< HTTP 301
+< cf-ray: a371f503280d9adc-IAD
+< content-length: 167
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:31:59 GMT
+< location: https://www.peacehealth.org/cms-hpt.txt
+< server: cloudflare
+< strict-transport-security: max-age=300
+< x-metadata-redirect: true
+* following Location: https://www.peacehealth.org/cms-hpt.txt
+
+* fallback error: fetch failed (cause: UND_ERR_CONNECT_TIMEOUT)
+
+* total time: 39862 ms

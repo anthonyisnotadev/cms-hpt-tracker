@@ -1,0 +1,54 @@
+# curl-style evidence for https://al.hughston.com/wp-content/uploads/sites/8/2024/02/331058243_jack-hughston-memorial-hospital_standardcharges.json
+# fetched 2026-09-07T01:32:12.268Z with the tracker's BROWSER_HEADERS (production client)
+# record: 010168 | JACK HUGHSTON MEMORIAL HOSPITAL | AL | finding: mrf-url-unreachable
+
+* DNS al.hughston.com: 160.153.191.220
+
+> GET /wp-content/uploads/sites/8/2024/02/331058243_jack-hughston-memorial-hospital_standardcharges.json  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://al.hughston.com/wp-content/uploads/sites/8/2024/02/331058243_jack-hughston-memorial-hospital_standardcharges.json
+< HTTP 404
+< content-encoding: br
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:32:13 GMT
+< etag: W/"328-5adf65f3bca6a"
+< last-modified: Fri, 28 Aug 2020 21:02:34 GMT
+< server: nginx
+< --- body (808 bytes read) ---
+< <!DOCTYPE html>
+< <html lang="en">
+< <head>
+<   <meta charset="utf-8">
+<   <meta http-equiv="x-ua-compatible" content="ie=edge">
+<   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<   <title>404 Not Found</title>
+<   <link rel="stylesheet" href="/error_docs/styles.css">
+< </head>
+< <body>
+< <div class="page">
+<   <div class="main">
+<     <h1>Server Error</h1>
+<     <div class="error-code">404</div>
+<     <h2>Page Not Found</h2>
+<     <p class="lead">This page either doesn't exist, or it moved somewhere else.</p>
+<     <hr/>
+<     <p>That's what you can do</p>
+<     <div class="help-actions">
+<       <a href="javascript:location.reload();">Reload Page</a>
+<       <a href="javascript:history.back();">Back to Previous Page</a>
+<       <a href="/">Home Page</a>
+<     </div>
+<   </div>
+< </div>
+< </body>
+< </html>
+
+* total time: 312 ms

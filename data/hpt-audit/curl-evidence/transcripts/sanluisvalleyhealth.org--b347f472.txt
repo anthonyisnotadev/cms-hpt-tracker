@@ -1,0 +1,66 @@
+# curl-style evidence for https://sanluisvalleyhealth.org/
+# fetched 2026-09-07T01:32:38.329Z with the tracker's BROWSER_HEADERS (production client)
+# record: 061308 | SAN LUIS VALLEY HEALTH CONEJOS COUNTY HOSPITAL | CO | finding: not-assessed-not-named-in-file
+
+* DNS sanluisvalleyhealth.org: 34.224.10.110, 52.11.37.152
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://sanluisvalleyhealth.org/
+< HTTP 301
+< connection: keep-alive
+< content-length: 162
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:32:39 GMT
+< location: https://www.sanluisvalleyhealth.org/
+< server: nginx
+< strict-transport-security: max-age=63072000; includeSubDomains; preload
+* following Location: https://www.sanluisvalleyhealth.org/
+
+* final response: https://www.sanluisvalleyhealth.org/
+< HTTP 200
+< cache-control: private
+< content-encoding: gzip
+< content-length: 19474
+< content-security-policy: default-src * blob: data: cid:; img-src * data: cid: 'unsafe-inline'; media-src * data: blob:; script-src * data: blob: 'unsafe-inline' 'unsafe-eval'; style-src * blob: data: 'unsafe-inline'; style-src-elem * blob: data: 'unsafe-inline', font-src * data:
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:32:40 GMT
+< referrer-policy: no-referrer-when-downgrade
+< strict-transport-security: max-age=63072000; includeSubDomains; preload
+< vary: Accept-Encoding
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< --- body (61304 bytes read) ---
+< <!DOCTYPE html>
+< <html class="home-layout" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" data-anim="1" data-prlx="1" data-flr="1" data-i="x37dc20xp4z" data-is="omuokrhlpc7" data-gmap="AIzaSyD9RxIAFFpAdGvsN49rqOZLQbeZ6BSLoL4" data-sa="JgqNs%2F6cje7N%2F8Pr%2FRG0vYe8MW%2B3NLLtHkDht6TUP8weNSTJnkH7DbboKawe%2FN7uRw1wOpsZXcNKgpjL2syWbEDeYzJILLDZAZy74LSJgJg%2BOII11XopRHyCG2DP1gb%2BwO6O07psca8hBzks1aWn%2Bq37wrmG0UTJmoBKcgARhVyNdcyq">
+< <head>
+< 	<script type="text/javascript" src="/cms/includes/qdyfq9a7l_t.2601121227291.js" defer data-require='["j/poly","j/modernizr","j/jquery","j/jquery.ui","j/ui.touch","j/ui.wheel","j/ui.draw","j/ui.mobile","j/timezone","static","j/jquery.cookie","extensions","uri","behaviors","c/scrollbar","c/loading","m/date","form","adapter","v/jwplayer","video","a/bootstrap","svg"]'></script>
+< 	<title>San Luis Valley Hospital | San Luis Valley Health</title>
+< 	<link rel="canonical" href="https://www.sanluisvalleyhealth.org/"/>
+< 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+< 	<meta content="initial-scale=1" name="viewport"/>
+< 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+< 	<meta name="format-detection" content="telephone=no"/>
+< 	<meta name="description" content="San Luis Valley Health is the hub of healthcare services for the southern Colorado area. We are your trusted partner in quality health care close to home."/>
+< 	<meta property="og:type" content="website"/>
+< 	<meta property="og:url" content="https://www.sanluisvalleyhealth.org/"/>
+< 	<meta property="og:image" content="https://www.sanluisvalleyhealth.org/images/logos/Social-Share.jpg"/>
+< 	<meta name="twitter:card" content="summary_large_image"/>
+< 	<meta name="twitter:image" content="https://www.sanluisvalleyhealth.org/images/logos/Social-Share.jpg"/>
+< 	<meta name="google-site-verification" content="GJqhT7OhdVnTAMMBbv48pS_RZvvTDgBrJKoAiBTl9Q4"/>
+< 	<meta name="audio-eye-hash" content="36b15a906d7630b81a087176d9cb0bbc"/>
+< 	<!--<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,500,600,700,700i,800,800i|Lora:400,700,700i" rel="stylesheet">-->
+< 	<script type="text/javascript">
+< (function(n){var t=n.Process||{},i=function(n){var t=+n;return isNaN(t)?n:t},u=function(n){return decodeURIComponent(n.replace(/\+/g,"%20"))},h=/\{(.+?)\}/g,c=window.location.hash&&window.location.hash[1]==="~"&&!/\bSPPC=./i.test(document.cookie||""),s=[],e=null,r=null,o=null,f=null;t.Page=function(n){for(var i=n.length;i--;)c?s.push(n[i]):t.Element(document.getElementById(n[i]))};t.Delayed=function(){var n,i;for(r=null;n=s.shift();)t.Element(document.getElementById(n));try{i=new CustomEvent("process.delayed",{bubbles:!0,cancelable:!0});document.documentElement.dispatchEvent(i)}catch(u){}};t.Element=function(n){if(n)switch(n.getAttribute("data-process")){case"if":t.If(n);break;case"replace":t.Replace(n);break;default:t.Fix(n)}};t.Replace=function(n){var i,f=n.parentNode,r=document.createTextNode(t.Get(n.getAttribute("data-replace"))),u=n.firstElementChild;u&&u.getAttribute&&(i=u.getAttribute("href"))&&i.substring(0,4)==="tel:"&&(i=document.createElement("a"),i.setAttribute("href","tel:"+r.data),i.appendChild(document.createTextNode(r.data)),r=i);f.insertBefore(r,n);f.removeChild(n)};t.Fix=function(n){var r,u,i,f=n.attributes.length,e=n.childNodes.length;if(n.nodeName==="SCRIPT"){n.parentNode.removeChild(n);return}while(f--)r=n.attributes[f],r.name.substring(0,13)=="data-replace-"&&(u=r.name.substring(13),n.setAttribute(u,t.Get(r.value)),n.removeAttribute(r.name));while(e--)i=n.childNodes[e],i.nodeType===3&&i.data&&i.data.indexOf("{")>=0&&(i.data=t.Get(i.data))};t.If=function(n){for(var i,u,f,e,o=n.parentNode,s=n.attributes.length,r=undefined;s--;){i=n.attributes[s];switch(i.name){case"field":r=t.Check(n,t.Get(i.value));break;case"nofield":r=!t.Check(n,t.Get(i.value))}if(r!==undefined)break}if(r)for(u=n.childNodes,f=0,e=u.length;f<e;f++)o.insertBefore(u[0],n);o.removeChild(n)};t.Check=function(n,r){for(var u,f,e=n.attributes.length;e--;){u=n.attributes[e];switch(u.name){case"equals":return r==t.Get(u.value);case"gt":case"greaterthan":case"morethan":return i(r)>i(t.Get(u.value));case"gte":return i(r)>=i(t.Get(u.value));case"lt":case"lessthan":case"lesserthan":return i(r)<i(t.Get(u.value));case"lte":return i(r)<=i(t.Get(u.value));case"ne":case"notequals":return r!=t.Get(u.value);case"contains":return f=t.Get(u.value),r.indexOf(f>=0);case"notcontains":return f=t.Get(u.value),!r.indexOf(f>=0);case"in":return f=t.Get(u.value),t.InArray(r,(""+f).split(","));case"notin":return f=t.Get(u.value),!t.InArray(r,(""+f).split(","));case"between":return f=t.Get(u.value).Split(","),f.length==2&&i(r)>=i(f[0])&&i(r)<=i(f[1])?!0:!1}}return!!r};t.InArray=function(n,t){for(var i=t.length;i--;)if(t[i]==n)return!0;return!1};t.Get=function(n){return n.replace(h,function(n,i){var r=i.split("/"),f=r.shift();return t.Data(f.split(":"),0,r[0])||u(r.shift()||"")})};t.Data=function(n,i,r){var u;switch(n[i].toLowerCase()){case"f":return t.Format(n[i+1],n,i+2,r);case"if":return t.Data(n,i+1)?n.pop():"";case"ifno":case"ifnot":return t.Data(n,i+1)?"":n.pop();case"q":case"querystring":return t.Query(n[i+1])||"";case"session":case"cookie":return t.Cookie(n[i+1])||"";case"number":return t.Number(n[i+1],r)||"";case"request":return u=t.Cookie("RWQ")||window.location.search,u&&u[0]==="?"&&n[i+1]&&n[i+1][0]!="?"&&(u=u.substr(1)),u;case"u":return t.UserData(n[i+1])||"";default:return""}};t.Format=function(n,i,r,u){var h,f,s,e,o;if(!n||r>i.length-1)return"";if(h=null,f=null,n=n.toLowerCase(),e=0,n=="binary")e=2;else if(r+1<i.length)switch(n){case"p":case"phone":case"p2":case"phone2":case"p3":case"phone3":i[r].indexOf("0")>=0&&(f=i[r],e=1);break;default:s=parseInt(i[r]);isNaN(s)||(h=s,e=1)}o=t.Data(i,r+e,u);switch(n){case"p":case"phone":return t.Phone(""+o,f);case"p2":case"phone2":return t.Phone(""+o,f||"000.000.0000");case"p3":case"phone3":return t.Phone(""+o,f||"000-000-0000");case"tel":return t.Phone(""+o,f||"0000000000")}};t.Phone=function(n,t){var u,i,f,r;if(!n)return"";if(u=n.replace(/\D+/g,""),u.length<10)return n;for(i=(t||"(000) 000-0000").split(""),f=0,r=0;r<i.length;r++)i[r]=="0"&&(f<u.length?i[r]=u[f++]:(i.splice(r,1),r--));return f==10&&u.length>10&&i.push(" x"+u.substring(10)),i.join("")};t.Query=function(n){var r,f,o,i,s;if(!e)for(e={},r=t.Cookie("RWQ")||window.location.search,f=r?r.substring(1).split("&"):[],o=f.length;o--;)i=f[o].split("="),s=u(i.shift()).toLowerCase(),e[s]=i.length?u(i.join("=")):null;return e[n.toLowerCase()]};t.Cookie=function(n){var f,i,o,e,t;if(!r)for(r={},f=document.cookie?document.cookie.split("; "):[],i=f.length;i--;){o=f[i].split("=");e=u(o.shift()).toLowerCase();t=o.join("=");switch(t[0]){case"#":r[e]=+t.substring(1);break;case":":r[e]=new Date(+t.substring(1));break;case"!":r[e]=t==="!!";break;case"'":r[e]=u(t.substring(1));break;default:r[e]=u(t)}}for(f=n.split("|"),i=0;i<f.length;i++)if(t=r[f[i].toLowerCase()],t)return t;return""};t.UserData=function(n){switch(n){case"DisplayName":return t.Cookie("U_DisplayName")||"";case"TimeOfDay":var r=new Date,i=r.getHours();return i>=17||i<5?"Evening":i<12?"Morning":"Afternoon"}};t.Number=function(n,i){var s,u,r,e;if(!i)return i;if(!o)for(o={},s=(t.Cookie("PHMAP")||"").split(","),e=0;e<s.length;e++)u=(s[e]||"").split("="),u.length===2&&(o[u[0]]=u[1]);return r=o[i],r&&r!=="0"||(r=i),f||(f={}),f[r]=1,r};t.Phones=function(){var n,t;if(f){n=[];for(t in f)f.hasOwnProperty(t)&&n.push(t);return n.join("|")}return null};n.Process=t;document.documentElement&&(document.documentElement.clientWidth<=1280||(t.Cookie("pref")&1)==1)&&(document.documentElement.className+=" minimize")})(this);
+< (function(n){window.rrequire||n(window)})(function(n){function b(i,r,u,f){var h,b,e,a,g,o,nt=(new Date).getTime(),p,c,l,w;if(((!s||nt-s>1e3)&&(st(),s=nt),!t[i])&&(h=k(i,f),h.length)){switch(h[0]){case"/common/js/j/jquery.js":case"/common/js/j/jquery.1.x.js":case"/common/js/j/jquery.2.x.js":h[0]=n.Modernizr&&n.Modernizr.canvas?"/common/js/j/jquery.2.x.js":"/common/js/j/jquery.1.x.js"}if(d(h),f==="css"?(e=n.document.createElement("link"),e.setAttribute("type","text/css"),e.setAttribute("rel","stylesheet"),a="href"):(e=n.document.cr
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 911 ms

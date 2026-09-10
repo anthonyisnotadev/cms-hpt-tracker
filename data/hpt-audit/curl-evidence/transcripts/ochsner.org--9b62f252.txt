@@ -1,0 +1,162 @@
+# curl-style evidence for https://ochsner.org/
+# fetched 2026-09-07T01:34:43.952Z with the tracker's BROWSER_HEADERS (production client)
+# record: 250162 | OCHSNER MEDICAL CENTER-HANCOCK | MS | finding: not-assessed-not-named-in-file
+
+* DNS ochsner.org: 159.60.158.250
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://ochsner.org/
+< HTTP 301
+< content-length: 178
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:34:45 GMT
+< location: https://www.ochsner.org/
+< server: volt-adc
+< strict-transport-security: max-age=63072000; includeSubDomains; preload
+< x-envoy-upstream-service-time: 16
+< x-volterra-location: b-dc12-ash
+* following Location: https://www.ochsner.org/
+
+* final response: https://www.ochsner.org/
+< HTTP 200
+< content-encoding: gzip
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:34:45 GMT
+< server: volt-adc
+< strict-transport-security: max-age=63072000; includeSubDomains; preload
+< vary: Accept-Encoding
+< x-envoy-upstream-service-time: 56
+< x-volterra-location: c-dc12-ash
+< --- body (65536 bytes read, truncated) ---
+< <!DOCTYPE html>
+< <html lang="en">
+< 
+<   <head>
+<             <meta name="robots" content="all" id="meta-robots">
+<                 
+<                 
+<     <meta charset="utf-8">
+<     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<     <title>Expert Care in Louisiana and Beyond | Ochsner Health</title>
+<     <meta name="description" content="Experience expert, innovative care at Ochsner Health. Stay well with comprehensive treatments across Louisiana and the Gulf South.">
+<     <meta name="dcterms.Contributor" content="Ochsner Health">
+<     <meta name="dcterms.Coverage" content="https://www.ochsner.org//">
+<     <meta name="dcterms.Creator" content="Ochsner Health">
+<     <meta name="dcterms.Date" content="2014-11-21T04:22:00-06:00">
+<     <meta name="dcterms.Description" content="Experience expert, innovative care at Ochsner Health. Stay well with comprehensive treatments across Louisiana and the Gulf South.">
+<     <meta name="dcterms.Format" content="text/html">
+<     <meta name="dcterms.Identifier" content="https://www.ochsner.org/">
+<     <meta name="dcterms.Language" content="en">
+<     <meta name="dcterms.Relation" content="Ochsner Health">
+<     <meta name="dcterms.Publisher" content="Ochsner Health">
+<     <meta name="dcterms.Rights" content="Copyright Ochsner Health">
+<     <meta name="dcterms.Subject" content="Experience expert, innovative care at Ochsner Health. Stay well with comprehensive treatments across Louisiana and the Gulf South.">
+<     <meta name="dcterms.Title" content="Expert Care in Louisiana and Beyond | Ochsner Health">
+<     <meta name="dcterms.Type" content="text/html">
+<     <meta name="geo.region" content="New Orleans, LA">
+<     <meta name="theme-color" content="#f2f2f2">
+<     <meta name="status" content="live">
+< 
+<     <link rel="home" href="https://www.ochsner.org/">
+<     <link rel="canonical" href="https://www.ochsner.org//">
+<     <link rel="icon" type="image/x-icon" href="/assets/img/core/favicon.ico">
+<     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Roboto:300,300i,400,400i,500,500i" rel="stylesheet">
+< 
+<     <link href="/assets/css/common/common.min.css?_=dfa1ef26089f08fbcf42" rel="stylesheet">
+< 
+<     <!-- Pagetype-Specific Styles for wwwHome -->
+<     <link href="/assets/css/wwwHome/wwwHome.min.css?_=5c428543adaa76e068af" rel="stylesheet">
+< 
+<     <!-- Facebook OpenGraph -->
+<     <meta property="fb:profile_id" content="10154417919099466">
+<     <meta property="fb:app_id" content="1195824633792321">
+<     <meta property="og:type" content="website">
+<     <meta property="og:locale" content="en_us">
+<     <meta property="og:url" content="https://www.ochsner.org//">
+<     <meta property="og:title" content="Expert Care in Louisiana and Beyond | Ochsner Health">
+<     <meta property="og:description" content="Experience expert, innovative care at Ochsner Health. Stay well with comprehensive treatments across Louisiana and the Gulf South.">
+<     <meta property="og:image" content="https://ochsner-craft.s3.amazonaws.com/imager/ochsner-files_s3_amazonaws_com/ochsner-health-stacked-facc871d96.png">
+<     <meta property="og:image:type" content="image/jpeg">
+<     <meta property="og:image:width" content="1200">
+<     <meta property="og:image:height" content="630">
+<     <meta property="og:site_name" content="Ochsner Health System">
+<     <meta property="og:see_also" content="https://twitter.com/OchsnerHealth">
+<     <meta property="og:see_also" content="https://www.facebook.com/OchsnerHealth">
+<     <meta property="og:see_also" content="https://www.linkedin.com/company/ochsner-health-system-">
+<     <meta property="og:see_also" content="https://www.youtube.com/ochsner">
+<     <meta property="og:see_also" content="https://www.instagram.com/ochsnerhealth/">
+<     <meta property="og:see_also" content="https://www.pinterest.com/ochsnerhealth/">
+< 
+<     <!-- Twitter Card -->
+<     <meta name="twitter:card" content="summary">
+<     <meta name="twitter:site" content="@OchsnerHealth">
+<     <meta name="twitter:creator" content="@OchsnerHealth">
+<     <meta name="twitter:title" content="Expert Care in Louisiana and Beyond | Ochsner Health">
+<     <meta name="twitter:description" content="Experience expert, innovative care at Ochsner Health. Stay well with comprehensive treatments across Louisiana and the Gulf South.">
+<     <meta name="twitter:image" content="https://ochsner-craft.s3.amazonaws.com/imager/ochsner-files_s3_amazonaws_com/ochsner-health-stacked-cc40d6634a.png">
+< 
+<         <!-- Source Defense --><script>
+<   vice= {
+<     config: {
+<       viceAccountId: 'ochsnerhealth',
+<       viceSiteId: 'ochsner',
+<       viceSectionId: ''
+<     }
+<   }
+< </script>
+< <script src='//vice-prod.sdiapi.com/vice_loader/ochsnerhealth/ochsner'></script>
+< <!-- End Source Defense -->    <!-- Google Tag Manager -->
+<   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+<   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+<   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+<   })(window,document,'script','dataLayer','GTM-53CWQBB');</script>
+<   <!-- End Google Tag Manager -->
+< 
+<   
+<       <script>
+<         function dataLayerPush( key, value, possible ) {
+<           if (possible) {
+<             var entry = {};
+<             entry[key] = value;
+<             dataLayer.push(entry);
+<           }
+<         }
+<         if ( typeof(window.dataLayer) == "object" ) {
+<           var data_layer_exists = true;
+<         } else {
+<           var data_layer_exists = false;
+<         }
+<       </script>
+<   	  <script async src="https://assets.sitescdn.net/ytag/ytag.min.js"></script>
+< 	  <script type="text/javascript">
+< 	  	window.ytagQ = window.ytagQ || [];
+< 	  	function ytag() {window.ytagQ.push(arguments);}
+< 	  	document.addEventListener('DOMContentLoaded', function(event){
+< 
+<   		    /**
+<   				To make tracking easier, we modified the yext code so you just have to add a
+<   				 `data-conversion="tracking code goes here"`
+<   				attribute to any button or link. The script below will automatically attach
+<   				a click event to that element that'll fire off the conversion with that code, e.g:
+<   				<a href="/some-cool-url" data-conversion="abcd-1234-abcde-567890-abcde">My Link to Track</a>
+<   		    **/
+<   		    var convertables = document.querySelectorAll('[data-conversion]');
+<   		    convertables.forEach(function(el){
+<   		      el.addEventListener('mousedown', function(e){
+<   		        var cid = el.getAttribute('data-conversion');
+<   		        ytag('conversion', {'cid': cid});
+<   		      })
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 327 ms

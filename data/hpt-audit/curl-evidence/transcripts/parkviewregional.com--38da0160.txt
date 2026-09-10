@@ -1,0 +1,41 @@
+# curl-style evidence for https://parkviewregional.com/cms-hpt.txt
+# fetched 2026-09-07T01:36:06.537Z with the tracker's BROWSER_HEADERS (production client)
+# record: 450400 | PARKVIEW REGIONAL HOSPITAL | TX | finding: not-assessed-site-unreachable
+
+* DNS parkviewregional.com: 151.101.195.10, 151.101.3.10, 151.101.67.10, 151.101.131.10
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://parkviewregional.com/cms-hpt.txt
+< HTTP 406
+< accept-ranges: bytes
+< content-length: 293
+< date: Mon, 07 Sep 2026 01:36:08 GMT
+< retry-after: 0
+< strict-transport-security: max-age=31557600
+< x-cache: MISS
+< x-served-by: cache-lga21978-LGA
+< x-timer: S1788744968.266893,VS0,VE1
+< --- body (293 bytes read) ---
+< <!DOCTYPE html>
+<       <html>
+<         <head>
+<           <title>406 Not Acceptable</title>
+<         </head>
+<         <body>
+<           <h1>Error 406 Not Acceptable</h1>
+<           <p>Not Acceptable</p>
+<           <p>Trace-id: 3c116c61-dda5-4764-ba64-45276917b9e7</p>
+<         </body>
+<       </html>
+<     
+
+* total time: 225 ms

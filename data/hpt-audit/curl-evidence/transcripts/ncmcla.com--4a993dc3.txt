@@ -1,0 +1,32 @@
+# curl-style evidence for https://ncmcla.com/
+# fetched 2026-09-07T01:33:17.114Z with the tracker's BROWSER_HEADERS (production client)
+# record: 191304 | NORTH CADDO MEDICAL CENTER | LA | finding: no-cms-hpt-txt-published
+
+* DNS ncmcla.com: 34.174.31.67
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://ncmcla.com/
+< HTTP 202
+< cache-control: no-store,no-cache,max-age=0
+< content-length: 169
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:33:18 GMT
+< expires: Thu, 01 Jan 1970 00:00:01 GMT
+< host-header: 8441280b0c35cbc1147f8ba998a563a7
+< server: nginx
+< sg-captcha: challenge
+< x-proxy-cache-info: DT:1
+< x-robots-tag: noindex
+< --- body (169 bytes read) ---
+< <html><head><link rel="icon" href="data:;"><meta http-equiv="refresh" content="0;/.well-known/sgcaptcha/?r=%2F&y=ipr:185.156.46.116:1788744798.769"></meta></head></html>
+
+* total time: 702 ms

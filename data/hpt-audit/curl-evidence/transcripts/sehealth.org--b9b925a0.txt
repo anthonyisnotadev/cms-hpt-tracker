@@ -1,0 +1,169 @@
+# curl-style evidence for https://sehealth.org/
+# fetched 2026-09-07T01:34:42.160Z with the tracker's BROWSER_HEADERS (production client)
+# record: 260110 | MERCY HOSPITAL SOUTHEAST | MO | finding: not-assessed-not-named-in-file
+
+* DNS sehealth.org: 170.29.68.251
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://sehealth.org/
+< HTTP 301
+< connection: Keep-Alive
+< content-length: 0
+< location: https://www.mercy.net/practice/mercy-hospital-southeast/
+< server: BigIP
+* following Location: https://www.mercy.net/practice/mercy-hospital-southeast/
+
+* final response: https://www.mercy.net/practice/mercy-hospital-southeast/
+< HTTP 200
+< access-control-allow-origin: *
+< cache-control: max-age=0, no-store, no-cache, must-revalidate
+< cf-cache-status: BYPASS
+< cf-ray: a371f9039b020625-IAD
+< content-encoding: br
+< content-security-policy: default-src 'self' data: blob: 'unsafe-inline' 'unsafe-eval' https://www.mymercy.net *.tt.omtrdc.net *.vjs.zencdn.net *.adobedtm.com *.googleapis.com *.gstatic.com *.cloudfront.net mercyhealth.sc.omtrcd.net st1.dialogtech.com *.dialogtech.com *.demdex.net cm.everesttech.net *.mymercy.net *.mercy.net dev.day.com *.healthwise.net *.docscores.com *.google-analytics.com *.youtube.com *.zencdn.net *.selfcare.info *.ytimg.com *.boltdns.net *.alexametrics.com *.brightcove.com *.brightcove.net bcove.video *.api.brightcove.com api.bcovlive.io *.bcovlive.io *.sep.bcovlive.io bcovlive-a.akamaihd.net players.brightcove.net hls.ak.o.brightcove.com uds.ak.o.brightcove.com brightcove.vo.llnwd.net *.llnw.net *.llnwd.net *.akafms.net *.akamaihd.net *.analytics.edgekey.net *.media.brightcove.com hlstoken-a.akamaihd.net vjs.zencdn.net *.gallerysites.net *.bcvp0rtal.com *.brightcovecdn.com *.2o7.net *.omtrdc.net stats.g.doubleclick.net *.googletagmanager.com *.yextpages.net *.yext-static.com *.yext-pixel.com *.flickr.com *.googleadservices.com googleads.g.doubleclick.net *.google.com bid.g.doubleclick.net *.ggpht.com *.doubleclick.net *.mouseflow.com *.adobe.com *.omniture.com *.google.ca *.cloudflare.com *.sitescdn.net *.yext.com us.yextevents.com *.pagescdn.com cyberscript.ais-rx.com *.cloudhub.io *.a2z.com *.facebook.net *.facebook.com *.evergage.com *.evgnet.com *.force.com *.salesforce.com *.salesforceliveagent.com *.salesforce-sites.com mercyhealthcare.s3.us-west-1.amazonaws.com *.avaamo.com H1avaamo.s3.us-west-2.amazonaws.com questionnaire.canceriq.com appsrvc-win-tonibuat-001.azurewebsites.net appsrvc-win-tonibdev-001.azurewebsites.net talkdeskchatsdk.talkdeskapp.com api.talkdeskapp.com *.maze.co *.bc0a.com; frame-ancestors https://*.mercy.net https://*.mymercy.net https://www.mtsmychart.com https://www.chistvincentonecare.com https://telehealth.epic.com
+< content-type: text/html;charset=utf-8
+< date: Mon, 07 Sep 2026 01:34:43 GMT
+< expires: Mon, 07 Sep 2026 01:39:43 GMT
+< server: cloudflare
+< strict-transport-security: max-age=63072000; includeSubDomains; preload
+< vary: Cookie,Accept-Encoding
+< x-cache: MISS
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-served-by: cache-lga21950-LGA, cache-lga21950-LGA, cache-lga21937-LGA
+< x-timer: S1788744884.800434,VS0,VS0,VE77
+< x-vhost: publish
+< x-xss-protection: 1; mode=block
+< --- body (65536 bytes read, truncated) ---
+< <!DOCTYPE html>
+< <html xmlns:fb="http://ogp.me/ns/fb#" xmlns:og="http://ogp.me/ns#" xmlns:article="http://ogp.me/ns/article#" xmlns:book="http://ogp.me/ns/book#" xmlns:profile="http://ogp.me/ns/profile#" xmlns:video="http://ogp.me/ns/video#" lang="en">
+<   <head>
+<     
+<     <meta name="content-page-ref" content="ShEsgiElgZPEGBcG3pGFbjIYHuypFkQghprICSRwzhHXxDr38ZYqpTWfUvUXJOTQOsn4LSTqG0TJnLEBCdL2F9L9qwg5HExn8ssSZ2PXmVGhWwaa0WTdNbNYxziF-WWR"/>
+< <script defer="defer" type="text/javascript" src="/.rum/@adobe/helix-rum-js@%5E2/dist/micro.js"></script>
+< <script type="text/javascript">
+<             (function() {
+<                 window.ContextHub = window.ContextHub || {};
+< 
+<                 /* setting paths */
+<                 ContextHub.Paths = ContextHub.Paths || {};
+<                 ContextHub.Paths.CONTEXTHUB_PATH = "/conf/global/settings/cloudsettings/default/contexthub";
+<                 ContextHub.Paths.RESOURCE_PATH = "\/content\/mercy\/us\/en\/practice\/cape\u002Dgirardeau\/mercy\u002Dhospital\u002Dsoutheast\/_jcr_content\/contexthub";
+<                 ContextHub.Paths.SEGMENTATION_PATH = "\/conf\/mercy\/settings\/wcm\/segments";
+<                 ContextHub.Paths.CQ_CONTEXT_PATH = "";
+< 
+<                 /* setting initial constants */
+<                 ContextHub.Constants = ContextHub.Constants || {};
+<                 ContextHub.Constants.ANONYMOUS_HOME = "/home/users/R/R9lTjpaVTYpvcj-Rwjqw";
+<                 ContextHub.Constants.MODE = "no-ui";
+<             }());
+<         </script><script src="/etc/cloudsettings.kernel.js/conf/global/settings/cloudsettings/default/contexthub" type="text/javascript"></script>
+< 
+< 
+< <script>
+<   window.addEventListener('unload', function() {});
+< </script>
+< 
+<     
+<     
+< 
+< <!-- Begin Data Layer -->
+< 
+<   <script>
+<     digitalData = {
+<       pageInfo: {
+<         pageType: "practice",
+<         siteSection: "Practice",
+<         pageNavigationHierarchy:
+<           "Home|practice|mercy-hospital-southeast",
+<         pageTitle: "Mercy Hospital Southeast",
+<         pageName:
+<           document.documentElement.lang +
+<           '|' +
+<           "Home|practice|mercy-hospital-southeast",
+<         server: window.location.hostname,
+< 
+<         searchTerm: decodeURIComponent(urlParam('q')),
+<         searchResults: '',
+<         searchPage: '',
+<         searchFilter: '',
+<         searchDistance: '',
+<         searchSort: '',
+<         searchType: '',
+< 
+<         topicFilter: '',
+<         downloadFileName: '',
+<         responsiveDisplayType: getDisplayType(),
+< 
+<         doctorName: "",
+<         callNumber: '',
+<         callNumberLocation: '',
+<         scheduleAppt: "false",
+<         visitType: '',
+<       },
+<       userInfo: {
+<         loggedInStatus: 'anonymous',
+<         currentLocation: '',
+<         currentZip: '',
+<         communityLocation: '',
+<         userType: '',
+<       },
+<       eventInfo: {
+<         formName: "Mercy Hospital Southeast",
+<         linkName: 'Submit',
+<         linkPageName:
+<           document.documentElement.lang +
+<           '|' +
+<           "Home|practice|mercy-hospital-southeast",
+<       },
+<       formInfo: {},
+<     };
+< 
+<     //CDP Implementation
+<     switch (digitalData.pageInfo.pageType) {
+<       case 'services':
+<         digitalData.serviceInfo = {
+<           serviceId:
+<             "",
+<           serviceCategory: "",
+<           serviceLines: "",
+<           serviceName:
+<             "",
+<         };
+<         break;
+<       case 'practice':
+<         digitalData.locationInfo = {
+<           sosID:
+<             "47561",
+<           subtitle: "Hospital or Emergency Room",
+<           scheduleOnline:
+<             "false",
+<           isMammoLocation: "false",
+<           communityName:
+<             "Cape Girardeau",
+<           relatedServiceIds:
+<             "19576,19470,19440,19390,51798,24681,50515",
+<         };
+<         break;
+<       case 'doctor':
+<         digitalData.doctorInfo = {
+<           npi: "",
+<           manageSchedule: "",
+<           integratedStatus: "",
+<           scheduleOnline: "false",
+<           specialtyName: "",
+<           acceptsNewPatients:
+<             "false",
+<           averageRating: "",
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 473 ms

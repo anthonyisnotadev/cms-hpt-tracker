@@ -1,0 +1,31 @@
+# curl-style evidence for https://sthpiprd.blob.core.windows.net/machine-readable-files/7983/410724029_riverview-health-association_standardcharges.csv
+# fetched 2026-09-07T01:34:41.369Z with the tracker's BROWSER_HEADERS (production client)
+# record: 241320 | RIVERVIEW HOSPITAL | MN | finding: mrf-url-unreachable
+
+* DNS sthpiprd.blob.core.windows.net: 20.60.244.226
+
+> GET /machine-readable-files/7983/410724029_riverview-health-association_standardcharges.csv  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://sthpiprd.blob.core.windows.net/machine-readable-files/7983/410724029_riverview-health-association_standardcharges.csv
+< HTTP 404
+< access-control-allow-origin: *
+< content-length: 215
+< content-type: application/xml
+< date: Mon, 07 Sep 2026 01:34:43 GMT
+< server: Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
+< x-ms-request-id: b527d9eb-f01e-0082-0c69-3e4a33000000
+< x-ms-version: 2009-09-19
+< --- body (215 bytes read) ---
+< ﻿<?xml version="1.0" encoding="utf-8"?><Error><Code>BlobNotFound</Code><Message>The specified blob does not exist.
+< RequestId:b527d9eb-f01e-0082-0c69-3e4a33000000
+< Time:2026-09-07T01:34:43.1163041Z</Message></Error>
+
+* total time: 296 ms

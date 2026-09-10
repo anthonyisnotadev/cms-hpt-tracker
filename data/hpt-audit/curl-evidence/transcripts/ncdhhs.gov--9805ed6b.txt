@@ -1,0 +1,59 @@
+# curl-style evidence for https://ncdhhs.gov/cms-hpt.txt
+# fetched 2026-09-07T01:34:59.219Z with the tracker's BROWSER_HEADERS (production client)
+# record: 344025 | BROUGHTON HOSPITAL | NC | finding: no-cms-hpt-txt-published
+# record: 344004 | CENTRAL REGIONAL HOSPITAL | NC | finding: no-cms-hpt-txt-published
+# record: 344026 | CHERRY HOSPITAL | NC | finding: no-cms-hpt-txt-published
+# record: 344023 | JULIAN F KEITH ALCOHOL & DRUG ABUSE TX | NC | finding: no-cms-hpt-txt-published
+# record: 344033 | WALTER B JONES CENTER LAKESIDE PSYCHIATRIC HOSPITA | NC | finding: no-cms-hpt-txt-published
+
+* DNS ncdhhs.gov: 52.204.9.77
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://ncdhhs.gov/cms-hpt.txt
+< HTTP 301
+< connection: Keep-Alive
+< content-length: 242
+< content-type: text/html; charset=iso-8859-1
+< date: Mon, 07 Sep 2026 01:35:00 GMT
+< keep-alive: timeout=5, max=99
+< location: https://www.ncdhhs.gov/cms-hpt.txt
+< server: Apache
+< strict-transport-security: max-age=63072000; includeSubDomains; preload
+< x-content-type-options: nosniff
+< x-frame-options: DENY
+* following Location: https://www.ncdhhs.gov/cms-hpt.txt
+
+* final response: https://www.ncdhhs.gov/cms-hpt.txt
+< HTTP 404
+< cache-control: max-age=300, public, stale-if-error=86400, stale-while-revalidate=600
+< content-language: en
+< content-security-policy: upgrade-insecure-requests; frame-ancestors 'self'
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:35:00 GMT
+< etag: "1788744900:dtagent10343260715123811kIFD"
+< expires: Sun, 19 Nov 1978 05:00:00 GMT
+< last-modified: Mon, 07 Sep 2026 01:34:59 GMT
+< server: Apache
+< server-timing: dtSInfo;desc="0", dtRpid;desc="1186047376"
+< strict-transport-security: max-age=63072000; includeSubDomains; preload
+< vary: Cookie
+< via: 1.1 3f8050fbf1460156d177f2d3d6a03332.cloudfront.net (CloudFront)
+< x-amz-cf-id: i_UQYfF9XrR17P8a-yP5oo-_E-Qa2UfeM8iOwMX17RBiEczEKXhRzg==
+< x-amz-cf-pop: IAD12-P4
+< x-cache: Error from cloudfront
+< x-content-type-options: nosniff
+< x-oneagent-js-injection: true
+< x-ruxit-js-agent: true
+< --- body (654 bytes read) ---
+< <!DOCTYPE html><html><head><title>404 Not Found</title><script type="text/javascript" src="/ruxitagentjs_ICA7NVfqrux_10343260715123811.js" data-dtconfig="rid=RID_386641222|rpid=1186047376|domain=ncdhhs.gov|reportUrl=/rb_2b865558-3b24-4bc5-b01d-527355603d05|app=6545dc4582989e34|owasp=1|featureHash=ICA7NVfqrux|xb=^bs/g^bs/collect|rdnt=1|uxrgce=1|cuc=s7oxrte2|mel=100000|expw=1|dpvc=1|lastModification=1786673298044|postfix=s7oxrte2|tp=500,50,0|srbbv=2|agentUri=/ruxitagentjs_ICA7NVfqrux_10343260715123811.js"></script></head><body><h1>Not Found</h1><p>The requested URL "https://www.ncdhhs.gov/cms-hpt.txt" was not found on this server.</p></body></html>
+
+* total time: 169 ms

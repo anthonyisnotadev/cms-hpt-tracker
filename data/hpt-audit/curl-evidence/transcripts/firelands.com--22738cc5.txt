@@ -1,0 +1,68 @@
+# curl-style evidence for https://www.firelands.com/app/files/public/f431cc81-07d8-4f2b-a027-dab8621d088d/341401659%20_firelands-regional-medical-center_standardcharges.csv
+# fetched 2026-09-07T01:35:35.165Z with the tracker's BROWSER_HEADERS (production client)
+# record: 360025 | FIRELANDS REGIONAL MEDICAL CENTER | OH | finding: mrf-blocked-to-automation
+
+* DNS www.firelands.com: 89.106.200.142
+
+> GET /app/files/public/f431cc81-07d8-4f2b-a027-dab8621d088d/341401659%20_firelands-regional-medical-center_standardcharges.csv  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://www.firelands.com/app/files/public/f431cc81-07d8-4f2b-a027-dab8621d088d/341401659%20_firelands-regional-medical-center_standardcharges.csv
+< HTTP 200
+< cache-control: max-age=0, no-cache, no-store
+< content-disposition: inline;filename="341401659 _firelands-regional-medical-center_standardcharges.csv"
+< content-encoding: gzip
+< content-type: text/csv
+< date: Mon, 07 Sep 2026 01:35:36 GMT
+< edge-cache-tag: 417E90ED-F4F2-49A2-ABF1-8E6C6FA81414/F431CC81-07D8-4F2B-A027-DAB8621D088D
+< expect-ct: max-age=86400
+< expires: Mon, 07 Sep 2026 01:35:36 GMT
+< last-modified: Mon, 15 Jun 2026 20:02:57 GMT
+< permissions-policy: geolocation=(self), payment=(self "https://formulate.geonetric.com" "https://forms.geonetric.com"), sync-xhr=(self "https://formulate.geonetric.com" "https://forms.geonetric.com"), camera=(), accelerometer=(), gyroscope=(), magnetometer=(), microphone=()
+< pragma: no-cache
+< referrer-policy: strict-origin-when-cross-origin
+< server-timing: cdn-cache; desc=MISS, edge; dur=101, origin; dur=95, ak_p; desc="1788744936605_389073010_3790131127_19583_10630_0_47_15";dur=1
+< strict-transport-security: max-age=63072000; includeSubDomains;
+< vary: Accept-Encoding
+< x-aspnet-version: 4.0.30319
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-ua-compatible: IE=Edge,chrome=1
+< --- body (65536 bytes read, truncated) ---
+< "hospital_name","last_updated_on","version","location_name","hospital_address","type_2_npi","license_number|OH","To the best of its knowledge and belief, this hospital has included all applicable standard charge information in accordance with the requirements of 45 CFR 180.50, and the information encoded is true, accurate, and complete as of the date in the file. This hospital has included all payer-specific negotiated charges in dollars that can be expressed as a dollar amount. For payer-specific negotiated charges that cannot be expressed as a dollar amount in the machine-readable file or not knowable in advance, the hospital attests that the payer-specific negotiated charge is based on a contractual algorithm, percentage or formula that precludes the provision of a dollar amount and has provided all necessary information available to the hospital for the public to be able to derive the dollar amount, including, but not limited to, the specific fee schedule or components referenced in such percentage, algorithm or formula.","attester_name","financial_aid_policy"
+< "Firelands Regional Medical Center","2026-04-01","3.0.0","Firelands Regional Medical Center","1111 Hayes Avenue, Sandusky, OH 44870","1801884655|1457312886|1134161623","1164LH","true","Kevin Riley","Firelands does not offer a discount cash policy."
+< "description","code|1","code|1|type","code|2","code|2|type","code|3","code|3|type","code|4","code|4|type","billing_class","setting","drug_unit_of_measurement","drug_type_of_measurement","modifiers","standard_charge|gross","standard_charge|discounted_cash","payer_name","plan_name","standard_charge|negotiated_dollar","standard_charge|negotiated_percentage","standard_charge|negotiated_algorithm","median_amount","10th_percentile","90th_percentile","count","standard_charge|methodology","standard_charge|min","standard_charge|max","additional_generic_notes"
+< "Inj, levothyroxine, freskabi","0734","APC",,,,,,,"facility","outpatient",,,,,,"Aetna","All Commercial Plans",,"76",,,,,"0","percent of total billed charges",,,"No services performed during 15-month lookback period."
+< "Inj, levothyroxine, freskabi","0734","APC",,,,,,,"facility","outpatient",,,,,,"Aetna","Medicare Managed Care Plan",,,"[APC ($): FEE SCHEDULE]",,,,"0","other",,,"No services performed during 15-month lookback period."
+< "Inj, levothyroxine, freskabi","0734","APC",,,,,,,"facility","outpatient",,,,,,"BCBS","Anthem Medicare Managed Care - HMO/PPO",,,"[APC ($): FEE SCHEDULE]","5655.88","5655.88","5655.88","1 through 10","other",,,"Contracting method is an algorithm described in the 'standard_charges|algorithm' field. The allowed amount provided accounts for the structural rates, conditions, and utilization elements inherent in the payer's algorithm."
+< "Inj, levothyroxine, freskabi","0734","APC",,,,,,,"facility","outpatient",,,,,,"BCBS","Anthem All Commercial Plans",,"76",,,,,"0","percent of total billed charges",,,"No services performed during 15-month lookback period."
+< "Inj, levothyroxine, freskabi","0734","APC",,,,,,,"facility","outpatient",,,,,,"BCBS","Anthem Pathway Exchange",,"63.5",,,,,"0","percent of total billed charges",,,"No services performed during 15-month lookback period."
+< "Inj, levothyroxine, freskabi","0734","APC",,,,,,,"facility","outpatient",,,,,,"Buckeye","Allwell Medicare Managed Care Plan",,,"[APC ($): FEE SCHEDULE]",,,,"0","other",,,"No services performed during 15-month lookback period."
+< "Inj, levothyroxine, freskabi","0734","APC",,,,,,,"facility","outpatient",,,,,,"Buckeye","Ambetter Exchange",,,"[APC ($): FEE SCHEDULE]",,,,"0","other",,,"No services performed during 15-month lookback period."
+< "Inj, levothyroxine, freskabi","0734","APC",,,,,,,"facility","outpatient",,,,,,"Buckeye Community Health","Medicaid Managed Care Plan",,,"[Outpatient Services: Payer leverages state specific Medicaid payment methodology. Available, referenceable algorithm logic found here: https://medicaid.ohio.gov/resources-for-providers/enrollment-and-support/provider-types/hospital-provider-information/hospital-payment-policy]",,,,"0","other",,,"No services performed during 15-month lookback period."
+< "Inj, levothyroxine, freskabi","0734","APC",,,,,,,"facility","outpatient",,,,,,"Caresource","Exchange",,,"[APC ($): FEE SCHEDULE]",,,,"0","other",,,"No services performed during 15-month lookback period."
+< "Inj, levothyroxine, freskabi","0734","APC",,,,,,,"facility","outpatient",,,,,,"Caresource","Medicaid Managed Care Plan",,,"[Outpatient Services: Payer leverages state specific Medicaid payment methodology. Available, referenceable algorithm logic found here: https://medicaid.ohio.gov/resources-for-providers/enrollment-and-support/provider-types/hospital-provider-information/hospital-payment-policy]",,,,"0","other",,,"No services performed during 15-month lookback period."
+< "Inj, levothyroxine, freskabi","0734","APC",,,,,,,"facility","outpatient",,,,,,"Cigna","All Commercial Plans",,"77",,,,,"0","percent of total billed charges",,,"No services performed during 15-month lookback period."
+< "Inj, levothyroxine, freskabi","0734","APC",,,,,,,"facility","outpatient",,,,,,"Devoted","Medicare Managed Care Plan",,,"[APC ($): FEE SCHEDULE]",,,,"0","other",,,"No services performed during 15-month lookback period."
+< "Inj, levothyroxine, freskabi","0734","APC",,,,,,,"facility","outpatient",,,,,,"First Health/Coventry","First Health All Commercial Plans",,"70",,,,,"0","percent of total billed charges",,,"No services performed during 15-month lookback period."
+< "Inj, levothyroxine, freskabi","0734","APC",,,,,,,"facility","outpatient",,,,,,"FrontPath Health Coalition","All Commercial Plans",,"78",,,,,"0","percent of total billed charges",,,"No services performed during 15-month lookback period."
+< "Inj, levothyroxine, freskabi","0734","APC",,,,,,,"facility","outpatient",,,,,,"Humana","ChoiceCare All Commercial Plans",,"70",,,,,"0","percent of total billed charges",,,"No services performed during 15-month lookback period."
+< "Inj, levothyroxine, freskabi","0734","APC",,,,,,,"facility","outpatient",,,,,,"Humana","Gold Plus Medicare Managed Care Plan",,,"[APC ($): FEE SCHEDULE]",,,,"0","other",,,"No services performed during 15-month lookback period."
+< "Inj, levothyroxine, freskabi","0734","APC",,,,,,,"facility","outpatient",,,,,,"Humana","Medicare Managed Care Plan",,,"[APC ($): FEE SCHEDULE]",,,,"0","other",,,"No services performed during 15-month lookback period."
+< "Inj, levothyroxine, freskabi","0734","APC",,,,,,,"facility","outpatient",,,,,,"Medical Mutual","Core Plans All Commercial Plans",,"76",,,,,"0","percent of total billed charges",,,"No services performed during 15-month lookback period."
+< "Inj, levothyroxine, freskabi","0734","APC",,,,,,,"facility","outpatient",,,,,,"Medical Mutual","Medicare Managed Care Plan",,,"[APC ($): FEE SCHEDULE]",,,,"0","other",,,"No services performed during 15-month lookback period."
+< "Inj, levothyroxine, freskabi","0734","APC",,,,,,,"facility","outpatient",,,,,,"Medical Mutual","NASC Other Commercial Plan",,"76",,,,,"0","percent of total billed charges",,,"No services performed during 15-month lookback period."
+< "Inj, levothyroxine, freskabi","0734","APC",,,,,,,"facility","outpatient",,,,,,"Molina","Exchange",,,"[APC ($): FEE SCHEDULE]",,,,"0","other",,,"No services performed during 15-month lookback period."
+< "Inj, levothyroxine, freskabi","0734","APC",,,,,,,"facility","outpatient",,,,,,"Molina Healthcare","Medicaid Managed Care Plan",,,"[Outpatient Services: Payer leverages state specific Medicaid payment methodology. Available, referenceable algorithm logic found here: https://medicaid.ohio.gov/resources-for-providers/enrollment-and-support/provider-types/hospital-provider-information/hospital-payment-policy]",,,,"0","other",,,"No services performed during 15-month lookback period."
+< "Inj, levothyroxine, freskabi","0734","APC",,,,,,,"facility","outpatient",,,,,,"Multiplan","All Commercial Plans",,"80",,,,,"0","percent of total billed charges",,,"No services performed during 15-month lookback period."
+< "Inj, levothyroxine, freskabi","0734","APC",,,,,,,"facility","outpatient",,,,,,"My Care Ohio Plans","Dual Eligible Medicare/Medicaid",,,"[Outpatient S
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 594 ms

@@ -1,0 +1,146 @@
+# curl-style evidence for https://excelahealth.org/
+# fetched 2026-09-07T01:35:47.859Z with the tracker's BROWSER_HEADERS (production client)
+# record: 390219 | EXCELA HEALTH LATROBE HOSPITAL | PA | finding: not-assessed-not-named-in-file
+
+* DNS excelahealth.org: 34.224.10.110, 52.11.37.152
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://excelahealth.org/
+< HTTP 301
+< connection: keep-alive
+< content-length: 162
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:35:48 GMT
+< location: https://www.excelahealth.org/
+< server: nginx
+< strict-transport-security: max-age=63072000; includeSubDomains; preload
+* following Location: https://www.excelahealth.org/
+
+* redirect hop 2: https://www.excelahealth.org/
+< HTTP 301
+< cache-control: no-cache, no-store, must-revalidate
+< content-length: 149
+< content-security-policy: default-src * blob: data: cid:; img-src * data: cid: 'unsafe-inline'; media-src * data: blob:; script-src * data: blob: 'unsafe-inline' 'unsafe-eval'; style-src * blob: data: 'unsafe-inline'; style-src-elem * blob: data: 'unsafe-inline', font-src * data:
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:35:49 GMT
+< expires: -1
+< location: https://www.independence.health/
+< pragma: no-cache
+< referrer-policy: no-referrer-when-downgrade
+< strict-transport-security: max-age=63072000; includeSubDomains; preload
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+* following Location: https://www.independence.health/
+
+* final response: https://www.independence.health/
+< HTTP 200
+< cache-control: private
+< content-encoding: gzip
+< content-length: 20536
+< content-security-policy: default-src * blob: data: cid:; img-src * data: cid: 'unsafe-inline'; media-src * data: blob:; script-src * data: blob: 'unsafe-inline' 'unsafe-eval'; style-src * blob: data: 'unsafe-inline'; style-src-elem * blob: data: 'unsafe-inline', font-src * data:
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:35:49 GMT
+< referrer-policy: no-referrer-when-downgrade
+< strict-transport-security: max-age=63072000; includeSubDomains; preload
+< vary: Accept-Encoding
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< --- body (65536 bytes read, truncated) ---
+< <!DOCTYPE html>
+< <html class="home-layout" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" data-anim="1" data-prlx="1" data-flr="1" data-i="x37dc20xp4z" data-is="q4rns1v03n7" data-gmap="AIzaSyD9RxIAFFpAdGvsN49rqOZLQbeZ6BSLoL4" data-sa="at6CoVeGg%2FdLPfMIPAA8MU4DXj1uG29776jLYpKHIZgH6dMeqKSt%2FchQc4C46E%2FF33MS5bktys9TmHUR7BSQYH6iZXJE2w14ONWTMcXPcDOc8fjTcSypQ40UygPXB1ijISN97cemyTezHBNXg3GQqiy8mrw2XtCVFgSeRXmBtIJq1Xd8">
+< <head>
+< 	<title>Independence Health System | Health System Western Pennsylvania</title>
+< 	<link rel="canonical" href="https://www.independence.health/"/>
+< 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+< 	<meta content="initial-scale=1" name="viewport"/>
+< 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+< 	<meta name="format-detection" content="telephone=no"/>
+< 	<meta name="description" content="Independence Health System provides a wide range of healthcare services to patients from ten counties within western Pennsylvania. Learn more about how we can help you."/>
+< 	<meta property="og:type" content="website"/>
+< 	<meta property="og:site_name" content="Independence Health System"/>
+< 	<meta property="og:url" content="https://www.independence.health/"/>
+< 	<meta property="og:image" content="https://www.independence.health/assets/ihs-1200x630.jpg"/>
+< 	<meta name="twitter:card" content="summary_large_image"/>
+< 	<meta name="twitter:image" content="https://www.independence.health/assets/ihs-1200x630.jpg"/>
+< 	<meta property="article:publisher" content="https://www.facebook.com/independencehealthsystem/"/>
+< 	<meta name="google-site-verification" content="u_087jxBBw7RgG6IK3pCamWw5wbySFXlDxwnsOjSF90"/>
+< 	<meta name="audio-eye-hash" content="6459fcdc0a47cc1e1c9b5f5b33733680"/>
+< 	<link rel="preload" href="/images/panel/mainstage.jpg" as="image"/>
+< 	<link rel="preload" href="/images/panel/mainstage.webp" as="image"/>
+< 	<link rel="preload" href="/images/panel/mainstage-390.webp" as="image"/>
+< 	<link rel="preload" href="/images/panel/mainstage-500.webp" as="image"/>
+< 	<link rel="preload" href="/images/panel/mainstage-390.jpg" as="image"/>
+< 	<link rel="preload" href="/images/panel/mainstage-500.jpg" as="image"/>
+< 	<link rel="stylesheet" href="https://use.typekit.net/zyz5pbq.css"/>
+< 	<script type="text/javascript" src="/common/js/j/process.js"></script>
+< 	<script type="text/javascript" src="/common/js/j/require.js"></script>
+< 	<script type="text/javascript" src="/common/js/j/debug.js"></script>
+< 	<script type="text/javascript" src="/common/js/j/poly.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/j/modernizr.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/j/jquery.3.x.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/j/jquery.ui.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/j/ui.touch.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/j/ui.wheel.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/j/ui.draw.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/j/ui.mobile.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/j/timezone.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/static.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/j/jquery.cookie.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/extensions.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/uri.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/behaviors.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/c/scrollbar.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/c/loading.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/m/date.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/form.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/adapter.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/v/jwplayer.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/video.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/a/bootstrap.js" defer></script>
+< 	<script type="text/javascript" src="/common/js/svg.js" defer></script>
+< 	<link rel="stylesheet" type="text/css" href="/cms/includes/4aeal_dtmxr.2605271012556.css" data-require='["cms","cms-behave"]'/>
+< 	<script>(function(){
+< var cook = /(?:^|\b)COOK=(.+?)(?:$|;)/.exec( document.cookie )?.[1];
+< var analytics;
+< var marketing;
+< if(cook==='YES'){analytics=true;marketing=true;}
+< else if(cook==='NO!'){analytics=false;marketing=false;}
+< else if(cook==='ANALYTICS'){analytics=true;marketing=false;}
+< else if(cook==='MARKETING'){analytics=false;marketing=true;}
+< else{analytics=true;marketing=navigator.globalPrivacyControl||window.doNotSell?false:true;}
+< window.$consentState={analytics,marketing};
+< })();</script>
+< <script type="module" src="/common/usc/p/manage-cookies.js"></script>
+< </head>
+< <body style="opacity:0" class="home-page home-branch home" data-config="tmbvm4nn._7l" data-id="20517866" data-t="354860" data-l="143764">
+< <header id="HeaderZone"><div class="access-options access-menu v1" id="AccessibilityOptionsQS" universal_="true">
+< 	
+< 	
+< 	<div class="access-btn open-btn flex-middle-center" title="Open the accessibility options menu"><svg viewBox="0 0 36 36"><path d="M3.37 27.6L32.63 27.6C34.516 27.6 36 29.05 36 30.8C36 32.55 34.474 34 32.63 34L3.37 34C1.484 34 0 32.55 0 30.8C0 29.05 1.528 27.6 3.37 27.6ZM3.37 14.8L23.64 14.8C25.528 14.8 27.012 16.25 27.012 18C27.012 19.75 25.528 21.2 23.64 21.2L3.37 21.2C1.484 21.2 0 19.75 0 18C0 16.25 1.528 14.8 3.37 14.8ZM32.676 8.4L3.37 8.4C1.484 8.4 0 6.95 0 5.2C0 3.45 1.526 2 3.37 2L32.63 2C34.516 2 36 3.45 36 5.2C36 6.95 34.516 8.4 32.676 8.4L32.676 8.4Z"></path></svg> <span>Open Accessibility Menu</span></div>
+< 	<div class="flex-middle-between top-info">
+< 		<svg class="accessibility" viewBox="0 0 36 36"><path d="M502.7 0a84.3 84.3 0 1 1-84.3 84.3A84.6 84.6 114.1 0 1 502.7 0ZM868.6 272.7L617.5 304.2v251.4L739.2 960.7a47.2 47.2 0 0 1-34.4 57.6A46.7 46.7 114.1 0 1 647.9 987.4L522.5 616.5H484.3L369.5 993.8a47 47 0 0 1-61.6 26.7a49.1 49.1 0 0 1-29.6-61.9L383.7 560.4V304.2L152.3 272.7A41.9 41.9 114.1 0 1 114.1 226.3A43.8 43.8 114.1 0 1 161.4 186.8L442.4 210.8h123.3L865.1 186.8a43.2 43.2 0 0 1 3.5 86.5Z"></path></svg>
+< 	</div>
+< 	<ul>
+< 		<li>
+< 			<button class="flex-" data-action="content"><svg viewBox="0 0 36 36"><path d="M12.706 23.824L12.706 20.647L36 20.647L36 23.824L12.706 23.824ZM0 12.177L36 12.177L36 15.353L0 15.353L0 12.177ZM27.529 3.706L36 3.706L36 6.882L27.529 6.882L27.529 3.706ZM0 3.706L23.294 3.706L23.294 6.882L0 6.882L0 3.706ZM8.471 23.824L0 23.824L0 20.647L8.471 20.647L8.471 23.824ZM19.059 32.294L0 32.294L0 29.118L19.059 29.118L19.059 32.294Z"></path></svg> Skip to Content</button>
+< 		</li>
+< 		<li>
+< 			<button class="flex-" data-action="menu"><svg viewBox="0 0 36 36"><path d="M7.412 31.235L7.412 28.059L36 28.059L36 31.235L7.412 31.235ZM7.412 16.412L36 16.412L36 19.588L7.412 19.588L7.412 16.412ZM7.412 4.764L36 4.764L36 7.941L7.412 7.941L7.412 4.764ZM0 28.059L4.235 28.059L4.235 31.235L0 31.235L0 28.059ZM0 16.412L4.235 16.412L4.235 19.588L0 19.588L0 16.412ZM0 4.764L4.235 4.764L4.235 7.941L0 7.941L0 4.764Z"></path></svg> Skip to Menu</button>
+< 		</li>
+< 		<li>
+< 			<button class="flex-" data-action="largeText"><svg viewBox="0 0 36 36"><path d="M31.2 17.404L31.2 12.604L28.8 12.604L28.8 17.404L24 17.404L24 19.804L28.8 19.804L28.8 24.604L31.2 24.604L31.2 19.804L36 19.804L36 17.404L31.2 17.404ZM26.4 1.804L0.01 1.796L0 5.404L10.8 5.404L10.8 34.204L14.4 34.204L14.4 5.404L26.4 5.404L26.4 1.804Z"></path></svg> Increase Text Size</button>
+< 		</li>
+< 		<li>
+< 			<button class="flex- clear-btn" data-action="clear">Clear All <svg viewBox="0 0 36 36"><path d="M21.179 14.82L21.179 29.644L23.297 29.644L23.297 14.82L21.179 14.82ZM16.939 14.828L16.939 29.653L19.057 29.653L19.057 14.828L16.939 14.828ZM12.706 14.82L12.706 29.644L14.823 29.644L14.823 14.82L12.706 14.82ZM8.468 10.587L27.53 10.587L27.53 33.88L8.468 33.88L8.468 10.587ZM6.35 6.351L29.65 6.351L29.65 8.473L28.699 8.473C28.663 8.471 28.627 8.469 28.591 8.469L7.409 8.469C7.373 8.469 7.337 8.4
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 1230 ms

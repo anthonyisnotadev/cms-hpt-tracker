@@ -1,0 +1,27 @@
+# curl-style evidence for https://bwwmh.com/.well-known/cms-hpt.txt
+# fetched 2026-09-07T01:32:34.239Z with the tracker's BROWSER_HEADERS (production client)
+# record: 010112 | WHITFIELD REGIONAL HOSPITAL | AL | finding: no-cms-hpt-txt-published
+
+* DNS bwwmh.com: 15.197.225.128, 3.33.251.168
+
+> GET /.well-known/cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://bwwmh.com/.well-known/cms-hpt.txt
+< HTTP 404
+< content-length: 10
+< content-type: text/plain; charset=utf-8
+< date: Mon, 07 Sep 2026 01:32:35 GMT
+< x-content-type-options: nosniff
+< --- body (10 bytes read) ---
+< Not Found
+< 
+
+* total time: 298 ms

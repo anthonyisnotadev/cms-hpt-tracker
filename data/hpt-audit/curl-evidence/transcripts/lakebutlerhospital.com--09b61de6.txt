@@ -1,0 +1,37 @@
+# curl-style evidence for https://lakebutlerhospital.com/.well-known/cms-hpt.txt
+# fetched 2026-09-07T01:32:39.989Z with the tracker's BROWSER_HEADERS (production client)
+# record: 101303 | LAKE BUTLER HOSPITAL | FL | finding: no-cms-hpt-txt-published
+
+* DNS lakebutlerhospital.com: 172.67.165.38, 104.21.11.46
+
+> GET /.well-known/cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://lakebutlerhospital.com/.well-known/cms-hpt.txt
+< HTTP 202
+< alt-svc: h3=":443"; ma=86400
+< cache-control: no-store,no-cache,max-age=0, no-store,max-age=0
+< cf-cache-status: DYNAMIC
+< cf-ray: a371f6083b40d6fc-IAD
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:32:41 GMT
+< expires: Thu, 01 Jan 1970 00:00:01 GMT
+< nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+< remote-addr: 185.156.46.116
+< report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=Hv8pY1YmPHrybYsiFtRdhe%2F1psp%2BZeT5S53hlwdsojEXszZFgmbkRY1CXOxXlYNCCV2IUuIlhoRT4pTMq6DlTBkJnV8KlNSmM3efBrty1e722PG7al9oHdOlq0WwXbrpMhq7Q3Jb25Pk"}]}
+< server: cloudflare
+< server-timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=8,cfOrigin;dur=101
+< sg-captcha: challenge
+< x-robots-tag: noindex
+< --- body (561 bytes read) ---
+< <html><head><link rel="icon" href="data:;"><meta http-equiv="refresh" content="0;/.well-known/sgcaptcha/?r=%2F.well-known%2Fcms-hpt.txt&y=ipc:185.156.46.116:1788744761.718"></meta></head></html><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"da8f8ece1101415d918b5d313c85858d","r":1,"spa":2}' crossorigin="anonymous"></script>
+< 
+
+* total time: 130 ms

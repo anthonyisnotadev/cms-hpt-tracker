@@ -1,0 +1,79 @@
+# curl-style evidence for https://carepricer.nthrive.com/
+# fetched 2026-09-07T01:33:16.015Z with the tracker's BROWSER_HEADERS (production client)
+# record: 190034 | ABBEVILLE GENERAL HOSPITAL | LA | finding: not-assessed-site-unreachable
+
+* DNS carepricer.nthrive.com: 204.11.4.70
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://carepricer.nthrive.com/
+< HTTP 200
+< access-control-expose-headers: Request-Context
+< cache-control: private, no-store
+< content-length: 1786
+< content-security-policy: default-src 'self' http: https: data: blob: 'unsafe-inline' 'unsafe-eval'; object-src 'none'; frame-ancestors 'self'; base-uri 'self'; form-action 'self' http: https:
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:33:17 GMT
+< request-context: appId=cid-v1:ce73e2b1-4e45-4ecb-a4e7-3cbca41ff3aa
+< strict-transport-security: max-age=31536000
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN, SAMEORIGIN
+< x-powered-by: ASP.NET
+< --- body (1786 bytes read) ---
+< <!DOCTYPE html>
+< <html>
+< <head>
+<     <base href="/">
+<     <meta charset="utf-8" />
+<     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<     <link rel="stylesheet" href="/Content/styles/ngx-toasta/style-bootstrap.css">
+<     <link rel="stylesheet" type="text/css" href="/Content/styles/main.css" />
+<     <link rel="stylesheet" type="text/css" href="/Content/font-awesome.min.css" />
+<     <link rel="stylesheet" href="/src/app/Shared/Widgets/Spinner/spinner.css">
+<     <title>PAS Pricing</title>
+< 
+<     <!-- REQUIRED JS SCRIPTS -->
+<     <script src="/Scripts/jquery-3.7.1.min.js"></script>
+<     <script src="/Scripts/bootstrap.min.js"></script>
+< 
+<     <!--[if lt IE 9]>
+<         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<     <![endif]-->
+<     <!-- <script src="node_modules/core-js/client/shim.min.js"></script> -->
+< 
+<     <script src="node_modules/reflect-metadata/Reflect.js"></script>
+<     <script src="node_modules/chart.js/dist/Chart.bundle.js"></script>
+< 
+< <link href="/mainApp/styleBundles?v=-f2DcCtsKPaS8tnNN8UbGW4UwLQZ6ME1mOlpH07v5kQ1" rel="stylesheet"/>
+< </head>
+< <body>
+<     
+< <app-root>
+<     <div class="spinner spinnerPosition">
+<         <div class="rect1"></div>
+<         <div class="rect2"></div>
+<         <div class="rect3"></div>
+<         <div class="rect4"></div>
+<         <div class="rect5"></div>
+<     </div>
+< </app-root>
+< 
+<     <script src="/mainApp/scriptBundles?v=k7heBmkb3ILsOKab2UXM9xjGN7UqnHGqm-NRmtCFwiQ1"></script>
+< 
+<     <script src="node_modules/zone.js/dist/zone.js"></script>
+<     <script src="/Scripts/chartjsplugin.js"></script>
+< </body>
+< </html>
+< 
+
+* total time: 73 ms

@@ -1,0 +1,70 @@
+# curl-style evidence for https://sutterhealth.org/
+# fetched 2026-09-07T01:32:35.865Z with the tracker's BROWSER_HEADERS (production client)
+# record: 050043 | ALTA BATES SUMMIT MEDICAL CENTER | CA | finding: not-assessed-site-unreachable
+# record: 050305 | ALTA BATES SUMMIT MEDICAL CENTER - ALTA BATES CAMP | CA | finding: not-assessed-site-unreachable
+# record: 050055 | CALIFORNIA PACIFIC MEDICAL CENTER - MISSION BERNAL | CA | finding: not-assessed-site-unreachable
+# record: 050047 | CALIFORNIA PACIFIC MEDICAL CENTER- VAN NESS CAMPUS | CA | finding: not-assessed-site-unreachable
+# record: 050008 | CALIFORNIA PACIFIC MEDICAL CTR-DAVIES CAMPUS HOSP | CA | finding: not-assessed-site-unreachable
+# record: 050488 | EDEN MEDICAL CENTER | CA | finding: not-assessed-site-unreachable
+# record: 050528 | MEMORIAL HOSPITAL LOS BANOS | CA | finding: not-assessed-site-unreachable
+# record: 050557 | MEMORIAL MEDICAL CENTER | CA | finding: not-assessed-site-unreachable
+# record: 050131 | NOVATO COMMUNITY HOSPITAL | CA | finding: not-assessed-site-unreachable
+# record: 050007 | PENINSULA MEDICAL CENTER | CA | finding: not-assessed-site-unreachable
+# record: 050014 | SUTTER AMADOR HOSPITAL | CA | finding: not-assessed-site-unreachable
+# record: 050498 | SUTTER AUBURN FAITH HOSPITAL | CA | finding: not-assessed-site-unreachable
+# record: 054096 | SUTTER CENTER FOR PSYCHIATRY | CA | finding: not-assessed-site-unreachable
+# record: 050417 | SUTTER COAST HOSPITAL | CA | finding: not-assessed-site-unreachable
+# record: 050537 | SUTTER DAVIS HOSPITAL | CA | finding: not-assessed-site-unreachable
+# record: 050523 | SUTTER DELTA MEDICAL CENTER | CA | finding: not-assessed-site-unreachable
+# record: 051329 | SUTTER LAKESIDE HOSPITAL | CA | finding: not-assessed-site-unreachable
+# record: 050714 | SUTTER MATERNITY & SURGERY CENTER OF SANTA CRUZ | CA | finding: not-assessed-site-unreachable
+# record: 050108 | SUTTER MEDICAL CENTER, SACRAMENTO | CA | finding: not-assessed-site-unreachable
+# record: 050309 | SUTTER ROSEVILLE MEDICAL CENTER | CA | finding: not-assessed-site-unreachable
+# record: 050291 | SUTTER SANTA ROSA REGIONAL HOSPITAL | CA | finding: not-assessed-site-unreachable
+# record: 050101 | SUTTER SOLANO MEDICAL CENTER | CA | finding: not-assessed-site-unreachable
+# record: 050766 | SUTTER SURGICAL HOSPITAL - NORTH VALLEY | CA | finding: not-assessed-site-unreachable
+# record: 050313 | SUTTER TRACY COMMUNITY HOSPITAL | CA | finding: not-assessed-site-unreachable
+
+* DNS sutterhealth.org: 64.239.109.1
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://sutterhealth.org/
+< HTTP 308
+< cache-control: public, max-age=0, must-revalidate
+< content-type: application/json
+< date: Mon, 07 Sep 2026 01:32:37 GMT
+< location: https://www.sutterhealth.org/
+< refresh: 0;url=https://www.sutterhealth.org/
+< server: Vercel
+< strict-transport-security: max-age=63072000
+< x-vercel-id: iad1::nq77j-1788744757507-6f895fb91ee4
+* following Location: https://www.sutterhealth.org/
+
+* final response: https://www.sutterhealth.org/
+< HTTP 200
+< age: 279
+< cache-control: public, max-age=0, must-revalidate
+< content-encoding: br
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:27:57 GMT
+< etag: W/"1099lteh3l66snt"
+< server: Vercel
+< strict-transport-security: max-age=63072000
+< x-matched-path: /en/[[...path]]
+< x-sc-rewrite: /_site_SutterHealth/
+< x-vercel-cache: HIT
+< x-vercel-id: iad1::iad1::7glhh-1788744757547-28092997fb38
+< --- body (65536 bytes read, truncated) ---
+< <!DOCTYPE html><html lang="en"><head><meta charSet="utf-8" data-next-head=""/><meta name="viewport" content="width=device-width, initial-scale=1" data-next-head=""/><title data-next-head="">Sutter Health | A Whole Team on Your Team | Northern and Central California</title><meta name="displayName" content="Sutter Health | A Whole Team on Your Team | Northern and Central California" data-next-head=""/><meta name="keywords" content="Northern California healthcare, emergency care, acute care, primary care, urgent care, Sutter doctors, Sutter locations, Sutter birth centers, Sutter ER, pediatric care, maternity care" data-next-head=""/><meta property="og:type" content="website" data-next-head=""/><meta property="og:title" content="Sutter Health | A Whole Team on Your Team | Northern and Central California" data-next-head=""/><meta property="og:site_name" content="Sutter Health" data-next-head=""/><meta name="twitter:card" content="summary" data-next-head=""/><meta name="robots" content="index, follow" data-next-head=""/><link rel="icon" href="/favicon.ico" data-next-head=""/><meta name="description" content="Sutter Health is a not-for-profit health system offering high-quality, accessible care across California with over 12,000 doctors and 220 convenient locations." data-next-head=""/><meta property="og:description" content="Sutter Health is a not-for-profit health system offering high-quality, accessible care across California with over 12,000 doctors and 220 convenient locations." data-next-head=""/><meta name="teaserDescription" content="Sutter Health is a not-for-profit health system offering high-quality, accessible care across California with over 12,000 doctors and 220 convenient locations." data-next-head=""/><meta property="og:url" content="https://www.sutterhealth.org/" data-next-head=""/><link rel="canonical" href="https://www.sutterhealth.org/" data-next-head=""/><meta name="s:itemId" content="268c7a6d-ac66-491d-aa20-400e60887c1f" data-next-head=""/><meta name="yext:pageType" content="page" data-next-head=""/><link rel="preload" href="/_next/static/media/b90cab293ce41ce7-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/_next/static/media/08c1bcd1c6b74215-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/_next/static/media/e3cc50ae85bfda4a-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/_next/static/css/9f46f0bc955c5242.css" as="style"/><link rel="preload" href="/_next/static/css/bcc38ce548550a3f.css" as="style"/><link rel="stylesheet" href="https://edge-platform.sitecorecloud.io/v1/files/pages/styles/content-styles.css?sitecoreContextId=Mw0wpwK1ZgSGLNNZtvTKz" data-next-head=""/><script type="application/ld+json" data-next-head="">{"@context":"https://schema.org","@type":"WebSite","@id":"https://www.sutterhealth.org/#website","name":"Sutter Health","url":"https://www.sutterhealth.org","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.sutterhealth.org/search?query={query}"},"query-input":"required name=query"}}</script><script type="application/ld+json" data-next-head="">{"@context":"https://schema.org","@type":"MedicalOrganization","name":"Sutter Health","@id":"https://www.sutterhealth.org/#medicalorganization","url":"https://www.sutterhealth.org","logo":"https://www.sutterhealth.org/static/images/sutter-health-logo.svg","address":{"@type":"PostalAddress","streetAddress":"2200 River Plaza Drive","addressLocality":"Sacramento","addressRegion":"CA","postalCode":"95833","addressCountry":"US"},"areaServed":{"@type":"AdministrativeArea","name":"California"},"sameAs":["https://www.facebook.com/SutterHealth","https://www.instagram.com/sutterhealth/","https://x.com/SutterHealth","https://www.youtube.com/sutterhealth","https://www.linkedin.com/company/sutter-health","https://en.wikipedia.org/wiki/Sutter_Health"]}</script><script type="application/ld+json" data-next-head="">{"@context":"https://schema.org","@type":"WebPage","name":"Sutter Health | A Whole Team on Your Team | Northern and Central California","description":"Sutter Health is a not-for-profit health system offering high-quality, accessible care across California with over 12,000 doctors and 220 convenient locations.","url":"https://www.sutterhealth.org/"}</script><link rel="preload" as="image" imageSrcSet="/_next/image?url=https%3A%2F%2Fedge.sitecorecloud.io%2Fsutterhealt962c-sutterhealt8fce-production57cc-4860%2Fmedia%2FProject%2FSutterHealth%2FSutterHealth%2FImages%2FHome-Page%2Ffamily-at-beach-laughing-hero.jpg%3Fh%3D1262%26iar%3D0%26w%3D3200&amp;w=640&amp;q=75 640w, /_next/image?url=https%3A%2F%2Fedge.sitecorecloud.io%2Fsutterhealt962c-sutterhealt8fce-production57cc-4860%2Fmedia%2FProject%2FSutterHealth%2FSutterHealth%2FImages%2FHome-Page%2Ffamily-at-beach-laughing-hero.jpg%3Fh%3D1262%26iar%3D0%26w%3D3200&amp;w=750&amp;q=75 750w, /_next/image?url=https%3A%2F%2Fedge.sitecorecloud.io%2Fsutterhealt962c-sutterhealt8fce-production57cc-4860%2Fmedia%2FProject%2FSutterHealth%2FSutterHealth%2FImages%2FHome-Page%2Ffamily-at-beach-laughing-hero.jpg%3Fh%3D1262%26iar%3D0%26w%3D3200&amp;w=828&amp;q=75 828w, /_next/image?url=https%3A%2F%2Fedge.sitecorecloud.io%2Fsutterhealt962c-sutterhealt8fce-production57cc-4860%2Fmedia%2FProject%2FSutterHealth%2FSutterHealth%2FImages%2FHome-Page%2Ffamily-at-beach-laughing-hero.jpg%3Fh%3D1262%26iar%3D0%26w%3D3200&amp;w=1080&amp;q=75 1080w, /_next/image?url=https%3A%2F%2Fedge.sitecorecloud.io%2Fsutterhealt962c-sutterhealt8fce-production57cc-4860%2Fmedia%2FProject%2FSutterHealth%2FSutterHealth%2FImages%2FHome-Page%2Ffamily-at-beach-laughing-hero.jpg%3Fh%3D1262%26iar%3D0%26w%3D3200&amp;w=1200&amp;q=75 1200w, /_next/image?url=https%3A%2F%2Fedge.sitecorecloud.io%2Fsutterhealt962c-sutterhealt8fce-production57cc-4860%2Fmedia%2FProject%2FSutterHealth%2FSutterHealth%2FImages%2FHome-Page%2Ffamily-at-beach-laughing-hero.jpg%3Fh%3D1262%26iar%3D0%26w%3D3200&amp;w=1920&amp;q=75 1920w, /_next/image?url=https%3A%2F%2Fedge.sitecorecloud.io%2Fsutterhealt962c-sutterhealt8fce-production57cc-4860%2Fmedia%2FProject%2FSutterHealth%2FSutterHealth%2FImages%2FHome-Page%2Ffamily-at-beach-laughing-hero.jpg%3Fh%3D1262%26iar%3D0%26w%3D3200&amp;w=2048&amp;q=75 2048w, /_next/image?url=https%3A%2F%2Fedge.sitecorecloud.io%2Fsutterhealt962c-sutterhealt8fce-production57cc-4860%2Fmedia%2FProject%2FSutterHealth%2FSutterHealth%2FImages%2FHome-Page%2Ffamily-at-beach-laughing-hero.jpg%3Fh%3D1262%26iar%3D0%26w%3D3200&amp;w=3840&amp;q=75 3840w" imageSizes="(min-width: 2100px) 1550px, (min-width: 768px) 76vw, 100vw" data-next-head=""/><link rel="preload" as="image" imageSrcSet="/_next/image?url=https%3A%2F%2Fedge.sitecorecloud.io%2Fsutterhealt962c-sutterhealt8fce-production57cc-4860%2Fmedia%2FProject%2FSutterHealth%2FSutterHealth%2FImages%2FHome-Page%2Ffamily-at-beach-laughing-hero-mobile.jpg%3Fh%3D2046%26iar%3D0%26w%3D2046&amp;w=640&amp;q=75 640w, /_next/image?url=https%3A%2F%2Fedge.sitecorecloud.io%2Fsutterhealt962c-sutterhealt8fce-production57cc-4860%2Fmedia%2FProject%2FSutterHealth%2FSutterHealth%2FImages%2FHome-Page%2Ffamily-at-beach-laughing-hero-mobile.jpg%3Fh%3D2046%26iar%3D0%26w%3D2046&amp;w=750&amp;q=75 750w, /_next/image?url=https%3A%2F%2Fedge.sitecorecloud.io%2Fsutterhealt962c-sutterhealt8fce-production57cc-4860%2Fmedia%2FProject%2FSutterHealth%2FSutterHealth%2FImages%2FHome-Page%2Ffamily-at-beach-laughing-hero-mobile.jpg%3Fh%3D2046%26iar%3D0%26w%3D2046&amp;w=828&amp;q=75 828w, /_next/image?url=https%3A%2F%2Fedge.sitecorecloud.io%2Fsutterhealt962c-sutterhealt8fce-production57cc-4860%2Fmedia%2FProject%2FSutterHealth%2FSutterHealth%2FImages%2FHome-Page%2Ffamily-at-beach-laughing-hero-mobile.jpg%3Fh%3D2046%26iar%3D0%26w%3D2046&amp;w=1080&amp;q=75 1080w, /_next/image?url=https%3A%2F%2Fedge.sitecorecloud.io%2Fsutterhealt962c-sutterhealt8fce-production57cc-4860%2Fmedia%2FProject%2FSutterHealth%2FSutterHealth%2FImages%2FHome-Page%2Ffamily-at-beach-laughing-hero-mobile.jpg%3Fh%3D2046%26iar%3D0%26w%3D2046&amp;w=1200&amp;q=75 1200w, /_ne
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 139 ms

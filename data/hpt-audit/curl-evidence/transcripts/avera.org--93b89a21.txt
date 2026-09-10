@@ -1,0 +1,165 @@
+# curl-style evidence for https://avera.org/
+# fetched 2026-09-07T01:35:54.300Z with the tracker's BROWSER_HEADERS (production client)
+# record: 431318 | BOWDLE HOSPITAL - CAH | SD | finding: not-assessed-not-named-in-file
+# record: 431308 | EUREKA COMMUNITY HEALTH SERVICES - CAH | SD | finding: not-assessed-not-named-in-file
+# record: 431313 | FREEMAN MEDICAL CENTER - CAH | SD | finding: not-assessed-not-named-in-file
+
+* DNS avera.org: 89.106.200.142
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://avera.org/
+< HTTP 301
+< content-length: 55
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:35:55 GMT
+< location: http://www.avera.org
+< permissions-policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
+< referrer-policy: no-referrer-when-downgrade
+< x-content-type-options: nosniff
+< x-server: ewr0.prod.edge
+* following Location: http://www.avera.org
+
+* redirect hop 2: http://www.avera.org/
+< HTTP 301
+< accept-ch: Sec-CH-DPR, Sec-CH-Width, Sec-CH-Viewport-Width
+< cache-control: max-age=0, no-cache, no-store
+< connection: keep-alive
+< content-length: 0
+< content-security-policy: frame-ancestors 'self' https://pay.usbank.com;
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:35:55 GMT
+< expect-ct: max-age=86400
+< expires: Mon, 07 Sep 2026 01:35:55 GMT
+< location: https://www.avera.org/
+< permissions-policy: geolocation=(self), payment=(self "https://formulate.geonetric.com" "https://forms.geonetric.com"), sync-xhr=(self "https://formulate.geonetric.com" "https://forms.geonetric.com"), camera=(), accelerometer=(), gyroscope=(), magnetometer=(), microphone=()
+< pragma: no-cache
+< referrer-policy: strict-origin-when-cross-origin
+< server-timing: cdn-cache; desc=REVALIDATE, edge; dur=31, origin; dur=258, ak_p; desc="1788744955284_399840020_2115952850_28906_9616_0_0_-";dur=1
+< strict-transport-security: max-age=63072000; includeSubDomains;
+< x-aspnet-version: 4.0.30319
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-ua-compatible: chrome=1
+* following Location: https://www.avera.org/
+
+* final response: https://www.avera.org/
+< HTTP 200
+< accept-ch: Sec-CH-DPR, Sec-CH-Width, Sec-CH-Viewport-Width
+< cache-control: max-age=0, no-cache, no-store
+< content-encoding: gzip
+< content-length: 13038
+< content-security-policy: frame-ancestors 'self' https://pay.usbank.com;
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:35:56 GMT
+< expect-ct: max-age=86400
+< expires: Mon, 07 Sep 2026 01:35:56 GMT
+< permissions-policy: geolocation=(self), payment=(self "https://formulate.geonetric.com" "https://forms.geonetric.com"), sync-xhr=(self "https://formulate.geonetric.com" "https://forms.geonetric.com"), camera=(), accelerometer=(), gyroscope=(), magnetometer=(), microphone=()
+< pragma: no-cache
+< referrer-policy: strict-origin-when-cross-origin
+< server-timing: cdn-cache; desc=REVALIDATE, edge; dur=72, origin; dur=270, ak_p; desc="1788744955648_389073077_3118504053_34110_11956_0_39_15";dur=1
+< strict-transport-security: max-age=63072000; includeSubDomains;
+< vary: Accept-Encoding
+< x-akamai-transformed: 9 13873 0 pmb=mRUM,1
+< x-aspnet-version: 4.0.30319
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-ua-compatible: chrome=1
+< --- body (40127 bytes read) ---
+< 
+< 
+< <!DOCTYPE html>
+< <html lang="en-US">
+< 
+< 
+< <!-- ========================================================== -->
+< <!-- Copyright (c)1998-2026 Geonetric, Inc. and Avera Health.   -->
+< <!-- All rights reserved.  http://www.geonetric.com/            -->
+< <!-- ========================================================== -->
+< 
+< <head id="VsMasterPage_HtmlHeader">
+< <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+< <!-- meta content-type added by WebControls.PageAdapter in ~/App_Browsers -->
+< <script type="text/javascript">
+< //<![CDATA[
+< 	window['VitalSite'] = {
+<   "page": {
+<     "Referrer": null,
+<     "Method": "GET",
+<     "IsPostBack": false,
+<     "StatusCode": 200,
+<     "Status": "200 OK"
+<   },
+<   "mapBrowserApiKey": "AIzaSyCWDaToIaR0857HyeeRzDELBtMIWUrcTNA"
+< };
+< //]]>
+< 
+< </script>
+< <link type="text/css" rel="stylesheet" href="/css-min/default.css" />
+< <link type="text/css" rel="stylesheet" href="/css-min/client.css" />
+< <link type="text/css" rel="stylesheet" href="/css-min/avera2022/avera2022.css" />
+< <meta name="page_display_name" class="elastic" content="Avera Health" />
+< <meta name="description" content="Move your health forward with Avera. Learn about our integrated health system of hospitals, clinics, doctors and community support in South Dakota, Minnesota, Iowa, Nebraska and North Dakota." />
+< <meta name="copyright" content="(c)1998-2026 Geonetric. All Rights Reserved." />
+< 
+< 
+<     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" /><!-- This is needed to keep the iphone from scrolling horizontally -->
+< 
+<     <!-- Favicons -->
+<     <link rel="shortcut icon" href="/favicon.ico" />
+<     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00274c">
+<     <meta name="msapplication-TileColor" content="#00274c">
+<     <meta name="theme-color" content="#ffffff">
+< 
+<     <!-- Scripts necessary in head to run first -->
+<     <script type="text/javascript">
+<         document.documentElement.className = 'js';
+<     </script>
+< 
+<     <!-- Webfonts -->
+<     <link rel="preconnect" href="https://fonts.googleapis.com">
+< 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+< 	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+<     <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+<     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+< 
+<     <!-- StyleSheets -->
+<     
+< <link rel="canonical" href="https://www.avera.org/" />
+< <meta name="google-site-verification" content="bt59JZvi9rBra_1byDKtUpfzMBCnnnqPr8o2ymKqS1k" />
+< <meta name="msvalidate.01" content="4E1D0B9489FC29E28DDBE7528837527C" />
+< <meta name="facebook-domain-verification" content="y1zva3bnwekwdus2n5htwefh47ipfg" />
+< <meta name="twitter:card" content="summary" /><meta name="twitter:site" content="AveraHealth" /><meta name="twitter:title" content="Avera Health | Avera.org" /><meta name="twitter:description" content="Move your health forward with Avera. Learn about our integrated health system of hospitals, clinics, doctors and community support in South Dakota, Minnesota, Iowa, Nebraska and North Dakota." /><meta name="CmsPageId" content="1" />
+< 
+< <!-- Script Name: Avera - Google Search Console Verification 2025 -->
+< <meta name="google-site-verification" content="WN0RV-kC-JhrVqL8refrh1XxHjENsDyVf-eD5OKrjZw" />
+< <!-- End Avera - Google Search Console Verification 2025 -->
+< 
+< <!-- Script Name: Avera - Google Tag Manager Header 2025 -->
+< <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+< new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+< j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+< 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+< })(window,document,'script','dataLayer','GTM-5WJDLK');</script>
+< <!-- End Avera - Google Tag Manager Manager 2025 -->
+< 
+< <!-- Script Name: Avera - Favicon -->
+< <link rel="icon" href="/favicon.ico">
+< <title>
+< 	Avera Health | Avera.org
+< </title>
+<                                 <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="TPFAP-K7JZM-A7BM6-GYAEA-GLLCP",function(){function e(){if(!i){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,o.parentNode.appendChild(e),i=!0}}function t(e){i=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(o.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",o.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"TPFAP-K7JZM-A7BM6-GYAEA-GLLCP";var o=document.currentScript||document.getElementsByTagName("script")[0],i=!1,r=document.createElement("link");if(r.relList&&"function"==typeof r.relList.supports&&r.relList.supports("preload")&&"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!i)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),o.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="xgoc45axgdf3k2u6ct5q-f-e07fcd747-clientnsv4-s.akamaihd.net",o="false"=="true"?2:1,i={"ak.v":"41","ak.cp":"1431903","ak.ai":parseInt("879375",10),"ak.ol":"0","ak.cr":0,"ak.ipv":4,"ak.proto":"h2","ak.rid":"b9e09875","ak.r":47500,"ak.a2":n,"ak.m":"b","ak.n":"essl","ak.cport":53648,"ak.gh":"23.48.200.181","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.0rtt.ed":"","ak.csrc":"-","ak.acc":"","ak.t":"1788744955","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==p0ecAxgxB1anFrCPZbDPmwiNOx4ViUVvaIvclw5szcd2QDiaSB+sg3ImiV2WG50EB0tBYmeCwC0ocvYMy0HD8DaTUcyR8Qf7PTin9R7Ms9rJItSAYuvvvkzE0DFU8+eBS6710KAWFIvaboBMC6Uycb8ydeF5QAf+vkZ6AjQMjCkrItQ98G/4AmFDKTkVLArMvFfg+TTPwldI/UaKlFJZP+g5jHf5WQF5uZC33S1oMYgy9/0bmZJBoUUB5rioxbNTF25A278QnPLNMZJ8ym2vFXX04ZcJaZr76ljwUq4OCg8UzbajoD0afklG2gWKo/hzKqqJ7aVL4QkYnrmgc34G7/8hWbk3yM+qwjm76uY/+qX5SeNlUOyJXYM0o/zpx3bdGsI+GZSTmRYa3pbRR1wO2Uwid3zYFt0TP/a9TPh4aoo=","ak.pv":"23","ak.dpoabenc":"","ak.tf":o};if(""!==t)i["ak.ruds"]=t;var r={i:!1,av:functi
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 1014 ms

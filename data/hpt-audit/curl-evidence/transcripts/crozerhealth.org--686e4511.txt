@@ -1,0 +1,124 @@
+# curl-style evidence for https://crozerhealth.org/.well-known/cms-hpt.txt
+# fetched 2026-09-07T01:35:46.367Z with the tracker's BROWSER_HEADERS (production client)
+# record: 390180 | CROZER CHESTER MEDICAL CENTER | PA | finding: no-cms-hpt-txt-published
+
+* DNS crozerhealth.org: 162.159.140.166
+
+> GET /.well-known/cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://crozerhealth.org/.well-known/cms-hpt.txt
+< HTTP 404
+< cache-control: no-cache, no-store, must-revalidate
+< cf-cache-status: BYPASS
+< cf-ray: a371fa954e87a62c-IAD
+< content-encoding: br
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:35:48 GMT
+< server: cloudflare
+< server-timing: cfCacheStatus;desc="BYPASS", cfEdge;dur=17,cfOrigin;dur=56
+< vary: Accept-Encoding
+< via: 1.1 google
+< --- body (3213 bytes read) ---
+< 
+< <!DOCTYPE html>
+< <html lang="en">
+< <head>
+<     <meta charset="UTF-8">
+<     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<     <title>404 - Page Not Found</title>
+<     <style>
+<         * {
+<             -webkit-box-sizing: border-box;
+<             box-sizing: border-box;
+<         }
+<         
+<         body {
+<             font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+<             margin: 0;
+<             padding: 0;
+<             background: #000;
+<             color: white;
+<             display: grid;
+<             min-height: 100vh;
+<             place-content: center;
+<             overflow: hidden;
+<             -webkit-font-smoothing: antialiased;
+<             -moz-osx-font-smoothing: grayscale;
+<         }
+<         
+<         .spotlight {
+<             position: fixed;
+<             left: 0;
+<             right: 0;
+<             bottom: -30vh;
+<             background: linear-gradient(45deg,#00dc82,#36e4da 50%,#0047e1);
+<             filter: blur(20vh);
+<             height: 40vh;
+<             z-index: 10;
+<         }
+<         
+<         .error-container {
+<             max-width: 520px;
+<             text-align: center;
+<             z-index: 20;
+<             position: relative;
+<         }
+<         
+<         .error-code {
+<             font-size: 8rem;
+<             font-weight: 500;
+<             margin-bottom: 2rem;
+<             line-height: 1;
+<             letter-spacing: -0.025em;
+<         }
+<         
+<         .error-message {
+<             font-size: 1.25rem;
+<             font-weight: 300;
+<             margin-bottom: 4rem;
+<             line-height: 1.375;
+<             padding: 0 2rem;
+<         }
+<         
+<         @media (min-width: 640px) {
+<             .error-code {
+<                 font-size: 10rem;
+<             }
+<             
+<             .error-message {
+<                 font-size: 2.25rem;
+<                 padding: 0;
+<             }
+<         }
+<         
+<         /* Dark theme classes to match error.vue */
+<         .font-sans { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif; }
+<         .antialiased { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+<         .dark { color-scheme: dark; }
+<         .text-white { color: rgb(255 255 255); }
+<         .grid { display: grid; }
+<         .min-h-screen { min-height: 100vh; }
+<         .place-content-center { place-content: center; }
+<         .overflow-hidden { overflow: hidden; }
+<     </style>
+< </head>
+< <body class="font-sans antialiased dark text-white grid min-h-screen place-content-center overflow-hidden" data-v-573335c0="">
+<     <div class="spotlight"></div>
+<     <div class="error-container">
+<         <h1 class="error-code">404</h1>
+<         <p class="error-message">Page not found!</p>
+<     </div>
+< <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"d56c0fb9091e40fc8f3829f8a67134fa","spa":2}' crossorigin="anonymous"></script>
+< </body>
+< </html>
+< 
+
+* total time: 107 ms

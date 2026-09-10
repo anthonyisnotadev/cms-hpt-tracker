@@ -1,0 +1,106 @@
+# curl-style evidence for https://centrahealth.com/
+# fetched 2026-09-07T01:36:09.524Z with the tracker's BROWSER_HEADERS (production client)
+# record: 490021 | CENTRA HEALTH -  LYNCHBURG GEN HOSPITAL | VA | finding: not-assessed-not-named-in-file
+
+* DNS centrahealth.com: 3.82.85.13
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://centrahealth.com/
+< HTTP 301
+< age: 6470539
+< cache-control: max-age=31536000
+< content-length: 236
+< content-type: text/html; charset=iso-8859-1
+< date: Mon, 07 Sep 2026 01:36:10 GMT
+< expires: Thu, 24 Jun 2027 04:13:51 GMT
+< location: http://www.centrahealth.com/
+< server: nginx
+< via: varnish
+< x-cache: HIT
+< x-cache-hits: 63335
+< x-content-type-options: nosniff
+< x-request-id: v-1b77f4ba-6f83-11f1-bdf9-5bc1d3e8a84a
+* following Location: http://www.centrahealth.com/
+
+* redirect hop 2: http://www.centrahealth.com/
+< HTTP 301
+< cache-control: max-age=60
+< connection: keep-alive
+< content-length: 0
+< date: Mon, 07 Sep 2026 01:36:10 GMT
+< expires: Mon, 07 Sep 2026 01:37:10 GMT
+< location: https://www.centrahealth.com/
+< server-timing: cdn-cache; desc=HIT, edge; dur=1, ak_p; desc="1788744970952_400425164_2485431218_12_14565_1_0_-";dur=1
+* following Location: https://www.centrahealth.com/
+
+* final response: https://www.centrahealth.com/
+< HTTP 200
+< accept-ranges: bytes
+< cache-control: public, max-age=60
+< content-encoding: gzip
+< content-language: en
+< content-length: 12363
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:36:11 GMT
+< etag: "1788744033-gzip"
+< expires: Mon, 07 Sep 2026 01:37:11 GMT
+< last-modified: Mon, 07 Sep 2026 01:20:33 GMT
+< server-timing: cdn-cache; desc=REVALIDATE, edge; dur=90, origin; dur=44, ak_p; desc="1788744971049_400425164_2485431542_13364_12366_1_46_15";dur=1
+< strict-transport-security: max-age=15768000
+< vary: Accept-Encoding
+< x-age: 283
+< x-ah-environment: prod
+< x-akamai-transformed: 9 - 0 pmb=mRUM,1
+< x-cache-hits: 4
+< x-content-type-options: nosniff
+< x-drupal-cache: MISS
+< x-drupal-dynamic-cache: MISS
+< x-frame-options: SAMEORIGIN
+< x-generator: Drupal 10 (https://www.drupal.org)
+< x-request-id: v-52cf1030-aa5a-11f1-ac73-f371fca9af53
+< --- body (53612 bytes read) ---
+< <!DOCTYPE html>
+< <html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+<   <head>
+<     <meta charset="utf-8" />
+< <meta name="description" content="Partnering with you to live your best life. Centra serves over 500,000 people as the preferred provider of critical medical services in central and southern Virginia." />
+< <link rel="shortlink" href="https://www.centrahealth.com/" />
+< <link rel="canonical" href="https://www.centrahealth.com/" />
+< <meta property="og:url" content="https://www.centrahealth.com/home" />
+< <meta property="og:title" content="Centra Home" />
+< <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+< <meta name="MobileOptimized" content="width" />
+< <meta name="HandheldFriendly" content="true" />
+< <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+< <link rel="icon" href="/themes/custom/centra/logo.png" type="image/png" />
+< 
+<     <title>Centra Home | Centra Health</title>
+<     <link rel="stylesheet" media="all" href="/sites/default/files/css/css_WqTYBUOOhwYvcEz6VJ60vRx0fDDE7ewmG7_ucpjEZDE.css?delta=0&amp;language=en&amp;theme=centra&amp;include=eJx1jEEKwzAMBD9k4icZ2dnGBsUWkgzt75uShpxy2xmGzXCHJrxlGNb0anygxQ0dShwKuivFjUf-UT2iHledQryc9JeJW47nXIpZEFLalKTald9mmV1m5mYVazCQlppIWqLpo4xdGI744IM1RyKG-nV8m2Afc-wxk-ELX7hVmA" />
+< <link rel="stylesheet" media="all" href="https://cdn.jsdelivr.net/npm/@noli42/chosen@3.1.3/chosen.min.css" />
+< <link rel="stylesheet" media="all" href="/sites/default/files/css/css_8eiDhv2kKwNpW5pXk7m6t4bJZ9rNPEoxlBuuFVJfmiY.css?delta=2&amp;language=en&amp;theme=centra&amp;include=eJx1jEEKwzAMBD9k4icZ2dnGBsUWkgzt75uShpxy2xmGzXCHJrxlGNb0anygxQ0dShwKuivFjUf-UT2iHledQryc9JeJW47nXIpZEFLalKTald9mmV1m5mYVazCQlppIWqLpo4xdGI744IM1RyKG-nV8m2Afc-wxk-ELX7hVmA" />
+< <link rel="stylesheet" media="all" href="/sites/default/files/css/css_JMxzZ1AvqOO10vG-aSURjIqCL4nHBIjHK64drLvhQUg.css?delta=3&amp;language=en&amp;theme=centra&amp;include=eJx1jEEKwzAMBD9k4icZ2dnGBsUWkgzt75uShpxy2xmGzXCHJrxlGNb0anygxQ0dShwKuivFjUf-UT2iHledQryc9JeJW47nXIpZEFLalKTald9mmV1m5mYVazCQlppIWqLpo4xdGI744IM1RyKG-nV8m2Afc-wxk-ELX7hVmA" />
+< 
+<     <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/7000","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"gtag":{"tagId":"","consentMode":false,"otherIds":[],"events":[],"additionalConfigInfo":[]},"ajaxPageState":{"libraries":"eJyFj9FqwzAMRX_IxJ8kZOfG8abYRpKh_fsFurTdYOxF4hwJXZTgDiXcRjestFU50WJBg7KEjObKsUhPT6I8zfsRP-86p5GBNe8h7-eBFh9tSdgus-ocLMuDviVJTddqNgul9yIg5xLLWX7zwh98-ymPUHNvZ7gg-5Xxpv4Z06a9OdoaBisX5bHbtfYyy2xjJqm2Yw2PP4lHJZ7ecz-GwBH_8MGqg1igz_yXCXY3xxETG74AEXSXYg","theme":"centra","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/search":true},"gtm":{"tagId":null,"settings":{"data_layer":"dataLayer","include_environment":false},"tagIds":["GTM-PKK7RS5"]},"chosen":{"selector":"select:visible","minimum_single":0,"minimum_multiple":0,"minimum_width":0,"use_relative_width":true,"options":{"disable_search":false,"disable_search_threshold":0,"allow_single_deselect":false,"allow_mobile":false,"add_helper_buttons":false,"search_contains":false,"placeholder_text_multiple":"Choose some options","placeholder_text_single":"Choose an option","no_results_text":"No results match","max_shown_results":null,"inherit_select_classes":true}},"search_api_autocomplete":{"solr_search_full_site_search":{"auto_submit":true,"min_length":3}},"siteAlert":{"timeout":300,"workaround_needed":true},"icon_select":{"icon_select_url":"\/sites\/default\/files\/icons\/icon_select_map.svg?hash=21841e71073a447069e8d5197e6954d7"},"user":{"uid":0,"permissionsHash":"0c4a3d8c8265ba8e478ed82ae5c9e4b1f605a380ad8501d5354dcd311d7a9957"}}</script>
+< <script src="/core/assets/vendor/modernizr/modernizr.min.js?v=3.11.7"></script>
+< <script src="/sites/default/files/js/js_0bRosn7b4PzvUFjk_fiKiGDNR2CoL3a-8Ofe2B0WQSY.js?scope=header&amp;delta=1&amp;language=en&amp;theme=centra&amp;include=eJx1jl0KxCAMBi8k9UghtV-tu6kRjdC9_Qql-wf7kjDzMMkMM1TCUbRhoTXJwOYjMiqLC8hW2UfR-UUUejPd_f1Re2_UwDVsLmwjkP25phnrZZbaC8t0kouqUUDG0ccxfnniGx_fcncpaB5nBMGu2oeitWo25MWdnxCXRNxNg-5FYPB_vGvJQCyor-zbPAE8yG4K"></script>
+< <script src="/modules/contrib/google_tag/js/gtag.js?tkxkym"></script>
+< <script src="/modules/contrib/google_tag/js/gtm.js?tkxkym"></script>
+< 
+<     <link rel="stylesheet" href="https://use.typekit.net/fbu0qpc.css">
+<     <link rel="preconnect" href="https://fonts.googleapis.com">
+<     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+<   
+<                                 <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="LX5F8-MDE4L-AC2G7-N4Y7W-SLDPC",function(){function e(){if(!i){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,o.parentNode.appendChild(e),i=!0}}function t(e){i=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(o.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",o.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"LX5F8-MDE4L-AC2G7-N4Y7W-SLDPC";var o=document.currentScript||document.getElementsByTagName("script")[0],i=!1,r=document.createElement("link");if(r.relList&&"function"==typeof r.relList.supports&&r.relList.supports("preload")&&"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!i)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),o.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="xgoc45ax3lmmy2u6cufq-f-d14449c01-clientnsv4-s.akamaihd.net",o="false"=="true"?2:1,i={"ak.v":"41","ak.cp":"1729239","ak.ai":parseInt("1119468",10),"ak.ol":"0","ak.cr":1,"ak.ipv":4,"ak.proto":"h2","ak.rid":"9424acf6","ak.r":41484,"ak.a2":n,"ak.m":"b","ak.n":"essl","ak.cport":42642,"ak.gh":"23.222.0.204","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.0rtt.ed":"","ak.csrc":"-","ak.acc":"","ak.t":"1788744971","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==CuUB0FbJvcX+6GnoPiLTTZNSWUoZ7/R1UJ4yRka0KcLsbsb89UU54gq5VgZoaPE83ha1mEOY6f40HL2f9Hw92iKA7jCdxw+T22eef06aPXkcTIy7SMUi7NX9LGxusVHJu9ln8ndTsIfFhN3NiaFWDowNsV2sLyOQnW+xySnthq0Q6mX4rPrthHt6zeQkK+DecwEJ6yUhhOfLs8vYk3l+NOWxivfXcDBF81oReW1rObG1WAmVI4URgU6vmuejS3f7kn1n
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 569 ms

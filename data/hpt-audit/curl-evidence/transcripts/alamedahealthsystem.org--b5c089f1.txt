@@ -1,0 +1,63 @@
+# curl-style evidence for https://alamedahealthsystem.org/cms-hpt.txt
+# fetched 2026-09-07T01:32:35.689Z with the tracker's BROWSER_HEADERS (production client)
+# record: 050211 | ALAMEDA HOSPITAL | CA | finding: not-assessed-site-unreachable
+# record: 050320 | HIGHLAND HOSPITAL | CA | finding: not-assessed-site-unreachable
+
+* DNS alamedahealthsystem.org: 63.241.90.47
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* error: fetch failed (cause: UNABLE_TO_VERIFY_LEAF_SIGNATURE)
+
+* http:// fallback attempt after transport failure:
+* fallback final response: http://alamedahealthsystem.org/cms-hpt.txt
+< HTTP 200
+< connection: keep-alive
+< content-encoding: gzip
+< content-type: text/plain
+< date: Mon, 07 Sep 2026 01:32:36 GMT
+< etag: W/"68a8f80f-5ed"
+< last-modified: Fri, 22 Aug 2025 23:06:55 GMT
+< server: nginx
+< transfer-encoding: chunked
+< x-frame-options: SAMEORIGIN
+< --- body (1517 bytes read) ---
+< location-name: Alameda Hospital
+< source-page-url: https://www.alamedahealthsystem.org/price-transparency/
+< mrf-url: https://www.alamedahealthsystem.org/wp-content/uploads/pricing/943302014_alameda-hospital_standardcharges.csv
+< contact-name: hpt-obf:v1:gU09trS87ASlceGw.5nVoq3P12gLQlzHFoqv6rg.2hpBUM4cLxBr
+< contact-email: hpt-obf:v1:L9VQdPfd7FvbEP2I.V_LJR6zm7WbAZWi1_eDu0g.04eZ_pUTCZl3wkCxgx9K5xA9zvEgrblpXoGEm6Tr
+< 
+< location-name: Fairmont Hospital
+< source-page-url: https://www.alamedahealthsystem.org/price-transparency/
+< mrf-url: https://www.alamedahealthsystem.org/wp-content/uploads/pricing/943302014_fairmont-hospital_standardcharges.csv
+< contact-name: hpt-obf:v1:NRirGQyg9zUybTV6.MQq4MaELIjDmJHy3kevPLA.UnaNFwxR7zOa
+< contact-email: hpt-obf:v1:hSW0wQO4FQrdMxlv.AcUh-WjPF6HGSd1Ll-yfTg.c862kQ-p2TrfW0HAiYex81FhmKzm_4DGXmWjYcP8
+< 
+< location-name: Highland Hospital
+< source-page-url: https://www.alamedahealthsystem.org/price-transparency/
+< mrf-url: https://www.alamedahealthsystem.org/wp-content/uploads/pricing/943302014_highland-hospital_standardcharges.csv
+< contact-name: hpt-obf:v1:z66T63HidQ9EarHu.FnpgcN39WYqsUiGynFBvOg.Rf6QTWa7u7cF
+< contact-email: hpt-obf:v1:jzw6Ai7gsg_-8ADL.pHQ6S3hGSOdUMHItshsqcQ.sMcmwh3X7nTDNQXtxWYbRdNok0jTPfe7zulK7jbp
+< 
+< location-name: John George Psychiatric Hospital
+< source-page-url: https://www.alamedahealthsystem.org/price-transparency/
+< mrf-url: https://www.alamedahealthsystem.org/wp-content/uploads/pricing/943302014_john-george-psychiatric-hospital_standardcharges.csv
+< contact-name: hpt-obf:v1:BSE7T2ypuWHPMbmn.nK7Xiv8oF_JD3gGOrt2j1Q.8781SgIjqQAC
+< contact-email: hpt-obf:v1:_FYPH1I3EcEdNps5.fd97zC5FrFBTOKCoQBST6A.oSrBOE_SDMcP8ZCh4SF153OLi0_BQgDwoSXjqvZl
+< 
+< location-name: San Leandro Hospital
+< source-page-url: https://www.alamedahealthsystem.org/price-transparency/
+< mrf-url: https://www.alamedahealthsystem.org/wp-content/uploads/pricing/943302014_san-leandro-hospital_standardcharges.csv
+< contact-name: hpt-obf:v1:3eHFx_am7FcU00AF.YnP87-jsM-DxGkyx4KE0cQ.1GPAEO1EfcFy
+< contact-email: hpt-obf:v1:vycmQK3zpRzmZCkn.0EII9kEZYkx6BUGBjOB0hA.kUv0HgJpv7QJtYeTkqSheYPqdf1AnWTJJrG90SFK
+
+* total time: 395 ms

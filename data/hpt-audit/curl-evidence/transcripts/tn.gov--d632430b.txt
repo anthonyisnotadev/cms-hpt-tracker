@@ -1,0 +1,170 @@
+# curl-style evidence for https://tn.gov/
+# fetched 2026-09-07T01:36:01.144Z with the tracker's BROWSER_HEADERS (production client)
+# record: 444014 | MIDDLE TN MENTAL HEALTH INSTITUTE | TN | finding: not-assessed-site-unreachable
+
+* DNS tn.gov: 52.70.105.188, 170.141.221.177
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://tn.gov/
+< HTTP 302
+< content-length: 203
+< content-security-policy: frame-ancestors http://localhost:8100 https://*.tn.gov
+< content-type: text/html; charset=iso-8859-1
+< date: Mon, 07 Sep 2026 01:36:02 GMT
+< location: https://www.tn.gov/
+< server: Apache
+< strict-transport-security: max-age=63072000
+< x-content-type-options: nosniff
+< x-dispatcher: PROD_LW131.NORTH_Ext_Dispatcher_443
+< x-frame-options: SAMEORIGIN, SAMEORIGIN
+* following Location: https://www.tn.gov/
+
+* final response: https://www.tn.gov/
+< HTTP 200
+< accept-ranges: bytes
+< age: 55
+< cache-control: max-age=300
+< content-encoding: gzip
+< content-length: 10291
+< content-security-policy: frame-ancestors http://localhost:8100 https://*.tn.gov
+< content-type: text/html;charset=utf-8
+< date: Mon, 07 Sep 2026 01:36:02 GMT
+< server: Apache
+< strict-transport-security: max-age=63072000
+< vary: Accept-Encoding,User-Agent
+< x-content-type-options: nosniff
+< x-dispatcher: PROD_LW131.NORTH_Ext_Dispatcher_443
+< x-frame-options: SAMEORIGIN, SAMEORIGIN
+< --- body (60644 bytes read) ---
+< <!doctype html>
+< <html class="no-js tn-html" lang="en">
+<     <head>
+<         <title>Tennessee State Government - TN.gov</title>
+<         <meta charset="utf-8"/>
+<         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<         
+<         
+<             <meta name="description" content="State of Tennessee - TN.gov"/>
+<         
+<         
+<             <meta name="url" content="https://www.tn.gov/"/>
+<         
+<         
+<             <meta name="lastModified" content="25 Aug 2026 15:59:33 CDT"/>
+<         
+<         
+<         
+<         
+<         
+<         
+<         
+<         
+<             <meta name="pagePath" content="/content/tn"/>
+<         
+<         
+< 
+<         
+< 
+<         
+<             <meta property="og:title" content="Tennessee State Government - TN.gov"/>
+<         
+<         
+<             <meta property="og:description" content="State of Tennessee - TN.gov"/>
+<         
+<         
+<             <meta property="og:url" content="https://www.tn.gov/"/>
+<         
+<         
+< 
+<             <meta name="twitter:card" content="summary_large_image"/>
+<         
+<             <meta name="twitter:title" content="Tennessee State Government - TN.gov"/>
+<         
+<         
+<             <meta name="twitter:description" content="State of Tennessee - TN.gov"/>
+<         
+<         
+<             <meta name="twitter:url" content="https://www.tn.gov/"/>
+<         
+<         
+< 
+<         
+< 
+<         <link rel="shortcut icon" href="/etc/clientlibs/tncore/main/img/favicon.ico"/>
+< 
+<         <link rel="canonical" href="https://www.tn.gov/"/>
+< 
+<         <!-- DTM Analytics Datalayer -->
+< 
+<         <script>
+< 
+< 
+<             var digitalData = {
+<                 page: {
+<                     pageInfo: {
+<                         pageName: "TN Main Page",
+<                         securePage: "false",
+<                         sysEnv: "Desktop",
+<                         deptName: "",
+<                         siteSection: "",
+<                         siteSubSection: "",
+<                         pageType:"",
+<                         rsidValue: "oirtn"
+< 
+<                     }
+<                 }
+<             };
+<         </script>
+< 
+<         <script src="//assets.adobedtm.com/f213d7ed4603/b5fbb0638724/launch-5b3fa8e23e9e.min.js" async></script>
+< 
+<         
+<         
+<     
+< <link rel="stylesheet" href="/etc/clientlibs/tncore/main.min.510e4cc977c2e895105294c59bb883a2.css" type="text/css">
+< 
+< 
+< 
+<         
+<             
+<     
+< <link rel="stylesheet" href="/etc/clientlibs/tn-sites/tngov.min.a18e62a3f815b11550a3feee90159096.css" type="text/css">
+< 
+< 
+< 
+<         
+< 
+<         
+< 
+<         
+< 
+< 
+< 
+< 
+< 
+< 
+< 
+< 
+<         
+< 
+<         
+<     </head>
+<     <body class="tngov  " data-selectors='[]' data-template="contentPage">
+<         <a class="visually-hidden-focusable skip-to-main" href="#main">Skip to Main Content</a>
+< 
+<         <noindex>
+<             <div>
+< 
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 93 ms

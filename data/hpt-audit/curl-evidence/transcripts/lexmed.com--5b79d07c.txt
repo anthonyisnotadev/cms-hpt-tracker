@@ -1,0 +1,171 @@
+# curl-style evidence for https://lexmed.com/cms-hpt.txt
+# fetched 2026-09-07T01:35:53.552Z with the tracker's BROWSER_HEADERS (production client)
+# record: 420073 | LEXINGTON MEDICAL CENTER | SC | finding: no-cms-hpt-txt-published
+
+* DNS lexmed.com: 66.219.16.70
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://lexmed.com/cms-hpt.txt
+< HTTP 301
+< content-length: 156
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:35:54 GMT
+< location: https://lexhealth.com/cms-hpt.txt
+< server: Microsoft-IIS/10.0
+< strict-transport-security: max-age=2592000
+< x-powered-by: ASP.NET, ASP.NET
+* following Location: https://lexhealth.com/cms-hpt.txt
+
+* redirect hop 2: https://lexhealth.com/cms-hpt.txt
+< HTTP 302
+< content-length: 181
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:35:54 GMT
+< location: /404?initialRequestUrl=https%3a%2f%2flexhealth.com%2fcms-hpt.txt
+< server: Microsoft-IIS/10.0
+< strict-transport-security: max-age=2592000
+< x-powered-by: ASP.NET, ASP.NET
+* following Location: /404?initialRequestUrl=https%3a%2f%2flexhealth.com%2fcms-hpt.txt
+
+* final response: https://lexhealth.com/404?initialRequestUrl=https%3a%2f%2flexhealth.com%2fcms-hpt.txt
+< HTTP 200
+< cache-control: no-cache
+< content-security-policy: script-src *.cludo.com 'unsafe-inline' 'self' localhost *.fontawesome.com *.jsdelivr.net *.googleapis.com 'unsafe-eval' https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js *.wistia.com https://www.googletagmanager.com https://script.crazyegg.com https://px.premion.com blob: https://*.googleads.g.doubleclick.net https://snap.licdn.com https://connect.facebook.net https://googleads.g.doubleclick.net secure.wufoo.com https://browser.sentry-cdn.com; style-src *.cludo.com 'unsafe-inline' 'self' localhost *.fontawesome.com fonts.googleapis.com fonts.gstatic.com *.wufoo.com; default-src 'self' localhost 'unsafe-inline' *.fontawesome.com https://mychart.lexmed.com/ *.googleapis.com *.gstatic.com; connect-src 'self' *.cludo.com *.fontawesome.com localhost 'unsafe-inline' *.googleapis.com *.gstatic.com *.truematter.com https://lmcrcs.lexmed.com *.wistia.com *.jsdelivr.net *.lexmed.com https://www.google.com https://analytics.lexhealth.com https://script.crazyegg.com https://px.premion.com https://tracking.crazyegg.com *.crazyegg.com https://*.googleadservices.com *.wufoo.com https://px.ads.linkedin.com https://browser.sentry-cdn.com https://fg8vvsvnieiv3ej16jby.litix.io; font-src fonts.googleapis.com *.fontawesome.com fonts.gstatic.com localhost 'self' 'unsafe-inline' patientspreview.truematter.com patientspreview.lexhealth.com patientspreview.lexhealth.com:7153 https://fast.wistia.com data:; img-src *.googleapis.com *.gstatic.com *.truematter.com https://embed-ssl.wistia.com https://fast.wistia.com 'self' localhost https://lexhealth.com *.lexhealth.com https://www.googletagmanager.com https://www.facebook.com https://px.ads.linkedin.com https://www.google.com https://*.linkedin.com data:; media-src blob: https://embed-ssl.wistia.com 'self'; frame-src https://fast.wistia.com https://fast.wistia.net https://www.googletagmanager.com https://analytics.lexhealth.com/ https://analytics.lexhealth.com https://lexmed.wufoo.com/ https://lexmed.wufoo.com
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:35:54 GMT
+< server: Microsoft-IIS/10.0
+< strict-transport-security: max-age=2592000
+< x-powered-by: ASP.NET
+< --- body (19430 bytes read) ---
+< 
+< 
+< 
+< 
+< <!DOCTYPE html>
+< <html id="html" lang="en">
+< <head>
+<     <meta charset="utf-8" />
+<     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<     <link rel="icon" type="image/x-icon" href="/lexhealth/images/favicon.ico">
+< 
+<     <title>404 - Page Not Found</title><meta property='og:title' content='404 - Page Not Found'><meta property='og:description' content='Need help? Give us a call at hpt-obf:v1:KmQugxuXZ6us843F.Z1r_mUSD98gfa9kanN4Nxg.ssp2pV0tIuwFrxYRfCE.'><meta name='description' content='Need help? Give us a call at hpt-obf:v1:sKCXqg7sPQmeZg6K.TrdpsZ57WRutwqg5Wlwn3g.ZCpxqiLuga_ZQrvXvio.'><link rel='canonical' href='https://lexhealth.com/404' />
+<     
+<     <link rel="preconnect" href="https://fonts.googleapis.com">
+<     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<     <script src="https://kit.fontawesome.com/762c47e934.js" crossorigin="anonymous"></script>
+<     <script src="/lexhealth/js/lexhealth.js?c5fb3b7b-4ce2-4add-b7cb-320710fe1ac7"></script>
+<     
+<     
+<         <link rel="stylesheet" href="/lexhealth/css/lexhealth.min.css?4d836c77-3329-4baa-89ed-596742bf820c" />
+<     
+<     <!-- Google Tag Manager -->
+<     <script>
+<         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+<         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+<         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+<         })(window,document,'script','dataLayer','GTM-PN9WD7X');</script>
+<     <!-- End Google Tag Manager -->
+< </head>
+< 
+< <body class="flame-background-without-breadcrumb-bar"><script id="-485135227" src="/sfrenderer/scripts/bootstrap.bundle.min.js?package_name=Lexhealth&amp;version=122906766" type="text/javascript"></script>
+<     <!-- Google Tag Manager (noscript) -->
+<     <noscript>
+<         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PN9WD7X"
+<                 height="0" width="0" style="display:none;visibility:hidden"></iframe>
+<     </noscript>
+<     <!-- End Google Tag Manager (noscript) -->
+< 
+<     <nav aria-label="skip link">
+<         <a class="skip-to-main"
+<            href="#main"
+<            tabindex="0">Skip to Content</a>
+<     </nav>
+<     <header id="header">
+< 
+< 
+<     
+< 
+< 
+< 
+< <div class="lh-navigation ">
+<     <nav  class="navbar navbar-expand-md" data-bs-theme="light">
+<         <div class="container">
+<             <a class="navbar-brand" href="/"><img src="/images/default-source/logos/lexhealth-logo.svg" alt="Lexington Health" /></a>
+<             <div class="mobile-header-nav">
+<                 <a class="mobile-search" href="/search" aria-label="Search">
+<                     <span class="navbar-search-icon"></span>
+<                 </a>
+<                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="navbar5017 offcanvasNavbar" aria-label="Toggle navigation">
+<                     <span class="navbar-toggler-icon"></span>
+<                 </button>
+<             </div>
+<             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
+<                 <div class="lh-nav">
+<                     <div class="offcanvas-header">
+<                         <a class="navbar-brand" href="/"><img src="/images/default-source/logos/lexhealth-logo-white.svg" alt="Lexington Health" /></a>
+<                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+<                     </div>
+<                     <div class="offcanvas-body">
+<                         <ul id="mainSiteNav" class="nav">
+<             <li class="nav-item">
+<                 <a class="nav-link" href="/find-care" target="_self">Find Care</a>
+<             </li>
+<             <li class="nav-item">
+<                 <a class="nav-link" href="/medical-services" target="_self">Medical Services</a>
+<             </li>
+<             <li class="nav-item">
+<                 <a class="nav-link" href="/locations" target="_self">Locations</a>
+<             </li>
+<             <li class="nav-item">
+<                 <a class="nav-link" href="/billing-insurance" target="_self">Billing and Insurance</a>
+<             </li>
+<             <li class="nav-item">
+<                 <a class="nav-link" href="/contact" target="_self">Contact</a>
+<             </li>
+<                         </ul>
+<                     </div>
+<                 </div>
+<                 <div class="ancillary-nav">
+<                     <ul class="nav">
+<                         <li class="nav-item">
+<                             <a class="nav-link" href="https://patients-visitors.lexhealth.com"><i class="fa-solid fa-caret-right" aria-hidden="true"></i>Hospital Patients and Visitors</a>
+<                         </li>
+<                         <li class="nav-item">
+<                             <a class="nav-link" href="https://mychart.lexhealth.com"><i class="fa-solid fa-caret-right" aria-hidden="true"></i>MyChart</a>
+<                         </li>
+<                         <li class="nav-item">
+<                             <a class="nav-link" href="https://careers.lexhealth.com"><i class="fa-solid fa-caret-right" aria-hidden="true"></i>Careers</a>
+<                         </li>
+<                         <li class="nav-item search">
+<                             <button class="nav-link" onclick="openSearch()" aria-label="Open Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+<                         </li>
+<                     </ul>
+<                     <div class="header-search" id="headerSearch">
+<                         <div class="search-form ">
+<                             <div class="search-field-type-ahead">
+<                                 <input oninput="getSuggestions()" onkeydown="if (event.key === 'Enter') {goToGlobalSearch(document.querySelector('#headerSearch #headerSearchField').value);}" type="search" id="headerSearchField" aria-label="Search" aria-controls="headerSuggestions" aria-autocomplete="list" role="combobox" />
+<                                 <div class="suggestions" hidden>
+<                                     <ul aria-labelledby="headerSearchField" role="listbox" id="headerSuggestions">
+<                                     </ul>
+<                                 </div>
+<                             </div>
+<                             <button onclick="goToGlobalSearch(document.querySelector('#headerSearch #headerSearchField').value)" type="submit" class="btn">Search</button>
+<                             <button class="btn close-search" onclick="closeSearch()"><span class="visually-hidden">Close Search Bar</span><i class="fa-solid fa-circle-xmark"></i></button>
+<                         </div>
+<                     </div>
+<                 </div>
+<             </div>
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 215 ms

@@ -1,0 +1,33 @@
+# curl-style evidence for https://stctrprodsnsvc00455826e6.blob.core.windows.net/pt-final-posting-files/85-2556972_MEMoriaL-HEALTH-MEADOWS-HOSPITAL_standardcharges.json?si=dpx-pt-json-access-policy&spr=https&sv=2026-02-06&sr=c&sig=ks%2BgfAjyEHlZmeP2PYJ%2f9NpMuCoRStjTb2bhIy9Y6LM%3D
+# fetched 2026-09-07T01:32:41.419Z with the tracker's BROWSER_HEADERS (production client)
+# record: 110128 | MEMORIAL HEALTH MEADOWS HOSPITAL | GA | finding: mrf-url-unreachable
+
+* DNS stctrprodsnsvc00455826e6.blob.core.windows.net: 20.157.48.241
+
+> GET /pt-final-posting-files/85-2556972_MEMoriaL-HEALTH-MEADOWS-HOSPITAL_standardcharges.json  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://stctrprodsnsvc00455826e6.blob.core.windows.net/pt-final-posting-files/85-2556972_MEMoriaL-HEALTH-MEADOWS-HOSPITAL_standardcharges.json?si=dpx-pt-json-access-policy&spr=https&sv=2026-02-06&sr=c&sig=ks%2BgfAjyEHlZmeP2PYJ%2f9NpMuCoRStjTb2bhIy9Y6LM%3D
+< HTTP 404
+< access-control-allow-origin: *
+< access-control-expose-headers: x-ms-request-id,Server,x-ms-version,x-ms-error-code,Content-Length,Date,Transfer-Encoding
+< content-length: 215
+< content-type: application/xml
+< date: Mon, 07 Sep 2026 01:32:42 GMT
+< server: Windows-Azure-Blob/1.0 Microsoft-HTTPAPI/2.0
+< x-ms-error-code: BlobNotFound
+< x-ms-request-id: e073f199-901e-005e-2c68-3e3598000000
+< x-ms-version: 2026-02-06
+< --- body (215 bytes read) ---
+< ﻿<?xml version="1.0" encoding="utf-8"?><Error><Code>BlobNotFound</Code><Message>The specified blob does not exist.
+< RequestId:e073f199-901e-005e-2c68-3e3598000000
+< Time:2026-09-07T01:32:43.1664108Z</Message></Error>
+
+* total time: 42 ms

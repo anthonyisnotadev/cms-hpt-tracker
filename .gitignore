@@ -15,6 +15,7 @@ cms_data/redact-names.json
 # launch.json is local editor setup.
 .claude/launch.json
 .claude/settings.local.json
+.zcode/
 
 # Working files for the outreach draft queue and LLM recovery. These hold
 # unreviewed drafts and scraped hospital contact addresses; the reviewed
@@ -40,6 +41,18 @@ cms_data/hpt/pointer-corpus/
 cms_data/hpt/external-pointer-corpus/
 # Resumable direct-MRF header cache. Reviewable CSV evidence stays outside it.
 cms_data/hpt/direct-mrf/
+# Working copies regenerated from the public snapshot by import-corpus.js /
+# run.js compliance|gaps|dates during a refresh. data/hpt-audit/ holds the
+# publishable outputs; these are never the source of truth.
+cms_data/hpt/manifest.csv
+cms_data/hpt/manifest.json
+cms_data/hpt/compliance.csv
+cms_data/hpt/gaps.csv
+cms_data/hpt/gaps_*.csv
+cms_data/hpt/corpus_import.json
+# One-off refresh scripts and session logs (evidence summaries that matter are
+# banked under data/hpt-audit/rechecks/<date>/ instead).
+cms_data/hpt/refresh-*/
 
 # Credentials. scripts/hpt/run.js loads .env first, then .env.local on top.
 # Nothing here encrypts either one: there is no .gitattributes, no git-crypt
@@ -59,3 +72,8 @@ data/hpt-audit/manifest.json
 # Resumable website-discovery candidates, source caches, evidence, and protected
 # pointer snapshots. Only an explicitly promoted result becomes public data.
 data/hpt-audit/.domain-discovery/
+# Investigation retrieval objects retain raw pointer contacts and response headers.
+data/hpt-audit/rechecks/2026-09-09/investigation/retrieval-results.json
+data/hpt-audit/rechecks/2026-09-09/investigation/targeted-retrievals.json
+# Publisher replies may contain personal signatures and contact details.
+data/hpt-audit/rechecks/2026-09-09/investigation/publisher-responses.json

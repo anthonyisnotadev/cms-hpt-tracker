@@ -1,0 +1,62 @@
+# curl-style evidence for https://dekalbregional.com/
+# fetched 2026-09-07T01:32:33.798Z with the tracker's BROWSER_HEADERS (production client)
+# record: 010012 | DEKALB REGIONAL MEDICAL CENTER | AL | finding: not-assessed-not-named-in-file
+
+* DNS dekalbregional.com: 199.116.78.73
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://dekalbregional.com/
+< HTTP 301
+< access-control-allow-origin: *
+< cache-control: max-age=3600
+< connection: Keep-Alive
+< content-encoding: gzip
+< content-length: 20
+< content-security-policy: upgrade-insecure-requests
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:32:13 GMT
+< expires: Mon, 07 Sep 2026 02:32:14 GMT
+< keep-alive: timeout=60
+< location: https://dekalbregional.org/
+< permissions-policy: private-state-token-redemption=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com"), private-state-token-issuance=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com"), accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
+< pragma: no-cache
+< referrer-policy: same-origin
+< server: Apache
+< strict-transport-security: max-age=63072000; includeSubDomains
+< vary: Accept-Encoding
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-redirect-by: WordPress
+< x-xss-protection: 1; mode=block
+* following Location: https://dekalbregional.org/
+
+* error: fetch failed (cause: UND_ERR_CONNECT_TIMEOUT)
+
+* http:// fallback attempt after transport failure:
+* fallback redirect hop 1: http://dekalbregional.com/
+< HTTP 301
+< connection: Keep-Alive
+< content-encoding: gzip
+< content-length: 230
+< content-security-policy: upgrade-insecure-requests
+< content-type: text/html; charset=iso-8859-1
+< date: Mon, 07 Sep 2026 01:32:25 GMT
+< keep-alive: timeout=60
+< location: https://dekalbregional.com/
+< server: Apache
+< strict-transport-security: max-age=63072000; includeSubDomains
+< vary: Accept-Encoding
+* following Location: https://dekalbregional.com/
+
+* fallback error: fetch failed (cause: UND_ERR_CONNECT_TIMEOUT)
+
+* total time: 35640 ms

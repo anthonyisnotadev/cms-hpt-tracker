@@ -1,0 +1,48 @@
+# curl-style evidence for https://machine-readable-files.com/ashe-memorial-hospital/560603900_Ashe_Memorial-Hospital_standardcharges.csv
+# fetched 2026-09-07T01:34:55.983Z with the tracker's BROWSER_HEADERS (production client)
+# record: 341325 | ASHE MEMORIAL HOSPITAL | NC | finding: mrf-url-unreachable
+
+* DNS machine-readable-files.com: 74.208.236.179
+
+> GET /ashe-memorial-hospital/560603900_Ashe_Memorial-Hospital_standardcharges.csv  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://machine-readable-files.com/ashe-memorial-hospital/560603900_Ashe_Memorial-Hospital_standardcharges.csv
+< HTTP 404
+< content-encoding: gzip
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:34:57 GMT
+< server: Apache
+< x-ws-origin: available
+< x-ws-ratelimit-limit: 1000
+< x-ws-ratelimit-remaining: 999
+< --- body (626 bytes read) ---
+< <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+< "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+< <html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<  <head>
+<   <title>
+<    Error 404 - Not found
+<   </title>
+<   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<   <meta content="no-cache" http-equiv="cache-control">
+<  </head>
+<  <body style="font-family:arial;">
+<   <h1 style="color:#0a328c;font-size:1.0em;">
+<    Error 404 - Not found
+<   </h1>
+<   <p style="font-size:0.8em;">
+<    Your browser can't find the document corresponding to the URL you typed in.
+<   </p>
+<  </body>
+< </html>
+< 
+
+* total time: 9258 ms

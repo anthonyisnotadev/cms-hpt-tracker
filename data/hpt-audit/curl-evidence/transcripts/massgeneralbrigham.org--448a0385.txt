@@ -1,0 +1,52 @@
+# curl-style evidence for https://www.massgeneralbrigham.org/content/dam/mgb-global/en/price-transparency/042697981_McLean-Hospital_StandardCharges.zip
+# fetched 2026-09-07T01:33:58.799Z with the tracker's BROWSER_HEADERS (production client)
+# record: 224007 | MCLEAN HOSPITAL CORPORATION | MA | finding: mrf-url-unreachable
+
+* DNS www.massgeneralbrigham.org: 151.101.131.10, 151.101.195.10, 151.101.67.10, 151.101.3.10
+
+> GET /content/dam/mgb-global/en/price-transparency/042697981_McLean-Hospital_StandardCharges.zip  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://www.massgeneralbrigham.org/content/dam/mgb-global/en/price-transparency/042697981_McLean-Hospital_StandardCharges.zip
+< HTTP 404
+< accept-ranges: bytes
+< cache-control: max-age=7200, must-revalidate
+< content-encoding: br
+< content-length: 194
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:34:00 GMT
+< retry-after: 0
+< strict-transport-security: max-age=31557600
+< vary: Accept-Encoding
+< x-cache: MISS, HIT, MISS
+< x-error: [static: content] S3: Not Found
+< x-served-by: cache-iad-khef600044-IAD, cache-iad-khef600088-IAD, cache-iad-kcgs7200145-IAD
+< x-timer: S1788744841.533464,VS0,VS0,VE10
+< --- body (397 bytes read) ---
+< 
+< <?xml version="1.0" encoding="utf-8"?>
+< <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+<  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+< <html>
+<   <head>
+<     <title>404 </title>
+<   </head>
+<   <body>
+<     <h1>Error 404 </h1>
+<     <p></p>
+<     <h3>Error 54113</h3>
+<     <p>Details: cache-iad-khef600044-IAD 1788569405 2584863643</p>
+<     <hr>
+<     <p>Varnish cache server</p>
+<   </body>
+< </html>
+< 
+
+* total time: 238 ms

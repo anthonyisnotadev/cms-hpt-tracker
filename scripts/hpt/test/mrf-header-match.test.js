@@ -5,6 +5,31 @@ const assert = require('node:assert/strict');
 
 const { matchMrfHeader } = require('../lib/mrf-header-match');
 
+test('shared HCA branding cannot substitute one named facility for another', () => {
+  const result = matchMrfHeader({ refs: [{ location_name: 'HCA Florida Westside Hospital' }] }, {
+    rangeStatus: 200, mrfLicenseState: 'FL', mrfHospitalName: 'HCA Florida Westside Hospital',
+    mrfAddress: '401 NW 42nd Ave, Plantation FL 33317'
+  }, [{ ccn: '100167', name: 'HCA Florida Mercy Hospital', address: '401 NW 42ND AVE', city: 'Plantation', state: 'FL', zip: '33317' }]);
+  assert.equal(result.matches.length, 0);
+});
+
+test('a ZIP code or another street cannot stand in for a matching street address', () => {
+  for (const address of ['20 Other St, Town AL 12345', '12345 Other St, Town AL 99999']) {
+    const result = matchMrfHeader({ refs: [] }, { rangeStatus: 200, mrfLicenseState: 'AL',
+      mrfHospitalName: 'Example Hospital', mrfAddress: address },
+    [{ ccn: '010001', name: 'Example Hospital', address: '12345 Main St', city: 'Town', state: 'AL', zip: '12345' }]);
+    assert.equal(result.matches.length, 0);
+  }
+});
+
+test('exact pointer identity and file street address corroborate a legal-entity header', () => {
+  const result = matchMrfHeader({ refs: [{ location_name: 'Example Hospital' }] }, {
+    rangeStatus: 200, mrfLicenseState: 'AL', mrfHospitalName: 'County Health Authority',
+    mrfAddress: '159 North Third Street, Town AL 12345'
+  }, [{ ccn: '010001', name: 'Example Hospital', address: '159 N 3RD ST', city: 'Town', state: 'AL', zip: '12345' }]);
+  assert.equal(result.matches[0].hospital.ccn, '010001');
+});
+
 test('MRF headers fuzzy-match a unique hospital using license state and ZIP', () => {
   const task = {
     mrf_url: 'https://files.test/good.csv',

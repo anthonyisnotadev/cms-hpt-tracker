@@ -1,0 +1,167 @@
+# curl-style evidence for https://perimeterhealthcare.com/
+# fetched 2026-09-07T01:32:35.068Z with the tracker's BROWSER_HEADERS (production client)
+# record: 044021 | PERIMETER BEHAVIORAL HOSPITAL OF WEST MEMPHIS | AR | finding: not-assessed-not-named-in-file
+# record: 194113 | PERIMETER BEHAVIORAL HOSPITAL OF NEW ORLEANS | LA | finding: not-assessed-not-named-in-file
+# record: 444023 | PERIMETER BEHAVIORAL CENTER OF JACKSON | TN | finding: not-assessed-not-named-in-file
+
+* DNS perimeterhealthcare.com: 40.119.1.254
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://perimeterhealthcare.com/
+< HTTP 301
+< content-length: 162
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:32:36 GMT
+< location: https://www.perimeterhealthcare.com/
+< server: nginx
+< strict-transport-security: max-age=31536000; includeSubDomains
+* following Location: https://www.perimeterhealthcare.com/
+
+* final response: https://www.perimeterhealthcare.com/
+< HTTP 200
+< cache-control: public, max-age=415341
+< content-encoding: gzip
+< content-security-policy: default-src https:; object-src 'none'; script-src https: 'unsafe-inline' 'unsafe-eval'; style-src https: 'unsafe-inline'; connect-src https: wss: data: blob:; img-src 'self' https: data: blob:; font-src 'self' https: data: blob:; worker-src 'self' https: blob:; frame-ancestors 'self' *.sitewrench.com *.speakcreative.com
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:32:36 GMT
+< etag: W/"6a9b3022-190e0"
+< expires: Fri, 11 Sep 2026 20:54:57 GMT
+< last-modified: Fri, 04 Sep 2026 20:54:58 GMT
+< referrer-policy: strict-origin-when-cross-origin
+< strict-transport-security: max-age=31536000; includeSubDomains
+< x-content-type-options: nosniff
+< x-gateway-cache: true
+< x-gateway-name: gateway2
+< --- body (65536 bytes read, truncated) ---
+< <!-- TTL:1789160097 -->
+< <!DOCTYPE html>
+<     <html lang="en-us" class="no-js">
+<     
+<     <head>
+<     	<!-- HEAD -->
+<     	<meta itemprop="contentareastart" content="cphHeader" />
+<     	<meta itemprop="contentareaend" content="cphHeader" />
+<     	
+<     	<meta charset="UTF-8">
+<     	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<     	<meta name="viewport" content="width=device-width, initial-scale=1">
+<     	
+<     	
+<     	
+<     	<!-- Favicon -->
+<     	<link rel="apple-touch-icon" sizes="57x57" href="/sitefiles/2789/images/favicon/apple-touch-icon-57x57.png?ckcachebust=683224286" />
+<     	<link rel="apple-touch-icon" sizes="60x60" href="/sitefiles/2789/images/favicon/apple-touch-icon-60x60.png?ckcachebust=683224286" />
+<     	<link rel="apple-touch-icon" sizes="72x72" href="/sitefiles/2789/images/favicon/apple-touch-icon-72x72.png?ckcachebust=683224286" />
+<     	<link rel="apple-touch-icon" sizes="76x76" href="/sitefiles/2789/images/favicon/apple-touch-icon-76x76.png?ckcachebust=683224286" />
+<     	<link rel="apple-touch-icon" sizes="114x114" href="/sitefiles/2789/images/favicon/apple-touch-icon-114x114.png?ckcachebust=683224286" />
+<     	<link rel="apple-touch-icon" sizes="120x120" href="/sitefiles/2789/images/favicon/apple-touch-icon-120x120.png?ckcachebust=683224286" />
+<     	<link rel="apple-touch-icon" sizes="144x144" href="/sitefiles/2789/images/favicon/apple-touch-icon-144x144.png?ckcachebust=683224286" />
+<     	<link rel="apple-touch-icon" sizes="152x152" href="/sitefiles/2789/images/favicon/apple-touch-icon-152x152.png?ckcachebust=683224286" />
+<     	<link rel="apple-touch-icon" sizes="180x180" href="/sitefiles/2789/images/favicon/apple-touch-icon-180x180.png?ckcachebust=683224286" />
+<     	<link rel="icon" type="image/png" href="/sitefiles/2789/images/favicon/favicon-16x16.png?ckcachebust=683224286" sizes="16x16" />
+<     	<link rel="icon" type="image/png" href="/sitefiles/2789/images/favicon/favicon-32x32.png?ckcachebust=683224286" sizes="32x32" />
+<     	<link rel="icon" type="image/png" href="/sitefiles/2789/images/favicon/favicon-96x96.png?ckcachebust=683224286" sizes="96x96" />
+<     	<link rel="icon" type="image/png" href="/sitefiles/2789/images/favicon/android-chrome-192x192.png?ckcachebust=683224286" sizes="192x192" />
+<     	<meta name="msapplication-square70x70logo" content="/sitefiles/2789/images/favicon/smalltile.png" />
+<     	<meta name="msapplication-square150x150logo" content="/sitefiles/2789/images/favicon/mediumtile.png" />
+<     	<meta name="msapplication-wide310x150logo" content="/sitefiles/2789/images/favicon/widetile.png" />
+<     	<meta name="msapplication-square310x310logo" content="/sitefiles/2789/images/favicon/largetile.png" />
+<     	
+<     	
+<     	
+<     	
+<     	
+<     	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700;800;900&family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<     	<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<     	
+<     	
+<     	<!-- Browser Prompt for IE -->
+<     	<script defer src="https://getabetterbrowser.com/js/checker.js?ckcachebust=683224286"></script>
+<     	<link rel="stylesheet" href="https://getabetterbrowser.com/css/checker.css?ckcachebust=683224286" />
+<     	
+<     	<!-- Tiny Slider -->
+<     	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css" integrity="sha512-eMxdaSf5XW3ZW1wZCrWItO2jZ7A9FhuZfjVdztr7ZsKNOmt6TUMTQgfpNoVRyfPE5S9BC0A4suXzsGSrAOWcoQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<     	
+<     	<!-- FontAwesome -->
+<     	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<     	
+<     	<!-- Main Stylesheet -->
+<     	<link href="/sitefiles/2789/css/master.css?apr19mp&ckcachebust=68322429069" rel="stylesheet" type="text/css"></link>
+<     	
+<     	<!-- Analytics -->
+<     	<!-- Google tag (gtag.js) -->
+<     	<script async src="https://www.googletagmanager.com/gtag/js?id=G-9GKSXY26YC"></script>
+<     	<script>
+<     	  window.dataLayer = window.dataLayer || [];
+<     	  function gtag(){dataLayer.push(arguments);}
+<     	  gtag('js', new Date());
+<     	
+<     	  gtag('config', 'G-9GKSXY26YC');
+<     	</script>
+<         <meta name="sid" content="2789">
+<         <title>Perimeter Healthcare </title>
+<         <meta name="pid" content="218828">
+<         <meta name="swtmpl" content="home.liquid">
+<         <meta name="swdomain" content="http://www.perimeterhealthcare.com">
+<     
+<         <script type="text/javascript" src="https://prod.speakcdn.com/sitefiles/global/js/jquery/1.4.2/jquery.min.js"></script><script type="text/javascript">jQ142 = $.noConflict(true);</script><script type="text/javascript" src="https://prod.speakcdn.com/sitefiles/global/js/jquery/1.7.1/jquery.min.js"></script><script type="text/javascript"src="https://prod.speakcdn.com/sitefiles/global/js/jqueryui/1.8.19/jquery-ui.min.js"></script><script type="text/javascript">jQ171 = $.noConflict(true);jQuery = $ = jQ142;</script>
+<     </head>
+<     
+<     <body class="home frontpage">
+<     	
+<     	<meta itemprop="contentareastart" content="cphSiteBar" />
+<     	<meta itemprop="contentareaend" content="cphSiteBar" />
+<     
+<     	<!-- SIDECAR -->
+<     	
+<     		
+<     		<nav id="sidecar" class="slide-right sidecar">
+<     			<ul class="mainnav"  id="mainnav">
+<     		  <li id="mainnav__item--about" class="mainnav__item mainnav__item--first mainnav__item--has-children"><a  href="/about">About</a>
+<     		          <ul class="mainnav--submenu">
+<     		  <li id="mainnav__item--meet-our-leadership" class="mainnav__item mainnav__item--first"><a  href="/meet-our-leadership">Meet Our Team</a></li>
+<     		
+<     		
+<     		  <li id="mainnav__item--news" class="mainnav__item"><a  href="/news">News/Articles</a></li>
+<     		
+<     		
+<     		  <li id="mainnav__item--letter-from-ceo" class="mainnav__item"><a  href="/letter-from-ceo">Letter from CEO</a></li>
+<     		
+<     		
+<     		  <li id="mainnav__item--contact-us" class="mainnav__item mainnav__item--last"><a  href="/contact-us">Contact Us</a></li>
+<     		
+<     		</ul></li>
+<     		
+<     		
+<     		  <li id="mainnav__item--programs" class="mainnav__item mainnav__item--has-children"><a  href="/programs">Programs</a>
+<     		          <ul class="mainnav--submenu">
+<     		  <li id="mainnav__item--residential" class="mainnav__item mainnav__item--first"><a  href="/residential">Residential</a></li>
+<     		
+<     		
+<     		  <li id="mainnav__item--acute-child-and-adolescent-inpatient" class="mainnav__item"><a  href="/acute-child-and-adolescent-inpatient">Acute Child and Adolescent Inpatient</a></li>
+<     		
+<     		
+<     		  <li id="mainnav__item--adult-inpatient-treatment" class="mainnav__item"><a  href="/adult-inpatient-treatment">Adult Inpatient Treatment</a></li>
+<     		
+<     		
+<     		  <li id="mainnav__item--geriatric-psychiatric-inpatient-treatment" class="mainnav__item"><a  href="/geriatric-psychiatric-inpatient-treatment">Geriatric Psychiatric Inpatient Treatment</a></li>
+<     		
+<     		
+<     		  <li id="mainnav__item--neurodivergent-program" class="mainnav__item mainnav__item--last"><a  href="/neurodivergent-program">Neurodivergent Program </a></li>
+<     		
+<     		</ul></li>
+<     		
+<     		
+<     		  <li id="mainnav__item--applytoday" class="mainnav__item"><a  href="/applytoday">Careers</a></li>
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 521 ms

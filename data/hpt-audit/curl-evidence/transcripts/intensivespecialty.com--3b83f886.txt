@@ -1,0 +1,31 @@
+# curl-style evidence for https://intensivespecialty.com/.well-known/cms-hpt.txt
+# fetched 2026-09-07T01:33:16.611Z with the tracker's BROWSER_HEADERS (production client)
+# record: 192010 | INTENSIVE SPECIALTY HOSPITAL | LA | finding: no-cms-hpt-txt-published
+
+* DNS intensivespecialty.com: 35.208.8.80
+
+> GET /.well-known/cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://intensivespecialty.com/.well-known/cms-hpt.txt
+< HTTP 202
+< cache-control: no-store,no-cache,max-age=0, no-store,max-age=0
+< content-length: 194
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:33:18 GMT
+< expires: Thu, 01 Jan 1970 00:00:01 GMT
+< remote-addr: 185.156.46.116
+< server: nginx
+< sg-captcha: challenge
+< x-robots-tag: noindex
+< --- body (194 bytes read) ---
+< <html><head><link rel="icon" href="data:;"><meta http-equiv="refresh" content="0;/.well-known/sgcaptcha/?r=%2F.well-known%2Fcms-hpt.txt&y=ipc:185.156.46.116:1788744798.337"></meta></head></html>
+
+* total time: 65 ms

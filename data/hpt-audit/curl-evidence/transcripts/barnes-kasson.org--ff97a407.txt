@@ -1,0 +1,37 @@
+# curl-style evidence for https://barnes-kasson.org/cms-hpt.txt
+# fetched 2026-09-07T01:35:48.354Z with the tracker's BROWSER_HEADERS (production client)
+# record: 391309 | BARNES-KASSON COUNTY HOSPITAL | PA | finding: not-assessed-site-unreachable
+
+* DNS barnes-kasson.org: 216.37.130.222
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* error: fetch failed (cause: UND_ERR_CONNECT_TIMEOUT)
+
+* http:// fallback attempt after transport failure:
+* fallback final response: http://barnes-kasson.org/cms-hpt.txt
+< HTTP 200
+< accept-ranges: none
+< content-length: 305
+< content-type: text/plain
+< date: Mon, 07 Sep 2026 01:35:50 GMT
+< etag: "ad258438da3db1:0"
+< last-modified: Tue, 01 Apr 2025 13:51:51 GMT
+< server: Microsoft-IIS/10.0
+< x-powered-by: ASP.NET
+< --- body (305 bytes read) ---
+< location-name: Barnes-Kasson County Hospital
+< source-page-url: http://www.barnes-kasson.org/index.php/resources/insurance-and-payment
+< mrf-url: http://www.barnes-kasson.org/images/docs/240798681_barnes-kasson-county-hospital_standardcharges.csv
+< contact-name: hpt-obf:v1:Q4xqBAty5wuRGkFb.rJynZeQe0c31nUgikyjFkQ.852mAfbR3eaIaxFsww
+< contact-email: hpt-obf:v1:sVoOdzrFgX_YE0ut.ozpOTZgMTXoGubw569VgdA.oj_mHRIbM2dl6D63NeXElX-zHA
+
+* total time: 10424 ms

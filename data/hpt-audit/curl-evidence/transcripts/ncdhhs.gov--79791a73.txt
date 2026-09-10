@@ -1,0 +1,42 @@
+# curl-style evidence for https://ncdhhs.gov/.well-known/cms-hpt.txt
+# fetched 2026-09-07T01:34:59.344Z with the tracker's BROWSER_HEADERS (production client)
+# record: 344025 | BROUGHTON HOSPITAL | NC | finding: no-cms-hpt-txt-published
+# record: 344004 | CENTRAL REGIONAL HOSPITAL | NC | finding: no-cms-hpt-txt-published
+# record: 344026 | CHERRY HOSPITAL | NC | finding: no-cms-hpt-txt-published
+# record: 344023 | JULIAN F KEITH ALCOHOL & DRUG ABUSE TX | NC | finding: no-cms-hpt-txt-published
+# record: 344033 | WALTER B JONES CENTER LAKESIDE PSYCHIATRIC HOSPITA | NC | finding: no-cms-hpt-txt-published
+
+* DNS ncdhhs.gov: 52.204.9.77
+
+> GET /.well-known/cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://ncdhhs.gov/.well-known/cms-hpt.txt
+< HTTP 404
+< connection: Keep-Alive
+< content-length: 196
+< content-type: text/html; charset=iso-8859-1
+< date: Mon, 07 Sep 2026 01:35:01 GMT
+< keep-alive: timeout=5, max=98
+< server: Apache
+< strict-transport-security: max-age=63072000; includeSubDomains; preload
+< x-content-type-options: nosniff
+< x-frame-options: DENY
+< --- body (196 bytes read) ---
+< <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+< <html><head>
+< <title>404 Not Found</title>
+< </head><body>
+< <h1>Not Found</h1>
+< <p>The requested URL was not found on this server.</p>
+< </body></html>
+< 
+
+* total time: 121 ms

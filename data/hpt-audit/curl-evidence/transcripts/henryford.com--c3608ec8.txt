@@ -1,0 +1,163 @@
+# curl-style evidence for https://henryford.com/
+# fetched 2026-09-07T01:34:41.430Z with the tracker's BROWSER_HEADERS (production client)
+# record: 230146 | WYANDOTTE HOSPITAL AND MEDICAL CENTER | MI | finding: not-assessed-not-named-in-file
+
+* DNS henryford.com: 52.162.107.39
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://henryford.com/
+< HTTP 308
+< content-length: 0
+< date: Mon, 07 Sep 2026 01:34:42 GMT
+< location: https://www.henryford.com/
+< server: Kestrel
+* following Location: https://www.henryford.com/
+
+* final response: https://www.henryford.com/
+< HTTP 200
+< accept-ch: Sec-CH-UA-Full-Version-List,Sec-CH-UA-Platform-Version,Sec-CH-UA-Arch,Sec-CH-UA-Model,Sec-CH-UA-Bitness
+< accept-ranges: bytes
+< cache-control: no-cache, no-store
+< content-encoding: gzip
+< content-length: 23678
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:34:43 GMT
+< expires: -1
+< pragma: no-cache
+< vary: Accept-Encoding
+< x-azure-ref: 20260907T013442Z-17755b89dc7cmltshC1IADrd900000000g50000000002g8z
+< x-cache: CONFIG_NOCACHE
+< x-frame-options: SAMEORIGIN
+< --- body (65536 bytes read, truncated) ---
+< 
+< 
+< 
+< <!DOCTYPE html>
+< <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+< <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+< <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+< <!--[if gt IE 8]><!-->
+< <html class="no-js" lang="en">
+< <!--<![endif]-->
+< <head>
+< <link href="/-/media/feature/experience-accelerator/bootstrap-5/bootstrap-5/styles/optimized-min.css?t=20260831T224735Z" rel="stylesheet"><link href="/-/media/base-themes/core-libraries/styles/optimized-min.css?t=20260831T224741Z" rel="stylesheet"><link href="/-/media/base-themes/main-theme/styles/optimized-min.css?t=20260831T224746Z" rel="stylesheet"><link href="/-/media/base-themes/jcf/styles/optimized-min.css?t=20260831T224804Z" rel="stylesheet"><link href="/-/media/themes/hfhs/henryford/henryfordtheme/styles/pre-optimized-min.css?t=20260901T112204Z" rel="stylesheet">
+< 
+<     
+<     
+< 
+< 
+< 
+<     <title>Henry Ford Health | Henry Ford Health - Detroit, MI</title>
+< 
+< 
+< <meta name="robots" content="INDEX, FOLLOW" />
+< 
+< <link rel="canonical" href="https://www.henryford.com/" />
+< 
+< 
+< 
+< 
+< 
+< 
+<     <link href="/-/media/project/hfhs/henryford/defaults/favicon/favicon.ico" rel="shortcut icon" />
+< 
+< 
+< 
+< 
+< <meta property="og:image"  content="https://www.henryford.com/-/media/oggraphic.jpg"><meta property="og:title"  content="Home"><meta property="og:url"  content="https://www.henryford.com/">
+< 
+< 
+< 
+< <meta  name="description" content="Henry Ford Health is a leading health care and medical services provider in the Southwest Detroit region. ">
+< 
+< 
+< 
+< <meta property="twitter:title"  content="Henry Ford Health"><meta property="twitter:card"  content="summary_large_image">
+< 
+<     <meta name="viewport" content="width=device-width, initial-scale=1" />
+< 
+< 
+< <!-- Google Tag Manager -->
+< <script>if ((new URLSearchParams(window.location.search))?.get('sc_mode') === 'edit') {
+< // Don't load Google Analytics
+< console.log("Experience editor detected, Google analytics disabled.");            
+< }else {(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+< new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+< j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+< 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+< })(window,document,'script','dataLayer','GTM-N9HBCDH');}</script>
+< <!-- End Google Tag Manager -->
+< 
+< <script type="text/javascript">
+< 	function getCookieValue(cookieName) {
+< 	  var cookieName = cookieName + "=";
+< 	  var decodedCookie = decodeURIComponent(document.cookie);
+< 	  var cookieValue = decodedCookie.split("; ");
+< 	  var result = '';
+< 	  cookieValue.forEach((item) => { 
+< 		if (item.indexOf(cookieName) === 0) {
+< 		  result = item.substring(cookieName.length);
+< 		}
+< 	  });
+< 	  return result;
+< 	}
+< 	
+< 	if(document.readyState == 'loading'){
+< 		if (location.search != '' && getCookieValue("utm_source") == '') {
+< 			var params = new URLSearchParams(location.search);			
+< 			document.cookie = "utm_id=" + (params.get("utm_id") ?? "") + ";expires='';path=/";
+< 			document.cookie = "utm_source=" + (params.get("utm_source") ?? "") + ";expires='';path=/";
+< 			document.cookie = "utm_medium=" + (params.get("utm_medium") ?? "") + ";expires='';path=/";
+< 			document.cookie = "utm_campaign=" + (params.get("utm_campaign") ?? "") + ";expires='';path=/";
+< 			document.cookie = "utm_term=" + (params.get("utm_term") ?? "") + ";expires='';path=/";
+< 			document.cookie = "utm_content=" + (params.get("utm_content") ?? "") + ";expires='';path=/";
+< 		}
+< 	}
+< </script>
+< 
+< <!--UnlockHealthNow -->
+< <script src=https://resources.unlockhealthnow.com/embed-script/embed.js></script>
+< <!--UnlockHealthNow  -->
+< 
+< <script src="https://freshpaint-hipaa-maps.com/maplibre-gl@3.x/dist/maplibre-gl.js"></script>
+< <link href="https://freshpaint-hipaa-maps.com/maplibre-gl@3.x/dist/maplibre-gl.css" rel="stylesheet" />
+< </head>
+< <body class="default-device bodyclass">
+<     
+< 
+< 
+< 
+< <!-- Google Tag Manager (noscript) -->
+< <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N9HBCDH"
+< height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+< <!-- End Google Tag Manager (noscript) -->
+<     
+< <!-- #wrapper -->
+< <div id="wrapper">
+<     <!-- #header -->
+<     <header>
+<         <div id="header" class="container-fluid">
+<             <div class="row">
+< 
+< 
+< 
+< 
+< <section class="component section-container col-12" >
+<     <div class="component-content container">
+< <div class="row"></div>    </div>
+< </section>
+< 
+< 
+< <section class="component section-container col-12 container-dark-blue-background" >
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 682 ms

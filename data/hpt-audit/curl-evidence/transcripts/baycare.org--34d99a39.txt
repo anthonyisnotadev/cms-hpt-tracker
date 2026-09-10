@@ -1,0 +1,159 @@
+# curl-style evidence for https://baycare.org/-/media/project/baycare/consumer-portal/billing-and-insurance/pricing-files-compressed/592043026_StAnthonysHospital_standardcharges.zip
+# fetched 2026-09-07T01:32:39.932Z with the tracker's BROWSER_HEADERS (production client)
+# record: 100067 | ST ANTHONYS HOSPITAL | FL | finding: mrf-url-unreachable
+
+* DNS baycare.org: 159.60.138.30
+
+> GET /-/media/project/baycare/consumer-portal/billing-and-insurance/pricing-files-compressed/592043026_StAnthonysHospital_standardcharges.zip  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://baycare.org/-/media/project/baycare/consumer-portal/billing-and-insurance/pricing-files-compressed/592043026_StAnthonysHospital_standardcharges.zip
+< HTTP 302
+< accept-ch: Sec-CH-UA-Full-Version-List,Sec-CH-UA-Platform-Version,Sec-CH-UA-Arch,Sec-CH-UA-Model,Sec-CH-UA-Bitness
+< cache-control: private
+< content-length: 148
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:32:41 GMT
+< location: /sitecore/service/notfound.aspx
+< server: volt-adc
+< x-envoy-upstream-service-time: 117
+< x-volterra-location: dc12-ash
+* following Location: /sitecore/service/notfound.aspx
+
+* final response: https://baycare.org/sitecore/service/notfound.aspx
+< HTTP 404
+< accept-ch: Sec-CH-UA-Full-Version-List,Sec-CH-UA-Platform-Version,Sec-CH-UA-Arch,Sec-CH-UA-Model,Sec-CH-UA-Bitness
+< cache-control: no-cache, no-store
+< content-length: 3372
+< content-security-policy: default-src 'self' 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: https://s.gravatar.com https://*.wp.com/cdn.auth0.com/avatars; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' 'unsafe-inline' https://fonts.gstatic.com; upgrade-insecure-requests;
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:32:41 GMT
+< expires: -1
+< pragma: no-cache
+< server: volt-adc
+< x-content-type-options: nosniff
+< x-envoy-upstream-service-time: 40
+< x-frame-options: SAMEORIGIN
+< x-volterra-location: dc12-ash
+< --- body (3372 bytes read) ---
+< 
+< <!DOCTYPE html>
+< <html>
+< <head>
+<   <title>Document Not Found</title>
+<   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<   <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,400italic,600italic,700italic,300,600,700,800" />
+<   <link href="/sitecore/service/assets/styles.css" rel="stylesheet" />
+<   <style>
+<     .sc-text-label {
+<       white-space: nowrap;
+<       width: 1%;
+<     }
+<   </style>
+< </head>
+< 
+< <body class="sc">
+<   <div class="sc-task">
+<     <header class="sc-globalHeader">
+<       <div class="row sc-globalHeader-content">
+<         <div class="col-md-3">
+<           <div class="sc-globalHeader-startButton">
+<             <a class="sc-global-logo medium" title="Go to the start page" href="/"></a>
+<           </div>
+<         </div>
+<       </div>
+<     </header>
+< 
+<     <header class="sc-applicationHeader">
+<       <div class="sc-applicationHeader-row1">
+<         <div class="sc-applicationHeader-content">
+<           <div class="sc-applicationHeader-title">
+<             The requested document was not found
+<           </div>
+<         </div>
+<       </div>
+<     </header>
+< 
+<     <section class="sc-dialogContent-toolbar">
+<       <div class="container">
+<         <div class="row sc-dialogContent-toolbar-back">
+<           <button class="btn sc-backbutton" type="button" onclick="javascript:history.go(-1);"><span class="sc-backbutton-text">Back</span></button>
+<         </div>
+<       </div>
+<     </section>
+< 
+<     <section class="sc-applicationContent">
+<       <div class="col-md-12 sc-applicationContent-main">
+<         <h3>Most likely causes:
+<         </h3>
+< 
+<         <ul>
+<           
+<           <li>The resource you are looking for (or one of its dependencies) has been removed, had its name changed, or is temporarily unavailable.
+<               Please review the following URL and make sure that it is spelled correctly.</li>
+<         </ul>
+< 
+<         <br />
+< 
+<         <h4>What you can try:
+<         </h4>
+< 
+<         <ul>
+<           <li>
+<             <a href="javascript:history.go(-1);">Go back to the previous page
+<             </a>
+<           </li>
+<           <li>
+<             <a href="/">Go to the start page
+<             </a>
+<           </li>
+<         </ul>
+< 
+<         <br />
+< 
+<         <h4>Additional Information:
+<         </h4>
+< 
+<         <table class="table">
+<           <tr>
+<             <td class="sc-text sc-text-label">Requested URL:</td>
+<             <td class="sc-text sc-text-value">
+<               [unknown]
+<             </td>
+<           </tr>
+<           <tr>
+<             <td class="sc-text sc-text-label">User Name:</td>
+<             <td class="sc-text sc-text-value">
+<               
+<             </td>
+<           </tr>
+<           <tr>
+<             <td class="sc-text sc-text-label">Site Name:</td>
+<             <td class="sc-text sc-text-value">
+<               
+<             </td>
+<           </tr>
+<         </table>
+<         <p>
+<           If the page you are trying to display exists, please check that an appropriate prefix has been added to the IgnoreUrlPrefixes setting in the web.config.
+<         </p>
+<       </div>
+<     </section>
+<   </div>
+<   
+< <meta name="VIcurrentDateTime" content="639243415616610753" />
+< <meta name="VirtualFolder" content="/" />
+< <script type="text/javascript" src="/layouts/system/VisitorIdentification.js"></script>
+<  
+<  </body>
+< </html>
+< 
+
+* total time: 267 ms

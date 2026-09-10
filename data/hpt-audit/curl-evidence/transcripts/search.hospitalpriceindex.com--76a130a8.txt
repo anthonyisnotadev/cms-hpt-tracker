@@ -1,0 +1,55 @@
+# curl-style evidence for https://search.hospitalpriceindex.com/.well-known/cms-hpt.txt
+# fetched 2026-09-07T01:32:37.389Z with the tracker's BROWSER_HEADERS (production client)
+# record: 061312 | ESTES PARK MEDICAL CENTER | CO | finding: no-cms-hpt-txt-published
+# record: 281338 | HOWARD COUNTY MEDICAL CENTER | NE | finding: no-cms-hpt-txt-published
+# record: 330157 | SAMARITAN MEDICAL CENTER | NY | finding: no-cms-hpt-txt-published
+
+* DNS search.hospitalpriceindex.com: 216.211.134.50
+
+> GET /.well-known/cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://search.hospitalpriceindex.com/.well-known/cms-hpt.txt
+< HTTP 200
+< accept-ranges: bytes
+< content-encoding: gzip
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:32:39 GMT
+< etag: "6a99a465-847"
+< last-modified: Thu, 03 Sep 2026 16:46:29 GMT
+< strict-transport-security: max-age=31536000; includeSubDomains; preload
+< vary: Accept-Encoding
+< --- body (2119 bytes read) ---
+< <!doctype html>
+< <html lang="en">
+< 
+< <head>
+<   <meta charset="utf-8">
+<   <title>Hospital Price Index</title>
+<   <base href="/">
+< 
+<   <meta name="viewport" content="width=device-width, initial-scale=1">
+<   <link rel="icon" type="image/x-icon" href="favicon.ico">
+<   <style type="text/css">@font-face{font-family:'Material Icons';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/materialicons/v145/flUhRq6tzZclQEJ-Vdg-IuiaDsNa.woff) format('woff');}.material-icons{font-family:'Material Icons';font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;font-feature-settings:'liga';}@font-face{font-family:'Material Icons';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/materialicons/v145/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');}.material-icons{font-family:'Material Icons';font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-feature-settings:'liga';-webkit-font-smoothing:antialiased;}</style>
+< <link rel="stylesheet" href="styles.a3cca9f25b640930b1e3.css"></head>
+< 
+< <body>
+<     <!-- Google Tag Manager (noscript) -->
+<     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TTR8XTK"
+<         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<     <!-- End Google Tag Manager (noscript) -->
+< 
+<   <app-root></app-root>
+< <script src="runtime-es2015.a4dadbc03350107420a4.js" type="module"></script><script src="runtime-es5.a4dadbc03350107420a4.js" nomodule="" defer=""></script><script src="polyfills-es5.f89f934530b6244e526c.js" nomodule="" defer=""></script><script src="polyfills-es2015.e366381c7a2d1b209511.js" type="module"></script><script src="scripts.9fc8f19f3c30a148c368.js" defer=""></script><script src="main-es2015.bbcd941b8e31fbec1e00.js" type="module"></script><script src="main-es5.bbcd941b8e31fbec1e00.js" nomodule="" defer=""></script></body>
+< 
+< </html>
+< 
+
+* total time: 92 ms

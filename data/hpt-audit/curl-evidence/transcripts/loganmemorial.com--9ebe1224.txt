@@ -1,0 +1,43 @@
+# curl-style evidence for https://loganmemorial.com/
+# fetched 2026-09-07T01:33:16.088Z with the tracker's BROWSER_HEADERS (production client)
+# record: 180066 | The Medical Center at Russellville | KY | finding: pointer-blocked-to-automation
+
+* DNS loganmemorial.com: 141.193.213.11, 141.193.213.10
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://loganmemorial.com/
+< HTTP 403
+< alt-svc: h3=":443"; ma=86400
+< cf-cache-status: BYPASS
+< cf-ray: a371f6e9bdd5d6b7-IAD
+< content-encoding: br
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:33:17 GMT
+< server: cloudflare
+< vary: Accept-Encoding
+< --- body (1486 bytes read) ---
+< <html>
+< <head><title>403 Forbidden</title></head>
+< <body>
+< <center><h1>403 Forbidden</h1></center>
+< <hr><center>nginx</center>
+< <script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a371f6e9bdd5d6b7',t:'MTc4ODc0NDc5Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+< </html>
+< <!-- a padding to disable MSIE and Chrome friendly error page -->
+< <!-- a padding to disable MSIE and Chrome friendly error page -->
+< <!-- a padding to disable MSIE and Chrome friendly error page -->
+< <!-- a padding to disable MSIE and Chrome friendly error page -->
+< <!-- a padding to disable MSIE and Chrome friendly error page -->
+< <!-- a padding to disable MSIE and Chrome friendly error page -->
+< 
+
+* total time: 150 ms

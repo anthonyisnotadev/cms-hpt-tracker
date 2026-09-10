@@ -1,0 +1,127 @@
+# curl-style evidence for https://health-improve.org/
+# fetched 2026-09-07T01:34:43.656Z with the tracker's BROWSER_HEADERS (production client)
+# record: 260175 | GOLDEN VALLEY MEMORIAL HOSPITAL | MO | finding: no-cms-hpt-txt-published
+
+* DNS health-improve.org: 104.21.78.219, 172.67.137.166
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://health-improve.org/
+< HTTP 301
+< alt-svc: h3=":443"; ma=86400
+< cf-cache-status: DYNAMIC
+< cf-ray: a371f900be85eb48-IAD
+< content-type: text/html; charset=iso-8859-1
+< date: Mon, 07 Sep 2026 01:34:43 GMT
+< location: https://www.health-improve.org/
+< nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+< report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=6RcAYX3zSBsGhCE2OUrstMdTAvN1JQNrVs23UOPIEgP42AABnuyKeribO7GQLqQj7jhTOvY4HrC%2BIZh%2BaOF7CxsJFrqDqDJP14%2Fve0Qp%2FeVTQHtVT5OnzYzNv341li5T7x5SpZU%3D"}]}
+< server: cloudflare
+< server-timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=11,cfOrigin;dur=489
+* following Location: https://www.health-improve.org/
+
+* final response: https://www.health-improve.org/
+< HTTP 200
+< alt-svc: h3=":443"; ma=86400
+< cf-cache-status: DYNAMIC
+< cf-ray: a371f9049aaed6db-IAD
+< content-encoding: br
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:34:45 GMT
+< nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+< report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=ieODMIYN9NFk6zrNBbY8g%2BHiwppm6WlV79IFhzx3%2F4HNpx37AruyEFRZPrOfV97DO%2B29HVvPNg7n6VoDGs90fU98Os1VO9kmmfLoupipGJHd7oVpZ%2F0qsbPKx1ZqF8IHhUnK1U6vATER"}]}
+< server: cloudflare
+< server-timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=19,cfOrigin;dur=1199
+< x-powered-by: PHP/7.2.24
+< --- body (24420 bytes read) ---
+< <!DOCTYPE html>
+< <html lang="en">
+< <head>
+< <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+< <meta name="viewport" content="width=device-width, initial-scale=1">
+< <title>Your Health Improve | Latest News Health</title>
+< <meta name="description" content="Health is the most important thing in life, health is more important than diamonds, gold, silver. Latest discoveries about health, diseases and treatments. " />
+< <meta name="keywords" content="health care, womens health, mental health, fitness, diet, nutrition, medicine, diseases, children health"><link rel="shortcut icon" href="https://www.health-improve.org/favicon.ico" />
+< <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+< <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.3.1/css/flag-icon.min.css" rel="stylesheet"/>
+< <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+< <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+< <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6221682600367443"
+<      crossorigin="anonymous"></script>
+< </head>
+< <body>
+< <nav class="navbar navbar-inverse navbar-fixed-top">
+<       <div class="container">
+<         <div class="navbar-header">
+<           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+<             <span class="sr-only"></span>
+<             <span class="icon-bar"></span>
+<             <span class="icon-bar"></span>
+<             <span class="icon-bar"></span>
+<           </button>
+<           <a class="navbar-brand" href="https://www.health-improve.org">Health Improve</a>
+<         </div>
+<         <div id="navbar" class="navbar-collapse collapse">
+<           <ul class="nav navbar-nav">
+< 		    <li><a href="https://www.health-improve.org/health-care/">Health Care</a></li>
+<             <li><a href="https://www.health-improve.org/womens-health/">Womens Health</a></li>
+<             <li><a href="https://www.health-improve.org/mental-health/">Mental Health</a></li>
+<            
+< 			<li class="dropdown">
+< 			 <a class="dropdown-toggle" data-toggle="dropdown" href="#">More
+< 			 <span class="caret"></span></a>
+< 				 <ul class="dropdown-menu">
+< 				    <li><a href="https://www.health-improve.org/food/">Food</a></li>
+<             		<li><a href="https://www.health-improve.org/diseases-&-conditions/">Diseases & Conditions</a></li>
+< 					<li><a href="https://www.health-improve.org/symptoms/">Symptoms</a></li>
+< 		            <li><a href="https://www.health-improve.org/drugs-&-supplements/">Drugs & Supplements</a></li>
+< 		            <li><a href="https://www.health-improve.org/healthy-lifestyle/">Healthy Lifestyle</a></li>
+< 		            <li><a href="https://www.health-improve.org/vitamin/">Vitamin</a></li>
+< 					<li><a href="https://www.health-improve.org/cancer/">Cancer</a></li>
+< 					<li><a href="https://www.health-improve.org/high-blood-pressure/">High Blood Pressure</a></li>
+< 					<li><a href="https://www.health-improve.org/autism/">Autism</a></li>
+< 					<li><a href="https://www.health-improve.org/menopause/">Menopause</a></li>
+< 					<li><a href="https://www.health-improve.org/copd/">COPD</a></li>	
+< 					<li><a href="https://www.health-improve.org/thyroid-disease/">Thyroid Disease</a></li>
+<                     <li><a href="https://www.health-improve.org/diabetes/">Diabetes</a></li>	
+<                     <li><a href="https://www.health-improve.org/liver-failure/">Liver Failure</a></li>		
+< 				 </ul>
+< 			</li>
+<           </ul>
+< 		  <form class="navbar-form" role="search" method="post">
+< 			<div class="input-group">
+< 			<input type="text" class="form-control" placeholder="Please put keyword here" name="keyword" value="" size="30">
+< 			<div class="input-group-btn">
+< 			<button class="btn btn-default" type="submit" name="submit"><i class="glyphicon glyphicon-search"></i> Search</button>
+< 			</div>
+< 			</div>
+< 		  </form>	
+< 		   		  
+<         </div>
+<       </div>
+<     </nav>
+< <div class="container" role="main" style="margin-top:60px">
+< <h1 class="text-primary">Top Categories</h1><ol class="breadcrumb"><li><a href="https://www.health-improve.org">Home</a></li></ol><div class="row"><div>
+< <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+< <!-- auto -->
+< <ins class="adsbygoogle"
+<      style="display:block"
+<      data-ad-client="ca-pub-6221682600367443"
+<      data-ad-slot="7910676016"
+<      data-ad-format="auto"
+<      data-full-width-responsive="true"></ins>
+< <script>
+<      (adsbygoogle = window.adsbygoogle || []).push({});
+< </script>
+< </div><div class="col-md-2 col-xs-4"><p> &#8250; <a href = "https://www.health-improve.org/doctors/"  title = "Doctors Health">Doctors</a></p></div><div class="col-md-2 col-xs-4"><p> &#8250; <a href = "https://www.health-improve.org/hospital/"  title = "Hospital Health">Hospital</a></p></div><div class="col-md-2 col-xs-4"><p> &#8250; <a href = "https://www.health-improve.org/insurance/"  title = "Insurance Health">Insurance</a></p></div><div class="col-md-2 col-xs-4"><p> &#8250; <a href = "https://www.health-improve.org/diseases/"  title = "Diseases Health">Diseases</a></p></div><div class="col-md-2 col-xs-4"><p> &#8250; <a href = "https://www.health-improve.org/drugs-&-supplements/"  title = "Drugs & Supplements Health">Drugs & Supplements</a></p></div><div class="col-md-2 col-xs-4"><p> &#8250; <a href = "https://www.health-improve.org/tests-&-procedures/"  title = "Tests & Procedures Health">Tests & Procedures</a></p></div><div class="col-md-2 col-xs-4"><p> &#8250; <a href = "https://www.health-improve.org/healthy-lifestyle/"  title = "Healthy Lifestyle Health">Healthy Lifestyle</a></p></div><div class="col-md-2 col-xs-4"><p> &#8250; <a href = "https://www.health-improve.org/acupuncture/"  title = "Acupuncture Health">Acupuncture</a></p></div><div class="col-md-2 col-xs-4"><p> &#8250; <a href = "https://www.health-improve.org/angioplasty/"  title = "Angioplasty Health">Angioplasty</a></p></div><div class="col-md-2 col-xs-4"><p> &#8250; <a href = "https://www.health-improve.org/appendectomy/"  title = "Appendectomy Health">Appendectomy</a></p></div><div class="col-md-2 col-xs-4"><p> &#8250; <a href = "https://www.health-improve.org/arthrocentesis/"  title = "Arthrocentesis Health">Arthrocentesis</a></p></div><div class="col-md-2 col-xs-4"><p> &#8250; <a href = "https://www.health-improve.org/botox-injections/"  title = "Botox Injections Health">Botox Injections</a></p></div><div class="col-md-2 col-xs-4"><p> &#8250; <a href = "https://www.health-improve.org/breast-biopsy/"  title = "Breast Biopsy Health">Breast Biopsy</a></p></div><div class="col-md-2 col-xs-4"><p> &#8250; <a href = "https://www.health-improve.org/breast-reduction/"  title = "Breast Reduction Health">Breast Reduction</a></p></div><div class="col-md-2 col-xs-4"><p> &#8250; <a href = "https://www.health-improve.org/cardiac-catheterization/"  title = "Cardiac Catheterization Health">Cardiac Catheterization</a></p></div><div class="col-md-2 col-xs-4"><p> &#8250; <a href = "https://www.health-improve.org/cardioversion/"  title = "Cardioversion Health">Cardioversion</a></p></div><div class="col-md-2 col-xs-4"><p> &#8250; <a href = "https://www.health-improve.org/carotid-artery-surgery/"  title = "Carotid Artery Surgery Health">Carotid Artery Surgery</a></p></div><div class="col-md-2 col-xs-4"><p> &#8250; <a href = "https://www.health-improve.org/carpal-tunnel-release/"  title = "Carpal Tunnel Release Health">Carpal Tunnel Release</a></p></div><div class="col-md-2 col-xs-4"><p> &#8250; <a href = "https://www.health-improve.org/cataract-surgery/"  title = "Cataract Surgery Health">Cataract Surgery</a></p></div><div class="col-md-2 col-xs-4"><p> &#8250; <a href = "https://www.health-improve.org/cesarean-section/"  title = "Cesarean Section Health">Cesarean Section</a></p></div><div class="col-md-2 col-xs-4"><p> &#8250; <a href = "https://www.health-improve.org/chemotherapy/"  title = "Chemotherapy Health">Chemotherapy</a></p></div><div cla
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 2205 ms

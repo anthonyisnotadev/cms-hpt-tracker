@@ -1,0 +1,158 @@
+# curl-style evidence for https://chal.org/
+# fetched 2026-09-07T01:31:51.145Z with the tracker's BROWSER_HEADERS (production client)
+# record: 010034 | COMMUNITY HOSPITAL INC | AL | finding: no-cms-hpt-txt-published
+
+* DNS chal.org: 50.63.7.252
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* error: fetch failed (cause: UND_ERR_CONNECT_TIMEOUT)
+
+* http:// fallback attempt after transport failure:
+* fallback final response: http://chal.org/
+< HTTP 200
+< connection: Upgrade, Keep-Alive
+< content-encoding: gzip
+< content-length: 3720
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:31:52 GMT
+< expires: Mon, 26 Jul 1997 05:00:00 GMT
+< keep-alive: timeout=5
+< last-modified: Mon, 07 Sep 2026 01:31:52 GMT
+< pragma: no-cache
+< server: Apache
+< upgrade: h2,h2c
+< vary: Accept-Encoding
+< x-powered-by: PHP/5.6.40
+< --- body (14777 bytes read) ---
+< <!DOCTYPE html>
+< 
+< <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+< <head>
+< <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+< <meta name="viewport" content="initial-scale=1.0">
+< 
+< <meta name="description" content="Community Hospital, providing the residents of Tallassee and surrounding areas with cost-effective, quality care for over 90 years." />
+< 
+< <title>Community Hospital - Excellence in Community Healthcare</title>
+< 
+< <!-- Global site tag (gtag.js) - Google Analytics -->
+< <script async src="https://www.googletagmanager.com/gtag/js?id=UA-37561243-19"></script>
+< <script>
+<   window.dataLayer = window.dataLayer || [];
+<   function gtag(){dataLayer.push(arguments);}
+<   gtag('js', new Date());
+< 
+<   gtag('config', 'UA-37561243-19');
+< </script>
+< 
+< 
+< <!-- Hotjar Tracking Code for www.arcad.io -->
+< <script>
+<     (function(h,o,t,j,a,r){h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+<         h._hjSettings={hjid:538,hjsv:6};
+<         a=o.getElementsByTagName('head')[0];
+<         r=o.createElement('script');r.async=1;
+<         r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+<         a.appendChild(r);
+<     })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+< </script>
+< 
+< <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+< <!--[if lt IE 9]>
+< <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+< <![endif]-->
+< 
+< <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+< <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.js"></script>
+< 
+< <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+< 
+< <!-- Le styles -->
+< <link href="/scripts/bootstrap" rel='stylesheet' type='text/css'>
+< <link href="/scripts/screen/" rel='stylesheet' type='text/css'>
+< <link href="/scripts/additional_styles/" rel='stylesheet' type='text/css'>
+< <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+< 
+< </head>
+< 
+< <body>
+< <div id="upper">
+< <div class="container">
+< <p align="right"><a href="http://www.chal.org/about/resources">Patient Resources & Price Transparency</a> | <a href="http://www.chal.org/about/financial-assistance-program/">Financial Assistance Program</a> | <a href="http://www.chal.org/about/health-needs-assessment/">Community Health Needs Assessment</a> | <a href="http://www.chal.org/about/privacy-policy/">Privacy Policy & Patient Rights</a> | <a href="http://www.chal.org/employee_login/">Employee Login</a> | <a href="http://www.chal.org/about/volunteer/">Volunteer</a></p>
+< </div><!-- /container -->
+< </div><!-- upper -->
+< 
+< <div class="container" style="margin-bottom: 10px;">
+< <div class="row">
+< <div class="span5 brandleft"><img style="vertical-align: text-bottom; padding-right: 10px;" src="/assets/brand.png" />
+< </div>
+< <div class="span4 brandmiddle" align="middle">
+< <p>Excellence in Community Healthcare.</p>
+< </div>
+< 
+< <div class="span3 brandright" align="right">
+< 
+< <p>hpt-obf:v1:WitRI1h0MqjoRhX_.e5w6tm7eXhlXNZzXkDDSmA.7H5u5b0eTlfuG4wXtrE&nbsp;&nbsp;&nbsp;<a href="https://www.facebook.com/Community-Healthcare-Resources-of-Community-Hospital-223263594492993/"><i class="fa fa-facebook-official fa-lg"></i></a></p>
+< <p>805 Friendship Road - Tallassee, Alabama 36078</p>
+< 
+< </div>
+< </div><!-- /row -->
+< </div><!-- /container -->
+< 
+< <div class="container navbarcontainer">
+< <img src="/assets/accent-navbar-fold-left.png" class="navbarfoldleft" />
+< <img src="/assets/accent-navbar-fold-right.png" class="navbarfoldright" />
+< 
+< <div class="navbar" style="margin-bottom: 0px;">
+<               <div class="navbar-inner">
+<                 <ul class="nav">
+<                   <li><a href="http://www.chal.org/">Home</a></li>
+< 
+< <li class="dropdown">
+< <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us <b class="caret" style="border-top: 4px solid #FFFFFF;"></b></a>
+<                         <ul class="dropdown-menu">
+<                           <li><a href="http://www.chal.org/about/CEO-message">Message from Our CEO</a></li>
+<                           <li><a href="http://www.chal.org/about/history">Our History</a></li>
+<                           <li><a href="http://www.chal.org/about/mission">Our Mission</a></li>
+<                           <li><a href="http://www.chal.org/about/community">Our Community</a></li>
+<                           <li><a href="http://www.chal.org/about/telephone-directory">Telephone Directory</a></li>
+<                           <li><a href="http://www.chal.org/about/contact">Visitor Information</a></li>
+<                           <li><a href="http://www.chal.org/about/volunteer">Volunteer Program</a></li>
+<                           <li><a href="http://www.chal.org/about/foundation">Community Hospital Foundation</a></li>
+<                         </ul>
+< </li>
+< 
+< <li class="dropdown">
+<                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Clinical Services <b class="caret" style="border-top: 4px solid #FFFFFF;"></b></a>
+<                         <ul class="dropdown-menu">
+<                           <li><a href="http://www.chal.org/clinical/cardiopulmonary-respiratory">Cardiopulmonary</a></li>
+<                           <li><a href="http://www.chal.org/clinical/home-health">Community Home Care</a></li>
+<                           <li><a href="http://www.chal.org/clinical/hospice">Community Hospice Care</a></li>
+<                     	 <li><a href="http://www.chal.org/clinical/skilled-care">Community Skilled Care & Rehab</a></li>
+<                           <li><a href="http://www.chal.org/clinical/emergency-room">Emergency Room</a></li>
+<                           <li><a href="http://www.chal.org/clinical/gi-laboratory">GI Laboratory</a></li>
+<                           <li><a href="http://www.chal.org/clinical/icu">Intensive Care Unit</a></li>
+<                           <li><a href="http://www.chal.org/clinical/laboratory">Laboratory</a></li>
+<                           <li><a href="http://www.chal.org/clinical/medical-surgical">Medical/Surgical</a></li>
+<                           <li><a href="http://www.chal.org/clinical/new-day">New Day Senior Care</a></li>
+<                      	  <li><a href="http://www.chal.org/clinical/occupational-therapy">Occupational Therapy</a></li>
+<                           <li><a href="http://www.chal.org/clinical/physical-therapy">Physical Therapy</a></li>
+<                            <li><a href="http://www.chal.org/clinical/radiology">Radiology</a></li>
+<        	              <li><a href="http://www.chal.org/clinical/speech-therapy">Speech Therapy</a></li>
+<                         </ul>
+< </li>
+< 			<li><a href="http://www.chal.org/education/">Patient Education</a></li>   
+<                           <li><a href="http://www.chal.org/clinical/home-health">Community Home Care</a></li>
+<                           <li><a href="http://www.chal.org/clinical/hospice">Community Hospice Care</a></li>                          
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 22414 ms

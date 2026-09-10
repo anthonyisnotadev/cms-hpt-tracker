@@ -5,11 +5,25 @@ const path = require('path');
 const {
   DEFAULT_KEY_FILE,
   loadKey,
+  decryptValue,
   deobfuscatePointerText,
   inspectPointerText
 } = require('./hpt/lib/pointer-obfuscation');
 
 const DEFAULT_ROOT = path.join(__dirname, '..');
+
+// Transcript body lines are prefixed "< ", so the line-anchored pointer
+// protector cannot see their contact fields - neither at encrypt time (the
+// collector encrypts before prefixing) nor at decrypt time. Every token in a
+// transcript is contact-derived, so decrypting all of them is exactly right;
+// a token truncated by the body-excerpt cap is left as-is rather than failing.
+const OBF_TOKEN = /hpt-obf:v1:[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+/g;
+function decryptTranscriptText(text, keyFile) {
+  const key = loadKey({ keyFile });
+  return text.replace(OBF_TOKEN, token => {
+    try { return decryptValue(token, key); } catch (_error) { return token; }
+  });
+}
 const MIME = {
   '.html': 'text/html; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8',
@@ -67,10 +81,13 @@ function serveStatic(req, res, { root = DEFAULT_ROOT, keyFile = DEFAULT_KEY_FILE
       path.join(root, 'data', 'hpt-audit', 'pointers'),
       path.join(root, 'cms_data', 'hpt', 'pointers')
     ];
-    if (pointerDirs.some(pointerDir => inside(pointerDir, filePath)) && path.extname(filePath).toLowerCase() === '.txt') {
+    const transcriptDir = path.join(root, 'data', 'hpt-audit', 'curl-evidence', 'transcripts');
+    if (inside(transcriptDir, filePath) && path.extname(filePath).toLowerCase() === '.txt') {
+      data = Buffer.from(decryptTranscriptText(original.toString('utf8'), keyFile));
+    } else if (pointerDirs.some(pointerDir => inside(pointerDir, filePath)) && path.extname(filePath).toLowerCase() === '.txt') {
       const text = original.toString('utf8');
       const inspection = inspectPointerText(text);
-      if (inspection.protected) {
+      if (inspection.protected || text.includes('hpt-obf:v1:')) {
         try { data = Buffer.from(deobfuscatePointerText(text, loadKey({ keyFile })).text); }
         catch (decryptError) { sendJson(res, 500, { error: decryptError.message }); return; }
       }
@@ -85,4 +102,4 @@ function serveStatic(req, res, { root = DEFAULT_ROOT, keyFile = DEFAULT_KEY_FILE
   });
 }
 
-module.exports = { MIME, inside, privateFile, sendJson, serveStatic };
+module.exports = { MIME, inside, privateFile, sendJson, serveStatic, decryptTranscriptText };

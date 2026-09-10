@@ -1,0 +1,162 @@
+# curl-style evidence for https://upmc.com/
+# fetched 2026-09-07T01:35:01.276Z with the tracker's BROWSER_HEADERS (production client)
+# record: 281320 | MEMORIAL HOSPITAL | NE | finding: not-assessed-not-named-in-file
+
+* DNS upmc.com: 151.195.136.79
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://upmc.com/
+< HTTP 301
+< accept-ch: Sec-CH-UA-Full-Version-List,Sec-CH-UA-Platform-Version,Sec-CH-UA-Arch,Sec-CH-UA-Model,Sec-CH-UA-Bitness
+< content-length: 231
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:35:01 GMT
+< location: https://www.upmc.com/
+< strict-transport-security: max-age=16070400; includeSubDomains
+* following Location: https://www.upmc.com/
+
+* final response: https://www.upmc.com/
+< HTTP 200
+< accept-ch: Sec-CH-UA-Full-Version-List,Sec-CH-UA-Platform-Version,Sec-CH-UA-Arch,Sec-CH-UA-Model,Sec-CH-UA-Bitness
+< cache-control: no-cache, no-store
+< content-encoding: br
+< content-length: 44524
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:35:02 GMT
+< expires: -1
+< pragma: no-cache
+< strict-transport-security: max-age=16070400; includeSubDomains
+< vary: Accept-Encoding
+< --- body (65536 bytes read, truncated) ---
+< 
+< 
+< <!DOCTYPE html>
+< <html lang="en">
+< <head>
+<     <link rel="preload" as="font" type="font/woff2" href="/Presentation/includes/Core/fonts/UPMC-Icon-Set.woff2" crossorigin>
+<     <link rel="preload" as="font" type="font/woff2" href="/Presentation/includes/Core/fonts/UPMC-Icon-Set.ttf" crossorigin>
+<     <link rel="stylesheet" href="/Presentation/includes/Core/abovethefold/css/abovethefold.css?v=1.161.0" />
+<     <script src="https://assets.upmc.com/jquery/3.5.1/jquery.min.js"></script>
+<     
+<     <style type="text/css">
+<         .lazy {
+<             background-image: none !important;
+<             transition: background-image ease-out 0.1s;
+<         }
+<     </style>
+< 
+<     
+< <meta charset="utf-8">
+< <!--21-->
+< <!--Sitecore.NET 10.4.1 (rev. 012149)-->
+< <meta http-equiv="X-UA-Compatible" content="IE=edge">
+< <meta name="viewport" content="width=device-width, initial-scale=1">
+< <meta name="format-detection" content="telephone=no" />
+< 
+<         <title>UPMC: #1 Ranked Hospital in Pittsburgh</title>
+< 
+<         <!--Head Tag Code-->
+< <link rel="preconnect" href="https://consent.cookiebot.com">
+< <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="b23b93ec-4c3a-4f87-8491-e6476a789b84" type="text/javascript" data-amazon-consent-signal="disabled"></script>
+< <script>
+< // JavaScript to handle the margin-top adjustment
+< document.addEventListener('DOMContentLoaded', function() {
+<     const closeAlertDiv = document.querySelector('.alertClose');
+<     const mainNavContainer = document.querySelector('.mobile-main-nav-container');
+< 
+<     if (closeAlertDiv) {
+<         closeAlertDiv.addEventListener('click', function() {
+<             mainNavContainer.style.marginTop = '0';
+<             document.querySelector('.upmcAlert').remove();
+<         });
+<     }
+< });
+< </script>
+< <style>
+< .mobile-header .mega-menu-container .main-nav .mega-button-container a.mega-button:visited{color:#363533}
+< .health-alert-bar#accordion{
+< padding: 10px 0;
+< }
+< 
+< 
+< .health-alert-bar .closeButton {
+< 	display:none; !important
+< }
+< #health-alert-collapse .learn-more + .col-xs-12.col-sm-12.col-md-7, #health-alert-collapse .col-md-7 + .learn-more:last-child {
+<     padding-top: 5px;
+< }
+< 
+< #health-alert-collapse .col-xs-12.col-sm-12.col-md-7{
+< 	padding-top:10px;
+< }
+< 
+< @media (max-width: 991px) {
+< .container.breadcrumbs-wrapper {
+<     display: block;
+< 	padding-top:75px; !important
+< }
+< }
+< 
+< .health-alert-bar > .container {
+<     display: none;
+< }
+< .health-alert-bar#accordion .panel-collapse .content-wrapper{
+< 	padding:0;
+< }
+< 
+< @media (min-width: 990px){
+< .health-alert-bar {
+<     min-height: 62px;
+< }
+< }
+< 
+< @media (max-width: 989px){
+< .health-alert-bar {
+<     min-height: 119px;
+< 	}
+< }
+< 
+< .health-alert-bar .cta {
+<     margin-top: 0;
+<     border-radius: 5px;
+<     background-color: #fff;
+<     color: #771B61;
+<     padding: 5px;
+<     min-width: 140px;
+<     float: right;
+< }
+< </style>        <!--end Head Tag Code-->
+<             <link href="https://dam.upmc.com/-/media/multisite-logos/favicon.ico?rev=44e972153fa34993ab2a81aebc51210b" rel="shortcut icon" type="image/x-icon" />
+< 
+< 
+<         <link rel="canonical" href="https://www.upmc.com/" />
+<         <meta content="https://www.upmc.com/" property="og:url" />
+<         <meta name="author" content="">
+<     <meta property="og:type" content="article" />
+<     <meta name="twitter:card" content="summary_large_image" />
+<         <meta content="UPMC: #1 Ranked Hospital in Pittsburgh" property="og:title" />
+<         <meta name="twitter:title" content="UPMC: #1 Ranked Hospital in Pittsburgh" />
+<         <meta content="Find a doctor or request an appointment at UPMC, ranked the #1 hospital in Pittsburgh by U.S. News." property="og:description" />
+<         <meta name="description" content="Find a doctor or request an appointment at UPMC, ranked the #1 hospital in Pittsburgh by U.S. News." />
+<         <meta name="twitter:description" content="Find a doctor or request an appointment at UPMC, ranked the #1 hospital in Pittsburgh by U.S. News." />
+< <link rel="stylesheet" href="/Presentation/includes/Modules/FontAwesome/4.3.0/css/font-awesome.min.css" />
+< 
+< <script type="text/javascript" src="//cdn.evgnet.com/beacon/upmc/upmc_production/scripts/evergage.min.js"></script>
+< <!-- Copilot Styles --> 
+< 
+< <style> 
+< 
+< .healthbot-container .UPMCChatContainer .UPMCChatHelpText li:nth-child(1), .healthbot-container .UPMCChatContainer .UPMCChatHelpText li:nth-child(2) { 
+< 
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 1844 ms

@@ -1,0 +1,98 @@
+# curl-style evidence for https://madisonregionalhealth.org/.well-known/cms-hpt.txt
+# fetched 2026-09-07T01:36:15.255Z with the tracker's BROWSER_HEADERS (production client)
+# record: 431300 | MADISON REGIONAL HEALTH SYSTEM | SD | finding: no-cms-hpt-txt-published
+
+* DNS madisonregionalhealth.org: 50.115.47.50
+
+> GET /.well-known/cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://madisonregionalhealth.org/.well-known/cms-hpt.txt
+< HTTP 301
+< cache-control: max-age=3600
+< content-length: 0
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:36:16 GMT
+< expires: Mon, 07 Sep 2026 02:36:16 GMT
+< link: <https://madisonregionalhealth.org/wp-json/>; rel="https://api.w.org/"
+< location: https://madisonregionalhealth.org/aging-well-expo-sept-23rd/
+< server: LiteSpeed
+< x-litespeed-cache: miss
+< x-tec-api-origin: https://madisonregionalhealth.org
+< x-tec-api-root: https://madisonregionalhealth.org/wp-json/tribe/events/v1/
+< x-tec-api-version: v1
+* following Location: https://madisonregionalhealth.org/aging-well-expo-sept-23rd/
+
+* final response: https://madisonregionalhealth.org/aging-well-expo-sept-23rd/
+< HTTP 200
+< content-encoding: br
+< content-length: 20109
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:36:16 GMT
+< etag: "136287-1788302988;br"
+< link: <https://madisonregionalhealth.org/wp-json/>; rel="https://api.w.org/", <https://madisonregionalhealth.org/wp-json/wp/v2/posts/7436>; rel="alternate"; title="JSON"; type="application/json", <https://madisonregionalhealth.org/?p=7436>; rel=shortlink
+< server: LiteSpeed
+< vary: Accept-Encoding
+< x-litespeed-cache: hit
+< x-tec-api-origin: https://madisonregionalhealth.org
+< x-tec-api-root: https://madisonregionalhealth.org/wp-json/tribe/events/v1/
+< x-tec-api-version: v1
+< --- body (65536 bytes read, truncated) ---
+< <!DOCTYPE html>
+< <html lang="en-US">
+< 
+< <head><script data-no-optimize="1">var litespeed_docref=sessionStorage.getItem("litespeed_docref");litespeed_docref&&(Object.defineProperty(document,"referrer",{get:function(){return litespeed_docref}}),sessionStorage.removeItem("litespeed_docref"));</script>
+<     <meta charset="UTF-8">
+<     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<     <link rel="profile" href="http://gmpg.org/xfn/11">
+<     <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+< 
+< 	<!-- This site is optimized with the Yoast SEO plugin v28.4 - https://yoast.com/product/yoast-seo-wordpress/ -->
+< 	<title>Aging Well Expo - Sept. 23rd! - Madison Regional Health System</title>
+< 	<link rel="canonical" href="https://madisonregionalhealth.org/aging-well-expo-sept-23rd/" />
+< 	<meta property="og:locale" content="en_US" />
+< 	<meta property="og:type" content="article" />
+< 	<meta property="og:title" content="Aging Well Expo - Sept. 23rd! - Madison Regional Health System" />
+< 	<meta property="og:description" content="Join us for our free community event designed for adults of all ages, built around the belief that together, we age &amp; grow gracefully. Enjoy a community vendor fair with 40+ local organizations and services, including a blood drive hosted ... Read More" />
+< 	<meta property="og:url" content="https://madisonregionalhealth.org/aging-well-expo-sept-23rd/" />
+< 	<meta property="og:site_name" content="Madison Regional Health System" />
+< 	<meta property="article:published_time" content="2026-08-20T15:34:29+00:00" />
+< 	<meta property="article:modified_time" content="2026-08-20T15:34:30+00:00" />
+< 	<meta property="og:image" content="https://madisonregionalhealth.org/wp-content/uploads/5993-2026-Aging-Well-Expo-Flyer-8.5-x-11-791x1024.png" />
+< 	<meta property="og:image:width" content="791" />
+< 	<meta property="og:image:height" content="1024" />
+< 	<meta property="og:image:type" content="image/png" />
+< 	<meta name="author" content="Allison Bruns" />
+< 	<meta name="twitter:card" content="summary_large_image" />
+< 	<meta name="twitter:label1" content="Written by" />
+< 	<meta name="twitter:data1" content="Allison Bruns" />
+< 	<meta name="twitter:label2" content="Est. reading time" />
+< 	<meta name="twitter:data2" content="1 minute" />
+< 	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"https:\/\/madisonregionalhealth.org\/aging-well-expo-sept-23rd\/#article","isPartOf":{"@id":"https:\/\/madisonregionalhealth.org\/aging-well-expo-sept-23rd\/"},"author":{"name":"Allison Bruns","@id":"https:\/\/madisonregionalhealth.org\/#\/schema\/person\/636ffd5ab7c1cf1fb66b3aa18bf446f7"},"headline":"Aging Well Expo &#8211; Sept. 23rd!","datePublished":"2026-08-20T15:34:29+00:00","dateModified":"2026-08-20T15:34:30+00:00","mainEntityOfPage":{"@id":"https:\/\/madisonregionalhealth.org\/aging-well-expo-sept-23rd\/"},"wordCount":77,"publisher":{"@id":"https:\/\/madisonregionalhealth.org\/#organization"},"image":{"@id":"https:\/\/madisonregionalhealth.org\/aging-well-expo-sept-23rd\/#primaryimage"},"thumbnailUrl":"https:\/\/madisonregionalhealth.org\/wp-content\/uploads\/5993-2026-Aging-Well-Expo-Flyer-8.5-x-11-791x1024.png","inLanguage":"en-US"},{"@type":"WebPage","@id":"https:\/\/madisonregionalhealth.org\/aging-well-expo-sept-23rd\/","url":"https:\/\/madisonregionalhealth.org\/aging-well-expo-sept-23rd\/","name":"Aging Well Expo - Sept. 23rd! - Madison Regional Health System","isPartOf":{"@id":"https:\/\/madisonregionalhealth.org\/#website"},"primaryImageOfPage":{"@id":"https:\/\/madisonregionalhealth.org\/aging-well-expo-sept-23rd\/#primaryimage"},"image":{"@id":"https:\/\/madisonregionalhealth.org\/aging-well-expo-sept-23rd\/#primaryimage"},"thumbnailUrl":"https:\/\/madisonregionalhealth.org\/wp-content\/uploads\/5993-2026-Aging-Well-Expo-Flyer-8.5-x-11-791x1024.png","datePublished":"2026-08-20T15:34:29+00:00","dateModified":"2026-08-20T15:34:30+00:00","breadcrumb":{"@id":"https:\/\/madisonregionalhealth.org\/aging-well-expo-sept-23rd\/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https:\/\/madisonregionalhealth.org\/aging-well-expo-sept-23rd\/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/madisonregionalhealth.org\/aging-well-expo-sept-23rd\/#primaryimage","url":"https:\/\/madisonregionalhealth.org\/wp-content\/uploads\/5993-2026-Aging-Well-Expo-Flyer-8.5-x-11.png","contentUrl":"https:\/\/madisonregionalhealth.org\/wp-content\/uploads\/5993-2026-Aging-Well-Expo-Flyer-8.5-x-11.png","width":1545,"height":1999},{"@type":"BreadcrumbList","@id":"https:\/\/madisonregionalhealth.org\/aging-well-expo-sept-23rd\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/madisonregionalhealth.org\/"},{"@type":"ListItem","position":2,"name":"Madison Regional Health System News","item":"https:\/\/madisonregionalhealth.org\/madison-regional-health-system-news\/"},{"@type":"ListItem","position":3,"name":"Aging Well Expo &#8211; Sept. 23rd!"}]},{"@type":"WebSite","@id":"https:\/\/madisonregionalhealth.org\/#website","url":"https:\/\/madisonregionalhealth.org\/","name":"Madison Regional Health System","description":"Quality Healthcare, Close to Home!","publisher":{"@id":"https:\/\/madisonregionalhealth.org\/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/madisonregionalhealth.org\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https:\/\/madisonregionalhealth.org\/#organization","name":"Madison Regional Health","url":"https:\/\/madisonregionalhealth.org\/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/madisonregionalhealth.org\/#\/schema\/logo\/image\/","url":"https:\/\/madisonregionalhealth.org\/wp-content\/uploads\/MRHS-Foundation_Logo-Alt-web.png","contentUrl":"https:\/\/madisonregionalhealth.org\/wp-content\/uploads\/MRHS-Foundation_Logo-Alt-web.png","width":729,"height":177,"caption":"Madison Regional Health"},"image":{"@id":"https:\/\/madisonregionalhealth.org\/#\/schema\/logo\/image\/"}},{"@type":"Person","@id":"https:\/\/madisonregionalhealth.org\/#\/schema\/person\/636ffd5ab7c1cf1fb66b3aa18bf446f7","name":"Allison Bruns","sameAs":["https:\/\/madisonregionalhealth.org\/"],"url":"https:\/\/madisonregionalhealth.org\/author\/abruns\/"}]}</script>
+< 	<!-- / Yoast SEO plugin. -->
+< 
+< 
+< <link rel='dns-prefetch' href='//www.googletagmanager.com' />
+< <link rel="alternate" type="application/rss+xml" title="Madison Regional Health System &raquo; Feed" href="https://madisonregionalhealth.org/feed/" />
+< <link rel="alternate" type="application/rss+xml" title="Madison Regional Health System &raquo; Comments Feed" href="https://madisonregionalhealth.org/comments/feed/" />
+< <link rel="alternate" type="text/calendar" title="Madison Regional Health System &raquo; iCal Feed" href="https://madisonregionalhealth.org/events/?ical=1" />
+< <link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://madisonregionalhealth.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmadisonregionalhealth.org%2Faging-well-expo-sept-23rd%2F" />
+< <link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://madisonregionalhealth.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fmadisonregionalhealth.org%2Faging-well-expo-sept-23rd%2F&#038;format=xml" />
+< <style id="wp-img-auto-sizes-contain-inline-css">
+< img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+< /*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+< </style>
+< 
+< <link rel='stylesheet' id='formidable-css' href='https://madisonregionalhealth.org/wp-content/plugins/formidable/css/formidableforms.css' media='all' />
+< <style id="wp-block-library-inline-css">
+< :root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-them
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 1003 ms

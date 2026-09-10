@@ -1,0 +1,68 @@
+# curl-style evidence for https://lakelandcommunityhospital.com/.well-known/cms-hpt.txt
+# fetched 2026-09-07T01:32:35.712Z with the tracker's BROWSER_HEADERS (production client)
+# record: 011311 | LAKELAND COMMUNITY HOSPITAL | AL | finding: no-cms-hpt-txt-published
+
+* DNS lakelandcommunityhospital.com: 143.198.77.0
+
+> GET /.well-known/cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://lakelandcommunityhospital.com/.well-known/cms-hpt.txt
+< HTTP 404
+< cache-control: no-cache, must-revalidate, max-age=0, no-store, private
+< connection: Keep-Alive
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:32:36 GMT
+< expires: Wed, 11 Jan 1984 05:00:00 GMT
+< keep-alive: timeout=5, max=100
+< link: <https://lakelandcommunityhospital.com/wp-json/>; rel="https://api.w.org/"
+< server: Apache/2.4.58 (Ubuntu)
+< transfer-encoding: chunked
+< --- body (73308 bytes read, truncated) ---
+< <!DOCTYPE html>
+< <html lang="en-US" prefix="og: https://ogp.me/ns#">
+< <head>
+< <meta charset="UTF-8" />
+< <script>
+< var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),document.addEventListener("gform/theme/scripts_loaded",function(){gform.themeScriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,themeScriptsLoaded:!1,isFormEditor:()=>"function"==typeof InitializeEditor,callIfLoaded:function(o){return!(!gform.domLoaded||!gform.scriptsLoaded||!gform.themeScriptsLoaded&&!gform.isFormEditor()||(gform.isFormEditor()&&console.warn("The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1."),o(),0))},initializeOnLoaded:function(o){gform.callIfLoaded(o)||(document.addEventListener("gform_main_scripts_loaded",()=>{gform.scriptsLoaded=!0,gform.callIfLoaded(o)}),document.addEventListener("gform/theme/scripts_loaded",()=>{gform.themeScriptsLoaded=!0,gform.callIfLoaded(o)}),window.addEventListener("DOMContentLoaded",()=>{gform.domLoaded=!0,gform.callIfLoaded(o)}))},hooks:{action:{},filter:{}},addAction:function(o,r,e,t){gform.addHook("action",o,r,e,t)},addFilter:function(o,r,e,t){gform.addHook("filter",o,r,e,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,r){gform.removeHook("action",o,r)},removeFilter:function(o,r,e){gform.removeHook("filter",o,r,e)},addHook:function(o,r,e,t,n){null==gform.hooks[o][r]&&(gform.hooks[o][r]=[]);var d=gform.hooks[o][r];null==n&&(n=r+"_"+d.length),gform.hooks[o][r].push({tag:n,callable:e,priority:t=null==t?10:t})},doHook:function(r,o,e){var t;if(e=Array.prototype.slice.call(e,1),null!=gform.hooks[r][o]&&((o=gform.hooks[r][o]).sort(function(o,r){return o.priority-r.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==r?t.apply(null,e):e[0]=t.apply(null,e)})),"filter"==r)return e[0]},removeHook:function(o,r,t,n){var e;null!=gform.hooks[o][r]&&(e=(e=gform.hooks[o][r]).filter(function(o,r,e){return!!(null!=n&&n!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][r]=e)}});
+< </script>
+< 
+< <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+< <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+< <link rel="profile" href="https://gmpg.org/xfn/11" />
+< 	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+< 	
+< <!-- Search Engine Optimization by Rank Math - https://rankmath.com/ -->
+< <title>Page Not Found - Lakeland Community Hospital</title>
+< <meta name="robots" content="follow, noindex"/>
+< <meta property="og:locale" content="en_US" />
+< <meta property="og:type" content="article" />
+< <meta property="og:title" content="Page Not Found - Lakeland Community Hospital" />
+< <meta property="og:site_name" content="Lakeland Community Hospital" />
+< <meta property="article:publisher" content="https://www.facebook.com/lakelandcommunityhospital" />
+< <meta name="twitter:card" content="summary_large_image" />
+< <meta name="twitter:title" content="Page Not Found - Lakeland Community Hospital" />
+< <script type="application/ld+json" class="rank-math-schema">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://lakelandcommunityhospital.com/#person","name":"Lakeland Community Hospital","sameAs":["https://www.facebook.com/lakelandcommunityhospital"],"image":{"@type":"ImageObject","@id":"https://lakelandcommunityhospital.com/#logo","url":"http://lakelandcommunityhospital.com/wp-content/uploads/2023/02/Lakeland-Community-Hospital-Logo_Logo-3_Colored_092622-03.png","contentUrl":"http://lakelandcommunityhospital.com/wp-content/uploads/2023/02/Lakeland-Community-Hospital-Logo_Logo-3_Colored_092622-03.png","caption":"Lakeland Community Hospital","inLanguage":"en-US","width":"1500","height":"1500"}},{"@type":"WebSite","@id":"https://lakelandcommunityhospital.com/#website","url":"https://lakelandcommunityhospital.com","name":"Lakeland Community Hospital","publisher":{"@id":"https://lakelandcommunityhospital.com/#person"},"inLanguage":"en-US"},{"@type":"WebPage","@id":"#webpage","url":"","name":"Page Not Found - Lakeland Community Hospital","isPartOf":{"@id":"https://lakelandcommunityhospital.com/#website"},"inLanguage":"en-US"}]}</script>
+< <!-- /Rank Math WordPress SEO plugin -->
+< 
+< <link rel='dns-prefetch' href='//www.googletagmanager.com' />
+< <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+< <link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+< <link rel="alternate" type="application/rss+xml" title="Lakeland Community Hospital &raquo; Feed" href="https://lakelandcommunityhospital.com/feed/" />
+< <link rel="alternate" type="application/rss+xml" title="Lakeland Community Hospital &raquo; Comments Feed" href="https://lakelandcommunityhospital.com/comments/feed/" />
+< <link rel="preload" href="https://lakelandcommunityhospital.com/wp-content/plugins/bb-plugin/fonts/fontawesome/7.2.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+< <link rel="preload" href="https://lakelandcommunityhospital.com/wp-content/plugins/bb-plugin/fonts/fontawesome/7.2.0/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+< <script>
+< window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/lakelandcommunityhospital.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.8.8"}};
+< /*! This file is auto-generated */
+< !function(s,n){var o,i,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),a=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===a[t]})}function u(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);for(var n=e.getImageData(16,16,1,1),a=0;a<n.data.length;a++)if(0!==n.data[a])return!1;return!0}function f(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\udedf")}return!1}function g(e,t,n,a){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):s.createElement("canvas"),o=r.getContext("2d",{willReadFrequently:!0}),i=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(function(e){i[e]=t(o,e,n,a)}),i}function t(e){var t=s.createElement("script");t.src=e,t.defer=!0,s.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",i=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){s.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+g.toString()+"("+[JSON.stringify(i),f.toString(),p.toString(),u.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"}),r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=function(e){c(n=e.data),r.terminate(),t(n)})}catch(e){}c(n=g(i,f,p,u))}t(n)}).then(function(
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 771 ms

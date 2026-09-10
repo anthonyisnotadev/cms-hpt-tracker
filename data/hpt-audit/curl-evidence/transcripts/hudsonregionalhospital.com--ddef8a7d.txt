@@ -1,0 +1,168 @@
+# curl-style evidence for https://hudsonregionalhospital.com/
+# fetched 2026-09-07T01:35:32.766Z with the tracker's BROWSER_HEADERS (production client)
+# record: 310118 | HUDSON REGIONAL HOSPITAL | NJ | finding: not-assessed-not-named-in-file
+
+* DNS hudsonregionalhospital.com: 3.129.95.11
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://hudsonregionalhospital.com/
+< HTTP 301
+< cache-control: max-age=3600
+< connection: Upgrade, Keep-Alive
+< content-length: 0
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:35:33 GMT
+< expires: Mon, 07 Sep 2026 02:35:33 GMT
+< keep-alive: timeout=5, max=100
+< location: https://www.hudsonregionalhospital.com/
+< server: Apache/2.4.48 (Ubuntu)
+< upgrade: h2,h2c
+< vary: accept,content-type
+< x-redirect-by: WordPress
+* following Location: https://www.hudsonregionalhospital.com/
+
+* final response: https://www.hudsonregionalhospital.com/
+< HTTP 200
+< connection: Upgrade, Keep-Alive
+< content-encoding: gzip
+< content-length: 50997
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:35:34 GMT
+< keep-alive: timeout=5, max=100
+< link: <https://www.hudsonregionalhospital.com/wp-json/>; rel="https://api.w.org/", <https://www.hudsonregionalhospital.com/wp-json/wp/v2/pages/47182>; rel="alternate"; title="JSON"; type="application/json", <https://www.hudsonregionalhospital.com/>; rel=shortlink
+< server: Apache/2.4.48 (Ubuntu)
+< upgrade: h2,h2c
+< vary: accept,content-type,Accept-Encoding
+< --- body (65536 bytes read, truncated) ---
+< <!doctype html>
+< <html lang="en-US" class="no-js">
+< <head>
+< 
+< <title>Home Landing - Hudson Regional Health</title>
+< 	<meta charset="utf-8">
+< 	<meta http-equiv="x-ua-compatible" content="ie=edge">
+<   <meta name="google-site-verification" content="sz_cj13LmJJnVc6AW-AWu30inQLgSc-i3pZkHXzZ4b0" />
+< 	
+< 	
+< 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+< 	<link rel="apple-touch-icon" sizes="180x180" href="https://www.hudsonregionalhospital.com/wp-content/themes/hudson-regional-hospital-theme/library/favicon/apple-touch-icon.png">
+< 	<link rel="icon" type="image/png" sizes="32x32" href="https://www.hudsonregionalhospital.com/wp-content/themes/hudson-regional-hospital-theme/library/favicon/favicon-32x32.png">
+< 	<link rel="icon" type="image/png" sizes="16x16" href="https://www.hudsonregionalhospital.com/wp-content/themes/hudson-regional-hospital-theme/library/favicon/favicon-16x16.png">
+< 	<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet" rel="preload" as="style"> -->
+< 	 
+< 	 <style type="text/css">
+< 	/* cyrillic-ext */
+< @font-face {
+<   font-family: 'Montserrat';
+<   font-style: italic;
+<   font-weight: 100;
+<   font-display: swap;
+<   src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUOjIg1_i6t8kCHKm459WxZqh7p29NNpQ.woff2) format('woff2');
+<   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+< }
+< /* cyrillic */
+< @font-face {
+<   font-family: 'Montserrat';
+<   font-style: italic;
+<   font-weight: 100;
+<   font-display: swap;
+<   src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUOjIg1_i6t8kCHKm459WxZqh7g29NNpQ.woff2) format('woff2');
+<   unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+< }
+< /* vietnamese */
+< @font-face {
+<   font-family: 'Montserrat';
+<   font-style: italic;
+<   font-weight: 100;
+<   font-display: swap;
+<   src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUOjIg1_i6t8kCHKm459WxZqh7r29NNpQ.woff2) format('woff2');
+<   unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+< }
+< /* latin-ext */
+< @font-face {
+<   font-family: 'Montserrat';
+<   font-style: italic;
+<   font-weight: 100;
+<   font-display: swap;
+<   src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUOjIg1_i6t8kCHKm459WxZqh7q29NNpQ.woff2) format('woff2');
+<   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+< }
+< /* latin */
+< @font-face {
+<   font-family: 'Montserrat';
+<   font-style: italic;
+<   font-weight: 100;
+<   font-display: swap;
+<   src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUOjIg1_i6t8kCHKm459WxZqh7k29M.woff2) format('woff2');
+<   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+< }
+< /* cyrillic-ext */
+< @font-face {
+<   font-family: 'Montserrat';
+<   font-style: italic;
+<   font-weight: 200;
+<   font-display: swap;
+<   src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUPjIg1_i6t8kCHKm459WxZBg_z8fZwnCo.woff2) format('woff2');
+<   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+< }
+< /* cyrillic */
+< @font-face {
+<   font-family: 'Montserrat';
+<   font-style: italic;
+<   font-weight: 200;
+<   font-display: swap;
+<   src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUPjIg1_i6t8kCHKm459WxZBg_z-PZwnCo.woff2) format('woff2');
+<   unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+< }
+< /* vietnamese */
+< @font-face {
+<   font-family: 'Montserrat';
+<   font-style: italic;
+<   font-weight: 200;
+<   font-display: swap;
+<   src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUPjIg1_i6t8kCHKm459WxZBg_z8_ZwnCo.woff2) format('woff2');
+<   unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+< }
+< /* latin-ext */
+< @font-face {
+<   font-family: 'Montserrat';
+<   font-style: italic;
+<   font-weight: 200;
+<   font-display: swap;
+<   src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUPjIg1_i6t8kCHKm459WxZBg_z8vZwnCo.woff2) format('woff2');
+<   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+< }
+< /* latin */
+< @font-face {
+<   font-family: 'Montserrat';
+<   font-style: italic;
+<   font-weight: 200;
+<   font-display: swap;
+<   src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUPjIg1_i6t8kCHKm459WxZBg_z_PZw.woff2) format('woff2');
+<   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+< }
+< /* cyrillic-ext */
+< @font-face {
+<   font-family: 'Montserrat';
+<   font-style: italic;
+<   font-weight: 300;
+<   font-display: swap;
+<   src: url(https://fonts.gstatic.com/s/montserrat/v15/JTUPjIg1_i6t8kCHKm459WxZYgzz8fZwnCo.woff2) format('woff2');
+<   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+< }
+< /* cyrillic */
+< @font-face {
+<   font-family: 'Montserrat';
+<   font-style: italic;
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 903 ms

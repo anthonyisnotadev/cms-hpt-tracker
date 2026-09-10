@@ -1,0 +1,198 @@
+# curl-style evidence for https://lakehealth.org/
+# fetched 2026-09-07T01:35:36.034Z with the tracker's BROWSER_HEADERS (production client)
+# record: 360098 | LAKE HEALTH | OH | finding: not-assessed-not-named-in-file
+
+* DNS lakehealth.org: 150.171.109.77
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://lakehealth.org/
+< HTTP 301
+< access-control-allow-origin: *
+< content-length: 172
+< content-security-policy: worker-src blob: *.uhhospitals.org; default-src 'self' *.uhhs.com data: 'unsafe-inline' 'unsafe-eval' *.uhhospitals.org http://uhlakforceapp04.uhhs.com:8070 *.typekit.net *.siteimproveanalytics.com siteimproveanalytics.com *.bing.com *.youtube.com *.invoca.net s.ytimg.com *.ytimg.com *.facebook.net *.invocacdn.com *.googletagmanager.com *.google-analytics.com *.googleapis.com *.google.com *.facebook.com *.siteimproveanalytics.io *.doubleclick.net *.gstatic.com *.w3.com *.podbean.com *.ads-twitter.com *.twitter.com *.t.co t.co *.alphonso.tv *.calculatestuff.com calculatestuff.com doubleclick.net *.selfcare.info selfcare.info *.digitalmedia.hhs.gov api.digitalmedia.hhs.gov *.appcatalyst.com appcatalyst.com *.staywellsolutionsonline.com staywellsolutionsonline.com *.hhs.gov *.livestream.com livestream.com *.issuu.com issuu.com *.isu.pub isu.pub *.w3.org w3.org *.quantserve.com quantserve.com *.boxcloud.com boxcloud.com *.box.com box.com *.bananatag.com bananatag.com *.alpixtrack.com alpixtrack.com *.adxcel-ec2.com *.data.adxcel-ec2.com data.adxcel-ec2.com adxcel-ec2.com *.cancer.gov cancer.gov *.kramesstaywell.com kramesstaywell.com *.nextdoor.com nextdoor.com *.youtube-nocookie.com youtube-nocookie.com *.licdn.com licdn.com *.stackadapt.com stackadapt.com *.hepdata.com hepdata.com *.jsdelivr.net cdn.jsdelivr.net *.pinimg.com s.pinimg.com *.pinterest.com ct.pinterest.com *.googleoptimize.com *.domo.com domo.com *.marketingcloudapis.com marketingcloudapis.com *.epic.com *.vfpnext.com *.adobedtm.com *.adobedc.net https://adobedc.demdex.net http://edge.adobedc.net https://atlas.microsoft.com *.visualstudio.com atlas.min.js cdnapisec.kaltura.com https://uhhospitals.cdn-v3.conductrics.com https://sqs.us-east-2.amazonaws.com https://uhhospitals.conductrics.com *.azurewebsites.net; frame-ancestors 'self' *.uhhospitals.org *.uhhs.com;
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:35:37 GMT
+< location: https://www.uhhospitals.org/locations/lake-health
+< node: 2
+< sitecore-version: 10.3
+< strict-transport-security: max-age=31536000; includeSubDomains; preload
+< x-azure-ref: 20260907T013537Z-17fd58bbc9chqqp6hC1IADkdb40000000b0g000000000bd1
+< x-cache: CONFIG_NOCACHE
+< x-content-type-options: nosniff
+< x-frame-options: sameorigin
+< x-xss-protection: 1; mode=block
+* following Location: https://www.uhhospitals.org/locations/lake-health
+
+* redirect hop 2: https://www.uhhospitals.org/locations/lake-health
+< HTTP 301
+< access-control-allow-origin: *
+< cache-control: public, max-age=86400
+< content-length: 0
+< content-security-policy: worker-src blob: *.uhhospitals.org; default-src 'self' *.uhhs.com data: 'unsafe-inline' 'unsafe-eval' *.uhhospitals.org http://uhlakforceapp04.uhhs.com:8070 *.typekit.net *.siteimproveanalytics.com siteimproveanalytics.com *.bing.com *.youtube.com *.invoca.net s.ytimg.com *.ytimg.com *.facebook.net *.invocacdn.com *.googletagmanager.com *.google-analytics.com *.googleapis.com *.google.com *.facebook.com *.siteimproveanalytics.io *.doubleclick.net *.gstatic.com *.w3.com *.podbean.com *.ads-twitter.com *.twitter.com *.t.co t.co *.alphonso.tv *.calculatestuff.com calculatestuff.com doubleclick.net *.selfcare.info selfcare.info *.digitalmedia.hhs.gov api.digitalmedia.hhs.gov *.appcatalyst.com appcatalyst.com *.staywellsolutionsonline.com staywellsolutionsonline.com *.hhs.gov *.livestream.com livestream.com *.issuu.com issuu.com *.isu.pub isu.pub *.w3.org w3.org *.quantserve.com quantserve.com *.boxcloud.com boxcloud.com *.box.com box.com *.bananatag.com bananatag.com *.alpixtrack.com alpixtrack.com *.adxcel-ec2.com *.data.adxcel-ec2.com data.adxcel-ec2.com adxcel-ec2.com *.cancer.gov cancer.gov *.kramesstaywell.com kramesstaywell.com *.nextdoor.com nextdoor.com *.youtube-nocookie.com youtube-nocookie.com *.licdn.com licdn.com *.stackadapt.com stackadapt.com *.hepdata.com hepdata.com *.jsdelivr.net cdn.jsdelivr.net *.pinimg.com s.pinimg.com *.pinterest.com ct.pinterest.com *.googleoptimize.com *.domo.com domo.com *.marketingcloudapis.com marketingcloudapis.com *.epic.com *.vfpnext.com *.adobedtm.com *.adobedc.net https://adobedc.demdex.net http://edge.adobedc.net https://atlas.microsoft.com *.visualstudio.com atlas.min.js cdnapisec.kaltura.com https://uhhospitals.cdn-v3.conductrics.com https://sqs.us-east-2.amazonaws.com https://uhhospitals.conductrics.com *.azurewebsites.net; frame-ancestors 'self' *.uhhospitals.org *.uhhs.com;
+< date: Mon, 07 Sep 2026 01:35:37 GMT
+< location: /locations/uh-lake-county-locations
+< node: 2
+< sitecore-version: 10.3
+< strict-transport-security: max-age=31536000; includeSubDomains; preload
+< x-azure-ref: 20260907T013537Z-17d645df49cgjfwqhC1FTYqxpw0000000y5g000000006zwc
+< x-cache: TCP_REMOTE_HIT
+< x-cache-info: L2_T2
+< x-content-type-options: nosniff
+< x-fd-int-roxy-purgeid: 14
+< x-frame-options: sameorigin
+< x-xss-protection: 1; mode=block
+* following Location: /locations/uh-lake-county-locations
+
+* final response: https://www.uhhospitals.org/locations/uh-lake-county-locations
+< HTTP 200
+< access-control-allow-origin: *
+< cache-control: no-cache, no-store
+< content-encoding: br
+< content-security-policy: worker-src blob: *.uhhospitals.org; default-src 'self' *.uhhs.com data: 'unsafe-inline' 'unsafe-eval' *.uhhospitals.org http://uhlakforceapp04.uhhs.com:8070 *.typekit.net *.siteimproveanalytics.com siteimproveanalytics.com *.bing.com *.youtube.com *.invoca.net s.ytimg.com *.ytimg.com *.facebook.net *.invocacdn.com *.googletagmanager.com *.google-analytics.com *.googleapis.com *.google.com *.facebook.com *.siteimproveanalytics.io *.doubleclick.net *.gstatic.com *.w3.com *.podbean.com *.ads-twitter.com *.twitter.com *.t.co t.co *.alphonso.tv *.calculatestuff.com calculatestuff.com doubleclick.net *.selfcare.info selfcare.info *.digitalmedia.hhs.gov api.digitalmedia.hhs.gov *.appcatalyst.com appcatalyst.com *.staywellsolutionsonline.com staywellsolutionsonline.com *.hhs.gov *.livestream.com livestream.com *.issuu.com issuu.com *.isu.pub isu.pub *.w3.org w3.org *.quantserve.com quantserve.com *.boxcloud.com boxcloud.com *.box.com box.com *.bananatag.com bananatag.com *.alpixtrack.com alpixtrack.com *.adxcel-ec2.com *.data.adxcel-ec2.com data.adxcel-ec2.com adxcel-ec2.com *.cancer.gov cancer.gov *.kramesstaywell.com kramesstaywell.com *.nextdoor.com nextdoor.com *.youtube-nocookie.com youtube-nocookie.com *.licdn.com licdn.com *.stackadapt.com stackadapt.com *.hepdata.com hepdata.com *.jsdelivr.net cdn.jsdelivr.net *.pinimg.com s.pinimg.com *.pinterest.com ct.pinterest.com *.googleoptimize.com *.domo.com domo.com *.marketingcloudapis.com marketingcloudapis.com *.epic.com *.vfpnext.com *.adobedtm.com *.adobedc.net https://adobedc.demdex.net http://edge.adobedc.net https://atlas.microsoft.com *.visualstudio.com atlas.min.js cdnapisec.kaltura.com https://uhhospitals.cdn-v3.conductrics.com https://sqs.us-east-2.amazonaws.com https://uhhospitals.conductrics.com *.azurewebsites.net; frame-ancestors 'self' *.uhhospitals.org *.uhhs.com;
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:35:37 GMT
+< expires: -1
+< node: 2
+< pragma: no-cache
+< sitecore-version: 10.3
+< strict-transport-security: max-age=31536000; includeSubDomains; preload
+< vary: Accept-Encoding
+< x-azure-ref: 20260907T013537Z-17d645df49cgjfwqhC1FTYqxpw0000000y5g000000006zwd
+< x-cache: PRIVATE_NOSTORE
+< x-content-type-options: nosniff
+< x-fd-int-roxy-purgeid: 0
+< x-frame-options: sameorigin
+< x-xss-protection: 1; mode=block
+< --- body (65536 bytes read, truncated) ---
+< 
+< 
+< <!DOCTYPE html>
+< <html lang="en">
+< <head>
+< 
+<     <meta charset="utf-8">
+<     <meta content="IE=edge" http-equiv="X-UA-Compatible">
+<     <meta name="viewport" content="width=device-width, initial-scale=1">
+<     <meta name="google-site-verification" content="zInPOGJxxqieeM5_iFMkS7QGKZks5AQC2qnB6Lm2mO4" />
+< 
+<     
+< 
+< 
+< 
+<     <link rel='stylesheet' href='/FrontEnd/Styles/uh.foundation.theming.min.css?v=0a88defb6725' />
+< 	<link rel='stylesheet' href='/FrontEnd/Styles/uh.feature.genericcontent.min.css?v=a46e5a8e8783' />
+< 	<link rel='stylesheet' href='/FrontEnd/Styles/uh.feature.navigation.min.css?v=d8c68396a6d3' />
+< 	<link rel='stylesheet' href='/FrontEnd/Styles/uh.feature.scheduling.min.css?v=70a3f1eb6121' />
+< 	<link rel='stylesheet' href='/FrontEnd/Styles/uh.feature.identity.min.css?v=1af3cf568e3b' />
+< 	<link rel='stylesheet' href='/FrontEnd/Styles/uh.feature.search.min.css?v=552693ff944c' />
+< 	<link rel='stylesheet' href='/FrontEnd/Styles/uh.feature.pagecontent.min.css?v=3910c6e76967' />
+< 	<link rel='stylesheet' href='/FrontEnd/Styles/uh.feature.heroes.min.css?v=75be8bfd5d63' />
+< 	<link rel='stylesheet' href='/FrontEnd/Styles/uh.project.common.min.css?v=4259735a5e03' />
+< 	<link rel='stylesheet' href='/FrontEnd/Styles/uh.project.uhhospitals.min.css?v=d41d8cd98f00' />
+< 	
+<     
+< 
+< 
+<     <title>UH Lake County Locations | University Hospitals</title>
+< 
+< 
+<     <meta name="description" content="Get the highest quality care at University Hospitals Lake West Medical Center, TriPoint Medical Center and surrounding locations." />
+< 
+< 
+< 
+< 
+<     <link rel="canonical" href="https://www.uhhospitals.org/locations/uh-lake-county-locations" />
+< 
+< 
+< 
+< 
+< 
+<     <script src='/FrontEnd/Scripts/Head/uh.foundation.theming.min.js?v=6aac8a26820a'></script>
+< 	
+<     <!-- Test begin -->
+< 
+<     
+<     <!-- Test end -->
+<     <script>
+<         (function (d) {
+<             var config = {
+<                 kitId: 'uqg3jzf',
+<                 scriptTimeout: 3000,
+<                 async: true
+<             },
+<                 h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+<         })(document);
+<     </script>
+< 
+<     <script src="https://assets.adobedtm.com/b41b10febb33/b58aa2b57d00/launch-cb62158726ea.min.js" async></script>
+< <script src="https://uhhospitals.cdn-v3.conductrics.com/ac-fkDohixRFk/v3/agent-api/js/f-LgYynzAoqi/dt-hZyjFC1zU0W1TqjSzr1pKeWZMqYPvj?apikey=api-UzL6gOXQjpv4VLKeKWOkmoxkvV"></script>
+< <style>
+< .callctaright h4 {
+< margin-bottom: 0;
+< }
+< .herocallcta {
+< display: flex; 
+< }
+< .callctaicon {
+< display: block;
+< positon: relative;
+< width:27px;
+< height: 29px;
+< margin-top: 15px;
+< }
+< .callctaright {
+< margin-left: 20px;
+< padding-left: 20px;
+< border-left: 1px solid #d6d6d6;
+< }
+< .pagemode-edit .UH-Feature-Heroes-AdvancedHeroHeader-Overlay-Subtitle, .pagemode-edit .UH-Feature-Heroes-HeroHeader-Overlay-Subtitle {
+< display: block;
+< }
+< .UH-Feature-Heroes-AdvancedHeroHeader-Overlay h1, .UH-Feature-Heroes-HeroHeader-Overlay h1 {
+<     margin: 1rem 0 1rem 0;
+< }
+< 
+< .LakeCounty section:First-of-type .UH-Feature-Heroes-AdvancedHeroHeader-CTAContainer {
+<     margin:0;
+<     padding:0;
+< }
+< 
+< /*  
+< Custom CSS for Lake County Page - Jake Allen 3/19/2025 
+< Target parent class- .LakeCounty
+< Section background change 
+< */
+< .LakeCounty section:first-of-type {
+<     background-color:#e6e6e6;
+<     padding-top:3rem;
+< }
+< 
+< .LakeCounty section:first-of-type .UH-Project-Common-1-Column-Inner {
+<     padding-left:0;
+<     padding-right:0;
+< }
+< 
+< .LakeCounty section:First-of-type .UH-Feature-GenericContent-CtaBlock {
+<     background-color: #fff;
+< }
+< 
+< .LakeCounty section:first-of-type .UH-Feature-GenericContent-CtaBlock-Content {
+< text-align:center;
+< }
+< 
+< .LakeCounty h3.UH-mt-0 {
+<     margin-top:0;
+< }
+< </style>
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 865 ms

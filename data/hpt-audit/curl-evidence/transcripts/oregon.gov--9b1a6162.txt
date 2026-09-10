@@ -1,0 +1,204 @@
+# curl-style evidence for https://oregon.gov/
+# fetched 2026-09-07T01:35:46.343Z with the tracker's BROWSER_HEADERS (production client)
+# record: 384008 | OREGON STATE HOSPITAL DISTINCT PART | OR | finding: not-assessed-site-unreachable
+
+* DNS oregon.gov: 63.241.205.31, 199.107.32.19
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://oregon.gov/
+< HTTP 302
+< connection: Keep-Alive
+< content-length: 0
+< location: https://www.oregon.gov/
+< server: BigIP
+* following Location: https://www.oregon.gov/
+
+* redirect hop 2: https://www.oregon.gov/
+< HTTP 302
+< age: 309
+< content-length: 162
+< content-security-policy: frame-ancestors 'self' teams.microsoft.com *.teams.microsoft.com *.skype.com *.teams.microsoft.us local.teams.office.com *.powerapps.com *.yammer.com *.officeapps.live.com *.office.com *.stream.azure-test.net *.microsoftstream.com *.dynamics.com *.microsoft.com onedrive.live.com *.onedrive.live.com;
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:30:38 GMT
+< location: https://www.oregon.gov/Pages/index.aspx
+< microsoftsharepointteamservices: 16.0.0.19725
+< request-id: 9fba38a2-93a8-c03f-1f1b-8c44c1947581
+< server: Microsoft-IIS/10.0
+< spiislatency: 0
+< sprequestduration: 26
+< sprequestguid: 9fba38a2-93a8-c03f-1f1b-8c44c1947581
+< strict-transport-security: max-age=31536000; includeSubDomains; preload
+< vary: Accept-Encoding
+< via: 1.1 3f983ce6dacef663c6ff984b58458c0e.cloudfront.net (CloudFront)
+< x-amz-cf-id: V49F3MdWPkPZUXsNWRVZ9mBDGYBwgaCvAiih6gnnbsg6WSLYIT26oA==
+< x-amz-cf-pop: IAD55-P7
+< x-cache: Hit from cloudfront
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-ms-invokeapp: 1; RequireReadOnly
+< x-powered-by: ASP.NET
+< x-sharepointhealthscore: 0
+* following Location: https://www.oregon.gov/Pages/index.aspx
+
+* final response: https://www.oregon.gov/Pages/index.aspx
+< HTTP 200
+< age: 69
+< cache-control: private, max-age=0
+< content-encoding: gzip
+< content-length: 18772
+< content-security-policy: frame-ancestors 'self' teams.microsoft.com *.teams.microsoft.com *.skype.com *.teams.microsoft.us local.teams.office.com *.powerapps.com *.yammer.com *.officeapps.live.com *.office.com *.stream.azure-test.net *.microsoftstream.com *.dynamics.com *.microsoft.com onedrive.live.com *.onedrive.live.com;
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:34:38 GMT
+< expires: Sun, 23 Aug 2026 01:34:39 GMT
+< last-modified: Mon, 07 Sep 2026 01:34:39 GMT
+< microsoftsharepointteamservices: 16.0.0.19725
+< request-id: daba38a2-1342-c03f-1f1b-8e5662d904c4
+< server: Microsoft-IIS/10.0
+< spiislatency: 0
+< sprequestduration: 97
+< sprequestguid: daba38a2-1342-c03f-1f1b-8e5662d904c4
+< strict-transport-security: max-age=31536000; includeSubDomains; preload
+< vary: Accept-Encoding
+< via: 1.1 3f983ce6dacef663c6ff984b58458c0e.cloudfront.net (CloudFront)
+< x-amz-cf-id: OBJzc8XaUDLB835G53n5PAh5f-dSMNL_M4mIMj3RZWuckjlZDer2qQ==
+< x-amz-cf-pop: IAD55-P7
+< x-aspnet-version: 4.0.30319
+< x-cache: Hit from cloudfront
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-ms-invokeapp: 1; RequireReadOnly
+< x-powered-by: ASP.NET
+< x-sharepointhealthscore: 0
+< --- body (65536 bytes read, truncated) ---
+< <!DOCTYPE html>
+< 
+< <html lang="en-us">
+< 
+< <head>
+<         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+< 	    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<     <title>
+< 	Oregon.gov : State of Oregon
+< </title>
+<     
+< 
+<             <meta name="description" content="The official homepage of the State of Oregon" />
+< 		
+<             <meta name="keywords" content="Oregon, State Government, agencies, services, news, contact" />
+< 		<meta name="theme-color" content="#222222"/>
+< <meta name="msapplication-wide310x150logo" content="https://cdn.oregon.gov/images/icons/favicons/mstile-310x150.png"/>
+< <link href="https://cdn.oregon.gov/images/icons/favicons/apple-touch-icon-152x152.png" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+< <link href="https://cdn.oregon.gov/images/icons/favicons/favicon.ico" rel="shortcut icon"/>
+< <style>
+< /* Increased font seize to be more noticiable--matches top navigation label font size */
+< 
+< .translated-ltr .or-fixed or-top-navigation { top: 30px !important;}
+< 
+< or-alerts .or-alert.alert-dark a:hover {
+<     background-color: rgba(0,0,0,.25);
+< }
+< 
+< /* or-top-links>* li a:hover {
+< 	background-color: rgba(0,0,0,.045);
+< } */
+< 
+< .or-featured-next .fa, .or-featured-prev .fa {
+<     margin-top: 10px;
+< }
+< 
+< or-featured button:hover {
+< 	box-shadow: 0 0 2rem rgb(0 0 0 / 50%);
+< }
+< 
+< /* a.or-top-service:hover .or-top-service-bg {
+<     opacity: .4;
+< } */
+< 
+< button.or-superlatives-next:hover, button.or-superlatives-prev:hover {
+<     background-color: rgba(0,0,0,.25);
+<     transition: background-color .3s ease;
+< 
+< }
+< 
+< or-popular-searches ul li a:hover/*, footer .or-portal-footer-links a:hover, .or-portal-footer-bottom-row a:hover*/ {
+<     text-decoration: underline;
+<     text-decoration-style: solid;
+<     text-underline-offset: .3em;
+<     text-decoration-thickness: .1em;
+<     color: #2d4a62;
+<     background-color: rgba(0,0,0,.045);
+<     transition: text-decoration-color .3s ease,color .3s ease,background-color .3s ease;
+< }
+< 
+< or-popular-searches ul li a:hover/*, footer .or-portal-footer-links a:hover*/ {
+< 	color: #fff;
+< }
+< 
+< 
+< /* or-top-links>* h4 {
+< 	color: #3b644d;
+< 	font-weight: bold;
+< } */
+< 
+< /* .or-news-article .or-news-article-content .or-news-article-date {
+< 	color: #3b644d;
+< 	margin-bottom: 0;
+< } */
+< 
+< /* .or-news-article .or-news-article-content {
+< 	margin-bottom: 0 !important;
+< } */
+< 
+< or-alerts .or-alert.alert {
+< 	font-size: 1.052rem;
+< 	justify-content: center;
+< 	text-shadow: 0 1px rgb(0 0 0 / 25%);
+< }
+< 
+< or-alerts .or-alert button {
+< 	top: .75rem !important;
+< }
+< 
+< /* Alternative color schemes for some alert classes */
+< 
+< or-alerts .or-alert.alert-danger {
+< 	background-color: #9e2525;
+< 	color: #ffffff;
+< }
+< 
+< or-alerts .or-alert.alert-danger button {
+< 	color: #ffffff;
+< }
+< 
+< or-alerts .or-alert.alert-dark {
+< 	background-color: #282828;
+< 	color: #ffffff;
+< }
+< 
+< or-alerts .or-alert.alert-dark a {
+< 	color: #8b9c43 !important;
+< }
+< 
+< or-alerts .or-alert.alert-dark button {
+< 	color: #ffffff;
+< }
+< 
+< or-alerts .or-alert.alert-info {
+< 	background-color: #004f92;
+< 	color: #ffffff;
+< }
+< 
+< or-alerts .or-alert.alert-info button {
+< 	color: #ffffff;
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 8016 ms

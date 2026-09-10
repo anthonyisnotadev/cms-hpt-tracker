@@ -251,6 +251,8 @@
   }
 
   function usePublished(j) {
+    // Keep opaque archive tokens out of the public reader's notes and forms.
+    j = JSON.parse(JSON.stringify(j || {}).replace(/hpt-obf:v1:[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+/g, '[protected contact]'));
     var next = Object.create(null);
     Object.keys(j || {}).forEach(function (k) {
       if (k === '__proto__' || k === 'constructor' || k === 'prototype') return;

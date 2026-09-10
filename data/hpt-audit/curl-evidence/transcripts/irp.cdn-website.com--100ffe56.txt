@@ -1,0 +1,41 @@
+# curl-style evidence for https://irp.cdn-website.com/
+# fetched 2026-09-07T01:34:42.857Z with the tracker's BROWSER_HEADERS (production client)
+# record: 251325 | COVINGTON COUNTY HOSPITAL CAH | MS | finding: pointer-blocked-to-automation
+# record: 450698 | LAMB HEALTHCARE CENTER | TX | finding: pointer-blocked-to-automation
+
+* DNS irp.cdn-website.com: 3.170.42.24, 3.170.42.100, 3.170.42.88, 3.170.42.35
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://irp.cdn-website.com/
+< HTTP 200
+< accept-ranges: bytes
+< access-control-allow-origin: *
+< age: 336412
+< alt-svc: h3=":443"; ma=86400
+< cache-control: max-age=31536000
+< content-length: 3
+< content-type: text/html
+< date: Thu, 03 Sep 2026 04:07:53 GMT
+< etag: "eff5bc1ef8ec9d03e640fc4370f5eacd"
+< last-modified: Tue, 24 May 2022 15:41:55 GMT
+< server: AmazonS3
+< via: 1.1 b1a3a4ff6e52cd6d8599a21fc6f0de3a.cloudfront.net (CloudFront)
+< x-amz-cf-id: fd0m7sXM62SU2hiTr46ymDw8AVymkLubQPdWN_M1PAijMODB6_17Qw==
+< x-amz-cf-pop: IAD61-P10
+< x-amz-replication-status: COMPLETED
+< x-amz-version-id: zwXz_V3Z_rXJ5Nn9ryl5WDpuMkPauzDf
+< x-cache: Hit from cloudfront
+< --- body (3 bytes read) ---
+< ok
+< 
+
+* total time: 35 ms

@@ -1,0 +1,192 @@
+# curl-style evidence for https://lvhn.org/
+# fetched 2026-09-07T01:36:00.962Z with the tracker's BROWSER_HEADERS (production client)
+# record: 390030 | SCHUYLKILL MEDICAL CENTER - SOUTH JACKSON STREET | PA | finding: not-assessed-not-named-in-file
+
+* DNS lvhn.org: 23.185.0.1
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://lvhn.org/
+< HTTP 301
+< accept-ranges: bytes
+< age: 15658
+< cache-control: public, max-age=86400
+< content-length: 0
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:35:50 GMT
+< location: https://www.lvhn.org/
+< server: nginx
+< strict-transport-security: max-age=300
+< vary: Cookie, Cookie
+< via: 1.1 varnish, 1.1 varnish, 1.1 varnish, 1.1 varnish
+< x-cache: HIT, HIT, MISS, MISS
+< x-cache-hits: 1, 0, 0, 0
+< x-pantheon-styx-hostname: styx-us-a-69558586b-5scrh
+< x-served-by: cache-chi-kmdw8640076-CHI, cache-nyc-kteb1890048-NYC, cache-nyc-kteb1890042-NYC, cache-nyc-kteb1890042-NYC
+< x-styx-req-id: 004a279f-aa38-11f1-a928-3ef5ea46c2c8
+< x-timer: S1788744951.974881,VS0,VE12
+* following Location: https://www.lvhn.org/
+
+* error: fetch failed (cause: UND_ERR_CONNECT_TIMEOUT)
+
+* http:// fallback attempt after transport failure:
+* fallback redirect hop 1: http://lvhn.org/
+< HTTP 301
+< accept-ranges: bytes
+< connection: keep-alive
+< content-length: 0
+< date: Mon, 07 Sep 2026 01:36:02 GMT
+< location: https://lvhn.org/
+< retry-after: 0
+< server: Varnish
+< via: 1.1 varnish, 1.1 varnish
+< x-cache: HIT, MISS
+< x-cache-hits: 0, 0
+< x-served-by: cache-lga21920-LGA, cache-lga21920-LGA
+< x-timer: S1788744962.288514,VS0,VE3
+* following Location: https://lvhn.org/
+
+* fallback redirect hop 2: https://lvhn.org/
+< HTTP 301
+< accept-ranges: bytes
+< age: 15669
+< cache-control: public, max-age=86400
+< content-length: 0
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:36:02 GMT
+< location: https://www.lvhn.org/
+< server: nginx
+< strict-transport-security: max-age=300
+< vary: Cookie, Cookie
+< via: 1.1 varnish, 1.1 varnish, 1.1 varnish, 1.1 varnish
+< x-cache: HIT, HIT, MISS, MISS
+< x-cache-hits: 4, 30, 0, 0
+< x-pantheon-styx-hostname: styx-us-a-69558586b-5scrh
+< x-served-by: cache-chi-kmdw8640076-CHI, cache-ewr-kewr1740065-EWR, cache-ewr-kewr1740051-EWR, cache-ewr-kewr1740051-EWR
+< x-styx-req-id: 004a279f-aa38-11f1-a928-3ef5ea46c2c8
+< x-timer: S1788744962.449980,VS0,VE7
+* following Location: https://www.lvhn.org/
+
+* fallback final response: https://www.lvhn.org/
+< HTTP 200
+< accept-ranges: bytes
+< age: 15916
+< cache-control: max-age=300, public, s-maxage=86400, stale-if-error=86400, stale-while-revalidate=300
+< content-encoding: gzip
+< content-language: en
+< content-length: 23290
+< content-security-policy: frame-ancestors 'self' mylvhn.org my.lvhn.org; upgrade-insecure-requests
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:36:02 GMT
+< etag: W/"1788729047"
+< expires: Sun, 19 Nov 1978 05:00:00 GMT
+< last-modified: Sun, 06 Sep 2026 21:10:47 GMT
+< server: nginx
+< strict-transport-security: max-age=300
+< vary: Accept-Encoding, Cookie, Cookie, Cookie
+< via: 1.1 varnish, 1.1 varnish, 1.1 varnish, 1.1 varnish
+< x-cache: HIT, HIT, MISS, MISS
+< x-cache-hits: 13, 136, 0, 0
+< x-content-type-options: nosniff
+< x-drupal-dynamic-cache: HIT
+< x-frame-options: SAMEORIGIN
+< x-generator: Drupal 10 (https://www.drupal.org)
+< x-pantheon-styx-hostname: styx-us-a-69558586b-d272z
+< x-served-by: cache-chi-kmdw8640092-CHI, cache-nyc-kteb1890048-NYC, cache-nyc-kteb1890088-NYC, cache-nyc-kteb1890088-NYC
+< x-styx-req-id: 6dfd613e-aa37-11f1-9445-3227cb7ef2e5
+< x-timer: S1788744963.675566,VS0,VE9
+< --- body (65536 bytes read, truncated) ---
+< <!DOCTYPE html>
+< <html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+<   <head>
+<     <meta charset="utf-8" />
+< <link rel="shortlink" href="https://www.lvhn.org/" />
+< <link rel="canonical" href="https://www.lvhn.org/welcome-lehigh-valley-health-network" />
+< <meta property="og:image" content="https://www.lvhn.org/sites/default/files/styles/metatags_opengraph/public/2026-09/JH42694_September%20Homepage%20Hero%20Image-LVHN%201.jpg?h=bf654dbc&amp;itok=1dXwuGbX&amp;cb=55e8abdb" />
+< <meta name="google-site-verification" content="RF13jPwj_KAdukxlFpz_IzADWx-dG6-XDtGnswdG6tA" />
+< <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+< <meta name="MobileOptimized" content="width" />
+< <meta name="HandheldFriendly" content="true" />
+< <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+< <script type="application/ld+json">{
+<     "@context": "https://schema.org",
+<     "@graph": [
+<         {
+<             "@type": "MedicalOrganization",
+<             "@id": "https://lvhn.org",
+<             "url": "https://lvhn.org",
+<             "name": "Lehigh Valley Health Network",
+<             "sameAs": [
+<                 "LVHN",
+<                 "lvhn.org",
+<                 "Lehigh Valley Health Network"
+<             ],
+<             "telephone": "hpt-obf:v1:TUTRZWvHbuqj_m3d.G9w4U6vs-orCBjDlB4uvjw.R5n1UbzrccqvMWqwHxDp",
+<             "logo": {
+<                 "@type": "ImageObject",
+<                 "url": "https://www.lvhn.org//themes/custom/ts_lvhn/logo.svg"
+<             },
+<             "image": {
+<                 "@type": "ImageObject",
+<                 "url": "https://www.lvhn.org//themes/custom/ts_lvhn/img/lvhn.jpg",
+<                 "width": "750",
+<                 "height": "450"
+<             }
+<         }
+<     ]
+< }</script>
+< <style> @media (min-width: 0px) and (max-width: 400px) {.paragraph-id--122132 {background-image: url(https://www.lvhn.org/sites/default/files/styles/400_x_202/public/2026-09/JH42694_September%20Homepage%20Hero%20Image-LVHN%201.jpg?h=bf654dbc&itok=IQYa_0OW&cb=55e8abdb);}} @media (min-width: 401px) and (max-width: 767px) {.paragraph-id--122132 {background-image: url(https://www.lvhn.org/sites/default/files/styles/768_x_390/public/2026-09/JH42694_September%20Homepage%20Hero%20Image-LVHN%201.jpg?h=bf654dbc&itok=pHIWvO0-&cb=55e8abdb);}} @media (min-width: 768px) and (max-width: 991px) {.paragraph-id--122132 {background-image: url(https://www.lvhn.org/sites/default/files/styles/964_x_489/public/2026-09/JH42694_September%20Homepage%20Hero%20Image-LVHN%201.jpg?h=bf654dbc&itok=P3u9XjfJ&cb=55e8abdb);}} @media (min-width: 992px) and (max-width: 1440px) {.paragraph-id--122132 {background-image: url(https://www.lvhn.org/sites/default/files/styles/1380_x_700/public/2026-09/JH42694_September%20Homepage%20Hero%20Image-LVHN%201.jpg?h=bf654dbc&itok=s7OuoR9B&cb=55e8abdb);}} @media (min-width: 1441px) {.paragraph-id--122132 {background-image: url(https://www.lvhn.org/sites/default/files/styles/1940_x_985/public/2026-09/JH42694_September%20Homepage%20Hero%20Image-LVHN%201.jpg?h=bf654dbc&itok=R2faCjlT&cb=55e8abdb);}}</style>
+< <link rel="icon" href="/themes/custom/ts_lvhn/favicon.ico" type="image/vnd.microsoft.icon" />
+< 
+< 
+<         <script type="text/javascript">
+<       (function(c,a){if(!a.__SV){var b=window;try{var d,m,j,k=b.location,f=k.hash;d=function(a,b){return(m=a.match(RegExp(b+"=([^&]*)")))?m[1]:null};f&&d(f,"fpState")&&(j=JSON.parse(decodeURIComponent(d(f,"fpState"))),"fpeditor"===j.action&&(b.sessionStorage.setItem("_fpcehash",f),history.replaceState(j.desiredHash||"",c.title,k.pathname+k.search)))}catch(n){}var l,h;window.freshpaint=a;a._i=[];a.init=function(b,d,g){function c(b,i){var a=i.split(".");2==a.length&&(b=b[a[0]],i=a[1]);b[i]=function(){b.push([i].concat(Array.prototype.slice.call(arguments,
+<       0)))}}var e=a;"undefined"!==typeof g?e=a[g]=[]:g="freshpaint";e.people=e.people||[];e.toString=function(b){var a="freshpaint";"freshpaint"!==g&&(a+="."+g);b||(a+=" (stub)");return a};e.people.toString=function(){return e.toString(1)+".people (stub)"};l="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove people group page alias ready addEventProperties addInitialEventProperties removeEventProperty addPageviewProperties registerCallConversion".split(" ");
+<       for(h=0;h<l.length;h++)c(e,l[h]);var f="set set_once union unset remove delete".split(" ");e.get_group=function(){function a(c){b[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));e.push([d,call2])}}for(var b={},d=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<f.length;c++)a(f[c]);return b};a._i.push([b,d,g])};a.__SV=1.4;b=c.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof FRESHPAINT_CUSTOM_LIB_URL?
+<       FRESHPAINT_CUSTOM_LIB_URL:"//perfalytics.com/static/js/freshpaint.js";(d=c.getElementsByTagName("script")[0])?d.parentNode.insertBefore(b,d):c.head.appendChild(b)}})(document,window.freshpaint||[]);
+<       freshpaint.init("c2f43767-5234-49ce-a9a3-50db23c89ad4");
+<       freshpaint.page();
+<     </script>
+< 
+<         <script>dataLayer = [{"drupalContentType":"page","drupalNodeId":"69403"}];</script>
+<     <!-- Google Tag Manager -->
+<     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+<     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+<     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+<     })(window,document,'script','dataLayer','GTM-P2KHPQ48');</script>
+<     <!-- End Google Tag Manager -->
+< 
+<     <title>Welcome to Lehigh Valley Health Network | Lehigh Valley Health Network</title>
+<     <link rel="shortcut icon" href="/themes/custom/ts_lvhn/favicon.ico?v=Lbyn24zMMN">
+<     <link rel="apple-touch-icon" sizes="180x180" href="/themes/custom/ts_lvhn/apple-touch-icon.png?v=Lbyn24zMMN">
+<     <link rel="icon" type="image/png" sizes="32x32" href="/themes/custom/ts_lvhn/favicon-32x32.png?v=Lbyn24zMMN">
+<     <link rel="icon" type="image/png" sizes="16x16" href="/themes/custom/ts_lvhn/favicon-16x16.png?v=Lbyn24zMMN">
+<     <link rel="manifest" href="/themes/custom/ts_lvhn/site.webmanifest?v=Lbyn24zMMN" crossorigin="use-credentials">
+<     <link rel="mask-icon" href="/themes/custom/ts_lvhn/safari-pinned-tab.svg?v=Lbyn24zMMN" color="#5bbad5">
+<     <meta name="msapplication-TileColor" content="#da532c">
+<     <meta name="theme-color" content="#ffffff">
+<     <meta name="msvalidate.01" content="6552301A10A2A122EDCA51F2633685E9" />
+<     <link rel="stylesheet" media="all" href="/core/assets/vendor/jquery.ui/themes/base/core.css?tkuyss" />
+< <link rel="stylesheet" media="all" href="/core/assets/vendor/jquery.ui/themes/base/autocomplete.css?tkuyss" />
+< <link rel="stylesheet" media="all" href="/core/assets/vendor/jquery.ui/themes/base/menu.css?tkuyss" />
+< <link rel="stylesheet" media="all" href="/themes/contrib/stable/css/core/components/progress.module.css?tkuyss" />
+< <link rel="stylesheet" media="all" href="/themes/contrib/stable/css/core/components/ajax-progress.module.css?tkuyss" />
+< <link rel="stylesheet" media="all" href="/themes/contrib/stable/css/core/components/autocomplete-loading.module.css?tkuyss" />
+< <link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/align.module.css?tkuyss" />
+< <link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/fieldgroup.module.css?tkuyss" />
+< <link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/container-inline.module.css?tkuyss" />
+< <link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/clearfix.module.css?tkuyss" />
+< <link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/details.module.css?tkuyss" />
+< <link rel="stylesheet" media="all" href="/themes/contrib/stable/cs
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 11935 ms

@@ -1,0 +1,29 @@
+# curl-style evidence for https://s3.amazonaws.com/ycubaa-production-marlin-1-charge-management-public/facilities/1b76b953-2b0b-45ad-849c-3b844c4b4c1d/720396868_CLAIBORNE-MEMoriaL-MEDICAL-CENTER_standardcharges.csv
+# fetched 2026-09-07T01:33:16.175Z with the tracker's BROWSER_HEADERS (production client)
+# record: 190114 | CLAIBORNE MEMORIAL MEDICAL CENTER | LA | finding: mrf-blocked-to-automation
+
+* DNS s3.amazonaws.com: 16.15.228.241, 16.15.223.64, 16.15.228.103, 16.15.245.162, 52.217.115.224, 16.15.213.220, 16.15.223.29, 16.15.207.192
+
+> GET /ycubaa-production-marlin-1-charge-management-public/facilities/1b76b953-2b0b-45ad-849c-3b844c4b4c1d/720396868_CLAIBORNE-MEMoriaL-MEDICAL-CENTER_standardcharges.csv  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://s3.amazonaws.com/ycubaa-production-marlin-1-charge-management-public/facilities/1b76b953-2b0b-45ad-849c-3b844c4b4c1d/720396868_CLAIBORNE-MEMoriaL-MEDICAL-CENTER_standardcharges.csv
+< HTTP 403
+< content-type: application/xml
+< date: Mon, 07 Sep 2026 01:33:17 GMT
+< server: AmazonS3
+< transfer-encoding: chunked
+< x-amz-id-2: EC06YU8jOluyomzBDTRbV/7r8Tns29i+1XTzuppgIR/3MHhGpPSos4mbS4bz1hRjFBZborfS8qAeWDkyLj1IU5NaLF6qwtry
+< x-amz-request-id: 05G0TVFPFNJ0HB61
+< --- body (263 bytes read) ---
+< <?xml version="1.0" encoding="UTF-8"?>
+< <Error><Code>AccessDenied</Code><Message>Access Denied</Message><RequestId>05G0TVFPFNJ0HB61</RequestId><HostId>EC06YU8jOluyomzBDTRbV/7r8Tns29i+1XTzuppgIR/3MHhGpPSos4mbS4bz1hRjFBZborfS8qAeWDkyLj1IU5NaLF6qwtry</HostId></Error>
+
+* total time: 136 ms

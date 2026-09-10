@@ -1,0 +1,64 @@
+# curl-style evidence for https://apps.nmhs.net/files/pt_mrf/640662976_north-mississippi-medical-center-inc_standardcharges.json
+# fetched 2026-09-07T01:34:43.811Z with the tracker's BROWSER_HEADERS (production client)
+# record: 250004 | NORTH MISSISSIPPI MEDICAL CENTER | MS | finding: mrf-url-unreachable
+
+* DNS apps.nmhs.net: 206.130.52.190
+
+> GET /files/pt_mrf/640662976_north-mississippi-medical-center-inc_standardcharges.json  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://apps.nmhs.net/files/pt_mrf/640662976_north-mississippi-medical-center-inc_standardcharges.json
+< HTTP 404
+< cache-control: private
+< content-encoding: gzip
+< content-length: 524
+< content-security-policy: frame-ancestors 'self'; default-src 'self'; script-src https://code.jquery.com https://cdn.jsdelivr.net 'self' 'unsafe-inline' 'unsafe-eval'; style-src https://use.fontawesome.com/ https://cdn.jsdelivr.net https://apps.nmhs.net 'self' 'unsafe-inline' 'unsafe-eval'; font-src https://use.fontawesome.com 'self'; img-src https://www.nmhs.net https://apps.nmhs.net 'self' data:
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:34:45 GMT
+< expect-ct: "enforce,max-age=30"
+< ntcoent-length: 1100
+< permissions-policy: vibrate=(), sync-xhr=(), documnet-domain=(self), geolocation=(), accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
+< referrer-policy: STRICT-ORIGIN
+< strict-transport-security: max-age=15552000; includeSubDomains; preload
+< x-content-type-options: nosniff
+< x-xss-protection: 1;mode=block
+< --- body (1100 bytes read) ---
+< <!DOCTYPE html>
+< <html lang="en" dir="ltr">
+<    <head>
+<       <meta charset="utf-8">
+<       <title>404 Error Page | North Mississippi Health Services</title>
+<       <link rel="stylesheet" href="https://apps.nmhs.net/Error/style.css">
+<       <meta name="viewport" content="width=device-width, initial-scale=1">
+<    </head>
+<    <body>
+<       <div id="error-page">
+<          <div class="content">
+< 			<div class="logo">
+< 				<p><a href="https://www.nmhs.net/"><img role="img" alt="North Mississippi Health Services" height="371" src="https://apps.nmhs.net/Error/img/NMHS_Logo_Secondary_Full-Color_RGB.svg" width="665" /></a></p>
+< 			</div>
+<             <h2 class="header" data-text="404">
+<                404
+<             </h2>
+<             <h4 data-text="Opps! Page not found">
+<                Opps! Page not found
+<             </h4>
+<             <p>
+<                Sorry, the page you're looking for doesn't exist.
+<             </p>
+<             <div class="btns">
+<                <a href="https://www.nmhs.net/">return home</a>
+<             </div>
+<          </div>
+<       </div>
+<    </body>
+< </html>
+
+* total time: 212 ms

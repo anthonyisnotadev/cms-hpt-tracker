@@ -1,0 +1,101 @@
+{
+  "generated_at": "2026-09-07T01:02:16.877Z",
+  "scope": "full unresolved-record refresh: manifest MRF headers, pointer corpus, domain discovery retry",
+  "findings_before": {
+    "not-applicable-federal": 164,
+    "compliant-date-unverified": 434,
+    "not-assessed-domain-unknown": 843,
+    "compliant-observed": 3068,
+    "pointer-blocked-to-automation": 105,
+    "not-assessed-site-unreachable": 158,
+    "no-cms-hpt-txt-published": 79,
+    "mrf-stale-over-365-days": 152,
+    "old-template-version": 102,
+    "mrf-blocked-to-automation": 69,
+    "mrf-url-unreachable": 129,
+    "not-assessed-not-named-in-file": 110,
+    "pointer-lists-no-mrf-url": 6
+  },
+  "findings_after": {
+    "not-applicable-federal": 164,
+    "compliant-observed": 3426,
+    "not-assessed-domain-unknown": 839,
+    "compliant-date-unverified": 160,
+    "pointer-blocked-to-automation": 100,
+    "not-assessed-site-unreachable": 104,
+    "no-cms-hpt-txt-published": 96,
+    "mrf-stale-over-365-days": 156,
+    "old-template-version": 104,
+    "not-assessed-not-named-in-file": 144,
+    "mrf-blocked-to-automation": 74,
+    "mrf-url-unreachable": 46,
+    "pointer-lists-no-mrf-url": 6
+  },
+  "transitions": {
+    "compliant-date-unverified => compliant-observed": 253,
+    "not-assessed-site-unreachable => not-assessed-not-named-in-file": 21,
+    "not-assessed-domain-unknown => no-cms-hpt-txt-published": 1,
+    "not-assessed-site-unreachable => no-cms-hpt-txt-published": 32,
+    "compliant-date-unverified => mrf-stale-over-365-days": 12,
+    "old-template-version => compliant-observed": 4,
+    "mrf-url-unreachable => compliant-observed": 81,
+    "mrf-stale-over-365-days => compliant-observed": 8,
+    "compliant-date-unverified => old-template-version": 5,
+    "not-assessed-site-unreachable => pointer-blocked-to-automation": 4,
+    "mrf-stale-over-365-days => old-template-version": 1,
+    "not-assessed-domain-unknown => compliant-observed": 3,
+    "no-cms-hpt-txt-published => not-assessed-site-unreachable": 4,
+    "pointer-blocked-to-automation => no-cms-hpt-txt-published": 1,
+    "compliant-date-unverified => mrf-url-unreachable": 2,
+    "no-cms-hpt-txt-published => pointer-blocked-to-automation": 6,
+    "compliant-date-unverified => mrf-blocked-to-automation": 3,
+    "not-assessed-site-unreachable => compliant-observed": 2,
+    "not-assessed-not-named-in-file => compliant-observed": 6,
+    "pointer-blocked-to-automation => not-assessed-not-named-in-file": 14,
+    "no-cms-hpt-txt-published => not-assessed-not-named-in-file": 6,
+    "mrf-url-unreachable => mrf-blocked-to-automation": 3,
+    "mrf-blocked-to-automation => compliant-observed": 1,
+    "compliant-observed => mrf-stale-over-365-days": 1,
+    "no-cms-hpt-txt-published => compliant-observed": 1,
+    "mrf-url-unreachable => compliant-date-unverified": 1,
+    "not-assessed-not-named-in-file => not-assessed-site-unreachable": 1
+  },
+  "recovered_to_compliant_observed": 346,
+  "promoted_domains": {
+    "ccns": [
+      "050581",
+      "230054",
+      "241306",
+      "490067"
+    ],
+    "refused_for_manual_review": [
+      "191311 (pointer no longer served)",
+      "150179 (pointer unstable, weak staged match)"
+    ]
+  },
+  "corpus_imported_ccns": [
+    "180046",
+    "180067",
+    "180101",
+    "181308",
+    "241379",
+    "250001",
+    "390100",
+    "490069"
+  ],
+  "manual_correction": {
+    "ccn": "011311",
+    "finding": "no-cms-hpt-txt-published",
+    "domain": "lakelandcommunityhospital.com"
+  },
+  "pointer_snapshot_files_added": 244,
+  "missing_queue_retry": {
+    "selected": 496,
+    "verified": 0,
+    "review": 83,
+    "site_found": 199,
+    "blocked": 206,
+    "rejected": 646
+  },
+  "public_data_changed": true
+}

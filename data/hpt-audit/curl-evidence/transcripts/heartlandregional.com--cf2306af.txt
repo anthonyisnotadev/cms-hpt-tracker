@@ -1,0 +1,208 @@
+# curl-style evidence for https://heartlandregional.com/
+# fetched 2026-09-07T01:33:03.162Z with the tracker's BROWSER_HEADERS (production client)
+# record: 140184 | HEARTLAND REGIONAL MEDICAL CENTER | IL | finding: not-assessed-not-named-in-file
+
+* DNS heartlandregional.com: 141.193.213.21, 141.193.213.20
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://heartlandregional.com/
+< HTTP 301
+< alt-svc: h3=":443"; ma=86400
+< cf-cache-status: BYPASS
+< cf-ray: a371f6201a46ca5f-IAD
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:32:45 GMT
+< location: https://deaconessillinoismedicalcenter.com/
+< server: cloudflare
+< vary: accept-encoding
+* following Location: https://deaconessillinoismedicalcenter.com/
+
+* redirect hop 2: https://deaconessillinoismedicalcenter.com/
+< HTTP 301
+< content-length: 0
+< date: Mon, 07 Sep 2026 01:32:44 GMT
+< location: https://www.deaconess.com/illinois/deaconess-illinois-medical-center
+< referrer-policy: strict-origin-when-cross-origin
+< server: Microsoft-IIS/10.0
+< strict-transport-security: max-age=2592000
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-powered-by: ASP.NET
+* following Location: https://www.deaconess.com/illinois/deaconess-illinois-medical-center
+
+* error: fetch failed (cause: UND_ERR_CONNECT_TIMEOUT)
+
+* http:// fallback attempt after transport failure:
+* fallback redirect hop 1: http://heartlandregional.com/
+< HTTP 301
+< alt-svc: h3=":443"; ma=86400
+< cf-cache-status: BYPASS
+< cf-ray: a371f67eb9578b3e-IAD
+< connection: keep-alive
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:33:00 GMT
+< location: http://deaconessillinoismedicalcenter.com/
+< server: cloudflare
+< transfer-encoding: chunked
+< vary: accept-encoding
+* following Location: http://deaconessillinoismedicalcenter.com/
+
+* fallback redirect hop 2: http://deaconessillinoismedicalcenter.com/
+< HTTP 301
+< content-length: 0
+< date: Mon, 07 Sep 2026 01:33:03 GMT
+< location: https://deaconessillinoismedicalcenter.com/
+* following Location: https://deaconessillinoismedicalcenter.com/
+
+* fallback redirect hop 3: https://deaconessillinoismedicalcenter.com/
+< HTTP 301
+< content-length: 0
+< date: Mon, 07 Sep 2026 01:33:03 GMT
+< location: https://www.deaconess.com/illinois/deaconess-illinois-medical-center
+< referrer-policy: strict-origin-when-cross-origin
+< server: Microsoft-IIS/10.0
+< strict-transport-security: max-age=2592000
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-powered-by: ASP.NET
+* following Location: https://www.deaconess.com/illinois/deaconess-illinois-medical-center
+
+* fallback final response: https://www.deaconess.com/illinois/deaconess-illinois-medical-center
+< HTTP 200
+< cache-control: no-cache, no-store
+< content-encoding: gzip
+< content-security-policy: frame-ancestors 'self' https://www.viewmychart.com; default-src 'self' localhost:* *.typekit.net *.googletagmanager.com *.wistia.com *.deaconess.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.googleapis.com https://*.wistia.com https://*.wistia.net https://browser.sentry-cdn.com https://cdn.jsdelivr.net https://code.jquery.com https://*.amazonaws.com https://deaconess.formstack.com https://h1.avaamo.com https://radiomd.com https://static.formstack.com https://unpkg.com https://viewmychart.com https://www.google.com https://www.googletagmanager.com https://www.gstatic.com https://www.snapengage.com https://siteimproveanalytics.com; style-src 'self' 'unsafe-inline' *; connect-src 'self' browser.sentry-cdn.com *.algolia.net *.amazonaws.com *.algolianet.com *.clockwisemd.com *.deaconess.com *.experityhealth.com *.google-analytics.com *.wistia.com *.wistia.net https://cdn.jsdelivr.net https://deaconess.formstack.com https://insights.algolia.io https://unpkg.com https://www.snapengage.com ws://localhost:* wss://localhost:*; font-src 'self' *.wistia.com *.wistia.net data: https://*.googleapis.com https://fonts.gstatic.com https://h1.avaamo.com https://static.formstack.com use.typekit.net; img-src 'self' *.amazonaws.com *.cloudflare.com *.jsdelivr.net *.openstreetmap.org *.placeholder.com *.rawgit.com *.wistia.com *.wistia.net data: https://*.azurewebsites.net https://*.googleapis.com https://www.googletagmanager.com https://www.snapengage.com *.siteimproveanalytics.io; frame-src 'self' *.wistia.com *.wistia.net *.youtube.com https://*.azurewebsites.net https://deaconess.formstack.com/ https://eprp.deaconess.com/ https://h1.avaamo.com/ https://localhost:* https://support.doctorpodcasting.com/ https://viewmychart.com https://www.google.com/ https://www.viewmychart.com; media-src 'self' blob: localhost:* *.wistia.com *.wistia.net https://h1.avaamo.com/;
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:33:04 GMT
+< pragma: no-cache
+< referrer-policy: strict-origin-when-cross-origin
+< server: Microsoft-IIS/10.0
+< strict-transport-security: max-age=2592000
+< vary: Accept-Encoding
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-powered-by: ASP.NET
+< --- body (65536 bytes read, truncated) ---
+< 
+< 
+< <!DOCTYPE html>
+< 
+< <html lang="en-US">
+< <head id="head">
+<     <title>Deaconess Illinois Medical Center - Illinois | Deaconess</title>
+< <link rel="canonical" href="https://www.deaconess.com/illinois/deaconess-illinois-medical-center">
+< <meta name="url" content="https://www.deaconess.com/illinois/deaconess-illinois-medical-center">
+<     <meta name="Description" content="Marion, IL hospital serving Southern Illinois with emergency, cancer, orthopedics, and advanced imaging services. Deaconess Illinois Medical Center is Primary Stroke Center certified and provides trusted and innovative care close to home—find care near you today.">
+< <meta property="og:title" content="Deaconess Illinois Medical Center - Illinois | Deaconess">
+< <meta property="og:description" content="Marion, IL hospital serving Southern Illinois with emergency, cancer, orthopedics, and advanced imaging services. Deaconess Illinois Medical Center is Primary Stroke Center certified and provides trusted and innovative care close to home—find care near you today.">
+< <meta property="og:url" content="https://www.deaconess.com/illinois/deaconess-illinois-medical-center">
+< <meta property="og:site_name" content="DeaconessHealthSystem">
+< <meta property="twitter:title" content="Deaconess Illinois Medical Center - Illinois | Deaconess">
+< <meta property="twitter:description" content="Marion, IL hospital serving Southern Illinois with emergency, cancer, orthopedics, and advanced imaging services. Deaconess Illinois Medical Center is Primary Stroke Center certified and provides trusted and innovative care close to home—find care near you today.">
+< <meta property="twitter:creator" content="deaconessnews">
+< <meta property="twitter:site" content="deaconessnews">
+< <script type="application/ld+json">
+<     {"@context":"https://schema.org","@type":"MedicalWebPage","name":"Deaconess Illinois Medical Center - Illinois | Deaconess","description":"Marion, IL hospital serving Southern Illinois with emergency, cancer, orthopedics, and advanced imaging services. Deaconess Illinois Medical Center is Primary Stroke Center certified and provides trusted and innovative care close to home\u2014find care near you today.","url":"https://www.deaconess.com/illinois/deaconess-illinois-medical-center"}
+< </script>
+< 
+<     <meta charset="utf-8">
+<     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+< 
+<     <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'">
+<     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"></noscript>
+<     <link rel="preload" as="style" href="/index.css?v=QCc2FyuVRijkVE2IPkbXZKV5K-Ka_iIeE9rpvwkSg5M">
+<     <link rel="stylesheet" href="/index.css?v=QCc2FyuVRijkVE2IPkbXZKV5K-Ka_iIeE9rpvwkSg5M">
+<     <!--
+<         SETUP: If using typekit fonts, make sure your using your customers typekit account.
+<     -->
+<     <link rel="preload" as="style" href="https://use.typekit.net/qce4fgj.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'">
+<     <noscript><link rel="stylesheet" href="https://use.typekit.net/qce4fgj.css"></noscript>
+<     <!--
+<         Directly preloading the versions of the adobe font that are critical for first rendering
+<     -->
+<     <link rel="preload" href="https://use.typekit.net/af/e5199f/00000000000000003b9ae7f4/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3" as="font" crossorigin>
+<     <link rel="preload" href="https://use.typekit.net/af/630ec8/00000000000000003b9ae7f8/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3" as="font" crossorigin>
+<     <link rel="preload" href="https://use.typekit.net/af/b7ea2b/00000000000000003b9ae7f5/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3" as="font" crossorigin>
+<     <link rel="preload" href="/fonts/icons/icons.woff" as="font" crossorigin>
+< 
+<     <link href="https://fonts.googleapis.com/css?family=Material&#x2B;Icons%7CMaterial&#x2B;Icons&#x2B;Outlined" rel="preload" as="style" crossorigin="anonymous">
+<     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'">
+<     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"></noscript>
+<     <link href="https://fonts.googleapis.com/css?family=Material&#x2B;Icons%7CMaterial&#x2B;Icons&#x2B;Outlined" rel="preload" as="style" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'">
+<     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons%7CMaterial+Icons+Outlined"></noscript>
+< 
+<     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<     <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+<     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+< 
+<     <link href="https://cdn.jsdelivr.net/npm/jquery-ui@1.14.1/themes/base/theme.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-ui@1.14.1/themes/base/theme.css"></noscript>
+< 
+<     
+< 
+<     <link rel="shortcut icon" type="image/jpg" href="/getContentAsset/655a5726-fd91-4abb-95f8-dd76b6b1cc2e/e477a59e-1df6-4e2f-9986-20ab37342540/favicon.ico?language=en-US" />
+<         <!--Avaamo Chat Bot-->
+<         <script src="https://deaconess-assets.s3.us-west-1.amazonaws.com/deaconess_org_script.js" defer></script>
+< 
+< <script async src="https://siteimproveanalytics.com/js/siteanalyze_69162.js"></script>
+< </head>
+< <body>
+<     <div class="page">
+<         <a class="nav-skip" href="#content" aria-label="Skip To Content">Skip to content</a>
+<         <app-header class="header">
+<     
+<     
+<         
+<         
+<         <header class="header__inner">
+<             
+< <nav class="header__util">
+<     <div class="location-input-container">
+<         <input type="text" placeholder="zip code or city, state" class="location-input" title="Enter a location to view Doctor and Location distance." />
+<     </div>
+<     <ul class="header__util-list">
+<             <li class="header__util-item ">
+<                 <a class="header__util-label" href="/pay-my-bill" aria-label="Pay My Bill" >
+<                     <span>Pay My Bill</span>
+<                 </a>
+<             </li>
+<             <li class="header__util-item ">
+<                 <a class="header__util-label" href="/mychart" aria-label="MyChart" >
+<                     <span>MyChart</span>
+<                 </a>
+<             </li>
+<             <li class="header__util-item ">
+<                 <a class="header__util-label" href="/for-you/donors-and-volunteers" aria-label="Giving" >
+<                     <span>Giving</span>
+<                 </a>
+<             </li>
+<             <li class="header__util-item ">
+<                 <a class="header__util-label" href="/calendars" aria-label="Classes &#x2B; Events" >
+<                     <span>Classes &#x2B; Events</span>
+<                 </a>
+<             </li>
+<             <li class="header__util-item ">
+<                 <a class="header__util-label" href="/careers" aria-label="Careers"  target='_blank' rel='noopener noreferrer' >
+<                     <span>Careers</span>
+<                 </a>
+<             </li>
+<             <li class="header__util-item ">
+<                 <a class="header__util-label" href="/about-us/contact-us" aria-label="Contact" >
+<                     <span>Contact</span>
+<                 </a>
+<             </li>
+< 
+<         <li class="header__util-item">
+<             <a class="header__util-label btn-search" href=
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 19584 ms

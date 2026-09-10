@@ -1,0 +1,160 @@
+# curl-style evidence for https://mainehealth.org/
+# fetched 2026-09-07T01:34:40.477Z with the tracker's BROWSER_HEADERS (production client)
+# record: 204005 | MAINEHEALTH BEHAVIORAL HEALTH AT SPRING HARBOR | ME | finding: not-assessed-not-named-in-file
+
+* DNS mainehealth.org: 23.22.228.151
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://mainehealth.org/
+< HTTP 301
+< content-length: 0
+< content-type: application/octet-stream
+< date: Mon, 07 Sep 2026 01:34:29 GMT
+< location: https://www.mainehealth.org/
+< server: awselb/2.0
+* following Location: https://www.mainehealth.org/
+
+* error: fetch failed (cause: UND_ERR_CONNECT_TIMEOUT)
+
+* http:// fallback attempt after transport failure:
+* fallback redirect hop 1: http://mainehealth.org/
+< HTTP 301
+< connection: keep-alive
+< content-length: 0
+< content-type: application/octet-stream
+< date: Mon, 07 Sep 2026 01:34:41 GMT
+< location: https://www.mainehealth.org/
+< server: awselb/2.0
+* following Location: https://www.mainehealth.org/
+
+* fallback final response: https://www.mainehealth.org/
+< HTTP 200
+< age: 404
+< cache-control: max-age=86400, public
+< content-encoding: br
+< content-language: en
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:27:58 GMT
+< etag: W/"1788742827"
+< expires: Sun, 19 Nov 1978 05:00:00 GMT
+< last-modified: Mon, 07 Sep 2026 01:00:27 GMT
+< server: nginx/1.31.5
+< vary: Cookie,Accept-Encoding, Origin
+< via: 1.1 b6d3c8159ae3de02f9219eb71093bbe2.cloudfront.net (CloudFront)
+< x-amz-cf-id: YFNNI_n58lfiJ-E2n5SpWfv9Pau9LMI9FUumE6W2act1ZFa1zM30ow==
+< x-amz-cf-pop: IAD55-P6
+< x-cache: Hit from cloudfront
+< x-content-type-options: nosniff
+< x-drupal-cache: HIT
+< x-drupal-dynamic-cache: MISS
+< x-frame-options: SAMEORIGIN
+< x-generator: Drupal 10 (https://www.drupal.org)
+< x-powered-by: PHP/8.4.22
+< --- body (42858 bytes read) ---
+< <!DOCTYPE html>
+< <html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+<   <head>
+<     <meta charset="utf-8" />
+< <meta name="description" content="MaineHealth is a not-for-profit, integrated health system committed to providing high-quality affordable care, educating tomorrow&#039;s caregivers and researching better ways to provide care." />
+< <link rel="canonical" href="https://www.mainehealth.org/" />
+< <link rel="shortlink" href="https://www.mainehealth.org/" />
+< <meta property="og:site_name" content="MaineHealth" />
+< <meta property="og:type" content="WebPage" />
+< <meta property="og:url" content="https://www.mainehealth.org/mainehealth" />
+< <meta property="og:title" content="MaineHealth" />
+< <meta property="og:description" content="MaineHealth is a not-for-profit family of high-quality providers and health care organizations committed to the health and well-being of the communities and people we serve. As the largest health care organization in Maine and a leading health care provider serving northern New Hampshire, MaineHealth is recognized as one of the nation’s top integrated health care delivery networks." />
+< <meta property="og:image" content="https://assets.mainehealth.io/s3fs-public/2024-06/Open-Graph-Image-MHC-MaineHealth-Logo.png" />
+< <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+< <meta name="MobileOptimized" content="width" />
+< <meta name="HandheldFriendly" content="true" />
+< <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+< 
+<     <title>MaineHealth | Working together so our communities are the healthiest in America</title>
+<     <link rel="stylesheet" media="all" href="/sites/default/files/css/css_WcoMPjuM5Kx3Q5iz5QOG6koadt63DPQfG2Iwfvrfu7w.css?delta=0&amp;language=en&amp;theme=mainehealth&amp;include=eJxVjlEOgzAMQy_U0SOhQD2aqW1Qk8LY6cdA08aPLT_54w0wQ-1nqijmh__lRqnwobaZUkcPep6gSM2U-AWXaJNmfWAdZUHdvBSMklwmLoigZNEPpLiADFWaoBdYJOwvHqX4I7s7XWaOt0-7XYymSnPUr9ePdK3MbUisEcEpG1YO6CmhmufC5nRTQz6NFsaq_sguS2gJb6-uZxU" />
+< <link rel="stylesheet" media="all" href="/sites/default/files/css/css_6uyp6m3VUZrV83tnIiO-0GB-eYBPpmusATQrv0hxrNs.css?delta=1&amp;language=en&amp;theme=mainehealth&amp;include=eJxVjlEOgzAMQy_U0SOhQD2aqW1Qk8LY6cdA08aPLT_54w0wQ-1nqijmh__lRqnwobaZUkcPep6gSM2U-AWXaJNmfWAdZUHdvBSMklwmLoigZNEPpLiADFWaoBdYJOwvHqX4I7s7XWaOt0-7XYymSnPUr9ePdK3MbUisEcEpG1YO6CmhmufC5nRTQz6NFsaq_sguS2gJb6-uZxU" />
+< <link rel="stylesheet" media="all" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+< <link rel="stylesheet" media="all" href="/sites/default/files/css/css_zwUEHehMj9i6VciDlDUtd2f-Z7WoHwa71xzvX_kXwuw.css?delta=3&amp;language=en&amp;theme=mainehealth&amp;include=eJxVjlEOgzAMQy_U0SOhQD2aqW1Qk8LY6cdA08aPLT_54w0wQ-1nqijmh__lRqnwobaZUkcPep6gSM2U-AWXaJNmfWAdZUHdvBSMklwmLoigZNEPpLiADFWaoBdYJOwvHqX4I7s7XWaOt0-7XYymSnPUr9ePdK3MbUisEcEpG1YO6CmhmufC5nRTQz6NFsaq_sguS2gJb6-uZxU" />
+< <link rel="stylesheet" media="all" href="https://use.typekit.net/rga7fgt.css" />
+< <link rel="stylesheet" media="print" href="/sites/default/files/css/css_k8LCfv3NbzP05IJDmbRUVsAWoJmZ62vSPdYv6bkkKjw.css?delta=5&amp;language=en&amp;theme=mainehealth&amp;include=eJxVjlEOgzAMQy_U0SOhQD2aqW1Qk8LY6cdA08aPLT_54w0wQ-1nqijmh__lRqnwobaZUkcPep6gSM2U-AWXaJNmfWAdZUHdvBSMklwmLoigZNEPpLiADFWaoBdYJOwvHqX4I7s7XWaOt0-7XYymSnPUr9ePdK3MbUisEcEpG1YO6CmhmufC5nRTQz6NFsaq_sguS2gJb6-uZxU" />
+< 
+<     <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/14085","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"en"},"pluralDelimiter":"\u0003","gtag":{"tagId":"","consentMode":false,"otherIds":[],"events":[],"additionalConfigInfo":[]},"suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"eJxtz1FuxCAMBNAL0XAk5MAUvAIcYbPb9PQbZVdqU_VnpHnyh2eFGUbYaKCbX383F2XAdxmNKn_DZZFcEYyyz0f87Qvd6OuKzVXaZVpIrFHuGLuXjijVNeKOAqpW_EqKCzSoUoZesEu6XiloxPKRpP3HJvn4w7USXvD28HnMcY2jdH-mO7ZSHrQV9WnMjeryI8vs21wra0FyyoYHJwSqGOa5sznd1dBeC-6Mh_ozlyZpVjwBVYmHZw","theme":"mainehealth","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true},"gtm":{"tagId":null,"settings":{"data_layer":"dataLayer","include_environment":false},"tagIds":["GTM-M4L26MK6"]},"sitewideAlert":{"refreshInterval":60000,"automaticRefresh":true,"showCount":false,"serverSideRender":false},"user":{"uid":0,"permissionsHash":"82fa8df6374bf317b26fa592be3934d6da36931b052dad89e42c317c9265b68b"}}</script>
+< <script src="/sites/default/files/js/js_S9SjQ3NI6o0nXnOkewW2pNhbRBR4-QWXEEh3lXevC8E.js?scope=header&amp;delta=0&amp;language=en&amp;theme=mainehealth&amp;include=eJxtzFEKAjEMhOELVXukkLpjGmkaSQN6fBf0wRVfBv7vYRoyEXTnwMzavquIuwxQslTZ57fPfOPnEa0Y60QHj-y18cIBFjgu_bS5_eN02Z-KdXrDx-nqYWVp4qEbiAciq07NF6NDSG0"></script>
+< <script src="/modules/contrib/google_tag/js/gtag.js?tkxma3"></script>
+< <script src="/modules/contrib/google_tag/js/gtm.js?tkxma3"></script>
+< 
+<     <link rel="apple-touch-icon" sizes="180x180" href="/themes/custom/mainehealth/images/favicon/apple-touch-icon.png?v=2024">
+<     <link rel="icon" type="image/png" sizes="32x32" href="/themes/custom/mainehealth/images/favicon/favicon-32x32.png?v=2024">
+<     <link rel="icon" type="image/png" sizes="16x16" href="/themes/custom/mainehealth/images/favicon/favicon-16x16.png?v=2024">
+<     <link rel="manifest" href="/themes/custom/mainehealth/images/favicon/site.webmanifest">
+<     <link rel="mask-icon" href="/themes/custom/mainehealth/images/favicon/safari-pinned-tab.svg?v=2024" color="#cb3340">
+<     <link rel="shortcut icon" href="/themes/custom/mainehealth/images/favicon/favicon.ico?v=2024">
+<     <meta name="msapplication-TileColor" content="#cb3340">
+<     <meta name="msapplication-config" content="/themes/custom/mainehealth/images/favicon/browserconfig.xml">
+<     <meta name="theme-color" content="#ffffff">
+<     <meta name="format-detection" content="telephone=no">
+<   </head>
+<   <body class="section- path-frontpage page-node-type-page">
+<         <a href="#main-content" class="visually-hidden focusable skip-link">
+<       Skip to main content
+<     </a>
+<     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4L26MK6"
+<                   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+< <div data-sitewide-alert aria-live="polite"></div>
+< 
+<       <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+<     
+<   
+< <div class="layout-container">
+< 
+<   
+< 
+< <header role="banner" class="header">
+<   <div class="header-inner">
+<     <div class="header-layout max-contain">
+<       <div class="header-logo header-col">
+<         <a href="/" rel="home">
+<           <img src="https://assets.mainehealth.io/s3fs-public/config_pages/header/MaineHealth-RGB-Preferred-Logo-Digital.svg" alt="MaineHealth Logo" width="350" height="49">
+<         </a>
+<       </div>
+< 
+<       <div class="header-menus-search-container header-col">
+<                     <div class="region region-search">
+<     
+< 
+<   
+< 
+< 
+< 
+< 
+< 
+< <button
+<   id="search-dialog-toggle" aria-controls="search-dialog" aria-expanded="false">
+<   <span class="toggle-text">Open Search</span>
+<   <span class="hamburger-icon">
+<     <span></span>
+<     <span></span>
+<     <span></span>
+<   </span>
+< </button>
+< 
+< <div style="display: none;" id="search-dialog" tabindex="-1" role="dialog" aria-modal="true" data-toggle-id="search-dialog-toggle">
+<   <button class="dialog-close">Close</button>
+<   <form class="mh-search-form" data-drupal-selector="mh-search-form" action="/" method="post" id="mh-search-form" accept-charset="UTF-8">
+<   <div tabindex="-1" data-autosuggest-groups="[&quot;7&quot;,&quot;8&quot;,&quot;9&quot;]" data-drupal-selector="edit-search-container" id="edit-search-container" class="js-form-wrapper form-wrapper"><div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-keywords form-item-keywords">
+<       <label for="edit-keywords">Search by name, service, location or specialty</label>
+<         <input autocomplete="off" class="ce-dont-mask form-text" data-drupal-selector="edit-keywords" type="text" id="edit-keywords" name="keywords" value="" size="60" maxlength="128" placeholder="Search all of mainehealth.org" />
+< 
+<         </div>
+< <div style="display: none;" data-drupal-se
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 24547 ms

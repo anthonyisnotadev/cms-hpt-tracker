@@ -1,0 +1,168 @@
+# curl-style evidence for https://rsfh.com/
+# fetched 2026-09-07T01:35:53.737Z with the tracker's BROWSER_HEADERS (production client)
+# record: 420104 | MOUNT PLEASANT HOSPITAL | SC | finding: not-assessed-not-named-in-file
+
+* DNS rsfh.com: 162.159.140.121, 172.66.0.119
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://rsfh.com/
+< HTTP 301
+< cf-cache-status: DYNAMIC
+< cf-ray: a371fac18c6420a6-IAD
+< content-length: 0
+< date: Mon, 07 Sep 2026 01:35:55 GMT
+< location: https://www.rsfh.com/
+< request-context: appId=cid-v1:aefd4eef-c825-4501-be53-03c79073e577
+< server: cloudflare
+< x-powered-by: ASP.NET
+* following Location: https://www.rsfh.com/
+
+* final response: https://www.rsfh.com/
+< HTTP 200
+< cf-cache-status: DYNAMIC
+< cf-ray: a371fac33a40c988-IAD
+< content-encoding: gzip
+< content-security-policy: default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://maps.googleapis.com https://maps.gstatic.com https://mychart.rsfh.com https://brandedweb.mindbodyonline.com https://go.mindbodyonline.com https://widgets.mindbodyonline.com https://brandedweb-assets.mindbodyonline.com https://cdn.mxpnl.com https://cdn.pendo.io https://*.pendo.io https://img04.en25.com https://analytics.kentico.com https://rsfh.containers.piwik.pro https://rsfh.piwik.pro https://script-app.mercuryhealthcare.com https://www.youtube.com https://googleads.g.doubleclick.net https://www.googleadservices.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://brandedweb-assets.mindbodyonline.com https://mychart.rsfh.com https://myctest.rsfh.com; font-src 'self' https://fonts.gstatic.com https://brandedweb-assets.mindbodyonline.com; img-src 'self' data: https://prod-rsfh-023897.xperience-sites.com https://prod-rsfh.xperience-sites.com https://www.rsfh.com https://rsfh.com https://maps.gstatic.com https://maps.googleapis.com https://www.googletagmanager.com https://www.google.com https://mapsresources-pa.googleapis.com https://go.mindbodyonline.com https://brandedweb-assets.mindbodyonline.com https://kyruus-app-static.kyruus.com https://data.eu.pendo.io https://*.pendo.io https://img.youtube.com https://rsfh.containers.piwik.pro https://rsfh.piwik.pro https://googleads.g.doubleclick.net https://www.googleadservices.com; frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://www.google.com https://www.swellbox.com https://*.eloqua.com https://mychart.rsfh.com https://go.mindbodyonline.com https://webapps.rsfh.com; connect-src 'self' data: https://prod-rsfh-023897.xperience-sites.com https://prod-rsfh.xperience-sites.com https://www.rsfh.com https://rsfh.com https://maps.googleapis.com https://mapsresources-pa.googleapis.com https://places.googleapis.com https://www.googletagmanager.com https://www.google.com https://ad.doubleclick.net https://*.google-analytics.com https://analytics.kentico.com https://*.orghipaa.coveo.com https://go.mindbodyonline.com https://widgets.mindbodyonline.com https://api-js.mixpanel.com https://data.eu.pendo.io https://*.pendo.io https://rsfh.containers.piwik.pro https://rsfh.piwik.pro https://*.eloqua.com https://myctest.rsfh.com; media-src 'self' data: https://prod-rsfh-023897.xperience-sites.com https://prod-rsfh.xperience-sites.com https://www.rsfh.com https://rsfh.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self' https://prod-rsfh.xperience-sites.com https://www.rsfh.com https://rsfh.com https://doctors.rsfh.com https://*.t.eloqua.com; frame-ancestors 'self' https://prod-rsfh-023897.xperience-sites.com https://prod-rsfh.xperience-sites.com https://www.rsfh.com https://rsfh.com https://boeing.rsfhealthalliance.com https://www.rsfhealthalliance.com https://teammates.rsfhealthalliance.com https://www.lowcountryseniorcenter.com https://www.governorthomasbennetthouse.com; upgrade-insecure-requests
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:35:55 GMT
+< permissions-policy: geolocation=(self), microphone=(), camera=()
+< referrer-policy: strict-origin-when-cross-origin
+< request-context: appId=cid-v1:aefd4eef-c825-4501-be53-03c79073e577
+< server: cloudflare
+< strict-transport-security: max-age=31536000; includeSubDomains; preload
+< vary: Accept-Encoding
+< x-content-type-options: nosniff
+< x-powered-by: ASP.NET
+< x-xss-protection: 1; mode=block
+< --- body (64514 bytes read) ---
+< 
+< 
+< 
+< <!DOCTYPE html>
+< <html lang="en">
+< 
+< 
+< <head>
+<     
+< 
+< 
+<     
+<     <title>Home | Roper St. Francis Healthcare</title>
+< 
+<     
+< <link rel="icon" type="image/png" href="/favicons/rsfh/favicon-96x96.png" sizes="96x96" />
+< <link rel="icon" type="image/png" href="/favicons/rsfh/favicon-192x192.png" sizes="192x192" />
+< <link rel="icon" type="image/png" href="/favicons/rsfh/favicon-512x512.png" sizes="512x512" />
+< <link rel="icon" type="image/svg+xml" href="/favicons/rsfh/favicon.svg" />
+< <link rel="shortcut icon" href="/favicons/rsfh/favicon.ico" />
+< <link rel="apple-touch-icon" href="/favicons/rsfh/apple-touch-icon.png" sizes="180x180" />
+< <meta name="apple-mobile-web-app-title" content="Roper St. Francis Healthcare" />
+< <link rel="manifest" href="/favicons/rsfh/site.webmanifest" />
+<     <meta name="viewport" content="width=device-width, initial-scale=1">
+<     <link rel="preload" href="/_content/Rsfh.Web.Roper/fonts/figtree/figtree-latin-normal.woff2" as="font" type="font/woff2" crossorigin>
+<     
+< 
+< 
+<     
+< 
+<     
+< 
+< 
+<     
+<         <link rel="canonical" href="https://www.rsfh.com/home">
+<         <meta name="description" content="Get expert care from trusted local providers throughout the greater Charleston area.">
+<         <meta name="keywords" content="Healthcare, hospital, care near me, doctor near me, find a doctor, provider, Roper, Roper St. Francis, St. Francis, Roper St. Francis Healthcare, Mount Pleasant Hospital, Berkeley Hospital, Roper Hospital, Bon Secours St. Francis Hospital, emergency care, ER, urgent care, health, Roper Foundation, volunteer near me">
+<         <meta property="og:type" content="website">
+<             <meta property="og:url" content="https://www.rsfh.com/home">
+<             <meta property="og:title" content="Roper St. Francis Healthcare in Charleston, South Carolina | Find a doctor or location">
+<             <meta property="og:description" content="Get expert care from trusted local providers throughout the greater Charleston area.">
+<             <meta property="og:image" content="https://www.rsfh.com/getContentAsset/d1cae277-4a63-4805-a4b9-61ab89ce6306/32726870-66bd-4b67-8ecd-752071de14ff/Berkeley-Hospital-expansion-grand-opening2.webp?language=en">
+<         <meta name="twitter:card" content="summary_large_image">
+<             <meta name="twitter:title" content="Home">
+<             <meta name="twitter:description" content="Get expert care from trusted local providers throughout the greater Charleston area.">
+<             <meta name="twitter:image" content="https://www.rsfh.com/getContentAsset/62e7c452-d7d4-42b5-a50b-2151da7e1e35/32726870-66bd-4b67-8ecd-752071de14ff/Berkeley-Hospital-expansion-grand-opening-6-10-2026-sm-4.webp?language=en">
+< 
+< 
+<     
+< 
+< 
+<     
+< 
+<         <meta name="page_type" content="page" />
+<         <meta name="page_title" content="Home" />
+< 
+< 
+<     <link rel="stylesheet" href="/_content/Rsfh.Web.Roper/dist/app.49cb63620abc5ecef2ff.css" />
+< 
+<     
+<     <link href="/_content/Kentico.Content.Web.Rcl/Content/Bundles/Public/systemPageComponents.min.css" rel="stylesheet" />
+< 
+< 
+<     <script>window.dataLayer = window.dataLayer || [];</script>
+< 
+<     <!-- Google Tag Manager -->
+<     <script>
+<         (function (w, d, s, l, i) {
+<             w[l] = w[l] || []; w[l].push({
+<                 'gtm.start':
+<                     new Date().getTime(), event: 'gtm.js'
+<             });
+<             var f = d.getElementsByTagName(s)[0],
+<                 j = d.createElement(s),
+<                 dl = l != 'dataLayer' ? '&l=' + l : '';
+<             j.async = true;
+<             j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+<             f.parentNode.insertBefore(j, f);
+<         })(window, document, 'script', 'dataLayer', '');</script>
+<     <!-- End Google Tag Manager -->
+< 
+<         <!-- Piwik Pro -->
+<         <script type="text/javascript">
+<             (function(window, document, dataLayerName, id) {
+<             window[dataLayerName]=window[dataLayerName]||[],window[dataLayerName].push({start:(new Date).getTime(),event:"stg.start"});var scripts=document.getElementsByTagName('script')[0],tags=document.createElement('script');
+<             var qP=[];dataLayerName!=="dataLayer"&&qP.push("data_layer_name="+dataLayerName);var qPString=qP.length>0?("?"+qP.join("&")):"";
+<             tags.async=!0,tags.src="https://rsfh.containers.piwik.pro/"+id+".js"+qPString,scripts.parentNode.insertBefore(tags,scripts);
+<             !function(a,n,i){a[n]=a[n]||{};for(var c=0;c<i.length;c++)!function(i){a[n][i]=a[n][i]||{},a[n][i].api=a[n][i].api||function(){var a=[].slice.call(arguments,0);"string"==typeof a[0]&&window[dataLayerName].push({event:n+"."+i+":"+a[0],parameters:[].slice.call(arguments,1)})}}(i[c])}(window,"ppms",["tm","cm"]);
+<             })(window, document, 'dataLayer', '473a5559-5e5e-4973-9ae6-aa03f95da07d');
+<         </script>
+<         <script src="/_content/Rsfh.Web.Roper/lib/web-vitals.iife-v6.1.0.js"></script>
+<         <!-- End Piwik Pro -->
+<         <!-- Mercury Healthcare Orbit - WebMD -->
+<         <script async src="https://script-app.mercuryhealthcare.com/mhc-orbit-v1.0.min.js"></script>
+<         <!-- End Mercury Healthcare Orbit - WebMD -->
+<     <script type="text/javascript" src="/kentico.resource/activities/kenticoactivitylogger/loggerv2.js?webPageIdentifier=4f0d292b-259d-4fc0-87cb-dfb58aae7764&amp;languageName=en&amp;logPageVisit=True&amp;logCustomActivity=True&amp;functionName=kxt" async></script><script type="text/javascript">window['kxt']=window['kxt']||function(){(window['kxt'].q=window['kxt'].q||[]).push(arguments)};</script>
+< 
+<     <script type="application/ld+json">[{"@context":"https://schema.org","@type":"Organization","@id":"https://www.rsfh.com/#organization","name":"Roper St. Francis Healthcare","description":"We live our mission of healing all people with compassion, faith, and excellence through our exceptional physicians, caregivers, and staff.","url":"https://www.rsfh.com/","areaServed":"South Carolina","brand":{"@type":"Brand","name":"Roper St. Francis"},"contactPoint":[{"@type":"ContactPoint","areaServed":["South Carolina","Charleston","Berkeley County","Dorchester County"],"availableLanguage":["en-US","es-ES"],"contactType":"customer service","email":"hpt-obf:v1:zwGlMMDHarbGeG5o.BdoQZ5sDWwXbtG2F-l1yaA.ymMynO5a5uBuNXqWMw","telephone":"hpt-obf:v1:aBKNtI5oQL0uHTbP.pfcdODJDDW6CYM2YkXI6zg.YfW-BkWU207-qWDN"},{"@type":"ContactPoint","areaServed":"South Carolina","availableLanguage":["en-US","es-ES"],"contactType":"billing support","email":"hpt-obf:v1:XZEWtAqcrjNgItSs.f5fU_8j4UsRSKZRO5WkXrw.GbYvLTlIyk_4sMBySdMV_Q","telephone":"hpt-obf:v1:N_3qMTNhBntIbZng.DYCm0oukbMORqbaaPpt3jg.JrFoSXzzYZMGSIkc"}],"legalName":"Roper St. Francis Healthcare System","logo":{"@type":"ImageObject","url":"https://www.rsfh.com/getcontentasset/58a1aad6-d4ef-4bba-9df2-0ed7b8436a96/32726870-66bd-4b67-8ecd-752071de14ff/rsfh-logo.webp?language=en","inLanguage":"en-US","contentUrl":"https://www.rsfh.com/getcontentasset/58a1aad6-d4ef-4bba-9df2-0ed7b8436a96/32726870-66bd-4b67-8ecd-752071de14ff/rsfh-logo.webp?language=en","caption":"Roper St. Francis"},"telephone":"hpt-obf:v1:0ulq4WsvGiRjJ-R2.whKF0IE84dcvHGlZhKMm5g.tOUwHgHvb_jmxaQh"},{"@context":"https://schema.org","@type":"WebSite","@id":"https://www.rsfh.com/#website","name":"Roper St. Francis Healthcare","description":"We live our mission of healing all people with compassion, faith, and excellence through our exceptional physicians, caregivers, and staff.","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.rsfh.com/search/?q={search_term_string}/"},"query-input":"required name=search_term_string"},"url":"https://www.rsfh.com","inLanguage":"en-US","publisher":{"@type":"Organization","@id":"https://www.rsfh.com/#organization"}},{"@context":"https://schema.org","@type":"ImageObject","name":"Care for a life lived here","alternateName":"couple on beach","url":"https://www.rsfh.com/getcontentasset/00c7fbec-49db-4955-9d16-373cd9fca9c3/32726870-66bd-4b67-8ecd-752071de14ff/088_roper_com_april2026.webp?language=en","height":1300,"width":1950}]</script>
+< 
+< </head>
+< 
+< <body class="" data-template="Rsfh.HomePageTemplate" data-theme="">
+< 
+<     <a href="#main" class="visually-hidden-focusable skip-to-content" data-coveo-noindex>
+<         Skip to content
+<     </a>
+< 
+<     
+< 
+<     
+< 
+< 
+<     
+< 
+<     
+< 
+<     <div data-scroll-intersector="appHeaderIntersector"></div>
+< 
+<     <header class="app-header" data-hook="appHeader" dat
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 640 ms

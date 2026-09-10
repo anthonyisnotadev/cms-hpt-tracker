@@ -124,7 +124,14 @@ function obfuscatePointerText(text, key) {
 }
 
 function deobfuscatePointerText(text, key) {
-  return transformPointerText(text, value => decryptValue(value, key));
+  const result = transformPointerText(text, value => decryptValue(value, key));
+  const reveal = value => value.replace(new RegExp(MARKER_SOURCE, 'g'), token => decryptValue(token, key));
+  const json = jsonDocument(result.text);
+  if (json) {
+    const decoded = mapStrings(json.value, reveal, { fields: 0, changed: 0 });
+    result.text = `${JSON.stringify(decoded, null, 2)}${json.hadNewline ? '\n' : ''}`;
+  } else result.text = reveal(result.text);
+  return result;
 }
 
 function inspectPointerText(text) {

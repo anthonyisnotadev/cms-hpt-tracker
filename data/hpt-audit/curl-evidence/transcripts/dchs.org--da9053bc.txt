@@ -1,0 +1,212 @@
+# curl-style evidence for https://dchs.org/
+# fetched 2026-09-07T01:34:41.982Z with the tracker's BROWSER_HEADERS (production client)
+# record: 230055 | DICKINSON COUNTY MEMORIAL HOSPITAL | MI | finding: not-assessed-not-named-in-file
+
+* DNS dchs.org: 206.51.115.107
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://dchs.org/
+< HTTP 301
+< connection: Keep-Alive
+< content-length: 332
+< content-type: text/html; charset=iso-8859-1
+< date: Mon, 07 Sep 2026 01:34:42 GMT
+< keep-alive: timeout=5, max=100
+< location: https://marshfieldclinic.org/locations/centers/Dickinson - Marshfield Medical Center
+< server: Apache
+* following Location: https://marshfieldclinic.org/locations/centers/Dickinson - Marshfield Medical Center
+
+* redirect hop 2: https://marshfieldclinic.org/locations/centers/Dickinson%20-%20Marshfield%20Medical%20Center
+< HTTP 301
+< content-length: 0
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:34:42 GMT
+< location: https://www.marshfieldclinic.org/locations/centers/Dickinson%20-%20Marshfield%20Medical%20Center
+< x-azure-ref: 20260907T013442Z-r17cdc85545rt9rfhC1DM1zykc0000000w70000000000s8m
+< x-cache: CONFIG_NOCACHE
+* following Location: https://www.marshfieldclinic.org/locations/centers/Dickinson%20-%20Marshfield%20Medical%20Center
+
+* redirect hop 3: https://www.marshfieldclinic.org/locations/centers/Dickinson%20-%20Marshfield%20Medical%20Center
+< HTTP 301
+< accept-ch: Sec-CH-UA-Full-Version-List,Sec-CH-UA-Platform-Version,Sec-CH-UA-Arch,Sec-CH-UA-Model,Sec-CH-UA-Bitness
+< cache-control: public, max-age=900
+< content-length: 211
+< content-security-policy-report-only: default-src 'self';img-src * blob: data: px.ads.linkedin.com www.facebook.com *.doubleclick.net *.clarity.ms;script-src 'self' 'unsafe-inline' 'unsafe-eval' *.amplitude.com *.bootstrapcdn.com *.typekit.net cdn.jsdelivr.net cdn.rlets.com cdnjs.cloudflare.com code.jquery.com js.hsforms.net www.googletagmanager.com *.mysanfordchart.org *.addthis.com *.adroll.com *.adsrvr.org *.ads-twitter.com *.clarity.ms *.cloudfront.net *.doubleclick.net *.fls.doubleclick.net formstack.com *.formstack.com *.formstack.io *.g.doubleclick.net *.google.com *.googleadservices.com *.google-analytics.com *.googleapis.com *.gstatic.com *.invocacdn.com *.liveperson.net *.lpsnmedia.net *.mpio.io onesignal.com *.onesignal.com *.qualtrics.com *.quantcount.com *.quantserve.com *.serving-sys.com *.simpli.fi *.siteintercept.qualtrics.com *.talentegy.com *.tvsquared.com *.twitter.com *.v.liveperson.net *.vimeo.com *.vimeocdn.com aa.agkn.com ajax.aspnetcdn.com assets.sitescdn.net az416426.vo.msecnd.net bat.bing.com cdn.mouseflow.com cdn.popt.in chimpstatic.com data.adxcel-ec2.com embed.typeform.com js.hsadspixel.net js.hs-analytics.net js.hs-banner.com js.hscollectedforms.net js.hsleadflows.net js.hs-scripts.com pixel.mathtag.com pixel.videohub.tv pnapi.invoca.net px.ads.linkedin.com s.amazon-adsystem.com s.pinimg.com s3.amazonaws.com/checkout.squadup.com/default/css/bootstrap-namespace.min.css script.crazyegg.com sc-static.net siteimproveanalytics.com snap.licdn.com static.addtoany.com static.cloud.coveo.com tags.srv.stackadapt.com tracking.logpostback.com transparency.nrchealth.com trkn.us v1.addthisedge.com www.buzzsprout.com www.groupexpro.com www.youtube.com www.ypo.education/js/jsembedcode.js z.moatads.com cdn.mxpnl.com js.hubspot.com *.snapchat.com *.instabot.io *.roobrik.com connect.facebook.net services.cattailsservices.com *.binaryfountain.com *.consumerism.pressganey.com;style-src 'self' 'unsafe-inline' *.bootstrapcdn.com *.fontawesome.com *.googleapis.com *.typekit.net cdn.jsdelivr.net cdnjs.cloudflare.com cloud.typography.com code.jquery.com www.googletagmanager.com *.mysanfordchart.org *.formstack.com *.formstack.io *.gstatic.com *.vimeocdn.com cdn.thinglink.me checkout.stripe.com formsprod.azureedge.net onesignal.com static.cloud.coveo.com tags.srv.stackadapt.com www.groupexpro.com www.youtube.com *.instabot.io services.cattailsservices.com *.consumerism.pressganey.com;font-src 'self' data: *.fontawesome.com *.typekit.com *.typekit.net cdn.jsdelivr.net cdnjs.cloudflare.com *.formstack.com *.gstatic.com *.googleusercontent.com static.cloud.coveo.com staticdev.cloud.coveo.com *.roobrik.com *.consumerism.pressganey.com;frame-src 'self' cdn.jsdelivr.net cdn.rlets.com cdnjs.cloudflare.com www.googletagmanager.com tools.sanfordhealthplan.com *.mysanfordchart.org *.addthis.com *.adsrvr.org *.c.liveperson.net *.doubleclick.net *.fls.doubleclick.net *.formstack.com *.g.doubleclick.net *.google.com *.ipcamlive.com *.lpsnmedia.net *.snapchat.com *.soundcloud.com *.stripe.com *.twitter.com *.v.liveperson.net vimeo.com *.vimeo.com *.youtube.com cdn.onesignal.com e.issuu.com fast.wistia.net forms.hsforms.com host.visualcalc.com js.hsadspixel.net js.hsforms.net pixel.mathtag.com players.brightcove.net static.addtoany.com www.buzzsprout.com www.pinterest.ca www.pinterest.co.uk www.pinterest.com www.pinterest.fr www.pinterest.it www.pinterest.ph ct.pinterest.com www.thinglink.com forms.hubspot.com *.roobrik.com *.cloudfront.net sanford.az1.qualtrics.com www.groupexpro.com;frame-ancestors 'self' *.mysanfordchart.org *.snapchat.com;connect-src 'self' *.amplitude.com cdn.jsdelivr.net cdn.rlets.com cdnjs.cloudflare.com cloud.typography.com code.jquery.com www.googletagmanager.com *.addthis.com *.adroll.com *.clarity.ms *.doubleclick.net *.g.doubleclick.net *.gannettdigital.com *.google.com *.analytics.google.com *.google-analytics.com *.googleadservices.com *.googleapis.com *.gstatic.com *.linkedin.oribi.io onesignal.com *.onesignal.com *.pinterest.com *.quantcount.com *.reachlocalservices.com *.serving-sys.com *.snapchat.com *.squadup.com *.twitter.com *.vimeocdn.com *.z1.dca0.com api.hubapi.com az416426.vo.msecnd.net bat.bing.com dc.services.visualstudio.com *.hsforms.com *.hubspot.com js.hs-scripts.com hubspot-forms-static-embed.s3.amazonaws.com js.hsadspixel.net forms.hscollectedforms.net js.hscollectedforms.net n2.mouseflow.com pnapi.invoca.net sanfordhealth.formstack.com *.formstack.io usageanalytics.coveo.com *.cloud.coveo.com px.ads.linkedin.com snap.licdn.com sc-static.net api.sanfordhealth.org api-js.mixpanel.com *.instabot.io api.fbanalytics.org connect.facebook.net assets.sitescdn.net *.cloudfront.net siteimproveanalytics.com *.roobrik.com services.cattailsservices.com *.consumerism.pressganey.com;form-action 'self' *.fontawesome.com cdnjs.cloudflare.com *.sanfordhealthfoundation.org *.adroll.com *.doubleclick.net *.google.com *.google-analytics.com *.googleapis.com *.gstatic.com *.pinterest.com *.serving-sys.com *.snapchat.com *.vimeocdn.com api.hubapi.com forms.hsforms.com forms.hubspot.com hubspot-forms-static-embed.s3.amazonaws.com;media-src * data:;object-src 'none';worker-src 'self' blob: *.amplitude.com;report-uri https://csp-reporting.sanfordhealth.org/;
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:34:43 GMT
+< location: https://www.marshfieldclinic.org/locations/centers/dickinson - marshfield medical center
+< strict-transport-security: max-age=31536000; includeSubDomains
+< x-azure-ref: 20260907T013443Z-17fd58bbc9cqz5rnhC1IADhrgw0000000ua0000000001gbh
+< x-cache: TCP_MISS
+< x-fd-int-roxy-purgeid: 0
+< x-frame-options: DENY
+* following Location: https://www.marshfieldclinic.org/locations/centers/dickinson - marshfield medical center
+
+* redirect hop 4: https://www.marshfieldclinic.org/locations/centers/dickinson%20-%20marshfield%20medical%20center
+< HTTP 301
+< accept-ch: Sec-CH-UA-Full-Version-List,Sec-CH-UA-Platform-Version,Sec-CH-UA-Arch,Sec-CH-UA-Model,Sec-CH-UA-Bitness
+< access-control-expose-headers: Request-Context
+< cache-control: public, max-age=900
+< content-length: 0
+< content-security-policy-report-only: default-src 'self';img-src * blob: data: px.ads.linkedin.com www.facebook.com *.doubleclick.net *.clarity.ms;script-src 'self' 'unsafe-inline' 'unsafe-eval' *.amplitude.com *.bootstrapcdn.com *.typekit.net cdn.jsdelivr.net cdn.rlets.com cdnjs.cloudflare.com code.jquery.com js.hsforms.net www.googletagmanager.com *.mysanfordchart.org *.addthis.com *.adroll.com *.adsrvr.org *.ads-twitter.com *.clarity.ms *.cloudfront.net *.doubleclick.net *.fls.doubleclick.net formstack.com *.formstack.com *.formstack.io *.g.doubleclick.net *.google.com *.googleadservices.com *.google-analytics.com *.googleapis.com *.gstatic.com *.invocacdn.com *.liveperson.net *.lpsnmedia.net *.mpio.io onesignal.com *.onesignal.com *.qualtrics.com *.quantcount.com *.quantserve.com *.serving-sys.com *.simpli.fi *.siteintercept.qualtrics.com *.talentegy.com *.tvsquared.com *.twitter.com *.v.liveperson.net *.vimeo.com *.vimeocdn.com aa.agkn.com ajax.aspnetcdn.com assets.sitescdn.net az416426.vo.msecnd.net bat.bing.com cdn.mouseflow.com cdn.popt.in chimpstatic.com data.adxcel-ec2.com embed.typeform.com js.hsadspixel.net js.hs-analytics.net js.hs-banner.com js.hscollectedforms.net js.hsleadflows.net js.hs-scripts.com pixel.mathtag.com pixel.videohub.tv pnapi.invoca.net px.ads.linkedin.com s.amazon-adsystem.com s.pinimg.com s3.amazonaws.com/checkout.squadup.com/default/css/bootstrap-namespace.min.css script.crazyegg.com sc-static.net siteimproveanalytics.com snap.licdn.com static.addtoany.com static.cloud.coveo.com tags.srv.stackadapt.com tracking.logpostback.com transparency.nrchealth.com trkn.us v1.addthisedge.com www.buzzsprout.com www.groupexpro.com www.youtube.com www.ypo.education/js/jsembedcode.js z.moatads.com cdn.mxpnl.com js.hubspot.com *.snapchat.com *.instabot.io *.roobrik.com connect.facebook.net services.cattailsservices.com *.binaryfountain.com *.consumerism.pressganey.com;style-src 'self' 'unsafe-inline' *.bootstrapcdn.com *.fontawesome.com *.googleapis.com *.typekit.net cdn.jsdelivr.net cdnjs.cloudflare.com cloud.typography.com code.jquery.com www.googletagmanager.com *.mysanfordchart.org *.formstack.com *.formstack.io *.gstatic.com *.vimeocdn.com cdn.thinglink.me checkout.stripe.com formsprod.azureedge.net onesignal.com static.cloud.coveo.com tags.srv.stackadapt.com www.groupexpro.com www.youtube.com *.instabot.io services.cattailsservices.com *.consumerism.pressganey.com;font-src 'self' data: *.fontawesome.com *.typekit.com *.typekit.net cdn.jsdelivr.net cdnjs.cloudflare.com *.formstack.com *.gstatic.com *.googleusercontent.com static.cloud.coveo.com staticdev.cloud.coveo.com *.roobrik.com *.consumerism.pressganey.com;frame-src 'self' cdn.jsdelivr.net cdn.rlets.com cdnjs.cloudflare.com www.googletagmanager.com tools.sanfordhealthplan.com *.mysanfordchart.org *.addthis.com *.adsrvr.org *.c.liveperson.net *.doubleclick.net *.fls.doubleclick.net *.formstack.com *.g.doubleclick.net *.google.com *.ipcamlive.com *.lpsnmedia.net *.snapchat.com *.soundcloud.com *.stripe.com *.twitter.com *.v.liveperson.net vimeo.com *.vimeo.com *.youtube.com cdn.onesignal.com e.issuu.com fast.wistia.net forms.hsforms.com host.visualcalc.com js.hsadspixel.net js.hsforms.net pixel.mathtag.com players.brightcove.net static.addtoany.com www.buzzsprout.com www.pinterest.ca www.pinterest.co.uk www.pinterest.com www.pinterest.fr www.pinterest.it www.pinterest.ph ct.pinterest.com www.thinglink.com forms.hubspot.com *.roobrik.com *.cloudfront.net sanford.az1.qualtrics.com www.groupexpro.com;frame-ancestors 'self' *.mysanfordchart.org *.snapchat.com;connect-src 'self' *.amplitude.com cdn.jsdelivr.net cdn.rlets.com cdnjs.cloudflare.com cloud.typography.com code.jquery.com www.googletagmanager.com *.addthis.com *.adroll.com *.clarity.ms *.doubleclick.net *.g.doubleclick.net *.gannettdigital.com *.google.com *.analytics.google.com *.google-analytics.com *.googleadservices.com *.googleapis.com *.gstatic.com *.linkedin.oribi.io onesignal.com *.onesignal.com *.pinterest.com *.quantcount.com *.reachlocalservices.com *.serving-sys.com *.snapchat.com *.squadup.com *.twitter.com *.vimeocdn.com *.z1.dca0.com api.hubapi.com az416426.vo.msecnd.net bat.bing.com dc.services.visualstudio.com *.hsforms.com *.hubspot.com js.hs-scripts.com hubspot-forms-static-embed.s3.amazonaws.com js.hsadspixel.net forms.hscollectedforms.net js.hscollectedforms.net n2.mouseflow.com pnapi.invoca.net sanfordhealth.formstack.com *.formstack.io usageanalytics.coveo.com *.cloud.coveo.com px.ads.linkedin.com snap.licdn.com sc-static.net api.sanfordhealth.org api-js.mixpanel.com *.instabot.io api.fbanalytics.org connect.facebook.net assets.sitescdn.net *.cloudfront.net siteimproveanalytics.com *.roobrik.com services.cattailsservices.com *.consumerism.pressganey.com;form-action 'self' *.fontawesome.com cdnjs.cloudflare.com *.sanfordhealthfoundation.org *.adroll.com *.doubleclick.net *.google.com *.google-analytics.com *.googleapis.com *.gstatic.com *.pinterest.com *.serving-sys.com *.snapchat.com *.vimeocdn.com api.hubapi.com forms.hsforms.com forms.hubspot.com hubspot-forms-static-embed.s3.amazonaws.com;media-src * data:;object-src 'none';worker-src 'self' blob: *.amplitude.com;report-uri https://csp-reporting.sanfordhealth.org/;
+< date: Mon, 07 Sep 2026 01:34:43 GMT
+< location: /locations/dickinson-marshfield-medical-center
+< request-context: appId=cid-v1:7f5acbab-b715-48b0-8a6b-8a3d41110f06
+< strict-transport-security: max-age=31536000; includeSubDomains
+< x-azure-ref: 20260907T013443Z-17fd58bbc9cqz5rnhC1IADhrgw0000000ua0000000001gbs
+< x-cache: TCP_MISS
+< x-fd-int-roxy-purgeid: 0
+< x-frame-options: DENY
+* following Location: /locations/dickinson-marshfield-medical-center
+
+* final response: https://www.marshfieldclinic.org/locations/dickinson-marshfield-medical-center
+< HTTP 200
+< accept-ch: Sec-CH-UA-Full-Version-List,Sec-CH-UA-Platform-Version,Sec-CH-UA-Arch,Sec-CH-UA-Model,Sec-CH-UA-Bitness
+< access-control-expose-headers: Request-Context
+< cache-control: no-cache, no-store
+< content-encoding: br
+< content-security-policy-report-only: default-src 'self';img-src * blob: data: px.ads.linkedin.com www.facebook.com *.doubleclick.net *.clarity.ms;script-src 'self' 'unsafe-inline' 'unsafe-eval' *.amplitude.com *.bootstrapcdn.com *.typekit.net cdn.jsdelivr.net cdn.rlets.com cdnjs.cloudflare.com code.jquery.com js.hsforms.net www.googletagmanager.com *.mysanfordchart.org *.addthis.com *.adroll.com *.adsrvr.org *.ads-twitter.com *.clarity.ms *.cloudfront.net *.doubleclick.net *.fls.doubleclick.net formstack.com *.formstack.com *.formstack.io *.g.doubleclick.net *.google.com *.googleadservices.com *.google-analytics.com *.googleapis.com *.gstatic.com *.invocacdn.com *.liveperson.net *.lpsnmedia.net *.mpio.io onesignal.com *.onesignal.com *.qualtrics.com *.quantcount.com *.quantserve.com *.serving-sys.com *.simpli.fi *.siteintercept.qualtrics.com *.talentegy.com *.tvsquared.com *.twitter.com *.v.liveperson.net *.vimeo.com *.vimeocdn.com aa.agkn.com ajax.aspnetcdn.com assets.sitescdn.net az416426.vo.msecnd.net bat.bing.com cdn.mouseflow.com cdn.popt.in chimpstatic.com data.adxcel-ec2.com embed.typeform.com js.hsadspixel.net js.hs-analytics.net js.hs-banner.com js.hscollectedforms.net js.hsleadflows.net js.hs-scripts.com pixel.mathtag.com pixel.videohub.tv pnapi.invoca.net px.ads.linkedin.com s.amazon-adsystem.com s.pinimg.com s3.amazonaws.com/checkout.squadup.com/default/css/bootstrap-namespace.min.css script.crazyegg.com sc-static.net siteimproveanalytics.com snap.licdn.com static.addtoany.com static.cloud.coveo.com tags.srv.stackadapt.com tracking.logpostback.com transparency.nrchealth.com trkn.us v1.addthisedge.com www.buzzsprout.com www.groupexpro.com www.youtube.com www.ypo.education/js/jsembedcode.js z.moatads.com cdn.mxpnl.com js.hubspot.com *.snapchat.com *.instabot.io *.roobrik.com connect.facebook.net services.cattailsservices.com *.binaryfountain.com *.consumerism.pressganey.com;style-src 'self' 'unsafe-inline' *.bootstrapcdn.com *.fontawesome.com *.googleapis.com *.typekit.net cdn.jsdelivr.net cdnjs.cloudflare.com cloud.typography.com code.jquery.com www.googletagmanager.com *.mysanfordchart.org *.formstack.com *.formstack.io *.gstatic.com *.vimeocdn.com cdn.thinglink.me checkout.stripe.com formsprod.azureedge.net onesignal.com static.cloud.coveo.com tags.srv.stackadapt.com www.groupexpro.com www.youtube.com *.instabot.io services.cattailsservices.com *.consumerism.pressganey.com;font-src 'self' data: *.fontawesome.com *.typekit.com *.typekit.net cdn.jsdelivr.net cdnjs.cloudflare.com *.formstack.com *.gstatic.com *.googleusercontent.com static.cloud.coveo.com staticdev.cloud.coveo.com *.roobrik.com *.consumerism.pressganey.com;frame-src 'self' cdn.jsdelivr.net cdn.rlets.com cdnjs.cloudflare.com www.googletagmanager.com tools.sanfordhealthplan.com *.mysanfordchart.org *.addthis.com *.adsrvr.org *.c.liveperson.net *.doubleclick.net *.fls.doubleclick.net *.formstack.com *.g.doubleclick.net *.google.com *.ipcamlive.com *.lpsnmedia.net *.snapchat.com *.soundcloud.com *.stripe.com *.twitter.com *.v.liveperson.net vimeo.com *.vimeo.com *.youtube.com cdn.onesignal.com e.issuu.com fast.wistia.net forms.hsforms.com host.visualcalc.com js.hsadspixel.net js.hsforms.net pixel.mathtag.com players.brightcove.net static.addtoany.com www.buzzsprout.com www.pinterest.ca www.pinterest.co.uk www.pinterest.com www.pinterest.fr www.pinterest.it www.pinterest.ph ct.pinterest.com www.thinglink.com forms.hubspot.com *.roobrik.com *.cloudfront.net sanford.az1.qualtrics.com www.groupexpro.com;frame-ancestors 'self' *.mysanfordchart.org *.snapchat.com;connect-src 'self' *.amplitude.com cdn.jsdelivr.net cdn.rlets.com cdnjs.cloudflare.com cloud.typography.com code.jquery.com www.googletagmanager.com *.addthis.com *.adroll.com *.clarity.ms *.doubleclick.net *.g.doubleclick.net *.gannettdigital.com *.google.com *.analytics.google.com *.google-analytics.com *.googleadservices.com *.googleapis.com *.gstatic.com *.linkedin.oribi.io onesignal.com *.onesignal.com *.pinterest.com *.quantcount.com *.reachlocalservices.com *.serving-sys.com *.snapchat.com *.squadup.com *.twitter.com *.vimeocdn.com *.z1.dca0.com api.hubapi.com az416426.vo.msecnd.net bat.bing.com dc.services.visualstudio.com *.hsforms.com *.hubspot.com js.hs-scripts.com hubspot-forms-static-embed.s3.amazonaws.com js.hsadspixel.net forms.hscollectedforms.net js.hscollectedforms.net n2.mouseflow.com pnapi.invoca.net sanfordhealth.formstack.com *.formstack.io usageanalytics.coveo.com *.cloud.coveo.com px.ads.linkedin.com snap.licdn.com sc-static.net api.sanfordhealth.org api-js.mixpanel.com *.instabot.io api.fbanalytics.org connect.facebook.net assets.sitescdn.net *.cloudfront.net siteimproveanalytics.com *.roobrik.com services.cattailsservices.com *.consumerism.pressganey.com;form-action 'self' *.fontawesome.com cdnjs.cloudflare.com *.sanfordhealthfoundation.org *.adroll.com *.doubleclick.net *.google.com *.google-analytics.com *.googleapis.com *.gstatic.com *.pinterest.com *.serving-sys.com *.snapchat.com *.vimeocdn.com api.hubapi.com forms.hsforms.com forms.hubspot.com hubspot-forms-static-embed.s3.amazonaws.com;media-src * data:;object-src 'none';worker-src 'self' blob: *.amplitude.com;report-uri https://csp-reporting.sanfordhealth.org/;
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:34:43 GMT
+< expires: -1
+< pragma: no-cache
+< request-context: appId=cid-v1:7f5acbab-b715-48b0-8a6b-8a3d41110f06
+< strict-transport-security: max-age=31536000; includeSubDomains
+< vary: Accept-Encoding
+< x-azure-ref: 20260907T013443Z-17fd58bbc9cqz5rnhC1IADhrgw0000000ua0000000001gbz
+< x-cache: PRIVATE_NOSTORE
+< x-fd-int-roxy-purgeid: 0
+< x-frame-options: DENY
+< --- body (65536 bytes read, truncated) ---
+< 
+< <!DOCTYPE html>
+< <!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+< <!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+< <!--[if gt IE 8]><!-->
+< <html class="no-js" lang="en">
+< <!--<![endif]-->
+< 
+< 
+< <head>
+<     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+< 
+< 
+< 
+< 
+<     <!-- Google Tag Manager -->
+<     <script>
+<         (function (w, d, s, l, i) {
+<             w[l] = w[l] || []; w[l].push({
+<                 'gtm.start':
+<                     new Date().getTime(), event: 'gtm.js'
+<             }); var f = d.getElementsByTagName(s)[0],
+<                 j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+<                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+<         })(window, document, 'script', 'dataLayer', 'GTM-KNV94BN');
+<     </script>
+<     <!-- End Google Tag Manager -->
+< 
+<     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+<     <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css" />
+<     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" integrity="sha256-zaSoHBhwFdle0scfGEFUCwggPN7F+ip9XRglo8IWb4w=" crossorigin="anonymous">
+<     <link href="/styles/sanford-service.min.css?v=xoKuxXEWYYMZ4hSnutzIHIAEt9x4mXq8ZVV2vvs_dgY1" rel="stylesheet"/>
+< 
+<     
+<     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<     <script src="/Scripts/sanford-service-head.min.js?v=-A-Pp94DbRGllAan5KMyZzhgFyJ2ey9LqOQd1OSXmoI1"></script>
+< 
+<     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDbHfBVCDlzxS2CJvdJZ7UujYMxPhs8JoE" defer></script>
+< <script src="/scripts/amplitude/init.js?v=ba2a844199c5c44c" data-amplitude-api-key="" data-amplitude-decorate-domains="mysanfordchart.org" data-amplitude-decorate-params="utm_campaign,utm_source,utm_medium" defer></script>
+< 
+<     
+< 
+< 
+< <title>Dickinson - Marshfield Medical Center in Iron Mountain </title>
+< <meta name="keywords" content="" />
+< <meta name="description" content="Dickinson - Marshfield Medical Center in Iron Mountain" />
+< <meta name="lang" content="en" />
+< <link rel="canonical" href="https://www.marshfieldclinic.org/locations/dickinson-marshfield-medical-center" />
+< <meta name="PublishDate" content="2026-06-18" />
+< <meta property="og:locale" content="en_US" />
+< <meta property="og:type" content="website" />
+< <meta property="og:site_name" content="Marshfield Clinic" />
+< <meta property="og:url" content="https://www.marshfieldclinic.org/locations/dickinson-marshfield-medical-center" />
+< <meta property="og:title" content="Dickinson - Marshfield Medical Center in Iron Mountain " />
+< <meta property="og:description" content="Dickinson - Marshfield Medical Center in Iron Mountain" />
+< <meta property="og:image" content="https://www.marshfieldclinic.org/-/media/marshfieldclinic/sitelogo/marshfieldclinic-open-graph.jpg?bc=black&amp;as=0&amp;h=628&amp;w=1200&amp;hash=115AB8D74B39CF1DC79E6164D05A1813" />
+< <meta name="twitter:image" content="https://www.marshfieldclinic.org/-/media/marshfieldclinic/sitelogo/marshfieldclinic-open-graph.jpg?bc=black&amp;as=0&amp;h=900&amp;w=1200&amp;hash=D4E8F69D385646100DACFFB48212B571" />
+< 
+< 
+< 
+< 
+<     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<     <!-- Set viewport to device default -->
+<     <meta name="HandheldFriendly" content="True">
+<     <meta name="MobileOptimized" content="320">
+<     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<     <link href="/svg-sprite.svg">
+<     <link rel="preconnect" href="https://fonts.googleapis.com">
+<     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400..800;1,400&display=swap">
+< 
+<     
+< 
+< 
+< <link rel="icon" href="/favicons/marshfieldclinic/favicon.ico?v=5bae25bfc8de778b" />
+< <link rel="apple-touch-icon" href="/favicons/marshfieldclinic/apple-touch-icon.png?v=87542e3f13843b17" />
+< <link rel="mask-icon" href="/favicons/marshfieldclinic/mask-icon.svg?v=1bc9abea32e72a6b" color="#000" />
+< 
+< 
+<     
+< <meta name="VIcurrentDateTime" content="639243416836064438" />
+< <meta name="VirtualFolder" content="/" />
+< <script type="text/javascript" src="/layouts/system/VisitorIdentification.js"></script>
+< 
+< </head>
+< <body class="site-theme-2">
+< 
+< 
+< 
+<     <!-- Google Tag Manager (noscript) -->
+<     <noscript>
+<         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KNV94BN"
+<                 height="0" width="0" style="display:none;visibility:hidden"></iframe>
+<     </noscript>
+<     <!-- End Google Tag Manager (noscript) -->
+< 
+<     <a class="skip" href="#main-content">Skip to Main Content</a>
+< 
+<     <div class="outer-container">
+< 
+<         
+< 
+< <header class="site-header theme-1" role="banner">
+< 
+<     <div class="inner">
+<         <div class="container clearfix">
+< 
+<             <div class="header-flex">
+<                 <div class="header-logo">
+<                         <a class="site-logo" href="/">
+<                             <img src="/-/media/marshfieldclinic/sitelogo/logo_marshfield-clinic-60.png?h=41&amp;iar=0&amp;w=225&amp;hash=DF6403DF9973D51506792BAD499F05D9" alt="Marshfield Clinic logo" width="225" height="41" />
+<                         </a>
+<                 </div>
+< 
+<                 <div class="header-navigation">
+<                     <div class="main-nav-container">
+<                         <div class="container clearfix">
+<                             <!-- Main Nav -->
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 1541 ms

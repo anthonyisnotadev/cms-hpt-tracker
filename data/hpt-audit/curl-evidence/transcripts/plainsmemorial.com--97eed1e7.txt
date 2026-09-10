@@ -1,0 +1,43 @@
+# curl-style evidence for https://plainsmemorial.com/cms-hpt.txt
+# fetched 2026-09-07T01:36:06.698Z with the tracker's BROWSER_HEADERS (production client)
+# record: 451350 | PLAINS MEMORIAL HOSPITAL | TX | finding: not-assessed-site-unreachable
+
+* DNS plainsmemorial.com: 69.27.34.29
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://plainsmemorial.com/cms-hpt.txt
+< HTTP 500
+< connection: close
+< content-length: 688
+< content-type: text/html; charset=iso-8859-1
+< date: Mon, 07 Sep 2026 01:36:08 GMT
+< server: Apache
+< --- body (688 bytes read) ---
+< <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+< <html><head>
+< <title>500 Internal Server Error</title>
+< </head><body>
+< <h1>Internal Server Error</h1>
+< <p>The server encountered an internal error or
+< misconfiguration and was unable to complete
+< your request.</p>
+< <p>Please contact the server administrator at 
+<  hpt-obf:v1:0uEKtiYsMAZVZFhO.jw1F1QIrrlru0kHFSQGVTA.TRFO23B7VpFstJ1fc8q80a1FlEBOo-fvJzLJEz2jahfSnXVZRt25yusRweU to inform them of the time this error occurred,
+<  and the actions you performed just before this error.</p>
+< <p>More information about this error may be available
+< in the server error log.</p>
+< <p>Additionally, a 500 Internal Server Error
+< error was encountered while trying to use an ErrorDocument to handle the request.</p>
+< </body></html>
+< 
+
+* total time: 152 ms

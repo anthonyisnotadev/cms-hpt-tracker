@@ -1,0 +1,42 @@
+{
+  "cohort": 821,
+  "generatedAt": "2026-09-09T17:13:47.616Z",
+  "applied": 40,
+  "counts": {
+    "unresolved": 552,
+    "publisher-issue": 229,
+    "correction-verified": 40
+  },
+  "issues": {
+    "declared-update-date-over-365-days": 114,
+    "pointer-declared-file-404": 29,
+    "template-version-older-than-3": 39,
+    "template-version-unrecognized": 20,
+    "file-published-no-machine-pointer": 5,
+    "automated-file-access-denied": 12,
+    "declared-file-format-unsupported": 1,
+    "file-declares-conflicting-license-state": 9
+  },
+  "previousStatus": {
+    "metadata-or-pointer-review": 29,
+    "pointer-or-domain-review": 329,
+    "identity-quarantined": 3,
+    "identity-or-format-review": 220,
+    "publisher-date-review": 108,
+    "publisher-template-review": 41,
+    "file-access-review": 91
+  },
+  "nextSteps": {
+    "Browser download attempt on the recorded file URL; a failed automated request is not evidence the file is absent": 53,
+    "Official-domain discovery": 213,
+    "Facility identity adjudication against the roster before any pointer or file work": 3,
+    "Compare the parsed header against facility aliases, renames and campus entries; extend the capped read only if metadata may sit beyond it": 182,
+    "Browser pricing-page walk on the named domain to locate the pointer or its replacement": 15,
+    "Publisher inquiry on the declared template version; recheck after their update window": 1,
+    "Record the direct file URL behind the web page served at the recorded file URL (browser or manual download), then re-verify": 6,
+    "Adjudicate facility identity": 59,
+    "Complete-file read beyond the capped header to recover identity or metadata fields": 5,
+    "Publisher inquiry on the recorded declared date; recheck after their update window": 14,
+    "Adjudicate competing current files against the pointer entries and roster address before assigning one": 1
+  }
+}

@@ -1,0 +1,32 @@
+# curl-style evidence for https://irp.cdn-website.com/1a9867e2/files/uploaded/208057151_evergreenmedicalcenter_standardcharges.csv
+# fetched 2026-09-07T01:32:11.954Z with the tracker's BROWSER_HEADERS (production client)
+# record: 010148 | EVERGREEN MEDICAL CENTER | AL | finding: mrf-blocked-to-automation
+
+* DNS irp.cdn-website.com: 3.170.42.100, 3.170.42.24, 3.170.42.88, 3.170.42.35
+
+> GET /1a9867e2/files/uploaded/208057151_evergreenmedicalcenter_standardcharges.csv  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://irp.cdn-website.com/1a9867e2/files/uploaded/208057151_evergreenmedicalcenter_standardcharges.csv
+< HTTP 403
+< alt-svc: h3=":443"; ma=86400
+< cache-control: max-age=31536000
+< content-type: application/xml
+< date: Mon, 07 Sep 2026 01:32:13 GMT
+< server: AmazonS3
+< via: 1.1 64d4305f6a0418824e90908ac490184e.cloudfront.net (CloudFront)
+< x-amz-cf-id: 7EZOTSGifjTNvB6TzzvwM23LbhEb9iXI2HDlQ3ymR36QeFkUF-s9Sw==
+< x-amz-cf-pop: IAD61-P10
+< x-cache: Error from cloudfront
+< --- body (263 bytes read) ---
+< <?xml version="1.0" encoding="UTF-8"?>
+< <Error><Code>AccessDenied</Code><Message>Access Denied</Message><RequestId>7GS5XNWCSE6EZXZM</RequestId><HostId>ryBKyZzqaMUDCEJzkXqUyF4Hp82X7CyTcoguHX9J2ldJG5wMFKlXt9gSbQ4pKHScmVtHDJFNnRW3+Nsva49hqyHraPRw10Aw</HostId></Error>
+
+* total time: 3372 ms

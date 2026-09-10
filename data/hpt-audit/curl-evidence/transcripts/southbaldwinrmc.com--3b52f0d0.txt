@@ -1,0 +1,42 @@
+# curl-style evidence for https://southbaldwinrmc.com/.well-known/cms-hpt.txt
+# fetched 2026-09-07T01:32:12.149Z with the tracker's BROWSER_HEADERS (production client)
+# record: 010083 | BALDWIN HEALTH | AL | finding: no-cms-hpt-txt-published
+
+* DNS southbaldwinrmc.com: 104.21.40.223, 172.67.188.128
+
+> GET /.well-known/cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://southbaldwinrmc.com/.well-known/cms-hpt.txt
+< HTTP 404
+< alt-svc: h3=":443"; ma=86400
+< cf-cache-status: DYNAMIC
+< cf-ray: a371f55a1aa7c48c-IAD
+< content-encoding: br
+< content-type: text/html; charset=iso-8859-1
+< date: Mon, 07 Sep 2026 01:32:13 GMT
+< nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+< report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=RArrTFHu5CGN3Uln2XaffVtQDfmHtyzbneuAOuksaZx7LveK4W38MGw9L8ui9z%2FQxofQbIP9goCs9dTXY%2BtSuyVJZtNdLZAVoOheUp7tNRp4etVc0RQ5cxcIDdNgyHN9nZ80L4HE"}]}
+< server: cloudflare
+< server-timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=6,cfOrigin;dur=112
+< --- body (676 bytes read) ---
+< <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+< <html><head>
+< <title>404 Not Found</title>
+< </head><body>
+< <h1>Not Found</h1>
+< <p>The requested URL was not found on this server.</p>
+< <hr>
+< <address>Apache/2.4 Server at southbaldwinrmc.com Port 80</address>
+< <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"02e2a586f5034ecba2ceecce86a3d2ea","r":1,"spa":2}' crossorigin="anonymous"></script>
+< </body></html>
+< 
+
+* total time: 177 ms

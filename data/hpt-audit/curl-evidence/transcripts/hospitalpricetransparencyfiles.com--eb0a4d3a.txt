@@ -1,0 +1,151 @@
+# curl-style evidence for https://hospitalpricetransparencyfiles.com/hampton-regional-hospital/571017988_Hampton-Regional-Hospital_standardcharges.csv
+# fetched 2026-09-07T01:35:52.593Z with the tracker's BROWSER_HEADERS (production client)
+# record: 420072 | HAMPTON REGIONAL MEDICAL CENTER | SC | finding: mrf-url-unreachable
+
+* DNS hospitalpricetransparencyfiles.com: 104.21.40.228, 172.67.157.144
+
+> GET /hampton-regional-hospital/571017988_Hampton-Regional-Hospital_standardcharges.csv  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://hospitalpricetransparencyfiles.com/hampton-regional-hospital/571017988_Hampton-Regional-Hospital_standardcharges.csv
+< HTTP 404
+< cache-control: max-age=14400
+< cf-cache-status: EXPIRED
+< cf-ray: a371fabbcc83c9bf-IAD
+< content-encoding: br
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:35:54 GMT
+< nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+< report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=9LXACOTtvEOjDku7jaKIk2jVLWFyxd4pTfmhwKVLgjpyYXaw4su%2BJnGzaB98tTZq1kuDg8mJ68gZ9Xekt8UbnhzDEU1zP3A7DXZhpRPbI8jfdgp3G72F%2FR04p9MCWElPQxuUkWxia4%2F8EPHf9lepDMKv7qax"}]}
+< server: cloudflare
+< --- body (27150 bytes read) ---
+< <!doctype html>
+< <html lang="en">
+<   <head>
+<     <meta charset="UTF-8" />
+<     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<     <link rel="icon" href="https://www.cloudflare.com/favicon.ico" />
+<     <title>Not Found</title>
+<     <style>
+<       body {
+<         font-family: system-ui;
+<         font-weight: 300;
+<         font-size: 1.25rem;
+<         color: #36393a;
+<         display: flex;
+<         align-items: center;
+<         justify-content: center;
+<       }
+<       main {
+<         max-width: 1200px;
+<         margin-top: 120px;
+<         display: flex;
+<         flex-wrap: wrap;
+<         align-items: center;
+<         justify-content: center;
+<       }
+<       #text {
+<         max-width: 60%;
+<         margin-left: 1rem;
+<         margin-right: 1rem;
+<       }
+<       main > section > div {
+<         margin-bottom: 3.25rem;
+<       }
+<       svg {
+<         margin-left: 2rem;
+<       }
+<       @keyframes eye-1 {
+<         0% {
+<           transform: translateX(0);
+<         }
+<         10%,
+<         50% {
+<           transform: translateX(-5px);
+<         }
+<         60% {
+<           transform: translateX(0);
+<         }
+<         100% {
+<           transform: translateX(0px);
+<         }
+<       }
+<       @keyframes eye-2 {
+<         0% {
+<           transform: translateX(0);
+<         }
+<         10%,
+<         50% {
+<           transform: translateX(5px);
+<         }
+<         60% {
+<           transform: translateX(0);
+<         }
+<         100% {
+<           transform: translateX(0px);
+<         }
+<       }
+<       svg > .eye-1 {
+<         animation: eye-1 3s infinite;
+<       }
+<       svg > .eye-2 {
+<         animation: eye-2 3s 0.6s infinite;
+<       }
+<       h1 {
+<         font-size: 3.75rem;
+<         font-weight: 400;
+<         margin-bottom: 0.5rem;
+<       }
+<       h3 {
+<         font-size: 2rem;
+<         font-weight: 400;
+<         color: #92979b;
+<         margin: 0;
+<       }
+<       a {
+<         color: #0055dc;
+<       }
+<       p {
+<         margin: 0;
+<       }
+<       #error-title {
+<         font-size: 2rem;
+<         margin-bottom: 1rem;
+<       }
+<       #footer-title {
+<         font-weight: 700;
+<         margin-bottom: 0.75rem;
+<       }
+<     </style>
+<   </head>
+<   <body>
+<     <main>
+<       <section id="text">
+<         <div>
+<           <h1>Error 404</h1>
+<           <h3>Object not found</h3>
+<         </div>
+< 
+<         <div>
+<           <p>
+<             This object does not exist or is not publicly accessible at this
+<             URL. Check the URL of the object that you're looking for or contact
+<             the owner to enable Public access.
+<           </p>
+<         </div>
+< 
+<         <div>
+<           <p id="footer-title">Is this your bucket?</p>
+<           <p>
+<             Learn how to enable
+<             <a
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 299 ms

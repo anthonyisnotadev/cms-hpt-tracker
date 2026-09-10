@@ -1,0 +1,31 @@
+# curl-style evidence for https://ajhc.org/cms-hpt.txt
+# fetched 2026-09-07T01:35:22.610Z with the tracker's BROWSER_HEADERS (production client)
+# record: 281314 | ANNIE JEFFREY MEMORIAL COUNTY HEALTH CENTER | NE | finding: not-assessed-site-unreachable
+
+* DNS ajhc.org: 216.40.47.17
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* error: fetch failed (cause: UND_ERR_CONNECT_TIMEOUT)
+
+* http:// fallback attempt after transport failure:
+* fallback redirect hop 1: http://ajhc.org/cms-hpt.txt
+< HTTP 302
+< connection: close
+< content-length: 0
+< date: Mon, 07 Sep 2026 01:35:13 GMT
+< location: http://www.ajhc.org/cms-hpt.txt
+< server: Apache-Coyote/1.1
+* following Location: http://www.ajhc.org/cms-hpt.txt
+
+* fallback error: fetch failed (cause: UND_ERR_CONNECT_TIMEOUT)
+
+* total time: 23560 ms

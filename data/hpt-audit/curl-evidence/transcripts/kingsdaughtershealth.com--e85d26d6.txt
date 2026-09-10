@@ -1,0 +1,55 @@
+# curl-style evidence for https://kingsdaughtershealth.com/cms-hpt.txt
+# fetched 2026-09-07T01:33:15.998Z with the tracker's BROWSER_HEADERS (production client)
+# record: 180009 | KING'S DAUGHTERS' MEDICAL CENTER | KY | finding: no-cms-hpt-txt-published
+# record: 360361 | KINGS DAUGHTERS MEDICAL CENTER OHIO | OH | finding: no-cms-hpt-txt-published
+
+* DNS kingsdaughtershealth.com: 104.19.144.84, 104.19.255.83
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://kingsdaughtershealth.com/cms-hpt.txt
+< HTTP 301
+< cf-ray: a371f6e93e23c7c1-IAD
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:33:17 GMT
+< location: https://www.ukkingsdaughters.com/cms-hpt.txt
+< server: cloudflare
+< strict-transport-security: max-age=31536000
+* following Location: https://www.ukkingsdaughters.com/cms-hpt.txt
+
+* final response: https://www.ukkingsdaughters.com/cms-hpt.txt
+< HTTP 404
+< cache-control: max-age=2764800, public
+< cf-cache-status: EXPIRED
+< cf-ray: a371f6e96cad2bd4-IAD
+< content-encoding: br
+< content-language: en
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:33:17 GMT
+< expires: Sun, 19 Nov 1978 05:00:00 GMT
+< last-modified: Sun, 06 Sep 2026 14:12:57 GMT
+< server: cloudflare
+< strict-transport-security: max-age=31536000
+< vary: Cookie, accept-encoding
+< via: varnish
+< x-ah-environment: prod
+< x-cache: HIT
+< x-cache-hits: 10
+< x-content-type-options: nosniff
+< x-drupal-cache: MISS
+< x-drupal-dynamic-cache: MISS
+< x-frame-options: SAMEORIGIN
+< x-generator: Drupal 11 (https://www.drupal.org)
+< x-request-id: v-0f9bbc8a-a9fd-11f1-a1bc-73715053f5b3
+< --- body (201 bytes read) ---
+< <!DOCTYPE html><html><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL "https://www.ukkingsdaughters.com/cms-hpt.txt" was not found on this server.</p></body></html>
+
+* total time: 141 ms

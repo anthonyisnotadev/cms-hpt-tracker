@@ -1,0 +1,64 @@
+# curl-style evidence for https://providence.org/
+# fetched 2026-09-07T01:36:11.917Z with the tracker's BROWSER_HEADERS (production client)
+# record: 500054 | PROV SACRED HRT MED CTR & CHILDS HOSP. | WA | finding: not-assessed-not-named-in-file
+
+* DNS providence.org: 40.64.94.1
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://providence.org/
+< HTTP 301
+< connection: keep-alive
+< content-length: 195
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:36:12 GMT
+< location: https://www.providence.org/
+< server: Microsoft-Azure-Application-Gateway/v2
+* following Location: https://www.providence.org/
+
+* final response: https://www.providence.org/
+< HTTP 200
+< accept-ch: Sec-CH-UA-Full-Version-List,Sec-CH-UA-Platform-Version,Sec-CH-UA-Arch,Sec-CH-UA-Model,Sec-CH-UA-Bitness
+< accept-ranges: bytes
+< access-control-expose-headers: Request-Context
+< cache-control: no-cache, no-store
+< content-encoding: gzip
+< content-length: 65330
+< content-security-policy: frame-ancestors 'self' *.kameleoon.com *.kameleoon.eu *.providence.org provcustomerservicedev.crm.dynamics.com provcustomerserviceuat.crm.dynamics.com provcustomerservice.crm.dynamics.com ;
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:36:13 GMT
+< expires: -1
+< pragma: no-cache
+< referrer-policy: strict-origin-when-cross-origin
+< request-context: appId=cid-v1:f1480a2b-0db7-4621-8d30-fcc98ffd3867
+< strict-transport-security: max-age=31536000; includeSubDomains; preload
+< vary: Accept-Encoding,Accept-Encoding
+< x-azure-ref: 20260907T013612Z-r18d445bc96nppgphC1BNAreg00000000e70000000006yey
+< x-cache: CONFIG_NOCACHE
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-xss-protection: 1; mode=block
+< --- body (65536 bytes read, truncated) ---
+< <!DOCTYPE html><html class="no-js no-ios-os no-android-os layout-home-page" lang="en"><head>
+<     
+<     <meta name="viewport" content="width=device-width, initial-scale=1">
+<         
+< 
+< 
+< 
+< 
+< 
+<     
+< 
+<     <link rel="alternate" href="https://es.providence.org/" hreflang="es"><link rel="alternate" href="https://es.providence.org/" hreflang="es"><link rel="preconnect dns-prefetch" href="https://tags.tiqcdn.com" crossorigin=""><link rel="preconnect dns-prefetch" href="https://cdn.providence.org" crossorigin=""><link rel="preload" as="fetch" href="https://cdn.providence.org/asset/XdzCfdDC3Lfb+vHPenjPAQ10/foundation/asset-optimization/bundles/js/3/1/93/07/40/649/bundle-v3-1930740649-js-min/js?updated=134331609220000000" crossorigin=""><link rel="preload" as="font" href="https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3t-4s51os.woff2" crossorigin="" type="font/woff2"><link rel="preload" as="font" href="https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E30-8s51os.woff2" crossorigin="" type="font/woff2"><link rel="preload" as="font" href="https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3_-gs51os.woff2" crossorigin="" type="font/woff2"><link rel="preload" as="font" href="https://fonts.gstatic.com/s/barlow/v12/7cHpv4kjgoGqM7E_DMs5.woff2" crossorigin="" type="font/woff2"><link rel="preload" href="https://fonts.gstatic.com/s/lora/v16/0QI6MX1D_JOuGQbT0gvTJPa787wsuxJBkq0.woff2" as="font" type="font/woff2" crossorigin=""><link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_dJE3gnD_g.woff2" as="font" type="font/woff2" crossorigin=""><link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_bZF3gnD_g.woff2" as="font" type="font/woff2" crossorigin=""><link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v15/JTURjIg1_i6t8kCHKm45_ZpC3gnD_g.woff2" as="font" type="font/woff2" crossorigin=""><link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v15/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2" as="font" type="font/woff2" crossorigin=""><link rel="preload" href="https://cdn.providence.org/asset/3m2wXtNI2qLOOjfKE631Eg10/Themes/psjh/SoCal/socal/fonts/icons/OneSite-woff2/woff2?1669143634441" as="font" type="font/woff2" crossorigin=""><link rel="preload" media="(max-width:359.999px)" href="https://cdn.providence.org/asset/zIM6hji3DyoGCpIkBdAAgw10/project/psjh/shared/images/donotmodify/homepageimage2-80/jpg?rev=298835039e1140ca867038f06d7a0243&amp;w=360&amp;cx=0.59&amp;cy=0.58&amp;cw=360&amp;ch=400&amp;hash=ADC60AB234186C8304B704CB8573B2F1" as="image"><link rel="preload" media="(min-width:360px) and (max-width:575px)" href="https://cdn.providence.org/asset/d4y75688EaocHZhG182xyg10/project/psjh/shared/images/donotmodify/homepageimage2-80/jpg?rev=298835039e1140ca867038f06d7a0243&amp;w=576&amp;cx=0.59&amp;cy=0.58&amp;cw=576&amp;ch=400&amp;hash=E24DA85D0FA646ADD94CF7E92AC0734D" as="image"><link rel="preload" media="(min-width:576px) and (max-width:767px)" href="https://cdn.providence.org/asset/+lI1D3hE80GtyvvbbPH7pw10/project/psjh/shared/images/donotmodify/homepageimage2-80/jpg?rev=298835039e1140ca867038f06d7a0243&amp;w=768&amp;cx=0.59&amp;cy=0.58&amp;cw=768&amp;ch=400&amp;hash=6FBA5F54CA0A7E4742BB0DBB4FB478B4" as="image"><link rel="preload" media="(min-width:768px) and (max-width:991px)" href="https://cdn.providence.org/asset/KGiIQ0oHsDCxXdsxK7s3Fw10/project/psjh/shared/images/donotmodify/homepageimage2-80/jpg?rev=298835039e1140ca867038f06d7a0243&amp;w=992&amp;cx=0.59&amp;cy=0.58&amp;cw=992&amp;ch=513&amp;hash=406DE61429A79B97992277CE39516865" as="image"><link rel="preload" media="(min-width:992px) and (max-width:1199px)" href="https://cdn.providence.org/asset/pnuoHh4ejbKNsaAbnNP60Q10/project/psjh/shared/images/donotmodify/homepageimage2-80/jpg?rev=298835039e1140ca867038f06d7a0243&amp;w=1200&amp;cx=0.59&amp;cy=0.58&amp;cw=1200&amp;ch=550&amp;hash=67546E0254A6D2468F1DB3869483F062" as="image"><link rel="preload" media="(min-width:1200px) and (max-width:1439px)" href="https://cdn.providence.org/asset/d/fEKinx6bhqOmi6xMUM+Q10/project/psjh/shared/images/donotmodify/homepageimage2-80/jpg?rev=298835039e1140ca867038f06d7a0243&amp;w=1440&amp;cx=0.59&amp;cy=0.58&amp;cw=1440&amp;ch=550&amp;hash=8246A3EBD04B5641570DD60332615633" as="image"><link rel="preload" media="(min-width:1440px)" href="https://cdn.providence.org/asset/WalXgCTFJzNU6Lm2OT1Riw10/project/psjh/shared/images/donotmodify/homepageimage2-80/jpg?rev=298835039e1140ca867038f06d7a0243&amp;w=1920&amp;cx=0.59&amp;cy=0.58&amp;cw=1920&amp;ch=550&amp;hash=48DCAE60B95056D85D0D9E5FD15248E9" as="image"><link rel="preload" as="image" href="https://cdn.providence.org/asset/GtV28qX0x6P0DfEBf7sJ7w10/project/psjh/providence/socal/images/logos/providence-logo-svg/svg?h=38&amp;iar=0&amp;w=200&amp;rev=3f439a997f8142a3906a5e99e27a8b4b&amp;hash=116C8657600BE12BB61DC2895EF69434"><link rel="prefetch" as="image" href="https://cdn.providence.org/asset/UZutB5wofRN/NT+ilpQbLA10/project/psjh/providence/socal/images/logos/social/youtube/png?h=72&amp;iar=0&amp;w=104&amp;rev=976d900154cc4d2182f0b8a0af3840ed&amp;hash=56E6BC243E9BFD7F8DB6E77BDF53E7C4"><link rel="prefetch" as="image" href="https://cdn.providence.org/asset/gxJ4bwfDVmBPooAusskQBQ10/project/psjh/providence/socal/images/logos/social/instagram/png?h=85&amp;iar=0&amp;w=85&amp;rev=de36fc3795e346e2ac725cb2510b9fdd&amp;hash=41B1EC174E569D8275F4BCF36815F684"><link rel="prefetch" as="image" href="https://cdn.providence.org/asset/s78WrKhvV9831CnV0cgqbg10/project/psjh/providence/socal/images/logos/social/linkedin/png?h=84&amp;iar=0&amp;w=84&amp;rev=b90c32b4984e4b7aa0a70596eb768064&amp;hash=D77B95354565D2C60E90F46C6C728625"><link rel="prefetch" as="image" href="https://cdn.providence.org/asset/jC+nPJqgp9L5r54ckvqWhg10/project/psjh/providence/socal/images/logos/social/twitter/png?h=89&amp;iar=0&amp;w=96&amp;rev=2d873c9c43534c2faf03b599a56adc06&amp;hash=6C2680FFA8B2C72A609D5E918A498A4C"><link rel="prefetch" as="image" href="https://cdn.providence.org/asset/geMdKaGYXwdaQZRA2kGjaA10/project/psjh/providence/socal/images/logos/social/facebook/png?h=93&amp;iar=0&amp;w=94&amp;rev=0edb52fb3885401e9f0031989ece93a6&amp;hash=FA1098F26C9A6E1EAD0AF0DFB2849539"><link rel="prefetch" as="image" href="https://res.cloudinary.com/uf-551983/image/upload/v1718208129/Providence_News_Release_tw0vxv.jpg"><link rel="prefetch" as="image" href="https://res.cloudinary.com/uf-551983/image/upload/v1784846088/IMG_5023_dkudwa.jpg"><link rel="prefetch" as="image" href="https://res.cloudinary.com/uf-551983/image/upload/v1787082184/lab_duhen_dnnhas.jpg"><link rel="prefetch" as="image" href="https://res.cloudinary.com/uf-551983/image/upload/v1787346855/liver_cyewmo.jpg"><link rel="prefetch" as="image" href="https://res.cloudinary.com/uf-551983/image/upload/v1787594421/_N0A6442_amy5fu.jpg"><link rel="prefetch" as="image" href="https://cdn.providence.org/asset/AHFG8FTWaEfyqlMSVKQcMg10/project/psjh/shared/images/services/googleplay/png?h=auto&amp;w=138&amp;rev=f3da69f59b494734b48b48051fac98e6&amp;hash=3F671D477C41E4B16268673D9BF6C44F"><link rel="prefetch" as="image" href="https://cdn.providence.org/asset/t0F5y25TdcgXaeYNgb2+9A10/project/psjh/shared/images/services/appstore/png?h=auto&amp;w=138&amp;rev=e70f5dceb4f643318c1640820f3a099f&amp;hash=D98C10836CD9C9A440ADAE85AC5ED21E"><link rel="prefetch" as="image" href="https://cdn.providence.org/asset/PvolH6lJS0sFEF1h649IXA10/project/psjh/shared/images/campaigns/health-connect/provapppromowebqr/png?h=100&amp;w=100&amp;rev=2dce09d7d42745b1876e6fec5f982ee3&amp;hash=B5DA5608A3F7A8E7BE5A7750CF3FB1FC"><link rel="prefetch" as="image" href="https://cdn.providence.org/asset/U3+uiC+057lmHIYqULKn8Q10/project/psjh/shared/images/promo-cards/providence_app_viewport_promo/png?h=544&amp;iar=0&amp;w=710&amp;rev=ab7c71322c1146288e79c89335b22cb9&amp;hash=64372A81B60AA5E92EEE4519FA6C1DA1"><link rel="prefetch" as="image" href="https://cdn.providence.org/asset/qYkWlwx8tu4VbAwQjulJEA10/project/psjh/shared/images/icons/get-care-doctor/png?h=100&amp;iar=0&amp;w=100&amp;rev=85bd27bdbe804c95aca40927f0ddeea8&amp;hash=B2C5F8CA777CCD5BDFA50AACD457BD19"><link rel="prefetch" as="image" href="https://cdn.providence.org/asset/i25U8jaMp1OsemI5Y
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 1670 ms

@@ -1,0 +1,27 @@
+# curl-style evidence for https://holyfamilyhospital.org/.well-known/cms-hpt.txt
+# fetched 2026-09-07T01:33:59.271Z with the tracker's BROWSER_HEADERS (production client)
+# record: 220080 | HOLY FAMILY HOSPITAL | MA | finding: no-cms-hpt-txt-published
+
+* DNS holyfamilyhospital.org: 15.197.225.128, 3.33.251.168
+
+> GET /.well-known/cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://holyfamilyhospital.org/.well-known/cms-hpt.txt
+< HTTP 404
+< content-length: 10
+< content-type: text/plain; charset=utf-8
+< date: Mon, 07 Sep 2026 01:34:01 GMT
+< x-content-type-options: nosniff
+< --- body (10 bytes read) ---
+< Not Found
+< 
+
+* total time: 127 ms

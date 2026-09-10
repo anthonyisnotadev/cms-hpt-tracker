@@ -1,0 +1,37 @@
+# curl-style evidence for https://clariti-health.com/
+# fetched 2026-09-07T01:32:33.801Z with the tracker's BROWSER_HEADERS (production client)
+# record: 040147 | ARKANSAS SURGICAL HOSPITAL | AR | finding: no-cms-hpt-txt-published
+
+* DNS clariti-health.com: 35.237.105.5
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://clariti-health.com/
+< HTTP 301
+< content-length: 171
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:32:14 GMT
+< location: https://www.hstpathways.com/products/hst-clariti
+< referrer-policy: no-referrer-when-downgrade
+< server: Yes
+< strict-transport-security: max-age=31536000; includeSubDomains; preload
+< x-content-type: nosniff
+< x-frame-options: SAMEORIGIN
+< x-powered-by: ASP.NET
+< x-xss-protection: 1; mode=block
+* following Location: https://www.hstpathways.com/products/hst-clariti
+
+* error: fetch failed (cause: UND_ERR_CONNECT_TIMEOUT)
+
+* http:// fallback attempt after transport failure:
+* fallback error: fetch failed (cause: UND_ERR_CONNECT_TIMEOUT)
+
+* total time: 21336 ms

@@ -1,0 +1,34 @@
+# curl-style evidence for https://jcrhc.org/cms-hpt.txt
+# fetched 2026-09-07T01:32:43.251Z with the tracker's BROWSER_HEADERS (production client)
+# record: 161329 | JACKSON COUNTY REGIONAL HEALTH CENTER | IA | finding: pointer-lists-no-mrf-url
+
+* DNS jcrhc.org: 192.169.176.217
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://jcrhc.org/cms-hpt.txt
+< HTTP 200
+< accept-ranges: bytes
+< content-encoding: br
+< content-length: 187
+< content-type: text/plain
+< date: Mon, 07 Sep 2026 01:32:44 GMT
+< last-modified: Fri, 29 Aug 2025 18:11:32 GMT
+< server: Apache
+< vary: Accept-Encoding
+< --- body (293 bytes read) ---
+< location-name: Jackson County Regional Health Center
+< source-page-url: https://jcrhc.org/price-transparency/
+< mfr-url: https://jcrhc.org/wp-content/uploads/426037868_jackson-county-regional-health-center_standardcharges.csv
+< contact-name: hpt-obf:v1:p3oMIxlEOfPm7u7m.D6uKNak0sgRWvMrKi43cog.-t-V3dz1ofzPgqCprSQ
+< contact-email: hpt-obf:v1:rK_PSzgdj9IAbGj0.7BipXPshHyPkF4miJWGlwA.yohR8XZknkqYsYNQFXn_GRcJgMnnqBwJC6cZ
+
+* total time: 516 ms

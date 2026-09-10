@@ -1,0 +1,183 @@
+# curl-style evidence for https://stjoeshealth.org/
+# fetched 2026-09-07T01:34:40.952Z with the tracker's BROWSER_HEADERS (production client)
+# record: 230002 | ST JOE MERCY HOSPITAL SYSTEM LIVONIA | MI | finding: not-assessed-not-named-in-file
+
+* DNS stjoeshealth.org: 23.185.0.2
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://stjoeshealth.org/
+< HTTP 301
+< accept-ranges: bytes
+< content-length: 0
+< date: Mon, 07 Sep 2026 01:34:42 GMT
+< location: https://www.trinityhealthmichigan.org/
+< retry-after: 0
+< server: Varnish
+< strict-transport-security: max-age=300; includeSubDomains;
+< via: 1.1 varnish, 1.1 varnish
+< x-cache: HIT, MISS
+< x-cache-hits: 0, 0
+< x-served-by: cache-ewr-kewr1740056-EWR, cache-ewr-kewr1740056-EWR
+< x-timer: S1788744883.524330,VS0,VE5
+* following Location: https://www.trinityhealthmichigan.org/
+
+* final response: https://www.trinityhealthmichigan.org/
+< HTTP 200
+< accept-ranges: bytes
+< age: 6991
+< cache-control: max-age=43200, public
+< content-encoding: gzip
+< content-language: en
+< content-length: 25723
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:34:42 GMT
+< etag: W/"1788736419"
+< expires: Sun, 19 Nov 1978 05:00:00 GMT
+< last-modified: Sun, 06 Sep 2026 23:13:39 GMT
+< server: webserver
+< strict-transport-security: max-age=31622400
+< vary: Accept-Encoding, Cookie, Cookie, Cookie
+< via: 1.1 varnish, 1.1 varnish, 1.1 varnish, 1.1 varnish
+< x-cache: HIT, HIT, MISS, MISS
+< x-cache-hits: 24, 7, 0, 0
+< x-content-type-options: nosniff
+< x-drupal-cache: HIT
+< x-drupal-dynamic-cache: HIT
+< x-frame-options: SAMEORIGIN
+< x-pantheon-styx-hostname: styx-us-a-69558586b-sfsc9
+< x-served-by: cache-chi-klot8100092-CHI, cache-ewr-kewr1740039-EWR, cache-ewr-kewr1740052-EWR, cache-ewr-kewr1740052-EWR
+< x-styx-req-id: 05ffdd6c-aa4c-11f1-8547-6eb2718b7914
+< x-timer: S1788744883.680895,VS0,VE6
+< --- body (65536 bytes read, truncated) ---
+< <!DOCTYPE html>
+< <html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+< <head>
+<     <meta charset="utf-8" />
+< <noscript><style>form.antibot > * { display: none !important; } form.antibot noscript { display: block !important; }</style>
+< </noscript><meta name="apple-mobile-web-app-capable" value="yes" />
+< <meta name="apple-mobile-web-app-status-bar-style" value="default" />
+< <meta name="apple-mobile-web-app-title" value="Trinity Health Michigan" />
+< <meta name="mobile-web-app-capable" value="yes" />
+< <meta name="description" content="The hospitals and doctors of Trinity Health Michigan deliver the very best medicine and personalized care close to home. Contact us at 1-hpt-obf:v1:7XsuG4R88veiat1L.XXzp__DDGVwejviLDUg2bw.mwFEGvFJLSLWlRoz." />
+< <link rel="shortlink" href="https://www.trinityhealthmichigan.org/" />
+< <link rel="canonical" href="https://www.trinityhealthmichigan.org/" />
+< <meta name="robots" content="index, follow" />
+< <meta name="google" content="" />
+< <meta name="google-site-verification" content="iiu77LD9SSvDw9ZX_k6pw7QAvUhcsKV6MTgkpTnViSg" />
+< <meta name="Generator" content="Mercury Campaign Site" />
+< <meta name="MobileOptimized" content="width" />
+< <meta name="HandheldFriendly" content="true" />
+< <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+< <link href="//fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet" />
+< <link href="https://www.trinityhealthmichigan.org/sites/default/files/hg_brands/69fc7554e6c12b84240c279fc9ea4e17.png" rel="icon" type="image/png" />
+< <script src="/sites/default/files/google_tag/gtm_m8wgc7rv/google_tag.script.js?tkxxlz"></script>
+< 
+<     <title>Trinity Health Michigan</title>
+<     <link rel="stylesheet" media="all" href="/sites/default/files/css/css_2b4XelBsJxfJd9r4Rt15ZaE0vlraMZ6NoAsWY_yhE4M.css?delta=0&amp;language=en&amp;theme=hg_webdv_child&amp;include=eJyVkEESwjAIRS_kTPREDA00wUnCmBBrb2-7Mq1uXMCC_z4MH8WhQEg6YbrEAFPFQs1ZlSK2QmRMFiGLjxKw7ETm6ntdwVMBbI0NpNzZm1Y3Sr41uP7J30aeXuw8VoKtaW-czuJWQDxjTwazFmtn4PPV9xQCa1KPJlpgEQpsZzBjfXTmw_09F9iySDRsH4a_PAtP9DyY3ko8lCI" />
+< <link rel="stylesheet" media="all" href="/sites/default/files/css/css_tLmC4Yevk8X05RSNFwUsYNl-DwWyoSiRxRjrrD2smZ0.css?delta=1&amp;language=en&amp;theme=hg_webdv_child&amp;include=eJyVkEESwjAIRS_kTPREDA00wUnCmBBrb2-7Mq1uXMCC_z4MH8WhQEg6YbrEAFPFQs1ZlSK2QmRMFiGLjxKw7ETm6ntdwVMBbI0NpNzZm1Y3Sr41uP7J30aeXuw8VoKtaW-czuJWQDxjTwazFmtn4PPV9xQCa1KPJlpgEQpsZzBjfXTmw_09F9iySDRsH4a_PAtP9DyY3ko8lCI" />
+< <link rel="stylesheet" media="all" href="//fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&amp;family=Merriweather:ital@1&amp;family=Roboto:wght@700;900&amp;family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400&amp;display=swap" />
+< <link rel="stylesheet" media="all" href="/sites/default/files/css/css_i0bVkQOoPdmdwFnUkOYk5Qq7PCj9kb_WP2UQlGFpgYE.css?delta=3&amp;language=en&amp;theme=hg_webdv_child&amp;include=eJyVkEESwjAIRS_kTPREDA00wUnCmBBrb2-7Mq1uXMCC_z4MH8WhQEg6YbrEAFPFQs1ZlSK2QmRMFiGLjxKw7ETm6ntdwVMBbI0NpNzZm1Y3Sr41uP7J30aeXuw8VoKtaW-czuJWQDxjTwazFmtn4PPV9xQCa1KPJlpgEQpsZzBjfXTmw_09F9iySDRsH4a_PAtP9DyY3ko8lCI" />
+< <link rel="stylesheet" media="all" href="/sites/default/files/css/css_vsyvnQKYXFs74gf35zW1xTSWsiffNM8I8iJp9uDzjZw.css?delta=4&amp;language=en&amp;theme=hg_webdv_child&amp;include=eJyVkEESwjAIRS_kTPREDA00wUnCmBBrb2-7Mq1uXMCC_z4MH8WhQEg6YbrEAFPFQs1ZlSK2QmRMFiGLjxKw7ETm6ntdwVMBbI0NpNzZm1Y3Sr41uP7J30aeXuw8VoKtaW-czuJWQDxjTwazFmtn4PPV9xQCa1KPJlpgEQpsZzBjfXTmw_09F9iySDRsH4a_PAtP9DyY3ko8lCI" />
+< <link rel="stylesheet" media="print" href="https://cdn.jsdelivr.net/gh/th-common/release@main/prod/bundle.min.css" onload="this.media=&#039;all&#039;" />
+< <link rel="stylesheet" media="print" href="https://cdn.jsdelivr.net/gh/th-common/release@main/site/thmi/custom.css" onload="this.media=&#039;all&#039;" />
+< 
+<     
+< </head>
+< <body class="page__hgm_provider_search thmi fontyourface external-urls-new-tab external-documents-new-tab path-frontpage node--type-mercury-enhanced-layout path-home content-type-mercury_enhanced_layout">
+<     <a href="#block-hg-webdv-child-content" class="focusable skip-link">
+<     Skip to main content
+<   </a>
+<   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M8WGC7RV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<     <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+<     
+< 
+<     <div id="block-hg-webdv-child-csstextalignfix">
+<   
+<     
+<       
+< 
+<                         <div class="field body"><style>
+< .text-align-center {
+<  text-align: center !important;
+< }
+< .text-align-right {
+<  text-align: right !important;
+< }
+< .text-align-left {
+<  text-align: left !important;
+< }
+< .text-align-justify {
+<   text-align: justify !important;
+< }
+< .align-right {
+<   float: right;
+< padding: 0 10px;
+< }
+< .align-left {
+<   float: left;
+< padding: 0 10px;
+< }
+< .hgm-tabs.solid .hgm-tabs__radio:checked+label
+<  {
+<     background-color: #702082!important;
+<     color: #fff!important;
+< }
+< @media (min-width: 768px) and (max-width: 1200px) {
+< .hgm-section__component-row div.col {
+<     flex: 1 0 100%;   }
+< }
+< </style></div>
+<             
+<   </div>
+< <div id="block-hg-webdv-child-csscookiebannerreducer">
+<   
+<     
+<       
+< 
+<                         <div class="field body"><style>
+< /* CSS cookie banner reducer */
+< /* Responsive adjustments */
+< @media (max-width: 768px) {
+< 	.hgm-alert__row {
+< 		padding: 0.5rem;
+< 	}
+< 	.hgm-alert__row p {
+<         font-size: 0.875rem !important;
+< 		line-height: 1.3rem
+< 	}
+< 	.hgm-alert__container button.hgm-button.hgm-alert__close {
+< 		margin: 0.25rem 0 0.75rem;
+<         font-size: 0.875rem !important;
+< 	}
+<     #block-hg-webdv-child-mercurystickybannerblock .sticky-position-bottom {
+<         padding: 0;
+<     }
+<     #block-hg-webdv-child-mercurystickybannerblock p {
+<         font-size: 0.875rem !important;
+< 		line-height: 1.3rem
+<     }
+< 	.hgm-sticky-banner .row {
+< 		padding: 1rem 1rem 0.75rem;
+< 	}
+< 	.hgm-sticky-banner__close {
+< 		padding: 0.25rem 0.5rem;
+< 	}
+< }
+< </style></div>
+<             
+<   </div>
+< <div id="block-hg-webdv-child-cssforfigcaptiononslideshow">
+<   
+<     
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 453 ms

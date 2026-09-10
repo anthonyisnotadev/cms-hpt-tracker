@@ -1,0 +1,148 @@
+# curl-style evidence for https://pcmhosp.com/
+# fetched 2026-09-07T01:34:42.709Z with the tracker's BROWSER_HEADERS (production client)
+# record: 261305 | PUTNAM COUNTY MEMORIAL HOSPITAL | MO | finding: not-assessed-site-unreachable
+
+* DNS pcmhosp.com: 185.230.63.171, 185.230.63.186, 185.230.63.107
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://pcmhosp.com/
+< HTTP 301
+< age: 0
+< cache-control: no-cache
+< content-length: 0
+< date: Mon, 07 Sep 2026 01:34:44 GMT
+< location: https://www.pcmhosp.com/
+< server: Pepyaka
+< server-timing: cache;desc=miss, varnish;desc=miss, dc;desc=virginia-phy
+< strict-transport-security: max-age=31556952
+< x-cache-status: MISS
+< x-content-type-options: nosniff
+< x-meta-site-id: 3b8d0b5a-2efe-42fb-a70d-99aaacee3dab
+< x-seen-by: VtqAe8Wu9wvSsl49B/X4+ewfbs+7qUVAqsIx00yI78k=,Ua1iSBCTq7qSXjmRCGE1N/2xUclivgVSfl9VV9NywajaTzpjkOFr5hebeb+xyZMTqdB/muy8W4xVdZyKL0M+VGrMZjuPVrPjDsgbH6txUsixuzQG/4S2vfTCfdglKjzz,2d58ifebGbosy5xc+FRaliqMZkSF+Mv09fTCfT3PYmNQElbjmBN5PxtU954OVDBiqdB/muy8W4xVdZyKL0M+VBrcN7zLZ+qdnVayVDeBTJ0=,2UNV7KOq4oGjA5+PKsX47FtSaLg8IYZ7tWb3E4MS5QwFVd1lR1L8/yRoc88kq/ej,2UNV7KOq4oGjA5+PKsX47G86grxW7YVbTxNaQeYTCEMFVd1lR1L8/yRoc88kq/ej,/B3VgDtICCNDWQOEWfZmMunUT/1Tng74qWvPjcqZmP0=,8+sd0p/fB+2vxlJZapYbK7LMxQhZpNIUZUXG6aVJZxYj6r0AZAMucqm4C7kwBEyaXvSF+fxEJ1da5ZmnZMf7GQ==
+< x-wix-cache-control: public, max-age=86400
+< x-wix-request-id: 1788744884.1641257204221424
+* following Location: https://www.pcmhosp.com/
+
+* final response: https://www.pcmhosp.com/
+< HTTP 200
+< accept-ranges: bytes
+< age: 353547
+< alt-svc: h3=":443"; ma=86400
+< cache-control: public,max-age=0,must-revalidate
+< cf-cache-status: DYNAMIC
+< cf-ray: a371f9078e276108-IAD
+< content-encoding: br
+< content-language: en
+< content-length: 149928
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:34:44 GMT
+< etag: W/"d0c250bb71d3742731b884625b827428"
+< link: <https://static.parastorage.com/>; rel=preconnect; crossorigin, <https://static.parastorage.com/>; rel=preconnect, <https://static.wixstatic.com/>; rel=preconnect; crossorigin, <https://static.wixstatic.com/>; rel=preconnect, <https://siteassets.parastorage.com>; rel=preconnect; crossorigin
+< server: cloudflare
+< server-timing: cache;desc=miss, varnish;desc=miss_hit, dc;desc=fastly_cf
+< strict-transport-security: max-age=31556952
+< vary: Accept-Encoding
+< x-cache: HIT
+< x-cache-status: MISS
+< x-content-type-options: nosniff
+< x-seen-by: bQAXdg/f3pWGCb3VI6q72A==,Ct40diYObxC+je8ScvxEPQ==,pmHZlB45NPy7b1VBAukQrewfbs+7qUVAqsIx00yI78k=,jKB0KR2wTEE1MYSdxvKSbciHE4dbw+wewoJ5nvKoyjE=,Ua1iSBCTq7qSXjmRCGE1Nx0dcU9af+s6kFgy2BTuMzt1nCNYOf8AGoezi3zeAQY4EpzrUii78VdYxnNKzUeyUYhIydfYCelFDfkrvUteY3iirfv3BFEVzZW910rMKeNv,2d58ifebGbosy5xc+FRalsdAuR0nzsMnzWsnD/WJUOh/uQUZHAC9KRvBP64VNelsqdB/muy8W4xVdZyKL0M+VB+QmoTduQy303KBw2INeI0=,2UNV7KOq4oGjA5+PKsX47Efm2FDoAuZ3d2dZFPgraZgFVd1lR1L8/yRoc88kq/ej,2UNV7KOq4oGjA5+PKsX47KEA/q0qujTnFdLk61L10h4FVd1lR1L8/yRoc88kq/ej,/B3VgDtICCNDWQOEWfZmMsNx2NO7OsR+7gpiCtYPtjY=,MjSTzAxntoZ06bKVYjQCc+zldY50VQYERYRUErPH02aVxPsdUouqCF3BVxzILuiLTSjq7dsW+CXYzXBWjrQVww==,/B3VgDtICCNDWQOEWfZmMp0km0/IkhkUsSAMc670N68=,LoUK8/saGAmOxZWtpubo2kD4pg0+gDMifLeRlJYA1goOPulHRY5OJvo6Obe5Zd8/UVA4tpM/O1rEnnSamWGLr1O02Fr1CqG0HW3vRNOeGe4F5umMt6wjFWmNjuvxM5E+,/B3VgDtICCNDWQOEWfZmMtxZy8TvFxLXfDsuw9r0jH8=,/a5ccLSK1HEmwPNg/x6Oujt8v2OwQq1MuIm479Vgkb8XScMWXiuyVexCyUQe9w/m40nfeVDxH6E7r+2dXxxt1HQQz+8Cg+i4R0RtQUGgRqT0qvDYBqF2/fbOQUgF10ua
+< x-served-by: cache-iad-khef600048-IAD
+< x-wix-request-id: 1788744884.444428304181052868
+< --- body (65536 bytes read, truncated) ---
+< <!DOCTYPE html>
+< <html lang="en">
+< <head>
+<   
+<   <meta charset='utf-8'>
+<   <meta name="viewport" content="width=device-width, initial-scale=1" id="wixDesktopViewport" />
+<   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<   <meta name="generator" content="Wix.com Website Builder"/>
+< 
+<   <link rel="icon" sizes="192x192" href="https://static.parastorage.com/client/pfavico.ico" type="image/x-icon"/>
+<   <link rel="shortcut icon" href="https://static.parastorage.com/client/pfavico.ico" type="image/x-icon"/>
+<   <link rel="apple-touch-icon" href="https://static.parastorage.com/client/pfavico.ico" type="image/x-icon"/>
+< 
+<   <!-- Safari Pinned Tab Icon -->
+<   <!-- <link rel="mask-icon" href="https://static.parastorage.com/client/pfavico.ico"> -->
+< 
+<   <!-- Segmenter Polyfill -->
+<   <script>
+<     if (!window.Intl || !window.Intl.Segmenter) {
+<       (function() {
+<         var script = document.createElement('script');
+<         script.src = 'https://static.parastorage.com/unpkg/@formatjs/intl-segmenter@11.7.10/polyfill.iife.js';
+<         document.head.appendChild(script);
+<       })();
+<     }
+<   </script>
+< 
+<   <!-- Legacy Polyfills -->
+<   <script nomodule="" src="https://static.parastorage.com/unpkg/core-js-bundle@3.2.1/minified.js"></script>
+<   <script nomodule="" src="https://static.parastorage.com/unpkg/focus-within-polyfill@5.0.9/dist/focus-within-polyfill.js"></script>
+< 
+<   <!-- Performance API Polyfills -->
+<   <script>
+<   (function () {
+<     var noop = function noop() {};
+<     if ("performance" in window === false) {
+<       window.performance = {};
+<     }
+<     window.performance.mark = performance.mark || noop;
+<     window.performance.measure = performance.measure || noop;
+<     if ("now" in window.performance === false) {
+<       var nowOffset = Date.now();
+<       if (performance.timing && performance.timing.navigationStart) {
+<         nowOffset = performance.timing.navigationStart;
+<       }
+<       window.performance.now = function now() {
+<         return Date.now() - nowOffset;
+<       };
+<     }
+<   })();
+<   </script>
+< 
+<   <!-- Essential Viewer Model -->
+<   <script type="application/json" id="wix-essential-viewer-model">{"fleetConfig":{"fleetName":"thunderbolt-renderer-extended-timeout","type":"GA","code":0},"mode":{"qa":false,"enableTestApi":false,"addAllServices":false,"debug":false,"ssrIndicator":false,"ssrOnly":false,"siteAssetsFallback":"enable","versionIndicator":false},"componentsLibrariesTopology":[{"artifactId":"editor-elements","namespace":"wixui","url":"https:\/\/static.parastorage.com\/services\/editor-elements\/1.15478.0"},{"artifactId":"editor-elements","namespace":"dsgnsys","url":"https:\/\/static.parastorage.com\/services\/editor-elements\/1.15478.0"}],"siteFeaturesConfigs":{"sessionManager":{"isRunningInDifferentSiteContext":false}},"language":{"userLanguage":"en"},"siteAssets":{"clientTopology":{"mediaRootUrl":"https:\/\/static.wixstatic.com","scriptsUrl":"static.parastorage.com","staticMediaUrl":"https:\/\/static.wixstatic.com\/media","staticAudioUrl":"https:\/\/music.wixstatic.com\/mp3","moduleRepoUrl":"https:\/\/static.parastorage.com\/unpkg","fileRepoUrl":"https:\/\/static.parastorage.com\/services","viewerAppsUrl":"https:\/\/viewer-apps.parastorage.com","viewerAssetsUrl":"https:\/\/viewer-assets.parastorage.com","siteAssetsUrl":"https:\/\/siteassets.parastorage.com","pageJsonServerUrls":["https:\/\/pages.parastorage.com","https:\/\/staticorigin.wixstatic.com","https:\/\/www.pcmhosp.com","https:\/\/fallback.wix.com\/wix-html-editor-pages-webapp\/page"],"pathOfTBModulesInFileRepoForFallback":"wix-thunderbolt\/dist\/"}},"siteFeatures":["accessibilityBrowserZoom","appMonitoring","assetsLoader","businessLogger","captcha","clickHandlerRegistrar","commonConfig","componentsRegistry","consentPolicy","contentReflow","cyclicTabbing","domSelectors","domStore","environmentWixCodeSdk","environment","externalServices","locationWixCodeSdk","mpaNavigation","navigationManager","navigationPhases","ooi","pages","panorama","renderer","reporter","router","scrollRestoration","seoWixCodeSdk","seo","sessionManager","siteMembersWixCodeSdk","siteMembers","siteScrollBlocker","siteWixCodeSdk","speculationRules","ssrCache","stores","structureApi","thunderboltInitializer","tpaCommons","translations","usedPlatformApis","warmupData","windowMessageRegistrar","windowWixCodeSdk","wixCustomElementComponent","wixEmbedsApi","componentsLoader","componentsReact","platform"],"site":{"externalBaseUrl":"https:\/\/www.pcmhosp.com","isSEO":false},"media":{"staticMediaUrl":"https:\/\/static.wixstatic.com\/media","mediaRootUrl":"https:\/\/static.wixstatic.com\/","staticVideoUrl":"https:\/\/video.wixstatic.com\/","userDomainMediaPrefixes":[]},"requestUrl":"https:\/\/www.pcmhosp.com\/","rollout":{"siteAssetsVersionsRollout":false,"isDACRollout":0,"isTBRollout":false},"commonConfig":{"brand":"wix","host":"VIEWER","bsi":"","consentPolicy":{},"consentPolicyHeader":{},"siteRevision":"232","renderingFlow":"NONE","language":"en","locale":"en-us"},"interactionSampleRatio":0.01,"accessTokensUrl":"https:\/\/www.pcmhosp.com\/_api\/v1\/access-tokens","experiments":{"specs.thunderbolt.hardenFetchAndXHR":true,"specs.thunderbolt.securityExperiments":true,"specs.thunderbolt.allowWebpAvifTransforms":true,"specs.thunderbolt.browserCacheReload":true,"specs.thunderbolt.addIdAsClassName":true,"specs.thunderbolt.browserZoomMobileOnloadDetection":true}}</script>
+<   <script>window.viewerModel = JSON.parse(document.getElementById('wix-essential-viewer-model').textContent)</script>
+< 
+<   <!-- Globals Definitions -->
+<   <script>
+<     (function () {
+<       var now = Date.now()
+<       var activationStart = 0
+<       try {
+<         var navEntry = performance.getEntriesByType('navigation')[0];
+<         if (navEntry && navEntry.activationStart > 0) {
+<           activationStart = navEntry.activationStart;
+<         }
+<       } catch (e) {}
+<       window.initialTimestamps = {
+<         initialTimestamp: now,
+<         initialRequestTimestamp: Math.round(performance.timeOrigin ? performance.timeOrigin + activationStart : now - performance.now() + activationStart)
+<       }
+< 
+<       window.thunderboltTag = "libs-releases-GA-local"
+<       window.thunderboltVersion = "1.17870.0"
+<     })();
+<   </script>
+< 
+<   <script>
+<     window.commonConfig = viewerModel.commonConfig
+<   </script>
+< 
+<   
+<   <!-- BEGIN handleAccessTokens bundle -->
+< 
+<   <script data-url="https://static.parastorage.com/services/wix-thunderbolt/dist/handleAccessTokens.inline.3250797b.bundle.min.js">(()=>{"use strict";let e,t,r,o;var n={},i={};function l(e){var t=i[e];if(void 0!==t)return t.exports;var r=i[e]={exports:{}};return n[e](r,r.exports,l),r.exports}function a(e){let{context:t,property:r,value:o,enumerable:n=!0}=e,i=e.get,l=e.set;if(!r||void 0===o&&!i&&!l)return Error("property and value are required");let a=t||globalThis,s=a?.[r],u={};if(void 0!==o)u.value=o;else{if(i){let e=c(i);e&&(u.get=e)}if(l){let e=c(l);e&&(u.set=e)}}let p={...u,enumerable:n||!1,configurable:!1};void 0!==o&&(p.writable=!1);try{Object.defineProperty(a,r,p)}catch(e){return e instanceof TypeError?s:e}return s}function c(e,t){return"function"==typeof e?e:e?.async===!0&&"function"==typeof e.func?t?async function(t){return e.func(t)}:async function(){return e.func()}:"function"==typeof e?.func?e.func:void 0}l.rv=()=>"1.6.8",l.ruid="bundler=rspack@1.6.8";try{a({property:"strictDefine",value:a})}catch{}try{a({property:"defineStrictObject",value:function e(t){let{context:r,property:o,propertiesToExclude:n=[],skipPrototype:i=!1,hardenPrototypePropertiesToExclude:l=[]}=t;if(!o)return Error("property is required");let c=(r||globalThis)[o],p={},f=u(r,o);c&&("object"==typeof c||"function"==typeof c)&&Reflect.ownKeys(c).forEach(e=>{if(!n.includes(e)&&!s.includes(e)){let t=u(c,e);if(t&&(t.writable||t.configurable)){let{value:r,get:o,set:n,enumerable:i=!1}=t,l={};void 0!==r?l.value=r:o?l.get=o:n&&(l.set=n);try{let t=a({context:c,property:e,...l,enumerable:i});p[e]=t}catch(r){if(r instanceof TypeError)try{p[e]=t.value||t.get||t.set}catch{}else throw r}}}});let d={originalObject:c,originalProperties:p};if(!i&&c?.prototype!==void 0){let t=e({context:c,property:"prototype",propertiesToExclude:l,skipPrototype:!0});t instanceof Error||(d.originalPrototype=t?.originalObje
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 325 ms

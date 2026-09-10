@@ -1,0 +1,62 @@
+# curl-style evidence for https://huntingtonhealth.org/cms-hpt.txt
+# fetched 2026-09-07T01:32:36.537Z with the tracker's BROWSER_HEADERS (production client)
+# record: 050438 | HUNTINGTON HOSPITAL | CA | finding: pointer-blocked-to-automation
+
+* DNS huntingtonhealth.org: 104.26.0.117, 104.26.1.117, 172.67.69.216
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://huntingtonhealth.org/cms-hpt.txt
+< HTTP 302
+< cache-control: public, max-age=86400, s-maxage=86400, stale-while-revalidate=60
+< cf-apo-via: origin,no-cache
+< cf-cache-status: DYNAMIC
+< cf-edge-cache: cache,platform=wordpress
+< cf-ray: a371f5f1987a70c5-IAD
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:32:38 GMT
+< location: /cms-hpt.txt/
+< nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+< report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=1%2BEZV7qDsymNND3BgSnLbqJ8jCjczim%2BeQy7sRQBIR3DilitnIbgvNbOQqbXmGOQcmYEPQq3usE6xLJjVgBnFrysa4am9ytZyYBtG9THD2fLP9kkVm7oijOntoqId69Du%2BXxzm8D"}]}
+< server: cloudflare
+< speculation-rules: "/cdn-cgi/speculation"
+< x-cache-status: HIT
+< x-redirect-by: WordPress
+* following Location: /cms-hpt.txt/
+
+* final response: https://huntingtonhealth.org/cms-hpt.txt/
+< HTTP 403
+< accept-ch: Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA
+< cf-mitigated: challenge
+< cf-ray: a371f5f33e5970c5-IAD
+< content-encoding: br
+< content-security-policy: default-src 'none'; script-src 'nonce-FurVuuSQmgdMts1ypRz4Rr' 'unsafe-eval' https://challenges.cloudflare.com; script-src-attr 'none'; style-src 'unsafe-inline'; img-src 'self' https://challenges.cloudflare.com; connect-src 'self' https://challenges.cloudflare.com; frame-src 'self' https://challenges.cloudflare.com blob:; child-src 'self' https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri 'self'
+< content-type: text/html; charset=UTF-8
+< critical-ch: Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA
+< cross-origin-embedder-policy: require-corp
+< cross-origin-opener-policy: same-origin
+< cross-origin-resource-policy: same-origin
+< date: Mon, 07 Sep 2026 01:32:38 GMT
+< nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+< origin-agent-cluster: ?1
+< permissions-policy: accelerometer=(),camera=(),clipboard-read=(),clipboard-write=(),geolocation=(),gyroscope=(),hid=(),magnetometer=(),microphone=(),payment=(),publickey-credentials-get=(),screen-wake-lock=(),serial=(),sync-xhr=(),usb=(),xr-spatial-tracking=*
+< referrer-policy: same-origin
+< report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=85Txcnal%2FV8q%2BrUfXjmwfwXFzT9AFoqHxajyLZjOyGJ3UPPr7cIF59i2K08%2FvQqANGSUCPKvoP5KTqxzGBc8ApZgttyaTZSP729r4ZMvQHewWvUtoHBGdo6IjKZ%2BpDsb90ZiI15H"}]}
+< server: cloudflare
+< server-timing: chlray;desc="a371f5f33e5970c5"
+< speculation-rules: "/cdn-cgi/speculation"
+< vary: accept-encoding
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< --- body (5809 bytes read) ---
+< <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="content-security-policy" content="default-src &#39;none&#39;; script-src &#39;nonce-FurVuuSQmgdMts1ypRz4Rr&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri &#39;self&#39;"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"}body{display:flex;flex-direction:column;height:100vh;min-height:100vh}.main-content{margin:8rem auto;padding-left:1.5rem;max-width:60rem}@media (width <= 720px){.main-content{margin-top:4rem}}#challenge-error-text{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSI+PHBhdGggZmlsbD0iI0IyMEYwMyIgZD0iTTE2IDNhMTMgMTMgMCAxIDAgMTMgMTNBMTMuMDE1IDEzLjAxNSAwIDAgMCAxNiAzbTAgMjRhMTEgMTEgMCAxIDEgMTEtMTEgMTEuMDEgMTEuMDEgMCAwIDEtMTEgMTEiLz48cGF0aCBmaWxsPSIjQjIwRjAzIiBkPSJNMTcuMDM4IDE4LjYxNUgxNC44N0wxNC41NjMgOS41aDIuNzgzem0tMS4wODQgMS40MjdxLjY2IDAgMS4wNTcuMzg4LjQwNy4zODkuNDA3Ljk5NCAwIC41OTYtLjQwNy45ODQtLjM5Ny4zOS0xLjA1Ny4zODktLjY1IDAtMS4wNTYtLjM4OS0uMzk4LS4zODktLjM5OC0uOTg0IDAtLjU5Ny4zOTgtLjk4NS40MDYtLjM5NyAxLjA1Ni0uMzk3Ii8+PC9zdmc+");background-repeat:no-repeat;background-size:contain;padding-left:34px}</style><meta http-equiv="refresh" content="360"></head><body><div class="main-wrapper" role="main"><div class="main-content"><noscript><div class="h2"><span id="challenge-error-text">Enable JavaScript and cookies to continue</span></div></noscript></div></div><script nonce="FurVuuSQmgdMts1ypRz4Rr">(function(){window._cf_chl_opt = {cFPWv: 'g',cH: 'YUb4u.GV8ROXpUpErrUxXsPyGjjo769HzySTFibBSd4-1788744758-1.2.1.1-I4TpNQndaz7qOyC.2uHJoALPPkhFD5apER45pB0LD2m6cnIlX4wr1e5H9CGBDR.6',cITimeS: '1788744758',cN: 'FurVuuSQmgdMts1ypRz4Rr',cRay: 'a371f5f33e5970c5',cTplB: '0',cTplC:0,cTplO:0,cTplV:5,cType: 'managed',cUPMDTk:"/cms-hpt.txt/?__cf_chl_tk=o35aqxiXZuuthftwIhTCfXc8f.b1GJ4pZBZf7nws.4o-1788744758-1.0.1.1-rau8qsZVDsmrx1JJlUBKLuOEdT.vC54_lWtNWmBSZWU",cvId: '3',cZone: 'huntingtonhealth.org',fa:"/cms-hpt.txt/?__cf_chl_f_tk=o35aqxiXZuuthftwIhTCfXc8f.b1GJ4pZBZf7nws.4o-1788744758-1.0.1.1-rau8qsZVDsmrx1JJlUBKLuOEdT.vC54_lWtNWmBSZWU",md: '7zMB6hdoBJyBzAG896mQSX7zJJmVNDQWutzvmBoYB04-1788744758-1.2.1.1-BKLE9oZcqwjoTKrQmSXGqG0NUgre5Yx.2yo8hJmPduwyIGR1UE1QvaQLqPbrtGUTsKrmx6q..jUjw7mbvsvEZYGDg_joXt5XCra7XUJ1Io3Ht92MjoISW6Ggpkd2bFMHqWmVUfZxW98O15.YDw8Lsib04gvnphodmoN72gI78LRqV36P6dONiILlZanrP6tbAmJHvxubI9rrHulF5h7z3Hku0B.Pc15_Ng87jeREPwpcTTxyVlo0awi1fa_MqZ6xy4gaWshlOmZF9uABnJ0CmMdgMEQ2CecHMmbAUms_KMtGrGIv7xH.8TFgPtoOdzf5FBOgoBAv0c6KL4PWYsO77f2yCXKcUvTpaiBNwIgxBg3G_3PjQoGEAyfYRIOfMX5w8ukWLuCIJova2WvHS1b.oWc39TiZbS0zhpAWiTrGN_EBQnGmIrlOFvX11Z1A5nrUV7ClTo9Y0EyVpgCHelVtTQ46Ih6WtY5rVaH_BPq0mYyIVcUYjybBSm8xcPh7owWF0C9Jj3T2_qmPpWCpJ5k_Hp_uxg5T5MeRr16UPo8xlMeg1oDNTQIeIfNSoed4o5E1RaKfx4n8vOFfivh2YwMjn._dvshccNNltLlrQNiKrOFxhSf14QMs42LwQ8lktr_6m4uRgaln2sSg93sljP33ENIgNuW4QluXpTIpkZC1Ivbh0OLYPSm4wFk7A8W8KxpXgwoaw8pcnPDWbFyVRqrXaFBVHFcQTq0P0bBONkr70aowqqNI6gS7_oQ0OQcaTQDZgtGqbb8UyE9jOuABA5HobllSWxUzInD_7A4cQ5Ca77HTGc67CvHA3JrHRQiDB8eK9O597W_bepl_S0vne1m.YPOHe3oodDqzAg762LIJ2FUVqlxapg.zmG0QYFvZNR0PjtWGW0rETzoivhCQoMlfmQSndjqg4x4swh5raonWS5HRbnlhiuXwtB7HPltKhe8lcGlw2qg2wCrUGb3iV9pDHrN13Fs0I7A3LXc543uTvQUcu9L_mWH7bDWZEE8r7do8hHFOIIQq1TgyyT1olTCFA318135xNzJjPMseBcmep6hF2YZPIuuf4g3H.cdX2Z1K9ZBPl6v.DOrKIq3UGkz6sEWZiZPEVBczfzjPU2nEJwGy1QRLYk9wCGMBvwEP62yUBel4E5BoTaWrZbBq4ncn1yfFWgqq_wYdwKCqiUmKwacq1SFWdRfaerl36R7zEMWI',mdrd: 'Id7KJHfYv4SA6oIGqvYiKp4zgeMP4oWHux4NJlOXORc-1788744758-1.2.1.1-GTuWaPyuTy9coZx.gCi_35ekdmTixRlFrDNtXJhWN9.L6P3crTg525KmJUAyayyIe8f4tJWFNDb4iWW2_bgv.devLuXi.sCKe7cP8nh3AFPG5zt.Zvcz2myNwV8xlMYhONUaYI87w0MJzv1xoAJHdRaXjZrsFwKd3SdW3BOSbXrTrFbg71ldcshURzxAuU758nMe6OVvBF9uSoZc5tsjhozp5H0bnvPD1huCUn6NkbOTilVIDOB7_53AJSqjPgktjuUIfeEfR9luUqEAiKuPoZ_i3amjnamnY4HBuhB3GXyCmaZAfXDHHSEUW1yN6GVxWgM4cbTmUJYyXEh5h45fn03gw3oc48EonsGhB_ipBhZV76PzEWnvOgFm5on9KjYWcc4XJdc8dTTsN7aTRyCdpeAhhExdaoi_8LOF1CETtaoPbkWfGL.8r3Ol0fihl56ucsqJXOHrCZppi_X9kif2UcosMHTkspCRFJvSeZd0bx8',};var a = document.createElement('script');a.nonce = 'FurVuuSQmgdMts1ypRz4Rr';a.src = '/cdn-cgi/challenge-platform/h/g/orchestrate/chl_page/v1?ray=a371f5f33e5970c5';window._cf_chl_opt.cOgUHash = location.hash === '' && location.href.indexOf('#') !== -1 ? '#' : location.hash;window._cf_chl_opt.cOgUQuery = location.search === '' && location.href.slice(0, location.href.length - window._cf_chl_opt.cOgUHash.length).indexOf('?') !== -1 ? '?' : location.search;if (window.history && window.history.replaceState) {var ogU = location.pathname + window._cf_chl_opt.cOgUQuery + window._cf_chl_opt.cOgUHash;history.replaceState(null, null,"/cms-hpt.txt/?__cf_chl_rt_tk=o35aqxiXZuuthftwIhTCfXc8f.b1GJ4pZBZf7nws.4o-1788744758-1.0.1.1-rau8qsZVDsmrx1JJlUBKLuOEdT.vC54_lWtNWmBSZWU"+ window._cf_chl_opt.cOgUHash);a.onload = function() {history.replaceState(null, null, ogU);}}document.getElementsByTagName('head')[0].appendChild(a);}());</script></body></html>
+
+* total time: 402 ms

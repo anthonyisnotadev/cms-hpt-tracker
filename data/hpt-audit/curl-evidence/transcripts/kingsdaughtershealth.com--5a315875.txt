@@ -1,0 +1,66 @@
+# curl-style evidence for https://kingsdaughtershealth.com/.well-known/cms-hpt.txt
+# fetched 2026-09-07T01:33:16.117Z with the tracker's BROWSER_HEADERS (production client)
+# record: 180009 | KING'S DAUGHTERS' MEDICAL CENTER | KY | finding: no-cms-hpt-txt-published
+# record: 360361 | KINGS DAUGHTERS MEDICAL CENTER OHIO | OH | finding: no-cms-hpt-txt-published
+
+* DNS kingsdaughtershealth.com: 104.19.144.84, 104.19.255.83
+
+> GET /.well-known/cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://kingsdaughtershealth.com/.well-known/cms-hpt.txt
+< HTTP 301
+< age: 775298
+< cache-control: max-age=31536000
+< cf-cache-status: EXPIRED
+< cf-ray: a371f6ea2812c7c1-IAD
+< content-type: text/html; charset=iso-8859-1
+< date: Mon, 07 Sep 2026 01:33:17 GMT
+< expires: Sun, 29 Aug 2027 02:11:38 GMT
+< location: https://www.ukkingsdaughters.com/.well-known/cms-hpt.txt
+< server: cloudflare
+< strict-transport-security: max-age=31536000
+< vary: accept-encoding
+< via: varnish
+< x-cache: HIT
+< x-cache-hits: 8
+< x-content-type-options: nosniff
+< x-request-id: v-f80055ae-a34e-11f1-80c4-23b43868132e
+* following Location: https://www.ukkingsdaughters.com/.well-known/cms-hpt.txt
+
+* final response: https://www.ukkingsdaughters.com/.well-known/cms-hpt.txt
+< HTTP 404
+< age: 2247
+< cache-control: max-age=2764800, public
+< cf-cache-status: EXPIRED
+< cf-ray: a371f6ea8f702bd4-IAD
+< content-encoding: br
+< content-language: en
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:33:17 GMT
+< expires: Sun, 19 Nov 1978 05:00:00 GMT
+< last-modified: Mon, 07 Sep 2026 00:55:49 GMT
+< server: cloudflare
+< strict-transport-security: max-age=31536000
+< vary: Cookie, accept-encoding
+< via: varnish
+< x-ah-environment: prod
+< x-cache: HIT
+< x-cache-hits: 2
+< x-content-type-options: nosniff
+< x-drupal-cache: MISS
+< x-drupal-dynamic-cache: UNCACHEABLE (404)
+< x-frame-options: SAMEORIGIN
+< x-generator: Drupal 11 (https://www.drupal.org)
+< x-request-id: v-de3f33ec-aa56-11f1-9188-9f3c005f2cbf
+< --- body (213 bytes read) ---
+< <!DOCTYPE html><html><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL "https://www.ukkingsdaughters.com/.well-known/cms-hpt.txt" was not found on this server.</p></body></html>
+
+* total time: 115 ms

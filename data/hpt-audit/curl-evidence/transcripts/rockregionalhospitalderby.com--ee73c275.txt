@@ -1,0 +1,50 @@
+# curl-style evidence for https://rockregionalhospitalderby.com/cms-hpt.txt
+# fetched 2026-09-07T01:33:15.314Z with the tracker's BROWSER_HEADERS (production client)
+# record: 170204 | ROCK REGIONAL HOSPITAL, LLC | KS | finding: not-assessed-site-unreachable
+
+* DNS rockregionalhospitalderby.com: 104.21.27.23, 172.67.140.237
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://rockregionalhospitalderby.com/cms-hpt.txt
+< HTTP 301
+< alt-svc: h3=":443"; ma=86400
+< cf-ray: a371f6e4ce5a8185-IAD
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:33:16 GMT
+< location: https://lucky77.id/
+< nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+< report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=BB%2BUPMOzbPEVcsuXdZ9wNGeM1NyJGoCwY9t2BlShO6RJQ1iHR8GfD8IanNw83F4vUOtj6U61npV%2BJB3oGFot3bpQNUZaadX%2F7fl%2BghJN%2Fn7ddJxhjcwpasccvG56eI%2FF9J4N0M7OiKClmGLetHmtFQ%3D%3D"}]}
+< server: cloudflare
+< server-timing: cfEdge;dur=1,cfOrigin;dur=0
+* following Location: https://lucky77.id/
+
+* error: fetch failed (cause: ENOTFOUND)
+
+* http:// fallback attempt after transport failure:
+* fallback redirect hop 1: http://rockregionalhospitalderby.com/cms-hpt.txt
+< HTTP 301
+< alt-svc: h3=":443"; ma=86400
+< cf-ray: a371f6e56eb5c9a1-IAD
+< connection: keep-alive
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:33:17 GMT
+< location: https://lucky77.id/
+< nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+< report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=wtto%2BajyL9Le2y0MoC%2F5COsVerNcDZNNTf8M0Fi0dRjRHoqMcbiPjihZc16phYgGksCoUvZaJSfhYMTv0Cqg9S%2BZsn6E4zY0SWjka2YvykztfJvgd7QCLKBq1fjka3YqvSSI1XkoOEMy569FwcobRg%3D%3D"}]}
+< server: cloudflare
+< server-timing: cfEdge;dur=10,cfOrigin;dur=0
+< transfer-encoding: chunked
+* following Location: https://lucky77.id/
+
+* fallback error: fetch failed (cause: ENOTFOUND)
+
+* total time: 11481 ms

@@ -22,7 +22,9 @@
     "geocode": "node scripts/hpt/geocode.js",
     "export:pointers": "node scripts/export-pointers.js",
     "export:pointers:check": "node scripts/export-pointers.js --check",
-    "build": "node scripts/build-glossary.js && node scripts/build-tracker.js",
+    "build": "npm run protect:contacts && node scripts/build-glossary.js && node scripts/build-tracker.js && npm run protect:contacts && npm run check:contacts-private",
+    "protect:contacts": "node scripts/protect-public-contacts.js",
+    "check:contacts-private": "node scripts/protect-public-contacts.js --check",
     "serve": "node scripts/site-server.js",
     "serve:outreach": "node scripts/outreach-server.js",
     "outreach": "node scripts/outreach-cli.js",
@@ -40,6 +42,8 @@
     "hpt:direct-mrf:headers": "node scripts/hpt/probe-pointer-corpus.js --input=cms_data/hpt/new/direct_mrf_entries.csv --out=cms_data/hpt/new/direct_mrf_headers.csv --cache=cms_data/hpt/direct-mrf/mrf-header-cache.json --concurrency=30 --per-host=4",
     "hpt:direct-mrf": "npm run hpt:direct-mrf:prepare && npm run hpt:direct-mrf:headers",
     "hpt:combine-corpus": "node scripts/hpt/combine-corpus.js",
+    "hpt:curl:evidence": "node scripts/hpt/curl-evidence.js",
+    "hpt:interventions": "node scripts/hpt/build-interventions.js",
     "test": "node --test scripts/hpt/test/*.test.js"
   },
   "dependencies": {

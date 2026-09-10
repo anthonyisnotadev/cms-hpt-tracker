@@ -1,0 +1,2590 @@
+[
+  {
+    "ccn": "010061",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:49:20.537Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "search",
+        "evidence_ids": [
+          "page-0",
+          "page-1",
+          "page-2"
+        ],
+        "explanation": "All three fetches (homepage, /.well-known/cms-hpt.txt, and /cms-hpt.txt on highlandsmedcenter.com) returned status 0 with empty content, so neither the CMS-HPT pointer file nor the domain hosting could be confirmed; current evidence is insufficient. Repeating the already-fetched URLs is not useful, so the next step is to queue an external web search to locate Highlands Medical Center's official price transparency / standard charges page or an alternative official location for its cms-hpt.txt pointer file.",
+        "query": "Highlands Medical Center Scottsboro AL price transparency standard charges cms-hpt"
+      },
+      {
+        "query": "Highlands Medical Center Scottsboro AL price transparency standard charges cms-hpt",
+        "status": "queued-for-web-search-serper-disabled"
+      }
+    ],
+    "usage": [
+      {
+        "id": "010061-glm-0",
+        "status": "settled",
+        "actual": 0.00051912,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "014000",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:50:17.521Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "error": "Unexpected token '`', \"```json\n{\n\"... is not valid JSON"
+      },
+      {
+        "turn": 1,
+        "action": "search",
+        "evidence_ids": [
+          "page-2",
+          "page-1",
+          "page-0"
+        ],
+        "explanation": "All three fetches to hillcrestbhs.com — the homepage and both standard CMS price-transparency pointer file locations (.well-known/cms-hpt.txt and cms-hpt.txt) — returned 403 with no body or links, so the pointer file cannot be verified from this domain and no observed links exist to visit. Evidence is insufficient to determine compliance. An external web search is needed to locate the hospital's official pricing/pointer page or an alternate official domain hosting the machine-readable file.",
+        "query": "\"Hill Crest Behavioral Health Services\" Birmingham AL 35212 price transparency cms-hpt.txt machine-readable file"
+      },
+      {
+        "query": "\"Hill Crest Behavioral Health Services\" Birmingham AL 35212 price transparency cms-hpt.txt machine-readable file",
+        "status": "queued-for-web-search-serper-disabled"
+      }
+    ],
+    "usage": [
+      {
+        "id": "014000-glm-0",
+        "status": "settled",
+        "actual": 0.00059013,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "014000-glm-1",
+        "status": "settled",
+        "actual": 0.00021175,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "014015",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:58:28.562Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-0",
+          "page-2"
+        ],
+        "explanation": "Identity is unresolved but promising: the MRF (file-0) header shows 'Professional Resources Management Psychiatric Services, LLC' at '150 Hospital Drive, Luverne AL 36049', which exactly matches the CCN 014015 address, and the publisher's pointer file (page-0) maps this MRF to the 'beacon' facility page. The mismatch appears to be legal-entity vs. roster/DBA name ('Beacon Children's Hospital' / 'Beacon Behavioral Hospital LLC'). The facility source page listed in the pointer file has not yet been fetched; it may contain the facility's operating name, license, or address that formally ties the entity to the CCN. Note this URL is only a lead; evidence is currently insufficient to declare a match.",
+        "url": "https://www.perimeterhealthcare.com/beacon"
+      },
+      {
+        "turn": 1,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-3",
+          "page-4"
+        ],
+        "explanation": "Identity mismatch is unresolved: the fetched MRF header names 'Professional Resources Management Psychiatric Services, LLC' while the roster lists BEACON CHILDREN'S HOSPITAL (CCN 014015) and the pointer file lists 'Beacon Behavioral Hospital LLC'. However, the header address (150 Hospital Drive, Luverne AL 36049) exactly matches the facility address on the official Beacon page, suggesting a legal-entity vs. DBA naming difference that is not yet confirmed — current evidence is insufficient to resolve the identity question. The source page (page-3) also links a newer consumer pricing CSV (asset timestamped 2026-07-13) than the already-fetched file (dated 2025-11-20, flagged 'date-within-365-days-older-version'). Visiting this newly observed, facility-published file can both surface the current version and inspect its header identity fields (e.g., legal name, license/NPI, address) for corroborating details before drawing any conclusion.",
+        "url": "https://assets.speakcdn.com/assets/2789/201643917_professional-resources-management-psychiatric-services_standardcharges-2026071303224463.csv"
+      },
+      {
+        "turn": 2,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-5",
+          "page-4",
+          "page-3"
+        ],
+        "explanation": "The MRF header legal name 'Professional Resources Management Psychiatric Services, LLC' (file-0, page-5) does not match the CCN 014015 roster name 'Beacon Children's Hospital', so the identity question remains unresolved. Supporting but not conclusive evidence: the header address matches the roster address exactly (150 Hospital Drive, Luverne AL 36049); the facility's own page (page-3) and the parent organization's official pointer file cms-hpt.txt (page-4) both link to this MRF under 'Beacon Behavioral Hospital LLC'; and both served copies (perimeterhealthcare.com and the speakcdn asset, version 2.0.0 dated 11/20/2025) carry identical header data with a TRUE attestation. The MRF reports a Type 2 NPI, 1720270697 (page-5). The most direct next step is to verify that NPI in the official NPPES registry to confirm the legal entity name, any reported other/DBA name, and the Luverne AL address, which would explain the header-name discrepancy. This URL is only a lead; identity cannot be confirmed or compliance declared until the registry (or another authoritative cross-check such as the CMS hospital roster for CCN 014015) corroborates the entity. Evidence is currently insufficient to treat the name mismatch as resolved.",
+        "url": "https://npiregistry.cms.hhs.gov/api/?number=1720270697&version=2.1"
+      }
+    ],
+    "usage": [
+      {
+        "id": "014015-glm-0",
+        "status": "settled",
+        "actual": 0.00039808,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "014015-glm-1",
+        "status": "settled",
+        "actual": 0.000706605,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "014015-glm-2",
+        "status": "settled",
+        "actual": 0.00096363,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "030122",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:48:46.710Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "file-1",
+          "file-2",
+          "file-3",
+          "file-4",
+          "page-5"
+        ],
+        "explanation": "The fetched CSVs are for other Banner hospitals (Phoenix, Tucson, Mesa, Scottsdale), not Banner Gateway Medical Center in Gilbert, so none are usable for CCN 030122. The hospital price transparency page was fetched but its text doesn't show the facility-specific MRF links. The Arizona Direct Pay Prices page on the official Banner site is a likely place to find a Banner Gateway-specific pricing file or link.",
+        "url": "https://www.bannerhealth.com/patients/billing/pricing-resources/no-surprises-act/arizona-hospital-inpatient-and-outpatient"
+      },
+      {
+        "turn": 1,
+        "action": "visit",
+        "evidence_ids": [
+          "page-9",
+          "file-0",
+          "file-1",
+          "file-2",
+          "file-3",
+          "file-4",
+          "page-8",
+          "page-7"
+        ],
+        "explanation": "The fetched files all match other Banner roster hospitals (Phoenix, Tucson, Baywood, Behavioral Health), not Banner Gateway Medical Center in Gilbert. The cms-hpt.txt pointer file was truncated before the 'G' locations, so no matching MRF URL for CCN 030122 has been observed yet. Re-visiting the official Banner price transparency page is the best next step to locate the Banner Gateway-specific MRF or per-facility links.",
+        "url": "https://www.bannerhealth.com/patients/billing/pricing-resources/hospital-price-transparency"
+      },
+      {
+        "turn": 2,
+        "action": "visit",
+        "evidence_ids": [
+          "page-9"
+        ],
+        "explanation": "The fetched portion of Banner's cms-hpt.txt is truncated and does not show a Banner Gateway Medical Center entry; fetching the full pointer file is the best way to locate the official MRF for CCN 030122. The supplied CSV files all belong to other Banner hospitals and are not suitable.",
+        "url": "https://www.bannerhealth.com/cms-hpt.txt"
+      }
+    ],
+    "usage": [
+      {
+        "id": "030122-glm-0",
+        "status": "settled",
+        "actual": 0.0004899,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "030122-glm-1",
+        "status": "settled",
+        "actual": 0.00046515,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "030122-glm-2",
+        "status": "settled",
+        "actual": 0.000448,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "050292",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T03:09:13.818Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "file-2",
+          "page-6"
+        ],
+        "explanation": "The primary machine-readable file (file-0/file-2) is corroborated to CCN 050292 by header name, address, and state (26520 Cactus Ave, Moreno Valley, CA 92555), is a CSV dated 2026-03-30 (within 365 days), but its metadata is flagged 'date-within-365-days-version-unverified'. Only a SHA-256 hash of the pointer file was recorded; the pointer's actual contents (which should reference the current standardcharges CSV and carry the version string) are not present in the evidence. Page-6 shows an observed link to the CMS Hospital Price Transparency pointer TXT on the same host; fetching the www variant (not previously fetched) is the next step to complete the pointer/metadata review by confirming the pointer target URL matches file-0 and that its version/date metadata is consistent. The CDM files (file-1/file-3) lack header identity and dates and appear to be secondary chargemaster artifacts, not the primary MRF. Current evidence is insufficient to confirm version consistency between the pointer and the MRF.",
+        "url": "https://www.ruhealth.org/cms-hpt.txt"
+      },
+      {
+        "turn": 1,
+        "action": "review",
+        "evidence_ids": [
+          "file-0",
+          "file-2",
+          "page-8",
+          "page-5",
+          "page-6"
+        ],
+        "explanation": "The metadata-or-pointer review can be completed from the evidence already collected. The facility pointer file (page-8, https://www.ruhealth.org/cms-hpt.txt) points to the same machine-readable CSV (https://www.ruhealth.org/956000930_riverside-university-health-system_standardcharges.csv) that is linked from the official hospital price transparency page (page-5/page-6) and was successfully fetched (file-0, with the non-www host variant confirming the same file as file-2). The MRF header (name, location, 26520 Cactus Avenue, Moreno Valley, CA 92555) matches the hospital record, so identity is corroborated on a file-name-and-address basis. The file date 2026-03-30 falls within 365 days of the 2026-09-09 check. However, the pointer TXT carries no date/version field, and no observed unfetched link (remaining links are the separate Standard Chargemaster CDM documents, whose CSVs file-1/file-3 lack header identity and date, or financial-assistance PDFs) would resolve the 'version-unverified' flag, so the evidence is insufficient to verify the file version. No new URL or search is warranted at this step; the review synthesis stands on the pointer-to-MRF consistency, corroborated identity, and within-365-days date, without declaring compliance.",
+        "url": null,
+        "query": null
+      }
+    ],
+    "usage": [
+      {
+        "id": "050292-glm-0",
+        "status": "settled",
+        "actual": 0.00081808,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "050292-glm-1",
+        "status": "settled",
+        "actual": 0.000902505,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "053302",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T03:04:06.152Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-0"
+        ],
+        "explanation": "The pointer file (page-0) at https://www.chla.org/cms-hpt.txt names the MRF at https://www.chla.org/hpt/1 and a source page https://www.chla.org/help-paying-your-bill/cost-estimator. The direct MRF fetch (file-0) failed with HTTP 403, leaving identity 'mrf-header-unreachable' and metadata unverified, and the homepage (page-2) also returned 403, suggesting host-level blocking rather than a missing file. The source page is an observed, relevant, not-yet-fetched link that may reveal the MRF via an alternate path or host and confirm the official pricing location. Current evidence is insufficient to verify the file's identity; avoid re-fetching the 403/206 URLs already retrieved. If this visit also fails, an external web search for the facility's pricing page would be the fallback.",
+        "url": "https://www.chla.org/help-paying-your-bill/cost-estimator"
+      },
+      {
+        "turn": 1,
+        "action": "search",
+        "evidence_ids": [
+          "file-0",
+          "page-4",
+          "page-3",
+          "page-2",
+          "page-1"
+        ],
+        "explanation": "The official pointer file (page-4/page-0) supplied mrf-url https://www.chla.org/hpt/1, but fetching it returned HTTP 403 with unverified, incomplete metadata (file-0, 'mrf-header-unreachable'). The source pricing page (page-3), the hospital homepage (page-2), and the /.well-known/cms-hpt.txt path (page-1) also failed (403/404), and the successful pointer file contained no alternate links. All observed direct-fetch leads have been attempted and repeated fetched URLs should be avoided, so current evidence is insufficient to verify file access or the MRF's contents. Next step: queue an external web search for an alternative official pricing/transparency or MRF location for this facility. Any URL found will be treated only as a lead, not as proof of compliance.",
+        "query": "Children's Hospital of Los Angeles CHLA price transparency machine-readable file MRF official"
+      },
+      {
+        "query": "Children's Hospital of Los Angeles CHLA price transparency machine-readable file MRF official",
+        "status": "queued-for-web-search-serper-disabled"
+      }
+    ],
+    "usage": [
+      {
+        "id": "053302-glm-0",
+        "status": "settled",
+        "actual": 0.00037491,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "053302-glm-1",
+        "status": "settled",
+        "actual": 0.00052138,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "060020",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T03:03:12.103Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-7"
+        ],
+        "explanation": "Insufficient evidence for CCN 060020: the only candidate MRF (file-0, UCHealth Parkview Medical Center) returned HTTP 404 with unverified metadata, and files 1-4 are MRFs for other UCHealth facilities (Broomfield, Estes Valley, Grandview, Greeley) whose headers do not match Parkview Medical Center, Inc. in Pueblo. The official UCHealth pricing hub (page-7) confirms Parkview Medical Center (id 9152) is covered under UCHealth's transparency publishing, so the next best step is to fetch the hospital system's official CMS price-transparency pointer file (cms-hpt.txt) to locate the current, valid machine-readable file URL for UCHealth Parkview Medical Center. This pointer URL is only a lead; no compliance determination is being made.",
+        "url": "https://www.uchealth.org/cms-hpt.txt"
+      },
+      {
+        "turn": 1,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-7"
+        ],
+        "explanation": "Evidence is insufficient for PARKVIEW MEDICAL CENTER, INC (CCN 060020). The only candidate MRF for the target facility (file-0, UCHealth Parkview Medical Center) returned HTTP 404, so its recorded URL is stale and cannot be verified. Files file-1 through file-4 belong to other UCHealth roster hospitals (Broomfield, Estes Valley, Grandview, Greeley) and do not match the target name or Pueblo address. The pointer file (page-8) was already fetched and its visible text does not show the Parkview entry, and the instruction is to avoid repeating fetched URLs. Page-7 confirms an observed, facility-specific source page for Parkview Medical Center on the official hosting service. The next best step is to visit the machineReadable source page listed in file-0 (https://search.hospitalpriceindex.com/hpi2/machineReadable/ParkviewMedicalCenter/9152) to locate the current official MRF URL for the target hospital.",
+        "url": "https://search.hospitalpriceindex.com/hpi2/machineReadable/ParkviewMedicalCenter/9152"
+      },
+      {
+        "turn": 2,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-6",
+          "page-7",
+          "page-8",
+          "page-9"
+        ],
+        "explanation": "Target MRF for UCHealth Parkview Medical Center (CCN 060020) returned HTTP 404 (file-0) and its machineReadable source page returned a blank 206 body (page-9). The other retrieved CSVs (file-1 to file-4) carry headers for different UCHealth facilities (Broomfield, Estes Valley, Grandview, Greeley) and do not match the Parkview roster entry. The official pointer file (page-8) was fetched, but its visible excerpt is truncated and shows no Parkview entry, so a current, valid Parkview MRF URL is unconfirmed. Evidence is insufficient to assess file accessibility. Next best lead: the official UCHealth billing & pricing hub (observed as a link on pages 6 and 7, not yet fetched) to locate an alternate standard-charges link for Parkview; the observed Parkview-specific shoppables link (hpi2/shoppables/ParkviewMedicalCenter/9152/all) is a fallback if the hub page does not surface one. This URL is only a lead; no fetched URLs are repeated.",
+        "url": "https://www.uchealth.org/billing-and-pricing/"
+      }
+    ],
+    "usage": [
+      {
+        "id": "060020-glm-0",
+        "status": "settled",
+        "actual": 0.00095283,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "060020-glm-1",
+        "status": "settled",
+        "actual": 0.00070323,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "060020-glm-2",
+        "status": "settled",
+        "actual": 0.001166615,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "061309",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:46:39.570Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "visit",
+        "evidence_ids": [
+          "page-0",
+          "page-1",
+          "page-2"
+        ],
+        "explanation": "Evidence is insufficient to identify the hospital's official pricing pointer page. The CMS-HPT standard files on wrayhospital.org returned 404 (pages page-0, page-1), which does not confirm or rule out that domain, and wrayhealth.com returned 202 with an empty body and no links (page-2), which is inconclusive. The wrayhospital.org homepage itself has not yet been fetched, so visiting it is the next step to determine whether it is the official Wray Community District Hospital site and to locate a pricing or price transparency page. The proposed URL is only a lead.",
+        "url": "https://wrayhospital.org/"
+      },
+      {
+        "turn": 1,
+        "action": "search",
+        "evidence_ids": [
+          "page-1",
+          "page-3"
+        ],
+        "explanation": "The CMS pointer file is absent on wrayhospital.org (404s), and wrayhealth.com returned an empty 202 with no links, so there is no observed pricing page or pointer URL to follow. Evidence is insufficient; queue a web search for the hospital's official price transparency page.",
+        "query": "Wray Community District Hospital CO standard charges price transparency wrayhealth"
+      },
+      {
+        "query": "Wray Community District Hospital CO standard charges price transparency wrayhealth",
+        "status": "queued-for-web-search-serper-disabled"
+      }
+    ],
+    "usage": [
+      {
+        "id": "061309-glm-0",
+        "status": "settled",
+        "actual": 0.000260885,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "061309-glm-1",
+        "status": "settled",
+        "actual": 0.00007735,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "070010",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T03:06:46.226Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-7"
+        ],
+        "explanation": "The previously recorded standard charges file (file-0, the '-1' variant) returned HTTP 404 with incomplete metadata, so it cannot be verified. However, the hospital's Pricing page (page-7, status 200) currently links to a different, updated file: 'list of standard hospital charges and negotiated rates. (Updated 1/1/2026)' at the '-2' variant URL, which has not yet been fetched. Visiting this newly observed link is the most direct next step to locate the live machine-readable standard charges file and confirm its availability and metadata. This URL is only a lead; no compliance determination is being made.",
+        "url": "https://www.bridgeporthospital.org/-/media/Files/YNHHS/sc/06-0646554-Bridgeport-Hospital_standard_charges-2.ashx"
+      },
+      {
+        "turn": 1,
+        "error": "Invalid model decision"
+      },
+      {
+        "turn": 2,
+        "error": "Invalid model decision"
+      }
+    ],
+    "usage": [
+      {
+        "id": "070010-glm-0",
+        "status": "settled",
+        "actual": 0.0011791,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "070010-glm-1",
+        "status": "settled",
+        "actual": 0.00168015,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "070010-glm-2",
+        "status": "settled",
+        "actual": 0.00280025,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "070025",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T03:11:21.997Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "visit",
+        "evidence_ids": [
+          "file-2",
+          "page-7"
+        ],
+        "explanation": "The Hartford Hospital (CCN 070025) machine-readable file has not been verified: file-2's fetch failed with a transient DNS resolution timeout (http_status 0), leaving identity/metadata 'mrf-header-unreachable'. Sibling files on the same host (file-0, file-1, file-4) returned 200, so the domain resolves and the timeout is likely transport-related rather than a missing file. The URL is observed on the system price-transparency page (page-7 sourcePageUrl). Re-attempting this specific file is the direct next step to read its header (hospital name, locations, addresses, state) and confirm it matches Hartford Hospital at 80 Seymour St, Hartford, CT 06102. The other fetched CSVs (Backus, Charlotte Hungerford, Hospital of Central Connecticut, Manchester Memorial) match other roster hospitals and are not evidence for CCN 070025. If the retry again fails, fall back to the 'Understanding Your Cost of Care' subpage for a facility-specific link.",
+        "url": "https://hartfordhealthcare.org/file%20library/price%20data/060646668_hartford_hospital_standardcharges.csv"
+      },
+      {
+        "turn": 1,
+        "action": "stop",
+        "evidence_ids": [
+          "file-2",
+          "page-8",
+          "page-7"
+        ],
+        "explanation": "Evidence is sufficient for the metadata-or-pointer review of HARTFORD HOSPITAL (CCN 070025). file-2's only defect was a transient DNS/resolution timeout (http_status 0), but page-8 shows the same URL (060646668_hartford_hospital_standardcharges.csv) was successfully fetched with HTTP 200. The retrieved header explicitly matches the target roster hospital: hospital_name HARTFORD HOSPITAL, location_name HARTFORD HOSPITAL, address 80 SEYMOUR ST, HARTFORD, CT 06102 (matching the roster address 80 Seymour Street), license_number 46, Type 2 NPIs listed, version 3.0.0, last_updated_on 4/1/2026 (within 365 days of the 2026-09-09 check), and the 45 CFR 180.50 completeness attestation present. page-7 is the official system price-transparency page that points to these files, confirming the pointer context. The other CSVs (file-0 Backus, file-1 Charlotte Hungerford, file-3 Hospital of Central Connecticut, file-4 Manchester Memorial) correctly belong to other Hartford HealthCare roster hospitals and are not Hartford Hospital's MRF, so their non-matching identity is expected rather than a failure for this CCN. No further visit or search is needed; the correct, current Hartford Hospital standard charges file is identified and its header metadata matches the roster.",
+        "url": "",
+        "query": ""
+      }
+    ],
+    "usage": [
+      {
+        "id": "070025-glm-0",
+        "status": "settled",
+        "actual": 0.000613755,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "070025-glm-1",
+        "status": "settled",
+        "actual": 0.000755505,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "100226",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:46:09.077Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-2",
+          "page-1",
+          "page-0"
+        ],
+        "explanation": "The standardcharges.json returned HTTP 403 and the CMS-HPT pointer file attempts failed (404/unreachable), so no verified pricing page or pointer has been obtained. The next step is to check the hospital system's facility pricing page for an official link to the Orange Park Hospital machine-readable file.",
+        "url": "https://www.hcafloridahealthcare.com/patients-visitors/pricing"
+      },
+      {
+        "turn": 1,
+        "action": "visit",
+        "evidence_ids": [
+          "page-4",
+          "file-0"
+        ],
+        "explanation": "The cms-hpt.txt pointer file confirms HCA Florida's official source page and blob-hosted MRF pattern, but the excerpt is truncated and does not show the Orange Park entry; the direct MRF fetch returned 403. Visiting the official pricing transparency source page is the best next step to locate a valid Orange Park pointer or MRF link.",
+        "url": "https://www.hcafloridahealthcare.com/patient-resources/patient-financial-resources/pricing-transparency-cms-required-file-of-standard-charges"
+      },
+      {
+        "turn": 2,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-5",
+          "page-4"
+        ],
+        "explanation": "The Orange Park MRF URL in file-0 returned 403, likely because its SAS token (sv=2024-11-04, si=pt--access-policy) is stale, while the download links currently published on the official pricing page (page-5) and listed in the domain pointer file (page-4) use a fresh access policy (si=dpx-pt--access-policy, sv=2026-02-06, identical signature across facilities). The pointer file excerpt was truncated before the Orange Park entry and the pricing page excerpt did not reach its download link, so the exact current MRF link was not directly observed. As a lead, retry the same Orange Park file path from file-0 (61-1269295_HCA-FLORIDA-ORANGE-PARK-HOSPITAL_standardcharges.) with the newly observed SAS parameters. If this fails, the untruncated cms-hpt.txt pointer entry for Orange Park is the fallback lead. This URL is only a lead; identity must be confirmed from the file header matching CCN 100226 and the Kingsley Ave address, and no compliance determination is made from a fetch alone.",
+        "url": "https://stctrprodsnsvc00455826e6.blob.core.windows.net/pt-final-posting-files/61-1269295_HCA-FLORIDA-ORANGE-PARK-HOSPITAL_standardcharges.?si=dpx-pt--access-policy&spr=https&sv=2026-02-06&sr=c&sig=ks%2BgfAjyEHlZmeP2PYJ%2F9NpMuCoRStjTb2bhIy9Y6LM%3D"
+      }
+    ],
+    "usage": [
+      {
+        "id": "100226-glm-0",
+        "status": "settled",
+        "actual": 0.00009915,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "100226-glm-1",
+        "status": "settled",
+        "actual": 0.00020525,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "100226-glm-2",
+        "status": "settled",
+        "actual": 0.00121266,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "100330",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T03:02:05.609Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "search",
+        "evidence_ids": [
+          "file-0",
+          "page-6",
+          "page-7"
+        ],
+        "explanation": "The Deltona MRF (file-0) was retrieved successfully: HTTP 200, CSV, version 3.0.0, dated 2026-08-05 (within 365 days), and its header address (3300 Halifax Crossing Blv, Deltona FL 32725) matches the facility address for CCN 100330. The hospital's own price transparency page (page-6) links this exact URL labeled 'Halifax Health | UF Health - Medical Center of Deltona – Standard Charges', which strongly supports attribution. However, identity remains flagged as 'mrf-header-does-not-match-unresolved-roster': the header legal name 'medical center of deltona inc' has not been matched to an official roster entry. The /.well-known/cms-hpt.txt pointer attempts returned 404 (page-3, page-4), the root pointer file was already fetched, and file-1 pertains to the Daytona Beach facility, not Deltona. No observed link resolves the roster, so an external search for the official CMS roster entry / legal entity for CCN 100330 is the next step. Evidence is otherwise insufficient to fully resolve the identity question, and no compliance determination is made.",
+        "query": "\"Medical Center of Deltona\" CCN 100330 hospital price transparency machine-readable file official roster"
+      },
+      {
+        "query": "\"Medical Center of Deltona\" CCN 100330 hospital price transparency machine-readable file official roster",
+        "status": "queued-for-web-search-serper-disabled"
+      }
+    ],
+    "usage": [
+      {
+        "id": "100330-glm-0",
+        "status": "settled",
+        "actual": 0.00216755,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "110129",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:46:05.820Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "search",
+        "evidence_ids": [
+          "page-2",
+          "page-1",
+          "page-0"
+        ],
+        "explanation": "mystfrancis.com returns HTTP 406 on the homepage and all standard CMS price-transparency pointer file paths, so no pointer file or domain ownership evidence could be retrieved. No other links are available to visit. Evidence is insufficient; queue a search for the hospital's official pricing page and any alternative hosted cms-hpt.txt pointer.",
+        "query": "St. Francis Hospital Emory Healthcare Columbus GA \"cms-hpt.txt\" OR \"price transparency\" official pricing page"
+      },
+      {
+        "query": "St. Francis Hospital Emory Healthcare Columbus GA \"cms-hpt.txt\" OR \"price transparency\" official pricing page",
+        "status": "queued-for-web-search-serper-disabled"
+      }
+    ],
+    "usage": [
+      {
+        "id": "110129-glm-0",
+        "status": "settled",
+        "actual": 0.0000921,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "110161",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T03:03:31.166Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "search",
+        "evidence_ids": [
+          "file-0",
+          "page-0",
+          "page-1",
+          "page-2"
+        ],
+        "explanation": "The pointer file (cms-hpt.txt) lists MRF URLs, but all JSON files return 403 and the hospital site (including the source page and .well-known pointer) is Cloudflare-blocked, so direct fetches fail. Evidence is insufficient to verify the MRF for CCN 110161 (Northside Hospital Atlanta). Re-fetching already-blocked URLs is unlikely to succeed, so I will queue an external web search for an alternative official source or mirror of the standard charges file.",
+        "query": "Northside Hospital Atlanta 110161 standard charges machine readable file northside-hospital-inc_standardcharges.json"
+      },
+      {
+        "query": "Northside Hospital Atlanta 110161 standard charges machine readable file northside-hospital-inc_standardcharges.json",
+        "status": "queued-for-web-search-serper-disabled"
+      }
+    ],
+    "usage": [
+      {
+        "id": "110161-glm-0",
+        "status": "settled",
+        "actual": 0.0003208,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "131319",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T03:07:38.615Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-2"
+        ],
+        "explanation": "The machine-readable standard charges CSV (file-0) returned 404 and its metadata is unverified. The hospital homepage confirms identity (1224 8th Street, Rupert, ID) and links to a Price Transparency page, but the observed .well-known/cms-hpt.txt path returned 404. Evidence also records a pointer URL at https://minidokamemory.org/cms-hpt.txt that has not yet been fetched directly, so I will visit that pointer to locate the current official standard charges file before judging file access.",
+        "url": "https://minidokamemorial.org/cms-hpt.txt"
+      },
+      {
+        "turn": 1,
+        "action": "search",
+        "evidence_ids": [
+          "file-0",
+          "page-8",
+          "page-5"
+        ],
+        "explanation": "The facility's cms-hpt.txt pointer (page-8, HTTP 200) lists the MRF as .../820291854_minidoka-memorial-hospital_standardcharges.csv, but the fetch of that file (file-0) returned HTTP 404 with metadata unverified. The hospital's price transparency pages (service-price-search, price-estimate) are JS-driven tools exposing no direct file link, and all other observed relevant links have already been fetched. Re-fetching the same CSV URL would repeat a fetched URL, so evidence is insufficient to confirm the file's current location. Next step: queue an external web search for an updated, relocated, or archived Minidoka Memorial standard charges file. Any URL found will be treated only as a lead.",
+        "query": "Minidoka Memorial Hospital Rupert Idaho \"standard charges\" machine-readable file standardcharges.csv"
+      },
+      {
+        "query": "Minidoka Memorial Hospital Rupert Idaho \"standard charges\" machine-readable file standardcharges.csv",
+        "status": "queued-for-web-search-serper-disabled"
+      }
+    ],
+    "usage": [
+      {
+        "id": "131319-glm-0",
+        "status": "settled",
+        "actual": 0.00051035,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "131319-glm-1",
+        "status": "settled",
+        "actual": 0.00087568,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "141353",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T03:09:04.214Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-5",
+          "page-4",
+          "page-3"
+        ],
+        "url": "https://iroquoismemorial.com/cms-hpt.txt",
+        "explanation": "The hospital's official site (page-4/page-5) links to the slicedhealth pricer (page-3, JS-empty), and file-0 confirms a CSV exists there with corroborated name/address. The pointer file cms-hpt.txt is recorded with a hash but its content is not in evidence; visiting it verifies the machine-readable pointer and any link to the standard charges file."
+      },
+      {
+        "turn": 1,
+        "action": "review",
+        "evidence_ids": [
+          "file-0",
+          "page-8",
+          "page-4",
+          "page-5",
+          "page-3"
+        ],
+        "explanation": "Pointer review result: the facility-domain pointer (page-8, iroquoismemorial.com/cms-hpt.txt) declares an mrf-url identical to the captured standard-charges file (file-0) and a source-page-url matching page-3; the hospital's own Pricing-Transparency and Financial-Assistance pages (page-4, page-5) label the iroquois.slicedhealth.io portal as their 'Price Transparency' destination, so the MRF URL chain is internally consistent and facility-corroborated. Identity in file-0 is corroborated (EIN 37-0673512 in the file name; header address 200 East Fairman Ave, Watseka, IL 60970 matches the record, with only minor Street/Avenue and 'Wateska' spelling variants). Outstanding gap: file metadata is marked date-unverified (empty date field, HTTP 206 partial content, version 2 with no posting date), so the supplied evidence is insufficient to establish when the standard-charges file was posted or last updated; this is a metadata gap, not a compliance determination. No unfetched relevant lead remains among the supplied links (page-3 returned no extractable text or links, likely JS-rendered; the remaining linked PDFs are financial-assistance/consumer-guide material), and repeating already-fetched URLs is not allowed. The logical follow-up, when permitted, would be a header/Last-Modified or in-file date re-check of the already-fetched MRF at the slicedhealth.io URL.",
+        "url": null,
+        "query": null
+      }
+    ],
+    "usage": [
+      {
+        "id": "141353-glm-0",
+        "status": "settled",
+        "actual": 0.00093795,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "141353-glm-1",
+        "status": "settled",
+        "actual": 0.001574655,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "150011",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:51:14.163Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-5"
+        ],
+        "explanation": "The standard charges CSV was fetched only partially (HTTP 206) with metadata incomplete and identity 'mrf-header-unreachable', so the file's header (hospital name/EIN/location) could not be verified. The pricing page (page-5) links this exact CSV as the official machine-readable file for Marion Health, so re-visiting the file to obtain the header metadata is the best next step. Note this is a lead; no compliance determination is being made.",
+        "url": "https://www.marionhealth.com/documents/35-0868130_Marion-General-Hospital_Standard-Charges.csv"
+      },
+      {
+        "turn": 1,
+        "action": "search",
+        "evidence_ids": [
+          "file-0",
+          "page-9",
+          "page-8",
+          "page-5"
+        ],
+        "explanation": "Evidence is insufficient to verify identity or format. The linked 'CSV' (file-0/page-8) is actually a ZIP/OOXML container (PK header, xl/workbook.xml), so no MRF header could be read ('mrf-header-unreachable'); the pointer file (page-9) matches the hospital name and source page but the file's internal identity fields remain unverified. A queued external web search for an official, alternate listing of Marion General Hospital's standard-charges file (CCN 150011) is the appropriate next step to confirm the correct machine-readable file and its format.",
+        "query": "Marion General Hospital Indiana CCN 150011 standard charges machine readable file official"
+      },
+      {
+        "query": "Marion General Hospital Indiana CCN 150011 standard charges machine readable file official",
+        "status": "queued-for-web-search-serper-disabled"
+      }
+    ],
+    "usage": [
+      {
+        "id": "150011-glm-0",
+        "status": "settled",
+        "actual": 0.0005698,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "150011-glm-1",
+        "status": "settled",
+        "actual": 0.0009508,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "154054",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T03:13:17.277Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "error": "Unexpected token '`', \"```json\n{\n\"... is not valid JSON"
+      },
+      {
+        "turn": 1,
+        "action": "visit",
+        "evidence_ids": [
+          "page-7",
+          "file-0",
+          "page-5"
+        ],
+        "explanation": "Pointer review is incomplete: file-0 (the official page's linked -t8tx.csv MRF) timed out with 0 bytes, file-1 was an invalid scheme-less URL, and .well-known/cms-hpt.txt is 404. However, the hospital's own pointer file (page-7, hospital-price-transparency.txt, last updated 2026-01-01) supplies a different, not-yet-fetched MRF URL on the facility domain: https://harshacenter.com/harsha-behavioral-center_standardcharges.csv. Fetching this unvisited lead is the best next step to obtain and verify the machine-readable file header (facility name, address, last-updated) rather than re-requesting the timed-out URL. This URL is only a lead; metadata remains unverified until the file is retrieved.",
+        "url": "https://harshacenter.com/harsha-behavioral-center_standardcharges.csv"
+      },
+      {
+        "turn": 2,
+        "action": "visit",
+        "evidence_ids": [
+          "page-5",
+          "page-6",
+          "page-0",
+          "page-7",
+          "file-0",
+          "page-8"
+        ],
+        "explanation": "Pointer/metadata check is incomplete: the facility's own cms-hpt.txt at https://www.harshacenter.com/s/cms-hpt.txt (linked as 'hpt' on the price transparency page, page-5) has never been fetched directly; only the Squarespace CDN mirrors (page-6/page-0) are observed, and those list an mrf-url (…/261091197_harsha-behavioral-center_standardcharges.csv) that differs from the page's download link with the '-t8tx' suffix (file-0), while page-7's pointer lists yet another MRF URL. file-0 timed out with 0 bytes and file-1 was an invalid URL, so MRF identity is unverified at the facility domain, though page-8's Squarespace-hosted CSV snippet shows matching name (Harsha Behavioral Center) and address (1980 E Woodsmall Drive, Terre Haute, IN 47802) for CCN 154054. Visiting the facility-hosted pointer file should resolve the canonical mrf-url and source-page-url and settle the -t8tx suffix discrepancy. Evidence is currently insufficient to confirm the MRF metadata.",
+        "url": "https://www.harshacenter.com/s/cms-hpt.txt"
+      }
+    ],
+    "usage": [
+      {
+        "id": "154054-glm-0",
+        "status": "settled",
+        "actual": 0.00077376,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "154054-glm-1",
+        "status": "settled",
+        "actual": 0.000605355,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "154054-glm-2",
+        "status": "settled",
+        "actual": 0.00069058,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "181324",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:59:35.781Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-0"
+        ],
+        "explanation": "The official CMS-HPT pointer file (page-0) lists The Medical Center at Scottsville with MRF URL https://medcenterhealth.org/charges/mcs/, but the earlier fetch (file-0) returned 403. Re-attempting that observed MRF URL is the best next step to verify the machine-readable file; a 403 may be transient or bot-blocking.",
+        "url": "https://medcenterhealth.org/charges/mcs/"
+      },
+      {
+        "turn": 1,
+        "error": "Unexpected non-whitespace character after JSON at position 1044 (line 7 column 1)"
+      },
+      {
+        "turn": 2,
+        "action": "search",
+        "evidence_ids": [
+          "page-0",
+          "file-0",
+          "page-5",
+          "page-4"
+        ],
+        "explanation": "The official CMS-HPT pointer file (page-0, fetched with 200) confirms The Medical Center at Scottsville (CCN 181324) publishes its MRF at https://medcenterhealth.org/charges/mcs/ with source page https://medcenterhealth.org/price-transparency/. However, the MRF itself (file-0, page-5), the source page (page-4), the .well-known pointer (page-1), and the financial assistance page (page-3) all returned 403 Forbidden, so the actual standard-charges file content remains unverified and metadata is incomplete ('mrf-header-unreachable'). The homepage (page-2) loads normally, suggesting path-specific blocking or transient denial rather than a dead site. No unfetched relevant link is observed in the evidence, and already-fetched URLs should not be repeated. Evidence is therefore insufficient to confirm the file's availability, format, or content. Next best step: queue an external web search for an alternative official hosting location or mirror of the Scottsville machine-readable standard-charges file.",
+        "query": "\"The Medical Center at Scottsville\" Scottsville KY 42164 standard charges machine-readable file price transparency MRF"
+      },
+      {
+        "query": "\"The Medical Center at Scottsville\" Scottsville KY 42164 standard charges machine-readable file price transparency MRF",
+        "status": "queued-for-web-search-serper-disabled"
+      }
+    ],
+    "usage": [
+      {
+        "id": "181324-glm-0",
+        "status": "settled",
+        "actual": 0.00018885,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "181324-glm-1",
+        "status": "settled",
+        "actual": 0.00051061,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "181324-glm-2",
+        "status": "settled",
+        "actual": 0.00057693,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "204005",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:58:00.215Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-5"
+        ],
+        "explanation": "The only candidate MRF for this CCN (file-0) has a header location 'Spring Harbor Hospital' at 123 Andover Rd, Westbrook, ME 04092, which matches the roster address, but identity remains unresolved and its date (2025-08-12) is over 365 days old, so it may be stale. The other MRFs (file-1 to file-4) belong to different MaineHealth facilities. The billing page (page-5) confirms a price transparency section exists but its content was not captured, and that URL was already fetched. The official pointer file https://www.mainehealth.org/cms-hpt.txt, cited as the source of these MRF URLs, has not been reviewed directly; visiting it can confirm the current facility-to-file mapping and whether a newer Spring Harbor-specific MRF exists. Evidence is insufficient to resolve identity or assess compliance at this point.",
+        "url": "https://www.mainehealth.org/cms-hpt.txt"
+      },
+      {
+        "turn": 1,
+        "action": "visit",
+        "url": "https://search.hospitalpriceindex.com/hpi2/machineReadable/SpringHarborHospital/8065",
+        "evidence_ids": [
+          "file-0",
+          "page-8",
+          "page-6"
+        ],
+        "explanation": "Identity review of file-0 is largely corroborated: its header location 'Spring Harbor Hospital' and address '123 Andover Rd, Westbrook, ME 04092' exactly match the CCN 204005 roster address (123 Andover Road, Westbrook, ME 04092), and the official MaineHealth pointer file (page-8) explicitly maps location-name 'Spring Harbor Hospital' to file-0's MRF URL. The header only shows the system name 'MaineHealth', which likely caused the roster-name mismatch. The other MRFs (file-1 through file-4) are header-matched to different MaineHealth facilities (Franklin Memorial, Lincoln Health, MMC Biddeford, MMC Portland) and are not valid for this CCN. The open issue is currency: file-0 is dated 2025-08-12 (flagged date-over-365-days) while sibling facilities show 2025-09-09 files, so a newer Spring Harbor file may exist. Next step is to check the source page that the official pointer itself designates for this location to see if a more recent MRF URL is listed. The mainehealth.org price-transparency anchor (observed on page-6/page-7) is an alternative lead, but fetching it would effectively repeat the already-fetched billing page. If the source page shows no newer file, evidence would indicate the official pointer still designates a stale file; evidence is otherwise insufficient to assess update compliance."
+      },
+      {
+        "turn": 2,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-8",
+          "page-7"
+        ],
+        "explanation": "file-0 is the candidate MRF for CCN 204005: its header location 'Spring Harbor Hospital' and address '123 Andover Rd, Westbrook, ME 04092' match the roster address exactly, and page-8 (the official mainehealth.org cms-hpt.txt pointer file) lists this exact MRF URL under 'Spring Harbor Hospital'. However, identity remains flagged unresolved because the header name is the system-level 'MaineHealth' rather than the roster facility name, and the file date (2025-08-12) is over 365 days old, suggesting it may be stale compared to the other MaineHealth locations (all dated 2025-09-09). page-7 exposes an official 'Price Transparency' section anchor on the MaineHealth billing page; visiting it is the preferred next step (over search) to locate the current per-location MRF listing for Spring Harbor and either confirm file-0 as current or find a newer file. Evidence is insufficient to conclusively resolve identity at this point.",
+        "url": "https://www.mainehealth.org/patients-visitors/billing-and-financial-services#price-transparency"
+      }
+    ],
+    "usage": [
+      {
+        "id": "204005-glm-0",
+        "status": "settled",
+        "actual": 0.0015013,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "204005-glm-1",
+        "status": "settled",
+        "actual": 0.00118885,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "204005-glm-2",
+        "status": "settled",
+        "actual": 0.000866725,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "210029",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T03:10:18.253Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-0",
+          "page-1",
+          "page-2"
+        ],
+        "explanation": "file-0 is an identity-corroborated standard charges CSV for CCN 210029 (header name/address match), but it is flagged date-over-365-days (file date 2025-07-01 vs checked_at 2026-09-09), so a newer file may exist. All three attempts to read the official pointer (hopkinsmedicine.org root, /.well-known/cms-hpt.txt, /cms-hpt.txt) returned 403 Cloudflare blocks, so the pointer path is currently unusable. The hospital's own S3 asset bucket served the CSV successfully (HTTP 206), so listing the charge-fees prefix is a lead to discover a newer standard charges object or a LastModified timestamp indicating an in-place update of the existing key. This URL is only a proposed lead, not an observed link; if listing is denied, the fallback is an external web search for the facility's current pricing or pointer page. Evidence is insufficient to draw any conclusion about a current filing.",
+        "url": "https://jhm-web-assets.s3.amazonaws.com/?list-type=2&prefix=hopkinsmedicine/prod/charge-fees/"
+      },
+      {
+        "turn": 1,
+        "action": "search",
+        "evidence_ids": [
+          "file-0",
+          "page-0",
+          "page-1",
+          "page-2",
+          "page-3"
+        ],
+        "explanation": "The standard charges CSV (file-0) was retrieved with corroborated identity (name/address match CCN 210029), but its metadata is flagged date-over-365-days (file date 2025-07-01 vs. checked_at 2026-09-09), so the file may be stale. Every pointer check failed: the S3 bucket listing is AccessDenied (page-3) and hopkinsmedicine.org paths (root, cms-hpt.txt, .well-known/cms-hpt.txt) are Cloudflare-blocked 403 (page-0, page-1, page-2). These fetched URLs will not be repeated. Evidence is insufficient to confirm the facility's current official pointer page or a newer MRF, so the next step is to search for the official Johns Hopkins Bayview price transparency page or a newer standardcharges file for EIN 521341890.",
+        "query": "\"Johns Hopkins Bayview Medical Center\" price transparency standard charges 521341890 site:hopkinsmedicine.org OR standardcharges.csv"
+      },
+      {
+        "query": "\"Johns Hopkins Bayview Medical Center\" price transparency standard charges 521341890 site:hopkinsmedicine.org OR standardcharges.csv",
+        "status": "queued-for-web-search-serper-disabled"
+      }
+    ],
+    "usage": [
+      {
+        "id": "210029-glm-0",
+        "status": "settled",
+        "actual": 0.0018204,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "210029-glm-1",
+        "status": "settled",
+        "actual": 0.000537055,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "213300",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:47:57.781Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "search",
+        "evidence_ids": [
+          "page-0",
+          "page-1",
+          "page-2"
+        ],
+        "explanation": "All direct fetches to mwph.org (homepage and both CMS hospital price transparency pointer file locations) returned HTTP 403 Cloudflare blocks, and no links were exposed in the responses. There is insufficient evidence to confirm the MRF location or a pricing pointer page. Since no relevant links are available to visit and repeating the blocked URLs is not useful, the next step is to queue an external web search for the hospital's official price transparency page or a mirror of its CMS-required machine-readable file.",
+        "query": "\"Mount Washington Pediatric Hospital\" Baltimore price transparency machine-readable file OR cms-hpt.txt"
+      },
+      {
+        "query": "\"Mount Washington Pediatric Hospital\" Baltimore price transparency machine-readable file OR cms-hpt.txt",
+        "status": "queued-for-web-search-serper-disabled"
+      }
+    ],
+    "usage": [
+      {
+        "id": "213300-glm-0",
+        "status": "settled",
+        "actual": 0.00019426,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "220029",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:46:52.785Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "search",
+        "evidence_ids": [
+          "page-2",
+          "page-1",
+          "page-0"
+        ],
+        "explanation": "The homepage and both candidate CMS price-transparency pointer files returned no usable content or links, so current evidence is insufficient. Search the official hospital domain for its pricing or CMS-HPT pointer page.",
+        "query": "site:ajh.org Anna Jaques Hospital price transparency standard charges machine-readable"
+      },
+      {
+        "query": "site:ajh.org Anna Jaques Hospital price transparency standard charges machine-readable",
+        "status": "queued-for-web-search-serper-disabled"
+      }
+    ],
+    "usage": [
+      {
+        "id": "220029-glm-0",
+        "status": "settled",
+        "actual": 0.000307548,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "220080",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:45:46.808Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "visit",
+        "evidence_ids": [
+          "page-2",
+          "page-1",
+          "page-0"
+        ],
+        "explanation": "Evidence so far: the CMS price-transparency pointer file is absent on the legacy domain holyfamilyhospital.org (404 at both /.well-known/cms-hpt.txt and /cms-hpt.txt). However, the fetched homepage confirms the facility at 70 East St, Methuen (Holy Family Hospital - Methuen, the CCN 220080 site) has rebranded as 'Methuen Hospital' under Merrimack Health, whose current web presence is merrimackhealth.org. The homepage evidence contains no links, so the pointer requirement must be re-evaluated on the hospital's current official domain before drawing any conclusion about compliance. Proposed URL is a lead only: check the CMS-mandated pointer location on the new domain.",
+        "url": "https://merrimackhealth.org/.well-known/cms-hpt.txt"
+      },
+      {
+        "turn": 1,
+        "action": "search",
+        "evidence_ids": [
+          "page-0",
+          "page-1",
+          "page-2",
+          "page-3",
+          "page-4"
+        ],
+        "explanation": "The homepage (page-2) confirms the 70 East St, Methuen, MA 01844 facility — matching CCN 220080's address — now operates as 'Methuen Hospital' under Merrimack Health, making merrimackhealth.org the current domain. However, the standard CMS price-transparency pointer file /.well-known/cms-hpt.txt returns 404 on both holyfamilyhospital.org (page-1, and page-0 at the root variant) and merrimackhealth.org (page-3; page-4 is the same URL with a fragment). The homepage exposed no links to a pricing or price-transparency page, so no observed relevant link is available to visit. Since the pointer file is absent on both plausible domains and the machine-readable file location is unknown, the next step is an external web search to locate Merrimack Health's price transparency page or standard-charges file. Evidence is currently insufficient to determine the file's location.",
+        "query": "Merrimack Health Methuen Hospital price transparency standard charges merrimackhealth.org"
+      },
+      {
+        "query": "Merrimack Health Methuen Hospital price transparency standard charges merrimackhealth.org",
+        "status": "queued-for-web-search-serper-disabled"
+      }
+    ],
+    "usage": [
+      {
+        "id": "220080-glm-0",
+        "status": "settled",
+        "actual": 0.00037311,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "220080-glm-1",
+        "status": "settled",
+        "actual": 0.000768708,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "230038",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:53:48.257Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "visit",
+        "evidence_ids": [
+          "page-0"
+        ],
+        "explanation": "The retrieved MRF files (file-0, file-1, file-3) are headers for other Corewell Health system hospitals — Gerber (Fremont), Ludington, and Greenville — and file-2 (Pennock) was unreachable, so none of them establish identity for CCN 230038 at 100 Michigan St NE, Grand Rapids. That address is the Corewell Health (formerly Spectrum Health) Butterworth Hospital campus. The pointer file (page-0, corewellhealth.org/cms-hpt.txt) lists an MRF URL for 'Corewell Health Butterworth Hospital'; visiting it is the next step to check the header name and address against the roster. Note the URL has trailing whitespace in the pointer entry and is only a lead — compliance is not being declared, and spectrumhealth.org paths (page-1 through page-3) returned 403 and should not be retried.",
+        "url": "https://assets.contentstack.io/v3/assets/blt3055f692fe7bf193/blt0f9fd2163e3908a4/381360529_corewell-health-butterworth-hospital_standardcharges.csv"
+      },
+      {
+        "turn": 1,
+        "action": "review",
+        "evidence_ids": [
+          "page-0",
+          "page-4"
+        ],
+        "explanation": "Existing evidence is sufficient to resolve the identity-or-format review without further fetches. The machine-readable file in page-4 carries the header name 'Corewell Health Butterworth Hospital' with address '100 Michigan St Ne, Grand Rapids, MI 49503', which exactly matches the roster address for CCN 230038 (SPECTRUM HEALTH, 100 Michigan St NE, Grand Rapids, MI 49503). The name divergence is consistent with Spectrum Health's rebrand to Corewell Health, and the facility's own pointer file corewellhealth.org/cms-hpt.txt (page-0, status 206) lists this exact MRF URL under 'Corewell Health Butterworth Hospital', corroborating the linkage. The visible file header shows version 3.0.0 dated 4/1/2026 (within 365 days), an attestation statement, and payer-specific negotiated dollar/percentage/algorithm columns, so the observed format elements are present; this is an observation, not a compliance determination. Conversely, file-0 (Gerber, 212 S Sullivan St, Fremont), file-1 (Ludington, 1 N Atkinson Dr), and file-3 (Greenville, 615 S Bower St) are distinct facilities with non-matching addresses and must not be attributed to CCN 230038; file-2 (Pennock) is unverified — HTTP 422 with a URL polluted by appended contact text. The legacy spectrumhealth.org routes (page-1 through page-3) are CloudFront-blocked (403), so re-fetching them would not help. Conclusion: page-4 is the file corresponding to CCN 230038 based on exact address match plus pointer-file corroboration; files 0-3 are misattributed to this CCN."
+      }
+    ],
+    "usage": [
+      {
+        "id": "230038-glm-0",
+        "status": "settled",
+        "actual": 0.00107055,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "230038-glm-1",
+        "status": "settled",
+        "actual": 0.00109633,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "241359",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:50:07.979Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "search",
+        "evidence_ids": [
+          "file-0",
+          "page-0",
+          "page-1",
+          "page-2"
+        ],
+        "explanation": "All attempts to reach avera.org (homepage, both cms-hpt.txt pointer locations, and the direct standard-charges CSV from file-0) returned HTTP 403, indicating Akamai bot-blocking of the fetcher rather than a missing file; the CSV URL in file-0 remains a plausible official file but has already been fetched and cannot be retried as-is. No unvisited relevant links were observed on any page. The next best step is an external web search to locate Avera Marshall's official price transparency/pointer page or an alternate official host of the standard charges file (e.g., a CDN or pricing portal), before concluding evidence is insufficient.",
+        "query": "Avera Marshall Regional Medical Center Marshall MN price transparency standard charges machine-readable file avera.org"
+      },
+      {
+        "query": "Avera Marshall Regional Medical Center Marshall MN price transparency standard charges machine-readable file avera.org",
+        "status": "queued-for-web-search-serper-disabled"
+      }
+    ],
+    "usage": [
+      {
+        "id": "241359-glm-0",
+        "status": "settled",
+        "actual": 0.000594738,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "241377",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:48:11.982Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "visit",
+        "evidence_ids": [
+          "page-0",
+          "file-0"
+        ],
+        "explanation": "The pointer file is truncated and does not list St. Francis Medical Center in Breckenridge (the 'St. Francis Regional' CSV belongs to a different Allina facility and returned 404 anyway). The official billing-and-insurance source page is the best lead to find the correct pricing file or confirm the hospital's system affiliation.",
+        "url": "https://www.allinahealth.org/customer-service/billing-and-insurance"
+      },
+      {
+        "turn": 1,
+        "action": "visit",
+        "evidence_ids": [
+          "page-0"
+        ],
+        "explanation": "The target hospital is St Francis Medical Center in Breckenridge, MN, but the Allina pointer file was fetched with status 206 and truncated before its full listing; the observed entries name other facilities. The file-0 CSV for 'st-francis-regional' (a different facility) returned 404. The pointer file is the official index and may contain an entry for the Breckenridge hospital, so fetch it in full to confirm whether a valid standard charges file is listed.",
+        "url": "https://www.allinahealth.org/-/media/allina-health/files/customer-service/billing-and-insurance/price-transparency/price-transparency-txt-file.txt"
+      },
+      {
+        "turn": 2,
+        "action": "search",
+        "evidence_ids": [
+          "file-0",
+          "page-0"
+        ],
+        "explanation": "The Allina pointer file (partially retrieved with status 206) lists other Allina locations but the visible portion never mentions St. Francis Medical Center in Breckenridge, and the candidate CSV (file-0) is for a different facility (St. Francis Regional Medical Center) and returned 404. Allina Health may not even be the parent system for the Breckenridge hospital, so evidence is insufficient. Searching for the facility's own pricing page is the next step.",
+        "query": "\"St. Francis Medical Center\" Breckenridge MN standard charges price transparency"
+      },
+      {
+        "query": "\"St. Francis Medical Center\" Breckenridge MN standard charges price transparency",
+        "status": "queued-for-web-search-serper-disabled"
+      }
+    ],
+    "usage": [
+      {
+        "id": "241377-glm-0",
+        "status": "settled",
+        "actual": 0.00022035,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "241377-glm-1",
+        "status": "settled",
+        "actual": 0.00043115,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "241377-glm-2",
+        "status": "settled",
+        "actual": 0.00050035,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "250004",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T03:01:07.396Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-4",
+          "page-5",
+          "page-6",
+          "page-7"
+        ],
+        "explanation": "The recorded machine-readable standard charges file (file-0) returned HTTP 404 with incomplete metadata, so current evidence is insufficient to confirm a valid, accessible pricing file for CCN 250004. The official Price Transparency page is the designated source page for the file and is consistently linked from four fetched NMHS billing pages, making it the most relevant observed link to locate an updated standard charges file or pointer. Visiting it does not repeat any previously fetched URL.",
+        "url": "https://www.nmhs.net/Patients-and-Visitors/Pricing/Price-Transparency"
+      },
+      {
+        "turn": 1,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-9",
+          "page-8"
+        ],
+        "explanation": "The MRF URL listed in the facility's pointer file (page-9) returned HTTP 404 (file-0): '640662976_north-mississippi-medical-center-inc_standardcharges.'. However, the hospital's own Price Transparency page (page-8, status 200) contains a link labeled 'North Mississippi Medical Center, Inc. Standard Charges' pointing to a slightly different variant without '-inc': '640662976_north-mississippi-medical-center_standardcharges.'. This observed link has not been fetched yet and is the most promising lead for the working machine-readable file, so it should be visited before any other action.",
+        "url": "https://apps.nmhs.net/files/pt_mrf/640662976_north-mississippi-medical-center_standardcharges."
+      },
+      {
+        "turn": 2,
+        "action": "visit",
+        "evidence_ids": [
+          "page-8",
+          "page-9",
+          "page-10",
+          "file-0"
+        ],
+        "explanation": "The official Price Transparency page (page-8) links 'North Mississippi Medical Center, Inc. Standard Charges' to https://apps.nmhs.net/files/pt_mrf/640662976_north-mississippi-medical-center_standardcharges. (no '-inc' in the filename). Prior attempts failed on variants of this path: file-0 got a 404 on the '-inc' filename that the pointer file (page-9) also lists, and page-10 got a 404 on a truncated URL missing the '.' extension. The exact page-8 link with the '.' extension has not yet been fetched, so it is the strongest untested lead for the machine-readable file. Evidence is currently insufficient to confirm file accessibility or metadata; fetching this observed link is the preferred next step rather than searching. Any resulting URL is only a lead and no compliance determination is being made.",
+        "url": "https://apps.nmhs.net/files/pt_mrf/640662976_north-mississippi-medical-center_standardcharges."
+      }
+    ],
+    "usage": [
+      {
+        "id": "250004-glm-0",
+        "status": "settled",
+        "actual": 0.000587605,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "250004-glm-1",
+        "status": "settled",
+        "actual": 0.000521755,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "250004-glm-2",
+        "status": "settled",
+        "actual": 0.00059648,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "250042",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:55:44.005Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "search",
+        "evidence_ids": [
+          "file-0",
+          "page-0",
+          "page-3"
+        ],
+        "explanation": "Identity mismatch: the reviewed MRF (file-0) is a CSV whose header names 'Delta Health System' with addresses at 1400 East Union St and 300 S. Washington Ave, Greenville, MS — consistent with Delta Regional Medical Center in Greenville, not the target facility NORTHWEST MISSISSIPPI REGIONAL MEDICAL CENTER (CCN 250042) at 1970 Hospital Drive, Clarksdale, MS 38614. The filename 'delta-regional-medical-center_standardcharges.csv' and the cms-hpt.txt pointer (page-0), which lists only 'Delta Health System' and 'Delta Health System (West Campus)' (both Greenville), reinforce that this file covers a different hospital campus. The chargemaster transparency page (page-3) likewise speaks only of 'The Medical Center' in Greenville. Evidence is therefore insufficient to confirm a standard-charges file for the Clarksdale hospital under CCN 250042; all deltahealthsystem.org pages of relevance have already been fetched, so the next step is an external search for the Clarksdale facility's own official price transparency/pointer page.",
+        "query": "\"Northwest Mississippi Regional Medical Center\" Clarksdale MS 38614 official price transparency standard charges machine-readable file"
+      },
+      {
+        "query": "\"Northwest Mississippi Regional Medical Center\" Clarksdale MS 38614 official price transparency standard charges machine-readable file",
+        "status": "queued-for-web-search-serper-disabled"
+      }
+    ],
+    "usage": [
+      {
+        "id": "250042-glm-0",
+        "status": "settled",
+        "actual": 0.00083918,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "250162",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:53:24.980Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-6"
+        ],
+        "url": "https://www.ochsner.org/locations/ochsner-medical-center-hancock",
+        "explanation": "Identity review for CCN 250162 points strongly to file-0: its header name (OCHSNER MEDICAL CENTER – HANCOCK LLC) and location match the roster hospital, the address agrees on street number (149 Drinkwater), city (Bay St. Louis), state (MS in the address text), and ZIP (39520), and the system's own price-transparency page (page-6) labels this exact file 'Ochsner Medical Center - Hancock'. The score of 1 reflects this near-match. The unresolved flag appears to stem from two minor discrepancies: the header lists 'Drinkwater Road' while the roster lists 'Drinkwater Blvd', and the header_state field says 'LA' despite a Mississippi address (possibly a header or parsing artifact). No observed link remains that resolves this (pointer, source page, and the MRF itself are already fetched), so the next step is to confirm the facility's official street address on the hospital system's own site. The proposed location page is only a lead; if it is unreachable or does not state the address, a queued external web search for the official address would be the fallback. Evidence is currently insufficient to fully clear the identity flag, and no compliance determination is being made."
+      },
+      {
+        "turn": 1,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-9",
+          "page-8"
+        ],
+        "explanation": "Identity review for CCN 250162 is nearly resolved but flagged as unresolved. file-0's MRF header (OCHSNER MEDICAL CENTER – HANCOCK LLC, 149 Drinkwater Road, Bay St. Louis, MS 39520-1658) closely matches the roster entry (149 DRINKWATER BLVD, BAY SAINT LOUIS, MS 39520); remaining discrepancies are only the street suffix (Road vs Blvd) and a header_state parsed as 'LA' even though the header address text says MS. The official pointer file (page-9, ochsner.org/cms-hpt.txt) explicitly maps 'Ochsner Medical Center - Hancock' to file-0's MRF URL, which is strong identity evidence. To close out the unresolved header-vs-roster flag, the next step is to visit the hospital's price transparency page — the pointer's cited source page, observed as a link on page-8 — to confirm the official Hancock facility listing and any facility-level detail. This URL is only a lead; other files (file-1 through file-4) clearly belong to other Ochsner/LSU-region facilities and do not match this CCN. No compliance determination is being made.",
+        "url": "https://www.ochsner.org/patients-visitors/billing-and-financial-services/estimates/"
+      },
+      {
+        "turn": 2,
+        "action": "review",
+        "evidence_ids": [
+          "file-0",
+          "file-1",
+          "file-2",
+          "file-3",
+          "file-4",
+          "page-8",
+          "page-9",
+          "page-10"
+        ],
+        "explanation": "Identity review resolves in favor of file-0 for CCN 250162 without any further fetch. (1) The official health-system pointer file (page-9, ochsner.org/cms-hpt.txt) lists location-name 'Ochsner Medical Center - Hancock' with an mrf-url identical to file-0's URL. (2) The official pricing/source page (page-10) labels that same URL 'Ochsner Medical Center - Hancock', and the facility location page (page-8) links to this pricing page. (3) The MRF header address '149 Drinkwater Road, Bay St. Louis, MS 39520-1658' matches the roster address 149 Drinkwater Blvd, Bay Saint Louis, MS 39520 (Road/Blvd street-suffix variant, same city and ZIP), and header name 'OCHSNER MEDICAL CENTER – HANCOCK LLC' matches roster name 'OCHSNER MEDICAL CENTER-HANCOCK' apart from the LLC suffix and dash character. The 'mrf-header-does-not-match-unresolved-roster' flag is therefore a strict-string false negative; the recorded header_state 'LA' contradicts the header's own MS address line and should be treated as a header metadata error worth noting, not an identity failure. Files file-1 through file-4 are excluded: their headers match other facilities (Kenner LA; Rush/Meridian MS; Clinic Foundation/New Orleans LA; Chabert/Houma LA). Evidence is sufficient; the review conclusion is that file-0 is the correct machine-readable file for this hospital, with the Road-vs-Blvd and header_state anomalies documented."
+      }
+    ],
+    "usage": [
+      {
+        "id": "250162-glm-0",
+        "status": "settled",
+        "actual": 0.00114288,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "250162-glm-1",
+        "status": "settled",
+        "actual": 0.00091813,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "250162-glm-2",
+        "status": "settled",
+        "actual": 0.00082989,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "251323",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:58:46.816Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "search",
+        "evidence_ids": [
+          "file-0",
+          "page-5"
+        ],
+        "explanation": "file-0 is the strongest candidate (header name 'Scott Regional Medical Center, Inc.' with address 317 MS 13, Morton, MS 39117, matching the CCN 251323 roster entry, high similarity score, valid date/version metadata), but its identity is flagged unresolved because the header name differs from the roster name 'OCHSNER SCOTT REGIONAL'. Notably, the already-fetched Ochsner price transparency page (page-5) lists many facility files but no Scott Regional link, so the lead cannot be confirmed from existing evidence. A web search for the facility's official legal name / standard charges page is needed to confirm the name mapping before any determination.",
+        "query": "\"Scott Regional Medical Center\" Morton MS standard charges price transparency official"
+      },
+      {
+        "query": "\"Scott Regional Medical Center\" Morton MS standard charges price transparency official",
+        "status": "queued-for-web-search-serper-disabled"
+      }
+    ],
+    "usage": [
+      {
+        "id": "251323-glm-0",
+        "status": "settled",
+        "actual": 0.00062145,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "251325",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:49:01.373Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "search",
+        "evidence_ids": [
+          "page-0",
+          "page-1",
+          "page-2"
+        ],
+        "explanation": "Evidence is insufficient. The checked URLs are on the generic irp.cdn-website.com CDN root, not a hospital-specific host, so the 403 responses on cms-hpt.txt neither confirm nor rule out that Covington County Hospital's site and its CMS price-transparency file are hosted there. Status 206 on the CDN root only shows the CDN is reachable. No hospital-owned domain or pricing pointer page has been observed yet, so there is no relevant observed link worth visiting. The correct next step is to locate the hospital's official website/domain (likely a custom domain served via this CDN) and its pricing page.",
+        "query": "Covington County Hospital Collins MS official website price transparency"
+      },
+      {
+        "query": "Covington County Hospital Collins MS official website price transparency",
+        "status": "queued-for-web-search-serper-disabled"
+      }
+    ],
+    "usage": [
+      {
+        "id": "251325-glm-0",
+        "status": "settled",
+        "actual": 0.000241505,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "251334",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:52:19.837Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "review",
+        "evidence_ids": [
+          "file-0"
+        ],
+        "explanation": "Identity-or-format issue cannot be resolved from current evidence. file-0 is the only pricing artifact for CCN 251334, linked directly from the facility's own standard-charges page (page-6), but it was fetched with HTTP 206 via a recovery parser, has score 0, empty header_name/header_location/header_address/header_state fields, identity flag 'mrf-header-has-no-license-state', and an unverified date. Page-6 is also ambiguous, labeling the same CSV as both the 1-1-2019 chargemaster body text and 'Standard Charges as of 1-1-2024' in the quick links, so file currency is unclear. Next step is to re-review the full fetched CSV header/metadata rows in file-0 to confirm the hospital name and address match the record (8613 MS Hwy 12, Ackerman, MS 39735) and to extract any date/version fields before drawing any compliance conclusion. Evidence is currently insufficient; the .well-known/cms-hpt.txt pointer candidates already returned 404 and known URLs should not be re-fetched.",
+        "url": ""
+      }
+    ],
+    "usage": [
+      {
+        "id": "251334-glm-0",
+        "status": "settled",
+        "actual": 0.00080788,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "281316",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:51:44.543Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "stop",
+        "evidence_ids": [
+          "file-0",
+          "page-0",
+          "page-1",
+          "page-2",
+          "page-6"
+        ],
+        "explanation": "Evidence is sufficient to resolve the identity-or-format review for CCN 281316; no further fetch is warranted. Identity: the MRF header (file-0/page-6) names 'Webster County Community Hospital dba Webster County Community Hospital' with address 621 North Franklin Street, Red Cloud, NE 68970, which matches the CCN record address (621 N Franklin St, Red Cloud, NE 68970), so the name-without-location variant is corroborated by the address match. Corroboration of authority: the facility's own domain hosts a pointer file (page-0, websterhospital.org/cms-hpt.txt) listing the exact source-page-url and mrf-url observed, and the hospital homepage (page-2) links to the ClaraPrice-hosted price transparency page. Format: the file is valid JSON, HTTP 200, version 3.0.0, dated 2026-05-07 (within 365 days), and parses with charge/payer data present. The 404 at .well-known/cms-hpt.txt (page-1) is not disqualifying since the root-level cms-hpt.txt pointer exists. This supports the identity and format review findings only; no compliance determination or other attestation is asserted, and no messages or credential requests are implied.",
+        "url": null,
+        "query": null
+      }
+    ],
+    "usage": [
+      {
+        "id": "281316-glm-0",
+        "status": "settled",
+        "actual": 0.001636335,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "281326",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T03:06:09.717Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "visit",
+        "url": "https://www.amhne.org/cms-hpt.txt",
+        "evidence_ids": [
+          "file-0"
+        ],
+        "explanation": "The machine-readable charges file (file-0) returned HTTP 403 with incomplete metadata, and file-1 is only a case-variant duplicate of the same S3 URL, so re-fetching those is unlikely to help. Evidence file-0 records an official pointer file on the hospital's own domain (https://www.amhne.org/cms-hpt.txt); fetching it should reveal the facility's authoritative/canonical pricing-file location, possibly hosted or served differently than the 403-restricted S3 path. This is a lead only, not confirmation of compliance or file identity; evidence remains insufficient to assess the MRF until the pointer content and an accessible charges file are obtained."
+      },
+      {
+        "turn": 1,
+        "error": "Unexpected non-whitespace character after JSON at position 1053 (line 7 column 1)"
+      },
+      {
+        "turn": 2,
+        "action": "search",
+        "evidence_ids": [
+          "file-0",
+          "page-8",
+          "page-7"
+        ],
+        "explanation": "The hospital's own pointer file on amhne.org (page-8) confirms the machine-readable file URL at the S3 charge-management bucket (file-0), and the YourCareEverywhere pricing estimator source page (page-7) exists with a standard-charges download. However, direct fetches of the MRF returned HTTP 403 on both the confirmed URL (file-0) and its variant (file-1), so the file's contents, naming, date, and format remain unverified and metadata is unconfirmed. Evidence is insufficient to determine whether the file is publicly accessible. Since repeating the fetched S3 URLs is not useful and no unvisited relevant link to the MRF remains on the observed pages, the next step is to queue an external web search for an alternative or corrected official standard-charges link for this facility.",
+        "query": "\"Antelope Memorial Hospital\" Neligh NE standardcharges machine-readable file price transparency"
+      },
+      {
+        "query": "\"Antelope Memorial Hospital\" Neligh NE standardcharges machine-readable file price transparency",
+        "status": "queued-for-web-search-serper-disabled"
+      }
+    ],
+    "usage": [
+      {
+        "id": "281326-glm-0",
+        "status": "settled",
+        "actual": 0.001567278,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "281326-glm-1",
+        "status": "settled",
+        "actual": 0.00211239,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "281326-glm-2",
+        "status": "settled",
+        "actual": 0.00126065,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "281338",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:49:23.840Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "search",
+        "evidence_ids": [
+          "page-0",
+          "page-1",
+          "page-2"
+        ],
+        "explanation": "Insufficient evidence: all three fetches to search.hospitalpriceindex.com (root, /.well-known/cms-hpt.txt, and /cms-hpt.txt) returned status 206 with empty bodies and no links, so the domain cannot yet be confirmed as a pointer or MRF host for HOWARD COUNTY MEDICAL CENTER (CCN 281338). No observed relevant links are available to visit, and repeating the fetched URLs is not allowed. Next step is an external web search (Serper disabled, so queued) to locate the facility's official website and price transparency/pricing page or any CMS-listed domain.",
+        "query": "\"Howard County Medical Center\" St Paul NE 68873 hospital price transparency machine-readable file"
+      },
+      {
+        "query": "\"Howard County Medical Center\" St Paul NE 68873 hospital price transparency machine-readable file",
+        "status": "queued-for-web-search-serper-disabled"
+      }
+    ],
+    "usage": [
+      {
+        "id": "281338-glm-0",
+        "status": "settled",
+        "actual": 0.000346555,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "291300",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:47:45.498Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "error": "Unexpected token '`', \"```json\n{\n\"... is not valid JSON"
+      },
+      {
+        "turn": 1,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-0",
+          "page-5"
+        ],
+        "explanation": "The machine-readable file (file-0) returned HTTP 404, so the standard-charges content is currently unverified. However, the hospital's official pointer file mgghnv.org/cms-hpt.txt (page-0, HTTP 206) declares that same GitHub raw URL as its mrf-url and names https://mgghnv.org/information-center/summary-of-charges-draft/ as its source page, and the hospital's own price transparency page (page-5) also links the identical raw file. Since the fetched MRF URL should not be repeated and the 404 may reflect a moved/renamed file, the next best step is to visit the pointer's declared source page (not yet fetched) to check for a current, working link to the standard-charges file. This is only a lead; the evidence is insufficient to confirm whether a compliant MRF is available.",
+        "url": "https://mgghnv.org/information-center/summary-of-charges-draft/"
+      },
+      {
+        "turn": 2,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-0",
+          "page-3"
+        ],
+        "explanation": "The machine-readable file at the raw GitHub URL returned 404 (file-0), yet that same URL is both the mrf-url declared in the facility's cms-hpt.txt pointer (page-0) and the 'Link to Machine Readable File' on the official price transparency page (page-3), which is otherwise live. The likely causes are a renamed repository, a changed branch (e.g., main vs master), or a renamed file rather than a dead link. Visiting the repository root at https://github.com/Mt-Grant-General-Hospital/Pricing-Transparency is the next direct step to check whether the repo exists and locate the current standard-charges file path; this URL has not been previously fetched.",
+        "url": "https://github.com/Mt-Grant-General-Hospital/Pricing-Transparency"
+      }
+    ],
+    "usage": [
+      {
+        "id": "291300-glm-0",
+        "status": "settled",
+        "actual": 0.00078147,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "291300-glm-1",
+        "status": "settled",
+        "actual": 0.001138698,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "291300-glm-2",
+        "status": "settled",
+        "actual": 0.000994518,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "301301",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:46:20.667Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "search",
+        "evidence_ids": [
+          "page-0",
+          "page-1",
+          "page-2"
+        ],
+        "explanation": "The hospital root domain and both standard CMS price-transparency file locations (/.well-known/cms-hpt.txt and /cms-hpt.txt) returned 403 with no content and no links, so the machine-readable file's presence cannot be confirmed from fetched evidence, and the 403s may indicate bot-blocking rather than absence. Revisiting those same URLs is not useful, and no observed relevant link exists to visit. Insufficient evidence to determine where the pricing/pointer page is; an external web search is needed to locate Cottage Hospital's official price transparency page or direct MRF link.",
+        "query": "\"Cottage Hospital\" Woodsville NH \"price transparency\" standard charges cottagehospital.org"
+      },
+      {
+        "query": "\"Cottage Hospital\" Woodsville NH \"price transparency\" standard charges cottagehospital.org",
+        "status": "queued-for-web-search-serper-disabled"
+      }
+    ],
+    "usage": [
+      {
+        "id": "301301-glm-0",
+        "status": "settled",
+        "actual": 0.000230535,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "301305",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:49:50.430Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "search",
+        "evidence_ids": [
+          "page-2",
+          "page-1",
+          "page-0"
+        ],
+        "explanation": "All three previously fetched URLs (homepage and both candidate cms-hpt.txt pointer locations) returned status 0 with empty text and no links, so there is no observed content or link to follow. Evidence is insufficient to confirm a pointer file or pricing page, and repeating the fetched URLs is not useful. A web search is needed to locate Alice Peck Day Memorial Hospital's official price transparency or machine-readable pricing page.",
+        "query": "Alice Peck Day Memorial Hospital Lebanon NH price transparency machine-readable file"
+      },
+      {
+        "query": "Alice Peck Day Memorial Hospital Lebanon NH price transparency machine-readable file",
+        "status": "queued-for-web-search-serper-disabled"
+      }
+    ],
+    "usage": [
+      {
+        "id": "301305-glm-0",
+        "status": "settled",
+        "actual": 0.00031149,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "330013",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T03:05:02.515Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-0"
+        ],
+        "explanation": "The official pointer file at https://www.amc.edu/cms-hpt.txt (page-0, HTTP 200) confirms the machine-readable file URL for Albany Medical Center is https://albany.pt.panaceainc.com/MRFDownload/albany/albanyamc, matching the URL in file-0. The prior fetch of that MRF failed only with a DNS resolution timeout (curl error 28, http_status 0), which is a transient network failure rather than evidence the file is inaccessible. Since the pointer page is verified and names this exact MRF URL, the correct next step for the file-access review is to retry fetching the MRF directly to determine whether it is actually reachable and parseable. No alternate pricing link has been observed yet; if this retry fails again, the source pricing page (https://www.albanymed.org/patients-visitors/billing-insurance/hospital-pricing-transparency/) should be visited as a follow-up. Evidence is currently insufficient to make any compliance determination.",
+        "url": "https://albany.pt.panaceainc.com/MRFDownload/albany/albanyamc"
+      },
+      {
+        "turn": 1,
+        "error": "Unexpected non-whitespace character after JSON at position 1627 (line 8 column 1)"
+      },
+      {
+        "turn": 2,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-0",
+          "page-6"
+        ],
+        "explanation": "File-access review is inconclusive so far. The pointer file is served at https://www.amc.edu/cms-hpt.txt (HTTP 200, page-0), but the standard /.well-known/cms-hpt.txt path returns 404. The pointer declares mrf-url https://albany.pt.panaceainc.com/MRFDownload/albany/albanyamc, which failed with a DNS resolution timeout on one attempt (file-0, curl error 28). However, an alternate host serving the same MRF, https://mrf.panaceainc.com/Download.aspx?org=albany&loc=albanyamc&ref=, returned HTTP 200 (page-6) with header data matching this CCN: hospital name ALBANY MEDICAL CENTER HOSPITAL, location Albany Medical Center, address 43 New Scotland Avenue, Albany NY 12208, version 3.0.0, last_updated_on 2025-12-31, attestation present, plus charge rows. Evidence is insufficient to confirm the pointer-declared direct MRF URL is reliably accessible, and the official hospital pricing page itself has not yet been retrieved. Next step: review the official facility pricing transparency page referenced by the pointer to verify the authoritative MRF link and any alternative download locations.",
+        "url": "https://www.albanymed.org/patients-visitors/billing-insurance/hospital-pricing-transparency/"
+      }
+    ],
+    "usage": [
+      {
+        "id": "330013-glm-0",
+        "status": "settled",
+        "actual": 0.00048828,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "330013-glm-1",
+        "status": "settled",
+        "actual": 0.000861105,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "330013-glm-2",
+        "status": "settled",
+        "actual": 0.000765155,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "330202",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T03:11:54.077Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "review",
+        "evidence_ids": [
+          "file-0",
+          "page-0",
+          "page-1",
+          "page-2"
+        ],
+        "explanation": "Metadata review of file-0 passes on the available evidence: HTTP 200, native CSV transport, version 3.0.0, file date 2026-09-05 within 365 days of the 2026-09-09 check, and identity corroborated via header fields (New York City Health and Hospitals Corporation / Kings County Hospital Center, 451 Clarkson Ave, Brooklyn, NY 11203) matching the CCN 330202 facility record. Pointer corroboration is incomplete: all three official-domain attempts (page-2 root, page-1 /.well-known/cms-hpt.txt, page-0 /cms-hpt.txt) returned 403 with a maintenance notice, so the cms-hpt pointer endorsement cannot currently be verified. Evidence is sufficient to conclude the hosted MRF itself is present and metadata-valid; the pointer check should be re-run once nychealthandhospitals.org is back online. No new visit or search is warranted now since the panacea URL was already fetched and the official domain is temporarily unavailable."
+      }
+    ],
+    "usage": [
+      {
+        "id": "330202-glm-0",
+        "status": "settled",
+        "actual": 0.000567705,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "340127",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:54:37.158Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-7"
+        ],
+        "explanation": "Identity remains unresolved: the MRF header reads 'Granville Health System' while the roster entry is 'GRANVILLE HEALTH SYSTEMS', though header address matches the facility. The site's official pointer file (cms-hpt.txt) is the authoritative lead for confirming the canonical MRF URL and identity; evidence is insufficient to resolve the header-name mismatch without it. The MRF date (2025-08-05) is also over 365 days old, so the pointer may reveal a newer file.",
+        "url": "https://ghshospital.org/cms-hpt.txt"
+      },
+      {
+        "turn": 1,
+        "action": "search",
+        "evidence_ids": [
+          "file-0",
+          "file-1",
+          "file-2",
+          "page-8",
+          "page-7"
+        ],
+        "explanation": "Identity flag 'mrf-header-does-not-match-unresolved-roster' is not yet closable from current evidence. Corroborating signals: MRF header address '1010 College Street Oxford NC 27565' and state NC match the roster address exactly; header name 'Granville Health System' differs from roster 'GRANVILLE HEALTH SYSTEMS' only by plural form; the MRF is hosted on the facility's official domain (ghshospital.org), linked from its own pricing-transparency page (page-7), and pointed to by the facility's cms-hpt.txt pointer (page-8), whose mrf-url resolves to the same December 2025 CSV as file-0/file-2. However, identity_basis is empty and the roster match is unresolved, so I will not approve identity or declare compliance. Format itself looks reviewable (CSV, version 2.0.0, HTTP 206, no parser error), though the internal file date of 2025-08-05 is flagged as over 365 days old at check time, and the duplicate MRF URLs (2025/09 and 2025/12 uploads) both report the same internal date. Next step: resolve the official CMS roster entry for CCN 340127 to confirm the correct legal/roster facility name before closing the identity question.",
+        "query": "CMS CCN 340127 Granville Medical Center official hospital roster name North Carolina"
+      },
+      {
+        "query": "CMS CCN 340127 Granville Medical Center official hospital roster name North Carolina",
+        "status": "queued-for-web-search-serper-disabled"
+      }
+    ],
+    "usage": [
+      {
+        "id": "340127-glm-0",
+        "status": "settled",
+        "actual": 0.0005126,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "340127-glm-1",
+        "status": "settled",
+        "actual": 0.001925145,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "344004",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:48:56.852Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "visit",
+        "evidence_ids": [
+          "page-0",
+          "page-1",
+          "page-2"
+        ],
+        "explanation": "The CMS HPT pointer file was not found at either guessed path on ncdhhs.gov (page-0 and page-1 both returned 404), and the NCDHHS homepage (page-2) lists a 'State Operated Healthcare Facilities' division in its navigation but captured no direct links. Central Regional Hospital (CCN 344004) is a state-operated psychiatric facility under NCDHHS, so the official division/facilities section is the most likely place for a facility pricing or pointer page. Evidence is currently insufficient to locate any standard charges file or assess anything about compliance. The proposed URL is an unverified lead based on the site's own navigation structure, not a repeated fetch of any already-fetched page.",
+        "url": "https://www.ncdhhs.gov/divisions/state-operated-healthcare-facilities"
+      },
+      {
+        "turn": 1,
+        "action": "visit",
+        "evidence_ids": [
+          "page-3"
+        ],
+        "explanation": "The DSOHF page links to a 'Price Transparency' page, which may contain the official CMS HPT pointer file or pricing links for state-operated facilities including Central Regional Hospital.",
+        "url": "https://www.ncdhhs.gov/divisions/state-operated-healthcare-facilities/price-transparency"
+      },
+      {
+        "turn": 2,
+        "action": "visit",
+        "evidence_ids": [
+          "page-5"
+        ],
+        "explanation": "The official NCDHHS price transparency page (page-5) links a Central Regional Hospital standard charges file (crh-machine-readable-charge-sheet). Visit it to verify the machine-readable file for CCN 344004.",
+        "url": "https://www.ncdhhs.gov/documents/crh-machine-readable-charge-sheet/open"
+      }
+    ],
+    "usage": [
+      {
+        "id": "344004-glm-0",
+        "status": "settled",
+        "actual": 0.00042093,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "344004-glm-1",
+        "status": "settled",
+        "actual": 0.000158,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "344004-glm-2",
+        "status": "settled",
+        "actual": 0.00023445,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "360189",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T03:13:21.797Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-7"
+        ],
+        "explanation": "The machine-readable file fetch (file-0) failed with a DNS timeout, leaving its metadata unverified, and the linked CSV path is dated 2024/06 and may be outdated. Page-7 (the official pricing page) contains an as-yet-unfetched link to a dedicated 'Price Transparency' page, which is likely the facility's current MRF pointer page and may host a newer standard charges file. Visiting it is the next step; this URL is only a lead and compliance cannot be confirmed from current evidence.",
+        "url": "https://www.madison-health.com/price-transparency/"
+      },
+      {
+        "turn": 1,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-7",
+          "page-8"
+        ],
+        "explanation": "The machine-readable charges file (file-0) was never successfully retrieved: http_status 0 with a DNS resolution timeout, so identity/metadata remain unverified rather than noncompliant. The same CSV URL is currently linked as 'DOWNLOAD HERE' / 'Madison Health Charges with Negotiated Rates and Discount Pricing (Excel)' on the hospital's own pricing pages (page-7 sourcePageUrl and page-8), confirming it is the facility's official pointer to its standard-charges file. Retrying the visit to this observed relevant link is the appropriate next step to capture file headers and identity metadata; this is not a repeat of a successfully fetched URL, and the URL remains only a lead until verified.",
+        "url": "https://www.madison-health.com/content/uploads/2024/06/166189498_Madison-Health_standardcharges.csv"
+      },
+      {
+        "turn": 2,
+        "action": "stop",
+        "evidence_ids": [
+          "file-0",
+          "page-10",
+          "page-7",
+          "page-8"
+        ],
+        "explanation": "Evidence is sufficient for the metadata-or-pointer review of CCN 360189 (Madison Health). The initial fetch (file-0) failed on a DNS timeout, but the recovery fetch (page-10, status 206) captured the machine-readable file header: hospital_name 'Madison Health', location 'Madison Health', address '210 North Main Street, London, OH 43140' (matches the CCN record), OH license_number 166189498 (matches the filename 166189498_Madison-Health_standardcharges.csv), NPI 1982710703, version 3.0.0, last_updated_on 2026-04-01, and a true attestation under 45 CFR 180.50 with attester Jason Gates. The header also shows payer-specific negotiated charge fields (dollar, percentage, algorithm). The pointer is confirmed: the hospital's official Pricing Information page (page-7, the sourcePageUrl) and the Price Transparency page (page-8) both link this CSV ('Madison Health Charges with Negotiated Rates and Discount Pricing'). Remaining gaps are minor: the 206 partial response means no full-file hash/size was captured, and file-0's own metadata field still reads 'unverified' and can be updated based on page-10. No new visit is warranted since re-fetching the already-fetched CSV URL should be avoided and no unvisited relevant pointer links remain.",
+        "url": "",
+        "query": ""
+      }
+    ],
+    "usage": [
+      {
+        "id": "360189-glm-0",
+        "status": "settled",
+        "actual": 0.00075048,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "360189-glm-1",
+        "status": "settled",
+        "actual": 0.00072408,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "360189-glm-2",
+        "status": "settled",
+        "actual": 0.00086461,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "363303",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T03:07:42.997Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-7",
+          "page-6"
+        ],
+        "explanation": "The MRF was successfully fetched (file-0, score 1, CSV, version 3.0.0, date within 365 days) via the Panacea download link. The .well-known/cms-hpt.txt pointer returned 404 (page-7/page-3), but evidence indicates the pointer file resides at https://www.akronchildrens.org/cms-hpt.txt with a recorded sha256. Verifying this official pointer page confirms the hospital's published MRF location and validates the linkage between the pointer and the MRF, rather than relying on the third-party host alone.",
+        "url": "https://www.akronchildrens.org/cms-hpt.txt"
+      },
+      {
+        "turn": 1,
+        "action": "stop",
+        "evidence_ids": [
+          "file-0",
+          "page-8",
+          "page-6",
+          "page-7"
+        ],
+        "explanation": "Sufficient evidence collected: the hospital's pointer file (akronchildrens.org/cms-hpt.txt, status 206) lists the machine-readable file URL, the Price Transparency page links the same MRF ('Machine-Readable Published Schedule of Standard Charges – Akron'), and file-0 shows a successful HTTP 200 CSV download dated 2025-11-11 with version 3.0.0 and address matching the hospital. The .well-known/cms-hpt.txt variant 404s but the pointer file itself resolves. No further action needed; do not declare compliance from this evidence alone.",
+        "url": null
+      }
+    ],
+    "usage": [
+      {
+        "id": "363303-glm-0",
+        "status": "settled",
+        "actual": 0.00049455,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "363303-glm-1",
+        "status": "settled",
+        "actual": 0.0005006,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "371314",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:49:37.802Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "search",
+        "evidence_ids": [
+          "page-0",
+          "page-1",
+          "page-2"
+        ],
+        "explanation": "All three fetches to anadarkohospital.com (root, /.well-known/cms-hpt.txt, and /cms-hpt.txt) returned status 0 with no content or links, so no pointer file or pricing page has been observed and the current evidence is insufficient. Since no valid observed link remains to visit and repeating fetched URLs is not allowed, the next step is an external web search to locate the hospital's official pricing/price-transparency page or a hosting-domain pointer for CCN 371314. Any URL found will be treated as a lead only.",
+        "query": "\"THE PHYSICIANS' HOSPITAL IN ANADARKO\" 371314 price transparency machine-readable file site:anadarkohospital.com OR CMS hospital price transparency"
+      },
+      {
+        "query": "\"THE PHYSICIANS' HOSPITAL IN ANADARKO\" 371314 price transparency machine-readable file site:anadarkohospital.com OR CMS hospital price transparency",
+        "status": "queued-for-web-search-serper-disabled"
+      }
+    ],
+    "usage": [
+      {
+        "id": "371314-glm-0",
+        "status": "settled",
+        "actual": 0.000180905,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "390146",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T03:11:54.347Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "file-1",
+          "page-1"
+        ],
+        "explanation": "There is a discrepancy between the hospital's pointer file and the reachable machine-readable file. The cms-hpt.txt pointer (page-1, hosted on Squarespace static hosting rather than wgh.org/.well-known) declares the current MRF as https://www.wgh.org/s/250965598_warren-general-hospital_standardcharges-8tly.csv, but that file returned HTTP 404 (file-0, metadata unverified). Meanwhile a corroborated but older-version CSV exists (file-1, dated 2026-03-12, version 2.0.0, flagged 'date-within-365-days-older-version'), so the official current file cannot yet be confirmed. The pointer's declared source page https://www.wgh.org/price-transparency has not been fetched (it is only observed as a link on other pages) and is the official facility pricing/pointer page; visiting it will show which MRF link the hospital currently publishes and clarify whether the pointer is stale or the -8tly file was moved. This is a lead, not a confirmation of compliance.",
+        "url": "https://www.wgh.org/price-transparency"
+      },
+      {
+        "turn": 1,
+        "error": "Unexpected non-whitespace character after JSON at position 1048 (line 7 column 1)"
+      },
+      {
+        "turn": 2,
+        "error": "Unterminated string in JSON at position 986 (line 4 column 884)"
+      }
+    ],
+    "usage": [
+      {
+        "id": "390146-glm-0",
+        "status": "settled",
+        "actual": 0.000769555,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "390146-glm-1",
+        "status": "settled",
+        "actual": 0.001266455,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "390146-glm-2",
+        "status": "settled",
+        "actual": 0.001400455,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "390147",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:59:05.369Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "search",
+        "evidence_ids": [
+          "file-0",
+          "page-0",
+          "page-1",
+          "page-2",
+          "page-3"
+        ],
+        "explanation": "Evidence is insufficient to verify the Mon Valley MRF. The official facility pointer file (page-0, cms-hpt.txt, HTTP 200) lists mrf-url https://www.phhealthcare.org/download/?id=14847 for 'Penn Highlands Mon Valley', matching file-0, but that download returned HTTP 403 with identity 'mrf-header-unreachable' and metadata 'unverified', so the file's contents, format, and location identity cannot be confirmed. Repeat fetches of the hospital's location page (page-1/2/3) also returned 403, and repeating already-fetched URLs is not useful. The next step is to find an alternative accessible source for this facility's standard-charges file.",
+        "query": "\"Penn Highlands Mon Valley\" Monongahela PA hospital price transparency machine-readable standard charges file CCN 390147"
+      },
+      {
+        "query": "\"Penn Highlands Mon Valley\" Monongahela PA hospital price transparency machine-readable standard charges file CCN 390147",
+        "status": "queued-for-web-search-serper-disabled"
+      }
+    ],
+    "usage": [
+      {
+        "id": "390147-glm-0",
+        "status": "settled",
+        "actual": 0.00046193,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "390325",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:54:40.996Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0"
+        ],
+        "explanation": "file-0 is the open identity question: a cdmpricing.com-hosted 'standard charges' file with no usable header identity (no name/location/state captured), a low score of 0.43, and unverified date, so it cannot yet be attributed to OSS Orthopaedic Hospital on its own. However, file-0 records an official pointer file on the hospital's own domain (https://osshealth.com/cms-hpt.txt, with a checked-at timestamp and sha256). Visiting that pointer is the next step: if the hospital's official pointer lists the cdmpricing.com URL, that corroborates file-0's identity for CCN 390325. Re-visiting file-0's own URL would repeat a fetched URL. file-1 is already corroborated (header name 'OSS Orthopaedic Hospital' and address '1861 Powder Mill Rd, York, PA 17402' match the facility, dated 2026-04-01, version 3.0.0, within 365 days), and file-2/page-7 are a health-plan Transparency in Coverage index (Allstate Benefits via Allied/Sapphire), not a hospital standard-charges file, so neither needs follow-up here.",
+        "url": "https://osshealth.com/cms-hpt.txt"
+      },
+      {
+        "turn": 1,
+        "action": "review",
+        "evidence_ids": [
+          "file-0",
+          "file-1",
+          "page-8",
+          "page-4",
+          "page-6"
+        ],
+        "explanation": "Identity assessment on existing evidence: file-1 (https://osshealth.com/uploads/docs/800458999_oss-orthopaedic-hospital_standardcharges_2026-04-09-171951_gboz.csv) is the strongest attribution candidate — it is hosted on the hospital's own domain, its header name 'OSS Orthopaedic Hospital' and address '1861 Powder Mill Rd, York, PA 17402' exactly match the facility record for CCN 390325, the filename embeds the hospital name and EIN 800458999, it is linked from official facility pages (oss-health-pricing, surprise-billing), and it carries a current date (2026-04-01) and version 3.0.0. file-0 (cdmpricing.com/.../standard-charges) is supported as a lead by the official pointer file osshealth.com/cms-hpt.txt (page-8), but its fetched header contained no name, state, or license fields and its date is unverified ('mrf-header-has-no-license-state', 'date-unverified'); since that URL was already fetched with status 206 and yielded no identifying header, re-fetching it is not warranted and identity for that file remains unconfirmed on current evidence. file-2 (alliedbenefit.sapphiremrfhub.com) is a payer Transparency-in-Coverage TOC, not a hospital standard-charges file, and is excluded from the attribution. Overall: attribution of OSS Orthopaedic Hospital's machine-readable standard charges is corroborated via file-1; evidence is insufficient to independently confirm identity of the cdmpricing.com file beyond the pointer-file support. No compliance determination or approval is asserted; no further fetch is indicated at this time."
+      }
+    ],
+    "usage": [
+      {
+        "id": "390325-glm-0",
+        "status": "settled",
+        "actual": 0.00172557,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "390325-glm-1",
+        "status": "settled",
+        "actual": 0.002241315,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "391315",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T03:00:23.601Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-0"
+        ],
+        "explanation": "The official CMS HPT pointer file confirms the Elk location MRF URL, but prior fetches returned 403 with unverified metadata. Retry visiting the MRF directly to attempt to read its header and verify identity (name/location/address) for Penn Highlands Elk.",
+        "url": "https://www.phhealthcare.org/download/?id=15372"
+      },
+      {
+        "turn": 1,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-4",
+          "page-3",
+          "page-2"
+        ],
+        "explanation": "The CMS pointer file (page-4/page-0, HTTP 200) correctly lists a Penn Highlands Elk MRF (file-0, /download/?id=15372), but the MRF itself and the site root return HTTP 403, leaving the file's identity and metadata unverified. The download URL was already fetched and failed, so repeating it is not useful. The source page cited in the pointer file and evidence (patient-billing-services) has not been fetched directly and may expose an alternate MRF link, vendor-hosted file, or access instructions; it is the best untried observed lead. If it also blocks access, a queued external search for alternate hosting will be needed.",
+        "url": "https://www.phhealthcare.org/patients-visitors/patient-billing-services"
+      },
+      {
+        "turn": 2,
+        "action": "stop",
+        "evidence_ids": [
+          "file-0",
+          "page-3",
+          "page-4",
+          "page-5",
+          "page-2",
+          "page-1"
+        ],
+        "explanation": "Review complete for PENN HIGHLANDS ELK (CCN 391315). The official pointer file (https://www.phhealthcare.org/cms-hpt.txt, HTTP 200, evidence page-4/page-0) confirms the facility's machine-readable file URL as https://www.phhealthcare.org/download/?id=15372. However, that MRF returned HTTP 403 on repeated native fetches (file-0, page-3), and the hosting domain blocks retrieval broadly: the source billing page (page-5) and homepage (page-2) also return 403, and the .well-known pointer variant returns 404 (page-1). No unfetched relevant links remain for this facility, so no visit target is available; a queued search would not resolve a server-side access denial since discovery is already confirmed via the pointer file. Evidence is sufficient only to conclude the file is currently unreachable (403) — the file's contents, format, and currency cannot be verified, and no compliance determination is made."
+      }
+    ],
+    "usage": [
+      {
+        "id": "391315-glm-0",
+        "status": "settled",
+        "actual": 0.00025,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "391315-glm-1",
+        "status": "settled",
+        "actual": 0.0009954,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "391315-glm-2",
+        "status": "settled",
+        "actual": 0.000751855,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "400130",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:50:35.333Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "search",
+        "evidence_ids": [
+          "page-0",
+          "page-1",
+          "page-2"
+        ],
+        "explanation": "The fetched domain hospitalmetroutuado.com returned only 202 statuses with empty content, no pricing links, and no CMS-HPT pointer file text. Evidence is insufficient to verify it is the official domain for Hospital Metropolitano de la Montaña (CCN 400130). Search for the official hospital website or MRF host.",
+        "query": "Hospital Metropolitano de la Montana Barranquitas Puerto Rico official site price transparency machine-readable file",
+        "url": null
+      },
+      {
+        "query": "Hospital Metropolitano de la Montana Barranquitas Puerto Rico official site price transparency machine-readable file",
+        "status": "queued-for-web-search-serper-disabled"
+      }
+    ],
+    "usage": [
+      {
+        "id": "400130-glm-0",
+        "status": "settled",
+        "actual": 0.00007036,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "420073",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T03:09:19.924Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "stop",
+        "evidence_ids": [
+          "file-0",
+          "page-5",
+          "page-6",
+          "page-3",
+          "page-1",
+          "page-0"
+        ],
+        "explanation": "Sufficient evidence gathered. The official price transparency page (page-5) links directly to the machine-readable JSON file (file-0), matching name and address (2720 Sunset Blvd, West Columbia, SC 29169) corroborating identity. HTTP 206 with valid JSON header metadata, dated 2026-04-01 (within 365 days), version 3.0.0. CMS-hpt.txt pointer checks at both /.well-known/cms-hpt.txt and /cms-hpt.txt returned 404 pages (page-0, page-1, page-3, page-6), so no pointer file exists, but the pricing page itself serves as a discoverable pointer. No further action needed.",
+        "url": null
+      }
+    ],
+    "usage": [
+      {
+        "id": "420073-glm-0",
+        "status": "settled",
+        "actual": 0.00052055,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "440072",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:55:06.892Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "search",
+        "evidence_ids": [
+          "file-3",
+          "page-7"
+        ],
+        "explanation": "The candidate file (file-3) has a header address (400 E Tickle Street, Dyersburg, TN 38024) matching the target hospital's address exactly, but the header name is 'West Tennessee Healthcare Dyersburg Hospital' while the roster name is 'Dyersburg Regional Medical Center'. Evidence suggests a possible facility rename under the West Tennessee Healthcare system, but this is not confirmed. No unvisited relevant link is available on the already-fetched pages, so a search is needed to confirm the identity link between the two names (e.g., a rename or ownership change).",
+        "query": "\"Dyersburg Regional Medical Center\" \"West Tennessee Healthcare Dyersburg Hospital\" renamed former name"
+      },
+      {
+        "query": "\"Dyersburg Regional Medical Center\" \"West Tennessee Healthcare Dyersburg Hospital\" renamed former name",
+        "status": "queued-for-web-search-serper-disabled"
+      }
+    ],
+    "usage": [
+      {
+        "id": "440072-glm-0",
+        "status": "settled",
+        "actual": 0.0005027,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "440102",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T03:07:09.124Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "stop",
+        "evidence_ids": [
+          "file-1",
+          "page-7",
+          "page-0",
+          "file-0"
+        ],
+        "explanation": "Evidence is sufficient to conclude the file-access review. file-1 (https://lincolnhealthsystem.com/wp-content/uploads/882472117_hh-health-system-lincoln-inc_standardcharges.csv) was fetched successfully (HTTP 206, file_kind csv, version 3.0.0, date 2026-07-31, within 365 days of the 2026-09-09 check), and its headers (HH Health System Lincoln Inc / Lincoln Medical Center / 106 Medical Center Blvd, Fayetteville, TN 37334) match the facility record for CCN 440102, with identity corroborated by file name and address. The same file is directly linked from the hospital's official price transparency page (page-7, HTTP 200). Context: the pointer file is reachable only at lincolnhealthsystem.com/cms-hpt.txt (page-0, HTTP 206) and its mrf-url still points to the old domain hhlincolnhealth.org, which is currently unreachable (file-0 curl DNS timeout; page-6 status 0), while /.well-known/cms-hpt.txt returns 404 (page-1). The accessible, corroborated copy on the current domain covers the review; the stale pointer target on hhlincolnhealth.org is noted as a finding. No unvisited relevant links remain, and re-fetching file-0 would repeat a fetched URL, so no further visit or search is warranted."
+      }
+    ],
+    "usage": [
+      {
+        "id": "440102-glm-0",
+        "status": "settled",
+        "actual": 0.001167355,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "450641",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T03:02:59.176Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "error": "Unexpected token '`', \"```json\n{\n\"... is not valid JSON"
+      },
+      {
+        "turn": 1,
+        "action": "stop",
+        "evidence_ids": [
+          "file-0",
+          "page-0",
+          "page-3",
+          "page-2",
+          "page-1"
+        ],
+        "explanation": "Evidence is sufficient for the file-access review. The official pointer file (page-0) at noconageneral.com/cms-hpt.txt resolves to the source page (page-3, /hospital/) and to the standard charges CSV (file-0), which returned HTTP 200 as parseable CSV dated 2026-02-25 (within 365 days). Header name, location, and address (100 Park Road, Nocona, TX 76255) corroborate the hospital identity for CCN 450641. The well-known pointer location returned 404 (page-1), but the alternate pointer path was valid. One limitation remains: the file version string 'ERSION 4.0' is malformed and cannot be verified from supplied evidence, so version compliance is unconfirmed, but no further fetch of already-observed URLs is warranted.",
+        "url": null,
+        "query": null
+      }
+    ],
+    "usage": [
+      {
+        "id": "450641-glm-0",
+        "status": "settled",
+        "actual": 0.00139629,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "450641-glm-1",
+        "status": "settled",
+        "actual": 0.0003065,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "451353",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:56:10.999Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-0"
+        ],
+        "explanation": "The MRF header address (1310 South Alford Street, Crane, TX 79731) exactly matches the district's address, and the pointer file on the official domain (www.cranememorial.org/cms-hpt.txt, page-0) confirms both the claraprice source page and the exact MRF URL already fetched (file-0). However, identity is not resolved: the MRF header name 'Crane Memorial Hospital' does not match the roster name 'CRANE COUNTY HOSPITAL DISTRICT' and identity_basis is empty, so the name linkage is still unconfirmed. The strongest unvisited, evidence-observed lead is the source page referenced by both file-0 and the pointer file; visiting it may show the legal entity name tying Crane Memorial Hospital to Crane County Hospital District. Evidence is otherwise insufficient to resolve the identity flag. Failed fetches (page-1..page-3) and the already-fetched MRF/pointer URLs are not repeated.",
+        "url": "https://secure.claraprice.net/price-transparency/crane-memorial-tx"
+      },
+      {
+        "turn": 1,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-0",
+          "page-3"
+        ],
+        "explanation": "The MRF header name 'Crane Memorial Hospital' does not match the roster name 'CRANE COUNTY HOSPITAL DISTRICT' (flagged as mrf-header-does-not-match-unresolved-roster), but the header address 1310 South Alford Street, Crane, TX 79731 matches the roster address exactly, and the hospital's own domain serves a CMS HPT pointer file (page-0, status 206) that endorses the Clara Price source page and the MRF URL. This suggests a legal-entity vs. operating-name mismatch, but it is not yet confirmed. The prior fetch of the hospital homepage (page-3) returned status 0, meaning it was never successfully retrieved, so visiting https://cranememorial.org/ is not a repeat of a fetched URL. The homepage should show whether the facility presents itself as 'Crane Memorial Hospital' operating under Crane County Hospital District, which would resolve the identity question. Evidence is currently insufficient to conclude the MRF belongs to this CCN.",
+        "url": "https://cranememorial.org/"
+      },
+      {
+        "turn": 2,
+        "action": "visit",
+        "evidence_ids": [
+          "file-0",
+          "page-0",
+          "page-3"
+        ],
+        "explanation": "Identity is unresolved: the MRF header says 'Crane Memorial Hospital' while the roster name is 'Crane County Hospital District', but the header address (1310 South Alford Street, Crane, TX 79731) exactly matches the CCN record, and a pointer file served from the www host (www.cranememorial.org/cms-hpt.txt, status 206) endorses this exact MRF URL and source page. The non-www homepage (cranememorial.org) failed to load (page-3, page-2, page-1 all status 0), but the www host demonstrably responds, so visiting the not-yet-fetched https://www.cranememorial.org/ is the best next lead to confirm whether 'Crane Memorial Hospital' is the operating name of Crane County Hospital District. This visit is only a lead; it does not itself establish compliance or resolve the identity match.",
+        "url": "https://www.cranememorial.org/"
+      }
+    ],
+    "usage": [
+      {
+        "id": "451353-glm-0",
+        "status": "settled",
+        "actual": 0.000445975,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "451353-glm-1",
+        "status": "settled",
+        "actual": 0.001051965,
+        "reserved": 0.006212800000000001
+      },
+      {
+        "id": "451353-glm-2",
+        "status": "settled",
+        "actual": 0.00078606,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "460013",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T03:07:42.720Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "search",
+        "evidence_ids": [
+          "file-0",
+          "page-0",
+          "page-1",
+          "page-2"
+        ],
+        "explanation": "A valid standard-charges JSON for CCN 460013 exists with matching header name/address, but its date (2024-10-01) is over 365 days old. The hospital's website pointer endpoints failed (301 redirects on /.well-known/cms-hpt.txt and /cms-hpt.txt, plus a 500 error), so no current official pointer page was reachable. A web search is needed to locate the hospital's official pricing/pointer page for a more recent file.",
+        "query": "Mountain View Hospital Payson UT price transparency standard charges official site"
+      },
+      {
+        "query": "Mountain View Hospital Payson UT price transparency standard charges official site",
+        "status": "queued-for-web-search-serper-disabled"
+      }
+    ],
+    "usage": [
+      {
+        "id": "460013-glm-0",
+        "status": "settled",
+        "actual": 0.0001637,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "501316",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:51:13.840Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "review",
+        "evidence_ids": [
+          "file-0",
+          "file-1",
+          "page-3"
+        ],
+        "explanation": "Evidence in hand is sufficient to resolve this identity-or-format review; no further visit or search is needed. file-0 is the hospital's current standard-charges MRF: HTTP 200, CSV, header name 'Klickitat Valley Hospital' and header address '310 South Roosevelt, Goldendale WA 98620' match the CCN 501316 record (identity corroborated, file-name-and-address basis), file date 2026-03-31 is within 365 days of the 2026-09-09 check (version 3.0.0), and the exact URL is the 'machine readable file of standard charges' link published on the hospital's own Price Transparency page (page-3/page-7). file-1's flag ('mrf-header-does-not-match-unresolved-roster') is explained by a legal-name vs facility-name difference: its header reads 'Klickitat County Public Hospital District No 1' at the identical address on the hospital's own domain (kvhealth.net), consistent with the same organization; in any case that file is stale (2024-12-02, over 365 days) and is not linked from the current transparency page, so it is superseded by file-0 and does not change the finding. Evidence is sufficient on this basis; no compliance determination or format-failure declaration is being made."
+      }
+    ],
+    "usage": [
+      {
+        "id": "501316-glm-0",
+        "status": "settled",
+        "actual": 0.001114305,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "660001",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:44:45.871Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "search",
+        "evidence_ids": [
+          "page-2",
+          "page-1",
+          "page-0"
+        ],
+        "explanation": "Evidence is insufficient: all three fetched URLs on chcc.health (homepage, /.well-known/cms-hpt.txt, and /cms-hpt.txt) returned status 0 with empty text and no links, so neither the root page nor a CMS-HPT pointer file could be verified. Re-fetching the same URLs is not useful, and no observed links exist to visit. A queued external web search is the appropriate next step to locate the official Commonwealth Health Center (CHCC, CCN 660001) pricing or pointer page, including checking whether CHCC's authoritative domain is chcc.gov.mp rather than chcc.health. Any URL surfaced is treated as a lead only.",
+        "query": "Commonwealth Health Center CHCC Saipan CNMI hospital price transparency official site"
+      },
+      {
+        "query": "Commonwealth Health Center CHCC Saipan CNMI hospital price transparency official site",
+        "status": "queued-for-web-search-serper-disabled"
+      }
+    ],
+    "usage": [
+      {
+        "id": "660001-glm-0",
+        "status": "settled",
+        "actual": 0.00036366,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  },
+  {
+    "ccn": "670006",
+    "model": "z-ai/glm-5.3-flash",
+    "completedAt": "2026-09-09T02:58:23.578Z",
+    "role": "unverified leads; independent verification required",
+    "decisions": [
+      {
+        "turn": 0,
+        "action": "review",
+        "evidence_ids": [
+          "file-0",
+          "file-1",
+          "file-2",
+          "page-5"
+        ],
+        "explanation": "The official pricing transparency page (page-5) links directly to the standard charges file (file-0), which is current (dated 2026-03-25, within 365 days) and its header name and address (THE HOSPITAL AT WESTLAKE MEDICAL CENTER, 5656 BEE CAVES RD, AUSTIN, TX 78746) match the facility record for CCN 670006. The identity flags on file-0 ('name-without-location') stem from the header location field repeating the hospital name, but the address and state fields corroborate identity. Files file-1 and file-2 are stale (over 365 days old) and cannot serve as the current file. Evidence appears sufficient to support identity; reviewing file-0 in detail to confirm header/format fields resolves the remaining flag.",
+        "url": "https://www.westlakemedical.com/wp-content/uploads/2026/05/820578078_westlake-medical-center_standardcharges-2.csv"
+      }
+    ],
+    "usage": [
+      {
+        "id": "670006-glm-0",
+        "status": "settled",
+        "actual": 0.0007796,
+        "reserved": 0.006212800000000001
+      }
+    ]
+  }
+]

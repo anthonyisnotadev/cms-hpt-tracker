@@ -1,0 +1,44 @@
+# curl-style evidence for https://raw.githubusercontent.com/Mt-Grant-General-Hospital/Pricing-Transparency/refs/heads/main/820299396_MtGrantGeneralHospital_standardcharges.JSON
+# fetched 2026-09-07T01:35:33.259Z with the tracker's BROWSER_HEADERS (production client)
+# record: 291300 | MOUNT GRANT GENERAL HOSPITAL | NV | finding: mrf-url-unreachable
+
+* DNS raw.githubusercontent.com: 185.199.111.133, 185.199.108.133, 185.199.109.133, 185.199.110.133
+
+> GET /Mt-Grant-General-Hospital/Pricing-Transparency/refs/heads/main/820299396_MtGrantGeneralHospital_standardcharges.JSON  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://raw.githubusercontent.com/Mt-Grant-General-Hospital/Pricing-Transparency/refs/heads/main/820299396_MtGrantGeneralHospital_standardcharges.JSON
+< HTTP 404
+< accept-ranges: bytes
+< access-control-allow-origin: *
+< content-length: 14
+< content-security-policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+< content-type: text/plain; charset=utf-8
+< cross-origin-resource-policy: cross-origin
+< date: Mon, 07 Sep 2026 01:35:34 GMT
+< expires: Mon, 07 Sep 2026 01:40:34 GMT
+< source-age: 0
+< strict-transport-security: max-age=31536000
+< vary: Authorization,Accept-Encoding
+< via: 1.1 varnish
+< x-cache: MISS
+< x-cache-hits: 0
+< x-content-type-options: nosniff
+< x-fastly-request-id: 86e682dfe21491ce4890bccd868d103654c0d007
+< x-frame-options: deny
+< x-github-edge-region: iad
+< x-github-request-id: 8DCE:9C506:4B517F:6F5B36:6A9E14E6
+< x-served-by: cache-ewr-kewr1740059-EWR
+< x-timer: S1788744935.964920,VS0,VE32
+< x-xss-protection: 1; mode=block
+< --- body (14 bytes read) ---
+< 404: Not Found
+
+* total time: 210 ms

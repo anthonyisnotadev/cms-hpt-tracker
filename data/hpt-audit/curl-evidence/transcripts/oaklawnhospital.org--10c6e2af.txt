@@ -1,0 +1,40 @@
+# curl-style evidence for https://oaklawnhospital.org/381368347_ella-em-brown-charitable-circle-dba-oaklawn-hospital_standardcharges.csv.zip
+# fetched 2026-09-07T01:34:41.069Z with the tracker's BROWSER_HEADERS (production client)
+# record: 230217 | OAKLAWN HOSPITAL | MI | finding: mrf-url-unreachable
+
+* DNS oaklawnhospital.org: 34.83.63.47
+
+> GET /381368347_ella-em-brown-charitable-circle-dba-oaklawn-hospital_standardcharges.csv.zip  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://oaklawnhospital.org/381368347_ella-em-brown-charitable-circle-dba-oaklawn-hospital_standardcharges.csv.zip
+< HTTP 404
+< content-encoding: gzip
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:34:42 GMT
+< server: nginx
+< vary: Accept-Encoding
+< --- body (548 bytes read) ---
+< <html>
+< <head><title>404 Not Found</title></head>
+< <body>
+< <center><h1>404 Not Found</h1></center>
+< <hr><center>nginx</center>
+< </body>
+< </html>
+< <!-- a padding to disable MSIE and Chrome friendly error page -->
+< <!-- a padding to disable MSIE and Chrome friendly error page -->
+< <!-- a padding to disable MSIE and Chrome friendly error page -->
+< <!-- a padding to disable MSIE and Chrome friendly error page -->
+< <!-- a padding to disable MSIE and Chrome friendly error page -->
+< <!-- a padding to disable MSIE and Chrome friendly error page -->
+< 
+
+* total time: 589 ms

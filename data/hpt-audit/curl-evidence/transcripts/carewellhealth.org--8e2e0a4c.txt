@@ -1,0 +1,49 @@
+# curl-style evidence for https://carewellhealth.org/cms-hpt.txt
+# fetched 2026-09-07T01:35:31.752Z with the tracker's BROWSER_HEADERS (production client)
+# record: 310083 | CAREWELL HEALTH MEDICAL CENTER | NJ | finding: no-cms-hpt-txt-published
+
+* DNS carewellhealth.org: 23.227.38.32
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://carewellhealth.org/cms-hpt.txt
+< HTTP 404
+< alt-svc: h3=":443"; ma=86400
+< cache-control: private, no-store
+< cdn-cache-control: no-cache, no-store
+< cf-cache-status: DYNAMIC
+< cf-ray: a371fa39ac72e19f-IAD
+< content-language: en-US
+< content-length: 0
+< content-security-policy: block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests;
+< content-type: application/json; charset=utf-8
+< date: Mon, 07 Sep 2026 01:35:33 GMT
+< etag: "page_cache:93061513514:NotFoundController:b646806979b0b0a6faf2b71fbfbac259"
+< nel: {"report_to":"cf-nel","success_fraction":0.01,"max_age":604800}
+< powered-by: Shopify
+< report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=7KBjoOx0HfKCh93erKa6v7wZWKJbS0C000hrubRfQcH2O5Vqpw0LkTSVyw45lmLstVnfAI0ZMhGyMTtI8QLEL62RvboMfJprFu%2FW7JAaX7qRxF9kWI1SI8rd8C%2Fv8eMTUfrdOQ%3D%3D"}]}
+< server: cloudflare
+< server-timing: processing;dur=58;desc="gc:2", db;dur=20, db_async;dur=8.42, asn;desc="212238", edge;desc="IAD", country;desc="US", theme;desc="176520331562", pageType;desc="index", servedBy;desc="vx8q", requestID;desc="4e06a435-57ee-4390-8eb4-5bb45a7e4813-1788744933", _y;desc="1361b011-d7ba-4432-8f08-ee0d72ea0592", _s;desc="11a822b7-bb2f-437d-88ba-c1f007017632", _cmp;desc="3.AMPS_USVA_f_t_umR1O*mySIi9s0R*6GQAFw"
+< shopify-complexity-score: 104
+< shopify-complexity-score-v2: 104
+< strict-transport-security: max-age=7889238
+< vary: Accept
+< x-content-type-options: nosniff
+< x-dc: gcp-us-east1,gcp-us-east1,gcp-us-east1
+< x-download-options: noopen
+< x-frame-options: DENY
+< x-permitted-cross-domain-policies: none
+< x-request-id: 4e06a435-57ee-4390-8eb4-5bb45a7e4813-1788744933
+< x-xss-protection: 1; mode=block
+< --- body (0 bytes read) ---
+< 
+
+* total time: 150 ms

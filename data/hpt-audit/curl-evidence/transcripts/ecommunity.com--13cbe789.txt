@@ -1,0 +1,161 @@
+# curl-style evidence for https://ecommunity.com/
+# fetched 2026-09-07T01:33:03.593Z with the tracker's BROWSER_HEADERS (production client)
+# record: 150179 | FAIRBANKS | IN | finding: not-assessed-not-named-in-file
+# record: 244015 | COMMUNITY BEHAVIORAL HEALTH HOSPITAL - BAXTER | MN | finding: not-assessed-not-named-in-file
+
+* DNS ecommunity.com: 52.21.76.197
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://ecommunity.com/
+< HTTP 301
+< age: 292181
+< cache-control: max-age=31536000
+< content-length: 234
+< content-type: text/html; charset=iso-8859-1
+< date: Mon, 07 Sep 2026 01:33:05 GMT
+< expires: Fri, 03 Sep 2027 16:23:23 GMT
+< location: http://www.ecommunity.com/
+< server: nginx
+< via: varnish
+< x-cache: HIT
+< x-cache-hits: 8900
+< x-content-type-options: nosniff
+< x-request-id: v-c8f9d136-a7b3-11f1-b410-cb65e87a7ec0
+* following Location: http://www.ecommunity.com/
+
+* redirect hop 2: http://www.ecommunity.com/
+< HTTP 301
+< cache-control: max-age=60
+< connection: keep-alive
+< content-length: 0
+< date: Mon, 07 Sep 2026 01:33:05 GMT
+< expires: Mon, 07 Sep 2026 01:34:05 GMT
+< location: https://www.ecommunity.com/
+< server-timing: cdn-cache; desc=HIT, edge; dur=1, ak_p; desc="1788744785144_389073063_3121833952_7_9052_0_0_-";dur=1
+< x-akamai-path: <user_path>/
+* following Location: https://www.ecommunity.com/
+
+* final response: https://www.ecommunity.com/
+< HTTP 200
+< accept-ranges: bytes
+< cache-control: public, max-age=60
+< content-encoding: gzip
+< content-language: en
+< content-length: 12187
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:33:05 GMT
+< etag: "1788744777-gzip"
+< expires: Mon, 07 Sep 2026 01:34:05 GMT
+< last-modified: Mon, 07 Sep 2026 01:32:57 GMT
+< server-timing: cdn-cache; desc=REVALIDATE, edge; dur=17, origin; dur=15, ak_p; desc="1788744785224_389073063_3121834538_3120_10737_0_49_15";dur=1
+< strict-transport-security: max-age=15768000
+< vary: Accept-Encoding
+< x-age: 7
+< x-ah-environment: prod
+< x-akamai-path: <user_path>/
+< x-akamai-transformed: 9 10262 0 pmb=mRUM,1
+< x-cache-hits: 1
+< x-consumer-id: default_consumer
+< x-content-type-options: nosniff
+< x-drupal-dynamic-cache: HIT
+< x-generator: Drupal 11 (https://www.drupal.org)
+< x-request-id: v-0e54dbc2-aa5c-11f1-bf6f-d7cf5a96492a
+< x-xss-protection: 1; mode=block
+< --- body (41491 bytes read) ---
+< <!DOCTYPE html>
+< <html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<   <head>
+<           <div id="guide"></div>
+< <script
+<   src="https://guide.loyalhealth.com/client/client.bundle.js"
+<   data-id="guide-client-id"
+<   data-value="f1677c0e-1c64-4272-8a2f-a12a57af6511"
+<   async>
+< </script>
+< <script type="text/javascript"> 
+<     window._monsido = window._monsido || {
+<         token: "17dqAUyhRKXhDuhO-fvT3w",
+<         heatmap: {
+<             enabled: true,
+<         },
+<         pageCorrect: {
+<             enabled: true,
+<         },
+<     };
+< </script>
+< <script type="text/javascript" async src="https://app-script.monsido.com/v2/monsido-script.js"></script>
+<         <meta charset="utf-8" />
+< <noscript><style>form.antibot * :not(.antibot-message) { display: none !important; }</style>
+< </noscript><meta name="description" content="Community Health Network puts patients first while offering a full continuum of healthcare services, from primary care and virtual care for immediate medical needs to a wide range of specialty care, including world-class cancer care, cardiovascular, orthopedic, women’s and children’s, behavioral health, physical therapy and much more." />
+< <link rel="canonical" href="https://www.ecommunity.com/" />
+< <link rel="shortlink" href="https://www.ecommunity.com/" />
+< <meta property="og:site_name" content="eCommunity" />
+< <meta property="og:title" content="Community Health Network - Home" />
+< <meta name="Generator" content="Drupal 11 (https://www.drupal.org)" />
+< <meta name="MobileOptimized" content="width" />
+< <meta name="HandheldFriendly" content="true" />
+< <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+< <script data-cfasync="false" type="text/javascript">const acquiaVwoUserOptOut = function () {
+<       if ('' == 'optout') {
+<         return (localStorage.getItem('acquia_vwo_user_opt') !== null &&
+<                 localStorage.getItem('acquia_vwo_user_opt') == '0');
+<       }
+<       if ('' == 'optin') {
+<         return (localStorage.getItem('acquia_vwo_user_opt') === null ||
+<                 localStorage.getItem('acquia_vwo_user_opt') == '0');
+<       }
+<       return false;
+<     }
+< </script>
+< <script data-cfasync="false" type="text/javascript">!acquiaVwoUserOptOut() && (window._vwo_code || (function () {
+<       var account_id=1167613,
+<       version=2.1,
+<       settings_tolerance=2000,
+<       hide_element='body',
+<       hide_element_style='opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important',
+<       f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+'_settings',cc={};try{var c=JSON.parse(localStorage.getItem('_vwo_'+account_id+'_config'));cc=c&&typeof c==='object'?c:{}}catch(e){}var stT=cc.stT==='session'?w.sessionStorage:w.localStorage;code={use_existing_jquery:function(){return typeof use_existing_jquery!=='undefined'?use_existing_jquery:undefined},library_tolerance:function(){return typeof library_tolerance!=='undefined'?library_tolerance:undefined},settings_tolerance:function(){return cc.sT||settings_tolerance},hide_element_style:function(){return'{'+(cc.hES||hide_element_style)+'}'},hide_element:function(){if(performance.getEntriesByName('first-contentful-paint')[0]){return''}return typeof cc.hE==='string'?cc.hE:hide_element},getVersion:function(){return version},finish:function(e){if(!f){f=true;var t=d.getElementById('_vis_opt_path_hides');if(t)t.parentNode.removeChild(t);if(e)(new Image).src='https://dev.visualwebsiteoptimizer.com/ee.gif?a='+account_id+e}},finished:function(){return f},addScript:function(e){var t=d.createElement('script');t.type='text/javascript';if(e.src){t.src=e.src}else{t.text=e.text}d.getElementsByTagName('head')[0].appendChild(t)},load:function(e,t){var i=this.getSettings(),n=d.createElement('script'),r=this;t=t||{};if(i){n.textContent=i;d.getElementsByTagName('head')[0].appendChild(n);if(!w.VWO||VWO.caE){stT.removeItem(cK);r.load(e)}}else{var o=new XMLHttpRequest;o.open('GET',e,true);o.withCredentials=!t.dSC;o.responseType=t.responseType||'text';o.onload=function(){if(t.onloadCb){return t.onloadCb(o,e)}if(o.status===200){_vwo_code.addScript({text:o.responseText})}else{_vwo_code.finish('&e=loading_failure:'+e)}};o.onerror=function(){if(t.onerrorCb){return t.onerrorCb(e)}_vwo_code.finish('&e=loading_failure:'+e)};o.send()}},getSettings:function(){try{var e=stT.getItem(cK);if(!e){return}e=JSON.parse(e);if(Date.now()>e.e){stT.removeItem(cK);return}return e.s}catch(e){return}},init:function(){if(d.URL.indexOf('__vwo_disable__')>-1)return;var e=this.settings_tolerance();w._vwo_settings_timer=setTimeout(function(){_vwo_code.finish();stT.removeItem(cK)},e);var t;if(this.hide_element()!=='body'){t=d.createElement('style');var i=this.hide_element(),n=i?i+this.hide_element_style():'',r=d.getElementsByTagName('head')[0];t.setAttribute('id','_vis_opt_path_hides');v&&t.setAttribute('nonce',v.nonce);t.setAttribute('type','text/css');if(t.styleSheet)t.styleSheet.cssText=n;else t.appendChild(d.createTextNode(n));r.appendChild(t)}else{t=d.getElementsByTagName('head')[0];var n=d.createElement('div');n.style.cssText='z-index: 2147483647 !important;position: fixed !important;left: 0 !important;top: 0 !important;width: 100% !important;height: 100% !important;background: white !important;';n.setAttribute('id','_vis_opt_path_hides');n.classList.add('_vis_hide_layer');t.parentNode.insertBefore(n,t.nextSibling)}var o='https://dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&vn='+version;if(w.location.search.indexOf('_vwo_xhr')!==-1){this.addScript({src:o})}else{this.load(o+'&x=true')}}};w._vwo_code=code;code.init();})()
+< )
+< window.VWO = window.VWO || [];
+<       window.VWO.data = window.VWO.data || {};
+<       window.VWO.data.acquia={"drupal":{"title":"Home","content_type":"page","taxonomy":[]}}
+< </script>
+< <script type="application/ld+json">{
+<     "@context": "https://schema.org",
+<     "@graph": [
+<         {
+<             "@type": "MedicalOrganization",
+<             "@id": "https://www.ecommunity.com/",
+<             "url": "https://www.ecommunity.com/",
+<             "name": "Community Health Network",
+<             "logo": {
+<                 "@type": "ImageObject",
+<                 "url": "https://www.ecommunity.com/themes/custom/chn/img/logo.svg",
+<                 "width": "200",
+<                 "height": "48"
+<             }
+<         }
+<     ]
+< }</script>
+< <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+< <link rel="icon" href="/themes/custom/chn/img/favicon.ico" type="image/vnd.microsoft.icon" />
+< <link rel="alternate" hreflang="en" href="https://www.ecommunity.com/" />
+< 
+<     <title>Home | Community Health Network</title>
+<     <link rel="stylesheet" media="all" href="/sites/default/files/css/css_V2Q_-_JJ-_Wkdltm_9wV_CeZ4NYJt-Dwm6MI4YlqKbI.css?delta=0&amp;language=en&amp;theme=chn&amp;include=eJxtj9EOwyAIRX_I6ScZVFLdUIjo1v792i5LH7YHCBwuNwB3WD0xJOwOrtqO3DkE7Cbm5vawJXJlbme_EAegm46NSltOpFTSR-03XIcHEZfxsPKK0GM2kTu61KcAWZiDdz8hHGgEOiwdJOt3fBE7m8xARTMmo-XY8MIyxQfi-FD3hxnlWIB8xVTA7xcesh-0f4gVjW46sLoAiuZZ8KXuzLZymoRve6NwLA" />
+< <link rel="stylesheet" media="all" href="/sites/default/files/css/css_8mY_dpqQIUGpFIXCpymZaTZ3wH7FBraUgP5qIaJzGEw.css?delta=1&amp;language=en&amp;theme=chn&amp;include=eJxtj9EOwyAIRX_I6ScZVFLdUIjo1v792i5LH7YHCBwuNwB3WD0xJOwOrtqO3DkE7Cbm5vawJXJlbme_EAegm46NSltOpFTSR-03XIcHEZfxsPKK0GM2kTu61KcAWZiDdz8hHGgEOiwdJOt3fBE7m8xARTMmo-XY8MIyxQfi-FD3hxnlWIB8xVTA7xcesh-0f4gVjW46sLoAiuZZ8KXuzLZymoRve6NwLA" />
+< 
+<     
+<   
+<                                 <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="AZ9BL-E493U-TA6JP-2P5XY-BLRLN",function(){function e(){if(!i){var e=document.createElement("script");e.id
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 357 ms

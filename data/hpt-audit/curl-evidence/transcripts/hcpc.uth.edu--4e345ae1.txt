@@ -1,0 +1,162 @@
+# curl-style evidence for https://hcpc.uth.edu/cms-hpt.txt
+# fetched 2026-09-07T01:36:05.982Z with the tracker's BROWSER_HEADERS (production client)
+# record: 454076 | HARRIS COUNTY PSYCHIATRIC CENTER | TX | finding: not-assessed-site-unreachable
+
+* DNS hcpc.uth.edu: 172.64.155.243, 104.18.32.13
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://hcpc.uth.edu/cms-hpt.txt
+< HTTP 404
+< access-control-allow-origin: origin
+< cache-control: no-store, max-age=0
+< cf-cache-status: DYNAMIC
+< cf-ray: a371fb0f3e266147-IAD
+< content-encoding: gzip
+< content-security-policy-report-only: default-src 'self'; base-uri 'self';connect-src 'self' https://www.google-analytics.com/ https://analytics.google.com/ https://region1.analytics.google.com/ https://region1.google-analytics.com/g/ https://www.google.com/recaptcha/ https://*.googleapis.com/ https://ka-p.fontawesome.com/ https://kit.fontawesome.com/ https://stats.g.doubleclick.net/ https://adservice.google.com/ https://www.googleadservices.com/ https://ib.adnxs.com/ https://*.curator.io/ https://embedr.flickr.com/ https://match.adsrvr.org https://www.facebook.com/ https://*.google.com/ https://web.sph.uth.edu/ https://*.dynatrace.com/ https://*.live.dynatrace.com https://bf52972voc.bf.dynatrace.com/bf https://links.services.disqus.com/api/domains https://listgrowth.ctctcdn.com/v1/ https://share.uth.edu/ https://uteap-gate.vercel.app/ https://www.snapengage.com/public/api/v3/visitor/analytics https://www.snapengage.com/visitorjs/errors https://links.services.disqus.com/api/ping wss://ws.paradox.ai https://olivia.paradox.ai/ https://*.uth.edu/ https://www.googletagmanager.com/ https://*.ads.linkedin.com/ https://www.linkedin.com/ https://cdn.datatables.net/ https://*.clarity.ms/collect https://ep1.adtrafficquality.google/ https://syndicatedsearch.goog/;font-src https: data:;frame-src https://www.google.com/ https://cse.google.com https://syndicatedsearch.goog https://ep2.adtrafficquality.google https://calendar.google.com/ https://maps.google.com/ https://www.youtube.com https://www.googletagmanager.com/ https://www.youtube-nocookie.com/ https://www.iheart.com/ https://td.doubleclick.net/ https://insight.adsrvr.org/ https://cdn.prod.uidapi.com/ https://public.tableau.com https://vimeo.com/ https://player.vimeo.com/ https://forms.office.com/ https://copilotstudio.microsoft.com https://app.powerbi.com https://player.flipsnack.com/ https://anchor.fm/ https://podcasters.spotify.com/ https://disqus.com/ https://fliphtml5.com/ https://uth.trialstoday.org/ https://uthvideo.uth.tmc.edu/ https://*.twitter.com/ https://jtmenchaca.shinyapps.io https://www.flickr.com/ https://ondemand.viewmedica.com/ https://search.uth.edu/ https://forms.monday.com https://ww2.matchinggifts.com/uhealth_iframe https://i.liadm.com;frame-ancestors 'self' https://libguides.dentistry.uth.edu/;img-src https: blob: data:;manifest-src 'self';media-src https:;object-src https://*.twimg.com/ https://www.googletagmanager.com/ https://dms.licdn.com/;script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.uth.edu https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://code.jquery.com https://cdn.datatables.net https://www.googletagmanager.com https://*.google-analytics.com https://*.google.com https://*.googleapis.com https://*.gstatic.com https://*.googleadservices.com https://*.doubleclick.net https://siteimproveanalytics.com https://connect.facebook.net/ https://cdn.curator.io https://widgets.flickr.com https://kit.fontawesome.com/ https://embedr.flickr.com https://www.youtube.com https://public.tableau.com https://player.vimeo.com https://unpkg.com https://*.adnxs.com https://js.adsrvr.org https://*.linkedin.com https://snap.licdn.com https://*.dynatrace.com https://*.live.dynatrace.com https://*.snapengage.com https://commondatastorage.googleapis.com https://*.radiusbycampusmgmt.com https://*.addevent.com https://static.fliphtml5.com https://s3.amazonaws.com https://tmc.us4.list-manage.com https://static.ctctcdn.com https://platform.twitter.com https://c.disquscdn.com https://*.disqus.com https://dokumfe7mps0i.cloudfront.net https://captive-portal.netops.uth.edu https://*.clarity.ms https://ep2.adtrafficquality.google/ https://sc-static.net/scevent.min.js;style-src 'self' 'unsafe-inline' https://*.uth.edu/ https://cdnjs.cloudflare.com/ajax/libs/ https://*.googleapis.com/ https://www.google.com/cse/static/ https://*.gstatic.com/ https://kit.fontawesome.com/ https://cdn.jsdelivr.net/ https://cdn.curator.io/ https://cdn.datatables.net/ https://www.youtube.com/ https://public.tableau.com/ https://snap.licdn.com/ https://*.linkedin.com/ https://*.dynatrace.com/ https://*.live.dynatrace.com/ https://*.radiusbycampusmgmt.com/ https://*.addevent.com/ https://platform.twitter.com/ https://c.disquscdn.com/ https://*.disqus.com/ https://static.fliphtml5.com/ https://static.ctctcdn.com/ https://*.typekit.net/ https://unpkg.com/swiper@8.4.7/ https://unpkg.com/swiper@8/ https://cdn.jsdelivr.net/foundation/ https://fonts.cdnfonts.com/ https://cdn-images.mailchimp.com/embedcode/ https://cdn.jsdelivr.net/g/ https://unpkg.com/ https://code.jquery.com/ui/ data:;worker-src 'self'; report-uri https://itsec.uth.edu/csp?env=uws-prod&site=hcpc.uth.edu;report-to endpoint-1
+< content-type: text/html;charset=UTF-8
+< date: Mon, 07 Sep 2026 01:36:07 GMT
+< expect-ct: max-age=86400, enforce
+< pragma: no-cache
+< referrer-policy: same-origin
+< reporting-endpoints: endpoint-1="https://itsec.uth.edu/csp?env=uws-prod&site=hcpc.uth.edu"
+< server: cloudflare
+< server-timing: dtTrId;desc="49c8e2f4dabac4ec4acdd8b6c56eac92", dtSInfo;desc="0", dtRpid;desc="1023524894"
+< strict-transport-security: max-age=15552000; includeSubDomains
+< vary: Accept-Encoding
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-oneagent-js-injection: true
+< x-xss-protection: 1; mode=block
+< --- body (16571 bytes read) ---
+<   
+<   
+<   
+<   
+<   
+<     
+<   
+<   
+<   
+< 
+< 
+< 
+< 
+< 
+< 
+< 
+< <!doctype html>
+< <html lang="en">
+< <head>
+< <script type="text/javascript" src="/ruxitagentjs_ICA15789NPQRTUVXfqrux_10343260715123811.js" data-dtconfig="app=ea7c4b59f27d43eb|owasp=1|featureHash=ICA15789NPQRTUVXfqrux|msl=153600|srsr=0|rdnt=1|uxrgce=1|cuc=fw15vsaq|srms=2,1,0,0%2Ftextarea%2Cinput%2Cselect%2Coption;0%2Fdatalist;0%2Fform%20button;0%2F%5Bdata-dtrum-input%5D;0%2F.data-dtrum-input;0%2F%5Bcontenteditable%5D%3Anot%28%5Bcontenteditable%3D%22false%22%5D%29;0%2F%5Brole%3D%22textbox%22%5D%2C%5Brole%3D%22checkbox%22%5D%2C%5Brole%3D%22radio%22%5D%2C%5Brole%3D%22option%22%5D%2C%5Brole%3D%22combobox%22%5D%2C%5Brole%3D%22slider%22%5D%2C%5Brole%3D%22searchbox%22%5D%2C%5Brole%3D%22switch%22%5D%2C%5Brole%3D%22spinbutton%22%5D;1%2F%5Edata%28%28%5C-.%2B%24%29%7C%24%29|mel=100000|expw=1|dpvc=1|lastModification=1788276720292|tp=500,50,0|srbbv=2|agentUri=/ruxitagentjs_ICA15789NPQRTUVXfqrux_10343260715123811.js|reportUrl=/rb_bf52972voc|rid=RID_386641222|rpid=1023524894|domain=uth.edu" data-config='{"revision":1788276720292,"beaconUri":"\/rb_bf52972voc","agentUri":"\/ruxitagentjs_ICA15789NPQRTUVXfqrux_10343260715123811.js","environmentId":"fw15vsaq","modules":"ICA15789NPQRTUVXfqrux"}' data-envconfig='{"tracestateKeyPrefix":"488b5801-2681e896"}' data-appconfig='{"app":"ea7c4b59f27d43eb","userInteractionCapture":["all"],"disableUserTracking":true}'></script><script type="text/javascript" src="https://js-cdn.dynatrace.com/jstag/1624d0f62e6/bf52972voc/a13039e058a1d61b_complete.js" crossorigin="anonymous"></script>
+< <meta charset="UTF-8">
+< <meta name="viewport" content="width=device-width, initial-scale=1.0">
+< 	       
+<     <!-- mpt = 404 Error - Page not found!, url = /global/error/404.htm -->
+<    
+<          <title>404 Error - Page not found! - UT Harris County Psychiatric Center - UTHealth</title>
+< 		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+< 	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+< 	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+< 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+< 	})(window,document,'script','dataLayer','GTM-PCTVDPT');</script>
+< 		<link rel="canonical" href="https://hcpc.uth.edu/cms-hpt.txt">
+<      
+<             <meta prefix="og: https://ogp.me/ns#" property="og:image" content="https://share.uth.edu/global/img/og/hcpc.jpg">
+<     <meta prefix="og: https://ogp.me/ns#" property="og:title" content="404 Error - Page not found!">
+<                 <meta prefix="og: https://ogp.me/ns#" property="og:url" content="https://hcpc.uth.edu/cms-hpt.txt">
+<     <meta prefix="og: https://ogp.me/ns#" property="og:type" content="article">
+<                                              
+< <meta name="pageid" content="f429b39a-11a6-45df-8200-1ee0188149b4">
+< 
+<  
+< 
+<     
+<   <script type="application/ld+json">
+<   {
+<       "@context": "https://schema.org",
+<       "@type": "WebPage",
+<       "name": "404 Error - Page not found!",
+<             "description": "404 Error - Page not found! - UT Harris County Psychiatric Center - UTHealth",
+<       "publisher": {
+<           "@type": "CollegeOrUniversity",
+<           "name": "UTHealth Houston"
+<       }
+<   }
+<   </script>
+<       
+<  <meta name="lastModifiedDate" content="2023-12-07 09:01:59.457">     
+< <!-- This container holds links to resources used with the Foundations 5 implementation -->
+< <link rel="stylesheet" href="https://www.uth.edu/global/foundation/css/normalize.css?v=968367" />
+< <link rel="stylesheet" href="https://www.uth.edu/global/foundation/css/foundation.min.css?v=968367" />
+< <link href="/global/nivo/light.css?v=968367" rel="stylesheet" type="text/css">
+< <link rel="stylesheet" href="https://www.uth.edu/global/css/mainCommon.css?v=968367" />
+< <link rel="stylesheet" href="https://www.uth.edu/global/css/mainInterior.css?v=968367" />
+< <link rel="stylesheet" href="https://www.uth.edu/global/css/print.css" media="print" />
+< <script src="https://www.uth.edu/global/foundation/js/vendor/modernizr.js" defer></script>
+< <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+< <script>jQuery.fn.load = function(callback){ $(window).on("load", callback) };</script>
+< <script src="https://www.uth.edu/global/foundation/js/vendor/fastclick.js"></script>
+< <!--[if lt IE 9]>
+< <link rel="stylesheet" type="text/css" href="https://www.uth.edu/global/css/ie8.css?v=968367" />
+< <![endif]--> 
+< <!--HCPC Style Sheet-->  
+< <link rel="stylesheet" href="/global/css/hcpc-styles.css?v=968367" />
+< <!--Accordian Navigation Style-->
+< <link href="https://www.uth.edu/global/css/p7TM3-04.css?v=968367" rel="stylesheet" />  
+< <!--Accordian Navigation Script-->  
+<   <script src="https://www.uth.edu/global/js/p7TM3scripts.js?v=968367"></script>
+< </head>
+< <body>
+< <noscript><iframe title="GTM" src="https://www.googletagmanager.com/ns.html?id=GTM-PCTVDPT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+< <!--[if lt IE 9]>
+<   <body class="no-js lt-ie9" lang="en" > <![endif]-->
+< <!-- Top Nav Bar & Search -->
+< <!--remove role="navigation"-->
+< <nav class="top-bar" data-topbar>
+<      <ul class="title-area">
+<     <!-- Title Area -->
+<     <li class="name"></li>
+<     <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+<     </ul>
+< <!--remove role="region"-->
+< <section class="top-bar-section" aria-label="global tools navigation">
+< <div class="row">
+<    <ul class="right">
+< <!-- Right Nav Section -->  
+<      <li><a href="https://www.uth.edu/">UTHEALTH HOUSTON HOME</a></li>
+<         <li><a href="http://go.uth.edu/careers">CAREERS</a></li>
+<         <li><a href="https://www.uth.edu/index/a2z.htm">A-Z</a></li>
+<         <li><a href="https://mail.uth.edu">WEBMAIL</a></li>
+<      <li><a href="https://inside.uth.edu/" class="inside">INSIDE THE UNIVERSITY <img src="https://www.uth.edu/global/gfx/lock-white.png" alt="Lock"></a></li>
+<         <li>
+<     
+<             <form id="gs" name="gs" action="https://hcpc.uth.edu/search.htm" method="get">
+<               <label for="q" class="show-for-sr">Query</label>
+<               <input type="text" id="q" name="q" value="" size="30" maxlength="255" placeholder="Search Term" />
+<               <input type="submit" id="btnG" name="btnG" class="button" value="GO" />
+<             </form>
+<         <!--End Google Search Tool-->
+<         </li>
+<     </ul>
+< </div>
+< </section>
+< </nav><!-- Mega Menu -->
+< <div class="wrapper">
+<   <section class="masthead" role="banner" aria-label="masthead">
+<     <div class="row">
+<       <div class="large-12 columns" style="position:static; color:#fff !important;margin-top:5px !important;">
+<         <img src="https://hcpc.uth.edu/global/gfx/uthealth-houston-hcpc.jpg" width="300" alt="UTHealth Houston Harris County Psychiatric Center" id="logo" title="UT Harris County Psychiatric Center" />
+<       </div>
+<     </div>
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 4018 ms

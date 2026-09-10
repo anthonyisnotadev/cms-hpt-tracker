@@ -1,0 +1,146 @@
+# curl-style evidence for https://carilionclinic.org/
+# fetched 2026-09-07T01:36:09.082Z with the tracker's BROWSER_HEADERS (production client)
+# record: 491304 | CARILION STONEWALL JACKSON HOSPITAL | VA | finding: not-assessed-not-named-in-file
+
+* DNS carilionclinic.org: 12.168.121.34
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://carilionclinic.org/
+< HTTP 301
+< connection: Keep-Alive
+< content-length: 0
+< location: https://www.carilionclinic.org/
+< server: BigIP
+* following Location: https://www.carilionclinic.org/
+
+* final response: https://www.carilionclinic.org/
+< HTTP 200
+< cache-control: max-age=3600, public
+< connection: Keep-Alive
+< content-encoding: gzip
+< content-language: en
+< content-length: 6289
+< content-security-policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' googleads.g.doubleclick.net/ cdn.jsdelivr.net/ *.googlesyndication.com/ tagmanager.google.com *.googletagmanager.com/ *.facebook.net/ *.typekit.net/ *.google-analytics.com/ *.lightwidget.com/ *.youtube.com/ *.ytimg.com/ *.lightwidget.com/ fast.fonts.net/ cdn.inspectlet.com/ *.bing.com/ *.gstatic.com/ *.google.com/recaptcha/ maps.googleapis.com/ *.googleadservices.com/ *.clarity.ms unpkg.com/; object-src 'self'; style-src 'self' 'unsafe-inline' fast.fonts.net/ fonts.googleapis.com/ *.googletagmanager.com/; img-src 'self' about: *.google-analytics.com/ *.typekit.net/ *.g.doubleclick.net/ *.googletagmanager.com/ *.carilionclinic.ovidds.com/ *.i.ytimg.com/ *.img.youtube.com/ *.youtube.com/ *.google.com/ *.facebook.com/ *.bing.com/ *.googleapis.com/ *.ytimg.com/ *.flaticon.com *.w3.org/ maps.gstatic.com/ *.clarity.ms/ *.fonts.gstatic.com/ vumbnail.com/ *.vumbnail.com/ data:; media-src 'self'; frame-src 'self' *.googletagmanager.com/ *.lightwidget.com/ *.facebook.com/ *.vimeo.com/ *.youtube.com/ *.google.com/ *.carilionclinic.org/ td.doubleclick.net/ *.carilion.com/; frame-ancestors 'self'; child-src 'self' *.googletagmanager.com/ *.lightwidget.com/ *.facebook.com/ *.vimeo.com/ *.youtube.com/ *.google.com/ *.carilionclinic.org; font-src 'self' *.googleusercontent.com/ *.typekit.net/ fast.fonts.net/ fonts.gstatic.com/; connect-src 'self' drupal-oauth.mailchimp.com/ *.inspectlet.com/ *.google-analytics.com/ *.g.doubleclick.net/ carilionclinic.ovidds.com/ *.googleadservices.com/ *.google.com/pagead/ *.facebook.com/tr/ *.googleapis.com/ bat.bing.com/ *.clarity.ms/ analytics.google.com/ *.google.com/ccm/ *.jsdelivr.net/ *.carilionclinic.org/ *.googletagmanager.com/; report-uri /report-csp-violation
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 00:41:06 GMT
+< etag: "1788741666-gzip"
+< expires: Sun, 19 Nov 1978 05:00:00 GMT
+< keep-alive: timeout=5, max=100
+< last-modified: Mon, 07 Sep 2026 00:41:06 GMT
+< server: Apache/2.4.62 (Red Hat Enterprise Linux) OpenSSL/3.5.5
+< vary: Cookie,Origin,Accept-Encoding
+< x-content-type-options: nosniff
+< x-drupal-cache: HIT
+< x-drupal-dynamic-cache: MISS
+< x-frame-options: SAMEORIGIN
+< x-generator: Drupal 11 (https://www.drupal.org)
+< --- body (33663 bytes read) ---
+<     <!DOCTYPE html>
+<   <html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<     <head>
+< <!--  Either put GTM code here OR js/gtm.js OR html.html.twig but NOT ALL THREE-->
+<       <!-- This is from src/index.html -->
+<       <!--  GTM issues are most likely caused by google changing server names and getting-->
+< <!--  blocked by seckit.  Please contact devops team about updating CSP rules.-->
+<       <!-- Google Tag Manager -->
+<       <script>
+<       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+< j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+< 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+<       })(window,document,'script','dataLayer','GTM-NCRXTLT');
+<       </script>
+<       <!-- End Google Tag Manager -->
+<       <meta charset="utf-8" />
+< <link rel="canonical" href="https://www.carilionclinic.org/" />
+< <link rel="shortlink" href="https://www.carilionclinic.org/" />
+< <meta name="Generator" content="Drupal 11 (https://www.drupal.org)" />
+< <meta name="MobileOptimized" content="width" />
+< <meta name="HandheldFriendly" content="true" />
+< <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+< <script type="application/ld+json">{
+<     "@context": "https://schema.org",
+<     "@graph": [
+<         {
+<             "@type": "MedicalOrganization",
+<             "@id": "https://www.carilionclinic.org/",
+<             "description": "Carilion Clinic is a not–for–profit health care organization based in Roanoke, Va. Through our comprehensive network of hospitals, primary and specialty physician practices and other complementary services, we work together to provide quality care",
+<             "name": "Carilion Clinic",
+<             "url": "https://www.carilionclinic.org/",
+<             "telephone": "hpt-obf:v1:-z1Pnlw0NXnfHKlV.cJ3NTlFzDp982NSWSJCYAg.mBqqDvvXHhrlzxOzU-BT",
+<             "image": {
+<                 "@type": "ImageObject",
+<                 "url": "https://www.carilionclinic.org/carilion-roanoke-memorial-hospital.jpg"
+<             },
+<             "logo": {
+<                 "@type": "ImageObject",
+<                 "url": "https://www.carilionclinic.org/carilion-clinic-logo.jpg"
+<             },
+<             "address": {
+<                 "@type": "PostalAddress",
+<                 "streetAddress": "1 Riverside Circle",
+<                 "addressLocality": "Roanoke",
+<                 "addressRegion": "VA",
+<                 "postalCode": "24016",
+<                 "addressCountry": "US"
+<             }
+<         }
+<     ]
+< }</script>
+< <link rel="icon" href="/themes/custom/cc_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+< <link rel="alternate" hreflang="en" href="https://www.carilionclinic.org/" />
+< 
+<       <title>Carilion Clinic | Hospitals &amp; Physicians in Virginia | Carilion Clinic</title>
+<       <link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/align.module.css?tkxucu" />
+< <link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/container-inline.module.css?tkxucu" />
+< <link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/clearfix.module.css?tkxucu" />
+< <link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/hidden.module.css?tkxucu" />
+< <link rel="stylesheet" media="all" href="/themes/contrib/stable/css/system/components/js.module.css?tkxucu" />
+< <link rel="stylesheet" media="all" href="/themes/custom/cc_theme/css/styles.css?tkxucu" />
+< <link rel="stylesheet" media="all" href="/themes/custom/cc_theme/cc-front-end/dist/cc-front-end/browser/styles-VV4OJF52.css?tkxucu" />
+< 
+<       
+<       <base href="/">
+<                   <link rel="preconnect" href="https://www.googletagmanager.com">
+<       <link rel="preconnect" href="https://www.youtube.com">
+<       <link rel="preconnect" href="https://www.google-analytics.com">
+<       <link rel="icon" href="/themes/custom/cc_theme/favicon.ico">
+<       <link rel="icon" href="/themes/custom/cc_theme/icon.svg" type="image/svg+xml">
+<       <link rel="apple-touch-icon" href="/themes/custom/cc_theme/apple-touch-icon.png" sizes="180x180">
+<       <link rel="icon" type="image/png" href="/themes/custom/cc_theme/favicon-32x32.png" sizes="32x32">
+<     <style>html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2em;margin:.67em 0}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}strong{font-weight:inherit}strong{font-weight:bolder}html{scroll-behavior:smooth}html{box-sizing:border-box;font-size:100%;line-height:1.25}*{box-sizing:inherit}*:before{box-sizing:inherit}*:after{box-sizing:inherit}body{font-size:16px;font-size:1rem 1rem;font-family:myriad-pro,sans-serif;line-height:1.38;font-weight:400}h1{font-size:25px;font-size:1.5625rem 1.5625rem;color:#003a6f;font-family:myriad-pro,sans-serif;font-weight:600}a{font-size:16px;font-size:1rem 1rem;color:#3474a1;font-family:myriad-pro,sans-serif;font-weight:600}@media(min-width:768px){h1{font-size:36px;font-size:2.25rem 2.25rem;color:#003a6f;font-family:myriad-pro,sans-serif;font-weight:600}}</style><link rel="stylesheet" href="/themes/custom/cc_theme/cc-front-end/dist/cc-front-end/browser/styles-VV4OJF52.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="/themes/custom/cc_theme/cc-front-end/dist/cc-front-end/browser/styles-VV4OJF52.css"></noscript></current></js-placeholder></css-placeholder></head-placeholder></head>
+<     <body>
+<       <!-- Google Tag Manager (noscript) -->
+<       <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NCRXTLT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<       <!-- End Google Tag Manager (noscript) -->
+<       
+<         <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+<     <div class="layout-container">
+<   <cc-root></cc-root>
+< </div>
+<   </div>
+< 
+< 
+<         <noscript>
+<           <h1>Carilion Clinic</h1>
+<           <p>You're seeing this because JavaScript is disabled in your browser.</p>
+<           <p>This website <strong>is not</strong> intended to run with JavaScript disabled.</p>
+<           <p>Please visit this site for instructions on how to enable JavaScript: <a href="https://www.enable-javascript.com/">EnableJavaScript.com</a></p>
+<           <p>Youtube Terms of Service: <a href="https://www.youtube.com/t/terms">Youtube Terms of Service</a></p>
+<           <p>Google Privacy Policy: <a href="http://www.google.com/policies/privacy">Google Privacy Policy</a></p>
+<         </noscript>
+<       
+< 
+<       <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/1993617559","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"cc_theme":{"pageContent":"\u003Carticle data-history-node-id=\u00221993617559\u0022 about=\u0022\/httpwwwcarilionclinicorg\u0022\u003E\n\n  \n    \n\n      \u003Cfooter\u003E\n      \u003Carticle typeof=\u0022schema:Person\u0022 about=\u0022\/signin\/29\u0022\u003E\n  \u003Cdrupal-render-placeholder callback=\u0022masquerade.callbacks:renderCacheLink\u0022 arguments=\u00220=29\u0022 token=\u0022qm2MKaCFr6L6fIU56eQMBzESNLbkDIPD24C7KCkDmnw\u0022\u003E\u003C\/drupal-render-placeholder\u003E\u003C\/article\u003E\n\n      \u003Cdiv\u003E\n        Submitted by \u003Cspan\u003E\u003Cspan lang=\u0022\u0022 about=\u0022\/signin\/29\u0022 typeof=\u0022schema:Person\u0022 property=\u0022schema:name\u0022 datatype=\u0022\u0022\u003Ekwlester\u003C\/span\u003E\u003C\/span\u003E\n on \u003Cspan\u003E\u003Ctime datetime=\u00222022-10-13T10:14:43-04:00\u0022 title=\u0022Thursday, October 13, 2022 - 10:14\u0022\u003EThu, 10\/13\/2022 - 10:14\u003C\/time\u003E\n\u003C\/span\u003E\n   
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 676 ms

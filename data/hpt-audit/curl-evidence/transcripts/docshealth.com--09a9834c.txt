@@ -1,0 +1,166 @@
+# curl-style evidence for https://docshealth.com/cms-hpt.txt
+# fetched 2026-09-07T01:32:38.120Z with the tracker's BROWSER_HEADERS (production client)
+# record: 050785 | DOCS SURGICAL HOSPITAL | CA | finding: pointer-blocked-to-automation
+
+* DNS docshealth.com: 104.207.254.239
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://docshealth.com/cms-hpt.txt
+< HTTP 301
+< cache-control: max-age=3600
+< content-length: 0
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:32:38 GMT
+< expires: Mon, 07 Sep 2026 02:32:38 GMT
+< location: https://www.docshealth.com/cms-hpt.txt
+< referrer-policy: 
+< server: nginx
+< vary: X-Forwarded-Proto,Accept-Encoding
+< x-cache-nxaccel: MISS
+< x-redirect-by: WordPress
+* following Location: https://www.docshealth.com/cms-hpt.txt
+
+* final response: https://www.docshealth.com/cms-hpt.txt
+< HTTP 404
+< cache-control: no-cache, must-revalidate, max-age=0, no-store, private
+< content-encoding: br
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:32:39 GMT
+< expires: Wed, 11 Jan 1984 05:00:00 GMT
+< link: <https://www.docshealth.com/wp-json/>; rel="https://api.w.org/"
+< referrer-policy: 
+< server: nginx
+< vary: Accept-Encoding, X-Forwarded-Proto,Accept-Encoding
+< --- body (65536 bytes read, truncated) ---
+< 
+< <!doctype html>
+< <html lang="en-US">
+<    <head><style>img.lazy{min-height:1px}</style><link href="https://www.docshealth.com/wp-content/plugins/w3-total-cache/pub/js/lazyload.min.js" as="script">
+<   <meta charset="utf-8">
+<   <meta http-equiv="x-ua-compatible" content="ie=edge">
+<   <meta name="viewport" content="width=device-width, initial-scale=1">
+<   <link rel="shortcut icon" type="image/png" href="https://www.docshealth.com/wp-content/uploads/2021/01/icon-192x192.png"/>
+<   <meta name='robots' content='noindex, follow' />
+< 		<script>
+< 			window.dataLayer = window.dataLayer || [];
+< 			function gtag() { dataLayer.push( arguments ); }
+< 
+< 			( function() {
+< 				var stored = ( document.cookie.match(
+< 					new RegExp( '(?:^|; )flc_cookies_policy_consent=([^;]*)' )
+< 				) || [] )[1];
+< 
+< 								var analyticsState   = 'granted';
+< 				var advertisingState = 'denied';
+< 
+< 				if ( stored ) {
+< 					try {
+< 						var c = JSON.parse( decodeURIComponent( stored ) );
+< 						if ( c && c.analytics )   { analyticsState   = c.analytics; }
+< 						if ( c && c.advertising ) { advertisingState = c.advertising; }
+< 					} catch ( e ) {}
+< 				}
+< 
+< 				gtag( 'consent', 'default', {
+< 					analytics_storage:     analyticsState,
+< 					ad_storage:            advertisingState,
+< 					ad_user_data:          advertisingState,
+< 					ad_personalization:    advertisingState,
+< 					functionality_storage: 'granted',
+< 					wait_for_update:       500,
+< 				} );
+< 							}() );
+< 		</script>
+< 		
+< 	<!-- This site is optimized with the Yoast SEO plugin v28.4 - https://yoast.com/product/yoast-seo-wordpress/ -->
+< 	<title>Page not found | DOCS Spine Orthopedics</title>
+< 	<meta property="og:locale" content="en_US" />
+< 	<meta property="og:title" content="Page not found | DOCS Spine Orthopedics" />
+< 	<meta property="og:site_name" content="DOCS Spine Orthopedics" />
+< 	<!-- / Yoast SEO plugin. -->
+< 
+< 
+< <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+< <style id="wp-img-auto-sizes-contain-inline-css">
+< img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+< /*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+< </style>
+< 
+< 
+< <link rel='stylesheet' id='contact-form-7-css' href='https://www.docshealth.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=6.1.7' media='all' />
+< <link rel='stylesheet' id='flc-cookies-consent-css' href='https://www.docshealth.com/wp-content/plugins/flc-control/assets/css/cookie-consent.min.css?ver=1.2.6' media='all' />
+< <link rel='stylesheet' id='libs-css' href='https://www.docshealth.com/wp-content/themes/flc/dist/styles/libs.css?ver=19' media='all' />
+< <link rel='stylesheet' id='bxslider-css' href='https://www.docshealth.com/wp-content/themes/flc/dist/styles/jquery.bxslider.css' media='all' />
+< <link rel='stylesheet' id='smbs4-css' href='https://www.docshealth.com/wp-content/themes/flc/dist/styles/jquery.smartmenus.bootstrap-4.css' media='all' />
+< <link rel='stylesheet' id='fonts-css' href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&#038;family=Poppins:wght@100;300;700;900&#038;display=swap' media='all' />
+< <link rel='stylesheet' id='select2-css' href='https://www.docshealth.com/wp-content/themes/flc/dist/styles/select2.min.css?ver=1.0.0' media='all' />
+< <link rel='stylesheet' id='combobox-css' href='https://www.docshealth.com/wp-content/themes/flc/dist/styles/combobox.css?ver=1.0.0' media='all' />
+< <link rel='stylesheet' id='main-css' href='https://www.docshealth.com/wp-content/themes/flc/dist/styles/main.css?ver=1.1.5' media='all' />
+< <script id="jquery-core-js" src="https://www.docshealth.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+< <script id="jquery-migrate-js" src="https://www.docshealth.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+< <link rel="https://api.w.org/" href="https://www.docshealth.com/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.docshealth.com/xmlrpc.php?rsd" />
+< <meta name="generator" content="WordPress 7.1" />
+<   <style>
+<     #reviews_close_button {
+<       position: absolute;
+<       display: block;
+<       width: 32px;
+<       height: 32px;
+<       text-align: center;
+<       top: 12px;
+<       right: 10px;
+<       border: 3px solid #FFF !important;
+<       background-color: var(--light) !important;
+<       color: var(--primary);
+<       border-radius: 10px;
+<     }
+< 
+<     #reviews_button_container {
+<       position: fixed;
+<       bottom: 1rem;
+<       left: 1rem;
+<       display: none;
+<       z-index: 1031;
+<     }
+<     
+<     #reviews_button {
+<       text-decoration: none !important;
+<       z-index: 1030;
+<       background-color: white;
+<       opacity: 1 !important;
+<     }
+<     
+<     @media (max-width: 767px) {
+<         #reviews_button_container {
+<             display: none !important;
+<         }
+<     }
+<     
+<     #reviews_button:hover,
+<     #reviews_button:focus {
+<       background-color: #edeff5;
+<     }
+<     
+<     #reviews_sidebar {
+<       position: fixed;
+<       top: 0;
+<       left: 0;
+<       bottom: 0;
+<       width: 420px;
+<       max-width: 100vw;
+<       background-color: white;
+<       padding: 10px;
+<       transform: translateX(-100%);
+<       visibility: hidden;
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 2241 ms

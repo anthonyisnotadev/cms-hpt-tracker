@@ -1,0 +1,175 @@
+# curl-style evidence for https://merithealthmadison.com/
+# fetched 2026-09-07T01:34:43.622Z with the tracker's BROWSER_HEADERS (production client)
+# record: 250038 | MERIT HEALTH MADISON | MS | finding: not-assessed-not-named-in-file
+
+* DNS merithealthmadison.com: 104.21.93.58, 172.67.205.177
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://merithealthmadison.com/
+< HTTP 301
+< alt-svc: h3=":443"; ma=86400
+< cf-cache-status: DYNAMIC
+< cf-ray: a371f90a6e499951-IAD
+< content-type: text/html; charset=iso-8859-1
+< date: Mon, 07 Sep 2026 01:34:44 GMT
+< location: https://www.umc.edu/madison
+< nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+< report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=4UCR%2B0y843c%2F%2B2Xw2sydLyzJ3UzqwAg4V5dMqdp0NoAPu2f78IxySx0JIolADnxWTXK8P8rzkW9Rvfm59xTtZTkxy%2BEL5FzwFkEO20SoRgxYyeniBDWGq2bQidjH6n6oMe7CrIjh%2FOj%2F"}]}
+< server: cloudflare
+* following Location: https://www.umc.edu/madison
+
+* redirect hop 2: https://www.umc.edu/madison
+< HTTP 301
+< date: Mon, 07 Sep 2026 01:34:44 GMT
+< location: /Madison/Home.html
+< server: Microsoft-IIS/10.0
+< strict-transport-security: max-age=31536000; preload
+< transfer-encoding: chunked
+< x-frame-options: sameorigin
+< x-powered-by: ASP.NET
+< x-srv: 05
+* following Location: /Madison/Home.html
+
+* final response: https://www.umc.edu/Madison/Home.html
+< HTTP 200
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:34:44 GMT
+< server: Microsoft-IIS/10.0
+< strict-transport-security: max-age=31536000; preload
+< transfer-encoding: chunked
+< x-frame-options: sameorigin
+< x-powered-by: ASP.NET
+< x-srv: 05
+< --- body (39196 bytes read) ---
+< 
+< <!DOCTYPE html>
+< <html lang="en" class="ummcmadison">
+< <head>
+<     <meta charset="utf-8" />
+<     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<     
+<         <meta name="WT.cg_n" content="umc.edu" />
+<         <meta name="WT.cg_s" content="HealthCare" />
+<         <meta name="WT.cg_s2" content="UMMC Madison" />
+<         <meta name="WT.cg_s3" content="UMMC Madison" />
+<         <meta name="fb:app_id" content="226353484189489" />
+<         <meta name="og:url" content="https://umc.edu/Madison/Home.html" />
+<         <meta name="og:type" content="article" />
+<         <meta name="og:site_name" content="University of Mississippi Medical Center" />
+<         <meta name="og:title" content="UMMC Madison" />
+<         <meta name="og:image" content="https://umc.edu/Madison/images/Madison-sunrise-banner-1800-660.jpg" />
+<         <meta name="og:description" content="At UMMC Grenada, you will find a highly-engaged staff of professionals working diligently to provide our patients with world-class health care in a safe and always compassionate manner." />
+<         <meta name="description" content="At UMMC Grenada, you will find a highly-engaged staff of professionals working diligently to provide our patients with world-class health care in a safe and always compassionate manner." />
+< 
+<     <link rel="canonical" href="https://umc.edu/Madison/Home.html" />
+< 
+< 
+<     <title>UMMC Madison - University of Mississippi Medical Center</title>
+< 
+<     
+< 
+< <link rel="shortcut icon" href="/img/favicon.ico" />
+< <link href="/img/apple-touch-icon-180.png" rel="apple-touch-icon" />
+< <link href="/img/apple-touch-icon-180.png" rel="apple-touch-icon" sizes="180x180" />
+< <link href="/img/apple-touch-icon-192.png" rel="icon" sizes="192x192" />
+< 
+<     <link rel="stylesheet" href="/_content/ummc.cascade.components/lib/slick-carousel/slick.min.css?v=ke7G-wFSu3v-A2BtFRwgec_Vh4-Wx4oCqPddg3HRjGg" />
+< <link rel="stylesheet" href="/_content/ummc.cascade.components/css/slick-theme-feature-slider.css?v=naWCgQiIadzD2yfq8Oxos7d9sgbgIz3DXiGN2NtrNNA" />
+< <link rel="stylesheet" href="/_content/ummc.cascade.components/lib/jqueryui/themes/base/jquery-ui.min.css?v=tPN1H9AV54rRzDsuuLXC0ncNyeEhxQSdYRgXkyB23Mw" />
+< <link rel="stylesheet" href="/_content/ummc.cascade.components/lib/fancybox/jquery.fancybox.min.css?v=Vzbj7sDDS_woiFS3uNKo8eIuni59rjyNGtXfstRzStA" />
+< <link rel="stylesheet" href="/_content/ummc.cascade.components/css/CampusAlertRow.css?v=j6XBs7I7L_lyI4FEXF4LTyjtEJR8t3sbZH1E3FZyv2w" />
+< <link rel="stylesheet" href="/_content/ummc.cascade.components/lib/foundation/css/foundation-float.min.css?v=Jhe1vNUaR_Q98hBe3SHDfk3idhhE3_IGe_VBOydAzgQ" />
+< <link rel="stylesheet" href="/_content/ummc.cascade.components/css/foundation-additions.css?v=-kpfcNQLy_UG5pbSnjXc-WQZrcdbUnKmuv0y79KFrj8" />
+< <link rel="stylesheet" href="/_content/ummc.cascade.components/css/ummc-styles.css?v=rWlT6ShtymY6IYa7S-59vO_1ZABwadRo1QMJUMPvAoo" />
+< <link rel="stylesheet" href="/_content/ummc.cascade.components/css/slick-theme-row-slideshow.css?v=pgJ9rNcLgYmOOVSOW9kosWWEORPrtJ7TkjnYZDJTtak" />
+< <link rel="stylesheet" href="/_content/ummc.cascade.components/css/print.css?v=obmh8ft6jc2dIwMeeMJkCscbsSrQfiMSePvjoqcjF0U" />
+< <link rel="stylesheet" href="/_content/ummc.cascade.components/lib/aos/aos.css?v=GqiEX9BuR1rv5zPU5Vs2qS_NSHl1BJyBcjQYJ6ycwD4" />
+<     
+<     <link rel="stylesheet" href="/UMMCWebsite.styles.css?v=vvh7E4foYM5HT5DK0NaixYNquzbU2HWo1-QeBoPY5ik" />
+< </head>
+< <body>
+< 
+<     
+< 
+< <header role="banner" id="headerwrap" class="header-wrap ummcmadison">
+<     <div class="row">
+< 
+<         <ul id="skip" class="skip">
+<             <li><a href="#content-anchor">Skip to content</a></li>
+<         </ul>
+< 
+<         <div id="logo-wrap">
+<             <a runat="server" id="logolink" class="logo-link" href="/Madison">
+<                 <img ID="logou" class="logo-u" src="/img/ummc_logo_U_4k.cmp.png" alt="University of Mississippi Medical Center" />
+<                 <img ID="logoummc" class="logo-ummc" src="/img/ummc_logo_ummcmadison_4k.cmp.png" alt="University of Mississippi Medical Center - Madison" />
+<                 <div class="logo-ummc-short">
+<                     <img ID="logoummcshort" src="/img/ummc_logo_UMMC_short_4k.cmp.png" alt="University of Mississippi Medical Center" />
+<                 </div>
+<             </a>
+<         </div>
+< 
+< 
+<         <ul class="menu top-buttons">
+<             <li class="nav-button-li search">
+<                 <button type="button" class="top" aria-label="Click to Search UMMC"><p>Search UMMC</p><span></span></button>
+<             </li>
+<             <li class="nav-button-li hamburger"><button type="button" class="top" aria-label="Click to show Site Navigation"><p>Mobile Navigation</p><span></span></button></li>
+<         </ul>
+< 
+<         <div id="top-nav-wrap">
+< 
+<             <div id="search-popup-wrap" class="hideSearch">
+<                 <form action="/Search/" method="get">
+<                     <ul class="menu">
+<                         <li><input type="search" name="query" id="Header_txtsearch" class="siteSearch" aria-label="Search UMMC" placeholder="Search UMMC..." /></li>
+<                         <li><input type="submit" id="btnSearch" class="button" Text="Search"/></li>
+<                     </ul>
+<                 </form>
+<             </div>
+< 
+<             <a id="top-nav-header" href="">UMMC Navigation</a>
+< 
+<                 <ul class="menu top-nav">
+<                     <li class=" "><a class=" "  data-title="Madison" href="/Madison/"   >Madison</a></li><li class=" "><a class=" "  data-title="Contact Us" href="/Madison/Contact.html"   >Contact Us</a></li><li class=" "><a class=" "  data-title="About" href="/Madison/About/Overview.html"   >About</a></li><li class=" "><a class=" "  data-title="Patients and Visitors" href="/Madison/Patients-Visitors/Overview.html"   >Patients and Visitors</a></li><li class=" "><a class=" "  data-title="Health Care" href="/Madison/Care/Overview.html"   >Health Care</a></li><li class=" "><a class=" "  data-title="Find a Doctor" href="/Madison/Providers.html"   >Find a Doctor</a></li><li class=" "><a class=" "  data-title="Appointments" href="/Madison/Appointment.html"   >Appointments</a></li><li class=" "><a class=" "  data-title="Careers" href="https://recruiting.paylocity.com/recruiting/jobs/All/2b382169-15eb-4bd6-a346-ced976535cef/Healthier-Mississippi-People-LLC?location=UMMC%20Madison&department=All%20Departments"   >Careers</a></li><li class=" "><a class=" "  data-title="UMMC" href="/UMMC/UMMC_Home.html"   >UMMC</a></li>
+<                 </ul>
+<         </div>
+<     </div>
+< </header><!-- End Header Wrap -->
+< 
+< 
+< 
+<     <div b-xdgp4rsk6l class="container">
+<         <main b-xdgp4rsk6l role="main" class="pb-3" id="content-wrap">
+<             
+< 
+< 
+<         <div class="feature-wrapper ">
+<             <div class="feature-slider slick-slider no-js">
+< 
+<                 
+<                         <div class="slider-item">
+< 
+< 
+<                                 <img src="/Madison/images/Madison-sunrise-banner-1800-660.jpg" alt="UMMC Madison building exterior." title="UMMC Madison building exterior." style="width:100%;height:auto;" />
+< 
+< 
+<                                 <div class="caption left">
+< 
+< <a href="/Madison/About/Overview.html" >
+<                                             <p>Merit Health Madison is now UMMC Madison</p>
+< 
+<                                             <p>Learn more</p>
+< 
+< </a>
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 673 ms

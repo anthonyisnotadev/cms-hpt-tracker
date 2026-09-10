@@ -1,0 +1,103 @@
+# curl-style evidence for https://pricetransparency.healthcare/southern-ohio-medical-center/charges/export
+# fetched 2026-09-07T01:35:36.354Z with the tracker's BROWSER_HEADERS (production client)
+# record: 360008 | SOUTHERN OHIO MEDICAL CENTER | OH | finding: mrf-url-unreachable
+
+* DNS pricetransparency.healthcare: 104.18.22.229, 104.18.23.229
+
+> GET /southern-ohio-medical-center/charges/export  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://pricetransparency.healthcare/southern-ohio-medical-center/charges/export
+< HTTP 404
+< cf-cache-status: DYNAMIC
+< cf-ray: a371fa566bc49c1f-IAD
+< content-encoding: gzip
+< content-security-policy: default-src * 'unsafe-inline' 'unsafe-eval' blob:; script-src * 'unsafe-inline' 'unsafe-eval' blob:; worker-src * blob:; img-src * data: blob:; font-src * data:; connect-src *
+< content-type: text/html; charset=utf-8
+< cross-origin-opener-policy: same-origin
+< date: Mon, 07 Sep 2026 01:35:38 GMT
+< referrer-policy: same-origin
+< server: cloudflare
+< vary: origin, Cookie
+< x-content-type-options: nosniff
+< x-frame-options: DENY
+< x-request-id: 44356a27-8145-44f9-b384-44c309783e7d
+< --- body (3277 bytes read) ---
+< 
+< <!DOCTYPE html>
+< <html>
+<     <head>
+<         <meta charset="UTF-8" />
+<         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<         <title>Error</title>
+<         
+<             <link rel="icon"
+<                   type="image/svg+xml"
+<                   href="https://ucdn.turquoise.health/f1d64f62-fa31-4e7a-942e-e7c07441f4ec/-/resize/x32/favicon.svg">
+<         
+<         <link rel="stylesheet" href="https://tq-consumer-static-prd.turquoise.health/static/css/th-pit-viper/pit-viper.5d75949caadb.css" />
+<         <link rel="stylesheet" href="https://tq-consumer-static-prd.turquoise.health/static/css/style.1288f22e7add.css" />
+<         <style>
+<             :root {
+<                 --color-background-brand: #0073ae;
+<                 --color-background-brand-highlight: #176F6F;
+<                 --color-background-brand-accent: #cce3ef;
+<                 --color-background-brand-inverse: #176F6F;
+<                 --color-text-body: #000000;
+<                 --color-text-brand: #0073ae;
+<                 --color-text-brand-inverse: #A8E6E1;
+<                 --color-text-interactive: #0073ae;
+<                 --color-border: #DCDFE4;
+<                 --color-border-accent: #176F6F;
+<                 --button-primary-hover-color: #FFFFFF;
+<                 --button-primary-color: #FFFFFF;
+<                 --button-primary-background-color: #c60751;
+<                 --button-primary-hover-background-color: #d40283;
+<                 --button-primary-background-active-color: #c60751;
+<                 --button-primary-pressed-background-color: #c60751;
+<                 --button-primary-outline-color: #0073ae;
+<                 --button-primary-outline-border-color: #0073ae;
+<                 --button-primary-outline-hover-background-color: #0073ae;
+<                 --button-primary-outline-hover-color: #FFFFFF;
+<                 --button-primary-outline-active-color: #176F6F;
+<             }
+<         </style>
+<     </head>
+<     <body class=" pv-inset-block-32">
+<         <div class="pv-container-md pv-inset-square-48-responsive"
+<              style="--inset-size: 96px">
+<             <div class="pv-flex-responsive"
+<                  style="--flex-gap: 56px;
+<                         --flex-align-small: center">
+<                 <div class="tqc-center-on-mobile pv-flex-vertical pv-flex-item pv-flow-24">
+<                     
+<                         <img src="https://ucdn.turquoise.health/7c58acae-8f92-45ad-8374-6a3b5ba2c0b8/"
+<                              alt="Southern Ohio Medical Center"
+<                              style="width: 188px">
+<                     
+<                     <div>
+<                         
+<     <h3 class="pv-display-2 pv-stack-4 pv-heading-3">Page not found.</h3>
+<     <p class="pv-text-body-md">The page you're looking for doesn't seem to exist. Please check the URL and try again.</p>
+< 
+<                     </div>
+<                     <a href="/southern-ohio-medical-center/" class="pv-button-primary pv-max-content">Back Home</a>
+<                 </div>
+<                 <img src=" https://tq-consumer-static-prd.turquoise.health/static/images/error-image-generic.28a4279a9ed0.svg "
+<                      style="max-width: 360px;
+<                             width: 228px"
+<                      alt="Error" />
+<             </div>
+<         </div>
+<     </body>
+< </html>
+< 
+
+* total time: 328 ms

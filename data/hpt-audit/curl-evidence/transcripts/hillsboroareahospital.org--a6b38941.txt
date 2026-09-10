@@ -1,0 +1,49 @@
+# curl-style evidence for https://hillsboroareahospital.org/
+# fetched 2026-09-07T01:33:03.234Z with the tracker's BROWSER_HEADERS (production client)
+# record: 141332 | HILLSBORO AREA HOSPITAL | IL | finding: not-assessed-site-unreachable
+
+* DNS hillsboroareahospital.org: 165.22.128.229
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* error: fetch failed (cause: ERR_TLS_CERT_ALTNAME_INVALID)
+
+* http:// fallback attempt after transport failure:
+* fallback redirect hop 1: http://hillsboroareahospital.org/
+< HTTP 302
+< connection: Keep-Alive
+< content-length: 212
+< content-type: text/html; charset=iso-8859-1
+< date: Mon, 07 Sep 2026 01:33:04 GMT
+< keep-alive: timeout=1, max=100
+< location: https://dev4.starkmedia.com/
+< server: Apache
+* following Location: https://dev4.starkmedia.com/
+
+* fallback final response: https://dev4.starkmedia.com/
+< HTTP 200
+< accept-ranges: bytes
+< connection: Keep-Alive
+< content-length: 6
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:33:04 GMT
+< etag: "6-6304f0b07cfbd"
+< keep-alive: timeout=1, max=100
+< last-modified: Fri, 14 Mar 2025 15:25:05 GMT
+< server: Apache
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-xss-protection: 1; mode=block
+< --- body (6 bytes read) ---
+< Dev4 
+< 
+
+* total time: 15210 ms

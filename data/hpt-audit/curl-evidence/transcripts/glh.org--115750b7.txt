@@ -1,0 +1,174 @@
+# curl-style evidence for https://glh.org/
+# fetched 2026-09-07T01:34:43.595Z with the tracker's BROWSER_HEADERS (production client)
+# record: 250099 | GREENWOOD LEFLORE HOSPITAL | MS | finding: not-assessed-not-named-in-file
+
+* DNS glh.org: 96.45.82.173, 96.45.82.86, 96.45.83.156, 96.45.83.28
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* error: fetch failed (cause: ERR_TLS_CERT_ALTNAME_INVALID)
+
+* http:// fallback attempt after transport failure:
+* fallback redirect hop 1: http://glh.org/
+< HTTP 301
+< connection: close
+< content-length: 0
+< date: Mon, 07 Sep 2026 01:34:44 GMT
+< location: https://www.umc.edu/greenwood
+< server: DNSME HTTP Redirection
+* following Location: https://www.umc.edu/greenwood
+
+* fallback redirect hop 2: https://www.umc.edu/greenwood
+< HTTP 301
+< date: Mon, 07 Sep 2026 01:34:44 GMT
+< location: /Greenwood/Home.html
+< server: Microsoft-IIS/10.0
+< strict-transport-security: max-age=31536000; preload
+< transfer-encoding: chunked
+< x-frame-options: sameorigin
+< x-powered-by: ASP.NET
+< x-srv: 06
+* following Location: /Greenwood/Home.html
+
+* fallback final response: https://www.umc.edu/Greenwood/Home.html
+< HTTP 200
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:34:44 GMT
+< server: Microsoft-IIS/10.0
+< strict-transport-security: max-age=31536000; preload
+< transfer-encoding: chunked
+< x-frame-options: sameorigin
+< x-powered-by: ASP.NET
+< x-srv: 06
+< --- body (37117 bytes read) ---
+< 
+< <!DOCTYPE html>
+< <html lang="en" class="ummcgreenwood">
+< <head>
+<     <meta charset="utf-8" />
+<     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<     
+<         <meta name="WT.cg_n" content="umc.edu" />
+<         <meta name="WT.cg_s" content="HealthCare" />
+<         <meta name="WT.cg_s2" content="UMMC Greenwood" />
+<         <meta name="WT.cg_s3" content="UMMC Greenwood" />
+<         <meta name="fb:app_id" content="226353484189489" />
+<         <meta name="og:url" content="https://umc.edu/Greenwood/Home.html" />
+<         <meta name="og:type" content="article" />
+<         <meta name="og:site_name" content="University of Mississippi Medical Center" />
+<         <meta name="og:title" content="UMMC Greenwood" />
+<         <meta name="og:image" content="https://umc.edu/Greenwood/images/Greenwood-1800-660V-v2-comp.jpg" />
+<         <meta name="og:description" content="At UMMC Grenada, you will find a highly-engaged staff of professionals working diligently to provide our patients with world-class health care in a safe and always compassionate manner." />
+<         <meta name="description" content="At UMMC Grenada, you will find a highly-engaged staff of professionals working diligently to provide our patients with world-class health care in a safe and always compassionate manner." />
+< 
+<     <link rel="canonical" href="https://umc.edu/Greenwood/Home.html" />
+< 
+< 
+<     <title>UMMC Greenwood - University of Mississippi Medical Center</title>
+< 
+<     
+< 
+< <link rel="shortcut icon" href="/img/favicon.ico" />
+< <link href="/img/apple-touch-icon-180.png" rel="apple-touch-icon" />
+< <link href="/img/apple-touch-icon-180.png" rel="apple-touch-icon" sizes="180x180" />
+< <link href="/img/apple-touch-icon-192.png" rel="icon" sizes="192x192" />
+< 
+<     <link rel="stylesheet" href="/_content/ummc.cascade.components/lib/slick-carousel/slick.min.css?v=ke7G-wFSu3v-A2BtFRwgec_Vh4-Wx4oCqPddg3HRjGg" />
+< <link rel="stylesheet" href="/_content/ummc.cascade.components/css/slick-theme-feature-slider.css?v=naWCgQiIadzD2yfq8Oxos7d9sgbgIz3DXiGN2NtrNNA" />
+< <link rel="stylesheet" href="/_content/ummc.cascade.components/lib/jqueryui/themes/base/jquery-ui.min.css?v=tPN1H9AV54rRzDsuuLXC0ncNyeEhxQSdYRgXkyB23Mw" />
+< <link rel="stylesheet" href="/_content/ummc.cascade.components/lib/fancybox/jquery.fancybox.min.css?v=Vzbj7sDDS_woiFS3uNKo8eIuni59rjyNGtXfstRzStA" />
+< <link rel="stylesheet" href="/_content/ummc.cascade.components/css/CampusAlertRow.css?v=j6XBs7I7L_lyI4FEXF4LTyjtEJR8t3sbZH1E3FZyv2w" />
+< <link rel="stylesheet" href="/_content/ummc.cascade.components/lib/foundation/css/foundation-float.min.css?v=Jhe1vNUaR_Q98hBe3SHDfk3idhhE3_IGe_VBOydAzgQ" />
+< <link rel="stylesheet" href="/_content/ummc.cascade.components/css/foundation-additions.css?v=-kpfcNQLy_UG5pbSnjXc-WQZrcdbUnKmuv0y79KFrj8" />
+< <link rel="stylesheet" href="/_content/ummc.cascade.components/css/ummc-styles.css?v=rWlT6ShtymY6IYa7S-59vO_1ZABwadRo1QMJUMPvAoo" />
+< <link rel="stylesheet" href="/_content/ummc.cascade.components/css/slick-theme-row-slideshow.css?v=pgJ9rNcLgYmOOVSOW9kosWWEORPrtJ7TkjnYZDJTtak" />
+< <link rel="stylesheet" href="/_content/ummc.cascade.components/css/print.css?v=obmh8ft6jc2dIwMeeMJkCscbsSrQfiMSePvjoqcjF0U" />
+< <link rel="stylesheet" href="/_content/ummc.cascade.components/lib/aos/aos.css?v=GqiEX9BuR1rv5zPU5Vs2qS_NSHl1BJyBcjQYJ6ycwD4" />
+<     
+<     <link rel="stylesheet" href="/UMMCWebsite.styles.css?v=vvh7E4foYM5HT5DK0NaixYNquzbU2HWo1-QeBoPY5ik" />
+< </head>
+< <body>
+< 
+<     
+< 
+< <header role="banner" id="headerwrap" class="header-wrap ummcgreenwood">
+<     <div class="row">
+< 
+<         <ul id="skip" class="skip">
+<             <li><a href="#content-anchor">Skip to content</a></li>
+<         </ul>
+< 
+<         <div id="logo-wrap">
+<             <a runat="server" id="logolink" class="logo-link" href="/Greenwood">
+<                 <img ID="logou" class="logo-u" src="/img/ummc_logo_U_4k.cmp.png" alt="University of Mississippi Medical Center" />
+<                 <img ID="logoummc" class="logo-ummc" src="/img/ummc_logo_ummcgreenwood_4k.cmp.png" alt="University of Mississippi Medical Center - Greenwood" />
+<                 <div class="logo-ummc-short">
+<                     <img ID="logoummcshort" src="/img/ummc_logo_UMMC_short_4k.cmp.png" alt="University of Mississippi Medical Center" />
+<                 </div>
+<             </a>
+<         </div>
+< 
+< 
+<         <ul class="menu top-buttons">
+<             <li class="nav-button-li search">
+<                 <button type="button" class="top" aria-label="Click to Search UMMC"><p>Search UMMC</p><span></span></button>
+<             </li>
+<             <li class="nav-button-li hamburger"><button type="button" class="top" aria-label="Click to show Site Navigation"><p>Mobile Navigation</p><span></span></button></li>
+<         </ul>
+< 
+<         <div id="top-nav-wrap">
+< 
+<             <div id="search-popup-wrap" class="hideSearch">
+<                 <form action="/Search/" method="get">
+<                     <ul class="menu">
+<                         <li><input type="search" name="query" id="Header_txtsearch" class="siteSearch" aria-label="Search UMMC" placeholder="Search UMMC..." /></li>
+<                         <li><input type="submit" id="btnSearch" class="button" Text="Search"/></li>
+<                     </ul>
+<                 </form>
+<             </div>
+< 
+<             <a id="top-nav-header" href="">UMMC Navigation</a>
+< 
+<                 <ul class="menu top-nav">
+<                     <li class=" "><a class=" "  data-title="Greenwood" href="/Greenwood/"   >Greenwood</a></li><li class=" "><a class=" "  data-title="Contact Us" href="/Greenwood/Contact.html"   >Contact Us</a></li><li class=" "><a class=" "  data-title="About" href="/Greenwood/About/Overview.html"   >About</a></li><li class=" "><a class=" "  data-title="Patients and Visitors" href="/Greenwood/Patients-Visitors/Overview.html"   >Patients and Visitors</a></li><li class=" "><a class=" "  data-title="Health Care" href="/Greenwood/Care/Overview.html"   >Health Care</a></li><li class=" "><a class=" "  data-title="Find a Doctor" href="/Greenwood/Providers.html"   >Find a Doctor</a></li><li class=" "><a class=" "  data-title="Careers" href="/greenwoodjobs"   >Careers</a></li><li class=" "><a class=" "  data-title="UMMC" href="/UMMC/UMMC_Home.html"   >UMMC</a></li>
+<                 </ul>
+<         </div>
+<     </div>
+< </header><!-- End Header Wrap -->
+< 
+< 
+< 
+<     <div b-xdgp4rsk6l class="container">
+<         <main b-xdgp4rsk6l role="main" class="pb-3" id="content-wrap">
+<             
+< 
+< 
+<         <div class="feature-wrapper ">
+<             <div class="feature-slider slick-slider no-js">
+< 
+<                 
+<                         <div class="slider-item">
+< 
+< 
+<                                 <img src="/Greenwood/images/Greenwood-1800-660V-v2-comp.jpg" alt="UMMC Greenwood building exterior." title="UMMC Greenwood building exterior." style="width:100%;height:auto;" />
+< 
+< 
+<                                 <div class="caption left">
+< 
+< <a href="/Greenwood/About/Overview.html" >
+<                                             <p>Greenwood Leflore Hospital is now UMMC Greenwood</p>
+< 
+<                                             <p>Learn more</p>
+< 
+< </a>
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 734 ms

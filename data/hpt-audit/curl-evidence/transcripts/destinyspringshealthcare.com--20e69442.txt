@@ -1,0 +1,95 @@
+# curl-style evidence for https://www.destinyspringshealthcare.com/files/81-4160201_Destiny-Springs-Healthcare_standardcharges.csv
+# fetched 2026-09-07T01:32:34.995Z with the tracker's BROWSER_HEADERS (production client)
+# record: 034034 | DESTINY SPRINGS HEALTHCARE | AZ | finding: mrf-url-unreachable
+
+* DNS www.destinyspringshealthcare.com: 185.230.63.171, 185.230.63.107, 185.230.63.186
+
+> GET /files/81-4160201_Destiny-Springs-Healthcare_standardcharges.csv  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://www.destinyspringshealthcare.com/files/81-4160201_Destiny-Springs-Healthcare_standardcharges.csv
+< HTTP 404
+< accept-ranges: bytes
+< age: 3549
+< alt-svc: h3=":443"; ma=2592000
+< cache-control: public,max-age=0,must-revalidate
+< content-encoding: br
+< content-language: en-US
+< content-length: 676
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:32:36 GMT
+< glb-x-seen-by: bS8wRlGzu0Hc+WrYuHB8QIg44yfcdCMJRkBoQ1h6Vjc=
+< server: Pepyaka
+< server-timing: cache;desc=hit, varnish;desc=hit_hit, dc;desc=fastly_g
+< strict-transport-security: max-age=31556952
+< vary: Accept-Encoding
+< via: 1.1 google
+< x-cache: HIT
+< x-cache-status: HIT
+< x-content-type-options: nosniff
+< x-seen-by: yvSunuo/8ld62ehjr5B7kA==,VtqAe8Wu9wvSsl49B/X4+ewfbs+7qUVAqsIx00yI78k=,jKB0KR2wTEE1MYSdxvKSbciHE4dbw+wewoJ5nvKoyjE=,Ua1iSBCTq7qSXjmRCGE1NxlNAdfFkDTJeOOYRuuyLLSvu6GtLM82Nam0tDdQaRYXqdB/muy8W4xVdZyKL0M+VGrMZjuPVrPjDsgbH6txUsgGAlHzeXvYQB60239yuUPD,2d58ifebGbosy5xc+FRalkPtPmRbv5+/tsNuJjSKo5VFZJuRCEeU+SnqFGGAtg0yqdB/muy8W4xVdZyKL0M+VB+QmoTduQy303KBw2INeI0=,2UNV7KOq4oGjA5+PKsX47KEA/q0qujTnFdLk61L10h4FVd1lR1L8/yRoc88kq/ej
+< x-served-by: cache-iad-kcgs7200048-IAD
+< x-wix-request-id: 1788744756.736402995866739140
+< --- body (2205 bytes read) ---
+< 
+<   <!DOCTYPE html>
+< <!--
+<     
+< 
+<     
+< 
+<   
+<   
+<       
+< -->
+< <html>
+< <head>
+<     <meta charset="utf-8">
+<     <meta name="viewport" content="width=device-width, initial-scale=1">
+<     <meta name="robots" content="noindex">
+<     <title>404 Error: Page Not Found</title>
+< 
+<     
+<     <script async src="https://static.parastorage.com/polyfill/v2/polyfill.min.js?features=default,es6,es7,es2017&flags=gated&unknown=polyfill&rum=0"></script>
+<     <script src="https://static.parastorage.com/unpkg-semver/fedops-logger@5/fedops-logger.bundle.min.js"></script>
+<     <script>fedopsLogger.reportAppLoadStarted("classic-error-pages-statics");</script>
+<     <script src="https://static.parastorage.com/unpkg-semver/header-footer-provider/app.bundle.min.js"></script>
+<     <script crossorigin src="https://static.parastorage.com/unpkg/react@18.2.0/umd/react.production.min.js"></script>
+<     <script crossorigin src="https://static.parastorage.com/unpkg/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+< 
+<     <link rel="stylesheet" href="//static.parastorage.com/services/classic-error-pages-statics/1.98.0/app.min.css">
+< 
+<     <link rel="preload" as="font" href="https://static.parastorage.com/unpkg/@wix/wix-fonts@1.14.0/media/WixMadeforTextVF_W_Wght.8022447a.woff2" crossorigin>
+<     <link rel="preload" as="font" href="https://static.parastorage.com/unpkg/@wix/wix-fonts@1.14.0/media/WixMadeforDisplayVF_W_Wght.ab35e4df.woff2" crossorigin>
+<     <link rel="stylesheet" href="https://static.parastorage.com/unpkg/@wix/wix-fonts@1.14.0/madefor.min.css">
+<     <link rel="stylesheet" href="https://static.parastorage.com/unpkg/@wix/wix-fonts@1.14.0/madeforDisplay.min.css">
+< 
+< </head>
+< <body>
+< <div id="root"></div>
+< <script>
+<     window.__LOCALE__ = 'en';
+<     window.__ERROR_DATA__ = {
+<         staticsUrl: '//static.parastorage.com/services/classic-error-pages-statics/1.98.0/',
+<         baseDomain: 'wix.com',
+<         errorCode: '404-NotBranded',
+<         exceptionName: '',
+<         serverErrorCode: '-100',
+<         data: {},
+<         brand: 'wix',
+<         requestId: '1788741206.283873029311416'
+<     };
+< </script>
+< <script src="//static.parastorage.com/services/classic-error-pages-statics/1.98.0/app.bundle.min.js"></script>
+< </body>
+< </html>
+< 
+
+* total time: 168 ms

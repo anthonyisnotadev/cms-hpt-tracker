@@ -1,0 +1,45 @@
+# curl-style evidence for https://www.phhealthcare.org/download/?id=15375
+# fetched 2026-09-07T01:35:48.737Z with the tracker's BROWSER_HEADERS (production client)
+# record: 391307 | PENN HIGHLANDS TYRONE | PA | finding: mrf-blocked-to-automation
+
+* DNS www.phhealthcare.org: 104.26.15.165, 104.26.14.165, 172.67.72.182
+
+> GET /download/  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://www.phhealthcare.org/download/?id=15375
+< HTTP 403
+< accept-ch: Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA
+< alt-svc: h3=":443"; ma=86400
+< cf-mitigated: challenge
+< cf-ray: a371faa47942e5fc-IAD
+< content-encoding: br
+< content-security-policy: default-src 'none'; script-src 'nonce-x3LSl7CxaaEhA6t5LTgFrQ' 'unsafe-eval' https://challenges.cloudflare.com; script-src-attr 'none'; style-src 'unsafe-inline'; img-src 'self' https://challenges.cloudflare.com; connect-src 'self' https://challenges.cloudflare.com; frame-src 'self' https://challenges.cloudflare.com blob:; child-src 'self' https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri 'self'
+< content-type: text/html; charset=UTF-8
+< critical-ch: Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA
+< cross-origin-embedder-policy: require-corp
+< cross-origin-opener-policy: same-origin
+< cross-origin-resource-policy: same-origin
+< date: Mon, 07 Sep 2026 01:35:50 GMT
+< nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+< origin-agent-cluster: ?1
+< permissions-policy: accelerometer=(),camera=(),clipboard-read=(),clipboard-write=(),geolocation=(),gyroscope=(),hid=(),magnetometer=(),microphone=(),payment=(),publickey-credentials-get=(),screen-wake-lock=(),serial=(),sync-xhr=(),usb=(),xr-spatial-tracking=*
+< referrer-policy: same-origin
+< report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=AD1eKkCHnQjq03z2p%2FnTfxxvrwCrU0Oh3Js5GAOaGNxVSnrx6HkeBN20pS2g%2BGYCyCg5KM%2F4fVWurO6rRq7dsoqoVmnN9LuWfMPxwe0JvNmF63%2BZwi3AOyaXk655K5ewIpfPlHDf"}]}
+< server: cloudflare
+< server-timing: chlray;desc="a371faa47942e5fc"
+< strict-transport-security: max-age=31536000; includeSubDomains
+< vary: accept-encoding
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< --- body (5842 bytes read) ---
+< <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="content-security-policy" content="default-src &#39;none&#39;; script-src &#39;nonce-x3LSl7CxaaEhA6t5LTgFrQ&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri &#39;self&#39;"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"}body{display:flex;flex-direction:column;height:100vh;min-height:100vh}.main-content{margin:8rem auto;padding-left:1.5rem;max-width:60rem}@media (width <= 720px){.main-content{margin-top:4rem}}#challenge-error-text{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSI+PHBhdGggZmlsbD0iI0IyMEYwMyIgZD0iTTE2IDNhMTMgMTMgMCAxIDAgMTMgMTNBMTMuMDE1IDEzLjAxNSAwIDAgMCAxNiAzbTAgMjRhMTEgMTEgMCAxIDEgMTEtMTEgMTEuMDEgMTEuMDEgMCAwIDEtMTEgMTEiLz48cGF0aCBmaWxsPSIjQjIwRjAzIiBkPSJNMTcuMDM4IDE4LjYxNUgxNC44N0wxNC41NjMgOS41aDIuNzgzem0tMS4wODQgMS40MjdxLjY2IDAgMS4wNTcuMzg4LjQwNy4zODkuNDA3Ljk5NCAwIC41OTYtLjQwNy45ODQtLjM5Ny4zOS0xLjA1Ny4zODktLjY1IDAtMS4wNTYtLjM4OS0uMzk4LS4zODktLjM5OC0uOTg0IDAtLjU5Ny4zOTgtLjk4NS40MDYtLjM5NyAxLjA1Ni0uMzk3Ii8+PC9zdmc+");background-repeat:no-repeat;background-size:contain;padding-left:34px}</style><meta http-equiv="refresh" content="360"></head><body><div class="main-wrapper" role="main"><div class="main-content"><noscript><div class="h2"><span id="challenge-error-text">Enable JavaScript and cookies to continue</span></div></noscript></div></div><script nonce="x3LSl7CxaaEhA6t5LTgFrQ">(function(){window._cf_chl_opt = {cFPWv: 'g',cH: 'bYh3SSqk6ajMNFFJZjsmGrmUGIAhNwVy2XqB731oZDA-1788744950-1.2.1.1-qpyjzhynIUtKnoxbdsuOaGAB_WKA_Ub6xnICoi1.czsCUmttWub5MZ6pwyp5CwPG',cITimeS: '1788744950',cN: 'x3LSl7CxaaEhA6t5LTgFrQ',cRay: 'a371faa47942e5fc',cTplB: '0',cTplC:0,cTplO:0,cTplV:5,cType: 'managed',cUPMDTk:"/download/?id=15375\u0026__cf_chl_tk=RWjpQhRYv2UaNajLPtbjF.YPfwAPqO2HF22R4aKmXW4-1788744950-1.0.1.1-Abvz4o_mJzAZwvcyvinU2aaNdSL06CpES2zTor.n.x4",cvId: '3',cZone: 'www.phhealthcare.org',fa:"/download/?id=15375\u0026__cf_chl_f_tk=RWjpQhRYv2UaNajLPtbjF.YPfwAPqO2HF22R4aKmXW4-1788744950-1.0.1.1-Abvz4o_mJzAZwvcyvinU2aaNdSL06CpES2zTor.n.x4",md: 'DbYtwFqX4yNzJUT6EzowAiDibKDttWeko5gKOlZ3Iog-1788744950-1.2.1.1-noXtZ5hyJhJsPpEJxVKyFOyXgsWUaBCs_DLuWu5xNC6.XMKaqTx2JKmM06TXsPpWS5HbhwEAY1Fk17IhdQUBekaicZ2jRRwcfH0.oDalUlphMUC489zwETRHS2OYV64JHwatGXAlJQLx6Nlkzi5BkKhm9MypwRZRErZgDhwm6sS5V6Yp8bm6EYy7_f3hekrpmwAdorj5hXKm3.kyx3pSJIEiDe_iGRD_fH.9Mg8wxtCTk6GoRSI0tE.2w6vglUDiUKgb5JVuhp981yzgmcgl_KgRF0jDPEX26M.Ja_QTjZ7Y78um0NkHGWU.pC5fnlpheCKgBHqV3X33U2apjRMWgXk9xxfgYOD7QEHfh54XTGsanCiHYu1T3ilOxl2jONR0gvyvtQrWV7BfMK9KGmHfw2ts7zL8vqKxjOL7bLzhiGEoiWqfvUkY.ojT0YU9MdJ_EJgGd04bX3zP63e.aQPiwRH6ndT3fySwCmBk__EjSEE0DB2RY3HRsb87.6n5TVV8WJrJOWJCCxADec9M5VQwXU.KOgTnRb.57P_5BtyGVHZ_6uREskf.9DN4keVATigEu2bOezluvKkvNWMAjq8A3Ld2V.dM0wlxyNu6rd2V7my8wcMm6iWYkceZcB9923Wp_RODWwULQL8CVwysQ2rJWE6L46zt384.05WAqT1CdhyUMstufmGf_e1pvVeIYz7BYjKpty3Ss1HigNLk4yf.INbDYenCRQQCXKY9aris3T6Gx5frlppzCAIWogpwKCwx4bApDHLyhoSunh1GWzfib0KZUqRVPXAf2tg_t2NAPMbmkxe7B0ZIC8GlFQzcoy9vDHKlxEppNiBOH9YXO0DcXo4tA.WUNwJ0XLMmAY3iPxT2NVY6LReK8yAVD7lF4QHftEHs3_Z75.THnvx4kScJuqP5HT1NM5EqTwQ1CLAXOVoFvh5usBBx7kIUHrN8Ob8JdR4kA02B4Bxxo.j98mSEIjghilo5COWk4yfEh3lITvO7veWFIGz9g81XPkMfefdV.ufr7FS_G37NUek3zXqVZw1Ny5QNthrJRw8cbxOgHlgx2VHShFk2sckSwuP1uPaDexBbBq1uW7OjE2q48rGkMTV1YAXC_FLiniJ_YOyps0.plZplQdYT8GLbuBqsHMVr37KYsHJ1dnfSDYP13MDhOKKOE_HioZ7.BU.Xb5SsDonXNYyXXFx7V._f9Mov1dml',mdrd: 'pf59jkltaWTMuf9lPKIUqwaiQsHvrsi3lIut8obqOpU-1788744950-1.2.1.1-Dn7.s0M6p1jICO_fx2_NPzwbXa5LaD02EuBcBAF6V7ZjRRuUJpMUKQD6cyDav1U9Spp6g1OMQZqhSKUHAEgm7rBRIoJVB_MdaVij_J6nAUInecCErewTd.vHpRYp8J2TzBiiRxsfJtSqp6.pxRtwp1U3q.TCcphPK3kwfag.nhiB22k1.tpTNZtgjuU_1WJyC7H06oIhUcc3dWTkU.HVe.h_uLfzh_RJJ0w5ZYbP67NySuWyTHkxdh.m52hWyUkEfk_sQ.Nbk88AhkWPWtf02CaAxkdSj8eyBIjPxJVexYg5WmMeX1VO8E_4_qLc6dy1RymuyoKkUOk0aUo5vnybohBIWI1QFYXwnAiHEjl0xvFMWqe.etjIGd7z8lzRxugRBn7YgA7JOKIbfhoh3S43lY2CYFUeRoBVzNexU7Fm44b9hZWATYTSUxsS2FUfvYZCGsnYvovtCylw9K0cPNZxHmzxv5b9Y4jyI7_ujKPPbQc',};var a = document.createElement('script');a.nonce = 'x3LSl7CxaaEhA6t5LTgFrQ';a.src = '/cdn-cgi/challenge-platform/h/g/orchestrate/chl_page/v1?ray=a371faa47942e5fc';window._cf_chl_opt.cOgUHash = location.hash === '' && location.href.indexOf('#') !== -1 ? '#' : location.hash;window._cf_chl_opt.cOgUQuery = location.search === '' && location.href.slice(0, location.href.length - window._cf_chl_opt.cOgUHash.length).indexOf('?') !== -1 ? '?' : location.search;if (window.history && window.history.replaceState) {var ogU = location.pathname + window._cf_chl_opt.cOgUQuery + window._cf_chl_opt.cOgUHash;history.replaceState(null, null,"/download/?id=15375\u0026__cf_chl_rt_tk=RWjpQhRYv2UaNajLPtbjF.YPfwAPqO2HF22R4aKmXW4-1788744950-1.0.1.1-Abvz4o_mJzAZwvcyvinU2aaNdSL06CpES2zTor.n.x4"+ window._cf_chl_opt.cOgUHash);a.onload = function() {history.replaceState(null, null, ogU);}}document.getElementsByTagName('head')[0].appendChild(a);}());</script></body></html>
+
+* total time: 36 ms

@@ -16,6 +16,9 @@
 
 const fs = require('fs');
 const path = require('path');
+const { protectDocument } = require('./protect-public-contacts');
+const { loadKey } = require('./hpt/lib/pointer-obfuscation');
+const { revealContacts } = require('./hpt/lib/public-contact-text');
 
 const ROOT = path.join(__dirname, '..');
 const SRC = path.join(ROOT, 'cms_data', 'outreach.json');
@@ -73,7 +76,16 @@ function generate(src, dst) {
   const data = JSON.parse(fs.readFileSync(src, 'utf8'));
   const redacted = redactValue(data);
   const tmp = `${dst}.${process.pid}.tmp`;
-  const publicJson = JSON.stringify(redacted, null, 2).replace(/\u2014/g, '-');
+  const plainJson = JSON.stringify(redacted, null, 2).replace(/\u2014/g, '-');
+  const key = loadKey();
+  // Reuse authenticated ciphertext when the redacted source is unchanged.
+  // Decode individual JSON strings so quotes/newlines cannot break JSON syntax.
+  if (fs.existsSync(dst)) {
+    const previous = fs.readFileSync(dst, 'utf8');
+    const decoded = JSON.parse(previous, (_k, v) => typeof v === 'string' ? revealContacts(v, key) : v);
+    if (JSON.stringify(decoded) === JSON.stringify(JSON.parse(plainJson)) && protectDocument(previous, '.json', key) === previous) return dst;
+  }
+  const publicJson = protectDocument(plainJson, '.json', key).trimEnd();
   fs.writeFileSync(tmp, `${publicJson}\n`);
   fs.renameSync(tmp, dst);
   return dst;

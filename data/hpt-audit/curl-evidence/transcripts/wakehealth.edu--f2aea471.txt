@@ -1,0 +1,169 @@
+# curl-style evidence for https://wakehealth.edu/
+# fetched 2026-09-07T01:34:59.429Z with the tracker's BROWSER_HEADERS (production client)
+# record: 340096 | LEXINGTON MEMORIAL HOSPITAL INC | NC | finding: not-assessed-not-named-in-file
+# record: 340047 | NORTH CAROLINA BAPTIST HOSPITAL | NC | finding: not-assessed-not-named-in-file
+
+* DNS wakehealth.edu: 150.171.109.119
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://wakehealth.edu/
+< HTTP 301
+< content-length: 0
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:35:00 GMT
+< location: https://www.wakehealth.edu/
+< x-azure-ref: 20260907T013500Z-17b6cdf98ddbshbwhC1BN1zu3s0000000c900000000025ux
+< x-cache: CONFIG_NOCACHE
+* following Location: https://www.wakehealth.edu/
+
+* final response: https://www.wakehealth.edu/
+< HTTP 200
+< accept-ranges: bytes
+< access-control-expose-headers: Request-Context
+< cache-control: no-cache, no-store
+< content-length: 89544
+< content-security-policy: default-src 'self' wss: https: data: 'unsafe-inline' 'unsafe-eval';script-src 'self' 'unsafe-eval' 'unsafe-inline' https://*.atriumhealth.org https://*.googleapis.com https://*.wakehealth.edu https://accdn.lpsnmedia.net https://ajax.googleapis.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://code.jquery.com https://connect.facebook.net https://dev.virtualearth.net https://js-agent.newrelic.com https://lpcdn.lpsnmedia.net https://lptag.liveperson.net https://platform.cloud.coveo.com https://r.bing.com https://seekbeak.com https://static.cloud.coveo.com https://use.fortawesome.com https://va.v.liveperson.net https://www.bing.com https://www.clockwisemd.com https://www.google.com https://www.gstatic.com https://www.trumba.com https://www.youtube.com app.brazenconnect.com www.cincopa.com rtcdn.cincopa.com fast.fonts.net apis.google.com view.publitas.com s3.amazonaws.com;script-src-elem 'self' 'unsafe-eval' 'unsafe-inline' https://*.atriumhealth.org https://*.googleapis.com https://*.wakehealth.edu https://accdn.lpsnmedia.net https://ajax.googleapis.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://code.jquery.com https://connect.facebook.net https://dev.virtualearth.net https://js-agent.newrelic.com https://lpcdn.lpsnmedia.net https://lptag.liveperson.net https://platform.cloud.coveo.com https://r.bing.com https://seekbeak.com https://static.cloud.coveo.com https://use.fortawesome.com https://va.v.liveperson.net https://www.bing.com https://www.clockwisemd.com https://www.google.com https://www.gstatic.com https://www.trumba.com https://www.youtube.com app.brazenconnect.com www.cincopa.com rtcdn.cincopa.com fast.fonts.net apis.google.com view.publitas.com s3.amazonaws.com https://kit.fontawesome.com/11daf4ca86.js
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:35:01 GMT
+< expires: -1
+< request-context: appId=cid-v1:a0e1891c-1d13-4f2a-8949-dded6b098266
+< strict-transport-security: max-age=31536000; includeSubDomains
+< x-azure-ref: 20260907T013500Z-168545c8796bstqghC1IADtq9n0000000v2g000000000f66
+< x-cache: CONFIG_NOCACHE
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-type: 2
+< x-xss-protection: 1; mode=block
+< --- body (71314 bytes read, truncated) ---
+< 
+< 
+< 
+< <!DOCTYPE html>
+< <html lang="en">
+< <head>
+<     
+<     
+< 
+<     <!-- {110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9} -->
+<     
+< <title>Home | Atrium Health Wake Forest Baptist</title>
+< 
+< <meta charset="UTF-8">
+< <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+< <meta name="description" content="Atrium Health Wake Forest Baptist is a nationally recognized, fully integrated academic medical center and health system located in Winston-Salem, North Carolina. ">
+< <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=5.0">
+< <link rel="canonical" href="https://www.wakehealth.edu/" />
+< 
+< <meta property="og:title" content="Home">
+< <meta property="og:url" content="https://www.wakehealth.edu/">
+< <meta property="og:image" content="">
+< <meta property="og:video" content="">
+< <meta property="og:description" content="Atrium Health Wake Forest Baptist is a nationally recognized, fully integrated academic medical center and health system located in Winston-Salem, North Carolina. ">
+< <meta property="og:site_name" content="Atrium Health Wake Forest Baptist">
+< 
+< <meta name="twitter:card" content="summary">
+< <meta name="twitter:site" content="@wakehealth">
+< <meta name="twitter:title" content="Home">
+< <meta name="twitter:description" content="Atrium Health Wake Forest Baptist is a nationally recognized, fully integrated academic medical center and health system located in Winston-Salem, North Carolina. ">
+< <meta name="twitter:creator" content="@wakehealth">
+< <meta name="twitter:image" content="">
+< <meta name="nav_title" content="Home">
+< 
+< <meta name="extrametatag" content="Extra Meta Tags">
+< 
+< 
+< <meta name="id" content="{110d559f-dea5-42ea-9c1c-8a5df7e70ef9}">
+< <meta name="first_letter" content="H">
+< <meta name="short_description" content="">
+< 
+< 
+< 
+< 
+< 
+<     
+< 
+< <link rel="stylesheet" href="https://cdn.atriumhealth.org/Assets/includes/shared/fontawesome/css/fontawesome.css?v=7.2.0" />
+< <link rel="stylesheet" href="https://cdn.atriumhealth.org/Assets/includes/shared/fontawesome/css/regular.css?v=7.2.0" />
+< <link rel="stylesheet" href="https://cdn.atriumhealth.org/Assets/includes/shared/fontawesome/css/v4-shims.css?v=7.2.0" />
+< <link rel="stylesheet" href="https://cdn.atriumhealth.org/Assets/includes/shared/fontawesome/css/v4-font-face.min.css?v=7.2.0" />
+< 
+< <link rel="shortcut icon" href="https://cdn.atriumhealth.org/_res/clinical/media/favicon.ico?v=20230615">
+< <link rel="stylesheet" href="https://cdn.atriumhealth.org/_res/clinical/styles/style.css?v=20230615">
+< <link rel="stylesheet" href="https://cdn.atriumhealth.org/_res/common/styles/coveo.css">
+< <link rel="stylesheet" href="https://cdn.atriumhealth.org/_res/clinical/styles/slick-theme.css">
+< <link rel="stylesheet" href="https://cdn.atriumhealth.org/_res/clinical/styles/slick.css">
+< <link rel="stylesheet" href="https://cdn.atriumhealth.org/_res/clinical/styles/form.css">
+< <link rel="stylesheet" href="https://cdn.atriumhealth.org/_res/clinical/styles/main.css?v=20230615">
+< 
+< 
+<     
+< 
+< 
+< 
+< 
+< 
+< <script type="text/javascript">
+<     
+<     var pageBodyTopScripts="true";
+< </script>
+< 
+< <meta name="google-site-verification" content="RNM8LUUE-RnUbS2oDaxutxh2s_oagPb9xESKC9JT45w" />
+< <meta name="facebook-domain-verification" content="akek8vwnl9p5whv7d8ivinwoj7ddjh" />
+< 
+< <script type="application/ld+json">{"@context": "http://schema.org","@type": "MedicalOrganization","name": "Atrium Health Wake Forest Baptist","url": "https://www.wakehealth.edu/","logo": "https://cdn.atriumhealth.org/-/media/wakeforest/clinical/images/logos-and-signatures/header-logo.png?rev=d9a290ded17d487cb53a73fff72ef325","contactPoint": [{"@type": "ContactPoint","telephone": "+18887169253","contactType": "appointment requests","contactOption": "TollFree","areaServed": "US","availableLanguage": [ "English", "Spanish" ]},{"@type": "ContactPoint","telephone": "+13367163988","contactType": "billing and insurance","contactOption": "TollFree","areaServed": "US","availableLanguage": [ "English", "Spanish" ]}],"sameAs": ["https://www.facebook.com/AtriumHealthWakeForestBaptist/","https://www.youtube.com/atriumhealthwakeforestbaptist","https://www.instagram.com/atriumhealthwfb/","https://en.wikipedia.org/wiki/Atrium_Health_Wake_Forest_Baptist" ]}</script>
+< 
+< <!-- Coveo JavaScript Framework -->
+< <script>
+<     document.addEventListener('DOMContentLoaded', function () {
+<         coveoPage = document.querySelector('#CoveoSearchInterface');
+<         if (!coveoPage) {
+<             return;
+<         }
+< 
+<         coveoPageL05 = document.querySelector('#CoveoSearchInterface .L05');
+<         if (coveoPageL05) {
+<             return;
+<         }
+< 
+<         var spinner = document.createElement('div');
+<         spinner.className = 'fa fa-spinner';
+< 
+<         var spinnerHolder = document.createElement('div');
+<         spinnerHolder.className = 'spinner-holder';
+< 
+<         var spinnerContainer = document.createElement('div');
+<         spinnerContainer.id = 'coveo-spinner';
+< 
+<         spinnerHolder.appendChild(spinner)
+<         spinnerContainer.appendChild(spinnerHolder);
+<         document.body.appendChild(spinnerContainer);
+<     });
+< </script>
+< <script async class="coveo-script" src="https://static.cloud.coveo.com/searchui/v2.10116/js/CoveoJsSearch.Lazy.min.js"></script>
+< 
+<     
+< </head>
+< <body class=" ">
+<     
+< 
+< 
+< 
+< <h1 class="visuallyhidden">Atrium Health Wake Forest Baptist</h1>
+< 
+<     <!-- BEGIN NOINDEX -->
+<     <!--googleoff: index-->
+<     <div class="skip-navigation">
+<         <a href="#" tabindex="0">Skip navigation</a>
+<     </div>
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 933 ms

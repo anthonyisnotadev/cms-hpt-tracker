@@ -1,0 +1,167 @@
+# curl-style evidence for https://adventisthealth.org/
+# fetched 2026-09-07T01:32:36.310Z with the tracker's BROWSER_HEADERS (production client)
+# record: 050455 | ADVENTIST HEALTH BAKERSFIELD | CA | finding: not-assessed-not-named-in-file
+# record: 050236 | ADVENTIST HEALTH SIMI VALLEY | CA | finding: not-assessed-not-named-in-file
+# record: 381317 | ADVENTIST HEALTH TILLAMOOK | OR | finding: not-assessed-not-named-in-file
+
+* DNS adventisthealth.org: 18.246.86.140, 35.164.148.126
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://adventisthealth.org/
+< HTTP 301
+< content-length: 134
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:32:37 GMT
+< location: https://www.adventisthealth.org:443/
+< server: awselb/2.0
+* following Location: https://www.adventisthealth.org:443/
+
+* final response: https://www.adventisthealth.org/
+< HTTP 200
+< content-encoding: gzip
+< content-security-policy: base-uri 'self'
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:32:37 GMT
+< expires: Mon, 26 Jul 1997 05:00:00 GMT
+< last-modified: Mon, 07 Sep 2026 01:32:37 GMT
+< pragma: no-cache
+< referrer-policy: strict-origin-when-cross-origin
+< server: Apache/2.4.52 (Ubuntu)
+< strict-transport-security: max-age=63072000; includeSubDomains
+< vary: Accept-Encoding
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-xss-protection: 1; mode=block
+< --- body (57480 bytes read) ---
+< 
+< 
+< <!DOCTYPE html>
+< <html lang="en-US">
+< <head>
+<   <meta charset="utf-8">
+<   <meta name="viewport" content="width=device-width, initial-scale=1">
+<   <title>Adventist Health</title>
+< <meta name="description" content="Adventist Health is a faith-based, nonprofit, integrated health system serving more than 90 communities on the West Coast and Hawaii with over 400 sites of care, including 26 acute care facilities."/>
+< 
+< 
+<     <meta property="og:title" content="Adventist Health"/>
+< 
+< <meta property="og:description" content="Adventist Health is a faith-based, nonprofit, integrated health system serving more than 90 communities on the West Coast and Hawaii with over 400 sites of care, including 26 acute care facilities."/>
+< <meta property="og:type" content="website"/>
+< <meta property="og:url" content="https://www.adventisthealth.org///"/>
+< 
+<     <meta property="og:image"
+<           content="https://www.adventisthealth.org/files/core/common/adventist-health-default.jpg"/>
+< 
+< 
+<     <meta property="twitter:title" content="Adventist Health"/>
+< 
+<     <meta property="twitter:card" content="summary"/>
+<     <meta property="twitter:description" content="Adventist Health is a faith-based, nonprofit, integrated health system serving more than 90 communities on the West Coast and Hawaii with over 400 sites of care, including 26 acute care facilities."/>
+< 
+<     <meta property="twitter:image"
+<           content="https://www.adventisthealth.org/files/core/common/adventist-health-default.jpg"/>
+< 
+< 
+<     
+<         <meta name="robots"
+<               content="index, follow{else}" />
+<     
+< 
+< 
+< 
+< 
+< 
+< 
+< 
+< 
+< 
+< 
+<   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<   <link rel="icon" href="/favicon.ico" type="image/x-icon">
+<   <link rel="preconnect" href="https://cdn.fonts.net" crossorigin>
+<   <link href="https://cdn.fonts.net/kit/564d2b94-7705-42e3-9971-78e3141050dc/564d2b94-7705-42e3-9971-78e3141050dc.css" rel="stylesheet">
+<   <link rel="stylesheet" type="text/css" href="https://www.adventisthealth.org/assets/css/global.css?v=1.2.9">
+<   <link rel="stylesheet" type="text/css" href="https://www.adventisthealth.org/assets/css/nav.css?v=1.2.9">
+<   
+<   
+<   <link rel="stylesheet" type="text/css" href="https://www.adventisthealth.org/assets/css/styles.css?v=1.2.9">
+<   
+<   
+<   
+<   
+<   <script src="https://cmp.osano.com/AzqBp5UVGfDEQ47fD/a4979bca-8900-4d69-ac15-54b2e9e7caa1/osano.js?variant=three"></script>
+<   
+<   
+<   
+<   <script>
+<   (function (_config) {
+<   var script = document.createElement("script");
+<   script.src= "https://tag.aticdn.net/piano-analytics.js";
+<   script.async= true;
+<   script.dataset.config= JSON.stringify(_config);
+<   document.head.appendChild(script);
+<   })({
+<   site: 649829,
+<   collectDomain: "https://kxbndls.pa-cd.com",
+<   instantTracking: {
+<   pages: true,
+<   searches: true,
+<   downloads: true
+<   },
+<   consentDefaultMode: "opt-in"
+<   });
+<   </script>
+<   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<   <script>
+<     //flag for captcha loading
+<     window.captchaLoaded = false;
+<     window.validation_errors = false;
+<   </script>
+< </head>
+<     
+< <body class="page">
+< 
+< 
+< <header class="page-head js-header">
+<   
+<     
+< 
+< 
+< 
+<   
+<   <div class="page-head__top">
+<     <div class="container">
+<         <nav class="topnav">
+<             <ul class="topnav__list">
+<                 
+<                     <li class="topnav__item"><a class="topnav__link" href="/giving/" >Ways to Give</a></li>
+<                 
+<                     <li class="topnav__item"><a class="topnav__link" href="/careers/" >Careers</a></li>
+<                 
+<                     <li class="topnav__item"><a class="topnav__link" href="/patients-and-visitors/bill-pay/" >Bill Pay</a></li>
+<                 
+<                     <li class="topnav__item"><a class="topnav__link" href="/patients-and-visitors/mychart/" >MyChart</a></li>
+<                 
+<                 
+<                 <li class="topnav__item item--location">
+<                     <a class="topnav__link" href="/regional-locations/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 298.6 413.1"><path d="M149.3 0C66.7 0 0 66.7 0 149.3c0 28.8 9.2 56.3 22 78.9l97.3 168.4c6.1 11 18.4 16.5 30 16.5s23.3-5.5 30-16.5l97.3-168.3c12.9-22.6 22-49.6 22-78.9C298.6 66.8 231.9 0 149.3 0Zm0 193.4c-30 0-54.5-24.5-54.5-54.5s24.5-54.5 54.5-54.5 54.5 24.5 54.5 54.5-24.5 54.5-54.5 54.5Z"/></svg>Adventist Health</a>
+<                 </li>
+<                 
+<                 <li class="topnav__item">
+<                     <a class="topnav__link link--button" href="/system/search/"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m493.49 404.11-86.96-86.96c16.43-30.82 25.14-65.4 25.14-101.31 0-57.65-22.45-111.85-63.22-152.62C327.68 22.45 273.48 0 215.83 0 96.82 0 0 96.82 0 215.83c0 57.65 22.45 111.85 63.22 152.62 40.77 40.77 94.96 63.22 152.62 63.22 35.92 0 70.49-8.72 101.31-25.14l86.97 86.97c11.94 11.94 27.81 18.51 44.69 18.51s32.75-6.57 44.69-18.51c11.94-11.94 18.51-27.81 18.51-44.69s-6.57-32.75-18.51-44.69Zm-277.66-68.84c-65.85 0-119.43-53.58-119.43-119.43 0-65.86 53.58-119.43 119.44-119.44 65.86 0 119.43 53.58 119.43 119.43s-53.58 119.43-119.43 119.43Z"/></svg></a>
+<                 </li>
+<             </ul>
+<         </nav>
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 1217 ms

@@ -1,0 +1,26 @@
+# curl-style evidence for https://unitedmedicaldc.com/cms-hpt.txt
+# fetched 2026-09-07T01:32:38.762Z with the tracker's BROWSER_HEADERS (production client)
+# record: 090008 | UNITED MEDICAL CENTER | DC | finding: not-assessed-site-unreachable
+
+* DNS unitedmedicaldc.com: 3.33.251.168, 15.197.225.128
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://unitedmedicaldc.com/cms-hpt.txt
+< HTTP 404
+< content-length: 0
+< date: Mon, 07 Sep 2026 01:32:40 GMT
+< server: awselb/2.0
+< wafrule: 5
+< --- body (0 bytes read) ---
+< 
+
+* total time: 119 ms

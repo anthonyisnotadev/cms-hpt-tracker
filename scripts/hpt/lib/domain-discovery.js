@@ -17,7 +17,7 @@ const { probeMrf } = require('./probe');
 const { adjudicatePair, isAccepted } = require('./adjudicate');
 const { bestPointerEntry, classifyEvidence } = require('../verify-external-links');
 const {
-  protectPointerTextIfEnabled, inspectPointerText
+  protectPointerTextIfEnabled, inspectPointerText, isObfuscated, decryptValue, loadKey
 } = require('./pointer-obfuscation');
 
 const FEDERAL = /Veterans Administration|Department of Defense/i;
@@ -84,6 +84,7 @@ function normalizeDomain(value) {
 }
 
 function normalizePhone(value) {
+  if (isObfuscated(value)) value = decryptValue(value, loadKey());
   const digits = String(value || '').replace(/\D/g, '');
   return digits.length === 11 && digits.startsWith('1') ? digits.slice(1) : digits;
 }

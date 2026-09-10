@@ -47,46 +47,48 @@ function readTable(file) {
 // Every CMS finding rolls up into one of five tiers. The tier is what the page
 // colours by; the finding is what it explains with.
 const FINDINGS = [
+  { key: 'not-assessed-identity-conflict', tier: 'unknown', label: 'File assignment quarantined',
+    blurb: 'The previous file assignment conflicts with hospital identity. Its links and metadata are excluded pending verification.' },
   { key: 'compliant-observed', tier: 'compliant', label: 'Machine-readable file located',
     blurb: 'A machine-readable standard-charges file opened and reported an update date.' },
   { key: 'compliant-date-unverified', tier: 'compliant', label: 'File located, date unread',
-    blurb: 'A charge file opened, but its declared update date could not be read.' },
-  { key: 'pointer-lists-no-mrf-url', tier: 'failing', label: 'Pointer omits the file link',
-    blurb: 'The pointer names this hospital but does not link to its charge file.' },
-  { key: 'mrf-url-unreachable', tier: 'failing', label: 'File URL is dead',
-    blurb: 'A reported charge-file URL returned an error.' },
-  { key: 'mrf-stale-over-365-days', tier: 'failing', label: 'File older than a year',
-    blurb: 'CMS requires hospitals to update the file at least once a year.' },
-  { key: 'old-template-version', tier: 'failing', label: 'Outdated CMS template',
-    blurb: 'The file uses an older CMS format, not version 3.0.0.' },
-  { key: 'no-cms-hpt-txt-published', tier: 'failing', label: 'No pointer file published',
-    blurb: 'The site is up but has no cms-hpt.txt at the root or under /.well-known/.' },
+    blurb: 'The bounded probe did not recover a declared update date; file validity is unverified.' },
+  { key: 'pointer-lists-no-mrf-url', tier: 'failing', label: 'MRF link not extracted',
+    blurb: 'Our parser extracted no MRF URL for the matched pointer entry.' },
+  { key: 'mrf-url-unreachable', tier: 'failing', label: 'MRF request failed',
+    blurb: 'Our request to the recorded charge-file URL failed; the cause and current link need verification.' },
+  { key: 'mrf-stale-over-365-days', tier: 'failing', label: 'Recorded date over 365 days old',
+    blurb: 'The extracted update date was over 365 days old at assessment time.' },
+  { key: 'old-template-version', tier: 'failing', label: 'Older template version recorded',
+    blurb: 'The extracted version was below the version expected by this audit.' },
+  { key: 'no-cms-hpt-txt-published', tier: 'failing', label: 'Pointer not retrieved',
+    blurb: 'Our checks did not retrieve a usable pointer from the tested locations.' },
   { key: 'pointer-blocked-to-automation', tier: 'blocked', label: 'Pointer blocked to automation',
     blurb: 'The website refused the automated request for cms-hpt.txt.' },
   { key: 'mrf-blocked-to-automation', tier: 'blocked', label: 'File blocked to automation',
     blurb: 'The charge file refused the automated request.' },
-  { key: 'not-assessed-domain-unknown', tier: 'unknown', label: 'No website on record',
-    blurb: 'No hospital website was available to check.' },
-  { key: 'not-assessed-site-unreachable', tier: 'unknown', label: 'Website unreachable',
-    blurb: 'The website on record did not open.' },
+  { key: 'not-assessed-domain-unknown', tier: 'unknown', label: 'Official domain not verified',
+    blurb: 'No official domain is assigned in this audit; a working website may exist.' },
+  { key: 'not-assessed-site-unreachable', tier: 'unknown', label: 'Website request failed',
+    blurb: 'Our request to the recorded website failed during the check.' },
   // This row DOES carry a pointer file, which is why the page can offer a PTR
   // button next to it. The label has to say so, otherwise the badge appears to
   // contradict the button sitting beside it.
-  { key: 'not-assessed-not-named-in-file', tier: 'unknown', label: 'Not listed in system file',
+  { key: 'not-assessed-not-named-in-file', tier: 'unknown', label: 'Hospital match unresolved',
     blurb: 'The health system’s pointer worked, but this hospital could not be matched to an entry.' },
   { key: 'not-applicable-federal', tier: 'exempt', label: 'Federally owned',
     blurb: 'VA and Department of Defense hospitals sit outside the rule.' },
 ];
 
 const TIERS = [
-  { key: 'compliant', label: 'Compliant', short: 'Compliant',
+  { key: 'compliant', label: 'File located', short: 'File located',
     note: 'The charge file opened. The prices inside it were not verified.' },
-  { key: 'failing', label: 'Not compliant', short: 'Failing',
-    note: 'A file was missing, broken, stale, or outdated.' },
-  { key: 'blocked', label: 'Blocked', short: 'Blocked',
-    note: 'The website blocked the request, so no result was possible.' },
+  { key: 'failing', label: 'Issue observed', short: 'Issue observed',
+    note: 'A discovery, request, date, or template check needs verification; this is not a legal determination.' },
+  { key: 'blocked', label: 'Request denied', short: 'Request denied',
+    note: 'Our automated request was denied or rate-limited; browser access may differ.' },
   { key: 'unknown', label: 'Not assessed', short: 'Not assessed',
-    note: 'No working website was available, or the hospital could not be matched to a file.' },
+    note: 'Domain, access, or hospital identity remains unresolved in this audit.' },
   { key: 'exempt', label: 'Exempt', short: 'Exempt',
     note: 'Federally owned hospitals are outside the rule.' },
 ];
@@ -112,13 +114,13 @@ const STATE_NAMES = {
 const QUEUE = [
   { key: 'exa-domain-lookup', label: 'Find the website',
     action: 'Find the right website, then check it again.',
-    why: 'CMS lists no working website for these hospitals.' },
+    why: 'The audit has no verified official domain assigned for these hospitals.' },
   { key: 'name-match-review', label: 'Review the name match',
     action: 'Match each hospital to the right entry by hand.',
-    why: 'The system file opens, but its names do not match the CMS list.' },
+    why: 'The pointer was retrieved, but hospital identity remains unresolved.' },
   { key: 'unblocker', label: 'Route around the block',
     action: 'Open the site in a browser or ask the hospital for access.',
-    why: 'The site works for people but blocks automated requests.' },
+    why: 'Our automated request was denied; browser access has not necessarily been checked.' },
   { key: 'exempt-federal', label: 'Close as exempt',
     action: 'No work required. Record the exemption and move on.',
     why: 'Federally owned hospitals are outside the rule and will never publish under it.' },
@@ -167,9 +169,30 @@ function main() {
   const outFile = outIdx >= 0 ? argv[outIdx + 1] : path.join(__dirname, '..', 'tracker.html');
   const srcDir = resolveDir(argv.find(a => !a.startsWith('--') && a !== outFile));
 
-  const compliance = readTable(path.join(srcDir, 'compliance.csv'));
-  const manifest = readTable(path.join(srcDir, 'manifest.csv'));
-  const gaps = readTable(path.join(srcDir, 'gaps.csv'));
+  const reviewed = require('./hpt/lib/reviewed-resolutions').loadReviewedView(srcDir);
+  const { compliance, manifest, gaps } = reviewed;
+  // Operational overlay: why each hospital is unresolved and what to do about
+  // it. Generated from compliance + curl-evidence by scripts/hpt/build-interventions.js.
+  const { INTERVENTIONS } = require('./hpt/build-interventions');
+  const interventionKeys = Object.keys(INTERVENTIONS);
+  const interventionsFile = path.join(srcDir, 'interventions.csv');
+  if (!fs.existsSync(interventionsFile)) {
+    throw new Error(
+      `interventions.csv not found in ${srcDir}.\n` +
+      'Run `node scripts/hpt/build-interventions.js` before building the tracker.');
+  }
+  const interventions = readTable(interventionsFile);
+  const interventionByCcn = new Map(interventions.map(r => [r.ccn, r]));
+  // Raw HTTP evidence per CCN, from the curl-evidence index: [url, status, edge, transcript].
+  const evidenceFile = path.join(srcDir, 'curl-evidence', 'index.csv');
+  const evidenceByCcn = new Map();
+  if (fs.existsSync(evidenceFile)) {
+    for (const r of readTable(evidenceFile)) {
+      if (!r.ccn || !r.transcript) continue;
+      if (!evidenceByCcn.has(r.ccn)) evidenceByCcn.set(r.ccn, []);
+      evidenceByCcn.get(r.ccn).push([r.url, r.final_status || 'no response', r.edge || '', 'curl-evidence/' + String(r.transcript).replace(/\\/g, '/')]);
+    }
+  }
   const outreachFile = path.join(__dirname, '..', 'cms_data', 'outreach.public.json');
   const outreach = fs.existsSync(outreachFile)
     ? JSON.parse(fs.readFileSync(outreachFile, 'utf8'))
@@ -187,6 +210,7 @@ function main() {
   // One row per hospital, positional to keep the payload small.
   const rows = compliance.map(r => {
     const m = byCcn.get(r.ccn) || {};
+    const iv = interventionByCcn.get(r.ccn) || {};
     return [
       r.ccn,
       r.hospital_name,
@@ -212,6 +236,8 @@ function main() {
       // Human-facing transparency/discovery page. This matters for direct-MRF
       // evidence where there is intentionally no cms-hpt.txt pointer URL.
       m.source_page_url || '',
+      // Why this hospital is unresolved and what a human should do, when it is.
+      interventionKeys.indexOf(iv.intervention),
     ];
   });
 
@@ -230,6 +256,25 @@ function main() {
     throw new Error(
       `compliance.csv contains finding(s) missing from the FINDINGS taxonomy: ${unknownFindings.join(', ')}.\n` +
       'Add them to FINDINGS in this file (and a template in js/tracker.js) before rebuilding.');
+  }
+
+  // Same discipline for the intervention overlay: a missing or unknown key
+  // would silently blank the new filter and section, so fail the build instead.
+  const missingInterventions = compliance.filter(r => !interventionByCcn.get(r.ccn));
+  if (missingInterventions.length) {
+    throw new Error(
+      `interventions.csv is missing ${missingInterventions.length} compliance row(s) ` +
+      `(first: ${missingInterventions[0].ccn}). Re-run scripts/hpt/build-interventions.js.`);
+  }
+  const unknownInterventions = [...new Set(interventions.map(r => r.intervention))].filter(k => !INTERVENTIONS[k]);
+  if (unknownInterventions.length) {
+    throw new Error(
+      `interventions.csv contains unknown intervention(s): ${unknownInterventions.join(', ')}.\n` +
+      'Add them to INTERVENTIONS in scripts/hpt/build-interventions.js.');
+  }
+  const orphanRows = rows.filter(r => r[19] < 0);
+  if (orphanRows.length) {
+    throw new Error(`interventions.csv has rows whose key is not in INTERVENTIONS (${orphanRows.length}); rebuild the overlay.`);
   }
 
   const findingCounts = tally(compliance, r => r.finding);
@@ -309,13 +354,23 @@ function main() {
     if (v) versions.set(v, (versions.get(v) || 0) + 1);
   }
 
+  const interventionCounts = tally(interventions, r => r.intervention);
+
   const data = {
+    auditHistory: reviewed.history,
+    reviewedCcns: reviewed.applied,
+    reviewedAt: Object.fromEntries(compliance.filter(r => reviewed.applied.includes(r.ccn)).map(r => [r.ccn, r.checked_at])),
+    assessments: Object.fromEntries(['rechecks/2026-09-09/resolution/assessments.csv', 'rechecks/2026-09-09/recovery-856/assessments.csv']
+      .flatMap(file => fs.existsSync(path.join(srcDir, file)) ? readTable(path.join(srcDir, file)) : []).map(r => [r.ccn, r])),
     // The dateline is the snapshot's latest observation. The full first/last
     // crawl interval remains available in `window` for provenance.
     generated: (checked[checked.length - 1] || '').slice(0, 10),
     window: [checked[0] || null, checked[checked.length - 1] || null],
     tiers: TIERS.map(t => ({ ...t, n: tierCounts[t.key] })),
     findings: FINDINGS.map(f => ({ ...f, n: findingCounts.get(f.key) || 0 })),
+    interventions: interventionKeys
+      .map(key => ({ key, ...INTERVENTIONS[key], n: interventionCounts.get(key) || 0 }))
+      .sort((a, b) => b.n - a.n),
     totals: {
       hospitals: compliance.length,
       states: states.length,
@@ -333,9 +388,14 @@ function main() {
     formats: topList(tally(manifest, r => (r.mrf_format === 'unknown' ? '' : r.mrf_format)), 6),
     http: topList(tally(manifest, r => r.mrf_http_status), 8),
     queue,
-    dict: { states, types, findings: findingKeys, queue: QUEUE.map(q => q.key) },
+    dict: { states, types, findings: findingKeys, interventions: interventionKeys, queue: QUEUE.map(q => q.key) },
     rows,
     gapRows,
+    // ccn -> [[url, final status, edge, transcript path], ...] for every hospital
+    // with raw HTTP evidence. Only unresolved classes are collected, so this
+    // stays small while giving the drawer and the EVID button exact links.
+    evidence: Object.fromEntries(Array.from(evidenceByCcn.entries(), ([ccn, list]) =>
+      [ccn, list.slice().sort((a, b) => String(b[1]).localeCompare(String(a[1])))])),
     outreach,
   };
 

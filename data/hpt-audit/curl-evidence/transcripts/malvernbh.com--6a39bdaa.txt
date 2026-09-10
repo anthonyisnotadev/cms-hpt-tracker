@@ -1,0 +1,164 @@
+# curl-style evidence for https://malvernbh.com/
+# fetched 2026-09-07T01:35:48.523Z with the tracker's BROWSER_HEADERS (production client)
+# record: 394057 | MALVERN BEHAVIORAL HEALTH | PA | finding: no-cms-hpt-txt-published
+
+* DNS malvernbh.com: 162.159.134.42
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://malvernbh.com/
+< HTTP 301
+< alt-svc: h3=":443"; ma=86400
+< cache-control: public, max-age=0, s-maxage=900
+< cache-tag: 71e45df0-ec7e-408d-b0d1-c83ae9e741fd,f0c24e398aff567c4d954a38803a0852c4b2c9d93afab0a224b1ad690f033aa9
+< cf-cache-status: DYNAMIC
+< cf-ray: a371faa0accb12ce-IAD
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:35:49 GMT
+< ki-cache-tag: 71e45df0-ec7e-408d-b0d1-c83ae9e741fd,f0c24e398aff567c4d954a38803a0852c4b2c9d93afab0a224b1ad690f033aa9
+< ki-cache-type: None
+< ki-cf-cache-status: SAVING
+< ki-edge: v=28.5.0;mv=99.9.9
+< ki-origin: o1i
+< location: https://www.malvernbh.com/
+< nel: {"report_to":"cf-nel","success_fraction":0.01,"max_age":604800}
+< report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=QLYKNPoycBymM%2FFmU2TaYtDqYSbra%2FvOJOyp7G430UtIy7bQOJ3SW3dLd%2BAjxmeQPcJcIal8fa5qE%2Fmh2cUYB6CJziRayo9shattqlVDBzH2nKpDp2avxxxXr7gEKiQ%3D"}]}
+< server: cloudflare
+< x-content-type-options: nosniff
+< x-edge-location-klb: 1
+< x-kinsta-cache: HIT
+< x-redirect-by: WordPress
+* following Location: https://www.malvernbh.com/
+
+* final response: https://www.malvernbh.com/
+< HTTP 200
+< age: 41128
+< alt-svc: h3=":443"; ma=86400
+< cache-control: public, max-age=0, s-maxage=86400
+< cf-cache-status: HIT
+< cf-ray: a371faa23b958f22-IAD
+< content-encoding: br
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:35:50 GMT
+< ki-cache-tag: 71e45df0-ec7e-408d-b0d1-c83ae9e741fd,1693623c5beba10949c14f773a9897c93be638940af24798528913e1cc95805d
+< ki-cache-type: Edge
+< ki-cf-cache-status: HIT
+< ki-edge: v=28.5.0;mv=99.9.9
+< ki-origin: o1i
+< last-modified: Wed, 12 Aug 2026 18:09:40
+< link: <https://www.malvernbh.com/wp-json/>; rel="https://api.w.org/", <https://www.malvernbh.com/wp-json/wp/v2/pages/61>; rel="alternate"; title="JSON"; type="application/json", <https://www.malvernbh.com/>; rel=shortlink
+< nel: {"report_to":"cf-nel","success_fraction":0.01,"max_age":604800}
+< report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=dG3J4123HswsJy5cpWFjtdZcmqjPGyPQW2iDtlLuHmT%2Be76g2tISBGeB1MULi441Nfzn%2FuiC0Gn%2FVhbrQ%2FkMMRD6vybKQEa44D4npCHmahQpiJbkjYyJBT5ycD6JFlcx7d64"}]}
+< server: cloudflare
+< vary: Accept-Encoding
+< x-content-type-options: nosniff
+< x-edge-location-klb: 1
+< x-kinsta-cache: HIT
+< --- body (49593 bytes read) ---
+< <!doctype html>
+< <!--[if lt IE 7 ]> <html class="ie ie6 no-js" dir="ltr" lang="en-US"> <![endif]-->
+< <!--[if IE 7 ]>    <html class="ie ie7 no-js" dir="ltr" lang="en-US"> <![endif]-->
+< <!--[if IE 8 ]>    <html class="ie ie8 no-js" dir="ltr" lang="en-US"> <![endif]-->
+< <!--[if IE 9 ]>    <html class="ie ie9 no-js" dir="ltr" lang="en-US"> <![endif]-->
+< <!--[if gt IE 9]><!--><html class="no-js" dir="ltr" lang="en-US"><!--<![endif]-->
+< <head>
+< <meta name="theme-color" content="#82bd41" />
+< <meta name="viewport" content="width=device-width, initial-scale=1" />
+< <meta name="format-detection" content="telephone=no" />
+< <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+< <meta name="google-site-verification" content="Xd8d1PtUJilleU0voo_EusAcaF8_WsPVnnFCS6xdCWc" />
+< <link rel="stylesheet" media="print" onload="this.onload=null;this.media='all';" id="ao_optimized_gfonts" href="https://fonts.googleapis.com/css?family=Lora:400,500,italic400&amp;display=swap"><link rel="preconnect" href="https://fonts.googleapis.com" />
+< <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+< <link rel="preconnect" href="https://googletagmanager.com" />
+< <link rel="preconnect" href="https://google-analytics.com" />
+< <link rel="preconnect" href="https://youtube.com" />
+< 
+< 	<!-- Google tag (gtag.js) --> 
+< 	<script defer src="https://www.googletagmanager.com/gtag/js?id=AW-10982707731"></script> 
+< 	<script> 
+< 		window.dataLayer = window.dataLayer || []; 
+< 		function gtag(){dataLayer.push(arguments);} 
+< 		gtag('js', new Date()); 
+< 		gtag('config', 'AW-10982707731'); 
+< 	</script>
+< 	<!-- End Google tag (gtag.js) -->
+< 	
+<     <!-- Google Tag Manager -->
+<     <script>
+< 		(function (w, d, s, l, i) {
+<             w[l] = w[l] || [];
+<             w[l].push({'gtm.start':
+<                         new Date().getTime(), event: 'gtm.js'});
+<             var f = d.getElementsByTagName(s)[0],
+<                     j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+<             j.async = true;
+<             j.src =
+<                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+<             f.parentNode.insertBefore(j, f);
+<         })(window, document, 'script', 'dataLayer', 'GTM-N3J26BD');
+< 	</script>
+<     <!-- End Google Tag Manager -->
+< <meta name="viewport" content="width=device-width, initial-scale=1" />
+< <script
+< 				type="text/javascript"
+< 				src="https://app.termly.io/resource-blocker/c6f70242-b77e-4292-a6e9-beaf9bf61bb7">
+< 			</script>
+< <!-- Search Engine Optimization by Rank Math PRO - https://rankmath.com/ -->
+< <link media="all" href="https://www.malvernbh.com/wp-content/cache/autoptimize/css/autoptimize_e85eede564c887bfdd8ef802f83f5166.css" rel="stylesheet"><title>Inpatient Mental Health Facility in Philadelphia, PA</title>
+< <meta name="description" content="Leading acute inpatient mental health facility serving PA, NJ &amp; NY. We provide specialized, person-centered behavioral health treatment. 24/7 Admissions."/>
+< <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
+< <link rel="canonical" href="https://www.malvernbh.com/" />
+< <meta property="og:locale" content="en_US" />
+< <meta property="og:type" content="website" />
+< <meta property="og:title" content="Inpatient Mental Health Facility in Philadelphia, PA" />
+< <meta property="og:description" content="Leading acute inpatient mental health facility serving PA, NJ &amp; NY. We provide specialized, person-centered behavioral health treatment. 24/7 Admissions." />
+< <meta property="og:url" content="https://www.malvernbh.com/" />
+< <meta property="og:site_name" content="Malvern Behavioral Health" />
+< <meta property="og:updated_time" content="2026-08-12T18:09:40-04:00" />
+< <meta name="twitter:card" content="summary_large_image" />
+< <meta name="twitter:title" content="Inpatient Mental Health Facility in Philadelphia, PA" />
+< <meta name="twitter:description" content="Leading acute inpatient mental health facility serving PA, NJ &amp; NY. We provide specialized, person-centered behavioral health treatment. 24/7 Admissions." />
+< <meta name="twitter:label1" content="Written by" />
+< <meta name="twitter:data1" content="towermarketing" />
+< <meta name="twitter:label2" content="Time to read" />
+< <meta name="twitter:data2" content="Less than a minute" />
+< <script type="application/ld+json" class="rank-math-schema-pro">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.malvernbh.com/#organization","name":"Malvern Behavioral Health","url":"https://www.malvernbh.com","logo":{"@type":"ImageObject","@id":"https://www.malvernbh.com/#logo","url":"https://www.malvernbh.com/wp-content/uploads/2021/03/malvern-behavioral-health-logo.svg","contentUrl":"https://www.malvernbh.com/wp-content/uploads/2021/03/malvern-behavioral-health-logo.svg","caption":"Malvern Behavioral Health","inLanguage":"en-US"}},{"@type":"WebSite","@id":"https://www.malvernbh.com/#website","url":"https://www.malvernbh.com","name":"Malvern Behavioral Health","publisher":{"@id":"https://www.malvernbh.com/#organization"},"inLanguage":"en-US","potentialAction":{"@type":"SearchAction","target":"https://www.malvernbh.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://www.malvernbh.com/#webpage","url":"https://www.malvernbh.com/","name":"Inpatient Mental Health Facility in Philadelphia, PA","datePublished":"2026-02-18T15:30:28-05:00","dateModified":"2026-08-12T18:09:40-04:00","about":{"@id":"https://www.malvernbh.com/#organization"},"isPartOf":{"@id":"https://www.malvernbh.com/#website"},"inLanguage":"en-US"}]}</script>
+< <!-- /Rank Math WordPress SEO plugin -->
+< 
+< <link rel='dns-prefetch' href='//www.google.com' />
+< <link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+< <link href='https://fonts.gstatic.com' crossorigin='anonymous' rel='preconnect' />
+< <link rel="alternate" type="application/rss+xml" title="Malvern Behavioral Health &raquo; Feed" href="https://www.malvernbh.com/feed/" />
+< <link rel="alternate" type="application/rss+xml" title="Malvern Behavioral Health &raquo; Comments Feed" href="https://www.malvernbh.com/comments/feed/" />
+< <link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.malvernbh.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.malvernbh.com%2F" />
+< <link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.malvernbh.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.malvernbh.com%2F&#038;format=xml" />
+< 
+< 
+< 
+< 
+< 
+< <link rel='stylesheet' id='fontawesome-css' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css' media='all' />
+< 
+< <link rel='stylesheet' id='slick-css-css' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css' media='all' />
+< <link rel='stylesheet' id='select2-css-css' href='https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css' media='all' />
+< 
+< <script id="jquery-core-js" src="https://www.malvernbh.com/wp-includes/js/jquery/jquery.min.js"></script>
+< <script defer id="jquery-migrate-js" src="https://www.malvernbh.com/wp-includes/js/jquery/jquery-migrate.min.js"></script>
+< <link rel="https://api.w.org/" href="https://www.malvernbh.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://www.malvernbh.com/wp-json/wp/v2/pages/61" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.malvernbh.com/xmlrpc.php?rsd" />
+< <meta name="generator" content="WordPress 7.1" />
+< <link rel='shortlink' href='https://www.malvernbh.com/' />
+< <link rel="Shortcut Icon" href="https://www.malvernbh.com/wp-content/themes/malvernbh/assets/images/favicon/favicon.ico?09/6/26-12:22:33" type="image/x-icon" />
+< <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://www.malvernbh.com/wp-content/themes/malvernbh/assets/images/favicon/apple-touch-icon-152x152.png?09/6/26-12:22:33" />
+< <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.malvernbh.com/wp-content/themes/malvernbh/assets/images/favicon/apple-touch-icon-144x144.png?09/6/26-12:22:33" />
+< <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://www.malvernbh.com/wp-conte
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 660 ms

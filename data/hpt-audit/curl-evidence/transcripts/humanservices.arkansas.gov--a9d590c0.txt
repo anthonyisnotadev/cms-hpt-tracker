@@ -1,0 +1,43 @@
+# curl-style evidence for https://humanservices.arkansas.gov/.well-known/cms-hpt.txt
+# fetched 2026-09-07T01:32:58.977Z with the tracker's BROWSER_HEADERS (production client)
+# record: 044011 | ARKANSAS STATE HOSPITAL | AR | finding: no-cms-hpt-txt-published
+
+* DNS humanservices.arkansas.gov: 141.193.213.21, 141.193.213.20
+
+> GET /.well-known/cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://humanservices.arkansas.gov/.well-known/cms-hpt.txt
+< HTTP 404
+< alt-svc: h3=":443"; ma=86400
+< cf-cache-status: DYNAMIC
+< cf-ray: a371f67f0887389c-IAD
+< content-encoding: br
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:33:00 GMT
+< server: cloudflare
+< vary: Accept-Encoding
+< --- body (548 bytes read) ---
+< <html>
+< <head><title>404 Not Found</title></head>
+< <body>
+< <center><h1>404 Not Found</h1></center>
+< <hr><center>nginx</center>
+< </body>
+< </html>
+< <!-- a padding to disable MSIE and Chrome friendly error page -->
+< <!-- a padding to disable MSIE and Chrome friendly error page -->
+< <!-- a padding to disable MSIE and Chrome friendly error page -->
+< <!-- a padding to disable MSIE and Chrome friendly error page -->
+< <!-- a padding to disable MSIE and Chrome friendly error page -->
+< <!-- a padding to disable MSIE and Chrome friendly error page -->
+< 
+
+* total time: 13063 ms

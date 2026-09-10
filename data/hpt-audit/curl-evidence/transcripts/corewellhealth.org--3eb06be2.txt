@@ -1,0 +1,162 @@
+# curl-style evidence for https://corewellhealth.org/cms-hpt.txt
+# fetched 2026-09-07T01:34:40.741Z with the tracker's BROWSER_HEADERS (production client)
+# record: 230151 | BEAUMONT HOSPITAL - FARMINGTON HILLS | MI | finding: pointer-lists-no-mrf-url
+
+* DNS corewellhealth.org: 3.170.3.87, 3.170.3.119, 3.170.3.57, 3.170.3.32
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://corewellhealth.org/cms-hpt.txt
+< HTTP 200
+< age: 48665
+< content-encoding: gzip
+< content-type: text/plain
+< date: Sun, 06 Sep 2026 12:03:38 GMT
+< etag: W/"981ef637eb6261b429afe423dc23948f"
+< last-modified: Fri, 04 Sep 2026 20:28:57 GMT
+< referrer-policy: strict-origin-when-cross-origin
+< server: AmazonS3
+< strict-transport-security: max-age=63072000; includeSubDomains
+< vary: Accept-Encoding
+< via: 1.1 2d59a8826002727f8e5a0462a1e5ee16.cloudfront.net (CloudFront)
+< x-amz-cf-id: JIdzL0SPeZ1m1sQ7HA27uh8ZluBr-3ZzN-ndqINBAKiKF6HXaVmTdg==
+< x-amz-cf-pop: IAD55-P9
+< x-amz-replication-status: COMPLETED
+< x-amz-server-side-encryption: AES256
+< x-amz-version-id: P84AnxtGV.aA0weKz3UA8XAWLHEGi66Z
+< x-cache: Hit from cloudfront
+< x-content-type-options: nosniff
+< x-frame-options: DENY
+< x-xss-protection: 1; mode=block
+< --- body (8277 bytes read) ---
+< location-name: Corewell Health Big Rapids
+< source-page-url: https://corewellhealth.org/billing/price-estimates
+< mrf-url: https://assets.contentstack.io/v3/assets/blt3055f692fe7bf193/blt26c5478d754059dc/381368744_corewell-health-big-rapids-hospital_standardcharges.csv
+< contact-name: hpt-obf:v1:hfJLdBlVrsyxtMSo.hCRS16sg1FNb3adTJHSuHQ.sFp2i9e1k7Iv9CxbDTy-gk6yPEf8kMJMGeOh9O9pxfV2oZnF1uGK
+< contact-email: hpt-obf:v1:be7G4jk2NpHy2dKm.E4WF70n51qa-bD7mesD5sA.J2pK5xKPQ5DFlJsUJQLslQy7wbcpMOue27IYpny3wpLeRtCM8ckttLtzGKI
+< 
+< location-name: Corewell Health Gerber
+< source-page-url: https://corewellhealth.org/billing/price-estimates
+< mrf-url: https://assets.contentstack.io/v3/assets/blt3055f692fe7bf193/blt0f1ce49eb743d06f/381359517_corewell-health-gerber-hospital_standardcharges.csv
+< contact-name: hpt-obf:v1:jOSEqeovqE8iW8zt.T4qmmxrrt3RGl6Bbbq433g.gqa5dFif2tUFP2oQlN-a0JdW34cWBsudV9EBzWQS9fbiU201xdgB
+< contact-email: hpt-obf:v1:Z4VrE2anSr00AeFR.-u4q2ck_0R92DgIs-yhH1A.J2zoA_lJ0yMQaZwfo8rxbG-D8WjvVOFLc9Zbi3fjD_6m-x6IvA4w3165U98
+< 
+< location-name: Corewell Health Lakeland Watervliet
+< source-page-url: https://corewellhealth.org/billing/price-estimates
+< mrf-url: https://assets.contentstack.io/v3/assets/blt3055f692fe7bf193/blt67f39f79b3d38a9a/381368745_corewell-health-watervliet-hospital_standardcharges.csv
+< contact-name: hpt-obf:v1:x5IVqlnTPkVnZ-CN.KElfBNzdjkTOWoJy5NHS8w.noUJU-nTF8wlVwmbD93_OY4ew8awI_ELn3vZv2LN-4X5yi__ejXd
+< contact-email: hpt-obf:v1:LLN-og6RVByo5ej8.s1xVGyRYtgkeO5VPe36RBw.7Tmjhsd9KaAStlpq_vUysR2OSWIReI1cTsUjEwTtmjq3pI0I1dgVlOjAXVs
+< 
+< location-name: Corewell Health Lakeland St. Joseph
+< source-page-url: https://corewellhealth.org/billing/price-estimates
+< mrf-url: https://assets.contentstack.io/v3/assets/blt3055f692fe7bf193/blt53a27314654ddfa4/382156872_lakeland-hospitals-at-niles-and-st-joseph-inc_standardcharges.csv
+< contact-name: hpt-obf:v1:dPoZLB0mCDYBI6Jr.Isvm_Z31USQi-ri4u6Fv9w.-nnnL-usqbWsudcu7_ZCiaMzhuFADtdwaWz0WWzJEQBlF1qMkGH2
+< contact-email: hpt-obf:v1:1B9mSt7DoGuYQ05m.SeXPFtvYeWCS5ZHEbmV_-w.LOm9L6rzOHSHpI0k0Sq852av_1ROcidx3cxbcuKtj7e8qnyNAdSHo0SMQdw
+< 
+< location-name: Corewell Health Lakeland Niles
+< source-page-url: https://corewellhealth.org/billing/price-estimates
+< mrf-url: https://assets.contentstack.io/v3/assets/blt3055f692fe7bf193/blt53a27314654ddfa4/382156872_lakeland-hospitals-at-niles-and-st-joseph-inc_standardcharges.csv
+< contact-name: hpt-obf:v1:fpcaB-gTMjXox-WM.UQzB5fLUZtq6R3K0AdSmhQ.NGLSG3RvCub8UYdrCcuUFEqsY3S1sNPsyJMdQjCEBu5SQ8QlsDF7
+< contact-email: hpt-obf:v1:8KHRd54qAkqXda5N.fLq-I29XYo63Elhk7fW8Wg.t6Wt_Rdn4CPNkPwHCgeoyJtMCYe7NV8nX683liuDw1AR3QozXszcfQqT_hE
+< 
+< location-name: Corewell Health Ludington
+< source-page-url: https://corewellhealth.org/billing/price-estimates
+< mrf-url: https://assets.contentstack.io/v3/assets/blt3055f692fe7bf193/blt9149eef2876519c3/381359266_corewell-health-ludington-hospital_standardcharges.csv      
+< contact-name: hpt-obf:v1:Sh1DMv5sbzwqX1A6.LAyOY3MtqQmQ3G9yFvIOtA.w-okgNzc-EUY8KltV5Gdx4ItU-fJ_-jPqY-f3WLp2ZXhH7UZbJDj
+< contact-email: hpt-obf:v1:s_fv017_IfCXWQr3.qMO6jETY2wTACtN3W6OgiQ.-YwsZpsj9Q6cS8uRj8Sno3rO6SooCpUm9K0KaAWTKcnicUj0IJMUKyON3t8
+< 
+< location-name: Corewell Health Butterworth Hospital
+< source-page-url: https://corewellhealth.org/billing/price-estimates
+< mrf-url: https://assets.contentstack.io/v3/assets/blt3055f692fe7bf193/blt0f9fd2163e3908a4/381360529_corewell-health-butterworth-hospital_standardcharges.csv                 
+< contact-name: hpt-obf:v1:zutUUkOL0HVcXMJZ.8-x-0liUasKjEnYqJZ7oKw.fbQbAL1ZNZIApW9h-y_XHcR3AOT6v_SbZgtvllF16l_ybNG0NFzf
+< contact-email: hpt-obf:v1:e4uG0JxZYJRDbUKW.hpEmQtFFKYn7V1uoGOcmqw.f3OhRTe7bCf3nOqHg8ZZo8__6aHFE8hDotI6ygJJRbFKkDgso0vnn__rBHQ
+< 
+< location-name: Corewell Health Blodgett Hospital
+< source-page-url: https://corewellhealth.org/billing/price-estimates
+< mrf-url: https://assets.contentstack.io/v3/assets/blt3055f692fe7bf193/bltb8584473cfa6533c/381360529_corewell-health-blodgett-hospital_standardcharges.csv                     
+< contact-name: hpt-obf:v1:ZOEhLZS0L0ADxr92.IOZnHo8uCjN8MttnmhnIXA.V8wcUgzhtjRas1vsvuNP53eek0R98WzfxeV0ui16oRbZpW8ZRfey
+< contact-email: hpt-obf:v1:NVR0wpucTlWUVoIx.KArjuD97NOt8MxjeaL3LFQ.GDrpFX16BhS6rHaPu4nelGAkFa0awZ1Iv0wYL9uUgCrf5m1ghW0SaZK5zbU
+< 
+< location-name: Corewell Health Helen Devos Children’s Hospital
+< source-page-url: https://corewellhealth.org/billing/price-estimates
+< mrf-url: https://assets.contentstack.io/v3/assets/blt3055f692fe7bf193/blt205df7e60982400c/381360529_corewell-health-helen-devos-childrens-hospital-hospital_standardcharges.csv
+< contact-name: hpt-obf:v1:txOyT0n9Rjmd0Xb4.CUhZ_C8L1kDdiUeWeOHRbw.7YbYYAAjqB0FH1OPeYWz4EE9Wnl6_KH6OeMkIA1EPpKic7uV9Oyq
+< contact-email: hpt-obf:v1:mlnxUjEGbEXEKgd_.YbKY1YaInSIyXY_EYQeFHg.m9nkyXPD9WAevXmsYoRB-v1L4MH001PRPIjUI5Ab8IvLI_UjoIdxe68YqWI
+< 
+< location-name: Corewell Health Pennock
+< source-page-url: https://corewellhealth.org/billing/price-estimates
+< mrf-url: https://assets.contentstack.io/v3/assets/blt3055f692fe7bf193/blt5ac32ebe9fbd7f5f/381360562_corewell-health-pennock-hospital_standardcharges.csv                             contact-name: hpt-obf:v1:C_2Z_3bGOgxR58tW.gG6sBgD2m_qF_ApZtHqYFQ.ndxounk9rULN2nvl5TY0F6uFm9rLds0jhUbFYxWGtinXyxhT4JPK
+< contact-email: hpt-obf:v1:dVJO5jjo4gvRwn8Z.JVh5Cl0arhAZVJzS7O3rCA.Q8mn8jCAvZGoA_VDoU5SJ1le3OMOJCqdnGbleMUrAVjZp-3tl16i1JJXdII
+< 
+< location-name: Corewell Health Reed City
+< source-page-url: https://corewellhealth.org/billing/price-estimates
+< mrf-url: https://assets.contentstack.io/v3/assets/blt3055f692fe7bf193/blt3be61430bc83a1ee/382770076_corewell-health-reed-city-hospital_standardcharges.csv
+< contact-name: hpt-obf:v1:HHbqbx2S0AhCtO0f.quPolkv9jrsz6xbXW-E0eg.TaUBFV4m5KmMEWjBfUjrvjW71nu8LNO4W2ukOPSv2PuaDkbllL2q
+< contact-email: hpt-obf:v1:5_FxYGMjWGseJFuZ.ALL-Jie8m4ZUXE0jxosYZQ.4LlFUMpVyhl_WEJaNiic7R97DKGr_Iraj0bNSitA3I79nntGFFsJpsSEFvM
+< 
+< location-name: Corewell Health Greenville
+< source-page-url: https://corewellhealth.org/billing/price-estimates
+< mrf-url: https://assets.contentstack.io/v3/assets/blt3055f692fe7bf193/blt94d88436dd20c5d5/381358412_corewell-health-greenville-hospital_standardcharges.csv 
+< contact-name: hpt-obf:v1:mzzLeUrWdGmSh-LT.XitjEFhHMHX6xwtrYdlrJw.Jv13zSoSGTV8C2JJO9yCKfZZywiBYPdOLlpVnXkIHUkmEmEpLtL3
+< contact-email: hpt-obf:v1:sLWhlxQ_o_S62M3n.IPRKtT9N8Q4MhGZDVXHUfQ.-1KJxlLg2nj4GUPWPTFOEieRitXteFY6ZiOrrJ0D5b3t3VG-SPcB17eDyeI
+< 
+< location-name: Corewell Health Zeeland
+< source-page-url: https://corewellhealth.org/billing/price-estimates
+< mrf-url: https://assets.contentstack.io/v3/assets/blt3055f692fe7bf193/blt54d5c5d50d594efc/381411184_corewell-health-zeeland-community-hospital_standardcharges.csv
+< contact-name: hpt-obf:v1:-NrtiseD_EF3NHDM.F4y96Xpuz6bA2OSjtkQgdQ.ab-9cUWH40dNjTEj2L-_AOKwXtFFk_37TpufVWBGthDoAwd6p8Wm
+< contact-email: hpt-obf:v1:0oq7WAGSlfeVJC75.lNETxC-ME9XLdZNGwhUiPA.8uCp0-hjVMv1ZYbVsa3C6BrcI2Wf9McLuuDc0UOQHh3y-qQz-_c9EubQkZE
+< 
+< location-name: Corewell Health Dearborn
+< source-page-url: https://corewellhealth.org/billing/price-estimates
+< mrf-url: 
+< https://assets.contentstack.io/v3/assets/blt3055f692fe7bf193/blt85f9329ed06a671d/381405141_1740230119_oakwood-healthcare-inc_standardcharges.csv
+< contact-name: hpt-obf:v1:MVUmqVqoWG3TWL8e.UT5k2MJu_OsEcNavVSQfRg.EyjxjWAqS8CYLNF5nzigJnku0N6ufhCEFZe7qstysGWCj95kSlfj
+< contact-email: hpt-obf:v1:srkOeAQv8EWFHIxS.wIZ2MNAsqOL5fvgj5KniJA.R2W_k2UpKNso2fokG42bYp0G-727oy2flsv9BYMwceRczaAGg0w3VpQ23po
+< 
+< location-name: Corewell Health Farmington Hills
+< source-page-url: https://corewellhealth.org/billing/price-estimates
+< mrf-url: 
+< https://assets.contentstack.io/v3/assets/blt3055f692fe7bf193/bltd2969ccf9b97f808/381426919_corewell-health-farmington-hills-hospital_standardcharges.csv
+< contact-name: hpt-obf:v1:PPygVmaRM10F_2Zs.FmU3AIVanIHOQTO5LJS3vA.agK37a-C9eI_2-OUuYY_zRgqUw8ub3oTd7-aODN6ARWQGWSAbLZo
+< contact-email: hpt-obf:v1:5HrzDIBb0SyKDcpV.sZgCjBZHVpmEUv0itWzrVQ.euXV9VignllFXlbuzgVJXr-zY2qWykRSgd8AgaVWVsa0I3TMUzBk73z7iVQ
+< 
+< location-name: Corewell Health Gross Pointe
+< source-page-url: https://corewellhealth.org/billing/price-estimates
+< mrf-url: https://assets.contentstack.io/v3/assets/blt3055f692fe7bf193/blt5644d1c708026093/183459362_1811044878_william-beaumont-hospital_standardcharges.csv 
+< contact-name: hpt-obf:v1:kiFe3x2ni0J3UmG3.-DNG5OTiUrme8PZUdR2SzQ.eh9til9I5rzRvpBfClPoEt9VTHPO2lcr0LaP8jLxbc0EJUZl8yIv
+< contact-email: hpt-obf:v1:I30O9KVlGqNFm8Y8.YQuCMSe4lYoPvnYwd6GLRA.9siVrQxs4-xuDhKpBMKWs0ppAAK7VFB6GVIGxjtZL_T9k0JdWc6XGSYZ4Q8
+< 
+< location-name: Corewell Health Royal Oak
+< source-page-url: https://corewellhealth.org/billing/price-estimates
+< mrf-url: https://assets.contentstack.io/v3/assets/blt3055f692fe7bf193/blt5644d1c708026093/183459362_1811044878_william-beaumont-hospital_standardcharges.csv 
+< contact-name: hpt-obf:v1:iwFmml-E-RMTM2QD.QIEW3mt8zNTo7XvHeviznA.yXnwQS4q_pDkkFPFf233t4vGvbbU1jAR9Gpnha4_x0xVMXJr0OBX
+< contact-email: hpt-obf:v1:n7WobttMXNhFlcNL.OaKgtPcKqxjzyarkJ566FA.5yKjpWGQ615DfakdNFLHgXn6m7P_OUbzvoQqfBUwDjE9wbRn8_HMAewWDJU
+< 
+< location-name: Corewell Health Taylor
+< source-page-url: https://corewellhealth.org/billing/price-estimates
+< mrf-url: https://assets.contentstack.io/v3/assets/blt3055f692fe7bf193/blt038c460a72c2b256/381405141_1487605168_oakwood-healthcare-inc_standardcharges.csv 
+< contact-name: hpt-obf:v1:LyfRquEo9ucZ8b6x.GZBp3oCySgFsliCyKhRiUw.cRLtaHLt-NQFg7xUW2305ZYqgM3UoOvT3NBvvPv_tP3rbp3dlnk-
+< contact-email: hpt-obf:v1:0WCObarTAGUQGG5_.Hi2kL711XrMZO3KYAzTGLQ.b7F6OCtwDUP637UzE3FLZGNStbA1LWU448MlVCfMkd8rNagO3cG-PQYnw_c
+< 
+< location-name: Corewell Health Trenton
+< source-page-url: https://corewellhealth.org/billing/price-estimates
+< mrf-url: https://assets.contentstack.io/v3/assets/blt3055f692fe7bf193/blt9d442f7c132fbe7e/381405141_1740230648_oakwood-healthcare-inc_standardcharges.csv 
+< contact-name: hpt-obf:v1:Oxgeik1ShLJ6FES3.1p_XlO79rISMgtMglwNOuQ.NhWzYmPG6K4mSmnhTwKTFEdn0JZt8oPMyx1pEdh8nGTvcBATlkMs
+< contact-email: hpt-obf:v1:67VlmbaGJx4mAKNC._lzXTG9X0Gi75jxwf1Dstw.M6MfWXm0iJTXxkA0bwtKpYseAKStOVuR4aV3G0_O6fn3Nzf89vZNx_dA0z0
+< 
+< location-name: Corewell Health Troy
+< source-page-url: https://corewellhealth.org/billing/price-estimates
+< mrf-url: https://assets.contentstack.io/v3/assets/blt3055f692fe7bf193/blta76ad74666a452ed/381459362_1811044878_beaumont-hospital-troy_standardcharges.csv
+< contact-name: hpt-obf:v1:vFuNAIcjaUvOw491.nSmsLavGoUnF_sM2l7OMfQ.KzPmOOp7mbIB5dQesUWkmdIc6IfeYXNMF98pf9SlTszEJOeMTAOL
+< contact-email: hpt-obf:v1:fJE-UoKdJHNJbBTo.h7eUV9nPT7LJkhgAtaagFg._WAF990WtDhBH7GFKk9Z1hzWBNuIOcKuP9wbmmqygTu-nrNjxn43ujss7gQ
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 301 ms

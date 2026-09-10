@@ -1,0 +1,164 @@
+# curl-style evidence for https://chcc.health/
+# fetched 2026-09-07T01:34:42.867Z with the tracker's BROWSER_HEADERS (production client)
+# record: 660001 | COMMONWEALTH HEALTH CENTER | MP | finding: not-assessed-site-unreachable
+
+* DNS chcc.health: 107.180.1.20
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* error: fetch failed (cause: ERR_TLS_CERT_ALTNAME_INVALID)
+
+* http:// fallback attempt after transport failure:
+* fallback redirect hop 1: http://chcc.health/
+< HTTP 301
+< content-length: 147
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:34:44 GMT
+< location: https://www.chcc.health/
+< server: Microsoft-IIS/10.0
+< x-powered-by: ASP.NET
+< x-powered-by-plesk: PleskWin
+* following Location: https://www.chcc.health/
+
+* fallback final response: https://www.chcc.health/
+< HTTP 200
+< content-encoding: br
+< content-length: 11007
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:34:44 GMT
+< server: Microsoft-IIS/10.0
+< vary: Accept-Encoding
+< x-powered-by: ASP.NET
+< x-powered-by-plesk: PleskWin
+< --- body (33381 bytes read) ---
+< <!DOCTYPE html>
+< <html lang="en">
+< 
+< <head>
+<   <meta charset="utf-8">
+<   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+< 
+<   <title>Commonwealth Healthcare Corporation</title>
+<   <meta content="" name="description">
+<   <meta content="" name="keywords">
+< 
+<   <!-- Favicons -->
+<   <link href="assets/img/chcc_icon.png" rel="icon">
+< 
+<   <!-- Google Fonts -->
+<   <link
+<     href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+<     rel="stylesheet">
+< 
+<   <!-- Vendor CSS Files -->
+<   <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+<   <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+<   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+<   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+<   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+<   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+< 
+<   <!-- Template Main CSS File -->
+<   <link href="assets/css/style.css" rel="stylesheet">
+< 
+<   <!-- Custom CSS -->
+<   <link href="assets/css/custom.css">
+<   <link
+<     href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+<     rel="stylesheet">
+< 
+< 
+<   <!-- Mapplic -->
+<   <script type="module" crossorigin src="../dist/mapplic.js"></script>
+<   <link rel="stylesheet" href="../dist/mapplic.css" />
+< 
+<   <!-- DataTables -->
+<   <link href="assets/css/dataTables.bootstrap5.min.css" />
+<   <link href="assets/css/bootstrap.min.css" />
+<   <link href="assets/css/dataTables.dataTables.css" />
+< 
+<   <!-- Event List -->
+<   <link href="assets/css/eventList.css" rel="stylesheet" />
+< 
+<   <!-- Accordion open/close icon color -->
+<   <style>
+<     .accordion {
+<       --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+<       --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+<     }
+<   </style>
+< 
+<   <!-- Scroll Prompt Start -->
+< <style>
+< 
+<         .scroll-indicator {
+<             position: fixed;
+<             top: 0;
+<             left: 0;
+<             width: 100%;
+<             height: 5px;
+<             background: #ff3e6c;
+<             transform: scaleX(0);
+<             transform-origin: left;
+<             transition: transform 0.2s;
+<         }
+< 
+<         .scroll-prompt {
+<             position: fixed;
+<             bottom: 20px;
+<             left: 50%;
+<             transform: translateX(-50%);
+<             background: rgba(0, 0, 0, 0.7);
+<             color: white;
+<             padding: 10px 20px;
+<             border-radius: 20px;
+<             font-size: 16px;
+<             animation: bounce 1.5s infinite;
+<         }
+< 
+<         @keyframes bounce {
+<             0%, 100% {
+<                 transform: translateX(-50%) translateY(0);
+<             }
+<             50% {
+<                 transform: translateX(-50%) translateY(-10px);
+<             }
+<         }
+<     </style>
+<     <!-- Scroll Prompt End -->
+< 
+<   <!-- Google Custom Search Engine -->
+<   <script async src="https://cse.google.com/cse.js?cx=2676262921da946dd">
+<   </script>
+< 
+<   <!-- CHCC Full Calendar -->
+< 
+< 
+< </head>
+< 
+< <body>
+< 
+<   <!-- ======= Top Bar ======= -->
+<   <div id="topbar" class="d-flex align-items-center fixed-top" style="background-color:#20187f">
+<     <div class="container d-flex justify-content-between">
+<       <div class="contact-info d-flex align-items-center">
+<         <i class="bi bi-hospital text-white"></i> <a class="text-white" href="tinian-healthcenter.php">Lucia "Chiang" Villagomez Arizapa Health Center</a>
+<         <i class="bi bi-hospital text-white"></i> <a class="text-white" href="rota-healthcenter.php">Rota Health
+<           Center</a>
+<         <i class="bi bi-hospital-fill text-white"></i> <a class="text-white" href="https://www.chcc.health/CHCCFoundation/index.php">CHCC
+<           Foundation</a>
+<       </div>
+<       <div class="d-none d-lg-flex social-links align-items-center">
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 207 ms

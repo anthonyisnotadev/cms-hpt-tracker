@@ -1,0 +1,57 @@
+# curl-style evidence for https://ezcost.info/
+# fetched 2026-09-07T01:36:08.735Z with the tracker's BROWSER_HEADERS (production client)
+# record: 461310 | BLUE MOUNTAIN HOSPITAL | UT | finding: no-cms-hpt-txt-published
+
+* DNS ezcost.info: 44.227.4.219, 44.253.182.234
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://ezcost.info/
+< HTTP 200
+< cache-control: no-store, no-cache, must-revalidate
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:36:10 GMT
+< expires: Thu, 19 Nov 1981 08:52:00 GMT
+< pragma: no-cache
+< server: Apache/2.4.58 (Amazon Linux)
+< --- body (725 bytes read) ---
+<  <!DOCTYPE html>
+< <html>
+< 
+< <head>
+<     <title></title>
+<     <link href="https://ezcost.info/assets/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+< </head>
+< <style type="text/css">
+< img {
+<     display: block;
+<     margin: 0 auto;
+<     max-height: 300px;
+< }
+< </style>
+< 
+< <body>
+<     <div class="container">
+<         <div class="col-md-12">
+<             <div style="padding-top: 8%;">
+<                 <img src="https://ezcost.info/assets/img/Website-Under-Construction.jpg">
+<             </div>
+<             <div style="text-align: center;">
+<                 <h2>Our website is under construction.</h2>
+<                 <h1><b>COMING SOON</b></h1>
+<             </div>
+<         </div>
+<     </div>
+< </body>
+< 
+< </html>
+
+* total time: 853 ms

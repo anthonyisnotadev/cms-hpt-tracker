@@ -76,8 +76,8 @@ function filesIn(dir) {
 }
 
 const SIG = {
-  name: process.env.HPT_OUTREACH_NAME || 'Anthony',
-  email: process.env.HPT_OUTREACH_EMAIL || 'mrf-tracker@anthonyisnota.dev',
+  name: process.env.HPT_OUTREACH_NAME || '[your name]',
+  email: process.env.HPT_OUTREACH_EMAIL || '[your email]',
   url: process.env.HPT_OUTREACH_URL || 'mrf.anthonyisnota.dev'
 };
 

@@ -1,0 +1,154 @@
+# curl-style evidence for https://edgewoodsurgical.com/cms-hpt.txt
+# fetched 2026-09-07T01:35:47.450Z with the tracker's BROWSER_HEADERS (production client)
+# record: 390307 | EDGEWOOD SURGICAL HOSPITAL | PA | finding: no-cms-hpt-txt-published
+
+* DNS edgewoodsurgical.com: 160.153.0.139
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://edgewoodsurgical.com/cms-hpt.txt
+< HTTP 404
+< alt-svc: h3=":443"; ma=86400
+< cache-control: public, max-age=2678400
+< cf-cache-status: EXPIRED
+< cf-ray: a371fa972f78c5e9-IAD
+< content-encoding: br
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:35:49 GMT
+< expires: Thu, 08 Oct 2026 01:35:49 GMT
+< link: <https://edgewoodsurgical.com/wp-json/>; rel="https://api.w.org/"
+< server: cloudflare
+< vary: Accept-Encoding
+< x-gateway-request-id: b36dfe90e8d6ab3b456124935b6009c0
+< --- body (65536 bytes read, truncated) ---
+< <!DOCTYPE html>
+< <html lang="en-US" class="html_av-framed-box responsive av-preloader-disabled  html_header_top html_logo_center html_bottom_nav_header html_menu_right html_slim html_header_sticky_disabled html_header_shrinking_disabled html_header_topbar_active html_mobile_menu_tablet html_header_searchicon_disabled html_content_align_center html_header_unstick_top html_header_stretch_disabled html_elegant-blog html_modern-blog html_av-submenu-hidden html_av-submenu-display-click html_av-overlay-side html_av-overlay-side-minimal html_av-submenu-clone av-cookies-no-cookie-consent av-no-preview av-default-lightbox html_text_menu_active av-mobile-menu-switch-default">
+< <head>
+< <meta charset="UTF-8" />
+< 
+< 
+< <!-- mobile setting -->
+< <meta name="viewport" content="width=device-width, initial-scale=1">
+< 
+< <!-- Scripts/CSS and wp_head hook -->
+< 		<script type="text/javascript">
+< 			window.flatStyles = window.flatStyles || ''
+< 
+< 			window.lightspeedOptimizeStylesheet = function () {
+< 				const currentStylesheet = document.querySelector( '.tcb-lightspeed-style:not([data-ls-optimized])' )
+< 
+< 				if ( currentStylesheet ) {
+< 					try {
+< 						if ( currentStylesheet.sheet && currentStylesheet.sheet.cssRules ) {
+< 							if ( window.flatStyles ) {
+< 								if ( this.optimizing ) {
+< 									setTimeout( window.lightspeedOptimizeStylesheet.bind( this ), 24 )
+< 								} else {
+< 									this.optimizing = true;
+< 
+< 									let rulesIndex = 0;
+< 
+< 									while ( rulesIndex < currentStylesheet.sheet.cssRules.length ) {
+< 										const rule = currentStylesheet.sheet.cssRules[ rulesIndex ]
+< 										/* remove rules that already exist in the page */
+< 										if ( rule.type === CSSRule.STYLE_RULE && window.flatStyles.includes( `${rule.selectorText}{` ) ) {
+< 											currentStylesheet.sheet.deleteRule( rulesIndex )
+< 										} else {
+< 											rulesIndex ++
+< 										}
+< 									}
+< 									/* optimize, mark it such, move to the next file, append the styles we have until now */
+< 									currentStylesheet.setAttribute( 'data-ls-optimized', '1' )
+< 
+< 									window.flatStyles += currentStylesheet.innerHTML
+< 
+< 									this.optimizing = false
+< 								}
+< 							} else {
+< 								window.flatStyles = currentStylesheet.innerHTML
+< 								currentStylesheet.setAttribute( 'data-ls-optimized', '1' )
+< 							}
+< 						}
+< 					} catch ( error ) {
+< 						console.warn( error )
+< 					}
+< 
+< 					if ( currentStylesheet.parentElement.tagName !== 'HEAD' ) {
+< 						/* always make sure that those styles end up in the head */
+< 						const stylesheetID = currentStylesheet.id;
+< 						/**
+< 						 * make sure that there is only one copy of the css
+< 						 * e.g display CSS
+< 						 */
+< 						if ( ( ! stylesheetID || ( stylesheetID && ! document.querySelector( `head #${stylesheetID}` ) ) ) ) {
+< 							document.head.prepend( currentStylesheet )
+< 						} else {
+< 							currentStylesheet.remove();
+< 						}
+< 					}
+< 				}
+< 			}
+< 
+< 			window.lightspeedOptimizeFlat = function ( styleSheetElement ) {
+< 				if ( document.querySelectorAll( 'link[href*="thrive_flat.css"]' ).length > 1 ) {
+< 					/* disable this flat if we already have one */
+< 					styleSheetElement.setAttribute( 'disabled', true )
+< 				} else {
+< 					/* if this is the first one, make sure he's in head */
+< 					if ( styleSheetElement.parentElement.tagName !== 'HEAD' ) {
+< 						document.head.append( styleSheetElement )
+< 					}
+< 				}
+< 			}
+< 		</script>
+< 		<meta name='robots' content='noindex, follow' />
+< <style type="text/css">@font-face { font-family: 'star'; src: url('https://edgewoodsurgical.com/wp-content/plugins/woocommerce/assets/fonts/star.eot'); src: url('https://edgewoodsurgical.com/wp-content/plugins/woocommerce/assets/fonts/star.eot?#iefix') format('embedded-opentype'), 	  url('https://edgewoodsurgical.com/wp-content/plugins/woocommerce/assets/fonts/star.woff') format('woff'), 	  url('https://edgewoodsurgical.com/wp-content/plugins/woocommerce/assets/fonts/star.ttf') format('truetype'), 	  url('https://edgewoodsurgical.com/wp-content/plugins/woocommerce/assets/fonts/star.svg#star') format('svg'); font-weight: normal; font-style: normal;  } @font-face { font-family: 'WooCommerce'; src: url('https://edgewoodsurgical.com/wp-content/plugins/woocommerce/assets/fonts/WooCommerce.eot'); src: url('https://edgewoodsurgical.com/wp-content/plugins/woocommerce/assets/fonts/WooCommerce.eot?#iefix') format('embedded-opentype'), 	  url('https://edgewoodsurgical.com/wp-content/plugins/woocommerce/assets/fonts/WooCommerce.woff') format('woff'), 	  url('https://edgewoodsurgical.com/wp-content/plugins/woocommerce/assets/fonts/WooCommerce.ttf') format('truetype'), 	  url('https://edgewoodsurgical.com/wp-content/plugins/woocommerce/assets/fonts/WooCommerce.svg#WooCommerce') format('svg'); font-weight: normal; font-style: normal;  } </style>
+< 	<!-- This site is optimized with the Yoast SEO plugin v28.4 - https://yoast.com/product/yoast-seo-wordpress/ -->
+< 	<title>Page not found - Edgewood Surgical Hospital</title>
+< 	<meta property="og:locale" content="en_US" />
+< 	<meta property="og:title" content="Page not found - Edgewood Surgical Hospital" />
+< 	<meta property="og:site_name" content="Edgewood Surgical Hospital" />
+< 	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebSite","@id":"http:\/\/edgewoodsurgical.com\/#website","url":"http:\/\/edgewoodsurgical.com\/","name":"Edgewood Surgical Hospital","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"http:\/\/edgewoodsurgical.com\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"}]}</script>
+< 	<!-- / Yoast SEO plugin. -->
+< 
+< 
+< <link rel='dns-prefetch' href='//www.googletagmanager.com' />
+< <link rel="alternate" type="application/rss+xml" title="Edgewood Surgical Hospital &raquo; Feed" href="https://edgewoodsurgical.com/feed/" />
+< 
+< <!-- google webfont font replacement -->
+< 
+< 			<script type='text/javascript'>
+< 
+< 				(function() {
+< 
+< 					/*	check if webfonts are disabled by user setting via cookie - or user must opt in.	*/
+< 					var html = document.getElementsByTagName('html')[0];
+< 					var cookie_check = html.className.indexOf('av-cookies-needs-opt-in') >= 0 || html.className.indexOf('av-cookies-can-opt-out') >= 0;
+< 					var allow_continue = true;
+< 					var silent_accept_cookie = html.className.indexOf('av-cookies-user-silent-accept') >= 0;
+< 
+< 					if( cookie_check && ! silent_accept_cookie )
+< 					{
+< 						if( ! document.cookie.match(/aviaCookieConsent/) || html.className.indexOf('av-cookies-session-refused') >= 0 )
+< 						{
+< 							allow_continue = false;
+< 						}
+< 						else
+< 						{
+< 							if( ! document.cookie.match(/aviaPrivacyRefuseCookiesHideBar/) )
+< 							{
+< 								allow_continue = false;
+< 							}
+< 							else if( ! document.cookie.match(/aviaPrivacyEssentialCookiesEnabled/) )
+< 							{
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 883 ms

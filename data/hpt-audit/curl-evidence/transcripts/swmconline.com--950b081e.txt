@@ -1,0 +1,42 @@
+# curl-style evidence for https://swmconline.com/
+# fetched 2026-09-07T01:35:37.006Z with the tracker's BROWSER_HEADERS (production client)
+# record: 370097 | SOUTHWESTERN MEDICAL CENTER | OK | finding: not-assessed-site-unreachable
+
+* DNS swmconline.com: 151.101.3.10, 151.101.67.10, 151.101.131.10, 151.101.195.10
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* error: fetch failed (cause: ERR_TLS_CERT_ALTNAME_INVALID)
+
+* http:// fallback attempt after transport failure:
+* fallback final response: http://swmconline.com/
+< HTTP 500
+< accept-ranges: bytes
+< cache-control: private, no-cache
+< connection: keep-alive
+< content-length: 271
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:35:38 GMT
+< retry-after: 0
+< server: Varnish
+< via: 1.1 varnish
+< x-served-by: cache-iad-kiad7000135-IAD
+< --- body (271 bytes read) ---
+< 
+< <html>
+< <head>
+< <title>Fastly error: unknown domain swmconline.com</title>
+< </head>
+< <body>
+< <p>Fastly error: unknown domain: swmconline.com. Please check that this domain has been added to a service.</p>
+< <p>Details: cache-iad-kiad7000135-IAD (151.101.3.10)</p></body></html>
+
+* total time: 104 ms

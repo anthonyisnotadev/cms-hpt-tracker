@@ -1,0 +1,61 @@
+# curl-style evidence for https://cottagehospital.org/cms-hpt.txt
+# fetched 2026-09-07T01:35:23.205Z with the tracker's BROWSER_HEADERS (production client)
+# record: 301301 | COTTAGE HOSPITAL | NH | finding: pointer-blocked-to-automation
+
+* DNS cottagehospital.org: 104.21.64.125, 172.67.185.23
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* error: fetch failed (cause: UND_ERR_CONNECT_TIMEOUT)
+
+* http:// fallback attempt after transport failure:
+* fallback redirect hop 1: http://cottagehospital.org/cms-hpt.txt
+< HTTP 301
+< alt-svc: h3=":443"; ma=86400
+< cf-ray: a371fa038c0bda37-IAD
+< connection: keep-alive
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:35:24 GMT
+< location: https://cottagehospital.org/cms-hpt.txt
+< nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+< report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=nr7%2FS0A39%2BFSsgBiHx49dYFNzsnD5EAgE0fFkVYSB%2BOsc3XTq09pFM7rXK%2BMR1zhebiIK0tNb0BxTmd%2F4NvcwySTF9ei1A8rbX6p71HW3dOwjIuV9BuNZQTXnOqcAS%2BeVipdkTV1"}]}
+< server: cloudflare
+< server-timing: cfEdge;dur=19,cfOrigin;dur=0
+< transfer-encoding: chunked
+* following Location: https://cottagehospital.org/cms-hpt.txt
+
+* fallback final response: https://cottagehospital.org/cms-hpt.txt
+< HTTP 403
+< accept-ch: Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA
+< alt-svc: h3=":443"; ma=86400
+< cf-mitigated: challenge
+< cf-ray: a371fa04ed95e643-IAD
+< content-encoding: br
+< content-security-policy: default-src 'none'; script-src 'nonce-AYKOKuk5jaXfFJaghO0OcF' 'unsafe-eval' https://challenges.cloudflare.com; script-src-attr 'none'; style-src 'unsafe-inline'; img-src 'self' https://challenges.cloudflare.com; connect-src 'self' https://challenges.cloudflare.com; frame-src 'self' https://challenges.cloudflare.com blob:; child-src 'self' https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri 'self'
+< content-type: text/html; charset=UTF-8
+< critical-ch: Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA
+< cross-origin-embedder-policy: require-corp
+< cross-origin-opener-policy: same-origin
+< cross-origin-resource-policy: same-origin
+< date: Mon, 07 Sep 2026 01:35:24 GMT
+< nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+< origin-agent-cluster: ?1
+< permissions-policy: accelerometer=(),camera=(),clipboard-read=(),clipboard-write=(),geolocation=(),gyroscope=(),hid=(),magnetometer=(),microphone=(),payment=(),publickey-credentials-get=(),screen-wake-lock=(),serial=(),sync-xhr=(),usb=(),xr-spatial-tracking=*
+< referrer-policy: same-origin
+< report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=XHCqhZLKwq0CUSMUr0thTSCVMy%2FciElD3bL25lo5P8tKi6jcOuVPAxHx1%2F8n3%2FI6T2Gk1KlYqpw33SUncRtaAsy69MXoKtECFxNZUedQcDajeE1x%2FIbX%2FIpm3mj%2Bd%2ByMaQl%2Bws%2BZ"}]}
+< server: cloudflare
+< server-timing: chlray;desc="a371fa04ed95e643"
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< --- body (5699 bytes read) ---
+< <!DOCTYPE html><html lang="en-US"><head><title>Just a moment...</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="content-security-policy" content="default-src &#39;none&#39;; script-src &#39;nonce-AYKOKuk5jaXfFJaghO0OcF&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri &#39;self&#39;"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"}body{display:flex;flex-direction:column;height:100vh;min-height:100vh}.main-content{margin:8rem auto;padding-left:1.5rem;max-width:60rem}@media (width <= 720px){.main-content{margin-top:4rem}}#challenge-error-text{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSI+PHBhdGggZmlsbD0iI0IyMEYwMyIgZD0iTTE2IDNhMTMgMTMgMCAxIDAgMTMgMTNBMTMuMDE1IDEzLjAxNSAwIDAgMCAxNiAzbTAgMjRhMTEgMTEgMCAxIDEgMTEtMTEgMTEuMDEgMTEuMDEgMCAwIDEtMTEgMTEiLz48cGF0aCBmaWxsPSIjQjIwRjAzIiBkPSJNMTcuMDM4IDE4LjYxNUgxNC44N0wxNC41NjMgOS41aDIuNzgzem0tMS4wODQgMS40MjdxLjY2IDAgMS4wNTcuMzg4LjQwNy4zODkuNDA3Ljk5NCAwIC41OTYtLjQwNy45ODQtLjM5Ny4zOS0xLjA1Ny4zODktLjY1IDAtMS4wNTYtLjM4OS0uMzk4LS4zODktLjM5OC0uOTg0IDAtLjU5Ny4zOTgtLjk4NS40MDYtLjM5NyAxLjA1Ni0uMzk3Ii8+PC9zdmc+");background-repeat:no-repeat;background-size:contain;padding-left:34px}</style><meta http-equiv="refresh" content="360"></head><body><div class="main-wrapper" role="main"><div class="main-content"><noscript><div class="h2"><span id="challenge-error-text">Enable JavaScript and cookies to continue</span></div></noscript></div></div><script nonce="AYKOKuk5jaXfFJaghO0OcF">(function(){window._cf_chl_opt = {cFPWv: 'g',cH: 'PySQMllFRuJklg6st66kcR4NhiGODrpGoOOomtEb6wE-1788744924-1.2.1.1-cOVJlnaxRXBZ43WPT9JlgkIgn4MS9ombWxWkf.IKKZ6A.WGqcC.S5c5TRkHBE1A1',cITimeS: '1788744924',cN: 'AYKOKuk5jaXfFJaghO0OcF',cRay: 'a371fa04ed95e643',cTplB: '0',cTplC:0,cTplO:0,cTplV:5,cType: 'managed',cUPMDTk:"/cms-hpt.txt?__cf_chl_tk=s4KPs9jSLAGMlX90Wut90OSrGvDj_NbHz588oUBGBkA-1788744924-1.0.1.1-KMFJoLh.h3mFzrgIUPTkZdz.ipiy4pyxp4ysWQEtSBk",cvId: '3',cZone: 'cottagehospital.org',fa:"/cms-hpt.txt?__cf_chl_f_tk=s4KPs9jSLAGMlX90Wut90OSrGvDj_NbHz588oUBGBkA-1788744924-1.0.1.1-KMFJoLh.h3mFzrgIUPTkZdz.ipiy4pyxp4ysWQEtSBk",md: '82rPSEgoM8uahPkDlKOGw7DfW0ehOPov7EP1ph.P9ww-1788744924-1.2.1.1-AuyZ5zLbbsyoAwr4tGySIKRXcJKWywwqu7yDpypNKdpe5c5UISH8yA2oKAoZE_LUYwdXuWx3I2mlSw3UdWxhkIRKgvNwxSiIWKnNrwzmDpY66VEOdwP5t7z.BtB5NkDEk.R8Ui.HHUhr_0eFQ_TqzIIP1pWXt6BUNDO8yx7JDiOTBX_BgBn6TIRSvTBNRko9U4cZdg3EpW6YGKl3DcfUbVknaDhF32bO7tgThn.ccVcz7i0xW94Q.rK7fd2ZNDGfTANDDv0CrjS01CTIY7pyslXzIhjBHmsNyY2x1ybfw4mSBuwnHerVhlcpkHTYFUUgHMWxPjiRe64rm3Ph7IuVUiA4jk0xPNUzFOnosCDI75F06MteSKoMTKRrlnofDi_qIs2R4cuM3l0LcrU6LyGS.USjqGEih0a9YPoV.sdoWcs04_3E_POQTtziokbr_kJY35ciz_4_87114A5bp2z17hfS0VAgalQM0pGhEj93mN3zk_c6eHiBMKDvd.LfCnO3at51Reqbe.OoOsEW58eD9C6GKtOlqxSW_bqvsjxPqLdz9Qpk5V0kdrON39EGoue1RdnO0kQlpMCQtQ6r6MOWVb_L_HmUhq2Z9uk5uQ6XrAkihsROYAsf1dH7gGFbKGiNUoJ8QGJZHfnXPyW3mrABJDMJPxAOFRp5HXFguEwN4fe82tgjQFwoqULwAz1NiVG97f4SMkEi5cJEeqm6GoxfR29YMadjQiWLCf4Kfk4JQmzd_iR_PuZJdWFFy4MLd1y.bIfNoGjB2rljmQ8mVB2kSB_ecRxhhfRp0rqSjcL4ZZcQvQLOHjoSPvruouhZXS2qigHLsgcxhf0c9zqpAN1.i.FkgJcnhKdErZOEB44qlo9gqiNOUMc1AMGK8XeNtXoNUZP_9Kbl7Mz5cmr4G5mKwoP_yVKJwfOU.dMh2HfWejNxEo2hgbHqvBL8ZWIwXYsWOd8xVTCJYpOBbVQURkWCgjkoGEuBfryM5JEKFbdFV3NbODY9AIhS_X_coVfj.v3_onH2M8BrCwaIW8C1Q9nbVCBLsReyuZ_Aqft_g6S85_Lqq4oyfMihObnuFPvG0uGEGDChRg7XfhmBxile5oBVzQ',mdrd: 'K_3x6Z7tRApvnnNjqeve_iqymadonSq8JUnCLclgFHk-1788744924-1.2.1.1-3LzVoD8019rlnOctUaG9HwzziTD1vDKxDa1efaJSvFylLYB93P99uztLYVcfs61iXFGL2pH3SuYzDKQw2Y7fCQPiFTtb5uSTvUNgHULoNIZJmooJTfRsgnTccudMVLTPVD80rctyNgqU39YVui9zXMKxMyrBMgV0dP8u7i6CYxymKwW9hGsNngD3gMKi4ELoovxmjzbf82bzN3JAEPNcWO6.yiL0SJA_3CYFAo9s4Hh8p.hia2ydG.fSPB08ppZzP9q1kod0Hu6p.nmNTne_ykzLPgxtmmNtqQzkuyPONKCz9bbaTSPWeX2GNeA_CPryBy1Ph_gimRwvkXSqdK2Ue4e0BdcrEkvk62JAxoKbrovf8FeY1G_3SE2ZJFQCX3RmKqS83MkUe0aeQt.Cf80wZpmKjYrUg_2_yFtAFf1I.RYYmUcTkOAsmgLAbqsrqAKOTPqXIyvH5b1_EfwIXX8hOA6NEVBDQOWz31sEYs8lMPc',};var a = document.createElement('script');a.nonce = 'AYKOKuk5jaXfFJaghO0OcF';a.src = '/cdn-cgi/challenge-platform/h/g/orchestrate/chl_page/v1?ray=a371fa04ed95e643';window._cf_chl_opt.cOgUHash = location.hash === '' && location.href.indexOf('#') !== -1 ? '#' : location.hash;window._cf_chl_opt.cOgUQuery = location.search === '' && location.href.slice(0, location.href.length - window._cf_chl_opt.cOgUHash.length).indexOf('?') !== -1 ? '?' : location.search;if (window.history && window.history.replaceState) {var ogU = location.pathname + window._cf_chl_opt.cOgUQuery + window._cf_chl_opt.cOgUHash;history.replaceState(null, null,"/cms-hpt.txt?__cf_chl_rt_tk=s4KPs9jSLAGMlX90Wut90OSrGvDj_NbHz588oUBGBkA-1788744924-1.0.1.1-KMFJoLh.h3mFzrgIUPTkZdz.ipiy4pyxp4ysWQEtSBk"+ window._cf_chl_opt.cOgUHash);a.onload = function() {history.replaceState(null, null, ogU);}}document.getElementsByTagName('head')[0].appendChild(a);}());</script></body></html>
+
+* total time: 23209 ms

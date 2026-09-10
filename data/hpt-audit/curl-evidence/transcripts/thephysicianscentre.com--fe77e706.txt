@@ -1,0 +1,41 @@
+# curl-style evidence for https://thephysicianscentre.com/cms-hpt.txt
+# fetched 2026-09-07T01:36:07.080Z with the tracker's BROWSER_HEADERS (production client)
+# record: 450834 | PHYSICIANS CENTRE,THE | TX | finding: not-assessed-site-unreachable
+
+* DNS thephysicianscentre.com: 50.63.7.173
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* error: fetch failed (cause: CERT_HAS_EXPIRED)
+
+* http:// fallback attempt after transport failure:
+* fallback final response: http://thephysicianscentre.com/cms-hpt.txt
+< HTTP 200
+< accept-ranges: bytes
+< connection: Upgrade, Keep-Alive
+< content-encoding: gzip
+< content-length: 225
+< content-type: text/plain
+< date: Mon, 07 Sep 2026 01:36:08 GMT
+< etag: "3bdd7b2-147-645c610e557ee-gzip"
+< keep-alive: timeout=5
+< last-modified: Fri, 12 Dec 2025 19:14:09 GMT
+< server: Apache
+< upgrade: h2,h2c
+< vary: Accept-Encoding
+< --- body (327 bytes read) ---
+< location-name: The Physicians Centre Hospital
+< source-page-url: http://thephysicianscentre.com/patient-pricing-information/
+< mrf-url: https://apim.services.craneware.com/api-pricing-transparency/api/public/aeda41f455cbab2353aaa85fdeb8c54d/charges/mrf
+< contact-name: hpt-obf:v1:SSgiCRIZaYieMC9I.wQOSVbi3ERQErqC3aiDidA.xR7xCzkRIIRlJXIO
+< contact-email: hpt-obf:v1:buQfxkSNqDwrhUDo.Fvaj8Mc3ssHUUEUpsA1VGg.yxipZb40e2d9M6MeBLqSYk0V3SHNwxQ5PmQBLS_BJ2Sx5XTY
+
+* total time: 583 ms

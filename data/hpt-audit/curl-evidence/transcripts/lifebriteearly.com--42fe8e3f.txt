@@ -1,0 +1,164 @@
+# curl-style evidence for https://lifebriteearly.com/
+# fetched 2026-09-07T01:32:42.871Z with the tracker's BROWSER_HEADERS (production client)
+# record: 111314 | LIFEBRITE COMMUNITY HOSPITAL OF EARLY | GA | finding: not-assessed-not-named-in-file
+
+* DNS lifebriteearly.com: 3.33.251.168, 15.197.225.128
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://lifebriteearly.com/
+< HTTP 302
+< content-length: 50
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:32:43 GMT
+< location: https://lifebritestokes.com
+< server: ip-10-123-124-158.ec2.internal
+< vary: Accept-Encoding
+< x-request-id: 408c544a-7323-4f22-a072-721a730504f1
+* following Location: https://lifebritestokes.com
+
+* redirect hop 2: https://lifebritestokes.com/
+< HTTP 301
+< age: 461848
+< alt-svc: h3=":443"; ma=86400
+< cache-control: public, max-age=2678400
+< cf-cache-status: HIT
+< cf-ray: a371f61648a4c3cb-IAD
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:32:43 GMT
+< expires: Thu, 08 Oct 2026 01:32:43 GMT
+< location: https://www.novanthealth.org/locations/medical-centers/community-hospital-of-stokes/
+< server: cloudflare
+< vary: accept-encoding
+< x-gateway-cache-key: 1788278107.411|standard|https|lifebritestokes.com|||/
+< x-gateway-cache-status: MISS
+< x-gateway-request-id: 8c5c64d2aa6d47014bb41631e39dd79f
+< x-gateway-skip-cache: 0
+< x-redirect-by: redirection
+* following Location: https://www.novanthealth.org/locations/medical-centers/community-hospital-of-stokes/
+
+* final response: https://www.novanthealth.org/locations/medical-centers/community-hospital-of-stokes/
+< HTTP 200
+< alt-svc: h3=":443"; ma=86400
+< cf-cache-status: DYNAMIC
+< cf-ray: a371f6174b4db4a5-IAD
+< content-encoding: gzip
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:32:44 GMT
+< request-context: appId=cid-v1:3dd33843-4352-4817-9812-4c24e5c556f8
+< server: cloudflare
+< --- body (65536 bytes read, truncated) ---
+< 
+< 
+< 
+< 
+< <!DOCTYPE html>
+< <html lang="en" class="">
+< <head>
+<         <script src="https://cdn.optimizely.com/js/5269219516874752.js"></script>
+< 	<meta charset="utf-8">
+< 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+< 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+< 	<meta http-equiv="Content-Security-Policy" content="default-src&#xA;    &#x27;self&#x27;&#xA;    &#x27;unsafe-inline&#x27;&#xA;    &#x27;unsafe-eval&#x27;&#xA;    https://fonts.googleapis.com&#xA;    https://*.novanthealth.org&#xA;    https://maps.googleapis.com&#xA;    https://www.novantmychart.org&#xA;    https://player.vimeo.com&#xA;    https://www.youtube.com&#xA;    https://www.google.com&#xA;    https://www.cvent-assets.com&#xA;    https://*.usw2.pure.cloud&#xA;    https://novant-oncore.forteresearchapps.com&#xA;    https://www.auntbertha.com&#xA;    https://patientgpt.novanthealthvirtualprimarycare.org;&#xA;    &#xA;object-src&#xA;    &#x27;none&#x27;;&#xA;&#xA;form-action&#xA;    &#x27;self&#x27;;&#xA;&#xA;script-src&#xA;    &#x27;self&#x27;&#xA;    &#x27;unsafe-inline&#x27;&#xA;    &#x27;unsafe-eval&#x27;&#xA;    https://cform.loyalhealth.com&#xA;    https://api.loyalhealth.com&#xA;    https://*.optimizely.com&#xA;    https://optimizely.s3.amazonaws.com&#xA;    https://cdn-assets-prod.s3.amazonaws.com&#xA;    https://*.episerver.net&#xA;    https://*.novanthealth.org&#xA;    https://www.google.com&#xA;    https://www.gstatic.com&#xA;    https://www.novantmychart.org&#xA;    https://www.google-analytics.com&#xA;    https://www.googletagmanager.com&#xA;    https://www.youtube.com&#xA;    https://maps.googleapis.com&#xA;    https://www.cvent.com&#xA;    https://www.cvent-assets.com&#xA;    https://*.usw2.pure.cloud&#xA;    https://*.health-connections.org&#xA;    https://freshpaint-cdn.com/js/7e3ff947-44fd-42fb-a129-5e0d20e33452/freshpaint.js&#xA;    https://perfalytics.com/static/js/freshpaint.js&#xA;    https://js.monitor.azure.com/scripts/b/ai.2.gbl.min.js&#xA;    https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js&#xA;    https://perfalytics.com/static/js/integrations.js&#xA;    https://perfalytics.com/static/js/editor.js&#xA;    https://cdn.rvohealth.com;&#xA;&#xA;style-src&#xA;    &#x27;self&#x27;&#xA;    &#x27;unsafe-inline&#x27;&#xA;    https://fonts.googleapis.com&#xA;    https://*.novanthealth.org&#xA;    https://www.cvent-assets.com;&#xA;&#xA;img-src&#xA;    *&#xA;    &#x27;self&#x27;&#xA;    https://cdn.optimizely.com&#xA;    data:&#xA;    https:;&#xA;&#xA;font-src&#xA;    &#x27;self&#x27;&#xA;    &#x27;unsafe-inline&#x27;&#xA;    data:&#xA;    https://fonts.gstatic.com&#xA;    https://www.cvent-assets.com;&#xA;&#xA;connect-src&#xA;    &#x27;self&#x27;&#xA;    https://api.loyalhealth.com&#xA;    https://logx.optimizely.com&#xA;    https://*.optimizely.com&#xA;    https://*.novanthealth.org&#xA;    https://dc.services.visualstudio.com&#xA;    https://maps.googleapis.com&#xA;    https://*.launchdarkly.com&#xA;    https://www.cvent.com&#xA;    https://*.health-connections.org&#xA;    wss://webmessaging.usw2.pure.cloud&#xA;    https://*.usw2.pure.cloud&#xA;    https://hyropublic.blob.core.windows.net&#xA;    https://perfalytics.com/event-definitions/7e3ff947-44fd-42fb-a129-5e0d20e33452&#xA;    https://api.perfalytics.com/track&#xA;    https://freshpaint-impression.com&#xA;    https://*.rvohealth.com&#xA;    https://patientgpt.novanthealthvirtualprimarycare.org&#xA;    https://freshpaint-proxy.com;" />
+< 
+<     <link rel="canonical" href="https://www.novanthealth.org/locations/medical-centers/community-hospital-of-stokes/"/>
+<     <meta name="description" property="description" content="Community Hospital of Stokes offers care close to home, from emergency room services to outpatient surgery to imaging tests." />
+< 
+<     <title> Community Hospital of Stokes | Novant Health</title>
+<     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<     <link rel="stylesheet" href="/dist/sites/NovantHealth/styles.css?v=g-NSD_68NqElYI65m-YtCzi9qcso4RimpqkUrFQKJd8" />
+<     <link rel="stylesheet" href="https://auroracomponents.novanthealth.org/static/styles/nh-theme.css?v=1.0.1704.1035" />
+<     <link rel="stylesheet" href="/ClientResources/css/CustomEPiServerForms.css?v=XhAadG7_bXD0fIM34WLsn2Wrto48NsrPgUU0px9NgLg" />
+<     <meta name="og:title" property="og:title" content="Community Hospital of Stokes | Novant Health">
+< <meta name="og:type" property="og:type" content="article">
+< <meta name="og:url" property="og:url" content="https://www.novanthealth.org/locations/medical-centers/community-hospital-of-stokes/">
+< <meta name="og:image" property="og:image" content="https://www.novanthealth.org/siteassets/social-media-image/novant-health-root-image.webp">
+< <meta name="og:description" property="og:description" content="Community Hospital of Stokes offers care close to home, from emergency room services to outpatient surgery to imaging tests.">
+< <meta name="og:locale" property="og:locale" content="en">
+< <meta name="article:content_type" property="article:content_type" content="Hospital Landing Page">
+< <meta name="article:published_time" property="article:published_time" content="09/05/2022 06:58:05 AM">
+< <meta name="article:modified_time" property="article:modified_time" content="5/14/2026 5:28:33 PM">
+< <meta name="article:category" property="article:category" content="Topic">
+< <meta name="article:category" property="article:category" content="Audience">
+< <meta name="article:category" property="article:category" content="Department">
+< 
+<     <script type="text/javascript">
+<         !function (d, s) { var ip = d.createElement(s); ip.async = 1, s = d.getElementsByTagName(s)[0], ip.src = '//s.usea01.idio.episerver.net/ip.js', s.parentNode.insertBefore(ip, s) }(document, 'script');
+<     </script>
+<     <link rel="preload" href="https://auroracomponents.novanthealth.org/static/cdn/components.js?v=1.0.1704.1035" as="script" />
+<     <link rel="preload" href="https://auroracomponents.novanthealth.org/static/cdn/main.js?v=1.0.1704.1035" as="script" />
+<     <style>
+<         #ssr-reveal-overlay {
+<             position: fixed;
+<             inset: 0;
+<             background: #ffffff;
+<             z-index: 99999;
+<             opacity: 1;
+<             transition: opacity 0.25s ease;
+<         }
+< 
+<         #ssr-reveal-overlay.ready {
+<             opacity: 0;
+<             pointer-events: none;
+<         }
+<     </style>
+<     <script src="https://auroracomponents.novanthealth.org/static/cdn/components.js?v=1.0.1704.1035"></script>
+<     <script type="application/ld+json">
+< {
+<   "@context": "https://schema.org",
+<   "@graph": [
+<     {
+<       "@type": "MedicalOrganization",
+<       "@id": "https://www.novanthealth.org/#organization",
+<       "name": "Novant Health",
+<       "url": "https://www.novanthealth.org/"
+<     },
+<     {
+<       "@type": "Hospital",
+<       "@id": "https://www.novanthealth.org/locations/medical-centers/community-hospital-of-stokes/#hospital",
+<       "name": "Community Hospital of Stokes",
+<       "url": "https://www.novanthealth.org/locations/medical-centers/community-hospital-of-stokes/",
+<       "description": "Community Hospital of Stokes provides hospital care in Danbury, North Carolina, including emergency care, imaging, laboratory, surgical, rehabilitative and critical access hospital services.",
+<       "medicalSpecialty": [
+<         "https://schema.org/Emergency",
+<         "https://schema.org/Surgical"
+<       ],
+<       "parentOrganization": {
+<         "@id": "https://www.novanthealth.org/#organization"
+<       },
+<       "telephone": "hpt-obf:v1:lR47AKEEJVqtM6ib.8bvD8W2vrwHPqWFmGUbNkw.QGidyQMOzbhd0Q4Z",
+<       "address": {
+<         "@type": "PostalAddress",
+<         "streetAddress": "1570 NC 8 & 89 Highway North",
+<         "addressLocality": "Danbury",
+<         "addressRegion": "NC",
+<         "postalCode": "27016",
+<         "addressCountry": "US"
+<       },
+<       "areaServed": [
+<         {
+<           "@type": "City",
+<           "name": "Danbury"
+<         },
+<         {
+<           "@type": "State",
+<           "name": "North Carolina"
+<         }
+<       ],
+<       "knowsAbout": [
+<         "Emergency care",
+<         "Imaging",
+<         "Laboratory services",
+<         "Surgical care",
+<         "Rehabili
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 2436 ms

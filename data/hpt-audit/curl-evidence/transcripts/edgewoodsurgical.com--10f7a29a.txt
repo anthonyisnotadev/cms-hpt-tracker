@@ -1,0 +1,142 @@
+# curl-style evidence for https://edgewoodsurgical.com/
+# fetched 2026-09-07T01:35:46.562Z with the tracker's BROWSER_HEADERS (production client)
+# record: 390307 | EDGEWOOD SURGICAL HOSPITAL | PA | finding: no-cms-hpt-txt-published
+
+* DNS edgewoodsurgical.com: 160.153.0.139
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://edgewoodsurgical.com/
+< HTTP 200
+< age: 216987
+< alt-svc: h3=":443"; ma=86400
+< cache-control: public, max-age=2678400
+< cache-provider: CLOUDWAYS-CACHE-DE
+< cf-cache-status: HIT
+< cf-ray: a371fa96ce63c5e9-IAD
+< content-encoding: br
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:35:48 GMT
+< expires: Thu, 08 Oct 2026 01:35:48 GMT
+< last-modified: Fri, 04 Sep 2026 13:18:25 GMT
+< server: cloudflare
+< vary: Accept-Encoding, Accept-Encoding
+< x-gateway-cache-key: 1788527815.317|mobile|https|edgewoodsurgical.com|||/
+< x-gateway-cache-status: MISS
+< x-gateway-request-id: ef5c86c2e0117b6d29d78b0f47bf8c28
+< x-gateway-skip-cache: 0
+< --- body (65536 bytes read, truncated) ---
+< <!DOCTYPE html>
+< <html lang="en-US" class="html_av-framed-box responsive av-preloader-disabled  html_header_top html_logo_center html_bottom_nav_header html_menu_right html_slim html_header_sticky_disabled html_header_shrinking_disabled html_header_topbar_active html_mobile_menu_tablet html_header_searchicon_disabled html_content_align_center html_header_unstick_top html_header_stretch_disabled html_elegant-blog html_modern-blog html_av-submenu-hidden html_av-submenu-display-click html_av-overlay-side html_av-overlay-side-minimal html_av-submenu-clone html_entry_id_206 av-cookies-no-cookie-consent av-no-preview av-default-lightbox html_text_menu_active av-mobile-menu-switch-default">
+< <head>
+< <meta charset="UTF-8" />
+< 
+< 
+< <!-- mobile setting -->
+< <meta name="viewport" content="width=device-width, initial-scale=1">
+< 
+< <!-- Scripts/CSS and wp_head hook -->
+< 		<script type="text/javascript">
+< 			window.flatStyles = window.flatStyles || ''
+< 
+< 			window.lightspeedOptimizeStylesheet = function () {
+< 				const currentStylesheet = document.querySelector( '.tcb-lightspeed-style:not([data-ls-optimized])' )
+< 
+< 				if ( currentStylesheet ) {
+< 					try {
+< 						if ( currentStylesheet.sheet && currentStylesheet.sheet.cssRules ) {
+< 							if ( window.flatStyles ) {
+< 								if ( this.optimizing ) {
+< 									setTimeout( window.lightspeedOptimizeStylesheet.bind( this ), 24 )
+< 								} else {
+< 									this.optimizing = true;
+< 
+< 									let rulesIndex = 0;
+< 
+< 									while ( rulesIndex < currentStylesheet.sheet.cssRules.length ) {
+< 										const rule = currentStylesheet.sheet.cssRules[ rulesIndex ]
+< 										/* remove rules that already exist in the page */
+< 										if ( rule.type === CSSRule.STYLE_RULE && window.flatStyles.includes( `${rule.selectorText}{` ) ) {
+< 											currentStylesheet.sheet.deleteRule( rulesIndex )
+< 										} else {
+< 											rulesIndex ++
+< 										}
+< 									}
+< 									/* optimize, mark it such, move to the next file, append the styles we have until now */
+< 									currentStylesheet.setAttribute( 'data-ls-optimized', '1' )
+< 
+< 									window.flatStyles += currentStylesheet.innerHTML
+< 
+< 									this.optimizing = false
+< 								}
+< 							} else {
+< 								window.flatStyles = currentStylesheet.innerHTML
+< 								currentStylesheet.setAttribute( 'data-ls-optimized', '1' )
+< 							}
+< 						}
+< 					} catch ( error ) {
+< 						console.warn( error )
+< 					}
+< 
+< 					if ( currentStylesheet.parentElement.tagName !== 'HEAD' ) {
+< 						/* always make sure that those styles end up in the head */
+< 						const stylesheetID = currentStylesheet.id;
+< 						/**
+< 						 * make sure that there is only one copy of the css
+< 						 * e.g display CSS
+< 						 */
+< 						if ( ( ! stylesheetID || ( stylesheetID && ! document.querySelector( `head #${stylesheetID}` ) ) ) ) {
+< 							document.head.prepend( currentStylesheet )
+< 						} else {
+< 							currentStylesheet.remove();
+< 						}
+< 					}
+< 				}
+< 			}
+< 
+< 			window.lightspeedOptimizeFlat = function ( styleSheetElement ) {
+< 				if ( document.querySelectorAll( 'link[href*="thrive_flat.css"]' ).length > 1 ) {
+< 					/* disable this flat if we already have one */
+< 					styleSheetElement.setAttribute( 'disabled', true )
+< 				} else {
+< 					/* if this is the first one, make sure he's in head */
+< 					if ( styleSheetElement.parentElement.tagName !== 'HEAD' ) {
+< 						document.head.append( styleSheetElement )
+< 					}
+< 				}
+< 			}
+< 		</script>
+< 		<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+< <style type="text/css">@font-face { font-family: 'star'; src: url('https://edgewoodsurgical.com/wp-content/plugins/woocommerce/assets/fonts/star.eot'); src: url('https://edgewoodsurgical.com/wp-content/plugins/woocommerce/assets/fonts/star.eot?#iefix') format('embedded-opentype'), 	  url('https://edgewoodsurgical.com/wp-content/plugins/woocommerce/assets/fonts/star.woff') format('woff'), 	  url('https://edgewoodsurgical.com/wp-content/plugins/woocommerce/assets/fonts/star.ttf') format('truetype'), 	  url('https://edgewoodsurgical.com/wp-content/plugins/woocommerce/assets/fonts/star.svg#star') format('svg'); font-weight: normal; font-style: normal;  } @font-face { font-family: 'WooCommerce'; src: url('https://edgewoodsurgical.com/wp-content/plugins/woocommerce/assets/fonts/WooCommerce.eot'); src: url('https://edgewoodsurgical.com/wp-content/plugins/woocommerce/assets/fonts/WooCommerce.eot?#iefix') format('embedded-opentype'), 	  url('https://edgewoodsurgical.com/wp-content/plugins/woocommerce/assets/fonts/WooCommerce.woff') format('woff'), 	  url('https://edgewoodsurgical.com/wp-content/plugins/woocommerce/assets/fonts/WooCommerce.ttf') format('truetype'), 	  url('https://edgewoodsurgical.com/wp-content/plugins/woocommerce/assets/fonts/WooCommerce.svg#WooCommerce') format('svg'); font-weight: normal; font-style: normal;  } </style>
+< 	<!-- This site is optimized with the Yoast SEO plugin v28.4 - https://yoast.com/product/yoast-seo-wordpress/ -->
+< 	<title>World Class Surgical Hospital Close To Home</title>
+< 	<meta name="description" content="Edgewood Surgical Hospital is a world class surgery center committed to providing unrivaled safety and convenience for it&#039;s patients." />
+< 	<link rel="canonical" href="https://edgewoodsurgical.com/home/" />
+< 	<meta property="og:locale" content="en_US" />
+< 	<meta property="og:type" content="website" />
+< 	<meta property="og:title" content="World Class Surgical Hospital Close To Home" />
+< 	<meta property="og:description" content="Edgewood Surgical Hospital is a world class surgery center committed to providing unrivaled safety and convenience for it&#039;s patients." />
+< 	<meta property="og:url" content="https://edgewoodsurgical.com/home/" />
+< 	<meta property="og:site_name" content="Edgewood Surgical Hospital" />
+< 	<meta property="article:modified_time" content="2025-03-27T12:01:23+00:00" />
+< 	<meta property="og:image" content="https://edgewoodsurgical.com/wp-content/uploads/2019/01/Kurtis-Gramley.png" />
+< 	<meta property="og:image:width" content="146" />
+< 	<meta property="og:image:height" content="161" />
+< 	<meta property="og:image:type" content="image/png" />
+< 	<meta name="twitter:card" content="summary_large_image" />
+< 	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/edgewoodsurgical.com\/home\/","url":"https:\/\/edgewoodsurgical.com\/home\/","name":"World Class Surgical Hospital Close To Home","isPartOf":{"@id":"http:\/\/edgewoodsurgical.com\/#website"},"primaryImageOfPage":{"@id":"https:\/\/edgewoodsurgical.com\/home\/#primaryimage"},"image":{"@id":"https:\/\/edgewoodsurgical.com\/home\/#primaryimage"},"thumbnailUrl":"https:\/\/edgewoodsurgical.com\/wp-content\/uploads\/2019\/01\/Kurtis-Gramley.png","datePublished":"2015-07-14T14:50:10+00:00","dateModified":"2025-03-27T12:01:23+00:00","description":"Edgewood Surgical Hospital is a world class surgery center committed to providing unrivaled safety and convenience for it's patients.","breadcrumb":{"@id":"https:\/\/edgewoodsurgical.com\/home\/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https:\/\/edgewoodsurgical.com\/home\/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/edgewoodsurgical.com\/home\/#primaryimage","url":"https:\/\/edgewoodsurgical.com\/wp-content\/uploads\/2019\/01\/Kurtis-Gramley.png","contentUrl":"https:\/\/edgewoodsurgical.com\/wp-content\/uploads\/2019\/01\/Kurtis-Gramley.png","width":146,"height":161,"caption":"Kurtis Gramley"},{"@type":"BreadcrumbList","@id":"https:\/\/edgewoodsurgical.com\/home\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"http:\/\/edgewoodsurgical.com\/#website","url":"http:\/\/edgewoodsurgical.com\/","name":"Edgewood Surgical Hospital","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"http:\/\/edgewoodsurgical.com\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"}]}</script>
+< 	<!-- / Yoast SEO plugin. -->
+< 
+< 
+< <link rel='dns-prefetch' href='//ww
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 213 ms

@@ -1,0 +1,31 @@
+# curl-style evidence for https://mrfs.hyvehealthcare.com/IslandHealthSystem/910729255_island-health_standardcharges.csv
+# fetched 2026-09-07T01:36:10.470Z with the tracker's BROWSER_HEADERS (production client)
+# record: 500007 | ISLAND HOSPITAL | WA | finding: mrf-url-unreachable
+
+* DNS mrfs.hyvehealthcare.com: 150.171.109.77
+
+> GET /IslandHealthSystem/910729255_island-health_standardcharges.csv  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://mrfs.hyvehealthcare.com/IslandHealthSystem/910729255_island-health_standardcharges.csv
+< HTTP 404
+< access-control-allow-origin: *
+< content-length: 321
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:36:12 GMT
+< x-azure-ref: 20260907T013612Z-17fd58bbc9czjxtfhC1IADn1bs0000000umg0000000010b5
+< x-cache: CONFIG_NOCACHE
+< x-ms-error-code: WebContentNotFound
+< x-ms-request-id: 9d8e54a1-501e-0015-7569-3ec2a0000000
+< x-ms-version: 2018-03-28
+< --- body (321 bytes read) ---
+< <!DOCTYPE html><html><head><title>WebContentNotFound</title></head><body><h1>The requested content does not exist.</h1><p><ul><li>HttpStatusCode: 404</li><li>ErrorCode: WebContentNotFound</li><li>RequestId : 9d8e54a1-501e-0015-7569-3ec2a0000000</li><li>TimeStamp : 2026-09-07T01:36:12.1929910Z</li></ul></p></body></html>
+
+* total time: 323 ms

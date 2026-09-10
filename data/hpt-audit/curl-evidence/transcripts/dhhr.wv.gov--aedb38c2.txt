@@ -1,0 +1,61 @@
+# curl-style evidence for https://dhhr.wv.gov/cms-hpt.txt
+# fetched 2026-09-07T01:36:11.985Z with the tracker's BROWSER_HEADERS (production client)
+# record: 510086 | WELCH COMMUNITY HOSPITAL | WV | finding: not-assessed-site-unreachable
+# record: 514012 | WILLIAM R SHARPE, JR HOSPITAL | WV | finding: not-assessed-site-unreachable
+
+* DNS dhhr.wv.gov: 206.16.212.157
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://dhhr.wv.gov/cms-hpt.txt
+< HTTP 404
+< accept-ranges: bytes
+< cache-control: private,max-age=0
+< content-length: 641
+< content-security-policy: frame-ancestors 'self' teams.microsoft.com *.teams.microsoft.com *.skype.com *.teams.microsoft.us local.teams.office.com *.powerapps.com *.yammer.com *.officeapps.live.com *.office.com *.stream.azure-test.net *.microsoftstream.com *.dynamics.com *.microsoft.com onedrive.live.com *.onedrive.live.com;
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:36:13 GMT
+< expires: Sun, 23 Aug 2026 01:36:13 GMT
+< microsoftsharepointteamservices: 16.0.0.10417
+< public-extension: http://schemas.microsoft.com/repl-2
+< request-id: f1ba38a2-b159-505a-d440-ce0614520d92
+< server: Microsoft-IIS/10.0
+< spiislatency: 0
+< sprequestduration: 8
+< sprequestguid: f1ba38a2-b159-505a-d440-ce0614520d92
+< strict-transport-security: max-age=31536000; includeSubDomains; preload
+< vary: Accept-Encoding
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-ms-invokeapp: 1; RequireReadOnly
+< x-powered-by: ASP.NET
+< x-sharepointhealthscore: 0
+< --- body (641 bytes read) ---
+< <html>
+< <head>
+< <meta http-equiv="Content-Type" content="text/html;charset=utf-8" /><meta name="SharePointError" content=""/>
+< <meta name="Description" content=""/>
+< <meta name="Keywords" content=""/>
+< <meta name="Robots" content="NOINDEX"/>
+< <script type="text/javascript">
+< <!--
+< window.location.replace("https:\u002f\u002fdhhr.wv.gov\u002fPages\u002fPageNotFoundError.aspx?requestUrl=https:\u002f\u002fdhhr.wv.gov\u002fcms-hpt.txt")
+< -->
+< </script>
+< </head>
+< <body>
+< <!------------------------------------------------------------------------->
+< File Not Found
+< <!------------------------------------------------------------------------->
+< </body>
+< </html>
+
+* total time: 213 ms

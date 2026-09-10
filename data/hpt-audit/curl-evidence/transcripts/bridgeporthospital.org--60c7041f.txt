@@ -1,0 +1,166 @@
+# curl-style evidence for https://www.bridgeporthospital.org/-/media/Files/YNHHS/sc/06-0646554-Bridgeport-Hospital_standard_charges-1.ashx
+# fetched 2026-09-07T01:32:38.349Z with the tracker's BROWSER_HEADERS (production client)
+# record: 070010 | BRIDGEPORT HOSPITAL | CT | finding: mrf-url-unreachable
+
+* DNS www.bridgeporthospital.org: 104.18.27.242, 104.18.26.242
+
+> GET /-/media/Files/YNHHS/sc/06-0646554-Bridgeport-Hospital_standard_charges-1.ashx  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://www.bridgeporthospital.org/-/media/Files/YNHHS/sc/06-0646554-Bridgeport-Hospital_standard_charges-1.ashx
+< HTTP 302
+< access-control-expose-headers: Request-Context
+< cache-control: public, max-age=300
+< cf-cache-status: EXPIRED
+< cf-ray: a371f5fcbf4fe601-IAD
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:32:39 GMT
+< expires: Mon, 07 Sep 2026 01:37:39 GMT
+< location: /404
+< request-context: appId=cid-v1:c8445a28-b8cf-4e35-9da0-16bd8ccb4ff8
+< server: cloudflare
+< server-timing: cfCacheStatus;desc="EXPIRED", cfEdge;dur=48,cfOrigin;dur=99
+< strict-transport-security: max-age=31536000
+< vary: accept-encoding
+* following Location: /404
+
+* final response: https://www.bridgeporthospital.org/404
+< HTTP 404
+< access-control-expose-headers: Request-Context
+< cache-control: no-cache, no-store
+< cf-cache-status: DYNAMIC
+< cf-ray: a371f5fdcb4ce601-IAD
+< content-encoding: br
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:32:40 GMT
+< expires: -1
+< pragma: no-cache
+< request-context: appId=cid-v1:c8445a28-b8cf-4e35-9da0-16bd8ccb4ff8
+< server: cloudflare
+< server-timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=11,cfOrigin;dur=107
+< strict-transport-security: max-age=31536000
+< --- body (65536 bytes read, truncated) ---
+< 
+< 
+< <!DOCTYPE html>
+< <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+< <head>
+<     <title>Bridgeport Hospital - Yale New Haven Health | 404 Page Not Found</title><meta itemprop="name" content="Bridgeport Hospital - Yale New Haven Health | 404 Page Not Found" /><meta name="keywords" content="" /><meta name="description" content="" /><meta itemprop="description" content="" /><link rel="canonical" href="https://www.bridgeporthospital.org/404"></link>
+<     <meta charset="utf-8" />
+<     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<     <link rel="apple-touch-icon" href="/Dist/img/apple-touch-icon.png" />
+<     <link rel="icon" type="image/x-icon" href="/Dist/img/favicon.ico" />
+<     <meta name="msapplication-TileColor" content="#da532c" />
+<     <meta name="analytics-site-name" content="" />
+<     <script type="application/ld+json">
+<         {
+< "@context": "https://schema.org",
+< "@type": "BreadCrumbList",
+< "ItemListElement": [{
+< "@type": "ListItem",
+< "position": "1",
+< "name": "bridgeport",
+< "item": "https://www.bridgeporthospital.org/"
+< },{
+< "@type": "ListItem",
+< "position": "2",
+< "name": "Page Not Found",
+< "item": "https://www.bridgeporthospital.org/404"
+< }]
+< }
+<     </script>
+<     
+<     <script src="/Dist/Scripts/jquery.min.js"></script>
+<     <script src="/Dist/Scripts/glide.js"></script>
+<     <script src="/Dist/Scripts/markerclustererplus.min.js"></script>
+< 
+<     <script src="/Dist/Scripts/script.min.js?v=0901205925"></script>
+<     <link href="/Dist/Styles/style.min.css?v=0901205925" rel="stylesheet" type="text/css" />
+< 
+<     
+< 
+<     
+<     
+<     
+< 
+<     <script src="https://js.hcaptcha.com/1/api.js?onload=onloadCallback&render=explicit" async defer></script>
+< 
+< <style>
+< #feedbackcaptcha { text-align: left; }
+< </style><script type="text/javascript" src="//cdn.evgnet.com/beacon/i55685555550373cg3n3n3v069566275/ynhhs_patient_personalization/scripts/evergage.min.js"></script>
+< <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+< <script
+< 	defer
+< 	data-strict-csp
+< 	data-skip-css="false"
+< 	src="https://cdn-prod.securiti.ai/consent/cookie-consent-sdk-loader-strict-csp.js"
+< 	data-tenant-uuid="a2538e5d-3aa9-4bd6-805c-2bbf101e33e3"
+< 	data-domain-uuid="8fb35cfe-eeec-4506-8f5b-9387357b85d3"
+< 	data-backend-url="https://app.securiti.ai">
+< </script>
+< <script type="text/javascript" src="https://cdn-prod.securiti.ai/consent/auto_blocking/a2538e5d-3aa9-4bd6-805c-2bbf101e33e3/8fb35cfe-eeec-4506-8f5b-9387357b85d3.js"></script>
+< <link rel='stylesheet' type='text/css' href='https://cdn-prod.securiti.ai/consent/cookie-consent.css' />
+< <link rel='stylesheet' type='text/css' href='https://cdn-prod.securiti.ai/consent/styles/a2538e5d-3aa9-4bd6-805c-2bbf101e33e3/8fb35cfe-eeec-4506-8f5b-9387357b85d3.css' />
+< <style>
+< .cc-window{
+< color: #35383E;
+<   background-color: #F2F0F0;
+< }
+< </style><script src="https://assets.adobedtm.com/be4705422c6a/247399b69a46/launch-d52a5ae2e559.min.js" async></script>
+< </head>
+< <body class="theme-cyan">
+<     <script type="text/javascript">
+< (function(c,a){if(!a.__SV){var b=window;try{var d,m,j,k=b.location,f=k.hash;d=function(a,b){return(m=a.match(RegExp(b+"=([^&]*)")))?m[1]:null};f&&d(f,"fpState")&&(j=JSON.parse(decodeURIComponent(d(f,"fpState"))),"fpeditor"===j.action&&(b.sessionStorage.setItem("_fpcehash",f),history.replaceState(j.desiredHash||"",c.title,k.pathname+k.search)))}catch(n){}var l,h;window.freshpaint=a;a._i=[];a.init=function(b,d,g){function c(b,i){var a=i.split(".");2==a.length&&(b=b[a[0]],i=a[1]);b[i]=function(){b.push([i].concat(Array.prototype.slice.call(arguments,
+< 0)))}}var e=a;"undefined"!==typeof g?e=a[g]=[]:g="freshpaint";e.people=e.people||[];e.toString=function(b){var a="freshpaint";"freshpaint"!==g&&(a+="."+g);b||(a+=" (stub)");return a};e.people.toString=function(){return e.toString(1)+".people (stub)"};l="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove people group page alias ready addEventProperties addInitialEventProperties removeEventProperty addPageviewProperties".split(" ");
+< for(h=0;h<l.length;h++)c(e,l[h]);var f="set set_once union unset remove delete".split(" ");e.get_group=function(){function a(c){b[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));e.push([d,call2])}}for(var b={},d=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<f.length;c++)a(f[c]);return b};a._i.push([b,d,g])};a.__SV=1.4;b=c.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof FRESHPAINT_CUSTOM_LIB_URL?
+< FRESHPAINT_CUSTOM_LIB_URL:"//perfalytics.com/static/js/freshpaint.js";(d=c.getElementsByTagName("script")[0])?d.parentNode.insertBefore(b,d):c.head.appendChild(b)}})(document,window.freshpaint||[]);
+< freshpaint.init("4ee18cc1-2f1a-4300-a6ad-897fcc9db9de");
+< freshpaint.page();
+< </script>
+<     
+< 
+<     <!-- BEGIN NOINDEX -->
+<     <div class="mobile-main-nav">
+<         <a href="#main" class="skip-to-main-content-link">Skip to main content</a>
+<             <div class="mobile-main-nav__logo">
+<                 <a href="https://www.bridgeporthospital.org/">
+<                     <img src="/-/media/Images/Logo/YNHHS_BH_hor_clr_484x127.ashx?h=127&amp;iar=0&amp;w=484&amp;hash=37BDF33E54B6E7A83223E51302940520" alt="Bridgeport Hospital logo" width="484" height="127" DisableWebEdit="True" />
+<                 </a>
+<             </div>
+<                     <div class="mobile-main-nav__cta">
+< <a class="btn light-blue-filled" href="https://www.bridgeporthospital.org/find-a-doctor" DisableWebEdit="True">Find a Doctor</a><a class="btn light-blue-filled" href="https://www.ynhhs.org/get-care-now" DisableWebEdit="True">Get Care Now</a>            </div>
+<         <ul class="mobile-main-nav__main-menu">
+<                     <li class="mobile-main-nav__menu-item">
+<                             <button aria-expanded="false">
+<                                 Services
+<                                 <i class="fas fa-chevron-right dropdown-arrow"></i>
+<                             </button>
+<                                                     <div class="mobile-main-nav__panel">
+<                                 <button class="mobile-main-nav__panel-return"><i class="fas fa-chevron-left dropdown-arrow"></i></button>
+<                                 <div class="mobile-main-nav__panel-top">
+<                                     <h3>
+<                                         Services
+<                                     </h3>
+<                                     <button class="mobile-main-nav__panel-close"></button>
+<                                 </div>
+<                                     <div class="mobile-main-nav__panel-main">
+<     <h4>Featured Specialties</h4>
+<         <ul>
+<                 <li><a href="https://www.bridgeporthospital.org/services/cancer" DisableWebEdit="True">Cancer (Oncology)</a></li>
+<                 <li><a href="https://www.bridgeporthospital.org/services/childrens-pediatrics" DisableWebEdit="True">Children&#39;s (Pediatrics)</a></li>
+<                 <li><a href="https://www.bridgeporthospital.org/services/aging" DisableWebEdit="True">Geriatrics (Aging)</a></li>
+<                 <li><a href="https://www.bridgeporthospital.org/services/heart-and-vascular" DisableWebEdit="True">Heart &amp; Vascular</a></li>
+<                 <li><a href="https://www.bridgeporthospital.org/services/maternity" DisableWebEdit="True">Maternity</a></li>
+<                 <li><a href="https://www.bridgeporthospital.org/services/neurology-neurosurgery" DisableWebEdit="True">Neurology &amp; Neurosurgery</a></li>
+<                 <li><a href="https://www.bridgeporthospital.org/services/trauma-burn" DisableWebEdit="True">Trauma &amp; Burn</a></li>
+<                 <li><a title="Urology"
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 530 ms

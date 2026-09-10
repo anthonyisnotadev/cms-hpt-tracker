@@ -1,0 +1,48 @@
+# curl-style evidence for https://assets.contentstack.io/v3/assets/blt3055f692fe7bf193/blt5ac32ebe9fbd7f5f/381360562_corewell-health-pennock-hospital_standardcharges.csv                             contact-name: Corewell Health Price Transparency Team
+# fetched 2026-09-07T01:34:40.871Z with the tracker's BROWSER_HEADERS (production client)
+# record: 231339 | COREWELL HEALTH PENNOCK HOSPITAL | MI | finding: mrf-url-unreachable
+
+* DNS assets.contentstack.io: 104.16.59.65, 104.16.60.65
+
+> GET /v3/assets/blt3055f692fe7bf193/blt5ac32ebe9fbd7f5f/381360562_corewell-health-pennock-hospital_standardcharges.csv%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20contact-name:%20Corewell%20Health%20Price%20Transparency%20Team  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://assets.contentstack.io/v3/assets/blt3055f692fe7bf193/blt5ac32ebe9fbd7f5f/381360562_corewell-health-pennock-hospital_standardcharges.csv                             contact-name: Corewell Health Price Transparency Team
+< HTTP 422
+< access-control-allow-headers: content-disposition, content-type, cache-control, content-length
+< access-control-allow-origin: *
+< alt-svc: h3=":443"; ma=86400
+< cf-cache-status: MISS
+< cf-ray: a371f8fb3cdfd6f9-IAD
+< content-type: application/json
+< date: Mon, 07 Sep 2026 01:34:42 GMT
+< server: cloudflare
+< strict-transport-security: max-age=31557600
+< vary: branch, api_key, access_token
+< via: a371f8fb48c3d6c1-IAD
+< x-api-key: blt3055f692fe7bf193
+< x-cache: MISS, MISS
+< x-contentstack-organization: bltb4ef365e595fc282
+< x-request-id: 068a2dee-3523-421b-9d9d-eea05a179e09
+< x-runtime: 39ms
+< x-served-by: IAD
+< x-timer: 434
+< --- body (92 bytes read) ---
+< {
+<   "error_message": "Asset was not found.",
+<   "error_code": 145,
+<   "errors": {
+<     "uid": [
+<       "is not valid."
+<     ]
+<   }
+< }
+
+* total time: 430 ms

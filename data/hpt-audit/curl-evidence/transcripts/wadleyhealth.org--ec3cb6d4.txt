@@ -1,0 +1,167 @@
+# curl-style evidence for https://wadleyhealth.org/
+# fetched 2026-09-07T01:36:08.402Z with the tracker's BROWSER_HEADERS (production client)
+# record: 450200 | WADLEY REGIONAL MEDICAL CENTER | TX | finding: not-assessed-not-named-in-file
+
+* DNS wadleyhealth.org: 150.171.109.73
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* error: fetch failed (cause: CERT_HAS_EXPIRED)
+
+* http:// fallback attempt after transport failure:
+* fallback redirect hop 1: http://wadleyhealth.org/
+< HTTP 308
+< connection: keep-alive
+< content-length: 0
+< date: Mon, 07 Sep 2026 01:36:09 GMT
+< location: https://www.christushealth.org/locations/texarkana-pine-street
+< x-azure-ref: 20260907T013609Z-154c47b99c4hddmkhC1IAD245w0000000mz0000000001ycq
+< x-cache: CONFIG_NOCACHE
+* following Location: https://www.christushealth.org/locations/texarkana-pine-street
+
+* fallback final response: https://www.christushealth.org/locations/texarkana-pine-street
+< HTTP 200
+< accept-ranges: bytes
+< cache-control: no-cache, no-store
+< content-encoding: gzip
+< content-length: 22480
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:36:10 GMT
+< expires: -1
+< pragma: no-cache
+< request-context: appId=cid-v1:98ebb05c-4a5a-49f6-b070-c1a20124696c
+< vary: Accept-Encoding
+< x-azure-ref: 20260907T013609Z-168545c87965clpfhC1IADecc40000000ug00000000057wd
+< x-cache: CONFIG_NOCACHE
+< --- body (65536 bytes read, truncated) ---
+< 
+< 
+< 
+< <!doctype html>
+< <html class="no-js" lang="en">
+< 
+< <head>
+<     
+< 	<script>
+<             (function(w, d, s, l, i) {
+<                 w[l] = w[l] || [];
+<                 w[l].push({
+<                     'gtm.start' : new Date().getTime(),
+<                     event : 'gtm.js'
+<                 });
+<                 var f = d.getElementsByTagName(s)[0],
+<                     j = d.createElement(s),
+<                     dl = l != 'dataLayer' ? '&l=' + l : '';
+<                 j.async = true;
+<                 j.src = '//tags.christushealth.org/gtm.js?id=' + i + dl;
+<                 f.parentNode.insertBefore(j, f);
+<             })(window, document, 'script', 'dataLayer', 'GTM-KM5N35KW');
+<         </script>
+< 
+< 
+< 
+<     <meta charset="utf-8" />
+< <meta http-equiv="x-ua-compatible" content="ie=edge">
+< <meta name="viewport" content="width=device-width, initial-scale=1.0">
+< 
+< <title>CHRISTUS Health Pine Street - Texarkana, TX</title>
+< <meta name="description" content="Discover exceptional healthcare at CHRISTUS Health Pine Street, formerly Wadley Regional Medical Center. Comprehensive health care solutions and community-focused care in Texarkana.">
+< 
+< 
+< 
+< <script type="application/ld+json">
+<         {
+<         "@context":"https://schema.org/",
+<         "@type":"WebSite",
+<         "@nonprofitStatus" : "Nonprofit501c20",
+<         "@logo": "https://christushealth-production-cm.azurewebsites.net/sitecore/shell/-/media/images/logo/branded-logo-svg-format/christuslogo.ashx?h=51&iar=0&w=237",
+<         "name":"CHRISTUS Health Pine Street - Texarkana, TX",
+<         "url":"https://www.christushealth.org/locations/texarkana-pine-street",
+<         "potentialAction":
+<             {
+<             "@type":"SearchAction",
+<             "target":"https://www.christushealth.org/locations/texarkana-pine-street/search%20results/?query={search_term_string}",
+<             "query-input":"required name=search_term_string"
+<             }
+<         }
+< </script>
+< <script type="text/javascript">
+<     window.ga4PageContent = {
+<         "type": "Location",
+<         "name":"CHRISTUS Health Pine Street - Texarkana, TX",
+<         "url":"https://www.christushealth.org/locations/texarkana-pine-street",
+<         }
+< </script>
+< 
+< <meta property="og:title" content="CHRISTUS Health Pine Street - Texarkana, Texas">
+< <meta property="og:description" content="Discover exceptional health care services at CHRISTUS Health, dedicated to your wellness and recovery. Explore our comprehensive medical solutions, compassionate staff, and community-focused care in Texarkana. Your health is our priority.">
+< <meta property="og:url" content="https://www.christushealth.org/locations/texarkana-pine-street">
+< <meta property="og:image" content="">
+< <meta property="og:type" content="website" />
+< 
+< 
+< 
+< <meta name="twitter:card" content="summary"> 
+< <meta name="twitter:site" content=""> 
+< <meta name="twitter:url" content="https://www.christushealth.org/locations/texarkana-pine-street">
+< <meta name="twitter:title" content="CHRISTUS Health Pine Street - Texarkana, TX">
+< <meta name="twitter:description" content="Discover exceptional healthcare at CHRISTUS Health Pine Street, formerly Wadley Regional Medical Center. Comprehensive health care solutions and community-focused care in Texarkana.">
+< <meta name="twitter:image" content=""> 
+< <link rel="canonical" href="https://www.christushealth.org/locations/texarkana-pine-street"> 
+< <link rel="shortcut icon" href="/assets/images/favicon-.ico" />
+< 
+< 
+< 
+< <link rel="preload" as="style" href="/assets/css/global.css?v=639183673700000000">
+< <link rel="stylesheet" href="/assets/css/global.css?v=639183673700000000">
+< <link rel="stylesheet" href="/assets/css/print.css?v=639183673700000000" media="print" onload="this.onload=null;this.removeAttribute('media');">
+< <link rel="stylesheet" type="text/css" href="/assets/fonts/7888c8ff-0344-45eb-9147-162fde74ed37.css" />
+< 
+< 
+< 
+< 
+< 
+< 
+< <style>
+<     .missing-datasource {
+<         border: 2px solid #0071bb;
+<         display: block;
+<         margin-bottom: 1.5rem;
+<         margin-top: 1.5rem;
+<         text-align: center;
+<         max-width: 78.125rem;
+<         margin-left: auto;
+<         margin-right: auto;
+<     }
+< </style>
+< 
+<     
+< </head>
+< 
+< <body id="body" data-theme="">
+<     
+< 	<noscript>
+<             <iframe src="https://tags.christushealth.org/ns.html?id=GTM-KM5N35KW"
+<             height="0" width="0" style="display:none;visibility:hidden"></iframe>
+<         </noscript>
+< 
+< 
+<     <nav class="skip-links">
+<         <a href="#main" class="show-on-focus js-skip-link">Skip to main content</a>
+<         <a href="#nav" class="show-on-focus js-skip-link">Skip to navigation</a>
+<         <a href="#utility-search-id" class="show-on-focus js-skip-link">Skip to search</a>
+<     </nav>
+<     
+< 
+<     <div class="header-sticky-container sticky-container" data-sticky-container="">
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 715 ms

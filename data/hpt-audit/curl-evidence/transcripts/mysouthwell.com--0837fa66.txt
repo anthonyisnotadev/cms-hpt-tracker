@@ -1,0 +1,110 @@
+# curl-style evidence for https://mysouthwell.com/.well-known/cms-hpt.txt
+# fetched 2026-09-07T01:32:42.731Z with the tracker's BROWSER_HEADERS (production client)
+# record: 110101 | SOUTHWELL MEDICAL, A CAMPUS OF TRMC | GA | finding: no-cms-hpt-txt-published
+
+* DNS mysouthwell.com: 213.165.233.28
+
+> GET /.well-known/cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://mysouthwell.com/.well-known/cms-hpt.txt
+< HTTP 404
+< age: 0
+< cache-control: public, max-age=31556952
+< content-encoding: gzip
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:32:44 GMT
+< expires: Wed, 11 Jan 1984 05:00:00 GMT
+< link: <https://mysouthwell.com/wp-json/>; rel="https://api.w.org/"
+< pressidium-rid: 58d34b23b41fe94f
+< server: Pressidium
+< vary: Accept-Encoding
+< x-cache: MISS:(lb1-c147-2)
+< x-cache-level: A
+< x-cache-why: pressidium-request
+< x-tec-api-origin: https://mysouthwell.com
+< x-tec-api-root: https://mysouthwell.com/wp-json/tribe/events/v1/
+< x-tec-api-version: v1
+< --- body (65536 bytes read, truncated) ---
+< <!doctype html>
+< <html lang="en-US">
+< <head>
+< 	<meta charset="UTF-8">
+< 	<meta name="viewport" content="width=device-width, initial-scale=1">
+< 	<link rel="profile" href="https://gmpg.org/xfn/11">
+< 	<script type="text/javascript" data-cookieconsent="ignore">
+< 	window.dataLayer = window.dataLayer || [];
+< 
+< 	function gtag() {
+< 		dataLayer.push(arguments);
+< 	}
+< 
+< 	gtag("consent", "default", {
+< 		ad_personalization: "denied",
+< 		ad_storage: "denied",
+< 		ad_user_data: "denied",
+< 		analytics_storage: "denied",
+< 		functionality_storage: "denied",
+< 		personalization_storage: "denied",
+< 		security_storage: "granted",
+< 		wait_for_update: 500,
+< 	});
+< 	gtag("set", "ads_data_redaction", true);
+< 	</script>
+< <script type="text/javascript"
+< 		id="Cookiebot"
+< 		src="https://consent.cookiebot.com/uc.js"
+< 		data-implementation="wp"
+< 		data-cbid="286c9a17-4068-4802-bb61-260c2ebfa636"
+< 							data-blockingmode="auto"
+< 	></script>
+< <meta name='robots' content='noindex, follow' />
+< 
+< 	<!-- This site is optimized with the Yoast SEO plugin v28.4 - https://yoast.com/product/yoast-seo-wordpress/ -->
+< 	<title>Page not found - Southwell</title>
+< 	<meta property="og:locale" content="en_US" />
+< 	<meta property="og:title" content="Page not found - Southwell" />
+< 	<meta property="og:site_name" content="Southwell" />
+< 	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebSite","@id":"https:\/\/mysouthwell.com\/#website","url":"https:\/\/mysouthwell.com\/","name":"Southwell","description":"With You for Life","publisher":{"@id":"https:\/\/mysouthwell.com\/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/mysouthwell.com\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https:\/\/mysouthwell.com\/#organization","name":"Southwell","url":"https:\/\/mysouthwell.com\/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/mysouthwell.com\/#\/schema\/logo\/image\/","url":"https:\/\/mysouthwell.com\/wp-content\/uploads\/2022\/03\/Southwell-Main-Navigation-250x40-1.png","contentUrl":"https:\/\/mysouthwell.com\/wp-content\/uploads\/2022\/03\/Southwell-Main-Navigation-250x40-1.png","width":1034,"height":167,"caption":"Southwell"},"image":{"@id":"https:\/\/mysouthwell.com\/#\/schema\/logo\/image\/"}}]}</script>
+< 	<!-- / Yoast SEO plugin. -->
+< 
+< 
+< <link rel='dns-prefetch' href='//use.fontawesome.com' />
+< <link rel="alternate" type="application/rss+xml" title="Southwell &raquo; Feed" href="https://mysouthwell.com/feed/" />
+< <link rel="alternate" type="application/rss+xml" title="Southwell &raquo; Comments Feed" href="https://mysouthwell.com/comments/feed/" />
+< <link rel="alternate" type="text/calendar" title="Southwell &raquo; iCal Feed" href="https://mysouthwell.com/events/?ical=1" />
+< <style id="wp-img-auto-sizes-contain-inline-css">
+< img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+< /*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+< </style>
+< <link rel='stylesheet' id='tribe-events-pro-mini-calendar-block-styles-css' href='https://mysouthwell.com/wp-content/plugins/events-calendar-pro/build/css/tribe-events-pro-mini-calendar-block.css?ver=7.8.0' media='all' />
+< <link rel='stylesheet' id='tec-variables-skeleton-css' href='https://mysouthwell.com/wp-content/plugins/the-events-calendar/common/build/css/variables-skeleton.css?ver=6.12.2.1' media='all' />
+< <link rel='stylesheet' id='tec-variables-full-css' href='https://mysouthwell.com/wp-content/plugins/the-events-calendar/common/build/css/variables-full.css?ver=6.12.2.1' media='all' />
+< <link rel='stylesheet' id='tribe-events-v2-virtual-single-block-css' href='https://mysouthwell.com/wp-content/plugins/events-calendar-pro/build/css/events-virtual-single-block.css?ver=7.8.0' media='all' />
+< <style id="wp-emoji-styles-inline-css">
+< 
+< 	img.wp-smiley, img.emoji {
+< 		display: inline !important;
+< 		border: none !important;
+< 		box-shadow: none !important;
+< 		height: 1em !important;
+< 		width: 1em !important;
+< 		margin: 0 0.07em !important;
+< 		vertical-align: -0.1em !important;
+< 		background: none !important;
+< 		padding: 0 !important;
+< 	}
+< /*# sourceURL=wp-emoji-styles-inline-css */
+< </style>
+< <style id="wp-block-library-inline-css">
+< :root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*=";
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 1752 ms

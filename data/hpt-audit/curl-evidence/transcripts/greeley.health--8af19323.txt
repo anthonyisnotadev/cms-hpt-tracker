@@ -1,0 +1,155 @@
+# curl-style evidence for https://greeley.health/cms-hpt.txt
+# fetched 2026-09-07T01:33:04.704Z with the tracker's BROWSER_HEADERS (production client)
+# record: 171359 | GREELEY COUNTY HEALTH SERVICES | KS | finding: no-cms-hpt-txt-published
+
+* DNS greeley.health: 160.153.0.120
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://greeley.health/cms-hpt.txt
+< HTTP 404
+< alt-svc: h3=":443"; ma=86400
+< cache-control: public, max-age=2678400
+< cf-cache-status: EXPIRED
+< cf-ray: a371f69d9e8456cd-IAD
+< content-encoding: br
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:33:06 GMT
+< expires: Thu, 08 Oct 2026 01:33:06 GMT
+< link: <https://greeley.health/wp-json/>; rel="https://api.w.org/"
+< permissions-policy: private-state-token-redemption=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com"), private-state-token-issuance=(self "https://www.google.com" "https://www.gstatic.com" "https://recaptcha.net" "https://challenges.cloudflare.com" "https://hcaptcha.com")
+< server: cloudflare
+< vary: Accept-Encoding, accept, content-type
+< x-gateway-request-id: 432b20ef97ee4166ad18855b53d7728f
+< --- body (65536 bytes read, truncated) ---
+< <!DOCTYPE html>
+< <html class="no-js" dir="ltr" lang="en-US" prefix="og: https://ogp.me/ns#">
+< <head>
+< <meta charset="UTF-8">
+< <meta name="viewport" content="width=device-width, initial-scale=1.0">
+< <link rel="pingback" href="https://greeley.health/xmlrpc.php">
+< <title>Page not found | Greeley County Health Services</title>
+< 
+< 		<!-- All in One SEO 5.0.1.1 - aioseo.com -->
+< 	<meta name="robots" content="noindex" />
+< 	<meta name="google-site-verification" content="RTZUEXiABtb3CMTlS-AOYmrFquPVCaF9nkkVLP-QCSA" />
+< 	<meta name="generator" content="All in One SEO (AIOSEO) 5.0.1.1" />
+< 		<script type="application/ld+json" class="aioseo-schema">
+< 			{"@context":"https:\/\/schema.org","@graph":[{"@type":"BreadcrumbList","@id":"https:\/\/greeley.health\/cms-hpt.txt\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"https:\/\/greeley.health#listItem","position":1,"name":"Home","item":"https:\/\/greeley.health","nextItem":{"@type":"ListItem","@id":"#listItem","name":"404 - Page Not Found"}}]},{"@type":"Organization","@id":"https:\/\/greeley.health\/#organization","name":"Greeley County Health Services","description":"Trusted Care, Close to Home","url":"https:\/\/greeley.health\/"},{"@type":"WebPage","@id":"https:\/\/greeley.health\/cms-hpt.txt\/#webpage","url":"https:\/\/greeley.health\/cms-hpt.txt\/","inLanguage":"en-US","isPartOf":{"@id":"https:\/\/greeley.health\/#website"},"breadcrumb":{"@id":"https:\/\/greeley.health\/cms-hpt.txt\/#breadcrumblist"}},{"@type":"WebSite","@id":"https:\/\/greeley.health\/#website","url":"https:\/\/greeley.health\/","name":"Greeley County Health Services","description":"Trusted Care, Close to Home","inLanguage":"en-US","publisher":{"@id":"https:\/\/greeley.health\/#organization"}}]}
+< 		</script>
+< 		<!-- All in One SEO -->
+< 
+< <link rel='dns-prefetch' href='//cdn.trustedsite.com' />
+< <link rel='preconnect' href='//i0.wp.com' />
+< <link rel="alternate" type="application/rss+xml" title="Greeley County Health Services &raquo; Feed" href="https://greeley.health/feed/" />
+< <link rel="alternate" type="application/rss+xml" title="Greeley County Health Services &raquo; Comments Feed" href="https://greeley.health/comments/feed/" />
+< 		<!-- This site uses the Google Analytics by MonsterInsights plugin v11.2.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+< 							<script src="//www.googletagmanager.com/gtag/js?id=G-BC1ESSC9FT"  data-cfasync="false" data-wpfc-render="false" type="text/javascript" async></script>
+< 			<script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+< 				var mi_version = '11.2.0';
+< 				var mi_track_user = true;
+< 				var mi_no_track_reason = '';
+< 								var MonsterInsightsDefaultLocations = {"page_location":"https:\/\/greeley.health\/cms-hpt.txt\/"};
+< 								if ( typeof MonsterInsightsPrivacyGuardFilter === 'function' ) {
+< 					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsPrivacyGuardFilter( MonsterInsightsExcludeQuery ) : MonsterInsightsPrivacyGuardFilter( MonsterInsightsDefaultLocations );
+< 				} else {
+< 					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsExcludeQuery : MonsterInsightsDefaultLocations;
+< 				}
+< 
+< 								var disableStrs = [
+< 										'ga-disable-G-BC1ESSC9FT',
+< 									];
+< 
+< 				/* Function to detect opted out users */
+< 				function __gtagTrackerIsOptedOut() {
+< 					for (var index = 0; index < disableStrs.length; index++) {
+< 						if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
+< 							return true;
+< 						}
+< 					}
+< 
+< 					return false;
+< 				}
+< 
+< 				/* Disable tracking if the opt-out cookie exists. */
+< 				if (__gtagTrackerIsOptedOut()) {
+< 					for (var index = 0; index < disableStrs.length; index++) {
+< 						window[disableStrs[index]] = true;
+< 					}
+< 				}
+< 
+< 				/* Opt-out function */
+< 				function __gtagTrackerOptout() {
+< 					for (var index = 0; index < disableStrs.length; index++) {
+< 						document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+< 						window[disableStrs[index]] = true;
+< 					}
+< 				}
+< 
+< 				if ('undefined' === typeof gaOptout) {
+< 					function gaOptout() {
+< 						__gtagTrackerOptout();
+< 					}
+< 				}
+< 								window.dataLayer = window.dataLayer || [];
+< 
+< 				window.MonsterInsightsDualTracker = {
+< 					helpers: {},
+< 					trackers: {},
+< 				};
+< 				if (mi_track_user) {
+< 					function __gtagDataLayer() {
+< 						dataLayer.push(arguments);
+< 					}
+< 
+< 					function __gtagTracker(type, name, parameters) {
+< 						if (!parameters) {
+< 							parameters = {};
+< 						}
+< 
+< 						if (parameters.send_to) {
+< 							__gtagDataLayer.apply(null, arguments);
+< 							return;
+< 						}
+< 
+< 						if (type === 'event') {
+< 														parameters.send_to = monsterinsights_frontend.v4_id;
+< 							var hookName = name;
+< 							if (typeof parameters['event_category'] !== 'undefined') {
+< 								hookName = parameters['event_category'] + ':' + name;
+< 							}
+< 
+< 							if (typeof MonsterInsightsDualTracker.trackers[hookName] !== 'undefined') {
+< 								MonsterInsightsDualTracker.trackers[hookName](parameters);
+< 							} else {
+< 								__gtagDataLayer('event', name, parameters);
+< 							}
+< 							
+< 						} else {
+< 							__gtagDataLayer.apply(null, arguments);
+< 						}
+< 					}
+< 
+< 					__gtagTracker('js', new Date());
+< 					__gtagTracker('set', {
+< 						'developer_id.dZGIzZG': true,
+< 											});
+< 					if ( MonsterInsightsLocations.page_location ) {
+< 						__gtagTracker('set', MonsterInsightsLocations);
+< 					}
+< 										__gtagTracker('config', 'G-BC1ESSC9FT', {"forceSSL":"true","link_attribution":"true","page_path":'\/404.html?page=' + document.location.pathname + document.location.search + '&from=' + document.referrer} );
+< 										window.gtag = __gtagTracker;										(function () {
+< 						/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+< 						/* ga and __gaTracker compatibility shim. */
+< 						var noopfn = function () {
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 951 ms

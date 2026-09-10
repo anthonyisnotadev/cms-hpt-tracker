@@ -13,6 +13,7 @@
   function pct1(n, d) { return pct(n, d).toFixed(1) + '%'; }
   function esc(s) {
     return String(s == null ? '' : s)
+      .replace(/hpt-obf:v1:[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+/g, '[protected contact]')
       .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
   // CMS records every hospital name in caps. Title-casing makes 5,419 rows
@@ -104,10 +105,10 @@
   }
 
   function elapsedPhrase(days) {
-    if (days === 0) return 'Nothing has been re-checked since';
+    if (days === 0) return 'The latest included observation is from today';
     var s = ageSpan(days);
-    return 'Nothing has been re-checked in the '
-      + (s.n === 1 ? '' : s.n + ' ') + s.unit + (s.n === 1 ? '' : 's') + ' since';
+    return 'The latest included observation is from '
+      + s.n + ' ' + s.unit + (s.n === 1 ? '' : 's') + ' ago';
   }
 
   if (snapshotAge !== null) {
@@ -146,15 +147,15 @@
   $('coverage').innerHTML = [
     {
       role: 'judged',
-      k: 'Reached and judged',
+      k: 'Check result recorded',
       n: judged,
-      note: 'Enough files opened to give a result.',
+      note: 'The audit recorded a file or discovery result.',
     },
     {
       role: 'unreached',
-      k: 'Never reached',
+      k: 'Assessment unresolved',
       n: byTier.unknown,
-      note: 'No working website was available to check.',
+      note: 'Domain, access, or hospital identity remains unresolved.',
     },
   ].map(function (c) {
     return '<div class="cov" data-role="' + c.role + '">'
@@ -177,9 +178,9 @@
   }).join('');
 
   $('readout-foot').innerHTML =
-    'A live, current file was found for <b>' + pct(byTier.compliant, judged).toFixed(1)
+    'A file was located for <b>' + pct(byTier.compliant, judged).toFixed(1)
     + '%</b> of the <b>' + fmt.format(judged) + '</b> hospitals with a result. '
-    + 'No result was possible for <b>' + fmt.format(byTier.unknown) + '</b> hospitals ('
+    + 'Assessment remains unresolved for <b>' + fmt.format(byTier.unknown) + '</b> hospitals ('
     + pct1(byTier.unknown, T.hospitals) + ' of the registry).';
 
   function tierTip(key) {
@@ -310,12 +311,65 @@
       + '</div>';
   }).join('');
 
+  /* ---------- interventions ----------
+     The queue says what work remains; this says what the work actually is.
+     Cards filter the register, because "show me the 256 Cloudflare-blocked
+     hospitals" is the whole reason this section exists. Rows that need no
+     person (compliant, federal-exempt) stay in the filter but not here: a
+     "None needed" card at the top of an intervention list is noise. */
+  var interventionGroups = D.interventions.filter(function (v) {
+    return v.n > 0 && v.key !== 'none' && v.key !== 'exempt-federal';
+  }).sort(function (a, b) { return b.n - a.n; });
+  var interventionList = $('intervention-cards');
+  interventionList.innerHTML = interventionGroups.map(function (v, i) {
+    return '<button class="intervention-option" type="button" data-key="' + esc(v.key) + '" aria-pressed="false" aria-controls="intervention-detail"' + (i >= 6 ? ' hidden' : '') + '>'
+      + '<span>' + esc(v.label) + '</span><strong>' + fmt.format(v.n) + '</strong></button>';
+  }).join('');
+  var selectedIntervention = null;
+  function selectIntervention(key) {
+    var v = interventionGroups.filter(function (group) { return group.key === key; })[0];
+    if (!v) return;
+    selectedIntervention = v;
+    [].forEach.call(interventionList.querySelectorAll('button'), function (btn) { btn.setAttribute('aria-pressed', String(btn.dataset.key === key)); });
+    $('intervention-detail-title').textContent = v.label;
+    $('intervention-detail-why').textContent = v.plain;
+    $('intervention-detail-action').textContent = v.action;
+    $('intervention-view').textContent = 'View ' + fmt.format(v.n) + ' hospitals →';
+  }
+  interventionList.addEventListener('click', function (event) {
+    var btn = event.target.closest('button[data-key]');
+    if (btn) selectIntervention(btn.dataset.key);
+  });
+  var interventionMore = $('intervention-more');
+  interventionMore.hidden = interventionGroups.length <= 6;
+  interventionMore.textContent = 'Show all ' + interventionGroups.length + ' categories';
+  interventionMore.addEventListener('click', function () {
+    var expanded = interventionMore.getAttribute('aria-expanded') !== 'true';
+    interventionMore.setAttribute('aria-expanded', String(expanded));
+    [].forEach.call(interventionList.querySelectorAll('button'), function (btn, i) { btn.hidden = !expanded && i >= 6; });
+    if (!expanded && interventionGroups.slice(6).some(function (v) { return v.key === selectedIntervention.key; })) selectIntervention(interventionGroups[0].key);
+    interventionMore.textContent = expanded ? 'Show fewer categories' : 'Show all ' + interventionGroups.length + ' categories';
+  });
+  $('intervention-view').addEventListener('click', function () {
+    if (!selectedIntervention) return;
+    var el = $('f-intervention');
+    el.value = selectedIntervention.key;
+    el.dispatchEvent(new Event('change'));
+    $('register').scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  });
+  if (interventionGroups.length) selectIntervention(interventionGroups[0].key);
+
   /* ---------- register ---------- */
   // LON/LAT come from scripts/hpt/geocode.js by way of the build. APPROX is 1
   // when the point is the centre of the hospital's ZIP rather than its address.
-  var C = { CCN: 0, NAME: 1, CITY: 2, STATE: 3, TYPE: 4, FIND: 5, DAYS: 6, TMPL: 7, MRF: 8, PTR: 9, EV: 10, FMT: 11, BYTES: 12, UPD: 13, LON: 14, LAT: 15, APPROX: 16, CHECKED: 17, SOURCE: 18 };
+  var C = { CCN: 0, NAME: 1, CITY: 2, STATE: 3, TYPE: 4, FIND: 5, DAYS: 6, TMPL: 7, MRF: 8, PTR: 9, EV: 10, FMT: 11, BYTES: 12, UPD: 13, LON: 14, LAT: 15, APPROX: 16, CHECKED: 17, SOURCE: 18, INTERV: 19 };
   var findingMeta = D.dict.findings.map(function (k) {
     return D.findings.filter(function (f) { return f.key === k; })[0];
+  });
+  // Same shape as findingMeta: the operational overlay beside the regulatory
+  // one. Built from dict order so r[C.INTERV] indexes into it directly.
+  var interventionMeta = D.dict.interventions.map(function (k) {
+    return D.interventions.filter(function (v) { return v.key === k; })[0];
   });
 
   // One lowercase haystack per row, built once.
@@ -323,7 +377,7 @@
     return (r[C.NAME] + ' ' + r[C.CITY] + ' ' + D.dict.states[r[C.STATE]] + ' ' + r[C.CCN]).toLowerCase();
   });
 
-  var sel = { q: '', state: '', type: '', tiers: {}, outreach: '', stage: '', finding: '', age: '', links: '', corrected: '' };
+  var sel = { q: '', state: '', type: '', tiers: {}, outreach: '', stage: '', finding: '', intervention: '', age: '', links: '', corrected: '' };
   var filtered = D.rows.map(function (_, i) { return i; });
 
   var stateSelect = $('f-state');
@@ -343,6 +397,14 @@
     var o = document.createElement('option');
     o.value = f.key; o.textContent = f.label;
     findingSelect.appendChild(o);
+  });
+  // Interventions ride along in count order, so the crowded reasons come first.
+  var interventionSelect = $('f-intervention');
+  D.interventions.forEach(function (v) {
+    if (!v.n) return;
+    var o = document.createElement('option');
+    o.value = v.key; o.textContent = v.label + ' (' + fmt.format(v.n) + ')';
+    interventionSelect.appendChild(o);
   });
   // Bucket bounds come from the same freshness bins the histogram draws, so
   // the two never drift apart. Value is just the bin's index.
@@ -578,8 +640,9 @@
      the text of its own control so the summary always matches the screen. */
   var FILTER_SELECTS = [
     { id: 'f-state', key: 'state' },
-    { id: 'f-type', key: 'type' },
+    { id: 'f-type', key: 'type', extra: true },
     { id: 'f-finding', key: 'finding' },
+    { id: 'f-intervention', key: 'intervention', extra: true },
     { id: 'f-stage', key: 'stage', extra: true },
     { id: 'f-age', key: 'age', extra: true },
     { id: 'f-links', key: 'links', extra: true },
@@ -612,7 +675,7 @@
   function extraCount() {
     var n = 0;
     FILTER_SELECTS.forEach(function (f) { if (f.extra && sel[f.key] !== '') n++; });
-    return n;
+    return n + Object.keys(sel.tiers).filter(function (key) { return sel.tiers[key]; }).length + (sel.outreach ? 1 : 0);
   }
 
   function clearAllFilters() {
@@ -646,6 +709,7 @@
       if (sel.outreach && !matchesOutreach(r[C.CCN], sel.outreach)) continue;
       if (sel.stage && !matchesStage(r[C.CCN], sel.stage)) continue;
       if (sel.finding && findingMeta[r[C.FIND]].key !== sel.finding) continue;
+      if (sel.intervention && (!interventionMeta[r[C.INTERV]] || interventionMeta[r[C.INTERV]].key !== sel.intervention)) continue;
       if (sel.age !== '' && !matchesAge(r[C.DAYS], Number(sel.age))) continue;
       if (sel.links && !matchesLinks(r, sel.links)) continue;
       if (sel.corrected && (!!correctionOf(r[C.CCN])) !== (sel.corrected === 'yes')) continue;
@@ -667,7 +731,13 @@
     var n = filtered.length;
     var active = activeFilters();
     var line = '<b>' + fmt.format(n) + '</b> of ' + fmt.format(D.rows.length) + ' hospitals';
-    active.forEach(function (label) { line += '<span class="rf">' + esc(label) + '</span>'; });
+    var chips = [];
+    function chip(key, value, label) { chips.push('<button type="button" data-filter="' + esc(key) + '" data-value="' + esc(value) + '" aria-label="Remove filter: ' + esc(label) + '">' + esc(label) + '<span aria-hidden="true"> ×</span></button>'); }
+    if (sel.q.trim()) chip('q', '', sel.q.trim());
+    FILTER_SELECTS.forEach(function (f) { var label = selLabel(f.id); if (label) chip(f.key, '', label); });
+    D.tiers.forEach(function (t) { if (sel.tiers[t.key]) chip('tier', t.key, t.label); });
+    OC_CHIPS.forEach(function (c) { if (sel.outreach === c.key) chip('outreach', '', c.label); });
+    $('active-filter-chips').innerHTML = chips.join('');
     if (regSort.key) line += ' · sorted by ' + esc(sortNote());
     if (n && narrow.matches && n > MOBILE_CAP) {
       line += ' · showing the first ' + MOBILE_CAP + ', search to narrow';
@@ -713,6 +783,9 @@
   // The correction a user recorded for this hospital, if any.
   function correctionOf(ccn) {
     var rec = OC && OC.get(ccn);
+    var reviewed = D.reviewedAt && D.reviewedAt[ccn];
+    var manualDate = rec && rec.correction && (rec.correction.checkedOn || rec.updatedAt);
+    if (reviewed && manualDate && String(manualDate).slice(0, 10) < String(reviewed).slice(0, 10)) return null;
     return (rec && rec.correction) || null;
   }
 
@@ -787,6 +860,15 @@
     if (mrf) links += '<a class="linkbtn"' + edited + ' href="' + esc(mrf) + '" target="_blank" rel="noopener noreferrer">FILE</a>';
     if (ptr) links += '<a class="linkbtn"' + edited + ' href="' + esc(ptr) + '" target="_blank" rel="noopener noreferrer">PTR</a>';
     if (source) links += '<a class="linkbtn" href="' + esc(source) + '" target="_blank" rel="noopener noreferrer">PAGE</a>';
+    // Raw HTTP transcript of why this row is blocked or unresolved: what the
+    // tracker's own client saw, hop by hop. Links into the published
+    // curl-evidence archive; the drawer carries the full list per hospital.
+    var evList = D.evidence[r[C.CCN]];
+    if (evList && evList.length) {
+      links += '<a class="linkbtn evid" href="data/hpt-audit/' + esc(evList[0][3])
+        + '" target="_blank" rel="noopener noreferrer" title="Raw HTTP evidence: '
+        + esc(evList[0][1] + (evList[0][2] ? ' via ' + evList[0][2] : '')) + '">EVID</a>';
+    }
     if (!links) links = '<span class="linkbtn" style="border-color:transparent;color:var(--ink-3)">none</span>';
 
     var why = corr && corr.verdict
@@ -798,7 +880,7 @@
       + (narrow.matches ? '' : ' style="top:' + top + 'px"') + '>'
       + '<span class="badge flat" data-tier="' + tier + '"' + badgeExtra + '>'
       + short + '</span>'
-      + '<span class="cell-name"><b>' + esc(titleCase(r[C.NAME])) + '</b>'
+      + '<span class="cell-name"><button type="button" class="hospital-open">' + esc(titleCase(r[C.NAME])) + '</button>'
       + '<span>' + esc(titleCase(r[C.CITY])) + ', ' + D.dict.states[r[C.STATE]] + ' &middot; ' + esc(r[C.CCN]) + '</span></span>'
       + '<span class="cell-why">' + why + '</span>'
       + ageCell(r, corr)
@@ -890,6 +972,7 @@
   stateSelect.addEventListener('change', function () { sel.state = stateSelect.value; applyFilters(); });
   typeSelect.addEventListener('change', function () { sel.type = typeSelect.value; applyFilters(); });
   findingSelect.addEventListener('change', function () { sel.finding = findingSelect.value; applyFilters(); });
+  interventionSelect.addEventListener('change', function () { sel.intervention = interventionSelect.value; applyFilters(); });
   ageSelect.addEventListener('change', function () { sel.age = ageSelect.value; applyFilters(); });
   $('f-links').addEventListener('change', function () { sel.links = $('f-links').value; applyFilters(); });
   $('f-corrected').addEventListener('change', function () { sel.corrected = $('f-corrected').value; applyFilters(); });
@@ -1066,10 +1149,12 @@
       js.integrity = MAP_LIB.jsHash;
       js.crossOrigin = 'anonymous';
       js.onload = function () {
+        clearTimeout(deadline);
         if (window.maplibregl) resolve(window.maplibregl);
         else reject(new Error('map library loaded but did not register'));
       };
-      js.onerror = function () { reject(new Error('map library did not load')); };
+      js.onerror = function () { clearTimeout(deadline); reject(new Error('map library did not load')); };
+      var deadline = setTimeout(function () { reject(new Error('map library load timed out')); }, 10000);
       document.head.appendChild(js);
     });
     return mapLoad;
@@ -1099,14 +1184,16 @@
     var zoom = h.approx ? MAP_ZOOM.approx : MAP_ZOOM.exact;
     mapWrap.hidden = false;
     // A previous failure may have hidden the canvas and written its own note.
-    mapEl.hidden = false;
-    mapNote.textContent = mapCaption(h);
+    mapEl.hidden = !mapView;
+    mapNote.textContent = mapView ? mapCaption(h) : 'Loading location map…';
     mapEl.setAttribute('aria-label', 'Map showing the location of ' + h.name + ', ' + h.city + ', ' + h.state);
 
     loadMapLibrary().then(function (gl) {
       // The drawer can have moved to another hospital, or closed, while the
       // library was still coming down the wire.
       if (openCcn !== h.ccn) return;
+      mapEl.hidden = false;
+      mapNote.textContent = mapCaption(h);
       if (!mapView) {
         mapView = new gl.Map({
           container: mapEl,
@@ -1156,6 +1243,7 @@
       mapPin.getElement().dataset.approx = h.approx ? '1' : '0';
       resizeMap();
     }).catch(function (err) {
+      if (openCcn !== h.ccn) return;
       // Offline, or a blocked CDN. Say so and hand over a map that does work,
       // rather than leaving an empty grey rectangle to be interpreted.
       mapEl.hidden = true;
@@ -1176,6 +1264,45 @@
 
   /* ---- drawer ---- */
   var drawer = $('oc-drawer');
+  var DRAWER_VIEWS = ['overview', 'outreach', 'history'];
+  function setDrawerView(name) {
+    DRAWER_VIEWS.forEach(function (view) {
+      $('oc-view-' + view).hidden = view !== name;
+      $('oc-tab-' + view).setAttribute('aria-selected', String(view === name));
+      $('oc-tab-' + view).tabIndex = view === name ? 0 : -1;
+    });
+    drawer.querySelector('.oc-body').scrollTop = 0;
+    if (name === 'overview') resizeMap();
+  }
+  DRAWER_VIEWS.forEach(function (view, index) {
+    var tab = $('oc-tab-' + view);
+    tab.addEventListener('click', function () { setDrawerView(view); });
+    tab.addEventListener('keydown', function (event) {
+      var next = event.key === 'ArrowRight' ? (index + 1) % 3 : event.key === 'ArrowLeft' ? (index + 2) % 3 : event.key === 'Home' ? 0 : event.key === 'End' ? 2 : -1;
+      if (next < 0) return;
+      event.preventDefault();
+      setDrawerView(DRAWER_VIEWS[next]);
+      $('oc-tab-' + DRAWER_VIEWS[next]).focus();
+    });
+  });
+  $('active-filter-chips').addEventListener('click', function (event) {
+    var btn = event.target.closest('button[data-filter]');
+    if (!btn) return;
+    var key = btn.dataset.filter;
+    if (key === 'q') { clearTimeout(debounce); sel.q = ''; qInput.value = ''; if (navQ) navQ.value = ''; }
+    else if (key === 'tier') {
+      delete sel.tiers[btn.dataset.value];
+      [].forEach.call($('tier-chips').querySelectorAll('.chip[data-key]'), function (b) { b.setAttribute('aria-pressed', String(!!sel.tiers[b.dataset.key])); });
+    } else {
+      sel[key] = '';
+      FILTER_SELECTS.forEach(function (f) { if (f.key === key) $(f.id).value = ''; });
+      if (key === 'outreach') [].forEach.call($('tier-chips').querySelectorAll('.oc-chip'), function (b) { b.setAttribute('aria-pressed', 'false'); });
+    }
+    applyFilters();
+    qInput.focus();
+  });
+  $('oc-start-update').addEventListener('click', function () { setDrawerView('outreach'); $('oc-tab-outreach').focus(); });
+  if (mapWrap) mapWrap.addEventListener('toggle', function () { if (mapWrap.open) resizeMap(); });
   var scrim = $('oc-scrim');
   var openCcn = null;
   var lastFocus = null;
@@ -1240,7 +1367,7 @@
   function findingEntry(item) {
     var head = '<div class="oc-ev-top">'
       + '<span class="oc-ev-kind" data-kind="finding" data-tier="' + esc(item.tier) + '">Finding</span>'
-      + (item.source === 'correction' ? '<span class="oc-ev-edited">manual correction</span>' : '<span class="oc-ev-edited">crawl</span>')
+      + '<span class="oc-ev-edited">' + (item.source === 'correction' ? 'manual correction' : item.source === 'reviewed' ? 'reviewed recheck' : item.source === 'historical' ? 'original audit' : 'crawl') + '</span>'
       + '<span class="oc-ev-when">' + esc(item.when) + '</span></div>';
     return '<div class="oc-ev" data-history-kind="finding">' + head
       + '<p class="oc-ev-subject">' + esc(item.label) + '</p>'
@@ -1257,13 +1384,21 @@
       var when = e.kind === 'email' ? (e.sentAt || String(e.at).slice(0, 10)) : String(e.at).slice(0, 10);
       return { type: 'entry', entry: e, when: when, priority: 2, order: i };
     });
+    var priorAudit = D.auditHistory && D.auditHistory[openCcn];
+    if (priorAudit) {
+      var priorFinding = D.findings.filter(function (f) { return f.key === priorAudit.finding; })[0];
+      items.push({ type: 'finding', source: 'historical', when: String(priorAudit.checked_at || '').slice(0, 10),
+        tier: priorFinding ? priorFinding.tier : 'unknown', label: 'Original audit: ' + (priorFinding ? priorFinding.label : priorAudit.finding),
+        text: priorAudit.evidence + ' Review: ' + priorAudit.resolution_note,
+        pointerUrl: priorAudit.pointer_url, mrfUrl: priorAudit.mrf_url, priority: 0, order: items.length });
+    }
 
     // Findings are read-only timeline events. The crawl remains visible when a
     // manual correction becomes the standing verdict, preserving both pieces
     // of provenance without copying either one into the editable outreach log.
     if (h) {
       items.push({
-        type: 'finding', source: 'crawl', when: String(h.checkedAt || '').slice(0, 10),
+        type: 'finding', source: priorAudit ? 'reviewed' : 'crawl', when: String(h.checkedAt || '').slice(0, 10),
         tier: h.finding.tier, label: h.finding.label,
         text: h.evidence || h.finding.blurb, pointerUrl: h.ptr, mrfUrl: h.mrf, sourcePage: h.source,
         priority: 1, order: items.length,
@@ -1342,6 +1477,8 @@
       + (D.generated ? ' · crawled ' + snapshot : '');
 
     var corr = rec && rec.correction;
+    $('oc-finding-title').textContent = h ? h.finding.label : 'No audit finding recorded';
+    $('oc-finding-detail').textContent = h ? h.evidence || '' : '';
     var tags = '';
     if (h) {
       // Show the standing verdict first. When that is a correction, the crawl's
@@ -1366,6 +1503,36 @@
         + '" target="_blank" rel="noopener noreferrer">PAGE</a>';
     }
     $('oc-tags').innerHTML = tags;
+    var assessment = D.assessments && D.assessments[openCcn];
+    var assessmentBlock = $('oc-assessment');
+    if (assessmentBlock) {
+      assessmentBlock.hidden = !assessment;
+      if (assessment) assessmentBlock.innerHTML = '<h4>Separate checks</h4><p class="oc-hint">Checked ' + esc(String(assessment.checked_at).slice(0, 10)) + '</p>'
+        + '<dl>' + [['Website', assessment.website], ['Pointer', assessment.pointer], ['Hospital identity', assessment.identity],
+          ['File access', assessment.file_access], ['Date / template', (assessment.metadata || '').replace(/-/g, ' ')],
+          ['Browser check', assessment.browser_observation], ['Remaining check', (assessment.blocker || '').replace(/-/g, ' ')]].filter(function (field) { return field[1]; }).map(function (field) {
+            return '<dt>' + esc(field[0]) + '</dt><dd>' + esc(field[1]) + '</dd>';
+          }).join('') + '</dl>';
+    }
+    // Every raw transcript collected for this hospital's finding. Status and
+    // edge attribution are inline so the list reads without opening a file.
+    var evBlock = $('oc-evidence-block');
+    var evList = openCcn && D.evidence ? D.evidence[openCcn] : null;
+    if (evBlock) {
+      if (evList && evList.length) {
+        $('oc-evidence').innerHTML = evList.map(function (e) {
+          return '<div class="oc-evidence-row">'
+            + '<span class="oc-ev-status" data-s="' + esc(String(e[1])) + '">HTTP ' + esc(String(e[1])) + '</span>'
+            + (e[2] ? '<span class="oc-ev-edge">' + esc(e[2]) + '</span>' : '')
+            + '<span class="oc-ev-url">' + esc(e[0]) + '</span>'
+            + '<a class="linkbtn" href="data/hpt-audit/' + esc(e[3]) + '" target="_blank" rel="noopener noreferrer">transcript</a>'
+            + '</div>';
+        }).join('');
+        evBlock.hidden = false;
+      } else {
+        evBlock.hidden = true;
+      }
+    }
     // Passed the same tier the badge just used, so correcting a verdict
     // recolours the pin along with everything else.
     renderMap(h, tier);
@@ -1377,6 +1544,9 @@
 
   function openDrawer(ccn) {
     openCcn = ccn;
+    setDrawerView('overview');
+    if (mapWrap) mapWrap.open = false;
+    if ($('oc-evidence-block')) $('oc-evidence-block').open = false;
     lastFocus = document.activeElement;
     var h = hospitalOf(ccn);
     // Pre-fill the compose fields but leave them editable; a fresh draft each
@@ -1438,7 +1608,7 @@
     if (e.key === 'Escape') { e.preventDefault(); closeDrawer(); return; }
     if (e.key !== 'Tab') return;
     // Keep tabbing inside the drawer while it is modal.
-    var f = drawer.querySelectorAll('a[href], button, input, select, textarea');
+    var f = drawer.querySelectorAll('a[href], button, input, select, textarea, summary, [tabindex="0"]');
     var list = [].filter.call(f, function (el) { return !el.disabled && el.offsetParent !== null; });
     if (!list.length) return;
     var first = list[0], last = list[list.length - 1];
@@ -1463,7 +1633,10 @@
     var sel = window.getSelection && window.getSelection();
     if (sel && !sel.isCollapsed && String(sel).trim()) return;
     var row = e.target.closest('.reg-row');
-    if (row && row.dataset.ccn) openDrawer(row.dataset.ccn);
+    if (row && row.dataset.ccn) {
+      openDrawer(row.dataset.ccn);
+      if (e.target.closest('.oc-btn')) setDrawerView('outreach');
+    }
   });
 
   function seedFields() {
@@ -1556,8 +1729,8 @@
   /* ---- corrections ---- */
   var VERDICT_LABEL = {
     '': 'Leave as the audit found it',
-    'compliant': 'Compliant: file found and current',
-    'failing': 'Not compliant',
+    'compliant': 'File found and current',
+    'failing': 'Issue observed',
     'blocked': 'Blocked to automation',
     'exempt': 'Exempt',
     'unknown': 'Still unknown',
@@ -1752,6 +1925,45 @@
   });
 
   /* ---- page-level outreach section ---- */
+  var outreachListMode = 'follow';
+  var outreachExpanded = false;
+  var outreachSelected = null;
+  function renderOutreachPreview(ccn) {
+    outreachSelected = ccn;
+    var rec = ccn && OC.get(ccn);
+    [].forEach.call(document.querySelectorAll('.outreach-list .oc-item'), function (btn) {
+      btn.setAttribute('aria-pressed', String(btn.dataset.ccn === ccn));
+    });
+    $('oc-preview-name').textContent = rec ? nameFor(ccn, rec) : 'No hospital selected';
+    $('oc-preview-meta').textContent = rec ? 'CCN ' + ccn + ' · ' + OC_STAGE_LABEL[rec.status || 'none'] + (rec.followUpOn ? ' · Follow up ' + rec.followUpOn : '') : 'Choose a hospital from the list, or open one in the register.';
+    var last = rec && (rec.entries || [])[0];
+    $('oc-preview-text').textContent = last ? (last.kind === 'email' ? 'Email · ' + (last.subject || 'No subject') : last.text || 'Note recorded') : rec && rec.correction ? 'Manual correction recorded. Open the hospital record for details.' : 'No email or note logged yet.';
+    $('oc-preview-open').hidden = !rec;
+    $('oc-preview-clear').hidden = !rec || !rec.followUpOn;
+    $('oc-preview-clear').dataset.clear = ccn || '';
+  }
+  function updateOutreachList() {
+    var active = outreachListMode === 'follow' ? 'oc-followups' : 'oc-recent';
+    $('oc-followups').hidden = active !== 'oc-followups';
+    $('oc-recent').hidden = active !== 'oc-recent';
+    $('oc-list-follow').setAttribute('aria-pressed', String(outreachListMode === 'follow'));
+    $('oc-list-recent').setAttribute('aria-pressed', String(outreachListMode === 'recent'));
+    $('oc-list-hint').textContent = outreachListMode === 'follow' ? 'Soonest first · overdue dates highlighted' : 'Most recently updated first';
+    var buttons = [].slice.call($(active).querySelectorAll('.oc-item'));
+    buttons.forEach(function (btn, i) { btn.hidden = !outreachExpanded && i >= 6; });
+    $('oc-list-more').hidden = buttons.length <= 6;
+    $('oc-list-more').setAttribute('aria-expanded', String(outreachExpanded));
+    $('oc-list-more').textContent = outreachExpanded ? 'Show fewer hospitals' : 'Show all ' + buttons.length + ' hospitals';
+    var current = buttons.filter(function (btn) { return !btn.hidden && btn.dataset.ccn === outreachSelected; })[0];
+    renderOutreachPreview(current ? outreachSelected : buttons.length ? buttons[0].dataset.ccn : null);
+  }
+  ['follow', 'recent'].forEach(function (mode) {
+    $('oc-list-' + mode).addEventListener('click', function () { outreachListMode = mode; outreachExpanded = false; updateOutreachList(); });
+  });
+  $('oc-list-more').addEventListener('click', function () { outreachExpanded = !outreachExpanded; updateOutreachList(); });
+  $('oc-preview-open').addEventListener('click', function () {
+    if (outreachSelected) { openDrawer(outreachSelected); setDrawerView('outreach'); }
+  });
 
   function ocItem(ccn, title, meta, when, over, dismiss) {
     var item = '<button class="oc-item" type="button" data-ccn="' + esc(ccn) + '">'
@@ -1800,7 +2012,7 @@
       ? follow.map(function (r) {
           return ocItem(r.ccn, nameFor(r.ccn, r),
             OC_STAGE_LABEL[r.status] + ' · ' + (r.entries || []).length + ' logged',
-            r.followUpOn, isDue(r), true);
+            r.followUpOn, isDue(r), false);
         }).join('')
       : '<p class="oc-empty">No follow-up dates set. Open a hospital and pick one to see it here.</p>';
 
@@ -1812,7 +2024,7 @@
     });
     var recent = touched.slice().sort(function (a, b) {
       return String(b.updatedAt).localeCompare(String(a.updatedAt));
-    }).slice(0, 12);
+    });
     $('oc-recent').innerHTML = recent.length
       ? recent.map(function (r) {
           var last = (r.entries || [])[0];
@@ -1823,6 +2035,7 @@
             String(r.updatedAt || '').slice(0, 10), false);
         }).join('')
       : '<p class="oc-empty">Nothing logged yet. Open any hospital in the register to start its file.</p>';
+    updateOutreachList();
 
     // Chip counts
     var counts = {
@@ -1847,7 +2060,7 @@
       return;
     }
     var b = e.target.closest('.oc-item');
-    if (b && b.dataset.ccn) openDrawer(b.dataset.ccn);
+    if (b && b.dataset.ccn) renderOutreachPreview(b.dataset.ccn);
   });
 
   /* ---- storage mode + export/import ---- */

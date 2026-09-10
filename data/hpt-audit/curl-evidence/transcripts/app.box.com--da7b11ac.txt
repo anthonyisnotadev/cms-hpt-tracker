@@ -1,0 +1,56 @@
+# curl-style evidence for https://app.box.com/shared/static/aidlfax3cyzn902r713m3ofochu48bev.csv
+# fetched 2026-09-07T01:36:11.335Z with the tracker's BROWSER_HEADERS (production client)
+# record: 510002 | CAMC GREENBRIER VALLEY MEDICAL CENTER, INC | WV | finding: mrf-url-unreachable
+
+* DNS app.box.com: 74.112.186.157
+
+> GET /shared/static/aidlfax3cyzn902r713m3ofochu48bev.csv  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://app.box.com/shared/static/aidlfax3cyzn902r713m3ofochu48bev.csv
+< HTTP 301
+< alt-svc: h3=":443"; ma=2592000
+< box-request-id: 0ed964a02d5303ab97b64a6a4c6991a69
+< content-length: 0
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:36:12 GMT
+< location: /public/static/aidlfax3cyzn902r713m3ofochu48bev.csv
+< strict-transport-security: max-age=31536000
+< via: 1.1 google
+< x-envoy-upstream-service-time: 21
+* following Location: /public/static/aidlfax3cyzn902r713m3ofochu48bev.csv
+
+* final response: https://app.box.com/public/static/aidlfax3cyzn902r713m3ofochu48bev.csv
+< HTTP 404
+< alt-svc: h3=":443"; ma=2592000
+< box-request-id: 02f47bd30c74adb3a2d57d642c4980e5b
+< cache-control: no-store, no-cache, must-revalidate
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:36:13 GMT
+< expires: Thu, 19 Nov 1981 08:52:00 GMT
+< pragma: no-cache
+< strict-transport-security: max-age=31536000
+< via: 1.1 google
+< x-envoy-upstream-service-time: 104
+< x-robots-tag: noindex, nofollow
+< --- body (2168 bytes read) ---
+< 
+<  <!DOCTYPE html><html lang="en-US"><head><meta name="robots" content="noindex, nofollow"><title>Box - Free Online File Storage, Internet File Sharing, Access Documents &amp; Files Anywhere, Backup Data, Share Files</title><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" /><link href="https://cdn01.boxcdn.net/_assets/css/transition/style_not_found-pwZoby.css" rel="stylesheet" type="text/css" media="screen" /></head><body>   <div class="center"> <a href="https://app.box.com/" class="logo" ><img src="https://cdn01.boxcdn.net/_assets/img/not_found_box_logo-Czx5Gh.png" border="0" alt="Box" title="Box" /></a><div class="error_message   error_message_not_found      "><h2>  This shared file or folder link has been removed.       </h2>   Think it’s a mistake? No worries: Just email the owner or get in touch with <a href="https://app.box.com/help" target="_blank">Box support</a>. We’re here to help. Meantime, learn more about sharing files on Box – and other features, benefits and solutions – below. </div><div class="line line_top"><!--  --></div><p class="block block_share"> <a href="/signup" class="head_link" target="_blank">Share your files</a><br />  Sign up for a free <a href="https://app.box.com/signup" target="_blank">Box</a> account.</p><div class="line line_top"><!--  --></div><p class="block block_learn"> <a href="https://www.box.com/business/products-and-features/" class="head_link" target="_blank">Explore Box</a><br /> Get to know our cool features, benefits and solutions.</p><div class="line"><!--  --></div><p class="block block_help"> <a href="https://support.box.com/hc/en-us/articles/200520998-What-are-Shared-Links-" class="head_link" target="_blank"> Help With Shared Links</a> <br />Find out more today.</p><div class="line"><!--  --></div></div><script type="text/javascript" src="https://cdn01.boxcdn.net/_assets/js/vendor/jquery/jquery-1.12.4.patch-3-QBZWe7.js"></script><script type="text/javascript">
+< 				$('.block')
+< 					.mouseenter(function() {
+< 						$(this).addClass('block_hover');
+< 					})
+< 					.mouseleave(function() {
+< 						$(this).removeClass('block_hover');
+< 					});
+< 			</script></body></html>
+< 
+
+* total time: 435 ms

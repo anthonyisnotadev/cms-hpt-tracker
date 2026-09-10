@@ -1,0 +1,38 @@
+# curl-style evidence for https://stauntonhospital.org/cms-hpt.txt
+# fetched 2026-09-07T01:32:43.645Z with the tracker's BROWSER_HEADERS (production client)
+# record: 141306 | COMMUNITY HOSPITAL OF STAUNTON | IL | finding: no-cms-hpt-txt-published
+
+* DNS stauntonhospital.org: 172.67.141.94, 104.21.54.197
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://stauntonhospital.org/cms-hpt.txt
+< HTTP 202
+< alt-svc: h3=":443"; ma=86400
+< cache-control: no-store,no-cache,max-age=0
+< cf-cache-status: DYNAMIC
+< cf-ray: a371f61f7e2d5a4c-IAD
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:32:45 GMT
+< expires: Thu, 01 Jan 1970 00:00:01 GMT
+< host-header: 8441280b0c35cbc1147f8ba998a563a7
+< nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+< report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=6TX1Sdiv4DBulnAU1XBiZO7umM1znd3ifaeRAxJKF8M4CugXlrDuN%2BfHswf%2Ff7qHVgp5n%2BXDzn2h%2FQJZMC4pp%2Bz6G3F1vUkP2gbz4AQFTVbXifZkuvTJcT%2BRULjjL6Kkgc3Ycm9HNQ%3D%3D"}]}
+< server: cloudflare
+< server-timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=8,cfOrigin;dur=29
+< sg-captcha: challenge
+< x-proxy-cache-info: DT:1
+< x-robots-tag: noindex
+< --- body (547 bytes read) ---
+< <html><head><link rel="icon" href="data:;"><meta http-equiv="refresh" content="0;/.well-known/sgcaptcha/?r=%2Fcms-hpt.txt&y=ipc:185.156.46.116:1788744765.372"></meta></head></html><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"b229ef5fd76c41a4b786e230b6615946","r":1,"spa":2}' crossorigin="anonymous"></script>
+< 
+
+* total time: 118 ms

@@ -1,0 +1,157 @@
+# curl-style evidence for https://dhhr.wv.gov/
+# fetched 2026-09-07T01:36:12.182Z with the tracker's BROWSER_HEADERS (production client)
+# record: 510086 | WELCH COMMUNITY HOSPITAL | WV | finding: not-assessed-site-unreachable
+# record: 514012 | WILLIAM R SHARPE, JR HOSPITAL | WV | finding: not-assessed-site-unreachable
+
+* DNS dhhr.wv.gov: 206.16.212.157
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://dhhr.wv.gov/
+< HTTP 302
+< content-length: 161
+< content-security-policy: frame-ancestors 'self' teams.microsoft.com *.teams.microsoft.com *.skype.com *.teams.microsoft.us local.teams.office.com *.powerapps.com *.yammer.com *.officeapps.live.com *.office.com *.stream.azure-test.net *.microsoftstream.com *.dynamics.com *.microsoft.com onedrive.live.com *.onedrive.live.com;
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:36:13 GMT
+< location: https://dhhr.wv.gov/Pages/default.aspx
+< microsoftsharepointteamservices: 16.0.0.10417
+< request-id: f1ba38a2-615c-505a-26e2-90ec964cd9e6
+< server: Microsoft-IIS/10.0
+< spiislatency: 0
+< sprequestduration: 7
+< sprequestguid: f1ba38a2-615c-505a-26e2-90ec964cd9e6
+< strict-transport-security: max-age=31536000; includeSubDomains; preload
+< vary: Accept-Encoding
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-ms-invokeapp: 1; RequireReadOnly
+< x-powered-by: ASP.NET
+< x-sharepointhealthscore: 0
+< x-srv: b
+< x-ua-compatible: IE=Edge
+* following Location: https://dhhr.wv.gov/Pages/default.aspx
+
+* final response: https://dhhr.wv.gov/Pages/default.aspx
+< HTTP 200
+< cache-control: private, max-age=0
+< connection: Keep-Alive
+< content-encoding: gzip
+< content-length: 1471
+< content-security-policy: frame-ancestors 'self' teams.microsoft.com *.teams.microsoft.com *.skype.com *.teams.microsoft.us local.teams.office.com *.powerapps.com *.yammer.com *.officeapps.live.com *.office.com *.stream.azure-test.net *.microsoftstream.com *.dynamics.com *.microsoft.com onedrive.live.com *.onedrive.live.com;
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:36:13 GMT
+< expires: Sun, 23 Aug 2026 01:36:13 GMT
+< last-modified: Mon, 07 Sep 2026 01:36:13 GMT
+< microsoftsharepointteamservices: 16.0.0.10417
+< request-id: f1ba38a2-0165-505a-f313-1fb45affa624
+< server: Microsoft-IIS/10.0
+< spiislatency: 0
+< sprequestduration: 16
+< sprequestguid: f1ba38a2-0165-505a-f313-1fb45affa624
+< strict-transport-security: max-age=31536000; includeSubDomains; preload
+< vary: Accept-Encoding
+< x-aspnet-version: 4.0.30319
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-ms-invokeapp: 1; RequireReadOnly
+< x-powered-by: ASP.NET
+< x-sharepointhealthscore: 0
+< --- body (4305 bytes read) ---
+< <html lang="en">  
+< <head> 
+< 
+<  
+< <title>West Virginia Department of Health, Department of Health Facilities, and Department of Human Services</title>  
+< 
+< <meta charset="utf-8">  
+< <meta name="viewport" content="width=device-width">
+< <meta name="description" content="The West Virginia Department of Health, Department of Health Facilities, and Department of Human Services provides a wide range of necessary and life-saving services to many West Virginia residents." />   
+< <meta http-equiv="Expires" content="0">
+< 
+< <link rel="shortcut icon" href="https://cdn.wvegov.com/images/icon.ico" type="image/x-icon" />
+< 	<!--Placeholder for additional overrides-->
+< 
+< 
+< 
+< 
+< 
+< <!-- Google Tag Manager -->
+< <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+< new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+< j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+< 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+< })(window,document,'script','dataLayer','GTM-TKM9CWD');</script>
+< <!-- End Google Tag Manager -->
+< 
+< 
+< <!-- Script for Google Search -->
+< <script type="text/javascript" src="https://cdn.wvegov.com/scripts/jquery3.min.js"></script>
+< <script type="text/javascript" src="https://cdn.wvegov.com/FontAwesome/js/all.min.js"></script>
+< <script type="text/javascript" src="/_catalogs/masterpage/scripts/match.js"></script>
+< <script type="text/javascript" src="https://cdn.wvegov.com/scripts/hide.js"></script>
+< <script type="text/javascript" src="/_catalogs/masterpage/scripts/main-dhhr.js"></script>
+< <script type="text/javascript" src="https://cdn.wvegov.com/scripts/bootstrap3.min.js"></script>
+< <script type="text/javascript" language="javascript" src="/_catalogs/masterpage/scripts/jquery.dropdownPlain.js"></script>
+< <link rel="stylesheet" type="text/css" href="https://cdn.wvegov.com/FontAwesome/css/all.css" />
+< <link rel="stylesheet" type="text/css" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css" />
+< <link rel="stylesheet" type="text/css" href="/Style Library/DHHR_onepage.css" />
+< 
+< <!-- Google tag (gtag.js) -->
+< <script async src="https://www.googletagmanager.com/gtag/js?id=G-D9PXSH9P24"></script>
+< <script>
+<   window.dataLayer = window.dataLayer || [];
+<   function gtag(){dataLayer.push(arguments);}
+<   gtag('js', new Date());
+< 
+<   gtag('config', 'G-D9PXSH9P24');
+< </script>
+< 
+< 
+< 
+< 
+< </head>  
+< <body bgcolor="#ffffff">  
+< <center>
+< <div style="background-color:black!important; color:white!important; padding:.5em 1em .5em 1em; text-align:left;">
+< 
+<     <a href="https://www.wv.gov"><img alt="WV.gov logo" style="padding-right:15px;" src="https://cdn.wvegov.com/images/wvgovlogo_white_xs.png" /></a><a style="color:white!important;" target="_blank" href="https://www.wv.gov/agencies">State Agency Directory</a> | <a style="color:white!important;" target="_blank" href="https://www.wv.gov/services">Online Services</a> | <a style="color:white!important;" target="_blank" href="https://www.wv.gov/pages/state-phone-directory.aspx">Phone Directory</a>
+< </div>
+< 
+< 
+< 
+< 
+< <div style="background-color:white!important;">
+< 
+<   <!-- Full height container -->
+<  <div class="container-fluid">
+<     <!-- Flexbox centering -->
+<     <div class="row">
+<    
+<     <div class="col col-12 col-sm-4"><div class="backgroundclr"><a href="https://health.wv.gov" target="_blank"><img class="dhhrimage" src="/images/DHHR_Main/DH_Logo_color.png" alt="Department of Health" /></a></div></div>
+<    
+<      <div class="col col-12 col-sm-4"><div class="backgroundclr"><a href="https://dhhr.wv.gov/healthfacilities" target="_blank"><img class="dhhrimage" src="/images/DHHR_Main/DHF_Logo_color.png" alt="Department of Health Facilities" /></a></div></div>
+<    
+<  <div class="col col-12 col-sm-4"><div class="backgroundclr"><a href="https://dohs.wv.gov" target="_blank"><img class="dhhrimage2" src="/images/DHHR_Main/DoHS_Logo_color.png" alt="Department of Human Services" /></a></div></div>
+<    
+<          </div>
+<     </div></div>
+<     
+<     
+<     
+<     
+<     
+<     <div style="background-color:white!important; padding:0em 1em 1em 1em; text-align:center;">
+<     
+<          <script type="text/javascript" src="https://cdn.wvegov.com/scripts/wvgovfooter.js"></script></div></center></body>  
+< </html> 
+< 
+
+* total time: 195 ms

@@ -1,0 +1,92 @@
+# curl-style evidence for https://alamedahealthsystem.org/
+# fetched 2026-09-07T01:32:36.397Z with the tracker's BROWSER_HEADERS (production client)
+# record: 050211 | ALAMEDA HOSPITAL | CA | finding: not-assessed-site-unreachable
+# record: 050320 | HIGHLAND HOSPITAL | CA | finding: not-assessed-site-unreachable
+
+* DNS alamedahealthsystem.org: 63.241.90.47
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* error: fetch failed (cause: UNABLE_TO_VERIFY_LEAF_SIGNATURE)
+
+* http:// fallback attempt after transport failure:
+* fallback final response: http://alamedahealthsystem.org/
+< HTTP 200
+< connection: keep-alive
+< content-encoding: gzip
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:32:37 GMT
+< link: <http://alamedahealthsystem.org/wp-json/>; rel="https://api.w.org/", <http://alamedahealthsystem.org/wp-json/wp/v2/pages/2>; rel="alternate"; title="JSON"; type="application/json", <http://alamedahealthsystem.org/>; rel=shortlink
+< server: nginx
+< transfer-encoding: chunked
+< x-frame-options: SAMEORIGIN
+< --- body (65536 bytes read, truncated) ---
+< <!DOCTYPE html>
+< <html class="no-overflow-y avada-html-layout-wide avada-html-header-position-top" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+< <head>
+< 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+< 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+< 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+< 	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+< 	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+< 	<link rel="alternate" hreflang="en" href="http://alamedahealthsystem.org/" />
+< <link rel="alternate" hreflang="es" href="http://alamedahealthsystem.org/?lang=es" />
+< <link rel="alternate" hreflang="vi" href="http://alamedahealthsystem.org/?lang=vi" />
+< 
+< 	<!-- This site is optimized with the Yoast SEO plugin v25.0 - https://yoast.com/wordpress/plugins/seo/ -->
+< 	<title>Home - Alameda Health System</title>
+< 	<meta name="description" content="Welcome to Alameda Health System. Since 1864, we have served the East Bay’s health care needs. We continue to adapt and transform, caring for a growing..." />
+< 	<link rel="canonical" href="https://www.alamedahealthsystem.org/" />
+< 	<meta property="og:locale" content="en_US" />
+< 	<meta property="og:type" content="website" />
+< 	<meta property="og:title" content="Home - Alameda Health System" />
+< 	<meta property="og:description" content="Welcome to Alameda Health System. Since 1864, we have served the East Bay’s health care needs. We continue to adapt and transform, caring for a growing..." />
+< 	<meta property="og:url" content="https://www.alamedahealthsystem.org/" />
+< 	<meta property="og:site_name" content="Alameda Health System" />
+< 	<meta property="article:modified_time" content="2025-02-25T21:57:55+00:00" />
+< 	<meta name="twitter:card" content="summary_large_image" />
+< 	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.alamedahealthsystem.org/","url":"https://www.alamedahealthsystem.org/","name":"Home - Alameda Health System","isPartOf":{"@id":"https://www.alamedahealthsystem.org/#website"},"about":{"@id":"https://www.alamedahealthsystem.org/#organization"},"datePublished":"2017-06-02T06:44:33+00:00","dateModified":"2025-02-25T21:57:55+00:00","description":"Welcome to Alameda Health System. Since 1864, we have served the East Bay’s health care needs. We continue to adapt and transform, caring for a growing...","breadcrumb":{"@id":"https://www.alamedahealthsystem.org/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.alamedahealthsystem.org/"]}]},{"@type":"BreadcrumbList","@id":"https://www.alamedahealthsystem.org/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://www.alamedahealthsystem.org/#website","url":"https://www.alamedahealthsystem.org/","name":"Alameda Health System","description":"","publisher":{"@id":"https://www.alamedahealthsystem.org/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.alamedahealthsystem.org/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://www.alamedahealthsystem.org/#organization","name":"Alameda Health System","url":"https://www.alamedahealthsystem.org/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.alamedahealthsystem.org/#/schema/logo/image/","url":"https://www.alamedahealthsystem.org/wp-content/uploads/2017/09/AHS_PRTN_Logo_RGB.jpg","contentUrl":"https://www.alamedahealthsystem.org/wp-content/uploads/2017/09/AHS_PRTN_Logo_RGB.jpg","width":227,"height":40,"caption":"Alameda Health System"},"image":{"@id":"https://www.alamedahealthsystem.org/#/schema/logo/image/"}}]}</script>
+< 	<!-- / Yoast SEO plugin. -->
+< 
+< 
+< <link rel='dns-prefetch' href='//alamedahealthsystem.org' />
+< <link rel='dns-prefetch' href='//www.alamedahealthsystem.org' />
+< <link rel="alternate" type="application/rss+xml" title="Alameda Health System &raquo; Feed" href="http://alamedahealthsystem.org/feed/" />
+< <link rel="alternate" type="application/rss+xml" title="Alameda Health System &raquo; Comments Feed" href="http://alamedahealthsystem.org/comments/feed/" />
+< 					<link rel="shortcut icon" href="http://www.alamedahealthsystem.org/wp-content/uploads/2017/06/favicon-32.png" type="image/x-icon" />
+< 		
+< 					<!-- For iPhone -->
+< 			<link rel="apple-touch-icon" href="http://www.alamedahealthsystem.org/wp-content/uploads/2017/06/favicon-57.png">
+< 		
+< 		
+< 					<!-- For iPad -->
+< 			<link rel="apple-touch-icon" sizes="72x72" href="http://www.alamedahealthsystem.org/wp-content/uploads/2017/06/favicon-72.png">
+< 		
+< 				
+< 		<meta property="og:title" content="Home"/>
+< 		<meta property="og:type" content="article"/>
+< 		<meta property="og:url" content="http://alamedahealthsystem.org/"/>
+< 		<meta property="og:site_name" content="Alameda Health System"/>
+< 		<meta property="og:description" content="Find Locations  Get Care  Give Feedback       
+< OUR PROMISE
+< Other health systems commit to care – We live the promise of community health.
+< Other health systems serve some – We serve all.
+< Advocate of Health"/>
+< 
+< 									<meta property="og:image" content="https://www.alamedahealthsystem.org/wp-content/uploads/2017/06/logo.png"/>
+< 							<script type="text/javascript">
+< /* <![CDATA[ */
+< window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/alamedahealthsystem.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.8.8"}};
+< /*! This file is auto-generated */
+< !function(s,n){var o,i,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),a=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===a[t]})}function u(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);for(var n=e.getImageData(16,16,1,1),a=0;a<n.data.length;a++)if(0!==n.data[a])return!1;return!0}function f(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\udedf")}return!1}function g(e,t,n,a){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):s.createElement("canvas"),o=r.getContext("2d",{willReadFrequently:!0}),i=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(function(e){i[e]=t(o,e,n,a)}),i}function t(e){var t=s.createElement("script");t.src=e,t.defer=!0,s.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",i=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){s.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+g.toString()+"("+[JSON.stringify(i),f.toString(),p.toString(),u.toString()].join(",")+"));",a=new Blob
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 702 ms

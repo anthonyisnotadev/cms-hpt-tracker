@@ -1,0 +1,29 @@
+# curl-style evidence for https://s3.amazonaws.com/ycubaa-production-marlin-1-charge-management-public/facilities/24038e54-d9a2-4236-9081-ad3af29792c7/351121699_PERRY-COUNTY-MEMoriaL-HOSPITAL_standardcharges.zip
+# fetched 2026-09-07T01:33:03.652Z with the tracker's BROWSER_HEADERS (production client)
+# record: 151322 | PERRY COUNTY MEMORIAL HOSPITAL | IN | finding: mrf-blocked-to-automation
+
+* DNS s3.amazonaws.com: 16.15.228.241, 16.15.223.64, 16.15.228.103, 16.15.245.162, 52.217.115.224, 16.15.213.220, 16.15.223.29, 16.15.207.192
+
+> GET /ycubaa-production-marlin-1-charge-management-public/facilities/24038e54-d9a2-4236-9081-ad3af29792c7/351121699_PERRY-COUNTY-MEMoriaL-HOSPITAL_standardcharges.zip  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://s3.amazonaws.com/ycubaa-production-marlin-1-charge-management-public/facilities/24038e54-d9a2-4236-9081-ad3af29792c7/351121699_PERRY-COUNTY-MEMoriaL-HOSPITAL_standardcharges.zip
+< HTTP 403
+< content-type: application/xml
+< date: Mon, 07 Sep 2026 01:33:05 GMT
+< server: AmazonS3
+< transfer-encoding: chunked
+< x-amz-id-2: II7FVh1o9/u+GFHRd8vuPRYQlJiJUz0lmTdG1wZj6OoeEQTHzvhD8q0tlTH65v/PyaRiJfEYPybe3wDfmcs4vG04GMbgNvN9
+< x-amz-request-id: 8Y48BGYB3GHRD7XC
+< --- body (263 bytes read) ---
+< <?xml version="1.0" encoding="UTF-8"?>
+< <Error><Code>AccessDenied</Code><Message>Access Denied</Message><RequestId>8Y48BGYB3GHRD7XC</RequestId><HostId>II7FVh1o9/u+GFHRd8vuPRYQlJiJUz0lmTdG1wZj6OoeEQTHzvhD8q0tlTH65v/PyaRiJfEYPybe3wDfmcs4vG04GMbgNvN9</HostId></Error>
+
+* total time: 152 ms

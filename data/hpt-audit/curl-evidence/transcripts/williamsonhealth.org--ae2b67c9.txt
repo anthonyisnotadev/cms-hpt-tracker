@@ -1,0 +1,89 @@
+# curl-style evidence for https://williamsonhealth.org/content/uploads/2026/04/621501534_williamson-medical-center_standardcharges.csv
+# fetched 2026-09-07T01:36:01.514Z with the tracker's BROWSER_HEADERS (production client)
+# record: 440029 | WILLIAMSON MEDICAL CENTER | TN | finding: mrf-url-unreachable
+
+* DNS williamsonhealth.org: 198.58.104.47
+
+> GET /content/uploads/2026/04/621501534_williamson-medical-center_standardcharges.csv  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://williamsonhealth.org/content/uploads/2026/04/621501534_williamson-medical-center_standardcharges.csv
+< HTTP 404
+< cache-control: no-cache, must-revalidate, max-age=0, no-store, private
+< content-encoding: gzip
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:36:03 GMT
+< expires: Wed, 11 Jan 1984 05:00:00 GMT
+< link: <https://williamsonhealth.org/wp-json/>; rel="https://api.w.org/"
+< server: nginx
+< vary: Accept-Encoding
+< --- body (65536 bytes read, truncated) ---
+< <!DOCTYPE html>
+< <html lang="en-US">
+< <head>
+< <meta charset="UTF-8" />
+< <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+< <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+< <link rel="profile" href="https://gmpg.org/xfn/11" />
+< <link rel="pingback" href="https://williamsonhealth.org/wp/xmlrpc.php" />
+< <!--[if lt IE 9]>
+< 	<script src="https://williamsonhealth.org/content/themes/bb-theme/js/html5shiv.js"></script>
+< 	<script src="https://williamsonhealth.org/content/themes/bb-theme/js/respond.min.js"></script>
+< <![endif]-->
+< <meta name='robots' content='noindex, follow' />
+< 
+< 	<!-- This site is optimized with the Yoast SEO plugin v28.3 - https://yoast.com/product/yoast-seo-wordpress/ -->
+< 	<title>Page not found | Williamson Health</title>
+< 	<meta property="og:locale" content="en_US" />
+< 	<meta property="og:title" content="Page not found | Williamson Health" />
+< 	<meta property="og:site_name" content="Williamson Health" />
+< 	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebSite","@id":"https:\/\/williamsonhealth.org\/#website","url":"https:\/\/williamsonhealth.org\/","name":"Williamson Health","description":"Exceptional care is here. 2026","publisher":{"@id":"https:\/\/williamsonhealth.org\/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/williamsonhealth.org\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https:\/\/williamsonhealth.org\/#organization","name":"Williamson Health","url":"https:\/\/williamsonhealth.org\/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/williamsonhealth.org\/#\/schema\/logo\/image\/","url":"https:\/\/williamsonhealth.org\/content\/uploads\/2023\/01\/hpt-obf:v1:2sz8Fq-o2XCzLR14.L_w81q2lxfcJZoqFLeiH1w.3nXkym3C1TpEjQjO9tXC1W_l7QAaKWLDxiIXT1gCHvVWsPKizufDngNr6cUMTLzHSfZJsQKeW2bZiw","contentUrl":"https:\/\/williamsonhealth.org\/content\/uploads\/2023\/01\/hpt-obf:v1:2ILWpcyxJvtnxYzu.4uF_qwyAkZHtX4ZBIgwLTw.9SjEnRsjYoNQ6IVhOeLgUoDk5yQlcjXUcbYLyMzPCvuLfg6zzAqDgfFnvSJog-UIuLDq_46xc4-_og","width":467,"height":431,"caption":"Williamson Health"},"image":{"@id":"https:\/\/williamsonhealth.org\/#\/schema\/logo\/image\/"}}]}</script>
+< 	<!-- / Yoast SEO plugin. -->
+< 
+< 
+< <link rel='dns-prefetch' href='//kit.fontawesome.com' />
+< <link rel='dns-prefetch' href='//www.google.com' />
+< <link rel='dns-prefetch' href='//use.typekit.net' />
+< <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+< <link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+< <link rel="alternate" type="application/rss+xml" title="Williamson Health &raquo; Feed" href="https://williamsonhealth.org/feed/" />
+< <link rel="alternate" type="application/rss+xml" title="Williamson Health &raquo; Comments Feed" href="https://williamsonhealth.org/comments/feed/" />
+< <link rel="preload" href="https://williamsonhealth.org/content/plugins/bb-plugin/fonts/fontawesome/7.2.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+< <link rel="preload" href="https://williamsonhealth.org/content/plugins/bb-plugin/fonts/fontawesome/7.2.0/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+< <link rel="preload" href="https://williamsonhealth.org/content/plugins/bb-plugin/fonts/fontawesome/7.2.0/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+< <style id="wp-img-auto-sizes-contain-inline-css">
+< img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+< /*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+< </style>
+< <style id="cf-frontend-style-inline-css">
+< @font-face {
+< 	font-family: 'GilmerRegular';
+< 	font-weight: 400;
+< 	font-display: auto;
+< 	src: url('https://williamsonhealth.org/content/uploads/2023/01/GilmerRegular.woff2') format('woff2'),
+< 		url('https://williamsonhealth.org/content/uploads/2023/01/GilmerRegular.woff') format('woff'),
+< 		url('https://williamsonhealth.org/content/uploads/2023/01/GilmerRegular.ttf') format('truetype'),
+< 		url('https://williamsonhealth.org/content/uploads/2023/01/GilmerRegular.eot?#iefix') format('embedded-opentype'),
+< 		url('https://williamsonhealth.org/content/uploads/2023/01/GilmerRegular.svg') format('svg'),
+< 		url('https://williamsonhealth.org/content/uploads/2023/01/Gilmer-Regular.otf') format('OpenType');
+< }
+< @font-face {
+< 	font-family: 'Gilmer Heavy';
+< 	font-weight: 800;
+< 	font-display: auto;
+< 	src: url('https://williamsonhealth.org/content/uploads/2023/02/Gilmer-Heavy.otf') format('OpenType');
+< }
+< /*# sourceURL=cf-frontend-style-inline-css */
+< </style>
+< <style id="wp-block-library-inline-css">
+< :root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-color]){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 714 ms

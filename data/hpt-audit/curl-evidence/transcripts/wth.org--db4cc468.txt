@@ -1,0 +1,129 @@
+# curl-style evidence for https://wth.org/
+# fetched 2026-09-07T01:35:54.369Z with the tracker's BROWSER_HEADERS (production client)
+# record: 440072 | DYERSBURG REGIONAL MEDICAL CENTER | TN | finding: no-cms-hpt-txt-published
+# record: 440002 | JACKSON-MADISON COUNTY GENERAL HOSPITAL | TN | finding: no-cms-hpt-txt-published
+# record: 444010 | PATHWAYS OF TENNESSEE, INC | TN | finding: no-cms-hpt-txt-published
+# record: 440061 | VOLUNTEER COMMUNITY HOSPITAL | TN | finding: no-cms-hpt-txt-published
+# record: 441320 | WEST TENNESSEE HEALTHCARE BOLIVAR HOSPITAL | TN | finding: no-cms-hpt-txt-published
+# record: 441316 | WEST TENNESSEE HEALTHCARE CAMDEN HOSPITAL | TN | finding: no-cms-hpt-txt-published
+# record: 440060 | WEST TENNESSEE HEALTHCARE MILAN HOSPITAL | TN | finding: no-cms-hpt-txt-published
+
+* DNS wth.org: 141.193.213.10, 141.193.213.11
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://wth.org/
+< HTTP 301
+< alt-svc: h3=":443"; ma=86400
+< cache-control: max-age=600, must-revalidate
+< cf-cache-status: DYNAMIC
+< cf-ray: a371fac4b93eef60-IAD
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:35:55 GMT
+< expires: Mon, 07 Sep 2026 02:30:09 GMT
+< location: https://www.wth.org/
+< server: cloudflare
+< status: 301 Moved Permanently
+< x-cache: HIT: 26
+< x-cache-group: normal
+< x-cacheable: non200
+< x-orig-cache-control: max-age=3600
+< x-powered-by: WP Engine
+< x-redirect-by: WordPress
+* following Location: https://www.wth.org/
+
+* final response: https://www.wth.org/
+< HTTP 200
+< age: 37
+< alt-svc: h3=":443"; ma=86400
+< cache-control: max-age=600, must-revalidate
+< cf-cache-status: HIT
+< cf-ray: a371fac7ae04787b-IAD
+< content-encoding: br
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:35:56 GMT
+< last-modified: Mon, 07 Sep 2026 01:35:22 GMT
+< link: <https://www.wth.org/wp-json/>; rel="https://api.w.org/", <https://www.wth.org/wp-json/wp/v2/pages/82>; rel="alternate"; title="JSON"; type="application/json", <https://www.wth.org/>; rel=shortlink
+< server: cloudflare
+< vary: Accept-Encoding, Accept-Encoding,Cookie
+< x-cache: HIT: 2
+< x-cache-group: normal
+< x-cacheable: SHORT
+< x-et-api-origin: https://www.wth.org
+< x-et-api-root: https://www.wth.org/wp-json/tribe/tickets/v1/
+< x-et-api-version: v1
+< x-powered-by: WP Engine
+< x-tec-api-origin: https://www.wth.org
+< x-tec-api-root: https://www.wth.org/wp-json/tribe/events/v1/
+< x-tec-api-version: v1
+< --- body (65536 bytes read, truncated) ---
+< <!doctype html>
+< <html lang="en-US">
+< <head>
+<     <meta charset="utf-8">
+<     <meta name="google-site-verification" content="nToJ6rTZ3NXopKoQ1yS0gnTxfx6BSSfoL-IXUe4q9YQ" />    <meta http-equiv="x-ua-compatible" content="ie=edge">
+<     <meta name="viewport" content="width=device-width, initial-scale=1">
+<     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+<           integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<     <link rel="preconnect" href="https://fonts.googleapis.com">
+<     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<     <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+< 
+< 	<!-- This site is optimized with the Yoast SEO plugin v28.2 - https://yoast.com/product/yoast-seo-wordpress/ -->
+< 	<title>Home - West Tennessee Healthcare</title>
+< 	<meta name="description" content="West Tennessee Healthcare provides primary, specialty, hospital, heart, and women’s care across a trusted regional network." />
+< 	<link rel="canonical" href="https://www.wth.org/" />
+< 	<meta property="og:locale" content="en_US" />
+< 	<meta property="og:type" content="website" />
+< 	<meta property="og:title" content="Home - West Tennessee Healthcare" />
+< 	<meta property="og:description" content="West Tennessee Healthcare provides primary, specialty, hospital, heart, and women’s care across a trusted regional network." />
+< 	<meta property="og:url" content="https://www.wth.org/" />
+< 	<meta property="og:site_name" content="West Tennessee Healthcare" />
+< 	<meta property="article:publisher" content="https://www.facebook.com/westtennesseehealthcare/" />
+< 	<meta property="article:modified_time" content="2026-07-21T14:47:44+00:00" />
+< 	<meta property="og:image" content="https://www.wth.org/wp-content/uploads/2021/10/WTH_Hero_Desktop-1.jpg" />
+< 	<meta property="og:image:width" content="1920" />
+< 	<meta property="og:image:height" content="805" />
+< 	<meta property="og:image:type" content="image/jpeg" />
+< 	<meta name="twitter:card" content="summary_large_image" />
+< 	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/www.wth.org\/","url":"https:\/\/www.wth.org\/","name":"Home - West Tennessee Healthcare","isPartOf":{"@id":"https:\/\/www.wth.org\/#website"},"primaryImageOfPage":{"@id":"https:\/\/www.wth.org\/#primaryimage"},"image":{"@id":"https:\/\/www.wth.org\/#primaryimage"},"thumbnailUrl":"https:\/\/www.wth.org\/wp-content\/uploads\/2021\/10\/WTH_Hero_Desktop-1.jpg","datePublished":"2018-10-09T15:34:42+00:00","dateModified":"2026-07-21T14:47:44+00:00","description":"West Tennessee Healthcare provides primary, specialty, hospital, heart, and women’s care across a trusted regional network.","breadcrumb":{"@id":"https:\/\/www.wth.org\/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https:\/\/www.wth.org\/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/www.wth.org\/#primaryimage","url":"https:\/\/www.wth.org\/wp-content\/uploads\/2021\/10\/WTH_Hero_Desktop-1.jpg","contentUrl":"https:\/\/www.wth.org\/wp-content\/uploads\/2021\/10\/WTH_Hero_Desktop-1.jpg","width":1920,"height":805},{"@type":"BreadcrumbList","@id":"https:\/\/www.wth.org\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https:\/\/www.wth.org\/#website","url":"https:\/\/www.wth.org\/","name":"West Tennessee Healthcare","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/www.wth.org\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"}]}</script>
+< 	<meta name="google-site-verification" content="UA1JbHvnaNkbINjI_sBRNlAU_yjMZ8rvjJgDjIX7G1U" />
+< 	<!-- / Yoast SEO plugin. -->
+< 
+< 
+< <link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.wth.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.wth.org%2F" />
+< <link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.wth.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.wth.org%2F&#038;format=xml" />
+< <style id="wp-img-auto-sizes-contain-inline-css">
+< img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+< /*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+< </style>
+< <link rel='stylesheet' id='tribe-events-pro-mini-calendar-block-styles-css' href='https://www.wth.org/wp-content/plugins/events-calendar-pro/build/css/tribe-events-pro-mini-calendar-block.css?ver=7.8.1' media='all' />
+< <style id="wp-emoji-styles-inline-css">
+< 
+< 	img.wp-smiley, img.emoji {
+< 		display: inline !important;
+< 		border: none !important;
+< 		box-shadow: none !important;
+< 		height: 1em !important;
+< 		width: 1em !important;
+< 		margin: 0 0.07em !important;
+< 		vertical-align: -0.1em !important;
+< 		background: none !important;
+< 		padding: 0 !important;
+< 	}
+< /*# sourceURL=wp-emoji-styles-inline-css */
+< </style>
+< <style id="wp-block-library-inline-css">
+< :root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-color]){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 605 ms

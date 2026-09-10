@@ -1,0 +1,168 @@
+# curl-style evidence for https://docshealth.com/
+# fetched 2026-09-07T01:32:38.824Z with the tracker's BROWSER_HEADERS (production client)
+# record: 050785 | DOCS SURGICAL HOSPITAL | CA | finding: pointer-blocked-to-automation
+
+* DNS docshealth.com: 104.207.254.239
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://docshealth.com/
+< HTTP 301
+< cache-control: max-age=3600
+< content-length: 0
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:32:40 GMT
+< expires: Mon, 07 Sep 2026 02:32:40 GMT
+< location: https://www.docshealth.com/
+< referrer-policy: 
+< server: nginx
+< vary: X-Forwarded-Proto,Accept-Encoding
+< x-cache-nxaccel: BYPASS
+< x-redirect-by: WordPress
+* following Location: https://www.docshealth.com/
+
+* final response: https://www.docshealth.com/
+< HTTP 200
+< accept-ranges: bytes
+< content-encoding: gzip
+< content-length: 64092
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:32:40 GMT
+< etag: "fa5c-65ad130c1f108"
+< last-modified: Sun, 06 Sep 2026 14:19:32 GMT
+< referrer-policy: 
+< server: nginx
+< vary: X-Forwarded-Proto,Accept-Encoding
+< x-cache-nxaccel: BYPASS
+< --- body (65536 bytes read, truncated) ---
+< 
+< <!doctype html>
+< <html lang="en-US">
+<    <head><style>img.lazy{min-height:1px}</style><link href="https://www.docshealth.com/wp-content/plugins/w3-total-cache/pub/js/lazyload.min.js" as="script">
+<   <meta charset="utf-8">
+<   <meta http-equiv="x-ua-compatible" content="ie=edge">
+<   <meta name="viewport" content="width=device-width, initial-scale=1">
+<   <link rel="shortcut icon" type="image/png" href="https://www.docshealth.com/wp-content/uploads/2021/01/icon-192x192.png"/>
+<   <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+< 		<script>
+< 			window.dataLayer = window.dataLayer || [];
+< 			function gtag() { dataLayer.push( arguments ); }
+< 
+< 			( function() {
+< 				var stored = ( document.cookie.match(
+< 					new RegExp( '(?:^|; )flc_cookies_policy_consent=([^;]*)' )
+< 				) || [] )[1];
+< 
+< 								var analyticsState   = 'granted';
+< 				var advertisingState = 'denied';
+< 
+< 				if ( stored ) {
+< 					try {
+< 						var c = JSON.parse( decodeURIComponent( stored ) );
+< 						if ( c && c.analytics )   { analyticsState   = c.analytics; }
+< 						if ( c && c.advertising ) { advertisingState = c.advertising; }
+< 					} catch ( e ) {}
+< 				}
+< 
+< 				gtag( 'consent', 'default', {
+< 					analytics_storage:     analyticsState,
+< 					ad_storage:            advertisingState,
+< 					ad_user_data:          advertisingState,
+< 					ad_personalization:    advertisingState,
+< 					functionality_storage: 'granted',
+< 					wait_for_update:       500,
+< 				} );
+< 							}() );
+< 		</script>
+< 		
+< 	<!-- This site is optimized with the Yoast SEO plugin v28.4 - https://yoast.com/product/yoast-seo-wordpress/ -->
+< 	<title>Los Angeles Orthopedic Clinic | Neurosurgeons, Spine Surgeons | Sports Medicine Doctors</title>
+< 	<meta name="description" content="Do you need orthopedic, sports injury, neuro-spine surgeon or chronic pain treatment? The experienced team at DOCS Health offers innovative, patient-centric care at their medical center in Los Angeles, CA." />
+< 	<link rel="canonical" href="https://www.docshealth.com/" />
+< 	<meta property="og:locale" content="en_US" />
+< 	<meta property="og:type" content="website" />
+< 	<meta property="og:title" content="Los Angeles Orthopedic Clinic | Neurosurgeons, Spine Surgeons | Sports Medicine Doctors" />
+< 	<meta property="og:description" content="Do you need orthopedic, sports injury, neuro-spine surgeon or chronic pain treatment? The experienced team at DOCS Health offers innovative, patient-centric care at their medical center in Los Angeles, CA." />
+< 	<meta property="og:url" content="https://www.docshealth.com/" />
+< 	<meta property="og:site_name" content="DOCS Spine Orthopedics" />
+< 	<meta property="article:modified_time" content="2026-07-16T08:19:12+00:00" />
+< 	<meta property="og:image" content="https://www.docshealth.com/wp-content/uploads/2020/11/jumbotron-bg-2-min.jpg" />
+< 	<meta property="og:image:width" content="1920" />
+< 	<meta property="og:image:height" content="1078" />
+< 	<meta property="og:image:type" content="image/jpeg" />
+< 	<meta name="twitter:card" content="summary_large_image" />
+< 	<!-- / Yoast SEO plugin. -->
+< 
+< 
+< <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+< <style id="wp-img-auto-sizes-contain-inline-css">
+< img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+< /*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+< </style>
+< 
+< 
+< <link rel='stylesheet' id='contact-form-7-css' href='https://www.docshealth.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=6.1.7' media='all' />
+< <link rel='stylesheet' id='flc-cookies-consent-css' href='https://www.docshealth.com/wp-content/plugins/flc-control/assets/css/cookie-consent.min.css?ver=1.2.6' media='all' />
+< <link rel='stylesheet' id='libs-css' href='https://www.docshealth.com/wp-content/themes/flc/dist/styles/libs.css?ver=19' media='all' />
+< <link rel='stylesheet' id='bxslider-css' href='https://www.docshealth.com/wp-content/themes/flc/dist/styles/jquery.bxslider.css' media='all' />
+< <link rel='stylesheet' id='smbs4-css' href='https://www.docshealth.com/wp-content/themes/flc/dist/styles/jquery.smartmenus.bootstrap-4.css' media='all' />
+< <link rel='stylesheet' id='fonts-css' href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&#038;family=Poppins:wght@100;300;700;900&#038;display=swap' media='all' />
+< <link rel='stylesheet' id='select2-css' href='https://www.docshealth.com/wp-content/themes/flc/dist/styles/select2.min.css?ver=1.0.0' media='all' />
+< <link rel='stylesheet' id='combobox-css' href='https://www.docshealth.com/wp-content/themes/flc/dist/styles/combobox.css?ver=1.0.0' media='all' />
+< <link rel='stylesheet' id='main-css' href='https://www.docshealth.com/wp-content/themes/flc/dist/styles/main.css?ver=1.1.5' media='all' />
+< <script id="jquery-core-js" src="https://www.docshealth.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+< <script id="jquery-migrate-js" src="https://www.docshealth.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+< <link rel="https://api.w.org/" href="https://www.docshealth.com/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://www.docshealth.com/wp-json/wp/v2/pages/327" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.docshealth.com/xmlrpc.php?rsd" />
+< <meta name="generator" content="WordPress 7.1" />
+<   <style>
+<     #reviews_close_button {
+<       position: absolute;
+<       display: block;
+<       width: 32px;
+<       height: 32px;
+<       text-align: center;
+<       top: 12px;
+<       right: 10px;
+<       border: 3px solid #FFF !important;
+<       background-color: var(--light) !important;
+<       color: var(--primary);
+<       border-radius: 10px;
+<     }
+< 
+<     #reviews_button_container {
+<       position: fixed;
+<       bottom: 1rem;
+<       left: 1rem;
+<       display: none;
+<       z-index: 1031;
+<     }
+<     
+<     #reviews_button {
+<       text-decoration: none !important;
+<       z-index: 1030;
+<       background-color: white;
+<       opacity: 1 !important;
+<     }
+<     
+<     @media (max-width: 767px) {
+<         #reviews_button_container {
+<             display: none !important;
+<         }
+<     }
+<     
+<     #reviews_button:hover,
+<     #reviews_button:focus {
+<       background-color: #edeff5;
+<     }
+<     
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 700 ms

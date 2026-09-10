@@ -39,6 +39,26 @@ const IDENTITY_MODIFIERS = [
   ['heart', 'cardiac'], ['cancer', 'oncology'], ['emergency']
 ];
 
+// Shared corporate branding must not match one named campus to another.
+const GENERIC_NAME_WORDS = new Set('hca florida hosp med ctr hospital hospitals health healthcare system systems medical center centre inc incorporated corporation corp llc the of and memorial regional community general'.split(' '));
+function distinctiveNameOverlap(a, b) {
+  const tokens = value => normalizeName(value).split(' ').filter(t => t && !GENERIC_NAME_WORDS.has(t));
+  const left = new Set(tokens(a));
+  return tokens(b).some(t => left.has(t));
+}
+
+function streetTokens(value) {
+  const words = { first: '1st', second: '2nd', third: '3rd', fourth: '4th', fifth: '5th', sixth: '6th', seventh: '7th', eighth: '8th', ninth: '9th', tenth: '10th', north: 'n', south: 's', east: 'e', west: 'w', northeast: 'ne', northwest: 'nw', southeast: 'se', southwest: 'sw' };
+  const types = new Set('street st avenue ave road rd highway hwy drive dr boulevard blvd lane ln parkway pkwy place pl route'.split(' '));
+  return normalizeName(value).split(' ').map(v => words[v] || v).filter(v => v && !types.has(v));
+}
+function strongAddressAgreement(rosterAddress, fileAddress) {
+  const left = streetTokens(rosterAddress), right = streetTokens(fileAddress);
+  if (!left.length || !/^\d/.test(left[0]) || left[0] !== right[0]) return false;
+  const street = left.slice(1), candidates = new Set(right.slice(1));
+  return street.length > 0 && street.filter(v => candidates.has(v)).length / street.length >= 0.75;
+}
+
 function identityModifiersAgree(a, b) {
   const tokens = value => new Set(normalizeName(value).split(' ').filter(Boolean));
   const left = tokens(a), right = tokens(b);
@@ -77,16 +97,24 @@ function matchMrfHeader(task, probe, hospitals) {
     const cityInAddress = addresses.some(address => phraseIn(address, hospital.city));
     const cityInHeader = headerNames.some(name => phraseIn(name, hospital.city));
     const rosterStreetNumber = (String(hospital.address || '').match(/\b\d{1,6}\b/) || [])[0] || '';
-    const headerStreetNumbers = new Set(addresses.flatMap(address => address.match(/\b\d{1,6}\b/g) || []));
+    const headerStreetNumbers = new Set(addresses.map(address => (address.match(/^\s*(\d{1,6})\b/) || [])[1]).filter(Boolean));
     const streetHit = !!rosterStreetNumber && headerStreetNumbers.has(rosterStreetNumber);
-    const locationStrong = streetHit && (zipHit || cityInAddress);
+    const locationStrong = addresses.some(address => {
+      const declaredZips = (address.replace(/^\s*\d+[A-Za-z-]*\b/, '').match(/\b\d{5}(?:-\d{4})?\b/g) || []).map(v => v.slice(0, 5));
+      if (zip && declaredZips.length && !declaredZips.includes(zip)) return false;
+      return strongAddressAgreement(hospital.address, address)
+        && ((!!zip && declaredZips.includes(zip)) || phraseIn(address, hospital.city));
+    });
     const modifiersAgree = identityModifiersAgree(header.value, hospital.name || hospital.hospital_name);
-    const nameStrong = header.exact
-      || (header.score >= 0.72 && header.strictScore >= 0.55)
-      || (locationStrong && header.score >= 0.60 && header.strictScore >= 0.65);
+    const distinctive = distinctiveNameOverlap(header.value, hospital.name || hospital.hospital_name);
+    const pointerExactWithAddress = pointer.exact && locationStrong;
+    const nameStrong = pointerExactWithAddress || header.exact || (distinctive && (
+      (header.score >= 0.72 && header.strictScore >= 0.55)
+      || (locationStrong && header.score >= 0.60 && header.strictScore >= 0.65)));
     return {
       hospital, header, pointer, zipHit, streetHit, cityHit: cityInAddress || cityInHeader,
       locationStrong, nameStrong: nameStrong && modifiersAgree, modifiersAgree,
+      identityBasis: pointerExactWithAddress && !header.exact ? 'exact-pointer-name-and-file-address' : 'file-name-and-address',
       rank: header.score + header.strictScore * 0.25 + (zipHit ? 0.4 : 0)
         + (cityInAddress ? 0.2 : 0) + (streetHit ? 0.25 : 0)
     };
@@ -122,4 +150,4 @@ function matchMrfHeader(task, probe, hospitals) {
   };
 }
 
-module.exports = { matchMrfHeader, splitHeaderValues };
+module.exports = { matchMrfHeader, splitHeaderValues, distinctiveNameOverlap, strongAddressAgreement };

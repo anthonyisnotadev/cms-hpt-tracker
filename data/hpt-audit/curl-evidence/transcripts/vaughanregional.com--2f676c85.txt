@@ -1,0 +1,41 @@
+# curl-style evidence for https://vaughanregional.com/
+# fetched 2026-09-07T01:32:12.369Z with the tracker's BROWSER_HEADERS (production client)
+# record: 010118 | VAUGHAN REGIONAL MEDICAL CENTER PARKWAY CAMPUS | AL | finding: not-assessed-site-unreachable
+
+* DNS vaughanregional.com: 151.101.67.10, 151.101.131.10, 151.101.195.10, 151.101.3.10
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://vaughanregional.com/
+< HTTP 406
+< accept-ranges: bytes
+< content-length: 293
+< date: Mon, 07 Sep 2026 01:32:14 GMT
+< retry-after: 0
+< strict-transport-security: max-age=31557600
+< x-cache: MISS
+< x-served-by: cache-iad-kcgs7200095-IAD
+< x-timer: S1788744734.110847,VS0,VE8
+< --- body (293 bytes read) ---
+< <!DOCTYPE html>
+<       <html>
+<         <head>
+<           <title>406 Not Acceptable</title>
+<         </head>
+<         <body>
+<           <h1>Error 406 Not Acceptable</h1>
+<           <p>Not Acceptable</p>
+<           <p>Trace-id: 692c42b3-8721-4183-8981-c2e895b93136</p>
+<         </body>
+<       </html>
+<     
+
+* total time: 68 ms

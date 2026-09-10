@@ -1,0 +1,153 @@
+# curl-style evidence for https://www.christushealth.org/-/media/christus-health/plan-care/files/bill-pay/machine-readable-files/741109836_spohnhospitalcorpuschristimemorial_standardcharges.json
+# fetched 2026-09-07T01:36:05.880Z with the tracker's BROWSER_HEADERS (production client)
+# record: 450046 | CHRISTUS SPOHN HOSPITAL CORPUS CHRISTI | TX | finding: mrf-url-unreachable
+
+* DNS www.christushealth.org: 13.107.253.57, 13.107.226.57
+
+> GET /-/media/christus-health/plan-care/files/bill-pay/machine-readable-files/741109836_spohnhospitalcorpuschristimemorial_standardcharges.json  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://www.christushealth.org/-/media/christus-health/plan-care/files/bill-pay/machine-readable-files/741109836_spohnhospitalcorpuschristimemorial_standardcharges.json
+< HTTP 302
+< cache-control: private
+< content-length: 148
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:36:07 GMT
+< location: /sitecore/service/notfound.aspx
+< request-context: appId=cid-v1:98ebb05c-4a5a-49f6-b070-c1a20124696c
+< x-azure-ref: 20260907T013607Z-168545c87965clpfhC1IADecc40000000ug00000000057tb
+< x-cache: CONFIG_NOCACHE
+* following Location: /sitecore/service/notfound.aspx
+
+* final response: https://www.christushealth.org/sitecore/service/notfound.aspx
+< HTTP 404
+< cache-control: no-cache, no-store
+< content-length: 3202
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:36:07 GMT
+< expires: -1
+< pragma: no-cache
+< request-context: appId=cid-v1:98ebb05c-4a5a-49f6-b070-c1a20124696c
+< x-azure-ref: 20260907T013607Z-168545c87965clpfhC1IADecc40000000ug00000000057tf
+< x-cache: CONFIG_NOCACHE
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-xss-protection: 1; mode=block
+< --- body (3202 bytes read) ---
+< 
+< <!DOCTYPE html>
+< <html>
+< <head>
+<   <title>Document Not Found</title>
+<   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<   <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,400italic,600italic,700italic,300,600,700,800" />
+<   <link href="/sitecore/shell/client/Speak/Assets/css/speak-default-theme.css" rel="stylesheet" />
+<   <style>
+<     .sc-text-label {
+<       white-space: nowrap;
+<       width: 1%;
+<     }
+<   </style>
+< </head>
+< 
+< <body class="sc">
+<   <div class="sc-task">
+<     <header class="sc-globalHeader">
+<       <div class="row sc-globalHeader-content">
+<         <div class="col-md-3">
+<           <div class="sc-globalHeader-startButton">
+<             <a class="sc-global-logo medium" title="Go to the start page" href="/"></a>
+<           </div>
+<         </div>
+<       </div>
+<     </header>
+< 
+<     <header class="sc-applicationHeader">
+<       <div class="sc-applicationHeader-row1">
+<         <div class="sc-applicationHeader-content">
+<           <div class="sc-applicationHeader-title">
+<             The requested document was not found
+<           </div>
+<         </div>
+<       </div>
+<     </header>
+< 
+<     <section class="sc-dialogContent-toolbar">
+<       <div class="container">
+<         <div class="row sc-dialogContent-toolbar-back">
+<           <button class="btn sc-backbutton" type="button" onclick="javascript:history.go(-1);"><span class="sc-backbutton-text">Back</span></button>
+<         </div>
+<       </div>
+<     </section>
+< 
+<     <section class="sc-applicationContent">
+<       <div class="col-md-12 sc-applicationContent-main">
+<         <h3>Most likely causes:
+<         </h3>
+< 
+<         <ul>
+<           
+<           <li>The resource you are looking for (or one of its dependencies) has been removed, had its name changed, or is temporarily unavailable.
+<               Please review the following URL and make sure that it is spelled correctly.</li>
+<         </ul>
+< 
+<         <br />
+< 
+<         <h4>What you can try:
+<         </h4>
+< 
+<         <ul>
+<           <li>
+<             <a href="javascript:history.go(-1);">Go back to the previous page
+<             </a>
+<           </li>
+<           <li>
+<             <a href="/">Go to the start page
+<             </a>
+<           </li>
+<         </ul>
+< 
+<         <br />
+< 
+<         <h4>Additional Information:
+<         </h4>
+< 
+<         <table class="table">
+<           <tr>
+<             <td class="sc-text sc-text-label">Requested URL:</td>
+<             <td class="sc-text sc-text-value">
+<               [unknown]
+<             </td>
+<           </tr>
+<           <tr>
+<             <td class="sc-text sc-text-label">User Name:</td>
+<             <td class="sc-text sc-text-value">
+<               
+<             </td>
+<           </tr>
+<           <tr>
+<             <td class="sc-text sc-text-label">Site Name:</td>
+<             <td class="sc-text sc-text-value">
+<               
+<             </td>
+<           </tr>
+<         </table>
+<         <p>
+<           If the page you are trying to display exists, please check that an appropriate prefix has been added to the IgnoreUrlPrefixes setting in the web.config.
+<         </p>
+<       </div>
+<     </section>
+<   </div>
+<    
+<  </body>
+< </html>
+< 
+
+* total time: 3860 ms

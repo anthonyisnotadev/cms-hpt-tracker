@@ -1,0 +1,127 @@
+# curl-style evidence for https://arh.org/
+# fetched 2026-09-07T01:33:15.819Z with the tracker's BROWSER_HEADERS (production client)
+# record: 181328 | KNOX COUNTY HOSPITAL | KY | finding: not-assessed-not-named-in-file
+
+* DNS arh.org: 192.0.66.239
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://arh.org/
+< HTTP 301
+< cache-control: max-age=3600
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:33:17 GMT
+< host-header: a9130478a60e5f9135f765b23f26593b
+< location: https://www.arh.org/
+< server: nginx
+< vary: accept, content-type
+< x-cache: HIT
+< x-hacker: If you're reading this, you should visit https://join.a8c.com/viphacker and apply to join the fun, mention this header.
+< x-powered-by: WordPress VIP <https://wpvip.com>
+< x-redirect-by: WordPress
+< x-rq: dca8 181 249 80
+* following Location: https://www.arh.org/
+
+* final response: https://www.arh.org/
+< HTTP 200
+< accept-ranges: bytes
+< cache-control: max-age=300, must-revalidate
+< content-encoding: br
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:33:17 GMT
+< host-header: a9130478a60e5f9135f765b23f26593b
+< link: <https://www.arh.org/wp-json/>; rel="https://api.w.org/", <https://www.arh.org/wp-json/wp/v2/pages/26405>; rel="alternate"; title="JSON"; type="application/json", <https://www.arh.org/>; rel=shortlink
+< server: nginx
+< vary: Accept-Encoding, accept, content-type
+< x-cache: HIT
+< x-hacker: If you're reading this, you should visit https://join.a8c.com/viphacker and apply to join the fun, mention this header.
+< x-powered-by: WordPress VIP <https://wpvip.com>
+< x-rq: dca8 181 249 80
+< --- body (65536 bytes read, truncated) ---
+< <!DOCTYPE html>
+< <html lang="en-US">
+< <head>
+< 	<meta charset="UTF-8" />
+< 	
+< 				<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+< 		
+<             
+<             
+< 	<link rel="profile" href="http://gmpg.org/xfn/11" />
+< 	<link rel="pingback" href="https://www.arh.org/xmlrpc.php" />
+< 
+< 	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+< 
+< 	<!-- This site is optimized with the Yoast SEO plugin v28.4 - https://yoast.com/product/yoast-seo-wordpress/ -->
+< 	<title>ARH - Appalachian Regional Healthcare</title>
+< 	<meta name="description" content="Appalachian Regional Healthcare - Home Page" />
+< 	<link rel="canonical" href="https://www.arh.org/" />
+< 	<meta property="og:locale" content="en_US" />
+< 	<meta property="og:type" content="website" />
+< 	<meta property="og:title" content="ARH - Appalachian Regional Healthcare" />
+< 	<meta property="og:description" content="Appalachian Regional Healthcare - Home Page" />
+< 	<meta property="og:url" content="https://www.arh.org/" />
+< 	<meta property="og:site_name" content="Appalachian Regional Healthcare" />
+< 	<meta property="article:modified_time" content="2026-01-07T19:57:13+00:00" />
+< 	<meta property="og:image" content="https://www.arh.org/wp-content/uploads/2019/10/main-arh-logo-new.png" />
+< 	<meta property="og:image:width" content="1000" />
+< 	<meta property="og:image:height" content="680" />
+< 	<meta property="og:image:type" content="image/png" />
+< 	<meta name="twitter:card" content="summary_large_image" />
+< 	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/www.arh.org\/","url":"https:\/\/www.arh.org\/","name":"ARH - Appalachian Regional Healthcare","isPartOf":{"@id":"https:\/\/www.arh.org\/#website"},"primaryImageOfPage":{"@id":"https:\/\/www.arh.org\/#primaryimage"},"image":{"@id":"https:\/\/www.arh.org\/#primaryimage"},"thumbnailUrl":"https:\/\/www.arh.org\/wp-content\/uploads\/2019\/10\/main-arh-logo-new.png","datePublished":"2024-11-21T15:28:37+00:00","dateModified":"2026-01-07T19:57:13+00:00","description":"Appalachian Regional Healthcare - Home Page","breadcrumb":{"@id":"https:\/\/www.arh.org\/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https:\/\/www.arh.org\/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/www.arh.org\/#primaryimage","url":"https:\/\/www.arh.org\/wp-content\/uploads\/2019\/10\/main-arh-logo-new.png","contentUrl":"https:\/\/www.arh.org\/wp-content\/uploads\/2019\/10\/main-arh-logo-new.png","width":1000,"height":680},{"@type":"BreadcrumbList","@id":"https:\/\/www.arh.org\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https:\/\/www.arh.org\/#website","url":"https:\/\/www.arh.org\/","name":"Appalachian Regional Healthcare","description":"The Healthcare System of Appalachia","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/www.arh.org\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"}]}</script>
+< 	<!-- / Yoast SEO plugin. -->
+< 
+< 
+< <link rel='dns-prefetch' href='//cdn.parsely.com' />
+< <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+< <link rel="alternate" type="application/rss+xml" title="Appalachian Regional Healthcare &raquo; Feed" href="https://www.arh.org/feed/" />
+< <link rel="alternate" type="application/rss+xml" title="Appalachian Regional Healthcare &raquo; Comments Feed" href="https://www.arh.org/comments/feed/" />
+< <link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://www.arh.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.arh.org%2F" />
+< <link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://www.arh.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.arh.org%2F&#038;format=xml" />
+< <style id="wp-img-auto-sizes-contain-inline-css">
+< img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+< /*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+< </style>
+< <style id="wp-emoji-styles-inline-css">
+< 
+< 	img.wp-smiley, img.emoji {
+< 		display: inline !important;
+< 		border: none !important;
+< 		box-shadow: none !important;
+< 		height: 1em !important;
+< 		width: 1em !important;
+< 		margin: 0 0.07em !important;
+< 		vertical-align: -0.1em !important;
+< 		background: none !important;
+< 		padding: 0 !important;
+< 	}
+< /*# sourceURL=wp-emoji-styles-inline-css */
+< </style>
+< <style id="classic-theme-styles-inline-css">
+< /*! This file is auto-generated */
+< .wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+< /*# sourceURL=/wp-includes/css/classic-themes.min.css */
+< </style>
+< <link rel='stylesheet' id='all-css-6' href='https://www.arh.org/wp-content/mu-plugins/jetpack-16.1/jetpack_vendor/automattic/jetpack-forms/dist/contact-form/css/jetpack-forms-layout.css?m=1788285651g' type='text/css' media='all' />
+< <style id="wp-parsely-recommendations-style-inline-css">
+< .parsely-recommendations-list-title{font-size:1.2em}.parsely-recommendations-list{list-style:none;padding:unset}.parsely-recommendations-cardbody{overflow:hidden;padding:.8em;text-overflow:ellipsis;white-space:nowrap}.parsely-recommendations-cardmedia{padding:.8em .8em 0}
+< 
+< /*# sourceURL=https://www.arh.org/wp-content/mu-plugins/wp-parsely-3.24/build/blocks/recommendations/style-edit.css */
+< </style>
+< <style id="jetpack-search-active-filters-style-inline-css">
+< .wp-block-jetpack-search-active-filters{align-items:center;display:flex;flex-wrap:wrap;gap:.5rem}.wp-block-jetpack-search-active-filters[hidden]{display:none}.wp-block-jetpack-search-active-filters .jetpack-search-active-filters__heading{color:inherit;font-size:.8rem;font-weight:600;opacity:.8}.wp-block-jetpack-search-active-filters .jetpack-search-active-filters__pills{display:flex;flex-wrap:wrap;gap:.25rem;list-style:none;margin:0;padding:0}.wp-block-jetpack-search-active-filters .jetpack-search-active-filters__pill{align-items:center;background:#0000;border:1px solid;border-radius:12px;color:inherit;cursor:pointer;display:inline-flex;font:inherit;font-size:.8rem;gap:.25rem;letter-spacing:normal;line-height:1.2;padding:.2rem .6rem;text-transform:none;transition:background-color .2s ease,border-color .2s ease,box-shadow .2s ease}@supports(border-color:color-mix(in sRGB,black 50%,white)){.wp-block-jetpack-search-active-filters .jetpack-search-active-filters__pill{background:color-mix(in sRGB,currentColor 14%,#0000);border-color:color-mix(in sRGB,currentColor 38%,#0000)}}.wp-block-jetpack-search-active-filters :is(.jetpack-search-active-filters__pill:focus-visible,.jetpack-search-active-filters__pill:hover){background:#0000;border-color:currentColor}@supports(background:color-mix(in sRGB,black 50%,white)){.wp-block-jetpack-search-active-filters :is(.jetpack-search-active-filters__pill:focus-visible,.jetpack-search-active-filters__pill:hover){background:color-mix(in sRGB,currentColor 24%,#0000);border-color:color-mix(in sRGB,currentColor 52%,#0000)}}.wp-block-jetpack-search-active-filters .jetpack-search-active-filters__pill:focus-visible{box-shadow:0 0 0 2px currentColor;outline:none}@supports(box-shadow:0 0 0 2px color-mix(in sRGB,black 50%,white)){.wp-block-jetpack-search-active-filters .jetpack-search-active-filters__pill:focus-visible{box-shadow:0 0 0 2px color-mix(in sRGB,currentColor 28%,#0000)}}.wp-block-jetpack-search-active-filters .jetpack-search-active-filters__pill-remove{font-weight:700;line-height:1}
+< /*# sourceURL=https://www.arh.org/wp-content/mu-plugins/jetpack-16.1/jetpack_vendor/automattic/jetpack-search/build/search-blocks/active-filters.css */
+< </style>
+< <style id="jetpack-search-ai-answer-style-inline-css">
+< .wp-block-jetpack-search-ai-answer{border-inline-start:3px solid color-mix(in sRGB,currentColor 30%,#0000);margin-block:0 var(--wp--preset--spacing--40,1.5rem);padding-block:var(--wp--prese
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 341 ms

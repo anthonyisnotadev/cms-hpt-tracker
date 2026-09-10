@@ -1,0 +1,129 @@
+# curl-style evidence for https://northwell.edu/
+# fetched 2026-09-07T01:35:34.781Z with the tracker's BROWSER_HEADERS (production client)
+# record: 330043 | NS/LIJ HS SOUTHSIDE HOSPITAL | NY | finding: not-assessed-not-named-in-file
+# record: 334027 | SOUTH OAKS HOSP | NY | finding: not-assessed-not-named-in-file
+# record: 330395 | ST JOHN'S EPISCOPAL HOSPITAL AT SOUTH SHORE | NY | finding: not-assessed-not-named-in-file
+
+* DNS northwell.edu: 34.198.131.28
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://northwell.edu/
+< HTTP 301
+< age: 424161
+< cache-control: max-age=1209600
+< content-length: 234
+< content-type: text/html; charset=iso-8859-1
+< date: Mon, 07 Sep 2026 01:35:36 GMT
+< expires: Wed, 16 Sep 2026 03:46:14 GMT
+< location: https://www.northwell.edu/
+< server: nginx
+< via: varnish
+< x-cache: HIT
+< x-cache-hits: 182332
+< x-content-type-options: nosniff
+< x-request-id: v-d8e1e19e-a680-11f1-a996-27f99215497b
+* following Location: https://www.northwell.edu/
+
+* final response: https://www.northwell.edu/
+< HTTP 200
+< age: 354707
+< alt-svc: h3=":443"; ma=86400
+< cache-control: public, max-age=2764800
+< cf-cache-status: HIT
+< cf-ray: a371fa4c0c7ad629-IAD
+< content-encoding: br
+< content-language: en
+< content-security-policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' blob: *.facebook.net *.google-analytics.com *.marketo.com *.googletagmanager.com *.mookie1.com *.serving-sys.com *.marketo.net *.calltrk.com *.tiqcdn.com *.jwpcdn.com *.youtube.com s.ytimg.com *.facebook.com *.pinterest.com *.googleapis.com *.typekit.net *.northwell.edu *.limelight.com *.delvenetworks.com *.addtoany.com *.github.io *.aspnetcdn.com s.gravatar.com *.wp.com *.amazonaws.com *.googleadservices.com *.microsoft.com *.jquery.com *.html5media.info *.cloudfront.net *.jwpcdn.com *.newrelic.com *.nr-data.net tagmanager.google.com *.surveymonkey.com *.brightwhistle.com *.callrail.com *.healthwise.net *.merklesearch.com *.rkdms.com *.rawgit.com *.cloudflare.com ethn.io e.infogram.com *.influencehealth.com *.bing.com *.visto1.net *.linkedin.com *.hotjar.com *.doubleclick.net *.creative-serving.com *.invocacdn.com *.invoca.net *.adsrvr.org *.acquia.com *.segment.com *.rdcdn.com *.msecnd.net *.mymarketingreports.com *.syllable.ai *.conveythis.com *.force.com *.salesforce.com *.salesforceliveagent.com *.sanzone.io *.yimg.com *.yahoo.com tags.srv.stackadapt.com pagecdn.io *.alpixtrack.com *.basis.net *.tctm.co *.pixel.ad *.adobedtm.com *.112.2o7.net *.presage.io *.evgnet.com *.azure.com cloud.email.northwellhealth.com *.lassomarketing.io *.lhmos.com *.appspot.com ciqtracking.com *.google.com/recaptcha/ *.gstatic.com/recaptcha/ *.mapbox.com formativ--sllivechat.sandbox.my.site.com formativ--devint.sandbox.my.site.com formativ--devint2.sandbox.my.site.com formativ--sit.sandbox.my.site.com formativ--entuat.sandbox.my.site.com formativ.my.site.com *.salesforce-sites.com *.evergage.com *.icanbwell.com api-js.mixpanel.com bwell-prod-gda-static.s3.amazonaws.com cdn.inpwrd.net content.inpwrd.net cdn.hxplatform.pressganey.com kit.fontawesome.com www.gstatic.com cdn.localizejs.com global.localizecdn.com; object-src 'self' video.limelight.com assets.delvenetworks.com; style-src 'self' 'unsafe-inline' rtp-static.marketo.com *.googleapis.com *.vm *.bootstrapcdn.com *.northwell.edu malihu.github.io static.addtoany.com s.gravatar.com code.jquery.com  *.cloudfront.net *.surveymonkey.com *.marketo.com *.rkdms.com tagmanager.google.com *.acquia.com *.syllable.ai *.force.com *.salesforce.com *.yimg.com *.srv.stackadapt.com *.googletagmanager.com *.mapbox.com formativ--sllivechat.sandbox.my.site.com formativ--devint.sandbox.my.site.com formativ--devint2.sandbox.my.site.com formativ--sit.sandbox.my.site.com formativ--entuat.sandbox.my.site.com formativ.my.site.com *.salesforce-sites.com *.evergage.com *.icanbwell.com api-js.mixpanel.com bwell-prod-gda-static.s3.amazonaws.com fonts.cdnfonts.com cdn.hxplatform.pressganey.com *.fontawesome.com; img-src 'self' data: *.google-analytics.com *.g.doubleclick.net *.facebook.com *.google.com jwpltx.com api.nslijweb.com csi.gstatic.com *.googleapis.com maps.gstatic.com img.delvenetworks.com *.llnw.net *.northwell.edu northwellhealt.wpengine.com *.gravatar.com *.wp.com *.cloudfront.net *.amazonaws.com www.bugherd.com *.surveymonkey.com img.youtube.com *.googleadservices.com maps.googleapis.com *.mxptint.net dpm.demdex.net ad.yieldmanager.com ad.afy11.net d.agkn.com idsync.rlcdn.com *.bluekai.com *.openx.net *.rubiconproject.com *.adnxs.com sync.adaptv.advertising.com *.rkdms.com i.ytimg.com *.bing.com *.googletagmanager.com *.doubleclick.net *.google.com *.gstatic.com *.tilehosting.com *.hotjar.com *.maptiler.com *.rdcdn.com https://rdcdn.com clickserv.pixel.ad *.syllablecdn.com *.syllable.ai *.conveythis.com *.force.com *.salesforce.com *.northwell.io *.yimg.com *.googleusercontent.com *.marketo.com alpixtrack.com *.ipredictive.com *.bidr.io *.sitescout.com *.presage.io *.locationiq.com *.linkedin.com *.adsymptotic.com *.postrelease.com *.stackadapt.com sp.analytics.yahoo.com content.inpwrd.net *.icanbwell.com api-js.mixpanel.com bwell-prod-gda-static.s3.amazonaws.com us-east1-p-d-mato-001.cloudfunctions.net global.localizecdn.com cdn-images.kyruus.com; media-src 'self' blob: *.llnw.net *.delvenetworks.com *.llnw.com dam.northwell.edu; frame-src 'self' blob: cdn-akamai.mookie1.com tags.tiqcdn.com www.youtube.com www.youtube-nocookie.com static.addtoany.com *.doubleclick.net www.google.com *.understand.com *.marketo.com *.sli.do ethn.io e.infogram.com w.soundcloud.com view.knowledgevision.com intakeforms.sequencehealth.com mednews.hofstra.edu app.stitcher.com vars.hotjar.com *.googletagmanager.com www.facebook.com insight.adsrvr.org *.acquia.com *.segment.com *.force.com *.salesforce.com *.pledgeling.com *.adsrvr.org *.healthgrades.com *.podbean.com *.libsyn.com *.simplecast.com *.sitescout.com *.youvisit.com *.demdex.net content.inpwrd.net hxplatform.pressganey.com redcap.northwell.edu *.epichosted.com *.northwell.edu formativ--devint.sandbox.my.site.com formativ--devint2.sandbox.my.site.com formativ--sit.sandbox.my.site.com formativ--entuat.sandbox.my.site.com formativ.my.site.com app.myidev.northwell.edu app.myqa.northwell.edu app.my.northwell.edu rgaziet1dpxmynorthwell.azurewebsites.net rgazqet1dpxmynorthwell.azurewebsites.net rgazpet1dpxmynorthwell.azurewebsites.net; frame-ancestors 'self' *.northwell.edu; child-src 'self' blob:; font-src 'self' data: themes.googleusercontent.com fonts.gstatic.com *.bootstrapcdn.com www.bugherd.com static.hotjar.com *.hotjar.com *.cloudfront.net *.icanbwell.com api-js.mixpanel.com bwell-prod-gda-static.s3.amazonaws.com hxplatform.pressganey.com *.northwell.edu ka-p.fontawesome.com; connect-src 'self' 'unsafe-inline' 309-lvl-470.mktoresp.com sjrtp4.marketo.com *.pusherapp.com *.pusher.com www.bugherd.com *.google-analytics.com *.northwell.edu content.healthwise.net *.cloudflare.com *.rkdms.com *.callrail.com *.serving-sys.com *.llnw.net *.hotjar.com wss://*.hotjar.com *.doubleclick.net *.hotjar.io www.facebook.com *.cloudfront.net *.acquia.com *.segment.com *.visualstudio.com *.bugsnag.com *.mktoresp.com *.nr-data.net *.syllable.ai *.locationiq.com *.conveythis.com *.force.com *.sanzone.io *.northwell.io *.yimg.com *.srv.stackadapt.com sentry.io *.reachnorthwell.com analytics.google.com *.facebook.net *.demdex.net cloud.email.northwellhealth.com *.taylorhealthcare.io *.googleapis.com *.invoca.net *.evergage.com *.bynder.cloud formativ--sllivechat.sandbox.my.site.com formativ--devint.sandbox.my.site.com formativ--devint2.sandbox.my.site.com formativ--devint.sandbox.my.salesforce-scrt.com formativ--devint2.sandbox.my.salesforce-scrt.com formativ--sit.sandbox.my.site.com formativ--sit.sandbox.my.salesforce-scrt.com formativ--entuat.sandbox.my.site.com formativ--entuat.sandbox.my.salesforce-scrt.com formativ.my.site.com formativ.my.salesforce-scrt.com *.salesforce-sites.com *.icanbwell.com api-js.mixpanel.com bwell-prod-gda-static.s3.amazonaws.com api-js.mixpanel.com *.unpkg.com cdn.hxplatform.pressganey.com gtm-test.northwell.edu gtm.northwell.edu ka-p.fontawesome.com global.localizecdn.com
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:35:36 GMT
+< expires: Fri, 09 Oct 2026 01:35:36 GMT
+< last-modified: Wed, 02 Sep 2026 23:03:45 GMT
+< referrer-policy: no-referrer-when-downgrade
+< server: cloudflare
+< strict-transport-security: max-age=31536000; includeSubDomains
+< vary: Cookie,Accept-Encoding
+< via: varnish
+< x-ah-environment: prod
+< x-cache: MISS
+< x-content-type-options: nosniff
+< x-drupal-cache: MISS
+< x-drupal-dynamic-cache: MISS
+< x-frame-options: ALLOW-FROM https://*.healthgrades.com
+< x-request-id: v-8cd089b6-a722-11f1-845a-d7532391fabb
+< x-xss-protection: 1; mode=block
+< --- body (65536 bytes read, truncated) ---
+< <!DOCTYPE html>
+< <html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#" class="no-js">
+<   <head>
+<     <script src="https://kit.fontawesome.com/9bc5a2a007.js" crossorigin="anonymous"></script>
+<           <script type="text/javascript" src="//cdn.evgnet.com/beacon/northwell/nw_prod/scripts/evergage.min.js"></script>
+<     
+<     <meta charset="utf-8" />
+< <meta name="description" content="Northwell Health is New York&#039;s largest healthcare provider, serving NYC, Long Island and Westchester with compassionate care through research and innovation." />
+< <meta name="keywords" content="homepage, home page, home" />
+< <link rel="canonical" href="https://www.northwell.edu/" />
+< <link rel="shortlink" href="https://www.northwell.edu/" />
+< <meta property="og:type" content="website" />
+< <meta name="MobileOptimized" content="width" />
+< <meta name="HandheldFriendly" content="true" />
+< <script>window.dataLayer = window.dataLayer || []; window.dataLayer.push({"event":"nwh_drupal_page_view","page":"https://www.northwell.edu/","page_context":{"drupal_internal_path":"/node/120476","nid":120476,"rendered_node_id":120476,"gid":1,"env":"prod","content_type":"component_page","page_type":"Basic page","og_type":"website","is_canonical":true,"title":"Northwell Health","robots":""}});</script>
+< <script src="/themes/custom/lit_components/storybook/dist/nwhlit-loader.js?v=1788390087" type="module" data-nwhlit="/themes/custom/lit_components/storybook/dist"></script>
+< <link rel="icon" href="/themes/custom/northwell_health_base/favicon.ico" type="image/vnd.microsoft.icon" />
+< 
+<     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
+< 
+<     <title>Northwell Health</title>
+<     <link rel="stylesheet" media="all" href="/core/modules/system/css/components/align.module.css?tkreoq" />
+< <link rel="stylesheet" media="all" href="/core/modules/system/css/components/fieldgroup.module.css?tkreoq" />
+< <link rel="stylesheet" media="all" href="/core/modules/system/css/components/container-inline.module.css?tkreoq" />
+< <link rel="stylesheet" media="all" href="/core/modules/system/css/components/clearfix.module.css?tkreoq" />
+< <link rel="stylesheet" media="all" href="/core/modules/system/css/components/details.module.css?tkreoq" />
+< <link rel="stylesheet" media="all" href="/core/modules/system/css/components/hidden.module.css?tkreoq" />
+< <link rel="stylesheet" media="all" href="/core/modules/system/css/components/item-list.module.css?tkreoq" />
+< <link rel="stylesheet" media="all" href="/core/modules/system/css/components/js.module.css?tkreoq" />
+< <link rel="stylesheet" media="all" href="/core/modules/system/css/components/nowrap.module.css?tkreoq" />
+< <link rel="stylesheet" media="all" href="/core/modules/system/css/components/position-container.module.css?tkreoq" />
+< <link rel="stylesheet" media="all" href="/core/modules/system/css/components/reset-appearance.module.css?tkreoq" />
+< <link rel="stylesheet" media="all" href="/core/modules/system/css/components/resize.module.css?tkreoq" />
+< <link rel="stylesheet" media="all" href="/core/modules/system/css/components/system-status-counter.css?tkreoq" />
+< <link rel="stylesheet" media="all" href="/core/modules/system/css/components/system-status-report-counters.css?tkreoq" />
+< <link rel="stylesheet" media="all" href="/core/modules/system/css/components/system-status-report-general-info.css?tkreoq" />
+< <link rel="stylesheet" media="all" href="/core/modules/system/css/components/tablesort.module.css?tkreoq" />
+< <link rel="stylesheet" media="all" href="/modules/contrib/ckeditor5_plugin_pack/modules/ckeditor5_plugin_pack_indent_block/css/indent-block.css?tkreoq" />
+< <link rel="stylesheet" media="all" href="/modules/contrib/paragraphs/css/paragraphs.unpublished.css?tkreoq" />
+< <link rel="stylesheet" media="all" href="/themes/custom/northwell_health_digital_design_system/nwh-dds/dest/style.css?tkreoq" />
+< <link rel="stylesheet" media="all" href="/themes/custom/lit_components/storybook/dist/nwhlitLayout.css?tkreoq" />
+< <link rel="stylesheet" media="all" href="/themes/custom/lit_components/storybook/dist/index.css?tkreoq" />
+< <link rel="stylesheet" media="all" href="/themes/custom/lit_components/storybook/dist/fouc.css?tkreoq" />
+< 
+<     <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/120476","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"dpx_api_url":"https:\/\/api.dpx.northwell.io","fad_shared_salt":"eD8fQjY2kLp9sT1vXy4zM7wBcAgGhUoI","locationiq":{"url":"https:\/\/us1.locationiq.com\/v1\/reverse.php","url_autocomplete":"https:\/\/api.locationiq.com\/v1\/autocomplete.php","token":"pk.a9819a6f512996c7d3232ea9f299e622","static_map_token":"pk.ca5b1333f588b6582ffc341a9389272f","autocomplete_map_token":"pk.7c6af0efbae5bd3c4b2e33c9fe2abb9a","international_map_token":"pk.155c001a392820ce73ae54a55201d4de"},"nwhlitLoader":{"type":"lazy"},"fad":{"typeahead":{"url":"https:\/\/fadapi.northwell.io\/v3\/suggest\/typeahead"},"api_base_url":"https:\/\/fadapi.northwell.io\/v3"},"epic":{"mychart_base_url":"https:\/\/my.northwell.edu\/Mychart","login_widget_url":"https:\/\/my.northwell.edu\/Mychart"},"alerts_api":"https:\/\/api.northwell.edu\/v2\/alerts\/get?env=prod\u0026group_id=1\u0026nid=120476\u0026domain=www.northwell.edu\u0026path=\/","is_root":true,"root_domain":"https:\/\/www.northwell.edu","site":{"nid":120476,"gid":1,"env":"prod"},"api":{"url":"https:\/\/api.northwell.edu\/v2"},"salesforce_chat":{"enabled":true,"sf_env":"prod"},"dpx_env":"prod","ajax":[],"user":{"uid":0,"permissionsHash":"90180e436a419224bb53ab71aee1795a518d9f7a2352a91ae33874babb74555a"}}</script>
+< <script src="/core/assets/vendor/jquery/jquery.min.js?v=3.7.1"></script>
+< <script src="/core/misc/drupalSettingsLoader.js?v=10.6.15"></script>
+< <script src="/core/misc/drupal.js?v=10.6.15"></script>
+< <script src="/core/misc/drupal.init.js?v=10.6.15"></script>
+< <script src="/modules/custom/salesforce_chat/js/sf-shared.js?tkreoq"></script>
+< 
+< 
+<           <!-- Tag Manager (tms.northwell.edu) -->
+<       <script>(function(w,d,s,l){w[l]=w[l]||[];w[l].push({'gtm.start':
+<       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+<       j=d.createElement(s),dl=l!='dataLayer'?'?l='+l:'';j.async=true;j.src=
+<       'https://tms.northwell.edu/tms.js'+dl;f.parentNode.insertBefore(j,f);
+<       })(window,document,'script','dataLayer');</script>
+<       <!-- End Tag Manager -->
+<     
+<           <!-- APP INSIGHTS PIXEL -->
+<       <script type="text/javascript" async>
+<         !function(T,l,y){var S=T.location,k="script",D="instrumentationKey",C="ingestionendpoint",I="disableExceptionTracking",E="ai.device.",b="toLowerCase",w="crossOrigin",N="POST",e="appInsightsSDK",t=y.name||"appInsights";(y.name||T[e])&&(T[e]=t);var n=T[t]||function(d){var g=!1,f=!1,m={initialize:!0,queue:[],sv:"5",version:2,config:d};function v(e,t){var n={},a="Browser";return n[E+"id"]=a[b](),n[E+"type"]=a,n["ai.operation.name"]=S&&S.pathname||"_unknown_",n["ai.internal.sdkVersion"]="javascript:snippet_"+(m.sv||m.version),{time:function(){var e=new Date;function t(e){var t=""+e;return 1===t.length&&(t="0"+t),t}return e.getUTCFullYear()+"-"+t(1+e.getUTCMonth())+"-"+t(e.getUTCDate())+"T"+t(e.getUTCHours())+":"+t(e.getUTCMinutes())+":"+t(e.getUTCSeconds())+"."+((e.getUTCMilliseconds()/1e3).toFixed(3)+"").slice(2,5)+"Z"}(),iKey:e,name:"Microsoft.ApplicationInsights."+e.replace(/-/g,"")+"."+t,sampleRate:100,tags:n,data:{baseData:{ver:2}}}}var h=d.url||y.src;if(h){function a(e){var t,n,a,i,r,o,s,c,u,p,l;g=!0,m.queue=[],f||(f=!0,t=h,s=function(){var e={},t=d.connectionString;if(t)for(var n=t.split(";"),a=0;a<n.length;a++){var i=n[a].split("=");2===i.length&&(e[i[0][b]()]=i[1])}if(!e[C]){var r=e.endpointsuffix,o=r?e.location:null;e[C]="https://"+(o?o+".":"")+"dc."+(r||"services.visualstudio.com")}return e}(),c=s[D]||d[D]||"",u=s[C],p=u?u+"/v2/track":d.endpointUrl,(l=[]).push((n="SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details)",a=t,i=p,(o=(r=v(c,"Exception")).data).baseType="ExceptionData",o.baseData.exceptions=[{typeName:"SDKLoadFailed",message:n.r
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 556 ms

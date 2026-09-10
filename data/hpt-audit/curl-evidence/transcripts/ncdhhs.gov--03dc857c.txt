@@ -1,0 +1,166 @@
+# curl-style evidence for https://ncdhhs.gov/
+# fetched 2026-09-07T01:34:59.041Z with the tracker's BROWSER_HEADERS (production client)
+# record: 344025 | BROUGHTON HOSPITAL | NC | finding: no-cms-hpt-txt-published
+# record: 344004 | CENTRAL REGIONAL HOSPITAL | NC | finding: no-cms-hpt-txt-published
+# record: 344026 | CHERRY HOSPITAL | NC | finding: no-cms-hpt-txt-published
+# record: 344023 | JULIAN F KEITH ALCOHOL & DRUG ABUSE TX | NC | finding: no-cms-hpt-txt-published
+# record: 344033 | WALTER B JONES CENTER LAKESIDE PSYCHIATRIC HOSPITA | NC | finding: no-cms-hpt-txt-published
+
+* DNS ncdhhs.gov: 52.204.9.77
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://ncdhhs.gov/
+< HTTP 301
+< connection: Keep-Alive
+< content-length: 231
+< content-type: text/html; charset=iso-8859-1
+< date: Mon, 07 Sep 2026 01:35:00 GMT
+< keep-alive: timeout=5, max=100
+< location: https://www.ncdhhs.gov/
+< server: Apache
+< strict-transport-security: max-age=63072000; includeSubDomains; preload
+< x-content-type-options: nosniff
+< x-frame-options: DENY
+* following Location: https://www.ncdhhs.gov/
+
+* final response: https://www.ncdhhs.gov/
+< HTTP 200
+< age: 79
+< cache-control: max-age=300, public, stale-if-error=86400, stale-while-revalidate=600
+< content-language: en
+< content-security-policy: upgrade-insecure-requests; frame-ancestors 'self'
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:33:41 GMT
+< etag: "1788692358:dtagent10343260715123811kIFD"
+< expires: Sun, 19 Nov 1978 05:00:00 GMT
+< last-modified: Sun, 06 Sep 2026 10:59:17 GMT
+< server: Apache
+< strict-transport-security: max-age=63072000; includeSubDomains; preload
+< vary: Cookie
+< via: 1.1 3f8050fbf1460156d177f2d3d6a03332.cloudfront.net (CloudFront)
+< x-amz-cf-id: tZFlh_peMUIC3SeEfBWqL4yBXxXqIiPoCyEJCVcuoNiOY0bOlubTLQ==
+< x-amz-cf-pop: IAD12-P4
+< x-cache: Hit from cloudfront
+< x-content-type-options: nosniff
+< x-drupal-dynamic-cache: MISS
+< x-oneagent-js-injection: true
+< x-ruxit-js-agent: true
+< --- body (72146 bytes read, truncated) ---
+< 
+< <!DOCTYPE html>
+< <html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+<   <head>
+<     <meta name="color-scheme" content="only light">
+<     <meta charset="utf-8" />
+< <script type="text/javascript" src="/ruxitagentjs_ICA7NVfqrux_10343260715123811.js" data-dtconfig="rid=RID_2418|rpid=1379325793|domain=ncdhhs.gov|reportUrl=/rb_2b865558-3b24-4bc5-b01d-527355603d05|app=6545dc4582989e34|owasp=1|featureHash=ICA7NVfqrux|xb=^bs/g^bs/collect|rdnt=1|uxrgce=1|cuc=s7oxrte2|mel=100000|expw=1|dpvc=1|lastModification=1786673298044|postfix=s7oxrte2|tp=500,50,0|srbbv=2|agentUri=/ruxitagentjs_ICA7NVfqrux_10343260715123811.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-64719732-1"></script>
+< <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "UA-64719732-1", {"groups":"default","anonymize_ip":true,"page_placeholder":"PLACEHOLDER_page_path","allow_ad_personalization_signals":false});(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': 
+< new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], 
+< j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 
+< 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); 
+< })(window,document,'script','dataLayer','GTM-WXRGFKL');</script>
+< <meta name="description" content="The North Carolina Department of Health and Human Services (DHHS) is responsible for ensuring the health, safety and well-being of all North Carolinians." />
+< <link rel="canonical" href="https://www.ncdhhs.gov" />
+< <link rel="shortlink" href="https://www.ncdhhs.gov" />
+< <meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+< <meta name="MobileOptimized" content="width" />
+< <meta name="HandheldFriendly" content="true" />
+< <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+< <meta http-equiv="x-ua-compatible" content="ie=edge" />
+< <link rel="icon" href="https://files.nc.gov/dhhs/FAVICON.png?VersionId=zVneQ14tIdUFZNilAuN9wuTKiD_7QyUl" type="image/png" />
+< <script>window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};</script>
+< 
+<     <title>NC DHHS: North Carolina Department of Health and Human Services</title>
+<     <link rel="stylesheet" media="all" href="/sites/default/files/css/css_nfFgXQYvDq8nZYV-dkOkmhmuEq-UNyasHkw1eNiPSA4.css?delta=0&amp;language=en&amp;theme=nc_barrio&amp;include=eJyFkVtywyAMRTdEzJI8AhSbWkZUEm28-zpP5zHjfsHcc4aLAFIyhrJ4uG26o3AxF5hNTaD2AUQy-4E4AB3UFspl-OSFE7rIgj7yXLlgMe3ercNhxtI-tBIfHMRyJOwjSNrzosG_znfLcerX6066pylGy1z2FMOTXXmSVoE6-ILTS5AyEA_uXFabVFb0lIOALG7GFfpjJkPpItRL2eNwv71RTM95wiM0st5GnPEpf_uIDfxk_NV-G2BFQCjmb-s5CMRxUn_fuAoCw9o96n2QLelaqS1Q1hGT00UNZx9A0V2KrnXdzKkR_gHys-Ko" />
+< <link rel="stylesheet" media="all" href="/sites/default/files/css/css_TKLanJnoZ4oewMrbwnf32qaaUedzJhqTdU7rGPTuLPI.css?delta=1&amp;language=en&amp;theme=nc_barrio&amp;include=eJyFkVtywyAMRTdEzJI8AhSbWkZUEm28-zpP5zHjfsHcc4aLAFIyhrJ4uG26o3AxF5hNTaD2AUQy-4E4AB3UFspl-OSFE7rIgj7yXLlgMe3ercNhxtI-tBIfHMRyJOwjSNrzosG_znfLcerX6066pylGy1z2FMOTXXmSVoE6-ILTS5AyEA_uXFabVFb0lIOALG7GFfpjJkPpItRL2eNwv71RTM95wiM0st5GnPEpf_uIDfxk_NV-G2BFQCjmb-s5CMRxUn_fuAoCw9o96n2QLelaqS1Q1hGT00UNZx9A0V2KrnXdzKkR_gHys-Ko" />
+< <link rel="stylesheet" media="all" href="//cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" />
+< <link rel="stylesheet" media="print" href="/sites/default/files/css/css_sDRE1Z01INE4qdZYHag7MH_H9dvBmhnVrMSNwop6k1U.css?delta=3&amp;language=en&amp;theme=nc_barrio&amp;include=eJyFkVtywyAMRTdEzJI8AhSbWkZUEm28-zpP5zHjfsHcc4aLAFIyhrJ4uG26o3AxF5hNTaD2AUQy-4E4AB3UFspl-OSFE7rIgj7yXLlgMe3ercNhxtI-tBIfHMRyJOwjSNrzosG_znfLcerX6066pylGy1z2FMOTXXmSVoE6-ILTS5AyEA_uXFabVFb0lIOALG7GFfpjJkPpItRL2eNwv71RTM95wiM0st5GnPEpf_uIDfxk_NV-G2BFQCjmb-s5CMRxUn_fuAoCw9o96n2QLelaqS1Q1hGT00UNZx9A0V2KrnXdzKkR_gHys-Ko" />
+< <link rel="stylesheet" media="all" href="/sites/default/files/css/css_tZ4FlWka1VgZ-H1mKLugJcqfXvdeeERW6Xk7VnYOnB4.css?delta=4&amp;language=en&amp;theme=nc_barrio&amp;include=eJyFkVtywyAMRTdEzJI8AhSbWkZUEm28-zpP5zHjfsHcc4aLAFIyhrJ4uG26o3AxF5hNTaD2AUQy-4E4AB3UFspl-OSFE7rIgj7yXLlgMe3ercNhxtI-tBIfHMRyJOwjSNrzosG_znfLcerX6066pylGy1z2FMOTXXmSVoE6-ILTS5AyEA_uXFabVFb0lIOALG7GFfpjJkPpItRL2eNwv71RTM95wiM0st5GnPEpf_uIDfxk_NV-G2BFQCjmb-s5CMRxUn_fuAoCw9o96n2QLelaqS1Q1hGT00UNZx9A0V2KrnXdzKkR_gHys-Ko" />
+< <link rel="stylesheet" media="print" href="/sites/default/files/css/css_76u4X6BUmrQWrgy235_kuO_yNKuSuYG9PIztZzvjH3E.css?delta=5&amp;language=en&amp;theme=nc_barrio&amp;include=eJyFkVtywyAMRTdEzJI8AhSbWkZUEm28-zpP5zHjfsHcc4aLAFIyhrJ4uG26o3AxF5hNTaD2AUQy-4E4AB3UFspl-OSFE7rIgj7yXLlgMe3ercNhxtI-tBIfHMRyJOwjSNrzosG_znfLcerX6066pylGy1z2FMOTXXmSVoE6-ILTS5AyEA_uXFabVFb0lIOALG7GFfpjJkPpItRL2eNwv71RTM95wiM0st5GnPEpf_uIDfxk_NV-G2BFQCjmb-s5CMRxUn_fuAoCw9o96n2QLelaqS1Q1hGT00UNZx9A0V2KrnXdzKkR_gHys-Ko" />
+< <link rel="stylesheet" media="all" href="/sites/default/files/css/css_mCDneRJM_cogNKhfoh-D2nXOwsXCOzykfIMu8rTbKFA.css?delta=6&amp;language=en&amp;theme=nc_barrio&amp;include=eJyFkVtywyAMRTdEzJI8AhSbWkZUEm28-zpP5zHjfsHcc4aLAFIyhrJ4uG26o3AxF5hNTaD2AUQy-4E4AB3UFspl-OSFE7rIgj7yXLlgMe3ercNhxtI-tBIfHMRyJOwjSNrzosG_znfLcerX6066pylGy1z2FMOTXXmSVoE6-ILTS5AyEA_uXFabVFb0lIOALG7GFfpjJkPpItRL2eNwv71RTM95wiM0st5GnPEpf_uIDfxk_NV-G2BFQCjmb-s5CMRxUn_fuAoCw9o96n2QLelaqS1Q1hGT00UNZx9A0V2KrnXdzKkR_gHys-Ko" />
+< 
+<     
+<   </head>
+<   <body class="layout-no-sidebars has-featured-top page-node-903 path-frontpage node--type-landing-page">
+<         
+<       <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+<       <div id="page-wrapper">
+<   <div id="page">
+<     <header id="header" class="header" role="banner"
+<             aria-label="Site header">
+<       <a href="#main-wrapper" class="visually-hidden focusable skip-link">
+<         Skip to main content
+<       </a>
+<                     <div class="highlighted container-fluid g-0">
+<           <div class="container-fluid section clearfix" role="alert">
+<               <div id="block-ncalertsblock-2" class="block block-ncalert block-nc-alert-block">
+<   
+<     
+<       <div class="content">
+<       
+<     </div>
+<   </div>
+< <div id="block-nc-barrio-styling" class="block-content-basic block block-block-content block-block-contentcfcc4714-a205-4a53-bc54-921b3c1ad6bf">
+<   
+<     
+<       <div class="content">
+<       
+<             <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field__item"><style>
+< article .paragraph--type--text:has(tableau-viz){
+< max-width: 100% !important;;
+< width: 100% !important;
+< margin: 0 auto;
+< }
+< article .paragraphs-item-one-column.px-5:has(tableau-viz) {
+< padding-left: 0 !important;
+< padding-right: 0 !important;
+< }
+< .paragraph--type--section.full-bleed .paragraph--type--text {
+<       max-width: 770px;
+< }
+< /* Temporary style to make CTA cards consistent heights */
+< .paragraph--type--cta-card {width:100%;}
+< .paragraph--type--cta-card a:has(.meta) {align-self: stretch;}
+< </style></div>
+<       
+<     </div>
+<   </div>
+< 
+< 
+<           </div>
+<         </div>
+<                               <div class="navbar" id="navbar-top">
+<                           
+<               
+<               <div class="official-website">
+<                 <span class="d-none d-sm-inline">An official website of the State of North Carolina</span>
+<                 <span
+<                   class="d-sm-none d-inline">An official website of NC</span>
+<                 <button
+<                   type="button"
+<                   data-bs-toggle="collapse"
+<                   data-bs-target="#officialNC"
+<                   aria-label="How you know"
+<                   aria-expanded="false"
+<                   aria-controls="collapseExample"
+<                   class="how-you-know-btn">
+<                   <span class="d-none d-sm-inline">How you know <i
+<                       class="bi-chevron-down"></i></span>
+<                   <span class="d-sm-none d-inline"><i
+<                       class="bi bi-info-circle"></i></span>
+<                 </button>
+<               </div>
+<               <div class="collapse official-website" id="officialNC">
+<                 <div class="privacy-security">
+<                   <di
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 3056 ms

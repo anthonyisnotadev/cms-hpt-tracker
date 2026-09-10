@@ -1,0 +1,63 @@
+# curl-style evidence for https://pcmhosp.com/cms-hpt.txt
+# fetched 2026-09-07T01:34:42.382Z with the tracker's BROWSER_HEADERS (production client)
+# record: 261305 | PUTNAM COUNTY MEMORIAL HOSPITAL | MO | finding: not-assessed-site-unreachable
+
+* DNS pcmhosp.com: 185.230.63.171, 185.230.63.186, 185.230.63.107
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://pcmhosp.com/cms-hpt.txt
+< HTTP 301
+< age: 0
+< cache-control: no-cache
+< content-length: 0
+< date: Mon, 07 Sep 2026 01:34:43 GMT
+< location: https://715aec82-78c7-4cfd-9819-25bb620d49bb.usrfiles.com/ugd/715aec_bcdff3c73b64415b8485139001e17eb7.csv
+< server: Pepyaka
+< server-timing: cache;desc=miss, varnish;desc=miss, dc;desc=virginia-phy
+< x-cache-status: MISS
+< x-content-type-options: nosniff
+< x-seen-by: VtqAe8Wu9wvSsl49B/X4+ewfbs+7qUVAqsIx00yI78k=,Ua1iSBCTq7qSXjmRCGE1N/2xUclivgVSfl9VV9NywajaTzpjkOFr5hebeb+xyZMTqdB/muy8W4xVdZyKL0M+VGrMZjuPVrPjDsgbH6txUsixuzQG/4S2vfTCfdglKjzz,2d58ifebGbosy5xc+FRalvrxWjOos8rGfC7OHWAVPdzbGzuZzhWHOdZwVfwjwt2sqdB/muy8W4xVdZyKL0M+VBrcN7zLZ+qdnVayVDeBTJ0=,2UNV7KOq4oGjA5+PKsX47Efm2FDoAuZ3d2dZFPgraZgFVd1lR1L8/yRoc88kq/ej,2UNV7KOq4oGjA5+PKsX47KEA/q0qujTnFdLk61L10h4FVd1lR1L8/yRoc88kq/ej,/B3VgDtICCNDWQOEWfZmMnTQ21uuObazPsRuUO2lI10=,8+sd0p/fB+2vxlJZapYbK+z3APRsOf4/LF5wZbZPoWgj6r0AZAMucqm4C7kwBEyaZUpSwMvr7QNJkhVIfm+KdQ==
+< x-wix-cache-control: public, max-age=86400
+< x-wix-request-id: 1788744883.8501257204211424
+* following Location: https://715aec82-78c7-4cfd-9819-25bb620d49bb.usrfiles.com/ugd/715aec_bcdff3c73b64415b8485139001e17eb7.csv
+
+* final response: https://715aec82-78c7-4cfd-9819-25bb620d49bb.usrfiles.com/ugd/715aec_bcdff3c73b64415b8485139001e17eb7.csv
+< HTTP 200
+< accept-ranges: bytes
+< access-control-allow-origin: *
+< access-control-expose-headers: Content-Length
+< age: 9027401
+< alt-svc: h3=":443"; ma=86400
+< cache-control: public, max-age=15552000, immutable
+< content-length: 4932593
+< content-type: text/csv
+< date: Mon, 25 May 2026 13:58:03 GMT
+< etag: "293af6ff8aab3618a555540f018bcff8"
+< expires: Mon, 25 May 2026 14:58:03 GMT
+< last-modified: Thu, 09 Apr 2026 19:22:20 GMT
+< server: openresty/1.27.1.2
+< timing-allow-origin: *
+< via: 1.1 google, 1.1 470d4277236d0557f3e42c6bfe9dac78.cloudfront.net (CloudFront)
+< x-amz-cf-id: mRkAodkejGHP2A6bZcKeUSSjEQyUrAOfsDFbiTK-9rBEeyULgj8HGg==
+< x-amz-cf-pop: IAD89-P1
+< x-cache: Hit from cloudfront
+< x-robots-tag: noindex, nofollow
+< x-seen-by: gcp.us-central-1.media-router-7f5c99766c-dhsch
+< --- body (65536 bytes read, truncated) ---
+< hospital_name,last_updated_on,version,location_name,hospital_address,type_2_npi,license_number|MO,attester_name,"To the best of its knowledge and belief, this hospital has included all applicable standard charge information in accordance with the requirements of 45 CFR 180.50, and the information encoded is true, accurate, and complete as of the date in the file. This hospital has included all payer-specific negotiated charges in dollars that can be expressed as a dollar amount. For payer-specific negotiated charges that cannot be expressed as a dollar amount in the machine-readable file or not knowable in advance, the hospital attests that the payer-specific negotiated charge is based on a contractual algorithm, percentage or formula that precludes the provision of a dollar amount and has provided all necessary information available to the hospital for the public to be able to derive the dollar amount, including, but not limited to, the specific fee schedule or components referenced in such percentage, algorithm or formula.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+< Putnam County Memorial Hospital,4/9/2026,3.0.0,Putnam County Memorial Hospital,"1926 OAK STREET, Unionville, MO, 63565",1609870195|1861610255,222-61,Arlene Pickens,TRUE,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+< description,code|1,code|1|type,code|2,code|2|type,modifiers,drug_unit_of_measurement,drug_type_of_measurement,setting,standard_charge|gross,standard_charge|discounted_cash,standard_charge|Aetna|Default|methodology,standard_charge|Aetna|Default|negotiated_dollar,standard_charge|Aetna|Default|negotiated_percentage,standard_charge|Aetna|Default|negotiated_algorithm,median_amount|Aetna|Default,10th_percentile|Aetna|Default,90th_percentile|Aetna|Default,count|Aetna|Default,additional_payer_notes|Aetna|Default,standard_charge|Aetna|Medicare Advantage|methodology,standard_charge|Aetna|Medicare Advantage|negotiated_dollar,standard_charge|Aetna|Medicare Advantage|negotiated_percentage,standard_charge|Aetna|Medicare Advantage|negotiated_algorithm,median_amount|Aetna|Medicare Advantage,10th_percentile|Aetna|Medicare Advantage,90th_percentile|Aetna|Medicare Advantage,count|Aetna|Medicare Advantage,additional_payer_notes|Aetna|Medicare Advantage,standard_charge|Ambetter|Default|methodology,standard_charge|Ambetter|Default|negotiated_dollar,standard_charge|Ambetter|Default|negotiated_percentage,standard_charge|Ambetter|Default|negotiated_algorithm,median_amount|Ambetter|Default,10th_percentile|Ambetter|Default,90th_percentile|Ambetter|Default,count|Ambetter|Default,additional_payer_notes|Ambetter|Default,standard_charge|Blue Cross Blue Shield of IA Wellmark|Default|methodology,standard_charge|Blue Cross Blue Shield of IA Wellmark|Default|negotiated_dollar,standard_charge|Blue Cross Blue Shield of IA Wellmark|Default|negotiated_percentage,standard_charge|Blue Cross Blue Shield of IA Wellmark|Default|negotiated_algorithm,median_amount|Blue Cross Blue Shield of IA Wellmark|Default,10th_percentile|Blue Cross Blue Shield of IA Wellmark|Default,90th_percentile|Blue Cross Blue Shield of IA Wellmark|Default,count|Blue Cross Blue Shield of IA Wellmark|Default,additional_payer_notes|Blue Cross Blue Shield of IA Wellmark|Default,standard_charge|Blue Cross Blue Shield of MO Anthem|Default|methodology,standard_charge|Blue Cross Blue Shield of MO Anthem|Default|negotiated_dollar,standard_charge|Blue Cross Blue Shield of MO Anthem|Default|negotiated_percentage,standard_charge|Blue Cross Blue Shield of MO Anthem|Default|negotiated_algorithm,median_amount|Blue Cross Blue Shield of MO Anthem|Default,10th_percentile|Blue Cross Blue Shield of MO Anthem|Default,90th_percentile|Blue Cross Blue Shield of MO Anthem|Default,count|Blue Cross Blue Shield of MO Anthem|Default,additional_payer_notes|Blue Cross Blue Shield of MO Anthem|Default,standard_charge|Blue Cross Blue Shield of MO Anthem|Medicare Advantage|methodology,standard_charge|Blue Cross Blue Shield of MO Anthem|Medicare Advantage|negotiated_dollar,standard_charge|Blue Cross Blue Shield of MO Anthem|Medicare Advantage|negotiated_percentage,standard_charge|Blue Cross Blue Shield of MO Anthem|Medicare Advantage|negotiated_algorithm,median_amount|Blue Cross Blue Shield of MO Anthem|Medicare Advantage,10th_percentile|Blue Cross Blue Shield of MO Anthem|Medicare Advantage,90th_percentile|Blue Cross Blue Shield of MO Anthem|Medicare Advantage,count|Blue Cross Blue Shield of MO Anthem|Medicare Advantage,additional_payer_notes|Blue Cross Blue Shield of MO Anthem|Medicare Advantage,standard_charge|Cigna|Default|methodology,standard_charge|Cigna|Default|negotiated_dollar,standard_charge|Cigna|Default|negotiated_percentage,standard_charge|Cigna|Default|negotiated_algorithm,median_amount|Cigna|Default,10th_percentile|Cigna|Default,90th_percentile|Cigna|Default,count|Cigna|Default,additional_payer_notes|Cigna|Default,standard_charge|Humana|Default|methodology,standard_charge|Humana|Default|negotiated_dollar,standard_charge|Humana|Default|negotiated_percentage,standard_charge|Humana|Default|negotiated_algorithm,median_amount|Humana|Default,10th_percentile|Humana|Default,90th_percentile|Humana|Default,count|Humana|Default,additional_payer_notes|Humana|Default,standard_charge|Humana|Medicare Advantage|methodology,standard_charge|Humana|Medicare Advantage|negotiated_dollar,standard_charge|Humana|Medicare Advantage|negotiated_percentage,standard_charge|Humana|Medicare Advantage|negotiated_algorithm,median_amount|Humana|Medicare Advantage,10th_percentile|Humana|Medicare Advantage,90th_percentile|Humana|Medicare Advantage,count|Humana|Medicare Advantage,additional_payer_notes|Humana|Medicare Advantage,standard_charge|UHC Group Medicare Advantage|Default|methodology,standard_charge|UHC Group Medicare Advantage|Default|negotiated_dollar,standard_charge|UHC Group Medicare Advantage|Default|negotiated_percentage,standard_charge|UHC Group Medicare Advantage|Default|negotiated_algorithm,median_amount|UHC Group Medicare Advantage|Default,10th_percentile|UHC Group Medicare Advantage|Default,90th_percentile|UHC Group Medicare Advantage|Default,count|UHC Group Medicare Advantage|Default,additional_payer_notes|UHC Group Medicare Advantage|Default,standard_charge|UHC Medicare Solution|Default|methodology,standard_charge|UHC Medicare Solution|Default|negotiated_dollar,standard_charge|UHC Medicare Solution|Default|negotiated_percentage,standard_charge|UHC Medicare Solution|Default|negotiated_algorithm,median_amount|UHC Medicare Solution|Default,10th_percentile|UHC Medicare Solution|Default,90th_percentile|UHC Medicare Solution|Default,count|UHC Medicare Solution|Default,additional_payer_notes|UHC Medicare Solution|Default,standard_charge|United Healthcare|Default|methodology,standard_charge|United Healthcare|Default|negotiated_dollar,standard_charge|United Healthcare|Default|negotiated_percentage,standard_charge|United Healthcare|Default|negotiated_algorithm,median_amount|United Healthcare|Default,10th_percentile|United Healthcare|Default,90th_percentile|United Healthcare|Default,count|United Healthcare|Default,additional_payer_notes|United Healthcare|Default,standard_charge|min,standard_charge|max,additional_generic_notes
+< ACUTE ROOM AND BOARD,120,RC,,,,,,inpatient,927,927,,,,,,,,,,Per Diem,2796,,,,,,,,Per Diem,2796,,,,,,,,Percent of Total Billed Charges,,76,,,,,0,The item or service has not been billed on a claim for this payer and plan type in the past 12 months.,Per Diem,1327,,,,,,,,Per Diem,2796,,,,,,,,Percent of Total Billed Charges,,75,,,,,0,The item or service has not been billed on a claim for this payer and plan type in the past 12 months.,Percent of Total Billed Charges,,90,,,,,0,The item or service has not been billed on a claim for this payer and plan type in the past 12 months.,Per Diem,2796,,,,,,,,Per Diem,2796,,,,,,,,Per Diem,2796,,,,,,,,Percent of Total Billed Charges,,65,,,,,0,The item or service has not been billed on a claim for this payer and plan type in the past 12 months.,1327,2796,
+< SWINGBED ROOM AND BOARD,120,RC,
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 397 ms

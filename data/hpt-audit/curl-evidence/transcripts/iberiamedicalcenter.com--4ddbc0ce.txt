@@ -1,0 +1,61 @@
+# curl-style evidence for https://iberiamedicalcenter.com/cms-hpt.txt
+# fetched 2026-09-07T01:33:16.407Z with the tracker's BROWSER_HEADERS (production client)
+# record: 190054 | IBERIA MEDICAL CENTER | LA | finding: pointer-lists-no-mrf-url
+
+* DNS iberiamedicalcenter.com: 185.230.63.107
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://iberiamedicalcenter.com/cms-hpt.txt
+< HTTP 301
+< age: 0
+< cache-control: no-cache
+< content-length: 0
+< date: Mon, 07 Sep 2026 01:33:18 GMT
+< location: https://3d86954a-78cb-4018-bdb5-88df72e688f6.usrfiles.com/ugd/3d8695_286b3eb5cf354998877f6aa530450875.txt
+< server: Pepyaka
+< server-timing: cache;desc=miss, varnish;desc=miss, dc;desc=virginia-pub
+< x-cache-status: MISS
+< x-content-type-options: nosniff
+< x-seen-by: pmHZlB45NPy7b1VBAukQrewfbs+7qUVAqsIx00yI78k=,Ua1iSBCTq7qSXjmRCGE1NzYnUhkXH7wQwteriGt2SynfmTJKykK+qqLFldZHbnyoqdB/muy8W4xVdZyKL0M+VGrMZjuPVrPjDsgbH6txUsj5YyUZTq95Q9V7iIhsno6d,2d58ifebGbosy5xc+FRalhwEkhmLZbTSsSJwyjmsWzBhkZ9rlTfdaoPDkdLmOU8OaagcxyJ5eiXfO6w3grCBcw==,2UNV7KOq4oGjA5+PKsX47JJGpD83N13PuSVZuVjkrLhDnmtJwp6CMSA6pev0y1rn,/B3VgDtICCNDWQOEWfZmMunUT/1Tng74qWvPjcqZmP0=,8+sd0p/fB+2vxlJZapYbK7JTWVF93Jz//q1tX4vdSGYj6r0AZAMucqm4C7kwBEyaOYHPj0ThnpUi4Wvl+Krfgw==
+< x-wix-cache-control: public, max-age=86400
+< x-wix-request-id: 1788744798.0111095383911424
+* following Location: https://3d86954a-78cb-4018-bdb5-88df72e688f6.usrfiles.com/ugd/3d8695_286b3eb5cf354998877f6aa530450875.txt
+
+* final response: https://3d86954a-78cb-4018-bdb5-88df72e688f6.usrfiles.com/ugd/3d8695_286b3eb5cf354998877f6aa530450875.txt
+< HTTP 200
+< accept-ranges: bytes
+< access-control-allow-origin: *
+< access-control-expose-headers: Content-Length
+< age: 12199845
+< alt-svc: h3=":443"; ma=86400
+< cache-control: public, max-age=15552000, immutable
+< content-length: 316
+< content-type: text/plain
+< date: Sat, 18 Apr 2026 20:42:33 GMT
+< etag: "14d07958058c1ded828d8ee24f82ceea"
+< expires: Sat, 18 Apr 2026 21:42:33 GMT
+< last-modified: Wed, 15 Apr 2026 18:21:20 GMT
+< server: openresty/1.27.1.2
+< timing-allow-origin: *
+< via: 1.1 google, 1.1 920629f47fa586ce02a1a1af8b626578.cloudfront.net (CloudFront)
+< x-amz-cf-id: lt1ElC9EpAkodIm7kal50CATkaMeo_c5E4cNrbZP2_Hx5h4v7lkPag==
+< x-amz-cf-pop: IAD89-P1
+< x-cache: Hit from cloudfront
+< x-robots-tag: noindex, nofollow
+< x-seen-by: gcp.us-central-1.media-router-7f5c99766c-dlbd7
+< --- body (316 bytes read) ---
+< location-name: Iberia General Hospital & Medical Center
+< source-page-url: https://www.iberiamedicalcenter.com/_files/ugd/3d8695_d3d3f8794b6848be8b20bd93b0dea4c3.csv?dn=726014963_iberia-general-hospital-%26-medical-center_standardcharges.csv
+< contact-name: hpt-obf:v1:htESMDU7tus7tlrQ.js13a8vf4O566RbjRArjCg.3MBzS-SBOCUOKlTHVb0
+< contact-email: hpt-obf:v1:Bp0hk9j-pbn8LVwJ.E16L9REdBKDNv83i3z1TEQ.jAC0gz2kUZv1rRIb-rnD3o09JK8iVGoXQrBfWUkmH4c
+
+* total time: 283 ms

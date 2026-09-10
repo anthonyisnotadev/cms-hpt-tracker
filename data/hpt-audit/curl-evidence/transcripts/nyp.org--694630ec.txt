@@ -1,0 +1,158 @@
+# curl-style evidence for https://nyp.org/
+# fetched 2026-09-07T01:35:34.564Z with the tracker's BROWSER_HEADERS (production client)
+# record: 330101 | NEW YORK-PRESBYTERIAN HOSPITAL | NY | finding: not-assessed-not-named-in-file
+
+* DNS nyp.org: 143.104.236.115, 156.111.236.115
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://nyp.org/
+< HTTP 301
+< connection: Keep-Alive
+< content-length: 0
+< location: https://www.nyp.org/
+< server: BigIP
+* following Location: https://www.nyp.org/
+
+* final response: https://www.nyp.org/
+< HTTP 200
+< age: 811245
+< cache-control: max-age=2764800, public
+< cf-cache-status: HIT
+< cf-ray: a371fa4bbca320d0-IAD
+< content-encoding: br
+< content-language: en
+< content-security-policy: frame-ancestors 'self' *.nyp.org *.prod.acquia-sites.com pc287417trunk-doctors-nyp-org.preview.pagescdn.com
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:35:36 GMT
+< expires: Sun, 19 Nov 1978 05:00:00 GMT
+< last-modified: Fri, 28 Aug 2026 16:14:51 GMT
+< referrer-policy: no-referrer-when-downgrade
+< server: cloudflare
+< server-timing: cfCacheStatus;desc="HIT", cfEdge;dur=15,cfOrigin;dur=0
+< strict-transport-security: max-age=31536000
+< vary: Cookie,X-Consumer-ID,Accept-Encoding,Origin
+< via: varnish
+< x-ah-environment: prod
+< x-cache: MISS
+< x-consumer-id: fe0fe97f-d1b0-46b8-9d8f-bc2997693b7a
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-request-id: v-98df5b18-a2fb-11f1-8d4e-8f8ad14baea0
+< x-xss-protection: 1; mode=block
+< --- body (65536 bytes read, truncated) ---
+< <!DOCTYPE html>
+< <html  lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+< <head>
+<     <meta charset="utf-8" />
+< <meta name="description" content="NewYork-Presbyterian, a leading health system dedicated to groundbreaking research and innovative care, serves patients in the New York City area and beyond." />
+< <meta name="abstract" content="NewYork-Presbyterian, a leading health system dedicated to groundbreaking research and innovative care, serves patients in the New York City area and beyond." />
+< <meta name="geo.placename" content="New York" />
+< <link rel="shortlink" href="https://www.nyp.org/" />
+< <meta name="robots" content="index" />
+< <link rel="canonical" href="https://www.nyp.org/" />
+< <link rel="image_src" href="https://cdn2.webdamdb.com/1280_qQogxDEk12l4XPjh.png?20220713" />
+< <meta property="og:site_name" content="NewYork-Presbyterian" />
+< <meta property="og:type" content="website" />
+< <meta property="og:url" content="https://www.nyp.org/home" />
+< <meta property="og:title" content="NewYork-Presbyterian | New York Hospital &amp; Health System" />
+< <meta property="og:description" content="NewYork-Presbyterian, a leading health system dedicated to groundbreaking research and innovative care, serves patients in the New York City area and beyond." />
+< <meta property="og:image" content="https://cdn2.webdamdb.com/1280_qQogxDEk12l4XPjh.png?20220713" />
+< <meta property="og:image:url" content="https://cdn2.webdamdb.com/1280_qQogxDEk12l4XPjh.png?20220713" />
+< <meta property="og:image:secure_url" content="https://cdn2.webdamdb.com/1280_qQogxDEk12l4XPjh.png?20220713" />
+< <meta property="og:image:type" content="image/png" />
+< <meta property="og:image:width" content="1200" />
+< <meta property="og:image:height" content="630" />
+< <meta property="og:image:alt" content="NewYork-Presbyterian logo" />
+< <meta name="twitter:card" content="summary" />
+< <meta name="twitter:site" content="@nyphospital" />
+< <meta name="twitter:title" content="NewYork-Presbyterian | New York Hospital &amp; Health System" />
+< <meta name="twitter:description" content="NewYork-Presbyterian, a leading health system dedicated to groundbreaking research and innovative care, serves patients in the New York City area and beyond." />
+< <meta name="twitter:creator" content="@nyphospital" />
+< <meta name="twitter:image:alt" content="NewYork-Presbyterian logo" />
+< <meta name="twitter:image" content="https://cdn2.webdamdb.com/1280_qQogxDEk12l4XPjh.png?20220713" />
+< <meta name="MobileOptimized" content="width" />
+< <meta name="HandheldFriendly" content="true" />
+< <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+< <script type="application/json" id="taxonomy-data">{
+<     "Global Taxonomy - Audience Type": [
+<         {
+<             "id": "20731",
+<             "name": "N/A",
+<             "type": "taxonomy_term"
+<         }
+<     ],
+<     "Global Taxonomy - Content Type": [
+<         {
+<             "id": "20681",
+<             "name": "Home Page",
+<             "type": "taxonomy_term"
+<         }
+<     ],
+<     "Global Taxonomy - Facility": [
+<         {
+<             "id": "20491",
+<             "name": "N/A",
+<             "type": "taxonomy_term"
+<         }
+<     ],
+<     "Global Taxonomy - FaD CTA": [
+<         {
+<             "id": "15751",
+<             "name": "N/A",
+<             "type": "taxonomy_term"
+<         }
+<     ],
+<     "Global Taxonomy - Media Type": [
+<         {
+<             "id": "20811",
+<             "name": "N/A",
+<             "type": "taxonomy_term"
+<         }
+<     ],
+<     "Global Taxonomy - Primary SL": [
+<         {
+<             "id": "15046",
+<             "name": "N/A",
+<             "type": "taxonomy_term"
+<         }
+<     ],
+<     "Global Taxonomy - Region": [
+<         {
+<             "id": "14851",
+<             "name": "N/A",
+<             "type": "taxonomy_term"
+<         }
+<     ],
+<     "Global Taxonomy - Secondary SL": [
+<         {
+<             "id": "15046",
+<             "name": "N/A",
+<             "type": "taxonomy_term"
+<         }
+<     ]
+< }</script>
+< <script type="application/ld+json">{"@context":"https://schema.org","@id":"https://www.nyp.org/#organization","@type":"MedicalOrganization","url":"https://www.nyp.org/","name":"NewYork-Presbyterian","alternateName":"NYP","brand":"NewYork-Presbyterian","description":"NewYork-Presbyterian is one of the nation’s most comprehensive academic health care delivery systems, dedicated to providing the highest quality, most compassionate care to patients in the New York metropolitan area and throughout the globe","logo":"https://www.nyp.org/sites/default/files/logo/nyp-logo-horz.svg","numberOfEmployees":"20,000","foundingDate":"1771","sameAs":["https://www.facebook.com/newyorkpresbyterian","https://twitter.com/nyphospital","https://www.instagram.com/nyphospital/","https://www.youtube.com/user/newyorkpresbyterian","https://www.linkedin.com/company/new-york-presbyterian-hospital","https://www.pinterest.com/nyphospital/"],"contactPoint":[{"@type":"ContactPoint","telephone":"hpt-obf:v1:YptoTa2JVsEdMo1b.lNcdByyKemyUDcSTzEs54g.AXg-gIrf5LuUubjEdS3M","contactType":"Customer Service"}],"address":[{"@type":"PostalAddress","addressCountry":"USA","addressLocality":"New York","addressRegion":"NY"}]}</script>
+< <link rel="icon" href="/sites/default/files/nyp-favicon-32x32.png" type="image/png" />
+< 
+<     <title>NewYork-Presbyterian | New York Hospital &amp; Health System</title>
+<     <link rel="stylesheet" media="all" href="/sites/default/files/css/css_0kgkLfyX73my1MNS-bPuZxqXkeelZylIznL0V7OO0oY.css?delta=0&amp;language=en&amp;theme=nyp_theme&amp;include=eJxtjEEOgzAMBD8USDlUfU7kJCtwm8QVNlT5fRGHXspltbMjLanCArcnksnqk-qYXsh8wN3Rv2x5C9P0uF26_qZdOCPQapwKouTukixQluaPMtiCit8UTvRzkUhlUOuF2-yOm2uhXQ3VR1K4nfFRf-ZYJW8FX_3FTmc" />
+< <link rel="stylesheet" media="all" href="/sites/default/files/css/css_j9oau5f0HGZlAIiLGxVZ3hKqpyBb9GvPvakc0CEg1_4.css?delta=1&amp;language=en&amp;theme=nyp_theme&amp;include=eJxtjEEOgzAMBD8USDlUfU7kJCtwm8QVNlT5fRGHXspltbMjLanCArcnksnqk-qYXsh8wN3Rv2x5C9P0uF26_qZdOCPQapwKouTukixQluaPMtiCit8UTvRzkUhlUOuF2-yOm2uhXQ3VR1K4nfFRf-ZYJW8FX_3FTmc" />
+< <link rel="stylesheet" media="all" href="/sites/default/files/css/css_SL6XfbwEk-GgsUP4vFMXtH10yPZgzWJSWO4EayAhw8M.css?delta=2&amp;language=en&amp;theme=nyp_theme&amp;include=eJxtjEEOgzAMBD8USDlUfU7kJCtwm8QVNlT5fRGHXspltbMjLanCArcnksnqk-qYXsh8wN3Rv2x5C9P0uF26_qZdOCPQapwKouTukixQluaPMtiCit8UTvRzkUhlUOuF2-yOm2uhXQ3VR1K4nfFRf-ZYJW8FX_3FTmc" />
+< 
+<     <script src="/sites/default/files/js/js_eiPgYlKgzAknrLkZCk4lgfBFUHtPrXYXoAUX75k3Yo8.js?scope=header&amp;delta=0&amp;language=en&amp;theme=nyp_theme&amp;include=eJyFkVFywzAIRC8UJ9foT8_AYJlYxFjSAE7i2xc3nWbaZtwvafSWhUVoRg5cLpS86uliR0yJzLhnYV-hV8IJznyHTCieYUZ3UgMUAa1CcVMKgysKDwf8Y_erzGluVVFZVlAaWEMIxmNZGiRH8ApJ6jJAw5Fe2LW8GifGEtVnUkUB28atBTJa_ta-KuUbT9C0vmBKc71StA70D4ZIotwvTodUM22tTyQ0U_HPdIJOdhx0aShdvC57Mp63mDsC4TI9-Si1j8TC_bbCwEHe0VN-Ix6z246yYexK8A6W4tvCdtwR37gM9fZQHsrawHMM9qXr4p1bNHsCqQk9nDolW-QHMkJNuXscH-nd-Ds"></script>
+< 
+<     <style>.ssa-instance-94fb9af6c41f75ee832adcf6b05ee7b0.coh-ce-cpt_havas_homepage_hero_with_fin-431cb83b {    background-image: url("https://nyp.widen.net/content/drks4ka7vd/web/2024-Homepage-Hero-Desktop-V11.webp?v=d9125dbd-08b6-445b-817c-72951f0ba2d8");  background-size: cover;  background-repeat: no-repeat;  background-attachment: scroll;}.ssa-instance-94fb9af6c41f75ee832adcf6b05ee7b0.coh-ce-cpt_havas_homepage_hero_with_fin-62f66e42 {    background-image: url("https://nyp.widen.net/content/scyvnyllpc/web/2024-Homepage-Hero-tablet-v7.webp?v=2d58d1bb-775b-43ea-b6fc-19a02a8124bd");  background-size: cover;  background-repeat: no-repeat;  background-attachment: scroll;}.ssa-instance-94fb9af6c41f75ee832adcf6b05ee7b0.coh-ce-cpt_havas_homepage_hero_with_fin-40ca829c {    background-image: url("https://nyp.widen.net/content/zraenmmpfk/web/2024-Homepage-Hero-mobile-v7.webp?v=5d0f9ae0-c3ce-4b43-afc0-251872f8e5f0");  background-size: cover;  background-repeat: no-repeat;  background-attachment: scroll;}</style>
+< </head>
+< <body class="path-frontpage page-no
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 448 ms

@@ -1,0 +1,165 @@
+# curl-style evidence for https://northwesthealth.com/
+# fetched 2026-09-07T01:32:35.090Z with the tracker's BROWSER_HEADERS (production client)
+# record: 040022 | NORTHWEST MEDICAL CENTER-SPRINGDALE | AR | finding: not-assessed-site-unreachable
+# record: 040001 | SILOAM SPRINGS REGIONAL HOSPITAL | AR | finding: not-assessed-site-unreachable
+
+* DNS northwesthealth.com: 207.246.240.70
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://northwesthealth.com/
+< HTTP 301
+< content-length: 352
+< content-type: text/html; charset=iso-8859-1
+< date: Mon, 07 Sep 2026 01:32:36 GMT
+< location: https://www.freemanhealthnw.com
+< server: Apache/2.4
+* following Location: https://www.freemanhealthnw.com
+
+* final response: https://www.freemanhealthnw.com/
+< HTTP 200
+< access-control-allow-origin: *
+< age: 405721
+< cache-control: public, max-age=0, must-revalidate
+< content-disposition: inline
+< content-encoding: br
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:32:36 GMT
+< etag: W/"bd6455bb0f7bcc7b6f1e4eb751aa7d59"
+< last-modified: Wed, 02 Sep 2026 08:50:35 GMT
+< server: Vercel
+< strict-transport-security: max-age=63072000
+< x-vercel-cache: HIT
+< x-vercel-id: iad1::9ftzf-1788744756770-c800e51ab68c
+< --- body (65536 bytes read, truncated) ---
+< <!DOCTYPE html><html lang="en"><head><meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+< <link href="/uploads/stylesheets/5FFAD17A339A5FE5D8836D357F2D0CBF6AD773CC.css?v=639076333292321876" id="lnkSiteType" rel="stylesheet" type="text/css"/><title>Freeman Health System | Bentonville | Springdale | Siloam Springs | Willow Creek Women’s | Physicians’ Specialty | Fayetteville | Arkansas</title>
+< <!--Admin > Properties: HeaderHtml-->
+< <meta content="width=device-width, initial-scale=1" name="viewport"/>
+< <meta content="yes" name="apple-mobile-web-app-capable"/>
+< <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+< <!--[if lt IE 10]>
+< <style>
+< .FormElementsList {
+<     background: none repeat scroll 0 0 transparent !important;
+<     height: 38px;
+<     width: 280px !important;
+< }
+< .moz-drop {
+<     background-image: url("/Uploads/Public/Images/Design/Hospital-Site-A/dropdown-menu.png");
+<     background-repeat: no-repeat;
+<  overflow: hidden;
+<     width: 260px;
+< }
+< 
+< </style>
+< <![endif]-->
+< <!--End of Admin > Properties: HeaderHtml-->
+< <!--Design > Styles (Hospital Template): HeaderHtml-->
+< <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+< <link href="/Uploads/FontAwesome/v7-1-0/css/fontawesome.min.css" rel="stylesheet" type="text/css"/>
+< <link href="/Uploads/FontAwesome/v7-1-0/css/brands.min.css" rel="stylesheet" type="text/css"/>
+< <link href="/Uploads/FontAwesome/v7-1-0/css/solid.min.css" rel="stylesheet" type="text/css"/>
+< <link href="/Uploads/FontAwesome/v7-1-0/css/custom-icons.min.css" rel="stylesheet" type="text/css"/>
+< <link href="/Uploads/FontAwesome/v7-1-0/css/v5-font-face.min.css" rel="stylesheet" type="text/css"/>
+< <!--<link href="/Uploads/FontAwesome/css/fontawesome.min.css" rel="stylesheet" type="text/css">
+< <link href="/Uploads/FontAwesome/css/brands.min.css" rel="stylesheet" type="text/css">
+< <link href="/Uploads/FontAwesome/css/solid.min.css" rel="stylesheet" type="text/css">
+< <link href="/Uploads/FontAwesome/css/custom-icons.min.css" rel="stylesheet" type="text/css">
+< <link href="/Uploads/FontAwesome/css/v5-font-face.min.css" rel="stylesheet" type="text/css">-->
+< <meta content="width=device-width, initial-scale=1" name="viewport"/>
+< <meta content="telephone=no" name="format-detection"/>
+< <!--[if lt IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js async></script><![endif]--><!--[if IE 7]><link rel=stylesheet href=/uploads/public/documents/styles/chs_ie7.css><![endif]--><!--[if IE 8]><link rel=stylesheet href=/uploads/public/documents/styles/chs_ie8.css><![endif]-->
+< 
+< <style>
+<     /*
+< .alert-bar {
+< display:block;
+< position:fixed;
+< top:0px;
+< left:0px;
+< z-index:99999;
+< width:100%;
+< text-align:center;
+< background-color: #C24344;
+< color:#FFFFFF !important;
+< text-decoration:none;
+< padding:10px;
+< height:48px;
+< -webkit-box-sizing: border-box;
+< 	-moz-box-sizing: border-box;
+< 	box-sizing: border-box;
+< display: flex !important;
+<     align-items: center !important;
+<     justify-content: center !important;
+< }
+< body {
+< margin-top:48px
+< }
+< .stick-n-scroll {
+< margin-top:48px !important
+< }
+< #mobileNav {
+< top:56px !important
+< }
+< ul.slicknav_nav {
+< top:86px !important
+< }
+< .slicknav_nav > li:last-child {
+<     padding-bottom: 88px;
+< }
+< */
+< 
+< @media screen and (max-width:1023px) {
+<     /*
+< body {
+< margin-top:148px
+< }*/
+< 
+< /*
+< .cpweb_PerimeterMiddle {
+<     margin-top: -20px;
+< }*/
+< .rslides {
+< min-height:500px  !important;
+< }
+< .rslides > li.left > img, .page-content ul.full li.img-row img {
+< height:100% !important;
+<     width: auto !important;
+<     text-align: center;
+< position:absolute;
+< right:-50%;
+< }
+< .rslides > li.right > img, .page-content ul.full li.img-row img {
+< height:100% !important;
+<     width: auto !important;
+<     text-align: center;
+< position:absolute;
+< left:-50%;
+< }
+< .rslides li.dark a {
+<     color: #fff;
+< }
+< 
+< .info-wrap .slide-txt, .rslides li.right .slide-txt, .rslides li.left .slide-txt, .rslides li.light a  {
+< color:#FFFFFF !important;
+< }
+< 
+< .info-wrap {
+< display: flex;
+<   justify-content: center;
+<   align-items: center;
+< 	text-align:center;
+< 	overflow:hidden;
+< position:relative;
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 266 ms

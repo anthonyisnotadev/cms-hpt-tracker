@@ -1,0 +1,41 @@
+# curl-style evidence for https://bolivarmedical.com/
+# fetched 2026-09-07T01:34:42.593Z with the tracker's BROWSER_HEADERS (production client)
+# record: 250093 | BOLIVAR MEDICAL CENTER | MS | finding: not-assessed-site-unreachable
+
+* DNS bolivarmedical.com: 151.101.3.10, 151.101.67.10, 151.101.131.10, 151.101.195.10
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://bolivarmedical.com/
+< HTTP 406
+< accept-ranges: bytes
+< content-length: 293
+< date: Mon, 07 Sep 2026 01:34:44 GMT
+< retry-after: 0
+< strict-transport-security: max-age=31557600
+< x-cache: MISS
+< x-served-by: cache-iad-kiad7000186-IAD
+< x-timer: S1788744884.330829,VS0,VE3
+< --- body (293 bytes read) ---
+< <!DOCTYPE html>
+<       <html>
+<         <head>
+<           <title>406 Not Acceptable</title>
+<         </head>
+<         <body>
+<           <h1>Error 406 Not Acceptable</h1>
+<           <p>Not Acceptable</p>
+<           <p>Trace-id: 3be55fb1-8ab5-455b-8110-27cfb0057857</p>
+<         </body>
+<       </html>
+<     
+
+* total time: 63 ms

@@ -1,0 +1,47 @@
+# curl-style evidence for https://stctrprodsnsvc00455826e6.blob.core.windows.net/pt-final-posting-files/62-1091430_HCA-FLORIDA-CAPITAL-HOSPITAL_standardcharges.json?si=pt-json-access-policy&spr=https&sv=2024-11-04&sr=c&sig=o5IofreS%2F7ETlsnhPakPWCwHVVUZRobywQ5wUKGjVuQ%3D
+# fetched 2026-09-07T01:32:39.581Z with the tracker's BROWSER_HEADERS (production client)
+# record: 100254 | HCA FLORIDA CAPITAL HOSPITAL | FL | finding: mrf-blocked-to-automation
+
+* DNS stctrprodsnsvc00455826e6.blob.core.windows.net: 20.157.48.241
+
+> GET /pt-final-posting-files/62-1091430_HCA-FLORIDA-CAPITAL-HOSPITAL_standardcharges.json  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://stctrprodsnsvc00455826e6.blob.core.windows.net/pt-final-posting-files/62-1091430_HCA-FLORIDA-CAPITAL-HOSPITAL_standardcharges.json?si=pt-json-access-policy&spr=https&sv=2024-11-04&sr=c&sig=o5IofreS%2F7ETlsnhPakPWCwHVVUZRobywQ5wUKGjVuQ%3D
+< HTTP 403
+< access-control-allow-origin: *
+< access-control-expose-headers: x-ms-request-id,x-ms-error-code,Content-Length,Date,Transfer-Encoding
+< content-length: 529
+< content-type: application/xml
+< date: Mon, 07 Sep 2026 01:32:40 GMT
+< server: Microsoft-HTTPAPI/2.0
+< x-ms-error-code: AuthenticationFailed
+< x-ms-request-id: e073e557-901e-005e-4768-3e3598000000
+< --- body (529 bytes read) ---
+< ﻿<?xml version="1.0" encoding="utf-8"?><Error><Code>AuthenticationFailed</Code><Message>Server failed to authenticate the request. Make sure the value of Authorization header is formed correctly including the signature.
+< RequestId:e073e557-901e-005e-4768-3e3598000000
+< Time:2026-09-07T01:32:41.3218148Z</Message><AuthenticationErrorDetail>Signature did not match. String to sign used was 
+< 
+< 
+< /blob/stctrprodsnsvc00455826e6/pt-final-posting-files
+< pt-json-access-policy
+< 
+< https
+< 2024-11-04
+< c
+< 
+< 
+< 
+< 
+< 
+< 
+< </AuthenticationErrorDetail></Error>
+
+* total time: 53 ms

@@ -27,7 +27,8 @@ function toISODate(raw) {
   function iso(y, mo, da) {
     const Y = Number(y), M = Number(mo), D = Number(da);
     if (!Y || M < 1 || M > 12 || D < 1 || D > 31) return null;
-    return `${Y}-${String(M).padStart(2, '0')}-${String(D).padStart(2, '0')}`;
+    const value = `${Y}-${String(M).padStart(2, '0')}-${String(D).padStart(2, '0')}`;
+    return new Date(value + 'T00:00:00Z').toISOString().slice(0, 10) === value ? value : null;
   }
 }
 
@@ -36,6 +37,7 @@ function sniffKind(buf, contentType) {
   if (buf.length >= 4 && buf[0] === 0x50 && buf[1] === 0x4b) return 'zip';
   if (buf.length >= 2 && buf[0] === 0x1f && buf[1] === 0x8b) return 'gzip';
   const head = buf.slice(0, 400).toString('utf8').trimStart();
+  if (/^<!doctype\s+html|^<html\b/i.test(head)) return 'html';
   if (head.startsWith('{') || head.startsWith('[')) return 'json';
   // Panacea and several hospital-owned hosts serve fully quoted CSV headers as
   // application/octet-stream. Content sniffing must therefore accept either
@@ -58,7 +60,6 @@ const UPDATED_ALIASES = new Set([
   'lastupdatedon', 'lastupdated', 'lastupdateddate', 'lastupdatedondate',
   'updatedon', 'filelastupdated', 'filelastupdatedon'
 ]);
-const ISO_IN_TEXT = /(19|20)\d{2}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])/;
 // Matches a JSON string value while tolerating escaped quotes inside it. A
 // naive "([^"]*)" truncates at the first \" and yields a corrupt date.
 const jsonStr = key => new RegExp(`"${key}"\\s*:\\s*"([^"\\\\]*(?:\\\\.[^"\\\\]*)*)"`, 'i');
@@ -82,6 +83,47 @@ function findUpdatedIndex(headers) {
 }
 
 const US_STATE = /^(A[LKZR]|C[AOT]|D[EC]|FL|GA|HI|I[ADLN]|K[SY]|LA|M[ADEINOST]|N[CDEHJMVY]|O[HKR]|P[AR]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY])$/;
+
+// Read only root properties. A price row's date/version/state is not file
+// metadata. Truncated arrays retain complete string elements for header use.
+function rootMetadata(text) {
+  const wanted = new Set(['last_updated_on', 'version', 'hospital_name', 'hospital_address', 'hospital_location', 'location_name', 'license_information']);
+  const values = {};
+  let i = text.indexOf('{');
+  if (i < 0 || text.slice(0, i).trim()) return values;
+  i++;
+  while (i < text.length) {
+    while (/\s|,/.test(text[i] || '') && i < text.length) i++;
+    if (text[i] !== '"') break;
+    const keyStart = i++;
+    while (i < text.length) { if (text[i] === '\\') i += 2; else if (text[i++] === '"') break; }
+    let key;
+    try { key = JSON.parse(text.slice(keyStart, i)).toLowerCase(); } catch (_) { break; }
+    while (/\s/.test(text[i] || '') && i < text.length) i++;
+    if (text[i++] !== ':') break;
+    while (/\s/.test(text[i] || '') && i < text.length) i++;
+    const start = i;
+    let depth = 0, quoted = false;
+    for (; i < text.length; i++) {
+      const ch = text[i];
+      if (quoted) { if (ch === '\\') i++; else if (ch === '"') quoted = false; continue; }
+      if (ch === '"') { quoted = true; continue; }
+      if (ch === '{' || ch === '[') depth++;
+      else if (ch === '}' || ch === ']') { if (depth === 0) break; depth--; }
+      else if (ch === ',' && depth === 0) break;
+    }
+    if (wanted.has(key)) {
+      const raw = text.slice(start, i).trim();
+      try { values[key] = JSON.parse(raw); }
+      catch (_) {
+        if (raw.startsWith('[')) values[key] = [...raw.matchAll(/"([^"\\]*(?:\\.[^"\\]*)*)"/g)]
+          .map(m => { try { return JSON.parse(m[0]); } catch (_) { return ''; } });
+      }
+    }
+    if (text[i] === '}') break;
+  }
+  return values;
+}
 
 /**
  * The state a hospital licenses itself in, taken from the CMS template's
@@ -113,59 +155,36 @@ function extractDeclared(buf, kind) {
   const empty = { raw: null, version: null, address: null, locationName: null, licenseState: null, hospitalName: null };
 
   if (kind === 'json') {
-    const d = text.match(jsonStr('last_updated_on'));
-    const v = text.match(jsonStr('version'));
-    const out = {
-      ...empty,
-      raw: d ? d[1].replace(/\\"/g, '"') : null,
-      version: v ? normalizeVersion(v[1]) : null
-    };
-    const n = text.match(jsonStr('hospital_name'));
-    if (n) out.hospitalName = n[1].replace(/\\"/g, '"');
-    // Both fields may be a bare string or an array; the head is often truncated
-    // mid-array, so a tolerant parse beats JSON.parse here.
-    const addrArr = text.match(/"hospital_address"\s*:\s*\[([^\]]*)/i);
-    if (addrArr) {
-      const first = addrArr[1].match(/"([^"\\]*(?:\\.[^"\\]*)*)"/);
-      if (first) out.address = first[1].replace(/\\"/g, '"');
-    } else {
-      const a = text.match(jsonStr('hospital_address'));
-      if (a) out.address = a[1].replace(/\\"/g, '"');
-    }
-    const locArr = text.match(/"(?:location_name|hospital_location)"\s*:\s*\[([^\]]*)/i);
-    if (locArr) {
-      const first = locArr[1].match(/"([^"\\]*(?:\\.[^"\\]*)*)"/);
-      if (first) out.locationName = first[1].replace(/\\"/g, '"');
-    } else {
-      const l = text.match(jsonStr('location_name')) || text.match(jsonStr('hospital_location'));
-      if (l) out.locationName = l[1].replace(/\\"/g, '"');
-    }
-    const ls = text.match(/"license_information"\s*:\s*\{[^}]*"state"\s*:\s*"([A-Za-z]{2})"/i)
-      || text.match(jsonStr('state'));
-    if (ls && US_STATE.test(String(ls[1]).toUpperCase())) out.licenseState = String(ls[1]).toUpperCase();
-    return out;
+    const root = rootMetadata(text);
+    const strings = value => (Array.isArray(value) ? value : [value]).filter(v => typeof v === 'string').join('|') || null;
+    const license = root.license_information;
+    const state = license && typeof license === 'object' && !Array.isArray(license) ? String(license.state || '').toUpperCase() : '';
+    return { ...empty, raw: typeof root.last_updated_on === 'string' ? root.last_updated_on : null,
+      version: typeof root.version === 'string' ? normalizeVersion(root.version) : null,
+      hospitalName: strings(root.hospital_name), address: strings(root.hospital_address),
+      locationName: strings(root.location_name || root.hospital_location),
+      licenseState: US_STATE.test(state) ? state : null };
   }
 
   if (kind === 'csv') {
     // Row 1 is the header, row 2 the values; the attestation column contains
     // commas inside quotes, so this must go through a real CSV parse.
     const rows = parseCSV(text);
-    if (rows.length >= 2) {
-      const rawHdr = rows[0].map(h => String(h || '').trim());
+    // Allow blank/preamble rows, but require explicitly named metadata fields.
+    // An unrelated date elsewhere in the row is not last_updated_on.
+    const metadataRow = rows.findIndex(row => row.some(v => String(v || '').trim().toLowerCase() === 'hospital_name')
+      && row.some(v => findUpdatedIndex([String(v || '').trim().toLowerCase()]) >= 0 || String(v || '').trim().toLowerCase() === 'version'));
+    if (metadataRow >= 0 && rows.length > metadataRow + 1) {
+      const rawHdr = rows[metadataRow].map(h => String(h || '').trim());
+      const values = rows[metadataRow + 1];
       const hdr = rawHdr.map(h => h.toLowerCase());
-      const at = name => { const i = hdr.indexOf(name); return i >= 0 ? (rows[1][i] || null) : null; };
+      const at = name => { const i = hdr.indexOf(name); return i >= 0 ? (values[i] || null) : null; };
       const di = findUpdatedIndex(hdr);
       const vi = hdr.indexOf('version');
-      let raw = di >= 0 ? (rows[1][di] || null) : null;
-      // Fallback: some files shift columns or omit the header entirely, so
-      // scan the value row for the first ISO-looking date.
-      if (!raw) {
-        const m = (rows[1] || []).join(',').match(ISO_IN_TEXT);
-        if (m) raw = m[0];
-      }
+      const raw = di >= 0 ? (values[di] || null) : null;
       return {
         raw,
-        version: vi >= 0 ? normalizeVersion(rows[1][vi]) : null,
+        version: vi >= 0 ? normalizeVersion(values[vi]) : null,
         address: at('hospital_address') || at('address'),
         // v3.0.0 renamed hospital_location to location_name; accept either.
         locationName: at('location_name') || at('hospital_location'),
@@ -238,6 +257,7 @@ function requestCapped(url, options = {}, redirects = 6) {
   return new Promise((resolve, reject) => {
     let parsed;
     try { parsed = new URL(url); } catch (error) { reject(error); return; }
+    if (options.validateUrl) { try { options.validateUrl(parsed.href); } catch (error) { reject(error); return; } }
     const client = parsed.protocol === 'http:' ? http : https;
     const method = options.method || 'GET';
     const cap = Number(options.cap || 0);
@@ -260,7 +280,8 @@ function requestCapped(url, options = {}, redirects = 6) {
       if (location && status >= 300 && status < 400 && redirects > 0) {
         if (deadline) clearTimeout(deadline);
         response.resume();
-        requestCapped(new URL(location, parsed).toString(), options, redirects - 1).then(finish, fail);
+        requestCapped(new URL(location, parsed).toString(), options, redirects - 1).then(value => finish({ ...value,
+          redirects: [{ url: parsed.toString(), status, location }, ...(value.redirects || [])] }), fail);
         return;
       }
       if (method === 'HEAD') {
@@ -315,7 +336,7 @@ async function readCapped(res, cap = HEAD_BYTES) {
  * still captured, but only as a diagnostic - it is a deployment timestamp and is
  * never substituted for the declared date.
  */
-async function probeMrf(url, { timeoutMs = 45000, useUnblocker = true } = {}) {
+async function probeMrf(url, { timeoutMs = 45000, useUnblocker = true, headerBytes = HEAD_BYTES } = {}) {
   const out = { url, checkedAt: new Date().toISOString(), requestCount: 0, bytesRead: 0 };
 
   // HEAD is cheap and gives size + Last-Modified even when Range is refused.
@@ -335,17 +356,18 @@ async function probeMrf(url, { timeoutMs = 45000, useUnblocker = true } = {}) {
   // and the full body, so the socket reader enforces the byte cap either way.
   try {
     out.requestCount++;
-    const r = await requestCapped(url, { timeoutMs, cap: HEAD_BYTES,
-      headers: { ...BROWSER_HEADERS, Range: `bytes=0-${HEAD_BYTES - 1}` } });
+    const r = await requestCapped(url, { timeoutMs, cap: headerBytes,
+      headers: { ...BROWSER_HEADERS, Range: `bytes=0-${headerBytes - 1}` } });
     out.rangeStatus = r.status;
+    out.finalUrl = r.finalUrl;
     if (out.httpStatus === undefined) out.httpStatus = r.status;
     if (r.status === 403 || r.status === 429) {
       out.blocked = true;
     } else if (r.status >= 200 && r.status < 300) {
       const buf = r.body;
       out.bytesRead += buf.length;
+      out.contentType = r.headers['content-type'] || out.contentType || null;
       out.fileKind = sniffKind(buf, out.contentType);
-      if (!out.contentType) out.contentType = r.headers['content-type'] || null;
       let payload = buf, payloadKind = out.fileKind;
       if (out.fileKind === 'zip' || out.fileKind === 'gzip') {
         // 16 KB of compressed data rarely inflates to a full header row, so

@@ -1,0 +1,129 @@
+# curl-style evidence for https://uchealth.org/
+# fetched 2026-09-07T01:32:38.547Z with the tracker's BROWSER_HEADERS (production client)
+# record: 060022 | UCH-MEMORIAL HEALTH SYSTEM | CO | finding: not-assessed-not-named-in-file
+
+* DNS uchealth.org: 45.79.245.10
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://uchealth.org/
+< HTTP 301
+< content-length: 166
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:32:39 GMT
+< location: https://www.uchealth.org/
+< server: nginx-rc
+< strict-transport-security: max-age=31536000
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-xss-protection: 1; mode=block
+* following Location: https://www.uchealth.org/
+
+* final response: https://www.uchealth.org/
+< HTTP 200
+< alt-svc: h3=":443"; ma=86400
+< cf-apo-via: origin,no-cache
+< cf-cache-status: DYNAMIC
+< cf-ray: a371f5fb890f609d-IAD
+< content-encoding: br
+< content-security-policy: frame-ancestors 'self' https://*.uchealth.org
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:32:40 GMT
+< link: <https://www.uchealth.org/wp-json/>; rel="https://api.w.org/", <https://www.uchealth.org/wp-json/wp/v2/pages/65209>; rel="alternate"; title="JSON"; type="application/json", <https://www.uchealth.org/>; rel=shortlink
+< server: cloudflare
+< server-timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=14,cfOrigin;dur=648
+< strict-transport-security: max-age=15552000; includeSubDomains; preload
+< vary: Accept-Encoding
+< x-content-type-options: nosniff
+< x-frame-options: ALLOW-FROM https://*.uchealth.org
+< x-powered-by: W3 Total Cache
+< x-xss-protection: 1; mode=block
+< --- body (65536 bytes read, truncated) ---
+< <!DOCTYPE html>
+< <html lang="en-US">
+< <head>
+<   <!-- android banner  -->
+<   <link rel="manifest" href="/manifest.json">
+<   <meta charset="UTF-8">
+< <script>
+< var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),document.addEventListener("gform/theme/scripts_loaded",function(){gform.themeScriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,themeScriptsLoaded:!1,isFormEditor:()=>"function"==typeof InitializeEditor,callIfLoaded:function(o){return!(!gform.domLoaded||!gform.scriptsLoaded||!gform.themeScriptsLoaded&&!gform.isFormEditor()||(gform.isFormEditor()&&console.warn("The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1."),o(),0))},initializeOnLoaded:function(o){gform.callIfLoaded(o)||(document.addEventListener("gform_main_scripts_loaded",()=>{gform.scriptsLoaded=!0,gform.callIfLoaded(o)}),document.addEventListener("gform/theme/scripts_loaded",()=>{gform.themeScriptsLoaded=!0,gform.callIfLoaded(o)}),window.addEventListener("DOMContentLoaded",()=>{gform.domLoaded=!0,gform.callIfLoaded(o)}))},hooks:{action:{},filter:{}},addAction:function(o,r,e,t){gform.addHook("action",o,r,e,t)},addFilter:function(o,r,e,t){gform.addHook("filter",o,r,e,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,r){gform.removeHook("action",o,r)},removeFilter:function(o,r,e){gform.removeHook("filter",o,r,e)},addHook:function(o,r,e,t,n){null==gform.hooks[o][r]&&(gform.hooks[o][r]=[]);var d=gform.hooks[o][r];null==n&&(n=r+"_"+d.length),gform.hooks[o][r].push({tag:n,callable:e,priority:t=null==t?10:t})},doHook:function(r,o,e){var t;if(e=Array.prototype.slice.call(e,1),null!=gform.hooks[r][o]&&((o=gform.hooks[r][o]).sort(function(o,r){return o.priority-r.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==r?t.apply(null,e):e[0]=t.apply(null,e)})),"filter"==r)return e[0]},removeHook:function(o,r,t,n){var e;null!=gform.hooks[o][r]&&(e=(e=gform.hooks[o][r]).filter(function(o,r,e){return!!(null!=n&&n!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][r]=e)}});
+< </script>
+< 
+<   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<   <meta name='viewport' content='width=device-width, initial-scale=1' />
+<   <meta name="msvalidate.01" content="6442BA73B9C88B99189DB363FC3FF9AC" />
+<   <link rel="profile" href="https://gmpg.org/xfn/11">
+<   <link rel="pingback" href="https://www.uchealth.org/xmlrpc.php">
+<   <link rel="apple-touch-icon" sizes="57x57" href="/wp-content/themes/uchealth/img/favicons/apple-touch-icon-57x57-precomposed.png">
+< <link rel="apple-touch-icon" sizes="60x60" href="/wp-content/themes/uchealth/img/favicons/apple-touch-icon-60x60-precomposed.png">
+< <link rel="apple-touch-icon" sizes="72x72" href="/wp-content/themes/uchealth/img/favicons/apple-touch-icon-72x72-precomposed.png">
+< <link rel="apple-touch-icon" sizes="76x76" href="/wp-content/themes/uchealth/img/favicons/apple-touch-icon-76x76-precomposed.png">
+< <link rel="apple-touch-icon" sizes="114x114" href="/wp-content/themes/uchealth/img/favicons/apple-touch-icon-114x114-precomposed.png">
+< <link rel="apple-touch-icon" sizes="120x120" href="/wp-content/themes/uchealth/img/favicons/apple-touch-icon-120x120-precomposed.png">
+< <link rel="apple-touch-icon" sizes="144x144" href="/wp-content/themes/uchealth/img/favicons/apple-touch-icon-144x144-precomposed.png">
+< <link rel="apple-touch-icon" sizes="152x152" href="/wp-content/themes/uchealth/img/favicons/apple-touch-icon-152x152-precomposed.png">
+< <link rel="apple-touch-icon" sizes="180x180" href="/wp-content/themes/uchealth/img/favicons/apple-touch-icon-180x180-precomposed.png">
+< <link rel="icon" type="image/png" href="/wp-content/themes/uchealth/img/favicons/favicon-1.png" sizes="16x16">
+< <link rel="icon" type="image/png" href="/wp-content/themes/uchealth/img/favicons/favicon-2.png" sizes="24x24">
+< <link rel="icon" type="image/png" href="/wp-content/themes/uchealth/img/favicons/favicon-3.png" sizes="32x32">
+< <link rel="icon" type="image/png" href="/wp-content/themes/uchealth/img/favicons/favicon-3.png" sizes="64x64">
+< <link rel="icon" type="image/png" href="/wp-content/themes/uchealth/img/favicons/android-chrome-96x96.png" sizes="96x96">
+< <link rel="icon" type="image/png" href="/wp-content/themes/uchealth/img/favicons/android-chrome-192x192.png" sizes="192x192">
+< <link rel="manifest" href="/wp-content/themes/uchealth/img/favicons/manifest.json">
+< <link rel="shortcut icon" href="/wp-content/themes/uchealth/img/favicons/uchealth.ico">
+< <meta name="msapplication-TileColor" content="#a6093d">
+< <meta name="msapplication-TileImage" content="/wp-content/themes/uchealth/img/favicons/apple-touch-icon-144x144-precomposed.png">
+< <meta name="msapplication-config" content="/wp-content/themes/uchealth/img/favicons/browserconfig.xml">
+< <meta name="theme-color" content="#a6093d">
+< 
+<   <!-- Active Campaign -->
+<   <script type="text/javascript">
+<     var trackcmp_email = '';
+<     var trackcmp = document.createElement("script");
+<     trackcmp.async = true;
+<     trackcmp.type = 'text/javascript';
+<     trackcmp.src = '//trackcmp.net/visit?actid=609690466&e='+encodeURIComponent(trackcmp_email)+'&r='+encodeURIComponent(document.referrer)+'&u='+encodeURIComponent(window.location.href);
+<     var trackcmp_s = document.getElementsByTagName("script");
+<     if (trackcmp_s.length) {
+<       trackcmp_s[0].parentNode.appendChild(trackcmp);
+<     } else {
+<       var trackcmp_h = document.getElementsByTagName("head");
+<       trackcmp_h.length && trackcmp_h[0].appendChild(trackcmp);
+<     }
+<   </script>
+< 
+<   <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+< <link rel='preload' href='https://www.uchealth.org/wp-content/themes/uchealth/fonts/figtree/figtree-v9-latin-regular.woff2' as='font' type='font/woff2' crossorigin>
+< <link rel='preload' href='https://www.uchealth.org/wp-content/themes/uchealth/fonts/figtree/figtree-v9-latin-700.woff2' as='font' type='font/woff2' crossorigin>
+< 
+< 	<!-- This site is optimized with the Yoast SEO Premium plugin v28.3 (Yoast SEO v28.3) - https://yoast.com/product/yoast-seo-premium-wordpress/ -->
+< 	<title>UCHealth - Live Extraordinary</title>
+< 	<meta name="description" content="At UCHealth our focus is you. Providing you with the safest environment, the best experience and the best outcomes so you can live your extraordinary life." />
+< 	<link rel="canonical" href="https://www.uchealth.org/" />
+< 	<meta property="og:locale" content="en_US" />
+< 	<meta property="og:type" content="website" />
+< 	<meta property="og:title" content="UCHealth - Live Extraordinary" />
+< 	<meta property="og:description" content="At UCHealth our focus is you. Providing you with the safest environment, the best experience and the best outcomes so you can live your extraordinary life." />
+< 	<meta property="og:url" content="https://www.uchealth.org/" />
+< 	<meta property="og:site_name" content="UCHealth" />
+< 	<meta property="article:publisher" content="https://www.facebook.com/uchealthorg/" />
+< 	<meta property="article:modified_time" content="2026-08-24T19:05:36+00:00" />
+< 	<meta property="og:image" content="https://uchealth-wp-uploads.s3.amazonaws.com/wp-content/uploads/2026/02/06112952/UCHealth-Live-Extraordinary-Sarah-Westoff-900x500-1.jpg" />
+< 	<meta property="og:image:type" content="image/jpeg" />
+< 	<meta name="twitter:card" content="summary_large_image" />
+< 	<meta name="twitter:title" content="UCHealth - Live Extraordinary" />
+< 	<meta name="twitter:description" content="At UCHealth our focus is you. Providing you with the safest environment, the best experience and the best outcomes so you can live your extraordinary life." />
+< 	<meta name="twitter:image" content="https://uchealth-wp-uploads.s3.amazonaws.com/wp-content/uploads/2025/09/15103738/UCHealth-Live-Extraordinary-Mike-Andrews-900x500-v2.webp" />
+< 	<meta name="twitter:site" content="@uchealth" />
+< 	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":["WebP
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 1042 ms

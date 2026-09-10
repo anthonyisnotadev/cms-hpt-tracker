@@ -1,0 +1,25 @@
+# curl-style evidence for https://emergencyhospitals.care/cms-hpt.txt
+# fetched 2026-09-07T01:36:01.601Z with the tracker's BROWSER_HEADERS (production client)
+# record: 670115 | CLEVELAND EMERGENCY HOSPITAL | TX | finding: no-cms-hpt-txt-published
+
+* DNS emergencyhospitals.care: 13.248.213.45, 76.223.67.189
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://emergencyhospitals.care/cms-hpt.txt
+< HTTP 200
+< content-length: 114
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:36:03 GMT
+< --- body (114 bytes read) ---
+< <!DOCTYPE html><html><head><script>window.onload=function(){window.location.href="/lander"}</script></head></html>
+
+* total time: 144 ms

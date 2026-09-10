@@ -1,0 +1,75 @@
+# curl-style evidence for https://chcc.health/cms-hpt.txt
+# fetched 2026-09-07T01:34:42.658Z with the tracker's BROWSER_HEADERS (production client)
+# record: 660001 | COMMONWEALTH HEALTH CENTER | MP | finding: not-assessed-site-unreachable
+
+* DNS chcc.health: 107.180.1.20
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* error: fetch failed (cause: ERR_TLS_CERT_ALTNAME_INVALID)
+
+* http:// fallback attempt after transport failure:
+* fallback redirect hop 1: http://chcc.health/cms-hpt.txt
+< HTTP 301
+< content-length: 158
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:34:44 GMT
+< location: https://www.chcc.health/cms-hpt.txt
+< server: Microsoft-IIS/10.0
+< x-powered-by: ASP.NET
+< x-powered-by-plesk: PleskWin
+* following Location: https://www.chcc.health/cms-hpt.txt
+
+* fallback final response: https://www.chcc.health/cms-hpt.txt
+< HTTP 404
+< content-length: 1104
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:34:44 GMT
+< server: Microsoft-IIS/10.0
+< x-powered-by: ASP.NET
+< x-powered-by-plesk: PleskWin
+< --- body (1104 bytes read) ---
+< <HTML>
+< <HEAD>
+< <TITLE>404 Not Found</TITLE>
+< <BASE href="/error_docs/"><!--[if lte IE 6]></BASE><![endif]-->
+< </HEAD>
+< <BODY>
+< <H1>Not Found</H1>
+< The requested document was not found on this server.
+< <P>
+< <HR>
+< <ADDRESS>
+< Web Server at &#99;&#104;&#99;&#99;&#46;&#104;&#101;&#97;&#108;&#116;&#104;
+< </ADDRESS>
+< </BODY>
+< </HTML>
+< 
+< <!--
+<    - Unfortunately, Microsoft has added a clever new
+<    - "feature" to Internet Explorer. If the text of
+<    - an error's message is "too small", specifically
+<    - less than 512 bytes, Internet Explorer returns
+<    - its own error message. You can turn that off,
+<    - but it's pretty tricky to find switch called
+<    - "smart error messages". That means, of course,
+<    - that short error messages are censored by default.
+<    - IIS always returns error messages that are long
+<    - enough to make Internet Explorer happy. The
+<    - workaround is pretty simple: pad the error
+<    - message with a big comment like this to push it
+<    - over the five hundred and twelve bytes minimum.
+<    - Of course, that's exactly what you're reading
+<    - right now.
+<    -->
+< 
+
+* total time: 495 ms

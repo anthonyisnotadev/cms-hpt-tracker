@@ -1,0 +1,45 @@
+# curl-style evidence for https://carewellhealth.org/.well-known/cms-hpt.txt
+# fetched 2026-09-07T01:35:32.205Z with the tracker's BROWSER_HEADERS (production client)
+# record: 310083 | CAREWELL HEALTH MEDICAL CENTER | NJ | finding: no-cms-hpt-txt-published
+
+* DNS carewellhealth.org: 23.227.38.32
+
+> GET /.well-known/cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://carewellhealth.org/.well-known/cms-hpt.txt
+< HTTP 404
+< alt-svc: h3=":443"; ma=86400
+< cf-cache-status: DYNAMIC
+< cf-ray: a371fa3a9fe9e19f-IAD
+< content-encoding: gzip
+< content-language: en-US
+< content-security-policy: block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests; report-uri /csp-report?source%5Baction%5D=not_found&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=storefront_section%2Fshop&source%5Bsection%5D=storefront&source%5Buuid%5D=0e993e70-35c2-4bd6-a435-05ca8966a0bc-1788744933; report-to shopify-csp
+< content-type: text/plain
+< date: Mon, 07 Sep 2026 01:35:33 GMT
+< nel: {"report_to":"cf-nel","success_fraction":0.01,"max_age":604800}
+< report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=%2FLBvi0ZaVeK47TGW3OYwGnLS5SRGipdqV9EvJpgSf%2BgLCjOxNzu1DJYqUyeK4ersJz1teTVc1uDu2tWInNzaahA26L6AVG%2BWF%2FfiUxahxoyMZCj8qIjLTl%2BfD2%2BYRbdtM9%2FwDw%3D%3D"}]}
+< reporting-endpoints: shopify-csp="/csp-report?source%5Baction%5D=not_found&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=storefront_section%2Fshop&source%5Bsection%5D=storefront&source%5Buuid%5D=0e993e70-35c2-4bd6-a435-05ca8966a0bc-1788744933"
+< server: cloudflare
+< server-timing: processing;dur=306, verdict_flag_enabled;desc="count=53";dur=5.429, _y;desc="fb933e83-1bb9-4134-b17c-2c8acfea31f1", _s;desc="10a9453d-6ae6-4108-95a1-585033aa9600", _cmp;desc="3.AMPS_USVA_f_t_ImZ9cNkzSgqq7AFnBnTDFw"
+< strict-transport-security: max-age=7889238
+< vary: Accept-Encoding,Sec-Fetch-Site
+< x-content-type-options: nosniff
+< x-dc: gcp-us-east1,gcp-us-central1,gcp-us-central1
+< x-download-options: noopen
+< x-frame-options: DENY
+< x-liquid-rendered-at: 2026-09-07T01:35:33.885939171Z
+< x-permitted-cross-domain-policies: none
+< x-request-id: 0e993e70-35c2-4bd6-a435-05ca8966a0bc-1788744933
+< x-xss-protection: 1; mode=block
+< --- body (0 bytes read) ---
+< 
+
+* total time: 450 ms

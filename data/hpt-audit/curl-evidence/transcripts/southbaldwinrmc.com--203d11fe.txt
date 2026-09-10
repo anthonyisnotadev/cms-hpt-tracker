@@ -1,0 +1,98 @@
+# curl-style evidence for https://southbaldwinrmc.com/
+# fetched 2026-09-07T01:31:58.255Z with the tracker's BROWSER_HEADERS (production client)
+# record: 010083 | BALDWIN HEALTH | AL | finding: no-cms-hpt-txt-published
+
+* DNS southbaldwinrmc.com: 104.21.40.223, 172.67.188.128
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* error: fetch failed (cause: UND_ERR_CONNECT_TIMEOUT)
+
+* http:// fallback attempt after transport failure:
+* fallback redirect hop 1: http://southbaldwinrmc.com/
+< HTTP 301
+< alt-svc: h3=":443"; ma=86400
+< cf-ray: a371f4d64e552fd6-IAD
+< connection: keep-alive
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:31:52 GMT
+< location: https://southbaldwinrmc.com/
+< nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+< report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=m1rjNV1fLaZgxWRz0jRz6HVJGF7Kiruzwk8zMH2Vvp8opn6sDfqmHvj74tivANyxc64O%2Bm4zauvSCtZg%2FBWchBGUDPD3ZmksgYwIU5ChSggTNSgGihz51ELsJigwJg1TUD9ROFe9"}]}
+< server: cloudflare
+< server-timing: cfEdge;dur=12,cfOrigin;dur=0
+< transfer-encoding: chunked
+* following Location: https://southbaldwinrmc.com/
+
+* fallback final response: https://southbaldwinrmc.com/
+< HTTP 200
+< alt-svc: h3=":443"; ma=86400
+< cf-cache-status: DYNAMIC
+< cf-ray: a371f5033f5a5d13-IAD
+< content-encoding: br
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:31:59 GMT
+< last-modified: Sun, 23 Dec 2012 21:35:24 GMT
+< nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+< report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=yd9sItJVC5mDxoudiRZtnFslbtThFaWIxLXm49N0PZU3fCHYBh5KddCiho1qcffV%2FsQrxMC8Tmd%2FL3esRm1i2AZGocCPqdlkfZ4w4D4o89QarRy6fWN9a0akCocBCSAS7b8fbD%2BA"}]}
+< server: cloudflare
+< server-timing: cfCacheStatus;desc="DYNAMIC", cfEdge;dur=12,cfOrigin;dur=113
+< --- body (1355 bytes read) ---
+< <html>
+<   <head>
+<     <!-- Flux Header Custom Code Start--><!-- Flux Header Custom Code End-->
+<     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<     <title>Site Offline</title>
+<   </head>
+<   
+<   <style>
+<   
+<       body{
+<         font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+<         background: #d2d2d2 url(http://www.websitesettings.com/resources/images/tile.png);
+<         font-size: 12px;
+<       }
+<       
+<       div{
+<         background-color: white;
+<         width: 400px;
+<         padding: 30px;
+<         border: 3px solid #7e7e7e;
+<         color: #757575;
+<         margin: 0 auto;
+<         display: block;
+<         margin-top: 100px;
+<       }
+<       
+<       h2 {
+<         color: blue;
+<         margin: 0px;
+<         margin-bottom: 10px;  
+<       }
+< 
+<   </style>
+< 
+<   
+<   
+<   <body>
+< 
+< <div class="message">
+<   <h2>Site Offline</h2>
+<   This website has been disabled for technical reasons. Please contact the site administrator for more information.
+< </div>
+< 
+<   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"02e2a586f5034ecba2ceecce86a3d2ea","r":1,"spa":2}' crossorigin="anonymous"></script>
+< </body>
+< 
+< </html>
+< 
+
+* total time: 29524 ms

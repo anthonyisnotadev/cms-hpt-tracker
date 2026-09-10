@@ -1,0 +1,69 @@
+# curl-style evidence for https://franciscanhealth.org/
+# fetched 2026-09-07T01:32:44.320Z with the tracker's BROWSER_HEADERS (production client)
+# record: 140172 | FRANCISCAN HEALTH OLYMPIA & CHICAGO HEIGHTS | IL | finding: not-assessed-not-named-in-file
+
+* DNS franciscanhealth.org: 52.165.189.175
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://franciscanhealth.org/
+< HTTP 301
+< content-length: 195
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:32:45 GMT
+< location: https://www.franciscanhealth.org/
+< server: Microsoft-Azure-Application-Gateway/v2
+* following Location: https://www.franciscanhealth.org/
+
+* final response: https://www.franciscanhealth.org/
+< HTTP 200
+< accept-ch: Sec-CH-UA-Full-Version-List,Sec-CH-UA-Platform-Version,Sec-CH-UA-Arch,Sec-CH-UA-Model,Sec-CH-UA-Bitness
+< cache-control: no-cache, no-store
+< content-encoding: gzip
+< content-length: 27936
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:32:46 GMT
+< expires: -1
+< pragma: no-cache
+< request-context: appId=cid-v1:09b3a84f-25f8-4c64-9d0b-1bfef66260c9
+< vary: Accept-Encoding
+< --- body (65536 bytes read, truncated) ---
+< 
+< 
+< 
+< 
+< <!DOCTYPE html>
+< <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+< <!--[if IE 7]>   <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+< <!--[if IE 8]>   <html class="no-js lt-ie9"> <![endif]-->
+< <!--[if gt IE 8]><!-->
+< <html class="no-js" lang="en">
+< <!--<![endif]-->
+< 
+< <head>
+<     <link rel="preconnect" href="https://www.googletagmanager.com">
+<     
+<     <link rel="preconnect" href="https://maps.googleapis.com">
+<     <link rel="preconnect" href="https://beta-franciscan.enterprisebot.co">
+< 
+<     
+<     <style>
+<         .feature-alert-alert, .feature-alert-alert .alert-container {
+<             display: none;
+<             overflow: hidden;
+<         }
+<     </style>
+< 
+<         <style type="text/css">
+<             @charset "UTF-8";html{box-sizing:border-box;-ms-overflow-style:scrollbar}*,::after,::before{box-sizing:inherit}.container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}}@media (min-width:1200px){.container{max-width:1140px}}.container-fluid{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}}@media (min-width:1200px){.container{max-width:1140px}}.row{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px}.col-3,.col-4,.col-6,.col-9,.col-lg-5,.col-lg-7,.col-md-3,.col-md-5,.col-md-7{position:relative;width:100%;padding-right:15px;padding-left:15px}.col-3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.col-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.col-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-9{-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}.order-1{-ms-flex-order:1;order:1}.order-12{-ms-flex-order:12;order:12}@media (min-width:768px){.col-md-3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.col-md-5{-ms-flex:0 0 41.666667%;flex:0 0 41.666667%;max-width:41.666667%}.col-md-7{-ms-flex:0 0 58.333333%;flex:0 0 58.333333%;max-width:58.333333%}.offset-md-2{margin-left:16.666667%}}@media (min-width:992px){.col-lg-5{-ms-flex:0 0 41.666667%;flex:0 0 41.666667%;max-width:41.666667%}.col-lg-7{-ms-flex:0 0 58.333333%;flex:0 0 58.333333%;max-width:58.333333%}.order-lg-1{-ms-flex-order:1;order:1}.order-lg-12{-ms-flex-order:12;order:12}}:root{--brown:#3333333;--blue:#007bff;--indigo:#6610f2;--purple:#6f42c1;--pink:#e83e8c;--red:#dc3545;--orange:#fd7e14;--yellow:#ffc107;--green:#28a745;--teal:#20c997;--cyan:#17a2b8;--white:#fff;--gray:#6c757d;--gray-dark:#343a40;--primary:#007bff;--secondary:#6c757d;--success:#28a745;--info:#17a2b8;--warning:#ffc107;--danger:#dc3545;--light:#f8f9fa;--dark:#343a40;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--font-family-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}*,::after,::before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%}header{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}h1,h2,h4,h5{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}ul{margin-top:0;margin-bottom:1rem}strong{font-weight:bolder}a{color:#007bff;text-decoration:none;background-color:transparent}a:not([href]){color:inherit;text-decoration:none}img{vertical-align:middle;border-style:none}label{display:inline-block;margin-bottom:.5rem}button{border-radius:0}button,input{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button,input{overflow:visible}button{text-transform:none}[type=button],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,button::-moz-focus-inner{padding:0;border-style:none}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}h1,h2,h4,h5{margin-bottom:.5rem;font-weight:500;line-height:1.2}h1{font-size:2.5rem}h2{font-size:2rem}h4{font-size:1.5rem}h5{font-size:1.25rem}.img-fluid{max-width:100%;height:auto}.container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}}@media (min-width:1200px){.container{max-width:1140px}}.container-fluid{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}}@media (min-width:1200px){.container{max-width:1140px}}.row{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px}.col-3,.col-4,.col-6,.col-9,.col-lg-5,.col-lg-7,.col-md-3,.col-md-5,.col-md-7{position:relative;width:100%;padding-right:15px;padding-left:15px}.col-3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.col-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.col-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-9{-ms-flex:0 0 75%;flex:0 0 75%;max-width:75%}.order-1{-ms-flex-order:1;order:1}.order-12{-ms-flex-order:12;order:12}@media (min-width:768px){.col-md-3{-ms-flex:0 0 25%;flex:0 0 25%;max-width:25%}.col-md-5{-ms-flex:0 0 41.666667%;flex:0 0 41.666667%;max-width:41.666667%}.col-md-7{-ms-flex:0 0 58.333333%;flex:0 0 58.333333%;max-width:58.333333%}.offset-md-2{margin-left:16.666667%}}@media (min-width:992px){.col-lg-5{-ms-flex:0 0 41.666667%;flex:0 0 41.666667%;max-width:41.666667%}.col-lg-7{-ms-flex:0 0 58.333333%;flex:0 0 58.333333%;max-width:58.333333%}.order-lg-1{-ms-flex-order:1;order:1}.order-lg-12{-ms-flex-order:12;order:12}}.form-control{display:block;width:100%;height:calc(1.5em + .75rem + 2px);padding:.375rem .75rem;font-size:1rem;font-weight:400;line-height:1.5;color:#495057;background-color:#fff;background-clip:padding-box;border:1px solid #ced4da;border-radius:.25rem}.form-control::-ms-expand{background-color:transparent;border:0}.form-control:-moz-focusring{color:transparent;text-shadow:0 0 0 #495057}.form-control::-webkit-input-placeholder{color:#6c757d;opacity:1}.form-control::-moz-placeholder{color:#6c757d;opacity:1}.form-control:-ms-input-placeholder{color:#6c757d;opacity:1}.form-control::-ms-input-placeholder{color:#6c757d;opacity:1}.input-group{position:relative;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-ms-flex-align:stretch;align-items:stretch;width:100%}.input-group>.form-control{position:relative;-ms-flex:1 1 0%;flex:1 1 0%;min-width:0;margin-bottom:0}.input-group>.form-control:not(:last-child){border-top-right-radius:0;border-bottom-right-radius:0}.input-group-append{display:-ms-flexbox;display:flex}.input-group-append{margin-left:-1px}.close{float:right;font-size:1.5rem;font-weight:700;line-height:1;color:#000;text-shadow:0 1px 0 #fff;opacity:.5}button.close{padding:0;background-color:transparent;border:0;-webkit-appearance:none;-moz-appearance:none;appearance:none}.container{padding:0}.link{background:0 0}.link a{background-color:transparent;text-decoration:none;font-size:1em;color:#747474;border-bottom:1px solid #89c6cc}.rich-text{background:0 0;color:#747474;border:transparent;overflow:hidden}.rich-text *{max-width:100%}.rich-text h4{color:#222}.rich-text h4{margin:5px 0}@font-face{font-family:FontAwesome;src:url(https://media.franciscanhealth.org/ThirdPartyLibs/fonts/fontawesome/fontawesome-webfont.eot?v=4.7.0);src:url(https://media.franciscanhealth.org/ThirdPartyLibs/fonts/fontawesome/fontawesome-webfont
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 796 ms

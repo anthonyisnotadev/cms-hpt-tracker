@@ -1,0 +1,42 @@
+# curl-style evidence for https://thecoreinstitutehospital.com/cms-hpt.txt
+# fetched 2026-09-07T01:32:36.861Z with the tracker's BROWSER_HEADERS (production client)
+# record: 030108 | THE CORE INSTITUTE SPECIALTY HOSP | AZ | finding: no-cms-hpt-txt-published
+
+* DNS thecoreinstitutehospital.com: 34.139.23.73
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://thecoreinstitutehospital.com/cms-hpt.txt
+< HTTP 404
+< cache-control: no-cache, must-revalidate, max-age=0, no-store, private
+< connection: Keep-Alive
+< content-encoding: gzip
+< content-length: 150
+< content-type: text/plain; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:32:37 GMT
+< expires: Wed, 11 Jan 1984 05:00:00 GMT
+< keep-alive: timeout=10, max=150
+< referrer-policy: strict-origin-when-cross-origin
+< server: 
+< strict-transport-security: max-age=7776000; includeSubdomains;, max-age=31536000
+< vary: Accept-Encoding
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-powered-by: 
+< x-xss-protection: 1; mode=block
+< --- body (222 bytes read) ---
+< location-name: The CORE Institute Hospital
+< source-page-url: https://thecoreinstitutehospital.com
+< mrf-url: https://thecoreinstitutehospital.com/mrf.txt
+< contact-name: hpt-obf:v1:FlRHsmOVCS2nXCbF.Dp7ywWYbDXVCdArxJI_oEw.Rt9jc6LPRx9-xA
+< contact-email: hpt-obf:v1:fY3u4O2kPQHNw9DU.6rCanBBd9244pm4L1K9WvA.OY7Ti_LC1xJ-c3J6QBrLe2rOU7xNsQQBsk0aQ2P81w
+
+* total time: 812 ms

@@ -1,0 +1,102 @@
+# curl-style evidence for https://bwwmh.com/
+# fetched 2026-09-07T01:32:16.067Z with the tracker's BROWSER_HEADERS (production client)
+# record: 010112 | WHITFIELD REGIONAL HOSPITAL | AL | finding: no-cms-hpt-txt-published
+
+* DNS bwwmh.com: 15.197.225.128, 3.33.251.168
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://bwwmh.com/
+< HTTP 301
+< content-length: 73
+< content-type: text/html; charset=utf-8
+< date: Mon, 07 Sep 2026 01:32:14 GMT
+< location: https://whitfieldregionalhospital.com/
+< server: ip-10-123-125-226.ec2.internal
+< vary: Accept-Encoding
+< x-request-id: ee6182a4-71ff-41cb-8059-e488b1ce59e0
+* following Location: https://whitfieldregionalhospital.com/
+
+* final response: https://whitfieldregionalhospital.com/
+< HTTP 200
+< cache-control: max-age=7200
+< content-encoding: gzip
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:32:17 GMT
+< expires: Mon, 07 Sep 2026 03:32:14 GMT
+< host-header: c2hhcmVkLmJsdWVob3N0LmNvbQ==
+< link: <https://whitfieldregionalhospital.com/wp-json/>; rel="https://api.w.org/", <https://whitfieldregionalhospital.com/wp-json/wp/v2/pages/4>; rel="alternate"; title="JSON"; type="application/json", <https://whitfieldregionalhospital.com/>; rel=shortlink
+< server: nginx/1.29.8
+< vary: Accept-Encoding
+< x-server-cache: false
+< --- body (65536 bytes read, truncated) ---
+< <!DOCTYPE html>
+< <html lang="en-US">
+< <head>
+< 	<meta charset="UTF-8">
+< 	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />		<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+< 
+< 	<!-- This site is optimized with the Yoast SEO plugin v28.4 - https://yoast.com/product/yoast-seo-wordpress/ -->
+< 	<title>Home - Whitfield Hospital</title>
+< 	<link rel="canonical" href="https://whitfieldregionalhospital.com/" />
+< 	<meta property="og:locale" content="en_US" />
+< 	<meta property="og:type" content="website" />
+< 	<meta property="og:title" content="Home - Whitfield Hospital" />
+< 	<meta property="og:description" content="Welcome To Whitfield Regional Hospital Patient Portal Quality Healthcare Top-tier healthcare services from a dedicated team of experienced medical professionals. Cost Effective Affordable care solutions without compromising on quality. Patient-First Personalized care plans tailored to meet your unique needs. About Whitfield We strive to provide quality healthcare right here at home. We provide a wide [&hellip;]" />
+< 	<meta property="og:url" content="https://whitfieldregionalhospital.com/" />
+< 	<meta property="og:site_name" content="Whitfield Hospital" />
+< 	<meta property="article:publisher" content="https://www.facebook.com/bwwmh/" />
+< 	<meta property="article:modified_time" content="2026-07-17T21:42:42+00:00" />
+< 	<meta property="og:image" content="https://whitfieldregionalhospital.com/wp-content/uploads/elementor/thumbs/DSC06593-scaled-qplz8jrppgp3qcc05ma6a0aiggpmpwb8ynj89b0luo.jpg" />
+< 	<meta name="twitter:card" content="summary_large_image" />
+< 	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/whitfieldregionalhospital.com\/","url":"https:\/\/whitfieldregionalhospital.com\/","name":"Home - Whitfield Hospital","isPartOf":{"@id":"https:\/\/whitfieldregionalhospital.com\/#website"},"about":{"@id":"https:\/\/whitfieldregionalhospital.com\/#organization"},"primaryImageOfPage":{"@id":"https:\/\/whitfieldregionalhospital.com\/#primaryimage"},"image":{"@id":"https:\/\/whitfieldregionalhospital.com\/#primaryimage"},"thumbnailUrl":"https:\/\/whitfieldregionalhospital.com\/wp-content\/uploads\/elementor\/thumbs\/DSC06593-scaled-qplz8jrppgp3qcc05ma6a0aiggpmpwb8ynj89b0luo.jpg","datePublished":"2024-05-03T19:20:57+00:00","dateModified":"2026-07-17T21:42:42+00:00","breadcrumb":{"@id":"https:\/\/whitfieldregionalhospital.com\/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https:\/\/whitfieldregionalhospital.com\/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/whitfieldregionalhospital.com\/#primaryimage","url":"https:\/\/whitfieldregionalhospital.com\/wp-content\/uploads\/elementor\/thumbs\/DSC06593-scaled-qplz8jrppgp3qcc05ma6a0aiggpmpwb8ynj89b0luo.jpg","contentUrl":"https:\/\/whitfieldregionalhospital.com\/wp-content\/uploads\/elementor\/thumbs\/DSC06593-scaled-qplz8jrppgp3qcc05ma6a0aiggpmpwb8ynj89b0luo.jpg"},{"@type":"BreadcrumbList","@id":"https:\/\/whitfieldregionalhospital.com\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https:\/\/whitfieldregionalhospital.com\/#website","url":"https:\/\/whitfieldregionalhospital.com\/","name":"Whitfield Hospital","description":"","publisher":{"@id":"https:\/\/whitfieldregionalhospital.com\/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/whitfieldregionalhospital.com\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https:\/\/whitfieldregionalhospital.com\/#organization","name":"Whitfield Hospital","url":"https:\/\/whitfieldregionalhospital.com\/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https:\/\/whitfieldregionalhospital.com\/#\/schema\/logo\/image\/","url":"https:\/\/whitfieldregionalhospital.com\/wp-content\/uploads\/2024\/05\/WRH_Logo.png","contentUrl":"https:\/\/whitfieldregionalhospital.com\/wp-content\/uploads\/2024\/05\/WRH_Logo.png","width":1920,"height":1320,"caption":"Whitfield Hospital"},"image":{"@id":"https:\/\/whitfieldregionalhospital.com\/#\/schema\/logo\/image\/"},"sameAs":["https:\/\/www.facebook.com\/bwwmh\/","https:\/\/www.instagram.com\/whitfield_regional_hospital\/","https:\/\/www.youtube.com\/@whitfieldregionalhospital7344\/videos"]}]}</script>
+< 	<!-- / Yoast SEO plugin. -->
+< 
+< 
+< <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+< <link rel='dns-prefetch' href='//www.googletagmanager.com' />
+< <link href='https://fonts.gstatic.com' crossorigin='1' rel='preconnect' />
+< <link rel="alternate" type="application/rss+xml" title="Whitfield Hospital &raquo; Feed" href="https://whitfieldregionalhospital.com/feed/" />
+< <link rel="alternate" type="application/rss+xml" title="Whitfield Hospital &raquo; Comments Feed" href="https://whitfieldregionalhospital.com/comments/feed/" />
+< <link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://whitfieldregionalhospital.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwhitfieldregionalhospital.com%2F" />
+< <link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://whitfieldregionalhospital.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwhitfieldregionalhospital.com%2F&#038;format=xml" />
+< <style id="wp-img-auto-sizes-contain-inline-css">
+< img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+< /*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+< </style>
+< <link rel='stylesheet' id='font-awesome-5-all-css' href='https://whitfieldregionalhospital.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/all.min.css?ver=4.2.4' media='all' />
+< <link rel='stylesheet' id='font-awesome-4-shim-css' href='https://whitfieldregionalhospital.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/v4-shims.min.css?ver=4.2.4' media='all' />
+< <link rel='stylesheet' id='jkit-elements-main-css' href='https://whitfieldregionalhospital.com/wp-content/plugins/jeg-elementor-kit/assets/css/elements/main.css?ver=3.2.16' media='all' />
+< <style id="wp-emoji-styles-inline-css">
+< 
+< 	img.wp-smiley, img.emoji {
+< 		display: inline !important;
+< 		border: none !important;
+< 		box-shadow: none !important;
+< 		height: 1em !important;
+< 		width: 1em !important;
+< 		margin: 0 0.07em !important;
+< 		vertical-align: -0.1em !important;
+< 		background: none !important;
+< 		padding: 0 !important;
+< 	}
+< /*# sourceURL=wp-emoji-styles-inline-css */
+< </style>
+< <style id="classic-theme-styles-inline-css">
+< /*! This file is auto-generated */
+< .wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+< /*# sourceURL=/wp-includes/css/classic-themes.min.css */
+< </style>
+< <style id="global-styles-inline-css">
+< :root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--primary: rgb(22,81,68);--wp--preset--color--secondary: rgb(1,51,46);--wp--preset--color--tertiary: rgb(201,201,201);--wp--preset--color--quaternary: #ffffff;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,1
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 3795 ms

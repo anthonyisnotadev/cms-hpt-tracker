@@ -1,0 +1,206 @@
+# curl-style evidence for https://atlantichealth.org/
+# fetched 2026-09-07T01:35:31.290Z with the tracker's BROWSER_HEADERS (production client)
+# record: 310115 | AHS HOSPITAL CORP | NJ | finding: not-assessed-not-named-in-file
+
+* DNS atlantichealth.org: 151.101.3.10, 151.101.67.10, 151.101.131.10, 151.101.195.10
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://atlantichealth.org/
+< HTTP 301
+< accept-ranges: bytes
+< age: 268
+< cache-control: max-age=300
+< content-length: 279
+< content-type: text/html; charset=iso-8859-1
+< date: Mon, 07 Sep 2026 01:35:32 GMT
+< expires: Mon, 07 Sep 2026 01:36:04 GMT
+< location: https://www.atlantichealth.org/
+< strict-transport-security: max-age=31557600
+< x-cache: HIT
+< x-served-by: cache-iad-kiad7000030-IAD
+< x-timer: S1788744932.204919,VS0,VS0,VE328
+< x-xss-protection: 1; mode=block
+* following Location: https://www.atlantichealth.org/
+
+* redirect hop 2: https://www.atlantichealth.org/
+< HTTP 301
+< accept-ranges: bytes
+< age: 168
+< cache-control: private, max-age=0, proxy-revalidate, no-store, no-cache, must-revalidate
+< connection: Keep-Alive
+< content-encoding: br
+< content-length: 1663
+< content-type: text/html; charset=iso-8859-1
+< date: Mon, 07 Sep 2026 01:35:32 GMT
+< expires: Sun, 08 Mar 2026 20:19:19 GMT
+< keep-alive: timeout=5, max=250
+< location: https://www.atlantichealth.org/home
+< pragma: no-cache
+< rtss: 2-6-139
+< server: Apache
+< strict-transport-security: max-age=31557600
+< vary: Accept-Encoding
+< x-cache: HIT
+< x-served-by: cache-lga21963-LGA
+< x-timer: S1788744933.724419,VS0,VS0,VE1
+< x-xss-protection: 1; mode=block
+* following Location: https://www.atlantichealth.org/home
+
+* final response: https://www.atlantichealth.org/home
+< HTTP 200
+< accept-ranges: bytes
+< age: 24866
+< cache-control: private, max-age=0, proxy-revalidate, no-store, no-cache, must-revalidate
+< connection: Keep-Alive
+< content-encoding: br
+< content-length: 34424
+< content-security-policy: script-src 'self' 'unsafe-eval' 'unsafe-inline' *.atlantichealth.org *.acuityplatform.com *.adobedtm.com *.ahsapp.org *.cookielaw.org *.eruptr.io *.scene7.com www.onelink-edge.com *.marketo.com *.marketo.net *.blackbaudcdn.net *.blackbaudhosting.com *.blackbaud.com *.coveo.com googleads.g.doubleclick.net js.adsrvr.org platform.twitter.com rules.quantcount.com secure.quantserve.com siteimproveanalytics.com static.ads-twitter.com www.google.com www.google-analytics.com www.googleadservices.com *.googleapis.com www.googletagmanager.com www.gstatic.com; object-src 'self' *.atlantichealth.org ; frame-ancestors 'self' *.atlantichealth.org; worker-src 'self' blob: *.atlantichealth.org;
+< content-type: text/html;charset=utf-8
+< date: Mon, 07 Sep 2026 01:35:32 GMT
+< expires: Sun, 08 Mar 2026 20:05:45 GMT
+< keep-alive: timeout=5, max=250
+< pragma: no-cache
+< rtss: 2-6-151
+< server: Apache
+< strict-transport-security: max-age=31557600
+< vary: x-aem-variant,Accept-Encoding
+< x-cache: HIT
+< x-content-type-options: nosniff
+< x-frame-options: SAMEORIGIN
+< x-served-by: cache-lga21956-LGA
+< x-timer: S1788744933.911382,VS0,VS0,VE1
+< x-vhost: publish
+< x-xss-protection: 1; mode=block
+< --- body (65536 bytes read, truncated) ---
+< <!--
+< * Copyright 2020 Adobe. All rights reserved.
+< * This file is licensed to you under the Apache License, Version 2.0 (the "License");
+< * you may not use this file except in compliance with the License. You may obtain a copy
+< * of the License at http://www.apache.org/licenses/LICENSE-2.0
+< *
+< * Unless required by applicable law or agreed to in writing, software distributed under
+< * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
+< * OF ANY KIND, either express or implied. See the License for the specific language
+< * governing permissions and limitations under the License.
+< -->
+< <!DOCTYPE html>
+< <html lang="en">
+< <head>
+< <script>(function(){ window.SS = window.SS || {}; SS.Require = function (callback){ if (typeof callback === 'function') { if (window.SS && SS.EventTrack) { callback(); } else { var siteSpect = document.getElementById('siteSpectLibraries'); var head = document.getElementsByTagName('head')[0]; if (siteSpect === null && typeof head !== 'undefined') { siteSpect = document.createElement('script'); siteSpect.type = 'text/javascript'; siteSpect.setAttribute("ssobj", "/__ssobj/"); siteSpect.setAttribute("sstrack", "track"); siteSpect.src = '/__ssobj/core.js+ssdomvar.js+generic-adapter.js';siteSpect.async = true; siteSpect.id = 'siteSpectLibraries'; head.appendChild(siteSpect); } if (window.addEventListener){ siteSpect.addEventListener('load', callback, false); } else { siteSpect.attachEvent('onload', callback, false); } } } };})(); </script>
+< <script>
+< var ss_watts = "92105:2847636,92112:2847935,93906:2888188,94447:2901135,96757:2941576";
+< var ss_watts_names = "Mammography Phone number in CTA _Promoted_:Variation Group 1,Find a Primary Care Location Detail Page Customization:Variation Group 1,2_23_2026 _ Monitoring Campaign:Original,V2_OTBanner:B,Find a Doctor _ Virtual Primary Care Customization:Virtual Primary Care";
+< var ss_watts_is_h = "0";
+< window.dataLayer = window.dataLayer || [];
+< window.dataLayer.push({'sitespect-assignments': ss_watts});
+< window.dataLayer.push({'sitespect-assignments-names': ss_watts_names});
+< window.dataLayer.push({'sitespect-is-h': ss_watts_is_h});
+< </script>
+< <script>
+< window.ssIntersectMetric=function(e,r,t=void 0,n=50,o=!1){if(!window.SS||!SS.EventTrack||"function"!=typeof SS.EventTrack.rp)return void console.error("SiteSpect EventTrack is not available. Ensure SS and SS.EventTrack.rp are loaded.");const c=n/100,i=e=>{const n=new IntersectionObserver((e=>{e.forEach((e=>{if(e.intersectionRatio>=c){let e;if("function"==typeof t)try{e=t()}catch(e){console.error("Error in value callback:",e)}void 0!==e?SS.EventTrack.rp(r,e):SS.EventTrack.rp(r),o||n.disconnect()}}))}),{threshold:[c]});n.observe(e)},s=document.querySelector(e);if(s)return void i(s);const a=new MutationObserver((()=>{const r=document.querySelector(e);r&&(i(r),a.disconnect())}));a.observe(document.body,{childList:!0,subtree:!0})};
+< </script>
+< 
+<     <meta name="content-page-ref" content="X6jr4y-Tby-NDSnOn93WqhIch_Vu4oIcyaXVmEDiDYrUxPHUqivsv1n-v85clZFc"/>
+< <script defer="defer" type="text/javascript" src="/.rum/@adobe/helix-rum-js@%5E2/dist/micro.js"></script>
+< <script>
+<         window.dataLayer = window.dataLayer || [];
+<     </script>
+< 
+<     <!-- Google Tag Manager -->
+<     <script>
+<         const googleAccountId = "GTM\u002DWDJZWXG";
+< 
+<         (function (w, d, s, l, i) {
+<             w[l] = w[l] || []; w[l].push({
+<                 'gtm.start':
+<                     new Date().getTime(), event: 'gtm.js'
+<             }); var f = d.getElementsByTagName(s)[0],
+<                 j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+<                     'https://tagging.atlantichealth.org/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+<         })(window, document, 'script', 'dataLayer', googleAccountId);
+<     </script>
+<     <!-- End Google Tag Manager -->
+< 
+<     <link rel="alternate" hreflang="es" href="https://espanol.atlantichealth.org/home"/>
+<     <meta charset="UTF-8"/>
+<     <title>Atlantic Health: Hospitals Serving New Jersey &amp; New York</title>
+<     
+<     <meta name="description" content="Atlantic Health&#39;s hospitals and outpatient centers are on the forefront of medicine and continually set standards for quality health care."/>
+<     <meta name="template" content="homepage-template"/>
+<     
+< 
+<     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<     
+<     
+< <link rel="canonical" href="https://www.atlantichealth.org/home"/>
+<     
+< 
+<     
+< 
+<     
+<     <link rel="stylesheet" href="/etc.clientlibs/ahs/clientlibs/clientlib-base.lc-3c3f5dd55b9ba40f3a512eeabe9e111c-lc.min.css" type="text/css">
+< 
+< 
+< 
+< 
+< 
+< <link rel="shortcut icon" href="/etc.clientlibs/ahs/clientlibs/clientlib-react/resources/favicon.ico"/>
+< <link rel="icon" sizes="16x16" href="/etc.clientlibs/ahs/clientlibs/clientlib-react/resources/favicon-16x16.png"/>
+< <link rel="icon" sizes="32x32" href="/etc.clientlibs/ahs/clientlibs/clientlib-react/resources/favicon-32x32.png"/>
+< <link rel="icon" sizes="96x96" href="/etc.clientlibs/ahs/clientlibs/clientlib-react/resources/favicon-96x96.png"/>
+< <link rel="apple-touch-icon" sizes="180x180" href="/etc.clientlibs/ahs/clientlibs/clientlib-react/resources/ahs-logo-apple-touch-icon-180x180.png"/>
+< <link rel="icon" type="image/png" sizes="192x192" href="/etc.clientlibs/ahs/clientlibs/clientlib-react/resources/ahs-logo-192x192.png"/>
+< 
+< 
+< 
+< 
+< <meta property="cq:pagemodel_root_url" content="/content/ahs/us/en/home.model.json"/>
+< 
+< <meta property="og:title" content="Atlantic Health: Hospitals Serving New Jersey &amp; New York"/>
+< <meta property="og:description" content="Atlantic Health&#39;s hospitals and outpatient centers are on the forefront of medicine and continually set standards for quality health care."/>
+< 
+< <meta property="og:image" content="https://www.atlantichealth.org/content/dam/ahs/web/atlantic-health-default-OG-871-457.png"/>
+< 
+< 
+< 
+< 
+< 
+< <meta property="cq:errorpages" content="/content/ahs/us/en/errors"/>
+< 
+<     
+<     
+<     
+< 
+<     
+< 
+<     
+<     
+<     
+< <link rel="stylesheet" href="/etc.clientlibs/ahs/clientlibs/clientlib-react.lc-6824c9ebc785de0c121838102af85dee-lc.min.css" type="text/css">
+< 
+< 
+< 
+<     
+< 
+<     
+<     
+<     <!-- Coveo Analytics - Page view call setup -->
+<     <script src="https://static.cloud.coveo.com/coveo.analytics.js/2/coveoua.js"></script>
+<     <script>
+<     window.coveoAnalyticsConfig = {
+<         token: "eyJhbGciOiJIUzI1NiJ9.eyJwaXBlbGluZSI6IkFIUyBQaXBlbGluZSBWMiIsInNlYXJjaEh1YiI6Ikdsb2JhbFNlYXJjaCIsInY4Ijp0cnVlLCJ0b2tlbklkIjoid3R5NG1vbGw0c3BsZXk0bXJpNXV6NDJvNzQiLCJvcmdhbml6YXRpb24iOiJhdGxhbnRpY2hlYWx0aHN5c3RlbXByb2R1Y3Rpb25ibnRtOXBtcSIsInVzZXJJZHMiOlt7InR5cGUiOiJVc2VyIiwibmFtZSI6ImFub255bW91cyIsInByb3ZpZGVyIjoiRW1haWwgU2VjdXJpdHkgUHJvdmlkZXIifV0sInJvbGVzIjpbInF1ZXJ5RXhlY3V0b3IiXSwiaXNzIjoiU2VhcmNoQXBpIiwiZXhwIjoxNzg4NzYxOTQ0LCJpYXQiOjE3ODg2NzU1NDR9.igRHN_0o-OHTfSKRgOGXfo9fKPP1jkRr0KwPmelC2fU",
+<         endpoint: "https://platformhipaa.cloud.coveo.com"
+<     };
+<     </script>
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 7919 ms

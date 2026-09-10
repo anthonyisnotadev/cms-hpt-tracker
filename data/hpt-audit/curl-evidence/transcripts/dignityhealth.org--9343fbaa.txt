@@ -1,0 +1,222 @@
+# curl-style evidence for https://dignityhealth.org/
+# fetched 2026-09-07T01:32:37.414Z with the tracker's BROWSER_HEADERS (production client)
+# record: 050152 | UCSF HEALTH SAINT FRANCIS HOSPITAL | CA | finding: not-assessed-not-named-in-file
+# record: 050457 | UCSF HEALTH ST. MARY'S HOSPITAL | CA | finding: not-assessed-not-named-in-file
+
+* DNS dignityhealth.org: 104.16.65.119, 104.16.66.119
+
+> GET /  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://dignityhealth.org/
+< HTTP 301
+< cf-ray: a371f5f6482b7112-IAD
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:32:38 GMT
+< location: https://www.dignityhealth.org/
+< server: cloudflare
+* following Location: https://www.dignityhealth.org/
+
+* redirect hop 2: https://www.dignityhealth.org/
+< HTTP 301
+< cf-ray: a371f5f73a76bba5-IAD
+< content-type: text/html; charset=UTF-8
+< date: Mon, 07 Sep 2026 01:32:38 GMT
+< location: https://www.commonspirit.org/redirects/dignityhealthorg/
+< server: cloudflare
+* following Location: https://www.commonspirit.org/redirects/dignityhealthorg/
+
+* redirect hop 3: https://www.commonspirit.org/redirects/dignityhealthorg/
+< HTTP 301
+< accept-ranges: bytes
+< cache-control: max-age=300
+< cf-cache-status: HIT
+< cf-ray: a371f5f8281df283-IAD
+< content-security-policy: report-uri https://cdn1.hellohumankindness.org/svc/csp-report/?t=2c30318d157a3a246eb902f5cc3f638e389ec605629cd830c32c9f1c8100143a4d7816e0d84a6eae3844fcd6d41814674eceb7db34fabf42; style-src 'self' 'unsafe-inline' *.cognitoforms.com *.crazyegg.com *.dignityhealth.org *.foresee.com *.hellohumankindness.org *.marketo.com care.commonspirit.org cdn.commonspirit.org cdn.cookielaw.org cookie-cdn.cookiepro.com fonts.googleapis.com geolocation.onetrust.com privacyportal.onetrust.com providers.commonspirit.org publish-p121003-e1198293.adobeaemcloud.com ucm-us.verint-cdn.com/files/sites/commonspirit/ use.typekit.net; base-uri 'self' providers.commonspirit.org; script-src 'self' 'unsafe-eval' 'unsafe-inline' *.crazyegg.com *.dignityhealth.org *.evaliahealth.com *.everestjs.net *.everesttech.net *.google.com/pagead/ *.google.com/recaptcha/ *.googleadservices.com *.gstatic.com/recaptcha/ *.hellohumankindness.org *.invoca.net *.jotform.io *.marketo.com *.marketo.net *.recaptcha.net/recaptcha/ *.youtube-nocookie.com *.youtube.com adobedc.demdex.net ajax.googleapis.com ajax.microsoft.com assets.adobedtm.com assets.adobedtm.com bam.nr-data.net care.commonspirit.org cdn.commonspirit.org cdn.cookielaw.org cdn1.commonspirit.org cdnjs.cloudflare.com commonspirit.experiencecloud.adobe.com cookie-cdn.cookiepro.com experience.adobe.com geolocation.onetrust.com js-agent.newrelic.com login.commonspirit.org maps.googleapis.com privacyportal.onetrust.com providers.commonspirit.org resources.unlockhealthnow.com/embed-script/ survey.vovici.com ucm-us.verint-cdn.com/files/modules/ ucm-us.verint-cdn.com/files/sites/commonspirit/ use.typekit.net; frame-src 'self' *.crazyegg.com *.jotform.io *.marketo.com *.vimeo.com *.youtube-nocookie.com *.youtube.com care.commonspirit.org commonspirit.demdex.net docasap.com www.cognitoforms.com www.google.com www.recaptcha.net; img-src 'self' *.blob.core.windows.net *.dignityhealth.org *.everesttech.net *.foresee.com *.google.com/pagead/ *.googleadservices.com *.googleapis.com *.googleusercontent.com *.gstatic.com *.hellohumankindness.org *.marketo.com *.twimg.com *.youtube.com api.clearsensecloud.com apps.vmfh.org bam.nr-data.net care.commonspirit.org cdn.cookielaw.org cdn.healthwise.net cdn.jotfor.ms d20bb9v528piij.cloudfront.net data: dpm.demdex.net i.ytimg.com login.commonspirit.org publish-p121003-e1198293.adobeaemcloud.com s3.amazonaws.com s7d1.scene7.com s7d2.scene7.com trinityhealth.com/wp-content/uploads/ ucm-us.verint-cdn.com use.typekit.net www.google.com; connect-src 'self' *.ase-usw1-shared-prd.p.azurewebsites.net *.crazyegg.com *.dignityhealth.org *.everesttech.net *.foresee.com *.google.com/pagead/ *.google.com/recaptcha/ *.googleadservices.com *.googleapis.com *.hellohumankindness.org *.mktoresp.com *.mktoutil.com *.omtrdc.net *.recaptcha.net adobedc.demdex.net ajax.microsoft.com analytics.google.com api.cshcontent.org/svc/ api.ipify.org apiprod.commonspirit.org assets.adobedtm.com bam.nr-data.net cdn.commonspirit.org cdn.cookielaw.org cdn.cookielaw.org dcs.adobedc.net dpm.demdex.net fid.agkn.com fonts.googleapis.com geolocation.onetrust.com identity-api.commonspirit.org identity-func.commonspirit.org login.commonspirit.org maps.googleapis.com privacyportal-na01.onetrust.com providers.commonspirit.org publish-p121003-e1198293.adobeaemcloud.com readaloud.googleapis.com s7d1.scene7.com survey.vovici.com telemetry.commonspirit.org translate.googleapis.com ucm-us.verint-cdn.com/files/sites/commonspirit/; media-src 'self' d20bb9v528piij.cloudfront.net s7d1.scene7.com; default-src 'self' *.dignityhealth.org account.commonspirit.org cdn1.commonspirit.org commonspirit.demdex.net identity-func.commonspirit.org login.commonspirit.org; font-src 'self' *.dignityhealth.org *.gstatic.com cdn.jorfor.ms cdn1.commonspirit.org data: use.typekit.net www.commonspirit.org;
+< content-type: text/html; charset=iso-8859-1
+< date: Mon, 07 Sep 2026 01:32:39 GMT
+< expires: Mon, 07 Sep 2026 01:35:24 GMT
+< location: https://www.commonspirit.org/redirects/dignityhealthorg
+< server: cloudflare
+< strict-transport-security: max-age=31557600
+< x-cache: MISS
+< x-dispatcher: dispatcher-commonspirit
+< x-served-by: cache-lga21990-LGA
+< x-timer: S1788744625.718453,VS0,VS0,VE16
+* following Location: https://www.commonspirit.org/redirects/dignityhealthorg
+
+* redirect hop 4: https://www.commonspirit.org/redirects/dignityhealthorg
+< HTTP 301
+< accept-ranges: bytes
+< age: 134
+< cache-control: max-age=300
+< cf-cache-status: HIT
+< cf-ray: a371f5f87996f283-IAD
+< content-security-policy: report-uri https://cdn1.hellohumankindness.org/svc/csp-report/?t=2c30318d157a3a246eb902f5cc3f638e389ec605629cd830c32c9f1c8100143a4d7816e0d84a6eae3844fcd6d41814674eceb7db34fabf42; style-src 'self' 'unsafe-inline' *.cognitoforms.com *.crazyegg.com *.dignityhealth.org *.foresee.com *.hellohumankindness.org *.marketo.com care.commonspirit.org cdn.commonspirit.org cdn.cookielaw.org cookie-cdn.cookiepro.com fonts.googleapis.com geolocation.onetrust.com privacyportal.onetrust.com providers.commonspirit.org publish-p121003-e1198293.adobeaemcloud.com ucm-us.verint-cdn.com/files/sites/commonspirit/ use.typekit.net; base-uri 'self' providers.commonspirit.org; script-src 'self' 'unsafe-eval' 'unsafe-inline' *.crazyegg.com *.dignityhealth.org *.evaliahealth.com *.everestjs.net *.everesttech.net *.google.com/pagead/ *.google.com/recaptcha/ *.googleadservices.com *.gstatic.com/recaptcha/ *.hellohumankindness.org *.invoca.net *.jotform.io *.marketo.com *.marketo.net *.recaptcha.net/recaptcha/ *.youtube-nocookie.com *.youtube.com adobedc.demdex.net ajax.googleapis.com ajax.microsoft.com assets.adobedtm.com assets.adobedtm.com bam.nr-data.net care.commonspirit.org cdn.commonspirit.org cdn.cookielaw.org cdn1.commonspirit.org cdnjs.cloudflare.com commonspirit.experiencecloud.adobe.com cookie-cdn.cookiepro.com experience.adobe.com geolocation.onetrust.com js-agent.newrelic.com login.commonspirit.org maps.googleapis.com privacyportal.onetrust.com providers.commonspirit.org resources.unlockhealthnow.com/embed-script/ survey.vovici.com ucm-us.verint-cdn.com/files/modules/ ucm-us.verint-cdn.com/files/sites/commonspirit/ use.typekit.net; frame-src 'self' *.crazyegg.com *.jotform.io *.marketo.com *.vimeo.com *.youtube-nocookie.com *.youtube.com care.commonspirit.org commonspirit.demdex.net docasap.com www.cognitoforms.com www.google.com www.recaptcha.net; img-src 'self' *.blob.core.windows.net *.dignityhealth.org *.everesttech.net *.foresee.com *.google.com/pagead/ *.googleadservices.com *.googleapis.com *.googleusercontent.com *.gstatic.com *.hellohumankindness.org *.marketo.com *.twimg.com *.youtube.com api.clearsensecloud.com apps.vmfh.org bam.nr-data.net care.commonspirit.org cdn.cookielaw.org cdn.healthwise.net cdn.jotfor.ms d20bb9v528piij.cloudfront.net data: dpm.demdex.net i.ytimg.com login.commonspirit.org publish-p121003-e1198293.adobeaemcloud.com s3.amazonaws.com s7d1.scene7.com s7d2.scene7.com trinityhealth.com/wp-content/uploads/ ucm-us.verint-cdn.com use.typekit.net www.google.com; connect-src 'self' *.ase-usw1-shared-prd.p.azurewebsites.net *.crazyegg.com *.dignityhealth.org *.everesttech.net *.foresee.com *.google.com/pagead/ *.google.com/recaptcha/ *.googleadservices.com *.googleapis.com *.hellohumankindness.org *.mktoresp.com *.mktoutil.com *.omtrdc.net *.recaptcha.net adobedc.demdex.net ajax.microsoft.com analytics.google.com api.cshcontent.org/svc/ api.ipify.org apiprod.commonspirit.org assets.adobedtm.com bam.nr-data.net cdn.commonspirit.org cdn.cookielaw.org cdn.cookielaw.org dcs.adobedc.net dpm.demdex.net fid.agkn.com fonts.googleapis.com geolocation.onetrust.com identity-api.commonspirit.org identity-func.commonspirit.org login.commonspirit.org maps.googleapis.com privacyportal-na01.onetrust.com providers.commonspirit.org publish-p121003-e1198293.adobeaemcloud.com readaloud.googleapis.com s7d1.scene7.com survey.vovici.com telemetry.commonspirit.org translate.googleapis.com ucm-us.verint-cdn.com/files/sites/commonspirit/; media-src 'self' d20bb9v528piij.cloudfront.net s7d1.scene7.com; default-src 'self' *.dignityhealth.org account.commonspirit.org cdn1.commonspirit.org commonspirit.demdex.net identity-func.commonspirit.org login.commonspirit.org; font-src 'self' *.dignityhealth.org *.gstatic.com cdn.jorfor.ms cdn1.commonspirit.org data: use.typekit.net www.commonspirit.org;
+< content-type: text/html; charset=iso-8859-1
+< date: Mon, 07 Sep 2026 01:32:39 GMT
+< expires: Mon, 07 Sep 2026 01:35:24 GMT
+< location: https://www.commonspirit.org/dignity-health
+< server: cloudflare
+< strict-transport-security: max-age=31557600
+< x-cache: MISS
+< x-dispatcher: dispatcher-commonspirit
+< x-served-by: cache-iad-kiad7000120-IAD
+< x-timer: S1788744625.806827,VS0,VS0,VE19
+* following Location: https://www.commonspirit.org/dignity-health
+
+* final response: https://www.commonspirit.org/dignity-health
+< HTTP 200
+< access-control-allow-origin: *
+< age: 170
+< cache-control: max-age=300
+< cf-cache-status: HIT
+< cf-ray: a371f5f8aa49f283-IAD
+< content-encoding: gzip
+< content-security-policy: report-uri https://cdn1.hellohumankindness.org/svc/csp-report/?t=2c30318d157a3a246eb902f5cc3f638e389ec605629cd830c32c9f1c8100143a4d7816e0d84a6eae3844fcd6d41814674eceb7db34fabf42; style-src 'self' 'unsafe-inline' *.cognitoforms.com *.crazyegg.com *.dignityhealth.org *.foresee.com *.hellohumankindness.org *.marketo.com care.commonspirit.org cdn.commonspirit.org cdn.cookielaw.org cookie-cdn.cookiepro.com fonts.googleapis.com geolocation.onetrust.com privacyportal.onetrust.com providers.commonspirit.org publish-p121003-e1198293.adobeaemcloud.com ucm-us.verint-cdn.com/files/sites/commonspirit/ use.typekit.net; base-uri 'self' providers.commonspirit.org; script-src 'self' 'unsafe-eval' 'unsafe-inline' *.crazyegg.com *.dignityhealth.org *.evaliahealth.com *.everestjs.net *.everesttech.net *.google.com/pagead/ *.google.com/recaptcha/ *.googleadservices.com *.gstatic.com/recaptcha/ *.hellohumankindness.org *.invoca.net *.jotform.io *.marketo.com *.marketo.net *.recaptcha.net/recaptcha/ *.youtube-nocookie.com *.youtube.com adobedc.demdex.net ajax.googleapis.com ajax.microsoft.com assets.adobedtm.com assets.adobedtm.com bam.nr-data.net care.commonspirit.org cdn.commonspirit.org cdn.cookielaw.org cdn1.commonspirit.org cdnjs.cloudflare.com commonspirit.experiencecloud.adobe.com cookie-cdn.cookiepro.com experience.adobe.com geolocation.onetrust.com js-agent.newrelic.com login.commonspirit.org maps.googleapis.com privacyportal.onetrust.com providers.commonspirit.org resources.unlockhealthnow.com/embed-script/ survey.vovici.com ucm-us.verint-cdn.com/files/modules/ ucm-us.verint-cdn.com/files/sites/commonspirit/ use.typekit.net; frame-src 'self' *.crazyegg.com *.jotform.io *.marketo.com *.vimeo.com *.youtube-nocookie.com *.youtube.com care.commonspirit.org commonspirit.demdex.net docasap.com www.cognitoforms.com www.google.com www.recaptcha.net; img-src 'self' *.blob.core.windows.net *.dignityhealth.org *.everesttech.net *.foresee.com *.google.com/pagead/ *.googleadservices.com *.googleapis.com *.googleusercontent.com *.gstatic.com *.hellohumankindness.org *.marketo.com *.twimg.com *.youtube.com api.clearsensecloud.com apps.vmfh.org bam.nr-data.net care.commonspirit.org cdn.cookielaw.org cdn.healthwise.net cdn.jotfor.ms d20bb9v528piij.cloudfront.net data: dpm.demdex.net i.ytimg.com login.commonspirit.org publish-p121003-e1198293.adobeaemcloud.com s3.amazonaws.com s7d1.scene7.com s7d2.scene7.com trinityhealth.com/wp-content/uploads/ ucm-us.verint-cdn.com use.typekit.net www.google.com; connect-src 'self' *.ase-usw1-shared-prd.p.azurewebsites.net *.crazyegg.com *.dignityhealth.org *.everesttech.net *.foresee.com *.google.com/pagead/ *.google.com/recaptcha/ *.googleadservices.com *.googleapis.com *.hellohumankindness.org *.mktoresp.com *.mktoutil.com *.omtrdc.net *.recaptcha.net adobedc.demdex.net ajax.microsoft.com analytics.google.com api.cshcontent.org/svc/ api.ipify.org apiprod.commonspirit.org assets.adobedtm.com bam.nr-data.net cdn.commonspirit.org cdn.cookielaw.org cdn.cookielaw.org dcs.adobedc.net dpm.demdex.net fid.agkn.com fonts.googleapis.com geolocation.onetrust.com identity-api.commonspirit.org identity-func.commonspirit.org login.commonspirit.org maps.googleapis.com privacyportal-na01.onetrust.com providers.commonspirit.org publish-p121003-e1198293.adobeaemcloud.com readaloud.googleapis.com s7d1.scene7.com survey.vovici.com telemetry.commonspirit.org translate.googleapis.com ucm-us.verint-cdn.com/files/sites/commonspirit/; media-src 'self' d20bb9v528piij.cloudfront.net s7d1.scene7.com; default-src 'self' *.dignityhealth.org account.commonspirit.org cdn1.commonspirit.org commonspirit.demdex.net identity-func.commonspirit.org login.commonspirit.org; font-src 'self' *.dignityhealth.org *.gstatic.com cdn.jorfor.ms cdn1.commonspirit.org data: use.typekit.net www.commonspirit.org;
+< content-type: text/html;charset=utf-8
+< date: Mon, 07 Sep 2026 01:32:39 GMT
+< expires: Mon, 07 Sep 2026 01:34:48 GMT
+< last-modified: Wed, 26 Aug 2026 21:21:55 GMT
+< server: cloudflare
+< strict-transport-security: max-age=15786000; includeSubDomains
+< vary: Accept-Encoding
+< x-cache: MISS
+< x-content-type-options: nosniff
+< x-dispatcher: dispatcher-commonspirit
+< x-frame-options: SAMEORIGIN
+< x-served-by: cache-chi-klot8100032-CHI
+< x-timer: S1788381514.683835,VS0,VS0,VE32
+< x-vhost: publish
+< x-xss-protection: 1; mode=block
+< --- body (65536 bytes read, truncated) ---
+< <!DOCTYPE HTML>
+< <html lang="en-US">
+< <head>
+<     
+<     
+< 
+< 
+< 
+<     <!--
+<         The external JS (onetrust-loader.js) is the single source of truth
+<         for load-gate logic. Passing domain-script ID as an attribute keeps
+<         the HTL template environment-agnostic (prod vs test suffix handled
+<         by the OSGi config, not hardcoded here).
+<     -->
+<     <meta name="content-page-ref" content="3y6SKoziT9LnAJzUZDHfvrkNMjJjiT_38Lxa0SHzs9UbNXgLy4QXgBHP07IlD5AjwwQcs2K5II_yKbj2EBHwxe2co2D7CJnwsd2u2ouLBImaRgmtR1gjYUcxaW3Ivo7D1MTx1Kor7L9Z_r_OXJWRXA"/>
+< <script defer="defer" type="text/javascript" src="/.rum/@adobe/helix-rum-js@%5E2/dist/micro.js"></script>
+< <script src="/content/dam/devops/cdn/consent/commonspiritorg/onetrust-loader.js" type="text/javascript" charset="UTF-8" data-domain-script="0193b204-f661-727e-8182-63584d632daf" data-onetrust-loader="true" defer></script>
+< 
+< 
+<     <meta charset="UTF-8"/>
+<     <title>Dignity Health AZ, CA, and NV</title>
+<     <meta name="description" content="Dignity Health provides compassionate, high-quality, affordable health care services throughout Arizona, California and Nevada. Schedule an appointment today"/>
+<     
+<     <meta name="template" content="consumer-zip-groupings-landing"/>
+<     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<     
+< 
+<     
+<         <meta property="og:title" content="Dignity Health AZ, CA, and NV"/>
+<     
+<         <meta property="og:description" content="Dignity Health provides compassionate, high-quality, affordable health care services throughout Arizona, California and Nevada. Schedule an appointment today"/>
+<     
+<         <meta property="og:url" content="https://www.commonspirit.org/dignity-health"/>
+<     
+<         <meta property="og:type" content="WEBSITE"/>
+<     
+<         <meta property="locale" content="en_US"/>
+<     
+<     <meta name="twitter:card" content="summary_large_image"/>
+<     
+<         <meta name="twitter:title" content="Dignity Health AZ, CA, and NV"/>
+<     
+<         <meta name="twitter:description" content="Dignity Health provides compassionate, high-quality, affordable health care services throughout Arizona, California and Nevada. Schedule an appointment today"/>
+<     
+<         <meta name="twitter:url" content="https://www.commonspirit.org/dignity-health"/>
+<     
+<     <meta name="robots" content="index,follow"/>
+<     <link rel="canonical" href="https://www.commonspirit.org/dignity-health"/>
+<     <link rel="icon" type="image/png" href="https://www.commonspirit.org/content/dam/shared/en/icons/favicon/CSH-logo-mark.png"/>
+< 
+< 
+<     
+<     
+< 
+<     
+<     <link rel="stylesheet" href="/etc.clientlibs/csh-aem-core/clientlibs/clientlib-base.lc-5b6bf6bddb27a9ef3f911fb1eb20081a-lc.min.css" type="text/css">
+< <link rel="stylesheet" href="/etc.clientlibs/csh-aem-core/clientlibs/clientlib-bootstrap.lc-e7578d26d58c00a2f5f6764fce897a50-lc.min.css" type="text/css">
+< <link rel="stylesheet" href="/etc.clientlibs/csh-aem-core/clientlibs/clientlib-site.lc-d98dd332e5edb5ba891fbd593151f580-lc.min.css" type="text/css">
+< 
+< 
+< 
+< 
+< <script type="text/javascript">
+<             (function() {
+<                 window.ContextHub = window.ContextHub || {};
+< 
+<                 /* setting paths */
+<                 ContextHub.Paths = ContextHub.Paths || {};
+<                 ContextHub.Paths.CONTEXTHUB_PATH = "/conf/csh-aem-core/settings/cloudsettings/contexthub-container/contexthub";
+<                 ContextHub.Paths.RESOURCE_PATH = "\/content\/commonspiritorg\/us\/en\/orgs\/dignity\u002Dhealth\u002Dbay\/marketing\/dignity\u002Dhealth\u002Dlanding\/_jcr_content\/contexthub";
+<                 ContextHub.Paths.SEGMENTATION_PATH = "\/conf\/csh\u002Daem\u002Dcore\/settings\/wcm\/segments";
+<                 ContextHub.Paths.CQ_CONTEXT_PATH = "";
+< 
+<                 /* setting initial constants */
+<                 ContextHub.Constants = ContextHub.Constants || {};
+<                 ContextHub.Constants.ANONYMOUS_HOME = "/home/users/6/6lUAHdXTFOM8ha7flL6d";
+<                 ContextHub.Constants.MODE = "no-ui";
+<             }());
+<         </script><script src="/etc/cloudsettings.kernel.js/conf/csh-aem-core/settings/cloudsettings/contexthub-container/contexthub" type="text/javascript"></script>
+< 
+< 
+< 
+< 
+< 
+<     
+<     
+<     
+< 
+<     
+< 
+<     
+< 
+< 
+<         <script type="text/javascript" src="//assets.adobedtm.com/3cb42e98974f/635097c3d389/launch-53cc27bd0043.min.js"></script>
+< 
+< 
+<     
+<     
+<     
+<     
+<     <script async src="/etc.clientlibs/core/wcm/components/commons/datalayer/v2/clientlibs/core.wcm.components.commons.datalayer.v2.lc-1e0136bad0acfb78be509234578e44f9-lc.min.js"></script>
+< 
+< 
+<     
+<     <script async src="/etc.clientlibs/core/wcm/components/commons/datalayer/acdl/core.wcm.components.commons.datalayer.acdl.lc-bf921af342fd2c40139671dbf0920a1f-lc.min.js"></script>
+< 
+< 
+< 
+<     
+<     
+< </head>
+< <body class="consumer-zip-groupings-landing page basicpage" data-cmp-link-accessibility-enabled id="consumer-zip-groupings-landing-c6daa131f8" data-cmp-link-accessibility-text="opens in a new tab" data-cmp-data-layer-enabled data-consumer-zip-groupings="dhbay">
+< <div id="modal-root"></div>
+< 
+< <div id="page-analytics-data" data-cmp-page="{&#34;consumer-zip-groupings-landing-c6daa131f8&#34;:{&#34;@type&#34;:&#34;csh-aem-core/components/structure/consumer-zip-groupings-landing&#34;,&#34;repo:modifyDate&#34;:&#34;2026-08-26T21:21:55Z&#34;,&#34;dc:title&#34;:&#34;Dignity Health AZ, CA, and NV&#34;,&#34;dc:description&#34;:&#34;Dignity Health provides compassionate, high-quality, affordable health care services throughout Arizona, California and Nevada. Schedule an appointment today&#34;,&#34;xdm:template&#34;:&#34;/conf/csh-aem-core/settings/wcm/templates/consumer-zip-groupings-landing&#34;,&#34;xdm:language&#34;:&#34;en-US&#34;,&#34;xdm:tags&#34;:[],&#34;repo:path&#34;:&#34;/content/commonspiritorg/us/en/orgs/dignity-health-bay/marketing/dignity-health-landing.html&#34;}}" data-cmp-page-id="consumer-zip-groupings-landing-c6daa131f8" data-cmp-template-title="Consumer Zip Grouping Landing Page" data-cmp-location-info="{&#34;locationName&#34;:&#34;Dignity Health Bay&#34;,&#34;consumerZipGroupShortCode&#34;:&#34;dhbay&#34;,&#34;regionShortCode&#34;:&#34;carg&#34;,&#34;managementMarketShortCode&#34;:&#34;&#34;,&#34;healthcareMarketShortCode&#34;:&#34;&#34;,&#34;isMedicalGroup&#34;:false,&#34;isFlagshipLocation&#34;:false}" data-cmp-page-error="false" data-cmp-page-error-type="200">
+< </div>
+< 
+< 
+< 
+<     
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 684 ms

@@ -1,0 +1,58 @@
+# curl-style evidence for https://carepricer.nthrive.com/cms-hpt.txt
+# fetched 2026-09-07T01:33:15.936Z with the tracker's BROWSER_HEADERS (production client)
+# record: 190034 | ABBEVILLE GENERAL HOSPITAL | LA | finding: not-assessed-site-unreachable
+
+* DNS carepricer.nthrive.com: 204.11.4.70
+
+> GET /cms-hpt.txt  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://carepricer.nthrive.com/cms-hpt.txt
+< HTTP 404
+< content-length: 1245
+< content-security-policy: default-src 'self' http: https: data: blob: 'unsafe-inline' 'unsafe-eval'; object-src 'none'; frame-ancestors 'self'; base-uri 'self'; form-action 'self' http: https:
+< content-type: text/html
+< date: Mon, 07 Sep 2026 01:33:17 GMT
+< strict-transport-security: max-age=31536000
+< x-frame-options: SAMEORIGIN
+< x-powered-by: ASP.NET
+< --- body (1245 bytes read) ---
+< <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+< <html xmlns="http://www.w3.org/1999/xhtml">
+< <head>
+< <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+< <title>404 - File or directory not found.</title>
+< <style type="text/css">
+< <!--
+< body{margin:0;font-size:.7em;font-family:Verdana, Arial, Helvetica, sans-serif;background:#EEEEEE;}
+< fieldset{padding:0 15px 10px 15px;} 
+< h1{font-size:2.4em;margin:0;color:#FFF;}
+< h2{font-size:1.7em;margin:0;color:#CC0000;} 
+< h3{font-size:1.2em;margin:10px 0 0 0;color:#000000;} 
+< #header{width:96%;margin:0 0 0 0;padding:6px 2% 6px 2%;font-family:"trebuchet MS", Verdana, sans-serif;color:#FFF;
+< background-color:#555555;}
+< #content{margin:0 0 0 2%;position:relative;}
+< .content-container{background:#FFF;width:96%;margin-top:8px;padding:10px;position:relative;}
+< -->
+< </style>
+< </head>
+< <body>
+< <div id="header"><h1>Server Error</h1></div>
+< <div id="content">
+<  <div class="content-container"><fieldset>
+<   <h2>404 - File or directory not found.</h2>
+<   <h3>The resource you are looking for might have been removed, had its name changed, or is temporarily unavailable.</h3>
+<  </fieldset></div>
+< </div>
+< </body>
+< </html>
+< 
+
+* total time: 287 ms
