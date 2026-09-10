@@ -1,4 +1,25 @@
 {
+  "100167": {
+    "ccn": "100167",
+    "name": "Hca Florida Mercy Hospital",
+    "city": "Plantation",
+    "state": "FL",
+    "status": "none",
+    "followUpOn": "",
+    "createdAt": "2026-09-10T01:33:07.001Z",
+    "updatedAt": "2026-09-10T01:33:07.002Z",
+    "entries": [],
+    "correction": {
+      "domain": "hcafloridahealthcare.com",
+      "pointerUrl": "https://www.hcafloridahealthcare.com/patient-resources/patient-financial-resources/pricing-transparency-cms-required-file-of-standard-charges",
+      "mrfUrl": "https://stctrprodsnsvc00455826e6.blob.core.windows.net/pt-final-posting-files/62-1372389_HCA-FLORIDA-MERCY-HOSPITAL_standardcharges.json?si=dpx-pt-json-access-policy&spr=https&sv=2026-02-06&sr=c&sig=ks%2BgfAjyEHlZmeP2PYJ%2f9NpMuCoRStjTb2bhIy9Y6LM%3D",
+      "lastUpdatedOn": "2026-03-01",
+      "templateVersion": "3.0.0",
+      "verdict": "compliant",
+      "checkedOn": "2026-09-10",
+      "note": "MRF attestation confirmed, last_updated_on 2026-03-01, contains payer-specific negotiated charges. Note: MRF's hospital_address field lists 3663 South Miami Ave, Miami, FL while roster address is Plantation, FL - same CCN 100167, likely a hospital-system naming/addressing quirk rather than a wrong facility."
+    }
+  },
   "110015": {
     "ccn": "110015",
     "name": "Tanner Medical Center Villa Rica",
@@ -14,8 +35,8 @@
         "kind": "email",
         "at": "2026-08-30T01:22:39.550Z",
         "subject": "Outdated MRFs for Tanner Medical Center-East Alabama and Villa Rica",
-        "to": "hpt-obf:v1:7iWZ_QpCBKzKosaw.-z9r8ubN7jGkAX7BDIA_jg.MN0rIPTe-dhxfLhWDCNa",
-        "body": "Hi there,\n\nI'm doing some research into hospital price transparency compliance and noticed a couple of Tanner facilities have outdated standard charges files, both on cms-hpt.txt and linked from your billing pages.\n\nTanner Medical Center-East Alabama (Wedowee, AL):\nhttps://www.tanner.org/upload/docs/PDFs/FinancialAssistance/475348597_Tanner-Medical-Center-East-Alabama_standardcharges.csv\nlast updated 7/1/2024, same file linked from https://www.tanner.org/patients-and-visitors/billing-and-financial-resources/price-transparency\n\nTanner Medical Center Inc. (Villa Rica, GA):\nSame situation - the file listed is dated 7/1/2024, both in the MRF and on the site.\n\nI also noticed Willowbrooke's file is dated 7/1/2024 as well - I'm not currently tracking behavioral health facilities, so it's outside the scope of what I'm following, but wanted to flag it while I was looking anyway.\n\nI'll plan to follow up in 30 days so that I can continue my research, but would appreciate it if these could get refreshed before then. Happy to help however's useful.\n\nThanks so much,\n\nAnthony\nhpt-obf:v1:RT48GRNTbfYOowLH.a_62I_FCPj3cO3LpX0G-Og.gvhRAe1eKqG6InmUQxmEfTvJTi8BDw\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:C_4FQpZtXzi_8C0u.AbgfPbRoCu-6p2XC4Dq61w.zsYHbzl-75TSJ3s0wa33",
+        "body": "Hi there,\n\nI'm doing some research into hospital price transparency compliance and noticed a couple of Tanner facilities have outdated standard charges files, both on cms-hpt.txt and linked from your billing pages.\n\nTanner Medical Center-East Alabama (Wedowee, AL):\nhttps://www.tanner.org/upload/docs/PDFs/FinancialAssistance/475348597_Tanner-Medical-Center-East-Alabama_standardcharges.csv\nlast updated 7/1/2024, same file linked from https://www.tanner.org/patients-and-visitors/billing-and-financial-resources/price-transparency\n\nTanner Medical Center Inc. (Villa Rica, GA):\nSame situation - the file listed is dated 7/1/2024, both in the MRF and on the site.\n\nI also noticed Willowbrooke's file is dated 7/1/2024 as well - I'm not currently tracking behavioral health facilities, so it's outside the scope of what I'm following, but wanted to flag it while I was looking anyway.\n\nI'll plan to follow up in 30 days so that I can continue my research, but would appreciate it if these could get refreshed before then. Happy to help however's useful.\n\nThanks so much,\n\nAnthony\nhpt-obf:v1:uKg0z0AEcYnxbQc3.Q4J-SfWq4Mnyag8i5xiUMQ.Y7sEd0kYVwfYtHSjOWcGxwAnCDpO4A\nmrf.anthonyisnota.dev",
         "sentAt": "2026-08-30",
         "outcome": "none"
       }
@@ -28,7 +49,7 @@
       "templateVersion": "",
       "verdict": "failing",
       "checkedOn": "2026-08-30",
-      "note": "MRF and site pricing page both point to a file last updated 7/1/2024 - stale, more than a year old at crawl time (8/27/2026). Emailed hpt-obf:v1:aviwovK8aY_xYBm6.EOgHWZCDHHkiBKeb9DyXeg.jMVEXtrOk42tXS4IdAvd 2026-08-30, following up in 30 days."
+      "note": "MRF and site pricing page both point to a file last updated 7/1/2024 - stale, more than a year old at crawl time (8/27/2026). Emailed hpt-obf:v1:aggOFmAV5PQdM6wm.OzbXSh5wplQkPYSlB8NO0g.sZ7NxoU7gGjSYotHXq1f 2026-08-30, following up in 30 days."
     }
   },
   "130063": {
@@ -46,7 +67,7 @@
         "kind": "email",
         "at": "2026-08-30T01:57:12.007Z",
         "subject": "Your standard charges file is out of date",
-        "to": "hpt-obf:v1:x5hT2VJzbMEa4yF5.5qaDSzG8zu669F3FJsAG5w.5uvYu_giuj3HgOcAAK6Yiw-whQ",
+        "to": "hpt-obf:v1:aOwoMDDJogwKB2X5.LAEMEttKsFRTrpg5Zt9FjQ.D8pP-qh7RWmrl3ixCTGBoOQ0UQ",
         "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed Treasure Valley Hospital's standard charges file is dated 7/1/2024 - both the file linked from your price transparency page and the one referenced in cms-hpt.txt:\n\nhttps://cdn.sanity.io/files/rlbzokv7/production/063a7fda12ee958c90577c83cec3c34abe54407c.csv\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if this could get updated before then. Happy to help however's useful.",
         "sentAt": "2026-08-30",
         "outcome": "none"
@@ -60,7 +81,7 @@
       "templateVersion": "",
       "verdict": "failing",
       "checkedOn": "2026-08-30",
-      "note": "MRF and site pricing page both point to a file last updated 7/1/2024 - stale at check. Emailed hpt-obf:v1:ZlCJNQiZ9DTGO4R2.1_nUTMUUtU-ePJZyVqA62A.xwOB0Gv9PrXENaz4r8H-WQQnPw 2026-08-30, following up in 30 days."
+      "note": "MRF and site pricing page both point to a file last updated 7/1/2024 - stale at check. Emailed hpt-obf:v1:FLB-o1w4ahYhQyjM.ou7bFwo_p8sACA802b_AJA.FDHuefzGD1ZXzvhz9YU8Ma6iKg 2026-08-30, following up in 30 days."
     }
   },
   "140150": {
@@ -83,21 +104,21 @@
         "id": "mtjg8xxv-vixl0y",
         "kind": "note",
         "at": "2026-09-02T02:00:46.291Z",
-        "text": "Targeted crawl 2026-09-02 (pipeline libs, direct fetch, no unblocker):\n\ncms-hpt.txt -- https://hospital.uillinois.edu/cms-hpt.txt (fetched direct, not blocked), 1 entry:\n  location-name: University of Illinois Hospital and Clinics\n  source-page-url: https://hospital.uillinois.edu/patients-and-visitors/patient-information/billing-and-pricing/price-and-estimates\n  mrf-url: https://www.hospital.uillinois.edu/documents/PatientAndVisitors/billing/376000511_University-of-Illinois-Hospital-and-Clinics_standardcharges.zip\n  contact: hpt-obf:v1:Z1KOTM3ixsb9PlJl.GUrM3DDzAwiwsA9JewzIfA.LwPZPLVGq5ByapV0203v9Hz6mg\n\nprobeMrf on that .zip: HTTP 200, 35,305,943 bytes, application/zip -> inner CSV. Declared last_updated_on 4/1/2026 (2026-04-01), CMS schema version 3.0.0, license state IL, hospital name \"University of Illinois Hospital & Clinics\", address 1740 W. Taylor St, Chicago, IL 60612. 154 days old, not stale.\n\nPointer now points at the current file (J***'s fix confirmed). Note the live mrf-url uses the www. host; the record's mrfUrl updated to match."
+        "text": "Targeted crawl 2026-09-02 (pipeline libs, direct fetch, no unblocker):\n\ncms-hpt.txt -- https://hospital.uillinois.edu/cms-hpt.txt (fetched direct, not blocked), 1 entry:\n  location-name: University of Illinois Hospital and Clinics\n  source-page-url: https://hospital.uillinois.edu/patients-and-visitors/patient-information/billing-and-pricing/price-and-estimates\n  mrf-url: https://www.hospital.uillinois.edu/documents/PatientAndVisitors/billing/376000511_University-of-Illinois-Hospital-and-Clinics_standardcharges.zip\n  contact: hpt-obf:v1:E1rKljeQZ1italgO.S9-k-ibI3k_Dm6mi1fBnsQ.gNHk1vPjC0L6JPS43mK0k_IMKw\n\nprobeMrf on that .zip: HTTP 200, 35,305,943 bytes, application/zip -> inner CSV. Declared last_updated_on 4/1/2026 (2026-04-01), CMS schema version 3.0.0, license state IL, hospital name \"University of Illinois Hospital & Clinics\", address 1740 W. Taylor St, Chicago, IL 60612. 154 days old, not stale.\n\nPointer now points at the current file (J***'s fix confirmed). Note the live mrf-url uses the www. host; the record's mrfUrl updated to match."
       },
       {
         "id": "mtjg1g96-6bzylp",
         "kind": "note",
         "at": "2026-09-02T01:54:56.778Z",
-        "text": "Reply from J*** (hpt-obf:v1:1iXF3PgvnzgsIL8G.VbR5U_YkKsVcJRvzDh1vXg.YdAuDxeXRMg9RcbY), 2026-09-01:\n\nAnthony,\n\nThank you for your concern. You may have to clear your browser cache. Please let me know if you still have issues with accessing the file dated 4/1/2026.\n\nJ***, J.D.\nDirector, Revenue Cycle Optimization\nUI Health\n[phone/address redacted]\n\n-- I replied 2026-09-01 confirming the file/pointer now shows as updated on my end and thanked her. Marking resolved/compliant: cms-hpt.txt now resolves to the 4/1/2026 file."
+        "text": "Reply from J*** (hpt-obf:v1:P75HhRRju95QjTJW.8CrudwZZtJ2LX60ICjcOCg.FvF_Je2ZgMGybOnA), 2026-09-01:\n\nAnthony,\n\nThank you for your concern. You may have to clear your browser cache. Please let me know if you still have issues with accessing the file dated 4/1/2026.\n\nJ***, J.D.\nDirector, Revenue Cycle Optimization\nUI Health\n[phone/address redacted]\n\n-- I replied 2026-09-01 confirming the file/pointer now shows as updated on my end and thanked her. Marking resolved/compliant: cms-hpt.txt now resolves to the 4/1/2026 file."
       },
       {
         "id": "mti4xhy4-kdlk1z",
         "kind": "email",
         "at": "2026-09-01T03:56:10.396Z",
         "subject": "Re: Standard Charges File Out of Date",
-        "to": "hpt-obf:v1:eHWIMSrwhRl7WYo-.ks9-zO_RGdPRjtPVWDdviQ.UIiaVlJ_7_Zm4fJa",
-        "body": "Hello,\n\nThanks so much for the quick update, really appreciate it! Just one more thing to flag: cms-hpt.txt is actually the file CMS requires (under 45 CFR 180.50) to stay current and discoverable, separate from the Billing and Pricing page. I checked just now and it's still pointing to the old file, so the hospital's technically still out of compliance there, and it's actually breaking the automated check my research relies on.\n\nWould you mind having someone update cms-hpt.txt to point to the new one? Happy to help however's useful!\n\nThanks again,\nAnthony\nhpt-obf:v1:DR3koB3XX24uxdEg.xdBGIgNdDV5-nwL0y9HGng.hRqWyM5JlDlaCTy59ehBR57SyvpsXg\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:5Pro-adwSMJaIDH6.Goj_GB47G2B-9LqWQoOkfw.oSyMlM0pbxPPCny3",
+        "body": "Hello,\n\nThanks so much for the quick update, really appreciate it! Just one more thing to flag: cms-hpt.txt is actually the file CMS requires (under 45 CFR 180.50) to stay current and discoverable, separate from the Billing and Pricing page. I checked just now and it's still pointing to the old file, so the hospital's technically still out of compliance there, and it's actually breaking the automated check my research relies on.\n\nWould you mind having someone update cms-hpt.txt to point to the new one? Happy to help however's useful!\n\nThanks again,\nAnthony\nhpt-obf:v1:wQw1K9ldDw7NgoGg.lKwzkl8pmZo-YGy9QsN0og.Vv0ex18z4ONVFvunqL02l8hbdo1SOw\nmrf.anthonyisnota.dev",
         "sentAt": "2026-08-31",
         "outcome": "replied"
       },
@@ -113,8 +134,8 @@
         "kind": "email",
         "at": "2026-08-31T00:25:52.203Z",
         "subject": "Standard Charges File Out of Date",
-        "to": "hpt-obf:v1:SQmcC8AOADMl3sF7.5ycQrbRlktXsFKrNuYg-WQ.kayvegBGk6OV5AcP",
-        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed University of Illinois Hospital & Clinics' standard charges file is dated 8/1/2025, both the file linked from the billing and pricing page and the one referenced in cms-hpt.txt:\n\nhttps://hospital.uillinois.edu/documents/PatientAndVisitors/billing/376000511_University-of-Illinois-Hospital-and-Clinics_standardcharges.csv\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if this could get updated before then. Happy to help however's useful!\n\nThanks so much,\nAnthony\nhpt-obf:v1:_eNQCqXvbi1JOJpa.ycO-6Fvq5OO228qcFt-Giw.v3VZK9J8e5vPflrQ-3uVFrNRa2Nq5w\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:4TjyhVYSqxRv-00w.tRERG38QUGR6Ht6GDxgUIQ.WmTMuNwDhQ3wEbhj",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed University of Illinois Hospital & Clinics' standard charges file is dated 8/1/2025, both the file linked from the billing and pricing page and the one referenced in cms-hpt.txt:\n\nhttps://hospital.uillinois.edu/documents/PatientAndVisitors/billing/376000511_University-of-Illinois-Hospital-and-Clinics_standardcharges.csv\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if this could get updated before then. Happy to help however's useful!\n\nThanks so much,\nAnthony\nhpt-obf:v1:OhCll5rfJoIrOVc0.V-cXMAmrfWfsizRbaWmwNw.Wf9izR8qssRXPCQZktkG_wzDOC1zHQ\nmrf.anthonyisnota.dev",
         "sentAt": "2026-08-30",
         "outcome": "replied"
       }
@@ -167,8 +188,8 @@
         "kind": "email",
         "at": "2026-08-29T00:27:34.260Z",
         "subject": "MRF File Mismatch - cms-hpt.txt Points to Outdated File",
-        "to": "hpt-obf:v1:tgw9gkJmRHIwqZmo.CjHKhdZij_6e6axgkbfOAA.I02mkG7DMBqN8NBMN05fc8ygOg",
-        "body": "Hello!\n\nHope you're doing well! Just wanted to give you a quick heads up about something I ran into while trying to access your MRF file.\n\nIt looks like the cms-hpt.txt file is still pointing to an older file from back in January 2024:\n\nhttps://d188lfxfyq6i9j.cloudfront.net/general-uploads/PDF-Assets/35-1163135_Jackson-County-Schneck-Memorial-Hospital_standardcharges.csv\n\nHowever, your price transparency page is actually linking to a newer one:\n\nhttps://d188lfxfyq6i9j.cloudfront.net/general-uploads/Patients-Visitors/35-1163135_Jackson-County-Schneck-Memorial-Hospital_standardcharges_040126.csv\n\nJust wanted to let you know so that everything stays lined up for CMS compliance! Please let me know if you need anything else from me - happy to help in any way I can!\n\nThanks so much,\nAnthony\nhpt-obf:v1:SZzJY8VSHB_5TKWH.ltSqU9xmuzsuXn4jvByH_A.XPnPy23FUviXmR69LEKqkSkAh6yP0g",
+        "to": "hpt-obf:v1:zNVodO_aen8V9ona.9IYvEt36le2eA0jSe6UZpg.BIryFVYAmqT9THmBjR60pKZOPQ",
+        "body": "Hello!\n\nHope you're doing well! Just wanted to give you a quick heads up about something I ran into while trying to access your MRF file.\n\nIt looks like the cms-hpt.txt file is still pointing to an older file from back in January 2024:\n\nhttps://d188lfxfyq6i9j.cloudfront.net/general-uploads/PDF-Assets/35-1163135_Jackson-County-Schneck-Memorial-Hospital_standardcharges.csv\n\nHowever, your price transparency page is actually linking to a newer one:\n\nhttps://d188lfxfyq6i9j.cloudfront.net/general-uploads/Patients-Visitors/35-1163135_Jackson-County-Schneck-Memorial-Hospital_standardcharges_040126.csv\n\nJust wanted to let you know so that everything stays lined up for CMS compliance! Please let me know if you need anything else from me - happy to help in any way I can!\n\nThanks so much,\nAnthony\nhpt-obf:v1:ifitcm8nxczKRNaE.ny1VyJGSFwfGnKmanBfDaQ.sPHnPzSp2pZrFLoqWrL8sBta_pygQQ",
         "sentAt": "2026-08-28",
         "outcome": "none"
       }
@@ -188,15 +209,15 @@
         "id": "mtf5kfha-knmwtb",
         "kind": "note",
         "at": "2026-08-30T01:50:41.758Z",
-        "text": "hpt-obf:v1:25kPD7_-eNq4cL5Q.NGEqlF91qk9PN6o46hR2NQ.RRgcFktURzcha4rgm40x0dkDsfGUAoTj bounced (550 5.4.1 Recipient address rejected: Access denied). The other recipient, hpt-obf:v1:w8Eowt9owImMoajg.A2U4a9tqFsQgwjJvHKrEPQ.wyYTgiahzjQfMu4vdlQHLnCDfEs_-tqT, was not reported as bounced, so the message likely still reached her."
+        "text": "hpt-obf:v1:zVE3o6iUYRGbX1mp.5chS6ASzCfvbzIx50qBn8g.LN4bY1eqhsmY82teZPosAqVoyM4cUowl bounced (550 5.4.1 Recipient address rejected: Access denied). The other recipient, hpt-obf:v1:NxvMPy2cJ9d_9vuw.2ITqhjKvk7M8GkMtgKDpow.9VI8OGkT2PFmZ1oXO7lhyJGEJK8AbfyA, was not reported as bounced, so the message likely still reached her."
       },
       {
         "id": "mtf5c8iq-6owwzz",
         "kind": "email",
         "at": "2026-08-30T01:44:19.490Z",
         "subject": "Your cms-hpt.txt is pointing to an outdated price file",
-        "to": "hpt-obf:v1:jpcoC8Ilg_GY19M4.IskBWZvRhHaJbHxG64T_vw.6DvJ0L-DR406o2rbUzWlOcVJZfUTLXdC, hpt-obf:v1:kfegeSzGYrwevDIA.ccfROjk2ZKM51spfVD9CvQ.DnAohJ1O71ZHe_MKDRlezi4b_7ZYRblh",
-        "body": "Hi S***,\n\nI'm doing some research into hospital price transparency compliance and noticed Spencer Municipal Hospital's cms-hpt.txt file is pointing to this standard charges file:\n\nhttps://www.spencerhospital.org/webres/File/426005883_Spencer-Municipal-Hospital_standard_charges.csv\n\nBut it looks like there's a newer file already up on your pricing page:\n\nhttps://www.spencerhospital.org/webres/File/Pricing/426005883_spencer-municipal-hospital_standardcharges%20(7).csv\n\nMight just be a quick fix to update the pointer in cms-hpt.txt to link to the newer file instead. Wanted to flag it in case it slipped through the cracks!\n\nThanks so much,\nAnthony\nhpt-obf:v1:j7N5j0KgtGEcUfHA.59YRvKE2w5rNTpAEuW4n4Q.FXvUb9OUWxwhVsMWx84FNMB0DyWskQ\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:kQzxqsIJA8SirOXQ.dP3YyhQsFdWaf0zIgLHg_A.gVv4FHDykJmFteiErNVDfwxAO7wi-qQJ, hpt-obf:v1:9znn4dkPTLvsbomZ.6Kui9wy1O0tmUqBmTVI43g.DRQ7x4A9LcMXP7kmV4zQ-5JAop-C8ruv",
+        "body": "Hi S***,\n\nI'm doing some research into hospital price transparency compliance and noticed Spencer Municipal Hospital's cms-hpt.txt file is pointing to this standard charges file:\n\nhttps://www.spencerhospital.org/webres/File/426005883_Spencer-Municipal-Hospital_standard_charges.csv\n\nBut it looks like there's a newer file already up on your pricing page:\n\nhttps://www.spencerhospital.org/webres/File/Pricing/426005883_spencer-municipal-hospital_standardcharges%20(7).csv\n\nMight just be a quick fix to update the pointer in cms-hpt.txt to link to the newer file instead. Wanted to flag it in case it slipped through the cracks!\n\nThanks so much,\nAnthony\nhpt-obf:v1:0L9Y51VyzhwmkpDV.ma9vZcb02SXvtTioUO7nrg.aXzDP8BmANqXKUlkpjlc1bosnaRrhA\nmrf.anthonyisnota.dev",
         "sentAt": "2026-08-30",
         "outcome": "none"
       }
@@ -209,7 +230,7 @@
       "templateVersion": "",
       "verdict": "failing",
       "checkedOn": "2026-08-30",
-      "note": "cms-hpt.txt points to an outdated file; the source page links a newer one instead (https://www.spencerhospital.org/webres/File/Pricing/426005883_spencer-municipal-hospital_standardcharges%20(7).csv). Emailed hpt-obf:v1:ThwKn7V7ZsNjAt_p.Vs0LOdo6RfVgZtOWKU4JtA.bbTIEU8SCHadJzMUTrYd-JhErH4iqlwf and hpt-obf:v1:16Uy4o8PLh3KWa6J.AzjBps9rIgT7I5vMnNtmWg.PM6C0E2VGET5RDrhH7HP_4JSBwZvH_qC 2026-08-30."
+      "note": "cms-hpt.txt points to an outdated file; the source page links a newer one instead (https://www.spencerhospital.org/webres/File/Pricing/426005883_spencer-municipal-hospital_standardcharges%20(7).csv). Emailed hpt-obf:v1:VCPky4G7VOB90lWy.joqllOy88-OmS_5amQj-4A.NHZV27Fequd_4fYlqBIX4HL1wIltypbi and hpt-obf:v1:j9Tka8Lo0TfhoSCW.LKS5FBci953k1xjB4Gy7rw.m8LigXdx0oRluG5uKT5DhDTaWSXA3foG 2026-08-30."
     }
   },
   "170198": {
@@ -227,8 +248,8 @@
         "kind": "email",
         "at": "2026-08-31T00:39:38.270Z",
         "subject": "Your cms-hpt.txt is pointing to the wrong file",
-        "to": "hpt-obf:v1:0ScDLFiRwFPi9Prw.omGD81yUhc9XxUaBln6tqA.XyUInTXlZDjxtBJm4XOmCYk",
-        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed Summit Surgical's cms-hpt.txt is pointing to this file:\n\nhttps://summitks.com/wp-content/uploads/203283620_summit-surgical-llc_standardcharges-121125_2.csv\n\nBut the correct, current file appears to be the one on your pricing page instead:\n\nhttps://summitks.com/wp-content/uploads/203283620_summit-surgical-llc_standardcharges_8.25.26.csv\n\nIt looks like it'll just be a quick fix to update the pointer in cms-hpt.txt. Happy to help however's useful!\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if this could get updated before then!\n\nThanks so much,\nAnthony\nhpt-obf:v1:Hdp_IWzXllayq7X9.cGB1zfkWcY-91wNQK0_eew.AMxvjVMSCHIK0idvU8lfdeRhLYyGHg\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:bzOATB-UwM-zqRg_.BxXhaXRm0VFDaTArQRI_Ig.qGE11ogETnwEky6CUt39u7o",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed Summit Surgical's cms-hpt.txt is pointing to this file:\n\nhttps://summitks.com/wp-content/uploads/203283620_summit-surgical-llc_standardcharges-121125_2.csv\n\nBut the correct, current file appears to be the one on your pricing page instead:\n\nhttps://summitks.com/wp-content/uploads/203283620_summit-surgical-llc_standardcharges_8.25.26.csv\n\nIt looks like it'll just be a quick fix to update the pointer in cms-hpt.txt. Happy to help however's useful!\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if this could get updated before then!\n\nThanks so much,\nAnthony\nhpt-obf:v1:tm7TXhzn2_tkItMY.7KibPW03JEcq9p1wLf_2cw.DWG8iH0lBwbzNQzqoV6OLQzv2dLeWw\nmrf.anthonyisnota.dev",
         "sentAt": "2026-08-31",
         "outcome": "none"
       }
@@ -241,7 +262,7 @@
       "templateVersion": "",
       "verdict": "failing",
       "checkedOn": "2026-08-31",
-      "note": "cms-hpt.txt points to the old file (dated 7/29/2025, 395 days old); the correct current one is on the pricing page instead. Emailed C*** (hpt-obf:v1:r6lZGYtfNz4d7Cwq.SyM-9zKtjuI6vagabiIAiA.BZijPLh7F1GbPgEEdd934xc) 2026-08-31, following up in 30 days."
+      "note": "cms-hpt.txt points to the old file (dated 7/29/2025, 395 days old); the correct current one is on the pricing page instead. Emailed C*** (hpt-obf:v1:AMvcl3uyFWyZocFz.kZfCq0gdNo1lIadud1CMtg.IhvXeHf3ZU1Nk42_nuEma_I) 2026-08-31, following up in 30 days."
     }
   },
   "190190": {
@@ -259,8 +280,8 @@
         "kind": "email",
         "at": "2026-08-30T00:58:54.664Z",
         "subject": "Your cms-hpt.txt is pointing to an outdated price file",
-        "to": "hpt-obf:v1:5n95Zx-J2zvG3g4_.SGNTW-0dyvU8nqxoFXlcUw.BjHwDI7hEKTltk9Z3UXgSL9ta2k8NrjL2w",
-        "body": "Hi there,\n\nI'm doing some research into hospital price transparency compliance and I noticed that Caldwell Memorial Hospital's cms-hpt.txt file is currently pointing to a standard charges file dated 6/27/2024:\n\nhttps://www.mycaldwellmemorial.com/wp-content/uploads/2020/12/720878037_caldwell-memorial-hospital_standardcharges.csv\n\nBut it looks like you actually have a newer file already up on your site, from March 2026:\n\nhttps://www.mycaldwellmemorial.com/wp-content/uploads/2026/03/720878037_caldwell-memorial-hospital_standardcharges.csv\n\nMight just be a quick fix to update the pointer in cms-hpt.txt to link to the newer file instead. Wanted to flag it in case it slipped through the cracks!\n\nThanks for your time,\nAnthony\nhpt-obf:v1:QTZFnrjrzQXq9aMe.gu3bRQHwJP912YVnTx_Tig.MqmRZ0V5XY0hMaQiViTA93qpcNUw_A\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:tmABxXe1WUxzSBp0.en6h7GFKz-P0YI-qN1MvNQ.ndbYsnWQcbXqFz36fmZs-tXveCcXdtegPQ",
+        "body": "Hi there,\n\nI'm doing some research into hospital price transparency compliance and I noticed that Caldwell Memorial Hospital's cms-hpt.txt file is currently pointing to a standard charges file dated 6/27/2024:\n\nhttps://www.mycaldwellmemorial.com/wp-content/uploads/2020/12/720878037_caldwell-memorial-hospital_standardcharges.csv\n\nBut it looks like you actually have a newer file already up on your site, from March 2026:\n\nhttps://www.mycaldwellmemorial.com/wp-content/uploads/2026/03/720878037_caldwell-memorial-hospital_standardcharges.csv\n\nMight just be a quick fix to update the pointer in cms-hpt.txt to link to the newer file instead. Wanted to flag it in case it slipped through the cracks!\n\nThanks for your time,\nAnthony\nhpt-obf:v1:2Y1mBU1eaDbIcdIk.NEmj563RqlSOnvGbogmWPA.mCdMvLntKWShcgokHg2V6mR0QvWNzA\nmrf.anthonyisnota.dev",
         "sentAt": "2026-08-30",
         "outcome": "none"
       }
@@ -281,8 +302,8 @@
         "kind": "email",
         "at": "2026-09-03T21:58:52.099Z",
         "subject": "MRF access blocked for automated tools - Anna Jaques Hospital",
-        "to": "hpt-obf:v1:z83_k2aG12vjv-PR.yY91IsIPp4xT01KB8GTcLA.lfAc8l_c8noX4G7oPQ",
-        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and ran into an access issue with Anna Jaques Hospital's machine-readable file. The site appears to block traffic from VPN/hosting IP ranges, which is also blocking the automated tool I use to check files like this:\n\nhttps://ajh.org/832671600_anna-jaques-hospital_standardcharges.json\n(linked from https://ajh.org/patients-visitors/billing-financial-services/price-transparency)\n\nJust for reference, 45 CFR 180.50 specifically requires the file to be available to \"automated searches and direct downloads\" through a link on the site, so a VPN-based block ends up affecting that requirement even if the file itself is fine.\n\nWould it be possible to check whether the site's bot/VPN protection is scoped to exclude this file (or the price transparency page generally)? Happy to share more detail on what got blocked if that helps track it down.\n\nI'll plan to follow up in 30 days so I can continue my research.\n\nThanks so much,\nAnthony\nhpt-obf:v1:CaHL5mOicda3a-ie.4fVcAHLDXe6RvZs8R5DgTQ.-8u7t9JYP_uhsqy-azbICKfIEhwfHw\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:wjO_RcxDEY4Q9WO7.MwoHhgYNlGxK0p0NbvsBJw.UefDzAAlnxx_mOlo3Q",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and ran into an access issue with Anna Jaques Hospital's machine-readable file. The site appears to block traffic from VPN/hosting IP ranges, which is also blocking the automated tool I use to check files like this:\n\nhttps://ajh.org/832671600_anna-jaques-hospital_standardcharges.json\n(linked from https://ajh.org/patients-visitors/billing-financial-services/price-transparency)\n\nJust for reference, 45 CFR 180.50 specifically requires the file to be available to \"automated searches and direct downloads\" through a link on the site, so a VPN-based block ends up affecting that requirement even if the file itself is fine.\n\nWould it be possible to check whether the site's bot/VPN protection is scoped to exclude this file (or the price transparency page generally)? Happy to share more detail on what got blocked if that helps track it down.\n\nI'll plan to follow up in 30 days so I can continue my research.\n\nThanks so much,\nAnthony\nhpt-obf:v1:KAcF0Hz7G8Ujnaik.kEaxKsmL3oG7Js8CCEFBqA.6Yvdu8U_I2ORw9zmauc8alLwbuKpxQ\nmrf.anthonyisnota.dev",
         "sentAt": "2026-09-03",
         "outcome": "none"
       }
@@ -303,8 +324,8 @@
         "kind": "email",
         "at": "2026-08-30T02:02:52.948Z",
         "subject": "Your standard charges file is out of date",
-        "to": "hpt-obf:v1:J5aWPoIKbl0rEcuK.LHKmDWtCGQDuVBkPfg464g.LBwaHE-TQeFeyWoY5rE9RQ-1BiAQLMABf8xD",
-        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed Helen Hayes Hospital's standard charges file is dated 7/1/2024, both the file linked on your site and the one referenced in cms-hpt.txt:\n\nhttps://shop.helenhayeshosp.org/00-0432000_Helen-Hayes-Hospital_standardcharges.csv\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if this could get updated before then. Happy to help however's useful!\n\nThanks so much,\nAnthony\nhpt-obf:v1:-a1mxLydCK2YNvYI.JzybDiHZ7F9e4G5Gl-VrPA.jL6MHsZ63QEnBMtCjuRqSu6WLZJNEQ\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:dogB25vMQVcRm05k.LPFdxwtSmxpjHtm9L9Vl4g.aKdIxBygwiGC8U9DRm7lyt0XUj2sNpWC30Ld",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed Helen Hayes Hospital's standard charges file is dated 7/1/2024, both the file linked on your site and the one referenced in cms-hpt.txt:\n\nhttps://shop.helenhayeshosp.org/00-0432000_Helen-Hayes-Hospital_standardcharges.csv\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if this could get updated before then. Happy to help however's useful!\n\nThanks so much,\nAnthony\nhpt-obf:v1:dSRlQlY7iJD-8Sxf.s07nH6XEeiSyo_73SZulKA.6vhIJu1CIM9KRPhis7txT9j817p9-Q\nmrf.anthonyisnota.dev",
         "sentAt": "2026-08-30",
         "outcome": "none"
       }
@@ -317,7 +338,7 @@
       "templateVersion": "",
       "verdict": "failing",
       "checkedOn": "2026-08-30",
-      "note": "MRF and site both show a file last updated 7/1/2024, stale at check (crawled 8/27/2026). Not exempt despite being NY State-operated - CMS exemptions cover federal facilities and state forensic hospitals only, not general state-run hospitals treating the public. Emailed hpt-obf:v1:VIH8P4o9N9PUSwts.2btYdmEnMMuB323ssrda6A.w4xPcPjaUO4AzPpda8LigEagEbdQOagIVf8O 2026-08-30, following up in 30 days."
+      "note": "MRF and site both show a file last updated 7/1/2024, stale at check (crawled 8/27/2026). Not exempt despite being NY State-operated - CMS exemptions cover federal facilities and state forensic hospitals only, not general state-run hospitals treating the public. Emailed hpt-obf:v1:BCiGMMZSjru6EpOL.mIh2owUd3_JRkl9yCEKk6w.8K3rIG08rSnrpqhAxAhd6pboM3KQn8ZcSYlN 2026-08-30, following up in 30 days."
     }
   },
   "340041": {
@@ -363,8 +384,8 @@
         "kind": "email",
         "at": "2026-08-31T00:11:56.313Z",
         "subject": "Standard Charges File Out of Date",
-        "to": "hpt-obf:v1:Ksc9sleWvRwxnu-B.uaFR4fu4albbzYxje3yU2Q.vGkmcjt74yP_zjnpE2-H_1xEmd3L-R_suA",
-        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed Granville Health System's standard charges file is dated 8/5/2025, both the file linked from the pricing transparency page and the one referenced in cms-hpt.txt:\n\nhttps://ghshospital.org/wp-content/uploads/2025/12/560593547_granville-medical-center_standardcharges.csv\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if this could get updated before then. Happy to help however's useful!\n\nThanks so much,\nAnthony\nhpt-obf:v1:kr6z1fp0OKefHjQ-.9ftjCSiIgq7x7Xhlhxxaag.3_GRLE5NZMzeVahEnStx4tAmGf7gfw\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:5dN5XpIlL8EMTfT9.pouLt85qSGU3fuV09agsWg.FYj-QwDrafTK27SvpEUMpLTkXzlglsh1EQ",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed Granville Health System's standard charges file is dated 8/5/2025, both the file linked from the pricing transparency page and the one referenced in cms-hpt.txt:\n\nhttps://ghshospital.org/wp-content/uploads/2025/12/560593547_granville-medical-center_standardcharges.csv\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if this could get updated before then. Happy to help however's useful!\n\nThanks so much,\nAnthony\nhpt-obf:v1:RqEpxE-T4ow0brdc.lcHgIRG4U6aUIBQ3EKLKmQ.Iz6MgmL5Vy3Ar3q50NPvdXOD3YPwog\nmrf.anthonyisnota.dev",
         "sentAt": "2026-08-30",
         "outcome": "none"
       }
@@ -377,7 +398,7 @@
       "templateVersion": "",
       "verdict": "failing",
       "checkedOn": "2026-08-31",
-      "note": "MRF last_updated_on 2025-08-05, 388 days old at check per compliance.csv. Emailed J*** (hpt-obf:v1:k8K8nFYs75Gfr3Qk.ak0uYao21iLlGMsQIzZmFg.1OfLt6djFdSGsBsVLrsmZk8yjvMq4B8lHg) 2026-08-30, following up in 30 days."
+      "note": "MRF last_updated_on 2025-08-05, 388 days old at check per compliance.csv. Emailed J*** (hpt-obf:v1:bH8lXLlrty56sMjE.pxYNMeqJQCvVFQN2U5dmgw.foaeDfXpOpnMZcNGpJzRQD5L9kqrHZ5M6g) 2026-08-30, following up in 30 days."
     }
   },
   "360029": {
@@ -395,8 +416,8 @@
         "kind": "email",
         "at": "2026-08-30T01:05:22.879Z",
         "subject": "Your cms-hpt.txt is pointing to an outdated price file",
-        "to": "hpt-obf:v1:u5_N-NSrbnWWa6Fj.cQTk-UgkRn_oa26s3x5d7w.s9ddXxj9HmO657qIgTNkCvH5-3BIPZ6MRm7l, hpt-obf:v1:c4iNlBa-EumE_0k_.DRrZkZl1NPI8lTYmNz9dYw.01C9h1_g2M7qIOgP4pzI3o0UocbULvvktb-z",
-        "body": "Hi there,\n\nI'm doing some research into hospital price transparency compliance and I noticed that Wood County Hospital's cms-hpt.txt file is currently pointing to a standard charges file dated 6/30/2024:\n\nhttps://www.woodcountyhospital.org/media/0x5fw0tn/344440884_wood-county_standardcharges.csv\n\nBut it looks like you have a newer file already up on your site, linked from your pricing page, dated 12/31/2025:\n\nhttps://www.woodcountyhospital.org/media/kddhfk3m/344440884_wood-county_standardchargescsv.zip\n\nMight just be a quick fix to update the pointer in cms-hpt.txt to link to the newer file instead. Wanted to flag it in case it slipped through the cracks!\n\nThanks for your time,\nAnthony\nhpt-obf:v1:nPPG6-jVGYQ7z7IA.hsJHMvgHILZQP7PGDr2YyQ.ICpDtHUu06hXrg9HlpbjoQ4gIt0hRQ\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:kN7L-FF7LFUx_RFD.tBRJc9sEmBYCENiLnM0tRg.eSET1FIPhEWeEZiDGIOtj82qKB_hA3-Y4LMW, hpt-obf:v1:zZDqI9vb6vYwURqi.8JMi_FEK1glwFQMy4b2oCQ.KamS2466fJa8GGVMB3pA9L5MILp1OUWEaeZL",
+        "body": "Hi there,\n\nI'm doing some research into hospital price transparency compliance and I noticed that Wood County Hospital's cms-hpt.txt file is currently pointing to a standard charges file dated 6/30/2024:\n\nhttps://www.woodcountyhospital.org/media/0x5fw0tn/344440884_wood-county_standardcharges.csv\n\nBut it looks like you have a newer file already up on your site, linked from your pricing page, dated 12/31/2025:\n\nhttps://www.woodcountyhospital.org/media/kddhfk3m/344440884_wood-county_standardchargescsv.zip\n\nMight just be a quick fix to update the pointer in cms-hpt.txt to link to the newer file instead. Wanted to flag it in case it slipped through the cracks!\n\nThanks for your time,\nAnthony\nhpt-obf:v1:xnhu3O22nI5SlXc3.Rz_LY0aMKo7GF0UOnjKLhQ.Zs0pUc-LBtYnoeK5kk6ZUYCc_sfxbg\nmrf.anthonyisnota.dev",
         "sentAt": "2026-08-30",
         "outcome": "none"
       }
@@ -416,7 +437,7 @@
         "id": "mtno3h6y-call01",
         "kind": "note",
         "at": "2026-09-09T21:04:50.457Z",
-        "text": "Need to call the Chief Quality Officer at hpt-obf:v1:7oMe73uu5IGUKi9f.Un4K5skaDls_WM6ZRQEVbQ.9iFG8tLAC7JIKqjx about cms-hpt.txt returning 404 on southwesternmedcenter.com (no MRF reachable; contact form on the site is also broken). Goal: flag the missing cms-hpt.txt pointer/MRF and the missing contact email, ask if a standard charges file is already published elsewhere, and get an email for a written follow-up."
+        "text": "Need to call the Chief Quality Officer at hpt-obf:v1:23UpdVrHYFsE2Eog.ulcG6NI12LShzgI6Ow-J0g.ZwOSyKB_mzdZHOnf about cms-hpt.txt returning 404 on southwesternmedcenter.com (no MRF reachable; contact form on the site is also broken). Goal: flag the missing cms-hpt.txt pointer/MRF and the missing contact email, ask if a standard charges file is already published elsewhere, and get an email for a written follow-up."
       }
     ],
     "correction": {
@@ -427,7 +448,7 @@
       "templateVersion": "",
       "verdict": "failing",
       "checkedOn": "2026-09-09",
-      "note": "cms-hpt.txt at southwesternmedcenter.com/cms-hpt.txt returns 404; no machine-readable file found, and the site's contact form is broken. Need to call CQO at hpt-obf:v1:UMfVPtHbs0hr8L8y.5VJJ_0Y-K-woX0xsNjn5gw.mU5oDoGzxhWIIA95."
+      "note": "cms-hpt.txt at southwesternmedcenter.com/cms-hpt.txt returns 404; no machine-readable file found, and the site's contact form is broken. Need to call CQO at hpt-obf:v1:erGeuOAzXJt0Ej2m._9lhSggWhjMvN4HEEkNJkA.XTt8rMqhdCujIyhG."
     }
   },
   "380102": {
@@ -448,7 +469,7 @@
       "templateVersion": "",
       "verdict": "compliant",
       "checkedOn": "2026-08-28",
-      "note": "MRF accessible via Craneware API. Contact: M*** (hpt-obf:v1:JziULKOpXxHV7Sla.67GriPUR336BQTCmZ-GWGg.tg7pdyBOORbbZSLaeKxxHi5UbtM)"
+      "note": "MRF accessible via Craneware API. Contact: M*** (hpt-obf:v1:ifpV1SNKEih2a8dx.pspzLUZoeGtRPVFnaBxQvA._mVJ4kYtZdUiHvztYrWN9AG3X3s)"
     }
   },
   "381301": {
@@ -469,7 +490,7 @@
       "templateVersion": "",
       "verdict": "compliant",
       "checkedOn": "2026-08-28",
-      "note": "MRF accessible via Craneware API. Contact: M*** (hpt-obf:v1:iIK59wcy6_t549yu.fXOavsaT9ISyNHb5RefSRw.Yq3W3P1jo7hxDDx6yW9_xqlIL_Q)"
+      "note": "MRF accessible via Craneware API. Contact: M*** (hpt-obf:v1:fC0S7DEYOdvb92-U.rRSvhw6_DbcKHCUa_wN3Bw.HulZKUA8nnF8UqIUJiCeDK2AXyA)"
     }
   },
   "381316": {
@@ -490,7 +511,7 @@
       "templateVersion": "",
       "verdict": "compliant",
       "checkedOn": "2026-08-28",
-      "note": "MRF accessible via Craneware API. Contact: M*** (hpt-obf:v1:p4SY8ycWP-zmtuYW.JDzHf0ZZU3zQmEkSYxVyYw.X3eI-5qa7Dpeqy_8fYnp-KXJ7FE)"
+      "note": "MRF accessible via Craneware API. Contact: M*** (hpt-obf:v1:-_sSeBbVVj4AO6vl.WxdTKmcK4R6lJ9GpnBezkQ.LmLjAIPkx4ADeR53GShzuP-aURU)"
     }
   },
   "431319": {
@@ -508,8 +529,8 @@
         "kind": "email",
         "at": "2026-08-30T02:07:30.240Z",
         "subject": "Your cms-hpt.txt is pointing to an outdated price file",
-        "to": "hpt-obf:v1:aPfbxvEHamzoKCll.3RFvd88Mq0BiwwOPji-ZJA.zD6A9u_wHOQK4YfeJiwNCpmcyyo",
-        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed Philip Health's cms-hpt.txt file is pointing to an outdated standard charges file:\n\nhttps://www.philiphealthservices.com/460361016_Philip-Health-Services-Inc_standardcharges.csv\n\nBut it looks like there's a newer file already up on your site:\n\nhttps://www.philiphealthservices.com/wp-content/uploads/2026/02/Philip-Health-Services-Inc_standardcharges-8.csv.zip\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if this could get updated before then. Happy to help however's useful!\n\nThanks so much,\nAnthony\nhpt-obf:v1:ujtdVbvIG04u3f1q.jjuCOaBE3LioYWHOTcIwoQ.ZuEA7dA-_blc37b5SWiJF453m2b0Xw\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:0VnEnNRGytByK-xG.awRexOsAAuimHmlFcNo5LQ.OrJYz3-S-Pgxu_Z23lkb_TO6Dj0",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed Philip Health's cms-hpt.txt file is pointing to an outdated standard charges file:\n\nhttps://www.philiphealthservices.com/460361016_Philip-Health-Services-Inc_standardcharges.csv\n\nBut it looks like there's a newer file already up on your site:\n\nhttps://www.philiphealthservices.com/wp-content/uploads/2026/02/Philip-Health-Services-Inc_standardcharges-8.csv.zip\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if this could get updated before then. Happy to help however's useful!\n\nThanks so much,\nAnthony\nhpt-obf:v1:L7jgd9u159rbNm5u.NO0oERXczNsKDnXDvxNl0A.eye0e8C_Xyal2GbAMbZiTjyiFsSwFg\nmrf.anthonyisnota.dev",
         "sentAt": "2026-08-30",
         "outcome": "none"
       }
@@ -522,7 +543,7 @@
       "templateVersion": "",
       "verdict": "failing",
       "checkedOn": "2026-08-30",
-      "note": "cms-hpt.txt points to an outdated file; a newer one is up on the source page instead (https://www.philiphealthservices.com/wp-content/uploads/2026/02/Philip-Health-Services-Inc_standardcharges-8.csv.zip). Operates as \"Philip Health Services\"; CMS-registered as Hans P Peterson Memorial Hospital - CAH. Emailed hpt-obf:v1:fqKbJwmk4i1cOT3y.DXZ4dN8_-fF10KFbNo6DzQ.GYbqgSzazjj358LjHs-Sx9sbPuM 2026-08-30, following up in 30 days."
+      "note": "cms-hpt.txt points to an outdated file; a newer one is up on the source page instead (https://www.philiphealthservices.com/wp-content/uploads/2026/02/Philip-Health-Services-Inc_standardcharges-8.csv.zip). Operates as \"Philip Health Services\"; CMS-registered as Hans P Peterson Memorial Hospital - CAH. Emailed hpt-obf:v1:_ByIUAGStibBpumu.QOh0BmF7dKsElWJqxxd2ww.dvtcDrsjK1CyZoqLe8Ma75OsvPc 2026-08-30, following up in 30 days."
     }
   },
   "440111": {
@@ -540,8 +561,8 @@
         "kind": "email",
         "at": "2026-08-30T02:11:03.185Z",
         "subject": "Your standard charges file is out of date",
-        "to": "hpt-obf:v1:ga98jrjVLDGXTqIj.nqf7JrKEreeUQH-wSuVUJw.p5v-1CGpp-Tma1jx72JySZDom_M, hpt-obf:v1:HzSM3AaGFJjsdlkh.O_tMsNWU6ny-IAaA3Z-eAA.DR7jM3wvMBUf1PviGvfFkXANksE",
-        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed Metro Nashville General Hospital's standard charges file is dated 7/1/2024:\n\nhttps://nashvillegeneral-440111.s3.amazonaws.com/62-1383977_METRO-NASHVILLE-GENERAL-HOSPITAL_standardcharges.csv\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if this could get updated before then. Happy to help however's useful!\n\nThanks so much,\nAnthony\nhpt-obf:v1:OsOEhbvzlG-zUAKj.xophrnN6IwcSvWXXt7PpgA.PuVKvjJjRmGuWq0FCEvDPNRXyj3eHw\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:aFxcYuLmg_9vmKPH.O4WL2LVJGvOGSZQEa-Si9A.OD7GzZ2-sfC0s-5Wj_4SPF1iYa0, hpt-obf:v1:864FHcmzKn7NZB-m.xfmoNGCXe6edXrGYnhZ1xw.qXYNYbJs8DDEHqZgZ-VivstSwVQ",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed Metro Nashville General Hospital's standard charges file is dated 7/1/2024:\n\nhttps://nashvillegeneral-440111.s3.amazonaws.com/62-1383977_METRO-NASHVILLE-GENERAL-HOSPITAL_standardcharges.csv\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if this could get updated before then. Happy to help however's useful!\n\nThanks so much,\nAnthony\nhpt-obf:v1:uLd5wBEUUW80yf7n.4mIKQhdu2JtkPxneD3W0Rg.Ubq5K4YcAFzrYza28D37gXMTap749Q\nmrf.anthonyisnota.dev",
         "sentAt": "2026-08-30",
         "outcome": "none"
       }
@@ -554,7 +575,7 @@
       "templateVersion": "",
       "verdict": "failing",
       "checkedOn": "2026-08-30",
-      "note": "MRF last updated 7/1/2024, stale at check. Emailed hpt-obf:v1:NZw_b57RaA_L-oOL.AIMND1LjzhU1Bf4yo_TyPA.9BknEuTagBMIU0jABU-wJ-xcres and hpt-obf:v1:SdFZKtn9R1C5H9G2.F81A90zdQ_4L2GKeaGxWKw.m_7c-kPNYD0E_usF6zP50_wzHjw 2026-08-30, following up in 30 days."
+      "note": "MRF last updated 7/1/2024, stale at check. Emailed hpt-obf:v1:V335lyXVbG8pwJXW.fZ2P6AkPxKEcr2BNuWGSBQ.j0yR5COPAsdIyNUXTVIE8s3i9Hc and hpt-obf:v1:ckIRCuKn8Y98x1jF.CtDNxaXxwZUdthOXvdbwGg.HI3-nGCzg9GnkuOfPxfx2dduW-o 2026-08-30, following up in 30 days."
     }
   },
   "451350": {
@@ -572,7 +593,7 @@
         "kind": "email",
         "at": "2026-09-10T01:11:52.095Z",
         "subject": "Plains Memorial Hospital standard charges file - missing CMS headers",
-        "to": "hpt-obf:v1:RN08aEYi3tWcOh2i.1lq7EprReEU0y3cB8Gy2iw.jkyutk5cU6MkE6nhGUu31aEfow",
+        "to": "hpt-obf:v1:duKrQojryWX5zH7m.ZYda63_eECGqNrqZa77ylA.uOpAiicJ9h6cQYGuAk3geQbGhQ",
         "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed Plains Memorial Hospital's standard charges JSON file doesn't appear to include the CMS-required header fields (such as last_updated_on):\n\nhttps://secure.claraprice.net/price-transparency/XFT2817387427/machine-readable/756003939_castro-county-hospital-district_standardcharges.json\n\nCould those headers be added so the file is easier to verify? I'll plan to follow up in 30 days so I can continue my research, but would appreciate it if this could get updated before then. Happy to help however's useful!\n\nThanks so much,\n[your name]\n[your outreach email]\n[your tracker URL]",
         "sentAt": "2026-09-09",
         "outcome": "none"
@@ -586,7 +607,7 @@
       "templateVersion": "",
       "verdict": "",
       "checkedOn": "2026-09-09",
-      "note": "JSON file does not include CMS-required header fields such as last_updated_on. Email sent to hpt-obf:v1:AdceRgXLPIPcJfqz.wQ0PHTi_CFZVjc6w1KjH5A.E_gy6vW-4Fd-luzViuhMh49hKQ asking them to add the headers."
+      "note": "JSON file does not include CMS-required header fields such as last_updated_on. Email sent to hpt-obf:v1:J4iudPf9G7MQP3Nn.6akBy-b_kuf7KrTunTgg0g.bdg9F-Vn3KI6LKB61vMnJIycXA asking them to add the headers."
     }
   },
   "500030": {
@@ -607,7 +628,7 @@
       "templateVersion": "",
       "verdict": "compliant",
       "checkedOn": "2026-08-28",
-      "note": "MRF accessible via Craneware API. Contact: M*** (hpt-obf:v1:9ukHGD00FmKplBsV.zvi2DdSgnOP_s7rUvi25bg.0YSK_SB3F8SnUf-LnSSJ2RoCZmo)"
+      "note": "MRF accessible via Craneware API. Contact: M*** (hpt-obf:v1:-GyLW-qVbxnCJzhW.-g_FzTHFFpIeOBlgy70B7Q.oT_4w000Rf96TUNfsAoruM-7MZs)"
     }
   },
   "500041": {
@@ -628,7 +649,7 @@
       "templateVersion": "",
       "verdict": "compliant",
       "checkedOn": "2026-08-28",
-      "note": "MRF accessible via Craneware API. Contact: M*** (hpt-obf:v1:qd1-QbrG9y0ll1-g.an0YM_wulAH054eKM2rrtw.jqraYr66bUlgeGvQcvmfRHyFcSU)"
+      "note": "MRF accessible via Craneware API. Contact: M*** (hpt-obf:v1:ZHU0szK5pSsyuKFm.iAA2mMFlRW_15TBZGATfdg.9NALhI6br2BBCztmkdIkMlDBij0)"
     }
   },
   "500050": {
@@ -649,7 +670,7 @@
       "templateVersion": "",
       "verdict": "compliant",
       "checkedOn": "2026-08-28",
-      "note": "MRF accessible via Craneware API. Contact: M*** (hpt-obf:v1:eLJXTl7TPk-Td9TA.LK84UQPIehoOqdVz6plWHg.7OBfZdCYzJpxqlk4XSfboa-U0rw)"
+      "note": "MRF accessible via Craneware API. Contact: M*** (hpt-obf:v1:_oDCLDwz-5Dg_SHA.3tDKOmgXmxZMpLuN7Uc_KQ.FnDMXvvBSaj9l-k2D0s7T38xRFU)"
     }
   },
   "501329": {
@@ -670,7 +691,7 @@
       "templateVersion": "",
       "verdict": "compliant",
       "checkedOn": "2026-08-28",
-      "note": "MRF accessible via Craneware API. Contact: M*** (hpt-obf:v1:1iMu-_9Yvb_vlf81._elsZvn8WnMBc9sTtjrrAA.c-XlbwEi7vGf-xfY_dKfSRY6B7c)"
+      "note": "MRF accessible via Craneware API. Contact: M*** (hpt-obf:v1:IGNrVf5bHoHL3DLR.wGLpJiUAs-4pyH2rB2ZEYw.nkZTVp_Bt98FWCM4WljgdAbVfl0)"
     }
   },
   "501340": {
@@ -691,7 +712,7 @@
       "templateVersion": "",
       "verdict": "compliant",
       "checkedOn": "2026-08-28",
-      "note": "MRF accessible via Craneware API. Contact: M*** (hpt-obf:v1:glfH31jrdkttoNV1.l_u5snyGcjczKPaWLwJjKw.73Rm34swds9W8Da2Hg94hD0TlFo)"
+      "note": "MRF accessible via Craneware API. Contact: M*** (hpt-obf:v1:cRodsgWYzhYXB0gO.wBWtNmLJGcnc-LzGKVFrZQ.oQeb7LHyqRTSB-bLnCH-VcWUrLQ)"
     }
   },
   "521331": {
@@ -709,8 +730,8 @@
         "kind": "email",
         "at": "2026-08-30T02:15:29.135Z",
         "subject": "Your standard charges file is out of date",
-        "to": "hpt-obf:v1:nGR8bRgqBCc3q6iY.rWCs-HalDqFU3pKXOY241w.R3qrWdo5daQwp6VNSIhj1gEk6haepkpxIUP7ekw",
-        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed Burnett Medical Center's standard charges file is dated 7/1/2024:\n\nhttps://www.burnettmedicalcenter.com/wp-content/uploads/2025/03/390938661_BurnettMedicalCenter_standardcharges.csv\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if this could get updated before then. Happy to help however's useful!\n\nThanks so much,\nAnthony\nhpt-obf:v1:gM_nOTAw1tK4vObJ.k9Kx4cU_KzieVo56BRJ89g.u0azP1FRHYcNXFfcKD9R7GLngACWCw\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:kTLa4d7vrQEEtASP.7-9Xy9d6Br7T4hRaQpTBGg.JlCMRhynuzU8ys-gKKOrTFRerXbphiGrC1jyYqw",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed Burnett Medical Center's standard charges file is dated 7/1/2024:\n\nhttps://www.burnettmedicalcenter.com/wp-content/uploads/2025/03/390938661_BurnettMedicalCenter_standardcharges.csv\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if this could get updated before then. Happy to help however's useful!\n\nThanks so much,\nAnthony\nhpt-obf:v1:NSIOv-oipuJ801zR.ZtK9B2iCVheGDKN0bfK2Og.s7YmKKV92Hb_e-soXbm6nsiULhMLdA\nmrf.anthonyisnota.dev",
         "sentAt": "2026-08-30",
         "outcome": "none"
       },
@@ -718,15 +739,15 @@
         "id": "mtf6eyct-9a1b2s",
         "kind": "note",
         "at": "2026-08-30T02:14:25.901Z",
-        "text": "Got an automatic reply: M*** no longer works at Burnett Medical Center. Redirected to hpt-obf:v1:PhJFh1CtFxnq7dgJ.9biWR-BTyHgA7KkfwBuhTg.d8-6V9QXy1PfUcBbSQg23d2EgHLf0J4ECsOupgY - need to resend there."
+        "text": "Got an automatic reply: M*** no longer works at Burnett Medical Center. Redirected to hpt-obf:v1:GXGVfAMdOYF9vR4E.xWZ_yFfsyQuQK4EHPjaz-A.LubvBuQOiuB2I2h1TzlVBUVRbbyDgyVKazURx5Y - need to resend there."
       },
       {
         "id": "mtf6eycs-z3uqc5",
         "kind": "email",
         "at": "2026-08-30T02:14:25.900Z",
         "subject": "Your standard charges file is out of date",
-        "to": "hpt-obf:v1:F9rN5TT-OpfDjbq5.BT1_M9SpO9uK1s0merbpPA.PiDdYe_4RDDiXMJkoOSv8vnCDByMZD-Z7JFKXi4",
-        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed Burnett Medical Center's standard charges file is dated 7/1/2024:\n\nhttps://www.burnettmedicalcenter.com/wp-content/uploads/2025/03/390938661_BurnettMedicalCenter_standardcharges.csv\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if this could get updated before then. Happy to help however's useful!\n\nThanks so much,\nAnthony\nhpt-obf:v1:AC8sYphRfKEuF9IL.lt_dFVXDj327-Fo1g6_6dw.rIICv09DftfuLJGqSQOeCifv3HgrNg\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:EKgvUHCnZdfK_Os9.sp3IUuNF0lhB58vihcF5DA.WLKjVPM4PbccB474mdclY0jhHPqKHadu6JTAqxw",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed Burnett Medical Center's standard charges file is dated 7/1/2024:\n\nhttps://www.burnettmedicalcenter.com/wp-content/uploads/2025/03/390938661_BurnettMedicalCenter_standardcharges.csv\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if this could get updated before then. Happy to help however's useful!\n\nThanks so much,\nAnthony\nhpt-obf:v1:RgD28gYV4OMOtFbk.Jvlldh3ZpfBinYuQlL2kkA.bZFNWziu1zWeFmzxYQYC4QFPhMXfaw\nmrf.anthonyisnota.dev",
         "sentAt": "2026-08-29",
         "outcome": "none"
       }
@@ -739,7 +760,7 @@
       "templateVersion": "",
       "verdict": "failing",
       "checkedOn": "2026-08-30",
-      "note": "MRF last updated 7/1/2024, stale at check. Original contact (M***) no longer at the hospital per auto-reply; redirected to hpt-obf:v1:_PF3CDSly8AA9TIC.2IQ7KIyghkFA81DLSAMsBw.mujlFP7Qtccmd3Ot6pV3AAJx6kra9_8p0M-tPRk."
+      "note": "MRF last updated 7/1/2024, stale at check. Original contact (M***) no longer at the hospital per auto-reply; redirected to hpt-obf:v1:5YYPiWGDMQEq4SNf.Mudq9T1PRyxguGRmsCetbA.q0xY05CLXTtVlFrHqXxSyFdpwAFtyBuc2k5P-1I."
     }
   },
   "524017": {
@@ -757,8 +778,8 @@
         "kind": "email",
         "at": "2026-08-28T23:49:54.018Z",
         "subject": "North Central Health Care (CCN 524017) - machine-readable file last_updated_on date",
-        "to": "hpt-obf:v1:83sZOMkXRgTz4mK2.4xEJfSdYfmGdxfn7MV1CHg.9_Q7PBWKMfKXUXprZte9",
-        "body": "Hello,\n\nHope you're doing well! I took a look at your hospital price transparency files and I wanted to flag something on North Central Health Care's machine-readable file.\n\nThe file is up and loading fine with no access issues. However, the `last_updated_on` value in it reads 2024-01-19, which as of today is 952 days ago (about 2 years, 7 months).\n\nA few details in case they're useful:\n\n* CCN: 524017\n* Pointer file: https://www.norcen.org/cms-hpt.txt\n* MRF: https://machine-readable-files.com/north-central-health-care/930801810_North-Central-Health-Care_standardcharges.csv\n* CMS template version: 2.0.0\n* Checked: 08/27/2026 6:18 PM EST\n\nFor reference, 45 CFR 180.50(b)(2) requires hospitals to update the standard charge file at least once annually and to indicate the date of the last update. Going by the January 2024 date, the annual refresh would have been due 01/19/2025, so it's currently about 19 months past that point, with two annual cycles in between.\n\nIs a refresh already in the works or has the file perhaps been republished somewhere else that the pointer file hasn't caught up with? Happy to correct my records if I'm looking at the wrong copy.\n\nI'll plan to check back around September 27 to see how things are going. Wanted to be upfront that if the file still shows a January 2024 date at that point, I'll likely need to flag the annual-update requirement to CMS.\n\nThanks so much and let me know if I've got the wrong copy of the file or if there's anything else I can pass along.\n\nBest,\nAnthony\nhpt-obf:v1:1_at-FrDe2SE-WiP.ZLiLSkkI7b486GP928rZHA.X9MJWiocwUVtsdA7pTSlNGmac7rHzA",
+        "to": "hpt-obf:v1:JAGQjguZBRQewqm3.4u2gEQqPdwAi-r2xSfbDfg.XxGqAmYzl3zLEbLebj19",
+        "body": "Hello,\n\nHope you're doing well! I took a look at your hospital price transparency files and I wanted to flag something on North Central Health Care's machine-readable file.\n\nThe file is up and loading fine with no access issues. However, the `last_updated_on` value in it reads 2024-01-19, which as of today is 952 days ago (about 2 years, 7 months).\n\nA few details in case they're useful:\n\n* CCN: 524017\n* Pointer file: https://www.norcen.org/cms-hpt.txt\n* MRF: https://machine-readable-files.com/north-central-health-care/930801810_North-Central-Health-Care_standardcharges.csv\n* CMS template version: 2.0.0\n* Checked: 08/27/2026 6:18 PM EST\n\nFor reference, 45 CFR 180.50(b)(2) requires hospitals to update the standard charge file at least once annually and to indicate the date of the last update. Going by the January 2024 date, the annual refresh would have been due 01/19/2025, so it's currently about 19 months past that point, with two annual cycles in between.\n\nIs a refresh already in the works or has the file perhaps been republished somewhere else that the pointer file hasn't caught up with? Happy to correct my records if I'm looking at the wrong copy.\n\nI'll plan to check back around September 27 to see how things are going. Wanted to be upfront that if the file still shows a January 2024 date at that point, I'll likely need to flag the annual-update requirement to CMS.\n\nThanks so much and let me know if I've got the wrong copy of the file or if there's anything else I can pass along.\n\nBest,\nAnthony\nhpt-obf:v1:YiaXZIwmSNZXo1Un.QbHNnEh6i0Evr3vra-Sszg.uBeSY9iMm8UD_KLuCeCHEaLRJw17nw",
         "sentAt": "2026-08-28",
         "outcome": "none"
       },
@@ -767,8 +788,8 @@
         "kind": "email",
         "at": "2026-08-28T23:49:54.018Z",
         "subject": "North Central Health Care (CCN 524017) - machine-readable file last_updated_on date",
-        "to": "hpt-obf:v1:oo-OfT2-vTuy-f0I.3NxFcUhVL1TQ7cwPfFzG8w.QCXYlHXZ4OzAaz7E0wJm",
-        "body": "Hello,\n\nHope you're doing well! I took a look at your hospital price transparency files and I wanted to flag something on North Central Health Care's machine-readable file.\n\nThe file is up and loading fine with no access issues. However, the `last_updated_on` value in it reads 2024-01-19, which as of today is 952 days ago (about 2 years, 7 months).\n\nA few details in case they're useful:\n\n* CCN: 524017\n* Pointer file: https://www.norcen.org/cms-hpt.txt\n* MRF: https://machine-readable-files.com/north-central-health-care/930801810_North-Central-Health-Care_standardcharges.csv\n* CMS template version: 2.0.0\n* Checked: 08/27/2026 6:18 PM EST\n\nFor reference, 45 CFR 180.50(b)(2) requires hospitals to update the standard charge file at least once annually and to indicate the date of the last update. Going by the January 2024 date, the annual refresh would have been due 01/19/2025, so it's currently about 19 months past that point, with two annual cycles in between.\n\nIs a refresh already in the works or has the file perhaps been republished somewhere else that the pointer file hasn't caught up with? Happy to correct my records if I'm looking at the wrong copy.\n\nI'll plan to check back around September 27 to see how things are going. Wanted to be upfront that if the file still shows a January 2024 date at that point, I'll likely need to flag the annual-update requirement to CMS.\n\nThanks so much and let me know if I've got the wrong copy of the file or if there's anything else I can pass along.\n\nBest,\nAnthony\nhpt-obf:v1:GQr7qOORoGAbU1d0.wTGJFJujfefYzv9pH5l_Dw.zSAvI7-0HPtoryMmZ68ioM2qkNyYqA",
+        "to": "hpt-obf:v1:hundoNUqVEH2YqSY.4eR6A-zwHT_0poJ7P-nXaw.V_ZiQOWf8uLU_JzC0QWZ",
+        "body": "Hello,\n\nHope you're doing well! I took a look at your hospital price transparency files and I wanted to flag something on North Central Health Care's machine-readable file.\n\nThe file is up and loading fine with no access issues. However, the `last_updated_on` value in it reads 2024-01-19, which as of today is 952 days ago (about 2 years, 7 months).\n\nA few details in case they're useful:\n\n* CCN: 524017\n* Pointer file: https://www.norcen.org/cms-hpt.txt\n* MRF: https://machine-readable-files.com/north-central-health-care/930801810_North-Central-Health-Care_standardcharges.csv\n* CMS template version: 2.0.0\n* Checked: 08/27/2026 6:18 PM EST\n\nFor reference, 45 CFR 180.50(b)(2) requires hospitals to update the standard charge file at least once annually and to indicate the date of the last update. Going by the January 2024 date, the annual refresh would have been due 01/19/2025, so it's currently about 19 months past that point, with two annual cycles in between.\n\nIs a refresh already in the works or has the file perhaps been republished somewhere else that the pointer file hasn't caught up with? Happy to correct my records if I'm looking at the wrong copy.\n\nI'll plan to check back around September 27 to see how things are going. Wanted to be upfront that if the file still shows a January 2024 date at that point, I'll likely need to flag the annual-update requirement to CMS.\n\nThanks so much and let me know if I've got the wrong copy of the file or if there's anything else I can pass along.\n\nBest,\nAnthony\nhpt-obf:v1:fi2Hdh1IKWu_LbLr.fyaQyO6EqSelWhCVC7pkrg.6Pxi7VN4s56MTZKXy5emY0YlHjxT9A",
         "sentAt": "2026-08-28",
         "outcome": "bounced"
       },
@@ -776,7 +797,7 @@
         "id": "mtdlm03a-bgrvbx",
         "kind": "note",
         "at": "2026-08-28T23:44:16.630Z",
-        "text": "Bounce-back received 2026-08-28 6:25 PM from Mail Delivery Subsystem <hpt-obf:v1:UgHzvEwIodhOQrwz.SzWCbjxbwP8wp_1Kt7UrCA.6_oEQjgNeKUgsx31qys_CGKuGuZ1_3OzuA6Y5c6q>: 550 5.4.1 Recipient address rejected: Access denied (hpt-obf:v1:U_esZKK7MKLWADdw.JCrYVRLT9epFNMjEvX0FZA.zMyL_hz07Z71BuuEvcDZ)."
+        "text": "Bounce-back received 2026-08-28 6:25 PM from Mail Delivery Subsystem <hpt-obf:v1:uv1w9UicyYH-bvJT.LpmmVKtIaTaSbH8xlFSzLw.7Lc_C3JpBOo4uU4smjKhV5ZLKCra0R89ghZmH9-E>: 550 5.4.1 Recipient address rejected: Access denied (hpt-obf:v1:6N1fsE6CdMVe2sK1.ViKS0-0gQjFKWskz4FU2QA.d2CmNUZABBWpxeYGG_nU)."
       }
     ],
     "correction": {
@@ -787,7 +808,7 @@
       "templateVersion": "2.0.0",
       "verdict": "",
       "checkedOn": "2026-08-27",
-      "note": "MRF loads fine, no access issue. last_updated_on reads 2024-01-19 (952 days stale as of 2026-08-28); annual refresh under 45 CFR 180.50(b)(2) was due 01/19/2025. Emailed hpt-obf:v1:IiYeQet42m-0UVKY.TsEoj9CpnTa-CWsIdaP3IA.LKDOAghZLXLCxFr5v-fd (bounced 550 5.4.1 access denied) and hpt-obf:v1:9TpFfqNSptPB6p2U.cNTk5ggRNksw7-iDInwDpw.9O8dUoDwcZhebXrOHoKz on 2026-08-28. Verdict left to the crawler."
+      "note": "MRF loads fine, no access issue. last_updated_on reads 2024-01-19 (952 days stale as of 2026-08-28); annual refresh under 45 CFR 180.50(b)(2) was due 01/19/2025. Emailed hpt-obf:v1:uNqqkmKygQeIG634.YkUKSPs-t5EfRazmblhKTA.tv_WIW4xXrQsiwSIM70i (bounced 550 5.4.1 access denied) and hpt-obf:v1:lhhKtA5Xya9PlzJU.5e-ybL6jdxxAsQAVJ7hVbw.zyWKlG2_s9l6VdKbjAce on 2026-08-28. Verdict left to the crawler."
     }
   },
   "670006": {
@@ -804,15 +825,15 @@
         "id": "mtf6z63h-pwilc6",
         "kind": "note",
         "at": "2026-08-30T02:30:09.053Z",
-        "text": "CC to hpt-obf:v1:XRRsz-xH3UQt6UU-.R0RLTf1b921w03v9gX3z0Q.FRbx95x7nfiB5zg8Mu3BXSfuxZ6ZWWIc7A (correct address from the hospital's site) bounced: 550 5.1.1 Recipient address rejected, User unknown. hpt-obf:v1:ocRam8ze8ENTErKD.KV6_8HzWWYU37UMjo0V3ug.zWkaWIw2-DXwNGw9Fdxq0APTW5SoXaCg was not reported as bounced."
+        "text": "CC to hpt-obf:v1:XMn643BbdX6bryC3.qxZydzkLL4kl8KxGcIitxQ.HFLt-YwksLUWeF4LSdcZ-5EDQiQjb2NS6g (correct address from the hospital's site) bounced: 550 5.1.1 Recipient address rejected, User unknown. hpt-obf:v1:bCg49bpoaZKdIz6f.zGx6Q3DOzetDJcn5hB2qmg.aBjJjLTWfX9LFZP6B9hIrFCO_tmYMXW3 was not reported as bounced."
       },
       {
         "id": "mtf6t0an-4mhww1",
         "kind": "email",
         "at": "2026-08-30T02:25:21.599Z",
         "subject": "Your cms-hpt.txt is pointing to the wrong file",
-        "to": "hpt-obf:v1:sC2Xok1Zahe3geg-.oUj6DktCMBJo7sTheNI-cw.kD5el9ywTyq9ujhM2LOuTfdM2z9Rhw2G, cc: hpt-obf:v1:t17Whquqmlnh2ej6.qnjCYcJUjNjmB3X5RknrMg.9-B4uLZ2AWWkV1FMP9AfzjOrMw7VEpBfbw",
-        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed The Hospital at Westlake Medical Center's cms-hpt.txt is pointing to this file:\n\nhttps://www.westlakemedical.com/wp-content/uploads/2024/10/820578078_westlake-surgical_standardcharges.csv\n\nBut the correct, current file appears to be the one on your pricing page instead:\n\nhttps://www.westlakemedical.com/wp-content/uploads/2026/05/820578078_westlake-medical-center_standardcharges-2.csv\n\nMight just be a quick fix to update the pointer in cms-hpt.txt. Happy to help however's useful!\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if this could get updated before then.\n\nThanks so much,\nAnthony\nhpt-obf:v1:eZlGOGLkrF05hRbu.GC57coDTXiOS0D9cz2LqMw.jjWiXhnR3Esgo4lT8n7duYMQ-tIiiw\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:7QXNuHX_FlfTA_35.DFMwdarOutxCQkfrP-hPhA.UhzUAs4LBnNtomsyG3hiXRF0mZAVj2LQ, cc: hpt-obf:v1:3ru1j_Jg8FrdJ_gb._1ucKH38mMSssFg6N7pMcw.UY8Jdup55KFEN6s5E9vGibTwvFgwhY5pCg",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed The Hospital at Westlake Medical Center's cms-hpt.txt is pointing to this file:\n\nhttps://www.westlakemedical.com/wp-content/uploads/2024/10/820578078_westlake-surgical_standardcharges.csv\n\nBut the correct, current file appears to be the one on your pricing page instead:\n\nhttps://www.westlakemedical.com/wp-content/uploads/2026/05/820578078_westlake-medical-center_standardcharges-2.csv\n\nMight just be a quick fix to update the pointer in cms-hpt.txt. Happy to help however's useful!\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if this could get updated before then.\n\nThanks so much,\nAnthony\nhpt-obf:v1:13YeXwNiZcDlrscE.NJ_GSucIpS-CILM7gTmKNw.evPGoLywrcnf3DWshKUXeYcX7gmzag\nmrf.anthonyisnota.dev",
         "sentAt": "2026-08-30",
         "outcome": "none",
         "editedAt": "2026-08-30T02:30:09.052Z"
@@ -826,7 +847,7 @@
       "templateVersion": "",
       "verdict": "failing",
       "checkedOn": "2026-08-30",
-      "note": "cms-hpt.txt points to the wrong/old file; the correct current one is on the pricing page instead (https://www.westlakemedical.com/wp-content/uploads/2026/05/820578078_westlake-medical-center_standardcharges-2.csv). Emailed hpt-obf:v1:GfJF9IIJ4uSlFDbt.37HOQ0rHdwpxlHAJYoJ9PA.NPcbX4olWxxbgnWIJPF4F4aXOTVTSoEN 2026-08-30 (cc hpt-obf:v1:xqi8E8HKgCzoLFao.8jMJWyPzD4JIPx6SDsU_wA.cfKLjWE3Gwo3tIWCXL9OM-3GS_nERtefhA bounced), following up in 30 days."
+      "note": "cms-hpt.txt points to the wrong/old file; the correct current one is on the pricing page instead (https://www.westlakemedical.com/wp-content/uploads/2026/05/820578078_westlake-medical-center_standardcharges-2.csv). Emailed hpt-obf:v1:Ng0XVKIQUnqNprpz.3IQ-04vuhEOmA-Wp-l9GAA.oWnOrbmuSXzwQQm99n-_NZfGzSr4tzaq 2026-08-30 (cc hpt-obf:v1:HbhautERwfs-vW13.eub71FBOTB9F03NWzxhYyA.KW4DYdLjpKcuBGuiNo7LmKy3BoerpcjKlA bounced), following up in 30 days."
     }
   },
   "010169": {
@@ -844,7 +865,7 @@
         "kind": "email",
         "at": "2026-08-29T00:09:29.638Z",
         "subject": "MRF File Discrepancy - Atmore Community Hospital",
-        "to": "hpt-obf:v1:xMD6pvcCytECShiK.aM5j7MBCqJCxxerIq8NLcw.kqAVvG58PAPlrq3qzC8",
+        "to": "hpt-obf:v1:DJaLvptFNzv701d_.rMdZVZLJAfaqTlQCdPkbOA.clG8PaH5tZBlnzBZZuE",
         "body": "Hello!\n\nHope you're doing well! Just wanted to give you a quick heads up about something I ran into while trying to access your MRF file.\n\nIt looks like the cms-hpt.txt file is still pointing to an older file from back in April 2025:\nhttp://www.atmorehealth.org/docs/1336_BILLINGITEMLIST_CsvTallv2.0.0_20250401195853.csv\n\nHowever, your price transparency page is actually linking to a newer one:\nhttps://www.atmorehealth.org/docs/631143638_atmore-community-hospital_standardcharges.csv\n\nJust wanted to let you know so that everything stays lined up for CMS compliance! Please let me know if you need anything else from me - happy to help in any way I can!\n\nThanks so much,\nAnthony",
         "sentAt": "2026-08-28",
         "outcome": "none"
@@ -908,8 +929,8 @@
         "kind": "email",
         "at": "2026-08-28T22:00:15.619Z",
         "subject": "MRF Access Denied",
-        "to": "hpt-obf:v1:snY3CY1IuaQmOzDV.IszooU_0elEDDs3AuspGMA.Iq4BgqtRyT0RESzuvXJf-OUh9tdvMwhalw",
-        "body": "Hello,\n\nHope you're doing well! I ran into an issue trying to access your machine-readable file today. I got an \"Access Denied\" error instead of the file (screenshot attached).\n\nA few details in case they help:\n- File: 208057151_evergreenmedicalcenter_standardcharges.csv\n- When I tried: 08/28/2026 5:50 PM EST\n- Error: AccessDenied\n\n\n\nWould you be able to take a look and let me know roughly when it might be back up?\n\nJust for reference, these files are meant to be publicly accessible under CMS's Transparency in Coverage rule (https://www.cms.gov/priorities/healthplan-price-transparency/overview/use-pricing-information-published-under-transparency-coverage-final-rule).\n\nI'll plan to check back in around September 27 to see how things are going. Wanted to be upfront that if it's still down at that point, I'll likely need to loop CMS in on the access issue.\n\nThanks so much and please let me know if there's anything I can send over to help track it down.\n\nBest,\nAnthony\nhpt-obf:v1:wRVGe6LIUtMyEygR.X29efnDAkGuBVKUkyk3KJg.NvugWt6HFTpdnqlGXRcj8Z-ll2ACZg",
+        "to": "hpt-obf:v1:5Vj4OiimpKfgc8Rc.Brnq_AeFwLnPTjzj9sJViw.ar749Pv6d7rUpILDzVNqH7UYD94F8czB5w",
+        "body": "Hello,\n\nHope you're doing well! I ran into an issue trying to access your machine-readable file today. I got an \"Access Denied\" error instead of the file (screenshot attached).\n\nA few details in case they help:\n- File: 208057151_evergreenmedicalcenter_standardcharges.csv\n- When I tried: 08/28/2026 5:50 PM EST\n- Error: AccessDenied\n\n\n\nWould you be able to take a look and let me know roughly when it might be back up?\n\nJust for reference, these files are meant to be publicly accessible under CMS's Transparency in Coverage rule (https://www.cms.gov/priorities/healthplan-price-transparency/overview/use-pricing-information-published-under-transparency-coverage-final-rule).\n\nI'll plan to check back in around September 27 to see how things are going. Wanted to be upfront that if it's still down at that point, I'll likely need to loop CMS in on the access issue.\n\nThanks so much and please let me know if there's anything I can send over to help track it down.\n\nBest,\nAnthony\nhpt-obf:v1:0f7lpio0w-TfhEUx.IHNQWxgqH7-lfYMK2Yt3CA.57jl7omPIA4yTa39RNSGy3UJoX3i3g",
         "sentAt": "2026-08-28",
         "outcome": "none"
       }
@@ -933,7 +954,7 @@
       "templateVersion": "",
       "verdict": "compliant",
       "checkedOn": "2026-08-28",
-      "note": "MRF accessible via Craneware API. Contact: M*** (hpt-obf:v1:bZpSl6nay_siUF8p.IPuxM4rJbtI4CoUhZeKjMw.FCyS5cguNFGPqVG9xGUqsJxUbgc)"
+      "note": "MRF accessible via Craneware API. Contact: M*** (hpt-obf:v1:y98D9bEgH0oQ41hU.6h0XcwR4woy7M8RJyoabiA.D3eq4mltfoRux_VWqayxYiKoU28)"
     }
   },
   "050292": {
@@ -951,8 +972,8 @@
         "kind": "email",
         "at": "2026-08-29T01:18:08.037Z",
         "subject": "MRF annual-update check - last_updated_on reads 2/25/2024",
-        "to": "hpt-obf:v1:1fZpCcaahN4aks43.NywGSZuONAyLgowcPHtk-Q.3VvXr-CCS8EdoIqYTu2MREM",
-        "body": "Hello,\n\nHope you're doing well! I took a look at your hospital price transparency files and I wanted to flag something on your machine-readable file.\n\nThe file is up and loading fine with no access issues. However, the last_updated_on value in it reads 2/25/2024, which as of today is 915 days ago (2 years 6 months 3 days).\n\nA few details in case they're useful:\n\nCCN: 050292\nPointer file: https://ruhealth.org/cms-hpt.txt\nMRF: https://www.ruhealth.org/956000930_riverside-university-health-system_standardcharges.csv\nChecked: 08/27/2026 9:15 PM EST\nFor reference, 45 CFR 180.50(b)(2) requires hospitals to update the standard charge file at least once annually and to indicate the date of the last update. Going by the January 2024 date, the annual refresh would have been due 01/19/2025, so it's currently about 19 months past that point, with two annual cycles in between.\n\nIs a refresh already in the works or has the file perhaps been republished somewhere else that the pointer file hasn't caught up with? Happy to correct my records if I'm looking at the wrong copy.\n\nI'll plan to check back around September 27 to see how things are going. Wanted to be upfront that if the file still shows a 2024 date at that point, I'll likely need to flag the annual-update requirement to CMS.\n\nThanks so much and let me know if I've got the wrong copy of the file or if there's anything else I can pass along.\nBest,\nAnthony\nhpt-obf:v1:3R3B6aOBZnB36L2z.USMdMYayPJlQQgw1VFsBDw.3r_8Y8wlEMRQJ5iUnLbNS3mM0AQBRg",
+        "to": "hpt-obf:v1:_s-2kRpifaMg11Ca.uFRR7BqqfSSpWeADU2OMEw.Yxu81ZaJfPj0l3EX8MvgG7o",
+        "body": "Hello,\n\nHope you're doing well! I took a look at your hospital price transparency files and I wanted to flag something on your machine-readable file.\n\nThe file is up and loading fine with no access issues. However, the last_updated_on value in it reads 2/25/2024, which as of today is 915 days ago (2 years 6 months 3 days).\n\nA few details in case they're useful:\n\nCCN: 050292\nPointer file: https://ruhealth.org/cms-hpt.txt\nMRF: https://www.ruhealth.org/956000930_riverside-university-health-system_standardcharges.csv\nChecked: 08/27/2026 9:15 PM EST\nFor reference, 45 CFR 180.50(b)(2) requires hospitals to update the standard charge file at least once annually and to indicate the date of the last update. Going by the January 2024 date, the annual refresh would have been due 01/19/2025, so it's currently about 19 months past that point, with two annual cycles in between.\n\nIs a refresh already in the works or has the file perhaps been republished somewhere else that the pointer file hasn't caught up with? Happy to correct my records if I'm looking at the wrong copy.\n\nI'll plan to check back around September 27 to see how things are going. Wanted to be upfront that if the file still shows a 2024 date at that point, I'll likely need to flag the annual-update requirement to CMS.\n\nThanks so much and let me know if I've got the wrong copy of the file or if there's anything else I can pass along.\nBest,\nAnthony\nhpt-obf:v1:W_Xfj7SJ3V_UmRol.VcK99Leyo1lusG0FmPM8Tw.AgOCr3a-7S13-L_F-7GLEJpFU6YJYQ",
         "sentAt": "2026-08-27",
         "outcome": "none"
       },
@@ -960,7 +981,7 @@
         "id": "mtdoz3k1-r7q4xw",
         "kind": "note",
         "at": "2026-08-29T01:25:53.339Z",
-        "text": "Erratum: the 2026-08-27 email to hpt-obf:v1:5Ye0FYSX7EkumXVK.sW3YRx6AJ9fUHkA0XiFYzA.s8tCqkJcbT7BBPkHU8VdjrQ mistakenly says 'Going by the January 2024 date, the annual refresh would have been due 01/19/2025' - carryover from the 524017 (North Central Health Care) template. The correct figures for this hospital are the February 2024 date (last_updated_on 2024-02-25) and a due date of 02/25/2025. Everything else in the email (CCN, URLs, 915-day count) is correct. Reference these corrected dates in the Sep 27 follow-up."
+        "text": "Erratum: the 2026-08-27 email to hpt-obf:v1:voQf7_VYS_wQj89h.GR-pqRIA30bRlM3XfUCxjw.uuecNGwessSPHJyXmqVOMPw mistakenly says 'Going by the January 2024 date, the annual refresh would have been due 01/19/2025' - carryover from the 524017 (North Central Health Care) template. The correct figures for this hospital are the February 2024 date (last_updated_on 2024-02-25) and a due date of 02/25/2025. Everything else in the email (CCN, URLs, 915-day count) is correct. Reference these corrected dates in the Sep 27 follow-up."
       }
     ],
     "correction": {
@@ -989,8 +1010,8 @@
         "kind": "email",
         "at": "2026-08-30T01:22:39.548Z",
         "subject": "Outdated MRFs for Tanner Medical Center-East Alabama and Villa Rica",
-        "to": "hpt-obf:v1:utuCM6IZNJGOrB6n.CYFQKBNYBgvXS1pFh7EVJA.J6Pxt3-wdJZvBGSnk1j0",
-        "body": "Hi there,\n\nI'm doing some research into hospital price transparency compliance and noticed a couple of Tanner facilities have outdated standard charges files, both on cms-hpt.txt and linked from your billing pages.\n\nTanner Medical Center-East Alabama (Wedowee, AL):\nhttps://www.tanner.org/upload/docs/PDFs/FinancialAssistance/475348597_Tanner-Medical-Center-East-Alabama_standardcharges.csv\nlast updated 7/1/2024, same file linked from https://www.tanner.org/patients-and-visitors/billing-and-financial-resources/price-transparency\n\nTanner Medical Center Inc. (Villa Rica, GA):\nSame situation - the file listed is dated 7/1/2024, both in the MRF and on the site.\n\nI also noticed Willowbrooke's file is dated 7/1/2024 as well - I'm not currently tracking behavioral health facilities, so it's outside the scope of what I'm following, but wanted to flag it while I was looking anyway.\n\nI'll plan to follow up in 30 days so that I can continue my research, but would appreciate it if these could get refreshed before then. Happy to help however's useful.\n\nThanks so much,\n\nAnthony\nhpt-obf:v1:TilAU-jdYgueQw6B.0qfwj0xm25XuuWXkwGg63A.RjU99Illc1Z-fUNL7ibCrFB-9g4GPw\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:KwuEEILrEma3ZpKh.J98s07Xv88YeRCl9dFH03w.pDZI4HHjpX0IL5b3Era4",
+        "body": "Hi there,\n\nI'm doing some research into hospital price transparency compliance and noticed a couple of Tanner facilities have outdated standard charges files, both on cms-hpt.txt and linked from your billing pages.\n\nTanner Medical Center-East Alabama (Wedowee, AL):\nhttps://www.tanner.org/upload/docs/PDFs/FinancialAssistance/475348597_Tanner-Medical-Center-East-Alabama_standardcharges.csv\nlast updated 7/1/2024, same file linked from https://www.tanner.org/patients-and-visitors/billing-and-financial-resources/price-transparency\n\nTanner Medical Center Inc. (Villa Rica, GA):\nSame situation - the file listed is dated 7/1/2024, both in the MRF and on the site.\n\nI also noticed Willowbrooke's file is dated 7/1/2024 as well - I'm not currently tracking behavioral health facilities, so it's outside the scope of what I'm following, but wanted to flag it while I was looking anyway.\n\nI'll plan to follow up in 30 days so that I can continue my research, but would appreciate it if these could get refreshed before then. Happy to help however's useful.\n\nThanks so much,\n\nAnthony\nhpt-obf:v1:6z31aLb3ksDDMqnK.536HQaXfkIERm5SzcdJX7A.OfEoD-SPLeK78CkEBIIzkw7J-vWhPQ\nmrf.anthonyisnota.dev",
         "sentAt": "2026-08-30",
         "outcome": "none"
       }
@@ -1003,7 +1024,7 @@
       "templateVersion": "",
       "verdict": "failing",
       "checkedOn": "2026-08-30",
-      "note": "MRF and site pricing page both point to a file last updated 7/1/2024 - stale, more than a year old at crawl time (8/27/2026). Emailed hpt-obf:v1:fUCfVqRxRFVjRDRH.Szn0quwe08fpAT-JgdUr-g.RvUtZqU1M-q05MLk9F8T 2026-08-30, following up in 30 days."
+      "note": "MRF and site pricing page both point to a file last updated 7/1/2024 - stale, more than a year old at crawl time (8/27/2026). Emailed hpt-obf:v1:hAtnmx_kUT7CyOLk.EqP36lausiiU6dg4PDQnOQ.l5Hsg6fjhoYSNL-kXY-j 2026-08-30, following up in 30 days."
     }
   },
   "054146": {
@@ -1021,8 +1042,8 @@
         "kind": "email",
         "at": "2026-08-30T01:44:14.532Z",
         "subject": "Fwd: Outdated MRFs across several Telecare facilities",
-        "to": "hpt-obf:v1:hUggTWEuQwVvVyDO.SXpR-kWrmbGBpCYK0zto5Q.9Qg_Pc4NsvvTfF5vTYCNkd14QaT0",
-        "body": "Hello,\n\nI was trying to reach Telecare about some outdated price transparency files, but my email to hpt-obf:v1:uIMgJ4dc16GUqeGD.x-LNWaVEZXlKmAJbNTIMXQ.1UM8vLNz_G9dNTipiMMgBDRPuZiv bounced. It looks like that inbox only accepts messages from senders already in your organization:\n\nCould you forward this along to the right person or point me to a better contact?\nOriginal message below:\n\nHello,\n\nI'm doing some research into hospital price transparency compliance and noticed several Telecare-operated facilities have standard charges files from 2024 still up, both linked from https://www.telecarecorp.com/price-transparency and in the machine-readable files themselves:\n\nTelecare Heritage Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-heritage-psychiatric-health-facility_standardcharges.csv\n\nTelecare Willow Rock Center\nhttps://www.telecarecorp.com/s/941735271_telecare-willow-rock-center_standardcharges.csv\n\nTelecare Santa Cruz Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-santa-cruz-psychiatric-health-facility_standardcharges.csv\n\nTelecare El Dorado County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-el-dorado-county-psychiatric-health-facility_standardcharges.csv\n\nLa Casa Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_la-casa-psychiatric-health-facility_standardcharges.csv\n\nTelecare Riverside Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-riverside-psychiatric-health-facility_standardcharges.csv\n\nStanislaus County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_stanislaus-county-psychiatric-health-facility_standardcharges.csv\n\nSince these all share the same source page, it might just take one update to refresh the batch.\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if these could get refreshed before then. Happy to help however's useful.\n\n--\n\nThanks so much,\n\nAnthony\nhpt-obf:v1:zgGWvzdjkNdIKkQq.wy8qn94p7lWYuDgpab10Nw.vJ4ya-7EFx_8Rub79UF3xG1pxxvBhw\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:EYar1XCYzF_1jf1N.t-0IBmLnRUX6ecm_yATGeQ.KU7-qk7jWHcM42Tudx4pLD-wTw3v",
+        "body": "Hello,\n\nI was trying to reach Telecare about some outdated price transparency files, but my email to hpt-obf:v1:TuqPpD1wg2EiPXho.ZX6Aw-mEwCaNynm0frMHew.krtY7UJWn4-HJYy8Q5OPA4Oqsc_E bounced. It looks like that inbox only accepts messages from senders already in your organization:\n\nCould you forward this along to the right person or point me to a better contact?\nOriginal message below:\n\nHello,\n\nI'm doing some research into hospital price transparency compliance and noticed several Telecare-operated facilities have standard charges files from 2024 still up, both linked from https://www.telecarecorp.com/price-transparency and in the machine-readable files themselves:\n\nTelecare Heritage Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-heritage-psychiatric-health-facility_standardcharges.csv\n\nTelecare Willow Rock Center\nhttps://www.telecarecorp.com/s/941735271_telecare-willow-rock-center_standardcharges.csv\n\nTelecare Santa Cruz Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-santa-cruz-psychiatric-health-facility_standardcharges.csv\n\nTelecare El Dorado County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-el-dorado-county-psychiatric-health-facility_standardcharges.csv\n\nLa Casa Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_la-casa-psychiatric-health-facility_standardcharges.csv\n\nTelecare Riverside Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-riverside-psychiatric-health-facility_standardcharges.csv\n\nStanislaus County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_stanislaus-county-psychiatric-health-facility_standardcharges.csv\n\nSince these all share the same source page, it might just take one update to refresh the batch.\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if these could get refreshed before then. Happy to help however's useful.\n\n--\n\nThanks so much,\n\nAnthony\nhpt-obf:v1:O4jX1Z9md-hXWfoI.kazkfnLEYdqYqSAUcRuEkw.ZrKWv06o0snlkP7ldZndan-m0thrqw\nmrf.anthonyisnota.dev",
         "sentAt": "2026-08-30",
         "outcome": "none"
       },
@@ -1037,8 +1058,8 @@
         "kind": "email",
         "at": "2026-08-30T01:44:14.530Z",
         "subject": "Outdated MRFs across several Telecare facilities",
-        "to": "hpt-obf:v1:kXSFEQphNC_2MW3c.4UEUre1RVlkSVpNThKkKdA.lt6EOWg2VVU7fwxJ6PqIeZbBEnQk",
-        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed several Telecare-operated facilities have standard charges files from 2024 still up, both linked from https://www.telecarecorp.com/price-transparency and in the machine-readable files themselves:\n\nTelecare Heritage Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-heritage-psychiatric-health-facility_standardcharges.csv\n\nTelecare Willow Rock Center\nhttps://www.telecarecorp.com/s/941735271_telecare-willow-rock-center_standardcharges.csv\n\nTelecare Santa Cruz Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-santa-cruz-psychiatric-health-facility_standardcharges.csv\n\nTelecare El Dorado County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-el-dorado-county-psychiatric-health-facility_standardcharges.csv\n\nLa Casa Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_la-casa-psychiatric-health-facility_standardcharges.csv\n\nTelecare Riverside Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-riverside-psychiatric-health-facility_standardcharges.csv\n\nStanislaus County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_stanislaus-county-psychiatric-health-facility_standardcharges.csv\n\nSince these all share the same source page, it might just take one update to refresh the batch.\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if these could get refreshed before then. Happy to help however's useful.\n\nThanks so much,\nAnthony\nhpt-obf:v1:lCK4oxg5bXyW90zE.Cr-NM2vJN6oSEI1P2i-aqg.Y722y9Ic6QUjJAZ3KMEIhl5CjC_RXQ\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:m8m2q_2L6-4v5UaT.mGUS4anJt_Pw02gD9_-UsQ.4zlWNpXBZfJFA-1yVJUczCQ6cnT1",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed several Telecare-operated facilities have standard charges files from 2024 still up, both linked from https://www.telecarecorp.com/price-transparency and in the machine-readable files themselves:\n\nTelecare Heritage Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-heritage-psychiatric-health-facility_standardcharges.csv\n\nTelecare Willow Rock Center\nhttps://www.telecarecorp.com/s/941735271_telecare-willow-rock-center_standardcharges.csv\n\nTelecare Santa Cruz Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-santa-cruz-psychiatric-health-facility_standardcharges.csv\n\nTelecare El Dorado County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-el-dorado-county-psychiatric-health-facility_standardcharges.csv\n\nLa Casa Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_la-casa-psychiatric-health-facility_standardcharges.csv\n\nTelecare Riverside Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-riverside-psychiatric-health-facility_standardcharges.csv\n\nStanislaus County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_stanislaus-county-psychiatric-health-facility_standardcharges.csv\n\nSince these all share the same source page, it might just take one update to refresh the batch.\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if these could get refreshed before then. Happy to help however's useful.\n\nThanks so much,\nAnthony\nhpt-obf:v1:mtbgxzIm-apEB2mE.WvWZwUKMSb3CjQadlwIm4w.R41Cnfa--jo3zULpz7BdOesn8tBu-g\nmrf.anthonyisnota.dev",
         "sentAt": "2026-08-30",
         "outcome": "bounced"
       }
@@ -1051,7 +1072,7 @@
       "templateVersion": "",
       "verdict": "failing",
       "checkedOn": "2026-08-30",
-      "note": "MRF and source page both show a file from 2024, stale at check (crawled 8/27/2026). Attempted email to hpt-obf:v1:-cO-51WPMwuCULYY.-j5PJEYsomY3PMiYiGvI4g._17e6GknPTtWRt3uIWq27JgdJOal 2026-08-30 (covering 6 other Telecare-operated facilities) bounced - sender not allowlisted; forwarded to hpt-obf:v1:low-xNxVZHkjiYmT.AGva1nJBnqjWFRqIq9S5Yg.sSRmSkxAgXr8DaBxCroFhFkfX85j same day."
+      "note": "MRF and source page both show a file from 2024, stale at check (crawled 8/27/2026). Attempted email to hpt-obf:v1:SvoVz1QoelG82tj9.o98STgfFSyyTOCHwLIuyKQ.-n1q1hpswLgFdd3KDUoaDDqILztN 2026-08-30 (covering 6 other Telecare-operated facilities) bounced - sender not allowlisted; forwarded to hpt-obf:v1:8XIBjzrZ5UYW1D8D.yU8HuoqCm8KGHoHcnS7emw.GW0fB26XQbcVPxteE5y5byR6i0kG same day."
     }
   },
   "054149": {
@@ -1069,8 +1090,8 @@
         "kind": "email",
         "at": "2026-08-30T01:44:14.532Z",
         "subject": "Fwd: Outdated MRFs across several Telecare facilities",
-        "to": "hpt-obf:v1:DUw1A1uxAN5BsOre.Y1mQCWMHNsYXyVyU37BHvw.T45RN-yEPnvokmKOAnFk-rOtKe71",
-        "body": "Hello,\n\nI was trying to reach Telecare about some outdated price transparency files, but my email to hpt-obf:v1:nFEuoskBVrpaJJXf.nB1VA0X-eww26MI2bpN_pg.axK-CICUVPDhq6OhrH-tY8zpVUEi bounced. It looks like that inbox only accepts messages from senders already in your organization:\n\nCould you forward this along to the right person or point me to a better contact?\nOriginal message below:\n\nHello,\n\nI'm doing some research into hospital price transparency compliance and noticed several Telecare-operated facilities have standard charges files from 2024 still up, both linked from https://www.telecarecorp.com/price-transparency and in the machine-readable files themselves:\n\nTelecare Heritage Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-heritage-psychiatric-health-facility_standardcharges.csv\n\nTelecare Willow Rock Center\nhttps://www.telecarecorp.com/s/941735271_telecare-willow-rock-center_standardcharges.csv\n\nTelecare Santa Cruz Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-santa-cruz-psychiatric-health-facility_standardcharges.csv\n\nTelecare El Dorado County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-el-dorado-county-psychiatric-health-facility_standardcharges.csv\n\nLa Casa Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_la-casa-psychiatric-health-facility_standardcharges.csv\n\nTelecare Riverside Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-riverside-psychiatric-health-facility_standardcharges.csv\n\nStanislaus County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_stanislaus-county-psychiatric-health-facility_standardcharges.csv\n\nSince these all share the same source page, it might just take one update to refresh the batch.\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if these could get refreshed before then. Happy to help however's useful.\n\n--\n\nThanks so much,\n\nAnthony\nhpt-obf:v1:Tuh3CSAlZr-6BMTr.4tCHCaF6dVccaoW0O3Jghw._33JXKySglNvptTvl62p8OLQw66m3Q\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:lX8iTyb0LqJlsO4M.q9WQAso__zboctNRBDpZ5g.N8b_ulkS2UlPiCiIAyJ2z6OP8r-r",
+        "body": "Hello,\n\nI was trying to reach Telecare about some outdated price transparency files, but my email to hpt-obf:v1:hlTuiCwXzUHNV-G6.NrYc7EwrtIsBbgzN9Mfysg.bqnWnD_qOfopi02JeXJudB3KseW6 bounced. It looks like that inbox only accepts messages from senders already in your organization:\n\nCould you forward this along to the right person or point me to a better contact?\nOriginal message below:\n\nHello,\n\nI'm doing some research into hospital price transparency compliance and noticed several Telecare-operated facilities have standard charges files from 2024 still up, both linked from https://www.telecarecorp.com/price-transparency and in the machine-readable files themselves:\n\nTelecare Heritage Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-heritage-psychiatric-health-facility_standardcharges.csv\n\nTelecare Willow Rock Center\nhttps://www.telecarecorp.com/s/941735271_telecare-willow-rock-center_standardcharges.csv\n\nTelecare Santa Cruz Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-santa-cruz-psychiatric-health-facility_standardcharges.csv\n\nTelecare El Dorado County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-el-dorado-county-psychiatric-health-facility_standardcharges.csv\n\nLa Casa Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_la-casa-psychiatric-health-facility_standardcharges.csv\n\nTelecare Riverside Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-riverside-psychiatric-health-facility_standardcharges.csv\n\nStanislaus County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_stanislaus-county-psychiatric-health-facility_standardcharges.csv\n\nSince these all share the same source page, it might just take one update to refresh the batch.\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if these could get refreshed before then. Happy to help however's useful.\n\n--\n\nThanks so much,\n\nAnthony\nhpt-obf:v1:-5CsNz0V6vRMQDye.g0Ck4FJ4y_IUFG8gNyqVvg.9H5BisMKbZwuE3bwLZDJurcjqqkRmQ\nmrf.anthonyisnota.dev",
         "sentAt": "2026-08-30",
         "outcome": "none"
       },
@@ -1085,8 +1106,8 @@
         "kind": "email",
         "at": "2026-08-30T01:44:14.532Z",
         "subject": "Outdated MRFs across several Telecare facilities",
-        "to": "hpt-obf:v1:nZ7FkPuhWRoUyzib.JzMxSMYBug_it3-O8dU9vQ.IcLsPC4NEEgjgTyN81ZAxYH-x6p0",
-        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed several Telecare-operated facilities have standard charges files from 2024 still up, both linked from https://www.telecarecorp.com/price-transparency and in the machine-readable files themselves:\n\nTelecare Heritage Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-heritage-psychiatric-health-facility_standardcharges.csv\n\nTelecare Willow Rock Center\nhttps://www.telecarecorp.com/s/941735271_telecare-willow-rock-center_standardcharges.csv\n\nTelecare Santa Cruz Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-santa-cruz-psychiatric-health-facility_standardcharges.csv\n\nTelecare El Dorado County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-el-dorado-county-psychiatric-health-facility_standardcharges.csv\n\nLa Casa Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_la-casa-psychiatric-health-facility_standardcharges.csv\n\nTelecare Riverside Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-riverside-psychiatric-health-facility_standardcharges.csv\n\nStanislaus County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_stanislaus-county-psychiatric-health-facility_standardcharges.csv\n\nSince these all share the same source page, it might just take one update to refresh the batch.\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if these could get refreshed before then. Happy to help however's useful.\n\nThanks so much,\nAnthony\nhpt-obf:v1:k_j8fbrV30ZTWhfC.RpiCJund6Ek4PJ20F9gYQg.bCkQyoW6kft8Lh3v2dRxL_4Q7QDebg\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:K8D0bfQ9xupBOREJ.wiJYTU-cco6FixRJGbsxqA.3FkIDLq-IWqGJWDDMqKD8zIaxHGP",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed several Telecare-operated facilities have standard charges files from 2024 still up, both linked from https://www.telecarecorp.com/price-transparency and in the machine-readable files themselves:\n\nTelecare Heritage Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-heritage-psychiatric-health-facility_standardcharges.csv\n\nTelecare Willow Rock Center\nhttps://www.telecarecorp.com/s/941735271_telecare-willow-rock-center_standardcharges.csv\n\nTelecare Santa Cruz Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-santa-cruz-psychiatric-health-facility_standardcharges.csv\n\nTelecare El Dorado County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-el-dorado-county-psychiatric-health-facility_standardcharges.csv\n\nLa Casa Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_la-casa-psychiatric-health-facility_standardcharges.csv\n\nTelecare Riverside Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-riverside-psychiatric-health-facility_standardcharges.csv\n\nStanislaus County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_stanislaus-county-psychiatric-health-facility_standardcharges.csv\n\nSince these all share the same source page, it might just take one update to refresh the batch.\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if these could get refreshed before then. Happy to help however's useful.\n\nThanks so much,\nAnthony\nhpt-obf:v1:n-VPRZ1g9LV1M27Y.B1rypwbIgQaX7sCf73o0lA.54spGLIXqnJYDx3GR8q465j7zV0vNA\nmrf.anthonyisnota.dev",
         "sentAt": "2026-08-30",
         "outcome": "bounced"
       }
@@ -1099,7 +1120,7 @@
       "templateVersion": "",
       "verdict": "failing",
       "checkedOn": "2026-08-30",
-      "note": "MRF and source page both show a file from 2024, stale at check (crawled 8/27/2026). Attempted email to hpt-obf:v1:NPc7ivnhbbcmxrkv.iEYpTWzl_vkNE9kQMmZpjA.jcrtClMMs3wEDRyHXxgXPeR5h-dy 2026-08-30 (covering 6 other Telecare-operated facilities) bounced - sender not allowlisted; forwarded to hpt-obf:v1:0KDUCFU25Vlk_rHl.LkRYli0Lon8M865sj-hBCw.g3daNml9m-ZRWQwTRHrgEVq8w25R same day."
+      "note": "MRF and source page both show a file from 2024, stale at check (crawled 8/27/2026). Attempted email to hpt-obf:v1:gSP6ftUGq9cpdRIJ.AzgLMe2Hq-JAxrSNfnj-dg.41A8qfV4UAwFR_JyG1roVxISuFAv 2026-08-30 (covering 6 other Telecare-operated facilities) bounced - sender not allowlisted; forwarded to hpt-obf:v1:ylCzsQDq_OowvEWo.OeyNt570Wlq4pA8_nZzSlw.R1-_CTnWz3rc7qyKZvUWcDI4S2dH same day."
     }
   },
   "054152": {
@@ -1117,8 +1138,8 @@
         "kind": "email",
         "at": "2026-08-30T01:44:14.532Z",
         "subject": "Fwd: Outdated MRFs across several Telecare facilities",
-        "to": "hpt-obf:v1:1fckRxXvPcPEK88U.1HpYB0hv-Em5v56jUu_8Ug.U128lZd9_-xHk1g6PicIp9P0lyLS",
-        "body": "Hello,\n\nI was trying to reach Telecare about some outdated price transparency files, but my email to hpt-obf:v1:ZybmnZu7oZp1iVpN.VdiH5JybdI1B5wcstOnkyw.bbP2ul5Kl0kL2XhkUZQdQ3A_qMP_ bounced. It looks like that inbox only accepts messages from senders already in your organization:\n\nCould you forward this along to the right person or point me to a better contact?\nOriginal message below:\n\nHello,\n\nI'm doing some research into hospital price transparency compliance and noticed several Telecare-operated facilities have standard charges files from 2024 still up, both linked from https://www.telecarecorp.com/price-transparency and in the machine-readable files themselves:\n\nTelecare Heritage Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-heritage-psychiatric-health-facility_standardcharges.csv\n\nTelecare Willow Rock Center\nhttps://www.telecarecorp.com/s/941735271_telecare-willow-rock-center_standardcharges.csv\n\nTelecare Santa Cruz Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-santa-cruz-psychiatric-health-facility_standardcharges.csv\n\nTelecare El Dorado County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-el-dorado-county-psychiatric-health-facility_standardcharges.csv\n\nLa Casa Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_la-casa-psychiatric-health-facility_standardcharges.csv\n\nTelecare Riverside Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-riverside-psychiatric-health-facility_standardcharges.csv\n\nStanislaus County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_stanislaus-county-psychiatric-health-facility_standardcharges.csv\n\nSince these all share the same source page, it might just take one update to refresh the batch.\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if these could get refreshed before then. Happy to help however's useful.\n\n--\n\nThanks so much,\n\nAnthony\nhpt-obf:v1:Vm_ejmjzCs3iOPJM.0_CYxcyM5l4WtbkKTLToQQ.EkpPmTODphxhBP0Psd45-DAXTUPXWA\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:1c1M2NmtITc7idEi.HuSSY4Mlm3ATQ4wDO6PANg.woN99mqJt_LoJNztZCp09YLyHLKX",
+        "body": "Hello,\n\nI was trying to reach Telecare about some outdated price transparency files, but my email to hpt-obf:v1:ee2sIlL9yyODVKhY.JA-FsxWpltOUf7RUy7OWMg.kBYglv2TCRTVmUTA-MQ4DJazJVDz bounced. It looks like that inbox only accepts messages from senders already in your organization:\n\nCould you forward this along to the right person or point me to a better contact?\nOriginal message below:\n\nHello,\n\nI'm doing some research into hospital price transparency compliance and noticed several Telecare-operated facilities have standard charges files from 2024 still up, both linked from https://www.telecarecorp.com/price-transparency and in the machine-readable files themselves:\n\nTelecare Heritage Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-heritage-psychiatric-health-facility_standardcharges.csv\n\nTelecare Willow Rock Center\nhttps://www.telecarecorp.com/s/941735271_telecare-willow-rock-center_standardcharges.csv\n\nTelecare Santa Cruz Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-santa-cruz-psychiatric-health-facility_standardcharges.csv\n\nTelecare El Dorado County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-el-dorado-county-psychiatric-health-facility_standardcharges.csv\n\nLa Casa Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_la-casa-psychiatric-health-facility_standardcharges.csv\n\nTelecare Riverside Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-riverside-psychiatric-health-facility_standardcharges.csv\n\nStanislaus County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_stanislaus-county-psychiatric-health-facility_standardcharges.csv\n\nSince these all share the same source page, it might just take one update to refresh the batch.\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if these could get refreshed before then. Happy to help however's useful.\n\n--\n\nThanks so much,\n\nAnthony\nhpt-obf:v1:9O2rhw3uVkUPZoqg.wWFNx3-429Q4sNzA4f0XdA.4vOkA0SXirtGVlbNmRPFZu05bu4OZg\nmrf.anthonyisnota.dev",
         "sentAt": "2026-08-30",
         "outcome": "none"
       },
@@ -1133,8 +1154,8 @@
         "kind": "email",
         "at": "2026-08-30T01:44:14.532Z",
         "subject": "Outdated MRFs across several Telecare facilities",
-        "to": "hpt-obf:v1:WH9U3wRUCsjJiHui.9An2EwhOKjkZJlxhl-6LXw.Xn4kaK90b2BvhpnfjrGBWRD1en58",
-        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed several Telecare-operated facilities have standard charges files from 2024 still up, both linked from https://www.telecarecorp.com/price-transparency and in the machine-readable files themselves:\n\nTelecare Heritage Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-heritage-psychiatric-health-facility_standardcharges.csv\n\nTelecare Willow Rock Center\nhttps://www.telecarecorp.com/s/941735271_telecare-willow-rock-center_standardcharges.csv\n\nTelecare Santa Cruz Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-santa-cruz-psychiatric-health-facility_standardcharges.csv\n\nTelecare El Dorado County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-el-dorado-county-psychiatric-health-facility_standardcharges.csv\n\nLa Casa Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_la-casa-psychiatric-health-facility_standardcharges.csv\n\nTelecare Riverside Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-riverside-psychiatric-health-facility_standardcharges.csv\n\nStanislaus County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_stanislaus-county-psychiatric-health-facility_standardcharges.csv\n\nSince these all share the same source page, it might just take one update to refresh the batch.\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if these could get refreshed before then. Happy to help however's useful.\n\nThanks so much,\nAnthony\nhpt-obf:v1:hM-xtTMRqWwmENCN.YcKS9WaJ2tTladG3fqKcww._azdPUPbbaaI3DPxY4cniPtVobMq3Q\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:2FiHCbDpvNxxk3PH.xVCiCyY9oM7GReXf-gkc7w.a9JYILeErO9JWsL50AQCiYCBjxd4",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed several Telecare-operated facilities have standard charges files from 2024 still up, both linked from https://www.telecarecorp.com/price-transparency and in the machine-readable files themselves:\n\nTelecare Heritage Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-heritage-psychiatric-health-facility_standardcharges.csv\n\nTelecare Willow Rock Center\nhttps://www.telecarecorp.com/s/941735271_telecare-willow-rock-center_standardcharges.csv\n\nTelecare Santa Cruz Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-santa-cruz-psychiatric-health-facility_standardcharges.csv\n\nTelecare El Dorado County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-el-dorado-county-psychiatric-health-facility_standardcharges.csv\n\nLa Casa Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_la-casa-psychiatric-health-facility_standardcharges.csv\n\nTelecare Riverside Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_telecare-riverside-psychiatric-health-facility_standardcharges.csv\n\nStanislaus County Psychiatric Health Facility\nhttps://www.telecarecorp.com/s/941735271_stanislaus-county-psychiatric-health-facility_standardcharges.csv\n\nSince these all share the same source page, it might just take one update to refresh the batch.\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if these could get refreshed before then. Happy to help however's useful.\n\nThanks so much,\nAnthony\nhpt-obf:v1:o7zgdVK766LMxwJI.0R4MrJI5alnjnkJQFNlgig.uWK-C1ezkp0rX8cU2kL3s7rd9_z9bQ\nmrf.anthonyisnota.dev",
         "sentAt": "2026-08-30",
         "outcome": "bounced"
       }
@@ -1147,7 +1168,7 @@
       "templateVersion": "",
       "verdict": "failing",
       "checkedOn": "2026-08-30",
-      "note": "MRF and source page both show a file from 2024, stale at check (crawled 8/27/2026). Attempted email to hpt-obf:v1:VCZpN6JzZ_VEI54V.cv90j2kXwFbSVc4bWz9AgA.r_ITHf_gRUMT2X9kAOzKteUNXy1p 2026-08-30 (covering 6 other Telecare-operated facilities) bounced - sender not allowlisted; forwarded to hpt-obf:v1:nkvGab9EA0xoe6ab.GyAfPRcXK-Ap2DESzbfkow.OVYmW4CZ4FoK6vP3P74mDaqTee7G same day."
+      "note": "MRF and source page both show a file from 2024, stale at check (crawled 8/27/2026). Attempted email to hpt-obf:v1:GpRUKCKoL4dVeQZg.n0HdUAVChYq6E7jmVcTlEA.g4J-mrdJXXCVCp8LSLNN1Bwdun4O 2026-08-30 (covering 6 other Telecare-operated facilities) bounced - sender not allowlisted; forwarded to hpt-obf:v1:Pz-GkxhY1Vlsxqbf.uDEL6JvrNUxCNIv3neqBhg.eaXy6outI9yWuCKEsY0m36ASy7AO same day."
     }
   },
   "051335": {
@@ -1165,8 +1186,8 @@
         "kind": "email",
         "at": "2026-08-30T02:22:13.243Z",
         "subject": "Your standard charges file is out of date",
-        "to": "hpt-obf:v1:ZlWLcmL6J76dXBIB.Y8BZZvcdN8k0u-4lktew0Q.X74df3xcc7oa-Ef4DFI, hpt-obf:v1:s99UTVFIPbdp3FcD.3AtFbUuomcBIrV8BfonV4A.ByLX0M2uhazu8nxzVv0",
-        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed Bear Valley Community Hospital's standard charges file is dated 8/29/2024:\n\nhttps://bvchd.com/wp-content/uploads/2024/09/330294751_BEAR-VALLEY-COMMUNITY-HOSPITAL_standardcharges.csv\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if this could get updated before then. Happy to help however's useful!\n\nThanks so much,\nAnthony\nhpt-obf:v1:eSah8elq5aJ1az5u.LUa7JH_jodLg3IjxJCP6qA.fQzzz4EcYNPHtEHMGIbK5S530ZCoGQ\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:LqoVVJZ5k5mxQAcL.tMmiwEKTCE5wuWFVcDNnoA.GTQiMcp61gDCaQnHhZw, hpt-obf:v1:BNPEVQf08W8euv3x.M01cr6xcj0Cb6TcD3NdY_Q.IRDHfJfO_fRkM9wuw6E",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed Bear Valley Community Hospital's standard charges file is dated 8/29/2024:\n\nhttps://bvchd.com/wp-content/uploads/2024/09/330294751_BEAR-VALLEY-COMMUNITY-HOSPITAL_standardcharges.csv\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if this could get updated before then. Happy to help however's useful!\n\nThanks so much,\nAnthony\nhpt-obf:v1:7lLZR30vxjUyyjKL.zRzPGMEwHogFVYeD0PqfcQ.TP3yYptPikwOTV0Bl5Hsjd8t7ypusA\nmrf.anthonyisnota.dev",
         "sentAt": "2026-08-30",
         "outcome": "none"
       }
@@ -1179,7 +1200,7 @@
       "templateVersion": "",
       "verdict": "failing",
       "checkedOn": "2026-08-30",
-      "note": "MRF last updated 8/29/2024, stale at check. Emailed hpt-obf:v1:3tj39r3n8HNO8p4E.enfX933fjO75Yv7y5_pzYQ.PFaI1m6jZgebAJoky4U and hpt-obf:v1:lWFj1vTgu6RjpnI_.3tcOuOwZRoXUuBNkxT3Oww.U3_BD3O0qzLkvTxlCbg 2026-08-30, following up in 30 days."
+      "note": "MRF last updated 8/29/2024, stale at check. Emailed hpt-obf:v1:ztjgurssgRFeRFti.BsjgzcYgm6UN3xJyUZSQgQ.wqmpy1M7FsVsBCJ4NHU and hpt-obf:v1:GwKzaczhGCSsNywQ.5pr8JXXc5x0-JHgIBIYqNw.WjLwS97lTBOXW9djcGE 2026-08-30, following up in 30 days."
     }
   },
   "054028": {
@@ -1197,8 +1218,8 @@
         "kind": "email",
         "at": "2026-08-31T00:04:07.477Z",
         "subject": "Standard Charges File Out of Date",
-        "to": "hpt-obf:v1:yCxjE3d_K3En2moX.I012ylgBRtPSuoboWd985g.yXWX6YdJKocRgBSMDNqrcZwK9BxugYGR_w",
-        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed Gateways Hospital and Mental Health Center's standard charges file is dated 8/6/2025, referenced from cms-hpt.txt:\n\nhttps://www.gatewayshospital.org/wp-content/uploads/2025/10/95-1691011_gateways-hospital-and-mental-health-center_standardcharges.csv\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if this could get updated before then. Happy to help however's useful!\n\nThanks so much,\nAnthony\nhpt-obf:v1:1G-U19qATHxmGswB.7OEIkuMaVX6fsW4S8uKiIw.HZBv374txhUH_0B6D-uCLgL4k7omUg\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:aVukVLl2zLabslK8.euzxsMa7Lc4Jwk0ko8Ef3A.dIjwcWZiO5WkkoQk-IKSmeJHHIzR9dXAWA",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and noticed Gateways Hospital and Mental Health Center's standard charges file is dated 8/6/2025, referenced from cms-hpt.txt:\n\nhttps://www.gatewayshospital.org/wp-content/uploads/2025/10/95-1691011_gateways-hospital-and-mental-health-center_standardcharges.csv\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate it if this could get updated before then. Happy to help however's useful!\n\nThanks so much,\nAnthony\nhpt-obf:v1:pK-Nsq9YhICD5qAF.IW3exBledx0m7vsvH2L_8g.QX8DlRfrLikZ0pI8iJwf7PFtA07bdA\nmrf.anthonyisnota.dev",
         "sentAt": "2026-08-30",
         "outcome": "none"
       }
@@ -1211,7 +1232,7 @@
       "templateVersion": "",
       "verdict": "failing",
       "checkedOn": "2026-08-31",
-      "note": "MRF last_updated_on 2025-08-06, 387 days old at check per compliance.csv. Emailed E*** (hpt-obf:v1:E70IRjvZFmGhe-u_.Kk_m1n_IpRfbyp0xtMNDkA.lRt_NX4Gy9wfAy5sM8biy-EhNgr0cCRArg) 2026-08-30, following up in 30 days."
+      "note": "MRF last_updated_on 2025-08-06, 387 days old at check per compliance.csv. Emailed E*** (hpt-obf:v1:sgGdIvBte7A9RJJ4.RWHbJHoEBEaROJ9VUQf8UQ.0h5EkaKdzJ6vygUSDSgoLTLcWJ1PN6E1mA) 2026-08-30, following up in 30 days."
     }
   },
   "024002": {
@@ -1229,8 +1250,8 @@
         "kind": "email",
         "at": "2026-09-02T02:14:29.683Z",
         "subject": "Alaska Psychiatric Institute standard charges file",
-        "to": "hpt-obf:v1:b6IpplwC5VQwDoLi.GmHu_rYHS0vtKTOIkkz2Ag.W3-ccoyLfJ7-eGMxIJrp",
-        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and I've been trying to track down Alaska Psychiatric Institute's machine-readable standard charges file.\n\nI looked through the API page and the wider DFCS site and couldn't find one:\n\nhttps://dfcs.alaska.gov/alaska-psychiatric-institute/\n\nThere's also no cms-hpt.txt file at the root of dfcs.alaska.gov, which is the small text file CMS asks each hospital to publish so the charges file can be found automatically. The acute rate matrix PDF on the API page was useful for context, but it isn't the machine-readable (JSON or CSV) file the rule is looking for.\n\nIf you're able to point me to the CSV/JSON file, or forward this along to whoever handles API's billing or compliance pages, I'd really appreciate it. I'll plan to check back in about 30 days so I can keep my research moving, but there's no urgency on my end. Happy to help however's useful.\n\nThanks so much,\nAnthony\nhpt-obf:v1:xa5GtgLyiXDxs8v4._nVsEsq6QQ1_A5qAyd1tAA._Nw66himg1R97GvpolVViGLPUKhINg\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:AOV-7u0oLWd_ZAOR.s-dA1MDPdpGgYElT96jrXA.8VPiuqOm-HUTofoQCJ6C",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and I've been trying to track down Alaska Psychiatric Institute's machine-readable standard charges file.\n\nI looked through the API page and the wider DFCS site and couldn't find one:\n\nhttps://dfcs.alaska.gov/alaska-psychiatric-institute/\n\nThere's also no cms-hpt.txt file at the root of dfcs.alaska.gov, which is the small text file CMS asks each hospital to publish so the charges file can be found automatically. The acute rate matrix PDF on the API page was useful for context, but it isn't the machine-readable (JSON or CSV) file the rule is looking for.\n\nIf you're able to point me to the CSV/JSON file, or forward this along to whoever handles API's billing or compliance pages, I'd really appreciate it. I'll plan to check back in about 30 days so I can keep my research moving, but there's no urgency on my end. Happy to help however's useful.\n\nThanks so much,\nAnthony\nhpt-obf:v1:Tw0oF6IFoC53pL7M.F_9OUALWlzQ7vPzcboYuig.I2XyFkwvQtlCUUpiNhpCbVGBOGSIOw\nmrf.anthonyisnota.dev",
         "sentAt": "2026-09-02",
         "outcome": "none"
       }
@@ -1261,8 +1282,8 @@
         "kind": "email",
         "at": "2026-09-02T02:22:19.903Z",
         "subject": "Missing MRF / Standard Charges",
-        "to": "hpt-obf:v1:GljBWoXviM4UKX9A.NtLDviVrjzlIFytCydOQvw.HtV0e9-TWpDFNjhjLGQ",
-        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and I've been trying to track down Kanakanak Hospital's machine-readable standard charges file.\n\nThe link that's supposed to point to it, hosted by PARA at apps.para-hcfs.com, now returns an error saying the page is \"no longer in service\":\n\nhttps://apps.para-hcfs.com/PTT/FinalLinks/Kanakanak_V3.aspx\n\nThere's also no working cms-hpt.txt file at bbahc.org. That's the text file CMS asks each hospital to publish so the charges file can be found automatically, and right now it returns a 404.\n\nIf you're able to point me to the current CSV or JSON file, or forward this to whoever handles the hospital's billing or compliance pages, I'd really appreciate it. I'll plan to check back in about 30 days so I can keep my research moving. Happy to help however's useful.\n\nThanks so much,\nAnthony\nhpt-obf:v1:kgHhUCRC8RMQZZks.I59NkITK-8VFR5HX3F0kdQ.mL_Jzk185OsC80OPmFvjc0VSmL8YiA\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:DIxxFSLVY6cLWUza.Nn0xZt_SLjK5CVmnx5ArVA.Ej2IYeFVqLtyG2azWWU",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and I've been trying to track down Kanakanak Hospital's machine-readable standard charges file.\n\nThe link that's supposed to point to it, hosted by PARA at apps.para-hcfs.com, now returns an error saying the page is \"no longer in service\":\n\nhttps://apps.para-hcfs.com/PTT/FinalLinks/Kanakanak_V3.aspx\n\nThere's also no working cms-hpt.txt file at bbahc.org. That's the text file CMS asks each hospital to publish so the charges file can be found automatically, and right now it returns a 404.\n\nIf you're able to point me to the current CSV or JSON file, or forward this to whoever handles the hospital's billing or compliance pages, I'd really appreciate it. I'll plan to check back in about 30 days so I can keep my research moving. Happy to help however's useful.\n\nThanks so much,\nAnthony\nhpt-obf:v1:1vBdscpHmc2gvJ5w.234E7WoGaGOxqBIDvjYn4w.UcMp0oDC2932jKXbA_nQnO8NgTuW1g\nmrf.anthonyisnota.dev",
         "sentAt": "2026-09-01",
         "outcome": "none"
       },
@@ -1362,8 +1383,8 @@
         "kind": "email",
         "at": "2026-09-02T02:46:46.858Z",
         "subject": "Wrangell Medical Center standard charges file - format and cms-hpt.txt",
-        "to": "hpt-obf:v1:3aaq5OLxzi8ab6ua.eqTcIhahvluc8Rsx2BKDbg.WgfClcD2xZA5Pp_oEc4G",
-        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and had a couple of notes on SEARHC Wrangell Medical Center's machine-readable standard charges file.\n\nThe file linked from your Billing & Financing page is published as an Excel spreadsheet:\n\nhttps://searhc.org/wp-content/uploads/2026/04/Wrangell-Medical-Center-Standard-Charges.xlsx\n\nThe data itself already follows the CMS template, but CMS asks for the machine-readable file to be a .csv or .json rather than .xlsx for compliance. Re-saving the same sheet as CSV should cover that easily.\n\nI also couldn't find a cms-hpt.txt file at https://searhc.org/cms-hpt.txt, which currently returns a 404. That's the text file CMS asks hospitals to place at the root of the website so the charges file can be found automatically.\n\nThe same two things apply to the Mt. Edgecumbe Medical Center file on that page, if it's handled by the same team.\n\nI'll plan to follow up in about 30 days so I can keep my research moving, but would appreciate it if these could be sorted out before then. Happy to help however's useful.\n\n\nThanks so much,\n\nAnthony\nhpt-obf:v1:wp4JpAIxjDQR0r1l.VU2_qiYcvC_zDDsIKKow5Q.UlwgxsdJDrNJOQ1CGsuy1nyC8zOahg\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:sgjAKl0iW9WtNnWX.fvGRTrH06tg08jry5RJUlQ.SKX752gcLc2IwlFWEPvT",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and had a couple of notes on SEARHC Wrangell Medical Center's machine-readable standard charges file.\n\nThe file linked from your Billing & Financing page is published as an Excel spreadsheet:\n\nhttps://searhc.org/wp-content/uploads/2026/04/Wrangell-Medical-Center-Standard-Charges.xlsx\n\nThe data itself already follows the CMS template, but CMS asks for the machine-readable file to be a .csv or .json rather than .xlsx for compliance. Re-saving the same sheet as CSV should cover that easily.\n\nI also couldn't find a cms-hpt.txt file at https://searhc.org/cms-hpt.txt, which currently returns a 404. That's the text file CMS asks hospitals to place at the root of the website so the charges file can be found automatically.\n\nThe same two things apply to the Mt. Edgecumbe Medical Center file on that page, if it's handled by the same team.\n\nI'll plan to follow up in about 30 days so I can keep my research moving, but would appreciate it if these could be sorted out before then. Happy to help however's useful.\n\n\nThanks so much,\n\nAnthony\nhpt-obf:v1:Mg3eIzqf6mZH8pXi.4iHvZFzpPtQl9swlK-vAjw._XMKccrwspOzQWsDKEGgRcD03RdqkA\nmrf.anthonyisnota.dev",
         "sentAt": "2026-09-01",
         "outcome": "none"
       }
@@ -1414,15 +1435,15 @@
         "id": "mtji33vc-f12ar2",
         "kind": "note",
         "at": "2026-09-02T02:52:13.272Z",
-        "text": "The email above is the same single message sent to hpt-obf:v1:Q6zljvEBv7ukmcq3.QhF-mqu000m5b7P-Cs0Vkw.P5kJtFosTFQqyf6_s2ye on 2026-09-01 and also logged on CCN 021305 (Wrangell). Its subject line names Wrangell, but the body explicitly covers the Mt. Edgecumbe file too. One follow-up on 2026-10-01 covers both SEARHC hospitals."
+        "text": "The email above is the same single message sent to hpt-obf:v1:O_-PamKIFujhaZl8.JhqXeHCUMbpi-cGbYA4WZQ.hGdte0dgsvJbXhWszWZb on 2026-09-01 and also logged on CCN 021305 (Wrangell). Its subject line names Wrangell, but the body explicitly covers the Mt. Edgecumbe file too. One follow-up on 2026-10-01 covers both SEARHC hospitals."
       },
       {
         "id": "mtji33vc-5xgj0v",
         "kind": "email",
         "at": "2026-09-02T02:52:13.272Z",
         "subject": "Wrangell Medical Center standard charges file - format and cms-hpt.txt",
-        "to": "hpt-obf:v1:B2NSCJ6ASJeFHcLI.UoqRHdB_W1GBaxo2xHPWRw.g6ON8NT1ffgE_dkQ7NYo",
-        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and had a couple of notes on SEARHC Wrangell Medical Center's machine-readable standard charges file.\n\nThe file linked from your Billing & Financing page is published as an Excel spreadsheet:\n\nhttps://searhc.org/wp-content/uploads/2026/04/Wrangell-Medical-Center-Standard-Charges.xlsx\n\nThe data itself already follows the CMS template, but CMS asks for the machine-readable file to be a .csv or .json rather than .xlsx for compliance. Re-saving the same sheet as CSV should cover that easily.\n\nI also couldn't find a cms-hpt.txt file at https://searhc.org/cms-hpt.txt, which currently returns a 404. That's the text file CMS asks hospitals to place at the root of the website so the charges file can be found automatically.\n\nThe same two things apply to the Mt. Edgecumbe Medical Center file on that page, if it's handled by the same team.\n\nI'll plan to follow up in about 30 days so I can keep my research moving, but would appreciate it if these could be sorted out before then. Happy to help however's useful.\n\n\nThanks so much,\n\nAnthony\nhpt-obf:v1:e3GC4c2RDNs9Q4UD.bOsPKXhYb1iHLOhID-R7lg.QxX8oPbjf3RnI8V_1ByDUDzUSa2_tg\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:Uki0Xn4nrUfKEYZT.W-BcNXU-VvX1o1BJ37Dg3w.eY9kQJo1eBWAi6c5l-o_",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance and had a couple of notes on SEARHC Wrangell Medical Center's machine-readable standard charges file.\n\nThe file linked from your Billing & Financing page is published as an Excel spreadsheet:\n\nhttps://searhc.org/wp-content/uploads/2026/04/Wrangell-Medical-Center-Standard-Charges.xlsx\n\nThe data itself already follows the CMS template, but CMS asks for the machine-readable file to be a .csv or .json rather than .xlsx for compliance. Re-saving the same sheet as CSV should cover that easily.\n\nI also couldn't find a cms-hpt.txt file at https://searhc.org/cms-hpt.txt, which currently returns a 404. That's the text file CMS asks hospitals to place at the root of the website so the charges file can be found automatically.\n\nThe same two things apply to the Mt. Edgecumbe Medical Center file on that page, if it's handled by the same team.\n\nI'll plan to follow up in about 30 days so I can keep my research moving, but would appreciate it if these could be sorted out before then. Happy to help however's useful.\n\n\nThanks so much,\n\nAnthony\nhpt-obf:v1:idi7VSv-icVzBJTf.PY0kUwxBauNniicrrZ44xg.vF-sO1vyjULxjKzgCV9nCs33J6wo_A\nmrf.anthonyisnota.dev",
         "sentAt": "2026-09-01",
         "outcome": "none"
       }
@@ -1452,7 +1473,7 @@
         "id": "mtmjvkak-7om0dy",
         "kind": "note",
         "at": "2026-09-04T06:05:39.068Z",
-        "text": "Plan to call Lakeland Community Hospital at hpt-obf:v1:h5u6fRSApTNL85Yj.ZlvL9eXOk4l-Wf76Dsq9Lg.k7exfyHx9zbQXPtrsTc regarding the unavailable cms-hpt.txt file and the PDF-only Standard Charges file."
+        "text": "Plan to call Lakeland Community Hospital at hpt-obf:v1:R4xbpkkaScFuylJP.rm9rnIOG328WBhynE5p1qA.iVf6yfpoD2r-p_x9Swk regarding the unavailable cms-hpt.txt file and the PDF-only Standard Charges file."
       }
     ]
   },
@@ -1495,7 +1516,7 @@
       "templateVersion": "",
       "verdict": "unknown",
       "checkedOn": "2026-09-04",
-      "note": "Compressed MRF archive located at https://cdn.hs.uab.edu/static/63-6005396_University-of-Alabama-Hospital_standardcharges.zip from source page https://www.uabmedicine.org/pay-your-bill/price-transparency/price-transparency-disclaimer/. CMS allows ZIP compression. Pending review of the contained CSV or JSON, CMS template/schema, required fields, and cms-hpt.txt pointer. Contact: B***, Chief Compliance Officer, UAB Health System, hpt-obf:v1:CfCIlAowcSE1wCft.x6S4Eg3lrz3-hs6eAw972g.dYUJGFqkhV9BP-x43L8."
+      "note": "Compressed MRF archive located at https://cdn.hs.uab.edu/static/63-6005396_University-of-Alabama-Hospital_standardcharges.zip from source page https://www.uabmedicine.org/pay-your-bill/price-transparency/price-transparency-disclaimer/. CMS allows ZIP compression. Pending review of the contained CSV or JSON, CMS template/schema, required fields, and cms-hpt.txt pointer. Contact: B***, Chief Compliance Officer, UAB Health System, hpt-obf:v1:-Nu2qsmoLnpiiKmh.EOEqqFN7_Nj40DqNvQAxfw.eViE8ur1Y-2maeMmSsA."
     }
   },
   "010056": {
@@ -1516,7 +1537,7 @@
       "templateVersion": "",
       "verdict": "unknown",
       "checkedOn": "2026-09-04",
-      "note": "Compressed MRF archive located from https://uabstvincents.org/billing/price-transparency/. CMS allows ZIP compression. Pending review of the contained CSV or JSON, CMS template/schema, required fields, and cms-hpt.txt pointer. Contact: B***, Chief Compliance Officer, UAB Health System, hpt-obf:v1:5u_rRIRkdqJZdl0F.fx1f5doZyAWyohuRPSuqGQ.NnfpgRKg22hmzcPZrPI."
+      "note": "Compressed MRF archive located from https://uabstvincents.org/billing/price-transparency/. CMS allows ZIP compression. Pending review of the contained CSV or JSON, CMS template/schema, required fields, and cms-hpt.txt pointer. Contact: B***, Chief Compliance Officer, UAB Health System, hpt-obf:v1:pd_kiVqh9cx9pjqa.f25sKUcN_WJf_GxqRxSqXg._hSRYk161iM3Q8dt7TM."
     }
   },
   "010011": {
@@ -1537,7 +1558,7 @@
       "templateVersion": "",
       "verdict": "unknown",
       "checkedOn": "2026-09-04",
-      "note": "The UAB St. Vincent's source page identifies this archive as St. Vincent's East, CCN 010011, not Medical West. CMS allows ZIP compression. Pending review of the contained CSV or JSON, CMS template/schema, required fields, and cms-hpt.txt pointer. Source: https://uabstvincents.org/billing/price-transparency/. Contact: B***, Chief Compliance Officer, UAB Health System, hpt-obf:v1:qAMOyFo9Wy1clAUy.Cz0dXkUM1RIm5fnf4u3t6g.4pvoZTC025RPQ-26APA."
+      "note": "The UAB St. Vincent's source page identifies this archive as St. Vincent's East, CCN 010011, not Medical West. CMS allows ZIP compression. Pending review of the contained CSV or JSON, CMS template/schema, required fields, and cms-hpt.txt pointer. Source: https://uabstvincents.org/billing/price-transparency/. Contact: B***, Chief Compliance Officer, UAB Health System, hpt-obf:v1:S21ozYAR84s4WFGq.nGYnt6LvvI8C2xMAArJmkQ.PK2SisJu_q8ctEy-sbE."
     }
   },
   "011305": {
@@ -1558,7 +1579,7 @@
       "templateVersion": "",
       "verdict": "unknown",
       "checkedOn": "2026-09-04",
-      "note": "Compressed MRF archive located from https://uabstvincents.org/billing/price-transparency/. CMS allows ZIP compression. Pending review of the contained CSV or JSON, CMS template/schema, required fields, and cms-hpt.txt pointer. Contact: B***, Chief Compliance Officer, UAB Health System, hpt-obf:v1:Dj-j6HDDNyvwQy8I.AU25WXnipbwTHHavXUI6vA.uFlikt_71mt8ML08Ef4."
+      "note": "Compressed MRF archive located from https://uabstvincents.org/billing/price-transparency/. CMS allows ZIP compression. Pending review of the contained CSV or JSON, CMS template/schema, required fields, and cms-hpt.txt pointer. Contact: B***, Chief Compliance Officer, UAB Health System, hpt-obf:v1:WZvzt20H9HCQNOun._n9F1Xcl_0kJG-oBatxU5Q.MuGUv9x1xtGmITBRyno."
     }
   },
   "010173": {
@@ -1579,7 +1600,7 @@
       "templateVersion": "",
       "verdict": "unknown",
       "checkedOn": "2026-09-04",
-      "note": "Compressed MRF archive located from https://uabstvincents.org/billing/price-transparency/. CMS allows ZIP compression. Pending review of the contained CSV or JSON, CMS template/schema, required fields, and cms-hpt.txt pointer. Contact: B***, Chief Compliance Officer, UAB Health System, hpt-obf:v1:hsk-16GL-NGuSlUM.EfRLIdYnZ91TYVpkrTnMGg.dEbQYa4GGpnDX978IFw."
+      "note": "Compressed MRF archive located from https://uabstvincents.org/billing/price-transparency/. CMS allows ZIP compression. Pending review of the contained CSV or JSON, CMS template/schema, required fields, and cms-hpt.txt pointer. Contact: B***, Chief Compliance Officer, UAB Health System, hpt-obf:v1:4q2_nv10NXrdjPeW.wKrlpEAbpfWqMrXaHmNXuA.PJknBS-DhQi5v7yARE4."
     }
   },
   "010130": {
@@ -1600,7 +1621,7 @@
       "templateVersion": "",
       "verdict": "unknown",
       "checkedOn": "2026-09-04",
-      "note": "Compressed MRF archive located from https://uabstvincents.org/billing/price-transparency/. CMS allows ZIP compression. Pending review of the contained CSV or JSON, CMS template/schema, required fields, and cms-hpt.txt pointer. Contact: B***, Chief Compliance Officer, UAB Health System, hpt-obf:v1:LaFBPVNjyPLX06Fz.3jxDzx7xCMoLVW8892yguA.QJVE3XmG617ePbZxAm4."
+      "note": "Compressed MRF archive located from https://uabstvincents.org/billing/price-transparency/. CMS allows ZIP compression. Pending review of the contained CSV or JSON, CMS template/schema, required fields, and cms-hpt.txt pointer. Contact: B***, Chief Compliance Officer, UAB Health System, hpt-obf:v1:lRbiE7O4y2r8fuJP.kD34Q5tWrN_t49x99rk3Wg.Nl2Nq0MUTLcCAnZr9jg."
     }
   },
   "014016": {
@@ -1636,8 +1657,8 @@
         "kind": "email",
         "at": "2026-09-04T06:32:06.451Z",
         "subject": "Blocked cms-hpt.txt Access",
-        "to": "hpt-obf:v1:4sNEWhTExwriaWhC.qvI_os3jabc4f_FzmyQv9A.u4oQC-Syd94d3LrhV_Ys",
-        "body": "Hello,\n\nI’m doing some research into hospital price transparency and noticed that The BridgeWay’s cms-hpt.txt file is being blocked by a Cloudflare browser challenge:\n\nhttps://thebridgeway.com/cms-hpt.txt\n\nCMS’s Hospital Price Transparency requirements use the cms-hpt.txt file to support automated discovery of a hospital’s machine-readable file. Automated requests to The BridgeWay’s pointer currently receive an HTTP 403 response with Cf-Mitigated: challenge, rather than the text file.\n\nThe hospital’s machine-readable CSV itself remains accessible:\n\nhttps://uhsfilecdn.eskycity.net/bh/232238973_bridgeway_standardcharges.csv\n\nCould the Cloudflare settings be updated to allow direct automated access to /cms-hpt.txt without requiring JavaScript, cookies, or a browser challenge?\n\nI’ll plan to follow up in 30 days so I can continue my research. Happy to provide the response details if useful.\n\nThanks so much,\n\nAnthony\nhpt-obf:v1:zUoQz-PfWKnpFk_o.0sigYA8Da-jFyRZz0jVfOw.MXy9SQLBXqZ9pc87xvJ8FODa3DXKyA\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:tUuPOFetSUS0rUvq._KDBRdgtQ4zpZUH3fo6wwA.V-LvWNcmPU5Uhwf_DIcQ",
+        "body": "Hello,\n\nI’m doing some research into hospital price transparency and noticed that The BridgeWay’s cms-hpt.txt file is being blocked by a Cloudflare browser challenge:\n\nhttps://thebridgeway.com/cms-hpt.txt\n\nCMS’s Hospital Price Transparency requirements use the cms-hpt.txt file to support automated discovery of a hospital’s machine-readable file. Automated requests to The BridgeWay’s pointer currently receive an HTTP 403 response with Cf-Mitigated: challenge, rather than the text file.\n\nThe hospital’s machine-readable CSV itself remains accessible:\n\nhttps://uhsfilecdn.eskycity.net/bh/232238973_bridgeway_standardcharges.csv\n\nCould the Cloudflare settings be updated to allow direct automated access to /cms-hpt.txt without requiring JavaScript, cookies, or a browser challenge?\n\nI’ll plan to follow up in 30 days so I can continue my research. Happy to provide the response details if useful.\n\nThanks so much,\n\nAnthony\nhpt-obf:v1:Y9Kbanl_0T6o0WzM.xh0U79NQNPu4FJFJw8HsDw.M1IHKadd1g7iRyibhFJenrD0FbFyRw\nmrf.anthonyisnota.dev",
         "sentAt": "2026-09-04",
         "outcome": "none"
       }
@@ -1650,7 +1671,7 @@
       "templateVersion": "3.0.0",
       "verdict": "failing",
       "checkedOn": "2026-09-04",
-      "note": "The required root cms-hpt.txt returned HTTP 403 to automated access on 2026-09-04. The direct MRF is accessible by ranged GET (HTTP 206) and was located from https://thebridgeway.com/standard-services/. Its header identifies The BridgeWay at 21 Bridgeway Road, North Little Rock, AR 72113, Arkansas license 5164 and Type 2 NPI 1962473306; it reports last_updated_on 2026-05-12, template version 3.0.0, and a true 45 CFR 180.50 attestation. Contact: UHS Corp Price Transparency Team, hpt-obf:v1:Qz1u5CEVaK51ERwB.gdoMOC0-NpHet8F_BeRqVQ.Q7LNv41448qklFBXOW2a."
+      "note": "The required root cms-hpt.txt returned HTTP 403 to automated access on 2026-09-04. The direct MRF is accessible by ranged GET (HTTP 206) and was located from https://thebridgeway.com/standard-services/. Its header identifies The BridgeWay at 21 Bridgeway Road, North Little Rock, AR 72113, Arkansas license 5164 and Type 2 NPI 1962473306; it reports last_updated_on 2026-05-12, template version 3.0.0, and a true 45 CFR 180.50 attestation. Contact: UHS Corp Price Transparency Team, hpt-obf:v1:PL45p57MeUZzSskk.xDT10Q2tiQ5Fhhg4Ysn_iA.3UToF3xHnG6B1F0EJF4M."
     }
   },
   "041326": {
@@ -1671,7 +1692,7 @@
       "templateVersion": "3.0.0",
       "verdict": "compliant",
       "checkedOn": "2026-09-04",
-      "note": "Verified the complete discovery path on 2026-09-04: root cms-hpt.txt returned HTTP 200 and declared the hospital source page and this exact MRF URL; the CSV supports ranged download (HTTP 206, text/csv). The header identifies Delta Memorial Hospital at 811 Highway 65 S, Dumas, AR 71639, Arkansas license AR4392 and Type 2 NPIs 1295767689 and 1952327868; it reports last_updated_on 2026-03-31, template version 3.0.0, and a true 45 CFR 180.50 attestation. Contact: E***, hpt-obf:v1:HbdDkyFusaR8UFLu.WjlVKcp2CkaU5l-Ho1eA3w.5KG-ytawawWko5OLeqzMx78."
+      "note": "Verified the complete discovery path on 2026-09-04: root cms-hpt.txt returned HTTP 200 and declared the hospital source page and this exact MRF URL; the CSV supports ranged download (HTTP 206, text/csv). The header identifies Delta Memorial Hospital at 811 Highway 65 S, Dumas, AR 71639, Arkansas license AR4392 and Type 2 NPIs 1295767689 and 1952327868; it reports last_updated_on 2026-03-31, template version 3.0.0, and a true 45 CFR 180.50 attestation. Contact: E***, hpt-obf:v1:-1AgdorT55NNxUPH.wGyRMprFyYo-KIceM6qQAg.8unIRcfs1IvrzGAisWv3E2s."
     }
   },
   "040780": {
@@ -1688,15 +1709,15 @@
         "id": "mtn633i9-yy2yjh",
         "kind": "note",
         "at": "2026-09-04T16:27:22.113Z",
-        "text": "Automatic out-of-office reply received from J*** on 2026-09-04. She expects to return Tuesday, 2026-09-08. The message directs urgent inquiries to the hospital at hpt-obf:v1:_MSQ3ljzs3VFSjvX.IWexSJyd7SwyRFEUEfYaPQ.6JZF_qbo-ejCywPf-XM. No substantive response to the price-transparency inquiry yet; the existing 2026-10-04 follow-up remains."
+        "text": "Automatic out-of-office reply received from J*** on 2026-09-04. She expects to return Tuesday, 2026-09-08. The message directs urgent inquiries to the hospital at hpt-obf:v1:UXWSNpxuGjETtDTh.B-6T-ZN7L3wCjDY1eTGTuA.7zgmCRDhilbpKJVKqNY. No substantive response to the price-transparency inquiry yet; the existing 2026-10-04 follow-up remains."
       },
       {
         "id": "mtml4shf-l4u7kt",
         "kind": "email",
         "at": "2026-09-04T06:40:49.203Z",
         "subject": "Eureka Springs Hospital Price Transparency Files",
-        "to": "hpt-obf:v1:Dahw1LDBePCbEyrk.KOm_oXHTQK4rVJ2nszPaRw.G2KONjgdcAsp8nJWZu7p01OPxgsd0iZXiUa2tkGk",
-        "body": "Hello,\n\nI’m doing some research into hospital price transparency and noticed two issues with Eureka Springs Hospital’s files.\n\nThe required cms-hpt.txt pointer currently returns an HTTP 400 response:\n\nhttps://www.eurekaspringshospital.com/cms-hpt.txt\n\nI also reviewed the CSV contained in the hospital’s ZIP archive:\n\nhttps://s3.amazonaws.com/ycubaa-production-marlin-1-charge-management-public/facilities/7b394f9e-d9c2-4b0b-9109-00d32890267b/710578871_EUREKA%20SPRINGS%20HOSPITAL_standardcharges.zip\n\nAlthough CMS permits MRFs to be compressed as ZIP files, the enclosed CSV appears to use an older custom layout rather than the current CMS CSV template. The reviewed rows also carry an updated timestamp of February 1, 2024.\n\nCould the MRF be updated to the current CMS template and the root cms-hpt.txt file restored with a direct link to it?\n\nI’ll plan to follow up in 30 days so I can continue my research. Happy to provide additional details if useful.\n\nThanks so much,\n\nAnthony\nhpt-obf:v1:YXuObngpUgW1l6vG.BYqg10o_7ROUtZCBk4u7Ag.9ntRdkWFLu4A_vikKnIrkFNCCFmBrA\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:bW90SLwDjxHNxObW.-d4JhYR1ehUCXoSgVg3ULQ.t9EdiYOyiVoHqapCXgI2KvqpunXZiIrP6-H1G0xY",
+        "body": "Hello,\n\nI’m doing some research into hospital price transparency and noticed two issues with Eureka Springs Hospital’s files.\n\nThe required cms-hpt.txt pointer currently returns an HTTP 400 response:\n\nhttps://www.eurekaspringshospital.com/cms-hpt.txt\n\nI also reviewed the CSV contained in the hospital’s ZIP archive:\n\nhttps://s3.amazonaws.com/ycubaa-production-marlin-1-charge-management-public/facilities/7b394f9e-d9c2-4b0b-9109-00d32890267b/710578871_EUREKA%20SPRINGS%20HOSPITAL_standardcharges.zip\n\nAlthough CMS permits MRFs to be compressed as ZIP files, the enclosed CSV appears to use an older custom layout rather than the current CMS CSV template. The reviewed rows also carry an updated timestamp of February 1, 2024.\n\nCould the MRF be updated to the current CMS template and the root cms-hpt.txt file restored with a direct link to it?\n\nI’ll plan to follow up in 30 days so I can continue my research. Happy to provide additional details if useful.\n\nThanks so much,\n\nAnthony\nhpt-obf:v1:BtlDZZmpPe2RP7Nh.pUOnxawvL8AFInxwCkBbbA.x9vxTF0pFaxOL-7FruAM6Q-o6kgHIw\nmrf.anthonyisnota.dev",
         "sentAt": "2026-09-04",
         "outcome": "none"
       }
@@ -1727,8 +1748,8 @@
         "kind": "email",
         "at": "2026-09-04T06:45:05.297Z",
         "subject": "Missing Hospital Price Transparency Files",
-        "to": "hpt-obf:v1:DmvBuynkJbgJ561j.7UsJ9sOec3DzrYCRcISJLQ.VwqHUq6cPhyUDZN7fKeJphATwPnnwKc",
-        "body": "Hello,\n\nI’m doing some research into hospital price transparency and have been trying to locate Helena Regional Medical Center’s machine-readable standard charges file.\n\nI checked the hospital’s website but could not find a price-transparency page or downloadable CSV or JSON file:\n\nhttps://helenahospital.com/\n\nThe required cms-hpt.txt file also returns a not-found response:\n\nhttps://helenahospital.com/cms-hpt.txt\n\nCMS’s Hospital Price Transparency requirements call for hospitals to publish a machine-readable standard charges file and make it discoverable through a root-level cms-hpt.txt file.\n\nCould you point me to the hospital’s current MRF? If one is not currently available, I’d appreciate it if this could be forwarded to whoever handles the hospital’s billing, compliance, or website content.\n\nI’ll plan to follow up in 30 days so I can continue my research. Happy to provide any additional details that would be useful.\n\nThanks so much,\n\nAnthony\nhpt-obf:v1:ZLk0EUeHQk8OHtrd.n1zs8GGCT_kFtzumjKl2lg.z08P4oBiJf0Hn5xgqFEGsQ9NlOm7gA\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:BP_eFKc0_5hAzz0Y.Ow419aS1q2tAQErb11FE6A.g7gN9h5y1zFoQ1hIOznL_8XgkqCbl2g",
+        "body": "Hello,\n\nI’m doing some research into hospital price transparency and have been trying to locate Helena Regional Medical Center’s machine-readable standard charges file.\n\nI checked the hospital’s website but could not find a price-transparency page or downloadable CSV or JSON file:\n\nhttps://helenahospital.com/\n\nThe required cms-hpt.txt file also returns a not-found response:\n\nhttps://helenahospital.com/cms-hpt.txt\n\nCMS’s Hospital Price Transparency requirements call for hospitals to publish a machine-readable standard charges file and make it discoverable through a root-level cms-hpt.txt file.\n\nCould you point me to the hospital’s current MRF? If one is not currently available, I’d appreciate it if this could be forwarded to whoever handles the hospital’s billing, compliance, or website content.\n\nI’ll plan to follow up in 30 days so I can continue my research. Happy to provide any additional details that would be useful.\n\nThanks so much,\n\nAnthony\nhpt-obf:v1:ZfnD0SpXFaXQYvYk.v4LHzQN0xwAVGaVYH7Z-iw.CCIx2ST5lPWkxuFwETvSCRUVHvuVkA\nmrf.anthonyisnota.dev",
         "sentAt": "2026-09-04",
         "outcome": "none"
       }
@@ -1741,7 +1762,7 @@
       "templateVersion": "",
       "verdict": "failing",
       "checkedOn": "2026-09-04",
-      "note": "No hospital price-transparency page or machine-readable standard charges file was located on 2026-09-04. Both https://helenahospital.com/cms-hpt.txt and https://www.helenahospital.com/cms-hpt.txt returned HTTP 404 while the homepage returned HTTP 200. Focused site searches found no indexed price-transparency, standard-charges, machine-readable, or cms-hpt resource. The homepage configuration references a price-transparency label, but the corresponding /price-transparency and /newsite/price-transparency routes returned 404. Contact: R***, hpt-obf:v1:3LxbOtaS4yaYgpK6.UqFMBU9j2bKuB2Ion2K-Lg.0P_pkQfycC2hxInP4REwhD_bLMftBIE."
+      "note": "No hospital price-transparency page or machine-readable standard charges file was located on 2026-09-04. Both https://helenahospital.com/cms-hpt.txt and https://www.helenahospital.com/cms-hpt.txt returned HTTP 404 while the homepage returned HTTP 200. Focused site searches found no indexed price-transparency, standard-charges, machine-readable, or cms-hpt resource. The homepage configuration references a price-transparency label, but the corresponding /price-transparency and /newsite/price-transparency routes returned 404. Contact: R***, hpt-obf:v1:dSjhx6K0qKN7lvzK.9dgLmgUyP-0FpOJ_d4OYTw.MJV_O_2RYtAATqqy0KZj3VO4hhO2Y58."
     }
   },
   "040132": {
@@ -1787,8 +1808,8 @@
         "kind": "email",
         "at": "2026-09-04T16:27:22.114Z",
         "subject": "Rivendell cms-hpt.txt Blocked from Automated Access",
-        "to": "hpt-obf:v1:vOApvNAYyUUCn-Hz.pvwtb-XKX2EzvJ7Gbu41gA.MoFCTlQ5UaiSiLAOnS5T",
-        "body": "Hello,\n\nI'm doing some research into hospital price transparency and noticed that Rivendell Behavioral Health Services of Arkansas's cms-hpt.txt file is being blocked by a Cloudflare browser challenge:\n\nhttps://rivendellofarkansas.com/cms-hpt.txt\n\nAutomated requests receive an HTTP 403 response with Cf-Mitigated: challenge, rather than the text pointer file.\n\nThe hospital's machine-readable CSV itself is accessible:\n\nhttps://uhsfilecdn.eskycity.net/bh/200930981_rivendell-arkansas_standardcharges.csv\n\nCould the Cloudflare settings be updated to allow direct, automated access to /cms-hpt.txt without requiring JavaScript, cookies, or a browser challenge?\n\nCMS's Hospital Price Transparency requirements call for the cms-hpt.txt file to support automated discovery of the hospital's machine-readable file. CMS also requires the pricing file to be accessible to automated searches and direct downloads. I'm flagging this because the current Cloudflare challenge prevents automated tools from reading the pointer, even though the CSV itself is accessible.\n\nI'll plan to follow up in 30 days so I can continue my research. Happy to provide the response details if useful.\n\nThanks so much,\nAnthony\nhpt-obf:v1:9hrlFiDWS1NxoHHf.FNJlpO93oKv4OGh3Hocvlg.Kf0ucbcdylMn8zclPfP4imOetTXVxw\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:75cfdGWXRXTSPSqO.EAyjKH1lL75GfIMqafRx8Q.pvFlOpoxRjBjDYUBjxGX",
+        "body": "Hello,\n\nI'm doing some research into hospital price transparency and noticed that Rivendell Behavioral Health Services of Arkansas's cms-hpt.txt file is being blocked by a Cloudflare browser challenge:\n\nhttps://rivendellofarkansas.com/cms-hpt.txt\n\nAutomated requests receive an HTTP 403 response with Cf-Mitigated: challenge, rather than the text pointer file.\n\nThe hospital's machine-readable CSV itself is accessible:\n\nhttps://uhsfilecdn.eskycity.net/bh/200930981_rivendell-arkansas_standardcharges.csv\n\nCould the Cloudflare settings be updated to allow direct, automated access to /cms-hpt.txt without requiring JavaScript, cookies, or a browser challenge?\n\nCMS's Hospital Price Transparency requirements call for the cms-hpt.txt file to support automated discovery of the hospital's machine-readable file. CMS also requires the pricing file to be accessible to automated searches and direct downloads. I'm flagging this because the current Cloudflare challenge prevents automated tools from reading the pointer, even though the CSV itself is accessible.\n\nI'll plan to follow up in 30 days so I can continue my research. Happy to provide the response details if useful.\n\nThanks so much,\nAnthony\nhpt-obf:v1:2XE8VJe5sfC4-B7T.uLg77vuY3vjkCs4zuA7JAA.P5PsDc1yjyXBkKLEUGNkljdQrcqtOg\nmrf.anthonyisnota.dev",
         "sentAt": "2026-09-04",
         "outcome": "none"
       }
@@ -1819,8 +1840,8 @@
         "kind": "email",
         "at": "2026-09-04T16:27:22.115Z",
         "subject": "Springwoods cms-hpt.txt Blocked from Automated Access",
-        "to": "hpt-obf:v1:KskegUCWEt1YwfLt.y39iFul0sC0IqpCuKMscxA.wA2QOoj9DD1M8V58IYZT",
-        "body": "Hello,\n\nI’m doing some research into hospital price transparency and noticed that Springwoods Behavioral Health’s cms-hpt.txt file is being blocked by a Cloudflare browser challenge:\n\nhttps://springwoodsbehavioral.com/cms-hpt.txt\n\nAutomated requests receive an HTTP 403 response with Cf-Mitigated: challenge, rather than the text pointer file.\n\nThe hospital’s machine-readable CSV itself is accessible:\n\nhttps://uhsfilecdn.eskycity.net/bh/205395878_springwoods_standardcharges.csv\n\nCould the Cloudflare settings be updated to allow direct, automated access to /cms-hpt.txt without requiring JavaScript, cookies, or a browser challenge?\n\nCMS’s Hospital Price Transparency requirements call for the cms-hpt.txt file to support automated discovery of the hospital’s machine-readable file. The current Cloudflare challenge prevents automated tools from reading that pointer, even though the CSV itself is accessible.\n\nI’ll plan to follow up in 30 days so I can continue my research. Happy to provide the response details if useful.\n\nThanks so much,\nAnthony\nhpt-obf:v1:arE5SGBspUtRVUmM.fnmB0yiNM7AdCr5GNd7Sxw.VRpnP2POo0XsCW5ZYABjXpKtXBb94w\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:hh_gCHHL_fJeXo-s.LOMFQip68NYzYRc7CruC4w.4pZANSJ8Ju9Wy8HhrTeY",
+        "body": "Hello,\n\nI’m doing some research into hospital price transparency and noticed that Springwoods Behavioral Health’s cms-hpt.txt file is being blocked by a Cloudflare browser challenge:\n\nhttps://springwoodsbehavioral.com/cms-hpt.txt\n\nAutomated requests receive an HTTP 403 response with Cf-Mitigated: challenge, rather than the text pointer file.\n\nThe hospital’s machine-readable CSV itself is accessible:\n\nhttps://uhsfilecdn.eskycity.net/bh/205395878_springwoods_standardcharges.csv\n\nCould the Cloudflare settings be updated to allow direct, automated access to /cms-hpt.txt without requiring JavaScript, cookies, or a browser challenge?\n\nCMS’s Hospital Price Transparency requirements call for the cms-hpt.txt file to support automated discovery of the hospital’s machine-readable file. The current Cloudflare challenge prevents automated tools from reading that pointer, even though the CSV itself is accessible.\n\nI’ll plan to follow up in 30 days so I can continue my research. Happy to provide the response details if useful.\n\nThanks so much,\nAnthony\nhpt-obf:v1:PCEbmJ0bvqDJm8QB.IhUYNDsdXGV7WG-9lPe-Yw.uRNvxh9Sm9ALER2y-BNVyEsMHrbw5g\nmrf.anthonyisnota.dev",
         "sentAt": "2026-09-04",
         "outcome": "none"
       }
@@ -1893,8 +1914,8 @@
         "kind": "email",
         "at": "2026-09-05T00:35:36.530Z",
         "subject": "United Methodist Behavioral Hospital Price Transparency Files",
-        "to": "hpt-obf:v1:tKUXrK-YFDTcqv2g.6idB3czApJ4WOpk3atlLow.sz8-gywkimbYrjZn7qvGvGI2y4aYcUkf",
-        "body": "Hello,\n\nI’m doing some research into hospital price transparency and could not locate a price-transparency page or machine-readable standard-charges file for United Methodist Behavioral Hospital in Maumelle.\n\nThe required root pointer currently returns an HTTP 404 response:\n\nhttps://www.methodistfamily.org/cms-hpt.txt\n\nCould you provide the current machine-readable file link or forward this message to the person responsible for hospital price transparency? If the file is available elsewhere, I’d be happy to update my research.\n\nI’ll plan to follow up in 30 days so I can continue my research.\n\nThanks so much,\nAnthony\nhpt-obf:v1:0McjKDJmGQxEtjPP.tzyrk-AIshr2CviNp4PcZQ.IGyG42QCH98R5NvG9nvG2wGnMZON5w\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:ZhR9ncaKxaVyaoFB.nSGVRsrE8RdVQKlwC9bRWA.bui9BD-1NRCRyaPJGDJNxo_sMLDnnMVh",
+        "body": "Hello,\n\nI’m doing some research into hospital price transparency and could not locate a price-transparency page or machine-readable standard-charges file for United Methodist Behavioral Hospital in Maumelle.\n\nThe required root pointer currently returns an HTTP 404 response:\n\nhttps://www.methodistfamily.org/cms-hpt.txt\n\nCould you provide the current machine-readable file link or forward this message to the person responsible for hospital price transparency? If the file is available elsewhere, I’d be happy to update my research.\n\nI’ll plan to follow up in 30 days so I can continue my research.\n\nThanks so much,\nAnthony\nhpt-obf:v1:eN_BXR-GLJ6zlvbB.it4hPXCLJ6g1ppKQYULbEg.F71MjdYwkR8Da7R26EJ3RRuoTVFc9Q\nmrf.anthonyisnota.dev",
         "sentAt": "2026-09-04",
         "outcome": "none"
       }
@@ -1925,8 +1946,8 @@
         "kind": "email",
         "at": "2026-09-05T00:51:16.461Z",
         "subject": "Abrazo Price Transparency Access Issue",
-        "to": "hpt-obf:v1:sj-NLQQC3MG2dE7B.3oJEiB8ZLwZ9gMMh68EGTQ.Q3G9qmUhsaHB5U6dZExRKmrMn7_A; hpt-obf:v1:9bFWLBjZyVck9vC8.mxGFbQ6pF26Mz5-114vTdQ.-1jXoleQvDrTiN1w8jhXDwVhhBQq; hpt-obf:v1:gwq9ox93vc6gyMGr.70duEmmsuuNilYt4_x6g_g.Vz5h2G1urFiffv8tHvtUeoLvT4sP; hpt-obf:v1:SxSihSMmHKkj3SLr.2BIiCrSAusbKYK8LiMA70Q.34sZItvC016e4OFQskScFvHNbD2Q",
-        "body": "Hello,\n\nI’m doing some research into hospital price transparency and noticed that automated requests to Abrazo’s cms-hpt.txt file and hospital-pricing page receive an HTTP 403 Cloudflare browser challenge:\n\nhttps://www.abrazohealth.com/cms-hpt.txt\nhttps://www.abrazohealth.com/patients/pricing-info-estimates/hospital-pricing-information\n\nThe underlying JSON files hosted through Hyve Healthcare remain accessible and appear current for Abrazo’s seven listed facilities, so this may simply be a Cloudflare configuration issue affecting the discovery pages.\n\nCMS requires hospital machine-readable files to support automated searches and direct downloads, and identifies blocking codes and CAPTCHA challenges as barriers to that access. CMS also requires the root cms-hpt.txt file so users and automated systems can discover the pricing files.\n\nWould your web team be able to adjust the Cloudflare settings so the cms-hpt.txt file and pricing page can be accessed by automated tools without a browser challenge?\n\nI’ll plan to follow up in 30 days so I can continue my research. I’m happy to provide the response headers or any other technical details that might be useful.\n\nThanks so much,\nAnthony\nhpt-obf:v1:bndR6FDS9xJK7Glt.90AWGGHR94GZ9zlQivewwQ.pLBipTYoGfXEi8FFYMKmqPffqdLmfg\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:GbKLej2h-yfsGE02.nOa6VWuA-Tg6qix68N5bqA.AQWkrkbqq881fmeFaMBFyFf843om; hpt-obf:v1:yNQIlqos8UIRUEye.NPH6blYC0o-6Q2ud5vjBsw.ZeEmqnxnHOPpXdlKr8RfahxltP_P; hpt-obf:v1:uuOtJvI7cFBmNZNx._QORJ_YKFnGpOjcCVAh6IQ.bFZ1309hFCnyMfygnpnhiO0RcbQU; hpt-obf:v1:zTaqPpRZPKkSAhV8.nRsWOfwVP0bPp7JMFNIOHA.CGR6cj8QAW7q_R4OY2pdFKSmSdMp",
+        "body": "Hello,\n\nI’m doing some research into hospital price transparency and noticed that automated requests to Abrazo’s cms-hpt.txt file and hospital-pricing page receive an HTTP 403 Cloudflare browser challenge:\n\nhttps://www.abrazohealth.com/cms-hpt.txt\nhttps://www.abrazohealth.com/patients/pricing-info-estimates/hospital-pricing-information\n\nThe underlying JSON files hosted through Hyve Healthcare remain accessible and appear current for Abrazo’s seven listed facilities, so this may simply be a Cloudflare configuration issue affecting the discovery pages.\n\nCMS requires hospital machine-readable files to support automated searches and direct downloads, and identifies blocking codes and CAPTCHA challenges as barriers to that access. CMS also requires the root cms-hpt.txt file so users and automated systems can discover the pricing files.\n\nWould your web team be able to adjust the Cloudflare settings so the cms-hpt.txt file and pricing page can be accessed by automated tools without a browser challenge?\n\nI’ll plan to follow up in 30 days so I can continue my research. I’m happy to provide the response headers or any other technical details that might be useful.\n\nThanks so much,\nAnthony\nhpt-obf:v1:3uga8bv87VYxQosM.a6pQxpULe2J8RT3BKlDYpw.ZskPhcleS1HVkUqH6gXtlGfnWMrb0w\nmrf.anthonyisnota.dev",
         "sentAt": "2026-09-04",
         "outcome": "none"
       }
@@ -1957,8 +1978,8 @@
         "kind": "email",
         "at": "2026-09-05T00:51:16.461Z",
         "subject": "Abrazo Price Transparency Access Issue",
-        "to": "hpt-obf:v1:eAp6gVw5mOW4Z-lL.IdXrdNEJD8KQAaLhwaY5_A.zJUuu8OgqTeoxJbI_2yxHSjRSvMb; hpt-obf:v1:Dg_sllHdzr-kk-t0.g973pI6uFnmaLBNEoUKLzg.MDTNCawsZL6kOIbI63DCyrHB9Vmt; hpt-obf:v1:NcpYOvgPb9yRAaPs.oz9mur2AOPHaZiwIGckT9A.g6F-IKGBMh5rMcdnsHauwQDnkQ1p; hpt-obf:v1:ZPcrNodyl_vMTkHC.9y7KdEw4Qd4WIuLg6rYJdQ.gA6Kq8-kzuvBRnc8E62K_POZ9n12",
-        "body": "Hello,\n\nI’m doing some research into hospital price transparency and noticed that automated requests to Abrazo’s cms-hpt.txt file and hospital-pricing page receive an HTTP 403 Cloudflare browser challenge:\n\nhttps://www.abrazohealth.com/cms-hpt.txt\nhttps://www.abrazohealth.com/patients/pricing-info-estimates/hospital-pricing-information\n\nThe underlying JSON files hosted through Hyve Healthcare remain accessible and appear current for Abrazo’s seven listed facilities, so this may simply be a Cloudflare configuration issue affecting the discovery pages.\n\nCMS requires hospital machine-readable files to support automated searches and direct downloads, and identifies blocking codes and CAPTCHA challenges as barriers to that access. CMS also requires the root cms-hpt.txt file so users and automated systems can discover the pricing files.\n\nWould your web team be able to adjust the Cloudflare settings so the cms-hpt.txt file and pricing page can be accessed by automated tools without a browser challenge?\n\nI’ll plan to follow up in 30 days so I can continue my research. I’m happy to provide the response headers or any other technical details that might be useful.\n\nThanks so much,\nAnthony\nhpt-obf:v1:1IT5J3gXSaXqd-YJ.gysvHD32NmWFjT7LsZUFSQ.80xhl9v5458n7GaKAHHE2ZdyB2LGYg\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:GuJ_WMbBCcXto6l4._0XvAXLn5MmaMorDL6p9NA.9EoZT0z5nhOjiM_J7ZydHH4tad-j; hpt-obf:v1:ylTkLUsh6PibGROy.ROnPvUTV_cf9y6D2XY3GqA.Aacjw8K4IRvEQrQlzNLJk8Q51fVv; hpt-obf:v1:3necOjc7vrKfcZkw.aIcID6QFDoL9OcddW0jR0Q.5zLUVcu5tTHUbiow1YvRgLXsZgSv; hpt-obf:v1:WNE86IY1-TxhvUMa.Grum6km5rLHt4pC_skWsdA.-Z3eOllEMVqRBSdCtDq-WAOXmOmX",
+        "body": "Hello,\n\nI’m doing some research into hospital price transparency and noticed that automated requests to Abrazo’s cms-hpt.txt file and hospital-pricing page receive an HTTP 403 Cloudflare browser challenge:\n\nhttps://www.abrazohealth.com/cms-hpt.txt\nhttps://www.abrazohealth.com/patients/pricing-info-estimates/hospital-pricing-information\n\nThe underlying JSON files hosted through Hyve Healthcare remain accessible and appear current for Abrazo’s seven listed facilities, so this may simply be a Cloudflare configuration issue affecting the discovery pages.\n\nCMS requires hospital machine-readable files to support automated searches and direct downloads, and identifies blocking codes and CAPTCHA challenges as barriers to that access. CMS also requires the root cms-hpt.txt file so users and automated systems can discover the pricing files.\n\nWould your web team be able to adjust the Cloudflare settings so the cms-hpt.txt file and pricing page can be accessed by automated tools without a browser challenge?\n\nI’ll plan to follow up in 30 days so I can continue my research. I’m happy to provide the response headers or any other technical details that might be useful.\n\nThanks so much,\nAnthony\nhpt-obf:v1:6dmkP2WQlTxnK7wn.UjVCE1b31YhC_N2qndcztg.sgbEa8ZkO5DnHsyfBoBjo183mTiO6g\nmrf.anthonyisnota.dev",
         "sentAt": "2026-09-04",
         "outcome": "none"
       }
@@ -1989,8 +2010,8 @@
         "kind": "email",
         "at": "2026-09-05T00:51:16.461Z",
         "subject": "Abrazo Price Transparency Access Issue",
-        "to": "hpt-obf:v1:7n_NftwUcHWMMdqk.spnNsXTc3I2CAY2Hgu8Hww.xT_GdWRXbksd2rD3Qstefi4yGJVd; hpt-obf:v1:t1eBnchYsJtbWc6Z.5FN1k0ZxJnJbFU4GsSjfJg.ug7NCq_8yUMEbPzREAJikU6oM6ZF; hpt-obf:v1:Zg_YLPmgnDBhtgKw.5OCfVgzsdy1r4NHeJfw-SQ.Un7liYPehjjktm3VxvhPfHyMjZZ7; hpt-obf:v1:DZnEC2N2ggZY1jGf.iNedfDQqUyys5Ky8U9LFkg.l5BWeXtwJaIy2BtyMrT07fXE1OXr",
-        "body": "Hello,\n\nI’m doing some research into hospital price transparency and noticed that automated requests to Abrazo’s cms-hpt.txt file and hospital-pricing page receive an HTTP 403 Cloudflare browser challenge:\n\nhttps://www.abrazohealth.com/cms-hpt.txt\nhttps://www.abrazohealth.com/patients/pricing-info-estimates/hospital-pricing-information\n\nThe underlying JSON files hosted through Hyve Healthcare remain accessible and appear current for Abrazo’s seven listed facilities, so this may simply be a Cloudflare configuration issue affecting the discovery pages.\n\nCMS requires hospital machine-readable files to support automated searches and direct downloads, and identifies blocking codes and CAPTCHA challenges as barriers to that access. CMS also requires the root cms-hpt.txt file so users and automated systems can discover the pricing files.\n\nWould your web team be able to adjust the Cloudflare settings so the cms-hpt.txt file and pricing page can be accessed by automated tools without a browser challenge?\n\nI’ll plan to follow up in 30 days so I can continue my research. I’m happy to provide the response headers or any other technical details that might be useful.\n\nThanks so much,\nAnthony\nhpt-obf:v1:HnBfesVBUVuM5IKP.9lBtjYRn2aDx1yNtBWPuAQ.AOoEvXbpdyOcVnmovqOCL3uU3QqMKw\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:kfur5Jb0Ip9TjYRM.PvymIW85eJ8-8sBwWr14bA.OdgGU_m4g4A-4KajlTRiOEp6ERb1; hpt-obf:v1:FbrD4MWmYxB_cMGI.V6YrcG4sE5kMegS_BIwqwg.Jia8DoXA_PX95KObXJRCpaLzyh8q; hpt-obf:v1:EjFVsTupEC070feB.95DXtLHKtBD97Mgol4IiSQ.vbjzahmtfrslyJIjuexytqF5X6uP; hpt-obf:v1:1xC6bfNPZqs_QQg0.ulDKYK8fNCLpElILeHDcJg.DhahfbDmGPDf7bAzuO4hYW8QazNZ",
+        "body": "Hello,\n\nI’m doing some research into hospital price transparency and noticed that automated requests to Abrazo’s cms-hpt.txt file and hospital-pricing page receive an HTTP 403 Cloudflare browser challenge:\n\nhttps://www.abrazohealth.com/cms-hpt.txt\nhttps://www.abrazohealth.com/patients/pricing-info-estimates/hospital-pricing-information\n\nThe underlying JSON files hosted through Hyve Healthcare remain accessible and appear current for Abrazo’s seven listed facilities, so this may simply be a Cloudflare configuration issue affecting the discovery pages.\n\nCMS requires hospital machine-readable files to support automated searches and direct downloads, and identifies blocking codes and CAPTCHA challenges as barriers to that access. CMS also requires the root cms-hpt.txt file so users and automated systems can discover the pricing files.\n\nWould your web team be able to adjust the Cloudflare settings so the cms-hpt.txt file and pricing page can be accessed by automated tools without a browser challenge?\n\nI’ll plan to follow up in 30 days so I can continue my research. I’m happy to provide the response headers or any other technical details that might be useful.\n\nThanks so much,\nAnthony\nhpt-obf:v1:rH6ze7DsgkaJaWOx.c_Pd4x6H05gHtS2SaV9rpw.ADUYzVoqEEa4KLMH1L1Jba6xH7Zwmg\nmrf.anthonyisnota.dev",
         "sentAt": "2026-09-04",
         "outcome": "none"
       }
@@ -2021,8 +2042,8 @@
         "kind": "email",
         "at": "2026-09-05T00:51:16.461Z",
         "subject": "Abrazo Price Transparency Access Issue",
-        "to": "hpt-obf:v1:oXqIOnA8us4klLbs.z7Tb8ocWCRq0GHDCBJVAFA.fmmjJ0gyxoArnfVDFNQYHqJDxC2N; hpt-obf:v1:aaNNKY8sST8B9Evm.uoWD8JrR_iZViXh72sFNJA.h6xm5HvMOVr5KPtcB-gvArd2P4jA; hpt-obf:v1:S7DA7PUZ2T-ujHSr.eaKIh7I8S4UBj3O92atvYA.a8NkteuedkPoMROgWGsC2GZu4CXZ; hpt-obf:v1:8Ah4ejkZHzfVvpcq.-z0JA4Q9O-brIRBgawRw3A.1Ji32voqsB6bl7g-fw-5aeB_kATT",
-        "body": "Hello,\n\nI’m doing some research into hospital price transparency and noticed that automated requests to Abrazo’s cms-hpt.txt file and hospital-pricing page receive an HTTP 403 Cloudflare browser challenge:\n\nhttps://www.abrazohealth.com/cms-hpt.txt\nhttps://www.abrazohealth.com/patients/pricing-info-estimates/hospital-pricing-information\n\nThe underlying JSON files hosted through Hyve Healthcare remain accessible and appear current for Abrazo’s seven listed facilities, so this may simply be a Cloudflare configuration issue affecting the discovery pages.\n\nCMS requires hospital machine-readable files to support automated searches and direct downloads, and identifies blocking codes and CAPTCHA challenges as barriers to that access. CMS also requires the root cms-hpt.txt file so users and automated systems can discover the pricing files.\n\nWould your web team be able to adjust the Cloudflare settings so the cms-hpt.txt file and pricing page can be accessed by automated tools without a browser challenge?\n\nI’ll plan to follow up in 30 days so I can continue my research. I’m happy to provide the response headers or any other technical details that might be useful.\n\nThanks so much,\nAnthony\nhpt-obf:v1:eefkv-6y_bp0test.xxAj2SvXvqNuczou2u-R7w.UAKufl86EqVMjnupTA37F2ZA2Hcspg\nmrf.anthonyisnota.dev",
+        "to": "hpt-obf:v1:BOYwfYfFfqytBdOG.kk825X3X9aezsKIbwEJtOg.JENlmGPJiRd-tr7OokJjPNr1CMAK; hpt-obf:v1:WHtNW6JELKVvywlO.j-4sIlDyEQlfdyUoUKjFqw.g4l-AdzlQce81g8RpZ9YuH7MxqeG; hpt-obf:v1:zdyToYdZl-XvpN8c.wtnas9pvRoieUHMaJDpoZw.dHO_Ew1P-8tbkpHKZ2lvpb3RyXXL; hpt-obf:v1:RYpNTTQjrOZqrmT2.HhdRK-uT9FUWboce_X3Dsw.ELB98opXkuKxZ1o-Ei10eaUdO0Yx",
+        "body": "Hello,\n\nI’m doing some research into hospital price transparency and noticed that automated requests to Abrazo’s cms-hpt.txt file and hospital-pricing page receive an HTTP 403 Cloudflare browser challenge:\n\nhttps://www.abrazohealth.com/cms-hpt.txt\nhttps://www.abrazohealth.com/patients/pricing-info-estimates/hospital-pricing-information\n\nThe underlying JSON files hosted through Hyve Healthcare remain accessible and appear current for Abrazo’s seven listed facilities, so this may simply be a Cloudflare configuration issue affecting the discovery pages.\n\nCMS requires hospital machine-readable files to support automated searches and direct downloads, and identifies blocking codes and CAPTCHA challenges as barriers to that access. CMS also requires the root cms-hpt.txt file so users and automated systems can discover the pricing files.\n\nWould your web team be able to adjust the Cloudflare settings so the cms-hpt.txt file and pricing page can be accessed by automated tools without a browser challenge?\n\nI’ll plan to follow up in 30 days so I can continue my research. I’m happy to provide the response headers or any other technical details that might be useful.\n\nThanks so much,\nAnthony\nhpt-obf:v1:qdTnO7R-IhO6DAMJ.mDyMZORxA7alkYUH7D5Scg.gbV1EG1UxOduPcMwo4ueWuEg5qVn6Q\nmrf.anthonyisnota.dev",
         "sentAt": "2026-09-04",
         "outcome": "none"
       }
@@ -2053,7 +2074,7 @@
         "kind": "email",
         "at": "2026-09-10T01:19:21.891Z",
         "subject": "Confirming MRF coverage for Baptist Health facilities",
-        "to": "hpt-obf:v1:euhcpNLbVFSAtI5i.CauTCtQ2cdhTBK02OmE9HQ.doa3R0Q2qg9BvlcfLcDMiGzd6aXr",
+        "to": "hpt-obf:v1:0xJxBiS6oSnOwW3o.Sfu_Rxf8YAU0HA0pMXPkJg.YmS_-lpMGI25lFQf83CiWFIFkmQM",
         "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance. Your standard charges page lists the same file URL for multiple facilities:\n\n- https://baptistfirst.pt.panaceainc.com/MRFDownload/baptistfirst/bmc-south (BMC South and Crossbridge Behavioral Health)\n- https://baptistfirst.pt.panaceainc.com/MRFDownload/baptistfirst/prattville (Prattville Baptist Hospital and Prattville Baptist Geriatric Behavioral Health)\n\nCould you confirm whether each of those facilities is intentionally sharing that MRF, or whether Crossbridge Behavioral Health and Prattville Geriatric Behavioral Health each have a separate file? Happy to update my records accordingly.\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate a reply before then. Happy to help however's useful!\n\nThanks so much,\n[user]\n[user email]\n[tracker URL]",
         "sentAt": "2026-09-09",
         "outcome": "none"
@@ -2075,7 +2096,7 @@
         "kind": "email",
         "at": "2026-09-10T01:19:21.892Z",
         "subject": "Confirming MRF coverage for Baptist Health facilities",
-        "to": "hpt-obf:v1:UqtZTelx3N0NKtW0.-uNimkd3wxwF-ZhADzFApg.SFUf0iCRw2guvm-aB6nX2m2eQUc0",
+        "to": "hpt-obf:v1:y1FJRl_l1GUNHRoD.KAncEBLwgCfTW0ey1dyx-Q.aD15TNgFj7_OP1PWF-SkkbGoZK-Q",
         "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance. Your standard charges page lists the same file URL for multiple facilities:\n\n- https://baptistfirst.pt.panaceainc.com/MRFDownload/baptistfirst/bmc-south (BMC South and Crossbridge Behavioral Health)\n- https://baptistfirst.pt.panaceainc.com/MRFDownload/baptistfirst/prattville (Prattville Baptist Hospital and Prattville Baptist Geriatric Behavioral Health)\n\nCould you confirm whether each of those facilities is intentionally sharing that MRF, or whether Crossbridge Behavioral Health and Prattville Geriatric Behavioral Health each have a separate file? Happy to update my records accordingly.\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate a reply before then. Happy to help however's useful!\n\nThanks so much,\n[user]\n[user email]\n[tracker URL]",
         "sentAt": "2026-09-09",
         "outcome": "none"
@@ -2097,7 +2118,7 @@
         "kind": "email",
         "at": "2026-09-10T01:19:21.892Z",
         "subject": "Confirming MRF coverage for Baptist Health facilities",
-        "to": "hpt-obf:v1:FeHQzLJHszVhBfKR.jqLJ0-hyTovG9Cm2qMd01Q.EmG7s-5RCRsTxBvqQm2S5KiGvUMj",
+        "to": "hpt-obf:v1:14Zt-vXlzF9y707-.NL5h3bMM2qquQOQtaJ6NpA.IkYf2JUo_huQnHqr7-Mo-2zCxdkK",
         "body": "Hello,\n\nI'm doing some research into hospital price transparency compliance. Your standard charges page lists the same file URL for multiple facilities:\n\n- https://baptistfirst.pt.panaceainc.com/MRFDownload/baptistfirst/bmc-south (BMC South and Crossbridge Behavioral Health)\n- https://baptistfirst.pt.panaceainc.com/MRFDownload/baptistfirst/prattville (Prattville Baptist Hospital and Prattville Baptist Geriatric Behavioral Health)\n\nCould you confirm whether each of those facilities is intentionally sharing that MRF, or whether Crossbridge Behavioral Health and Prattville Geriatric Behavioral Health each have a separate file? Happy to update my records accordingly.\n\nI'll plan to follow up in 30 days so I can continue my research, but would appreciate a reply before then. Happy to help however's useful!\n\nThanks so much,\n[user]\n[user email]\n[tracker URL]",
         "sentAt": "2026-09-09",
         "outcome": "none"
