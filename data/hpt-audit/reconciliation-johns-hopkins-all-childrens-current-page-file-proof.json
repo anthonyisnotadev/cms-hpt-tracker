@@ -1,0 +1,28 @@
+{
+  "ccn": "103300",
+  "observed_at": "2026-09-18T20:52:00Z",
+  "official_site": "https://www.hopkinsmedicine.org/all-childrens-hospital/",
+  "official_facility_page": "https://www.hopkinsmedicine.org/all-childrens-hospital/patient-families/patient-financial-information/how-much-care-costs",
+  "official_identity": "Johns Hopkins All Children's Hospital, 501 Sixth Avenue South, Saint Petersburg, FL 33701",
+  "page_file_url": "https://jhm-web-assets.s3.amazonaws.com/hopkinsmedicine/prod/charge-fees/590683252_johns-hopkins-all-children-s-hospital_standardcharges.csv",
+  "page_link_label": "Download the July 1, 2024 listing file (.csv)",
+  "page_file_http_status": 200,
+  "page_file_bytes": 2548620,
+  "page_file_sha256": "DDC8F818B00774BE3C4F3A1784528558811382FD0528DEA5B627AF7C03D5D4DA",
+  "page_file_last_modified": "2025-07-07T06:12:25Z",
+  "declared_location_name": "Johns Hopkins All Children's Hospital",
+  "declared_address": "501 Sixth Avenue South, Saint Petersburg, FL 33701",
+  "declared_license_state": "FL",
+  "declared_date": "2025-07-01",
+  "declared_version": "2.2.0",
+  "page_label_vs_header_note": "The current page labels the download July 1, 2024, while the retrieved CSV header declares 2025-07-01; both values are retained rather than silently normalized.",
+  "header_attestation": "true",
+  "pointer_urls_checked": [
+    "https://www.hopkinsmedicine.org/cms-hpt.txt",
+    "https://www.hopkinsallchildrens.org/cms-hpt.txt",
+    "https://hopkinsallchildrens.org/cms-hpt.txt"
+  ],
+  "pointer_observation": "All three current first-party root-pointer locations returned HTTP 403 to the direct client; no pointer bytes were promoted.",
+  "disposition": "official-page-linked-current-file-identity-and-metadata-confirmed-pointer-retrieval-pending",
+  "next_action": "Recover the current first-party root pointer through an authorized route and verify that it declares this exact file; then validate current rate-level usability and decide whether the 2025-07-01 page file can remain current evidence. Do not treat the pointer 403 as file absence or legal noncompliance."
+}

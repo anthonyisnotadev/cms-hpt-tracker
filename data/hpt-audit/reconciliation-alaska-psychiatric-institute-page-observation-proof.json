@@ -1,0 +1,12 @@
+{
+  "ccn": "024002",
+  "observed_at": "2026-09-17T21:45:00.000Z",
+  "official_page": "https://dfcs.alaska.gov/alaska-psychiatric-institute/",
+  "page_http_status": 200,
+  "page_content_type": "text/html; charset=utf-8",
+  "page_bytes": 96702,
+  "page_observation": "Current first-party Alaska Psychiatric Institute page identifies the state psychiatric hospital and links an API-Acute-Rate-Matrix.pdf under Facility Rates; no cms-hpt.txt, CSV or JSON MRF link was exposed in the bounded HTML.",
+  "facility_rates_url": "https://dfcs.alaska.gov/media/brvn4pg4/api-acute-rate-matrix.pdf",
+  "disposition": "official-page-rates-pdf-not-mrf",
+  "next_action": "Locate a current CMS 3.0 CSV/JSON MRF or exact root pointer; do not treat the PDF rate matrix as a machine-readable file or infer absence from the current page."
+}

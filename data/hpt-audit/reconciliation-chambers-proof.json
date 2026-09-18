@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-09-15T15:28:43.527Z",
+  "ccn": "040011",
+  "roster": {
+    "hospital_name": "CHAMBERS MEMORIAL HOSPITAL",
+    "address": "719 DETROIT STREET",
+    "city": "DANVILLE",
+    "state": "AR",
+    "zip": "72833"
+  },
+  "incorrect_standing_assignment": {
+    "domain": "chambershealth.org",
+    "pointer_url": "https://chambershealth.org/cms-hpt.txt",
+    "pointer_http_status": 200,
+    "pointer_sha256": "b8b591fa5c786d813652fa5084848c0af1e6aa66012203f3b309db55eb1ea89e",
+    "mrf_url": "https://secure.claraprice.net/price-transparency/OHL3996173618/machine-readable/760153629_chambers-health_standardcharges.json",
+    "mrf_http_status": 200,
+    "mrf_bytes": 10759686,
+    "mrf_sha256": "aabcfbeef81c76898c83456fbc3d805efd023bea48945b809dac618599e8d853",
+    "declared_hospital_name": "Chambers Health",
+    "declared_address": "200 Hospital Drive, Anahuac, TX 77514",
+    "declared_state": "TX",
+    "declared_date": "2025-09-17",
+    "version": "3.0.0"
+  },
+  "correct_official_candidate": {
+    "domain": "chambershospital.com",
+    "official_homepage_url": "https://chambershospital.com/",
+    "official_homepage_relationship": "The rendered official homepage links its PRICE TRANSPARENCY footer item to the PARA Chambers Memorial page.",
+    "pricing_page_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Chambers_Memorial.aspx",
+    "pointer_url": "https://chambershospital.com/cms-hpt.txt",
+    "pointer_direct_status": 202,
+    "pointer_result": "bot-challenge-no-pointer-fields",
+    "mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbJECMHDANVILLEAR&type=CDMWithoutLabel&fileType=CSV",
+    "mrf_http_status": 200,
+    "mrf_bytes": 24270962,
+    "mrf_sha256": "7d136b76bc8b7603e0d7fdeb36fabcf5ac08d7411fa3458c45d98c6788048148",
+    "declared_hospital_name": "JOHN ED CHAMBERS MEMORIAL HOSPITAL INC",
+    "declared_location_name": "JOHN ED CHAMBERS MEMORIAL HOSPITAL INC",
+    "declared_address": "719 Detroit Ave Danville AR 72833",
+    "declared_state": "AR",
+    "declared_date": "2026-07-10",
+    "version": "3.0.0",
+    "file_kind": "csv"
+  },
+  "observed_at": "2026-09-15T15:28:43.527Z",
+  "disposition": "quarantine-wrong-domain-and-state-retain-first-party-page-file-candidate",
+  "next_action": "Retrieve the correct chambershospital.com root pointer after its bot challenge changes or through a permitted client, then require an exact Chambers Memorial entry before promoting the identity-matched PARA CSV.",
+  "current_recheck": {
+    "observed_at": "2026-09-18T03:47:18Z",
+    "pricing_page": "https://apps.para-hcfs.com/PTT/FinalLinks/Chambers_Memorial.aspx",
+    "page_source_observation": "The current public price-file route remains the Chambers Memorial PARA route; the linked download response names the John Ed Chambers Memorial Hospital Inc CSV.",
+    "mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbJECMHDANVILLEAR&fileType=CSV&type=CDMWithoutLabel",
+    "response_status": 200,
+    "content_disposition_filename": "716044543_john-ed-chambers-memorial-hospital-inc_standardcharges.csv",
+    "content_length_bytes": 24270962,
+    "full_file_sha256": "7d136b76bc8b7603e0d7fdeb36fabcf5ac08d7411fa3458c45d98c6788048148",
+    "header_observation": "The current file still identifies John Ed Chambers Memorial Hospital Inc at 719 Detroit Ave, Danville AR 72833, dated 2026-07-10 with CMS 3.0.0 and license state AR.",
+    "pointer_recheck": "The exact chambershospital.com/cms-hpt.txt route still returned HTTP 202 with a SiteGround captcha challenge and no pointer fields.",
+    "disposition": "The identity-matched page file is fresh and unchanged, but exact root-pointer linkage remains unverified; quarantine is retained."
+  }
+}

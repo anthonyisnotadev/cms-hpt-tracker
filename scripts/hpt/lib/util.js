@@ -81,6 +81,10 @@ const isAggregator = h => !!h && AGGREGATOR_HOST.test(h);
 function normalizeName(s) {
   return String(s || '')
     .toLowerCase()
+    // Preserve Latin-letter identity across accented and unaccented publisher
+    // spellings (for example, Bayamón versus BAYAMON) before ASCII tokenizing.
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
     .replace(/&/g, ' and ')
     // Drop apostrophes before splitting. Otherwise "children's" becomes two
     // tokens and cannot match "childrens" - which scored 0.13 for

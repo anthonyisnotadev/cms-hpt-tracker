@@ -1,0 +1,60 @@
+{
+  "ccn": "270012",
+  "roster_name": "BENEFIS HOSPITALS INC",
+  "roster_address": "1101 26TH ST S",
+  "roster_city": "GREAT FALLS",
+  "roster_state": "MT",
+  "roster_zip": "59405",
+  "official_domain": "benefis.org",
+  "first_party_east_campus_url": "https://www.benefis.org/locations/profile/benefis-east-campus/",
+  "web_reader_east_campus_observation": "Benefis East Campus, 1101 26th Street South, Great Falls MT 59405",
+  "first_party_pricing_url": "https://www.benefis.org/patients-visitors/billing-financial-assistance/price-transparency/",
+  "web_reader_pricing_observation": "The current price page lists Benefis Hospitals Inc - East Campus and West Campus as links to the same CSV.",
+  "web_reader_observed_on": "2026-09-17",
+  "retained_pointer_artifact": "cms_data/hpt/pointer-corpus/raw/benefis.org-a53c2033a555.txt",
+  "retained_pointer_sha256": "6b21177686c8e2aeaf71efe43bcdb18e01c7d8b90f59af0da5a5137d9671bb4d",
+  "pointer_url": "https://benefis.org/cms-hpt.txt",
+  "pointer_east_location_name": "Benefis Hospitals Inc - East Campus",
+  "pointer_west_location_name": "Benefis Hospitals Inc - West Campus",
+  "pointer_shared_mrf_url": "https://www.benefis.org/app/files/public/ecc68e09-9516-4e98-9c6a-e892ac1d14f0/810232122_BenefisHospitalsInc_standardcharges.csv",
+  "direct_requests": [
+    {
+      "role": "pointer",
+      "url": "https://benefis.org/cms-hpt.txt",
+      "http_status": 403,
+      "response_sha256": "d33987a8b3dc9bf6a33c4495bcf02c8b9af60bfed84c78646308d5ca3dc1688f",
+      "response_kind": "html-access-denied",
+      "observed_at": "2026-09-17T07:15:08.842Z"
+    },
+    {
+      "role": "east-campus",
+      "url": "https://www.benefis.org/locations/profile/benefis-east-campus/",
+      "http_status": 403,
+      "response_sha256": "aa13fa4f648590e9987dff83212c8106b788c52d806ef1faefd974e028188070",
+      "response_kind": "html-access-denied",
+      "observed_at": "2026-09-17T07:15:08.271Z"
+    },
+    {
+      "role": "price-page",
+      "url": "https://www.benefis.org/patients-visitors/billing-financial-assistance/price-transparency/",
+      "http_status": 403,
+      "response_sha256": "04a860330a0b428f91ac9b2907ddf4eb2dad1cc1a2bbc62dd1644278a6ba5102",
+      "response_kind": "html-access-denied",
+      "observed_at": "2026-09-17T07:15:08.321Z"
+    },
+    {
+      "role": "shared-csv",
+      "url": "https://www.benefis.org/app/files/public/ecc68e09-9516-4e98-9c6a-e892ac1d14f0/810232122_BenefisHospitalsInc_standardcharges.csv",
+      "http_status": 403,
+      "response_sha256": "2c0cc882ea2f860618a31550586c9b07d80d4df64d37871666ccc4629b0a91da",
+      "response_kind": "html-access-denied",
+      "observed_at": "2026-09-17T07:15:08.280Z"
+    }
+  ],
+  "browser_price_page_result": "Access Denied",
+  "browser_file_result": "Access Denied",
+  "browser_observed_on": "2026-09-17",
+  "file_bytes_verified": false,
+  "observed_at": "2026-09-17T07:15:08.280Z",
+  "next_action": "Use an authorized publisher-access route or wait for Benefis access to change, then re-read the current root pointer and its shared East/West CSV. Verify that the file header identifies the 1101 26th Street South Great Falls campus, MT license-state field, date and template version before assigning the MRF to CCN 270012. Do not infer file absence or compliance from the current Akamai access denials."
+}

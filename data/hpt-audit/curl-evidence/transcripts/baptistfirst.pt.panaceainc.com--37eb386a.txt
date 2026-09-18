@@ -1,0 +1,68 @@
+# curl-style evidence for https://baptistfirst.pt.panaceainc.com/MRFDownload/baptistfirst/bmc-south
+# fetched 2026-09-16T02:54:43.037Z with the tracker's BROWSER_HEADERS (production client)
+# record:  | (ad-hoc URL) |  | finding: ad-hoc
+
+* DNS baptistfirst.pt.panaceainc.com: 68.169.24.70
+
+> GET /MRFDownload/baptistfirst/bmc-south  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* redirect hop 1: https://baptistfirst.pt.panaceainc.com/MRFDownload/baptistfirst/bmc-south
+< HTTP 302
+< cache-control: private
+< content-length: 201
+< content-type: text/html; charset=utf-8
+< date: Wed, 16 Sep 2026 02:58:30 GMT
+< location: https://mrf.panaceainc.com/Download.aspx?org=baptistfirst&loc=bmc-south&ref=
+< server: Microsoft-IIS/10.0
+< strict-transport-security: max-age=31536000; includeSubDomains
+< x-powered-by: ASP.NET
+* following Location: https://mrf.panaceainc.com/Download.aspx?org=baptistfirst&loc=bmc-south&ref=
+
+* final response: https://mrf.panaceainc.com/Download.aspx?org=baptistfirst&loc=bmc-south&ref=
+< HTTP 200
+< cache-control: private
+< content-disposition: attachment; filename=203204949-1700977105_health-care-authority-for-baptist-health-an-affiliate-of-uabhs_standardcharges.csv
+< content-length: 155251359
+< content-type: application/octet-stream
+< date: Wed, 16 Sep 2026 02:58:30 GMT
+< server: Microsoft-IIS/10.0
+< x-content-type-options: nosniff
+< --- body (262144 bytes read, truncated) ---
+< hospital_name,last_updated_on,as_of_date,version,location_name,hospital_address,license_number|AL,type_2_npi,financial_aid_policy,"To the best of its knowledge and belief, this hospital has included all applicable standard charge information in accordance with the requirements of 45 CFR 180.50, and the information encoded is true, accurate, and complete as of the date in the file. This hospital has included all payer-specific negotiated charges in dollars that can be expressed as a dollar amount. For payer-specific negotiated charges that cannot be expressed as a dollar amount in the machine-readable file or not knowable in advance, the hospital attests that the payer-specific negotiated charge is based on a contractual algorithm, percentage or formula that precludes the provision of a dollar amount and has provided all necessary information available to the hospital for the public to be able to derive the dollar amount, including, but not limited to, the specific fee schedule or components referenced in such percentage, algorithm or formula.",attester_name,,,,,,,,,,,,,,,,,,
+< "HEALTH CARE AUTHORITY FOR BAPTIST HEALTH, AN AFFILIATE OF UABHS",12/30/2025,9/1/2025,3.0.0,Baptist Medical Center South|Crossbridge Behavioral Health,"2105 E South Blvd, Montgomery, AL 36111|4385 Narrow Lane Road, Montgomery AL 36116",H5102|AL,1700977105|1942394739,,TRUE,"Christine Bruton, CFO",,,,,,,,,,,,,,,,,,
+< description,code|1,code|1|type,code|2,code|2|type,code|3,code|3|type,modifiers,billing_class,setting,drug_unit_of_measurement,drug_type_of_measurement,standard_charge|gross,standard_charge|discounted_cash,payer_name,plan_name,standard_charge|negotiated_dollar,standard_charge|negotiated_algorithm,standard_charge|negotiated_percentage,median_amount,10th_percentile,90th_percentile,count,standard_charge|methodology,standard_charge|min,standard_charge|max,count_of_compared_rates,additional_generic_notes,footnote
+< SERVICES AND CARE-H,30040001,CDM,0120,RC,,,,Facility,Inpatient,,,1380,828,Aetna,All Products,2145,Can be subject to stoploss provisions,,,,,0,Per Diem,2000,6803.52,5, 0 remits to support allowed amounts,"Can be subject to stoploss provisions, Can be subject to additional per diem in excess of included days"
+< INTENSIVE CARE-H,30040002,CDM,0200,RC,,,,Facility,Inpatient,,,2330,1398,Aetna,All Products,2907,Can be subject to stoploss provisions,,,,,0,Per Diem,2600,6803.52,5, 0 remits to support allowed amounts,"Can be subject to stoploss provisions, Can be subject to additional per diem in excess of included days"
+< STEP DOWN CARE-H,30040006,CDM,0206,RC,,,,Facility,Inpatient,,,2285,1371,Aetna,All Products,2353,Can be subject to stoploss provisions,,,,,0,Per Diem,2353,6803.52,5, 0 remits to support allowed amounts,"Can be subject to stoploss provisions, Can be subject to additional per diem in excess of included days"
+< OP INFUSION THERAPY (IV) 1ST HOUR,30040010,CDM,0260,RC,96365,HCPCS,,Facility,Outpatient,,,190,114,Aetna,All Products,178.6,,94,346,175,895,41,Percent of Total Billed Charges,85.5,182.02,8, Estimated Allowed derived from 12 months prior to as of date of historical Payer/Plan specific claim,
+< OP INFUSION THERAPY(IV) ADDL HOUR,30040011,CDM,0260,RC,96366,HCPCS,,Facility,Outpatient,,,86.85,52.11,Aetna,All Products,81.64,,94,892,408,919,12,Percent of Total Billed Charges,39.08,83.2,8, Estimated Allowed derived from 12 months prior to as of date of historical Payer/Plan specific claim,
+< OP INJECTION THERAPEUTIC IV PUSH,30040012,CDM,0260,RC,96374,HCPCS,,Facility,Outpatient,,,190,114,Aetna,All Products,178.6,,94,848,231,2486,1 through 10,Percent of Total Billed Charges,85.5,182.02,8, Estimated Allowed derived from 12 months prior to as of date of historical Payer/Plan specific claim,
+< "OP INJECTION THERAPEUTIC,SC/IM EA",30040013,CDM,0260,RC,96372,HCPCS,,Facility,Outpatient,,,89.2,53.52,Aetna,All Products,83.85,,94,,,,0,Percent of Total Billed Charges,40.14,85.45,8, 0 remits to support allowed amounts,
+< OP IV INFUSION ADDL SEQ UPTO 1 HR,30040014,CDM,0260,RC,96367,HCPCS,,Facility,Outpatient,,,64,38.4,Aetna,All Products,60.16,,94,1935,1935,1935,1 through 10,Percent of Total Billed Charges,28.8,61.31,8, Estimated Allowed derived from 12 months prior to as of date of historical Payer/Plan specific claim,
+< OP IV PUSH ADDL SEQUENT-NEW MED,30040016,CDM,0260,RC,96375,HCPCS,,Facility,Outpatient,,,126.3,75.78,Aetna,All Products,118.72,,94,346,175,923,48,Percent of Total Billed Charges,56.84,121,8, Estimated Allowed derived from 12 months prior to as of date of historical Payer/Plan specific claim,
+< IV PUSH ADDL SEQ-SAME MED >30MIN,30040017,CDM,0260,RC,96376,HCPCS,,Facility,Outpatient,,,57.9,34.74,Aetna,All Products,54.43,,94,,,,0,Percent of Total Billed Charges,26.06,55.47,8, 0 remits to support allowed amounts,
+< MINOR PROCEDURE,30040021,CDM,0361,RC,,,,Facility,Outpatient,,,500,300,Aetna,All Products,470,,94,,,,0,Percent of Total Billed Charges,225,479,8, 0 remits to support allowed amounts,
+< OBSERVATION-H,30049000,CDM,0762,RC,G0378,HCPCS,,Facility,Outpatient,,,0.95,0.57,Aetna,All Products,1344,,,,,,,Other,97.33,4061.29,3,Per Visit,
+< SERVICES AND CARE-H,30060001,CDM,0120,RC,,,,Facility,Inpatient,,,1380,828,Aetna,All Products,2145,Can be subject to stoploss provisions,,,,,0,Per Diem,2000,6803.52,5, 0 remits to support allowed amounts,"Can be subject to stoploss provisions, Can be subject to additional per diem in excess of included days"
+< INTENSIVE CARE-H,30060003,CDM,0200,RC,,,,Facility,Inpatient,,,2330,1398,Aetna,All Products,2907,Can be subject to stoploss provisions,,,,,0,Per Diem,2600,6803.52,5, 0 remits to support allowed amounts,"Can be subject to stoploss provisions, Can be subject to additional per diem in excess of included days"
+< OBSERVATION-H,30069000,CDM,0762,RC,G0378,HCPCS,,Facility,Outpatient,,,0.95,0.57,Aetna,All Products,1344,,,,,,,Other,97.33,4061.29,3,Per Visit,
+< SERVICES AND CARE-H,30070001,CDM,0120,RC,,,,Facility,Inpatient,,,1380,828,Aetna,All Products,2145,Can be subject to stoploss provisions,,,,,0,Per Diem,2000,6803.52,5, 0 remits to support allowed amounts,"Can be subject to stoploss provisions, Can be subject to additional per diem in excess of included days"
+< INTENSIVE CARE-H,30070002,CDM,0200,RC,,,,Facility,Inpatient,,,2330,1398,Aetna,All Products,2907,Can be subject to stoploss provisions,,,,,0,Per Diem,2600,6803.52,5, 0 remits to support allowed amounts,"Can be subject to stoploss provisions, Can be subject to additional per diem in excess of included days"
+< OBSERVATION-H,30079006,CDM,0762,RC,G0378,HCPCS,,Facility,Outpatient,,,0.95,0.57,Aetna,All Products,1344,,,,,,,Other,97.33,4061.29,3,Per Visit,
+< SERVICES AND CARE-H,30080100,CDM,0120,RC,,,,Facility,Inpatient,,,1380,828,Aetna,All Products,2145,Can be subject to stoploss provisions,,,,,0,Per Diem,2000,6803.52,5, 0 remits to support allowed amounts,"Can be subject to stoploss provisions, Can be subject to additional per diem in excess of included days"
+< INTENSIVE CARE-H,30080102,CDM,0200,RC,,,,Facility,Inpatient,,,2330,1398,Aetna,All Products,2907,Can be subject to stoploss provisions,,,,,0,Per Diem,2600,6803.52,5, 0 remits to support allowed amounts,"Can be subject to stoploss provisions, Can be subject to additional per diem in excess of included days"
+< OBSERVATION-H,30089000,CDM,0762,RC,G0378,HCPCS,,Facility,Outpatient,,,0.95,0.57,Aetna,All Products,1344,,,,,,,Other,97.33,4061.29,3,Per Visit,
+< ICU HOLD-ED,30140003,CDM,0200,RC,,,,Facility,Inpatient,,,2330,1398,Aetna,All Products,2907,Can be subject to stoploss provisions,,,,,0,Per Diem,2600,6803.52,5, 0 remits to support allowed amounts,"Can be subject to stoploss provisions, Can be subject to additional per diem in excess of included days"
+< SERVICES AND CARE-OB-2,31500001,CDM,0122,RC,,,,Facility,Inpatient,,,1380,828,Aetna,All Products,2145,Can be subject to stoploss provisions,,,,,0,Per Diem,2000,6803.52,5, 0 remits to support allowed amounts,"Can be subject to stoploss provisions, Can be subject to additional per diem in excess of included days"
+< SERVICES AND CARE-PP-1,31500003,CDM,0112,RC,,,,Facility,Inpatient,,,1380,828,Aetna,All Products,2145,Can be subject to stoploss provisions,,,,,0,Per Diem,2000,6803.52,5, 0 remits to suppo
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 1219 ms

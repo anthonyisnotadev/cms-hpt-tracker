@@ -38,21 +38,22 @@ is accurate.
 
 ## Current snapshot
 
-The current snapshot was generated on September 3, 2026.
+The current snapshot was regenerated on September 18, 2026. Counts below are
+observed tracker categories, not legal compliance determinations.
 
 | Measure | Count |
 | --- | ---: |
 | Hospitals in the CMS roster | 5,419 |
-| Hospitals with a recorded MRF | 3,870 |
-| Rows in the gap worklist | 1,562 |
+| Hospitals with active or retained MRF evidence | 4,052 |
+| Rows in the unresolved investigation worklist | 865 |
 
 | Status | Count | Meaning in this tracker |
 | --- | ---: | --- |
-| Compliant | 3,403 | The file opened and passed the checks represented in this dataset |
-| Not compliant | 463 | A required file was missing, broken, stale, or used an outdated format |
-| Blocked | 175 | The website prevented an automated result |
-| Not assessed | 1,214 | There was not enough evidence to make a finding |
-| Exempt | 164 | The hospital is outside this rule, primarily because it is federally owned |
+| Observed-compliant | 3,837 | Current observed evidence met the checks represented in this dataset |
+| Observed file problem | 215 | A file or pointer issue was observed; this is not a legal finding |
+| Blocked | 0 | No separate blocked category in the current rebuilt view |
+| Unresolved | 1,201 | There was not enough evidence to resolve the current research question |
+| Exempt or closed | 166 | The record is outside scope or has a documented closure observation |
 
 The distinction between a finding and a research gap is intentional. A missing
 or unconfirmed website is not treated as proof that a hospital failed to

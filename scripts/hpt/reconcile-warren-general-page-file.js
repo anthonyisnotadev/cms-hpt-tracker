@@ -1,0 +1,26 @@
+'use strict';
+const fs=require('fs'),path=require('path'),crypto=require('crypto');
+const {csvToObjects}=require('./lib/util');
+const root=path.resolve(__dirname,'../..'),audit=path.join(root,'data/hpt-audit'),ccn='390146';
+const pointerUrl='https://www.wgh.org/cms-hpt.txt',pageUrl='https://www.wgh.org/price-transparency';
+const pageMrfUrl='https://wgh.org/s/250965598_warren-general-hospital_standardcharges.csv';
+const pointerMrfUrl='https://www.wgh.org/s/250965598_warren-general-hospital_standardcharges-8tly.csv';
+const sampleRel='cms_data/hpt/nationwide-verification/file-byte-proof/warren-general-page-390146.bin';
+const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
+async function get(url,headers={}){const response=await fetch(url,{headers});return {response,bytes:Buffer.from(await response.arrayBuffer())};}
+(async()=>{
+ const base=csvToObjects(fs.readFileSync(path.join(audit,'compliance.csv'),'utf8')).find(r=>r.ccn===ccn);
+ if(!base||base.finding!=='mrf-url-unreachable')throw Error('unexpected base');
+ const [pointer,page,file]=await Promise.all([get(pointerUrl),get(pageUrl),get(pageMrfUrl,{Range:'bytes=0-262143'})]);
+ if(pointer.response.status!==200||page.response.status!==200||file.response.status!==206)throw Error('source retrieval gate failed');
+ const pt=pointer.bytes.toString('utf8'),html=page.bytes.toString('utf8');
+ if(!pt.includes(pointerMrfUrl)||!html.includes('/s/250965598_warren-general-hospital_standardcharges.csv')||!html.includes('2 Crescent Park West')||!html.includes('Warren PA 16365'))throw Error('pointer/page evidence missing');
+ const header=file.bytes.toString('utf8',0,2000);if(!header.includes('Warren General Hospital')||!header.includes('2 Crescent Park West Warren PA 16365')||!header.includes('license_number|PA'))throw Error('file header evidence missing');
+ fs.mkdirSync(path.dirname(path.join(root,sampleRel)),{recursive:true});fs.writeFileSync(path.join(root,sampleRel),file.bytes);const now=new Date().toISOString();
+ const n=JSON.parse(fs.readFileSync(path.join(audit,'nationwide-verification.json'),'utf8')).records.find(r=>r.ccn===ccn);
+ const proof={ccn,roster_name:base.hospital_name,roster_address:base.address,roster_state:base.state,pointer_url:pointerUrl,pointer_sha256:sha(pointer.bytes),pointer_mrf_url:pointerMrfUrl,page_url:pageUrl,page_sha256:sha(page.bytes),page_mrf_url:pageMrfUrl,file_final_url:file.response.url,file_http_status:file.response.status,file_sample_bytes:file.bytes.length,file_sample_sha256:sha(file.bytes),retained_sample:sampleRel,declared_hospital_name:'Warren General Hospital',declared_location_name:'Warren General Hospital',declared_address:'2 Crescent Park West Warren PA 16365',declared_license_state:'PA',declared_date:'2026-03-12',version:'2.0.0',observed_at:now,limitation:'The current first-party page links a current identity-matched CSV at a different path than the root pointer target, which remains separately recorded. Bounded bytes establish header identity and metadata only.'};
+ fs.writeFileSync(path.join(audit,'reconciliation-warren-general-page-file-proof.json'),JSON.stringify(proof,null,2)+'\n');
+ const evidence={identity:'corroborated',identity_basis:'first-party-pricing-page-exact-campus-address-and-page-linked-file-header',officialDomain:'wgh.org',pointerUrl,pointerSha256:sha(pointer.bytes),pointerMrfUrl,pointerMrfHttpStatus:404,pointerIssue:'pointer-mrf-http-error-current-source-page-file',sourcePageUrl:pageUrl,sourcePageSha256:sha(page.bytes),url:pageMrfUrl,finalUrl:file.response.url,fileSha256:sha(file.bytes),bytesRetained:file.bytes.length,http_status:file.response.status,checked_at:now,date:'2026-03-12',version:'2.0.0',expected_version:'3.0.0',location_name:'Warren General Hospital',declared_hospital_name:'Warren General Hospital',declared_address:'2 Crescent Park West Warren PA 16365',declared_license_state:'PA',observedFinding:'mrf-template-version-noncanonical',next_action:'Publisher should align root pointer with current page-linked file and update CMS template metadata.'};
+ const entry={ccn,base,action:'replace-observation',evidence,evidence_run:'warren-general-first-party-page-file-proof-2026-09-17',reviewed_at:now,note:'Warren General Hospital’s current first-party price-transparency page links a facility-specific CSV whose bounded header identifies Warren General Hospital at 2 Crescent Park West, Warren PA 16365, PA, dated 2026-03-12 with literal CMS version 2.0.0. The root pointer names a distinct -8tly target that remains unavailable; both roles are preserved. This is page-linked identity evidence and a template-version review, not full-file validation or a legal compliance conclusion.'};
+ const lp=path.join(audit,'reviewed-resolutions.json'),ledger=JSON.parse(fs.readFileSync(lp,'utf8')),old=ledger.find(r=>r.ccn===ccn);if(old&&old.evidence_run!==entry.evidence_run&&old.evidence_run!=='warren-general-page-file-proof-2026-09-17')throw Error('existing resolution differs');if(old){Object.assign(old,entry);}else{ledger.push(entry);}ledger.sort((a,b)=>a.ccn.localeCompare(b.ccn));fs.writeFileSync(lp,JSON.stringify(ledger,null,2)+'\n');console.log(JSON.stringify({ccn,applied:true,file_sample_sha256:sha(file.bytes)}));
+})().catch(e=>{console.error(e.stack||e);process.exitCode=1;});

@@ -1,0 +1,27 @@
+{
+  "ccn": "490112",
+  "observed_at": "2026-09-17T22:45:00.000Z",
+  "roster": {
+    "hospital_name": "CJW MEDICAL CENTER",
+    "address": "7101 JAHNKE ROAD",
+    "city": "RICHMOND",
+    "state": "VA"
+  },
+  "pointer_url": "https://hcavirginia.com/cms-hpt.txt",
+  "pointer_sha256": "2c86c37e9102b7a1cef5b731a1a07cf5355bdc3e1caf161d9deec80ff0e58ea7",
+  "pointer_http_status": 200,
+  "pointer_entry": "CJW Medical Center-Chippenham Hospital Campus",
+  "mrf_url": "https://stctrprodsnsvc00455826e6.blob.core.windows.net/pt-final-posting-files/54-1779911_CHIPPENHAM-HOSPITAL_standardcharges.json?si=dpx-pt-json-access-policy&spr=https&sv=2026-02-06&sr=c&sig=ks%2BgfAjyEHlZmeP2PYJ%2f9NpMuCoRStjTb2bhIy9Y6LM%3D",
+  "response_status": 206,
+  "retained_sample_bytes": 131072,
+  "sample_sha256": "e22043a4bd9084ad390988d438b3556d2229c65b0ca546bd7422f710e69487c5",
+  "declared_hospital_name": "CHIPPENHAM HOSPITAL",
+  "declared_location_name": ["SWIFT CREEK ER", "CHIPPENHAM HOSPITAL"],
+  "declared_address": ["14720 HANCOCK VILLAGE ST, CHESTERFIELD, VA, 23832", "7102 JAHNKE ROAD, RICHMOND, VA, 23225"],
+  "declared_license_state": "VA",
+  "declared_last_updated": "2026-03-01",
+  "cms_template_version": "3.0.0",
+  "official_page": "https://www.hcavirginia.com/locations/chippenham-hospital/specialties/gastroenterology",
+  "identity_observation": "The HCA Virginia root pointer explicitly names the CJW Chippenham campus and links this JSON. The header identifies Chippenham Hospital and Virginia, but declares 7102 Jahnke Road while the CMS roster and first-party location page identify the same Richmond campus as 7101 Jahnke Road.",
+  "interpretation": "Identity and pointer linkage are corroborated; the one-digit address discrepancy remains an explicit publisher-field observation. No clean promotion or legal compliance conclusion is inferred."
+}

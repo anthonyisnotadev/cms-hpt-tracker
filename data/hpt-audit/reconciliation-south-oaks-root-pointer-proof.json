@@ -1,0 +1,21 @@
+{
+  "ccn": "334027",
+  "observed_at": "2026-09-17T13:45:28.000Z",
+  "first_party_site_url": "https://southoaks.northwell.edu/",
+  "first_party_site_status": 200,
+  "first_party_site_title": "South Oaks Hospital | Northwell Health",
+  "first_party_site_name_address": "South Oaks Hospital, 400 Sunrise Highway, Amityville, NY 11701",
+  "site_root_pointer_url": "https://southoaks.northwell.edu/cms-hpt.txt",
+  "site_root_pointer_status": 200,
+  "site_root_pointer_content_type": "text/plain",
+  "site_root_pointer_bytes": 8331,
+  "site_root_pointer_sha256": "7d569107a2998280e1f62c3a31cec39c44661a16ac09d2c82675a8b64c991299",
+  "retained_pointer_file": "cms_data/hpt/pointer-corpus/raw/northwell.edu-c50cb73c12b6.txt",
+  "retained_pointer_observed_at": "2026-09-15T09:17:39.534Z",
+  "retained_general_pointer_url": "https://www.northwell.edu/cms-hpt.txt",
+  "pointer_location_count": 24,
+  "south_oaks_entry_present": false,
+  "south_oaks_file_identified": false,
+  "disposition": "first-party-campus-root-shares-system-pointer-without-facility-entry",
+  "next_action": "The South Oaks first-party campus root returns the same 24-entry pointer as the general Northwell root, but neither names South Oaks or the Amityville campus. Seek a South Oaks-specific pointer entry or first-party pricing-page file from the publisher; then check exact target bytes and declared hospital/location/address/state/date/version. Do not assign a sibling Northwell file or call a missing entry a legal compliance verdict."
+}

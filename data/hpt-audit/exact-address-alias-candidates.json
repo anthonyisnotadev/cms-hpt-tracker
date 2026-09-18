@@ -1,0 +1,50 @@
+{
+  "summary": {
+    "unresolved_pointer_match_ccns": 53,
+    "candidate_pairs": 1,
+    "candidate_ccns": 1,
+    "new_address_lead_pairs": 0,
+    "already_reviewed_follow_up_pairs": 1,
+    "multi_campus_pairs": 0,
+    "sibling_review_pairs": 0,
+    "by_header_status": {
+      "unmatched": 1,
+      "review": 0,
+      "matched": 0
+    }
+  },
+  "candidates": [
+    {
+      "ccn": "330080",
+      "roster_name": "LINCOLN MEDICAL & MENTAL HEALTH CENTER",
+      "roster_address": "234 EAST 149TH STREET",
+      "roster_city": "BRONX",
+      "roster_state": "NY",
+      "roster_zip": "10451",
+      "pointer_location_names": "Lincoln Medical Center",
+      "declared_hospital_name": "New York City Health and Hospitals Corporation",
+      "declared_address": "234 E 149th St, Bronx, NY 10451",
+      "matched_declared_address": "234 E 149th St, Bronx, NY 10451",
+      "declared_state": "NY",
+      "declared_date": "2026-09-05",
+      "declared_version": "3.0.0",
+      "mrf_url": "https://nychh.pt.panaceainc.com/MRFDownload/nychh/lincoln-medical",
+      "source_header_status": "unmatched",
+      "source_header_matched_ccns": [],
+      "requires_sibling_review": false,
+      "requires_multi_campus_review": false,
+      "candidate_kind": "already-reviewed-follow-up",
+      "reviewed_sources": [
+        "manual-access"
+      ],
+      "latest_review_at": "2026-09-16T17:27:04.030Z",
+      "next_action": "Capture the official Lincoln facility and charges pages through an authorized content-bearing route, or obtain an independent current publisher page record. Keep the CCN unresolved until the page-to-file relationship is verifiably recorded; do not infer a file failure from the Radware page challenge. Do not promote on address and ZIP alone."
+    }
+  ],
+  "source_sha256": {
+    "cms_data/Hospital_General_Information.csv": "23c5019ee51e11442d6d64cd153cedd78c51ab6435f621e4cb9351e3e972d9e3",
+    "data/hpt-audit/unresolved-investigation-worklist.json": "987e8811ca194de0d399af3f87d1fad68fb8e402d060bbf79c373a44de0286d9",
+    "cms_data/hpt/nationwide-verification/mrf-headers.csv": "7cc9a7889695de6e33ae4ff2aa3ef0acee8f593e4742c74b62062f4a8f6cee6b"
+  },
+  "limitation": "A normalized base street and exact five-digit ZIP match, including a ZIP+4 address or an omitted suite, is a lead, not a facility identity adjudication or verified MRF assignment. A header already matched to a sibling CCN or reviewed for conflict requires explicit campus and enrollment adjudication."
+}

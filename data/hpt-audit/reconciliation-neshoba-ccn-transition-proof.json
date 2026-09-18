@@ -1,0 +1,53 @@
+{
+  "ccns": ["250043", "251340"],
+  "reviewed_at": "2026-09-17T01:10:00.000Z",
+  "shared_roster_identity": {
+    "name": "NESHOBA COUNTY GENERAL HOSPITAL",
+    "address": "1001 HOLLAND AVENUE, PHILADELPHIA, MS 39350",
+    "ccn_250043_type": "Acute Care Hospitals",
+    "ccn_251340_type": "Critical Access Hospitals"
+  },
+  "first_party_relationship": {
+    "county_operator_page": "https://www.neshobacounty.net/neshoba-county-general-hospital-nursing-home",
+    "county_page_lists_hospital_site": "https://www.neshobageneral.com",
+    "hospital_location_page": "https://www.neshobageneral.com/locations-clinics/neshoba-general/",
+    "hospital_location_address": "1001 Holland Ave, Philadelphia, MS 39350",
+    "hospital_2025_conversion_announcement": "https://www.neshobageneral.com/in-the-news/2025/may/neshoba-general-announces-intent-to-apply-for-cr/",
+    "announcement_role": "Announced intent and an October 1, 2025 planned conversion date; not proof of CMS enrollment or effective CCN.",
+    "hospital_2026_cah_certificate": "https://www.neshobageneral.com/documents/Neshoba-County-General-Hospital-NIAHO-CAH-Certificate-Name-Change-2026.pdf",
+    "certificate_role": "DNV NIAHO Critical Access Hospital accreditation initially dated October 21, 2025 for the same 1001 Holland Avenue campus; the certificate does not list a CCN."
+  },
+  "retained_pointer": {
+    "url": "https://www.neshobageneral.com/cms-hpt.txt",
+    "cached_file": "cms_data/hpt/pointer-corpus/raw/neshobageneral.com-5b20f9ab7b39.txt",
+    "cached_sha256": "e4e53670699a3f9b419b46cefac5e0a1e31b1d87e48e715027767fa82172960f",
+    "alternate_cached_sha256": "72cce50cb4e42abb663be7600a1223770fcc40729647556e6ccd21e32a5522ef",
+    "location_name": "Neshoba County General Hospital",
+    "source_page_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Neshoba_V3.aspx",
+    "mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbNCGHPHILADELPHIAMS&type=CDMWithoutLabel&fileType=CSV",
+    "current_direct_http_status": 403,
+    "current_direct_result": "Cloudflare security challenge HTML, not pointer text; challenge not bypassed.",
+    "current_in_app_browser_result": "ERR_BLOCKED_BY_CLIENT on both www and apex root pointer URLs; no current browser pointer bytes."
+  },
+  "current_file": {
+    "http_status": 200,
+    "range_request_result": "Server ignored bytes=0-262143 and returned complete CSV.",
+    "complete_bytes": 46235873,
+    "complete_sha256": "f70004d1303ba437413c0b95763b398a3c53e80a552b6f4f2f69d4dabd06c06f",
+    "declared_hospital_name": "NESHOBA COUNTY GENERAL HOSPITAL",
+    "declared_location_name": "NESHOBA COUNTY GENERAL HOSPITAL",
+    "declared_address": "1001 Holland Ave Philadelphia MS 39350",
+    "declared_license_state_field": "MS",
+    "declared_last_updated_on": "2026-06-04",
+    "declared_version": "3.0.0",
+    "scope": "Full response hashed; metadata lines inspected. No row-by-row accuracy or legal-compliance assessment."
+  },
+  "cms_enrollment_snapshot_review": {
+    "evidence_file": "data/hpt-audit/same-campus-cms-enrollment-snapshot-review.json",
+    "reviewed_at": "2026-09-17T01:23:17.000Z",
+    "ccn_251340_result": "One exact CMS Hospital Enrollments row identifies Neshoba County General Hospital at 1001 Holland Ave as a Part A Critical Access Hospital.",
+    "ccn_250043_result": "No row returned in the same dataset version; this does not prove termination or an effective transition date."
+  },
+  "disposition": "The retained pointer and complete file identify the shared hospital campus, but neither names a CCN. A CMS enrollment snapshot now independently supports 251340 as a critical-access hospital. It does not establish the 250043 termination/status history, transition effective date, or file coverage for either CCN. Do not assign the current file to both CCNs or erase the older standing finding on the basis of a client access challenge.",
+  "next_action": "Get primary CMS enrollment/status history and effective dates for both CCNs. Then recover a fresh root pointer through a permitted route or publisher confirmation, compare its exact mrf-url to the already-hashed CSV, and adjudicate the historical acute-care and current critical-access records separately."
+}

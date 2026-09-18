@@ -1,0 +1,66 @@
+{
+  "records": [
+    {
+      "ccn": "010012",
+      "observed_at": "2026-09-15T21:27:00.000Z",
+      "official_system_page": "https://hh2026.cloudaccess.host/patients-visitors/price-transparency/",
+      "official_page_relationship": "The current HH Health-branded price-transparency page separately labels this exact URL as the Standard Charge File for DeKalb Regional Medical Center.",
+      "pricing_resource_url": "https://hh2026.cloudaccess.host/wp-content/uploads/934333907_Dekalb-Regional-Medical-Center_standardcharges.csv",
+      "direct_result": "connect-timeout",
+      "browser_result": "ERR_CONNECTION_CLOSED",
+      "disposition": "current-system-page-file-link-transport-uncertainty",
+      "next_action": "Retry this exact DeKalb file through a materially different download-capable route or after the HH Health site moves off its temporary host. Require file-declared facility identity, address/state and metadata before any promotion; do not infer absence or invalidity from the connection failures."
+    },
+    {
+      "ccn": "010019",
+      "observed_at": "2026-09-15T21:27:00.000Z",
+      "official_system_page": "https://hh2026.cloudaccess.host/patients-visitors/price-transparency/",
+      "official_page_relationship": "The current HH Health-branded price-transparency page separately labels this exact URL as the Standard Charge File for Helen Keller Hospital.",
+      "pricing_resource_url": "https://hh2026.cloudaccess.host/wp-content/uploads/472323163_hellen-keller-hospital_standardcharges.csv",
+      "direct_result": "connect-timeout",
+      "browser_result": "ERR_CONNECTION_CLOSED",
+      "disposition": "current-system-page-file-link-transport-uncertainty",
+      "next_action": "Retry this exact Helen Keller file through a materially different download-capable route or after the HH Health site moves off its temporary host. Require file-declared facility identity, address/state and metadata before any promotion; do not substitute the Huntsville Hospital system file and do not infer absence or invalidity from the connection failures."
+    },
+    {
+      "ccn": "010061",
+      "observed_at": "2026-09-15T21:52:00.000Z",
+      "official_system_page": "https://hh.health/patients-visitors/price-transparency/",
+      "official_page_updated_label": "2026-08-20",
+      "official_page_relationship": "The current HH Health price-transparency page separately labels this exact URL as the Standard Charge File for Highlands Medical Center; the Highlands location page independently gives 380 Woods Cove Road, Scottsboro, Alabama.",
+      "pricing_resource_url": "https://hh.health/wp-content/uploads/872027148_Highlands-Medical-Center_standardcharges.csv",
+      "direct_result": "dns-resolution-timeout",
+      "browser_result": "ERR_NAME_NOT_RESOLVED",
+      "disposition": "current-system-page-file-link-transport-uncertainty",
+      "next_action": "Retry this exact Highlands Medical Center file only after DNS for hh.health changes or through a demonstrably different download-capable network. Require file-declared facility identity, address/state and metadata before any promotion; do not infer absence, invalidity or compliance from the DNS failures or the page label."
+    },
+    {
+      "ccn": "010079",
+      "observed_at": "2026-09-15T21:54:11.132Z",
+      "official_system_page": "https://hh.health/patients-visitors/price-transparency/",
+      "official_page_updated_label": "2026-08-20",
+      "official_identity_page": "https://hh.health/athens-limestone-hospital/",
+      "official_page_relationship": "The current HH Health price-transparency page separately labels this exact URL as the Standard Charge File for Athens-Limestone Hospital; its current location page gives the exact 700 West Market Street, Athens, Alabama roster address.",
+      "pricing_resource_url": "https://hh.health/wp-content/uploads/475531420_Athens-Limestone-Hospital_standardcharges.csv",
+      "search_fetch_result": "csv-response-content-type-recognized-body-not-exposed",
+      "direct_result": "native-enotfound-and-curl-dns-timeout",
+      "browser_result": "reused-same-host-ERR_NAME_NOT_RESOLVED-observation-from-010061",
+      "disposition": "current-system-page-file-link-transport-uncertainty",
+      "next_action": "Retry this exact Athens-Limestone file only after DNS for hh.health changes or through a demonstrably different download-capable network. Require file-declared facility identity, address/state and metadata before any promotion; do not infer absence, invalidity or compliance from the DNS failures or the page label."
+    },
+    {
+      "ccn": "010085",
+      "observed_at": "2026-09-15T22:01:52.156Z",
+      "official_system_page": "https://hh.health/patients-visitors/price-transparency/",
+      "official_page_updated_label": "2026-08-20",
+      "official_identity_page": "https://hh.health/decatur-morgan-hospital/about/contact/",
+      "official_page_relationship": "The current HH Health price-transparency page separately labels this exact URL as the Decatur Morgan Hospital Standard Charge File, apart from the Parkway Campus and West files; the current hospital contact page identifies the Decatur Campus as the main hospital at the exact 1201 7th Street SE, Decatur, Alabama roster address.",
+      "pricing_resource_url": "https://hh.health/wp-content/uploads/460928982_decatur-morgan-hospital_standardcharges.csv",
+      "search_fetch_result": "csv-response-content-type-recognized-body-not-exposed",
+      "direct_result": "native-enotfound-and-curl-dns-timeout",
+      "browser_result": "reused-same-host-ERR_NAME_NOT_RESOLVED-observation-from-010061",
+      "disposition": "current-system-page-file-link-transport-uncertainty",
+      "next_action": "Retry this exact Decatur Morgan Hospital file only after DNS for hh.health changes or through a demonstrably different download-capable network. Keep it separate from the Parkway Campus and West files, and require file-declared facility identity, address/state and metadata before any promotion; do not infer absence, invalidity or compliance from the DNS failures or the page label."
+    }
+  ]
+}

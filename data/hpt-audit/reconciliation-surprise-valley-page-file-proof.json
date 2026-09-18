@@ -1,0 +1,30 @@
+{
+  "ccn": "051308",
+  "hospital_name": "Surprise Valley Community Hospital",
+  "observed_at": "2026-09-19T06:00:00Z",
+  "official_site": "https://www.svhospital.org/",
+  "official_identity_sources": [
+    "https://www.svhospital.org/",
+    "https://www.svhospital.org/price-transparency/"
+  ],
+  "official_identity": "Surprise Valley Community Hospital, 741 North Main Street, Cedarville, CA 96104, CCN 051308",
+  "pricing_page_url": "https://www.svhospital.org/price-transparency/",
+  "pricing_page_browser_status": "official-page-rendered",
+  "page_declared_mrf_url": "https://drive.google.com/file/d/1i8VLp6mat3yGdE69gCIK7aN2J3gClE_E/view",
+  "page_declared_mrf_download_url": "https://drive.google.com/uc?export=download&id=1i8VLp6mat3yGdE69gCIK7aN2J3gClE_E",
+  "page_declared_mrf_http_status": 206,
+  "page_declared_mrf_content_type": "application/octet-stream",
+  "page_declared_mrf_total_bytes": 8736986,
+  "page_declared_mrf_range_bytes": 262144,
+  "page_declared_mrf_range_sha256": "3F74DD88F21C6E18AAF98199A2158FE7CFF28592AB16540DF2B7C47D01A32CDA",
+  "page_declared_mrf_header": "Client,Section,HospitalDescription,ChargeCode,Code,CPTModifier,CPTDescription,StandardChargeQuantity,NDCCode,ServiceType,Place,PayorName,BundleRange,BundleBasis,BundleRate,GrossChargeRate,ChargeRateType,PaymentRatePercent,PaymentRate,PayorLower,PayorMedian,PayorHigher,DeIdentifiedLower,DeIdentifiedHigher,FootnoteReference",
+  "pointer_url": "https://www.svhospital.org/cms-hpt.txt",
+  "pointer_browser_status": "official-404-page",
+  "search_observations": [
+    "The official price-transparency page explicitly links a Google Drive machine-readable file and a Wipfli estimator for Surprise Valley.",
+    "The linked download returned a 206 bounded response from an 8,736,986-byte object; the CSV header is readable but does not declare facility address, CMS version or effective date in the bounded portion.",
+    "The exact root cms-hpt.txt route renders the official 404 page."
+  ],
+  "disposition": "official-page-linked-csv-retrieved-identity-metadata-incomplete-mrf-unresolved",
+  "next_action": "Retrieve the complete page-linked CSV through the authorized download route and inspect its full metadata/rows for facility identity, declared date/version and CMS usability before promotion. Preserve the official pointer 404 as an access observation."
+}

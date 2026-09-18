@@ -1,0 +1,23 @@
+{
+  "ccn": "070031",
+  "hospital_name": "Griffin Hospital",
+  "observed_at": "2026-09-19T12:00:00Z",
+  "official_site": "https://www.griffinhealth.org/",
+  "official_pricing_page": "https://www.griffinhealth.org/griffin-hospital/billing-insurance/cms-hospital-price-transparency/",
+  "pointer_url": "https://www.griffinhealth.org/cms-hpt.txt",
+  "pointer_browser_status": "official-404-page",
+  "official_identity": "Griffin Hospital, 130 Division Street, Derby, CT 06418",
+  "page_file_url": "https://www.griffinhealth.org/wp-content/uploads/2025/12/GRF_CDM_2025.xlsx",
+  "page_file_http_status": 200,
+  "page_file_bytes": 805455,
+  "page_file_sha256": "E978461E9125397B2745A2DD9F9BA264C9AED29D6282307134289EE34C5A0313",
+  "page_file_last_modified": "2025-12-02",
+  "page_file_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "search_observations": [
+    "The official page exposes a chargemaster XLSX and a separate negotiated-rates portal; neither is a current CMS-template CSV/JSON MRF verified in this pass.",
+    "The exact root pointer redirects to an official Griffin 404 page in the interactive browser.",
+    "The XLSX is retained as official historical/custom pricing evidence, not promoted as a current CMS MRF."
+  ],
+  "disposition": "official-pricing-page-linked-2025-custom-workbook-pointer-404-mrf-unresolved",
+  "next_action": "Obtain a current CMS-template CSV or JSON MRF (or publisher-confirmed direct negotiated-rates file), then verify complete bytes, facility identity, declared date/version and usability before promotion."
+}

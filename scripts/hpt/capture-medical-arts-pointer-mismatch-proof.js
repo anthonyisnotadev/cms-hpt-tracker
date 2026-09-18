@@ -1,0 +1,15 @@
+'use strict';
+const fs=require('fs'), path=require('path'), crypto=require('crypto');
+const {retrieve,parsePayload}=require('./lib/recovery-transport');
+const root=path.resolve(__dirname,'../..'), out=path.join(root,'data/hpt-audit/reconciliation-medical-arts-pointer-mismatch-proof.json');
+const sampleDir=path.join(root,'cms_data/hpt/nationwide-verification/file-byte-proof');
+const source='https://www.yourcareeverywhere.com/content/medhost/your-care-everywhere/pricing-estimator-page.html?facility_id=741f735f-d6cc-4802-8169-175329ceb889';
+const pointer='https://medicalartshospital.org/cms-hpt.txt';
+const current='https://s3.amazonaws.com/ycubaa-production-marlin-1-charge-management-public/facilities/741f735f-d6cc-4802-8169-175329ceb889/432080293_MEDICAL-ARTS-HOSPITAL_standardcharges.zip';
+const sha=b=>crypto.createHash('sha256').update(b).digest('hex');
+(async()=>{fs.mkdirSync(sampleDir,{recursive:true}); const [p,f]=await Promise.all([retrieve(pointer,65536,{timeoutMs:30000}),retrieve(current,524288,{timeoutMs:30000})]);
+ const pt=p.body.toString('utf8'); if(p.status<200||p.status>=300||!pt.includes('Medical Arts Hospital')||pt.includes(current)) throw Error('Medical Arts pointer mismatch changed');
+ const parsed=await parsePayload(f.body,f.headers['content-type']||''); const h=parsed.parsed.find(x=>x.mrfHospitalName&&x.mrfAddress&&x.mrfLicenseState);
+ if(f.status<200||f.status>=300||!h||h.mrfLicenseState!=='TX'||h.cmsVersion!=='2.0.0'||!/2200 N BRYAN/i.test(h.mrfAddress)) throw Error('Medical Arts file proof incomplete');
+ const sp=path.join(sampleDir,`${f.sha256}.bin`); fs.writeFileSync(sp,f.body); const record={ccn:'450489',disposition:'official-portal-newer-mrf-root-pointer-still-links-2023-workbook',official_domain:'medicalartshospital.org',official_homepage:'https://www.medicalartshospital.org/',source_page_url:source,pointer_url:pointer,pointer_http_status:p.status,pointer_sha256:sha(p.body),pointer_mrf_url:'https://s3.amazonaws.com/ycubaa-production-marlin-1-charge-management-public/facilities/741f735f-d6cc-4802-8169-175329ceb889/95-3999999_MedicalArtsHospital_StandardCharges_120723.xlsx',current_mrf_url:current,current_mrf_http_status:f.status,current_mrf_sha256:f.sha256,retained_bytes:f.body.length,retained_sample:path.relative(root,sp).replaceAll('\\','/'),total_file_bytes:Number((f.headers['content-range']||'').split('/')[1])||null,member:h.member,declared_hospital_name:h.mrfHospitalName,declared_location_name:h.mrfLocationName,declared_address:h.mrfAddress,declared_state:h.mrfLicenseState,declared_date:h.declaredLastUpdated,version:h.cmsVersion,observed_at:f.checkedAt,next_action:'Retain the newer official-portal archive and exact identity metadata, but do not promote it: it is over 365 days old, declares CMS 2.0.0, and is not the file linked by the current root pointer. Recheck the publisher portal and pointer for a newer aligned file.'};
+ fs.writeFileSync(out,JSON.stringify(record,null,2)+'\n'); console.log(JSON.stringify(record,null,2));})().catch(e=>{console.error(e);process.exitCode=1});

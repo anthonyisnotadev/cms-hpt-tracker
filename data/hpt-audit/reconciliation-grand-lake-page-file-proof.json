@@ -1,0 +1,42 @@
+{
+  "ccn": "360032",
+  "observed_at": "2026-09-17T09:56:55.981Z",
+  "roster_name": "GRAND LAKE HEALTH SYSTEM",
+  "roster_address": "200 SAINT CLAIR STREET",
+  "roster_city": "SAINT MARYS",
+  "roster_state": "OH",
+  "roster_zip": "45885",
+  "pointer": {
+    "url": "https://grandlakehealth.org/cms-hpt.txt",
+    "http_status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "response_kind": "html-page-not-pointer",
+    "sha256": "fe0b95c91914ca269d9e617259b027c31b3f1adb9478902f8ce2af77b7a33e77",
+    "bytes": 124461,
+    "retained_sample": "cms_data/hpt/nationwide-verification/file-byte-proof/fe0b95c91914ca269d9e617259b027c31b3f1adb9478902f8ce2af77b7a33e77.bin"
+  },
+  "source_page": {
+    "url": "https://grandlakehealth.org/patients-visitors/price-transparency/",
+    "http_status": 200,
+    "sha256": "7a2adcb932468e91aa6762c20164628c2c8d7120f10a1971a1ce68bfbc8cb95a",
+    "bytes": 280457,
+    "exact_file_link_present": true,
+    "retained_sample": "cms_data/hpt/nationwide-verification/file-byte-proof/7a2adcb932468e91aa6762c20164628c2c8d7120f10a1971a1ce68bfbc8cb95a.bin"
+  },
+  "file": {
+    "url": "https://grandlakehealth.org/wp-content/uploads/2026/08/34-1623770_grand-lake-health-system_standardcharges.csv",
+    "http_status": 206,
+    "content_range": "bytes 0-262143/21434893",
+    "total_bytes": 21434893,
+    "retained_bytes": 262144,
+    "sample_sha256": "3e7d9c9efe61d63158e3888a83915a46bad1e67947763f73ec5b61fda4b08a78",
+    "retained_sample": "cms_data/hpt/nationwide-verification/file-byte-proof/3e7d9c9efe61d63158e3888a83915a46bad1e67947763f73ec5b61fda4b08a78.bin",
+    "declared_hospital_name": "Grand Lake Health System",
+    "declared_location_name": "Grand Lake Health System",
+    "declared_address": "200 Saint Clair Street, Saint Marys, OH 45885",
+    "declared_license_state": "OH",
+    "declared_date": "2026-04-01",
+    "template_version": "3.0.0"
+  },
+  "conclusion": "Current official page links an identity-matched CSV; root returns HTML, not a structured pointer. Full MRF not validated."
+}

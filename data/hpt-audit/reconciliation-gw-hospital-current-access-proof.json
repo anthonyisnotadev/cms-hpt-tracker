@@ -1,0 +1,14 @@
+{
+  "ccn": "090001",
+  "observed_at": "2026-09-18T20:45:00Z",
+  "official_site": "https://www.gwhospital.com/",
+  "official_identity": "The George Washington University Hospital, 900 23rd Street NW, Washington, DC 20037",
+  "official_identity_source": "https://www.gwhospital.com/sites/gwhospital.com/files/atoms/files/GW_Capabilities%20Brochure.pdf",
+  "pointer_url": "https://www.gwhospital.com/cms-hpt.txt",
+  "pointer_direct_status": 403,
+  "pointer_direct_content_type": "text/plain; charset=UTF-8",
+  "browser_status": "cloudflare-access-denied",
+  "browser_observation": "The first-party homepage rendered an Access denied / Cloudflare restriction page in the in-app browser; the exact root pointer returned HTTP 403 to the direct client.",
+  "disposition": "official-identity-confirmed-pointer-cloudflare-blocked-mrf-unresolved",
+  "next_action": "Retry the exact official root, pricing route and cms-hpt.txt through a materially different authorized route; obtain a facility-specific CMS-template CSV or JSON MRF, then verify complete bytes, GW Hospital identity/address, District of Columbia state, declared date/version and usability before promotion. Do not infer MRF absence or noncompliance from the challenge."
+}

@@ -1,0 +1,11 @@
+{
+  "ccn": "050438",
+  "observed_at": "2026-09-17T00:00:00.000Z",
+  "official_site": "https://www.huntingtonhealth.org/",
+  "pricing_page": "https://www.huntingtonhealth.org/price-transparency/",
+  "identity_observation": "The official Huntington pricing page identifies Huntington Hospital and links the named standard-charge file; its footer lists 100 W. California Blvd., Pasadena, CA.",
+  "candidate_mrf_url": "https://media.huntingtonhealth.org/951644036_HUNTINGTON-HOSPITAL_standardcharges.csv",
+  "candidate_observation": "The page-linked file host returned HTTP 202 with an HTML security challenge before CSV bytes were exposed. The root `/cms-hpt.txt` path rendered the site's 404 page in the browser, so pointer linkage and current file metadata remain unverified.",
+  "disposition": "official-page-linked-mrf-security-challenge",
+  "next_action": "Retry the exact MRF through an authorized browser/download route and capture bounded CSV metadata, then separately recheck the root pointer."
+}

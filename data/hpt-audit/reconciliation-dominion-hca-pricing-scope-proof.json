@@ -1,0 +1,11 @@
+{
+  "ccn": "494023",
+  "observed_at": "2026-09-17T00:00:00.000Z",
+  "official_site": "https://www.hcavirginia.com/",
+  "facility_page": "https://www.hcavirginia.com/locations/dominion-hospital/for-patients/virginia-pricing-transparency",
+  "identity_observation": "The first-party Dominion Hospital page identifies Dominion Hospital at 2960 Sleepy Hollow Rd, Falls Church, VA 22044.",
+  "pricing_scope_page": "https://www.hcavirginia.com/patient-resources/patient-financial-resources/pricing-transparency-cms-required-file-of-standard-charges",
+  "pricing_scope_observation": "The current HCA Virginia CMS-required-file page exposes JSON downloads for listed HCA Virginia facilities, but Dominion Hospital is not among the listed download entries. The page states that its machine-readable file is JSON and may encode multiple locations, but no Dominion-specific URL was exposed in the reviewed page.",
+  "disposition": "official-pricing-page-no-dominion-file-exposed",
+  "next_action": "Obtain a current Dominion-specific publisher pointer/file or an authorized alternate route, then verify bounded bytes, CMS metadata, and facility identity before promotion. Do not borrow another HCA facility file."
+}

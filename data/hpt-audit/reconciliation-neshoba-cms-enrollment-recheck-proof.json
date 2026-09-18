@@ -1,0 +1,17 @@
+{
+  "observed_at": "2026-09-18T02:34:00Z",
+  "dataset_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data",
+  "query_scope": ["250043", "251340"],
+  "ccn_250043_rows": 0,
+  "ccn_251340_rows": 1,
+  "ccn_251340_row": {
+    "organization_name": "NESHOBA COUNTY GENERAL HOSPITAL",
+    "provider_type": "PART A PROVIDER - CRITICAL ACCESS HOSPITAL",
+    "address": "1001 HOLLAND AVE, PHILADELPHIA, MS 393502161",
+    "npi": "1083659734",
+    "enrollment_id": "O20250609001118"
+  },
+  "interpretation": "Current CMS enrollment snapshot distinguishes the active CAH CCN 251340 from the absent acute-care CCN 250043, but exposes no effective termination date for 250043.",
+  "disposition": "scope-transition-supported-effective-date-still-unresolved",
+  "next_action": "Obtain an effective-dated CMS certification/status record or publisher confirmation before changing the 250043 tracker disposition or assigning the shared MRF to both CCNs."
+}

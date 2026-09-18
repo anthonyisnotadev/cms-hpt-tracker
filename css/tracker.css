@@ -137,8 +137,7 @@ section:last-of-type { border-bottom: none; }
 .field-fig figcaption b { color: var(--ink-2); font-weight: 600; }
 
 /* ---- Coverage split: what the crawl reached, before what it judged.
-   1,626 hospitals were never reachable at all. That is the largest thing
-   this audit cannot answer, so it is stated before any verdict rate. ---- */
+   Counts are injected from the current audit data, not hard-coded here. ---- */
 .coverage {
   display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1px; background: var(--rule);
@@ -190,10 +189,9 @@ section:last-of-type { border-bottom: none; }
 .readout-pct { font-variant-numeric: tabular-nums; text-align: right; color: var(--ink-3); }
 
 /* Share bar, drawn at the same scale across every row so the rows compare
-   directly rather than each filling its own track. The bar's job is magnitude,
-   so every tier gets a solid fill, hollowing the "not assessed" bar would
-   read as less than 1,626 rather than as an absence. The hollow treatment
-   stays on the swatch, where it carries identity rather than length. */
+   directly rather than each filling its own track. The bar's job is magnitude;
+   the hollow treatment stays on the swatch, where it carries identity rather
+   than length. */
 .readout-bar { height: 10px; background: var(--surface-sunk); border-radius: var(--r-sm); overflow: hidden; }
 .readout-bar i { display: block; height: 100%; border-radius: var(--r-sm); }
 

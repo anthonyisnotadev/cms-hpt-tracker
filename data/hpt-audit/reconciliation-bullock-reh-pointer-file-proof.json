@@ -1,0 +1,20 @@
+{
+  "ccn": "010779",
+  "observed_at": "2026-09-17T20:40:00.000Z",
+  "pointer_url": "https://bullockcountyhospital.com/cms-hpt.txt",
+  "pointer_sha256": "99ba142a8f47be71885163a8f22f0b3bc666b6b2b34e6b3fa6aada1aa4c39096",
+  "pointer_location_name": "Bullock County Rural Emergency Hospital",
+  "mrf_url": "https://ce2ea91a-ba41-4498-ab16-2bae48bc8556.usrfiles.com/ugd/ce2ea9_229d2d077ea74cf6a45992ffbb655715.csv",
+  "response_status": 206,
+  "content_range": "bytes 0-131071/953559",
+  "prefix_bytes": 131072,
+  "prefix_sha256": "005739f08c5b3d1cc3ff553a57337d0435a2b3943b649758291595ccb463ff6d",
+  "declared_hospital_name": "Bullock County Hospital",
+  "declared_location_name": "Bullock County Hospital",
+  "declared_address": "102 Conecuh Avenue West, Union Springs, AL 36089",
+  "declared_license_state": "CA",
+  "declared_last_updated": "2024-11-24",
+  "cms_template_version": "2.0.0",
+  "interpretation": "The exact pointer entry is for the Bullock County Rural Emergency Hospital (CCN 010779), and the file header identifies Bullock County Hospital at the Union Springs Alabama address. However, the header's license_number|CA field conflicts with the facility's Alabama location, and the file is stale/noncanonical. The file is not applied as a current compliant claim.",
+  "next_action": "Obtain a newer pointer-linked file with an Alabama license field or publisher clarification; do not lend this artifact to acute-care CCN 010110."
+}

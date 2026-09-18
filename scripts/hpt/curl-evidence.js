@@ -60,6 +60,10 @@ const MANUAL_FINDINGS = new Set([
   'not-assessed-site-unreachable',
   'no-cms-hpt-txt-published',
   'pointer-lists-no-mrf-url'
+  , 'official-page-mrf-root-pointer-unavailable'
+  , 'root-pointer-omits-facility-page-file-found'
+  , 'root-pointer-html-page-with-official-page-file'
+  , 'pointer-target-dns-unresolved-page-file-found'
 ]);
 
 function parseArgs(argv) {
@@ -89,6 +93,10 @@ function urlsForRow(row) {
       if (row.mrf_url) out.push(row.mrf_url);
       break;
     case 'pointer-lists-no-mrf-url':
+    case 'official-page-mrf-root-pointer-unavailable':
+    case 'root-pointer-omits-facility-page-file-found':
+    case 'root-pointer-html-page-with-official-page-file':
+    case 'pointer-target-dns-unresolved-page-file-found':
       if (row.pointer_url) out.push(row.pointer_url);
       break;
     case 'pointer-blocked-to-automation':

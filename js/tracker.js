@@ -318,7 +318,7 @@
      person (compliant, federal-exempt) stay in the filter but not here: a
      "None needed" card at the top of an intervention list is noise. */
   var interventionGroups = D.interventions.filter(function (v) {
-    return v.n > 0 && v.key !== 'none' && v.key !== 'exempt-federal';
+    return v.n > 0 && v.key !== 'none' && v.key !== 'exempt-federal' && v.key !== 'exempt-closed';
   }).sort(function (a, b) { return b.n - a.n; });
   var interventionList = $('intervention-cards');
   interventionList.innerHTML = interventionGroups.map(function (v, i) {
@@ -857,7 +857,13 @@
     var source = r[C.SOURCE];
     var edited = corr && (corr.mrfUrl || corr.pointerUrl) ? ' data-edited="1"' : '';
     var links = '';
-    if (mrf) links += '<a class="linkbtn"' + edited + ' href="' + esc(mrf) + '" target="_blank" rel="noopener noreferrer">FILE</a>';
+    var primaryFileLabel = !(corr && corr.mrfUrl) && D.primaryFileLabels && D.primaryFileLabels[r[C.CCN]];
+    if (mrf) links += '<a class="linkbtn"' + edited + ' href="' + esc(mrf) + '" target="_blank" rel="noopener noreferrer">' + (primaryFileLabel ? 'FILE: ' + esc(primaryFileLabel) : 'FILE') + '</a>';
+    if (!(corr && corr.mrfUrl) && D.additionalFiles && D.additionalFiles[r[C.CCN]]) {
+      D.additionalFiles[r[C.CCN]].forEach(function (file) {
+        links += '<a class="linkbtn" href="' + esc(file[1]) + '" target="_blank" rel="noopener noreferrer" title="' + esc(file[0]) + '">FILE: ' + esc(file[0]) + '</a>';
+      });
+    }
     if (ptr) links += '<a class="linkbtn"' + edited + ' href="' + esc(ptr) + '" target="_blank" rel="noopener noreferrer">PTR</a>';
     if (source) links += '<a class="linkbtn" href="' + esc(source) + '" target="_blank" rel="noopener noreferrer">PAGE</a>';
     // Raw HTTP transcript of why this row is blocked or unresolved: what the
@@ -1045,6 +1051,8 @@
       evidence: r[C.EV],
       days: r[C.DAYS],
       mrf: r[C.MRF],
+      additionalFiles: D.additionalFiles && D.additionalFiles[ccn] || [],
+      primaryFileLabel: D.primaryFileLabels && D.primaryFileLabels[ccn] || '',
       ptr: r[C.PTR],
       source: r[C.SOURCE],
       lon: r[C.LON],
@@ -1056,13 +1064,44 @@
 
   /* ---- email template, tailored to what the audit actually found ---- */
   var TEMPLATE_BY_FINDING = {
+    'not-assessed-nationwide-linked-mrf-header-unmatched': 'I reached the linked file, but could not safely match its header to this facility. Could you confirm which file applies?',
+    'not-assessed-nationwide-pointer-discovery-incomplete': 'My pointer check did not complete because of a request or client-layer failure. Could you share the current pointer and file locations?',
+    'not-assessed-nationwide-pointer-not-retrieved': 'I did not retrieve a usable pointer from the official locations checked. Could you share the current pointer and file locations?',
+    'not-assessed-nationwide-official-website-not-identified-completed-search': 'I could not verify an official facility website in the completed search. Could you share the official website and file location?',
+    'not-assessed-nationwide-pointer-access-denied-to-client': 'My request to the official pointer was denied or challenged for this client. Could you confirm the current pointer and file locations?',
+    'not-assessed-nationwide-mrf-facility-identity-unresolved': 'I reached a possible machine-readable file, but could not safely match its identity to this facility. Could you confirm which file applies?',
+    'not-assessed-nationwide-pointer-facility-match-unresolved': 'I retrieved a pointer, but could not safely match an entry to this facility. Could you identify the applicable entry?',
+    'not-assessed-nationwide-mrf-request-unsuccessful': 'My request to the facility-linked machine-readable file did not return usable file content. Could you confirm its current location?',
+    'not-assessed-nationwide-mrf-verification-pending': 'I retrieved a possible file, but its facility identity or metadata still needs verification. Could you confirm which file applies?',
+    'not-assessed-nationwide-official-website-search-pending': 'My official-website search for this facility is not complete. Could you share the official website and file location?',
+    'not-assessed-discovery-official-hpt-pending': 'I identified your facility’s official website; my review of its pointer and machine-readable file is unfinished. Could you share the current file location?',
+    'not-assessed-discovery-candidate-identity-unverified': 'I found a possible website for this facility, but have not resolved its identity. Could you confirm the official website and file location?',
+    'not-assessed-discovery-pointer-client-denied': 'My request to the recorded official pointer URL was refused. Could you confirm the current pointer and machine-readable file locations?',
+    'not-assessed-discovery-pointer-not-retrieved': 'I did not retrieve a usable pointer from the official locations checked. Other locations may work. Could you share the current links?',
+    'not-assessed-discovery-pointer-match-unresolved': 'I retrieved a pointer, but could not resolve the entry for this facility. Could you identify the applicable entry?',
+    'not-assessed-discovery-mrf-request-failed': 'My request for the facility-linked machine-readable file failed. Could you confirm its current location?',
+    'not-assessed-discovery-mrf-verification-pending': 'I retrieved a file, but its facility identity or metadata still needs verification. Could you confirm which file covers this facility?',
+    'not-assessed-discovery-search-completed-no-official': 'I did not identify a supported official website in the completed search. Could you share the official website and machine-readable file location?',
+    'not-assessed-discovery-request-tool-failure': 'My discovery checks could not complete because of a request or tool failure. Could you share the official website and machine-readable file location?',
+    'not-assessed-discovery-review-pending': 'My review of the discovery evidence for this facility is unfinished. Could you share the official website and machine-readable file location?',
     'mrf-url-unreachable': 'The link in your cms-hpt.txt file points to a standard charges file that returned an error. Could you confirm the correct location, or update the pointer file?',
     'mrf-stale-over-365-days': 'The retrieved standard charges file was last updated more than twelve months ago. 45 CFR 180.50 asks for an update at least once a year. Is a newer version available?',
     'old-template-version': 'The retrieved standard charges file declares an older CMS template version. The current schema is 3.0.0. Is an updated file available?',
+    'mrf-license-state-field-conflicts-facility': 'The retrieved file identifies this facility, but its license-number column is labeled for a different state. Could you correct or clarify that state field?',
+    'mrf-address-field-conflicts-facility': 'The retrieved file identifies this facility, but one of its address fields differs from the independently verified hospital address. Could you correct or clarify that field?',
+    'mrf-address-field-incomplete': 'The retrieved file names this facility, but its hospital_address field omits part of the street address shown on your hospital website. Could you confirm the intended address for that field?',
+    'mrf-template-version-noncanonical': 'The retrieved file identifies this facility, but its declared version differs from the CMS schema identifier 3.0.0. Could you clarify the intended template version and provide a corrected file if needed?',
+    'mrf-custom-workbook-metadata-unverified': 'The pointer-linked object identifies this facility, but it is an XLSX workbook behind a CSV-labeled URL and does not declare a CMS template version or MRF last_updated_on. Is a CMS-template CSV or JSON file available?',
     'no-cms-hpt-txt-published': 'The website opened, but no cms-hpt.txt pointer file was found at the root or under /.well-known/. Could you confirm where the machine-readable standard charges file is published?',
     'pointer-blocked-to-automation': 'Requests for your cms-hpt.txt file are being refused (HTTP 403/429), which prevents automated retrieval of your standard charges file. Could you confirm the file is publicly reachable without a browser?',
     'mrf-blocked-to-automation': 'Your pointer file resolves, but the standard charges file itself refuses automated requests. Could you confirm it is reachable without a browser?',
-    'not-assessed-domain-unknown': 'No website was found on record for your facility. Could you provide the location of its machine-readable file?',
+    'not-assessed-domain-unknown': 'I could not verify an official website for your facility in the sources checked. Could you share the location of its machine-readable file?',
+    'not-assessed-site-observed': 'I found a website candidate matching your facility, but could not verify its cms-hpt.txt pointer and machine-readable file. Could you share the current file location?',
+    'not-assessed-pointer-review': 'I found a cms-hpt.txt file on a candidate website, but could not confidently match its entry and machine-readable file to your facility. Could you confirm the correct links?',
+    'not-assessed-domain-candidate': 'I found one or more possible websites for your facility, but could not verify an official domain and its machine-readable file. Could you share the correct location?',
+    'not-assessed-domain-search-pending': 'I have not yet completed an official-website search for your facility. Could you share the location of its machine-readable file?',
+    'not-assessed-domain-search-error': 'My website search for your facility did not complete successfully. Could you share the official website and machine-readable file location?',
+    'not-assessed-no-domain-candidate': 'I could not identify an official website in the sources checked. Could you share the location of your facility’s machine-readable file?',
     'not-assessed-site-unreachable': 'The website on record for your facility did not open. Could you confirm the correct domain and location of the machine-readable standard charges file?',
     // Deliberately not phrased as a compliance complaint: the omission may be
     // ours. We found their system's file and simply could not see this hospital
@@ -1070,6 +1109,14 @@
     'not-assessed-not-named-in-file': 'A cms-hpt.txt pointer file was found on your health system’s website, but no entry could be matched to this facility. Could you identify the entry that covers it, or provide its machine-readable file?',
     'compliant-date-unverified': 'The standard charges file opened, but no last_updated_on value could be read. Could you confirm the date it was last updated?',
     'pointer-lists-no-mrf-url': 'Your cms-hpt.txt names this facility, but the entry does not include an mrf-url pointing at the standard charges file. 45 CFR 180.50(d)(6) asks for a direct link. Could you add it, or provide the file location?',
+    'pointer-links-older-mrf-than-source-page': 'Your current pricing page links a newer machine-readable file than cms-hpt.txt. Could you update the pointer so both locations identify the same current file?',
+    'pointer-links-different-facility-mrf-source-page-file': 'The file linked for this facility in cms-hpt.txt declares a different campus address, while your pricing page links a file naming this campus. Could you confirm which file the pointer should identify?',
+    'pointer-html-portal-not-found-source-page-current-file': 'Your cms-hpt.txt link to a pricing portal rendered a not-found page during our browser check, while your pricing page links a readable machine-readable file. Could you confirm the intended pointer URL?',
+    'pointer-file-url-renders-not-found-source-page-current-file': 'The file URL in your cms-hpt.txt rendered a not-found page during our browser check, while your pricing page links a different readable file. Could you update or clarify the pointer URL?',
+    'official-page-mrf-root-pointer-unavailable': 'Your pricing page links a readable machine-readable file, but the root cms-hpt.txt request did not return a usable pointer. Could you publish or restore the root pointer for this file?',
+    'root-pointer-omits-facility-page-file-found': 'Your pricing page links an identity-matched file, but the root cms-hpt.txt lists other facilities and no entry for this hospital. Could you add this facility and its exact file URL to the root pointer?',
+    'root-pointer-omits-facility-official-storage-file-found': 'Your root cms-hpt.txt omits this hospital, although an identity-matched file was observed in the official publisher storage namespace. Could you add this facility and its exact file URL to the root pointer?',
+    'pointer-target-google-sheet-page-file-found': 'Your cms-hpt.txt names this facility but points to a Google Sheets edit page, while your pricing page links a complete machine-readable CSV. Could you update the pointer to the direct CSV or document the official export relationship?',
   };
 
   function templateFor(h) {
@@ -1353,12 +1400,15 @@
       + '</div><p class="oc-hint" id="oc-e-state"></p></div>';
   }
 
-  function findingLinks(pointerUrl, mrfUrl, edited, sourceUrl) {
+  function findingLinks(pointerUrl, mrfUrl, edited, sourceUrl, additionalFiles, primaryFileLabel) {
     var links = '';
     if (pointerUrl) links += '<a class="linkbtn"' + (edited ? ' data-edited="1"' : '')
       + ' href="' + esc(pointerUrl) + '" target="_blank" rel="noopener noreferrer">POINTER</a>';
     if (mrfUrl) links += '<a class="linkbtn"' + (edited ? ' data-edited="1"' : '')
-      + ' href="' + esc(mrfUrl) + '" target="_blank" rel="noopener noreferrer">FILE</a>';
+      + ' href="' + esc(mrfUrl) + '" target="_blank" rel="noopener noreferrer">' + (primaryFileLabel ? 'FILE: ' + esc(primaryFileLabel) : 'FILE') + '</a>';
+    (additionalFiles || []).forEach(function (file) {
+      links += '<a class="linkbtn" href="' + esc(file[1]) + '" target="_blank" rel="noopener noreferrer">FILE: ' + esc(file[0]) + '</a>';
+    });
     if (sourceUrl) links += '<a class="linkbtn" href="' + esc(sourceUrl)
       + '" target="_blank" rel="noopener noreferrer">PAGE</a>';
     return links ? '<div class="oc-ev-links">' + links + '</div>' : '';
@@ -1367,12 +1417,12 @@
   function findingEntry(item) {
     var head = '<div class="oc-ev-top">'
       + '<span class="oc-ev-kind" data-kind="finding" data-tier="' + esc(item.tier) + '">Finding</span>'
-      + '<span class="oc-ev-edited">' + (item.source === 'correction' ? 'manual correction' : item.source === 'reviewed' ? 'reviewed recheck' : item.source === 'historical' ? 'original audit' : 'crawl') + '</span>'
+      + '<span class="oc-ev-edited">' + (item.source === 'correction' ? 'manual correction' : item.source === 'reviewed' ? 'reviewed recheck' : item.source === 'nationwide' ? 'nationwide verification' : item.source === 'historical' ? 'earlier assessment' : 'crawl') + '</span>'
       + '<span class="oc-ev-when">' + esc(item.when) + '</span></div>';
     return '<div class="oc-ev" data-history-kind="finding">' + head
       + '<p class="oc-ev-subject">' + esc(item.label) + '</p>'
       + (item.text ? '<p class="oc-ev-text">' + esc(item.text) + '</p>' : '')
-      + findingLinks(item.pointerUrl, item.mrfUrl, item.source === 'correction', item.sourcePage)
+      + findingLinks(item.pointerUrl, item.mrfUrl, item.source === 'correction', item.sourcePage, item.additionalFiles, item.primaryFileLabel)
       + '</div>';
   }
 
@@ -1388,8 +1438,8 @@
     if (priorAudit) {
       var priorFinding = D.findings.filter(function (f) { return f.key === priorAudit.finding; })[0];
       items.push({ type: 'finding', source: 'historical', when: String(priorAudit.checked_at || '').slice(0, 10),
-        tier: priorFinding ? priorFinding.tier : 'unknown', label: 'Original audit: ' + (priorFinding ? priorFinding.label : priorAudit.finding),
-        text: priorAudit.evidence + ' Review: ' + priorAudit.resolution_note,
+        tier: priorFinding ? priorFinding.tier : 'unknown', label: (priorAudit.history_source === 'nationwide-overlay' ? 'Earlier standing assessment: ' : 'Original audit: ') + (priorFinding ? priorFinding.label : priorAudit.finding),
+        text: priorAudit.evidence + (priorAudit.history_source === 'nationwide-overlay' ? ' Update: ' : ' Review: ') + priorAudit.resolution_note,
         pointerUrl: priorAudit.pointer_url, mrfUrl: priorAudit.mrf_url, priority: 0, order: items.length });
     }
 
@@ -1398,9 +1448,10 @@
     // of provenance without copying either one into the editable outreach log.
     if (h) {
       items.push({
-        type: 'finding', source: priorAudit ? 'reviewed' : 'crawl', when: String(h.checkedAt || '').slice(0, 10),
+        type: 'finding', source: priorAudit ? (priorAudit.history_source === 'nationwide-overlay' ? 'nationwide' : 'reviewed') : 'crawl', when: String(h.checkedAt || '').slice(0, 10),
         tier: h.finding.tier, label: h.finding.label,
         text: h.evidence || h.finding.blurb, pointerUrl: h.ptr, mrfUrl: h.mrf, sourcePage: h.source,
+        additionalFiles: h.additionalFiles, primaryFileLabel: h.primaryFileLabel,
         priority: 1, order: items.length,
       });
     }
@@ -1476,9 +1527,50 @@
       : ('CCN ' + openCcn))
       + (D.generated ? ' · crawled ' + snapshot : '');
 
-    var corr = rec && rec.correction;
+    var corr = correctionOf(openCcn);
     $('oc-finding-title').textContent = h ? h.finding.label : 'No audit finding recorded';
     $('oc-finding-detail').textContent = h ? h.evidence || '' : '';
+    var reviewedFollowup = D.reviewedFollowups && D.reviewedFollowups[openCcn];
+    var followupBlock = $('oc-reviewed-followup');
+    if (followupBlock) {
+      followupBlock.hidden = !reviewedFollowup;
+      if (reviewedFollowup) {
+        followupBlock.innerHTML = '<h4>Later reviewed observation · ' + esc(String(reviewedFollowup.observedAt).slice(0, 10)) + '</h4>'
+          + '<p class="oc-hint">This follow-up does not replace the standing finding.</p>'
+          + '<p>' + esc(reviewedFollowup.disposition.replace(/-/g, ' ')) + '</p>'
+          + '<p><strong>Next check:</strong> ' + esc(reviewedFollowup.nextAction) + '</p>';
+      }
+    }
+    var investigationStep = D.investigationNextSteps && D.investigationNextSteps[openCcn];
+    var investigationBlock = $('oc-investigation-next-step');
+    if (investigationBlock) {
+      investigationBlock.hidden = !investigationStep || !!reviewedFollowup;
+      if (investigationStep && !reviewedFollowup) {
+        var retainedStanding = investigationStep.stream === 'standing-evidence-follow-up';
+        var supportedUncertainty = investigationStep.stream === 'supported-uncertainty-monitor';
+        var sameCampusCcnReview = investigationStep.stream === 'same-campus-ccn-review';
+        investigationBlock.innerHTML = '<h4>' + (retainedStanding ? 'Standing evidence retained · later check needs review'
+          : supportedUncertainty ? 'Supported uncertainty · follow-up required'
+            : sameCampusCcnReview ? 'Same-campus CCN scope needs review' : 'Unresolved investigation')
+          + ' · ' + esc(investigationStep.gate.replace(/-/g, ' ')) + '</h4>'
+          + (retainedStanding
+            ? '<p class="oc-hint">The later incomplete check does not erase the standing finding.'
+              + (investigationStep.latestObservedAt ? ' Latest check: ' + esc(String(investigationStep.latestObservedAt).slice(0, 10)) + '.' : '')
+              + '</p>'
+            : supportedUncertainty
+              ? '<p class="oc-hint">The documented conflict remains open; this is not a verified recovery.'
+                + (investigationStep.latestObservedAt ? ' Reviewed ' + esc(String(investigationStep.latestObservedAt).slice(0, 10)) + '.' : '')
+                + '</p>'
+            : sameCampusCcnReview
+              ? '<p class="oc-hint">A shared hospital name and address do not establish which enrollment a current file covers.</p>'
+            : '')
+          + (investigationStep.browserFileStatus
+            ? '<p class="oc-hint">Last browser file result: ' + esc(investigationStep.browserFileStatus.replace(/-/g, ' '))
+              + (investigationStep.browserFileObservedAt ? ' · ' + esc(String(investigationStep.browserFileObservedAt).slice(0, 10)) : '') + '</p>'
+            : '')
+          + '<p><strong>Next check:</strong> ' + esc(investigationStep.nextAction) + '</p>';
+      }
+    }
     var tags = '';
     if (h) {
       // Show the standing verdict first. When that is a correction, the crawl's
@@ -1498,7 +1590,10 @@
       if (ptr) tags += '<a class="linkbtn"' + (corr && corr.pointerUrl ? ' data-edited="1"' : '')
         + ' href="' + esc(ptr) + '" target="_blank" rel="noopener noreferrer">POINTER</a>';
       if (mrf) tags += '<a class="linkbtn"' + (corr && corr.mrfUrl ? ' data-edited="1"' : '')
-        + ' href="' + esc(mrf) + '" target="_blank" rel="noopener noreferrer">FILE</a>';
+        + ' href="' + esc(mrf) + '" target="_blank" rel="noopener noreferrer">' + (!(corr && corr.mrfUrl) && h.primaryFileLabel ? 'FILE: ' + esc(h.primaryFileLabel) : 'FILE') + '</a>';
+      if (!(corr && corr.mrfUrl)) h.additionalFiles.forEach(function (file) {
+        tags += '<a class="linkbtn" href="' + esc(file[1]) + '" target="_blank" rel="noopener noreferrer">FILE: ' + esc(file[0]) + '</a>';
+      });
       if (h.source) tags += '<a class="linkbtn" href="' + esc(h.source)
         + '" target="_blank" rel="noopener noreferrer">PAGE</a>';
     }
@@ -1507,12 +1602,33 @@
     var assessmentBlock = $('oc-assessment');
     if (assessmentBlock) {
       assessmentBlock.hidden = !assessment;
-      if (assessment) assessmentBlock.innerHTML = '<h4>Separate checks</h4><p class="oc-hint">Checked ' + esc(String(assessment.checked_at).slice(0, 10)) + '</p>'
+      if (assessment) assessmentBlock.innerHTML = '<h4>Separate checks</h4><p class="oc-hint">' + esc(assessment.source || 'Observation') + ' · Checked ' + esc(String(assessment.checked_at || '').slice(0, 10))
+        + '. These observations are separate from the standing finding; an unsuccessful later request does not erase earlier evidence.</p>'
         + '<dl>' + [['Website', assessment.website], ['Pointer', assessment.pointer], ['Hospital identity', assessment.identity],
           ['File access', assessment.file_access], ['Date / template', (assessment.metadata || '').replace(/-/g, ' ')],
           ['Browser check', assessment.browser_observation], ['Remaining check', (assessment.blocker || '').replace(/-/g, ' ')]].filter(function (field) { return field[1]; }).map(function (field) {
             return '<dt>' + esc(field[0]) + '</dt><dd>' + esc(field[1]) + '</dd>';
-          }).join('') + '</dl>';
+          }).join('') + '</dl>'
+        + (assessment.pointer === 'retrieved-facility-match-unresolved' && assessment.pointer_checked_url
+          ? '<p class="oc-hint">Checked pointer source captured ' + esc(String(assessment.pointer_corpus_observed_at || '').slice(0, 10))
+            + '; no entry has been assigned to this hospital.</p><div class="oc-ev-links"><a class="linkbtn" href="'
+            + esc(assessment.pointer_checked_url) + '" target="_blank" rel="noopener noreferrer">CHECKED POINTER</a>'
+            + (assessment.pointer_final_url && assessment.pointer_final_url !== assessment.pointer_checked_url
+              ? '<a class="linkbtn" href="' + esc(assessment.pointer_final_url)
+                + '" target="_blank" rel="noopener noreferrer">REDIRECT DESTINATION</a>' : '') + '</div>'
+          : '')
+        + (assessment.pointer_raw_integrity === 'hash-conflict'
+          ? '<p class="oc-hint">Pointer cache warning: retained raw bytes do not match the crawl-state hash. That hash is historical, not corroborated by this cache. This does not change the hospital finding.</p>' : '')
+        + (assessment.pointer_historical_checked_url
+          ? '<p class="oc-hint">Earlier pointer bytes were retained from ' + esc(String(assessment.pointer_historical_observed_at || '').slice(0, 10))
+            + (assessment.pointer_historical_raw_integrity === 'hash-corroborated' ? ' and match their recorded hash' : ' but their recorded hash is not corroborated')
+            + '. A later pointer request failed; this earlier capture is not proof of current access.</p><div class="oc-ev-links"><a class="linkbtn" href="'
+            + esc(assessment.pointer_historical_checked_url) + '" target="_blank" rel="noopener noreferrer">EARLIER POINTER SOURCE</a></div>' : '')
+        + ((D.assessmentHistory && D.assessmentHistory[openCcn] || []).length > 1
+          ? '<details><summary>Earlier separate checks</summary>' + D.assessmentHistory[openCcn].slice(1).map(function (prior) {
+            return '<p><strong>' + esc(String(prior.checked_at || 'Undated').slice(0, 10)) + ' · ' + esc(prior.source || 'Observation')
+              + '</strong><br>' + esc([prior.pointer, prior.identity, prior.file_access, prior.metadata, prior.blocker].filter(Boolean).join(' · ')) + '</p>';
+          }).join('') + '</details>' : '');
     }
     // Every raw transcript collected for this hospital's finding. Status and
     // edge attribution are inline so the list reads without opening a file.

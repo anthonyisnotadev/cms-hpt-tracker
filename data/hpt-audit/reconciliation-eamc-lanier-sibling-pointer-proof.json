@@ -1,0 +1,38 @@
+{
+  "ccn": "010780",
+  "hospital_name": "EAMC - LANIER",
+  "observed_at": "2026-09-16T11:29:00.000Z",
+  "official_identity_page": "https://www.eastalabamahealth.org/patient-and-guests/request-medical-records",
+  "official_identity_page_http_status": 200,
+  "official_identity_page_sha256": "0502741e04615bea2c25c385866a26c712eb87c6794258400b168d2eb75422b0",
+  "official_identity": "EAMC-Lanier Rural Emergency Hospital, 4800 48th Street, Valley, AL 36854",
+  "system_pricing_page": "https://www.eastalabamahealth.org/patient-and-guests/billing-and-financial-information/estimate-my-cost",
+  "system_pricing_page_http_status": 200,
+  "system_pricing_page_sha256": "1692cf046adff36b6659d6639b03c0e480bba9ac406fa3b0475a0a12e6805a8e",
+  "pointer_url": "https://www.eastalabamahealth.org/cms-hpt.txt",
+  "pointer_final_url": "https://www.eastalabamahealth.org/sites/default/files/2026-01/cms-hpt.txt",
+  "pointer_http_status": 206,
+  "pointer_content_type": "text/plain",
+  "pointer_sha256": "5c46f173f79bd298a3fd69263e0e8ef1764f9696d2164523b83ff60b4012ae27",
+  "pointer_entries": [
+    {
+      "location_name": "East Alabama Medical Center",
+      "mrf_url": "https://eastalabamahealth.org/sites/default/files/financial-service/636000526_EastAlabama_standardcharges.csv.zip"
+    }
+  ],
+  "pointer_lanier_entry_present": false,
+  "pointer_declared_archive_http_status": 206,
+  "pointer_declared_archive_total_bytes_from_range": 6851692,
+  "archive_sample_bytes": 262144,
+  "archive_sample_sha256": "ed6147396ccdc438400e76f30d6dac4cdfd6704425ac5dc3e2abf660620f2037",
+  "archive_sample_path": "cms_data/hpt/nationwide-verification/file-byte-proof/ed6147396ccdc438400e76f30d6dac4cdfd6704425ac5dc3e2abf660620f2037.bin",
+  "archive_header_hospital_name": "East Alabama Medical Center",
+  "archive_header_location_name": "East Alabama Medical Center",
+  "archive_header_address": "2000 PEPPERELL PKWY OPELIKA, AL 36801",
+  "archive_header_license_state": "AL",
+  "archive_header_declared_date": "2026-01-01",
+  "archive_header_cms_version": "3.0.0",
+  "related_opelika_ccn": "010029",
+  "disposition": "current-system-pointer-and-archive-are-opelika-sibling-not-lanier",
+  "next_action": "Seek a separate first-party EAMC-Lanier pointer entry or facility-specific file explicitly naming the 4800 48th Street Valley campus. Do not assign the current Opelika East Alabama Medical Center archive or its metadata to CCN 010780; recheck the root only after a publisher change."
+}

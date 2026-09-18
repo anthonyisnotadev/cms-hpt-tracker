@@ -1,0 +1,21 @@
+{
+  "ccn": "150051",
+  "observed_at": "2026-09-17T20:20:00.000Z",
+  "pointer_url": "https://iuhealth.org/cms-hpt.txt",
+  "pointer_sha256": "289bd5ceb85a301625e1e342c603ef7682d931299cda825ecaa5fb2e10f094a2",
+  "mrf_url": "https://cdn.iuhealth.org/resources/351720796_indiana-university-health-bloomington-inc._standardcharges.zip",
+  "mrf_http_status": 206,
+  "declared_hospital_name": "Indiana University Health Bloomington Inc.",
+  "declared_location_name": "IU Health Bloomington Hospital",
+  "declared_address": "2651 E Discovery Pkwy, Bloomington, IN 47408",
+  "declared_license_state": "IN",
+  "declared_date": "2026-03-25",
+  "version": "3.0",
+  "official_domain": "iuhealth.org",
+  "identity_page_url": "https://iuhealth.org/find-locations/iu-health-bloomington-hospital",
+  "pricing_page_url": "https://iuhealth.org/schedule-an-appointment/price-estimates/standard-charge-listing",
+  "identity_basis": "exact-root-pointer-entry-current-first-party-facility-page-address-and-pointer-linked-file-location-address-state",
+  "observed_finding": "mrf-template-version-noncanonical",
+  "expected_version": "3.0.0",
+  "note": "The current IU Health root pointer explicitly lists the Bloomington file, and the official facility page independently identifies IU Health Bloomington Hospital at 2651 E Discovery Pkwy. The retained file metadata matches that location and Indiana state and is dated 2026-03-25, but declares literal version 3.0 rather than 3.0.0; this is retained as template review, not current-compliance verification."
+}

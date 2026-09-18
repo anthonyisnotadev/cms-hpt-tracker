@@ -1,0 +1,54 @@
+# curl-style evidence for https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbWMCGENEVAAL&type=CDMWithoutLabel&fileType=CSV
+# fetched 2026-09-16T02:59:29.920Z with the tracker's BROWSER_HEADERS (production client)
+# record:  | (ad-hoc URL) |  | finding: ad-hoc
+
+* DNS apps.para-hcfs.com: 104.43.160.21
+
+> GET /PTT/FinalLinks/Reports.aspx  (request headers sent on every hop)
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
+> Accept: text/plain,text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8
+> Accept-Language: en-US,en;q=0.9
+> Upgrade-Insecure-Requests: 1
+> Sec-Fetch-Dest: document
+> Sec-Fetch-Mode: navigate
+> Sec-Fetch-Site: none
+> Cache-Control: no-cache
+
+* final response: https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbWMCGENEVAAL&type=CDMWithoutLabel&fileType=CSV
+< HTTP 200
+< cache-control: private
+< content-disposition: attachment; filename="636004474_geneva-county-healthcare-authority-inc_standardcharges.csv"
+< content-type: application/octet-stream
+< date: Wed, 16 Sep 2026 02:59:37 GMT
+< server: Microsoft-IIS/10.0
+< x-aspnet-version: 4.0.30319
+< x-powered-by: ASP.NET
+< --- body (262144 bytes read, truncated) ---
+< hospital_name,last_updated_on,version,location_name,hospital_address,license_number | AL,type_2_npi,"To the best of its knowledge and belief, this hospital has included all applicable standard charge information in accordance with the requirements of 45 CFR 180.50, and the information encoded is true, accurate, and complete as of the date in the file. This hospital has included all payer-specific negotiated charges in dollars that can be expressed as a dollar amount. For payer-specific negotiated charges that cannot be expressed as a dollar amount in the machine-readable file or not knowable in advance, the hospital attests that the payer-specific negotiated charge is based on a contractual algorithm, percentage or formula that precludes the provision of a dollar amount and has provided all necessary information available to the hospital for the public to be able to derive the dollar amount, including, but not limited to, the specific fee schedule or components referenced in such percentage, algorithm or formula.",attester_name
+< GENEVA COUNTY HEALTHCARE AUTHORITY INC,2026-06-30,3.0.0,GENEVA COUNTY HEALTHCARE AUTHORITY INC|WIREGRASS MEDICAL CENTER,1200 W Maple Ave Geneva AL 36340,H3101,1134955370,true,Janet Smith
+< description,code|1,code|1|type,code|2,code|2|type,code|3,code|3|type,code|4,code|4|type,setting,drug_unit_of_measurement,drug_type_of_measurement,standard_charge|gross,standard_charge|discounted_cash,payer_name,plan_name,modifiers,standard_charge|negotiated_dollar,standard_charge|negotiated_percentage,standard_charge|negotiated_algorithm,median_amount,10th_percentile,90th_percentile,count,standard_charge|min,standard_charge|max,standard_charge|methodology,additional_generic_notes
+< ADMINISTRATION OF INFLUENZA VIRUS VACCINE,12000080,CDM,0771,RC,,,G0008,HCPCS,outpatient,,,108.05,81.04,AETNA MCR,AETNA MCR,,64.83,60.00,,64.83,,,0,40.00,73.47,percent of total billed charges,There were zero instances of the item or service in the 15 months prior to posting the file
+< ADMINISTRATION OF INFLUENZA VIRUS VACCINE,12000080,CDM,0771,RC,,,G0008,HCPCS,outpatient,,,108.05,81.04,BCBS - ALL PLANS,BCBS - ALL PLANS,,62.03,,,,,,0,40.00,73.47,fee schedule,There were zero instances of the item or service in the 15 months prior to posting the file
+< ADMINISTRATION OF INFLUENZA VIRUS VACCINE,12000080,CDM,0771,RC,,,G0008,HCPCS,outpatient,,,108.05,81.04,HUMANA COMM - ALL OTHER PLANS,HUMANA COMM - ALL OTHER PLANS,,60.51,56.00,,60.51,,,0,40.00,73.47,percent of total billed charges,There were zero instances of the item or service in the 15 months prior to posting the file
+< ADMINISTRATION OF INFLUENZA VIRUS VACCINE,12000080,CDM,0771,RC,,,G0008,HCPCS,outpatient,,,108.05,81.04,HUMANA MCR ADV,HUMANA MCR ADV,,64.83,60.00,,64.83,,,0,40.00,73.47,percent of total billed charges,There were zero instances of the item or service in the 15 months prior to posting the file
+< ADMINISTRATION OF INFLUENZA VIRUS VACCINE,12000080,CDM,0771,RC,,,G0008,HCPCS,outpatient,,,108.05,81.04,UHC ALL PAYER - ALL OTHER PLANS,UHC ALL PAYER - ALL OTHER PLANS,,40.00,,,,,,0,40.00,73.47,fee schedule,There were zero instances of the item or service in the 15 months prior to posting the file
+< ADMINISTRATION OF INFLUENZA VIRUS VACCINE,12000080,CDM,0771,RC,,,G0008,HCPCS,outpatient,,,108.05,81.04,UHC MCR ADV,UHC MCR ADV,,64.83,60.00,,64.83,,,0,40.00,73.47,percent of total billed charges,There were zero instances of the item or service in the 15 months prior to posting the file
+< ADMINISTRATION OF INFLUENZA VIRUS VACCINE,12000080,CDM,0771,RC,,,G0008,HCPCS,outpatient,,,108.05,81.04,AETNA COMM - ALL OTHER PLANS,AETNA COMM - ALL OTHER PLANS,,54.48,,,,,,0,40.00,73.47,other,Medicare OPPS Percent [HCPCS] ( 40.3569*1.35 ) Term Line 94 | There were zero instances of the item or service in the 15 months prior to posting the file
+< ADMINISTRATION OF INFLUENZA VIRUS VACCINE,12000080,CDM,0771,RC,,,G0008,HCPCS,outpatient,,,108.05,81.04,CHOICE CARE - ALL PLANS,CHOICE CARE - ALL PLANS,,64.83,60.00,,64.83,,,0,40.00,73.47,percent of total billed charges,There were zero instances of the item or service in the 15 months prior to posting the file
+< ADMINISTRATION OF INFLUENZA VIRUS VACCINE,12000080,CDM,0771,RC,,,G0008,HCPCS,outpatient,,,108.05,81.04,MULTIPLAN-ALL PLANS,MULTIPLAN-ALL PLANS,,73.47,68.00,,73.47,,,0,40.00,73.47,percent of total billed charges,There were zero instances of the item or service in the 15 months prior to posting the file
+< ADMINISTRATION OF PNEUMOCOCCAL VACCINE,12000090,CDM,0771,RC,,,G0009,HCPCS,outpatient,,,108.05,81.04,CHOICE CARE - ALL PLANS,CHOICE CARE - ALL PLANS,,64.83,60.00,,64.83,,,0,40.00,73.47,percent of total billed charges,There were zero instances of the item or service in the 15 months prior to posting the file
+< ADMINISTRATION OF PNEUMOCOCCAL VACCINE,12000090,CDM,0771,RC,,,G0009,HCPCS,outpatient,,,108.05,81.04,HUMANA MCR ADV,HUMANA MCR ADV,,64.83,60.00,,64.83,,,0,40.00,73.47,percent of total billed charges,There were zero instances of the item or service in the 15 months prior to posting the file
+< ADMINISTRATION OF PNEUMOCOCCAL VACCINE,12000090,CDM,0771,RC,,,G0009,HCPCS,outpatient,,,108.05,81.04,MULTIPLAN-ALL PLANS,MULTIPLAN-ALL PLANS,,73.47,68.00,,73.47,,,0,40.00,73.47,percent of total billed charges,There were zero instances of the item or service in the 15 months prior to posting the file
+< ADMINISTRATION OF PNEUMOCOCCAL VACCINE,12000090,CDM,0771,RC,,,G0009,HCPCS,outpatient,,,108.05,81.04,AETNA COMM - ALL OTHER PLANS,AETNA COMM - ALL OTHER PLANS,,54.48,,,,,,0,40.00,73.47,other,Medicare OPPS Percent [HCPCS] ( 40.3569*1.35 ) Term Line 94 | There were zero instances of the item or service in the 15 months prior to posting the file
+< ADMINISTRATION OF PNEUMOCOCCAL VACCINE,12000090,CDM,0771,RC,,,G0009,HCPCS,outpatient,,,108.05,81.04,AETNA MCR,AETNA MCR,,64.83,60.00,,64.83,,,0,40.00,73.47,percent of total billed charges,There were zero instances of the item or service in the 15 months prior to posting the file
+< ADMINISTRATION OF PNEUMOCOCCAL VACCINE,12000090,CDM,0771,RC,,,G0009,HCPCS,outpatient,,,108.05,81.04,BCBS - ALL PLANS,BCBS - ALL PLANS,,62.03,,,,,,0,40.00,73.47,fee schedule,There were zero instances of the item or service in the 15 months prior to posting the file
+< ADMINISTRATION OF PNEUMOCOCCAL VACCINE,12000090,CDM,0771,RC,,,G0009,HCPCS,outpatient,,,108.05,81.04,HUMANA COMM - ALL OTHER PLANS,HUMANA COMM - ALL OTHER PLANS,,60.51,56.00,,60.51,,,0,40.00,73.47,percent of total billed charges,There were zero instances of the item or service in the 15 months prior to posting the file
+< ADMINISTRATION OF PNEUMOCOCCAL VACCINE,12000090,CDM,0771,RC,,,G0009,HCPCS,outpatient,,,108.05,81.04,UHC ALL PAYER - ALL OTHER PLANS,UHC ALL PAYER - ALL OTHER PLANS,,40.00,,,,,,0,40.00,73.47,fee schedule,There were zero instances of the item or service in the 15 months prior to posting the file
+< ADMINISTRATION OF PNEUMOCOCCAL VACCINE,12000090,CDM,0771,RC,,,G0009,HCPCS,outpatient,,,108.05,81.04,UHC MCR ADV,UHC MCR ADV,,64.83,60.00,,64.83,,,0,40.00,73.47,percent of total billed charges,There were zero instances of the item or service in the 15 months prior to posting the file
+< ADMINISTRATION OF HEPATITIS B VACCINE,12000100,CDM,0771,RC,,,G0010,HCPCS,outpatient,,,148.09,111.07,AETNA COMM - ALL OTHER PLANS,AETNA COMM - ALL OTHER PLANS,,54.48,,,,,,0,40.00,100.70,other,Medicare OPPS Percent [HCPCS] ( 40.3569*1.35 ) Term Line 94 | There were zero instances of the item or service in the 15 months prior to posting the file
+< ADMINISTRATION OF HEPATITIS B VACCINE,12000100,CDM,0771,RC,,,G0010,HCPCS,outpatient,,,148.09,111.07,BCBS - ALL PLANS,BCBS - ALL PLANS,,62.03,,,,,,0,40.00,100.70,fee schedule,There were zero instances of the item or service in the 15 months prior to posting the file
+< ADMINISTRATION OF HEPATITIS B VACCINE,12000100,CDM,0771,RC,,,G0010,HCPCS,outpatient,,,148.09,111.07,HUMANA COMM - ALL OTHER PLANS,HUMANA COMM - ALL OTHER PLANS,,82.93,56.00,,82.93,,,0,40.00,100.70,percent of total billed charges,There were zero instances of the item or service in the 15 months prior to posting the file
+< ADMINISTRATION OF HEPATITIS B VACCINE,12000100,CDM,0771,RC,,,G0010,HCPCS,outpatient,,,148.09,111.07,HUMANA MCR ADV,HUMANA
+< ... (body excerpt truncated at 8 KB)
+
+* total time: 12714 ms

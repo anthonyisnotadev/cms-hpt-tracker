@@ -1,0 +1,45 @@
+{
+  "ccn": "370214",
+  "observed_at": "2026-09-17T10:05:55.847Z",
+  "roster_name": "LINDSAY MUNICIPAL HOSPITAL",
+  "roster_address": "1305 W CHEROKEE STREET - HIGHWAY 19 WEST",
+  "roster_city": "LINDSAY",
+  "roster_state": "OK",
+  "roster_zip": "73052",
+  "pointer": {
+    "url": "https://lindsayhospital.com/cms-hpt.txt",
+    "final_url": "https://lindsayhospital.com/cms-hpt.txt/",
+    "http_status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "response_kind": "html-page-not-pointer",
+    "sha256": "5829d5d8f13fa79886c168c9b937df8b20b3cfbab29e5c4717e448166e3c6731",
+    "bytes": 77747,
+    "retained_sample": "cms_data/hpt/nationwide-verification/file-byte-proof/5829d5d8f13fa79886c168c9b937df8b20b3cfbab29e5c4717e448166e3c6731.bin"
+  },
+  "source_page": {
+    "url": "https://lindsayhospital.com/patient-information/",
+    "http_status": 200,
+    "sha256": "60283f7c829f2e44422f0fa2e3f2004563293a0f8f6887233d4c35850d830b02",
+    "bytes": 64083,
+    "exact_file_link_present": true,
+    "retained_sample": "cms_data/hpt/nationwide-verification/file-byte-proof/60283f7c829f2e44422f0fa2e3f2004563293a0f8f6887233d4c35850d830b02.bin",
+    "address_context": "The 308 W. Cherokee address appears under BUSINESS OFFICE AND MEDICAL RECORDS, not as the MRF hospital-location declaration."
+  },
+  "file": {
+    "url": "https://lindsayhospital.com/wp-content/uploads/2026/04/730745473_lindsay-municipal-hospital_standardcharges.csv",
+    "http_status": 206,
+    "content_range": "bytes 0-262143/6686934",
+    "total_bytes": 6686934,
+    "retained_bytes": 262144,
+    "sample_sha256": "d468c4cf4131c438a43f5873effb35bfddf22f1dbb4b3bb29f3fc4c4d829de3e",
+    "retained_sample": "cms_data/hpt/nationwide-verification/file-byte-proof/d468c4cf4131c438a43f5873effb35bfddf22f1dbb4b3bb29f3fc4c4d829de3e.bin",
+    "declared_hospital_name": "Lindsay Municipal Hospital Authority",
+    "declared_location_name": "Lindsay Municipal Hospital",
+    "declared_address": "1305 W Cherokee, Lindsay, OK, 73052",
+    "declared_license_state": "OK",
+    "declared_date_raw": "4/3/2026",
+    "declared_date": "2026-04-03",
+    "template_version": "3.0.0"
+  },
+  "conclusion": "Current official page links a CSV matching the roster hospital location; the page separately lists a business-office address. Root serves HTML, not a structured pointer. Full MRF not validated."
+}

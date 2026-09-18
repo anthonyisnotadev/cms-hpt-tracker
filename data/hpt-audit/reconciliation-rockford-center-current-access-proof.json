@@ -1,0 +1,24 @@
+{
+  "ccn": "084002",
+  "hospital_name": "Rockford Center",
+  "observed_at": "2026-09-19T15:00:00Z",
+  "official_site": "https://rockfordcenter.com/",
+  "official_facility_page": "https://rockfordcenter.com/",
+  "pointer_url": "https://rockfordcenter.com/cms-hpt.txt",
+  "pointer_browser_status": "cloudflare-challenge",
+  "official_identity": "Rockford Center, 100 Rockford Drive, Newark, DE 19713",
+  "identity_sources": [
+    "CMS roster/worklist identity",
+    "Turquoise provider page (lead only): https://turquoise.health/providers/rockford/information"
+  ],
+  "search_observations": [
+    "Search results identify the official Rockford Center domain and UHS affiliation, but did not expose a publisher-declared current CMS CSV or JSON MRF.",
+    "Turquoise reports a provider-downloaded file but is a third-party lead and does not establish official pointer/file linkage."
+  ],
+  "browser_observations": [
+    "The official root rendered Cloudflare's 'Just a moment... Performing security verification' page in the interactive browser.",
+    "The exact official cms-hpt.txt route rendered the same Cloudflare security-verification page; no pointer bytes or MRF bytes were available."
+  ],
+  "disposition": "first-party-domain-confirmed-pointer-and-root-cloudflare-challenge-mrf-unresolved",
+  "next_action": "Retry the exact official root, pricing route and cms-hpt.txt through a materially different authorized route; obtain a facility-specific CMS-template CSV or JSON MRF, then verify complete bytes, Rockford identity/address, declared date/version and usability before promotion."
+}

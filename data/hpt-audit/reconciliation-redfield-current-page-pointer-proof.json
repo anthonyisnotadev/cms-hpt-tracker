@@ -1,0 +1,26 @@
+{
+  "ccn": "431316",
+  "reviewed_at": "2026-09-18T15:20:00.000Z",
+  "official_site": "https://www.redfieldcmh.org/departments/health-info-management/",
+  "facility_identity": {
+    "name": "Redfield Community Memorial Hospital",
+    "street": "111 West 10th Ave",
+    "city": "Redfield",
+    "state": "SD",
+    "zip": "57469",
+    "page_role": "First-party facility identity and health-care-pricing page"
+  },
+  "pricing_page": {
+    "linked_workbook": "https://www.redfieldcmh.org/wp-content/uploads/2023/10/redfield-community-memorial-pricing.xlsx",
+    "linked_workbook_observation": "The current first-party page exposes a 2023 XLSX pricing workbook; it is not treated as a current CMS 3.0.0 MRF without bytes and schema metadata."
+  },
+  "pointer_observation": {
+    "url": "https://www.redfieldcmh.org/cms-hpt.txt",
+    "http_status": 202,
+    "body_sha256": "",
+    "result": "SGCaptcha interstitial HTML; pointer text was not retrieved",
+    "route": "https://www.redfieldcmh.org/.well-known/sgcaptcha/"
+  },
+  "disposition": "This confirms the correct Redfield/South Dakota facility route and separates its historical workbook from the Kansas same-name PARA candidate. No file was imported and no current CMS MRF claim was made.",
+  "next_action": "Recover a content-bearing Redfield/Avera cms-hpt.txt or current MRF through a permitted route, then verify file bytes, Redfield identity, SD state, date, version and usability."
+}

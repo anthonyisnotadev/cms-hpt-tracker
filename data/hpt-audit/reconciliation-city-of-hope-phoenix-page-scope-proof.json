@@ -1,0 +1,14 @@
+{
+  "ccn": "030138",
+  "observed_at": "2026-09-17T00:00:00.000Z",
+  "official_site": "https://www.cityofhope.org/",
+  "pricing_page_url": "https://www.cityofhope.org/patients/our-value-and-pricing/pricing-information",
+  "pricing_page_observation": "The current City of Hope pricing page lists a CMS MRF for City of Hope National Medical Center and regional California facilities, but no Phoenix-specific MRF.",
+  "root_pointer_urls": [
+    "https://www.cityofhope.org/cms-hpt.txt",
+    "https://www.cancercenter.com/cms-hpt.txt"
+  ],
+  "root_pointer_observation": "Both recorded root-pointer locations returned HTTP 403 before pointer bytes were exposed.",
+  "disposition": "official-pricing-page-scope-does-not-expose-phoenix-mrf",
+  "next_action": "Locate a Phoenix-specific first-party pointer or MRF and independently reconcile its Goodyear/Phoenix campus identity before promotion."
+}

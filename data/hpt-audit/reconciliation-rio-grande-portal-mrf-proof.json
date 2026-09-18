@@ -1,0 +1,41 @@
+{
+  "ccn": "061301",
+  "hospital_name": "Rio Grande Hospital",
+  "observed_at": "2026-09-19T06:30:00Z",
+  "official_site": "https://riograndehospital.org/",
+  "official_identity_sources": [
+    "https://riograndehospital.org/billing-financial-services/",
+    "https://riograndehospital.org/"
+  ],
+  "official_identity": "Rio Grande Hospital, 310 County Road 14, Del Norte, CO 81132, CCN 061301",
+  "official_pricing_page": "https://riograndehospital.org/billing-financial-services/",
+  "official_page_linkage": "The official billing page links the Revenue Masters payer-transparency portal and labels its hospital charges CSV download as the hospital charge/price listing.",
+  "portal_url": "https://riograndehospital.pg.revenuemasters.com/disclaimer",
+  "portal_browser_status": "official-portal-rendered",
+  "mrf_url": "https://riograndehospital.pg.revenuemasters.com/cdm-files/Rio%20Grande%20CDM%20FILE.csv",
+  "mrf_http_status": 200,
+  "mrf_content_type": "text/csv; charset=UTF-8",
+  "mrf_total_bytes": 6350224,
+  "mrf_sha256": "50663577F8DDCECC49A74F41ACEA16BBDBE03EE434B4A6167D0BFF1F0FDC33CB",
+  "mrf_last_modified": "2026-07-08T21:35:51Z",
+  "mrf_range_bytes": 262144,
+  "mrf_range_sha256": "FFFF3523F46DC98D8734DEF1E6D58AD7A783709CA31B8E3073341F30DF39F344",
+  "mrf_declared_date": "2026-07-08",
+  "mrf_declared_version": "2.0.0",
+  "mrf_declared_location": "Rio Grande Hospital",
+  "mrf_declared_address": "310 Country Road 14 Del Norte, CO 81132",
+  "mrf_declared_license": "841276376",
+  "mrf_rows": 6135,
+  "shoppable_file_url": "https://riograndehospital.pg.revenuemasters.com/shoppable-files/841276376_rio-grande-hospital_shoppable.csv",
+  "shoppable_file_total_bytes": 550407,
+  "shoppable_file_range_sha256": "1207B12351B05A9E6D502C668C01809F9031987FC3CB5080F9AAC4B4D438FC05",
+  "pointer_url": "https://riograndehospital.org/cms-hpt.txt",
+  "pointer_status": "not-retrieved-in-this-observation",
+  "search_observations": [
+    "The official page's portal disclaimer identifies the downloads as hospital charges and shoppable CSVs and states the portal is for CMS price transparency.",
+    "The complete hospital charge CSV is retrievable and contains facility identity, address, Colorado license, date, version, gross/discounted cash and payer-negotiated columns. A bounded first response confirms the same metadata.",
+    "The file is linked through the official pricing page via a third-party portal; the root cms-hpt.txt pointer was not used to infer absence or compliance."
+  ],
+  "disposition": "official-page-linked-portal-current-mrf-identity-and-metadata-confirmed-pointer-linkage-pending",
+  "next_action": "Validate the complete CSV against the current CMS schema/usability checks and obtain or recheck the root cms-hpt.txt pointer through an authorized route before considering promotion to a current verified claim."
+}

@@ -1,0 +1,24 @@
+{
+  "ccn": "061313",
+  "hospital_name": "Kit Carson County Memorial Hospital",
+  "observed_at": "2026-09-19T07:30:00Z",
+  "official_site": "https://www.kcchsd.org/",
+  "official_identity_sources": [
+    "https://www.kcchsd.org/",
+    "https://www.kcchsd.org/patient-billing-information/",
+    "https://www.kcchsd.org/locations/"
+  ],
+  "official_identity": "Kit Carson County Memorial Hospital, 286 16th Street, Burlington, CO 80807, CCN 061313",
+  "official_pricing_page": "https://www.kcchsd.org/patient-billing-information/",
+  "pointer_url": "https://www.kcchsd.org/cms-hpt.txt",
+  "pointer_direct_status": "blocked-by-anti-robot-validation",
+  "pricing_page_browser_status": "blocked-by-anti-robot-validation",
+  "browser_title": "Visitor anti-robot validation",
+  "browser_observation": "Interactive browser rendered BitNinja/reCAPTCHA validation on both the exact pointer and official billing page; no file bytes or pointer content were available.",
+  "search_observations": [
+    "The official billing page is indexed and identifies KCCMH at 286 16th Street, Burlington, Colorado; it directs patients to call for estimates rather than exposing a file in the indexed content.",
+    "The exact pointer and billing page were independently opened in the interactive browser and both reached the same anti-robot validation page."
+  ],
+  "disposition": "official-identity-confirmed-browser-anti-robot-blocked-mrf-unresolved",
+  "next_action": "Retry the exact pointer and official pricing page only after a materially different authorized route or publisher change; require a facility-specific MRF, identity, metadata and usability evidence before promotion. Do not infer absence or noncompliance from the CAPTCHA block."
+}

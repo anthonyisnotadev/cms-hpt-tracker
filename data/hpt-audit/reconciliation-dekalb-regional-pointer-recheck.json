@@ -1,0 +1,12 @@
+{
+  "ccn": "010012",
+  "observed_at": "2026-09-17T20:42:00.000Z",
+  "pointer_url": "https://dekalbregional.com/cms-hpt.txt",
+  "pointer_sha256": "c7530acbdf1ba9d9ad435d77bc2a06fd501e0fcfc40eb43285c8ef52d44c8298",
+  "pointer_response_status": 206,
+  "pointer_observation": "The current root pointer is a 330-byte plain-text document naming DeKalb Regional Medical Center and linking its official pricing page and a CSV MRF URL.",
+  "mrf_url": "https://dekalbregional.org/wp-content/uploads/934333907_Dekalb-Regional-Medical-Center_standardcharges.csv",
+  "mrf_observation": "The exact linked CSV did not return bytes within the bounded client request; browser navigation to the official pricing page reported DNS resolution failure. This is a transport/tool observation only, not evidence that the file is absent.",
+  "interpretation": "Pointer discovery is now complete and facility-specific, but file retrieval and header identity remain unresolved.",
+  "next_action": "Retry the exact CSV through a download-capable route after the host becomes reachable; verify name, Fort Payne address, Alabama license state, date, and version before promotion."
+}

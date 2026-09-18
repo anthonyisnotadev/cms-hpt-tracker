@@ -1,0 +1,33 @@
+{
+  "ccns": ["250043", "251340"],
+  "reviewed_at": "2026-09-18T14:44:26.000Z",
+  "source_page": "https://apps.para-hcfs.com/PTT/FinalLinks/Neshoba_V3.aspx",
+  "page_observation": {
+    "http_status": 200,
+    "facility_name": "Neshoba County General Hospital",
+    "standard_charges_label": "STANDARD CHARGES (CHARGEMASTER PRICING) 3/17/2026",
+    "publisher_route": "PARA / CorroHealth Analytics"
+  },
+  "download_workflow": {
+    "browser_observed_request": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbNCGHPHILADELPHIAMS%20&type=CDMWithoutLabel",
+    "request_method": "GET",
+    "http_status": 200,
+    "content_type": "application/octet-stream",
+    "content_disposition": "attachment; filename=646000892_neshoba-county-general-hospital_standardcharges.csv",
+    "bytes": 46235873,
+    "sha256": "f70004d1303ba437413c0b95763b398a3c53e80a552b6f4f2f69d4dabd06c06f",
+    "range_behavior": "The server ignored a bytes=0-262143 request and returned the complete response; the complete response was hashed and only bounded header lines were parsed."
+  },
+  "header": {
+    "hospital_name": "NESHOBA COUNTY GENERAL HOSPITAL",
+    "location_name": "NESHOBA COUNTY GENERAL HOSPITAL",
+    "address": "1001 Holland Ave Philadelphia MS 39350",
+    "license_state_field": "MS",
+    "last_updated_on": "2026-06-04",
+    "version": "3.0.0",
+    "npi": "1083659734",
+    "attestation": true
+  },
+  "disposition": "This is current page-linked file evidence for the shared Neshoba campus. The file has no CCN-specific discriminator and the operator root pointer remains blocked to this client; do not assign it to acute-care CCN 250043, or treat the page workflow as a root-pointer claim, without effective-dated CMS status and publisher-confirmed CCN/file scope.",
+  "next_action": "Obtain primary CMS enrollment/status history for 250043 and 251340 and a publisher-confirmed current pointer/file scope; retain this exact download as corroborating campus evidence only."
+}

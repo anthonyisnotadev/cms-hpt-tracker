@@ -359,6 +359,13 @@ All outputs stay under the ignored
 - `manual_search.csv` supplies exact phone, address, and name searches for what remains.
 - `run.json` records input hashes, settings, request and byte totals, status totals by queue and source, and the stage-only invariant.
 
+`npm run hpt:domain-observations` converts the preserved Serper verification
+run into `data/hpt-audit/domain-observations.csv`. The public summary omits
+candidate domains, result titles, contacts, and raw responses. It refines only
+still-domainless rows into `site-observed`, `pointer-review`, `candidate-found`,
+`search-not-run`, `search-error`, or `no-candidate`; none of those observations assigns a domain or makes a
+compliance finding.
+
 The trial hashes `domains.json`, the public audit CSVs, `pointers.json`, and
 `tracker.html` before and after running. It stops with an error if any canonical
 file changes. Fetched pointer contacts are obfuscated before a staged pointer is
@@ -613,3 +620,85 @@ storage before running `download` without `--limit`.
   by default.
 - **`entry_date` on the seed dataset is 2022**, so its deep URLs are stale. It is
   used only for *domain* discovery; every pointer file is fetched fresh.
+# 569-hospital discovery review
+
+All 569 frozen CCNs have an evidence-based discovery disposition and explicit
+next action. See `data/hpt-audit/discovery-review-report.md` for final counts,
+per-facility evidence, and unresolved evidence stages. Every discovery label
+remains in the not-assessed tier.
+
+`node scripts/hpt/review-domain-cohort.js` freezes the cohort once and reconciles
+saved runs. `fresh` resumes free, bounded candidate-host requests; `official`
+records bounded root/www pointer requests for individually corroborated domains;
+`alternatives` checks first-party facility and pricing-page links; and `verify`
+parses facility entries and performs bounded reads of pointer-declared MRFs.
+None establishes identity merely from a successful HTTP request. `export` (also
+`npm run hpt:review-569:export`) writes the sanitized reviewed overlay. The old
+single-batch export is retired for this cohort; the original snapshot remains
+available as historical evidence. Raw responses and source paths remain in the
+ignored `.domain-discovery/review-569` directory.
+
+The 352-record candidate-identity second pass uses two saved built-in web
+searches per CCN: an exact name/address query and a website-focused query.
+`npm run hpt:review-569:deepen` rebuilds the worklist, analyzes already-saved
+search responses, rejects directory and unrelated domains, and writes private
+identity decisions. A result is corroborated only when an operator-controlled
+facility page matches the hospital name, roster street address, and city, or a
+reviewed government operator page supplies the same evidence. The command does
+not initiate searches itself or use a paid API; missing search response files
+remain visibly incomplete.
+
+The presentation uses whole-row fingerprints to invalidate stale reviews. It
+does not fall back to old labels after invalidation. New discovery labels, filter
+taxonomy, intervention guidance, and unsent outreach wording share the same
+not-assessed semantics. Fully corroborated recoveries still require the existing
+reviewed-resolution validation. Report generation dates are not observation dates.
+
+`node scripts/hpt/build-html-pointer-target-queue.js` deterministically writes
+`data/hpt-audit/html-pointer-target-queue.csv` from the retained MRF-header,
+pointer-corpus, roster, and reviewed-resolution inputs. It selects successful
+HTML responses for exact roster-linked targets, but does not infer that every
+HTML response is a pricing page: file-like URLs may be access challenges or
+errors. The queue distinguishes exact pointer matches from contextual links,
+and marks previously reviewed HTML intermediaries separately. For each pending
+CCN, verify the official facility, exact pointer entry, target page/file link,
+bounded file bytes, declared identity, state, date, and version independently
+before changing the standing tracker finding.
+The dated `reconciliation-html-target-access-reviews.json` records browser-only
+access/linkage reviews for Campbell County Health and Faith Community Hospital.
+Each is bound to the original target URL hash and remains a priority-2 follow-up;
+an access review alone cannot become reviewed file proof or a tracker verdict.
+
+After changing `reviewed-resolutions.json`, regenerate derived nationwide
+artifacts in this order: `node scripts/hpt/build-nationwide-verification.js`,
+`node scripts/hpt/build-retained-identity-review-queue.js`,
+`node scripts/hpt/audit-nationwide-source-proof.js`,
+`node scripts/hpt/reconcile-nationwide.js`,
+`node scripts/hpt/build-nationwide-queues.js`,
+`npm run hpt:verify:unresolved-worklist`,
+`node scripts/hpt/build-exact-address-alias-candidates.js`,
+`npm run hpt:verify:standing-worklist`,
+`npm run hpt:verify:same-campus-worklist`,
+`npm run hpt:verify:recovered-shortlist`,
+`npm run hpt:verify:supported-worklist`, and
+`node scripts/hpt/build-interventions.js`, then `npm run build` and `npm test`.
+The source-proof and reconciliation inventories must agree with verification
+on every superseded CCN; the regression test checks all 5,419 rows. Superseded
+observations remain historical evidence, not active browser/search queue items.
+The supported-uncertainty worklist separately keeps reviewed identity and
+address conflicts visible with their next check; these are not verified
+recoveries and do not change the genuinely-unresolved count.
+The same-campus worklist finds exact roster name/address duplicates with
+different CCNs and facility types. It flags enrollment-scope review even when
+a later file review has superseded a generic nationwide check. Identical
+campus identity or a shared URL never proves that one current file covers both
+CCNs; verify primary enrollment effective dates before changing either claim.
+
+`node scripts/hpt/review-priority-one-cms-enrollments.js` is an explicit,
+bounded external review of the 22 current tier-1 CCNs against one pinned CMS
+Hospital Enrollments dataset version. It is not part of the offline rebuild:
+reuse the dated `priority-one-cms-enrollment-snapshot-review.json` until the
+priority-one cohort or CMS dataset version materially changes. Each exact-CCN
+response is URL- and SHA-256-bound. A row corroborates that dataset snapshot's
+enrollment identity, not pointer/MRF coverage or real-time status; zero rows
+do not establish CCN termination.

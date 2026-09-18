@@ -1,0 +1,43 @@
+{
+  "ccn": "250036",
+  "roster_name": "GEORGE REGIONAL HEALTH SYSTEM",
+  "roster_address": "859 WINTER STREET",
+  "roster_city": "LUCEDALE",
+  "roster_state": "MS",
+  "roster_zip": "39452",
+  "first_party_contact_url": "https://georgeregional.com/contact/",
+  "contact_page_web_reader_observation": "George Regional Hospital at 859 Winter St, Lucedale, MS 39452",
+  "first_party_pricing_page_url": "https://georgeregional.com/price-insurance-and-billing/",
+  "price_page_web_reader_download_url": "https://georgeregional.com/wp-content/uploads/2026/08/64-6001398_George-Regional-Hospital_standardcharges-5.csv",
+  "web_reader_observed_at": "2026-09-17T06:43:26.000Z",
+  "retained_pointer_artifact": "cms_data/hpt/pointer-corpus/raw/georgeregional.com-d817dd66b43c.txt",
+  "retained_pointer_sha256": "1e5d8235f04c0cfe06164d82c667f28343b23cdd6878f049d5d14bfe19ea7e04",
+  "retained_pointer_mrf_url": "https://georgeregional.com/wp-content/uploads/2025/12/64-6001398_George-Regional-Hospital_standardcharges.csv",
+  "current_pointer_url": "https://georgeregional.com/cms-hpt.txt",
+  "current_pointer_client": {
+    "status": 202,
+    "content_type": "text/html",
+    "response_sha256": "08691f31217b46b378d92e4648154ddd9a74b1871890c803c7572257e555827f",
+    "observed_at": "2026-09-17T06:44:08.275Z",
+    "response_kind": "html-security-challenge"
+  },
+  "pointer_file_client": {
+    "url": "https://georgeregional.com/wp-content/uploads/2025/12/64-6001398_George-Regional-Hospital_standardcharges.csv",
+    "status": 202,
+    "response_sha256": "72598b4aee46bb3e27c6acb96b94389fd55aed6f2ca1a7af526787d92b1f8507",
+    "observed_at": "2026-09-17T06:44:08.284Z",
+    "response_kind": "html-security-challenge"
+  },
+  "page_file_client": {
+    "url": "https://georgeregional.com/wp-content/uploads/2026/08/64-6001398_George-Regional-Hospital_standardcharges-5.csv",
+    "status": 202,
+    "response_sha256": "20432d89643f56ac037c5192fa947b97fdee25e1f9e522ab7854f6603d564f41",
+    "observed_at": "2026-09-17T06:44:08.284Z",
+    "response_kind": "html-security-challenge"
+  },
+  "browser_pointer_result": "Robot Challenge Screen at /.well-known/sgcaptcha/",
+  "browser_pointer_file_result": "Robot Challenge Screen at /.well-known/sgcaptcha/",
+  "browser_page_file_result": "not tested",
+  "byte_readable_file_verified": false,
+  "next_action": "After publisher access changes or through an authorized route, re-read the exact George Regional root pointer and both distinct CSV URLs. Confirm which URL the root declares, which file the first-party price page links, then inspect bounded file bytes for the Lucedale hospital name/address/state, update date and CMS version. Do not infer file absence or currency from the current challenges or URL path dates."
+}

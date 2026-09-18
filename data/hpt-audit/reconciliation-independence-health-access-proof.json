@@ -1,0 +1,48 @@
+{
+  "observed_at": "2026-09-17T10:18:09Z",
+  "ccns": ["390093", "390168", "390219"],
+  "publisher_page": "https://www.independence.health/patients-visitors/financial-services/price-transparency/",
+  "publisher_page_observation": "Rendered in Codex in-app browser on the observation date. Five separately labeled hospital download links were visible; the three exact links below were read from the browser accessibility tree.",
+  "publisher_contact_page": "https://www.independence.health/contact-us/",
+  "facilities": [
+    {
+      "ccn": "390093",
+      "label": "Clarion Hospital",
+      "publisher_address": "1 Hospital Drive, Clarion, PA 16214",
+      "retained_pointer_url": "https://butlerhealthsystem.org/cms-hpt.txt",
+      "retained_pointer_sha256": "a4d65cdc64c96e4bf2827edb316a4f7fde8078d4c07834a6c866994c5763d8a3",
+      "pointer_declared_file_url": "https://www.independence.health/documents/content/251010039_Butler-Clarion_standardcharges.csv",
+      "publisher_page_file_url": "https://www.independence.health/documents/content/251010039_Butler-Clarion_standardcharges.csv",
+      "bounded_head_status": 403,
+      "bounded_range_status": 403
+    },
+    {
+      "ccn": "390168",
+      "label": "Butler Memorial Hospital",
+      "publisher_address": "One Hospital Way, Butler, PA 16001",
+      "retained_pointer_url": "https://butlerhealthsystem.org/cms-hpt.txt",
+      "retained_pointer_sha256": "a4d65cdc64c96e4bf2827edb316a4f7fde8078d4c07834a6c866994c5763d8a3",
+      "pointer_declared_file_url": "https://www.independence.health/documents/content/250965274_Butler-Memorial_StandardCharges.csv",
+      "publisher_page_file_url": "https://www.independence.health/documents/content/250965274_Butler-Memorial_standardcharges.csv",
+      "bounded_head_status": 403,
+      "bounded_range_status": 403,
+      "publisher_url_bounded_head_status": 403,
+      "publisher_url_bounded_range_status": 403,
+      "url_difference": "Case differs in StandardCharges versus standardcharges; byte or redirect equivalence is not established."
+    },
+    {
+      "ccn": "390219",
+      "label": "Latrobe Area Hospital",
+      "publisher_address": "One Mellon Way, Latrobe, PA 15650",
+      "retained_pointer_url": "https://excelahealth.org/cms-hpt.txt",
+      "retained_pointer_sha256": "d672c2de0b156f321bae44b9ef240130d4c74d073f008cea2074ffb55337455d",
+      "pointer_declared_file_url": "https://www.independence.health/documents/content/250965414_LatrobeAreaHospital_StandardCharges.csv",
+      "publisher_page_file_url": "https://www.independence.health/documents/content/250965414_LatrobeAreaHospital_StandardCharges.csv",
+      "bounded_head_status": 403,
+      "bounded_range_status": 403
+    }
+  ],
+  "browser_download_observation": "Clicking the Butler Download Pricing link opened a new about:blank tab; no file bytes or metadata were read from that action. The tabs were closed.",
+  "conclusion": "First-party page and facility addresses corroborate the retained pointer labels and two exact file URLs; Butler's page URL differs by case. The bounded client received 403 for all tested file URLs. This is an access observation, not file absence or a compliance finding. No CCN is promoted or downgraded.",
+  "next_action": "Acquire a permitted byte-backed bounded header from each exact publisher file URL; for Butler also resolve pointer-declared versus page-linked URL equivalence or update the pointer source if the publisher changed it. Compare each file's declared facility/address/state/date/version to its CCN before changing status."
+}

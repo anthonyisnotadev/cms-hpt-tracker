@@ -1,0 +1,70 @@
+{
+  "reason": "Current exact-root rechecks after stale corpus-index priority-one findings; no MRF refetch.",
+  "records": [
+    {
+      "ccn": "310118",
+      "pointer_url": "https://hudsonregionalhospital.com/cms-hpt.txt",
+      "checked_at": "2026-09-17T05:20:47.752Z",
+      "http_status": 206,
+      "final_host": "hudsonregionalhospital.com",
+      "bytes_retained": 1367,
+      "sha256": "cd2b4c6b89e158910c192bd561da0c6b2d0d21b411d8907b6cf0eb02d5d1887b",
+      "raw_artifact": "cms_data/hpt/pointer-corpus/rechecks/cd2b4c6b89e158910c192bd561da0c6b2d0d21b411d8907b6cf0eb02d5d1887b.txt",
+      "parsed_entries": 4,
+      "selected_mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbLHCSECAUCUSNJ&type=CDMWithoutLabel&fileType=CSV",
+      "selected_file_in_pointer": true,
+      "selected_location_names": [
+        "Secaucus University Hospital"
+      ],
+      "reviewed_pointer_sha256": "cd2b4c6b89e158910c192bd561da0c6b2d0d21b411d8907b6cf0eb02d5d1887b",
+      "reviewed_hash_matches": true,
+      "reviewed_observed_at": "2026-09-16T16:30:10.694Z",
+      "error": "",
+      "next_action": "Keep the older corpus version historical; recheck current file bytes/metadata on the next scheduled crawl and preserve this dated root observation."
+    },
+    {
+      "ccn": "320001",
+      "pointer_url": "https://unmhealth.org/cms-hpt.txt",
+      "checked_at": "2026-09-17T05:20:47.899Z",
+      "http_status": 206,
+      "final_host": "unmhealth.org",
+      "bytes_retained": 743,
+      "sha256": "452f9f3a3af42db6ec2fc7c8df1199deadfac2a422b6549383a99cdc7a768c1a",
+      "raw_artifact": "cms_data/hpt/pointer-corpus/rechecks/452f9f3a3af42db6ec2fc7c8df1199deadfac2a422b6549383a99cdc7a768c1a.txt",
+      "parsed_entries": 2,
+      "selected_mrf_url": "https://unmhealth.org/patients-visitors/_files/856003005_university-of-new-mexico-hospital_standardcharges.csv",
+      "selected_file_in_pointer": true,
+      "selected_location_names": [
+        "University of New Mexico Hospital",
+        "UNM Sandoval Regional Medical Center"
+      ],
+      "reviewed_pointer_sha256": "d923e9d0d7aeb35f580f7f1cf83388faf17a5ce786fce303c299043f542be2f0",
+      "reviewed_hash_matches": false,
+      "reviewed_observed_at": "2026-09-16T02:17:59.916Z",
+      "error": "",
+      "next_action": "Keep the older corpus version historical; recheck current file bytes/metadata on the next scheduled crawl and preserve this dated root observation."
+    },
+    {
+      "ccn": "360098",
+      "pointer_url": "https://lakehealth.org/cms-hpt.txt",
+      "checked_at": "2026-09-17T05:20:48.138Z",
+      "http_status": 206,
+      "final_host": "lakehealth.org",
+      "bytes_retained": 5514,
+      "sha256": "e00ec17ae15593a8098056576d6a73b3c451a5cf1e76603a7707ec82a901bb52",
+      "raw_artifact": "cms_data/hpt/pointer-corpus/rechecks/e00ec17ae15593a8098056576d6a73b3c451a5cf1e76603a7707ec82a901bb52.txt",
+      "parsed_entries": 14,
+      "selected_mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/11435/341425870-1972689172_university-hospitals-health-system_standardcharges.csv",
+      "selected_file_in_pointer": true,
+      "selected_location_names": [
+        "University Hospitals Lake West Medical Center",
+        "University Hospitals Tripoint Medical Center"
+      ],
+      "reviewed_pointer_sha256": "e00ec17ae15593a8098056576d6a73b3c451a5cf1e76603a7707ec82a901bb52",
+      "reviewed_hash_matches": true,
+      "reviewed_observed_at": "2026-09-16T16:45:26.824Z",
+      "error": "",
+      "next_action": "Keep the older corpus version historical; recheck current file bytes/metadata on the next scheduled crawl and preserve this dated root observation."
+    }
+  ]
+}

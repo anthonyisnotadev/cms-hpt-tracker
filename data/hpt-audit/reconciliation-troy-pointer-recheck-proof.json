@@ -1,0 +1,20 @@
+{
+  "ccn": "010126",
+  "observed_at": "2026-09-17T20:29:00.000Z",
+  "pointer_url": "https://troymedicalcenter.com/cms-hpt.txt",
+  "pointer_sha256": "444932a2a339909ec8620cc1272e21fc965c7aa8711541a64e53f44a5f452d99",
+  "pointer_observation": "The current root pointer contains an exact Troy Regional Medical Center entry linking the 2024-12-31 CSV, plus a separate older shoppable-services workbook entry.",
+  "mrf_url": "https://www.troymedicalcenter.com/wp-content/uploads/2024/12/271534178_the-troy-hospital-health-care-authority_standardcharges-1.csv",
+  "response_status": 206,
+  "content_range": "bytes 0-131071/3818546",
+  "prefix_bytes": 131072,
+  "prefix_sha256": "2b03c70fd84361815e8a8acddcc5a64c747a0c548f67e507a67c97b4f41fdadd",
+  "declared_hospital_name": "Troy Regional Medical Center",
+  "declared_location_name": "Troy, Alabama",
+  "declared_address": "1331 Highway 231 South, Troy, AL 36081",
+  "declared_license_state": "AL",
+  "declared_last_updated": "2024-12-31",
+  "cms_template_version": "1",
+  "interpretation": "The exact current pointer and bounded CSV header independently agree with the Troy facility identity and Alabama address/state. The file remains materially stale and uses CMS template version 1; the source-page chain also exposes a separate workbook. This recheck supports the existing stale/older-file review but does not justify a compliant-current promotion.",
+  "next_action": "Recheck after Troy publishes a newer pointer-linked CSV and retain the separate workbook as a distinct artifact until its schema and scope are verified."
+}

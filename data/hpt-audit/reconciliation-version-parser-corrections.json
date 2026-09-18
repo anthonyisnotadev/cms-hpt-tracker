@@ -1,0 +1,17 @@
+{
+  "records": [
+    {
+      "ccn": "450641",
+      "reviewed_at": "2026-09-17T02:10:00.000Z",
+      "mrf_url": "https://noconageneral.com/wp-content/uploads/2026/03/751368648_nocona-general-hospital_standardcharges-02.26.2026.csv",
+      "retained_sample_sha256": "9f6ac61e73b93c7e0da82c399c5a8d0adcdfbf91c0d93effcd46ed31808893b9",
+      "retained_sample_bytes": 262144,
+      "previous_parser_value": "ERSION 4.0",
+      "corrected_literal_value": "VERSION 4.0",
+      "declared_date": "2026-02-25",
+      "declared_hospital_name": "Nocona General Hospital ",
+      "reason": "The parser stripped a leading v from the word VERSION. The retained, hash-matched CSV header and first data row contain the literal VERSION 4.0. This corrects transcription only; it does not validate a CMS template version or change the standing noncanonical-version finding.",
+      "next_action": "Retain VERSION 4.0 verbatim as a noncanonical declared value. Recheck only after a publisher file change; do not turn a parser correction into a template-validity or compliance claim."
+    }
+  ]
+}

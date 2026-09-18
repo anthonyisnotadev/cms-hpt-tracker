@@ -1,0 +1,46 @@
+{
+  "ccn": "161329",
+  "observed_at": "2026-09-18T16:20:00Z",
+  "official_pricing_page": "https://jcrhc.org/price-transparency/",
+  "official_pricing_page_status": 200,
+  "page_file_url": "https://jcrhc.org/wp-content/uploads/426037868_jackson-county-public-hospital_standardcharges.xlsx",
+  "page_file_status": 200,
+  "page_file_content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "page_file_last_modified": "2026-09-02T20:49:00Z",
+  "page_file_bytes": 31387788,
+  "page_file_sha256": "eb659c716b523e3319fe21998b68ff9d777087558fa3ab23a51189cab023709d",
+  "workbook_validation": {
+    "zip_members_read": ["xl/sharedStrings.xml", "xl/worksheets/sheet1.xml"],
+    "sheet_xml_bytes": 234800324,
+    "shared_strings_bytes": 693062,
+    "header_metadata": {
+      "hospital_name": "JACKSON COUNTY REGIONAL HEALTH CENTER",
+      "last_updated_on": "2026-08-01",
+      "version": "3.0.0",
+      "location_name": "JACKSON COUNTY REGIONAL HEALTH CENTER",
+      "hospital_address": "601 HOSPITAL DRIVE, MAQUOKETA, IA 52060",
+      "type_2_npi": "1912960758",
+      "license_state": "IA",
+      "attester_name": "KOLIN HUTH"
+    },
+    "data_rows_observed": true,
+    "cms_template_identity": "CMS 3.0.0 workbook metadata and rate rows parsed locally"
+  },
+  "cms_enrollment": {
+    "query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=161329&size=10",
+    "response_sha256": "4dc62f0964b4d5507e4e2e2a240293271bf18466fc7d1aac2f57c1f662fa2afb",
+    "ccn": "161329",
+    "organization_name": "JACKSON COUNTY PUBLIC HOSPITAL",
+    "doing_business_as": "JACKSON COUNTY REGIONAL HEALTH CENTER",
+    "address": "601 HOSPITAL DRIVE, MAQUOKETA, IA 52060",
+    "npi": "1912960758",
+    "provider_type": "PART A PROVIDER - CRITICAL ACCESS HOSPITAL"
+  },
+  "pointer_boundary": {
+    "pointer_url": "https://jcrhc.org/cms-hpt.txt",
+    "pointer_issue": "Root pointer still uses the malformed mfr-url label and points to a different 2025-07-29 v2.0.0 CSV.",
+    "pointer_file_not_promoted": true
+  },
+  "disposition": "current-official-page-xlsx-identity-confirmed-pointer-version-mismatch-retained",
+  "note": "The current official pricing page links a complete CMS 3.0.0 XLSX whose metadata and CMS enrollment independently identify CCN 161329. This is current official-page file evidence, not a pointer-linked promotion: the root pointer remains malformed and points to a distinct older CSV. No legal compliance conclusion or whole-file semantic audit is inferred."
+}

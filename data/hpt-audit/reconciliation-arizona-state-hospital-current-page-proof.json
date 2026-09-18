@@ -1,0 +1,16 @@
+{
+  "ccn": "034021",
+  "observed_at": "2026-09-18T17:25:00Z",
+  "official_site": "https://www.azdhs.gov/az-state-hospital/",
+  "official_identity_page": "https://www.azdhs.gov/az-state-hospital/jobs/",
+  "official_identity": "Arizona State Hospital, 2500 East Van Buren Street, Phoenix, AZ 85008",
+  "hospital_rates_navigation": "The rendered official Arizona State Hospital page exposes a Hospital Rates navigation label, but the loaded page contains no rate table or downloadable CMS MRF; only the jobs and volunteer links are rendered in the content area.",
+  "pointer_url": "https://www.azdhs.gov/cms-hpt.txt",
+  "pointer_http_status": 200,
+  "pointer_content_type": "text/html; charset=UTF-8",
+  "pointer_bytes": 70489,
+  "pointer_sha256": "ADE83F7649BCD82D1F4D53FB027324FC26AE0F36C5D2D356852A1B9D607CADAB",
+  "pointer_observation": "The exact root pointer route serves the Arizona DHS HTML site rather than pointer content; no MRF URL was exposed.",
+  "disposition": "official-identity-confirmed-pointer-html-unusable-rates-content-not-rendered",
+  "next_action": "Obtain a current Arizona State Hospital-specific CMS MRF or valid root pointer/rates file through an authorized state route; verify bytes, facility identity, Arizona state, declared date and CMS version before promotion. Do not infer file absence or compliance from the HTML pointer response."
+}

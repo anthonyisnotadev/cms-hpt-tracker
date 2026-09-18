@@ -111,3 +111,40 @@ test('runHeaderCorpus probes each unique MRF once and exports conservative match
     now: new Date('2026-09-02T12:00:00Z'), log: () => {}
   });
 });
+
+test('host-filtered refresh merges selected rows without dropping the nationwide output', async t => {
+  const root = await tempRoot(t);
+  const input = path.join(root, 'cms_data', 'hpt', 'entries.csv');
+  const output = path.join(root, 'cms_data', 'hpt', 'headers.csv');
+  const cache = path.join(root, 'cms_data', 'hpt', 'cache.json');
+  const roster = path.join(root, 'cms_data', 'hpt', 'roster.json');
+  await fsp.writeFile(input, toRFC4180([
+    { mrf_url: 'https://one.vendor.test/a.csv', matched_ccns: '010001', location_name: 'One Hospital' },
+    { mrf_url: 'https://two.other.test/b.csv', matched_ccns: '020001', location_name: 'Two Hospital' }
+  ]));
+  await fsp.writeFile(roster, JSON.stringify([
+    { ccn: '010001', name: 'ONE HOSPITAL', address: '10 MAIN ST', city: 'DOTHAN', state: 'AL', zip: '36301' },
+    { ccn: '020001', name: 'TWO HOSPITAL', address: '20 MAIN ST', city: 'MOBILE', state: 'AL', zip: '36601' }
+  ]));
+  const probe = async url => ({
+    url, checkedAt: '2026-09-15T00:00:00.000Z', httpStatus: 200, rangeStatus: 206,
+    fileKind: 'csv', contentType: 'text/csv', bytes: 1000, bytesRead: 262144, mrfLicenseState: 'AL',
+    mrfHospitalName: url.includes('one.vendor') ? 'One Hospital' : 'Two Hospital',
+    mrfAddress: url.includes('one.vendor') ? '10 Main St, Dothan, AL 36301' : '20 Main St, Mobile, AL 36601',
+    declaredLastUpdated: '2026-09-01', cmsVersion: '3.0.0'
+  });
+  await runHeaderCorpus({ input, out: output, cache, roster }, { root, probeImpl: probe, log: () => {} });
+  let refreshCalls = 0;
+  const refreshed = await runHeaderCorpus({ input, out: output, cache, roster, host: 'vendor.test', refresh: true }, {
+    root, probeImpl: async url => { refreshCalls++; return probe(url); }, log: () => {}
+  });
+  const rows = csvToObjects(await fsp.readFile(output, 'utf8'));
+  assert.equal(refreshCalls, 1);
+  assert.equal(refreshed.summary.hostFilteredMrfUrls, 1);
+  assert.equal(refreshed.summary.outputRows, 2);
+  assert.deepEqual(rows.map(row => row.mrf_url), ['https://one.vendor.test/a.csv', 'https://two.other.test/b.csv']);
+
+  await runHeaderCorpus({ input, out: output, cache, roster, host: 'vendor.test', 'retry-errors': true }, {
+    root, probeImpl: async () => { throw new Error('retry-errors must reuse a successful cached probe'); }, log: () => {}
+  });
+});

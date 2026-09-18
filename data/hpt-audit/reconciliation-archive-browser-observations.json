@@ -1,0 +1,21 @@
+{
+  "observed_on": "2026-09-15",
+  "records": [
+    {
+      "ccns": ["100012", "100220", "100244"],
+      "source_url": "https://www.leehealth.org/billing/estimates-cost/how-much-do-procedures-cost",
+      "method": "browser-rendered-official-page-and-link-click",
+      "observation": "Official page lists separate machine-readable ZIP links for Lee Memorial, Gulf Coast Medical Center and Cape Coral. Cape Coral direct archive navigation returned ERR_BLOCKED_BY_CLIENT. Clicking its link from the official page left the page unchanged; no readable archive or completed local download was confirmed. Page labels the links last updated 3/27/26; this is webpage text, not a verified internal file date.",
+      "status": "official-linkage-observed-archive-content-unverified",
+      "next_action": "Retain official linkage. Inspect a completed archive through a download-capable client before making file-address or internal-metadata claims."
+    },
+    {
+      "ccns": ["220063", "220070", "220116"],
+      "source_url": "https://www.tuftsmedicine.org/get-care/cost-estimate",
+      "method": "browser-rendered-official-page-and-link-click",
+      "observation": "Official page lists the saved ZIP URLs for Tufts Medical Center, Lowell General and MelroseWakefield. Lowell General Saints Campus shares the Lowell URL; Lawrence Memorial shares the MelroseWakefield URL. Clicking the Tufts Medical Center ZIP left the pricing page unchanged; no readable archive or completed local download was confirmed. The shared links are campus-linkage evidence, not proof of the archive's contents.",
+      "status": "official-linkage-observed-archive-content-unverified",
+      "next_action": "Inspect completed archives for campus coverage and internal name/address/date metadata. Do not infer hospital identity from archive filenames alone."
+    }
+  ]
+}

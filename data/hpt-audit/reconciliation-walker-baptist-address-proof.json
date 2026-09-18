@@ -1,0 +1,21 @@
+{
+  "ccn": "010089",
+  "observed_at": "2026-09-17T21:28:00.000Z",
+  "pointer_url": "https://bayfrontstpete.com/cms-hpt.txt",
+  "pointer_sha256": "99c7d1819b0b0a31f759c03e267007c5c7fc85ba389ecdfeed6fa8a8dbe07d84",
+  "mrf_url": "https://hospitalpricedisclosure.com/download?pi=ZLwVSmmcKuH*_*GWXeRcdTcQ*-*",
+  "mrf_sha256": "c45a16c5c8448b4f4b90c7986038e9c9ecf305bf65dbfb3b2d719c7b0c0f5a73",
+  "response_status": 200,
+  "full_file_bytes": 28209693,
+  "declared_hospital_name": "Baptist Health Walker Hospital",
+  "declared_address": "3400 Hwy 78 E, Jasper, AL 35501",
+  "declared_license_state": "AL",
+  "declared_last_updated": "2026-04-01",
+  "cms_template_version": "3.0.0",
+  "official_identity_sources": [
+    "https://www.baptisthealthal.com/facilities/walker-hospital",
+    "https://data.cms.gov/tools/medicare-inpatient-hospital-look-up-tool/provider/010089"
+  ],
+  "interpretation": "The pointer and complete JSON identify Baptist Health Walker Hospital in Jasper, Alabama. The file says ZIP 35501 while the CMS provider page says 35502; the street/city/state agree, so this is an explicit address-field conflict rather than an identity failure.",
+  "next_action": "Recheck the publisher file and CMS roster address on the next scheduled crawl; do not describe this as clean address agreement."
+}

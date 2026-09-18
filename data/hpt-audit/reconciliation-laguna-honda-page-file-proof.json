@@ -1,0 +1,25 @@
+{
+  "ccn": "050668",
+  "hospital_name": "Laguna Honda Hospital & Rehabilitation Center",
+  "observed_at": "2026-09-19T05:00:00Z",
+  "official_site": "https://www.sf.gov/",
+  "official_identity_sources": [
+    "https://www.sf.gov/laguna-honda-directory",
+    "https://www.sf.gov/departments--department-public-health--laguna-honda-hospital-and-rehabilitation-center",
+    "https://www.sf.gov/price-transparency"
+  ],
+  "official_identity": "Laguna Honda Hospital & Rehabilitation Center, 375 Laguna Honda Boulevard, San Francisco, CA 94116, CCN 050668",
+  "legacy_pointer_url": "https://lagunahonda.org/cms-hpt.txt",
+  "legacy_pointer_browser_status": "redirected-to-sf.gov/new-laguna-honda",
+  "pricing_page_url": "https://www.sf.gov/price-transparency",
+  "page_declared_mrf_url": "https://www.sf.gov/documents/61505/946000417_laguna-honda-hospital--rehabilitation-center_standardcharges.csv",
+  "page_declared_mrf_http_status": 202,
+  "page_declared_mrf_browser_status": "security-verification-page",
+  "page_declared_mrf_content_type": "text/html; charset=UTF-8",
+  "search_observations": [
+    "The official SF.gov price-transparency page explicitly declares a CMS machine-readable file and links the facility-specific CSV URL.",
+    "Direct and browser retrieval of the exact CSV currently reaches SF.gov's JavaScript security-verification page before CSV bytes; no bytes or metadata were promoted."
+  ],
+  "disposition": "official-pricing-page-linked-file-security-challenge-mrf-unresolved",
+  "next_action": "Retry the exact SF.gov document through an authorized download-capable route; verify bytes, facility identity, metadata and usability before promotion."
+}

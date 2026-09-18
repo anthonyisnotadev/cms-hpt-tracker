@@ -1,0 +1,19 @@
+{
+  "ccn": "064024",
+  "hospital_name": "Highlands Behavioral Health System",
+  "observed_at": "2026-09-19T10:30:00Z",
+  "official_site": "https://highlandsbhs.com/",
+  "official_identity_sources": ["https://npiprofile.com/npi/1326133216"],
+  "official_identity": "Highlands Behavioral Health System, 8565 South Poplar Way, Littleton, CO 80130; NPI 1326133216",
+  "pointer_url": "https://highlandsbhs.com/cms-hpt.txt",
+  "pointer_http_status": 403,
+  "pointer_browser_status": "cloudflare-challenge",
+  "pointer_browser_title": "Just a moment...",
+  "search_observations": [
+    "Search results corroborate the facility address, CCN 064024 and NPI 1326133216, but third-party pricing pages were not treated as publisher linkage.",
+    "The exact official root and cms-hpt.txt URL both presented Cloudflare security verification in the interactive browser.",
+    "No publisher-declared facility-specific MRF URL was verified; UHS sibling files were not reused."
+  ],
+  "disposition": "official-identity-confirmed-pointer-cloudflare-blocked-mrf-unresolved",
+  "next_action": "Retry the exact pointer or an official Highlands pricing route after a materially different authorized access path; require facility-specific MRF bytes, identity, metadata and usability before promotion."
+}

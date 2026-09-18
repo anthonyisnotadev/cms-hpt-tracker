@@ -1,0 +1,59 @@
+{
+  "ccn": "450253",
+  "observed_at": "2026-09-17T11:09:03.635Z",
+  "roster_name": "BELLVILLE MEDICAL CENTER",
+  "roster_address": "44 N CUMMINGS ST",
+  "roster_city": "BELLVILLE",
+  "roster_state": "TX",
+  "roster_zip": "77418",
+  "old_assigned_domain": "sjhsyr.org",
+  "old_pointer_url": "https://www.sjhsyr.org/cms-hpt.txt",
+  "old_pointer_sha256": "da4c7dd1adce6ea1f6cb3e61351436199c89755fece63d4ef807d20414f513de",
+  "old_pointer_location_names": [
+    "St Josephs Hospital Health Ctr"
+  ],
+  "official_domain": "midcoasthealthsystem.org",
+  "facility_url": "https://midcoasthealthsystem.org/mcmc-bellville/",
+  "facility_http_status": 200,
+  "facility_sha256": "696f7953a5777a22df23166bbd868a9246d13d0d2b980aeecc128bfe3a260a66",
+  "pricing_url": "https://midcoasthealthsystem.org/pricing-transparency/",
+  "pricing_http_status": 200,
+  "pricing_sha256": "1ab0c981e953a340465bbdaceebe8846accc1d7328f834deb1995c568a0a26e8",
+  "bellville_page_download_leads": [
+    {
+      "label": "TallCSV",
+      "host": "public.boxcloud.com",
+      "href_sha256": "3019978139f1c4872d259c920ee35ab347d79cb169c00c45022503056b931a3b"
+    },
+    {
+      "label": "WideCSV",
+      "host": "public.boxcloud.com",
+      "href_sha256": "2f9864423d6149204b1dbc200478903dfacfb7572cb7d1e6fc479bb8d5ee6868"
+    }
+  ],
+  "pointer_url": "https://midcoasthealthsystem.org/cms-hpt.txt",
+  "pointer_http_status": 200,
+  "pointer_sha256": "44c86cec5e89748abb131df902131b4fbd0a802409cf88d665d68eaf6d8bd68e",
+  "pointer_location_name": "Bellville Medical Center",
+  "pointer_source_url_sha256": "794f60c7ad11ad685ba7433bdafdfaa056dd468f1cd4b7610249bb664217c7b1",
+  "decoded_source_url": "https://midcoasthealthsystem.org/pricing-transparency/",
+  "pointer_file_url_sha256": "2920fce6c2a703fc13a0273335b936793bbfc2391e19696810699796f45982d6",
+  "decoded_file_url": "https://app.box.com/shared/static/3mydfralbd8qx0h8vqu7j9wbf4ps63x7.csv",
+  "pointer_file_sample_http_status": 206,
+  "pointer_file_sample_bytes": 262144,
+  "pointer_file_sample_sha256": "ec439119b6258ac1ef2ef3100750704838ed63f619314dce125f8d4cec33654d",
+  "file_declared_name": "Bellville Medical Center",
+  "file_declared_location": "Bellville Medical Center",
+  "file_declared_address": "44 North Cummings St , Bellville, TX 77418",
+  "file_declared_license_state": "TX",
+  "file_declared_update": "2025-06-01",
+  "file_declared_version": "2.0.0",
+  "limitation": "The first-party pointer has a Bellville-specific link through a URL-protection wrapper to a readable 262144-byte CSV prefix. The file declares a 2025-06-01 date and v2.0.0, but this is not complete-file validation or a legal compliance verdict. The current pricing page has separate BoxCloud download leads; their complete bytes and relationship to the pointer file were not established. Wrapper and ephemeral download URLs are not copied into public artifacts."
+  ,"current_page_recheck": {
+    "observed_at": "2026-09-18T11:05:00Z",
+    "pricing_page": "https://midcoasthealthsystem.org/pricing-transparency/",
+    "page_observation": "The current first-party page still lists Mid Coast Medical Center - Bellville and separate TallCSV/WideCSV links.",
+    "tall_csv_transport": "The current public.boxcloud TallCSV redirect returned HTTP 404 to the web retrieval client.",
+    "pointer_file_role": "The existing pointer-linked Bellville CSV and the current page-linked BoxCloud leads remain separate artifacts."
+  }
+}
