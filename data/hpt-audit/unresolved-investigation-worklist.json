@@ -8,7 +8,7 @@
       "4": 397,
       "5": 97
     },
-    "already_reviewed_follow_ups": 175
+    "already_reviewed_follow_ups": 177
   },
   "records": [
     {
@@ -1806,44 +1806,6 @@
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
       "next_action": "Resolve the exact root-pointer URL to the current page-linked CSV or document a publisher-approved case-sensitive correction. Then validate the complete page file and rate-level content before any pointer-linked MRF claim; do not treat this client 404 as a legal verdict."
-    },
-    {
-      "ccn": "094001",
-      "hospital_name": "ST ELIZABETHS HOSPITAL",
-      "state": "DC",
-      "official_domain": "dbh.dc.gov",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-not-retrieved",
-      "standing_finding": "not-assessed-nationwide-pointer-not-retrieved",
-      "prior_finding": "not-assessed-site-observed",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-retrieval",
-      "reviewed_follow_up": false,
-      "reviewed_sources": [],
-      "latest_review_at": "",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Inspect the official pricing page and recheck permitted pointer locations later."
-    },
-    {
-      "ccn": "094004",
-      "hospital_name": "PSYCHIATRIC INSTITUTE OF WASHINGTON",
-      "state": "DC",
-      "official_domain": "psychinstitute.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "pointer-blocked-to-automation",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": false,
-      "reviewed_sources": [],
-      "latest_review_at": "",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Compare the exact URL in an interactive browser."
     },
     {
       "ccn": "100035",
@@ -7267,6 +7229,48 @@
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
       "next_action": "Retrieve the official root pointer through a permitted route after the current 502 transport condition changes, and verify that it declares this exact page-linked CSV before treating pointer linkage as current; retain the complete page-linked file as current evidence."
+    },
+    {
+      "ccn": "094001",
+      "hospital_name": "ST ELIZABETHS HOSPITAL",
+      "state": "DC",
+      "official_domain": "dbh.dc.gov",
+      "publisher_domain_lead": "",
+      "current_disposition": "pointer-not-retrieved",
+      "standing_finding": "not-assessed-nationwide-pointer-not-retrieved",
+      "prior_finding": "not-assessed-site-observed",
+      "investigation_tier": 3,
+      "evidence_gate": "pointer-retrieval",
+      "reviewed_follow_up": true,
+      "reviewed_sources": [
+        "manual-access"
+      ],
+      "latest_review_at": "2026-09-18T23:10:00Z",
+      "candidate_file_recorded": true,
+      "last_browser_file_status": "",
+      "last_browser_file_observed_at": "",
+      "next_action": "Recover the current CSV through an authorized browser/download route or obtain a corrected publisher link; verify complete bytes, DC identity, declared date/version and CMS-template usability before promotion. Do not infer file absence or noncompliance from the 404."
+    },
+    {
+      "ccn": "094004",
+      "hospital_name": "PSYCHIATRIC INSTITUTE OF WASHINGTON",
+      "state": "DC",
+      "official_domain": "psychinstitute.com",
+      "publisher_domain_lead": "",
+      "current_disposition": "pointer-access-denied-to-client",
+      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
+      "prior_finding": "pointer-blocked-to-automation",
+      "investigation_tier": 3,
+      "evidence_gate": "pointer-access",
+      "reviewed_follow_up": true,
+      "reviewed_sources": [
+        "manual-access"
+      ],
+      "latest_review_at": "2026-09-18T23:35:00Z",
+      "candidate_file_recorded": false,
+      "last_browser_file_status": "",
+      "last_browser_file_observed_at": "",
+      "next_action": "Retry the exact official pricing route and cms-hpt.txt only through a materially different authorized browser/download route or after a publisher change; verify facility identity, current MRF bytes, DC address, declared date/version and usability before promotion."
     },
     {
       "ccn": "100090",
@@ -16861,7 +16865,7 @@
     }
   ],
   "source_sha256": {
-    "nationwide-reconciliation.json": "c428f645677326ca00432a937aba790e0e3fdedb15a53d3cbcaaf60a46d64042",
+    "nationwide-reconciliation.json": "a7dfeef7f5a7c9a649f25cd55fc71c7be79e8c646d5a11cb16ec6687d6476008",
     "nationwide-verification.json": "abe67572094e0e9607ad920b8193cec99e17d6ec3fc10cc2ff6983ce87748481",
     "reconciliation-independence-health-access-proof.json": "e50a157f79920e5aaf39cb87d2538ef9536b52673c070cd1c6e02ce33766d24c",
     "reconciliation-coal-county-page-file-proof.json": "5261c9d060f26840c77bdde52d8f2010f315d03e6bf74f7accc60c9874c94435",
