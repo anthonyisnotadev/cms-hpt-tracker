@@ -48872,9 +48872,21 @@
     "official_page_file_review": null,
     "browser_file_address_conflict": null,
     "direct_file_review": null,
-    "manual_access_observation": null,
+    "manual_access_observation": {
+      "ccn": "100035",
+      "observed_at": "2026-09-18T23:55:00Z",
+      "proof_file": "reconciliation-manatee-memorial-current-access-proof.json",
+      "official_site": "https://www.manateememorial.com/",
+      "roster_identity": "Manatee Memorial Hospital, 206 Second Street East, Bradenton, FL 34208",
+      "browser_status": "cloudflare-access-denied-error-1005",
+      "pointer_url": "https://www.manateememorial.com/cms-hpt.txt",
+      "pointer_direct_status": 403,
+      "browser_pointer_status": "cloudflare-access-denied-error-1005",
+      "disposition": "official-domain-cloudflare-blocked-pointer-and-mrf-unresolved",
+      "next_action": "Retry the exact official pricing route and cms-hpt.txt only through a materially different authorized browser/download route or after a publisher change; verify facility identity, current MRF bytes, Florida address, declared date/version and usability before promotion."
+    },
     "automation_challenge_observation": null,
-    "next_action": "Compare the exact URL in an interactive browser.",
+    "next_action": "Retry the exact official pricing route and cms-hpt.txt only through a materially different authorized browser/download route or after a publisher change; verify facility identity, current MRF bytes, Florida address, declared date/version and usability before promotion.",
     "actionable": true,
     "reconciliation_status": "review-required"
   },
