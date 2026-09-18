@@ -24,6 +24,8 @@ Page-link recovery (2026-09-18): **094001 Saint Elizabeths Hospital** now has a 
 
 Access recheck (2026-09-18): **094004 Psychiatric Institute of Washington** remains unresolved, but both exact first-party root-pointer URLs returned Cloudflare challenge HTML (HTTP 403), and browser automation rendered the official domain's security-verification page. No pointer content or MRF bytes were retained. This is transport/access evidence only, not proof of file absence or noncompliance. Next: use a materially different authorized route or wait for a publisher change, then verify the exact facility, current MRF bytes, DC address, date/version and usability.
 
+Access recheck (2026-09-18): **100035 Manatee Memorial Hospital** remains unresolved. Browser automation rendered the official site’s Cloudflare Error 1005 access-denied page; both exact first-party root-pointer URLs returned HTTP 403. No pointer content, pricing page or MRF bytes were retained. This is transport/access evidence only, not proof of file absence or noncompliance. Next: use a materially different authorized route or wait for a publisher change, then verify the exact facility, current MRF bytes, Florida address, date/version and usability.
+
 ### J. Paul Jones current MRF-link recovery attempt (2026-09-18)
 
 - The current first-party [J. Paul Jones Services page](https://www.jpauljones.com/services/) explicitly links **Download Standard Charges/MRF** to the Panacea endpoint `jpauljones.pt.panaceainc.com/MRFDownload/jpauljones/jpauljones`.
