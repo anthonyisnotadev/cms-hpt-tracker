@@ -31,4 +31,6 @@ test('Simi Valley alias and exact campus file are reviewed independently of Bake
   const bakersfield = observations.find(row => row.ccn === '050455');
   assert.equal(bakersfield.disposition, 'shared-pointer-entry-file-header-identifies-specialty-campus-not-main-roster-address');
   assert.equal(bakersfield.mrf_sample_sha256, proof.records['050455'].sample_sha256);
+  assert.equal(bakersfield.latest_directory_lead.evidence_role, 'third-party lead only; not first-party pointer or file identity evidence');
+  assert.match(bakersfield.latest_directory_lead.transport_observation, /timed out/);
 });

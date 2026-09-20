@@ -67,13 +67,16 @@ test('unassigned retrieved pointers retain source provenance without becoming fa
   }
 });
 
-test('a corpus-linked pointer is displayed even before the file header is available', () => {
+test('a dated manual pointer recheck is displayed without promoting exact-file usability', () => {
   const report = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../../data/hpt-audit/nationwide-verification.json')));
   const row = report.records.find(item => item.ccn === '070006');
-  assert.equal(row.pointer_state, 'retrieved-facility-linked');
-  assert.equal(row.pointer_url, 'https://stamfordhealth.org/cms-hpt.txt');
+  assert.equal(row.pointer_state, 'retrieved-facility-linked-manual-review');
+  assert.equal(row.pointer_url, 'https://www.stamfordhealth.org/cms-hpt.txt');
   assert.equal(row.pointer_url, row.pointer_corpus_checked_url);
-  assert.equal(row.disposition, 'pointer-linked-file-not-probed');
+  assert.equal(row.mrf_state, 'linked-file-transport-unresolved');
+  assert.equal(row.disposition, 'pointer-linked-file-review-pending');
+  assert.equal(row.declared_location_name, 'Stamford Hospital');
+  assert.equal(row.declared_last_updated, '2026-04-01');
 });
 
 test('browser identity claims require per-facility file evidence rather than archive filenames', () => {

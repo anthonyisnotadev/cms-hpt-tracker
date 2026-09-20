@@ -1,0 +1,31 @@
+{
+  "ccn": "070006",
+  "observed_at": "2026-09-19T00:08:00Z",
+  "official_site": "https://www.stamfordhealth.org/",
+  "official_pricing_page": "https://www.stamfordhealth.org/patients/hospital-charges/",
+  "official_identity": "Stamford Hospital, One Hospital Plaza, Stamford, CT 06902",
+  "page_file_url": "https://www.stamfordhealth.org/-/media/project/healthcare-websites/stamfordhealth/documents/20260331_machine-readable-file.csv?rev=1aba70bbbab74b47bfbbb74b40e9720b",
+  "page_file_label": "View Machine Readable File",
+  "page_file_browser_observation": "A fresh official-page retrieval exposed the exact current CSV link; the in-app browser was blocked by client and direct HEAD retrieval on both the public and publisher-canonical routes returned HTTP 403 before CSV bytes.",
+  "page_file_status": 403,
+  "page_file_content_type": "text/html; charset=UTF-8",
+  "page_file_access_observation": "Cloudflare managed challenge; no bounded CSV bytes or declared facility metadata obtained.",
+  "pointer_urls_checked": [
+    "https://stamfordhealth.org/cms-hpt.txt",
+    "https://www.stamfordhealth.org/cms-hpt.txt"
+  ],
+  "pointer_status": "not-retrieved-in-this-recheck",
+  "latest_official_page_recheck": {
+    "observed_at": "2026-09-19T00:08:00Z",
+    "source": "web-open",
+    "page_link_label": "View Machine Readable File",
+    "page_link_confirmed": true,
+    "browser_file_status": "ERR_BLOCKED_BY_CLIENT",
+    "public_file_head_status": 403,
+    "publisher_canonical_file_head_status": 403,
+    "bytes_retrieved": 0,
+    "result": "current facility-specific MRF link remains published but inaccessible in available routes; no identity or metadata promotion"
+  },
+  "disposition": "official-pricing-page-current-mrf-link-cloudflare-blocked-file-header-unresolved",
+  "next_action": "Retry the exact page-linked CSV and both root-pointer URLs only through a materially different authorized browser/download route; obtain bounded bytes and verify Stamford Hospital identity, Connecticut state, declared date/version and full-file usability before promotion."
+}

@@ -58,5 +58,23 @@
     "template_version": "3.0.0",
     "result": "current-file-bytes-confirm-address-conflict",
     "next_action": "Publisher or CMS enrollment records must reconcile 1600 N Main versus 1900 N Main before any promotion."
+  },
+  "latest_complete_recheck": {
+    "observed_at": "2026-09-19T07:09:24Z",
+    "pointer_route_status": 200,
+    "pointer_final_url": "https://www.nlmktg.org/cms-hpttxt",
+    "pointer_response_kind": "HTML-page-embedding-pointer-fields",
+    "pointer_embedded_mrf_url": "https://hospitalpricetransparencyfiles.com/nor-lea-district-hospital/850278235_Nor-Lea-Hospital-District_standardcharges.csv",
+    "file_http_status": 200,
+    "file_content_type": "text/csv",
+    "file_bytes": 11230287,
+    "file_sha256": "549aeeBD73A2EC8CB6BA28C75E1AF7B31380DB81B6597D042C8B0A821DCC151E",
+    "declared_hospital_name": "Nor-Lea Hospital District",
+    "declared_location_name": "Nor-Lea Hospital District",
+    "declared_address": "1900 North Main Avenue, Lovington, NM 88260-2813",
+    "declared_license_state": "NM",
+    "declared_date": "2026-07-17",
+    "template_version": "3.0.0",
+    "result": "Complete current file usability and metadata are confirmed, but the declared street address conflicts with the roster's 1600 N Main address; this remains a supported identity/address conflict, not a promotion."
   }
 }

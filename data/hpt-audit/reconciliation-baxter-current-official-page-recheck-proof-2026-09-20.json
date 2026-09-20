@@ -1,0 +1,30 @@
+{
+  "observed_at": "2026-09-20T20:20:00Z",
+  "ccn": "244015",
+  "source_page": "https://mn.gov/dct/adult-services/inpatient-care/community-behavioral-health-hospitals/",
+  "page_status": 200,
+  "page_bytes": 21621,
+  "page_sha256": "CC9845E9882B24CF6E0F54AB2E5AAA268D2AF0CC5327D0F586787E4784E772A9",
+  "page_modified": "2026-05-01T18:46:02.6676744Z",
+  "facility_observation": {
+    "name": "Community Behavioral Health Hospital - Baxter",
+    "address": "14241 Grand Oaks Drive, Baxter, MN 56425",
+    "phone": "hpt-obf:v1:B4WuBe_YBQjd6Rb1.p8cAKEuoZxw9Wy39CBMUyg.LLz_eyjot5mKKYQ9",
+    "state": "MN"
+  },
+  "pricing_search": {
+    "terms_checked": [
+      "cms-hpt",
+      "standard charge",
+      "price transparency",
+      "csv",
+      "xlsx"
+    ],
+    "matches": [],
+    "interpretation": "The current official DCT facility page identifies Baxter but does not expose a CMS pointer or machine-readable pricing link. This is a page observation, not evidence that a file does not exist."
+  },
+  "pointer_url": "https://mn.gov/cms-hpt.txt",
+  "pointer_status": 404,
+  "pointer_interpretation": "The expected root path returned HTTP 404; no absence or compliance conclusion is drawn.",
+  "disposition": "official-site-identity-reconfirmed-pricing-route-unresolved"
+}

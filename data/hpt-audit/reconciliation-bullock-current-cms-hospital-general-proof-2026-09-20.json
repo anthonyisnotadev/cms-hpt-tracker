@@ -1,0 +1,36 @@
+{
+  "observed_at": "2026-09-20T21:15:00Z",
+  "source": "CMS Hospital General Information",
+  "dataset_url": "https://data.cms.gov/provider-data/dataset/xubh-q36u",
+  "api_url_template": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0",
+  "records": [
+    {
+      "ccn": "010110",
+      "facility_name": "BULLOCK COUNTY HOSPITAL",
+      "address": "102 WEST CONECUH AVENUE",
+      "city": "UNION SPRINGS",
+      "state": "AL",
+      "zip_code": "36089",
+      "hospital_type": "Acute Care Hospitals",
+      "ownership": "Proprietary",
+      "response_status": 200,
+      "response_bytes": 6735,
+      "response_sha256": "CCB97E0832CA267A4458C3D6252765B3DE664E63563914223AA71B4518A9498F"
+    },
+    {
+      "ccn": "010779",
+      "facility_name": "BULLOCK COUNTY HOSPITAL",
+      "address": "102 WEST CONECUH AVENUE",
+      "city": "UNION SPRINGS",
+      "state": "AL",
+      "zip_code": "36089",
+      "hospital_type": "Rural Emergency Hospital",
+      "ownership": "Proprietary",
+      "response_status": 200,
+      "response_bytes": 6814,
+      "response_sha256": "061B6D4D8E81CF2FF00135D0E99A60D05AAAE70394B09972B81729783E458605"
+    }
+  ],
+  "interpretation": "The current CMS roster independently distinguishes the historical acute-care CCN 010110 from the current REH CCN 010779 at the same Alabama address. It confirms facility identity and current type but does not expose the effective conversion or termination date for 010110, and does not resolve the pointer file's CA license-state conflict.",
+  "disposition": "current-cms-roster-distinguishes-acute-and-reh-ccns-pointer-file-state-conflict-remains-unresolved"
+}

@@ -1,0 +1,37 @@
+{
+  "ccn": "131304",
+  "hospital_name": "POWER COUNTY HOSPITAL DISTRICT",
+  "official_site": "https://www.pchd.net/",
+  "official_pricing_page": "https://www.pchd.net/price-transparency",
+  "official_facility_address": "510 Roosevelt St., American Falls, ID 83211",
+  "observed_at": "2026-09-19T21:24:32Z",
+  "pricing_page_observation": {
+    "http_status": 200,
+    "content_length": 239707,
+    "sha256": "cd6c9c79ab031474766287aafa7ba024caee0a82968c315cc18f728cc8dee0ec",
+    "file_link": "https://www.pchd.net/s/826000431_power-county-hospital-district_standardcharges-3.csv"
+  },
+  "page_file_url": "https://www.pchd.net/s/826000431_power-county-hospital-district_standardcharges-3.csv",
+  "page_file_status": 200,
+  "page_file_bytes": 4463695,
+  "page_file_sha256": "79a2495470167d82d93e5e5a00c23c99ad8ffc1ec48b66e88fca63dc7b1d00ac",
+  "declared_hospital_name": "Power County Hospital District",
+  "declared_location_name": "Power County Hospital District",
+  "declared_address": "510 Roosevelt St., American Falls, ID, 83211",
+  "declared_license_state": "ID",
+  "declared_last_updated": "2026-03-31",
+  "cms_template_version": "3.0.0",
+  "attestation": true,
+  "pointer_url": "https://pchd.net/cms-hpt.txt",
+  "pointer_observation": {
+    "http_status": 200,
+    "content_type": "text/html",
+    "content_length": 192901,
+    "sha256": "c3247a2077c82fdfa8e6456e97b39b522003b5f12315f8603ac1b5903fb2e9e4",
+    "body_kind": "HTML site page, not a plain-text pointer",
+    "pointer_fields_retrieved": false
+  },
+  "disposition": "page-file-identity-confirmed-pointer-linkage-pending",
+  "detail": "The current first-party pricing page links a complete CSV whose header independently identifies the roster hospital, American Falls Idaho address, CMS 3.0.0, 2026-03-31 update date, Idaho license state and attestation. The root cms-hpt.txt URL currently serves HTML rather than a usable pointer. The CSV is retained as page-linked evidence only; no pointer-backed verification or compliance claim is made.",
+  "next_action": "Recover a usable first-party root pointer that declares this exact CSV, or obtain publisher confirmation of the pointer/page relationship; preserve the complete file hash and metadata while linkage remains unresolved."
+}

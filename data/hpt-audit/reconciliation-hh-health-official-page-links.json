@@ -30,9 +30,15 @@
       "official_page_relationship": "The current HH Health price-transparency page separately labels this exact URL as the Standard Charge File for Highlands Medical Center; the Highlands location page independently gives 380 Woods Cove Road, Scottsboro, Alabama.",
       "pricing_resource_url": "https://hh.health/wp-content/uploads/872027148_Highlands-Medical-Center_standardcharges.csv",
       "direct_result": "dns-resolution-timeout",
-      "browser_result": "ERR_NAME_NOT_RESOLVED",
-      "disposition": "current-system-page-file-link-transport-uncertainty",
-      "next_action": "Retry this exact Highlands Medical Center file only after DNS for hh.health changes or through a demonstrably different download-capable network. Require file-declared facility identity, address/state and metadata before any promotion; do not infer absence, invalidity or compliance from the DNS failures or the page label."
+    "browser_result": "ERR_NAME_NOT_RESOLVED",
+    "latest_browser_access_recheck": {
+      "observed_at": "2026-09-19T23:20:00Z",
+      "proof_file": "reconciliation-highlands-pointer-browser-recheck-2026-09-19.json",
+      "pointer_browser_status": "dns-resolution-failure",
+      "disposition": "official-page-file-retained-root-pointer-transport-unresolved"
+    },
+    "disposition": "current-system-page-file-link-transport-uncertainty",
+    "next_action": "Retry the exact Highlands root pointer after DNS or publisher change, or obtain a publisher-enabled copy; require exact Highlands identity, Alabama address/state, declared date/version and usable bytes before changing pointer linkage."
     },
     {
       "ccn": "010079",

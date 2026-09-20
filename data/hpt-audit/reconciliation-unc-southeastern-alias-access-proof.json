@@ -24,5 +24,15 @@
   "file_metadata_verified": false,
   "disposition": "first-party-alias-pointer-entry-page-file-access-and-pointer-export-unresolved",
   "scope_decision": "The UNC facility address and the first-party pricing-page filename support Southeastern Regional Medical Center as the UNC Health Southeastern campus. The root pointer has a location entry with that current name, but its query-bearing export URL reset the bounded client; the distinct page-linked CSV returned 403 in both bounded and browser routes. Do not infer file absence, assign an unrelated UNC file, or promote unobserved metadata.",
+  "latest_browser_recheck": {
+    "observed_at": "2026-09-19T12:48:00Z",
+    "pricing_page_status": "rendered",
+    "pricing_page_url": "https://www.unchealth.org/records-insurance/standard-charges",
+    "facility_link_label": "UNC Health Southeastern",
+    "facility_file_url": "https://www.unchealthcare.org/app/files/public/58f43b86-9180-4feb-9ce3-b141419a01c9/southeastern-regional-medical-center_standardcharges.csv",
+    "link_activation_result": "browser download action produced no content-bearing file tab or bytes",
+    "direct_bounded_result": "HTTP 403 before CSV bytes",
+    "interpretation": "The current UNC page still exposes the exact Southeastern CSV, but no bytes or metadata were recovered; this is a transport observation and does not alter the pointer/page separation or CCN scope boundary."
+  },
   "next_action": "Use a materially different authorized download route or obtain publisher access to the exact UNC Health Southeastern pointer export and page-linked CSV; retain bounded bytes from each and reconcile their facility address, NC license state, declared date and template version. Resolve the physical ZIP 28358 versus roster PO-box ZIP 28359 as an address-role difference, not a sibling-campus match. Preserve the reset and 403 as client observations."
 }

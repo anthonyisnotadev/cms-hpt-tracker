@@ -32,6 +32,32 @@
   "pueblo_west_file_declared_license_state": "CO",
   "pueblo_west_file_declared_date": "2025-11-01",
   "pueblo_west_file_declared_version": "3.0.0",
+  "latest_web_recheck": {
+    "observed_at": "2026-09-19T07:00:00Z",
+    "pricing_page_http_status": 200,
+    "medical_center_page_link_present": true,
+    "pueblo_west_page_link_present": true,
+    "page_link_target_same_for_both": true,
+    "pointer_target_head_status": 404,
+    "pointer_target_transport": "Azure Blob responded 'The specified blob does not exist'",
+    "bytes_retrieved": 0,
+    "result": "A fresh bounded retrieval of the current UCHealth root pointer found the distinct Medical Center entry and its exact Azure target, but that target again returned HTTP 404 BlobNotFound. The current official page still exposes the same shared Pueblo West target for both labels; no Medical Center file bytes or metadata were recovered."
+  },
+  "latest_direct_page_file_recheck": {
+    "observed_at": "2026-09-19T12:29:27Z",
+    "source_page_url": "https://www.uchealth.org/billing-and-pricing/shoppable-services-and-all-services-price-lists/",
+    "page_label_observation": "The official UCHealth machine-readable list uses the same Azure URL for Parkview Medical Center and Parkview Pueblo West Hospital.",
+    "url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/11554/840935136-1821720681_parkview-medical-center%2C-inc_standardcharges.csv",
+    "http_status": 206,
+    "content_range": "bytes 0-262143/150810772",
+    "sample_bytes": 262144,
+    "sample_sha256": "8c34ee64c103c7d99bcee5a434b27a8565b96fcbf0a02ca83fdd798812f6de56",
+    "declared_location_name": "UCHealth Parkview Pueblo West Hospital",
+    "declared_address": "899 E. Industrial Boulevard, Pueblo West, CO 81007",
+    "declared_date": "2025-11-01",
+    "declared_version": "3.0.0",
+    "interpretation": "The current official page still points the main-campus label to a file whose bounded header is Pueblo West; the Medical Center pointer target remains a separate 404. No cross-campus promotion is made."
+  },
   "disposition": "medical-center-pointer-target-404-pricing-page-labels-pueblo-west-file",
   "interpretation": "The first-party facility page identifies the 400 W 16th Street Pueblo campus. The current root pointer has a distinct Medical Center entry, but its exact target returns 404 to this client. The current pricing page labels the same 11554 blob for both Medical Center and Pueblo West, and that blob's root metadata identifies Pueblo West at 899 E Industrial Boulevard. It is not assigned to CCN 060020 by shared hospital name.",
   "next_action": "Seek a publisher-corrected Medical Center pointer target and pricing-page link for the 400 W 16th Street campus. After a material change, retrieve bounded bytes from that exact file and verify declared location, address, state, date, template version and full-file usability. Keep the current 404 and Pueblo West header as distinct observations, not a file-absence or compliance verdict."

@@ -14,11 +14,11 @@ const audit = path.join(root, 'data/hpt-audit');
 const read = relative => JSON.parse(fs.readFileSync(path.join(root, relative), 'utf8'));
 const sha = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
 
-test('Redding quarantine removes Maryland verification while retaining its distinct California candidate', () => {
+test('Redding replaces the Maryland misattribution with current California pointer evidence', () => {
   const proof = read('data/hpt-audit/reconciliation-redding-maryland-misattribution-proof.json');
   const resolution = read('data/hpt-audit/reviewed-resolutions.json').find(row => row.ccn === proof.ccn);
   const roster = read('cms_data/hpt/roster.json').find(row => row.ccn === proof.ccn);
-  assert.equal(resolution.action, 'quarantine');
+  assert.equal(resolution.action, 'replace');
   assert.equal(resolution.reviewed_at, proof.reviewed_at);
   assert.equal(resolution.official.domain, proof.current_publisher_domain);
   assert.equal(resolution.proof.wrong_file_sample_sha256, proof.wrong_file_sample_sha256);
@@ -49,9 +49,9 @@ test('Redding quarantine removes Maryland verification while retaining its disti
   assert.equal(candidate.mrf_last_updated, proof.current_file_header_date);
   assert.equal(candidate.mrf_cms_version, proof.current_file_header_version);
   const effective = loadReviewedView(audit).compliance.find(row => row.ccn === proof.ccn);
-  assert.equal(effective.finding, 'not-assessed-identity-conflict');
-  assert.equal(effective.domain, proof.current_publisher_domain);
-  assert.equal(effective.mrf_url, '');
+  assert.equal(effective.finding, 'compliant-observed');
+  assert.equal(effective.domain.replace(/^www\./, ''), proof.current_publisher_domain.replace(/^www\./, ''));
+  assert.equal(effective.mrf_url, proof.current_pointer_mrf_url);
   const maryland = loadReviewedView(audit).compliance.find(row => row.ccn === proof.wrong_file_matched_ccn);
   assert.equal(maryland.mrf_url, proof.wrong_file_url);
   assert.equal(maryland.finding, 'compliant-observed');
@@ -59,7 +59,7 @@ test('Redding quarantine removes Maryland verification while retaining its disti
   assert.equal(latest.pointer_corpus_sha256, proof.current_pointer_sha256);
   assert.equal(latest.mrf_url, proof.current_pointer_mrf_url);
   assert.equal(latest.facility_identity, 'review-required');
-  assert.equal(latest.standing_finding, 'not-assessed-identity-conflict');
+  assert.equal(latest.standing_finding, 'compliant-observed');
   assert.equal(read('data/hpt-audit/nationwide-reconciliation.json').records.find(row => row.ccn === proof.ccn).workstream,
-    'identity-quarantine');
+    'consistent');
 });

@@ -30,7 +30,36 @@
   "pricing_page_file_retained_bytes": 262144,
   "pricing_page_file_sample": "cms_data/hpt/nationwide-verification/file-byte-proof/0ddaf2b40fd27cfc5c50c9a872e7401d5e519f36953922c82abee76b93fa9924.bin",
   "pricing_page_file_sample_sha256": "0ddaf2b40fd27cfc5c50c9a872e7401d5e519f36953922c82abee76b93fa9924",
-  "pricing_page_file_bounded_metadata": "not parsed from first 262144 bytes of xlsx",
+  "pricing_page_file_full_status": 200,
+  "pricing_page_file_full_bytes": 31387788,
+  "pricing_page_file_full_sha256": "EB659C716B523E3319FE21998B68FF9D777087558FA3AB23A51189CAB0237097",
+  "pricing_page_file_last_modified": "2026-09-02T20:49:00Z",
+  "pricing_page_file_parsed_metadata": {
+    "declared_hospital_name": "JACKSON COUNTY REGIONAL HEALTH CENTER",
+    "declared_location_name": "JACKSON COUNTY REGIONAL HEALTH CENTER",
+    "declared_address": "601 HOSPITAL DRIVE, MAQUOKETA, IA 52060",
+    "declared_state": "IA",
+    "declared_npi": "1912960758",
+    "declared_license_number": "161329",
+    "declared_last_updated": "2026-08-11",
+    "cms_template_version": "3.0.0",
+    "attester_name": "KOLIN HUTH",
+    "attestation_confirmed": true,
+    "worksheet_dimension": "A1:AE286738",
+    "service_rows_after_three_header_rows": 286735,
+    "format": "xlsx"
+  },
+  "pricing_page_file_bounded_metadata": "Full ZIP-member-aware parse completed; the page-linked XLSX is a current CMS 3.0.0 file. Its identity/address agree with current first-party pages, but it differs from the pointer CSV.",
   "observed_at": "2026-09-16T18:09:21.313Z",
-  "limitation": "The roster has the older 700 W Grove address; first-party current pages and the CSV name the 601 Hospital Drive facility. The root pointer uses mfr-url, not mrf-url, and its 2025-07-29 v2.0.0 CSV differs from the page-linked XLSX. Only bounded file prefixes were retained; XLSX metadata and complete files are unverified. No clean MRF promotion or legal verdict."
+  "latest_recheck": {
+    "observed_at": "2026-09-19T08:16:49Z",
+    "pointer_http_status": 200,
+    "pointer_content_length": 293,
+    "pointer_last_modified": "2025-08-29T18:11:32Z",
+    "pointer_label": "mfr-url",
+    "pointer_file_url": "https://jcrhc.org/wp-content/uploads/426037868_jackson-county-regional-health-center_standardcharges.csv",
+    "page_file_url": "https://jcrhc.org/wp-content/uploads/426037868_jackson-county-public-hospital_standardcharges.xlsx",
+    "result": "The pointer remains reachable and unchanged in role: it names the older v2.0.0 CSV under a malformed mfr-url label. The current page-linked CMS 3.0.0 XLSX remains a distinct, identity-matched file. No pointer/page reconciliation or clean promotion was made."
+  },
+  "limitation": "The roster has the older 700 W Grove address; first-party current pages and both files name the 601 Hospital Drive facility. The root pointer uses mfr-url, not mrf-url, and its 2025-07-29 v2.0.0 CSV differs from the page-linked 2026-08-11 XLSX. The page-linked XLSX is fully hashed and parsed, but pointer/page file reconciliation and complete pointer-CSV usability remain unresolved. No clean MRF promotion or legal verdict."
 }

@@ -40,5 +40,30 @@
   "declared_date": "2026-01-28",
   "declared_version": "3.0.0",
   "observed_at": "2026-09-16T18:03:41.783Z",
+  "cms_live_enrollment_pair_recheck": {
+    "observed_at": "2026-09-19T14:45:00Z",
+    "url_template": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D={CCN}&size=100",
+    "records": [
+      {
+        "ccn": "160153",
+        "http_status": 200,
+        "response_bytes": 2,
+        "response_sha256": "4F53CDA18C2BAA0C0354BB5F9A3ECBE5ED12AB4D8E11BA873C2F11161202B945",
+        "rows": 0
+      },
+      {
+        "ccn": "160146",
+        "http_status": 200,
+        "response_bytes": 1204,
+        "response_sha256": "E2EDA91F011862E72FE7C7F20A638A61E79A94235C0EC2D24FFE4F0E250D9699",
+        "rows": 1,
+        "organization_name": "NORTHWEST IOWA HOSPITAL CORPORATION",
+        "doing_business_as": "ST LUKE'S REGIONAL MEDICAL CENTER",
+        "address": "2720 STONE PARK BLVD, SIOUX CITY, IA 511043734",
+        "practice_location_type": "MAIN/PRIMARY HOSPITAL LOCATION"
+      }
+    ],
+    "interpretation": "The live CMS Hospital Enrollments API currently returns no row for legacy CCN 160153 and one current row for parent CCN 160146. This strengthens the acquisition/renaming transition lead, but the endpoint exposes no effective termination or merger date; absence is not treated as proof of termination and the shared MRF is not assigned to 160153."
+  },
   "limitation": "The current state directory lists Downtown under 160146 and former name MercyOne Siouxland, but this does not independently prove when or whether 160153 terminated. The shared file declares 801 15th St, whereas the roster, state directory and first-party page say 801 5th St. Only 262,144 bytes of the file were retained. Do not assign the parent file to 160153 as a clean match."
 }

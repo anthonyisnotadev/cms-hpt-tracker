@@ -1,10 +1,20 @@
 {
   "ccn": "111314",
-  "observed_at": "2026-09-17T20:05:00.000Z",
+  "observed_at": "2026-09-19T23:59:30Z",
   "official_site": "https://lifebriteearly.com/",
   "official_pricing_page": "https://lifebriteearly.com/",
   "browser_final_url": "https://lifebritestokes.com/",
-  "page_result": "The domain redirects to lifebritestokes.com, which rendered a generic hosting error. No Early/Blakely pricing page, cms-hpt.txt, or MRF was observed.",
+  "page_result": "A fresh interactive-browser navigation redirected to lifebritestokes.com and rendered the same generic hosting-error page. A direct GET to lifebriteearly.com returned a 1,071-byte generic hosting-error page (HTTP HEAD returned 405), while the root cms-hpt.txt request returned no bytes. No Early/Blakely pricing page or MRF was observed.",
+  "latest_recheck": {
+    "observed_at": "2026-09-19T23:59:30Z",
+    "root_get_status": 200,
+    "root_get_bytes": 1071,
+    "root_head_status": 405,
+    "pointer_get_bytes": 0,
+    "browser_final_url": "https://lifebritestokes.com/",
+    "browser_result": "redirected to unrelated sibling domain and rendered generic hosting error",
+    "result": "publisher-domain lead remains unusable and does not expose a current pointer or pricing file"
+  },
   "wrong_domain_exclusion": "LifeBridge Health's Maryland pricing page and the redirected lifebritestokes.com sibling domain are unrelated to Lifebrite Community Hospital of Early in Blakely, Georgia.",
   "disposition": "domain-redirects-to-unrelated-sibling-no-mrf-observed",
   "next_action": "Obtain a corrected Early/Blakely publisher domain or direct first-party pointer/file; verify exact identity, Blakely address, Georgia state, date, version and usability before promotion."

@@ -15,6 +15,14 @@
   "pricing_response_sha256": "35d72456eb1fa0bb767fd37752a55b0066d3ad48f49503d0de1aa3b76c34d341",
   "web_reader_identity_observation": "The official facility page rendered NYC Health + Hospitals/Lincoln at 234 East 149th Street, Bronx NY 10451 in the web reader.",
   "web_reader_pricing_observation": "The official facility-charges page listed 132655001_Lincoln-Medical-Center_standardcharges.csv and linked the pointer-declared vendor endpoint in the web reader.",
+  "web_reader_recheck": {
+    "observed_at": "2026-09-19T11:05:00Z",
+    "url": "https://www.nychealthandhospitals.org/paying-for-your-health-care/facility-charges/",
+    "page_title": "Facility Charges",
+    "linked_file_name": "132655001_Lincoln-Medical-Center_standardcharges.csv",
+    "linked_file_url": "https://nychh.pt.panaceainc.com/MRFDownload/nychh/lincoln-medical",
+    "evidence_role": "current official page-to-pointer link corroboration; web-reader content, not a bounded-byte capture"
+  },
   "browser_observation": "In-app browser ended at ERR_CONNECTION_CLOSED; Brave navigation timed out. Neither proved a page or file failure.",
   "pointer_url": "https://nychealthandhospitals.org/cms-hpt.txt",
   "pointer_http_status": 200,

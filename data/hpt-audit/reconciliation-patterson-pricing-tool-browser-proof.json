@@ -1,0 +1,13 @@
+{
+  "ccn": "171346",
+  "hospital_name": "Hospital District #6 Patterson Health Center",
+  "observed_at": "2026-09-19T00:25:21Z",
+  "official_site": "https://pattersonhc.org/",
+  "pricing_tool_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Patterson_V2.aspx",
+  "pricing_tool_observation": "The Patterson Health Center pricing tool identifies the facility and displays standard charges, shoppable and unshoppable pricing with price information last updated February 10, 2026.",
+  "standard_charges_control": "JavaScript DownloadReport('hospital','CDMWithoutLabel') control; no direct file URL exposed in the rendered page.",
+  "report_endpoint_observation": {"url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=hospital&type=CDMWithoutLabel", "http_status": 500, "content_type": "text/html; charset=utf-8"},
+  "browser_file_observation": "The prior browser pointer-denial observation remains separate; this pass recovered a current pricing surface but no file bytes.",
+  "disposition": "current-publisher-associated-pricing-tool-observed-file-bytes-unavailable-unresolved",
+  "next_action": "Recover the underlying standard-charges CSV/JSON through a changed authorized route or publisher-provided link; verify bounded bytes, CMS template/version, Patterson facility identity, Kansas state, address, declared date and rate-level usability before promotion."
+}

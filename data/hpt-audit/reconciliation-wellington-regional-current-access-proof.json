@@ -1,0 +1,19 @@
+{
+  "ccn": "100275",
+  "observed_at": "2026-09-19T00:15:00Z",
+  "official_site": "https://www.wellingtonregional.com/",
+  "roster_identity": "Wellington Regional Medical Center, 10101 Forest Hill Boulevard, Wellington, FL 33414",
+  "browser_status": "cloudflare-access-denied-error-1005",
+  "browser_title": "Access denied | www.wellingtonregional.com used Cloudflare to restrict access",
+  "pointer_urls_checked": [
+    "https://www.wellingtonregional.com/cms-hpt.txt",
+    "https://wellingtonregional.com/cms-hpt.txt"
+  ],
+  "pointer_http_statuses": [403, 403],
+  "pointer_content_type": "text/plain; charset=UTF-8",
+  "pointer_server": "cloudflare",
+  "reason_for_recheck": "A materially different browser route was tested after the prior 2026-09-15 client-denial observation; the current browser exposed a Cloudflare Error 1005 page rather than a generic denial.",
+  "pointer_observation": "Both exact root-pointer URLs remain inaccessible and no pricing page or MRF bytes were exposed.",
+  "disposition": "official-domain-cloudflare-blocked-pointer-and-mrf-unresolved",
+  "next_action": "Retry the exact official pricing route and cms-hpt.txt only through a materially different authorized browser/download route or after a publisher change; verify facility identity, current MRF bytes, Florida address, declared date/version and usability before promotion."
+}

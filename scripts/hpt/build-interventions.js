@@ -520,7 +520,19 @@ async function main() {
   if (unknownFindings.size) throw new Error(`Classifier produced unknown interventions: ${[...unknownFindings].join(', ')}`);
 
   rows.sort((a, b) => a.state.localeCompare(b.state) || a.hospital_name.localeCompare(b.hospital_name));
-  await fsp.writeFile(OUT, toCSV(rows, COLUMNS));
+  // Write beside the destination and replace it atomically. Windows readers
+  // (including the local tracker server/indexer) can keep the existing CSV
+  // open; writing it in place intermittently raises UNKNOWN sharing errors.
+  // A same-directory rename preserves the previous complete artifact until
+  // the new bytes are ready and avoids exposing a partial CSV to readers.
+  const tmpOut = `${OUT}.tmp-${process.pid}`;
+  await fsp.writeFile(tmpOut, toCSV(rows, COLUMNS));
+  try {
+    await fsp.rename(tmpOut, OUT);
+  } catch (error) {
+    try { await fsp.unlink(tmpOut); } catch {}
+    throw error;
+  }
 
   const counts = {};
   for (const r of rows) counts[r.intervention] = (counts[r.intervention] || 0) + 1;

@@ -1,0 +1,18 @@
+{
+  "ccn": "104076",
+  "hospital_name": "University Behavioral Center",
+  "observed_at": "2026-09-19T01:20:00Z",
+  "official_site": "https://universitybehavioral.com/",
+  "official_identity_source": "https://locate.dev.healthfinder.fl.gov/Facility-Provider/Profile/?LID=10111",
+  "official_identity": "University Behavioral Center, 2500 Discovery Dr, Orlando, FL 32826",
+  "pointer_urls_checked": [
+    "https://universitybehavioral.com/cms-hpt.txt",
+    "https://www.universitybehavioral.com/cms-hpt.txt"
+  ],
+  "direct_pointer_statuses": [403, 403],
+  "direct_pointer_result": "Both exact root-pointer URLs returned HTTP 403 before pointer bytes.",
+  "browser_status": "Cloudflare security-verification page",
+  "browser_result": "A fresh official browser render stopped at the provider security-verification page; no pointer text, pricing page or MRF link was exposed.",
+  "disposition": "official-identity-confirmed-pointer-access-blocked-mrf-unresolved",
+  "next_action": "Retry the exact official pricing/pointer routes through a materially different authorized route; obtain bounded pointer/MRF bytes and independently verify the University Behavioral Center identity, Florida state, declared date/version and CMS-template usability."
+}

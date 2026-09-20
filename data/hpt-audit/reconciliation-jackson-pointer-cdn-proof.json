@@ -16,5 +16,15 @@
   "declared_state":"AL",
   "declared_date":"2026-06-23",
   "version":"3.0.0",
+  "latest_pointer_recheck": {
+    "observed_at": "2026-09-19T11:20:02Z",
+    "pointer_http_status": 200,
+    "pointer_content_length": 435,
+    "pointer_last_modified": "2026-02-24T16:55:43Z",
+    "pointer_sha256": "203d26e08d92668f612d0c5f8213ec24d46dc611ee3ee5d20795ff45c625c1a7",
+    "pointer_target_http_status": 403,
+    "pointer_target_error": "AuthorizationFailure",
+    "result": "The official pointer is unchanged and still names the signed Azure target; the exact target remains unauthorized while the same-name AccuReg CDN file remains separately retrievable. No pointer-linked promotion was made."
+  },
   "next_action":"Publisher should repair or replace the signed pointer target; retain the same-name CDN file as separately retrieved page/portal evidence until exact pointer-target bytes are accessible."
 }

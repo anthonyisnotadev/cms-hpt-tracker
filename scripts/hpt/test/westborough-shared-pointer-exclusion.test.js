@@ -21,6 +21,9 @@ test('Westborough retained shared pointer does not assign a sibling file to CCN 
   assert.equal(names.filter(name => /westborough/i.test(name)).length, 0);
   assert.doesNotMatch(contents, /westborough|massachusetts|\bMA\b/i);
   assert.match(proof.current_root_web_open_result, /not established/i);
+  assert.equal(proof.latest_live_pointer_recheck.http_status, 200);
+  assert.equal(proof.latest_live_pointer_recheck.entry_count, 10);
+  assert.equal(proof.latest_live_pointer_recheck.westborough_entry_count, 0);
 
   const manual = read('data/hpt-audit/reconciliation-manual-access-observations.json').records
     .find(row => row.ccn === proof.ccn);
@@ -29,6 +32,7 @@ test('Westborough retained shared pointer does not assign a sibling file to CCN 
   const queue = read('data/hpt-audit/unresolved-investigation-worklist.json').records
     .find(row => row.ccn === proof.ccn);
   assert.equal(manual.proof_file, 'reconciliation-westborough-shared-pointer-exclusion-proof.json');
+  assert.equal(manual.latest_live_pointer_recheck.sha256, proof.retained_pointer_sha256);
   assert.equal(reconciliation.workstream, 'genuinely-unresolved-investigation');
   assert.equal(queue.evidence_gate, 'pointer-facility-match');
   assert.match(queue.next_action, /do not assign one of the ten retained out-of-state sibling entries/i);

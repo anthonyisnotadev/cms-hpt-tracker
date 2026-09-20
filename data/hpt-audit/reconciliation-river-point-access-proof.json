@@ -1,0 +1,22 @@
+{
+  "ccn": "104016",
+  "observed_at": "2026-09-19T05:35:00Z",
+  "official_domain": "https://www.riverpointbehavioral.com/",
+  "official_facility_page": "https://www.riverpointbehavioral.com/",
+  "facility_name": "River Point Behavioral Health",
+  "official_address_source": "https://locate.dev.healthfinder.fl.gov/Facility-Provider/Profile/?LID=10060",
+  "roster_address": "6300 Beach Boulevard, Jacksonville, FL 32216",
+  "browser_observation": "official homepage rendered Cloudflare Performing security verification",
+  "pointer_urls_checked": [
+    "https://riverpointbehavioral.com/cms-hpt.txt",
+    "https://www.riverpointbehavioral.com/cms-hpt.txt"
+  ],
+  "pointer_http_statuses": [403, 403],
+  "pointer_response_type": "Cloudflare challenge HTML",
+  "third_party_mrf_lead": "https://medrates.fyi/hospital/river-point-behavioral-health",
+  "third_party_mrf_observation": "third-party index reports hospital-published MRF data refreshed 2026-06-09; exact source URL and bytes not exposed in the bounded page",
+  "mrf_url": "",
+  "disposition": "official-identity-confirmed-pointer-cloudflare-blocked-third-party-mrf-lead-unresolved",
+  "scope_note": "Florida HealthFinder corroborates River Point Behavioral Health at the exact roster address. Browser automation and both exact pointer URLs encountered Cloudflare challenge/access-denied responses. A third-party price index reports a current hospital-published MRF but does not expose a verifiable source URL or bytes in the bounded result; it is retained as a lead only.",
+  "next_action": "Retry the official pricing/pointer route through a materially different authorized browser/download path; obtain the exact MRF URL and bounded bytes, then verify identity, Florida state, date/version and CMS-template usability before promotion."
+}

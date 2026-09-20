@@ -1,0 +1,21 @@
+{
+  "ccn": "370201",
+  "observed_at": "2026-09-19T17:45:00Z",
+  "method": "current-first-party-pointer-page-and-bounded-file-recheck",
+  "official_identity_page": "https://surgicalhospitalok.net/",
+  "official_identity_address": "100 Southeast 59th Street, Oklahoma City, OK 73129",
+  "pointer_url": "https://surgicalhospitalok.net/cms-hpt.txt",
+  "pointer_http_status": 206,
+  "pointer_mrf_url": "https://surgicalhospitalok.net/731521890_surgical-hospital-of-oklahoma-llc_standardcharges.csv",
+  "pointer_file_http_status": 206,
+  "pointer_file_content_range": "bytes 0-262143/4916732",
+  "pointer_file_content_type": "text/csv",
+  "pointer_file_header_observation": "The current file still declares Surgical Hospital of Oklahoma at 100 SE 59th St, Oklahoma City, OK, 2026-08-17, CMS 3.0.0, with a blank license_number | KS column.",
+  "pricing_page_url": "https://surgicalhospitalok.net/price-transparency/",
+  "pricing_page_http_status": 206,
+  "pricing_page_mrf_link": "https://surgicalhospitalok.net/sho__2026_standard_charges__v1_0_0_tall__2026-08-17T16_41_17.728462979Z.csv",
+  "pricing_page_mrf_link_http_status": 404,
+  "interpretation": "The current pointer/file remains identity- and address-matched, but the blank KS header token and separate page-link 404 remain unresolved publisher discrepancies. The KS label is not treated as a populated license value or legal conclusion.",
+  "disposition": "retain-unresolved-pointer-file-header-and-page-link-discrepancy",
+  "next_action": "Obtain publisher correction or explanation of the license header and page link, then validate the complete exact pointer file before any verified-MRF finding."
+}

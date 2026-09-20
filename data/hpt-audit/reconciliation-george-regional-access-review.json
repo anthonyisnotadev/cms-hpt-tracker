@@ -38,6 +38,35 @@
   "browser_pointer_result": "Robot Challenge Screen at /.well-known/sgcaptcha/",
   "browser_pointer_file_result": "Robot Challenge Screen at /.well-known/sgcaptcha/",
   "browser_page_file_result": "not tested",
+  "latest_browser_recheck_20260919": {
+    "observed_at": "2026-09-19T16:20:00Z",
+    "reason_for_repeat": "Continuation audit after the live first-party page exposed a new dated pointer and facility-specific CSV route.",
+    "pricing_page_browser_status": 200,
+    "pricing_page_url": "https://georgeregional.com/price-insurance-and-billing/",
+    "browser_links": {
+      "george_regional_hospital_csv": "https://georgeregional.com/wp-content/uploads/2026/08/64-6001398_George-Regional-Hospital_standardcharges-5.csv",
+      "george_regional_root_pointer_file": "https://georgeregional.com/wp-content/uploads/2026/03/cms-hpt.txt",
+      "greene_county_hospital_csv": "https://georgeregional.com/wp-content/uploads/2026/08/32-0222103_Greene-County-Hospital_standardcharges.csv"
+    },
+    "browser_page_scope": "The rendered page labels separate George Regional Hospital and Greene County Hospital standard-charge files and a TXT file; the George Regional Hospital link is the Lucedale facility-specific route.",
+    "direct_route_observations": [
+      {
+        "url": "https://georgeregional.com/wp-content/uploads/2026/03/cms-hpt.txt",
+        "status": 202,
+        "content_type": "text/html",
+        "response_sha256": "351F40670817401D5AA8968BC7E62CDF92046BAB63A79623C0BC7B89210B820F",
+        "result": "HTML security challenge; pointer bytes unavailable"
+      },
+      {
+        "url": "https://georgeregional.com/wp-content/uploads/2026/08/64-6001398_George-Regional-Hospital_standardcharges-5.csv",
+        "status": 202,
+        "content_type": "text/html",
+        "response_sha256": "F47052E7AED5B03557DA7760AD25CC5C9132D13B6516A7C022D71E39CFC77F08",
+        "result": "HTML security challenge; CSV bytes unavailable"
+      }
+    ],
+    "interpretation": "The current page provides a stronger, dated facility-specific route lead, but no pointer/file bytes or declared metadata were obtained. Preserve the challenge as transport evidence and keep CCN 250036 unresolved pending an authorized content-bearing retrieval."
+  },
   "byte_readable_file_verified": false,
   "next_action": "After publisher access changes or through an authorized route, re-read the exact George Regional root pointer and both distinct CSV URLs. Confirm which URL the root declares, which file the first-party price page links, then inspect bounded file bytes for the Lucedale hospital name/address/state, update date and CMS version. Do not infer file absence or currency from the current challenges or URL path dates."
 }

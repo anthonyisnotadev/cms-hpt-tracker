@@ -1,5 +1,5 @@
 {
-  "observed_at": "2026-09-18T02:34:00Z",
+  "observed_at": "2026-09-18T22:35:00Z",
   "dataset_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data",
   "query_scope": ["250043", "251340"],
   "ccn_250043_rows": 0,
@@ -11,7 +11,41 @@
     "npi": "1083659734",
     "enrollment_id": "O20250609001118"
   },
-  "interpretation": "Current CMS enrollment snapshot distinguishes the active CAH CCN 251340 from the absent acute-care CCN 250043, but exposes no effective termination date for 250043.",
+  "full_snapshot_related_rows": [
+    {
+      "ccn": "25U043",
+      "provider_type": "PART A PROVIDER - HOSPITAL",
+      "practice_location_type": "HOSPITAL SWING-BED UNIT",
+      "npi": "1750416459",
+      "enrollment_id": "O20090507000123"
+    },
+    {
+      "ccn": "25S043",
+      "provider_type": "PART A PROVIDER - HOSPITAL",
+      "practice_location_type": "HOSPITAL PSYCHIATRIC UNIT",
+      "npi": "1669507364",
+      "enrollment_id": "O20090507000145"
+    },
+    {
+      "ccn": "25Z340",
+      "provider_type": "PART A PROVIDER - CRITICAL ACCESS HOSPITAL",
+      "practice_location_type": "HOSPITAL SWING-BED UNIT",
+      "npi": "1750416459",
+      "enrollment_id": "O20250522003616"
+    }
+  ],
+  "full_snapshot_retrieval": "July 2026 version, complete API retrieval in two bounded pages (offset 0 and 6500); related unit identifiers were retained to distinguish them from the active main CAH row.",
+  "interpretation": "Current CMS enrollment snapshot distinguishes the active main CAH CCN 251340 from the absent acute-care CCN 250043 and separately lists related swing-bed/psychiatric unit identifiers; it still exposes no effective termination date for 250043.",
   "disposition": "scope-transition-supported-effective-date-still-unresolved",
+  "latest_live_api_recheck": {
+    "observed_at": "2026-09-19T12:42:00Z",
+    "ccn_250043_query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=250043&size=100",
+    "ccn_250043_response_sha256": "4F53CDA18C2BAA0C0354BB5F9A3ECBE5ED12AB4D8E11BA873C2F11161202B945",
+    "ccn_250043_rows": 0,
+    "ccn_251340_query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=251340&size=100",
+    "ccn_251340_response_sha256": "405FD59DC9E7D4D39AE7335176E26A450F90DFA485C962D8DB7AB6CE5614AD33",
+    "ccn_251340_rows": 1,
+    "result": "The live CMS API still returns no numeric 250043 enrollment row and one active main CAH 251340 row at 1001 Holland Ave, Philadelphia MS; no effective transition date is exposed. The shared MRF remains unassigned to both CCNs."
+  },
   "next_action": "Obtain an effective-dated CMS certification/status record or publisher confirmation before changing the 250043 tracker disposition or assigning the shared MRF to both CCNs."
 }

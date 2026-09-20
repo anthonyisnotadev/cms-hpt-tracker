@@ -22,6 +22,9 @@ const expected = new Map([
   ['281357', { domain: 'sidneyrmc.com', hospital: 'Cheyenne County Hospital Association Inc',
     location: 'Sidney Regional Medical Center', street: '1000 Pole Creek Crossing', rosterStreet: '1000 POLE CREEK CROSSING',
     city: 'SIDNEY', state: 'NE', zip: '69162', date: '2026-01-09' }],
+  ['241369', { domain: 'uhd.org', hospital: 'United Hospital District, Inc',
+    location: 'United Hospital District', street: '515 S. Moore St', rosterStreet: '515 SOUTH MOORE STREET',
+    city: 'BLUE EARTH', state: 'MN', zip: '56013', date: '2026-02-12' }],
 ]);
 if (records.length !== expected.size || new Set(records.map(row => row.ccn)).size !== expected.size)
   throw new Error('Unexpected HPI proof cohort');
@@ -29,8 +32,9 @@ if (records.length !== expected.size || new Set(records.map(row => row.ccn)).siz
 const entries = records.map(proof => {
   const want = expected.get(proof.ccn), base = baseBy.get(proof.ccn), facility = rosterBy.get(proof.ccn);
   const sample = fs.readFileSync(path.join(root, proof.retained_sample));
-  if (!want || !base || base.finding !== 'mrf-url-unreachable' || base.domain !== want.domain
-      || base.mrf_url !== proof.pointer_mrf_url || proof.official_domain !== want.domain
+  if (!want || !base || !['mrf-url-unreachable', 'not-assessed-domain-unknown'].includes(base.finding)
+      || (base.domain && base.domain !== want.domain)
+      || (base.mrf_url && base.mrf_url !== proof.pointer_mrf_url) || proof.official_domain !== want.domain
       || proof.pointer_mrf_http_status !== 404 || proof.current_mrf_http_status !== 206
       || proof.pointer_mrf_url === proof.current_mrf_url
       || proof.rendered_source_download_url !== proof.current_mrf_url

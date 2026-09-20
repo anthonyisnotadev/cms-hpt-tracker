@@ -1,11 +1,23 @@
 {
   "ccn": "330270",
-  "observed_at": "2026-09-18T02:40:00Z",
+  "observed_at": "2026-09-19T23:59:00Z",
   "official_pricing_page": "https://www.hss.edu/patient-care/paying-for-care/price-transparency",
   "pointer_url": "https://hss.edu/cms-hpt.txt",
   "pointer_sha256": "50bc16f049f7606c91d38625f32508869d871bf9fa726ce4098cab8215dc30ce",
-  "page_recheck_result": "Current official page still lists Hospital for Special Surgery Main Hospital Standard Charges and states the JSON files exceed 500 MB; no alternate direct URL or bounded bytes were exposed by the permitted search/browser route.",
+  "page_recheck_result": "A fresh official page render still lists Hospital for Special Surgery Main Hospital Standard Charges and exposes the exact CloudFront JSON URL; direct bounded retrieval and browser navigation both reached the CloudFront error page before JSON bytes were obtained.",
   "pointer_mrf_http_status": 403,
+  "page_file_url": "https://d2cg6hcwj0g0z0.cloudfront.net/131624135-1598703019_ny-society-for-the-relief-of-ruptured-and-crippled-maintaing-the-hospital-for-special-surgery_standardcharges.json",
+  "page_file_http_status": 403,
+  "latest_web_recheck": {
+    "observed_at": "2026-09-19T23:59:00Z",
+    "pricing_page_status": 200,
+    "main_hospital_json_link_present": true,
+    "published_file_size_note": "HSS states the JSON files are larger than 500MB",
+    "main_campus_identity_observed": "Hospital for Special Surgery, 535 East 70th Street, New York, NY 10021",
+    "pointer_file_status": 403,
+    "browser_result": "Browser navigation rendered the CloudFront ERROR page for the exact file URL.",
+    "result": "Current official page and facility page still agree on the Main Hospital file and campus; web fetch and browser navigation of the exact CloudFront JSON remain access-blocked with no bytes."
+  },
   "disposition": "current-page-and-pointer-still-access-blocked",
   "next_action": "Use an authorized large-download route or publisher-provided alternate URL, then verify bounded JSON identity and metadata before promotion."
 }

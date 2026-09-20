@@ -21,6 +21,15 @@
     "sha256": "b750648c9a4ec4b9dc58f49bc5cfb5ab4604061b3d097c4d1f4d32d24895a812",
     "distinction": "Lists the four reviewed hospitals under Inpatient Psychiatric Hospital Centers, and Deer's Head and Western Maryland under Chronic Hospitals."
   },
+  "latest_eastern_shore_browser_recheck": {
+    "ccn": "214002",
+    "observed_at": "2026-09-19T15:10:00Z",
+    "reason_for_repeat": "Continuation audit of the unresolved Tier-2 facility-specific pointer/file gate.",
+    "url": "https://health.maryland.gov/eshc/Pages/Home.aspx",
+    "http_status": 200,
+    "browser_result": "The current Maryland Department of Health page renders Eastern Shore Hospital Center as a CMS-certified psychiatric facility at 5262 Woods Road, Cambridge, MD 21613. It exposes facility information and resources but no price-transparency page, cms-hpt.txt link, or machine-readable-file link.",
+    "interpretation": "This strengthens current first-party identity and address evidence, but does not recover an MRF or authorize reuse of the Western Maryland/Deers Head pointer. CCN 214002 remains unresolved pending a facility-specific pointer/file or publisher clarification."
+  },
   "records": [
     {"ccn": "214002", "name": "Eastern Shore Hospital Center", "roster_address": "5262 Woods Road, Cambridge, MD 21613", "first_party_page": "https://health.maryland.gov/ESHC/Pages/Home.aspx"},
     {"ccn": "214004", "name": "Springfield Hospital Center", "roster_address": "6655 Sykesville Road, Sykesville, MD 21784", "first_party_page": "https://health.maryland.gov/springfield/Pages/home.aspx"},

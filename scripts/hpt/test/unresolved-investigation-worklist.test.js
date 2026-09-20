@@ -47,17 +47,18 @@ test('unresolved investigation worklist covers each live CCN with a specific evi
   }
 });
 
-test('Grand View and Avera source reviews narrow four gates without resolving their CCNs', () => {
+test('Grand View and Avera source reviews narrow four gates without overstating file verification', () => {
   const reconciliation = JSON.parse(read('nationwide-reconciliation.json'));
   const verification = JSON.parse(read('nationwide-verification.json'));
   const rows = new Map(build(reconciliation, verification).records.map(row => [row.ccn, row]));
   const grandView = rows.get('390057');
-  assert.equal(grandView.current_disposition, 'root-pointer-omits-facility-page-file-header-found');
-  assert.equal(grandView.nationwide_disposition, 'pointer-facility-match-unresolved');
-  assert.equal(grandView.evidence_gate, 'pointer-entry-and-complete-file-review');
-  assert.deepEqual(grandView.reviewed_sources, ['manual-access', 'official-page-file', 'grand-view-page-file-proof']);
-  assert.equal(grandView.candidate_file_recorded, true);
-  assert.match(grandView.next_action, /not treat the page file as pointer-linked/);
+  assert.equal(grandView, undefined);
+  const standing = JSON.parse(read('standing-evidence-followup-worklist.json'));
+  const grandViewStanding = standing.records.find(row => row.ccn === '390057');
+  assert.equal(grandViewStanding.standing_finding, 'root-pointer-omits-facility-page-file-found');
+  assert.equal(grandViewStanding.current_disposition, 'pointer-facility-match-unresolved');
+  assert.equal(grandViewStanding.reviewed_follow_up, true);
+  assert.match(grandViewStanding.next_action, /recheck complete-file usability/);
   for (const ccn of ['431308', '431313', '431318']) {
     const row = rows.get(ccn);
     assert.equal(row.current_disposition, 'first-party-labeled-file-client-access-denied');
@@ -72,27 +73,27 @@ test('Grand View and Avera source reviews narrow four gates without resolving th
   changed.records.find(row => row.ccn === '390057').pointer_corpus_sha256 = 'changed';
   changed.records.find(row => row.ccn === '431308').pointer_corpus_sha256 = 'changed';
   const staleRows = new Map(build(reconciliation, changed).records.map(row => [row.ccn, row]));
-  assert.equal(staleRows.get('390057').current_disposition, 'pointer-facility-match-unresolved');
+  assert.equal(staleRows.get('390057'), undefined);
   assert.equal(staleRows.get('431308').current_disposition, 'pointer-facility-match-unresolved');
 });
 
-test('Independence Health access review narrows three unresolved gates without promoting a file', () => {
+test('Independence Health access review narrows remaining unresolved gates without promoting a file', () => {
   const reconciliation = JSON.parse(read('nationwide-reconciliation.json'));
   const verification = JSON.parse(read('nationwide-verification.json'));
   const rows = new Map(build(reconciliation, verification).records.map(row => [row.ccn, row]));
-  for (const ccn of ['390093', '390168', '390219']) {
+  // Clarion (390093) and Latrobe (390219) now have separately reviewed
+  // complete page-linked files; only Butler Memorial remains access-gated.
+  assert.equal(rows.get('390093'), undefined);
+  assert.equal(rows.get('390219'), undefined);
+  for (const ccn of ['390168']) {
     const row = rows.get(ccn);
     assert.equal(row.current_disposition, 'first-party-labeled-file-client-access-denied');
     assert.equal(row.nationwide_disposition, 'pointer-facility-match-unresolved');
-    assert.deepEqual(row.reviewed_sources, ['390093', '390168', '390219'].includes(ccn)
-      ? ['manual-access', 'independence-access-proof']
-      : ['independence-access-proof']);
+    assert.deepEqual(row.reviewed_sources, ['manual-access', 'independence-access-proof']);
     assert.equal(row.candidate_file_recorded, true);
     assert.match(row.next_action, /byte-backed header/);
   }
   assert.equal(rows.get('390168').evidence_gate, 'file-access-and-url-equivalence');
-  assert.equal(rows.get('390093').evidence_gate, 'file-access');
-  assert.equal(rows.get('390219').evidence_gate, 'file-access');
   const tampered = structuredClone(verification);
   tampered.records.find(row => row.ccn === '390168').pointer_corpus_sha256 = 'changed';
   assert.equal(build(reconciliation, tampered).records.find(row => row.ccn === '390168').current_disposition,

@@ -15,6 +15,11 @@
   "pointer_mrf_sample_sha256": "7dd1aaf47388a76285b9718591a95f2d032b84642530a7d89d9625761e938bb4",
   "pointer_mrf_sample_retained_file": "cms_data/hpt/nationwide-verification/file-byte-proof/7dd1aaf47388a76285b9718591a95f2d032b84642530a7d89d9625761e938bb4.bin",
   "pointer_mrf_total_bytes_from_content_range": 4916732,
+  "pointer_mrf_complete_retrieved": true,
+  "pointer_mrf_complete_sha256": "f1dd77b792860e64a3a4887002ac435daf8ac2f77b1dcd1afed9f576de8c59e9",
+  "pointer_mrf_complete_bytes": 4916732,
+  "pointer_mrf_nonempty_data_rows": 34141,
+  "pointer_mrf_complete_usability": "complete CSV retrieval; CMS header and first data rows parse, with 34,141 non-empty rate/data rows",
   "pointer_mrf_declared_hospital_name": "Surgical Hospital of Oklahoma",
   "pointer_mrf_declared_location_name": "Surgical Hospital of Oklahoma",
   "pointer_mrf_declared_address": "100 SE 59th St. Oklahoma City, OK, 73129",
@@ -27,6 +32,6 @@
   "pricing_page_mrf_link_url": "https://surgicalhospitalok.net/sho__2026_standard_charges__v1_0_0_tall__2026-08-17T16_41_17.728462979Z.csv",
   "pricing_page_mrf_link_http_status": 404,
   "disposition": "current-pointer-file-readable-header-state-label-conflicts-with-oklahoma-page-link-404",
-  "interpretation": "The current root pointer names a reachable CSV whose name and address match this Oklahoma facility. The metadata column label is license_number | KS, but its value is blank; KS is a header token, not a populated license value. The separate first-party pricing-page MRF link returned 404. Only a 262,144-byte sample was retained, so full-file usability and rate content are not established.",
+  "interpretation": "The current root pointer names a reachable complete CSV whose name and address match this Oklahoma facility. The metadata column label is license_number | KS, but its value is blank; KS is a header token, not a populated license value. The separate first-party pricing-page MRF link returned 404. Complete CSV parsing and rate/data rows are now validated, but the publisher's header label/page-link disagreement remains unresolved and is not a legal conclusion.",
   "next_action": "Ask the publisher to confirm or correct the license_number | KS header/blank license field and reconcile the pricing-page 404 link with the current root-pointer target. Then retrieve and validate the complete exact file before any verified-MRF finding; do not treat the KS header token as a populated license value or a legal conclusion."
 }

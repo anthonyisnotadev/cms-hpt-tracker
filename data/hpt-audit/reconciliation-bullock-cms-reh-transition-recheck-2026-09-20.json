@@ -1,0 +1,23 @@
+{
+  "ccns": ["010110", "010779"],
+  "observed_at": "2026-09-20T03:00:00Z",
+  "sources": [
+    {
+      "url": "https://data.cms.gov/provider-data/dataset/97xg-v3wv",
+      "role": "current CMS Rural Emergency Hospital quality dataset",
+      "observed_row": "010779 BULLOCK COUNTY HOSPITAL, 102 WEST CONECUH AVENUE, UNION SPRINGS, AL 36089"
+    },
+    {
+      "url": "https://data.cms.gov/provider-data/dataset/7peb-i4pi",
+      "role": "current CMS Rural Emergency Hospital outpatient-imaging dataset",
+      "observed_row": "010779 BULLOCK COUNTY HOSPITAL, 102 WEST CONECUH AVENUE, UNION SPRINGS, AL 36089"
+    },
+    {
+      "url": "https://data.cms.gov/tools/medicare-inpatient-hospital-look-up-tool",
+      "role": "CMS inpatient lookup context",
+      "historical_lead": "Historical CMS-linked material identifies 010110 as the former Bullock County Hospital acute-care identifier; no effective termination date was exposed in this pass."
+    }
+  ],
+  "disposition": "current-reh-ccn-010779-corroborated-historical-acute-ccn-010110-effective-date-unresolved",
+  "next_action": "Keep 010110 and 010779 separate. Obtain a dated CMS enrollment/certification status record establishing when 010110 ended or converted and independently resolve the current CSV license_number|CA conflict before any MRF promotion."
+}

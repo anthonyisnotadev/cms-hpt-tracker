@@ -1,0 +1,42 @@
+{
+  "ccn": "234023",
+  "hospital_name": "HAVENWYCK HOSPITAL",
+  "official_site": "https://havenwyckhospital.com/",
+  "official_address": "1525 University Drive, Auburn Hills, MI 48326",
+  "pointer_urls": [
+    "https://havenwyckhospital.com/cms-hpt.txt",
+    "https://www.havenwyckhospital.com/cms-hpt.txt"
+  ],
+  "observed_at": "2026-09-19T21:07:55Z",
+  "access_method": "bounded curl retrieval with browser user-agent; HTTPS and www alias checked",
+  "observations": [
+    {
+      "url": "https://havenwyckhospital.com/cms-hpt.txt",
+      "http_status": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length": 5299,
+      "sha256": "2998a18d04d755a04cd842875527c204062af892ab4d77e2edfd2d245c755ec0",
+      "cf_mitigated": "challenge",
+      "server": "cloudflare",
+      "pointer_fields_retrieved": false
+    },
+    {
+      "url": "http://havenwyckhospital.com/cms-hpt.txt",
+      "http_status": 301,
+      "location": "https://havenwyckhospital.com/cms-hpt.txt",
+      "pointer_fields_retrieved": false
+    },
+    {
+      "url": "https://www.havenwyckhospital.com/cms-hpt.txt",
+      "http_status": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "content_length": 5303,
+      "cf_mitigated": "challenge",
+      "server": "cloudflare",
+      "pointer_fields_retrieved": false
+    }
+  ],
+  "disposition": "pointer-access-denied-to-client",
+  "detail": "A materially different bounded client checked the canonical HTTPS pointer, HTTP redirect, and www HTTPS alias. Both HTTPS targets returned Cloudflare challenge HTML; no cms-hpt.txt pointer fields or MRF URL were recovered. This is transport/access evidence only, not proof of missing publication or invalid data.",
+  "next_action": "Obtain a permitted content-bearing response from Havenwyck's exact root pointer or pricing page, then verify a facility-specific CSV/JSON MRF, Auburn Hills Michigan identity, declared date, CMS version and usable rows before promotion. Do not retry the same targets until a publisher or access-path change."
+}

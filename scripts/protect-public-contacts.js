@@ -9,12 +9,19 @@ const { csvToObjects, toCSV } = require('./hpt/lib/util');
 const ROOT = path.resolve(__dirname, '..');
 const CONTACT = /^(?:contact(?:[-_ ]?(?:name|email|phone|telephone|fax))?|(?:phone|telephone|fax)(?:[-_ ]?number)?|email)$/i;
 function protectDocument(text, extension, key) {
+  let changed = false;
   function walk(value, field, contact = false) {
     contact = contact || CONTACT.test(field || '');
-    if (typeof value === 'number' && contact) return encryptValue(String(value), key);
+    if (typeof value === 'number' && contact) {
+      changed = true;
+      return encryptValue(String(value), key);
+    }
     if (typeof value === 'string') {
-      if (contact && value && !isObfuscated(value) && !/^\[.*\]$/.test(value)) return encryptValue(value, key);
-      return protectContacts(value, key);
+      const protectedValue = contact && value && !isObfuscated(value) && !/^\[.*\]$/.test(value)
+        ? encryptValue(value, key)
+        : protectContacts(value, key);
+      if (protectedValue !== value) changed = true;
+      return protectedValue;
     }
     if (Array.isArray(value)) return value.map(v => walk(v, field, contact));
     if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).map(([k,v]) => [k, walk(v,k,contact)]));
@@ -23,12 +30,12 @@ function protectDocument(text, extension, key) {
   if (extension === '.json') {
     const source = JSON.parse(text), result = walk(source);
     const indentation = text.match(/\n([ \t]+)\S/)?.[1] || '  ';
-    return JSON.stringify(source) === JSON.stringify(result) ? text : JSON.stringify(result, null, indentation) + '\n';
+    return changed ? JSON.stringify(result, null, indentation) + '\n' : text;
   }
   if (extension === '.csv') {
     const rows = csvToObjects(text);
     const result = rows.map(row => walk(row));
-    return JSON.stringify(rows) === JSON.stringify(result) ? text : toCSV(result, Object.keys(rows[0] || {}));
+    return changed ? toCSV(result, Object.keys(rows[0] || {})) : text;
   }
   return protectContacts(text, key);
 }

@@ -1,8 +1,8 @@
 {
   "summary": {
     "hospitals": 5419,
-    "superseded_observations": 426,
-    "verification_claims": 3194,
+    "superseded_observations": 512,
+    "verification_claims": 3189,
     "issues": {}
   },
   "records": [
@@ -696,8 +696,11 @@
     },
     {
       "ccn": "010779",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T05:44:23.642Z",
+      "superseding_resolution_observed_at": "2026-09-21T04:30:00Z",
+      "superseding_resolution_run": "bullock-reh-current-pointer-file-2026-09-21"
     },
     {
       "ccn": "010101",
@@ -1263,11 +1266,8 @@
     },
     {
       "ccn": "010024",
-      "status": "superseded-by-reviewed-resolution",
-      "issues": [],
-      "observed_at": "2026-09-15T09:16:43.430Z",
-      "superseding_resolution_observed_at": "2026-09-15T21:34:05.995Z",
-      "superseding_resolution_run": "jackson-montgomery-publisher-pointer-mismatch-2026-09-15"
+      "status": "not-a-verification-claim",
+      "issues": []
     },
     {
       "ccn": "010128",
@@ -5520,8 +5520,11 @@
     },
     {
       "ccn": "031313",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T09:17:37.492Z",
+      "superseding_resolution_observed_at": "2026-09-19T05:10:00Z",
+      "superseding_resolution_run": "carondelet-holy-cross-page-file-inventory-recheck-2026-09-19"
     },
     {
       "ccn": "030014",
@@ -8797,8 +8800,11 @@
     },
     {
       "ccn": "050243",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:32:04.690Z",
+      "superseding_resolution_observed_at": "2026-09-21T07:00:00Z",
+      "superseding_resolution_run": "desert-care-network-current-files-2026-09-21"
     },
     {
       "ccn": "050709",
@@ -8815,13 +8821,19 @@
     },
     {
       "ccn": "050118",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:31:21.418Z",
+      "superseding_resolution_observed_at": "2026-09-19T05:27:00Z",
+      "superseding_resolution_run": "manteca-page-linked-complete-current-file-pointer-recheck-2026-09-19"
     },
     {
       "ccn": "050464",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:31:21.418Z",
+      "superseding_resolution_observed_at": "2026-09-21T07:30:00Z",
+      "superseding_resolution_run": "doctors-modesto-current-page-file-2026-09-21"
     },
     {
       "ccn": "050242",
@@ -9060,8 +9072,11 @@
     },
     {
       "ccn": "050179",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:31:21.418Z",
+      "superseding_resolution_observed_at": "2026-09-19T05:29:00Z",
+      "superseding_resolution_run": "emanuel-page-linked-complete-current-file-pointer-recheck-2026-09-19"
     },
     {
       "ccn": "050158",
@@ -9176,8 +9191,11 @@
     },
     {
       "ccn": "050708",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:42:45.190Z",
+      "superseding_resolution_observed_at": "2026-09-21T03:30:00Z",
+      "superseding_resolution_run": "fresno-surgical-current-pricing-page-file-2026-09-21"
     },
     {
       "ccn": "05025F",
@@ -9652,8 +9670,11 @@
     },
     {
       "ccn": "050279",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:32:04.690Z",
+      "superseding_resolution_observed_at": "2026-09-21T07:00:00Z",
+      "superseding_resolution_run": "desert-care-network-current-files-2026-09-21"
     },
     {
       "ccn": "050320",
@@ -9840,8 +9861,11 @@
     },
     {
       "ccn": "050534",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:32:04.690Z",
+      "superseding_resolution_observed_at": "2026-09-21T07:00:00Z",
+      "superseding_resolution_run": "desert-care-network-current-files-2026-09-21"
     },
     {
       "ccn": "054131",
@@ -11260,35 +11284,11 @@
     },
     {
       "ccn": "050110",
-      "disposition": "verified-current-mrf",
-      "identity_source": "header",
-      "status": "proof-audit-complete",
+      "status": "superseded-by-reviewed-resolution",
       "issues": [],
-      "pointer_proof": [
-        {
-          "file": "cms_data/hpt/pointer-corpus/raw/lompocvmc.com-d32023ccc043.txt",
-          "sha256": "2108fb9a7649f15aed600f7ee8d6c92450f9ba3380261a431a1482a081e499bd",
-          "status": "hash-corroborated"
-        }
-      ],
-      "file_byte_proof": {
-        "checked_at": "2026-09-15T16:13:21.200Z",
-        "bytes": 262144,
-        "sha256": "fbaf779a9863be0c339b1a1d9cc333327bdb34549f670d126b2a8e37721962e6",
-        "requested_range": "bytes=0-262143",
-        "final_url": "https://lompocvalleymedicalcenter.pg.revenuemasters.com/cdm-files/956001880_lompoc-valley-medical-center_standardcharges.csv",
-        "final_host": "lompocvalleymedicalcenter.pg.revenuemasters.com",
-        "final_url_withheld": ""
-      },
-      "archive_content_proof": null,
-      "state_evidence": {
-        "status": "corroborated",
-        "basis": "license-state-field"
-      },
-      "address_equivalence_review": null,
       "observed_at": "2026-09-15T09:29:56.734Z",
-      "source_observed_at": "2026-09-15T09:29:56.734Z",
-      "header_cache_found": true
+      "superseding_resolution_observed_at": "2026-09-19T22:47:10Z",
+      "superseding_resolution_run": "lompoc-valley-current-page-file-recheck-2026-09-19"
     },
     {
       "ccn": "050663",
@@ -12057,8 +12057,8 @@
       "status": "superseded-by-reviewed-resolution",
       "issues": [],
       "observed_at": "2026-09-15T04:39:06.776Z",
-      "superseding_resolution_observed_at": "2026-09-17T13:54:43.000Z",
-      "superseding_resolution_run": "redding-maryland-misattribution-2026-09-17"
+      "superseding_resolution_observed_at": "2026-09-19T12:30:00Z",
+      "superseding_resolution_run": "redding-current-pointer-file-proof-2026-09-19"
     },
     {
       "ccn": "050516",
@@ -12561,8 +12561,11 @@
     },
     {
       "ccn": "050636",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "",
+      "superseding_resolution_observed_at": "2026-09-21T02:45:00Z",
+      "superseding_resolution_run": "palomar-poway-current-page-file-2026-09-21"
     },
     {
       "ccn": "050024",
@@ -13896,8 +13899,11 @@
     },
     {
       "ccn": "050689",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:35:56.379Z",
+      "superseding_resolution_observed_at": "2026-09-21T03:15:00Z",
+      "superseding_resolution_run": "san-ramon-current-page-file-2026-09-21"
     },
     {
       "ccn": "050396",
@@ -14986,8 +14992,11 @@
     },
     {
       "ccn": "050309",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:27:49.798Z",
+      "superseding_resolution_observed_at": "2026-09-21T06:30:00Z",
+      "superseding_resolution_run": "sutter-roseville-current-pointer-file-2026-09-21"
     },
     {
       "ccn": "050291",
@@ -15977,8 +15986,11 @@
     },
     {
       "ccn": "060030",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:26:40.142Z",
+      "superseding_resolution_observed_at": "2026-09-21T07:00:00Z",
+      "superseding_resolution_run": "banner-north-colorado-loveland-current-pointer-file-2026-09-21"
     },
     {
       "ccn": "060001",
@@ -16129,35 +16141,11 @@
     },
     {
       "ccn": "060054",
-      "disposition": "verified-current-mrf",
-      "identity_source": "header",
-      "status": "proof-audit-complete",
+      "status": "superseded-by-reviewed-resolution",
       "issues": [],
-      "pointer_proof": [
-        {
-          "file": "cms_data/hpt/pointer-corpus/raw/yourcommunityhospital.com-f0231f717ade.txt",
-          "sha256": "b82afed3545dac2ba4dad2e260e161866df01366c5034e66204b2b16d007aca6",
-          "status": "hash-corroborated"
-        }
-      ],
-      "file_byte_proof": {
-        "checked_at": "2026-09-15T16:13:50.954Z",
-        "bytes": 262144,
-        "sha256": "47763982e7bf5dd7c5e56d4836e3abe769cc3e572649178ecbc5c90e34157bc7",
-        "requested_range": "bytes=0-262143",
-        "final_url": "https://apim.services.craneware.com/api-pricing-transparency/api/public/bc22d7e8ba933b73212e93900a741e3e/charges/mrf",
-        "final_host": "apim.services.craneware.com",
-        "final_url_withheld": ""
-      },
-      "archive_content_proof": null,
-      "state_evidence": {
-        "status": "corroborated",
-        "basis": "license-state-field"
-      },
-      "address_equivalence_review": null,
       "observed_at": "2026-09-15T06:19:16.505Z",
-      "source_observed_at": "2026-09-15T06:19:16.505Z",
-      "header_cache_found": true
+      "superseding_resolution_observed_at": "2026-09-20T16:35:00Z",
+      "superseding_resolution_run": "community-hospital-grand-junction-current-pointer-file-recheck-2026-09-20"
     },
     {
       "ccn": "060071",
@@ -16262,8 +16250,11 @@
     },
     {
       "ccn": "061303",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:26:40.142Z",
+      "superseding_resolution_observed_at": "2026-09-21T07:30:00Z",
+      "superseding_resolution_run": "east-morgan-current-pointer-file-2026-09-21"
     },
     {
       "ccn": "061325",
@@ -16647,8 +16638,11 @@
     },
     {
       "ccn": "061306",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:49:27.080Z",
+      "superseding_resolution_observed_at": "2026-09-19T07:00:00Z",
+      "superseding_resolution_run": "lincoln-health-page-linked-current-mrf-2026-09-19"
     },
     {
       "ccn": "060003",
@@ -16965,8 +16959,11 @@
     },
     {
       "ccn": "061328",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:35:22.671Z",
+      "superseding_resolution_observed_at": "2026-09-19T08:00:00Z",
+      "superseding_resolution_run": "pagosa-springs-portal-current-mrf-2026-09-19"
     },
     {
       "ccn": "060020",
@@ -17084,8 +17081,11 @@
     },
     {
       "ccn": "061301",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:49:27.265Z",
+      "superseding_resolution_observed_at": "2026-09-19T07:10:00Z",
+      "superseding_resolution_run": "rio-grande-page-portal-browser-root-not-found-recheck-2026-09-19"
     },
     {
       "ccn": "060028",
@@ -17703,8 +17703,11 @@
     },
     {
       "ccn": "064030",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:37:06.850Z",
+      "superseding_resolution_observed_at": "2026-09-19T11:00:00Z",
+      "superseding_resolution_run": "west-pines-page-linked-current-mrf-2026-09-19"
     },
     {
       "ccn": "061309",
@@ -17766,8 +17769,8 @@
       "status": "superseded-by-reviewed-resolution",
       "issues": [],
       "observed_at": "2026-09-15T05:44:22.987Z",
-      "superseding_resolution_observed_at": "2026-09-17T14:55:13.509Z",
-      "superseding_resolution_run": "bristol-hpi-pointer-page-mismatch-2026-09-17"
+      "superseding_resolution_observed_at": "2026-09-20T16:45:00Z",
+      "superseding_resolution_run": "bristol-current-pointer-file-recheck-2026-09-20"
     },
     {
       "ccn": "070011",
@@ -17956,8 +17959,11 @@
     },
     {
       "ccn": "070025",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:52:34.420Z",
+      "superseding_resolution_observed_at": "2026-09-19T11:30:00Z",
+      "superseding_resolution_run": "hartford-hospital-page-linked-current-mrf-2026-09-19"
     },
     {
       "ccn": "074017",
@@ -18389,8 +18395,11 @@
     },
     {
       "ccn": "070006",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-19T20:15:00Z",
+      "superseding_resolution_observed_at": "2026-09-20T00:00:00Z",
+      "superseding_resolution_run": "stamford-pointer-alias-resolution-2026-09-20"
     },
     {
       "ccn": "070038",
@@ -18513,8 +18522,11 @@
     },
     {
       "ccn": "093300",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:30:46.200Z",
+      "superseding_resolution_observed_at": "2026-09-18T21:00:00Z",
+      "superseding_resolution_run": "childrens-national-page-file-root-pointer-2026-09-19"
     },
     {
       "ccn": "090001",
@@ -18588,8 +18600,11 @@
     },
     {
       "ccn": "090008",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "",
+      "superseding_resolution_observed_at": "2026-09-21T11:00:00Z",
+      "superseding_resolution_run": "united-medical-center-closure-review-2026-09-21"
     },
     {
       "ccn": "09002F",
@@ -20696,8 +20711,11 @@
     },
     {
       "ccn": "100090",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T09:17:41.847Z",
+      "superseding_resolution_observed_at": "2026-09-18T22:30:00Z",
+      "superseding_resolution_run": "ufhealth-flagler-page-linked-current-zip-2026-09-18"
     },
     {
       "ccn": "104000",
@@ -22408,8 +22426,11 @@
     },
     {
       "ccn": "103300",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:33:28.341Z",
+      "superseding_resolution_observed_at": "2026-09-18T20:52:00Z",
+      "superseding_resolution_run": "johns-hopkins-all-childrens-page-file-stale-reclassification-2026-09-18"
     },
     {
       "ccn": "100253",
@@ -22426,8 +22447,11 @@
     },
     {
       "ccn": "101303",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:54:15.874Z",
+      "superseding_resolution_observed_at": "2026-09-19T09:22:00Z",
+      "superseding_resolution_run": "lake-butler-page-file-root-pointer-2026-09-19"
     },
     {
       "ccn": "100157",
@@ -23068,8 +23092,11 @@
     },
     {
       "ccn": "104087",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:35:10.142Z",
+      "superseding_resolution_observed_at": "2026-09-19T03:00:00Z",
+      "superseding_resolution_run": "north-port-behavioral-page-linked-current-mrf-2026-09-19"
     },
     {
       "ccn": "100029",
@@ -24047,8 +24074,11 @@
     },
     {
       "ccn": "104049",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T13:00:07.273Z",
+      "superseding_resolution_observed_at": "2026-09-18T22:24:43Z",
+      "superseding_resolution_run": "southern-winds-page-linked-current-mrf-2026-09-18"
     },
     {
       "ccn": "104057",
@@ -25412,8 +25442,11 @@
     },
     {
       "ccn": "114029",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-17T00:00:00.000Z",
+      "superseding_resolution_observed_at": "2026-09-19T05:12:00Z",
+      "superseding_resolution_run": "dbhdd-east-central-page-linked-current-file-recheck-2026-09-19"
     },
     {
       "ccn": "110075",
@@ -25481,8 +25514,11 @@
     },
     {
       "ccn": "111337",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T13:12:12.622Z",
+      "superseding_resolution_observed_at": "2026-09-19T07:55:00Z",
+      "superseding_resolution_run": "elbert-memorial-page-linked-current-mrf-2026-09-19"
     },
     {
       "ccn": "110109",
@@ -27479,8 +27515,11 @@
     },
     {
       "ccn": "110101",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T13:12:43.079Z",
+      "superseding_resolution_observed_at": "2026-09-18T21:05:00Z",
+      "superseding_resolution_run": "southwell-medical-page-linked-current-mrf-2026-09-18"
     },
     {
       "ccn": "110129",
@@ -28165,8 +28204,11 @@
     },
     {
       "ccn": "114013",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-17T00:00:00.000Z",
+      "superseding_resolution_observed_at": "2026-09-19T05:14:00Z",
+      "superseding_resolution_run": "dbhdd-west-central-page-linked-current-file-recheck-2026-09-19"
     },
     {
       "ccn": "111325",
@@ -29758,35 +29800,11 @@
     },
     {
       "ccn": "164006",
-      "disposition": "verified-current-mrf",
-      "identity_source": "header",
-      "status": "proof-audit-complete",
+      "status": "superseded-by-reviewed-resolution",
       "issues": [],
-      "pointer_proof": [
-        {
-          "file": "cms_data/hpt/pointer-corpus/raw/eagleviewbh.com-50a98802d084.txt",
-          "sha256": "4ec80f5b9687858f7b596b4873bad37d5c6fff3522633de421b475b4da3fd50d",
-          "status": "hash-corroborated"
-        }
-      ],
-      "file_byte_proof": {
-        "checked_at": "2026-09-15T16:14:35.378Z",
-        "bytes": 262144,
-        "sha256": "0b45cc61ec1645a35f69b1ea16e7358c4ab74d0b7312cfad213a27f1807278d9",
-        "requested_range": "bytes=0-262143",
-        "final_url": "https://eagleviewbh.com/822763418_sbh-davenport-llc_standardcharges.json",
-        "final_host": "eagleviewbh.com",
-        "final_url_withheld": ""
-      },
-      "archive_content_proof": null,
-      "state_evidence": {
-        "status": "corroborated",
-        "basis": "license-state-field"
-      },
-      "address_equivalence_review": null,
       "observed_at": "2026-09-15T06:19:16.715Z",
-      "source_observed_at": "2026-09-15T06:19:16.715Z",
-      "header_cache_found": true
+      "superseding_resolution_observed_at": "2026-09-20T17:00:00Z",
+      "superseding_resolution_run": "eagle-view-current-pointer-file-recheck-2026-09-20"
     },
     {
       "ccn": "160117",
@@ -30730,8 +30748,11 @@
     },
     {
       "ccn": "160030",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:34:21.696Z",
+      "superseding_resolution_observed_at": "2026-09-19T05:07:00Z",
+      "superseding_resolution_run": "mary-greeley-page-linked-current-file-pointer-recheck-2026-09-19"
     },
     {
       "ccn": "164002",
@@ -32621,8 +32642,11 @@
     },
     {
       "ccn": "131327",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:33:10.319Z",
+      "superseding_resolution_observed_at": "2026-09-16T12:12:55Z",
+      "superseding_resolution_run": "gritman-current-page-file-pointer-captcha-2026-09-16"
     },
     {
       "ccn": "130073",
@@ -35900,8 +35924,11 @@
     },
     {
       "ccn": "141323",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:34:05.313Z",
+      "superseding_resolution_observed_at": "2026-09-20T16:20:00Z",
+      "superseding_resolution_run": "massac-memorial-current-pointer-file-recheck-2026-09-20"
     },
     {
       "ccn": "140089",
@@ -36835,8 +36862,11 @@
     },
     {
       "ccn": "141320",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:34:52.151Z",
+      "superseding_resolution_observed_at": "2026-09-19T05:04:00Z",
+      "superseding_resolution_run": "horizon-paris-page-file-html-pointer-recheck-2026-09-19"
     },
     {
       "ccn": "141307",
@@ -37336,8 +37366,11 @@
     },
     {
       "ccn": "140007",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T04:37:19.171Z",
+      "superseding_resolution_observed_at": "2026-09-19T17:31:00Z",
+      "superseding_resolution_run": "saint-joseph-joliet-current-pointer-page-file-2026-09-19"
     },
     {
       "ccn": "141345",
@@ -39037,8 +39070,11 @@
     },
     {
       "ccn": "154041",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:30:36.417Z",
+      "superseding_resolution_observed_at": "2026-09-19T00:00:00Z",
+      "superseding_resolution_run": "bloomington-meadows-page-linked-current-mrf-2026-09-19"
     },
     {
       "ccn": "150075",
@@ -41578,13 +41614,16 @@
       "status": "superseded-by-reviewed-resolution",
       "issues": [],
       "observed_at": "2026-09-15T06:40:09.465Z",
-      "superseding_resolution_observed_at": "2026-09-16T18:53:23.884Z",
+      "superseding_resolution_observed_at": "2026-09-20T17:15:00Z",
       "superseding_resolution_run": ""
     },
     {
       "ccn": "150048",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:35:42.148Z",
+      "superseding_resolution_observed_at": "2026-09-19T23:10:00Z",
+      "superseding_resolution_run": "reid-health-current-api-file-recheck-2026-09-19"
     },
     {
       "ccn": "154018",
@@ -42099,8 +42138,11 @@
     },
     {
       "ccn": "154024",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:36:41.837Z",
+      "superseding_resolution_observed_at": "2026-09-19T05:09:00Z",
+      "superseding_resolution_run": "valle-vista-page-linked-current-file-pointer-recheck-2026-09-19"
     },
     {
       "ccn": "154005",
@@ -46195,8 +46237,11 @@
     },
     {
       "ccn": "181317",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:30:40.814Z",
+      "superseding_resolution_observed_at": "2026-09-19T00:33:04Z",
+      "superseding_resolution_run": "cumberland-county-pointer-complete-file-recovery-2026-09-19"
     },
     {
       "ccn": "184014",
@@ -50756,8 +50801,11 @@
     },
     {
       "ccn": "190017",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:35:21.327Z",
+      "superseding_resolution_observed_at": "2026-09-19T06:40:00Z",
+      "superseding_resolution_run": "opelousas-page-linked-complete-current-file-pointer-recheck-2026-09-19"
     },
     {
       "ccn": "190102",
@@ -52272,35 +52320,11 @@
     },
     {
       "ccn": "220062",
-      "disposition": "verified-current-mrf",
-      "identity_source": "header",
-      "status": "proof-audit-complete",
+      "status": "superseded-by-reviewed-resolution",
       "issues": [],
-      "pointer_proof": [
-        {
-          "file": "cms_data/hpt/pointer-corpus/raw/adcare.com-6401aa598c6a.txt",
-          "sha256": "2aca3a4977c5ac9d71f7aafbb8fb8a55b6e68045aa0417faf672a8d84243d429",
-          "status": "hash-corroborated"
-        }
-      ],
-      "file_byte_proof": {
-        "checked_at": "2026-09-15T16:17:37.958Z",
-        "bytes": 82741,
-        "sha256": "189f4be541dd65ddfa5b530d2d3cd373b4facaacb814d9f29016821525983d78",
-        "requested_range": "bytes=0-262143",
-        "final_url": "https://admin.adcare.com/wp-content/uploads/2026/09/cms.csv",
-        "final_host": "admin.adcare.com",
-        "final_url_withheld": ""
-      },
-      "archive_content_proof": null,
-      "state_evidence": {
-        "status": "corroborated",
-        "basis": "license-state-field"
-      },
-      "address_equivalence_review": null,
       "observed_at": "2026-09-15T07:06:39.106Z",
-      "source_observed_at": "2026-09-15T07:06:39.106Z",
-      "header_cache_found": true
+      "superseding_resolution_observed_at": "2026-09-20T17:30:00Z",
+      "superseding_resolution_run": "adcare-worcester-current-pointer-file-recheck-2026-09-20"
     },
     {
       "ccn": "220029",
@@ -53122,13 +53146,19 @@
     },
     {
       "ccn": "220010",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T09:16:07.346Z",
+      "superseding_resolution_observed_at": "2026-09-19T06:55:00Z",
+      "superseding_resolution_run": "lawrence-general-page-file-browser-pointer-not-found-recheck-2026-09-19"
     },
     {
       "ccn": "220175",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:34:49.628Z",
+      "superseding_resolution_observed_at": "2026-09-19T22:05:00Z",
+      "superseding_resolution_run": "metrowest-framingham-current-page-file-2026-09-19"
     },
     {
       "ccn": "220090",
@@ -53400,40 +53430,19 @@
     },
     {
       "ccn": "220074",
-      "disposition": "verified-current-mrf",
-      "identity_source": "header",
-      "status": "proof-audit-complete",
+      "status": "superseded-by-reviewed-resolution",
       "issues": [],
-      "pointer_proof": [
-        {
-          "file": "cms_data/hpt/pointer-corpus/raw/southcoast.org-cd5287025564.txt",
-          "sha256": "3a5677b52082797039a04747d2115299c19fa31b8d518a26b7bf21c261796e76",
-          "status": "hash-corroborated"
-        }
-      ],
-      "file_byte_proof": {
-        "checked_at": "2026-09-15T16:17:40.279Z",
-        "bytes": 262144,
-        "sha256": "c399b6a77e9cd5e023284880d40ede25cc0599df025808d14df6bc4bfc4cc6fe",
-        "requested_range": "bytes=0-262143",
-        "final_url": "https://www.southcoast.org/wp-content/uploads/2026/02/222592333_charlton-memorial-hospital_standardcharges.zip",
-        "final_host": "www.southcoast.org",
-        "final_url_withheld": ""
-      },
-      "archive_content_proof": null,
-      "state_evidence": {
-        "status": "corroborated",
-        "basis": "license-state-field"
-      },
-      "address_equivalence_review": null,
       "observed_at": "2026-09-15T07:28:05.811Z",
-      "source_observed_at": "2026-09-15T07:28:05.811Z",
-      "header_cache_found": true
+      "superseding_resolution_observed_at": "2026-09-20T16:46:18Z",
+      "superseding_resolution_run": "southcoast-charlton-current-pointer-zip-member-header-2026-09-20"
     },
     {
       "ccn": "220176",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:36:22.846Z",
+      "superseding_resolution_observed_at": "2026-09-19T22:35:00Z",
+      "superseding_resolution_run": "st-vincent-worcester-current-page-file-2026-09-19"
     },
     {
       "ccn": "220008",
@@ -53730,8 +53739,11 @@
     },
     {
       "ccn": "224032",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:34:05.305Z",
+      "superseding_resolution_observed_at": "2026-09-20T00:18:04Z",
+      "superseding_resolution_run": "mass-wrch-pointer-complete-file-recovery-2026-09-20"
     },
     {
       "ccn": "210060",
@@ -62375,8 +62387,11 @@
     },
     {
       "ccn": "241369",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T19:20:25.411Z",
+      "superseding_resolution_observed_at": "2026-09-19T08:53:02Z",
+      "superseding_resolution_run": "hpi-pointer-page-mismatch-2026-09-16-241369"
     },
     {
       "ccn": "241367",
@@ -72332,8 +72347,11 @@
     },
     {
       "ccn": "281351",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:30:43.467Z",
+      "superseding_resolution_observed_at": "2026-09-19T19:20:00Z",
+      "superseding_resolution_run": "chase-county-current-page-claraprice-file-recheck-2026-09-19"
     },
     {
       "ccn": "281344",
@@ -73697,8 +73715,11 @@
     },
     {
       "ccn": "281348",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:36:39.847Z",
+      "superseding_resolution_observed_at": "2026-09-19T20:00:01Z",
+      "superseding_resolution_run": "tri-valley-current-page-file-pointer-recheck-2026-09-19"
     },
     {
       "ccn": "280059",
@@ -76068,8 +76089,11 @@
     },
     {
       "ccn": "313302",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:36:55.965Z",
+      "superseding_resolution_observed_at": "2026-09-20T21:45:00Z",
+      "superseding_resolution_run": "weisman-current-pointer-mrf-2026-09-20"
     },
     {
       "ccn": "310022",
@@ -77307,8 +77331,11 @@
     },
     {
       "ccn": "290049",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:35:42.321Z",
+      "superseding_resolution_observed_at": "2026-09-19T19:37:10Z",
+      "superseding_resolution_run": "renown-south-meadows-current-page-file-recheck-2026-09-19"
     },
     {
       "ccn": "290009",
@@ -77515,8 +77542,11 @@
     },
     {
       "ccn": "294010",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:36:00.367Z",
+      "superseding_resolution_observed_at": "2026-09-19T19:05:00Z",
+      "superseding_resolution_run": "spring-mountain-sahara-page-file-pointer-recheck-2026-09-19"
     },
     {
       "ccn": "294011",
@@ -78669,8 +78699,11 @@
     },
     {
       "ccn": "330193",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T04:34:49.548Z",
+      "superseding_resolution_observed_at": "2026-09-19T17:38:30Z",
+      "superseding_resolution_run": "flushing-hospital-current-pointer-archive-header-2026-09-19"
     },
     {
       "ccn": "334002",
@@ -79137,8 +79170,11 @@
     },
     {
       "ccn": "330014",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T04:34:35.303Z",
+      "superseding_resolution_observed_at": "2026-09-19T17:42:00Z",
+      "superseding_resolution_run": "jamaica-hospital-current-pointer-archive-header-2026-09-19"
     },
     {
       "ccn": "330185",
@@ -79385,8 +79421,11 @@
     },
     {
       "ccn": "330080",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T09:17:39.574Z",
+      "superseding_resolution_observed_at": "2026-09-20T04:30:00Z",
+      "superseding_resolution_run": "lincoln-browser-download-complete-file-2026-09-20"
     },
     {
       "ccn": "331311",
@@ -79638,8 +79677,11 @@
     },
     {
       "ccn": "334021",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T09:17:39.723Z",
+      "superseding_resolution_observed_at": "2026-09-21T00:30:00Z",
+      "superseding_resolution_run": "mohawk-valley-omh-current-pointer-consolidated-file-review-2026-09-21"
     },
     {
       "ccn": "330059",
@@ -80612,8 +80654,11 @@
     },
     {
       "ccn": "334013",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T09:17:39.723Z",
+      "superseding_resolution_observed_at": "2026-09-20T23:50:00Z",
+      "superseding_resolution_run": "pilgrim-omh-current-pointer-consolidated-file-review-2026-09-20"
     },
     {
       "ccn": "330331",
@@ -80791,8 +80836,11 @@
     },
     {
       "ccn": "334015",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T09:17:39.723Z",
+      "superseding_resolution_observed_at": "2026-09-21T00:10:00Z",
+      "superseding_resolution_run": "rockland-omh-current-pointer-consolidated-file-review-2026-09-21"
     },
     {
       "ccn": "330215",
@@ -81033,8 +81081,11 @@
     },
     {
       "ccn": "334043",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T09:17:39.723Z",
+      "superseding_resolution_observed_at": "2026-09-21T00:50:00Z",
+      "superseding_resolution_run": "south-beach-omh-current-pointer-consolidated-file-review-2026-09-21"
     },
     {
       "ccn": "330196",
@@ -81197,8 +81248,11 @@
     },
     {
       "ccn": "330208",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T04:35:13.832Z",
+      "superseding_resolution_observed_at": "2026-09-19T17:47:30Z",
+      "superseding_resolution_run": "riverside-current-pointer-archive-header-2026-09-19"
     },
     {
       "ccn": "330140",
@@ -88059,8 +88113,11 @@
     },
     {
       "ccn": "370028",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:33:30.655Z",
+      "superseding_resolution_observed_at": "2026-09-20T23:25:00Z",
+      "superseding_resolution_run": "integris-baptist-current-external-mrf-2026-09-20"
     },
     {
       "ccn": "370211",
@@ -88101,23 +88158,35 @@
     },
     {
       "ccn": "370113",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:33:30.655Z",
+      "superseding_resolution_observed_at": "2026-09-20T23:31:00Z",
+      "superseding_resolution_run": "integris-grove-current-external-mrf-2026-09-20"
     },
     {
       "ccn": "370236",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:33:30.655Z",
+      "superseding_resolution_observed_at": "2026-09-20T23:45:00Z",
+      "superseding_resolution_run": "integris-edmond-current-external-mrf-2026-09-20"
     },
     {
       "ccn": "370016",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:33:30.655Z",
+      "superseding_resolution_observed_at": "2026-09-20T23:21:00Z",
+      "superseding_resolution_run": "integris-enid-current-external-mrf-2026-09-20"
     },
     {
       "ccn": "370006",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:33:30.655Z",
+      "superseding_resolution_observed_at": "2026-09-20T23:18:00Z",
+      "superseding_resolution_run": "integris-ponca-city-current-external-mrf-2026-09-20"
     },
     {
       "ccn": "370002",
@@ -88126,13 +88195,19 @@
     },
     {
       "ccn": "370004",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:33:30.655Z",
+      "superseding_resolution_observed_at": "2026-09-20T23:14:00Z",
+      "superseding_resolution_run": "integris-miami-current-external-mrf-2026-09-20"
     },
     {
       "ccn": "370106",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:33:30.655Z",
+      "superseding_resolution_observed_at": "2026-09-20T23:28:00Z",
+      "superseding_resolution_run": "integris-southwest-current-external-mrf-2026-09-20"
     },
     {
       "ccn": "373300",
@@ -89491,8 +89566,11 @@
     },
     {
       "ccn": "370112",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:35:06.853Z",
+      "superseding_resolution_observed_at": "2026-09-20T00:00:00Z",
+      "superseding_resolution_run": "sequoyah-current-pointer-full-file-2026-09-20"
     },
     {
       "ccn": "371341",
@@ -89707,8 +89785,11 @@
     },
     {
       "ccn": "370225",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T19:40:47.361Z",
+      "superseding_resolution_observed_at": "2026-09-19T09:20:00Z",
+      "superseding_resolution_run": "summit-oklahoma-page-file-root-pointer-2026-09-19"
     },
     {
       "ccn": "370201",
@@ -92350,8 +92431,11 @@
     },
     {
       "ccn": "390219",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-07T00:03:26.136Z",
+      "superseding_resolution_observed_at": "2026-09-19T18:56:00Z",
+      "superseding_resolution_run": "latrobe-current-browser-download-2026-09-19"
     },
     {
       "ccn": "390145",
@@ -92471,8 +92555,11 @@
     },
     {
       "ccn": "394063",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T09:17:25.356Z",
+      "superseding_resolution_observed_at": "2026-09-19T00:00:00Z",
+      "superseding_resolution_run": "geisinger-danville-pointer-campus-identity-review-2026-09-19"
     },
     {
       "ccn": "394059",
@@ -92802,8 +92889,11 @@
     },
     {
       "ccn": "390093",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-07T00:02:19.371Z",
+      "superseding_resolution_observed_at": "2026-09-19T18:50:00Z",
+      "superseding_resolution_run": "clarion-current-browser-download-2026-09-19"
     },
     {
       "ccn": "390173",
@@ -94535,8 +94625,11 @@
     },
     {
       "ccn": "390057",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T09:17:40.959Z",
+      "superseding_resolution_observed_at": "2026-09-18T10:30:00Z",
+      "superseding_resolution_run": "grand-view-current-page-file-proof-2026-09-18"
     },
     {
       "ccn": "390330",
@@ -94701,8 +94794,11 @@
     },
     {
       "ccn": "390316",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:35:58.346Z",
+      "superseding_resolution_observed_at": "2026-09-21T00:05:00Z",
+      "superseding_resolution_run": "sir-current-page-file-root-pointer-2026-09-21"
     },
     {
       "ccn": "390026",
@@ -98124,8 +98220,11 @@
     },
     {
       "ccn": "420002",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "",
+      "superseding_resolution_observed_at": "2026-09-19T19:15:00Z",
+      "superseding_resolution_run": "piedmont-rock-hill-current-page-file-pointer-recheck-2026-09-19"
     },
     {
       "ccn": "420102",
@@ -99010,8 +99109,11 @@
     },
     {
       "ccn": "430089",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:32:22.003Z",
+      "superseding_resolution_observed_at": "2026-09-20T23:45:00Z",
+      "superseding_resolution_run": "dunes-current-page-file-root-pointer-2026-09-20"
     },
     {
       "ccn": "431383",
@@ -103010,13 +103112,19 @@
     },
     {
       "ccn": "450346",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "",
+      "superseding_resolution_observed_at": "2026-09-21T00:25:00Z",
+      "superseding_resolution_run": "baptist-beaumont-current-para-mrf-2026-09-21"
     },
     {
       "ccn": "450058",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:30:24.300Z",
+      "superseding_resolution_observed_at": "2026-09-21T01:15:00Z",
+      "superseding_resolution_run": "baptist-medical-center-current-page-file-2026-09-21"
     },
     {
       "ccn": "670078",
@@ -104140,8 +104248,11 @@
     },
     {
       "ccn": "450253",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:34:26.702Z",
+      "superseding_resolution_observed_at": "2026-09-19T16:25:00Z",
+      "superseding_resolution_run": "bellville-current-page-tallcsv-complete-file-2026-09-19"
     },
     {
       "ccn": "451378",
@@ -105578,8 +105689,11 @@
     },
     {
       "ccn": "670779",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "",
+      "superseding_resolution_observed_at": "2026-09-21T12:30:00Z",
+      "superseding_resolution_run": "crosbyton-current-root-pointer-page-file-review-2026-09-21"
     },
     {
       "ccn": "454133",
@@ -112313,8 +112427,11 @@
     },
     {
       "ccn": "450028",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:36:41.899Z",
+      "superseding_resolution_observed_at": "2026-09-21T00:45:00Z",
+      "superseding_resolution_run": "valley-baptist-brownsville-current-page-file-2026-09-21"
     },
     {
       "ccn": "450662",
@@ -112323,8 +112440,11 @@
     },
     {
       "ccn": "450033",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T12:36:41.899Z",
+      "superseding_resolution_observed_at": "2026-09-21T00:45:00Z",
+      "superseding_resolution_run": "valley-baptist-harlingen-current-page-file-2026-09-21"
     },
     {
       "ccn": "454158",
@@ -121601,8 +121721,11 @@
     },
     {
       "ccn": "521351",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "status": "superseded-by-reviewed-resolution",
+      "issues": [],
+      "observed_at": "2026-09-15T08:35:01.928Z",
+      "superseding_resolution_observed_at": "2026-09-19T11:43:00Z",
+      "superseding_resolution_run": "reedsburg-case-sensitive-pointer-file-review-2026-09-19"
     },
     {
       "ccn": "521341",

@@ -1,0 +1,21 @@
+{
+  "ccn": "104082",
+  "hospital_name": "Palm Point Behavioral Health",
+  "observed_at": "2026-09-19T02:20:00Z",
+  "official_site": "https://palmpointbehavioral.com/",
+  "official_identity_sources": [
+    "https://locate.dev.healthfinder.fl.gov/Facility-Provider/Profile/?LID=401256",
+    "https://palmpointbehavioral.com/wp-content/uploads/2023/10/ROI-Authorization-for-Release-of-PHI-2023.pdf"
+  ],
+  "official_identity": "Palm Point Behavioral Health, 2355 Truman Scarborough Way, Titusville, FL 32796",
+  "pointer_urls_checked": [
+    "https://palmpointbehavioral.com/cms-hpt.txt",
+    "https://www.palmpointbehavioral.com/cms-hpt.txt"
+  ],
+  "direct_pointer_statuses": [403, 403],
+  "direct_pointer_result": "Both exact root-pointer URLs returned HTTP 403 before pointer bytes.",
+  "browser_status": "Cloudflare security-verification page",
+  "browser_result": "A fresh official browser render stopped at the provider security-verification page; no pointer text, pricing page or MRF link was exposed.",
+  "disposition": "official-identity-confirmed-pointer-access-blocked-mrf-unresolved",
+  "next_action": "Retry the exact official pricing/pointer routes through a materially different authorized route; obtain bounded pointer/MRF bytes and independently verify the Palm Point Behavioral Health identity, Florida state, declared date/version and CMS-template usability."
+}

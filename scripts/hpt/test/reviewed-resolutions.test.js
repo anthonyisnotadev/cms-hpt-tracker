@@ -9,6 +9,18 @@ const resolution = { ccn: base.ccn, base, action: 'replace', note: 'Reviewed', e
   identity: 'corroborated', pointerUrl: base.pointer_url, pointerSha256: 'verified-body-hash', url: 'https://hospital.test/new.csv',
   http_status: 206, date: '2026-09-01', version: '3.0.0', checked_at: '2026-09-09T00:00:00Z'
 } };
+test('browser-confirmed pointer not-found resolutions remain explicit page-linked findings', () => {
+  for (const ccn of ['220010', '061301']) {
+    const r = reviewedLedger.find(entry => entry.ccn === ccn);
+    assert.ok(r, `missing reviewed resolution ${ccn}`);
+    assert.equal(r.action, 'replace-observation');
+    assert.ok(['official-page-mrf-root-pointer-unavailable', 'pointer-file-url-renders-not-found-source-page-current-file'].includes(r.finding));
+    assert.ok(r.evidence.browserPointerHeading || r.evidence.browserPointerTargetHeading);
+    const result = applyResolutions([r.base], [], [], [r]);
+    assert.equal(result.compliance[0].finding, r.finding);
+    assert.equal(result.compliance[0].mrf_url, r.evidence.url);
+  }
+});
 test('Tillamook legal-name alias resolves only the exact pointer target without claiming full-file validation', () => {
   const r = reviewedLedger.find(entry => entry.ccn === '381317');
   assert.ok(r);
@@ -404,6 +416,12 @@ test('reviewed observation can retain a current source-page file while recording
     reviewed_at: evidence.checked_at, note: 'Current official page file; root pointer returned an error.' }]).compliance[0];
   assert.equal(result.finding, 'official-page-mrf-root-pointer-unavailable');
   assert.equal(result.mrf_url, evidence.url);
+  const challengeEvidence = { ...evidence, pointerHttpStatus: 202,
+    pointerResponseContentType: 'text/html', pointerResponseBytes: 578,
+    pointerSha256: 'b'.repeat(64) };
+  assert.equal(applyResolutions([base], [], [], [{ ccn: base.ccn, base, action: 'replace-observation', evidence: challengeEvidence,
+    reviewed_at: challengeEvidence.checked_at, note: 'Captcha challenge is retained as pointer unavailability.' }]).compliance[0].finding,
+    'official-page-mrf-root-pointer-unavailable');
   assert.throws(() => applyResolutions([base], [], [], [{ ccn: base.ccn, base, action: 'replace-observation',
     evidence: { ...evidence, pointerHttpStatus: 200 }, reviewed_at: evidence.checked_at, note: 'Unsupported.' }]), /lacks current/);
 });

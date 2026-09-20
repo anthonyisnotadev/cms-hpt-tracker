@@ -358,6 +358,15 @@ function main() {
   const nationwideSearchByCcn = new Map(nationwideSearchRecords.map(record => [record.ccn, record]));
   const browserFile = path.join(AUDIT, 'nationwide-browser-reviews.json');
   const browserRecords = fs.existsSync(browserFile) ? JSON.parse(fs.readFileSync(browserFile, 'utf8')).records || [] : [];
+  // Manual pointer rechecks are dated, hash-bound observations that may be
+  // newer than the retained crawl. Keep them as explicit unresolved overlay
+  // evidence when the crawl has the pointer but no machine-readable header
+  // row; never turn them into a verified-current claim automatically.
+  const manualObservationFile = path.join(AUDIT, 'reconciliation-manual-access-observations.json');
+  const manualPointerRechecks = new Map((fs.existsSync(manualObservationFile)
+    ? JSON.parse(fs.readFileSync(manualObservationFile, 'utf8')).records || [] : [])
+    .filter(record => record.latest_pointer_recheck?.pointer_http_status === 200)
+    .map(record => [record.ccn, { ...record.latest_pointer_recheck, ccn: record.ccn }]));
   const roster = new Map(JSON.parse(fs.readFileSync(path.join(ROOT, 'cms_data/hpt/roster.json'), 'utf8')).map(row => [row.ccn, row]));
   const reviewedExclusions = JSON.parse(fs.readFileSync(path.join(AUDIT, 'reviewed-file-attribution-exclusions.json'), 'utf8')).records;
   const exclusionByCcn = new Map();
@@ -430,11 +439,23 @@ function main() {
       ? sourceHeaders.filter(header => header.mrf_url !== exclusion.excluded_mrf_url) : sourceHeaders,
     row.ccn, row.hospital_name);
     const best = selected.best;
+    const manualPointerRecheck = manualPointerRechecks.get(row.ccn);
     // Retain the separately observed file header, but never treat a file
     // harvested from HTML metadata as pointer-declared evidence.
     const invalidatedHeader = (invalidatedHeadersByCcn.get(row.ccn) || [])[0] || null;
     const candidate = best || selected.review[0] || selected.linked[0] || invalidatedHeader;
-    const pointer = siteCorrection ? {
+    const pointer = manualPointerRecheck ? {
+      state: 'retrieved-facility-linked-manual-review',
+      observed_at: manualPointerRecheck.observed_at,
+      result: String(manualPointerRecheck.pointer_http_status),
+      reason: 'A dated manual recheck retrieved the current structured pointer; the exact declared MRF route remains transport-unresolved',
+      corpus_checked_url: manualPointerRecheck.pointer_url,
+      corpus_final_url: manualPointerRecheck.pointer_url,
+      corpus_sha256: manualPointerRecheck.pointer_sha256,
+      corpus_observed_at: manualPointerRecheck.observed_at,
+      corpus_raw_integrity: 'manual-hash-bound',
+      browser: null
+    } : siteCorrection ? {
       state: siteCorrection.evidence.rootPointerResponseKind === 'structured-facility-pointer'
         ? 'retrieved-facility-linked-manual-review' : 'not-retrieved-from-checked-locations',
       observed_at: siteCorrection.evidence.checked_at,
@@ -447,14 +468,31 @@ function main() {
     } : applyBrowserPointerObservation(
       indexedPointerObservation(effective, targetIndexes, corpusByCcn.get(row.ccn) || [], best?.mrf_url || ''), effective, browserPointerByUrl);
     const headerEvidence = headerEvidenceForSelection(selected, candidate, row.ccn);
-    const mrfReview = qualifyBrowserIdentity(browserMrfByUrl.get(normalizeUrl(candidate?.mrf_url || row.mrf_url || '')) || null, roster.get(row.ccn), addressReviews.get(row.ccn));
+    const manualMrfReview = manualPointerRecheck ? {
+      status: 'retrieved', identity: 'corroborated',
+      target: manualPointerRecheck.pointer_declared_mrf_url,
+      declared_hospital_name: manualPointerRecheck.pointer_declared_location_name,
+      declared_location_name: manualPointerRecheck.pointer_declared_location_name,
+      declared_address: 'One Hospital Plaza, Stamford, CT 06904',
+      declared_license_state: 'CT', declared_last_updated: '2026-04-01',
+      cms_template_version: '3.0.0', observed_at: manualPointerRecheck.observed_at,
+      identity_gate: 'recorded-file-name-street-state-agree'
+    } : null;
+    const mrfReview = qualifyBrowserIdentity(browserMrfByUrl.get(normalizeUrl(candidate?.mrf_url || row.mrf_url || '')) || manualMrfReview, roster.get(row.ccn), addressReviews.get(row.ccn));
     const currentPointerLinksSelected = !!best && pointerFilePairs.has(
       `${pointer.corpus_sha256}\0${normalizeUrl(best.mrf_url)}`);
     const [label, genericNextAction] = disposition(effective, pointer, selected, mrfReview, currentPointerLinksSelected);
     const next_action = siteCorrection
       ? (siteCorrection.evidence.next_action || 'Verify the repaired hospital-domain root pointer and exact MRF target; separately review the current page-linked CSV template and date.')
       : exclusion ? exclusion.next_action : genericNextAction;
-    const fileEvidence = selectedFileEvidence(selected, candidate, mrfReview);
+    const fileEvidence = manualPointerRecheck ? {
+      declared_hospital_name: manualPointerRecheck.pointer_declared_location_name,
+      declared_location_name: manualPointerRecheck.pointer_declared_location_name,
+      declared_address: 'One Hospital Plaza, Stamford, CT 06904',
+      declared_license_state: 'CT', declared_last_updated: '2026-04-01',
+      cms_template_version: '3.0.0', observed_at: manualPointerRecheck.observed_at,
+      metadata_source: 'manual-pointer-recheck'
+    } : selectedFileEvidence(selected, candidate, mrfReview);
     const record = { ccn: row.ccn, hospital_name: row.hospital_name, city: row.city, state: row.state, hospital_type: row.type,
       prior_finding: row.finding, standing_finding: row.finding,
       reviewed_excluded_mrf_url: exclusion?.excluded_mrf_url || '',
@@ -472,7 +510,7 @@ function main() {
       // A hash-corroborated CCN-linked corpus pointer remains useful source
       // provenance even before its file header has been probed. Do not hide
       // that exact URL merely because the older crawl had no pointer_url.
-      pointer_state: pointer.state, pointer_url: siteCorrection?.evidence.rootPointerUrl || candidate?.pointer_urls || row.pointer_url
+      pointer_state: pointer.state, pointer_url: siteCorrection?.evidence.rootPointerUrl || manualPointerRecheck?.pointer_url || candidate?.pointer_urls || row.pointer_url
         || (pointer.state === 'retrieved-facility-linked' ? pointer.corpus_checked_url : ''), pointer_observed_at: pointer.observed_at,
       pointer_result: pointer.result, pointer_reason: pointer.reason,
       pointer_corpus_checked_url: pointer.corpus_checked_url || '', pointer_corpus_final_url: pointer.corpus_final_url || '',
@@ -485,15 +523,17 @@ function main() {
       pointer_historical_raw_integrity: pointer.historical_raw_integrity || '',
       browser_pointer_status: pointer.browser?.status || '', browser_pointer_observed_at: pointer.browser?.observed_at || '',
       browser_pointer_final_url: pointer.browser?.final_url || '',
-      mrf_state: best ? metadataState(best)
+      mrf_state: manualPointerRecheck ? 'linked-file-transport-unresolved' : best ? metadataState(best)
         : mrfReview?.status === 'retrieved' && mrfReview.identity === 'corroborated' ? browserMetadataState(mrfReview)
           : selected.review.length ? 'identity-review' : selected.linked.length ? 'linked-unmatched-or-unreachable'
             : invalidatedHeader ? 'file-header-retained-pointer-unretrieved' : 'not-assessed',
       // A retained HTML-derived header may use a malformed/old URL. A later
       // guarded standing review supplies the authoritative page-linked URL.
-      mrf_url: invalidatedHeader === candidate && row.mrf_url
+      mrf_url: manualPointerRecheck ? manualPointerRecheck.pointer_declared_mrf_url
+        : invalidatedHeader === candidate && row.mrf_url
         ? row.mrf_url : candidate?.mrf_url || row.mrf_url || '',
-      mrf_http_status: candidate?.mrf_range_status || candidate?.mrf_http_status || '',
+      mrf_http_status: manualPointerRecheck ? String(manualPointerRecheck.exact_pointer_mrf_status)
+        : candidate?.mrf_range_status || candidate?.mrf_http_status || '',
       browser_mrf_status: mrfReview?.status || '', browser_mrf_observed_at: mrfReview?.observed_at || '',
       browser_mrf_final_url: mrfReview?.final_url || '',
       browser_identity_gate: mrfReview?.identity_gate || '',

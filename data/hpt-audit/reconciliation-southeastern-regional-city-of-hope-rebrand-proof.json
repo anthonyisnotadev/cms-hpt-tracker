@@ -1,0 +1,23 @@
+{
+  "ccn": "110233",
+  "hospital_name": "Southeastern Regional Medical Center, Inc",
+  "observed_at": "2026-09-19T05:00:00Z",
+  "official_domain": "https://www.cancercenter.com/",
+  "official_identity_sources": [
+    "https://dch.georgia.gov/hospital-transparency-information",
+    "https://www.cancercenter.com/locations/atlanta",
+    "https://www.cancercenter.com/for-patients/hospital-phone-numbers"
+  ],
+  "official_identity": "City of Hope Atlanta, formerly Cancer Treatment Centers of America Atlanta / Southeastern Regional Medical Center, 600 Celebrate Life Parkway, Newnan, GA 30265",
+  "identity_observation": "Georgia's hospital transparency directory links the Southeastern Regional entry to City of Hope Atlanta financial information; current first-party City of Hope pages identify the Atlanta cancer hospital at 600 Celebrate Life Parkway, Newnan GA.",
+  "pointer_urls_checked": [
+    "https://www.cancercenter.com/cms-hpt.txt",
+    "https://cancercenter.com/cms-hpt.txt"
+  ],
+  "direct_pointer_statuses": [403, 403],
+  "direct_pointer_result": "Both exact root-pointer URLs returned HTTP 403 before pointer bytes.",
+  "browser_status": "official financial-information route rendered a maintenance/error page",
+  "browser_result": "The current official financial-information route rendered a City of Hope technical-difficulties page; no MRF link or file bytes were exposed.",
+  "disposition": "official-rebrand-and-address-confirmed-pointer-and-mrf-access-blocked-unresolved",
+  "next_action": "Retry the current City of Hope Atlanta financial-information and pointer routes through a materially different authorized route; verify the facility-specific CMS CSV/JSON, declared Georgia identity, date/version and usability before any promotion."
+}

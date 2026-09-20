@@ -1,0 +1,26 @@
+{
+  "ccn": "104001",
+  "observed_at": "2026-09-19T04:35:00Z",
+  "official_domain": "https://www.myflfamilies.com/",
+  "official_facility_page": "https://www.myflfamilies.com/services/samh/samh-treatment-services-and-facilities",
+  "facility_name": "South Florida State Hospital",
+  "official_address_source": "https://quality.healthfinder.fl.gov/Facility-Provider/Profile/?LID=10048",
+  "roster_city": "PEMBROKE PINES",
+  "roster_state": "FL",
+  "pdf_url": "https://www.myflfamilies.com/documents/2771.pdf",
+  "xlsx_url": "https://www.myflfamilies.com/documents/2786.xlsx",
+  "xlsx_http_status": 200,
+  "xlsx_content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "xlsx_bytes": 41590,
+  "xlsx_last_modified": "2026-04-24T17:45:24Z",
+  "xlsx_sha256": "23D4DA3CEE17937403DB0464D16C8826073921C3072891DE40686870877F4703",
+  "file_metadata": "South Florida State Hospital Standard Charges for Provided Services; effective 2023-07-01; legacy state charge schedule, not a CMS CSV/JSON MRF",
+  "pointer_urls_checked": [
+    "https://myflfamilies.com/cms-hpt.txt",
+    "https://www.myflfamilies.com/cms-hpt.txt"
+  ],
+  "pointer_access_observation": "not established in this pass",
+  "disposition": "official-state-file-found-legacy-format-scope-and-cms-mrf-unresolved",
+  "scope_note": "The current DCF page exposes separate South Florida State Hospital PDF and Excel charge-master links. The Excel is directly retrievable and hash-bound, but its stated 2023 effective date and legacy schedule format do not establish a current CMS-template MRF or negotiated-rate usability. The physical facility/address is corroborated separately; no exemption or compliance conclusion is inferred.",
+  "next_action": "Confirm the CCN-to-facility scope and whether DCF has a current CMS-specified CSV/JSON; independently verify current date/version, facility identity, Florida state and usable rate fields before promotion."
+}

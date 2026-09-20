@@ -1,0 +1,14 @@
+{
+  "ccn": "181328",
+  "observed_at": "2026-09-19T16:45:00Z",
+  "method": "interactive-browser-and-bounded-route-recheck",
+  "hospital_identity": "Barbourville ARH Hospital, formerly Knox County Hospital",
+  "official_facility_page": "https://providers.arh.org/location/barbourville-arh-hospital/loc0000132771",
+  "official_address": "80 Hospital Drive, Barbourville, KY 40906",
+  "pointer_url": "https://arh.org/cms-hpt.txt",
+  "browser_result": "The browser rendered its DNS error page for the exact pointer URL with ERR_NAME_NOT_RESOLVED; no pointer text or file bytes were exposed.",
+  "bounded_route_result": "The ARH root, pointer, pricing page and exact Barbourville CSV remained unresolvable from this client.",
+  "interpretation": "This is a current DNS/transport observation only. It does not establish file absence, publisher failure or noncompliance.",
+  "disposition": "retain-unresolved-current-page-link-dns-block",
+  "next_action": "When ARH host resolution changes or a materially different authorized route is available, retrieve bounded bytes and verify pointer linkage, exact identity/address, Kentucky state, date, CMS version and parsed usability before promotion."
+}

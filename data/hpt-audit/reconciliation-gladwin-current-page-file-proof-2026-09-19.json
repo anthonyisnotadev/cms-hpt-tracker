@@ -1,0 +1,16 @@
+{
+  "ccn": "231325",
+  "hospital_name": "MYMICHIGAN MEDICAL CENTER GLADWIN",
+  "official_site": "https://www.mymichigan.org/",
+  "pricing_page": "https://www.mymichigan.org/patients-visitors/billing-insurance/cost-estimates/",
+  "page_observed_at": "2026-09-19T20:34:00Z",
+  "page_detail": "The current MyMichigan cost-estimates page states that standard charges are published for each medical center, effective for services as of April 1, 2026, and links a facility-specific Gladwin CSV.",
+  "facility_file_url": "https://www.mymichigan.org/app/files/public/bf8b6458-15f9-4144-83e1-6682421ddc4c/386020434_mymichigan-medical-center-gladwin_standardcharges.csv",
+  "web_fetch_status": "unsupported-content-type-text-csv",
+  "direct_head_status": 403,
+  "direct_head_content_type": "text/html",
+  "direct_head_content_length": 545,
+  "direct_head_detail": "The exact first-party CSV URL is exposed by the current pricing page, but the bounded client received an Akamai Access Denied response before any CSV bytes or CMS header were available.",
+  "disposition": "retain-current-page-file-access-uncertainty",
+  "next_action": "Recover content-bearing bytes for the exact Gladwin CSV through an authorized route, then verify declared hospital/location, 515 Quarter Street Gladwin MI 48624, Michigan license state, date, CMS version, attestation and usable rows; do not infer pointer linkage from the page link alone."
+}

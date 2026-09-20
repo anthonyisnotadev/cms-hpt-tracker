@@ -1,0 +1,23 @@
+{
+  "ccn": "050393",
+  "hospital_name": "PIH HEALTH DOWNEY HOSPITAL",
+  "official_site": "https://www.pihhealth.org/",
+  "official_pricing_page": "https://www.pihhealth.org/patients-visitors/billing-financial-assistance/cms-hospital-pricing/",
+  "facility_address": "11500 Brookshire Avenue, Downey, CA 90241",
+  "observed_at": "2026-09-19T21:10:30Z",
+  "page_observation": "The official pricing-page URL was exposed by the current public page route, but the page returned HTTP 403 to the web client.",
+  "candidate_file_url": "https://www.pihhealth.org/app/files/public/fd7abbe3-6682-49bd-a123-56540116af71/951903935_pih-health-downey-hospital_standardcharges.csv",
+  "candidate_url_source": "https://showthebill.com/hospitals/pih-health-downey-hospital/",
+  "candidate_file_observation": {
+    "http_status": 403,
+    "content_type": "text/html",
+    "content_length": 535,
+    "sha256": "3e2c89b56f2deec72c4d4512ff70648c95bca667d0ef58f1e3b91e9facf36a17",
+    "body_prefix": "<HTML><HEAD>\\n<TITLE>Access Denied</TITLE>"
+  },
+  "pointer_url": "https://pihhealth.org/cms-hpt.txt",
+  "pointer_observation": "The exact root pointer remains unresolved; the prior browser observation recorded a DNS navigation failure.",
+  "disposition": "official-page-file-lead-access-denied",
+  "detail": "A public search result exposed a facility-specific first-party CSV URL and the official PIH pricing-page URL, but the official page and exact CSV returned access-denied responses to current clients. The third-party result is retained only as a discovery lead; no file bytes, identity, metadata or pointer linkage were recovered.",
+  "next_action": "Use a permitted content-bearing route for the official pricing page and exact CSV, then verify complete bytes, PIH Health Downey identity, 11500 Brookshire Avenue address, California state, declared date, CMS version and usable rows. Do not promote the third-party lead or infer file absence from the 403 response."
+}

@@ -1,0 +1,22 @@
+{
+  "ccn": "110113",
+  "hospital_name": "Burke Medical Center",
+  "observed_at": "2026-09-19T03:40:00Z",
+  "official_site": "https://burkehealth.com/",
+  "official_identity_sources": [
+    "https://burkehealth.com/about/",
+    "https://burkehealth.com/contact/"
+  ],
+  "official_identity": "Burke Health, formerly Burke Medical Center, 351 South Liberty Street, Waynesboro, GA 30830",
+  "identity_observation": "The official About page states Burke Health took over operations of the hospital formerly known as Burke Medical Center on 2021-06-22; the official Contact page retains the same hospital address.",
+  "pointer_urls_checked": [
+    "https://burkehealth.com/cms-hpt.txt",
+    "https://www.burkehealth.com/cms-hpt.txt"
+  ],
+  "direct_pointer_statuses": [403, 202],
+  "direct_pointer_result": "The apex pointer returned HTTP 403; the www pointer returned HTTP 202 text/html challenge content (180 bytes), not pointer text.",
+  "browser_status": "official homepage rendered",
+  "browser_result": "The official Burke Health homepage rendered normally and identified the current Burke Health brand; no pricing/MRF link was exposed in the observed page.",
+  "disposition": "official-rebrand-and-address-confirmed-pointer-access-blocked-mrf-unresolved",
+  "next_action": "Retry the exact pointer and official pricing routes through a materially different authorized route; verify whether the current Burke Health publisher exposes a facility-specific CMS CSV/JSON and independently verify Georgia identity, date/version and usability."
+}

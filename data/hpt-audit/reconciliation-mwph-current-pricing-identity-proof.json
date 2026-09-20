@@ -1,0 +1,11 @@
+{
+  "ccn": "213300",
+  "observed_at": "2026-09-19T21:05:00Z",
+  "official_facility_url": "https://www.umms.org/childrens/locations/mt-washington-pediatric-hospital-main-campus",
+  "official_pricing_url": "https://www.mwph.org/patients-and-guests/financial/price-transparency",
+  "page_linked_file_url": "https://www.mwph.org/-/media/files/mwph/patients-and-guests/hospital-charges/charge-master-81726.xlsx",
+  "facility_observation": "UMMS identifies Mt. Washington Pediatric Hospital at 1708 W. Rogers Avenue, Baltimore, MD 21209, matching the tracker facility and state; the MWPH pricing page independently carries the same legal footer address.",
+  "pricing_observation": "The current first-party MWPH pricing page states that it provides the complete hospital standard-charges file and links an XLSX chargemaster. The exact file returned HTTP 403; no workbook bytes or metadata were retrieved.",
+  "pointer_observation": "The MWPH root cms-hpt.txt was not retrievable through this route, so the page-linked workbook cannot be treated as pointer-verified or CMS MRF-compliant without inspecting its bytes and metadata.",
+  "conclusion": "Facility identity and first-party standard-charge publication are corroborated, but file access, format/usability and pointer linkage remain unresolved."
+}

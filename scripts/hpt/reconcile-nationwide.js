@@ -303,7 +303,17 @@ const records = after.compliance.map(row => {
     superseding_resolution: latestSuperseded ? { action: resolution.action, observed_at: resolutionObservedAt(resolution), evidence_run: resolution.evidence_run || resolution.evidence?.reconciliation_run || '' } : null,
     browser_identity_gate: proposed?.browser_identity_gate || '',
     prior_checked_at: old.checked_at, standing_checked_at: row.checked_at,
-    latest_observed_at: proposed?.observed_at || '',
+    latest_observed_at: manualAccessObservation?.latest_facility_access_recheck?.observed_at
+      || manualAccessObservation?.latest_cms_reh_identity_recheck?.observed_at
+      || manualAccessObservation?.latest_workbook_recheck?.observed_at
+      || manualAccessObservation?.latest_cross_facility_portal_observation?.observed_at
+      || manualAccessObservation?.latest_portal_download_recheck?.observed_at
+      || manualAccessObservation?.latest_signed_url_recheck?.observed_at
+      || manualAccessObservation?.latest_third_party_file_recheck?.observed_at
+      || manualAccessObservation?.latest_browser_access_recheck?.observed_at
+      || manualAccessObservation?.latest_current_file_recheck?.observed_at
+      || manualAccessObservation?.latest_current_pointer_recheck?.observed_at
+      || manualAccessObservation?.latest_pointer_recheck?.observed_at || proposed?.observed_at || '',
     prior_mrf_url: old.mrf_url, standing_mrf_url: row.mrf_url,
     candidate_mrf_url: proposed?.mrf_url || '',
     parser_correction: proposed?.parser_correction || null,
@@ -328,7 +338,20 @@ const records = after.compliance.map(row => {
     direct_file_review: uhsDirectFile || null,
     manual_access_observation: manualAccessObservation || null,
     automation_challenge_observation: automatedChallenge,
-    next_action: (issues.includes('reviewed-pointer-or-page-linkage-follow-up')
+    next_action: ((manualAccessObservation?.latest_facility_access_recheck?.disposition === 'facility-page-and-pointer-browser-access-denied-no-file-claim'
+      || manualAccessObservation?.latest_browser_access_recheck?.disposition === 'official-domain-browser-access-denied-no-facility-file-claim'
+      || manualAccessObservation?.latest_current_file_recheck?.disposition === 'official-page-linked-csv-retrieved-identity-metadata-incomplete-mrf-unresolved'
+      || manualAccessObservation?.latest_pointer_recheck?.disposition === 'official-pointer-linked-file-transport-unresolved'
+      || manualAccessObservation?.latest_current_pointer_recheck?.disposition === 'current-pointer-retrieved-target-unavailable')
+      || manualAccessObservation?.latest_browser_access_recheck?.disposition === 'official-page-file-retained-root-pointer-transport-unresolved'
+      || manualAccessObservation?.latest_signed_url_recheck?.disposition === 'signed-file-token-invalid-no-file-claim'
+      || manualAccessObservation?.latest_third_party_file_recheck?.disposition === 'third-party-file-identity-corroborated-metadata-incomplete-no-promotion'
+      || manualAccessObservation?.latest_portal_download_recheck?.disposition === 'official-portal-current-list-confirmed-download-bytes-unresolved-no-promotion'
+      || manualAccessObservation?.latest_cross_facility_portal_observation?.disposition === 'cross-facility-portal-excluded-no-georgia-mrf-promotion'
+      || manualAccessObservation?.latest_workbook_recheck?.disposition === 'official-custom-workbook-historical-current-link-no-cms-mrf-promotion'
+      || manualAccessObservation?.latest_cms_reh_identity_recheck?.disposition === 'current-cms-reh-identity-corroborated-pointer-file-still-unresolved'
+      ? manualAccessObservation.next_action : '')
+      || (issues.includes('reviewed-pointer-or-page-linkage-follow-up')
       ? resolution.evidence?.next_action || reviewedPointerFollowUpAction(row.finding) : '')
       || (issues.includes('reviewed-pointer-target-client-follow-up') ? resolution.evidence?.next_action : '')
       || dispositionNextAction(issues, currentPagePointerMismatch) || dispositionNextAction(issues, smallArchiveDisposition) || reviewedHeaderDisposition?.next_action || addressObservation?.next_action || (issues.includes('verification-source-field-disagreement')
@@ -461,6 +484,7 @@ const sources = ['compliance.csv', 'reviewed-resolutions.json', 'discovery-revie
   'reconciliation-chambers-proof.json',
   'reconciliation-manual-pointer-file-proof.json',
   'reconciliation-manual-access-observations.json',
+  'reconciliation-marshall-medical-centers-south-current-vendor-file-proof.json',
   'reconciliation-beth-israel-campus-status-proof.json',
   'reconciliation-hereford-two-file-proof.json',
   'reconciliation-scenic-mountain-operator-transition-proof.json',

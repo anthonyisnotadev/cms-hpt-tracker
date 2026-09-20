@@ -1,0 +1,22 @@
+{
+  "ccn": "010019",
+  "observed_at": "2026-09-19T07:08:00Z",
+  "official_price_page_url": "https://hh2026.cloudaccess.host/patients-visitors/price-transparency/",
+  "page_last_updated": "2026-04-01",
+  "linked_facility": "Helen Keller Hospital",
+  "linked_mrf_url": "https://hh2026.cloudaccess.host/wp-content/uploads/472323163_hellen-keller-hospital_standardcharges.csv",
+  "page_observation": "The current HH Health page lists Helen Keller Hospital separately and exposes a facility-specific Standard Charge File link.",
+  "linked_mrf_fetch_status": "transport-unverified",
+  "linked_mrf_fetch_observation": "Web retrieval recognized the CSV target but could not return bytes; bounded Node retrieval timed out before a response.",
+  "disposition": "facility-specific-page-and-file-lead-retained",
+  "next_action": "Retry this exact Helen Keller CSV through a permitted download-capable route; verify declared name, Sheffield address, Alabama state, date and CMS version before promotion.",
+  "latest_web_recheck": {
+    "observed_at": "2026-09-19T12:45:00Z",
+    "source_url": "https://www.helenkeller.com/11-patients-visitors",
+    "result": "The first-party Helen Keller page labels a legacy Helen Keller CSV URL, which returned HTTP 404. The current HH Health page separately lists Helen Keller and a newer temporary-host CSV URL, but that target remains transport-unverified.",
+    "legacy_file_url": "https://www.helenkeller.com/images/price-transparency/472323163_hellen-keller-hospital_standardcharges.csv",
+    "current_system_file_url": "https://hh2026.cloudaccess.host/wp-content/uploads/472323163_hellen-keller-hospital_standardcharges.csv",
+    "evidence_role": "current source/page-linkage recheck; no file bytes or header promotion",
+    "disposition": "retain-page-linked-file-lead-with-legacy-link-404-and-current-transport-gap"
+  }
+}

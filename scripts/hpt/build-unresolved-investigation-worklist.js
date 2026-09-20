@@ -20,6 +20,7 @@ const coalCountyProof = JSON.parse(fs.readFileSync(path.join(audit, 'reconciliat
 const reedsburgProof = JSON.parse(fs.readFileSync(path.join(audit, 'reconciliation-reedsburg-pointer-case-proof.json'), 'utf8'));
 const houstonCountyProof = JSON.parse(fs.readFileSync(path.join(audit, 'reconciliation-houston-county-address-conflict-proof.json'), 'utf8'));
 const creekhealthProof = JSON.parse(fs.readFileSync(path.join(audit, 'reconciliation-creekhealth-sibling-exclusion-proof.json'), 'utf8'));
+const creekhealthFullProof = JSON.parse(fs.readFileSync(path.join(audit, 'reconciliation-creekhealth-okmulgee-full-file-proof-2026-09-19.json'), 'utf8'));
 const scenicProof = JSON.parse(fs.readFileSync(path.join(audit, 'reconciliation-scenic-mountain-operator-transition-proof.json'), 'utf8'));
 const southeasternProof = JSON.parse(fs.readFileSync(path.join(audit, 'reconciliation-unc-southeastern-alias-access-proof.json'), 'utf8'));
 const grandViewProofPath = path.join(audit, 'reconciliation-grand-view-page-file-lead-proof.json');
@@ -31,6 +32,13 @@ const summitProofPath = path.join(audit, 'reconciliation-summit-casper-site-proo
 const summitProof = JSON.parse(fs.readFileSync(summitProofPath, 'utf8'));
 const centraLynchburgProof = JSON.parse(fs.readFileSync(path.join(audit, 'reconciliation-centra-lynchburg-pointer-proof.json'), 'utf8'));
 const southOaksProof = JSON.parse(fs.readFileSync(path.join(audit, 'reconciliation-south-oaks-root-pointer-proof.json'), 'utf8'));
+const identityRouteProofs = new Map([
+  ['370004', 'reconciliation-integris-miami-current-pricing-access-proof-2026-09-20.json'],
+  ['400134', 'reconciliation-san-jorge-current-identity-route-proof-2026-09-20.json'],
+  ['420020', 'reconciliation-tidelands-georgetown-current-identity-access-proof-2026-09-20.json'],
+  ['450144', 'reconciliation-permian-regional-current-identity-route-proof-2026-09-21.json'],
+  ['521318', 'reconciliation-ladd-osceola-current-identity-route-proof-2026-09-20.json'],
+]);
 
 const stages = {
   'mrf-facility-identity-unresolved': {
@@ -259,9 +267,9 @@ function build(reconciliation, verification) {
     const creekhealthFacility = creekhealthProof.facility_pages.find(page => page.ccn === row.ccn);
     const creekhealthSiblingExcluded = row.proposed_disposition === 'pointer-facility-match-unresolved'
       && creekhealthProof.ccns.includes(row.ccn)
-      && manual?.disposition === 'shared-root-pointer-file-belongs-to-okmulgee-sibling'
-      && manual.proof_file === 'reconciliation-creekhealth-sibling-exclusion-proof.json'
-      && manual.observed_at === creekhealthProof.observed_at
+      && ['shared-root-pointer-file-belongs-to-okmulgee-sibling', 'complete-sibling-file-exclusion'].includes(manual?.disposition)
+      && ['reconciliation-creekhealth-sibling-exclusion-proof.json', 'reconciliation-creekhealth-okmulgee-full-file-proof-2026-09-19.json'].includes(manual.proof_file)
+      && manual.observed_at === (manual.proof_file === 'reconciliation-creekhealth-okmulgee-full-file-proof-2026-09-19.json' ? creekhealthFullProof.observed_at : creekhealthProof.observed_at)
       && manual.pointer_url === creekhealthProof.pointer_url
       && manual.pointer_file_url === creekhealthProof.pointer_file_url
       && manual.pointer_file_sample_sha256 === creekhealthProof.sample_sha256
@@ -288,6 +296,9 @@ function build(reconciliation, verification) {
       ['summit-casper-site-proof', summitSiteReviewed ? summitProof : null],
     ].filter(([, value]) => Boolean(value));
     const reviewed = reviewSources.length > 0;
+    const identityRouteReviewed = identityRouteProofs.get(row.ccn) === manual?.proof_file
+      && manual?.official_site
+      && manual?.disposition?.includes('identity-confirmed');
     let nextAction = row.manual_access_observation?.next_action || row.next_action || stage.action;
     // A later browser denial cannot be resolved by assigning the same browser
     // retry again. Keep the access result separate from any file-validity claim.
@@ -317,7 +328,7 @@ function build(reconciliation, verification) {
         : independenceAccessReviewed ? 'first-party-labeled-file-client-access-denied'
         : scenicTransitionReviewed ? scenicProof.disposition
         : southeasternAliasReviewed ? southeasternProof.disposition
-        : pointerIdentityReviewed || centraLynchburgReviewed || southOaksRootReviewed || parkviewFileAccessReviewed || surgicalOklahomaHeaderReviewed || groverDilsAliasReviewed || atlanticareCityHeaderReviewed || coalCountyPageFileReviewed || reedsburgPointerCaseReviewed || houstonCountyConflictReviewed || creekhealthSiblingExcluded ? manual.disposition : row.proposed_disposition,
+        : identityRouteReviewed || pointerIdentityReviewed || centraLynchburgReviewed || southOaksRootReviewed || parkviewFileAccessReviewed || surgicalOklahomaHeaderReviewed || groverDilsAliasReviewed || atlanticareCityHeaderReviewed || coalCountyPageFileReviewed || reedsburgPointerCaseReviewed || houstonCountyConflictReviewed || creekhealthSiblingExcluded ? manual.disposition : row.proposed_disposition,
       ...(pointerIdentityReviewed || centraLynchburgReviewed || southOaksRootReviewed || parkviewFileAccessReviewed || surgicalOklahomaHeaderReviewed || groverDilsAliasReviewed || atlanticareCityHeaderReviewed || independenceAccessReviewed || grandViewPageLead || averaAccessReviewed || summitSiteReviewed || coalCountyPageFileReviewed || reedsburgPointerCaseReviewed || houstonCountyConflictReviewed || creekhealthSiblingExcluded || scenicTransitionReviewed || southeasternAliasReviewed ? { nationwide_disposition: row.proposed_disposition } : {}),
       standing_finding: row.standing_finding,
       prior_finding: row.prior_finding,
@@ -334,6 +345,7 @@ function build(reconciliation, verification) {
         : independenceAccessReviewed ? row.ccn === '390168' ? 'file-access-and-url-equivalence' : 'file-access'
         : atlanticareCityHeaderReviewed ? 'city-file-identity-and-scope'
         : southOaksRootReviewed ? 'facility-specific-pointer-entry-or-page-file'
+        : identityRouteReviewed ? 'facility-specific-pointer-and-file'
         : pointerIdentityReviewed || centraLynchburgReviewed || parkviewFileAccessReviewed ? 'file-access'
         : surgicalOklahomaHeaderReviewed ? 'file-header-and-page-linkage'
           : groverDilsAliasReviewed ? 'pointer-file-access-and-role' : stage.gate,

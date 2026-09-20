@@ -27,6 +27,11 @@ test('dated Oregon state-license proof distinguishes satellite relationship from
   assert.match(former.next_action, /effective-dated Medicare CCN status/);
   assert.match(parent.next_action, /Asante Ashland satellite coverage/);
   assert.notEqual(former.standing_mrf_url, parent.standing_mrf_url);
+  assert.equal(proof.cms_live_api_pair_recheck.records.length, 2);
+  const api = new Map(proof.cms_live_api_pair_recheck.records.map(row => [row.ccn, row]));
+  assert.equal(api.get('380005').practice_location_type, 'OTHER HOSPITAL PRACTICE LOCATION');
+  assert.equal(api.get('380018').practice_location_type, 'MAIN/PRIMARY HOSPITAL LOCATION');
+  assert.match(proof.cms_live_api_pair_recheck.interpretation, /no effective termination date/);
   const standing = read('standing-evidence-followup-worklist.json').records.find(row => row.ccn === '380018');
   assert.equal(standing.next_action, parent.manual_access_observation.next_action);
 });

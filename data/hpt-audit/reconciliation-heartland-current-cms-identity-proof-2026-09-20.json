@@ -1,0 +1,35 @@
+{
+  "ccn": "364031",
+  "hospital_name": "HEARTLAND BEHAVIORAL HEALTHCARE",
+  "state": "OH",
+  "observed_at": "2026-09-20T22:20:00Z",
+  "official_domain_lead": "https://dbh.ohio.gov/",
+  "cms_hospital_general_dataset": "https://data.cms.gov/provider-data/dataset/xubh-q36u",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=364031&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6813,
+  "cms_api_response_sha256": "3415cdb79531525be7c8e6537653455566ece407ed80a6abdcb74e5793bdb7a6",
+  "cms_record": {
+    "facility_id": "364031",
+    "facility_name": "HEARTLAND BEHAVIORAL HEALTHCARE",
+    "address": "3000 ERIE SW",
+    "citytown": "MASSILLON",
+    "state": "OH",
+    "zip_code": "44648",
+    "hospital_type": "Psychiatric",
+    "hospital_ownership": "Government - State",
+    "emergency_services": "No"
+  },
+  "official_domain_pointer_url": "https://dbh.ohio.gov/cms-hpt.txt",
+  "direct_client_status": 404,
+  "browser_status": "404 Error Page",
+  "browser_result": "The permitted browser rendered a 404 Error Page for the official domain root; the exact cms-hpt.txt route also returned 404 in bounded retrieval.",
+  "third_party_identity_lead": {
+    "url": "https://turquoise.health/providers/heartland-rph/information",
+    "facility_address": "3000 Erie Street South, Massillon, OH 44646",
+    "role": "identity corroboration only; unverified pricing data and no MRF bytes promoted"
+  },
+  "disposition": "current-cms-identity-confirmed-official-domain-route-unresolved",
+  "interpretation": "The current CMS roster confirms the state psychiatric facility identity. The recorded official domain and pointer locations are currently 404; this does not establish file absence or noncompliance, and no statewide or sibling MRF was assigned.",
+  "next_action": "Locate the current Ohio state-operated facility pricing route or a repaired publisher pointer; then verify a facility-specific CMS CSV/JSON, declared Ohio address/state/date/version and usability before promotion."
+}

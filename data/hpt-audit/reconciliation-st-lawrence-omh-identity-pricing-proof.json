@@ -1,0 +1,11 @@
+{
+  "ccn": "334003",
+  "observed_at": "2026-09-19T16:10:00Z",
+  "official_facility_url": "https://omh.ny.gov/omhweb/facilities/slpc/",
+  "official_directory_url": "https://omh.ny.gov/omhweb/aboutomh/omh_facility.html",
+  "official_pricing_url": "https://omh.ny.gov/omhweb/adults/omh-hospital-pricing-transparency.pdf",
+  "facility_observation": "New York OMH identifies Saint Lawrence Psychiatric Center as a state-run psychiatric facility at 1 Chimney Point Drive, Ogdensburg NY 13669, matching the tracker city/state and facility identity.",
+  "pricing_observation": "OMH publishes a Hospital Pricing Transparency document describing a machine-readable standard-charges file for OMH facilities and lists St. Lawrence Psychiatric Center among facilities served by the Utica Patient Resource Office; the document does not expose a CCN-specific MRF URL or header.",
+  "pointer_observation": "The existing OMH root pointer hash-corroborated retrieval contains no safely linked CCN-specific entry for 334003; no current MRF bytes were promoted.",
+  "conclusion": "Current first-party identity and state-system pricing scope are corroborated, but CCN-specific pointer linkage and MRF identity remain unresolved. Retain the facility-match gate and seek an OMH publisher entry that explicitly names this campus or its file."
+}

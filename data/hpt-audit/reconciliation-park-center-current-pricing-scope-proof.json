@@ -1,0 +1,40 @@
+{
+  "record": {
+    "ccn": "154060",
+    "observed_at": "2026-09-18T23:59:00Z",
+    "official_pricing_page": "https://www.parkview.com/patients-and-visitors/billing-and-insurance/request-an-estimate",
+    "official_pricing_page_http_status": 200,
+    "official_pricing_page_bytes": 108094,
+    "official_pricing_page_sha256": "cd370181e150f3bae1794fcfea3fc11e864642745eec5d1aa12a2d29725118e2",
+    "browser_result": "The current Parkview page renders 11 comprehensive machine-readable file links for named Parkview hospitals, including Regional/Randallia, Bryan, DeKalb, Huntington, LaGrange, Logansport, Montpelier, Noble, Ortho, Wabash, and Whitley/Kosciusko. Park Center is not listed, and no Park Center-specific file or 1909 Carew Street link is exposed.",
+    "facility_identity_context": "The separate Parkview Park Center facility page remains the exact 1909 Carew Street, Fort Wayne, IN 46805 target; omission from the system MRF list is retained as a scope observation, not proof of file absence.",
+    "disposition": "current-system-page-omits-park-center-specific-mrf",
+    "next_action": "Obtain a Park Center-specific publisher pointer/file or authoritative explanation of its CMS record and pricing publication; do not borrow any of the 11 listed Parkview files.",
+    "latest_browser_recheck": {
+      "observed_at": "2026-09-19T00:00:00Z",
+      "pricing_page": {
+        "url": "https://www.parkview.com/patients-and-visitors/billing-and-insurance/request-an-estimate",
+        "http_status": 200,
+        "bytes": 108094,
+        "sha256": "f02ff5f314f878771fa7b71c13544052b096c2acebd2615470f11521f0c2dac9",
+        "browser_observation": "The rendered Comprehensive machine-readable files section exposes 11 links: Regional/Randallia, Bryan, DeKalb, Huntington, LaGrange, Logansport, Montpelier, Noble, Ortho, Wabash, and Whitley/Kosciusko. No Park Center or 1909 Carew Street file link is present."
+      },
+      "facility_page": {
+        "url": "https://www.parkview.com/locations/details/2215/parkview-behavioral-health-institute-park-center",
+        "http_status": 200,
+        "bytes": 123789,
+        "sha256": "6e2f75ad98f8257d974f8da2790e3bf98207c20b3d38c02f6570b3930d9787e4",
+        "browser_observation": "The first-party location page identifies Parkview Behavioral Health Institute - Park Center at 1909 Carew St, Fort Wayne, IN 46805."
+      },
+      "root_pointer": {
+        "url": "https://www.parkview.com/cms-hpt.txt",
+        "http_status": 200,
+        "bytes": 4146,
+        "sha256": "4e7a785a10276d3e4789f740aa37e89070c47b4566b251c454a1734c5907089f",
+        "observation": "No Park Center-specific entry was observed; the root remains unchanged from the prior hash-bound check."
+      },
+      "disposition": "reconfirmed-system-page-omits-park-center-specific-mrf",
+      "count_change": 0
+    }
+  }
+}

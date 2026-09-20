@@ -1,0 +1,21 @@
+{
+  "ccn": "131314",
+  "observed_at": "2026-09-19T16:55:00Z",
+  "official_site": "https://www.shoshonehealth.com/",
+  "official_pricing_page": "https://www.shoshonehealth.com/patients/registrationbilling/",
+  "pricing_page_http_status": 200,
+  "pricing_page_browser_result": "The page identifies Shoshone Medical Center, links the Hospital Price Index pricing route, and still exposes only the historical 2020-Charge-Master.csv as a direct machine-readable download.",
+  "pricing_portal_url": "https://search.hospitalpriceindex.com/hpi2/hospital/shoshonemedicalcenter/7852or",
+  "pricing_portal_browser_final_url": "https://search.hospitalpriceindex.com/facility-not-found",
+  "pricing_portal_browser_result": "Rendered facility-not-found page; no current MRF bytes or facility metadata exposed.",
+  "historical_page_file_url": "https://www.shoshonehealth.com/wp-content/uploads/2019/12/2020-Charge-Master.csv",
+  "historical_page_file_role": "legacy chargemaster only; not substituted as a current CMS MRF",
+  "pointer_url": "https://www.shoshonehealth.com/cms-hpt.txt",
+  "pointer_status": 200,
+  "pointer_declared_target": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7852/826003924_west-shoshone-hospital-district-#1_standardcharges.csv",
+  "encoded_pointer_target_status": 404,
+  "bytes_retrieved": 0,
+  "disposition": "current-pricing-portal-facility-not-found",
+  "interpretation": "This browser pass independently confirms the first-party page and its current pricing link, but the pricing portal resolves to facility-not-found and exposes no current file. It is an access/publication observation, not a file-absence or compliance conclusion.",
+  "next_action": "Publisher must repair the pricing portal and pointer target or publish a current facility-specific CMS CSV/JSON; then verify Shoshone identity, Idaho state, declared date/version and usability."
+}

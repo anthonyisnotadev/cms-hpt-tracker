@@ -34,5 +34,24 @@
   "file_declared_date": "2026-02-20",
   "file_declared_version": "3.0.0",
   "observed_at": "2026-09-17T10:30:40.175Z",
-  "limitation": "The exact pointer-declared URL returned HTTP 404 to this bounded client. The current first-party page links a case-different CSV that returned 262144 bytes with identity-matched metadata. No redirect/equivalence between the URLs was observed; the complete 32.75 MB file and rate content were not validated. No legal compliance verdict."
+  "limitation": "The exact pointer-declared URL returned HTTP 404 to this bounded client. The current first-party page links a case-different CSV that returned identity-matched metadata. No redirect/equivalence between the URLs was observed; rate content was not independently adjudicated. No legal compliance verdict.",
+  "latest_complete_retrieval": {
+    "observed_at": "2026-09-19T11:43:00Z",
+    "page_file_url": "https://ramchealth.com/price-transparency/1144487372_reedsburg-area-medical-center_standardcharges_0.csv",
+    "http_status": 200,
+    "full_file_bytes": 32754948,
+    "full_file_sha256": "92704843d9f6959532a7a0c542fec39652832b5454e8eb180ecbd49f04652d22",
+    "header": {
+      "hospital_name": "Reedsburg Area Medical Center",
+      "location_name": "Reedsburg Area Medical Center",
+      "address": "2000 N Dewey Ave, Reedsburg, WI 53959",
+      "license_state": "WI",
+      "last_updated_on": "2026-02-20",
+      "version": "3.0.0"
+    },
+    "pointer_url_case_variant": "https://ramchealth.com/price-transparency/1144487372_Reedsburg-Area-Medical-Center_standardcharges_0.csv",
+    "pointer_url_case_variant_status": 404,
+    "evidence_role": "complete current page-linked file plus exact case-sensitive pointer mismatch",
+    "disposition": "page-file-current-pointer-case-mismatch"
+  }
 }

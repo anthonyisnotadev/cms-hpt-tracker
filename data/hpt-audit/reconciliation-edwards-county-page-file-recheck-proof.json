@@ -1,0 +1,16 @@
+{
+  "ccn": "171317",
+  "hospital_name": "Edwards County Medical Center",
+  "observed_at": "2026-09-19T00:15:21Z",
+  "official_site": "https://www.edcomed.com/",
+  "official_pricing_page": "https://www.edcomed.com/patients-and-visitors/standard-charges/",
+  "official_identity": "Edwards County Medical Center, 620 W 8th St, Kinsley, KS",
+  "pricing_page_observation": "The official page identifies Edwards County Medical Center, shows Updated 3.26.2026, and links Hospital & Clinic Standard Charges.",
+  "page_file_url": "https://www.edcomed.com/patients-and-visitors/standard-charges/assets/site/documents/price-transparency/481082458_edwards-county-hospital-and-healthcare-center_standardcharges.csv",
+  "page_file_web_observation": "web retrieval reported HTTP 404",
+  "page_file_direct_observation": {"http_status": 403, "server": "nginx", "content_type": "text/html; charset=utf-8"},
+  "pointer_url": "https://www.edcomed.com/cms-hpt.txt",
+  "pointer_direct_observation": {"http_status": 403},
+  "disposition": "official-pricing-page-file-link-current-access-denied-or-not-found-unresolved",
+  "next_action": "Publisher should restore the exact CSV or publish a replacement CMS-template MRF and expose a working cms-hpt.txt pointer. After a material change, retrieve bounded bytes and verify complete file identity, Kansas state, facility address, declared date/version and rate-level usability. Keep the 403 and web 404 as access observations, not as a compliance or file-absence conclusion."
+}

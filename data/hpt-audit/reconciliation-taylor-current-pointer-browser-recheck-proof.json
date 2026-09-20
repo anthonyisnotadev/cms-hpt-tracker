@@ -1,0 +1,29 @@
+{
+  "ccn": "110256",
+  "observed_at": "2026-09-19T02:28:00Z",
+  "hospital_name": "TAYLOR REGIONAL HOSPITAL",
+  "official_site": "https://taylorregional.org/",
+  "official_facility_page": "https://taylorregional.org/transparency.php",
+  "official_address": "222 Perry Hwy, Hawkinsville, GA 31036",
+  "pointer_url": "https://taylorregional.org/cms-hpt.txt",
+  "pointer_status": 200,
+  "pointer_mrf_url": "https://machine-readable-files.com/taylor-regional-hospital/580655369_TaylorRegionalHospital_standardcharges.json",
+  "pointer_browser_status": "ERR_BLOCKED_BY_CLIENT",
+  "pointer_target_browser_status": 404,
+  "pointer_target_result": "Error 404 - Not found",
+  "source_page_url": "https://ezcost.info/taylor-regional-hospital",
+  "source_page_current_link": "https://hospitalpricetransparencyfiles.com/self-regional-healthcare-partners/830893719_Self-Regional-Healthcare-Partners_standardcharges.csv",
+  "source_page_scope_result": "The current official page still delegates to EZCOST, whose download is a South Carolina Self Regional file and is excluded from Georgia CCN 110256.",
+  "disposition": "official-pointer-and-page-rechecked-pointer-target-404-wrong-state-source-file-retained-unresolved",
+  "next_action": "Obtain a publisher-restored Georgia MRF for 222 Perry Highway, Hawkinsville, then verify complete bytes, Georgia identity/state, metadata and usability before promotion.",
+  "latest_recheck": {
+    "observed_at": "2026-09-19T10:05:00Z",
+    "official_transparency_page_http_status": 200,
+    "official_transparency_page_sha256": "01951FF80E5AA5A25A9776D8D374E7807EA27BCB16D6350119A6A28A21CAA459",
+    "official_transparency_page_bytes": 39845,
+    "pricing_link_present": true,
+    "pricing_link": "https://ezcost.info/taylor-regional-hospital",
+    "pointer_target_http_status": 404,
+    "result": "The current official transparency page still routes pricing to EZCOST; the exact root-pointer JSON target remains HTTP 404. No current Georgia MRF bytes or supported identity correction were recovered."
+  }
+}

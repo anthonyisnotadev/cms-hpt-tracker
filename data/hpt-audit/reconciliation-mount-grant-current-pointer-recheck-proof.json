@@ -13,6 +13,24 @@
   "pointer_mrf_url": "https://raw.githubusercontent.com/Mt-Grant-General-Hospital/Pricing-Transparency/refs/heads/main/820299396_MtGrantGeneralHospital_standardcharges.JSON",
   "pointer_mrf_http_status": 404,
   "pointer_mrf_error": "GitHub raw target reports Not Found",
+  "latest_recheck": {
+    "observed_at": "2026-09-19T08:10:07Z",
+    "pointer_http_status": 200,
+    "pointer_content_length": 349,
+    "pointer_last_modified": "2025-09-12T22:12:47Z",
+    "pointer_target_http_status": 404,
+    "pointer_target_result": "GitHub raw endpoint returned 14-byte Not Found response",
+    "result": "The root pointer remains reachable and unchanged in role, while its exact JSON target remains unavailable. No replacement CMS MRF bytes or metadata were recovered."
+  },
+  "latest_browser_recheck": {
+    "observed_at": "2026-09-19T12:20:00Z",
+    "pricing_page_status": 200,
+    "pricing_page_identity": "Mount Grant General Hospital, 200 S A St., Hawthorne, NV 89451",
+    "page_link_url": "https://raw.githubusercontent.com/Mt-Grant-General-Hospital/Pricing-Transparency/refs/heads/main/820299396_MtGrantGeneralHospital_standardcharges.JSON",
+    "browser_link_result": "ERR_BLOCKED_BY_CLIENT before content-bearing bytes",
+    "web_open_result": "HTTP 404 Not Found",
+    "interpretation": "The current official page and root pointer still name the same GitHub JSON, but no bytes were exposed through browser or web retrieval; this is a stale-link/access observation, not proof of file absence or noncompliance."
+  },
   "disposition": "current-pointer-target-still-unavailable",
   "next_action": "Publisher must restore the declared JSON or publish a replacement MRF and update both the root pointer and current pricing page; then verify bounded bytes, Mount Grant identity/address/state/date/version before promotion."
 }

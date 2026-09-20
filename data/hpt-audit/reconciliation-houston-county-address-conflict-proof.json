@@ -37,5 +37,12 @@
   "file_declared_date": "2026-06-30",
   "file_declared_version": "3.0.0",
   "observed_at": "2026-09-17T10:35:35.982Z",
-  "limitation": "The pointer and first-party page link the same complete CSV, but its declared location/address says Lexington while the roster and first-party page say Erin. The file hospital-name field agrees, which does not resolve the campus conflict. Rate-level correctness and legal compliance were not adjudicated."
+  "limitation": "The pointer and first-party page link the same complete CSV, but its declared location/address says Lexington while the roster and first-party page say Erin. The file hospital-name field agrees, which does not resolve the campus conflict. Rate-level correctness and legal compliance were not adjudicated.",
+  "latest_browser_recheck": {
+    "observed_at": "2026-09-19T11:36:00Z",
+    "pricing_page_url": "https://shamrock.health/billing/",
+    "result": "Current billing page rendered in browser and links the same standard-charges CSV while displaying 5001 East Main Street, Erin, TN 37061; it also exposes the cms-hpt.txt link. The CSV's retained complete-file header still declares 200 West Church St, Lexington, TN 38351.",
+    "evidence_role": "current first-party page/address recheck against retained complete-file header",
+    "disposition": "retain-file-address-conflict"
+  }
 }

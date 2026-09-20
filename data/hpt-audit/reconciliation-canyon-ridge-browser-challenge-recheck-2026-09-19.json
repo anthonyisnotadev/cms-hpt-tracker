@@ -1,0 +1,14 @@
+{
+  "ccn": "054111",
+  "observed_at": "2026-09-19T19:35:00Z",
+  "method": "interactive-browser-and-bounded-domain-recheck",
+  "official_site": "https://canyonridgehospital.com/",
+  "official_identity": "Canyon Ridge Hospital, 5353 G Street, Chino, CA 91710",
+  "browser_result": "The browser rendered a Cloudflare 'Just a moment...' challenge at the official site; no pricing page or pointer text was exposed.",
+  "root_http_status": 403,
+  "pointer_http_status": 403,
+  "candidate_file_unchanged": "The separately observed UHS CDN candidate remains a non-promoted lead; this recheck did not establish official page/pointer declaration.",
+  "interpretation": "Current browser and direct requests confirm an access boundary only. They do not disprove the candidate file or establish file absence/compliance.",
+  "disposition": "retain-unresolved-official-linkage-cloudflare-challenge",
+  "next_action": "Obtain a publisher-enabled or authorized response from the exact pointer/pricing page declaring the CDN file, then validate complete bytes and facility scope before promotion."
+}

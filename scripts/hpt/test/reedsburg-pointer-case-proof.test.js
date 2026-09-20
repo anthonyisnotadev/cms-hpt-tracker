@@ -34,13 +34,16 @@ test('Reedsburg pointer 404 remains distinct from identity-matched page CSV', as
   assert.equal(parsed.cmsVersion, '3.0.0');
   assert.equal(observation.page_file_sample_sha256, proof.sample_sha256);
   const row = loadReviewedView(audit).compliance.find(item => item.ccn === '521351');
-  assert.equal(row.finding, 'not-assessed-nationwide-pointer-facility-match-unresolved');
-  assert.notEqual(row.mrf_url, proof.page_file_url);
+  assert.equal(row.finding, 'pointer-links-unavailable-mrf-source-page-current-file');
+  assert.equal(row.mrf_url, proof.page_file_url);
+  assert.equal(row.pointer_url, proof.pointer_url);
   const worklist = require(path.join(audit, 'unresolved-investigation-worklist.json')).records
     .find(item => item.ccn === '521351');
-  assert.equal(worklist.reviewed_follow_up, true);
-  assert.equal(worklist.current_disposition, observation.disposition);
-  assert.equal(worklist.nationwide_disposition, nationwide.disposition);
-  assert.equal(worklist.evidence_gate, 'pointer-url-correction-and-complete-file');
-  assert.match(worklist.next_action, /case-sensitive correction/);
+  assert.equal(worklist, undefined);
+  const standing = require(path.join(audit, 'standing-evidence-followup-worklist.json')).records
+    .find(item => item.ccn === '521351');
+  assert.equal(standing.reviewed_follow_up, true);
+  assert.equal(standing.current_disposition, nationwide.disposition);
+  assert.equal(standing.standing_finding, row.finding);
+  assert.match(standing.next_action, /case-sensitive correction/);
 });

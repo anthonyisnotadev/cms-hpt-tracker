@@ -27,6 +27,19 @@
   "retained_pointer_westborough_name_count": 0,
   "retained_pointer_massachusetts_reference_count": 0,
   "current_root_web_open_result": "URL safety refusal; current root contents not established",
+  "latest_live_pointer_recheck": {
+    "observed_at": "2026-09-19T11:10:34Z",
+    "url": "https://www.westboroughbehavioral.com/cms-hpt.txt",
+    "http_status": 200,
+    "content_type": "text/plain",
+    "content_length": 3192,
+    "last_modified": "2026-06-04T19:25:31Z",
+    "sha256": "2f5c55cbcecddd9cfa0623bb6c7f97c7ffce7e14584aa3c2f0b0e2d7c4c6caf3",
+    "entry_count": 10,
+    "westborough_entry_count": 0,
+    "massachusetts_reference_count": 0,
+    "evidence_role": "fresh official-domain pointer recheck; shared pointer omission corroboration, not a file-identity assignment"
+  },
   "disposition": "historical-shared-pointer-has-sibling-entries-no-westborough-entry-current-root-unverified",
   "interpretation": "The dated retained root pointer is a shared publisher pointer, not a Westborough-specific file assignment. Its ten location-name entries identify other hospitals; none names Westborough or Massachusetts. The current first-party site identifies the hospital, but the web tool refused a fresh root-pointer open. This does not prove that the current root is unchanged or that a Westborough MRF is absent.",
   "next_action": "Retrieve the current root through a permitted route or find a first-party Westborough-specific price page; verify any matching pointer target's bytes and exact facility identity before assigning it to CCN 224044."

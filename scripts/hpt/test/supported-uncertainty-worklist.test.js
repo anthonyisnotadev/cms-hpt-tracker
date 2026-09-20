@@ -22,8 +22,8 @@ test('every supported uncertainty has a source-bound, distinct follow-up', () =>
     && ['mrf-address-field-conflicts-facility', 'mrf-license-state-field-conflicts-facility',
       'mrf-address-field-incomplete'].includes(row.standing_finding)).length;
   assert.equal(saved.summary.total, supportedCount + reviewedConflictCount);
-  assert.equal(saved.summary.by_gate['reviewed-file-address-conflict'], 15);
-  assert.equal(saved.summary.by_gate['reviewed-file-license-state-conflict'], 43);
+  assert.equal(saved.summary.by_gate['reviewed-file-address-conflict'], 10);
+  assert.equal(saved.summary.by_gate['reviewed-file-license-state-conflict'], 38);
   assert.equal(saved.summary.by_gate['reviewed-file-address-incomplete'], 3);
   assert.equal(saved.summary.total, Object.values(saved.summary.by_gate).reduce((sum, count) => sum + count, 0));
   assert.equal(new Set(saved.records.map(row => row.ccn)).size, saved.records.length);
@@ -38,17 +38,12 @@ test('every supported uncertainty has a source-bound, distinct follow-up', () =>
   assert.match(murray.next_action, /current plain-text murraycountymed\.org root pointer/);
   assert.equal(murray.reviewed_resolution_action, 'quarantine');
   const conejos = saved.records.find(row => row.ccn === '061308');
-  assert.equal(conejos.evidence_gate, 'reviewed-file-address-conflict');
-  assert.match(conejos.next_action, /81101/);
-  assert.match(conejos.next_action, /81140/);
-  assert.match(conejos.mrf_url, /slvconejos/);
+  assert.equal(conejos, undefined);
   for (const ccn of ['251316', '251322', '251323', '251335']) {
     const row = saved.records.find(item => item.ccn === ccn);
     assert.equal(row.evidence_gate, 'reviewed-file-license-state-conflict');
     assert.match(row.next_action, /Declared license state: LA; facility state: MS/);
   }
   const choctaw = saved.records.find(row => row.ccn === '011304');
-  assert.equal(choctaw.evidence_gate, 'reviewed-file-license-state-conflict');
-  assert.match(choctaw.next_action, /license_number\|LA/);
-  assert.match(choctaw.next_action, /Ave.*Lane/);
+  assert.equal(choctaw, undefined);
 });

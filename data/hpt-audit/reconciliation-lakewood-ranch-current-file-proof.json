@@ -1,0 +1,29 @@
+{
+  "ccn": "100299",
+  "observed_at": "2026-09-19T01:05:00Z",
+  "official_domain": "https://www.lakewoodranchmedicalcenter.com/",
+  "official_pricing_page_candidate": "https://www.lakewoodranchmedicalcenter.com/patients-visitors/pricing-guide",
+  "discovery_source": "https://ppman.hank.ai/transparency/hospital/100299",
+  "mrf_url": "https://uhsfilecdn.eskycity.net/ac/731666433_lakewood-ranch-medical-center_standardcharges.csv",
+  "mrf_http_status": 200,
+  "mrf_content_type": "text/csv",
+  "mrf_total_bytes": 122176288,
+  "mrf_last_modified": "2026-09-10T21:01:31Z",
+  "mrf_sample_bytes": 262144,
+  "mrf_sample_sha256": "FB66F281C39160F04D975AAECCAB1D869002370057B93D62B7FA0FD31477CEDD",
+  "declared_location_name": "Lakewood Ranch",
+  "declared_address": "8330 Lakewood Ranch Boulevard, Lakewood Ranch, FL 34202|6760 Fruitville Rd, Sarasota, FL 34240-9711",
+  "declared_license_state": "FL",
+  "declared_npi": "1730179714",
+  "declared_date": "2026-09-01",
+  "declared_version": "3.0.0",
+  "header_attestation": "TRUE",
+  "scope_note": "The bounded header matches the CCN 100299 roster address and also names an ER at Fruitville sibling location. The direct URL was discovered through a third-party index while the official domain and pointer remained Cloudflare-blocked; retain as candidate page-file evidence, not pointer-backed current verification.",
+  "pointer_urls_checked": [
+    "https://www.lakewoodranchmedicalcenter.com/cms-hpt.txt",
+    "https://lakewoodranchmedicalcenter.com/cms-hpt.txt"
+  ],
+  "pointer_http_statuses": [403, 403],
+  "disposition": "third-party-discovered-current-file-header-matches-roster-pointer-linkage-pending",
+  "next_action": "Recover the official pricing page/pointer through an authorized route and confirm that it declares this exact URL; then validate complete-file usability and distinguish the Lakewood Ranch hospital campus from the Fruitville ER before any promotion."
+}

@@ -1,120 +1,15 @@
 {
   "summary": {
-    "total": 76,
+    "total": 66,
     "by_gate": {
       "file-address-conflict": 1,
       "identity-and-pointer-linkage": 14,
-      "reviewed-file-address-conflict": 15,
-      "reviewed-file-license-state-conflict": 43,
+      "reviewed-file-address-conflict": 10,
+      "reviewed-file-license-state-conflict": 38,
       "reviewed-file-address-incomplete": 3
     }
   },
   "records": [
-    {
-      "ccn": "010035",
-      "hospital_name": "CULLMAN REGIONAL MEDICAL CENTER",
-      "state": "AL",
-      "priority": 1,
-      "evidence_gate": "reviewed-file-license-state-conflict",
-      "reconciliation_status": "reviewed-current-file-metadata-conflict",
-      "standing_finding": "mrf-license-state-field-conflicts-facility",
-      "reviewed_resolution_action": "replace-observation",
-      "reviewed_at": "2026-09-15T23:27:22.022Z",
-      "latest_observed_at": "2026-09-15T23:27:22.022Z",
-      "pointer_url": "https://cullmanregional.com/cms-hpt.txt",
-      "mrf_url": "https://cullmanregional.com/wp-content/uploads/2025/01/631058174_cullman-regional-medical-center_standardcharges.csv",
-      "next_action": "Obtain publisher clarification or a corrected license-state field; recheck the exact file and compare that field with first-party or state facility evidence. Declared license state: CA; facility state: AL."
-    },
-    {
-      "ccn": "010089",
-      "hospital_name": "WALKER BAPTIST MEDICAL CENTER",
-      "state": "AL",
-      "priority": 1,
-      "evidence_gate": "reviewed-file-address-conflict",
-      "reconciliation_status": "reviewed-current-file-metadata-conflict",
-      "standing_finding": "mrf-address-field-conflicts-facility",
-      "reviewed_resolution_action": "replace-observation",
-      "reviewed_at": "2026-09-17T21:28:00.000Z",
-      "latest_observed_at": "2026-09-17T21:28:00.000Z",
-      "pointer_url": "https://bayfrontstpete.com/cms-hpt.txt",
-      "mrf_url": "https://hospitalpricedisclosure.com/download?pi=ZLwVSmmcKuH*_*GWXeRcdTcQ*-*",
-      "next_action": "Obtain publisher clarification or a corrected file address; recheck the exact pointer-linked file and compare its declared address with the independently verified facility address. Declared address: 3400 Hwy 78 E, Jasper, AL 35501; facility address: 3400 Highway 78 East, Jasper, AL 35502."
-    },
-    {
-      "ccn": "011304",
-      "hospital_name": "OCHSNER CHOCTAW GENERAL",
-      "state": "AL",
-      "priority": 1,
-      "evidence_gate": "reviewed-file-license-state-conflict",
-      "reconciliation_status": "reviewed-current-file-metadata-conflict",
-      "standing_finding": "mrf-license-state-field-conflicts-facility",
-      "reviewed_resolution_action": "replace-observation",
-      "reviewed_at": "2026-09-17T15:01:30.000Z",
-      "latest_observed_at": "2026-09-17T15:01:30.000Z",
-      "pointer_url": "https://www.ochsner.org/cms-hpt.txt",
-      "mrf_url": "https://ochsner-craft.s3.amazonaws.com/core/640655993_rush-hospitalbutler-inc._standardcharges.csv_2026-03-26-185915_vatb.csv",
-      "next_action": "Seek publisher clarification or correction of license_number|LA for this Alabama file and reconcile Vanity Fair Ave. versus Lane. After a material change, recheck exact pointer/file bytes and validate the full CSV/rates; do not use another Ochsner campus file."
-    },
-    {
-      "ccn": "030037",
-      "hospital_name": "HONORHEALTH TEMPE MEDICAL CENTER",
-      "state": "AZ",
-      "priority": 1,
-      "evidence_gate": "reviewed-file-address-conflict",
-      "reconciliation_status": "reviewed-current-file-metadata-conflict",
-      "standing_finding": "mrf-address-field-conflicts-facility",
-      "reviewed_resolution_action": "replace-observation",
-      "reviewed_at": "2026-09-18T01:44:59.000Z",
-      "latest_observed_at": "2026-09-18T01:44:59.000Z",
-      "pointer_url": "https://honorhealth.com/cms-hpt.txt",
-      "mrf_url": "https://www.honorhealth.com/sites/default/files/2023-12/860181654_honorhealthtmc_standardcharges.csv",
-      "next_action": "Confirm whether CCN 030037 was reassigned to the Tempe campus or obtain the Phoenix campus MRF; do not treat the Tempe file as the Phoenix roster campus until clarified."
-    },
-    {
-      "ccn": "030064",
-      "hospital_name": "BANNER - UNIVERSITY MEDICAL CENTER TUCSON CAMPUS",
-      "state": "AZ",
-      "priority": 1,
-      "evidence_gate": "reviewed-file-address-conflict",
-      "reconciliation_status": "reviewed-current-file-metadata-conflict",
-      "standing_finding": "mrf-address-field-conflicts-facility",
-      "reviewed_resolution_action": "replace-observation",
-      "reviewed_at": "2026-09-18T10:57:57.948Z",
-      "latest_observed_at": "2026-09-18T10:57:57.948Z",
-      "pointer_url": "https://www.bannerhealth.com/cms-hpt.txt",
-      "mrf_url": "https://images.pricetransparency.healthcare/public-mrfs/banner/901074557_banner-university-medical-center-tucson_standardcharges.csv",
-      "next_action": "Obtain publisher clarification or a corrected file address; recheck the exact pointer-linked file and compare its declared address with the independently verified facility address. Declared address: 1625 N Campbell Ave, Tucson, AZ 85724|3838 N Campbell Ave, Bldg 1, Tucson, AZ 85719|1891 W Orange Grove Road, Bldg 1, Tucson, AZ 85704; facility address: 1625 N Campbell Ave, Tucson, AZ 85719."
-    },
-    {
-      "ccn": "044021",
-      "hospital_name": "PERIMETER BEHAVIORAL HOSPITAL OF WEST MEMPHIS",
-      "state": "AR",
-      "priority": 1,
-      "evidence_gate": "reviewed-file-license-state-conflict",
-      "reconciliation_status": "reviewed-current-file-metadata-conflict",
-      "standing_finding": "mrf-license-state-field-conflicts-facility",
-      "reviewed_resolution_action": "replace-observation",
-      "reviewed_at": "2026-09-16T15:17:57.638Z",
-      "latest_observed_at": "2026-09-16T15:17:57.638Z",
-      "pointer_url": "https://www.perimeterhealthcare.com/cms-hpt.txt",
-      "mrf_url": "https://www.perimeterhealthcare.com/west-memphis/461030276_Woodridge-of-West-Memphis-LLC_standardcharges.csv",
-      "next_action": "Publisher should correct or explain the TX license-state field for this Arkansas hospital. Independently validate the complete CSV content; retain the exact pointer-linked file and do not infer a legal compliance verdict from this field conflict."
-    },
-    {
-      "ccn": "050581",
-      "hospital_name": "UCI HEALTH-LAKEWOOD",
-      "state": "CA",
-      "priority": 1,
-      "evidence_gate": "reviewed-file-address-conflict",
-      "reconciliation_status": "reviewed-current-file-metadata-conflict",
-      "standing_finding": "mrf-address-field-conflicts-facility",
-      "reviewed_resolution_action": "replace-observation",
-      "reviewed_at": "2026-09-16T21:15:20.523Z",
-      "latest_observed_at": "2026-09-16T21:15:20.523Z",
-      "pointer_url": "https://www.ucihealth.org/cms-hpt.txt",
-      "mrf_url": "https://www.ucihealth.org/pricetransparency/952226406_uci-health-lakewood_standardcharges.json",
-      "next_action": "Recheck whether UCI corrects the Lakewood JSON hospital_address field; preserve the publisher's literal Orange value until then and do not infer whole-file validity."
-    },
     {
       "ccn": "054074",
       "hospital_name": "ADVENTIST HEALTH VALLEJO",
@@ -129,66 +24,6 @@
       "pointer_url": "https://www.adventisthealth.org/cms-hpt.txt",
       "mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHSHSAINTHELENACA&type=CDMWithoutLabel&fileType=CSV",
       "next_action": "Confirm or correct the Vallejo ZIP in the shared CSV and clarify why the root pointer names only St. Helena while the file also lists Vallejo."
-    },
-    {
-      "ccn": "061308",
-      "hospital_name": "SAN LUIS VALLEY HEALTH CONEJOS COUNTY HOSPITAL",
-      "state": "CO",
-      "priority": 1,
-      "evidence_gate": "reviewed-file-address-conflict",
-      "reconciliation_status": "reviewed-current-file-metadata-conflict",
-      "standing_finding": "mrf-address-field-conflicts-facility",
-      "reviewed_resolution_action": "replace-observation",
-      "reviewed_at": "2026-09-17T14:26:21.000Z",
-      "latest_observed_at": "2026-09-17T14:26:21.000Z",
-      "pointer_url": "https://www.sanluisvalleyhealth.org/cms-hpt.txt",
-      "mrf_url": "https://sanluis.pt.panaceainc.com/MRFDownload/sanluis/slvconejos",
-      "next_action": "Obtain publisher clarification or a corrected file address; recheck the exact pointer-linked file and compare its declared address with the independently verified facility address. Declared address: 19021 Us Hwy 285, La Jara CO 81101; facility address: 19021 Hwy 285, La Jara, CO 81140."
-    },
-    {
-      "ccn": "061319",
-      "hospital_name": "ST VINCENT GENERAL HOSPITAL DISTRICT",
-      "state": "CO",
-      "priority": 1,
-      "evidence_gate": "reviewed-file-address-conflict",
-      "reconciliation_status": "reviewed-current-file-metadata-conflict",
-      "standing_finding": "mrf-address-field-conflicts-facility",
-      "reviewed_resolution_action": "replace-observation",
-      "reviewed_at": "2026-09-16T02:40:41.113Z",
-      "latest_observed_at": "2026-09-16T02:40:41.113Z",
-      "pointer_url": "https://stvincent.health/cms-hpt.txt",
-      "mrf_url": "https://stvincent.goredde.com/Estimator/Files/840424585_st.-vincent-general-hospital_standardcharges.csv",
-      "next_action": "Obtain publisher clarification or a corrected file address; recheck the exact pointer-linked file and compare its declared address with the independently verified facility address. Declared address: 822 W 4th St, Leadville, CO 80461; facility address: 816 W 4TH ST."
-    },
-    {
-      "ccn": "090004",
-      "hospital_name": "MEDSTAR GEORGETOWN UNIVERSITY HOSPITAL",
-      "state": "DC",
-      "priority": 1,
-      "evidence_gate": "reviewed-file-license-state-conflict",
-      "reconciliation_status": "reviewed-current-file-metadata-conflict",
-      "standing_finding": "mrf-license-state-field-conflicts-facility",
-      "reviewed_resolution_action": "replace-observation",
-      "reviewed_at": "2026-09-16T21:50:22.099Z",
-      "latest_observed_at": "2026-09-16T21:50:16.124Z",
-      "pointer_url": "https://medstarhealth.org/cms-hpt.txt",
-      "mrf_url": "https://www.medstarhealth.org/-/media/project/mho/medstar/billing-and-insurance/2026/522218584_medstar_georgetown_university_hospital_standardcharges.csv",
-      "next_action": "Clarify or correct the license_number|MD header on the Georgetown CSV; verify whether a DC license column should be present without assuming the file belongs to Maryland."
-    },
-    {
-      "ccn": "100157",
-      "hospital_name": "LAKELAND REGIONAL MEDICAL CENTER",
-      "state": "FL",
-      "priority": 1,
-      "evidence_gate": "reviewed-file-license-state-conflict",
-      "reconciliation_status": "reviewed-current-file-metadata-conflict",
-      "standing_finding": "mrf-license-state-field-conflicts-facility",
-      "reviewed_resolution_action": "replace-observation",
-      "reviewed_at": "2026-09-16T21:51:40.384Z",
-      "latest_observed_at": "2026-09-16T21:51:38.498Z",
-      "pointer_url": "https://mylrh.org/cms-hpt.txt",
-      "mrf_url": "https://www.mylrh.org/wp-content/uploads/2025/04/59-2650456_LakelandRegionalMedicalCenter_standardcharges.csv",
-      "next_action": "Publisher should correct or explain license_number|CA for the Florida facility and its misspelled, ZIP-incomplete hospital_address field; recheck the exact linked CSV."
     },
     {
       "ccn": "100175",
@@ -729,6 +564,21 @@
       "next_action": "Obtain publisher clarification or a corrected license-state field; recheck the exact file and compare that field with first-party or state facility evidence. Declared license state: CA; facility state: PA."
     },
     {
+      "ccn": "394063",
+      "hospital_name": "GEISINGER BEHAVIORAL HEALTH CENTER DANVILLE",
+      "state": "PA",
+      "priority": 1,
+      "evidence_gate": "reviewed-file-address-conflict",
+      "reconciliation_status": "reviewed-current-file-metadata-conflict",
+      "standing_finding": "mrf-address-field-conflicts-facility",
+      "reviewed_resolution_action": "replace-observation",
+      "reviewed_at": "2026-09-19T00:00:00Z",
+      "latest_observed_at": "2026-09-19T00:00:00Z",
+      "pointer_url": "https://www.geisingerbehavioral.com/cms-hpt.txt",
+      "mrf_url": "https://www.geisingerbehavioral.com/wp-content/uploads/pricing/2026/574/86-1906198_Glenmaura-Holdings-LLC_standardcharges.csv",
+      "next_action": "Obtain publisher clarification or a corrected file address; recheck the exact pointer-linked file and compare its declared address with the independently verified facility address. Declared address: 60 Glnmaura Blvd, Moosic, Pennsylvania 18507; facility address: 206 Maria Hall Drive, Danville, PA 17821."
+    },
+    {
       "ccn": "444023",
       "hospital_name": "PERIMETER BEHAVIORAL CENTER OF JACKSON",
       "state": "TN",
@@ -1122,8 +972,8 @@
     }
   ],
   "source_sha256": {
-    "nationwide-reconciliation.json": "15dbef831ea070caa4c2429cc33c9eea623199742f9a7f2376e604eaace046d6",
-    "reviewed-resolutions.json": "0e86e0342c39808ca2cfae4e363f8c149080c71ac639d42c1acafae42ce9db3d",
+    "nationwide-reconciliation.json": "cdbc976e9ff0989b0d3fb90b5d36f7088e476ca4b809926d1dbe8f4c03645c19",
+    "reviewed-resolutions.json": "dae45d73df0072bb2aa17ffdf734b144405b36a8c9a9e54c608fc4de6ed73068",
     "reconciliation-browser-file-address-conflicts.json": "47098f3484a8115afcbbf955fa285346a472a470deb98cf9220646d1db874c80"
   }
 }

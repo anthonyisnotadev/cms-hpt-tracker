@@ -21,5 +21,24 @@
   "scripted_csv_result": "HTTP 403 challenge content to this client",
   "comparison_to_prior_cache": "The complete browser-downloaded CSV SHA-256 equals the file hash previously recorded in the 2026-09-09 recovery file-evidence row; this is corroboration, not a new publisher file.",
   "disposition": "current-page-linked-historical-csv-pointer-access-unresolved",
-  "next_action": "Obtain a content-bearing current root pointer through an authorized client and verify its exact target. Recheck after a publisher update to the facility-specific file with a current CMS metadata header, then independently verify hospital identity, address, Louisiana license state, declared date and version. Do not treat browser/client access failure as a missing file or the 2023 CSV as a current verified MRF."
+  "next_action": "Obtain a content-bearing current root pointer through an authorized client and verify its exact target. Recheck after a publisher update to the facility-specific file with a current CMS metadata header, then independently verify hospital identity, address, Louisiana license state, declared date and version. Do not treat browser/client access failure as a missing file or the 2023 CSV as a current verified MRF.",
+  "latest_recheck": {
+    "observed_at": "2026-09-19T12:00:00Z",
+    "current_pricing_page_url": "https://www.tghealthsystem.com/surgery-centers/physicians-medical-center/patient-pricing-information/",
+    "current_pricing_page_observed_status": 200,
+    "current_page_file_url": "https://www.tghealthsystem.com/images/721275428_physicians-medical-center_standardcharges.1%29.xlsx",
+    "current_page_file_content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "current_page_file_http_status": 403,
+    "current_page_file_result": "The current page now exposes an XLSX workbook link rather than the retained 2023 wide CSV URL; the exact workbook was blocked before bytes.",
+    "result": "This is a current page-link role change, not a verified MRF recovery. Preserve the older CSV as historical evidence and keep the current workbook as a retryable facility-specific lead pending bytes, metadata and CMS-schema usability."
+  },
+  "latest_browser_recheck_20260919": {
+    "observed_at": "2026-09-19T15:45:00Z",
+    "reason_for_repeat": "Continuation audit of the Tier-2 current-page/file-format discrepancy after the page-link role change.",
+    "pricing_page_url": "https://www.tghealthsystem.com/surgery-centers/physicians-medical-center/patient-pricing-information/",
+    "browser_page_status": 200,
+    "browser_file_link": "https://www.tghealthsystem.com/images/721275428_physicians-medical-center_standardcharges.1).xlsx",
+    "browser_file_result": "The rendered page explicitly labels the link as Physicians Medical Center current standard charges in machine-readable format. The exact XLSX route returned HTTP 403 to the direct client and ERR_NAME_NOT_RESOLVED when opened in the browser; no workbook bytes were obtained.",
+    "interpretation": "This confirms the current facility-specific link and its XLSX format, but supplies no CMS schema metadata, bytes, or pointer linkage. Retain the older CSV as historical evidence; keep CCN 190241 unresolved and do not promote the workbook or infer file absence from transport failures."
+  }
 }

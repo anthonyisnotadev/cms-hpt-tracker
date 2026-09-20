@@ -1,0 +1,18 @@
+{
+  "ccn": "370002",
+  "hospital_name": "INTEGRIS HEALTH WOODWARD HOSPITAL",
+  "state": "OK",
+  "observed_at": "2026-09-20T22:30:00Z",
+  "current_official_pricing_page": "https://integrishealth.org/patient-information/pricing",
+  "current_pricing_portal": "https://hospitalpricedisclosure.com/select",
+  "legacy_domain": "https://alliancehealthwoodward.com/",
+  "legacy_pointer_url": "https://alliancehealthwoodward.com/cms-hpt.txt",
+  "bounded_observations": [
+    { "url": "https://integrishealth.org/patient-information/pricing", "status": "browser-rendered" },
+    { "url": "https://alliancehealthwoodward.com/", "status": 403 },
+    { "url": "https://alliancehealthwoodward.com/cms-hpt.txt", "status": 404 }
+  ],
+  "browser_observation": "The current first-party Integris pricing page identifies Integris Health Woodward Hospital among its locations and links to a centralized Hospital Price Disclosure facility selector. The selector rendered without a facility-specific file link in the observed state; no Woodward MRF bytes were recovered.",
+  "disposition": "current-central-pricing-portal-facility-selection-pending",
+  "next_action": "Use the portal's Woodward facility selection or a publisher-provided direct route, then verify exact Woodward name/address/state, pointer linkage, declared date/version and parsed usability. Do not treat the central portal or legacy-domain transport results as a Woodward MRF or compliance finding."
+}

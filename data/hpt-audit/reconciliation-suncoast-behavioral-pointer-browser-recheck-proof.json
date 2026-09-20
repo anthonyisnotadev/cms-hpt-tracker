@@ -1,0 +1,21 @@
+{
+  "ccn": "104078",
+  "hospital_name": "Suncoast Behavioral Health Center",
+  "observed_at": "2026-09-19T01:40:00Z",
+  "official_site": "https://suncoastbhc.com/",
+  "official_identity_sources": [
+    "https://quality.healthfinder.fl.gov/Facility-Provider/Profile/?LID=10113",
+    "https://suncoastbhc.com/"
+  ],
+  "official_identity": "Suncoast Behavioral Health Center, 4480 51st Street West, Bradenton, FL 34210",
+  "pointer_urls_checked": [
+    "https://suncoastbhc.com/cms-hpt.txt",
+    "https://www.suncoastbhc.com/cms-hpt.txt"
+  ],
+  "direct_pointer_statuses": [403, 403],
+  "direct_pointer_result": "Both exact root-pointer URLs returned HTTP 403 before pointer bytes.",
+  "browser_status": "Cloudflare security-verification page",
+  "browser_result": "A fresh official browser render stopped at the provider security-verification page; no pointer text, pricing page or MRF link was exposed.",
+  "disposition": "official-identity-confirmed-pointer-access-blocked-mrf-unresolved",
+  "next_action": "Retry the exact official pricing/pointer routes through a materially different authorized route; obtain bounded pointer/MRF bytes and independently verify the Suncoast Behavioral Health Center identity, Florida state, declared date/version and CMS-template usability."
+}

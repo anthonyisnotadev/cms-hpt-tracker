@@ -310,6 +310,27 @@ function main() {
       standingCheckedAt: row.reviewed_at,
     };
   }
+  // Identity quarantines are intentionally excluded from the generic
+  // unresolved worklist, but they still require an explicit, source-bound
+  // operational next step. Keep them visible as their own queue stream so a
+  // quarantine cannot disappear merely because the rejected assignment was
+  // removed from the presentation view.
+  const identityWorklistFile = path.join(srcDir, 'identity-quarantine-worklist.json');
+  if (!fs.existsSync(identityWorklistFile))
+    throw new Error('identity-quarantine-worklist.json is missing; build it from nationwide-reconciliation.json first');
+  const identityWorklist = JSON.parse(fs.readFileSync(identityWorklistFile, 'utf8'));
+  const reconciliationPath = path.join(srcDir, 'nationwide-reconciliation.json');
+  if (identityWorklist.source_sha256?.['nationwide-reconciliation.json'] !== crypto.createHash('sha256')
+    .update(fs.readFileSync(reconciliationPath)).digest('hex'))
+    throw new Error('Identity quarantine worklist is stale against nationwide-reconciliation.json');
+  for (const row of identityWorklist.records) {
+    if (investigationNextSteps[row.ccn]) throw new Error(`Duplicate investigation next step ${row.ccn}`);
+    investigationNextSteps[row.ccn] = {
+      stream: 'identity-quarantine', gate: row.proposed_disposition,
+      nextAction: row.next_action, latestObservedAt: row.latest_observed_at,
+      standingCheckedAt: row.standing_checked_at,
+    };
+  }
   const sameCampusWorklistFile = path.join(srcDir, 'same-campus-ccn-transition-worklist.json');
   if (!fs.existsSync(sameCampusWorklistFile))
     throw new Error('same-campus-ccn-transition-worklist.json is missing; rebuild the same-campus worklist before the tracker');

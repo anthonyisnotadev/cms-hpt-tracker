@@ -39,9 +39,7 @@ test('alias candidate queue is source-bound and remains investigative', () => {
     assert.equal(row.requires_sibling_review,
       row.source_header_matched_ccns.some(ccn => ccn !== row.ccn));
   }
-  const lincoln = queue.candidates.find(row => row.ccn === '330080');
-  assert.equal(lincoln.candidate_kind, 'already-reviewed-follow-up');
-  assert.equal(lincoln.latest_review_at, '2026-09-16T17:27:04.030Z');
-  assert.deepEqual(lincoln.reviewed_sources, ['manual-access']);
-  assert.match(lincoln.next_action, /Capture the official Lincoln facility and charges pages/);
+  // Lincoln was removed from this investigative alias queue after its
+  // complete current browser download received a guarded reviewed resolution.
+  assert.equal(queue.candidates.some(row => row.ccn === '330080'), false);
 });

@@ -42,6 +42,30 @@
     "declared_version": "3.0.0",
     "scope": "Full response hashed; metadata lines inspected. No row-by-row accuracy or legal-compliance assessment."
   },
+  "latest_web_recheck": {
+    "observed_at": "2026-09-19T02:31:00Z",
+    "official_location_page_status": 200,
+    "official_location_address": "1001 Holland Ave, Philadelphia, MS 39350",
+    "official_page_price_transparency_target": "https://apps.para-hcfs.com/PTT/FinalLinks/Neshoba_V3.aspx",
+    "critical_access_updates_link_observed": true,
+    "ccn_specific_discriminator_observed": false,
+    "result": "Current first-party location page confirms the shared campus and links one shared price-transparency portal; it does not distinguish acute-care CCN 250043 from CAH CCN 251340."
+  },
+  "latest_pointer_recheck": {
+    "observed_at": "2026-09-19T08:08:13Z",
+    "pointer_http_status": 403,
+    "pointer_content_type": "text/html; charset=UTF-8",
+    "pointer_content_length": 5488,
+    "pointer_result": "Cloudflare managed challenge HTML; no current pointer bytes",
+    "result": "The exact root pointer remains transport-gated. This does not establish file absence, termination or coverage for either CCN."
+  },
+  "latest_cms_related_unit_observation": {
+    "observed_at": "2026-09-19T10:05:00Z",
+    "source_url": "https://www.cms.gov/files/document/pac-snf-fy2026-apu-excluded.pdf",
+    "record": "The CMS FY2026 exclusion report lists 250043 as a Swing Bed entry for Neshoba County General Hospital and marks a termination date as present.",
+    "scope_limit": "This is a PPS-excluded swing-bed/unit report, not an effective-dated main acute-care or CAH enrollment record; it cannot establish the hospital CCN transition date or assign the shared MRF.",
+    "disposition": "retained-related-unit-evidence-no-main-ccn-relabeling"
+  },
   "cms_enrollment_snapshot_review": {
     "evidence_file": "data/hpt-audit/same-campus-cms-enrollment-snapshot-review.json",
     "reviewed_at": "2026-09-17T01:23:17.000Z",

@@ -136,19 +136,32 @@ function applyResolutions(compliance, manifest, gaps, resolutions = []) {
           && e.pointerIssue === 'pointer-file-like-url-renders-not-found'
           && e.pointerMrfUrl && e.pointerMrfUrl !== e.url
           && /^2\d\d$/.test(String(e.pointerMrfHttpStatus))
-          && e.browserPointerTargetFinalUrl === e.pointerMrfUrl
-          && e.browserPointerTargetHeading === '404 - Page Not Found'
+          && (e.browserPointerTargetFinalUrl === e.pointerMrfUrl
+            || (e.browserPointerTargetRedirectedFrom === e.pointerMrfUrl
+              && e.browserPointerTargetFinalUrl
+              && e.browserPointerTargetFinalUrl !== e.pointerMrfUrl))
+          && ['404 - Page Not Found', "We're sorry! Requested page not found."].includes(e.browserPointerTargetHeading)
           && e.browserPointerTargetObservedAt && e.sourcePageUrl && e.sourcePageSha256
           && metadata === 'date-within-365-days-version-3')
         || (e.observedFinding === 'official-page-mrf-root-pointer-unavailable'
           && ((e.pointerIssue === 'root-pointer-http-error'
-            && Number(e.pointerHttpStatus) >= 400
+            && (Number(e.pointerHttpStatus) >= 400
+              || (Number(e.pointerHttpStatus) === 202
+                && /^text\/html/i.test(String(e.pointerResponseContentType || ''))
+                && Number(e.pointerResponseBytes) > 0
+                && /^[a-f0-9]{64}$/.test(String(e.pointerSha256 || ''))))
             && (!e.pointerMrfUrl || e.pointerMrfUrl !== e.url))
             || (e.pointerIssue === 'root-pointer-html-not-found'
               && Number(e.pointerHttpStatus) === 200
               && /^text\/html/i.test(String(e.pointerResponseContentType || ''))
               && /\/404(?:\?|$)/.test(String(e.pointerFinalUrl || ''))
-              && e.pointerResponseTitle === '404 - Page Not Found'))
+              && e.pointerResponseTitle === '404 - Page Not Found')
+            || (e.pointerIssue === 'root-pointer-html-not-found'
+              && Number(e.pointerHttpStatus) === 200
+              && /^text\/html/i.test(String(e.pointerResponseContentType || ''))
+              && e.pointerFinalUrl === e.pointerUrl
+              && /page not found/i.test(String(e.pointerResponseTitle || ''))
+              && e.browserPointerHeading === 'Oops, This Page Could Not Be Found!'))
           && ['date-within-365-days-version-3', 'date-within-365-days-older-version', 'date-over-365-days'].includes(metadata))
         || (e.observedFinding === 'root-pointer-omits-facility-page-file-found'
           && e.pointerIssue === 'root-pointer-omits-facility'

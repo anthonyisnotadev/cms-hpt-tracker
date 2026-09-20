@@ -21,6 +21,11 @@ test('Parkview Medical Center queue requires a corrected campus file, not the Pu
   assert.equal(proof.pointer_medical_center_mrf_bounded_get_status, 404);
   assert.equal(proof.pueblo_west_file_bounded_get_status, 206);
   assert.match(proof.pueblo_west_file_declared_address, /Pueblo West/);
+  const latest = read('data/hpt-audit/reconciliation-manual-access-observations.json').records.find(item => item.ccn === proof.ccn).latest_live_page_recheck;
+  assert.equal(latest.page_link_targets_same, true);
+  assert.equal(latest.shared_file_range_status, 206);
+  assert.match(latest.shared_file_header, /Pueblo West/);
+  assert.equal(latest.pointer_medical_center_target_status, 404);
   const reconciliation = read('data/hpt-audit/nationwide-reconciliation.json');
   const verification = read('data/hpt-audit/nationwide-verification.json');
   const row = reconciliation.records.find(item => item.ccn === proof.ccn);

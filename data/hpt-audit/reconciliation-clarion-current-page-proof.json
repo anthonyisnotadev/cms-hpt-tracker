@@ -1,7 +1,7 @@
 {
   "ccn": "390093",
   "hospital_name": "INDEPENDENCE HEALTH SYSTEM CLARION HOSPITAL",
-  "observed_at": "2026-09-18T16:55:00Z",
+  "observed_at": "2026-09-19T15:20:00Z",
   "official_pricing_page": "https://www.independence.health/patients-visitors/financial-services/price-transparency/",
   "official_pricing_page_http_status": 200,
   "official_identity_source": "https://www.independence.health/contact-us/",
@@ -10,7 +10,15 @@
   "page_linked_file_url": "https://www.independence.health/documents/content/251010039_Butler-Clarion_standardcharges.csv",
   "page_linked_file_http_status": 403,
   "page_linked_file_content_type": "text/html challenge response",
-  "page_linked_file_transport": "Cloudflare challenge; no CSV bytes exposed",
+  "page_linked_file_transport": "Cloudflare challenge; no CSV bytes exposed; browser direct navigation returned ERR_BLOCKED_BY_CLIENT",
+  "latest_browser_recheck": {
+    "observed_at": "2026-09-19T15:20:00Z",
+    "pricing_page_status": "rendered",
+    "pricing_page_scope": "Clarion Hospital Pricing remains listed separately from Butler Memorial, Frick, Latrobe Area and Westmoreland Regional Hospital",
+    "exact_link_rendered": "https://www.independence.health/documents/content/251010039_Butler-Clarion_standardcharges.csv",
+    "exact_link_browser_result": "ERR_BLOCKED_BY_CLIENT before content-bearing bytes",
+    "interpretation": "Current first-party page and exact file URL remain corroborated, but this browser transport observation does not establish file absence, schema usability, or CMS compliance."
+  },
   "disposition": "official-clarion-page-and-exact-link-confirmed-file-bytes-blocked",
   "next_action": "Obtain permitted bytes for the exact Butler-Clarion CSV, then verify whether its header contains Clarion Hospital at 1 Hospital Drive, PA license state, update date and CMS version. Do not infer file absence or assign the Butler portion without header evidence."
 }

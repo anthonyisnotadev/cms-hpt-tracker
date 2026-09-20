@@ -1,0 +1,12 @@
+{
+  "ccn": "310064",
+  "observed_at": "2026-09-19T19:05:00Z",
+  "reason_for_repeat": "Test whether a later byte range of the shared pointer/page file exposed a City-campus header or location record without downloading the approximately 1.05-GB object.",
+  "file_url": "https://atlanticare.pt.panaceainc.com/MRFDownload/atlanticare/atlanticare",
+  "requested_range": "bytes=100000000-100262143",
+  "server_behavior": "The endpoint ignored the requested range after a short challenge response and began a full 0-byte stream for the approximately 1.05-GB object.",
+  "transfer_handling": "The client aborted after roughly 100 MB, before any new City-specific header or scope evidence was obtained.",
+  "interpretation": "This is a transport/resource observation only. It neither proves the shared file lacks City rows nor authorizes assigning the Mainland header to the City campus.",
+  "disposition": "retain-unresolved-shared-file-scope-range-ignored",
+  "next_action": "Require a publisher-provided City-specific file/header or a range-capable authorized route before further byte inspection; do not repeat full-stream attempts against the shared object."
+}

@@ -9,6 +9,23 @@
   "system_pricing_page": "https://www.eastalabamahealth.org/patient-and-guests/billing-and-financial-information/estimate-my-cost",
   "system_pricing_page_http_status": 200,
   "system_pricing_page_sha256": "1692cf046adff36b6659d6639b03c0e480bba9ac406fa3b0475a0a12e6805a8e",
+  "latest_browser_recheck": {
+    "observed_at": "2026-09-18T23:55:00Z",
+    "identity_page_result": "The current East Alabama Health page renders EAMC-Lanier Rural Emergency Hospital at 4800 48th Street, Valley, AL 36854.",
+    "pricing_page_result": "The current system pricing page renders one Download our Patient Pricing List link to the East Alabama archive URL and describes it as covering all East Alabama Health services; it does not expose a Lanier-specific file or campus discriminator.",
+    "browser_pricing_file_url": "https://eastalabamahealth.org/sites/default/files/financial-service/636000526_EastAlabama_standardcharges.csv.zip",
+    "disposition": "current-official-pages-confirm-lanier-identity-but-pricing-file-remains-opelika-system-scope"
+  },
+  "latest_browser_recheck_20260919": {
+    "observed_at": "2026-09-19T14:22:00Z",
+    "reason_for_repeat": "Continuation audit of the still-actionable Tier-2 pointer-facility discrepancy; verify whether the publisher changed the page or added a campus-specific link after the prior 2026-09-18 observation.",
+    "identity_page_url": "https://www.eastalabamahealth.org/eamc-lanier",
+    "identity_page_result": "The rendered first-party page still names EAMC-Lanier Rural Emergency Hospital and describes the Valley campus services.",
+    "pricing_page_url": "https://www.eastalabamahealth.org/patient-and-guests/billing-and-financial-information/estimate-my-cost",
+    "pricing_page_result": "The rendered pricing page still exposes one Patient Pricing List download for the East Alabama archive and no Lanier/Valley-specific file or campus discriminator.",
+    "browser_pricing_file_url": "https://eastalabamahealth.org/sites/default/files/financial-service/636000526_EastAlabama_standardcharges.csv.zip",
+    "result": "No publisher change; retain the Opelika archive as sibling evidence only and keep CCN 010780 unresolved pending a Lanier-specific pointer/file or explicit coverage statement."
+  },
   "pointer_url": "https://www.eastalabamahealth.org/cms-hpt.txt",
   "pointer_final_url": "https://www.eastalabamahealth.org/sites/default/files/2026-01/cms-hpt.txt",
   "pointer_http_status": 206,

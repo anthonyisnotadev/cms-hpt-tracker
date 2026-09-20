@@ -1,11 +1,11 @@
 {
   "summary": {
-    "generated_at": "2026-09-18T14:46:09.300Z",
+    "generated_at": "2026-09-20T23:35:18.882Z",
     "source": "data/hpt-audit/nationwide-verification.json",
-    "total": 211,
+    "total": 219,
     "by_review_class": {
       "cross-domain-unresolved-review": 34,
-      "cross-domain-verified-or-superseded-review": 177
+      "cross-domain-verified-or-superseded-review": 185
     },
     "by_disposition": {
       "linked-mrf-header-unmatched": 14,
@@ -15,7 +15,7 @@
       "verified-stale-mrf": 1,
       "pointer-not-retrieved": 3,
       "verified-current-mrf": 167,
-      "pointer-access-denied-to-client": 1,
+      "pointer-access-denied-to-client": 9,
       "pointer-discovery-incomplete": 1,
       "mrf-request-unsuccessful": 1
     },
@@ -1284,6 +1284,19 @@
       "review_class": "cross-domain-verified-or-superseded-review"
     },
     {
+      "ccn": "141320",
+      "hospital_name": "PARIS COMMUNITY HOSPITAL",
+      "state": "IL",
+      "official_domain": "myhorizonhealth.org",
+      "pointer_domain": "horizonhealth.slicedhealth.io",
+      "standing_pointer_url": "https://horizonhealth.slicedhealth.io/home/cms-hpt.txt",
+      "standing_mrf_url": "https://horizonhealth.slicedhealth.io/pricer/00-0000000-1629280367_HorizonHealth_standardcharges.CSV",
+      "disposition": "pointer-access-denied-to-client",
+      "standing_finding": "root-pointer-html-page-with-official-page-file",
+      "latest_observation_superseded": true,
+      "review_class": "cross-domain-verified-or-superseded-review"
+    },
+    {
       "ccn": "141342",
       "hospital_name": "DEACONESS ILLINOIS UNION COUNTY",
       "state": "IL",
@@ -2074,6 +2087,97 @@
       "disposition": "verified-current-mrf",
       "standing_finding": "mrf-url-unreachable",
       "latest_observation_superseded": false,
+      "review_class": "cross-domain-verified-or-superseded-review"
+    },
+    {
+      "ccn": "370004",
+      "hospital_name": "INTEGRIS MIAMI HOSPITAL",
+      "state": "OK",
+      "official_domain": "integrishealth.org",
+      "pointer_domain": "hospitalpricedisclosure.com",
+      "standing_pointer_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=pVP5UiW3I*__*Y*_*TJMcttiiiA*-*",
+      "standing_mrf_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=pVP5UiW3I*__*Y*_*TJMcttiiiA*-*",
+      "disposition": "pointer-access-denied-to-client",
+      "standing_finding": "compliant-observed",
+      "latest_observation_superseded": true,
+      "review_class": "cross-domain-verified-or-superseded-review"
+    },
+    {
+      "ccn": "370006",
+      "hospital_name": "INTEGRIS HEALTH PONCA CITY",
+      "state": "OK",
+      "official_domain": "integrishealth.org",
+      "pointer_domain": "hospitalpricedisclosure.com",
+      "standing_pointer_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=xO*_*y3fOOMLGcE*__*jd2jdm*_*A*-*",
+      "standing_mrf_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=xO*_*y3fOOMLGcE*__*jd2jdm*_*A*-*",
+      "disposition": "pointer-access-denied-to-client",
+      "standing_finding": "compliant-observed",
+      "latest_observation_superseded": true,
+      "review_class": "cross-domain-verified-or-superseded-review"
+    },
+    {
+      "ccn": "370016",
+      "hospital_name": "INTEGRIS HEALTH ENID HOSPITAL",
+      "state": "OK",
+      "official_domain": "integrishealth.org",
+      "pointer_domain": "hospitalpricedisclosure.com",
+      "standing_pointer_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=DGoqeRgxZD8421GymxBLnQ*-*",
+      "standing_mrf_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=DGoqeRgxZD8421GymxBLnQ*-*",
+      "disposition": "pointer-access-denied-to-client",
+      "standing_finding": "compliant-observed",
+      "latest_observation_superseded": true,
+      "review_class": "cross-domain-verified-or-superseded-review"
+    },
+    {
+      "ccn": "370028",
+      "hospital_name": "INTEGRIS BAPTIST MEDICAL CENTER, INC",
+      "state": "OK",
+      "official_domain": "integrishealth.org",
+      "pointer_domain": "hospitalpricedisclosure.com",
+      "standing_pointer_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=BjroEz8c5o*_*7mZ2xptt3iw*-*",
+      "standing_mrf_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=BjroEz8c5o*_*7mZ2xptt3iw*-*",
+      "disposition": "pointer-access-denied-to-client",
+      "standing_finding": "compliant-observed",
+      "latest_observation_superseded": true,
+      "review_class": "cross-domain-verified-or-superseded-review"
+    },
+    {
+      "ccn": "370106",
+      "hospital_name": "INTEGRIS SOUTHWEST MEDICAL CENTER",
+      "state": "OK",
+      "official_domain": "integrishealth.org",
+      "pointer_domain": "hospitalpricedisclosure.com",
+      "standing_pointer_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=5WT9HTDTVJjg8fpR4CruzQ*-*",
+      "standing_mrf_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=5WT9HTDTVJjg8fpR4CruzQ*-*",
+      "disposition": "pointer-access-denied-to-client",
+      "standing_finding": "compliant-observed",
+      "latest_observation_superseded": true,
+      "review_class": "cross-domain-verified-or-superseded-review"
+    },
+    {
+      "ccn": "370113",
+      "hospital_name": "INTEGRIS GROVE HOSPITAL",
+      "state": "OK",
+      "official_domain": "integrishealth.org",
+      "pointer_domain": "hospitalpricedisclosure.com",
+      "standing_pointer_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=pOyz38FZVoI0HoHi*__*7e*_*VQ*-*",
+      "standing_mrf_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=pOyz38FZVoI0HoHi*__*7e*_*VQ*-*",
+      "disposition": "pointer-access-denied-to-client",
+      "standing_finding": "compliant-observed",
+      "latest_observation_superseded": true,
+      "review_class": "cross-domain-verified-or-superseded-review"
+    },
+    {
+      "ccn": "370236",
+      "hospital_name": "INTEGRIS HEALTH EDMOND HOSPITAL",
+      "state": "OK",
+      "official_domain": "integrishealth.org",
+      "pointer_domain": "hospitalpricedisclosure.com",
+      "standing_pointer_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=Ltb8cqfMm9D6g79o7zvF0A*-*",
+      "standing_mrf_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=Ltb8cqfMm9D6g79o7zvF0A*-*",
+      "disposition": "pointer-access-denied-to-client",
+      "standing_finding": "compliant-observed",
+      "latest_observation_superseded": true,
       "review_class": "cross-domain-verified-or-superseded-review"
     },
     {

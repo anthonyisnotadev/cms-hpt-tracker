@@ -1,0 +1,40 @@
+{
+  "observed_at": "2026-09-20T20:05:00Z",
+  "dataset_url": "https://data.cms.gov/provider-data/dataset/xubh-q36u",
+  "api_url_template": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0",
+  "dataset_title": "Hospital General Information",
+  "dataset_snapshot": "Current CMS Provider Data Catalog hospital roster; the dataset page reports 5,419 rows, modified 2026-07-22 and released 2026-08-13.",
+  "matched_rows": [
+    {
+      "ccn": "380005",
+      "response_status": 200,
+      "response_bytes": 6581,
+      "response_sha256": "798F47DB969147315369600CE08632C4178AA4D7E194A68814E15251635AAC78",
+      "facility_name": "ASANTE ASHLAND COMMUNITY HOSPITAL",
+      "address": "280 MAPLE STREET",
+      "citytown": "ASHLAND",
+      "state": "OR",
+      "zip_code": "97520",
+      "hospital_type": "Acute Care Hospitals",
+      "hospital_ownership": "Government - Local",
+      "emergency_services": "Yes"
+    },
+    {
+      "ccn": "380018",
+      "response_status": 200,
+      "response_bytes": 6587,
+      "response_sha256": "D96C2F6D283B57134E11D97FF231924AEBF43EB13DB8F5E1BEF8F17A7199B76C",
+      "facility_name": "ASANTE ROGUE REGIONAL MEDICAL CENTER",
+      "address": "2825 E BARNETT ROAD",
+      "citytown": "MEDFORD",
+      "state": "OR",
+      "zip_code": "97504",
+      "hospital_type": "Acute Care Hospitals",
+      "hospital_ownership": "Voluntary non-profit - Private",
+      "emergency_services": "Yes"
+    }
+  ],
+  "interpretation": "The current CMS hospital roster still lists both CCN 380005 at the Ashland satellite address and CCN 380018 at Rogue Regional's Medford address. This confirms current CMS roster identity for both records but does not provide Medicare effective termination or parent-MRF satellite coverage.",
+  "disposition": "current-cms-roster-confirms-both-ccns-medicare-status-and-parent-mrf-scope-still-unresolved",
+  "next_action": "Obtain an effective-dated Medicare certification/status record and verify whether the current Rogue Regional MRF includes Ashland before changing either CCN or assigning a parent file."
+}

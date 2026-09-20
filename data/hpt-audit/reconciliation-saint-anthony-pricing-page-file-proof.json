@@ -1,0 +1,25 @@
+{
+  "ccn": "140095",
+  "observed_at": "2026-09-19T12:05:00Z",
+  "official_site": "https://sahchicago.org/",
+  "official_pricing_page": "https://sahchicago.org/patientsandvisitors/financial-assistance/pricing-transparency",
+  "official_identity": "Saint Anthony Hospital, 2875 West 19th Street, Chicago, IL 60623",
+  "browser_page_status": "official pricing page rendered",
+  "page_file_url": "https://sahchicago.org/files/MRFDownload/510217097_saint-anthony-hospital_standardcharges.csv",
+  "page_file_browser_download_status": 200,
+  "downloaded_file_name": "10217097_saint-anthony-hospital_standardcharges.csv",
+  "file_bytes": 989971,
+  "file_sha256": "3A3655523BAE21E6151CDBE851C94BF2CEDC2076CDA26C614069B2511D8D6E3E",
+  "file_format": "legacy charge master CSV",
+  "file_header": "Facility,Name,Mnemonic,Subcategory,Effective Date,Charge Amount,Generic Department,Alternate Code,Alternate Code Type,Effective Date",
+  "file_effective_date": "2026-07-01",
+  "page_linkage_observation": "The official pricing page labels this as the machine-readable price transparency sheet; the downloaded bytes are a legacy charge-master-shaped file and do not expose a CMS 3.0.0 header or payer-specific negotiated-rate fields.",
+  "pointer_urls_checked": [
+    "https://sahchicago.org/cms-hpt.txt",
+    "https://www.sahchicago.org/cms-hpt.txt"
+  ],
+  "pointer_direct_statuses": [202, 202],
+  "pointer_browser_status": "ERR_BLOCKED_BY_CLIENT",
+  "disposition": "official-pricing-page-and-legacy-file-confirmed-current-cms-mrf-and-pointer-unresolved",
+  "next_action": "Recover a current facility-specific CMS 3.0.0 CSV or JSON MRF and root pointer through an authorized route; verify declared identity, Illinois state, date/version and usable negotiated-rate fields before promotion. Retain this official legacy charge evidence separately."
+}

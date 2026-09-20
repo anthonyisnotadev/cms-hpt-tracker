@@ -3,6 +3,28 @@
   "method": "manual-review-of-roster-pointer-file-header-and-current-official-identity-sources",
   "records": [
     {
+      "ccn": "060020",
+      "disposition": "sibling-campus-file-rejected",
+      "candidate": "UCHealth Parkview Pueblo West Hospital, 899 E Industrial Boulevard, Pueblo West CO 81007",
+      "observation": "The candidate pointer and file explicitly identify Pueblo West Hospital, not the roster's Parkview Medical Center campus at 400 W 16th Street in Pueblo. A later current publisher check found a distinct Medical Center pointer entry whose exact blob returns 404, while the pricing page labels the same Pueblo West blob for both campuses.",
+      "next_action": "Seek a publisher-corrected Medical Center pointer target and pricing-page link for the 400 W 16th Street campus. After a material change, retrieve bounded bytes from that exact file and verify declared location, address, state, date, template version and full-file usability. Keep the current 404 and Pueblo West header as distinct observations, not a file-absence or compliance verdict."
+    },
+    {
+      "ccn": "100204",
+      "disposition": "sibling-file-rejected-main-campus-file-selected",
+      "candidate": "HCA Florida JFK North Hospital, 2201 45th St, West Palm Beach FL 33407",
+      "official_url": "https://www.hcafloridahealthcare.com/locations/north-florida-hospital/about-us/quality-at-hca-healthcare",
+      "observation": "The JFK North candidate is a separately named West Palm Beach hospital and is rejected. A different exact pointer entry and file name HCA Florida North Florida Hospital and includes the roster's 6500 Newberry Road Gainesville main campus, which is independently confirmed by the current official page.",
+      "next_action": "Use only the separately proved North Florida Hospital file for CCN 100204; retain the JFK North rejection to prevent future name-family reassignment."
+    },
+    {
+      "ccn": "150051",
+      "disposition": "identity-reconciled-template-version-unresolved",
+      "candidate": "IU Health Bloomington Hospital, 2651 E Discovery Pkwy, Bloomington IN 47408",
+      "observation": "Current identity evidence supports the hospital's relocation from the roster address, but the inspected file declares template version 3.0 rather than accepted version 3.0.0.",
+      "next_action": "Recheck only after the publisher changes the file or declared version; retain the relocation evidence without promoting the current file as a verified 3.0.0 claim."
+    },
+    {
       "ccn": "250043",
       "disposition": "duplicate-active-ccn-assignment-unresolved",
       "candidate": "Neshoba County General Hospital, 1001 Holland Ave, Philadelphia MS 39350",
@@ -17,11 +39,13 @@
       "next_action": "Obtain authoritative enrollment or facility-specific publisher evidence assigning the current file to one CCN or explicitly covering both; do not select a CCN from the identical name and address alone."
     },
     {
-      "ccn": "150051",
-      "disposition": "identity-reconciled-template-version-unresolved",
-      "candidate": "IU Health Bloomington Hospital, 2651 E Discovery Pkwy, Bloomington IN 47408",
-      "observation": "Current identity evidence supports the hospital's relocation from the roster address, but the inspected file declares template version 3.0 rather than accepted version 3.0.0.",
-      "next_action": "Recheck only after the publisher changes the file or declared version; retain the relocation evidence without promoting the current file as a verified 3.0.0 claim."
+      "ccn": "260110",
+      "disposition": "clinic-files-rejected-for-hospital-ccn",
+      "candidate": "Mercy Pediatrics at 25 Doctors Park and Mercy Southeast Primary Care West at 817 S Mt Auburn Rd",
+      "cms_enrollment_snapshot_review_file": "data/hpt-audit/priority-one-cms-enrollment-snapshot-review.json",
+      "cms_enrollment_snapshot_observation": "Exact CMS CCN 260110 Hospital Enrollments row identifies Southeast Hospital at 1701 Lacey St, Cape Girardeau MO as a Part A hospital; the two retrieved candidate files still identify separate clinic locations, not this hospital campus.",
+      "observation": "Both candidates explicitly identify physician or rural-health-clinic locations rather than Mercy Hospital Southeast at 1701 Lacey Street.",
+      "next_action": "Locate the pointer entry and MRF for the 1701 Lacey Street hospital; do not substitute separately named clinic files even though their legal hospital-name field references Mercy Hospital Southeast."
     },
     {
       "ccn": "321305",
@@ -39,20 +63,23 @@
       "next_action": "Obtain publisher clarification or authoritative campus-history evidence connecting 1900 North Main to CCN 321305, and independently verify a structured root cms-hpt.txt that declares the exact file after a material change. Do not treat the street-number conflict as equivalent or the current HTML/403 responses as a file-validity verdict."
     },
     {
-      "ccn": "060020",
-      "disposition": "sibling-campus-file-rejected",
-      "candidate": "UCHealth Parkview Pueblo West Hospital, 899 E Industrial Boulevard, Pueblo West CO 81007",
-      "observation": "The candidate pointer and file explicitly identify Pueblo West Hospital, not the roster's Parkview Medical Center campus at 400 W 16th Street in Pueblo. A later current publisher check found a distinct Medical Center pointer entry whose exact blob returns 404, while the pricing page labels the same Pueblo West blob for both campuses.",
-      "next_action": "Seek a publisher-corrected Medical Center pointer target and pricing-page link for the 400 W 16th Street campus. After a material change, retrieve bounded bytes from that exact file and verify declared location, address, state, date, template version and full-file usability. Keep the current 404 and Pueblo West header as distinct observations, not a file-absence or compliance verdict."
+      "ccn": "331324",
+      "disposition": "sibling-file-rejected-roster-campus-mismatch",
+      "candidate": "Carthage Area Hospital, 1001 West St Carthage, NY 13619-9703",
+      "related_ccn": "331318",
+      "roster_address": "214 Kings Street, Ogdensburg, NY 13669",
+      "official_url": "https://www.cahny.org/pricing/",
+      "pointer_url": "https://www.cahny.org/cms-hpt.txt",
+      "observation": "The complete current pointer-linked file identifies the Carthage, NY campus at 1001 West Street, which matches related CCN 331318, not unresolved CCN 331324 whose roster address is 214 Kings Street, Ogdensburg, NY. The shared hospital name is insufficient for assignment.",
+      "next_action": "Keep the current Carthage MRF assigned only to the Carthage campus/CCN 331318. Obtain an Ogdensburg-specific pointer and MRF or authoritative facility transition evidence for CCN 331324; do not infer coverage from the shared hospital name."
     },
     {
-      "ccn": "260110",
-      "disposition": "clinic-files-rejected-for-hospital-ccn",
-      "candidate": "Mercy Pediatrics at 25 Doctors Park and Mercy Southeast Primary Care West at 817 S Mt Auburn Rd",
-      "cms_enrollment_snapshot_review_file": "data/hpt-audit/priority-one-cms-enrollment-snapshot-review.json",
-      "cms_enrollment_snapshot_observation": "Exact CMS CCN 260110 Hospital Enrollments row identifies Southeast Hospital at 1701 Lacey St, Cape Girardeau MO as a Part A hospital; the two retrieved candidate files still identify separate clinic locations, not this hospital campus.",
-      "observation": "Both candidates explicitly identify physician or rural-health-clinic locations rather than Mercy Hospital Southeast at 1701 Lacey Street.",
-      "next_action": "Locate the pointer entry and MRF for the 1701 Lacey Street hospital; do not substitute separately named clinic files even though their legal hospital-name field references Mercy Hospital Southeast."
+      "ccn": "340047",
+      "disposition": "sibling-file-rejected-main-campus-file-selected",
+      "candidate": "Atrium Health Wake Forest Baptist Davie Medical Center, 329 NC Highway 801 North, Bermuda Run NC 27006-7905",
+      "official_url": "https://cdn.atriumhealth.org/-/media/wakeforest/clinical/files/patient-and-family-resources/campus-maps/24-0016989-updated-maps-for-ed-and-op-surgery-center-opening-final-employee.pdf",
+      "observation": "The Davie candidate is a separately named Bermuda Run campus and is rejected. A different exact pointer entry names Wake Forest Baptist Medical Center with Brenner Children's, and its file declares North Carolina Baptist Hospital at Medical Center Boulevard, Winston-Salem, matching the roster and current official campus map.",
+      "next_action": "Use only the separately proved Winston-Salem main-campus file for CCN 340047; retain the Davie rejection to prevent sibling-campus reassignment."
     },
     {
       "ccn": "500003",
@@ -68,22 +95,6 @@
       "cms_enrollment_snapshot_observation": "One exact CCN 500003 Hospital Enrollments row identifies Public Hospital Dist No 1 Skagit, Part A hospital, at 1415 E Kincaid St, Mount Vernon WA; enrollment ID O20031218000861. This snapshot supports the current CCN/address anchor, not equivalence with the candidate file's 1450 E Kincaid street number.",
       "observation": "The current official hospital page identifies 300 Hospital Parkway, while an official records page uses 1415 E Kincaid as a mailing or administrative address matching the roster. Neither current page supports the file's 1450 E Kincaid address.",
       "next_action": "Obtain publisher or authoritative campus-history evidence for 1450 E Kincaid, or a corrected current file; do not infer equivalence among the three street numbers."
-    },
-    {
-      "ccn": "100204",
-      "disposition": "sibling-file-rejected-main-campus-file-selected",
-      "candidate": "HCA Florida JFK North Hospital, 2201 45th St, West Palm Beach FL 33407",
-      "official_url": "https://www.hcafloridahealthcare.com/locations/north-florida-hospital/about-us/quality-at-hca-healthcare",
-      "observation": "The JFK North candidate is a separately named West Palm Beach hospital and is rejected. A different exact pointer entry and file name HCA Florida North Florida Hospital and includes the roster's 6500 Newberry Road Gainesville main campus, which is independently confirmed by the current official page.",
-      "next_action": "Use only the separately proved North Florida Hospital file for CCN 100204; retain the JFK North rejection to prevent future name-family reassignment."
-    },
-    {
-      "ccn": "340047",
-      "disposition": "sibling-file-rejected-main-campus-file-selected",
-      "candidate": "Atrium Health Wake Forest Baptist Davie Medical Center, 329 NC Highway 801 North, Bermuda Run NC 27006-7905",
-      "official_url": "https://cdn.atriumhealth.org/-/media/wakeforest/clinical/files/patient-and-family-resources/campus-maps/24-0016989-updated-maps-for-ed-and-op-surgery-center-opening-final-employee.pdf",
-      "observation": "The Davie candidate is a separately named Bermuda Run campus and is rejected. A different exact pointer entry names Wake Forest Baptist Medical Center with Brenner Children's, and its file declares North Carolina Baptist Hospital at Medical Center Boulevard, Winston-Salem, matching the roster and current official campus map.",
-      "next_action": "Use only the separately proved Winston-Salem main-campus file for CCN 340047; retain the Davie rejection to prevent sibling-campus reassignment."
     }
   ]
 }
