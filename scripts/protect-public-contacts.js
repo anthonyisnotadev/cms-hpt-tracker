@@ -44,7 +44,8 @@ function run(check = false) {
   const files = cp.execFileSync('git', ['ls-files', '-z', '--cached', '--others', '--exclude-standard'], { cwd: ROOT, encoding: 'utf8', maxBuffer: 30e6 }).split('\0');
   let changed = 0, scanned = 0;
   for (const file of new Set(files)) {
-    if (!/^(?:data\/|cms_data\/|[^/]+\.html$)/.test(file) || !/\.(?:json|csv|txt|html)$/.test(file)) continue;
+    if (!/^(?:data\/|cms_data\/|[^/]+\.(?:html|md)$|scripts\/hpt\/README\.md$)/.test(file)
+      || !/\.(?:json|csv|txt|html|md)$/.test(file)) continue;
     const full = path.join(ROOT, file);
     if (!fs.existsSync(full)) continue;
     const before = fs.readFileSync(full, 'utf8');
