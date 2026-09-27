@@ -29,7 +29,7 @@ test('Highland Hills is a current separate publisher with a hash-bound pointer f
   assert.equal(view.history['250172'].domain, 'deltahealthsystem.org');
 });
 
-test('Northwest successor site remains an identity quarantine with current file access unverified', () => {
+test('Northwest successor site preserves the former quarantine while current verified evidence is selected', () => {
   const oldPointer = fs.readFileSync(path.join(root, northwest.former_pointer_artifact));
   assert.equal(crypto.createHash('sha256').update(oldPointer).digest('hex'), northwest.former_pointer_sha256);
   assert.doesNotMatch(oldPointer.toString('utf8'), /Northwest|Clarksdale|1970 Hospital/i);
@@ -44,8 +44,8 @@ test('Northwest successor site remains an identity quarantine with current file 
   const view = loadReviewedView(audit);
   const row = view.compliance.find(item => item.ccn === '250042');
   assert.equal(row.domain, 'nwmrmc.org');
-  assert.equal(row.finding, 'not-assessed-identity-conflict');
-  assert.equal(row.pointer_url, '');
-  assert.equal(row.mrf_url, '');
+  assert.equal(row.finding, 'compliant-observed');
+  assert.match(row.pointer_url, /price_3_1389799598\.txt/);
+  assert.match(row.mrf_url, /646001574_NORTHWEST-MISS-REGIONAL-MEDICAL-CENTER_standardcharges\.zip/);
   assert.equal(view.history['250042'].domain, 'deltahealthsystem.org');
 });

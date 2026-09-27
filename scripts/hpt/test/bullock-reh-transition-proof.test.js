@@ -10,6 +10,7 @@ const root = path.resolve(__dirname, '../../..');
 const proof = require(path.join(root, 'data/hpt-audit/reconciliation-bullock-reh-transition-proof.json')).record;
 const observations = require(path.join(root, 'data/hpt-audit/reconciliation-manual-access-observations.json')).records;
 const queue = require(path.join(root, 'data/hpt-audit/nationwide-reconciliation-queue.json'));
+const reconciliationRecords = require(path.join(root, 'data/hpt-audit/nationwide-reconciliation.json')).records;
 
 test('Bullock current REH proof does not silently migrate to historical acute-care CCN', () => {
   assert.equal(proof.ccn_current_rural_emergency_hospital, '010779');
@@ -21,11 +22,20 @@ test('Bullock current REH proof does not silently migrate to historical acute-ca
   assert.equal(sample.length, 262144);
   assert.equal(crypto.createHash('sha256').update(sample).digest('hex'), proof.file_sample_sha256);
   for (const [ccn, role] of [['010110', 'historical-acute-care-hospital'], ['010779', 'current-rural-emergency-hospital']]) {
-    const observation = observations.find(row => row.ccn === ccn);
-    const reconciliation = queue.find(row => row.ccn === ccn);
-    assert.equal(observation.facility_role, role);
-    assert.equal(reconciliation.workstream, 'genuinely-unresolved-investigation');
-    assert.equal(reconciliation.manual_access_observation.facility_role, role);
-    assert.equal(reconciliation.next_action, observation.next_action);
+    const history = observations.filter(row => row.ccn === ccn);
+    const observation = history.find(row => row.facility_role === role);
+    const latest = history.sort((a, b) => Date.parse(a.observed_at) - Date.parse(b.observed_at)).at(-1);
+    const reconciliation = (queue.find(row => row.ccn === ccn)
+      || reconciliationRecords.find(row => row.ccn === ccn));
+    if (ccn === '010110') {
+      assert.equal(reconciliation.workstream, 'genuinely-unresolved-investigation');
+      assert.equal(observation.facility_role, role);
+      assert.equal(reconciliation.manual_access_observation.proof_file, latest.proof_file);
+      assert.equal(reconciliation.next_action, latest.next_action);
+      assert.match(latest.next_action, /through 2024-04-30/);
+    } else {
+      assert.equal(reconciliation.workstream, 'consistent');
+      assert.equal(reconciliation.manual_access_observation.disposition, 'verified-stale-mrf');
+    }
   }
 });

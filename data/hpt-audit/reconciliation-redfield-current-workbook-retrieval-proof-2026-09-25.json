@@ -1,0 +1,17 @@
+{
+  "ccn": "431316",
+  "observed_at": "2026-09-25T00:00:00Z",
+  "official_identity_page": "https://www.redfieldcmh.org/departments/health-info-management/",
+  "official_pricing_page": "https://www.redfieldcmh.org/price-transparency/",
+  "facility_identity_observation": "The current first-party page identifies Community Memorial Hospital Avera / Redfield Community Memorial Hospital at 111 West 10th Ave, Redfield, SD 57469.",
+  "workbook_url": "https://www.redfieldcmh.org/wp-content/uploads/2023/10/redfield-community-memorial-pricing.xlsx",
+  "workbook_http_status": 200,
+  "workbook_content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "workbook_bytes": 31207,
+  "workbook_sha256": "2c364ecaf33e9b39c8d7d2638fb6989258123db9fef3e5267a617fafecdc93a3",
+  "workbook_last_modified": "Wed, 20 Dec 2023 15:00:59 GMT",
+  "workbook_observation": "The official page currently links a downloadable XLSX pricing workbook. It is a custom workbook, not a parsed CMS CSV/JSON/ZIP MRF; no CMS metadata or pointer linkage was promoted.",
+  "disposition": "official-custom-workbook-recovered-mrf-unresolved",
+  "interpretation": "This is a new retrieval of a first-party pricing artifact and a stronger access observation than the earlier challenge-only retry. It does not replace the unresolved Avera pointer/MRF gate.",
+  "next_action": "Use an authorized route or publisher-provided copy to retrieve the exact Avera pointer-declared CMS file and verify Redfield identity, South Dakota metadata, declared date/version and usable rows."
+}

@@ -1,0 +1,13 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path');
+const {csvToObjects}=require('./lib/util');
+const root=path.resolve(__dirname,'../..'),audit=path.join(root,'data/hpt-audit');
+const proofName='reconciliation-patrick-harris-state-standard-charge-proof-2026-09-22.json';
+const p=JSON.parse(fs.readFileSync(path.join(audit,proofName),'utf8'));
+const base=csvToObjects(fs.readFileSync(path.join(audit,'compliance.csv'),'utf8')).find(r=>r.ccn===p.ccn)||{};
+const e={identity:'corroborated',identity_basis:'official-state-publisher-facility-line-cms-roster-identity',officialDomain:'scdmh.org',sourcePageUrl:p.official_pricing_page,checked_at:p.observed_at,date:p.declared_last_updated,declared_hospital_name:p.declared_hospital_name,facility_address:p.cms_hospital_general_record.address,facility_state:p.cms_hospital_general_record.state,file_kind:p.file_kind,cmsRecord:p.cms_hospital_general_record,observedFinding:p.disposition,next_action:p.next_action};
+const ledgerPath=path.join(audit,'reviewed-resolutions.json'),ledger=JSON.parse(fs.readFileSync(ledgerPath,'utf8'));
+const entry={ccn:p.ccn,base,action:'replace-observation',finding:'pointer-discovery-incomplete',evidence:e,evidence_run:'patrick-harris-official-state-standard-charge-table-review-2026-09-22',reviewed_at:p.observed_at,note:'The official South Carolina DMH standard-charge page names a Patrick B Harris line, but exposes only a shared HTML table rather than a facility-specific CMS CSV/JSON MRF or usable pointer. This narrows the discovery gate without promoting a file or inferring exemption/compliance.'};
+const i=ledger.findIndex(r=>r.ccn===p.ccn);if(i>=0)ledger[i]=entry;else ledger.push(entry);ledger.sort((a,b)=>a.ccn.localeCompare(b.ccn));fs.writeFileSync(ledgerPath,JSON.stringify(ledger,null,2)+'\n');
+const manualPath=path.join(audit,'reconciliation-manual-access-observations.json'),manual=JSON.parse(fs.readFileSync(manualPath,'utf8'));manual.records=manual.records.filter(r=>r.ccn!==p.ccn);manual.records.push({...p,proof_file:proofName});manual.records.sort((a,b)=>a.ccn.localeCompare(b.ccn));fs.writeFileSync(manualPath,JSON.stringify(manual,null,2)+'\n');
+console.log(JSON.stringify({applied:p.ccn,finding:entry.finding},null,2));

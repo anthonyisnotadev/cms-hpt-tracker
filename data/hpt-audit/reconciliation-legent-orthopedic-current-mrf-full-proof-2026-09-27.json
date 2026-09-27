@@ -1,0 +1,65 @@
+{
+  "ccn": "670265",
+  "observed_at": "2026-09-27T08:11:51.801Z",
+  "source_page_url": "https://www.legenthealth.com/price-transparency",
+  "source_page_link_label": "Legent Orthopedic Hospital Carrollton",
+  "source_page_mrf_url": "https://drive.google.com/uc?export=download&id=1toQm10puzBsJhiF4IUdMEbavJL1-RKMn",
+  "root_pointer_url": "https://www.legenthealth.com/cms-hpt.txt",
+  "root_pointer_final_url": "https://cdn.prod.website-files.com/614a999fd87898600ee2bc39/679e924e7dc68343a1b102d8_a526a5804c68045151719dd254b06630_cms-hpt.txt",
+  "root_pointer_sha256": "c0a59ec24d0faa7ebc665eab708895dcefeb39523f01b102f45ff4f27ccbe38c",
+  "retrieval": {
+    "method": "full streamed GET with a 100 MB hard cap; no local MRF copy retained",
+    "status": 200,
+    "final_url": "https://drive.usercontent.google.com/download?id=1toQm10puzBsJhiF4IUdMEbavJL1-RKMn&export=download",
+    "content_type": "application/octet-stream",
+    "content_length": 68823627,
+    "bytes_received": 68823627,
+    "content_disposition": "attachment; filename=\"263044485_ethicus-hospital-dfw_standardcharges.csv\"",
+    "last_modified": "Wed, 25 Mar 2026 03:33:12 GMT",
+    "sha256": "529d0d86ee53ab404edad4fec48d0c38eaa26f23c719ee09d28a3795259098ce"
+  },
+  "declared_metadata": {
+    "hospital_name": "Ethicus Hospital DFW",
+    "last_updated_on": "3/22/2026",
+    "version": "3.0.0",
+    "location_name": "Legent Orthopedic Hospital",
+    "hospital_address": "1401 E Trinity Mills Rd, Carrollton, TX, 75006",
+    "type_2_npi": "1316505043",
+    "license_number": "8742",
+    "license_state": "TX",
+    "attestation_present": true
+  },
+  "csv_validation": {
+    "metadata_rows": 2,
+    "data_header_columns": 95,
+    "usable_data_rows": 21076,
+    "nonempty_description_rows": 21076,
+    "rows_with_any_standard_charge_value": 21076,
+    "rows_with_a_code_type_pair": 21076,
+    "malformed_row_widths": 0,
+    "required_wide_csv_headers_present": true,
+    "validation_scope": "Full stream/hash and quote-aware CSV record/column-count and basic wide-template usability checks; not an exhaustive CMS schema validator or line-item accuracy review."
+  },
+  "current_cms_enrollment": {
+    "dataset_label": "Hospital Enrollments : 2026-08-01",
+    "ccn": "670265",
+    "organization_name": "ETHICUS HOSPITAL DFW LLC",
+    "doing_business_as_name": "LEGENT ORTHOPEDIC HOSPITAL CARROLLTON",
+    "npi": "1316505043",
+    "address": "1401 E TRINITY MILLS RD, CARROLLTON, TX 75006",
+    "practice_location_type": "MAIN/PRIMARY HOSPITAL LOCATION"
+  },
+  "retained_historical_conflict": {
+    "older_cms_provider_roster_address": "4201 WILLIAM D TATE AVENUE, GRAPEVINE, TX 76051",
+    "interpretation": "Preserve as older provider-roster evidence. The current 2026 enrollment, current first-party location page, and current MRF agree on the Carrollton location; this does not erase or independently date the older roster row."
+  },
+  "disposition": "current-page-and-pointer-linked-mrf-observed-current-location-crosswalk-supported-historical-roster-retained",
+  "count_effect": 1,
+  "limitations": [
+    "This is observed publisher-file evidence, not a legal compliance determination.",
+    "Current CMS enrollment, first-party pages, pointer target, and full MRF metadata agree on Carrollton; the older Grapevine provider-roster observation remains retained as historical/source-lineage evidence.",
+    "The stream/CSV shape check does not substitute for an exhaustive CMS 3.0.0 schema validator or a line-item accuracy review.",
+    "No personally identifying attester name is retained in this proof."
+  ],
+  "next_action": "Retain the older Grapevine roster observation in resolution history. If additional validation is pursued, run an exhaustive CMS 3.0.0 schema check and line-item review; current evidence supports observed current-file identity/usability only, not legal compliance or line-item accuracy."
+}

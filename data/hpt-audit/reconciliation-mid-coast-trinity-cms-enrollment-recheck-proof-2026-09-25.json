@@ -1,0 +1,24 @@
+{
+  "ccn": "670331",
+  "observed_at": "2026-09-25T00:00:00Z",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0",
+  "cms_query": "facility_id = 670331",
+  "cms_api_status": 200,
+  "cms_response_bytes": 6778,
+  "cms_response_sha256": "8F05524BDDB54C034133FCADD2BD9742C6195857783AFEC94F85F1E075E930FC",
+  "cms_record": {
+    "facility_id": "670331",
+    "facility_name": "MID COAST MEDICAL CENTER-TRINITY",
+    "address": "317 PROSPECT DRIVE",
+    "citytown": "TRINITY",
+    "state": "TX",
+    "zip_code": "75862",
+    "hospital_type": "Acute Care Hospitals",
+    "hospital_ownership": "Voluntary non-profit - Other",
+    "emergency_services": "Yes"
+  },
+  "operator_pointer_context": "The current Mid Coast Health System pointer and pricing page omit Trinity, while district/closure sources describe the facility as closed in April 2025.",
+  "disposition": "cms-record-still-present-closure-scope-unresolved",
+  "interpretation": "The current CMS provider API still returns CCN 670331 with its Trinity identity, so closure evidence cannot be treated as an effective CMS termination or scope resolution. No sibling Mid Coast file is assigned and no compliance conclusion is inferred.",
+  "next_action": "Obtain effective-dated CMS enrollment/certification termination or successor-operator evidence and any dated Trinity-specific MRF or publisher confirmation."
+}

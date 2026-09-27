@@ -1,0 +1,31 @@
+{
+  "ccn": "450668",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://www.thehospitalsofprovidence.com/",
+  "official_pricing_page": "https://www.thehospitalsofprovidence.com/patients/pricing-info-estimates/hospital-pricing-information",
+  "browser_observation": "Interactive browser rendered the first-party Hospital Pricing Information page and exposed a facility-specific Sierra Campus Standard Charges link.",
+  "publisher_file_url": "https://mrfs.hyvehealthcare.com/TenetHealth/954537720-1215969787_tenet-hospitals-limited_standardcharges.json",
+  "publisher_file_status": 206,
+  "publisher_file_content_type": "application/force-download",
+  "publisher_file_bytes_range": 65536,
+  "publisher_file_total_bytes": 77370384,
+  "publisher_file_last_modified": "2026-09-03T20:39:27Z",
+  "publisher_file_prefix_sha256": "4dbbe4908f1f970c3aeba9dcba7f6d3fcf7741d6dd788230c89121a6ba969d81",
+  "declared_hospital_name": "TENET HOSPITALS LIMITED",
+  "declared_location_name": "The Hospitals of Providence Sierra Campus",
+  "declared_address": "1625 Medical Center Drive, El Paso, TX 79902",
+  "declared_npi": "1215969787",
+  "declared_license": "000266",
+  "declared_license_state": "TX",
+  "declared_last_updated": "2026-09-01",
+  "cms_template_version": "3.0.0",
+  "attestation_observed": true,
+  "root_pointer_urls": [
+    "https://www.thehospitalsofprovidence.com/cms-hpt.txt",
+    "https://www.thehospitalsofprovidence.com/.well-known/cms-hpt.txt"
+  ],
+  "root_pointer_observation": "The interactive browser blocked the root pointer route and showed an error for the well-known route; no pointer bytes were used.",
+  "disposition": "official-page-linked-cms-file-root-pointer-pending",
+  "interpretation": "The official pricing page directly links a complete facility-specific JSON MRF whose location, address, Texas metadata, NPI, date, version and attestation match CCN 450668. Root-pointer bytes were not recovered, so this remains page-linked evidence rather than a root-pointer compliance conclusion.",
+  "next_action": "Retrieve and hash the canonical root cms-hpt.txt through a permitted route, then compare the exact Sierra Campus pointer target before promotion."
+}

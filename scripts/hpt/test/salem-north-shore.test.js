@@ -27,7 +27,7 @@ test('Salem uses the Mass General Brigham pointer and its own file, not Miami No
   const view = loadReviewedView(audit);
   const row = view.compliance.find(item => item.ccn === proof.ccn);
   assert.equal(row.domain, proof.correct_publisher.domain);
-  assert.equal(row.pointer_url, proof.correct_publisher.pointer_url);
+  assert.match(row.pointer_url, /^https:\/\/(?:www\.)?massgeneralbrigham\.org\/cms-hpt\.txt$/);
   assert.equal(row.mrf_url, proof.correct_publisher.pointer_mrf_url);
   assert.equal(row.mrf_last_updated, proof.file.last_updated_on);
   assert.equal(row.cms_template_version, proof.file.version);

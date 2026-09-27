@@ -1,0 +1,14 @@
+{
+  "ccn": "131319",
+  "observed_at": "2026-09-26T22:58:00Z",
+  "proof_type": "browser-rendered-first-party-page-scope-recheck",
+  "page_url": "https://minidokamemorial.org/billing-information/",
+  "page_http_status": 200,
+  "page_title": "Medical Billing Information & Payment Options Near Me | Minidoka Memorial Hospital",
+  "facility_address_visible": "1224 8th Street, Rupert, ID 83350",
+  "price_transparency_link": "https://minidokamemorial.org/service-price-search/",
+  "page_mrf_observation": "The rendered first-party billing page exposes release-form links and a service price-search tool, but no direct CMS CSV or JSON MRF link. The page visibly identifies Minidoka Memorial Hospital at 1224 8th Street, Rupert, ID 83350.",
+  "interpretation": "This narrows the current first-party page scope and confirms facility identity/address, but does not prove that the pointer-declared CSV is absent or that the service price-search tool is a CMS MRF.",
+  "disposition": "current-page-scope-recheck-no-cms-mrf-exposed",
+  "next_action": "Obtain a publisher-provided replacement URL or copy for Minidoka Memorial Hospital, then verify facility name, Idaho address/state, declared date, CMS version and usable rows."
+}

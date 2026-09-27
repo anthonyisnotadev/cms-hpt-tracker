@@ -1,0 +1,30 @@
+{
+  "ccn": "291311",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "roster_identity": {
+    "name": "DESERT VIEW HOSPITAL",
+    "address": "360 SOUTH LOLA LANE",
+    "city": "PAHRUMP",
+    "state": "NV",
+    "zip": "89048"
+  },
+  "current_operator_domain": "https://desertviewhospital.com/",
+  "identity_sources": [
+    {
+      "url": "https://www.dpbh.nv.gov/siteassets/about/pio/Hospitaldocumentforresources-mainpagenewsite.pdf",
+      "observation": "Nevada Division of Public and Behavioral Health lists Desert View Regional Medical Center at 360 South Lola Lane, Pahrump, NV 89048 and links desertviewhospital.com."
+    },
+    {
+      "url": "https://www.leg.state.nv.us/Division/Research/Documents/RTTL_NRS439.877_2024_DVH.pdf",
+      "observation": "Nevada legislative filing identifies Desert View Hospital at 360 South Lola Lane, Pahrump, NV 89048 and publishes the desertviewhospital.com domain."
+    },
+    {
+      "url": "https://nrhp.org/hospitals/",
+      "observation": "Nevada Rural Hospital Partners identifies Desert View Hospital as a Pahrump critical access hospital and links the same official domain."
+    }
+  ],
+  "browser_observation": "Bounded requests to desertviewhospital.com root, cms-hpt.txt, .well-known/cms-hpt.txt, price-transparency and standard-charge paths returned HTTP 403 responses; no MRF bytes or pointer content were exposed.",
+  "disposition": "official-domain-identified-access-blocked",
+  "interpretation": "The official domain and exact roster identity are independently corroborated, replacing the earlier no-official-domain discovery result. HTTP 403 is a transport observation only; no file absence, compliance or current pricing conclusion is inferred.",
+  "next_action": "Retry the identified official domain with permitted browser access or obtain a publisher-provided current CMS pointer/MRF URL; validate facility identity and metadata before promotion."
+}

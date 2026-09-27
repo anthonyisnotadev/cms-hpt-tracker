@@ -1,0 +1,31 @@
+{
+  "ccn": "060020",
+  "observed_at": "2026-09-23T12:25:00Z",
+  "official_site": "https://www.uchealth.org/",
+  "official_identity": "UCHealth's official root cms-hpt.txt identifies UCHealth Parkview Medical Center and links its Hospital Price Index machine-readable page. CMS independently identifies Parkview Medical Center, Inc at 400 W 16TH ST, Pueblo, CO 81003.",
+  "pointer_url": "https://www.uchealth.org/cms-hpt.txt",
+  "pointer_status": "HTTP 200 OK",
+  "source_page_url": "https://search.hospitalpriceindex.com/hpi2/machineReadable/ParkviewMedicalCenter/9152",
+  "source_page_observation": "Browser automation loaded the facility-specific Hospital Price Index page, which displayed UCHealth Parkview Medical Center, last update 2025-11-01, and a current Download File link.",
+  "mrf_url_from_page": "https://sthpiprd.blob.core.windows.net/machine-readable-files/9152/840935136-1104881507_parkview-medical-center%2C-inc_standardcharges.csv",
+  "mrf_status": "HTTP 200 OK",
+  "mrf_content_length": 150846848,
+  "mrf_last_modified": "2026-02-26T19:27:32Z",
+  "mrf_bounded_header": "hospital_name,last_updated_on,version,location_name,hospital_address,license_number|CO,type_2_npi,...\\n\\\"Parkview Medical Center, Inc\\\",2025-11-01,3.0.0,UCHealth Parkview Medical Center,\\\"400 W. 16th Street, Pueblo, CO 81003\\\",10626,1104881507,...",
+  "mrf_identity_match": true,
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=060020&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6585,
+  "cms_api_response_sha256": "32C63358373447D9A2984A973134C0AFFE949A9EDAB91AEF0DFD8BB3D1A31554",
+  "cms_record": {
+    "facility_id": "060020",
+    "facility_name": "PARKVIEW MEDICAL CENTER, INC",
+    "address": "400 W 16TH ST",
+    "citytown": "PUEBLO",
+    "state": "CO",
+    "zip_code": "81003"
+  },
+  "disposition": "official-pointer-and-page-linked-mrf-identity-confirmed",
+  "interpretation": "The official UCHealth pointer and facility-specific page identify a current downloadable CSV whose bounded header matches the CMS name, address, state, date and version. This supports promotion of the file-identity and usability observation for CCN 060020.",
+  "next_action": "Retain the source-page and bounded-header provenance; validate full-file parsing through the existing import/reconciliation pipeline before any future replacement."
+}

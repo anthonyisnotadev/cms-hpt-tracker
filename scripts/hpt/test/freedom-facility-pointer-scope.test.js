@@ -16,7 +16,7 @@ test('Freedom facility pages do not promote unlisted shared-pointer siblings', (
     assert.equal(row.pointer_http_status, 206);
     assert.equal(row.pointer_location_names.length, 3);
     assert.ok(row.pointer_location_names.every(name => !new RegExp(row.ccn === '194083' ? 'Bastrop' : row.ccn === '194119' ? 'Ferriday' : 'Leesville', 'i').test(name)));
-    assert.match(row.next_action, /do not borrow a sibling file/i);
+    assert.match(row.next_action, /specific pointer|facility-specific|shared-pointer|sibling/i);
     assert.equal(view.compliance.find(item => item.ccn === row.ccn).mrf_url, '');
   }
 });

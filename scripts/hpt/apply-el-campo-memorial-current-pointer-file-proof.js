@@ -1,0 +1,16 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+const {csvToObjects}=require('./lib/util');
+const root=path.resolve(__dirname,'../..'),audit=path.join(root,'data/hpt-audit');
+const proofName='reconciliation-el-campo-memorial-current-pointer-file-proof-2026-09-22.json';
+const proof=JSON.parse(fs.readFileSync(path.join(audit,proofName),'utf8'));
+const retained='Z:/tmp-elcampo-wide.csv';
+const bytes=fs.readFileSync(retained); const sha=crypto.createHash('sha256').update(bytes).digest('hex');
+if(proof.ccn!=='450694'||proof.pointer_http_status!==200||proof.response_status!==200||proof.cms_template_version!=='3.0.0') throw new Error('Incomplete El Campo proof');
+if(bytes.length!==proof.full_file_bytes||sha!==proof.full_file_sha256) throw new Error('El Campo file changed');
+const base=csvToObjects(fs.readFileSync(path.join(audit,'compliance.csv'),'utf8')).find(r=>r.ccn===proof.ccn); if(!base) throw new Error('El Campo compliance row missing');
+const evidence={identity:'corroborated',identity_basis:'official-cms-pointer-exact-facility-wide-csv-address-state-date-version-license-npi',officialDomain:proof.official_domain,sourcePageUrl:proof.source_page_url,sourcePageSha256:proof.source_page_sha256,pointerUrl:proof.pointer_url,pointerHttpStatus:proof.pointer_http_status,pointerSha256:proof.pointer_sha256,url:proof.mrf_url,fileSha256:sha,http_status:proof.response_status,checked_at:proof.observed_at,date:proof.declared_last_updated,version:proof.cms_template_version,declared_hospital_name:proof.declared_hospital_name,declared_location_name:proof.declared_location_name,declared_address:proof.declared_address,facility_address:'303 Sandy Corner Rd, El Campo, TX 77437',declared_license_state:proof.declared_license_state,facility_state:'TX',declared_npi:proof.declared_npi,file_kind:'csv',fullFileBytes:bytes.length,attestation:proof.attestation,attester_name:proof.attester_name,observedFinding:proof.observed_finding,next_action:'Retain current pointer/file linkage and recheck on the normal freshness schedule.'};
+const ledgerPath=path.join(audit,'reviewed-resolutions.json'),ledger=JSON.parse(fs.readFileSync(ledgerPath,'utf8'));
+const entry={ccn:proof.ccn,base,action:'replace',finding:'verified-current-mrf',evidence,evidence_run:'el-campo-memorial-current-pointer-file-2026-09-22',reviewed_at:proof.observed_at,note:'The official Mid-Coast Health System CMS pointer names El Campo Memorial Hospital and links the complete current Box wide CSV. Its CMS 3.0.0 header identifies 303 Sandy Corner Road, El Campo TX 77437, 2026-03-01, Texas license 100127, NPIs 1003192311|1497894810|1720364037, attestation and Carrie Cornett. Pointer, official pricing page, file metadata and CMS identity agree; no legal compliance conclusion is inferred.'};
+const i=ledger.findIndex(r=>r.ccn===proof.ccn); if(i>=0) ledger[i]=entry; else ledger.push(entry); ledger.sort((a,b)=>a.ccn.localeCompare(b.ccn)); fs.writeFileSync(ledgerPath,JSON.stringify(ledger,null,2)+'\n');
+console.log(JSON.stringify({applied:proof.ccn,finding:entry.finding,bytes:bytes.length,sha},null,2));

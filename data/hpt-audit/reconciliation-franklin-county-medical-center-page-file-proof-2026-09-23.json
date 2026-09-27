@@ -1,0 +1,13 @@
+{
+  "ccn":"131322","observed_at":"2026-09-23T02:00:00Z",
+  "official_site":"https://fcmc.org/",
+  "official_pricing_page":"https://ezcost.info/franklin-county-medical-center",
+  "official_page_observation":"The first-party Franklin County Medical Center site loaded and links its Price Transparency page. That page links a named machine-readable CSV for Franklin County Medical Center.",
+  "pointer_url":"https://fcmc.org/cms-hpt.txt","pointer_status":"browser-ERR_BLOCKED_BY_CLIENT; bounded request returned HTTP 202 security challenge",
+  "mrf_url":"https://hospitalpricetransparencyfiles.com/franklin-county-medical-center/826003449_Franklin-County-Medical-Center_standardcharges.csv","mrf_status":206,"mrf_response_bytes":262144,"mrf_content_range":"bytes=0-262143/3951727","mrf_total_bytes":3951727,"mrf_etag":"d8776a55225fd378587d7576a6acb084","mrf_last_modified":"Tue, 28 Jul 2026 18:21:35 GMT","mrf_response_sha256":"e3843f497c07b5e42be9f484e8d90a9a19e610155ed869d773dc59aea7b6e23a",
+  "declared_last_updated":"2025-11-12","cms_template_version":"3.0.0","declared_hospital_name":"Franklin County Medical Center","declared_location_name":"Franklin County Medical Center","declared_address":"44 North First East, Preston, ID 83263","declared_license_state":"ID","declared_license_number":"38","declared_npi":"1548355811",
+  "cms_api_url":"https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=131322&conditions%5B0%5D%5Boperator%5D=%3D","cms_api_status":200,"cms_api_response_bytes":6658,"cms_api_response_sha256":"F9C469278AA58EC22270AEEE27C9753DC4A1932F0E0B157C8F07F0D7A3A1F003","cms_record":{"facility_id":"131322","facility_name":"FRANKLIN COUNTY MEDICAL CENTER","address":"44 NORTH FIRST EAST","citytown":"PRESTON","state":"ID","zip_code":"83263"},
+  "pointer_http_status":202,"pointer_sha256":"227c6bd8cc64074b6ee76a194a8edb95831bbe96c6a71444672af2885120a5ec","pointer_response_bytes":180,"pointer_response_content_type":"text/html","disposition":"verified-current-page-file-root-pointer-blocked",
+  "interpretation":"The first-party pricing page links a machine-readable CSV whose bounded CMS 3.0.0 header matches the facility name, address, Idaho state, NPI, license and 2025-11-12 date. The root pointer was blocked/security-challenged, so this is page-linked observed evidence with pointer follow-up and no legal compliance conclusion.",
+  "next_action":"Retry the root pointer with an alternate transport and compare its target to the page-linked file before any promotion."
+}

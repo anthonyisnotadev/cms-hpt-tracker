@@ -1,0 +1,11 @@
+{
+  "ccn":"100258","observed_at":"2026-09-22T21:00:00Z",
+  "official_site":"https://www.delraymedicalctr.com/",
+  "official_site_result":"The recorded Delray domain redirected to the Palm Beach Health Network first-party homepage, which lists Delray Medical Center at 5352 Linton Boulevard, Delray Beach, FL 33484.",
+  "cms_pointer_url":"https://delraymedicalctr.com/cms-hpt.txt","cms_pointer_result":"Interactive browser navigation returned net::ERR_BLOCKED_BY_CLIENT.",
+  "cms_api_url":"https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=100258&conditions%5B0%5D%5Boperator%5D=%3D","cms_api_status":200,
+  "cms_record":{"facility_id":"100258","facility_name":"DELRAY MEDICAL CENTER","address":"5352 LINTON BLVD","citytown":"DELRAY BEACH","state":"FL","zip_code":"33484"},
+  "disposition":"browser-redirect-and-pointer-blocked",
+  "interpretation":"The current recorded domain redirects to a first-party Palm Beach Health Network page that names Delray Medical Center and the exact CMS address. The exact root pointer remains browser-blocked; no MRF bytes were recovered and no file-absence or compliance conclusion is inferred.",
+  "next_action":"Retry the redirected site's pricing page and root pointer with an alternate transport; preserve the Delray-specific identity and do not substitute another campus file."
+}

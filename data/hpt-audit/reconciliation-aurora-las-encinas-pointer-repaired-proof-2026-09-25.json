@@ -1,0 +1,21 @@
+{
+  "ccn": "054078",
+  "observed_at": "2026-09-25T07:05:00Z",
+  "official_pricing_page": "https://www.lasencinashospital.com/price-transparency/",
+  "pointer_url": "https://www.lasencinashospital.com/cms-hpt.txt",
+  "pointer_http_status": 200,
+  "pointer_last_modified": "2026-09-17T16:22:15Z",
+  "pointer_observation": "The current root pointer declares Aurora Las Encinas, LLC and the same facility-specific standard-charges CSV linked by the official pricing page.",
+  "mrf_url": "https://www.lasencinashospital.com/wp-content/uploads/2026/07/32-0039155_Aurora-Las-Encinas-LLC_standardcharges_1.csv",
+  "mrf_http_status": 200,
+  "mrf_content_type": "text/csv; charset=utf-8",
+  "mrf_last_modified": "2026-08-17T19:53:09Z",
+  "mrf_bytes": 8394,
+  "mrf_sha256": "f83776cf9bb279af34c8e820fe1a5e10b6a5c4192b2521f02bdc02793f8e3402",
+  "mrf_bounded_header_observation": "The first rows identify Aurora Las Encinas, LLC, dba Aurora Las Encinas Hospital, and report date 03/21/2025.",
+  "browser_observation": "The rendered first-party pricing page exposes Standard Charges, Shoppable Services, and the CMS pointer link; the Standard Charges link is the exact pointer target.",
+  "identity_observation": "The file name and header agree with the current Aurora Las Encinas page; the previously recorded identity is 2900 East Del Mar Blvd, Pasadena, CA 91107.",
+  "evidence_role": "current first-party root-pointer and target-file evidence; not a CMS compliance verdict",
+  "disposition": "official-pointer-and-page-link-current-legacy-style-csv-metadata-limited",
+  "next_action": "Retain the pointer-linked file as current facility evidence. Separately review its schema and address/state metadata before assigning a stronger CMS usability finding; do not infer compliance from the pointer or legacy header alone."
+}

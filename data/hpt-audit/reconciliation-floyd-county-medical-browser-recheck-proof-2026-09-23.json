@@ -1,0 +1,15 @@
+{
+  "ccn":"161347","observed_at":"2026-09-23T09:50:00Z",
+  "official_site":"https://fcmc.us.com/",
+  "official_identity":"Floyd County Medical Center, 800 11th St, Charles City, IA 50616 (CMS record independently confirms this facility/address).",
+  "browser_observation":"Interactive browser navigation rendered a Robot Challenge Screen requiring cookies and checking site connection security; the homepage did not become available.",
+  "pointer_urls":["https://fcmc.us.com/cms-hpt.txt","https://www.fcmc.us.com/cms-hpt.txt"],
+  "pointer_status":"HTTP 202 HTML security challenge on both exact root routes; no pointer text recovered",
+  "pointer_response_bytes":180,
+  "pointer_observation":"Both bounded requests returned a security-challenge refresh page rather than pointer content.",
+  "mrf_observation":"No MRF bytes recovered; no file-absence or compliance conclusion inferred.",
+  "cms_api_url":"https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=161347&conditions%5B0%5D%5Boperator%5D=%3D","cms_api_status":200,"cms_api_response_bytes":6640,"cms_api_response_sha256":"2A91FC2769B228DC19AEF72C6A1F647FA3B2A5AA2D53B133CF200983889B1DB9","cms_record":{"facility_id":"161347","facility_name":"FLOYD COUNTY MEDICAL CENTER","address":"800 11TH ST","citytown":"CHARLES CITY","state":"IA","zip_code":"50616"},
+  "disposition":"automated-client-html-challenge",
+  "interpretation":"The recorded first-party domain and CMS identity agree, but both homepage and exact pointer routes are blocked by a cookie/security challenge. This is a transport/access observation only, not a file-absence or compliance finding.",
+  "next_action":"Retry the first-party site and exact pointer with an alternate browser/client after the security challenge changes; recover and verify facility-specific MRF bytes before promotion."
+}

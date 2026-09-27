@@ -1,0 +1,25 @@
+{
+  "ccn": "151329",
+  "observed_at": "2026-09-24T00:00:00Z",
+  "official_site": "https://www.mmhealth.org/",
+  "official_pricing_page": "https://www.mmhealth.org/for-patients/bill-pay/financial-resources/price-transparency/",
+  "official_page_observation": "The current first-party page labels a CMS Price Transparency download as effective 2/11/2026.",
+  "page_file_url": "https://www.mmhealth.org/wp-content/uploads/2026/06/356067049_Margaret-Mary-Health_standardcharges-2.csv",
+  "page_file_http_status": 206,
+  "page_file_content_type": "application/octet-stream",
+  "page_file_sample_bytes": 65536,
+  "metadata": {
+    "hospital_name": "Margaret Mary Health",
+    "last_updated_on": "4/8/2026",
+    "version": "2.0.0",
+    "hospital_location": "Batesville",
+    "hospital_address": "321 Mitchell Avenue",
+    "header_license_state": "OH",
+    "license_value": "60001730A",
+    "npi": "1558368449, 1639398688, 1831318880",
+    "attestation": true
+  },
+  "disposition": "official-page-file-identity-supported-in-address-and-header-state-conflict-retained",
+  "interpretation": "The official page and bounded file establish a current facility-specific pricing route for Margaret Mary Health in Batesville, Indiana. The file's CMS template version is 2.0.0 and the schema header says OH despite the Indiana facility; no clean promotion was made.",
+  "next_action": "Obtain publisher correction or explanation for the OH header, and verify whether a current CMS 3.0.0 replacement exists."
+}

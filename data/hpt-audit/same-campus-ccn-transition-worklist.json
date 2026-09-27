@@ -3,7 +3,7 @@
     "groups": 8,
     "ccns": 16,
     "shared_standing_file_groups": 3,
-    "priority_one_groups": 4
+    "priority_one_groups": 3
   },
   "groups": [
     {
@@ -21,13 +21,16 @@
           "ccn": "010062",
           "roster_type": "Acute Care Hospitals",
           "standing_finding": "compliant-observed",
-          "current_disposition": "mrf-facility-identity-unresolved",
-          "workstream": "standing-evidence-follow-up",
+          "current_disposition": "verified-current-mrf",
+          "workstream": "verification-proof-gap",
           "standing_mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbWMCGENEVAAL&type=CDMWithoutLabel&fileType=CSV",
           "candidate_mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbWMCGENEVAAL&type=CDMWithoutLabel&fileType=CSV",
-          "reviewed_at": "2026-09-19T12:35:00Z",
-          "manual_proof_file": "reconciliation-wiregrass-current-campus-scope-proof.json",
-          "existing_next_action": "Confirm CMS effective dates and explicit MRF scope for acute-care CCN 010062 versus CAH CCN 011309; retain both records separately.",
+          "reviewed_at": "2026-09-26T20:20:00Z",
+          "manual_proof_file": "reconciliation-wiregrass-current-pointer-proof-2026-09-26.json",
+          "historical_manual_proof_files": [
+            "reconciliation-wiregrass-current-pointer-proof-2026-09-26.json"
+          ],
+          "existing_next_action": "Retain and recheck the current pointer; keep duplicate CCN 011309 unresolved until separate facility linkage is established.",
           "cms_enrollment_snapshot": {
             "ccn": "010062",
             "rows": 0
@@ -43,6 +46,7 @@
           "candidate_mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbWMCGENEVAAL&type=CDMWithoutLabel&fileType=CSV",
           "reviewed_at": "",
           "manual_proof_file": "",
+          "historical_manual_proof_files": [],
           "existing_next_action": "",
           "cms_enrollment_snapshot": {
             "ccn": "011309",
@@ -54,55 +58,6 @@
       "priority": 1,
       "disposition": "same-campus-distinct-ccn-enrollment-scope-review",
       "next_action": "Confirm primary CMS enrollment/status and effective dates for CCNs 010062 and 011309; the sampled CMS Hospital Enrollments snapshot is not a transition-date history. Determine whether the current publisher file covers one enrollment, both explicitly, or a historical period; do not infer CCN scope from identical hospital name and street address. Preserve each CCN's standing history and investigate any file or pointer access issue independently."
-    },
-    {
-      "ccns": [
-        "010110",
-        "010779"
-      ],
-      "name": "BULLOCK COUNTY HOSPITAL",
-      "address": "102 WEST CONECUH AVENUE",
-      "city": "UNION SPRINGS",
-      "state": "AL",
-      "zip": "36089",
-      "records": [
-        {
-          "ccn": "010110",
-          "roster_type": "Acute Care Hospitals",
-          "standing_finding": "not-assessed-nationwide-pointer-facility-match-unresolved",
-          "current_disposition": "pointer-facility-match-unresolved",
-          "workstream": "genuinely-unresolved-investigation",
-          "standing_mrf_url": "",
-          "candidate_mrf_url": "",
-          "reviewed_at": "2026-09-16T11:17:34.771Z",
-          "manual_proof_file": "reconciliation-bullock-reh-transition-proof.json",
-          "existing_next_action": "Keep the acute-care CCN separate: the first-party page says the site converted to a Rural Emergency Hospital on 2024-05-01 and the current root pointer names the REH. Verify any historical acute-care file and period independently; do not assign the current REH pointer/file to this CCN.",
-          "cms_enrollment_snapshot": {
-            "ccn": "010110",
-            "rows": 0
-          }
-        },
-        {
-          "ccn": "010779",
-          "roster_type": "Rural Emergency Hospital",
-          "standing_finding": "mrf-stale-over-365-days",
-          "current_disposition": "pointer-facility-match-unresolved",
-          "workstream": "consistent",
-          "standing_mrf_url": "https://ce2ea91a-ba41-4498-ab16-2bae48bc8556.usrfiles.com/ugd/ce2ea9_229d2d077ea74cf6a45992ffbb655715.csv",
-          "candidate_mrf_url": "https://ce2ea91a-ba41-4498-ab16-2bae48bc8556.usrfiles.com/ugd/ce2ea9_229d2d077ea74cf6a45992ffbb655715.csv",
-          "reviewed_at": "2026-09-16T11:17:34.771Z",
-          "manual_proof_file": "reconciliation-bullock-reh-transition-proof.json",
-          "existing_next_action": "Resolve the explicit license_number|CA CSV header against the Alabama facility with corrected file or publisher evidence. The root pointer names this REH but the conflicting declared state prevents promotion; do not apply the same file to the historical acute-care CCN.",
-          "cms_enrollment_snapshot": {
-            "ccn": "010779",
-            "rows": 0
-          }
-        }
-      ],
-      "shared_standing_file_url": "",
-      "priority": 1,
-      "disposition": "same-campus-distinct-ccn-enrollment-scope-review",
-      "next_action": "Confirm primary CMS enrollment/status and effective dates for CCNs 010110 and 010779; the sampled CMS Hospital Enrollments snapshot is not a transition-date history. Determine whether the current publisher file covers one enrollment, both explicitly, or a historical period; do not infer CCN scope from identical hospital name and street address. Preserve each CCN's standing history and investigate any file or pointer access issue independently."
     },
     {
       "ccns": [
@@ -125,6 +80,7 @@
           "candidate_mrf_url": "https://www.swarmc.org/wp-content/uploads/2026/05/994554436_southwest-arkansas-regional-medical-center_standardcharges.csv",
           "reviewed_at": "",
           "manual_proof_file": "",
+          "historical_manual_proof_files": [],
           "existing_next_action": "",
           "cms_enrollment_snapshot": {
             "ccn": "040153",
@@ -141,6 +97,9 @@
           "candidate_mrf_url": "https://www.swarmc.org/wp-content/uploads/2026/05/994554436_southwest-arkansas-regional-medical-center_standardcharges.csv",
           "reviewed_at": "2026-09-19T13:05:00Z",
           "manual_proof_file": "reconciliation-southwest-regional-current-cah-scope-proof.json",
+          "historical_manual_proof_files": [
+            "reconciliation-southwest-regional-current-cah-scope-proof.json"
+          ],
           "existing_next_action": "Confirm CMS effective dates and whether the linked MRF explicitly covers CAH CCN 041335 versus acute-care CCN 040153; retain both records separately.",
           "cms_enrollment_snapshot": {
             "ccn": "041335",
@@ -174,6 +133,7 @@
           "candidate_mrf_url": "https://www.ahn.org/content/dam/ahn/en/dmxahn/documents/patients-visitors/patients/financial-services/hospital-charges/160743222_westfield-memorial-hospital-inc_standardcharges.csv",
           "reviewed_at": "",
           "manual_proof_file": "",
+          "historical_manual_proof_files": [],
           "existing_next_action": "",
           "cms_enrollment_snapshot": {
             "ccn": "330166",
@@ -190,6 +150,9 @@
           "candidate_mrf_url": "https://www.ahn.org/content/dam/ahn/en/dmxahn/documents/patients-visitors/patients/financial-services/hospital-charges/160743222_westfield-memorial-hospital-inc_standardcharges.csv",
           "reviewed_at": "2026-09-19T12:05:00Z",
           "manual_proof_file": "reconciliation-westfield-reh-transition-scope-proof.json",
+          "historical_manual_proof_files": [
+            "reconciliation-westfield-reh-transition-scope-proof.json"
+          ],
           "existing_next_action": "Confirm effective dates and whether the shared MRF explicitly covers both enrollments; do not merge or promote either CCN from same-campus evidence alone.",
           "cms_enrollment_snapshot": {
             "ccn": "330801",
@@ -205,6 +168,66 @@
       "priority": 1,
       "disposition": "same-campus-distinct-ccn-enrollment-scope-review",
       "next_action": "Confirm primary CMS enrollment/status and effective dates for CCNs 330166 and 330801; the sampled CMS Hospital Enrollments snapshot is not a transition-date history. Determine whether the current publisher file covers one enrollment, both explicitly, or a historical period; do not infer CCN scope from identical hospital name and street address. Preserve each CCN's standing history and investigate any file or pointer access issue independently."
+    },
+    {
+      "ccns": [
+        "010110",
+        "010779"
+      ],
+      "name": "BULLOCK COUNTY HOSPITAL",
+      "address": "102 WEST CONECUH AVENUE",
+      "city": "UNION SPRINGS",
+      "state": "AL",
+      "zip": "36089",
+      "records": [
+        {
+          "ccn": "010110",
+          "roster_type": "Acute Care Hospitals",
+          "standing_finding": "not-assessed-nationwide-pointer-facility-match-unresolved",
+          "current_disposition": "pointer-facility-match-unresolved",
+          "workstream": "genuinely-unresolved-investigation",
+          "standing_mrf_url": "",
+          "candidate_mrf_url": "",
+          "reviewed_at": "2026-09-27T18:59:14Z",
+          "manual_proof_file": "reconciliation-bullock-post-management-agreement-pointer-recheck-proof-2026-09-27.json",
+          "historical_manual_proof_files": [
+            "reconciliation-bullock-current-csv-index-review-proof-2026-09-27.json",
+            "reconciliation-bullock-post-management-agreement-pointer-recheck-proof-2026-09-27.json",
+            "reconciliation-bullock-reh-transition-proof.json",
+            "reconciliation-qies-unresolved-status-audit-2026-09-27.json"
+          ],
+          "existing_next_action": "Retain 010110 in the historical accountability baseline. Inspect only dated pre-conversion pointer/MRF evidence for the acute-care period through 2024-04-30; do not assign the current REH pointer/file to 010110.",
+          "cms_enrollment_snapshot": {
+            "ccn": "010110",
+            "rows": 0
+          }
+        },
+        {
+          "ccn": "010779",
+          "roster_type": "Rural Emergency Hospital",
+          "standing_finding": "mrf-stale-over-365-days",
+          "current_disposition": "verified-stale-mrf",
+          "workstream": "consistent",
+          "standing_mrf_url": "https://ce2ea91a-ba41-4498-ab16-2bae48bc8556.usrfiles.com/ugd/ce2ea9_229d2d077ea74cf6a45992ffbb655715.csv",
+          "candidate_mrf_url": "https://ce2ea91a-ba41-4498-ab16-2bae48bc8556.usrfiles.com/ugd/ce2ea9_229d2d077ea74cf6a45992ffbb655715.csv",
+          "reviewed_at": "2026-09-27T18:59:14Z",
+          "manual_proof_file": "reconciliation-bullock-post-management-agreement-pointer-recheck-proof-2026-09-27.json",
+          "historical_manual_proof_files": [
+            "reconciliation-bullock-post-management-agreement-pointer-recheck-proof-2026-09-27.json",
+            "reconciliation-bullock-stale-page-file-proof-2026-09-26.json",
+            "reconciliation-qies-unresolved-status-audit-2026-09-27.json"
+          ],
+          "existing_next_action": "Keep 010779 separate from historical acute-care CCN 010110. Retain the license-state conflict; seek an updated CMS 3.0.0 REH file or publisher correction. Do not repeat unchanged retrieval unless a source, file, pointer, or CMS version changes.",
+          "cms_enrollment_snapshot": {
+            "ccn": "010779",
+            "rows": 0
+          }
+        }
+      ],
+      "shared_standing_file_url": "",
+      "priority": 2,
+      "disposition": "same-campus-qies-effective-dated-transition-recorded-mrf-scope-pending",
+      "next_action": "CMS QIES Q1 2026 records acute-care CCN 010110 terminated 2024-04-30 and REH CCN 010779 began participation 2024-05-01 at the same name/address, matching the first-party conversion date. Preserve 010110 as historical and inspect its pre-conversion HPT evidence independently. Keep 010779 separate and obtain a current CMS 3.0.0 replacement; do not transfer the REH MRF to 010110."
     },
     {
       "ccns": [
@@ -225,9 +248,12 @@
           "workstream": "genuinely-unresolved-investigation",
           "standing_mrf_url": "",
           "candidate_mrf_url": "",
-          "reviewed_at": "2026-09-16T11:22:16.000Z",
-          "manual_proof_file": "",
-          "existing_next_action": "Establish the acute-care certification period for CCN 010125 and seek an independently dated, facility-specific hospital MRF or corrected first-party pointer. Do not assign a file found for the same-address critical-access CCN by name alone; the 2022 PDFs and insurer TiC link are not evidence of a current hospital CSV or JSON MRF.",
+          "reviewed_at": "2026-09-27T06:54:59.046Z",
+          "manual_proof_file": "reconciliation-qies-unresolved-status-audit-2026-09-27.json",
+          "historical_manual_proof_files": [
+            "reconciliation-qies-unresolved-status-audit-2026-09-27.json"
+          ],
+          "existing_next_action": "Retain 010125 in the historical accountability baseline. Check for dated acute-care pointer/MRF evidence through 2025-11-13; do not assign 011311 CAH files or records to this retired acute-care CCN.",
           "cms_enrollment_snapshot": {
             "ccn": "010125",
             "rows": 0
@@ -241,9 +267,13 @@
           "workstream": "genuinely-unresolved-investigation",
           "standing_mrf_url": "",
           "candidate_mrf_url": "",
-          "reviewed_at": "2026-09-16T11:22:16.000Z",
-          "manual_proof_file": "reconciliation-lakeland-current-cah-scope-proof.json",
-          "existing_next_action": "Establish the critical-access certification period for CCN 011311 and seek its current facility-specific hospital CSV or JSON MRF or corrected first-party pointer. Recheck the exact root after a publisher change; do not interpret the 2022 PDFs or insurer TiC link as the hospital MRF, and do not transfer evidence from the acute-care CCN.",
+          "reviewed_at": "2026-09-27T06:54:59.046Z",
+          "manual_proof_file": "reconciliation-qies-unresolved-status-audit-2026-09-27.json",
+          "historical_manual_proof_files": [
+            "reconciliation-lakeland-current-cah-scope-proof.json",
+            "reconciliation-qies-unresolved-status-audit-2026-09-27.json"
+          ],
+          "existing_next_action": "Keep active CAH CCN 011311 distinct from historical acute-care 010125. Resolve the current first-party pointer/MRF route for 011311 and verify its own CSV/JSON bytes and metadata; do not transfer the 010125 evidence.",
           "cms_enrollment_snapshot": {
             "ccn": "011311",
             "rows": 0
@@ -252,8 +282,8 @@
       ],
       "shared_standing_file_url": "",
       "priority": 2,
-      "disposition": "same-campus-distinct-ccn-enrollment-scope-review",
-      "next_action": "Confirm primary CMS enrollment/status and effective dates for CCNs 010125 and 011311; the sampled CMS Hospital Enrollments snapshot is not a transition-date history. Determine whether the current publisher file covers one enrollment, both explicitly, or a historical period; do not infer CCN scope from identical hospital name and street address. Preserve each CCN's standing history and investigate any file or pointer access issue independently."
+      "disposition": "same-campus-qies-effective-dated-transition-recorded-mrf-scope-pending",
+      "next_action": "CMS QIES Q1 2026 records acute-care CCN 010125 terminated 2025-11-13 and CAH CCN 011311 began participation 2025-11-14 at the same name/address. Preserve 010125 as historical and inspect its pre-termination HPT evidence independently. Keep 011311 separate and resolve its own current pointer/MRF; do not transfer files or evidence between these CCNs."
     },
     {
       "ccns": [
@@ -269,14 +299,17 @@
         {
           "ccn": "250017",
           "roster_type": "Acute Care Hospitals",
-          "standing_finding": "not-assessed-nationwide-pointer-discovery-incomplete",
-          "current_disposition": "pointer-discovery-incomplete",
+          "standing_finding": "not-assessed-nationwide-pointer-not-retrieved",
+          "current_disposition": "pointer-not-retrieved",
           "workstream": "genuinely-unresolved-investigation",
           "standing_mrf_url": "",
           "candidate_mrf_url": "",
-          "reviewed_at": "",
-          "manual_proof_file": "",
-          "existing_next_action": "",
+          "reviewed_at": "2026-09-22T19:30:00Z",
+          "manual_proof_file": "reconciliation-mississippi-redirect-and-tic-only-review-proof-2026-09-22.json",
+          "historical_manual_proof_files": [
+            "reconciliation-mississippi-redirect-and-tic-only-review-proof-2026-09-22.json"
+          ],
+          "existing_next_action": "Recover a current facility-specific CMS pointer and CSV/JSON; do not treat the redirect shell as a pointer.",
           "cms_enrollment_snapshot": {
             "ccn": "250017",
             "rows": 0
@@ -285,13 +318,16 @@
         {
           "ccn": "250785",
           "roster_type": "Rural Emergency Hospital",
-          "standing_finding": "not-assessed-nationwide-pointer-discovery-incomplete",
-          "current_disposition": "pointer-discovery-incomplete",
+          "standing_finding": "not-assessed-nationwide-pointer-not-retrieved",
+          "current_disposition": "pointer-not-retrieved",
           "workstream": "genuinely-unresolved-investigation",
           "standing_mrf_url": "",
           "candidate_mrf_url": "",
           "reviewed_at": "2026-09-19T13:40:00Z",
           "manual_proof_file": "reconciliation-progressive-houston-reh-transition-proof.json",
+          "historical_manual_proof_files": [
+            "reconciliation-progressive-houston-reh-transition-proof.json"
+          ],
           "existing_next_action": "Locate and verify a current first-party cms-hpt.txt and MRF for the REH, and obtain authoritative conversion/effective-date evidence before changing either CCN.",
           "cms_enrollment_snapshot": {
             "ccn": "250785",
@@ -327,9 +363,13 @@
           "workstream": "genuinely-unresolved-investigation",
           "standing_mrf_url": "",
           "candidate_mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbNCGHPHILADELPHIAMS&type=CDMWithoutLabel&fileType=CSV",
-          "reviewed_at": "2026-09-18T22:35:00.000Z",
-          "manual_proof_file": "reconciliation-neshoba-ccn-transition-proof.json",
-          "existing_next_action": "Get a current primary CMS enrollment/status record and effective date for acute-care CCN 250043 and critical-access CCN 251340. Do not assign the current same-campus file to both records; recover a fresh root pointer through a permitted route or publisher confirmation before current pointer-linkage claims. Preserve the 403 and browser client block as access observations.",
+          "reviewed_at": "2026-09-27T06:32:57Z",
+          "manual_proof_file": "reconciliation-neshoba-cms-pos-transition-proof-2026-09-27.json",
+          "historical_manual_proof_files": [
+            "reconciliation-neshoba-cms-pos-transition-proof-2026-09-27.json",
+            "reconciliation-neshoba-current-domain-recheck-proof-2026-09-21.json"
+          ],
+          "existing_next_action": "Retain 250043 in the historical accountability baseline and inspect only dated pre-2025-12-31 pointer/MRF evidence for its acute-care period. Do not search for a current file under 250043 or assign the June 2026 campus MRF to it. The exact-filter/bulk QIES asymmetry has been reproduced and hashed; do not repeat unchanged queries unless the CMS data version changes.",
           "cms_enrollment_snapshot": {
             "ccn": "250043",
             "rows": 0
@@ -343,9 +383,13 @@
           "workstream": "standing-evidence-follow-up",
           "standing_mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbNCGHPHILADELPHIAMS&type=CDMWithoutLabel&fileType=CSV",
           "candidate_mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbNCGHPHILADELPHIAMS&type=CDMWithoutLabel&fileType=CSV",
-          "reviewed_at": "2026-09-17T01:10:00.000Z",
-          "manual_proof_file": "reconciliation-neshoba-ccn-transition-proof.json",
-          "existing_next_action": "Get a current primary CMS enrollment/status record and effective date for critical-access CCN 251340 and acute-care CCN 250043. Do not infer a clean current file assignment from the shared address alone; recover a fresh root pointer through a permitted route or publisher confirmation. Preserve the earlier standing evidence and the new 403/client block separately.",
+          "reviewed_at": "2026-09-27T06:32:57Z",
+          "manual_proof_file": "reconciliation-neshoba-cms-pos-transition-proof-2026-09-27.json",
+          "historical_manual_proof_files": [
+            "reconciliation-neshoba-ccn-transition-proof.json",
+            "reconciliation-neshoba-cms-pos-transition-proof-2026-09-27.json"
+          ],
+          "existing_next_action": "CCN 251340 is active in Q1 2026 with original participation date 2026-01-01. Treat the 2026-06-04 campus MRF only as a successor-scope candidate while the current root pointer is inaccessible. Recover current pointer bytes or publisher confirmation binding the exact mrf-url to 251340; retain the stronger standing finding until then.",
           "cms_enrollment_snapshot": {
             "ccn": "251340",
             "rows": 1,
@@ -358,8 +402,8 @@
       ],
       "shared_standing_file_url": "",
       "priority": 2,
-      "disposition": "same-campus-distinct-ccn-enrollment-scope-review",
-      "next_action": "Confirm primary CMS enrollment/status and effective dates for CCNs 250043 and 251340; the sampled CMS Hospital Enrollments snapshot is not a transition-date history. Determine whether the current publisher file covers one enrollment, both explicitly, or a historical period; do not infer CCN scope from identical hospital name and street address. Preserve each CCN's standing history and investigate any file or pointer access issue independently."
+      "disposition": "same-campus-acute-to-cah-transition-recorded-historical-and-current-file-scope-pending",
+      "next_action": "CMS QIES Q1 2026 records acute-care CCN 250043 with a 2025-12-31 termination date and active CAH CCN 251340 from 2026-01-01. Preserve 250043 as historical and inspect only its pre-termination HPT evidence; do not seek a current 250043 file or assign the June 2026 campus MRF to it. Keep the active CAH file-to-CCN assignment unresolved until a current root pointer or publisher statement binds the exact MRF to 251340. The bulk-vs-exact QIES query discrepancy also needs a raw-body refresh when CMS access permits."
     },
     {
       "ccns": [
@@ -382,6 +426,9 @@
           "candidate_mrf_url": "",
           "reviewed_at": "2026-09-17T10:53:30.532Z",
           "manual_proof_file": "reconciliation-clinton-reh-transition-proof.json",
+          "historical_manual_proof_files": [
+            "reconciliation-clinton-reh-transition-proof.json"
+          ],
           "existing_next_action": "Preserve the historical acute-care CCN separately. The current CMS enrollment maps it to REH CCN 370784 effective 2025-12-02; do not assign the current REH file to 370245. Find a historical acute-care file and effective period only if a historical claim is needed.",
           "cms_enrollment_snapshot": {
             "ccn": "370245",
@@ -398,6 +445,9 @@
           "candidate_mrf_url": "https://secure.claraprice.net/price-transparency/OGFL-1782507604288/machine-readable/884062444_clinton-regional-hospital_standardcharges.json",
           "reviewed_at": "2026-09-17T10:53:30.532Z",
           "manual_proof_file": "reconciliation-clinton-reh-transition-proof.json",
+          "historical_manual_proof_files": [
+            "reconciliation-clinton-reh-transition-proof.json"
+          ],
           "existing_next_action": "The exact current REH pointer/file was promoted for CCN 370784 through the reviewed-resolution ledger. Monitor publisher changes and retain the distinct former CCN; this is not line-item or legal compliance validation.",
           "cms_enrollment_snapshot": {
             "ccn": "370784",
@@ -418,7 +468,8 @@
   "limitation": "Exact same-name, street, city, state and ZIP roster rows with different facility types are an enrollment-scope lead, not evidence that either CCN is currently active or that a shared MRF covers both. Confirm effective dates from a primary enrollment source before changing a CCN-specific verification claim.",
   "source_sha256": {
     "cms_data/hpt/roster.json": "feb936c65252106022d234e4b0fe858ef9ab0a050229ddd852aa7257966db7cf",
-    "data/hpt-audit/nationwide-reconciliation.json": "cdbc976e9ff0989b0d3fb90b5d36f7088e476ca4b809926d1dbe8f4c03645c19",
-    "data/hpt-audit/same-campus-cms-enrollment-snapshot-review.json": "fc093762ab992eaaebc126d08d231d688591f27bfe095f43441bbe7d7acc5f49"
+    "data/hpt-audit/nationwide-reconciliation.json": "2e196a9cff87a34657dfd0216d124d4cb093b18fa5d872b5cf5f76e3765a9984",
+    "data/hpt-audit/same-campus-cms-enrollment-snapshot-review.json": "fc093762ab992eaaebc126d08d231d688591f27bfe095f43441bbe7d7acc5f49",
+    "data/hpt-audit/reconciliation-manual-access-observations.json": "0db0736adfed2fc47365c10f7bed59b20ce0fa6e0b0c68bb1ef0f7ed76baea74"
   }
 }

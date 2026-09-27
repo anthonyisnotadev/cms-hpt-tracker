@@ -1,0 +1,27 @@
+{
+  "ccn": "380005",
+  "observed_at": "2026-09-27T12:48:01Z",
+  "source": "CMS Provider of Services File - Quality Improvement and Evaluation System (QIES), Q1 2026",
+  "dataset_page": "https://data.cms.gov/provider-characteristics/hospitals-and-other-facilities/provider-of-services-file-quality-improvement-and-evaluation-system",
+  "dataset_release": "Q1 2026",
+  "dataset_api_url": "https://data.cms.gov/data-api/v1/dataset/8ba0f9b4-9493-4aa0-9f82-44ea9468d1b5/data?filter%5BPRVDR_NUM%5D=380005",
+  "http_status": 200,
+  "content_type": "application/json",
+  "response_bytes": 11754,
+  "response_sha256": "a949faf1f95f0adcd2cb35e79c66fe2b5def7428449cf30f16e25222fe435f1f",
+  "parsed_records_matching_ccn": 1,
+  "parsed_fields": {
+    "provider_number": "380005",
+    "facility_name": "ASANTE ASHLAND COMMUNITY HOSPITAL",
+    "address": "280 MAPLE STREET",
+    "city": "ASHLAND",
+    "state": "OR",
+    "certification_date": "2010-04-13",
+    "termination_expiration_date": "",
+    "program_termination_code": "00"
+  },
+  "known_transition_effective_date": "2026-05-22",
+  "interpretation": "This exact-CCN query is against CMS's certification-oriented QIES Provider of Services dataset, distinct from the payment-specific PSF and enrollment snapshot. CMS lists Q1 2026 as the latest release; that release predates the operator-reported May 22, 2026 license transition. The record confirms historical facility identity but its blank termination expiration date cannot establish Medicare status after the transition. No termination or continued-active conclusion is drawn.",
+  "disposition": "unresolved-ccn-status-and-successor-file-coverage",
+  "next_action": "Seek effective-dated CMS/MAC certification or termination evidence on or after 2026-05-22, and separately verify whether the current CCN 380018 pointer-declared MRF includes the Ashland satellite. Do not repeat the Q1 2026 snapshot or treat the blank termination field as post-transition proof."
+}

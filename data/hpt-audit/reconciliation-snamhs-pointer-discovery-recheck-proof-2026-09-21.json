@@ -1,0 +1,18 @@
+{
+  "ccn": "294002",
+  "observed_at": "2026-09-21T18:45:00Z",
+  "official_domain": "dpbh.nv.gov",
+  "retrieval_method": "official-page inspection plus bounded candidate URL checks",
+  "checked_urls": [
+    "https://www.dpbh.nv.gov/programs/behavioral-health---inpatient-and-outpatient-services/clinical-behavioral-services-inpatient-snamhs-nnamhs-lakes-crossings/",
+    "https://dpbh.nv.gov/About/Overview/SNAMHS_Overview/",
+    "https://www.dpbh.nv.gov/contentassets/d10eb649ee6948a69b31cc00f63d82e9/886000022_southern-nevada-adult-mental-health-services_standard-charges.xlsx",
+    "https://www.dpbh.nv.gov/contentassets/d10eb649ee6948a69b31cc00f63d82e9/886000022_southern-nevada-adult-mental-health-services_standard-charges.csv",
+    "https://www.dpbh.nv.gov/contentassets/d10eb649ee6948a69b31cc00f63d82e9/886000022_southern-nevada-adult-mental-health-services_standard-charges-1-2.xlsx"
+  ],
+  "transport_result": "The official DPBH clinical-behavioral-services page identifies SNAMHS, but its only standard-charge workbook link is for NNAMHS. The SNAMHS overview exposes no MRF link, and the bounded candidate SNAMHS workbook/CSV URLs returned HTTP 404.",
+  "facility_identity_observation": "SNAMHS is a distinct Southern Nevada state behavioral-health service; no exact Rawson-Neal/SNAMHS MRF bytes were recovered. The NNAMHS workbook is not assigned to this CCN.",
+  "disposition": "official-state-system-pointer-discovery-incomplete",
+  "interpretation": "This is a facility/system-specific discovery observation for Southern Nevada Adult Mental Health Services only. Missing links and 404 candidate paths do not establish file absence, closure, exemption, or compliance status.",
+  "next_action": "Search DPBH fiscal/rates pages and request or retrieve an exact SNAMHS/Rawson-Neal CSV or JSON MRF with facility identity and metadata; do not reuse the NNAMHS workbook."
+}

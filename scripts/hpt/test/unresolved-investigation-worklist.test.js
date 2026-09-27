@@ -47,6 +47,37 @@ test('unresolved investigation worklist covers each live CCN with a specific evi
   }
 });
 
+test('manual rechecks cannot hide behind an older top-level observation timestamp', () => {
+  const manual = JSON.parse(read('reconciliation-manual-access-observations.json'));
+  const reconciliation = JSON.parse(read('nationwide-reconciliation.json'));
+  const verification = JSON.parse(read('nationwide-verification.json'));
+  const worklist = new Map(build(reconciliation, verification).records.map(row => [row.ccn, row]));
+  const collectDates = (value, out = []) => {
+    if (!value || typeof value !== 'object') return out;
+    if (Array.isArray(value)) {
+      value.forEach(item => collectDates(item, out));
+      return out;
+    }
+    for (const [key, nested] of Object.entries(value)) {
+      if (typeof nested === 'string' && /(observed|reviewed|checked|updated|retrieved|recheck|at$)/i.test(key)
+        && /^\d{4}-\d\d-\d\dT/.test(nested)) out.push(nested);
+      else if (nested && typeof nested === 'object') collectDates(nested, out);
+    }
+    return out;
+  };
+  const violations = [];
+  for (const record of manual.records) {
+    if (!worklist.has(record.ccn)) continue;
+    const nested = collectDates(record).map(Date.parse).filter(Number.isFinite);
+    const latest = Math.max(...nested);
+    const queued = Date.parse(worklist.get(record.ccn)?.latest_review_at || '');
+    if (Number.isFinite(latest) && (!Number.isFinite(queued) || queued < latest)) {
+      violations.push(record.ccn);
+    }
+  }
+  assert.deepEqual(violations, []);
+});
+
 test('Grand View and Avera source reviews narrow four gates without overstating file verification', () => {
   const reconciliation = JSON.parse(read('nationwide-reconciliation.json'));
   const verification = JSON.parse(read('nationwide-verification.json'));

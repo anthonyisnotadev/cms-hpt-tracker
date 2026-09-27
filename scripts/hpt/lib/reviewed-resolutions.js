@@ -5,6 +5,7 @@ const crypto = require('crypto');
 const { csvToObjects } = require('./util');
 const { metadataStatus } = require('../recheck-interventions');
 const { extractDeclared, toISODate } = require('./probe');
+const { applyReviewedVerificationOverlays } = require('./reviewed-verification-overlays');
 
 // Apply a reviewed, dated ledger to the current presentation. Original audit
 // CSVs remain immutable, and base checks prevent an old correction overriding
@@ -13,7 +14,7 @@ function applyResolutions(compliance, manifest, gaps, resolutions = []) {
   const by = new Map(), history = {};
   for (const r of resolutions) {
     if (by.has(r.ccn)) throw new Error(`Duplicate resolution ${r.ccn}`);
-    if (!['replace', 'replace-observation', 'correct-site', 'quarantine', 'exempt-closed'].includes(r.action)) throw new Error(`Unknown resolution action ${r.action}`);
+    if (!['replace', 'replace-observation', 'correct-site', 'quarantine', 'exempt-closed', 'exempt-state-hospital'].includes(r.action)) throw new Error(`Unknown resolution action ${r.action}`);
     by.set(r.ccn, r);
   }
   const applied = new Map();
@@ -66,8 +67,23 @@ function applyResolutions(compliance, manifest, gaps, resolutions = []) {
     if (resolution.action === 'exempt-closed' && (!e?.closureDate || !e?.checked_at
         || !Array.isArray(e?.officialSources) || !e.officialSources.length))
       throw new Error(`Resolution ${row.ccn} lacks dated official closure evidence`);
+    if (resolution.action === 'exempt-state-hospital' && (resolution.official?.domain !== 'hhs.texas.gov'
+        || !e?.facilityName || !e?.checked_at
+        || !e?.facilityUrl || !e?.stateOperatorAuthority || !e?.stateOperatorSource
+        || !e?.federalRuleSource || !e?.federalRuleSection
+        || !Array.isArray(e?.stateHospitalStatuteFacilities) || !e.stateHospitalStatuteFacilities.includes(e.facilityName)
+        || !resolution.official?.domain))
+      throw new Error(`Resolution ${row.ccn} lacks exact state-hospital and federal-scope evidence`);
+    if (resolution.action === 'exempt-state-hospital'
+        && resolution.official?.page !== e.facilityUrl)
+      throw new Error(`Resolution ${row.ccn} official page must equal the exact facility page in its scope proof`);
     if (resolution.action === 'replace' || resolution.action === 'replace-observation') {
       const metadata = e && metadataStatus({ declared_date: e.date, version: e.version }, Date.parse(e.checked_at));
+      const pageLinkedThirdParty = e?.observedFinding === 'official-page-third-party-mrf'
+        && e.pointerIssue === 'page-linked-third-party-host'
+        && e.sourcePageUrl === e.pointerUrl
+        && (e.browserPageObservedAt || e.pageObservedAt)
+        && (e.browserPageStatus === 200 || e.pageStatus === 200);
       const observationValid = resolution.action !== 'replace-observation'
         || (e.observedFinding === 'mrf-stale-over-365-days' && metadata === 'date-over-365-days')
         || (e.observedFinding === 'old-template-version' && metadata === 'date-within-365-days-older-version')
@@ -104,7 +120,7 @@ function applyResolutions(compliance, manifest, gaps, resolutions = []) {
           && e.pointerIssue === 'pointer-file-dns-client-failure'
           && e.pointerMrfUrl && e.pointerMrfUrl !== e.url
           && Number(e.pointerMrfHttpStatus) === 0
-          && /resolving timed out/i.test(String(e.pointerMrfTransportError || ''))
+          && /(?:resolving timed out|could not resolve host|no such host|name resolution)/i.test(String(e.pointerMrfTransportError || ''))
           && e.browserTargetErrorCode === 'ERR_NAME_NOT_RESOLVED'
           && /^\d{4}-\d{2}-\d{2}$/.test(String(e.browserObservedOn || ''))
           && e.sourcePageUrl && e.sourcePageSha256
@@ -121,6 +137,11 @@ function applyResolutions(compliance, manifest, gaps, resolutions = []) {
           && e.identityPageUrl && /^[a-f0-9]{64}$/.test(String(e.identityPageSha256 || ''))
           && metadata === 'date-within-365-days-version-3')
         || (e.observedFinding === 'pointer-links-html-download-page-with-file'
+          && e.pointerIssue === 'mrf-url-resolves-html-page-linking-file'
+          && e.pointerMrfUrl && e.pointerMrfUrl !== e.url
+          && /^2\d\d$/.test(String(e.pointerMrfHttpStatus))
+          && ['date-within-365-days-version-3', 'date-within-365-days-older-version', 'date-over-365-days'].includes(metadata))
+        || (e.observedFinding === 'not-assessed-nationwide-linked-mrf-header-unmatched'
           && e.pointerIssue === 'mrf-url-resolves-html-page-linking-file'
           && e.pointerMrfUrl && e.pointerMrfUrl !== e.url
           && /^2\d\d$/.test(String(e.pointerMrfHttpStatus))
@@ -232,8 +253,20 @@ function applyResolutions(compliance, manifest, gaps, resolutions = []) {
           && e.pageMrfDate && Date.parse(e.pageMrfDate) < Date.parse(e.date)
           && e.pageMrfVersion && e.pageMrfVersion !== e.version
           && e.sourcePageUrl && /^[a-f0-9]{64}$/.test(String(e.sourcePageSha256 || ''))
+          && metadata === 'date-within-365-days-version-3')
+        || (e.observedFinding === 'official-page-third-party-mrf'
+          && e.pointerIssue === 'page-linked-third-party-host'
+          && e.sourcePageUrl === e.pointerUrl
+          && e.pricingToolUrl
+          && (e.browserPageObservedAt || e.pageObservedAt)
+          && (e.browserPageStatus === 200 || e.pageStatus === 200)
+          && e.pointerMrfUrl === e.url
+          && /^2\d\d$/.test(String(e.http_status))
+          && e.declared_hospital_name && e.location_name
+          && e.declared_address && e.facility_address
+          && e.declared_license_state === e.facility_state
           && metadata === 'date-within-365-days-version-3');
-      if (!e || e.identity !== 'corroborated' || !e.pointerUrl || !e.url || !e.pointerSha256
+      if (!e || e.identity !== 'corroborated' || !e.pointerUrl || !e.url || (!e.pointerSha256 && !pageLinkedThirdParty)
           || !/^2\d\d$/.test(String(e.http_status)) || !e.checked_at
           || (e.pointerMrfWrapperSha256 && (!/^[a-f0-9]{64}$/.test(e.pointerMrfWrapperSha256)
             || e.decodedPointerMrfUrl !== e.url
@@ -269,6 +302,10 @@ function applyResolutions(compliance, manifest, gaps, resolutions = []) {
       finding: 'not-applicable-closed', assessable: 'no', domain: resolution.official?.domain || row.domain,
       pointer_url: '', mrf_url: '', mrf_last_updated: '', mrf_days_since_update: '', cms_template_version: '',
       checked_at: e.checked_at, evidence: resolution.note };
+    if (resolution.action === 'exempt-state-hospital') return { ...row,
+      finding: 'not-applicable-state-hospital', assessable: 'no', domain: resolution.official.domain,
+      pointer_url: '', mrf_url: '', mrf_last_updated: '', mrf_days_since_update: '', cms_template_version: '',
+      checked_at: e.checked_at, evidence: resolution.note };
     return { ...row, finding: resolution.action === 'replace-observation' ? e.observedFinding : 'compliant-observed', assessable: 'yes',
       domain: e.officialDomain || new URL(e.pointerUrl).hostname, pointer_url: e.pointerUrl, mrf_url: e.url,
       mrf_last_updated: e.date || '', mrf_days_since_update: e.date
@@ -279,7 +316,8 @@ function applyResolutions(compliance, manifest, gaps, resolutions = []) {
   const rowBy = new Map(rows.map(r => [r.ccn, r]));
   const manBy = new Map(manifest.map(r => [r.ccn, r]));
   for (const [ccn, resolution] of applied) {
-    if (resolution.action === 'quarantine' || resolution.action === 'exempt-closed' || resolution.action === 'correct-site') { manBy.delete(ccn); continue; }
+    if (resolution.action === 'quarantine' || resolution.action === 'exempt-closed'
+        || resolution.action === 'exempt-state-hospital' || resolution.action === 'correct-site') { manBy.delete(ccn); continue; }
     const row = rowBy.get(ccn), e = resolution.evidence;
     const indirect = (e.pointerMrfUrl && e.pointerMrfUrl !== e.url)
       || (e.pointerMrfWrapperSha256 && e.decodedPointerMrfUrl === e.url);
@@ -421,6 +459,7 @@ function loadReviewedView(dir, options = {}) {
       row.cms_template_version = correction.corrected_literal_value;
       row.parser_correction = correction;
     }
+    report.records = applyReviewedVerificationOverlays(report.records || [], dir);
     const standingBeforeNationwide = new Map(view.compliance.map(row => [row.ccn, row]));
     view.compliance = require('./nationwide-verification-view').applyNationwideVerification(view.compliance, report.records || []);
     const nationwideByCcn = new Map((report.records || []).map(row => [row.ccn, row]));
@@ -431,9 +470,12 @@ function loadReviewedView(dir, options = {}) {
           || !prior.mrf_url || prior.mrf_url === row.mrf_url
           || !row.mrf_url || row.assessable !== 'yes'
           || observation.mrf_url !== row.mrf_url
-          || observation.facility_identity !== 'corroborated-by-pointer-and-header') continue;
+          || (observation.facility_identity !== 'corroborated-by-pointer-and-header'
+            && !observation.reviewed_page_file_overlay)) continue;
       view.history[row.ccn] = { ...prior, history_source: 'nationwide-overlay',
-        resolution_note: 'A later exact-CCN pointer and matched file header replaced this standing URL. The older file, date and finding are retained as dated history, not a current verification.' };
+        resolution_note: observation.reviewed_page_file_overlay
+          ? `A later reviewed first-party page-file proof replaced the older MRF route; ${observation.reviewed_page_file_overlay} is retained as the dated evidence. The prior finding and URL remain in history.`
+          : 'A later exact-CCN pointer and matched file header replaced this standing URL. The older file, date and finding are retained as dated history, not a current verification.' };
     }
     view.manifest = require('./nationwide-verification-view').synchronizeManifest(view.manifest, view.compliance);
     const located = new Set(view.compliance.filter(row =>

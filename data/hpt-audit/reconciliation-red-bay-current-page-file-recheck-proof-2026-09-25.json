@@ -1,0 +1,25 @@
+{
+  "ccn": "011302",
+  "observed_at": "2026-09-25T12:00:00Z",
+  "official_page_url": "https://hh2026.cloudaccess.host/patients-visitors/price-transparency/",
+  "official_page_status": 200,
+  "official_page_updated": "2026-08-20",
+  "official_facility_name": "Red Bay Hospital",
+  "official_facility_address": "211 Hospital Road, Red Bay, AL 35582",
+  "linked_file_url": "https://hh2026.cloudaccess.host/wp-content/uploads/472323163_red-bay-hospital_standardcharges.csv",
+  "linked_file_content_type": "text/csv",
+  "web_fetch_status": 400,
+  "browser_status": "ERR_CONNECTION_CLOSED",
+  "file_bytes_retained": 0,
+  "disposition": "official-page-file-linkage-current-transport-unresolved",
+  "interpretation": "The current HH Health price-transparency page lists a Red Bay Hospital standard-charge CSV and identifies the 211 Hospital Road campus. Web retrieval recognizes the exact CSV as text/csv but does not return bytes; browser retrieval closes the connection. The older 404 observation is superseded as a transport result, not converted into file absence.",
+  "next_action": "Retry the exact current page-linked CSV and root cms-hpt.txt through a permitted client; require bounded bytes, Red Bay header identity, Alabama state, CMS date/version and usable rows before promotion."
+  ,"latest_search_recheck_2026_09_26": {
+    "observed_at": "2026-09-26T23:58:00Z",
+    "source": "https://hh2026.cloudaccess.host/patients-visitors/price-transparency/",
+    "page_last_updated": "2026-08-20",
+    "visible_facility": "Red Bay Hospital",
+    "visible_file_url": "https://hh2026.cloudaccess.host/wp-content/uploads/472323163_red-bay-hospital_standardcharges.csv",
+    "result": "Current first-party page still lists the Red Bay-specific CSV. The permitted web reader recognized the target as text/csv but could not return bytes; no newer alternate MRF was exposed. No promotion made."
+  }
+}

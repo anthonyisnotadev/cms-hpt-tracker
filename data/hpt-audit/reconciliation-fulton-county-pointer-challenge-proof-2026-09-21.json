@@ -1,0 +1,17 @@
+{
+  "ccn": "361333",
+  "observed_at": "2026-09-21T21:29:00Z",
+  "official_pricing_page": "https://fultoncountyhealthcenter.org/price-transparency/",
+  "official_page_status": 200,
+  "official_facility_name": "Fulton County Health Center",
+  "roster_identity": "FULTON COUNTY HEALTH CENTER",
+  "official_facility_address": "725 S. Shoop Ave, Wauseon, OH 43567",
+  "pointer_url": "https://fultoncountyhealthcenter.org/?force_download=24959",
+  "pointer_browser_observation": "The current first-party page exposes the link as Fulton County Health Center Machine-Readable Files.",
+  "pointer_transport_observation": "A direct HEAD request returned HTTP 202 with Content-Type text/html and SG-Captcha: challenge instead of the file.",
+  "pointer_status": 202,
+  "mrf_status": "access-challenged",
+  "disposition": "pointer-access-denied-to-client",
+  "interpretation": "The official pricing page and facility identity are confirmed, and a facility-specific MRF link is present. Automated retrieval is challenged by the site's SG-Captcha response; no file identity or metadata is inferred from that transport result.",
+  "next_action": "Retry the exact first-party MRF link with an interactive browser/download fallback or obtain a publisher-provided current CSV/JSON file; do not infer compliance or file contents from the challenge."
+}

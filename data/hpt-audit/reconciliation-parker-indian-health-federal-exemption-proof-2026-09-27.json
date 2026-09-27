@@ -1,0 +1,28 @@
+{
+  "ccn": "031307",
+  "observed_at": "2026-09-27T11:17:46Z",
+  "official_site": "https://www.ihs.gov/",
+  "official_facility_page": "https://www.ihs.gov/Phoenix/healthcarefacilities/coloradoriver/",
+  "official_identity": "Current IHS browser page identifies Parker Indian Health Center at 12033 Agency Road, Parker, AZ 85344, as a 17-bed Critical Access Hospital served by the Colorado River Service Unit.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=031307&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_record": {
+    "facility_id": "031307",
+    "facility_name": "PARKER INDIAN HEALTH CENTER",
+    "address": "12033 AGENCY ROAD",
+    "citytown": "PARKER",
+    "state": "AZ",
+    "zip_code": "85344",
+    "hospital_type": "Critical Access Hospitals",
+    "hospital_ownership": "Government - Federal"
+  },
+  "cms_ccn_roster_source": "https://www.cms.gov/files/document/indian-healt-service-cms-all-final.pdf",
+  "cms_ccn_roster_observation": "The CMS IHS-Tribal facilities listing identifies PARKER INDIAN HEALTH CENTER as a Hospital with CCN 031307 in Parker, AZ.",
+  "ihs_federal_status_source": "https://www.ihs.gov/newsroom/factsheets/critical-access-hospitals/",
+  "ihs_federal_status_observation": "The IHS Critical Access Hospitals fact sheet lists Parker Indian Hospital as Federal.",
+  "regulatory_source": "https://www.govinfo.gov/content/pkg/CFR-2025-title45-vol2/pdf/CFR-2025-title45-vol2-sec180-40.pdf",
+  "regulatory_observation": "The 2025 official CFR text of 45 CFR 180.30(b) states Federal and State hospitals are deemed by CMS in compliance with Part 180, including federally owned hospital facilities and hospitals operated by an Indian Health Program.",
+  "disposition": "scope-exempt-federal",
+  "interpretation": "The exact CMS facility ID, name, address, state and Government - Federal ownership agree with the current IHS facility page; the IHS CAH list identifies Parker as Federal. This supports the project's federal scope-exempt classification under 45 CFR 180.30. It is not a claim about MRF availability or file quality.",
+  "next_action": "Retain the federal scope exclusion unless CMS ownership, facility identity or regulatory scope changes."
+}

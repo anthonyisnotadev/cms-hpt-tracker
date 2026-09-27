@@ -1,0 +1,18 @@
+{
+  "ccn": "521347",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://www.wwhealth.org/",
+  "official_identity_sources": [
+    "https://www.wwhealth.org/",
+    "https://www.wwhealth.org/price-transparency/",
+    "https://www.wwhealth.org/wp-content/uploads/2026/07/360808526_baldwin-area-medical-center-inc_standardcharges.csv",
+    "https://turquoise.health/providers/baldwin-area-medical-center-inc/information"
+  ],
+  "official_identity": "Western Wisconsin Health is the Baldwin, Wisconsin hospital associated with CCN 521347. The first-party site identifies Western Wisconsin Health and its Baldwin campus; its Price Transparency page links the facility-specific MRF.",
+  "browser_observation": "Browser automation opened the official Western Wisconsin Health Price Transparency page. The page states that the machine-readable standard-charge list is available and exposes the Baldwin Area Medical Center CSV.",
+  "pricing_url": "https://www.wwhealth.org/wp-content/uploads/2026/07/360808526_baldwin-area-medical-center-inc_standardcharges.csv",
+  "pricing_observation": "The linked CSV returned HTTP 200 text/csv, 56,941,041 bytes, SHA-256 183a9b9f005d1f2afde616ab7c12b8515ce326225cf3603cdf0ff368236789ba. Its metadata declares Baldwin Area Medical Center Inc., Western Wisconsin Health, 1100 Bergslien Street, Baldwin WI 54002, licenses 1052|WI, NPIs 1467496133|1336228865|1447759428, CMS 3.0.0, update date 2026-06-24, as-of date 2026-04-01, attester Lea Kaiser, attestation TRUE, and 189,009 data rows.",
+  "disposition": "verified-current-mrf",
+  "interpretation": "Current first-party identity, pricing page, exact Baldwin address/state and MRF metadata converge; this is supported observed MRF evidence, not a legal compliance determination.",
+  "next_action": "Retain exact official-page and file provenance and recheck on the normal freshness cycle."
+}

@@ -1,0 +1,23 @@
+{
+  "ccn": "010780",
+  "observed_at": "2026-09-25T01:01:05Z",
+  "cms_dataset": "Hospital General Information",
+  "cms_dataset_url": "https://data.cms.gov/provider-data/dataset/xubh-q36u",
+  "cms_query_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=010780&conditions%5B0%5D%5Boperator%5D=%3D",
+  "http_status": 200,
+  "response_bytes": 6838,
+  "response_sha256": "e1b73109555691ec325b2915301b5aae55f8599c44668a56273eb91b66cedfaf",
+  "cms_record": {
+    "facility_id": "010780",
+    "facility_name": "EAMC - LANIER",
+    "address": "4800 48TH STREET",
+    "citytown": "VALLEY",
+    "state": "AL",
+    "zip_code": "36854",
+    "hospital_type": "Rural Emergency Hospital",
+    "hospital_ownership": "Government - Hospital District or Authority"
+  },
+  "disposition": "current-cms-reh-identity-corroborated-pointer-file-still-unresolved",
+  "interpretation": "The current CMS Hospital General Information API independently confirms CCN 010780, EAMC - Lanier, at 4800 48th Street, Valley, Alabama, as a Rural Emergency Hospital. This confirms the exact CCN identity and current scope but does not assign the current Opelika East Alabama pointer/file or establish a current Lanier MRF.",
+  "next_action": "Obtain a separate first-party EAMC-Lanier pointer or facility-specific CMS CSV/JSON naming the Valley campus; retain the current Opelika pointer/file separately and do not infer file coverage from shared system ownership."
+}

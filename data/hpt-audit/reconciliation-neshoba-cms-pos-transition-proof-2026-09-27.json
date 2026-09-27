@@ -1,0 +1,65 @@
+{
+  "ccns": ["250043", "251340"],
+  "observed_at": "2026-09-27T06:32:57Z",
+  "source": {
+    "dataset": "CMS Provider of Services File - Quality Improvement and Evaluation System (QIES)",
+    "dataset_url": "https://data.cms.gov/provider-characteristics/hospitals-and-other-facilities/provider-of-services-file-quality-improvement-and-evaluation-system",
+    "release": "Q1 2026",
+    "dataset_version_id": "bb342fae-b551-40fd-a738-e2e5878f3bbb",
+    "query_api": "https://data.cms.gov/data-api/v1/dataset/bb342fae-b551-40fd-a738-e2e5878f3bbb/data",
+    "scope_note": "CMS describes this quarterly file as provider demographic and certification information, including CCN, name, address, and provider characteristics. Rows below were retrieved by exact PRVDR_NUM filters; this is not a CMS-issued conversion announcement."
+  },
+  "cms_rows": [
+    {
+      "ccn": "250043",
+      "http_status": 200,
+      "query": "https://data.cms.gov/data-api/v1/dataset/bb342fae-b551-40fd-a738-e2e5878f3bbb/data?filter%5BPRVDR_NUM%5D=250043&size=5",
+      "provider_name": "NESHOBA COUNTY GENERAL HOSPITAL",
+      "address": "1001 HOLLAND AVENUE, PHILADELPHIA, MS",
+      "provider_category_code": "01",
+      "provider_subtype_code": "01",
+      "termination_code": "07",
+      "termination_or_expiration_date": "20251231",
+      "certification_date": "20170920",
+      "certification_action_code": "5",
+      "original_participation_date": "",
+      "eligibility": "Y"
+    },
+    {
+      "ccn": "251340",
+      "http_status": 200,
+      "query": "https://data.cms.gov/data-api/v1/dataset/bb342fae-b551-40fd-a738-e2e5878f3bbb/data?filter%5BPRVDR_NUM%5D=251340&size=5",
+      "provider_name": "NESHOBA COUNTY GENERAL HOSPITAL",
+      "address": "1001 HOLLAND AVENUE, PHILADELPHIA, MS",
+      "provider_category_code": "01",
+      "provider_subtype_code": "11",
+      "termination_code": "00",
+      "termination_or_expiration_date": "",
+      "certification_date": "20170920",
+      "certification_action_code": "1",
+      "original_participation_date": "20260101",
+      "eligibility": "Y"
+    }
+  ],
+  "field_interpretation": {
+    "termination_code_00": "Active provider.",
+    "termination_code_07": "Other-provider status change.",
+    "termination_date": "CMS POS layout defines this as the date the provider was terminated.",
+    "caveat": "The status code does not identify the legal or operational reason for the change; the exact file-to-CCN assignment still requires current publisher-pointer or publisher confirmation."
+  },
+  "file_context": {
+    "retained_pointer_url": "https://www.neshobageneral.com/cms-hpt.txt",
+    "retained_pointer_sha256": "e4e53670699a3f9b419b46cefac5e0a1e31b1d87e48e715027767fa82172960f",
+    "retained_mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbNCGHPHILADELPHIAMS&type=CDMWithoutLabel&fileType=CSV",
+    "retained_file_proof": "reconciliation-neshoba-ccn-transition-proof.json",
+    "file_sha256": "f70004d1303ba437413c0b95763b398a3c53e80a552b6f4f2f69d4dabd06c06f",
+    "file_bytes": 46235873,
+    "declared_date": "2026-06-04",
+    "declared_cms_template_version": "3.0.0",
+    "latest_pointer_status": "HTTP 403 managed challenge; no current pointer bytes"
+  },
+  "interpretation": "This is a genuine primary-source evidence gain. CMS QIES POS places a termination boundary for acute-care CCN 250043 on 2025-12-31 and records CCN 251340 as active with original participation date 2026-01-01. The retained pointer-linked facility file is dated 2026-06-04, after that boundary, and matches the same Neshoba campus. This makes the active successor CCN the supported current-scope candidate and rules out treating the June 2026 file as contemporaneous evidence for active 250043. Because a fresh pointer or publisher statement naming the CCN was not recovered, do not assert a definitive file-to-CCN assignment or erase 250043's historical HPT review.",
+  "disposition": "effective-dated-cms-transition-confirmed-current-file-ccn-scope-pending",
+  "unresolved_count_change": 0,
+  "next_action": "For 250043, retain the CMS termination boundary as historical CCN evidence and stop searching for a current acute-care file under that retired identifier unless evidence shows it remained separately applicable. For 251340, recover current pointer bytes or publisher confirmation that the June 4, 2026 MRF serves the active CAH CCN; keep its stronger standing finding until any contrary evidence is resolved."
+}

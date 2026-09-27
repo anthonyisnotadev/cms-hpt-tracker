@@ -1,0 +1,25 @@
+{
+  "ccn": "404007",
+  "observed_at": "2026-09-22T18:30:00Z",
+  "proof_file": "reconciliation-cabo-rojo-transition-proof-2026-09-22.json",
+  "official_domain": "hospitalmetrocaborojo.com",
+  "official_facility_page": "https://hospitalmetrocaborojo.com/",
+  "official_page_status": 202,
+  "official_facility_name": "Hospital Metropolitano Psiquiátrico de Cabo Rojo",
+  "official_facility_address": "108 Muñoz Rivera Street, Cabo Rojo, PR 00623",
+  "official_page_observation": "The legacy operator domain serves a maintenance page. An official/current successor site for Hospital Oasis de Vida was found at oasisvida.org after a documented ownership transition; it confirms the current operator context but exposes no public price-transparency or CMS MRF route.",
+  "successor_site": "https://oasisvida.org/",
+  "successor_site_status": 200,
+  "route_checks": [
+    {"url":"https://hospitalmetrocaborojo.com/cms-hpt.txt","status":202},
+    {"url":"https://hospitalmetrocaborojo.com/price-transparency","status":202},
+    {"url":"https://hospitalmetrocaborojo.com/transparencia-de-precios","status":202},
+    {"url":"https://oasisvida.org/cms-hpt.txt","status":404},
+    {"url":"https://oasisvida.org/price-transparency","status":404},
+    {"url":"https://oasisvida.org/transparencia-de-precios","status":404}
+  ],
+  "manual_identity_gate": "official-legacy-domain-successor-site-and-address-agree",
+  "disposition": "pointer-discovery-incomplete",
+  "interpretation": "The current evidence documents a facility/operator transition and the absence of a recovered public MRF on the successor site. No psychiatric scope exemption, compliance, file-absence or closure conclusion is inferred.",
+  "next_action": "Search the Oasis de Vida operator’s facility-specific publisher resources and retry for a public CSV/JSON/ZIP MRF or cms-hpt.txt pointer."
+}

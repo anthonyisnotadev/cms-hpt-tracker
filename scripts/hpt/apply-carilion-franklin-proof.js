@@ -1,0 +1,14 @@
+const fs = require('node:fs');
+const path = require('node:path');
+const root = path.resolve(__dirname, '../..');
+const audit = path.join(root, 'data/hpt-audit');
+const proofFile = 'reconciliation-carilion-490089-current-pointer-proof-2026-09-26.json';
+const proof = { ccn: '490089', observed_at: '2026-09-26T04:35:00Z', official_domain: 'https://www.carilionclinic.org/', pointer_url: 'https://carilionclinic.org/cms-hpt.txt', pointer_status: 200, pointer_declared_mrf_url: 'https://www.carilionclinic.org/540480606_Carilion-Franklin-Memorial-Hospital_StandardCharges.csv', mrf_url: 'https://www.carilionclinic.org/540480606_Carilion-Franklin-Memorial-Hospital_StandardCharges.csv', mrf_status: 206, declared_hospital_name: 'Carilion Franklin Memorial Hospital', declared_location_name: 'Carilion Franklin Memorial Hospital', declared_address: '390 S Main St, Rocky Mt, VA 24151', declared_license_state: 'VA', declared_last_updated: '2025-12-15', cms_template_version: '3.0.0', attestation: true, file_kind: 'csv', identity_basis: 'Official Carilion pointer and bounded CSV header agree on facility name, exact address, Virginia license state, current-enough date, CMS 3.0.0, and attestation. Giles and Stonewall observations remain unresolved because their linked headers do not identify the target facility/address.', next_action: 'Retain as verified current MRF and recheck on the next pointer update.' };
+fs.writeFileSync(path.join(audit, proofFile), JSON.stringify(proof, null, 2) + '\n');
+const manualPath = path.join(audit, 'reconciliation-manual-access-observations.json');
+const manual = JSON.parse(fs.readFileSync(manualPath, 'utf8'));
+manual.records = manual.records.filter(r => r.ccn !== proof.ccn);
+manual.records.push({ ...proof, proof_file: proofFile, manual_disposition: 'verified-current-mrf', disposition: 'verified-current-mrf', manual_identity_gate: 'official-pointer-csv-exact-name-address-state-date-template-attestation-agree' });
+manual.records.sort((a, b) => a.ccn.localeCompare(b.ccn));
+fs.writeFileSync(manualPath, JSON.stringify(manual, null, 2) + '\n');
+console.log(JSON.stringify({ applied: proof.ccn }, null, 2));

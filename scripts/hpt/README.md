@@ -269,7 +269,8 @@ interchangeable, and treating them as one list wastes money:
 | `run-pointers-first` | nothing - run the free pass | not a gap yet, just unrun work |
 | `name-match-review` | `adjudicate`, or manual | the pointer file already works; discovery is not the problem |
 | `unblocker` | Decodo / Oxylabs | the domain is right and refusing us; a search returns the same host |
-| `exempt-federal` | skip | VA/DoD are outside 45 CFR 180 |
+| `exempt-federal` | skip | Federally owned hospitals are deemed in compliance under 45 CFR 180.30(b)(1) |
+| `exempt-ihs-program` | retain evidence | Hospitals operated by an Indian Health Program are covered by 45 CFR 180.30(b)(2); verify the specific program/contract or compact and operator |
 
 Two things this prevents. Blocked hospitals are counted per *domain*, not per
 hospital - 124 blocked hospitals were only 66 domains, so pricing them per

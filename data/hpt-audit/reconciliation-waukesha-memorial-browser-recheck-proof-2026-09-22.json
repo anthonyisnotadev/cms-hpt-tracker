@@ -1,0 +1,17 @@
+{
+  "ccn": "520008",
+  "observed_at": "2026-09-22T16:00:00Z",
+  "official_pricing_page": "https://www.prohealthcare.org/",
+  "official_pricing_page_status": 200,
+  "official_page_observation": "The first-party ProHealth Care site loaded in the interactive browser and identifies the Waukesha County, Wisconsin health system. The exact cms-hpt.txt route returned a first-party Access Denied response; no pointer text or MRF URL was available.",
+  "cms_pointer_url": "https://www.prohealthcare.org/cms-hpt.txt",
+  "cms_pointer_result": "First-party browser access returned an Access Denied page; no pointer content was available in this recheck.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=520008&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6591,
+  "cms_api_response_sha256": "3F7B0B5429D4DED3CD6927F70527A534B5CF11344B8FB2A6EB4C08184A2B07AD",
+  "cms_record": { "facility_id": "520008", "facility_name": "WAUKESHA MEMORIAL HOSPITAL", "address": "725 AMERICAN AVE", "citytown": "WAUKESHA", "state": "WI", "zip_code": "53188", "hospital_type": "Acute Care Hospitals", "hospital_ownership": "Voluntary non-profit - Private", "emergency_services": "Yes" },
+  "disposition": "official-domain-identity-confirmed-pointer-access-denied-no-mrf-observed",
+  "interpretation": "The official page and CMS record agree on the Waukesha Memorial Hospital identity and Wisconsin location. The pointer result is a transport/access observation only; it does not establish file absence, noncompliance, or a facility closure.",
+  "next_action": "Retry the exact first-party pointer through a permitted publisher/download route, then verify declared name, Waukesha address/state, date, version and usable bytes before promotion."
+}

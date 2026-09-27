@@ -1,0 +1,16 @@
+{
+  "ccn": "310011",
+  "observed_at": "2026-09-21T13:15:00Z",
+  "official_domain": "caperegional.com",
+  "retrieval_method": "bounded HTTPS requests",
+  "checked_urls": [
+    "https://caperegional.com/cms-hpt.txt",
+    "https://www.caperegional.com/cms-hpt.txt",
+    "https://caperegional.com/patients-and-visitors/price-transparency/",
+    "https://www.caperegional.com/patients-and-visitors/price-transparency/"
+  ],
+  "transport_result": "DNS resolution failed for www.caperegional.com; no pointer, pricing page, redirect, or MRF bytes were recovered.",
+  "disposition": "official-domain-dns-unresolved-no-file-claim",
+  "interpretation": "This is a transport observation for Cape Regional only. It does not establish domain ownership, file absence, closure, or compliance status.",
+  "next_action": "Retry the exact first-party domain through an authorized browser or publisher-provided route after a material DNS/site change; require a facility-specific cms-hpt.txt and CMS CSV/JSON bytes before promotion."
+}

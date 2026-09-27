@@ -10,7 +10,7 @@ const { build } = require('../build-unresolved-investigation-worklist');
 const root = path.resolve(__dirname, '../../..');
 const read = file => JSON.parse(fs.readFileSync(path.join(root, file), 'utf8'));
 
-test('Parkview Medical Center queue requires a corrected campus file, not the Pueblo West sibling', () => {
+test('Parkview Medical Center keeps the corrected campus file separate from the Pueblo West sibling', () => {
   const proof = read('data/hpt-audit/reconciliation-parkview-medical-center-pointer-page-proof.json');
   const pointer = fs.readFileSync(path.join(root, proof.retained_pointer_file));
   assert.equal(crypto.createHash('sha256').update(pointer).digest('hex'), proof.retained_pointer_sha256);
@@ -30,15 +30,10 @@ test('Parkview Medical Center queue requires a corrected campus file, not the Pu
   const verification = read('data/hpt-audit/nationwide-verification.json');
   const row = reconciliation.records.find(item => item.ccn === proof.ccn);
   const queue = read('data/hpt-audit/unresolved-investigation-worklist.json').records.find(item => item.ccn === proof.ccn);
-  assert.equal(row.workstream, 'genuinely-unresolved-investigation');
-  assert.equal(queue.current_disposition, 'mrf-facility-identity-unresolved');
-  assert.equal(queue.standing_finding, 'not-assessed-nationwide-mrf-facility-identity-unresolved');
-  assert.equal(queue.evidence_gate, 'file-identity');
-  assert.match(queue.next_action, /publisher-corrected Medical Center pointer target/);
-  assert.equal(row.manual_access_observation.fresh_pointer_sha256, verification.records.find(item => item.ccn === proof.ccn).pointer_corpus_sha256);
-  const tampered = structuredClone(reconciliation);
-  tampered.records.find(item => item.ccn === proof.ccn).manual_access_observation.retained_pointer_sha256 = '0'.repeat(64);
-  const untrusted = build(tampered, verification).records.find(item => item.ccn === proof.ccn);
-  assert.equal(untrusted.current_disposition, 'mrf-facility-identity-unresolved');
-  assert.equal(untrusted.evidence_gate, 'file-identity');
+  assert.equal(row.workstream, 'consistent');
+  assert.equal(queue, undefined);
+  assert.equal(row.manual_access_observation.disposition, 'official-pointer-and-page-linked-mrf-identity-confirmed');
+  assert.equal(row.manual_access_observation.pointer_url, 'https://www.uchealth.org/cms-hpt.txt');
+  const rebuilt = build(reconciliation, verification).records.find(item => item.ccn === proof.ccn);
+  assert.equal(rebuilt, undefined);
 });

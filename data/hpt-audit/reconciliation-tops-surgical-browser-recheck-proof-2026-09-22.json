@@ -1,0 +1,17 @@
+{
+  "ccn": "450774",
+  "observed_at": "2026-09-22T09:30:00Z",
+  "official_pricing_page": "https://tops-hospital.com/",
+  "official_pricing_page_status": 200,
+  "official_page_observation": "The first-party TOPS Surgical Specialty Hospital site loaded in the interactive browser and identifies the hospital. The exact cms-hpt.txt route was blocked by the browser client before pointer content could be read.",
+  "cms_pointer_url": "https://tops-hospital.com/cms-hpt.txt",
+  "cms_pointer_result": "Interactive browser navigation returned net::ERR_BLOCKED_BY_CLIENT; no pointer content or MRF URL was available in this recheck.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=450774&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6586,
+  "cms_api_response_sha256": "CF5F28C58743A757650B46C279554086131F5A8D61566CEABB8231D0BECF921D",
+  "cms_record": { "facility_id": "450774", "facility_name": "TOPS SURGICAL SPECIALTY HOSPITAL", "address": "17080 RED OAK DRIVE", "citytown": "HOUSTON", "state": "TX", "zip_code": "77090", "hospital_type": "Acute Care Hospitals", "hospital_ownership": "Physician", "emergency_services": "No" },
+  "disposition": "official-domain-identity-confirmed-pointer-browser-client-blocked-no-mrf-observed",
+  "interpretation": "The official page and CMS record agree on the TOPS Surgical Specialty Hospital identity and Texas location. The pointer result is a browser transport observation only; it does not establish file absence, noncompliance, or a facility closure.",
+  "next_action": "Retry the exact first-party pointer through a permitted publisher/download route, then verify declared name, address, Texas state, date, version and usable bytes before promotion."
+}

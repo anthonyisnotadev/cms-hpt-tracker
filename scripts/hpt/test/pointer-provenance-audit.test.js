@@ -21,6 +21,7 @@ test('pointer provenance audit separates exact matches, changed bytes, and unava
   const audit = build(verification, corpus);
   assert.deepEqual(audit.summary, { hospitals: 3, pointer_provenance_rows: 3,
     exact_url_hash_correlated: 1, hash_unmatched_for_exact_url: 1, no_exact_url_corpus_entry: 1,
+    manual_hash_bound_rows: 0,
     historical_pointer_rows: 0, historical_not_indexed: 0, historical_hash_correlated: 0, historical_hash_unmatched: 0 });
   assert.equal(audit.unmatched[0].ccn, '010002');
   assert.equal(audit.unindexed[0].ccn, '010003');
@@ -53,4 +54,5 @@ test('generated pointer provenance inventory covers the 5,419-CCN overlay', () =
   assert.ok(audit.historical.every(row => row.retained_raw_status === 'hash-corroborated'));
   assert.equal(audit.summary.historical_not_indexed, 84);
   assert.equal(audit.summary.no_exact_url_corpus_entry, 0);
+  assert.equal(audit.summary.manual_hash_bound_rows, 27);
 });

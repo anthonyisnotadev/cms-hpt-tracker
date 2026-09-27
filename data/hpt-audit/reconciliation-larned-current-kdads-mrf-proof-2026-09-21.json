@@ -1,0 +1,14 @@
+{
+  "ccn": "174006",
+  "observed_at": "2026-09-21T14:00:00Z",
+  "official_pricing_page": "https://www.kdads.ks.gov/state-hospitals/larned-state-hospital-lsh/lsh-business-services-patient-accounts",
+  "official_page_status": 200,
+  "official_page_observation": "The current Kansas Department for Aging and Disability Services Larned State Hospital business-services page describes the comprehensive machine-readable file requirement and links Larned State Hospital Charges as an XLSX document.",
+  "candidate_file_url": "https://www.kdads.ks.gov/home/showpublisheddocument/1768/638581901446870000",
+  "candidate_file_observation": "The official page identifies the target as an XLSX charge document. The web retrieval returned an OK response but did not expose workbook bytes or parsed metadata through the fetch tool.",
+  "roster_identity": "LARNED STATE HOSPITAL",
+  "roster_address": "1301 KS Highway 264, Larned, KS 67550",
+  "disposition": "official-state-page-current-charge-file-linkage-workbook-unverified",
+  "interpretation": "This is new facility-specific state-agency pricing linkage evidence, not a verified CMS MRF. No workbook bytes, declared facility metadata, CMS version or parsed usability were observed; no compliance conclusion is inferred.",
+  "next_action": "Retrieve the official XLSX through a permitted browser or download-capable route, then verify workbook bytes, facility identity/address/Kansas state, declared date/version and whether it is a CMS 3.0.0 MRF before promotion."
+}

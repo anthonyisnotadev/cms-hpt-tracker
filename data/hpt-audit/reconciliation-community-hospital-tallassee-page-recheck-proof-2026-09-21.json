@@ -1,0 +1,41 @@
+{
+  "ccn": "010034",
+  "observed_at": "2026-09-21T04:39:47Z",
+  "proof_file": "reconciliation-community-hospital-tallassee-page-recheck-proof-2026-09-21.json",
+  "official_site": "https://chal.org/",
+  "official_pricing_page": "https://chal.org/about/resources",
+  "official_facility_name": "Community Hospital, Inc.",
+  "official_facility_address": "805 Friendship Road, Tallassee, AL 36078",
+  "browser_observation": "Browser automation loaded the first-party Community Hospital site and its Patient Resources & Price Transparency page. The page identifies the Tallassee campus and links a standard-charges CSV whose filename is explicitly dated 12_2020.",
+  "page_file_url": "https://chal.org/Community_Hospital_Machine_Readable_Standard_Charges_12_2020.csv",
+  "page_file_status": 200,
+  "page_file_content_type": "text/csv",
+  "page_file_bytes": 434296,
+  "page_file_last_modified": "Tue, 20 Jul 2021 17:04:06 GMT",
+  "page_file_sha256": "43E1F65AA95D102F7DDEE2C7A7C56B06C4E98DCD418BB6F79467BD9CFC583A1F",
+  "page_file_observation": "The linked CSV is a 434,296-byte historical 2020 file. Its columns include gross, discounted cash, minimum/maximum negotiated and payer negotiated charges, but it has no CMS 3.0.0 header, last_updated_on field, attestation or facility metadata. It is not current MRF evidence.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=010034&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6648,
+  "cms_api_response_sha256": "FF206D183DE7AF919B7E6EFC2A079EBDE216F8130AD466E4D792BC1CEFA599EC",
+  "cms_record": {
+    "facility_id": "010034",
+    "facility_name": "COMMUNITY HOSPITAL INC",
+    "address": "805 FRIENDSHIP ROAD",
+    "citytown": "TALLASSEE",
+    "state": "AL",
+    "zip_code": "36078",
+    "hospital_type": "Acute Care Hospitals"
+  },
+  "latest_search_recheck_2026_09_26": {
+    "observed_at": "2026-09-26T23:50:00Z",
+    "source_page_url": "https://www.chal.org/about/resources",
+    "visible_standard_charge_links": [
+      "https://chal.org/Community_Hospital_Machine_Readable_Standard_Charges_12_2020.csv"
+    ],
+    "result": "The current first-party page still exposes the same explicitly dated 12_2020 CSV as its standard-charge download; no newer CMS CSV/JSON MRF link was found."
+  },
+  "disposition": "official-page-links-historical-2020-file-current-mrf-unresolved",
+  "interpretation": "The current first-party identity and page are confirmed, and the linked object is accessible, but it is explicitly historical and lacks current CMS MRF metadata. This narrows the pointer/site uncertainty without supporting promotion or a compliance conclusion.",
+  "next_action": "Obtain a current facility-specific CMS CSV or JSON from Community Hospital or its authorized publisher; verify declared Tallassee identity, Alabama metadata, date/version, payer structure, attestation and parsed usability before promotion."
+}

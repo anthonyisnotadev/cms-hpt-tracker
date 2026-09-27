@@ -1,0 +1,14 @@
+{
+  "ccn":"151329","observed_at":"2026-09-23T06:50:00Z",
+  "official_site":"https://www.mmhealth.org/",
+  "official_pricing_page":"https://www.mmhealth.org/for-patients/bill-pay/financial-resources/price-transparency/",
+  "official_page_observation":"The first-party Margaret Mary Health Price Transparency page links a current machine-readable CSV and shoppable-services XLSX.",
+  "pointer_url":"https://www.mmhealth.org/cms-hpt.txt","pointer_status":"HTTP 404 Not Found",
+  "mrf_url":"https://www.mmhealth.org/wp-content/uploads/2026/06/356067049_Margaret-Mary-Health_standardcharges-2.csv","mrf_status":206,"mrf_response_bytes":131072,"mrf_content_range":"bytes 0-131071 (total 8614209)","mrf_response_sha256":"f8ff7e8dd9640620eda2c332ecf911b873d7f548078192e2d744ef63381a71ae",
+  "mrf_complete_retrieval":{"status":200,"response_bytes":8614209,"sha256":"E9062AC43E8E682C1714D65329F0FCB3C3E5D9D58567972A42EEFD0723DA935F","data_rows":10582,"retrieved_at":"2026-09-23T12:00:00Z"},
+  "declared_last_updated":"2026-04-08","cms_template_version":"2.0.0","declared_hospital_name":"Margaret Mary Health","declared_location_name":"Batesville","declared_address":"321 Mitchell Avenue","declared_license_state":"OH","declared_npi":"1558368449, 1639398688, 1831318880","declared_attester":"Craig Gilliland",
+  "cms_api_url":"https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=151329&conditions%5B0%5D%5Boperator%5D=%3D","cms_api_status":200,"cms_api_response_bytes":6791,"cms_api_response_sha256":"84715DEDF93ED584EA8557D5AE82E0806024590D1945C534B8A7180EE841D9E0","cms_record":{"facility_id":"151329","facility_name":"MARGARET MARY COMMUNITY HOSPITAL INC","address":"321 MITCHELL AVE","citytown":"BATESVILLE","state":"IN","zip_code":"47006"},
+  "disposition":"browser-file-license-state-conflict",
+  "interpretation":"The first-party pricing page links a machine-readable CSV whose facility name, Batesville address, date and NPI metadata are observed, but the header declares license_number|OH while CMS identifies the hospital in Indiana. The root pointer is 404. This is retained as a documented file-state conflict with no promotion or legal compliance conclusion.",
+  "next_action":"Verify whether the OH field is a malformed template/license-state column or a wrong-file attribution; recover a current pointer-linked file and resolve the state conflict before promotion."
+}

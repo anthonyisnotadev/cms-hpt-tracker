@@ -1,0 +1,21 @@
+{
+  "ccn": "010079",
+  "observed_at": "2026-09-25T06:20:00Z",
+  "official_pricing_page": "https://www.huntsvillehospital.org/price-transparency",
+  "official_page_observation": "The current Huntsville Hospital Health System price-transparency page identifies Athens-Limestone Hospital as a separate system hospital, exposes a dedicated Standard Charge File link, and states the page was updated 2026-04-01.",
+  "page_file_url": "https://www.huntsvillehospital.org/images/pricetransparency/475531420_Athens-Limestone-Hospital_standardcharges.csv",
+  "web_file_fetch_result": "The web tool followed the exact first-party link but did not expose CSV bytes because the response content type was text/csv; this is a tool limitation, not a file-absence finding.",
+  "direct_bounded_retrieval_result": "The local bounded request could not resolve www.huntsvillehospital.org; no file bytes or metadata were promoted.",
+  "cms_identity": {
+    "facility_id": "010079",
+    "facility_name": "ATHENS LIMESTONE HOSPITAL",
+    "address": "700 WEST MARKET STREET",
+    "city": "ATHENS",
+    "state": "AL",
+    "zip": "35611",
+    "hospital_type": "Acute Care Hospitals"
+  },
+  "disposition": "official-page-current-facility-file-link-discovered-mrf-unresolved",
+  "interpretation": "This is a discovery and identity evidence gain. The exact current first-party file route is now recorded, but file identity, declared date/version and parsed usability remain unverified.",
+  "next_action": "Retry the exact CSV through a permitted download-capable route after the current DNS condition changes, then verify complete bytes, facility identity, Alabama metadata, declared date/version and CMS usability before promotion."
+}

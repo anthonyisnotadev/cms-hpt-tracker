@@ -81,10 +81,14 @@ test('usable-data, outreach, and lookup classes pass through with actions', () =
   assert.equal(classifyRow({ finding: 'not-assessed-domain-search-error', evidence: 'search failed' }, null).intervention, 'domain-search-retry');
   assert.equal(classifyRow({ finding: 'not-assessed-no-domain-candidate', evidence: 'no result' }, null).intervention, 'domain-unknown');
   assert.equal(classifyRow({ finding: 'not-applicable-federal' }, null).intervention, 'exempt-federal');
+  assert.equal(classifyRow({ finding: 'not-applicable-indian-health-program', evidence: '638 compact proof' }, null).intervention,
+    'exempt-ihs-program');
+  assert.equal(classifyRow({ finding: 'not-applicable-state-hospital', evidence: '45 CFR 180.30(b) state hospital proof' }, null).intervention,
+    'exempt-state-hospital');
   assert.equal(classifyRow({ finding: 'not-applicable-closed', evidence: 'Closed August 2025.' }, null).intervention, 'exempt-closed');
   assert.equal(classifyRow({ finding: 'compliant-observed' }, null).intervention, 'none');
   // Every branch must carry human-readable metadata for the tracker payload.
-  for (const key of ['format-unusable', 'stale-file', 'old-template', 'name-ambiguous', 'domain-unknown', 'none']) {
+  for (const key of ['format-unusable', 'stale-file', 'old-template', 'name-ambiguous', 'domain-unknown', 'none', 'exempt-ihs-program']) {
     const meta = INTERVENTIONS[key];
     assert.ok(meta.label && meta.plain && meta.action, `${key} has label, plain, action`);
   }

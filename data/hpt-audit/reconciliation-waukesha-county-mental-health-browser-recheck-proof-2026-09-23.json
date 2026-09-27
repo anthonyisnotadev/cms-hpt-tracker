@@ -1,0 +1,32 @@
+{
+  "ccn": "524026",
+  "observed_at": "2026-09-23T06:20:17.033Z",
+  "official_site": "https://www.waukeshacounty.gov/",
+  "official_pricing_page": "https://www.waukeshacounty.gov/health-and-human-services/clinical-services/emergency-behavioral-health-services/",
+  "official_identity": "Waukesha County Mental Health Center, Waukesha County, Wisconsin; CMS roster address 1501 Airport Road, Waukesha, WI 53188.",
+  "browser_observation": "The current official county Emergency Behavioral Health Services page identifies the Mental Health Center, states that it has a 16-bed hospital, and gives the facility address as 1501 Airport Rd, Waukesha, WI 53188. Its expanded Billing Schedule section links a current 2026 Mental Health and Alcohol and Other Substance Use Billing Schedule PDF. The page exposes no CMS CSV, JSON or ZIP machine-readable file link and no direct MRF route.",
+  "pricing_observation": {
+    "billing_schedule_url": "https://www.waukeshacounty.gov/media/0udjlxpw/2026-rate-sheet.pdf",
+    "schedule_year": 2026,
+    "scope": "county billing schedule; not a CMS machine-readable file"
+  },
+  "pointer_urls": [
+    "https://www.waukeshacounty.gov/cms-hpt.txt",
+    "https://www.waukeshacounty.gov/.well-known/cms-hpt.txt",
+    "https://waukeshacounty.gov/cms-hpt.txt",
+    "https://waukeshacounty.gov/.well-known/cms-hpt.txt"
+  ],
+  "pointer_status": "All four root-pointer variants redirected to the county 404 page and returned HTML, not pointer text.",
+  "mrf_observation": "No MRF bytes recovered; the county billing schedule is retained as consumer-facing/county pricing evidence only, not promoted as a CMS MRF. No file-absence, exemption or compliance conclusion inferred.",
+  "cms_record": {
+    "ccn": "524026",
+    "name": "WAUKESHA COUNTY MENTAL HEALTH CTR",
+    "address": "1501 AIRPORT ROAD",
+    "city": "WAUKESHA",
+    "state": "WI",
+    "zip": "53188"
+  },
+  "disposition": "official-county-pricing-recheck-no-mrf-route",
+  "interpretation": "This dated browser and bounded pointer check narrows the current public evidence to an official 2026 county billing schedule while leaving CMS MRF discovery unresolved. It does not establish file absence or a compliance result.",
+  "next_action": "Obtain a publisher-provided current CSV/JSON/ZIP or a county/state-confirmed MRF route, then verify exact facility identity, Wisconsin metadata, declared date/version and usable bytes before promotion."
+}

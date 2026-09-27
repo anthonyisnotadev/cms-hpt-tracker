@@ -1,0 +1,15 @@
+{
+  "ccn":"141332","observed_at":"2026-09-23T04:45:00Z",
+  "official_site":"https://hillsboroareahospital.org/",
+  "official_identity":"Hillsboro Area Hospital, 1200 E Tremont Street, Hillsboro, IL 62049 (CMS record independently confirms this facility/address).",
+  "browser_observation":"Interactive browser navigation failed with net::ERR_CERT_COMMON_NAME_INVALID. HTTPS bounded requests to the homepage and exact root pointer also failed TLS validation. HTTP fallback returned 302 Found with Location https://dev4.starkmedia.com/ rather than the hospital site.",
+  "pointer_urls":["https://hillsboroareahospital.org/cms-hpt.txt","https://www.hillsboroareahospital.org/cms-hpt.txt"],
+  "pointer_status":"HTTPS TLS certificate validation failure; no pointer content recovered",
+  "mrf_observation":"No MRF bytes recovered; no file-absence or compliance conclusion inferred.",
+  "cms_api_url":"https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=141332&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status":200,"cms_api_response_bytes":6673,"cms_api_response_sha256":"194AE6A0C4368CABD8DD3C789B51BF088DDCCEB1A5F027AEB4BE7D598CB03A01",
+  "cms_record":{"facility_id":"141332","facility_name":"HILLSBORO AREA HOSPITAL","address":"1200 E TREMONT STREET","citytown":"HILLSBORO","state":"IL","zip_code":"62049"},
+  "disposition":"browser-tls-certificate-failure",
+  "interpretation":"The CMS identity is recorded, but the official domain currently fails certificate validation and its HTTP fallback redirects to a development host. This is a transport/domain-access observation only, not a file-absence or compliance finding.",
+  "next_action":"Retry the recorded domain after certificate/DNS remediation or verify a replacement first-party domain; recover and verify facility-specific pointer/MRF bytes before promotion."
+}

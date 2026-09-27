@@ -1,0 +1,27 @@
+{
+  "ccn": "670008",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "roster_identity": {
+    "name": "MEMORIAL HERMANN HOUSTON PHYSICIANS HOSPITAL",
+    "address": "333 N TEXAS AVE",
+    "city": "WEBSTER",
+    "state": "TX",
+    "zip": "77598"
+  },
+  "official_domain": "https://memorialhermann.org/",
+  "official_identity_sources": "https://memorialhermann.org/locations/houston-physicians-hospital|https://memorialhermann.org/patients-visitors/patient-services/financial-care/financial-resources|https://memorialhermann.org/patients-visitors/patient-services/financial-care/financial-resources/memorial-hermann-charge-master|https://npiregistry.cms.hhs.gov/provider-view/1285699835",
+  "official_page_observation": "The first-party Memorial Hermann location page identifies Memorial Hermann Houston Physicians' Hospital at 333 North Texas Ave, Webster, TX 77598. The system financial-resources and standard-charge pages are current first-party pricing routes.",
+  "browser_observation": "Browser/web inspection opened the official location and standard-charge pages. The page exposes a Memorial Hermann community charge-master CSV, but it is a generic system/community charge file and does not declare this facility's CMS MRF identity or metadata.",
+  "pricing_observation": {
+    "url": "https://memorialhermann.org/-/media/memorial-hermann/org/files/patients-and-visitors/standard-hospital-charges/741152597_memorial-hermann-community_standard-charges.csv",
+    "http_status": 200,
+    "content_type": "text/csv",
+    "bytes": 2342375,
+    "sha256": "595beb32ad56de6208fe68c46c75da9349441f0b75fe8d2d4ca9aaeba7b0ab",
+    "first_rows": "MEMORIAL HERMANN HEALTH SYSTEM / COMMUNITY CHARGE DESCRIPTION MASTER / JULY, 2024",
+    "facility_specific_cms_mrf": false
+  },
+  "disposition": "current-operator-identity-confirmed-pricing-route-not-exposed",
+  "interpretation": "Current operator and facility identity are supported, but the exposed generic community charge master is not promoted as a facility-specific CMS MRF; this is an observed evidence distinction, not a legal compliance determination.",
+  "next_action": "Obtain a publisher-issued facility-specific CMS CSV/JSON/ZIP for CCN 670008 with exact Webster identity and parsed metadata, or verify a facility-specific link from Memorial Hermann's pricing system before promotion."
+}

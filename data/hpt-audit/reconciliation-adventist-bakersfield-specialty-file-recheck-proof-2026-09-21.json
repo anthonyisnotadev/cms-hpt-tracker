@@ -1,0 +1,16 @@
+{
+  "ccn": "050455",
+  "observed_at": "2026-09-21T05:47:30Z",
+  "official_page": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
+  "browser_observation": "The current first-party Adventist price-transparency page loaded in the in-app browser (HTTP 200) and exposed California pricing labels including Adventist Health Bakersfield and Adventist Health Specialty Bakersfield. Both labels resolve to the shared dbAHBBAKERSFIELDCA PARA route; no distinct main-campus target was exposed.",
+  "file_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHBBAKERSFIELDCA&fileType=CSV&type=CDMWithoutLabel",
+  "file_http_status": 200,
+  "file_content_disposition": "attachment; filename=952294234_san-joaquin-community-hospital_standardcharges.csv",
+  "file_bytes": 135704576,
+  "file_sha256": "69A1DF6EF767B0EFD945B05E6DDEB762AC42012C61E6A6A9729C3A195E2C9AF9",
+  "header": "SAN JOAQUIN COMMUNITY HOSPITAL,2026-07-29,3.0.0,SAN JOAQUIN COMMUNITY HOSPITAL|Adventist Health Specialty Bakersfield,3001 Sillect Avenue Bakersfield CA 93308|3001 Sillect Avenue Bakersfield CA 93308,120000187,1538157508|1609856947,true,Heidar Thordarson",
+  "roster_boundary": "CCN 050455 Adventist Health Bakersfield is rostered at 2615 Chester Avenue, Bakersfield CA 93301. The retrieved file declares 3001 Sillect Avenue, the separate specialty campus.",
+  "disposition": "current-first-party-page-recheck-preserves-specialty-campus-mismatch",
+  "interpretation": "This is a current transport and identity recheck, not a correction or compliance conclusion. The full file is retained as sibling-campus evidence only; it is not promoted to CCN 050455.",
+  "next_action": "Locate a distinct first-party pointer-declared MRF or authoritative scope proof for 2615 Chester Avenue before promotion."
+}

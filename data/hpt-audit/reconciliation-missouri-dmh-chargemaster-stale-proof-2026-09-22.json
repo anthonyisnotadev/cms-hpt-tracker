@@ -1,0 +1,15 @@
+{
+  "observed_at": "2026-09-22T23:00:00Z",
+  "official_page": "https://dmh.mo.gov/behavioral-health/treatment-services/specialized-programs/state-operated-psychiatric-hospitalfacilities/hospital-chargemaster",
+  "official_page_http_status": 200,
+  "official_page_observation": "Missouri DMH publishes facility-named CSV links for the state psychiatric hospitals. Each bounded CSV reviewed here declares Version 1 and Date of last Update 8/25/2023, not the current CMS 3.0.0 schema/date required for a current promotion.",
+  "records": [
+    {"ccns":["264004","264008"],"facility":"Center for Behavioral Medicine","url":"https://dmh.mo.gov/media/52206/download","http_status":200,"bytes":1987,"declared_date":"2023-08-25","declared_version":"1","identity_observation":"The shared file names Center for Behavioral Medicine; separate CCN assignment is not made without campus/enrollment evidence."},
+    {"ccns":["264005"],"facility":"Southeast Missouri Mental Health Center","url":"https://dmh.mo.gov/media/52191/download","http_status":200,"bytes":958,"declared_date":"2023-08-25","declared_version":"1"},
+    {"ccns":["264007"],"facility":"Northwest Missouri Psychiatric Rehabilitation Center","url":"https://dmh.mo.gov/media/52211/download","http_status":200,"bytes":2804,"declared_date":"2023-08-25","declared_version":"1"},
+    {"ccns":["264010"],"facility":"St Louis Forensic Treatment Center","url":"https://dmh.mo.gov/media/52196/download","http_status":200,"bytes":1879,"declared_date":"2023-08-25","declared_version":"1"}
+  ],
+  "disposition": "official-state-chargemaster-stale-old-template",
+  "interpretation": "These are first-party facility-specific legacy chargemaster observations. They are not current CMS 3.0.0 MRF verifications, and the shared Center for Behavioral Medicine file is not assigned across both CCNs.",
+  "next_action": "Obtain current CMS 3.0.0 CSV/JSON files and effective-dated enrollment/address evidence for each CCN before any promotion or shared-file assignment."
+}

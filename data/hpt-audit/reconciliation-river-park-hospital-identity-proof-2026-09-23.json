@@ -1,0 +1,17 @@
+{
+  "ccn": "514008",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://riverparkhospital.net/",
+  "official_identity_sources": [
+    "https://riverparkhospital.net/",
+    "https://ohflac.wvdhhr.org/Apps/Lookup/FacilityDetails/862",
+    "https://turquoise.health/providers/river-park-hospital/information",
+    "https://www.wvcca.org/riverpark"
+  ],
+  "official_identity": "River Park Hospital is the active psychiatric hospital in Huntington, West Virginia associated with CCN 514008. The West Virginia facility record identifies HHC River Park Hospital, Inc. at 1230 Sixth Avenue, Huntington, WV 25701-1875, with 165 licensed/certified beds; provider records corroborate the address and Universal Health Services affiliation.",
+  "browser_observation": "Browser automation opened the current official domain but received a Cloudflare 'Just a moment' challenge. Direct requests to the home page, cms-hpt.txt, and common pricing routes returned HTTP 403.",
+  "pricing_observation": "No usable facility-specific CMS pointer or MRF bytes were retrieved from a first-party route. Third-party pricing/provider pages were retained only as identity corroboration and a lead, not as pricing evidence.",
+  "disposition": "current-operator-identity-confirmed-pricing-route-client-denied",
+  "interpretation": "This replaces the domain-unknown label with supported current River Park Hospital identity and official-domain evidence while preserving unresolved pricing access. Cloudflare/403 is a transport observation, not a compliance finding.",
+  "next_action": "Retry the current official site and publisher/UHS pricing route through a materially different permitted browser/download route or obtain a publisher-issued current CMS CSV/JSON/ZIP; require exact Huntington identity, West Virginia metadata, declared date/version and parsed usability before promotion."
+}

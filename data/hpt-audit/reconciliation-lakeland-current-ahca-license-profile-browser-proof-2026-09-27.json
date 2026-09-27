@@ -1,0 +1,33 @@
+{
+  "ccn": "100157",
+  "observed_at": "2026-09-27T05:41:00Z",
+  "method": "in-app browser UI inspection",
+  "official_profile_url": "https://quality.healthfinder.fl.gov/Facility-Provider/Profile/?LID=9956",
+  "profile_facility_name": "LAKELAND REGIONAL MEDICAL CENTER",
+  "facility_type": "Hospital",
+  "official_website": "https://mylrh.org/",
+  "street_address": "1324 LAKELAND HILLS BLVD, LAKELAND, FL 33805",
+  "county": "Polk",
+  "ahca_file_number": "100157",
+  "license_number": "4413",
+  "current_license_effective": "2026-09-22",
+  "current_license_expires": "2026-12-29",
+  "license_status": "LICENSED",
+  "official_ahca_crosscheck_url": "https://ahca.myflorida.com/content/download/28691/file/Comprehensive%20Stroke%20Centers.pdf",
+  "official_ahca_crosscheck_report_date": "2026-04-08",
+  "official_ahca_crosscheck_row": {
+    "county": "Polk",
+    "license_number": "4413",
+    "file_number": "100157",
+    "provider_name": "LAKELAND REGIONAL MEDICAL CENTER",
+    "address": "1324 LAKELAND HILLS BLVD",
+    "city": "LAKELAND",
+    "zip": "33805",
+    "program": "Comprehensive Stroke Center",
+    "program_effective_date": "2025-01-15"
+  },
+  "prior_reader_rendering_note": "A text-only rendering of the profile exposed alt text reading Facility Closed. The live browser UI instead showed the profile name, hospital type, current license dates, and LICENSED status; the accessible UI tree did not expose a closed-status badge.",
+  "interpretation": "Current official Florida profile and the dated AHCA report independently tie facility/file number 100157 to Florida license 4413 and the matching Lakeland address; the live profile reports LICENSED through 2026-12-29. This makes the linked MRF's literal license_number_state CA inconsistent with the official facility record. Preserve CA as the file's actual value; do not silently edit or normalize the source file. The CSV address spelling Bouldevard remains a separate publisher metadata defect. The record remains unresolved pending publisher correction or explanation of the file fields; no legal conclusion is inferred.",
+  "disposition": "official-state-license-and-ccn-crosswalk-confirmed-file-metadata-conflict-remains",
+  "next_action": "Request or locate a publisher-corrected MRF/header for license_number_state and the street spelling; retain original file bytes/hash and the literal CA/Bouldevard values until corrected."
+}

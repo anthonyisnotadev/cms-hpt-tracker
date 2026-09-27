@@ -1,0 +1,12 @@
+{
+  "ccn":"164003","observed_at":"2026-09-23T11:35:00Z",
+  "official_site":"https://hhs.iowa.gov/",
+  "official_identity":"The recorded domain loads the generic Iowa Department of Health and Human Services homepage, not a facility-specific Mental Health Institute page. CMS independently identifies this separate Mental Health Institute record at 2277 Iowa Avenue, Independence, IA 50644.",
+  "official_domain_observation":"The shared Iowa HHS domain provides statewide programs and contacts; no facility-specific pricing or MRF link was observed for this CCN.",
+  "pointer_url":"https://hhs.iowa.gov/cms-hpt.txt","pointer_status":"HTTP 404 Not Found",
+  "mrf_observation":"No facility-specific MRF bytes recovered; no file-absence or compliance conclusion inferred.",
+  "cms_api_url":"https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=164003&conditions%5B0%5D%5Boperator%5D=%3D","cms_api_status":200,"cms_api_response_bytes":6815,"cms_api_response_sha256":"464DBCC1DBA0CE9C89717929F405762096D7CEEA5C48BC32A4144603E8D7DC17","cms_record":{"facility_id":"164003","facility_name":"MENTAL HEALTH INSTITUTE","address":"2277 IOWA AVENUE","citytown":"INDEPENDENCE","state":"IA","zip_code":"50644"},
+  "disposition":"official-domain-generic-state-content-pointer-404",
+  "interpretation":"The recorded state domain is reachable but serves generic Iowa HHS content and its root pointer is 404. This separate facility record has no facility-specific MRF evidence in the observed domain; this is a discovery observation only, not a file-absence or compliance finding.",
+  "next_action":"Locate a current facility-specific Iowa HHS or hospital pricing route and root pointer for the Independence facility; verify identity and MRF metadata before promotion."
+}

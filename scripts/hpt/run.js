@@ -1351,7 +1351,8 @@ const REMEDIATION = {
   UNBLOCK: 'unblocker',
   NAME: 'name-match-review',
   PENDING: 'run-pointers-first',
-  EXEMPT: 'exempt-federal'
+  EXEMPT: 'exempt-federal',
+  EXEMPT_IHP: 'exempt-ihs-program'
 };
 
 async function cmdGaps(opt) {

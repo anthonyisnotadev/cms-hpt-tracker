@@ -1,0 +1,23 @@
+{
+  "ccn": "340156",
+  "observed_at": "2026-09-25T17:45:00Z",
+  "official_pricing_page": "https://cherokeehospital.org/patients/purchased-and-referred-care/",
+  "browser_status": 200,
+  "browser_observation": "Permitted browser automation rendered the current CIHA PRC and Billing page. The page identifies Cherokee Indian Hospital Authority and exposes a single Download the Hospital Chargemaster link to the 2025 workbook; no CMS pointer or CSV/JSON/ZIP MRF link is exposed.",
+  "facility_file_url": "https://cherokeehospital.org/wp-content/uploads/2025/01/2025-Chargemaster.xlsx",
+  "facility_file_head_status": 200,
+  "facility_file_content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "facility_file_total_bytes": 1283568,
+  "facility_file_last_modified": "2025-01-03T19:10:41Z",
+  "facility_file_range_status": 206,
+  "facility_file_sample_bytes": 131072,
+  "facility_file_sample_sha256": "40b0dd86bae98f0ed7827dd52056ea7dc1c6dbc687459dfde6d0c028be2e207f",
+  "pointer_probe": {
+    "url": "https://cherokeehospital.org/cms-hpt.txt",
+    "status": 404,
+    "observation": "The root cms-hpt.txt route returned 404; this is transport evidence only and does not establish file absence."
+  },
+  "disposition": "current-page-linked-custom-workbook-reconfirmed-mrf-unresolved",
+  "interpretation": "The current official page and bounded workbook response corroborate a facility-specific 2025 custom XLSX, but no CMS template metadata, negotiated-rate completeness or CMS CSV/JSON/ZIP MRF was established. Tribal operation is not treated as an exemption.",
+  "next_action": "Obtain a current facility-specific CMS CSV/JSON/ZIP or publisher confirmation that this workbook is the CMS machine-readable file, then verify complete bytes, schema and metadata before promotion."
+}

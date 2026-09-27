@@ -1,0 +1,17 @@
+{
+  "ccn": "450656",
+  "observed_at": "2026-09-22T08:30:00Z",
+  "official_pricing_page": "https://www.nacmedicalcenter.com/",
+  "official_pricing_page_status": 200,
+  "official_page_observation": "The first-party Nacogdoches Medical Center site loaded in the interactive browser and identifies hospital and emergency services in Nacogdoches, Texas. The exact cms-hpt.txt route was blocked by the browser client before pointer content could be read.",
+  "cms_pointer_url": "https://www.nacmedicalcenter.com/cms-hpt.txt",
+  "cms_pointer_result": "Interactive browser navigation returned net::ERR_BLOCKED_BY_CLIENT; no pointer content or MRF URL was available in this recheck.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=450656&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6600,
+  "cms_api_response_sha256": "F024463A00D1C966D31BC4225F4B4923FE16438E073A5C07869A9A280CDE2D88",
+  "cms_record": { "facility_id": "450656", "facility_name": "NACOGDOCHES MEDICAL CENTER", "address": "4920 NE STALLINGS DRIVE", "citytown": "NACOGDOCHES", "state": "TX", "zip_code": "75965", "hospital_type": "Acute Care Hospitals", "hospital_ownership": "Voluntary non-profit - Other", "emergency_services": "Yes" },
+  "disposition": "official-domain-identity-confirmed-pointer-browser-client-blocked-no-mrf-observed",
+  "interpretation": "The official page and CMS record agree on the Nacogdoches Medical Center identity and Texas location. The pointer result is a browser transport observation only; it does not establish file absence, noncompliance, or a facility closure.",
+  "next_action": "Retry the exact first-party pointer through a permitted publisher/download route, then verify declared name, address, Texas state, date, version and usable bytes before promotion."
+}

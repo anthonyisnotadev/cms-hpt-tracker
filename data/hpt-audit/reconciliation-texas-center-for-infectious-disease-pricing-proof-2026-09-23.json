@@ -1,0 +1,29 @@
+{
+  "ccn": "670125",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "roster_identity": {
+    "name": "TEXAS CENTER FOR INFECTIOUS DISEASE",
+    "address": "2303 SE MILITARY DR",
+    "city": "SAN ANTONIO",
+    "state": "TX",
+    "zip": "78223"
+  },
+  "official_domain": "https://www.dshs.texas.gov/",
+  "official_identity_sources": "https://www.dshs.texas.gov/regional-local-health-operations/texas-center-infectious-disease|https://www.dshs.texas.gov/regional-local-health-operations/texas-center-infectious-disease/healthcare-professionals-referrers/admission-tcid|https://pfd.hhs.texas.gov/sites/default/files/documents/hospital-svcs/2025/2025-ffy-sda-verif.pdf",
+  "official_page_observation": "The Texas DSHS first-party pages identify Texas Center for Infectious Disease at 2303 SE Military Drive, San Antonio, TX 78223 and identify it as a public health facility. The admission page exposes a price-transparency section and a linked standard-charges CSV.",
+  "browser_observation": "Browser/web inspection opened the official DSHS facility and admission pages and the linked CSV. The page labels the charge list as updated Nov. 12, 2023.",
+  "pricing_observation": {
+    "url": "https://dshs.texas.gov/sites/default/files/tcid/Documents/320113643_TexasCenterforInfectiousDisease_standardcharges.csv",
+    "http_status": 200,
+    "content_type": "text/csv",
+    "bytes": 1011,
+    "sha256": "93a76fa8910ab0cb05debe2e461e439df7a08ec3b36417161219fa0306d5a9aaa",
+    "page_updated_label": "2023-11-12",
+    "rows": 5,
+    "cms_mrf_schema_metadata": false,
+    "observed_prices": "gross 1395/day; discounted cash 800/day; negotiated 800/day; minimum 800/day; maximum 1395/day"
+  },
+  "disposition": "current-operator-identity-confirmed-pricing-route-not-exposed",
+  "interpretation": "Current operator and facility identity are directly supported, and an official small charge-list CSV is exposed, but it lacks CMS MRF schema metadata and is dated 2023-11-12; it is retained as pricing evidence only and not promoted as a current CMS MRF. This is an evidence distinction, not a legal compliance determination.",
+  "next_action": "Obtain a publisher-issued current CMS CSV/JSON/ZIP with exact TCID identity and parsed metadata, or verify a materially updated official CMS MRF route."
+}

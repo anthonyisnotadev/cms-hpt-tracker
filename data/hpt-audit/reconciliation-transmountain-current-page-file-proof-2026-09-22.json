@@ -1,0 +1,32 @@
+{
+  "ccn": "670120",
+  "observed_at": "2026-09-21T22:45:00Z",
+  "official_pricing_page": "https://www.thehospitalsofprovidence.com/patients/pricing-info-estimates/hospital-pricing-information",
+  "official_pricing_page_status": 200,
+  "official_page_observation": "The first-party Hospitals of Providence pricing page loaded in the interactive browser, identifies a separate Transmountain Campus standard-charges link, and lists Last Updated 4/1/2026.",
+  "cms_pointer_url": "https://www.thehospitalsofprovidence.com/cms-hpt.txt",
+  "cms_pointer_result": "Interactive browser navigation returned net::ERR_BLOCKED_BY_CLIENT; the first-party pricing page independently exposed the exact campus-named MRF URL.",
+  "mrf_url": "https://mrfs.hyvehealthcare.com/TenetHealth/954537720-1538522412_tenet-hospitals-limited_standardcharges.json",
+  "mrf_status": 200,
+  "mrf_response_bytes": 3733474,
+  "mrf_range": null,
+  "mrf_response_sha256": "88fd73d2e16b7dac7668fc88fdded956ec9c1a7239d74b7ee446f81ca41717d6",
+  "mrf_etag": "\"0x8DEDDF50DEF321C\"",
+  "mrf_last_modified": "Thu, 09 Jul 2026 20:02:50 GMT",
+  "mrf_full_file_bytes": 3733474,
+  "mrf_declared_content_length": 0,
+  "mrf_header_observation": {"hospital_name":"Tenet Hospitals Limited","last_updated_on":"2026-04-01","version":"3.0.0","location_name":["The Hospital of Providence Transmountain Campus"],"hospital_address":["2000 Woodrow Bean Transmountain Dr, El Paso, TX 79911"],"type_2_npi":["1538522412"],"license_number":"100376","license_state":"TX"},
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=670120&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6595,
+  "cms_api_response_sha256": "E91586FB83E2CE10E6627C387A1F8379D8D86FB5A589D5D61B412CB2DA81FBFA",
+  "cms_record": {"facility_id":"670120","facility_name":"THE HOSPITALS OF PROVIDENCE TRANSMOUNTAIN CAMPUS","address":"2000 TRANSMOUNTAIN RD","citytown":"EL PASO","state":"TX","zip_code":"79911"},
+  "address_corroboration": {
+    "source_url": "https://www.thehospitalsofprovidence.com/find-a-doctor/detail/harlan-giles-1346210226",
+    "source_observation": "The first-party provider/location page identifies The Hospitals of Providence - Transmountain Campus at 2000 Woodrow Bean Transmountain Drive, El Paso, TX 79911, corroborating the MRF address; CMS's 2000 TRANSMOUNTAIN RD is a street-address abbreviation/variant.",
+    "search_query": "site:thehospitalsofprovidence.com \"2000 Woodrow Bean\""
+  },
+  "disposition": "verified-current-mrf",
+  "interpretation": "The current first-party pricing page links the exact Transmountain Campus JSON. Complete retrieval confirms a 3,733,474-byte CMS 3.0.0 file whose campus, address, ZIP/state, NPI, license, attestation and 2026-04-01 date match the CMS record; the first-party provider/location page independently corroborates the expanded street address. The root pointer was blocked by the browser, so this is page-linked observed evidence and not a legal compliance conclusion.",
+  "next_action": "Retain the page-linked MRF evidence; retry the root pointer with an alternate transport when available and refresh the bounded sample before its next review date."
+}

@@ -50,12 +50,12 @@ test('Houston County complete pointer-and-page CSV retains conflicting campus ad
   assert.equal(rows.length, proof.csv_rows);
   assert.ok(rows.every(row => row.length === proof.columns_per_row));
   const tracker = loadReviewedView(audit).compliance.find(item => item.ccn === '441322');
-  assert.equal(tracker.finding, 'not-assessed-nationwide-pointer-facility-match-unresolved');
+  assert.equal(tracker.finding, 'not-assessed-nationwide-linked-mrf-header-unmatched');
   const worklist = require(path.join(audit, 'unresolved-investigation-worklist.json')).records
     .find(item => item.ccn === '441322');
   assert.equal(worklist.reviewed_follow_up, true);
-  assert.equal(worklist.current_disposition, observation.disposition);
-  assert.equal(worklist.nationwide_disposition, nationwide.disposition);
-  assert.equal(worklist.evidence_gate, 'file-address-conflict');
+  assert.equal(worklist.current_disposition, 'linked-mrf-header-unmatched');
+  assert.equal(nationwide.disposition, 'linked-mrf-header-unmatched');
+  assert.equal(worklist.evidence_gate, 'file-header');
   assert.match(worklist.next_action, /Lexington address/);
 });

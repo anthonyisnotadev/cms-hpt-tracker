@@ -1,0 +1,19 @@
+{
+  "ccn": "334045",
+  "observed_at": "2026-09-25T00:00:00Z",
+  "official_pricing_page": "https://omh.ny.gov/omhweb/adults/omh-hospital-pricing-transparency.pdf",
+  "official_pointer": "https://omh.ny.gov/cms-hpt.txt",
+  "pointer_http_status": 200,
+  "pointer_bytes": 5995,
+  "pointer_sha256": "c5bc8d36dae15caaa62f821228bcdeba7baf3c48c4ce0ac0e0c585a41d073de1",
+  "pointer_observation": "The current OMH root pointer remains a shared consolidated pointer: it includes an Elmira location entry but points Elmira and other facilities to the same CSV target, whose first data row names Greater Binghamton Mental Health Facility.",
+  "mrf_url": "https://omh.ny.gov/omhweb/adults/141663311_nysomh_standardcharges.csv",
+  "mrf_http_status": 206,
+  "mrf_sample_bytes": 131072,
+  "mrf_sample_sha256": "690411b496bdc4fc7df8b336b4f9650c97a5a1983f2ff1d5a0990c8cfb442a92",
+  "mrf_last_modified": "Thu, 11 Jun 2026 15:30:53 GMT",
+  "mrf_header_observation": "The file declares Greater Binghamton Mental Health Facility, 425 Robinson St, Binghamton NY 13904, 2026-05-28, CMS 3.0.0 and license_number|NY; it does not identify Elmira Psychiatric Center.",
+  "disposition": "shared-pointer-reconfirmed-header-mismatch",
+  "interpretation": "This is a dated recheck of the existing shared-pointer/header mismatch. It supports retaining Elmira as unresolved and does not assign the Greater Binghamton file to Elmira or infer file absence/compliance.",
+  "next_action": "Seek publisher clarification or a facility-specific file/root metadata naming Elmira Psychiatric Center before any promotion."
+}

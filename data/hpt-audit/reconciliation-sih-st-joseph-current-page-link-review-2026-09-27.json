@@ -1,0 +1,37 @@
+{
+  "reviewed_at": "2026-09-27",
+  "ccn": "141334",
+  "facility": "St Joseph Memorial Hospital",
+  "source_page": {
+    "url": "https://www.sih.net/patients-and-visitors/financial-resources/price-transparency",
+    "http_status": 200,
+    "sha256": "866622a0afe256092bb23a593689019d9c040b37896708bf64a3f85be7dfedb3",
+    "bytes": 42850,
+    "observation": "The current first-party pricing page lists comprehensive machine-readable files by facility. Its St Joseph-named file link uses a different filename identifier from the identity-matched URL retained in the earlier pointer version."
+  },
+  "current_page_link_candidate": {
+    "url": "https://www.sih.net/-/media/files/patients-and-visitors/price-transparency/json/2026/370618939_1356435135_1639595036_southernillinoishospitalservices_standardcharges.json",
+    "http_status": 404,
+    "content_type": "text/html; charset=utf-8",
+    "response_bytes": 22166,
+    "response_sample_sha256": "e924842a7568c2c1379ef69bb8fd0bb901b5551915ee6d82576086d51b8e40ec"
+  },
+  "earlier_pointer_version_file": {
+    "url": "https://www.sih.net/-/media/files/patients-and-visitors/price-transparency/json/2026/370618939_1356435135_163959036_southernillinoishospitalservices_standardcharges.json",
+    "range_request": "bytes=0-4095",
+    "http_status": 206,
+    "content_type": "application/octet-stream",
+    "content_range": "bytes 0-4095/410630493",
+    "sample_bytes": 4096,
+    "sample_sha256": "6c8cf0773c1f280c35958fd7dcf8a6630bbdc4ffad7b3d1ccddd0859d9823683",
+    "header_identity": {
+      "hospital_name": "St Joseph Memorial Hospital",
+      "last_updated_on": "2026-03-04",
+      "version": "3.0.0",
+      "location_name": "St Joseph Memorial Hospital",
+      "hospital_address": "2 S Hospital Dr Murphysboro IL 62966",
+      "license_number": "0004614"
+    }
+  },
+  "disposition": "No new verified-current-MRF promotion. The current publisher page's candidate target is broken; the identity-matched 410,630,493-byte file is from the earlier pointer-version URL, and only its first 4,096 bytes were checked in this review. Preserve the dated prior evidence and follow up on the broken current link. No 891-cohort closure credit is assigned because the exact Sep. 25 roster is still unavailable."
+}

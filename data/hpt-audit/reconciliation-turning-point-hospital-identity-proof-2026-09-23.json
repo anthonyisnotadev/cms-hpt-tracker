@@ -1,0 +1,26 @@
+{
+  "ccn": "110209",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "roster_identity": {
+    "name": "TURNING POINT HOSPITAL",
+    "address": "3015 VETERANS PARKWAY",
+    "city": "MOULTRIE",
+    "state": "GA",
+    "zip": "31788"
+  },
+  "current_operator_domain": "https://turningpointcare.com/",
+  "identity_sources": [
+    {
+      "url": "https://www.jointcommission.org/en/accreditation/behavioral-health-care-and-human-services/provider-locator/1200/432345",
+      "observation": "Joint Commission lists Turning Point Care Center, Inc. at 3015 Veterans Parkway South, Moultrie, Georgia 31788 and links turningpointcare.com."
+    },
+    {
+      "url": "https://turningpointcare.com/wp-content/uploads/2024/04/Turning-Point-Brochure-2021.pdf",
+      "observation": "The operator brochure identifies Turning Point at 3015 Veterans Parkway S., Moultrie, GA 31788 and turningpointcare.com."
+    }
+  ],
+  "browser_observation": "The current turningpointcare.com root rendered a Cloudflare Just a moment challenge in the permitted browser; no pricing page, cms-hpt.txt or MRF bytes were exposed.",
+  "disposition": "official-domain-identified-cloudflare-access-blocked",
+  "interpretation": "The official operator/domain and exact roster address are independently corroborated, replacing the earlier no-official-domain discovery result. Access challenge is a transport observation only; no file absence, compliance or current pricing conclusion is inferred.",
+  "next_action": "Retry the identified official domain after the Cloudflare challenge clears or obtain a publisher-provided current CMS pointer/MRF URL; validate facility identity and metadata before any promotion."
+}

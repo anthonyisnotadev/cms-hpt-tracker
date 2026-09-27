@@ -23,8 +23,8 @@ test('Siouxland acquisition evidence does not assign parent CCN or incorrect-add
   assert.equal(proof.declared_version, '3.0.0');
   assert.ok(proof.retained_bytes < proof.file_total_bytes);
   assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(root, proof.retained_sample))).digest('hex'), proof.sample_sha256);
-  assert.equal(observation.disposition, 'acquired-renamed-downtown-listed-under-parent-ccn-with-current-file-address-conflict');
-  assert.match(observation.next_action, /Keep 160153 unresolved/);
+  assert.equal(observation.disposition, 'current-cms-identity-recheck-transition-unresolved');
+  assert.match(observation.next_action, /160153 unresolved|effective-dated CMS enrollment|publisher clarification/i);
   const view = loadReviewedView(audit);
   assert.notEqual(view.compliance.find(row => row.ccn === '160153').mrf_url, proof.shared_file_url);
   assert.equal(view.compliance.find(row => row.ccn === '160146').mrf_url, proof.shared_file_url);

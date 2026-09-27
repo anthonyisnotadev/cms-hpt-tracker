@@ -8,6 +8,11 @@
   "publisher_file_status": 200,
   "publisher_file_bytes": 58569290,
   "publisher_file_sha256": "8fffa17776e944e27096c802fd61a423b594642542c869dd335ebc7e1ca3cac2",
+  "root_pointer_url": "https://www.faith.health/cms-hpt.txt",
+  "root_pointer_status": 403,
+  "root_pointer_content_type": "text/html",
+  "root_pointer_response_bytes": 387,
+  "root_pointer_sha256": "b57ec65d430754af1e2263988c1a37133e7a583ff43971fa1734a6d026076abf",
   "declared_hospital_name": "Faith Regional Health Services dba Faith Health",
   "location_name": "Faith Regional Health Services|Faith Regional Health Services dba Faith Health",
   "declared_address": "2700 W Norfolk Ave, Norfolk, NE 68701",
@@ -16,9 +21,10 @@
   "cms_template_version": "3.0.0",
   "declared_npi": "1285676544",
   "attestation_present": true,
+  "cms_record": {"facility_id":"280125","facility_name":"FAITH HEALTH","address":"2700 WEST NORFOLK AVE","citytown":"NORFOLK","state":"NE","zip_code":"68701"},
   "file_kind": "csv",
   "evidence_role": "current official-page-linked MRF; CMS root-pointer linkage not independently recovered",
   "observed_at": "2026-09-19T19:56:48Z",
-  "disposition": "retain-current-page-linked-file-pointer-linkage-pending",
-  "next_action": "Retrieve and validate the exact official cms-hpt.txt route, preserving this file identity and metadata as current page-linked evidence."
+  "disposition": "verified-current-page-file-root-pointer-access-pending",
+  "next_action": "Obtain a permitted content-bearing root pointer or publisher confirmation linking this exact file; preserve current page-file identity and metadata meanwhile."
 }

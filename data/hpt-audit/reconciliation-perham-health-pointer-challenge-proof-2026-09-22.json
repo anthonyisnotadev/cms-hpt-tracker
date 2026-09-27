@@ -1,0 +1,20 @@
+{
+  "ccn": "241373",
+  "observed_at": "2026-09-22T13:00:00Z",
+  "official_domain": "perhamhealth.org",
+  "official_pricing_page": "https://www.perhamhealth.org/billing-financial-information/",
+  "official_page_observation": "The current first-party billing page describes hospital price transparency and links to the Hospital Price Index estimator; it does not expose a facility-specific CMS MRF URL in the page content.",
+  "linked_tool_url": "https://search.hospitalpriceindex.com/hpi2/shoppables/PerhamHealth/100218/all",
+  "linked_tool_observation": "Browser automation loaded the Hospital Price Index shell, but no MRF download or facility file metadata was exposed; the page remained at Loading/0 results.",
+  "pointer_url": "https://www.perhamhealth.org/cms-hpt.txt",
+  "pointer_http_status": 202,
+  "pointer_response_content_type": "text/html",
+  "pointer_response_bytes": 180,
+  "pointer_sha256": "30415fb6c07a3477fe55b9ef96d5319ca196041e160d141d0f7b70257eb316d9",
+  "pointer_issue": "root-pointer-http-error",
+  "roster_identity": "PERHAM HEALTH",
+  "roster_address": "1000 CONEY STREET WEST, PERHAM, MN 56573",
+  "disposition": "pointer-discovery-incomplete",
+  "interpretation": "The first-party page establishes a current price-transparency workflow, but the root CMS pointer is an HTTP 202 HTML anti-bot challenge and the linked estimator did not expose a downloadable CMS MRF. No facility file, identity header, CMS version or update date was inferred.",
+  "next_action": "Retry the exact root pointer and estimator download route through a permitted browser/client; retain unresolved status until a facility-specific MRF or authoritative exemption is independently verified."
+}

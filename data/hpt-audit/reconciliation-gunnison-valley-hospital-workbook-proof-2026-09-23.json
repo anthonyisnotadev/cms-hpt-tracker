@@ -1,0 +1,32 @@
+{
+  "ccn": "461306",
+  "observed_at": "2026-09-23T05:20:00Z",
+  "official_site": "https://gvhospital.org/",
+  "official_identity": "Gunnison Valley Hospital, 64 East 100 North, Gunnison, UT 84634 (official site confirms the CMS roster identity and address).",
+  "official_pricing_page": "https://gvhospital.org/patient-resources/charge-master",
+  "browser_observation": "Interactive browser rendered the current Charge Master page. It links a GVH Charge Master XLSX and a separate Shoppable Services XLSX; no CMS hospital CSV, JSON or ZIP MRF route is exposed.",
+  "workbook_url": "https://gvhospital.org/images/pdfs-doc/GVH_Chargemaster_machine_readable_worksheet_posted_01_01_26.xlsx",
+  "workbook_status": 200,
+  "workbook_content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "workbook_bytes": 827039,
+  "workbook_sha256": "1a1eee87bcae48bebb61178a900b30d3a96b02f170c54d707f301aa7af42a32e",
+  "workbook_metadata": "XLSX workbook with payer-negotiated, AdvantagePlans, TriWest and Medicaid PPO sheets; workbook path metadata references GVH PriceTrans 2025 data posted January 2026.",
+  "pointer_url": "https://gvhospital.org/cms-hpt.txt",
+  "pointer_status": 200,
+  "pointer_content_type": "text/html",
+  "pointer_response_bytes": 1053,
+  "pointer_sha256": "2620bba62a2adad03b832d2d9d49b2b0b9a6dc4139f39829d7db199a0adb5548",
+  "pointer_observation": "The root route returned HTML rather than plain-text pointer content.",
+  "mrf_observation": "No CMS CSV/JSON/ZIP MRF bytes recovered. The workbook is retained as custom-workbook source evidence only and is not promoted as a CMS MRF.",
+  "cms_record": {
+    "ccn": "461306",
+    "name": "GUNNISON VALLEY HOSPITAL",
+    "address": "64 EAST 100 NORTH",
+    "city": "GUNNISON",
+    "state": "UT",
+    "zip": "84634"
+  },
+  "disposition": "official-page-custom-workbook-mrf-unresolved",
+  "interpretation": "The official facility and charge-master pages confirm identity and expose custom XLSX workbooks, but not a CMS CSV/JSON/ZIP standard-charges MRF. The workbook is preserved for follow-up and no file-absence or compliance conclusion is inferred.",
+  "next_action": "Obtain a current facility-specific CMS CSV/JSON/ZIP or publisher-confirmed CMS-format route; verify complete bytes, identity, Utah metadata, declared date/version and usable rate fields before promotion."
+}

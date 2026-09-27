@@ -1,0 +1,87 @@
+{
+  "ccn": "670054",
+  "observed_at": "2026-09-27T14:30:00Z",
+  "source_role": "cross-CCN address attribution; not a facility-file promotion",
+  "current_first_party_browser_observation": {
+    "home_url": "https://fshsanantonio.com/",
+    "pricing_url": "https://fshsanantonio.com/Hospital-Pricing-Information",
+    "home_page_location": "5330 N Loop 1604 W, San Antonio, TX 78249",
+    "pricing_page_links": [
+      {
+        "label": "Foundation Surgical Hospital of San Antonio Standard Charges",
+        "url": "https://mrfs.hyvehealthcare.com/USPI/203793927_foundation-bariatric-hospital-of-san-antonio%2C-llc_standardcharges.json"
+      },
+      {
+        "label": "South Texas Specialty Hospital's Standard Charges",
+        "url": "https://edge.sitecorecloud.io/unitedsurgi1178-uspi-prod-c5b4/media/Project/Uspi/Sites/Foundation-Surgical-Hospital-of-San-Antonio/474612520_CumberlandSurgicalHospitalofSanAntonio_standardcharges.csv"
+      }
+    ],
+    "observation_limit": "The current first-party page visibly publishes the address and separate file links; the display alone does not establish which licensed facility the header address serves."
+  },
+  "ccn_670054": {
+    "cms_hospital_enrollments_dataset_id": "f6f6505c-e8b0-4d57-b258-e2b94133aaf2",
+    "cms_hospital_enrollments_dataset_label": "Hospital Enrollments : 2026-08-01",
+    "cms_query_url": "https://data.cms.gov/data-api/v1/dataset/f6f6505c-e8b0-4d57-b258-e2b94133aaf2/data?filter%5BCCN%5D=670054&size=10",
+    "ccn": "670054",
+    "npi": "1932284411",
+    "legal_name": "FOUNDATION BARIATRIC HOSPITAL OF SAN ANTONIO LLC",
+    "doing_business_as": "FOUNDATION SURGICAL HOSPITAL OF SAN ANTONIO",
+    "address": "9522 HUEBNER RD, SAN ANTONIO, TX 78240-1548",
+    "practice_location_type": "OTHER HOSPITAL PRACTICE LOCATION",
+    "existing_full_mrf_proof": "reconciliation-foundation-surgical-full-file-recheck-proof-2026-09-25.json",
+    "full_mrf_url": "https://mrfs.hyvehealthcare.com/USPI/203793927_foundation-bariatric-hospital-of-san-antonio%2C-llc_standardcharges.json",
+    "full_mrf_sha256": "1CFD045881733B5127C102E63426C117B5BE54DF4D3F374F77EDE7A7A94B38A2",
+    "full_mrf_metadata": {
+      "hospital_name": "Foundation Bariatric Hospital of San Antonio, LLC",
+      "location_name": "Foundation Surgical Hospital of San Antonio",
+      "address": "9522 Huebner Rd, San Antonio, TX 78240",
+      "npi": "1932284411",
+      "license_number": "008521",
+      "license_state": "TX",
+      "last_updated_on": "2026-04-01",
+      "version": "3.0.0"
+    }
+  },
+  "ccn_670112": {
+    "cms_general_info_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=670112&conditions%5B0%5D%5Boperator%5D=%3D",
+    "cms_general_info_status": 200,
+    "cms_general_info_response_utf8_bytes": 6590,
+    "cms_general_info_response_sha256": "98c59908acaa70f14c5002cdd7524feec7b15ea89c86d1b6aeeead484f3e7dbf",
+    "cms_general_info_row": {
+      "ccn": "670112",
+      "facility_name": "LEGENT ORTHOPEDIC + SPINE",
+      "address": "5330 NORTH LOOP 1604 WEST",
+      "city": "SAN ANTONIO",
+      "state": "TX",
+      "zip": "78249"
+    },
+    "cms_hospital_enrollments_dataset_id": "f6f6505c-e8b0-4d57-b258-e2b94133aaf2",
+    "cms_enrollment_query_url": "https://data.cms.gov/data-api/v1/dataset/f6f6505c-e8b0-4d57-b258-e2b94133aaf2/data?filter%5BCCN%5D=670112&size=10",
+    "cms_enrollment_status": 200,
+    "cms_enrollment_response_utf8_bytes": 1212,
+    "cms_enrollment_response_sha256": "23f7f5ccd9e0008db98204c14adcce6ee4207a64ed6c959914ebb723f91560eb",
+    "cms_enrollment_row": {
+      "ccn": "670112",
+      "organization_name": "CUMBERLAND SURGICAL HOSPITAL OF SAN ANTONIO LLC",
+      "doing_business_as": "LEGENT ORTHOPEDIC + SPINE",
+      "npi": "1568848059",
+      "address": "5330 NORTH LOOP 1604 W, SAN ANTONIO, TX 78249-4383",
+      "practice_location_type": "OTHER HOSPITAL PRACTICE LOCATION"
+    },
+    "existing_current_mrf_source": {
+      "nationwide_verification_record": "data/hpt-audit/nationwide-verification.json",
+      "current_disposition": "verified-current-mrf",
+      "mrf_url": "https://drive.google.com/uc?export=download&id=1R_Rg8sY5fZlCYVocCB74ZsCQlgD6YYYw",
+      "declared_hospital_name": "Cumberland Surgical Hospital of San Antonio",
+      "declared_location_name": "Legent Orthopedic and Spine",
+      "declared_address": "5330 N Loop 1604 W, San Antonio, TX, 78249",
+      "declared_last_updated": "2026-03-19",
+      "cms_template_version": "3.0.0",
+      "mrf_npi": "1568848059"
+    }
+  },
+  "finding": "The displayed 5330 N Loop 1604 W address on the current Foundation-branded site exactly matches CMS CCN 670112/Cumberland Surgical Hospital/Legent Orthopedic + Spine (NPI 1568848059), not CCN 670054's current enrollment identity. CCN 670054's current enrollment (NPI 1932284411) and complete first-party page-linked JSON identify Foundation Surgical Hospital at 9522 Huebner Road. This crosswalk narrows the conflict and warns against assigning the 5330-address sibling MRF to CCN 670054; it does not establish whether Foundation's site header is shared, stale, or indicates an additional practice location.",
+  "disposition": "official-page-address-conflict-narrowed-by-distinct-ccn-crosswalk-retained",
+  "count_effect": "none; retain CCN 670054 as unresolved pending publisher confirmation of the Foundation site address and practice-location scope",
+  "next_action": "Obtain publisher clarification or correction for why the Foundation-branded site displays the 670112/Legent address while the Foundation page-linked file and CCN 670054 current CMS enrollment identify 9522 Huebner Road; ask whether 5330 is a shared-site header or an additional Foundation location. Preserve the two CCNs, NPIs, pointer/file chains and hashes separately; do not reassign either MRF."
+}

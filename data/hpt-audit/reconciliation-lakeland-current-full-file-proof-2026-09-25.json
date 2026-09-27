@@ -1,0 +1,29 @@
+{
+  "ccn": "100157",
+  "observed_at": "2026-09-25T04:49:00Z",
+  "official_pricing_page": "https://www.mylrh.org/pricetransparency/",
+  "official_identity": "Lakeland Regional Medical Center / Lakeland Regional Health Medical Center, Lakeland, FL",
+  "page_mrf_url": "https://www.mylrh.org/wp-content/uploads/2025/04/59-2650456_LakelandRegionalMedicalCenter_standardcharges.csv",
+  "browser_observation": "The current first-party price-transparency page rendered in the permitted browser, identified the CSV as the machine-readable file, and displayed the publisher attestation dated December 31, 2025.",
+  "retrieval": {
+    "status": 200,
+    "content_type": "text/csv",
+    "bytes": 69225996,
+    "sha256": "a56fc1199f3efa9cf355d1d5f275457eb8643330d4719b70dabefc717f060803",
+    "header": {
+      "hospital_name": "Lakeland Regional Health Medical Center",
+      "last_updated_on": "2025-12-31",
+      "version": "3.0.0",
+      "location_name": "Lakeland Regional Health Medical Center",
+      "hospital_address": "1324 Lakeland Hills Bouldevard, Lakeland, FL",
+      "license_number_state_column": "CA",
+      "license_number_value": "100157",
+      "npi": "1144228446",
+      "attestation": true
+    },
+    "data_rows": 16101
+  },
+  "disposition": "current-file-license-state-conflict-and-address-field-conflict-retained",
+  "interpretation": "This is a material evidence gain: the current first-party page and complete CSV bytes are independently captured. The file identifies Lakeland and Florida and is current-dated, but its license_number|CA field conflicts with the Florida facility and the address is misspelled/ZIP-incomplete. The conflict remains unresolved; no clean verification promotion is made.",
+  "next_action": "Obtain publisher correction or explanation for the CA license-state column and address field; retain the exact file hash and Florida facility identity while keeping this CCN unresolved."
+}

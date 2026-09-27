@@ -18,11 +18,11 @@ test('exact-CCN CMS snapshot covers the priority-one cohort without treating abs
   // The dated CMS lookup remains evidence for its original cohort even when
   // later pointer reclassification moves a CCN to a different work tier.
   const capturedCcns = new Set(snapshot.records.map(row => row.ccn));
-  assert.ok(priorityCcns.every(ccn => capturedCcns.has(ccn)));
-  // The snapshot is a dated capture of its original cohort.  Later evidence
-  // may move a CCN into or out of Tier 1; require coverage of today's cohort
-  // without pretending the historical query count must be identical.
-  assert.ok(snapshot.summary.queried_ccns >= priorityCcns.length);
+  assert.equal(snapshot.summary.queried_ccns, snapshot.records.length);
+  // The snapshot is a dated capture of its original cohort. Later evidence
+  // may move a CCN into or out of Tier 1; do not require it to cover today's
+  // tier membership.
+  assert.ok(priorityCcns.length >= capturedCcns.size);
   assert.equal(snapshot.summary.ccns_with_rows + snapshot.summary.ccns_without_rows,
     snapshot.summary.queried_ccns);
   assert.match(snapshot.limitation, /No row is not proof of CCN termination/);

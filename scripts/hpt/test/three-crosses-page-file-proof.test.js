@@ -13,6 +13,7 @@ const audit = path.join(root, 'data/hpt-audit');
 
 test('Three Crosses page-linked CSV remains unresolved with license-state conflict', async () => {
   const proof = require(path.join(audit, 'reconciliation-three-crosses-page-file-proof.json'));
+  const fullProof = require(path.join(audit, 'reconciliation-three-crosses-current-full-file-proof-2026-09-25.json'));
   const observation = require(path.join(audit, 'reconciliation-manual-access-observations.json'))
     .records.find(row => row.ccn === '320091');
   const rawPointer = fs.readFileSync(path.join(root,
@@ -33,12 +34,16 @@ test('Three Crosses page-linked CSV remains unresolved with license-state confli
   assert.equal(proof.roster_state, 'NM');
   assert.equal(observation.page_file_sample_sha256, proof.sample_sha256);
   assert.match(observation.next_action, /reconcile the CSV license state CA/);
+  assert.equal(observation.latest_full_file_recheck_2026_09_25.bytes, 1110687);
+  assert.equal(observation.latest_full_file_recheck_2026_09_25.sha256, fullProof.sha256);
+  assert.equal(fullProof.header.version, '2.0.0');
+  assert.equal(fullProof.header.license_header, 'license_number|CA');
+  assert.equal(fullProof.header.license_value, '3699|NM');
   const row = loadReviewedView(audit).compliance.find(item => item.ccn === '320091');
-  assert.equal(row.finding, 'not-assessed-nationwide-pointer-facility-match-unresolved');
-  assert.notEqual(row.mrf_url, proof.pricing_page_file_url);
-  const worklist = require(path.join(audit, 'unresolved-investigation-worklist.json')).records
+  assert.equal(row.finding, 'pointer-links-html-download-page-with-file');
+  assert.equal(row.mrf_url, proof.pricing_page_file_url);
+  const worklist = require(path.join(audit, 'standing-evidence-followup-worklist.json')).records
     .find(item => item.ccn === '320091');
   assert.equal(worklist.reviewed_follow_up, true);
-  assert.equal(worklist.candidate_file_recorded, true);
   assert.match(worklist.next_action, /reconcile the CSV license state CA/);
 });

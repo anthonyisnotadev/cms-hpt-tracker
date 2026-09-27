@@ -1,0 +1,43 @@
+{
+  "ccn": "351321",
+  "observed_at": "2026-09-26T04:55:00Z",
+  "official_page": "https://schealthnd.com/patient-resources/patient-portal-2/",
+  "official_page_status": 200,
+  "portal_url": "https://secure.claraprice.net/price-transparency/south-central-health-nd",
+  "portal_status": 200,
+  "facility_name": "South Central Health",
+  "portal_observation": "The current first-party footer links the South Central Health ClaraPrice portal. The rendered portal reports Published for Compliance 09-14-2026 and Last Modified 09-14-2026 and exposes a facility-specific machine-readable-file link.",
+  "mrf_link": "https://secure.claraprice.net/price-transparency/PRXC-1787598939915/machine-readable",
+  "mrf_access": "retrieved-via-bounded-powershell-fetch; browser-client-blocked",
+  "mrf_status": 200,
+  "mrf_bytes": 3495047,
+  "mrf_sha256": "903e677a4a3e77a2a40520c45a786d152e17117ed648c89876db6f0d6e39fc4c",
+  "mrf_root_metadata": {
+    "hospital_name": "Wishek Community Hospital dba South Central Health",
+    "location_name": "South Central Health",
+    "hospital_address": "1007 Fourth Avenue South, Wishek, ND 58495",
+    "type_2_npi": "1295772804",
+    "last_updated_on": "2026-09-14",
+    "version": "3.0.0",
+    "standard_charge_information_rows": 2012,
+    "attestation_confirmed": true,
+    "attester_name": "Lukas Fischer",
+    "license_number": "5053",
+    "license_state": "ND"
+  },
+  "cms_identity_check": {
+    "source": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions[0][property]=facility_id&conditions[0][value]=351321&conditions[0][operator]==",
+    "status": 200,
+    "facility_id": "351321",
+    "facility_name": "SOUTH CENTRAL HEALTH",
+    "address": "1007 4TH AVE S",
+    "citytown": "WISHEK",
+    "state": "ND",
+    "zip_code": "58495",
+    "hospital_type": "Critical Access Hospitals",
+    "hospital_ownership": "Government - Local"
+  },
+  "disposition": "current-page-portal-mrf-retrieved-identity-and-metadata-confirmed-root-pointer-linkage-pending",
+  "interpretation": "The current first-party portal links a complete CMS 3.0.0 JSON file whose identity, address, state, NPI, date, license state, attestation and usable-row count agree with the CMS roster. This is a material evidence gain, but the root cms-hpt.txt route remains runtime-dependent and the page-linked file is not silently treated as root-pointer proof. No compliance promotion is inferred.",
+  "next_action": "Reconcile the current page-linked URL against a content-bearing official cms-hpt.txt pointer or equivalent publisher declaration; retain the retrieved file hash and metadata as current provenance meanwhile."
+}

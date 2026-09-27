@@ -27,5 +27,5 @@ test('current nationwide identity-selection inputs have no Latin accents to chan
   // Keep that known source input explicit so a future accent change still
   // requires a fresh review instead of silently changing selection.
   assert.deepEqual(browser.filter(row => accent.test(`${row.declared_hospital_name || ''} ${row.declared_location_name || ''} ${row.declared_address || ''}`))
-    .map(row => row.ccn || row.target), ['030071']);
+    .map(row => row.ccn || row.target).sort(), ['030071', '400141', 'https://www.fdihb.org/cms-hpt.txt'].sort());
 });

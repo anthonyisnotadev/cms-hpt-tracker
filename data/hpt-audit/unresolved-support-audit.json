@@ -1,9 +1,31 @@
 {
-  "generated_at": "2026-09-20T23:35:26.178Z",
-  "source_sha256": "cdbc976e9ff0989b0d3fb90b5d36f7088e476ca4b809926d1dbe8f4c03645c19",
-  "unresolved_ccns": 787,
-  "supported_ccns": 787,
+  "generated_at": "2026-09-27T19:16:35.059Z",
+  "source_sha256": "2e196a9cff87a34657dfd0216d124d4cb093b18fa5d872b5cf5f76e3765a9984",
+  "unresolved_ccns": 547,
+  "supported_ccns": 547,
   "missing_support_count": 0,
   "missing": [],
+  "workstream_coverage": {
+    "latest_check_unresolved_ccns": 548,
+    "investigation_worklist_file": "unresolved-investigation-worklist.json",
+    "investigation_worklist_ccns": 547,
+    "identity_quarantine_worklist_file": "identity-quarantine-worklist.json",
+    "identity_quarantine_worklist_ccns": 11,
+    "separately_routed_latest_check_unresolved": [
+      {
+        "ccn": "244015",
+        "hospital_name": "COMMUNITY BEHAVIORAL HEALTH HOSPITAL - BAXTER",
+        "workstream": "identity-quarantine",
+        "latest_observed_at": "2026-09-26T13:03:30.002Z",
+        "next_action": "Locate a Baxter-specific first-party cms-hpt.txt or pricing/file route and independently verify the file header, Minnesota address, date, CMS version and usable rows."
+      }
+    ],
+    "covered_latest_check_unresolved_ccns": 548,
+    "missing_queue_coverage_count": 0,
+    "missing_queue_coverage_ccns": [],
+    "cross_queue_overlap_count": 0,
+    "cross_queue_overlap_ccns": [],
+    "complete": true
+  },
   "limitation": "A dated observation and next action establish auditability of uncertainty only; they do not establish file identity, absence, or compliance."
 }

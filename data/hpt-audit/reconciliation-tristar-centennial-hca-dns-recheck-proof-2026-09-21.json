@@ -1,0 +1,32 @@
+{
+  "ccn": "440161",
+  "hospital_name": "TRISTAR CENTENNIAL MEDICAL CENTER",
+  "state": "TN",
+  "observed_at": "2026-09-21T05:31:00Z",
+  "recheck_reason": "Tier-1 current-file access follow-up; retry the current HCA DAM route through browser automation and bounded retrieval to distinguish a live file from DNS transport failure.",
+  "official_site": "https://www.tristarhealth.com/",
+  "official_pricing_page": "https://www.tristarhealth.com/locations/tristar-centennial-medical-center/for-patients/pricing-transparency-cms-required-file-of-standard-charges",
+  "official_pricing_page_status": 200,
+  "official_pricing_page_observation": "The first-party TriStar Centennial page identifies the hospital at 2300 Patterson St, Nashville, TN 37203 and links the HCA DAM standard-charges route.",
+  "page_mrf_url": "https://hcadam.com/api/public/content/0947329859ac44d4aee0f06e1cda2eb9?download=true",
+  "page_mrf_browser_status": "net::ERR_NAME_NOT_RESOLVED",
+  "page_mrf_bounded_status": "DNS transport error; no response headers or file bytes",
+  "page_mrf_observation": "The HCA DAM hostname remains unresolved in the permitted browser and bounded client; no redirect, bytes or metadata were recovered.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=440161&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6584,
+  "cms_api_response_sha256": "7CC40E90DEE64D3143ED1E7D8A95B0F5C8933DF91F278BD84E41D27B9700F24A",
+  "cms_record": {
+    "facility_id": "440161",
+    "facility_name": "TRISTAR CENTENNIAL MEDICAL CENTER",
+    "address": "2300 PATTERSON STREET",
+    "citytown": "NASHVILLE",
+    "state": "TN",
+    "zip_code": "37203",
+    "hospital_type": "Acute Care Hospitals",
+    "hospital_ownership": "Proprietary"
+  },
+  "disposition": "current-official-page-file-route-dns-unresolved",
+  "interpretation": "The current first-party page and CMS API independently confirm the facility identity and address. The exact HCA DAM route remains DNS-unresolved in both browser and bounded retrieval; this is a transport observation only and not a file-absence or compliance conclusion.",
+  "next_action": "Obtain a publisher-issued replacement token or authorized route that resolves the HCA DAM host, then retrieve bounded bytes and verify exact Centennial identity, Tennessee state, declared date/version and parsed usability."
+}

@@ -2,38 +2,62 @@
   "source": "CMS Hospital Enrollments public Data API",
   "dataset_page": "https://data.cms.gov/provider-characteristics/hospitals-and-other-facilities/hospital-enrollments",
   "dataset_version_id": "3b5eae55-981c-4358-b3f8-7032d053d893",
-  "worklist_sha256": "d8407fedf1bd0ef58a82359da666cf70494b9b3a512aeb7ed465bd4f1a05a93a",
+  "worklist_sha256": "3bad3eaa9f1acb62d249e0877ea236e7554eba6126a64cd439440b9bebe1f766",
   "summary": {
-    "queried_ccns": 21,
-    "ccns_with_rows": 16,
+    "queried_ccns": 14,
+    "ccns_with_rows": 9,
     "ccns_without_rows": 5
   },
   "limitation": "A row corroborates exact-CCN enrollment identity in this dataset version, not a specific MRF or legal compliance. No row is not proof of CCN termination, facility closure, or lack of an MRF. This snapshot does not provide transition effective-date history.",
   "records": [
     {
-      "ccn": "070006",
-      "observed_at": "2026-09-17T17:22:03.079Z",
-      "query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=070006&size=10",
+      "ccn": "010035",
+      "observed_at": "2026-09-21T13:05:29.238Z",
+      "query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=010035&size=10",
       "response_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
       "rows": []
     },
     {
-      "ccn": "034034",
-      "observed_at": "2026-09-17T17:22:03.752Z",
-      "query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=034034&size=10",
+      "ccn": "044021",
+      "observed_at": "2026-09-21T13:05:29.715Z",
+      "query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=044021&size=10",
       "response_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
       "rows": []
     },
     {
-      "ccn": "060020",
-      "observed_at": "2026-09-17T17:22:04.232Z",
-      "query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=060020&size=10",
+      "ccn": "050581",
+      "observed_at": "2026-09-21T13:05:30.180Z",
+      "query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=050581&size=10",
       "response_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
       "rows": []
+    },
+    {
+      "ccn": "090004",
+      "observed_at": "2026-09-21T13:05:30.647Z",
+      "query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=090004&size=10",
+      "response_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "rows": []
+    },
+    {
+      "ccn": "100157",
+      "observed_at": "2026-09-21T13:05:31.150Z",
+      "query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=100157&size=10",
+      "response_sha256": "5ebb04e24fb1005390146e9ae14db8c5eb2c26072f06aaaea5e3ce3ce92f5f9d",
+      "rows": [
+        {
+          "ccn": "100157",
+          "organization_name": "LAKELAND REGIONAL MEDICAL CENTER INC",
+          "address_line_1": "1324 LAKELAND HILLS BLVD",
+          "city": "LAKELAND",
+          "state": "FL",
+          "provider_type_text": "PART A PROVIDER - HOSPITAL",
+          "enrollment_id": "O20060202000015"
+        }
+      ]
     },
     {
       "ccn": "131314",
-      "observed_at": "2026-09-17T17:22:04.753Z",
+      "observed_at": "2026-09-21T13:05:31.593Z",
       "query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=131314&size=10",
       "response_sha256": "c6c2a3e5301fcc8c0a7bd5c10c48487bcf7234e2834c9f77beb67d93d25bc71c",
       "rows": [
@@ -50,7 +74,7 @@
     },
     {
       "ccn": "131319",
-      "observed_at": "2026-09-17T17:22:05.240Z",
+      "observed_at": "2026-09-21T13:05:32.046Z",
       "query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=131319&size=10",
       "response_sha256": "bae50152d32a657c72e1aec1571bb475f015b789027455198311e539dfc80d97",
       "rows": [
@@ -66,49 +90,15 @@
       ]
     },
     {
-      "ccn": "150051",
-      "observed_at": "2026-09-17T17:22:05.699Z",
-      "query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=150051&size=10",
-      "response_sha256": "b6f122a7528ca534d4c9f0e95f02c62b6323f363ca1d1b25708cdb60148539de",
-      "rows": [
-        {
-          "ccn": "150051",
-          "organization_name": "INDIANA UNIVERSITY HEALTH BLOOMINGTON INC",
-          "address_line_1": "2651 E DISCOVERY PKWY",
-          "city": "BLOOMINGTON",
-          "state": "IN",
-          "provider_type_text": "PART A PROVIDER - HOSPITAL",
-          "enrollment_id": "O20080117000016"
-        }
-      ]
-    },
-    {
-      "ccn": "181314",
-      "observed_at": "2026-09-17T17:22:06.164Z",
-      "query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=181314&size=10",
-      "response_sha256": "cc873a49b9f23069bc9de14c856861e37d458a4adc7339315b71d0838a41f5da",
-      "rows": [
-        {
-          "ccn": "181314",
-          "organization_name": "BOWLING GREEN-WARREN COUNTY COMMUNITY HOSPITAL CORPORATION",
-          "address_line_1": "1501 S DIXIE ST",
-          "city": "HORSE CAVE",
-          "state": "KY",
-          "provider_type_text": "PART A PROVIDER - CRITICAL ACCESS HOSPITAL",
-          "enrollment_id": "O20160325000046"
-        }
-      ]
-    },
-    {
       "ccn": "250043",
-      "observed_at": "2026-09-17T17:22:06.681Z",
+      "observed_at": "2026-09-21T13:05:32.193Z",
       "query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=250043&size=10",
       "response_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
       "rows": []
     },
     {
       "ccn": "271332",
-      "observed_at": "2026-09-17T17:22:07.159Z",
+      "observed_at": "2026-09-21T13:05:32.655Z",
       "query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=271332&size=10",
       "response_sha256": "ebd8a33451276ee92692dbaf853b5c32fd35f21b46e4cc3c47a4464808debc65",
       "rows": [
@@ -125,7 +115,7 @@
     },
     {
       "ccn": "291300",
-      "observed_at": "2026-09-17T17:22:07.638Z",
+      "observed_at": "2026-09-21T13:05:32.823Z",
       "query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=291300&size=10",
       "response_sha256": "2966d3456ec063115c6d4fa53f5d13d5ea282f1c4bea6e269677b459bbfe525f",
       "rows": [
@@ -142,7 +132,7 @@
     },
     {
       "ccn": "330270",
-      "observed_at": "2026-09-17T17:22:08.252Z",
+      "observed_at": "2026-09-21T13:05:33.161Z",
       "query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=330270&size=10",
       "response_sha256": "9edb66a328b888f8073cbc9c8946901914db6fec71c4c971bea62ad56f2555b4",
       "rows": [
@@ -158,25 +148,8 @@
       ]
     },
     {
-      "ccn": "340147",
-      "observed_at": "2026-09-17T17:22:08.673Z",
-      "query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=340147&size=10",
-      "response_sha256": "1e35385a03a426284291843e508f2d75dc639f5a0990f056a526984a4b37ec37",
-      "rows": [
-        {
-          "ccn": "340147",
-          "organization_name": "NASH HOSPITALS INC",
-          "address_line_1": "2460 CURTIS ELLIS DR",
-          "city": "ROCKY MOUNT",
-          "state": "NC",
-          "provider_type_text": "PART A PROVIDER - HOSPITAL",
-          "enrollment_id": "O20080512000395"
-        }
-      ]
-    },
-    {
       "ccn": "380005",
-      "observed_at": "2026-09-17T17:22:09.195Z",
+      "observed_at": "2026-09-21T13:05:33.317Z",
       "query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=380005&size=10",
       "response_sha256": "4e39e5eb60ac3e3f168518ce7a5f7298dec645606db8b00e75e3b12fca639a57",
       "rows": [
@@ -192,49 +165,8 @@
       ]
     },
     {
-      "ccn": "390146",
-      "observed_at": "2026-09-17T17:22:09.621Z",
-      "query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=390146&size=10",
-      "response_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
-      "rows": []
-    },
-    {
-      "ccn": "400122",
-      "observed_at": "2026-09-17T17:22:10.118Z",
-      "query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=400122&size=10",
-      "response_sha256": "a26c46a3b894566d023081f35557f302ac401fe5cd10a1c700c973cd9e4e0619",
-      "rows": [
-        {
-          "ccn": "400122",
-          "organization_name": "PROFESSIONAL HOSPITAL GUAYNABO INC",
-          "address_line_1": "8 AVE LAS CUMBRES",
-          "city": "GUAYNABO",
-          "state": "PR",
-          "provider_type_text": "PART A PROVIDER - HOSPITAL",
-          "enrollment_id": "O20100104000479"
-        }
-      ]
-    },
-    {
-      "ccn": "420072",
-      "observed_at": "2026-09-17T17:22:10.632Z",
-      "query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=420072&size=10",
-      "response_sha256": "c726f5957f24cf6d5e8338bb71781b2fe8a1c141dd16018d32c94246bb9c9338",
-      "rows": [
-        {
-          "ccn": "420072",
-          "organization_name": "HAMPTON REGIONAL MEDICAL CENTER",
-          "address_line_1": "595 W CAROLINA AVE",
-          "city": "VARNVILLE",
-          "state": "SC",
-          "provider_type_text": "PART A PROVIDER - HOSPITAL",
-          "enrollment_id": "O20100724000086"
-        }
-      ]
-    },
-    {
       "ccn": "431316",
-      "observed_at": "2026-09-17T17:22:11.095Z",
+      "observed_at": "2026-09-21T13:05:33.784Z",
       "query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=431316&size=10",
       "response_sha256": "61b0486923656a49dd76f7228bec2c2f9d84d8dcd2455a720f6f00708efd2cd4",
       "rows": [
@@ -251,7 +183,7 @@
     },
     {
       "ccn": "440161",
-      "observed_at": "2026-09-17T17:22:11.580Z",
+      "observed_at": "2026-09-21T13:05:34.356Z",
       "query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=440161&size=10",
       "response_sha256": "6544baa65006f319129998929a988591154a5f1dfa0ced5b48186a3535da5a3b",
       "rows": [
@@ -263,57 +195,6 @@
           "state": "TN",
           "provider_type_text": "PART A PROVIDER - HOSPITAL",
           "enrollment_id": "O20070814000831"
-        }
-      ]
-    },
-    {
-      "ccn": "500003",
-      "observed_at": "2026-09-17T17:22:12.041Z",
-      "query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=500003&size=10",
-      "response_sha256": "4db157d3294cfabfa2280a89762f76a323d39fe87327d986083fff08fb0241dd",
-      "rows": [
-        {
-          "ccn": "500003",
-          "organization_name": "PUBLIC HOSPITAL DIST NO 1 SKAGIT",
-          "address_line_1": "1415 E KINCAID ST",
-          "city": "MOUNT VERNON",
-          "state": "WA",
-          "provider_type_text": "PART A PROVIDER - HOSPITAL",
-          "enrollment_id": "O20031218000861"
-        }
-      ]
-    },
-    {
-      "ccn": "510091",
-      "observed_at": "2026-09-17T17:22:12.532Z",
-      "query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=510091&size=10",
-      "response_sha256": "b4e8f8e46f2183a1f0ccffff6f411cc192a423ef72400b95a678149dc9e52ca2",
-      "rows": [
-        {
-          "ccn": "510091",
-          "organization_name": "CHARLESTON SURGICAL HOSPITAL, LLC",
-          "address_line_1": "1306 KANAWHA BLVD EAST",
-          "city": "CHARLESTON",
-          "state": "WV",
-          "provider_type_text": "PART A PROVIDER - HOSPITAL",
-          "enrollment_id": "O20140509001377"
-        }
-      ]
-    },
-    {
-      "ccn": "530002",
-      "observed_at": "2026-09-17T17:22:12.935Z",
-      "query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=530002&size=10",
-      "response_sha256": "153a5e049d1c23eabd8e055339e9913b46850a5e60f45d5fa1b8bf21b9b9796c",
-      "rows": [
-        {
-          "ccn": "530002",
-          "organization_name": "CAMPBELL COUNTY HOSPITAL DISTRICT",
-          "address_line_1": "501 S BURMA AVE",
-          "city": "GILLETTE",
-          "state": "WY",
-          "provider_type_text": "PART A PROVIDER - HOSPITAL",
-          "enrollment_id": "O20070926000248"
         }
       ]
     }

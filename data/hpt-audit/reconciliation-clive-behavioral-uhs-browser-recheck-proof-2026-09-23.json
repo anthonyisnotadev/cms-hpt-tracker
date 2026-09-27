@@ -1,0 +1,12 @@
+{
+  "ccn":"164007","observed_at":"2026-09-23T12:10:00Z",
+  "official_site":"https://uhs.com/",
+  "official_identity":"The recorded UHS domain loads the Universal Health Services corporate homepage, not a facility-specific Clive Behavioral Health page. CMS independently identifies Clive Behavioral Health at 1450 NW 114th Street, Clive, IA 50325.",
+  "browser_observation":"Interactive browser navigation loaded the UHS corporate site. Its accessibility tree exposed corporate locations and an insurance transparency-in-coverage link, but no facility-specific Clive pricing or MRF link.",
+  "pointer_url":"https://uhs.com/cms-hpt.txt","pointer_status":"HTTP 404 Not Found",
+  "mrf_observation":"No facility-specific MRF bytes recovered; the corporate insurance MRF link is not evidence for this hospital. No file-absence or compliance conclusion inferred.",
+  "cms_api_url":"https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=164007&conditions%5B0%5D%5Boperator%5D=%3D","cms_api_status":200,"cms_api_response_bytes":6801,"cms_api_response_sha256":"1ED07C1E8DB38B973B6096551B8B032F89819D691D687F85D7049360D1CCD165","cms_record":{"facility_id":"164007","facility_name":"CLIVE BEHAVIORAL HEALTH","address":"1450 NW 114TH STREET","citytown":"CLIVE","state":"IA","zip_code":"50325"},
+  "disposition":"official-domain-generic-corporate-content-pointer-404",
+  "interpretation":"The recorded UHS domain is reachable but serves corporate content and its root pointer is 404. A corporate insurance MRF link is not facility-specific evidence. This is a facility-attribution/discovery observation only, not a file-absence or compliance finding.",
+  "next_action":"Locate the current Clive Behavioral Health facility domain or pricing route through UHS locations; recover a facility-specific pointer/MRF and verify identity before promotion."
+}

@@ -1,0 +1,27 @@
+{
+  "ccn": "054150",
+  "observed_at": "2026-09-27T01:05:00Z",
+  "official_facility_page": "https://healthy.kaiserpermanente.org/northern-california/facilities/santa-clara-medical-center-100305",
+  "official_price_page": "https://healthy.kaiserpermanente.org/northern-california/doctors-locations/price-transparency",
+  "official_pointer_url": "https://healthy.kaiserpermanente.org/content/dam/kporg/final/documents/price-transparency/cms-hpt.txt",
+  "official_pointer_status": 200,
+  "pointer_file_url": "https://healthy.kaiserpermanente.org/content/dam/kporg/final/documents/health-plan-documents/coverage-information/machine-readable/941105628-santa-clara-medical-center-standard-charges-ncal-en.csv",
+  "file_range_status": 206,
+  "file_total_bytes": 215534031,
+  "file_sample_bytes": 262144,
+  "file_header": {
+    "hospital_name": "KAISER FOUNDATION HOSPITAL - SANTA CLARA",
+    "last_updated_on": "4/1/2026",
+    "version": "3.0.1",
+    "location_name": "SANTA CLARA MED CENTER",
+    "hospital_address": "700 LAWRENCE EXPY, SANTA CLARA, CA 95051",
+    "license_state": "CA",
+    "type_2_npi": "1326119967",
+    "attestation": true,
+    "attester_name": "Brad Tinnermon"
+  },
+  "phf_identity_evidence": "California HCAI and Kaiser facility materials identify Kaiser Permanente Psychiatric Health Facility - Santa Clara at 3840 Homestead Road, Santa Clara, CA 95051; the Kaiser facility page identifies the Behavioral Health Center at that address but the downloaded header identifies the main 700 Lawrence Expy campus and a different NPI.",
+  "disposition": "current-santa-clara-file-recovered-phf-scope-unresolved",
+  "interpretation": "This is new current pointer and header evidence. It corroborates the Santa Clara system and current file metadata but does not establish that CCN 054150's separately licensed psychiatric facility is covered by the main Santa Clara file.",
+  "next_action": "Obtain Kaiser publisher confirmation or effective CCN/NPI scope mapping for the 3840 Homestead psychiatric facility before assignment; retain the main-campus file as a separate shared-system candidate."
+}

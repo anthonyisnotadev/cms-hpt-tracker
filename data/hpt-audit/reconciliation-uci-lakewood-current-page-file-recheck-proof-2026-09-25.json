@@ -1,0 +1,30 @@
+{
+  "ccn": "050581",
+  "observed_at": "2026-09-25T00:00:00Z",
+  "official_pricing_page": "https://www.ucihealth.org/patients-and-visitors/financial-resources/price-transparency",
+  "official_facility_page": "https://www.ucihealth.org/locations/lakewood/uci-health-lakewood",
+  "pricing_page_observation": "The current UCI Health price-transparency page lists a dedicated UCI Health - Lakewood machine-readable JSON file and says standard charges are effective 2025-11-01.",
+  "facility_page_observation": "The current first-party Lakewood location page identifies UCI Health - Lakewood at 3700 E. South St., Lakewood, CA 90712.",
+  "file_url": "https://www.ucihealth.org/pricetransparency/952226406_uci-health-lakewood_standardcharges.json",
+  "file_http_status": 206,
+  "file_content_type": "application/json",
+  "file_sample_bytes": 262144,
+  "file_sample_sha256": "6b505595c355199ed0334cb95ea25c50317096e49672d482e7599194ce4d0781",
+  "file_headers": {
+    "last_modified": "Tue, 31 Mar 2026 18:33:39 GMT",
+    "etag": "11aefe53cc1dc1:0",
+    "accept_ranges": "bytes"
+  },
+  "declared_metadata": {
+    "hospital_name": "UCI Health - Lakewood",
+    "hospital_address": "101 City Drive South, Orange, CA 92868",
+    "last_updated_on": "2026-04-01",
+    "version": "3.0.0",
+    "license_state": "CA",
+    "npi": "1184655581",
+    "attestation": true
+  },
+  "disposition": "current-page-file-identity-confirmed-address-conflict-retained",
+  "interpretation": "The dedicated file name and declared hospital identify Lakewood, but its declared address is the separate Orange campus and conflicts with the current official Lakewood facility address. This is corroborated current evidence of a publisher metadata conflict, not a reason to reassign or promote the file as clean identity evidence.",
+  "next_action": "Obtain publisher correction or explanation for the hospital_address field; retain the exact file hash and Lakewood identity while unresolved."
+}

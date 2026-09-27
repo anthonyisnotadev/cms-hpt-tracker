@@ -1,0 +1,24 @@
+{
+  "ccn": "110256",
+  "observed_at": "2026-09-21T05:51:40Z",
+  "official_site": "https://www.taylorregional.org/",
+  "official_page": "https://www.taylorregional.org/financial.html",
+  "official_page_status": 200,
+  "official_page_observation": "The current first-party Taylor Regional financial page links its Pricing/Price Transparency labels to https://ezcost.info/taylor-regional-hospital.",
+  "browser_page": "https://ezcost.info/taylor-regional-hospital",
+  "browser_status": "loaded",
+  "browser_observation": "The EZCOST page labeled Taylor Regional Hospital loaded in the in-app browser, but its Download Machine-Readable File link points to hospitalpricetransparencyfiles.com/self-regional-healthcare-partners/830893719_Self-Regional-Healthcare-Partners_standardcharges.csv, not a Taylor Regional file.",
+  "cross_facility_target": "https://hospitalpricetransparencyfiles.com/self-regional-healthcare-partners/830893719_Self-Regional-Healthcare-Partners_standardcharges.csv",
+  "cross_facility_retrieval": "bounded client request did not produce a content-bearing response before timeout",
+  "prior_verified_page_file": {
+    "proof_file": "reconciliation-taylor-regional-current-page-file-proof-2026-09-20.json",
+    "declared_hospital_name": "Taylor Regional Hospital",
+    "declared_address": "222 Perry Highway, Hawkinsville, GA 31036",
+    "declared_state": "GA",
+    "declared_last_updated": "2026-01-01",
+    "cms_template_version": "3.0.0"
+  },
+  "disposition": "current-page-link-regression-preserves-prior-verified-standing-evidence",
+  "interpretation": "The newer page observation is weaker and cross-facility; it must not erase the prior exact Taylor file evidence or be promoted as the current Taylor MRF. Root pointer linkage remains unresolved and the discrepancy is retained for publisher correction.",
+  "next_action": "Obtain a current first-party Taylor-specific pointer/file or publisher clarification, then independently verify Hawkinsville identity, Georgia state, metadata and usability."
+}

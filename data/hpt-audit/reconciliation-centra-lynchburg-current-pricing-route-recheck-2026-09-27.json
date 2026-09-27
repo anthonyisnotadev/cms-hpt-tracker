@@ -1,0 +1,37 @@
+{
+  "ccn": "490021",
+  "observed_at": "2026-09-27T04:11:44Z",
+  "official_domain": "centrahealth.com",
+  "official_pricing_page_url": "https://www.centrahealth.com/price-transparency",
+  "official_pricing_page_browser_result": "The first-party page rendered in browser automation and lists named links for Virginia Baptist Hospital, Lynchburg General Hospital, Bedford Memorial Hospital, Southside Community Hospital, and Centra Specialty Hospital. It also says Centra reviews hospital charges at least annually.",
+  "page_linked_lgh_file_url": "https://www.centrahealth.com/sites/default/files/2023-12/540715569_LynchburgGeneralHospital_standardcharges.csv",
+  "page_linked_lgh_file_label": "Lynchburg General Hospital",
+  "page_linked_file_retrieval": {
+    "web_reader_status": 403,
+    "browser_download_status": "not_retrieved",
+    "bytes": null,
+    "header": null
+  },
+  "current_page_linked_pointer_url": "https://www.centrahealth.com/sites/default/files/2025-12/cms-hpt.txt",
+  "current_page_linked_pointer_label": "CMS.HPT for download",
+  "pointer_retrieval": {
+    "web_reader_status": 403,
+    "browser_result": "ERR_BLOCKED_BY_CLIENT",
+    "bytes": null,
+    "sha256": null,
+    "parsed_entries": null
+  },
+  "browser_link_activation_recheck": {
+    "observed_at": "2026-09-27T04:16:10Z",
+    "result": "Activating the visible CMS.HPT download link left the browser on the pricing page and exposed no pointer bytes or visible download."
+  },
+  "previously_retained_root_pointer": {
+    "requested_url": "https://centrahealth.com/cms-hpt.txt",
+    "previously_observed_final_url": "https://www.centrahealth.com/sites/default/files/2024-09/cms-hpt.txt",
+    "previously_observed_at": "2026-09-15T09:15:25.409Z",
+    "previously_observed_sha256": "507974579b6fbd4136a7afefa96241cfa0c15f498a8095dd6cea35736b1cdd6c"
+  },
+  "disposition": "current-first-party-pricing-page-exposes-newer-pointer-and-labeled-historical-path-file-transport-unresolved",
+  "interpretation": "This is a new first-party route/provenance lead: the current pricing page links a 2025-12 cms-hpt.txt artifact, whereas the retained root-pointer observation resolved to a 2024-09 copy. The page also links the Lynchburg General CSV in a 2023-12 path. Neither newly linked artifact yielded bytes, so pointer contents, currentness, MRF metadata, and facility-to-CCN file assignment remain unverified. The current file is not promoted and the prior identity/access disposition is not downgraded.",
+  "next_action": "Use a materially different permitted download route or obtain a publisher-provided copy of the 2025-12 pointer and exact Lynchburg General CSV. Compare the parsed pointer entry with the page link, then validate CSV identity, address, Virginia state, declared date, and CMS template version. Do not retry the same denied URLs or treat the 2023-12 path as proof of file date/currentness."
+}

@@ -38,6 +38,22 @@
   "page_patient_pricing_tool_file_declared_license_state": "TX",
   "page_patient_pricing_tool_file_declared_date": "2026-04-01",
   "page_patient_pricing_tool_file_declared_version": "3.0.0",
+  "latest_complete_retrieval": {
+    "observed_at": "2026-09-21T23:25:00Z",
+    "official_pricing_page_bytes": 227312,
+    "official_pricing_page_sha256": "76b3c52f3fbb69ec56ab4020780bc24a34be2049eb5e9393df5074cbc2dab261",
+    "pointer_january_file_bytes": 5178916,
+    "pointer_january_file_sha256": "74402a51a8a276c51a9aebdf41cf3f8ebc512c42065d8a1034cad2a90788e791",
+    "pointer_january_file_etag": "W/\"695d8f1e-4f05f4\"",
+    "pointer_january_file_last_modified": "2026-01-06T22:39:26Z",
+    "pointer_january_file_rows_observed": 11764,
+    "page_april_file_bytes": 984204,
+    "page_april_file_sha256": "c16dd52c8e19e4f38a2d31118df08046edd9e877cac2fceca7a00c84bf056268",
+    "page_april_file_etag": "W/\"69cc4293-f048c\"",
+    "page_april_file_last_modified": "2026-03-31T21:54:27Z",
+    "page_april_file_rows_observed": 5646,
+    "interpretation": "The January pointer field and April page link are distinct complete CSV objects. Both independently identify Hereford Regional Medical Center at 540 W. 15th St, Texas; the April object is newer CMS 3.0.0 evidence, but the root pointer still lacks an explicit mrf-url for it, so pointer linkage remains unresolved."
+  },
   "disposition": "nonstandard-root-url-field-january-v2-page-has-distinct-april-v3-csv",
   "scope_decision": "The two readable bounded headers corroborate the same hospital at the current first-party/CMS address, but neither proves that the root pointer declares the newer page file using the required mrf-url field. The two distinct page link roles and files remain separate, and no full-file usability or legal-compliance verdict is inferred.",
   "next_action": "Seek a publisher-corrected root pointer with an explicit mrf-url for the intended current hospital CSV. Preserve the January List of Standard Charges v2 file separately from the April v3 file linked as Patient Pricing Tool; verify the chosen file's complete structure and resolve the stale 801 East Third roster address against the first-party/CMS 540 W. 15th Street identity before a current-file finding."

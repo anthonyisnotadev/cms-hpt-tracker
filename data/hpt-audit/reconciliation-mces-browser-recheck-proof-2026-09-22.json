@@ -1,0 +1,17 @@
+{
+  "ccn": "394033",
+  "observed_at": "2026-09-22T00:30:00Z",
+  "official_pricing_page": "https://mces.org/",
+  "official_pricing_page_status": 403,
+  "official_page_observation": "Interactive browser access to the recorded first-party Montgomery County Emergency Service domain and its exact cms-hpt.txt route returned 403 Forbidden pages from the first-party server. No pricing content, pointer text, or MRF bytes were available in this browser observation.",
+  "cms_pointer_url": "https://mces.org/cms-hpt.txt",
+  "cms_pointer_result": "The exact first-party pointer route returned 403 Forbidden; no pointer content was available in this recheck.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=394033&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6837,
+  "cms_api_response_sha256": "526E3EFDE56588241A2F101326DC8695C4E02A7211CF47E0BC852CF9E6BD8564",
+  "cms_record": { "facility_id": "394033", "facility_name": "MONTGOMERY COUNTY EMERGENCY SERVICE", "address": "50 BEECH DRIVE", "citytown": "NORRISTOWN", "state": "PA", "zip_code": "19403", "hospital_type": "Psychiatric", "hospital_ownership": "Voluntary non-profit - Private", "emergency_services": "No" },
+  "disposition": "official-domain-pointer-forbidden-no-mrf-observed",
+  "interpretation": "CMS independently confirms the facility identity and address. The first-party 403 observations are transport/access results only; they do not establish file absence, noncompliance, or facility closure.",
+  "next_action": "Retry the exact first-party pointer through a permitted publisher route and verify declared name, Norristown address/state, date, version and usability before changing the tracker disposition."
+}

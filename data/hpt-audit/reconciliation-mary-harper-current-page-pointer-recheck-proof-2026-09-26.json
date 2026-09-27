@@ -1,0 +1,23 @@
+{
+  "ccn": "014012",
+  "observed_at": "2026-09-26T12:30:00Z",
+  "official_domain": "mh.alabama.gov",
+  "official_facility_page": "https://mh.alabama.gov/mary-starke-harper-geriatric-psychiatry-center/",
+  "source_status": 200,
+  "source_bytes": 184093,
+  "source_sha256": "c34b01109530d2c932245047afb249c0f687668cf27da1d5d3ff5c2057bae87b",
+  "facility_identity": {
+    "name": "Mary Starke Harper Geriatric Psychiatry Center",
+    "address": "115 Harper Court, Tuscaloosa, AL 35401",
+    "operator": "Alabama Department of Mental Health"
+  },
+  "pointer_checks": [
+    {"url": "https://mh.alabama.gov/cms-hpt.txt", "status": 404},
+    {"url": "https://mh.alabama.gov/mary-starke-harper-geriatric-psychiatry-center/cms-hpt.txt", "status": 404},
+    {"url": "https://www.mh.alabama.gov/cms-hpt.txt", "status": 404}
+  ],
+  "observation": "The current first-party facility page remains reachable and identifies the relocated Tuscaloosa campus, but exposes no machine-readable pricing link. The canonical and facility-path pointer probes remain 404.",
+  "disposition": "current-official-page-confirms-identity-pointer-unavailable",
+  "promotion": "none",
+  "next_action": "Recheck after a material publisher change or obtain a publisher-provided facility-specific CSV/JSON MRF; do not infer absence or exemption from the pointer responses."
+}

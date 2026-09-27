@@ -23,7 +23,9 @@ test('Marshall South retains independent vendor file evidence while pointer link
 test('Minidoka third-party pricing claim remains a non-promoted discovery lead', () => {
   const observation = require(path.join(audit, 'reconciliation-manual-access-observations.json')).records
     .find(row => row.ccn === '131319');
-  assert.equal(observation.latest_third_party_search_lead.file_url_observed, false);
-  assert.equal(observation.latest_third_party_search_lead.bytes_retrieved, 0);
-  assert.equal(observation.latest_third_party_search_lead.disposition, 'stage-lead-do-not-promote');
+  const lead = observation.latest_third_party_search_lead;
+  assert.equal(lead.file_http_status, 200);
+  assert.equal(lead.file_bytes, 507392);
+  assert.equal(lead.file_content_type, 'application/vnd.ms-excel');
+  assert.equal(lead.disposition, 'stage-third-party-lead-do-not-promote');
 });

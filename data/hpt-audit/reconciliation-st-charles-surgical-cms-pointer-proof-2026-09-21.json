@@ -1,0 +1,14 @@
+{
+  "ccn": "190300",
+  "observed_at": "2026-09-21T23:30:00Z",
+  "official_pricing_page": "https://www.scsh.com/about-your-stay/patient-rights/",
+  "official_page_status": 200,
+  "official_page_observation": "The current St. Charles Surgical Hospital patient-rights page identifies a pricing-transparency section and links the site's root cms-hpt.txt pointer as the route to standard charges.",
+  "pointer_url": "https://www.scsh.com/cms-hpt.txt",
+  "pointer_observation": "The exact official cms-hpt.txt target returned a cache miss in bounded web retrieval; no pointer fields or MRF URL were recovered.",
+  "roster_identity": "ST CHARLES SURGICAL HOSPITAL",
+  "roster_address": "1717 St Charles Avenue, New Orleans, LA 70130",
+  "disposition": "official-pricing-page-current-root-pointer-linkage-pointer-content-unresolved",
+  "interpretation": "New official pricing-page/root-pointer linkage; the prior HTML pointer-fetch observation is narrowed to current pointer-content access, with no current verification or compliance conclusion inferred.",
+  "next_action": "Retrieve the exact cms-hpt.txt through an authorized browser/download-capable route, parse source-page and MRF fields, then verify facility identity/address/Louisiana metadata, date, version and usability."
+}

@@ -1,0 +1,33 @@
+{
+  "ccns": [
+    "250043",
+    "251340"
+  ],
+  "observed_at": "2026-09-27T16:55:00Z",
+  "secondary_discovery_source": {
+    "url": "https://www.procedureradar.com/hospitals/neshoba-county-general-hospital",
+    "page_claim": "The third-party profile labels the Neshoba MRF as updated 2026-09-01 and links a raw-file download.",
+    "raw_file_link": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbNCGHPHILADELPHIAMS+&type=CDMWithoutLabel",
+    "source_role": "secondary discovery lead only; not publisher metadata or CCN scope authority"
+  },
+  "bounded_raw_file_retrieval": {
+    "http_status": 200,
+    "content_type": "application/octet-stream",
+    "content_disposition_filename": "646000892_neshoba-county-general-hospital_standardcharges.csv",
+    "bytes": 46235873,
+    "sha256": "f70004d1303ba437413c0b95763b398a3c53e80a552b6f4f2f69d4dabd06c06f",
+    "declared_hospital_name": "NESHOBA COUNTY GENERAL HOSPITAL",
+    "declared_location_name": "NESHOBA COUNTY GENERAL HOSPITAL",
+    "declared_address": "1001 Holland Ave Philadelphia MS 39350",
+    "declared_license_state": "MS",
+    "declared_last_updated_on": "2026-06-04",
+    "cms_template_version": "3.0.0",
+    "attestation_present": true,
+    "matches_retained_full_file_sha256": true,
+    "retained_full_file_proof": "reconciliation-neshoba-ccn-transition-proof.json"
+  },
+  "finding": "The secondary profile's 2026-09-01 label is not corroborated by the file it links: the downloaded object is byte-identical to the already-retained PARA MRF, whose own last_updated_on remains 2026-06-04. This is a third-party date/label discrepancy, not a new September MRF and not a publisher-confirmed file update.",
+  "ccn_scope": "The file names the shared Neshoba campus but no CCN. CMS currently lists same-campus acute-care 250043 and critical-access 251340; QIES POS separately records 250043 termination date 2025-12-31 and 251340 active/original participation 2026-01-01. This retrieval does not resolve the discrepancy among those CMS records or assign the file to either CCN.",
+  "disposition_effect": "none; retain both CCN records and the existing shared-campus uncertainty",
+  "next_action": "Use the exact dated CMS QIES status history and obtain publisher confirmation or current pointer bytes naming the CCN scope; do not infer a September file version from the secondary profile label, and do not assign the shared MRF to either CCN until the dual-record scope is resolved."
+}

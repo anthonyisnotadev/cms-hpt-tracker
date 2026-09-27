@@ -1,0 +1,16 @@
+{
+  "ccn": "010110",
+  "observed_at": "2026-09-27T09:25:31Z",
+  "official_page_url": "https://www.bullockcountyhospital.com/general-4",
+  "official_page_status": 200,
+  "official_page_bytes": 586573,
+  "official_page_sha256": "3920a8c48224ec8280fce43c1f50ed4eac56cd4d5b96c526d23eccf366f033be",
+  "browser_observation": "The current first-party Price Transparency page displays the label 631070858_Bullock_Hospital_StandardCharges.CSV, but it is a heading rather than a hyperlink. The only CSV anchors on that page point to Bullock_ShoppableServices_300.CSV. The other current first-party hospital-charges page was previously observed linking a custom XLSX chargemaster with Last-Modified 2023-10-13, not a dated CMS CSV/JSON MRF.",
+  "relevant_current_csv_links": [
+    "https://www.bullockcountyhospital.com/_files/ugd/ce2ea9_229d2d077ea74cf6a45992ffbb655715.csv?dn=Bullock_ShoppableServices_300.CSV"
+  ],
+  "conversion_boundary": "Current first-party materials state the site became Bullock County Rural Emergency Hospital on 2024-05-01. Current REH files are not assigned to historical acute-care CCN 010110.",
+  "interpretation": "New current-page route inspection, not historical MRF recovery. The displayed CMS-style CSV filename is not linked by this page; no dated pre-2024-05-01 MRF bytes were recovered. Keep CCN 010110 unresolved and separate from successor CCN 010779.",
+  "count_effect": 0,
+  "next_action": "Retain 010110 in the historical accountability baseline. Inspect only dated pre-conversion pointer/MRF evidence for the acute-care period through 2024-04-30; the displayed current CSV filename is unlinked. Search an independently dated archive or obtain a publisher-confirmed historical file. Do not assign the current REH pointer/file to 010110."
+}

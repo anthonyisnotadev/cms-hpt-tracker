@@ -78,6 +78,21 @@ function reviewedPointerFollowUpAction(finding) {
     return 'Ask the publisher to correct the pointer target for this facility; do not inherit the different-campus file. Recheck the exact target and header after a change.';
   return 'Recheck the exact pointer target after the publisher repairs its unavailable, indirect or malformed file link; compare it with the first-party page file and verify facility identity and metadata without inferring compliance from client access errors.';
 }
+
+function latestObservationTimestamp(observation, fallback = '') {
+  const candidates = [];
+  const visit = (value) => {
+    if (!value || typeof value !== 'object') return;
+    if (typeof value.observed_at === 'string') candidates.push(value.observed_at);
+    for (const child of Object.values(value)) visit(child);
+  };
+  visit(observation);
+  if (fallback) candidates.push(fallback);
+  return candidates
+    .map(raw => ({ raw, time: Date.parse(raw) }))
+    .filter(entry => Number.isFinite(entry.time))
+    .sort((a, b) => b.time - a.time)[0]?.raw || fallback || '';
+}
 const troyPointerMismatch = fs.existsSync(troyPointerMismatchPath)
   ? JSON.parse(fs.readFileSync(troyPointerMismatchPath, 'utf8')) : null;
 const uhsDirectFilePath = path.join(dir, 'reconciliation-uhs-direct-file-proof.json');
@@ -94,13 +109,21 @@ if (omhCohort.records.length !== 14 || new Set(omhCohort.records.map(record => r
 const hhHealthPageLinksPath = path.join(dir, 'reconciliation-hh-health-official-page-links.json');
 const communityTallasseePath = path.join(dir, 'reconciliation-community-tallassee-file-observation.json');
 const greeneCountyPath = path.join(dir, 'reconciliation-greene-county-file-observation.json');
-const manualAccessObservations = new Map([
+const manualAccessRecords = [
   ...(fs.existsSync(manualAccessPath) ? JSON.parse(fs.readFileSync(manualAccessPath, 'utf8')).records : []),
   ...omhCohort.records,
   ...(fs.existsSync(hhHealthPageLinksPath) ? JSON.parse(fs.readFileSync(hhHealthPageLinksPath, 'utf8')).records : []),
   ...(fs.existsSync(communityTallasseePath) ? [JSON.parse(fs.readFileSync(communityTallasseePath, 'utf8'))] : []),
   ...(fs.existsSync(greeneCountyPath) ? [JSON.parse(fs.readFileSync(greeneCountyPath, 'utf8'))] : []),
-].map(record => [record.ccn, record]));
+];
+// Keep the newest observation when a retained cohort snapshot and a later
+// manual proof describe the same CCN. Array order is not evidence precedence.
+const manualAccessObservations = new Map();
+for (const record of manualAccessRecords) {
+  const prior = manualAccessObservations.get(record.ccn);
+  if (!prior || Date.parse(String(record.observed_at || '')) >= Date.parse(String(prior.observed_at || '')))
+    manualAccessObservations.set(record.ccn, record);
+}
 const bethIsraelProof = JSON.parse(fs.readFileSync(path.join(dir, 'reconciliation-beth-israel-campus-status-proof.json'), 'utf8'));
 const bethIsraelManual = manualAccessObservations.get(bethIsraelProof.ccn);
 const bethIsraelPointer = fs.readFileSync(path.join(root, 'cms_data/hpt/pointer-corpus/raw/mountsinai.org-51a980dd173b.txt'), 'utf8');
@@ -221,7 +244,7 @@ const records = after.compliance.map(row => {
   const changes = historicalChanges(row, old);
   const resolution = resolutionByCcn.get(row.ccn);
   const siteCorrectionPending = appliedResolutions.has(row.ccn) && resolution?.action === 'correct-site';
-  const latestSuperseded = reviewedResolutionSupersedes(resolution, proposed?.observed_at, appliedResolutions.has(row.ccn));
+  let latestSuperseded = reviewedResolutionSupersedes(resolution, proposed?.observed_at, appliedResolutions.has(row.ccn));
   // A later transport-only retry may replace the presentation row with a
   // weaker unresolved observation. Preserve the prior reviewed finding as
   // standing evidence unless a dated resolution actually supersedes it.
@@ -239,6 +262,12 @@ const records = after.compliance.map(row => {
   const browserAddressConflict = browserAddressConflicts.get(row.ccn);
   const uhsDirectFile = uhsDirectFiles.get(row.ccn);
   const manualAccessObservation = manualAccessObservations.get(row.ccn);
+  const explicitManualStateConflict = /(?:explicit-)?license-state-conflict/i.test(String(manualAccessObservation?.disposition || ''))
+    || /(?:explicit-)?license-state-conflict/i.test(String(manualAccessObservation?.latest_current_reh_file_recheck?.result || ''));
+  const explicitManualAddressConflict = /address-(?:variant|conflict)|address-field-conflict/i.test(String(manualAccessObservation?.disposition || ''))
+    || /address-(?:variant|conflict)|address-field-conflict/i.test(String(manualAccessObservation?.interpretation || ''));
+  const explicitManualIdentityUncertainty = /pointer-facility-match-unresolved|named-pointer-entry-shares|not-named-in-retained-root/i.test(String(manualAccessObservation?.disposition || ''));
+  if (explicitManualStateConflict || explicitManualAddressConflict || explicitManualIdentityUncertainty) latestSuperseded = false;
   const laterManualFollowUp = laterManualObservationRequiresFollowUp(manualAccessObservation,
     proposed?.observed_at, resolution, appliedResolutions.has(row.ccn))
     && !(manualAccessObservation?.disposition === 'same-url-later-hash-bound-file-date-supersedes-manual-date'
@@ -257,7 +286,25 @@ const records = after.compliance.map(row => {
   const reviewedHeaderDisposition = reviewedHeaderDispositions.get(row.ccn);
   if (addressObservationRequiresAction(addressObservation, proposed, resolution)) issues.push('documented-campus-address-reconciliation');
   if (!proposed) issues.push('nationwide-record-missing');
-  if (!latestSuperseded && proposed?.browser_identity_gate && !['recorded-file-name-street-state-agree', 'reviewed-file-address-equivalence'].includes(proposed.browser_identity_gate)) issues.push('browser-file-identity-proof-insufficient');
+  // A manual exact pointer/page-file byte match is a complete identity gate in
+  // its own right. Keep it distinct from the browser-review gates while
+  // allowing the reconciliation to recognize the stronger recorded proof.
+  if (!latestSuperseded && proposed?.browser_identity_gate && ![
+    'recorded-file-name-street-state-agree',
+    'reviewed-file-address-equivalence',
+    'exact-facility-name-address-state-npi-license-state-agree',
+    'exact-facility-name-address-state-license-npi-date-and-usable-csv-rows',
+    'exact-facility-name-address-state-date-version-attestation-and-usable-rows',
+    'official-page-complete-archive-and-file-identity-agreement',
+    'exact-pointer-and-page-file-byte-match-facility-address-state-date-version-attestation-and-usable-rows',
+    'exact-address-state-and-official-page-name-variant-agree-with-roster-river-hospital-clinics',
+    'exact-facility-name-address-state-license-npi-date-template-and-usable-json-rows',
+    'exact-facility-address-state-license-npi-template-and-bounded-usable-rows',
+    'exact-facility-name-address-state-npi-date-template-attestation-and-usable-csv-header',
+    'official-page-file-header-name-address-state-agree',
+    'official-page-publisher-link-file-header-name-address-state-agree',
+    'official-page-file-header-name-address-state-license-npi-agree'
+  ].includes(proposed.browser_identity_gate)) issues.push('browser-file-identity-proof-insufficient');
   if (old.finding === 'not-assessed-identity-conflict') issues.push('quarantined-identity');
   if (standingRetained) issues.push('standing-evidence-retained-review-new-observation');
   if (appliedResolutions.has(row.ccn) && resolution?.action === 'replace-observation'
@@ -276,7 +323,11 @@ const records = after.compliance.map(row => {
   if (!siteCorrectionPending && !supportedIdentityUncertainty && !latestSuperseded && !standingRetained && desired && desired !== row.finding)
     issues.push('proposed-finding-differs-from-standing');
   if (manualByCcn.get(row.ccn)?.disposition === 'evidence-review-required') issues.push('manual-correction-reconciliation');
-  if (!latestSuperseded && proposed?.disposition.startsWith('verified-')) {
+  // Template/page-file review is intentionally not a CMS MRF verification
+  // claim; its missing file-level metadata is expected and must not inflate
+  // the unresolved verification queue.
+  if (!latestSuperseded && proposed?.disposition.startsWith('verified-')
+      && proposed.disposition !== 'verified-template-review') {
     const facility = roster.get(row.ccn);
     if (!proposed.declared_address) issues.push('verified-summary-missing-file-address');
     else if (facility && proposed.browser_identity_gate !== 'reviewed-file-address-equivalence'
@@ -290,7 +341,10 @@ const records = after.compliance.map(row => {
     if (stateEvidence.status === 'missing') issues.push('verified-summary-missing-state-evidence');
     else if (stateEvidence.status === 'conflict') issues.push('verified-summary-license-state-conflict');
   }
-  if (!latestSuperseded && !standingRetained && proposed && !/^verified-|^scope-exempt/.test(proposed.disposition)) issues.push('latest-check-unresolved');
+  // An explicit facility/file state conflict is itself unresolved evidence;
+  // standing retention must not hide it as a routine follow-up.
+  if (((!latestSuperseded && !standingRetained) || explicitManualStateConflict || explicitManualAddressConflict || explicitManualIdentityUncertainty)
+    && proposed && !/^verified-|^scope-exempt/.test(proposed.disposition)) issues.push('latest-check-unresolved');
   // Existing discrepancies already put the CCN in a work queue. Add a new
   // follow-up only when this later manual review would otherwise be hidden.
   if (laterManualFollowUp && issues.length === 0) issues.push('later-manual-observation-follow-up');
@@ -303,17 +357,11 @@ const records = after.compliance.map(row => {
     superseding_resolution: latestSuperseded ? { action: resolution.action, observed_at: resolutionObservedAt(resolution), evidence_run: resolution.evidence_run || resolution.evidence?.reconciliation_run || '' } : null,
     browser_identity_gate: proposed?.browser_identity_gate || '',
     prior_checked_at: old.checked_at, standing_checked_at: row.checked_at,
-    latest_observed_at: manualAccessObservation?.latest_facility_access_recheck?.observed_at
-      || manualAccessObservation?.latest_cms_reh_identity_recheck?.observed_at
-      || manualAccessObservation?.latest_workbook_recheck?.observed_at
-      || manualAccessObservation?.latest_cross_facility_portal_observation?.observed_at
-      || manualAccessObservation?.latest_portal_download_recheck?.observed_at
-      || manualAccessObservation?.latest_signed_url_recheck?.observed_at
-      || manualAccessObservation?.latest_third_party_file_recheck?.observed_at
-      || manualAccessObservation?.latest_browser_access_recheck?.observed_at
-      || manualAccessObservation?.latest_current_file_recheck?.observed_at
-      || manualAccessObservation?.latest_current_pointer_recheck?.observed_at
-      || manualAccessObservation?.latest_pointer_recheck?.observed_at || proposed?.observed_at || '',
+    // Manual observations can contain a root timestamp and multiple nested
+    // rechecks. Report the newest dated observation, not whichever field was
+    // serialized first, so a later retry cannot disappear behind an older
+    // nationwide timestamp.
+    latest_observed_at: latestObservationTimestamp(manualAccessObservation, proposed?.observed_at || ''),
     prior_mrf_url: old.mrf_url, standing_mrf_url: row.mrf_url,
     candidate_mrf_url: proposed?.mrf_url || '',
     parser_correction: proposed?.parser_correction || null,
@@ -348,6 +396,7 @@ const records = after.compliance.map(row => {
       || manualAccessObservation?.latest_third_party_file_recheck?.disposition === 'third-party-file-identity-corroborated-metadata-incomplete-no-promotion'
       || manualAccessObservation?.latest_portal_download_recheck?.disposition === 'official-portal-current-list-confirmed-download-bytes-unresolved-no-promotion'
       || manualAccessObservation?.latest_cross_facility_portal_observation?.disposition === 'cross-facility-portal-excluded-no-georgia-mrf-promotion'
+      || manualAccessObservation?.latest_cross_facility_address_review_2026_09_27?.disposition === 'retain-unmatched-address-conflict'
       || manualAccessObservation?.latest_workbook_recheck?.disposition === 'official-custom-workbook-historical-current-link-no-cms-mrf-promotion'
       || manualAccessObservation?.latest_cms_reh_identity_recheck?.disposition === 'current-cms-reh-identity-corroborated-pointer-file-still-unresolved'
       ? manualAccessObservation.next_action : '')
@@ -498,7 +547,11 @@ const sources = ['compliance.csv', 'reviewed-resolutions.json', 'discovery-revie
   'reconciliation-multicare-deaconess-alias-proof.json',
   'reconciliation-generations-ohio-license-state-proof.json',
   'reconciliation-nyp-hospital-address-proof.json',
-  'reconciliation-official-page-file-observations.json', '../../cms_data/hpt/roster.json', '../../cms_data/outreach.public.json'];
+  'reconciliation-official-page-file-observations.json',
+  'reconciliation-redfield-current-avera-pricing-page-link-proof-2026-09-27.json',
+  'reconciliation-legent-orthopedic-current-mrf-full-proof-2026-09-27.json',
+  'reconciliation-adventist-bakersfield-current-portal-header-proof-2026-09-27.json',
+  '../../cms_data/hpt/roster.json', '../../cms_data/outreach.public.json'];
 const summary = { hospitals: records.length, issues: {}, source_sha256: Object.fromEntries(sources.map(file =>
   [file, crypto.createHash('sha256').update(fs.readFileSync(path.join(dir, file))).digest('hex')])) };
 summary.changes = records.reduce((out, record) => {

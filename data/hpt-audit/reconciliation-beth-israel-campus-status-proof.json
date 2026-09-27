@@ -15,5 +15,22 @@
   "retained_pointer_beth_israel_or_downtown_entry": false,
   "disposition": "closed-16th-street-hospital-but-state-operating-certificate-remains-listed",
   "scope_decision": "Keep this CCN unresolved. The campus closure is established, but the later state operating-certificate listing prevents inferring that the CCN is terminated or exempt. No sibling Mount Sinai pointer file is assigned to Beth Israel.",
-  "next_action": "Resolve the current Medicare enrollment and New York operating-certificate scope for CCN 330169 and PFI 1439 after the 16th Street hospital closure. Ask the operator or state whether any hospital service continues under this CCN and where its facility-specific price-transparency pointer/file is published; do not treat a closed campus or a sibling pointer entry as proof of CCN termination or file absence."
+  "latest_cms_admin_recheck": {
+    "observed_at": "2026-09-27T04:38:34Z",
+    "proof_file": "reconciliation-beth-israel-cms-ffy2027-admin-listing-proof-2026-09-27.json",
+    "case_number": "27C0260",
+    "listed_name_and_ccn": "Mount Sinai Beth Israel (33-0169)",
+    "primary_request_status": "Approved",
+    "scope_limit": "CMS MGCRB administrative listing only; not current enrollment, continued inpatient operation, state certificate scope, or HPT file evidence."
+  },
+  "latest_current_enrollment_facility_crosswalk_recheck": {
+    "observed_at": "2026-09-27T04:51:46Z",
+    "proof_file": "reconciliation-beth-israel-current-ccn-enrollment-and-linked-file-proof-2026-09-27.json",
+    "cms_ccn_address": "330169 / 3201 Kings Hwy, Brooklyn, NY 11234",
+    "nys_pfi_mpn": "1324 / 330169",
+    "official_facility_name": "Mount Sinai Brooklyn",
+    "page_linked_mrf": "https://www.mountsinai.org/files/mrf/135564934_mount-sinai-brooklyn_standardcharges.json",
+    "scope_limit": "Current CCN/MPN location mapping is corroborated; page-linked JSON bytes are still unresolved and no MRF content or usability is claimed."
+  },
+  "next_action": "Retrieve the exact page-linked Mount Sinai Brooklyn JSON through a permitted browser download or publisher-provided copy; preserve/hash bytes, validate root CMS 3.0 metadata and current facility identity, then reconcile the distinct Mount Sinai CMS pointer and the file's named NPI/CCN scope. Keep the HPT finding unresolved until file usability and pointer/linkage rules are satisfied; do not assign sibling-campus files."
 }

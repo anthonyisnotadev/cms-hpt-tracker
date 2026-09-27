@@ -1,0 +1,29 @@
+{
+  "ccn": "154020",
+  "observed_at": "2026-09-24T00:00:00Z",
+  "official_site": "https://www.rhs.care/",
+  "official_pricing_page": "https://www.rhs.care/quotes-charges/",
+  "pointer_url": "https://www.rhs.care/cms-hpt.txt",
+  "pointer_http_status": 200,
+  "pointer_bytes": 246,
+  "pointer_sha256": "b018caa9f16d653d39648df3cee501ec6b50f91d5aa2615a1ed06ba3649be4ef",
+  "pointer_entry": "Strawhun -> rcg-taft_standardcharges.csv",
+  "page_file_url": "https://www.rhs.care/wp-content/uploads/2025/09/351375696_strawhun_standardcharges.csv",
+  "page_file_http_status": 206,
+  "page_file_sample_bytes": 65536,
+  "metadata": {
+    "hospital_name": "Regional Mental Health Center",
+    "last_updated_on": "1/26/2026",
+    "version": "3.0.0",
+    "location_name": "Strawhun",
+    "hospital_address": "8555 Taft Street Merrillville, IN 46410",
+    "header_license_state": "CA",
+    "license_value": "424PIP IN",
+    "npi": "1548407216",
+    "attestation": true
+  },
+  "pointer_target_observation": "The pointer-declared rcg-taft URL returned HTTP 404 HTML, while the official pricing page still links the Strawhun file, which returned the current metadata above.",
+  "disposition": "page-file-identity-confirmed-pointer-target-stale-license-state-conflict-retained",
+  "interpretation": "Current page-linked file identity and Indiana address are supported. The root pointer is internally stale/different and the file's CA header conflicts with Indiana; no clean promotion was made.",
+  "next_action": "Publisher should align the root pointer with the current page file and correct or explain the CA license-state field."
+}

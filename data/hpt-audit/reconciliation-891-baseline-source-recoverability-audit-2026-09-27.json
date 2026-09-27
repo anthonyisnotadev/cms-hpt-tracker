@@ -1,0 +1,105 @@
+{
+  "audit_id": "reconciliation-891-baseline-source-recoverability-audit-2026-09-27",
+  "observed_at": "2026-09-27T19:16:08.411Z",
+  "question": "Can the exact CCN membership behind the 2026-09-25 category totals (593 effectively unresolved plus 298 raw pointer-access-denied observations) be recovered, and are the categories disjoint?",
+  "search_scope": [
+    "Git history of data/hpt-audit/nationwide-verification.json",
+    "Current data/hpt-audit/nationwide-verification.json and nationwide-snapshot-bridge.json",
+    "Current data/hpt-audit/nationwide-verification-report.md",
+    "Dated snapshot and baseline filenames under data/hpt-audit, including hidden files",
+    "Unreachable Git objects and root trees in the current local repository",
+    "Other local GitHub-project copies of nationwide-verification.json"
+  ],
+  "recoverable_snapshot_sources": [
+    {
+      "ref": "0d5b0012",
+      "generated_at": "2026-09-18T16:33:33.811Z",
+      "sha256": "abe67572094e0e9607ad920b8193cec99e17d6ec3fc10cc2ff6983ce87748481",
+      "ccns": 5419,
+      "effective_counts": {
+        "scope-exempt": 164,
+        "active-verification-claim": 3194,
+        "genuinely-unresolved": 865,
+        "superseded-by-reviewed-resolution": 426,
+        "standing-evidence-retained": 770
+      },
+      "pointer_access_denied_raw": 290
+    },
+    {
+      "ref": "e777d09e",
+      "generated_at": "2026-09-20T23:38:41.181Z",
+      "sha256": "1d4c10b06340777056769b49678d6349af76465c9b2a5f375472f8fc090bc6ba",
+      "ccns": 5419,
+      "effective_counts": {
+        "scope-exempt": 164,
+        "active-verification-claim": 3189,
+        "genuinely-unresolved": 787,
+        "superseded-by-reviewed-resolution": 512,
+        "standing-evidence-retained": 767
+      },
+      "pointer_access_denied_raw": 297
+    },
+    {
+      "ref": "working-tree-current",
+      "generated_at": "2026-09-27T19:16:08.411Z",
+      "sha256": "d844e58d334250550d2f109e3acc406454401bc32825df18d081e3843d5a5b5b",
+      "ccns": 5419,
+      "effective_counts": {
+        "scope-exempt": 187,
+        "active-verification-claim": 3384,
+        "genuinely-unresolved": 548,
+        "standing-evidence-retained": 673,
+        "superseded-by-reviewed-resolution": 627
+      },
+      "pointer_access_denied_raw": 236
+    }
+  ],
+  "other_dated_report": {
+    "path": "data/hpt-audit/nationwide-verification-report.md",
+    "sha256": "e8aaf82ba956b378f63db12748f8aa3d7e3e7b3163fcdad5a310033f861b9b0c",
+    "generated_from": "2026-09-15",
+    "genuinely_unresolved": 1100,
+    "pointer_access_denied_raw": 296,
+    "interpretation": "Historical Sep. 15 report; distinct from the recovered Sep. 25 snapshot."
+  },
+  "recovered_sep_25_snapshot": {
+    "generated_at": "2026-09-25T14:28:24.129Z",
+    "git_blob_sha1": "dc640c7607b4efb0023d6c9b7587220acf4b40ed",
+    "sha256": "1192cfeaad4cecd209c54315a84453c73dc783554d4f14db15c219e5f63fba13",
+    "ccns": 5419,
+    "effective_unresolved": 593,
+    "raw_pointer_access_denied": 298,
+    "matching_snapshots_with_identical_category_membership": 28,
+    "matching_snapshot_window": [
+      "2026-09-25T11:47:56.008Z",
+      "2026-09-25T14:28:24.129Z"
+    ],
+    "unique_unresolved_membership_sha256": "e6f4d92973295f043d5bbcdf27f1ccc7e777dbe789f2dcdf683cd0fcec541f88",
+    "unique_pointer_denied_membership_sha256": "b8b5307b246fbdd82b45947a00e3fd94a3b9c2bbcc513025b2547fe886e8e352",
+    "interpretation": "The 593 and 298 are category memberships, not disjoint CCNs. They overlap by 171, yielding 720 unique baseline CCNs rather than 891 unique hospitals. The full member lists and current crosswalk are in reconciliation-891-baseline-member-roster-2026-09-27.json."
+  },
+  "result": {
+    "exact_sep_25_snapshot_found": true,
+    "exact_891_member_ccn_roster_found": false,
+    "exact_category_membership_roster_found": true,
+    "category_memberships_total": 891,
+    "unique_sep_25_ccns": 720,
+    "overlap_ccns": 171,
+    "reconstructable_from_sep_18_or_sep_20_counts_alone": false,
+    "closure_credit_awarded": 0,
+    "current_crosswalk_for_720_unique_ccns": {
+      "genuinely-unresolved": 547,
+      "active-verification-claim": 18,
+      "standing-evidence-retained": 72,
+      "superseded-by-reviewed-resolution": 67,
+      "scope-exempt": 16
+    },
+    "baseline_unresolved_now_other_category": {
+      "active-verification-claim": 16,
+      "superseded-by-reviewed-resolution": 14,
+      "scope-exempt": 16
+    },
+    "conclusion": "The exact Sep. 25 snapshot and both exact category member sets are recovered and stable across 28 matching snapshots. The user-facing 891 total double-counted 171 CCNs present in both categories; the deduplicated baseline is 720 hospitals. Keep the 593 and 298 category memberships separately auditable, reconcile all 720 against current evidence, and do not substitute the overall current 548 unresolved count or infer closure from aggregate deltas. The current cohort includes 16 individually supported scope exemptions (federal or Indian Health Program)."
+  },
+  "next_action": "Continue evidence review for the 547 unresolved CCNs in this historical cohort; retain the 16 active-claim, 14 superseded, and 16 individually scope-exempt baseline-unresolved records as auditable dispositions. Continue the full 5,419-CCN reconciliation independently."
+}

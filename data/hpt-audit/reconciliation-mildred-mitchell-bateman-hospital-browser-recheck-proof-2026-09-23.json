@@ -1,0 +1,27 @@
+{
+  "ccn": "514009",
+  "observed_at": "2026-09-23T17:00:00Z",
+  "official_site": "https://dhhr.wv.gov/officeofhealthfacilities/Pages/Mildred-Mitchell-Bateman-Hospital.aspx",
+  "official_identity": "Mildred Mitchell-Bateman Hospital, 1530 Norway Avenue, Huntington, WV 25705 (current West Virginia Department of Health Facilities and facility lookup pages).",
+  "state_facility_page": "https://dhhr.wv.gov/officeofhealthfacilities/Pages/Mildred-Mitchell-Bateman-Hospital.aspx",
+  "browser_observation": "The official West Virginia facility page confirms Mildred Mitchell-Bateman Hospital in Huntington, but the recorded hospital domain batemanhospital.org could not be opened by the interactive browser or bounded HTTPS client because the SSL connection was closed. No facility-specific CMS pricing route was recovered from the accessible state page or transport retries.",
+  "pointer_urls": [
+    "https://batemanhospital.org/cms-hpt.txt",
+    "https://www.batemanhospital.org/cms-hpt.txt",
+    "https://batemanhospital.org/price-transparency",
+    "https://www.batemanhospital.org/price-transparency"
+  ],
+  "pointer_status": "No usable facility-specific pointer or MRF route recovered; official-domain HTTPS transport closed before response.",
+  "mrf_observation": "No MRF bytes recovered; no file-absence, exemption or compliance conclusion inferred.",
+  "cms_record": {
+    "ccn": "514009",
+    "name": "MILDRED MITCHELL-BATEMAN HOSPITAL",
+    "address": "1530 NORWAY AVENUE",
+    "city": "HUNTINGTON",
+    "state": "WV",
+    "zip": "25705"
+  },
+  "disposition": "official-state-route-recheck-no-pricing-route",
+  "interpretation": "The official West Virginia facility source confirms the hospital identity and address. The recorded official domain currently fails at the transport layer for both browser and bounded HTTPS retrieval, and no state-page MRF link was exposed. This is a dated discovery/transport observation only and does not establish file absence or a compliance result.",
+  "next_action": "Retry the official domain after its TLS/hosting issue is corrected or obtain a publisher-provided current CSV/JSON/ZIP, then verify exact facility identity, West Virginia metadata, declared date/version and usable bytes before promotion."
+}

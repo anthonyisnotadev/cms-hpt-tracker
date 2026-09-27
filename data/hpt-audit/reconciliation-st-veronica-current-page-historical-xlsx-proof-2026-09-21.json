@@ -1,0 +1,14 @@
+{
+  "ccn": "174027",
+  "observed_at": "2026-09-21T16:00:00Z",
+  "official_pricing_page": "https://catholiccarecenter.org/services/st-veronica-senior-behavioral-health-hospital/standard-charges/",
+  "official_page_status": 200,
+  "official_page_observation": "The current Catholic Care Center Standard Charges page identifies St. Veronica Senior Behavioral Health Hospital and links a Standard Charges Spreadsheet dated July 1, 2023.",
+  "candidate_file_url": "https://catholiccarecenter.org/lmg-cms/wp-content/uploads/2023/12/Standard-Charges-7-1-23-1.xlsx",
+  "candidate_file_observation": "The exact XLSX target is facility-specific but historical. Web retrieval returned an OK response without exposing workbook bytes or parsed metadata; the page also presents a form before download.",
+  "roster_identity": "ST VERONICA",
+  "roster_address": "6700 East 45th Street North, Bel Aire, KS 67226",
+  "disposition": "official-page-historical-xlsx-linkage-workbook-bytes-unresolved",
+  "interpretation": "This is current first-party page linkage to a historical facility-specific spreadsheet, not a current verified CMS MRF. No workbook bytes, CMS version or parsed usability were observed; no compliance conclusion is inferred.",
+  "next_action": "Locate a current facility-specific CMS CSV/JSON/XLSX through an authorized route, then verify bytes, facility identity/address/Kansas state, declared date/version and parsed usability before promotion."
+}

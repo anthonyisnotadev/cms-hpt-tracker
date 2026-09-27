@@ -1,0 +1,16 @@
+{
+  "ccn": "464001",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://ush.utah.gov/rates/",
+  "official_identity_sources": [
+    "https://ush.utah.gov/",
+    "https://ush.utah.gov/rates/"
+  ],
+  "official_identity": "The official Utah Department of Health and Human Services Utah State Hospital billing page identifies Utah State Hospital and gives the Provo billing address as 1300 E Center Street, Provo, UT 84606; the page is the current state-operated hospital billing route.",
+  "browser_observation": "Browser automation loaded the official state page and expanded the Utah State Hospital Standard Charges section. It presents an HTML table dated 07/01/2025 with service descriptions, billing codes and standard charges.",
+  "pricing_observation": "The official page exposes consumer-facing HTML charges but no CMS cms-hpt.txt pointer, CSV, JSON, ZIP or other machine-readable file link. No MRF bytes were retrieved; the HTML table is not promoted as an MRF.",
+  "disposition": "official-page-mrf-root-pointer-unavailable",
+  "interpretation": "This replaces the stale domain-unknown label with a supported official identity and dated pricing-page observation while preserving the unresolved machine-readable-file route. It is not a legal compliance conclusion.",
+  "next_action": "Locate a current publisher/state CMS pointer or machine-readable CSV/JSON/ZIP for Utah State Hospital; verify exact Provo identity, Utah metadata, declared date/version and parsed usability before promotion.",
+  "source_note": "The official page's HTML table is retained as page evidence only; no facility-specific MRF was assigned."
+}

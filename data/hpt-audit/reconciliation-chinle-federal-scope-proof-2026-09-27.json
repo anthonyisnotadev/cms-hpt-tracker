@@ -1,0 +1,26 @@
+{
+  "ccn": "030084",
+  "observed_at": "2026-09-27T12:03:50Z",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=030084&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_response_bytes": 6625,
+  "cms_response_sha256": "118D6B5174A421AE19412F574E39C9B67E0F9FC679FC16C063CECD68C8C9A442",
+  "cms_record": {
+    "facility_id": "030084",
+    "facility_name": "CHINLE COMPREHENSIVE HEALTH CARE FACILITY",
+    "address": "US HWY 191, HOSPITAL ROAD",
+    "citytown": "CHINLE",
+    "state": "AZ",
+    "zip_code": "86503",
+    "hospital_type": "Acute Care Hospitals",
+    "hospital_ownership": "Government - Federal"
+  },
+  "official_identity_page": "https://www.ihs.gov/navajo/healthcarefacilities/chinle/",
+  "operator_source": "https://www.ihs.gov/navajo/",
+  "operator_observation": "The current IHS Navajo Area page identifies Chinle as one of its Federal Service Units and names Chinle Comprehensive Health Care Facility among its hospitals. Browser-rendered current facility page identifies the same hospital and Chinle, Arizona location.",
+  "regulatory_source": "https://www.govinfo.gov/content/pkg/CFR-2025-title45-vol2/pdf/CFR-2025-title45-vol2-part180.pdf",
+  "regulatory_observation": "45 CFR 180.30(b)(1) covers federally owned hospital facilities.",
+  "disposition": "scope-exempt-federal",
+  "interpretation": "Exact CMS CCN/name/city/state and Government - Federal ownership agree with current IHS operator and hospital identity evidence. This supports the 45 CFR 180.30(b)(1) scope classification; it is not an MRF or file-quality finding.",
+  "next_action": "Retain the federal scope exclusion unless CMS ownership, facility identity or regulatory scope changes."
+}

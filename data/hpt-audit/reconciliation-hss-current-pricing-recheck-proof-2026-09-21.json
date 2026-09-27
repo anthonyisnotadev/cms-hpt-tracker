@@ -1,0 +1,19 @@
+{
+  "ccn": "330270",
+  "observed_at": "2026-09-21T16:00:00Z",
+  "official_pricing_page": "https://www.hss.edu/patient-care/paying-for-care/price-transparency",
+  "official_pricing_page_status": 200,
+  "official_page_observation": "The current first-party HSS price-transparency page lists Hospital for Special Surgery Main Hospital Standard Charges and identifies the CMS-required JSON links as larger than 500 MB.",
+  "page_mrf_url": "https://d2cg6hcwj0g0z0.cloudfront.net/131624135-1598703019_ny-society-for-the-relief-of-ruptured-and-crippled-maintaing-the-hospital-for-special-surgery_standardcharges.json",
+  "page_mrf_result": "The exact first-party linked Main Hospital JSON returned HTTP 403 Forbidden in bounded retrieval and rendered an error page in the browser; no JSON bytes were recovered.",
+  "page_mrf_status": 403,
+  "official_facility_address": "535 East 70th Street, New York, NY 10021",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=330270&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6593,
+  "cms_api_response_sha256": "412a75170fe96dd6fda95c2b6bda91d75c6d407c91d4e659ce43b696d0f1d05d",
+  "cms_record": { "facility_id": "330270", "facility_name": "HOSPITAL FOR SPECIAL SURGERY", "address": "535 EAST 70TH STREET", "citytown": "NEW YORK", "state": "NY", "zip_code": "10021", "hospital_type": "Acute Care Hospitals", "hospital_ownership": "Voluntary non-profit - Private", "emergency_services": "No" },
+  "disposition": "current-official-page-mrf-browser-and-bounded-access-denied",
+  "interpretation": "The current first-party page and CMS API independently confirm the Main Hospital identity and address. The page-linked JSON remains inaccessible to this client, so this is an access recheck only. No file absence, compliance, or promotion conclusion is made.",
+  "next_action": "Use an authorized download-capable route or publisher-provided copy for the exact Main Hospital JSON, then verify bounded bytes and declared campus metadata."
+}

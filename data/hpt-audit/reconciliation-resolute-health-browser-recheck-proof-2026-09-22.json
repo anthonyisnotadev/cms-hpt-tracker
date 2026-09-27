@@ -1,0 +1,17 @@
+{
+  "ccn": "670098",
+  "observed_at": "2026-09-22T17:30:00Z",
+  "official_pricing_page": "https://www.baptisthealthsystem.com/",
+  "official_pricing_page_status": 200,
+  "official_page_observation": "The recorded domain redirected to the first-party Baptist Health System site, which identifies hospitals and emergency care in the San Antonio, Texas area but did not identify Resolute Health Hospital in the loaded page. The exact cms-hpt.txt route was blocked by the browser client.",
+  "cms_pointer_url": "https://www.baptisthealthsystem.com/cms-hpt.txt",
+  "cms_pointer_result": "Interactive browser navigation returned net::ERR_BLOCKED_BY_CLIENT; no pointer content or MRF URL was available in this recheck.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=670098&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6573,
+  "cms_api_response_sha256": "D902EF2C2E09A3C03F07000C78D63CCEFFD890151671C04F6E69F7E7E4112FE0",
+  "cms_record": { "facility_id": "670098", "facility_name": "RESOLUTE HEALTH HOSPITAL", "address": "555 CREEKSIDE XING,", "citytown": "NEW BRAUNFELS", "state": "TX", "zip_code": "78130", "hospital_type": "Acute Care Hospitals", "hospital_ownership": "Proprietary", "emergency_services": "Yes" },
+  "disposition": "current-operator-domain-identity-incomplete-pointer-browser-client-blocked-no-mrf-observed",
+  "interpretation": "The loaded health-system page is a current operator/domain lead but does not independently identify the Resolute facility. The CMS record confirms Resolute Health Hospital and its New Braunfels address. Pointer access is a browser transport observation only; it does not establish file absence, noncompliance, or closure.",
+  "next_action": "Locate a current Resolute Health Hospital facility page or publisher-provided pointer/file, then verify exact New Braunfels identity, Texas metadata, declared date/version and usable bytes before promotion."
+}

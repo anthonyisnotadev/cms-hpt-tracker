@@ -1,0 +1,30 @@
+{
+  "ccn": "030138",
+  "observed_at": "2026-09-21T04:54:30Z",
+  "proof_file": "reconciliation-city-of-hope-phoenix-browser-cloudflare-proof-2026-09-21.json",
+  "official_site": "https://www.cityofhope.org/",
+  "official_pricing_page": "https://www.cityofhope.org/patients/our-value-and-pricing/pricing-information",
+  "browser_status": "Cloudflare challenge",
+  "browser_observation": "A fresh permitted browser navigation to the current City of Hope pricing page rendered an Attention Required/Cloudflare challenge rather than the pricing page. No Phoenix-specific file link or pointer text was exposed. This recheck was performed because the standing observation was an HTTP 403 and the current transport could have changed.",
+  "candidate_file_url": "https://www.cityofhope.org/320197974_western-regional-medical-center-_standardcharges.json",
+  "candidate_file_result": "Not retrievable through the challenged browser route; no bounded bytes obtained.",
+  "pointer_url": "https://www.cancercenter.com/cms-hpt.txt",
+  "pointer_result": "No pointer content obtained through the challenged page route.",
+  "official_identity": "City of Hope Phoenix, 14200 W. Celebrate Life Way, Goodyear, AZ 85338",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=030138&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6589,
+  "cms_api_response_sha256": "B4E72AD56FEBE74EE8C13039E07016FA49618E1B7F1D258F907AB786D733A1CA",
+  "cms_record": {
+    "facility_id": "030138",
+    "facility_name": "CITY OF HOPE CANCER CENTER PHOENIX",
+    "address": "14200 WEST CELEBRATE LIFE WAY",
+    "citytown": "GOODYEAR",
+    "state": "AZ",
+    "zip_code": "85338",
+    "hospital_type": "Acute Care Hospitals"
+  },
+  "disposition": "official-pricing-page-browser-cloudflare-candidate-file-unresolved",
+  "interpretation": "The current browser route is a transport/access observation only. CMS independently confirms the Phoenix facility and Goodyear address; no file absence, closure or compliance conclusion is inferred.",
+  "next_action": "Retry the exact Western Regional Medical Center JSON and pointer through an authorized download-capable route after a transport or publisher change; verify Arizona identity, declared date/version and parsed usability before promotion."
+}

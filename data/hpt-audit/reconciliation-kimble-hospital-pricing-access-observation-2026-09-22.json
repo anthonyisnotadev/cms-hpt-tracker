@@ -1,0 +1,29 @@
+{
+  "ccn": "451306",
+  "observed_at": "2026-09-22T00:00:00Z",
+  "official_site": "https://kimblehospital.org/",
+  "official_pricing_page": "https://kimblehospital.org/price-transparency/",
+  "official_page_status": 202,
+  "official_page_content_type": "text/html",
+  "official_page_response_bytes": 190,
+  "official_page_sha256": "3699386815e48105ce1d8acfa1142880efaaf58268a9bbaf2b4f58f666ca6ec7",
+  "official_page_observation": "Indexed official pricing-page material identifies Kimble Hospital at 349 Reid Road, Junction TX 76849 and describes a downloadable machine-readable CDM, but the current bounded client receives the site's robot challenge on the homepage and pricing route.",
+  "pointer_url": "https://kimblehospital.org/cms-hpt.txt",
+  "pointer_status": 202,
+  "pointer_content_type": "text/html",
+  "pointer_response_bytes": 180,
+  "pointer_sha256": "92d55685b4893a5a2c977f34db8d55d7c822e56526f639f6596c2762d746c0db",
+  "file_kind": null,
+  "disposition": "official-pricing-page-access-challenge",
+  "cms_hospital_general_record": {
+    "source_file": "cms_data/Hospital_General_Information.csv",
+    "facility_id": "451306",
+    "facility_name": "KIMBLE HOSPITAL",
+    "address": "349 REID ROAD",
+    "citytown": "JUNCTION",
+    "state": "TX",
+    "hospital_type": "Critical Access Hospitals"
+  },
+  "interpretation": "This is a transport/access observation only. The challenge does not establish file absence, noncompliance, or an exemption; the CCN remains unresolved.",
+  "next_action": "Retry the exact official pricing route and root pointer through an authorized alternate client, then independently verify any recovered file's facility identity, address/state, date, version and complete-file usability."
+}

@@ -1,0 +1,22 @@
+{
+  "ccn": "400141",
+  "observed_at": "2026-09-21T21:54:00Z",
+  "official_pricing_page": "https://caribbeanmedicalcenter.com/price-transparency/",
+  "official_pricing_page_status": 200,
+  "official_page_observation": "The current first-party Caribbean Medical Center price-transparency page identifies a Charge Master and links the 660559417_Caribbean-Medical-Center_Standard-and-Negotiated.csv object. The first-party Centro Médico del Noreste identity page names the facility but gives the site address as Ave. Osvaldo Molina #151, Fajardo, PR 00738, while CMS identifies CCN 400141 at 404 Ave General Valero, Fajardo, PR 00738. The linked CSV route returned a 258-byte 202 response containing a first-party security-challenge HTML shell rather than CSV bytes.",
+  "official_identity_page": "https://caribbeanmedicalcenter.com/centro-medico-del-noreste/",
+  "cms_pointer_url": "https://caribbeanmedicalcenter.com/cms-hpt.txt",
+  "cms_pointer_result": "The exact first-party pointer route was not assigned from the page; this recheck retained the page-linked file and address discrepancy without promoting it as a verified MRF.",
+  "mrf_url": "https://caribbeanmedicalcenter.com/wp-content/uploads/2026/01/660559417_Caribbean_Medical_Center_standarcharges1.csv",
+  "mrf_status": 202,
+  "mrf_response_bytes": 258,
+  "mrf_response_sha256": "E8A2C3EE678FAD1971EDA920B4BDACB0731AD730BCD99093B8725BEB8C02535D",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=400141&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6820,
+  "cms_api_response_sha256": "D3449246D857E3D53BFF1B53BDEA28AC1CA8254EA80144845D389D0CFCB170E8",
+  "cms_record": { "facility_id": "400141", "facility_name": "CENTRO MEDICO DEL NORESTE", "address": "404 AVE GENERAL VALERO", "citytown": "FAJARDO", "state": "PR", "zip_code": "00738", "hospital_type": "Acute Care Hospitals", "hospital_ownership": "Proprietary", "emergency_services": "Yes" },
+  "disposition": "official-page-file-address-conflict-and-challenge-no-mrf-promotion",
+  "interpretation": "The official pages establish a facility-specific name and current pricing-file link, but the site-published address does not match the CMS address and the file route yielded only a challenge shell. This is retained as a supported identity/file-access conflict; no MRF validity or compliance conclusion is made.",
+  "next_action": "Resolve the Fajardo address discrepancy with a facility-specific source and retrieve the linked file through a permitted route; only then verify declared name, address/state, date, version and usability."
+}

@@ -318,7 +318,8 @@
      person (compliant, federal-exempt) stay in the filter but not here: a
      "None needed" card at the top of an intervention list is noise. */
   var interventionGroups = D.interventions.filter(function (v) {
-    return v.n > 0 && v.key !== 'none' && v.key !== 'exempt-federal' && v.key !== 'exempt-closed';
+    return v.n > 0 && v.key !== 'none' && v.key !== 'exempt-federal'
+      && v.key !== 'exempt-ihs-program' && v.key !== 'exempt-closed';
   }).sort(function (a, b) { return b.n - a.n; });
   var interventionList = $('intervention-cards');
   interventionList.innerHTML = interventionGroups.map(function (v, i) {

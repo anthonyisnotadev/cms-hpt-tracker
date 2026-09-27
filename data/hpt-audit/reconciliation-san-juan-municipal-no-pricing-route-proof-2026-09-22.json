@@ -1,0 +1,21 @@
+{
+  "ccn": "400015",
+  "observed_at": "2026-09-22T09:05:00Z",
+  "official_domain": "sanjuan.pr",
+  "official_facility_name": "Hospital Municipal de San Juan Dr. Rafael López Nussa",
+  "official_facility_address": "Centro Médico / Ave. Américo Miranda, Río Piedras, San Juan, PR",
+  "official_identity_sources": [
+    "https://sanjuan.pr/wp-content/uploads/2024/06/PRESUPUESTO-2024-2025-FINAL_compressed.pdf",
+    "https://sanjuan.pr/wp-content/uploads/2025/06/MSJ-DOCUMENTO-DE-PRESUPUESTO-GENERAL-AF-2025-2026_compressed.pdf"
+  ],
+  "official_identity_observation": "Current municipal budget documents identify the Hospital Municipal Dr. Rafael López Nussa and its Río Piedras/Centro Médico operation, matching the roster's San Juan municipal hospital identity.",
+  "route_checks": [
+    {"url": "https://sanjuan.pr/servicios/salud", "status": 500},
+    {"url": "https://sanjuan.pr/cms-hpt.txt", "status": 404},
+    {"url": "https://sanjuan.pr/price-transparency", "status": 404},
+    {"url": "https://sanjuan.pr/transparencia-de-precios", "status": 404}
+  ],
+  "disposition": "pointer-discovery-incomplete",
+  "interpretation": "The municipal identity is supported, but no facility-specific CMS CSV/JSON/ZIP pointer or file was recovered. Route failures are transport/discovery observations only; no compliance, exemption or file-absence conclusion is inferred.",
+  "next_action": "Retry the municipal health page through an alternate client and search Puerto Rico publisher/state resources for a facility-specific current MRF."
+}

@@ -1,0 +1,20 @@
+{
+  "ccn": "531314",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://niobrarahospital.com/",
+  "official_identity_sources": [
+    "https://niobrarahospital.com/",
+    "https://niobrarahospital.com/cms-hpt.txt",
+    "https://niobrarahospital.slicedhealth.io/home",
+    "https://niobrarahospital.slicedhealth.io/pricer/870725536_niobrara-county-hospital-district_standardcharges.csv",
+    "https://health.wyo.gov/wp-content/uploads/2026/05/2025-2026-Facility-Directory.pdf"
+  ],
+  "official_identity": "Niobrara County Hospital District operates Niobrara Community Hospital in Lusk, Wyoming, associated with CCN 531314. The first-party site identifies the hospital at 921 S. Ballancee Ave, Lusk, WY 82225 and links its Price Transparency portal.",
+  "pointer_observation": "The official cms-hpt.txt returned HTTP 200 and names Niobrara County Hospital District, linking the Sliced Health pricing portal and its facility-specific MRF URL.",
+  "browser_observation": "Browser automation opened the first-party Niobrara site, the linked Sliced Health portal, and exposed the Price Transparency link. The portal's facility selector did not populate in the browser session, but the pointer-declared MRF URL was retrieved directly.",
+  "pricing_url": "https://niobrarahospital.slicedhealth.io/pricer/870725536_niobrara-county-hospital-district_standardcharges.csv",
+  "pricing_observation": "The pointer-declared CSV returned HTTP 200 application/octet-stream, 5,792,434 bytes, SHA-256 7104f3acd017e1e8b3508beb409a6d12c79ba94a631cdc136b76782f85a7e564. Its metadata declares Niobrara County Hospital District at 921 S Ballancee Ave, PO Box 780, Lusk, WY 82225, license 15062, NPI 1427091347, CMS 3.0.0, update date 2026-05-27, attester Dana Gilleland, attestation true, and 35,160 data rows.",
+  "disposition": "verified-current-mrf",
+  "interpretation": "Current first-party identity, official pointer, pricing portal, exact Lusk address/state and MRF metadata converge; this is supported observed MRF evidence, not a legal compliance determination.",
+  "next_action": "Retain exact pointer, portal and file provenance and recheck on the normal freshness cycle."
+}

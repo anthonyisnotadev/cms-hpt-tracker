@@ -1,0 +1,24 @@
+{
+  "ccn": "650003",
+  "observed_at": "2026-09-23T07:05:00Z",
+  "official_site": "https://www.grmc.gu/",
+  "official_pricing_page": "https://www.grmc.gu/fee-schedule/",
+  "official_identity": "Guam Regional Medical City, 133 Route 3, Dededo, Guam 96929; the current official fee schedule page and CMS roster agree on facility and location.",
+  "browser_observation": "The current official GRMC Fee Schedule page identifies Guam Regional Medical City and states that it offers a Patient Price list. It exposes GRMC Shoppable Services (effective February 24, 2023; 868 downloads) and GRMC CDM Machine Readable (effective January 6, 2025; 512 downloads). Both Download Now controls are protected by reCAPTCHA and expose no direct file URL in the accessible DOM. The page is current and usable as a pricing route, but no file bytes were recovered.",
+  "pointer_urls": [
+    "https://www.grmc.gu/cms-hpt.txt",
+    "https://www.grmc.gu/.well-known/cms-hpt.txt",
+    "https://grmc.gu/cms-hpt.txt",
+    "https://grmc.gu/.well-known/cms-hpt.txt"
+  ],
+  "pointer_status": "The two www root-pointer variants returned HTML 404 responses. The bare-domain variants failed DNS resolution in the bounded retrieval; this is a transport observation, not evidence of pointer absence.",
+  "download_controls": [
+    {"label": "GRMC Shoppable Services", "effective_date": "2023-02-24", "download_id": "9299", "action": "https://www.grmc.gu/?sdm_process_download=1&download_id=9299"},
+    {"label": "GRMC CDM Machine Readable", "effective_date": "2025-01-06", "download_id": "10627", "action": "https://www.grmc.gu/?sdm_process_download=1&download_id=10627"}
+  ],
+  "mrf_observation": "Direct GETs to both publisher download actions returned HTTP 200 HTML intermediate pages containing a human-verification reCAPTCHA, not CSV/JSON/ZIP file bytes. No file-absence, exemption or compliance conclusion inferred.",
+  "cms_record": {"ccn": "650003", "name": "GUAM REGIONAL MEDICAL CITY", "address": "133 ROUTE 3", "city": "DEDEDO", "state": "GU", "zip": "96929"},
+  "disposition": "official-pricing-page-recaptcha-no-file-bytes",
+  "interpretation": "This dated browser and bounded pointer check confirms a current official GRMC pricing route and two machine-readable download controls, but the controls require an interactive reCAPTCHA step and yielded no directly inspectable file URL or bytes. The observation remains unresolved and does not establish file absence or a compliance result.",
+  "next_action": "Complete the publisher's reCAPTCHA-gated download interactively or obtain a publisher-provided direct CSV/JSON/ZIP URL; then verify exact Guam facility identity, declared date/version and usable bytes before promotion."
+}

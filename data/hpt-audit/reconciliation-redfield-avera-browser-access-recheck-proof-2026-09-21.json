@@ -1,0 +1,23 @@
+{
+  "ccn": "431316",
+  "hospital_name": "COMMUNITY MEMORIAL HOSPITAL",
+  "state": "SD",
+  "observed_at": "2026-09-21T05:29:05Z",
+  "recheck_reason": "Tier-1 current-file access follow-up; retry the Avera pointer-declared file through browser automation and bounded retrieval while preserving the Redfield-specific identity gate.",
+  "facility_site": "https://www.redfieldcmh.org/",
+  "facility_identity_page": "https://www.redfieldcmh.org/departments/health-info-management/",
+  "facility_address": "111 West 10th Avenue, Redfield, SD 57469",
+  "avera_pointer_file_url": "https://www.avera.org/app/files/public/ab83b4b4-beb0-4a03-897d-6ce6983a71c5/466000400_redfield-community-memorial_standardcharges.csv",
+  "browser_file_status": "Access Denied page; no file download",
+  "bounded_file_status": 403,
+  "bounded_file_content_type": "text/html",
+  "bounded_file_response_bytes": 528,
+  "bounded_file_response_sha256": "651F0F28E1AE5ED546B5C0F872F87E19D09E493F87B2D4ABD107C724A365DE12",
+  "bounded_file_observation": "The Avera URL returned an Akamai access-denied HTML response rather than CSV bytes; no file was promoted.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=431316&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_record_observation": "CMS roster identity remains Community Memorial Hospital, 111 W 10th Ave, Redfield, SD 57469.",
+  "disposition": "redfield-identity-confirmed-avera-file-browser-and-bounded-access-denied",
+  "interpretation": "The Redfield facility identity remains independently confirmed, but the Avera pointer-declared file remains inaccessible to both browser automation and bounded retrieval. This is a transport/access observation only and does not establish file absence or compliance.",
+  "next_action": "Use an authorized human-browser or publisher-provided route to retrieve the exact Avera file and Redfield root pointer, then verify bytes, address/state, declared date/version and usability before promotion."
+}

@@ -1,0 +1,13 @@
+{
+  "ccn":"150046","observed_at":"2026-09-23T06:20:00Z",
+  "official_site":"https://regionalhospital.com/",
+  "official_identity":"Terre Haute Regional Hospital, 3901 S Seventh St, Terre Haute, IN 47802 (CMS record independently confirms this facility/address).",
+  "browser_observation":"Interactive browser navigation failed with net::ERR_CERT_COMMON_NAME_INVALID. HTTPS bounded requests to the homepage and exact root pointer failed TLS validation. HTTP fallback returned 301 to the same HTTPS URL.",
+  "pointer_urls":["https://regionalhospital.com/cms-hpt.txt","https://www.regionalhospital.com/cms-hpt.txt"],
+  "pointer_status":"HTTPS TLS certificate validation failure; no pointer content recovered",
+  "mrf_observation":"No MRF bytes recovered; no file-absence or compliance conclusion inferred.",
+  "cms_api_url":"https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=150046&conditions%5B0%5D%5Boperator%5D=%3D","cms_api_status":200,"cms_api_response_bytes":6574,"cms_api_response_sha256":"DBD92B77342E369681B60AEAB915E3CF1E97ED87D9FD68AB95A52EFAC7C43313","cms_record":{"facility_id":"150046","facility_name":"TERRE HAUTE REGIONAL HOSPITAL","address":"3901 S SEVENTH ST","citytown":"TERRE HAUTE","state":"IN","zip_code":"47802"},
+  "disposition":"browser-tls-certificate-failure",
+  "interpretation":"The CMS identity is recorded, but the official domain currently fails certificate validation and HTTP only redirects back to HTTPS. This is a transport/domain-access observation only, not a file-absence or compliance finding.",
+  "next_action":"Retry the recorded domain after certificate remediation or verify a replacement first-party domain; recover and verify facility-specific pointer/MRF bytes before promotion."
+}

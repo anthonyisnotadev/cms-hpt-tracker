@@ -1,0 +1,15 @@
+{
+  "ccn": "454060",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://laurelridgetc.com/",
+  "official_identity_sources": [
+    "https://jobs.uhs.com/laurel-ridge-treatment-center",
+    "https://www.cms.gov/medicare/health-safety-standards/certification-compliance/public-notices/laurel-ridge-treatment-center"
+  ],
+  "official_identity": "UHS identifies Laurel Ridge Treatment Center as its San Antonio facility, and the CMS public notice identifies CCN 454060 at 17720 Corporate Woods Dr., San Antonio, TX 78259.",
+  "browser_observation": "Browser automation reached the first-party Laurel Ridge domain but received an anti-bot interstitial. Direct requests to cms-hpt.txt and likely pricing paths returned HTTP 403.",
+  "pricing_observation": "No usable facility-specific CMS pointer or MRF bytes were retrieved. This is a transport/access observation, not evidence that a file is absent or that the facility is exempt.",
+  "disposition": "current-operator-identity-confirmed-pricing-route-client-denied",
+  "interpretation": "This replaces the stale domain-unknown label with a supported first-party domain and exact San Antonio identity while preserving the unresolved pricing route. CMS's separate April 2026 termination notice is retained as historical regulatory evidence and is not treated as a closure or HPT exemption finding.",
+  "next_action": "Retry the first-party CMS pointer and pricing route through a materially different permitted browser/download route; require bounded bytes, Laurel Ridge identity, Texas metadata, date/version and parsed usability before promotion."
+}

@@ -1,0 +1,17 @@
+{
+  "ccn": "380005",
+  "observed_at": "2026-09-21T17:00:00Z",
+  "official_transition_source": "https://impact.asante.org/community-connections-asante-presents-at-ashland-rotary-meeting/",
+  "official_transition_source_status": 200,
+  "official_transition_observation": "Asante's current first-party community update states that Ashland Community Hospital's hospital license was closed as a strategic decision and that Asante Ashland transitioned to a satellite campus of Rogue Regional Medical Center effective May 22, 2026; it lists continuing 24/7 emergency, imaging, outpatient surgery and other services.",
+  "recorded_domain": "asante.org",
+  "pointer_recheck": "The existing root-pointer access observation remains a client 403/403 result; no new machine-readable file was recovered in this recheck.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=380005&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6596,
+  "cms_api_response_sha256": "a026fe340424bf167c5194af527580a2c7490849082b73ca307b54dd06518d6a",
+  "cms_record": { "facility_id": "380005", "facility_name": "ASANTE ASHLAND COMMUNITY HOSPITAL", "address": "280 MAPLE STREET", "citytown": "ASHLAND", "state": "OR", "zip_code": "97520", "hospital_type": "Acute Care Hospitals", "hospital_ownership": "Government - Local", "emergency_services": "Yes" },
+  "disposition": "official-operator-transition-observed-pointer-mrf-still-unresolved",
+  "interpretation": "The current operator source materially clarifies that Ashland is now a Rogue Regional satellite campus, but it does not provide a current facility-specific CMS MRF or an effective-dated Medicare CCN termination record. The historical CCN and current CMS identity are retained; no closure, parent-file attribution or compliance conclusion is inferred.",
+  "next_action": "Obtain an effective-dated CMS enrollment/status record and verify whether Rogue Regional's current pointer/MRF explicitly includes the Ashland satellite before changing the CCN disposition."
+}

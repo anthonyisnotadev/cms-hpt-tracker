@@ -1,0 +1,28 @@
+{
+  "ccn": "450643",
+  "observed_at": "2026-09-22T08:00:00Z",
+  "official_site": "https://doctorshosplaredo.com/",
+  "official_pricing_page": "https://doctorshosplaredo.com/patients-visitors/price-transparency",
+  "official_page_status": 403,
+  "official_page_observation": "The official Doctors Hospital of Laredo site identifies the facility at 10700 McPherson Road, Laredo, Texas. The direct price-transparency route and root cms-hpt.txt route returned HTTP 403 in the bounded client; no machine-readable file was recovered.",
+  "pointer_url": "https://doctorshosplaredo.com/cms-hpt.txt",
+  "pointer_status": 403,
+  "pointer_content_type": "text/html; charset=UTF-8",
+  "pointer_response_bytes": 8177,
+  "pointer_sha256": "e804d72df740c3e27b12f087a7992b576263bc81197e44ac8939066f55925551",
+  "file_kind": null,
+  "disposition": "official-pricing-page-access-denied",
+  "cms_hospital_general_record": {
+    "source_file": "cms_data/Hospital_General_Information.csv",
+    "source_sha256": "23c5019ee51e11442d6d64cd153cedd78c51ab6435f621e4cb9351e3e972d9e3",
+    "facility_id": "450643",
+    "facility_name": "DOCTORS HOSPITAL OF LAREDO",
+    "address": "10700 MCPHERSON ROAD",
+    "citytown": "LAREDO",
+    "state": "TX",
+    "zip_code": "78041",
+    "hospital_type": "Acute Care Hospitals"
+  },
+  "interpretation": "This is a transport/access observation only. It does not establish file absence, noncompliance, or exemption; the CCN remains unresolved.",
+  "next_action": "Retry the exact official pricing route and root pointer through an authorized alternate client, then independently verify any recovered file's facility identity, address/state, date, version and complete-file usability."
+}

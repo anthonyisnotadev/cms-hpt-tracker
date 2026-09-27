@@ -1,0 +1,18 @@
+{
+  "ccn": "670115",
+  "observed_at": "2026-09-23T08:05:00Z",
+  "official_site": "https://emergencyhospitals.care/",
+  "official_pricing_page": "https://emergencyhospitals.care/cms-hpt.txt",
+  "official_identity": "Cleveland Emergency Hospital, 8901 FM 1960 Bypass Rd W, Suite 105, Humble, TX 77338 per CMS roster and CMS facility records. The roster's current official domain is emergencyhospitals.care.",
+  "browser_observation": "The current emergencyhospitals.care root and cms-hpt.txt route returned a 114-byte HTML redirect shell to /lander. The redirected /lander page was a GoDaddy parked-domain landing page, not a hospital pricing or pointer document. Browser navigation to the candidate route timed out; no interactive file evidence was inferred.",
+  "pointer_urls": [
+    "https://emergencyhospitals.care/cms-hpt.txt",
+    "https://emergencyhospitals.care/.well-known/cms-hpt.txt"
+  ],
+  "pointer_status": "Both root-pointer variants returned the same HTML redirect shell rather than plain-text pointer content; following it led to a parked-domain landing page. This establishes current route failure/parking, not a legal compliance or file-absence conclusion.",
+  "mrf_observation": "No Cleveland Emergency Hospital CSV/JSON/ZIP or direct machine-readable pricing URL was recovered from the current official domain.",
+  "cms_record": {"ccn": "670115", "name": "CLEVELAND EMERGENCY HOSPITAL", "address": "8901 FM 1960 BYPASS RD W, SUITE 105", "city": "HUMBLE", "state": "TX", "zip": "77338"},
+  "disposition": "official-domain-parked-no-pointer-or-file",
+  "interpretation": "This dated browser and bounded retrieval narrows the current discovery state: the listed official domain is parked and does not expose a usable pointer or MRF. No third-party or differently addressed Cleveland facility file was assigned to CCN 670115; the CCN remains unresolved.",
+  "next_action": "Identify the hospital's current first-party domain or obtain a publisher-provided Cleveland-specific pricing URL; then verify exact facility identity, declared date/version and usable CSV/JSON/ZIP bytes before promotion."
+}

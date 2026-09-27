@@ -1,0 +1,19 @@
+{
+  "ccn": "450895",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://www.bswhealth.com/",
+  "official_pricing_page": "https://www.bswhealth.com/patient-tools/registration-and-billing/estimate-your-cost-of-care",
+  "official_identity_source": "https://www.bswhealth.com/-/media/Project/BSW/Sites/BSWHealth/Documents/patient-tools/patient-registration-and-billing/financial-assistance-policy-ncsc-korean.pdf",
+  "state_identity_source": "https://www.dshs.texas.gov/sites/default/files/thcic/hospitals/inpatientstatusreport2q2025.pdf",
+  "identity_observation": "The BSW financial-assistance policy lists Baylor Scott & White The Heart Hospital - Corinth, and the Texas DSHS reporting material places the Corinth facility in the Denton grouping. The CMS roster identity is 2813 S Mayhill Road, Denton, TX 76208.",
+  "pricing_page_status": 200,
+  "pricing_page_observation": "The current BSW Facility rates page lists Dallas, Denton, McKinney, Plano and Waxahachie Heart Hospital files, but no separate Corinth entry. This is a discovery observation only; no MRF absence or compliance conclusion is inferred.",
+  "pointer_urls": [
+    "https://www.bswhealth.com/cms-hpt.txt",
+    "https://www.bswhealth.com/.well-known/cms-hpt.txt"
+  ],
+  "pointer_observation": "No current Corinth-specific root pointer or MRF URL was recovered from the accessible official page.",
+  "disposition": "official-operator-page-reviewed-corinth-file-route-unresolved",
+  "interpretation": "The operator and state identity are corroborated, but the current BSW facility-rate listing exposes no distinct Corinth file. The separate Denton Heart Hospital file was not assigned to CCN 450895 because campus identity and scope were not independently established.",
+  "next_action": "Obtain a publisher-confirmed Corinth MRF/pointer or authoritative CMS enrollment/successor-scope evidence; do not assign the Denton campus file without exact CCN and facility metadata."
+}

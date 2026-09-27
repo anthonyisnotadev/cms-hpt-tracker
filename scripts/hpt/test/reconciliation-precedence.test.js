@@ -5,6 +5,7 @@ const { addressObservationRequiresAction, dispositionNextAction, historicalChang
   isSupportedIdentityUncertainty, laterManualObservationRequiresFollowUp,
   reconciliationWorkstream, resolutionObservedAt, reviewedResolutionSupersedes,
   reconciliationStatus, standingEvidenceRetained } = require('../lib/reconciliation-precedence');
+const { applyNationwideVerification } = require('../lib/nationwide-verification-view');
 
 test('only an applied, dated resolution at or after the nationwide observation supersedes it', () => {
   const resolution = { reviewed_at: '2026-09-15T10:00:00Z', evidence: { checked_at: '2026-09-15T11:00:00Z' } };
@@ -46,6 +47,19 @@ test('incomplete newer checks retain stronger standing evidence without becoming
   assert.equal(standingEvidenceRetained('not-assessed-domain-unknown', 'pointer-discovery-incomplete'), false);
   assert.equal(standingEvidenceRetained('compliant-observed', 'verified-current-mrf'), false);
   assert.equal(standingEvidenceRetained('compliant-observed', 'scope-exempt-closed'), false);
+});
+
+test('nationwide overlay cannot erase a stronger standing finding even without a retained flag', () => {
+  const row = { ccn: '001234', hospital_name: 'Example Hospital', city: 'Example', state: 'AL',
+    finding: 'compliant-observed', assessable: 'yes', checked_at: '2026-09-01T00:00:00Z',
+    mrf_url: 'https://example.test/current.json', cms_template_version: '3.0.0' };
+  for (const disposition of ['pointer-discovery-incomplete', 'pointer-not-retrieved',
+    'pointer-access-denied-to-client', 'mrf-request-unsuccessful', 'linked-mrf-header-unmatched']) {
+    const [result] = applyNationwideVerification([row], [{ ccn: row.ccn,
+      hospital_name: row.hospital_name, city: row.city, state: row.state,
+      prior_finding: row.finding, disposition, observed_at: '2026-09-02T00:00:00Z' }]);
+    assert.deepEqual(result, row, `incomplete ${disposition} must not erase standing evidence`);
+  }
 });
 
 test('supported identity uncertainty requires a quarantine and reproducible pointer/file identity proof', () => {
@@ -113,6 +127,8 @@ test('reconciliation workstreams separate current uncertainty from lower-risk fo
   assert.equal(reconciliationWorkstream(['standing-evidence-retained-review-new-observation']), 'standing-evidence-follow-up');
   assert.equal(reconciliationWorkstream(['reviewed-pointer-target-client-follow-up']), 'standing-evidence-follow-up');
   assert.equal(reconciliationWorkstream(['reviewed-pointer-or-page-linkage-follow-up']), 'standing-evidence-follow-up');
+  assert.equal(reconciliationWorkstream(['official-page-file-corroborated-root-pointer-pending']), 'standing-evidence-follow-up');
+  assert.equal(reconciliationWorkstream(['browser-file-identity-proof-insufficient']), 'standing-evidence-follow-up');
   assert.equal(reconciliationWorkstream(['later-manual-observation-follow-up']), 'standing-evidence-follow-up');
   assert.equal(reconciliationWorkstream(['proposed-finding-differs-from-standing']), 'standing-finding-discrepancy');
   assert.equal(reconciliationWorkstream(['latest-check-unresolved'], true), 'supported-uncertainty-monitor');

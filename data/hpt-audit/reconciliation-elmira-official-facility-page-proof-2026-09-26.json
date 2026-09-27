@@ -1,0 +1,17 @@
+{
+  "ccn": "334045",
+  "observed_at": "2026-09-26T04:10:00Z",
+  "source_url": "https://omh.ny.gov/omhweb/facilities/elpc/",
+  "source_status": 200,
+  "source_content_type": "text/html",
+  "source_bytes": 15454,
+  "source_sha256": "b4fa7da6ff6e87ce5b4dcfb1da9d4118a5bc8a847a498cad7be511665d144c03",
+  "facility_identity": {
+    "name": "Elmira Psychiatric Center",
+    "address": "100 Washington Street, Elmira, NY 14901-2898",
+    "operator": "New York State Office of Mental Health"
+  },
+  "observation": "The current first-party OMH facility page independently confirms Elmira Psychiatric Center and its Elmira campus address. It does not identify or correct the shared pricing target whose header names Greater Binghamton.",
+  "disposition": "identity-strengthened-shared-pointer-header-mismatch-retained",
+  "next_action": "Obtain publisher clarification or a replacement CMS CSV/JSON whose root metadata names Elmira Psychiatric Center; do not assign the Greater Binghamton header to Elmira."
+}

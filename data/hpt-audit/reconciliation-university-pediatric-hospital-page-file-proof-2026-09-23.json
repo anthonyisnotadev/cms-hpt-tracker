@@ -1,0 +1,33 @@
+{
+  "ccn": "403301",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://hopu.pr.gov/",
+  "official_pricing_page": "https://hopu.pr.gov/transparencia-de-precios",
+  "official_pricing_page_observation": "The Puerto Rico government site identifies Hospital Pediátrico Universitario and links its machine-readable pricing file.",
+  "page_file_url": "https://hospital-pediatrico.vercel.app/machine.json",
+  "page_file_status": 200,
+  "page_file_content_type": "application/json",
+  "page_file_bytes": 11199333,
+  "page_file_sha256": "6e2625a3683d544dc2cfd3305dec45ce4900088cbd358a99c69a41a5549ffe6e",
+  "declared_hospital_name": "Hospital Pediatrico Universitario",
+  "declared_address": "Centro Médico, Carr. Num 22; Rio Piedras, PR 00921",
+  "declared_last_updated": "2026-08-31",
+  "declared_license_number": "40",
+  "declared_license_state": "PR",
+  "declared_npi": "1174678460",
+  "cms_template_version": "3.0.0",
+  "attestation_confirmed": true,
+  "attester_name": "Gisselle Van Derdys Rivera",
+  "file_parse_observation": "The downloaded response is not valid JSON: parsing fails at line 26 where a standalone object contains the property text standard_charge_information without a colon/value. The response therefore cannot be treated as a verified usable CMS MRF.",
+  "cms_record": {
+    "ccn": "403301",
+    "name": "UNIVERSITY PEDIATRIC HOSPITAL",
+    "address": "PUERTO RICO MEDICAL CENTER IN RIO PIEDRAS",
+    "city": "SAN JUAN",
+    "state": "PR",
+    "zip": "00935"
+  },
+  "disposition": "official-page-file-invalid-json-address-review-required",
+  "interpretation": "The official Puerto Rico government site and linked file identify the pediatric hospital and provide CMS-style metadata, but the file is syntactically invalid and declares a street/ZIP representation different from the CMS roster's Puerto Rico Medical Center in Rio Piedras, San Juan 00935. This is retained as page-linked evidence and identity/schema uncertainty; no MRF verification or compliance conclusion is assigned.",
+  "next_action": "Obtain a corrected publisher file and reconcile the declared address/ZIP and NPI against CMS enrollment before promotion."
+}

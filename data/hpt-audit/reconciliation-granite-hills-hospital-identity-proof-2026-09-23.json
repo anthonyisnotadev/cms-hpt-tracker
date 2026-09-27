@@ -1,0 +1,18 @@
+{
+  "ccn": "524043",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://granitehillshospital.com/",
+  "official_identity_sources": [
+    "https://granitehillshospital.com/",
+    "https://uhs.com/news/universal-health-services-announces-name-for-new-west-allis-behavioral-health-hospital/",
+    "https://jobs.uhsinc.com/granite-hills-hospital",
+    "https://qcor.cms.gov/HospitalReportObject?address=1706+S+68th+St&city=West+Allis&cmsNumber=524043&facilityName=Granite+Hills+Hospital&formattedSurveyDate=04%2F30%2F2025&state=WI&surveyDate=2025-04-30&tag=A0395",
+    "https://turquoise.health/providers/granite-hills-hospital/information"
+  ],
+  "official_identity": "Granite Hills Hospital is the West Allis, Wisconsin psychiatric hospital associated with CCN 524043. UHS identifies the facility at 1706 S. 68th Street; CMS QCOR identifies the same address and CCN, and provider records identify NPI 1497324115 and UHS affiliation.",
+  "browser_observation": "Browser automation opened the likely current official domain granitehillshospital.com but received a Cloudflare security challenge. The alternate granitehills.com domain resolved to a blank lander and was not treated as hospital evidence. Direct home, cms-hpt.txt and common pricing routes returned HTTP 403.",
+  "pricing_observation": "No usable facility-specific CMS pointer or MRF bytes were retrieved from a first-party route. Third-party provider data was retained only as identity corroboration and a lead, not as pricing evidence.",
+  "disposition": "current-operator-identity-confirmed-pricing-route-client-denied",
+  "interpretation": "This replaces the domain-unknown label with supported current Granite Hills Hospital identity and official-domain evidence while preserving unresolved pricing access. Cloudflare/403 is a transport observation, not a compliance finding.",
+  "next_action": "Retry the current official site and UHS/publisher pricing route through a materially different permitted browser/download route or obtain a publisher-issued current CMS CSV/JSON/ZIP; require exact West Allis identity, Wisconsin metadata, declared date/version and parsed usability before promotion."
+}

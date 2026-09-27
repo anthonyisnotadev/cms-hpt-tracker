@@ -1,0 +1,17 @@
+{
+  "ccn": "111337",
+  "observed_at": "2026-09-25T16:00:00Z",
+  "official_pricing_page": "https://emhcare.net/patients-visitors/pricing/",
+  "retrieval_route": "web-reader",
+  "page_status": "200",
+  "page_identity": "Elbert Memorial Hospital, 4 Medical Drive, Elberton, GA 30635",
+  "linked_mrf_url": "https://hospitalpricetransparencyfiles.com/elbert-memorial-hospital/582191830_Elberton-Elbert-County-Hospital-Authority_standardcharges.csv",
+  "page_observations": [
+    "The current page links the same machine-readable CSV recorded in the 2026-09-19 file proof.",
+    "The page describes the file as a complete chargemaster and separately says its displayed chargemaster data was last updated December 31, 2019.",
+    "The page does not expose cms-hpt.txt bytes through this route; the root-pointer access challenge remains separate."
+  ],
+  "evidence_effect": "current-page-link-and-identity-recheck; stale-page-date-discrepancy-retained",
+  "promotion": false,
+  "next_action": "Recover and validate the official root-pointer bytes through a materially different permitted route, then reconcile the page's 2019 disclosure note against the linked file metadata."
+}

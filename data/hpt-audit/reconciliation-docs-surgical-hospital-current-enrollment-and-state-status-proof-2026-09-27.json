@@ -1,0 +1,37 @@
+{
+  "historical_ccn": "050785",
+  "observed_at": "2026-09-27T12:53:30Z",
+  "cms_hospital_enrollments": {
+    "dataset_page": "https://data.cms.gov/provider-characteristics/hospitals-and-other-facilities/hospital-enrollments",
+    "dataset_release": "2026-08-01",
+    "dataset_id": "f6f6505c-e8b0-4d57-b258-e2b94133aaf2",
+    "query_url": "https://data.cms.gov/data-api/v1/dataset/f6f6505c-e8b0-4d57-b258-e2b94133aaf2/data?filter%5BCCN%5D=050785",
+    "http_status": 200,
+    "content_type": "application/json",
+    "response_bytes": 2,
+    "response_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "parsed_exact_ccn_rows": 0,
+    "interpretation": "The exact CCN does not appear in the August 2026 Hospital Enrollments dataset, which CMS describes as information on hospitals currently enrolled in Medicare. This is affirmative evidence that 050785 is not listed in that snapshot; it does not identify a new replacement CCN or establish all state licensure/operational facts."
+  },
+  "california_hcai": {
+    "url": "https://hcai.ca.gov/affordability/hospital-billing-policies/docs-surgical-hospital/",
+    "facility_name": "DOCS SURGICAL HOSPITAL",
+    "address": "6000 SAN VICENTE BOULEVARD, LOS ANGELES, CA 90036",
+    "license_number": "930000143",
+    "hcai_id": "106190681",
+    "policy_effective_date": "2026-05-07",
+    "observation": "California HCAI's current public billing-policy record lists the facility, address, hospital license identifiers, and policy effective date. It does not state current operating status or a CMS CCN."
+  },
+  "operator_page": {
+    "url": "https://www.docshealth.com/docs-surgical-hospital/",
+    "observation": "The first-party page describes construction of a new DOCS Surgical Hospital at 6000 San Vicente Boulevard and says it is projected to open in 2026; no actual opening date or replacement CCN is provided."
+  },
+  "prior_cms_qies_status": {
+    "proof_file": "reconciliation-qies-unresolved-status-audit-2026-09-27.json",
+    "termination_code": "01",
+    "termination_date": "2025-01-01"
+  },
+  "result": "The new current-enrollment query confirms no August 2026 CMS Hospital Enrollments row for historical CCN 050785. It is consistent with the QIES termination record, but does not answer whether a replacement facility has opened or has a new Medicare CCN. State HCAI and operator sources concern state facility identity/licensure/policy and construction status, not Medicare enrollment or HPT file coverage.",
+  "disposition": "historical-ccn-current-replacement-status-unresolved",
+  "next_action": "Retain 050785 in the historical accountability baseline. Obtain effective-dated CMS certification/enrollment evidence and verify the current CMS-template MRF for any replacement CCN once confirmed by CMS or the operator; do not remove the historical case based on absence from current enrollment alone."
+}

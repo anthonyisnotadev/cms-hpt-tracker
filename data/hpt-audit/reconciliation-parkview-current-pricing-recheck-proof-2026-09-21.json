@@ -1,0 +1,22 @@
+{
+  "ccn": "060020",
+  "observed_at": "2026-09-21T16:30:00Z",
+  "official_pricing_page": "https://www.uchealth.org/billing-and-pricing/shoppable-services-and-all-services-price-lists/",
+  "official_pricing_page_status": 200,
+  "official_page_observation": "The current first-party UCHealth pricing page lists separate Parkview Medical Center and Parkview Pueblo West Hospital entries, but both machine-readable links resolve to the same blob URL.",
+  "page_mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/11554/840935136-1821720681_parkview-medical-center,-inc_standardcharges.csv",
+  "page_mrf_status": 206,
+  "page_mrf_total_bytes": 150810772,
+  "page_mrf_last_modified": "Thu, 26 Feb 2026 19:32:58 GMT",
+  "page_mrf_header_range_bytes": 131072,
+  "page_mrf_header_range_sha256": "1ff2e5786d3884d68f1ae24091679e35c89e569bbb2767d4658877bd94a1e475",
+  "page_mrf_header_observation": "The bounded header declares Parkview Medical Center, Inc, CMS 3.0.0, date 2025-11-01, but location_name UCHealth Parkview Pueblo West Hospital and address 899 E. Industrial Boulevard, Pueblo West, CO 81007. This is the sibling Pueblo West campus, not the 400 W 16th St Pueblo roster campus.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=060020&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6585,
+  "cms_api_response_sha256": "32c63358373447d9a2984a973134c0affe949a9edab91aef0dfd8bb3d1a31554",
+  "cms_record": { "facility_id": "060020", "facility_name": "PARKVIEW MEDICAL CENTER, INC", "address": "400 W 16TH ST", "citytown": "PUEBLO", "state": "CO", "zip_code": "81003", "hospital_type": "Acute Care Hospitals", "hospital_ownership": "Voluntary non-profit - Private", "emergency_services": "Yes" },
+  "disposition": "current-official-page-shared-sibling-file-identity-unresolved",
+  "interpretation": "The current first-party page confirms a publisher-level linkage error or shared-target ambiguity: the Main Parkview and Pueblo West entries point to the same file, whose header identifies the Pueblo West address. The file is retained as sibling evidence and is not assigned to CCN 060020. No file-absence or compliance conclusion is made.",
+  "next_action": "Publisher must provide a corrected Parkview Medical Center target for 400 W 16th Street; then retrieve bounded bytes and verify address, state, date, version and full-file usability before promotion."
+}

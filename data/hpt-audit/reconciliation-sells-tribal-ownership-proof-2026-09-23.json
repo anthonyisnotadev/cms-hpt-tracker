@@ -1,0 +1,22 @@
+{
+  "ccn": "030074",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://www.ihs.gov/tucson/healthcarefacilities/sellshospital/",
+  "official_operator_source": "https://www.ihs.gov/tucson/aboutus/",
+  "official_identity": "The current IHS Sells Indian Hospital page identifies a 14-bed hospital at Highway 86 and Topawa Road, Sells, Arizona. The Tucson Area page states that Tohono O'odham Nation Healthcare operates the Sells Service Unit through a tribal self-determination compact.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=030074&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_record": {
+    "facility_id": "030074",
+    "facility_name": "SELLS HOSPITAL",
+    "address": "HIGHWAY 86, AT TOPAWA ROAD",
+    "citytown": "SELLS",
+    "state": "AZ",
+    "zip_code": "85634",
+    "hospital_type": "Acute Care Hospitals",
+    "hospital_ownership": "Tribal"
+  },
+  "disposition": "tribal-operator-scope-retained-unresolved",
+  "interpretation": "CMS Tribal ownership agrees with the current IHS tribal-healthcare presentation. Do not apply the federal scope exclusion. The facility identity and address are corroborated, but a current facility-specific CSV/JSON MRF and root pointer remain unverified.",
+  "next_action": "Recover and verify the current Tohono O'odham/Sells facility-specific CMS CSV/JSON MRF and pointer; retain the tribal scope distinction."
+}

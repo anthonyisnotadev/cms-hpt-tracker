@@ -1,0 +1,28 @@
+{
+  "ccn": "650001",
+  "observed_at": "2026-09-23T06:43:30Z",
+  "official_site": "https://www.gmha.org/",
+  "official_pricing_page": "https://www.gmha.org/guide/billing/fee-schedule/",
+  "official_billing_page": "https://www.gmha.org/guide/billing/",
+  "official_identity": "Guam Memorial Hospital Authority, 850 Gov Carlos G Camacho Rd, Tamuning, Guam 96913; current official GMHA billing page and CMS roster agree on facility and location (roster street contains OCR-like '85O').",
+  "browser_observation": "The current official GMHA billing page identifies Guam Memorial Hospital and links a current Fee Schedule page. The Fee Schedule page states that GMHA publishes machine-readable standard charges and exposes GMHA Shoppable Services and GMHA CDM Machine Readable Download Now controls, but both controls are protected by reCAPTCHA and expose no direct file URL in the accessible DOM. The page is current and usable as a pricing route, but no file bytes were recovered.",
+  "pointer_urls": [
+    "https://www.gmha.org/cms-hpt.txt",
+    "https://www.gmha.org/.well-known/cms-hpt.txt",
+    "https://gmha.org/cms-hpt.txt",
+    "https://gmha.org/.well-known/cms-hpt.txt"
+  ],
+  "pointer_status": "All four root-pointer variants returned HTML 404 responses (bare-domain variants redirected to www first).",
+  "mrf_observation": "The official Fee Schedule page exposes two reCAPTCHA-gated Download Now controls but no direct MRF URL or recovered bytes; no file-absence, exemption or compliance conclusion inferred.",
+  "cms_record": {
+    "ccn": "650001",
+    "name": "GUAM MEMORIAL HOSPITAL AUTHORITY",
+    "address": "85O GOV CARLOS G CAMACHO ROAD",
+    "city": "TAMUNING",
+    "state": "GU",
+    "zip": "96913"
+  },
+  "disposition": "official-pricing-page-recaptcha-no-file-bytes",
+  "interpretation": "This dated browser and bounded pointer check confirms a current official GMHA pricing route and two machine-readable download controls, but the controls require an interactive reCAPTCHA step and yielded no directly inspectable file URL or bytes. The observation remains unresolved and does not establish file absence or a compliance result.",
+  "next_action": "Complete the publisher's reCAPTCHA-gated download interactively or obtain a publisher-provided direct CSV/JSON/ZIP URL; then verify exact Guam facility identity, declared date/version and usable bytes before promotion."
+}

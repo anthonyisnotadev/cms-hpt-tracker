@@ -1,0 +1,25 @@
+{
+  "ccn": "334026",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://www.brunswickhospitalcenter.org/",
+  "official_pricing_page": "https://www.brunswickhospitalcenter.org/pricing-transparency",
+  "page_status": "200",
+  "page_observation": "The current first-party pricing page identifies Brunswick Hospital Center at 81 Louden Ave, Amityville, NY 11701 and states that chargemaster and shoppable-services files were updated March 2025.",
+  "page_file_url": "https://www.brunswickhospitalcenter.org/_files/ugd/742343_ac2e689232804c798b4d076b589558a4.csv?dn=110589550_Standard_Charges.csv",
+  "page_file_status": 200,
+  "page_file_content_type": "text/csv",
+  "page_file_bytes": 53269,
+  "page_file_sha256": "52cee0022f16d8be342be76a54e762ebc5ef700fa9542d3bda6e5dc0c1d8b00a",
+  "page_file_header": "ItemID,Items,,Rate,Notes",
+  "pointer_urls_checked": [
+    "https://www.brunswickhospitalcenter.org/cms-hpt.txt",
+    "https://www.brunswickhospitalcenter.org/.well-known/cms-hpt.txt"
+  ],
+  "pointer_observation": "Both root pointer variants returned 404; the page-linked CSV is not declared by a usable cms-hpt.txt pointer.",
+  "declared_hospital_name": "Brunswick Hospital Center",
+  "declared_address": "81 Louden Ave, Amityville, NY 11701",
+  "cms_template_version": null,
+  "disposition": "official-page-file-schema-review-required",
+  "interpretation": "The first-party page and downloaded CSV establish current facility-specific pricing evidence, but the file is a compact chargemaster-style CSV rather than a demonstrated CMS 3.0.0 machine-readable standard-charges file: its header is ItemID/Items/Rate/Notes and no CMS metadata was observed. It is retained as page-linked evidence only; no current-MRF or compliance conclusion is inferred.",
+  "next_action": "Obtain a publisher-confirmed CMS-format CSV/JSON/ZIP or an official pointer that declares the page-linked file; independently validate schema, address, state, date and usability before promotion."
+}

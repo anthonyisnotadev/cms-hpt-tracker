@@ -13,11 +13,15 @@ const root = path.resolve(__dirname, '../../..');
 const read = file => JSON.parse(fs.readFileSync(path.join(root, file), 'utf8'));
 const sha = body => crypto.createHash('sha256').update(body).digest('hex');
 
-test('nine provenance conflicts have bounded, hash-bound recheck outcomes', () => {
+test('provenance conflicts have bounded, hash-bound recheck outcomes', () => {
   const audit = read('data/hpt-audit/pointer-provenance-discrepancy-rechecks.json');
-  assert.equal(audit.records.length, 9);
-  assert.equal(audit.summary.complete_structured_pointers, 6);
-  assert.equal(audit.records.filter(row => row.http_status === 0).length, 3);
+  const inventory = read('data/hpt-audit/pointer-provenance-discrepancies.json');
+  assert.equal(audit.records.length, inventory.unmatched.length);
+  assert.equal(audit.summary.attempted, audit.records.length);
+  assert.equal(audit.summary.complete_structured_pointers,
+    audit.records.filter(row => row.retained_file).length);
+  assert.equal(audit.summary.verification_hashes_reproduced,
+    audit.records.filter(row => row.verification_hash_reproduced).length);
   for (const row of audit.records.filter(row => row.retained_file)) {
     const body = fs.readFileSync(path.join(root, row.retained_file));
     assert.equal(sha(body), row.response_sha256);

@@ -6,6 +6,10 @@ const path = require('path');
 const root = path.resolve(__dirname, '../..');
 const steps = [
   'scripts/hpt/build-nationwide-verification.js',
+  // Reconcile must consume the proof audit generated from the current
+  // nationwide view; running this after reconciliation leaves stale proof-gap
+  // issues in nationwide-reconciliation.json until the next run.
+  'scripts/hpt/audit-nationwide-source-proof.js',
   'scripts/hpt/reconcile-nationwide.js',
   'scripts/hpt/build-unresolved-investigation-worklist.js',
   'scripts/hpt/build-identity-quarantine-worklist.js',
@@ -20,20 +24,20 @@ const steps = [
   'scripts/hpt/audit-selected-pointer-attribution.js',
   'scripts/hpt/build-interventions.js',
   'scripts/hpt/build-cross-domain-pointer-inventory.js',
-  'scripts/hpt/audit-nationwide-source-proof.js',
   'scripts/hpt/audit-unresolved-support.js',
   'scripts/build-tracker.js',
 ];
 
 for (const script of steps) {
   let result;
-  for (let attempt = 1; attempt <= 3; attempt += 1) {
+  for (let attempt = 1; attempt <= 6; attempt += 1) {
     result = spawnSync(process.execPath, [script], { cwd: root, stdio: 'inherit' });
     if (result.status === 0) break;
     // Windows occasionally reports a transient sharing violation while a
-    // generated audit artifact is being replaced. Retry the exact step so a
-    // recoverable file-handle race cannot leave the derived tracker stale.
-    if (attempt < 3) continue;
+    // generated audit artifact is being replaced. Give the reader/scan handle
+    // time to close before retrying the exact step, so a recoverable race
+    // cannot leave the derived tracker stale.
+    if (attempt < 6) spawnSync(process.execPath, ['-e', 'setTimeout(() => {}, 750)'], { cwd: root, stdio: 'ignore' });
   }
   if (result.status !== 0) process.exitCode = result.status || 1;
   if (process.exitCode) break;

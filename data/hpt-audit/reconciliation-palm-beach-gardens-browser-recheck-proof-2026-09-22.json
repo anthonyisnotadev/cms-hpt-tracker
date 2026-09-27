@@ -1,0 +1,16 @@
+{
+  "ccn":"100176","observed_at":"2026-09-22T20:00:00Z",
+  "official_site":"https://palmbeachhealthnetwork.com/",
+  "official_identity_page":"https://palmbeachhealthnetwork.com/",
+  "official_page_observation":"The first-party Palm Beach Health Network homepage identifies Palm Beach Gardens Medical Center at 3360 Burns Road, Palm Beach Gardens, FL 33410 and links a Hospital Pricing Information page.",
+  "pricing_page":"https://palmbeachhealthnetwork.com/patients/pricing-info-estimates/hospital-pricing-information",
+  "pricing_page_result":"Interactive browser navigation rendered a Cloudflare security-verification page rather than the pricing content.",
+  "cms_pointer_url":"https://palmbeachhealthnetwork.com/cms-hpt.txt",
+  "cms_pointer_result":"Interactive browser navigation returned net::ERR_BLOCKED_BY_CLIENT.",
+  "cms_api_url":"https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=100176&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status":200,"cms_api_response_bytes":6585,"cms_api_response_sha256":"CA5479E6A02634AA6F85E06E6EB6CF65EA795143CAA81F73499DDD607DA0D449",
+  "cms_record":{"facility_id":"100176","facility_name":"PALM BEACH GARDENS MEDICAL CENTER","address":"3360 BURNS RD","citytown":"PALM BEACH GARDENS","state":"FL","zip_code":"33410"},
+  "disposition":"browser-access-denied-to-client",
+  "interpretation":"The first-party homepage confirms the facility identity and exact CMS address, but the pricing page is behind a Cloudflare security-verification page and the root pointer is blocked by the browser. No MRF bytes were recovered and no file absence or compliance conclusion is inferred.",
+  "next_action":"Retry the pricing page and root pointer with an alternate transport or browser session; if pricing content becomes available, verify a facility-specific file and its declared metadata before promotion."
+}

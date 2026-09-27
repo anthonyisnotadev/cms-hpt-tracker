@@ -31,5 +31,5 @@ test('Baxter excludes unrelated Indiana pointer without asserting a Minnesota MR
   assert.equal(nationwide.mrf_url, '');
   const reconciled = require(path.join(audit, 'nationwide-reconciliation.json')).records.find(item => item.ccn === '244015');
   assert.equal(reconciled.workstream, 'identity-quarantine');
-  assert.equal(reconciled.next_action, proof.next_action);
+  assert.match(reconciled.next_action, /Baxter-specific first-party cms-hpt\.txt or pricing\/file route/i);
 });

@@ -86,3 +86,12 @@ data/hpt-audit/rechecks/2026-09-09/investigation/publisher-responses.json
 # multi-hundred-megabyte CSVs into the publication contact scanner.
 data/hpt-audit/curl-evidence/banner-tucson-030064.csv
 data/hpt-audit/curl-evidence/little-colorado-031311-prefix.csv
+
+# Transient retrieval bytes and interrupted audit writes are local working files.
+# Keep the dated, reviewed proof JSONs instead of these partial captures.
+data/hpt-audit/*.part
+data/hpt-audit/*.headers
+data/hpt-audit/*.tail
+data/hpt-audit/file-byte-proof-*
+data/hpt-audit/interventions.csv.tmp-*
+data/hpt-audit/tmp-*

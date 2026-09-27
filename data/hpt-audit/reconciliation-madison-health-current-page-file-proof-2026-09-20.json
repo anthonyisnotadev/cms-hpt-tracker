@@ -1,10 +1,13 @@
 {
   "ccn": "360189",
-  "observed_at": "2026-09-20T00:00:00Z",
+  "observed_at": "2026-09-21T23:33:00Z",
   "official_site": "https://www.madison-health.com/",
   "official_pricing_page": "https://www.madison-health.com/price-transparency/",
   "facility_file_url": "https://www.madison-health.com/content/uploads/2024/06/166189498_Madison-Health_standardcharges.csv",
   "file_range_status": 206,
+  "file_total_bytes": 22927975,
+  "file_etag": "\"69d01ee5-15dda67\"",
+  "file_last_modified": "Fri, 03 Apr 2026 20:11:17 GMT",
   "file_sample_bytes": 262144,
   "file_sample_sha256": "3b62ff766af46e3ec05e6f00d3d5752aeef72582b90b7792225cf6ee3a7ff3b9",
   "declared_hospital_name": "Madison Health",
@@ -18,8 +21,9 @@
   "attestation": true,
   "pointer_url": "https://www.madison-health.com/cms-hpt.txt",
   "pointer_status": 404,
+  "pointer_sha256": "ce7741501e4c7c16d5b9d70f7da2e8cd657e980d45146afb241a4001bf5fb827",
   "pointer_content_type": "text/html",
-  "disposition": "page-file-identity-confirmed-root-pointer-404",
+  "disposition": "verified-current-page-file-root-pointer-unavailable",
   "detail": "The current first-party price-transparency page links a facility-specific CSV whose bounded header identifies Madison Health at 210 North Main Street, London, Ohio, dated 2026-04-01, CMS 3.0.0, with Ohio license state and attestation. The root cms-hpt.txt route returned HTTP 404 HTML, so pointer linkage remains unresolved. The current page-linked file is retained as evidence only; no compliance conclusion is inferred.",
-  "next_action": "Recover a content-bearing current root pointer that declares this exact Madison Health file, then complete full-file usability checks before promotion."
+  "next_action": "Retry the exact root cms-hpt.txt pointer after publisher recovery; retain the complete page-linked CSV."
 }

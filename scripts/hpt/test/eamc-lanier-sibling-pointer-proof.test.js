@@ -22,6 +22,11 @@ test('Lanier cannot inherit the Opelika pointer entry or archive header', () => 
   assert.equal(crypto.createHash('sha256').update(sample).digest('hex'), proof.archive_sample_sha256);
   const row = queue.find(item => item.ccn === proof.ccn);
   assert.equal(row.workstream, 'genuinely-unresolved-investigation');
-  assert.equal(row.manual_access_observation.proof_file, 'reconciliation-eamc-lanier-sibling-pointer-proof.json');
-  assert.match(row.next_action, /Do not assign the current Opelika/);
+  assert.equal(row.manual_access_observation.proof_file, 'reconciliation-eamc-lanier-alabama-audit-transition-proof-2026-09-27.json');
+  const manual = require(path.join(root, 'data/hpt-audit/reconciliation-manual-access-observations.json'));
+  assert.ok(manual.records.some(record => record.ccn === proof.ccn
+    && record.proof_file === 'reconciliation-eamc-lanier-current-cms-general-proof-2026-09-25.json'
+    && record.disposition === 'current-cms-reh-identity-corroborated-pointer-file-still-unresolved'));
+  assert.match(row.next_action, /Valley-specific CMS CSV\/JSON\/ZIP/);
+  assert.match(row.next_action, /keep the Opelika pointer and file separate/i);
 });

@@ -1,0 +1,62 @@
+{
+  "ccn": "090004",
+  "observed_at": "2026-09-27T07:18:00Z",
+  "existing_current_file_proof": "reconciliation-medstar-georgetown-complete-file-proof-2026-09-26.json",
+  "file_url": "https://www.medstarhealth.org/-/media/project/mho/medstar/billing-and-insurance/2026/522218584_medstar_georgetown_university_hospital_standardcharges.csv",
+  "file_bytes": 130616328,
+  "file_sha256": "216bf4e59243abae3daef7843f910ebdb1e1226bc1fc181c4226e4fb07ee09d3",
+  "mrf_license_column": "license_number|MD",
+  "mrf_license_number": "HFD01-0188",
+  "mrf_facility_identity": {
+    "name": "MedStar Georgetown Hospital",
+    "address": "3800 Reservoir Rd. Northwest, Washington, DC 20007",
+    "npi": "1427145176",
+    "version": "3.0.0",
+    "last_updated_on": "2026-04-01"
+  },
+  "sources": [
+    {
+      "kind": "current-dc-health-hospital-directory",
+      "url": "https://dchealth.dc.gov/sites/default/files/dc/sites/doh/service_content/attachments/Hospital%20Directory_3.pdf",
+      "directory_updated": "2026-09-03",
+      "retrieved_at": "2026-09-27",
+      "http_status": 200,
+      "bytes": 186422,
+      "sha256": "dcc0e318bf8f35c1eb8a6863c6e7c1182113641668a8a7161dd05d586cfa0e05",
+      "entry": {
+        "facility": "MedStar-Georgetown University Hospital (Acute Care)",
+        "address": "3800 Reservoir Road NW, Washington, DC 20007",
+        "ward": "2",
+        "licensed_beds": 538
+      },
+      "limitation": "Confirms current DC hospital identity and jurisdiction; does not publish license number HFD01-0188 or explain the MRF's MD column suffix."
+    },
+    {
+      "kind": "historical-license-certificate",
+      "url": "https://www.kff.org/wp-content/uploads/sites/2/2013/05/georgetown-proton-therapy-application.pdf",
+      "source_host": "KFF document mirror",
+      "document_issuer": "Government of the District of Columbia, Department of Health",
+      "licensee": "Georgetown University Hospital",
+      "address": "3800 Reservoir Rd NW, Washington, D.C.",
+      "license_number": "HFD01-0188",
+      "valid_period": "2012-10-01 through 2013-09-30",
+      "limitation": "Expired historical certificate; supports the number's DC provenance, not current licensure."
+    },
+    {
+      "kind": "2024-form-990-schedule-h-filed-with-irs",
+      "canonical_filing_index": "https://projects.propublica.org/nonprofits/organizations/522218584",
+      "filing_submission_date": "2026-05-11",
+      "organization": "THE MEDSTAR-GEORGETOWN MEDICAL CENTER INC",
+      "ein": "52-2218584",
+      "schedule_h_facility": "DBA GEORGETOWN UNIVERSITY HOSPITAL",
+      "schedule_h_address": "3800 RESERVOIR ROAD NW, WASHINGTON, DC 20007",
+      "schedule_h_state_license_number": "HFD01-0188",
+      "retrieved_rendered_excerpt_url": "search result for 2024 IRS Schedule H rendered filing; temporary signed source URL omitted",
+      "limitation": "The extracted 2024 Schedule H is a public filing rendition, not a live first-party MedStar license record. The raw IRS-hosted PDF was fetched (2,759,788 bytes; SHA-256 07AC1F99BAF943DF77907A380755C5D5660680BF5469FE1F65C4E94C1ACA9560) but is a scanned TIFF wrapper with no extractable text; this exact Schedule H field was not independently OCR-verified from that copy."
+    }
+  ],
+  "finding": "Current DC Health directory evidence independently identifies MedStar-Georgetown University Hospital as an acute-care facility at 3800 Reservoir Road NW, Washington, DC 20007. The exact license number HFD01-0188 has historical DC-issued provenance and is repeated as the state license number in a 2024 Schedule H public filing rendition, but neither establishes current validity. The current MRF's literal license_number|MD suffix remains unexplained and conflicts with the facility's DC jurisdiction; the number itself is not evidence of a Maryland facility.",
+  "disposition": "narrowed-license-metadata-suffix-conflict-retained",
+  "count_effect": "none; retain CCN 090004 as unresolved pending publisher correction or explanation of the literal MD suffix",
+  "next_action": "Ask MedStar to confirm whether license_number|MD is an erroneous header suffix or how it applies to the DC facility; preserve the current file bytes/hash and do not infer a current license from the historical certificate."
+}

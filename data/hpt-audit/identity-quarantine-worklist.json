@@ -1,0 +1,132 @@
+{
+  "summary": {
+    "total": 11,
+    "workstream": "identity-quarantine"
+  },
+  "source_sha256": {
+    "nationwide-reconciliation.json": "2e196a9cff87a34657dfd0216d124d4cb093b18fa5d872b5cf5f76e3765a9984"
+  },
+  "records": [
+    {
+      "ccn": "011302",
+      "hospital_name": "RED BAY HOSPITAL",
+      "state": "AL",
+      "priority": 1,
+      "standing_finding": "not-assessed-identity-conflict",
+      "proposed_disposition": "pointer-facility-match-unresolved",
+      "latest_observed_at": "2026-09-26T23:58:00Z",
+      "standing_checked_at": "2026-09-17T15:18:00.000Z",
+      "next_action": "Retry the exact current page-linked CSV and root cms-hpt.txt through a permitted client; verify bounded bytes, header identity, CMS version/date and usable rows before promotion."
+    },
+    {
+      "ccn": "060004",
+      "hospital_name": "INTERMOUNTAIN HEALTH PLATTE VALLEY HOSPITAL",
+      "state": "CO",
+      "priority": 1,
+      "standing_finding": "not-assessed-identity-conflict",
+      "proposed_disposition": "linked-mrf-header-unmatched",
+      "latest_observed_at": "2026-09-25T13:00:00Z",
+      "standing_checked_at": "2026-09-16T20:34:10.000Z",
+      "next_action": "Retry the exact Colorado archive after first-party route or client recovery; require bounded bytes, Platte Valley identity, Colorado state, CMS date/version and usable rows before promotion."
+    },
+    {
+      "ccn": "101307",
+      "hospital_name": "DOCTORS MEMORIAL HOSPITAL",
+      "state": "FL",
+      "priority": 1,
+      "standing_finding": "not-assessed-identity-conflict",
+      "proposed_disposition": "linked-mrf-header-unmatched",
+      "latest_observed_at": "2026-09-21T20:15:00Z",
+      "standing_checked_at": "2026-09-16T20:59:13.000Z",
+      "next_action": "Retry the exact linked CSV and root cms-hpt.txt through a permitted client; verify file identity, CMS template/date and usable rows before promotion."
+    },
+    {
+      "ccn": "110100",
+      "hospital_name": "JEFFERSON HOSPITAL",
+      "state": "GA",
+      "priority": 1,
+      "standing_finding": "not-assessed-identity-conflict",
+      "proposed_disposition": "verified-stale-mrf",
+      "latest_observed_at": "2026-09-25T14:00:00Z",
+      "standing_checked_at": "2026-09-16T20:28:08.000Z",
+      "next_action": "Reconcile recorded browser file name, street and state for this CCN. Gate: exact-facility-name-address-state-and-file-rows; license-field-conflict-retained. Preserve stronger standing evidence while this check remains pending."
+    },
+    {
+      "ccn": "130073",
+      "hospital_name": "GROVE CREEK MEDICAL CENTER",
+      "state": "ID",
+      "priority": 1,
+      "standing_finding": "not-assessed-identity-conflict",
+      "proposed_disposition": "linked-mrf-header-unmatched",
+      "latest_observed_at": "2026-09-26T00:00:00Z",
+      "standing_checked_at": "2026-09-16T21:31:03.569Z",
+      "next_action": "Capture the portal's actual standard-charge download endpoint or bytes through a download-capable permitted client; verify Grove Creek name, 350 N Meridian St address, Idaho state, CMS date/version and usable rows before promotion."
+    },
+    {
+      "ccn": "144029",
+      "hospital_name": "THE PAVILION",
+      "state": "IL",
+      "priority": 1,
+      "standing_finding": "not-assessed-identity-conflict",
+      "proposed_disposition": "linked-mrf-header-unmatched",
+      "latest_observed_at": "2026-09-22T00:15:00Z",
+      "standing_checked_at": "2026-09-16T20:38:57.000Z",
+      "next_action": "Retry the official Illinois domain through an authorized browser/content-bearing route; require a Pavilion-Champaign-specific pointer and MRF header before promotion. Separately reconcile the Illinois closure record against CMS enrollment before any scope change."
+    },
+    {
+      "ccn": "244015",
+      "hospital_name": "COMMUNITY BEHAVIORAL HEALTH HOSPITAL - BAXTER",
+      "state": "MN",
+      "priority": 1,
+      "standing_finding": "not-assessed-identity-conflict",
+      "proposed_disposition": "pointer-not-retrieved",
+      "latest_observed_at": "2026-09-26T13:03:30.002Z",
+      "standing_checked_at": "2026-09-17T06:28:41.000Z",
+      "next_action": "Locate a Baxter-specific first-party cms-hpt.txt or pricing/file route and independently verify the file header, Minnesota address, date, CMS version and usable rows."
+    },
+    {
+      "ccn": "251324",
+      "hospital_name": "WALTHALL COUNTY GENERAL HOSPITAL CAH",
+      "state": "MS",
+      "priority": 1,
+      "standing_finding": "not-assessed-identity-conflict",
+      "proposed_disposition": "linked-mrf-header-unmatched",
+      "latest_observed_at": "2026-09-26T19:20:00Z",
+      "standing_checked_at": "2026-09-16T21:02:59.000Z",
+      "next_action": "Retry the Forrest root pointer and Walthall pricing/file route through an authorized browser or download-capable client; require a Walthall-specific pointer and bounded MRF header before promotion."
+    },
+    {
+      "ccn": "331303",
+      "hospital_name": "GARNET HEALTH MEDICAL CENTER CATSKILLS",
+      "state": "NY",
+      "priority": 1,
+      "standing_finding": "not-assessed-identity-conflict",
+      "proposed_disposition": "verified-current-mrf",
+      "latest_observed_at": "2026-09-26T01:44:00Z",
+      "standing_checked_at": "2026-09-16T21:34:53.800Z",
+      "next_action": "Reconcile recorded browser file name, street and state for this CCN. Gate: harris-campus-file-does-not-match-callicoon-ccn-roster-address. Preserve stronger standing evidence while this check remains pending."
+    },
+    {
+      "ccn": "370779",
+      "hospital_name": "STILLWATER MEDICAL - PERRY",
+      "state": "OK",
+      "priority": 1,
+      "standing_finding": "not-assessed-identity-conflict",
+      "proposed_disposition": "linked-mrf-header-unmatched",
+      "latest_observed_at": "2026-09-26T01:50:00Z",
+      "standing_checked_at": "2026-09-16T21:06:23.000Z",
+      "next_action": "Recover and verify a Perry-specific pointer/file before promotion."
+    },
+    {
+      "ccn": "370780",
+      "hospital_name": "STILLWATER MEDICAL-BLACKWELL",
+      "state": "OK",
+      "priority": 1,
+      "standing_finding": "not-assessed-identity-conflict",
+      "proposed_disposition": "linked-mrf-header-unmatched",
+      "latest_observed_at": "2026-09-26T01:50:00Z",
+      "standing_checked_at": "2026-09-16T21:06:23.000Z",
+      "next_action": "Recover and verify a Blackwell-specific pointer/file before promotion."
+    }
+  ]
+}

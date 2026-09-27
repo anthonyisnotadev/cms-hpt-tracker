@@ -1,0 +1,20 @@
+'use strict';
+const fs = require('node:fs');
+const path = require('node:path');
+
+const audit = path.resolve(__dirname, '../../data/hpt-audit');
+const file = path.join(audit, 'reconciliation-manual-access-observations.json');
+const proofName = 'reconciliation-asante-ashland-cms-enrollment-recheck-proof-2026-09-25.json';
+const proof = JSON.parse(fs.readFileSync(path.join(audit, proofName), 'utf8'));
+const document = JSON.parse(fs.readFileSync(file, 'utf8'));
+const misplaced = document.records.find(record => record.ccn === '010110');
+if (!misplaced) throw new Error('missing Bullock record 010110');
+delete misplaced.latest_cms_enrollment_recheck_2026_09_25;
+const target = document.records.find(record => record.ccn === proof.ccn);
+if (!target) throw new Error(`missing target record ${proof.ccn}`);
+target.latest_cms_enrollment_recheck_2026_09_25 = proof;
+target.observed_at = proof.observed_at;
+target.next_action = 'Obtain an effective-dated Medicare CCN status record and verify whether Rogue Regional\'s current pointer/MRF explicitly includes the Ashland satellite before changing the CCN disposition; do not infer active or terminated Medicare enrollment from the snapshot alone.';
+document.records.sort((a, b) => a.ccn.localeCompare(b.ccn));
+fs.writeFileSync(file, JSON.stringify(document, null, 2) + '\n');
+console.log(JSON.stringify({ removed_from: '010110', added_to: proof.ccn, observed_at: proof.observed_at }, null, 2));

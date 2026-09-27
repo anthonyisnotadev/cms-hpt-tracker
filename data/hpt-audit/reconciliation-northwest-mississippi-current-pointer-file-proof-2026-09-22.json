@@ -1,0 +1,32 @@
+{
+  "ccn": "250042",
+  "observed_at": "2026-09-22T01:45:00Z",
+  "source": "official Northwest Mississippi Regional Medical Center price page and linked TXT pointer",
+  "official_pricing_page": "https://nwmrmc.org/price.html",
+  "pointer_url": "https://nwmrmc.org/price_3_1389799598.txt",
+  "facility_file_url": "https://s3.amazonaws.com/ycubaa-production-marlin-1-charge-management-public/facilities/0c0c63aa-c0e5-4256-b638-969087e4db15/646001574_NORTHWEST-MISS-REGIONAL-MEDICAL-CENTER_standardcharges.zip",
+  "retrieval": {
+    "pointer_status": 200,
+    "pointer_content_type": "text/plain",
+    "file_status": 200,
+    "file_content_type": "application/octet-stream",
+    "file_bytes": 72940952,
+    "file_sha256": "9DD7238D57CE1A12C6FE7ADEE2D273533FFD1305637645F700BF098D5960B567",
+    "archive_entry": "646001574_NORTHWEST-MISS-REGIONAL-MEDICAL-CENTER_standardcharges.csv",
+    "uncompressed_entry_bytes": 1027890072
+  },
+  "declared_hospital_name": "NORTHWEST MISS REGIONAL MEDICAL CENTER",
+  "declared_location_name": "NORTHWEST MISS REGIONAL MEDICAL CENTER|NWMRMC DIAGNOSTIC IMAGING CENTER",
+  "declared_address": "1970 HOSPITAL DRIVE,CLARKSDALE,MS,38614-0001|2000 N. STATE STREET SUITE B,CLARKSDALE,MS,38614-0000",
+  "declared_license_number": "16-035",
+  "declared_license_state": "MS",
+  "declared_npi": "1275217606",
+  "declared_last_updated": "2026-09-14",
+  "cms_template_version": "3.0.0",
+  "attestation": true,
+  "usable_rows_observed": true,
+  "manual_identity_gate": "official-pointer-and-archive-header-match-clarksdale-ccn",
+  "disposition": "verified-current-mrf",
+  "interpretation": "The official Northwest Mississippi price page links a plain-text pointer naming the exact S3 MRF. The archive’s CSV header identifies Northwest Miss Regional Medical Center at 1970 Hospital Drive, Clarksdale MS, with CMS 3.0.0, 2026-09-14, license, NPI, attestation and usable rows. This supersedes the former Delta pointer quarantine without reusing Delta evidence.",
+  "next_action": "Retain the former Delta operator-transition evidence in history; recheck the first-party pointer/file on the next crawl."
+}

@@ -1,0 +1,42 @@
+{
+  "ccn": "370243",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "roster_identity": {
+    "name": "VALLEY COMMUNITY HOSPITAL",
+    "address": "100 VALLEY DRIVE",
+    "city": "PAULS VALLEY",
+    "state": "OK",
+    "zip": "73075"
+  },
+  "publisher_domain_lead": "valleycommunityhospital.com",
+  "identity_sources": [
+    {
+      "url": "https://aem-prod.ok.gov/content/dam/ok/en/health/health2/aem-documents/protective-health/medical-facilities-division/mfs-directoryoffacilities.pdf",
+      "observation": "The Oklahoma State Department of Health facility directory dated 2026-04-06 lists Valley Community Hospital at 100 Valley Drive, Pauls Valley, with license 2288, 43 beds and current administrator information."
+    },
+    {
+      "url": "https://www.kgou.org/health/2025-01-10/epitome-of-the-rural-health-crisis-pauls-valley-hospital-closes-nearly-four-years-after-reopening",
+      "observation": "KGOU reported that the owner and CEO announced Valley Community Hospital was closing its doors in January 2025, while noting the possibility of a temporary closure."
+    },
+    {
+      "url": "https://www.cms.gov/files/document/pac-snf-fy2026-apu-compliant.pdf",
+      "observation": "CMS's FY 2026 swing-bed list still names Valley Community Hospital, Pauls Valley, under CCN 370243, so current enrollment/termination status requires direct reconciliation."
+    }
+  ],
+  "browser_observation": "The historical publisher domain valleycommunityhospital.com did not resolve in bounded HTTPS checks; root, pointer and pricing paths could not be retrieved. No current first-party pricing page or MRF bytes were exposed.",
+  "disposition": "official-website-not-identified-closure-scope-conflict",
+  "interpretation": "Facility identity and address are corroborated, but public closure reporting conflicts with the current Oklahoma directory and CMS swing-bed listing. This is a dated scope/enrollment uncertainty only; no closure, termination, exemption or compliance conclusion is assigned.",
+  "next_action": "Obtain authoritative CMS enrollment/termination or Oklahoma licensure status and any successor operator/publisher pointer before changing the tracker finding.",
+  "current_status_recheck_2026_09_27": {
+    "observed_at": "2026-09-27T12:26:48Z",
+    "cms_public_notices_url": "https://www.cms.gov/medicare/health-safety-standards/certification-compliance/public-notices",
+    "cms_public_notices_observation": "The current CMS page says termination notices are posted for 14 months. Searching the page found no exact CCN 370243 entry. This cannot resolve a January 2025 closure or older enrollment/termination status.",
+    "candidate_domain_source_url": "https://www.yellowpages.com/pauls-valley-ok/mip/valley-community-hospital-575979733",
+    "candidate_domain_observation": "A third-party directory links valleycommunityhospital.com/home; it is a lead only, not first-party identity evidence.",
+    "browser_attempt_url": "https://valleycommunityhospital.com/home",
+    "browser_result": "net::ERR_NAME_NOT_RESOLVED",
+    "browser_interpretation": "The browser could not resolve the candidate host; this is a current route/tool observation, not proof of closure or facility nonexistence. No official page or pointer bytes were obtained.",
+    "disposition_changed": false,
+    "next_action": "Obtain effective-dated CMS enrollment/termination or Oklahoma licensure evidence and any publisher-confirmed successor domain; do not promote third-party directory leads or infer current operation from the CMS 14-month notice page's lack of an entry."
+  }
+}

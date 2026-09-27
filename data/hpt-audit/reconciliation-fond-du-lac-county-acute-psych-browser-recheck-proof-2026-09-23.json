@@ -1,0 +1,33 @@
+{
+  "ccn": "524025",
+  "observed_at": "2026-09-23T18:50:00Z",
+  "official_site": "https://www.fdlco.wi.gov/",
+  "official_pricing_page": "https://www.fdlco.wi.gov/departments/departments-g-l/human-services/clinical-services-division/mental-health-services/acute-psychiatric-unit",
+  "official_identity": "Fond du Lac County Acute Psychiatric Unit, Fond du Lac County Human Services, Wisconsin; CMS roster address 459 East First Street, Fond du Lac, WI 54935.",
+  "browser_observation": "The current official county Acute Psychiatric Unit page identifies a licensed specialty psychiatric hospital and publishes a highly inclusive 2026 rate of $1,700 per day, including psychiatry fees. The page exposes no CMS CSV, JSON or ZIP machine-readable file link and no direct MRF route.",
+  "pricing_observation": {
+    "rate_amount": 1700,
+    "rate_unit": "per day",
+    "rate_year": 2026,
+    "scope": "highly inclusive rate including all psychiatry fees"
+  },
+  "pointer_urls": [
+    "https://fdlco.wi.gov/cms-hpt.txt",
+    "https://www.fdlco.wi.gov/cms-hpt.txt",
+    "https://fdlco.wi.gov/.well-known/cms-hpt.txt",
+    "https://www.fdlco.wi.gov/.well-known/cms-hpt.txt"
+  ],
+  "pointer_status": "No usable facility-specific pointer or MRF route exposed by the official county page or recovered from root-pointer checks.",
+  "mrf_observation": "No MRF bytes recovered; the published daily rate is retained as consumer-facing pricing evidence, not promoted as a CMS MRF. No file-absence, exemption or compliance conclusion inferred.",
+  "cms_record": {
+    "ccn": "524025",
+    "name": "FOND DU LAC COUNTY ACUTE PSYCH UNIT",
+    "address": "459 E FIRST STREET",
+    "city": "FOND DU LAC",
+    "state": "WI",
+    "zip": "54935"
+  },
+  "disposition": "official-county-pricing-recheck-no-mrf-route",
+  "interpretation": "The official county page narrows the current consumer-facing pricing evidence to a 2026 inclusive daily rate but does not expose the machine-readable file required for this tracker’s MRF verification. This is a dated discovery observation only and does not establish file absence or a compliance result.",
+  "next_action": "Obtain a publisher-provided current CSV/JSON/ZIP or a county/state-confirmed MRF route, then verify exact facility identity, Wisconsin metadata, declared date/version and usable bytes before promotion."
+}

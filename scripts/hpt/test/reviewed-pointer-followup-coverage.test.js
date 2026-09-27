@@ -17,9 +17,11 @@ test('reviewed pointer and page gaps retain actionable standing follow-ups', () 
 
   assert.ok(reviewed.length >= 67);
   for (const row of reviewed) {
-    assert.equal(row.workstream, 'standing-evidence-follow-up', row.ccn);
+    assert.ok(['standing-evidence-follow-up', 'genuinely-unresolved-investigation'].includes(row.workstream), row.ccn);
     assert.equal(row.reconciliation_status, 'review-required', row.ccn);
-    const followUp = queued.get(row.ccn);
+    const followUp = queued.get(row.ccn)
+      || JSON.parse(fs.readFileSync(path.join(audit, 'unresolved-investigation-worklist.json'), 'utf8'))
+        .records.find(item => item.ccn === row.ccn);
     assert.ok(followUp, row.ccn);
     assert.equal(followUp.reviewed_follow_up, true, row.ccn);
     assert.ok(followUp.next_action && !followUp.next_action.startsWith('No further action'), row.ccn);

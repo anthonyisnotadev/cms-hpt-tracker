@@ -1,0 +1,20 @@
+{
+  "ccn": "061301",
+  "observed_at": "2026-09-26T05:05:00Z",
+  "proof_file": "reconciliation-rio-grande-root-pointer-target-recheck-proof-2026-09-26.json",
+  "official_pricing_page": "https://riograndehospital.org/billing-financial-services/",
+  "pointer_url": "https://riograndehospital.org/cms-hpt.txt",
+  "pointer_status": 200,
+  "pointer_bytes": 277,
+  "pointer_sha256": "b97434568c0555c6b27aa554c1a69ed0bcf802bad5c8971c27dd20802b18a908",
+  "pointer_declared_mrf_url": "https://riograndehospital.pg.revenuemasters.com/cdm-files/Rio%20Grande%20CDM%20FILE.csv",
+  "declared_location_name": "310 County Rd 310",
+  "declared_source_page_url": "https://riograndehospital.pg.revenuemasters.com/disclaimer?",
+  "target_status": 404,
+  "target_response_bytes": 6603,
+  "target_response_kind": "html-not-found",
+  "target_sha256": "8cbc10ee9755ef972000f666711a5c4d0e025d3cedf53079ba3bfd8f2b19a968",
+  "result": "The current root pointer is readable and still declares the exact Revenue Masters CSV, but the target now returns an HTML 404. The official billing page still links the Revenue Masters portal. The prior complete page-linked CSV remains dated provenance; this transport change does not establish file absence or a compliance conclusion.",
+  "disposition": "current-pointer-target-404-page-portal-linkage-retained",
+  "next_action": "Obtain a publisher-restored target or current portal download, then verify exact bytes and CMS metadata before promotion."
+}

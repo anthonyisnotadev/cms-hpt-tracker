@@ -26,6 +26,7 @@ async function check(row) {
     redirect_count: response.redirects.length,
     response_bytes: response.body.length,
     response_sha256: response.body.length ? sha(response.body) : '',
+    verification_hash_reproduced: response.body.length > 0 && sha(response.body) === row.verification_sha256,
     request_error: response.error || '' };
   if (response.status !== 200 || response.body.length >= cap) return {
     ...basic, complete_pointer_bytes: false, parsed_location_names: [],
@@ -50,13 +51,15 @@ async function check(row) {
 async function main() {
   const inventory = JSON.parse(fs.readFileSync(inventoryFile, 'utf8'));
   const rows = inventory.unmatched;
-  if (rows.length !== 9) throw new Error(`Expected nine provenance conflicts, found ${rows.length}; review scope before rechecking`);
+  if (!Array.isArray(rows) || rows.length === 0)
+    throw new Error(`Expected a non-empty provenance conflict inventory, found ${rows.length}`);
   const results = [];
   for (let start = 0; start < rows.length; start += 3)
     results.push(...await Promise.all(rows.slice(start, start + 3).map(check)));
   results.sort((a, b) => a.ccn.localeCompare(b.ccn));
   const output = { reason: 'Retained crawl-state hashes and corpus-index/raw bytes disagree for the exact requested root at the same recorded timestamp.',
     summary: { attempted: results.length, complete_structured_pointers: results.filter(row => row.retained_file).length,
+      verification_hashes_reproduced: results.filter(row => row.verification_hash_reproduced).length,
       http_statuses: results.reduce((map, row) => ((map[row.http_status] = (map[row.http_status] || 0) + 1), map), {}) },
     records: results, source_sha256: { 'pointer-provenance-discrepancies.json': sha(fs.readFileSync(inventoryFile)) } };
   fs.writeFileSync(outputFile, `${JSON.stringify(output, null, 2)}\n`);

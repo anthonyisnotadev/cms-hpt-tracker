@@ -1,0 +1,37 @@
+{
+  "observed_at": "2026-09-22T19:30:00Z",
+  "records": [
+    {
+      "ccn": "250017",
+      "official_domain": "traceregional.com",
+      "root_url": "https://traceregional.com/cms-hpt.txt",
+      "root_http_status": 200,
+      "root_response_observation": "The root path returns a 114-byte HTML JavaScript redirect shell to /lander, not a plain-text CMS pointer. The landing shell did not expose an MRF URL.",
+      "roster_identity": "PROGRESSIVE HEALTH GROUP OF HOUSTON",
+      "roster_address": "1002 EAST MADISON STREET, HOUSTON, MS 38851",
+      "disposition": "root-pointer-html-redirect-shell"
+    },
+    {
+      "ccn": "250780",
+      "official_domain": "jeffhospital.com",
+      "root_url": "https://jeffhospital.com/cms-hpt.txt",
+      "root_http_status": 200,
+      "root_response_observation": "The root path returns a 114-byte HTML JavaScript redirect shell to /lander, not a plain-text CMS pointer. The landing shell did not expose an MRF URL.",
+      "roster_identity": "JEFFERSON COUNTY HOSPITAL",
+      "roster_address": "870 S MAIN, FAYETTE, MS 39069",
+      "disposition": "root-pointer-html-redirect-shell"
+    },
+    {
+      "ccn": "250781",
+      "official_domain": "panolamed.com",
+      "official_page_url": "https://www.panolamed.com/contact",
+      "official_page_http_status": 200,
+      "official_page_observation": "The current first-party contact page exposes Transparency in Coverage insurer files through a Cigna link, not a hospital CMS standard-charges pointer or CSV/JSON MRF.",
+      "roster_identity": "PANOLA MEDICAL CENTER",
+      "roster_address": "303 MEDICAL CENTER DRIVE, BATESVILLE, MS 38606",
+      "disposition": "official-page-tic-only",
+      "interpretation": "The insurer machine-readable-file link is not substituted for the hospital CMS MRF; no compliance conclusion is inferred."
+    }
+  ],
+  "next_action": "Recover a current facility-specific CMS pointer and CSV/JSON for each record through an official route or publisher-provided copy; do not treat redirect shells or insurer TiC files as CMS HPT evidence."
+}

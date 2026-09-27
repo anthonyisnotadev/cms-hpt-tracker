@@ -1,0 +1,13 @@
+{
+  "ccn":"154072","observed_at":"2026-09-23T09:20:00Z",
+  "official_site":"https://www.mbhcares.com/",
+  "official_pricing_page":"https://www.mbhcares.com/price-transparency",
+  "official_page_observation":"The first-party Mission Behavioral Health Price Transparency page identifies the Huntingburg facility and exposes two downloadable XLSX files labeled standard pricing and shoppable services pricing. No CSV or JSON MRF URL is exposed in the page accessibility tree or retrieved HTML.",
+  "pointer_url":"https://www.mbhcares.com/cms-hpt.txt","pointer_status":"HTTP 404 Not Found",
+  "mrf_observation":"No CSV/JSON machine-readable MRF bytes recovered; linked XLSX artifacts are retained as page observations only. No file-absence or compliance conclusion inferred.",
+  "linked_xlsx_urls":["https://www.mbhcares.com/getmedia/7d921bed-783b-41cf-aa0f-5d845046eac3/Mission-Behavioral-Health-Huntingburg-2024-Standard-Pricing.xlsx","https://www.mbhcares.com/getmedia/9a087d19-790e-4dbc-83fc-058d46eb1f5d/Mission-Behavioral-Health-Huntingburg-2024-Shoppable-Services-Pricing.xlsx"],
+  "cms_api_url":"https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=154072&conditions%5B0%5D%5Boperator%5D=%3D","cms_api_status":200,"cms_api_response_bytes":6823,"cms_api_response_sha256":"471EE5B1618C5085BC4A61D7B4C7DDC22E85A045FB45C6C3CB2FE16A2FB1AD97","cms_record":{"facility_id":"154072","facility_name":"MISSION BEHAVIORAL HEALTH HOSPITAL","address":"1880 MEDICAL ARTS DRIVE","citytown":"HUNTINGBURG","state":"IN","zip_code":"47542"},
+  "disposition":"official-pricing-page-xlsx-no-csv-pointer-404",
+  "interpretation":"The current first-party pricing page confirms the facility and links XLSX pricing artifacts, but no CSV/JSON MRF is exposed and the root pointer is 404. This is a discovery/access observation only, not a file-absence or compliance finding.",
+  "next_action":"Locate a current CSV/JSON MRF or valid root pointer through an alternate first-party route; verify facility identity and CMS metadata before promotion."
+}

@@ -1,0 +1,23 @@
+{
+  "ccn": "351364",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://www.ihs.gov/greatplains/healthcarefacilities/standingrock/",
+  "official_identity": "The current Indian Health Service Standing Rock Service Unit page identifies Fort Yates Hospital in Fort Yates, North Dakota as a 12-bed hospital and provides its facility location and services.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=351364&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_record": {
+    "facility_id": "351364",
+    "facility_name": "STANDING ROCK SERVICE UNIT",
+    "address": "10 NORTH RIVER ROAD",
+    "citytown": "FORT YATES,",
+    "state": "ND",
+    "zip_code": "58538",
+    "hospital_type": "Critical Access Hospitals",
+    "hospital_ownership": "Government - Federal"
+  },
+  "regulatory_source": "https://www.law.cornell.edu/cfr/text/45/180.30",
+  "regulatory_observation": "45 CFR 180.30 deems federally owned or operated hospitals, including hospitals operated by an Indian Health Program, in compliance with Part 180.",
+  "disposition": "scope-exempt-federal",
+  "interpretation": "CMS ownership and city/state/ZIP agreement with the current IHS Fort Yates page support the federal scope disposition. The first-party page uses Standing Rock Avenue while CMS uses North River Road; this is retained as an address variant, not treated as a mismatch. This is not a claim about MRF availability or file quality.",
+  "next_action": "Retain the federal scope exclusion unless CMS ownership or regulatory scope changes."
+}

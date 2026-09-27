@@ -1,0 +1,65 @@
+{
+  "ccn_under_review": "441322",
+  "observed_at": "2026-09-27T16:46:19Z",
+  "question": "Does the Houston County Community Hospital file's declared Lexington address identify a separate hospital campus?",
+  "official_tennessee_sources": [
+    {
+      "title": "Tennessee Hospital Full Beds Report",
+      "url": "https://www.tn.gov/content/dam/tn/health/healthprofboards/hcf/Hospital-Full-Beds-Report.pdf",
+      "observation": "The report lists Houston County Community Hospital (license 55) at 5001 East Main Street, Erin, TN 37061 and Henderson County Community Hospital (license 58) at 200 West Church Street, Lexington, TN 38351. The document footer reports generated May 25, 2022; treat it as historical state licensing evidence, not a 2026 roster."
+    },
+    {
+      "title": "Tennessee Hospital Statistics 2015",
+      "url": "https://www.tn.gov/content/dam/tn/health/documents/Annual_Report_on_Hospital_Statistics_2015.pdf",
+      "observation": "The state report separately lists Henderson County Community Hospital at 200 West Church Street, Lexington and Houston County Community Hospital at 5001 East Main Street, Erin. Historical corroboration only."
+    },
+    {
+      "title": "Tennessee CT provider addresses as of 2025-10-17",
+      "url": "https://www.tn.gov/content/dam/tn/hfc/documents/ct-address.pdf",
+      "observation": "The state list again separately identifies Henderson County Community Hospital at 200 West Church Street, Lexington and Shamrock Community Hospital dba Houston County Community Hospital at 5001 East Main Street, Erin."
+    }
+  ],
+  "current_facility_crosswalk": {
+    "henderson_ccn": "440008",
+    "cms_hospital_general_information_source": "https://data.cms.gov/provider-data/dataset/xubh-q36u",
+    "cms_record_observation": "The locally retained CMS Hospital General Information release identifies CCN 440008 as HENDERSON COUNTY COMMUNITY HOSPITAL at 200 W CHURCH ST, LEXINGTON, TN 38351.",
+    "henderson_first_party_site": "https://henderson.health/",
+    "henderson_first_party_observation": "The current first-party website identifies Henderson County Community Hospital at 200 W Church St, Lexington TN 38351 and links its own standard-charges CSV.",
+    "henderson_pointer_url": "https://henderson.health/cms-hpt.txt",
+    "henderson_pointer_sha256": "286e769101fa91931a2c9c1059e20340a5eb90b996db5b583062180c4cc2dffe",
+    "henderson_file_url": "https://henderson.health/downloads/421557533_Henderson-County-Community-Hospital_standardcharges.csv",
+    "henderson_file_sample_sha256": "585ac29024feea934102bb007212e00abd28583919e0b59673056d21aa9773cd",
+    "henderson_file_sample_bytes": 262144,
+    "henderson_file_metadata": {
+      "name": "Henderson County Community Hospital",
+      "address": "200 West Church St, Lexington, TN 38351",
+      "state": "TN",
+      "date": "2026-06-30",
+      "version": "3.0.0"
+    }
+  },
+  "houston_county_conflicting_file": {
+    "ccn": "441322",
+    "official_page": "https://shamrock.health/billing/",
+    "official_page_address": "5001 East Main Street, Erin, TN 37061",
+    "pointer_url": "https://shamrock.health/cms-hpt.txt",
+    "pointer_target": "https://shamrock.health/downloads/862345211_Houston-County-Community-Hospital_standardcharges.csv",
+    "retained_file_sha256_2026_09_25": "c422f4efd91e3626ccef4137785964539725d85476ab9c5f1fc9f712ea4bf374",
+    "later_or_alternate_retained_file_sha256_2026_09_21": "78f846151bd9b92383c8e3527c43008c88a8e5e33bd174b2021a83139c08369f",
+    "declared_hospital_name": "Houston County Community Hospital",
+    "declared_location_name": "Houston County Community Hopsital",
+    "declared_address": "200 West Church St, Lexington, TN 38351",
+    "declared_license_state": "TN",
+    "declared_license_value": "441322",
+    "declared_npi": "1811566540",
+    "declared_last_updated": "2026-06-30",
+    "cms_template_version": "3.0.0",
+    "interpretation": "The literal Lexington address is independently attributable to the separate Henderson County Community Hospital / CCN 440008 facility. Houston County's own page, NPI/CMS CCN evidence and separate state records identify its location in Erin. This is a strong address-field cross-facility conflict; the Houston-named file and its 441322 identifier prevent concluding that the entire file is simply Henderson's file. Keep it unmatched for CCN 441322 and do not promote it to CCN 440008."
+  },
+  "evidence_gain_vs_recheck": {
+    "new_evidence": "Cross-referenced the exact Lexington street/city/ZIP against independent Tennessee state records, current CMS CCN 440008 data, and Henderson's current first-party site and pointer-linked file metadata.",
+    "rechecks": "No publisher pointer or MRF was refetched in this review; previously retained exact URLs, hashes, and CMS metadata are cited separately.",
+    "disposition_change": "None. CCN 441322 remains unresolved with its address/name discrepancy visible; no file reassignment, MRF verification, or compliance conclusion is made."
+  },
+  "next_action": "Ask the publisher for a corrected Houston County file or written explanation for the Lexington address and misspelled location name, specifically clarifying how the file's location relates to Henderson County Community Hospital CCN 440008. Until then, retain the Houston file as unmatched for CCN 441322 and do not reassign it to 440008."
+}

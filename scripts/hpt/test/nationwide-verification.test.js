@@ -7,6 +7,19 @@ const path = require('node:path');
 const {
   metadataState, effectiveDispositionCategory, selectedFileEvidence, headerEvidenceForSelection, qualifyBrowserIdentity, choose, buildTargetIndexes, indexedPointerObservation, pointerRetainedBytesStatus, pointerCorpusProvenance, applyBrowserPointerObservation, disposition
 } = require('../build-nationwide-verification');
+const { applyNationwideVerification } = require('../lib/nationwide-verification-view');
+
+test('generic not-assessed crawl rows receive exact-CCN nationwide observations', () => {
+  const row = { ccn: '370244', hospital_name: 'COUNCIL OAK COMPREHENSIVE HEALTHCARE', city: 'TULSA', state: 'OK', finding: 'not-assessed-domain-unknown', checked_at: '' };
+  const record = { ccn: '370244', hospital_name: row.hospital_name, city: row.city, state: row.state,
+    prior_finding: 'not-assessed-pointer-review', disposition: 'pointer-facility-match-unresolved',
+    observed_at: '2026-09-15T09:15:40.3Z', latest_observation_superseded: false, standing_evidence_retained: false,
+    pointer_reason: 'The exact CCN pointer/file identity remains unresolved.', next_action: 'Keep the sibling file excluded.' };
+  const [result] = applyNationwideVerification([row], [record]);
+  assert.equal(result.finding, 'not-assessed-nationwide-pointer-facility-match-unresolved');
+  assert.equal(result.assessable, 'no');
+  assert.match(result.evidence, /sibling file excluded/);
+});
 
 test('retained pointer bytes are checked against both crawl hash and length', () => {
   const state = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../../cms_data/hpt/pointer-corpus/crawl-state.json')));
@@ -41,6 +54,7 @@ test('effective disposition categories are exclusive and precedence-aware', () =
   assert.equal(effectiveDispositionCategory({ disposition: 'linked-mrf-header-unmatched', supported_identity_uncertainty: true }), 'supported-identity-uncertainty');
   assert.equal(effectiveDispositionCategory({ disposition: 'verified-stale-mrf' }), 'active-verification-claim');
   assert.equal(effectiveDispositionCategory({ disposition: 'scope-exempt-federal' }), 'scope-exempt');
+  assert.equal(effectiveDispositionCategory({ disposition: 'scope-exempt-indian-health-program' }), 'scope-exempt');
   assert.equal(effectiveDispositionCategory({ disposition: 'pointer-not-retrieved' }), 'genuinely-unresolved');
 });
 
@@ -56,7 +70,8 @@ test('browser-rendered HTML does not supersede retained HTML pointer bytes', () 
 
 test('unassigned retrieved pointers retain source provenance without becoming facility links', () => {
   const report = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../../data/hpt-audit/nationwide-verification.json')));
-  const rows = report.records.filter(row => row.pointer_state === 'retrieved-facility-match-unresolved' && !row.pointer_url);
+  const rows = report.records.filter(row => row.pointer_state === 'retrieved-facility-match-unresolved'
+    && !row.pointer_url && row.pointer_corpus_checked_url);
   assert.ok(rows.length > 0);
   assert.ok(rows.every(row => /^https?:\/\//.test(row.pointer_corpus_checked_url)
     && /^[a-f0-9]{64}$/.test(row.pointer_corpus_sha256) && row.pointer_corpus_observed_at));
@@ -280,6 +295,20 @@ test('dated closed-facility status remains a distinct scope exemption', () => {
   assert.deepEqual(disposition({ finding: 'not-applicable-closed' }, {}, { best: null, review: [], linked: [] }), [
     'scope-exempt-closed',
     'Hospital closure is supported by dated official evidence; recheck only if hospital operations resume.'
+  ]);
+});
+
+test('Indian Health Program scope exception maps separately from federal ownership', () => {
+  assert.deepEqual(disposition({ finding: 'not-applicable-indian-health-program' }, {}, { best: null, review: [], linked: [] }), [
+    'scope-exempt-indian-health-program',
+    'Current evidence identifies an Indian Health Program-operated hospital; retain the 45 CFR 180.30(b)(2) scope classification unless operator or program status changes.'
+  ]);
+});
+
+test('Texas state-hospital scope maps to a distinct non-MRF exemption', () => {
+  assert.deepEqual(disposition({ finding: 'not-applicable-state-hospital' }, {}, { best: null, review: [], linked: [] }), [
+    'scope-exempt-state-hospital',
+    'Current exact-facility Texas state-hospital evidence supports the federal deemed-compliant scope classification under 45 CFR 180.30(b); revisit if the CCN, operator, or legal status changes.'
   ]);
 });
 

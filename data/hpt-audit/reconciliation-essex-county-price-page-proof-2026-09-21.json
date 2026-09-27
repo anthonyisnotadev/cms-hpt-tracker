@@ -1,0 +1,16 @@
+{
+  "ccn": "314020",
+  "observed_at": "2026-09-21T22:10:00Z",
+  "official_domain": "essexcountynjhospital.org",
+  "official_site": "https://essexcountynjhospital.org/",
+  "checked_urls": [
+    "https://essexcountynjhospital.org/",
+    "https://essexcountynjhospital.org/cms-hpt.txt",
+    "https://essexcountynjhospital.org/price-transparency"
+  ],
+  "retrieval_method": "bounded official website and footer-link inspection",
+  "transport_result": "The official Essex County Hospital Center homepage returned HTTP 200 and identifies Essex County Hospital Center, Cedar Grove, NJ. Its footer exposes a Price Transparency link, but that route returned a branded HTTP 404 page; the root cms-hpt.txt path also returned HTTP 404. No facility-specific MRF bytes or pointer contents were recovered.",
+  "disposition": "official-price-link-404-root-pointer-404-pointer-discovery-incomplete",
+  "interpretation": "This is a facility-specific transport and broken-link observation. It does not establish file absence, exemption, noncompliance or a legal conclusion.",
+  "next_action": "Retry the current county/hospital pricing route after a publisher correction or through an authorized browser/content-bearing route; require exact facility CSV/JSON/ZIP bytes, identity, New Jersey address/state, date, CMS version and usable rows before promotion."
+}

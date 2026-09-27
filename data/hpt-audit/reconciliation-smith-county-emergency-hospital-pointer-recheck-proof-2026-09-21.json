@@ -1,0 +1,18 @@
+{
+  "ccn": "250786",
+  "observed_at": "2026-09-21T14:00:00Z",
+  "official_domain": "covingtoncountyhospital.com",
+  "facility_identity_observation": "The first-party Smith County Emergency Hospital page identifies 347 Magnolia Dr, Raleigh, Mississippi 39153 and presents the facility as a Covington County Hospital location.",
+  "retrieval_method": "bounded HTTPS requests plus first-party page search",
+  "checked_urls": [
+    "https://covingtoncountyhospital.com/cms-hpt.txt",
+    "https://www.covingtoncountyhospital.com/cms-hpt.txt",
+    "https://covingtoncountyhospital.com/price-transparency",
+    "https://www.covingtoncountyhospital.com/price-transparency",
+    "https://covingtoncountyhospital.com/locations/smith-county-emergency-hospital/"
+  ],
+  "transport_result": "The two cms-hpt.txt requests and two likely transparency-route requests returned HTTP 404; the first-party location page was discoverable, but no pointer or CMS CSV/JSON bytes were recovered.",
+  "disposition": "official-page-identity-confirmed-pointer-discovery-incomplete",
+  "interpretation": "This is a facility-specific discovery observation for Smith County Emergency Hospital only. HTTP 404 on the checked paths does not establish file absence, closure, or compliance status.",
+  "next_action": "Retry through an authorized interactive browser or publisher-provided route; require an exact facility cms-hpt.txt and usable CMS CSV/JSON bytes before promotion."
+}

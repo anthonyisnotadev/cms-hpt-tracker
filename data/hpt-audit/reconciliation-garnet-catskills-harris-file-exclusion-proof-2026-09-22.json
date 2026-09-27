@@ -1,0 +1,27 @@
+{
+  "ccn": "331303",
+  "observed_at": "2026-09-22T01:20:00Z",
+  "source": "official Garnet Health price-transparency page and linked Catskills CSV",
+  "official_pricing_page": "https://www.garnethealth.org/patients-visitors/billing-insurance/price-transparency",
+  "facility_file_url": "https://www.garnethealth.org/sites/default/files/cms-hpt/146049030_garnet-health-medical-center-catskills_standardcharges.csv",
+  "retrieval": {
+    "status": 200,
+    "content_type": "text/csv",
+    "bytes": 49963981,
+    "sha256": "3EF4E552641B0D4783C823A052EC4EA432646E8926FFAFB9C6CBC415152702A9"
+  },
+  "declared_hospital_name": "Garnet Health Medical Center Catskills",
+  "declared_location_name": "Garnet Health Medical Center Catskills",
+  "declared_address": "68 Harris Bushville Road, Harris, NY 12742",
+  "declared_license_number": "5263000H",
+  "declared_license_state": "NY",
+  "declared_npi": "1710977012|1205096278|1649251554|1740442870",
+  "declared_last_updated": "2026-04-01",
+  "cms_template_version": "3.0.0",
+  "attestation": true,
+  "usable_rows_observed": true,
+  "manual_identity_gate": "harris-campus-file-does-not-match-callicoon-ccn-roster-address",
+  "disposition": "shared-system-file-reviewed-facility-specific-file-unresolved",
+  "interpretation": "The official Garnet page links a Catskills CSV whose header identifies the Harris campus at 68 Harris Bushville Road. CCN 331303’s roster identity is the Callicoon campus at 8081 State Route 97, so the Harris file is excluded from CCN 331303 and not broadened across the system.",
+  "next_action": "Recover a Callicoon-specific pointer/file and reconcile the 8081 State Route 97 identity before promotion."
+}

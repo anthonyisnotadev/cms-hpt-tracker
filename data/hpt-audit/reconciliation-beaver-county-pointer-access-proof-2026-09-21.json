@@ -1,0 +1,17 @@
+{
+  "ccn": "371322",
+  "observed_at": "2026-09-21T21:53:00Z",
+  "official_pricing_page": "https://beavercountyhospitalauthority.com/pricetransparency/",
+  "official_page_status": 200,
+  "official_facility_name": "Beaver County Memorial Hospital",
+  "roster_identity": "BEAVER COUNTY MEMORIAL HOSPITAL",
+  "official_facility_address": "212 East 8th Street, Beaver, OK 73932",
+  "facility_file_url": "https://beavercounty.pt.panaceainc.com/MRFDownload/beavercounty/beavercounty",
+  "pointer_browser_observation": "The official page exposes the exact MRF download link.",
+  "pointer_transport_observation": "Direct retrieval returned HTTP 302 to mrf.panaceainc.com; the redirected host timed out in the direct client, and interactive browser automation reported ERR_BLOCKED_BY_CLIENT.",
+  "pointer_status": 302,
+  "mrf_status": "access-unresolved",
+  "disposition": "pointer-access-denied-to-client",
+  "interpretation": "The official identity and facility-specific MRF pointer are confirmed. File bytes and metadata were not recovered because the redirect target was unreachable/blocked; no file contents or compliance conclusion is inferred.",
+  "next_action": "Retry the exact first-party MRF link with an interactive browser/download fallback or obtain the current CSV/JSON from the publisher; verify facility identity and metadata before promotion."
+}

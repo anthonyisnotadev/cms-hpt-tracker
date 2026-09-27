@@ -1,0 +1,22 @@
+{
+  "ccn": "384008",
+  "observed_at": "2026-09-21T22:35:00Z",
+  "official_pricing_page": "https://www.oregon.gov/oha/OSH/Pages/List-of-All-Oregon-State-Hospital-Charges.aspx",
+  "official_page_status": 200,
+  "official_facility_name": "Oregon State Hospital",
+  "official_facility_address": "2600 Center Street NE, Salem, OR 97310",
+  "candidate_file_url": "https://www.oregon.gov/oha/OSH/Documents/930576060_Oregon_State_Hospital_standardcharges.csv",
+  "file_range_status": 206,
+  "file_content_type": "application/octet-stream",
+  "file_sample_bytes": 4641,
+  "file_sample_sha256": "c7e1c8593becb4b26b7c941d37b6075a22b42e00bf241f7eba26f7a307b4c7da",
+  "candidate_file_format": "CSV",
+  "usable_rows_observed": true,
+  "declared_header": "Code,Description,Standard Charge",
+  "declared_last_updated": "not declared in file; official page labels list 01/01/21",
+  "cms_template_version": "not declared",
+  "manual_identity_gate": "official-state-page-and-salem-roster-identity",
+  "disposition": "pointer-linked-file-review-pending",
+  "interpretation": "The official Oregon Health Authority page links a readable CSV with service codes, descriptions, and standard charges, and the page identifies Oregon State Hospital. The file is a legacy three-column charge list without CMS 3.0.0 metadata, payer-specific fields, or a declared current update date; it is retained as official evidence but not promoted as a verified current CMS MRF.",
+  "next_action": "Obtain a current CMS-schema CSV/JSON MRF or publisher clarification/version metadata, then verify completeness and CCN linkage before promotion."
+}

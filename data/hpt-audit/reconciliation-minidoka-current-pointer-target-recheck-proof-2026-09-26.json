@@ -1,0 +1,22 @@
+{
+  "ccn": "131319",
+  "observed_at": "2026-09-26T03:42:15Z",
+  "official_domain": "minidokamemorial.org",
+  "official_billing_page": "https://minidokamemorial.org/billing-information/",
+  "official_billing_page_status": 200,
+  "official_facility_name": "Minidoka Memorial Hospital",
+  "official_facility_address": "1224 8th Street, Rupert, ID 83350",
+  "pointer_url": "https://minidokamemorial.org/cms-hpt.txt",
+  "pointer_status": 200,
+  "pointer_bytes": 281,
+  "pointer_sha256": "58f6274eb8dd1ac051c53251b06c460d6dd910e1b18a1070d52bcb86564bb081",
+  "pointer_mrf_url": "https://minidokamemorial.org/wp-content/uploads/2024/09/820291854_minidoka-memorial-hospital_standardcharges.csv",
+  "pointer_target_status": 404,
+  "pointer_target_content_type": "text/html; charset=UTF-8",
+  "pointer_target_response_bytes": 140565,
+  "pointer_target_response_sha256": "94046028dd4e0d6cf16c16cfb2b745e394dea500ca3a7f2da918cde52fbf15ff36dfe",
+  "pointer_target_observation": "The exact first-party pointer target still renders the publisher's HTML 404 page; a bounded request returned no CSV bytes. The pointer bytes and declared target are unchanged, while the generated 404 body hash differs from the prior recheck.",
+  "disposition": "current-official-pointer-target-404-recheck-retained",
+  "interpretation": "This is a fresh transport/content recheck only. It does not establish file absence or compliance and does not replace the stronger dated pointer evidence.",
+  "next_action": "Recover a current facility-specific CMS CSV/JSON through the publisher or an authorized route, then verify declared name, address, Idaho state, date, version and usability."
+}

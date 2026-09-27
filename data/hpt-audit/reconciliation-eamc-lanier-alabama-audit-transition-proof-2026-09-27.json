@@ -1,0 +1,27 @@
+{
+  "ccn": "010780",
+  "observed_at": "2026-09-27T19:12:00Z",
+  "source": "Alabama Department of Examiners of Public Accounts, East Alabama Health Care Authority FY2025 financial audit",
+  "source_url": "https://alison.legislature.state.al.us/files/pdf/eopa/audit_reports/26-179_26-179-CPA-East%20AL%20HCA-25.pdf",
+  "source_page": 25,
+  "source_report_date": "2026-01-29",
+  "source_file_content_type": "application/pdf",
+  "source_file_bytes_head_response": 545176,
+  "source_file_last_modified": "2026-03-04T12:19:40Z",
+  "auditor_report_excerpt": "In November 2024 East Alabama Medical Center – Lanier converted from an Inpatient Prospective Payment System (IPPS) hospital to a Rural Emergency Health (REH) facility. During fiscal year 2025, the Authority received Centers for Medicare and Medicaid Services (CMS) subsidy payments related to the REH.",
+  "related_cms_identity_proof": {
+    "proof_file": "reconciliation-eamc-lanier-current-cms-general-proof-2026-09-25.json",
+    "cms_ccn": "010780",
+    "cms_name": "EAMC - LANIER",
+    "cms_location": "4800 48TH STREET, VALLEY, AL 36854",
+    "cms_type": "Rural Emergency Hospital"
+  },
+  "related_current_pointer_proof": {
+    "proof_file": "reconciliation-eamc-lanier-current-reh-scope-proof-2026-09-27.json",
+    "pointer_lanier_entry_present": false,
+    "pointer_file_scope": "East Alabama Medical Center, 2000 Pepperell Parkway, Opelika, AL"
+  },
+  "interpretation": "New primary public audit evidence establishes that the operator's Lanier facility converted from IPPS hospital to REH in November 2024. Current CMS Hospital General Information independently maps the existing exact CCN 010780 to EAMC-Lanier at the Valley address as an REH. Together these sources materially resolve the transition/scope timeline enough to stop treating 010780 as a currently operating acute-care IPPS hospital. They do not specify an exact day, CMS certification action/termination effective date, or whether a separate replacement CCN was issued; do not infer those details. The current first-party price pointer still names only the Opelika sibling, so no MRF or compliance credit follows.",
+  "disposition_effect": "Update the scoped facility-type/timeline note for 010780 from transition-lead-pending to audit-confirmed November 2024 IPPS-to-REH conversion; preserve as-of-date and CCN-specific HPT/file uncertainty. Do not count as an HPT recovery or supported scope exemption without separate legal/program analysis.",
+  "next_action": "Keep 010780's current REH identity and November 2024 conversion in the record. Continue to seek dated certification-history evidence only if needed for historical HPT accountability, and seek a Lanier/Valley-specific MRF or explicit publisher coverage explanation; do not borrow the Opelika file."
+}

@@ -1,0 +1,29 @@
+{
+  "ccn": "450469",
+  "observed_at": "2026-09-22T07:00:00Z",
+  "official_site": "https://wnj.org/",
+  "official_pricing_page": "https://wnj.org/",
+  "official_page_status": 0,
+  "official_page_observation": "The recorded official domain wnj.org resolved in DNS but browser and PowerShell HTTPS clients failed during TLS/connection setup (ERR_SSL_VERSION_OR_CIPHER_MISMATCH and connection closed). The HTTP route returned 409 Conflict. No first-party pricing page, pointer or MRF was recoverable in this check.",
+  "transport_observations": [
+    "browser https: ERR_SSL_VERSION_OR_CIPHER_MISMATCH",
+    "browser https www: ERR_CONNECTION_CLOSED",
+    "PowerShell https: SSL connection could not be established",
+    "PowerShell http: HTTP 409 Conflict"
+  ],
+  "file_kind": null,
+  "disposition": "official-site-transport-failure",
+  "cms_hospital_general_record": {
+    "source_file": "cms_data/Hospital_General_Information.csv",
+    "source_sha256": "23c5019ee51e11442d6d64cd153cedd78c51ab6435f621e4cb9351e3e972d9e3",
+    "facility_id": "450469",
+    "facility_name": "WILSON N JONES REGIONAL MEDICAL CENTER",
+    "address": "500 N HIGHLAND AVE",
+    "citytown": "SHERMAN",
+    "state": "TX",
+    "zip_code": "75090",
+    "hospital_type": "Acute Care Hospitals"
+  },
+  "interpretation": "This is a transport/tool observation only. It does not establish that the file is absent, that the hospital is noncompliant, or that any third-party lead is authoritative; the CCN remains unresolved.",
+  "next_action": "Retry wnj.org through an alternate authorized client or obtain a current first-party pricing URL, then verify pointer linkage, facility identity, file access, date, version and complete-file usability."
+}

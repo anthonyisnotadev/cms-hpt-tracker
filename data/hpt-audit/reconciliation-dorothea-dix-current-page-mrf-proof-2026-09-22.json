@@ -1,0 +1,15 @@
+{
+  "ccn": "204004",
+  "observed_at": "2026-09-22T08:45:00Z",
+  "official_pricing_page": "https://www1.maine.gov/dhhs/ddpc/patient-information/hospital-price-transparency",
+  "official_page_status": 200,
+  "official_page_observation": "The Maine DHHS Dorothea Dix Psychiatric Center page identifies CMS-required standard charges and links a Machine Readable File (Microsoft Excel CSV File). The official DDPC page identifies the facility as a state-operated psychiatric hospital in Bangor, Maine.",
+  "candidate_file_url": "https://www.maine.gov/dhhs/sites/maine.gov.dhhs/files/inline-files/016000001_dorotheadixpsychiatriccenter_standardcharges.csv",
+  "candidate_file_format": "CSV",
+  "candidate_file_observation": "The exact page-linked CSV returned HTTP 200 with Content-Type text/csv, Content-Length 4756, Last-Modified 2023-04-19T20:43:37Z and a readable charge table. The file contains no facility identity, state, declared CMS update date or template version in the bounded body.",
+  "roster_identity": "DOROTHEA DIX PSYCHIATRIC CENTER",
+  "roster_address": "656 STATE STREET, BANGOR, ME 04401",
+  "disposition": "official-page-current-facility-csv-linkage-file-parse-unresolved",
+  "interpretation": "New official current page and exact accessible CSV linkage evidence. The file is old by HTTP metadata and lacks facility/date/version fields, so no current verification claim or stale-file correction is promoted without an independent currentness and identity check.",
+  "next_action": "Obtain a current facility-identified MRF or independent state/CMS metadata and verify the CSV's currentness, facility identity, Maine state and usability before promotion."
+}

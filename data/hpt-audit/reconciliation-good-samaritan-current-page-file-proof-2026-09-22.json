@@ -1,0 +1,13 @@
+{
+  "ccn":"100287","observed_at":"2026-09-22T22:00:00Z",
+  "official_site":"https://palmbeachhealthnetwork.com/",
+  "official_pricing_page":"https://www.palmbeachhealthnetwork.com/patients/pricing-info-estimates/hospital-pricing-information",
+  "official_page_observation":"The current first-party Palm Beach Health Network pricing page lists Good Samaritan Medical Center Standard Charges, identifies the page as current through Last Updated 4/1/2026, and links a campus-specific JSON.",
+  "pointer_url":"https://palmbeachhealthnetwork.com/cms-hpt.txt","pointer_status":"browser-ERR_BLOCKED_BY_CLIENT",
+  "mrf_url":"https://mrfs.hyvehealthcare.com/TenetHealth/752932824_good-samaritan-medical-center%2C-inc._standardcharges.json","mrf_status":206,"mrf_response_bytes":262144,"mrf_content_range":"bytes=0-262143/97065280","mrf_total_bytes":97065280,"mrf_etag":"0x8DF0A022276BA48","mrf_last_modified":"Thu, 03 Sep 2026 21:27:19 GMT","mrf_response_sha256":"4bc74c147792f2a3a40b11036250a7e479e5899b9b8baf1c656eef7ff09f5ca7",
+  "declared_last_updated":"2026-09-01","cms_template_version":"3.0.0","declared_hospital_name":"GOOD SAMARITAN MEDICAL CENTER, INC.","declared_location_name":"Good Samaritan Medical Center","declared_address":"1309 N Flagler Dr, West Palm Beach, FL 33401","declared_license_state":"FL","declared_license_number":"4070","declared_npi":"1770515991",
+  "cms_api_url":"https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=100287&conditions%5B0%5D%5Boperator%5D=%3D","cms_api_status":200,"cms_api_response_bytes":6583,"cms_api_response_sha256":"251275DF8BEDA4695CC58A34895C0E6D8E9C238B05F68179731CEF181103C005","cms_record":{"facility_id":"100287","facility_name":"GOOD SAMARITAN MEDICAL CENTER","address":"1309 N FLAGLER DR","citytown":"WEST PALM BEACH","state":"FL","zip_code":"33401"},
+  "pointer_http_status":403,"pointer_sha256":"ef521075fc7f4eb6e980d53560b2b93ea3a9c1ed4179171653af56eb2b719aee","disposition":"verified-current-page-file-root-pointer-blocked",
+  "interpretation":"The current first-party pricing page links the exact Good Samaritan JSON. Its bounded CMS 3.0.0 header matches the facility name, address, Florida state, NPI and declared 2026-09-01 date; the root pointer was blocked by the browser, so this is page-linked observed evidence with pointer follow-up and no legal compliance conclusion.",
+  "next_action":"Retry the shared root pointer with an alternate transport and compare its target to the page-linked file before any promotion."
+}

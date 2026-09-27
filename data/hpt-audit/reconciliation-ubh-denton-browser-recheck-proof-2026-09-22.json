@@ -1,0 +1,17 @@
+{
+  "ccn": "454104",
+  "observed_at": "2026-09-22T13:00:00Z",
+  "official_pricing_page": "https://ubhdenton.com/",
+  "official_pricing_page_status": 403,
+  "official_page_observation": "Interactive browser access to the first-party University Behavioral Health of Denton domain rendered a Cloudflare security-verification page rather than hospital content. The exact cms-hpt.txt route rendered the same first-party challenge; no pointer text or MRF URL was available.",
+  "cms_pointer_url": "https://ubhdenton.com/cms-hpt.txt",
+  "cms_pointer_result": "First-party browser access rendered a Cloudflare security-verification challenge; no pointer content was available in this recheck.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=454104&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6832,
+  "cms_api_response_sha256": "F6A9E8C2E2BE5E26A61FFE7604A19F04562D6993F4EA365DA8E2C0BAEF5116BE",
+  "cms_record": { "facility_id": "454104", "facility_name": "UNIVERSITY BEHAVIORAL HEALTH OF DENTON", "address": "2026 WEST UNIVERSITY DRIVE", "citytown": "DENTON", "state": "TX", "zip_code": "76201", "hospital_type": "Psychiatric", "hospital_ownership": "Government - State", "emergency_services": "No" },
+  "disposition": "official-domain-pointer-browser-access-challenge-no-mrf-observed",
+  "interpretation": "The browser route is a first-party transport/access observation only. CMS independently identifies University Behavioral Health of Denton and its Denton, Texas address; the observation does not establish file absence, noncompliance, or a facility closure.",
+  "next_action": "Retry the exact first-party pointer through a permitted publisher route, then verify declared name, Denton address/state, date, version and usability before changing the tracker disposition."
+}

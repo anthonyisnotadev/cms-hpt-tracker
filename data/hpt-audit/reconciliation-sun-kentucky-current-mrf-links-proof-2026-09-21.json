@@ -1,0 +1,14 @@
+{
+  "ccn": "184006",
+  "observed_at": "2026-09-21T18:00:00Z",
+  "official_pricing_page": "https://sunkentucky.com/price-transparency/",
+  "official_page_status": 200,
+  "official_page_observation": "The current SUN Behavioral Kentucky Price Transparency page identifies separate Erlanger and Lexington locations and links a machine-readable CSV for each. The Erlanger link is the facility-relevant route for CCN 184006.",
+  "candidate_file_url": "https://sunkentucky.com/files/sun-kentucky-standardcharges.csv",
+  "candidate_file_observation": "The official page's exact Erlanger machine-readable target is a CSV. Web retrieval reached the target but exposed no parsed lines or file metadata, so bytes and CMS identity remain unverified.",
+  "roster_identity": "SUN BEHAVIORAL HEALTH",
+  "roster_address": "820 Dolwick Drive, Erlanger, KY 41018",
+  "disposition": "official-page-current-mrf-linkage-file-bytes-unresolved",
+  "interpretation": "This is new facility-specific official-page and exact-file linkage. The Lexington sibling CSV is explicitly excluded from CCN 184006. No bytes, declared facility metadata, CMS version, date or parsed usability were observed, so no current verification claim is promoted.",
+  "next_action": "Retrieve the Erlanger CSV through a permitted download-capable route, then verify bytes, declared facility/address/Kentucky state, update date, CMS version and parsed usability before promotion."
+}

@@ -1,0 +1,78 @@
+{
+  "audit_id": "reconciliation-creedmoor-current-enrollment-address-proof-2026-09-27",
+  "ccn": "334004",
+  "observed_at": "2026-09-27T17:06:21Z",
+  "question": "Does the OMH pointer-linked Creedmoor section at 79-25 Winchester Boulevard belong to CCN 334004 despite the Hospital General Information record's 80-45 Building B address?",
+  "prior_conflict": {
+    "source_proof": "reconciliation-omh-multisection-file-audit-2026-09-27.json",
+    "cms_hospital_general_information_address": "80-45 WINCHESTER BLVD BLDG B, QUEENS VILLAGE, NY 11427",
+    "file_section_address": "79-25 Winchester Boulevard, Queens Village, NY 11427",
+    "prior_interpretation": "Keep the file unassigned pending evidence resolving the address difference."
+  },
+  "current_cms_hospital_enrollment": {
+    "dataset": "CMS Hospital Enrollments (PECOS)",
+    "dataset_landing_page": "https://data.cms.gov/provider-characteristics/hospitals-and-other-facilities/hospital-enrollments",
+    "dataset_version": "2026-08-01",
+    "dataset_version_id": "aa2e3ead-bbaa-4e71-b59d-a07ac7ed9ba5",
+    "dataset_api_url": "https://data.cms.gov/data-api/v1/dataset/aa2e3ead-bbaa-4e71-b59d-a07ac7ed9ba5/data?filter%5BCCN%5D=334004",
+    "response_status": 200,
+    "response_content_type": "application/json",
+    "response_bytes": 1194,
+    "response_sha256": "df27d120027158f72b1c7b7970ee5c4947e6c152629d519177b0d6fc609ea388",
+    "response_body": "[{\"ENROLLMENT ID\":\"O20160108001621\",\"ENROLLMENT STATE\":\"NY\",\"PROVIDER TYPE CODE\":\"00-09\",\"PROVIDER TYPE TEXT\":\"PART A PROVIDER - HOSPITAL\",\"NPI\":\"1194889097\",\"MULTIPLE NPI FLAG\":\"Y\",\"CCN\":\"334004\",\"ASSOCIATE ID\":\"3072782432\",\"ORGANIZATION NAME\":\"NYS OFFICE OF MENTAL HEALTH\",\"DOING BUSINESS AS NAME\":\"CREEDMOOR PSYCHIATRIC CENTER\",\"INCORPORATION DATE\":\"\",\"INCORPORATION STATE\":\"\",\"ORGANIZATION TYPE STRUCTURE\":\"GOVERNMENT\",\"ORGANIZATION OTHER TYPE TEXT\":\"\",\"PROPRIETARY NONPROFIT\":\"N\",\"ADDRESS LINE 1\":\"79-25 WINCHESTER BOULEVARD\",\"ADDRESS LINE 2\":\"\",\"CITY\":\"QUEENS VILLAGE\",\"STATE\":\"NY\",\"ZIP CODE\":\"114272199\",\"PRACTICE LOCATION TYPE\":\"\",\"LOCATION OTHER TYPE TEXT\":\"\",\"SUBGROUP - GENERAL\":\"N\",\"SUBGROUP - ACUTE CARE\":\"N\",\"SUBGROUP - ALCOHOL DRUG\":\"N\",\"SUBGROUP - CHILDRENS\":\"N\",\"SUBGROUP - LONG-TERM\":\"N\",\"SUBGROUP - PSYCHIATRIC\":\"Y\",\"SUBGROUP - REHABILITATION\":\"N\",\"SUBGROUP - SHORT-TERM\":\"N\",\"SUBGROUP - SWING-BED APPROVED\":\"N\",\"SUBGROUP - PSYCHIATRIC UNIT\":\"N\",\"SUBGROUP - REHABILITATION UNIT\":\"N\",\"SUBGROUP - SPECIALTY HOSPITAL\":\"N\",\"SUBGROUP - OTHER\":\"Y\",\"SUBGROUP - OTHER TEXT\":\"GOVERNMENT-OWNED ENTITY (GOE)\",\"REH CONVERSION FLAG\":\"N\",\"REH CONVERSION DATE\":\"\",\"CAH OR HOSPITAL CCN\":\"\"}]",
+    "matched_fields": {
+      "ccn": "334004",
+      "doing_business_as_name": "CREEDMOOR PSYCHIATRIC CENTER",
+      "npi": "1194889097",
+      "address": "79-25 WINCHESTER BOULEVARD",
+      "city": "QUEENS VILLAGE",
+      "state": "NY",
+      "zip": "114272199",
+      "psychiatric_subgroup": true
+    }
+  },
+  "official_omh_browser_observations": [
+    {
+      "url": "https://omh.ny.gov/omhweb/facilities/crpc/index.htm",
+      "browser_title": "Creedmoor Psychiatric Center",
+      "observed_at": "2026-09-27T17:05:31Z",
+      "observation": "OMH identifies Creedmoor Psychiatric Center at 79-25 Winchester Boulevard, Queens Village, NY 11427-2199 and states inpatient hospitalization is at its main campus with five outpatient sites in Queens."
+    },
+    {
+      "url": "https://omh.ny.gov/omhweb/facilities/crpc/outpatient_services.htm",
+      "browser_title": "Creedmoor Psychiatric Center - Outpatient Services",
+      "observed_at": "2026-09-27T17:05:31Z",
+      "observation": "OMH identifies 80-45 Winchester Boulevard, Building 73 as the Queens Village Jamaica Wellness and Recovery Center outpatient site. It separately lists Creedmoor's Family Outreach Program at 79-25 Winchester Boulevard, Building 40. This establishes that the 80-45 address is a related outpatient service site and not evidence that the 79-25 main-campus address belongs to another hospital."
+    }
+  ],
+  "retained_pointer_and_mrf": {
+    "official_domain": "omh.ny.gov",
+    "pointer_url": "https://omh.ny.gov/cms-hpt.txt",
+    "pointer_sha256": "c5bc8d36dae15caaa62f821228bcdeba7baf3c48c4ce0ac0e0c585a41d073de1",
+    "pointer_location_name": "Creedmoor",
+    "pointer_mrf_url": "https://omh.ny.gov/omhweb/adults/141663311_nysomh_standardcharges.csv",
+    "source_page_url": "https://omh.ny.gov/omhweb/adults/omh-hospital-pricing-transparency.pdf",
+    "mrf_full_file_sha256": "84f14403ad89386a0fb9e470d2e3fe371454eef40ca32b86d31fe313a0fd0911",
+    "mrf_full_file_bytes": 929041,
+    "mrf_http_status": 200,
+    "mrf_file_date": "2026-05-28",
+    "mrf_version": "3.0.0",
+    "mrf_section_name": "Creedmoor Psychiatric Center",
+    "mrf_section_location_name": "Creedmoor",
+    "mrf_section_address": "79-25 Winchester Boulevard, Queens Village, NY 11427",
+    "mrf_section_declared_npis": ["1831253004", "1730243635", "1194889097"],
+    "mrf_attestation": true,
+    "mrf_columns": 51,
+    "mrf_rows": 88,
+    "mrf_malformed_row_widths": 0,
+    "mrf_usable_gross_charge_rows": 88
+  },
+  "resolution": {
+    "disposition": "verified-current-mrf",
+    "identity_basis": "Exact CMS Hospital Enrollments CCN, facility name, NPI and 79-25 main-campus address agree with the OMH first-party main-campus page and the Creedmoor-labeled section in OMH's pointer-linked shared CSV. OMH documents 80-45 Building 73 as a related outpatient site; the older Hospital General Information address did not disprove the main-campus match.",
+    "scope_limit": "This is observed current pointer-linked MRF evidence, not a legal compliance conclusion or validation of every pricing row. The CMS Hospital General Information address discrepancy remains visible as a distinct source-record variation; the source-reported MRF and PECOS enrollment address are supported at the 79-25 main campus.",
+    "evidence_gain_vs_recheck": "New CMS PECOS Hospital Enrollments CCN/NPI/address row plus current first-party OMH address-role distinction; no pointer or MRF was refetched.",
+    "prior_file_recheck": "The MRF and pointer values were not freshly retrieved in this review; they are carried forward from the exact hash-bound full-file audit observed 2026-09-27T14:55:56.041Z.",
+    "next_action": "Retain the exact shared-file Creedmoor section as current observed MRF evidence; recheck on the normal freshness schedule or if the OMH pointer/file, CMS enrollment, or facility address changes."
+  }
+}

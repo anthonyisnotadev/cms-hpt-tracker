@@ -1,0 +1,20 @@
+{
+  "ccn": "521348",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://www.vmh.org/",
+  "official_identity_sources": [
+    "https://www.vmh.org/",
+    "https://www.vmh.org/patients-visitors/billing-insurance/",
+    "https://www.vmh.org/cms-hpt.txt",
+    "https://ezcost.info/Vernon-Memorial-Hospital",
+    "https://turquoise.health/providers/vernon-memorial-hospital/information"
+  ],
+  "official_identity": "Vernon Memorial Hospital is the Viroqua, Wisconsin hospital now presented by the first-party site as Vernon Health, associated with CCN 521348. The current billing page identifies the Vernon Health Price Estimator and Standard Charges resources; the root cms-hpt.txt names Vernon Memorial Hospital and links the MRF.",
+  "pointer_observation": "The official cms-hpt.txt returned HTTP 200, 333 bytes, SHA-256 fa2a46528d1ffb614bbdb3da4945c9cc94a31e5a828a8fa7b2565addf46bd451, naming Vernon Memorial Hospital and linking the Vernon Memorial Healthcare MRF.",
+  "pricing_url": "https://hospitalpricetransparencyfiles.com/vernon-memorial-healthcare-inc/390806404_Vernon-Memorial-Healthcare-Inc_standardcharges.csv",
+  "browser_observation": "Browser automation opened the current Vernon Health billing page and exposed the Standard Charges document and price-estimator route. The publisher CSV was blocked by the browser client, but the same pointer-declared URL was retrieved through a permitted bounded curl route.",
+  "pricing_observation": "The pointer-declared CSV returned HTTP 200 text/csv, 2,528,247 bytes, SHA-256 ad894a57f2d44bf1f37c9187603d8cd513c2890c65c21622d79b1573921cbfa2. Its metadata declares Vernon Memorial Healthcare, Inc / Vernon Memorial Hospital at 507 South Main Street, Viroqua, WI 54665, NPIs 1164752648|1497750921|1992701031, license 1053, CMS 3.0.0, update date 2025-11-21, attester Scott Leckey, attestation TRUE, and a readable CMS data header.",
+  "disposition": "verified-current-mrf",
+  "interpretation": "Official pointer, current operator identity, exact Viroqua address/state and pointer-declared MRF metadata converge; the browser block is a transport observation overcome by a bounded permitted route, not a compliance finding.",
+  "next_action": "Retain exact pointer, publisher URL and file provenance and recheck on the normal freshness cycle."
+}

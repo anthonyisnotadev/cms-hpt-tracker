@@ -1,0 +1,26 @@
+{
+  "ccn": "514012",
+  "observed_at": "2026-09-23T17:20:00Z",
+  "official_site": "https://dhhr.wv.gov/",
+  "official_pricing_page": "https://dhhr.wv.gov/officeofhealthfacilities/Pages/William-R.-Sharpe%2C-Jr.-Hospital.aspx",
+  "official_identity": "William R. Sharpe, Jr. Hospital, 936 Sharpe Hospital Road, Weston, WV 26452 (current West Virginia Department of Health Facilities page and facility lookup).",
+  "browser_observation": "The current official state page identifies Sharpe Hospital and links a facility-specific CSV. The file is a legacy custom charge export dated 2021-11-17, not a current CMS 3.0.0 MRF.",
+  "file_url": "https://dhhr.wv.gov/officeofhealthfacilities/Documents/SharpeStandardChargesFile.csv",
+  "file_status": 200,
+  "file_content_type": "application/octet-stream",
+  "file_total_bytes": 42119,
+  "file_sha256": "33457ee7f6dbfb047b845355318559c0caf07c29b245d1fd4c65e9d93c1827d4",
+  "file_last_modified": "2021-12-28T13:10:40Z",
+  "declared_file_date": "2021-11-17",
+  "cms_record": {
+    "ccn": "514012",
+    "name": "WILLIAM R SHARPE, JR HOSPITAL",
+    "address": "936 SHARPE HOSPITAL ROAD",
+    "city": "WESTON",
+    "state": "WV",
+    "zip": "26452"
+  },
+  "disposition": "historical-custom-csv-review",
+  "interpretation": "The official West Virginia page links an identity-matched 42,119-byte CSV, but its header identifies a 2021 legacy charge export and does not provide current CMS 3.0 metadata. It is retained as historical source evidence only; no current-MRF promotion or compliance conclusion is made.",
+  "next_action": "Obtain a current CMS-format CSV/JSON/ZIP or publisher-confirmed CMS route, then verify complete bytes, facility identity, West Virginia metadata, declared date/version and usable payer-specific rate fields before promotion."
+}

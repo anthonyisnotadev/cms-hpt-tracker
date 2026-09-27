@@ -1,33 +1,12 @@
 'use strict';
-const fs = require('node:fs');
-const path = require('node:path');
-const root = path.resolve(__dirname, '../..');
-const audit = path.join(root, 'data/hpt-audit');
-const p = JSON.parse(fs.readFileSync(path.join(audit, 'reconciliation-prwch-current-page-file-proof-2026-09-21.json'), 'utf8'));
-const fp = path.join(audit, 'reconciliation-manual-access-observations.json');
-const doc = JSON.parse(fs.readFileSync(fp, 'utf8'));
-const rec = {
-  ccn: p.ccn,
-  observed_at: p.observed_at,
-  proof_file: 'reconciliation-prwch-current-page-file-proof-2026-09-21.json',
-  official_site: p.official_site,
-  official_identity_source: p.official_pricing_page,
-  official_facility_name: p.declared_hospital_name,
-  official_facility_address: p.declared_address,
-  pointer_url: p.pointer_url,
-  pointer_status: String(p.pointer_status),
-  mrf_url: p.mrf_url,
-  mrf_status: String(p.mrf_status),
-  mrf_response_bytes: p.mrf_bytes,
-  mrf_response_sha256: p.mrf_sha256,
-  declared_last_updated: p.declared_last_updated,
-  cms_template_version: p.cms_template_version,
-  declared_license_state: p.declared_license_state,
-  disposition: p.disposition,
-  next_action: p.next_action
-};
-doc.records = doc.records.filter(row => row.ccn !== p.ccn);
-doc.records.push(rec);
-doc.records.sort((a, b) => a.ccn.localeCompare(b.ccn));
-fs.writeFileSync(fp, `${JSON.stringify(doc, null, 2)}\n`);
-console.log(JSON.stringify({ updated: p.ccn, disposition: p.disposition }, null, 2));
+const fs=require('node:fs'),path=require('node:path');
+const {csvToObjects}=require('./lib/util');
+const root=path.resolve(__dirname,'../..'),audit=path.join(root,'data/hpt-audit');
+const proofName='reconciliation-prwch-current-page-file-proof-2026-09-21.json';
+const p=JSON.parse(fs.readFileSync(path.join(audit,proofName),'utf8'));
+const base=csvToObjects(fs.readFileSync(path.join(audit,'compliance.csv'),'utf8')).find(r=>r.ccn===p.ccn)||{};
+const e={identity:'corroborated',identity_basis:'official-first-party-pricing-page-complete-current-csv-name-address-state-date-version-npi',officialDomain:'prwch.com',sourcePageUrl:p.official_pricing_page,pointerUrl:p.pointer_url,pointerIssue:'root-pointer-http-error',pointerHttpStatus:p.pointer_status,pointerSha256:p.pointer_sha256,url:p.mrf_url,http_status:p.mrf_status,checked_at:p.observed_at,date:p.declared_last_updated,version:p.cms_template_version,declared_hospital_name:p.declared_hospital_name,location_name:p.declared_location_name,declared_address:p.declared_address,facility_address:p.declared_address,declared_license_state:p.declared_license_state,declared_npi:p.declared_npi,file_kind:'csv',fileSha256:p.mrf_sha256.toLowerCase(),bytesRetained:p.mrf_bytes,fullFileBytes:p.mrf_bytes,retainedSampleBytes:p.mrf_bytes,attestationPresent:true,observedFinding:'official-page-mrf-root-pointer-unavailable'};
+const ledgerPath=path.join(audit,'reviewed-resolutions.json'),ledger=JSON.parse(fs.readFileSync(ledgerPath,'utf8'));
+const entry={ccn:p.ccn,base,action:'replace',finding:'verified-current-mrf',evidence:e,evidence_run:'prwch-current-page-file-complete-retrieval-2026-09-21',reviewed_at:p.observed_at,note:'The official PRWCH pricing page links a complete current CMS 3.0.0 CSV matching the facility name/address, Puerto Rico state, NPI and 2026-03-31 date. The root pointer returned 404; this is page-linked observed evidence and not a legal compliance conclusion.'};
+const i=ledger.findIndex(r=>r.ccn===p.ccn); if(i>=0)ledger[i]=entry; else ledger.push(entry); ledger.sort((a,b)=>a.ccn.localeCompare(b.ccn)); fs.writeFileSync(ledgerPath,JSON.stringify(ledger,null,2)+'\n');
+const manualPath=path.join(audit,'reconciliation-manual-access-observations.json'),manual=JSON.parse(fs.readFileSync(manualPath,'utf8')); manual.records=manual.records.filter(r=>r.ccn!==p.ccn); manual.records.push({...p,proof_file:proofName,disposition:'verified-current-page-file-root-pointer-unavailable',next_action:'Retry the exact root cms-hpt.txt pointer after publisher recovery; retain the complete page-linked CSV.'}); manual.records.sort((a,b)=>a.ccn.localeCompare(b.ccn)); fs.writeFileSync(manualPath,JSON.stringify(manual,null,2)+'\n'); console.log(JSON.stringify({applied:p.ccn,finding:entry.finding,bytes:p.mrf_bytes}));

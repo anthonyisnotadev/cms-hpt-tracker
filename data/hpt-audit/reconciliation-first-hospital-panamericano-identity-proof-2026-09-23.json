@@ -1,0 +1,30 @@
+{
+  "ccn": "404004",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "roster_identity": {
+    "name": "FIRST HOSPITAL PANAMERICANO",
+    "address": "STATE ROAD 787, KM 1.5",
+    "city": "CIDRA",
+    "state": "PR",
+    "zip": "00739"
+  },
+  "current_operator_domain": "https://www.hospitalpanamericano.com/",
+  "identity_sources": [
+    {
+      "url": "https://www.jointcommission.org/en-us/accreditation/behavioral-health-care-and-human-services/provider-locator/1542",
+      "observation": "Joint Commission identifies First Hospital Panamericano at State Road 787, KM 1.5, Cidra, Puerto Rico 00739 and links the UHS operator domain."
+    },
+    {
+      "url": "https://www.salud.pr.gov/CMS/227",
+      "observation": "The Puerto Rico Department of Health publishes a government price-transparency page for hospital services and supports the current public hospital identity."
+    },
+    {
+      "url": "https://www.linkedin.com/company/first-hospital-panamericano/",
+      "observation": "The current organization profile identifies First Hospital Panamericano in Cidra and links hospitalpanamericano.com."
+    }
+  ],
+  "browser_observation": "Bounded HTTPS requests to hospitalpanamericano.com root, cms-hpt.txt, .well-known/cms-hpt.txt and likely pricing paths returned HTTP 403 responses; no MRF bytes or pointer content were exposed.",
+  "disposition": "official-domain-identified-access-blocked",
+  "interpretation": "The official domain and exact roster identity are independently corroborated, replacing the earlier no-official-domain discovery result. HTTP 403 is a transport observation only; no file absence, closure, compliance or current pricing conclusion is inferred.",
+  "next_action": "Retry the identified official domain through a permitted browser route or obtain a publisher-provided current CMS pointer/MRF URL; validate facility identity and metadata before promotion."
+}

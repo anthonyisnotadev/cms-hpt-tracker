@@ -1,0 +1,32 @@
+{
+  "ccn": "400109",
+  "observed_at": "2026-09-22T13:00:00Z",
+  "official_domain": "auxiliosanpablo.com",
+  "official_facility_page": "https://www.auxiliosanpablo.com/",
+  "official_page_status": 200,
+  "official_facility_name": "Hospital Auxilio Mutuo San Pablo",
+  "official_facility_observation": "The first-party site identifies Auxilio Mutuo San Pablo as a hospital in Bayamón and states it joined Sociedad Española de Auxilio Mutuo in 2023. A separate audit portal requires an access code and is not a public price-transparency MRF route.",
+  "route_checks": [
+    {
+      "url": "https://www.auxiliosanpablo.com/cms-hpt.txt",
+      "status": 404
+    },
+    {
+      "url": "https://www.auxiliosanpablo.com/price-transparency",
+      "status": 404
+    },
+    {
+      "url": "https://www.auxiliosanpablo.com/transparencia-de-precios",
+      "status": 404
+    },
+    {
+      "url": "https://auditportal.auxiliosanpablo.com/",
+      "status": 200,
+      "observation": "restricted audit portal requiring account, facility and access code; excluded from public MRF evidence"
+    }
+  ],
+  "manual_identity_gate": "official-first-party-site-name-system-affiliation-agree",
+  "disposition": "pointer-discovery-incomplete",
+  "interpretation": "The official site confirms the hospital identity and ownership transition, but no public facility-specific CMS pointer or MRF was recovered. The restricted audit portal is not treated as public pricing evidence; no compliance, exemption or file-absence conclusion is inferred.",
+  "next_action": "Search the current Auxilio Mutuo/San Pablo publisher resources and retry for a public facility-specific CSV/JSON/ZIP MRF or pointer."
+}

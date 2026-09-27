@@ -17,9 +17,12 @@ test('tracker exposes current manual follow-ups separately from standing finding
   const data = JSON.parse(html.slice(start + open.length, end));
   assert.ok(html.includes('id="oc-reviewed-followup"'));
   assert.ok(html.includes('id="oc-investigation-next-step"'));
-  assert.match(data.reviewedFollowups['010125'].nextAction, /acute-care certification period/);
-  assert.match(data.reviewedFollowups['011311'].nextAction, /critical-access certification period/);
-  assert.match(data.reviewedFollowups['010779'].nextAction, /license_number\|CA/);
+  assert.match(data.reviewedFollowups['010125'].nextAction, /acute-care certification period|historical accountability baseline/);
+  assert.match(data.reviewedFollowups['011311'].nextAction, /critical-access certification period|current first-party pointer\/MRF/);
+  assert.equal(data.reviewedFollowups['010779'], undefined);
+  assert.equal(data.investigationNextSteps['010779'].stream, 'same-campus-ccn-review');
+  assert.deepEqual(data.investigationNextSteps['010779'].sameCampusCcns, ['010110', '010779']);
+  assert.match(data.investigationNextSteps['010779'].nextAction, /CMS QIES Q1 2026 records acute-care CCN 010110 terminated 2024-04-30/);
   assert.equal(data.reviewedFollowups['420073'], undefined);
   assert.equal(data.investigationNextSteps['330270'].browserFileStatus, 'official-page-linked-large-json-access-denied');
   assert.match(data.investigationNextSteps['330270'].nextAction, /materially different authorized download route/);
@@ -49,7 +52,7 @@ test('tracker exposes current manual follow-ups separately from standing finding
   assert.equal(Object.keys(data.investigationNextSteps).length, worklist.records.length
     + standingWorklist.records.length + supportedWorklist.records.length
     + sameCampusOnlyCcns.length + trackerOnlyCcns.length);
-  assert.equal(data.investigationNextSteps['010062'].stream, 'standing-evidence-follow-up');
+  assert.equal(data.investigationNextSteps['010062'].stream, 'same-campus-ccn-review');
   assert.equal(data.investigationNextSteps['241319'].stream, 'supported-uncertainty-monitor');
   assert.match(data.investigationNextSteps['241319'].nextAction, /current plain-text murraycountymed\.org root pointer/);
   assert.equal(data.investigationNextSteps['061308'].stream, 'standing-evidence-follow-up');
@@ -58,7 +61,7 @@ test('tracker exposes current manual follow-ups separately from standing finding
   assert.equal(data.investigationNextSteps[browserRetry.ccn].nextAction, browserRetry.next_action);
   assert.match(browserRetry.next_action, /materially different permitted route/);
   const reconciliationByCcn = new Map(reconciliation.records.map(row => [row.ccn, row]));
-  const intentionalSameCampusOverrides = new Set(['011309', '040153', '370784']);
+  const intentionalSameCampusOverrides = new Set(['010062', '010779', '011309', '040153', '370784']);
   const intentionalSupportedOverrides = new Set(supportedWorklist.records.map(row => row.ccn));
   for (const [ccn, item] of Object.entries(data.investigationNextSteps)) {
     const current = reconciliationByCcn.get(ccn);
@@ -68,7 +71,8 @@ test('tracker exposes current manual follow-ups separately from standing finding
     else assert.equal(item.stream, current.workstream);
   }
   for (const row of reconciliation.records) {
-    if (row.workstream !== 'consistent') assert.ok(data.investigationNextSteps[row.ccn], row.ccn);
+    if (row.workstream !== 'consistent' && row.workstream !== 'verification-proof-gap')
+      assert.ok(data.investigationNextSteps[row.ccn], row.ccn);
   }
   assert.deepEqual([...intentionalSameCampusOverrides].sort(),
     [...new Set(Object.entries(data.investigationNextSteps)

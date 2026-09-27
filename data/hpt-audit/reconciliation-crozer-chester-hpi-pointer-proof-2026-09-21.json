@@ -1,0 +1,16 @@
+{
+  "ccn": "390180",
+  "observed_at": "2026-09-21T23:25:00Z",
+  "official_facility_page": "https://crozerhealth.org/financial-resources/hospital-price-transparency",
+  "official_pricing_page": "https://crozerhealth.org/financial-resources/hospital-price-transparency",
+  "official_page_status": 200,
+  "official_facility_name": "Crozer Chester Medical Center",
+  "official_facility_address": "1 Medical Center Blvd., Upland, PA 19013",
+  "candidate_file_url": "https://search.hospitalpriceindex.com/hpi2/hospital/Crozer-ChesterMedicalCenter/7927or",
+  "candidate_file_status": 200,
+  "candidate_file_content_type": "text/html",
+  "candidate_file_observation": "The official Crozer Health page links this Hospital Price Index application as the download location for All Services Charges, Shoppable Items and Chargemaster. The application returned only an HTML shell in bounded retrieval; no direct CSV/JSON bytes or CMS metadata were exposed.",
+  "manual_identity_gate": "official-page-and-facility-address-confirmed",
+  "disposition": "pointer-discovery-incomplete",
+  "next_action": "Use interactive browser/download fallback or obtain a direct facility-specific CMS CSV/JSON MRF; verify file identity and metadata before promotion."
+}

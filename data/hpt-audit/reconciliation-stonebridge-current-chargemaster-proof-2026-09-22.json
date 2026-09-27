@@ -1,0 +1,15 @@
+{
+  "ccn": "194120",
+  "observed_at": "2026-09-22T01:30:00Z",
+  "official_pricing_page": "https://www.stonebridgebehavioral.com/billing-insurance",
+  "official_page_status": 200,
+  "official_page_observation": "The current StoneBridge Behavioral Hospital billing page identifies a machine-readable chargemaster link and the facility at 2837 Ernest Street, Lake Charles, LA 70601.",
+  "candidate_file_url": "https://www.stonebridgebehavioral.com/s/Charge-Master.xlsx",
+  "candidate_file_format": "XLSX",
+  "candidate_file_observation": "The exact first-party Charge-Master.xlsx target was reached through the official billing page; bounded web retrieval returned an OK/unsupported workbook response and no workbook bytes or metadata were available.",
+  "roster_identity": "STONEBRIDGE BEHAVIORAL HOSPITAL",
+  "roster_address": "2837 Ernest Street, Suite A, Lake Charles, LA 70601",
+  "disposition": "official-page-current-facility-workbook-linkage-file-parse-unresolved",
+  "interpretation": "New official pricing-page/exact facility workbook linkage; workbook format and metadata remain unverified, so no CMS MRF verification claim is promoted.",
+  "next_action": "Retrieve the exact XLSX through a permitted download-capable route, inspect workbook bytes/sheets, determine whether it is a CMS MRF, and verify facility/address/Louisiana state, declared date/version and usability."
+}

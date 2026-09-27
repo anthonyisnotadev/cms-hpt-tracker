@@ -1,0 +1,78 @@
+{
+  "observed_at": "2026-09-27T17:29:39Z",
+  "ccns": ["250043", "251340"],
+  "official_operator_sources": {
+    "planned_conversion_page": {
+      "url": "https://www.neshobageneral.com/in-the-news/2025/may/neshoba-general-announces-intent-to-apply-for-cr/",
+      "page_posted": "2025-05-19",
+      "observation": "Neshoba General said its planned conversion date to Critical Access Hospital status was October 1, 2025.",
+      "limitation": "This is an announced planned date, not by itself CMS confirmation of the effective enrollment or CCN transition."
+    },
+    "critical_access_accreditation_certificate": {
+      "url": "https://www.neshobageneral.com/documents/Neshoba-County-General-Hospital-NIAHO-CAH-Certificate-Name-Change-2026.pdf",
+      "certificate_no": "C814536",
+      "issued": "2026-01-12",
+      "initial_certification": "2025-10-21",
+      "valid_through": "2028-10-21",
+      "facility": "Neshoba County General Hospital, 1001 Holland Avenue, Philadelphia, MS 39350-2161",
+      "observation": "DNV Healthcare certificate identifies the same facility and address as accredited under the NIAHO Critical Access Hospital program.",
+      "limitation": "Accreditation is not a CMS CCN assignment or an HPT file-to-CCN statement."
+    },
+    "cms_qies_dataset_page": {
+      "url": "https://data.cms.gov/provider-characteristics/hospitals-and-other-facilities/provider-of-services-file-quality-improvement-and-evaluation-system",
+      "latest_release_observed": "Q1 2026",
+      "observation": "CMS describes QIES POS as provider demographic and certification data including CCN, provider name and address."
+    }
+  },
+  "qies_query_result_discrepancy": {
+    "dataset_version_id": "bb342fae-b551-40fd-a738-e2e5878f3bbb",
+    "bulk_worklist_audit_file": "reconciliation-qies-unresolved-status-audit-2026-09-27.json",
+    "bulk_query_sha256": "ec071b6364b9b023446caed01e7f1ddcc5e08678f857f980d83a469bdffb971b",
+    "bulk_query_result": "The 6,500-row QIES result used for the 572-CCN worklist census did not contain CCN 250043; it is listed among 472 CCNs with no exact row in that bulk response.",
+    "exact_ccn_query_proof_file": "reconciliation-neshoba-cms-pos-transition-proof-2026-09-27.json",
+    "exact_ccn_query_url": "https://data.cms.gov/data-api/v1/dataset/bb342fae-b551-40fd-a738-e2e5878f3bbb/data?filter%5BPRVDR_NUM%5D=250043&size=5",
+    "exact_ccn_query_recorded_status": 200,
+    "exact_ccn_query_recorded_row": {
+      "ccn": "250043",
+      "provider_name": "NESHOBA COUNTY GENERAL HOSPITAL",
+      "address": "1001 HOLLAND AVENUE, PHILADELPHIA, MS",
+      "provider_category_code": "01",
+      "provider_subtype_code": "01",
+      "termination_code": "07",
+      "termination_or_expiration_date": "20251231",
+      "certification_date": "20170920",
+      "certification_action_code": "5",
+      "original_participation_date": "",
+      "eligibility": "Y"
+    },
+    "original_exact_query_body_sha256": null,
+    "original_exact_query_hash_status": "The earlier exact-filter body hash was not captured; fresh exact-filter response hashes are recorded under latest_hashed_recheck.",
+    "refetch_attempt_2026_09_27": "The first fresh attempt timed out, but a later bounded request completed; see reconciliation-neshoba-qies-hashed-query-recheck-2026-09-27.json for exact-filter response hashes and fields.",
+    "latest_hashed_recheck": {
+      "proof_file": "reconciliation-neshoba-qies-hashed-query-recheck-2026-09-27.json",
+      "observed_at": "2026-09-27T18:38:12Z",
+      "exact_250043_sha256": "5a895362d792efdcd3e7fa6fd496822e2d111a507f21c052941f8ba5723968b5",
+      "exact_251340_sha256": "e33aecd0338e05e0e7ec13224b269ac024506aea9c72f21b6d2570940c92b91c",
+      "bulk_sha256": "ec071b6364b9b023446caed01e7f1ddcc5e08678f857f980d83a469bdffb971b",
+      "bulk_sha256_matches_previous": true,
+      "bulk_omits_both_exact_query_ccns": true,
+      "result": "Exact-filter rows and bulk omission have both been reproduced against the same Q1 2026 dataset version."
+    },
+    "interpretation": "Do not reinterpret the bulk no-row result as a negative CMS status finding or hide the conflict. The exact-filter requests reproducibly return 250043 with termination date 2025-12-31 and cross-reference 251340, plus a non-terminated 251340 row for the same campus. The identical-hash bulk response still omits both. This supports the dated CCN transition but leaves the API's query asymmetry unexplained and does not establish historical HPT coverage or current MRF-to-CCN assignment.",
+    "status": "exact-filter-rows-reproduced-bulk-exact-query-asymmetry-documented-no-count-change"
+  },
+  "ccn_specific_follow_up": {
+    "250043": {
+      "role": "historical-acute-care-ccn",
+      "status": "historical-hpt-coverage-unresolved",
+      "next_action": "Retain this CCN in the historical accountability baseline and inspect only dated pre-2025-12-31 pointer/MRF evidence for its acute-care period. Do not search for a current file under 250043 or treat the June 2026 campus MRF as contemporaneous 250043 evidence. The exact-filter/bulk query asymmetry has been reproduced and hashed; do not repeat unchanged QIES queries unless the dataset version or data changes."
+    },
+    "251340": {
+      "role": "active-critical-access-hospital-ccn",
+      "status": "current-campus-mrf-ccn-assignment-unresolved",
+      "next_action": "Keep 251340 separate as the active CAH CCN. The June 4, 2026 campus file is a current-scope candidate but names no CCN; obtain a fresh root pointer or publisher statement binding its exact mrf-url to 251340 before changing its standing MRF finding. Do not assign that file to historical CCN 250043."
+    }
+  },
+  "disposition_effect": "none",
+  "unresolved_count_change": 0
+}

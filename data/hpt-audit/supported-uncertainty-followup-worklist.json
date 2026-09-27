@@ -1,15 +1,30 @@
 {
   "summary": {
-    "total": 66,
+    "total": 65,
     "by_gate": {
       "file-address-conflict": 1,
       "identity-and-pointer-linkage": 14,
-      "reviewed-file-address-conflict": 10,
-      "reviewed-file-license-state-conflict": 38,
+      "reviewed-file-address-conflict": 8,
+      "reviewed-file-license-state-conflict": 39,
       "reviewed-file-address-incomplete": 3
     }
   },
   "records": [
+    {
+      "ccn": "044021",
+      "hospital_name": "PERIMETER BEHAVIORAL HOSPITAL OF WEST MEMPHIS",
+      "state": "AR",
+      "priority": 1,
+      "evidence_gate": "reviewed-file-license-state-conflict",
+      "reconciliation_status": "reviewed-current-file-metadata-conflict",
+      "standing_finding": "mrf-license-state-field-conflicts-facility",
+      "reviewed_resolution_action": "replace-observation",
+      "reviewed_at": "2026-09-24T23:58:00Z",
+      "latest_observed_at": "2026-09-24T23:58:00Z",
+      "pointer_url": "https://perimeterhealthcare.com/cms-hpt.txt",
+      "mrf_url": "https://www.perimeterhealthcare.com/west-memphis/461030276_Woodridge-of-West-Memphis-LLC_standardcharges.csv",
+      "next_action": "Obtain publisher clarification or a corrected license-state field; recheck the exact file and compare that field with first-party or state facility evidence. Declared license state: TX; facility state: AR."
+    },
     {
       "ccn": "054074",
       "hospital_name": "ADVENTIST HEALTH VALLEJO",
@@ -34,9 +49,9 @@
       "reconciliation_status": "reviewed-current-file-metadata-conflict",
       "standing_finding": "mrf-license-state-field-conflicts-facility",
       "reviewed_resolution_action": "replace-observation",
-      "reviewed_at": "2026-09-17T00:00:00.000Z",
-      "latest_observed_at": "2026-09-17T00:00:00.000Z",
-      "pointer_url": "https://www.dmh.org/cms-hpt.txt",
+      "reviewed_at": "2026-09-24T23:59:00Z",
+      "latest_observed_at": "2026-09-24T23:59:00Z",
+      "pointer_url": "https://www.dmh.org/chargemaster",
       "mrf_url": "https://www.dmh.org/_files/ugd/753cbe_612bfadd8b314ba78d4741a244d074e2.csv?dn=591205441_desoto-memorial-hospital_standardcharges.csv",
       "next_action": "Obtain publisher clarification or a corrected license-state field; recheck the exact file and compare that field with first-party or state facility evidence. Declared license state: CO; facility state: FL."
     },
@@ -110,8 +125,8 @@
       "standing_finding": "compliant-observed",
       "reviewed_resolution_action": "",
       "reviewed_at": "2026-09-15T23:59:59Z",
-      "latest_observed_at": "2026-09-15T04:39:45.410Z",
-      "next_action": "Retain the prior standing evidence and the current exact facility/file linkage, but do not call the current file identity verified unless the publisher corrects or explains the conflicting 721 versus 421 street number."
+      "latest_observed_at": "2026-09-26T18:32:00Z",
+      "next_action": "Retain as verified current MRF; recheck the pointer and JSON on the next publisher update."
     },
     {
       "ccn": "180092",
@@ -127,21 +142,6 @@
       "pointer_url": "https://centerpointhealth.com/cms-hpt.txt",
       "mrf_url": "https://www.centerpointhealth.com/docs/ahcenterpointhealthlibraries/hcl/mrf3q2026/621772321_clark-regional-medical-center_standardcharges.csv.zip",
       "next_action": "Ask publisher to confirm/correct the NC license-number field; validate the complete ZIP/member before any schema or legal-compliance conclusion."
-    },
-    {
-      "ccn": "194086",
-      "hospital_name": "OCEANS BEHAVIORAL HOSPITAL OF BATON ROUGE",
-      "state": "LA",
-      "priority": 1,
-      "evidence_gate": "reviewed-file-address-conflict",
-      "reconciliation_status": "reviewed-current-file-metadata-conflict",
-      "standing_finding": "mrf-address-field-conflicts-facility",
-      "reviewed_resolution_action": "replace-observation",
-      "reviewed_at": "2026-09-17T17:03:24.869Z",
-      "latest_observed_at": "2026-09-17T17:03:24.869Z",
-      "pointer_url": "https://oceanshealthcare.com/cms-hpt.txt",
-      "mrf_url": "https://oceanshealthcare.com/wp-content/uploads/2026/06/203890581_Oceans-Behavioral-Hosptial-of-Baton-Rouge-South_standardcharges.csv",
-      "next_action": "Ask Oceans to correct or explain the 70518 ZIP in the exact Baton Rouge South file; retain the separately named Howell-campus file as a different facility observation."
     },
     {
       "ccn": "230208",
@@ -639,21 +639,6 @@
       "next_action": "Ask the publisher to clarify or correct license_number|IN for the Clear Lake Texas file; recheck exact pointer target."
     },
     {
-      "ccn": "490112",
-      "hospital_name": "CJW MEDICAL CENTER",
-      "state": "VA",
-      "priority": 1,
-      "evidence_gate": "reviewed-file-address-conflict",
-      "reconciliation_status": "reviewed-current-file-metadata-conflict",
-      "standing_finding": "mrf-address-field-conflicts-facility",
-      "reviewed_resolution_action": "replace-observation",
-      "reviewed_at": "2026-09-17T22:45:00.000Z",
-      "latest_observed_at": "2026-09-17T22:45:00.000Z",
-      "pointer_url": "https://hcavirginia.com/cms-hpt.txt",
-      "mrf_url": "https://stctrprodsnsvc00455826e6.blob.core.windows.net/pt-final-posting-files/54-1779911_CHIPPENHAM-HOSPITAL_standardcharges.json?si=dpx-pt-json-access-policy&spr=https&sv=2026-02-06&sr=c&sig=ks%2BgfAjyEHlZmeP2PYJ%2f9NpMuCoRStjTb2bhIy9Y6LM%3D",
-      "next_action": "Ask the publisher to confirm or correct the 7102-versus-7101 Jahnke address field, then validate the complete JSON separately. Do not infer a different hospital or a legal compliance verdict from the one-digit discrepancy."
-    },
-    {
       "ccn": "501337",
       "hospital_name": "LOURDES MEDICAL CENTER",
       "state": "WA",
@@ -972,8 +957,8 @@
     }
   ],
   "source_sha256": {
-    "nationwide-reconciliation.json": "cdbc976e9ff0989b0d3fb90b5d36f7088e476ca4b809926d1dbe8f4c03645c19",
-    "reviewed-resolutions.json": "dae45d73df0072bb2aa17ffdf734b144405b36a8c9a9e54c608fc4de6ed73068",
+    "nationwide-reconciliation.json": "2e196a9cff87a34657dfd0216d124d4cb093b18fa5d872b5cf5f76e3765a9984",
+    "reviewed-resolutions.json": "0d88ead8be860de7912a43e44cf298c827031e0dbe22f939987bfdd6c615877d",
     "reconciliation-browser-file-address-conflicts.json": "47098f3484a8115afcbbf955fa285346a472a470deb98cf9220646d1db874c80"
   }
 }

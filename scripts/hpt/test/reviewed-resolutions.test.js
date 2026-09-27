@@ -252,6 +252,21 @@ test('dated official closure evidence removes a closed facility from active revi
   assert.equal(result.manifest.length, 0);
   assert.equal(result.gaps.length, 0);
 });
+test('exact state-hospital scope resolution clears pricing pointers without asserting an MRF', () => {
+  const evidence = { facilityName: 'Austin State Hospital', checked_at: '2026-09-27T00:00:00Z',
+    facilityUrl: 'https://hhs.texas.gov/state-hospitals/austin', stateOperatorAuthority: 'Texas HSC §552.001',
+    stateOperatorSource: 'https://tcss.legis.texas.gov/resources/HS/htm/HS.552.htm',
+    federalRuleSource: 'https://www.govinfo.gov/content/pkg/CFR-2025-title45-vol2/pdf/CFR-2025-title45-vol2-part180.pdf',
+    federalRuleSection: '45 CFR §180.30(b)', stateHospitalStatuteFacilities: ['Austin State Hospital'] };
+  const result = applyResolutions([base], [base], [base], [{ ccn: base.ccn, base, action: 'exempt-state-hospital', evidence,
+    official: { domain: 'hhs.texas.gov', page: evidence.facilityUrl }, reviewed_at: evidence.checked_at, note: 'Federal scope classification.' }]);
+  assert.equal(result.compliance[0].finding, 'not-applicable-state-hospital');
+  assert.equal(result.compliance[0].assessable, 'no');
+  assert.equal(result.compliance[0].pointer_url, '');
+  assert.equal(result.compliance[0].mrf_url, '');
+  assert.equal(result.manifest.length, 0);
+  assert.equal(result.gaps.length, 0);
+});
 test('closed-facility exemption requires dated official evidence', () => {
   assert.throws(() => applyResolutions([base], [base], [], [{ ccn: base.ccn, base, action: 'exempt-closed',
     evidence: { checked_at: '2026-09-15' }, reviewed_at: '2026-09-15', note: 'Closed' }]), /closure evidence/);

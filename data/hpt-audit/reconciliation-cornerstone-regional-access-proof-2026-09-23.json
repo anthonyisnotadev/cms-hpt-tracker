@@ -1,0 +1,21 @@
+{
+  "ccn": "450825",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_domain": "https://cornerstoneregional.com/",
+  "identity_source": "https://www.southtexashealthsystem.com/sites/southtexashealthsystem.com/files/231534001_STHS_1547306_Patient_Guide_RPT_BKLT_SPN_FNL.pdf",
+  "official_identity": "The South Texas Health System patient guide identifies Cornerstone Regional Hospital at 2302 Cornerstone Blvd, Edinburg, TX 78539 and names cornerstoneregional.com as its site.",
+  "pointer_urls": [
+    "https://cornerstoneregional.com/cms-hpt.txt",
+    "https://cornerstoneregional.com/.well-known/cms-hpt.txt"
+  ],
+  "pointer_statuses": [403, 403],
+  "pricing_paths_checked": [
+    "https://cornerstoneregional.com/price-transparency",
+    "https://cornerstoneregional.com/pricing"
+  ],
+  "pricing_statuses": [403, 403],
+  "browser_observation": "Interactive browser reached the domain but received Cloudflare Error 1005 access denied; no pointer or pricing bytes were exposed.",
+  "disposition": "official-domain-access-denied-no-facility-file-claim",
+  "interpretation": "First-party identity and domain are corroborated, but the current client was denied by the site's access control. These are transport/access observations only; no MRF absence, closure or compliance conclusion is inferred.",
+  "next_action": "Use a permitted interactive browser or publisher-provided copy to inspect the Cornerstone pricing route and retrieve a current facility-specific CMS CSV/JSON/ZIP; verify name, address, Texas state, date, version and usability before promotion."
+}

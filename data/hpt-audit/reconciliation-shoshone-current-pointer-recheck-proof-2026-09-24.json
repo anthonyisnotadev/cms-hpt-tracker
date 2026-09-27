@@ -1,0 +1,18 @@
+{
+  "ccn": "131314",
+  "observed_at": "2026-09-24T00:00:00Z",
+  "official_site": "https://www.shoshonehealth.com/",
+  "official_pointer": "https://www.shoshonehealth.com/cms-hpt.txt",
+  "pointer_http_status": 200,
+  "pointer_bytes": 685,
+  "pointer_sha256": "bfe394fdb35303945b1ac368ed9ac29c9da111a5ef5819aea5c70b41e8360a87",
+  "pointer_entry": "Shoshone Medical Center -> https://sthpiprd.blob.core.windows.net/machine-readable-files/7852/826003924_west-shoshone-hospital-district-#1_standardcharges.csv",
+  "encoded_mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7852/826003924_west-shoshone-hospital-district-%231_standardcharges.csv",
+  "mrf_http_status": 404,
+  "mrf_content_type": "application/xml",
+  "mrf_observation": "The pointer's literal #1 path was percent-encoded for a bounded request; Azure returned BlobNotFound. The unencoded URL is a fragment-truncated browser/client hazard, so the earlier 404 does not establish file absence.",
+  "official_page_route": "https://search.hospitalpriceindex.com/hpi2/machineReadable/ShoshoneMedicalCenter/7852",
+  "disposition": "pointer-reconfirmed-current-file-unavailable-after-encoded-route",
+  "interpretation": "The first-party pointer is readable and names Shoshone Medical Center, but its third-party blob target is currently unavailable even when the literal # is encoded. No file metadata was promoted.",
+  "next_action": "Obtain a publisher-provided replacement/current CSV or authorized HPI download route, then verify name, Kellogg Idaho address, date, version and usability."
+}

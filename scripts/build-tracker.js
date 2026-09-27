@@ -138,6 +138,10 @@ const FINDINGS = [
     blurb: 'The health system’s pointer worked, but this hospital could not be matched to an entry.' },
   { key: 'not-applicable-federal', tier: 'exempt', label: 'Federally owned',
     blurb: 'VA and Department of Defense hospitals sit outside the rule.' },
+  { key: 'not-applicable-indian-health-program', tier: 'exempt', label: 'Indian Health Program exception',
+    blurb: '45 CFR 180.30(b)(2) covers hospitals operated by an Indian Health Program; this is not an MRF availability or file-quality finding.' },
+  { key: 'not-applicable-state-hospital', tier: 'exempt', label: 'State hospital scope exception',
+    blurb: '45 CFR 180.30(b) deems Federal and State hospitals compliant with Part 180. This scope classification is not an MRF availability or file-quality finding.' },
   { key: 'not-applicable-closed', tier: 'exempt', label: 'Hospital closed',
     blurb: 'Dated first-party evidence says this facility ceased hospital operations; its retained roster record is historical or stale.' },
 ];
@@ -189,6 +193,9 @@ const QUEUE = [
   { key: 'exempt-federal', label: 'Close as exempt',
     action: 'No work required. Record the exemption and move on.',
     why: 'Federally owned hospitals are outside the rule and will never publish under it.' },
+  { key: 'exempt-ihs-program', label: 'Indian Health Program exception',
+    action: 'Retain the sourced operator/program evidence and revisit if the operator or program status changes.',
+    why: '45 CFR 180.30(b)(2) covers hospitals operated by an Indian Health Program.' },
   { key: 'exempt-closed', label: 'Closed facility',
     action: 'No current HPT retrieval work. Retain the dated closure evidence and recheck only if the facility reopens or the roster changes.',
     why: 'First-party evidence says the facility ceased hospital operations.' },
@@ -358,6 +365,22 @@ function main() {
         };
       }
     }
+  }
+  // Reconciliation workstreams not represented by a dedicated generated
+  // queue still need an explicit tracker next step. In particular, standing
+  // discrepancies and metadata-only follow-ups must not disappear between
+  // the reconciliation report and the presentation queues.
+  const reconciliationRecords = JSON.parse(fs.readFileSync(reconciliationPath, 'utf8')).records || [];
+  for (const row of reconciliationRecords.filter(r => r.workstream !== 'consistent'
+    && r.workstream !== 'verification-proof-gap')) {
+    if (investigationNextSteps[row.ccn]) continue;
+    investigationNextSteps[row.ccn] = {
+      stream: row.workstream,
+      gate: row.proposed_disposition || row.standing_finding || '',
+      nextAction: row.next_action || 'Reconcile the newer observation against the retained standing finding.',
+      latestObservedAt: row.latest_observed_at || '',
+      standingCheckedAt: row.standing_checked_at || '',
+    };
   }
   const reviewedFollowups = Object.fromEntries(reconciliationQueue
     .filter(r => r.workstream === 'genuinely-unresolved-investigation'
@@ -615,6 +638,15 @@ function main() {
   if (!re.test(html)) throw new Error('no <script id="tracker-data"> block in ' + outFile);
   let built = html.replace(re, (_, open, close) => open + json + close);
 
+  // Keep the social-preview summary tied to the same reconciled tier counts
+  // embedded above. A hand-written snapshot here silently drifted from the
+  // tracker data after nationwide overlays changed the effective view.
+  const summaryAlt = `Observed results for ${(tierCounts.compliant + tierCounts.failing + tierCounts.blocked + tierCounts.unknown + tierCounts.exempt).toLocaleString('en-US')} US hospitals: ${tierCounts.compliant.toLocaleString('en-US')} categorized as observed-compliant, ${tierCounts.failing.toLocaleString('en-US')} with observed file problems, ${tierCounts.unknown.toLocaleString('en-US')} unresolved, and ${tierCounts.exempt.toLocaleString('en-US')} exempt or closed.`;
+  built = built.replace(
+    /(<meta property="og:image:alt" content=")[^"]*("\s*\/>)/,
+    (_, open, close) => open + summaryAlt + close
+  );
+
   // Inline the stylesheets. The explainer pages <link> css/docs.css, but this
   // file ships as one self-contained artifact, so its CSS has to travel inside
   // the document. Injecting it here means there is exactly one copy of every
@@ -649,7 +681,31 @@ function main() {
       return `<script src="js/${name}?v=${hash}" defer></script>`;
     }
   );
-  fs.writeFileSync(outFile, built);
+  // Write through a sibling temporary file first. On Windows, a transient
+  // reader/antivirus handle can make direct replacement of the large tracker
+  // fail with an opaque UNKNOWN error; the completed temp write keeps the
+  // existing artifact intact until the final copy succeeds.
+  const tempOut = outFile + `.tmp-${process.pid}`;
+  try {
+    fs.writeFileSync(tempOut, built);
+    try {
+      fs.copyFileSync(tempOut, outFile);
+    } catch (copyError) {
+      // Some Windows file providers reject CopyFile while permitting a
+      // remove-and-rename replacement. Keep the completed temp output while
+      // trying that path before the direct-write fallback.
+      try {
+        fs.rmSync(outFile, { force: true });
+        fs.renameSync(tempOut, outFile);
+      } catch (replaceError) {
+        // Preserve the completed temp output and retry a normal write as the
+        // final fallback for providers that reject rename as well.
+        fs.writeFileSync(outFile, built);
+      }
+    }
+  } finally {
+    try { fs.unlinkSync(tempOut); } catch {}
+  }
 
   console.log(path.basename(outFile) + ': ' + data.rows.length + ' hospitals, '
     + data.gapRows.length + ' queued, ' + (json.length / 1e6).toFixed(2) + ' MB of data');

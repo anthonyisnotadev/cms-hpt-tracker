@@ -1,0 +1,15 @@
+{
+  "ccn": "220171",
+  "observed_at": "2026-09-22T08:30:00Z",
+  "official_pricing_page": "https://www.lahey.org/patients-visitors/billing-financial-services/price-transparency",
+  "official_page_status": 200,
+  "official_page_observation": "The current first-party Lahey price-transparency page identifies the hospital at 41 Mall Road, Burlington, MA 01805 and links Hospital Charge Data.",
+  "candidate_file_url": "https://www.lahey.org/042704686_lahey-hospital-medical-center-burlington_standardcharges.json",
+  "candidate_file_format": "JSON",
+  "candidate_file_observation": "The exact page-linked JSON target was reached, but bounded retrieval stopped because the response is 24,764,786 bytes; no bounded body or parsed metadata was retained.",
+  "roster_identity": "LAHEY HOSPITAL & MEDICAL CENTER, BURLINGTON",
+  "roster_address": "41 MALL ROAD, BURLINGTON, MA 01805",
+  "disposition": "official-page-current-facility-mrf-linked-file-too-large-to-parse",
+  "interpretation": "New official current page/exact MRF linkage and facility identity evidence. File bytes and declared name/address/Massachusetts state/date/version remain unverified in this bounded run; no current verification claim is promoted.",
+  "next_action": "Use a bounded streaming or authorized download-capable route to inspect the large JSON, then verify facility identity, Massachusetts state, declared date/version and usability before promotion."
+}

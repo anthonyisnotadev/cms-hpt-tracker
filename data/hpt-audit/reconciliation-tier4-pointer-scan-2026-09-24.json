@@ -1,0 +1,21 @@
+{
+  "observed_at": "2026-09-24T22:58:24Z",
+  "scope": "first 12 pointer-discovery-incomplete records with an official domain, ordered by current unresolved worklist",
+  "method": "bounded curl retrieval of https://{official_domain}/cms-hpt.txt, max 3 seconds per host, no file promotion",
+  "records": [
+    {"ccn":"010019","domain":"huntsvillehospital.org","status":0,"content_type":"","bytes":0,"finding":"transport failure"},
+    {"ccn":"010051","domain":"gcheutaw.com","status":404,"content_type":"text/html;charset=utf-8","bytes":126701,"finding":"HTML 404; no pointer bytes"},
+    {"ccn":"010061","domain":"highlandsmedcenter.com","status":0,"content_type":"","bytes":0,"finding":"DNS/transport failure"},
+    {"ccn":"010079","domain":"huntsvillehospital.org","status":0,"content_type":"","bytes":0,"finding":"transport failure"},
+    {"ccn":"010085","domain":"huntsvillehospital.org","status":0,"content_type":"","bytes":0,"finding":"transport failure"},
+    {"ccn":"010125","domain":"lakelandcommunityhospital.com","status":0,"content_type":"","bytes":0,"finding":"transport failure"},
+    {"ccn":"011311","domain":"lakelandcommunityhospital.com","status":0,"content_type":"","bytes":0,"finding":"transport failure"},
+    {"ccn":"024002","domain":"dfcs.alaska.gov","status":404,"content_type":"","bytes":0,"finding":"404; no pointer bytes"},
+    {"ccn":"030074","domain":"ihs.gov","status":404,"content_type":"text/html;charset=UTF-8","bytes":56638,"finding":"HTML 404 after redirect; no pointer bytes"},
+    {"ccn":"030084","domain":"ihs.gov","status":404,"content_type":"text/html;charset=UTF-8","bytes":56638,"finding":"HTML 404 after redirect; no pointer bytes"},
+    {"ccn":"030113","domain":"ihs.gov","status":301,"content_type":"text/html;charset=UTF-8","bytes":0,"finding":"redirect chain ends at 404; no pointer bytes"},
+    {"ccn":"030195","domain":"ihs.gov","status":404,"content_type":"text/html;charset=UTF-8","bytes":56638,"finding":"HTML 404 after redirect; no pointer bytes"}
+  ],
+  "disposition": "transport-observation-only",
+  "next_action": "Retry only after a material publisher/domain change or through an authorized content-bearing route; require exact facility pointer and complete MRF metadata before promotion."
+}

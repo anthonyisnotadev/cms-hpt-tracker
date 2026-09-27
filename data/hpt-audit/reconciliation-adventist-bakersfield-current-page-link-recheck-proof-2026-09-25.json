@@ -1,0 +1,20 @@
+{
+  "ccn": "050455",
+  "observed_at": "2026-09-25T04:38:00Z",
+  "official_pricing_page": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
+  "official_page_observation": "The current Adventist Health page lists both Adventist Health Bakersfield and Adventist Health Specialty Bakersfield, but both entries point to the same PARA database URL.",
+  "shared_mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHBBAKERSFIELDCA&type=CDMWithoutLabel&fileType=CSV",
+  "browser_observation": "Opening the exact shared machine-readable link in browser automation returned ERR_BLOCKED_BY_CLIENT; no new bytes were downloaded.",
+  "prior_bounded_header": {
+    "sample_sha256": "5236c5b68fe2267745de0f0236b0401903bc860e4b06cfbd7984eae6279b3167",
+    "sample_bytes": 262144,
+    "declared_hospital_name": "SAN JOAQUIN COMMUNITY HOSPITAL",
+    "declared_locations": ["SAN JOAQUIN COMMUNITY HOSPITAL", "Adventist Health Specialty Bakersfield"],
+    "declared_address": "3001 Sillect Avenue, Bakersfield, CA 93308",
+    "declared_date": "2026-07-29"
+  },
+  "roster_identity": "ADVENTIST HEALTH BAKERSFIELD, 2615 CHESTER AVE, BAKERSFIELD CA 93301",
+  "disposition": "current-page-duplicate-specialty-route-scope-unresolved",
+  "interpretation": "The current page still does not expose a separate main-hospital route for 2615 Chester Avenue. The existing bounded file evidence is retained as specialty-campus evidence and is not assigned to the main Bakersfield CCN.",
+  "next_action": "Locate a first-party, pointer-declared MRF for the main 2615 Chester Avenue Bakersfield facility or authoritative documentation establishing its coverage in another file. Do not assign the 3001 Sillect Avenue file to CCN 050455 without explicit facility-scope proof."
+}

@@ -1,0 +1,32 @@
+{
+  "ccn": "334003",
+  "observed_at": "2026-09-24T00:00:00Z",
+  "official_site": "https://omh.ny.gov/omhweb/facilities/slpc/",
+  "official_identity_evidence": "https://omh.ny.gov/omhweb/facilities/slpc/|https://omh.ny.gov/omhweb/aboutomh/omh_facility.html",
+  "official_pricing_evidence": "https://omh.ny.gov/omhweb/adults/omh-hospital-pricing-transparency.pdf",
+  "pointer_url": "https://omh.ny.gov/cms-hpt.txt",
+  "pointer_status": 200,
+  "pointer_bytes": 5995,
+  "pointer_sha256": "C5BC8D36DAE15CAAA62F821228BCDEBA7BAF3C48C4CE0AC0E0C585A41D073DE1",
+  "pointer_entry": {
+    "location_name": "St Lawrence",
+    "mrf_url": "https://omh.ny.gov/omhweb/adults/141663311_nysomh_standardcharges.csv"
+  },
+  "mrf_status": 200,
+  "mrf_content_type": "text/csv",
+  "mrf_bytes": 929041,
+  "mrf_sha256": "84F14403AD89386A0FB9E470D2E3FE371454EEF40CA32B86D31FE313A0FD0911",
+  "mrf_last_modified": "2026-06-11T15:30:53Z",
+  "mrf_row_observation": {
+    "hospital_name": "St. Lawrence Psychiatric Center",
+    "last_updated_on": "2026-05-28",
+    "version": "3.0.0",
+    "hospital_location": "St. Lawrence",
+    "hospital_address": "1 Chimney Point Dr, Ogdensburg, NY 13669",
+    "license_state": "NY",
+    "usable_rows": true
+  },
+  "disposition": "verified-current-mrf",
+  "interpretation": "The official OMH pointer names the St Lawrence location and the same current consolidated CSV contains a facility-specific metadata row matching the official facility name, address and New York state, with CMS 3.0.0, 2026-05-28 date and usable rows. This supports a current observed verification claim for CCN 334003; it is not a legal compliance conclusion.",
+  "next_action": "Retain the exact consolidated-file location entry and recheck on the next scheduled crawl."
+}

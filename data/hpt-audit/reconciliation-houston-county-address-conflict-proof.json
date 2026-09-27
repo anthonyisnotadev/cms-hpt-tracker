@@ -44,5 +44,22 @@
     "result": "Current billing page rendered in browser and links the same standard-charges CSV while displaying 5001 East Main Street, Erin, TN 37061; it also exposes the cms-hpt.txt link. The CSV's retained complete-file header still declares 200 West Church St, Lexington, TN 38351.",
     "evidence_role": "current first-party page/address recheck against retained complete-file header",
     "disposition": "retain-file-address-conflict"
+  },
+  "latest_complete_file_retrieval": {
+    "observed_at": "2026-09-21T22:25:00Z",
+    "url": "https://shamrock.health/downloads/862345211_Houston-County-Community-Hospital_standardcharges.csv",
+    "http_status": 200,
+    "content_type": "text/csv",
+    "bytes": 292942,
+    "sha256": "78f846151bd9b92383c8e3527c43008c88a8e5e33bd174b2021a83139c08369f",
+    "etag": "6aa7f5fd-478e4",
+    "last_modified": "2026-09-14T13:26:21Z",
+    "declared_hospital_name": "Houston County Community Hospital",
+    "declared_location_name": "Houston County Community Hopsital",
+    "declared_address": "200 West Church St, Lexington, TN 38351",
+    "declared_license_state": "TN",
+    "declared_last_updated": "2026-06-30",
+    "declared_version": "3.0.0",
+    "interpretation": "The publisher changed the complete file since the retained September 17 object, but the current file preserves the same facility-name agreement and Erin-versus-Lexington address conflict. This is a new byte-backed recheck, not a clean verification or unresolved-count reduction."
   }
 }

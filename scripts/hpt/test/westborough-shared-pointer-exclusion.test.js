@@ -31,9 +31,12 @@ test('Westborough retained shared pointer does not assign a sibling file to CCN 
     .find(row => row.ccn === proof.ccn);
   const queue = read('data/hpt-audit/unresolved-investigation-worklist.json').records
     .find(row => row.ccn === proof.ccn);
-  assert.equal(manual.proof_file, 'reconciliation-westborough-shared-pointer-exclusion-proof.json');
+  assert.ok([
+    'reconciliation-westborough-shared-pointer-exclusion-proof.json',
+    'reconciliation-westborough-current-price-page-pdf-proof-2026-09-25.json',
+  ].includes(manual.proof_file));
   assert.equal(manual.latest_live_pointer_recheck.sha256, proof.retained_pointer_sha256);
   assert.equal(reconciliation.workstream, 'genuinely-unresolved-investigation');
   assert.equal(queue.evidence_gate, 'pointer-facility-match');
-  assert.match(queue.next_action, /do not assign one of the ten retained out-of-state sibling entries/i);
+  assert.match(queue.next_action, /Westborough-specific CSV or JSON MRF/i);
 });

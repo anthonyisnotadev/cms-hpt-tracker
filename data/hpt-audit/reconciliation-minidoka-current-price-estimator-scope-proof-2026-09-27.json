@@ -1,0 +1,29 @@
+{
+  "ccn": "131319",
+  "observed_at": "2026-09-27T14:48:00Z",
+  "official_domain": "minidokamemorial.org",
+  "source_page_url": "https://minidokamemorial.org/service-price-search/",
+  "http_status": 200,
+  "response_bytes": 154010,
+  "response_sha256": "875e8a3c2ecdecab50b5b206338bffe5bfde33c94ca0b52cc7a613f588251cfb",
+  "connected_browser_observation": {
+    "page_title": "Service Price Search - Minidoka Memorial Hospital",
+    "facility_address": "1224 8th Street, Rupert, ID 83350",
+    "visible_section": "Estimated Pricing for Increased Transparency",
+    "visible_control": "Procedure search input and Search button",
+    "disclaimer_role": "The page describes output as a non-binding estimate, not a guarantee of the amount payable.",
+    "visible_cms_mrf_download_link": false
+  },
+  "relationship_to_current_pointer": {
+    "pointer_source": "reconciliation-shoshone-minidoka-current-pointer-recheck-2026-09-26.json",
+    "pointer_observed_url": "https://minidokamemorial.org/cms-hpt.txt",
+    "pointer_declared_mrf_url": "https://minidokamemorial.org/wp-content/uploads/2024/09/820291854_minidoka-memorial-hospital_standardcharges.csv",
+    "latest_pointer_target_status": 404,
+    "pointer_not_refetched": true,
+    "reason_not_refetched": "No source change was indicated; this pass investigated the distinct first-party Service Price Search link instead."
+  },
+  "finding": "The billing page's Service Price Search link opens a first-party procedure price-estimate tool. The rendered page identifies Minidoka Memorial Hospital and provides an estimate-search form and disclaimer, but displayed no downloadable CMS CSV/JSON/ZIP. This narrows the meaning of the discovered route; it is not evidence that no current MRF exists and does not change the separate observation that the exact 2024 pointer-declared CSV URL returned 404.",
+  "disposition": "first-party-estimator-route-confirmed-pointer-target-unavailable",
+  "count_effect": "none; retain CCN 131319 unresolved",
+  "next_action": "Obtain a restored pointer-declared target or publisher-provided current CMS CSV/JSON/ZIP with an exact URL or delivered copy; then verify Minidoka identity, Idaho address/state, declared date/version and usable rows. Do not treat the estimate tool or 2020 legacy XLS chargemaster as the current CMS MRF."
+}

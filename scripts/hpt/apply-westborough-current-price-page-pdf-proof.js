@@ -1,0 +1,10 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path');
+const root=path.resolve(__dirname,'../..'),audit=path.join(root,'data/hpt-audit');
+const proofName='reconciliation-westborough-current-price-page-pdf-proof-2026-09-25.json';
+const p=JSON.parse(fs.readFileSync(path.join(audit,proofName),'utf8'));
+const f=path.join(audit,'reconciliation-manual-access-observations.json');
+const d=JSON.parse(fs.readFileSync(f,'utf8')); const old=d.records.find(r=>r.ccn===p.ccn); if(!old) throw new Error('missing manual observation');
+const rec={...old,observed_at:p.observed_at,proof_file:proofName,official_price_page:p.price_page_url,official_price_page_status:p.price_page_status,official_price_page_title:p.price_page_title,linked_document_url:p.linked_document_url,linked_document_status:p.linked_document_status,linked_document_bytes:p.linked_document_bytes,linked_document_sha256:p.linked_document_sha256,disposition:p.disposition,interpretation:p.interpretation,next_action:p.next_action};
+d.records=d.records.filter(r=>r.ccn!==p.ccn); d.records.push(rec); d.records.sort((a,b)=>a.ccn.localeCompare(b.ccn)); fs.writeFileSync(f,JSON.stringify(d,null,2)+'\n');
+console.log(JSON.stringify({updated:p.ccn,disposition:p.disposition},null,2));

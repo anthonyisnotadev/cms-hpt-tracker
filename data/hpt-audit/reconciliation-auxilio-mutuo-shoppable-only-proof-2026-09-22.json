@@ -1,0 +1,26 @@
+{
+  "ccn": "400016",
+  "observed_at": "2026-09-22T08:30:00Z",
+  "official_domain": "auxiliomutuo.com",
+  "official_pricing_page": "https://www.auxiliomutuo.com/facturacion-y-cobros/",
+  "official_page_status": 200,
+  "official_facility_name": "Hospital Español Auxilio Mutuo de Puerto Rico, Inc.",
+  "official_facility_address": "Ponce de Leon Avenue 735 Stop 37 1/2, San Juan, PR 00918",
+  "official_page_observation": "The first-party billing page identifies the hospital and states that its price-transparency tool is provided under federal price-transparency regulation. It links a PDF and XLSX named 300-CMS-SPECIFICIFIED-SHOPPABLE-SERVICES-SIN-CARGOS-PRIVADOS.",
+  "shoppable_file_url": "https://auxiliomutuo.com/wp-content/uploads/2023/09/300-CMS-SPECIFICIFIED-SHOPPABLE-SERVICES-SIN-CARGOS-PRIVADOS.xlsx",
+  "shoppable_file_status": 200,
+  "shoppable_file_content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "shoppable_file_bytes": 34085,
+  "shoppable_file_sha256": "DCEA951CD359B296931A26FC652631FA87C06D3373306C2F5E8F7A978FF7FB92",
+  "shoppable_file_observation": "The downloaded workbook is a 34,085-byte shoppable-services list titled FINAL LIST OF CMS-SPECIFIED SHOPPABLE SERVICES. It is not a comprehensive CMS CSV/JSON/ZIP MRF and does not provide a current comprehensive MRF declaration.",
+  "cms_pointer_checks": [
+    {
+      "url": "https://www.auxiliomutuo.com/cms-hpt.txt",
+      "status": 404
+    }
+  ],
+  "manual_identity_gate": "official-page-and-shoppable-workbook-identity-agreement",
+  "disposition": "pointer-discovery-incomplete",
+  "interpretation": "The official page and linked workbook provide identity-matched shoppable pricing evidence, but no current comprehensive CMS MRF was recovered. No compliance or exemption conclusion is inferred.",
+  "next_action": "Locate a current Auxilio Mutuo facility-specific CMS CSV/JSON/ZIP MRF or publisher pointer, then verify Puerto Rico identity, declared date/version and usable rows."
+}

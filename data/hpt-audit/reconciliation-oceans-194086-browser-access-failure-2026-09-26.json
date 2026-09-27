@@ -1,0 +1,17 @@
+{
+  "ccn": "194086",
+  "observed_at": "2026-09-26T04:10:00Z",
+  "proof_file": "reconciliation-oceans-194086-browser-access-failure-2026-09-26.json",
+  "official_site": "https://oceanshealthcare.com/financial-guidance/#price-transparency",
+  "official_page_status": 200,
+  "official_page_observation": "Official Oceans Financial Guidance page visibly lists the facility-specific CSV link.",
+  "pointer_url": "https://oceanshealthcare.com/cms-hpt.txt",
+  "pointer_status": "cloudflare-challenge",
+  "mrf_url": "https://oceanshealthcare.com/wp-content/uploads/2026/06/203890581_Oceans-Behavioral-Hosptial-of-Baton-Rouge_standardcharges-1.csv",
+  "mrf_status": 403,
+  "facility_name": "Oceans Behavioral Hospital of Baton Rouge",
+  "state": "LA",
+  "disposition": "mrf-request-unsuccessful",
+  "interpretation": "The current official page identifies the facility-linked file, but direct retrieval is denied. Earlier saved observations remain available and are not erased.",
+  "next_action": "Retry the exact official file through a permitted browser/download route; do not treat the access denial as proof of noncompliance."
+}

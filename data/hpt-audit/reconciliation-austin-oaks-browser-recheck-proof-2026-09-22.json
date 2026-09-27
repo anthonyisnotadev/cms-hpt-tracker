@@ -1,0 +1,17 @@
+{
+  "ccn": "454121",
+  "observed_at": "2026-09-22T13:30:00Z",
+  "official_pricing_page": "https://austinoakshospital.com/",
+  "official_pricing_page_status": 403,
+  "official_page_observation": "Interactive browser access to the first-party Austin Oaks Hospital domain rendered a Cloudflare security-verification page rather than hospital content. The exact cms-hpt.txt route rendered the same first-party challenge; no pointer text or MRF URL was available.",
+  "cms_pointer_url": "https://austinoakshospital.com/cms-hpt.txt",
+  "cms_pointer_result": "First-party browser access rendered a Cloudflare security-verification challenge; no pointer content was available in this recheck.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=454121&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6804,
+  "cms_api_response_sha256": "316992D7C70A00F5B4A3D54EC0EA7055D06245F03148BA6D9949AB5022CBCBF6",
+  "cms_record": { "facility_id": "454121", "facility_name": "AUSTIN OAKS HOSPITAL", "address": "1407 WEST STASSNEY LANE", "citytown": "AUSTIN", "state": "TX", "zip_code": "78745", "hospital_type": "Psychiatric", "hospital_ownership": "Proprietary", "emergency_services": "No" },
+  "disposition": "official-domain-pointer-browser-access-challenge-no-mrf-observed",
+  "interpretation": "The browser route is a first-party transport/access observation only. CMS independently identifies Austin Oaks Hospital and its Austin, Texas address; the observation does not establish file absence, noncompliance, or a facility closure.",
+  "next_action": "Retry the exact first-party pointer through a permitted publisher route, then verify declared name, Austin address/state, date, version and usability before changing the tracker disposition."
+}

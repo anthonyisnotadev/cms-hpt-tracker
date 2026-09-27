@@ -9,6 +9,8 @@ const crypto = require('crypto');
 const root = path.resolve(__dirname, '../../..');
 const audit = path.join(root, 'data/hpt-audit');
 const proof = require(path.join(audit, 'reconciliation-adventist-campus-proof.json'));
+const routeProof = require(path.join(audit, 'reconciliation-adventist-bakersfield-current-portal-header-proof-2026-09-27.json'));
+const stateCrosscheck = require(path.join(audit, 'reconciliation-adventist-bakersfield-state-address-crosscheck-2026-09-27.json'));
 const ledger = require(path.join(audit, 'reviewed-resolutions.json'));
 const observations = require(path.join(audit, 'reconciliation-manual-access-observations.json')).records;
 
@@ -18,6 +20,12 @@ test('Simi Valley alias and exact campus file are reviewed independently of Bake
   assert.equal(proof.records['050236'].roster_address, '2975 N SYCAMORE DR');
   assert.equal(proof.records['050455'].declared_address, '3001 Sillect Avenue Bakersfield CA 93308|3001 Sillect Avenue Bakersfield CA 93308');
   assert.equal(proof.records['050455'].roster_address, '2615 CHESTER AVENUE');
+  assert.equal(routeProof.current_portal_route_recheck.direct_target_recheck.sample_sha256,
+    proof.records['050455'].sample_sha256);
+  assert.equal(routeProof.current_portal_route_recheck.direct_target_recheck.sample_matches_retained_2026_09_25_sample, true);
+  assert.match(routeProof.current_portal_route_recheck.route_logic, /hospital and mainDBName, map to dbAHBBAKERSFIELDCA/);
+  assert.match(routeProof.unbound_partial_header_disposition, /exact final URL and sample hash were not retained/i);
+  assert.match(routeProof.next_action, /request the source URL\/hash/);
   for (const record of Object.values(proof.records)) {
     const bytes = fs.readFileSync(path.join(root, record.retained_sample));
     assert.equal(bytes.length, record.retained_bytes);
@@ -31,6 +39,12 @@ test('Simi Valley alias and exact campus file are reviewed independently of Bake
   const bakersfield = observations.find(row => row.ccn === '050455');
   assert.equal(bakersfield.disposition, 'shared-pointer-entry-file-header-identifies-specialty-campus-not-main-roster-address');
   assert.equal(bakersfield.mrf_sample_sha256, proof.records['050455'].sample_sha256);
+  assert.equal(stateCrosscheck.observed_at, '2026-09-27T18:24:00Z');
+  assert.match(stateCrosscheck.sources.find(source => source.kind.includes('Specialty')).observation, /HCAI ID 106154101/);
+  assert.match(stateCrosscheck.sources.find(source => source.kind.includes('corporate')).observation,
+    /2615 Chester Avenue.*3001 Sillect Avenue/);
+  assert.equal(stateCrosscheck.disposition, 'unresolved-current-pointer-file-address-conflict');
+  assert.match(stateCrosscheck.no_change, /not new MRF bytes and not resolution credit/);
   assert.equal(bakersfield.latest_directory_lead.evidence_role, 'third-party lead only; not first-party pointer or file identity evidence');
   assert.match(bakersfield.latest_directory_lead.transport_observation, /timed out/);
 });

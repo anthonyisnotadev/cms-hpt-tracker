@@ -1,5 +1,7 @@
 # Nationwide hospital verification review
 
+> **Historical snapshot: 2026-09-15.** The counts below are not the current tracker totals and must not be used as a live status report. See the [current nationwide snapshot](nationwide-verification.json), [exact-CCN snapshot bridge](nationwide-snapshot-bridge.json), and [current accuracy plan](accuracy-plan.md).
+
 Generated from the reconciled local evidence snapshot on 2026-09-15. This report records observed discovery and retrieval outcomes; it does not make legal compliance findings.
 
 ## Coverage

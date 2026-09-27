@@ -1,34 +1,17 @@
 {
   "summary": {
     "hospitals": 5419,
-    "pointer_provenance_rows": 4257,
-    "exact_url_hash_correlated": 4248,
+    "pointer_provenance_rows": 4243,
+    "exact_url_hash_correlated": 4234,
     "hash_unmatched_for_exact_url": 9,
     "no_exact_url_corpus_entry": 0,
+    "manual_hash_bound_rows": 27,
     "historical_pointer_rows": 84,
     "historical_not_indexed": 84,
     "historical_hash_correlated": 0,
     "historical_hash_unmatched": 0
   },
   "unmatched": [
-    {
-      "ccn": "010012",
-      "hospital_name": "DEKALB REGIONAL MEDICAL CENTER",
-      "checked_url": "https://dekalbregional.com/cms-hpt.txt",
-      "verification_sha256": "c7530acbdf1ba9d9ad435d77bc2a06fd501e0fcfc40eb43285c8ef52d44c8298",
-      "verification_observed_at": "2026-09-07T00:12:41.770Z",
-      "disposition": "pointer-discovery-incomplete",
-      "issue": "verification-hash-not-in-corpus-index-for-exact-requested-url",
-      "corpus_versions": [
-        {
-          "sha256": "1250387ac0f7afdcf1c6bdc7cb175ecdfcbeac3fe4ab7043c42e80038e6f90a9",
-          "fetched_at": "2026-09-07T00:12:41.770Z",
-          "raw_file": "cms_data/hpt/pointer-corpus/raw/dekalbregional.com-2bf80b02e6ab.txt",
-          "retained_raw_sha256": "1250387ac0f7afdcf1c6bdc7cb175ecdfcbeac3fe4ab7043c42e80038e6f90a9",
-          "retained_raw_status": "hash-corroborated"
-        }
-      ]
-    },
     {
       "ccn": "294015",
       "hospital_name": "RENO BEHAVIORAL HEALTHCARE HOSPITAL, LLC",
@@ -43,6 +26,24 @@
           "fetched_at": "2026-09-07T00:21:27.834Z",
           "raw_file": "cms_data/hpt/pointer-corpus/raw/renobehavioral.com-f40c1916396b.txt",
           "retained_raw_sha256": "8f49f85bde0f82f8ae6afeb2fe4bf026718df21cf43551c3381b6b5b662c8f24",
+          "retained_raw_status": "hash-corroborated"
+        }
+      ]
+    },
+    {
+      "ccn": "310025",
+      "hospital_name": "CAREPOINT HEALTH - BAYONNE MEDICAL CENTER",
+      "checked_url": "https://hudsonregionalhospital.com/cms-hpt.txt",
+      "verification_sha256": "3b4e3e2a8edfa3b13b56b8f56fc09b620154f31af78e7ce92ace4d82e0d84900",
+      "verification_observed_at": "2026-09-07T00:15:59.789Z",
+      "disposition": "pointer-linked-file-not-probed",
+      "issue": "verification-hash-not-in-corpus-index-for-exact-requested-url",
+      "corpus_versions": [
+        {
+          "sha256": "995e7c4957d37be6fa8031bfce2456c6de8dd79cd134a041c6a6c41ec9d5fb4c",
+          "fetched_at": "2026-09-07T00:15:59.789Z",
+          "raw_file": "cms_data/hpt/pointer-corpus/raw/hudsonregionalhospital.com-3a853af203a0.txt",
+          "retained_raw_sha256": "995e7c4957d37be6fa8031bfce2456c6de8dd79cd134a041c6a6c41ec9d5fb4c",
           "retained_raw_status": "hash-corroborated"
         }
       ]
@@ -161,7 +162,7 @@
       "checked_url": "https://shamrock.health/cms-hpt.txt",
       "verification_sha256": "781e46ea257f175438abfcf8acb658b30a1c8fb5aa6c1762ddbe4de48ff84ab0",
       "verification_observed_at": "2026-09-07T00:23:01.046Z",
-      "disposition": "pointer-facility-match-unresolved",
+      "disposition": "linked-mrf-header-unmatched",
       "issue": "verification-hash-not-in-corpus-index-for-exact-requested-url",
       "corpus_versions": [
         {
@@ -1018,7 +1019,7 @@
     }
   ],
   "source_sha256": {
-    "nationwide-verification.json": "b93a2e16bed0aefc00f838e3c7f18b27418b61a4f56c172e8f358c523d6c14c6",
-    "cms_hpt_entries.csv": "58570ff980efc34b3cc9479b020a4d4613807f5dbeff64e1740426326aaa988b"
+    "nationwide-verification.json": "c834d6c08a6719741f52e3c8c718e2016d9fbbe6cd207845882eeade2a3bf4b7",
+    "cms_hpt_entries.csv": "0e547ea7593a56681e2f434592bb9cb08bee45d43c90a5f174914ecd8b9584e7"
   }
 }

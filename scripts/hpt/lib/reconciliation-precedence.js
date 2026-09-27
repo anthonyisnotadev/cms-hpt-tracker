@@ -42,7 +42,7 @@ const STRONG_STANDING_FINDINGS = new Set([
   'pointer-html-portal-not-found-source-page-current-file',
   'pointer-file-url-renders-not-found-source-page-current-file',
   'pointer-target-google-sheet-page-file-found',
-  'not-applicable-federal', 'not-applicable-closed'
+  'not-applicable-federal', 'not-applicable-indian-health-program', 'not-applicable-closed'
 ]);
 
 // An incomplete or unresolved retry is a current operational observation, but
@@ -111,7 +111,23 @@ function reconciliationWorkstream(issues, supportedIdentityUncertainty = false, 
   if (issues.includes('reviewed-pointer-target-client-follow-up')) return 'standing-evidence-follow-up';
   if (issues.includes('reviewed-html-root-pointer-follow-up')) return 'standing-evidence-follow-up';
   if (issues.includes('reviewed-pointer-or-page-linkage-follow-up')) return 'standing-evidence-follow-up';
+  if (issues.includes('official-page-file-corroborated-root-pointer-pending')) return 'standing-evidence-follow-up';
+  // A retained byte-proof can close the retrieval gate while leaving the
+  // browser/header identity or pointer provenance gate open. Keep that
+  // residual work in the standing-evidence queue instead of generic drift.
+  if (issues.includes('browser-file-identity-proof-insufficient')) return 'standing-evidence-follow-up';
   if (issues.includes('later-manual-observation-follow-up')) return 'standing-evidence-follow-up';
+  // A verified claim whose retained file street cannot yet be reconciled to
+  // the CMS roster is a dated standing follow-up, not an unclassified
+  // "other" discrepancy. Keep the current file identity while surfacing the
+  // exact address gate for review.
+  if (issues.includes('verified-summary-street-needs-reconciliation')) return 'standing-evidence-follow-up';
+  // A verified file with an explicit license-state conflict remains a
+  // standing publisher-metadata follow-up. Keep the conflict visible and
+  // actionable instead of allowing it to fall into an untracked discrepancy
+  // stream when byte proof is later backfilled.
+  if (issues.includes('verified-summary-license-state-conflict')) return 'standing-evidence-follow-up';
+  if (issues.some(issue => /^verified-summary-missing-(file-address|state-evidence)$/.test(issue))) return 'standing-evidence-follow-up';
   if (issues.includes('proposed-finding-differs-from-standing')) return 'standing-finding-discrepancy';
   return issues.length ? 'other-reconciliation' : 'consistent';
 }

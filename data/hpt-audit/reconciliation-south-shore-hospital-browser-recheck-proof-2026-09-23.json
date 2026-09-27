@@ -1,0 +1,17 @@
+{
+  "ccn":"140181","observed_at":"2026-09-23T03:30:00Z",
+  "official_site":"https://www.southshorehospital.com/",
+  "official_identity_page":"https://www.southshorehospital.com/",
+  "official_identity":"South Shore Hospital, 8012 South Crandon Avenue, Chicago, IL 60617 (CMS record independently confirms this facility/address).",
+  "official_pricing_page":"https://apps.para-hcfs.com/PTT/FinalLinks/South_Shore_V2.aspx",
+  "official_page_observation":"The first-party South Shore Hospital homepage links a Para Price Transparency Tool page. The rendered tool is an interactive estimate/price-transparency portal and exposes no downloadable CSV, JSON, XLSX or ZIP machine-readable file URL in the retrieved HTML.",
+  "pointer_url":"https://www.southshorehospital.com/cms-hpt.txt",
+  "pointer_status":"HTTP 404 Not Found",
+  "mrf_observation":"No machine-readable file bytes recovered from the official pricing page; no file-absence or compliance conclusion inferred.",
+  "cms_api_url":"https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=140181&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status":200,
+  "cms_record":{"facility_id":"140181","facility_name":"SOUTH SHORE HOSPITAL","address":"8012 SOUTH CRANDON AVENUE","citytown":"CHICAGO","state":"IL","zip_code":"60617"},
+  "disposition":"official-pricing-portal-pointer-404-mrf-not-recovered",
+  "interpretation":"The official site and pricing portal establish facility identity and a current price-transparency route, but the root pointer is 404 and the portal does not expose a machine-readable file URL in retrieved HTML. This is an access/discovery observation only, not a file-absence or compliance finding.",
+  "next_action":"Retry the interactive pricing portal with browser interaction and inspect any generated download/network target; verify facility identity and CMS metadata before promotion."
+}

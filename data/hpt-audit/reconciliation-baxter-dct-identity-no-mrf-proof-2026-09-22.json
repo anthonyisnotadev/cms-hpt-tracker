@@ -1,0 +1,26 @@
+{
+  "ccn": "244015",
+  "observed_at": "2026-09-22T00:55:00Z",
+  "source": "official Minnesota Department of Human Services Direct Care and Treatment Community Behavioral Health Hospitals page",
+  "official_site": "https://mn.gov/dct/adult-services/inpatient-care/community-behavioral-health-hospitals/",
+  "identity_observed": "Community Behavioral Health Hospital — Baxter, 14241 Grand Oaks Drive, Baxter, MN 56425",
+  "retrieval": {
+    "official_page_status": 200,
+    "facility_listed": true,
+    "facility_specific_mrf_observed": false
+  },
+  "manual_identity_gate": "official-state-facility-identity-confirmed-mrf-not-exposed",
+  "disposition": "official-state-page-reviewed-pointer-and-file-unresolved",
+  "interpretation": "The official Minnesota DCT page confirms the Baxter CBHH facility and address and lists it among the state’s six CBHHs, but the page does not expose a Baxter-specific CMS pointer or machine-readable file. The unrelated Indiana pointer remains excluded; no absence or compliance conclusion is inferred.",
+  "next_action": "Locate a Baxter-specific first-party cms-hpt.txt or pricing/file route and independently verify the file header, Minnesota address, date, CMS version and usable rows.",
+  "latest_search_recheck_2026_09_27": {
+    "observed_at": "2026-09-27T01:25:00Z",
+    "source": "https://mn.gov/dct/adult-services/inpatient-care/community-behavioral-health-hospitals/",
+    "page_status": 200,
+    "visible_identity": "Community Behavioral Health Hospital - Baxter, 14241 Grand Oaks Drive, Baxter, MN 56425",
+    "root_pointer_probe": "https://mn.gov/cms-hpt.txt",
+    "root_pointer_result": "not accessible through permitted web reader",
+    "facility_specific_mrf_link": false,
+    "result": "The current official Minnesota DCT page still confirms the Baxter facility and address but exposes no Baxter-specific CMS pointer or CSV/JSON MRF. Third-party pricing pages were treated as leads only and not imported. No absence or compliance conclusion inferred."
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "ccn": "400005",
+  "observed_at": "2026-09-22T06:45:00Z",
+  "official_domain": "hopemedicalpr.com",
+  "official_facility_name": "Hope Medical Center",
+  "official_facility_address": "3 Calle Font Martelo E, Humacao, PR 00791",
+  "official_domain_checks": [
+    {
+      "url": "https://hopemedicalpr.com/",
+      "status": 404
+    },
+    {
+      "url": "https://hopemedicalpr.com/cms-hpt.txt",
+      "status": 404
+    },
+    {
+      "url": "https://hopemedicalpr.com/price-transparency",
+      "status": 404
+    },
+    {
+      "url": "https://hopemedicalpr.com/transparencia-de-precios",
+      "status": 404
+    }
+  ],
+  "current_government_listing": "https://www.salud.pr.gov/CMS/DOWNLOAD/9687",
+  "current_government_listing_observation": "Puerto Rico Department of Health hospital list marked updated March 11, 2026 includes Hope Medical Center at 3 C. Font Martelo, Humacao, PR 00791, phone hpt-obf:v1:oDVsV9Dnw9T_vWJd.5xLqZetvfs2AG5hCjIVwTA.4KUUZohBj02FSQty3fY.",
+  "closure_report": "https://www.elnuevodia.com/english/business/story/hope-medical-center-racked-up-nearly-500000-in-claims-before-announcing-its-closure/",
+  "closure_report_observation": "The news report says Hope Medical Center announced closure, but it is not a government closure order and conflicts with the later government listing.",
+  "disposition": "pointer-discovery-incomplete",
+  "interpretation": "The official-domain 404s and conflicting operational sources do not support marking the CCN closed or exempt. No MRF bytes were recovered.",
+  "next_action": "Resolve current CMS enrollment/licensure and operational status through authoritative Puerto Rico/CMS records, then search the successor/operator domain for a facility-specific current CSV/JSON/ZIP MRF."
+}

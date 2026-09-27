@@ -1,0 +1,16 @@
+{
+  "ccn": "501336",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://www.masonhealth.com/",
+  "official_identity_sources": [
+    "https://www.masonhealth.com/patients/disclosure-of-healthcare-charges",
+    "https://npiregistry.cms.hhs.gov/provider-view/1760568752",
+    "https://turquoise.health/providers/mason-general-hospital/information"
+  ],
+  "official_identity": "Mason Health / Mason General Hospital & Family of Clinics is the Shelton, Washington hospital associated with CCN 501336. The CMS NPI registry identifies Public Hospital District No 1 of Mason County doing business as Mason Health-Mason General Hospital at 901 Mt View Dr, Shelton, WA 98584-4401, NPI 1760568752.",
+  "browser_observation": "Browser automation opened the official healthcare-charge route but received a Cloudflare block page. Direct requests to the official home, cms-hpt.txt and pricing route returned HTTP 403. Search results from the official site expose the charge-disclosure page and pricing-tool/file links, but no bounded MRF bytes were retrieved.",
+  "pricing_observation": "No usable facility-specific CMS pointer or MRF bytes were assigned. Third-party pages are retained only as identity corroboration and leads, not as pricing evidence.",
+  "disposition": "current-operator-identity-confirmed-pricing-route-client-denied",
+  "interpretation": "This replaces the domain-unknown label with supported Mason Health identity and an official pricing route while preserving unresolved pricing access. Cloudflare/403 is a transport observation, not a compliance finding.",
+  "next_action": "Retry the Mason Health charge-disclosure/cms-hpt route through a materially different permitted browser/download route or obtain a publisher-issued current CMS CSV/JSON/ZIP; require exact Shelton identity, Washington metadata, declared date/version and parsed usability before promotion."
+}

@@ -1,0 +1,18 @@
+{
+  "ccn": "531301",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://www.trhealth.com/",
+  "official_identity_sources": [
+    "https://www.trhealth.com/",
+    "https://www.trhealth.com/financial-services/",
+    "https://www.trhealth.com/wp-content/uploads/2026/09/830181409-1013919794_south-big-horn-county-hospital-district_standardcharges.csv",
+    "https://turquoise.health/providers/south-big-horn-county-hospital/information"
+  ],
+  "official_identity": "South Big Horn County Hospital is now presented by the first-party site as Three Rivers Health in Basin, Wyoming, associated with CCN 531301. The official site footer identifies South Big Horn County Hospital District d/b/a Three Rivers Health at 388 US-20 South, Basin, WY 82410.",
+  "browser_observation": "Browser automation opened the official Three Rivers Health Financial Services page. It explicitly identifies the Three Rivers Health MRF, its last-updated date, and the hospital's current d/b/a name.",
+  "pricing_url": "https://www.trhealth.com/wp-content/uploads/2026/09/830181409-1013919794_south-big-horn-county-hospital-district_standardcharges.csv",
+  "pricing_observation": "The linked CSV returned HTTP 200 text/csv, 5,056,746 bytes, SHA-256 6ee9ca601857ec706463aa23c1c12bb59e764631b6f2f81ca500fdfa6a406af4. Its metadata declares SOUTH BIG HORN COUNTY HOSPITAL DISTRICT, Three Rivers Health, 388 US-20 South, Basin, WY 82410, license 15228|WY, NPI 1013919794, CMS 3.0.0, update date 2026-09-08, attester Joel Jackson, attestation TRUE, and 3,944 data rows.",
+  "disposition": "verified-current-mrf",
+  "interpretation": "Current first-party identity/dba, official pricing page, exact Basin address/state and MRF metadata converge; this is supported observed MRF evidence, not a legal compliance determination.",
+  "next_action": "Retain exact official-page and file provenance and recheck on the normal freshness cycle."
+}

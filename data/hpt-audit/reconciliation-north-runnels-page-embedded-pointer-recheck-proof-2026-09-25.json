@@ -1,0 +1,30 @@
+{
+  "ccn": "451315",
+  "observed_at": "2026-09-25T13:30:00Z",
+  "official_site": "https://northrunnelshospital.com/",
+  "official_pricing_page": "https://northrunnelshospital.com/price-transparency",
+  "official_pricing_page_status": 200,
+  "official_pricing_page_bytes": 527571,
+  "official_pricing_page_sha256": "b165cd18e0a1982135a1b58c8d8e2990090d5c849afc0648e3c22d68b3def742",
+  "page_embedded_pointer_fields": {
+    "location_name": "North Runnels Hospital District",
+    "source_page_url": "https://secure.claraprice.net/price-transparency/north-runnels-hospital-district-tx",
+    "mrf_url": "https://secure.claraprice.net/price-transparency/VREQ-1740765512660/machine-readable/751306626_north-runnels-hospital-district_standardcharges.json"
+  },
+  "page_embedded_mrf_status": 200,
+  "page_embedded_mrf_bytes": 2459778,
+  "page_embedded_mrf_sha256": "b37a3ff129387c6d34866be426928bf9616e72c4a22cf199dbaba38980b21f5f",
+  "page_embedded_mrf_metadata": {
+    "hospital_name": "North Runnels Hospital District",
+    "address": "7821 State Highway 153 East, Winters, TX 79567",
+    "npi": "1205837770",
+    "license_state": "TX",
+    "last_updated": "2026-03-09",
+    "version": "3.0.0",
+    "attestation": true
+  },
+  "literal_root_pointer_statuses": [404, 404],
+  "disposition": "first-party-page-embedded-current-mrf-root-pointer-path-unresolved",
+  "interpretation": "The current first-party pricing page embeds the exact current JSON URL and its complete identity-matched CMS 3.0.0 evidence. The literal root cms-hpt.txt path remains 404, so this improves page provenance but does not establish a valid root-pointer claim or justify silent promotion.",
+  "next_action": "Obtain a publisher-corrected root pointer or preserve this page-embedded link as explicitly page-linked evidence; retain the exact MRF hash and metadata meanwhile."
+}

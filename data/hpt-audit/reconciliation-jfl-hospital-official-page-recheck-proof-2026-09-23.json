@@ -1,0 +1,24 @@
+{
+  "ccn": "480002",
+  "observed_at": "2026-09-23T15:35:00Z",
+  "official_site": "https://jflusvi.org/financial-assistance/",
+  "official_identity": "Gov. Juan F. Luis Hospital and Medical Center, 4007 Estate Diamond Ruby, Christiansted, St. Croix USVI 00821 (current official page confirms the facility and address).",
+  "browser_observation": "The current first-party financial-assistance page confirms the hospital identity and address and exposes financial-assistance and brochure links, but no CMS price-transparency page or machine-readable CSV, JSON or ZIP route.",
+  "pointer_url": "https://jflusvi.org/cms-hpt.txt",
+  "pointer_status": 404,
+  "pointer_content_type": "text/html; charset=UTF-8",
+  "pointer_response_bytes": 75077,
+  "pointer_sha256": "da0f8183cfb969c544ce170b2597a9b7e2fbf94bde22760202f46f56a6b3fa16",
+  "mrf_observation": "No MRF bytes recovered; no file-absence, exemption or compliance conclusion inferred.",
+  "cms_record": {
+    "ccn": "480002",
+    "name": "GOV JUAN F LUIS HOSPITAL & MEDICAL CTR",
+    "address": "4007 ESTATE DIAMOND RUBY",
+    "city": "CHRISTIANSTED",
+    "state": "VI",
+    "zip": "00821"
+  },
+  "disposition": "official-page-identity-confirmed-no-pricing-route",
+  "interpretation": "The current first-party JFL page confirms the facility and St. Croix address. The root cms-hpt.txt route currently returns a 404 HTML response and no facility-specific machine-readable pricing route was exposed. This is a transport/discovery observation only; no file-absence, exemption or compliance conclusion was inferred.",
+  "next_action": "Search the USVI Government Hospitals and Health Facilities Corporation publisher route or obtain a publisher-provided current CSV/JSON, then verify exact facility identity, Virgin Islands metadata, declared date/version and usable bytes before promotion."
+}

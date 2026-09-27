@@ -1,0 +1,19 @@
+{
+  "ccn": "400007",
+  "observed_at": "2026-09-22T07:20:00Z",
+  "official_domain": "hospitalryder.org",
+  "official_pricing_page": "https://www.hospitalryder.org/services-7",
+  "official_page_status": 200,
+  "official_facility_name": "Ryder Memorial Hospital",
+  "official_facility_address": "Ave. Font Martelo #355, Humacao, PR 00791",
+  "official_page_observation": "The first-party pricing page identifies Ryder Memorial Hospital and links a Google Sheets shoppable-services workbook. The sheet title identifies Ryder Memorial Hospital Inc. and its row 3 states the last update was December 31, 2021.",
+  "shoppable_file_url": "https://docs.google.com/spreadsheets/d/19NHcZf6jpEZXmwyAvfMRtv6Jxy3c9P-e/edit?ouid=115157286845263990252&rtpof=true&sd=true&usp=sharing",
+  "shoppable_file_observation": "The linked workbook is a shoppable-services/estimated-charge list, not a comprehensive CMS CSV/JSON/ZIP MRF; it lacks the CMS MRF metadata and is stale for current verification.",
+  "cms_pointer_checks": [
+    {"url": "https://www.hospitalryder.org/cms-hpt.txt", "status": 400},
+    {"url": "https://hryder.org/cms-hpt.txt", "status": 200, "content_type": "text/html"}
+  ],
+  "disposition": "pointer-discovery-incomplete",
+  "interpretation": "The official page and workbook provide historical identity-matched pricing evidence only. No current comprehensive MRF was recovered; no compliance or exemption conclusion is inferred.",
+  "next_action": "Obtain a current Ryder facility-specific CMS CSV/JSON/ZIP MRF or publisher pointer, then verify Puerto Rico identity, declared date/version and usable rows."
+}

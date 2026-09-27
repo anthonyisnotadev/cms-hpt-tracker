@@ -1,0 +1,30 @@
+{
+  "ccn": "254007",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "roster_identity": {
+    "name": "BRENTWOOD BEHAVIORAL HEALTHCARE OF MS",
+    "address": "3531 LAKELAND DRIVE",
+    "city": "FLOWOOD",
+    "state": "MS",
+    "zip": "39232"
+  },
+  "current_operator_domain": "https://brentwoodjackson.com/",
+  "identity_sources": [
+    {
+      "url": "https://msdh.ms.gov/msdhsite/index.cfm/29%2C19976%2C84%2Cpdf/Brentwood_Acquisition.pdf",
+      "observation": "Mississippi State Department of Health identifies Brentwood Behavioral Healthcare of Mississippi at 3531 Lakeland Drive, Flowood, Mississippi, and describes its current licensed psychiatric facility."
+    },
+    {
+      "url": "https://msdh.ms.gov/msdhsite/index.cfm/30%2C20288%2C83%2C754%2Cpdf/Hospital_Report_2022.pdf",
+      "observation": "The Mississippi hospital report lists Brentwood Behavioral Healthcare of MS at 3531 Lakeland Drive, Flowood, MS 39232 and links brentwoodjackson.com."
+    },
+    {
+      "url": "https://www.jointcommission.org/en-us/about-us/recognizing-excellence/find-accredited-organizations/365871",
+      "observation": "Joint Commission independently identifies Brentwood Behavioral Healthcare of Mississippi, LLC as the accredited organization."
+    }
+  ],
+  "browser_observation": "Bounded requests to brentwoodjackson.com root, cms-hpt.txt, .well-known/cms-hpt.txt, price-transparency and standard-charge paths returned HTTP 403 responses; no MRF bytes or pointer content were exposed.",
+  "disposition": "official-domain-identified-access-blocked",
+  "interpretation": "The official domain and exact roster identity are independently corroborated, replacing the earlier no-official-domain discovery result. HTTP 403 is a transport observation only; no file absence, compliance or current pricing conclusion is inferred.",
+  "next_action": "Retry the identified official domain with permitted browser access or obtain a publisher-provided current CMS pointer/MRF URL; validate facility identity and metadata before promotion."
+}

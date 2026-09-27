@@ -1,0 +1,17 @@
+{
+  "ccn": "450698",
+  "observed_at": "2026-09-22T09:00:00Z",
+  "official_pricing_page": "https://irp.cdn-website.com/",
+  "official_pricing_page_status": 200,
+  "official_page_observation": "The recorded hosted domain loaded only a plain `ok` response in the interactive browser; it did not identify Lamb Healthcare Center, Littlefield, Texas, or expose pricing content. The exact cms-hpt.txt route was blocked by the browser client.",
+  "cms_pointer_url": "https://irp.cdn-website.com/cms-hpt.txt",
+  "cms_pointer_result": "Interactive browser navigation returned net::ERR_BLOCKED_BY_CLIENT; no pointer content or MRF URL was available in this recheck.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=450698&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6742,
+  "cms_api_response_sha256": "E0EDB3A1D2C7F05598543FD5C2EE0F61F082B45590923202C54427663992A0F4",
+  "cms_record": { "facility_id": "450698", "facility_name": "LAMB HEALTHCARE CENTER", "address": "1500 S SUNSET", "citytown": "LITTLEFIELD", "state": "TX", "zip_code": "79339", "hospital_type": "Acute Care Hospitals", "hospital_ownership": "Government - Local", "emergency_services": "Yes" },
+  "disposition": "hosted-domain-unidentified-pointer-browser-client-blocked-no-mrf-observed",
+  "interpretation": "The CMS record confirms Lamb Healthcare Center and its Texas address, but the hosted domain response provides no facility identity. The pointer result is a browser transport observation only; it does not establish file absence, noncompliance, or a facility closure.",
+  "next_action": "Resolve the current first-party Lamb Healthcare Center domain or obtain a publisher-provided facility-specific CMS CSV/JSON and pointer; verify name, Littlefield address, Texas state, date, version and usable bytes before promotion."
+}

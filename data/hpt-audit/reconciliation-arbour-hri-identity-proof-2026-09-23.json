@@ -1,0 +1,30 @@
+{
+  "ccn": "224018",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "roster_identity": {
+    "name": "ARBOUR HUMAN RESOURCE INSTITUTE",
+    "address": "227 BABCOCK STREET",
+    "city": "BROOKLINE",
+    "state": "MA",
+    "zip": "02446"
+  },
+  "current_operator_domain_lead": "https://www.arbourhealth.com/",
+  "identity_sources": [
+    {
+      "url": "https://www.mass.gov/doc/universal-health-services-org-chart/download",
+      "observation": "Massachusetts' UHS affiliation chart identifies HRI Hospital, Inc. dba Arbour-HRI Hospital as a wholly owned UHS-related psychiatric-hospital entity."
+    },
+    {
+      "url": "https://npiprofile.com/npi/1518938174",
+      "observation": "The public NPI profile identifies HRI Hospital at 227 Babcock Street, Brookline, MA and associates the location with CMS CCN 224018."
+    },
+    {
+      "url": "https://carf.org/provider/hri-clinics-inc-dba-arbour-counseling-services-245645/",
+      "observation": "CARF records the Arbour organization and current arbourhealth.com domain, while distinguishing outpatient HRI Clinics from the hospital entity."
+    }
+  ],
+  "browser_observation": "The current arbourhealth.com root rendered a Cloudflare Just a moment challenge in the permitted browser; no hospital pricing page, cms-hpt.txt or MRF bytes were exposed.",
+  "disposition": "official-domain-lead-identified-cloudflare-access-blocked",
+  "interpretation": "The operator/domain lead is now supported and the earlier no-official-domain result is narrowed. The NPI and affiliation sources are identity context, not evidence of a current CMS pointer or MRF. No file absence, compliance conclusion or cross-facility assignment is inferred.",
+  "next_action": "Retry arbourhealth.com after the access challenge clears or obtain a publisher-provided current pointer/MRF URL; independently validate 227 Babcock Street, Brookline, MA and CMS metadata before promotion."
+}

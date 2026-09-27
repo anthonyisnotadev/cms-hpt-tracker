@@ -1,0 +1,13 @@
+{
+  "ccn":"100200","observed_at":"2026-09-22T20:30:00Z",
+  "official_site":"https://www.browardhealth.org/",
+  "official_pricing_page":"https://search.hospitalpriceindex.com/hpi2/machineReadable/BrowardHealthImperialPoint/10968",
+  "official_page_observation":"The first-party Broward Health site links the Broward Health Imperial Point Hospital Price Index page. The page identifies Broward Health Imperial Point, gives Last Update 2026-09-15, and exposes a facility-named CSV download.",
+  "pointer_url":"https://www.browardhealth.org/cms-hpt.txt","pointer_status":"browser-ERR_BLOCKED_BY_CLIENT",
+  "mrf_url":"https://sthpiprd.blob.core.windows.net/machine-readable-files/10968/596012065_broward-health-imperial-point_standardcharges.csv","mrf_status":206,"mrf_response_bytes":262144,"mrf_content_range":"bytes=0-262143/222081877","mrf_total_bytes":222081877,"mrf_etag":"0x8DF133D4A8B0E29","mrf_last_modified":"Tue, 15 Sep 2026 15:23:27 GMT","mrf_response_sha256":"470fc8016d78831603f9d05c052e33d10f62d9ef108f2cec0e5f446f7bcbdd6a",
+  "declared_last_updated":"2026-09-15","cms_template_version":"3.0.0","declared_hospital_name":"Broward Health Imperial Point","declared_location_name":"Broward Health Imperial Point","declared_address":"6401 N Federal HWY, Fort Lauderdale, FL 33308","declared_license_state":"FL","declared_npi":"1265460232",
+  "cms_api_url":"https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=100200&conditions%5B0%5D%5Boperator%5D=%3D","cms_api_status":200,"cms_api_response_bytes":6611,"cms_api_response_sha256":"1CC0C0EFC49D73CF714A5FB45FDA344744F44232002EDBD2CC712DA71F4AFF09","cms_record":{"facility_id":"100200","facility_name":"BROWARD HEALTH IMPERIAL POINT","address":"6401 N FEDERAL HWY","citytown":"FORT LAUDERDALE","state":"FL","zip_code":"33308"},
+  "pointer_http_status":403,"pointer_sha256":"b9b71c35dfc2fd4c4bd55814a6d0bcee24a4270943748b72345643dea61736c4","disposition":"verified-current-page-file-root-pointer-blocked",
+  "interpretation":"The current Broward Health Imperial Point pricing page links a campus-named CSV whose bounded header matches the CMS facility name, address, Florida state, date and CMS 3.0.0 metadata. The shared root pointer was blocked by the browser, so this remains page-linked evidence with pointer follow-up and no legal compliance conclusion.",
+  "next_action":"Retry the shared root pointer with an alternate transport and reconcile its target against this campus file before any promotion."
+}

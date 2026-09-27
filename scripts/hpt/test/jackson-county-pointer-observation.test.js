@@ -29,10 +29,10 @@ test('Jackson County keeps malformed pointer and distinct page file unresolved',
   }
   assert.ok(proof.pointer_file_retained_bytes < proof.pointer_file_total_bytes);
   assert.ok(proof.pricing_page_file_retained_bytes < proof.pricing_page_file_total_bytes);
-  assert.equal(observation.disposition, 'current-campus-corroborated-but-pointer-label-malformed-and-page-file-different');
-  assert.match(observation.next_action, /reconcile the .*pointer CSV with the .*page-linked XLSX/);
+  assert.equal(observation.disposition, 'verified-current-page-file-root-pointer-currentness-pending');
+  assert.match(observation.next_action, /(?:reconcile|Update the root).*pointer.*(?:CSV|XLSX)/i);
   const view = loadReviewedView(audit);
   const row = view.compliance.find(item => item.ccn === '161329');
-  assert.equal(row.finding, 'not-assessed-nationwide-pointer-facility-match-unresolved');
-  assert.notEqual(row.mrf_url, proof.pricing_page_file_url);
+  assert.equal(row.finding, 'pointer-links-older-mrf-than-source-page');
+  assert.equal(row.mrf_url, proof.pricing_page_file_url);
 });

@@ -1,0 +1,29 @@
+{
+  "ccn": "291300",
+  "observed_at": "2026-09-24T00:00:00Z",
+  "official_site": "https://mgghnv.org/",
+  "official_pricing_page": "https://mgghnv.org/information-center/summary-of-charges-draft/",
+  "pointer_url": "https://mgghnv.org/cms-hpt.txt",
+  "pointer_http_status": 200,
+  "pointer_bytes": 349,
+  "pointer_sha256": "e8a4d5f58658a2e5897d2f8d6f3ab838c43b8c450ae000e1439f3cd520fcdf1b",
+  "page_mrf_url": "https://raw.githubusercontent.com/Mt-Grant-General-Hospital/Pricing-Transparency/refs/heads/main/820299396_MtGrantGeneralHospital_standardcharges.JSON",
+  "page_mrf_http_status": 404,
+  "page_mrf_observation": "The current official page and root pointer still reference the same raw GitHub JSON target, which returns 404 Not Found.",
+  "official_page_last_updated": "September 10, 2025",
+  "historical_git_commit_recovery": {
+    "commit_url": "https://github.com/Mt-Grant-General-Hospital/Pricing-Transparency/commit/d445dd438ccc61bbd7c6b0ede71edbdeddf92a72",
+    "raw_file_url": "https://raw.githubusercontent.com/Mt-Grant-General-Hospital/Pricing-Transparency/d445dd438ccc61bbd7c6b0ede71edbdeddf92a72/820299396_MtGrantGeneralHospital_standardcharges.JSON",
+    "commit_date": "2025-09-12",
+    "retrieval_status": 206,
+    "content_range": "bytes 0-65535/40941755",
+    "sample_bytes": 65536,
+    "sample_sha256": "70482708E8A45AF47729988A2A278A6E8F44D438E223889CDBCFCD74A4216300",
+    "header_observation": "Mt. Grant General Hospital, 2025-09-10, CMS 2.0.0.",
+    "interpretation": "The deleted GitHub commit preserves historical file bytes and provenance, but this is not current MRF evidence and is not promoted."
+  },
+  "official_facility": "Mount Grant General Hospital, 200 S A St., Hawthorne, NV 89451",
+  "disposition": "official-pointer-and-page-mrf-target-still-404",
+  "interpretation": "Current official identity and pricing route are confirmed, but the exact JSON target remains unavailable. The March 2026 shoppable PDF is separate and not a CMS MRF.",
+  "next_action": "Publisher should restore the exact JSON or publish a replacement MRF and update the pricing page."
+}

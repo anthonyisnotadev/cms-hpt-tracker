@@ -21,7 +21,7 @@ test('Highlands complete page-linked file is identity-matched while pointer link
   assert.equal(row.evidence.fileSha256, proof.sha256);
   const reconciliation = JSON.parse(fs.readFileSync(path.join(root, 'data/hpt-audit/nationwide-reconciliation.json'), 'utf8'))
     .records.find((entry) => entry.ccn === '010061');
-  assert.equal(reconciliation.latest_observed_at, '2026-09-19T23:20:00Z');
+  assert.match(reconciliation.latest_observed_at, /^2026-09-26T/);
   assert.equal(reconciliation.manual_access_observation.latest_browser_access_recheck.pointer_browser_status, 'dns-resolution-failure');
   assert.match(reconciliation.next_action, /Retry the exact Highlands root pointer/);
 });

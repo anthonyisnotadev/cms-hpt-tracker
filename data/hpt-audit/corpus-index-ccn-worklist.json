@@ -3,8 +3,8 @@
     "ccns": 204,
     "by_priority": {
       "1": 0,
-      "2": 0,
-      "3": 191,
+      "2": 1,
+      "3": 190,
       "4": 13
     }
   },
@@ -13,11 +13,11 @@
       "ccn": "030011",
       "hospital_name": "ST JOSEPH'S HOSPITAL",
       "state": "AZ",
-      "standing_finding": "not-assessed-identity-conflict",
-      "nationwide_disposition": "linked-mrf-header-unmatched",
-      "selected_mrf_url": "https://www.commonspirit.org/content/dam/commonspiritorg/en/dharz/ceaz/finance/price-transparency/941196203-1982733655_dignity-health-st-josephs-westgate-medical-center_standardcharges.json",
+      "standing_finding": "compliant-observed",
+      "nationwide_disposition": "verified-current-mrf",
+      "selected_mrf_url": "https://mrfs.hyvehealthcare.com/TenetHealth/474131755-1538535158_smsj-tucson-holdings-llc_standardcharges.json",
       "observation_role": "superseded-retry",
-      "selected_file_observed_at": "2026-09-15T04:39:06.529Z",
+      "selected_file_observed_at": "2026-09-17T00:00:00.000Z",
       "selected_file_version": "3.0.0",
       "pointer_state": "retrieved-facility-linked",
       "pointer_checked_url": "https://www.commonspirit.org/cms-hpt.txt",
@@ -40,10 +40,10 @@
           "fetched_at": "2026-09-15T09:17:24.494Z"
         }
       ],
-      "selected_file_in_active_links": true,
+      "selected_file_in_active_links": false,
       "reviewed_current_proof": null,
-      "priority": 3,
-      "next_step": "Confirm the active same-file link and separate any older indexed pointer version from current provenance."
+      "priority": 2,
+      "next_step": "Reconcile the selected file against the active pointer-linked alternatives and their facility-specific headers before changing the standing finding."
     },
     {
       "ccn": "030012",
@@ -6200,9 +6200,9 @@
       "hospital_name": "MULTICARE AUBURN MEDICAL CENTER",
       "state": "WA",
       "standing_finding": "compliant-observed",
-      "nationwide_disposition": "mrf-facility-identity-unresolved",
+      "nationwide_disposition": "verified-current-mrf",
       "selected_mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8059/911352172-1255327201_multicare-auburn-medical-center_standardcharges.csv",
-      "observation_role": "incomplete-retry-standing-retained",
+      "observation_role": "current-observation",
       "selected_file_observed_at": "2026-09-15T04:39:39.780Z",
       "selected_file_version": "3.0.0",
       "pointer_state": "retrieved-facility-linked",
@@ -6380,9 +6380,9 @@
       "hospital_name": "TACOMA GENERAL ALLENMORE HOSPITAL",
       "state": "WA",
       "standing_finding": "compliant-observed",
-      "nationwide_disposition": "mrf-facility-identity-unresolved",
+      "nationwide_disposition": "verified-current-mrf",
       "selected_mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8058/911352172-1366556227_tacoma-general-allenmore-hospital_standardcharges.csv",
-      "observation_role": "incomplete-retry-standing-retained",
+      "observation_role": "current-observation",
       "selected_file_observed_at": "2026-09-15T04:39:39.044Z",
       "selected_file_version": "3.0.0",
       "pointer_state": "retrieved-facility-linked",
@@ -6494,9 +6494,9 @@
       "hospital_name": "MARY BRIDGE CHILDREN'S HOSPITAL",
       "state": "WA",
       "standing_finding": "compliant-observed",
-      "nationwide_disposition": "mrf-facility-identity-unresolved",
+      "nationwide_disposition": "verified-current-mrf",
       "selected_mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8057/911352172-1306952726_mary-bridge-childrens-hospital_standardcharges.csv",
-      "observation_role": "incomplete-retry-standing-retained",
+      "observation_role": "current-observation",
       "selected_file_observed_at": "2026-09-15T04:39:44.005Z",
       "selected_file_version": "3.0.0",
       "pointer_state": "retrieved-facility-linked",
@@ -7458,10 +7458,10 @@
   ],
   "source_sha256": {
     "corpus-state-index-discrepancies.json": "28b315a9a7f5206ce1031a50939fc212f89e6afa69172f61ea95e5c2dbb76a7b",
-    "nationwide-verification.json": "637a4472e5c29b9e95dcdc9a6f2a4020d7e252dfd644b60be4d66e9253867c1b",
+    "nationwide-verification.json": "d844e58d334250550d2f109e3acc406454401bc32825df18d081e3843d5a5b5b",
     "crawl-state.json": "c0173e9237536482f33f8daeb6619fdac7a4b2b4ca29859492954633daa5b460",
     "cms_hpt_entries.csv": "0e547ea7593a56681e2f434592bb9cb08bee45d43c90a5f174914ecd8b9584e7",
-    "reviewed-resolutions.json": "dae45d73df0072bb2aa17ffdf734b144405b36a8c9a9e54c608fc4de6ed73068",
+    "reviewed-resolutions.json": "0d88ead8be860de7912a43e44cf298c827031e0dbe22f939987bfdd6c615877d",
     "corpus-index-priority-one-rechecks.json": "36dd7c78939f12c846f940af5708e80fde145d70d0a46edf90f335726448bebf"
   }
 }

@@ -1,0 +1,22 @@
+{
+  "ccn": "050581",
+  "observed_at": "2026-09-25T15:00:00Z",
+  "cms_hospital_general_api": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=050581&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6590,
+  "cms_api_response_sha256": "4f5110f7ea78618476f108a4f981c5205f76031a2d3ecb687dfee0e9836a54bb",
+  "cms_record": {
+    "facility_id": "050581",
+    "facility_name": "UCI HEALTH-LAKEWOOD",
+    "address": "3700 SOUTH ST",
+    "citytown": "LAKEWOOD",
+    "state": "CA",
+    "zip_code": "90712",
+    "hospital_type": "Acute Care Hospitals",
+    "hospital_ownership": "Proprietary"
+  },
+  "current_mrf_declared_address": "101 CITY DRIVE SOUTH, ORANGE CA 92868",
+  "disposition": "cms-roster-lakewood-address-confirmed-mrf-orange-address-conflict-retained",
+  "interpretation": "Current CMS hospital data independently confirms the Lakewood CCN at 3700 South Street, while the current UCI MRF continues to declare an Orange address. This materially strengthens the address conflict but does not establish which publisher field is intended or justify reassignment.",
+  "next_action": "Obtain publisher correction or explanation for the JSON hospital_address field; retain the Lakewood file identity and do not reassign it to Orange."
+}

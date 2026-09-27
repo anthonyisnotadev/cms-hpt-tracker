@@ -2,6 +2,8 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const { applyNationwideVerification, toAssessment, synchronizeManifest } = require('../lib/nationwide-verification-view');
+const fs = require('node:fs');
+const path = require('node:path');
 
 const base = { ccn: '123456', hospital_name: 'TEST HOSPITAL', city: 'TESTVILLE', state: 'NY',
   finding: 'mrf-url-unreachable', assessable: 'yes', domain: 'old.test', pointer_url: 'https://old.test/cms-hpt.txt',
@@ -81,6 +83,16 @@ test('nationwide closed scope exemption clears active file links', () => {
   assert.equal(row.assessable, 'no');
   assert.equal(row.pointer_url, '');
   assert.equal(row.mrf_url, '');
+});
+
+test('nationwide state-hospital scope exemption clears active file links', () => {
+  const exempt = { ...record, disposition: 'scope-exempt-state-hospital' };
+  const row = { ...base, finding: 'not-assessed-domain-search-pending', assessable: 'no' };
+  const result = applyNationwideVerification([row], [exempt])[0];
+  assert.equal(result.finding, 'not-applicable-state-hospital');
+  assert.equal(result.assessable, 'no');
+  assert.equal(result.pointer_url, '');
+  assert.equal(result.mrf_url, '');
 });
 
 test('nationwide overlay is ignored after identity or prior finding drift', () => {

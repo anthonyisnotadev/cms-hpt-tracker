@@ -1,0 +1,15 @@
+{
+  "ccn": "454152",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://canyoncreekbh.com/",
+  "official_identity_sources": [
+    "https://jobs.uhsinc.com/canyon-creek-behavioral-health/jobs/352006?lang=en-us",
+    "https://www.velarionrecords.com/hospital/454152"
+  ],
+  "official_identity": "UHS identifies Canyon Creek Behavioral Health as a 102-bed acute-care psychiatric hospital in Temple, Texas; CMS cost-report records associate CCN 454152 with the Canyon Creek facility at 1201 Canyon Creek Drive, Temple, TX 76502.",
+  "browser_observation": "Browser automation reached the first-party Canyon Creek domain but showed a Cloudflare security-verification interstitial. Direct requests to cms-hpt.txt and likely pricing paths returned HTTP 403.",
+  "pricing_observation": "No usable facility-specific CMS pointer or MRF bytes were retrieved. This is an access observation, not evidence that a file is absent, that the facility is closed, or that it is exempt.",
+  "disposition": "current-operator-identity-confirmed-pricing-route-client-denied",
+  "interpretation": "This replaces the stale domain-unknown label with a supported first-party domain and exact Temple identity while preserving the unresolved pricing route.",
+  "next_action": "Retry the first-party CMS pointer and pricing route through a materially different permitted browser/download route; require bounded bytes, Canyon Creek identity, Texas metadata, date/version and parsed usability before promotion."
+}

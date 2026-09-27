@@ -1,22 +1,22 @@
 {
   "summary": {
-    "generated_at": "2026-09-20T23:35:18.882Z",
+    "generated_at": "2026-09-27T19:16:34.897Z",
     "source": "data/hpt-audit/nationwide-verification.json",
-    "total": 219,
+    "total": 225,
     "by_review_class": {
-      "cross-domain-unresolved-review": 34,
-      "cross-domain-verified-or-superseded-review": 185
+      "cross-domain-unresolved-review": 35,
+      "cross-domain-verified-or-superseded-review": 190
     },
     "by_disposition": {
       "linked-mrf-header-unmatched": 14,
-      "pointer-facility-match-unresolved": 4,
+      "pointer-facility-match-unresolved": 6,
       "verified-template-review": 10,
       "mrf-facility-identity-unresolved": 9,
       "verified-stale-mrf": 1,
-      "pointer-not-retrieved": 3,
+      "pointer-discovery-incomplete": 4,
       "verified-current-mrf": 167,
-      "pointer-access-denied-to-client": 9,
-      "pointer-discovery-incomplete": 1,
+      "pointer-access-denied-to-client": 11,
+      "pointer-not-retrieved": 2,
       "mrf-request-unsuccessful": 1
     },
     "note": "A different pointer and recorded official domain is not itself an attribution failure: parent systems and legacy domains can legitimately publish a hospital MRF. The unresolved-review class requires facility-specific pointer/file/identity evidence before promotion or exclusion."
@@ -400,6 +400,19 @@
       "review_class": "cross-domain-unresolved-review"
     },
     {
+      "ccn": "454101",
+      "hospital_name": "ALLEGIANCE BEHAVIORAL HEALTH CENTER OF PLAINVIEW",
+      "state": "TX",
+      "official_domain": "ahmgt.com",
+      "pointer_domain": "freedombehavioral.com",
+      "standing_pointer_url": "https://freedombehavioral.com/cms-hpt.txt",
+      "standing_mrf_url": "https://freedombehavioral.com/wp-content/uploads/2026/07/201871394_allegiance-behavioral-health-center-of-plainview_standardchargesupdated.csv",
+      "disposition": "pointer-facility-match-unresolved",
+      "standing_finding": "official-page-mrf-root-pointer-unavailable",
+      "latest_observation_superseded": false,
+      "review_class": "cross-domain-unresolved-review"
+    },
+    {
       "ccn": "670102",
       "hospital_name": "AD HOSPITAL EAST, LLC",
       "state": "TX",
@@ -472,9 +485,9 @@
       "pointer_domain": "apps.para-hcfs.com",
       "standing_pointer_url": "https://apps.para-hcfs.com/cms-hpt.txt",
       "standing_mrf_url": "https://searhc.org/wp-content/uploads/2026/04/Wrangell-Medical-Center-Standard-Charges.xlsx",
-      "disposition": "pointer-not-retrieved",
+      "disposition": "pointer-discovery-incomplete",
       "standing_finding": "mrf-stale-over-365-days",
-      "latest_observation_superseded": true,
+      "latest_observation_superseded": false,
       "review_class": "cross-domain-verified-or-superseded-review"
     },
     {
@@ -485,9 +498,9 @@
       "pointer_domain": "apps.para-hcfs.com",
       "standing_pointer_url": "https://apps.para-hcfs.com/cms-hpt.txt",
       "standing_mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbSPHHOMERAK&type=CDMWithoutLabel",
-      "disposition": "pointer-not-retrieved",
+      "disposition": "pointer-discovery-incomplete",
       "standing_finding": "official-page-mrf-root-pointer-unavailable",
-      "latest_observation_superseded": true,
+      "latest_observation_superseded": false,
       "review_class": "cross-domain-verified-or-superseded-review"
     },
     {
@@ -498,9 +511,9 @@
       "pointer_domain": "apps.para-hcfs.com",
       "standing_pointer_url": "https://apps.para-hcfs.com/cms-hpt.txt",
       "standing_mrf_url": "https://searhc.org/wp-content/uploads/2026/04/Mt-Edgecumbe-Medical-Center-Standard-Charges.xlsx",
-      "disposition": "pointer-not-retrieved",
+      "disposition": "pointer-discovery-incomplete",
       "standing_finding": "mrf-stale-over-365-days",
-      "latest_observation_superseded": true,
+      "latest_observation_superseded": false,
       "review_class": "cross-domain-verified-or-superseded-review"
     },
     {
@@ -1583,6 +1596,19 @@
       "review_class": "cross-domain-verified-or-superseded-review"
     },
     {
+      "ccn": "220080",
+      "hospital_name": "HOLY FAMILY HOSPITAL",
+      "state": "MA",
+      "official_domain": "mhlawrencehospital.org",
+      "pointer_domain": "holyfamilyhospital.org",
+      "standing_pointer_url": "https://holyfamilyhospital.org/cms-hpt.txt",
+      "standing_mrf_url": "https://www.mhlawrencehospital.org/getmedia/e6c34e8a-4f60-484a-a120-519d4d00f386/042103586_LawerenceGeneralHospital_standardcharges.csv",
+      "disposition": "pointer-not-retrieved",
+      "standing_finding": "official-page-mrf-root-pointer-unavailable",
+      "latest_observation_superseded": true,
+      "review_class": "cross-domain-verified-or-superseded-review"
+    },
+    {
       "ccn": "224007",
       "hospital_name": "MCLEAN HOSPITAL CORPORATION",
       "state": "MA",
@@ -1986,6 +2012,19 @@
       "review_class": "cross-domain-verified-or-superseded-review"
     },
     {
+      "ccn": "281338",
+      "hospital_name": "HOWARD COUNTY MEDICAL CENTER",
+      "state": "NE",
+      "official_domain": "hcmc.us.com",
+      "pointer_domain": "search.hospitalpriceindex.com",
+      "standing_pointer_url": "https://search.hospitalpriceindex.com/hpi2/machineReadable/HowardCountyMedicalCenter/8107",
+      "standing_mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8107/470681056_howard-county-medical-center_standardcharges.csv",
+      "disposition": "pointer-facility-match-unresolved",
+      "standing_finding": "compliant-observed",
+      "latest_observation_superseded": true,
+      "review_class": "cross-domain-verified-or-superseded-review"
+    },
+    {
       "ccn": "324013",
       "hospital_name": "HAVEN BEHAVIORAL HOSPITAL OF ALBUQUERQUE",
       "state": "NM",
@@ -2168,6 +2207,32 @@
       "review_class": "cross-domain-verified-or-superseded-review"
     },
     {
+      "ccn": "370211",
+      "hospital_name": "INTEGRIS CANADIAN VALLEY HOSPITAL",
+      "state": "OK",
+      "official_domain": "integrishealth.org",
+      "pointer_domain": "hospitalpricedisclosure.com",
+      "standing_pointer_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=PnMmi0OJplyABzmiE7PkYQ*-*",
+      "standing_mrf_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=PnMmi0OJplyABzmiE7PkYQ*-*",
+      "disposition": "pointer-access-denied-to-client",
+      "standing_finding": "compliant-observed",
+      "latest_observation_superseded": true,
+      "review_class": "cross-domain-verified-or-superseded-review"
+    },
+    {
+      "ccn": "370212",
+      "hospital_name": "OKLAHOMA CENTER FOR ORTHOPAEDIC & MULTI-SP",
+      "state": "OK",
+      "official_domain": "ocomhospital.com",
+      "pointer_domain": "mrfs.hyvehealthcare.com",
+      "standing_pointer_url": "https://mrfs.hyvehealthcare.com/USPI/731623669_oklahoma-center-for-orthopaedic-%26-multi-specialty-surgery%2C-llc_standardcharges.json",
+      "standing_mrf_url": "https://mrfs.hyvehealthcare.com/USPI/731623669_oklahoma-center-for-orthopaedic-%26-multi-specialty-surgery%2C-llc_standardcharges.json",
+      "disposition": "pointer-access-denied-to-client",
+      "standing_finding": "compliant-observed",
+      "latest_observation_superseded": true,
+      "review_class": "cross-domain-verified-or-superseded-review"
+    },
+    {
       "ccn": "370236",
       "hospital_name": "INTEGRIS HEALTH EDMOND HOSPITAL",
       "state": "OK",
@@ -2295,6 +2360,19 @@
       "disposition": "verified-current-mrf",
       "standing_finding": "compliant-observed",
       "latest_observation_superseded": false,
+      "review_class": "cross-domain-verified-or-superseded-review"
+    },
+    {
+      "ccn": "410005",
+      "hospital_name": "OUR LADY OF FATIMA HOSPITAL",
+      "state": "RI",
+      "official_domain": "chartercare.org",
+      "pointer_domain": "search.hospitalpriceindex.com",
+      "standing_pointer_url": "https://search.hospitalpriceindex.com/hpi2/machineReadable/OurLadyofFatimaHospital/7916or",
+      "standing_mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7916/464661337_prospect-chartercare-sjhsri%2C-llc_standardcharges.csv",
+      "disposition": "pointer-not-retrieved",
+      "standing_finding": "compliant-observed",
+      "latest_observation_superseded": true,
       "review_class": "cross-domain-verified-or-superseded-review"
     },
     {

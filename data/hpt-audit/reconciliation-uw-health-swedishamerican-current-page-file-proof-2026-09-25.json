@@ -1,0 +1,29 @@
+{
+  "ccn": "140228",
+  "observed_at": "2026-09-25T21:05:00Z",
+  "official_pricing_page": "https://www.uwhealth.org/billing-insurance/cms-price-transparency",
+  "browser_observation": {
+    "status": 200,
+    "rendered_title": "CMS price transparency | UW Health",
+    "facility_scope_heading": "University of Wisconsin Hospitals and Clinics – SwedishAmerican Hospital",
+    "linked_file_url": "https://bynder.uwhealth.org/m/1d39d4b3bd3ce8bb/original/UW-Health-SwedishAmerican-Hospital-Standard-Charges.csv"
+  },
+  "file_observation": {
+    "http_status": 200,
+    "content_type": "text/csv",
+    "content_length_header": 264424259,
+    "sample_bytes": 262144,
+    "sample_sha256": "9F73E9122D74D511C180380AEB6BB6A6B9DCE93884B814630E443F504468D9B5",
+    "declared_hospital_name": "SwedishAmerican Hospital",
+    "declared_location_name": "SwedishAmerican Hospital|SwedishAmerican Medical Group|Belvidere Hospital",
+    "declared_address": "1401 E State St Rockford, IL 61104|1625 S State St Belvidere, IL 61008",
+    "declared_last_updated": "2026-04-01",
+    "cms_template_version": "3.0.0",
+    "declared_license_state": "IL",
+    "declared_npi": "1760542732",
+    "attestation": true
+  },
+  "disposition": "verified-current-page-file-pointer-linkage-pending",
+  "interpretation": "The current official UW Health page directly links a SwedishAmerican-scoped CSV. Its bounded header identifies the Rockford 1401 E State Street facility, Illinois, CMS 3.0.0, and 2026-04-01. The file also declares sibling Belvidere and SwedishAmerican Medical Group locations; this supports the Rockford file identity but does not resolve the separate root-pointer linkage question.",
+  "next_action": "Retain this direct official-page file evidence and recover or reconcile the exact UW root pointer entry before changing the pointer-facility disposition. Do not assign the Belvidere location to CCN 140228."
+}

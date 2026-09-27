@@ -1,0 +1,17 @@
+{
+  "ccn": "280059",
+  "observed_at": "2026-09-21T15:45:00Z",
+  "official_domain": "wchs.health",
+  "retrieval_method": "bounded HTTPS requests, first-party page inspection, and official-page search",
+  "checked_urls": [
+    "https://wchs.health/cms-hpt.txt",
+    "https://www.wchs.health/cms-hpt.txt",
+    "https://wchs.health/price-transparency",
+    "https://wchs.health/locations/main-campus/twelve-clans-unity-hospital"
+  ],
+  "transport_result": "Both root cms-hpt.txt variants and the guessed transparency routes returned HTTP 404. The current WCHS homepage and Twelve Clans Unity Hospital location page returned HTTP 200 and exposed no pricing or machine-readable file link.",
+  "facility_identity_observation": "The current centralized WCHS site identifies Twelve Clans Unity Hospital as a main-campus location in Winnebago, Nebraska; the page contains the hospital name and campus address content. WCHS search results also explain that former facility domains redirect into the centralized hub.",
+  "disposition": "official-centralized-site-identity-confirmed-pointer-discovery-incomplete",
+  "interpretation": "This is a facility-specific identity and discovery observation for Twelve Clans Unity Hospital only. HTTP 404 on checked paths and the absence of a visible link do not establish file absence, closure, or compliance status.",
+  "next_action": "Retry the centralized WCHS site after a material site change or obtain a publisher-enabled copy; require an exact Twelve Clans facility pointer and usable CMS CSV/JSON bytes with Nebraska identity metadata before promotion."
+}

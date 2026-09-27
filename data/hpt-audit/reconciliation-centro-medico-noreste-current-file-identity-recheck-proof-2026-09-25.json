@@ -1,0 +1,17 @@
+{
+  "ccn": "400141",
+  "observed_at": "2026-09-25T00:00:00Z",
+  "official_facility_page": "https://caribbeanmedicalcenter.com/centro-medico-del-noreste/",
+  "official_pricing_page": "https://caribbeanmedicalcenter.com/price-transparency/",
+  "facility_page_observation": "The first-party Centro Médico del Noreste page identifies the facility at Ave. Osvaldo Molina #151, Fajardo, PR 00738 and links the system price-transparency page.",
+  "pricing_page_observation": "The current first-party price-transparency page describes a Charge Master and links a CSV labeled Caribbean Medical Center, not a file named for Centro Médico del Noreste.",
+  "mrf_url": "https://caribbeanmedicalcenter.com/wp-content/uploads/2026/01/660559417_Caribbean_Medical_Center_standarcharges1.csv",
+  "mrf_http_status": 206,
+  "mrf_sample_bytes": 262144,
+  "mrf_sample_sha256": "58ea0a0ff0020911797b24dfd0ef7ac6df84f8f6a960010e201aafb58dd1cfd4",
+  "mrf_last_modified": "Mon, 19 Jan 2026 14:36:30 GMT",
+  "mrf_header_observation": "The CSV identifies Caribbean Medical Center, Ave. Osvaldo Molina 151, Fajardo PR, license 400131|PR and NPI 1215051404; it does not identify CCN 400141 or Centro Médico del Noreste.",
+  "disposition": "page-linked-file-sibling-identity-conflict-retained",
+  "interpretation": "A permitted bounded retrieval recovered actual CSV bytes and demonstrates that the linked file belongs to sibling Caribbean Medical Center (CCN 400131), not Centro Médico del Noreste (CCN 400141). No file was reassigned or promoted.",
+  "next_action": "Obtain a Centro Médico del Noreste-specific MRF or publisher clarification, and reconcile the site address against CMS 404 Ave General Valero before promotion."
+}

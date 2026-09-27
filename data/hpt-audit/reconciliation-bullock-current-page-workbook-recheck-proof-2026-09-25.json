@@ -1,0 +1,15 @@
+{
+  "ccns": ["010779", "010110"],
+  "observed_at": "2026-09-25T09:12:00Z",
+  "official_page": "https://www.bullockcountyhospital.com/hospital-charges",
+  "page_observation": "The current Bullock County Hospital price-transparency page identifies the site as the Rural Emergency Hospital converted on 2024-05-01 and links a custom XLSX chargemaster.",
+  "linked_file": "https://www.bullockcountyhospital.com/_files/ugd/ce2ea9_a454a15a1df3499abc80ba579a084bfc.xlsx?dn=BCH%20CDM%20for%20Webpage%20upload.xlsx",
+  "http_status": 206,
+  "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "content_length": 386122,
+  "last_modified": "2023-10-13T15:59:57Z",
+  "file_role": "custom-chargemaster-workbook",
+  "finding": "The current official page exposes a dated custom workbook, not a current CMS CSV/JSON MRF. It cannot resolve the REH pointer file's CA license-state conflict and must not be assigned to historical acute-care CCN 010110.",
+  "disposition": "official-page-custom-workbook-recheck-no-mrf-promotion",
+  "next_action": "Obtain a corrected current CMS-format MRF or publisher clarification for the pointer file and license-state field; keep both CCNs separate."
+}

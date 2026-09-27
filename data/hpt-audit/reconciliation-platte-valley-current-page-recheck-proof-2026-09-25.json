@@ -1,0 +1,27 @@
+{
+  "ccn": "060004",
+  "observed_at": "2026-09-25T13:00:00Z",
+  "official_page_url": "https://wwww.intermountainhealth.org/locations/intermountain-health-platte-valley-hospital/about/hospital-pricing",
+  "official_page_status": 200,
+  "official_facility_name": "Platte Valley Medical Center",
+  "official_facility_address": "1600 Prairie Center Parkway, Brighton, CO 80601",
+  "linked_file_url": "https://wwww.intermountainhealth.org/-/media/files/intermountain-health/locations/hospital-prices/840482695_platte-valley-medical-center_standardcharges.ashx",
+  "web_link_observation": "official page exposes Click here to download Standard Charges",
+  "web_file_fetch": "cache-miss",
+  "browser_file_fetch": "ERR_BLOCKED_BY_CLIENT",
+  "file_bytes_retained": 0,
+  "disposition": "official-page-file-linkage-current-transport-unresolved",
+  "interpretation": "The current first-party page still names Platte Valley Medical Center and exposes the exact Platte Valley archive route. Web and browser retrieval did not return file bytes, so the prior Heber Valley Utah file remains excluded and no current MRF metadata is asserted.",
+  "next_action": "Retry the exact Colorado archive after first-party route or client recovery; require bounded bytes, Platte Valley identity, Colorado state, CMS date/version and usable rows before promotion.",
+  "latest_bounded_transport_recheck_2026_09_27": {
+    "observed_at": "2026-09-27T00:45:00Z",
+    "url": "https://wwww.intermountainhealth.org/-/media/files/intermountain-health/locations/hospital-prices/840482695_platte-valley-medical-center_standardcharges.ashx",
+    "http_status": 206,
+    "content_type": "application/x-zip-compressed",
+    "content_range": "bytes 0-131071/3185272",
+    "retained_transfer_bytes": 126976,
+    "sample_sha256": "e0d09c974047df4f2ef9b9651057bacc3b2a336ca21a5c7ecb281f4357053b05",
+    "archive_member_hint": "840482695_platte-valley-medical-center_standardcharges.csv",
+    "result": "The exact first-party Colorado archive now yields a bounded ZIP transport sample and identifies a Platte Valley CSV member, but the transfer did not complete and no CSV header or CMS metadata was parsed. The prior Utah Heber Valley file remains excluded; no promotion made."
+  }
+}

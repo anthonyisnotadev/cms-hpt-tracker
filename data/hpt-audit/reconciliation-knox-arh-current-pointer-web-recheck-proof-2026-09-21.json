@@ -1,0 +1,16 @@
+{
+  "ccn": "181328",
+  "observed_at": "2026-09-21T06:16:20Z",
+  "official_pricing_page": "https://www.arh.org/price-transparency",
+  "web_page_observation": "The current ARH pricing page lists Barbourville ARH Hospital and a machine-readable-file link for that hospital.",
+  "pointer_url": "https://www.arh.org/cms-hpt.txt",
+  "web_pointer_status": 200,
+  "web_pointer_target": "https://www.arh.org/wp-content/uploads/2026/05/452696517_Barbourville-ARH-Hospital_standardcharges.csv",
+  "web_pointer_observation": "The current pointer text contains a Barbourville ARH Hospital entry and the exact CSV target, confirming current first-party pointer linkage through the web retrieval path.",
+  "local_browser_observation": "In-app browser navigation to the ARH pricing page remained net::ERR_NAME_NOT_RESOLVED, so no local CSV bytes or declared file metadata were recovered.",
+  "identity_source": "https://www.arhcareers.org/locations/",
+  "identity_observation": "ARH identifies Barbourville ARH Hospital as formerly Knox County Hospital at 80 Hospital Drive, Barbourville, Kentucky.",
+  "disposition": "current-web-pointer-linkage-confirmed-local-file-access-unresolved",
+  "interpretation": "This is a new web-retrieved pointer linkage and facility-name transition observation. It confirms the publisher target exists in current pointer text but does not verify CSV bytes, declared metadata or usability; no promotion is made.",
+  "next_action": "Recover the exact CSV through a materially different authorized content-bearing route, then verify declared hospital/location, 80 Hospital Drive address, Kentucky state, date, CMS version and parsed usability."
+}

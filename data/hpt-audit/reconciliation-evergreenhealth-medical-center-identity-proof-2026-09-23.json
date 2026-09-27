@@ -1,0 +1,16 @@
+{
+  "ccn": "500124",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://www.evergreenhealth.com/",
+  "official_identity_sources": [
+    "https://www.evergreenhealth.com/",
+    "https://data.cms.gov/tools/medicare-inpatient-hospital-look-up-tool/provider/500124",
+    "https://turquoise.health/providers/evergreen-healthcare/information"
+  ],
+  "official_identity": "EvergreenHealth Medical Center is the Kirkland, Washington hospital at 12040 NE 128th Street, Kirkland, WA 98034. CMS identifies CCN 500124; the provider record identifies NPI 1033174933. EvergreenHealth's current first-party home page also identifies the Kirkland address and links Price Transparency to its cost-estimate route.",
+  "browser_observation": "Browser automation opened the current EvergreenHealth home page and exposed the Kirkland address plus the Price Transparency link. Opening the linked cost-estimate route returned an Akamai Access Denied page; direct requests to the home, cms-hpt.txt and common pricing routes returned HTTP 403.",
+  "pricing_observation": "No usable facility-specific CMS pointer or MRF bytes were retrieved from a first-party route. The third-party provider page is retained only as identity corroboration and a lead, not as evidence for promotion.",
+  "disposition": "current-operator-identity-confirmed-pricing-route-client-denied",
+  "interpretation": "This replaces the domain-unknown label with supported current EvergreenHealth Medical Center identity and official pricing-route evidence while preserving the unresolved pricing route. Access denial is a transport observation, not a compliance finding.",
+  "next_action": "Retry the EvergreenHealth cost-estimate/pointer route through a materially different permitted browser/download route or obtain a publisher-issued current CMS CSV/JSON/ZIP; require exact Kirkland identity, Washington metadata, declared date/version and parsed usability before promotion."
+}

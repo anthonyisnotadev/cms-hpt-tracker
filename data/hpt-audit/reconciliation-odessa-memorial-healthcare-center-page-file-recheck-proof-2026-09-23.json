@@ -1,0 +1,27 @@
+{
+  "ccn": "501307",
+  "observed_at": "2026-09-23T15:40:00Z",
+  "official_site": "https://www.omhc.org/",
+  "official_pricing_page": "https://www.omhc.org/price-transparency/",
+  "official_identity": "Odessa Memorial Healthcare Center, 502 E Amende Drive, Odessa, WA 99159 (current first-party page and footer confirm identity and address).",
+  "browser_observation": "The current official price-transparency page links a CSV labeled Price Transparency Spreadsheet. The file is an older bill-item/chargemaster-style CSV with no CMS 3.0 metadata header, and the page exposes no current CMS JSON or ZIP route.",
+  "file_url": "https://www.omhc.org/wp-content/uploads/2023/12/odsa_wa_bill_item_audit_03162023_1237.csv",
+  "file_status": 200,
+  "file_content_type": "text/csv; charset=utf-8",
+  "file_total_bytes": 893475,
+  "file_sha256": "81f357ba3909dc519994bcb77f239bf50bda03e0e977c7d9b2c0a45ceb040bfc",
+  "file_last_modified": "2024-04-26T18:41:44Z",
+  "file_declared_date": "2023-03-16",
+  "file_kind": "legacy-bill-item-csv",
+  "cms_record": {
+    "ccn": "501307",
+    "name": "ODESSA MEMORIAL HEALTHCARE CENTER",
+    "address": "502 EAST AMENDE DRIVE",
+    "city": "ODESSA",
+    "state": "WA",
+    "zip": "99159"
+  },
+  "disposition": "official-page-legacy-file-recheck",
+  "interpretation": "The official Odessa Memorial page still links an identity-matched CSV, but the file is a 2023 legacy bill-item/chargemaster export rather than a current CMS 3.0.0 MRF. It is retained with exact bytes, hash and dates as historical evidence only; no current-MRF promotion or compliance conclusion is made.",
+  "next_action": "Obtain a current CMS-format CSV/JSON/ZIP or publisher-confirmed route, then verify complete bytes, Washington metadata, declared date/version and usable rate fields before promotion."
+}

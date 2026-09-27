@@ -1,0 +1,15 @@
+{
+  "ccn": "220060",
+  "observed_at": "2026-09-22T04:00:00Z",
+  "official_pricing_page": "https://bidplymouth.org/patients-visitors/billing-financial-services/price-transparency",
+  "official_page_status": 200,
+  "official_page_observation": "The current first-party Beth Israel Deaconess Hospital–Plymouth price-transparency page links Hospital Charge Data and confirms the facility at 275 Sandwich Street, Plymouth, MA 02360.",
+  "candidate_file_url": "https://bidplymouth.org/222667354_beth-israel-deaconess-hospital---plymouth_standardcharges.json",
+  "candidate_file_format": "JSON",
+  "candidate_file_observation": "The exact page-linked JSON target was reached, but bounded retrieval stopped because the response is 19,421,325 bytes; no bounded body or parsed metadata was retained.",
+  "roster_identity": "BETH ISRAEL DEACONESS HOSPITAL PLYMOUTH",
+  "roster_address": "275 SANDWICH STREET, PLYMOUTH, MA 02360",
+  "disposition": "official-page-current-facility-mrf-linked-file-too-large-to-parse",
+  "interpretation": "New official current page/exact MRF linkage and facility identity evidence. File bytes and declared name/address/Massachusetts state/date/version remain unverified in this bounded run; no current verification claim is promoted.",
+  "next_action": "Use a bounded streaming or authorized download-capable route to inspect the large JSON, then verify facility identity, Massachusetts state, declared date/version and usability before promotion."
+}

@@ -1,0 +1,26 @@
+{
+  "ccn": "450108",
+  "observed_at": "2026-09-22T05:00:00Z",
+  "official_site": "https://www.connallymmc.org/",
+  "official_pricing_page": "https://us.flow-prod.boomi.com/f2a4d421-8a52-4b09-8a4c-8476aae2d651/play/ptt?flow-id=55c677ad-57f7-4e47-b22f-19d1bb1871bd&flow-version-id=b8a8e92e-d9f0-4528-8ac1-ea41bc658ef9&hospital-id=34",
+  "official_page_status": 200,
+  "official_page_observation": "The first-party Connally Memorial Medical Center site labels a Price Transparency link and a CMMC Pricing Transparency Tool, pointing to the Boomi flow for hospital-id 34. The interactive flow rendered no accessible content in the current browser client, and no machine-readable CSV/JSON URL was exposed by the page or bounded HTML response.",
+  "pointer_url": "https://www.connallymmc.org/cms-hpt.txt",
+  "pointer_status": 404,
+  "pointer_observation": "The root pointer route was not published as a usable plain-text pointer during this check.",
+  "file_kind": null,
+  "disposition": "official-pricing-tool-file-retrieval-pending",
+  "cms_hospital_general_record": {
+    "source_file": "cms_data/Hospital_General_Information.csv",
+    "source_sha256": "23c5019ee51e11442d6d64cd153cedd78c51ab6435f621e4cb9351e3e972d9e3",
+    "facility_id": "450108",
+    "facility_name": "CONNALLY MEMORIAL MEDICAL CENTER",
+    "address": "499 10TH STREET",
+    "citytown": "FLORESVILLE",
+    "state": "TX",
+    "zip_code": "78114",
+    "hospital_type": "Acute Care Hospitals"
+  },
+  "interpretation": "This narrows discovery to a current first-party pricing tool but does not prove a CMS machine-readable file, file identity, metadata, or compliance status. The CCN remains unresolved.",
+  "next_action": "Use an alternate authorized browser/client to capture the Boomi flow's network/file route, then verify the exact file, facility address/state, date, version and complete-file usability before any promotion."
+}

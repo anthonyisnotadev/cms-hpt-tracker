@@ -1,0 +1,31 @@
+{
+  "ccn": "454088",
+  "observed_at": "2026-09-23T05:03:00Z",
+  "official_site": "https://www.hhs.texas.gov/services/mental-health-substance-use/state-hospitals/rio-grande-state-center",
+  "official_identity": "Rio Grande State Center, 1401 Rangerville Road, Harlingen, TX; interactive official page confirms the facility and street address.",
+  "official_page_address": "1401 Rangerville Road, Harlingen, TX 78550",
+  "cms_record": {
+    "facility_id": "454088",
+    "facility_name": "RIO GRANDE STATE CENTER",
+    "address": "1401 RANGERVILLE ROAD",
+    "citytown": "HARLINGEN",
+    "state": "TX",
+    "zip_code": "78552"
+  },
+  "browser_observation": "Interactive browser navigation rendered the current Texas HHS facility page. It describes inpatient adult psychiatric and outpatient services and exposes no CMS price-transparency page, cms-hpt.txt pointer, CSV, JSON or ZIP MRF link.",
+  "pointer_urls": [
+    "https://www.hhs.texas.gov/cms-hpt.txt",
+    "https://hhs.texas.gov/cms-hpt.txt"
+  ],
+  "pointer_status": "HTTP 404 HTML on current bounded request; no pointer text recovered",
+  "pointer_response_bytes": 194,
+  "pointer_sha256": "1A227DCEBF377490F3143518904DE1C77B3661A3EBB278E61385CCDD349DB6CF",
+  "mrf_observation": "No MRF bytes recovered; no file-absence, exemption or compliance conclusion inferred.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=454088&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6816,
+  "cms_api_response_sha256": "5EA086C55F599C939ED5ACEFBB1EC334A046D36850C0FD3104007189777F97CA",
+  "disposition": "browser-official-identity-confirmed-address-zip-variant-no-pricing-route",
+  "interpretation": "The official HHS page and CMS identity record agree on the facility, street, city and state but present different ZIP codes (78550 on the page versus 78552 in CMS/roster). The discrepancy is retained for reconciliation; no address is silently overwritten, and no pricing/compliance conclusion is inferred.",
+  "next_action": "Obtain publisher confirmation of the applicable ZIP and locate a current facility-specific CMS CSV/JSON/ZIP or corrected pointer before any promotion."
+}

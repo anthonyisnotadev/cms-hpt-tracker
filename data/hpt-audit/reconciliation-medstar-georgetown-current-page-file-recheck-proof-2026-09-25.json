@@ -1,0 +1,26 @@
+{
+  "ccn": "090004",
+  "observed_at": "2026-09-25T04:31:00Z",
+  "official_pricing_page": "https://www.medstarhealth.org/price-transparency-disclosures",
+  "official_identity_page": "https://www.medstarhealth.org/locations/medstar-georgetown-university-hospital/contact-us",
+  "official_identity": "MedStar Georgetown University Hospital, 3800 Reservoir Road, NW, Washington, DC 20007",
+  "page_observation": "The current MedStar price-transparency disclosure still lists a dedicated standard-charges link for MedStar Georgetown University Hospital.",
+  "facility_file_url": "https://www.medstarhealth.org/-/media/project/mho/medstar/billing-and-insurance/2026/522218584_medstar_georgetown_university_hospital_standardcharges.csv",
+  "direct_bounded_recheck": {
+    "status": 206,
+    "range": "bytes=0-262143",
+    "sample_bytes": 262144,
+    "sample_sha256": "9ee0170f07d8ccff455204e3554ec144854312cfa62343931bc4d2836f095e2c",
+    "metadata": {
+      "hospital_name": "MedStar Georgetown Hospital",
+      "location_name": "MedStar Georgetown Hospital",
+      "hospital_address": "3800 Reservoir Rd. NorthWest Washington, DC, 20007",
+      "last_updated_on": "2026-04-01",
+      "version": "3.0.0",
+      "license_state": "MD"
+    }
+  },
+  "disposition": "current-page-file-recheck-confirms-dc-identity-and-maryland-license-state-conflict",
+  "interpretation": "The current official disclosure, facility page and file continue to agree on the Georgetown facility and DC address, while the file still declares license state MD. This is a dated recheck of the existing publisher-field conflict, not a clean compliance or license conclusion.",
+  "next_action": "Obtain publisher correction or explanation for the MD license-state field; retain the exact DC facility identity and do not infer legal compliance."
+}

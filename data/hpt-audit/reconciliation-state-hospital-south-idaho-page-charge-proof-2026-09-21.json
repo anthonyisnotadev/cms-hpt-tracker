@@ -1,0 +1,14 @@
+{
+  "ccn": "134010",
+  "observed_at": "2026-09-21T08:30:00Z",
+  "official_facility_page": "https://healthandwelfare.idaho.gov/services-programs/behavioral-health/resources",
+  "official_page_status": 200,
+  "identity_observation": "The current Idaho Department of Health and Welfare resources page identifies State Hospital South at 700 East Alice, Blackfoot, Idaho 83221.",
+  "official_charge_artifact_page": "https://publicdocuments.dhw.idaho.gov/WebLink/DocView.aspx?dbid=0&id=35793&repo=PUBLIC-DOCUMENTS",
+  "official_charge_artifact_label": "FY2026 SHS Hospital Charges",
+  "charge_artifact_browser_observation": "Browser automation opened the official Idaho WebLink document page; it displayed 'No preview available' and offered no directly parsed CSV/JSON bytes.",
+  "pricing_pointer_status": "No State Hospital South-specific cms-hpt.txt or CMS-format CSV/JSON MRF was recovered. The FY2026 charges document is a first-party charge artifact, not proof of a CMS MRF schema or metadata.",
+  "disposition": "official-page-and-charge-artifact-confirmed-cms-mrf-unresolved",
+  "interpretation": "This is new facility-specific official pricing-page evidence, but the linked artifact is not promoted without content-bearing CMS-format bytes, declared date/version and facility metadata.",
+  "next_action": "Obtain the FY2026 charge artifact through a permitted download route, determine its format and metadata, and separately locate or obtain a CMS CSV/JSON MRF before changing the tracker claim."
+}

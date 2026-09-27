@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-15T19:54:34.944Z",
+  "updated_at": "2026-09-26T14:44:04.686Z",
   "records": [
     {
       "ccn": "010024",
@@ -121,6 +121,21 @@
       "reason": "Alaska's official statewide suicide-prevention plan identifies North Star Behavioral Health at the exact roster address and publishes northstarbehavioral.com as its website. This establishes the facility domain only; the challenged site, pointer, and MRF remain separate evidence stages.",
       "search_source": "built-in-web-search",
       "observed_at": "2026-09-15T18:47:07.310Z"
+    },
+    {
+      "ccn": "024001",
+      "hospital_name": "NORTH STAR HOSPITAL",
+      "city": "ANCHORAGE",
+      "state": "AK",
+      "status": "official-page-source-lead",
+      "domain": "northstarbh.com",
+      "candidate_url": "https://northstarbh.com/billing/",
+      "name_evidence": "https://health.alaska.gov/en/education/price-transparency-medical-providers/price-transparency-n/",
+      "address_evidence": "https://health.alaska.gov/en/education/price-transparency-medical-providers/price-transparency-n/",
+      "query": "North Star Hospital Alaska price transparency standard charges",
+      "reason": "The current Alaska Department of Health price-transparency directory identifies North Star Behavioral / North Star Hospital at 2530 Debarr Road, Anchorage AK 99508 and lists a Price List. This is a stronger official facility/source lead than the prior search result, but it does not expose a CMS root pointer or machine-readable file; no file, metadata or compliance conclusion is inferred.",
+      "search_source": "official-state-directory-web-search",
+      "observed_at": "2026-09-18T11:04:00Z"
     },
     {
       "ccn": "024002",
@@ -5923,6 +5938,21 @@
       ]
     },
     {
+      "ccn": "224023",
+      "hospital_name": "WESTWOOD PEMBROKE HEALTH SYSTEMS",
+      "city": "WESTWOOD",
+      "state": "MA",
+      "status": "completed-no-official",
+      "domain": "",
+      "candidate_url": "",
+      "name_evidence": "",
+      "address_evidence": "",
+      "query": "Westwood Pembroke Health Systems Westwood MA 45 Clapboardtree Street official hospital website",
+      "reason": "Fresh web search found current/official-state and inspection listings confirming the 45 Clapboardtree Street facility identity, but no hospital-controlled website or facility-specific CMS pointer was identified; third-party listings are retained as leads only.",
+      "search_source": "web-search-2026-09-26",
+      "observed_at": "2026-09-26T14:35:11.163Z"
+    },
+    {
       "ccn": "224032",
       "hospital_name": "WORCESTER RECOVERY CENTER AND HOSPITAL",
       "city": "WORCESTER",
@@ -7182,6 +7212,53 @@
           "reason": "Fresh search results and bounded candidate-page reads did not establish an operator-controlled site matching both facility identity and location.",
           "search_source": "google-bing-plus-bounded-page",
           "observed_at": "2026-09-15T05:28:50.246Z"
+        }
+      ]
+    },
+    {
+      "ccn": "251333",
+      "hospital_name": "PEARL RIVER COUNTY HOSPITAL",
+      "city": "POPLARVILLE",
+      "state": "MS",
+      "status": "official",
+      "domain": "forresthealth.org",
+      "candidate_url": "",
+      "name_evidence": "https://www.forresthealth.org/our-locations/pearl-river-county-hospital--nursing-home/",
+      "address_evidence": "https://apps.msdh.ms.gov/food/FacilityRecord.aspx?PimsID=5997321",
+      "query": "Pearl River County Hospital Poplarville Mississippi official Forrest Health price transparency",
+      "reason": "The candidate domain redirects to the Forrest Health Pearl River County Hospital location URL, and the official Mississippi health-department facility record corroborates the hospital name and 305 W Moody St, Poplarville MS address. Browser checks of the official location page and root cms-hpt.txt returned Akamai Access Denied, so the official site is identified but pointer/pricing review remains pending.",
+      "search_source": "codex-in-app-browser",
+      "observed_at": "2026-09-26T14:44:04.686Z",
+      "history": [
+        {
+          "ccn": "251333",
+          "hospital_name": "PEARL RIVER COUNTY HOSPITAL",
+          "city": "POPLARVILLE",
+          "state": "MS",
+          "status": "completed-no-official",
+          "domain": "",
+          "candidate_url": "",
+          "name_evidence": "",
+          "address_evidence": "",
+          "query": "Pearl River County Hospital Poplarville MS official hospital website pricing transparency",
+          "reason": "Fresh web search found county and directory references but no supported hospital-controlled website or facility-specific CMS pointer; county/directory pages are not treated as official hospital pricing evidence.",
+          "search_source": "web-search-2026-09-26",
+          "observed_at": "2026-09-26T14:35:11.348Z"
+        },
+        {
+          "ccn": "251333",
+          "hospital_name": "PEARL RIVER COUNTY HOSPITAL",
+          "city": "POPLARVILLE",
+          "state": "MS",
+          "status": "candidate",
+          "domain": "",
+          "candidate_url": "https://prc-med.com/",
+          "name_evidence": "",
+          "address_evidence": "",
+          "query": "Pearl River County Hospital Poplarville official website prc-med.com",
+          "reason": "A hospital-linked directory result names prc-med.com as the website, and browser navigation redirects to a Forrest Health Pearl River County Hospital page, but the official page is client-access denied; facility identity and current pricing/pointer evidence remain unverified.",
+          "search_source": "codex-in-app-browser",
+          "observed_at": "2026-09-26T14:35:53.864Z"
         }
       ]
     },
@@ -11729,10 +11806,10 @@
       "candidate_url": "",
       "name_evidence": "",
       "address_evidence": "",
-      "query": "Valley Community Hospital Pauls Valley current official website 100 Valley Drive 2025 2026",
-      "reason": "Fresh searches by roster name, legal operator name, exact address, and current-year terms found no supported current official hospital website. Multiple current reports say the facility closed January 8, 2025; government/provider listings corroborate identity but are not a hospital-controlled website.",
-      "search_source": "built-in-web-search",
-      "observed_at": "2026-09-15T08:17:18.601Z",
+      "query": "Valley Community Hospital Pauls Valley OK official hospital website valleycommunityhospital.com",
+      "reason": "The only surfaced domain candidate, valleycommunityhospital.com, failed DNS resolution across http, https, and www browser variants. Current Oklahoma and directory references identify the facility but do not provide a working hospital-controlled website or CMS pointer; the candidate is retained in search history, not promoted.",
+      "search_source": "web-search-and-codex-in-app-browser",
+      "observed_at": "2026-09-26T14:39:14.376Z",
       "history": [
         {
           "ccn": "370243",
@@ -11763,6 +11840,51 @@
           "reason": "Fresh search results and bounded candidate-page reads did not establish an operator-controlled site matching both facility identity and location.",
           "search_source": "google-bing-plus-bounded-page",
           "observed_at": "2026-09-15T05:31:28.581Z"
+        },
+        {
+          "ccn": "370243",
+          "hospital_name": "VALLEY COMMUNITY HOSPITAL",
+          "city": "PAULS VALLEY",
+          "state": "OK",
+          "status": "completed-no-official",
+          "domain": "",
+          "candidate_url": "",
+          "name_evidence": "",
+          "address_evidence": "",
+          "query": "Valley Community Hospital Pauls Valley current official website 100 Valley Drive 2025 2026",
+          "reason": "Fresh searches by roster name, legal operator name, exact address, and current-year terms found no supported current official hospital website. Multiple current reports say the facility closed January 8, 2025; government/provider listings corroborate identity but are not a hospital-controlled website.",
+          "search_source": "built-in-web-search",
+          "observed_at": "2026-09-15T08:17:18.601Z"
+        },
+        {
+          "ccn": "370243",
+          "hospital_name": "VALLEY COMMUNITY HOSPITAL",
+          "city": "PAULS VALLEY",
+          "state": "OK",
+          "status": "completed-no-official",
+          "domain": "",
+          "candidate_url": "",
+          "name_evidence": "",
+          "address_evidence": "",
+          "query": "Valley Community Hospital Pauls Valley OK successor current official hospital website pricing",
+          "reason": "Fresh web search found historical successor/operator references and reports of closure, but no supported current hospital-controlled website or facility-specific CMS pointer; successor and closure claims remain separate from a CMS disposition.",
+          "search_source": "web-search-2026-09-26",
+          "observed_at": "2026-09-26T14:35:11.533Z"
+        },
+        {
+          "ccn": "370243",
+          "hospital_name": "VALLEY COMMUNITY HOSPITAL",
+          "city": "PAULS VALLEY",
+          "state": "OK",
+          "status": "candidate",
+          "domain": "",
+          "candidate_url": "https://valleycommunityhospital.com/",
+          "name_evidence": "",
+          "address_evidence": "",
+          "query": "Valley Community Hospital Pauls Valley official website valleycommunityhospital.com",
+          "reason": "A current directory result identifies valleycommunityhospital.com as the hospital website, but browser navigation failed with DNS resolution error; official identity and pricing/pointer evidence remain unverified.",
+          "search_source": "web-search-and-codex-in-app-browser",
+          "observed_at": "2026-09-26T14:35:54.173Z"
         }
       ]
     },
@@ -13905,6 +14027,53 @@
       ]
     },
     {
+      "ccn": "450132",
+      "hospital_name": "MEDICAL CENTER HOSPITAL",
+      "city": "ODESSA",
+      "state": "TX",
+      "status": "official",
+      "domain": "mchodessa.com",
+      "candidate_url": "",
+      "name_evidence": "https://www.mchodessa.com/",
+      "address_evidence": "https://www.mchodessa.com/",
+      "query": "Medical Center Hospital Odessa TX official hospital",
+      "reason": "Official Medical Center Health System site identifies Medical Center Hospital in Odessa and shows the facility address 500 West 4th Street, Odessa, TX 79761; its navigation exposes Price Transparency.",
+      "search_source": "codex-in-app-browser",
+      "observed_at": "2026-09-26T14:18:46.593Z"
+    },
+    {
+      "ccn": "450235",
+      "hospital_name": "MEMORIAL HOSPITAL",
+      "city": "GONZALES",
+      "state": "TX",
+      "status": "search-error",
+      "domain": "",
+      "candidate_url": "",
+      "name_evidence": "",
+      "address_evidence": "",
+      "query": "Memorial Hospital Gonzales Texas official hospital",
+      "reason": "The official Texas Health Huguley domain was reachable only as an Akamai Access Denied page in the browser; no facility page or address evidence could be inspected.",
+      "search_source": "codex-in-app-browser",
+      "observed_at": "2026-09-26T14:18:58.487Z",
+      "history": [
+        {
+          "ccn": "450235",
+          "hospital_name": "MEMORIAL HOSPITAL",
+          "city": "GONZALES",
+          "state": "TX",
+          "status": "search-error",
+          "domain": "",
+          "candidate_url": "",
+          "name_evidence": "",
+          "address_evidence": "",
+          "query": "Memorial Hospital Dumas Texas official hospital",
+          "reason": "The official Texas Health Huguley domain was reachable only as an Akamai Access Denied page in the browser; no facility page or address evidence could be inspected.",
+          "search_source": "codex-in-app-browser",
+          "observed_at": "2026-09-26T14:18:47.414Z"
+        }
+      ]
+    },
+    {
       "ccn": "450346",
       "hospital_name": "BAPTIST BEAUMONT HOSPITAL",
       "city": "BEAUMONT",
@@ -13944,12 +14113,12 @@
       "status": "official",
       "domain": "nacmedicalcenter.com",
       "candidate_url": "",
-      "name_evidence": "https://www.nacmedicalcenter.com/locations/detail/nacogdoches-medical-center",
-      "address_evidence": "https://www.nacmedicalcenter.com/locations/detail/nacogdoches-medical-center",
-      "query": "Nacogdoches Medical Center official 4920 Northeast Stallings",
-      "reason": "First-party facility page identifies Nacogdoches Medical Center at the exact roster address.",
-      "search_source": "built-in-web-search",
-      "observed_at": "2026-09-15T08:19:15.192Z",
+      "name_evidence": "https://www.nacmedicalcenter.com/",
+      "address_evidence": "https://www.nacmedicalcenter.com/",
+      "query": "Nacogdoches Medical Center official hospital",
+      "reason": "Official Nacogdoches Medical Center site loaded, identifies the hospital by name, and exposes its Hospital Pricing Information page; the inspected homepage did not display the roster street address, so address corroboration is limited.",
+      "search_source": "codex-in-app-browser",
+      "observed_at": "2026-09-26T14:18:47.209Z",
       "history": [
         {
           "ccn": "450656",
@@ -13980,6 +14149,21 @@
           "reason": "Fresh search found a plausible operator or facility page in NACOGDOCHES, TX, but the bounded page did not corroborate the roster street address (4920 NE STALLINGS DRIVE).",
           "search_source": "google-bing-plus-bounded-page",
           "observed_at": "2026-09-15T05:33:48.535Z"
+        },
+        {
+          "ccn": "450656",
+          "hospital_name": "NACOGDOCHES MEDICAL CENTER",
+          "city": "NACOGDOCHES",
+          "state": "TX",
+          "status": "official",
+          "domain": "nacmedicalcenter.com",
+          "candidate_url": "",
+          "name_evidence": "https://www.nacmedicalcenter.com/locations/detail/nacogdoches-medical-center",
+          "address_evidence": "https://www.nacmedicalcenter.com/locations/detail/nacogdoches-medical-center",
+          "query": "Nacogdoches Medical Center official 4920 Northeast Stallings",
+          "reason": "First-party facility page identifies Nacogdoches Medical Center at the exact roster address.",
+          "search_source": "built-in-web-search",
+          "observed_at": "2026-09-15T08:19:15.192Z"
         }
       ]
     },
@@ -14302,6 +14486,38 @@
       ]
     },
     {
+      "ccn": "451358",
+      "hospital_name": "MEMORIAL HOSPITAL",
+      "city": "SEMINOLE",
+      "state": "TX",
+      "status": "search-error",
+      "domain": "",
+      "candidate_url": "",
+      "name_evidence": "",
+      "address_evidence": "",
+      "query": "Memorial Hospital Seminole Texas official hospital",
+      "reason": "The official Texas Health Huguley domain was reachable only as an Akamai Access Denied page in the browser; no facility page or address evidence could be inspected.",
+      "search_source": "codex-in-app-browser",
+      "observed_at": "2026-09-26T14:19:13.129Z",
+      "history": [
+        {
+          "ccn": "451358",
+          "hospital_name": "MEMORIAL HOSPITAL",
+          "city": "SEMINOLE",
+          "state": "TX",
+          "status": "search-error",
+          "domain": "",
+          "candidate_url": "",
+          "name_evidence": "",
+          "address_evidence": "",
+          "query": "Memorial Hospital Dumas Texas official hospital",
+          "reason": "The official Texas Health Huguley domain was reachable only as an Akamai Access Denied page in the browser; no facility page or address evidence could be inspected.",
+          "search_source": "codex-in-app-browser",
+          "observed_at": "2026-09-26T14:18:58.725Z"
+        }
+      ]
+    },
+    {
       "ccn": "451363",
       "hospital_name": "JACKSON HEALTHCARE CENTER",
       "city": "EDNA",
@@ -14330,6 +14546,38 @@
           "reason": "Fresh search requests did not return a usable result set; no negative website conclusion was drawn.",
           "search_source": "google-bing-plus-bounded-page",
           "observed_at": "2026-09-15T05:23:23.089Z"
+        }
+      ]
+    },
+    {
+      "ccn": "451386",
+      "hospital_name": "MEMORIAL HOSPITAL",
+      "city": "DUMAS",
+      "state": "TX",
+      "status": "search-error",
+      "domain": "",
+      "candidate_url": "",
+      "name_evidence": "",
+      "address_evidence": "",
+      "query": "Memorial Hospital Dumas Texas official hospital",
+      "reason": "The official Texas Health Huguley domain was reachable only as an Akamai Access Denied page in the browser; no facility page or address evidence could be inspected.",
+      "search_source": "codex-in-app-browser",
+      "observed_at": "2026-09-26T14:19:13.380Z",
+      "history": [
+        {
+          "ccn": "451386",
+          "hospital_name": "MEMORIAL HOSPITAL",
+          "city": "DUMAS",
+          "state": "TX",
+          "status": "search-error",
+          "domain": "",
+          "candidate_url": "",
+          "name_evidence": "",
+          "address_evidence": "",
+          "query": "Memorial Hospital Seminole Texas official hospital",
+          "reason": "The official Texas Health Huguley domain was reachable only as an Akamai Access Denied page in the browser; no facility page or address evidence could be inspected.",
+          "search_source": "codex-in-app-browser",
+          "observed_at": "2026-09-26T14:18:58.957Z"
         }
       ]
     },
@@ -15674,15 +15922,15 @@
       "hospital_name": "MEMORIAL HERMANN HOUSTON PHYSICIANS HOSPITAL",
       "city": "WEBSTER",
       "state": "TX",
-      "status": "completed-no-official",
+      "status": "candidate",
       "domain": "",
-      "candidate_url": "",
+      "candidate_url": "https://memorialhermann.org/",
       "name_evidence": "",
       "address_evidence": "",
-      "query": "\"MEMORIAL HERMANN HOUSTON PHYSICIANS HOSPITAL\" \"333 N TEXAS AVENUE, SUITE 1000\" WEBSTER TX official hospital",
-      "reason": "Fresh search results and bounded candidate-page reads did not establish an operator-controlled site matching both facility identity and location.",
-      "search_source": "google-bing-plus-bounded-page",
-      "observed_at": "2026-09-15T05:33:32.155Z",
+      "query": "Memorial Hermann Houston Physicians Hospital Webster TX official hospital",
+      "reason": "Official Memorial Hermann domain loaded, but the attempted Houston Physicians Hospital location URL returned a branded 404; facility identity and address were not resolved.",
+      "search_source": "codex-in-app-browser",
+      "observed_at": "2026-09-26T14:18:46.810Z",
       "history": [
         {
           "ccn": "670008",
@@ -15698,6 +15946,21 @@
           "reason": "Fresh search requests did not return a usable result set; no negative website conclusion was drawn.",
           "search_source": "google-bing-plus-bounded-page",
           "observed_at": "2026-09-15T05:23:23.694Z"
+        },
+        {
+          "ccn": "670008",
+          "hospital_name": "MEMORIAL HERMANN HOUSTON PHYSICIANS HOSPITAL",
+          "city": "WEBSTER",
+          "state": "TX",
+          "status": "completed-no-official",
+          "domain": "",
+          "candidate_url": "",
+          "name_evidence": "",
+          "address_evidence": "",
+          "query": "\"MEMORIAL HERMANN HOUSTON PHYSICIANS HOSPITAL\" \"333 N TEXAS AVENUE, SUITE 1000\" WEBSTER TX official hospital",
+          "reason": "Fresh search results and bounded candidate-page reads did not establish an operator-controlled site matching both facility identity and location.",
+          "search_source": "google-bing-plus-bounded-page",
+          "observed_at": "2026-09-15T05:33:32.155Z"
         }
       ]
     },
@@ -15862,6 +16125,21 @@
       ]
     },
     {
+      "ccn": "670331",
+      "hospital_name": "MID COAST MEDICAL CENTER-TRINITY",
+      "city": "TRINITY",
+      "state": "TX",
+      "status": "candidate",
+      "domain": "",
+      "candidate_url": "https://midcoasthealthsystem.org/",
+      "name_evidence": "",
+      "address_evidence": "",
+      "query": "Mid Coast Medical Center Trinity TX official hospital",
+      "reason": "Official Mid Coast Health System site loaded and references Mid Coast Medical Center Trinity, but the page inspected did not establish the roster address for this CCN; identity remains unverified.",
+      "search_source": "codex-in-app-browser",
+      "observed_at": "2026-09-26T14:18:47.010Z"
+    },
+    {
       "ccn": "670333",
       "hospital_name": "WESTOVER HILLS BAPTIST HOSPITAL",
       "city": "SAN ANTONIO",
@@ -15924,21 +16202,6 @@
           "observed_at": "2026-09-15T05:23:22.567Z"
         }
       ]
-    },
-    {
-      "ccn": "024001",
-      "hospital_name": "NORTH STAR HOSPITAL",
-      "city": "ANCHORAGE",
-      "state": "AK",
-      "status": "official-page-source-lead",
-      "domain": "northstarbh.com",
-      "candidate_url": "https://northstarbh.com/billing/",
-      "name_evidence": "https://health.alaska.gov/en/education/price-transparency-medical-providers/price-transparency-n/",
-      "address_evidence": "https://health.alaska.gov/en/education/price-transparency-medical-providers/price-transparency-n/",
-      "query": "North Star Hospital Alaska price transparency standard charges",
-      "reason": "The current Alaska Department of Health price-transparency directory identifies North Star Behavioral / North Star Hospital at 2530 Debarr Road, Anchorage AK 99508 and lists a Price List. This is a stronger official facility/source lead than the prior search result, but it does not expose a CMS root pointer or machine-readable file; no file, metadata or compliance conclusion is inferred.",
-      "search_source": "official-state-directory-web-search",
-      "observed_at": "2026-09-18T11:04:00Z"
     }
   ]
 }

@@ -1,0 +1,28 @@
+{
+  "ccn": "030071",
+  "observed_at": "2026-09-27T12:03:50Z",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=030071&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_response_bytes": 6578,
+  "cms_response_sha256": "8947420B2A885A459DE17D73C9B718B8DE24E0C396F4324C003D114379C68428",
+  "cms_record": {
+    "facility_id": "030071",
+    "facility_name": "FORT DEFIANCE INDIAN HOSPITAL",
+    "address": "PO BOX 649",
+    "citytown": "FT. DEFIANCE",
+    "state": "AZ",
+    "zip_code": "86504",
+    "hospital_type": "Acute Care Hospitals",
+    "hospital_ownership": "Tribal"
+  },
+  "current_facility_proof": "reconciliation-fort-defiance-current-page-proof.json",
+  "current_ihs_program_source": "https://www.ihs.gov/navajo/",
+  "current_ihs_program_observation": "The current IHS Navajo Area page states that NAIHS has PL 93-638 contracts and compacts with tribal health corporations including Fort Defiance Indian Hospital/Tséhootsooí Medical Center to provide health services in the respective region.",
+  "regulatory_source": "https://www.govinfo.gov/content/pkg/CFR-2025-title45-vol2/pdf/CFR-2025-title45-vol2-part180.pdf",
+  "regulatory_observation": "45 CFR 180.30(b)(2) deems hospitals operated by an Indian Health Program in compliance with Part 180.",
+  "statutory_definition_source": "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title25-section1603&num=0&edition=prelim",
+  "statutory_definition_observation": "25 USC 1603(12) includes tribal health programs within Indian Health Programs; 25 USC 1603(25) defines a tribal health program as a tribe or tribal organization operating a program or facility funded by IHS through an ISDEAA contract or compact.",
+  "disposition": "scope-exempt-indian-health-program",
+  "interpretation": "The exact CMS CCN and facility name match the retained current facility identity proof, and IHS's current area page ties the named facility to a PL 93-638 contract/compact. The scope basis is Indian Health Program operation, not federal ownership. This is not an MRF availability or file-quality finding.",
+  "next_action": "Retain the dated IHS contract/program and facility-identity sources; revisit if the operator, contract, compact or CCN changes."
+}

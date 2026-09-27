@@ -1,0 +1,18 @@
+{
+  "ccn": "531317",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://npvmc.org/",
+  "official_identity_sources": [
+    "https://npvmc.org/",
+    "https://npvmc.org/cms-hpt.txt",
+    "https://npvmc.org/price-transparency/",
+    "https://health.wyo.gov/wp-content/uploads/2025/11/Copy-of-2025-2026-Facility-Directory.pdf",
+    "https://turquoise.health/providers/north-platte-valley-medical-center/information"
+  ],
+  "official_identity": "North Platte Valley Medical Center is the Saratoga, Wyoming critical access hospital associated with CCN 531317. The first-party site identifies the hospital at 1300 W. Bridge Ave, Saratoga, WY 82331; Wyoming facility records corroborate the Platte Valley Healthcare Project d/b/a identity.",
+  "browser_observation": "Browser automation opened the current first-party site and confirmed the hospital identity and Saratoga address. The apparent Price Transparency route and cms-hpt.txt currently redirect to unrelated site pages, and no usable MRF link was exposed.",
+  "pricing_observation": "No usable facility-specific CMS pointer or MRF bytes were retrieved. Direct cms-hpt.txt returned an HTTP 301 redirect to /womens-health/; the apparent price-transparency route redirected to /conference-room-calendar/. No third-party file was promoted.",
+  "disposition": "current-operator-identity-confirmed-pricing-route-not-exposed",
+  "interpretation": "This replaces the domain-unknown label with supported current North Platte Valley Medical Center identity and official-domain evidence while preserving unresolved pricing access. The redirect behavior is a transport/site-configuration observation, not a compliance finding.",
+  "next_action": "Retry the current official site and CMS pointer after the site configuration changes or obtain a publisher-issued current CMS CSV/JSON/ZIP; require exact Saratoga identity, Wyoming metadata, declared date/version and parsed usability before promotion."
+}

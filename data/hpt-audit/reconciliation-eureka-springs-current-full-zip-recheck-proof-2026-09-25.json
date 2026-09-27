@@ -1,0 +1,30 @@
+{
+  "ccn": "040780",
+  "observed_at": "2026-09-25T05:35:00Z",
+  "official_pricing_page": "https://www.eurekaspringshospital.com/transparency",
+  "official_identity": "Eureka Springs Hospital Commission, Eureka Springs, Arkansas",
+  "page_mrf_url": "https://s3.amazonaws.com/ycubaa-production-marlin-1-charge-management-public/facilities/7b394f9e-d9c2-4b0b-9109-00d32890267b/710578871_EUREKA%20SPRINGS%20HOSPITAL_standardcharges.zip",
+  "browser_observation": "The current first-party transparency page labels the linked object Standard Charge File. The official page exposes a facility-specific S3 ZIP; the binary was retrieved through a bounded local download after the web fetcher could not parse application/octet-stream.",
+  "retrieval": {
+    "status": 200,
+    "content_type": "application/zip",
+    "zip_bytes": 41119335,
+    "zip_sha256": "8F13D24D5784A0421C882A2FF15E21C84918AB5CF89284E95E47BCE66FFF9F32",
+    "archive_member": "710578871_EUREKA SPRINGS HOSPITAL_standardcharges.csv",
+    "member_bytes": 436802073,
+    "member_sha256": "017309E18A8FD4BAF830C35FF7C1A4E1EED5D241A553F90CC59686A8E67B6587",
+    "bounded_header": "Insurance Name,Plan Name,Bill Code Type,Bill Code,Bill Code Description,Alternate Bill Code,Alternate Bill Code Description,NDC,Gross Charge,Inpatient Discount Charge,Outpatient Discount Charge,Payor Rate,Minimum Charge,Maximum Charge,Medication Pack Size,Medication Pack UOM,Comments,Updated Timestamp",
+    "sample_updated_timestamp": "2024-02-01-08.06.38.805050",
+    "metadata_result": "The complete archive/member hashes are recorded, but the bounded CSV header is a legacy wide/custom format with no CMS hospital identity, state, CMS version or attestation metadata in the reviewed prefix."
+  },
+  "latest_browser_recheck_2026_09_26": {
+    "observed_at": "2026-09-26T22:45:00Z",
+    "browser_rendered_page": "https://www.eurekaspringshospital.com/transparency",
+    "visible_link_label": "Standard Charge File",
+    "visible_link_url": "https://s3.amazonaws.com/ycubaa-production-marlin-1-charge-management-public/facilities/7b394f9e-d9c2-4b0b-9109-00d32890267b/710578871_EUREKA%20SPRINGS%20HOSPITAL_standardcharges.zip",
+    "result": "The browser-rendered first-party page still exposes the same facility-specific S3 ZIP. This is a current linkage recheck, not new CMS-template evidence; the retained 2024 custom-format metadata gap remains unresolved."
+  },
+  "disposition": "current-official-page-linked-full-zip-recheck-legacy-custom-file-metadata-gap-retained",
+  "interpretation": "This is stronger byte-level evidence of the exact current page-linked object than the earlier partial probe, but it does not support a current CMS MRF promotion. The file remains historical/stale by its observed 2024 timestamp and lacks the required identity metadata in the bounded review; no compliance conclusion is inferred.",
+  "next_action": "Obtain a corrected CMS-template CSV/JSON or publisher explanation that supplies Eureka Springs facility identity, Arkansas location/state, current update date and CMS version before promotion. Preserve the exact ZIP/member hashes and legacy-format observation."
+}

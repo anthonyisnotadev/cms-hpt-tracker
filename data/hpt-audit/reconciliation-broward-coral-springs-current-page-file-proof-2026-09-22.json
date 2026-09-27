@@ -1,0 +1,13 @@
+{
+  "ccn":"100276","observed_at":"2026-09-23T01:30:00Z",
+  "official_site":"https://www.browardhealth.org/",
+  "official_pricing_page":"https://search.hospitalpriceindex.com/hpi2/machineReadable/BrowardHealthCoralSprings/10967",
+  "official_page_observation":"The first-party Broward Health site links the Broward Health Coral Springs Hospital Price Index page. The page identifies the facility, gives Last Update 2026-09-15, and exposes a campus-named CSV download.",
+  "pointer_url":"https://www.browardhealth.org/cms-hpt.txt","pointer_status":"browser-ERR_BLOCKED_BY_CLIENT",
+  "mrf_url":"https://sthpiprd.blob.core.windows.net/machine-readable-files/10967/596012065_broward-health-coral-springs_standardcharges.csv","mrf_status":206,"mrf_response_bytes":262144,"mrf_content_range":"bytes=0-262143/256887061","mrf_total_bytes":256887061,"mrf_etag":"0x8DF133C2283C114","mrf_last_modified":"Tue, 15 Sep 2026 15:15:10 GMT","mrf_response_sha256":"e28805761fd65c0f9e7d75d32699db20168ba6b94e979cfbfcdfbbf3aa2ba7ee",
+  "declared_last_updated":"2026-09-15","cms_template_version":"3.0.0","declared_hospital_name":"Broward Health Coral Springs","declared_location_name":"Broward Health Coral Springs","declared_address":"3000 Coral Hills Dr, Coral Springs, FL 33065","declared_license_state":"FL","declared_license_number":"3945","declared_npi":"1174551147",
+  "cms_api_url":"https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=100276&conditions%5B0%5D%5Boperator%5D=%3D","cms_api_status":200,"cms_api_response_bytes":6611,"cms_api_response_sha256":"3378BC2C6F7C2D841FAA069A483A970143137214B624F5163F8CFEFD58028A09","cms_record":{"facility_id":"100276","facility_name":"BROWARD HEALTH CORAL SPRINGS","address":"3000 CORAL HILLS DR","citytown":"CORAL SPRINGS","state":"FL","zip_code":"33065"},
+  "pointer_http_status":403,"pointer_sha256":"b9b71c35dfc2fd4c4bd55814a6d0bcee24a4270943748b72345643dea61736c4","disposition":"verified-current-page-file-root-pointer-blocked",
+  "interpretation":"The current first-party Broward Health pricing page links a campus-named CSV whose bounded header matches the CMS facility name, address, Florida state, license/NPI metadata, date and CMS 3.0.0. The shared root pointer was blocked by the browser, so this remains page-linked observed evidence with pointer follow-up and no legal compliance conclusion.",
+  "next_action":"Retry the shared root pointer with an alternate transport and compare its target to this campus file before any promotion."
+}

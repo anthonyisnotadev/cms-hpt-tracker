@@ -1,0 +1,15 @@
+{
+  "ccn":"154031","observed_at":"2026-09-23T07:45:00Z",
+  "official_site":"https://oaklawn.org/",
+  "official_identity":"Oaklawn Psychiatric Center Inc., 330 Lakeview Dr, Goshen, IN 46527 (CMS record independently confirms this facility/address).",
+  "browser_observation":"Interactive browser navigation rendered a Robot Challenge Screen requiring cookies and checking site connection security; the homepage did not become available.",
+  "pointer_urls":["https://oaklawn.org/cms-hpt.txt","https://www.oaklawn.org/cms-hpt.txt"],
+  "pointer_status":"HTTP 202 HTML security challenge on both exact root routes; no pointer text recovered",
+  "pointer_response_bytes":180,
+  "pointer_observation":"Both bounded requests returned a security-challenge refresh page rather than pointer content.",
+  "mrf_observation":"No MRF bytes recovered; no file-absence or compliance conclusion inferred.",
+  "cms_api_url":"https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=154031&conditions%5B0%5D%5Boperator%5D=%3D","cms_api_status":200,"cms_api_response_bytes":6826,"cms_api_response_sha256":"912618EF4CCDA9C2F799AA94610FDF8A9D0A1ACBC0E07AC0D273442B5567BE7B","cms_record":{"facility_id":"154031","facility_name":"OAKLAWN PSYCHIATRIC CENTER INC","address":"330 LAKEVIEW DR","citytown":"GOSHEN","state":"IN","zip_code":"46527"},
+  "disposition":"automated-client-html-challenge",
+  "interpretation":"The recorded first-party domain and CMS identity agree, but both homepage and exact pointer routes are blocked by a cookie/security challenge. This is a transport/access observation only, not a file-absence or compliance finding.",
+  "next_action":"Retry the first-party site and exact pointer with an alternate browser/client after the security challenge changes; recover and verify facility-specific MRF bytes before promotion."
+}

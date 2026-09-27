@@ -1,0 +1,47 @@
+{
+  "ccn": "321305",
+  "observed_at": "2026-09-27T07:38:30Z",
+  "nppes_api": {
+    "url": "https://npiregistry.cms.hhs.gov/api/?number=1881630036&version=2.1",
+    "http_status": 200,
+    "response_bytes": 1639,
+    "response_sha256": "061ff15a86bf39bc9fd5126736cf36de20b0128a4ffee2cb4460702560091b78",
+    "organization_name": "NOR-LEA HOSPITAL DISTRICT",
+    "npi": "1881630036",
+    "record_last_updated": "2026-01-21",
+    "location_address": "1600 NORTH MAIN, LOVINGTON, NM 88260-2813",
+    "mailing_address": "1600 N MAIN AVE, LOVINGTON, NM 88260-2813",
+    "primary_taxonomy": "282NC0060X",
+    "primary_taxonomy_license": "3102",
+    "primary_taxonomy_license_state": "NM"
+  },
+  "new_mexico_doh_facility_id_crosscheck": {
+    "url": "https://www.nmhealth.org/publication/view/help/1991/",
+    "document_title": "New Mexico Data Dictionary Appendix, 2015-01-01",
+    "appendix": "B - Facility IDs",
+    "entry": "3102,NOR LEA HOSPITAL DISTRICT",
+    "limitation": "This appendix identifies a New Mexico DOH facility ID; it does not describe the value as a current hospital license or provide a physical address."
+  },
+  "existing_hash_bound_file_proof": {
+    "proof_file": "reconciliation-nor-lea-address-conflict-proof-2026-09-25.json",
+    "mrf_url": "https://hospitalpricetransparencyfiles.com/nor-lea-district-hospital/850278235_Nor-Lea-Hospital-District_standardcharges.csv",
+    "full_file_bytes": 11230287,
+    "full_file_sha256": "549aeebd73a2ec8cb6ba28c75e1af7b31380db81b6597d042c8b0a821dcc151e",
+    "declared_location_name": "Nor-Lea Hospital District",
+    "declared_address": "1900 North Main Avenue, Lovington, NM 88260-2813",
+    "declared_license_number": "3102",
+    "declared_license_state": "NM",
+    "declared_npi": "1881630036|1598899874",
+    "cms_version": "3.0.0",
+    "declared_date": "2026-07-17"
+  },
+  "first_party_facility_evidence": {
+    "url": "https://nor-lea.org/contact-us",
+    "previous_proof_file": "reconciliation-nor-lea-official-address-browser-recheck-proof-2026-09-25.json",
+    "current_main_campus_address": "1600 N. Main Street, Lovington, NM 88260"
+  },
+  "finding": "The official current NPPES API corroborates Nor-Lea's 1600 North Main location and the MRF's NM license-number value/state; a New Mexico DOH facility-ID appendix separately maps 3102 to Nor Lea Hospital District. Neither source supports the MRF's 1900 North Main physical-address literal. The DOH appendix is an identifier mapping, not a license record, and does not resolve the address conflict.",
+  "disposition": "mrf-address-field-conflicts-facility-retained-license-metadata-corroborated",
+  "count_effect": "none; keep CCN 321305 unresolved on the address field only",
+  "next_action": "Ask the publisher to correct the 1900 North Main value or provide a facility-specific explanation/document showing that this exact MRF location represents a Nor-Lea hospital campus at 1900 North Main. Preserve the 1600 official/NPPES location and the original MRF literal/hash; do not normalize or reassign the file."
+}

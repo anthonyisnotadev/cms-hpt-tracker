@@ -1,626 +1,632 @@
 {
-  "generated_at": "2026-09-15T22:49:13.490Z",
+  "generated_at": "2026-09-25T10:45:28.313Z",
   "reason": "Change-gated inventory for parsed browser verification claims still lacking retained byte samples after a source-page-referer plus bounded no-Range curl retry.",
   "records": [
     {
-      "ccn": "050254",
-      "target": "https://www.marshallmedical.org/documents/standard_charges/941450151_marshall-medical-center_standardcharges.csv",
-      "prior_observation": "A 131072-byte browser response was parsed on 2026-09-15T08:59:56.719Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T22:08:10.753Z",
-      "routes": [
-        {
-          "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
-        }
-      ],
-      "disposition": "retained-byte-proof-still-pending",
-      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
-    },
-    {
-      "ccn": "050276",
-      "target": "https://www.cchealth.org/home/showpublisheddocument/29234",
-      "prior_observation": "A 131072-byte browser response was parsed on 2026-09-15T08:58:42.716Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T22:05:33.109Z",
-      "routes": [
-        {
-          "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
-        }
-      ],
-      "disposition": "retained-byte-proof-still-pending",
-      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
-    },
-    {
-      "ccn": "050334",
-      "target": "https://www.salinasvalleyhealth.com/documents/946004020_SalinasValleyMemorialHealthcareSystem_standardcharges.csv",
-      "prior_observation": "A 131072-byte browser response was parsed on 2026-09-15T09:00:45.386Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T22:08:10.753Z",
-      "routes": [
-        {
-          "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
-        }
-      ],
-      "disposition": "retained-byte-proof-still-pending",
-      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
-    },
-    {
-      "ccn": "050778",
-      "target": "https://pricetransparency.healthcare/llu-ch/charges/export",
+      "ccn": "234011",
+      "target": "https://www.henryfordbhh.com/wp-content/uploads/pricing/2026/580/87-2121325_HFHS-Acadia-Joint-Venture-LLC_standardcharges.csv",
       "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
-      "attempted_at": "2026-09-15T22:48:58.927Z",
+      "attempted_at": "",
       "routes": [
         {
           "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 429"
+          "result": "no-response"
         }
       ],
       "disposition": "retained-byte-proof-still-pending",
       "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
     },
     {
-      "ccn": "120019",
-      "target": "https://pricetransparency.healthcare/kona-community-hospital/charges/export",
+      "ccn": "281314",
+      "target": "http://www.ajhc.org/476000710_annie-jeffrey-memorial-county-health-center_standardcharges.csv",
       "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
-      "attempted_at": "2026-09-15T22:48:59.783Z",
+      "attempted_at": "",
       "routes": [
         {
           "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 429"
+          "result": "no-response"
         }
       ],
       "disposition": "retained-byte-proof-still-pending",
       "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
     },
     {
-      "ccn": "121300",
-      "target": "https://pricetransparency.healthcare/kauai-veterans-memorial-hospital/charges/export",
+      "ccn": "281352",
+      "target": "https://secure.claraprice.net/price-transparency/NTWZ-1713817372531/machine-readable/470421272_community-medical-center_standardcharges.json",
       "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
-      "attempted_at": "2026-09-15T22:48:59.434Z",
+      "attempted_at": "",
       "routes": [
         {
           "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 429"
+          "result": "no-response"
         }
       ],
       "disposition": "retained-byte-proof-still-pending",
       "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
     },
     {
-      "ccn": "121302",
-      "target": "https://pricetransparency.healthcare/kohala-hospital/charges/export",
+      "ccn": "314027",
+      "target": "https://img1.wsimg.com/blobby/go/066f994d-06ce-4416-b595-b6f6d5954a20/downloads/58f9cd4e-a33d-49e8-a582-cf58d2fbd03d/471528432_MountainView-Behavioral-Hospital_sta.csv?ver=1783007504297",
       "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
-      "attempted_at": "2026-09-15T22:48:59.584Z",
+      "attempted_at": "",
       "routes": [
         {
           "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 429"
+          "result": "no-response"
         }
       ],
       "disposition": "retained-byte-proof-still-pending",
       "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
     },
     {
-      "ccn": "121304",
-      "target": "https://pricetransparency.healthcare/kahuku-medical-center/charges/export",
+      "ccn": "330215",
+      "target": "https://cdn.accureg.net/trans/romememorialhospital/16-1471634_Rome-Memorial-Hospital_standardcharges.json",
       "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
-      "attempted_at": "2026-09-15T22:48:59.259Z",
+      "attempted_at": "",
       "routes": [
         {
           "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 429"
+          "result": "no-response"
         }
       ],
       "disposition": "retained-byte-proof-still-pending",
       "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
     },
     {
-      "ccn": "121307",
-      "target": "https://pricetransparency.healthcare/honokaa-hospital-and-skilled-nursing-facility/charges/export",
+      "ccn": "331309",
+      "target": "https://sthpiprd.blob.core.windows.net/machine-readable-files/13057/810600548_river-hospital-inc_standardcharges.csv",
       "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
-      "attempted_at": "2026-09-15T22:48:59.104Z",
+      "attempted_at": "",
       "routes": [
         {
           "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 429"
+          "result": "no-response"
         }
       ],
       "disposition": "retained-byte-proof-still-pending",
       "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
     },
     {
-      "ccn": "140089",
-      "target": "https://www.mdh.org/documents/376016777_mcdonough-county-hospital-district_standardcharges.csv",
+      "ccn": "340123",
+      "target": "https://www.randolphhealth.org/media/1699/854354835_randolphhealth_standardcharges.csv",
       "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
-      "attempted_at": "2026-09-15T22:16:18.979Z",
+      "attempted_at": "",
       "routes": [
         {
           "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
+          "result": "no-response"
         }
       ],
       "disposition": "retained-byte-proof-still-pending",
       "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
     },
     {
-      "ccn": "171373",
-      "target": "https://www.saintlukeskc.org/hpt/1/843362602_AllenCountyRegionalHospital_standardcharges.json",
-      "prior_observation": "A 131072-byte browser response was parsed on 2026-09-15T09:07:51.323Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T22:08:22.558Z",
-      "routes": [
-        {
-          "client": "codex-in-app-browser",
-          "result": "net::ERR_BLOCKED_BY_CLIENT"
-        },
-        {
-          "client": "connected-brave-browser",
-          "result": "net::ERR_BLOCKED_BY_CLIENT"
-        },
-        {
-          "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
-        }
-      ],
-      "disposition": "retained-byte-proof-still-pending",
-      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
-    },
-    {
-      "ccn": "190004",
-      "target": "https://www.thibodaux.com/documents/84-2046902%20_thibodaux-regional-medical-center_standardcharges.json",
-      "prior_observation": "A 131072-byte browser response was parsed on 2026-09-15T09:11:00.307Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T22:08:22.834Z",
-      "routes": [
-        {
-          "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
-        }
-      ],
-      "disposition": "retained-byte-proof-still-pending",
-      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
-    },
-    {
-      "ccn": "194082",
-      "target": "https://www.compasshealthcare.com/wp-content/uploads/2203782911_compass_jennings_standardcharges.3.csv",
-      "prior_observation": "A 44783-byte browser response was parsed on 2026-09-15T09:09:38.866Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T22:05:33.129Z",
-      "routes": [
-        {
-          "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
-        }
-      ],
-      "disposition": "retained-byte-proof-still-pending",
-      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
-    },
-    {
-      "ccn": "194085",
-      "target": "https://www.compasshealthcare.com/wp-content/uploads/2203782963_compass_lafayette_standardcharges.3.csv",
-      "prior_observation": "A 44058-byte browser response was parsed on 2026-09-15T09:09:38.779Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T16:49:56.348Z",
-      "routes": [
-        {
-          "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
-        }
-      ],
-      "disposition": "retained-byte-proof-still-pending",
-      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
-    },
-    {
-      "ccn": "194109",
-      "target": "https://www.compasshealthcare.com/wp-content/uploads/2203784229_compass_houma_standardcharges.3.csv",
-      "prior_observation": "A 44202-byte browser response was parsed on 2026-09-15T09:09:38.699Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T16:49:55.553Z",
-      "routes": [
-        {
-          "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
-        }
-      ],
-      "disposition": "retained-byte-proof-still-pending",
-      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
-    },
-    {
-      "ccn": "210005",
-      "target": "https://www.frederickhealth.org/documents/billing%20and%20finance/52-0591612_FrederickHealthHospital_standardcharges.csv",
-      "prior_observation": "A 131072-byte browser response was parsed on 2026-09-15T09:11:43.154Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T22:08:23.270Z",
-      "routes": [
-        {
-          "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
-        }
-      ],
-      "disposition": "retained-byte-proof-still-pending",
-      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
-    },
-    {
-      "ccn": "210012",
-      "target": "https://www.lifebridgehealth.org/sites/default/files/2026-04/52-0486540_Sinai-Hospital-of-Baltimore_standardcharges.csv",
-      "prior_observation": "A 131072-byte browser response was parsed on 2026-09-15T09:11:43.424Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T22:08:24.285Z",
-      "routes": [
-        {
-          "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
-        }
-      ],
-      "disposition": "retained-byte-proof-still-pending",
-      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
-    },
-    {
-      "ccn": "210033",
-      "target": "https://www.lifebridgehealth.org/sites/default/files/2026-04/52-1452024_Carroll-Hospital-Center_standardcharges.csv",
-      "prior_observation": "A 131072-byte browser response was parsed on 2026-09-15T09:11:43.058Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T22:08:22.940Z",
-      "routes": [
-        {
-          "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
-        }
-      ],
-      "disposition": "retained-byte-proof-still-pending",
-      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
-    },
-    {
-      "ccn": "210040",
-      "target": "https://www.lifebridgehealth.org/sites/default/files/2026-04/52-1372665_Northwest-Hospital-Center_standardcharges.csv",
-      "prior_observation": "A 131072-byte browser response was parsed on 2026-09-15T09:11:43.337Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T22:08:23.787Z",
-      "routes": [
-        {
-          "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
-        }
-      ],
-      "disposition": "retained-byte-proof-still-pending",
-      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
-    },
-    {
-      "ccn": "210064",
-      "target": "https://www.lifebridgehealth.org/sites/default/files/2026-04/52-0607913_Levindale-Hebrew-Geriatric-Center-Hospital_standardcharges_0.csv",
-      "prior_observation": "A 131072-byte browser response was parsed on 2026-09-15T09:11:43.242Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T22:08:23.410Z",
-      "routes": [
-        {
-          "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
-        }
-      ],
-      "disposition": "retained-byte-proof-still-pending",
-      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
-    },
-    {
-      "ccn": "260062",
-      "target": "https://www.saintlukeskc.org/hpt/26/440565393_SaintLukesNorthHospital_standardcharges.json",
-      "prior_observation": "A 131072-byte browser response was parsed on 2026-09-15T09:16:05.160Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T22:08:24.379Z",
-      "routes": [
-        {
-          "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
-        }
-      ],
-      "disposition": "retained-byte-proof-still-pending",
-      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
-    },
-    {
-      "ccn": "260138",
-      "target": "https://www.saintlukeskc.org/hpt/21/440545297_SaintLukesHospitalofKansasCity_standardcharges.json",
-      "prior_observation": "A 131072-byte browser response was parsed on 2026-09-15T09:16:05.263Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T22:08:24.676Z",
-      "routes": [
-        {
-          "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
-        }
-      ],
-      "disposition": "retained-byte-proof-still-pending",
-      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
-    },
-    {
-      "ccn": "261309",
-      "target": "https://www.saintlukeskc.org/hpt/36/431707306_WrightMemorialHospital_standardcharges.json",
-      "prior_observation": "A 131072-byte browser response was parsed on 2026-09-15T09:16:05.375Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T22:08:24.999Z",
-      "routes": [
-        {
-          "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
-        }
-      ],
-      "disposition": "retained-byte-proof-still-pending",
-      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
-    },
-    {
-      "ccn": "261321",
-      "target": "https://www.saintlukeskc.org/hpt/11/431735565_HedrickMedicalCenter_standardcharges.json",
-      "prior_observation": "A 131072-byte browser response was parsed on 2026-09-15T09:14:19.122Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T22:08:23.273Z",
-      "routes": [
-        {
-          "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
-        }
-      ],
-      "disposition": "retained-byte-proof-still-pending",
-      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
-    },
-    {
-      "ccn": "284009",
-      "target": "https://cmhc.douglascounty-ne.gov/wp-content/uploads/2026/08/476006455_douglas-county-community-mental-health-center_standardcharges.csv",
-      "prior_observation": "A 131072-byte browser response was parsed on 2026-09-15T09:19:21.912Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T22:05:33.130Z",
-      "routes": [
-        {
-          "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
-        }
-      ],
-      "disposition": "retained-byte-proof-still-pending",
-      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
-    },
-    {
-      "ccn": "330024",
-      "target": "https://www.mountsinai.org/files/mrf/131624096_mount-sinai-hospital_standardcharges.json",
-      "prior_observation": "A 131072-byte browser response was parsed on 2026-09-15T09:23:57.272Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T22:05:44.757Z",
-      "routes": [
-        {
-          "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
-        }
-      ],
-      "disposition": "retained-byte-proof-still-pending",
-      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
-    },
-    {
-      "ccn": "330046",
-      "target": "https://www.mountsinai.org/files/mrf/132997301_mount-sinai-morningside_standardcharges.json",
-      "prior_observation": "A 131072-byte browser response was parsed on 2026-09-15T09:23:37.624Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T16:22:04.431Z",
-      "routes": [
-        {
-          "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
-        }
-      ],
-      "disposition": "retained-byte-proof-still-pending",
-      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
-    },
-    {
-      "ccn": "330100",
-      "target": "https://www.mountsinai.org/files/mrf/135562304_new-york-eye-and-ear-infirmary-of-mount-sinai_standardcharges.json",
-      "prior_observation": "A 131072-byte browser response was parsed on 2026-09-15T09:23:57.653Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T16:22:04.573Z",
-      "routes": [
-        {
-          "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
-        }
-      ],
-      "disposition": "retained-byte-proof-still-pending",
-      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
-    },
-    {
-      "ccn": "330104",
-      "target": "https://www.montefiorenyack.org/sites/default/files/131740119_nyack-hospital_standardcharges.csv",
-      "prior_observation": "A 131072-byte browser response was parsed on 2026-09-15T09:23:57.802Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T22:08:23.405Z",
-      "routes": [
-        {
-          "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
-        }
-      ],
-      "disposition": "retained-byte-proof-still-pending",
-      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
-    },
-    {
-      "ccn": "330198",
-      "target": "https://www.mountsinai.org/files/mrf/111352310_mount-sinai-south-nassau_standardcharges.json",
-      "prior_observation": "A 131072-byte browser response was parsed on 2026-09-15T09:23:57.455Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T16:21:35.799Z",
-      "routes": [
-        {
-          "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
-        }
-      ],
-      "disposition": "retained-byte-proof-still-pending",
-      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
-    },
-    {
-      "ccn": "330241",
-      "target": "https://www.upstate.edu/hospital/files/161469571_upstate-university-hospital_standardcharges.csv",
+      "ccn": "341320",
+      "target": "https://sthpiprd.blob.core.windows.net/machine-readable-files/13448/560525657_alleghany-county-memorial-hospital%2C-inc_standardcharges.csv",
       "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
-      "attempted_at": "2026-09-15T22:17:08.121Z",
+      "attempted_at": "",
       "routes": [
         {
           "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
+          "result": "no-response"
         }
       ],
       "disposition": "retained-byte-proof-still-pending",
       "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
     },
     {
-      "ccn": "330399",
-      "target": "https://pricetransparency.healthcare/sbhny/charges/export",
+      "ccn": "360163",
+      "target": "https://bmtncl.files.cmp.optimizely.com/download/assets/31-0538525_TheChristHospitalHealthNetwork_StandardCharges.csv/9c55def043e911f19a46868e68cd3a8e",
       "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
-      "attempted_at": "2026-09-15T22:48:59.991Z",
+      "attempted_at": "",
       "routes": [
         {
           "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 429"
+          "result": "no-response"
         }
       ],
       "disposition": "retained-byte-proof-still-pending",
       "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
     },
     {
-      "ccn": "340119",
-      "target": "https://sthpiprd.blob.core.windows.net/machine-readable-files/11177/560529945-1073988994_the-charlotte-mecklenburg-hospital-authority_standardcharges.csv",
+      "ccn": "390211",
+      "target": "https://sharonregionalhealthsystem.org/wp-content/uploads/2025/05/332621724_SharonRegional_standardcharges.zip",
       "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
-      "attempted_at": "2026-09-15T22:17:09.149Z",
+      "attempted_at": "",
       "routes": [
         {
           "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 404"
+          "result": "no-response"
         }
       ],
       "disposition": "retained-byte-proof-still-pending",
       "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
     },
     {
-      "ccn": "360064",
-      "target": "https://www.mercy.com/-/media/mercy/patient-resources/hospital-pricing-transparency/340505560-1548296106_mercy-health-youngstown-llc_standardcharges.ashx",
+      "ccn": "390307",
+      "target": "https://drive.google.com/file/d/1oINGlpvPtLAz7RScXHi9DSSvMY__R8YZ/view?usp=sharing",
       "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
-      "attempted_at": "2026-09-15T22:17:09.850Z",
+      "attempted_at": "",
       "routes": [
         {
           "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 500"
+          "result": "no-response"
         }
       ],
       "disposition": "retained-byte-proof-still-pending",
       "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
     },
     {
-      "ccn": "361309",
-      "target": "https://www.henrycountyhospital.org/documents/344477047_henry-county-hospital_standardcharges.csv",
-      "prior_observation": "A 131072-byte browser response was parsed on 2026-09-15T09:26:28.797Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T22:08:23.710Z",
-      "routes": [
-        {
-          "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
-        }
-      ],
-      "disposition": "retained-byte-proof-still-pending",
-      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
-    },
-    {
-      "ccn": "390145",
-      "target": "https://www.independence.health/documents/content/250965612_WestmorelandRegionalHospital_StandardCharges.csv",
-      "prior_observation": "A 131072-byte browser response was parsed on 2026-09-15T09:26:33.059Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T22:08:24.764Z",
-      "routes": [
-        {
-          "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
-        }
-      ],
-      "disposition": "retained-byte-proof-still-pending",
-      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
-    },
-    {
-      "ccn": "390217",
-      "target": "https://www.independence.health/documents/content/250965375_FrickHospital_StandardCharges.csv",
-      "prior_observation": "A 131072-byte browser response was parsed on 2026-09-15T09:26:32.521Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T22:08:24.286Z",
-      "routes": [
-        {
-          "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
-        }
-      ],
-      "disposition": "retained-byte-proof-still-pending",
-      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
-    },
-    {
-      "ccn": "450678",
-      "target": "https://pricetransparency.healthcare/white-rock-medical-center/charges/export",
+      "ccn": "400010",
+      "target": "",
       "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
-      "attempted_at": "2026-09-15T22:49:00.180Z",
+      "attempted_at": "",
       "routes": [
         {
           "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 429"
+          "result": "no-response"
         }
       ],
       "disposition": "retained-byte-proof-still-pending",
       "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
     },
     {
-      "ccn": "490088",
-      "target": "https://www.centrahealth.com/sites/default/files/2023-12/540566100_BedfordMemorialHospital_standardcharges.csv",
-      "prior_observation": "A 131072-byte browser response was parsed on 2026-09-15T09:37:09.856Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T22:08:24.288Z",
+      "ccn": "400019",
+      "target": "",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
       "routes": [
         {
           "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
+          "result": "no-response"
         }
       ],
       "disposition": "retained-byte-proof-still-pending",
       "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
     },
     {
-      "ccn": "490090",
-      "target": "https://www.centrahealth.com/sites/default/files/2023-12/540555201_SouthsideCommunityHospital_standardcharges.csv",
-      "prior_observation": "A 131072-byte browser response was parsed on 2026-09-15T09:37:10.505Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T22:08:24.812Z",
+      "ccn": "400022",
+      "target": "",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
       "routes": [
         {
           "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
+          "result": "no-response"
         }
       ],
       "disposition": "retained-byte-proof-still-pending",
       "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
     },
     {
-      "ccn": "500008",
-      "target": "https://www.uwmedicine.org/sites/stevie/files/mrf/916001537_university-of-washington-medical-center_standardcharges.json",
-      "prior_observation": "A 131072-byte browser response was parsed on 2026-09-15T09:37:11.900Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T22:08:25.446Z",
+      "ccn": "400087",
+      "target": "",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
       "routes": [
         {
           "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
+          "result": "no-response"
         }
       ],
       "disposition": "retained-byte-proof-still-pending",
       "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
     },
     {
-      "ccn": "500064",
-      "target": "https://www.uwmedicine.org/sites/stevie/files/mrf/911631806_harborview-medical-center_standardcharges.json",
-      "prior_observation": "A 131072-byte browser response was parsed on 2026-09-15T09:37:11.255Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T22:08:24.590Z",
+      "ccn": "400098",
+      "target": "",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
       "routes": [
         {
           "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
+          "result": "no-response"
         }
       ],
       "disposition": "retained-byte-proof-still-pending",
       "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
     },
     {
-      "ccn": "520109",
-      "target": "https://www.milebluff.com/documents/standard_charges/390992883_mile-bluff-medical-center_standardcharges.csv",
-      "prior_observation": "A 131072-byte browser response was parsed on 2026-09-15T09:41:30.150Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T22:08:25.151Z",
+      "ccn": "400106",
+      "target": "",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
       "routes": [
         {
           "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
+          "result": "no-response"
         }
       ],
       "disposition": "retained-byte-proof-still-pending",
       "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
     },
     {
-      "ccn": "521337",
-      "target": "https://www.saintcroixhealth.org/documents/financial-information/390890676_St-Croix-Regional-Medical-Center_standardcharges.csv",
-      "prior_observation": "A 131072-byte browser response was parsed on 2026-09-15T09:41:30.834Z but the response bytes were not retained as an auditable sample.",
-      "attempted_at": "2026-09-15T22:08:25.152Z",
+      "ccn": "400110",
+      "target": "",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
       "routes": [
         {
           "client": "bounded-source-page-referer-curl-no-range",
-          "result": "HTTP 403"
+          "result": "no-response"
+        }
+      ],
+      "disposition": "retained-byte-proof-still-pending",
+      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
+    },
+    {
+      "ccn": "400117",
+      "target": "",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
+      "routes": [
+        {
+          "client": "bounded-source-page-referer-curl-no-range",
+          "result": "no-response"
+        }
+      ],
+      "disposition": "retained-byte-proof-still-pending",
+      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
+    },
+    {
+      "ccn": "400123",
+      "target": "",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
+      "routes": [
+        {
+          "client": "bounded-source-page-referer-curl-no-range",
+          "result": "no-response"
+        }
+      ],
+      "disposition": "retained-byte-proof-still-pending",
+      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
+    },
+    {
+      "ccn": "400124",
+      "target": "",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
+      "routes": [
+        {
+          "client": "bounded-source-page-referer-curl-no-range",
+          "result": "no-response"
+        }
+      ],
+      "disposition": "retained-byte-proof-still-pending",
+      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
+    },
+    {
+      "ccn": "400128",
+      "target": "",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
+      "routes": [
+        {
+          "client": "bounded-source-page-referer-curl-no-range",
+          "result": "no-response"
+        }
+      ],
+      "disposition": "retained-byte-proof-still-pending",
+      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
+    },
+    {
+      "ccn": "400130",
+      "target": "",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
+      "routes": [
+        {
+          "client": "bounded-source-page-referer-curl-no-range",
+          "result": "no-response"
+        }
+      ],
+      "disposition": "retained-byte-proof-still-pending",
+      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
+    },
+    {
+      "ccn": "400135",
+      "target": "",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
+      "routes": [
+        {
+          "client": "bounded-source-page-referer-curl-no-range",
+          "result": "no-response"
+        }
+      ],
+      "disposition": "retained-byte-proof-still-pending",
+      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
+    },
+    {
+      "ccn": "420010",
+      "target": "",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
+      "routes": [
+        {
+          "client": "bounded-source-page-referer-curl-no-range",
+          "result": "no-response"
+        }
+      ],
+      "disposition": "retained-byte-proof-still-pending",
+      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
+    },
+    {
+      "ccn": "444001",
+      "target": "",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
+      "routes": [
+        {
+          "client": "bounded-source-page-referer-curl-no-range",
+          "result": "no-response"
+        }
+      ],
+      "disposition": "retained-byte-proof-still-pending",
+      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
+    },
+    {
+      "ccn": "444002",
+      "target": "",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
+      "routes": [
+        {
+          "client": "bounded-source-page-referer-curl-no-range",
+          "result": "no-response"
+        }
+      ],
+      "disposition": "retained-byte-proof-still-pending",
+      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
+    },
+    {
+      "ccn": "444008",
+      "target": "",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
+      "routes": [
+        {
+          "client": "bounded-source-page-referer-curl-no-range",
+          "result": "no-response"
+        }
+      ],
+      "disposition": "retained-byte-proof-still-pending",
+      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
+    },
+    {
+      "ccn": "444014",
+      "target": "",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
+      "routes": [
+        {
+          "client": "bounded-source-page-referer-curl-no-range",
+          "result": "no-response"
+        }
+      ],
+      "disposition": "retained-byte-proof-still-pending",
+      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
+    },
+    {
+      "ccn": "490060",
+      "target": " exact Richlands VA address",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
+      "routes": [
+        {
+          "client": "bounded-source-page-referer-curl-no-range",
+          "result": "no-response"
+        }
+      ],
+      "disposition": "retained-byte-proof-still-pending",
+      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
+    },
+    {
+      "ccn": "501314",
+      "target": "https://www.oceanbeachhealth.com/patient-information/",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
+      "routes": [
+        {
+          "client": "bounded-source-page-referer-curl-no-range",
+          "result": "no-response"
+        }
+      ],
+      "disposition": "retained-byte-proof-still-pending",
+      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
+    },
+    {
+      "ccn": "501321",
+      "target": "https://apim.services.craneware.com/api-pricing-transparency/api/public/bfe46f369e2a6c95ba3ca8faaf1e0c32/charges/mrf",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
+      "routes": [
+        {
+          "client": "bounded-source-page-referer-curl-no-range",
+          "result": "no-response"
+        }
+      ],
+      "disposition": "retained-byte-proof-still-pending",
+      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
+    },
+    {
+      "ccn": "501322",
+      "target": "https://fcphd.org/910879683_Ferry-County-Health_standardcharges.csv",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
+      "routes": [
+        {
+          "client": "bounded-source-page-referer-curl-no-range",
+          "result": "no-response"
+        }
+      ],
+      "disposition": "retained-byte-proof-still-pending",
+      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
+    },
+    {
+      "ccn": "501328",
+      "target": "https://mid-valley.goredde.com/Estimator/Files/91-0750229_Mid-Valley_Hospital_standardcharges.csv",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
+      "routes": [
+        {
+          "client": "bounded-source-page-referer-curl-no-range",
+          "result": "no-response"
+        }
+      ],
+      "disposition": "retained-byte-proof-still-pending",
+      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
+    },
+    {
+      "ccn": "511314",
+      "target": "https://hospitalpricetransparencyfiles.com/pocahontas-memorial-hospital/556000381_Pocahontas-Memorial-Hospital_standardcharges.csv",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
+      "routes": [
+        {
+          "client": "bounded-source-page-referer-curl-no-range",
+          "result": "no-response"
+        }
+      ],
+      "disposition": "retained-byte-proof-still-pending",
+      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
+    },
+    {
+      "ccn": "521329",
+      "target": "",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
+      "routes": [
+        {
+          "client": "bounded-source-page-referer-curl-no-range",
+          "result": "no-response"
+        }
+      ],
+      "disposition": "retained-byte-proof-still-pending",
+      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
+    },
+    {
+      "ccn": "521342",
+      "target": "",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
+      "routes": [
+        {
+          "client": "bounded-source-page-referer-curl-no-range",
+          "result": "no-response"
+        }
+      ],
+      "disposition": "retained-byte-proof-still-pending",
+      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
+    },
+    {
+      "ccn": "521347",
+      "target": "",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
+      "routes": [
+        {
+          "client": "bounded-source-page-referer-curl-no-range",
+          "result": "no-response"
+        }
+      ],
+      "disposition": "retained-byte-proof-still-pending",
+      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
+    },
+    {
+      "ccn": "521348",
+      "target": "",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
+      "routes": [
+        {
+          "client": "bounded-source-page-referer-curl-no-range",
+          "result": "no-response"
+        }
+      ],
+      "disposition": "retained-byte-proof-still-pending",
+      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
+    },
+    {
+      "ccn": "531301",
+      "target": "",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
+      "routes": [
+        {
+          "client": "bounded-source-page-referer-curl-no-range",
+          "result": "no-response"
+        }
+      ],
+      "disposition": "retained-byte-proof-still-pending",
+      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
+    },
+    {
+      "ccn": "531314",
+      "target": "",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
+      "routes": [
+        {
+          "client": "bounded-source-page-referer-curl-no-range",
+          "result": "no-response"
+        }
+      ],
+      "disposition": "retained-byte-proof-still-pending",
+      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
+    },
+    {
+      "ccn": "670005",
+      "target": "",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
+      "routes": [
+        {
+          "client": "bounded-source-page-referer-curl-no-range",
+          "result": "no-response"
+        }
+      ],
+      "disposition": "retained-byte-proof-still-pending",
+      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
+    },
+    {
+      "ccn": "670047",
+      "target": "",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
+      "routes": [
+        {
+          "client": "bounded-source-page-referer-curl-no-range",
+          "result": "no-response"
+        }
+      ],
+      "disposition": "retained-byte-proof-still-pending",
+      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
+    },
+    {
+      "ccn": "670093",
+      "target": "",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
+      "routes": [
+        {
+          "client": "bounded-source-page-referer-curl-no-range",
+          "result": "no-response"
+        }
+      ],
+      "disposition": "retained-byte-proof-still-pending",
+      "next_action": "Preserve the parsed browser observation and standing finding. Retry the exact URL only after a publisher or access-control change, or through a demonstrably different download-capable route; do not infer file absence or downgrade the standing result from the recorded transport blocks."
+    },
+    {
+      "ccn": "670333",
+      "target": "",
+      "prior_observation": "The nationwide verification claim relies on parsed browser metadata without a retained auditable byte sample.",
+      "attempted_at": "",
+      "routes": [
+        {
+          "client": "bounded-source-page-referer-curl-no-range",
+          "result": "no-response"
         }
       ],
       "disposition": "retained-byte-proof-still-pending",

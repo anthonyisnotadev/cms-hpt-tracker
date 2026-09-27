@@ -1,0 +1,19 @@
+{
+  "ccn": "330270",
+  "observed_at": "2026-09-25T04:46:00Z",
+  "official_pricing_page": "https://www.hss.edu/patient-care/paying-for-care/price-transparency",
+  "official_page_observation": "The current HSS page still lists Hospital for Special Surgery Main Hospital Standard Charges and states that the JSON files exceed 500 MB.",
+  "page_mrf_url": "https://d2cg6hcwj0g0z0.cloudfront.net/131624135-1598703019_ny-society-for-the-relief-of-ruptured-and-crippled-maintaing-the-hospital-for-special-surgery_standardcharges.json",
+  "browser_observation": "The exact page-linked CloudFront JSON returned a first-party 403 error in browser automation; no JSON bytes were recovered.",
+  "bounded_retrieval": {
+    "status": 403,
+    "content_type": "text/html",
+    "response_bytes": 986,
+    "response_sha256": "a215d53669ebb5d47086ecb078762de7877c4a5b3c3aeeb2384cb917e6bb9147",
+    "error_summary": "CloudFront reports the distribution is configured to block access from this country."
+  },
+  "official_facility_identity": "Hospital for Special Surgery, 535 East 70th Street, New York, NY 10021",
+  "disposition": "current-page-main-mrf-link-recheck-access-unresolved",
+  "interpretation": "The current first-party page and facility identity remain confirmed, but the exact main-hospital JSON remains inaccessible to this client. The 403 is retained as a transport/access observation, not file absence or a compliance conclusion.",
+  "next_action": "Use a materially different authorized download route or publisher-provided copy for the exact Main Hospital JSON, then verify bounded bytes and declared campus metadata."
+}

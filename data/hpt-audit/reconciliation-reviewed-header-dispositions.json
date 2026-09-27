@@ -26,17 +26,21 @@
     },
     {
       "ccn": "250043",
-      "disposition": "duplicate-active-ccn-assignment-unresolved",
+      "observed_at": "2026-09-27T18:38:12Z",
+      "proof_file": "reconciliation-neshoba-qies-query-discrepancy-and-operator-page-recheck-2026-09-27.json",
+      "disposition": "historical-acute-ccn-hpt-coverage-unresolved",
       "candidate": "Neshoba County General Hospital, 1001 Holland Ave, Philadelphia MS 39350",
-      "observation": "The pointer and file identity exactly match both active roster rows 250043 and 251340. The evidence contains no CCN-specific identifier that distinguishes the acute-care row from the critical-access row.",
-      "next_action": "Obtain authoritative enrollment or facility-specific publisher evidence assigning the current file to one CCN or explicitly covering both; do not select a CCN from the identical name and address alone."
+      "observation": "The prior identical-name/address comparison treated both roster rows as active. Fresh Q1 2026 CMS QIES exact-CCN requests return 250043 with termination code 07 and date 2025-12-31, cross-referenced to 251340, and 251340 as a non-terminated same-campus record. Both exact-response hashes are retained. The same-version 6,500-row bulk response hash matches the prior response and still omits both CCNs. The QIES query asymmetry is now reproducible but its cause remains unexplained. The hospital's 2025 first-party notice described October 1 as a planned CAH conversion date. The 2026 current file cannot be contemporaneous active-acute CCN 250043 evidence, but historical HPT coverage remains unresolved.",
+      "next_action": "Retain 250043 in the historical accountability baseline and inspect only dated pre-2025-12-31 pointer/MRF evidence for its acute-care period. Do not search for a current file under 250043 or assign the June 2026 campus MRF to it. The exact-filter/bulk QIES asymmetry has been reproduced and hashed; do not repeat unchanged queries unless the CMS data version changes."
     },
     {
       "ccn": "251340",
-      "disposition": "duplicate-active-ccn-assignment-unresolved",
+      "observed_at": "2026-09-27T17:29:39Z",
+      "proof_file": "reconciliation-neshoba-qies-query-discrepancy-and-operator-page-recheck-2026-09-27.json",
+      "disposition": "current-cah-shared-campus-mrf-ccn-scope-unresolved",
       "candidate": "Neshoba County General Hospital, 1001 Holland Ave, Philadelphia MS 39350",
-      "observation": "The pointer and file identity exactly match both active roster rows 250043 and 251340. The evidence contains no CCN-specific identifier that distinguishes the acute-care row from the critical-access row.",
-      "next_action": "Obtain authoritative enrollment or facility-specific publisher evidence assigning the current file to one CCN or explicitly covering both; do not select a CCN from the identical name and address alone."
+      "observation": "QIES Q1 2026 identifies 251340 as active CAH with original participation date 2026-01-01. The official hospital's 2025 page announced a planned CAH conversion date of October 1, and its 2026 DNV certificate identifies the same address as accredited under the CAH program. The current June 2026 campus MRF remains CCN-unnamed and the current root pointer is transport-gated; these sources support the successor relationship but do not assign that MRF to a CCN.",
+      "next_action": "Keep 251340 separate as the active CAH CCN. The June 4, 2026 campus file is a current-scope candidate but names no CCN; obtain a fresh root pointer or publisher statement binding its exact mrf-url to 251340 before changing its standing MRF finding. Do not assign that file to historical CCN 250043."
     },
     {
       "ccn": "260110",

@@ -5,6 +5,7 @@ const LABELS = {
   'pointer-discovery-incomplete': 'Pointer discovery incomplete',
   'pointer-not-retrieved': 'Pointer not retrieved from checked locations',
   'official-website-not-identified-completed-search': 'Official website not identified in completed search',
+  'candidate-website-identity-unverified': 'Candidate website; identity unverified',
   'pointer-access-denied-to-client': 'Pointer access denied to this client',
   'mrf-facility-identity-unresolved': 'MRF hospital identity unresolved',
   'pointer-facility-match-unresolved': 'Pointer found; hospital match unresolved',
@@ -12,6 +13,7 @@ const LABELS = {
   'mrf-verification-pending': 'MRF verification pending',
   'pointer-linked-file-not-probed': 'Pointer linked; file not yet probed',
   'pointer-linked-file-review-pending': 'Pointer and file header reviewed; current file finding pending',
+  'file-custom-workbook-review': 'Custom workbook reviewed; CMS MRF identity or format unresolved',
   'selected-file-only-in-earlier-pointer-version': 'Selected file linked by earlier pointer version',
   'official-website-search-pending': 'Official website search pending'
 };
@@ -23,7 +25,9 @@ const VERIFIED_FINDINGS = {
   'verified-template-review': 'old-template-version',
   'verified-facility-metadata-unresolved': 'compliant-date-unverified',
   'scope-exempt-federal': 'not-applicable-federal',
-  'scope-exempt-closed': 'not-applicable-closed'
+  'scope-exempt-indian-health-program': 'not-applicable-indian-health-program',
+  'scope-exempt-closed': 'not-applicable-closed',
+  'scope-exempt-state-hospital': 'not-applicable-state-hospital'
 };
 
 function effectiveVerifiedFinding(record) {
@@ -53,8 +57,10 @@ function applyNationwideVerification(rows, records = []) {
   }
   return rows.map(row => {
     const record = by.get(row.ccn);
+    const canOverlayUnassessedStanding = /^not-assessed-/.test(String(row.finding || ''))
+      && row.finding !== 'not-assessed-identity-conflict';
     if (!record || record.latest_observation_superseded || record.standing_evidence_retained
-        || record.prior_finding !== row.finding
+        || (!canOverlayUnassessedStanding && record.prior_finding !== row.finding)
         || record.hospital_name !== row.hospital_name || record.city !== row.city || record.state !== row.state)
       return row;
     const mapped = VERIFIED_FINDINGS[record.disposition];
@@ -114,7 +120,7 @@ function applyNationwideVerification(rows, records = []) {
       assessable: 'no',
       evidence,
       checked_at: checkedAt,
-      ...(record.disposition === 'scope-exempt-closed' ? {
+      ...(record.disposition.startsWith('scope-exempt-') ? {
         pointer_url: '', mrf_url: '', mrf_last_updated: '', mrf_days_since_update: '', cms_template_version: ''
       } : {})
     };

@@ -1,0 +1,31 @@
+{
+  "observed_at": "2026-09-22T16:30:00Z",
+  "official_domain": "omh.ny.gov",
+  "pointer_url": "https://omh.ny.gov/cms-hpt.txt",
+  "pointer_http_status": 200,
+  "pointer_response_bytes": 5995,
+  "pointer_sha256": "c5bc8d36dae15caaa62f821228bcdeba7baf3c48c4ce0ac0e0c585a41d073de1",
+  "shared_mrf_url": "https://omh.ny.gov/omhweb/adults/141663311_nysomh_standardcharges.csv",
+  "shared_mrf_http_status": 206,
+  "shared_mrf_total_bytes": 929041,
+  "shared_mrf_bounded_bytes": 262144,
+  "shared_mrf_header": {
+    "hospital_name": "Greater Binghamton Mental Health Facility",
+    "last_updated_on": "2026-05-28",
+    "version": "3.0.0",
+    "hospital_location": "Greater Binghamton",
+    "hospital_address": "425 Robinson St, Binghamton, NY 13904",
+    "attestation": "TRUE"
+  },
+  "ccn_reviews": [
+    {"ccn":"334046","name":"CAPITAL DISTRICT PSYCH CENTER","pointer_entry":"Capital District","pointer_entry_present":true,"disposition":"pointer-entry-header-mismatch"},
+    {"ccn":"334052","name":"BUFFALO PSYCHIATRIC CENTER","pointer_entry":"Buffalo","pointer_entry_present":true,"disposition":"pointer-entry-header-mismatch"},
+    {"ccn":"334053","name":"BRONX PSYCHIATRIC CENTER","pointer_entry":"Bronx","pointer_entry_present":true,"disposition":"pointer-entry-header-mismatch"},
+    {"ccn":"334060","name":"KIRBY FORENSIC PSYCHIATRIC CENTER","pointer_entry":"Kirby","pointer_entry_present":false,"disposition":"pointer-entry-absent"},
+    {"ccn":"334061","name":"MID HUDSON FORENSIC PSYCHIATRIC CTR","pointer_entry":"Mid Hudson","pointer_entry_present":false,"disposition":"pointer-entry-absent"},
+    {"ccn":"334064","name":"SAGAMORE CHILDRENS PSYCHIATRIC CENTER","pointer_entry":"Sagamore Children's","pointer_entry_present":true,"disposition":"pointer-entry-header-mismatch"},
+    {"ccn":"334065","name":"WESTERN NY CHILDRENS PSYCHIATRIC CENTER","pointer_entry":"Western New York Children's","pointer_entry_present":true,"disposition":"pointer-entry-header-mismatch"}
+  ],
+  "interpretation": "The current OMH pointer is a shared statewide document. Its named entries do not establish that the shared CSV covers each named facility, because the file header identifies Greater Binghamton only; two reviewed facilities are not named in the pointer at all. No CCN receives this file without facility-specific scope evidence.",
+  "next_action": "Seek publisher clarification or updated root metadata and facility-specific file identity for each CCN."
+}

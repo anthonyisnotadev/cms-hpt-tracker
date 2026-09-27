@@ -8,12 +8,12 @@ const { applyResolutions, loadReviewedView } = require('../lib/reviewed-resoluti
 const audit = path.resolve(__dirname, '../../../data/hpt-audit');
 const ledger = require(path.join(audit, 'reviewed-resolutions.json'));
 
-test('Wyandotte file is promoted only to its Wyandotte roster campus', () => {
+test('Wyandotte and the successor behavioral-health campus keep separate files', () => {
   const wyandotte = ledger.find(row => row.ccn === '230146');
   const ferndale = ledger.find(row => row.ccn === '234011');
   assert.equal(wyandotte.action, 'replace');
-  assert.equal(ferndale.action, 'quarantine');
-  assert.equal(wyandotte.evidence.url, ferndale.base.mrf_url);
+  assert.equal(ferndale.action, 'replace');
+  assert.notEqual(wyandotte.evidence.url, ferndale.evidence.pointerMrfUrl);
   assert.equal(wyandotte.evidence.declared_hospital_name, 'Henry Ford Wyandotte Hospital');
   assert.match(wyandotte.evidence.declared_address, /2333 Biddie Avenue, Wyandotte, MI 48192/);
   assert.match(wyandotte.note, /Biddle/);
@@ -25,14 +25,15 @@ test('Wyandotte file is promoted only to its Wyandotte roster campus', () => {
   const by = new Map(result.compliance.map(row => [row.ccn, row]));
   assert.equal(by.get('230146').mrf_url, wyandotte.evidence.url);
   assert.equal(by.get('230146').finding, 'compliant-observed');
-  assert.equal(by.get('234011').mrf_url, '');
-  assert.equal(by.get('234011').cms_template_version, '');
-  assert.equal(by.get('234011').finding, 'not-assessed-identity-conflict');
+  assert.equal(by.get('234011').mrf_url, ferndale.evidence.pointerMrfUrl);
+  assert.equal(by.get('234011').cms_template_version, '3.0.0');
+  assert.equal(by.get('234011').finding, 'compliant-observed');
   assert.equal(result.history['234011'].mrf_url, ferndale.base.mrf_url);
 });
 
 test('standing view never reuses the Wyandotte file for Ferndale', () => {
   const view = loadReviewedView(audit);
   assert.match(view.compliance.find(row => row.ccn === '230146').mrf_url, /wyandotte-hospital_standardcharges\.csv$/);
-  assert.equal(view.compliance.find(row => row.ccn === '234011').mrf_url, '');
+  assert.match(view.compliance.find(row => row.ccn === '234011').mrf_url, /HFHS-Acadia-Joint-Venture-LLC_standardcharges\.csv$/);
+  assert.notEqual(view.compliance.find(row => row.ccn === '230146').mrf_url, view.compliance.find(row => row.ccn === '234011').mrf_url);
 });

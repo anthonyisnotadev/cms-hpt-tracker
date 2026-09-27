@@ -2,6 +2,9 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const { retainedRootMatches } = require('../audit-nationwide-source-proof');
+const path = require('path');
+
+const root = path.resolve(__dirname, '../../..');
 
 const record = {
   declared_hospital_name: 'Monongahela Valley Hospital',
@@ -17,6 +20,16 @@ test('retained proof may use exact location identity only with agreeing address,
     mrfLocationName: 'Penn Highlands Mon Valley',
     mrfAddress: '1163 Country Club RD. Monongahela, PA 15063',
     declaredLastUpdated: '2026-02-02',
+    cmsVersion: '3.0.0'
+  }), true);
+});
+
+test('retained proof treats equivalent ISO and US date encodings as the same declared date', () => {
+  assert.equal(retainedRootMatches(record, {
+    mrfHospitalName: 'Monongahela Valley Hospital',
+    mrfLocationName: 'Penn Highlands Mon Valley',
+    mrfAddress: '1163 Country Club Road, Monongahela, PA 15063',
+    declaredLastUpdated: '2/2/2026',
     cmsVersion: '3.0.0'
   }), true);
 });
@@ -55,4 +68,15 @@ test('multi-location proof cannot lend a sibling name with a different address',
     declaredLastUpdated: '2026-02-02',
     cmsVersion: '3.0.0'
   }), false);
+});
+
+test('source-proof audit compares a facility address to members of a multi-campus header', () => {
+  const audit = require(path.join(root, 'data/hpt-audit/nationwide-source-proof-audit.json'));
+  const springMountain = audit.records.find(item => item.ccn === '294011');
+  assert.ok(springMountain);
+  assert.equal(springMountain.issues.includes('source-field-disagreement:declared_address'), false);
+  assert.equal(springMountain.identity_source, 'byte-proof');
+  // The distinct directional discrepancy against the CMS roster remains
+  // visible pending a facility-specific reviewed address-equivalence record.
+  assert.equal(springMountain.issues.includes('street-evidence-review'), true);
 });

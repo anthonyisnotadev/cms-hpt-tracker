@@ -1,0 +1,16 @@
+{
+  "ccn": "390097",
+  "observed_at": "2026-09-21T22:50:00Z",
+  "official_facility_page": "https://www.holyredeemerhealth.net/hospital",
+  "official_pricing_page": "https://www.holyredeemerhealth.net/price-transparency",
+  "official_page_status": 200,
+  "official_facility_name": "Holy Redeemer Hospital",
+  "official_facility_address": "1648 Huntingdon Pike, Meadowbrook, PA 19046",
+  "candidate_file_url": "https://search.hospitalpriceindex.com/hpi2/machineReadable/HolyRedeemerHealthSystem/8118",
+  "candidate_file_status": 200,
+  "candidate_file_content_type": "text/html",
+  "candidate_file_observation": "The official page labels this link as a Redeemer Health MRF, but the page text says it contains negotiated service rates and out-of-network allowed amounts under the Transparency in Coverage Rule; it is not a CMS hospital standard-charges CSV or JSON file.",
+  "manual_identity_gate": "official-facility-and-pricing-page-confirmed",
+  "disposition": "pointer-discovery-incomplete",
+  "next_action": "Locate a facility-specific CMS hospital standard-charges CSV/JSON or cms-hpt.txt pointer; do not treat the Hospital Price Index/TiC link as the hospital MRF."
+}

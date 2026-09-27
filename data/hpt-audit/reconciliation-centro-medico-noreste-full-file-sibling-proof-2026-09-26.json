@@ -1,0 +1,43 @@
+{
+  "ccn": "400141",
+  "observed_at": "2026-09-26T03:10:00Z",
+  "official_pricing_page": "https://caribbeanmedicalcenter.com/price-transparency/",
+  "official_page_status": 200,
+  "official_page_file_link": "https://caribbeanmedicalcenter.com/wp-content/uploads/2026/01/660559417_Caribbean_Medical_Center_standarcharges1.csv",
+  "file_status": 200,
+  "file_content_type": "text/csv",
+  "file_bytes": 9146795,
+  "file_sha256": "1e6cc38a1a32e634bdde757fd018f920a2cf1cfc1d74bbde58588e3a09a5c9ba",
+  "file_root_metadata": {
+    "hospital_name": "Caribbean Medical Center",
+    "last_updated_on": "2025-11-28",
+    "version": "2.2.0",
+    "hospital_location": "Caribbean Medical Center",
+    "hospital_address": "AVE. OSVALDO MOLINA 151 FAJARDO PR",
+    "license_number": "400131|PR",
+    "type_2_npi": "1215051404",
+    "attestation": true,
+    "attester_name": "Luis Torres"
+  },
+  "cms_sibling_identity_check": {
+    "source": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions[0][property]=facility_id&conditions[0][value]=400131&conditions[0][operator]==",
+    "status": 200,
+    "facility_id": "400131",
+    "facility_name": "CARIBBEAN MEDICAL CENTER",
+    "address": "151 AVE OSVALDO MOLINA",
+    "citytown": "FAJARDO",
+    "state": "PR",
+    "zip_code": "00738"
+  },
+  "cms_target_identity_check": {
+    "facility_id": "400141",
+    "facility_name": "CENTRO MEDICO DEL NORESTE",
+    "address": "404 AVE GENERAL VALERO",
+    "citytown": "FAJARDO",
+    "state": "PR",
+    "zip_code": "00738"
+  },
+  "disposition": "complete-page-file-confirms-sibling-ccn-and-is-excluded-from-400141",
+  "interpretation": "The official page-linked file is now confirmed by complete bytes and root metadata as Caribbean Medical Center, CCN 400131, at Ave. Osvaldo Molina 151. CMS independently places target CCN 400141, Centro Medico del Noreste, at 404 Ave General Valero. This is a material evidence gain that strengthens the sibling exclusion; it does not provide a 400141 MRF or a compliance conclusion.",
+  "next_action": "Locate a Centro Medico del Noreste-specific CMS CSV/JSON or publisher pointer/file, and verify its exact 404 Ave General Valero identity before any promotion."
+}

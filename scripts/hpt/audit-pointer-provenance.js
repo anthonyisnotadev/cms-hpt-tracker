@@ -24,7 +24,14 @@ function build(verification, corpus) {
       versions.set(row.pointer_sha256, { sha256: row.pointer_sha256, fetched_at: row.fetched_at,
         raw_file: String(row.raw_file || '').replace(/\\/g, '/') });
   }
-  const comparable = verification.records.filter(row => row.pointer_corpus_checked_url && row.pointer_corpus_sha256);
+  // Manual hash-bound captures are retained in the nationwide/manual ledgers,
+  // but they are not entries in the automated pointer corpus. Keep them out of
+  // this corpus-index comparison so a page capture is not reported as a
+  // missing corpus document.
+  const manual = verification.records.filter(row => row.pointer_corpus_checked_url && row.pointer_corpus_sha256
+    && row.pointer_corpus_raw_integrity === 'manual-hash-bound');
+  const comparable = verification.records.filter(row => row.pointer_corpus_checked_url && row.pointer_corpus_sha256
+    && row.pointer_corpus_raw_integrity !== 'manual-hash-bound');
   const unmatched = [], unindexed = [];
   for (const row of comparable) {
     const versions = byRequestedUrl.get(row.pointer_corpus_checked_url);
@@ -58,6 +65,7 @@ function build(verification, corpus) {
   return { summary: { hospitals: verification.records.length, pointer_provenance_rows: comparable.length,
     exact_url_hash_correlated: comparable.length - unmatched.length - unindexed.length,
     hash_unmatched_for_exact_url: unmatched.length, no_exact_url_corpus_entry: unindexed.length,
+    manual_hash_bound_rows: manual.length,
     historical_pointer_rows: historical.length,
     historical_not_indexed: historical.filter(row => row.index_status === 'not-indexed-after-failed-retry').length,
     historical_hash_correlated: historical.filter(row => row.index_status === 'hash-correlated').length,

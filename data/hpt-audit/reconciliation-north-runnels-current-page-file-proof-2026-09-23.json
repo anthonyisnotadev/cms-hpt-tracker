@@ -1,0 +1,32 @@
+{
+  "ccn": "451315",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://northrunnelshospital.com/",
+  "official_pricing_page": "https://northrunnelshospital.com/price-transparency",
+  "publisher_pricing_page": "https://secure.claraprice.net/price-transparency/north-runnels-hospital-district-tx",
+  "official_identity": "The first-party North Runnels site identifies a critical access hospital in Winters, Texas; the CMS roster address is 7821 State Highway 153 East, Winters, TX 79567.",
+  "official_page_status": 200,
+  "official_page_observation": "The current first-party page exposes a January 3, 2025 CDM/CSV link. A separate ClaraPrice compliance page published 2026-03-09 links a current CMS JSON file for North Runnels Hospital District.",
+  "mrf_url": "https://secure.claraprice.net/price-transparency/VREQ-1740765512660/machine-readable/751306626_north-runnels-hospital-district_standardcharges.json",
+  "mrf_status": 200,
+  "mrf_bytes": 2459778,
+  "mrf_sha256": "b37a3ff129387c6d34866be426928bf9616e72c4a22cf199dbaba38980b21f5f",
+  "declared_hospital_name": "North Runnels Hospital District",
+  "declared_location_name": "North Runnels Hospital District",
+  "declared_address": "7821 State Highway 153 East, Winters, TX 79567",
+  "declared_npi": "1205837770",
+  "declared_license": "000151",
+  "declared_license_state": "TX",
+  "declared_last_updated": "2026-03-09",
+  "cms_template_version": "3.0.0",
+  "attestation_observed": true,
+  "data_rows": 3498,
+  "root_pointer_urls": [
+    "https://northrunnelshospital.com/cms-hpt.txt",
+    "https://northrunnelshospital.com/.well-known/cms-hpt.txt"
+  ],
+  "root_pointer_statuses": [404, 404],
+  "disposition": "publisher-page-linked-cms-file-root-pointer-pending",
+  "interpretation": "The current publisher-hosted JSON has complete CMS 3.0.0 metadata matching the North Runnels roster identity, address, Texas license, NPI, date and attestation. The first-party site exposes an older January 2025 CDM and both root pointer variants returned 404; this is retained as page-linked publisher evidence, not a root-pointer compliance conclusion.",
+  "next_action": "Capture a first-party link to the current JSON or obtain a valid root cms-hpt.txt pointer; preserve the exact current file hash before promotion."
+}

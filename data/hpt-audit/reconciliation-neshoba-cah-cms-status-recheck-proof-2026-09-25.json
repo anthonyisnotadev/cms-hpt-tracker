@@ -1,0 +1,21 @@
+{
+  "ccn": "251340",
+  "observed_at": "2026-09-25T07:35:00Z",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=251340&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_response_bytes": 6840,
+  "cms_response_sha256": "f9f46e63e0138ac3af365997bb5dfe59de96befa635ef6e5a93ef989f6332e21",
+  "cms_record": {
+    "facility_id": "251340",
+    "facility_name": "NESHOBA COUNTY GENERAL HOSPITAL",
+    "address": "1001 HOLLAND AVENUE",
+    "citytown": "PHILADELPHIA",
+    "state": "MS",
+    "zip_code": "39350",
+    "hospital_type": "Critical Access Hospitals",
+    "hospital_ownership": "Government - Local"
+  },
+  "scope_observation": "The current CMS provider dataset lists the sibling critical-access CCN at the same Neshoba County General Hospital campus, but this dataset does not provide an effective conversion/status date or assign the current machine-readable file.",
+  "disposition": "current-cms-cah-listed-effective-date-and-file-scope-unresolved",
+  "next_action": "Obtain an effective-dated CMS enrollment/status source or publisher confirmation for CCNs 251340 and 250043 before assigning or excluding the shared-campus MRF."
+}

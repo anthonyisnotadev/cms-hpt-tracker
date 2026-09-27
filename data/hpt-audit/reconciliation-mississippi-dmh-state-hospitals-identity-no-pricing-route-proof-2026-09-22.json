@@ -1,0 +1,19 @@
+{
+  "observed_at": "2026-09-22T20:00:00Z",
+  "official_identity_sources": [
+    "https://www.mississippi.gov/agencies/south-mississippi-state-hospital",
+    "https://www.dmh.ms.gov/whoweare/behavioral-programs/"
+  ],
+  "official_identity_observation": "Mississippi government and DMH pages identify South Mississippi State Hospital in Purvis and North Mississippi State Hospital in Tupelo as DMH-operated behavioral-health programs.",
+  "pointer_checks": [
+    {"url": "https://www.mississippi.gov/cms-hpt.txt", "http_status": 404},
+    {"url": "https://www.dmh.ms.gov/cms-hpt.txt", "http_status": 404}
+  ],
+  "records": [
+    {"ccn": "254008", "name": "SOUTH MISSISSIPPI STATE HOSPITAL", "address": "823 HIGHWAY 589, PURVIS, MS 39475"},
+    {"ccn": "254009", "name": "NORTH MISSISSIPPI STATE HOSPITAL", "address": "1937 BRIAR RIDGE RD, TUPELO, MS 38804"}
+  ],
+  "disposition": "official-state-identity-no-pricing-route",
+  "interpretation": "State operation and identity are supported, but no facility-specific CMS pointer or MRF was recovered. The tracker does not infer an exemption from state operation alone.",
+  "next_action": "Locate a facility-specific DMH/state pricing route or publisher-provided current CSV/JSON, then verify exact identity, state, date, CMS version and usability before any correction."
+}

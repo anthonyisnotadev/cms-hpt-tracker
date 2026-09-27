@@ -1,0 +1,15 @@
+{
+  "ccn": "454108",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://cypresscreekhospital.com/",
+  "official_identity_sources": [
+    "https://jobs.uhs.com/cypress-creek-hospital",
+    "https://payerprice.com/hospitals/cypress-creek-hospital-454108"
+  ],
+  "official_identity": "UHS identifies Cypress Creek Hospital as a 128-bed acute-care psychiatric facility in Houston; provider records associate CCN 454108 with 17750 Cali Drive, Houston, TX 77090 and NPI 1730187568.",
+  "browser_observation": "Browser automation reached the first-party Cypress Creek domain but showed a security-verification interstitial. Direct requests to cms-hpt.txt and the likely pricing path returned HTTP 403.",
+  "pricing_observation": "No usable facility-specific CMS pointer or MRF bytes were retrieved. This is an access observation, not evidence that a file is absent, that the facility is closed, or that it is exempt.",
+  "disposition": "current-operator-identity-confirmed-pricing-route-client-denied",
+  "interpretation": "This replaces the stale domain-unknown label with a supported first-party domain and exact Cypress Creek identity while preserving the unresolved pricing route.",
+  "next_action": "Retry the first-party CMS pointer and pricing route through a materially different permitted browser/download route; require bounded bytes, Cypress Creek identity, Texas metadata, date/version and parsed usability before promotion."
+}

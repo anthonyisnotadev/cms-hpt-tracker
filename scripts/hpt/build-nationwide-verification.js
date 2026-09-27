@@ -16,6 +16,14 @@ const PRIVATE = path.join(ROOT, 'cms_data', 'hpt', 'nationwide-verification');
 const POINTER_DIR = path.join(ROOT, 'cms_data', 'hpt', 'pointer-corpus');
 const split = value => [...new Set(String(value || '').split('|').map(item => item.trim()).filter(Boolean))];
 const add = (map, key, row) => { if (!map.has(key)) map.set(key, []); map.get(key).push(row); };
+function hostnameFromUrl(value) {
+  try {
+    const raw = String(value || '').trim();
+    const hostname = new URL(/^[a-z][a-z0-9+.-]*:\/\//i.test(raw) ? raw : `https://${raw}`).hostname.toLowerCase();
+    return /^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)+$/i.test(hostname)
+      ? hostname : '';
+  } catch { return ''; }
+}
 
 function qualifyBrowserIdentity(review, hospital, addressReview = null) {
   if (!review || review.identity === 'conflicting') return review;
@@ -42,7 +50,7 @@ function qualifyBrowserIdentity(review, hospital, addressReview = null) {
   // the CMS roster while the MRF uses its parent association name). In that
   // case the exact address/state plus the dated first-party review closes the
   // name-alias gap without rewriting the file header.
-  const reviewedOperatorAlias = reviewedAddress && /operator|operated|association|parent|rename|facility/i.test(String(addressReview.basis || ''));
+  const reviewedOperatorAlias = reviewedAddress && /operator|operated|association|parent|rename|facility|typo|misspell/i.test(String(addressReview.basis || ''));
   if ((nameAgrees || reviewedOperatorAlias) && reviewedAddress) return { ...review, identity: 'corroborated', identity_gate: reviewedOperatorAlias && !nameAgrees ? 'reviewed-file-address-operator-alias' : 'reviewed-file-address-equivalence', address_review: addressReview };
   const addressAgrees = !!hospital?.address && addresses.some(value => strongAddressAgreement(hospital.address, value)
     && (recordedState ? recordedState === state : new RegExp('\\b' + state + '\\b', 'i').test(normalizeName(value))));
@@ -291,6 +299,8 @@ function applyBrowserPointerObservation(pointer, row, browserByUrl) {
 
 function disposition(row, pointer, selected, mrfReview = null, currentPointerLinksSelected = false) {
   if (row.finding === 'not-applicable-federal') return ['scope-exempt-federal', 'Federal facility; retain scope exclusion unless the project scope changes.'];
+  if (row.finding === 'not-applicable-indian-health-program') return ['scope-exempt-indian-health-program', 'Current evidence identifies an Indian Health Program-operated hospital; retain the 45 CFR 180.30(b)(2) scope classification unless operator or program status changes.'];
+  if (row.finding === 'not-applicable-state-hospital') return ['scope-exempt-state-hospital', 'Current exact-facility Texas state-hospital evidence supports the federal deemed-compliant scope classification under 45 CFR 180.30(b); revisit if the CCN, operator, or legal status changes.'];
   if (row.finding === 'not-applicable-closed') return ['scope-exempt-closed', 'Hospital closure is supported by dated official evidence; recheck only if hospital operations resume.'];
   if (selected.best && pointer.corpus_raw_integrity === 'hash-corroborated'
       && pointer.corpus_sha256 && !currentPointerLinksSelected
@@ -363,10 +373,191 @@ function main() {
   // evidence when the crawl has the pointer but no machine-readable header
   // row; never turn them into a verified-current claim automatically.
   const manualObservationFile = path.join(AUDIT, 'reconciliation-manual-access-observations.json');
-  const manualPointerRechecks = new Map((fs.existsSync(manualObservationFile)
-    ? JSON.parse(fs.readFileSync(manualObservationFile, 'utf8')).records || [] : [])
-    .filter(record => record.latest_pointer_recheck?.pointer_http_status === 200)
-    .map(record => [record.ccn, { ...record.latest_pointer_recheck, ccn: record.ccn }]));
+  const manualObservations = fs.existsSync(manualObservationFile)
+    ? JSON.parse(fs.readFileSync(manualObservationFile, 'utf8')).records || [] : [];
+  const omhObservationFile = path.join(AUDIT, 'reconciliation-omh-unreviewed-cohort-proof.json');
+  const uhsDirectFileProofFile = path.join(AUDIT, 'reconciliation-uhs-direct-file-proof.json');
+  // UHS direct-file proofs are deliberately separate from the manual-access
+  // ledger because their exact first-party pointer routes were challenged.
+  // Bring their bounded, identity-matched file metadata into the overlay as
+  // file-only evidence, while retaining an unresolved disposition until
+  // pointer linkage is independently recovered. This prevents a newer
+  // pointer challenge from erasing stronger dated file evidence.
+  const uhsDirectFileObservations = fs.existsSync(uhsDirectFileProofFile)
+    ? (JSON.parse(fs.readFileSync(uhsDirectFileProofFile, 'utf8')).records || []).map(record => ({
+      ccn: record.ccn,
+      observed_at: record.observed_at,
+      proof_file: 'reconciliation-uhs-direct-file-proof.json',
+      pointer_url: record.pointer_url || '',
+      pointer_status: record.pointer_browser_status || '',
+      facility_file_url: record.mrf_url || '',
+      file_bytes: record.bytes || 0,
+      file_sha256: record.sha256 || '',
+      declared_hospital_name: record.declared_hospital_name || '',
+      declared_address: record.declared_address || '',
+      declared_license_state: record.declared_state || '',
+      declared_last_updated: record.declared_date || '',
+      cms_template_version: record.version || '',
+      manual_identity_gate: 'reviewed-file-address-equivalence',
+      disposition: 'official-website-not-identified-completed-search',
+      interpretation: 'Direct file bytes and header identity are retained separately from the challenged first-party pointer; exact pointer linkage remains unresolved.',
+      next_action: 'Recover the exact first-party cms-hpt.txt pointer through a permitted route, then compare its declared MRF URL to the retained file before promotion.'
+    })) : [];
+  const overlayManualObservations = manualObservations.concat(uhsDirectFileObservations,
+    fs.existsSync(omhObservationFile) ? JSON.parse(fs.readFileSync(omhObservationFile, 'utf8')).records || [] : []);
+  // Multiple overlays can describe the same CCN (for example, an older
+  // cohort quarantine plus a later hash-bound manual proof). Resolve the
+  // newest observation first, then apply conflict handling only if that newest
+  // observation is itself a conflict. Otherwise stale uncertainty can
+  // override a later supported promotion. Older records remain in history.
+  const latestManualObservationByCcn = new Map();
+  for (const record of overlayManualObservations) {
+    const prior = latestManualObservationByCcn.get(record.ccn);
+    if (!prior || String(record.observed_at || '') > String(prior.observed_at || '')) {
+      latestManualObservationByCcn.set(record.ccn, record);
+    }
+  }
+  const manualConflictObservations = new Map([...latestManualObservationByCcn.entries()]
+    .filter(([, record]) => /license-state-conflict|address-(?:variant|conflict)|address-field-conflict|pointer-facility-match-unresolved|named-pointer-entry-shares|not-named-in-retained-root/i
+      .test(`${record.disposition || ''} ${record.interpretation || ''}`)));
+  const manualPointerRechecks = new Map();
+  const manualPageFileRechecks = new Map();
+  const manualAlternateFiles = new Map();
+  const manualObservationByCcn = new Map();
+  for (const record of overlayManualObservations) {
+    manualObservationByCcn.set(record.ccn, record);
+    // Some reviewed observations predate the pointer-recheck shape but still
+    // contain a complete official-page -> file -> header proof chain. Convert
+    // only those records with bounded bytes, a digest, explicit file-level
+    // identity metadata, and a file-header identity gate. This keeps page-
+    // linked evidence separate from root-pointer evidence while preventing a
+    // valid manual proof from being dropped by the nationwide overlay.
+    const gate = String(record.manual_identity_gate || '');
+    const reviewedFileUrl = record.facility_file_url || record.page_file_url || record.publisher_file_url || record.mrf_url || '';
+    const reviewedFileBytes = Number(record.file_bytes || record.file_sample_bytes || record.mrf_total_bytes
+      || record.publisher_file_total_bytes || record.publisher_file_recheck_sample_bytes
+      || record.facility_file_bytes || record.facility_file_sample_bytes || record.page_file_bytes || record.page_file_sample_bytes) || 0;
+    const reviewedFileSha = record.file_sha256 || record.file_sample_sha256 || record.mrf_sha256
+      || record.publisher_file_prefix_sha256 || record.publisher_file_recheck_sample_sha256
+      || record.facility_file_sha256 || record.facility_file_sample_sha256 || record.page_file_sha256 || record.page_file_sample_sha256 || '';
+    const reviewedName = record.declared_hospital_name || record.page_file_declared_name || record.facility_file_declared_name || record.publisher_file_declared_name || record.official_facility_name || '';
+    const reviewedLocation = record.declared_location_name || record.page_file_declared_name || record.facility_file_declared_name || record.publisher_file_declared_location_name || record.publisher_file_declared_name || record.official_facility_name || '';
+    const reviewedAddress = record.declared_address || record.page_file_declared_address || record.facility_file_declared_address || record.publisher_file_declared_address || record.official_facility_address || '';
+    const reviewedState = record.declared_license_state || record.page_file_license_state || record.facility_file_license_state || record.publisher_file_license_state || '';
+    const reviewedDate = record.declared_last_updated || record.page_file_declared_last_updated || record.page_file_declared_update || record.facility_file_declared_last_updated || record.publisher_file_declared_last_updated || '';
+    const reviewedVersion = record.cms_template_version || record.page_file_cms_template_version || record.facility_file_cms_template_version || record.publisher_file_cms_template_version || '';
+    const hasFileIdentity = !!reviewedName && !!reviewedAddress
+      && (!!reviewedState || gate === 'reviewed-file-address-equivalence');
+    const reviewedGate = gate || (hasFileIdentity ? 'official-page-file-header-name-address-state-agree' : '');
+    if (reviewedFileUrl && reviewedFileBytes > 0 && reviewedFileSha
+      && hasFileIdentity && (/file-header/i.test(reviewedGate) || reviewedGate === 'reviewed-file-address-equivalence'
+        // Manual page-linked proofs use several explicit identity-gate
+        // vocabularies (exact-facility, official-page-file, current-file,
+        // etc.). If the recorded source URL is not a pointer document, retain
+        // the proof as page-linked even when its gate does not contain the
+        // historical "file-header" token.
+        || !record.pointer_url || !/(?:^|\/)\w+\.txt(?:$|[?#])/i.test(String(record.pointer_url)))
+      && /^(verified-current-mrf|verified-stale-mrf|verified-template-review)$/.test(record.disposition || '')) {
+      manualPageFileRechecks.set(record.ccn, {
+        observed_at: record.observed_at,
+        proof_file: record.proof_file || '',
+        pointer_url: record.official_pricing_page || record.official_page_url || record.official_domain || '',
+        pointer_http_status: Number(record.official_page_status || 200),
+        pointer_declared_location_name: reviewedLocation,
+        pointer_declared_mrf_url: reviewedFileUrl,
+        exact_pointer_mrf_status: Number(record.file_status || record.publisher_file_status || record.mrf_http_status || 200),
+        manual_file_only: true,
+        manual_identity_gate: reviewedGate,
+        declared_hospital_name: reviewedName,
+        declared_location_name: reviewedLocation,
+        declared_address: reviewedAddress,
+        declared_license_state: reviewedState,
+        declared_last_updated: reviewedDate || record.file_declared_date_from_name || '',
+        cms_template_version: reviewedVersion,
+        declared_npi: record.declared_npi || '',
+        attestation: record.attestation === true,
+        manual_disposition: record.disposition,
+        next_action: record.next_action || ''
+      });
+    }
+    if (record.alternate_pricing_file_proof) manualAlternateFiles.set(record.ccn, {
+      proof: record.alternate_pricing_file_proof,
+      name: record.alternate_pricing_file_name || '',
+      bytes: Number(record.alternate_pricing_file_bytes) || 0,
+      sha256: record.alternate_pricing_file_sha256 || '',
+      status: Number(record.alternate_pricing_file_status) || 0,
+      hospital_name: record.alternate_pricing_file_declared_hospital_name || '',
+      address: record.alternate_pricing_file_declared_address || '',
+      license_state: record.alternate_pricing_file_declared_license_state || '',
+      date: record.alternate_pricing_file_declared_last_updated || '',
+      version: record.alternate_pricing_file_cms_template_version || '',
+      npi: record.alternate_pricing_file_declared_npi || '',
+      attestation: record.alternate_pricing_file_attestation === true,
+      usable_rows: record.alternate_pricing_file_usable_rows === true,
+      next_action: record.next_action || ''
+    });
+    if (record.latest_pointer_recheck?.pointer_http_status === 200) {
+      // A successful alias/range retrieval may carry dated header metadata
+      // under latest_successful_bounded_retrieval even when the exact
+      // pointer-declared URL remains transport-unresolved. Surface those
+      // observed fields for audit display, but keep the exact pointer status
+      // and identity gate separate so a recheck cannot promote usability.
+      const latest = record.latest_successful_bounded_retrieval || {};
+      manualPointerRechecks.set(record.ccn, {
+        ...record.latest_pointer_recheck,
+        ccn: record.ccn,
+        declared_last_updated: record.latest_pointer_recheck.declared_last_updated || latest.declared_last_updated || '',
+        cms_template_version: record.latest_pointer_recheck.cms_template_version || latest.cms_template_version || '',
+        declared_hospital_name: record.latest_pointer_recheck.declared_hospital_name || latest.declared_hospital_name || '',
+        declared_location_name: record.latest_pointer_recheck.declared_location_name || latest.declared_location_name || '',
+        declared_address: record.latest_pointer_recheck.declared_address || latest.declared_address || '',
+        declared_license_state: record.latest_pointer_recheck.declared_license_state || latest.declared_license_state || '',
+        declared_npi: record.latest_pointer_recheck.declared_npi || latest.declared_npi || ''
+      });
+      continue;
+    }
+    // Newer manual observations use the same explicit fields as the proof
+    // ledger. Consume them generically so a hash-bound pointer/file review is
+    // visible in nationwide verification instead of leaving the older crawl
+    // row as if no evidence had been recovered. Missing fields remain empty;
+    // this overlay never fabricates identity or CMS metadata.
+    // A facility_file_url paired with a pricing page is page-linked evidence,
+    // not a root-pointer recheck. Only treat the generic shape as a pointer
+    // observation when pointer_url is a pointer document (or is absent).
+    const pageSourceUrl = record.official_pricing_page || record.official_page_url || record.source_page_url || '';
+    const pointerDocument = (!record.pointer_url && !pageSourceUrl)
+      || /(?:^|\/)cms-hpt\.txt(?:$|[?#])/i.test(String(record.pointer_url))
+      || /(?:^|\/)[^/]+\.txt(?:$|[?#])/i.test(String(record.pointer_url));
+    if (pointerDocument && record.facility_file_url
+      && record.declared_hospital_name && record.declared_address
+      && record.declared_license_state && record.declared_last_updated
+      && record.cms_template_version) {
+      manualPointerRechecks.set(record.ccn, {
+        ccn: record.ccn,
+        observed_at: record.observed_at,
+        pointer_url: record.pointer_url || '',
+        pointer_sha256: record.pointer_sha256 || '',
+        pointer_http_status: record.pointer_status || '',
+        pointer_declared_mrf_url: record.facility_file_url,
+        pointer_declared_location_name: record.declared_hospital_name,
+        exact_pointer_mrf_status: record.file_range_status || record.mrf_status || '',
+        file_sample_bytes: record.file_sample_bytes || 0,
+        file_sample_sha256: record.file_sample_sha256 || '',
+        declared_hospital_name: record.declared_hospital_name,
+        declared_location_name: record.declared_location_name || record.declared_hospital_name,
+        declared_address: record.declared_address,
+        declared_license_state: record.declared_license_state,
+        declared_last_updated: record.declared_last_updated,
+        cms_template_version: record.cms_template_version,
+        attestation: record.attestation === true,
+        declared_npi: record.declared_npi || '',
+        manual_identity_gate: record.manual_identity_gate || '',
+        manual_disposition: record.disposition || '',
+        next_action: record.next_action || '',
+        manual_file_only: record.pointer_status !== 200
+      });
+    }
+  }
   const roster = new Map(JSON.parse(fs.readFileSync(path.join(ROOT, 'cms_data/hpt/roster.json'), 'utf8')).map(row => [row.ccn, row]));
   const reviewedExclusions = JSON.parse(fs.readFileSync(path.join(AUDIT, 'reviewed-file-attribution-exclusions.json'), 'utf8')).records;
   const exclusionByCcn = new Map();
@@ -424,12 +615,22 @@ function main() {
       ? resolutionByCcn.get(row.ccn) : null;
     const discovery = discoveryByCcn.get(row.ccn);
     const searchReview = nationwideSearchByCcn.get(row.ccn);
-    const reviewedDomain = searchReview?.status === 'official' ? searchReview.domain
-      : discovery?.website?.identity === 'corroborated' ? discovery.website.domain : '';
+    const manualIdentityObservation = latestManualObservationByCcn.get(row.ccn);
+    const manualDomain = [
+      manualIdentityObservation?.current_operator_domain,
+      manualIdentityObservation?.current_operator_domain_lead,
+      manualIdentityObservation?.current_official_domain,
+      manualIdentityObservation?.official_hospital_domain,
+      manualIdentityObservation?.official_domain,
+      manualIdentityObservation?.official_site
+    ].map(hostnameFromUrl).find(Boolean) || '';
+    const reviewedDomain = manualDomain
+      || (searchReview?.status === 'official' ? hostnameFromUrl(searchReview.domain) : '')
+      || (discovery?.website?.identity === 'corroborated' ? hostnameFromUrl(discovery.website.domain) : '');
     const websiteReview = searchReview?.status === 'candidate' ? 'candidate'
       : searchReview?.status === 'completed-no-official' ? 'completed-no-official'
         : discovery?.website?.identity === 'unverified' || discovery?.website?.plausible ? 'candidate'
-          : discovery?.disposition === 'search-completed-no-official' ? 'completed-no-official' : '';
+          : discovery?.disposition === 'search-completed-no-official' && !manualDomain ? 'completed-no-official' : '';
     const effective = { ...row, domain: row.domain || reviewedDomain, website_review: websiteReview };
     // A corrected hospital domain cannot inherit a sibling hospital's old
     // pointer or MRF merely because its pointer once named this facility.
@@ -439,12 +640,14 @@ function main() {
       ? sourceHeaders.filter(header => header.mrf_url !== exclusion.excluded_mrf_url) : sourceHeaders,
     row.ccn, row.hospital_name);
     const best = selected.best;
-    const manualPointerRecheck = manualPointerRechecks.get(row.ccn);
+    const manualPointerRecheck = manualPointerRechecks.get(row.ccn) || manualPageFileRechecks.get(row.ccn);
+    const manualAlternateFile = manualAlternateFiles.get(row.ccn);
+    const manualObservation = manualObservationByCcn.get(row.ccn);
     // Retain the separately observed file header, but never treat a file
     // harvested from HTML metadata as pointer-declared evidence.
     const invalidatedHeader = (invalidatedHeadersByCcn.get(row.ccn) || [])[0] || null;
     const candidate = best || selected.review[0] || selected.linked[0] || invalidatedHeader;
-    const pointer = manualPointerRecheck ? {
+    let pointer = manualPointerRecheck && !manualPointerRecheck.manual_file_only ? {
       state: 'retrieved-facility-linked-manual-review',
       observed_at: manualPointerRecheck.observed_at,
       result: String(manualPointerRecheck.pointer_http_status),
@@ -467,31 +670,75 @@ function main() {
         : 'Current hospital-domain root pointer returned HTTP ' + siteCorrection.evidence.rootPointerHttpStatus
     } : applyBrowserPointerObservation(
       indexedPointerObservation(effective, targetIndexes, corpusByCcn.get(row.ccn) || [], best?.mrf_url || ''), effective, browserPointerByUrl);
+    const manualPointerChallenge = manualObservation?.latest_pointer_challenge_recheck
+      || Object.entries(manualObservation || {}).find(([key, value]) => /^latest_pointer_challenge_recheck/.test(key)
+        && value && typeof value === 'object')?.[1];
+    const manualChallengePointerUrl = manualObservation?.pointer_url
+      || (manualDomain ? `https://${manualDomain}/cms-hpt.txt` : '');
+    if (manualPointerChallenge?.pointer_status && manualChallengePointerUrl) {
+      pointer = {
+        ...pointer,
+        state: Number(manualPointerChallenge.pointer_status) >= 400
+          ? 'access-denied-or-rate-limited-to-client' : pointer.state,
+        observed_at: manualPointerChallenge.observed_at || pointer.observed_at,
+        result: String(manualPointerChallenge.pointer_status),
+        reason: manualPointerChallenge.result || manualPointerChallenge.disposition || pointer.reason,
+        corpus_checked_url: manualChallengePointerUrl,
+        corpus_final_url: manualChallengePointerUrl
+      };
+    }
     const headerEvidence = headerEvidenceForSelection(selected, candidate, row.ccn);
     const manualMrfReview = manualPointerRecheck ? {
       status: 'retrieved', identity: 'corroborated',
       target: manualPointerRecheck.pointer_declared_mrf_url,
-      declared_hospital_name: manualPointerRecheck.pointer_declared_location_name,
-      declared_location_name: manualPointerRecheck.pointer_declared_location_name,
-      declared_address: 'One Hospital Plaza, Stamford, CT 06904',
-      declared_license_state: 'CT', declared_last_updated: '2026-04-01',
-      cms_template_version: '3.0.0', observed_at: manualPointerRecheck.observed_at,
+      declared_hospital_name: manualPointerRecheck.declared_hospital_name || manualPointerRecheck.pointer_declared_location_name,
+      declared_location_name: manualPointerRecheck.declared_location_name || manualPointerRecheck.pointer_declared_location_name,
+      declared_address: manualPointerRecheck.declared_address || '',
+      declared_license_state: manualPointerRecheck.declared_license_state || '',
+      declared_last_updated: manualPointerRecheck.declared_last_updated || '',
+      cms_template_version: manualPointerRecheck.cms_template_version || '',
+      observed_at: manualPointerRecheck.observed_at,
       identity_gate: 'recorded-file-name-street-state-agree'
     } : null;
-    const mrfReview = qualifyBrowserIdentity(browserMrfByUrl.get(normalizeUrl(candidate?.mrf_url || row.mrf_url || '')) || manualMrfReview, roster.get(row.ccn), addressReviews.get(row.ccn));
+    const mrfReview = manualPointerRecheck?.manual_identity_gate
+      ? { ...manualMrfReview, identity: 'corroborated', identity_gate: manualPointerRecheck.manual_identity_gate }
+      : qualifyBrowserIdentity(browserMrfByUrl.get(normalizeUrl(candidate?.mrf_url || row.mrf_url || '')) || manualMrfReview, roster.get(row.ccn), addressReviews.get(row.ccn));
     const currentPointerLinksSelected = !!best && pointerFilePairs.has(
       `${pointer.corpus_sha256}\0${normalizeUrl(best.mrf_url)}`);
-    const [label, genericNextAction] = disposition(effective, pointer, selected, mrfReview, currentPointerLinksSelected);
+    const [computedLabel, genericNextAction] = disposition(effective, pointer, selected, mrfReview, currentPointerLinksSelected);
+    const manualDisposition = manualPointerRecheck?.manual_disposition || manualObservation?.disposition;
+    const label = manualConflictObservations.has(row.ccn) ? 'linked-mrf-header-unmatched'
+      : ['verified-template-review', 'verified-stale-mrf', 'verified-current-mrf',
+      'verified-facility-metadata-unresolved', 'pointer-linked-file-review-pending',
+      'pointer-linked-file-not-probed', 'mrf-verification-pending',
+      'file-custom-workbook-review'].includes(manualDisposition)
+        ? manualDisposition : computedLabel;
     const next_action = siteCorrection
       ? (siteCorrection.evidence.next_action || 'Verify the repaired hospital-domain root pointer and exact MRF target; separately review the current page-linked CSV template and date.')
-      : exclusion ? exclusion.next_action : genericNextAction;
+      : exclusion ? exclusion.next_action : manualPointerRecheck?.next_action || manualObservation?.next_action || manualAlternateFile?.next_action || genericNextAction;
     const fileEvidence = manualPointerRecheck ? {
-      declared_hospital_name: manualPointerRecheck.pointer_declared_location_name,
-      declared_location_name: manualPointerRecheck.pointer_declared_location_name,
-      declared_address: 'One Hospital Plaza, Stamford, CT 06904',
-      declared_license_state: 'CT', declared_last_updated: '2026-04-01',
-      cms_template_version: '3.0.0', observed_at: manualPointerRecheck.observed_at,
-      metadata_source: 'manual-pointer-recheck'
+      declared_hospital_name: manualPointerRecheck.declared_hospital_name || manualPointerRecheck.pointer_declared_location_name,
+      declared_location_name: manualPointerRecheck.declared_location_name || manualPointerRecheck.pointer_declared_location_name,
+      declared_address: manualPointerRecheck.declared_address || '',
+      declared_license_state: manualPointerRecheck.declared_license_state || '',
+      declared_last_updated: manualPointerRecheck.declared_last_updated || '',
+      cms_template_version: manualPointerRecheck.cms_template_version || '', observed_at: manualPointerRecheck.observed_at,
+      metadata_source: 'manual-pointer-recheck',
+      ...(manualPointerRecheck.alternate_pricing_file_proof ? {
+        alternate_pricing_file_proof: manualPointerRecheck.alternate_pricing_file_proof,
+        alternate_pricing_file_name: manualPointerRecheck.alternate_pricing_file_name || '',
+        alternate_pricing_file_bytes: Number(manualPointerRecheck.alternate_pricing_file_bytes) || 0,
+        alternate_pricing_file_sha256: manualPointerRecheck.alternate_pricing_file_sha256 || '',
+        alternate_pricing_file_status: Number(manualPointerRecheck.alternate_pricing_file_status) || 0,
+        alternate_pricing_file_declared_hospital_name: manualPointerRecheck.alternate_pricing_file_declared_hospital_name || '',
+        alternate_pricing_file_declared_address: manualPointerRecheck.alternate_pricing_file_declared_address || '',
+        alternate_pricing_file_declared_license_state: manualPointerRecheck.alternate_pricing_file_declared_license_state || '',
+        alternate_pricing_file_declared_last_updated: manualPointerRecheck.alternate_pricing_file_declared_last_updated || '',
+        alternate_pricing_file_cms_template_version: manualPointerRecheck.alternate_pricing_file_cms_template_version || '',
+        alternate_pricing_file_declared_npi: manualPointerRecheck.alternate_pricing_file_declared_npi || '',
+        alternate_pricing_file_attestation: manualPointerRecheck.alternate_pricing_file_attestation === true,
+        alternate_pricing_file_usable_rows: manualPointerRecheck.alternate_pricing_file_usable_rows === true
+      } : {})
     } : selectedFileEvidence(selected, candidate, mrfReview);
     const record = { ccn: row.ccn, hospital_name: row.hospital_name, city: row.city, state: row.state, hospital_type: row.type,
       prior_finding: row.finding, standing_finding: row.finding,
@@ -511,6 +758,8 @@ function main() {
       // provenance even before its file header has been probed. Do not hide
       // that exact URL merely because the older crawl had no pointer_url.
       pointer_state: pointer.state, pointer_url: siteCorrection?.evidence.rootPointerUrl || manualPointerRecheck?.pointer_url || candidate?.pointer_urls || row.pointer_url
+        || manualObservation?.pointer_url
+        || manualChallengePointerUrl
         || (pointer.state === 'retrieved-facility-linked' ? pointer.corpus_checked_url : ''), pointer_observed_at: pointer.observed_at,
       pointer_result: pointer.result, pointer_reason: pointer.reason,
       pointer_corpus_checked_url: pointer.corpus_checked_url || '', pointer_corpus_final_url: pointer.corpus_final_url || '',
@@ -523,7 +772,8 @@ function main() {
       pointer_historical_raw_integrity: pointer.historical_raw_integrity || '',
       browser_pointer_status: pointer.browser?.status || '', browser_pointer_observed_at: pointer.browser?.observed_at || '',
       browser_pointer_final_url: pointer.browser?.final_url || '',
-      mrf_state: manualPointerRecheck ? 'linked-file-transport-unresolved' : best ? metadataState(best)
+      mrf_state: manualPointerRecheck ? (manualPointerRecheck.manual_file_only
+        ? 'page-linked-file-retrieved' : 'linked-file-transport-unresolved') : best ? metadataState(best)
         : mrfReview?.status === 'retrieved' && mrfReview.identity === 'corroborated' ? browserMetadataState(mrfReview)
           : selected.review.length ? 'identity-review' : selected.linked.length ? 'linked-unmatched-or-unreachable'
             : invalidatedHeader ? 'file-header-retained-pointer-unretrieved' : 'not-assessed',
@@ -544,6 +794,21 @@ function main() {
           : mrfReview?.identity === 'conflicting' ? 'conflicting-reviewed-identity'
             : selected.review.length ? 'review-required' : selected.linked.length ? 'not-corroborated' : 'not-assessed',
       ...fileEvidence,
+      ...(manualAlternateFile ? {
+        alternate_pricing_file_proof: manualAlternateFile.proof,
+        alternate_pricing_file_name: manualAlternateFile.name,
+        alternate_pricing_file_bytes: manualAlternateFile.bytes,
+        alternate_pricing_file_sha256: manualAlternateFile.sha256,
+        alternate_pricing_file_status: manualAlternateFile.status,
+        alternate_pricing_file_declared_hospital_name: manualAlternateFile.hospital_name,
+        alternate_pricing_file_declared_address: manualAlternateFile.address,
+        alternate_pricing_file_declared_license_state: manualAlternateFile.license_state,
+        alternate_pricing_file_declared_last_updated: manualAlternateFile.date,
+        alternate_pricing_file_cms_template_version: manualAlternateFile.version,
+        alternate_pricing_file_declared_npi: manualAlternateFile.npi,
+        alternate_pricing_file_attestation: manualAlternateFile.attestation,
+        alternate_pricing_file_usable_rows: manualAlternateFile.usable_rows
+      } : {}),
       observed_at: label === 'selected-file-only-in-earlier-pointer-version'
         ? pointer.observed_at || fileEvidence.observed_at || ''
         : fileEvidence.observed_at || pointer.observed_at || '', disposition: label, next_action,
@@ -554,11 +819,19 @@ function main() {
         matched_mrf_candidates: selected.matched.length, review_mrf_candidates: selected.review.length,
         linked_mrf_candidates: selected.linked.length }, report_generated_at: generated_at };
     const resolution = resolutionByCcn.get(row.ccn);
-    const superseded = reviewedResolutionSupersedes(resolution, record.observed_at, appliedResolutions.has(row.ccn));
-    const retained = !superseded && standingEvidenceRetained(record.prior_finding, record.disposition);
-    const supportedIdentity = !superseded && isSupportedIdentityUncertainty(resolution)
+    const manualConflict = manualConflictObservations.get(row.ccn);
+    // A later manual observation that explicitly documents a state, address,
+    // or facility-identity conflict reopens the CCN for current verification;
+    // an older applied resolution must not make that conflict disappear from
+    // the nationwide overlay.
+    const superseded = !manualConflict
+      && reviewedResolutionSupersedes(resolution, record.observed_at, appliedResolutions.has(row.ccn));
+    const retained = !manualConflict && !superseded && standingEvidenceRetained(record.prior_finding, record.disposition);
+    const supportedIdentity = !manualConflict && !superseded && isSupportedIdentityUncertainty(resolution)
       && record.prior_finding === 'not-assessed-identity-conflict';
-    return { ...record, observation_role: superseded ? 'superseded-retry' : retained ? 'incomplete-retry-standing-retained' : 'current-observation',
+    return { ...record,
+      ...(manualConflict?.observed_at ? { observed_at: manualConflict.observed_at } : {}),
+      observation_role: superseded ? 'superseded-retry' : retained ? 'incomplete-retry-standing-retained' : 'current-observation',
       latest_observation_superseded: superseded,
       standing_evidence_retained: retained,
       supported_identity_uncertainty: supportedIdentity,

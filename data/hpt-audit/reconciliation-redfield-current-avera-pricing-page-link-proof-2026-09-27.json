@@ -1,0 +1,38 @@
+{
+  "ccn": "431316",
+  "hospital_name": "Community Memorial Hospital Avera",
+  "observed_at": "2026-09-27T07:47:53Z",
+  "source_type": "current-first-party-price-transparency-page",
+  "source_url": "https://www.avera.org/patients-visitors/price-transparency/",
+  "source_observation": "The current Avera Price Transparency page lists a South Dakota standard-charges link labeled '466000400 redfield-community-memorial standard charges'. The exact target matches the URL already retained from Avera's root pointer: https://www.avera.org/app/files/public/ab83b4b4-beb0-4a03-897d-6ce6983a71c5/466000400_redfield-community-memorial_standardcharges.csv. The page labels its Redfield Community Memorial download July 20, 2026.",
+  "facility_identity_source": "https://locations.avera.org/community-memorial-hospital-avera-redfield",
+  "facility_identity_observation": "Avera's location page identifies Community Memorial Hospital Avera at 111 W 10th Ave, Redfield, SD 57469.",
+  "prior_pointer_url": "https://avera.org/cms-hpt.txt",
+  "prior_pointer_sha256": "c03ea0025ff6efa9145a4b528d25d9f09010fe9ad607668c2d9bfccb660229ba",
+  "mrf_url": "https://www.avera.org/app/files/public/ab83b4b4-beb0-4a03-897d-6ce6983a71c5/466000400_redfield-community-memorial_standardcharges.csv",
+  "retrieval": {
+    "method": "bounded HTTP Range bytes=0-65535; separate in-app browser navigation; official-page link resolution",
+    "direct_http_status": 403,
+    "direct_response_bytes": 530,
+    "direct_response_sha256": "f8714dc1c461c48a0220bdeb89fcf2aed0c1143fc9a88210dd586509eebafa42",
+    "direct_response_type": "Akamai Access Denied HTML",
+    "browser_result": "Akamai Access Denied before CSV bytes",
+    "page_link_resolution": "The web page reader resolved the exact CSV target but could not render it because the target content type is text/csv. No file bytes or header metadata were exposed by that reader."
+  },
+  "evidence_gained": "A current first-party Avera price-transparency source independently lists the exact same Redfield file URL as the previously retained root-pointer target, and assigns it a July 20, 2026 label. This improves current page/link provenance; it is not new MRF-byte or CMS-header evidence.",
+  "limitations": [
+    "No CSV bytes or CMS template header were obtained.",
+    "The 403 is a client/edge transport observation, not proof of file absence or noncompliance.",
+    "The page label is not a substitute for a file-declared update date, CMS version, attestation, or parsed usability.",
+    "No promotion or count reduction is supported."
+  ],
+  "disposition": "retain-mrf-request-unsuccessful",
+  "count_effect": 0,
+  "next_action": "Obtain a materially different publisher-enabled route or publisher-provided copy for the exact CSV, then hash-bind bounded bytes and verify the Redfield facility identity, address/state, CMS version/date, attestation and parsed usability. Preserve the 403 as transport evidence only; do not retry unchanged routes or infer compliance/noncompliance.",
+  "sources": [
+    "https://www.avera.org/patients-visitors/price-transparency/",
+    "https://locations.avera.org/community-memorial-hospital-avera-redfield",
+    "https://avera.org/cms-hpt.txt",
+    "https://www.avera.org/app/files/public/ab83b4b4-beb0-4a03-897d-6ce6983a71c5/466000400_redfield-community-memorial_standardcharges.csv"
+  ]
+}

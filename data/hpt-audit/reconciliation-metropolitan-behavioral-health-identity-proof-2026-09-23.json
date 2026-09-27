@@ -1,0 +1,30 @@
+{
+  "ccn": "234045",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "roster_identity": {
+    "name": "METROPOLITAN BEHAVIORAL HEALTH",
+    "address": "18001 ROTUNDA DRIVE",
+    "city": "DEARBORN",
+    "state": "MI",
+    "zip": "48124"
+  },
+  "current_operator_domain": "https://metropolitanbh.com/",
+  "identity_sources": [
+    {
+      "url": "https://www.michigan.gov/mdhhs/keep-mi-healthy/mentalhealth/mentalhealth/recipientrights/counties/wayne-county",
+      "observation": "Michigan MDHHS lists Metropolitan Behavioral Health in Dearborn at Rotunda Drive and identifies the facility in its Wayne County hospital rights directory."
+    },
+    {
+      "url": "https://www.dearbornareachamber.org/directory/listing/metropolitan-behavioral-health/",
+      "observation": "The Dearborn Area Chamber listing links metropolitanbh.com and identifies Metropolitan Behavioral Health at 18001 Rotunda Drive, Dearborn, MI 48124."
+    },
+    {
+      "url": "https://www.linkedin.com/company/metropolitanbh",
+      "observation": "The facility's public organization profile identifies metropolitanbh.com and the same Dearborn location; it also identifies Universal Health Services affiliation in the current provider ecosystem."
+    }
+  ],
+  "browser_observation": "The current metropolitanbh.com root rendered a Cloudflare security-verification challenge in the permitted browser; no pricing page, cms-hpt.txt or MRF bytes were exposed.",
+  "disposition": "official-domain-identified-cloudflare-access-blocked",
+  "interpretation": "The official domain and exact roster identity are independently corroborated, replacing the earlier no-official-domain discovery result. The access challenge is a transport observation only; no file absence, compliance or current pricing conclusion is inferred.",
+  "next_action": "Retry the identified official domain after the Cloudflare challenge clears or obtain a publisher-provided current CMS pointer/MRF URL; validate facility identity and metadata before promotion."
+}

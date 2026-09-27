@@ -40,6 +40,28 @@ const identityRouteProofs = new Map([
   ['521318', 'reconciliation-ladd-osceola-current-identity-route-proof-2026-09-20.json'],
 ]);
 
+const isoReviewDate = value => typeof value === 'string'
+  && /^\d{4}-\d\d-\d\d(?:T|$)/.test(value) ? value : '';
+
+function latestNestedManualReviewAt(manual) {
+  const dates = [];
+  const visit = value => {
+    if (!value || typeof value !== 'object') return;
+    if (Array.isArray(value)) {
+      value.forEach(visit);
+      return;
+    }
+    for (const [key, nested] of Object.entries(value)) {
+      if (typeof nested === 'string'
+        && /(observed|reviewed|checked|updated|retrieved|recheck|at$)/i.test(key)
+        && isoReviewDate(nested)) dates.push(nested);
+      else if (nested && typeof nested === 'object') visit(nested);
+    }
+  };
+  visit(manual);
+  return dates.sort().at(-1) || '';
+}
+
 const stages = {
   'mrf-facility-identity-unresolved': {
     tier: 1, gate: 'file-identity',
@@ -56,6 +78,10 @@ const stages = {
   'pointer-linked-file-review-pending': {
     tier: 2, gate: 'pointer-file-page-reconciliation',
     action: 'Reconcile the reviewed pointer-linked file and current pricing-page download leads, including complete access and declared metadata, before a current-file finding.',
+  },
+  'file-custom-workbook-review': {
+    tier: 2, gate: 'custom-workbook-identity-and-format',
+    action: 'Determine whether the official workbook is an exact facility MRF and whether a CMS CSV/JSON replacement exists; do not assign a broader system workbook to this CCN.',
   },
   'mrf-request-unsuccessful': {
     tier: 1, gate: 'file-access',
@@ -80,6 +106,10 @@ const stages = {
   'official-website-not-identified-completed-search': {
     tier: 5, gate: 'official-site-identity',
     action: 'Resolve the current legal/operator name and first-party site for the roster address before testing any pointer or file.',
+  },
+  'candidate-website-identity-unverified': {
+    tier: 4, gate: 'official-site-identity',
+    action: 'Verify the candidate against first-party hospital name and address evidence; only then test its pricing page, root pointer and facility-linked MRF.',
   },
 };
 
@@ -264,12 +294,17 @@ function build(reconciliation, verification) {
       && houstonCountyProof.pointer_safe_fields_same_as_retained === true
       && houstonCountyProof.file_declared_license_state === row.state
       && houstonCountyProof.file_declared_address !== houstonCountyProof.pricing_page_facility_address;
+    const houstonCrossFacilityReview = row.ccn === '441322'
+      && manual?.latest_cross_facility_address_review_2026_09_27?.proof_file === 'reconciliation-houston-county-lexington-cross-facility-proof-2026-09-27.json'
+      && manual.latest_cross_facility_address_review_2026_09_27.disposition === 'retain-unmatched-address-conflict';
     const creekhealthFacility = creekhealthProof.facility_pages.find(page => page.ccn === row.ccn);
     const creekhealthSiblingExcluded = row.proposed_disposition === 'pointer-facility-match-unresolved'
       && creekhealthProof.ccns.includes(row.ccn)
       && ['shared-root-pointer-file-belongs-to-okmulgee-sibling', 'complete-sibling-file-exclusion'].includes(manual?.disposition)
       && ['reconciliation-creekhealth-sibling-exclusion-proof.json', 'reconciliation-creekhealth-okmulgee-full-file-proof-2026-09-19.json'].includes(manual.proof_file)
-      && manual.observed_at === (manual.proof_file === 'reconciliation-creekhealth-okmulgee-full-file-proof-2026-09-19.json' ? creekhealthFullProof.observed_at : creekhealthProof.observed_at)
+      && (manual.observed_at === (manual.proof_file === 'reconciliation-creekhealth-okmulgee-full-file-proof-2026-09-19.json' ? creekhealthFullProof.observed_at : creekhealthProof.observed_at)
+        || (manual.proof_file === 'reconciliation-creekhealth-okmulgee-full-file-proof-2026-09-19.json'
+          && Date.parse(manual.observed_at || '') <= Date.parse(creekhealthFullProof.observed_at || '')))
       && manual.pointer_url === creekhealthProof.pointer_url
       && manual.pointer_file_url === creekhealthProof.pointer_file_url
       && manual.pointer_file_sample_sha256 === creekhealthProof.sample_sha256
@@ -278,7 +313,10 @@ function build(reconciliation, verification) {
       && creekhealthProof.pointer_sha256 === current.pointer_corpus_sha256
       && creekhealthProof.file_declared_address !== creekhealthFacility?.address;
     const reviewSources = [
-      ['manual-access', row.manual_access_observation],
+      ['manual-access', manual && {
+        ...manual,
+        fresh_reviewed_at: latestNestedManualReviewAt(manual),
+      }],
       ['reviewed-header', row.reviewed_header_disposition],
       ['cms-enrollment-snapshot', row.cms_enrollment_snapshot],
       ['address-reconciliation', row.address_reconciliation],
@@ -300,6 +338,11 @@ function build(reconciliation, verification) {
       && manual?.official_site
       && manual?.disposition?.includes('identity-confirmed');
     let nextAction = row.manual_access_observation?.next_action || row.next_action || stage.action;
+    if (houstonCrossFacilityReview) nextAction = manual.latest_cross_facility_address_review_2026_09_27.next_action;
+    const neshobaHistoricalCcnReview = row.ccn === '250043'
+      && row.reviewed_header_disposition?.proof_file === 'reconciliation-neshoba-qies-query-discrepancy-and-operator-page-recheck-2026-09-27.json'
+      && row.reviewed_header_disposition.disposition === 'historical-acute-ccn-hpt-coverage-unresolved';
+    if (neshobaHistoricalCcnReview) nextAction = row.reviewed_header_disposition.next_action;
     // A later browser denial cannot be resolved by assigning the same browser
     // retry again. Keep the access result separate from any file-validity claim.
     if (!row.manual_access_observation?.next_action
@@ -322,18 +365,20 @@ function build(reconciliation, verification) {
       state: row.state,
       official_domain: current.official_domain || '',
       publisher_domain_lead: row.manual_access_observation?.publisher_domain_lead || '',
-      current_disposition: summitSiteReviewed ? 'corrected-site-web-pointer-visible-client-blocked-file-header-found'
+      current_disposition: neshobaHistoricalCcnReview ? row.reviewed_header_disposition.disposition
+        : summitSiteReviewed ? 'corrected-site-web-pointer-visible-client-blocked-file-header-found'
         : grandViewPageLead ? 'root-pointer-omits-facility-page-file-header-found'
         : averaAccessReviewed ? 'first-party-labeled-file-client-access-denied'
         : independenceAccessReviewed ? 'first-party-labeled-file-client-access-denied'
         : scenicTransitionReviewed ? scenicProof.disposition
         : southeasternAliasReviewed ? southeasternProof.disposition
         : identityRouteReviewed || pointerIdentityReviewed || centraLynchburgReviewed || southOaksRootReviewed || parkviewFileAccessReviewed || surgicalOklahomaHeaderReviewed || groverDilsAliasReviewed || atlanticareCityHeaderReviewed || coalCountyPageFileReviewed || reedsburgPointerCaseReviewed || houstonCountyConflictReviewed || creekhealthSiblingExcluded ? manual.disposition : row.proposed_disposition,
-      ...(pointerIdentityReviewed || centraLynchburgReviewed || southOaksRootReviewed || parkviewFileAccessReviewed || surgicalOklahomaHeaderReviewed || groverDilsAliasReviewed || atlanticareCityHeaderReviewed || independenceAccessReviewed || grandViewPageLead || averaAccessReviewed || summitSiteReviewed || coalCountyPageFileReviewed || reedsburgPointerCaseReviewed || houstonCountyConflictReviewed || creekhealthSiblingExcluded || scenicTransitionReviewed || southeasternAliasReviewed ? { nationwide_disposition: row.proposed_disposition } : {}),
+      ...(neshobaHistoricalCcnReview || pointerIdentityReviewed || centraLynchburgReviewed || southOaksRootReviewed || parkviewFileAccessReviewed || surgicalOklahomaHeaderReviewed || groverDilsAliasReviewed || atlanticareCityHeaderReviewed || independenceAccessReviewed || grandViewPageLead || averaAccessReviewed || summitSiteReviewed || coalCountyPageFileReviewed || reedsburgPointerCaseReviewed || houstonCountyConflictReviewed || creekhealthSiblingExcluded || scenicTransitionReviewed || southeasternAliasReviewed ? { nationwide_disposition: row.proposed_disposition } : {}),
       standing_finding: row.standing_finding,
       prior_finding: row.prior_finding,
       investigation_tier: stage.tier,
-      evidence_gate: summitSiteReviewed ? 'pointer-bytes-and-complete-file-review'
+      evidence_gate: neshobaHistoricalCcnReview ? 'historical-hpt-coverage-through-2025-12-31'
+        : summitSiteReviewed ? 'pointer-bytes-and-complete-file-review'
         : grandViewPageLead ? 'pointer-entry-and-complete-file-review'
         : averaAccessReviewed ? 'exact-file-access-and-campus-attribution'
         : scenicTransitionReviewed ? 'ccn-enrollment-continuity-and-complete-file'
@@ -354,7 +399,8 @@ function build(reconciliation, verification) {
       ...(row.cms_enrollment_snapshot
         ? { cms_enrollment_snapshot_rows: row.cms_enrollment_snapshot.rows.length } : {}),
       latest_review_at: reviewSources.map(([, value]) =>
-        value.fresh_reviewed_at || value.observed_at || value.checked_at || value.reviewed_at || '').sort().at(-1) || '',
+        isoReviewDate(value.fresh_reviewed_at || value.observed_at || value.checked_at || value.reviewed_at || '')
+      ).filter(Boolean).sort().at(-1) || '',
       candidate_file_recorded: Boolean(summitSiteReviewed || grandViewPageLead || averaAccessReviewed || independenceAccessReviewed || centraLynchburgReviewed || row.candidate_mrf_url || manual?.page_file_url
         || manual?.pointer_mrf_url || manual?.pointer_retained_mrf_url
         || manual?.page_linked_mrf_url || manual?.page_linked_mrf_urls?.length),

@@ -1,0 +1,25 @@
+{
+  "ccn": "030113",
+  "observed_at": "2026-09-27T12:03:50Z",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=030113&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_response_bytes": 6666,
+  "cms_response_sha256": "C26B7C9F433101B4D9D36465C82A997BBD09756947C1E1E81483F1DE2AEEA53F",
+  "cms_record": {
+    "facility_id": "030113",
+    "facility_name": "WHITERIVER PHS INDIAN HOSPITAL",
+    "address": "200 WEST HOSPITAL DRIVE  (PO BOX 860)",
+    "citytown": "WHITERIVER",
+    "state": "AZ",
+    "zip_code": "85941",
+    "hospital_type": "Acute Care Hospitals",
+    "hospital_ownership": "Government - Federal"
+  },
+  "official_identity_page": "https://www.ihs.gov/phoenix/healthcarefacilities/whiteriver/",
+  "official_page_observation": "The current IHS Phoenix Area page identifies Whiteriver Indian Hospital at 200 W Hospital Dr, Whiteriver, AZ 85941, and describes ongoing hospital, inpatient, outpatient and emergency operations.",
+  "regulatory_source": "https://www.govinfo.gov/content/pkg/CFR-2025-title45-vol2/pdf/CFR-2025-title45-vol2-part180.pdf",
+  "regulatory_observation": "45 CFR 180.30(b)(1) covers federally owned hospital facilities.",
+  "disposition": "scope-exempt-federal",
+  "interpretation": "Exact CMS CCN, facility name, street/city/state and Government - Federal ownership agree with current IHS identity and operations. This supports the 45 CFR 180.30(b)(1) scope classification; it is not an MRF or file-quality finding.",
+  "next_action": "Retain the federal scope exclusion unless CMS ownership, facility identity or regulatory scope changes."
+}

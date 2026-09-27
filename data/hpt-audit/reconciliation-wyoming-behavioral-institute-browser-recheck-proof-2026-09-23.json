@@ -1,0 +1,29 @@
+{
+  "ccn": "534004",
+  "observed_at": "2026-09-23T06:38:30Z",
+  "official_site": "https://www.wbihelp.com/",
+  "official_identity_source": "https://health.wyo.gov/healthcarefin/medicaid/wyoming-medicaid-health-management/psychiatric-residential-treatment-information/",
+  "official_identity": "Wyoming Behavioral Institute, 2521 E. 15th St, Casper, WY 82609; CMS roster and Wyoming Department of Health source agree.",
+  "browser_observation": "The current wbihelp.com site was opened in the interactive browser but remained on a Cloudflare 'Performing security verification' page. Bounded HTTPS requests to the root, cms-hpt.txt, .well-known/cms-hpt.txt, and likely price-transparency paths returned 403 HTML challenge pages. The accessible Wyoming Department of Health facility source confirms the facility identity and address and links wbihelp.com, but no MRF route.",
+  "pointer_urls": [
+    "https://wbihelp.com/cms-hpt.txt",
+    "https://wbihelp.com/.well-known/cms-hpt.txt",
+    "https://wbihelp.com/price-transparency/",
+    "https://wbihelp.com/patient-resources/price-transparency/",
+    "https://wyomingdigitalcollections.ptfs.com/cms-hpt.txt",
+    "https://wyomingdigitalcollections.ptfs.com/.well-known/cms-hpt.txt"
+  ],
+  "pointer_status": "wbihelp.com root and candidate paths returned 403 Cloudflare HTML challenges; the previously recorded digital-collections pointer variants returned 404 or DNS failure. No usable facility-specific pointer text recovered.",
+  "mrf_observation": "No MRF bytes recovered; no file-absence, exemption or compliance conclusion inferred.",
+  "cms_record": {
+    "ccn": "534004",
+    "name": "WYOMING BEHAVIORAL INSTITUTE",
+    "address": "2521 EAST 15TH STREET",
+    "city": "CASPER",
+    "state": "WY",
+    "zip": "82609"
+  },
+  "disposition": "official-site-browser-challenge-no-mrf-route",
+  "interpretation": "The current official identity source corroborates the facility and address, while the current publisher site is transport-accessible only as a Cloudflare challenge in this browser/client. This is a dated discovery/transport observation only and does not establish file absence or a compliance result.",
+  "next_action": "Retry wbihelp.com after its security challenge permits automated/browser access or obtain a publisher-provided current CSV/JSON/ZIP; then verify exact facility identity, Wyoming metadata, declared date/version and usable bytes before promotion."
+}

@@ -1,0 +1,16 @@
+{
+  "ccn": "184012",
+  "observed_at": "2026-09-21T18:30:00Z",
+  "publisher_page": "https://pricetransparency.accureg.net/lincoln",
+  "publisher_page_status": 200,
+  "publisher_page_observation": "The current Accureg Lincoln price-transparency page identifies Lincoln Health, lists machine-readable CSV and JSON files, and declares an update date of June 4, 2026.",
+  "candidate_csv_url": "https://cdn.accureg.net/trans/lincoln/84-0484566_Lincoln-Health_standardcharges.csv",
+  "candidate_json_url": "https://cdn.accureg.net/trans/lincoln/84-0484566_Lincoln-Health_standardcharges.json",
+  "candidate_file_observation": "The exact CSV and JSON targets are linked by the publisher page. Web retrieval reached both CDN targets but exposed no parsed lines or metadata because the content type was application/octet-stream.",
+  "roster_identity": "LINCOLN TRAIL BEHAVIORAL HEALTH SYSTEM",
+  "roster_address": "3909 South Wilson Road, Radcliff, KY 40160",
+  "identity_linkage_observation": "The publisher page labels the organization Lincoln Health rather than Lincoln Trail Behavioral Health System; the exact facility/CCN linkage therefore remains unresolved despite the matching Kentucky behavioral-health context.",
+  "disposition": "publisher-current-mrf-linkage-facility-identity-unresolved",
+  "interpretation": "This is new current publisher/file evidence, but not a verified Lincoln Trail MRF assignment. No bytes, declared facility metadata, CMS version or parsed usability were observed, and the organization-name mismatch prevents promotion.",
+  "next_action": "Obtain the CSV or JSON bytes and an authoritative linkage between Lincoln Health and Lincoln Trail Behavioral Health System/CCN 184012, then verify address, Kentucky metadata, declared date/version and usability before promotion."
+}

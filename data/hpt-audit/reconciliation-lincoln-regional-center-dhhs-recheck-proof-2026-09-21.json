@@ -1,0 +1,18 @@
+{
+  "ccn": "284003",
+  "observed_at": "2026-09-21T17:00:00Z",
+  "official_domain": "dhhs.ne.gov",
+  "retrieval_method": "bounded HTTPS requests plus official-page search",
+  "checked_urls": [
+    "https://dhhs.ne.gov/cms-hpt.txt",
+    "https://dhhs.ne.gov/Pages/cms-hpt.txt",
+    "https://dhhs.ne.gov/price-transparency",
+    "https://dhhs.ne.gov/Pages/Regional-Centers.aspx",
+    "https://dhhs.ne.gov/Pages/default.aspx"
+  ],
+  "transport_result": "The DHHS homepage returned HTTP 200, while the root cms-hpt.txt and guessed pricing routes returned HTTP 404. The official Regional Centers page identifies Lincoln Regional Center, but no facility-specific CMS pointer or CSV/JSON file link was recovered.",
+  "facility_identity_observation": "Nebraska DHHS is the official state operator and its Regional Centers page identifies Lincoln Regional Center in Nebraska. State operation is retained as identity/context only; it is not treated as a scope exemption.",
+  "disposition": "official-state-site-identity-confirmed-pointer-discovery-incomplete",
+  "interpretation": "This is a facility-specific discovery observation for Lincoln Regional Center only. HTTP 404 on checked paths and absence of a visible file link do not establish file absence, closure, exemption, or compliance status.",
+  "next_action": "Search the DHHS billing/pricing subsections and retry the exact facility route through an authorized browser or publisher-enabled copy; require a facility-specific pointer and usable CMS CSV/JSON bytes before promotion."
+}

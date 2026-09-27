@@ -1,0 +1,17 @@
+{
+  "ccn": "451370",
+  "observed_at": "2026-09-22T10:30:00Z",
+  "official_pricing_page": "https://tmcbonham.com/",
+  "official_pricing_page_status": 403,
+  "official_page_observation": "Interactive browser access to the first-party TMC Bonham domain rendered a Cloudflare Error 1005 access-denied page. The exact cms-hpt.txt route rendered the same first-party access-denied page; no hospital pricing content, pointer text, or MRF URL was available.",
+  "cms_pointer_url": "https://tmcbonham.com/cms-hpt.txt",
+  "cms_pointer_result": "First-party browser access rendered Cloudflare Error 1005; no pointer content was available in this recheck.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=451370&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6625,
+  "cms_api_response_sha256": "D9F9AC045B867E31495E14EC1BF2603669E3E76892D5506244E51ED70C7E778F",
+  "cms_record": { "facility_id": "451370", "facility_name": "TMC- BONHAM HOSPITAL", "address": "504 LIPSCOMB STREET", "citytown": "BONHAM", "state": "TX", "zip_code": "75418", "hospital_type": "Critical Access Hospitals", "hospital_ownership": "Government - Hospital District or Authority", "emergency_services": "Yes" },
+  "disposition": "official-domain-pointer-browser-access-challenge-no-mrf-observed",
+  "interpretation": "The CMS record confirms TMC-Bonham Hospital and its Texas address. The official-domain and pointer observations are transport/access results only; they do not establish file absence, noncompliance, or a facility closure.",
+  "next_action": "Retry the exact first-party pointer through a permitted publisher route, then verify declared name, Bonham address/state, date, version and usability before changing the tracker disposition."
+}

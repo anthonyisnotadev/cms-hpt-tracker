@@ -1,0 +1,15 @@
+{
+  "ccn": "454103",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://kingwoodpines.com/",
+  "official_identity_sources": [
+    "https://jobs.uhs.com/kingwood-pines-hospital",
+    "https://turquoise.health/providers/kingwood-pines-hospital/information"
+  ],
+  "official_identity": "UHS identifies Kingwood Pines Hospital as its Kingwood, Texas behavioral-health facility; independent provider records associate CCN 454103 with 2001 Ladbrook Drive, Kingwood, TX 77339 and NPI 1861598633.",
+  "browser_observation": "Browser automation reached the first-party Kingwood Pines domain but showed a Cloudflare security-verification interstitial. Direct requests to cms-hpt.txt and likely pricing paths were denied with HTTP 403.",
+  "pricing_observation": "No usable facility-specific CMS pointer or MRF bytes were retrieved. This is an access observation, not evidence that a file is absent, that the facility is closed, or that it is exempt.",
+  "disposition": "current-operator-identity-confirmed-pricing-route-client-denied",
+  "interpretation": "This replaces the stale domain-unknown label with a supported UHS operator and exact Kingwood identity while preserving the unresolved pricing route.",
+  "next_action": "Retry the first-party CMS pointer and pricing route through a materially different permitted browser/download route; require bounded bytes, Kingwood identity, Texas metadata, date/version and parsed usability before promotion."
+}

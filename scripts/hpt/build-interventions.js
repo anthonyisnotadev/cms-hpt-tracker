@@ -248,6 +248,16 @@ const INTERVENTIONS = {
     plain: 'VA/DoD facilities are outside the rule.',
     action: 'No action needed.'
   },
+  'exempt-ihs-program': {
+    label: 'Indian Health Program scope exception',
+    plain: '45 CFR 180.30(b)(2) covers hospitals operated by an Indian Health Program; this does not assess MRF availability or file quality.',
+    action: 'Retain the sourced operator/program evidence and revisit if the operator, contract, compact, or program status changes.'
+  },
+  'exempt-state-hospital': {
+    label: 'State hospital scope exception',
+    plain: '45 CFR 180.30(b) deems Federal and State hospitals compliant with Part 180; this does not assess MRF availability or file quality.',
+    action: 'Retain exact facility/operator evidence and revisit if the CCN, operator, or legal state-hospital status changes.'
+  },
   'exempt-closed': {
     label: 'Closed facility',
     plain: 'First-party evidence says the facility ceased hospital operations.',
@@ -335,6 +345,10 @@ function classifyRow(row, evidence) {
       return pick('identity-review', row.evidence || 'previous file assignment conflicts with hospital identity');
     case 'not-applicable-federal':
       return pick('exempt-federal', 'federally owned; outside 45 CFR 180');
+    case 'not-applicable-indian-health-program':
+      return pick('exempt-ihs-program', row.evidence || 'hospital operated by an Indian Health Program under 45 CFR 180.30(b)(2)');
+    case 'not-applicable-state-hospital':
+      return pick('exempt-state-hospital', row.evidence || 'state hospital deemed compliant under 45 CFR 180.30(b)');
     case 'not-applicable-closed':
       return pick('exempt-closed', row.evidence || 'first-party evidence says the facility ceased hospital operations');
     case 'compliant-observed':
