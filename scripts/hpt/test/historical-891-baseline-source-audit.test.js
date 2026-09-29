@@ -69,11 +69,11 @@ test('recovered Sep. 25 roster binds both overlapping category memberships and d
   assert.equal(roster.matching_snapshot_validation.matching_snapshots, 28);
   assert.equal(roster.matching_snapshot_validation.all_category_memberships_identical, true);
   const effectiveCategories = {
-    'genuinely-unresolved': 543,
+    'genuinely-unresolved': 541,
     'active-verification-claim': 21,
     'standing-evidence-retained': 72,
-    'superseded-by-reviewed-resolution': 69,
-    'scope-exempt': 15
+    'superseded-by-reviewed-resolution': 70,
+    'scope-exempt': 16
   };
   const currentCategories = roster.current_crosswalk_ccns;
   const currentUnion = new Set(Object.entries(currentCategories)
@@ -84,12 +84,13 @@ test('recovered Sep. 25 roster binds both overlapping category memberships and d
   assert.deepEqual(Object.fromEntries(Object.keys(effectiveCategories)
     .map(category => [category, currentCategories[category].length])), effectiveCategories);
   assert.equal(currentCategories.current_pointer_access_denied_ccns.length, 229);
-  assert.deepEqual(currentCategories['scope-exempt'], ['021309', '030071', '030074', '030084', '030113', '030195', '031307', '031308', '031309', '241358', '340156', '370170', '370171', '370173', '370244']);
+  assert.deepEqual(currentCategories['scope-exempt'], ['021309', '030071', '030074', '030084', '030113', '030195', '031305', '031307', '031308', '031309', '241358', '340156', '370170', '370171', '370173', '370244']);
+  assert.ok(currentCategories['superseded-by-reviewed-resolution'].includes('171346'));
   assert.equal(currentCategories.baseline_unresolved_now_active_ccns.length, 19);
-  assert.equal(currentCategories.baseline_unresolved_now_superseded_ccns.length, 16);
+  assert.equal(currentCategories.baseline_unresolved_now_superseded_ccns.length, 17);
   assert.deepEqual(currentCategories.baseline_unresolved_now_scope_exempt_ccns,
-    ['021309', '030071', '030074', '030084', '030113', '030195', '031307', '031308', '031309', '241358', '340156', '370170', '370171', '370173', '370244']);
-  assert.equal(roster.summary.baseline_unresolved_still_unresolved, 543);
+    ['021309', '030071', '030074', '030084', '030113', '030195', '031305', '031307', '031308', '031309', '241358', '340156', '370170', '370171', '370173', '370244']);
+  assert.equal(roster.summary.baseline_unresolved_still_unresolved, 541);
   const pendingScopeReviews = JSON.parse(fs.readFileSync(path.join(root, 'data/hpt-audit/reviewed-resolutions.json'), 'utf8'))
     .filter(item => item.action === 'scope-review-pending');
   assert.equal(pendingScopeReviews.length, 13);

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-28T20:40:23Z",
+  "updated_at": "2026-09-29T03:46:10.284Z",
   "records": [
     {
       "ccn": "010024",
@@ -16,6 +16,38 @@
       "reason": "The hospital-controlled site identifies Jackson Hospital at 1725 Pine Street, Montgomery AL 36106, matching the roster.",
       "search_source": "built-in-web-search",
       "observed_at": "2026-09-15T05:20:58.058Z"
+    },
+    {
+      "ccn": "010079",
+      "hospital_name": "ATHENS LIMESTONE HOSPITAL",
+      "city": "ATHENS",
+      "state": "AL",
+      "status": "official",
+      "domain": "hh.health",
+      "candidate_url": "https://hh.health/patients-visitors/price-transparency/",
+      "name_evidence": "https://hh.health/patients-visitors/price-transparency/",
+      "address_evidence": "https://www.athenslimestonehospital.com/patients-visitors/price-transparency",
+      "query": "Athens-Limestone Hospital HH Health price transparency standard charge file",
+      "reason": "Official HH Health system price-transparency page lists Athens-Limestone Hospital and its facility-specific standard-charge file; the official hospital page separately confirms the 700 West Market Street, Athens, Alabama facility and Updated 4/1/2026 label. The page file target differs between the current system page reader, the hospital page, and an Aug. 9 Common Crawl capture. This records source discovery, not MRF bytes or metadata.",
+      "search_source": "built-in-web-search-and-official-page-open",
+      "observed_at": "2026-09-28T07:48:36Z",
+      "proof_file": "reconciliation-athens-limestone-system-file-link-divergence-2026-09-28.json"
+    },
+    {
+      "ccn": "010079",
+      "hospital_name": "ATHENS LIMESTONE HOSPITAL",
+      "city": "ATHENS",
+      "state": "AL",
+      "status": "third-party-lead-confirmed-by-current-first-party-file-retrieval",
+      "domain": "www.huntsvillehospital.org",
+      "candidate_url": "https://www.huntsvillehospital.org/images/pricetransparency/475531420_Athens-Limestone-Hospital_standardcharges.csv",
+      "name_evidence": "https://www.huntsvillehospital.org/price-transparency",
+      "address_evidence": "https://www.athenslimestonehospital.com/patients-visitors/price-transparency",
+      "query": "\"475531420_Athens-Limestone-Hospital_standardcharges.csv\" Athens-Limestone Hospital",
+      "reason": "ProcedureRadar surfaced the system-hosted raw MRF URL and claimed a September 2026 refresh; the lead was not accepted as source evidence. A live fetch independently confirmed that the first-party HH Health page directly links the same exact URL, and the complete 40,443,636-byte file was retrieved and parsed with matching CMS CCN 010079 facility identity and CMS v3.0.0 metadata. Third-party pricing claims were not imported. The shared system root pointer separately names Huntsville Hospital only; the Athens-specific pointer remains unresolved.",
+      "search_source": "built-in-web-search-followed-by-first-party-page-and-file-verification",
+      "observed_at": "2026-09-28T08:00:52Z",
+      "proof_file": "reconciliation-athens-limestone-current-full-mrf-proof-2026-09-28.json"
     },
     {
       "ccn": "010110",
@@ -4564,6 +4596,21 @@
       "observed_at": "2026-09-15T19:06:07.091Z"
     },
     {
+      "ccn": "171346",
+      "hospital_name": "HOSPITAL DISTRICT #6 PATTERSON HEALTH CENTER",
+      "city": "ANTHONY",
+      "state": "KS",
+      "status": "official",
+      "domain": "pattersonhc.org",
+      "candidate_url": "",
+      "name_evidence": "https://pattersonhc.org/sites/default/files/minutes_12.22.2023.pdf",
+      "address_evidence": "https://pattersonhc.org/sites/default/files/minutes_12.22.2023.pdf",
+      "query": "site:pattersonhc.org price transparency CMS MRF Patterson Health Center",
+      "reason": "Fresh search surfaced the named Patterson Health Center publisher-associated pricing tool. The current first-party CMS pointer now returns a usable mrf-url for the exact report; the complete linked file has been verified separately. The prior official-site identity evidence is retained in history.",
+      "search_source": "built-in-web-search",
+      "observed_at": "2026-09-29T03:46:10.284Z"
+    },
+    {
       "ccn": "171354",
       "hospital_name": "COMMUNITY HOSPITAL, ONAGA AND ST MARYS CAMPUS",
       "city": "ONAGA",
@@ -6917,6 +6964,22 @@
           "observed_at": "2026-09-15T05:28:17.051Z"
         }
       ]
+    },
+    {
+      "ccn": "250043",
+      "hospital_name": "NESHOBA COUNTY GENERAL HOSPITAL",
+      "city": "PHILADELPHIA",
+      "state": "MS",
+      "status": "wayback-report-endpoint-prefix-query-no-capture-results",
+      "domain": "apps.para-hcfs.com",
+      "candidate_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx*",
+      "name_evidence": "https://web.archive.org/web/20250519135926id_/https://apps.para-hcfs.com/PTT/FinalLinks/Neshoba_V3.aspx",
+      "address_evidence": "https://secure.in.gov/health/reports/QAMIS/hosrpt/ha013429.htm",
+      "query": "Internet Archive CDX Reports.aspx URL-prefix query filtered for Neshoba/current database-key matches and status-200 captures",
+      "reason": "The Internet Archive CDX API returned HTTP 200 and an empty JSON array (3 bytes) for a broader Reports.aspx endpoint-prefix query. This checks more than the previously attempted exact current-key report URLs but found no indexed Neshoba report endpoint, database key, or bytes. This bounded index no-match is not proof that no historical report existed; the CMS effective-date transition and current June 2026 file remain separate evidence.",
+      "search_source": "internet-archive-cdx-prefix-index-query",
+      "observed_at": "2026-09-28T19:26:52Z",
+      "proof_file": "reconciliation-neshoba-historical-report-endpoint-prefix-index-review-2026-09-28.json"
     },
     {
       "ccn": "250069",
@@ -9624,6 +9687,22 @@
       ]
     },
     {
+      "ccn": "330270",
+      "hospital_name": "HOSPITAL FOR SPECIAL SURGERY",
+      "city": "NEW YORK",
+      "state": "NY",
+      "status": "third-party-exact-file-provenance-lead-not-source-bytes",
+      "domain": "ppman.hank.ai; hss.edu",
+      "candidate_url": "https://ppman.hank.ai/api/v1/price-transparency/hospitals/330270/provenance?download=1",
+      "name_evidence": "https://www.hss.edu/price-transparency.asp",
+      "address_evidence": "https://www.hss.edu/price-transparency.asp",
+      "query": "\"131624135-1598703019_ny-society-for-the-relief-of-ruptured-and-crippled-maintaing-the-hospital-for-special-surgery_standardcharges.json\" HANK audit trail 330270",
+      "reason": "The third-party audit record names the exact CloudFront object independently linked by HSS and reports a full-file hash, size and parsed status. It does not provide locally verified MRF bytes or CMS root metadata and is not suitable for tracker import. This is an actionable comparison lead only; CCN 330270 remains unresolved and the cohort count effect is zero.",
+      "search_source": "built-in-web-search-and-public-third-party-provenance-api",
+      "observed_at": "2026-09-28T21:41:00Z",
+      "proof_file": "reconciliation-hss-third-party-exact-file-audit-trail-lead-2026-09-28.json"
+    },
+    {
       "ccn": "331309",
       "hospital_name": "RIVER HOSPITAL CLINICS",
       "city": "ALEXANDRIA BAY",
@@ -11654,6 +11733,22 @@
           "observed_at": "2026-09-15T05:31:13.121Z"
         }
       ]
+    },
+    {
+      "ccn": "370171",
+      "hospital_name": "CHEROKEE NATION W W HASTINGS INDIAN HOSPITAL",
+      "city": "TAHLEQUAH",
+      "state": "OK",
+      "status": "official-indian-health-program-scope-evidence",
+      "domain": "cms.gov; ihs.gov; taggs.hhs.gov; health.cherokee.gov",
+      "candidate_url": "https://www.cms.gov/files/document/indian-healt-service-cms-all-final.pdf",
+      "name_evidence": "https://www.cms.gov/files/document/indian-healt-service-cms-all-final.pdf",
+      "address_evidence": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=370171&conditions%5B0%5D%5Boperator%5D=%3D",
+      "query": "W.W. Hastings Hospital CMS CCN 370171 Cherokee Nation IHS self-governance compact 45 CFR 180.30(b)(2)",
+      "reason": "CMS's IHS-CMS crosswalk explicitly maps W.W. Hastings Indian Hospital to CCN 370171; the current CMS provider API returns the exact CCN/name; Cherokee Nation identifies its operation of Hastings; IHS lists Cherokee Nation as a self-governance tribe and HHS TAGGS records current IHS Tribal Self-Governance compact/funding-agreement awards. Together with 45 CFR 180.30(b)(2) and 25 USC 1603(12),(25), these support the scope category. This is not MRF discovery and does not resolve the separate legacy/replacement campus address observations.",
+      "search_source": "built-in-web-search-and-official-cms-ihs-hhs-operator-sources",
+      "observed_at": "2026-09-28T20:40:23Z",
+      "proof_file": "reconciliation-cherokee-hastings-indian-health-program-scope-proof-2026-09-28.json"
     },
     {
       "ccn": "370172",
@@ -16232,86 +16327,6 @@
           "observed_at": "2026-09-15T05:23:22.567Z"
         }
       ]
-    },
-    {
-      "ccn": "010079",
-      "hospital_name": "ATHENS LIMESTONE HOSPITAL",
-      "city": "ATHENS",
-      "state": "AL",
-      "status": "official",
-      "domain": "hh.health",
-      "candidate_url": "https://hh.health/patients-visitors/price-transparency/",
-      "name_evidence": "https://hh.health/patients-visitors/price-transparency/",
-      "address_evidence": "https://www.athenslimestonehospital.com/patients-visitors/price-transparency",
-      "query": "Athens-Limestone Hospital HH Health price transparency standard charge file",
-      "reason": "Official HH Health system price-transparency page lists Athens-Limestone Hospital and its facility-specific standard-charge file; the official hospital page separately confirms the 700 West Market Street, Athens, Alabama facility and Updated 4/1/2026 label. The page file target differs between the current system page reader, the hospital page, and an Aug. 9 Common Crawl capture. This records source discovery, not MRF bytes or metadata.",
-      "search_source": "built-in-web-search-and-official-page-open",
-      "observed_at": "2026-09-28T07:48:36Z",
-      "proof_file": "reconciliation-athens-limestone-system-file-link-divergence-2026-09-28.json"
-    },
-    {
-      "ccn": "010079",
-      "hospital_name": "ATHENS LIMESTONE HOSPITAL",
-      "city": "ATHENS",
-      "state": "AL",
-      "status": "third-party-lead-confirmed-by-current-first-party-file-retrieval",
-      "domain": "www.huntsvillehospital.org",
-      "candidate_url": "https://www.huntsvillehospital.org/images/pricetransparency/475531420_Athens-Limestone-Hospital_standardcharges.csv",
-      "name_evidence": "https://www.huntsvillehospital.org/price-transparency",
-      "address_evidence": "https://www.athenslimestonehospital.com/patients-visitors/price-transparency",
-      "query": "\"475531420_Athens-Limestone-Hospital_standardcharges.csv\" Athens-Limestone Hospital",
-      "reason": "ProcedureRadar surfaced the system-hosted raw MRF URL and claimed a September 2026 refresh; the lead was not accepted as source evidence. A live fetch independently confirmed that the first-party HH Health page directly links the same exact URL, and the complete 40,443,636-byte file was retrieved and parsed with matching CMS CCN 010079 facility identity and CMS v3.0.0 metadata. Third-party pricing claims were not imported. The shared system root pointer separately names Huntsville Hospital only; the Athens-specific pointer remains unresolved.",
-      "search_source": "built-in-web-search-followed-by-first-party-page-and-file-verification",
-      "observed_at": "2026-09-28T08:00:52Z",
-      "proof_file": "reconciliation-athens-limestone-current-full-mrf-proof-2026-09-28.json"
-    },
-    {
-      "ccn": "250043",
-      "hospital_name": "NESHOBA COUNTY GENERAL HOSPITAL",
-      "city": "PHILADELPHIA",
-      "state": "MS",
-      "status": "wayback-report-endpoint-prefix-query-no-capture-results",
-      "domain": "apps.para-hcfs.com",
-      "candidate_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx*",
-      "name_evidence": "https://web.archive.org/web/20250519135926id_/https://apps.para-hcfs.com/PTT/FinalLinks/Neshoba_V3.aspx",
-      "address_evidence": "https://secure.in.gov/health/reports/QAMIS/hosrpt/ha013429.htm",
-      "query": "Internet Archive CDX Reports.aspx URL-prefix query filtered for Neshoba/current database-key matches and status-200 captures",
-      "reason": "The Internet Archive CDX API returned HTTP 200 and an empty JSON array (3 bytes) for a broader Reports.aspx endpoint-prefix query. This checks more than the previously attempted exact current-key report URLs but found no indexed Neshoba report endpoint, database key, or bytes. This bounded index no-match is not proof that no historical report existed; the CMS effective-date transition and current June 2026 file remain separate evidence.",
-      "search_source": "internet-archive-cdx-prefix-index-query",
-      "observed_at": "2026-09-28T19:26:52Z",
-      "proof_file": "reconciliation-neshoba-historical-report-endpoint-prefix-index-review-2026-09-28.json"
-    },
-    {
-      "ccn": "370171",
-      "hospital_name": "CHEROKEE NATION W W HASTINGS INDIAN HOSPITAL",
-      "city": "TAHLEQUAH",
-      "state": "OK",
-      "status": "official-indian-health-program-scope-evidence",
-      "domain": "cms.gov; ihs.gov; taggs.hhs.gov; health.cherokee.gov",
-      "candidate_url": "https://www.cms.gov/files/document/indian-healt-service-cms-all-final.pdf",
-      "name_evidence": "https://www.cms.gov/files/document/indian-healt-service-cms-all-final.pdf",
-      "address_evidence": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=370171&conditions%5B0%5D%5Boperator%5D=%3D",
-      "query": "W.W. Hastings Hospital CMS CCN 370171 Cherokee Nation IHS self-governance compact 45 CFR 180.30(b)(2)",
-      "reason": "CMS's IHS-CMS crosswalk explicitly maps W.W. Hastings Indian Hospital to CCN 370171; the current CMS provider API returns the exact CCN/name; Cherokee Nation identifies its operation of Hastings; IHS lists Cherokee Nation as a self-governance tribe and HHS TAGGS records current IHS Tribal Self-Governance compact/funding-agreement awards. Together with 45 CFR 180.30(b)(2) and 25 USC 1603(12),(25), these support the scope category. This is not MRF discovery and does not resolve the separate legacy/replacement campus address observations.",
-      "search_source": "built-in-web-search-and-official-cms-ihs-hhs-operator-sources",
-      "observed_at": "2026-09-28T20:40:23Z",
-      "proof_file": "reconciliation-cherokee-hastings-indian-health-program-scope-proof-2026-09-28.json"
-    },
-    {
-      "ccn": "330270",
-      "hospital_name": "HOSPITAL FOR SPECIAL SURGERY",
-      "city": "NEW YORK",
-      "state": "NY",
-      "status": "third-party-exact-file-provenance-lead-not-source-bytes",
-      "domain": "ppman.hank.ai; hss.edu",
-      "candidate_url": "https://ppman.hank.ai/api/v1/price-transparency/hospitals/330270/provenance?download=1",
-      "name_evidence": "https://www.hss.edu/price-transparency.asp",
-      "address_evidence": "https://www.hss.edu/price-transparency.asp",
-      "query": "\"131624135-1598703019_ny-society-for-the-relief-of-ruptured-and-crippled-maintaing-the-hospital-for-special-surgery_standardcharges.json\" HANK audit trail 330270",
-      "reason": "The third-party audit record names the exact CloudFront object independently linked by HSS and reports a full-file hash, size and parsed status. It does not provide locally verified MRF bytes or CMS root metadata and is not suitable for tracker import. This is an actionable comparison lead only; CCN 330270 remains unresolved and the cohort count effect is zero.",
-      "search_source": "built-in-web-search-and-public-third-party-provenance-api",
-      "observed_at": "2026-09-28T21:41:00Z",
-      "proof_file": "reconciliation-hss-third-party-exact-file-audit-trail-lead-2026-09-28.json"
     }
   ]
 }

@@ -465,12 +465,13 @@
           "workstream": "consistent",
           "standing_mrf_url": "https://secure.claraprice.net/price-transparency/OGFL-1782507604288/machine-readable/884062444_clinton-regional-hospital_standardcharges.json",
           "candidate_mrf_url": "https://secure.claraprice.net/price-transparency/OGFL-1782507604288/machine-readable/884062444_clinton-regional-hospital_standardcharges.json",
-          "reviewed_at": "2026-09-17T10:53:30.532Z",
+          "reviewed_at": "2026-09-29T04:17:09.323Z",
           "manual_proof_file": "reconciliation-clinton-reh-transition-proof.json",
           "historical_manual_proof_files": [
+            "reconciliation-clinton-reh-current-mrf-revision-proof-2026-09-29.json",
             "reconciliation-clinton-reh-transition-proof.json"
           ],
-          "existing_next_action": "The exact current REH pointer/file was promoted for CCN 370784 through the reviewed-resolution ledger. Monitor publisher changes and retain the distinct former CCN; this is not line-item or legal compliance validation.",
+          "existing_next_action": "Current pointer-linked REH file remains promoted for CCN 370784; its bytes and metadata were rechecked on 2026-09-29 with a changed full-file hash/count. Keep former acute-care CCN 370245 separate pending historical-file evidence.",
           "cms_enrollment_snapshot": {
             "ccn": "370784",
             "rows": 1,
@@ -490,8 +491,8 @@
   "limitation": "Exact same-name, street, city, state and ZIP roster rows with different facility types are an enrollment-scope lead, not evidence that either CCN is currently active or that a shared MRF covers both. Confirm effective dates from a primary enrollment source before changing a CCN-specific verification claim.",
   "source_sha256": {
     "cms_data/hpt/roster.json": "feb936c65252106022d234e4b0fe858ef9ab0a050229ddd852aa7257966db7cf",
-    "data/hpt-audit/nationwide-reconciliation.json": "505d97ec41baa2ed7feb93c86e0eabc8663e4aa28dc8b760d651aadf8b7f7e19",
+    "data/hpt-audit/nationwide-reconciliation.json": "54508d265d25a97ff9369b870c33cc12694cd6d65f9cb51e4becde388a64eddf",
     "data/hpt-audit/same-campus-cms-enrollment-snapshot-review.json": "fc093762ab992eaaebc126d08d231d688591f27bfe095f43441bbe7d7acc5f49",
-    "data/hpt-audit/reconciliation-manual-access-observations.json": "a0a28cce119ebb60532d2641ae270037dba83a187a9f25fbef017b059426654a"
+    "data/hpt-audit/reconciliation-manual-access-observations.json": "c3f17d0122b2a375701e17fc028b3ef2dbfd5177d838861c851bf426fb81fc61"
   }
 }

@@ -6,6 +6,7 @@ const path = require('node:path');
 
 const root = path.resolve(__dirname, '../../..');
 const proof = require(path.join(root, 'data/hpt-audit/reconciliation-clinton-reh-transition-proof.json'));
+const currentProof = require(path.join(root, 'data/hpt-audit/reconciliation-clinton-reh-current-mrf-revision-proof-2026-09-29.json'));
 const observations = require(path.join(root, 'data/hpt-audit/reconciliation-manual-access-observations.json')).records;
 const worklist = require(path.join(root, 'data/hpt-audit/same-campus-ccn-transition-worklist.json')).groups;
 const resolutions = require(path.join(root, 'data/hpt-audit/reviewed-resolutions.json'));
@@ -23,12 +24,17 @@ test('Clinton REH conversion is exact-CCN and full-file-NPI bound', () => {
   assert.equal(proof.file_version, '3.0.0');
   assert.equal(proof.file_bytes, 3871397);
   assert.match(proof.file_sha256, /^[a-f0-9]{64}$/);
+  assert.equal(currentProof.previous_revision.sha256, proof.file_sha256);
+  assert.equal(currentProof.current_revision.sha256, 'd254c5499608cc6da36079958c1364845c817d480fa62a35b88f8c6a82e8b404');
+  assert.equal(currentProof.current_revision.bytes, 5496900);
+  assert.equal(currentProof.current_revision.charge_entries, 5089);
   const former = observations.find(row => row.ccn === '370245');
   const current = observations.find(row => row.ccn === '370784');
   assert.equal(former.proof_file, 'reconciliation-clinton-reh-transition-proof.json');
-  assert.equal(current.proof_file, former.proof_file);
+  assert.equal(current.proof_file, 'reconciliation-clinton-reh-transition-proof.json');
+  assert.equal(current.latest_complete_file_revision.proof_file, 'reconciliation-clinton-reh-current-mrf-revision-proof-2026-09-29.json');
   assert.match(former.next_action, /do not assign the current REH file to 370245/i);
-  assert.match(current.next_action, /not line-item or legal compliance validation/i);
+  assert.match(current.next_action, /former acute-care CCN 370245/i);
   const group = worklist.find(row => row.ccns.join(',') === '370245,370784');
   assert.ok(group);
   assert.equal(group.disposition, 'same-campus-cms-confirmed-reh-transition-scope-reviewed');
@@ -37,7 +43,7 @@ test('Clinton REH conversion is exact-CCN and full-file-NPI bound', () => {
   assert.match(group.next_action, /promoted only for 370784/);
   const resolution = resolutions.find(row => row.ccn === '370784');
   assert.equal(resolution.action, 'replace');
-  assert.equal(resolution.evidence.fileSha256, proof.file_sha256);
+  assert.equal(resolution.evidence.fileSha256, currentProof.current_revision.sha256);
   assert.equal(resolution.evidence.cmsNpi, proof.cms_current_enrollment.npi);
   assert.equal(resolutions.some(row => row.ccn === '370245'), false);
   assert.equal(reconciliation.find(row => row.ccn === '370784').standing_finding, 'compliant-observed');

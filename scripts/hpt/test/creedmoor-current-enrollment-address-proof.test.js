@@ -94,8 +94,8 @@ test('Creedmoor reviewed resolution is applied without losing the historical add
   const roster = read('reconciliation-891-baseline-member-roster-2026-09-27.json');
   assert.ok(!roster.current_crosswalk_ccns['genuinely-unresolved'].includes('334004'));
   assert.ok(roster.current_crosswalk_ccns['superseded-by-reviewed-resolution'].includes('334004'));
-  assert.equal(roster.summary.current_effective_categories['genuinely-unresolved'], 543);
-  assert.equal(roster.summary.current_effective_categories['superseded-by-reviewed-resolution'], 69);
+  assert.equal(roster.summary.current_effective_categories['genuinely-unresolved'], 541);
+  assert.equal(roster.summary.current_effective_categories['superseded-by-reviewed-resolution'], 70);
   assert.equal(roster.summary.category_membership_sum, 891);
   assert.equal(roster.summary.unique_ccns, 720);
   assert.equal(roster.summary.overlap_ccns, 171);

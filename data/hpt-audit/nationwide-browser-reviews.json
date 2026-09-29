@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-28T22:53:18Z",
+  "updated_at": "2026-09-29T03:46:10.284Z",
   "records": [
     {
       "kind": "official-file-range-get-timeout",
@@ -24751,6 +24751,26 @@
       "next_action": "Retain scope classification; retain earlier 404 as route observations; do not infer MRF availability."
     },
     {
+      "kind": "indian-health-program-scope-review",
+      "ccn": "031305",
+      "target": "https://www.cms.gov/training-education/partner-outreach-resources/american-indian/alaska-native/behavioral-health/service-locator",
+      "final_url": "https://www.cms.gov/training-education/partner-outreach-resources/american-indian/alaska-native/behavioral-health/service-locator",
+      "status": "scope-exempt-indian-health-program; CMS-reported-Tribal-ownership-retained",
+      "title": "Hopi Health Care Center exact-CCN identity and IHS operation",
+      "detail": "Live CMS exact-CCN record identifies HOPI HEALTH CARE CENTER at Highway 264 Milepost 388, Polacca AZ, CCN 031305; CMS reports ownership Tribal. CMS's current Service Locator separately lists Hopi Health Care Center (Keams Canyon) at the same Polacca address with IHS affiliation. The current IHS facility page identifies the site as PHS Indian Health Services, and IHS's federally-operated-facility dashboard lists the Hopi Critical Access Hospital. The ownership value remains separate and unchanged. Direct IHS program operation supports 45 CFR 180.30(b)(2) and 25 USC 1603(12)(A), scope classification only. No MRF availability, pointer linkage or file quality is inferred; prior pointer uncertainty remains historical provenance.",
+      "browser": "official-cms-api-and-ihs-web-review",
+      "http_status": 200,
+      "bytes_read": 0,
+      "content_range": "not applicable; rendered current official records",
+      "identity": "exact-CCN CMS name/location plus matching current IHS site and federally-operated-facility record",
+      "declared_hospital_name": "HOPI HEALTH CARE CENTER",
+      "declared_address": "Highway 264, Milepost 388, Polacca, AZ 86042",
+      "declared_license_state": "AZ",
+      "observed_at": "2026-09-29T03:17:19Z",
+      "proof_file": "reconciliation-hopi-indian-health-program-scope-proof-2026-09-29.json",
+      "next_action": "Retain the scope classification and CMS-reported ownership separately; revisit only on an exact-CCN, operator/program, CMS source, or regulatory change. Do not infer current MRF presence or absence."
+    },
+    {
       "kind": "third-party-source-audit-trail",
       "ccn": "330270",
       "target": "https://ppman.hank.ai/api/v1/price-transparency/hospitals/330270/provenance?download=1",
@@ -24770,6 +24790,32 @@
       "observed_at": "2026-09-28T21:41:00Z",
       "proof_file": "reconciliation-hss-third-party-exact-file-audit-trail-lead-2026-09-28.json",
       "next_action": "Keep unresolved; compare this fingerprint only if actual bytes arrive via a materially different authorized route, then independently validate CMS metadata and usable rows. Do not repeat unchanged CloudFront requests."
+    },
+    {
+      "kind": "official-pointer-full-mrf-retrieval",
+      "ccn": "171346",
+      "target": "https://pattersonhc.org/cms-hpt.txt",
+      "final_url": "https://pattersonhc.org/cms-hpt.txt",
+      "status": "current-pointer-and-exact-declared-file-retrieved",
+      "title": "Patterson Health Center current price transparency file",
+      "detail": "Browser inspection confirmed the Patterson-named PARA pricing page and its February 10, 2026 file label. The first-party CMS pointer was then fetched directly (200; 283 bytes; hash-bound) and names this exact PARA CSV. Earlier report-endpoint 500 used dbName=hospital; the current page JavaScript maps its control to dbAMCANTHONYKS. The correctly keyed URL returned and the complete 8,536,635-byte CSV was retained and parsed: CMS 3.0.0 / 2026-02-10, 26,408 pricing rows, exact Patterson legal name, 485 KS-2 Hwy 2 Anthony KS 67003, Kansas license field, NPI and attestation. Current CMS exact-CCN and NPI Registry records corroborate the address/name/NPI. No legal compliance determination is made.",
+      "browser": "Codex In-app Browser plus bounded direct HTTP retrieval",
+      "http_status": 200,
+      "bytes_read": 283,
+      "identity": "exact-current-ccn-pointer-npi-and-full-file-identity-corroborated",
+      "declared_hospital_name": "HOSPITAL DISTRICT NO 6 OF HARPER COUNTY KANSAS",
+      "declared_location_name": "HOSPITAL DISTRICT NO 6 OF HARPER COUNTY KANSAS",
+      "declared_address": "485 KS-2 Hwy 2 Anthony KS 67003",
+      "declared_license_state": "KS",
+      "declared_last_updated": "2026-02-10",
+      "cms_template_version": "3.0.0",
+      "observed_at": "2026-09-29T03:46:10.284Z",
+      "source_page_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Patterson_V2.aspx",
+      "pointer_url": "https://pattersonhc.org/cms-hpt.txt",
+      "mrf_url": "https://apps.para-hcfs.com/PTT//FinalLinks/Reports.aspx?dbName=dbAMCANTHONYKS&type=CDMWithoutLabel&fileType=CSV",
+      "file_sha256": "0c5091ecfb5d8b505f38cee638f554ade512af1a2fa2dbdc1e826ba775068cbc",
+      "proof_file": "reconciliation-patterson-health-center-current-mrf-proof-2026-09-29.json",
+      "next_action": "Keep the full hash-bound file and current pointer linkage as observed evidence. Recheck on the next scheduled crawl or sooner only if the publisher changes the pointer/file; do not repeat the earlier malformed endpoint query."
     }
   ]
 }

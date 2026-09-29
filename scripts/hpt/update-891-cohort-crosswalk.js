@@ -49,7 +49,7 @@ for (const ccn of members) {
   groups[effective].push(ccn);
 }
 const counts = Object.fromEntries(Object.entries(groups).map(([key, values]) => [key, values.length]));
-const expected = { 'genuinely-unresolved': 543, 'active-verification-claim': 21, 'standing-evidence-retained': 72, 'superseded-by-reviewed-resolution': 69, 'scope-exempt': 15 };
+const expected = { 'genuinely-unresolved': 541, 'active-verification-claim': 21, 'standing-evidence-retained': 72, 'superseded-by-reviewed-resolution': 70, 'scope-exempt': 16 };
 if (JSON.stringify(counts) !== JSON.stringify(expected)) throw new Error(`Effective category crosswalk mismatch: ${JSON.stringify(counts)}`);
 
 const currentSnapshotUnresolved = snapshot.summary.effective_counts['genuinely-unresolved'];

@@ -17,8 +17,9 @@ test('recovered unresolved shortlist is current, CCN-scoped and withholds signed
     compliance: path.join(audit, 'compliance.csv'),
   };
   for (const [key, file] of Object.entries(inputs)) {
-    assert.equal(shortlist.source_sha256[key], crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex'));
+    assert.equal(shortlist.source_sha256[key], crypto.createHash('sha256').update(fs.readFileSync(file, 'utf8').replace(/\r\n/g, '\n')).digest('hex'));
   }
+  assert.equal(shortlist.source_sha256_basis, 'UTF-8 text with CRLF normalized to LF');
   const queue = JSON.parse(fs.readFileSync(inputs.queue, 'utf8'));
   const unresolved = new Map(queue.filter(row => row.workstream === 'genuinely-unresolved-investigation')
     .map(row => [row.ccn, row]));

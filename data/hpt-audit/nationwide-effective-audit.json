@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-09-29T02:46:34.403Z",
+  "generated_at": "2026-09-29T04:49:25.191Z",
   "purpose": "Exact-CCN reproducible reconciliation of raw nationwide observations, validated reviewed overlays, reconciliation issues/workstreams, and the frozen historical 891-membership cohort.",
   "inputs": {
     "nationwide_verification": {
       "file": "nationwide-verification.json",
-      "sha256": "628a1d797517e62b973ccde687faa8127ee314c07caee36101e857d15f454913"
+      "sha256": "a10ae3b1798e5cdf924811e5921edde26b8a2442984a6a8190fda921bdaf6f28"
     },
     "nationwide_reconciliation": {
       "file": "nationwide-reconciliation.json",
-      "sha256": "505d97ec41baa2ed7feb93c86e0eabc8663e4aa28dc8b760d651aadf8b7f7e19"
+      "sha256": "54508d265d25a97ff9369b870c33cc12694cd6d65f9cb51e4becde388a64eddf"
     },
     "historical_891_roster": {
       "file": "reconciliation-891-baseline-member-roster-2026-09-27.json",
-      "sha256": "c4541afac293dda14adb2df8bcc056e76ce14df5009b4c3b62f8752e55519e47"
+      "sha256": "300f080bfd26aee4b0e5f83e9c521dc064023ae2d327c2431afcba4195fc0b93"
     }
   },
   "coverage": {
@@ -26,33 +26,33 @@
     "effective_category": {
       "active-verification-claim": 3297,
       "standing-evidence-retained": 762,
-      "superseded-by-reviewed-resolution": 622,
-      "genuinely-unresolved": 544,
-      "scope-exempt": 194
+      "superseded-by-reviewed-resolution": 623,
+      "genuinely-unresolved": 542,
+      "scope-exempt": 195
     },
     "reconciliation_status": {
-      "consistent-proof-audited": 3217,
+      "consistent-proof-audited": 3216,
       "review-required": 1569,
-      "consistent-superseded-by-reviewed-resolution": 441,
+      "consistent-superseded-by-reviewed-resolution": 442,
       "consistent-summary-proof-audit-pending": 178,
       "supported-identity-uncertainty": 14
     },
     "workstream": {
       "consistent": 3836,
-      "standing-evidence-follow-up": 961,
-      "genuinely-unresolved-investigation": 544,
+      "standing-evidence-follow-up": 962,
+      "genuinely-unresolved-investigation": 542,
       "verification-proof-gap": 46,
       "identity-quarantine": 10,
-      "other-reconciliation": 1,
+      "other-reconciliation": 2,
       "supported-uncertainty-monitor": 14,
       "standing-finding-discrepancy": 7
     },
     "historical_891_category": {
-      "genuinely-unresolved": 543,
+      "genuinely-unresolved": 541,
       "active-verification-claim": 21,
-      "scope-exempt": 15,
+      "scope-exempt": 16,
       "standing-evidence-retained": 72,
-      "superseded-by-reviewed-resolution": 69
+      "superseded-by-reviewed-resolution": 70
     }
   },
   "limitations": [
@@ -7932,9 +7932,9 @@
       "hospital_name": "HOPI HEALTH CARE CENTER",
       "state": "AZ",
       "historical_891_member": true,
-      "historical_891_current_category": "genuinely-unresolved",
+      "historical_891_current_category": "scope-exempt",
       "raw_observation": {
-        "disposition": "pointer-discovery-incomplete",
+        "disposition": "scope-exempt-indian-health-program",
         "observed_at": "2026-09-26T17:00:39.991Z",
         "mrf_http_status": "",
         "mrf_url": "",
@@ -7943,10 +7943,10 @@
         "pointer_state": "request-or-tool-failure",
         "pointer_result": "navigation-failed",
         "pointer_observed_at": "2026-09-26T17:00:39.991Z",
-        "next_action": "Recover a Hopi-specific CMS CSV/JSON through a permitted publisher route, then verify declared name, address, Arizona state, date, version and usability."
+        "next_action": "Retain the scope classification and CMS-reported ownership separately. Revisit only if exact CCN identity, IHS operation/program status, CMS source fields or regulatory scope changes; do not infer current MRF presence or absence."
       },
       "effective_reviewed_observation": {
-        "disposition": "pointer-discovery-incomplete",
+        "disposition": "scope-exempt-indian-health-program",
         "observed_at": "2026-09-26T17:00:39.991Z",
         "mrf_http_status": "",
         "mrf_url": "",
@@ -7958,13 +7958,13 @@
         "overlay_source_proof_file": ""
       },
       "reconciliation": {
-        "workstream": "genuinely-unresolved-investigation",
+        "workstream": "standing-evidence-follow-up",
         "status": "review-required",
         "issues": [
-          "latest-check-unresolved"
+          "later-manual-observation-follow-up"
         ],
-        "latest_observed_at": "2026-09-26T17:00:39.991Z",
-        "next_action": "Recover a Hopi-specific CMS CSV/JSON through a permitted publisher route, then verify declared name, address, Arizona state, date, version and usability.",
+        "latest_observed_at": "2026-09-29T03:17:19Z",
+        "next_action": "Retain the scope classification and CMS-reported ownership separately. Revisit only if exact CCN identity, IHS operation/program status, CMS source fields or regulatory scope changes; do not infer current MRF presence or absence.",
         "actionable": true
       }
     },
@@ -73056,40 +73056,38 @@
       "hospital_name": "HOSPITAL DISTRICT #6 PATTERSON HEALTH CENTER",
       "state": "KS",
       "historical_891_member": true,
-      "historical_891_current_category": "genuinely-unresolved",
+      "historical_891_current_category": "superseded-by-reviewed-resolution",
       "raw_observation": {
-        "disposition": "pointer-discovery-incomplete",
-        "observed_at": "2026-09-26T12:47:51.465Z",
-        "mrf_http_status": "",
-        "mrf_url": "",
-        "browser_mrf_status": "",
-        "browser_mrf_observed_at": "",
-        "pointer_state": "request-or-tool-failure",
-        "pointer_result": "browser-client-blocked",
-        "pointer_observed_at": "2026-09-26T12:47:51.465Z",
-        "next_action": "Recover the underlying CSV/JSON through a changed authorized route or publisher-provided link, then verify bytes, CMS metadata, facility identity/address/state and usability before promotion."
+        "disposition": "verified-current-mrf",
+        "observed_at": "2026-09-29T03:46:10.284Z",
+        "mrf_http_status": "complete-200",
+        "mrf_url": "https://apps.para-hcfs.com/PTT//FinalLinks/Reports.aspx?dbName=dbAMCANTHONYKS&type=CDMWithoutLabel&fileType=CSV",
+        "browser_mrf_status": "retrieved",
+        "browser_mrf_observed_at": "2026-09-29T03:46:10.284Z",
+        "pointer_state": "retrieved-facility-linked-manual-review",
+        "pointer_result": "200",
+        "pointer_observed_at": "2026-09-29T03:46:10.284Z",
+        "next_action": "Keep the full hash-bound file and current pointer linkage as observed evidence. Recheck on the next scheduled crawl or sooner only if the publisher changes the pointer/file; do not repeat the earlier malformed endpoint query."
       },
       "effective_reviewed_observation": {
-        "disposition": "pointer-discovery-incomplete",
-        "observed_at": "2026-09-26T12:47:51.465Z",
-        "mrf_http_status": "",
-        "mrf_url": "",
+        "disposition": "verified-current-mrf",
+        "observed_at": "2026-09-29T03:46:10.284Z",
+        "mrf_http_status": "complete-200",
+        "mrf_url": "https://apps.para-hcfs.com/PTT//FinalLinks/Reports.aspx?dbName=dbAMCANTHONYKS&type=CDMWithoutLabel&fileType=CSV",
         "standing_evidence_retained": false,
-        "latest_observation_superseded": false,
+        "latest_observation_superseded": true,
         "latest_retry_observation": null,
         "reviewed_page_file_overlay": "",
         "overlay_root_pointer_observation": null,
         "overlay_source_proof_file": ""
       },
       "reconciliation": {
-        "workstream": "genuinely-unresolved-investigation",
-        "status": "review-required",
-        "issues": [
-          "latest-check-unresolved"
-        ],
-        "latest_observed_at": "2026-09-26T12:47:51.465Z",
-        "next_action": "Recover the underlying CSV/JSON through a changed authorized route or publisher-provided link, then verify bytes, CMS metadata, facility identity/address/state and usability before promotion.",
-        "actionable": true
+        "workstream": "consistent",
+        "status": "consistent-superseded-by-reviewed-resolution",
+        "issues": [],
+        "latest_observed_at": "2026-09-29T03:46:10.284Z",
+        "next_action": "No further action on the older nationwide observation; a later reviewed resolution supplies the standing evidence.",
+        "actionable": false
       }
     },
     {
@@ -126239,7 +126237,7 @@
           "browser-file-identity-proof-insufficient",
           "latest-check-unresolved"
         ],
-        "latest_observed_at": "2026-09-28T21:25:34Z",
+        "latest_observed_at": "2026-09-29T03:05:00Z",
         "next_action": "Obtain publisher clarification or authoritative campus-history evidence connecting 1900 North Main to CCN 321305, and independently verify a structured root cms-hpt.txt that declares the exact file after a material change. Do not treat the street-number conflict as equivalent or the current HTML/403 responses as a file-validity verdict.",
         "actionable": true
       }
@@ -151837,7 +151835,7 @@
         "pointer_state": "retrieved-facility-linked",
         "pointer_result": "ok",
         "pointer_observed_at": "2026-09-15T08:03:59.776Z",
-        "next_action": "The exact current REH pointer/file was promoted for CCN 370784 through the reviewed-resolution ledger. Monitor publisher changes and retain the distinct former CCN; this is not line-item or legal compliance validation."
+        "next_action": "Current pointer-linked REH file remains promoted for CCN 370784; its bytes and metadata were rechecked on 2026-09-29 with a changed full-file hash/count. Keep former acute-care CCN 370245 separate pending historical-file evidence."
       },
       "effective_reviewed_observation": {
         "disposition": "pointer-linked-file-not-probed",
@@ -151855,7 +151853,7 @@
         "workstream": "consistent",
         "status": "consistent-superseded-by-reviewed-resolution",
         "issues": [],
-        "latest_observed_at": "2026-09-17T10:53:30.532Z",
+        "latest_observed_at": "2026-09-29T04:17:09.323Z",
         "next_action": "No further action on the older nationwide observation; a later reviewed resolution supplies the standing evidence.",
         "actionable": false
       }
@@ -166901,12 +166899,14 @@
         "overlay_source_proof_file": ""
       },
       "reconciliation": {
-        "workstream": "consistent",
-        "status": "consistent-proof-audited",
-        "issues": [],
+        "workstream": "other-reconciliation",
+        "status": "review-required",
+        "issues": [
+          "manual-correction-reconciliation"
+        ],
         "latest_observed_at": "2026-09-22T19:30:00Z",
         "next_action": "Recheck on the normal annual cadence and preserve this file hash as the current evidence baseline.",
-        "actionable": false
+        "actionable": true
       }
     },
     {
@@ -174526,7 +174526,8 @@
         "workstream": "standing-evidence-follow-up",
         "status": "review-required",
         "issues": [
-          "reviewed-pointer-or-page-linkage-follow-up"
+          "reviewed-pointer-or-page-linkage-follow-up",
+          "manual-correction-reconciliation"
         ],
         "latest_observed_at": "2026-09-22T01:14:00Z",
         "next_action": "Retry the exact root cms-hpt.txt route and retain the page-linked JSON and redirect/blob metadata.",
@@ -178644,6 +178645,7 @@
         "workstream": "genuinely-unresolved-investigation",
         "status": "review-required",
         "issues": [
+          "manual-correction-reconciliation",
           "latest-check-unresolved"
         ],
         "latest_observed_at": "2026-09-28T13:48:14Z",
@@ -181786,7 +181788,7 @@
         "pointer_state": "retrieved-facility-match-unresolved",
         "pointer_result": "ok",
         "pointer_observed_at": "2026-09-15T09:17:01.257Z",
-        "next_action": "NPPES corroborates NPI 1497606438 as Shannon Medical Center Big Spring at the right campus, but CMS has not linked that NPI to CCN 450653. The latest 2026-08-01 CMS Hospital Enrollments and Hospital All Owners datasets both predate the 2026-09-21 NPPES update; the owner snapshot lists Quorum/GoldenTree/Quincy associations dated 2024-09-06 and no Shannon organization, which may reflect stale/incomplete CMS data. Do not repeat those unchanged snapshots. Keep unresolved until a post-transition CMS certification/enrollment record or authoritative Shannon/publisher statement explicitly links NPI 1497606438 to CCN 450653; do not promote from same-campus/name evidence alone."
+        "next_action": "Do not repeat those unchanged snapshots or this unchanged CMS CHOW snapshot. Keep CCN 450653 and the Shannon file scope separate. Seek a post-transition CMS certification/enrollment record, later CHOW release, or published authoritative Shannon/CMS record explicitly mapping NPI 1497606438 to CCN 450653; do not infer the mapping from name, address, or operational ownership alone."
       },
       "effective_reviewed_observation": {
         "disposition": "pointer-facility-match-unresolved",
@@ -181806,8 +181808,8 @@
         "issues": [
           "latest-check-unresolved"
         ],
-        "latest_observed_at": "2026-09-29T02:43:35Z",
-        "next_action": "NPPES corroborates NPI 1497606438 as Shannon Medical Center Big Spring at the right campus, but CMS has not linked that NPI to CCN 450653. The latest 2026-08-01 CMS Hospital Enrollments and Hospital All Owners datasets both predate the 2026-09-21 NPPES update; the owner snapshot lists Quorum/GoldenTree/Quincy associations dated 2024-09-06 and no Shannon organization, which may reflect stale/incomplete CMS data. Do not repeat those unchanged snapshots. Keep unresolved until a post-transition CMS certification/enrollment record or authoritative Shannon/publisher statement explicitly links NPI 1497606438 to CCN 450653; do not promote from same-campus/name evidence alone.",
+        "latest_observed_at": "2026-09-29T04:42:54.481Z",
+        "next_action": "Do not repeat those unchanged snapshots or this unchanged CMS CHOW snapshot. Keep CCN 450653 and the Shannon file scope separate. Seek a post-transition CMS certification/enrollment record, later CHOW release, or published authoritative Shannon/CMS record explicitly mapping NPI 1497606438 to CCN 450653; do not infer the mapping from name, address, or operational ownership alone.",
         "actionable": true
       }
     },

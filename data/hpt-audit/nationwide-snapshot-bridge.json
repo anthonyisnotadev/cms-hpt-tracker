@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T02:46:34.403Z",
+  "generated_at": "2026-09-29T04:49:25.191Z",
   "purpose": "Exact-CCN bridge between the last committed nationwide snapshot and the current rebuilt snapshot, including the recovered exact 2026-09-25 891-membership cohort crosswalk.",
   "base_snapshot": {
     "ref": "e777d09e",
@@ -16,14 +16,14 @@
   },
   "current_snapshot": {
     "file": "nationwide-verification.json",
-    "generated_at": "2026-09-29T02:46:34.403Z",
-    "sha256": "628a1d797517e62b973ccde687faa8127ee314c07caee36101e857d15f454913",
+    "generated_at": "2026-09-29T04:49:25.191Z",
+    "sha256": "a10ae3b1798e5cdf924811e5921edde26b8a2442984a6a8190fda921bdaf6f28",
     "counts": {
-      "scope-exempt": 194,
+      "scope-exempt": 195,
       "active-verification-claim": 3296,
-      "genuinely-unresolved": 545,
+      "genuinely-unresolved": 543,
       "standing-evidence-retained": 762,
-      "superseded-by-reviewed-resolution": 622
+      "superseded-by-reviewed-resolution": 623
     }
   },
   "coverage": {
@@ -35,7 +35,7 @@
   },
   "historical_891_membership_cohort": {
     "roster_file": "reconciliation-891-baseline-member-roster-2026-09-27.json",
-    "roster_sha256": "c4541afac293dda14adb2df8bcc056e76ce14df5009b4c3b62f8752e55519e47",
+    "roster_sha256": "300f080bfd26aee4b0e5f83e9c521dc064023ae2d327c2431afcba4195fc0b93",
     "frozen_snapshot_generated_at": "2026-09-25T14:28:24.129Z",
     "frozen_snapshot_sha256": "1192cfeaad4cecd209c54315a84453c73dc783554d4f14db15c219e5f63fba13",
     "historical_membership_counts": {
@@ -46,13 +46,13 @@
       "unique_ccns": 720
     },
     "exact_member_set_recovered": true,
-    "current_snapshot_sha256": "628a1d797517e62b973ccde687faa8127ee314c07caee36101e857d15f454913",
+    "current_snapshot_sha256": "a10ae3b1798e5cdf924811e5921edde26b8a2442984a6a8190fda921bdaf6f28",
     "current_category_counts": {
-      "genuinely-unresolved": 543,
+      "genuinely-unresolved": 541,
       "active-verification-claim": 21,
       "standing-evidence-retained": 72,
-      "superseded-by-reviewed-resolution": 69,
-      "scope-exempt": 15
+      "superseded-by-reviewed-resolution": 70,
+      "scope-exempt": 16
     },
     "current_category_ccns": {
       "genuinely-unresolved": [
@@ -72,7 +72,6 @@
         "024002",
         "030073",
         "030138",
-        "031305",
         "031320",
         "034021",
         "034026",
@@ -212,7 +211,6 @@
         "170781",
         "171317",
         "171341",
-        "171346",
         "171359",
         "174006",
         "174022",
@@ -726,6 +724,7 @@
         "154020",
         "160030",
         "161329",
+        "171346",
         "181317",
         "181328",
         "190017",
@@ -775,6 +774,7 @@
         "030084",
         "030113",
         "030195",
+        "031305",
         "031307",
         "031308",
         "031309",
@@ -792,10 +792,10 @@
     "active-verification-claim -> standing-evidence-retained": 1,
     "active-verification-claim -> superseded-by-reviewed-resolution": 1,
     "genuinely-unresolved -> active-verification-claim": 63,
-    "genuinely-unresolved -> genuinely-unresolved": 542,
-    "genuinely-unresolved -> scope-exempt": 30,
+    "genuinely-unresolved -> genuinely-unresolved": 540,
+    "genuinely-unresolved -> scope-exempt": 31,
     "genuinely-unresolved -> standing-evidence-retained": 15,
-    "genuinely-unresolved -> superseded-by-reviewed-resolution": 137,
+    "genuinely-unresolved -> superseded-by-reviewed-resolution": 138,
     "scope-exempt -> scope-exempt": 164,
     "standing-evidence-retained -> active-verification-claim": 33,
     "standing-evidence-retained -> standing-evidence-retained": 733,
@@ -2981,12 +2981,12 @@
       "ccn": "031305",
       "hospital_name": "HOPI HEALTH CARE CENTER",
       "previous_effective_category": "genuinely-unresolved",
-      "current_effective_category": "genuinely-unresolved",
+      "current_effective_category": "scope-exempt",
       "previous_disposition": "pointer-discovery-incomplete",
-      "current_disposition": "pointer-discovery-incomplete",
+      "current_disposition": "scope-exempt-indian-health-program",
       "previous_observed_at": "2026-09-15T12:26:40.417Z",
       "current_observed_at": "2026-09-26T17:00:39.991Z",
-      "transition": "genuinely-unresolved -> genuinely-unresolved"
+      "transition": "genuinely-unresolved -> scope-exempt"
     },
     {
       "ccn": "031307",
@@ -21109,12 +21109,12 @@
       "ccn": "171346",
       "hospital_name": "HOSPITAL DISTRICT #6 PATTERSON HEALTH CENTER",
       "previous_effective_category": "genuinely-unresolved",
-      "current_effective_category": "genuinely-unresolved",
+      "current_effective_category": "superseded-by-reviewed-resolution",
       "previous_disposition": "pointer-access-denied-to-client",
-      "current_disposition": "pointer-discovery-incomplete",
+      "current_disposition": "verified-current-mrf",
       "previous_observed_at": "2026-09-15T12:35:24.655Z",
-      "current_observed_at": "2026-09-26T12:47:51.465Z",
-      "transition": "genuinely-unresolved -> genuinely-unresolved"
+      "current_observed_at": "2026-09-29T03:46:10.284Z",
+      "transition": "genuinely-unresolved -> superseded-by-reviewed-resolution"
     },
     {
       "ccn": "171347",

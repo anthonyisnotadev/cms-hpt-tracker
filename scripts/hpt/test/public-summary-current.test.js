@@ -18,13 +18,13 @@ test('public social-preview summaries do not retain superseded nationwide counts
     }
   }
   const readme = fs.readFileSync(path.join(root, 'README.md'), 'utf8');
-  assert.match(readme, /LOCAL SNAPSHOT\s+2026-09-29 02:46 UTC/);
-  assert.match(readme, /local reviewed snapshot from September 29,\s*2026, 02:46 UTC/);
+  assert.match(readme, /LOCAL SNAPSHOT\s+2026-09-29 04:49 UTC/);
+  assert.match(readme, /local reviewed snapshot from September 29,\s*2026, 04:49 UTC/);
   assert.match(readme, /Roster represented\s+\[#+\]\s+5,419\s+100\.0%/);
-  assert.match(readme, /Unresolved investigation\s+\[#+\.+\]\s+544\s+10\.0%/);
-  assert.match(readme, /\| Unresolved \| 544 \| Resolve discovery, access, pointer linkage, or facility identity/);
+  assert.match(readme, /Unresolved investigation\s+\[#+\.+\]\s+542\s+10\.0%/);
+  assert.match(readme, /\| Unresolved \| 542 \| Resolve discovery, access, pointer linkage, or facility identity/);
   assert.match(readme, /\*\*1,592 hospitals\*\*/);
-  assert.match(readme, /\| Standing evidence follow-ups \| 961 \|/);
-  assert.doesNotMatch(readme, /\*\*1,593 hospitals\*\*|\| Standing evidence follow-ups \| 962 \|/);
+  assert.match(readme, /\| Standing evidence follow-ups \| 962 \|/);
+  assert.doesNotMatch(readme, /\*\*1,593 hospitals\*\*|\| Standing evidence follow-ups \| 961 \|/);
   assert.doesNotMatch(readme, /regenerated on September 18, 2026|Observed-compliant \| 3,837|Observed file problem \| 215|Unresolved \| 1,201/);
 });

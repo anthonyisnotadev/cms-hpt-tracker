@@ -1,74 +1,6 @@
 {
   "records": [
     {
-      "ccn": "050348",
-      "previous_observation_2026_09_28": {
-        "observed_at": "2026-09-28T22:22:00Z",
-        "proof_file": "reconciliation-uci-orange-lakewood-cross-ccn-attribution-proof-2026-09-28.json",
-        "disposition": "linked-mrf-header-unmatched",
-        "pointer_status": 206,
-        "file_sample_bytes": 131072,
-        "file_sample_sha256": "5898f42ecd6bc151b0308215c10998f47308dac11554c9d43e50d4af9ab1fd16",
-        "limitation": "Only the bounded 131,072-byte prefix was available then; complete file, attestation and usable rows had not been checked."
-      },
-      "observed_at": "2026-09-29T00:46:37.978Z",
-      "proof_file": "reconciliation-uci-orange-full-file-validation-2026-09-29.json",
-      "reviewed_facility_mismatch": false,
-      "official_domain": "ucihealth.org",
-      "pointer_url": "https://www.ucihealth.org/cms-hpt.txt",
-      "pointer_sha256": "ca19e3b7cc53c0f29796ce4586fe91b11ae7a816d5b3b02b6ce17e3fb2ce7c8c",
-      "pointer_status": 200,
-      "pointer_bytes": 1814,
-      "pointer_integrity": "fresh official response hash; pointer content has facility contact data withheld",
-      "pointer_location_name": "Regents of the California at Irvine Hospital",
-      "pointer_declared_mrf_url": "https://www.ucihealth.org/pricetransparency/952226406_regents-of-the-university-of-california-at-irvine-hospital_standardcharges.json",
-      "source_page_url": "https://www.ucihealth.org/patients-and-visitors/financial-resources/price-transparency",
-      "state_facility_page_url": "https://hcai.ca.gov/equity-measures/hospital/uci-health-orange/",
-      "state_facility_name": "UCI HEALTH-ORANGE",
-      "state_facility_address": "101 CITY DRIVE SOUTH, ORANGE CA 92868",
-      "state_facility_license_number": "060000148",
-      "state_facility_licensee": "UNIVERSITY OF CALIFORNIA BOARD OF REGENTS",
-      "cms_roster_name": "UCI HEALTH-ORANGE",
-      "cms_roster_address": "101 CITY DRIVE SOUTH",
-      "cms_roster_state": "CA",
-      "facility_file_url": "https://www.ucihealth.org/pricetransparency/952226406_regents-of-the-university-of-california-at-irvine-hospital_standardcharges.json",
-      "facility_file_status": 200,
-      "facility_file_sample_bytes": 131072,
-      "facility_file_total_bytes": 68974005,
-      "facility_file_sample_sha256": "5898f42ecd6bc151b0308215c10998f47308dac11554c9d43e50d4af9ab1fd16",
-      "facility_file_sha256": "e6c1f35f85842031817c2a941e04590e3a3c0238cd87180c6bdd0f69bcb07d95",
-      "file_bytes": 68974005,
-      "file_sha256": "e6c1f35f85842031817c2a941e04590e3a3c0238cd87180c6bdd0f69bcb07d95",
-      "mrf_http_status": 200,
-      "file_kind": "json",
-      "official_page_url": "https://www.ucihealth.org/patients-and-visitors/financial-resources/price-transparency",
-      "facility_file_content_type": "application/json",
-      "declared_hospital_name": "Regents of the University of California at Irvine Hospital",
-      "declared_location_name": "Regents of the University of California at Irvine Hospital",
-      "declared_address": "101 City Drive South, Orange, CA 92868",
-      "declared_license_number": "060000148",
-      "declared_license_state": "CA",
-      "declared_last_updated": "2026-04-01",
-      "cms_template_version": "3.0.0",
-      "file_header_match_status": "exact name, address, and license agree with current HCAI Orange facility record",
-      "cms_nppes_crosscheck": {
-        "source_url": "https://npiregistry.cms.hhs.gov/api/?number=1689608150&version=2.1",
-        "response_sha256": "f461a57370dffcc05001737f19cbaef51063493f4d86c19ba181f08af5cffa50",
-        "response_bytes": 8431,
-        "npi": "1689608150",
-        "organization_name": "UNIVERSITY OF CALIFORNIA IRVINE",
-        "active_type_2": true,
-        "observation_limit": "organization NPI has sibling campus DBAs; corroborative only, not a standalone CCN attribution"
-      },
-      "disposition": "pointer-linked-current-cms-v3-mrf-identity-metadata-attestation-and-usable-rows-verified",
-      "interpretation": "The complete first-party Orange MRF is now retained and parsed. Its name, Orange address, California license number/state, current date, version 3.0.0, attestation, and usable charge/payer structures agree with the exact CCN 050348 CMS roster row and current HCAI Orange facility record. The current official root pointer and pricing page distinguish this Regents/Orange file from Lakewood's separate file. The older 131,072-byte bounded-prefix observation is preserved above as historical. Local checks are schema-derived, not the official CMS validator; no legal compliance conclusion is made.",
-      "next_action": "Keep the exact Orange file hash and pointer linkage as current evidence; recheck on the normal annual/source-change cycle. Do not assign the Lakewood file to CCN 050348 and leave CCN 050581's distinct address conflict unchanged.",
-      "new_mrf_bytes": true,
-      "full_file_bytes": 68974005,
-      "full_file_sha256": "e6c1f35f85842031817c2a941e04590e3a3c0238cd87180c6bdd0f69bcb07d95",
-      "count_effect": -1
-    },
-    {
       "ccn": "010005",
       "observed_at": "2026-09-20T20:35:00Z",
       "proof_file": "reconciliation-marshall-south-official-pricing-page-link-proof-2026-09-20.json",
@@ -914,23 +846,6 @@
     },
     {
       "ccn": "010110",
-      "observed_at": "2026-09-28T07:39:18Z",
-      "proof_file": "reconciliation-bullock-current-workbook-retrieval-proof-2026-09-28.json",
-      "official_pricing_page": "https://www.bullockcountyhospital.com/hospital-charges",
-      "official_pricing_page_status": 200,
-      "linked_workbook_url": "https://www.bullockcountyhospital.com/_files/ugd/ce2ea9_a454a15a1df3499abc80ba579a084bfc.xlsx?dn=BCH%20CDM%20for%20Webpage%20upload.xlsx",
-      "workbook_status": 206,
-      "workbook_content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-      "workbook_content_length": 386122,
-      "workbook_last_modified": "2023-10-13T15:59:57Z",
-      "bounded_range_bytes": 2048,
-      "disposition": "historical-acute-ccn-publisher-cdm-workbook-retrieved-but-not-cms-mrf",
-      "count_effect": 0,
-      "interpretation": "New direct publisher-route evidence: the official Hospital Charges page links a 386,122-byte XLSX/CDM workbook last modified 2023-10-13, and a 2,048-byte bounded range returns valid XLSX/ZIP signature bytes. This does not establish CMS MRF format or pointer linkage and does not exclude a separate MRF. No complete workbook or prices were imported. Keep 010110 unresolved and distinct from current REH 010779.",
-      "next_action": "Seek a dated pre-2024-05-01 CMS pointer/MRF capture or publisher confirmation whether a separate CMS-format machine-readable file existed for acute-care CCN 010110; do not treat this CDM XLSX as the CMS MRF."
-    },
-    {
-      "ccn": "010110",
       "observed_at": "2026-09-28T04:48:09Z",
       "proof_file": "reconciliation-bullock-preconversion-commoncrawl-page-file-review-2026-09-28.json",
       "change_trigger": "A domain-wide Common Crawl index query was a materially different archive route from the prior exact-root-only query; the goal was to recover dated pre-conversion publisher pricing-page/file evidence.",
@@ -954,6 +869,50 @@
         "count_effect": "none"
       },
       "next_action": "Retain 010110 in the historical accountability baseline. Seek an exact dated pre-2024-05-01 CMS pointer/MRF capture or publisher-provided historical CMS-format file; do not repeat the same Common Crawl index queries or exact root-pointer query absent a new archive/source change. Keep the dated page-linked chargemaster and current REH CCN 010779 file separate from historical CMS MRF evidence."
+    },
+    {
+      "ccn": "010110",
+      "observed_at": "2026-09-28T07:39:18Z",
+      "proof_file": "reconciliation-bullock-current-workbook-retrieval-proof-2026-09-28.json",
+      "official_pricing_page": "https://www.bullockcountyhospital.com/hospital-charges",
+      "official_pricing_page_status": 200,
+      "linked_workbook_url": "https://www.bullockcountyhospital.com/_files/ugd/ce2ea9_a454a15a1df3499abc80ba579a084bfc.xlsx?dn=BCH%20CDM%20for%20Webpage%20upload.xlsx",
+      "workbook_status": 206,
+      "workbook_content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "workbook_content_length": 386122,
+      "workbook_last_modified": "2023-10-13T15:59:57Z",
+      "bounded_range_bytes": 2048,
+      "disposition": "historical-acute-ccn-publisher-cdm-workbook-retrieved-but-not-cms-mrf",
+      "count_effect": 0,
+      "interpretation": "New direct publisher-route evidence: the official Hospital Charges page links a 386,122-byte XLSX/CDM workbook last modified 2023-10-13, and a 2,048-byte bounded range returns valid XLSX/ZIP signature bytes. This does not establish CMS MRF format or pointer linkage and does not exclude a separate MRF. No complete workbook or prices were imported. Keep 010110 unresolved and distinct from current REH 010779.",
+      "next_action": "Seek a dated pre-2024-05-01 CMS pointer/MRF capture or publisher confirmation whether a separate CMS-format machine-readable file existed for acute-care CCN 010110; do not treat this CDM XLSX as the CMS MRF."
+    },
+    {
+      "ccn": "010110",
+      "observed_at": "2026-09-28T12:25:00Z",
+      "proof_file": "reconciliation-bullock-preconversion-commoncrawl-page-file-review-2026-09-28.json",
+      "facility_role": "historical-acute-care-hospital",
+      "disposition": "historical-acute-ccn-file-still-unrecovered-current-reh-evidence-excluded",
+      "next_action": "Seek publisher-confirmed historical CMS-format MRF/pointer evidence or a genuinely new dated archive source; do not repeat the current pointer/page-label or queried Common Crawl collections.",
+      "evidence_gain": "Dated pre-conversion official page captures link a CDM workbook; current pointer and CMS REH reporting remain scoped to successor CCN 010779.",
+      "new_historical_mrf_bytes": false,
+      "count_effect": 0
+    },
+    {
+      "ccn": "010110",
+      "observed_at": "2026-09-28T15:39:27Z",
+      "proof_file": "reconciliation-bullock-historical-archive-index-check-2026-09-28.json",
+      "facility_role": "historical-acute-care-hospital",
+      "alternate_archive_route_observations": {
+        "wayback_availability_api": "Connect timeout before HTTP response; no result.",
+        "wayback_cdx_browser": "ERR_BLOCKED_BY_CLIENT; no archive content; no barrier bypassed.",
+        "exact_pointer_file_name_search": "No indexed exact-filename mirror found in three bounded web-search queries."
+      },
+      "disposition": "historical-acute-ccn-file-still-unrecovered-current-reh-evidence-excluded",
+      "interpretation": "This narrows the already-known alternate archive/search routes but does not show whether a historical MRF existed. No historical CMS pointer or MRF bytes were retrieved; keep CCN 010110 separate from successor REH CCN 010779.",
+      "next_action": "Keep current REH evidence excluded from CCN 010110; do not repeat the current pointer/page-label or these exact archive/API/browser/search routes absent a material access/source change. Seek publisher-confirmed historical CMS-format MRF/pointer evidence or a genuinely new dated archive source.",
+      "new_historical_mrf_bytes": false,
+      "count_effect": 0
     },
     {
       "ccn": "010113",
@@ -1745,6 +1704,20 @@
       },
       "interpretation": "The current first-party page and CMS independently identify the Kanakanak facility, but the linked pricing application is retired and the root pointer is an HTML 404. These are transport/publication observations only; no file-absence or compliance conclusion is inferred.",
       "next_action": "Obtain a replacement Kanakanak CSV/JSON MRF or corrected pointer from BBAHC/its authorized publisher, then verify Dillingham/Alaska identity, date/version and parsed usability before promotion."
+    },
+    {
+      "ccn": "021309",
+      "observed_at": "2026-09-28T20:29:22Z",
+      "proof_file": "reconciliation-kanakanak-indian-health-program-scope-proof-2026-09-28.json",
+      "prior_proof_files": [
+        "reconciliation-kanakanak-official-portal-retired-proof-2026-09-21.json",
+        "reconciliation-kanakanak-live-page-portal-recheck-proof-2026-09-26.json"
+      ],
+      "disposition": "scope-exempt-indian-health-program",
+      "interpretation": "CMS crosswalk ties the exact hospital to CCN 021309; current IHS evidence identifies the tribal operator and documents P.L. 93-638, Title V operation. Supports the 45 CFR 180.30(b)(2) Indian Health Program scope category. This is not an MRF recovery or claim about current MRF availability.",
+      "next_action": "Retain prior transport observations; revisit if identity, operator, contract/compact or program status changes.",
+      "new_mrf_bytes": false,
+      "count_effect": -1
     },
     {
       "ccn": "021311",
@@ -2707,6 +2680,20 @@
       "official_facility_address": "Hwy 264, Mile Marker 388, Polacca, AZ 86042",
       "disposition": "official-facility-identity-confirmed-pointer-discovery-unresolved",
       "next_action": "Recover a Hopi-specific CMS CSV/JSON through a permitted publisher route, then verify declared name, address, Arizona state, date, version and usability."
+    },
+    {
+      "ccn": "031305",
+      "observed_at": "2026-09-29T03:17:19Z",
+      "proof_file": "reconciliation-hopi-indian-health-program-scope-proof-2026-09-29.json",
+      "cms_provider_record": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=031305&conditions%5B0%5D%5Boperator%5D=%3D",
+      "cms_ihs_service_locator": "https://www.cms.gov/training-education/partner-outreach-resources/american-indian/alaska-native/behavioral-health/service-locator",
+      "ihs_facility_page": "https://www.ihs.gov/phoenix/healthcarefacilities/hopi/",
+      "ihs_federally_operated_facility_dashboard": "https://www.ihs.gov/quality/national-accountability-dashboard-for-quality/health-care-accreditation-status-of-federally-operated-ihs-facilities/",
+      "legal_basis": "45 CFR 180.30(b)(2); 25 USC 1603(12)(A)",
+      "cms_ownership_retained": "Tribal",
+      "disposition": "scope-exempt-indian-health-program",
+      "interpretation": "Current exact-CCN CMS identity/location and CMS/IHS facility evidence agree; the CMS Service Locator lists the Hopi site with IHS affiliation. IHS's federally-operated-facility dashboard lists the Hopi Critical Access Hospital; the separate CMS Tribal ownership value remains recorded without reinterpretation. Direct IHS program operation supports 45 CFR 180.30(b)(2), read with 25 USC 1603(12)(A). This is a scope classification only; it makes no MRF availability, pointer-linkage, or file-quality claim. The 2026-09-21 pointer-discovery observation is retained as historical provenance.",
+      "next_action": "Retain the scope classification and CMS-reported ownership separately. Revisit only if exact CCN identity, IHS operation/program status, CMS source fields or regulatory scope changes; do not infer current MRF presence or absence."
     },
     {
       "ccn": "031307",
@@ -4291,6 +4278,74 @@
       "manual_disposition": "verified-current-mrf",
       "disposition": "verified-current-mrf",
       "manual_identity_gate": "official-shared-pointer-facility-csv-exact-name-address-state-date-template-attestation-agree"
+    },
+    {
+      "ccn": "050348",
+      "previous_observation_2026_09_28": {
+        "observed_at": "2026-09-28T22:22:00Z",
+        "proof_file": "reconciliation-uci-orange-lakewood-cross-ccn-attribution-proof-2026-09-28.json",
+        "disposition": "linked-mrf-header-unmatched",
+        "pointer_status": 206,
+        "file_sample_bytes": 131072,
+        "file_sample_sha256": "5898f42ecd6bc151b0308215c10998f47308dac11554c9d43e50d4af9ab1fd16",
+        "limitation": "Only the bounded 131,072-byte prefix was available then; complete file, attestation and usable rows had not been checked."
+      },
+      "observed_at": "2026-09-29T00:46:37.978Z",
+      "proof_file": "reconciliation-uci-orange-full-file-validation-2026-09-29.json",
+      "reviewed_facility_mismatch": false,
+      "official_domain": "ucihealth.org",
+      "pointer_url": "https://www.ucihealth.org/cms-hpt.txt",
+      "pointer_sha256": "ca19e3b7cc53c0f29796ce4586fe91b11ae7a816d5b3b02b6ce17e3fb2ce7c8c",
+      "pointer_status": 200,
+      "pointer_bytes": 1814,
+      "pointer_integrity": "fresh official response hash; pointer content has facility contact data withheld",
+      "pointer_location_name": "Regents of the California at Irvine Hospital",
+      "pointer_declared_mrf_url": "https://www.ucihealth.org/pricetransparency/952226406_regents-of-the-university-of-california-at-irvine-hospital_standardcharges.json",
+      "source_page_url": "https://www.ucihealth.org/patients-and-visitors/financial-resources/price-transparency",
+      "state_facility_page_url": "https://hcai.ca.gov/equity-measures/hospital/uci-health-orange/",
+      "state_facility_name": "UCI HEALTH-ORANGE",
+      "state_facility_address": "101 CITY DRIVE SOUTH, ORANGE CA 92868",
+      "state_facility_license_number": "060000148",
+      "state_facility_licensee": "UNIVERSITY OF CALIFORNIA BOARD OF REGENTS",
+      "cms_roster_name": "UCI HEALTH-ORANGE",
+      "cms_roster_address": "101 CITY DRIVE SOUTH",
+      "cms_roster_state": "CA",
+      "facility_file_url": "https://www.ucihealth.org/pricetransparency/952226406_regents-of-the-university-of-california-at-irvine-hospital_standardcharges.json",
+      "facility_file_status": 200,
+      "facility_file_sample_bytes": 131072,
+      "facility_file_total_bytes": 68974005,
+      "facility_file_sample_sha256": "5898f42ecd6bc151b0308215c10998f47308dac11554c9d43e50d4af9ab1fd16",
+      "facility_file_sha256": "e6c1f35f85842031817c2a941e04590e3a3c0238cd87180c6bdd0f69bcb07d95",
+      "file_bytes": 68974005,
+      "file_sha256": "e6c1f35f85842031817c2a941e04590e3a3c0238cd87180c6bdd0f69bcb07d95",
+      "mrf_http_status": 200,
+      "file_kind": "json",
+      "official_page_url": "https://www.ucihealth.org/patients-and-visitors/financial-resources/price-transparency",
+      "facility_file_content_type": "application/json",
+      "declared_hospital_name": "Regents of the University of California at Irvine Hospital",
+      "declared_location_name": "Regents of the University of California at Irvine Hospital",
+      "declared_address": "101 City Drive South, Orange, CA 92868",
+      "declared_license_number": "060000148",
+      "declared_license_state": "CA",
+      "declared_last_updated": "2026-04-01",
+      "cms_template_version": "3.0.0",
+      "file_header_match_status": "exact name, address, and license agree with current HCAI Orange facility record",
+      "cms_nppes_crosscheck": {
+        "source_url": "https://npiregistry.cms.hhs.gov/api/?number=1689608150&version=2.1",
+        "response_sha256": "f461a57370dffcc05001737f19cbaef51063493f4d86c19ba181f08af5cffa50",
+        "response_bytes": 8431,
+        "npi": "1689608150",
+        "organization_name": "UNIVERSITY OF CALIFORNIA IRVINE",
+        "active_type_2": true,
+        "observation_limit": "organization NPI has sibling campus DBAs; corroborative only, not a standalone CCN attribution"
+      },
+      "disposition": "pointer-linked-current-cms-v3-mrf-identity-metadata-attestation-and-usable-rows-verified",
+      "interpretation": "The complete first-party Orange MRF is now retained and parsed. Its name, Orange address, California license number/state, current date, version 3.0.0, attestation, and usable charge/payer structures agree with the exact CCN 050348 CMS roster row and current HCAI Orange facility record. The current official root pointer and pricing page distinguish this Regents/Orange file from Lakewood's separate file. The older 131,072-byte bounded-prefix observation is preserved above as historical. Local checks are schema-derived, not the official CMS validator; no legal compliance conclusion is made.",
+      "next_action": "Keep the exact Orange file hash and pointer linkage as current evidence; recheck on the normal annual/source-change cycle. Do not assign the Lakewood file to CCN 050348 and leave CCN 050581's distinct address conflict unchanged.",
+      "new_mrf_bytes": true,
+      "full_file_bytes": 68974005,
+      "full_file_sha256": "e6c1f35f85842031817c2a941e04590e3a3c0238cd87180c6bdd0f69bcb07d95",
+      "count_effect": -1
     },
     {
       "ccn": "050393",
@@ -6481,14 +6536,14 @@
           "source_page_posted_date": "2026-05-08",
           "report_printed_date": "2026-05-07",
           "survey_completed_date": "2025-12-18",
-      "sample_sha256": "b83be733ce8688134fa0256428175df8048eb07d0907d83aa9df8e7e0b2e0ca0",
-      "sample_bytes": 65536,
-      "full_document_retrieval_2026_09_29": {
-        "bytes": 403855,
-        "sha256": "10500bc3d4d54f94398cb5232a3b7d5572b536d9394e4150df5ad1521481c390",
-        "retained_file": "retained-source-documents/medstar-georgetown-dc-health-survey-2026-05-07.pdf",
-        "result": "Same previously known official report, now retained completely; reproducibility gain only, no new facility or MRF finding."
-      },
+          "sample_sha256": "b83be733ce8688134fa0256428175df8048eb07d0907d83aa9df8e7e0b2e0ca0",
+          "sample_bytes": 65536,
+          "full_document_retrieval_2026_09_29": {
+            "bytes": 403855,
+            "sha256": "10500bc3d4d54f94398cb5232a3b7d5572b536d9394e4150df5ad1521481c390",
+            "retained_file": "retained-source-documents/medstar-georgetown-dc-health-survey-2026-05-07.pdf",
+            "result": "Same previously known official report, now retained completely; reproducibility gain only, no new facility or MRF finding."
+          },
           "provider_supplier_clia_identification_number": "HFD01-0188",
           "facility": "MEDSTAR GEORGETOWN UNIVERSITY, 3800 RESERVOIR RD, WASHINGTON, DC 20007",
           "result": "New official DC Health licensure survey record associates HFD01-0188 with the DC Georgetown hospital address. It strengthens current DC regulatory identifier provenance but does not explicitly call the identifier a current state license number or explain the MRF's license_number|MD suffix.",
@@ -9335,7 +9390,7 @@
       "publisher_file_lead": "https://bynder.uwhealth.org/m/1d39d4b3bd3ce8bb/original/362222696_SwedishAmerican-Hospital_standardcharges.csv",
       "publisher_file_transport": "UW/Bynder transport was socket-blocked in this environment; no bytes or header were asserted.",
       "disposition": "official-address-ccn-corroborated-publisher-file-lead-transport-unresolved",
-      "interpretation": "Address and CCN identity are corroborated; current pointer/file linkage remains unresolved and the Belvidere sibling file is not assigned.",
+      "interpretation": "The cached root pointer and a later successful browser observation both associate the dedicated SwedishAmerican CSV with an exact SwedishAmerican Hospital entry; the official page independently links a different filename alias for the same Bynder object ID, and the bounded header matches Rockford while also naming Belvidere. Thus pointer/page-file object linkage is supported, but the shared multi-campus scope and lack of complete-file validation still prevent clean single-campus verification.",
       "pointer_corpus_entry": {
         "raw_file": "cms_data/hpt/pointer-corpus/raw/uwhealth.org-089158d20145.txt",
         "sha256": "b1024eaebfa285feb003c15fdf092ea881601f8e0a984925cf3da9b3e3b16363",
@@ -9357,7 +9412,6 @@
         "byte_count_recorded": false,
         "detail": "Browser ledger reports that the official pointer names SwedishAmerican Hospital and Belvidere Hospital entries and declares the SwedishAmerican MRF; exact raw-byte hash was not recorded for this browser observation."
       },
-      "interpretation": "The cached root pointer and a later successful browser observation both associate the dedicated SwedishAmerican CSV with an exact SwedishAmerican Hospital entry; the official page independently links a different filename alias for the same Bynder object ID, and the bounded header matches Rockford while also naming Belvidere. Thus pointer/page-file object linkage is supported, but the shared multi-campus scope and lack of complete-file validation still prevent clean single-campus verification.",
       "next_action": "Do not repeat the unchanged DNS/socket-blocked file request. Retain the exact SwedishAmerican pointer-to-CSV and official page-to-CSV links, and the bounded header as current identity/metadata evidence. Keep CCN 140228 unresolved pending full-file or publisher validation of usable rows and an authoritative attribution review of the Belvidere address/campus; do not assign Belvidere to this CCN or promote this bounded sample as a complete MRF. Refresh pointer/file access only after a source change or materially different authorized route."
     },
     {
@@ -11040,6 +11094,38 @@
       "report_endpoint_status": 500,
       "disposition": "current-publisher-associated-pricing-tool-observed-file-bytes-unavailable-unresolved",
       "next_action": "Recover the underlying CSV/JSON through a changed authorized route or publisher-provided link, then verify bytes, CMS metadata, facility identity/address/state and usability before promotion."
+    },
+    {
+      "ccn": "171346",
+      "observed_at": "2026-09-29T03:46:10.284Z",
+      "proof_file": "reconciliation-patterson-health-center-current-mrf-proof-2026-09-29.json",
+      "official_site": "https://pattersonhc.org/",
+      "official_page_url": "https://pattersonhc.org/price-transparency",
+      "pricing_tool_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Patterson_V2.aspx",
+      "pointer_url": "https://pattersonhc.org/cms-hpt.txt",
+      "pointer_status": 200,
+      "pointer_bytes": 283,
+      "pointer_sha256": "94dc18cad8c7669b98388d407b4ea5b010c298ad88f8edb100c8d7ae1cab31df",
+      "pointer_location_name": "Patterson Health Center",
+      "pointer_source_page_url": "https://pattersonhc.org/price-transparency",
+      "facility_file_url": "https://apps.para-hcfs.com/PTT//FinalLinks/Reports.aspx?dbName=dbAMCANTHONYKS&type=CDMWithoutLabel&fileType=CSV",
+      "file_status": 200,
+      "file_sample_bytes": 8536635,
+      "file_sample_sha256": "0c5091ecfb5d8b505f38cee638f554ade512af1a2fa2dbdc1e826ba775068cbc",
+      "file_range_status": "complete-200",
+      "declared_hospital_name": "HOSPITAL DISTRICT NO 6 OF HARPER COUNTY KANSAS",
+      "declared_location_name": "HOSPITAL DISTRICT NO 6 OF HARPER COUNTY KANSAS",
+      "declared_address": "485 KS-2 Hwy 2 Anthony KS 67003",
+      "declared_license_number": "H039001",
+      "declared_license_state": "KS",
+      "declared_npi": "1467427674",
+      "declared_last_updated": "2026-02-10",
+      "cms_template_version": "3.0.0",
+      "attestation": true,
+      "manual_identity_gate": "exact-current-ccn-cms-nppes-npi-pointer-and-full-file-name-address-state-date-version-attestation",
+      "disposition": "verified-current-mrf",
+      "next_action": "Keep the full hash-bound file and current pointer linkage as observed evidence. Recheck on the next scheduled crawl or sooner only if the publisher changes the pointer/file; do not repeat the earlier malformed endpoint query.",
+      "interpretation": "The current first-party CMS pointer names the publisher-associated report URL. Using the report key specified by the live pricing page's JavaScript (rather than the incorrect dbName=hospital used in the prior failed attempt) retrieves the complete 8,536,635-byte CSV. The file is current by its 2026-02-10 declared update date, declares CMS version 3.0.0, an attestation, Kansas license state, the exact legal entity/campus address and NPI, and contains 26,408 consistent-width pricing rows. The current exact-CCN CMS Provider Data row confirms CCN 171346 at the same Anthony address; the CMS NPI Registry independently matches the file's NPI to the legal name/DBA/address. This verifies current MRF evidence for the CCN. It is not a legal compliance determination."
     },
     {
       "ccn": "171359",
@@ -16780,6 +16866,17 @@
         "disposition": "address-conflict-strengthened-secondary-npi-record-stale-still-unresolved",
         "count_effect": 0,
         "next_action": "Keep CCN 321305 unresolved. Obtain a publisher correction or authoritative current facility/licensure record tying the hospital and exact MRF location to 1900 North Main; retain the MRF literal/hash and do not normalize it to 1600."
+      },
+      "nmdoh_emergency_department_location_crosscheck_2026_09_29": {
+        "observed_at": "2026-09-29T03:05:00Z",
+        "proof_file": "reconciliation-nor-lea-nmdoh-emergency-department-location-crosscheck-2026-09-29.json",
+        "source_url": "https://www.nmhealth.org/news/alert/2025/2/?view=2177",
+        "source_publication_date": "2025-02-11",
+        "finding": "A New Mexico Department of Health exposure notice identifies Nor-Lea Hospital Emergency Department at 1600 Main Street, Lovington, on 2025-02-09. This is an additional dated state-source instance supporting the hospital's 1600 address, but it does not resolve whether a distinct hospital site at 1900 exists or explain the MRF address field.",
+        "disposition": "address-conflict-reinforced-still-unresolved",
+        "count_effect": 0,
+        "new_mrf_bytes_retrieved": false,
+        "next_action": "Keep CCN 321305 unresolved. Obtain a publisher correction or authoritative current facility/licensure evidence tying the hospital and exact MRF location to 1900 North Main; preserve the file literal/hash and do not normalize it to 1600."
       }
     },
     {
@@ -19935,7 +20032,7 @@
     },
     {
       "ccn": "370784",
-      "observed_at": "2026-09-17T10:53:30.532Z",
+      "observed_at": "2026-09-29T04:17:09.323Z",
       "proof_file": "reconciliation-clinton-reh-transition-proof.json",
       "facility_role": "current-rural-emergency-hospital",
       "cms_enrollment_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=370784&size=10",
@@ -19943,7 +20040,24 @@
       "pointer_file_url": "https://secure.claraprice.net/price-transparency/OGFL-1782507604288/machine-readable/884062444_clinton-regional-hospital_standardcharges.json",
       "pointer_file_sha256": "d00b4865ffb24203334c32a55f25742d25a67e06f93d686d8876d8d12209ff06",
       "disposition": "current-reh-complete-file-identity-corroborated",
-      "next_action": "The exact current REH pointer/file was promoted for CCN 370784 through the reviewed-resolution ledger. Monitor publisher changes and retain the distinct former CCN; this is not line-item or legal compliance validation."
+      "next_action": "Current pointer-linked REH file remains promoted for CCN 370784; its bytes and metadata were rechecked on 2026-09-29 with a changed full-file hash/count. Keep former acute-care CCN 370245 separate pending historical-file evidence.",
+      "latest_complete_file_revision": {
+        "observed_at": "2026-09-29T04:17:09.323Z",
+        "proof_file": "reconciliation-clinton-reh-current-mrf-revision-proof-2026-09-29.json",
+        "mrf_url": "https://secure.claraprice.net/price-transparency/OGFL-1782507604288/machine-readable/884062444_clinton-regional-hospital_standardcharges.json",
+        "http_status": 200,
+        "bytes": 5496900,
+        "sha256": "d254c5499608cc6da36079958c1364845c817d480fa62a35b88f8c6a82e8b404",
+        "previous_bytes": 3871397,
+        "previous_sha256": "d00b4865ffb24203334c32a55f25742d25a67e06f93d686d8876d8d12209ff06",
+        "declared_date": "2026-07-28",
+        "version": "3.0.0",
+        "charge_entries": 5089,
+        "charge_entry_delta": 328,
+        "current_cms_ccn": "370784",
+        "former_hospital_ccn": "370245",
+        "historical_ccn_effect": "none; current REH file is not assigned to former acute-care CCN 370245"
+      }
     },
     {
       "ccn": "371303",
@@ -24807,14 +24921,14 @@
     },
     {
       "ccn": "450653",
-      "observed_at": "2026-09-29T02:43:35Z",
+      "observed_at": "2026-09-29T04:42:54.481Z",
       "proof_file": "reconciliation-scenic-mountain-operator-transition-proof.json",
       "pointer_url": "https://shannonhealth.com/cms-hpt.txt",
       "pointer_sha256": "f28434a717fad42a7f77d24589a10e34438262e260aee401f351e7a6bc1f1f9f",
       "pointer_location_name": "Shannon Medical Center Big Spring",
       "pointer_mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/100290/752559845-1497606438_shannon-medical-center-big-spring_standardcharges.csv",
       "disposition": "current-operator-same-campus-pointer-file-ccn-continuity-unresolved",
-      "next_action": "NPPES corroborates NPI 1497606438 as Shannon Medical Center Big Spring at the right campus, but CMS has not linked that NPI to CCN 450653. The latest 2026-08-01 CMS Hospital Enrollments and Hospital All Owners datasets both predate the 2026-09-21 NPPES update; the owner snapshot lists Quorum/GoldenTree/Quincy associations dated 2024-09-06 and no Shannon organization, which may reflect stale/incomplete CMS data. Do not repeat those unchanged snapshots. Keep unresolved until a post-transition CMS certification/enrollment record or authoritative Shannon/publisher statement explicitly links NPI 1497606438 to CCN 450653; do not promote from same-campus/name evidence alone.",
+      "next_action": "Do not repeat those unchanged snapshots or this unchanged CMS CHOW snapshot. Keep CCN 450653 and the Shannon file scope separate. Seek a post-transition CMS certification/enrollment record, later CHOW release, or published authoritative Shannon/CMS record explicitly mapping NPI 1497606438 to CCN 450653; do not infer the mapping from name, address, or operational ownership alone.",
       "latest_cms_enrollment_recheck": {
         "observed_at": "2026-09-25T15:30:00Z",
         "proof_file": "reconciliation-scenic-mountain-cms-enrollment-recheck-proof-2026-09-25.json",
@@ -24859,6 +24973,23 @@
         "individual_owner_rows_omitted": 10,
         "owner_association_date": "2024-09-06",
         "result": "Exact CMS enrollment-ID join adds an official ownership dataset: its retained organization rows list Quorum/GoldenTree/Quincy entities, not Shannon. Because the dataset predates the reported April 2026 operator change and may be stale/incomplete, this neither proves current ownership nor links Shannon NPI 1497606438 to CCN 450653; maintain the unresolved CCN/file scope."
+      },
+      "latest_cms_chow_recheck": {
+        "observed_at": "2026-09-29T04:42:54.481Z",
+        "proof_file": "reconciliation-scenic-mountain-cms-chow-crosscheck-2026-09-29.json",
+        "dataset_release": "2026-06-01",
+        "dataset_temporal_end": "2026-06-30",
+        "response_bytes": 718332,
+        "response_sha256": "76f2a3fdfa7f69b78363e59189e0ec4f10e602c8c8b95b8e0d44bf7c496ae33f",
+        "matching_rows": 1,
+        "ccn_transaction_effective_date": "2024-10-17",
+        "buyer_name": "BIG SPRING TEXAS HOSPITAL COMPANY LLC",
+        "buyer_dba": "SCENIC MOUNTAIN MEDICAL CENTER",
+        "buyer_npi": "1336976034",
+        "seller_name": "STEWARD TEXAS HOSPITAL HOLDINGS LLC",
+        "seller_npi": "1285191452",
+        "shannon_npi_match": false,
+        "interpretation": "The latest CMS CHOW response available in this check still shows only the 2024-10-17 transaction; its June 2026 temporal end does not establish whether the later Shannon operational transition changed Medicare CCN continuity."
       }
     },
     {
@@ -29488,47 +29619,6 @@
       "interpretation": "The current operator and facility identity are supported and the discovery gap is narrowed to a live pricing portal. Portal UI alone is not evidence of MRF identity, CMS schema, freshness or attestation. No third-party file was assigned and no compliance conclusion was inferred.",
       "next_action": "Capture the portal's Standard Charges export endpoint or downloaded bytes using a download-capable browser/client, then validate facility name, address, state, NPI/license, CMS version, last_updated_on and attestation before promotion.",
       "proof_file": "reconciliation-hemphill-county-hospital-browser-proof-2026-09-23.json"
-    },
-    {
-      "ccn": "010110",
-      "observed_at": "2026-09-28T12:25:00Z",
-      "proof_file": "reconciliation-bullock-preconversion-commoncrawl-page-file-review-2026-09-28.json",
-      "facility_role": "historical-acute-care-hospital",
-      "disposition": "historical-acute-ccn-file-still-unrecovered-current-reh-evidence-excluded",
-      "next_action": "Seek publisher-confirmed historical CMS-format MRF/pointer evidence or a genuinely new dated archive source; do not repeat the current pointer/page-label or queried Common Crawl collections.",
-      "evidence_gain": "Dated pre-conversion official page captures link a CDM workbook; current pointer and CMS REH reporting remain scoped to successor CCN 010779.",
-      "new_historical_mrf_bytes": false,
-      "count_effect": 0
-    },
-    {
-      "ccn": "010110",
-      "observed_at": "2026-09-28T15:39:27Z",
-      "proof_file": "reconciliation-bullock-historical-archive-index-check-2026-09-28.json",
-      "facility_role": "historical-acute-care-hospital",
-      "alternate_archive_route_observations": {
-        "wayback_availability_api": "Connect timeout before HTTP response; no result.",
-        "wayback_cdx_browser": "ERR_BLOCKED_BY_CLIENT; no archive content; no barrier bypassed.",
-        "exact_pointer_file_name_search": "No indexed exact-filename mirror found in three bounded web-search queries."
-      },
-      "disposition": "historical-acute-ccn-file-still-unrecovered-current-reh-evidence-excluded",
-      "interpretation": "This narrows the already-known alternate archive/search routes but does not show whether a historical MRF existed. No historical CMS pointer or MRF bytes were retrieved; keep CCN 010110 separate from successor REH CCN 010779.",
-      "next_action": "Keep current REH evidence excluded from CCN 010110; do not repeat the current pointer/page-label or these exact archive/API/browser/search routes absent a material access/source change. Seek publisher-confirmed historical CMS-format MRF/pointer evidence or a genuinely new dated archive source.",
-      "new_historical_mrf_bytes": false,
-      "count_effect": 0
-    },
-    {
-      "ccn": "021309",
-      "observed_at": "2026-09-28T20:29:22Z",
-      "proof_file": "reconciliation-kanakanak-indian-health-program-scope-proof-2026-09-28.json",
-      "prior_proof_files": [
-        "reconciliation-kanakanak-official-portal-retired-proof-2026-09-21.json",
-        "reconciliation-kanakanak-live-page-portal-recheck-proof-2026-09-26.json"
-      ],
-      "disposition": "scope-exempt-indian-health-program",
-      "interpretation": "CMS crosswalk ties the exact hospital to CCN 021309; current IHS evidence identifies the tribal operator and documents P.L. 93-638, Title V operation. Supports the 45 CFR 180.30(b)(2) Indian Health Program scope category. This is not an MRF recovery or claim about current MRF availability.",
-      "next_action": "Retain prior transport observations; revisit if identity, operator, contract/compact or program status changes.",
-      "new_mrf_bytes": false,
-      "count_effect": -1
     }
   ]
 }

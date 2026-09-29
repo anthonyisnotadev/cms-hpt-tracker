@@ -1,6 +1,6 @@
 {
   "summary": {
-    "total": 961,
+    "total": 962,
     "browser_retry_replaced": 89
   },
   "records": [
@@ -9707,6 +9707,22 @@
       "next_action": "Retain the federal scope exclusion unless CMS ownership, facility identity or regulatory scope changes."
     },
     {
+      "ccn": "031305",
+      "hospital_name": "HOPI HEALTH CARE CENTER",
+      "state": "AZ",
+      "priority": 2,
+      "standing_finding": "not-applicable-indian-health-program",
+      "current_disposition": "scope-exempt-indian-health-program",
+      "standing_checked_at": "2026-09-29T03:17:19Z",
+      "latest_observed_at": "2026-09-29T03:17:19Z",
+      "latest_observation_source": "later-manual",
+      "nationwide_observed_at": "2026-09-29T03:17:19Z",
+      "browser_file_status": "",
+      "browser_file_observed_at": "",
+      "reviewed_follow_up": true,
+      "next_action": "Retain the scope classification and CMS-reported ownership separately. Revisit only if exact CCN identity, IHS operation/program status, CMS source fields or regulatory scope changes; do not infer current MRF presence or absence."
+    },
+    {
       "ccn": "031307",
       "hospital_name": "PARKER INDIAN HEALTH CENTER",
       "state": "AZ",
@@ -11747,6 +11763,21 @@
       "browser_file_observed_at": "",
       "reviewed_follow_up": true,
       "next_action": "Retain as verified current MRF and recheck on the next pointer update."
+    },
+    {
+      "ccn": "440187",
+      "hospital_name": "LIVINGSTON REGIONAL HOSPITAL",
+      "state": "TN",
+      "priority": 2,
+      "standing_finding": "official-page-mrf-root-pointer-unavailable",
+      "current_disposition": "pointer-discovery-incomplete",
+      "standing_checked_at": "2026-09-22T01:14:00Z",
+      "latest_observed_at": "2026-09-22T01:14:00Z",
+      "latest_observation_source": "nationwide",
+      "browser_file_status": "",
+      "browser_file_observed_at": "",
+      "reviewed_follow_up": true,
+      "next_action": "Retry the exact root cms-hpt.txt route and retain the page-linked JSON and redirect/blob metadata."
     },
     {
       "ccn": "441313",
@@ -14153,21 +14184,6 @@
       "next_action": "Retry the exact root cms-hpt.txt route after the publisher restores or redirects it; retain the complete page-linked CSV and its hashes."
     },
     {
-      "ccn": "440187",
-      "hospital_name": "LIVINGSTON REGIONAL HOSPITAL",
-      "state": "TN",
-      "priority": 3,
-      "standing_finding": "official-page-mrf-root-pointer-unavailable",
-      "current_disposition": "pointer-discovery-incomplete",
-      "standing_checked_at": "2026-09-22T01:14:00Z",
-      "latest_observed_at": "2026-09-22T01:14:00Z",
-      "latest_observation_source": "nationwide",
-      "browser_file_status": "",
-      "browser_file_observed_at": "",
-      "reviewed_follow_up": true,
-      "next_action": "Retry the exact root cms-hpt.txt route and retain the page-linked JSON and redirect/blob metadata."
-    },
-    {
       "ccn": "440200",
       "hospital_name": "STONES RIVER HOSPITAL",
       "state": "TN",
@@ -14469,7 +14485,7 @@
     }
   ],
   "source_sha256": {
-    "nationwide-reconciliation.json": "505d97ec41baa2ed7feb93c86e0eabc8663e4aa28dc8b760d651aadf8b7f7e19",
-    "nationwide-verification.json": "628a1d797517e62b973ccde687faa8127ee314c07caee36101e857d15f454913"
+    "nationwide-reconciliation.json": "54508d265d25a97ff9369b870c33cc12694cd6d65f9cb51e4becde388a64eddf",
+    "nationwide-verification.json": "a10ae3b1798e5cdf924811e5921edde26b8a2442984a6a8190fda921bdaf6f28"
   }
 }

@@ -13,7 +13,9 @@ const inputPaths = {
   compliance: path.join(audit, 'compliance.csv'),
 };
 const input = Object.fromEntries(Object.entries(inputPaths).map(([key, file]) => [key, fs.readFileSync(file)]));
-const sha256 = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
+// Git checkouts may translate newlines; these are source-text fingerprints.
+const sha256 = bytes => crypto.createHash('sha256')
+  .update(String(bytes).replace(/\r\n/g, '\n')).digest('hex');
 const queue = JSON.parse(input.queue.toString('utf8'));
 const unresolved = new Map(queue.filter(row => row.workstream === 'genuinely-unresolved-investigation')
   .map(row => [row.ccn, row]));
@@ -57,6 +59,7 @@ const rows = csvToObjects(input.recovery.toString('utf8'))
   .sort((a, b) => a.priority - b.priority || a.ccn.localeCompare(b.ccn));
 const artifact = {
   scope: 'September 9 identity-corroborated recovery files still in genuine unresolved investigation',
+  source_sha256_basis: 'UTF-8 text with CRLF normalized to LF',
   source_sha256: Object.fromEntries(Object.entries(input).map(([key, bytes]) => [key, sha256(bytes)])),
   priority_rule: '1=first-party page and file; 2=first-party page with hosted file; 3=third-party page; 4=query-bearing or otherwise unsafe URL withheld',
   records: rows,

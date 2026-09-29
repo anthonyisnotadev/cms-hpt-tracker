@@ -736,7 +736,7 @@ function main() {
   // Optional single-file copy with js/tracker.js folded in, for sharing or
   // hosting somewhere without the rest of the repo.
   // Fold every page script into the document, in the order the page lists them.
-  const PAGE_SCRIPTS = ['motion.js', 'outreach.js', 'tracker.js'];
+  const PAGE_SCRIPTS = ['motion.js', 'outreach.js', 'tracker-summary.js', 'tracker.js'];
   const inlineScript = () => {
     let out = built;
     for (const name of PAGE_SCRIPTS) {

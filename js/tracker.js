@@ -2,6 +2,19 @@
   'use strict';
 
   var D = JSON.parse(document.getElementById('tracker-data').textContent);
+  var sourceData = D;
+  var currentRecords;
+  function calculateSummary() {
+    var corrections = {};
+    sourceData.rows.forEach(function (r) {
+      var rec = window.Outreach && window.Outreach.get(r[0]);
+      if (rec && rec.correction) corrections[r[0]] = Object.assign({}, rec.correction, { checkedOn: rec.correction.checkedOn || String(rec.updatedAt || '').slice(0, 10) });
+    });
+    var summary = window.TrackerSummary.summarize(sourceData, corrections);
+    currentRecords = summary.records;
+    D = Object.assign({}, sourceData, summary);
+  }
+  calculateSummary();
   var $ = function (id) { return document.getElementById(id); };
   var fmt = new Intl.NumberFormat('en-US');
   var TIER_OF = {};
@@ -119,207 +132,212 @@
     $('snapshot-notice').setAttribute('data-stale', stale);
   }
 
-  /* ---------- verdict ---------- */
-  var byTier = {};
-  D.tiers.forEach(function (t) { byTier[t.key] = t.n; });
-  var judged = byTier.compliant + byTier.failing;
-  var reached = judged + byTier.blocked;
-
-  // "unknown" is drawn hollow rather than filled, the one tier that is an
-  // absence of information gets an absence of ink.
+  var stateSort = { key: 'total', dir: -1 };
   var SOLID = { compliant: 1, failing: 1, blocked: 1, exempt: 1, unknown: 0 };
-  var maxTier = Math.max.apply(null, D.tiers.map(function (t) { return t.n; }));
+  function renderDashboard() {
+    /* ---------- verdict ---------- */
+    var byTier = {};
+    D.tiers.forEach(function (t) { byTier[t.key] = t.n; });
+    var judged = byTier.compliant + byTier.failing;
+    var reached = judged + byTier.blocked;
 
-  $('field-n').textContent = fmt.format(T.hospitals);
+    // "unknown" is drawn hollow rather than filled, the one tier that is an
+    // absence of information gets an absence of ink.
+    var maxTier = Math.max(1, Math.max.apply(null, D.tiers.map(function (t) { return t.n; })));
 
-  // The canvas is a picture, so its numbers are also stated in text for anyone
-  // who cannot see it. Built from D.tiers so it can never drift from the field.
-  $('field-counts').innerHTML = ' Of these, '
-    + D.tiers.map(function (t, i) {
-        return (i === D.tiers.length - 1 ? 'and ' : '')
-          + '<b>' + fmt.format(t.n) + '</b> ' + t.label.toLowerCase();
-      }).join(', ')
-    + '.';
+    $('field-n').textContent = fmt.format(T.hospitals);
 
-  // Reach before verdict. A compliance rate computed on the hospitals we could
-  // open says nothing about the ones we could not, and the ones we could not
-  // are the larger finding, so they get stated first and given a mark.
-  $('coverage').innerHTML = [
-    {
-      role: 'judged',
-      k: 'Check result recorded',
-      n: judged,
-      note: 'The audit recorded a file or discovery result.',
-    },
-    {
-      role: 'unreached',
-      k: 'Assessment unresolved',
-      n: byTier.unknown,
-      note: 'Domain, access, or hospital identity remains unresolved.',
-    },
-  ].map(function (c) {
-    return '<div class="cov" data-role="' + c.role + '">'
-      + '<div class="cov-k">' + c.k + '</div>'
-      + '<div class="cov-n">' + fmt.format(c.n) + '</div>'
-      + '<p class="cov-note">' + pct1(c.n, T.hospitals) + ' of the registry. ' + c.note + '</p>'
-      + '</div>';
-  }).join('');
+    // The canvas is a picture, so its numbers are also stated in text for anyone
+    // who cannot see it. Built from D.tiers so it can never drift from the field.
+    $('field-counts').innerHTML = ' Of these, '
+      + D.tiers.map(function (t, i) {
+          return (i === D.tiers.length - 1 ? 'and ' : '')
+            + '<b>' + fmt.format(t.n) + '</b> ' + t.label.toLowerCase();
+        }).join(', ')
+      + '.';
 
-  $('legend').innerHTML = D.tiers.map(function (t) {
-    var solid = SOLID[t.key];
-    return '<button class="readout-row" type="button" data-key="' + t.key + '">'
-      + '<span class="readout-mark sw-' + t.key + '" data-solid="' + solid + '"></span>'
-      + '<span class="readout-name">' + t.label + '<small>' + t.note + '</small></span>'
-      + '<span class="readout-n">' + fmt.format(t.n) + '</span>'
-      + '<span class="readout-pct">' + pct(t.n, T.hospitals).toFixed(1) + '%</span>'
-      + '<span class="readout-bar"><i class="sw-' + t.key + '" data-solid="' + solid + '"'
-      + ' style="width:' + (100 * t.n / maxTier).toFixed(2) + '%"></i></span>'
-      + '</button>';
-  }).join('');
-
-  $('readout-foot').innerHTML =
-    'A file was located for <b>' + pct(byTier.compliant, judged).toFixed(1)
-    + '%</b> of the <b>' + fmt.format(judged) + '</b> hospitals with a result. '
-    + 'Assessment remains unresolved for <b>' + fmt.format(byTier.unknown) + '</b> hospitals ('
-    + pct1(byTier.unknown, T.hospitals) + ' of the registry).';
-
-  function tierTip(key) {
-    var t = TIER_META[key];
-    return '<b>' + t.label + '</b><span class="tn">' + fmt.format(t.n) + '</span> hospitals &middot; '
-      + '<span class="tn">' + pct1(t.n, T.hospitals) + '</span> of the registry';
-  }
-  [].forEach.call(document.querySelectorAll('.readout-row'), function (el) {
-    el.addEventListener('mouseenter', function (ev) { showTip(tierTip(el.dataset.key), ev); });
-    el.addEventListener('mousemove', moveTip);
-    el.addEventListener('mouseleave', hideTip);
-  });
-
-  /* ---------- tiles ---------- */
-  var over = D.freshness[D.freshness.length - 1].n;
-  $('tiles').innerHTML = [
-    { l: 'Hospitals checked', v: fmt.format(T.hospitals), n: 'one pointer request per hospital' },
-    { l: 'Charge files opened', v: fmt.format(T.filesRead), n: 'checked for version and update date' },
-    { l: 'Data downloaded', v: T.terabytes >= 1 ? T.terabytes.toFixed(2) + ' TB' : Math.round(T.terabytes * 1000) + ' GB',
-      n: 'across the charge files that answered' },
-    { l: 'Median file age', v: T.medianAge + ' days', n: over + ' files are past the twelve-month mark' }
-  ].map(function (t) {
-    return '<div class="tile"><div class="t-label">' + t.l + '</div>'
-      + '<div class="t-value">' + t.v + '</div><div class="t-note">' + t.n + '</div></div>';
-  }).join('');
-
-  /* ---------- findings ---------- */
-  var visibleFindings = D.findings.filter(function (f) { return f.n > 0; })
-    .sort(function (a, b) { return b.n - a.n; });
-  var maxF = visibleFindings.length ? visibleFindings[0].n : 1;
-  function findingRows(findings) {
-    return findings.map(function (f) {
-      return '<div class="finding">'
-        + '<span class="f-stripe" data-tier="' + f.tier + '"></span>'
-        + '<span class="f-name">' + f.label + '<span class="f-blurb">' + f.blurb + '</span></span>'
-        + '<span class="f-track"><span class="f-fill" data-tier="' + f.tier + '" style="width:'
-        + (100 * f.n / maxF).toFixed(2) + '%"></span></span>'
-        + '<span class="f-n">' + fmt.format(f.n) + '</span>'
+    // Reach before verdict. A compliance rate computed on the hospitals we could
+    // open says nothing about the ones we could not, and the ones we could not
+    // are the larger finding, so they get stated first and given a mark.
+    $('coverage').innerHTML = [
+      {
+        role: 'judged',
+        k: 'Check result recorded',
+        n: judged,
+        note: 'The audit recorded a file or discovery result.',
+      },
+      {
+        role: 'unreached',
+        k: 'Assessment unresolved',
+        n: byTier.unknown,
+        note: 'Domain, access, or hospital identity remains unresolved.',
+      },
+    ].map(function (c) {
+      return '<div class="cov" data-role="' + c.role + '">'
+        + '<div class="cov-k">' + c.k + '</div>'
+        + '<div class="cov-n">' + fmt.format(c.n) + '</div>'
+        + '<p class="cov-note">' + pct1(c.n, T.hospitals) + ' of the registry. ' + c.note + '</p>'
         + '</div>';
     }).join('');
-  }
-  var moreFindings = visibleFindings.length - 5;
-  $('finding-list').innerHTML = findingRows(visibleFindings.slice(0, 5))
-    + (moreFindings > 0
-      ? '<details class="finding-more"><summary><span class="finding-more-open">Show ' + fmt.format(moreFindings)
-        + ' more findings</span><span class="finding-more-close">Show fewer findings</span></summary>'
-        + '<div class="findings">' + findingRows(visibleFindings.slice(5)) + '</div></details>'
-      : '');
 
-  /* ---------- freshness ---------- */
-  var maxBin = Math.max.apply(null, D.freshness.map(function (b) { return b.n; }));
-  $('hist').innerHTML = D.freshness.map(function (b) {
-    var isOver = b.hi === null ? 1 : 0;
-    return '<div class="hist-row" data-over="' + isOver + '">'
-      + '<span class="hist-label">' + b.label + '</span>'
-      + '<span class="hist-track"><span class="hist-fill" style="width:'
-      + (100 * b.n / maxBin).toFixed(2) + '%"></span></span>'
-      + '<span class="hist-n">' + fmt.format(b.n) + '</span>'
-      + '</div>';
-  }).join('');
-  $('quantiles').innerHTML = [
-    ['Median', T.medianAge + 'd'],
-    ['90th percentile', T.p90Age + 'd'],
-    ['Oldest', T.maxAge + 'd']
-  ].map(function (q) { return '<div><b>' + q[1] + '</b>' + q[0] + '</div>'; }).join('');
-
-  /* ---------- mini stacked bar ---------- */
-  function mini(row) {
-    return '<span class="state-mini">' + D.tiers.map(function (t) {
-      var n = row[t.key] || 0;
-      if (!n) return '';
-      return '<i data-tier="' + t.key + '" style="flex:' + n + ' 1 0"></i>';
-    }).join('') + '</span>';
-  }
-
-  /* ---------- types ---------- */
-  $('type-table').querySelector('tbody').innerHTML = D.types.map(function (t) {
-    return '<tr><td>' + esc(t.name) + '</td><td>' + mini(t) + '</td>'
-      + '<td class="t-right num">' + fmt.format(t.total) + '</td>'
-      + '<td class="t-right rate">' + (t.rate == null ? 'n/a' : (100 * t.rate).toFixed(0) + '%') + '</td></tr>';
-  }).join('');
-
-  /* ---------- states ---------- */
-  var stateSort = { key: 'total', dir: -1 };
-  var stateBody = $('state-table').querySelector('tbody');
-
-  function renderStates() {
-    var rows = D.states.slice().sort(function (a, b) {
-      var x = a[stateSort.key], y = b[stateSort.key];
-      // States with nothing to measure sink to the bottom either way, so
-      // sorting ascending surfaces the worst real rate rather than the blanks.
-      if (x == null && y == null) return 0;
-      if (x == null) return 1;
-      if (y == null) return -1;
-      if (typeof x === 'string') return stateSort.dir * x.localeCompare(y);
-      return stateSort.dir * (x - y);
-    });
-    stateBody.innerHTML = rows.map(function (s) {
-      var r = s.rate == null ? null : 100 * s.rate;
-      // A rate computed on under half the state is a sample, not a verdict.
-      var thin = s.coverage < 0.5;
-      var note = thin
-        ? ' title="Measured on only ' + s.verifiable + ' of ' + s.total + ' hospitals in ' + s.name + '"'
-        : '';
-      return '<tr>'
-        + '<td><b>' + esc(s.name) + '</b></td>'
-        + '<td>' + mini(s) + '</td>'
-        + '<td class="t-right num">' + fmt.format(s.total) + '</td>'
-        + '<td class="t-right num' + (thin ? ' thin' : '') + '">' + (100 * s.coverage).toFixed(0) + '%</td>'
-        + '<td class="t-right rate' + (thin ? ' thin' : '') + '"' + note + '>'
-        + '<span class="rate-bar"><i style="width:' + (r == null ? 0 : r).toFixed(1) + '%"></i></span>'
-        + (r == null ? 'n/a' : r.toFixed(1) + '%')
-        + (thin ? '<abbr title="Fewer than half the hospitals in this state could be reached, so treat the rate as a sample.">*</abbr>' : '')
-        + '</td>'
-        + '</tr>';
+    $('legend').innerHTML = D.tiers.map(function (t) {
+      var solid = SOLID[t.key];
+      return '<button class="readout-row" type="button" data-key="' + t.key + '">'
+        + '<span class="readout-mark sw-' + t.key + '" data-solid="' + solid + '"></span>'
+        + '<span class="readout-name">' + t.label + '<small>' + t.note + '</small></span>'
+        + '<span class="readout-n">' + fmt.format(t.n) + '</span>'
+        + '<span class="readout-pct">' + pct(t.n, T.hospitals).toFixed(1) + '%</span>'
+        + '<span class="readout-bar"><i class="sw-' + t.key + '" data-solid="' + solid + '"'
+        + ' style="width:' + (100 * t.n / maxTier).toFixed(2) + '%"></i></span>'
+        + '</button>';
     }).join('');
-  }
-  [].forEach.call($('state-table').querySelectorAll('th.sortable'), function (th) {
-    th.addEventListener('click', function () {
-      var key = th.dataset.key;
-      stateSort.dir = stateSort.key === key ? -stateSort.dir : (key === 'name' ? 1 : -1);
-      stateSort.key = key;
-      [].forEach.call($('state-table').querySelectorAll('th.sortable'), function (o) {
-        o.setAttribute('aria-sort', o === th ? (stateSort.dir === 1 ? 'ascending' : 'descending') : 'none');
-      });
-      renderStates();
-    });
-  });
-  renderStates();
 
-  /* ---------- queue ---------- */
-  $('queue-cards').innerHTML = D.queue.filter(function (q) { return q.n > 0; }).map(function (q) {
-    return '<div class="q-card">'
-      + '<div class="q-n">' + fmt.format(q.n) + '</div>'
-      + '<div class="q-label">' + q.label + '</div>'
-      + '<p class="q-why">' + q.why + '</p>'
-      + '<p class="q-action">' + q.action + '</p>'
-      + '</div>';
-  }).join('');
+    $('readout-foot').innerHTML =
+      'A file was located for <b>' + pct(byTier.compliant, judged).toFixed(1)
+      + '%</b> of the <b>' + fmt.format(judged) + '</b> hospitals with a result. '
+      + 'Assessment remains unresolved for <b>' + fmt.format(byTier.unknown) + '</b> hospitals ('
+      + pct1(byTier.unknown, T.hospitals) + ' of the registry).'
+      + '<br><span class="summary-note">Full tracker including ' + fmt.format(T.corrections) + ' current manual correction' + (T.corrections === 1 ? '' : 's') + '. File ages are calculated as of today; unknown dates are excluded. Original audit observations remain in hospital history.</span>';
+
+    function tierTip(key) {
+      var t = TIER_META[key];
+      return '<b>' + t.label + '</b><span class="tn">' + fmt.format(t.n) + '</span> hospitals &middot; '
+        + '<span class="tn">' + pct1(t.n, T.hospitals) + '</span> of the registry';
+    }
+    [].forEach.call(document.querySelectorAll('.readout-row'), function (el) {
+      el.addEventListener('mouseenter', function (ev) { showTip(tierTip(el.dataset.key), ev); });
+      el.addEventListener('mousemove', moveTip);
+      el.addEventListener('mouseleave', hideTip);
+    });
+
+    /* ---------- tiles ---------- */
+    var over = D.freshness[D.freshness.length - 1].n;
+    $('tiles').innerHTML = [
+      { l: 'Hospitals checked', v: fmt.format(T.hospitals), n: 'one pointer request per hospital' },
+      { l: 'Files with recorded metadata', v: fmt.format(T.filesRead), n: 'current files with recorded format, size, date or version' },
+      { l: 'Recorded download size', v: T.terabytes >= 1 ? T.terabytes.toFixed(2) + ' TB' : Math.round(T.terabytes * 1000) + ' GB',
+        n: 'known sizes for the current files; unmeasured files excluded' },
+      { l: 'Median file age', v: T.medianAge == null ? 'Unknown' : T.medianAge + ' days', n: over + ' files are past the twelve-month mark' }
+    ].map(function (t) {
+      return '<div class="tile"><div class="t-label">' + t.l + '</div>'
+        + '<div class="t-value">' + t.v + '</div><div class="t-note">' + t.n + '</div></div>';
+    }).join('');
+
+    /* ---------- findings ---------- */
+    var visibleFindings = D.findings.filter(function (f) { return f.n > 0; })
+      .sort(function (a, b) { return b.n - a.n; });
+    var maxF = visibleFindings.length ? visibleFindings[0].n : 1;
+    function findingRows(findings) {
+      return findings.map(function (f) {
+        return '<div class="finding">'
+          + '<span class="f-stripe" data-tier="' + f.tier + '"></span>'
+          + '<span class="f-name">' + f.label + '<span class="f-blurb">' + f.blurb + '</span></span>'
+          + '<span class="f-track"><span class="f-fill" data-tier="' + f.tier + '" style="width:'
+          + (100 * f.n / maxF).toFixed(2) + '%"></span></span>'
+          + '<span class="f-n">' + fmt.format(f.n) + '</span>'
+          + '</div>';
+      }).join('');
+    }
+    var moreFindings = visibleFindings.length - 5;
+    $('finding-list').innerHTML = findingRows(visibleFindings.slice(0, 5))
+      + (moreFindings > 0
+        ? '<details class="finding-more"><summary><span class="finding-more-open">Show ' + fmt.format(moreFindings)
+          + ' more findings</span><span class="finding-more-close">Show fewer findings</span></summary>'
+          + '<div class="findings">' + findingRows(visibleFindings.slice(5)) + '</div></details>'
+        : '');
+
+    /* ---------- freshness ---------- */
+    var maxBin = Math.max(1, Math.max.apply(null, D.freshness.map(function (b) { return b.n; })));
+    $('hist').innerHTML = D.freshness.map(function (b) {
+      var isOver = b.hi === null ? 1 : 0;
+      return '<div class="hist-row" data-over="' + isOver + '">'
+        + '<span class="hist-label">' + b.label + '</span>'
+        + '<span class="hist-track"><span class="hist-fill" style="width:'
+        + (100 * b.n / maxBin).toFixed(2) + '%"></span></span>'
+        + '<span class="hist-n">' + fmt.format(b.n) + '</span>'
+        + '</div>';
+    }).join('');
+    $('quantiles').innerHTML = [
+      ['Median', T.medianAge == null ? 'Unknown' : T.medianAge + 'd'],
+      ['90th percentile', T.p90Age == null ? 'Unknown' : T.p90Age + 'd'],
+      ['Oldest', T.maxAge == null ? 'Unknown' : T.maxAge + 'd']
+    ].map(function (q) { return '<div><b>' + q[1] + '</b>' + q[0] + '</div>'; }).join('');
+
+    /* ---------- mini stacked bar ---------- */
+    function mini(row) {
+      return '<span class="state-mini">' + D.tiers.map(function (t) {
+        var n = row[t.key] || 0;
+        if (!n) return '';
+        return '<i data-tier="' + t.key + '" style="flex:' + n + ' 1 0"></i>';
+      }).join('') + '</span>';
+    }
+
+    /* ---------- types ---------- */
+    $('type-table').querySelector('tbody').innerHTML = D.types.map(function (t) {
+      return '<tr><td>' + esc(t.name) + '</td><td>' + mini(t) + '</td>'
+        + '<td class="t-right num">' + fmt.format(t.total) + '</td>'
+        + '<td class="t-right rate">' + (t.rate == null ? 'n/a' : (100 * t.rate).toFixed(0) + '%') + '</td></tr>';
+    }).join('');
+
+    /* ---------- states ---------- */
+    var stateBody = $('state-table').querySelector('tbody');
+
+    function renderStates() {
+      var rows = D.states.slice().sort(function (a, b) {
+        var x = a[stateSort.key], y = b[stateSort.key];
+        // States with nothing to measure sink to the bottom either way, so
+        // sorting ascending surfaces the worst real rate rather than the blanks.
+        if (x == null && y == null) return 0;
+        if (x == null) return 1;
+        if (y == null) return -1;
+        if (typeof x === 'string') return stateSort.dir * x.localeCompare(y);
+        return stateSort.dir * (x - y);
+      });
+      stateBody.innerHTML = rows.map(function (s) {
+        var r = s.rate == null ? null : 100 * s.rate;
+        // A rate computed on under half the state is a sample, not a verdict.
+        var thin = s.coverage < 0.5;
+        var note = thin
+          ? ' title="Measured on only ' + s.verifiable + ' of ' + s.total + ' hospitals in ' + s.name + '"'
+          : '';
+        return '<tr>'
+          + '<td><b>' + esc(s.name) + '</b></td>'
+          + '<td>' + mini(s) + '</td>'
+          + '<td class="t-right num">' + fmt.format(s.total) + '</td>'
+          + '<td class="t-right num' + (thin ? ' thin' : '') + '">' + (100 * s.coverage).toFixed(0) + '%</td>'
+          + '<td class="t-right rate' + (thin ? ' thin' : '') + '"' + note + '>'
+          + '<span class="rate-bar"><i style="width:' + (r == null ? 0 : r).toFixed(1) + '%"></i></span>'
+          + (r == null ? 'n/a' : r.toFixed(1) + '%')
+          + (thin ? '<abbr title="Fewer than half the hospitals in this state could be reached, so treat the rate as a sample.">*</abbr>' : '')
+          + '</td>'
+          + '</tr>';
+      }).join('');
+    }
+    [].forEach.call($('state-table').querySelectorAll('th.sortable'), function (th) {
+      th.onclick = function () {
+        var key = th.dataset.key;
+        stateSort.dir = stateSort.key === key ? -stateSort.dir : (key === 'name' ? 1 : -1);
+        stateSort.key = key;
+        [].forEach.call($('state-table').querySelectorAll('th.sortable'), function (o) {
+          o.setAttribute('aria-sort', o === th ? (stateSort.dir === 1 ? 'ascending' : 'descending') : 'none');
+        });
+        renderStates();
+      };
+    });
+    renderStates();
+
+    /* ---------- queue ---------- */
+    $('queue-cards').innerHTML = D.queue.filter(function (q) { return q.n > 0; }).map(function (q) {
+      return '<div class="q-card">'
+        + '<div class="q-n">' + fmt.format(q.n) + '</div>'
+        + '<div class="q-label">' + q.label + '</div>'
+        + '<p class="q-why">' + q.why + '</p>'
+        + '<p class="q-action">' + q.action + '</p>'
+        + '</div>';
+    }).join('');
+
+  }
+  renderDashboard();
 
   /* ---------- interventions ----------
      The queue says what work remains; this says what the work actually is.
@@ -327,16 +345,28 @@
      hospitals" is the whole reason this section exists. Rows that need no
      person (compliant, federal-exempt) stay in the filter but not here: a
      "None needed" card at the top of an intervention list is noise. */
-  var interventionGroups = D.interventions.filter(function (v) {
-    return v.n > 0 && v.key !== 'none' && v.key !== 'exempt-federal'
-      && v.key !== 'exempt-ihs-program' && v.key !== 'exempt-closed';
-  }).sort(function (a, b) { return b.n - a.n; });
+  var interventionGroups;
   var interventionList = $('intervention-cards');
-  interventionList.innerHTML = interventionGroups.map(function (v, i) {
-    return '<button class="intervention-option" type="button" data-key="' + esc(v.key) + '" aria-pressed="false" aria-controls="intervention-detail"' + (i >= 6 ? ' hidden' : '') + '>'
-      + '<span>' + esc(v.label) + '</span><strong>' + fmt.format(v.n) + '</strong></button>';
-  }).join('');
   var selectedIntervention = null;
+  function renderInterventionGroups() {
+    interventionGroups = D.interventions.filter(function (v) {
+      return v.n > 0 && v.key !== 'none' && v.key !== 'exempt-federal'
+        && v.key !== 'exempt-ihs-program' && v.key !== 'exempt-closed';
+    }).sort(function (a, b) { return b.n - a.n; });
+    interventionList.innerHTML = interventionGroups.map(function (v, i) {
+      return '<button class="intervention-option" type="button" data-key="' + esc(v.key) + '" aria-pressed="false" aria-controls="intervention-detail"' + (i >= 6 ? ' hidden' : '') + '>'
+        + '<span>' + esc(v.label) + '</span><strong>' + fmt.format(v.n) + '</strong></button>';
+    }).join('');
+    var expanded = $('intervention-more').getAttribute('aria-expanded') === 'true';
+    [].forEach.call(interventionList.querySelectorAll('button'), function (btn, i) { btn.hidden = !expanded && i >= 6; });
+    var selected = selectedIntervention && interventionGroups.find(function (v) { return v.key === selectedIntervention.key; });
+    if (selected || interventionGroups.length) selectIntervention((selected || interventionGroups[0]).key);
+    else { selectedIntervention = null; }
+    $('intervention-detail').hidden = !selectedIntervention;
+    $('intervention-more').hidden = interventionGroups.length <= 6;
+    $('intervention-more').textContent = expanded ? 'Show fewer categories' : 'Show all ' + interventionGroups.length + ' categories';
+  }
+  renderInterventionGroups();
   function selectIntervention(key) {
     var v = interventionGroups.filter(function (group) { return group.key === key; })[0];
     if (!v) return;
@@ -364,7 +394,7 @@
   });
   $('intervention-view').addEventListener('click', function () {
     if (!selectedIntervention) return;
-    var el = $('f-intervention');
+    var el = $('f-finding');
     el.value = selectedIntervention.key;
     el.dispatchEvent(new Event('change'));
     $('register').scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
@@ -389,7 +419,7 @@
     return (r[C.NAME] + ' ' + r[C.CITY] + ' ' + D.dict.states[r[C.STATE]] + ' ' + r[C.CCN]).toLowerCase();
   });
 
-  var sel = { q: '', state: '', type: '', tiers: {}, outreach: '', stage: '', finding: '', intervention: '', age: '', links: '', corrected: '' };
+  var sel = { q: '', state: '', type: '', tiers: {}, outreach: '', stage: '', finding: '', age: '', version: '', links: '' };
   var filtered = D.rows.map(function (_, i) { return i; });
 
   var stateSelect = $('f-state');
@@ -405,19 +435,37 @@
     typeSelect.appendChild(o);
   });
   var findingSelect = $('f-finding');
-  D.findings.forEach(function (f) {
+  function populateFindingOptions() {
+    findingSelect.innerHTML = '<option value="">Any finding</option>';
+    D.interventions.forEach(function (v) {
+      if (!v.n) return;
+      var o = document.createElement('option');
+      o.value = v.key; o.textContent = v.label + ' (' + fmt.format(v.n) + ')';
+      findingSelect.appendChild(o);
+    });
+    findingSelect.value = sel.finding;
+    if (findingSelect.value !== sel.finding) sel.finding = '';
+  }
+  populateFindingOptions();
+  // Keep each declared version distinct; a missing value is not an old version.
+  function recordedVersion(r) { return String(currentRecords[r[C.CCN]].version || '').trim(); }
+  var versionSelect = $('f-version');
+  function populateVersionOptions() {
+    versionSelect.innerHTML = '<option value="">Any MRF version</option>';
+  var recordedVersions = Array.from(new Set(D.rows.map(recordedVersion))).filter(Boolean);
+  recordedVersions.sort(function (a, b) { return b.localeCompare(a, 'en', { numeric: true }); });
+  recordedVersions.forEach(function (v) {
     var o = document.createElement('option');
-    o.value = f.key; o.textContent = f.label;
-    findingSelect.appendChild(o);
+    o.value = v; o.textContent = 'MRF v' + v;
+    versionSelect.appendChild(o);
   });
-  // Interventions ride along in count order, so the crowded reasons come first.
-  var interventionSelect = $('f-intervention');
-  D.interventions.forEach(function (v) {
-    if (!v.n) return;
-    var o = document.createElement('option');
-    o.value = v.key; o.textContent = v.label + ' (' + fmt.format(v.n) + ')';
-    interventionSelect.appendChild(o);
-  });
+  var unknownVersion = document.createElement('option');
+  unknownVersion.value = '__unknown__'; unknownVersion.textContent = 'MRF version: unknown / not recorded';
+  versionSelect.appendChild(unknownVersion);
+    versionSelect.value = sel.version;
+    if (versionSelect.value !== sel.version) sel.version = '';
+  }
+  populateVersionOptions();
   // Bucket bounds come from the same freshness bins the histogram draws, so
   // the two never drift apart. Value is just the bin's index.
   var ageSelect = $('f-age');
@@ -498,7 +546,7 @@
   }
 
   function matchesLinks(r, mode) {
-    var hasPtr = !!r[C.PTR], hasMrf = !!r[C.MRF];
+    var hasPtr = !!currentRecords[r[C.CCN]].ptr, hasMrf = !!currentRecords[r[C.CCN]].mrf;
     if (mode === 'no-ptr') return !hasPtr;
     if (mode === 'no-mrf') return !hasMrf;
     if (mode === 'neither') return !hasPtr && !hasMrf;
@@ -549,7 +597,7 @@
     if (key === 'name') return String(r[C.NAME] || '');
     if (key === 'finding') return r[C.FIND];
     if (key === 'age') {
-      var d = r[C.DAYS];
+      var d = currentRecords[r[C.CCN]].age;
       if (corr && corr.lastUpdatedOn) {
         var cd = daysSince(corr.lastUpdatedOn);
         if (cd != null) d = cd;
@@ -654,11 +702,10 @@
     { id: 'f-state', key: 'state' },
     { id: 'f-type', key: 'type', extra: true },
     { id: 'f-finding', key: 'finding' },
-    { id: 'f-intervention', key: 'intervention', extra: true },
     { id: 'f-stage', key: 'stage', extra: true },
     { id: 'f-age', key: 'age', extra: true },
+    { id: 'f-version', key: 'version' },
     { id: 'f-links', key: 'links', extra: true },
-    { id: 'f-corrected', key: 'corrected', extra: true },
   ];
 
   function selLabel(id) {
@@ -717,14 +764,13 @@
       var r = D.rows[i];
       if (stateIdx >= 0 && r[C.STATE] !== stateIdx) continue;
       if (typeIdx >= 0 && r[C.TYPE] !== typeIdx) continue;
-      if (useTier && !sel.tiers[findingMeta[r[C.FIND]].tier]) continue;
+      if (useTier && !sel.tiers[currentRecords[r[C.CCN]].tier]) continue;
       if (sel.outreach && !matchesOutreach(r[C.CCN], sel.outreach)) continue;
       if (sel.stage && !matchesStage(r[C.CCN], sel.stage)) continue;
-      if (sel.finding && findingMeta[r[C.FIND]].key !== sel.finding) continue;
-      if (sel.intervention && (!interventionMeta[r[C.INTERV]] || interventionMeta[r[C.INTERV]].key !== sel.intervention)) continue;
-      if (sel.age !== '' && !matchesAge(r[C.DAYS], Number(sel.age))) continue;
+      if (sel.finding && currentRecords[r[C.CCN]].intervention !== sel.finding) continue;
+      if (sel.age !== '' && !matchesAge(currentRecords[r[C.CCN]].age, Number(sel.age))) continue;
+      if (sel.version && recordedVersion(r) !== (sel.version === '__unknown__' ? '' : sel.version)) continue;
       if (sel.links && !matchesLinks(r, sel.links)) continue;
-      if (sel.corrected && (!!correctionOf(r[C.CCN])) !== (sel.corrected === 'yes')) continue;
       if (q && hay[i].indexOf(q) === -1) continue;
       out.push(i);
     }
@@ -802,7 +848,7 @@
   }
 
   function ageCell(r, corr) {
-    var d = r[C.DAYS];
+    var d = currentRecords[r[C.CCN]].age;
     var edited = false;
     if (corr && corr.lastUpdatedOn) {
       var cd = daysSince(corr.lastUpdatedOn);
@@ -817,35 +863,6 @@
     var cls = 'cell-age' + (d > 365 ? ' stale' : '') + (edited ? ' edited' : '');
     return '<span class="' + cls + '"' + (edited ? ' title="From a manual correction, not the crawl"' : '')
       + '>' + d + 'd' + (edited ? '<sup>*</sup>' : '') + '</span>';
-  }
-
-  // What the column is for is "what do I still owe this one", so it shows the
-  // stage. It used to show "2e 1n" and hide the stage in the tooltip, which put
-  // the trivia on screen and the actionable fact behind a hover that does not
-  // exist on a touchscreen. The counts swapped places with it.
-  function outreachCell(ccn) {
-    var rec = OC.get(ccn);
-    var entries = rec ? (rec.entries || []) : [];
-    var staged = !!(rec && rec.status && rec.status !== 'none');
-    var has = entries.length || staged ? '1' : '0';
-    var label = has === '1' ? (OC_STAGE_LABEL[rec.status] || 'Logged') : 'Log';
-
-    var mails = entries.filter(function (e) { return e.kind === 'email'; }).length;
-    var notes = entries.length - mails;
-    var counts = [];
-    if (mails) counts.push(mails + (mails === 1 ? ' email' : ' emails'));
-    if (notes) counts.push(notes + (notes === 1 ? ' note' : ' notes'));
-
-    var due = rec && isDue(rec) ? '1' : '0';
-    var title = has === '1'
-      ? label
-        + (counts.length ? ' · ' + counts.join(', ') : '')
-        + (rec.followUpOn ? ' · follow up ' + rec.followUpOn : '')
-      : 'Nothing logged yet. Open to record an email or a note';
-    return '<span class="cell-outreach">'
-      + '<button class="oc-btn" type="button" data-ccn="' + esc(ccn) + '"'
-      + ' data-has="' + has + '" data-due="' + due + '" title="' + esc(title) + '">'
-      + '<span class="oc-mark"></span>' + esc(label) + '</button></span>';
   }
 
   function rowHtml(i, top, band) {
@@ -903,7 +920,6 @@
       + '<span class="cell-why">' + why + '</span>'
       + ageCell(r, corr)
       + '<span class="cell-links">' + links + '</span>'
-      + outreachCell(r[C.CCN])
       + '</div>';
   }
 
@@ -990,14 +1006,14 @@
   stateSelect.addEventListener('change', function () { sel.state = stateSelect.value; applyFilters(); });
   typeSelect.addEventListener('change', function () { sel.type = typeSelect.value; applyFilters(); });
   findingSelect.addEventListener('change', function () { sel.finding = findingSelect.value; applyFilters(); });
-  interventionSelect.addEventListener('change', function () { sel.intervention = interventionSelect.value; applyFilters(); });
   ageSelect.addEventListener('change', function () { sel.age = ageSelect.value; applyFilters(); });
+  versionSelect.addEventListener('change', function () { sel.version = versionSelect.value; applyFilters(); });
   $('f-links').addEventListener('change', function () { sel.links = $('f-links').value; applyFilters(); });
-  $('f-corrected').addEventListener('change', function () { sel.corrected = $('f-corrected').value; applyFilters(); });
 
   // Clicking a row of the readout jumps to the register, filtered to that tier.
-  [].forEach.call(document.querySelectorAll('.readout-row'), function (el) {
-    el.addEventListener('click', function () {
+  $('legend').addEventListener('click', function (event) {
+    var el = event.target.closest('.readout-row');
+    if (!el) return;
       var k = el.dataset.key;
       D.tiers.forEach(function (t) { sel.tiers[t.key] = (t.key === k); });
       [].forEach.call($('tier-chips').querySelectorAll('.chip[data-key]'), function (b) {
@@ -1005,7 +1021,6 @@
       });
       applyFilters();
       $('register').scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
-    });
   });
 
   /* ================= outreach ================= */
@@ -1323,7 +1338,7 @@
 
   /* ---- drawer ---- */
   var drawer = $('oc-drawer');
-  var DRAWER_VIEWS = ['overview', 'outreach', 'history'];
+  var DRAWER_VIEWS = ['overview', 'history'];
   function setDrawerView(name) {
     DRAWER_VIEWS.forEach(function (view) {
       $('oc-view-' + view).hidden = view !== name;
@@ -1337,7 +1352,8 @@
     var tab = $('oc-tab-' + view);
     tab.addEventListener('click', function () { setDrawerView(view); });
     tab.addEventListener('keydown', function (event) {
-      var next = event.key === 'ArrowRight' ? (index + 1) % 3 : event.key === 'ArrowLeft' ? (index + 2) % 3 : event.key === 'Home' ? 0 : event.key === 'End' ? 2 : -1;
+      var count = DRAWER_VIEWS.length;
+      var next = event.key === 'ArrowRight' ? (index + 1) % count : event.key === 'ArrowLeft' ? (index + count - 1) % count : event.key === 'Home' ? 0 : event.key === 'End' ? count - 1 : -1;
       if (next < 0) return;
       event.preventDefault();
       setDrawerView(DRAWER_VIEWS[next]);
@@ -1360,8 +1376,6 @@
     applyFilters();
     qInput.focus();
   });
-  $('oc-start-update').addEventListener('click', function () { setDrawerView('outreach'); $('oc-tab-outreach').focus(); });
-  if (mapWrap) mapWrap.addEventListener('toggle', function () { if (mapWrap.open) resizeMap(); });
   var scrim = $('oc-scrim');
   var openCcn = null;
   var lastFocus = null;
@@ -1531,13 +1545,13 @@
     var h = hospitalOf(openCcn);
     var rec = drawerRecord();
     $('oc-title').textContent = h ? h.name : openCcn;
+    $('oc-record-ccn').textContent = 'CCN ' + openCcn;
     // The snapshot date rides along in the subtitle: this drawer is where
     // someone decides to act on a label, so it is where "as of when" matters
     // most.
-    $('oc-subtitle').textContent = (h
-      ? (h.city + ', ' + h.state + ' · CCN ' + h.ccn)
-      : ('CCN ' + openCcn))
-      + (D.generated ? ' · crawled ' + snapshot : '');
+    $('oc-subtitle').innerHTML = (h
+      ? '<span class="oc-record-place">' + esc(h.city + ', ' + h.state) + '</span>' : '')
+      + (D.generated ? '<span class="oc-record-date">Crawled ' + esc(snapshot) + '</span>' : '');
 
     var corr = correctionOf(openCcn);
     $('oc-finding-title').textContent = h ? h.finding.label : 'No audit finding recorded';
@@ -1585,6 +1599,7 @@
     }
     var tags = '';
     if (h) {
+      tags += '<div class="oc-record-status">';
       // Show the standing verdict first. When that is a correction, the crawl's
       // original finding stays visible beside it rather than being replaced.
       var tier = corr && corr.verdict ? corr.verdict : h.finding.tier;
@@ -1597,17 +1612,21 @@
       }
       tags += '<span class="oc-stage" data-stage="' + (rec ? rec.status : 'none') + '">'
         + OC_STAGE_LABEL[rec ? rec.status : 'none'] + '</span>';
+      tags += '</div>';
       var ptr = (corr && corr.pointerUrl) || h.ptr;
       var mrf = (corr && corr.mrfUrl) || h.mrf;
+      var hasSources = ptr || mrf || h.source || (!(corr && corr.mrfUrl) && h.additionalFiles.length);
+      if (hasSources) tags += '<div class="oc-record-sources"><span class="oc-source-label">Sources</span><div class="oc-source-links">';
       if (ptr) tags += '<a class="linkbtn"' + (corr && corr.pointerUrl ? ' data-edited="1"' : '')
-        + ' href="' + esc(ptr) + '" target="_blank" rel="noopener noreferrer">POINTER</a>';
+        + ' href="' + esc(ptr) + '" target="_blank" rel="noopener noreferrer">Pointer<span aria-hidden="true">↗</span></a>';
       if (mrf) tags += '<a class="linkbtn"' + (corr && corr.mrfUrl ? ' data-edited="1"' : '')
-        + ' href="' + esc(mrf) + '" target="_blank" rel="noopener noreferrer">' + (!(corr && corr.mrfUrl) && h.primaryFileLabel ? 'FILE: ' + esc(h.primaryFileLabel) : 'FILE') + '</a>';
+        + ' href="' + esc(mrf) + '" target="_blank" rel="noopener noreferrer">' + (!(corr && corr.mrfUrl) && h.primaryFileLabel ? 'Charges: ' + esc(h.primaryFileLabel) : 'Charges file') + '<span aria-hidden="true">↗</span></a>';
       if (!(corr && corr.mrfUrl)) h.additionalFiles.forEach(function (file) {
-        tags += '<a class="linkbtn" href="' + esc(file[1]) + '" target="_blank" rel="noopener noreferrer">FILE: ' + esc(file[0]) + '</a>';
+        tags += '<a class="linkbtn" href="' + esc(file[1]) + '" target="_blank" rel="noopener noreferrer">Charges: ' + esc(file[0]) + '<span aria-hidden="true">↗</span></a>';
       });
       if (h.source) tags += '<a class="linkbtn" href="' + esc(h.source)
-        + '" target="_blank" rel="noopener noreferrer">PAGE</a>';
+        + '" target="_blank" rel="noopener noreferrer">Pricing page<span aria-hidden="true">↗</span></a>';
+      if (hasSources) tags += '</div></div>';
     }
     $('oc-tags').innerHTML = tags;
     var assessment = D.assessments && D.assessments[openCcn];
@@ -1673,7 +1692,6 @@
   function openDrawer(ccn) {
     openCcn = ccn;
     setDrawerView('overview');
-    if (mapWrap) mapWrap.open = false;
     if ($('oc-evidence-block')) $('oc-evidence-block').open = false;
     lastFocus = document.activeElement;
     var h = hospitalOf(ccn);
@@ -1766,7 +1784,6 @@
     var row = e.target.closest('.reg-row');
     if (row && row.dataset.ccn) {
       openDrawer(row.dataset.ccn);
-      if (e.target.closest('.oc-btn')) setDrawerView('outreach');
     }
   });
 
@@ -2094,7 +2111,7 @@
   });
   $('oc-list-more').addEventListener('click', function () { outreachExpanded = !outreachExpanded; updateOutreachList(); });
   $('oc-preview-open').addEventListener('click', function () {
-    if (outreachSelected) { openDrawer(outreachSelected); setDrawerView('outreach'); }
+    if (outreachSelected) { openDrawer(outreachSelected); setDrawerView('history'); }
   });
 
   function ocItem(ccn, title, meta, when, over, dismiss) {
@@ -2125,13 +2142,13 @@
     });
     var awaiting = all.filter(function (r) { return r.status === 'awaiting-reply'; }).length;
     var due = all.filter(isDue).length;
-    var corrected = all.filter(function (r) { return !!r.correction; }).length;
+    var corrected = T.corrections;
 
     $('oc-summary').innerHTML = [
       { l: 'Hospitals in the file', v: fmt.format(withActivity.length), n: 'with at least one note or email' },
       { l: 'Emails logged', v: fmt.format(emails), n: notes + ' notes alongside them' },
       { l: 'Awaiting reply', v: fmt.format(awaiting), n: 'sent, nothing back yet' },
-      { l: 'Records corrected', v: fmt.format(corrected), n: 'manual findings, excluded from audit totals' },
+      { l: 'Records corrected', v: fmt.format(corrected), n: 'current corrections are included in tracker summaries' },
       { l: 'Follow-ups due', v: fmt.format(due), n: due ? 'on or before today' : 'nothing overdue' },
     ].map(function (t) {
       return '<div class="tile"><div class="t-label">' + t.l + '</div>'
@@ -2227,8 +2244,27 @@
     });
   });
 
+  function refreshSummary() {
+    calculateSummary();
+    T = D.totals;
+    D.tiers.forEach(function (t) { TIER_META[t.key] = t; });
+    $('sf-total').textContent = fmt.format(T.hospitals);
+    $('dl-n').textContent = fmt.format(T.hospitals);
+    $('dl-states').textContent = T.states;
+    $('dl-files').textContent = fmt.format(T.filesRead);
+    renderDashboard();
+    renderInterventionGroups();
+    populateFindingOptions();
+    populateVersionOptions();
+    [].forEach.call($('tier-chips').querySelectorAll('.chip[data-key]'), function (btn) {
+      btn.querySelector('.cn').textContent = fmt.format(TIER_META[btn.dataset.key].n);
+    });
+    applyFilters();
+  }
+
   // Any change to the store refreshes the section, the chips and the visible rows.
   OC.onChange(function () {
+    refreshSummary();
     renderOutreachSection();
     if (openCcn) renderDrawer();
     if (openCcn) sortStale = true; else sortFiltered();
@@ -2429,10 +2465,20 @@
   renderOutreachSection();
   renderMode();
   OC.ready.then(function () {
+    refreshSummary();
+    if (fieldGeom.cols) drawField(fieldDrawn);
     renderMode();
     renderOutreachSection();
     layout();
   });
+
+  var summaryDay = new Date().toISOString().slice(0, 10);
+  function refreshSummaryDay() {
+    var day = new Date().toISOString().slice(0, 10);
+    if (day !== summaryDay) { summaryDay = day; refreshSummary(); }
+  }
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) refreshSummaryDay(); });
+  setInterval(refreshSummaryDay, 60000);
 
   /* ---------- theme ----------
      The choice sticks across reloads. The inline script in <head> is what

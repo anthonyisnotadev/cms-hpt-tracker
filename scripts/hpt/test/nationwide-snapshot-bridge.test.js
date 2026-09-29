@@ -39,7 +39,7 @@ test('nationwide snapshot bridge deterministically covers the exact 5,419-CCN jo
   assert.equal(effectiveAudit.records.length, 5419);
   assert.equal(new Set(effectiveAudit.records.map(record => record.ccn)).size, 5419);
   assert.equal(effectiveAudit.inputs.nationwide_verification.sha256, hash(currentBytes));
-  assert.equal(effectiveAudit.counts.historical_891_category['genuinely-unresolved'], 543);
+  assert.equal(effectiveAudit.counts.historical_891_category['genuinely-unresolved'], 541);
   assert.equal(effectiveAudit.records.find(record => record.ccn === '440161')
     .raw_observation.mrf_http_status, '403');
   assert.equal(effectiveAudit.records.find(record => record.ccn === '440161')
@@ -58,9 +58,9 @@ test('nationwide snapshot bridge deterministically covers the exact 5,419-CCN jo
   assert.equal(new Set(bridge.records.map(record => record.ccn)).size, 5419);
   assert.equal(Object.values(bridge.transition_counts).reduce((sum, count) => sum + count, 0), 5419);
   assert.equal(bridge.base_snapshot.counts['genuinely-unresolved'], 787);
-  assert.equal(bridge.current_snapshot.counts['genuinely-unresolved'], 545);
+  assert.equal(bridge.current_snapshot.counts['genuinely-unresolved'], 543);
   assert.equal(bridge.current_snapshot.sha256, hash(currentBytes));
-  assert.equal(current.summary.unresolved, 545);
+  assert.equal(current.summary.unresolved, 543);
   const cohort = bridge.historical_891_membership_cohort;
   assert.equal(cohort.exact_member_set_recovered, true);
   assert.deepEqual(cohort.historical_membership_counts, {
@@ -71,7 +71,8 @@ test('nationwide snapshot bridge deterministically covers the exact 5,419-CCN jo
     unique_ccns: 720
   });
   assert.equal(cohort.current_snapshot_sha256, hash(currentBytes));
-  assert.equal(cohort.current_category_counts['genuinely-unresolved'], 543);
+  assert.equal(cohort.current_category_counts['genuinely-unresolved'], 541);
+  assert.equal(cohort.current_category_counts['superseded-by-reviewed-resolution'], 70);
   assert.equal(Object.values(cohort.current_category_counts).reduce((sum, count) => sum + count, 0), 720);
   const cohortCcnSets = Object.values(cohort.current_category_ccns).flat();
   assert.equal(cohortCcnSets.length, 720);
