@@ -1,0 +1,36 @@
+{
+  "audit_id": "foundation-surgical-qies-current-2026-09-29",
+  "ccn": "670054",
+  "observed_at": "2026-09-29T12:00:00Z",
+  "source": {
+    "publisher": "Centers for Medicare & Medicaid Services",
+    "dataset": "Provider of Services File - Quality Improvement and Evaluation System (QIES)",
+    "resource_date": "2026-04-01",
+    "dataset_id": "03cca0cc-13a0-4b8d-82c4-57185b6bbfbd",
+    "query_url": "https://data.cms.gov/data-api/v1/dataset/03cca0cc-13a0-4b8d-82c4-57185b6bbfbd/data?filter%5BPRVDR_NUM%5D=670054&size=10",
+    "http_status": 200,
+    "result_count": 1,
+    "response_utf8_bytes": 11747,
+    "response_sha256": "4109934bf96791b295ed4e8dd73654ed0b8cb4cbd3e27096933fbbb2915a18c9"
+  },
+  "cms_record": {
+    "PRVDR_NUM": "670054",
+    "FAC_NAME": "FOUNDATION SURGICAL HOSPITAL OF SAN ANTONIO",
+    "ST_ADR": "9522 HUEBNER ROAD",
+    "CITY_NAME": "SAN ANTONIO",
+    "STATE_CD": "TX",
+    "ZIP_CD": "78240",
+    "ORGNL_PRTCPTN_DT": "20081014",
+    "CRTFCTN_DT": "20170223",
+    "TRMNTN_EXPRTN_DT": "",
+    "PGM_TRMNTN_CD": "00",
+    "CRTFD_BED_CNT": "20",
+    "PHNE_NUM": "2104785400"
+  },
+  "interpretation": "This official CMS QIES record independently corroborates CCN 670054's identity and 9522 Huebner address, and records no termination date/code 00 in this 2026-04-01 resource. It is consistent with the August 2026 CMS enrollment row, CMS General Information query, Texas DSHS facility list, and the first-party linked April 2026 MRF. It does not explain the current Foundation-branded site header at 5330 N Loop 1604 W or determine whether that address represents a shared header or additional location.",
+  "evidence_class": "official_current_cms_identity_and_address_corroboration",
+  "new_mrf_bytes": false,
+  "disposition_changed": false,
+  "count_effect": "none; 670054 remains unresolved; historical 891 cohort remains 543 unresolved among 720 unique CCNs",
+  "next_action": "Do not repeat this exact QIES query until a newer resource appears. Obtain publisher clarification/correction for the Foundation page address and practice-location scope, preserving the distinct CCN 670112/Legent file chain."
+}

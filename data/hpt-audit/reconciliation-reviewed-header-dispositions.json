@@ -1,0 +1,130 @@
+{
+  "generated_at": "2026-09-17T10:12:13.401Z",
+  "method": "manual-review-of-roster-pointer-file-header-and-current-official-identity-sources",
+  "records": [
+    {
+      "ccn": "060020",
+      "disposition": "sibling-campus-file-rejected",
+      "candidate": "UCHealth Parkview Pueblo West Hospital, 899 E Industrial Boulevard, Pueblo West CO 81007",
+      "observation": "The candidate pointer and file explicitly identify Pueblo West Hospital, not the roster's Parkview Medical Center campus at 400 W 16th Street in Pueblo. A later current publisher check found a distinct Medical Center pointer entry whose exact blob returns 404, while the pricing page labels the same Pueblo West blob for both campuses.",
+      "next_action": "Seek a publisher-corrected Medical Center pointer target and pricing-page link for the 400 W 16th Street campus. After a material change, retrieve bounded bytes from that exact file and verify declared location, address, state, date, template version and full-file usability. Keep the current 404 and Pueblo West header as distinct observations, not a file-absence or compliance verdict."
+    },
+    {
+      "ccn": "100204",
+      "disposition": "sibling-file-rejected-main-campus-file-selected",
+      "candidate": "HCA Florida JFK North Hospital, 2201 45th St, West Palm Beach FL 33407",
+      "official_url": "https://www.hcafloridahealthcare.com/locations/north-florida-hospital/about-us/quality-at-hca-healthcare",
+      "observation": "The JFK North candidate is a separately named West Palm Beach hospital and is rejected. A different exact pointer entry and file name HCA Florida North Florida Hospital and includes the roster's 6500 Newberry Road Gainesville main campus, which is independently confirmed by the current official page.",
+      "next_action": "Use only the separately proved North Florida Hospital file for CCN 100204; retain the JFK North rejection to prevent future name-family reassignment."
+    },
+    {
+      "ccn": "150051",
+      "disposition": "identity-reconciled-template-version-unresolved",
+      "candidate": "IU Health Bloomington Hospital, 2651 E Discovery Pkwy, Bloomington IN 47408",
+      "observation": "Current identity evidence supports the hospital's relocation from the roster address, but the inspected file declares template version 3.0 rather than accepted version 3.0.0.",
+      "next_action": "Recheck only after the publisher changes the file or declared version; retain the relocation evidence without promoting the current file as a verified 3.0.0 claim."
+    },
+    {
+      "ccn": "250043",
+      "observed_at": "2026-09-28T14:11:00Z",
+      "proof_file": "reconciliation-neshoba-qies-query-discrepancy-and-operator-page-recheck-2026-09-27.json",
+      "disposition": "historical-acute-ccn-hpt-coverage-unresolved",
+      "candidate": "Neshoba County General Hospital, 1001 Holland Ave, Philadelphia MS 39350",
+      "observation": "The prior identical-name/address comparison treated both roster rows as active. Fresh Q1 2026 CMS QIES exact-CCN requests return 250043 with termination code 07 and date 2025-12-31, cross-referenced to 251340, and 251340 as a non-terminated same-campus record. Both exact-response hashes are retained. The same-version 6,500-row bulk response hash matches the prior response and still omits both CCNs. The QIES query asymmetry is now reproducible but its cause remains unexplained. The hospital's 2025 first-party notice described October 1 as a planned CAH conversion date. A subsequent bounded Common Crawl/Internet Archive review recovered no pre-transition pointer/MRF bytes (with one inconclusive index-service 502 and Wayback rate limit); this does not prove that none existed. The 2026 current file cannot be contemporaneous active-acute CCN 250043 evidence, but historical HPT coverage remains unresolved.",
+      "prior_qies_review": {
+        "observed_at": "2026-09-27T18:38:12Z",
+        "proof_file": "reconciliation-neshoba-qies-query-discrepancy-and-operator-page-recheck-2026-09-27.json"
+      },
+      "latest_archive_review": {
+        "observed_at": "2026-09-28T05:23:35Z",
+        "proof_file": "reconciliation-neshoba-pretransition-commoncrawl-index-review-2026-09-28.json",
+        "historical_pointer_or_mrf_recovered": false
+      },
+      "latest_wayback_pretransition_pricing_route_review": {
+        "observed_at": "2026-09-28T13:59:03Z",
+        "proof_file": "reconciliation-neshoba-wayback-pretransition-pricing-route-2026-09-28.json",
+        "historical_page_route_recovered": true,
+        "historical_pointer_or_mrf_bytes_recovered": false,
+        "disposition_changed": false,
+        "count_effect": 0
+      },
+      "latest_historical_standard_charges_route_review": {
+        "observed_at": "2026-09-28T14:11:00Z",
+        "proof_file": "reconciliation-neshoba-historical-standard-charges-route-2026-09-28.json",
+        "historical_download_control_found": true,
+        "historical_pointer_or_report_bytes_recovered": false,
+        "historical_database_key_confirmed": false,
+        "disposition_changed": false,
+        "count_effect": 0
+      },
+      "next_action": "Retain 250043 in the historical accountability baseline. Seek a separately retained or newly available archive copy of the pre-2025-12-31 PARA Standard Charges report using its exact historical database key; the archived page shows the CDMWithoutLabel report type but does not expose the key, and the current 2026 key must not be assumed identical. If no direct object is recoverable, seek pre-2025-12-31 pointer/MRF evidence or a publisher-provided historical CMS-format file through authorized means and a materially different archive/source collection. Do not treat a download control as retrieved MRF bytes, repeat failed index routes absent source/access change, or assign the June 2026 campus file to historical acute-care CCN 250043."
+    },
+    {
+      "ccn": "251340",
+      "observed_at": "2026-09-27T17:29:39Z",
+      "proof_file": "reconciliation-neshoba-qies-query-discrepancy-and-operator-page-recheck-2026-09-27.json",
+      "disposition": "current-cah-shared-campus-mrf-ccn-scope-unresolved",
+      "candidate": "Neshoba County General Hospital, 1001 Holland Ave, Philadelphia MS 39350",
+      "observation": "QIES Q1 2026 identifies 251340 as active CAH with original participation date 2026-01-01. The official hospital's 2025 page announced a planned CAH conversion date of October 1, and its 2026 DNV certificate identifies the same address as accredited under the CAH program. The current June 2026 campus MRF remains CCN-unnamed and the current root pointer is transport-gated; these sources support the successor relationship but do not assign that MRF to a CCN.",
+      "next_action": "Keep 251340 separate as the active CAH CCN. The June 4, 2026 campus file is a current-scope candidate but names no CCN; obtain a fresh root pointer or publisher statement binding its exact mrf-url to 251340 before changing its standing MRF finding. Do not assign that file to historical CCN 250043."
+    },
+    {
+      "ccn": "260110",
+      "disposition": "clinic-files-rejected-for-hospital-ccn",
+      "candidate": "Mercy Pediatrics at 25 Doctors Park and Mercy Southeast Primary Care West at 817 S Mt Auburn Rd",
+      "cms_enrollment_snapshot_review_file": "data/hpt-audit/priority-one-cms-enrollment-snapshot-review.json",
+      "cms_enrollment_snapshot_observation": "Exact CMS CCN 260110 Hospital Enrollments row identifies Southeast Hospital at 1701 Lacey St, Cape Girardeau MO as a Part A hospital; the two retrieved candidate files still identify separate clinic locations, not this hospital campus.",
+      "observation": "Both candidates explicitly identify physician or rural-health-clinic locations rather than Mercy Hospital Southeast at 1701 Lacey Street.",
+      "next_action": "Locate the pointer entry and MRF for the 1701 Lacey Street hospital; do not substitute separately named clinic files even though their legal hospital-name field references Mercy Hospital Southeast."
+    },
+    {
+      "ccn": "321305",
+      "disposition": "current-official-address-conflicts-with-file",
+      "candidate": "Nor-Lea Hospital District, 1900 North Main Avenue, Lovington NM 88260-2813",
+      "official_url": "https://nor-lea.org/contact-us/",
+      "current_browser_page_url": "https://nor-lea.org/resources",
+      "current_browser_root_final_url": "https://www.nlmktg.org/cms-hpttxt",
+      "fresh_proof_file": "data/hpt-audit/reconciliation-nor-lea-address-conflict-proof.json",
+      "fresh_file_sample_sha256": "0b6830467dee3e9f16f7584d7eadcd605ebb4922413dc6c5197d3568d7aa3832",
+      "fresh_reviewed_at": "2026-09-17T10:12:13.401Z",
+      "cms_enrollment_snapshot_review_file": "data/hpt-audit/priority-one-cms-enrollment-snapshot-review.json",
+      "cms_enrollment_snapshot_observation": "Exact CMS CCN 321305 Hospital Enrollments row identifies Nor-Lea Hospital District at 1600 N Main Ave, Lovington NM, as a critical access hospital; the candidate file's 1900 North Main remains an unresolved street-number conflict.",
+      "observation": "A current interactive browser renders the first-party resources page linking this exact CSV and gives the main campus as 1600 North Main. The root URL redirects to a marketing HTML page with pointer-style text, not a retained structured pointer. A fresh bounded file header still declares 1900 North Main; the CMS roster and exact-CCN enrollment snapshot say 1600. Direct-client 403 responses are access observations only. No current official source reviewed explains the 1900 address.",
+      "next_action": "Obtain publisher clarification or authoritative campus-history evidence connecting 1900 North Main to CCN 321305, and independently verify a structured root cms-hpt.txt that declares the exact file after a material change. Do not treat the street-number conflict as equivalent or the current HTML/403 responses as a file-validity verdict."
+    },
+    {
+      "ccn": "331324",
+      "disposition": "sibling-file-rejected-roster-campus-mismatch",
+      "candidate": "Carthage Area Hospital, 1001 West St Carthage, NY 13619-9703",
+      "related_ccn": "331318",
+      "roster_address": "214 Kings Street, Ogdensburg, NY 13669",
+      "official_url": "https://www.cahny.org/pricing/",
+      "pointer_url": "https://www.cahny.org/cms-hpt.txt",
+      "observation": "The complete current pointer-linked file identifies the Carthage, NY campus at 1001 West Street, which matches related CCN 331318, not unresolved CCN 331324 whose roster address is 214 Kings Street, Ogdensburg, NY. The shared hospital name is insufficient for assignment.",
+      "next_action": "Keep the current Carthage MRF assigned only to the Carthage campus/CCN 331318. Obtain an Ogdensburg-specific pointer and MRF or authoritative facility transition evidence for CCN 331324; do not infer coverage from the shared hospital name."
+    },
+    {
+      "ccn": "340047",
+      "disposition": "sibling-file-rejected-main-campus-file-selected",
+      "candidate": "Atrium Health Wake Forest Baptist Davie Medical Center, 329 NC Highway 801 North, Bermuda Run NC 27006-7905",
+      "official_url": "https://cdn.atriumhealth.org/-/media/wakeforest/clinical/files/patient-and-family-resources/campus-maps/24-0016989-updated-maps-for-ed-and-op-surgery-center-opening-final-employee.pdf",
+      "observation": "The Davie candidate is a separately named Bermuda Run campus and is rejected. A different exact pointer entry names Wake Forest Baptist Medical Center with Brenner Children's, and its file declares North Carolina Baptist Hospital at Medical Center Boulevard, Winston-Salem, matching the roster and current official campus map.",
+      "next_action": "Use only the separately proved Winston-Salem main-campus file for CCN 340047; retain the Davie rejection to prevent sibling-campus reassignment."
+    },
+    {
+      "ccn": "500003",
+      "disposition": "current-campus-address-conflict-unresolved",
+      "candidate": "Skagit Valley Hospital, 1450 E Kincaid St, Mount Vernon WA 98274",
+      "official_url": "https://www.skagitregionalhealth.org/location-details/skagit-valley-hospital",
+      "additional_official_url": "https://www.skagitregionalhealth.org/for-patients/medical-records",
+      "cms_2025_ccn_address_url": "https://www.cms.gov/files/document/2025-reporting-cycle-teaching-hospital-listp.pdf",
+      "cms_2025_ccn_address_reviewed_on": "2026-09-16",
+      "cms_2025_ccn_address_observation": "The CMS 2025 Open Payments teaching-hospital list identifies exact CCN 500003, Public Hospital Dist No 1 Skagit, at 1415 E Kincaid St, Mount Vernon WA 98273. This corroborates the roster/official-records address but does not establish that the current file's 1450 E Kincaid address is an equivalent campus or that the file covers this CCN.",
+      "cms_enrollment_snapshot_query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=500003&size=10",
+      "cms_enrollment_snapshot_reviewed_on": "2026-09-16",
+      "cms_enrollment_snapshot_observation": "One exact CCN 500003 Hospital Enrollments row identifies Public Hospital Dist No 1 Skagit, Part A hospital, at 1415 E Kincaid St, Mount Vernon WA; enrollment ID O20031218000861. This snapshot supports the current CCN/address anchor, not equivalence with the candidate file's 1450 E Kincaid street number.",
+      "observation": "The current official hospital page identifies 300 Hospital Parkway, while an official records page uses 1415 E Kincaid as a mailing or administrative address matching the roster. Neither current page supports the file's 1450 E Kincaid address.",
+      "next_action": "Obtain publisher or authoritative campus-history evidence for 1450 E Kincaid, or a corrected current file; do not infer equivalence among the three street numbers."
+    }
+  ]
+}

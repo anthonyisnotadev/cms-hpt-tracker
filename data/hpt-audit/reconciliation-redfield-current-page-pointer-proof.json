@@ -1,0 +1,45 @@
+{
+  "ccn": "431316",
+  "reviewed_at": "2026-09-20T00:20:00Z",
+  "official_site": "https://www.redfieldcmh.org/departments/health-info-management/",
+  "facility_identity": {
+    "name": "Redfield Community Memorial Hospital",
+    "street": "111 West 10th Ave",
+    "city": "Redfield",
+    "state": "SD",
+    "zip": "57469",
+    "page_role": "First-party facility identity and health-care-pricing page"
+  },
+  "pricing_page": {
+    "current_page": "https://www.redfieldcmh.org/price-transparency/",
+    "current_link": "https://mychartconnectsites.org/MyChartConnect/GuestEstimates/SelectLocation",
+    "current_link_role": "patient-estimate workflow, not an observed downloadable MRF",
+    "historical_workbook": "https://www.redfieldcmh.org/wp-content/uploads/2023/10/redfield-community-memorial-pricing.xlsx",
+    "historical_workbook_observation": "The Health Information Management page still exposes a 2023 XLSX link, but the current dedicated pricing page has moved to a MyChart patient-estimate workflow; neither route supplies observed CMS 3.0.0 MRF bytes."
+  },
+  "latest_web_recheck": {
+    "observed_at": "2026-09-20T00:20:00Z",
+    "pricing_page_status": 200,
+    "pricing_page_current_link": "https://mychartconnectsites.org/MyChartConnect/GuestEstimates/SelectLocation",
+    "pricing_link_role": "patient-estimate workflow, not an observed downloadable MRF",
+    "facility_identity_observed": "Redfield Community Memorial Hospital, 111 West 10th Ave, Redfield, SD 57469",
+    "historical_workbook_link_currently_observed": true,
+    "historical_workbook_url": "https://www.redfieldcmh.org/wp-content/uploads/2023/10/redfield-community-memorial-pricing.xlsx",
+    "historical_workbook_direct_status": 202,
+    "historical_workbook_direct_bytes": 244,
+    "historical_workbook_direct_content": "SGCaptcha interstitial HTML, not XLSX bytes",
+    "browser_workbook_status": "ERR_BLOCKED_BY_CLIENT",
+    "pointer_status": 202,
+    "pointer_result": "SGCaptcha interstitial HTML",
+    "result": "The current dedicated first-party pricing page now exposes only a MyChart patient-estimate workflow; the Health Information Management page retains a historical 2023 XLSX link. The facility identity remains exact, but no current CMS MRF bytes or replacement pointer were recovered."
+  },
+  "pointer_observation": {
+    "url": "https://www.redfieldcmh.org/cms-hpt.txt",
+    "http_status": 202,
+    "body_sha256": "",
+    "result": "SGCaptcha interstitial HTML; pointer text was not retrieved",
+    "route": "https://www.redfieldcmh.org/.well-known/sgcaptcha/"
+  },
+  "disposition": "This confirms the correct Redfield/South Dakota facility route, separates the historical workbook from the current estimator, and rejects the Kansas same-name PARA candidate. No file was imported and no current CMS MRF claim was made.",
+  "next_action": "Recover a content-bearing Redfield/Avera cms-hpt.txt or current MRF through a permitted route, then verify file bytes, Redfield identity, SD state, date, version and usability."
+}

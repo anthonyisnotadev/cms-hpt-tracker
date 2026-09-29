@@ -1,0 +1,29 @@
+{
+  "ccn": "451304",
+  "observed_at": "2026-09-22T00:00:00Z",
+  "official_site": "https://scmchealth.com/",
+  "official_pricing_page": "https://scmchealth.com/price-transparency/",
+  "official_page_status": 202,
+  "official_page_content_type": "text/html",
+  "official_page_response_bytes": 190,
+  "official_page_sha256": "05b8e4a0df47c494408f6830fc71ee548bc2744698cf4a72afbeca134370283d",
+  "official_page_observation": "The official Schleicher County Medical Center site is identifiable, and indexed price-transparency material describes downloadable CDM files, but the current bounded client receives the site's robot challenge on the homepage, pricing route, and pointer route.",
+  "pointer_url": "https://scmchealth.com/cms-hpt.txt",
+  "pointer_status": 202,
+  "pointer_content_type": "text/html",
+  "pointer_response_bytes": 180,
+  "pointer_sha256": "153e01aa53fc7fcfe0a5314e6ca43cdd162dceedfa64e27bac1f4317b619fd50",
+  "file_kind": null,
+  "disposition": "official-pricing-page-access-challenge",
+  "cms_hospital_general_record": {
+    "source_file": "cms_data/Hospital_General_Information.csv",
+    "facility_id": "451304",
+    "facility_name": "SCHLEICHER COUNTY MEDICAL CENTER",
+    "address": "102 NORTH US HIGHWAY 277",
+    "citytown": "ELDORADO",
+    "state": "TX",
+    "hospital_type": "Critical Access Hospitals"
+  },
+  "interpretation": "This is a transport/access observation only. The challenge does not establish file absence, noncompliance, or an exemption; the CCN remains unresolved.",
+  "next_action": "Retry the exact official pricing route and root pointer through an authorized alternate client, then independently verify any recovered file's facility identity, address/state, date, version and complete-file usability."
+}

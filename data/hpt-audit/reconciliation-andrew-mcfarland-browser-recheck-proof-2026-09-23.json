@@ -1,0 +1,12 @@
+{
+  "ccn":"144021","observed_at":"2026-09-23T05:05:00Z",
+  "official_site":"https://dhsforensics.illinois.gov/",
+  "official_identity":"The recorded domain loads the Illinois Department of Human Services Forensics Handbook, not a facility-specific Andrew McFarland Mental Health Center page. CMS independently identifies Andrew McFarland Mental Health Center at 901 Southwind Rd, Springfield, IL 62703.",
+  "browser_observation":"Interactive browser navigation loaded the IDHS Forensics Handbook. The accessibility tree exposed generic forensic-system content and no facility-specific pricing or MRF link.",
+  "pointer_url":"https://dhsforensics.illinois.gov/cms-hpt.txt","pointer_status":"HTTP 404 Not Found",
+  "mrf_observation":"No facility-specific MRF bytes recovered; no file-absence or compliance conclusion inferred.",
+  "cms_api_url":"https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=144021&conditions%5B0%5D%5Boperator%5D=%3D","cms_api_status":200,"cms_api_response_bytes":6823,"cms_api_response_sha256":"7FACE27D789C308DDCEF7B976A044F519A7C45B580C6110760592AEE12B2C361","cms_record":{"facility_id":"144021","facility_name":"ANDREW MCFARLAND MENTAL HLTH CTR","address":"901 SOUTHWIND RD","citytown":"SPRINGFIELD","state":"IL","zip_code":"62703"},
+  "disposition":"official-domain-generic-state-content-pointer-404",
+  "interpretation":"The recorded state domain is reachable but serves generic IDHS Forensics Handbook content and its root pointer is 404. This is a facility-attribution/discovery observation only; no MRF or compliance conclusion is inferred.",
+  "next_action":"Locate a current facility-specific IDHS or hospital pricing route and root pointer through an alternate state directory/client; verify facility identity and MRF metadata before promotion."
+}

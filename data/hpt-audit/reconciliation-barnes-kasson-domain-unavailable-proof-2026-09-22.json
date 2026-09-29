@@ -1,0 +1,13 @@
+{
+  "ccn": "391309",
+  "observed_at": "2026-09-22T02:00:00Z",
+  "roster_facility_name": "Barnes-Kasson County Hospital",
+  "roster_address": "2872 Turnpike Street, Susquehanna, PA 18847",
+  "official_domain_candidate": "https://barnes-kasson.org/",
+  "official_domain_status": "timeout",
+  "official_domain_observation": "The roster-linked domain timed out on bounded HTTPS HEAD retrieval; alternate obvious hostnames did not resolve. Search results identify the same domain as the hospital website but did not expose a current first-party pricing page or direct CMS MRF.",
+  "excluded_third_party_lead": "https://app.gigasheet.com/price-transparency/PA/HALLSTEAD/1720573918/barnes-kasson-county-hospital/",
+  "excluded_third_party_reason": "The third-party page describes a Transparency in Coverage/clinic NPI record at 25059 State Route 11, Hallstead, PA 18822, not the CCN facility at 2872 Turnpike Street, Susquehanna, PA 18847.",
+  "disposition": "pointer-discovery-incomplete",
+  "next_action": "Retry the first-party domain with interactive/browser fallback or obtain a publisher-provided current CMS CSV/JSON MRF; do not apply the third-party clinic/TiC record to this CCN."
+}

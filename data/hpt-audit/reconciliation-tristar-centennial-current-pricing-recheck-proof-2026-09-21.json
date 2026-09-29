@@ -1,0 +1,18 @@
+{
+  "ccn": "440161",
+  "observed_at": "2026-09-21T18:30:00Z",
+  "official_pricing_page": "https://www.tristarhealth.com/locations/tristar-centennial-medical-center/for-patients/pricing-transparency-cms-required-file-of-standard-charges",
+  "official_pricing_page_status": 200,
+  "official_page_observation": "The current first-party TriStar Centennial page identifies the hospital at 2300 Patterson St, Nashville, TN 37203 and links the TriStar CMS standard-charges request file route.",
+  "page_mrf_url": "https://hcadam.com/api/public/content/0947329859ac44d4aee0f06e1cda2eb9?download=true",
+  "page_mrf_result": "The exact page-linked HCA DAM route failed bounded retrieval with a DNS transport error; no file bytes, redirect or metadata were recovered. Browser page confirmed the link target but did not produce a downloadable artifact in this run.",
+  "page_mrf_status": "dns-transport-error",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=440161&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6584,
+  "cms_api_response_sha256": "7cc40e90dee64d3143ed1e7d8a95b0f5c8933df91f278bd84e41d27b9700f24a",
+  "cms_record": { "facility_id": "440161", "facility_name": "TRISTAR CENTENNIAL MEDICAL CENTER", "address": "2300 PATTERSON STREET", "citytown": "NASHVILLE", "state": "TN", "zip_code": "37203", "hospital_type": "Acute Care Hospitals", "hospital_ownership": "Proprietary", "emergency_services": "Yes" },
+  "disposition": "current-official-page-file-route-transport-unresolved",
+  "interpretation": "The current first-party page and CMS API independently confirm the facility identity and address. The exact HCA DAM file route remains transport-unresolved, so no current MRF usability or compliance conclusion is made and no promotion is applied.",
+  "next_action": "Obtain a publisher-issued replacement token or authorized route that resolves the HCA DAM host, then retrieve bounded bytes and verify exact Centennial identity, Tennessee state, declared date/version and parsed usability."
+}

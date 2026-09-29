@@ -1,0 +1,29 @@
+{
+  "ccn": "050581",
+  "observed_at": "2026-09-24T00:00:00Z",
+  "official_site": "https://www.ucihealth.org/",
+  "official_pricing_page": "https://www.ucihealth.org/patients-and-visitors/financial-resources/price-transparency",
+  "pointer_url": "https://www.ucihealth.org/cms-hpt.txt",
+  "pointer_http_status": 200,
+  "pointer_bytes": 1814,
+  "pointer_sha256": "ca19e3b7cc53c0f29796ce4586fe91b11ae7a816d5b3b02b6ce17e3fb2ce7c8c",
+  "pointer_entry": "UCI Health - Lakewood -> 952226406_uci-health-lakewood_standardcharges.json",
+  "mrf_url": "https://www.ucihealth.org/pricetransparency/952226406_uci-health-lakewood_standardcharges.json",
+  "mrf_range_status": 206,
+  "mrf_sample_bytes": 1048576,
+  "mrf_content_type": "application/json",
+  "metadata": {
+    "hospital_name": "UCI Health - Lakewood",
+    "last_updated_on": "2026-04-01",
+    "version": "3.0.0",
+    "location_name": "UCI Health - Lakewood",
+    "hospital_address": "101 City Drive South, Orange, CA 92868",
+    "license_state": "CA",
+    "npi": "1184655581",
+    "attestation": true
+  },
+  "official_page_observation": "The current UCI price-transparency page lists a dedicated Lakewood machine-readable file and states the standard-charge list is effective Nov. 1, 2025.",
+  "disposition": "pointer-and-file-identity-confirmed-address-period-conflict-retained",
+  "interpretation": "The current official pointer and page explicitly identify the file as UCI Health - Lakewood, while the bounded JSON metadata retains an Orange address. This is documented as an address reconciliation issue; no reassignment to Orange and no clean promotion were made.",
+  "next_action": "Obtain publisher or CMS enrollment evidence explaining the Lakewood/Orange address relationship before promotion."
+}

@@ -1,0 +1,38 @@
+{
+  "ccn": "061306",
+  "hospital_name": "Lincoln Health Hospital",
+  "observed_at": "2026-09-19T07:00:00Z",
+  "official_site": "https://hugohospital.com/",
+  "official_identity_sources": [
+    "https://hugohospital.com/",
+    "https://hugohospital.com/contact/",
+    "https://hugohospital.com/directions-parking/"
+  ],
+  "official_identity": "Lincoln Health Hospital, 111 6th Street, Hugo, CO 80821, CCN 061306, NPI 1720107519",
+  "official_pricing_page": "https://pricetransparency.accureg.net/lincoln",
+  "official_page_linkage": "The official Lincoln Health home page's Transparency tile links the Accureg page; the Accureg page exposes current CSV and JSON standard-charge downloads.",
+  "pointer_url": "https://hugohospital.com/cms-hpt.txt",
+  "pointer_browser_status": "official-404-page",
+  "mrf_url": "https://cdn.accureg.net/trans/lincoln/84-0484566_Lincoln-Health_standardcharges.csv",
+  "mrf_additional_url": "https://cdn.accureg.net/trans/lincoln/84-0484566_Lincoln-Health_standardcharges.json",
+  "mrf_http_status": 200,
+  "mrf_content_type": "application/octet-stream",
+  "mrf_bytes": 8975182,
+  "mrf_sha256": "04E80AD6736293000B7CA42052C8B62CA6E4B278767553F403DE3AE4BE634856",
+  "mrf_additional_bytes": 32902773,
+  "mrf_additional_sha256": "989625F0B887541E90B76B51E3CE42FD9E664AD9411BA05FDB61FF47F422BD23",
+  "mrf_last_modified": "2026-06-04T15:25:47Z",
+  "mrf_declared_date": "2026-06-04",
+  "mrf_declared_version": "3.0.0",
+  "mrf_declared_location": "Lincoln Health",
+  "mrf_declared_address": "111 6th St, Hugo, CO 80821",
+  "mrf_declared_npi": "1720107519",
+  "mrf_declared_license_state": "CO",
+  "search_observations": [
+    "The official Lincoln Health home page links the Accureg transparency page, so the file is not an unrelated same-name hospital result.",
+    "The CSV and JSON both declare Lincoln Health, the exact Hugo address, NPI 1720107519, date 2026-06-04 and CMS version 3.0.0.",
+    "The exact root cms-hpt.txt URL renders the official Lincoln Health 404 page; this is kept separate from the working page-linked MRF evidence."
+  ],
+  "disposition": "official-page-linked-current-file-identity-and-metadata-confirmed-pointer-404",
+  "next_action": "Run the complete CSV/JSON through the current CMS schema/usability checks; preserve the pointer 404 as a separate observation and do not infer file absence."
+}

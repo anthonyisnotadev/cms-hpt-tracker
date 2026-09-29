@@ -1,0 +1,17 @@
+{
+  "ccn": "670010",
+  "observed_at": "2026-09-22T16:30:00Z",
+  "official_pricing_page": "https://mayhillhospital.com/",
+  "official_pricing_page_status": 403,
+  "official_page_observation": "Interactive browser access to the first-party Mayhill Hospital domain rendered a Cloudflare security-verification page rather than hospital content. The exact cms-hpt.txt route rendered the same first-party challenge; no pointer text or MRF URL was available.",
+  "cms_pointer_url": "https://mayhillhospital.com/cms-hpt.txt",
+  "cms_pointer_result": "First-party browser access rendered a Cloudflare security-verification challenge; no pointer content was available in this recheck.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=670010&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6747,
+  "cms_api_response_sha256": "20ACD4F7547CC6B900D61177B283CA73C5BAB939BF2052AAB1DBAEB79A493CD3",
+  "cms_record": { "facility_id": "670010", "facility_name": "MAYHILL HOSPITAL", "address": "2809 SOUTH MAYHILL ROAD", "citytown": "DENTON", "state": "TX", "zip_code": "76208", "hospital_type": "Acute Care Hospitals", "hospital_ownership": "Proprietary", "emergency_services": "No" },
+  "disposition": "official-domain-pointer-browser-access-challenge-no-mrf-observed",
+  "interpretation": "The browser route is a first-party transport/access observation only. CMS independently identifies Mayhill Hospital and its Denton, Texas address; the observation does not establish file absence, noncompliance, or a facility closure.",
+  "next_action": "Retry the exact first-party pointer through a permitted publisher route, then verify declared name, Denton address/state, date, version and usability before changing the tracker disposition."
+}

@@ -1,0 +1,632 @@
+{
+  "observed_at": "2026-09-27T14:55:56.041Z",
+  "scope": "All 14 CCNs in the retained OMH shared-file unresolved cohort, not all OMH facilities.",
+  "prior_review_assessment": "An earlier cohort snapshot recorded the first Greater Binghamton section as if it characterized the entire shared download. Five cohort CCNs subsequently received separate facility-section reviews; this current 20-section audit checks the full 14-CCN cohort uniformly and refreshes prior positive evidence without counting those five as new resolutions.",
+  "source": {
+    "official_domain": "omh.ny.gov",
+    "pointer_url": "https://omh.ny.gov/cms-hpt.txt",
+    "pointer_sha256": "c5bc8d36dae15caaa62f821228bcdeba7baf3c48c4ce0ac0e0c585a41d073de1",
+    "pointer_observation_at": "2026-09-17T09:23:14.569Z",
+    "shared_file_url": "https://omh.ny.gov/omhweb/adults/141663311_nysomh_standardcharges.csv",
+    "current_http_status": 200,
+    "current_content_type": "text/csv",
+    "current_last_modified": "2026-06-11T15:30:53Z",
+    "current_full_file_bytes": 929041,
+    "current_full_file_sha256": "84f14403ad89386a0fb9e470d2e3fe371454eef40ca32b86d31fe313a0fd0911",
+    "retained_file_bytes": 929041,
+    "retained_file_sha256": "84f14403ad89386a0fb9e470d2e3fe371454eef40ca32b86d31fe313a0fd0911",
+    "facility_sections_in_download": 20
+  },
+  "cms_source": {
+    "dataset": "CMS Hospital General Information",
+    "dataset_url": "https://data.cms.gov/provider-data/dataset/xubh-q36u",
+    "dataset_id": "xubh-q36u",
+    "last_modified": "2026-07-22",
+    "released": "2026-08-13",
+    "query_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?limit=1500&offset=3000",
+    "response_status": 200,
+    "response_bytes": 2030477,
+    "response_sha256": "f827609cf767641490c7a180e29906cd8838cbd8b6791207207c4cc5597ea084",
+    "observed_at": "2026-09-27T14:55:56.041Z"
+  },
+  "counts": {
+    "historical_unresolved_ccns_reviewed": 14,
+    "exact_facility_sections_confirmed": 11,
+    "already_supported_reviewed_findings": 5,
+    "newly_supported_reviewed_findings": 6,
+    "remain_unresolved": 3
+  },
+  "records": [
+    {
+      "ccn": "334003",
+      "cms_hospital_name": "ST LAWRENCE PSYCHIATRIC CENTER",
+      "cms_address": "ONE CHIMNEY POINT DRIVE, OGDENSBURG, NY 13669",
+      "official_omh_directory_name": "St. Lawrence Psychiatric Center",
+      "pointer_entry_name": "St Lawrence",
+      "pointer_entry_status": "named-entry-shared-file",
+      "pointer_mrf_url": "https://omh.ny.gov/omhweb/adults/141663311_nysomh_standardcharges.csv",
+      "identity_address_used": "ONE CHIMNEY POINT DRIVE, OGDENSBURG, NY 13669",
+      "file_section": {
+        "section_name": "St. Lawrence Psychiatric Center",
+        "declared_date_raw": "5/28/2026",
+        "version": "3.0.0",
+        "location_name": "St. Lawrence",
+        "address": "1 Chimney Point Dr, Ogdensburg, NY 13669",
+        "attestation": true,
+        "columns": 51,
+        "data_rows": 97,
+        "row_widths": [
+          51
+        ],
+        "malformed_row_widths": 0,
+        "usable_gross_charge_rows": 97,
+        "license_header": "license_number|NY",
+        "license_state": "NY",
+        "declared_npis": [
+          "1194889360",
+          "1801950720"
+        ],
+        "license_values": [
+          "1783647A_1783647D",
+          "1788076",
+          "1770241A_1770242A_1770242B_1770243A_1778643A_1778643B_1778643D"
+        ],
+        "start_line": 946,
+        "end_line": 1046
+      },
+      "checks": {
+        "file_facility_name_matches_official_directory": true,
+        "file_address_matches_cms_or_first_party_identity": true,
+        "file_city_and_state_match_cms": true,
+        "cms_v3_structure_date_attestation_and_usable_rows": true
+      },
+      "address_variation": "",
+      "finding": "facility-specific-current-mrf-section-confirmed",
+      "next_action": "Retain this facility-specific section as current observed file evidence; only revisit after a source change or on the next scheduled verification."
+    },
+    {
+      "ccn": "334004",
+      "cms_hospital_name": "CREEDMOOR PSYCHIATRIC CENTER",
+      "cms_address": "80-45 WINCHESTER BLVD BLDG B, QUEENS VILLAGE, NY 11427",
+      "official_omh_directory_name": "Creedmoor Psychiatric Center",
+      "pointer_entry_name": "Creedmoor",
+      "pointer_entry_status": "named-entry-shared-file",
+      "pointer_mrf_url": "https://omh.ny.gov/omhweb/adults/141663311_nysomh_standardcharges.csv",
+      "identity_address_used": "80-45 WINCHESTER BLVD BLDG B, QUEENS VILLAGE, NY 11427",
+      "file_section": {
+        "section_name": "Creedmoor Psychiatric Center",
+        "declared_date_raw": "5/28/2026",
+        "version": "3.0.0",
+        "location_name": "Creedmoor",
+        "address": "79-25 Winchester Boulevard, Queens Village, NY 11427",
+        "attestation": true,
+        "columns": 51,
+        "data_rows": 88,
+        "row_widths": [
+          51
+        ],
+        "malformed_row_widths": 0,
+        "usable_gross_charge_rows": 88,
+        "license_header": "license_number|NY",
+        "license_state": "NY",
+        "declared_npis": [
+          "1831253004",
+          "1730243635",
+          "1194889097"
+        ],
+        "license_values": [
+          "0573454A",
+          "0570291A_0570291B_0570441A"
+        ],
+        "start_line": 285,
+        "end_line": 376
+      },
+      "checks": {
+        "file_facility_name_matches_official_directory": true,
+        "file_address_matches_cms_or_first_party_identity": false,
+        "file_city_and_state_match_cms": true,
+        "cms_v3_structure_date_attestation_and_usable_rows": true
+      },
+      "address_variation": "",
+      "finding": "facility-section-retained-unresolved-for-name-address-or-structure-conflict",
+      "next_action": "Ask OMH to explain or correct why the Creedmoor section declares 79-25 Winchester Boulevard while the current CMS CCN roster lists 80-45 Winchester Blvd, Building B; keep the file unassigned until the address relationship is documented."
+    },
+    {
+      "ccn": "334013",
+      "cms_hospital_name": "PILGRIM PSYCHIATRIC CENTER",
+      "cms_address": "998 CROOKED HILL ROAD, WEST BRENTWOOD, NY 11717",
+      "official_omh_directory_name": "Pilgrim Psychiatric Center",
+      "pointer_entry_name": "Pilgrim",
+      "pointer_entry_status": "named-entry-shared-file",
+      "pointer_mrf_url": "https://omh.ny.gov/omhweb/adults/141663311_nysomh_standardcharges.csv",
+      "identity_address_used": "998 Crooked Hill Road, West Brentwood, NY 11717-1087",
+      "file_section": {
+        "section_name": "Pilgrim Psychiatric Center",
+        "declared_date_raw": "5/28/2026",
+        "version": "3.0.0",
+        "location_name": "Pilgrim",
+        "address": "998 Crooked Hill Rd, Brentwood, NY 11717",
+        "attestation": true,
+        "columns": 51,
+        "data_rows": 89,
+        "row_widths": [
+          51
+        ],
+        "malformed_row_widths": 0,
+        "usable_gross_charge_rows": 89,
+        "license_header": "license_number|NY",
+        "license_state": "NY",
+        "declared_npis": [
+          "1740344910",
+          "1396809208",
+          "1578627485"
+        ],
+        "license_values": [
+          "1373951A",
+          "1370431A_1370493A_1370512A_1370811A"
+        ],
+        "start_line": 479,
+        "end_line": 571
+      },
+      "checks": {
+        "file_facility_name_matches_official_directory": true,
+        "file_address_matches_cms_or_first_party_identity": true,
+        "file_city_and_state_match_cms": true,
+        "cms_v3_structure_date_attestation_and_usable_rows": true
+      },
+      "address_variation": "MRF section says Brentwood; the current CMS roster and OMH facility page say West Brentwood. Street, state and ZIP5 agree.",
+      "finding": "facility-specific-current-mrf-section-confirmed",
+      "next_action": "Retain this facility-specific section as current observed file evidence; only revisit after a source change or on the next scheduled verification."
+    },
+    {
+      "ccn": "334015",
+      "cms_hospital_name": "ROCKLAND PSYCH CTR",
+      "cms_address": "140 OLD ORANGEBURG RD, ORANGEBURG, NY 10962",
+      "official_omh_directory_name": "Rockland Psychiatric Center",
+      "pointer_entry_name": "Rockland",
+      "pointer_entry_status": "named-entry-shared-file",
+      "pointer_mrf_url": "https://omh.ny.gov/omhweb/adults/141663311_nysomh_standardcharges.csv",
+      "identity_address_used": "140 OLD ORANGEBURG RD, ORANGEBURG, NY 10962",
+      "file_section": {
+        "section_name": "Rockland Psychiatric Center",
+        "declared_date_raw": "5/28/2026",
+        "version": "3.0.0",
+        "location_name": "Rockland",
+        "address": "140 Old Orangeburg Road, Orangeburg, NY 10962�",
+        "attestation": true,
+        "columns": 51,
+        "data_rows": 89,
+        "row_widths": [
+          51
+        ],
+        "malformed_row_widths": 0,
+        "usable_gross_charge_rows": 89,
+        "license_header": "license_number|NY",
+        "license_state": "NY",
+        "declared_npis": [
+          "1386708550",
+          "1649334566",
+          "1275697195"
+        ],
+        "license_values": [
+          "1673396A_1673594A",
+          "1670165A_1670241A_1670291A_1670341A_1670461A_1670537A_1670561A_1670592A_1670650A_1670750A"
+        ],
+        "start_line": 754,
+        "end_line": 846
+      },
+      "checks": {
+        "file_facility_name_matches_official_directory": true,
+        "file_address_matches_cms_or_first_party_identity": true,
+        "file_city_and_state_match_cms": true,
+        "cms_v3_structure_date_attestation_and_usable_rows": true
+      },
+      "address_variation": "",
+      "finding": "facility-specific-current-mrf-section-confirmed",
+      "next_action": "Retain this facility-specific section as current observed file evidence; only revisit after a source change or on the next scheduled verification."
+    },
+    {
+      "ccn": "334021",
+      "cms_hospital_name": "MOHAWK VALLEY PSYCHIATRIC CENTER",
+      "cms_address": "1400 NOYES ST, UTICA, NY 13502",
+      "official_omh_directory_name": "Mohawk Valley Psychiatric Center",
+      "pointer_entry_name": "Mohawk Valley",
+      "pointer_entry_status": "named-entry-shared-file",
+      "pointer_mrf_url": "https://omh.ny.gov/omhweb/adults/141663311_nysomh_standardcharges.csv",
+      "identity_address_used": "1400 NOYES ST, UTICA, NY 13502",
+      "file_section": {
+        "section_name": "Mohawk Valley Psychiatric Center",
+        "declared_date_raw": "5/28/2026",
+        "version": "3.0.0",
+        "location_name": "Mohawk Valley",
+        "address": "1400 Noyes St, Utica, NY 13502",
+        "attestation": true,
+        "columns": 51,
+        "data_rows": 90,
+        "row_widths": [
+          51
+        ],
+        "malformed_row_widths": 0,
+        "usable_gross_charge_rows": 90,
+        "license_header": "license_number|NY",
+        "license_state": "NY",
+        "declared_npis": [
+          "1982761425",
+          "1346307568",
+          "1578620795"
+        ],
+        "license_values": [
+          "4573553A",
+          "4570210A_4570220A_4570230A"
+        ],
+        "start_line": 1729,
+        "end_line": 1822
+      },
+      "checks": {
+        "file_facility_name_matches_official_directory": true,
+        "file_address_matches_cms_or_first_party_identity": true,
+        "file_city_and_state_match_cms": true,
+        "cms_v3_structure_date_attestation_and_usable_rows": true
+      },
+      "address_variation": "",
+      "finding": "facility-specific-current-mrf-section-confirmed",
+      "next_action": "Retain this facility-specific section as current observed file evidence; only revisit after a source change or on the next scheduled verification."
+    },
+    {
+      "ccn": "334043",
+      "cms_hospital_name": "SOUTH BEACH PSYCHIATRIC CENTER",
+      "cms_address": "777 SEAVIEW AVE, STATEN ISLAND, NY 10305",
+      "official_omh_directory_name": "South Beach Psychiatric Center",
+      "pointer_entry_name": "South Beach",
+      "pointer_entry_status": "named-entry-shared-file",
+      "pointer_mrf_url": "https://omh.ny.gov/omhweb/adults/141663311_nysomh_standardcharges.csv",
+      "identity_address_used": "777 SEAVIEW AVE, STATEN ISLAND, NY 10305",
+      "file_section": {
+        "section_name": "South Beach Psychiatric Center",
+        "declared_date_raw": "5/28/2026",
+        "version": "3.0.0",
+        "location_name": "South Beach",
+        "address": "777 Seaview Avenue, Staten Island, NY 10305",
+        "attestation": true,
+        "columns": 51,
+        "data_rows": 98,
+        "row_widths": [
+          51
+        ],
+        "malformed_row_widths": 0,
+        "usable_gross_charge_rows": 98,
+        "license_header": "license_number|NY",
+        "license_state": "NY",
+        "declared_npis": [
+          "1164589602",
+          "1922165158",
+          "1730246968"
+        ],
+        "license_values": [
+          "3673218A_3673219A",
+          "3683682A",
+          "3670191A_3670291A_3670291B_3670419A_3670441A"
+        ],
+        "start_line": 1529,
+        "end_line": 1630
+      },
+      "checks": {
+        "file_facility_name_matches_official_directory": true,
+        "file_address_matches_cms_or_first_party_identity": true,
+        "file_city_and_state_match_cms": true,
+        "cms_v3_structure_date_attestation_and_usable_rows": true
+      },
+      "address_variation": "",
+      "finding": "facility-specific-current-mrf-section-confirmed",
+      "next_action": "Retain this facility-specific section as current observed file evidence; only revisit after a source change or on the next scheduled verification."
+    },
+    {
+      "ccn": "334045",
+      "cms_hospital_name": "ELMIRA PSYCH CENTER",
+      "cms_address": "WASHINGTON ST, ELMIRA, NY 14901",
+      "official_omh_directory_name": "Elmira Psychiatric Center",
+      "pointer_entry_name": "Elmira",
+      "pointer_entry_status": "named-entry-shared-file",
+      "pointer_mrf_url": "https://omh.ny.gov/omhweb/adults/141663311_nysomh_standardcharges.csv",
+      "identity_address_used": "100 Washington Street, Elmira, NY 14901-2898",
+      "file_section": {
+        "section_name": "Elmira Psychiatric Center",
+        "declared_date_raw": "5/28/2026",
+        "version": "3.0.0",
+        "location_name": "Elmira",
+        "address": "100 Washington Street, Elmira, NY 14901",
+        "attestation": true,
+        "columns": 51,
+        "data_rows": 101,
+        "row_widths": [
+          51
+        ],
+        "malformed_row_widths": 0,
+        "usable_gross_charge_rows": 101,
+        "license_header": "license_number|NY",
+        "license_state": "NY",
+        "declared_npis": [
+          "1255498796",
+          "1730246943",
+          "1194882316"
+        ],
+        "license_values": [
+          "3573188A_3573714A_3573720A",
+          "3583631A_3583633A_3583633F",
+          "3588052",
+          "3570141A_3570141D_3570148A_3570148B_3578641A"
+        ],
+        "start_line": 1424,
+        "end_line": 1528
+      },
+      "checks": {
+        "file_facility_name_matches_official_directory": true,
+        "file_address_matches_cms_or_first_party_identity": true,
+        "file_city_and_state_match_cms": true,
+        "cms_v3_structure_date_attestation_and_usable_rows": true
+      },
+      "address_variation": "",
+      "finding": "facility-specific-current-mrf-section-confirmed",
+      "next_action": "Retain this facility-specific section as current observed file evidence; only revisit after a source change or on the next scheduled verification."
+    },
+    {
+      "ccn": "334046",
+      "cms_hospital_name": "CAPITAL DISTRICT PSYCH CENTER",
+      "cms_address": "75 NEW SCOTLAND AVE, ALBANY, NY 12208",
+      "official_omh_directory_name": "Capital District Psychiatric Center",
+      "pointer_entry_name": "Capital District",
+      "pointer_entry_status": "named-entry-shared-file",
+      "pointer_mrf_url": "https://omh.ny.gov/omhweb/adults/141663311_nysomh_standardcharges.csv",
+      "identity_address_used": "75 NEW SCOTLAND AVE, ALBANY, NY 12208",
+      "file_section": {
+        "section_name": "Capital District Psychiatric Center",
+        "declared_date_raw": "5/28/2026",
+        "version": "3.0.0",
+        "location_name": "Capital District",
+        "address": "75 New Scotland Ave, Albany, NY 12208",
+        "attestation": true,
+        "columns": 51,
+        "data_rows": 87,
+        "row_widths": [
+          51
+        ],
+        "malformed_row_widths": 0,
+        "usable_gross_charge_rows": 87,
+        "license_header": "license_number|NY",
+        "license_state": "NY",
+        "declared_npis": [
+          "1528125069",
+          "1679630883"
+        ],
+        "license_values": [
+          "2470194A_2470441A_2478144A_2478144E_2478144F"
+        ],
+        "start_line": 1233,
+        "end_line": 1323
+      },
+      "checks": {
+        "file_facility_name_matches_official_directory": true,
+        "file_address_matches_cms_or_first_party_identity": true,
+        "file_city_and_state_match_cms": true,
+        "cms_v3_structure_date_attestation_and_usable_rows": true
+      },
+      "address_variation": "",
+      "finding": "facility-specific-current-mrf-section-confirmed",
+      "next_action": "Retain this facility-specific section as current observed file evidence; only revisit after a source change or on the next scheduled verification."
+    },
+    {
+      "ccn": "334052",
+      "cms_hospital_name": "BUFFALO PSYCHIATRIC CENTER",
+      "cms_address": "400 FOREST AVE, BUFFALO, NY 14213",
+      "official_omh_directory_name": "Buffalo Psychiatric Center",
+      "pointer_entry_name": "Buffalo",
+      "pointer_entry_status": "named-entry-shared-file",
+      "pointer_mrf_url": "https://omh.ny.gov/omhweb/adults/141663311_nysomh_standardcharges.csv",
+      "identity_address_used": "400 FOREST AVE, BUFFALO, NY 14213",
+      "file_section": {
+        "section_name": "Buffalo Psychiatric Center",
+        "declared_date_raw": "5/28/2026",
+        "version": "3.0.0",
+        "location_name": "Buffalo",
+        "address": "400 Forest Ave, Buffalo, NY 14213",
+        "attestation": true,
+        "columns": 51,
+        "data_rows": 88,
+        "row_widths": [
+          51
+        ],
+        "malformed_row_widths": 0,
+        "usable_gross_charge_rows": 88,
+        "license_header": "license_number|NY",
+        "license_state": "NY",
+        "declared_npis": [
+          "1922162197",
+          "1043480585",
+          "1043480586",
+          "1740344647",
+          "1740344648",
+          "1740344649"
+        ],
+        "license_values": [
+          "0373970A",
+          "0370418A_0370511A_0370511B_0370682A_0370682B"
+        ],
+        "start_line": 193,
+        "end_line": 284
+      },
+      "checks": {
+        "file_facility_name_matches_official_directory": true,
+        "file_address_matches_cms_or_first_party_identity": true,
+        "file_city_and_state_match_cms": true,
+        "cms_v3_structure_date_attestation_and_usable_rows": true
+      },
+      "address_variation": "",
+      "finding": "facility-specific-current-mrf-section-confirmed",
+      "next_action": "Retain this facility-specific section as current observed file evidence; only revisit after a source change or on the next scheduled verification."
+    },
+    {
+      "ccn": "334053",
+      "cms_hospital_name": "BRONX PSYCHIATRIC CENTER",
+      "cms_address": "1500 WATERS PLACE, BRONX, NY 10461",
+      "official_omh_directory_name": "Bronx Psychiatric Center",
+      "pointer_entry_name": "Bronx",
+      "pointer_entry_status": "named-entry-shared-file",
+      "pointer_mrf_url": "https://omh.ny.gov/omhweb/adults/141663311_nysomh_standardcharges.csv",
+      "identity_address_used": "1500 WATERS PLACE, BRONX, NY 10461",
+      "file_section": {
+        "section_name": "Bronx Psychiatric Center",
+        "declared_date_raw": "5/28/2026",
+        "version": "3.0.0",
+        "location_name": "Bronx",
+        "address": "1500 Waters Pl, Bronx, NY 10461�",
+        "attestation": true,
+        "columns": 51,
+        "data_rows": 89,
+        "row_widths": [
+          51
+        ],
+        "malformed_row_widths": 0,
+        "usable_gross_charge_rows": 89,
+        "license_header": "license_number|NY",
+        "license_state": "NY",
+        "declared_npis": [
+          "1619034154",
+          "1700943917",
+          "1336206549"
+        ],
+        "license_values": [
+          "2173311A",
+          "2170151A"
+        ],
+        "start_line": 1140,
+        "end_line": 1232
+      },
+      "checks": {
+        "file_facility_name_matches_official_directory": true,
+        "file_address_matches_cms_or_first_party_identity": true,
+        "file_city_and_state_match_cms": true,
+        "cms_v3_structure_date_attestation_and_usable_rows": true
+      },
+      "address_variation": "",
+      "finding": "facility-specific-current-mrf-section-confirmed",
+      "next_action": "Retain this facility-specific section as current observed file evidence; only revisit after a source change or on the next scheduled verification."
+    },
+    {
+      "ccn": "334060",
+      "cms_hospital_name": "KIRBY FORENSIC PSYCHIATRIC CENTER",
+      "cms_address": "WARD ISLAND, NEW YORK, NY 10035",
+      "official_omh_directory_name": "Kirby Forensic Psychiatric Center",
+      "pointer_entry_name": "",
+      "pointer_entry_status": "no-matching-entry-in-retained-root",
+      "pointer_mrf_url": "",
+      "file_section": null,
+      "finding": "pointer-or-bundle-has-no-facility-specific-section",
+      "next_action": "Obtain an explicit OMH pointer entry and file section (or publisher-provided facility-specific file); keep this CCN unresolved."
+    },
+    {
+      "ccn": "334061",
+      "cms_hospital_name": "MID HUDSON FORENSIC PSYCHIATRIC CTR",
+      "cms_address": "BOX 158 ROUTE 17M, NEW HAMPTON, NY 10958",
+      "official_omh_directory_name": "Mid-Hudson Forensic Psychiatric Center",
+      "pointer_entry_name": "",
+      "pointer_entry_status": "no-matching-entry-in-retained-root",
+      "pointer_mrf_url": "",
+      "file_section": null,
+      "finding": "pointer-or-bundle-has-no-facility-specific-section",
+      "next_action": "Obtain an explicit OMH pointer entry and file section (or publisher-provided facility-specific file); keep this CCN unresolved."
+    },
+    {
+      "ccn": "334064",
+      "cms_hospital_name": "SAGAMORE CHILDRENS PSYCHIATRIC CENTER",
+      "cms_address": "197 HALF HOLLOW ROAD, DIX HILLS, NY 11746",
+      "official_omh_directory_name": "Sagamore Children's Psychiatric Center",
+      "pointer_entry_name": "Sagamore Children's",
+      "pointer_entry_status": "named-entry-shared-file",
+      "pointer_mrf_url": "https://omh.ny.gov/omhweb/adults/141663311_nysomh_standardcharges.csv",
+      "identity_address_used": "197 HALF HOLLOW ROAD, DIX HILLS, NY 11746",
+      "file_section": {
+        "section_name": "Sagamore Children's Psychiatric Center",
+        "declared_date_raw": "5/28/2026",
+        "version": "3.0.0",
+        "location_name": "Sagamore Children's",
+        "address": "197 Half Hollow Rd, Dix Hills, NY 11746",
+        "attestation": true,
+        "columns": 51,
+        "data_rows": 96,
+        "row_widths": [
+          51
+        ],
+        "malformed_row_widths": 0,
+        "usable_gross_charge_rows": 96,
+        "license_header": "license_number|NY",
+        "license_state": "NY",
+        "declared_npis": [
+          "1437216975",
+          "1104983329"
+        ],
+        "license_values": [
+          "2583126A",
+          "2588150",
+          "2578140A_2578140D_2578140E_2578140F_2578140H_2578140J_2578140I"
+        ],
+        "start_line": 1324,
+        "end_line": 1423
+      },
+      "checks": {
+        "file_facility_name_matches_official_directory": true,
+        "file_address_matches_cms_or_first_party_identity": true,
+        "file_city_and_state_match_cms": true,
+        "cms_v3_structure_date_attestation_and_usable_rows": true
+      },
+      "address_variation": "",
+      "finding": "facility-specific-current-mrf-section-confirmed",
+      "next_action": "Retain this facility-specific section as current observed file evidence; only revisit after a source change or on the next scheduled verification."
+    },
+    {
+      "ccn": "334065",
+      "cms_hospital_name": "WESTERN NY CHILDRENS PSYCHIATRIC CENTER",
+      "cms_address": "1010 EAST & WEST ROAD, WEST SENECA, NY 14224",
+      "official_omh_directory_name": "Western NY Children's Psychiatric Center",
+      "pointer_entry_name": "Western New York Children's",
+      "pointer_entry_status": "named-entry-shared-file",
+      "pointer_mrf_url": "https://omh.ny.gov/omhweb/adults/141663311_nysomh_standardcharges.csv",
+      "identity_address_used": "1010 EAST & WEST ROAD, WEST SENECA, NY 14224",
+      "file_section": {
+        "section_name": "Western NY Children's",
+        "declared_date_raw": "5/28/2026",
+        "version": "3.0.0",
+        "location_name": "Western New York  Children's",
+        "address": "1010 E and West Rd, West Seneca, NY 14224",
+        "attestation": true,
+        "columns": 51,
+        "data_rows": 94,
+        "row_widths": [
+          51
+        ],
+        "malformed_row_widths": 0,
+        "usable_gross_charge_rows": 94,
+        "license_header": "license_number|NY",
+        "license_state": "NY",
+        "declared_npis": [
+          "1073670519",
+          "1457418683"
+        ],
+        "license_values": [
+          "3783213A",
+          "3778191A_3778191B_3778191E"
+        ],
+        "start_line": 1631,
+        "end_line": 1728
+      },
+      "checks": {
+        "file_facility_name_matches_official_directory": true,
+        "file_address_matches_cms_or_first_party_identity": true,
+        "file_city_and_state_match_cms": true,
+        "cms_v3_structure_date_attestation_and_usable_rows": true
+      },
+      "address_variation": "",
+      "finding": "facility-specific-current-mrf-section-confirmed",
+      "next_action": "Retain this facility-specific section as current observed file evidence; only revisit after a source change or on the next scheduled verification."
+    }
+  ]
+}

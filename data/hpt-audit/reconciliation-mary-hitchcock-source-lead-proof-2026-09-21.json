@@ -1,0 +1,20 @@
+{
+  "ccn": "300003",
+  "observed_at": "2026-09-21T19:10:00Z",
+  "official_domain": "dartmouth-hitchcock.org",
+  "retrieval_method": "bounded official-domain checks plus search-result lead review",
+  "checked_urls": [
+    "https://dartmouth-hitchcock.org/",
+    "https://dartmouth-hitchcock.org/cms-hpt.txt",
+    "https://www.dartmouth-hitchcock.org/",
+    "https://www.dartmouth-hitchcock.org/cms-hpt.txt",
+    "https://www.dartmouth-hitchcock.org/02-0222140_Mary%20Hitchcock%20Memorial%20Hospital_standardcharges.zip"
+  ],
+  "transport_result": "The configured official domain and the exact first-party ZIP lead currently fail DNS resolution (No such host is known). A search result exposes the facility-specific filename and URL, but no publisher bytes or pointer response were recovered.",
+  "official_identity_observation": "Mary Hitchcock Memorial Hospital, 1 Medical Center Drive, Lebanon, NH 03756; the exact facility identity is retained from the CMS roster and tracker record.",
+  "third_party_mrf_lead": "https://ppman.hank.ai/transparency/hospital/300003",
+  "candidate_file_url": "https://www.dartmouth-hitchcock.org/02-0222140_Mary%20Hitchcock%20Memorial%20Hospital_standardcharges.zip",
+  "disposition": "official-domain-dns-unresolved-third-party-file-lead-unlinked",
+  "interpretation": "This is a facility-specific discovery lead only. DNS failure and the third-party result do not establish file absence, noncompliance, exemption or current validity; no MRF promotion is made.",
+  "next_action": "Retry the exact Dartmouth-Hitchcock pointer and ZIP through a permitted content-bearing route after DNS or publisher change; require complete bytes, declared facility identity, New Hampshire address/state, date, CMS version and usable rows before promotion."
+}

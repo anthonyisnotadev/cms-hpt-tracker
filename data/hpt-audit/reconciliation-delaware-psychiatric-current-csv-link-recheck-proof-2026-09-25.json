@@ -1,0 +1,18 @@
+{
+  "ccn": "084001",
+  "observed_at": "2026-09-25T04:45:00Z",
+  "official_site": "https://dhss.delaware.gov/",
+  "official_facility_page": "https://dhss.delaware.gov/dsamh/division-of-substance-abuse-and-mental-health/delaware-psychiatric-center/",
+  "official_identity": "Delaware Psychiatric Center, Herman M. Holloway Campus, 1901 N. DuPont Highway, New Castle, DE 19720",
+  "page_observation": "The current first-party DHSS facility page identifies Delaware Psychiatric Center and lists annual DPC Pricing and DPC Standard Charges documents.",
+  "page_mrf_url": "https://dhss.delaware.gov/dsamh/wp-content/uploads/sites/10/dsamh/csv/516000279_DelawarePsychiatricCenter_standardcharges.csv",
+  "browser_observation": "Opening the exact first-party CSV URL in the permitted browser rendered the site blocking message; no download or file bytes were exposed.",
+  "direct_retrieval": {
+    "status": 999,
+    "content_type": "text/html",
+    "response_observation": "The publisher returned its request-blocked response to the bounded direct client; no content-bearing CSV response was available."
+  },
+  "disposition": "official-page-facility-specific-csv-link-recheck-access-unresolved",
+  "interpretation": "This is a discovery/linkage gain over the prior record because the current official page now yields an exact facility-specific CSV URL. It does not establish file identity, metadata, freshness, usability or compliance without complete bytes.",
+  "next_action": "Retrieve the exact CSV through a permitted download-capable route or publisher-provided copy; validate complete bytes, Delaware Psychiatric Center identity/address/state, declared date, CMS version, attestation and parsed usability before promotion."
+}

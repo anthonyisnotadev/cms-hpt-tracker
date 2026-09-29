@@ -1,0 +1,12 @@
+{
+  "ccn": "454114",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://www.cedarcresthospital.com/",
+  "official_page_url": "https://www.cedarcresthospital.com/admissions/insurance-payment/price-transparency/",
+  "official_identity": "The first-party Cedar Crest pricing page identifies Cedar Crest Hospital & Residential Treatment Center in Belton, Texas; its footer identifies 3500 Interstate 35 Frontage Rd., Belton, TX 76513. CMS records identify CCN 454114 as HMIH Cedar Crest, LLC.",
+  "browser_observation": "Browser automation loaded the official pricing page and exposed a machine-readable CSV link. Clicking the link opened a browser download tab, but no page bytes were exposed; direct bounded requests to the same file and cms-hpt.txt returned HTTP 403.",
+  "pricing_observation": "The official page links the exact filename 20-1915868_HMIH-Cedar-Crest-LLC_standard_charges.csv, but the file bytes were not recoverable through the permitted client. No metadata or usability promotion was made.",
+  "disposition": "official-page-file-link-transport-unresolved",
+  "interpretation": "This confirms the first-party facility identity and current pricing-page linkage while preserving the transport/file-byte gap. It is not evidence of file absence, exemption or noncompliance.",
+  "next_action": "Retry the exact page-linked CSV and root pointer through a materially different permitted browser/download route; require bounded bytes, Cedar Crest identity, Texas metadata, date/version and parsed usability before promotion."
+}

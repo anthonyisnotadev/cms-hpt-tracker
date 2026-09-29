@@ -1,0 +1,10 @@
+{
+  "ccn":"113300","observed_at":"2026-09-23T00:00:00Z",
+  "official_site":"https://choaassets.choa.org/",
+  "official_site_result":"Interactive browser navigation returned net::ERR_NAME_NOT_RESOLVED for the recorded official asset domain.",
+  "cms_pointer_url":"https://choaassets.choa.org/cms-hpt.txt","cms_pointer_result":"Interactive browser navigation returned net::ERR_NAME_NOT_RESOLVED for the exact pointer route.",
+  "cms_api_url":"https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=113300&conditions%5B0%5D%5Boperator%5D=%3D","cms_api_status":200,"cms_api_response_bytes":6833,"cms_api_response_sha256":"B843BFF01394871E3472D0F34DFC49E31637DA70FBF26587C8C1325568B788C0","cms_record":{"facility_id":"113300","facility_name":"ATHUR M BLANK HOSPITAL","address":"2220 NORTH DRUID HILLS ROAD NE","citytown":"ATLANTA","state":"GA","zip_code":"30329"},
+  "disposition":"browser-dns-unresolved",
+  "interpretation":"The recorded official asset domain and exact root pointer both failed DNS resolution in the interactive browser. CMS independently confirms the CCN facility identity and address. No MRF bytes were recovered and no file-absence or compliance conclusion is inferred.",
+  "next_action":"Resolve the current Children's Healthcare of Atlanta publishing domain from a first-party facility page or alternate authoritative source, then retry the pointer and verify any facility-specific MRF metadata."
+}

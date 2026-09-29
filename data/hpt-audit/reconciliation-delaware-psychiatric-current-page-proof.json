@@ -1,0 +1,21 @@
+{
+  "ccn": "084001",
+  "hospital_name": "Delaware Psychiatric Center",
+  "observed_at": "2026-09-19T14:30:00Z",
+  "official_site": "https://dhss.delaware.gov/",
+  "official_facility_page": "https://dhss.delaware.gov/dsamh/division-of-substance-abuse-and-mental-health/delaware-psychiatric-center/",
+  "pointer_url": "https://dhss.delaware.gov/cms-hpt.txt",
+  "pointer_browser_status": "request-blocked-by-site",
+  "official_identity": "Delaware Psychiatric Center, Herman M. Holloway Campus, 1901 N. DuPont Highway, New Castle, DE 19720",
+  "page_file_urls": [
+    "https://dhss.delaware.gov/dsamh/wp-content/uploads/sites/10/dsamh/pdf/DPCPricing_ForWebsiteV2_Final.pdf"
+  ],
+  "page_file_browser_status": "official-page-link-web-pdf-fetch-but-direct-client-blocked",
+  "search_observations": [
+    "The official DHSS page says DPC pricing and standard charges are updated annually and links DPC Pricing and DPC Standard Charges.",
+    "The accessible DPC Pricing PDF is a shoppable-services document with many N/A entries and $0 psychiatric services, not a current CMS-template CSV/JSON MRF.",
+    "The exact dhss.delaware.gov/cms-hpt.txt route rendered 'Your request has been blocked. Please contact your system administrator.' in the interactive browser; no MRF bytes were promoted."
+  ],
+  "disposition": "official-pricing-page-linked-custom-pdf-pointer-site-blocked-mrf-unresolved",
+  "next_action": "Obtain a current facility-specific CMS-template CSV or JSON MRF (or an authorized download of the linked standard-charges file), then verify complete bytes, identity, metadata and usability before promotion."
+}

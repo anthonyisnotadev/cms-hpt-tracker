@@ -1,0 +1,21 @@
+{
+  "ccn": "230030",
+  "observed_at": "2026-09-22T17:30:00Z",
+  "official_domain": "mymichigan.org",
+  "root_url": "https://www.mymichigan.org/",
+  "root_http_status": 403,
+  "pointer_url": "https://www.mymichigan.org/cms-hpt.txt",
+  "pointer_http_status": 403,
+  "alternate_pointer_url": "https://mymichigan.org/cms-hpt.txt",
+  "alternate_pointer_http_status": 403,
+  "pricing_route_observations": [
+    {"url": "https://www.mymichigan.org/price-transparency", "http_status": 403},
+    {"url": "https://www.mymichigan.org/patients-visitors/billing-insurance/price-transparency", "http_status": 403}
+  ],
+  "official_domain_observation": "The official MyMichigan root, canonical and alternate cms-hpt.txt routes, and two likely price-transparency routes returned HTTP 403 to the available client; browser automation showed an Access Denied page. No first-party pointer bytes, MRF URL or file metadata were recovered.",
+  "roster_identity": "MYMICHIGAN MEDICAL CENTER ALMA",
+  "roster_address": "300 E WARWICK DR, ALMA, MI 48801",
+  "disposition": "official-domain-access-denied",
+  "interpretation": "Transport denial prevents independent review of pointer linkage, facility identity, Michigan metadata, date, version and usability. No file absence or compliance conclusion is inferred.",
+  "next_action": "Retry the first-party pricing page and cms-hpt.txt through an authorized browser/download route or obtain a publisher-provided current CSV/JSON, then verify exact Alma identity, 300 E Warwick Drive address, Michigan metadata, date, CMS version and usability."
+}

@@ -1,0 +1,18 @@
+{
+  "ccn": "290062",
+  "observed_at": "2026-09-21T17:30:00Z",
+  "official_domain": "uhs.com",
+  "facility_domain_lead": "westhendersonhospital.com",
+  "retrieval_method": "bounded HTTPS requests, in-app browser, and official-page search",
+  "checked_urls": [
+    "https://westhendersonhospital.com/cms-hpt.txt",
+    "https://www.westhendersonhospital.com/cms-hpt.txt",
+    "https://westhendersonhospital.com/price-transparency/",
+    "https://westhendersonhospital.com/"
+  ],
+  "transport_result": "All bounded first-party requests returned HTTP 403. Browser automation rendered a Cloudflare Access Denied page for the root pointer. No pointer or facility MRF bytes were recovered.",
+  "official_page_search_observation": "Official-page search identifies West Henderson Hospital's first-party domain and current transparency-page/file leads, but the protected site could not be independently opened to verify the file URL or metadata.",
+  "disposition": "official-domain-cloudflare-access-denied-pointer-discovery-incomplete",
+  "interpretation": "This is a facility-specific transport/access observation for West Henderson Hospital only. Cloudflare denial and third-party search leads do not establish file absence, closure, or compliance status; no shared UHS file is reused.",
+  "next_action": "Retry the exact West Henderson pointer and pricing page through an authorized route after a material access change, or obtain a publisher-enabled copy; require exact CCN 290062 identity, Henderson Nevada address/state and usable CMS CSV/JSON bytes before promotion."
+}

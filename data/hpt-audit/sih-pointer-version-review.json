@@ -1,0 +1,27 @@
+{
+  "reviewed_on": "2026-09-17",
+  "source_page_url": "https://www.sih.net/patients-and-visitors/financial-resources/price-transparency",
+  "source_page_observation": "Publisher page lists four /json/2026/*.json files, while the current root pointer lists four different .ashx targets; the page and root must not be treated as the same link evidence.",
+  "root_pointer_url": "https://sih.net/cms-hpt.txt",
+  "root_pointer_final_url": "https://www.sih.net/cms-hpt.txt",
+  "root_pointer_checked_at": "2026-09-17T05:12:24.089Z",
+  "root_pointer_http_status": 206,
+  "root_pointer_response_bytes": 1784,
+  "root_pointer_sha256": "bc6ade57f9cf8da1a77ce8cfa9bc7271db1cf0e09396a52457370d324e1288ee",
+  "root_pointer_retained_raw_file": "cms_data/hpt/pointer-corpus/raw/sih.net-4ff5add74c1f.txt",
+  "earlier_pointer_sha256": "19ca7fd6575232547f7e1bd33a29e9e123091dd1e63c53ddc30e879f6cf7c5a5",
+  "current_pointer_target_probe": {
+    "cap_bytes": 1024,
+    "response_status": 404,
+    "response_prefix_sha256": "ed78e3f5245cd5007807d618b446e442844f4de5394bfc10aa26f5024ef702c0",
+    "response_prefix_bytes": 1024,
+    "note": "HTTP 404 was observed for each of the four exact pointer-declared .ashx URLs in this client; it is a transport result, not a legal compliance determination."
+  },
+  "facilities": [
+    { "ccn": "140164", "pointer_location_name": "Memorial Hospital of Carbondale", "target_checked_at": "2026-09-17T05:12:34.577Z" },
+    { "ccn": "140011", "pointer_location_name": "Herrin Hospital", "target_checked_at": "2026-09-17T05:12:34.509Z" },
+    { "ccn": "141334", "pointer_location_name": "St. Joseph Memorial Hospital", "target_checked_at": "2026-09-17T05:12:34.469Z" },
+    { "ccn": "140210", "pointer_location_name": "Harrisburg Medical Center", "target_checked_at": "2026-09-17T05:12:34.880Z" }
+  ],
+  "next_action": "Ask publisher or recheck after update whether the current root's four .ashx targets will resolve to facility-matching files; independently inspect complete files before stronger claims. Retain the earlier identity-matched JSON observations as historical, not current pointer linkage."
+}

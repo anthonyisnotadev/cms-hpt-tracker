@@ -1,0 +1,45 @@
+{
+  "ccn": "040781",
+  "observed_at": "2026-09-21T04:58:20Z",
+  "proof_file": "reconciliation-helena-current-community-page-proof-2026-09-21.json",
+  "official_site": "https://helenahospital.com/",
+  "official_pricing_page": "https://helenahospital.com/price-transparency.html",
+  "official_page_identity": "The current first-party Helena Hospital page identifies 1801 Martin Luther King Jr Dr, Helena, AR 72342, and describes Helena Hospital as community owned and community driven.",
+  "browser_observation": "Browser automation loaded the current Price Transparency page. It describes a standard-charges MRF and patient estimator as planned resources, but explicitly says the standard charges file will be available once the chargemaster is posted; no file URL is exposed.",
+  "pointer_checks": [
+    {
+      "url": "https://helenahospital.com/cms-hpt.txt",
+      "status": 404
+    }
+  ],
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=040781&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6839,
+  "cms_api_response_sha256": "37A5FEA259723F537735A33D9023F63A2F2C5396177A0C099C9D9028DF606434",
+  "cms_record": {
+    "facility_id": "040781",
+    "facility_name": "HELENA REGIONAL MEDICAL CENTER",
+    "address": "1801 MARTIN LUTHER KING JR DRIVE",
+    "citytown": "HELENA",
+    "state": "AR",
+    "zip_code": "72342",
+    "hospital_type": "Rural Emergency Hospital",
+    "hospital_ownership": "Proprietary"
+  },
+  "latest_priceid_portal_recheck_2026_09_26": {
+    "observed_at": "2026-09-26T23:22:00Z",
+    "portal_url": "https://priceid.avelead.com/helena-regional-medical-center",
+    "machine_readable_file_link": "https://priceid.avelead.com/helena-regional-medical-center/Charges/DownloadChargeMaster/73a35ed5-ea49-eb11-9c3c-000c29052661",
+    "http_status": 200,
+    "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "bytes": 405382,
+    "sha256": "a5ac954a75e463c4d8d50171458846c13045a042a646f3bc4df09f5b4ed60d6f",
+    "format": "XLSX",
+    "workbook_sheet": "Result",
+    "header_observation": "The workbook contains charge-description and payer-price columns, not the CMS 3.0.0 hospital MRF metadata header; it is retained as a shoppable/chargemaster lead only.",
+    "result": "This vendor portal exposes a downloadable charge master, but the current first-party Helena page still says the standard-charges MRF will be posted after the chargemaster. No CMS MRF promotion is justified."
+  },
+  "disposition": "current-official-page-mrf-not-yet-posted-pointer-404-cms-operator-label-differs",
+  "interpretation": "The current first-party identity and CMS address agree. The page provides a current publication-state observation (MRF not yet posted), while CMS classifies the facility as a proprietary REH and the page uses community-owned language; this ownership/operator wording is retained as a metadata discrepancy, not resolved by inference.",
+  "next_action": "Recheck the page and pointer after the chargemaster is posted or the operator publishes a corrected pointer. If a file appears, verify Helena identity, Arkansas metadata, date/version and usability before promotion; separately reconcile the community-owned versus CMS proprietary label with authoritative enrollment evidence."
+}

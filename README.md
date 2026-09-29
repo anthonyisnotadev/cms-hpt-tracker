@@ -2,6 +2,32 @@
 
 [View the live tracker](https://mrf.anthonyisnota.dev)
 
+```text
++------------------------------------------------------------------------+
+| H O S P I T A L   P R O G R E S S                                      |
+| COVERAGE / every CMS roster record is represented                      |
+| Roster represented         [########################] 5,419  100.0%    |
++------------------------------------------------------------------------+
+| REVIEW STATUS / one category per hospital                              |
+|                                                                        |
+| Active verification claim  [###############.........] 3,297   60.8%    |
+| Standing evidence retained [###.....................]   762   14.1%    |
+| Reviewed resolution        [###.....................]   622   11.5%    |
+| Scope exception            [#.......................]   194    3.6%    |
+| Unresolved investigation   [##......................]   544   10.0%    |
+|                                                                        |
+| Total                                                 5,419  100.0%    |
++------------------------------------------------------------------------+
+| LOCAL SNAPSHOT  2026-09-29 02:46 UTC                                   |
+| # = share of roster   . = remainder                                    |
+| Review categories total 100%; they are not compliance scores.          |
++------------------------------------------------------------------------+
+```
+
+Local research snapshot; the live site may show an older published version.
+The five review categories are mutually exclusive and account for all hospitals.
+[Review status and remaining work](#research-progress)
+
 ## What this project does
 
 Most US hospitals are required to publish their prices in a machine-readable
@@ -36,27 +62,73 @@ is accurate.
 | Manifest | The table of confirmed hospital-to-MRF matches and the evidence behind them |
 | Gap | A record that still needs research or could not be assessed with the available evidence |
 
-## Current snapshot
+## Research progress
 
-The current snapshot was generated on September 3, 2026.
+The dashboard above describes the local reviewed snapshot from September 29,
+2026, 02:46 UTC (September 28 in US Eastern time). Identity corroboration by
+pointer and MRF header is one evidence path; reviewed price-page files and scope
+exceptions follow other paths. Finding and opening a file does not validate
+every price or establish legal compliance.
 
-| Measure | Count |
-| --- | ---: |
-| Hospitals in the CMS roster | 5,419 |
-| Hospitals with a recorded MRF | 3,870 |
-| Rows in the gap worklist | 1,562 |
+### Nationwide review status
 
-| Status | Count | Meaning in this tracker |
+These five categories are mutually exclusive and account for all **5,419**
+records in the effective reviewed view.
+
+| Review category | Hospitals | What remains |
 | --- | ---: | --- |
-| Compliant | 3,403 | The file opened and passed the checks represented in this dataset |
-| Not compliant | 463 | A required file was missing, broken, stale, or used an outdated format |
-| Blocked | 175 | The website prevented an automated result |
-| Not assessed | 1,214 | There was not enough evidence to make a finding |
-| Exempt | 164 | The hospital is outside this rule, primarily because it is federally owned |
+| Active verification claim | 3,297 | Keep dated file and identity evidence; stale dates or template concerns may still require follow-up |
+| Standing evidence retained | 762 | Reconcile the newer observation without discarding stronger earlier evidence |
+| Superseded by reviewed resolution | 622 | Preserve the earlier observation as history and use the reviewed resolution |
+| Scope exception | 194 | Retain the documented reason for excluding the record from ordinary verification |
+| Unresolved | 544 | Resolve discovery, access, pointer linkage, or facility identity using the per-CCN next action |
 
-The distinction between a finding and a research gap is intentional. A missing
-or unconfirmed website is not treated as proof that a hospital failed to
-publish.
+### What still needs work
+
+The tracker’s work queue uses reviewed per-CCN next actions, rather than the
+older discovery/remediation gaps. In this local snapshot, **1,592 hospitals**
+have a recorded investigation, follow-up, or monitoring step. Each hospital
+appears once in this table; these workstreams overlap the review categories
+above and should not be added to them. Only 544 are classified as unresolved.
+
+| Next-step workstream | Hospitals |
+| --- | ---: |
+| Standing evidence follow-ups | 961 |
+| Unresolved investigations | 544 |
+| Uncertainty monitoring | 64 |
+| Facility identity review | 10 |
+| Finding reconciliation | 7 |
+| Same-campus scope review | 5 |
+| Other evidence review | 1 |
+
+Completed scope exceptions do not automatically become “close as exempt”
+tasks. A documented scope or identity follow-up can still remain for a record
+with an existing result. These counts are generated for the website by
+[`buildReviewedWorkQueue`](scripts/hpt/lib/tracker-work-queue.js) from its
+source-validated reviewed worklists, using effective dispositions to exclude
+investigations already resolved by overlays.
+
+### Completion checklist
+
+- [x] Represent every hospital in the 5,419-record CMS roster.
+- [x] Retain a nationwide observation and review category for every CCN.
+- [ ] Resolve the remaining 544 unresolved records.
+- [ ] Complete follow-up on retained evidence and outstanding file findings.
+- [ ] Review and publish the latest research snapshot with privacy checks.
+
+Source: [`nationwide-verification.json`](data/hpt-audit/nationwide-verification.json),
+with the reviewed overlays applied by
+[`loadReviewedView`](scripts/hpt/lib/reviewed-resolutions.js). Next actions are
+tracked in the
+[`reconciliation queue`](data/hpt-audit/nationwide-reconciliation-queue.json).
+Refresh this dated section after a reviewed snapshot changes; it is not a live
+counter. An access error or unconfirmed website is not proof that a hospital
+failed to publish.
+
+For publication, run `npm run build` locally with the retained proof samples,
+then `node scripts/check-tracker-release.js --write`. Commit the reviewed pages,
+source inputs, and release manifest together. GitHub Pages checks their hashes
+before deployment; it does not bypass proof validation or publish raw caches.
 
 ## How hospitals are matched to files
 

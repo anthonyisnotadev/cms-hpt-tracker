@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "ccn": "431313",
+  "facility": "FREEMAN MEDICAL CENTER - CAH",
+  "observed_at": "2026-09-28T19:52:56Z",
+  "evidence_role": "current first-party route and identity observation; no MRF recovered",
+  "sources": {
+    "official_estimate_page": "https://freemanregional.com/estimate/",
+    "official_root_pointer": "https://freemanregional.com/cms-hpt.txt",
+    "official_site_identity_page": "https://freemanregional.com/freeman-medical-center/"
+  },
+  "browser_observation": {
+    "browser": "Codex In-app Browser",
+    "title": "Get an Estimate – Freeman Regional Health Services",
+    "final_url": "https://freemanregional.com/estimate/",
+    "status": "browser-rendered",
+    "declared_address": "510 E. 8th Street, PO Box 370, Freeman, SD 57029",
+    "page_role": "The page describes an insurance-specific estimate tool for upcoming health services and directs the user to an external guest-estimate site.",
+    "cms_mrf_link_observed": false,
+    "price_transparency_footer_destination": "https://mychartconnectsites.org/MyChartConnect/GuestEstimates/SelectLocation",
+    "interpretation": "The visible external estimate workflow is not evidence of a downloadable CMS machine-readable file. Absence of an MRF link in this page observation does not prove facility-wide file absence or noncompliance."
+  },
+  "root_pointer_fetch": {
+    "method": "GET",
+    "status": 404,
+    "final_url": "https://freemanregional.com/cms-hpt.txt",
+    "content_type": "text/html; charset=iso-8859-1",
+    "response_bytes": 355,
+    "response_sha256": "cc0b4e42510d49c6decd464123ecf3b14ae9b47f9b4ed2ee64893e2d6520a264",
+    "body_role": "server 404 HTML, not pointer content",
+    "interpretation": "The exact first-party root-pointer route returned not found at observation time. This establishes only the result for this route and time; it does not establish that no MRF exists elsewhere."
+  },
+  "prior_shared_provider_observation": {
+    "url": "https://www.avera.org/cms-hpt.txt",
+    "status": 403,
+    "interpretation": "Retain separately as a prior shared-provider transport observation; do not treat it as the Freeman-specific root pointer or facility failure."
+  },
+  "disposition_effect": "none; keep CCN 431313 unresolved at the facility-file route/access gate",
+  "count_effect": 0,
+  "next_action": "Seek a publisher-provided CMS-template CSV/JSON file or a current first-party page/pointer route that explicitly identifies Freeman Medical Center. Verify exact bytes, file identity, address/state, declared date/version, attestation and usable rows before any promotion. Do not repeat this unchanged estimate page or exact root-pointer request absent a source/access change, and do not inherit Avera or sibling facility evidence."
+}

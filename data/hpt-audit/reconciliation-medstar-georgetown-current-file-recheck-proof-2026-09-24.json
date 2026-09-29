@@ -1,0 +1,29 @@
+{
+  "ccn": "090004",
+  "observed_at": "2026-09-24T00:00:00Z",
+  "official_site": "https://www.medstarhealth.org/",
+  "official_pricing_page": "https://www.medstarhealth.org/price-transparency-disclosures",
+  "pointer_url": "https://www.medstarhealth.org/cms-hpt.txt",
+  "pointer_http_status": 200,
+  "pointer_bytes": 25572,
+  "pointer_sha256": "80bb947fe0c65e575f953ebdf3134c4d4a509e9ea38db95afd3df38ac41dfb67",
+  "pointer_entry": "MedStar Georgetown University Hospital -> 522218584_medstar_georgetown_university_hospital_standardcharges.csv",
+  "mrf_url": "https://www.medstarhealth.org/-/media/project/mho/medstar/billing-and-insurance/2026/522218584_medstar_georgetown_university_hospital_standardcharges.csv",
+  "mrf_range_status": 206,
+  "mrf_sample_bytes": 65536,
+  "mrf_content_type": "text/csv",
+  "metadata": {
+    "hospital_name": "MedStar Georgetown Hospital",
+    "last_updated_on": "2026-04-01",
+    "version": "3.0.0",
+    "location_name": "MedStar Georgetown Hospital",
+    "hospital_address": "3800 Reservoir Rd. NorthWest Washington, DC, 20007",
+    "header_license_state": "MD",
+    "license_value": "HFD01-0188",
+    "npi": "1427145176",
+    "attestation": true
+  },
+  "disposition": "pointer-and-file-identity-confirmed-dc-facility-md-header-conflict-retained",
+  "interpretation": "The current pointer and bounded file metadata identify MedStar Georgetown Hospital at the Washington DC address. The schema license-state header remains MD, which conflicts with the facility's DC location; no reassigning or clean promotion was made.",
+  "next_action": "Obtain publisher correction or explanation for the MD license-state field."
+}

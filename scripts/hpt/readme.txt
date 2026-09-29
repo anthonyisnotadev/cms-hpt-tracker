@@ -90,7 +90,8 @@ Three spreadsheets, in the folder cms_data/hpt/ :
 
   manifest.csv
       The answer. One row per hospital: its website, its price file link,
-      and when that file was last updated. 3,486 hospitals so far.
+      and when that file was last updated. The historical crawl described below
+      is not the current tracker total; see the repository README for current counts.
 
   compliance.csv
       Who is following the rules and who is not. Every hospital is labelled
@@ -103,6 +104,10 @@ Three spreadsheets, in the folder cms_data/hpt/ :
 
 WHAT WE FOUND
 -------------
+
+The following figures are an archived September 3, 2026 workflow snapshot,
+not the current tracker totals. See the repository README and generated
+tracker for the current observed categories.
 
 Of 5,419 hospitals:
 

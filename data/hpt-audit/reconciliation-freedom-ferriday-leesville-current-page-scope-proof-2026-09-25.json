@@ -1,0 +1,19 @@
+{
+  "ccns": ["194119", "194121"],
+  "observed_at": "2026-09-25T00:40:00Z",
+  "official_domain": "freedombehavioral.com",
+  "price_page_url": "https://freedombehavioral.com/price-transparency/",
+  "price_page_status": 200,
+  "price_page_bytes": 155213,
+  "price_page_sha256": "77b44a68707e8d8c3e5570a0f3d606bd5211a10ac4d0629ad0c0084d9775acd7",
+  "listed_facilities": ["Freedom Magnolia", "Freedom Monroe", "Freedom Plainview"],
+  "listed_standard_charge_links": [
+    "https://freedombehavioral.com/wp-content/uploads/2025/03/811097331_beacham_memorial_hospital_standardcharges28.csv",
+    "https://freedombehavioral.com/wp-content/uploads/2024/01/383731163_freedom-behavioral-hospital-of-monroe_standardcharges.csv",
+    "https://freedombehavioral.com/wp-content/uploads/2026/07/201871394_allegiance-behavioral-health-center-of-plainview_standardchargesupdated.csv"
+  ],
+  "omitted_facilities": ["Freedom Behavioral Hospital of Ferriday", "Freedom Behavioral Hospital of Leesville"],
+  "disposition": "official-price-page-omits-facility-specific-files",
+  "interpretation": "The current first-party price-transparency page is reachable and exposes standard-charge links for Magnolia, Monroe and Plainview only. It does not expose a Ferriday- or Leesville-specific CSV/JSON MRF, so sibling files are not assigned to CCNs 194119 or 194121 and no file absence or compliance conclusion is inferred.",
+  "next_action": "Obtain a Ferriday- or Leesville-specific pointer entry or first-party machine-readable file, then verify facility name, address, Louisiana state, date and CMS version independently."
+}

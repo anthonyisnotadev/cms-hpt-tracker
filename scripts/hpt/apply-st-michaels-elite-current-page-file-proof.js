@@ -1,0 +1,18 @@
+'use strict';
+const fs = require('node:fs');
+const path = require('node:path');
+const { csvToObjects } = require('./lib/util');
+const root = path.resolve(__dirname, '..', '..');
+const audit = path.join(root, 'data', 'hpt-audit');
+const proofName = 'reconciliation-st-michaels-elite-current-page-file-proof-2026-09-23.json';
+const p = JSON.parse(fs.readFileSync(path.join(audit, proofName), 'utf8'));
+const base = csvToObjects(fs.readFileSync(path.join(audit, 'compliance.csv'), 'utf8')).find((row) => row.ccn === p.ccn);
+if (!base) throw new Error(`Missing compliance row for ${p.ccn}`);
+const evidence = { identity: 'corroborated', identity_basis: p.identity_basis, officialDomain: p.official_domain, sourcePageUrl: p.official_pricing_page, sourcePageSha256: p.official_pricing_page_sha256, pointerUrl: p.root_pointer_url, pointerSha256: p.root_pointer_sha256, pointerHttpStatus: p.root_pointer_http_status, pointerIssue: 'root-pointer-http-error', url: p.mrf_url, fileSha256: p.mrf_sha256, fullFileBytes: p.mrf_bytes, http_status: p.mrf_http_status, contentType: p.mrf_content_type, checked_at: p.observed_at, date: p.declared_last_updated, version: p.cms_template_version, location_name: "St. Michael's Elite Hospital", declared_hospital_name: p.declared_hospital_name, declared_address: p.declared_address, declared_license_state: p.declared_license_state, declared_license_number: p.declared_license_number, attestation_present: p.attestation_present, file_kind: 'csv', observedFinding: p.disposition, expected_version: '3.0.0' };
+const entry = { ccn: p.ccn, base, action: 'replace-observation', evidence, evidence_run: 'st-michaels-elite-current-page-file-2026-09-23', reviewed_at: p.observed_at, note: p.interpretation };
+const ledgerPath = path.join(audit, 'reviewed-resolutions.json');
+const ledger = JSON.parse(fs.readFileSync(ledgerPath, 'utf8')).filter((row) => row.ccn !== p.ccn);
+ledger.push(entry);
+ledger.sort((a, b) => a.ccn.localeCompare(b.ccn));
+fs.writeFileSync(ledgerPath, JSON.stringify(ledger, null, 2) + '\n');
+console.log(JSON.stringify({ applied: p.ccn, finding: p.disposition, fileSha256: p.mrf_sha256 }, null, 2));

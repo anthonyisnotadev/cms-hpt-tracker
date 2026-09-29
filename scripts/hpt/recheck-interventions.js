@@ -83,7 +83,7 @@ async function main() {
   else {
     const interventions = new Map(readCsv(path.join(ROOT, 'data/hpt-audit/interventions.csv')).map(r => [r.ccn, r]));
     cohort = readCsv(path.join(ROOT, 'data/hpt-audit/compliance.csv'))
-      .filter(r => !['none', 'exempt-federal', 'domain-unknown'].includes(interventions.get(r.ccn)?.intervention))
+      .filter(r => !['none', 'exempt-federal', 'exempt-ihs-program', 'domain-unknown'].includes(interventions.get(r.ccn)?.intervention))
       .map(r => ({ ...r, old_intervention: interventions.get(r.ccn).intervention }));
     fs.writeFileSync(cohortFile, JSON.stringify(cohort));
   }

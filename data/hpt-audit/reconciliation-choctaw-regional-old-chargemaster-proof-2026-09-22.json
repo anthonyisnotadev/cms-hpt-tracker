@@ -1,0 +1,19 @@
+{
+  "ccn": "251334",
+  "observed_at": "2026-09-22T19:00:00Z",
+  "official_domain": "choctawregional.com",
+  "official_pricing_page": "https://www.choctawregional.com/standard-charges/",
+  "official_pricing_page_http_status": 200,
+  "official_pricing_page_observation": "The first-party page links a CSV named CRMC-Standard-Charges1.1.csv and describes it as standard charges; the page title and linked route are legacy rather than a current CMS 3.0.0 MRF declaration.",
+  "candidate_file_url": "https://www.choctawregional.com/wp-content/uploads/2019/01/CRMC-Standard-Charges1.1.csv",
+  "candidate_file_http_status": 200,
+  "candidate_file_content_type": "text/csv",
+  "candidate_file_bytes": 97594,
+  "candidate_file_last_modified": "2019-01-25T15:46:17Z",
+  "candidate_file_observation": "The bounded file begins with a simple DESCRIPTION, Price chargemaster table and declares no hospital identity, address, state, update date or CMS template version.",
+  "roster_identity": "CHOCTAW REGIONAL MEDICAL CENTER",
+  "roster_address": "8613 MS HWY 12, ACKERMAN, MS 39735",
+  "disposition": "official-page-legacy-chargemaster",
+  "interpretation": "This is a new first-party file-access observation, not a current MRF verification and not a compliance conclusion. Do not promote the 2019 chargemaster as a CMS 3.0.0 file.",
+  "next_action": "Recover a current CMS 3.0.0 CSV or JSON and verify exact Choctaw Regional identity, Mississippi metadata, declared date, version and usability."
+}

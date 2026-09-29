@@ -1,0 +1,30 @@
+{
+  "record": {
+    "ccn": "010131",
+    "official_domain": "crestwoodmedcenter.com",
+    "dns_override_ip": "199.116.78.73",
+    "dns_override_reason": "Default client DNS timed out; Google DNS A response resolved the official domain and curl --resolve retained exact-host TLS and URL semantics.",
+    "pointer_url": "https://crestwoodmedcenter.com/cms-hpt.txt",
+    "pointer_http_status": 206,
+    "pointer_sha256": "d9c4567223d7371a6d1f87584192c19bd10ae2f4ff365d3a87227039504f9e50",
+    "source_page_url": "https://crestwoodmedcenter.com/financial-information/price-transparency/",
+    "source_page_http_status": 200,
+    "source_page_sha256": "7c77fd9dcea88bd2e84f2f3a59c041396588e4ca036d47d9fc6f899473e7d09a",
+    "official_identity_url": "https://crestwoodmedcenter.com/contact/",
+    "official_identity_http_status": 200,
+    "official_identity_sha256": "4a9d6d08f005db6863aa3dd859790a0ada072172eee0fffaa7967d936b7df46c",
+    "mrf_url": "https://crestwoodmedcenter.com/wp-content/uploads/621647983_crestwood-medical-center_standardcharges.csv",
+    "mrf_http_status": 206,
+    "mrf_sample_sha256": "ff9bb9ded5674643a08d7ef999247cee403868482a6b8f3c30608931a3937c6f",
+    "retained_bytes": 262144,
+    "retained_sample": "cms_data/hpt/nationwide-verification/file-byte-proof/ff9bb9ded5674643a08d7ef999247cee403868482a6b8f3c30608931a3937c6f.bin",
+    "declared_hospital_name": "Crestwood Medical Center",
+    "declared_location_name": "Crestwood Medical Center",
+    "declared_address": "One Hospital Drive, Huntsville, AL 35801",
+    "declared_state": "AL",
+    "declared_date": "2026-01-01",
+    "version": "3.0.0",
+    "observed_at": "2026-09-16T11:36:21.632Z",
+    "next_action": "Recheck the hospital-domain pointer and bounded file header after a publisher change or normal DNS recovery. Current finding is based on exact-host pointer linkage and a retained bounded CSV header, not full-file validation."
+  }
+}

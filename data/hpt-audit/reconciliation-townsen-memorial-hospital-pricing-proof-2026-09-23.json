@@ -1,0 +1,29 @@
+{
+  "ccn": "670266",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "roster_identity": {
+    "name": "TOWNSEN MEMORIAL HOSPITAL",
+    "address": "1475 FM 1960 BYPASS RD E",
+    "city": "HUMBLE",
+    "state": "TX",
+    "zip": "77338"
+  },
+  "official_domain": "https://www.townsenmemorial.com/",
+  "official_identity_sources": "https://www.townsenmemorial.com/pricing-transparency|https://www.townsenmemorial.com/locations|https://npiregistry.cms.hhs.gov/provider-view/1376870840",
+  "official_page_observation": "The first-party Townsen Memorial pricing page identifies Townsen Memorial Hospital at 1475 FM 1960 Bypass Rd E, Humble, TX 77338 and lists its standard estimates/charges route.",
+  "browser_observation": "Browser/web inspection opened the official pricing page; its Townsen Memorial Hospital Standard Estimates & Charges link resolved to the publisher CSV.",
+  "pricing_observation": {
+    "url": "https://www.townsenmemorial.com/images/Files/364867804_TownsenMemorialHospital_StandardCharges.csv",
+    "http_status": 200,
+    "content_type": "application/octet-stream",
+    "bytes": 2853592,
+    "sha256": "247068d9157c3b9245f544f435a15f721c99aa27bf93e9ab77f10beeaebcbf34",
+    "page_revised_label": "2025-04-13",
+    "rows": 19560,
+    "cms_mrf_schema_metadata": false,
+    "header": "Charge Master & Cash Price"
+  },
+  "disposition": "current-operator-identity-confirmed-pricing-route-not-exposed",
+  "interpretation": "First-party operator/address and linked current pricing CSV are supported, but the file is a custom charge master without CMS MRF schema metadata; it is retained as pricing evidence only and not promoted as a current CMS MRF. This is an evidence distinction, not a legal compliance determination.",
+  "next_action": "Obtain or verify a publisher-issued current CMS CSV/JSON/ZIP with exact Townsen Memorial Hospital identity and parsed metadata."
+}

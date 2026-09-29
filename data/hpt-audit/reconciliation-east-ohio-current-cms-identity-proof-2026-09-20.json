@@ -1,0 +1,29 @@
+{
+  "ccn": "360080",
+  "hospital_name": "EAST OHIO REGIONAL HOSPITAL",
+  "state": "OH",
+  "observed_at": "2026-09-20T22:00:00Z",
+  "official_site": "https://www.eohospital.com/",
+  "official_site_identity": "East Ohio Regional Hospital, 90 North Fourth Street, Martins Ferry, Ohio 43935",
+  "cms_hospital_general_dataset": "https://data.cms.gov/provider-data/dataset/xubh-q36u",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=360080&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6596,
+  "cms_api_response_sha256": "afff34026ecef6b6bf7547c6d62b9b51f849098070a79121052364e25c4e67a1",
+  "cms_record": {
+    "facility_id": "360080",
+    "facility_name": "EAST OHIO REGIONAL HOSPITAL",
+    "address": "90 NORTH FOURTH STREET",
+    "citytown": "MARTINS FERRY",
+    "state": "OH",
+    "zip_code": "43935",
+    "hospital_type": "Acute Care Hospitals",
+    "emergency_services": "No"
+  },
+  "pointer_url": "https://eohospital.com/cms-hpt.txt",
+  "direct_client_result": "TLS/SSL version or cipher mismatch before pointer bytes",
+  "browser_result": "Browser navigation failed with net::ERR_SSL_VERSION_OR_CIPHER_MISMATCH before pointer bytes",
+  "disposition": "current-cms-identity-confirmed-pointer-access-unresolved",
+  "interpretation": "The current CMS roster and first-party site independently confirm the facility identity and address. Pointer transport failure does not establish file absence or noncompliance, and no MRF was promoted.",
+  "next_action": "Recover the exact first-party pointer and current facility-specific CMS CSV/JSON through a permitted download-capable route; then verify bytes, declared address/state/date/version and usability."
+}

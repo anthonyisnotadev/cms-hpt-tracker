@@ -1,0 +1,22 @@
+{
+  "ccn": "131314",
+  "observed_at": "2026-09-27T07:26:21Z",
+  "first_party_pointer_url": "https://www.shoshonehealth.com/cms-hpt.txt",
+  "first_party_page_url": "https://www.shoshonehealth.com/patients/registrationbilling/",
+  "first_party_standing_evidence": "The 2026-09-26 pointer proof records a readable Shoshone pointer whose exact blob target returned 404; the current registration page exposes a 2020 legacy chargemaster, not a current CMS-template file.",
+  "secondary_discovery_page": "https://showthebill.com/hospitals/shoshone-medical-center/",
+  "secondary_page_observation": "The third-party page says its Shoshone price file was retrieved 2026-08-28, labels it a 46.8 MB CSV, and links a blob object distinct from the malformed #1 target in the first-party pointer.",
+  "candidate_blob_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7852/826003924-1043215437_west-shoshone-hospital-district-1_standardcharges.csv",
+  "candidate_blob_head": {
+    "observed_at": "2026-09-27T07:26:21Z",
+    "http_status": 404,
+    "response": "The specified blob does not exist.",
+    "bytes_read": 0,
+    "content_range": null,
+    "x_ms_request_id": "d58df45b-801e-0053-6251-4e28b9000000"
+  },
+  "interpretation": "This is a new alternate retrieval lead, not evidence of current MRF contents or a publisher-confirmed URL. The dated third-party capture suggests the object may have existed previously, but the exact linked origin object is currently unavailable and no bytes were retrieved.",
+  "disposition": "third-party-captured-alternate-mrf-lead-origin-404",
+  "count_effect": "none; retain CCN 131314 as unresolved and keep the 2020 chargemaster as separate historical evidence",
+  "next_action": "Ask Shoshone or its HPI publisher to restore the current MRF object or provide the 2026-08-28 captured bytes with source URL, capture hash and publisher linkage; then verify file identity, Idaho address/state, CMS version/date, and usable rows before any promotion."
+}

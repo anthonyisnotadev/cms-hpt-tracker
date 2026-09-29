@@ -1,0 +1,32 @@
+{
+  "ccn": "281326",
+  "observed_at": "2026-09-17T01:52:47.000Z",
+  "official_facility_page": "https://www.amhne.org/getpage.php?name=Antelope_Memorial_Hospital",
+  "official_facility_identity": "Antelope Memorial Hospital, 102 W. 9th Street, Neligh, Nebraska 68756",
+  "cms_enrollment_query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=281326&size=10",
+  "cms_enrollment_response_bytes": 1201,
+  "cms_enrollment_response_sha256": "67ccbce338dc1a678b2a3e7bc009df67a5c19bd078bfe775771dd13fb3067c58",
+  "cms_enrollment_identity": "Exact CCN 281326 is Antelope Memorial Hospital, Part A Critical Access Hospital, at 102 W 9th St, Neligh NE; enrollment ID O20070203000095.",
+  "retained_pointer_file": "cms_data/hpt/pointer-corpus/raw/amhne.org-455005d4baa5.txt",
+  "retained_pointer_sha256": "7d9b5242f75287fc08f64141ddab2d51afcad2dfb4e2400825e5c7832bd10f0a",
+  "retained_pointer_checked_at": "2026-09-15T09:15:07.582Z",
+  "retained_pointer_url": "https://amhne.org/cms-hpt.txt",
+  "retained_pointer_location_name": "ANTELOPE MEMORIAL HOSPITAL",
+  "retained_pointer_mrf_url": "https://s3.amazonaws.com/ycubaa-production-marlin-1-charge-management-public/facilities/0ddc7794-d4a3-4d17-a674-9187af28aea6/470393176_ANTELOPE%20MEMORIAL%20HOSPITAL_standardcharges.zip",
+  "prior_crawl_mrf_url": "https://s3.amazonaws.com/ycubaa-production-marlin-1-charge-management-public/facilities/0ddc7794-d4a3-4d17-a674-9187af28aea6/470393176_ANTELOPE%20MEMoriaL%20HOSPITAL_standardcharges.zip",
+  "url_case_note": "The current pointer URL differs from the original crawl URL in path capitalization. Object-store keys can be case-sensitive, so these are not treated as byte-equivalent files.",
+  "current_pointer_target_head_status": 403,
+  "current_pointer_target_bounded_get_status": 403,
+  "current_target_result": "Amazon S3 returned XML HTTP 403 to both HEAD and a bytes=0-262143 GET from this client. No archive bytes or declared metadata were recovered; access denial is not a file-absence verdict.",
+  "latest_browser_recheck": {
+    "observed_at": "2026-09-19T13:02:00Z",
+    "facility_page_status": "rendered",
+    "facility_page_identity": "Antelope Memorial Hospital, 102 W. 9th Street, Neligh, Nebraska 68756",
+    "visible_price_link": "YourCareEverywhere estimator; no MRF download",
+    "price_transparency_route_result": "ERR_HTTP_RESPONSE_CODE_FAILURE",
+    "pointer_target_browser_result": "not opened after route failure; retained S3 403 remains the last byte-access observation",
+    "interpretation": "The current site still distinguishes its estimator from the MRF route and exposes no replacement file; this is site-scope evidence only."
+  },
+  "disposition": "first-party-pointer-facility-identity-corroborated-file-access-denied-to-client",
+  "next_action": "Preserve the exact first-party pointer and independent CCN/site identity. Seek a materially different authorized route or publisher-corrected archive access for the pointer-declared URL; then inspect bounded archive/member bytes and declared facility address, state, date and template version. Do not treat S3 403 as file absence or reuse the differently capitalized original URL as equivalent."
+}

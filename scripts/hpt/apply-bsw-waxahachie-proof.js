@@ -1,0 +1,14 @@
+const fs = require('node:fs');
+const path = require('node:path');
+const root = path.resolve(__dirname, '../..');
+const audit = path.join(root, 'data/hpt-audit');
+const proofFile = 'reconciliation-bsw-450372-current-pointer-proof-2026-09-26.json';
+const proof = { ccn: '450372', observed_at: '2026-09-26T05:00:00Z', official_domain: 'https://www.bswhealth.com/', pointer_url: 'https://bswhealth.com/cms-hpt.txt', pointer_status: 200, pointer_declared_mrf_url: 'https://wadcdn.azureedge.net/bswhealth/com/siteassets/pricing-transparency/751844139_baylor-scott--white-medical-center-at-waxahachie_standardcharges.csv', mrf_url: 'https://wadcdn.azureedge.net/bswhealth/com/siteassets/pricing-transparency/751844139_baylor-scott--white-medical-center-at-waxahachie_standardcharges.csv', mrf_status: 206, declared_hospital_name: 'Baylor Scott & White Medical Center at Waxahachie', declared_location_name: 'Baylor Scott & White Medical Center at Waxahachie', declared_address: '2400 North I-35 E, Waxahachie, TX 75165', declared_license_state: 'TX', declared_last_updated: '2026-06-29', cms_template_version: '3.0.0', attestation: true, file_kind: 'csv', identity_basis: 'Official BSW pointer and bounded CSV header agree on the Waxahachie facility name, exact address, Texas state, current date, CMS 3.0.0, and attestation. The separate Corinth CCNs remain unresolved pending duplicate/legacy identity reconciliation.', next_action: 'Retain as verified current MRF and recheck on the next pointer update.' };
+fs.writeFileSync(path.join(audit, proofFile), JSON.stringify(proof, null, 2) + '\n');
+const manualPath = path.join(audit, 'reconciliation-manual-access-observations.json');
+const manual = JSON.parse(fs.readFileSync(manualPath, 'utf8'));
+manual.records = manual.records.filter(r => r.ccn !== proof.ccn);
+manual.records.push({ ...proof, proof_file: proofFile, manual_disposition: 'verified-current-mrf', disposition: 'verified-current-mrf', manual_identity_gate: 'official-pointer-csv-exact-name-address-state-date-template-attestation-agree' });
+manual.records.sort((a, b) => a.ccn.localeCompare(b.ccn));
+fs.writeFileSync(manualPath, JSON.stringify(manual, null, 2) + '\n');
+console.log(JSON.stringify({ applied: proof.ccn }, null, 2));

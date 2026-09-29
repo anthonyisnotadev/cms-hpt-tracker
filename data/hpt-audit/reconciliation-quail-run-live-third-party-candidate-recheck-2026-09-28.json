@@ -1,0 +1,56 @@
+{
+  "audit_id": "reconciliation-quail-run-live-third-party-candidate-recheck-2026-09-28",
+  "ccn": "034031",
+  "observed_at": "2026-09-28T16:51:00Z",
+  "purpose": "Recheck the already-discovered third-party Quail Run MRF candidate after a current indexed listing exposed the same publisher-CDN URL; independently test byte freshness and rate-table parseability without treating the lead as official linkage.",
+  "candidate_source": {
+    "index_page": "https://www.mrfdatasolutions.com/payers-1",
+    "index_description": "The page lists Quail Run Behavioral Health with a direct uhsfilecdn.eskycity.net candidate URL.",
+    "candidate_file_url": "https://uhsfilecdn.eskycity.net/bh/464207180_quail-run_standardcharges.csv",
+    "source_class": "third-party index; publisher linkage not established"
+  },
+  "live_retrieval": {
+    "http_status": 200,
+    "content_type": "application/octet-stream",
+    "content_length": 125877,
+    "bytes_read": 125877,
+    "last_modified": "2026-06-10T19:40:46Z",
+    "sha256": "5b07409cf918c8783c47038608dbcf78f221aa807eae3e1bcb21cef371dcb4cc",
+    "full_body_retained_in_tracker": false
+  },
+  "csv_validation": {
+    "parser": "scripts/hpt/lib/util.js parseCSV",
+    "parsed_records_including_metadata_and_column_header": 832,
+    "charge_columns": 22,
+    "rate_rows": 829,
+    "rows_with_expected_width": 829,
+    "rows_with_code_value": 829,
+    "rows_with_payer_or_plan": 829,
+    "rows_with_numeric_negotiated_dollar": 829,
+    "unique_payer_names": 49,
+    "unique_code_values_in_code_1": 5,
+    "malformed_row_widths": 0,
+    "scope_limit": "This confirms parseability and populated rate fields, not completeness against all services, legal compliance, or authoritative Quail Run publication."
+  },
+  "file_metadata": {
+    "hospital_name": "Quail Run Behavioral Health",
+    "location_name": "Quail Run Behavioral Health",
+    "address": "2545 W QUAIL AVENUE, PHOENIX, AZ 85027",
+    "license": "SH6929",
+    "license_state": "AZ",
+    "type_2_npi": "1740604636",
+    "last_updated_on": "2026-06-10",
+    "template_version": "3.0.0",
+    "attester_name": "Faught, Daniel",
+    "attestation": true
+  },
+  "official_linkage_observation": {
+    "official_pointer_url": "https://quailrunbehavioral.com/cms-hpt.txt",
+    "official_site_browser_result": "The current browser-rendered official domain displays a Cloudflare 'Just a moment...' security challenge; no official pointer body or pricing link could be inspected.",
+    "official_pointer_content_obtained": false,
+    "exact_candidate_url_declared_by_official_source": false
+  },
+  "evidence_gain": "The third-party candidate is confirmed live at its previously recorded exact size and SHA-256, and its complete body contains parseable, non-empty rate rows with matching Quail Run facility metadata. This closes the candidate-body retrieval and basic rate-parse questions, but not publisher linkage.",
+  "disposition_effect": "none; retain 034031 as pointer-access-denied-to-client with a third-party candidate, not verified-current-mrf",
+  "next_action": "Obtain an official Quail Run page/pointer response or publisher confirmation declaring this exact CDN URL. Do not bypass the security challenge; do not repeat this unchanged candidate fetch unless its source, ETag/Last-Modified, or access state changes."
+}

@@ -1,0 +1,17 @@
+'use strict';
+const fs = require('node:fs');
+const path = require('node:path');
+const { csvToObjects } = require('./lib/util');
+const root = path.resolve(__dirname, '..', '..');
+const audit = path.join(root, 'data', 'hpt-audit');
+const proofName = 'reconciliation-west-chase-houston-current-mrf-proof-2026-09-23.json';
+const p = JSON.parse(fs.readFileSync(path.join(audit, proofName), 'utf8'));
+const base = csvToObjects(fs.readFileSync(path.join(audit, 'compliance.csv'), 'utf8')).find((row) => row.ccn === p.ccn);
+if (!base) throw new Error(`Missing compliance row for ${p.ccn}`);
+const evidence = { identity: 'corroborated', identity_basis: p.identity_basis, officialDomain: p.official_domain, sourcePageUrl: p.source_page_url, pointerUrl: p.pointer_url, pointerSha256: p.pointer_sha256, pointerHttpStatus: p.pointer_http_status, pointerResponseBytes: p.pointer_bytes, url: p.mrf_url, fileSha256: p.mrf_sha256, fullFileBytes: p.mrf_bytes, http_status: p.mrf_http_status, contentType: p.mrf_content_type, checked_at: p.observed_at, date: p.declared_last_updated, version: p.cms_template_version, location_name: p.location_name, declared_hospital_name: p.declared_hospital_name, declared_address: p.declared_address, declared_license_state: p.declared_license_state, declared_license_number: p.declared_license_number, type_2_npi: p.declared_npi, attestation_present: p.attestation_present, attester_name: p.attester_name, file_kind: 'json', service_rows: p.service_rows, observedFinding: 'mrf-stale-over-365-days', alias_history: 'CMS identifies West Chase Houston Hospital as formerly Altus Houston Hospital.' };
+const ledgerPath = path.join(audit, 'reviewed-resolutions.json');
+const ledger = JSON.parse(fs.readFileSync(ledgerPath, 'utf8')).filter((r) => r.ccn !== p.ccn);
+ledger.push({ ccn: p.ccn, base, action: 'replace-observation', finding: p.disposition, evidence, evidence_run: 'west-chase-houston-pointer-mrf-recheck-2026-09-23', reviewed_at: p.observed_at, note: p.interpretation });
+ledger.sort((a, b) => a.ccn.localeCompare(b.ccn));
+fs.writeFileSync(ledgerPath, JSON.stringify(ledger, null, 2) + '\n');
+console.log(JSON.stringify({ applied: p.ccn, finding: p.disposition, fileSha256: p.mrf_sha256 }, null, 2));

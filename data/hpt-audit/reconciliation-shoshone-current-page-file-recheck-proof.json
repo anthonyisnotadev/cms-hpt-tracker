@@ -1,0 +1,43 @@
+{
+  "ccn": "131314",
+  "hospital_name": "Shoshone Medical Center",
+  "observed_at": "2026-09-18T21:50:00Z",
+  "official_site": "https://www.shoshonehealth.com/",
+  "official_pricing_page": "https://www.shoshonehealth.com/patients/registrationbilling/",
+  "official_identity": "Shoshone Medical Center, 25 Jacobs Gulch Road, Kellogg, ID 83837",
+  "official_page_observation": "The official registration/billing page rendered in the interactive browser and still links the 2019/2020 file named 2020-Charge-Master.csv; the page describes it as a chargemaster and does not expose a current CMS-template CSV/JSON MRF.",
+  "historical_page_file_url": "https://www.shoshonehealth.com/wp-content/uploads/2019/12/2020-Charge-Master.csv",
+  "pointer_url": "https://www.shoshonehealth.com/cms-hpt.txt",
+  "pointer_status": "official-pointer-200-with-literal-fragment-target",
+  "third_party_recent_candidate_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7852/826003924-1043215437_west-shoshone-hospital-district-1_standardcharges.csv",
+  "third_party_recent_candidate_status": "404",
+  "third_party_recent_candidate_source": "A fresh search/open of the ShowTheBill page states the file was retrieved 2026-08-28; its exact provider-hosted URL was opened and direct HEAD rechecked at HTTP 404.",
+  "latest_web_recheck": {
+    "observed_at": "2026-09-19T02:27:12Z",
+    "registration_page_status": 200,
+    "price_transparency_link_target": "https://search.hospitalpriceindex.com/hpi2/hospital/shoshonemedicalcenter/7852or",
+    "historical_chargemaster_link_still_present": true,
+    "pointer_literal_fragment_target_still_present": true,
+    "result": "No publisher correction or current MRF link observed."
+  },
+  "browser_portal_recheck": {
+    "observed_at": "2026-09-19T08:10:00Z",
+    "portal_url": "https://search.hospitalpriceindex.com/hpi2/machineReadable/ShoshoneMedicalCenter/7852",
+    "browser_final_url": "https://search.hospitalpriceindex.com/facility-not-found",
+    "browser_result": "Rendered 404 - Page Not Found"
+  },
+  "latest_direct_file_recheck": {
+    "observed_at": "2026-09-20T01:35:00Z",
+    "url": "https://www.shoshonehealth.com/wp-content/uploads/2019/12/2020-Charge-Master.csv",
+    "head_status": 200,
+    "content_type": "text/csv; charset=utf-8",
+    "content_length": 194646,
+    "last_modified": "2022-03-01T16:03:58Z",
+    "range_status": 206,
+    "range_content": "bytes 0-4095/194646",
+    "bounded_header": "DESCRIPTION,CPT,REV, PRICE",
+    "result": "The historical page-linked object is currently byte-retrievable, but its legacy header has no facility name, address, state, declared update date or CMS template version; it remains non-promotable custom chargemaster evidence."
+  },
+  "disposition": "official-page-historical-chargemaster-byte-retrieved-recent-third-party-candidate-404-current-mrf-unresolved",
+  "next_action": "Request or locate a corrected publisher pointer/file URL and verify current bytes, CMS header, and Shoshone facility identity before promotion; retain the historical file and the fresh 404 as separate observations."
+}

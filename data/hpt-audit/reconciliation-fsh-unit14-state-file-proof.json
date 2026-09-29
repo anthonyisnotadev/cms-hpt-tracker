@@ -1,0 +1,21 @@
+{
+  "ccn": "104000",
+  "observed_at": "2026-09-19T04:05:00Z",
+  "official_domain": "https://www.myflfamilies.com/",
+  "official_facility_page": "https://www.myflfamilies.com/services/samh/florida-state-hospital/",
+  "facility_name": "Florida State Hospital Unit 14 Psych",
+  "campus_identity": "Florida State Hospital, Chattahoochee FL 32324",
+  "owner_evidence_url": "https://quality.healthfinder.fl.gov/Facility-Provider/Profile/?LID=10047",
+  "owner_evidence": "Florida Department of Children and Families / State of Florida",
+  "candidate_file_url": "https://www.myflfamilies.com/sites/default/files/2025-06/Florida%20State%20Hospital%20-%20Standard%20Charges%20for%20Provided%20Services%20%28January%202025%29.pdf",
+  "candidate_file_observation": "official 2025 PDF titled Florida State Hospital - Standard Charges for Provided Services; effective 2025-01-01; general campus file, not Unit 14-specific and not a CMS CSV/JSON MRF",
+  "candidate_file_sha256": "8C2F456BBDC76B9AE76ED427BF6F507BF8155887CA1FD6F31C3C4E4E7938B3D1",
+  "pointer_urls_checked": [
+    "https://myflfamilies.com/cms-hpt.txt",
+    "https://www.myflfamilies.com/cms-hpt.txt"
+  ],
+  "pointer_access_observation": "not established in this pass",
+  "disposition": "state-owned-campus-file-found-unit-scope-and-cms-mrf-unresolved",
+  "scope_note": "Official Florida DCF material identifies Florida State Hospital and a current general standard-charges PDF. Florida HealthFinder identifies State of Florida DCF ownership. The PDF does not establish that its charges apply specifically to Unit 14 or that it is the required CMS-template MRF; no pointer linkage was established. No exemption or compliance conclusion is inferred from the state ownership alone.",
+  "next_action": "Confirm the CCN-to-campus/unit scope and whether a current CMS-specified CSV/JSON exists; independently verify complete file identity, date/version, Florida state and usable rate fields before any promotion."
+}

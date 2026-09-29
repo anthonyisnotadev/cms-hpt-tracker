@@ -1,0 +1,32 @@
+{
+  "ccn": "454076",
+  "observed_at": "2026-09-23T04:56:00Z",
+  "official_site": "https://hcpc.uth.edu/",
+  "official_identity": "UTHealth Houston Harris County Psychiatric Center, 2800 South MacGregor Way, Houston, TX 77021 (official site and CMS record agree).",
+  "official_pricing_page": "https://hcpc.uth.edu/pages/access/inp-fees.htm",
+  "browser_observation": "Interactive browser rendered the official Inpatient & Outpatient Standard Charges page. It describes UTHealth Houston Behavioral Sciences Campus charges and links only a shoppable-services PDF; no CMS standard-charges CSV, JSON or ZIP MRF is exposed.",
+  "shoppable_pdf_url": "https://hcpc.uth.edu/global/images/UTHealth%20Houston%20BSC%20Shoppable%20Services_2026_.pdf",
+  "shoppable_pdf_status": 200,
+  "shoppable_pdf_bytes": 264400,
+  "shoppable_pdf_sha256": "be2125c20c43a3a005a8bbe23202a72393f2c96400ae1f1532a8fc33df77c987",
+  "pointer_url": "https://hcpc.uth.edu/cms-hpt.txt",
+  "pointer_status": 200,
+  "pointer_content_type": "text/html",
+  "pointer_response_bytes": 15216,
+  "pointer_sha256": "ca8372dab9b6f1b23a68684861fc0517bebc0891763c557181d24c5ea0ba1018",
+  "pointer_observation": "The root route returned an HTML page rather than plain-text pointer content; no facility-specific pointer entry or MRF URL was recovered.",
+  "mrf_observation": "No CMS MRF bytes recovered. The PDF is retained as a shoppable-services lead only and is not promoted as a CMS CSV/JSON/ZIP MRF.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=454076&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_record": {
+    "facility_id": "454076",
+    "facility_name": "HARRIS COUNTY PSYCHIATRIC CENTER",
+    "address": "2800 MACGREGOR WAY",
+    "citytown": "HOUSTON",
+    "state": "TX",
+    "zip_code": "77021"
+  },
+  "disposition": "official-pricing-page-shoppable-pdf-only-mrf-unresolved",
+  "interpretation": "The official facility and pricing pages confirm identity and expose a current shoppable-services PDF, but not a CMS machine-readable standard-charges file. The HTML root route is not treated as a valid pointer. No file-absence or compliance conclusion is inferred.",
+  "next_action": "Locate a current facility-specific CMS CSV/JSON/ZIP or a corrected plain-text pointer through the UTHealth publisher route; verify complete bytes, identity, Texas metadata, declared date/version and usable rate fields before promotion."
+}

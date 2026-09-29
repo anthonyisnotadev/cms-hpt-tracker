@@ -1,0 +1,22 @@
+{
+  "ccn": "370170",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://www.ihs.gov/oklahomacity/healthcarefacilities/lawton/",
+  "official_identity": "The current IHS Lawton Indian Hospital page identifies a full-service hospital at 1515 NE Lawrie Tatum Road, Lawton, Oklahoma 73507 and lists IHS leadership and services.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=370170&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_record": {
+    "facility_id": "370170",
+    "facility_name": "LAWTON INDIAN HOSPITAL",
+    "address": "1515 LAWRIE TATUM ROAD",
+    "citytown": "LAWTON",
+    "state": "OK",
+    "zip_code": "73507",
+    "hospital_type": "Acute Care Hospitals",
+    "hospital_ownership": "Tribal"
+  },
+  "ownership_conflict": "CMS currently reports Tribal ownership, while the first-party IHS page and IHS program directory identify the facility as an IHS Lawton Service Unit hospital. The official identities and address agree; ownership scope does not.",
+  "disposition": "ownership-scope-conflict-retained-unresolved",
+  "interpretation": "Do not apply the federal scope exclusion until CMS ownership is reconciled with the IHS-operated presentation. Do not infer compliance, noncompliance, or MRF absence from the conflict.",
+  "next_action": "Obtain an effective-dated CMS ownership/participation explanation or authoritative facility governance record, then separately recover and verify the current CMS CSV/JSON MRF."
+}

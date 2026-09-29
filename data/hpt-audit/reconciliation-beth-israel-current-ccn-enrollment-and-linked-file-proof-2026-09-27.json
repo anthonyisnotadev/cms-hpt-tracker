@@ -1,0 +1,49 @@
+{
+  "ccn": "330169",
+  "observed_at": "2026-09-27T04:51:46Z",
+  "scope": "current facility identity and HPT route only; not a successful MRF retrieval or CMS template/usability validation",
+  "cms_hospital_enrollments": {
+    "source_url": "https://data.cms.gov/data-api/v1/dataset/aa2e3ead-bbaa-4e71-b59d-a07ac7ed9ba5/data?filter%5BCCN%5D=330169&size=10",
+    "http_status": 200,
+    "row": {
+      "CCN": "330169",
+      "ENROLLMENT STATE": "NY",
+      "PROVIDER TYPE TEXT": "PART A PROVIDER - HOSPITAL",
+      "NPI": "1174768071",
+      "MULTIPLE NPI FLAG": "Y",
+      "ORGANIZATION NAME": "BETH ISRAEL MEDICAL CENTER",
+      "DOING BUSINESS AS NAME": "BETH ISRAEL MEDICAL CENTER KINGS HIGHWAY DIVISION",
+      "ADDRESS LINE 1": "3201 KINGS HWY",
+      "CITY": "BROOKLYN",
+      "STATE": "NY",
+      "ZIP CODE": "112342625",
+      "PRACTICE LOCATION TYPE": "MAIN/PRIMARY HOSPITAL LOCATION",
+      "SUBGROUP - ACUTE CARE": "Y"
+    }
+  },
+  "new_york_health_profile": {
+    "source_url": "https://profiles.health.ny.gov/hospital/printview/106803",
+    "http_status": 200,
+    "facility_name": "Mount Sinai Brooklyn",
+    "address": "3201 Kings Highway, Brooklyn, NY 11234",
+    "pfi": "1324",
+    "mpn": "330169",
+    "operating_certificate": "7002002H"
+  },
+  "operator_price_transparency_page": {
+    "source_url": "https://www.mountsinai.org/about/insurance/price-transparency",
+    "browser_observed_at": "2026-09-27T04:49:00Z",
+    "page_labels": "Mount Sinai Brooklyn - Chargemaster/Standard Charges Machine-Readable File",
+    "linked_mrf_url": "https://www.mountsinai.org/files/mrf/135564934_mount-sinai-brooklyn_standardcharges.json",
+    "bounded_retrieval": {
+      "method": "HTTP range request for bytes 0-1048575",
+      "http_status": 403,
+      "bytes_received": 0,
+      "result": "No MRF bytes or metadata obtained; do not infer file absence or usability."
+    },
+    "browser_navigation_result": "net::ERR_BLOCKED_BY_CLIENT"
+  },
+  "resolution": "Current official CMS enrollment and New York State hospital-profile records independently map CCN/MPN 330169 to the Brooklyn facility at 3201 Kings Highway. This separates the current enrolled hospital identity from the closed 16th Street campus at 281 First Avenue (PFI 1439). The operator's current pricing page explicitly links a Mount Sinai Brooklyn MRF, but the file bytes remain inaccessible to this review; no content, CMS template, metadata, or row usability claim is made.",
+  "disposition": "identity-crosswalk-corroborated-page-linked-mrf-bytes-unresolved",
+  "next_action": "Retrieve the exact page-linked Mount Sinai Brooklyn JSON through a permitted browser download or publisher-provided copy; preserve/hash bytes, validate root CMS 3.0 metadata and current facility identity, then reconcile the distinct Mount Sinai CMS pointer and the file's named NPI/CCN scope. Keep the HPT finding unresolved until file usability and pointer/linkage rules are satisfied; do not assign sibling-campus files."
+}

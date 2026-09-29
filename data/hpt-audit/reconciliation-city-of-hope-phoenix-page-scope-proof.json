@@ -1,0 +1,14 @@
+{
+  "ccn": "030138",
+  "observed_at": "2026-09-19T23:59:00.000Z",
+  "official_site": "https://www.cityofhope.org/",
+  "pricing_page_url": "https://www.cityofhope.org/patients/our-value-and-pricing/pricing-information",
+  "pricing_page_observation": "The current City of Hope pricing page explicitly lists a CMS-format machine-readable download for Western Regional Medical Center, the former operator name associated with the Phoenix/Goodyear facility, in addition to the National, Midwestern and Southeastern files.",
+  "root_pointer_urls": [
+    "https://www.cityofhope.org/cms-hpt.txt",
+    "https://www.cancercenter.com/cms-hpt.txt"
+  ],
+  "root_pointer_observation": "The recorded cityofhope.org and cancercenter.com root-pointer routes remain inaccessible to the bounded client (HTTP 403 before pointer bytes); the official pricing page itself supplies the exact Western Regional JSON URL.",
+  "disposition": "official-pricing-page-file-access-blocked",
+  "next_action": "Retry the exact Western Regional JSON through an authorized download-capable route; verify complete bytes, facility identity, Arizona address, declared date and CMS version before promotion."
+}

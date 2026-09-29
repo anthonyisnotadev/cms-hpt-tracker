@@ -1,0 +1,33 @@
+{
+  "ccn": "400112",
+  "observed_at": "2026-09-22T14:00:00Z",
+  "official_domain": "hospitalupr.org",
+  "official_facility_page": "https://www.hospitalupr.org/",
+  "official_page_status": 200,
+  "official_facility_name": "Hospital UPR, Dr. Federico Trilla",
+  "official_facility_address": "Carretera 3 km. 8.3, Ave. 65 de Infantería, Carolina, Puerto Rico 00984",
+  "official_page_observation": "The official Hospital UPR site identifies the facility and exposes a 'Tarifas' link. That link resolves through a Microsoft Safe Links wrapper to a Your Care Everywhere consumer pricing-estimator page, not a downloadable CMS MRF.",
+  "tarifas_link": "https://www.yourcareeverywhere.com/content/medhost/your-care-everywhere/pricing-estimator-page.html?facility_id=2ece4713-3f71-47d0-8ee5-6c4585b6cdc9",
+  "route_checks": [
+    {
+      "url": "https://www.hospitalupr.org/cms-hpt.txt",
+      "status": 404
+    },
+    {
+      "url": "https://www.hospitalupr.org/price-transparency",
+      "status": 404
+    },
+    {
+      "url": "https://www.hospitalupr.org/transparencia-de-precios",
+      "status": 404
+    },
+    {
+      "url": "https://www.hospitalupr.org/tarifas",
+      "status": 404
+    }
+  ],
+  "manual_identity_gate": "official-first-party-site-name-address-state-agree",
+  "disposition": "pointer-discovery-incomplete",
+  "interpretation": "The official site confirms the hospital identity/address and links a consumer pricing estimator, but no public facility-specific CMS CSV/JSON/ZIP MRF or pointer was recovered. The estimator is retained as a pricing lead only; no compliance, exemption or file-absence conclusion is inferred.",
+  "next_action": "Search UPR/Medhost publisher resources and retry for a public facility-specific CMS MRF or cms-hpt.txt pointer."
+}

@@ -1,0 +1,32 @@
+{
+  "ccn": "444007",
+  "hospital_name": "ROLLING HILLS PSYCHIATRIC HOSPITAL",
+  "observed_at": "2026-09-28T06:46:30Z",
+  "roster_identity": {
+    "address": "2014 Quail Hollow Circle, Franklin, TN 37067",
+    "state": "TN"
+  },
+  "accreditor_provider_locator": "https://www.jointcommission.org/en/accreditation/behavioral-health-care-and-human-services/provider-locator/477853",
+  "accreditor_site_record": "https://www.jointcommission.org/en-us/accreditation/behavioral-health-care-and-human-services/provider-locator/477853/478353",
+  "accreditor_observation": "The Joint Commission provider locator lists Rolling Hills Hospital, LLC at 2014 Quail Hollow Circle, Franklin, Tennessee 37067 and links rollinghillshospital.org as its website.",
+  "corroborated_domain_lead": "https://rollinghillshospital.org/",
+  "browser_observation": {
+    "url": "https://rollinghillshospital.org/",
+    "page_title": "Just a moment...",
+    "visible_state": "Cloudflare security verification challenge; no hospital site content was exposed.",
+    "challenge_bypassed": false
+  },
+  "search_observation": "Exact-domain searches for a CMS pointer and standard-charges/MRF path returned no indexed results. This does not establish that no pointer or file exists.",
+  "separate_wrong_facility_file_exclusion": {
+    "page": "https://www.rollinghillshospital.com/admissions/insurance-payment/price-transparency/",
+    "file": "https://www.rollinghillshospital.com/wp-content/uploads/pricing/2026/217/20-5629197_Rolling-Hills-_LLC__standardcharges.csv",
+    "declared_facility": "Rolling Hills Hospital, LLC, 1000 Rolling Hills Lane, Ada, OK 74820",
+    "declared_state": "OK",
+    "npi": "1720085175",
+    "file_sha256_prefix_65536": "a48aee3721b95a7b50bef706e8ad89c473e45cd1cbd4dbd90d212120c6f3b503",
+    "prior_proof": "reconciliation-rolling-hills-tn-wrong-facility-proof-2026-09-23.json"
+  },
+  "interpretation": "The Joint Commission provides strong facility-specific evidence that rollinghillshospital.org is associated with the Tennessee hospital, correcting the earlier discovery review's rejected-domain lead. The site content and pointer/MRF have not been inspected, and the similarly named .com pricing file is explicitly an Oklahoma facility file; do not assign it to CCN 444007.",
+  "disposition": "external-accreditor-domain-association-corroborated-current-site-content-and-mrf-unverified",
+  "next_action": "After the .org site is accessible through an ordinary permitted route, inspect its current facility and price-transparency pages plus exact cms-hpt.txt; retrieve only an explicitly linked Tennessee file and validate exact Franklin identity, TN metadata, declared date/version and usable rows. Do not bypass its Cloudflare challenge or reuse the Oklahoma .com file."
+}

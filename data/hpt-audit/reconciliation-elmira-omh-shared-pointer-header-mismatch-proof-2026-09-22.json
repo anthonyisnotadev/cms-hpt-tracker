@@ -1,0 +1,31 @@
+{
+  "ccn": "334045",
+  "observed_at": "2026-09-22T15:00:00Z",
+  "official_domain": "omh.ny.gov",
+  "official_facility_page": "https://omh.ny.gov/omhweb/facilities/elpc/",
+  "official_pricing_document": "https://omh.ny.gov/omhweb/adults/omh-hospital-pricing-transparency.pdf",
+  "pointer_url": "https://omh.ny.gov/cms-hpt.txt",
+  "pointer_http_status": 200,
+  "pointer_response_content_type": "text/plain; charset=UTF-8",
+  "pointer_response_bytes": 5995,
+  "pointer_sha256": "c5bc8d36dae15caaa62f821228bcdeba7baf3c48c4ce0ac0e0c585a41d073de1",
+  "pointer_entry_name": "Elmira",
+  "pointer_mrf_url": "https://omh.ny.gov/omhweb/adults/141663311_nysomh_standardcharges.csv",
+  "mrf_http_status": 206,
+  "mrf_bounded_bytes": 262144,
+  "mrf_content_type": "text/csv",
+  "mrf_total_bytes": 929041,
+  "mrf_header": {
+    "hospital_name": "Greater Binghamton Mental Health Facility",
+    "last_updated_on": "2026-05-28",
+    "version": "3.0.0",
+    "hospital_location": "Greater Binghamton",
+    "hospital_address": "425 Robinson St, Binghamton, NY 13904",
+    "attestation": "TRUE"
+  },
+  "roster_identity": "ELMIRA PSYCH CENTER",
+  "roster_address": "WASHINGTON ST, ELMIRA, NY 14901",
+  "disposition": "pointer-facility-match-unresolved",
+  "interpretation": "The official OMH pointer names Elmira as one of several shared locations but its current CSV header identifies Greater Binghamton Mental Health Facility only. The shared file is not assigned to Elmira without facility-specific header/location evidence or publisher clarification.",
+  "next_action": "Seek publisher clarification or a replacement file/root metadata naming Elmira Psychiatric Center; do not infer file absence or compliance failure from this mismatch."
+}

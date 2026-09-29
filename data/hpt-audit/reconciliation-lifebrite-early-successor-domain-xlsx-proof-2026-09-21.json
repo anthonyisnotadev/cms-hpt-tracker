@@ -1,0 +1,33 @@
+{
+  "ccn": "111314",
+  "observed_at": "2026-09-21T04:31:43Z",
+  "proof_file": "reconciliation-lifebrite-early-successor-domain-xlsx-proof-2026-09-21.json",
+  "official_site": "https://www.earlymc.com/",
+  "official_pricing_page": "https://www.earlymc.com/price-transparency/",
+  "official_facility_name": "Early Medical Center",
+  "official_facility_address": "11740 Columbia Street, Blakely, GA 39823",
+  "operator_identity_observation": "The current first-party successor site identifies Early Medical Center in Blakely, Georgia and is operated by LifeBrite Medical Group LLC d/b/a Early Medical Center, matching the CMS roster address for CCN 111314.",
+  "browser_observation": "Browser automation loaded the current Early Medical Center site and its Price Transparency page. The page exposes an Access the Chargemaster link for the facility.",
+  "page_file_url": "https://earlymc.com/wp-content/uploads/2026/06/CHARGEMASTER-1.xlsx",
+  "page_file_status": 200,
+  "page_file_content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "page_file_bytes": 232795,
+  "page_file_last_modified": "Tue, 30 Jun 2026 20:56:16 GMT",
+  "page_file_etag": "\"cc0e9e-38d5b-6557ece5f3b8a\"",
+  "page_file_observation": "The bounded response is an XLSX ZIP workbook with one sheet and 4,211 rows. Its first row is Charge Master List and its columns are Charge #, Description, Dept, Rev Code, CPT/HCPCS and Charge Amt. No CMS 3.0.0 version, last_updated_on field, payer-negotiated-rate structure, attestation or facility address metadata was observed; this is a chargemaster workbook, not verified CMS CSV/JSON MRF evidence.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=111314&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6585,
+  "cms_api_response_sha256": "32C63358373447D9A2984A973134C0AFFE949A9EDAB91AEF0DFD8BB3D1A31554",
+  "cms_record": {
+    "facility_id": "111314",
+    "facility_name": "LIFEBRITE COMMUNITY HOSPITAL OF EARLY",
+    "address": "11740 COLUMBIA STREET",
+    "citytown": "BLAKELY",
+    "state": "GA",
+    "zip_code": "39823"
+  },
+  "disposition": "official-successor-domain-page-linked-xlsx-chargemaster-not-cms-mrf",
+  "interpretation": "This is a genuine current first-party identity and pricing-page recovery, but the linked object is a gross-charge workbook rather than a verified CMS machine-readable CSV/JSON. It narrows the domain/identity uncertainty without supporting promotion or a compliance conclusion.",
+  "next_action": "Obtain a current CMS-format CSV or JSON from Early Medical Center or its authorized publisher, then verify declared facility identity, Georgia metadata, date/version, payer rates and parsed usability before promotion. Do not treat the XLSX chargemaster as a CMS MRF."
+}

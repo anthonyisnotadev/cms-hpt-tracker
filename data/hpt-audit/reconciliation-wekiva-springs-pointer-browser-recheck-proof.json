@@ -1,0 +1,17 @@
+{
+  "ccn": "104069",
+  "hospital_name": "Wekiva Springs",
+  "observed_at": "2026-09-19T00:00:00Z",
+  "official_site": "https://wekivacenter.com/",
+  "official_identity": "Wekiva Springs, Apopka FL",
+  "pointer_urls_checked": [
+    "https://wekivacenter.com/cms-hpt.txt",
+    "https://www.wekivacenter.com/cms-hpt.txt"
+  ],
+  "direct_pointer_statuses": [403, 403],
+  "direct_pointer_result": "Both exact root-pointer URLs returned HTTP 403 before pointer bytes.",
+  "browser_status": "Cloudflare security-verification page",
+  "browser_result": "A fresh official browser render stopped at the provider security-verification page; no pointer text or MRF link was exposed.",
+  "disposition": "official-domain-pointer-access-blocked-unresolved",
+  "next_action": "Retry the exact pointer through a materially different authorized route; obtain bounded pointer/MRF bytes and independently verify facility identity, Florida state, declared date/version and CMS-template usability."
+}

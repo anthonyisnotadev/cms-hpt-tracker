@@ -1,0 +1,29 @@
+{
+  "ccn": "024002",
+  "hospital_name": "ALASKA PSYCHIATRIC INSTITUTE",
+  "observed_at": "2026-09-27T23:11:24Z",
+  "official_facility_page": "https://dfcs.alaska.gov/alaska-psychiatric-institute/",
+  "official_state_operational_page": "https://dfcs.alaska.gov/commissioners-office/coordinated-health-complex-care-unit/civil-commitment/",
+  "facility_identity": "Alaska Psychiatric Institute is a State of Alaska facility at 3700 Piper Street, Anchorage, Alaska 99508; current state materials describe it as the state-run psychiatric hospital.",
+  "official_admission_scope": "The Alaska DFCS civil-commitment page describes civil commitment orders petitioned by community members or health professionals and states that API patients may be admitted voluntarily or involuntarily.",
+  "cms_guidance_url": "https://www.cms.gov/files/document/hospital-price-transparency-frequently-asked-questions.pdf",
+  "cms_guidance_observation": "CMS FAQ, Definitions, pp. 18-19 (PDF pages 17-18): the hospital definition includes Medicare-enrolled licensed hospitals and state-owned/operated facilities except those deemed compliant. Beginning January 1, 2022, the state forensic hospital deeming described by CMS is for state forensic hospitals that provide treatment exclusively to individuals in the custody of penal authorities.",
+  "scope_interpretation": "State ownership alone does not support a Hospital Price Transparency scope exemption. API's official description of voluntary and civil-commitment admissions does not establish the CMS criterion of treatment exclusively to individuals in penal custody. Keep it in the ordinary assessment cohort; do not issue a legal compliance conclusion from this scope review.",
+  "current_pricing_route_observation": "The official API page currently exposes a 2025 Facility Rates PDF. This is not a CMS-template CSV/JSON MRF and is not imported as MRF evidence.",
+  "historical_mrf_access_evidence_preserved": {
+    "facility_rates_url": "https://dfcs.alaska.gov/media/brvn4pg4/api-acute-rate-matrix.pdf",
+    "facility_rates_sha256": "3656cb4ed1ef92d681fcb9506e3f712d58931140a293b08368038c85ae9e860d",
+    "pointer_url_checks": [
+      {"url": "https://dfcs.alaska.gov/cms-hpt.txt", "prior_status": 404},
+      {"url": "https://dfcs.alaska.gov/API/cms-hpt.txt", "prior_status": 404},
+      {"url": "https://dfcs.alaska.gov/alaska-psychiatric-institute/cms-hpt.txt", "prior_status": 404},
+      {"url": "https://health.alaska.gov/cms-hpt.txt", "prior_status": 404},
+      {"url": "https://alaska.gov/cms-hpt.txt", "prior_status": 404}
+    ],
+    "official_page_prior_access_observation": "403 on 2026-09-18; preserve as an access observation, not file absence."
+  },
+  "mrf_bytes_retrieved": false,
+  "mrf_metadata_verified": false,
+  "disposition": "pointer-not-retrieved",
+  "next_action": "Keep API in the ordinary in-scope MRF assessment. Obtain a current first-party CMS pointer or CMS-template CSV/JSON through a changed official route or publisher-provided copy; verify exact bytes, hospital identity/address, Alaska state, date, version and usable rows. Do not repeat the same pointer paths that returned 404 unless route/access conditions change, and do not treat the 2025 Facility Rates PDF as an MRF."
+}

@@ -1,0 +1,1025 @@
+{
+  "summary": {
+    "hospitals": 5419,
+    "pointer_provenance_rows": 4243,
+    "exact_url_hash_correlated": 4234,
+    "hash_unmatched_for_exact_url": 9,
+    "no_exact_url_corpus_entry": 0,
+    "manual_hash_bound_rows": 27,
+    "historical_pointer_rows": 84,
+    "historical_not_indexed": 84,
+    "historical_hash_correlated": 0,
+    "historical_hash_unmatched": 0
+  },
+  "unmatched": [
+    {
+      "ccn": "294015",
+      "hospital_name": "RENO BEHAVIORAL HEALTHCARE HOSPITAL, LLC",
+      "checked_url": "https://renobehavioral.com/cms-hpt.txt",
+      "verification_sha256": "2f5c55cbcecddd9cfa0623bb6c7f97c7ffce7e14584aa3c2f0b0e2d7c4c6caf3",
+      "verification_observed_at": "2026-09-07T00:21:27.834Z",
+      "disposition": "pointer-facility-match-unresolved",
+      "issue": "verification-hash-not-in-corpus-index-for-exact-requested-url",
+      "corpus_versions": [
+        {
+          "sha256": "8f49f85bde0f82f8ae6afeb2fe4bf026718df21cf43551c3381b6b5b662c8f24",
+          "fetched_at": "2026-09-07T00:21:27.834Z",
+          "raw_file": "cms_data/hpt/pointer-corpus/raw/renobehavioral.com-f40c1916396b.txt",
+          "retained_raw_sha256": "8f49f85bde0f82f8ae6afeb2fe4bf026718df21cf43551c3381b6b5b662c8f24",
+          "retained_raw_status": "hash-corroborated"
+        }
+      ]
+    },
+    {
+      "ccn": "310025",
+      "hospital_name": "CAREPOINT HEALTH - BAYONNE MEDICAL CENTER",
+      "checked_url": "https://hudsonregionalhospital.com/cms-hpt.txt",
+      "verification_sha256": "3b4e3e2a8edfa3b13b56b8f56fc09b620154f31af78e7ce92ace4d82e0d84900",
+      "verification_observed_at": "2026-09-07T00:15:59.789Z",
+      "disposition": "pointer-linked-file-not-probed",
+      "issue": "verification-hash-not-in-corpus-index-for-exact-requested-url",
+      "corpus_versions": [
+        {
+          "sha256": "995e7c4957d37be6fa8031bfce2456c6de8dd79cd134a041c6a6c41ec9d5fb4c",
+          "fetched_at": "2026-09-07T00:15:59.789Z",
+          "raw_file": "cms_data/hpt/pointer-corpus/raw/hudsonregionalhospital.com-3a853af203a0.txt",
+          "retained_raw_sha256": "995e7c4957d37be6fa8031bfce2456c6de8dd79cd134a041c6a6c41ec9d5fb4c",
+          "retained_raw_status": "hash-corroborated"
+        }
+      ]
+    },
+    {
+      "ccn": "310118",
+      "hospital_name": "HUDSON REGIONAL HOSPITAL",
+      "checked_url": "https://hudsonregionalhospital.com/cms-hpt.txt",
+      "verification_sha256": "3b4e3e2a8edfa3b13b56b8f56fc09b620154f31af78e7ce92ace4d82e0d84900",
+      "verification_observed_at": "2026-09-07T00:15:59.789Z",
+      "disposition": "verified-current-mrf",
+      "issue": "verification-hash-not-in-corpus-index-for-exact-requested-url",
+      "corpus_versions": [
+        {
+          "sha256": "995e7c4957d37be6fa8031bfce2456c6de8dd79cd134a041c6a6c41ec9d5fb4c",
+          "fetched_at": "2026-09-07T00:15:59.789Z",
+          "raw_file": "cms_data/hpt/pointer-corpus/raw/hudsonregionalhospital.com-3a853af203a0.txt",
+          "retained_raw_sha256": "995e7c4957d37be6fa8031bfce2456c6de8dd79cd134a041c6a6c41ec9d5fb4c",
+          "retained_raw_status": "hash-corroborated"
+        }
+      ]
+    },
+    {
+      "ccn": "320001",
+      "hospital_name": "UNM HOSPITAL",
+      "checked_url": "https://unmhealth.org/cms-hpt.txt",
+      "verification_sha256": "452f9f3a3af42db6ec2fc7c8df1199deadfac2a422b6549383a99cdc7a768c1a",
+      "verification_observed_at": "2026-09-07T00:25:14.698Z",
+      "disposition": "verified-current-mrf",
+      "issue": "verification-hash-not-in-corpus-index-for-exact-requested-url",
+      "corpus_versions": [
+        {
+          "sha256": "d923e9d0d7aeb35f580f7f1cf83388faf17a5ce786fce303c299043f542be2f0",
+          "fetched_at": "2026-09-07T00:25:14.698Z",
+          "raw_file": "cms_data/hpt/pointer-corpus/raw/unmhealth.org-7aa0256b90e2.txt",
+          "retained_raw_sha256": "d923e9d0d7aeb35f580f7f1cf83388faf17a5ce786fce303c299043f542be2f0",
+          "retained_raw_status": "hash-corroborated"
+        }
+      ]
+    },
+    {
+      "ccn": "360098",
+      "hospital_name": "LAKE HEALTH",
+      "checked_url": "https://lakehealth.org/cms-hpt.txt",
+      "verification_sha256": "e00ec17ae15593a8098056576d6a73b3c451a5cf1e76603a7707ec82a901bb52",
+      "verification_observed_at": "2026-09-07T00:17:04.323Z",
+      "disposition": "verified-current-mrf",
+      "issue": "verification-hash-not-in-corpus-index-for-exact-requested-url",
+      "corpus_versions": [
+        {
+          "sha256": "af5e2b9bb87ee0bd114f307bf97b2b05d131e74895586a487d1bf9bf5a42a113",
+          "fetched_at": "2026-09-07T00:17:04.323Z",
+          "raw_file": "cms_data/hpt/pointer-corpus/raw/lakehealth.org-4ff4fea16549.txt",
+          "retained_raw_sha256": "af5e2b9bb87ee0bd114f307bf97b2b05d131e74895586a487d1bf9bf5a42a113",
+          "retained_raw_status": "hash-corroborated"
+        }
+      ]
+    },
+    {
+      "ccn": "370201",
+      "hospital_name": "SURGICAL HOSPITAL OF OKLAHOMA",
+      "checked_url": "https://surgicalhospitalok.net/cms-hpt.txt",
+      "verification_sha256": "7cfd2db9015234963b2598a30c64e16740cdc8e2cf2538c60a378ab4a05b1fc3",
+      "verification_observed_at": "2026-09-07T00:24:48.324Z",
+      "disposition": "pointer-facility-match-unresolved",
+      "issue": "verification-hash-not-in-corpus-index-for-exact-requested-url",
+      "corpus_versions": [
+        {
+          "sha256": "0d622a1e3175a78c94a74a17bb8058dce9ff4241e8f793b31b9beed89a49afd6",
+          "fetched_at": "2026-09-07T00:24:48.324Z",
+          "raw_file": "cms_data/hpt/pointer-corpus/raw/surgicalhospitalok.net-1013b96d127b.txt",
+          "retained_raw_sha256": "0d622a1e3175a78c94a74a17bb8058dce9ff4241e8f793b31b9beed89a49afd6",
+          "retained_raw_status": "hash-corroborated"
+        }
+      ]
+    },
+    {
+      "ccn": "390116",
+      "hospital_name": "SUBURBAN COMMUNITY HOSPITAL",
+      "checked_url": "https://suburbanhosp.org/cms-hpt.txt",
+      "verification_sha256": "2928b296654a271ca8ed60a4d219769dd35cfb07ce4e7feb32415aa8591fc4f3",
+      "verification_observed_at": "2026-09-07T00:24:45.807Z",
+      "disposition": "linked-mrf-header-unmatched",
+      "issue": "verification-hash-not-in-corpus-index-for-exact-requested-url",
+      "corpus_versions": [
+        {
+          "sha256": "7107bd981a0a523c52a00330b75e8f6411cde03c3dbddde0aaac5742b22a9ccd",
+          "fetched_at": "2026-09-07T00:24:45.807Z",
+          "raw_file": "cms_data/hpt/pointer-corpus/raw/suburbanhosp.org-f36b9aaa37cc.txt",
+          "retained_raw_sha256": "7107bd981a0a523c52a00330b75e8f6411cde03c3dbddde0aaac5742b22a9ccd",
+          "retained_raw_status": "hash-corroborated"
+        }
+      ]
+    },
+    {
+      "ccn": "440102",
+      "hospital_name": "LINCOLN MEDICAL CENTER",
+      "checked_url": "https://lincolnhealthsystem.com/cms-hpt.txt",
+      "verification_sha256": "5997acca08b78a5a537a7d58c6d443c47f7f59c56369de0381bee0f380c2fe9c",
+      "verification_observed_at": "2026-09-07T00:18:09.884Z",
+      "disposition": "pointer-facility-match-unresolved",
+      "issue": "verification-hash-not-in-corpus-index-for-exact-requested-url",
+      "corpus_versions": [
+        {
+          "sha256": "1ad0d16633366173053550ca5be0ac74df5386c61a1a3c4daab573888b2b670c",
+          "fetched_at": "2026-09-07T00:18:09.884Z",
+          "raw_file": "cms_data/hpt/pointer-corpus/raw/lincolnhealthsystem.com-52d6523cb940.txt",
+          "retained_raw_sha256": "1ad0d16633366173053550ca5be0ac74df5386c61a1a3c4daab573888b2b670c",
+          "retained_raw_status": "hash-corroborated"
+        }
+      ]
+    },
+    {
+      "ccn": "441322",
+      "hospital_name": "HOUSTON COUNTY COMMUNITY HOSPITAL",
+      "checked_url": "https://shamrock.health/cms-hpt.txt",
+      "verification_sha256": "781e46ea257f175438abfcf8acb658b30a1c8fb5aa6c1762ddbe4de48ff84ab0",
+      "verification_observed_at": "2026-09-07T00:23:01.046Z",
+      "disposition": "linked-mrf-header-unmatched",
+      "issue": "verification-hash-not-in-corpus-index-for-exact-requested-url",
+      "corpus_versions": [
+        {
+          "sha256": "ec0ef8c10bfea3877dea470bed770eea4751feb6088971bd0804600b61240838",
+          "fetched_at": "2026-09-07T00:23:01.046Z",
+          "raw_file": "cms_data/hpt/pointer-corpus/raw/shamrock.health-8f8443d5652a.txt",
+          "retained_raw_sha256": "ec0ef8c10bfea3877dea470bed770eea4751feb6088971bd0804600b61240838",
+          "retained_raw_status": "hash-corroborated"
+        }
+      ]
+    }
+  ],
+  "unindexed": [],
+  "historical": [
+    {
+      "ccn": "031314",
+      "hospital_name": "COBRE VALLEY REGIONAL MEDICAL CENTER",
+      "checked_url": "https://cvrmc.org/cms-hpt.txt",
+      "historical_sha256": "0e68d2e817dd933856ee2b9eeaa981257cdbe61c29a3f98c7156d009ee37013a",
+      "historical_observed_at": "2026-09-07T00:03:06.067Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "040020",
+      "hospital_name": "ST BERNARDS MEDICAL CENTER",
+      "checked_url": "https://stbernards.info/cms-hpt.txt",
+      "historical_sha256": "82409f9e0b7d9ab573a324137a889b848c79ab04747d0814e2af035194bc927a",
+      "historical_observed_at": "2026-09-07T00:06:11.607Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "040779",
+      "hospital_name": "ST BERNARDS FIVE RIVERS MEDICAL CENTER",
+      "checked_url": "https://stbernards.info/cms-hpt.txt",
+      "historical_sha256": "82409f9e0b7d9ab573a324137a889b848c79ab04747d0814e2af035194bc927a",
+      "historical_observed_at": "2026-09-07T00:06:11.607Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "041307",
+      "hospital_name": "CROSSRIDGE COMMUNITY HOSPITAL",
+      "checked_url": "https://stbernards.info/cms-hpt.txt",
+      "historical_sha256": "82409f9e0b7d9ab573a324137a889b848c79ab04747d0814e2af035194bc927a",
+      "historical_observed_at": "2026-09-07T00:06:11.607Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "050039",
+      "hospital_name": "ENLOE HEALTH",
+      "checked_url": "https://enloe.org/cms-hpt.txt",
+      "historical_sha256": "55dda4222332640a318322ee2e9e51d86731e6a75355026debd946a48142045d",
+      "historical_observed_at": "2026-09-07T00:03:23.869Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "050045",
+      "hospital_name": "EL CENTRO REGIONAL MEDICAL CENTER",
+      "checked_url": "https://ecrmc.org/cms-hpt.txt",
+      "historical_sha256": "23f09e30c728d18d27a40e1ec865d9e9c1b8e977ade1e16133c223c4af19f850",
+      "historical_observed_at": "2026-09-07T00:03:20.875Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "request-or-tool-failure",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "050231",
+      "hospital_name": "POMONA VALLEY HOSPITAL MEDICAL CENTER",
+      "checked_url": "https://pvhmc.org/cms-hpt.txt",
+      "historical_sha256": "e6d09567baebc8e506d9742010c54ec637bb13c6f5fada403410d31c853d417f",
+      "historical_observed_at": "2026-09-07T00:05:35.448Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "request-or-tool-failure",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "050272",
+      "hospital_name": "REDLANDS COMMUNITY HOSPITAL",
+      "checked_url": "https://redlandshospital.org/cms-hpt.txt",
+      "historical_sha256": "515591fd3c93f1aa0b592c2f893137edbccc0c7728bede9c06f49925956ce046",
+      "historical_observed_at": "2026-09-07T00:05:36.401Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "request-or-tool-failure",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "050351",
+      "hospital_name": "TORRANCE MEMORIAL MEDICAL CENTER",
+      "checked_url": "https://torrancememorial.org/cms-hpt.txt",
+      "historical_sha256": "c951fdc050d5e65626949e6b070c3fbc47579b1823db7df4840f07503ecee3dc",
+      "historical_observed_at": "2026-09-07T00:06:32.366Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "050352",
+      "hospital_name": "BARTON MEMORIAL HOSPITAL",
+      "checked_url": "https://bartonhealth.org/cms-hpt.txt",
+      "historical_sha256": "af250809af2a26f9cac6eab53268ba1860ab49e6bc4e2171677817b7182c0815",
+      "historical_observed_at": "2026-09-07T00:02:13.727Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "050357",
+      "hospital_name": "GOLETA VALLEY COTTAGE HOSPITAL",
+      "checked_url": "https://cottagehealth.org/cms-hpt.txt",
+      "historical_sha256": "2749bc5c8389b0f2eeec1eeb6c98282c5bf91d7715fc989c45e89cc9032b445d",
+      "historical_observed_at": "2026-09-07T00:03:04.760Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "050396",
+      "hospital_name": "SANTA BARBARA COTTAGE HOSPITAL",
+      "checked_url": "https://cottagehealth.org/cms-hpt.txt",
+      "historical_sha256": "2749bc5c8389b0f2eeec1eeb6c98282c5bf91d7715fc989c45e89cc9032b445d",
+      "historical_observed_at": "2026-09-07T00:03:04.760Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "050624",
+      "hospital_name": "HENRY MAYO NEWHALL  HOSPITAL",
+      "checked_url": "https://henrymayo.com/cms-hpt.txt",
+      "historical_sha256": "71a52be5453ffa9c5849f09985303f40d81194e2b2f1768e520fd8ff164dfb83",
+      "historical_observed_at": "2026-09-07T00:03:56.473Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "050769",
+      "hospital_name": "HOAG ORTHOPEDIC INSTITUTE",
+      "checked_url": "https://hoagorthopedicinstitute.com/cms-hpt.txt",
+      "historical_sha256": "33c692260f4559b6977bc48bbef8921f100e9ae4f610c3e9cf89c7b5d950a28b",
+      "historical_observed_at": "2026-09-07T00:03:58.926Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "request-or-tool-failure",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "051324",
+      "hospital_name": "NORTHERN INYO HOSPITAL",
+      "checked_url": "https://nih.org/cms-hpt.txt",
+      "historical_sha256": "2a9cfbcf3da79575f6909198398163650d0545181a27dfdeeec89507b51c116e",
+      "historical_observed_at": "2026-09-07T00:05:04.763Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "request-or-tool-failure",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "051331",
+      "hospital_name": "SANTA YNEZ VALLEY COTTAGE HOSPITAL",
+      "checked_url": "https://cottagehealth.org/cms-hpt.txt",
+      "historical_sha256": "2749bc5c8389b0f2eeec1eeb6c98282c5bf91d7715fc989c45e89cc9032b445d",
+      "historical_observed_at": "2026-09-07T00:03:04.760Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "051333",
+      "hospital_name": "RIDGECREST REGIONAL HOSPITAL",
+      "checked_url": "https://rrh.org/cms-hpt.txt",
+      "historical_sha256": "c21607d55809052e57121bd8d10602eb3b4cc52c5bdbfdc4c72778c2d774270e",
+      "historical_observed_at": "2026-09-07T00:05:38.158Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "request-or-tool-failure",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "051337",
+      "hospital_name": "HAZEL HAWKINS MEMORIAL HOSPITAL",
+      "checked_url": "https://hazelhawkins.com/cms-hpt.txt",
+      "historical_sha256": "62fe237fe278fc863c7a9ff6977dfa5b20b25f024bdd20afcd059aed9614b9a8",
+      "historical_observed_at": "2026-09-07T00:03:53.356Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "request-or-tool-failure",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "060075",
+      "hospital_name": "VALLEY VIEW HOSPITAL ASSOCIATION",
+      "checked_url": "https://vvh.org/cms-hpt.txt",
+      "historical_sha256": "ce446f7969a5cd93d5054a7006b5fe396c66c24ff7d9f2d2373b804f2e16e5ec",
+      "historical_observed_at": "2026-09-07T00:06:51.250Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "request-or-tool-failure",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "100253",
+      "hospital_name": "JUPITER MEDICAL CENTER",
+      "checked_url": "https://jupitermed.com/cms-hpt.txt",
+      "historical_sha256": "2bff1fd0440516ef609069e00732392b47d585f848c6640eda16d54ade9f7643",
+      "historical_observed_at": "2026-09-07T00:04:12.883Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "request-or-tool-failure",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "150061",
+      "hospital_name": "DAVIESS COMMUNITY HOSPITAL",
+      "checked_url": "https://dchosp.org/cms-hpt.txt",
+      "historical_sha256": "669dbec29e43e3cff0ed5e4eebb5e8de647cea15f40bda0d63edc049ed1b9dec",
+      "historical_observed_at": "2026-09-07T00:03:07.023Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "150097",
+      "hospital_name": "MAJOR HOSPITAL",
+      "checked_url": "https://mymhp.org/cms-hpt.txt",
+      "historical_sha256": "340f950e2665aa7798e9b6d33d6f2c0745751452e901e1a69fe7e751a905b4d6",
+      "historical_observed_at": "2026-09-07T00:05:01.309Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "request-or-tool-failure",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "160079",
+      "hospital_name": "MERCY MEDICAL CENTER - CEDAR RAPIDS",
+      "checked_url": "https://mercycare.org/cms-hpt.txt",
+      "historical_sha256": "1775d4f61d2ae8941829a6fedb9df16ab179c9cbe3f2247cdec32e598ed5cec6",
+      "historical_observed_at": "2026-09-07T00:04:44.027Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "request-or-tool-failure",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "171365",
+      "hospital_name": "HANOVER HOSPITAL",
+      "checked_url": "https://hanoverhospitalks.org/cms-hpt.txt",
+      "historical_sha256": "4fd7289b9282963c50bf32058b7fdfd057b37da60794b7cd1f67fffd5b4e7b67",
+      "historical_observed_at": "2026-09-07T00:03:49.972Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "request-or-tool-failure",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "190060",
+      "hospital_name": "LAKE CHARLES MEMORIAL HOSPITAL",
+      "checked_url": "https://lcmh.com/cms-hpt.txt",
+      "historical_sha256": "69677aaee8ae0c5862cb104b17b9a98b0f79e8cacb0756230c7cf501f2d59ad1",
+      "historical_observed_at": "2026-09-07T00:04:23.480Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "request-or-tool-failure",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "201305",
+      "hospital_name": "CALAIS COMMUNITY HOSPITAL",
+      "checked_url": "https://calaishospital.org/cms-hpt.txt",
+      "historical_sha256": "066f03a022dadf5d5fb30714d16c291205e32038e62e85f8c2113bdd18c2da51",
+      "historical_observed_at": "2026-09-07T00:02:19.688Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "request-or-tool-failure",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "220012",
+      "hospital_name": "CAPE COD HOSPITAL",
+      "checked_url": "https://capecodhealth.org/cms-hpt.txt",
+      "historical_sha256": "5cd1475988f79926da9a94b1684b56626fc0fe77a369dfdaeb2092b0484df868",
+      "historical_observed_at": "2026-09-07T00:02:20.320Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "220135",
+      "hospital_name": "FALMOUTH HOSPITAL",
+      "checked_url": "https://capecodhealth.org/cms-hpt.txt",
+      "historical_sha256": "5cd1475988f79926da9a94b1684b56626fc0fe77a369dfdaeb2092b0484df868",
+      "historical_observed_at": "2026-09-07T00:02:20.320Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "230017",
+      "hospital_name": "BRONSON METHODIST HOSPITAL",
+      "checked_url": "https://bronsonhealth.com/cms-hpt.txt",
+      "historical_sha256": "6d04c244cdbddf41681eac1974908e75ea92468e03e1301808ef4830e3f7af36",
+      "historical_observed_at": "2026-09-07T00:02:18.235Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "230075",
+      "hospital_name": "BRONSON BATTLE CREEK HOSPITAL",
+      "checked_url": "https://bronsonhealth.com/cms-hpt.txt",
+      "historical_sha256": "6d04c244cdbddf41681eac1974908e75ea92468e03e1301808ef4830e3f7af36",
+      "historical_observed_at": "2026-09-07T00:02:18.235Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "230085",
+      "hospital_name": "BRONSON SOUTH HAVEN HOSPITAL",
+      "checked_url": "https://bronsonhealth.com/cms-hpt.txt",
+      "historical_sha256": "6d04c244cdbddf41681eac1974908e75ea92468e03e1301808ef4830e3f7af36",
+      "historical_observed_at": "2026-09-07T00:02:18.235Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "231332",
+      "hospital_name": "BRONSON LAKEVIEW HOSPITAL",
+      "checked_url": "https://bronsonhealth.com/cms-hpt.txt",
+      "historical_sha256": "6d04c244cdbddf41681eac1974908e75ea92468e03e1301808ef4830e3f7af36",
+      "historical_observed_at": "2026-09-07T00:02:18.235Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "240006",
+      "hospital_name": "OLMSTED MEDICAL CENTER",
+      "checked_url": "https://olmmed.org/cms-hpt.txt",
+      "historical_sha256": "107f5d1b4a2c626118901fd847fcbac9a84aa2b5cefd5b1f366c37879e42c7f5",
+      "historical_observed_at": "2026-09-07T00:05:19.283Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "request-or-tool-failure",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "240056",
+      "hospital_name": "RIDGEVIEW MEDICAL CENTER",
+      "checked_url": "https://ridgeviewmedical.org/cms-hpt.txt",
+      "historical_sha256": "9088035716c88aeee87aebb106ab65c838a94c42c1fd3f519a724a3bd125fe34",
+      "historical_observed_at": "2026-09-07T00:05:37.098Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "241311",
+      "hospital_name": "RIDGEVIEW SIBLEY MEDICAL CENTER",
+      "checked_url": "https://ridgeviewmedical.org/cms-hpt.txt",
+      "historical_sha256": "9088035716c88aeee87aebb106ab65c838a94c42c1fd3f519a724a3bd125fe34",
+      "historical_observed_at": "2026-09-07T00:05:37.098Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "241375",
+      "hospital_name": "MINNESOTA VALLEY HEALTH CENTER  INC",
+      "checked_url": "https://ridgeviewmedical.org/cms-hpt.txt",
+      "historical_sha256": "9088035716c88aeee87aebb106ab65c838a94c42c1fd3f519a724a3bd125fe34",
+      "historical_observed_at": "2026-09-07T00:05:37.098Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "250009",
+      "hospital_name": "MAGNOLIA REGIONAL HEALTH CENTER",
+      "checked_url": "https://mrhc.org/cms-hpt.txt",
+      "historical_sha256": "cd7fd53ac5110270c206c68ba73850b151d3f3dcf8342fb24188f37e9a74b1c1",
+      "historical_observed_at": "2026-09-07T00:04:58.371Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "request-or-tool-failure",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "250078",
+      "hospital_name": "FORREST GENERAL HOSPITAL",
+      "checked_url": "https://forresthealth.org/cms-hpt.txt",
+      "historical_sha256": "a29fafa0379bb61b9744b2528fccbe7b93c0856e3054ff8f008c97b6e9ca59fc",
+      "historical_observed_at": "2026-09-07T00:03:33.966Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "250085",
+      "hospital_name": "MARION GENERAL HOSPITAL",
+      "checked_url": "https://forresthealth.org/cms-hpt.txt",
+      "historical_sha256": "a29fafa0379bb61b9744b2528fccbe7b93c0856e3054ff8f008c97b6e9ca59fc",
+      "historical_observed_at": "2026-09-07T00:03:33.966Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "250117",
+      "hospital_name": "HIGHLAND COMMUNITY  HOSPITAL",
+      "checked_url": "https://forresthealth.org/cms-hpt.txt",
+      "historical_sha256": "a29fafa0379bb61b9744b2528fccbe7b93c0856e3054ff8f008c97b6e9ca59fc",
+      "historical_observed_at": "2026-09-07T00:03:33.966Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "250783",
+      "hospital_name": "PERRY COUNTY GENERAL HOSPITAL",
+      "checked_url": "https://forresthealth.org/cms-hpt.txt",
+      "historical_sha256": "a29fafa0379bb61b9744b2528fccbe7b93c0856e3054ff8f008c97b6e9ca59fc",
+      "historical_observed_at": "2026-09-07T00:03:33.966Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "251326",
+      "hospital_name": "JEFFERSON DAVIS COMMUNITY HOSPITAL CAH",
+      "checked_url": "https://forresthealth.org/cms-hpt.txt",
+      "historical_sha256": "a29fafa0379bb61b9744b2528fccbe7b93c0856e3054ff8f008c97b6e9ca59fc",
+      "historical_observed_at": "2026-09-07T00:03:33.966Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "260078",
+      "hospital_name": "OZARKS HEALTHCARE",
+      "checked_url": "https://ozarkshealthcare.com/cms-hpt.txt",
+      "historical_sha256": "2f9e5033af80e170f6900c0e0a594f53d0e049a44ec9ae51974198499ef9ae4e",
+      "historical_observed_at": "2026-09-07T00:05:20.736Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "request-or-tool-failure",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "271316",
+      "hospital_name": "FRANCES MAHON DEACONESS HOSPITAL",
+      "checked_url": "https://fmdh.org/cms-hpt.txt",
+      "historical_sha256": "46f6c37735fa21c2ddfd50199f9e37966336de1ebe79ad334c68a8143f0b63e1",
+      "historical_observed_at": "2026-09-07T00:03:33.189Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "271317",
+      "hospital_name": "LIVINGSTON HEALTHCARE",
+      "checked_url": "https://livingstonhealthcare.org/cms-hpt.txt",
+      "historical_sha256": "9e15aea911c7e937d6f385d62c9257b108828e72685f7ff51cab86359cdf97fc",
+      "historical_observed_at": "2026-09-07T00:04:25.196Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "request-or-tool-failure",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "271346",
+      "hospital_name": "ROUNDUP MEMORIAL HEALTHCARE",
+      "checked_url": "https://rmhmt.org/cms-hpt.txt",
+      "historical_sha256": "17bacca8c7ebea8a1e6118b8181dcad6b59530bef69e0c9c8def0491556a8bac",
+      "historical_observed_at": "2026-09-07T00:05:37.657Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "280003",
+      "hospital_name": "BRYAN MEDICAL CENTER",
+      "checked_url": "https://bryanhealth.com/cms-hpt.txt",
+      "historical_sha256": "27bf2f84dce6e3320a1effe449a26fd303968a3901bb1f6807fa119c207141d0",
+      "historical_observed_at": "2026-09-07T00:02:18.631Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "280134",
+      "hospital_name": "KEARNEY REGIONAL MEDICAL CENTER",
+      "checked_url": "https://bryanhealth.com/cms-hpt.txt",
+      "historical_sha256": "27bf2f84dce6e3320a1effe449a26fd303968a3901bb1f6807fa119c207141d0",
+      "historical_observed_at": "2026-09-07T00:02:18.631Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "280139",
+      "hospital_name": "GRAND ISLAND REGIONAL MEDICAL CENTER",
+      "checked_url": "https://bryanhealth.com/cms-hpt.txt",
+      "historical_sha256": "27bf2f84dce6e3320a1effe449a26fd303968a3901bb1f6807fa119c207141d0",
+      "historical_observed_at": "2026-09-07T00:02:18.631Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "281328",
+      "hospital_name": "MERRICK MEDICAL CENTER",
+      "checked_url": "https://bryanhealth.com/cms-hpt.txt",
+      "historical_sha256": "27bf2f84dce6e3320a1effe449a26fd303968a3901bb1f6807fa119c207141d0",
+      "historical_observed_at": "2026-09-07T00:02:18.631Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "281354",
+      "hospital_name": "CRETE AREA MEDICAL CENTER",
+      "checked_url": "https://bryanhealth.com/cms-hpt.txt",
+      "historical_sha256": "27bf2f84dce6e3320a1effe449a26fd303968a3901bb1f6807fa119c207141d0",
+      "historical_observed_at": "2026-09-07T00:02:18.631Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "300001",
+      "hospital_name": "CONCORD HOSPITAL",
+      "checked_url": "https://concordhospital.org/cms-hpt.txt",
+      "historical_sha256": "5109848279de3444854903044c038057e967e0b5bbf8d9a9c79f6720b41b7763",
+      "historical_observed_at": "2026-09-07T00:02:52.986Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "300005",
+      "hospital_name": "CONCORD HOSPITAL- LACONIA",
+      "checked_url": "https://concordhospital.org/cms-hpt.txt",
+      "historical_sha256": "5109848279de3444854903044c038057e967e0b5bbf8d9a9c79f6720b41b7763",
+      "historical_observed_at": "2026-09-07T00:02:52.986Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "301306",
+      "hospital_name": "CONCORD HOSPITAL- FRANKLIN",
+      "checked_url": "https://concordhospital.org/cms-hpt.txt",
+      "historical_sha256": "5109848279de3444854903044c038057e967e0b5bbf8d9a9c79f6720b41b7763",
+      "historical_observed_at": "2026-09-07T00:02:52.986Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "314019",
+      "hospital_name": "RAMAPO RIDGE BEHAVIORAL HEALTH HOSPITAL",
+      "checked_url": "https://christianhealthnj.org/cms-hpt.txt",
+      "historical_sha256": "2d343abd8807bcab2f33d1c8b7b3e9e3b69e5faa55c8916f95c1396fc9cc824e",
+      "historical_observed_at": "2026-09-07T00:02:37.961Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "321311",
+      "hospital_name": "GILA REGIONAL MEDICAL CENTER",
+      "checked_url": "https://grmc.org/cms-hpt.txt",
+      "historical_sha256": "743684faa5ed7a4e76e8a525b0cab787873ae13663030561b0186b9710e3d123",
+      "historical_observed_at": "2026-09-07T00:03:47.256Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "330264",
+      "hospital_name": "MONTEFIORE ST LUKE'S CORNWALL",
+      "checked_url": "https://montefioreslc.org/cms-hpt.txt",
+      "historical_sha256": "263a06237542860af6c7d13afd91b33a43ca7f9a79fedf02af75b59119e898eb",
+      "historical_observed_at": "2026-09-07T00:04:57.004Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "request-or-tool-failure",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "340017",
+      "hospital_name": "PARDEE HOSPITAL HENDERSON COUNTY",
+      "checked_url": "https://pardeehospital.org/cms-hpt.txt",
+      "historical_sha256": "b2a137dbfe2e42c106ec803e9ac0fe7dad589ff69e7b5332569a0eee8c87aef9",
+      "historical_observed_at": "2026-09-07T00:05:21.139Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "340041",
+      "hospital_name": "CALDWELL MEMORIAL HOSPITAL",
+      "checked_url": "https://caldwellmemorial.org/cms-hpt.txt",
+      "historical_sha256": "570d77aad32b547f695a408edf7eea392c8292dd63e6ed76c6d309fe2e7b3918",
+      "historical_observed_at": "2026-09-07T00:02:19.915Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "340051",
+      "hospital_name": "WATAUGA MEDICAL CENTER",
+      "checked_url": "https://unchealthappalachian.org/cms-hpt.txt",
+      "historical_sha256": "2cac8f0b54e2e037197531c6e67a6a8c7c76ebe20a9fb8d602f8672e859064fc",
+      "historical_observed_at": "2026-09-07T00:06:36.378Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "retrieved-facility-linked",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "340075",
+      "hospital_name": "BLUE RIDGE HEALTHCARE HOSPITALS, INC",
+      "checked_url": "https://unchealthblueridge.org/cms-hpt.txt",
+      "historical_sha256": "b07d9521a3aa42142dab55c2736842de5790a524ab7b245660a4227b5c3db917",
+      "historical_observed_at": "2026-09-07T00:06:36.537Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "340114",
+      "hospital_name": "REX HOSPITAL",
+      "checked_url": "https://rexhealth.com/cms-hpt.txt",
+      "historical_sha256": "6a1f49cbfc5e50e483e5f07a749d5866b0a3b695c8389c10d41b87f18fb2ccda",
+      "historical_observed_at": "2026-09-07T00:05:36.779Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "341311",
+      "hospital_name": "CHATHAM HOSPITAL INC",
+      "checked_url": "https://chathamhospital.org/cms-hpt.txt",
+      "historical_sha256": "6a1f49cbfc5e50e483e5f07a749d5866b0a3b695c8389c10d41b87f18fb2ccda",
+      "historical_observed_at": "2026-09-07T00:02:24.152Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "retrieved-facility-linked",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "341323",
+      "hospital_name": "CHARLES A CANNON JR MEMORIAL HOSPITAL",
+      "checked_url": "https://unchealthappalachian.org/cms-hpt.txt",
+      "historical_sha256": "2cac8f0b54e2e037197531c6e67a6a8c7c76ebe20a9fb8d602f8672e859064fc",
+      "historical_observed_at": "2026-09-07T00:06:36.378Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "344034",
+      "hospital_name": "APPALACHIAN REGIONAL BEHAVIORAL HEALTHCARE",
+      "checked_url": "https://unchealthappalachian.org/cms-hpt.txt",
+      "historical_sha256": "2cac8f0b54e2e037197531c6e67a6a8c7c76ebe20a9fb8d602f8672e859064fc",
+      "historical_observed_at": "2026-09-07T00:06:36.378Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "retrieved-facility-linked",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "360008",
+      "hospital_name": "SOUTHERN OHIO MEDICAL CENTER",
+      "checked_url": "https://somc.org/cms-hpt.txt",
+      "historical_sha256": "042cb1aacc5bb0730632f84bef6302a57425364f1714904b6f74a2dea193b3d3",
+      "historical_observed_at": "2026-09-07T00:06:08.755Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "360025",
+      "hospital_name": "FIRELANDS REGIONAL MEDICAL CENTER",
+      "checked_url": "https://firelands.com/cms-hpt.txt",
+      "historical_sha256": "0a6441dc7e45660340689d8939760a4e792034f69b780d5cfc9e634ab373ee6a",
+      "historical_observed_at": "2026-09-07T00:03:32.569Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "360054",
+      "hospital_name": "HOLZER MEDICAL CENTER",
+      "checked_url": "https://holzer.org/cms-hpt.txt",
+      "historical_sha256": "41e85c34d4909de756cc597543200df65ebe13120de143d2c9b12279d439bd1c",
+      "historical_observed_at": "2026-09-07T00:03:59.464Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "request-or-tool-failure",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "360107",
+      "hospital_name": "BELLEVUE HOSPITAL",
+      "checked_url": "https://firelands.com/cms-hpt.txt",
+      "historical_sha256": "0a6441dc7e45660340689d8939760a4e792034f69b780d5cfc9e634ab373ee6a",
+      "historical_observed_at": "2026-09-07T00:03:32.569Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "360355",
+      "hospital_name": "OHIO VALLEY SURGICAL HOSPITAL",
+      "checked_url": "https://ovsurgical.com/cms-hpt.txt",
+      "historical_sha256": "64792b97117cf24d4f8c42fdcdc7f37bfff201f9d33b24b748bc3ca25f1c7f43",
+      "historical_observed_at": "2026-09-07T00:05:20.577Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "request-or-tool-failure",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "361314",
+      "hospital_name": "MAGRUDER HOSPITAL",
+      "checked_url": "https://magruderhospital.com/cms-hpt.txt",
+      "historical_sha256": "3f2728edbd31e594814236333f815c2295e152aeefee0bb997e2bcab1dde75ba",
+      "historical_observed_at": "2026-09-07T00:04:26.406Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "request-or-tool-failure",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "361320",
+      "hospital_name": "HOLZER MEDICAL CENTER JACKSON",
+      "checked_url": "https://holzer.org/cms-hpt.txt",
+      "historical_sha256": "41e85c34d4909de756cc597543200df65ebe13120de143d2c9b12279d439bd1c",
+      "historical_observed_at": "2026-09-07T00:03:59.464Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "request-or-tool-failure",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "361335",
+      "hospital_name": "WAYNE HOSPITAL",
+      "checked_url": "https://waynehealthcare.org/cms-hpt.txt",
+      "historical_sha256": "50bbd8574a8585b8c01ae707f45ab932d799d43debb27f47b421296ce06b2ea0",
+      "historical_observed_at": "2026-09-07T00:06:52.032Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "370008",
+      "hospital_name": "NORMAN REGIONAL",
+      "checked_url": "https://normanregional.com/cms-hpt.txt",
+      "historical_sha256": "ce32092064ca2bbee9c37c7bce5ce7dd23fed443c081e6ac938dbb6a1e2c82e6",
+      "historical_observed_at": "2026-09-07T00:05:05.420Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "request-or-tool-failure",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "420098",
+      "hospital_name": "TIDELANDS WACCAMAW COMMUNITY HOSPITAL",
+      "checked_url": "https://tidelandshealth.org/cms-hpt.txt",
+      "historical_sha256": "897d12256c9ec5e780dd27ae43476d80bdcd100243d2d89655d79ae557428f5b",
+      "historical_observed_at": "2026-09-07T00:06:27.996Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "443303",
+      "hospital_name": "EAST TENNESSEE CHILDRENS HOSPITAL",
+      "checked_url": "https://dollychildrens.org/cms-hpt.txt",
+      "historical_sha256": "527617d73ee889957f8ac2af40f2179d8752e1a74d75ea5ac8b3c795903233ff",
+      "historical_observed_at": "2026-09-07T00:03:08.717Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "450132",
+      "hospital_name": "MEDICAL CENTER HOSPITAL",
+      "checked_url": "https://mchodessa.com/cms-hpt.txt",
+      "historical_sha256": "8835a5b396277fef4865f9a6e4f57f0f65f8043d59cc1513bad157130a4d2056",
+      "historical_observed_at": "2026-09-07T00:04:39.016Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "request-or-tool-failure",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "461304",
+      "hospital_name": "CENTRAL VALLEY MEDICAL CENTER - CAH",
+      "checked_url": "https://centralvalleymedicalcenter.com/cms-hpt.txt",
+      "historical_sha256": "fe3187700a62a4928b0bcaa046dd4cd4502613bfec9a3f3ed9fdef6705dbd1af",
+      "historical_observed_at": "2026-09-07T00:02:23.503Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "470005",
+      "hospital_name": "RUTLAND REGIONAL MEDICAL CENTER",
+      "checked_url": "https://rrmc.org/cms-hpt.txt",
+      "historical_sha256": "f062d0a1320b854b9904bb3017d3de425a59d674703a9dbe33710da8adc8b8be",
+      "historical_observed_at": "2026-09-07T00:05:38.169Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "490022",
+      "hospital_name": "MARY WASHINGTON HOSPITAL",
+      "checked_url": "https://marywashingtonhealthcare.com/cms-hpt.txt",
+      "historical_sha256": "838cfb97d15718fb688628575dffaaac7bba5a62b53a284f006f2f739086494b",
+      "historical_observed_at": "2026-09-07T00:04:27.782Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "request-or-tool-failure",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "490140",
+      "hospital_name": "STAFFORD HOSPITAL, LLC",
+      "checked_url": "https://marywashingtonhealthcare.com/cms-hpt.txt",
+      "historical_sha256": "838cfb97d15718fb688628575dffaaac7bba5a62b53a284f006f2f739086494b",
+      "historical_observed_at": "2026-09-07T00:04:27.782Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "request-or-tool-failure",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "520062",
+      "hospital_name": "OCONOMOWOC MEMORIAL HOSPITAL",
+      "checked_url": "https://prohealthcare.org/cms-hpt.txt",
+      "historical_sha256": "11e73b2f55afd0786958010b5b811c03bdde06edb72f57fab435870519fce6c3",
+      "historical_observed_at": "2026-09-07T00:05:34.926Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "520095",
+      "hospital_name": "SAUK PRAIRIE HOSPITAL",
+      "checked_url": "https://saukprairiehealthcare.org/cms-hpt.txt",
+      "historical_sha256": "d843486c8d5be85c2a34cf8c8c404548fadc8801b087cfa211b593c927a2c8a4",
+      "historical_observed_at": "2026-09-07T00:05:52.160Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    },
+    {
+      "ccn": "520100",
+      "hospital_name": "BELOIT HEALTH SYSTEM",
+      "checked_url": "https://beloithealthsystem.org/cms-hpt.txt",
+      "historical_sha256": "1fd2d764ae93070e4df7f6ce1e67496f46aa6c77acde917e723db035ed3b682d",
+      "historical_observed_at": "2026-09-07T00:02:15.816Z",
+      "retained_raw_status": "hash-corroborated",
+      "later_pointer_state": "access-denied-or-rate-limited-to-client",
+      "index_status": "not-indexed-after-failed-retry"
+    }
+  ],
+  "source_sha256": {
+    "nationwide-verification.json": "c834d6c08a6719741f52e3c8c718e2016d9fbbe6cd207845882eeade2a3bf4b7",
+    "cms_hpt_entries.csv": "0e547ea7593a56681e2f434592bb9cb08bee45d43c90a5f174914ecd8b9584e7"
+  }
+}

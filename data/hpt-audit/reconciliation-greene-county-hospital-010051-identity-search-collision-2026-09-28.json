@@ -1,0 +1,69 @@
+{
+  "audit_id": "reconciliation-greene-county-hospital-010051-identity-search-collision-2026-09-28",
+  "observed_at": "2026-09-28T02:16:40Z",
+  "ccn": "010051",
+  "facility": "Greene County Hospital, Eutaw, Alabama",
+  "purpose": "Reconcile an exact-name web-search collision and refresh primary-source facility identity without mistaking a legacy price list for current MRF evidence.",
+  "primary_source_identity": {
+    "source": "CMS Provider Data Catalog, Hospital General Information dataset",
+    "dataset_url": "https://data.cms.gov/provider-data/dataset/xubh-q36u",
+    "api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=010051&conditions%5B0%5D%5Boperator%5D=%3D",
+    "http_status": 200,
+    "content_type": "application/json",
+    "response_bytes": 6751,
+    "response_sha256": "bb77f13cf08255a32fab2dd83a12d9beae43b2853492eadca4e7b3d15d1101ef",
+    "result_count": 1,
+    "record": {
+      "facility_id": "010051",
+      "facility_name": "GREENE COUNTY HOSPITAL",
+      "address": "509 WILSON AVENUE",
+      "citytown": "EUTAW",
+      "state": "AL",
+      "zip_code": "35462",
+      "countyparish": "GREENE",
+      "hospital_type": "Acute Care Hospitals"
+    },
+    "interpretation": "The single exact CCN result independently corroborates facility name, street, city and state. This is identity evidence only; it does not establish pointer linkage, current price-file availability, or CMS MRF compliance."
+  },
+  "official_price_page_recheck": {
+    "url": "https://gcheutaw.com/price-listing",
+    "source": "First-party Greene County Health System price information page, reviewed 2026-09-28 through web reader.",
+    "content": "The page identifies Greene County Hospital, describes its published information as inpatient pricing/chargemaster content, and exposes a downloadable Price List CSV.",
+    "linked_file": "https://img1.wsimg.com/blobby/go/d55a8255-663e-4c01-a46d-aa8ff937d454/downloads/e90246cf-d114-46ff-a5c9-ee5dfa544c6d/PriceListing.csv?ver=1781540277319",
+    "file_bytes_retrieved_this_review": false,
+    "prior_file_observation": {
+      "observed_at": "2026-09-25T00:00:00.000Z",
+      "http_status": 200,
+      "bytes": 60136,
+      "header_summary": "Greene County Health Systems; Shoppable Services Worksheet; Updated 5/31/22.",
+      "finding": "Legacy shoppable-services worksheet, not a current CMS 3.0.0 all-items-and-services MRF."
+    }
+  },
+  "root_pointer_recheck": {
+    "url": "https://gcheutaw.com/cms-hpt.txt",
+    "observed_at": "2026-09-28T02:16:40Z",
+    "http_status": 404,
+    "content_type": "text/html; charset=utf-8",
+    "response_bytes": 126701,
+    "response_sha256": "4d61cb86510895665af2b82e40bf97602b4554d36e5652786d7a7a1240db386e",
+    "body_observation": "The returned body is the Greene County Health System website HTML, not a cms-hpt.txt pointer document.",
+    "interpretation": "This exact request did not retrieve a pointer. A 404 HTML response is a route observation; it does not establish that no current MRF exists or invalidate the separately page-linked file.",
+    "repeat_policy": "Do not repeat this exact URL absent a first-party site or route change; seek a publisher-confirmed current facility-specific file or materially different pointer route."
+  },
+  "search_collision": {
+    "query_result_url": "https://www.greenecountyhospital.com/price-transparency",
+    "result_name": "Greene County General Hospital",
+    "result_location": "1185 N 1000 W, Linton, Indiana 47441",
+    "comparison": "This is not CCN 010051: CMS's exact CCN record places Greene County Hospital at 509 Wilson Avenue, Eutaw, Alabama, while the Indiana facility's first-party page lists Linton, Indiana. The Indiana page and any linked price file were not imported, joined, or treated as evidence for the Alabama facility.",
+    "source_observation": "The first-party Indiana page itself identifies the Indiana address and telephone; search surfaced the page because of the similar hospital name."
+  },
+  "outcome": {
+    "evidence_gain": "Current CMS primary-source identity/address/state corroboration; exact-name unrelated facility search hit explicitly excluded.",
+    "new_price_data_or_mrf_bytes": false,
+    "pointer_linkage_established": false,
+    "cohort_disposition_changed": false,
+    "ccn_remains_unresolved": true,
+    "next_action": "Do not repeat the unchanged root URL absent a site change. Obtain a publisher-confirmed current facility-specific CMS CSV/JSON or materially different pointer route for Greene County Hospital in Eutaw, AL; independently verify exact URL/linkage, file identity, date/version, required metadata and usable rows before promotion.",
+    "source_rule": "Do not substitute same-name facilities, chargemasters, shoppable-only worksheets, third-party prices, or CMS identity records for a facility-linked current MRF."
+  }
+}

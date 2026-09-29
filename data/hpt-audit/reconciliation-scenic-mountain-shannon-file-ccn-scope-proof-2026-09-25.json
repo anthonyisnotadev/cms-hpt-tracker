@@ -1,0 +1,31 @@
+{
+  "ccn": "450653",
+  "observed_at": "2026-09-25T16:00:00Z",
+  "official_pricing_page": "https://www.shannonhealth.com/patients-visitors/billing-and-insurance/pricing-and-estimates/",
+  "official_operator_page": "https://www.shannonhealth.com/big-spring/careers/",
+  "operator_transition_observation": "Shannon's current first-party page says it assumed ownership of the Big Spring hospital in April 2026.",
+  "pointer_url": "https://shannonhealth.com/cms-hpt.txt",
+  "pointer_file_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/100290/752559845-1497606438_shannon-medical-center-big-spring_standardcharges.csv",
+  "file_sample": {
+    "http_status": 206,
+    "bytes": 262144,
+    "sha256": "dac9c89da6d3f7ba98f25c0ad1a9da19b3695e46a0403a978ee0a900551a4bad"
+  },
+  "file_header": {
+    "hospital_name": "Shannon Medical Center Big Spring",
+    "address": "1601 W. 11 Pl, Big Spring, TX 79720",
+    "license_number": "100688",
+    "license_state": "TX",
+    "npi": "1497606438",
+    "last_updated_on": "2026-04-08",
+    "version": "3.0.0",
+    "attester": "Joseph Wooldridge"
+  },
+  "cms_current_ccn_comparison": {
+    "ccn": "450653",
+    "cms_npi": "1336976034",
+    "cms_name": "SCENIC MOUNTAIN MEDICAL CENTER",
+    "cms_address": "1601 W 11TH PL, BIG SPRING, TX 797204114"
+  },
+  "interpretation": "The current Shannon file is facility/address matched and current, but its declared NPI 1497606438 and license/number label 100688 do not match the current CMS exact-CCN 450653 record's NPI 1336976034. Shannon's ownership transition is independently dated to April 2026. This is a supported CCN/file scope discrepancy; the file is not promoted to CCN 450653 until the operator or CMS provides effective-dated continuity or a corrected NPI/CCN mapping."
+}

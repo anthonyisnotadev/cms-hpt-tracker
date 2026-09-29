@@ -1,0 +1,21 @@
+{
+  "ccn": "433300",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://www.lifescapesd.org/",
+  "official_facility_page": "https://www.lifescapesd.org/locations/sioux-falls/",
+  "official_pricing_page": "https://www.lifescapesd.org/billings-collections/",
+  "official_identity": "The current LifeScape site identifies LifeScape Children's Specialty Hospital at 2501 W. 26th Street, Sioux Falls, SD 57105, matching the CMS roster address for CCN 433300.",
+  "pointer_urls": [
+    "https://www.lifescapesd.org/cms-hpt.txt",
+    "https://www.lifescapesd.org/.well-known/cms-hpt.txt"
+  ],
+  "pointer_statuses": [404, 404],
+  "page_file_url": "https://www.lifescapesd.org/wp-content/uploads/2023/10/Fee-Schedule-and-Price-Transparency.pdf",
+  "page_file_status": 200,
+  "page_file_content_type": "application/pdf",
+  "page_file_bytes": 125674,
+  "page_file_sha256": "021a5d081bff6bd394876016fedd028258442c1815d4777d2715eb089fbb1ccf",
+  "disposition": "official-pricing-page-historical-pdf-pointer-404",
+  "interpretation": "The official operator identity and exact roster address are corroborated. The pricing page exposes a human-readable fee schedule PDF, not a demonstrated current CMS 3.0.0 CSV/JSON/ZIP MRF; both standard root-pointer paths returned 404. No file absence or compliance conclusion is inferred.",
+  "next_action": "Recover a current LifeScape-specific structured CMS MRF and valid root pointer through an authorized publisher route; verify bytes, facility identity, South Dakota state, declared date, CMS version and usability before promotion."
+}

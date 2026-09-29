@@ -1,0 +1,26 @@
+{
+  "ccn": "034021",
+  "observed_at": "2026-09-28T03:40:00Z",
+  "official_site": "https://www.azdhs.gov/az-state-hospital/",
+  "official_identity_page": "https://www.azdhs.gov/az-state-hospital/jobs/",
+  "official_identity": "Arizona State Hospital, 2500 East Van Buren Street, Phoenix, AZ 85008",
+  "hospital_rates_navigation": "The live official Hospital Rates section states that the Arizona State Hospital has daily inpatient psychiatric rates at its Civil and Forensic hospitals and displays four Patient Maintenance per-diem rates effective January 1, 2026: Specialty Rehabilitation $1,133.00; Psychosocial Rehabilitation $927.00; Forensic Restoration to Competency $817.00; Forensic Rehabilitation $999.00. The page says these rates were filed with ADHS under A.R.S. 36-436.02. No downloadable CMS machine-readable file, file link, or CMS root pointer is exposed in the rendered section.",
+  "pointer_url": "https://www.azdhs.gov/cms-hpt.txt",
+  "pointer_http_status": 200,
+  "pointer_content_type": "text/html; charset=UTF-8",
+  "pointer_bytes": 70489,
+  "pointer_sha256": "ADE83F7649BCD82D1F4D53FB027324FC26AE0F36C5D2D356852A1B9D607CADAB",
+  "pointer_observation": "The exact root pointer route serves the Arizona DHS HTML site rather than pointer content; no MRF URL was exposed.",
+  "rates_page_url": "https://www.azdhs.gov/az-state-hospital/index.php#hospital-rates",
+  "rates_effective_date": "2026-01-01",
+  "rates_basis": "official page describes daily inpatient psychiatric Patient Maintenance rates at Civil and Forensic hospitals; filed with ADHS under A.R.S. 36-436.02",
+  "rates": [
+    {"service": "Specialty Rehabilitation", "amount": "$1,133.00"},
+    {"service": "Psychosocial Rehabilitation", "amount": "$927.00"},
+    {"service": "Forensic Restoration to Competency", "amount": "$817.00"},
+    {"service": "Forensic Rehabilitation", "amount": "$999.00"}
+  ],
+  "cms_machine_readable_file_exposed": false,
+  "disposition": "official-identity-confirmed-current-state-per-diem-rates-no-cms-mrf-or-pointer-exposed",
+  "next_action": "Preserve the official per-diem rates as separate state-published pricing evidence. Continue searching for a current Arizona State Hospital-specific CMS MRF and a valid facility pointer; the ADHS cms-hpt.txt route is HTML, not pointer content. Do not infer file absence or compliance from this observation."
+}

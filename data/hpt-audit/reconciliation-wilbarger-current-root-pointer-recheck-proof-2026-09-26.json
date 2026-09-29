@@ -1,0 +1,21 @@
+{
+  "ccn": "450584",
+  "observed_at": "2026-09-26T05:35:00Z",
+  "proof_file": "reconciliation-wilbarger-current-root-pointer-recheck-proof-2026-09-26.json",
+  "official_pricing_page": "https://wghospital.com/",
+  "pointer_url": "https://wghospital.com/cms-hpt.txt",
+  "pointer_status": 200,
+  "pointer_bytes": 293,
+  "pointer_sha256": "1bc09bb5f8ae6159058a215ec84858034cb108b5595fce4b44964fcc65d3969b",
+  "pointer_declared_location_name": "Wilbarger General Hospital",
+  "pointer_declared_source_page_url": "https://wilbargergeneral.slicedhealth.io/home",
+  "pointer_declared_mrf_url": "https://wilbargergeneral.slicedhealth.io/pricer/75-6047638-1316931835_WilbargerGeneralHospital_standardcharges.CSV",
+  "target_status": 200,
+  "target_content_type": "text/html",
+  "target_bytes": 1129,
+  "target_sha256": "7fba82787b4da9eba895ed1ff96fd07aadff7f69a84b2d79168ade00750f5898",
+  "target_role": "SlicedHealth portal shell, not CSV bytes",
+  "disposition": "current-structured-pointer-html-portal-intermediary-page-file-separate",
+  "result": "The current root pointer is content-bearing and facility-specific, but its declared target returns the SlicedHealth HTML application shell. The prior complete API-generated CSV remains separate page/portal evidence; no direct pointer-file promotion is inferred.",
+  "next_action": "Retain the complete API-generated CSV as portal evidence and obtain a publisher-confirmed direct file route or schema-bound portal download before promotion."
+}

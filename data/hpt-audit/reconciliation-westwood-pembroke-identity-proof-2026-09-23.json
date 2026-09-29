@@ -1,0 +1,41 @@
+{
+  "ccn": "224023",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "roster_identity": {
+    "name": "WESTWOOD PEMBROKE HEALTH SYSTEMS",
+    "address": "45 CLAPBOARDTREE STREET",
+    "city": "WESTWOOD",
+    "state": "MA",
+    "zip": "02090"
+  },
+  "operator_entity": "UHS of Westwood Pembroke, Inc.",
+  "identity_sources": [
+    {
+      "url": "https://masshpc.gov/sites/default/files/2023-rpo-org-charts_0.pdf",
+      "observation": "Massachusetts Health Policy Commission's UHS chart identifies UHS of Westwood Pembroke, Inc. dba Pembroke Hospital as a wholly owned UHS-related psychiatric-hospital entity."
+    },
+    {
+      "url": "https://www.oshrc.gov/wp-content/uploads/UHS_of_Westwood_Pembroke_Inc._and_UHS_of_Delaware_Inc.%5E17-0737_Commission_Decision%5E030322%5Esigned.html",
+      "observation": "The federal OSHA Review Commission decision states that UHS-WP owns and operates Pembroke Hospital and operated Pembroke, Westwood Lodge and Lowell Treatment Center as one legal entity under one license."
+    },
+    {
+      "url": "https://www.townhall.westwood.ma.us/home/showpublisheddocument/20805/637442376572770000",
+      "observation": "The Westwood municipal document identifies the former Westwood Lodge at 45 Clapboardtree Street, matching the CMS roster address."
+    }
+  ],
+  "browser_observation": "No stable current hospital-owned pricing domain was exposed in this discovery pass. Search results point to the Pembroke/Westwood UHS entity, while the roster address is the former Westwood Lodge campus; the current operating status and facility-specific CMS pointer remain unresolved.",
+  "disposition": "operator-and-historical-campus-identified-current-ccn-scope-unresolved",
+  "interpretation": "The operator/entity and roster campus are now supported, but the evidence does not establish whether CCN 224023 remains active at Westwood, was consolidated under Pembroke Hospital, or terminated when Westwood Lodge closed. No sibling file was assigned and no closure or compliance conclusion was inferred.",
+  "next_action": "Obtain authoritative CMS enrollment/termination or Massachusetts licensing evidence for CCN 224023 and the 45 Clapboardtree Street campus, then locate the applicable current or historical facility-specific pricing pointer/MRF.",
+  "current_status_recheck_2026_09_27": {
+    "observed_at": "2026-09-27T12:26:48Z",
+    "cms_public_notices_url": "https://www.cms.gov/medicare/health-safety-standards/certification-compliance/public-notices",
+    "cms_public_notices_observation": "The current CMS page says termination notices are posted for 14 months. Searching the page found no exact CCN 224023 entry. This does not resolve older or otherwise unlisted enrollment/termination status.",
+    "massachusetts_dmh_source_url": "https://www.mass.gov/doc/all-hospitals-0/download",
+    "massachusetts_dmh_source_observation": "The search index presents a DMH Licensed Hospitals document as recently published and lists Westwood Lodge at 45 Clapboardtree Street, but the exposed license metadata includes an expiration date of 2017-06-19. Treat as stale/indeterminate for current operation, not proof of active licensure.",
+    "search_result_url": "https://kidsoverprofits.org/facility/westwood-lodge-ma/",
+    "search_result_observation": "A third-party facility database updated 2026-09-18 describes Westwood Lodge as closed; this is not an official CMS termination, state license, or operator notice and does not establish the effective date or CCN continuity.",
+    "disposition_changed": false,
+    "next_action": "Obtain effective-dated CMS enrollment/termination and current Massachusetts licensing/operating-status evidence for CCN 224023 and the 45 Clapboardtree Street campus; do not use the stale 2017-expiry DMH document or third-party closure label as a disposition basis."
+  }
+}

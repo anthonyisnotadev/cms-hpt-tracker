@@ -1,0 +1,146 @@
+{
+  "ccn": "450155",
+  "observed_at": "2026-09-28T07:21:36Z",
+  "initial_two_file_retrieval_observed_at": "2026-09-17T11:38:40.000Z",
+  "roster_name": "HEREFORD REGIONAL MEDICAL CENTER",
+  "roster_address": "801 EAST THIRD, HEREFORD, TX 79045",
+  "cms_ccn_address_source": "https://www.cms.gov/regulations-and-guidance/legislation/ehrincentiveprograms/downloads/list_of_hospitals_paid_508.pdf",
+  "cms_ccn_address": "Deaf Smith County Hospital District, CCN 450155, 540 W 15th St, Hereford, TX 79045",
+  "official_facilities_page": "https://dschd.org/facilities/",
+  "official_facility_relationship": "Hereford Regional Medical Center is operated by Deaf Smith County Hospital District.",
+  "official_pricing_page": "https://dschd.org/price-transparency/",
+  "official_pricing_page_http_status": 200,
+  "official_pricing_page_bytes": 227972,
+  "official_pricing_page_sha256": "a2f327bea51b7860fe742ecbbdd1e01a567b76d7fb2553e33f01d3c6e527b381",
+  "pointer_url": "https://dschd.org/cms-hpt.txt",
+  "pointer_http_status": 200,
+  "pointer_sha256": "df3cf98d8874d8fba751e7c16b91a7e19b0045e4edb6b110ac6db4af6ff42174",
+  "pointer_location_name": "Deaf Smith County Hospital District",
+  "pointer_url_field_present": true,
+  "pointer_mrf_url_field_present": false,
+  "pointer_url_field_file_url": "https://dschd.org/wp-content/uploads/2026/01/2026_HRMC_Standard_Charges_Validated_20260101.csv",
+  "pointer_url_field_file_http_status": 200,
+  "pointer_url_field_file_sample_bytes": 16384,
+  "pointer_url_field_file_sample_sha256": "7da21e0ddb9bac06f3e9d3879c09b41cb1515e7c47819eb5ace2d660f65e5f6e",
+  "pointer_url_field_file_declared_hospital_name": "Hereford Regional Medical Center",
+  "pointer_url_field_file_declared_location_name": "Deaf Smith County Hospital District, d.b.a. Hereford Regional Medical Center",
+  "pointer_url_field_file_declared_address": "540 W. 15th St, Hereford, TX 79045",
+  "pointer_url_field_file_declared_license_state": "TX",
+  "pointer_url_field_file_declared_date": "2026-01-01",
+  "pointer_url_field_file_declared_version": "2.0.0",
+  "page_list_of_standard_charges_link_role": "The page labels the January CSV as its List of Standard Charges download.",
+  "page_patient_pricing_tool_file_url": "https://dschd.org/wp-content/uploads/2026/03/2026_HRMC_Standard_Charges_Validated_20260331.csv",
+  "page_patient_pricing_tool_file_http_status": 200,
+  "page_patient_pricing_tool_file_sample_bytes": 16384,
+  "page_patient_pricing_tool_file_sample_sha256": "b0d1e99639dd5dcf0ca76e751712504b1b438406fe35fcca88a13e90627926ab",
+  "page_patient_pricing_tool_file_declared_hospital_name": "Hereford Regional Medical Center",
+  "page_patient_pricing_tool_file_declared_location_name": "Deaf Smith County Hospital District, d.b.a. Hereford Regional Medical Center",
+  "page_patient_pricing_tool_file_declared_address": "540 W. 15th St, Hereford, TX 79045",
+  "page_patient_pricing_tool_file_declared_license_state": "TX",
+  "page_patient_pricing_tool_file_declared_date": "2026-04-01",
+  "page_patient_pricing_tool_file_declared_version": "3.0.0",
+  "latest_complete_retrieval": {
+    "observed_at": "2026-09-21T23:25:00Z",
+    "official_pricing_page_bytes": 227312,
+    "official_pricing_page_sha256": "76b3c52f3fbb69ec56ab4020780bc24a34be2049eb5e9393df5074cbc2dab261",
+    "pointer_january_file_bytes": 5178916,
+    "pointer_january_file_sha256": "74402a51a8a276c51a9aebdf41cf3f8ebc512c42065d8a1034cad2a90788e791",
+    "pointer_january_file_etag": "W/\"695d8f1e-4f05f4\"",
+    "pointer_january_file_last_modified": "2026-01-06T22:39:26Z",
+    "pointer_january_file_rows_observed": 11764,
+    "page_april_file_bytes": 984204,
+    "page_april_file_sha256": "c16dd52c8e19e4f38a2d31118df08046edd9e877cac2fceca7a00c84bf056268",
+    "page_april_file_etag": "W/\"69cc4293-f048c\"",
+    "page_april_file_last_modified": "2026-03-31T21:54:27Z",
+    "page_april_file_rows_observed": 5646,
+    "interpretation": "The January pointer field and April page link are distinct complete CSV objects. Both independently identify Hereford Regional Medical Center at 540 W. 15th St, Texas; the April object is newer CMS 3.0.0 evidence, but the root pointer still lacks an explicit mrf-url for it, so pointer linkage remains unresolved. A current CMS Provider Data Catalog record separately reports 801 East Third for this exact CCN; preserve that fresh federal source-field conflict rather than labeling the roster address stale."
+  },
+  "disposition": "nonstandard-root-url-field-january-v2-page-has-distinct-april-v3-csv",
+  "current_address_crosscheck_2026_09_28": {
+    "cms_provider_data_catalog_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=450155&conditions%5B0%5D%5Boperator%5D=%3D",
+    "http_status": 200,
+    "last_modified": "2026-09-28T04:56:41Z",
+    "etag": "\"1790571401-gzip\"",
+    "response_bytes": 6670,
+    "response_sha256": "a5b14059ccaebec95444088610226a63895e6fa5ce2e9067ca485b7d39bef20e",
+    "exact_ccn_record": {
+      "facility_id": "450155",
+      "facility_name": "HEREFORD REGIONAL MEDICAL CENTER",
+      "address": "801 EAST THIRD",
+      "city": "Hereford",
+      "state": "TX",
+      "zip_code": "79045",
+      "county_name": "Deaf Smith",
+      "hospital_type": "Acute Care Hospitals",
+      "ownership_type": "Government - Hospital District or Authority"
+    },
+    "historical_cms_transmittal_address_crosscheck_2026_09_28": {
+      "url": "https://www.cms.gov/Regulations-and-Guidance/Guidance/Transmittals/Downloads/A02034.pdf",
+      "source_type": "CMS Program Transmittal A-02-034 Appendix table",
+      "publication_age": "approximately 24 years before this review; historical only",
+      "observed_row": "Provider number 409877; CCN 450155; HEREFORD REGIONAL MEDICAL CENTER; 801 EAST THIRD; HEREFORD TX 79045.",
+      "evidence_role": "Shows the 801 EAST THIRD CCN address is long-standing in a CMS source. It does not establish that it is the current physical hospital site or explain the field role.",
+      "current_source_comparison": "CMS EHR Incentive Program List of Hospitals Paid lists Deaf Smith County Hospital District, NPI 1568454403, CCN 450155, 540 W 15th St; current CMS Provider Data Catalog continues to show 801 EAST THIRD. Preserve both source-specific address observations."
+    },
+    "current_cms_ehr_hospital_paid_list_search_recheck_2026_09_29": {
+      "url": "https://www.cms.gov/regulations-and-guidance/legislation/ehrincentiveprograms/downloads/list_of_hospitals_paid_508.pdf",
+      "publisher": "Centers for Medicare & Medicaid Services",
+      "retrieval_method": "Official CMS PDF indexed and opened with the web document reader; PDF body lines 987-988 show the exact record.",
+      "indexed_row": "Deaf Smith County Hospital District, 1568454403, 450155, 540 W 15th St, Hereford, Texas, 79045-2820, hpt-obf:v1:Pyf7P0UzVqVJOi2g.OsCSOuF32PqUQZUcAI4EOw.bwsly8NkhOtxsp5K",
+      "exact_fields": {
+        "organization": "Deaf Smith County Hospital District",
+        "npi": "1568454403",
+        "ccn": "450155",
+        "address": "540 W 15th St",
+        "city": "Hereford",
+        "state": "Texas",
+        "zip": "79045-2820"
+      },
+      "evidence_role": "An independently published CMS record associates the exact CCN and NPI with 540 W 15th. This supports the site's physical identity and shows that a CMS source also used this address; it does not explain the separate CMS Provider Data Catalog/legacy transmittal 801 East Third address field, and it does not establish pointer-to-MRF linkage.",
+      "byte_limitation": "No local PDF bytes or cryptographic digest were captured in this search pass; retain as official indexed/opened PDF evidence, not a locally hash-verified artifact."
+    },
+    "texas_pdf_access_attempts": [
+      {
+        "url": "https://pfd.hhs.texas.gov/sites/default/files/documents/hospital-svcs/2025/2025-ffy-sda-verif.pdf",
+        "result": "HTTP 403; bytes not retrieved or inspected"
+      },
+      {
+        "url": "https://www.hhs.texas.gov/sites/default/files/documents/general-special-hospital-list.pdf",
+        "result": "HTTP 403; bytes not retrieved or inspected"
+      }
+    ],
+    "additional_primary_state_sources_checked_2026_09_28": {
+      "observed_at": "2026-09-28T07:21:36Z",
+      "texas_hhsc_2025_ffy_sda_verification": {
+        "url": "https://pfd.hhs.texas.gov/sites/default/files/documents/hospital-svcs/2025/2025-ffy-sda-verif.pdf",
+        "access_method": "Official-source indexed PDF text returned by web search; direct open failed and local HTTP retrieval returned 403.",
+        "excerpt": "The indexed row lists Medicare CCN 450155, NPI 1568454403, DEAF SMITH COUNTY HOSPITAL DISTRICT-HEREFORD REGIONAL MEDICAL CENTER, and hospital physical street address 540 W 15TH ST, HEREFORD, TX 79045.",
+        "evidence_role": "Primary Texas HHSC association of the exact CCN and NPI with the 540 W 15th physical address; search-index text only, not a retrieved/hash-verified PDF.",
+        "limitation": "Supports the physical-site identity but does not explain the current CMS Provider Data Catalog 801 EAST THIRD field or establish HPT pointer linkage."
+      },
+      "texas_dshs_2024_hospital_list": {
+        "url": "https://www.dshs.texas.gov/sites/default/files/chs/hosp/Hospitallis2024.pdf",
+        "prepared_by": "Texas Department of State Health Services, Hospital Survey Unit; May 2025",
+        "retrieved_by": "Web PDF reader, 2026-09-28",
+        "excerpt": "Hereford Regional Medical Center; 540 West 15th Street; Hereford; Deaf Smith County; TX 79045-2820; 42 acute-care beds; hospital district.",
+        "evidence_role": "Official state hospital survey cross-check for hospital identity and physical site; the row does not include CCN or NPI."
+      },
+      "first_party_about_us_page": {
+        "url": "https://dschd.org/about-us/",
+        "retrieved_by": "In-app browser and web page reader, 2026-09-28",
+        "observation": "The current hospital-operated page describes Hereford Regional Medical Center as a full-service facility operated by Deaf Smith County Hospital District and lists 540 West 15th Street, Hereford, Texas 79045.",
+        "evidence_role": "Current first-party operator and physical-address corroboration; does not explain the separate CMS catalog address field."
+      }
+    },
+    "additional_2025_independent_provider_directory": {
+      "url": "https://stage-nocdn-uhccommunityplan.uhc.com/assets/plandocuments/2025/providerdirectories/en/2025-TX-Andrews-H5322-025-000-PD-EN.pdf",
+      "source_type": "2025 Texas UHC Community Plan hospital directory, indexed and opened as PDF",
+      "page": 641,
+      "entry": "Deaf Smith County / Hospital - General / Hereford Regional Medical Center / NPI 1568454403 / 540 W 15th St / Hereford, TX 79045",
+      "interpretation": "An independent insurer hospital directory identifies the hospital and its NPI at 540 W 15th. Its dated provider-directory address is corroboration, not evidence explaining why the current CMS Provider Data Catalog exact-CCN address remains 801 East Third."
+    },
+    "interpretation": "The fresh exact-CCN CMS catalog row reports 801 East Third. Newly reviewed primary state evidence and an additional official CMS EHR Hospital Paid List record corroborate 540 W. 15th as the physical site; the indexed HHSC and CMS PDF passages are not hash-verified local files. The current first-party operator page and both complete pricing-file headers also report 540 W. 15th. The exact CCN/NPI-to-physical-site linkage is now independently supported by CMS, but the Provider Data Catalog's 801 East Third field role remains unexplained. This does not repair the missing explicit mrf-url for the April v3 page-linked file. Keep the source-field discrepancy and pointer-linkage gap unresolved; no disposition or closure credit changes."
+  },
+  "scope_decision": "First-party and Texas state evidence support 540 W. 15th as Hereford Regional Medical Center's physical hospital site; the Texas HHSC indexed row and a separate official CMS EHR Hospital Paid List associate exact CCN 450155 and NPI 1568454403 with that address, though neither was captured here as a locally hash-verified PDF. The exact-CCN CMS Provider Data Catalog and an older CMS transmittal report 801 East Third, whose field role remains unexplained. The January pointer-field v2 file and April page-linked v3 file are distinct; the root pointer still lacks an explicit mrf-url for the April file. Preserve both the source-field discrepancy and pointer-linkage gap; do not claim full pointer compliance or a legal-compliance finding.",
+  "next_action": "The physical campus address is sufficiently corroborated; do not repeat address-only lookups absent new source changes. Continue to require (1) a publisher-corrected root pointer with an explicit mrf-url for the intended current hospital CSV, and (2) an authoritative explanation or correction for CMS Provider Data Catalog CCN 450155 address 801 East Third versus the first-party/state-supported 540 W. 15th physical site. Keep January v2 and April v3 files separate until the pointer target is explicit; do not treat indexed PDF text as hash-verified retrieval."
+}

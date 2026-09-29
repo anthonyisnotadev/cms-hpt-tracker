@@ -1,0 +1,45 @@
+{
+  "ccn": "400141",
+  "facility": "Centro Médico del Noreste",
+  "observed_at": "2026-09-28T20:13:56Z",
+  "source": {
+    "publisher": "First Medical Health Plan, Inc.",
+    "url": "https://www.firstmedicalpr.com/wp-content/uploads/2026/04/Directorio-de-Proveedores.pdf",
+    "format": "PDF provider directory",
+    "directory_scope": "Fajardo",
+    "web_index_page_ordinal": 115,
+    "listed_page_number": 114,
+    "source_role": "payer provider directory; not a CMS CCN crosswalk or price-transparency source"
+  },
+  "entries": [
+    {
+      "category": "HOSPITAL GENERAL",
+      "name": "CARIBBEAN MEDICAL CENTER",
+      "address": "Ave Osvaldo Molina 151, Fajardo, PR",
+      "phone": "[redacted; retained in protected artifact]"
+    },
+    {
+      "category": "HOSPITAL GENERAL",
+      "name": "CENTRO MÉDICO DEL NORESTE",
+      "address": "Ave General Valero 404, Fajardo, PR",
+      "phone": "[redacted; retained in protected artifact]"
+    }
+  ],
+  "crosscheck": {
+    "cms_ccn_400141_address": "404 Ave General Valero, Fajardo, PR 00738",
+    "existing_prior_firstmedical_directory": "reconciliation-centro-medico-noreste-address-role-proof-2026-09-26.json",
+    "result": "The April 2026 directory independently rechecks the separate 404-versus-151 facility identities and agrees with the CMS address for CCN 400141. Its entries do not state CCNs and do not identify or link an MRF."
+  },
+  "evidence_classification": {
+    "new_information": "A newer April 2026 First Medical directory is a separately dated source instance, and its indexed page again lists both hospitals at separate addresses.",
+    "recheck_only": "Address-role conclusion was already supported by the January 2026 First Medical directory and existing CMS roster evidence.",
+    "not_gained": [
+      "No Centro Médico del Noreste CMS pointer or MRF bytes",
+      "No CCN-to-payer-directory explicit mapping",
+      "No publisher clarification of the shared first-party site and pricing page"
+    ]
+  },
+  "disposition": "unresolved-sibling-file-excluded",
+  "count_effect": 0,
+  "next_action": "Do not repeat the unchanged generic pointer or sibling CSV. Obtain a Noreste-specific CMS pointer/MRF or publisher explanation linking the 404 Ave General Valero facility and CCN 400141 to its published pricing file; validate exact bytes, identity, Puerto Rico metadata, date/version and usable rows before promotion."
+}

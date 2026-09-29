@@ -1,0 +1,29 @@
+{
+  "ccn": "131314",
+  "observed_at": "2026-09-19T02:27:12Z",
+  "hospital_name": "SHOSHONE MEDICAL CENTER",
+  "official_site": "https://www.shoshonehealth.com/",
+  "official_pricing_page": "https://www.shoshonehealth.com/patients/registrationbilling/",
+  "pricing_page_status": 200,
+  "pointer_url": "https://www.shoshonehealth.com/cms-hpt.txt",
+  "pointer_status": 200,
+  "pointer_last_modified": "2025-02-13T16:18:20Z",
+  "pointer_mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7852/826003924_west-shoshone-hospital-district-%231_standardcharges.csv",
+  "pointer_mrf_status": 404,
+  "pointer_mrf_result": "Azure BlobNotFound; pointer source contains a literal #1 filename segment and no current bytes were retrieved.",
+  "legacy_page_file_url": "https://www.shoshonehealth.com/wp-content/uploads/2019/12/2020-Charge-Master.csv",
+  "legacy_page_file_status": 503,
+  "legacy_page_file_result": "Service unavailable; historical 2020 chargemaster, not evidence of a current CMS MRF.",
+  "latest_web_recheck": {
+    "observed_at": "2026-09-19T02:27:12Z",
+    "official_registration_page_status": 200,
+    "price_transparency_link_target": "https://search.hospitalpriceindex.com/hpi2/hospital/shoshonemedicalcenter/7852or",
+    "chargemaster_link_target": "https://www.shoshonehealth.com/wp-content/uploads/2019/12/2020-Charge-Master.csv",
+    "pointer_body_retrieved": true,
+    "pointer_literal_target_preserved": true,
+    "encoded_pointer_target_status": 404,
+    "result": "Current page and pointer remain unchanged; no current facility-specific CMS MRF bytes recovered."
+  },
+  "disposition": "official-pointer-reachable-but-stale-publisher-file-and-historical-page-file-unresolved",
+  "next_action": "Locate a current publisher file or corrected pointer target, then verify complete bytes, CMS header, Idaho identity/address/date/version and rate usability before promotion."
+}

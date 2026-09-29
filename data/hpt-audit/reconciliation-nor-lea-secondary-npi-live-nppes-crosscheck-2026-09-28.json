@@ -1,0 +1,37 @@
+{
+  "audit_id": "reconciliation-nor-lea-secondary-npi-live-nppes-crosscheck-2026-09-28",
+  "observed_at": "2026-09-28T21:25:34Z",
+  "ccn": "321305",
+  "purpose": "Check both NPIs declared in the current page-linked CMS v3.0.0 MRF against the official NPPES API, rather than treating the already-reviewed primary NPI as representative of the secondary NPI.",
+  "source": {
+    "agency": "CMS National Plan and Provider Enumeration System",
+    "url": "https://npiregistry.cms.hhs.gov/api/?number=1598899874&version=2.1",
+    "http_status": 200,
+    "response_bytes": 1429,
+    "response_sha256": "a725b8c24a383ff5a8410b228446e7979cfa5e26679c067a3f284acd5114d6b4",
+    "npi": "1598899874",
+    "organization_name": "NOR-LEA HOSPITAL DISTRICT",
+    "record_last_updated": "2009-12-18",
+    "location_address": "1600 NORTH MAIN, LOVINGTON, NM 88260-2813",
+    "mailing_address": "1600 NORTH MAIN, LOVINGTON, NM 88260-2813",
+    "taxonomy": "275N00000X (Medicare Defined Swing Bed Unit)",
+    "license_number": "3102",
+    "license_state": "NM",
+    "authorized_official": "CEO/Administrator"
+  },
+  "mrf_comparison": {
+    "mrf_url": "https://hospitalpricetransparencyfiles.com/nor-lea-district-hospital/850278235_Nor-Lea-Hospital-District_standardcharges.csv",
+    "mrf_sha256": "549aeebd73a2ec8cb6ba28c75e1af7b31380db81b6597d042c8b0a821dcc151e",
+    "mrf_declared_address": "1900 North Main Avenue, Lovington, NM 88260-2813",
+    "mrf_declared_npis": ["1881630036", "1598899874"],
+    "mrf_declared_license": "3102 / NM",
+    "mrf_declared_date": "2026-07-17",
+    "cms_template_version": "3.0.0"
+  },
+  "finding": "This is a new exact-secondary-NPI source check. NPPES returns the same Nor-Lea organization, New Mexico license 3102 and 1600 North Main address for NPI 1598899874, so neither NPI declared in the MRF corroborates its 1900 North Main literal. However, the secondary NPI record was last updated 2009-12-18 and is not current enough to rule out a later address or billing/location role. This strengthens the address conflict but does not prove the MRF address invalid or establish whether 1900 is a valid hospital location.",
+  "disposition": "address-conflict-strengthened-secondary-npi-record-stale-still-unresolved",
+  "count_effect": 0,
+  "new_mrf_bytes_retrieved": false,
+  "recheck_classification": "new-official-source-instance-for-previously-undeveloped-secondary-npi; not a file retrieval or resolution",
+  "next_action": "Keep CCN 321305 unresolved on the physical-address field. Preserve the 1900 literal and existing complete-file hash; obtain a publisher correction or authoritative current facility/licensure record tying the hospital and this MRF to 1900 North Main. Do not infer equivalence or normalize to 1600."
+}

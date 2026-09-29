@@ -1,0 +1,19 @@
+{
+  "ccn": "131314",
+  "observed_at": "2026-09-25T00:00:00Z",
+  "official_site": "https://www.shoshonehealth.com/",
+  "official_pricing_page": "https://www.shoshonehealth.com/patients/registrationbilling/",
+  "page_http_status": 200,
+  "page_observation": "The current first-party Registration/Billing page identifies Shoshone Medical Center, links an HPI price-transparency route, and states that a machine-readable chargemaster is available.",
+  "page_file_url": "https://www.shoshonehealth.com/wp-content/uploads/2019/12/2020-Charge-Master.csv",
+  "page_file_http_status": 200,
+  "page_file_content_type": "text/csv; charset=utf-8",
+  "page_file_bytes": 194646,
+  "page_file_sha256": "255541b660748f0a50bf62cd4b91d8b444caedf96de5a4fcc0bbee891a2f0d6b",
+  "page_file_observation": "The linked object is unchanged historical 2020 charge data with DESCRIPTION/CPT/REV/PRICE columns and no CMS 3.0.0 metadata, declared update date, NPI, license or facility address.",
+  "hpi_route": "https://search.hospitalpriceindex.com/hpi2/machineReadable/ShoshoneMedicalCenter/7852",
+  "hpi_route_observation": "The first-party-linked HPI machine-readable route still returns a facility-not-found response; its CSV click also fails with unsupported text/csv retrieval in the web tool.",
+  "disposition": "official-page-reconfirmed-historical-file-only",
+  "interpretation": "This is a dated recheck and provenance confirmation, not new current MRF evidence. No promotion, downgrade, file-absence or compliance conclusion is made.",
+  "next_action": "Obtain a publisher-provided replacement/current CSV or authorized HPI download route, then verify name, Kellogg Idaho address, date, version and usable rows."
+}

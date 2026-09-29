@@ -1,0 +1,23 @@
+{
+  "ccn": "130073",
+  "observed_at": "2026-09-21T23:40:00Z",
+  "source": "official Grove Creek Medical Center website linked Price Transparency route",
+  "official_site": "https://grovecreekmc.org/",
+  "official_pricing_link": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbBMHECBlackfootID&type=CDMWithoutLabel&fileType=CSV",
+  "retrieval": {
+    "status": 200,
+    "content_type": "application/octet-stream",
+    "bytes": 23598385,
+    "header_sample": "hospital_name,last_updated_on,version,location_name,hospital_address,license_number | ID,type_2_npi,..."
+  },
+  "declared_hospital_name": "BINGHAM MEMORIAL HOSPITAL",
+  "declared_location_name": "BINGHAM MEMORIAL HOSPITAL",
+  "declared_address": "98 Poplar St Blackfoot ID 83221",
+  "declared_last_updated": "2026-02-02",
+  "cms_template_version": "3.0.0",
+  "attestation": true,
+  "manual_identity_gate": "shared-bingham-file-header-does-not-match-grove-creek-facility",
+  "disposition": "official-linked-shared-file-excluded",
+  "interpretation": "The official Grove Creek site links a PARA route whose returned file header identifies Bingham Memorial Hospital, not Grove Creek Medical Center. The file is excluded from Grove Creek and no MRF promotion is made.",
+  "next_action": "Obtain a Grove Creek-specific pointer/file or publisher clarification; require exact facility identity before promotion."
+}

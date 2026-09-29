@@ -1,0 +1,21 @@
+{
+  "ccn": "671301",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "roster_identity": {
+    "name": "HEMPHILL COUNTY HOSPITAL",
+    "address": "1020 S FOURTH ST",
+    "city": "CANADIAN",
+    "state": "TX",
+    "zip": "79014"
+  },
+  "recorded_domain": "https://co.hemphill.tx.us",
+  "current_official_domain": "https://hchdst.org/",
+  "official_page_url": "https://hchdst.org/welcome-to-hchd/",
+  "official_page_observation": "The current Hemphill County Hospital District page identifies the district at 1020 S. 4th Street, Canadian, TX 79014 and links Cost of Services to the Sliced Health pricing portal.",
+  "pricing_portal_url": "https://hchdst.slicedhealth.io/home",
+  "browser_observation": "The permitted browser rendered the Sliced Health Price Transparency Tool, loaded Hemphill County Hospital District as the facility, and exposed a Standard Charges / Export Machine Readable File control. Activating the control in this client did not expose a stable file URL or downloadable bytes.",
+  "pointer_observation": "The previously recorded co.hemphill.tx.us domain was not used as evidence of current availability; the current first-party site is hchdst.org. No current root cms-hpt.txt response or direct MRF URL was recovered.",
+  "disposition": "official-pricing-portal-rendered-but-mrf-file-unavailable",
+  "interpretation": "The current operator and facility identity are supported and the discovery gap is narrowed to a live pricing portal. Portal UI alone is not evidence of MRF identity, CMS schema, freshness or attestation. No third-party file was assigned and no compliance conclusion was inferred.",
+  "next_action": "Capture the portal's Standard Charges export endpoint or downloaded bytes using a download-capable browser/client, then validate facility name, address, state, NPI/license, CMS version, last_updated_on and attestation before promotion."
+}

@@ -1,0 +1,13 @@
+{
+  "ccn": "184015",
+  "observed_at": "2026-09-21T22:00:00Z",
+  "official_identity_page": "https://www.chfs.ky.gov/agencies/dbhdid/Pages/facilities.aspx",
+  "official_page_status": 200,
+  "official_page_observation": "Kentucky CHFS lists Central State Hospital as a state-operated psychiatric hospital at 10510 LaGrange Road, Louisville, KY 40223-1228. The current CHFS facility and per-diem pages expose facility information and rate sheets, but no CMS cms-hpt.txt pointer or facility-specific CSV/JSON MRF was found.",
+  "roster_identity": "CENTRAL STATE HOSPITAL",
+  "roster_address": "10510 LaGrange Road, Louisville, KY 40223-1228",
+  "pricing_artifact_context": "The CHFS per-diem rate sheet is not treated as a CMS machine-readable standard-charge file.",
+  "disposition": "official-state-facility-identity-confirmed-cms-mrf-discovery-incomplete",
+  "interpretation": "New official facility identity/address and pricing-discovery observation; no CMS MRF bytes or pointer were located, and no compliance conclusion is inferred.",
+  "next_action": "Retry the CHFS facility route and root pointer through an authorized browser/download-capable route; locate a Central State-specific CMS CSV/JSON and verify bytes, Kentucky metadata, declared date/version and usability."
+}

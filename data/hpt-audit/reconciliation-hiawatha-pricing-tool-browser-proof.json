@@ -1,0 +1,15 @@
+{
+  "ccn": "171341",
+  "hospital_name": "Hiawatha Community Hospital / Amberwell Hiawatha",
+  "observed_at": "2026-09-19T00:22:15Z",
+  "official_domain_lead": "https://amberwellhealth.org/",
+  "pricing_tool_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Amberwell_Hiawatha.aspx",
+  "pricing_tool_observation": "Browser-rendered Amberwell Hiawatha Hospital pricing tool displays standard charges, shoppable and unshoppable pricing dated August 18, 2026, and identifies the hospital by name throughout the page.",
+  "standard_charges_control": "JavaScript DownloadReport('hospital','CDMWithoutLabel') control; no direct file URL exposed in the rendered accessibility tree.",
+  "browser_action_result": "Activating the standard-charges control produced no navigation or visible download result.",
+  "report_endpoint_observation": {"url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=hospital&type=CDMWithoutLabel", "http_status": 500, "content_type": "text/html; charset=utf-8"},
+  "pointer_urls_checked": ["https://amberwellhealth.org/cms-hpt.txt", "https://www.amberwellhealth.org/cms-hpt.txt"],
+  "pointer_status": "not-retrieved-in-this pass; publisher-associated pricing tool retained as lead",
+  "disposition": "current-publisher-associated-pricing-tool-observed-file-bytes-unavailable-unresolved",
+  "next_action": "Recover the exact underlying standard-charges CSV/JSON through a changed authorized route or publisher-provided link; verify bounded bytes, CMS template/version, Hiawatha facility identity, Kansas state, address, declared date and rate-level usability before promotion."
+}

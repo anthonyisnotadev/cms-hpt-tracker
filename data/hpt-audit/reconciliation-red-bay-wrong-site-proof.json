@@ -1,0 +1,23 @@
+{
+  "ccn": "011302",
+  "observed_at": "2026-09-17T15:18:00.000Z",
+  "roster_name": "RED BAY HOSPITAL",
+  "roster_address": "211 HOSPITAL ROAD",
+  "roster_city": "RED BAY",
+  "roster_state": "AL",
+  "roster_zip": "35582",
+  "previous_assigned_domain": "healthy.kaiserpermanente.org",
+  "previous_pointer_url": "https://healthy.kaiserpermanente.org/cms-hpt.txt",
+  "previous_pointer_artifact": "cms_data/hpt/pointer-corpus/raw/healthy.kaiserpermanente.org-914d512d9f60.txt",
+  "previous_pointer_sha256": "20b21852c655782bc52846ecf107d6016be730c415782f281079763e145eb5b8",
+  "previous_pointer_names_red_bay": false,
+  "first_party_system_domain": "hh.health",
+  "first_party_red_bay_page_url": "https://hh.health/red-bay-hospital/rbh-patients-visitor/",
+  "first_party_price_page_url": "https://hh.health/patients-visitors/price-transparency/",
+  "first_party_page_file_label": "Red Bay Hospital Standard Charge File",
+  "first_party_page_file_url": "https://hh.health/wp-content/uploads/472323163_red-bay-hospital_standardcharges.csv",
+  "browser_access_observation": "In-app browser navigation to the HH Health pricing page returned ERR_NAME_NOT_RESOLVED; bounded direct requests to hh.health root pointer and page file also returned DNS resolution errors.",
+  "root_pointer_status": "not retrieved in this client; DNS resolution failed",
+  "page_file_byte_status": "not retrieved in this client; DNS resolution failed",
+  "next_action": "When HH Health resolves in an authorized client, retrieve its exact root cms-hpt.txt and the Red Bay page-linked CSV with a bounded request. Verify pointer-file linkage, Red Bay name, 211 Hospital Road campus, AL license state, declared date/version and complete-file usability; do not reuse the unrelated Kaiser pointer."
+}

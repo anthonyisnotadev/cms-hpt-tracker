@@ -1,0 +1,51 @@
+{
+  "ccn": "090004",
+  "observed_at": "2026-09-28T09:28:00Z",
+  "purpose": "Check whether a new official DC Health licensure survey document independently associates the Georgetown hospital and current DC regulatory identifier with the exact campus address.",
+  "source_page": {
+    "url": "https://dchealth.dc.gov/node/1830186",
+    "title": "MedStar Georgetown University Hospital - Licensure Inspection Reports 2026",
+    "posted_date": "2026-05-08",
+    "listed_report": "Georgetown University survey 12-18-25 PoC.pdf"
+  },
+  "report": {
+    "url": "https://dchealth.dc.gov/sites/default/files/dc/sites/doh/publication/attachments/Georgetown%20University%20survey%2012-18-25%20PoC.pdf",
+    "document_title": "Statement of Deficiencies and Plan of Correction",
+    "report_printed_date": "2026-05-07",
+    "survey_completed_date": "2025-12-18",
+    "department": "DC Department of Health, Health Regulation & Licensing Administration",
+    "provider_supplier_clia_identification_number": "HFD01-0188",
+    "facility_name": "MEDSTAR GEORGETOWN UNIVERSITY",
+    "facility_address": "3800 RESERVOIR RD, WASHINGTON, DC 20007",
+    "http_status": 206,
+    "content_type": "application/pdf",
+    "content_range": "bytes 0-65535/403855",
+    "bounded_sample_bytes": 65536,
+    "bounded_sample_sha256": "b83be733ce8688134fa0256428175df8048eb07d0907d83aa9df8e7e0b2e0ca0",
+    "full_document_retrieval_2026_09_29": {
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "bytes": 403855,
+      "sha256": "10500bc3d4d54f94398cb5232a3b7d5572b536d9394e4150df5ad1521481c390",
+      "retained_file": "retained-source-documents/medstar-georgetown-dc-health-survey-2026-05-07.pdf",
+      "retrieval_method": "PowerShell Invoke-WebRequest from the exact official DC Health PDF URL; retained complete response bytes and verified local SHA-256",
+      "comparison_to_prior_observation": "Prior evidence retained only HTTP 206 bytes 0-65535/403855 with SHA-256 b83be733ce8688134fa0256428175df8048eb07d0907d83aa9df8e7e0b2e0ca0. This full-document retrieval improves reproducibility only; it is the same report, not a new hospital finding or MRF observation."
+    },
+    "pdf_header": "%PDF-1.7",
+    "text_source": "Official DC Health report PDF parsed by the web reader; page 1 shows provider/supplier/CLIA identification number HFD01-0188, the named hospital, and the Washington DC campus address.",
+    "browser_observation": "The Codex in-app browser opened the exact PDF URL but timed out waiting for navigation and exposed only the PDF URL in its accessibility tree; this is recorded as a browser-rendering/tool observation, not a facility access result. The official DC Health page and PDF were independently readable through the web reader and bounded HTTP request."
+  },
+  "evidence_gain": "The 2026 official regulatory survey was already present in the audit. This observation adds reproducibility by retaining and hashing its complete PDF bytes, beyond the previously retained 65,536-byte range sample. It does not add a new hospital finding or MRF observation. The report labels HFD01-0188 as provider/supplier/CLIA identification number; it does not explicitly call it the current state license number or explain why the MRF column is license_number|MD.",
+  "unchanged_mrf_evidence": {
+    "proof_file": "reconciliation-medstar-georgetown-current-pointer-license-conflict-2026-09-26.json",
+    "mrf_license_column": "license_number|MD",
+    "mrf_license_number": "HFD01-0188",
+    "mrf_sha256": "6635b4a3398e86e024b08938f18f074b4eb89f46f54b13d85a7c68b5f214a10d",
+    "mrf_declared_address": "3800 Reservoir Rd. Northwest, Washington, DC 20007",
+    "mrf_date": "2026-04-01",
+    "mrf_template_version": "3.0.0"
+  },
+  "disposition": "narrowed-license-metadata-suffix-conflict-retained",
+  "cohort_count_effect": 0,
+  "next_action": "Retain CCN 090004 unresolved until MedStar corrects or explains the literal MD suffix. Do not infer that this 2026 DC Health provider identifier proves the MRF state suffix is correct or erroneous."
+}

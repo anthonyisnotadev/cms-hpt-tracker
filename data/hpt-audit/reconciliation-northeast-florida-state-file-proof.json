@@ -1,0 +1,25 @@
+{
+  "ccn": "104007",
+  "observed_at": "2026-09-19T05:05:00Z",
+  "official_domain": "https://www.myflfamilies.com/",
+  "official_facility_page": "https://www.myflfamilies.com/services/samh/treatment-services/northeast-florida-state-hospital/",
+  "facility_name": "Northeast Florida State Hospital",
+  "roster_city": "MACCLENNY",
+  "roster_state": "FL",
+  "charge_master_page": "https://www.myflfamilies.com/services/samh/samh-treatment-services-and-facilities",
+  "xlsx_url": "https://www.myflfamilies.com/documents/2781.xlsx",
+  "xlsx_http_status": 200,
+  "xlsx_content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "xlsx_bytes": 31291,
+  "xlsx_last_modified": "2026-07-17T19:17:54Z",
+  "xlsx_sha256": "CC74DA0F9F8EBE58F9947166D5A8F0D9BFEFC7818251880F23C0040FA723445E",
+  "file_metadata": "Northeast Florida State Hospital standard charges for provided services; legacy state charge schedule, not a CMS CSV/JSON MRF",
+  "pointer_urls_checked": [
+    "https://myflfamilies.com/cms-hpt.txt",
+    "https://www.myflfamilies.com/cms-hpt.txt"
+  ],
+  "pointer_access_observation": "no cms-hpt.txt published in standing site check; no separate pointer established",
+  "disposition": "official-state-file-found-legacy-format-pointer-unpublished-cms-mrf-unresolved",
+  "scope_note": "The DCF charge-master page exposes a current Northeast Florida State Hospital Excel schedule. The file is directly retrievable and hash-bound, but is a legacy state charge schedule rather than a current CMS-template CSV/JSON MRF. The standing compliance record reports no CMS pointer published. No exemption or compliance conclusion is inferred.",
+  "next_action": "Confirm the CCN-to-facility scope and whether DCF has a current CMS-specified CSV/JSON; independently verify current date/version, facility identity, Florida state and usable rate fields before promotion."
+}

@@ -1,0 +1,29 @@
+{
+  "ccn": "301301",
+  "hospital_name": "COTTAGE HOSPITAL",
+  "official_site": "https://www.cottagehospital.org/",
+  "official_pricing_page": "https://www.cottagehospital.org/standard-charges",
+  "official_facility_address": "90 Swiftwater Road, Woodsville, NH 03785",
+  "observed_at": "2026-09-19T21:17:55Z",
+  "pointer_url": "https://www.cottagehospital.org/cms-hpt.txt",
+  "pointer_observation": {
+    "http_status": 403,
+    "content_type": "text/html",
+    "content_length": 4555,
+    "sha256": "4b311eb99781a8deb2f7b73b79581d67191cd9370e6d131a9f5cfe479f4d43c9",
+    "body_kind": "Cloudflare challenge HTML",
+    "pointer_fields_retrieved": false
+  },
+  "page_linked_file_url": "https://www.cottagehospital.org/uploads/files/020223321_cottage_hospital_standardcharges%282%29.csv",
+  "page_linked_file_observation": {
+    "http_status": 403,
+    "content_type": "text/html",
+    "content_length": 4555,
+    "sha256": "17a9acb110577c95e201a7cb2f780f3f28f6a886c151ae95fbc73a630b8a6fe5",
+    "body_kind": "Cloudflare challenge HTML",
+    "file_bytes_retrieved": false
+  },
+  "disposition": "page-and-pointer-access-denied-to-client",
+  "detail": "The official standard-charges page and its exact first-party CSV target are independently identified in current web results, but the root pointer and CSV both returned Cloudflare challenge HTML to the bounded client. No pointer fields, CSV bytes, facility header, declared date or CMS version were recovered. This is access evidence only, not proof of missing publication or invalid data.",
+  "next_action": "Obtain a permitted content-bearing response from the exact pointer and page-linked CSV, then verify Cottage Hospital identity, 90 Swiftwater Road Woodsville NH address, declared date, CMS version and usable rows before promotion. Do not retry these targets until a publisher or access-path change."
+}

@@ -1,0 +1,42 @@
+{
+  "audit_id": "foundation-surgical-texas-dshs-two-facility-address-crosscheck-2026-09-28",
+  "ccn_under_review": "670054",
+  "observed_at": "2026-09-28T11:47:17Z",
+  "source": {
+    "publisher": "Texas Department of State Health Services",
+    "document_title": "Hospital List 2024",
+    "url": "https://www.dshs.texas.gov/sites/default/files/chs/hosp/Hospitallis2024.pdf",
+    "http_status": 200,
+    "content_type": "application/pdf",
+    "bytes": 294787,
+    "last_modified": "2025-06-02T18:32:15Z",
+    "sha256": "527362111ef9c1023e299f71e7b1989b349a0ed6c256cc353868255e4d051888",
+    "extracted_entries": [
+      {
+        "texas_dshs_facility_id": "296418",
+        "name": "Foundation Surgical Hospital of San Antonio",
+        "address": "9522 Huebner Road, San Antonio, Bexar County, TX 78240",
+        "licensed_beds": 20,
+        "ownership_label": "Corporation"
+      },
+      {
+        "texas_dshs_facility_id": "296524",
+        "name": "Legent Orthopedic + Spine",
+        "address": "5330 North Loop 1604 West, San Antonio, Bexar County, TX 78249-1371",
+        "licensed_beds": 25,
+        "ownership_label": "Partnership"
+      }
+    ]
+  },
+  "cms_crosswalk_context": {
+    "proof_file": "reconciliation-foundation-surgical-site-address-crosswalk-2026-09-27.json",
+    "ccn_670054": "Current CMS enrollment identifies Foundation Surgical Hospital / NPI 1932284411 at 9522 Huebner Road; current linked JSON also declares that address.",
+    "ccn_670112": "Current CMS enrollment identifies Cumberland Surgical Hospital LLC dba Legent Orthopedic + Spine / NPI 1568848059 at 5330 N Loop 1604 W."
+  },
+  "interpretation": "The 2024 Texas DSHS hospital list independently distinguishes two state-listed facilities and addresses: Foundation at Huebner and Legent Orthopedic + Spine at North Loop. Combined with the separate current CMS enrollment crosswalk, this strengthens the attribution boundary for 670054 versus 670112. The DSHS state facility IDs are not CCNs, the 2024 list is not a current license-status extract, and it does not establish whether Foundation's current page header is stale/shared or represents an additional practice location. Keep the page/file/CMS address conflict unresolved; do not transfer either MRF or change facility scope.",
+  "evidence_class": "independent_state_identity_and_address_corroboration",
+  "new_mrf_bytes": false,
+  "disposition_changed": false,
+  "count_effect": "none",
+  "next_action": "Obtain publisher clarification or corrected page/file metadata explaining the Foundation-branded 5330 North Loop address versus the Foundation CMS enrollment and linked JSON at 9522 Huebner Road. Preserve both facility identities, their separate state/CMS identifiers, NPIs and MRF chains; do not reassign the 670112/Legent file to 670054."
+}

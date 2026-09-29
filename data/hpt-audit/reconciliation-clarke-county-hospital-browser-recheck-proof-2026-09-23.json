@@ -1,0 +1,13 @@
+{
+  "ccn":"161348","observed_at":"2026-09-23T10:30:00Z",
+  "official_site":"https://clarkehosp.org/",
+  "official_identity":"Clarke County Hospital, 800 S Fillmore St, Osceola, IA 50213 (CMS record independently confirms this facility/address).",
+  "browser_observation":"Interactive browser navigation failed with net::ERR_NAME_NOT_RESOLVED. Bounded HTTPS requests to the homepage and exact root pointer also failed DNS resolution.",
+  "pointer_urls":["https://clarkehosp.org/cms-hpt.txt","https://www.clarkehosp.org/cms-hpt.txt"],
+  "pointer_status":"DNS resolution failure; no pointer content recovered",
+  "mrf_observation":"No MRF bytes recovered; no file-absence or compliance conclusion inferred.",
+  "cms_api_url":"https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=161348&conditions%5B0%5D%5Boperator%5D=%3D","cms_api_status":200,"cms_api_response_bytes":6646,"cms_api_response_sha256":"60620D08651FA44F3E95022D13CDD577D81C4496329A486C1E00C434EEED2E8E","cms_record":{"facility_id":"161348","facility_name":"CLARKE COUNTY HOSPITAL","address":"800 S FILLMORE ST","citytown":"OSCEOLA","state":"IA","zip_code":"50213"},
+  "disposition":"browser-dns-resolution-failure",
+  "interpretation":"The CMS identity is recorded, but the recorded first-party domain and exact pointer route are currently DNS-unresolvable. This is a transport/domain-access observation only, not a file-absence or compliance finding.",
+  "next_action":"Retry the recorded domain and pointer after DNS remediation or verify a replacement first-party domain; recover and verify facility-specific MRF bytes before promotion."
+}

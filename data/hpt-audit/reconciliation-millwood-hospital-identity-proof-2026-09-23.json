@@ -1,0 +1,11 @@
+{
+  "ccn": "454012",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://www.millwoodhospital.com/",
+  "official_identity": "CMS and independent provider records identify Millwood Hospital LP at 1011 North Cooper Street, Arlington, TX 76011, associated with CCN 454012.",
+  "browser_observation": "Browser automation reached the first-party Millwood Hospital domain but the page and tested CMS pointer/pricing paths returned an anti-bot interstitial or HTTP 403. No machine-readable bytes were assigned.",
+  "pricing_observation": "No usable facility-specific CMS pointer or MRF was retrieved from the first-party domain during this review. This is a transport/access observation, not evidence that a file is absent or that the facility is exempt.",
+  "disposition": "current-operator-identity-confirmed-pricing-route-client-denied",
+  "interpretation": "This replaces the stale domain-unknown label with a supported first-party domain and exact facility identity while preserving the unresolved pricing route.",
+  "next_action": "Retry the first-party CMS pointer and pricing page through a materially different permitted browser/download route; require bounded bytes, Millwood identity, Texas metadata, date/version and parsed usability before promotion."
+}

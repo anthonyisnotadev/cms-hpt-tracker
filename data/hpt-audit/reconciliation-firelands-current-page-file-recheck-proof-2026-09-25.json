@@ -1,0 +1,18 @@
+{
+  "ccn": "360025",
+  "observed_at": "2026-09-25T05:03:00Z",
+  "official_pricing_page": "https://www.firelands.com/patients-guests/billing-insurance/price-transparency/",
+  "official_identity": "Firelands Regional Medical Center, 1111 Hayes Ave., Sandusky, OH 44870",
+  "page_mrf_url": "https://www.firelands.com/app/files/public/f431cc81-07d8-4f2b-a027-dab8621d088d/341401659%20_firelands-regional-medical-center_standardcharges.csv",
+  "page_observation": "The current first-party page still labels and links the Firelands Regional Medical Center machine-readable/price-transparency CSV.",
+  "browser_observation": "Activating the exact page-linked CSV did not produce a visible browser navigation or downloaded file in this client; direct retrieval returned HTTP 403 HTML.",
+  "direct_retrieval": {
+    "status": 403,
+    "content_type": "text/html",
+    "response_bytes": 551,
+    "response_sha256": "774303f06088855d3d2f15be04c82d01f84714157e85c33849277d30c6eb0d71"
+  },
+  "disposition": "current-page-file-link-recheck-access-unresolved",
+  "interpretation": "The current page and facility identity are confirmed, but no file bytes or metadata were recovered. The 403 is retained as an access observation, not file absence or a compliance conclusion.",
+  "next_action": "Retrieve the exact CSV through a permitted download-capable route or publisher-provided copy; verify bounded bytes, declared facility/address/state, update date, CMS version and parsed usability before promotion."
+}

@@ -1,0 +1,24 @@
+{
+  "observed_at": "2026-09-20T21:15:00Z",
+  "ccn": "234035",
+  "source_page": "https://www.michigan.gov/dtmb/buildings/facility-addresses",
+  "source_lines": "276-334",
+  "facility_observation": {
+    "name": "Walter P. Reuther Psychiatric Hospital",
+    "address": "30901 Palmer Road, Westland, MI 48186",
+    "state": "MI"
+  },
+  "pricing_route": {
+    "official_pricing_page_found": false,
+    "search_terms": ["price transparency", "standard charges", "cms-hpt", "machine readable file"],
+    "interpretation": "The current Michigan state facility directory confirms the facility identity but is not a pricing page and does not expose an MRF link."
+  },
+  "pointer_probes": [
+    {"url": "https://www.michigan.gov/cms-hpt.txt", "status": 404},
+    {"url": "https://www.michigan.gov/mdhhs/cms-hpt.txt", "status": 404},
+    {"url": "https://www.michigan.gov/mdhhs/inside-mdhhs/cms-hpt.txt", "status": 404},
+    {"url": "https://michigan.gov/cms-hpt.txt", "status": 404}
+  ],
+  "disposition": "official-state-identity-confirmed-pricing-route-unresolved",
+  "next_action": "Locate a facility-appropriate Michigan pricing page or publisher pointer and retrieve bounded MRF bytes; do not infer absence from the tested 404 paths."
+}

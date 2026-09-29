@@ -1,0 +1,44 @@
+{
+  "observed_at": "2026-09-16T11:42:50.000Z",
+  "operator_transition_source": "https://freemanhealth.com/news/freeman-health-system-completes-acquisition-of-northwest-health-expands-regional-care",
+  "operator_transition_date": "2026-06-01",
+  "old_pointer_url": "https://www.northwesthealth.com/cms-hpt.txt",
+  "old_pointer_head_http_status": 301,
+  "old_pointer_location_header": "https://www.freemanhealthnw.comcms-hpt.txt",
+  "old_pointer_location_issue": "Malformed redirect target omits the slash between the new hostname and cms-hpt.txt path.",
+  "new_arkansas_site": "https://www.freemanhealthnw.com/",
+  "new_arkansas_home_bounded_sha256": "379d746f53e5e114e36645a998e3451043b628e2b50f888b9faa54",
+  "new_arkansas_pointer_url": "https://www.freemanhealthnw.com/cms-hpt.txt",
+  "new_arkansas_pointer_head_http_status": 404,
+  "new_arkansas_pointer_bounded_get_http_status": 206,
+  "new_arkansas_pointer_content_type": "text/html; charset=utf-8",
+  "new_arkansas_pointer_page_title": "404 | Page Not Found | Freeman Health System | Bentonville | Springdale | Arkansas",
+  "new_arkansas_pointer_bounded_sha256": "f45bb204e29883fd70bf0b33e9b6e22e3232547fce21d4ce2e1daf645834851c",
+  "new_arkansas_home_price_transparency_link": "https://www.freemanhealthnw.com/acquisition",
+  "new_arkansas_home_price_transparency_link_title": "We’re here to help during this transition",
+  "new_arkansas_home_price_transparency_link_bounded_sha256": "d42304bc301f6f48182fa349345a89b0c2140bd92a2e6574299ccd22ea53647b",
+  "system_pointer_url": "https://www.freemanhealth.com/cms-hpt.txt",
+  "system_pointer_http_status": 206,
+  "system_pointer_content_type": "text/plain",
+  "system_pointer_sha256": "68db79b55bd321c09bbf4ec1500de2b8e11a3decae74e599d1df8024bb165dde",
+  "system_pointer_entry_count": 7,
+  "system_pointer_arkansas_entry_present": false,
+  "facilities": [
+    {
+      "ccn": "040001",
+      "roster_name": "SILOAM SPRINGS REGIONAL HOSPITAL",
+      "current_operator_name": "Freeman Health System – Siloam Springs Medical Center",
+      "official_identity_url": "https://www.freemanhealthnw.com/",
+      "official_address": "603 North Progress Avenue, Siloam Springs, AR 72761"
+    },
+    {
+      "ccn": "040022",
+      "roster_name": "NORTHWEST MEDICAL CENTER-SPRINGDALE",
+      "current_operator_name": "Freeman Health System – Springdale Medical Center",
+      "official_identity_url": "https://www.freemanhealthnw.com/",
+      "official_address": "609 West Maple Avenue, Springdale, AR 72764"
+    }
+  ],
+  "disposition": "operator-transition-old-pointer-malformed-redirect-new-arkansas-root-404-system-root-no-arkansas-entries",
+  "next_action": "After the publisher corrects the Arkansas root or price-transparency destination, retrieve each facility-specific pointer entry and its exact MRF, then verify file name, campus address, state, date and version separately. Do not transfer Freeman Missouri file metadata or infer an Arkansas file from site identity alone."
+}

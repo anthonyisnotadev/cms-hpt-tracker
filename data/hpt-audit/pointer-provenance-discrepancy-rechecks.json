@@ -1,0 +1,259 @@
+{
+  "reason": "Retained crawl-state hashes and corpus-index/raw bytes disagree for the exact requested root at the same recorded timestamp.",
+  "summary": {
+    "attempted": 9,
+    "complete_structured_pointers": 8,
+    "verification_hashes_reproduced": 6,
+    "http_statuses": {
+      "0": 1,
+      "200": 8
+    }
+  },
+  "records": [
+    {
+      "ccn": "294015",
+      "checked_url": "https://renobehavioral.com/cms-hpt.txt",
+      "observed_at": "2026-09-25T10:18:42.385Z",
+      "prior_verification_sha256": "2f5c55cbcecddd9cfa0623bb6c7f97c7ffce7e14584aa3c2f0b0e2d7c4c6caf3",
+      "prior_corpus_index_sha256s": [
+        "8f49f85bde0f82f8ae6afeb2fe4bf026718df21cf43551c3381b6b5b662c8f24"
+      ],
+      "http_status": 200,
+      "content_type": "text/plain",
+      "final_host": "renobehavioral.com",
+      "redirect_count": 0,
+      "response_bytes": 3192,
+      "response_sha256": "2f5c55cbcecddd9cfa0623bb6c7f97c7ffce7e14584aa3c2f0b0e2d7c4c6caf3",
+      "verification_hash_reproduced": true,
+      "request_error": "",
+      "complete_pointer_bytes": true,
+      "pointer_format": "txt",
+      "parsed_location_names": [
+        "Dallas Behavioral Healthcare Hospital",
+        "Houston Behavioral Healthcare Hospital",
+        "Georgetown Behavioral Health Institute",
+        "Aurora Behavioral Health - Glendale",
+        "Aurora Behavioral Health - Tempe",
+        "Aurora Las Encinas, LLC",
+        "Vista Del Mar Hospital",
+        "Bakersfield Behavioral Healthcare Hospital",
+        "Aurora San Diego LLC",
+        "Aurora San Diego LLC"
+      ],
+      "retained_file": "cms_data/hpt/nationwide-verification/pointer-provenance-rechecks/2f5c55cbcecddd9cfa0623bb6c7f97c7ffce7e14584aa3c2f0b0e2d7c4c6caf3.bin",
+      "next_action": "Reconcile this fresh root entry set to the exact CCN and independently verify any intended file before updating the standing finding."
+    },
+    {
+      "ccn": "310025",
+      "checked_url": "https://hudsonregionalhospital.com/cms-hpt.txt",
+      "observed_at": "2026-09-25T10:18:42.399Z",
+      "prior_verification_sha256": "3b4e3e2a8edfa3b13b56b8f56fc09b620154f31af78e7ce92ace4d82e0d84900",
+      "prior_corpus_index_sha256s": [
+        "995e7c4957d37be6fa8031bfce2456c6de8dd79cd134a041c6a6c41ec9d5fb4c"
+      ],
+      "http_status": 200,
+      "content_type": "text/plain",
+      "final_host": "hudsonregionalhospital.com",
+      "redirect_count": 0,
+      "response_bytes": 1367,
+      "response_sha256": "cd2b4c6b89e158910c192bd561da0c6b2d0d21b411d8907b6cf0eb02d5d1887b",
+      "verification_hash_reproduced": false,
+      "request_error": "",
+      "complete_pointer_bytes": true,
+      "pointer_format": "txt",
+      "parsed_location_names": [
+        "Secaucus University Hospital",
+        "Bayonne University Hospital",
+        "Hoboken University Hospital",
+        "Heights University Hospital"
+      ],
+      "retained_file": "cms_data/hpt/nationwide-verification/pointer-provenance-rechecks/cd2b4c6b89e158910c192bd561da0c6b2d0d21b411d8907b6cf0eb02d5d1887b.bin",
+      "next_action": "Reconcile this fresh root entry set to the exact CCN and independently verify any intended file before updating the standing finding."
+    },
+    {
+      "ccn": "310118",
+      "checked_url": "https://hudsonregionalhospital.com/cms-hpt.txt",
+      "observed_at": "2026-09-25T10:18:42.408Z",
+      "prior_verification_sha256": "3b4e3e2a8edfa3b13b56b8f56fc09b620154f31af78e7ce92ace4d82e0d84900",
+      "prior_corpus_index_sha256s": [
+        "995e7c4957d37be6fa8031bfce2456c6de8dd79cd134a041c6a6c41ec9d5fb4c"
+      ],
+      "http_status": 200,
+      "content_type": "text/plain",
+      "final_host": "hudsonregionalhospital.com",
+      "redirect_count": 0,
+      "response_bytes": 1367,
+      "response_sha256": "cd2b4c6b89e158910c192bd561da0c6b2d0d21b411d8907b6cf0eb02d5d1887b",
+      "verification_hash_reproduced": false,
+      "request_error": "",
+      "complete_pointer_bytes": true,
+      "pointer_format": "txt",
+      "parsed_location_names": [
+        "Secaucus University Hospital",
+        "Bayonne University Hospital",
+        "Hoboken University Hospital",
+        "Heights University Hospital"
+      ],
+      "retained_file": "cms_data/hpt/nationwide-verification/pointer-provenance-rechecks/cd2b4c6b89e158910c192bd561da0c6b2d0d21b411d8907b6cf0eb02d5d1887b.bin",
+      "next_action": "Reconcile this fresh root entry set to the exact CCN and independently verify any intended file before updating the standing finding."
+    },
+    {
+      "ccn": "320001",
+      "checked_url": "https://unmhealth.org/cms-hpt.txt",
+      "observed_at": "2026-09-25T10:18:42.725Z",
+      "prior_verification_sha256": "452f9f3a3af42db6ec2fc7c8df1199deadfac2a422b6549383a99cdc7a768c1a",
+      "prior_corpus_index_sha256s": [
+        "d923e9d0d7aeb35f580f7f1cf83388faf17a5ce786fce303c299043f542be2f0"
+      ],
+      "http_status": 200,
+      "content_type": "text/plain",
+      "final_host": "unmhealth.org",
+      "redirect_count": 0,
+      "response_bytes": 743,
+      "response_sha256": "452f9f3a3af42db6ec2fc7c8df1199deadfac2a422b6549383a99cdc7a768c1a",
+      "verification_hash_reproduced": true,
+      "request_error": "",
+      "complete_pointer_bytes": true,
+      "pointer_format": "txt",
+      "parsed_location_names": [
+        "University of New Mexico Hospital",
+        "UNM Sandoval Regional Medical Center"
+      ],
+      "retained_file": "cms_data/hpt/nationwide-verification/pointer-provenance-rechecks/452f9f3a3af42db6ec2fc7c8df1199deadfac2a422b6549383a99cdc7a768c1a.bin",
+      "next_action": "Reconcile this fresh root entry set to the exact CCN and independently verify any intended file before updating the standing finding."
+    },
+    {
+      "ccn": "360098",
+      "checked_url": "https://lakehealth.org/cms-hpt.txt",
+      "observed_at": "2026-09-25T10:18:42.734Z",
+      "prior_verification_sha256": "e00ec17ae15593a8098056576d6a73b3c451a5cf1e76603a7707ec82a901bb52",
+      "prior_corpus_index_sha256s": [
+        "af5e2b9bb87ee0bd114f307bf97b2b05d131e74895586a487d1bf9bf5a42a113"
+      ],
+      "http_status": 200,
+      "content_type": "text/plain",
+      "final_host": "lakehealth.org",
+      "redirect_count": 0,
+      "response_bytes": 5514,
+      "response_sha256": "e00ec17ae15593a8098056576d6a73b3c451a5cf1e76603a7707ec82a901bb52",
+      "verification_hash_reproduced": true,
+      "request_error": "",
+      "complete_pointer_bytes": true,
+      "pointer_format": "txt",
+      "parsed_location_names": [
+        "University Hospitals Ahuja Medical Center",
+        "University Hospitals Beachwood Medical Center",
+        "University Hospitals Cleveland Medical Center",
+        "University Hospitals Conneaut Medical Center",
+        "University Hospitals Elyria Medical Center",
+        "University Hospitals Regional Hospitals - Geauga Medical Center",
+        "University Hospitals Geneva Medical Center",
+        "University Hospitals Lake West Medical Center",
+        "University Hospitals Tripoint Medical Center",
+        "University Hospitals Parma Medical Center",
+        "University Hospitals Portage Medical Center",
+        "UH Rainbow Babies & Children's Hospital",
+        "University Hospitals Samaritan Medical Center",
+        "University Hospitals St. John Medical Center"
+      ],
+      "retained_file": "cms_data/hpt/nationwide-verification/pointer-provenance-rechecks/e00ec17ae15593a8098056576d6a73b3c451a5cf1e76603a7707ec82a901bb52.bin",
+      "next_action": "Reconcile this fresh root entry set to the exact CCN and independently verify any intended file before updating the standing finding."
+    },
+    {
+      "ccn": "370201",
+      "checked_url": "https://surgicalhospitalok.net/cms-hpt.txt",
+      "observed_at": "2026-09-25T10:18:42.742Z",
+      "prior_verification_sha256": "7cfd2db9015234963b2598a30c64e16740cdc8e2cf2538c60a378ab4a05b1fc3",
+      "prior_corpus_index_sha256s": [
+        "0d622a1e3175a78c94a74a17bb8058dce9ff4241e8f793b31b9beed89a49afd6"
+      ],
+      "http_status": 0,
+      "content_type": "",
+      "final_host": "surgicalhospitalok.net",
+      "redirect_count": 0,
+      "response_bytes": 0,
+      "response_sha256": "",
+      "verification_hash_reproduced": false,
+      "request_error": "curl: (28) Resolving timed out after 8015 milliseconds\r\n",
+      "complete_pointer_bytes": false,
+      "parsed_location_names": [],
+      "next_action": "Keep prior hashes historical and investigate this exact root through a permitted route after access changes."
+    },
+    {
+      "ccn": "390116",
+      "checked_url": "https://suburbanhosp.org/cms-hpt.txt",
+      "observed_at": "2026-09-25T10:18:50.798Z",
+      "prior_verification_sha256": "2928b296654a271ca8ed60a4d219769dd35cfb07ce4e7feb32415aa8591fc4f3",
+      "prior_corpus_index_sha256s": [
+        "7107bd981a0a523c52a00330b75e8f6411cde03c3dbddde0aaac5742b22a9ccd"
+      ],
+      "http_status": 200,
+      "content_type": "text/plain",
+      "final_host": "suburbanhosp.org",
+      "redirect_count": 0,
+      "response_bytes": 654,
+      "response_sha256": "2928b296654a271ca8ed60a4d219769dd35cfb07ce4e7feb32415aa8591fc4f3",
+      "verification_hash_reproduced": true,
+      "request_error": "",
+      "complete_pointer_bytes": true,
+      "pointer_format": "txt",
+      "parsed_location_names": [
+        "Roxborough Memorial Hospital",
+        "Suburban Behavioral Health Campus of Roxborough Memorial Hospital"
+      ],
+      "retained_file": "cms_data/hpt/nationwide-verification/pointer-provenance-rechecks/2928b296654a271ca8ed60a4d219769dd35cfb07ce4e7feb32415aa8591fc4f3.bin",
+      "next_action": "Reconcile this fresh root entry set to the exact CCN and independently verify any intended file before updating the standing finding."
+    },
+    {
+      "ccn": "440102",
+      "checked_url": "https://lincolnhealthsystem.com/cms-hpt.txt",
+      "observed_at": "2026-09-25T10:18:50.807Z",
+      "prior_verification_sha256": "5997acca08b78a5a537a7d58c6d443c47f7f59c56369de0381bee0f380c2fe9c",
+      "prior_corpus_index_sha256s": [
+        "1ad0d16633366173053550ca5be0ac74df5386c61a1a3c4daab573888b2b670c"
+      ],
+      "http_status": 200,
+      "content_type": "text/plain; charset=UTF-8",
+      "final_host": "lincolnhealthsystem.com",
+      "redirect_count": 0,
+      "response_bytes": 312,
+      "response_sha256": "5997acca08b78a5a537a7d58c6d443c47f7f59c56369de0381bee0f380c2fe9c",
+      "verification_hash_reproduced": true,
+      "request_error": "",
+      "complete_pointer_bytes": true,
+      "pointer_format": "txt",
+      "parsed_location_names": [
+        "Lincoln Medical Center"
+      ],
+      "retained_file": "cms_data/hpt/nationwide-verification/pointer-provenance-rechecks/5997acca08b78a5a537a7d58c6d443c47f7f59c56369de0381bee0f380c2fe9c.bin",
+      "next_action": "Reconcile this fresh root entry set to the exact CCN and independently verify any intended file before updating the standing finding."
+    },
+    {
+      "ccn": "441322",
+      "checked_url": "https://shamrock.health/cms-hpt.txt",
+      "observed_at": "2026-09-25T10:18:50.816Z",
+      "prior_verification_sha256": "781e46ea257f175438abfcf8acb658b30a1c8fb5aa6c1762ddbe4de48ff84ab0",
+      "prior_corpus_index_sha256s": [
+        "ec0ef8c10bfea3877dea470bed770eea4751feb6088971bd0804600b61240838"
+      ],
+      "http_status": 200,
+      "content_type": "text/plain",
+      "final_host": "shamrock.health",
+      "redirect_count": 0,
+      "response_bytes": 267,
+      "response_sha256": "781e46ea257f175438abfcf8acb658b30a1c8fb5aa6c1762ddbe4de48ff84ab0",
+      "verification_hash_reproduced": true,
+      "request_error": "",
+      "complete_pointer_bytes": true,
+      "pointer_format": "txt",
+      "parsed_location_names": [
+        "Houston County Community Hospital"
+      ],
+      "retained_file": "cms_data/hpt/nationwide-verification/pointer-provenance-rechecks/781e46ea257f175438abfcf8acb658b30a1c8fb5aa6c1762ddbe4de48ff84ab0.bin",
+      "next_action": "Reconcile this fresh root entry set to the exact CCN and independently verify any intended file before updating the standing finding."
+    }
+  ],
+  "source_sha256": {
+    "pointer-provenance-discrepancies.json": "c075641d9dd34b647bbdd05e221c020e8f855144023b83d692457ea97355267c"
+  }
+}

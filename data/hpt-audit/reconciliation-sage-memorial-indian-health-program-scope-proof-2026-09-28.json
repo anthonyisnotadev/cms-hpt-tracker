@@ -1,0 +1,57 @@
+{
+  "ccn": "031309",
+  "observed_at": "2026-09-28T03:54:00Z",
+  "cms_provider_record": {
+    "url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=031309&conditions%5B0%5D%5Boperator%5D=%3D",
+    "http_status": 200,
+    "response_bytes": 6673,
+    "response_sha256": "482cb7ae1f6726aacdfd4a1d76a14dcb4232082cc55fbf6fae86d941faf58f35",
+    "record": {
+      "facility_id": "031309",
+      "facility_name": "SAGE MEMORIAL HOSPITAL",
+      "address": "HIGHWAY 264 WEST AND 191 SOUTH",
+      "citytown": "GANADO",
+      "state": "AZ",
+      "zip_code": "86505",
+      "hospital_type": "Critical Access Hospitals",
+      "hospital_ownership": "Voluntary non-profit - Private"
+    },
+    "interpretation": "Exact CCN and hospital identity retained. The private nonprofit ownership value does not negate the separate operator/program evidence relevant to 45 CFR 180.30(b)(2)."
+  },
+  "cms_indian_health_service_locator": {
+    "url": "https://www.cms.gov/training-education/partner-outreach-resources/american-indian/alaska-native/behavioral-health/service-locator",
+    "http_status": 200,
+    "response_bytes": 1223169,
+    "response_sha256": "cc90c97346ba48474654516a198df7a0937025cedae7d4261a651e4d66f1337c",
+    "facility_entry_observation": "CMS lists Sage Memorial Hospital as a Hospital at US 191 and State Route 264, Ganado, Arizona 86505, and identifies its affiliation as Title 5 (638); services include inpatient and outpatient care. Live web review 2026-09-28, facility entry lines 3562-3571.",
+    "source_page_lines": "https://www.cms.gov/training-education/partner-outreach-resources/american-indian/alaska-native/behavioral-health/service-locator"
+  },
+  "indian_health_service_contract_evidence": {
+    "url": "https://www.ihs.gov/Navajo/index.cfm?module=nao_navajo_nation",
+    "http_status": 200,
+    "response_bytes": 68366,
+    "response_sha256": "c7adae2ee342a9de5ae7783051facde45cf0f07742ea994e14d42857f4617dcb",
+    "observation": "The IHS Navajo Area states that the Navajo Area Indian Health Service has Public Law 93-638 contracts and compacts with Tribal health corporations, expressly including Sage Memorial Hospital, to provide health services in the respective Navajo Nation regions served by those 638 corporations.",
+    "current_grant_record": "https://taggs.hhs.gov/Detail/AwardDetail?arg_AwardNum=24525SM02&arg_ProgOfficeCode=234",
+    "current_grant_observation": "HHS TAGGS identifies Navajo Health Foundation-Sage Memorial Hospital Inc. as the recipient of an IHS Indian Self-Determination health-services award with a performance period of 2024-10-01 through 2026-09-30.",
+    "operator_page": "https://sagememorial.com/",
+    "operator_page_status": 200,
+    "operator_page_bytes": 425634,
+    "operator_page_sha256": "9779d7acaf168a489dbd845ec8f222d61254ed2a943749b3f78e5e8bc8fa14cc",
+    "operator_page_observation": "The current hospital website identifies Navajo Health Foundation - Sage Memorial Hospital as the operator/publisher. Its March 2026 news item documents Sage Memorial leadership representing the 638 Association in Navajo Nation discussions of ISDEAA contracts and compacts."
+  },
+  "legal_basis": {
+    "regulation": "45 CFR 180.30(b)(2)",
+    "regulation_url": "https://www.govinfo.gov/content/pkg/CFR-2025-title45-vol2/pdf/CFR-2025-title45-vol2-part180.pdf",
+    "regulation_observation": "CMS deems hospitals operated by an Indian Health Program, as defined by section 4(12) of the Indian Health Care Improvement Act, to be in compliance with Part 180.",
+    "statute": "25 USC 1603(12),(25)",
+    "statute_url": "https://uscode.house.gov/view.xhtml?edition=prelim&num=0&req=granuleid%3AUSC-prelim-title25-section1603",
+    "statute_http_status": 200,
+    "statute_bytes": 177716,
+    "statute_sha256": "5ca72af13bcbd4bfa5a4f74ac00ff1a9dc72cf50a7136b248e9b08e7c9fd5eb4",
+    "statute_observation": "The definition of Indian Health Program includes a tribal health program; a tribal health program is a tribe or tribal organization operating a health facility funded in whole or part by IHS through an ISDEAA contract or compact."
+  },
+  "disposition": "scope-exempt-indian-health-program",
+  "interpretation": "The exact-CCN CMS record identifies Sage Memorial Hospital in Ganado, Arizona. CMS's own service locator identifies that hospital as Title 5 (638); the current IHS Navajo Area page expressly lists Sage Memorial Hospital among the Navajo 638-contract/compact providers, and HHS TAGGS shows an IHS Indian Self-Determination health-services award to its named operator through September 2026. Read with 45 CFR 180.30(b)(2) and 25 USC 1603(12),(25), this evidence supports the Indian Health Program scope category. The CMS private nonprofit ownership field is preserved separately. This is a scope classification only and does not assert pointer linkage, current MRF availability, or file quality.",
+  "next_action": "Retain this supported scope classification and prior 404/historical consumer-PDF observations as provenance. Revisit if exact CCN identity, operator, CMS service-locator affiliation, IHS contract/compact, or Indian Health Program status changes. Do not infer whether a current MRF is or is not posted."
+}

@@ -1,0 +1,33 @@
+{
+  "reviewed_at": "2026-09-17T14:02:02.000Z",
+  "purpose": "Exclude specific, source-checked wrong-facility header leads from effective per-CCN selection while preserving raw crawl and header history.",
+  "records": [
+    {
+      "ccn": "050167",
+      "hospital_name": "SAN JOAQUIN GENERAL HOSPITAL",
+      "roster_city": "FRENCH CAMP",
+      "roster_state": "CA",
+      "roster_zip": "95231",
+      "official_identity_url": "https://hcai.ca.gov/affordability/hospital-billing-policies/san-joaquin-general-hospital/",
+      "official_site_url": "https://www.sanjoaquingeneral.org/",
+      "current_pointer_file": "cms_data/hpt/pointer-corpus/raw/sanjoaquingeneral.org-84f6910ca035.txt",
+      "current_pointer_sha256": "4398837b23bef779d59beb0930902eef0b9c2416ef9a60dab456e5975e1aea9b",
+      "current_pointer_location_name": "San Joaquin General Hospital",
+      "current_pointer_mrf_url_sha256": "a44a2b22515a8d7f0d8334e44d1c3a9f68c4d5adf46e41def0a19111bd1751ab",
+      "browser_attempt_at": "2026-09-17T14:05:12.000Z",
+      "browser_result": "ERR_BLOCKED_BY_CLIENT",
+      "browser_bytes_retained": 0,
+      "excluded_mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHBBAKERSFIELDCA&type=CDMWithoutLabel&fileType=CSV",
+      "excluded_header_checked_at": "2026-09-15T04:34:21.735Z",
+      "excluded_header_pointer_sha256s": "c6d8fb5a104c88f16439950764213f118d0c883d4e71f285d7021627392917e5|cbf9ff10b031a65a0926a09edea3a7baeb085fab7821eb8d5606ccbea22c7913",
+      "excluded_header_hospital_name": "SAN JOAQUIN COMMUNITY HOSPITAL",
+      "excluded_header_location_name": "SAN JOAQUIN COMMUNITY HOSPITAL|Adventist Health Specialty Bakersfield",
+      "excluded_header_address": "3001 Sillect Avenue Bakersfield CA 93308|3001 Sillect Avenue Bakersfield CA 93308",
+      "excluded_header_license_state": "CA",
+      "excluded_pointer_file": "cms_data/hpt/pointer-corpus/raw/adventisthealth.org-1a26484ba4ca.txt",
+      "excluded_pointer_sha256": "cbf9ff10b031a65a0926a09edea3a7baeb085fab7821eb8d5606ccbea22c7913",
+      "reason": "Adventist's San Joaquin Community Hospital / Specialty Bakersfield file declares 3001 Sillect Avenue, Bakersfield 93308. The distinct San Joaquin General Hospital is at 500 W Hospital Road, French Camp 95231 and has its own root pointer and different target. Shared San Joaquin name tokens do not establish the same facility.",
+      "next_action": "The exact San Joaquin General Hospital pointer-declared Elevate target returned ERR_BLOCKED_BY_CLIENT in the in-app browser, without file bytes. Seek a materially different permitted download route or publisher copy/repair, then verify this facility's own file identity and metadata. Do not repeat the identical blocked browser request or substitute the Adventist Bakersfield file."
+    }
+  ]
+}

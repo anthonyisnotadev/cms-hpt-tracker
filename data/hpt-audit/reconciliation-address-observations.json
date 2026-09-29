@@ -1,0 +1,27 @@
+{
+  "records": [
+    {
+      "ccn": "100167",
+      "observed_on": "2026-09-15",
+      "method": "web-search-and-official-page-read",
+      "source_url": "https://www.hcafloridahealthcare.com/en-US/locations/mercy-hospital",
+      "additional_source_url": "https://www.cms.gov/Medicare/Medicare-General-Information/MedicareApprovedFacilitie/Carotid-Artery-Stenting-Facilities-Items/Mercy-Hospital-FL",
+      "roster_address": "401 NW 42ND AVE, PLANTATION, FL 33317",
+      "file_address": "3663 South Miami Ave, MIAMI, FL 33133",
+      "observation": "The official Mercy Hospital page identifies its Miami address, consistent with the candidate file but different from the CCN roster address in Plantation. An additional CMS facility page names Mercy at the Miami address. These pages alone do not establish the relationship between this CCN and both campuses; a name match is insufficient to override the quarantine.",
+      "status": "roster-campus-relationship-unresolved",
+      "next_action": "Check authoritative CCN enrollment and campus history for 100167, including the Plantation address, before deciding whether the roster is outdated, the file is incomplete for a multi-campus CCN, or the assignment is incorrect. Do not repeat the same file retrieval to resolve a roster relationship question."
+    },
+    {
+      "ccn": "330100",
+      "observed_on": "2026-09-15",
+      "method": "web-search-and-official-page-read",
+      "source_url": "https://www.nyee.edu/about/contact",
+      "roster_address": "230 SECOND AVE",
+      "file_address": "310_East_14th_Street_New_York_NY_10003",
+      "observation": "The official NYEE contact page was read directly and lists both the mailing address at 310 East 14th Street, New York NY 10003 and the 230 Second Avenue Lobby in its directory. This explicitly connects both addresses to NYEE. The exact roster/file/browser observation is bound in reviewed-address-equivalences.json.",
+      "status": "address-equivalence-reviewed-file-proof-pending",
+      "next_action": "Address relationship is documented. Inspect saved file-byte proof and pointer linkage before closing the full proof audit; do not repeat the address search unless the bound source fields change."
+    }
+  ]
+}

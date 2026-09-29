@@ -1,0 +1,42 @@
+{
+  "ccn": "390057",
+  "hospital_name": "ST LUKE'S HOSPITAL - GRAND VIEW CAMPUS",
+  "official_domain": "slhn.org",
+  "source_page_url": "https://www.slhn.org/billing/patient-billing/price-transparency",
+  "source_page_role": "first-party network price-transparency page with explicit Grand View Campus selector",
+  "mrf_url": "https://www.slhn.org/-/media/sluhn/billing/pdf/standard-charges/231352181_grand-view-hospital_standardcharges.ashx",
+  "mrf_http_status": 206,
+  "mrf_total_bytes": 438757028,
+  "mrf_bounded_bytes": 262144,
+  "mrf_bounded_sha256": "15684580c032f3a9ab7685b219a3989e8888e26c5a21e33113f8fa08d940f758",
+  "mrf_tail_range": "bytes=438494884-438757027",
+  "mrf_tail_bytes": 262144,
+  "mrf_tail_sha256": "52e5620489e54d21e5874d3e5bcf87b3aea1679b28ac1e58c97f994b415977cb",
+  "mrf_tail_observation": "tail range contains CSV rate rows rather than an HTML/error body; complete-file hash and full-file usability remain unvalidated",
+  "bounded_stream_attempt": {
+    "chunk_bytes": 8388608,
+    "bytes_streamed_before_transport_failure": 260046848,
+    "transport_failure": "fetch failed while requesting a later range",
+    "result": "retryable partial stream; no complete-file hash or promotion"
+  },
+  "mrf_last_modified": "2026-09-15T13:53:18Z",
+  "mrf_date": "2026-02-26",
+  "cms_template_version": "3.0.0",
+  "declared_hospital_name": "St Luke's Hospital - Grand View Campus",
+  "declared_location_name": "St Luke's Hospital - Grand View Campus",
+  "declared_address": "700 Lawn Avenue, Sellersville, PA 18960",
+  "declared_license_state": "PA",
+  "declared_type_2_npi": "1568459287|1760587182",
+  "roster_address": "700 LAWN AVENUE, SELLERSVILLE, PA 18960",
+  "pointer_role": "root pointer omission remains unresolved; this is a distinct current first-party page-linked file",
+  "disposition": "page-linked-file-identity-corroborated-pointer-entry-missing",
+  "checked_at": "2026-09-18T10:30:00Z",
+  "next_action": "Publisher should add or correct the Grand View entry in cms-hpt.txt; retain the page-linked file as current identity evidence and recheck complete-file usability after pointer repair.",
+  "latest_browser_recheck": {
+    "observed_at": "2026-09-19T11:39:53Z",
+    "pricing_page_url": "https://www.slhn.org/billing/patient-billing/price-transparency",
+    "result": "Current first-party price-transparency page rendered in browser and lists Grand View Campus with the exact page-linked standard-charges URL. The current root pointer remains reachable but still does not expose a Grand View entry.",
+    "evidence_role": "current official page/file-scope recheck; pointer omission remains distinct",
+    "disposition": "retain-page-linked-file-pointer-entry-missing"
+  }
+}

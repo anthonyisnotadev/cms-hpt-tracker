@@ -1,0 +1,42 @@
+{
+  "ccn": "154060",
+  "facility": "Park Center, Inc.",
+  "observed_at": "2026-09-28T19:12:24Z",
+  "sources": {
+    "state_hospital_consumer_report": "https://secure.in.gov/health/reports/QAMIS/hosrpt/ha013429.htm",
+    "listed_organization_domain": "https://www.parkcenter.org/",
+    "parkview_current_pricing_page": "https://www.parkview.com/patients-and-visitors/billing-and-insurance/request-an-estimate",
+    "parkview_location_page": "https://www.parkview.com/locations/details/2215/parkview-behavioral-health-institute-park-center"
+  },
+  "state_source_observation": {
+    "report_date": "2025-07-24",
+    "web_posted_date": "2025-08-06",
+    "hospital_name": "PARK CENTER, INC.",
+    "hospital_address": "1909 CAREW STREET, FORT WAYNE, IN 46805",
+    "classification": "State licensed and Medicare certified",
+    "license_number": "41-9-10-P-IP",
+    "beds": 16,
+    "additional_sites_listed_under_hospital_license": true,
+    "interpretation": "Official Indiana state evidence supports that Park Center at the roster address is a licensed and Medicare-certified hospital. The report lists associated sites under the hospital license but does not provide a CMS CCN-to-site crosswalk or any price-transparency file. It does not establish a CMS exemption or MRF availability."
+  },
+  "browser_observation": {
+    "requested_url": "https://www.parkcenter.org/",
+    "final_url": "https://www.parkview.com/",
+    "title": "Home | Parkview Health",
+    "result": "The listed Park Center domain redirected to Parkview Health's homepage in the in-app browser; it did not expose a distinct Park Center website or a Park Center-specific price-transparency page/file.",
+    "http_status_observed": false,
+    "interpretation": "Browser navigation outcome only. The origin/redirect status and relationship between Park Center and Parkview were not independently established by this browser observation."
+  },
+  "current_parkview_pricing_page_observation": {
+    "url": "https://www.parkview.com/patients-and-visitors/billing-and-insurance/request-an-estimate",
+    "browser_page_title": "Request an Estimate | Parkview Health",
+    "mrf_links_observed": 11,
+    "park_center_or_1909_carew_link_observed": false,
+    "price_estimator_distinguished_from_mrf": true,
+    "interpretation": "The currently rendered comprehensive MRF list again contains the 11 previously documented Parkview hospital links and no Park Center/1909 Carew entry. This is a current-page recheck, not a new file discovery or proof of file absence."
+  },
+  "evidence_gain": "The state report adds official license/classification evidence for the exact Park Center name and 1909 Carew address, and the separately listed organization domain did not reveal a distinct current site in the browser. This narrows the publisher/site path but provides no MRF bytes or exact CCN-to-file linkage.",
+  "disposition_effect": "none",
+  "count_effect": "none",
+  "next_action": "Keep CCN 154060 unresolved. Seek a Park Center-specific publisher pointer/file or authoritative statement mapping CCN 154060 to its price-transparency publication; do not borrow any of the 11 other Parkview location files. Do not infer coverage from the shared hospital license listing or domain redirect; any candidate still requires exact facility/CCN attribution, Indiana metadata, CMS date/version, and usable MRF bytes."
+}

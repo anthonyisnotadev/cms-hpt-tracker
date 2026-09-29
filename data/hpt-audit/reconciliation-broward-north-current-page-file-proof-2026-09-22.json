@@ -1,0 +1,13 @@
+{
+  "ccn":"100086","observed_at":"2026-09-22T19:30:00Z",
+  "official_site":"https://www.browardhealth.org/",
+  "official_pricing_page":"https://search.hospitalpriceindex.com/hpi2/machineReadable/BrowardHealthNorth/10970",
+  "official_page_observation":"The first-party Broward Health site links the Broward Health North Hospital Price Index page. The page identifies Broward Health North and Last Update 2026-09-15, and exposes a facility-named CSV download.",
+  "pointer_url":"https://www.browardhealth.org/cms-hpt.txt","pointer_status":"browser-ERR_BLOCKED_BY_CLIENT",
+  "mrf_url":"https://sthpiprd.blob.core.windows.net/machine-readable-files/10970/596012065_broward-health-north_standardcharges.csv","mrf_status":206,"mrf_response_bytes":262144,"mrf_content_range":"bytes=0-262143/250457308","mrf_total_bytes":250457308,"mrf_etag":"0x8DF133DC87D7AF5","mrf_last_modified":"Tue, 15 Sep 2026 15:26:58 GMT","mrf_response_sha256":"4267f3f3feeb369bb0ce5d1dbc03dc148f1172e0cd8a4719f27f745bf7a4a738",
+  "declared_last_updated":"2026-09-15","cms_template_version":"3.0.0","declared_hospital_name":"Broward Health North","declared_location_name":"Broward Health North","declared_address":"201 E Sample Rd, Deerfield Beach, FL 33064; 5360 N. Federal Hwy, Lighthouse Point, FL 33064","declared_license_state":"FL","declared_npi":"1376571323",
+  "cms_api_url":"https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=100086&conditions%5B0%5D%5Boperator%5D=%3D","cms_api_status":200,"cms_api_response_bytes":6601,"cms_api_response_sha256":"E5BC79124CFD133F09D409934735925783F18CE8B185ACD66033609CC8A1C42E","cms_record":{"facility_id":"100086","facility_name":"BROWARD HEALTH NORTH","address":"201 E SAMPLE RD","citytown":"DEERFIELD BEACH","state":"FL","zip_code":"33064"},
+  "pointer_http_status":403,"pointer_sha256":"b9b71c35dfc2fd4c4bd55814a6d0bcee24a4270943748b72345643dea61736c4","disposition":"verified-current-page-file-root-pointer-blocked",
+  "interpretation":"The current Broward Health North pricing page links a campus-named CSV whose bounded header matches the CMS facility name, address, Florida state, date and CMS 3.0.0 metadata. A separate free-standing emergency-department address is retained as a separate location. The shared root pointer was blocked by the browser, so this is page-linked observed evidence only.",
+  "next_action":"Retry the shared root pointer with an alternate transport and reconcile its target against this campus file; do not merge the emergency-department address into the main campus identity."
+}

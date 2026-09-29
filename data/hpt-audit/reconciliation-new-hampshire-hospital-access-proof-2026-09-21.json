@@ -1,0 +1,17 @@
+{
+  "ccn": "304000",
+  "observed_at": "2026-09-21T20:45:00Z",
+  "official_domain": "dhhs.nh.gov",
+  "official_site": "https://www.dhhs.nh.gov/",
+  "checked_urls": [
+    "https://www.dhhs.nh.gov/",
+    "https://www.dhhs.nh.gov/cms-hpt.txt",
+    "https://www.dhhs.nh.gov/programs-services/state-hospital"
+  ],
+  "retrieval_method": "bounded official-domain checks",
+  "transport_result": "The configured New Hampshire DHHS domain, root cms-hpt.txt path, and state-hospital candidate route returned HTTP 403 to the current client. No facility-specific MRF bytes, pointer contents or metadata were recovered.",
+  "facility_identity_observation": "The tracker roster identifies New Hampshire Hospital, Concord, NH; the state-domain transport response does not establish file absence, exemption or compliance status.",
+  "disposition": "official-state-domain-access-denied-pointer-discovery-incomplete",
+  "interpretation": "This is a transport observation for New Hampshire Hospital only. It does not transfer evidence from another DHHS facility or support a legal/compliance conclusion.",
+  "next_action": "Retry the exact DHHS New Hampshire Hospital page and root pointer through an authorized browser/content-bearing route, then verify an exact facility CSV/JSON/ZIP with identity, address/state, date, CMS version and usable rows."
+}

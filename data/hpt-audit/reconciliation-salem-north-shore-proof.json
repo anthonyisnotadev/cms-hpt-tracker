@@ -1,0 +1,51 @@
+{
+  "ccn": "220035",
+  "reviewed_at": "2026-09-17T00:58:31.000Z",
+  "roster": {
+    "name": "NORTH SHORE MEDICAL CENTER -",
+    "address": "81 HIGHLAND AVENUE, SALEM, MA 01970"
+  },
+  "rejected_prior_domain": {
+    "domain": "northshoremc.org",
+    "pointer_url": "https://northshoremc.org/cms-hpt.txt",
+    "pointer_sha256": "80a76546e7aa45cdda8b0c64bff148d008a5e756326e0ffbfdab192273db7daf",
+    "first_party_home_url": "https://northshoremc.org/home-page/",
+    "first_party_identified_address": "1100 NW 95th St, Miami, FL 33150",
+    "retained_mrf_declared_address": "1100 NW 95th St, Miami FL 33150",
+    "separate_roster_ccn": "100029",
+    "reason": "The same-name northshoremc.org hospital is in Miami, Florida, and its retained MRF header matches the separate Florida roster record, not the Salem, Massachusetts campus."
+  },
+  "correct_publisher": {
+    "domain": "massgeneralbrigham.org",
+    "hospital_location_url": "https://www.massgeneralbrigham.org/en/locations/salem-ma/salem-hospital-loc0000247017",
+    "hospital_location_address": "81 Highland Avenue, Salem, MA 01970",
+    "state_ccn_source_url": "https://www.mass.gov/doc/application-amendment-pdf-mass-general-brigham-incorporated-amendment/download",
+    "state_ccn_source_observation": "The Massachusetts Department of Public Health indexed application identifies Salem Hospital, 81 Highland Ave, Salem MA 01970, CMS Number 220035; direct web open returned 403 during this review, so the CCN statement is a search-index observation rather than downloaded PDF-byte proof.",
+    "system_pricing_page_url": "https://www.massgeneralbrigham.org/en/patients-visitors/billing-insurance/billing/cms-required-hospital-charge-data",
+    "pointer_url": "https://www.massgeneralbrigham.org/cms-hpt.txt",
+    "pointer_http_status": 200,
+    "pointer_sha256": "31d4b0ef0c21590b528d0eeb4b4635daf5d64b32a25a4d717fbd21be63b5ab61",
+    "pointer_cached_file": "cms_data/hpt/pointer-corpus/raw/massgeneralbrigham.org-451b6bc94809.txt",
+    "pointer_location_name": "Salem Hospital",
+    "pointer_source_page_url": "https://salem.massgeneralbrigham.org/patients_and_visitors/hospital_charge_data",
+    "pointer_source_page_current_result": "Redirects to general Mass General Brigham patient resources; the current system pricing page separately lists the same Salem ZIP.",
+    "pointer_mrf_url": "https://www.massgeneralbrigham.org/price-transparency/043399616_Salem-Hospital_StandardCharges.zip"
+  },
+  "file": {
+    "http_status": 200,
+    "downloaded_zip_bytes": 946050,
+    "zip_sha256": "84f5fe69bff713e4c04f0ec76d8335e976d9f213941055e0246abd58765b3c55",
+    "member_name": "043399616_Salem-Hospital_StandardCharges.csv",
+    "member_uncompressed_bytes": 13218146,
+    "member_sha256": "cfc25b654a315cc18c9544173bcb88fa1cd2a952c1f94c2a50f4317cd50005d4",
+    "hospital_name": "Salem Hospital",
+    "location_name": "Salem Hospital",
+    "hospital_address": "81 Highland Ave Salem MA 01970",
+    "license_state_field": "MA",
+    "last_updated_on": "2026-03-27",
+    "version": "3.0.0",
+    "first_data_row_observed": true,
+    "scope": "Complete ZIP and sole CSV member hashed; metadata rows and first data row inspected. This is not a row-by-row accuracy or legal-compliance audit."
+  },
+  "disposition": "Replace the Miami domain assignment with the pointer-linked Salem Hospital MRF on the Mass General Brigham domain. Treat the declared date and template version as observed metadata, not a legal compliance verdict."
+}

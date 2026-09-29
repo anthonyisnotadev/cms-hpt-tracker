@@ -1,0 +1,44 @@
+{
+  "ccn": "231312",
+  "observed_at": "2026-09-17T10:03:16.090Z",
+  "roster_name": "SHERIDAN COMMUNITY HOSPITAL",
+  "roster_address": "301 N MAIN ST",
+  "roster_city": "SHERIDAN",
+  "roster_state": "MI",
+  "roster_zip": "48884",
+  "pointer": {
+    "url": "https://sheridanhospital.com/cms-hpt.txt",
+    "final_url": "https://www.sheridanhospital.com/cms-hpt.txt/",
+    "http_status": 200,
+    "content_type": "text/html; charset=UTF-8",
+    "response_kind": "html-page-not-pointer",
+    "sha256": "dae2c33814fa10aaa0c9553f55d7df25f0fb9da4518143ad93682cfd58dd2c2d",
+    "bytes": 41292,
+    "retained_sample": "cms_data/hpt/nationwide-verification/file-byte-proof/dae2c33814fa10aaa0c9553f55d7df25f0fb9da4518143ad93682cfd58dd2c2d.bin"
+  },
+  "source_page": {
+    "url": "https://www.sheridanhospital.com/patient-portal/",
+    "http_status": 200,
+    "sha256": "cc6a505dffa8e6f1a738c562ec7b9a4f4e36abdc7830dfbc097d629cb9fec05e",
+    "bytes": 99789,
+    "exact_file_link_present": true,
+    "retained_sample": "cms_data/hpt/nationwide-verification/file-byte-proof/cc6a505dffa8e6f1a738c562ec7b9a4f4e36abdc7830dfbc097d629cb9fec05e.bin"
+  },
+  "file": {
+    "url": "https://sheridanhospital.com/wp-content/uploads/2026/04/381369796_sheridan-community-hospital_standardcharges.csv",
+    "http_status": 206,
+    "content_range": "bytes 0-262143/68769805",
+    "total_bytes": 68769805,
+    "retained_bytes": 262144,
+    "sample_sha256": "7e3919b0f56c7164881b0a52094a5c379e8e4b9a3804890e97117bf1cc870fcc",
+    "retained_sample": "cms_data/hpt/nationwide-verification/file-byte-proof/7e3919b0f56c7164881b0a52094a5c379e8e4b9a3804890e97117bf1cc870fcc.bin",
+    "declared_hospital_name": "Sheridan Community Hospital",
+    "declared_location_name": "Sheridan Community Hospital",
+    "declared_address": "301 N Main Street, Sheridan, MI, 48884",
+    "declared_license_state": "MI",
+    "declared_date_raw": "4/22/2026",
+    "declared_date": "2026-04-22",
+    "template_version": "3.0.0"
+  },
+  "conclusion": "Current official page links an identity-matched CSV; root redirects to HTML, not a structured pointer. Full MRF not validated."
+}

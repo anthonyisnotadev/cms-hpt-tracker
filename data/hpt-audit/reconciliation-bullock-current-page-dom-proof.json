@@ -1,0 +1,24 @@
+{
+  "record": {
+    "ccns": ["010110", "010779"],
+    "observed_at": "2026-09-18T23:40:00Z",
+    "source_page_url": "https://www.bullockcountyhospital.com/general-4",
+    "source_page_http_status": 200,
+    "source_page_sha256": "059b56be5863f52c9cd0f3a9bb3efe1eefc3c48f11004ec392d7f556d70269ce",
+    "source_page_bytes": 583718,
+    "browser_dom_result": "The official page renders 631070858_Bullock_Hospital_StandardCharges.CSV as plain heading text, not a download link. The only rendered CSV anchor is Bullock_ShoppableServices_300.CSV at the site's Wix files endpoint.",
+    "facility_identity": "The same page identifies Bullock County Hospital at 102 Conecuh Ave W, Union Springs, AL 36089 and states that the site became a Rural Emergency Hospital on 2024-05-01.",
+    "disposition": "current-page-names-standard-file-but-does-not-expose-download",
+    "next_action": "Keep the root-pointer CSV and its explicit CA-versus-AL license-state conflict separate from the page's unlinked filename and linked shoppable-services CSV. Recover a corrected, facility-specific hospital MRF through a publisher-enabled route before promotion or assignment to either CCN.",
+    "latest_recheck": {
+      "observed_at": "2026-09-19T08:15:00Z",
+      "source_page_http_status": 200,
+      "source_page_bytes": 583704,
+      "source_page_sha256": "D63F978ACDC25CB63425B7888B36AF2B26F44F8548FF7EC69E53E010CF4F912C",
+      "pointer_http_status": 200,
+      "pointer_bytes": 310,
+      "pointer_sha256": "99BA142A8F47BE71885163A8F22F0B3BC666B6B2B34E6B3FA6AADA1AA4C39096",
+      "result": "The current page still renders the standard-charges filename as plain text and exposes only the separate shoppable-services CSV link. The root pointer remains byte-identical and still targets the file whose retained header declares the explicit CA-versus-AL license-state conflict. No new MRF bytes or supported correction were recovered."
+    }
+  }
+}

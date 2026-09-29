@@ -1,0 +1,34 @@
+{
+  "ccn": "670005",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "roster_identity": {
+    "name": "MEMORIAL HERMANN SURGICAL HOSPITAL KINGWOOD",
+    "address": "300 KINGWOOD MEDICAL DRIVE",
+    "city": "KINGWOOD",
+    "state": "TX",
+    "zip": "77339"
+  },
+  "official_domain": "https://memorialhermannkingwood.com/",
+  "official_identity_sources": "https://memorialhermannkingwood.com/|https://memorialhermannkingwood.com/Hospital-Pricing-Information|https://memorialhermann.org/locations/surgical-hospital-kingwood|https://turquoise.health/providers/memorial-hermann-kingwood/information",
+  "pointer_or_page_observation": "The first-party hospital site identifies Memorial Hermann Surgical Hospital Kingwood at 300 Kingwood Medical Drive, Kingwood, TX 77339 and links a dedicated Hospital Pricing Information page.",
+  "browser_observation": "Browser/web inspection opened the official site and pricing page; the page links the facility-specific Hyve Health JSON MRF.",
+  "mrf_url": "https://mrfs.hyvehealthcare.com/USPI/208385914_memorial-hermann-specialty-hospital-kingwood-l-l-c_standardcharges.json",
+  "mrf_observation": {
+    "http_status": 200,
+    "content_type": "application/json",
+    "bytes": 29807682,
+    "sha256": "e9ea52785c0da054920ce897bbb8ebcf62cba97af646144b3b9006cb01cf8767",
+    "hospital_name": "Memorial Hermann Specialty Hospital Kingwood L L C",
+    "location_name": "Memorial Herman Surgical Hospital Kingwood",
+    "hospital_address": "300 Kingwood Medical Dr, Kingwood, TX 77339",
+    "npi": "1366532228",
+    "license_state": "TX",
+    "cms_template_version": "3.0.0",
+    "last_updated_on": "2026-04-14",
+    "standard_charge_information_rows": 31157,
+    "attestation_confirmed": true
+  },
+  "disposition": "verified-current-mrf",
+  "interpretation": "First-party identity, pricing page, linked MRF and file metadata converge on the Kingwood TX facility; this is supported observed MRF evidence, not a legal compliance determination.",
+  "next_action": "Retain exact pointer, page and file provenance and recheck on the normal freshness cycle."
+}

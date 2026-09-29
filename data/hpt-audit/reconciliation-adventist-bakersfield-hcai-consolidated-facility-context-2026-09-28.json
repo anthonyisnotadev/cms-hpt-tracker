@@ -1,0 +1,42 @@
+{
+  "audit_id": "reconciliation-adventist-bakersfield-hcai-consolidated-facility-context-2026-09-28",
+  "observed_at": "2026-09-28T20:03:15Z",
+  "ccn_investigated": "050455",
+  "related_historical_provider_number": "050724",
+  "evidence_role": "current state facility-profile classification and bounded reporting-context review; not CMS CCN-to-MRF attribution",
+  "sources": [
+    {
+      "agency": "California Department of Health Care Access and Information",
+      "url": "https://hcai.ca.gov/facility/bakersfield-heart-hospital/",
+      "observed_fields": {
+        "facility_name": "Adventist Health Specialty Bakersfield",
+        "address": "3001 Sillect Avenue, Bakersfield, CA 93308",
+        "hcai_id": "106154101",
+        "facility_license_type": "General Acute Care Hospital",
+        "facility_level_description": "Consolidated Facility",
+        "facility_status": "Open",
+        "licensed_beds": 47
+      }
+    },
+    {
+      "agency": "California Department of Health Care Access and Information",
+      "url": "https://hcai.ca.gov/document/edas-reporting-requirements/",
+      "relevant_scope": "ED/AS reporting requirements, not CMS Hospital Price Transparency",
+      "reported_rule_context": "For ED/AS reporting, a licensee operating more than one physical plant on separate premises under a single consolidated license that chooses separate location reports must request a modification; HCAI's discussion says a consolidated facility can report multiple sites separately using existing facility identification numbers, or combined records under one facility identification number.",
+      "limitation": "This reporting rule explains HCAI's consolidated-facility concept in that program only. It does not identify Medicare CCNs, decide CMS price-file coverage, or authorize attribution of the shared MRF."
+    }
+  ],
+  "search_recheck": {
+    "queries": [
+      "site:adventisthealth.org/bakersfield 050455 050724 1538157508 1609856947 standard charges campus 3001 Sillect 2615 Chester",
+      "site:hcai.ca.gov Adventist Health Specialty Bakersfield 3001 Sillect CCN 050724",
+      "site:cms.gov Bakersfield Heart Hospital 050724"
+    ],
+    "duplicate_result": "CMS's Bakersfield Heart Hospital page again lists historical provider number 050724 effective 2005-05-25 at 3001 Sillect; that same URL, number, date and address were already recorded in reconciliation-adventist-bakersfield-npi-header-crosscheck-2026-09-28.json. This search result is a recheck, not new evidence."
+  },
+  "finding": "The current HCAI profile adds the explicit facility-level label Consolidated Facility for the open Specialty Bakersfield site at 3001 Sillect. HCAI's reporting manual gives a limited ED/AS example of a single consolidated license spanning multiple physical plants, but does not govern or establish CMS HPT file scope. This context is compatible with a multi-site license structure yet does not resolve the existing NPI/address/CCN mapping conflict for the shared 2026 MRF.",
+  "disposition": "unresolved-current-shared-file-campus-and-ccn-scope-conflict",
+  "cohort_count_effect": 0,
+  "new_mrf_bytes": false,
+  "next_action": "Keep CCN 050455 and historical provider number 050724 distinct. Require corrected first-party MRF mapping or authoritative publisher documentation naming the covered Medicare CCN(s), NPIs and campus locations. Do not use HCAI's ED/AS consolidated-reporting rules as a substitute for CMS HPT attribution, and do not assign the shared 3001 Sillect file to 050455 without that mapping."
+}

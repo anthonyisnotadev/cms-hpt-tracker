@@ -1,0 +1,31 @@
+{
+  "ccn": "340156",
+  "observed_at": "2026-09-28T16:00:00Z",
+  "cms_tribal_hospital_crosswalk": {
+    "url": "https://www.cms.gov/files/document/indian-healt-service-cms-all-final.pdf",
+    "observation": "CMS's IHS-CMS tribal facility crosswalk lists CHEROKEE INDIAN HOSPITAL AUTHORITY as a Hospital, CCN 340156, in Cherokee, North Carolina. CMS says the list was created by cross-referencing an IHS facility list with QCOR.",
+    "identity": "Exact CCN and hospital name match the tracker record."
+  },
+  "cms_service_locator": {
+    "url": "https://www.cms.gov/training-education/partner-outreach-resources/american-indian/alaska-native/behavioral-health/service-locator",
+    "observation": "CMS lists Cherokee Indian Hospital Authority - Cherokee Indian Hospital - Hospital at 1 Hospital Road, Cherokee, NC 28719 and identifies affiliation as Title 5 (638), with inpatient and outpatient services. Live web review 2026-09-28."
+  },
+  "current_operator_evidence": {
+    "operator_url": "https://cherokeehospital.org/patients/patient-registration/",
+    "funding_observation": "CIHA states that the Hospital receives funding from IHS and the Eastern Band of Cherokee Indians and bills insurance for additional revenue.",
+    "official_site": "https://cherokeehospital.org/",
+    "existing_pricing_page_url": "https://cherokeehospital.org/patients/purchased-and-referred-care/",
+    "existing_custom_file_url": "https://cherokeehospital.org/wp-content/uploads/2025/01/2025-Chargemaster.xlsx"
+  },
+  "legal_basis": {
+    "regulation": "45 CFR 180.30(b)(2)",
+    "regulation_url": "https://www.govinfo.gov/content/pkg/CFR-2025-title45-vol2/pdf/CFR-2025-title45-vol2-part180.pdf",
+    "regulation_observation": "The codified rule deems hospitals operated by an Indian Health Program, as defined by section 4(12) of the Indian Health Care Improvement Act, to be in compliance with Part 180.",
+    "statute": "25 USC 1603(12),(25)",
+    "statute_url": "https://www.govinfo.gov/link/uscode/25/1603",
+    "statute_observation": "Indian Health Program includes a tribal health program; a tribal health program is a tribe or tribal organization operating a health facility funded in whole or in part by IHS through an ISDEAA contract or compact."
+  },
+  "disposition": "scope-exempt-indian-health-program",
+  "interpretation": "The exact-CCN CMS crosswalk identifies Cherokee Indian Hospital Authority as a hospital, and CMS's current service locator independently identifies the same hospital and address as Title 5 (638). CIHA states that the hospital receives IHS and Eastern Band of Cherokee Indians funding. Read with 45 CFR 180.30(b)(2) and 25 USC 1603(12),(25), these sources support an Indian Health Program scope classification. This is not an MRF finding: retain the 2025 custom XLSX observation separately, and do not infer CMS-template MRF availability, pointer linkage, file quality, or any broader legal conclusion.",
+  "next_action": "Retain the scope classification and prior page-linked 2025 custom-workbook evidence as separate provenance. Revisit if exact CCN identity, operator, CMS Title 5 (638) affiliation, or Indian Health Program status changes. Do not infer the presence or absence of a CMS-template MRF."
+}

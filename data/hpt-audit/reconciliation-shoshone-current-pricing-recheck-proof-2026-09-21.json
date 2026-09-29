@@ -1,0 +1,21 @@
+{
+  "ccn": "131314",
+  "observed_at": "2026-09-21T14:30:00Z",
+  "official_pricing_page": "https://www.shoshonehealth.com/patients/registrationbilling/",
+  "official_pricing_page_status": 200,
+  "official_page_observation": "The current first-party Shoshone Medical Center Registration/Billing page identifies the facility and states that a machine-readable chargemaster is available.",
+  "page_file_url": "https://www.shoshonehealth.com/wp-content/uploads/2019/12/2020-Charge-Master.csv",
+  "page_file_status": 200,
+  "page_file_content_type": "text/csv; charset=utf-8",
+  "page_file_response_bytes": 194646,
+  "page_file_response_sha256": "255541b660748f0a50bf62cd4b91d8b444caedf96de5a4fcc0bbee891a2f0d6b",
+  "page_file_observation": "The linked object is a 194,646-byte 2020 CSV with DESCRIPTION/CPT/REV/PRICE columns and no CMS 3.0.0 header, declared update date, NPI, license or facility address. It is historical charge data, not a current CMS MRF proof.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=131314&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6667,
+  "cms_api_response_sha256": "174b67e94493274d129a106cf0be0d145b6008fe810b17ed6a0f5ed874c446f2",
+  "cms_record": { "facility_id": "131314", "facility_name": "SHOSHONE MEDICAL CENTER", "address": "25 JACOBS GULCH ROAD", "citytown": "KELLOGG", "state": "ID", "zip_code": "83837", "hospital_type": "Critical Access Hospitals", "hospital_ownership": "Government - Hospital District or Authority", "emergency_services": "Yes" },
+  "disposition": "current-official-pricing-page-legacy-file-accessible-no-current-mrf-metadata",
+  "interpretation": "The current first-party page confirms a machine-readable link, but the linked file is explicitly a 2020 legacy CSV without CMS MRF metadata. The historical file does not establish current publication, usability or compliance. No promotion or downgrade is made.",
+  "next_action": "Obtain a current facility-specific CMS CSV/JSON from the publisher or an authorized route, then verify declared name, address, Idaho state, date, version and usability."
+}

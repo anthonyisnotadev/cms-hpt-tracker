@@ -1,0 +1,19 @@
+{
+  "ccn": "271321",
+  "observed_at": "2026-09-21T15:00:00Z",
+  "official_domain": "wheatlandmemorial.org",
+  "successor_domain": "vistaplains.org",
+  "retrieval_method": "bounded HTTPS requests plus in-app browser",
+  "checked_urls": [
+    "https://wheatlandmemorial.org/cms-hpt.txt",
+    "https://wheatlandmemorial.org/",
+    "https://vistaplains.org/",
+    "https://vistaplains.org/cms-hpt.txt",
+    "https://apps.para-hcfs.com/PTT/FinalLinks/Wheatland_V2.aspx"
+  ],
+  "transport_result": "The former wheatlandmemorial.org root and cms-hpt.txt paths return HTTP 301 to https://www.haagpharmacy.com/. The current vistaplains.org homepage links the Wheatland_V2 PARA pricing portal. Browser text identifies Vista Plains Health and standard-charge, average-charge, shoppable-service and unavailable-service lists dated July 28, 2026; the Vista Plains cms-hpt.txt and guessed pricing route returned 404.",
+  "facility_identity_observation": "The portal is explicitly branded Vista Plains Health and its route name retains Wheatland_V2; the CMS worklist identity remains Wheatland Memorial Hospital, Harlowton, Montana. This is a successor-domain/pricing-page lead, not yet a machine-readable-file identity match.",
+  "disposition": "official-successor-pricing-portal-file-linkage-pending",
+  "interpretation": "The redirect and successor-site link are facility-specific discovery evidence. The portal's downloadable lists were not independently retrieved or parsed as CMS CSV/JSON here, so no file compliance, absence, closure, or current pointer conclusion is inferred.",
+  "next_action": "Retrieve the portal's July 28, 2026 standard-charge download through an authorized browser or bounded direct URL, then verify exact Wheatland/Vista Plains identity, Montana address/state, declared metadata and CMS schema before promotion."
+}

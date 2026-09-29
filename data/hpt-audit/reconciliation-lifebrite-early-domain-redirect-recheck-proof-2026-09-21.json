@@ -1,0 +1,17 @@
+{
+  "ccn": "111314",
+  "observed_at": "2026-09-21T05:55:50Z",
+  "roster_identity": "LIFEBRITE COMMUNITY HOSPITAL OF EARLY, 11740 COLUMBIA STREET, BLAKELY, GA 39823",
+  "candidate_domain": "https://lifebriteearly.com/",
+  "http_observation": "The candidate official domain returned a generic hosting error page; the in-app browser redirected to https://lifebritestokes.com/ and displayed 'Something’s wrong here'. The cms-hpt.txt GET returned an empty body after a 405 response to HEAD.",
+  "browser_status": "generic-hosting-error-after-redirect",
+  "successor_site_standing": {
+    "domain": "https://www.earlymc.com/",
+    "proof_file": "reconciliation-lifebrite-early-successor-domain-xlsx-proof-2026-09-21.json",
+    "identity_match": true,
+    "linked_object": "XLSX chargemaster, not verified CMS CSV/JSON MRF"
+  },
+  "disposition": "candidate-domain-redirect-error-preserves-successor-xlsx-standing-evidence",
+  "interpretation": "This is a transport/domain recheck, not evidence that a CMS MRF is absent. The stronger successor-domain identity and XLSX observation remain retained, while no CMS-format promotion is made.",
+  "next_action": "Obtain a current CMS-format CSV or JSON from Early Medical Center or its authorized publisher, then verify facility identity, Georgia metadata, date/version, payer rates and parsed usability."
+}

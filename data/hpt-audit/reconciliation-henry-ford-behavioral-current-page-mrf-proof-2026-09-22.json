@@ -1,0 +1,27 @@
+{
+  "ccn": "234011",
+  "observed_at": "2026-09-22T00:35:00Z",
+  "source": "official Henry Ford Behavioral Health Hospital rates and pricing page",
+  "official_pricing_page": "https://www.henryfordbhh.com/about/rates-pricing/",
+  "facility_file_url": "https://www.henryfordbhh.com/wp-content/uploads/pricing/2026/580/87-2121325_HFHS-Acadia-Joint-Venture-LLC_standardcharges.csv",
+  "retrieval": {
+    "status": 200,
+    "content_type": "text/csv",
+    "bytes": 4627119,
+    "sha256": "6232C4277826A84BDAA5B412346A651720B5D45B6C01E563E14B5526ED7A57DE"
+  },
+  "declared_hospital_name": "HFHS-Acadia Joint Venture, LLC",
+  "declared_location_name": "Henry Ford Health Behavioral Health Hospital",
+  "declared_address": "7100 Berryhill, West Bloomfield, MI 48322",
+  "declared_license_number": "1080000037 | MI",
+  "declared_license_state": "MI",
+  "declared_npi": "1073359717",
+  "declared_last_updated": "2025-12-31",
+  "cms_template_version": "3.0.0",
+  "attestation": true,
+  "usable_rows_observed": true,
+  "manual_identity_gate": "current-behavioral-hospital-file-roster-address-transition-unresolved",
+  "disposition": "verified-current-mrf",
+  "interpretation": "The official behavioral-hospital pricing page links a complete CSV identifying Henry Ford Health Behavioral Health Hospital at the new West Bloomfield campus, with CMS 3.0.0, 2025-12-31, Michigan license, NPI, attestation and usable rows. The roster/CCN historically identifies Kingswood Hospital at 10300 W Eight Mile Road, Ferndale; this transition requires independent CCN enrollment/address reconciliation before assigning the file to CCN 234011.",
+  "next_action": "Verify CMS/state enrollment and CCN continuity for the West Bloomfield operation; retain the former Ferndale file quarantine until the address/CCN transition is independently resolved."
+}

@@ -1,0 +1,19 @@
+{
+  "ccn": "070006",
+  "observed_at": "2026-09-19T01:05:42Z",
+  "hospital_name": "STAMFORD HOSPITAL",
+  "official_site": "https://www.stamfordhealth.org/",
+  "official_pricing_page": "https://www.stamfordhealth.org/patients/hospital-charges/",
+  "pricing_page_status": 200,
+  "publisher_file_url": "https://www.stamfordhealth.org/-/media/project/healthcare-websites/stamfordhealth/documents/20260331_machine-readable-file.csv?rev=1aba70bbbab74b47bfbbb74b40e9720b",
+  "publisher_file_canonical_route": "https://sth-sc-p-stamfordhealth.dataweavers.io/-/media/project/healthcare-websites/stamfordhealth/documents/20260331_machine-readable-file.csv?rev=1aba70bbbab74b47bfbbb74b40e9720b",
+  "file_status": 403,
+  "file_result": "Official page's Dataweavers publisher route is reachable as HTML and exposes the exact CSV; direct retrieval of the publisher route returned 403 and browser navigation returned ERR_BLOCKED_BY_CLIENT before CSV bytes.",
+  "browser_file_status": "ERR_BLOCKED_BY_CLIENT",
+  "pointer_url": "https://www.stamfordhealth.org/cms-hpt.txt",
+  "pointer_redirect": "https://www.stamfordhealth.org/-/media/cms-hpt.txt",
+  "pointer_status": 403,
+  "pointer_result": "Cloudflare/support reference block; no pointer contents retrieved.",
+  "disposition": "official-pricing-page-and-exact-mrf-link-confirmed-file-and-pointer-access-gated",
+  "next_action": "Retry the exact Dataweavers CSV and root-pointer URLs through a materially different authorized route; verify bounded bytes, identity, Connecticut state, declared date/version and usability before promotion."
+}

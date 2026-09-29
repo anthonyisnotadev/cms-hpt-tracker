@@ -1,0 +1,17 @@
+{
+  "ccn": "394049",
+  "observed_at": "2026-09-22T02:30:00Z",
+  "official_pricing_page": "https://brookeglenhospital.com/",
+  "official_pricing_page_status": 403,
+  "official_page_observation": "Interactive browser access to the recorded first-party Brooke Glen Behavioral Hospital domain and its exact cms-hpt.txt route rendered first-party Cloudflare security-verification pages. No pricing content, pointer text, or MRF bytes were available in this browser observation.",
+  "cms_pointer_url": "https://brookeglenhospital.com/cms-hpt.txt",
+  "cms_pointer_result": "First-party browser access rendered a Cloudflare challenge; no pointer content was available in this recheck.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=394049&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6845,
+  "cms_api_response_sha256": "8320F1613861D6EF28FC6A4823F08AED061F0BFEBC363106C3E92E7344442523",
+  "cms_record": { "facility_id": "394049", "facility_name": "BROOKE GLEN BEHAVIORAL HOSPITAL", "address": "7170 LAFAYETTE AVENUE", "citytown": "FORT WASHINGTON", "state": "PA", "zip_code": "19034", "hospital_type": "Psychiatric", "hospital_ownership": "Voluntary non-profit - Private", "emergency_services": "No" },
+  "disposition": "official-domain-pointer-browser-access-challenge-no-mrf-observed",
+  "interpretation": "CMS independently confirms the facility identity and address. The official-domain and pointer observations are transport/access results only; they do not establish file absence, noncompliance, or facility closure.",
+  "next_action": "Retry the exact first-party pointer through a permitted publisher route and verify declared name, Fort Washington address/state, date, version and usability before changing the tracker disposition."
+}

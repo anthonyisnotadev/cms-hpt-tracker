@@ -1,0 +1,23 @@
+{
+  "ccn": "131319",
+  "observed_at": "2026-09-17T19:25:00.000Z",
+  "official_site": "https://minidokamemorial.org/",
+  "pointer_url": "https://minidokamemorial.org/cms-hpt.txt",
+  "pointer_http_status": 200,
+  "pointer_sha256": "58f6274eb8dd1ac051c53251b06c460d6dd910e1b18a1070d52bcb86564bb081",
+  "pages": [
+    {
+      "url": "https://minidokamemorial.org/billing-information/",
+      "http_status": 200,
+      "sha256": "265b350862a84ea2b27b1fc9b34826a12faef524f15b98bbfa6f18402c3d0904"
+    },
+    {
+      "url": "https://minidokamemorial.org/service-price-search/",
+      "http_status": 200,
+      "sha256": "94c8cdacfe1e96b1f72bfbae9a6c3ec3207667945403935fb84ddafe33ee7b96"
+    }
+  ],
+  "result": "Root pointer remains readable but declares a 404 file; reviewed first-party pricing pages remain reachable without a replacement standard-charges CSV or JSON link.",
+  "disposition": "pointer-target-404-no-replacement-file-on-reviewed-official-pages",
+  "next_action": "Locate a current first-party standard-charges file or repaired root-pointer target; then verify file bytes, CMS header, and Minidoka facility identity."
+}

@@ -1,0 +1,151 @@
+{
+  "audit_id": "reconciliation-palomar-escondido-current-pointer-file-ccn-resolution-2026-09-28",
+  "ccn": "050115",
+  "observed_at": "2026-09-28T17:35:03Z",
+  "purpose": "Reconcile the historical roster label PALOMAR HEALTH DOWNTOWN CAMPUS to the current CMS-enrolled Escondido campus, retrieve the current pointer-declared file, and independently verify identity and usable contents.",
+  "prior_record": {
+    "hospital_name": "PALOMAR HEALTH DOWNTOWN CAMPUS",
+    "city": "ESCONDIDO",
+    "state": "CA",
+    "domain": "palomarhealth.org",
+    "finding": "no-cms-hpt-txt-published",
+    "earlier_manual_proof": "reconciliation-palomar-downtown-page-vendor-proof.json",
+    "earlier_observation": "The web reader followed the official page's HospitalPriceDisclosure route to a generic error page; the Escondido/Poway file selections were not exposed to that reader."
+  },
+  "official_current_price_page": {
+    "url": "https://palomarucsdhealth.org/patient-and-visitor-information/price-transparency/",
+    "browser_http_status": 200,
+    "page_brand": "Palomar UC San Diego Health",
+    "page_last_updated_text": "2026-07-09",
+    "direct_get_last_modified": "2026-09-28T17:28:40Z",
+    "direct_get_bytes": 113844,
+    "direct_get_sha256": "7658702f8ac6b3d6a47a7203cd71c66c0df5c471740d6a695af61e82391e925e",
+    "link_label": "Download Machine Readable File",
+    "link_destination": "https://hospitalpricedisclosure.com/Download.aspx?pxi=6zygLFNJwULWEO0nVbhl5Q*-*"
+  },
+  "browser_portal_observation": {
+    "initial_route": "https://hospitalpricedisclosure.com/Default.aspx?ci=tWKNrFY5HZER1VRkXeC4JQ%2A-%2A",
+    "normal_browser_final_url": "https://hospitalpricedisclosure.com/select",
+    "browser_accessible": true,
+    "facility_options": ["Palomar Medical Center Escondido", "Palomar Medical Center Poway"],
+    "escondido_download_url_matches_official_pointer": true,
+    "downtown_option_present": false,
+    "interpretation": "A normal browser loaded the vendor selection page and exposed facility-specific Escondido/Poway files. No Downtown-specific entry appeared; CMS data independently shows that the active 050115 enrollment is the Escondido campus. The absence of a Downtown option alone is not treated as proof of closure."
+  },
+  "current_pointer": {
+    "url": "https://palomarucsdhealth.org/cms-hpt.txt",
+    "http_status": 200,
+    "content_type": "text/plain; charset=UTF-8",
+    "bytes": 614,
+    "sha256": "038ef68fff4b7269bcd8b80a7f5d7479d4e41a0f730905444c21bab257a434e3",
+    "last_modified": "2026-09-22T19:18:37Z",
+    "location_entry_count": 2,
+    "entries": [
+      {
+        "location_name": "Palomar Medical Center Escondido",
+        "mrf_url_matches_official_page_download": true,
+        "mrf_url_sha256": "ea2c16fbb094b95f0260bac5be4e40a2b3929035b8226d404607f99fe82290f1"
+      },
+      {
+        "location_name": "Palomar Medical Center Poway",
+        "mrf_url_matches_official_page_download": false,
+        "mrf_url_sha256": "9795aa922fe4f03daac1490be7dae2493f671569e44ac4551826d1e6d9aa5f26"
+      }
+    ],
+    "interpretation": "This is a newly working plain-text pointer, unlike the September 21 HTML 404. Its Escondido entry declares the exact machine-readable URL linked from the current official price page."
+  },
+  "complete_pointer_declared_mrf": {
+    "requested_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=6zygLFNJwULWEO0nVbhl5Q*-*",
+    "http_status": 200,
+    "final_url": "https://cleverleypteusstatic.blob.core.windows.net/readable/41-2392302_palomar-medical-center-escondido_standardcharges.json",
+    "content_type": "application/octet-stream",
+    "content_length": 39888675,
+    "downloaded_bytes": 39888675,
+    "last_modified": "2026-09-17T18:31:02Z",
+    "sha256": "abb83494e73d385fe6834b2ff2dfffa2ee39ab5c86bf1b80b8cc3ce0820a3cea",
+    "file_kind": "json",
+    "declared_hospital_name": "Palomar Medical Center Escondido",
+    "declared_location_name": ["Palomar Medical Center Escondido"],
+    "declared_address": ["2185 Citracado Parkway, Escondido, CA 92029"],
+    "declared_license_number": "80000083",
+    "declared_license_state": "CA",
+    "declared_npi": ["1447101969"],
+    "declared_last_updated": "2026-04-01",
+    "cms_template_version": "3.0.0",
+    "attestation_confirmed": true,
+    "attester": "Andrew Tokar",
+    "standard_charge_rows": 44854,
+    "rows_with_standard_charges": 44854,
+    "standard_charge_objects": 45680,
+    "code_information_entries": 112933,
+    "malformed_rows": 0,
+    "first_row_description": "ROOM/BED: ARU SEMI PVT",
+    "last_row_description": "Lith-ion batt elec/pneum VAD"
+  },
+  "cms_hospital_enrollment": {
+    "dataset_page": "https://data.cms.gov/provider-characteristics/hospitals-and-other-facilities/hospital-enrollments",
+    "query_url": "https://data.cms.gov/data-api/v1/dataset/aa2e3ead-bbaa-4e71-b59d-a07ac7ed9ba5/data?filter%5BCCN%5D=50115&size=10",
+    "http_status": 200,
+    "response_bytes": 1197,
+    "response_sha256": "716f5d2986ef6cf310a0c1db6f63009b6d5476e91f971ba219e22ad3755aa647",
+    "record": {
+      "ccn_as_published": "50115",
+      "normalized_ccn": "050115",
+      "provider_type": "PART A PROVIDER - HOSPITAL",
+      "npi": "1457321317",
+      "organization_name": "PALOMAR HEALTH",
+      "doing_business_as_name": "PALOMAR MEDICAL CENTER ESCONDIDO",
+      "address": "2185 CITRACADO PKWY, ESCONDIDO, CA 92029-4159",
+      "practice_location_type": "MAIN/PRIMARY HOSPITAL LOCATION"
+    },
+    "interpretation": "CMS currently returns CCN 050115 as Palomar Medical Center Escondido at the same campus as the pointer-declared MRF. The older Downtown Campus name is preserved as prior roster/history, not presented as the current CMS DBA."
+  },
+  "npi_registry_crosscheck": [
+    {
+      "npi": "1447101969",
+      "url": "https://npiregistry.cms.hhs.gov/api/?number=1447101969&version=2.1",
+      "http_status": 200,
+      "response_bytes": 1391,
+      "response_sha256": "3d32505927b383513beda0322ad0317b863b2ceb610586b502470c1230db18f4",
+      "status": "A",
+      "enumeration_date": "2026-02-09",
+      "organization_name": "PALOMAR UCSD HEALTH AUTHORITY",
+      "doing_business_as": "PALOMAR UCSD MEDICAL CENTER ESCONDIDO",
+      "location_address": "2185 CITRACADO PKWY, ESCONDIDO, CA 92029-4159",
+      "taxonomy": "282N00000X — General Acute Care Hospital"
+    },
+    {
+      "npi": "1457321317",
+      "url": "https://npiregistry.cms.hhs.gov/api/?number=1457321317&version=2.1",
+      "http_status": 200,
+      "response_bytes": 1826,
+      "response_sha256": "a2712274c4ca17de77858eaa96c90c8cb91c0c2ce3dca3cfc973ade24f853717",
+      "status": "A",
+      "organization_name": "PALOMAR HEALTH",
+      "doing_business_as": "PALOMAR MEDICAL CENTER ESCONDIDO",
+      "location_address": "2185 CITRACADO PKWY, ESCONDIDO, CA 92029-4159",
+      "interpretation": "This is the NPI on the current CMS enrollment record. The MRF's separate NPI is also active in NPPES and tied to the same Escondido location and current UCSD-branded name."
+    }
+  ],
+  "state_facility_crosscheck": {
+    "source": "https://hcai.ca.gov/facility/palomar-medical-center/",
+    "facility_name": "Palomar UCSD Medical Center Escondido",
+    "address": "2185 W. Citracado Parkway, Escondido, CA 92029",
+    "hcai_id": "106374382",
+    "license_number": "080000083",
+    "mrf_license_number_normalized": "80000083",
+    "facility_status": "Open",
+    "license_type": "General Acute Care Hospital"
+  },
+  "reconciliation": {
+    "current_hospital_name": "PALOMAR MEDICAL CENTER ESCONDIDO",
+    "current_domain": "palomarucsdhealth.org",
+    "current_ccn": "050115",
+    "current_address": "2185 Citracado Parkway, Escondido, CA 92029",
+    "historic_name_retained": "PALOMAR HEALTH DOWNTOWN CAMPUS",
+    "historic_name_treatment": "Retain in reviewed-resolution base/history; do not use as the current display name for CCN 050115.",
+    "finding": "The exact Escondido file is linked by both the current official price page and its current plain-text root pointer. Full bytes parse as current CMS 3.0.0 JSON and independently match the current CMS CCN 050115 name/address, HCAI campus/license, and active NPI records. This is a verified observed current MRF, not a legal compliance determination.",
+    "disposition_effect": "Replace the stale no-pointer finding with a current pointer-linked file observation and correct the effective tracker name/domain while retaining the original base row and name in audit history.",
+    "next_action": "Preserve the page/pointer/file hashes and re-evaluate this exact CCN on the next material pointer or file change; keep Palomar Medical Center Poway CCN 050636 separate."
+  }
+}

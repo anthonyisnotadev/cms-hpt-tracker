@@ -1,0 +1,28 @@
+{
+  "audit_id": "reconciliation-helen-keller-current-file-browser-route-2026-09-28",
+  "observed_at": "2026-09-28T02:21:10Z",
+  "ccn": "010019",
+  "facility": "Helen Keller Hospital, Sheffield, Alabama",
+  "source_page": "https://www.huntsvillehospital.org/price-transparency",
+  "source_page_context": "The current first-party system page separately lists Helen Keller Hospital and its standard-charge CSV link. This review targeted the previously recorded exact file URL; it did not substitute Huntsville or Red Bay files.",
+  "exact_file_url": "https://hh2026.cloudaccess.host/wp-content/uploads/472323163_hellen-keller-hospital_standardcharges.csv",
+  "browser_route": {
+    "method": "Ordinary visible in-app browser navigation using browser automation.",
+    "navigation_result": "Navigation timed out; subsequent browser state identified the requested URL and displayed the browser's ERR_CONNECTION_CLOSED page for hh2026.cloudaccess.host.",
+    "challenge_or_interstitial_bypass": false,
+    "file_bytes_obtained": false,
+    "interpretation": "A browser transport failure, not a file-content, identity, metadata, or MRF-validity result."
+  },
+  "prior_independent_client_observations": {
+    "official_page_link": "The current Huntsville system pricing page lists Helen Keller's separate exact CSV link.",
+    "direct_clients": "Prior bounded GET and HEAD attempts ended with unexpected EOF before response bytes; the web reader recognized the exact CSV but did not expose file content.",
+    "historical_404_route": "The older www.huntsvillehospital.org/images/pricetransparency/... CSV URL returned 404 and is not substituted for the current cloudaccess.host target."
+  },
+  "outcome": {
+    "new_mrf_bytes_or_price_data": false,
+    "pointer_linkage_established": false,
+    "disposition_changed": false,
+    "ccn_remains_unresolved": true,
+    "next_action": "Do not repeat the same browser/GET/HEAD routes absent an endpoint or access change. Obtain the exact Helen Keller file through a materially different authorized content-bearing route or publisher-provided copy, then verify its bytes/hash, Sheffield identity, Alabama metadata, CMS version/date and usable rows. Do not substitute Huntsville, Red Bay, the legacy 404 URL, or a third-party copy."
+  }
+}

@@ -1,0 +1,914 @@
+{
+  "purpose": "Complete-file root metadata observations for 38 formerly prefix-only leads, with independent identity reviews recorded only when performed. These are not whole-file CMS compliance findings.",
+  "method": "HTTPS GET streamed under a hard cap of 25 MB, raised to 50 MB then 80 MB only for files that exceeded earlier caps; complete responses parsed as JSON and SHA-256 hashed. No raw pricing rows retained.",
+  "records": [
+    {
+      "ccn": "061327",
+      "url": "https://secure.claraprice.net/price-transparency/5f7b80d31f/machine-readable/841337350_southwest-health-system_standardcharges.json",
+      "observed_at": "2026-09-16T22:50:22.761Z",
+      "http_status": 200,
+      "bytes": 8611109,
+      "file_sha256": "92ac8c58262ab8e1de06e168039129a5d1237888b9ea00a2d12d97456e07409c",
+      "hospital_name": "Southwest Health System",
+      "location_name": ["Southwest Memorial Hospital"],
+      "hospital_address": ["1311 North Mildred Road,  Cortez, CO 81321"],
+      "license_state": "CO",
+      "last_updated_on": "2025-06-12",
+      "version": "3.0.0",
+      "charge_count": 4292,
+      "identity_review": {
+        "pointer_url": "https://swhealth.org/cms-hpt.txt",
+        "pointer_final_url": "http://www.swhealth.org/cms-hpt.txt",
+        "pointer_sha256": "6f89b009e6ffdb9f1d1ca821f096b4f3f348819f596d6443012cee415c28bde7",
+        "pointer_http_status": 200,
+        "identity_page_url": "https://www.swhealth.org/services/southwest-memorial-hospital/",
+        "identity_page_sha256": "0f78d37771b1e0edcd5f1061b4d7350cbc3e85ffb1291f328cb973b0ce77be58",
+        "identity_page_http_status": 200,
+        "identity_basis": "Current hospital page identifies Southwest Memorial Hospital at 1311 North Mildred Road, Cortez CO; exact root pointer names Southwest Health System and links this file; file location names the hospital at the same address with CO license state."
+      }
+    },
+    {
+      "ccn": "170103",
+      "url": "https://secure.claraprice.net/price-transparency/XBZP-1715710889221/machine-readable/481040759_nmc-health_standardcharges.json",
+      "observed_at": "2026-09-16T22:50:15.290Z",
+      "http_status": 200,
+      "bytes": 6713916,
+      "file_sha256": "ed63879fc8603d43528d36dcbaa3c2fe81ebfa26fd7fb891b91a29335f1c9bff",
+      "hospital_name": "NMC Health",
+      "location_name": ["NMC Health"],
+      "hospital_address": ["600 Medical Center Drive, Newton, KS 67114"],
+      "license_state": "KS",
+      "last_updated_on": "2025-06-30",
+      "version": "3.0.0",
+      "charge_count": 4267,
+      "identity_review": {
+        "pointer_url": "https://mynmchealth.org/cms-hpt.txt",
+        "pointer_final_url": "https://www.mynmchealth.org/wp-content/uploads/2024/06/cms-hpt.txt",
+        "pointer_sha256": "fbe42a330e5cf44e6c2aca87d66ecaca0016a000b1968e2a418bd3ae295fedac",
+        "pointer_http_status": 200,
+        "identity_page_url": "https://www.mynmchealth.org/locations/medical-center/",
+        "identity_page_sha256": "3c09bb2572f4760595e9ad55470f777843407fd2d629812f9246b74614e7e354",
+        "identity_page_http_status": 200,
+        "identity_basis": "Current first-party medical-center page identifies NMC Health at 600 Medical Center Drive, Newton KS; exact root pointer names NMC Health and links this file; file location, address and KS license state agree."
+      }
+    },
+    {
+      "ccn": "171386",
+      "url": "https://secure.claraprice.net/price-transparency/TAIU-1724338504629/machine-readable/48-0818854_morton-county-health-system_standardcharges.json",
+      "observed_at": "2026-09-16T22:50:43.087Z",
+      "http_status": 200,
+      "bytes": 1925463,
+      "file_sha256": "170c6f8586d6e78f9388694ad1968544ef5f70c6b479ba25e543b34b3673b68e",
+      "hospital_name": "Morton County Health System",
+      "location_name": ["Morton County Health System"],
+      "hospital_address": ["445 Hilltop Street, Elkhart, KS 67950"],
+      "license_state": "KS",
+      "last_updated_on": "2025-09-25",
+      "version": "3.0.0",
+      "charge_count": 2250,
+      "pointer_recheck": {
+        "url": "https://mchswecare.com/cms-hpt.txt",
+        "observed_on": "2026-09-16",
+        "http_status": 200,
+        "bytes": 212,
+        "sha256": "d02032286070b4dd9d8fbd985a7bdca8af8edf52b89ff177db3bfcb2c8a9c43d",
+        "response_kind": "html-incapsula-challenge",
+        "exact_file_link_observed": false,
+        "next_action": "Try a materially different authorized browser route to read the current root pointer; do not treat this client-side challenge as a missing publisher pointer."
+      }
+    },
+    {
+      "ccn": "271311",
+      "url": "https://secure.claraprice.net/price-transparency/ZVEI-1742918921118/machine-readable/810291695_big-sandy-medical-center_standardcharges.json",
+      "observed_at": "2026-09-16T22:50:44.256Z",
+      "http_status": 200,
+      "bytes": 1950974,
+      "file_sha256": "28155e63e4ae1ecdb00093b128a51ad0377a8ffe8921cf020c2f73f4e498e5b4",
+      "hospital_name": "Big Sandy Medical Center",
+      "location_name": ["Big Sandy Medical Center"],
+      "hospital_address": ["166 Montana Avenue East, Big Sandy, MT 59520"],
+      "license_state": "MT",
+      "last_updated_on": "2025-07-08",
+      "version": "3.0.0",
+      "charge_count": 2251,
+      "identity_review": {
+        "pointer_url": "https://bsmc.org/cms-hpt.txt",
+        "pointer_final_url": "https://bsmc.org/cms-hpt.txt",
+        "pointer_sha256": "66d60657dec19fecfab86f0cd9ce8ab6b1a986c053ea3cc498fa6dce3de933ba",
+        "pointer_http_status": 200,
+        "identity_page_url": "https://bsmc.org/contact/",
+        "identity_page_sha256": "9247069c878ea59c4b8c0457b3d9e23c75e48fd75a2c63bee6c6c1d29598dd27",
+        "identity_page_http_status": 200,
+        "identity_basis": "Current first-party hospital page identifies Big Sandy Medical Center at 166 Montana Ave E, Big Sandy MT; exact root pointer names the same facility and links this file; file location, address and MT license state agree."
+      }
+    },
+    {
+      "ccn": "281306",
+      "url": "https://secure.claraprice.net/price-transparency/ECZN-1713298384823/machine-readable/476014070_kearney-county-hospital_standardcharges.json",
+      "observed_at": "2026-09-16T23:01:10.831Z",
+      "http_status": 200,
+      "bytes": 10637231,
+      "file_sha256": "f306f9401121e7cd194bb613d7187f107fd2ee80804cdb20622aeb186c544edc",
+      "hospital_name": "Kearney County Hospital",
+      "location_name": [
+        "Kearney County Hospital"
+      ],
+      "hospital_address": [
+        "727 East First Street, Minden, NE 68959"
+      ],
+      "license_state": "NE",
+      "last_updated_on": "2025-08-01",
+      "version": "3.0.0",
+      "charge_count": 3030,
+      "identity_review": {
+        "pointer_url": "https://kchs.org/cms-hpt.txt",
+        "pointer_final_url": "https://kchs.org/cms-hpt.txt",
+        "pointer_sha256": "ac46dc78007d2402c4e8205c0c626e9e7d22cf45dd2cee09c4254ce4d2d26231",
+        "pointer_http_status": 200,
+        "identity_page_url": "https://kchs.org/faqs",
+        "identity_page_sha256": "478e8370e9a96580157ef07eea81062376ae67a1fa6c48fc8cd3f4677b016012",
+        "identity_page_http_status": 200,
+        "identity_basis": "First-party FAQ identifies Kearney County Hospital at 727 East First Street, Minden NE; current root pointer links this file; file location, address and NE license state agree."
+      }
+    },
+    {
+      "ccn": "281312",
+      "url": "https://secure.claraprice.net/price-transparency/60faecd27d40231ea612e844/machine-readable/476006197_genoa-medical_standardcharges.json",
+      "observed_at": "2026-09-16T23:00:47.132Z",
+      "http_status": 200,
+      "bytes": 3199895,
+      "file_sha256": "806c625d2dbecc8468190f0b723ab4e63f08fb7c1de2de197681db1dfbe28d50",
+      "hospital_name": "Genoa Medical Facilities",
+      "location_name": [
+        "Genoa Medical Facilities"
+      ],
+      "hospital_address": [
+        "706 Ewing Avenue,  Genoa, NE 68640"
+      ],
+      "license_state": "NE",
+      "last_updated_on": "2026-03-13",
+      "version": "3.0.0",
+      "charge_count": 3786,
+      "identity_review": {
+        "pointer_url": "https://genoamedical.org/cms-hpt.txt",
+        "pointer_final_url": "https://www.genoamedical.org/cms-hpt.txt",
+        "pointer_sha256": "197d3186bfd55c15cc11585485e609839310b9dffed2cb8ca39cabce2138d289",
+        "pointer_http_status": 200,
+        "identity_page_url": "https://www.genoamedical.org/getpage.php?name=contact",
+        "identity_page_sha256": "ecc3f96363e66a61a3d45e5056285e49aced83afdff89d65f084cd39369da839",
+        "identity_page_http_status": 200,
+        "identity_basis": "First-party site names Genoa Community Hospital within Genoa Medical Facilities at 706 Ewing Avenue, Genoa NE; current root pointer links the Genoa Medical Facilities file; file location, address and NE license state agree."
+      }
+    },
+    {
+      "ccn": "281313",
+      "url": "https://secure.claraprice.net/price-transparency/YTLS-1743523485849/machine-readable/470532605_gothenburg-health_standardcharges.json",
+      "observed_at": "2026-09-16T23:00:50.013Z",
+      "http_status": 200,
+      "bytes": 4693822,
+      "file_sha256": "062680d52462d4cbdb3439a89b2f180135b2e5effc9872b6213a8f07e48a2b62",
+      "hospital_name": "Gothenburg Health",
+      "location_name": [
+        "Gothenburg Health"
+      ],
+      "hospital_address": [
+        "910 20th Street, Gothenburg, NE 69138"
+      ],
+      "license_state": "NE",
+      "last_updated_on": "2025-06-11",
+      "version": "3.0.0",
+      "charge_count": 3975,
+      "identity_review": {
+        "pointer_url": "https://gothenburghealth.org/cms-hpt.txt",
+        "pointer_final_url": "https://www.gothenburghealth.org/cms-hpt.txt",
+        "pointer_sha256": "d4be0eace7846f824b3689d6764912195185153320bdb169afc243ff48211b39",
+        "pointer_http_status": 200,
+        "identity_page_url": "https://www.gothenburghealth.org/contact",
+        "identity_page_sha256": "77257aed104a48502f7156972496fe4024da86280f50f2fc2ff64d1bb6839050",
+        "identity_page_http_status": 200,
+        "identity_basis": "First-party Gothenburg Health contact page gives 910 20th Street, Gothenburg NE; current root pointer links this file; file name, location, address and NE license state agree."
+      }
+    },
+    {
+      "ccn": "281316",
+      "url": "https://secure.claraprice.net/price-transparency/MMRL-1778188481466/machine-readable/470466032_webster-county-community-hospital_standardcharges.json",
+      "observed_at": "2026-09-16T23:00:51.693Z",
+      "http_status": 200,
+      "bytes": 1701004,
+      "file_sha256": "447936c7de0f722fa1df6964fb7695bdbcb87ac2e5e5dee1bd1b2c6b19cb0da7",
+      "hospital_name": "Webster County Community Hospital dba Webster County Community Hospital",
+      "location_name": [
+        "Webster County Community Hospital"
+      ],
+      "hospital_address": [
+        "621 North Franklin Street, Red Cloud, NE 68970"
+      ],
+      "license_state": "NE",
+      "last_updated_on": "2026-05-07",
+      "version": "3.0.0",
+      "charge_count": 2347,
+      "identity_review": {
+        "pointer_url": "https://websterhospital.org/cms-hpt.txt",
+        "pointer_final_url": "https://websterhospital.org/cms-hpt.txt",
+        "pointer_sha256": "70e7865b8a863f4aa25fc2f806b9c41f29141489b9b8f87d38b01dae77a31c8c",
+        "pointer_http_status": 200,
+        "identity_page_url": "https://www.websterhospital.org/getpage.php?name=contact",
+        "identity_page_sha256": "6458b28fb9f4737158f95f6ad4a3ce84cb266c9dc46813fc770b68b84b9aa1e4",
+        "identity_page_http_status": 200,
+        "identity_basis": "First-party Webster County Community Hospital site gives 621 N Franklin Street, Red Cloud NE; current root pointer links this file; file location, address and NE license state agree."
+      }
+    },
+    {
+      "ccn": "281318",
+      "url": "https://secure.claraprice.net/price-transparency/JBRE-1747325086649/machine-readable/470547317_morrill-county-community-hospital_standardcharges.json",
+      "observed_at": "2026-09-16T23:00:53.627Z",
+      "http_status": 200,
+      "bytes": 2745798,
+      "file_sha256": "23ba5ad2c5401e7e6eae50b59faa61a1f83bea2db4f8bbe2647f8c7c8ab7395f",
+      "hospital_name": "Morrill County Community Hospital",
+      "location_name": [
+        "Morrill County Community Hospital"
+      ],
+      "hospital_address": [
+        "1313 S Street, Bridgeport, NE 69336"
+      ],
+      "license_state": "NE",
+      "last_updated_on": "2025-07-24",
+      "version": "3.0.0",
+      "charge_count": 3147,
+      "pointer_recheck": { "final_url": "https://www.morrillcountyhospital.com/storage/app/media/cms-hpt.txt", "http_status": 200, "bytes": 386, "sha256": "f96a68843fce53a27eb45d7aab80218c83fd686468336507c7f626b1b2d1edfd", "exact_file_link_observed": true }
+    },
+    {
+      "ccn": "281325",
+      "url": "https://secure.claraprice.net/price-transparency/OPOL-1689186416631/machine-readable/470532256_brown-county-hospital_standardcharges.json",
+      "observed_at": "2026-09-16T23:00:55.216Z",
+      "http_status": 200,
+      "bytes": 3146143,
+      "file_sha256": "c7530450f33200b2b435523c739b82b3e6055b0da77a45eb2225e92f4bec0519",
+      "hospital_name": "Brown County Hospital",
+      "location_name": [
+        "Brown County Hospital"
+      ],
+      "hospital_address": [
+        "945 East Zero Street,  Ainsworth, NE 69210"
+      ],
+      "license_state": "NE",
+      "last_updated_on": "2025-08-08",
+      "version": "3.0.0",
+      "charge_count": 2284,
+      "pointer_recheck": { "final_url": "https://browncountyhospital.org/cms-hpt.txt", "http_status": 200, "bytes": 339, "sha256": "2933d5026829aa50d6357d120d04291d078b7dd4228de27d684c488414c4a744", "exact_file_link_observed": true }
+    },
+    {
+      "ccn": "281327",
+      "url": "https://secure.claraprice.net/price-transparency/YWBX-1689949782535/machine-readable/476007486_cozad-community-hospital_standardcharges.json",
+      "observed_at": "2026-09-16T23:00:57.928Z",
+      "http_status": 200,
+      "bytes": 7459976,
+      "file_sha256": "369ef222a20f90b966f3e6ec9cd387b6fb687766d5731df6e0e5a563663015fb",
+      "hospital_name": "Cozad Community Hospital",
+      "location_name": [
+        "Cozad Community Hospital"
+      ],
+      "hospital_address": [
+        "300 East 12th Street,  Cozad, NE 69130"
+      ],
+      "license_state": "NE",
+      "last_updated_on": "2025-05-12",
+      "version": "3.0.0",
+      "charge_count": 6135,
+      "pointer_recheck": { "final_url": "https://cozadhealthcare.com/cms-hpt.txt", "http_status": 200, "bytes": 340, "sha256": "a6d2b24c1727961ba403522c03f5334380b6e047459cf3e328b5fe8ba4b4888c", "exact_file_link_observed": true }
+    },
+    {
+      "ccn": "281332",
+      "url": "https://secure.claraprice.net/price-transparency/XJEN-1744822433611/machine-readable/470551144_butler-county-health_standardcharges.json",
+      "observed_at": "2026-09-16T23:01:00.016Z",
+      "http_status": 200,
+      "bytes": 7704024,
+      "file_sha256": "919379d441cbb5d1df097f278089c550d04c197677e60f44fa455c65ed08ea74",
+      "hospital_name": "Butler County Health",
+      "location_name": [
+        "Butler County Health"
+      ],
+      "hospital_address": [
+        "372 South Ninth Street, David City, NE 68632"
+      ],
+      "license_state": "NE",
+      "last_updated_on": "2025-07-02",
+      "version": "3.0.0",
+      "charge_count": 3356,
+      "pointer_recheck": { "final_url": "https://www.bchccnet.org/cms-hpt.txt", "http_status": 200, "bytes": 339, "sha256": "3f53dbf4b6b932a9d6f576f445ba3eabbea35d6782c621f668dad33adf8b7a93", "exact_file_link_observed": true }
+    },
+    {
+      "ccn": "281334",
+      "url": "https://secure.claraprice.net/price-transparency/AWJB-1737999041661/machine-readable/476000611_boone-county-health-center_standardcharges.json",
+      "observed_at": "2026-09-16T23:07:08.641Z",
+      "http_status": 200,
+      "bytes": 7723524,
+      "file_sha256": "48159e49cac347659e4b2a4f09f1a3daca8dcf4d5f98160c5b2a90b051bb5cb3",
+      "hospital_name": "Boone County Health Center",
+      "location_name": [
+        "Boone County Health Center"
+      ],
+      "hospital_address": [
+        "723 West Fairview Street, Albion, NE 68620"
+      ],
+      "license_state": "NE",
+      "last_updated_on": "2025-09-11",
+      "version": "3.0.0",
+      "charge_count": 4404,
+      "identity_review": {
+        "pointer_url": "https://boonecohealth.org/cms-hpt.txt",
+        "pointer_final_url": "https://boonecohealth.org/cms-hpt.txt",
+        "pointer_sha256": "6ded27a49ab2007860e07fa46220f61e8bf6161a14fdd0a231d872b90f3826e9",
+        "pointer_http_status": 200,
+        "identity_page_url": "https://boonecohealth.org/location/boone-county-health-center/",
+        "identity_page_sha256": "651e01828e4fdb0993b6762b9ee36fd1352d8f4bc45c839e46e0ec68f8777b25",
+        "identity_page_http_status": 200,
+        "identity_basis": "First-party facility page identifies Boone County Health Center at 723 West Fairview Street, Albion NE; current root pointer links this file; file location, address and NE license state agree."
+      }
+    },
+    {
+      "ccn": "281335",
+      "url": "https://secure.claraprice.net/price-transparency/IHDY-1698614401401/machine-readable/470533576_callaway-district-hospital_standardcharges.json",
+      "observed_at": "2026-09-16T23:06:56.630Z",
+      "http_status": 200,
+      "bytes": 3175573,
+      "file_sha256": "00d928fc7f73a71f3630f46b4c9a9c9a4926f253f8a78796b51a2e9d1ae1a2b8",
+      "hospital_name": "Callaway District Hospital",
+      "location_name": [
+        "Callaway District Hospital"
+      ],
+      "hospital_address": [
+        "211 East Kimball Street,  Callaway, NE 68825"
+      ],
+      "license_state": "NE",
+      "last_updated_on": "2026-06-30",
+      "version": "3.0.0",
+      "charge_count": 1733,
+      "pointer_recheck": { "final_url": "https://www.callawayhospital.org/cms-hpt.txt", "http_status": 200, "bytes": 357, "sha256": "1e55065d0e53f72980af92e891dc51fa42566608c424a7f7803b038735cedb49", "exact_file_link_observed": true }
+    },
+    {
+      "ccn": "281340",
+      "url": "https://secure.claraprice.net/price-transparency/GGVV-1725057844241/machine-readable/47-0487831_dundy-county-hospital_standardcharges.json",
+      "observed_at": "2026-09-16T23:06:58.242Z",
+      "http_status": 200,
+      "bytes": 12468570,
+      "file_sha256": "4976b94bd172e563e60e65c07eac5fb6e76be13701fe4395f12b6be69106efd1",
+      "hospital_name": "Dundy County Hospital",
+      "location_name": [
+        "Dundy County Hospital"
+      ],
+      "hospital_address": [
+        "1313 North Cheyenne Street, Benkelman, NE 69021"
+      ],
+      "license_state": "NE",
+      "last_updated_on": "2025-09-22",
+      "version": "3.0.0",
+      "charge_count": 5869,
+      "pointer_recheck": { "final_url": "https://www.dchbenkelman.com/cms-hpt.txt", "http_status": 200, "bytes": 338, "sha256": "a8105a193386b17039115fcb0ff4f8fa539b1abd7d09c1fee78356daaca3eea7", "exact_file_link_observed": true }
+    },
+    {
+      "ccn": "281349",
+      "url": "https://secure.claraprice.net/price-transparency/TJON-1688566031190/machine-readable/470711662_pender-community-hospital_standardcharges.json",
+      "observed_at": "2026-09-16T23:06:59.475Z",
+      "http_status": 200,
+      "bytes": 2684158,
+      "file_sha256": "27906a7fc4065a619e4aa551850590318c9a937b997f768cc9c994fe82e3ca00",
+      "hospital_name": "Pender Community Hospital",
+      "location_name": [
+        "Pender Community Hospital"
+      ],
+      "hospital_address": [
+        "100 Hospital Drive PO Box 100,  Pender, NE 68047"
+      ],
+      "license_state": "NE",
+      "last_updated_on": "2025-06-17",
+      "version": "3.0.0",
+      "charge_count": 3215,
+      "identity_review": {
+        "pointer_url": "https://pchne.org/cms-hpt.txt",
+        "pointer_final_url": "https://www.pchne.org/cms-hpt.txt",
+        "pointer_sha256": "9cffb7aedd12139667ceae3f336dbf0784a1c67cd5caa713a18115a1587e0546",
+        "pointer_http_status": 200,
+        "identity_page_url": "https://www.pchne.org/facilities/hospital/",
+        "identity_page_sha256": "e67e70b76cedc9682c4113772bd64e2119030afd68bdcb4c9067090c510d5017",
+        "identity_page_http_status": 200,
+        "identity_basis": "First-party Pender Community Health hospital page places the campus at 100 Hospital Drive, Pender NE; current root pointer links the Pender Community Hospital file; file location, address and NE license state agree."
+      }
+    },
+    {
+      "ccn": "281350",
+      "url": "https://secure.claraprice.net/price-transparency/OPIU-1673956354318/machine-readable/476000874_johnson-county-hospital_standardcharges.json",
+      "observed_at": "2026-09-16T23:07:00.689Z",
+      "http_status": 200,
+      "bytes": 5072943,
+      "file_sha256": "ab19fa9640ab738a709ec0e21066d70e1acef12206bafe3f4f8b02ea7f8fd421",
+      "hospital_name": "Johnson County Hospital",
+      "location_name": [
+        "Johnson County Hospital"
+      ],
+      "hospital_address": [
+        "202 High Street,  Tecumseh, NE 68450"
+      ],
+      "license_state": "NE",
+      "last_updated_on": "2025-07-09",
+      "version": "3.0.0",
+      "charge_count": 3329,
+      "identity_review": {
+        "pointer_url": "https://jchosp.com/cms-hpt.txt",
+        "pointer_final_url": "https://jchosp.com/cms-hpt.txt",
+        "pointer_sha256": "0cd0b2148ef53462638d64901ea9dbf04191e204e4506b6126861eb98337cbfc",
+        "pointer_http_status": 200,
+        "identity_page_url": "https://jchosp.com/locations-contact-information/",
+        "identity_page_sha256": "30e998540e9c286ba966bdf87ef557bee7b008ce342f4bc30a764b7402e943dc",
+        "identity_page_http_status": 200,
+        "identity_basis": "First-party Johnson County Hospital locations page places the hospital at 202 High Street, Tecumseh NE; current root pointer links this file; file location, address and NE license state agree."
+      }
+    },
+    {
+      "ccn": "281364",
+      "url": "https://secure.claraprice.net/price-transparency/RNAV-1731102747513/machine-readable/470379834_beatrice-community-hospital_standardcharges.json",
+      "observed_at": "2026-09-16T23:07:02.099Z",
+      "http_status": 200,
+      "bytes": 6721207,
+      "file_sha256": "5a034ffd95d70d33a44d03cb0fea7c9750997373b192e40531daf857500ca9a4",
+      "hospital_name": "Beatrice Community Hospital",
+      "location_name": [
+        "Beatrice Community Hospital"
+      ],
+      "hospital_address": [
+        "4800 Hospital Parkway, Beatrice, NE 68310"
+      ],
+      "license_state": "NE",
+      "last_updated_on": "2025-11-07",
+      "version": "3.0.0",
+      "charge_count": 4549,
+      "pointer_recheck": { "final_url": "https://beatricecommunityhospital.com/cms-hpt.txt", "http_status": 200, "bytes": 379, "sha256": "1743a8315567862647512939b899bd8b9e674d253562eb1bfc4abb2327f3e1d7", "exact_file_link_observed": true }
+    },
+    {
+      "ccn": "351307",
+      "url": "https://secure.claraprice.net/price-transparency/CKEC-1760711468288/machine-readable/450226426_smp-health---st-andrews_standardcharges.json",
+      "observed_at": "2026-09-16T23:07:03.174Z",
+      "http_status": 200,
+      "bytes": 2553769,
+      "file_sha256": "6a78cb4b2e51ffe61ee07988572d3ac0483d91194e7b5851f7d7622604fd8bd0",
+      "hospital_name": "SMP Health - St. Andrews",
+      "location_name": [
+        "SMP Health - St. Andrews"
+      ],
+      "hospital_address": [
+        "316 Ohmer Street, Bottineau, ND 58318"
+      ],
+      "license_state": "ND",
+      "last_updated_on": "2025-11-12",
+      "version": "3.0.0",
+      "charge_count": 2263,
+      "pointer_recheck": { "final_url": "https://smphealth.org/cms-hpt.txt", "http_status": 200, "bytes": 1038, "sha256": "84b4ef68f9b71f8d122065c6f4bdd3d8f86226de81f74f9c0e379b4f165c0be3", "exact_file_link_observed": true }
+    },
+    {
+      "ccn": "351328",
+      "url": "https://secure.claraprice.net/price-transparency/VGUK-1776956486915/machine-readable/450253272_linton-regional-medical-center_standardcharges.json",
+      "observed_at": "2026-09-16T23:07:04.317Z",
+      "http_status": 200,
+      "bytes": 2051517,
+      "file_sha256": "c79b7dfe973e9bd6f6cfe08d96eef7e0062c2f1491eb599ba1640b6432db04a9",
+      "hospital_name": "Linton Regional Medical Center dba Linton Regional Medical Center",
+      "location_name": [
+        "Linton Regional Medical Center"
+      ],
+      "hospital_address": [
+        "111 Elm Avenue West, Linton, ND 58552"
+      ],
+      "license_state": "ND",
+      "last_updated_on": "2026-05-18",
+      "version": "3.0.0",
+      "charge_count": 1421,
+      "pointer_recheck": { "final_url": "https://lintonregionalmedicalcenter.org/wp-content/uploads/2026/05/Linton-Regional-Medical-Center-cms-hpt.txt", "http_status": 200, "bytes": 372, "sha256": "f80fa03fa1fac19ee1092c82a0b5736f4426b8cae35bc6cc311b50335d09fe6c", "exact_file_link_observed": true }
+    },
+    {
+      "ccn": "370222",
+      "url": "https://secure.claraprice.net/price-transparency/VDLQ-1687968511716/machine-readable/200561474_mcbride-orthopedic-hospital_standardcharges.json",
+      "observed_at": "2026-09-16T23:11:25.947Z",
+      "http_status": 200,
+      "bytes": 6206543,
+      "file_sha256": "6d9d15b614fe90f1a6023db5ee4a216f11b6d6cf04b74fc3f2b58f9c2110aae5",
+      "hospital_name": "McBride Orthopedic Hospital",
+      "location_name": [
+        "McBride Orthopedic Hospital"
+      ],
+      "hospital_address": [
+        "9600 Broadway Extension,  Oklahoma City, OK 73114"
+      ],
+      "license_state": "OK",
+      "last_updated_on": "2026-01-15",
+      "version": "3.0.0",
+      "charge_count": 17527
+    },
+    {
+      "ccn": "371307",
+      "url": "https://secure.claraprice.net/price-transparency/RSPS-1743612723843/machine-readable/736060907_cimarron-memorial-hospital_standardcharges.json",
+      "observed_at": "2026-09-16T23:11:27.595Z",
+      "http_status": 200,
+      "bytes": 4001346,
+      "file_sha256": "325e667983a2cda46df278ed5359122ba5bcaa0ec315d6c9525a483b7cc35df8",
+      "hospital_name": "Cimarron Memorial Hospital",
+      "location_name": [
+        "Cimarron Memorial Hospital"
+      ],
+      "hospital_address": [
+        "100 South Ellis Street, Boise City, OK 73933"
+      ],
+      "license_state": "OK",
+      "last_updated_on": "2025-06-11",
+      "version": "3.0.0",
+      "charge_count": 3581
+    },
+    {
+      "ccn": "400006",
+      "url": "https://secure.claraprice.net/price-transparency/EPCT-1699383596813/machine-readable/660686840_doctors-center-hospital---san-juan_standardcharges.json",
+      "observed_at": "2026-09-16T23:11:30.013Z",
+      "http_status": 200,
+      "bytes": 5476771,
+      "file_sha256": "49055e76e67dd3e97d7d6397ea995d1b0ce85bd6ae139c2b286e2537f2de141a",
+      "hospital_name": "Doctors' Center Hospital - San Juan",
+      "location_name": [
+        "Doctors' Center Hospital - San Juan"
+      ],
+      "hospital_address": [
+        "Calle San Rafael #1395, Santurce, PR 00909"
+      ],
+      "license_state": "PR",
+      "last_updated_on": "2025-10-20",
+      "version": "3.0.0",
+      "charge_count": 15683
+    },
+    {
+      "ccn": "400118",
+      "url": "https://secure.claraprice.net/price-transparency/KKXU-1699383282623/machine-readable/660874686_doctors-center-hospital---dorado_standardcharges.json",
+      "observed_at": "2026-09-16T23:11:31.658Z",
+      "http_status": 200,
+      "bytes": 2584193,
+      "file_sha256": "1c753afb37f6ff27a40877ad10bcbadb10e208661382e499c68e91eb7fcf8c3a",
+      "hospital_name": "Doctors' Center Hospital - Dorado",
+      "location_name": [
+        "Doctors' Center Hospital - Dorado"
+      ],
+      "hospital_address": [
+        "900 carretera 696,  Dorado, PR 00646"
+      ],
+      "license_state": "PR",
+      "last_updated_on": "2025-10-20",
+      "version": "3.0.0",
+      "charge_count": 4712
+    },
+    {
+      "ccn": "400132",
+      "url": "https://secure.claraprice.net/price-transparency/KXCB-1699383416708/machine-readable/660665951_doctors-center-hospital---manatí_standardcharges.json",
+      "observed_at": "2026-09-16T23:12:54.830Z",
+      "http_status": 200,
+      "bytes": 5476759,
+      "file_sha256": "5c28f09cc7ca8fec97fa3c69e6247303c67f732a4da71df797cbed7edb2b469b",
+      "hospital_name": "Doctors' Center Hospital - Manati",
+      "location_name": [
+        "Doctors' Center Hospital - Manati"
+      ],
+      "hospital_address": [
+        "Carr #2 Km 47.7, Manatí, PR 00674"
+      ],
+      "license_state": "PR",
+      "last_updated_on": "2025-10-20",
+      "version": "3.0.0",
+      "charge_count": 15683
+    },
+    {
+      "ccn": "450055",
+      "url": "https://linkprotect.cudasvc.com/url?a=https%3a%2f%2fsecure.claraprice.net%2fprice-transparency%2fNWM3481600293%2fmachine-readable%2f756003896_rolling-plains-memorial-hospital_standardcharges.json&c=E,1,4cfZTmjTBba0IPZpIDrkcANoYImC5Z17-V6nU_BdPSgoIVGsS6j5fmMpeqo4jPr7SO1rFiT9vlmIXS7JXuu13EtAOXubqcBrDNl-eGsm&typo=1",
+      "observed_at": "2026-09-16T23:11:47.666Z",
+      "http_status": 200,
+      "bytes": 11600994,
+      "file_sha256": "46b36425ee90d37eab4ac6983c7489962ee3b04a117c65d95beb9cb04da82acf",
+      "hospital_name": "Rolling Plains Memorial Hospital",
+      "location_name": [
+        "Rolling Plains Memorial Hospital"
+      ],
+      "hospital_address": [
+        "200 E. Arizona Street,  Sweetwater, TX 79556"
+      ],
+      "license_state": "TX",
+      "last_updated_on": "2026-06-25",
+      "version": "3.0.0",
+      "charge_count": 9265
+    },
+    {
+      "ccn": "450399",
+      "url": "https://secure.claraprice.net/price-transparency/KBH1622057832/machine-readable/751227032_brownfield-regional-medical-center_standardcharges.json",
+      "observed_at": "2026-09-16T23:11:49.217Z",
+      "http_status": 200,
+      "bytes": 2988206,
+      "file_sha256": "1bf88dafc224e706e68dee35b48b50380248b54c09e6bbccf6e0bfd520b6c766",
+      "hospital_name": "Brownfield Regional Medical Center",
+      "location_name": [
+        "Brownfield Regional Medical Center"
+      ],
+      "hospital_address": [
+        "705 E Felt Street,  Brownfield, TX 79316"
+      ],
+      "license_state": "TX",
+      "last_updated_on": "2025-05-28",
+      "version": "3.0.0",
+      "charge_count": 4440,
+      "pointer_recheck": {
+        "url": "https://brownfield-rmc.org/cms-hpt.txt",
+        "observed_on": "2026-09-16",
+        "http_status": 0,
+        "bytes": 0,
+        "response_kind": "client-fetch-failed-twice",
+        "exact_file_link_observed": false,
+        "next_action": "Use a materially different authorized browser route to check current root-pointer content before any standing-finding change; the complete file alone does not establish current pointer linkage."
+      }
+    },
+    {
+      "ccn": "451309",
+      "url": "https://secure.claraprice.net/price-transparency/IWPW-1774366795883/machine-readable/751246166_mccamey-county-hospital-district_standardcharges.json",
+      "observed_at": "2026-09-16T23:12:09.668Z",
+      "http_status": 200,
+      "bytes": 10485940,
+      "file_sha256": "ff3b7c1e93c86ac92154c7e31bacfcb7b90c0a575baef9f06d5fc9e1f0133085",
+      "hospital_name": "McCamey County Hospital District",
+      "location_name": [
+        "McCamey County Hospital District"
+      ],
+      "hospital_address": [
+        "2500 Highway 305 South, McCamey , TX 79752"
+      ],
+      "license_state": "TX",
+      "last_updated_on": "2026-03-24",
+      "version": "3.0.0",
+      "charge_count": 3716
+    },
+    {
+      "ccn": "451353",
+      "url": "https://secure.claraprice.net/price-transparency/BQJH-1670278124636/machine-readable/352336501_crane-memorial-hospital_standardcharges.json",
+      "observed_at": "2026-09-16T23:12:11.111Z",
+      "http_status": 200,
+      "bytes": 2726787,
+      "file_sha256": "18ddf86ab97d9ae4eb803f0a02a5645ba325bdda01853fd238ccee93735be470",
+      "hospital_name": "Crane Memorial Hospital",
+      "location_name": [
+        "Crane Memorial Hospital"
+      ],
+      "hospital_address": [
+        "1310 South Alford Street,  Crane, TX 79731"
+      ],
+      "license_state": "TX",
+      "last_updated_on": "2026-04-03",
+      "version": "3.0.0",
+      "charge_count": 3166
+    },
+    {
+      "ccn": "451373",
+      "url": "https://secure.claraprice.net/price-transparency/VQPK-1746646727450/machine-readable/756001193_ward-memorial-hospital_standardcharges.json",
+      "observed_at": "2026-09-16T23:12:13.108Z",
+      "http_status": 200,
+      "bytes": 9297492,
+      "file_sha256": "67adea16d49d8d1e6e3a7a1bcbedea675c969a71c81100ebd75c5118a0bd79d9",
+      "hospital_name": "Ward Memorial Hospital",
+      "location_name": [
+        "Ward Memorial Hospital"
+      ],
+      "hospital_address": [
+        "406 South Gary Avenue, Monahans, TX 79756"
+      ],
+      "license_state": "TX",
+      "last_updated_on": "2025-06-13",
+      "version": "3.0.0",
+      "charge_count": 3231,
+      "identity_review": {
+        "pointer_url": "https://wardmemorial.com/cms-hpt.txt",
+        "pointer_final_url": "https://www.wardmemorial.com/cms-hpt.txt",
+        "pointer_sha256": "3ca84af7ec17ce52231159c47efe1af77eb9e41f634dd8e5fb844e6d1ce52c18",
+        "pointer_http_status": 200,
+        "identity_page_url": "https://www.wardmemorial.com/",
+        "identity_page_sha256": "7a9e0c3b026ebf43d65e43622ba110822de6368d5730939f0264de151054a96d",
+        "identity_page_http_status": 200,
+        "identity_basis": "First-party Ward Memorial Hospital site identifies the campus at 406 South Gary Avenue, Monahans TX; current root pointer links this file; file location, address and TX license state agree."
+      }
+    },
+    {
+      "ccn": "451379",
+      "url": "https://secure.claraprice.net/price-transparency/FTKZ-1722971887692/machine-readable/74-1857100_coryell-health_standardcharges.json",
+      "observed_at": "2026-09-16T23:12:14.970Z",
+      "http_status": 200,
+      "bytes": 6343864,
+      "file_sha256": "5e7f35402e4ee06aa43c593271ccdae854e4d17a4ba261bd9642f32cdcfeabcf",
+      "hospital_name": "Coryell Health",
+      "location_name": [
+        "Coryell Health"
+      ],
+      "hospital_address": [
+        "1507 West Main Street, Gatesville, TX 76528"
+      ],
+      "license_state": "TX",
+      "last_updated_on": "2025-09-03",
+      "version": "3.0.0",
+      "charge_count": 2641
+    },
+    {
+      "ccn": "471300",
+      "url": "https://secure.claraprice.net/price-transparency/5f6520a384/machine-readable/030343282_grace-cottage-hospital_standardcharges.json",
+      "observed_at": "2026-09-16T23:12:16.395Z",
+      "http_status": 200,
+      "bytes": 3796631,
+      "file_sha256": "d47ebd450cc4b15d7c3d16febbe9d0e8ec26c6d4e8c4d27ecb6ce8976954b43b",
+      "hospital_name": "Grace Cottage Hospital",
+      "location_name": [
+        "Grace Cottage Hospital"
+      ],
+      "hospital_address": [
+        "185 Grafton Road,  Townshend, VT 05353"
+      ],
+      "license_state": "VT",
+      "last_updated_on": "2025-08-19",
+      "version": "3.0.0",
+      "charge_count": 2576
+    },
+    {
+      "ccn": "670090",
+      "url": "https://secure.claraprice.net/price-transparency/HRHW-1731105964107/machine-readable/273815440_crescent-regional-hospital_standardcharges.json",
+      "observed_at": "2026-09-16T23:12:22.522Z",
+      "http_status": 200,
+      "bytes": 24099557,
+      "file_sha256": "9cca083ca60afd9d2ab6e68c86cb1eb8ac9f65d04575dc9a317c3222d6550191",
+      "hospital_name": "Crescent Regional Hospital",
+      "location_name": [
+        "Crescent Regional Hospital"
+      ],
+      "hospital_address": [
+        "2600 West Pleasant Run Road, Lancaster, TX 75146"
+      ],
+      "license_state": "TX",
+      "last_updated_on": "2025-11-07",
+      "version": "3.0.0",
+      "charge_count": 16299
+    },
+    {
+      "ccn": "671300",
+      "url": "https://secure.claraprice.net/price-transparency/JXVV-1691592288793/machine-readable/752597537_graham-regional-medical-center_standardcharges.json",
+      "observed_at": "2026-09-16T23:12:24.863Z",
+      "http_status": 200,
+      "bytes": 19775209,
+      "file_sha256": "fd2d41e9b409979a849ac70c3f3cfc095bb1a348384dd126e0dbbe17f13bda8b",
+      "hospital_name": "Graham Regional Medical Center",
+      "location_name": [
+        "Graham Regional Medical Center"
+      ],
+      "hospital_address": [
+        "1301 Montgomery Road,  Graham, TX 76450"
+      ],
+      "license_state": "TX",
+      "last_updated_on": "2025-07-03",
+      "version": "3.0.0",
+      "charge_count": 8205,
+      "identity_review": {
+        "pointer_url": "https://grahamrmc.com/cms-hpt.txt",
+        "pointer_final_url": "https://3a8fe0be-6bd3-4fb3-8ed2-9c9666b2b893.usrfiles.com/ugd/3a8fe0_de920787b0134273a40628d34dff9fb1.txt",
+        "pointer_sha256": "ae0b0e262e18c3d9eab240101b6b4c510c0d40bb10f34e753665063294a90b03",
+        "pointer_http_status": 200,
+        "identity_page_url": "https://www.grahamrmc.com/",
+        "identity_page_sha256": "c9e3a7562cc3b9e610eaea69f70d0e3645ffecfd29932ceed51cd7d527181565",
+        "identity_page_http_status": 200,
+        "identity_basis": "First-party Graham Regional Medical Center site identifies 1301 Montgomery Road, Graham TX; current root pointer redirects to a text document linking this exact file; file location, address and TX license state agree."
+      }
+    },
+    {
+      "ccn": "671303",
+      "url": "https://secure.claraprice.net/price-transparency/LQY8707441269/machine-readable/752313255_eastland-memorial-hospital_standardcharges.json",
+      "observed_at": "2026-09-16T23:12:26.308Z",
+      "http_status": 200,
+      "bytes": 1695210,
+      "file_sha256": "3d3a468d676a0cea9a0a64d95fa73d771c9621118a76369b893ddb8cd21af442",
+      "hospital_name": "Eastland Memorial Hospital",
+      "location_name": [
+        "Eastland Memorial Hospital"
+      ],
+      "hospital_address": [
+        "304 South Daugherty Street,  Eastland, TX 76448"
+      ],
+      "license_state": "TX",
+      "last_updated_on": "2025-06-27",
+      "version": "3.0.0",
+      "charge_count": 1935,
+      "identity_review": {
+        "pointer_url": "https://eastlandmemorial.com/cms-hpt.txt",
+        "pointer_final_url": "https://www.eastlandmemorial.com/cms-hpt.txt",
+        "pointer_sha256": "86b5c7c80ffe298671c646141b5ce158f770018c25db601890792e8849245825",
+        "pointer_http_status": 200,
+        "identity_page_url": "https://www.eastlandmemorial.com/getpage.php?name=contact&sub=About+Us",
+        "identity_page_sha256": "bfaf2dc0d04fdd4c58edf1d239e3a007a9237fcd48f7e4115dbf8df27712260d",
+        "identity_page_http_status": 200,
+        "identity_basis": "First-party Eastland Memorial Hospital page identifies 304 South Daugherty Street, Eastland TX; current root pointer links this file; file location, address and TX license state agree."
+      }
+    },
+    {
+      "ccn": "450508",
+      "url": "https://linkprotect.cudasvc.com/url?a=https%3a%2f%2fsecure.claraprice.net%2fprice-transparency%2fMUXR-1741132099318%2fmachine-readable%2f756000602_nacogdoches-memorial-hospital_standardcharges.json&c=E,1,QCFikZbxV7FRDVARBPGPRRUyWFLqp2p5kscCbtmUQBbhpiRqcGUW5nqCKBIhkgo69LvxBvxN9S5Tg-7xeKmyhEfopv1Ee864dNyMQ_DHwH0MNLdG7BKd&typo=1",
+      "observed_at": "2026-09-16T23:21:03.575Z",
+      "http_status": 200,
+      "bytes": 27421756,
+      "file_sha256": "7446948bac933c1bc4c1d76b1cbb77a365693c0c905f3643224c4766fec45a11",
+      "hospital_name": "Nacogdoches Memorial Hospital",
+      "location_name": [
+        "Nacogdoches Memorial Hospital"
+      ],
+      "hospital_address": [
+        "1204 Mound Street, Nacogdoches, TX 75961"
+      ],
+      "license_state": "TX",
+      "last_updated_on": "2025-05-07",
+      "version": "3.0.0",
+      "charge_count": 14361,
+      "identity_review": {
+        "pointer_url": "https://nacmem.org/cms-hpt.txt",
+        "pointer_final_url": "https://nacmem.org/cms-hpt.txt",
+        "pointer_sha256": "f746b651a67c309256d166391eae825a1ef19b8b96361a2ffcb3166af898acb6",
+        "pointer_http_status": 200,
+        "identity_page_url": "https://nacmem.org/our-hospital/",
+        "identity_page_sha256": "0027a2471defb6a6381d72f518314e4e2f9545255a71b5a88adc9a6c4bb0ce9d",
+        "identity_page_http_status": 200,
+        "identity_basis": "First-party Nacogdoches Memorial Hospital page identifies the hospital at 1204 Mound Street, Nacogdoches TX; current root pointer links the exact protected URL that returned this complete file; file location, address and TX license state agree."
+      },
+      "previous_bounded_attempt": {
+        "observed_at": "2026-09-16T23:11:55.588Z",
+        "bytes_read_before_abort": 25001984,
+        "cap_bytes": 25000000,
+        "reason": "stream-exceeded-cap-no-metadata-inference"
+      }
+    },
+    {
+      "ccn": "471306",
+      "url": "https://secure.claraprice.net/price-transparency/XGDZ-1751991682610/machine-readable/030179437_springfield-hospital_standardcharges.json",
+      "observed_at": "2026-09-16T23:21:07.606Z",
+      "http_status": 200,
+      "bytes": 26511505,
+      "file_sha256": "d2dd13d93ebc70e505b94bf783260ffd01f4aebcfd6b1e9b7ef01e475f063cff",
+      "hospital_name": "Springfield Hospital",
+      "location_name": [
+        "Springfield Hospital"
+      ],
+      "hospital_address": [
+        "25 Ridgewood Road, Springfield, VT 05156"
+      ],
+      "license_state": "VT",
+      "last_updated_on": "2025-08-28",
+      "version": "3.0.0",
+      "charge_count": 8003,
+      "identity_review": {
+        "pointer_url": "https://springfieldhospital.org/cms-hpt.txt",
+        "pointer_final_url": "https://springfieldhospital.org/cms-hpt.txt",
+        "pointer_sha256": "3f3362cc74e0f67bad3055cf9436c8321fb60220cbee8660163cdfa31c9076c2",
+        "pointer_http_status": 200,
+        "identity_page_url": "https://springfieldhospital.org/contact-us-2/",
+        "identity_page_sha256": "5a1982a43cbea42102945d9245b82ddd4a667ab523b299e9c7aac9b952ffc8a5",
+        "identity_page_http_status": 200,
+        "identity_basis": "First-party Springfield Hospital page identifies the campus at 25 Ridgewood Road, Springfield VT; current root pointer links this file; file location, address and VT license state agree."
+      },
+      "previous_bounded_attempt": {
+        "observed_at": "2026-09-16T23:12:19.485Z",
+        "bytes_read_before_abort": 25001984,
+        "cap_bytes": 25000000,
+        "reason": "stream-exceeded-cap-no-metadata-inference"
+      }
+    },
+    {
+      "ccn": "280065",
+      "url": "https://secure.claraprice.net/price-transparency/MAPH-1681850094272/machine-readable",
+      "observed_at": "2026-09-16T23:23:26.945Z",
+      "http_status": 200,
+      "bytes": 63388619,
+      "file_sha256": "5a7409d02662e35f8da374fd94620f64704e1af9a67ecd82f925cc42527a964c",
+      "hospital_name": "Great Plains Health",
+      "location_name": ["Great Plains Health"],
+      "hospital_address": ["601 W. Leota St.,  North Platte, NE 69101"],
+      "license_state": "NE",
+      "last_updated_on": "2026-01-01",
+      "version": "3.0.0",
+      "charge_count": 29258,
+      "identity_review": {
+        "pointer_url": "https://gphealth.org/cms-hpt.txt",
+        "pointer_final_url": "https://res.cloudinary.com/dpmykpsih/raw/upload/great-plains-health-site-358/media/c905b76950d842b68b1299e19117ba31/cms-hpt.txt",
+        "pointer_sha256": "5fb6a54612d417ea8d73c57654cd2d0560f400943e02e119cc5a0442472f27b6",
+        "pointer_http_status": 200,
+        "identity_page_url": "https://www.gphealth.org/locations/great-plains-health-hospital-campus/",
+        "identity_page_sha256": "b95de5738dccae09db63f67087558cf42a08f185c870434e505b69c29b6e0c67",
+        "identity_page_http_status": 200,
+        "identity_basis": "First-party Great Plains Health campus page identifies 601 W Leota St, North Platte NE; current root pointer redirects to a text document linking this exact file; file location, address and NE license state agree."
+      },
+      "previous_bounded_attempts": [
+        {"observed_at": "2026-09-16T22:50:49.655Z", "bytes_read_before_abort": 25001984, "cap_bytes": 25000000},
+        {"observed_at": "2026-09-16T23:21:47.473Z", "bytes_read_before_abort": 50003968, "cap_bytes": 50000000}
+      ],
+      "transient_zero_byte_attempts_at": ["2026-09-16T23:20:58.334Z", "2026-09-16T23:23:19.175Z"]
+    }
+  ],
+  "incomplete": []
+}

@@ -1,0 +1,33 @@
+{
+  "ccn": "670047",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "roster_identity": {
+    "name": "THE HOSPITALS OF PROVIDENCE - EAST CAMPUS",
+    "address": "3280 JOE BATTLE BLVD",
+    "city": "EL PASO",
+    "state": "TX",
+    "zip": "79938"
+  },
+  "official_domain": "https://www.thehospitalsofprovidence.com/",
+  "official_identity_sources": "https://www.thehospitalsofprovidence.com/patients/pricing-info-estimates/hospital-pricing-information|https://turquoise.health/providers/hospitals-of-providence-east-campus/information|https://pfd.hhs.texas.gov/sites/default/files/documents/hospital-svcs/2025/2025-ffy-sda-verif.pdf",
+  "official_page_observation": "The first-party Hospitals of Providence pricing page identifies the East Campus pricing route and links a facility-specific Hyve Health JSON MRF. The Texas state source independently lists CCN 670047 at 3280 Joe Battle Blvd, El Paso, TX.",
+  "browser_observation": "Browser/web inspection opened the official pricing page; its East Campus Standard Charges link resolved to the Hyve Health JSON file.",
+  "mrf_url": "https://mrfs.hyvehealthcare.com/TenetHealth/954537720-1972709970_tenet-hospitals-limited_standardcharges.json",
+  "mrf_observation": {
+    "http_status": 200,
+    "content_type": "application/force-download",
+    "bytes": 3336474,
+    "sha256": "3ec1d4db55f78e1160a9e2a01a0304afa335db43bf2e73652bc788a3adf2a1fc",
+    "hospital_name": "Tenet Hospitals Limited",
+    "location_name": "The Hospitals of Providence East Campus",
+    "hospital_address": "3280 Joe Battle Blvd, El Paso, TX 79938",
+    "npi": "1972709970",
+    "license_state": "TX",
+    "cms_template_version": "3.0.0",
+    "last_updated_on": "2026-04-01",
+    "standard_charge_information_rows": 10843
+  },
+  "disposition": "verified-current-mrf",
+  "interpretation": "First-party pricing link, facility identity, pointer-declared MRF and metadata converge on the East Campus TX facility; this is supported observed MRF evidence, not a legal compliance determination.",
+  "next_action": "Retain exact page, pointer and file provenance and recheck on the normal freshness cycle."
+}

@@ -1,0 +1,37 @@
+{
+  "ccn": "670265",
+  "observed_at": "2026-09-27T00:00:00Z",
+  "sources": {
+    "cms_hospital_enrollments": {
+      "dataset_id": "aa2e3ead-bbaa-4e71-b59d-a07ac7ed9ba5",
+      "dataset_label": "Hospital Enrollments : 2026-08-01",
+      "query": "https://data.cms.gov/data-api/v1/dataset/aa2e3ead-bbaa-4e71-b59d-a07ac7ed9ba5/data?filter%5BCCN%5D=670265&size=10",
+      "row": {
+        "CCN": "670265",
+        "State": "TX",
+        "Provider Type": "PART A PROVIDER - HOSPITAL",
+        "NPI": "1316505043",
+        "Organization Name": "ETHICUS HOSPITAL DFW LLC",
+        "Doing Business As Name": "LEGENT ORTHOPEDIC HOSPITAL CARROLLTON",
+        "Address": "1401 E TRINITY MILLS RD",
+        "City": "CARROLLTON",
+        "ZIP Code": "75006",
+        "Practice Location Type": "MAIN/PRIMARY HOSPITAL LOCATION",
+        "Acute Care": "Y"
+      },
+      "scope_note": "Current enrollment crosswalk supports the Carrollton hospital identity for this CCN; it does not validate the MRF contents or retrospectively explain the older provider roster address."
+    },
+    "operator_facility_page": "https://www.legenthealth.com/locations/legent-orthopedic-hospital",
+    "texas_dshs_hospital_list_2024": "https://www.dshs.texas.gov/sites/default/files/chs/hosp/Hospitallis2024.pdf",
+    "prior_first_party_mrf_prefix_proof": "reconciliation-legent-orthopedic-current-mrf-prefix-proof-2026-09-25.json"
+  },
+  "crosswalk": {
+    "current_cms_enrollment": "Ethicus Hospital DFW LLC / Legent Orthopedic Hospital Carrollton, 1401 E Trinity Mills Rd, Carrollton, TX 75006; NPI 1316505043",
+    "operator_and_state_sources": "Legent Orthopedic Hospital Carrollton at 1401 E Trinity Mills Rd, Carrollton, TX 75006; Texas DSHS facility listing identifies the same Carrollton facility",
+    "retained_mrf_prefix": "Prior bounded 262144-byte prefix declares Ethicus Hospital DFW, Legent Orthopedic Hospital, Carrollton address, NPI 1316505043, CMS template 3.0.0, and 2026-03-22 update date",
+    "older_cms_provider_roster": "Earlier CMS provider record listed 4201 William D Tate Avenue, Grapevine, TX 76051 for CCN 670265; retain as a competing historical/source-lineage observation"
+  },
+  "disposition": "current-enrollment-location-crosswalk-supported-full-mrf-and-historical-roster-reconciliation-pending",
+  "interpretation": "New current CMS enrollment evidence materially strengthens the Carrollton attribution and changes the next action. The official operator page, Texas DSHS listing, and retained MRF prefix agree. The complete MRF was not retrieved or parsed, and the older CMS provider roster still conflicts; therefore this evidence does not resolve HPT file usability, does not justify a compliance conclusion, and does not reduce the unresolved count.",
+  "next_action": "Retain the dated older Grapevine provider-roster observation and determine its effective dates/source lineage without overwriting it; retrieve the complete page-linked MRF through an authorized materially different route, then validate its CMS schema, CCN/NPI/facility scope, location, declared date, and usable rate rows. Keep CCN 670265 unresolved until both gates are satisfied."
+}

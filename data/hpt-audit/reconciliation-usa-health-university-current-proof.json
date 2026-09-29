@@ -1,0 +1,20 @@
+{
+  "ccn": "010087",
+  "observed_at": "2026-09-17T20:31:00.000Z",
+  "pointer_url": "https://usahealthsystem.com/cms-hpt.txt",
+  "pointer_sha256": "1cf6f393eb6719d8f402fb172644e2f97b0143f34115224a0361f22f718fb9af",
+  "pointer_observation": "The current root pointer lists USA Health University Hospital and its separate Freestanding Emergency Department entries, both under the USA Health system.",
+  "mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/12725/630477348_usa-health-university-hospital_standardcharges.csv",
+  "response_status": 206,
+  "content_range": "bytes 0-131071/640861746",
+  "prefix_bytes": 131072,
+  "prefix_sha256": "883acfc7adc2b231dd6ab08264bdc829083c9631c343832397743fe2a10957a5",
+  "declared_hospital_name": "USA Health University Hospital",
+  "declared_location_name": "USA Health University Hospital|USA Health University Hospital Freestanding Emergency Department",
+  "declared_address": "2451 University Hospital Drive, Mobile, AL 36617-2238|181 Hillcrest Rd, Mobile, AL 36608",
+  "declared_license_state": "AL",
+  "declared_last_updated": "2026-04-30",
+  "cms_template_version": "3.0.0",
+  "interpretation": "The exact pointer entry and bounded current CSV agree with the CCN's hospital name, Mobile addresses, Alabama license field, 2026-04-30 date, and CMS 3.0.0. The second declared location is a named freestanding emergency department in the same file, not a sibling hospital substitution.",
+  "next_action": "Retain the file as the current USA Health University Hospital evidence and monitor the shared pointer for future facility-entry changes."
+}

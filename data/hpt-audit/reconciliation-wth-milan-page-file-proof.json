@@ -1,0 +1,28 @@
+{
+  "disposition": "official-page-file-root-404-malformed-address",
+  "record": {
+    "ccn": "440060",
+    "official_domain": "wth.org",
+    "pointer_url": "https://www.wth.org/cms-hpt.txt",
+    "pointer_http_status": 404,
+    "pointer_sha256": "d465172175d35d493fb1633e237700022bd849fa123164790b168b8318acb090",
+    "source_page_url": "https://www.wth.org/financial-assistance-billing/hospital-charges/",
+    "source_page_sha256": "296112cdca729c96d63e6319d0bd07ae0402c7891d65bc24f2aff3afa93bbbdd",
+    "official_identity_url": "https://www.wth.org/locations/west-tennessee-healthcare-milan-hospital/",
+    "official_identity_sha256": "cbf56c3b858056c59716297389a7e35e1528995efb2d539fd36396ec421c2b01",
+    "current_mrf_url": "https://www.wth.org/wp-content/uploads/standard-charges/62-1753289_MH_Standard_Charges.csv",
+    "current_mrf_http_status": 206,
+    "current_mrf_sha256": "3c146e534e369975d5cdc0da3f5c255162711c8c3153902e0f734a20470e5c87",
+    "retained_bytes": 262144,
+    "retained_sample": "cms_data/hpt/nationwide-verification/file-byte-proof/3c146e534e369975d5cdc0da3f5c255162711c8c3153902e0f734a20470e5c87.bin",
+    "declared_hospital_name": "West Tennessee Healthcare Milan Hospital",
+    "declared_location_name": "West Tennessee Healthcare Milan Hospital",
+    "declared_address": "4039 Highland StreetMilan, TN 3, Milan, TN 8358-3493",
+    "declared_state": "TN",
+    "declared_date": "2026-06-02",
+    "version": "3.0.0",
+    "observed_at": "2026-09-16T10:32:29.054Z",
+    "address_disposition": "declared-address-malformed-street-city-state-match",
+    "next_action": "Recheck the root cms-hpt.txt and the malformed hospital_address field after a publisher correction. Retain the current page-linked Milan CSV and independent campus address without treating the CSV as pointer-linked or repairing its declared address silently."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "ccn": "504004",
+  "observed_at": "2026-09-23T16:00:00Z",
+  "official_site": "https://www.dshs.wa.gov/",
+  "official_pricing_page": "https://www.dshs.wa.gov/state-hospital-charge-rates",
+  "official_identity": "Eastern State Hospital, 850 Maple Street, Medical Lake, WA 99022-0800 (current Washington DSHS facility and address pages).",
+  "browser_observation": "The current official Washington DSHS State Hospital Charge Rates page exposes a facility-specific Eastern State Hospital Standard Charges workbook link. No CMS CSV, JSON or ZIP MRF route was exposed on the page.",
+  "workbook_url": "https://www.dshs.wa.gov/sites/default/files/2026-04/916001079_eastern-state-hospital_standardcharges.xlsx",
+  "workbook_status": 200,
+  "workbook_content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "workbook_total_bytes": 33789,
+  "workbook_sha256": "9b06684da6d14e3d06a856b2b58da14e275b57ad4ed629b641e2572d3f1e7bca",
+  "workbook_last_modified": "2026-07-31T18:57:04Z",
+  "workbook_sheets": ["sheet1.xml"],
+  "cms_record": {
+    "ccn": "504004",
+    "name": "EASTERN STATE HOSPITAL",
+    "address": "850 MAPLE STREET",
+    "city": "MEDICAL LAKE",
+    "state": "WA",
+    "zip": "99022"
+  },
+  "disposition": "file-custom-workbook-review",
+  "interpretation": "The official Washington DSHS pricing page links a current facility-specific XLSX standard-charges workbook, not a directly importable CMS CSV/JSON/ZIP MRF. The workbook is retained as dated source evidence with exact bytes and hash; no CMS MRF promotion or compliance conclusion is made.",
+  "next_action": "Obtain a current CMS-format CSV/JSON/ZIP or publisher-confirmed CMS route, then verify complete bytes, facility identity, Washington metadata, declared date/version and usable rate fields before promotion."
+}

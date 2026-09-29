@@ -1,0 +1,17 @@
+{
+  "ccn": "521329",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://www.essentiahealth.org/find-facility/essentia-health-st-marys-hospital-superior",
+  "official_identity_sources": [
+    "https://www.essentiahealth.org/find-facility/essentia-health-st-marys-hospital-superior",
+    "https://www.essentiahealth.org/standard-charges/2026/411811073_Essentia-St-Marys-Superior_standardcharges.csv",
+    "https://turquoise.health/providers/st-marys-hospital-superior/information"
+  ],
+  "official_identity": "Essentia Health St. Mary's Hospital-Superior is the Superior, Wisconsin critical access hospital associated with CCN 521329. The first-party facility page identifies 3500 Tower Ave, Superior, WI 54880 and describes the 25-bed hospital.",
+  "browser_observation": "Browser automation opened the official Essentia facility page. Its Charges for Hospital Services section exposed a facility-specific CSV link for St. Mary's Hospital-Superior.",
+  "pricing_url": "https://www.essentiahealth.org/standard-charges/2026/411811073_Essentia-St-Marys-Superior_standardcharges.csv",
+  "pricing_observation": "The linked CSV streamed HTTP 200 application/octet-stream, 439,477,062 bytes, SHA-256 e5f20116b7e360d871f83446921ce8635eb6e82c9df768d037755cf4e0a3dd3e. Its first metadata rows declare Essentia Health St Marys Hospital-Superior, St. Mary's Hospital Superior, Essentia Health St. Mary's Hospital -Superior, 3500 Tower Ave Superior WI 54880, NPI 1083657886, license 1032, CMS 3.0.0, update date 2026-01-01, attester Melanie Wilson, and attestation TRUE. The stream contained 1,258,980 data rows after the three metadata/header lines and no local copy was retained.",
+  "disposition": "verified-current-mrf",
+  "interpretation": "Current first-party facility identity, page-linked MRF, exact Superior address/state, and current CMS metadata converge; this is supported observed MRF evidence, not a legal compliance determination.",
+  "next_action": "Retain exact official-page and file provenance and recheck on the normal freshness cycle."
+}

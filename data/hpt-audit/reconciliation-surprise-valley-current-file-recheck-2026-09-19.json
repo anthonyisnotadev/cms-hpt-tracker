@@ -1,0 +1,19 @@
+{
+  "ccn": "051308",
+  "observed_at": "2026-09-19T21:20:00Z",
+  "official_site": "https://www.svhospital.org/",
+  "official_pricing_page": "https://www.svhospital.org/price-transparency/",
+  "page_file_download_url": "https://drive.google.com/uc?export=download&id=1i8VLp6mat3yGdE69gCIK7aN2J3gClE_E",
+  "http_status": 206,
+  "content_type": "application/octet-stream",
+  "content_range": "bytes 0-262143/8736986",
+  "sample_bytes": 262144,
+  "sample_sha256": "3f74dd88f21c6e18aaf98199a2158fe7cff28592ab16540df2b7c47d01a32cda",
+  "header": "Client,Section,HospitalDescription,ChargeCode,Code,CPTModifier,CPTDescription,StandardChargeQuantity,NDCCode,ServiceType,Place,PayorName,BundleRange,BundleBasis,BundleRate,GrossChargeRate,ChargeRateType,PaymentRatePercent,PaymentRate,PayorLower,PayorMedian,PayorHigher,DeIdentifiedLower,DeIdentifiedHigher,FootnoteReference",
+  "first_row_facility_token": "surprisevalley",
+  "tail_range": "bytes 8474842-8736985/8736986",
+  "tail_observation": "Tail remains ordinary rate rows with the same facility token; no CMS identity/date/version metadata was exposed.",
+  "disposition": "official-page-linked-csv-retrieved-identity-metadata-incomplete-mrf-unresolved",
+  "interpretation": "A fresh bounded download confirms the same 8,736,986-byte page-linked CSV and usable rate-row structure. It does not establish CMS template metadata or root-pointer linkage, so no promotion is made.",
+  "next_action": "Obtain a current CMS-template file or publisher metadata/attestation, then validate complete-file usability and exact facility identity before promotion."
+}

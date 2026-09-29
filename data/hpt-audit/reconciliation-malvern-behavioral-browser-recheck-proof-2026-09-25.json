@@ -1,0 +1,23 @@
+{
+  "ccn": "394057",
+  "observed_at": "2026-09-25T20:45:00Z",
+  "official_pricing_page": "https://www.malvernbh.com/admissions/insurance-payment-information/",
+  "browser_observation": {
+    "status": 200,
+    "rendered_title": "Malvern Behavioral Health Insurance Coverage",
+    "facility_name": "Malvern Behavioral Health",
+    "linked_file_url": "https://www.malvernbh.com/wp-content/uploads/2020/12/MALVERN-BEHAVIORAL-HEALTH-STANDARD-CHARGES.xlsx",
+    "page_stated_current_as_of": "2024-09-18",
+    "observed_link_label": "download our rate information"
+  },
+  "file_observation": {
+    "http_status": 200,
+    "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "total_bytes": 13899,
+    "last_modified": "2026-02-05T19:15:26Z",
+    "sha256": "5233E08EC2B54E4218742F78D7B1E3659473CAE651298C53990F8E1A45AC504A"
+  },
+  "disposition": "official-page-current-browser-recheck-custom-workbook-retained",
+  "interpretation": "The current first-party page still renders the same facility-linked XLSX workbook. The workbook remains a custom rate sheet rather than a CMS 3.0.0 CSV/JSON/ZIP MRF; the page's stated effective date remains 2024-09-18 despite a newer HTTP Last-Modified header. No promotion is made.",
+  "next_action": "Obtain a current facility-specific CMS CSV/JSON/ZIP MRF or publisher clarification/replacement, then verify CMS metadata, complete bytes, facility identity and declared date before promotion."
+}

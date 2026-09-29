@@ -1,0 +1,13 @@
+{
+  "ccn": "190241",
+  "observed_at": "2026-09-21T06:20:40Z",
+  "official_page": "https://www.tghealthsystem.com/surgery-centers/physicians-medical-center/patient-pricing-information/",
+  "web_page_observation": "The current first-party page states that Physicians Medical Center's current standard charges are provided in a machine-readable format and exposes a facility-specific download.",
+  "current_page_file_url": "https://www.tghealthsystem.com/images/721275428_physicians-medical-center_standardcharges.1%29.xlsx",
+  "current_page_file_web_observation": "The current page link resolves to an XLSX object; web retrieval confirms the target and content type but does not expose workbook bytes through the browser/search fetch path.",
+  "local_browser_observation": "In-app browser navigation to the current page remained on a Cloudflare security-verification screen; no XLSX bytes were recovered locally.",
+  "historical_csv_boundary": "The previously downloaded 2023 CSV remains historical and is not promoted as current CMS 3.0.0 evidence.",
+  "disposition": "current-page-xlsx-target-confirmed-by-web-local-bytes-unresolved",
+  "interpretation": "This is a new current page/file-role observation and confirms a newer facility-specific XLSX target. It does not verify workbook metadata, payer usability or root-pointer linkage; no unsupported promotion is made.",
+  "next_action": "Recover the exact XLSX or a current CMS-format CSV/JSON through an authorized content-bearing route, verify facility identity, Louisiana state, date/version, payer rates and parsed usability, and reconcile the protected root pointer."
+}

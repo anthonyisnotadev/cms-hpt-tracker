@@ -1,0 +1,20 @@
+{
+  "ccn": "010780",
+  "observed_at": "2026-09-27T00:35:00Z",
+  "official_site": "https://www.eastalabamahealth.org/",
+  "official_facility_page": "https://www.eastalabamahealth.org/location/eamc-lanier-rural-emergency-hospital",
+  "official_pointer_url": "https://www.eastalabamahealth.org/cms-hpt.txt",
+  "official_pointer_status": 200,
+  "official_pointer_observation": "The current East Alabama Health root pointer is facility-specific to East Alabama Medical Center in Opelika and declares an East Alabama standard-charges ZIP; it does not name EAMC-Lanier or the Valley campus.",
+  "current_facility_observation": "The current first-party location page identifies EAMC-Lanier Rural Emergency Hospital at 4800 48th Street, Valley, AL 36854 and describes emergency/outpatient services.",
+  "scope_observation": "An official Alabama audit result surfaced in search states that East Alabama Medical Center–Lanier converted from IPPS to Rural Emergency Hospital in November 2024. This supports a current scope transition lead but does not by itself establish the historical acute-care CCN-to-current REH mapping or a pricing-file assignment.",
+  "prior_current_cms_record_proof": {
+    "proof_file": "reconciliation-eamc-lanier-current-cms-general-proof-2026-09-25.json",
+    "observed_at": "2026-09-25T01:01:05Z",
+    "exact_ccn_record": "CMS Hospital General Information lists facility_id 010780, EAMC - LANIER, 4800 48TH STREET, VALLEY, AL 36854, hospital_type Rural Emergency Hospital.",
+    "pointer_file_boundary": "The Opelika East Alabama Medical Center pointer/file is separate and does not evidence Valley/Lanier file coverage."
+  },
+  "disposition": "current-reh-identity-and-pointer-scope-separate-historical-ccn-file-pending",
+  "interpretation": "This is newer current facility-page and scope-transition evidence, but the prior exact-CCN CMS Hospital General Information record already identifies 010780 as EAMC-Lanier at 4800 48th Street, Valley, as a Rural Emergency Hospital. Preserve that stronger current identity/scope evidence as standing history; the newer observation does not revoke it. The Opelika pointer/file remains separate, and no Valley/Lanier price file has been assigned.",
+  "next_action": "Retain the exact-CCN CMS record confirming EAMC-Lanier at 4800 48th Street, Valley, as a Rural Emergency Hospital and preserve the reported November 2024 transition as separate history. Obtain a Valley-specific CMS CSV/JSON/ZIP or publisher confirmation; keep the Opelika pointer and file separate and do not infer HPT file coverage from shared ownership."
+}

@@ -1,0 +1,15 @@
+{
+  "ccn": "220033",
+  "observed_at": "2026-09-22T03:35:00Z",
+  "official_pricing_page": "https://beverlyhospital.org/patients-visitors/billing-financial-services/price-transparency",
+  "official_page_status": 200,
+  "official_page_observation": "The current first-party Beverly Hospital price-transparency page links Hospital Charge Data and confirms the facility at 85 Herrick Street, Beverly, MA 01915.",
+  "candidate_file_url": "https://beverlyhospital.org/042121317_beverly-hospital-corporation_standardcharges.json",
+  "candidate_file_format": "JSON",
+  "candidate_file_observation": "The exact page-linked JSON target was reached, but bounded retrieval stopped because the response is 23,176,445 bytes; no bounded body or parsed metadata was retained.",
+  "roster_identity": "NORTHEAST HOSPITAL CORPORATION",
+  "roster_address": "85 HERRICK STREET, BEVERLY, MA 01915",
+  "disposition": "official-page-current-facility-mrf-linked-file-too-large-to-parse",
+  "interpretation": "New official current page/exact MRF linkage and facility identity evidence. The page uses Beverly Hospital while the roster legal name is Northeast Hospital Corporation; the campus/address agreement is clear, but file bytes and declared metadata remain unverified. No current verification claim is promoted.",
+  "next_action": "Use a bounded streaming or authorized download-capable route to inspect the large JSON, then verify declared facility/legal name, Massachusetts state, date/version and usability before promotion."
+}

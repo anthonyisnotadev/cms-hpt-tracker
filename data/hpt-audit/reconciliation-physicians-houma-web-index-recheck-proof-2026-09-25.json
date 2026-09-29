@@ -1,0 +1,23 @@
+{
+  "ccn": "190241",
+  "observed_at": "2026-09-25T12:30:00Z",
+  "official_domain": "tghealthsystem.com",
+  "source_page_url": "https://www.tghealthsystem.com/surgery-centers/physicians-medical-center/patient-pricing-information/",
+  "source_page_observation": {
+    "web_reader_result": "official-page-rendered",
+    "page_heading": "Patient Pricing Information",
+    "standard_charge_text": "The page says Physicians Medical Center's current standard charges are provided in a machine-readable format.",
+    "page_crawl_context": "official search result crawled within the last week"
+  },
+  "current_link": "https://www.tghealthsystem.com/images/721275428_physicians-medical-center_standardcharges.1%29.xlsx",
+  "current_link_observation": {
+    "web_reader_result": "unsupported-content-type",
+    "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "bytes": null,
+    "parsed_metadata": false
+  },
+  "interpretation": "A materially different web-reader route confirms that the official page currently labels a Physicians Medical Center machine-readable standard-charge workbook. The workbook itself was not exposed as bytes or parsed metadata, and the root cms-hpt.txt remains separately unresolved; the historical 2023 CSV is not promoted.",
+  "disposition": "current-page-linked-workbook-byte-access-unresolved",
+  "promotion": "none",
+  "next_action": "Obtain the current workbook through an authorized content-bearing route, verify facility identity and CMS metadata or document its custom format, and separately recover a content-bearing root pointer before changing the disposition."
+}

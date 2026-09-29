@@ -1,0 +1,26 @@
+{
+  "ccn": "510086",
+  "observed_at": "2026-09-23T16:25:00Z",
+  "official_site": "https://dhhr.wv.gov/",
+  "official_pricing_page": "https://dhhr.wv.gov/officeofhealthfacilities/Pages/Welch-Community-Hospital.aspx",
+  "official_identity": "Welch Community Hospital, 454 McDowell Street, Welch, WV 24801-2029 (current West Virginia Department of Health Facilities page).",
+  "browser_observation": "The current official state page identifies Welch Community Hospital and links a facility-specific CSV titled 556000821_WCH_standardcharges.csv. The file is a legacy custom charge export dated 2022-12-08, not a current CMS 3.0.0 MRF.",
+  "file_url": "https://dhhr.wv.gov/officeofhealthfacilities/Documents/556000821_WCH_standardcharges.csv",
+  "file_status": 200,
+  "file_content_type": "application/octet-stream",
+  "file_total_bytes": 243248,
+  "file_sha256": "d1bbe2518e832383a9d1e40c7f80897669000e7cec8f163d88adccc9787dc977",
+  "file_last_modified": "2022-12-22T19:30:16Z",
+  "declared_file_date": "2022-12-08",
+  "cms_record": {
+    "ccn": "510086",
+    "name": "WELCH COMMUNITY HOSPITAL",
+    "address": "454 MCDOWELL STREET",
+    "city": "WELCH",
+    "state": "WV",
+    "zip": "24801"
+  },
+  "disposition": "historical-custom-csv-review",
+  "interpretation": "The official West Virginia page links an identity-matched 243,248-byte CSV, but its headers identify a 2022 legacy charge export and do not provide current CMS 3.0 metadata. It is retained as historical source evidence only; no current-MRF promotion or compliance conclusion is made.",
+  "next_action": "Obtain a current CMS-format CSV/JSON/ZIP or publisher-confirmed CMS route, then verify complete bytes, facility identity, West Virginia metadata, declared date/version and usable payer-specific rate fields before promotion."
+}

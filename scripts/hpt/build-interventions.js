@@ -21,6 +21,7 @@
 const fs = require('fs');
 const fsp = fs.promises;
 const path = require('path');
+const crypto = require('crypto');
 
 const { csvToObjects, toCSV } = require('./lib/util');
 
@@ -29,6 +30,7 @@ const COMPLIANCE = path.join(ROOT, 'data', 'hpt-audit', 'compliance.csv');
 const CURL_DIR = path.join(ROOT, 'data', 'hpt-audit', 'curl-evidence');
 const CURL_INDEX = path.join(CURL_DIR, 'index.csv');
 const OUT = path.join(ROOT, 'data', 'hpt-audit', 'interventions.csv');
+const WORKLIST = path.join(ROOT, 'data', 'hpt-audit', 'unresolved-investigation-worklist.json');
 
 const COLUMNS = ['ccn', 'hospital_name', 'city', 'state', 'finding', 'intervention',
   'action', 'reason', 'evidence_url', 'transcript', 'checked_at'];
@@ -36,10 +38,30 @@ const COLUMNS = ['ccn', 'hospital_name', 'city', 'state', 'finding', 'interventi
 // key, label, plain-English meaning, suggested action. Single source for the
 // CSV, the tracker payload, and the tests.
 const INTERVENTIONS = {
+  'discovery-review': {
+    label: 'Discovery evidence review',
+    plain: 'Website identity, pointer retrieval, file identity, access, and metadata are assessed separately.',
+    action: 'Follow the per-CCN next action in the evidence. Confirm first-party name and address before testing official pointers; do not infer noncompliance from an unfinished review.'
+  },
   'identity-review': {
     label: 'File assignment quarantined',
     plain: 'The previous file assignment conflicts with hospital identity and is excluded from the current view.',
     action: 'Verify the official hospital and its location before assigning a replacement file.'
+  },
+  'file-license-state-conflict': {
+    label: 'File license-state field differs',
+    plain: 'The pointer-linked file identifies the facility, but its license-number column names another state.',
+    action: 'Seek publisher correction or clarification of the exact state field; retain the file, facility identity, and date separately from any legal-compliance conclusion.'
+  },
+  'file-address-conflict': {
+    label: 'File address field differs',
+    plain: 'The pointer-linked file identifies the facility, but an address field differs from the independently verified hospital address.',
+    action: 'Compare the literal street, city and ZIP with first-party and roster evidence, distinguishing spelling errors from different campuses; seek publisher clarification when needed.'
+  },
+  'file-address-incomplete': {
+    label: 'File address field incomplete',
+    plain: 'The pointer-linked file omits a component of the independently verified hospital street address.',
+    action: 'Retain the literal publisher value and recheck whether the file address is completed after a publisher update.'
   },
   'waf-blocked': {
     label: 'Access denied through an edge service',
@@ -106,6 +128,61 @@ const INTERVENTIONS = {
     plain: 'The matched pointer entry yielded no MRF URL in our parser.',
     action: 'Inspect the raw pointer entry and parser output before contacting the hospital about a missing link.'
   },
+  'pointer-file-mismatch': {
+    label: 'Pointer and pricing-page files differ',
+    plain: 'The current official pricing page and root pointer link different machine-readable files.',
+    action: 'Retain both dated observations and recheck the root pointer for a publisher correction; do not call the newer file pointer-linked.'
+  },
+  'pointer-different-facility-file': {
+    label: 'Pointer file identifies another facility',
+    plain: 'The pointer-linked file declares a different facility address, while the current official pricing page links an identity-matched file.',
+    action: 'Keep the page file separate from pointer verification; recheck the root pointer after the publisher clarifies the facility assignment.'
+  },
+  'pricing-page-older-file': {
+    label: 'Pricing page links an older file',
+    plain: 'The hospital pricing page links an older identity-matched file than the current root pointer.',
+    action: 'Ask the publisher to align the pricing-page download with the newer pointer-declared file, then verify the complete file before any compliance conclusion.'
+  },
+  'pointer-target-unavailable-page-file': {
+    label: 'Pointer target unavailable; pricing-page file found',
+    plain: 'The root pointer names an unavailable file, while the hospital pricing page separately links an identity-matched file.',
+    action: 'Recheck the exact pointer target after a publisher update; keep the page-linked file and its metadata separate from pointer verification.'
+  },
+  'pointer-target-dns-unresolved': {
+    label: 'Pointer target host unresolved to clients',
+    plain: 'Our bounded client and browser could not resolve the host named by the root pointer, while the official pricing page links an identity-matched file on the current host.',
+    action: 'Retain both exact URLs and the current page-file evidence; recheck the pointer target after DNS or publisher changes without inferring file absence.'
+  },
+  'pointer-html-intermediary': {
+    label: 'Pointer links a pricing page',
+    plain: 'The root pointer labels an HTML pricing page as its MRF URL; that page links a separate identity-matched file.',
+    action: 'Retain both URLs and file evidence; recheck whether the publisher changes the root pointer to link the file directly.'
+  },
+  'pointer-portal-not-found': {
+    label: 'Pointer portal renders not found',
+    plain: 'The root pointer targets an HTML portal that rendered a not-found page; the hospital pricing page separately links an identity-matched file.',
+    action: 'Retain the current first-party file evidence and recheck the exact pointer or portal route after the publisher changes it.'
+  },
+  'pointer-file-renders-not-found': {
+    label: 'Pointer file URL renders not found',
+    plain: 'The root pointer labels a file URL that rendered an HTML not-found page; the hospital pricing page separately links an identity-matched file.',
+    action: 'Retain the current first-party file evidence and recheck the exact pointer-declared URL after the publisher changes it.'
+  },
+  'official-page-file-pointer-unavailable': {
+    label: 'Official-page file found; root pointer unavailable',
+    plain: 'The official pricing page links an identity-matched MRF, but the root pointer path did not return a usable plain-text pointer.',
+    action: 'Retain the verified file evidence and recheck the root pointer after the source page or file changes.'
+  },
+  'root-pointer-omits-facility': {
+    label: 'Root pointer omits facility; page file found',
+    plain: 'The root pointer lists other facilities but not this hospital, while its first-party page links an identity-matched file.',
+    action: 'Ask the publisher to add the facility and exact file URL to the root pointer; recheck both before any pointer-linked claim.'
+  },
+  'root-pointer-html-page-file': {
+    label: 'Root pointer path serves HTML',
+    plain: 'The root cms-hpt.txt path serves an HTML page with pointer-style text; the official pricing page links an identity-matched file.',
+    action: 'Retain the current page/file evidence and recheck whether the publisher serves a plain-text pointer at the root path.'
+  },
   'stale-file': {
     label: 'Recorded update date over 365 days old',
     plain: 'The extracted update date was over 365 days old at assessment time.',
@@ -115,6 +192,16 @@ const INTERVENTIONS = {
     label: 'Older template version recorded',
     plain: 'The extracted template version was below the version expected by this audit.',
     action: 'Verify the current file, declared version, and applicable CMS requirements before outreach.'
+  },
+  'file-template-version-review': {
+    label: 'File template version declaration needs review',
+    plain: 'The pointer-linked file identifies this hospital, but its version field does not match the CMS schema identifier. Complete-file schema validity remains unverified.',
+    action: 'Check the publisher-declared version against the current CMS schema, request clarification or a corrected file if needed, and validate the complete file before any compliance conclusion.'
+  },
+  'file-custom-workbook-review': {
+    label: 'Pointer links a custom workbook; CMS metadata unverified',
+    plain: 'The pointer-linked object identifies this hospital but is an XLSX workbook behind a CSV-labeled URL. Its generation date is not a declared MRF update date, and it declares no CMS template version.',
+    action: 'Recheck the exact pointer target after a publisher update and seek a CMS-template CSV or JSON file with its own last_updated_on and version fields.'
   },
   'name-ambiguous': {
     label: 'Hospital match unresolved',
@@ -126,10 +213,55 @@ const INTERVENTIONS = {
     plain: 'No official domain is assigned in this audit; a working website may exist.',
     action: 'Review candidate websites and verify their relationship to this hospital.'
   },
+  'site-pointer-review': {
+    label: 'Website candidate observed; pointer unverified',
+    plain: 'A candidate homepage matched hospital name and location text, but official pointer and MRF linkage remain unverified.',
+    action: 'Verify the facility address on the website, then inspect every permitted cms-hpt.txt location and its declared MRF.'
+  },
+  'corrected-site-pointer-pending': {
+    label: 'Official site corrected; pointer review pending',
+    plain: 'Reviewed facility identity evidence corrected the hospital domain, but its current root pointer and charge-file linkage remain unresolved.',
+    action: 'Recheck the corrected hospital-domain root pointer after a publisher change; verify its exact file target before promoting a finding.'
+  },
+  'pointer-identity-review': {
+    label: 'Pointer and facility identity need review',
+    plain: 'A candidate website returned a pointer, but the facility, pointer entry, or charge-file evidence did not fully agree.',
+    action: 'Compare the pointer entry and file header with the hospital name, street address, city or ZIP, and license state.'
+  },
+  'candidate-domain-review': {
+    label: 'Candidate website needs verification',
+    plain: 'Search returned candidate websites, but none passed official-domain and pointer/MRF verification.',
+    action: 'Review the candidate websites and verify first-party facility identity before assigning a domain.'
+  },
+  'domain-search-pending': {
+    label: 'Website search not completed',
+    plain: 'No search request is recorded for this hospital in the preserved search batch.',
+    action: 'Run the official-domain search, then verify any result against first-party facility identity before assigning it.'
+  },
+  'domain-search-retry': {
+    label: 'Website search request failed',
+    plain: 'The recorded search request failed before returning usable candidate results.',
+    action: 'Retry the website search, then verify any result against first-party facility identity.'
+  },
   'exempt-federal': {
     label: 'Federal, exempt',
     plain: 'VA/DoD facilities are outside the rule.',
     action: 'No action needed.'
+  },
+  'exempt-ihs-program': {
+    label: 'Indian Health Program scope exception',
+    plain: '45 CFR 180.30(b)(2) covers hospitals operated by an Indian Health Program; this does not assess MRF availability or file quality.',
+    action: 'Retain the sourced operator/program evidence and revisit if the operator, contract, compact, or program status changes.'
+  },
+  'exempt-state-hospital': {
+    label: 'State hospital scope exception',
+    plain: '45 CFR 180.30(b) deems Federal and State hospitals compliant with Part 180; this does not assess MRF availability or file quality.',
+    action: 'Retain exact facility/operator evidence and revisit if the CCN, operator, or legal state-hospital status changes.'
+  },
+  'exempt-closed': {
+    label: 'Closed facility',
+    plain: 'First-party evidence says the facility ceased hospital operations.',
+    action: 'No current HPT retrieval work; retain the closure evidence and revisit only if the facility or roster status changes.'
   },
   none: {
     label: 'No issue observed by these checks',
@@ -155,13 +287,30 @@ function evidenceUrlFor(row) {
     case 'mrf-url-unreachable':
     case 'mrf-stale-over-365-days':
     case 'old-template-version':
+    case 'mrf-license-state-field-conflicts-facility':
+    case 'mrf-address-field-conflicts-facility':
+    case 'mrf-address-field-incomplete':
+    case 'mrf-template-version-noncanonical':
+    case 'mrf-custom-workbook-metadata-unverified':
     case 'compliant-date-unverified':
       return row.mrf_url || '';
     case 'pointer-lists-no-mrf-url':
+    case 'pointer-links-older-mrf-than-source-page':
+    case 'pointer-links-different-facility-mrf-source-page-file':
+    case 'pricing-page-links-older-mrf-than-pointer':
+    case 'pointer-links-unavailable-mrf-source-page-current-file':
+    case 'pointer-target-dns-unresolved-page-file-found':
+    case 'pointer-links-html-download-page-with-file':
+    case 'pointer-html-portal-not-found-source-page-current-file':
+    case 'pointer-file-url-renders-not-found-source-page-current-file':
+    case 'official-page-mrf-root-pointer-unavailable':
+    case 'root-pointer-omits-facility-page-file-found':
+    case 'root-pointer-html-page-with-official-page-file':
     case 'not-assessed-not-named-in-file':
       return row.pointer_url || '';
     case 'pointer-blocked-to-automation':
     case 'not-assessed-site-unreachable':
+    case 'not-assessed-site-corrected':
     case 'no-cms-hpt-txt-published':
       return domain ? `https://${domain}/cms-hpt.txt` : '';
     default:
@@ -182,6 +331,8 @@ function classifyRow(row, evidence) {
   const transportError = String((evidence && evidence.error) || '');
 
   const pick = (intervention, reason) => ({ intervention, reason });
+  if (String(row.finding).startsWith('not-assessed-nationwide-')) return pick('discovery-review', row.evidence);
+  if (String(row.finding).startsWith('not-assessed-discovery-')) return pick('discovery-review', row.evidence);
 
   function blockReason() {
     if (status === 406) return pick('client-rejected', `checked URL returned HTTP 406 to our client at ${evidence.url}`);
@@ -194,13 +345,51 @@ function classifyRow(row, evidence) {
       return pick('identity-review', row.evidence || 'previous file assignment conflicts with hospital identity');
     case 'not-applicable-federal':
       return pick('exempt-federal', 'federally owned; outside 45 CFR 180');
+    case 'not-applicable-indian-health-program':
+      return pick('exempt-ihs-program', row.evidence || 'hospital operated by an Indian Health Program under 45 CFR 180.30(b)(2)');
+    case 'not-applicable-state-hospital':
+      return pick('exempt-state-hospital', row.evidence || 'state hospital deemed compliant under 45 CFR 180.30(b)');
+    case 'not-applicable-closed':
+      return pick('exempt-closed', row.evidence || 'first-party evidence says the facility ceased hospital operations');
     case 'compliant-observed':
       return pick('none', 'pointer and MRF verified with a readable last_updated_on');
     case 'compliant-date-unverified':
       return pick('format-unusable',
         'bounded MRF probe did not recover last_updated_on; file validity is unverified');
+    case 'mrf-license-state-field-conflicts-facility':
+      return pick('file-license-state-conflict', 'the MRF license-number column names a different state than the pointer-linked facility');
+    case 'mrf-address-field-conflicts-facility':
+      return pick('file-address-conflict', 'a pointer-linked MRF address field conflicts with the independently verified hospital address');
+    case 'mrf-address-field-incomplete':
+      return pick('file-address-incomplete', 'the pointer-linked MRF omits part of the independently verified hospital street');
+    case 'mrf-template-version-noncanonical':
+      return pick('file-template-version-review', `the pointer-linked MRF declares template version ${row.cms_template_version} rather than CMS schema identifier 3.0.0`);
+    case 'mrf-custom-workbook-metadata-unverified':
+      return pick('file-custom-workbook-review', 'the pointer-linked object is an XLSX workbook behind a CSV-labeled URL; its generation date is not a verified MRF update date and no CMS template version is declared');
     case 'pointer-lists-no-mrf-url':
       return pick('pointer-mrf-unverified', `no MRF URL was extracted for the matched entry for "${row.hospital_name}"`);
+    case 'pointer-links-older-mrf-than-source-page':
+      return pick('pointer-file-mismatch', 'the official pricing page links a newer identity-matched MRF than the current root pointer');
+    case 'pointer-links-different-facility-mrf-source-page-file':
+      return pick('pointer-different-facility-file', 'the root pointer links a readable file declaring another facility, while the official pricing page links this facility’s file');
+    case 'pricing-page-links-older-mrf-than-pointer':
+      return pick('pricing-page-older-file', 'the hospital pricing page links an older identity-matched file than the current root pointer');
+    case 'pointer-links-unavailable-mrf-source-page-current-file':
+      return pick('pointer-target-unavailable-page-file', 'the current pointer target returned an HTTP error while the official pricing page links a separate identity-matched file');
+    case 'pointer-target-dns-unresolved-page-file-found':
+      return pick('pointer-target-dns-unresolved', 'the pointer target host did not resolve in our bounded client or browser, while the official pricing page links a separate identity-matched file');
+    case 'pointer-links-html-download-page-with-file':
+      return pick('pointer-html-intermediary', 'the root pointer mrf-url resolves to an HTML page that links the identity-matched file');
+    case 'pointer-html-portal-not-found-source-page-current-file':
+      return pick('pointer-portal-not-found', 'the root pointer HTML portal rendered a not-found page while the official pricing page links a separate identity-matched file');
+    case 'pointer-file-url-renders-not-found-source-page-current-file':
+      return pick('pointer-file-renders-not-found', 'the root pointer file URL rendered an HTML not-found page while the official pricing page links a separate identity-matched file');
+    case 'official-page-mrf-root-pointer-unavailable':
+      return pick('official-page-file-pointer-unavailable', 'the official pricing page links an identity-matched MRF but the root cms-hpt.txt path did not return a usable pointer');
+    case 'root-pointer-omits-facility-page-file-found':
+      return pick('root-pointer-omits-facility', 'the root pointer lists other facilities but no Reno entry, while its first-party page links a complete identity-matched CSV');
+    case 'root-pointer-html-page-with-official-page-file':
+      return pick('root-pointer-html-page-file', 'the root cms-hpt.txt path serves an HTML page, while the official pricing page links an identity-matched file');
     case 'mrf-stale-over-365-days':
       return pick('stale-file', `last_updated_on ${row.mrf_last_updated} is ${row.mrf_days_since_update} days old`);
     case 'old-template-version':
@@ -249,9 +438,29 @@ function classifyRow(row, evidence) {
       return pick('name-ambiguous', `matching did not establish a pointer entry for this hospital on ${domain}`);
     case 'not-assessed-domain-unknown':
       return pick('domain-unknown', 'no verified official domain is assigned in this audit');
+    case 'not-assessed-site-observed':
+      return pick('site-pointer-review', row.evidence);
+    case 'not-assessed-site-corrected':
+      return pick('corrected-site-pointer-pending', row.evidence);
+    case 'not-assessed-pointer-review':
+      return pick('pointer-identity-review', row.evidence);
+    case 'not-assessed-domain-candidate':
+      return pick('candidate-domain-review', row.evidence);
+    case 'not-assessed-domain-search-pending':
+      return pick('domain-search-pending', row.evidence);
+    case 'not-assessed-domain-search-error':
+      return pick('domain-search-retry', row.evidence);
+    case 'not-assessed-no-domain-candidate':
+      return pick('domain-unknown', row.evidence);
     default:
       return pick('manual-review', `unmapped finding ${row.finding}`);
   }
+}
+
+function interventionReason(row, classifiedReason, worklistRow) {
+  if (!worklistRow || !String(row.finding).startsWith('not-assessed-nationwide-'))
+    return classifiedReason;
+  return `Unresolved ${worklistRow.current_disposition}. Next: ${worklistRow.next_action}`;
 }
 
 // Hoisted helper kept tiny so classifyRow stays readable above.
@@ -263,6 +472,17 @@ function hasEdgeAttribution(edge, evidence) {
 
 async function main() {
   const { compliance } = require('./lib/reviewed-resolutions').loadReviewedView(path.dirname(COMPLIANCE));
+  let worklistByCcn = new Map();
+  if (fs.existsSync(WORKLIST)) {
+    const worklist = JSON.parse(await fsp.readFile(WORKLIST, 'utf8'));
+    for (const name of ['nationwide-reconciliation.json', 'nationwide-verification.json']) {
+      const source = await fsp.readFile(path.join(path.dirname(COMPLIANCE), name));
+      const hash = crypto.createHash('sha256').update(source).digest('hex');
+      if (worklist.source_sha256?.[name] !== hash)
+        throw new Error(`Unresolved worklist is stale against ${name}; rebuild it before interventions`);
+    }
+    worklistByCcn = new Map(worklist.records.map(row => [row.ccn, row]));
+  }
   let curlIndex = [];
   try {
     curlIndex = await csvToObjects((await fsp.readFile(CURL_INDEX, 'utf8')).replace(/^\uFEFF/, ''));
@@ -305,7 +525,7 @@ async function main() {
       ccn: row.ccn, hospital_name: row.hospital_name, city: row.city, state: row.state,
       finding: row.finding, intervention,
       action: (INTERVENTIONS[intervention] || INTERVENTIONS['manual-review']).action,
-      reason,
+      reason: interventionReason(row, reason, worklistByCcn.get(row.ccn)),
       evidence_url: url,
       transcript: evidence ? `data/hpt-audit/curl-evidence/${String(evidence.transcript || '').replace(/\\/g, '/')}` : '',
       checked_at: evidence ? (evidence.checked_at || '') : (row.checked_at || '')
@@ -314,7 +534,19 @@ async function main() {
   if (unknownFindings.size) throw new Error(`Classifier produced unknown interventions: ${[...unknownFindings].join(', ')}`);
 
   rows.sort((a, b) => a.state.localeCompare(b.state) || a.hospital_name.localeCompare(b.hospital_name));
-  await fsp.writeFile(OUT, toCSV(rows, COLUMNS));
+  // Write beside the destination and replace it atomically. Windows readers
+  // (including the local tracker server/indexer) can keep the existing CSV
+  // open; writing it in place intermittently raises UNKNOWN sharing errors.
+  // A same-directory rename preserves the previous complete artifact until
+  // the new bytes are ready and avoids exposing a partial CSV to readers.
+  const tmpOut = `${OUT}.tmp-${process.pid}`;
+  await fsp.writeFile(tmpOut, toCSV(rows, COLUMNS));
+  try {
+    await fsp.rename(tmpOut, OUT);
+  } catch (error) {
+    try { await fsp.unlink(tmpOut); } catch {}
+    throw error;
+  }
 
   const counts = {};
   for (const r of rows) counts[r.intervention] = (counts[r.intervention] || 0) + 1;
@@ -331,4 +563,4 @@ if (require.main === module) {
   main().catch(e => { console.error(e && e.stack || e); process.exitCode = 1; });
 }
 
-module.exports = { INTERVENTIONS, COLUMNS, evidenceUrlFor, classifyRow };
+module.exports = { INTERVENTIONS, COLUMNS, evidenceUrlFor, classifyRow, interventionReason };

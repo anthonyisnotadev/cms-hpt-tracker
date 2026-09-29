@@ -1,0 +1,40 @@
+{
+  "observed_at": "2026-09-22T22:30:00Z",
+  "records": [
+    {
+      "ccn": "261312",
+      "official_domain": "hcchospital.org",
+      "official_pricing_page": "https://hcchospital.org/patient-resources/billing/pricing-services/",
+      "official_pricing_page_observation": "Search-indexed first-party pricing page describes a Hospital Price Transparency TXT File, but direct HTTP and browser automation are intercepted by a robot challenge (HTTP 202 HTML); no MRF URL bytes were recovered.",
+      "pointer_url": "https://hcchospital.org/cms-hpt.txt",
+      "pointer_http_status": 202,
+      "roster_identity": "HARRISON COUNTY COMMUNITY HOSPITAL",
+      "roster_address": "2600 MILLER STREET, BETHANY, MO 64424",
+      "disposition": "official-pricing-page-robot-challenge"
+    },
+    {
+      "ccn": "261336",
+      "official_domain": "icmedcenter.org",
+      "official_pricing_page": "https://icmedcenter.org/",
+      "official_pricing_page_observation": "Search-indexed first-party site exposes Price Transparency and Price Transparency MRF labels, but direct HTTP and browser automation are intercepted by a robot challenge (HTTP 202 HTML); no MRF URL bytes were recovered.",
+      "pointer_url": "https://icmedcenter.org/cms-hpt.txt",
+      "pointer_http_status": 202,
+      "roster_identity": "IRON COUNTY MEDICAL CENTER",
+      "roster_address": "301 NORTH HIGHWAY 21, PILOT KNOB, MO 63663",
+      "disposition": "official-pricing-page-robot-challenge"
+    },
+    {
+      "ccn": "261308",
+      "official_domain": "wcmhosp.org",
+      "official_pricing_page": "https://wcmhosp.org/price-transparency/",
+      "official_pricing_page_observation": "The official page exposes a price-transparency estimator/tool but no downloadable CMS CSV/JSON was recovered; the root cms-hpt.txt route returned HTTP 404.",
+      "pointer_url": "https://wcmhosp.org/cms-hpt.txt",
+      "pointer_http_status": 404,
+      "roster_identity": "WASHINGTON COUNTY MEMORIAL HOSPITAL",
+      "roster_address": "300 HEALTH WAY, POTOSI, MO 63664",
+      "disposition": "official-page-tool-only"
+    }
+  ],
+  "interpretation": "These are transport/discovery observations only; no file absence, exemption or compliance conclusion is inferred.",
+  "next_action": "Retry through an authorized browser/download route or obtain publisher-provided current CSV/JSON, then verify exact facility identity and CMS metadata."
+}

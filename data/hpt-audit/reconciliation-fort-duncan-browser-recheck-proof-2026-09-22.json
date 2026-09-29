@@ -1,0 +1,17 @@
+{
+  "ccn": "450092",
+  "observed_at": "2026-09-22T06:30:00Z",
+  "official_pricing_page": "https://fortduncanmedicalcenter.com/",
+  "official_pricing_page_status": 403,
+  "official_page_observation": "Interactive browser access to the first-party Fort Duncan Medical Center domain rendered a Cloudflare Error 1005 access-denied page stating that the site's owner banned the autonomous-system number; hospital pricing content was not available. The exact cms-hpt.txt route was not accessible through this browser session.",
+  "cms_pointer_url": "https://fortduncanmedicalcenter.com/cms-hpt.txt",
+  "cms_pointer_result": "First-party browser access remained blocked by the Cloudflare access-denied page; no pointer content was available in this recheck.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=450092&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6584,
+  "cms_api_response_sha256": "8046304BC2A022C5E23ACD0C9E94A98648417FB717E125DD438D99511D6D9108",
+  "cms_record": { "facility_id": "450092", "facility_name": "FORT DUNCAN MEDICAL CENTER", "address": "3333 N FOSTER MALDONADO BLVD", "citytown": "EAGLE PASS", "state": "TX", "zip_code": "78852", "hospital_type": "Acute Care Hospitals", "hospital_ownership": "Proprietary", "emergency_services": "Yes" },
+  "disposition": "official-domain-pointer-browser-access-challenge-no-mrf-observed",
+  "interpretation": "The CMS record confirms the facility identity and address. The official-domain and pointer observations are transport/access results only; they do not establish file absence, noncompliance, or a facility closure.",
+  "next_action": "Retry the exact first-party pointer through a permitted publisher route, then verify declared name, Texas address/state, date, version and usability before changing the tracker disposition."
+}

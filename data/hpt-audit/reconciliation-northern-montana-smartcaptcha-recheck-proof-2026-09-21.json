@@ -1,0 +1,17 @@
+{
+  "ccn": "271348",
+  "observed_at": "2026-09-21T15:20:00Z",
+  "official_domain": "nmhcare.org",
+  "retrieval_method": "bounded HTTPS requests, in-app browser, and official-page search",
+  "checked_urls": [
+    "https://nmhcare.org/cms-hpt.txt",
+    "https://www.nmhcare.org/cms-hpt.txt",
+    "https://nmhcare.org/patients-visitors/price-transparency/",
+    "https://nmhcare.org/"
+  ],
+  "transport_result": "Both root pointer variants and the pricing-page routes returned HTTP 202 SmartCaptcha HTML stubs. The in-app browser could not open the root pointer and reported net::ERR_BLOCKED_BY_CLIENT. No pointer or CMS CSV/JSON bytes were recovered.",
+  "official_page_search_observation": "Official-page search results expose the Northern Montana Health Care price-transparency page, identify the hospital at 30 13th Street, Havre, Montana, and state that a full standard-charges file is available, but the file URL and bytes were not retrievable in this recheck.",
+  "disposition": "official-pricing-page-file-access-challenge-pointer-discovery-incomplete",
+  "interpretation": "This is a facility-specific access observation for Northern Montana Hospital only. SmartCaptcha/ERR_BLOCKED_BY_CLIENT transport behavior does not establish file absence, closure, or compliance status; the indexed page statement is not treated as file verification.",
+  "next_action": "Retry the exact official pricing page and pointer through an authorized browser route that can complete the challenge, or obtain a publisher-enabled copy; require exact Northern Montana identity, Havre address/state and usable CMS CSV/JSON metadata before promotion."
+}

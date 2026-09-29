@@ -1,0 +1,14 @@
+{
+  "ccn": "050025",
+  "observed_at": "2026-09-19T12:00:00Z",
+  "official_pricing_page": "https://health.ucsd.edu/insurance-billing/standard-charges/",
+  "official_page_observation": "The current first-party UC San Diego Health standard-charges page identifies a machine-readable JSON file and labels it last updated April 2026.",
+  "page_file_url": "https://hsfiles.ucsd.edu/patientBilling/UC-San-Diego-Standard-Charges-956006144.json",
+  "page_file_declared_size": "approximately 3GB (official page statement)",
+  "page_file_transport_observation": "The web retrieval tool reports the file is too large to fetch; PowerShell and browser routes encountered DNS/TLS/navigation failures before any JSON bytes were obtained.",
+  "facility_identity_context": "The page is the UC San Diego Health standard-charges page for the system containing the Hillcrest campus; no Hillcrest-specific JSON member/header was recovered in this pass.",
+  "pointer_url": "https://health.ucsd.edu/cms-hpt.txt",
+  "pointer_transport_observation": "A direct pointer request was not retrieved in this pass.",
+  "disposition": "official-page-current-large-json-link-access-unresolved",
+  "next_action": "Use an authorized download-capable route to obtain bounded JSON bytes or a publisher-provided copy, then inspect the JSON's facility/address/state/date/version metadata and reconcile the exact Hillcrest campus before promotion. Do not infer file absence from DNS/TLS or content-length limits."
+}

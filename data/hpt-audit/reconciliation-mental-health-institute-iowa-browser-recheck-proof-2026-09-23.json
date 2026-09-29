@@ -1,0 +1,12 @@
+{
+  "ccn":"164002","observed_at":"2026-09-23T11:05:00Z",
+  "official_site":"https://hhs.iowa.gov/",
+  "official_identity":"The recorded domain loads the generic Iowa Department of Health and Human Services homepage, not a facility-specific Mental Health Institute page. CMS independently identifies the facility at 1251 North Cedar Loop, Cherokee, IA 51012.",
+  "browser_observation":"Interactive browser navigation loaded the generic Iowa HHS homepage. The accessibility tree exposed statewide programs and contacts, with no facility-specific pricing or MRF link.",
+  "pointer_url":"https://hhs.iowa.gov/cms-hpt.txt","pointer_status":"HTTP 404 Not Found",
+  "mrf_observation":"No facility-specific MRF bytes recovered; no file-absence or compliance conclusion inferred.",
+  "cms_api_url":"https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=164002&conditions%5B0%5D%5Boperator%5D=%3D","cms_api_status":200,"cms_api_response_bytes":6817,"cms_api_response_sha256":"1F3FEBE2340CFBA6B61234AB744AB11B74FB7D5EDFEBA57B3E85148EB8747B34","cms_record":{"facility_id":"164002","facility_name":"MENTAL HEALTH INSTITUTE","address":"1251 NORTH CEDAR LOOP","citytown":"CHEROKEE","state":"IA","zip_code":"51012"},
+  "disposition":"official-domain-generic-state-content-pointer-404",
+  "interpretation":"The recorded state domain is reachable but serves generic Iowa HHS content and its root pointer is 404. This is a facility-attribution/discovery observation only; no MRF or compliance conclusion is inferred.",
+  "next_action":"Locate a current facility-specific Iowa HHS or hospital pricing route and root pointer through an alternate state directory/client; verify facility identity and MRF metadata before promotion."
+}

@@ -1,0 +1,31 @@
+{
+  "ccn": "100175",
+  "observed_at": "2026-09-24T00:00:00Z",
+  "official_site": "https://www.dmh.org/",
+  "official_pricing_page": "https://www.dmh.org/",
+  "pointer_url": "https://www.dmh.org/cms-hpt.txt",
+  "pointer_http_status": 400,
+  "pointer_content_type": "text/html; charset=UTF-8",
+  "pointer_bytes": 2202,
+  "pointer_sha256": "e1d0cf604029ecbb08654fb9332675efa22962492b770d5c411aba7f899e0ce8",
+  "pointer_observation": "The root pointer currently returns a Wix 400 error page, not structured pointer text.",
+  "page_linked_mrf_url": "https://www.dmh.org/_files/ugd/753cbe_612bfadd8b314ba78d4741a244d074e2.csv?dn=591205441_desoto-memorial-hospital_standardcharges.csv",
+  "mrf_range_status": 206,
+  "mrf_sample_bytes": 65536,
+  "mrf_content_type": "text/csv",
+  "metadata": {
+    "hospital_name": "DeSoto Memorial Hospital",
+    "last_updated_on": "4/13/2026",
+    "version": "3.0.0",
+    "location_name": "DeSoto Memorial Hospital|DeSoto Memorial Hospital|The Wound Healing Institute at DeSoto Memorial Hospital",
+    "hospital_address": "900 North Robert Ave, Arcadia, FL 34266|4161 Tamiami Trail Suite 302, Port Charlotte, FL 33952|316 Nursing Home Drive, Arcadia, FL 34266",
+    "header_license_state": "CO",
+    "license_value": "4218",
+    "npi": "1528387842",
+    "attestation": true
+  },
+  "official_identity_observation": "The official site identifies DeSoto Memorial Hospital at 900 North Robert Avenue, Arcadia, Florida 34266 and links Price Transparency.",
+  "disposition": "page-linked-file-identity-supported-pointer-400-and-license-header-conflict-retained",
+  "interpretation": "The page-linked file supports the Florida facility identity and metadata, but the root pointer is currently an HTML 400 error and the CSV schema still labels the license state CO. No clean promotion was made.",
+  "next_action": "Publisher should restore the structured root pointer and correct or explain the license_number|CO field."
+}

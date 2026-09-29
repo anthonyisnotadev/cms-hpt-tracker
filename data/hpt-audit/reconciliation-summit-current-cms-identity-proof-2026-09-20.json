@@ -1,0 +1,37 @@
+{
+  "ccn": "364035",
+  "hospital_name": "SUMMIT BEHAVIORAL HEALTHCARE",
+  "state": "OH",
+  "observed_at": "2026-09-20T22:30:00Z",
+  "official_domain_lead": "https://dbh.ohio.gov/",
+  "cms_hospital_general_dataset": "https://data.cms.gov/provider-data/dataset/xubh-q36u",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=364035&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6818,
+  "cms_api_response_sha256": "2c5da1108faa25f52b53deded2e805f3acd82f6ab883aebf226ba0ac5ee4f0cb",
+  "cms_record": {
+    "facility_id": "364035",
+    "facility_name": "SUMMIT BEHAVIORAL HEALTHCARE",
+    "address": "1101 SUMMIT ROAD",
+    "citytown": "CINCINNATI",
+    "state": "OH",
+    "zip_code": "45237",
+    "hospital_type": "Psychiatric",
+    "hospital_ownership": "Government - State",
+    "emergency_services": "No"
+  },
+  "official_state_source": "https://controllingboard.obm.ohio.gov/Print/PrintCBRequest.aspx?id=adec3ef0-4038-4aca-9310-bef5e8e99de2",
+  "official_state_identity": "Current FY2026 Ohio Controlling Board material identifies Summit Behavioral Healthcare at 1101 Summit Road, Cincinnati, Ohio 45237, as a state-operated inpatient behavioral healthcare facility.",
+  "official_domain_pointer_url": "https://dbh.ohio.gov/cms-hpt.txt",
+  "direct_client_status": 404,
+  "browser_status": "404 Error Page",
+  "browser_result": "The permitted browser rendered a first-party 404 Error Page for the exact cms-hpt.txt route before any pointer bytes.",
+  "third_party_identity_lead": {
+    "url": "https://turquoise.health/providers/summit-rph/information",
+    "facility_address": "1101 Summit Road, Cincinnati, OH 45237",
+    "role": "identity corroboration only; unverified pricing data and no MRF bytes promoted"
+  },
+  "disposition": "current-cms-and-state-identity-confirmed-official-domain-route-unresolved",
+  "interpretation": "Current CMS and official Ohio Controlling Board sources confirm identity and ongoing operation. The DBH root/pointer route is currently 404; no MRF was promoted and no absence or compliance inference was made.",
+  "next_action": "Locate the current Ohio state-operated facility pricing route or a repaired publisher pointer; then verify a facility-specific CMS CSV/JSON and declared address, state, date, version, and usability before promotion."
+}

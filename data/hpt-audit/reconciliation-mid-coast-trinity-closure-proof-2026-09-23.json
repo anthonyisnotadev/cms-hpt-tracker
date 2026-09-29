@@ -1,0 +1,35 @@
+{
+  "ccn": "670331",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "roster_identity": {
+    "name": "MID COAST MEDICAL CENTER-TRINITY",
+    "address": "317 PROSPECT DRIVE",
+    "city": "TRINITY",
+    "state": "TX",
+    "zip": "75862"
+  },
+  "official_operator_domain": "https://midcoasthealthsystem.org/",
+  "official_pointer_url": "https://midcoasthealthsystem.org/cms-hpt.txt",
+  "official_pointer_status": 200,
+  "official_pointer_observation": "The current Mid Coast Health System cms-hpt.txt is live but lists Bellville, El Campo, Wharton, Palacios and Crockett facilities; it contains no Mid Coast Medical Center-Trinity entry or Trinity-specific MRF URL.",
+  "closure_sources": [
+    {
+      "url": "https://www.mysanantonio.com/news/local/article/texas-rural-trinity-hospital-closes-20290430.php",
+      "publisher": "San Antonio Express-News",
+      "observation": "Reported that Mid Coast Medical Center in Trinity was scheduled to close April 25, 2025 after 14 months in operation."
+    },
+    {
+      "url": "https://trinitymemorialhospitaldistrict.org/er-hospital/",
+      "publisher": "Trinity Memorial Hospital District",
+      "observation": "Current district page labels Mid Coast Medical Center Trinity as closed."
+    },
+    {
+      "url": "https://www.hfma.org/wp-content/uploads/2026/03/standtallforsmall-winterconf-feb2026-lonestar.pdf",
+      "publisher": "HFMA Lone Star",
+      "observation": "Rural-hospital-closure table records Mid Coast Medical Center-Trinity, Trinity TX, closure month April 2025."
+    }
+  ],
+  "disposition": "closed-operator-pointer-excludes-trinity-but-cms-enrollment-scope-unresolved",
+  "interpretation": "Closure evidence explains why the current operator pointer has no Trinity file, but it does not by itself establish the effective CMS certification termination date, whether any post-closure service remains under CCN 670331, or whether a final facility-specific MRF was published. No sibling Mid Coast file is assigned to this CCN and no compliance conclusion is inferred.",
+  "next_action": "Obtain authoritative CMS enrollment/certification termination or successor-operator evidence for CCN 670331 and, if a historical HPT obligation remains in scope, locate a dated Trinity-specific MRF or operator confirmation. Retain unresolved until that scope is established."
+}

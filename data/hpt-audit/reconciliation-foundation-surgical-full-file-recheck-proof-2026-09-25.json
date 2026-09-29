@@ -1,0 +1,26 @@
+{
+  "ccn": "670054",
+  "observed_at": "2026-09-25T00:00:00Z",
+  "official_pricing_page": "https://fshsanantonio.com/Hospital-Pricing-Information",
+  "mrf_url": "https://mrfs.hyvehealthcare.com/USPI/203793927_foundation-bariatric-hospital-of-san-antonio%2C-llc_standardcharges.json",
+  "page_link_observation": "The first-party pricing page labels the linked JSON as Foundation Surgical Hospital of San Antonio standard charges; the page itself displays 5330 N Loop 1604 W, San Antonio, TX 78249.",
+  "full_file_http_status": 200,
+  "full_file_bytes": 13702140,
+  "full_file_sha256": "1CFD045881733B5127C102E63426C117B5BE54DF4D3F374F77EDE7A7A94B38A2",
+  "full_file_json_parse": true,
+  "standard_charge_information_rows": 15390,
+  "declared_metadata": {
+    "hospital_name": "Foundation Bariatric Hospital of San Antonio, LLC",
+    "location_name": ["Foundation Surgical Hospital of San Antonio"],
+    "hospital_address": ["9522 Huebner Rd, San Antonio, TX 78240"],
+    "type_2_npi": ["1932284411"],
+    "last_updated_on": "2026-04-01",
+    "version": "3.0.0",
+    "license_number": "008521",
+    "license_state": "TX",
+    "attestation_confirmed": true
+  },
+  "disposition": "complete-page-linked-mrf-address-conflict-retained",
+  "interpretation": "The complete current JSON is parseable and identity-linked by location name, NPI and Texas metadata, while its 9522 Huebner address agrees with CMS and conflicts with the current first-party page's 5330 N Loop 1604 W address. Full-file evidence strengthens provenance but does not support clean promotion or address reassignment.",
+  "next_action": "Obtain publisher or CMS enrollment clarification for the current address/operator relationship before promotion; retain the separate South Texas Specialty Hospital file exclusion."
+}

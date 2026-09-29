@@ -1,0 +1,21 @@
+{
+  "ccn": "370078",
+  "observed_at": "2026-09-20T00:00:00Z",
+  "official_site": "https://osumc.com/",
+  "official_pricing_page": "https://osumc.com/resources/standard-hospital-charges/",
+  "facility_file_url": "https://osumc.com/264331175_oklahoma-state-university-medical-center_standardcharges.csv",
+  "official_facility_identity": "Oklahoma State University Medical Center, 744 West 9th Street, Tulsa, OK 74127-9020",
+  "page_status": 200,
+  "file_status": 200,
+  "file_content_length": 239,
+  "file_content_sha256": "3ed97bb32e40e791512fb7165386c4d3506f453b551a0305d68ba6838f4e3c6a",
+  "file_result": "sgcaptcha-html",
+  "pointer_url": "https://osumc.com/cms-hpt.txt",
+  "pointer_status": 200,
+  "pointer_content_length": 180,
+  "pointer_sha256": "551be48891e97c590037fde4cf17562ae67de7bb3b355b6dcc7457e5f695ca63",
+  "pointer_result": "sgcaptcha-html",
+  "disposition": "official-page-access-challenge-no-mrf-bytes",
+  "detail": "The current first-party standard-charges page identifies Oklahoma State University Medical Center at 744 West 9th Street, Tulsa, Oklahoma and publishes a facility-specific CSV link. Both the exact CSV and root cms-hpt.txt returned small SiteGround SGCaptcha HTML redirects rather than CSV or pointer bytes. This records a transport/client challenge only; no file absence, metadata or compliance conclusion is inferred.",
+  "next_action": "Recover content-bearing CSV and cms-hpt.txt responses through an authorized download-capable route, then verify facility identity, Oklahoma license state, CMS version, date, attestation and parsed usability before promotion."
+}

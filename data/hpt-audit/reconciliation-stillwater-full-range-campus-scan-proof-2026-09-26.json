@@ -1,0 +1,23 @@
+{
+  "ccns": ["370779", "370780"],
+  "observed_at": "2026-09-26T01:50:00Z",
+  "source_url": "https://mrfs.hyvehealthcare.com/StillwaterMedicalCenter/730927647_stillwater-medical-center-ok_standardcharges.json",
+  "content_length_bytes": 81375888,
+  "retrieval_method": "ten bounded HTTP Range requests, maximum 8388608 bytes each",
+  "ranges": 10,
+  "searched_terms": ["Perry", "Blackwell", "501 14th", "710 South", "1323 W 6th"],
+  "metadata_match": {
+    "main_campus": true,
+    "main_address": "1323 W 6th Ave, Stillwater, OK 74074",
+    "perry_campus_address": false,
+    "blackwell_campus_address": false
+  },
+  "term_hits": {
+    "perry": "service-description text only (DRUG SCREEN COLLECTION,PERRY)",
+    "blackwell": "service-description text only (PFT,BLACKWELL,DORADA FOODS)",
+    "501_14th": false,
+    "710_south": false
+  },
+  "interpretation": "The complete ranged scan did not expose Perry or Blackwell facility metadata or campus addresses. Occurrences of the city names are embedded in charge-description text and are not facility identity evidence.",
+  "disposition": "shared-file-campus-identity-unresolved"
+}

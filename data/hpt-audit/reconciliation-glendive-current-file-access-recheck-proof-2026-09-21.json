@@ -1,0 +1,43 @@
+{
+  "ccn": "271332",
+  "hospital_name": "GLENDIVE MEDICAL CENTER",
+  "state": "MT",
+  "observed_at": "2026-09-21T21:44:05Z",
+  "recheck_reason": "Tier-1 current-file access follow-up; recheck the current first-party FY-27 link and verify whether a usable file can be recovered through bounded retrieval.",
+  "official_site": "https://www.gmc.org/",
+  "official_pricing_page": "https://www.gmc.org/patients-families/gmc-price-transparency/",
+  "official_pricing_page_status": 200,
+  "official_pricing_page_observation": "The current first-party page identifies Glendive Medical Center and links the FY-27 machine-readable CSV.",
+  "page_file_url": "https://www.gmc.org/documents/Chargemaster-complete-by-Price-Schedule-FY-27.csv",
+  "page_file_status": 403,
+  "page_file_content_type": "text/html; charset=UTF-8",
+  "page_file_response_bytes": 5685,
+  "page_file_response_sha256": "4C27D6935DFA14574AA6C037B97499042125823C58896CF16ADCB1B75995F1C9",
+  "page_file_response_kind": "Cloudflare interactive challenge HTML, not CSV bytes",
+  "browser_download_result": "Browser automation could not open the direct file route (ERR_BLOCKED_BY_CLIENT); no downloadable MRF bytes were produced.",
+  "browser_recheck": {
+    "observed_at": "2026-09-21T22:52:57Z",
+    "official_page_loaded": true,
+    "official_page_still_links": "https://www.gmc.org/documents/Chargemaster-complete-by-Price-Schedule-FY-27.csv",
+    "direct_file_browser_result": "net::ERR_BLOCKED_BY_CLIENT",
+    "downloaded_bytes": 0,
+    "interpretation": "A fresh browser session reproduced the same first-party page linkage and client-side block; this is a transport recheck, not evidence that the file is absent or noncompliant."
+  },
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=271332&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6648,
+  "cms_api_response_sha256": "845C91AA49FAA28378F180A83C7324255A9DB3F6340AECEB4030C094899080FC",
+  "cms_record": {
+    "facility_id": "271332",
+    "facility_name": "GLENDIVE MEDICAL CENTER",
+    "address": "202 PROSPECT DR",
+    "citytown": "GLENDIVE",
+    "state": "MT",
+    "zip_code": "59330",
+    "hospital_type": "Critical Access Hospitals",
+    "hospital_ownership": "Voluntary non-profit - Private"
+  },
+  "disposition": "current-first-party-page-file-access-denied-legacy-chargemaster-pointer-file-unresolved",
+  "interpretation": "The current first-party page and CMS identity agree on Glendive Medical Center, but the linked FY-27 object is currently replaced by a Cloudflare challenge response. No CSV bytes or declared file metadata were recovered; this is an access observation only and not a compliance conclusion.",
+  "next_action": "Use an authorized download-capable route or publisher-provided copy for the exact FY-27 file, then verify bounded bytes, Glendive identity, Montana state, declared date/version and usability before promotion."
+}

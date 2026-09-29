@@ -1,0 +1,29 @@
+{
+  "ccn": "251333",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "roster_identity": {
+    "name": "PEARL RIVER COUNTY HOSPITAL",
+    "address": "305 WEST MOODY STREET",
+    "city": "POPLARVILLE",
+    "state": "MS",
+    "zip": "39470"
+  },
+  "identity_sources": [
+    {
+      "url": "https://www.msdh.ms.gov/page/resources/6423.pdf",
+      "observation": "Mississippi State Department of Health lists Pearl River County Hospital at 305 West Moody Street, Poplarville, MS 39470 as a 24-bed critical access hospital."
+    },
+    {
+      "url": "https://www.picayune.ms.us/1207/Hospital",
+      "observation": "The official City of Picayune page describes Highland Community Hospital as Pearl River County's acute-care facility, leaving the current role of the Poplarville hospital unresolved."
+    },
+    {
+      "url": "https://pearlrivercounty.net/",
+      "observation": "The current Pearl River County official site was reviewed for a hospital/operator or pricing route but exposed no facility-specific hospital pointer or MRF."
+    }
+  ],
+  "browser_observation": "Likely legacy hospital domains were tested with bounded HTTPS requests and timed out; no verifiable first-party Pearl River County Hospital pricing page, cms-hpt.txt pointer or MRF bytes were recovered.",
+  "disposition": "official-identity-corroborated-current-scope-unresolved",
+  "interpretation": "The facility identity and address are corroborated by Mississippi's official health-facility listing, but current operating/scope status remains uncertain because a neighboring official municipal page identifies another facility as the county's acute-care hospital and no current publisher route was found. No closure, termination, exemption, file-absence or compliance conclusion is assigned.",
+  "next_action": "Obtain authoritative Mississippi licensure/CMS enrollment status and a current operator/publisher pointer or CMS-format MRF before changing the unresolved finding."
+}

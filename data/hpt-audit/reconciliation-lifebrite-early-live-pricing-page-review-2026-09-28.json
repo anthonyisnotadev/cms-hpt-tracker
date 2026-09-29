@@ -1,0 +1,19 @@
+{
+  "ccn": "111314",
+  "observed_at": "2026-09-28T03:16:51Z",
+  "browser_route": "normal in-app browser navigation; no login or challenge bypass",
+  "official_pricing_page": "https://www.earlymc.com/price-transparency/",
+  "browser_page_title": "Price Transparency – Early Medical Center | One Healthcare Campus.",
+  "live_page_observations": {
+    "facility_identity": "Early Medical Center, 11740 Columbia Street, Blakely, Georgia 39823; footer identifies LifeBrite Medical Group LLC d/b/a Early Medical Center.",
+    "pricing_description": "The page calls the offering a chargemaster / list of standard hospital charges and says the prices are gross charges that do not account for insurance-negotiated rates, discounts, or financial assistance.",
+    "download_link_text": "Download Our Standard Charges (Chargemaster) XML",
+    "download_link_target": "https://www.earlymc.com/wp-content/uploads/2026/06/CHARGEMASTER-1.xlsx",
+    "link_label_extension_mismatch": "The visible link label says XML while its target path ends in .xlsx; the prior full retrieval at the exact target is a 232,795-byte XLSX workbook, SHA-256 43e9b1b63e47232a3dea72a143a4a174744f112cb46c2a625c77ebfd30b875b8."
+  },
+  "prior_pointer_evidence": "The exact first-party cms-hpt.txt and the exact linked XLSX were fully retrieved and hash-bound in reconciliation-lifebrite-early-current-pointer-xlsx-review-2026-09-28.json; pointer SHA-256 7284cd01f4367d6c0d9d647f1639a57346108480bd744df4e9b3cf6b6bd0de69.",
+  "finding": "Live first-party page content independently characterizes the linked offering as gross charges only and explicitly says it excludes insurance-negotiated rates. Its XML label also conflicts with the XLSX target and previously retrieved XLSX bytes. Together with the existing full workbook review, this is not a verified CMS CSV/JSON MRF. No new price bytes were obtained.",
+  "disposition": "first-party-gross-charge-workbook-and-link-label-conflict-corroborated-mrf-unresolved",
+  "count_effect": "none; retain CCN 111314 as genuinely unresolved",
+  "next_action": "Do not repeat retrieval or format analysis of the same unchanged XLSX. Continue to require a corrected current pointer/file or publisher-provided CMS-format MRF with the declared facility identity, Georgia metadata, date/version and required charge fields; keep the gross-charge workbook as separately hash-bound historical/current page-linked evidence."
+}

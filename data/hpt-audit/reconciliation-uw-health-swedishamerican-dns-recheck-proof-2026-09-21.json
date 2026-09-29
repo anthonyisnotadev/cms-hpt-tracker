@@ -1,0 +1,20 @@
+{
+  "ccn": "140228",
+  "observed_at": "2026-09-21T05:59:30Z",
+  "roster_identity": "UW HEALTH / UW Health SwedishAmerican Hospital, 1401 East State Street, Rockford, IL 61104",
+  "official_pricing_page": "https://www.uwhealth.org/billing-insurance/cms-price-transparency",
+  "browser_observation": "In-app browser navigation to the current official pricing page failed with net::ERR_NAME_NOT_RESOLVED.",
+  "pointer_url": "https://uwhealth.org/cms-hpt.txt",
+  "pointer_observation": "Bounded native requests remained DNS-unresolved/time-out; no fresh pointer bytes were recovered.",
+  "cached_pointer_file_url": "https://bynder.uwhealth.org/m/1d39d4b3bd3ce8bb/original/362222696_SwedishAmerican-Hospital_standardcharges.csv",
+  "file_observation": "Bounded native request to the cached Bynder file also failed to produce content-bearing bytes.",
+  "search_lead": {
+    "url": "https://ppman.hank.ai/transparency/hospital/140228",
+    "role": "third-party lead only",
+    "reported_source_mrf": "https://bynder.uwhealth.org/m/1d39d4b3bd3ce8bb/original/362222696_SwedishAmerican-Hospital_standardcharges.csv",
+    "reported_page": "https://www.uwhealth.org/billing-insurance/cms-price-transparency"
+  },
+  "disposition": "current-official-dns-unresolved-preserves-cached-first-party-pointer-lead",
+  "interpretation": "This is a current transport/access recheck and an independent third-party lead corroborating the existing cached target. It is not fresh file identity or metadata evidence and does not support promotion or exclusion.",
+  "next_action": "Recover fresh pointer and file bytes through a materially different authorized DNS/network route or after host reachability changes, then verify declared name, 1401 E State Street address, Illinois state, update date, CMS version and usability."
+}

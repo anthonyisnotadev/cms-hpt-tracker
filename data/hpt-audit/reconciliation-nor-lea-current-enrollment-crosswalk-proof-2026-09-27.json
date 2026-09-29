@@ -1,0 +1,51 @@
+{
+  "ccn": "321305",
+  "observed_at": "2026-09-27T05:13:00Z",
+  "source": {
+    "dataset": "CMS Hospital Enrollments : 2026-08-01",
+    "dataset_id": "aa2e3ead-bbaa-4e71-b59d-a07ac7ed9ba5",
+    "exact_ccn_query": "https://data.cms.gov/data-api/v1/dataset/aa2e3ead-bbaa-4e71-b59d-a07ac7ed9ba5/data?filter%5BCCN%5D=321305&size=10",
+    "row": {
+      "ENROLLMENT ID": "O20080805000713",
+      "ENROLLMENT STATE": "NM",
+      "PROVIDER TYPE TEXT": "PART A PROVIDER - CRITICAL ACCESS HOSPITAL",
+      "NPI": "1881630036",
+      "CCN": "321305",
+      "ORGANIZATION NAME": "NOR-LEA HOSPITAL DISTRICT",
+      "DOING BUSINESS AS NAME": "NOR-LEA GENERAL HOSPITAL",
+      "ADDRESS LINE 1": "1600 N MAIN AVE",
+      "ADDRESS LINE 2": "NOR-LEA GENERAL HOSPITAL",
+      "CITY": "LOVINGTON",
+      "STATE": "NM",
+      "ZIP CODE": "882602813",
+      "PRACTICE LOCATION TYPE": "OTHER HOSPITAL PRACTICE LOCATION",
+      "LOCATION OTHER TYPE TEXT": "CAH"
+    }
+  },
+  "independent_current_facility_page": "https://nor-lea.org/contact-us",
+  "follow_up_source_review": {
+    "observed_at": "2026-09-27T05:17:00Z",
+    "nppes_api": {
+      "npi": "1881630036",
+      "query": "https://npiregistry.cms.hhs.gov/api/?number=1881630036&version=2.1",
+      "last_updated": "2026-01-21",
+      "organization_name": "NOR-LEA HOSPITAL DISTRICT",
+      "mailing_address": "1600 N MAIN AVE, LOVINGTON, NM 88260-2813",
+      "location_address": "1600 NORTH MAIN, LOVINGTON, NM 88260-2813"
+    },
+    "secondary_npi_crosscheck": {
+      "npi": "1598899874",
+      "query": "https://npiregistry.cms.hhs.gov/api/?number=1598899874&version=2.1",
+      "last_updated": "2009-12-18",
+      "location_address": "1600 NORTH MAIN, LOVINGTON, NM 88260-2813",
+      "scope_note": "This address corroborates campus location but is older and does not alone establish the hospital's MRF field."
+    },
+    "cms_v3_data_dictionary": "https://github.com/CMSgov/hospital-price-transparency/blob/master/documentation/JSON/README.md",
+    "cms_field_definition": "hospital_address is an array of physical addresses of the corresponding hospital location attribute."
+  },
+  "previous_complete_page_linked_file_proof": "reconciliation-nor-lea-address-conflict-proof-2026-09-25.json",
+  "crosswalk_result": "CMS current enrollment, current NPPES mailing/location addresses for NPI 1881630036, the older NPPES location for NPI 1598899874, and the official Nor-Lea Main Campus page all support 1600 N Main. The exact first-party-page-linked CSV remains a separate object declaring 1900 North Main Avenue, Lovington, NM 88260-2813; it is complete and CMS 3.0.0, dated 2026-07-17, and declares NPI 1881630036|1598899874. CMS's v3 data dictionary defines hospital_address as physical address(es) of the corresponding hospital location attribute.",
+  "disposition": "current-enrollment-and-campus-crosswalk-agree-file-address-role-unresolved",
+  "interpretation": "This adds fresh exact-CCN CMS enrollment and current NPPES data, plus the applicable CMS v3 field definition. Multiple independent records support 1600 N Main as both the enrolled hospital location and current campus; CMS defines the MRF hospital_address field as physical, so describing 1900 as a mailing address is not supported by the template. The file's 1900 value is therefore a material publisher-metadata conflict, not an alternate address we can normalize away. Do not edit its bytes or silently change the tracker; keep the CCN unresolved pending publisher correction/explanation or an authoritative current licensing record that locates this hospital at 1900.",
+  "next_action": "Seek a publisher correction or official New Mexico hospital-licensing record explicitly tying CCN 321305 to 1900 North Main. If no such evidence appears, continue to present the complete file as having an unresolved CMS physical-address metadata conflict; retain the exact file hash and 1900 value and do not normalize it to 1600."
+}

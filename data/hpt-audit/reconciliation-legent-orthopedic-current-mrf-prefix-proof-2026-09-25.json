@@ -1,0 +1,31 @@
+{
+  "ccn": "670265",
+  "observed_at": "2026-09-25T00:00:00Z",
+  "official_pricing_page": "https://www.legenthealth.com/price-transparency",
+  "mrf_url": "https://drive.google.com/uc?export=download&id=1toQm10puzBsJhiF4IUdMEbavJL1-RKMn",
+  "mrf_transport": "A permitted range download returned 262144 bytes; a subsequent Google Drive response returned an HTML download interstitial, so only the first bounded prefix is retained.",
+  "prefix_bytes": 262144,
+  "prefix_sha256": "040D590D95E6D9D6C8FA87CDDF3D0BB230CCCCF1ECFCB7223398654C9E61184B",
+  "declared_metadata": {
+    "hospital_name": "Ethicus Hospital DFW",
+    "last_updated_on": "2026-03-22",
+    "version": "3.0.0",
+    "location_name": "Legent Orthopedic Hospital",
+    "hospital_address": "1401 E Trinity Mills Rd, Carrollton, TX 75006",
+    "type_2_npi": "1316505043",
+    "license_state": "TX",
+    "license_number": "8742",
+    "attester_name": "Cole Schmitz"
+  },
+  "cms_api_identity": {
+    "facility_id": "670265",
+    "facility_name": "LEGENT ORTHOPEDIC HOSPITAL",
+    "address": "4201 WILLIAM D TATE AVENUE",
+    "city": "GRAPEVINE",
+    "state": "TX",
+    "zip": "76051"
+  },
+  "disposition": "current-page-file-header-versus-cms-address-conflict",
+  "interpretation": "The first-party MRF prefix provides current CMS 3.0.0 metadata and Carrollton identity, while the current CMS provider record still places CCN 670265 at Grapevine. This strengthens both sides of the address discrepancy; it does not support reassignment or clean promotion.",
+  "next_action": "Obtain effective-dated CMS enrollment/operator evidence or a publisher clarification linking the Carrollton hospital to CCN 670265, then retrieve the complete file through an authorized route."
+}

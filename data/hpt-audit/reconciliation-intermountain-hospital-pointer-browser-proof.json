@@ -1,0 +1,25 @@
+{
+  "ccn": "134002",
+  "observed_at": "2026-09-19T11:25:00Z",
+  "official_site": "https://intermountainhospital.com/",
+  "roster_identity": "Intermountain Hospital, 303 North Allumbaugh Street, Boise, ID 83704",
+  "official_domain_browser_status": "Cloudflare Performing security verification",
+  "pointer_urls_checked": [
+    "https://intermountainhospital.com/cms-hpt.txt",
+    "https://www.intermountainhospital.com/cms-hpt.txt"
+  ],
+  "pointer_statuses": [403, 403],
+  "pricing_route_urls_checked": [
+    "https://intermountainhospital.com/price-transparency/",
+    "https://intermountainhospital.com/patients-visitors/price-transparency/"
+  ],
+  "pricing_route_statuses": [403, 403],
+  "third_party_identity_lead": {
+    "url": "https://turquoise.health/providers/intermountain/information",
+    "address": "303 North Allumbaugh Street, Boise, ID 83704",
+    "npi": "1881707552",
+    "use": "identity lead only; direct publisher URL and bytes not established"
+  },
+  "disposition": "official-domain-cloudflare-blocked-pointer-and-pricing-route-mrf-unresolved-third-party-identity-lead-retained",
+  "next_action": "Retry the exact official pricing and root-pointer routes through a materially different authorized route; independently recover a publisher-hosted current CMS CSV/JSON and verify facility identity, address, Idaho state, date/version and bounded usability before promotion."
+}

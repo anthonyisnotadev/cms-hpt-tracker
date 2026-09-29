@@ -1,0 +1,57 @@
+{
+  "ccns": [
+    "370245",
+    "370784"
+  ],
+  "observed_at": "2026-09-17T10:53:30.532Z",
+  "cms_enrollment_dataset": "CMS Hospital Enrollments",
+  "cms_current_enrollment_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=370784&size=10",
+  "cms_current_enrollment_response_sha256": "3ebfbc05a15eaac4f91a33eccdb9f59e0805ba7cc3d0799109b7ec020aa9805b",
+  "cms_former_enrollment_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=370245&size=10",
+  "cms_former_enrollment_response_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "cms_former_enrollment_rows_in_current_snapshot": 0,
+  "cms_current_enrollment": {
+    "ccn": "370784",
+    "provider_type": "PART A PROVIDER - RURAL EMERGENCY HOSPITAL (REH)",
+    "npi": "1942921929",
+    "organization_name": "CLINTON HOSPITAL AUTHORITY",
+    "doing_business_as": "CLINTON REGIONAL HOSPITAL",
+    "address": "100 NORTH 30TH STREET",
+    "city": "CLINTON",
+    "state": "OK",
+    "zip": "736013117",
+    "reh_conversion_flag": "Y",
+    "reh_conversion_date": "2025-12-02",
+    "former_hospital_ccn": "370245"
+  },
+  "first_party_site_url": "https://www.crhaok.com/",
+  "first_party_site_sha256": "0c33e33e00e4436ce4a92ae6c8faf4f1e8af92eeefdcd36607214ce5f9c78779",
+  "pointer_url": "https://crhaok.com/cms-hpt.txt",
+  "pointer_sha256": "f37a577b89897d980f9bf775a5e710579f13275891c42a3ad26fa463864ae835",
+  "pointer_entry_without_contacts": [
+    "location-name: Clinton Regional Hospital",
+    "source-page-url: https://secure.claraprice.net/price-transparency/clinton-regional-hospital-ok",
+    "mrf-url: https://secure.claraprice.net/price-transparency/OGFL-1782507604288/machine-readable/884062444_clinton-regional-hospital_standardcharges.json"
+  ],
+  "pricing_page_url": "https://secure.claraprice.net/price-transparency/clinton-regional-hospital-ok",
+  "pricing_page_sha256": "90aa9d28f1972116da07e80aab157e21b417fb51ec01dfeb40ed562a8195deb5",
+  "pointer_file_url": "https://secure.claraprice.net/price-transparency/OGFL-1782507604288/machine-readable/884062444_clinton-regional-hospital_standardcharges.json",
+  "file_http_status": 200,
+  "file_bytes": 3871397,
+  "file_sha256": "d00b4865ffb24203334c32a55f25742d25a67e06f93d686d8876d8d12209ff06",
+  "file_hospital_name": "Clinton Regional Hospital",
+  "file_location_name": [
+    "Clinton Regional Hospital"
+  ],
+  "file_address": [
+    "100 North 30th Street, Clinton, OK 73601"
+  ],
+  "file_type_2_npi": [
+    "1942921929"
+  ],
+  "file_license_state": "OK",
+  "file_last_updated_on": "2026-07-28",
+  "file_version": "3.0.0",
+  "charge_entry_count": 4761,
+  "conclusion": "The current CMS REH enrollment explicitly records conversion from former hospital CCN 370245 to current CCN 370784. The current pointer-linked complete JSON agrees with the REH enrollment on name, street, state and NPI. It is current-facility evidence for 370784, not a historical file for 370245. This review checks identity and root metadata, not all charge rows or CMS compliance."
+}

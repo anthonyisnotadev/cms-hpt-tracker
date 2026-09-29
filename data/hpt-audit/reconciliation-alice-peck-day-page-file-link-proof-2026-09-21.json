@@ -1,0 +1,13 @@
+{
+  "ccn": "301305",
+  "observed_at": "2026-09-21T20:20:00Z",
+  "official_domain": "www.alicepeckday.org",
+  "official_site": "https://www.alicepeckday.org/patients/billing-financial-assistance",
+  "candidate_file_url": "https://www.alicepeckday.org/02-0222791_Alice%20Peck%20Day%20Memorial_standardcharges.csv",
+  "candidate_file_format": "CSV",
+  "retrieval_method": "official billing-page inspection and bounded direct-file probe",
+  "transport_result": "The official Alice Peck Day page identifies its comprehensive CSV charge list and links the exact facility-specific URL; the bounded direct-file fetch could not retrieve CSV bytes in the current client. No file hash, declared date, CMS template or usable rows were asserted.",
+  "disposition": "official-page-file-linkage-byte-retrieval-pending",
+  "interpretation": "This is first-party page-linked evidence only. The CSV is not promoted until bytes and declared identity/metadata are independently checked, and the root pointer is separately retried.",
+  "next_action": "Retrieve the exact CSV through a permitted download-capable route, inspect its identity/date/version and usable structure, and retry the exact Alice Peck Day root cms-hpt.txt pointer."
+}

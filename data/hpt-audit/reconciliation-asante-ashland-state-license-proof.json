@@ -1,0 +1,82 @@
+{
+  "ccns": ["380005", "380018"],
+  "observed_at": "2026-09-17T01:46:41.000Z",
+  "source_page": "https://www.oregon.gov/oha/ph/providerpartnerresources/healthcareprovidersfacilities/healthcarehealthcareregulationqualityimprovement/pages/forms.aspx",
+  "licensed_hospitals": {
+    "url": "https://www.oregon.gov/oha/PH/PROVIDERPARTNERRESOURCES/HEALTHCAREPROVIDERSFACILITIES/HEALTHCAREHEALTHCAREREGULATIONQUALITYIMPROVEMENT/Documents/HOSPITALList.pdf",
+    "bytes": 242805,
+    "sha256": "1427e1cda5afc00358495a9475de16a210f8b8a71613339afc3da3302b21261e",
+    "file_updated_on": "2026-07-30",
+    "observation": "Oregon Health Authority's current licensed-hospitals list includes Asante Rogue Regional Medical Center at 2825 E Barnett Road, Medford OR, under state license 14-0451. It does not separately list Asante Ashland Community Hospital or former license 14-1445. Absence from this list supports the state-license transition but is not a Medicare CCN termination record."
+  },
+  "licensed_satellites": {
+    "url": "https://www.oregon.gov/oha/PH/PROVIDERPARTNERRESOURCES/HEALTHCAREPROVIDERSFACILITIES/HEALTHCAREHEALTHCAREREGULATIONQUALITYIMPROVEMENT/Documents/HOSPITALSatelliteList.pdf",
+    "bytes": 316021,
+    "sha256": "039d3c76abdb47051fda2493b35f5a72e2677a13bed5d694f314830422787731",
+    "file_updated_on": "2026-07-30",
+    "parent": "Asante Rogue Regional Medical Center, state license 14-0451, 2825 E Barnett Road, Medford OR 97504",
+    "satellite": "Asante Ashland, state satellite license 14-0451-8, 280 Maple Street, Ashland OR 97520",
+    "observation": "The state directly lists Asante Ashland under Rogue Regional's hospital license as a satellite location. This corroborates the operator's May 22 transition statement and identifies the current state-license parent, but does not supply a CMS CCN status effective date or prove any price-file coverage."
+  },
+  "cms_july_2026_enrollment_snapshot": {
+    "evidence_file": "data/hpt-audit/priority-one-cms-enrollment-snapshot-review.json",
+    "ccn_380005_row": "One exact CCN 380005 row remains in the pinned July 2026 Hospital Enrollments dataset at 280 Maple Street.",
+    "interpretation": "The CMS enrollment snapshot and state licensing lists describe different systems and may update on different schedules. Do not turn their apparent timing discrepancy into an active/terminated Medicare CCN conclusion without effective-dated CMS evidence."
+  },
+  "cms_live_api_recheck": {
+    "observed_at": "2026-09-18T09:06:57.2819916Z",
+    "url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=380005&size=10",
+    "http_status": 200,
+    "response_bytes": 1163,
+    "response_sha256": "4e39e5eb60ac3e3f168518ce7a5f7298dec645606db8b00e75e3b12fca639a57",
+    "ccn": "380005",
+    "organization_name": "ASANTE ASHLAND COMMUNITY HOSPITAL LLC",
+    "address": "280 MAPLE ST, ASHLAND, OR 975201552",
+    "provider_type": "PART A PROVIDER - HOSPITAL",
+    "interpretation": "A fresh CMS API response still returns an exact CCN 380005 enrollment row and Ashland address. It does not provide an effective termination date, certification-history status, or proof that Rogue Regional CCN 380018's current MRF covers this satellite."
+  },
+  "cms_live_api_pair_recheck": {
+    "observed_at": "2026-09-19T10:40:00Z",
+    "url_template": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D={CCN}&size=10",
+    "records": [
+      {
+        "ccn": "380005",
+        "http_status": 200,
+        "response_bytes": 1163,
+        "response_sha256": "4e39e5eb60ac3e3f168518ce7a5f7298dec645606db8b00e75e3b12fca639a57",
+        "organization_name": "ASANTE ASHLAND COMMUNITY HOSPITAL LLC",
+        "address": "280 MAPLE ST, ASHLAND, OR 975201552",
+        "provider_type": "PART A PROVIDER - HOSPITAL",
+        "practice_location_type": "OTHER HOSPITAL PRACTICE LOCATION"
+      },
+      {
+        "ccn": "380018",
+        "http_status": 200,
+        "response_bytes": 1179,
+        "response_sha256": "4aeac6ead3383ac7f969c125c834e81feff83fd9f7fef15907470826aa681f51",
+        "organization_name": "ASANTE",
+        "doing_business_as": "ASANTE ROGUE REGIONAL MEDICAL CENTER",
+        "address": "2825 E BARNETT RD, MEDFORD, OR 975048332",
+        "provider_type": "PART A PROVIDER - HOSPITAL",
+        "practice_location_type": "MAIN/PRIMARY HOSPITAL LOCATION"
+      }
+    ],
+    "interpretation": "The live CMS snapshot independently returns both exact CCNs, with Ashland classified as an other hospital practice location and Rogue Regional as the main/primary hospital location. This strengthens the separate-CCN/current-roster evidence but still supplies no effective termination date and no proof that the parent MRF covers the Ashland satellite."
+  },
+  "cms_fy2026_swing_bed_apu_recheck": {
+    "observed_at": "2026-09-19T14:05:00Z",
+    "source_url": "https://www.cms.gov/files/document/pac-snf-fy2026-apu-non-compliant.pdf",
+    "source_observation": "The current CMS FY2026 swing-bed/APU publication lists CCN 380005 as ASANTE ASHLAND COMMUNITY HOSPITAL in Ashland, OR.",
+    "interpretation": "This is independent current CMS ancillary-dataset representation of the CCN, but it is not an enrollment certification-history record and supplies no effective termination date or MRF coverage determination. Retain as corroboration only; do not infer active Medicare hospital status or promote the Rogue Regional file to Ashland.",
+    "result": "evidence-gain-no-relabel"
+  },
+  "latest_oregon_satellite_recheck": {
+    "observed_at": "2026-09-19T13:10:00Z",
+    "source_url": "https://www.oregon.gov/oha/PH/PROVIDERPARTNERRESOURCES/HEALTHCAREPROVIDERSFACILITIES/HEALTHCAREHEALTHCAREREGULATIONQUALITYIMPROVEMENT/Documents/HOSPITALSatelliteList.pdf",
+    "source_updated": "2026-07-30",
+    "parent_license": "14-0451 Asante Rogue Regional Medical Center",
+    "satellite_license": "14-0451-8 Asante Ashland, 280 Maple Street, Ashland, OR 97520",
+    "result": "The current Oregon licensed-hospital-satellite list independently places Asante Ashland under Rogue Regional. This strengthens the parent/satellite relationship but does not establish a Medicare CCN termination/effective date or parent MRF coverage."
+  },
+  "next_action": "Find an effective-dated CMS CCN 380005 enrollment/certification status record and establish whether Rogue Regional CCN 380018 covers the Ashland satellite in its current pointer and MRF. Preserve the distinct state-license conclusion and the unresolved Medicare/file-coverage questions."
+}

@@ -1,0 +1,25 @@
+{
+  "ccn": "331303",
+  "observed_at": "2026-09-26T01:44:00Z",
+  "source_url": "https://www.garnethealth.org/sites/default/files/cms-hpt/146049030_garnet-health-medical-center-catskills_standardcharges.csv",
+  "content_length_bytes": 49963981,
+  "retrieval_method": "seven bounded HTTP Range requests, maximum 8388608 bytes each",
+  "ranges": [
+    {"start": 0, "end": 8388607, "status": 206, "bytes": 8388608},
+    {"start": 8388608, "end": 16777215, "status": 206, "bytes": 8388608},
+    {"start": 16777216, "end": 25165823, "status": 206, "bytes": 8388608},
+    {"start": 25165824, "end": 33554431, "status": 206, "bytes": 8388608},
+    {"start": 33554432, "end": 41943039, "status": 206, "bytes": 8388608},
+    {"start": 41943040, "end": 49963980, "status": 206, "bytes": 8020941}
+  ],
+  "searched_terms": ["Callicoon", "Route 97", "State Route"],
+  "matches": {
+    "callicoon": false,
+    "route_97": false,
+    "state_route": false,
+    "harris_bushville_header": true
+  },
+  "header_observation": "The opening range contains the CMS metadata for Garnet Health Medical Center Catskills at 68 Harris Bushville Road, Harris, NY 12742.",
+  "interpretation": "No Callicoon-specific name or address was found in the complete ranged scan. This strengthens exclusion of the Harris file from CCN 331303 but does not prove that the publisher has no separate Callicoon file.",
+  "disposition": "shared-file-callicoon-identity-unresolved"
+}

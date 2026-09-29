@@ -1,0 +1,19 @@
+{
+  "ccn": "440161",
+  "observed_at": "2026-09-19T23:45:00Z",
+  "official_domain": "tristarhealth.com",
+  "candidate_path": "/pt-final-posting-files/62-1113737_TRISTAR-CENTENNIAL-MEDICAL-CENTER_standardcharges.json",
+  "candidate_url_sha256": "37a8d5f74037709e8dce60d3e1813eef053e0ac28431d46d7eb288f6b155b113",
+  "query_withheld": true,
+  "request": {
+    "method": "GET",
+    "range": "bytes=0-262143",
+    "route": "bounded direct-file retry"
+  },
+  "http_status": 403,
+  "transport_result": "azure-signed-url-authentication-failed",
+  "bytes_retrieved": 0,
+  "disposition": "signed-file-token-invalid-no-file-claim",
+  "identity_scope": "The credential-bearing query is intentionally withheld. The 403 is a transport observation for CCN 440161 only; it does not establish file absence, invalidity, or compliance and is not applied to other TriStar facilities.",
+  "next_action": "Obtain a publisher-issued replacement token or unsuffixed authorized route, then retrieve bounded bytes and verify exact Centennial facility identity, Tennessee state, declared date/version and parsed usability before promotion."
+}

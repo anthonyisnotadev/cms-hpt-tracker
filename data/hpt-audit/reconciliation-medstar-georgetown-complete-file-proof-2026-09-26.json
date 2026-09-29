@@ -1,0 +1,32 @@
+{
+  "ccn": "090004",
+  "observed_at": "2026-09-26T03:35:00Z",
+  "official_pricing_page": "https://www.medstarhealth.org/price-transparency-disclosures",
+  "official_page_status": 200,
+  "file_url": "https://www.medstarhealth.org/-/media/project/mho/medstar/billing-and-insurance/2026/522218584_medstar_georgetown_university_hospital_standardcharges.csv",
+  "file_status": 200,
+  "file_content_type": "text/csv",
+  "file_bytes": 130616328,
+  "file_sha256": "216bf4e59243abae3daef7843f910ebdb1e1226bc1fc181c4226e4fb07ee09d3",
+  "root_metadata": {
+    "hospital_name": "MedStar Georgetown Hospital",
+    "last_updated_on": "2026-04-01",
+    "version": "3.0.0",
+    "location_name": "MedStar Georgetown Hospital",
+    "hospital_address": "3800 Reservoir Rd. NorthWest Washington, DC, 20007",
+    "license_number_column": "license_number|MD",
+    "license_number_value": "HFD01-0188",
+    "type_2_npi": "1427145176",
+    "attestation": true,
+    "attester_name": "Lisa M. Boyle"
+  },
+  "facility_identity": {
+    "cms_ccn": "090004",
+    "facility_name": "MEDSTAR GEORGETOWN UNIVERSITY HOSPITAL",
+    "jurisdiction": "Washington, DC",
+    "address": "3800 Reservoir Road NW, Washington, DC 20007"
+  },
+  "disposition": "complete-current-file-confirms-dc-identity-but-md-license-column-conflict-retained",
+  "interpretation": "Complete current bytes strengthen the exact MedStar Georgetown identity, date, version, NPI and attestation evidence. The file still declares a literal license_number|MD column while the hospital is independently identified in Washington, DC; that source-field conflict remains explicit and is not silently relabeled as a legal or compliance conclusion.",
+  "next_action": "Obtain publisher clarification or a corrected file for the literal MD license-state column; retain this complete hash-bound file as current provenance meanwhile."
+}

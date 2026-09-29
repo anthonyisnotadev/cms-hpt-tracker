@@ -1,0 +1,17 @@
+{
+  "ccn": "374001",
+  "observed_at": "2026-09-21T20:30:00Z",
+  "official_pricing_page": "https://oklahoma.gov/odmhsas/about/odmhsas-facilities/ncbh.html",
+  "official_pricing_page_status": 200,
+  "official_page_observation": "The current first-party Oklahoma Department of Mental Health and Substance Abuse Services page identifies Northwest Center for Behavioral Health (NCBH) and its services. It does not expose a CMS CSV/JSON MRF or cms-hpt.txt pointer. The linked/current Oklahoma medical-facilities directory PDF route was opened in the permitted browser but did not expose parsed text; no file identity was inferred from it.",
+  "cms_pointer_url": "https://aem-prod.oklahoma.gov/content/dam/ok/en/health/health2/aem-documents/protective-health/medical-facilities-division/mfs-directoryoffacilities.pdf",
+  "cms_pointer_result": "Official state directory PDF route opened without parsed browser text; it is retained as an identity/source lead only, not as a CMS pointer or MRF.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=374001&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6846,
+  "cms_api_response_sha256": "9DEA1CF7138004E4A904C84E47D0E2EFB08BFD44D04EDB3AC9BB381954EE71D5",
+  "cms_record": { "facility_id": "374001", "facility_name": "NORTHWEST CENTER FOR BEHAVIORAL HEALTH (NCBH)", "address": "1 MILE EAST US HIGHWAY 270", "citytown": "FORT SUPPLY", "state": "OK", "zip_code": "73841", "hospital_type": "Psychiatric", "hospital_ownership": "Government - State", "emergency_services": "No" },
+  "disposition": "official-identity-page-no-cms-mrf-observed",
+  "interpretation": "The official state page and CMS independently identify the facility and CMS address. The absence of a pointer or MRF in the rendered page is recorded as an observation only; no file-absence, compliance, or promotion conclusion is made.",
+  "next_action": "Retry the exact facility-specific CMS pointer/MRF through a permitted publisher route and verify declared name, Fort Supply address/state, date, version and usability before changing the tracker disposition."
+}

@@ -1,0 +1,56 @@
+{
+  "ccn": "250043",
+  "sibling_ccn": "251340",
+  "observed_at": "2026-09-28T05:23:35Z",
+  "recheck_reason": "A different archive route was used to seek pre-2025-12-31 historical pointer/MRF evidence without repeating the already-reproduced CMS QIES queries or the live Cloudflare challenge.",
+  "source": {
+    "name": "Common Crawl CDX Index",
+    "collection_catalog": "https://index.commoncrawl.org/collinfo.json",
+    "collections_queried_for_www_pointer": [
+      "CC-MAIN-2025-51", "CC-MAIN-2025-47", "CC-MAIN-2025-43", "CC-MAIN-2025-38",
+      "CC-MAIN-2025-33", "CC-MAIN-2025-30", "CC-MAIN-2025-26", "CC-MAIN-2025-21",
+      "CC-MAIN-2025-13", "CC-MAIN-2024-51"
+    ],
+    "collections_queried_for_bare_host_pointer": [
+      "CC-MAIN-2025-51", "CC-MAIN-2025-47", "CC-MAIN-2025-43", "CC-MAIN-2025-38",
+      "CC-MAIN-2025-33", "CC-MAIN-2025-30", "CC-MAIN-2025-26", "CC-MAIN-2025-21"
+    ],
+    "collections_with_no_index_match": "The exact pointer URL returned the index's no-match HTTP 404 response for every listed collection except CC-MAIN-2025-38, which returned HTTP 502 and is inconclusive.",
+    "index_endpoint_pattern": "https://index.commoncrawl.org/{collection}-index?url={encoded_exact_url}&output=json"
+  },
+  "domain_wildcard_review": {
+    "collection": "CC-MAIN-2025-51",
+    "query_pattern": "neshobageneral.com/*",
+    "http_status": 200,
+    "matching_http_200_capture_count": 56,
+    "relevant_routes": [
+      "https://www.neshobageneral.com/patient-visitors/critical-access-hospital-updates/",
+      "https://www.neshobageneral.com/in-the-news/2025/may/neshoba-general-announces-intent-to-apply-for-cr/"
+    ],
+    "price_or_pointer_routes_in_returned_set": 0,
+    "interpretation": "This collection captured first-party identity/transition pages, but the 56 returned operator-domain URLs included no price-transparency page, CMS pointer, or MRF route. It is only a finding about this collection's indexed URL set, not proof such routes or files did not exist."
+  },
+  "vendor_archive_checks": {
+    "collection": "CC-MAIN-2025-51",
+    "neshoba_v2_page_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Neshoba_V2.aspx",
+    "neshoba_v2_page_result": "No index match (HTTP 404).",
+    "canonical_report_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbNCGHPHILADELPHIAMS&type=CDMWithoutLabel&fileType=CSV",
+    "canonical_report_result": "HTTP 502 from the index service; inconclusive, not a no-match result.",
+    "historical_variants": [
+      {"url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbNCGHPHILADELPHIAMS%20&type=CDMWithoutLabel", "result": "No index match (HTTP 404)."},
+      {"url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbNCGHPHILADELPHIAMS&fileType=CSV&type=CDMWithoutLabel", "result": "No index match (HTTP 404)."}
+    ]
+  },
+  "internet_archive_cdx": {
+    "query_target": "www.neshobageneral.com/cms-hpt.txt",
+    "result": "HTTP 429 rate limited; no result set retrieved."
+  },
+  "outcome": {
+    "historical_pointer_bytes_recovered": false,
+    "historical_mrf_bytes_recovered": false,
+    "ccn_disposition_changed": false,
+    "unresolved_count_change": 0,
+    "interpretation": "The queried indexes yielded no dated pre-transition pointer or MRF bytes. No-match responses are bounded archive-index observations, not evidence that a pointer/MRF never existed. The QIES termination boundary and current June 2026 shared-campus file remain separate evidence; the latter is not assigned to historical acute-care CCN 250043.",
+    "next_action": "Retain 250043 in the historical accountability baseline. Seek dated pre-2025-12-31 pointer/MRF evidence from a materially different archive/source collection or a publisher-provided historical CMS-format file; do not repeat the listed Common Crawl collections, exact URL variants, QIES queries, or unchanged current pointer request without a new collection, source update, or access change. Keep the June 2026 file separate from historical 250043 evidence."
+  }
+}

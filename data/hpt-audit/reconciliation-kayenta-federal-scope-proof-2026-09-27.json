@@ -1,0 +1,26 @@
+{
+  "ccn": "030195",
+  "observed_at": "2026-09-27T12:03:50Z",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=030195&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_response_bytes": 6859,
+  "cms_response_sha256": "FA1F485740574E1B73F5C7A55FF14A34FA915105AB6D12EBC1447372A8402086",
+  "cms_record": {
+    "facility_id": "030195",
+    "facility_name": "KAYENTA ALTERNATIVE RURAL HOSPITAL",
+    "address": "US HWY 160, S MP 394, KAYENTA, AZ 86033-0368",
+    "citytown": "KAYENTA",
+    "state": "AZ",
+    "zip_code": "86033",
+    "hospital_type": "Acute Care Hospitals",
+    "hospital_ownership": "Government - Federal"
+  },
+  "official_identity_page": "https://www.ihs.gov/navajo/healthcarefacilities/kayenta/",
+  "operator_source": "https://www.ihs.gov/navajo/",
+  "operator_observation": "The current IHS facility page uses the exact Kayenta Alternative Rural Hospital name; current Navajo Area material identifies Kayenta as a Federal Service Unit and describes the hospital operation. The facility page gives a Kayenta mailing address, not a conflicting physical location.",
+  "regulatory_source": "https://www.govinfo.gov/content/pkg/CFR-2025-title45-vol2/pdf/CFR-2025-title45-vol2-part180.pdf",
+  "regulatory_observation": "45 CFR 180.30(b)(1) covers federally owned hospital facilities.",
+  "disposition": "scope-exempt-federal",
+  "interpretation": "Exact CMS CCN/name/city/state and Government - Federal ownership agree with current IHS operator and hospital identity evidence. This supports the 45 CFR 180.30(b)(1) scope classification. The CMS address is retained as the physical-site roster value; this is not an MRF finding.",
+  "next_action": "Retain the federal scope exclusion unless CMS ownership, facility identity or regulatory scope changes."
+}

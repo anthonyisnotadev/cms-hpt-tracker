@@ -1,0 +1,23 @@
+{
+  "ccn": "351306",
+  "observed_at": "2026-09-20T00:00:00Z",
+  "official_site": "https://www.dakotaregional.com/",
+  "official_pricing_page": "https://www.dakotaregional.com/",
+  "facility_file_url": "https://www.dakotaregional.com/_files/ugd/f0a0c4_a7c2059c2e0e420c8606d7ac82cea3e1.csv?dn=2+Copy+of+DRMC+Charge+Master+Updates+12-2024+%281%29.csv",
+  "file_status": 200,
+  "file_bytes": 49549,
+  "file_sha256": "d7b4da76a9a94dbfec11d930a445247d5aac4ade119587ca6ec1e860f1084ed1",
+  "file_header": "CPT CODE,DESCRIPTION,REVENUE CODE,CLASS, CHARGES",
+  "declared_update_hint": "12-2024",
+  "file_role": "local-charge-master-not-cms-mrf",
+  "current_operator_identity": "Dakota Regional Medical Center, Cooperstown, ND",
+  "current_operator_address": "107 12th St S, Cooperstown, ND 58425",
+  "historical_roster_identity": "Cooperstown Medical Center, CCN 351306",
+  "pointer_url": "https://www.dakotaregional.com/cms-hpt.txt",
+  "pointer_status": 400,
+  "pointer_result": "Wix transport error",
+  "alias_evidence_url": "https://www.hhs.nd.gov/sites/www/files/documents/DOH%20Legacy/HF/Facility%20Reports/2025%20RHC.pdf",
+  "disposition": "current-operator-alias-and-non-mrf-file-retained",
+  "detail": "The current official site identifies Dakota Regional Medical Center in Cooperstown and publishes a 49,549-byte local charge-master CSV, not a CMS standard-charges MRF. North Dakota HHS independently lists Cooperstown Medical Center as the legal facility with working name Dakota Regional Medical Center. The current site uses 107 12th St S while the tracker roster uses 1200 Roberts Avenue Northeast; this address transition is retained as an identity lead, not silently normalized. No CMS MRF or pointer linkage was promoted.",
+  "next_action": "Recover a current CMS-format standard-charges file and content-bearing root pointer for CCN 351306, then reconcile the 107 12th Street versus 1200 Roberts Avenue campus address with facility evidence before promotion."
+}

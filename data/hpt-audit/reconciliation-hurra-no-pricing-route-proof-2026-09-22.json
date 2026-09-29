@@ -1,0 +1,29 @@
+{
+  "ccn": "400105",
+  "observed_at": "2026-09-22T12:00:00Z",
+  "official_domain": "salud.pr.gov",
+  "official_facility_page": "https://www.salud.pr.gov/CMS/180",
+  "official_page_status": 200,
+  "official_facility_name": "Hospital Universitario Dr. Ramón Ruiz Arnau (HURRA)",
+  "official_facility_address": "Avenida Laurel #100, Santa Juanita, Bayamón, PR 00956",
+  "official_page_observation": "The official Puerto Rico Department of Health page confirms the HURRA identity and address. The page has no price-transparency or MRF link; the department-wide price-transparency page links only Hospital Universitario de Adultos, not HURRA.",
+  "route_checks": [
+    {
+      "url": "https://www.salud.pr.gov/CMS/180",
+      "status": 200,
+      "observation": "identity page; no pricing link"
+    },
+    {
+      "url": "https://www.salud.pr.gov/cms-hpt.txt",
+      "status": 404
+    },
+    {
+      "url": "https://www.salud.pr.gov/price-transparency",
+      "status": 404
+    }
+  ],
+  "manual_identity_gate": "official-government-page-name-address-state-agree",
+  "disposition": "pointer-discovery-incomplete",
+  "interpretation": "Official government evidence confirms the facility identity and address, but no HURRA-specific pointer or MRF was recovered. Route failures and absence of a link on this page are not treated as compliance, exemption or file-absence conclusions.",
+  "next_action": "Search Department of Health publisher resources and retry through an alternate client for a HURRA-specific current CSV/JSON/ZIP MRF or pointer."
+}

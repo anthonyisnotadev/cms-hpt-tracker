@@ -1,0 +1,38 @@
+{
+  "ccn": "050785",
+  "hospital_name": "DOCS Surgical Hospital",
+  "observed_at": "2026-09-19T05:30:00Z",
+  "official_site": "https://www.docshealth.com/",
+  "official_identity_sources": [
+    "https://www.docshealth.com/docs-surgical-hospital/",
+    "https://hcai.ca.gov/equity-measures/hospital/docs-surgical-hospital/",
+    "https://syfphr.hcai.ca.gov/SearchDetail.aspx?oshpdid=106190681",
+    "https://npiprofile.com/npi/1528533254"
+  ],
+  "official_identity": "DOCS Surgical Hospital, 6000 San Vicente Boulevard, Los Angeles, CA 90036, HCAI ID 106190681, license 930000143, NPI 1528533254, CCN 050785",
+  "pricing_page_url": "https://www.docshealth.com/patient-information/pricing-transparency/",
+  "pricing_page_browser_status": "official-page-rendered",
+  "pricing_page_declared_files": [
+    "https://www.docshealth.com/wp-content/uploads/2021/12/DSH-CHARGE-MASTER-12-6-21-BY-REV-AND-CPT-CODES.xlsm",
+    "https://www.docshealth.com/wp-content/uploads/2021/12/DOCS-Surgical-Hospital-Average-Billed-Charges-by-Procedures-2021-1.xlsx"
+  ],
+  "charge_master_http_status": 200,
+  "charge_master_content_type": "application/vnd.ms-excel.sheet.macroEnabled.12",
+  "charge_master_bytes": 444872,
+  "charge_master_last_modified": "2021-12-10T11:33:47Z",
+  "charge_master_sha256": "09A0D8936DF10D35654F1DAD90351A783BE300991F79840EDD41E4AE8A8BD360",
+  "average_billed_charges_http_status": 200,
+  "average_billed_charges_content_type": "application/vnd.ms-excel",
+  "average_billed_charges_bytes": 38456,
+  "average_billed_charges_last_modified": "2021-12-10T11:37:22Z",
+  "average_billed_charges_sha256": "E0E1AAADAA2B04E2ADBDD75C2E1D257843700150F9410DBECC40BC24FDD69251",
+  "pointer_url": "https://www.docshealth.com/cms-hpt.txt",
+  "pointer_browser_status": "official-404-page",
+  "search_observations": [
+    "The official pricing page identifies the first workbook as a Charge Master and the second as Average Billed Charges for common procedures; neither is presented as a current CMS 3.0.0 CSV or JSON MRF.",
+    "Both linked workbooks are dated December 2021 and were retrieved successfully, but their custom spreadsheet formats and age prevent current-MRF promotion.",
+    "The exact root cms-hpt.txt route renders the official DOCS Page not found page; no pointer content was available."
+  ],
+  "disposition": "official-pricing-page-linked-2021-custom-workbooks-pointer-404-mrf-unresolved",
+  "next_action": "Obtain an authorized current CMS 3.0.0 CSV or JSON MRF (and pointer, if published) from DOCS Surgical Hospital; verify complete bytes, facility identity, address, declared date/version and rate usability before promotion."
+}

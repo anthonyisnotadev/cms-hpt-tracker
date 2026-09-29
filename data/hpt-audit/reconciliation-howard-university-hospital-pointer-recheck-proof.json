@@ -1,0 +1,19 @@
+{
+  "ccn": "090003",
+  "observed_at": "2026-09-18T20:15:00Z",
+  "official_identity_source": "https://howard.edu/contact",
+  "official_identity": "Howard University Hospital, 2041 Georgia Avenue NW, Washington, DC 20060",
+  "official_hospital_link": "https://www.huhealthcare.com/",
+  "candidate_pointer_urls": [
+    {
+      "url": "https://howard.edu/cms-hpt.txt",
+      "browser_status": "404"
+    },
+    {
+      "url": "https://www.huhealthcare.com/cms-hpt.txt",
+      "browser_status": "access-denied"
+    }
+  ],
+  "disposition": "official-identity-confirmed-pointer-unresolved",
+  "next_action": "Use an authorized route to inspect the hospital-domain pointer and official pricing page, then retrieve a facility-specific CMS-template CSV or JSON MRF and verify complete bytes, Howard University Hospital identity/address, DC state, declared date/version and usability before promotion."
+}

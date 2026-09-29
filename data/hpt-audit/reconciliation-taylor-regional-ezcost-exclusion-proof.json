@@ -1,0 +1,31 @@
+{
+  "ccn": "110256",
+  "roster": {
+    "hospital_name": "TAYLOR REGIONAL HOSPITAL",
+    "address": "222 Perry Highway, Hawkinsville, GA",
+    "state": "GA"
+  },
+  "reviewed_at": "2026-09-18T15:01:00.000Z",
+  "official_page": "https://taylorregional.org/transparency.php",
+  "official_page_observation": "The Georgia hospital transparency page links pricing to https://ezcost.info/taylor-regional-hospital but does not expose a Georgia CMS pointer or facility-specific MRF URL.",
+  "ezcost_page": "https://ezcost.info/taylor-regional-hospital",
+  "ezcost_observation": {
+    "http_status": 200,
+    "title": "Taylor Regional Hospital",
+    "contact_phone": "hpt-obf:v1:N-pnenRI6qLm-hvH.5qSxQUhvIGULOtZUO-Exgw.-n8rNF18BgAQzVMf",
+    "linked_file": "https://hospitalpricetransparencyfiles.com/self-regional-healthcare-partners/830893719_Self-Regional-Healthcare-Partners_standardcharges.csv"
+  },
+  "linked_file": {
+    "http_status": 200,
+    "bytes": 170926043,
+    "sha256": "581aaa47694bd8f81ce27b77eca9ab83cf70a219fa216474a087006e006c3c6b",
+    "declared_name": "Self Regional Healthcare Partners",
+    "declared_location": "Edgefield County Healthcare",
+    "declared_address": "300 Ridge Medical Plaza Rd, Edgefield, SC 29824",
+    "declared_state": "SC",
+    "declared_date": "2026-03-30",
+    "declared_version": "3.0.0"
+  },
+  "disposition": "The EZCOST link currently resolves to a South Carolina Self Regional file, not the Georgia Taylor Regional Hospital campus. Do not import or associate this file with CCN 110256; the cross-state mismatch is evidence against the candidate, not a compliance conclusion.",
+  "next_action": "Obtain a corrected Georgia publisher pointer and MRF for 222 Perry Highway, Hawkinsville GA, then verify its CMS header and complete-file usability."
+}

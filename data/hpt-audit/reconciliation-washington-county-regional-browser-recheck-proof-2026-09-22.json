@@ -1,0 +1,10 @@
+{
+  "ccn":"110086","observed_at":"2026-09-22T23:00:00Z",
+  "official_site":"https://wcrmc.com/",
+  "official_site_result":"Interactive browser navigation reached the recorded first-party domain but rendered its Robot Challenge Screen requiring cookies; the facility page did not load.",
+  "cms_pointer_url":"https://wcrmc.com/cms-hpt.txt","cms_pointer_result":"Interactive browser navigation returned net::ERR_BLOCKED_BY_CLIENT.",
+  "cms_api_url":"https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=110086&conditions%5B0%5D%5Boperator%5D=%3D","cms_api_status":200,"cms_api_response_bytes":6682,"cms_api_response_sha256":"98B17302EEFE69ACB01FCAB8D1B2326548FAF30310D917F4AC756F424DD9520F","cms_record":{"facility_id":"110086","facility_name":"WASHINGTON COUNTY REGIONAL MEDICAL CENTER","address":"610 SPARTA ROAD","citytown":"SANDERSVILLE","state":"GA","zip_code":"31082"},
+  "disposition":"browser-access-denied-to-client",
+  "interpretation":"The recorded first-party domain is currently behind a robot challenge and the exact root pointer is browser-blocked. CMS independently confirms the CCN facility identity and address. No MRF bytes were recovered and no file-absence or compliance conclusion is inferred.",
+  "next_action":"Retry the site and pointer with an alternate transport or browser session; if the challenge clears, verify the facility page, pointer target and declared MRF metadata before promotion."
+}

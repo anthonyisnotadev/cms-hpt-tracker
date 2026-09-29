@@ -1,0 +1,22 @@
+{
+  "ccn": "110194",
+  "hospital_name": "Donalsonville Hospital Inc",
+  "observed_at": "2026-09-19T04:20:00Z",
+  "official_site": "https://donalsonvillehospital.org/",
+  "official_pricing_page": "https://donalsonvillehospital.org/billing/hospital-pricing-transparency/",
+  "official_identity": "Donalsonville Hospital, 102 Hospital Circle, Donalsonville, GA 39845",
+  "page_observation": "The official pricing page rendered in browser automation and exposed a direct chargemaster link labeled CHARGEMASTER; page text says Updated 08/26/2025.",
+  "page_file_url": "https://donalsonvillehospital.org/wp-content/uploads/2025/08/standardcharges.csv",
+  "page_file_observed_status": "SiteGround challenge HTML, not CSV bytes",
+  "page_file_observed_bytes": 223,
+  "page_file_observed_sha256": "3093524A72070F845C544100BD81DB951B472E338BCD093A563909B03DE2E25B",
+  "pointer_urls_checked": [
+    "https://donalsonvillehospital.org/cms-hpt.txt",
+    "https://www.donalsonvillehospital.org/cms-hpt.txt"
+  ],
+  "pointer_statuses": [202, 202],
+  "pointer_result": "Both pointer URLs returned 180-byte text/html SiteGround challenge content.",
+  "browser_status": "official pricing page rendered; file navigation yielded blank download tab",
+  "disposition": "official-pricing-page-and-file-link-confirmed-by-browser-but-challenge-prevented-mrf-bytes",
+  "next_action": "Retry the exact file and pointer URLs through a materially different authorized route; obtain complete CSV bytes and independently verify facility identity, Georgia state, declared date/version and CMS-template usability."
+}

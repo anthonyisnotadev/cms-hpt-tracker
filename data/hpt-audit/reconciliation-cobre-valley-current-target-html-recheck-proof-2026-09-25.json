@@ -1,0 +1,28 @@
+{
+  "ccn": "031314",
+  "observed_at": "2026-09-25T14:30:00Z",
+  "official_domain": "cvrmc.org",
+  "pointer_declared_mrf_url": "https://cvrmc.slicedhealth.io/pricer/860732836_cobre-valley-regional-medical-center_standardcharges.csv",
+  "request": {
+    "method": "GET",
+    "range": "bytes=0-262143",
+    "status": 200,
+    "content_type": "text/html",
+    "bytes": 1129,
+    "sha256": "7fba82787b4da9eba895ed1ff96fd07aadff7f69a84b2d79168ade00750f5898",
+    "response_kind": "sliced-health-html-landing-page"
+  },
+  "historical_file_observation": {
+    "status": 206,
+    "sample_bytes": 262144,
+    "sample_sha256": "677086720dce23bae25be454f653e0d799df51d6a576e70282cdf605d6352ed4",
+    "declared_hospital_name": "Cobre Valley Regional Medical Center",
+    "declared_address": "5880 S Hospital Dr, Globe, ARIZONA 85501",
+    "declared_last_updated": "2026-06-29",
+    "cms_template_version": "3.0.0"
+  },
+  "interpretation": "The exact pointer-declared URL no longer returned the previously observed CSV sample; it now returns a small HTML landing page. The earlier hash-backed CSV remains historical evidence and is not erased. This is a transport/content change, not proof that the MRF is absent or invalid.",
+  "disposition": "pointer-target-content-changed-to-html-retryable",
+  "promotion": "none",
+  "next_action": "Recheck the root pointer and obtain a current content-bearing CSV route from the publisher; if the CSV is restored, verify its facility identity, Arizona state field, date, version and usability independently."
+}

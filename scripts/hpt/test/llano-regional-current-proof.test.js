@@ -1,0 +1,53 @@
+'use strict';
+
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+
+const root = path.resolve(__dirname, '../../..');
+const proofPath = path.join(root, 'data/hpt-audit/reconciliation-llano-regional-current-proof.json');
+const proof = require(proofPath);
+const resolutions = require(path.join(root, 'data/hpt-audit/reviewed-resolutions.json'));
+const verification = require(path.join(root, 'data/hpt-audit/nationwide-verification.json')).records;
+const reconciliation = require(path.join(root, 'data/hpt-audit/nationwide-reconciliation.json')).records;
+
+test('Llano current hospital replaces unrelated BSW assignment with complete exact-campus file', () => {
+  assert.equal(proof.ccn, '451396');
+  assert.equal(proof.old_assigned_domain, 'bswhealth.com');
+  assert.equal(proof.old_pointer_has_llano_campus, false);
+  assert.equal(proof.current_domain, 'llanoregional.org');
+  assert.equal(proof.transition_effective_date, '2025-04-01');
+  assert.equal(proof.cms_enrollment.organization_name, 'LLANO REGIONAL HOSPITAL');
+  assert.equal(proof.cms_enrollment.address, '200 W OLLIE ST');
+  assert.equal(proof.pricing_page_links_pointer_source_target, true);
+  assert.equal(proof.pointer_wrapper_sample_sha256, proof.decoded_target_sample_sha256);
+  assert.equal(proof.full_file_http_status, 200);
+  assert.equal(proof.full_file_bytes, 2603792);
+  assert.equal(proof.file_declared_name, 'Llano Regional Hospital');
+  assert.equal(proof.file_declared_address, '200 W Ollie St , Llano, TX 78643');
+  assert.equal(proof.file_declared_license_state, 'TX');
+  assert.equal(proof.file_declared_update, '2026-03-01');
+  assert.equal(proof.file_declared_version, '3.0.0');
+  assert.doesNotMatch(fs.readFileSync(proofPath, 'utf8'), /linkprotect\.cudasvc\.com\/url\?|public\.boxcloud\.com\/d\//);
+  const resolution = resolutions.find(row => row.ccn === '451396');
+  assert.equal(resolution.action, 'replace');
+  assert.equal(resolution.evidence.fileSha256, proof.full_file_sha256);
+  assert.equal(resolution.evidence.pointerMrfWrapperSha256, proof.pointer_file_wrapper_sha256);
+  const current = verification.find(row => row.ccn === '451396');
+  assert.equal(current.standing_finding, 'compliant-observed');
+  assert.equal(current.latest_observation_superseded, true);
+  assert.equal(current.standing_mrf_url, proof.decoded_file_url);
+  const reconciled = reconciliation.find(row => row.ccn === '451396');
+  assert.equal(reconciled.workstream, 'consistent');
+  assert.deepEqual(reconciled.issues, []);
+  const html = fs.readFileSync(path.join(root, 'tracker.html'), 'utf8');
+  const marker = '<script id="tracker-data" type="application/json">';
+  const begin = html.indexOf(marker) + marker.length;
+  const tracker = JSON.parse(html.slice(begin, html.indexOf('</script>', begin)));
+  const publicRow = tracker.rows.find(row => row[0] === '451396');
+  assert.equal(publicRow[8], proof.decoded_file_url);
+  assert.equal(publicRow[9], proof.pointer_url);
+  assert.equal(tracker.auditHistory['451396'].domain, 'bswhealth.com');
+  assert.match(tracker.assessmentHistory['451396'][0].blocker, /not line-item validation/);
+});

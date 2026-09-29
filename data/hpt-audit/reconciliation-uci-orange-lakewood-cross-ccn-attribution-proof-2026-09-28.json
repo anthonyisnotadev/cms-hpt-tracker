@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "ccn": "050348",
+  "observed_at": "2026-09-28T22:22:00Z",
+  "issue": "A nationwide header-matching pass assigned the Lakewood MRF to both the UCI Health-Lakewood and UCI Health-Orange CCNs, despite a separate Orange/Regents entry in the current UCI pointer.",
+  "original_source_observation": {
+    "source_file": "data/hpt-audit/compliance.csv",
+    "row": "050348,UCI HEALTH-ORANGE,ORANGE,CA,Acute Care Hospitals,compliant-observed,yes,cms-hpt.txt found; MRF last_updated_on 2026-04-01,ucihealth.org,https://ucihealth.org/cms-hpt.txt,https://www.ucihealth.org/pricetransparency/952226406_uci-health-lakewood_standardcharges.json,2026-04-01,159,3.0.0,2026-09-06T19:57:14.754Z",
+    "preservation": "Original crawl remains unchanged; correction is represented in reviewed and per-CCN nationwide views."
+  },
+  "current_first_party_pointer": {
+    "url": "https://www.ucihealth.org/cms-hpt.txt",
+    "http_status": 206,
+    "bytes": 1814,
+    "sha256": "ca19e3b7cc53c0f29796ce4586fe91b11ae7a816d5b3b02b6ce17e3fb2ce7c8c",
+    "observed_at": "2026-09-28T22:18:00Z",
+    "content_handling": "Evidence record retains only the matching location and target; raw pointer contact fields are not stored.",
+    "orange_location_name": "Regents of the California at Irvine Hospital",
+    "orange_mrf_url": "https://www.ucihealth.org/pricetransparency/952226406_regents-of-the-university-of-california-at-irvine-hospital_standardcharges.json",
+    "lakewood_mrf_url": "https://www.ucihealth.org/pricetransparency/952226406_uci-health-lakewood_standardcharges.json"
+  },
+  "orange_mrf_bounded_header": {
+    "url": "https://www.ucihealth.org/pricetransparency/952226406_regents-of-the-university-of-california-at-irvine-hospital_standardcharges.json",
+    "http_status": 206,
+    "content_type": "application/json",
+    "requested_range": "bytes=0-131071",
+    "sample_bytes": 131072,
+    "file_total_bytes": 68974005,
+    "sample_sha256": "5898f42ecd6bc151b0308215c10998f47308dac11554c9d43e50d4af9ab1fd16",
+    "sample_artifact_retained": false,
+    "sample_artifact_retention_note": "The content-addressed sample path is ignored by the repository policy and was not retained; the observed sample digest and parsed header are preserved, but byte-level reproducibility is incomplete.",
+    "last_modified": "2026-03-31T18:33:38Z",
+    "etag": "d65c34e43cc1dc1:0",
+    "declared_hospital_name": "Regents of the University of California at Irvine Hospital",
+    "declared_location_name": "Regents of the University of California at Irvine Hospital",
+    "declared_address": "101 City Drive South, Orange, CA 92868",
+    "declared_license_number": "060000148",
+    "declared_license_state": "CA",
+    "declared_last_updated": "2026-04-01",
+    "cms_template_version": "3.0.0",
+    "full_file_downloaded": false,
+    "attestation_verified": false,
+    "usable_rows_verified": false
+  },
+  "independent_facility_identity": {
+    "cms_roster": {
+      "ccn": "050348",
+      "name": "UCI HEALTH-ORANGE",
+      "address": "101 CITY DRIVE SOUTH",
+      "city": "ORANGE",
+      "state": "CA"
+    },
+    "hcai": {
+      "url": "https://hcai.ca.gov/equity-measures/hospital/uci-health-orange/",
+      "facility_name": "UCI HEALTH-ORANGE",
+      "address": "101 CITY DRIVE SOUTH, ORANGE CA 92868",
+      "license_number": "060000148",
+      "licensee": "UNIVERSITY OF CALIFORNIA BOARD OF REGENTS"
+    },
+    "nppes": {
+      "url": "https://npiregistry.cms.hhs.gov/api/?number=1689608150&version=2.1",
+      "response_sha256": "f461a57370dffcc05001737f19cbaef51063493f4d86c19ba181f08af5cffa50",
+      "response_bytes": 8431,
+      "npi": "1689608150",
+      "organization_name": "UNIVERSITY OF CALIFORNIA IRVINE",
+      "active_type_2": true,
+      "limitation": "Shared organization NPI includes sibling-campus DBAs; corroborative only, not a standalone CCN-to-file binding."
+    }
+  },
+  "lakewood_protection": {
+    "ccn": "050581",
+    "finding": "mrf-address-field-conflicts-facility",
+    "facility_address": "3700 E. South St., Lakewood, CA 90712",
+    "publisher_declared_address": "101 City Drive South, Orange, CA 92868",
+    "interpretation": "Retain the existing address conflict. Do not reassign the Orange header to Lakewood or vice versa."
+  },
+  "disposition": "050348 remains unresolved as linked-mrf-header-unmatched until complete CMS-format MRF usability and attribution gates are satisfied; the false Lakewood verification is not retained as current evidence.",
+  "cohort_effect": "No change; CCN 050348 is outside the frozen 891-membership cohort.",
+  "next_action": "Obtain a durable content-bearing copy of the complete Orange MRF through an authorized route; verify CMS attestation, usable rows, complete file/hash, declared metadata, current pointer linkage, and exact CCN crosswalk."
+}

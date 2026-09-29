@@ -1,0 +1,79 @@
+'use strict';
+const fs = require('node:fs');
+const path = require('node:path');
+const { csvToObjects } = require('./lib/util');
+const root = path.resolve(__dirname, '../..');
+const audit = path.join(root, 'data/hpt-audit');
+const proofName = 'reconciliation-pilgrim-omh-current-mrf-proof-2026-09-20.json';
+const p = JSON.parse(fs.readFileSync(path.join(audit, proofName), 'utf8'));
+const base = csvToObjects(fs.readFileSync(path.join(audit, 'compliance.csv'), 'utf8')).find(r => r.ccn === p.ccn);
+if (!base) throw new Error(`Missing compliance row for ${p.ccn}`);
+const evidence = {
+  identity: 'corroborated',
+  identity_basis: 'exact-root-pointer-location-entry-consolidated-file-metadata-and-first-party-facility-page',
+  sourcePageUrl: p.source_page_url,
+  identityPageUrl: p.identity_page,
+  identityPageSha256: p.identity_page_sha256,
+  pointerUrl: p.pointer_url,
+  pointerSha256: p.pointer_sha256,
+  pointerLocationName: p.pointer_location_name,
+  url: p.mrf_url,
+  fileSha256: p.mrf_sha256,
+  fullFileBytes: p.mrf_bytes,
+  http_status: p.mrf_http_status,
+  checked_at: p.observed_at,
+  date: p.declared_last_updated,
+  version: p.cms_template_version,
+  officialDomain: p.official_domain,
+  location_name: p.declared_location_name,
+  declared_hospital_name: p.declared_hospital_name,
+  declared_address: p.declared_address,
+  attestation_present: p.attestation_present,
+  file_kind: 'csv',
+  observedFinding: 'date-within-365-days-version-3'
+};
+const ledgerPath = path.join(audit, 'reviewed-resolutions.json');
+const ledger = JSON.parse(fs.readFileSync(ledgerPath, 'utf8'));
+const entry = {
+  ccn: p.ccn,
+  base,
+  action: 'replace',
+  finding: p.disposition,
+  evidence,
+  evidence_run: 'pilgrim-omh-current-pointer-consolidated-file-review-2026-09-20',
+  reviewed_at: p.observed_at,
+  note: 'The current OMH root pointer contains a Pilgrim location entry linking a complete consolidated CMS 3.0.0 CSV. Its Pilgrim metadata row identifies Pilgrim Psychiatric Center at 998 Crooked Hill Rd, Brentwood NY 11717, dated 2026-05-28; the first-party facility page confirms the facility identity.'
+};
+const i = ledger.findIndex(r => r.ccn === p.ccn);
+if (i >= 0) ledger[i] = entry; else ledger.push(entry);
+ledger.sort((a, b) => a.ccn.localeCompare(b.ccn));
+fs.writeFileSync(ledgerPath, `${JSON.stringify(ledger, null, 2)}\n`);
+const obsPath = path.join(audit, 'reconciliation-manual-access-observations.json');
+const obs = JSON.parse(fs.readFileSync(obsPath, 'utf8'));
+const observation = {
+  ccn: p.ccn,
+  observed_at: p.observed_at,
+  proof_file: proofName,
+  official_site: p.official_domain,
+  identity_page: p.identity_page,
+  source_page_url: p.source_page_url,
+  pointer_url: p.pointer_url,
+  pointer_sha256: p.pointer_sha256,
+  pointer_location_name: p.pointer_location_name,
+  mrf_url: p.mrf_url,
+  mrf_http_status: p.mrf_http_status,
+  mrf_bytes: p.mrf_bytes,
+  mrf_sha256: p.mrf_sha256,
+  declared_hospital_name: p.declared_hospital_name,
+  declared_location_name: p.declared_location_name,
+  declared_address: p.declared_address,
+  declared_last_updated: p.declared_last_updated,
+  cms_template_version: p.cms_template_version,
+  disposition: p.disposition,
+  next_action: p.next_action
+};
+const oi = obs.records.findIndex(r => r.ccn === p.ccn);
+if (oi >= 0) obs.records[oi] = observation; else obs.records.push(observation);
+obs.records.sort((a, b) => a.ccn.localeCompare(b.ccn));
+fs.writeFileSync(obsPath, `${JSON.stringify(obs, null, 2)}\n`);
+console.log(JSON.stringify({ updated: p.ccn, finding: p.disposition }, null, 2));

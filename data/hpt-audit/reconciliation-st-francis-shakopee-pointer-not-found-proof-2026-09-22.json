@@ -1,0 +1,19 @@
+{
+  "ccn": "240104",
+  "observed_at": "2026-09-22T10:30:00Z",
+  "official_domain": "stfrancis-shakopee.com",
+  "official_pricing_page": "https://www.allinahealth.org/customer-service/billing-and-insurance",
+  "pointer_url": "https://www.allinahealth.org/-/media/allina-health/files/customer-service/billing-and-insurance/price-transparency/price-transparency-txt-file.txt",
+  "pointer_http_status": 200,
+  "pointer_bytes": 4526,
+  "pointer_sha256": "cef9ee6590fc5fb8e71c36df1d44db6980e115c40d215ad36654b0a9398a6beb",
+  "pointer_entry": "St. Francis Regional Medical Center",
+  "candidate_file_url": "https://www.allinahealth.org/-/media/allina-health/files/customer-service/billing-and-insurance/price-transparency/363261413_st-francis-regional-medical-center_standardcharges.csv",
+  "candidate_file_format": "CSV",
+  "candidate_file_observation": "The current Allina pointer names St. Francis Regional Medical Center and its exact MRF URL. The target currently redirects to /sitecore/service/notfound.aspx and returns HTTP 404 HTML; no MRF bytes or metadata were retained.",
+  "roster_identity": "ST FRANCIS REGIONAL MEDICAL CENTER",
+  "roster_address": "1455 ST FRANCIS AVENUE, SHAKOPEE, MN 55379",
+  "disposition": "pointer-file-url-renders-not-found",
+  "interpretation": "New official pointer evidence confirms the facility-specific target but also confirms the target is currently unavailable. This is a transport/file-access observation, not a compliance conclusion; no other Allina facility file is substituted.",
+  "next_action": "Retry the exact target with browser/download fallback after an Allina content refresh, then verify the complete file header, Minnesota identity/address/state, date and CMS version before promotion."
+}

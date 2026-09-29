@@ -1,0 +1,42 @@
+{
+  "audit_id": "reconciliation-bryce-third-party-mrf-lead-2026-09-28",
+  "ccn": "014007",
+  "observed_at": "2026-09-28T17:15:24Z",
+  "purpose": "Record a newly surfaced third-party claim that Bryce Hospital rates were derived from a provider-published price file, while preserving the distinction between that claim and verified publisher linkage or retained MRF bytes.",
+  "sources": {
+    "official_bryce_page": {
+      "url": "https://mh.alabama.gov/bryce-hospital/",
+      "http_status": 200,
+      "response_bytes": 189265,
+      "sha256": "b7e73d7959fce3379d6ae4c3c2be90a08f3b02173722edcdc1ba329a2e87bce3",
+      "observed_at_header": "2026-09-28T17:14:21Z",
+      "identity": "Bryce Hospital, 1651 Ruby Tyler Parkway, Tuscaloosa, Alabama 35404",
+      "visible_downloads": ["Bryce Hospital Brochure", "Bryce Hospital Handbook", "Patient Rights and Responsibilities"],
+      "visible_machine_readable_price_link": false
+    },
+    "official_facility_operations_page": {
+      "url": "https://mh.alabama.gov/division-of-mental-health-substance-abuse-services/facility-operations/",
+      "http_status": 200,
+      "response_bytes": 170641,
+      "sha256": "b263732be0da7094728b39f1f0020f6f89f4adac64d976e731ee78a924f7b57e",
+      "observed_at_header": "2026-09-28T17:14:25Z",
+      "link_inventory": "The only hospital-specific link found was the Bryce Hospital facility page; no pricing/MRF link was exposed."
+    },
+    "official_pointer": {
+      "url": "https://mh.alabama.gov/cms-hpt.txt",
+      "http_status": 404,
+      "content_type": "text/html",
+      "interpretation": "HTML not-found route; not proof of file absence or compliance."
+    },
+    "third_party_candidate_lead": {
+      "url": "https://turquoise.health/providers/bryce-hospital/information",
+      "search_result_observed": "2026-09-28",
+      "claim": "Turquoise identifies Bryce Hospital at 1651 Ruby Tyler Parkway, lists Medicare Provider ID 014007 and NPI 1053416347, and states that rates displayed for this provider were downloaded from the provider's website.",
+      "qualification": "Turquoise labels the rates unverified, says it does not represent the provider, and warns estimates may contain errors. It does not disclose the source file URL, retrieval date, exact file, hash, version, or CMS format on the accessible page.",
+      "direct_fetch_http_status": 403,
+      "web_rendered_page": "https://turquoise.health/providers/bryce-hospital/information"
+    }
+  },
+  "result": "A new third-party statement creates a candidate-discovery lead for a Bryce-associated provider file, but no source URL or MRF bytes were recovered and no first-party linkage was found. CCN 014007 remains unresolved; no HPT disposition, compliance, or file-absence conclusion is changed.",
+  "next_action": "Seek the exact Bryce file URL, retrieval date and CMS-format/version from a distinct public source or the Alabama Department of Mental Health; then retrieve bounded complete bytes and independently validate pointer/page linkage, Bryce identity, address/state, declared metadata and usable rows. Do not reuse Turquoise's estimates or classify them as a verified MRF."
+}

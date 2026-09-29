@@ -1,0 +1,30 @@
+{
+  "observed_at": "2026-09-21T21:45:00Z",
+  "official_domain": "nj.gov",
+  "official_site": "https://nj.gov/health/integratedhealth/hospitals/",
+  "retrieval_method": "official New Jersey Department of Health state-hospital page and facility-page inspection",
+  "facilities": [
+    {
+      "ccn": "314005",
+      "name": "ANCORA PSYCHIATRIC HOSPITAL",
+      "official_page": "https://nj.gov/health/integratedhealth/hospitals/",
+      "facility_route": "https://www.nj.gov/health/integratedhealth/hospitals/records/"
+    },
+    {
+      "ccn": "314013",
+      "name": "TRENTON PSYCHIATRIC HOSPITAL",
+      "official_page": "https://www.nj.gov/health/integratedhealth/hospitals/trenton/",
+      "facility_route": "https://www.nj.gov/health/integratedhealth/hospitals/records/"
+    },
+    {
+      "ccn": "314016",
+      "name": "GREYSTONE PARK PSYCHIATRIC HOSPITAL",
+      "official_page": "https://nj.gov/health/integratedhealth/hospitals/",
+      "facility_route": "https://www.nj.gov/health/integratedhealth/hospitals/records/"
+    }
+  ],
+  "transport_result": "The official NJ DOH state psychiatric hospital pages confirm the three facilities and state-operated system routes, but the reviewed routes expose no direct facility-specific CMS CSV/JSON/ZIP MRF or cms-hpt.txt contents. Shared state-system context is not assigned as a facility file.",
+  "disposition": "official-state-system-pointer-discovery-incomplete",
+  "interpretation": "This is a facility-specific discovery observation for each listed CCN. It does not establish file absence, exemption, noncompliance or a legal conclusion.",
+  "next_action": "Search NJ DOH/DHS fiscal, hospital billing and price-transparency routes for each exact facility; require facility-specific bytes, identity, New Jersey address/state, date, CMS version and usable rows before promotion."
+}

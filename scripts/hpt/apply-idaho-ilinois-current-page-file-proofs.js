@@ -1,0 +1,17 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path');
+const {csvToObjects}=require('./lib/util');
+const root=path.resolve(__dirname,'../..'),audit=path.join(root,'data/hpt-audit');
+const names=['reconciliation-franklin-county-medical-center-page-file-proof-2026-09-23.json','reconciliation-cgh-medical-center-page-file-proof-2026-09-23.json'];
+const compliance=csvToObjects(fs.readFileSync(path.join(audit,'compliance.csv'),'utf8'));
+const ledgerPath=path.join(audit,'reviewed-resolutions.json'),ledger=JSON.parse(fs.readFileSync(ledgerPath,'utf8'));
+const manualPath=path.join(audit,'reconciliation-manual-access-observations.json'),manual=JSON.parse(fs.readFileSync(manualPath,'utf8'));
+for(const proofName of names){
+  const p=JSON.parse(fs.readFileSync(path.join(audit,proofName),'utf8')),base=compliance.find(r=>r.ccn===p.ccn)||{};
+  const e={identity:'corroborated',identity_basis:'official-first-party-pricing-page-current-file-name-address-state-date-version-npi',officialDomain:new URL(p.official_site).hostname,sourcePageUrl:p.official_pricing_page,pointerUrl:p.pointer_url,pointerIssue:'root-pointer-http-error',pointerHttpStatus:p.pointer_http_status,pointerResponseContentType:p.pointer_response_content_type||'text/html',pointerResponseBytes:p.pointer_response_bytes,pointerSha256:p.pointer_sha256,url:p.mrf_url,http_status:p.mrf_status,checked_at:p.observed_at,date:p.declared_last_updated,version:p.cms_template_version,declared_hospital_name:p.declared_hospital_name,location_name:p.declared_location_name,declared_address:p.declared_address,facility_address:p.cms_record.address+', '+p.cms_record.citytown+', '+p.cms_record.state+' '+p.cms_record.zip_code,declared_license_state:p.declared_license_state,declared_license_number:p.declared_license_number,declared_npi:p.declared_npi,file_kind:'csv',fileSha256:p.mrf_response_sha256.toLowerCase(),bytesRetained:p.mrf_response_bytes,fullFileBytes:p.mrf_total_bytes||p.mrf_response_bytes,retainedSampleBytes:p.mrf_response_bytes,etag:p.mrf_etag,lastModified:p.mrf_last_modified,attestationPresent:true,cmsRecord:p.cms_record,observedFinding:'official-page-mrf-root-pointer-unavailable'};
+  const entry={ccn:p.ccn,base,action:'replace',finding:'verified-current-mrf',evidence:e,evidence_run:'idaho-illinois-current-page-file-bounded-header-2026-09-23',reviewed_at:p.observed_at,note:'The first-party pricing page links a facility-specific current machine-readable file. Bounded/full retrieval confirms the named campus, address, state, CMS 3.0.0, declared date, NPI/license and usable object metadata. Root-pointer access remains explicitly unavailable; this is observed page-linked evidence and not a legal compliance conclusion.'};
+  const i=ledger.findIndex(r=>r.ccn===p.ccn); if(i>=0) ledger[i]=entry; else ledger.push(entry);
+  const rec={...p,proof_file:proofName,disposition:'verified-current-page-file-root-pointer-blocked',interpretation:p.interpretation,next_action:'Retry the exact root cms-hpt.txt pointer after publisher/server recovery; retain the page-linked file evidence.'};
+  manual.records=manual.records.filter(r=>r.ccn!==p.ccn); manual.records.push(rec); console.log(JSON.stringify({applied:p.ccn,finding:entry.finding,bytes:e.fullFileBytes}));
+}
+ledger.sort((a,b)=>a.ccn.localeCompare(b.ccn)); manual.records.sort((a,b)=>a.ccn.localeCompare(b.ccn)); fs.writeFileSync(ledgerPath,JSON.stringify(ledger,null,2)+'\n'); fs.writeFileSync(manualPath,JSON.stringify(manual,null,2)+'\n');

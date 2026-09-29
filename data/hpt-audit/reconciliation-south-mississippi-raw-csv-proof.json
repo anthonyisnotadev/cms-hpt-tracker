@@ -1,0 +1,18 @@
+{
+  "ccn": "040782",
+  "hospital_name": "SOUTH MISSISSIPPI COUNTY REGIONAL MEDICAL CENTER",
+  "roster_city": "OSCEOLA",
+  "roster_state": "AR",
+  "official_domain": "mchsys.org",
+  "pointer_url": "https://www.mchsys.org/cms-hpt.txt",
+  "pointer_sha256": "c3676cd5b9de67fa2dcf6258b9c7f6e9250c8c81d1e7490f950d16cfbfb29b99",
+  "pointer_http_status": 200,
+  "pointer_location_name": "South Mississippi Regional Medical Center",
+  "mrf_url": "https://s3.amazonaws.com/ycubaa-production-marlin-1-charge-management-public/facilities/340cba5b-23f2-476f-bd9f-b97e6c9f7afa/800370789_MCHS-SMC%20REGIONAL%20MEDICAL%20CENTER_standardcharges.zip",
+  "mrf_http_status": 206,
+  "mrf_content_range": "bytes 0-1048575/68423458",
+  "mrf_sample_sha256": "9a902115a731cd5c2d94477dab455e003549c191581dcedee9c405fcdcc2eed0",
+  "mrf_observation": "The pointer-declared .zip target serves raw item-charge CSV bytes rather than a ZIP signature or CMS hospital metadata header. The first rows carry 2024-02-01 timestamps but no hospital name, address, license state, or CMS version.",
+  "checked_at": "2026-09-18T01:41:42Z",
+  "disposition": "pointer-linked-raw-csv-without-facility-header; retain stale historical observation and require a corrected CMS-template MRF"
+}

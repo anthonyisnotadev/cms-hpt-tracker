@@ -1,0 +1,19 @@
+{
+  "ccn": "064009",
+  "hospital_name": "Cedar Springs Hospital",
+  "observed_at": "2026-09-19T10:00:00Z",
+  "official_site": "https://cedarspringsbhs.com/",
+  "official_identity_sources": ["https://npiregistry.cms.hhs.gov/provider-view/1992752133"],
+  "official_identity": "Cedar Springs Hospital, Inc. (DBA Cedar Springs Behavioral Health System), 2135 Southgate Road, Colorado Springs, CO 80906; NPI 1992752133",
+  "pointer_url": "https://cedarspringsbhs.com/cms-hpt.txt",
+  "pointer_http_status": 403,
+  "pointer_browser_status": "cloudflare-challenge",
+  "pointer_browser_title": "Just a moment...",
+  "search_observations": [
+    "CMS NPI registry corroborates the facility name, DBA and address.",
+    "The exact official root and cms-hpt.txt URL both presented Cloudflare security verification in the interactive browser.",
+    "MedRates and Colorado evaluation references were retained as third-party/context leads only; no publisher-declared MRF URL was verified."
+  ],
+  "disposition": "official-identity-confirmed-pointer-cloudflare-blocked-mrf-unresolved",
+  "next_action": "Retry the exact pointer or an official Cedar Springs pricing route after a materially different authorized access path; require facility-specific MRF bytes, identity, metadata and usability before promotion."
+}

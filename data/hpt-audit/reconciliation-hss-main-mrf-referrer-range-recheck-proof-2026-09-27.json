@@ -1,0 +1,32 @@
+{
+  "ccn": "330270",
+  "hospital_name": "Hospital for Special Surgery Main Hospital",
+  "observed_at": "2026-09-27T08:49:15Z",
+  "source_page": {
+    "url": "https://www.hss.edu/patient-care/paying-for-care/price-transparency",
+    "browser_title": "Hospital Price Transparency | Hospital for Special Surgery",
+    "status": "first-party page rendered in browser",
+    "main_hospital_link": "https://d2cg6hcwj0g0z0.cloudfront.net/131624135-1598703019_ny-society-for-the-relief-of-ruptured-and-crippled-maintaing-the-hospital-for-special-surgery_standardcharges.json",
+    "page_notice": "CMS-required JSON files are larger than 500 MB each; clicking a link initiates the download.",
+    "facility_identity": "Hospital for Special Surgery; 535 East 70th Street, New York, NY 10021"
+  },
+  "request": {
+    "method": "GET",
+    "url": "https://d2cg6hcwj0g0z0.cloudfront.net/131624135-1598703019_ny-society-for-the-relief-of-ruptured-and-crippled-maintaing-the-hospital-for-special-surgery_standardcharges.json",
+    "range": "bytes=0-262143",
+    "referer": "https://www.hss.edu/patient-care/paying-for-care/price-transparency",
+    "reason": "Distinct bounded route test after repeated direct and in-browser CloudFront denials; avoids an unbounded download of a file the publisher page says exceeds 500 MB."
+  },
+  "response": {
+    "status": 403,
+    "content_type": "text/html",
+    "content_length": 919,
+    "bytes_read": 919,
+    "body_sha256": "5deba48a84d28734dadfc962962490e81ad0e780ef2ad07ff3bdb55182255f7b",
+    "body_kind": "CloudFront access-denial HTML; not JSON or MRF bytes"
+  },
+  "interpretation": "The current first-party page still links the exact Main Hospital JSON, but the bounded request with the first-party Referer returned only a CloudFront 403 HTML body. This is a distinct access attempt and a recheck, not an MRF evidence gain. No file absence, compliance status, or file metadata is inferred.",
+  "disposition": "current-first-party-page-linkage-reconfirmed-file-access-unresolved",
+  "unresolved_count_change": 0,
+  "next_action": "Do not repeat the same CloudFront URL until access conditions change. Seek a publisher-provided copy or use a materially different authorized download route; if bytes are obtained, verify the JSON root metadata and parsed usability before any disposition change."
+}

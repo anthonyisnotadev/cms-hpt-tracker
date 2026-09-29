@@ -1,0 +1,40 @@
+{
+  "ccn": "360163",
+  "observed_at": "2026-09-25T00:25:00Z",
+  "official_pricing_page": "https://www.thechristhospital.com/paying-for-care/estimating-pricing-and-costs/",
+  "official_page_status": 200,
+  "facility_file_url": "https://bmtncl.files.cmp.optimizely.com/download/assets/31-0538525_TheChristHospitalHealthNetwork_StandardCharges.csv/9c55def043e911f19a46868e68cd3a8e",
+  "file_status": 200,
+  "file_content_length": 1317628684,
+  "file_content_range_bytes": 131072,
+  "file_sample_sha256": "6d8da55bf1e8f1df639fa506ef66d1633fe914e2e719522c74aa2e40a3f3603e",
+  "bounded_tail_retrieval": {
+    "status": 206,
+    "content_range": "bytes 1317500000-1317628683/1317628684",
+    "bytes": 128684,
+    "sha256": "29a15379cb901173aaa1e791ec594d57e1bce87dcf18fbde73bb52fc48c24eb8",
+    "ends_on_complete_csv_records": true,
+    "retrieved_at": "2026-09-23T14:30:00Z"
+  },
+  "publisher_content_length": 1317628684,
+  "publisher_etag": "9c55def043e911f19a46868e68cd3a8e-2026-04-29T16:38:07Z",
+  "declared_hospital_name": "The Christ Hospital",
+  "declared_location_name": "The Christ Hospital",
+  "declared_address": "2139 Auburn Ave Cincinnati OH 45219",
+  "declared_license_state": "OH",
+  "declared_last_updated": "12/19/2025",
+  "cms_template_version": "3.0.0",
+  "declared_npi": "1780633289",
+  "attestation": true,
+  "disposition": "verified-current-mrf",
+  "interpretation": "The official pricing page links a current CMS 3.0.0 CSV. Header and final-range reads match The Christ Hospital at the Cincinnati roster address, and a complete streaming transfer consumed the publisher-declared byte length without retaining the 1.22 GB archive.",
+  "next_action": "Retain the verified current-file finding and recheck only after a publisher change or identity discrepancy.",
+  "full_stream_retrieval": {
+    "status": "completed",
+    "curl_exit_code": 0,
+    "bytes_consumed": 1317628684,
+    "output_destination": "NUL",
+    "retrieved_at": "2026-09-25T00:25:00Z",
+    "interpretation": "The publisher-declared Content-Length was consumed end-to-end by a streaming transfer to NUL; no archive was retained."
+  }
+}

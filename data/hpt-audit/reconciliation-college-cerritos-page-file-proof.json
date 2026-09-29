@@ -1,0 +1,19 @@
+{
+  "ccn": "054055",
+  "hospital_name": "COLLEGE HOSPITAL",
+  "observed_at": "2026-09-19T00:00:00Z",
+  "official_site": "https://chc.la/",
+  "official_facility_page": "https://chc.la/ch-cerritos/",
+  "official_identity_source": "https://hcai.ca.gov/affordability/hospital-billing-policies/college-hospital/",
+  "official_identity": "College Hospital / College Hospital Cerritos, 10802 College Place, Cerritos, CA 90703; California license 930000036.",
+  "pointer_url": "https://chc.la/cms-hpt.txt",
+  "pointer_http_status": 403,
+  "pointer_browser_status": "security-challenge",
+  "pointer_browser_observation": "Interactive browser redirected the exact pointer to the site's .well-known security challenge before pointer bytes.",
+  "page_file_url": "https://chc.la/953421289_college-hospital-cerritos_standcharges_03_2025.csv",
+  "page_file_http_status": 202,
+  "page_file_observation": "Direct request returned the site's security-challenge HTML instead of CSV bytes; no bounded file hash or metadata was claimed.",
+  "page_file_discovery_source": "https://www.mrfdatasolutions.com/payers-1",
+  "disposition": "official-facility-file-candidate-security-challenge-mrf-unresolved",
+  "next_action": "Retry the official College Hospital Cerritos page, pointer and exact CSV through an authorized download-capable route; verify bounded bytes, facility name/address, California state, declared date, CMS version and rate usability before promotion. Do not inherit the Costa Mesa file or infer absence/compliance from the challenge."
+}

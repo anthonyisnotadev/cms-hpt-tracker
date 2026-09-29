@@ -1,0 +1,15 @@
+{
+  "ccn": "204008",
+  "observed_at": "2026-09-22T09:00:00Z",
+  "official_pricing_page": "https://www.maine.gov/dhhs/patient-information/hospital-price-transparency",
+  "official_page_status": 200,
+  "official_page_observation": "The Maine DHHS Riverview Psychiatric Center price-transparency page identifies CMS-required charges and links a comprehensive machine-readable CSV. The official Riverview contact page identifies the facility at 250 Arsenal Street, Augusta, ME 04330.",
+  "candidate_file_url": "https://www.maine.gov/dhhs/sites/maine.gov.dhhs/files/inline-files/016000001_riverviewpsychiatriccenter_standardcharges_0.csv",
+  "candidate_file_format": "CSV",
+  "candidate_file_observation": "The exact page-linked CSV returned HTTP 200 with Content-Type text/csv, Content-Length 10967 and Last-Modified 2020-12-21T20:57:15Z. The bounded body is a readable charge table but declares no facility identity, state, update date or CMS template version.",
+  "roster_identity": "RIVERVIEW PSYCHIATRIC CENTER",
+  "roster_address": "250 ARSENAL ST, AUGUSTA, ME 04330",
+  "disposition": "official-page-current-facility-csv-linkage-file-parse-unresolved",
+  "interpretation": "New official current page and exact accessible CSV linkage evidence. The file is demonstrably old by HTTP metadata and lacks facility/date/version fields, so no current verification or stale-file correction is promoted without an independent currentness and identity check.",
+  "next_action": "Obtain a current facility-identified MRF or independent state/CMS metadata and verify currentness, facility identity, Maine state and usability before promotion."
+}

@@ -1,0 +1,32 @@
+{
+  "ccn": "050455",
+  "observed_at": "2026-09-18T15:10:00Z",
+  "pointer_url": "https://www.adventisthealth.org/cms-hpt.txt",
+  "pointer_http_status": 200,
+  "pointer_bytes": 7978,
+  "pointer_sha256": "c6d8fb5a104c88f16439950764213f118d0c883d4e71f285d7021627392917e5",
+  "pointer_entry": "SAN JOAQUIN COMMUNITY HOSPITAL -> https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHBBAKERSFIELDCA&type=CDMWithoutLabel&fileType=CSV",
+  "mrf_http_status": 200,
+  "mrf_content_disposition": "952294234_san-joaquin-community-hospital_standardcharges.csv",
+  "mrf_header_observation": "SAN JOAQUIN COMMUNITY HOSPITAL; locations SAN JOAQUIN COMMUNITY HOSPITAL|Adventist Health Specialty Bakersfield; address 3001 Sillect Avenue Bakersfield CA 93308; date 2026-07-29; CMS version 3.0.0; license state CA.",
+  "official_page_browser_observation": {
+    "observed_at": "2026-09-19T02:18:00Z",
+    "page_url": "https://www.adventisthealth.org/patients-and-visitors/price-transparency",
+    "page_status": 200,
+    "bakersfield_link": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHBBAKERSFIELDCA&type=CDMWithoutLabel&fileType=CSV",
+    "specialty_bakersfield_link": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHBBAKERSFIELDCA&type=CDMWithoutLabel&fileType=CSV",
+    "scope_result": "The current official page renders the same PARA route for both Adventist Health Bakersfield and Adventist Health Specialty Bakersfield; it does not provide a distinct main-campus file URL."
+  },
+  "latest_web_recheck": {
+    "observed_at": "2026-09-19T03:15:00Z",
+    "pricing_page_status": 403,
+    "facility_page_status": 403,
+    "search_result_independent_sibling_entity_observed": true,
+    "source": "Official Adventist annual-report search result",
+    "same_para_route_prior_observation_preserved": true,
+    "result": "Current direct pages remain denied; official published documents independently show Adventist Health Bakersfield and Adventist Health Specialty Bakersfield as distinct entities, but no separate main-campus MRF target was recovered."
+  },
+  "roster_identity": "ADVENTIST HEALTH BAKERSFIELD, 2615 CHESTER AVENUE, BAKERSFIELD CA 93301",
+  "disposition": "current-pointer-target-retrieved-but-specialty-campus-mismatch",
+  "next_action": "Locate a separate pointer target or authoritative scope evidence for the 2615 Chester Avenue main campus; do not assign this 3001 Sillect Avenue specialty-campus file to CCN 050455. The current official page itself does not distinguish the two campus links."
+}

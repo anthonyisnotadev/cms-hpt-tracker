@@ -1,0 +1,17 @@
+{
+  "ccn": "111314",
+  "observed_at": "2026-09-19T16:15:00Z",
+  "method": "interactive-browser-and-bounded-domain-recheck",
+  "hospital_identity": "Lifebrite Community Hospital of Early, Blakely GA",
+  "publisher_domain": "https://lifebriteearly.com/",
+  "browser_final_url": "https://lifebritestokes.com/",
+  "browser_title": "Something's Wrong Here",
+  "browser_result": "The browser redirected the Early domain to the unrelated Lifebrite Stokes sibling domain and rendered a generic hosting-provider error page; no pricing page, pointer or file was exposed.",
+  "early_root_http_status": 403,
+  "early_pointer_http_status": 404,
+  "operator_root_http_status": 403,
+  "operator_pointer_http_status": 403,
+  "interpretation": "These are current transport and wrong-sibling redirect observations only. They do not establish that an Early MRF is absent or that the hospital is noncompliant.",
+  "disposition": "retain-unresolved-domain-redirect-and-access-block",
+  "next_action": "Obtain a corrected Early/Blakely publisher domain or publisher-enabled pointer/file route; verify exact Blakely address, Georgia state, declared date/version and parsed usability before promotion."
+}

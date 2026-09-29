@@ -66,7 +66,7 @@ const jsonStr = key => new RegExp(`"${key}"\\s*:\\s*"([^"\\\\]*(?:\\\\.[^"\\\\]*
 
 /** Hospitals write the template version as "3.0.0", "V3.0.0", "v3.0"; group them. */
 function normalizeVersion(v) {
-  const s = String(v || '').trim().replace(/^v/i, '');
+  const s = String(v || '').trim().replace(/^v(?=\d)/i, '');
   return /^\d/.test(s) ? s : (s || null);
 }
 
@@ -158,12 +158,14 @@ function extractDeclared(buf, kind) {
     const root = rootMetadata(text);
     const strings = value => (Array.isArray(value) ? value : [value]).filter(v => typeof v === 'string').join('|') || null;
     const license = root.license_information;
-    const state = license && typeof license === 'object' && !Array.isArray(license) ? String(license.state || '').toUpperCase() : '';
+    const licenseEntries = Array.isArray(license) ? license : [license];
+    const state = licenseEntries.find(item => item && typeof item === 'object' && US_STATE.test(String(item.state || '').toUpperCase()));
+    const licenseState = String(state?.state || '').toUpperCase();
     return { ...empty, raw: typeof root.last_updated_on === 'string' ? root.last_updated_on : null,
       version: typeof root.version === 'string' ? normalizeVersion(root.version) : null,
       hospitalName: strings(root.hospital_name), address: strings(root.hospital_address),
       locationName: strings(root.location_name || root.hospital_location),
-      licenseState: US_STATE.test(state) ? state : null };
+      licenseState: US_STATE.test(licenseState) ? licenseState : null };
   }
 
   if (kind === 'csv') {

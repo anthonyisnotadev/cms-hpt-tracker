@@ -1,0 +1,17 @@
+{
+  "ccn": "190044",
+  "observed_at": "2026-09-21T21:30:00Z",
+  "official_pricing_page": "https://www.ochsner.org/patients-visitors/billing-and-financial-services/estimates/",
+  "official_page_status": 200,
+  "official_page_observation": "Ochsner's current billing/pricing page lists Ochsner Acadia General Hospital as a facility-specific standard-charge selection and states the listed files are CSVs updated April 1, 2026.",
+  "facility_identity_page": "https://www.ochsner.org/locations/ochsner-acadia-general-hospital/",
+  "candidate_file_url": "https://ochsner-craft.s3.amazonaws.com/core/464958152_acadia-general-hospital-inc_standardcharges.csv.csv",
+  "candidate_file_observation": "The exact Acadia General CSV target was reached through the official Ochsner facility list; web retrieval returned unsupported content-type text/csv, so no parsed bytes or metadata were available in this pass.",
+  "roster_identity": "ACADIA GENERAL HOSPITAL",
+  "official_identity": "OCHSNER ACADIA GENERAL HOSPITAL",
+  "roster_address": "1305 Crowley Rayne Highway, Crowley, LA 70526",
+  "sibling_excluded_context": "Other Ochsner facilities listed on the same page were not assigned to CCN 190044.",
+  "disposition": "official-operator-current-facility-csv-linkage-file-parse-unresolved",
+  "interpretation": "New official operator/facility linkage and exact current CSV target; file parse and facility metadata remain unverified, so no current verification claim is promoted.",
+  "next_action": "Retrieve the exact Acadia General CSV through a permitted download-capable route; verify bounded bytes, declared facility/address/Louisiana state, update date, CMS version and parsed usability."
+}

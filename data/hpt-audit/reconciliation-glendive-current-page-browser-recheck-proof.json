@@ -1,0 +1,36 @@
+{
+  "ccn": "271332",
+  "hospital_name": "Glendive Medical Center",
+  "observed_at": "2026-09-19T02:33:00Z",
+  "official_site": "https://www.gmc.org/",
+  "official_pricing_page": "https://www.gmc.org/patients-families/gmc-price-transparency/",
+  "official_identity": "Glendive Medical Center, 202 Prospect Drive, Glendive, MT 59330",
+  "page_file_url": "https://www.gmc.org/documents/Chargemaster-complete-by-Price-Schedule-FY-27.csv",
+  "page_file_browser_status": "ERR_BLOCKED_BY_CLIENT",
+  "page_file_direct_status": 403,
+  "page_file_direct_content_type": "text/html; charset=UTF-8",
+  "pointer_url": "https://www.gmc.org/cms-hpt.txt",
+  "pointer_browser_status": "ERR_BLOCKED_BY_CLIENT",
+  "latest_web_recheck": {
+    "observed_at": "2026-09-19T02:33:00Z",
+    "pricing_page_status": 200,
+    "page_file_link_present": true,
+    "facility_identity_observed": "Glendive Medical Center, 202 Prospect Dr, Glendive, MT 59330",
+    "facility_role_observed": "25-bed acute care hospital and designated Critical Access Hospital",
+    "page_file_bytes_retrieved": 0,
+    "pointer_bytes_retrieved": 0,
+    "result": "Current official page still publishes the FY-27 chargemaster link and facility identity; no CMS MRF bytes or pointer metadata were recovered in this recheck."
+  },
+  "latest_browser_download_attempt": {
+    "observed_at": "2026-09-19T00:00:00Z",
+    "browser_page_url": "https://www.gmc.org/patients-families/gmc-price-transparency/",
+    "linked_file_url": "https://www.gmc.org/documents/Chargemaster-complete-by-Price-Schedule-FY-27.csv",
+    "page_rendered": true,
+    "link_activation_result": "browser-created-download-tab-about-blank",
+    "file_bytes_observed": 0,
+    "interpretation": "The browser activated the official download link but exposed no content-bearing file tab or bytes; this is an access observation only and does not establish file absence, identity, metadata, or CMS-template usability."
+  },
+  "page_observation": "A fresh official browser render links the FY-27 chargemaster CSV and states GMC includes an urgent care, emergency department and critical access hospital; a direct bounded request returned HTTP 403 HTML rather than CSV bytes.",
+  "disposition": "official-page-current-chargemaster-link-browser-client-blocked-pointer-and-file-unresolved",
+  "next_action": "Use a materially different authorized browser/download route for the exact page-linked and pointer-declared files; verify complete bytes, Glendive identity/address/state, declared date/version and CMS usability before promotion. Keep the custom FY-27 chargemaster separate from any pointer-declared CMS MRF."
+}

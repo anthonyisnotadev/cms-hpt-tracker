@@ -1,0 +1,24 @@
+{
+  "ccn": "334027",
+  "observed_at": "2026-09-27T23:29:00Z",
+  "status": "new-third-party-lead-conflicts-with-existing-official-pointer; not a verification claim",
+  "facility": "South Oaks Hospital",
+  "official_identity": {
+    "site": "https://southoaks.northwell.edu/",
+    "address": "400 Sunrise Highway, Amityville, NY 11701",
+    "pointer_url": "https://southoaks.northwell.edu/cms-hpt.txt",
+    "pointer_sha256": "7d569107a2998280e1f62c3a31cec39c44661a16ac09d2c82675a8b64c991299",
+    "finding": "The retained 24-entry system pointer and the campus-root pointer evidence contain no South Oaks-specific entry or file mapping."
+  },
+  "third_party_lead": {
+    "page_url": "https://www.procedureradar.com/hospitals/south-oaks-hosp",
+    "page_label": "South Oaks Hosp MRF",
+    "page_claimed_updated": "2026-09-01",
+    "page_observation": "Browser rendered a South Oaks profile claiming 117 procedures and linked a raw MRF.",
+    "linked_file_url": "https://www.northwell.edu/sites/northwell.edu/files/machine-readable-files/Zucker_Hillside_Hospital_Hospital_StandardCharges.zip",
+    "conflict": "The linked publisher-hosted archive filename identifies Zucker Hillside Hospital, not South Oaks Hospital. The URL is a Northwell sibling facility path, and the CMS pointer does not map it to South Oaks.",
+    "limitation": "No archive bytes, contents, schema, or metadata were inspected; third-party procedure summaries are not imported as facility evidence or pricing data."
+  },
+  "disposition": "pointer-facility-match-unresolved",
+  "next_action": "Seek a South Oaks-specific first-party cms-hpt.txt mapping or written/published Northwell confirmation of the exact file-to-facility relationship. If supplied, retrieve and inspect archive bytes and declared facility identity/address/state/date/version. Do not assign the Zucker Hillside archive based on a third-party label or infer file absence from the shared pointer."
+}

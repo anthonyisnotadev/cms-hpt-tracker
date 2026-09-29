@@ -1,0 +1,56 @@
+{
+  "ccns": [
+    "370244",
+    "371333"
+  ],
+  "observed_at": "2026-09-17T10:44:32.775Z",
+  "pointer_url": "https://creekhealth.org/cms-hpt.txt",
+  "pointer_http_status": 200,
+  "pointer_sha256": "f59d6d5514c68c8efad60c087ceb73c67f4f4478bf4fc1b4744d6991813f9eaf",
+  "pointer_observed_at": "2026-09-17T10:44:32.152Z",
+  "pointer_entry_without_contacts": [
+    "location-name: Muscogee Creek Nation Hospital & Clinics",
+    "source-page-url: https://apps.para-hcfs.com/PTT/FinalLinks/Muscogee_V2.aspx",
+    "mrf-url: https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbMCNMOKMULGEEOK&type=CDMWithoutLabel&fileType=CSV"
+  ],
+  "pricing_page_url": "https://www.creekhealth.org/price-transparency/",
+  "pricing_page_http_status": 200,
+  "pricing_page_sha256": "c6d056d4b53313e21490e8a1841b0c574ef74bdd79c3e6247d346a38a8df1cee",
+  "pricing_page_observed_at": "2026-09-17T10:44:31.963Z",
+  "pricing_page_file_lead_url": "http://www.creekhealth.org/wp-content/uploads/2026/05/731357965_Muscogee-Creek-Nation-Department-of-Health_standardcharges.xlsx",
+  "facility_pages": [
+    {
+      "ccn": "370244",
+      "url": "https://www.creekhealth.org/council-oak-comprehensive-healthcare/",
+      "http_status": 200,
+      "sha256": "0bcbccb58767c912448f30669b9d75af94dbe6db9e3262025bb16669db18ab78",
+      "address": "10109 E 79th St, Tulsa, OK 74133"
+    },
+    {
+      "ccn": "371333",
+      "url": "https://www.creekhealth.org/community-hospitals/creek-nation-community-hospital/",
+      "http_status": 200,
+      "sha256": "d26979024ac1844df789a896f1a99a709a60978e52fea86ae637b3fe4c485853",
+      "address": "1800 E Coplin Rd, Okemah, OK 74859"
+    },
+    {
+      "role": "pointer-file-campus",
+      "url": "https://www.creekhealth.org/community-hospitals/okmulgee-medical-center/",
+      "http_status": 200,
+      "sha256": "784250a09ec4541f258cf28ab9a5000d6533d9377009e0cf0b255b8b1401fd54",
+      "address": "1401 Morris Dr, Okmulgee, OK 74447"
+    }
+  ],
+  "pointer_file_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbMCNMOKMULGEEOK&type=CDMWithoutLabel&fileType=CSV",
+  "pointer_file_http_status": 200,
+  "retained_sample": "cms_data/hpt/nationwide-verification/file-byte-proof/edd51a81fd7411c565acdf6b296eb098ea25cc940cb868817874f982cc9f5ffb.bin",
+  "retained_bytes": 262144,
+  "sample_sha256": "edd51a81fd7411c565acdf6b296eb098ea25cc940cb868817874f982cc9f5ffb",
+  "file_declared_hospital_name": "MUSCOGEE (CREEK) NATION MEDICAL CENTER",
+  "file_declared_location_name": "MUSCOGEE (CREEK) NATION MEDICAL CENTER",
+  "file_declared_address": "1401 Morris Dr Okmulgee OK 74447",
+  "file_declared_license_state": "OK",
+  "file_declared_date": "2026-01-24",
+  "file_declared_version": "3.00",
+  "conclusion": "The exact shared root pointer has one Okmulgee-named entry and its byte-backed CSV header declares the Okmulgee campus. Separate first-party facility pages place Council Oak in Tulsa and Creek Nation Community Hospital in Okemah. Neither CCN inherits the Okmulgee file. The pricing-page XLSX is a separate lead, not an adjudicated CSV/JSON MRF for either CCN."
+}

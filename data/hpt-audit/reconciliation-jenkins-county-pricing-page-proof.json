@@ -1,0 +1,28 @@
+{
+  "ccn": "111311",
+  "observed_at": "2026-09-19T06:20:00Z",
+  "official_site": "https://jenkinsmedicalcenter.com/",
+  "official_pricing_page": "https://jenkinsmedicalcenter.com/pricing-transparency/",
+  "official_identity": "Jenkins County Medical Center, 931 East Winthrope Ave, Millen, GA 30442",
+  "page_observations": [
+    "The first-party pricing page renders a Standard Charges button and identifies the facility's standard-charges machine-readable file.",
+    "The page footer and contact block identify Jenkins County Medical Center at 931 East Winthrope Ave, Millen, GA 30442.",
+    "The rendered page exposes no direct file URL or downloadable CMS CSV/JSON link; the Standard Charges control did not navigate to a file in the browser session."
+  ],
+  "pointer_urls_checked": [
+    "https://jenkinsmedicalcenter.com/cms-hpt.txt",
+    "https://www.jenkinsmedicalcenter.com/cms-hpt.txt",
+    "https://jenkinsmedicalcenter.com/.well-known/cms-hpt.txt"
+  ],
+  "pointer_statuses": [404, 404, 404],
+  "candidate_urls_checked": [
+    "https://jenkinsmedicalcenter.com/standardcharges.csv",
+    "https://jenkinsmedicalcenter.com/standardcharges.json",
+    "https://jenkinsmedicalcenter.com/wp-content/uploads/standardcharges.csv",
+    "https://jenkinsmedicalcenter.com/wp-content/uploads/2026/standardcharges.csv"
+  ],
+  "candidate_statuses": [404, 404, 404, 404],
+  "browser_status": "official-pricing-page-rendered-standard-charges-control-no-file-navigation",
+  "disposition": "official-pricing-page-and-identity-confirmed-mrf-linkage-unresolved",
+  "next_action": "Recover the exact current CMS CSV or JSON through a permitted browser/download route or publisher-provided URL; verify bounded bytes, Georgia identity, declared date/version, and usable rate fields before promotion."
+}

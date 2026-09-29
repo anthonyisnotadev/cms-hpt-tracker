@@ -1,0 +1,29 @@
+{
+  "audit_id": "reconciliation-tristar-centennial-overlay-url-attribution-audit-2026-09-28",
+  "observed_at": "2026-09-28T10:26:27Z",
+  "ccn": "440161",
+  "source_proof_file": "reconciliation-tristar-centennial-current-page-file-promotion-proof-2026-09-26.json",
+  "overlay_file": "reconciliation-nationwide-verification-overlays.json",
+  "byte_proof_file": "nationwide-file-byte-proof.json",
+  "discrepancy": {
+    "overlay_url_before": "https://hcadam.com/api/public/content/0947329859ac44d4aee0f06e1cda2eb9?download=true",
+    "proof_file_url": "https://stctrprodsnsvc00455826e6.blob.core.windows.net/pt-final-posting-files/62-1113737_TRISTAR-CENTENNIAL-MEDICAL-CENTER_standardcharges.json?si=dpx-pt-json-access-policy&spr=https&sv=2026-02-06&sr=c&sig=ks%2BgfAjyEHlZmeP2PYJ%2F9NpMuCoRStjTb2bhIy9Y6LM%3D",
+    "manual_current_facility_file_url": "https://stctrprodsnsvc00455826e6.blob.core.windows.net/pt-final-posting-files/62-1113737_TRISTAR-CENTENNIAL-MEDICAL-CENTER_standardcharges.json?si=dpx-pt-json-access-policy&spr=https&sv=2026-02-06&sr=c&sig=ks%2BgfAjyEHlZmeP2PYJ%2F9NpMuCoRStjTb2bhIy9Y6LM%3D",
+    "retained_byte_proof_url": "https://stctrprodsnsvc00455826e6.blob.core.windows.net/pt-final-posting-files/62-1113737_TRISTAR-CENTENNIAL-MEDICAL-CENTER_standardcharges.json?si=dpx-pt-json-access-policy&spr=https&sv=2026-02-06&sr=c&sig=ks%2BgfAjyEHlZmeP2PYJ%2F9NpMuCoRStjTb2bhIy9Y6LM%3D",
+    "retained_byte_proof_sha256": "8c754bebb73b8ba7cd6ad6f6b726537351c14370217864d96b102c3711d88480",
+    "retained_byte_proof_bytes": 262144,
+    "proof_declared_date": "2026-09-01",
+    "proof_template_version": "3.0.0",
+    "older_page_route_result": "The HCA DAM link recorded in the earlier manual observation was a distinct prior route; later access evidence established a current signed Azure Blob file linked from the current first-party pricing page."
+  },
+  "correction": {
+    "overlay_page_linked_mrf_url": "https://stctrprodsnsvc00455826e6.blob.core.windows.net/pt-final-posting-files/62-1113737_TRISTAR-CENTENNIAL-MEDICAL-CENTER_standardcharges.json?si=dpx-pt-json-access-policy&spr=https&sv=2026-02-06&sr=c&sig=ks%2BgfAjyEHlZmeP2PYJ%2F9NpMuCoRStjTb2bhIy9Y6LM%3D",
+    "tracker_link_url": "https://www.tristarhealth.com/patient-resources/patient-financial-resources/pricing-transparency-cms-required-file-of-standard-charges",
+    "reason_for_tracker_link": "The exact signed download URL is retained in the private evidence ledger and used for URL-bound byte-proof validation. The generated public tracker links to the first-party pricing page that publishes that file, avoiding exposure of the signed query token and avoiding the stale HCA DAM file route.",
+    "overlay_validator_change": "Require the retained byte-proof URL, reviewed proof file URL, and current manual facility_file_url to equal the overlay page_linked_mrf_url; require a stable first-party tracker_link_url bound to the reviewed proof page.",
+    "raw_crawl_preserved": true,
+    "facility_disposition_change": "The raw pointer failure remains unchanged; the reviewed view remains verified-current-mrf on the page-linked 2026-09-01 CMS 3.0.0 file.",
+    "nationwide_count_effect": 0,
+    "891_cohort_count_effect": 0
+  }
+}

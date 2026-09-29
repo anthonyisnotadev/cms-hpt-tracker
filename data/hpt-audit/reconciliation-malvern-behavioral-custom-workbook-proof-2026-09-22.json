@@ -1,0 +1,21 @@
+{
+  "ccn": "394057",
+  "observed_at": "2026-09-22T05:10:00Z",
+  "official_domain": "malvernbh.com",
+  "official_pricing_page": "https://www.malvernbh.com/admissions/insurance-payment-information/",
+  "official_contact_page": "https://www.malvernbh.com/contact-us/",
+  "official_page_status": 200,
+  "official_facility_name": "Malvern Behavioral Health",
+  "official_facility_address": "1930 S. Broad Street, 4th Floor, Philadelphia, PA 19145",
+  "facility_file_url": "https://www.malvernbh.com/wp-content/uploads/2020/12/MALVERN-BEHAVIORAL-HEALTH-STANDARD-CHARGES.xlsx",
+  "file_status": 200,
+  "file_content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "file_bytes": 13899,
+  "file_sha256": "5233E08EC2B54E4218742F78D7B1E3659473CAE651298C53990F8E1A45AC504A",
+  "workbook_observation": "The workbook contains one populated two-row sheet with custom columns such as Level of Care, Specialty, Gross Charge, payer rates and revenue code; it has no CMS 3.0.0 CSV/JSON schema, CMS metadata header or CMS attestation field.",
+  "page_stated_current_as_of": "2024-09-18",
+  "manual_identity_gate": "official-page-address-and-first-party-file-linkage",
+  "disposition": "file-custom-workbook-review",
+  "interpretation": "The official Malvern site links this first-party XLSX and separately identifies the Philadelphia facility, but the object is a custom workbook and the page's stated effective date is older than one year. It is retained as historical/page-linked evidence without treating it as a current CMS MRF or making a compliance conclusion.",
+  "next_action": "Obtain a current facility-specific CMS CSV/JSON/ZIP MRF or publisher clarification/replacement; verify CMS template metadata, complete bytes, facility identity and declared date before promotion."
+}

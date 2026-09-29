@@ -1,0 +1,17 @@
+{
+  "ccn": "450235",
+  "observed_at": "2026-09-22T07:30:00Z",
+  "official_pricing_page": "https://www.texashealthhuguley.org/",
+  "official_pricing_page_status": 200,
+  "official_page_observation": "The first-party domain redirects to Texas Health Huguley Hospital Fort Worth South and identifies its Burleson address (11801 South Freeway, Burleson, TX 76028). The page exposes a Price Transparency link to a third-party hospitalpricedisclosure.com estimator, not a facility-specific CMS CSV/JSON MRF. The recorded exact cms-hpt.txt route rendered a plain Permission denied response.",
+  "cms_pointer_url": "https://www.texashealthhuguley.org/cms-hpt.txt",
+  "cms_pointer_result": "Browser route rendered plain text Permission denied; no pointer content or MRF URL was available.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=450235&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6618,
+  "cms_api_response_sha256": "F300C9F7287C7B5D217CCC0E5020390951375012A683211A527D8FB28198863B",
+  "cms_record": { "facility_id": "450235", "facility_name": "MEMORIAL HOSPITAL", "address": "1110 NORTH SARAH DEWITT DRIVE", "citytown": "GONZALES", "state": "TX", "zip_code": "78629", "hospital_type": "Acute Care Hospitals", "hospital_ownership": "Government - Hospital District or Authority", "emergency_services": "No" },
+  "disposition": "official-domain-operator-mismatch-pointer-permission-denied-no-mrf-observed",
+  "interpretation": "The CMS record identifies Memorial Hospital in Gonzales, while the recorded official domain now identifies Texas Health Huguley Hospital Fort Worth South in Burleson. The mismatch and pointer denial are documented as identity/access observations; neither establishes file absence, noncompliance, closure, or that the Huguley estimator applies to the Gonzales CCN.",
+  "next_action": "Resolve the current Gonzales Memorial Hospital operator/domain and obtain a facility-specific CMS CSV/JSON or corrected pointer; do not assign the Huguley site or estimator to CCN 450235."
+}

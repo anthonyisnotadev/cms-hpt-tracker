@@ -1,0 +1,71 @@
+{
+  "ccn": "050581",
+  "observed_at": "2026-09-28T08:26:50Z",
+  "purpose": "Independently cross-check current first-party Lakewood identity and official CMS CCN/address association against the retained Lakewood-named UCI MRF address conflict.",
+  "sources": [
+    {
+      "kind": "UCI Health current price-transparency page",
+      "url": "https://www.ucihealth.org/patients-and-visitors/financial-resources/price-transparency",
+      "observation": "The page lists a separate UCI Health - Lakewood machine-readable file named 952226406_UCI-Health-Lakewood_standardcharges.json and states standard charges are effective as of Nov. 1, 2025. This confirms the current publisher page-to-facility/file association, not correctness of the JSON's facility address field."
+    },
+    {
+      "kind": "UCI Health current Lakewood location page",
+      "url": "https://www.ucihealth.org/locations/lakewood/uci-health-lakewood",
+      "observation": "The first-party page identifies UCI Health - Lakewood at 3700 E. South St., Lakewood, CA 90712."
+    },
+    {
+      "kind": "CMS 2026 reporting-cycle teaching hospital list (October 2025 release)",
+      "url": "https://www.cms.gov/files/document/2026-reporting-cycle-teaching-hospital-list-october-2025.pdf",
+      "observation": "The CMS list maps provider number 050581 to UCI Health - Lakewood and lists 3700 E. South St., Lakewood, CA 90712. It independently corroborates the CCN-to-campus address association; it is not evidence about the intended MRF address field."
+    }
+  ],
+  "retained_mrf_basis": {
+    "proof_file": "reconciliation-uci-shared-orange-address-metadata-cohort-2026-09-27.json",
+    "file_url": "https://www.ucihealth.org/pricetransparency/952226406_uci-health-lakewood_standardcharges.json",
+    "observed_bounded_sample_at": "2026-09-27T06:14:52Z",
+    "declared_hospital_name": "UCI Health - Lakewood",
+    "declared_npi": "1184655581",
+    "declared_hospital_address": "101 City Drive South, Orange, CA 92868",
+    "cms_template_version": "3.0.0",
+    "sample_sha256": "f72094c02eb615ba454f472c96f065981e46fd34634051a4815d3cf4c71aeada"
+  },
+  "current_recheck_2026_09_28": {
+    "observed_at": "2026-09-28T17:50:01Z",
+    "reason": "Rechecked current primary page and exact current file after UCI current-price-page search/open reaffirmed the Lakewood listing; bounded 128-KiB GET confirms same entity tag, total size, date, and conflicting address.",
+    "current_pricing_page_http_status": 200,
+    "current_pricing_page_url": "https://www.ucihealth.org/patients-and-visitors/financial-resources/price-transparency",
+    "current_pricing_page_bytes": 145252,
+    "current_pricing_page_sha256": "a8dd98e23d9156f71e4f83da49a27f57a82e15d23e3f1b6b4d3b0bf65783ce63",
+    "page_still_lists_exact_lakewood_filename": true,
+    "exact_file_url": "https://www.ucihealth.org/pricetransparency/952226406_uci-health-lakewood_standardcharges.json",
+    "http_status": 206,
+    "requested_range": "bytes=0-131071",
+    "content_range": "bytes 0-131071/67053227",
+    "sample_bytes": 131072,
+    "sample_sha256": "f72094c02eb615ba454f472c96f065981e46fd34634051a4815d3cf4c71aeada",
+    "entity_tag": "\"11aefe53cc1dc1:0\"",
+    "last_modified": "2026-03-31T18:33:39Z",
+    "header": {
+      "hospital_name": "UCI Health - Lakewood",
+      "last_updated_on": "2026-04-01",
+      "version": "3.0.0",
+      "location_name": ["UCI Health - Lakewood"],
+      "hospital_address": ["101 City Drive South, Orange, CA 92868"],
+      "license_number": "060000148",
+      "license_state": "CA",
+      "type_2_npi": ["1184655581"]
+    },
+    "official_hcai_lakewood_address": "3700 South Street, Lakewood, CA 90712",
+    "official_hcai_orange_address": "101 City Drive South, Orange, CA 92868",
+    "disposition_effect": "none; exact current bounded header reproduces the known address conflict. The license suffix is separately reconciled by the 2026-09-29 HCAI effective-dated license-history proof; no address correction or publisher explanation was found."
+  },
+  "finding": "New official CMS corroboration and a change-triggered current source check reinforce the Lakewood CCN/address identity and current UCI page/file association. The exact 131,072-byte prefix is unchanged from the retained September 26/27 sample and still declares the Orange address. HCAI license-history evidence separately shows the MRF's 060000148 license suffix is consistent with Lakewood's effective-dated current license beginning 2026-03-07; it is not an Orange-only identity signal. The MRF hospital_address conflict remains: the retained Lakewood-named pointer-linked file sample declares the Orange address, while CMS and UCI's facility page identify the Lakewood campus. No full-file content was retrieved. No disposition change or resolution credit is justified.",
+  "disposition": "official-identity-corroboration-address-field-conflict-retained-unresolved",
+  "license_transition_follow_up_2026_09_29": {
+    "proof_file": "reconciliation-uci-lakewood-california-license-transition-2026-09-29.json",
+    "finding": "HCAI LFIS shows Lakewood license 930000046 through 2026-03-06 and license 060000148 effective 2026-03-07. The current HCAI Lakewood policy lookup pairs 060000148 with the Lakewood facility. Thus the April 2026 Lakewood MRF's license_number|CA suffix is supported for Lakewood and is not evidence of an Orange file reassignment.",
+    "address_conflict_remains": true,
+    "disposition_effect": "No disposition change; CCN 050581 remains unresolved solely for its Lakewood-named file's Orange hospital_address field."
+  },
+  "next_action": "Do not repeat unchanged HCAI license-history or pointer/file probes. Obtain a publisher correction or explanation specifically for the Lakewood JSON hospital_address field; preserve the supported 2026 license transition and re-evaluate only on a changed source or dated publisher explanation."
+}

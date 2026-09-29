@@ -1,0 +1,23 @@
+{
+  "ccn": "451320",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://chambershealth.org/",
+  "official_page_url": "https://chambershealth.org/patient-resources/",
+  "official_pricing_page": "https://secure.claraprice.net/price-transparency/chambers-health-tx",
+  "official_identity": "The first-party Chambers Health hospital page identifies Bayside Community Hospital at 200 Hospital Dr., Anahuac, TX 77514; the patient-resources page links its Price Transparency control to the Chambers Health ClaraPrice page.",
+  "mrf_url": "https://secure.claraprice.net/price-transparency/OHL3996173618/machine-readable/760153629_chambers-health_standardcharges.json",
+  "mrf_status": 200,
+  "mrf_bytes": 10759686,
+  "mrf_sha256": "aabcfbeef81c76898c83456fbc3d805efd023bea48945b809dac618599e8d853",
+  "declared_hospital_name": "Chambers Health",
+  "declared_location_name": "Chambers Health",
+  "declared_address": "200 Hospital Drive, Anahuac, TX 77514",
+  "declared_license": "000442",
+  "declared_license_state": "TX",
+  "declared_last_updated": "2025-09-17",
+  "cms_template_version": "3.0.0",
+  "attestation_observed": true,
+  "disposition": "publisher-page-linked-cms-file-identity-confirmed",
+  "interpretation": "The current first-party Chambers Health pages identify the Bayside hospital at the same address and link the Chambers Health ClaraPrice page. The complete CMS 3.0.0 JSON has matching address, Texas license, update date and attestation, but declares the operator/system name Chambers Health rather than the roster facility name Bayside Community Hospital; it is retained as page-linked evidence with facility-name aliasing documented, not treated as a root-pointer compliance conclusion.",
+  "next_action": "Retain the complete-file hash and recheck the operator-linked file on the normal freshness schedule; seek a facility-specific pointer or NPI if later needed to resolve the Chambers Health alias."
+}

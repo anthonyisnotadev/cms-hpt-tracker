@@ -1,0 +1,31 @@
+{
+  "audit_id": "palo-verde-browser-route-recheck-2026-09-28",
+  "ccn": "034030",
+  "hospital_name": "PALO VERDE BEHAVIORAL HEALTH",
+  "observed_at": "2026-09-28T11:38:00Z",
+  "official_site": "https://paloverdebh.com/",
+  "official_pointer_url": "https://paloverdebh.com/cms-hpt.txt",
+  "browser_route": "Codex in-app browser; normal navigation; no challenge bypass attempted",
+  "browser_result": {
+    "title": "Just a moment...",
+    "page_text": "Performing security verification. This website uses a security service to protect against malicious bots. This page is displayed while the website verifies you are not a bot.",
+    "ray_id": "a42274a0ca3009ae"
+  },
+  "official_http_status": null,
+  "official_mrf_bytes_retrieved": 0,
+  "third_party_lead": {
+    "url": "https://medrates.fyi/hospital/palo-verde-behavioral-health",
+    "browser_observed": true,
+    "reported_facility": "Palo Verde Behavioral Health",
+    "reported_address": "2695 North Craycroft Road, Tucson, AZ 85712",
+    "reported_ein": "463600310",
+    "reported_npi": "1659700086",
+    "reported_file_update_date": "2026-04-01",
+    "third_party_last_read_date": "2026-07-01",
+    "limitation": "No original publisher file URL, bytes, CMS metadata, or exact pointer linkage was exposed in the observed page. Treat only as a lead; do not import its derived rates or infer current MRF availability/compliance."
+  },
+  "disposition": "pointer-access-denied-to-client",
+  "count_effect": "none",
+  "interpretation": "A materially different interactive-browser route still presents the publisher's security challenge. This is a client-access observation, not evidence that the official pointer or MRF is absent and not evidence of compliance or noncompliance. Search results and the third-party page provide no hash-bound original MRF. No source file or rate data was recovered.",
+  "next_action": "Do not repeat the same browser or direct request absent a material source/access change. Obtain a publisher-provided current CSV/JSON or an authorized response to the official pointer/page; then verify exact URL linkage, complete usable bytes, facility identity, Arizona state, declared date/version, and rate fields before changing disposition."
+}

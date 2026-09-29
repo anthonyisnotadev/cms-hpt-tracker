@@ -1,0 +1,37 @@
+{
+  "ccn": "400141",
+  "facility": "Centro Médico del Noreste",
+  "observed_at": "2026-09-27T12:32:08Z",
+  "disposition": "unresolved-with-sibling-file-excluded",
+  "evidence": [
+    {
+      "source_type": "first-party-page-and-browser-map-link",
+      "url": "https://caribbeanmedicalcenter.com/centro-medico-del-noreste/",
+      "browser_observation": "The first-party identity page names Centro Médico del Noreste and its Ver Ubicación link resolves to a Google Maps listing titled Centro Médico del Noreste at 404 Av. Valero, Fajardo, 00738, Puerto Rico. The shared page footer instead gives Ave. Osvaldo Molina #151, the Caribbean Medical Center address.",
+      "map_listing_url": "https://www.google.com/maps/place/Centro+M%C3%A9dico+del+Noreste/@18.3367312,-65.654852,15z/data=!4m6!3m5!1s0x8c049784b073773f:0x36e019d969193c88!8m2!3d18.3370388!4d-65.6553537!16s%2Fg%2F1v2gft57?entry=ttu"
+    },
+    {
+      "source_type": "current_independent_provider_directory",
+      "url": "https://www.firstmedicalpr.com/wp-content/uploads/2026/01/FM-COM_PRV_26.80_02_S_Directorio-de-Proveedores_enero_Spanish_Approved_01292026.pdf",
+      "observation": "The January 2026 directory separately lists Centro Médico del Noreste at Ave General Valero 404 and Caribbean Medical Center at Ave Osvaldo Molina 151. Existing exact-address proof records the CMS/API and directory match for CCN 400141."
+    },
+    {
+      "source_type": "government_facility_listing",
+      "url": "https://www.salud.pr.gov/menuInst/download/60",
+      "observation": "Puerto Rico Department of Health's 2020 public-health guide separately lists Caribbean Medical Center at Av. Osvaldo Molina 151 and HIMA San Pablo Fajardo at Carr. 3 km 48.4, Ave. General Valero 404. This is historical location evidence, not proof of current operation."
+    },
+    {
+      "source_type": "local_government_current_facility_reporting",
+      "url": "https://fajardopr.org/blog-1/mas-camas-y-ampliacion-de-servicios-en-hospitales-de-fajardo",
+      "observation": "Fajardo municipality's May 9, 2025 report describes Centro Médico del Noreste and Hospital Caribbean Medical Center as distinct hospitals and separately reports service/capacity expansions."
+    },
+    {
+      "source_type": "previous_complete_file_identity_proof",
+      "proof_file": "reconciliation-centro-medico-noreste-full-file-sibling-proof-2026-09-26.json",
+      "observation": "The complete page-linked CSV was identified as Caribbean Medical Center, CCN 400131, at 151 Osvaldo Molina; it is excluded from CCN 400141 at 404 General Valero."
+    }
+  ],
+  "interpretation": "The target facility's 404 Av. Valero address is supported by the first-party map link, independent current provider directory, and existing CMS address evidence. The first-party page's shared footer/pricing link and complete linked CSV pertain to the separately identified Caribbean Medical Center sibling at 151 Osvaldo Molina. These sources sharpen the identity conflict but do not provide a 400141-specific CMS pointer or MRF.",
+  "next_action": "Find a Centro Médico del Noreste-specific root cms-hpt.txt pointer or CMS CSV/JSON, or obtain a publisher explanation for the shared page/footer. Verify any candidate file against CCN 400141 and 404 Av. Valero before changing disposition.",
+  "no_change": "No MRF recovery or disposition change is claimed; CCN 400141 remains unresolved."
+}

@@ -1,0 +1,27 @@
+{
+  "ccn": "010780",
+  "observed_at": "2026-09-25T20:55:00Z",
+  "official_pricing_page": "https://www.eastalabamahealth.org/patient-and-guests/billing-and-financial-information/estimate-my-cost",
+  "browser_observation": {
+    "status": 200,
+    "rendered_title": "Estimate My Cost | East Alabama Health",
+    "patient_pricing_text": "Our patient pricing list allows you to review all services provided by East Alabama Health.",
+    "linked_file_url": "https://www.eastalabamahealth.org/sites/default/files/financial-service/636000526_EastAlabama_standardcharges.csv.zip"
+  },
+  "file_observation": {
+    "http_status": 200,
+    "zip_bytes": 6851692,
+    "zip_sha256": "1775D096B9C422EEF40235F124C335E9F8A9531B38BC89D98833498A1DCED833",
+    "archive_member": "636000526_EastAlabama_standardcharges.csv",
+    "archive_member_bytes": 212460800,
+    "declared_hospital_name": "East Alabama Medical Center",
+    "declared_address": "2000 PEPPERELL PKWY OPELIKA, AL 36801",
+    "declared_last_updated": "2026-01-01",
+    "cms_template_version": "3.0.0",
+    "declared_license_state": "AL",
+    "attestation": true
+  },
+  "disposition": "sibling-file-current-recheck-not-assigned-to-lanier",
+  "interpretation": "The current East Alabama Health pricing page renders a machine-readable ZIP, but its complete archive metadata identifies East Alabama Medical Center in Opelika, not EAMC-Lanier at 4800 48th Street, Valley. The file is retained as sibling evidence and is not assigned to CCN 010780.",
+  "next_action": "Obtain a separate first-party EAMC-Lanier pointer entry or facility-specific CMS CSV/JSON naming the Valley campus."
+}

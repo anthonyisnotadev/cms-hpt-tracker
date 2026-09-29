@@ -1,0 +1,15 @@
+{
+  "ccn": "220108",
+  "observed_at": "2026-09-22T08:10:00Z",
+  "official_pricing_page": "https://bidmilton.org/patients-visitors/billing-financial-services/price-transparency",
+  "official_page_status": 200,
+  "official_page_observation": "The current first-party Beth Israel Deaconess Hospital–Milton price-transparency page links Hospital Charge Data and confirms the facility at 199 Reedsdale Road, Milton, MA 02186.",
+  "candidate_file_url": "https://bidmilton.org/042103604_beth-israel-deaconess-hospital-milton-inc_standardcharges.json",
+  "candidate_file_format": "JSON",
+  "candidate_file_observation": "The exact page-linked JSON target was reached, but bounded retrieval stopped because the response is 16,454,531 bytes; no bounded body or parsed metadata was retained.",
+  "roster_identity": "BETH ISRAEL DEACONESS HOSPITAL - MILTON",
+  "roster_address": "199 REEDSDALE ROAD, MILTON, MA 02186",
+  "disposition": "official-page-current-facility-mrf-linked-file-too-large-to-parse",
+  "interpretation": "New official current page/exact MRF linkage and facility identity evidence. File bytes and declared name/address/Massachusetts state/date/version remain unverified in this bounded run; no current verification claim is promoted.",
+  "next_action": "Use a bounded streaming or authorized download-capable route to inspect the large JSON, then verify facility identity, Massachusetts state, declared date/version and usability before promotion."
+}

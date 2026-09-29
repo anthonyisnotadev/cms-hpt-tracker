@@ -1,0 +1,23 @@
+{
+  "ccn": "384008",
+  "observed_at": "2026-09-25T01:25:00Z",
+  "cms_dataset": "Hospital General Information",
+  "cms_dataset_url": "https://data.cms.gov/provider-data/dataset/xubh-q36u",
+  "cms_query_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=384008&conditions%5B0%5D%5Boperator%5D=%3D",
+  "http_status": 200,
+  "response_bytes": 6823,
+  "response_sha256": "872b285b1646b3a9b5f54ac1467e0fdc78f44e7cfd7b487bbd8ac678c350b45c",
+  "cms_record": {
+    "facility_id": "384008",
+    "facility_name": "OREGON STATE HOSPITAL DISTINCT PART",
+    "address": "2600 CENTER STREET NE",
+    "citytown": "SALEM",
+    "state": "OR",
+    "zip_code": "97310",
+    "hospital_type": "Psychiatric",
+    "hospital_ownership": "Government - State"
+  },
+  "disposition": "current-cms-identity-recheck-legacy-file-unresolved",
+  "interpretation": "The current CMS Hospital General Information API independently confirms CCN 384008, Oregon State Hospital Distinct Part, at 2600 Center Street NE, Salem, Oregon, as a state psychiatric hospital. This corroborates facility identity and scope but does not convert the official 2021 three-column charge list into a current CMS 3.0.0 MRF.",
+  "next_action": "Obtain a current CMS-schema CSV/JSON MRF or publisher clarification/version metadata; retain the 2021 legacy CSV as historical official evidence."
+}

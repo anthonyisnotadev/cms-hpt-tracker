@@ -1,0 +1,21 @@
+{
+  "ccn": "380005",
+  "observed_at": "2026-09-25T12:45:00Z",
+  "cms_enrollment_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=380005&size=10",
+  "cms_enrollment_status": 200,
+  "cms_enrollment_response_bytes": 1163,
+  "cms_enrollment_response_sha256": "4e39e5eb60ac3e3f168518ce7a5f7298dec645606db8b00e75e3b12fca639a57",
+  "cms_record": {
+    "ccn": "380005",
+    "organization_name": "ASANTE ASHLAND COMMUNITY HOSPITAL LLC",
+    "npi": "1730628827",
+    "address": "280 MAPLE ST, ASHLAND, OR 975201552",
+    "provider_type": "PART A PROVIDER - HOSPITAL",
+    "enrollment_state": "OR",
+    "reh_conversion_flag": "N",
+    "reh_conversion_date": ""
+  },
+  "disposition": "current-cms-enrollment-identity-confirmed-transition-effective-date-not-exposed",
+  "interpretation": "The current CMS Hospital Enrollments record independently confirms the CCN, legal organization, NPI, Oregon address and non-REH flag, but exposes no termination or effective satellite-transition date. This supports retaining the historical CCN identity while leaving the operator-transition/MRF scope unresolved; no parent-file attribution or closure inference is made.",
+  "next_action": "Obtain an effective-dated Medicare status/termination record and verify whether Rogue Regional's current pointer/MRF explicitly includes the Ashland satellite before changing the disposition."
+}

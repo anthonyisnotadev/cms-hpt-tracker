@@ -1,0 +1,22 @@
+{
+  "ccn": "010012",
+  "observed_at": "2026-09-19T06:52:00Z",
+  "official_price_page_url": "https://dekalbregional.org/patients-visitors/financial-information/price-transparency/",
+  "facility_identity": "DeKalb Regional Medical Center",
+  "facility_address": "200 Medical Center Dr SW, Fort Payne, AL 35968",
+  "page_declared_price_date": "2026-08-20",
+  "linked_mrf_url": "https://dekalbregional.org/wp-content/uploads/934333907_Dekalb-Regional-Medical-Center_standardcharges.csv",
+  "linked_mrf_fetch_status": "dns-unresolved",
+  "linked_mrf_fetch_observation": "Bounded Node and curl retrieval could not resolve dekalbregional.org; browser/web retrieval exposed the exact CSV link but no bytes.",
+  "disposition": "facility-specific-page-and-file-lead-retained",
+  "next_action": "Retry the exact CSV through a permitted download-capable route after DNS or publisher change; verify declared facility identity, address/state, date and CMS version before promotion.",
+  "latest_web_recheck": {
+    "observed_at": "2026-09-19T12:30:00Z",
+    "source_url": "https://hh2026.cloudaccess.host/patients-visitors/price-transparency/",
+    "result": "The current HH Health page remains reachable to web retrieval, is dated 2026-08-20, and explicitly lists DeKalb Regional Medical Center with a Standard Charge File link to the exact CSV URL.",
+    "file_url": "https://hh2026.cloudaccess.host/wp-content/uploads/934333907_Dekalb-Regional-Medical-Center_standardcharges.csv",
+    "file_bytes": "not retrieved",
+    "evidence_role": "current official page/file-scope recheck; transport prevents header promotion",
+    "disposition": "retain-page-linked-file-lead-dns-or-tls-retrieval-pending"
+  }
+}

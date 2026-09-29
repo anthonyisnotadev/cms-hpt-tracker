@@ -1,0 +1,17 @@
+{
+  "ccn": "494022",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://www.poplarsprings.com/",
+  "official_identity_sources": [
+    "https://www.jointcommission.org/en-us/accreditation/behavioral-health-care-and-human-services/provider-locator/1909/716742",
+    "https://www.jointcommission.org/en/accreditation/behavioral-health-care-and-human-services/provider-locator/1909",
+    "https://www.velarionrecords.com/hospital/494022",
+    "https://turquoise.health/providers/poplar-springs-hospital/information"
+  ],
+  "official_identity": "CMS-linked provider records associate CCN 494022, NPI 1124051701 and Poplar Springs Hospital with 350 Poplar Drive, Petersburg, VA 23805. The Joint Commission listing for the current poplarsprings.com site instead displays Poplar Springs Hospital at 214 W Hundred Road, Chester, VA 23836. The sources are materially inconsistent and may represent different operational/service locations; no address was silently preferred.",
+  "browser_observation": "Browser automation reached the first-party Poplar Springs domain but displayed a Cloudflare security-verification interstitial. Direct requests to the homepage, cms-hpt.txt and common pricing paths returned HTTP 403.",
+  "pricing_observation": "No usable facility-specific CMS pointer or MRF bytes were retrieved. This is an access and identity-conflict observation, not evidence of file absence, closure, exemption or noncompliance.",
+  "disposition": "identity-address-conflict-pricing-route-client-denied",
+  "interpretation": "This replaces the stale domain-unknown label with a supported first-party domain while explicitly preserving the unresolved Petersburg-versus-Chester identity conflict and pricing access barrier.",
+  "next_action": "Obtain publisher/UHS or Virginia licensing clarification tying the current poplarsprings.com site and address to CCN 494022; then retrieve a facility-specific CMS CSV/JSON/ZIP and verify exact address, Virginia metadata, declared date/version and parsed usability before promotion."
+}

@@ -1,0 +1,20 @@
+{
+  "ccn": "670265",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "roster_identity": {
+    "name": "LEGENT ORTHOPEDIC HOSPITAL",
+    "address": "ROSTER CITY GRAPEVINE, TX",
+    "city": "GRAPEVINE",
+    "state": "TX"
+  },
+  "official_domain": "https://www.legenthealth.com/",
+  "official_identity_sources": "https://www.legenthealth.com/locations/legent-orthopedic-hospital|https://www.legenthealth.com/price-transparency|https://npiregistry.cms.hhs.gov/provider-view/1316505043",
+  "official_page_observation": "The current first-party Legent page identifies Legent Orthopedic Hospital Carrollton at 1401 E Trinity Mills Rd, Carrollton, TX 75006 and links the Legent price-transparency page. This conflicts with the nationwide roster city Grapevine; no independent source in this pass resolved whether the roster address is historical/stale or a distinct facility attribution.",
+  "browser_observation": "Browser/web inspection opened the official hospital page and price-transparency page. The page links a Google Drive machine-readable file for Legent Orthopedic Hospital Carrollton.",
+  "pricing_observation": "The official pricing page's Google Drive link was reached, but bounded client retrieval did not complete a validated file (range/transport response was incomplete). No file bytes were promoted. The address conflict remains unresolved.",
+  "pricing_page_url": "https://www.legenthealth.com/price-transparency",
+  "mrf_link": "https://drive.google.com/uc?export=download&id=1toQm10puzBsJhiF4IUdMEbavJL1-RKMn",
+  "disposition": "identity-address-conflict-pricing-route-client-denied",
+  "interpretation": "Current official operator/site evidence is useful identity evidence, but the Carrollton-vs-Grapevine address conflict and incomplete MRF retrieval prevent promotion or exclusion. This is a transport and attribution uncertainty, not a legal compliance determination.",
+  "next_action": "Resolve the CCN 670265 city/address against current CMS enrollment or publisher identity, then retrieve and validate the facility-specific MRF using a materially different permitted route."
+}

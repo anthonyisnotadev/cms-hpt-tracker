@@ -1,0 +1,80 @@
+{
+  "ccn": "321305",
+  "observed_at": "2026-09-17T10:12:13.401Z",
+  "roster": {
+    "name": "NOR-LEA HOSPITAL DISTRICT",
+    "address": "1600 NORTH MAIN AVE",
+    "city": "LOVINGTON",
+    "state": "NM",
+    "zip": "88260"
+  },
+  "cms_enrollment_snapshot": "data/hpt-audit/priority-one-cms-enrollment-snapshot-review.json",
+  "browser_observation": {
+    "browser": "Codex in-app browser",
+    "first_party_page_url": "https://nor-lea.org/resources",
+    "first_party_page_result": "rendered",
+    "first_party_page_links_exact_file": true,
+    "first_party_page_address": "1600 N. Main, Lovington NM",
+    "pointer_requested_url": "https://nor-lea.org/cms-hpt.txt",
+    "pointer_final_url": "https://www.nlmktg.org/cms-hpttxt",
+    "pointer_result": "marketing HTML page with pointer-style text, not a retained structured pointer",
+    "pointer_visible_file_url": "https://hospitalpricetransparencyfiles.com/nor-lea-district-hospital/850278235_Nor-Lea-Hospital-District_standardcharges.csv"
+  },
+  "direct_client_observation": {
+    "first_party_resources_http_status": 403,
+    "first_party_root_pointer_http_status": 403,
+    "note": "These are client-access observations, not evidence that the first-party page or pointer is absent."
+  },
+  "file": {
+    "url": "https://hospitalpricetransparencyfiles.com/nor-lea-district-hospital/850278235_Nor-Lea-Hospital-District_standardcharges.csv",
+    "http_status": 206,
+    "content_range": "bytes 0-262143/11230287",
+    "total_bytes": 11230287,
+    "retained_bytes": 262144,
+    "sample_sha256": "0b6830467dee3e9f16f7584d7eadcd605ebb4922413dc6c5197d3568d7aa3832",
+    "retained_sample": "cms_data/hpt/nationwide-verification/file-byte-proof/0b6830467dee3e9f16f7584d7eadcd605ebb4922413dc6c5197d3568d7aa3832.bin",
+    "declared_hospital_name": "Nor-Lea Hospital District",
+    "declared_location_name": "Nor-Lea Hospital District",
+    "declared_address": "1900 North Main Avenue, Lovington, NM 88260-2813",
+    "declared_license_state": "NM",
+    "declared_date_raw": "7/17/2026",
+    "declared_date": "2026-07-17",
+    "template_version": "3.0.0"
+  },
+  "conclusion": "First-party page links the candidate CSV, but the file declares 1900 N Main while current facility and exact-CCN sources say 1600 N Main. Pointer is not independently retrieved as a structured document. No promotion."
+  ,"latest_recheck": {
+    "observed_at": "2026-09-17T21:00:00.000Z",
+    "route": "official resources page link via hospitalpricetransparencyfiles.com, bounded range request",
+    "http_status": 206,
+    "content_range": "bytes 0-131071/11230287",
+    "retained_bytes": 131072,
+    "prefix_sha256": "1025fdb4694bf6b784726a71dc87c234814b9ccfc6a589811dd14e912eb21a40",
+    "last_modified": "2026-07-28T18:51:13Z",
+    "declared_hospital_name": "Nor-Lea Hospital District",
+    "declared_location_name": "Nor-Lea Hospital District",
+    "declared_address": "1900 North Main Avenue, Lovington, NM 88260-2813",
+    "declared_license_state": "NM",
+    "declared_date": "2026-07-17",
+    "template_version": "3.0.0",
+    "result": "current-file-bytes-confirm-address-conflict",
+    "next_action": "Publisher or CMS enrollment records must reconcile 1600 N Main versus 1900 N Main before any promotion."
+  },
+  "latest_complete_recheck": {
+    "observed_at": "2026-09-19T07:09:24Z",
+    "pointer_route_status": 200,
+    "pointer_final_url": "https://www.nlmktg.org/cms-hpttxt",
+    "pointer_response_kind": "HTML-page-embedding-pointer-fields",
+    "pointer_embedded_mrf_url": "https://hospitalpricetransparencyfiles.com/nor-lea-district-hospital/850278235_Nor-Lea-Hospital-District_standardcharges.csv",
+    "file_http_status": 200,
+    "file_content_type": "text/csv",
+    "file_bytes": 11230287,
+    "file_sha256": "549aeeBD73A2EC8CB6BA28C75E1AF7B31380DB81B6597D042C8B0A821DCC151E",
+    "declared_hospital_name": "Nor-Lea Hospital District",
+    "declared_location_name": "Nor-Lea Hospital District",
+    "declared_address": "1900 North Main Avenue, Lovington, NM 88260-2813",
+    "declared_license_state": "NM",
+    "declared_date": "2026-07-17",
+    "template_version": "3.0.0",
+    "result": "Complete current file usability and metadata are confirmed, but the declared street address conflicts with the roster's 1600 N Main address; this remains a supported identity/address conflict, not a promotion."
+  }
+}

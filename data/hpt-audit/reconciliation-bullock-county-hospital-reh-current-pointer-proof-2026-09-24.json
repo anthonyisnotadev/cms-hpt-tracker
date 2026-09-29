@@ -1,0 +1,35 @@
+{
+  "ccn": "010110",
+  "observed_at": "2026-09-24T00:00:00Z",
+  "roster_identity": {
+    "name": "BULLOCK COUNTY HOSPITAL",
+    "state": "AL"
+  },
+  "official_domain": "https://www.bullockcountyhospital.com/",
+  "official_identity_sources": "https://www.bullockcountyhospital.com/|https://www.bullockcountyhospital.com/hospital-charges|https://www.bullockcountyhospital.com/cms-hpt.txt|https://www.alaha.org/hospital/bullock-county-hospital/",
+  "official_page_observation": "The current first-party site identifies Bullock County Rural Emergency Hospital in Union Springs and states it became Alabama's first Rural Emergency Hospital on 2024-05-01. The root cms-hpt.txt is readable and names the current REH location.",
+  "pointer_url": "https://www.bullockcountyhospital.com/cms-hpt.txt",
+  "pointer_final_url": "https://ce2ea91a-ba41-4498-ab16-2bae48bc8556.usrfiles.com/ugd/ce2ea9_c5938cf520aa4fa1be84d1564ef4e3ad.txt",
+  "pointer_observation": {
+    "http_status": 200,
+    "location_name": "Bullock County Rural Emergency Hospital",
+    "source_page_url": "https://www.bullockcountyhospital.com/general-4",
+    "mrf_url": "https://ce2ea91a-ba41-4498-ab16-2bae48bc8556.usrfiles.com/ugd/ce2ea9_229d2d077ea74cf6a45992ffbb655715.csv"
+  },
+  "mrf_observation": {
+    "http_status": 200,
+    "content_type": "text/csv",
+    "bytes": 953559,
+    "sha256": "197c77941d64267df906c48e85b20eeecd7f377be5f407eb9b7036a91b3e3295",
+    "hospital_name": "Bullock County Hospital",
+    "last_updated_on": "2024-11-24",
+    "version": "2.0.0",
+    "hospital_location": "Bullock County Hospital",
+    "hospital_address": "102 Conecuh Avenue West, Union Springs, AL 36089",
+    "license_state_header": "CA",
+    "rows": 6702
+  },
+  "disposition": "current-reh-pointer-file-observed-historical-acute-ccn-separation-retained",
+  "interpretation": "The current official pointer and file are evidence for the post-2024 REH route, not automatic evidence for the historical acute-care CCN. The file address is Alabama but its license-state header says CA; retain the explicit conflict and do not apply this current REH file to the historical acute-care record.",
+  "next_action": "Keep 010110's historical acute-care evidence separate; resolve the REH license header with publisher evidence and verify any historical acute-care file/period independently before promotion."
+}

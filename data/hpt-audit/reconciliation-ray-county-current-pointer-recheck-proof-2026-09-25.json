@@ -1,0 +1,18 @@
+{
+  "ccn": "261327",
+  "observed_at": "2026-09-25T11:31:30Z",
+  "official_site": "https://rayhealthcare.org/",
+  "official_pricing_page": "https://rayhealthcare.org/patients-and-visitors/price-transparency/",
+  "pointer_url": "https://rayhealthcare.org/cms-hpt.txt",
+  "pointer_status": 200,
+  "pointer_bytes": 301,
+  "pointer_sha256": "4af07443f3718d105ac6ba5d6e7ec4d0e745765cd214cbb5acc6a24e3fe9a0eb",
+  "pointer_declared_location": "Ray County Hospital and Healthcare",
+  "pointer_declared_source_page": "https://rayhealthcare.org/patients-and-visitors/price-transparency/",
+  "pointer_declared_mrf_url": "https://rayhealthcare.org/wp-content/uploads/2022/09/PRICE_TRANSPARENCY.xlsx",
+  "mrf_status": 200,
+  "mrf_content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "interpretation": "The current first-party root pointer is readable and still declares only the dated custom XLSX workbook. No current CMS CSV/JSON MRF or CMS metadata was exposed; the workbook remains dated first-party content, not a current verified MRF.",
+  "disposition": "current-pointer-reconfirmed-historical-workbook-only",
+  "next_action": "Retain the workbook as dated first-party content, but require a current facility-identifying CMS CSV/JSON MRF or root metadata before assigning it as a current verified claim for CCN 261327."
+}

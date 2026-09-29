@@ -1,0 +1,17 @@
+{
+  "ccn": "364058",
+  "observed_at": "2026-09-21T21:38:00Z",
+  "official_pricing_page": "https://suncolumbus.com/price-transparency/",
+  "official_page_status": 200,
+  "official_facility_name": "SUN Behavioral Columbus",
+  "roster_identity": "SUN BEHAVIORAL COLUMBUS",
+  "official_facility_address": "900 E Dublin Granville Rd, Columbus, OH 43229",
+  "facility_file_url": "https://suncolumbus.com/files/sun-columbus-standardcharges.csv",
+  "pointer_browser_observation": "The official pricing page labels the exact link as the machine-readable version.",
+  "pointer_transport_observation": "Direct HEAD and range retrieval returned HTTP 202 with an SG-Captcha challenge instead of CSV bytes.",
+  "pointer_status": 202,
+  "mrf_status": "access-challenged",
+  "disposition": "pointer-access-denied-to-client",
+  "interpretation": "The official pricing page, facility identity and exact CSV URL are confirmed. Automated retrieval is challenged by the site's SG-Captcha response; no file identity or metadata is inferred from that transport result.",
+  "next_action": "Retry the exact first-party CSV link with an interactive browser/download fallback or obtain a publisher-provided current CSV/JSON file; do not infer compliance or file contents from the challenge."
+}

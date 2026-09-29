@@ -27,11 +27,17 @@ function decode(buf) {
   try { return new TextDecoder('utf-8', { fatal: true }).decode(buf); }
   catch (_) { return new TextDecoder('windows-1252').decode(buf); }
 }
-function curlGet(url, cap, timeoutMs = 15000, hops = 6) {
-  return new Promise(resolve => {
-    const args = ['--silent', '--show-error', '--max-time', String(timeoutMs / 1000),
+function curlArgs(url, cap, timeoutMs = 15000, requestHeaders = {}, useRange = true) {
+  const args = ['--silent', '--show-error', '--globoff', '--max-time', String(timeoutMs / 1000),
       '--connect-timeout', '8', '--proto', '=http,https', '--proto-redir', '=http,https', '--include',
-      '--range', `0-${cap - 1}`, '--user-agent', BROWSER_HEADERS['User-Agent'], '--url', safeUrl(url)];
+      '--user-agent', BROWSER_HEADERS['User-Agent'], '--url', safeUrl(url)];
+  if (useRange) args.splice(args.length - 4, 0, '--range', `0-${cap - 1}`);
+  for (const [name, value] of Object.entries(requestHeaders)) args.splice(args.length - 2, 0, '--header', `${name}: ${value}`);
+  return args;
+}
+function curlGet(url, cap, timeoutMs = 15000, hops = 6, requestHeaders = {}, useRange = true) {
+  return new Promise(resolve => {
+    const args = curlArgs(url, cap, timeoutMs, requestHeaders, useRange);
     const child = spawn('curl.exe', args, { windowsHide: true, shell: false });
     const chunks = []; let size = 0, error = '', done = false;
     const finish = () => {
@@ -45,7 +51,7 @@ function curlGet(url, cap, timeoutMs = 15000, hops = 6) {
         if (headers.location && status >= 300 && status < 400) { redirects.push({ url: finalUrl, status, location: headers.location }); finalUrl = new URL(headers.location, finalUrl).href; }
       }
       if (headers.location && status >= 300 && status < 400 && hops > 0) {
-        try { const next = safeUrl(finalUrl); curlGet(next, cap, timeoutMs, hops - 1).then(r => resolve({ ...r, redirects: [...redirects, ...(r.redirects || [])] })); }
+        try { const next = safeUrl(finalUrl); curlGet(next, cap, timeoutMs, hops - 1, requestHeaders, useRange).then(r => resolve({ ...r, redirects: [...redirects, ...(r.redirects || [])] })); }
         catch(e) { resolve({ status: 0, finalUrl: url, redirects, headers: {}, body: Buffer.alloc(0), via: 'curl', error: e.message }); }
         return;
       }
@@ -57,14 +63,14 @@ function curlGet(url, cap, timeoutMs = 15000, hops = 6) {
     child.on('error', e => { error = e.code || e.message; finish(); }); child.on('close', finish);
   });
 }
-async function retrieve(url, cap, { native = requestCapped, curl = curlGet, timeoutMs = 15000 } = {}) {
+async function retrieve(url, cap, { native = requestCapped, curl = curlGet, timeoutMs = 15000, headers = {}, curlOnStatuses = [], curlUseRange = true } = {}) {
   url = safeUrl(url); const started = new Date().toISOString(); const attempts = [];
   let r;
-  try { r = { ...await native(url, { cap, timeoutMs, validateUrl: safeUrl, headers: { ...BROWSER_HEADERS, Range: `bytes=0-${cap - 1}` } }), via: 'native' }; }
+  try { r = { ...await native(url, { cap, timeoutMs, validateUrl: safeUrl, headers: { ...BROWSER_HEADERS, ...headers, Range: `bytes=0-${cap - 1}` } }), via: 'native' }; }
   catch (e) { if (/EACCES|EPERM/.test(e.code || e.message)) throw e; r = { status: 0, body: Buffer.alloc(0), error: e.code || e.message, via: 'native' }; }
   attempts.push({ method: 'GET', via: r.via, url, finalUrl: r.finalUrl || url, status: r.status, error: r.error || '', bytes: r.body.length, sha256: sha(r.body), redirects: r.redirects || [], checkedAt: started });
-  if (!r.status) {
-    r = await curl(url, cap, timeoutMs);
+  if (!r.status || curlOnStatuses.includes(r.status)) {
+    r = await curl(url, cap, timeoutMs, 6, headers, curlUseRange);
     attempts.push({ method: 'GET', via: r.via, url, finalUrl: r.finalUrl || url, status: r.status, error: r.error || '', bytes: r.body.length, sha256: sha(r.body), redirects: r.redirects || [], checkedAt: new Date().toISOString() });
   }
   return { ...r, attempts, checkedAt: new Date().toISOString(), sha256: sha(r.body) };
@@ -140,4 +146,4 @@ async function progressiveProbe(url, request = retrieve) {
     candidates: parsed.map(p => ({ ...p, rangeStatus: last.status, checkedAt: last.checkedAt })),
     blocker: parsed.some(sufficient) ? '' : transferred >= MAX_BYTES || decompressed >= MAX_BYTES ? 'byte-limit-reached' : 'metadata-incomplete-or-request-failed' };
 }
-module.exports = { safeUrl, decode, retrieve, curlGet, parsePayload, zipEntries, progressiveProbe, sha, MAX_BYTES, PARSER_VERSION };
+module.exports = { safeUrl, decode, retrieve, curlArgs, curlGet, parsePayload, zipEntries, progressiveProbe, sha, MAX_BYTES, PARSER_VERSION };

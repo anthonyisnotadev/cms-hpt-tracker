@@ -1,0 +1,26 @@
+{
+  "ccn": "424008",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "roster_identity": {
+    "name": "THREE RIVERS BEHAVIORAL HEALTH",
+    "address": "2900 SUNSET BOULEVARD",
+    "city": "WEST COLUMBIA",
+    "state": "SC",
+    "zip": "29169"
+  },
+  "current_operator_domain": "https://www.threeriversbehavioral.org/",
+  "identity_sources": [
+    {
+      "url": "https://www.jointcommission.org/en-us/accreditation/behavioral-health-care-and-human-services/provider-locator/805/210751",
+      "observation": "Joint Commission identifies Three Rivers Behavioral Health, LLC at 2900 Sunset Boulevard, West Columbia, South Carolina 29169 and links threeriversbehavioral.org."
+    },
+    {
+      "url": "https://www.scdhhs.gov/psychiatric-hospitals-directory",
+      "observation": "South Carolina's psychiatric hospitals directory lists Three Rivers in West Columbia at the same facility address."
+    }
+  ],
+  "browser_observation": "Bounded HTTPS requests to threeriversbehavioral.org root, cms-hpt.txt, .well-known/cms-hpt.txt and likely pricing paths returned HTTP 403 responses; no MRF bytes or pointer content were exposed.",
+  "disposition": "official-domain-identified-access-blocked",
+  "interpretation": "The current official domain and exact roster identity are independently corroborated. HTTP 403 is a transport observation only; no file absence, closure, compliance or current pricing conclusion is inferred.",
+  "next_action": "Retry the identified official domain through a permitted browser route or obtain a publisher-provided current CMS pointer/MRF URL; validate facility identity and metadata before promotion."
+}

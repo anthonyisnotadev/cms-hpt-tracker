@@ -1,0 +1,45 @@
+{
+  "observed_at": "2026-09-20T19:05:00Z",
+  "dataset_url": "https://data.cms.gov/provider-data/dataset/xubh-q36u",
+  "api_url_template": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0",
+  "dataset_title": "Hospital General Information",
+  "dataset_snapshot": "The current CMS Provider Data Catalog page reports 5,419 rows, last modified 2026-07-22 and released 2026-08-13.",
+  "retrieval": {
+    "page_offsets": [0, 1500, 3000, 4500],
+    "page_size": 1500,
+    "total_rows": 5419,
+    "page_hashes": [
+      {"offset": 0, "status": 200, "bytes": 2028764, "rows": 1500, "sha256": "2C19130A36CABB986271FAD0EF6609DAAA8876C2A309F94F9D438BE74DA2241D"},
+      {"offset": 1500, "status": 200, "bytes": 2045071, "rows": 1500, "sha256": "5547BE0C381C814814F9920D856F4AF6DC0693E959AEE3D13E87726A2F5FF5B1"},
+      {"offset": 3000, "status": 200, "bytes": 2030491, "rows": 1500, "sha256": "F09E4CDFF5B259B2DDD60CE7F98C4630E6CC9AD90B1548E7EE45A6B1354D4CB6"},
+      {"offset": 4500, "status": 200, "bytes": 1257734, "rows": 919, "sha256": "7EA9BBA247695E1C82913229301897EE9072911FCA68629D27319885797C7285"}
+    ]
+  },
+  "matched_rows": [
+    {
+      "ccn": "250043",
+      "facility_name": "NESHOBA COUNTY GENERAL HOSPITAL",
+      "address": "1001 HOLLAND AVENUE",
+      "citytown": "PHILADELPHIA",
+      "state": "MS",
+      "zip_code": "39350",
+      "hospital_type": "Acute Care Hospitals",
+      "hospital_ownership": "Government - Local",
+      "emergency_services": "Yes"
+    },
+    {
+      "ccn": "251340",
+      "facility_name": "NESHOBA COUNTY GENERAL HOSPITAL",
+      "address": "1001 HOLLAND AVENUE",
+      "citytown": "PHILADELPHIA",
+      "state": "MS",
+      "zip_code": "39350",
+      "hospital_type": "Critical Access Hospitals",
+      "hospital_ownership": "Government - Local",
+      "emergency_services": "Yes"
+    }
+  ],
+  "interpretation": "Current CMS Hospital General Information independently lists both the acute-care CCN 250043 and critical-access CCN 251340 at the same campus. This establishes current roster identity for both records but does not provide an effective transition date or assign the shared MRF to either CCN.",
+  "disposition": "current-cms-roster-confirms-both-ccns-transition-date-and-mrf-scope-still-unresolved",
+  "next_action": "Obtain an effective-dated CMS certification/status record and publisher scope confirmation before changing either tracker disposition or assigning the shared MRF."
+}

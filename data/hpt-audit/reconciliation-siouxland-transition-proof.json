@@ -1,0 +1,69 @@
+{
+  "ccn": "160153",
+  "roster_name": "MERCYONE SIOUXLAND MEDICAL CENTER",
+  "roster_address": "801 5TH ST",
+  "parent_roster_ccn": "160146",
+  "parent_roster_name": "ST LUKES REGIONAL MEDICAL CENTER",
+  "first_party_acquisition_url": "https://www.unitypoint.org/news-and-articles/press-releases/unitypoint-health-acquires-mercyone-siouxland-medical-center",
+  "first_party_acquisition_sha256": "d893681a1b8b8e1b36ddfe17ecc5f260ab1bcca45bb8ed9fdd9f6bafbd096699",
+  "first_party_downtown_url": "https://www.unitypoint.org/locations/unitypoint-health---st-lukes---downtown",
+  "first_party_downtown_sha256": "167d0c8786e098904af0738f3a520f0c5bc5fcebd32ec4a3c81f579b9fdb94d1",
+  "state_directory_url": "https://dia-hfd.iowa.gov/Home/PublicEntityDetails?recordid=477",
+  "state_directory_sha256": "8b01230b4bafac97f4049a3064891967d7e468a43ecb8fc26f4413fe87a890ce",
+  "state_directory_current_ccn": "160146",
+  "state_directory_former_name": "MERCYONE SIOUXLAND MEDICAL CENTER",
+  "state_directory_address": "801 5th ST, Sioux City, IA 51101",
+  "pointer_url": "https://unitypoint.org/cms-hpt.txt",
+  "pointer_sha256": "4fe21a2f60c975489fed68ad58ba920f7f1180867ad6d5b128c2e632ee83323b",
+  "pointer_entries_without_contacts": [
+    [
+      "location-name: UnityPoint Health - St. Lukes Downtown",
+      "source-page-url: https://search.hospitalpriceindex.com/hpi2/machineReadable/UnityPointHealth-St.LukesRegionalMedicalCenter/7954",
+      "mrf-url: https://sthpiprd.blob.core.windows.net/machine-readable-files/7954/421019872_northwest-iowa-hospital-corporation_standardcharges.csv"
+    ],
+    [
+      "location-name: UnityPoint Health - St. Luke's Regional Medical Center",
+      "source-page-url: https://search.hospitalpriceindex.com/hpi2/machineReadable/UnityPointHealth-St.LukesRegionalMedicalCenter/7954",
+      "mrf-url: https://sthpiprd.blob.core.windows.net/machine-readable-files/7954/421019872_northwest-iowa-hospital-corporation_standardcharges.csv"
+    ]
+  ],
+  "shared_file_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7954/421019872_northwest-iowa-hospital-corporation_standardcharges.csv",
+  "file_http_status": 206,
+  "file_total_bytes": 185056019,
+  "retained_bytes": 262144,
+  "retained_sample": "cms_data/hpt/nationwide-verification/file-byte-proof/19ff09d6cbbb064d7a2a4c2989e62138f77cdad8f6b8305ccf76d8ef2f60bcca.bin",
+  "sample_sha256": "19ff09d6cbbb064d7a2a4c2989e62138f77cdad8f6b8305ccf76d8ef2f60bcca",
+  "declared_hospital_name": "Northwest Iowa Hospital Corporation",
+  "declared_location_names": "UnityPoint Health - St. Luke's Regional Medical Center|UnityPoint Health - St. Luke's Downtown",
+  "declared_addresses": "2720 Stone Park Blvd, Sioux City, IA 51104|801 15th St, Sioux City, IA 51101",
+  "declared_license_state": "IA",
+  "declared_date": "2026-01-28",
+  "declared_version": "3.0.0",
+  "observed_at": "2026-09-16T18:03:41.783Z",
+  "cms_live_enrollment_pair_recheck": {
+    "observed_at": "2026-09-19T14:45:00Z",
+    "url_template": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D={CCN}&size=100",
+    "records": [
+      {
+        "ccn": "160153",
+        "http_status": 200,
+        "response_bytes": 2,
+        "response_sha256": "4F53CDA18C2BAA0C0354BB5F9A3ECBE5ED12AB4D8E11BA873C2F11161202B945",
+        "rows": 0
+      },
+      {
+        "ccn": "160146",
+        "http_status": 200,
+        "response_bytes": 1204,
+        "response_sha256": "E2EDA91F011862E72FE7C7F20A638A61E79A94235C0EC2D24FFE4F0E250D9699",
+        "rows": 1,
+        "organization_name": "NORTHWEST IOWA HOSPITAL CORPORATION",
+        "doing_business_as": "ST LUKE'S REGIONAL MEDICAL CENTER",
+        "address": "2720 STONE PARK BLVD, SIOUX CITY, IA 511043734",
+        "practice_location_type": "MAIN/PRIMARY HOSPITAL LOCATION"
+      }
+    ],
+    "interpretation": "The live CMS Hospital Enrollments API currently returns no row for legacy CCN 160153 and one current row for parent CCN 160146. This strengthens the acquisition/renaming transition lead, but the endpoint exposes no effective termination or merger date; absence is not treated as proof of termination and the shared MRF is not assigned to 160153."
+  },
+  "limitation": "The current state directory lists Downtown under 160146 and former name MercyOne Siouxland, but this does not independently prove when or whether 160153 terminated. The shared file declares 801 15th St, whereas the roster, state directory and first-party page say 801 5th St. Only 262,144 bytes of the file were retained. Do not assign the parent file to 160153 as a clean match."
+}

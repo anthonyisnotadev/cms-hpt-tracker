@@ -1,0 +1,24 @@
+{
+  "ccns": ["380005", "380018"],
+  "observed_at": "2026-09-17T20:18:00.000Z",
+  "source_page": "https://impact.asante.org/community-connections-asante-presents-at-ashland-rotary-meeting/",
+  "source_title": "Community connections: Asante presents at Ashland Rotary meeting",
+  "published_on": "2026-07-24",
+  "observations": [
+    "Asante states that the hospital license for Ashland Community Hospital was closed as a strategic decision while the campus remains open.",
+    "Asante states that Asante Ashland transitioned to a satellite campus of Rogue Regional Medical Center effective May 22, 2026.",
+    "The page lists continuing emergency, imaging, cardiopulmonary, laboratory, and outpatient-surgery services at Asante Ashland."
+  ],
+  "interpretation": "This current first-party page corroborates the state-license parent/satellite transition and continued campus operations. It does not establish an effective-dated Medicare CCN termination or prove that Rogue Regional's pointer-declared MRF covers the Ashland campus.",
+  "latest_web_recheck": {
+    "observed_at": "2026-09-19T02:47:00Z",
+    "source_page": "https://www.asante.org/Locations/location-detail/asante-ashland/",
+    "http_status": 200,
+    "facility_address": "280 Maple St., Ashland, OR 97520",
+    "parent_relationship": "Asante Ashland is a satellite campus of Rogue Regional Medical Center",
+    "current_services_observed": ["Emergency Services", "Imaging Services", "Lab Services", "General Surgery"],
+    "parent_insurance_scope_observed": true,
+    "result": "Current Asante location page independently confirms the active satellite campus and parent relationship; no Medicare CCN effective date or MRF coverage discriminator was exposed."
+  },
+  "next_action": "Obtain effective-dated CMS CCN status and inspect Rogue Regional's current MRF contents for explicit Ashland campus identity before changing either CCN's unresolved disposition."
+}

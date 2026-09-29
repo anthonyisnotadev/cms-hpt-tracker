@@ -1,0 +1,18 @@
+{
+  "ccn": "111314",
+  "hospital_name": "LIFEBRITE COMMUNITY HOSPITAL OF EARLY",
+  "state": "GA",
+  "observed_at": "2026-09-20T22:00:00Z",
+  "official_domain": "https://lifebriteearly.com/",
+  "browser_final_url": "https://lifebritestokes.com/",
+  "browser_observation": "The in-app browser redirected the Early facility domain to lifebritestokes.com, which displayed a generic hosting error page; no Early/Blakely pricing bytes were available.",
+  "bounded_observations": [
+    { "url": "https://lifebriteearly.com/", "status": 403 },
+    { "url": "https://lifebriteearly.com/cms-hpt.txt", "status": 404 },
+    { "url": "https://lifebriteearly.com/standard-charges", "status": 404 },
+    { "url": "https://lifebritestokes.com/", "status": 403 },
+    { "url": "https://lifebritestokes.com/cms-hpt.txt", "status": 403 }
+  ],
+  "disposition": "official-domain-redirects-to-sibling-facility-and-no-current-early-mrf-bytes",
+  "next_action": "Obtain a corrected Early/Blakely publisher domain or direct first-party pointer/file; verify exact identity, Blakely address, Georgia state, date, version and usability before promotion. Do not borrow the Stokes sibling route or infer file absence/noncompliance from access errors."
+}

@@ -1,0 +1,30 @@
+{
+  "ccn":"010024",
+  "pointer_url":"https://www.jackson.org/cms-hpt.txt",
+  "pointer_http_status":200,
+  "pointer_sha256":"203d26e08d92668f612d0c5f8213ec24d46dc611ee3ee5d20795ff45c625c1a7",
+  "pointer_declared_location":"Jackson Hospital",
+  "pointer_mrf_filename":"63-6001820_Jackson-Hospital_standardcharges.csv",
+  "pointer_target_http_status":403,
+  "page_file_url":"https://cdn.accureg.net/trans/jackson/63-6001820_Jackson-Hospital_standardcharges.csv",
+  "page_file_http_status":200,
+  "page_file_bytes":40062025,
+  "page_file_sha256":"14f00f5cf4c04ebfa0d0fd4fd7f96cb2097b1478be71a2eb5d9f13dce6da56d4",
+  "declared_hospital_name":"Jackson Hospital",
+  "declared_location_name":"Jackson Hospital",
+  "declared_address":"1725 Pine St, Montgomery, AL 36106",
+  "declared_state":"AL",
+  "declared_date":"2026-06-23",
+  "version":"3.0.0",
+  "latest_pointer_recheck": {
+    "observed_at": "2026-09-19T11:20:02Z",
+    "pointer_http_status": 200,
+    "pointer_content_length": 435,
+    "pointer_last_modified": "2026-02-24T16:55:43Z",
+    "pointer_sha256": "203d26e08d92668f612d0c5f8213ec24d46dc611ee3ee5d20795ff45c625c1a7",
+    "pointer_target_http_status": 403,
+    "pointer_target_error": "AuthorizationFailure",
+    "result": "The official pointer is unchanged and still names the signed Azure target; the exact target remains unauthorized while the same-name AccuReg CDN file remains separately retrievable. No pointer-linked promotion was made."
+  },
+  "next_action":"Publisher should repair or replace the signed pointer target; retain the same-name CDN file as separately retrieved page/portal evidence until exact pointer-target bytes are accessible."
+}

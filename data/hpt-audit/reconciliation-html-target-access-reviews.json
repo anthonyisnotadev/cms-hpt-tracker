@@ -1,0 +1,25 @@
+{
+  "method": "Dated browser and first-party-page observations for exact HTML-header queue targets. These are access/linkage reviews, not MRF validity or compliance findings. Target hashes bind each review to the original header URL and prevent reuse after a pointer change.",
+  "observations": [
+    {
+      "ccn": "530002",
+      "pointer_url": "https://www.cchwyo.org/cms-hpt.txt",
+      "target_sha256": "5c80250f7faf6154664a44e723a990d6915e5159dec052682869a2330f20ae77",
+      "observed_at": "2026-09-16T09:38:25Z",
+      "review_status": "reviewed-current-pointer-linkage-unverified",
+      "official_page": "https://www.cchwyo.org/resources/as-our-patient/paying-for-care/",
+      "observation": "The live first-party page labels a machine-readable file updated 2025-12-08 and links a CSV-shaped cchwyo.org documents URL, but its visible link text is pointer metadata. The link click did not expose verifiable CSV bytes in this browser. The current root cms-hpt.txt was access-denied in the bounded client and browser in the prior dated review, so the historical URL-defense pointer target cannot be treated as a current root-pointer declaration.",
+      "next_action": "Recover the current root pointer and exact first-party file through a materially different download-capable route or after a publisher change. Compare current pointer target and file bytes before any row promotion."
+    },
+    {
+      "ccn": "450241",
+      "pointer_url": "https://fchtexas.com/cms-hpt.txt",
+      "target_sha256": "d37d18a04a944d145aa879b6acf5ae9a6033018a418201d8ca85a58255275ff0",
+      "observed_at": "2026-09-16T09:38:25Z",
+      "review_status": "reviewed-pricer-app-shell-no-csv-proof",
+      "official_page": "https://www.fchtexas.com/",
+      "observation": "The live hospital homepage footer labels an uppercase .CSV variant of the Sliced Health /pricer/ URL as Price Transparency. The lowercase .csv URL declared by the current root pointer returned an HTML app shell to the bounded client and previously rendered a procedure-search app in the browser; navigating to the exact uppercase footer link was blocked by this browser. No CSV bytes, facility metadata or update date were recovered from either link.",
+      "next_action": "Use a genuinely download-capable route or a changed first-party link to recover CSV bytes and facility/date metadata from Faith's exact current pointer target. Keep the existing date-unverified finding; do not call the HTML app shell an invalid MRF."
+    }
+  ]
+}

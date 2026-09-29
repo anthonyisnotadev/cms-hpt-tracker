@@ -1,0 +1,22 @@
+{
+  "record": {
+    "ccn": "281326",
+    "observed_at": "2026-09-18T23:58:00Z",
+    "official_site": "https://www.amhne.org/",
+    "official_site_http_status": 200,
+    "official_site_bytes": 85735,
+    "official_site_sha256": "6617815d66c68e9b9dacf0222120311b6546510e8714b6a0fb28dee08b411dfd",
+    "identity": "Antelope Memorial Hospital, 102 W. 9th Street, Neligh, Nebraska 68756.",
+    "browser_scope_result": "The current first-party homepage/footer exposes a Price Transparency link to a YourCareEverywhere price-estimator page, not a hospital MRF download. The guessed Price_Transparency CMS page path returns 404; the existing cms-hpt.txt pointer remains the only exact MRF route and its S3 target remains access-denied.",
+    "price_estimator_url": "https://www.yourcareeverywhere.com/content/medhost/your-care-everywhere/pricing-estimator-page.html?facility_id=0ddc7794-d4a3-4d17-a674-9187af28aea6&sub=For%20Patients",
+    "disposition": "current-official-site-estimator-only-pointer-file-access-unresolved",
+    "next_action": "Use a materially different authorized route or publisher-corrected archive access for the pointer-declared ZIP; do not treat the estimator as an MRF or infer file absence from the S3 403.",
+    "latest_browser_recheck": {
+      "observed_at": "2026-09-19T11:32:07Z",
+      "browser_url": "https://www.amhne.org/",
+      "result": "Current first-party homepage rendered successfully and its Price Transparency footer link still targets the YourCareEverywhere estimator for facility_id 0ddc7794-d4a3-4d17-a674-9187af28aea6; no MRF download was exposed in the rendered link tree.",
+      "evidence_role": "official-site-scope-recheck only; not MRF bytes or CMS pointer replacement",
+      "disposition": "retain-unresolved-pointer-access"
+    }
+  }
+}

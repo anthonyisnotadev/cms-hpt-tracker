@@ -1,0 +1,15 @@
+{
+  "ccn": "300019",
+  "observed_at": "2026-09-21T19:35:00Z",
+  "official_domain": "www.cheshiremed.org",
+  "official_site": "https://www.cheshiremed.org/patients-visitors/charges-for-services",
+  "candidate_file_url": "https://www.cheshiremed.org/02-0354549_Cheshire%20Medical%20Center_standardcharges.zip",
+  "candidate_file_format": "ZIP",
+  "retrieval_method": "official pricing-page inspection and bounded direct-file probe",
+  "transport_result": "The official Cheshire Medical Center charges page links the exact ZIP, but the bounded direct-file probe could not retrieve ZIP bytes in the current client; the browser/search fetch reported unsupported application/zip content and the interactive browser could not resolve the www host. No file hash, declared date, CMS template or usable rows were asserted.",
+  "browser_status": "ERR_NAME_NOT_RESOLVED",
+  "facility_identity_observation": "The official page identifies Cheshire Medical Center and the candidate filename carries the facility name and EIN-like identifier; roster identity remains Cheshire Medical Center, Keene, NH. Exact file metadata is not yet independently verified.",
+  "disposition": "official-page-file-linkage-byte-retrieval-pending",
+  "interpretation": "This is a first-party page-linked file observation, not a verified MRF claim. The ZIP is not promoted until bytes and declared identity/metadata are independently checked.",
+  "next_action": "Retrieve the exact ZIP through a permitted download-capable route, inspect its contents and CMS metadata, and separately retry the root cms-hpt.txt pointer for Cheshire Medical Center."
+}

@@ -1,0 +1,17 @@
+{
+  "ccn": "374008",
+  "observed_at": "2026-09-21T21:30:00Z",
+  "official_pricing_page": "https://www.oklahoma.gov/odmhsas/about/odmhsas-facilities.html",
+  "official_pricing_page_status": 200,
+  "official_page_observation": "The current first-party Oklahoma Department of Mental Health and Substance Abuse Services facilities page lists Jim Taliaferro Community Mental Health Center in Lawton, Oklahoma and its satellite locations. It does not expose a CMS CSV/JSON MRF or cms-hpt.txt pointer.",
+  "cms_pointer_url": "https://oklahoma.gov/cms-hpt.txt",
+  "cms_pointer_result": "The exact Oklahoma.gov root pointer route returned a first-party 404 Not Found page in the permitted browser; this is recorded as an access observation only.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=374008&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6832,
+  "cms_api_response_sha256": "40599C7545A5EDD5B4D770BD290984F74C429DC8AD13A2D2D406DEC9F0452C17",
+  "cms_record": { "facility_id": "374008", "facility_name": "JIM TALIAFERRO COMM MENTAL HEALTH CTR", "address": "602 SOUTHWEST 38TH STREET", "citytown": "LAWTON", "state": "OK", "zip_code": "73505", "hospital_type": "Psychiatric", "hospital_ownership": "Government - State", "emergency_services": "No" },
+  "disposition": "official-identity-page-pointer-404-no-mrf-observed",
+  "interpretation": "The official state page and CMS independently confirm facility identity and address. The pointer 404 is a transport/page observation only; it does not establish file absence or noncompliance, and no promotion was made.",
+  "next_action": "Locate a current facility-specific CMS pointer or MRF through a permitted publisher route and verify declared name, Lawton address/state, date, version and usability before changing the tracker disposition."
+}

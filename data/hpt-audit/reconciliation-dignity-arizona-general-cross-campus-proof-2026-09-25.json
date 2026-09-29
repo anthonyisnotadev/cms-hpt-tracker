@@ -1,0 +1,43 @@
+{
+  "observed_at": "2026-09-25T20:30:00Z",
+  "official_pricing_page": "https://www.commonspirit.org/patient-resources/dignity-health-arizona-price-transparency",
+  "official_page_observation": "The current CommonSpirit page separately lists Arizona General Hospital Mesa and Arizona General Hospital Laveen standard-charge files.",
+  "records": [
+    {
+      "ccn": "030136",
+      "roster_campus": "DIGNITY HEALTH - ARIZONA GENERAL HOSPITAL, LAVEEN, AZ",
+      "assigned_file_url": "https://www.commonspirit.org/content/dam/commonspiritorg/en/dharz/ceaz/finance/price-transparency/383990879-1689121188_agh-mesa-llc_standardcharges.json",
+      "file_status": 200,
+      "file_total_bytes": 28384197,
+      "file_sample_bytes": 32856,
+      "file_sample_sha256": "052dd8d2592b178c1a04a351b4d1f4f56aa02852cd05327387f60484e26a62cf",
+      "declared_name": "AGH MESA LLC",
+      "declared_location": "Arizona General Hospital - Mesa Hospital",
+      "declared_address": "9130 E Elliot Rd, Mesa, AZ 85212",
+      "declared_date": "2026-02-28",
+      "declared_version": "3.0.0",
+      "declared_npi": "1689121188",
+      "declared_license": "H9245|AZ",
+      "finding": "cross-campus-file-mismatch; do-not-swap-without-exact-pointer-entry"
+    },
+    {
+      "ccn": "030139",
+      "roster_campus": "DIGNITY HEALTH ARIZONA GENERAL HOSPITAL, MESA, AZ",
+      "assigned_file_url": "https://www.commonspirit.org/content/dam/commonspiritorg/en/dharz/ceaz/finance/price-transparency/471587223-1154748416_agh-laveen-llc_standardcharges.json",
+      "file_status": 200,
+      "file_total_bytes": 28384094,
+      "file_sample_bytes": 32856,
+      "file_sample_sha256": "a988adaf8a767c71f394586b8cec4febbe07cef263b931ca4cc37593dd75cb9e",
+      "declared_name": "AGH LAVEEN LLC",
+      "declared_location": "Arizona General Hospital - Laveen Hospital",
+      "declared_address": "7171 S 51st Ave, Phoenix, AZ 85339",
+      "declared_date": "2026-02-28",
+      "declared_version": "3.0.0",
+      "declared_npi": "1154748416",
+      "declared_license": "H6937|AZ",
+      "finding": "cross-campus-file-mismatch; do-not-swap-without-exact-pointer-entry"
+    }
+  ],
+  "effect": "cross-campus-attribution-discrepancy-confirmed; no automatic reassignment",
+  "next_action": "Recover and parse the exact CommonSpirit pointer entries, then reconcile each CCN to its own campus file and preserve the displaced assignment as history."
+}

@@ -1,0 +1,20 @@
+{
+  "ccn": "670781",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "roster_identity": {
+    "name": "ANSON GENERAL HOSPITAL",
+    "address": "101 AVENUE J",
+    "city": "ANSON",
+    "state": "TX",
+    "zip": "79501"
+  },
+  "official_domain": "https://ansongeneralhospital.com/",
+  "official_page_url": "https://ansongeneralhospital.com/",
+  "official_page_observation": "The current first-party homepage identifies Anson General Hospital at 101 Avenue J, Anson, TX 79501 and links Price Transparency to the hospital-specific Boomi flow.",
+  "pricing_portal_url": "https://us.flow-prod.boomi.com/f2a4d421-8a52-4b09-8a4c-8476aae2d651/play/ptt?flow-id=55c677ad-57f7-4e47-b22f-19d1bb1871bd&flow-version-id=b8a8e92e-d9f0-4528-8ac1-ea41bc658ef9&hospital-id=38",
+  "browser_observation": "The permitted browser rendered the provider disclaimer and a Standard Charges selector listing Anson General Hospital and Anson Family Wellness Clinic. The Anson General Hospital row exposed Tall CSV and Wide CSV controls; activating Tall CSV opened a Box-hosted download response, but this client did not expose the downloaded bytes or a stable direct MRF URL for bounded identity and metadata validation.",
+  "pointer_observation": "Direct browser retrieval of https://ansongeneralhospital.com/cms-hpt.txt and /.well-known/cms-hpt.txt was not accessible through this client.",
+  "disposition": "official-pricing-portal-file-download-observed-but-mrf-bytes-unavailable",
+  "interpretation": "This narrows the discovery gap and confirms a current first-party pricing portal with a facility-specific standard-charges control, but it is not evidence of the file's identity, schema or freshness. No third-party or sibling file was assigned and no compliance conclusion was inferred.",
+  "next_action": "Capture the Box download bytes or a stable direct file URL through an interactive browser/download-capable client, then validate facility name, address, state, NPI/license, CMS version, last_updated_on and attestation before promotion."
+}

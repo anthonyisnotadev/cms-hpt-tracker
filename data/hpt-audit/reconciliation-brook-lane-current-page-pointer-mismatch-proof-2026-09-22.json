@@ -1,0 +1,19 @@
+{
+  "ccn": "214003",
+  "observed_at": "2026-09-22T02:45:00Z",
+  "official_pricing_page": "https://www.brooklane.org/for-patients/cms-price-transparency/",
+  "official_page_status": 200,
+  "official_page_observation": "The current Brook Lane CMS Price Transparency page identifies Brook Lane Health Services at 13121 Brook Lane, Hagerstown, MD 21742, says charges are as of January 1, 2026, and links CSV, TXT and CMS-HPT-TXT resources.",
+  "page_csv_url": "https://www.brooklane.org/wp-content/uploads/2026/06/52-0698850_BrookLaneHealthServices_standardcharges_06102026.csv",
+  "page_csv_observation": "The exact current-page CSV target was exposed, but bounded retrieval returned a cache miss and no bytes.",
+  "root_pointer_url": "https://www.brooklane.org/cms-hpt.txt",
+  "root_pointer_status": 200,
+  "root_pointer_observation": "The root pointer is readable and names Brook Lane Health Services, the current pricing page, and an older April 2026 CSV target.",
+  "root_pointer_mrf_url": "https://www.brooklane.org/wp-content/uploads/2026/04/52-0698850_BrookLaneHealthServices_standardcharges.csv",
+  "candidate_file_format": "CSV",
+  "roster_identity": "BROOK LANE HEALTH SERVICES",
+  "roster_address": "13121 BROOK LANE, HAGERSTOWN, MD 21742",
+  "disposition": "official-page-current-file-root-pointer-date-mismatch-access-unresolved",
+  "interpretation": "New facility-specific page and readable root-pointer evidence, but the current page CSV and root-pointer CSV differ and neither file body was recovered in the bounded run. No current verification claim is promoted.",
+  "next_action": "Retrieve both exact CSV targets through an authorized or streaming route, compare bytes and declared name/address/Maryland state/date/version, then reconcile which URL is current before promotion."
+}

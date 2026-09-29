@@ -1,0 +1,27 @@
+{
+  "ccn": "400115",
+  "observed_at": "2026-09-22T14:30:00Z",
+  "official_domain": "wilmamed.com",
+  "official_facility_page": "https://www.wilmamed.com/",
+  "official_page_status": 200,
+  "official_facility_name": "Centro Medico Wilma N. Vazquez",
+  "official_facility_observation": "The first-party Sistema de Salud Wilma N. Vázquez site identifies the Wilma N. Vázquez health system and describes emergency facilities in Vega Baja, Dorado and Vega Alta. No price-transparency or CMS MRF link is exposed on the public homepage.",
+  "route_checks": [
+    {
+      "url": "https://www.wilmamed.com/cms-hpt.txt",
+      "status": 404
+    },
+    {
+      "url": "https://www.wilmamed.com/price-transparency",
+      "status": 404
+    },
+    {
+      "url": "https://www.wilmamed.com/transparencia-de-precios",
+      "status": 404
+    }
+  ],
+  "manual_identity_gate": "official-first-party-site-name-system-region-agree",
+  "disposition": "pointer-discovery-incomplete",
+  "interpretation": "The official site confirms the Wilma N. Vázquez system and regional facilities, but no public facility-specific CMS pointer or MRF was recovered. No compliance, exemption or file-absence conclusion is inferred.",
+  "next_action": "Search the Wilma N. Vázquez system’s facility-specific publisher resources and retry for a public CSV/JSON/ZIP MRF or cms-hpt.txt pointer."
+}

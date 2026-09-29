@@ -1,0 +1,30 @@
+{
+  "audit_id": "reconciliation-adventist-bakersfield-cms-release-currentness-review-2026-09-28",
+  "observed_at": "2026-09-28T14:33:00Z",
+  "ccn_investigated": ["050455", "050724"],
+  "purpose": "Determine whether a CMS Hospital Enrollments release newer than the August 2026 file used in the Bakersfield NPI/file-scope review is available, and bound what repeat retrieval could add.",
+  "source": {
+    "cms_dataset_page": "https://data.cms.gov/provider-characteristics/hospitals-and-other-facilities/hospital-enrollments",
+    "cms_catalog_resource": "https://catalog.data.gov/dataset/hospital-enrollments",
+    "dataset_frequency": "Monthly",
+    "cms_page_latest_data_available": "May 2026",
+    "catalog_latest_resource": "Hospital Enrollments : 2026-08-01",
+    "catalog_last_checked": "2026-09-10T20:33:00Z",
+    "catalog_dataset_last_updated": "2026-08-17",
+    "latest_csv_url": "https://data.cms.gov/sites/default/files/2026-08/bcf5ccda-1482-4c43-8198-de1efa2f83c8/Hospital_Enrollments_2026.07.31.csv",
+    "latest_csv_sha256_from_existing_complete_retrieval": "b62b961e03f90c5513b8b6a3e597fb871e42afb62960c757b82899539017000c",
+    "latest_csv_bytes_from_existing_complete_retrieval": 2516958
+  },
+  "existing_record_comparison": {
+    "proof_file": "reconciliation-adventist-bakersfield-cms-current-enrollment-crosscheck-2026-09-28.json",
+    "npi_1538157508": "The latest release contains active enrollment CCN 050455 at 2615 Chester Avenue.",
+    "npi_1609856947": "No row was found in that release for this NPI, CCN 050724, or 3001 Sillect; nonappearance is not termination evidence.",
+    "publisher_pointer_file": "The exact current pointer target still declares NPI 1538157508 and NPI 1609856947 at 3001 Sillect, CMS 3.0.0, dated 2026-07-29; complete file SHA-256 is retained in the linked NPI/header proof.",
+    "publisher_portal": "Current portal logic routes both main and Specialty Bakersfield Standard Charges labels to dbAHBBAKERSFIELDCA; no distinct main-campus 2615 Chester target is exposed."
+  },
+  "result": "A read-only CMS catalog/page search found no enrollment release newer than the already-reviewed August 2026 resource as of this observation. The existing complete August release remains the newest identified CMS evidence. The 2026 pointer-file NPI/address contradiction and separate historical 050724 identity remain unresolved.",
+  "evidence_classification": "bounded-source-freshness recheck; no new facility or MRF evidence",
+  "disposition_changed": false,
+  "cohort_count_effect": 0,
+  "next_action": "Do not repeat the same CMS enrollment retrieval until CMS posts a newer release. Seek a publisher-corrected pointer/MRF or authoritative, dated publisher documentation mapping each NPI, location row, and file to exact CCN scope; keep 050455 and 050724 separate meanwhile."
+}

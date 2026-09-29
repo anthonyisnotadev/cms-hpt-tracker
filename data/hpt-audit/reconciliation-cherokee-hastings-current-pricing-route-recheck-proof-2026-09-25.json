@@ -1,0 +1,19 @@
+{
+  "ccn": "370171",
+  "observed_at": "2026-09-25T00:00:00Z",
+  "official_facility_page": "https://health.cherokee.gov/health-center-and-hospital-locations/inpatient-care/",
+  "facility_page_http_status": 200,
+  "facility_page_bytes": 401631,
+  "facility_page_sha256": "74413ffbca37b2e000da1c7fe806b29da5b528fe5e99b1e33bc6d1a31e7bebd6",
+  "facility_page_observation": "The current Cherokee Nation inpatient-care page identifies Cherokee Nation W. W. Hastings Hospital at 19780 East Ross Street, Tahlequah, OK 74464 and does not expose a CMS MRF link.",
+  "official_registration_page": "https://cherokee.gov/departments/health-services/patient-registration/",
+  "registration_page_http_status": 200,
+  "pricing_route": "https://cherokee.gov/media/vaynmzpr/full_file_pricing_transparency.pdf",
+  "pricing_route_http_status": 200,
+  "pricing_route_bytes": 996402,
+  "pricing_route_sha256": "fa563843ae5c0b5928278c9eff86ca25512922ea3ac14c29a44b9004241e882b",
+  "pricing_route_observation": "The current first-party registration page links a PDF labeled Health Services Price Transparency. This is a consumer-facing PDF route, not a parsed CMS CSV/JSON MRF; no MRF metadata was promoted.",
+  "disposition": "official-current-identity-and-consumer-pricing-route-reconfirmed-mrf-unresolved",
+  "interpretation": "The current official page confirms the East Ross address variant and supplies a first-party pricing artifact, but it does not resolve the older 100 S Bliss roster variant or provide a facility-specific CMS machine-readable file. Tribal operation is not treated as an exemption.",
+  "next_action": "Confirm whether 19780 East Ross is the current hospital campus/administrative address against CMS enrollment, and obtain a facility-specific CMS CSV/JSON MRF or publisher confirmation before promotion."
+}

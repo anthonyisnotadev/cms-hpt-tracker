@@ -1,0 +1,40 @@
+{
+  "ccn": "061328",
+  "hospital_name": "Pagosa Springs Medical Center",
+  "observed_at": "2026-09-19T08:00:00Z",
+  "official_site": "https://www.pagosaspringsmedicalcenter.org/",
+  "official_identity_sources": [
+    "https://www.pagosaspringsmedicalcenter.org/",
+    "https://www.pagosaspringsmedicalcenter.org/patients-visitors/patient-and-visitor-guide/financial-transparency/"
+  ],
+  "official_identity": "Pagosa Springs Medical Center, 95 South Pagosa Boulevard, Pagosa Springs, CO 81147, CCN 061328",
+  "official_pricing_page": "https://pagosaspringsmedicalcenter.pg.revenuemasters.com/disclaimer",
+  "official_page_linkage": "The official site's Financial Transparency quick link redirects to the Pagosa Springs Revenue Masters portal, whose disclaimer exposes the hospital-charge and shoppable CSV downloads.",
+  "portal_url": "https://pagosaspringsmedicalcenter.pg.revenuemasters.com/disclaimer",
+  "portal_browser_status": "official-portal-rendered",
+  "mrf_url": "https://pagosaspringsmedicalcenter.pg.revenuemasters.com/cdm-files/PAGOSA%20CDM%20FILE%20%283%29-updated.csv",
+  "mrf_http_status": 200,
+  "mrf_content_type": "text/plain; charset=UTF-8",
+  "mrf_total_bytes": 15142488,
+  "mrf_sha256": "10D9E335BCB68F738E1616517CA2C4205ACCDF9D54089622C081832CECCF835C",
+  "mrf_range_bytes": 262144,
+  "mrf_range_sha256": "EEC6E024EC6B4AD84C1CF4F4CE860A0D8BC4CDB3D66CBA7D0515EEE644BB78A4",
+  "mrf_last_modified": "2026-09-08T15:45:18Z",
+  "mrf_declared_date": "2026-09-08",
+  "mrf_declared_version": "3.0.0",
+  "mrf_declared_location": "Pagosa Springs Medical Center",
+  "mrf_declared_address": "95 S Pagosa Blvd Pagosa Springs, CO 81147",
+  "mrf_declared_license": "840866061",
+  "mrf_rows": 8931,
+  "shoppable_file_url": "https://pagosaspringsmedicalcenter.pg.revenuemasters.com/shoppable-files/840866061_pagosa-springs-medical-center_shoppable.csv",
+  "shoppable_file_total_bytes": 553426,
+  "pointer_url": "https://www.pagosaspringsmedicalcenter.org/cms-hpt.txt",
+  "pointer_browser_status": "official-404-page",
+  "search_observations": [
+    "The official site identifies the Pagosa Springs facility at 95 South Pagosa Boulevard and links Financial Transparency.",
+    "The portal disclaimer identifies Pagosa Springs Medical Center at the same address and links the hospital-charge CSV. The complete file declares 2026-09-08, CMS version 3.0.0, the same address and license/EIN, and includes attestation and standard-charge columns.",
+    "The exact root cms-hpt.txt route renders the official Pagosa Springs 404 page; this pointer observation is kept separate from the working page-linked portal MRF."
+  ],
+  "disposition": "official-page-linked-portal-current-mrf-identity-and-metadata-confirmed-pointer-404",
+  "next_action": "Validate the complete CSV against the current CMS schema/usability checks and retain the root-pointer 404 as a separate observation before considering promotion."
+}

@@ -1,0 +1,28 @@
+{
+  "ccn": "444007",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "roster_identity": {
+    "name": "ROLLING HILLS PSYCHIATRIC HOSPITAL",
+    "address": "2014 Quail Hollow Circle, Franklin, TN 37067"
+  },
+  "official_domain_checked": "https://www.rollinghillshospital.com/",
+  "official_pricing_page": "https://www.rollinghillshospital.com/admissions/insurance-payment/price-transparency/",
+  "page_observation": "The accessible Rolling Hills price-transparency page links a machine-readable CSV, but the page footer identifies 1000 Rolling Hills Lane, Ada, OK 74820 rather than the CMS 444007 Franklin, Tennessee facility.",
+  "file_url": "https://www.rollinghillshospital.com/wp-content/uploads/pricing/2026/217/20-5629197_Rolling-Hills-_LLC__standardcharges.csv",
+  "file_status": 206,
+  "file_content_type": "text/csv",
+  "file_content_length": 10976104,
+  "file_last_modified": "2026-01-01T10:34:39Z",
+  "file_prefix_bytes": 65536,
+  "file_prefix_sha256": "a48aee3721b95a7b50bef706e8ad89c473e45cd1cbd4dbd90d212120c6f3b503",
+  "declared_hospital_name": "Rolling Hills Hospital, LLC",
+  "declared_address": "1000 Rolling Hills Lane, Ada, OK 74820",
+  "declared_license": "license_ 2319 | OK",
+  "declared_npi": "1720085175",
+  "declared_last_updated": "2025-12-31",
+  "cms_template_version": "3.0.0",
+  "attestation_observed": true,
+  "disposition": "official-page-file-different-facility-no-assignment",
+  "interpretation": "A current structured file is accessible from a Rolling Hills-branded page, but its declared Oklahoma identity conflicts with CCN 444007's Franklin, Tennessee roster identity. The file is retained as a cross-facility exclusion and is not assigned to this CCN; no compliance conclusion is inferred.",
+  "next_action": "Locate the Tennessee operator's current first-party pricing page or obtain a publisher-confirmed CCN 444007 MRF; verify the exact Franklin address, Tennessee metadata and CMS file identity before promotion."
+}

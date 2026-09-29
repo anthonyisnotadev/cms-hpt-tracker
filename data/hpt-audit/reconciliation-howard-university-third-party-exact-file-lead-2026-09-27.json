@@ -1,0 +1,53 @@
+{
+  "ccn": "090003",
+  "observed_at": "2026-09-27T23:41:38Z",
+  "status": "complete publisher-hosted file downloaded and hash-bound; material identity/scope conflict; no CCN attribution",
+  "official_facility_identity": {
+    "source": "Howard University official site search result",
+    "url": "https://howard.edu/",
+    "hospital_name": "Howard University Hospital",
+    "address": "2041 Georgia Avenue NW, Washington, DC 20060"
+  },
+  "third_party_page": {
+    "url": "https://getpricecheck.com/cost/washington-dc/office-visit-new/howard/",
+    "rendered_page_claim": "Howard University Hospital Corp; 2041 Georgia Avenue NW, Washington, DC 20060; CMS-template v3.0.0; file date 2025-12-31; last verified by PriceCheck 2026-07-24.",
+    "raw_file_link_text": "source file",
+    "raw_file_url": "https://huhealthcare.com/app/files/public/2468f97e-c2b9-47d0-bc38-6237cb34b215/87-3454381_HowardUniversityHospital_StandardCharges.csv",
+    "limitation": "The facility identity, date, template version, and price figures are displayed by a third party. The link targets the hospital's own domain and a correctly shaped hospital MRF filename, but its contents and CMS pointer linkage are unverified."
+  },
+  "bounded_requests": [
+    {
+      "url": "https://huhealthcare.com/cms-hpt.txt",
+      "requested": "GET; expected small root pointer",
+      "http_status": 403,
+      "content_type": "text/html",
+      "response_bytes": 391,
+      "response_sha256": "53b8b8d3bd9249a57a1df3fc45cbf3087a5df2fae513ca4526c7ab4515f45217",
+      "result": "Access-denied HTML; no pointer content retrieved."
+    },
+    {
+      "url": "https://huhealthcare.com/app/files/public/2468f97e-c2b9-47d0-bc38-6237cb34b215/87-3454381_HowardUniversityHospital_StandardCharges.csv",
+      "requested": "Range bytes=0-65535",
+      "http_status": 403,
+      "content_type": "text/html",
+      "response_bytes": 529,
+      "response_sha256": "8a736494bee8e653c0c6cc395cdae03c422b7162e2347b2ddf1fdabede3c5e14",
+      "result": "Access-denied HTML; no CSV bytes or MRF metadata retrieved."
+    }
+  ],
+  "complete_browser_download_review": {
+    "proof_file": "reconciliation-howard-university-downloaded-file-review-2026-09-27.json",
+    "complete_file_downloaded": true,
+    "bytes": 18190345,
+    "sha256": "7c68cb46b442363fdb3fb9928b51fac4dce8998ae03b701cd3347483c16471fe",
+    "pricing_rows": 109782,
+    "columns_per_pricing_row": 22,
+    "all_rows_have_some_negotiated_or_min_max_amount": true,
+    "dc_address_vs_md_license_and_maryland_narrative_conflict": true,
+    "official_pointer_mapping_obtained": false,
+    "publisher_scope_confirmation_obtained": false
+  },
+  "new_evidence_gain": "The exact hospital-hosted CSV is now downloaded in full through its rendered source-page link, SHA-256 bound, and parsed: 109,782 pricing rows, 22 columns, no malformed row widths, and price amounts present. Its metadata declares a Washington DC address but a Maryland license header and Maryland HSCRC rate-setting narrative, creating a material facility/scope conflict.",
+  "disposition_effect": "No CCN attribution or verification promotion: keep 090003 pointer-not-retrieved until an official pointer mapping or publisher scope confirmation resolves the MD/DC conflict. No prices imported.",
+  "next_action": "Seek an official CMS pointer mapping or publisher confirmation that this exact file belongs to the DC hospital and explanation/correction of the MD license and HSCRC narrative. Do not retry unchanged blocked routes or attribute this file from its name/address alone."
+}

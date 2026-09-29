@@ -1,0 +1,83 @@
+{
+  "ccns": ["250043", "251340"],
+  "observed_at": "2026-09-27T18:38:12Z",
+  "source": {
+    "name": "CMS Provider of Services File - QIES",
+    "dataset_page": "https://data.cms.gov/provider-characteristics/hospitals-and-other-facilities/provider-of-services-file-quality-improvement-and-evaluation-system",
+    "dataset_release": "Q1 2026",
+    "dataset_version_id": "bb342fae-b551-40fd-a738-e2e5878f3bbb",
+    "api_root": "https://data.cms.gov/data-api/v1/dataset/bb342fae-b551-40fd-a738-e2e5878f3bbb/data",
+    "cms_description": "The POS QIES dataset includes provider demographic and associated certification information, including CCN, name and address.",
+    "field_layout_source": "https://data.cms.gov/sites/default/files/2022-10/58ee74d6-9221-48cf-b039-5b7a773bf39a/Layout%20Sep%2022%20Other.pdf",
+    "field_layout_note": "The CMS layout describes CROSS_REF_PROVIDER_NUMBER generically as a cross-reference provider number; this record does not interpret that field alone as proof of legal succession or MRF scope."
+  },
+  "exact_ccn_queries": [
+    {
+      "ccn": "250043",
+      "observed_at": "2026-09-27T18:38:11.478Z",
+      "url": "https://data.cms.gov/data-api/v1/dataset/bb342fae-b551-40fd-a738-e2e5878f3bbb/data?filter%5BPRVDR_NUM%5D=250043&size=5",
+      "http_status": 200,
+      "content_type": "application/json",
+      "response_bytes": 11763,
+      "response_sha256": "5a895362d792efdcd3e7fa6fd496822e2d111a507f21c052941f8ba5723968b5",
+      "row_count": 1,
+      "record_fields": {
+        "PRVDR_NUM": "250043",
+        "FAC_NAME": "NESHOBA COUNTY GENERAL HOSPITAL",
+        "ST_ADR": "1001 HOLLAND AVENUE",
+        "CITY_NAME": "PHILADELPHIA",
+        "STATE_CD": "MS",
+        "PRVDR_CTGRY_CD": "01",
+        "PRVDR_CTGRY_SBTYP_CD": "01",
+        "PGM_TRMNTN_CD": "07",
+        "TRMNTN_EXPRTN_DT": "20251231",
+        "CRTFCTN_DT": "20170920",
+        "CRTFCTN_ACTN_TYPE_CD": "5",
+        "CROSS_REF_PROVIDER_NUMBER": "251340",
+        "ELGBLTY_SW": "Y"
+      }
+    },
+    {
+      "ccn": "251340",
+      "observed_at": "2026-09-27T18:38:11.859Z",
+      "url": "https://data.cms.gov/data-api/v1/dataset/bb342fae-b551-40fd-a738-e2e5878f3bbb/data?filter%5BPRVDR_NUM%5D=251340&size=5",
+      "http_status": 200,
+      "content_type": "application/json",
+      "response_bytes": 11746,
+      "response_sha256": "e33aecd0338e05e0e7ec13224b269ac024506aea9c72f21b6d2570940c92b91c",
+      "row_count": 1,
+      "record_fields": {
+        "PRVDR_NUM": "251340",
+        "FAC_NAME": "NESHOBA COUNTY GENERAL HOSPITAL",
+        "ST_ADR": "1001 HOLLAND AVENUE",
+        "CITY_NAME": "PHILADELPHIA",
+        "STATE_CD": "MS",
+        "PRVDR_CTGRY_CD": "01",
+        "PRVDR_CTGRY_SBTYP_CD": "11",
+        "PGM_TRMNTN_CD": "00",
+        "TRMNTN_EXPRTN_DT": "",
+        "CRTFCTN_DT": "20170920",
+        "CRTFCTN_ACTN_TYPE_CD": "1",
+        "CROSS_REF_PROVIDER_NUMBER": "",
+        "ELGBLTY_SW": "Y"
+      }
+    }
+  ],
+  "same_version_bulk_query": {
+    "observed_at": "2026-09-27T18:38:12.120Z",
+    "url": "https://data.cms.gov/data-api/v1/dataset/bb342fae-b551-40fd-a738-e2e5878f3bbb/data?size=10000&column=PRVDR_NUM%2CFAC_NAME%2CCITY_NAME%2CSTATE_CD%2CST_ADR%2CPGM_TRMNTN_CD%2CTRMNTN_EXPRTN_DT%2CPRVDR_CTGRY_SBTYP_CD%2CORGNL_PRTCPTN_DT%2CCRTFCTN_ACTN_TYPE_CD",
+    "http_status": 200,
+    "content_type": "application/json",
+    "response_bytes": 1749912,
+    "response_sha256": "ec071b6364b9b023446caed01e7f1ddcc5e08678f857f980d83a469bdffb971b",
+    "row_count": 6500,
+    "contains_250043": false,
+    "contains_251340": false,
+    "comparison": "The bulk response hash exactly matches the previously retained 6,500-row response; both exact-filter rows remain omitted from that bulk result."
+  },
+  "response_retention": "Full CMS response bodies were consumed in memory and hashed; the exact row fields and hashes are retained here, but raw response bodies are not stored as separate files.",
+  "interpretation": "A fresh exact-filter request reproducibly returns the 250043 terminated row and the 251340 non-terminated row for the same Neshoba name/address. The exact-filter results do not disappear, while the exact same-hash 6,500-row bulk response omits both CCNs. This is a verified query-result discrepancy, not a negative status finding from the bulk omission. Together with the recorded termination date and cross-reference, it strengthens the dated CCN transition evidence but does not determine historical HPT applicability or identify which CCN the June 2026 shared-campus MRF serves.",
+  "disposition": "effective-dated-ccn-transition-supported-bulk-exact-query-asymmetry-reproduced-historical-hpt-coverage-unresolved",
+  "count_effect": "none",
+  "next_action": "Do not repeat unchanged QIES queries unless the CMS dataset version or data changes. Search only for dated pre-2025-12-31 pointer/MRF evidence for the historical 250043 period; retain the June 2026 campus file as separate current-period evidence and do not assign it to 250043 without publisher scope evidence."
+}

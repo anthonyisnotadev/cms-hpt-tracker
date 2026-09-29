@@ -1,0 +1,19 @@
+{
+  "ccn": "010005",
+  "observed_at": "2026-09-17T21:20:00.000Z",
+  "official_domain": "mmcenters.com",
+  "official_price_page": "https://mmcenters.com/charges",
+  "pointer_url": "https://mmcenters.com/cms-hpt.txt",
+  "pointer_observation": "The configured official domain did not resolve to this client (DNS no such host), so the root cms-hpt.txt could not be retrieved.",
+  "alternate_publisher_page": "https://pricetransparency.accureg.net/mmc",
+  "alternate_page_observation": "A browser-search result for the Marshall Medical Centers pricing page displays separate North and South files marked Updated 3/31/2026, but the page is an alternate publisher surface rather than a first-party pointer.",
+  "download_url": "https://cdn.accureg.net/trans/mmc/83-1651180_Marshall-Medical-Center-South_standardcharges.csv",
+  "download_observation": {
+    "bytes": 15724902,
+    "header": "Marshall Medical Center South, 2024-11-20, CMS 2.0.0, 2505 US Hwy 431, Boaz AL 35957, AL license",
+    "sha256": "not-retained-in-repository",
+    "interpretation": "The accessible alternate-publisher file is materially older than the alternate page's displayed 2026 update and is not treated as current pointer-linked evidence."
+  },
+  "status": "supported-uncertainty",
+  "next_action": "When mmcenters.com resolves through an authorized route, retrieve its exact root cms-hpt.txt and pointer-declared South file; verify current bytes, facility identity, date, version, and complete-file usability before changing the standing finding."
+}

@@ -1,0 +1,18 @@
+{
+  "ccn": "040069",
+  "hospital_name": "GREAT RIVER MEDICAL CENTER",
+  "roster_city": "BLYTHEVILLE",
+  "roster_state": "AR",
+  "official_domain": "mchsys.org",
+  "pointer_url": "https://www.mchsys.org/cms-hpt.txt",
+  "pointer_sha256": "c3676cd5b9de67fa2dcf6258b9c7f6e9250c8c81d1e7490f950d16cfbfb29b99",
+  "pointer_http_status": 200,
+  "pointer_location_name": "Great River Medical Center",
+  "mrf_url": "https://s3.amazonaws.com/ycubaa-production-marlin-1-charge-management-public/facilities/3da9ca85-20c5-41a0-bdcd-1c72cbc6cce2/716042625_MCHS-GREAT%20RIVER%20MEDICAL%20CENTER_standardcharges.zip",
+  "mrf_http_status": 206,
+  "mrf_content_range": "bytes 0-1048575/60318099",
+  "mrf_sample_sha256": "c779e1fe296bea9f4ab8da346fc7dde5b5ae030361428f790bab80a829ac215a",
+  "mrf_observation": "The pointer-declared .zip target serves CSV bytes beginning with an item-charge header, not a ZIP signature or CMS hospital metadata header. The first rows carry 2024-02-01 timestamps but no hospital name, address, license state, or CMS version.",
+  "checked_at": "2026-09-18T01:39:28Z",
+  "disposition": "pointer-linked-raw-csv-without-facility-header; retain stale historical observation and require a corrected CMS-template MRF"
+}

@@ -31,6 +31,7 @@ const CSV_COLUMNS = [
   'mrf_license_state', 'mrf_hospital_name', 'mrf_location_name', 'mrf_address',
   'mrf_last_updated_raw', 'mrf_last_updated', 'mrf_date_source',
   'mrf_days_since_update', 'mrf_stale_over_365', 'mrf_cms_version',
+  'identity_gate',
   'header_matched_ccns', 'header_matched_hospital_names',
   'review_ccns', 'review_hospital_names', 'checked_at', 'head_error', 'range_error'
 ];
@@ -163,6 +164,7 @@ function rowForResult(task, probe, matched, now = new Date()) {
     mrf_days_since_update: days,
     mrf_stale_over_365: days === '' ? '' : days > 365,
     mrf_cms_version: probe && probe.cmsVersion || '',
+    identity_gate: matchedHospitals[0]?.identityBasis || '',
     header_matched_ccns: matchedHospitals.map(item => item.hospital.ccn).filter(Boolean).sort().join('|'),
     header_matched_hospital_names: matchedHospitals.map(item => item.hospital.name || item.hospital.hospital_name).filter(Boolean).sort().join('|'),
     review_ccns: reviewHospitals.map(item => item.hospital.ccn).filter(Boolean).sort().join('|'),
@@ -201,12 +203,20 @@ async function runHeaderCorpus(rawOptions = {}, dependencies = {}) {
   const perHost = positiveNumber(rawOptions['per-host'] || rawOptions.perHost, 4);
   const timeoutMs = positiveNumber(rawOptions.timeout, 20000);
   const refresh = !!rawOptions.refresh;
+  const retryErrors = !!rawOptions['retry-errors'];
   const limit = rawOptions.limit ? positiveNumber(rawOptions.limit, 0) : 0;
 
   const corpusRows = csvToObjects(await fsp.readFile(inputFile, 'utf8'));
   const hospitals = JSON.parse((await fsp.readFile(rosterFile, 'utf8')).replace(/^\uFEFF/, ''));
   const allTasks = groupCorpusRows(corpusRows);
-  const tasks = limit ? allTasks.slice(0, limit) : allTasks;
+  const requestedHosts = splitValues(rawOptions.host).map(value => value.replace(/^www\./i, '').toLowerCase());
+  const hostFilteredTasks = requestedHosts.length
+    ? allTasks.filter(task => requestedHosts.some(value => {
+      const host = hostOf(task.mrf_url).replace(/^www\./i, '').toLowerCase();
+      return host === value || host.endsWith(`.${value}`);
+    }))
+    : allTasks;
+  const tasks = limit ? hostFilteredTasks.slice(0, limit) : hostFilteredTasks;
   const cache = new JsonStore(cacheFile);
   await cache.load();
   let cacheHits = 0;
@@ -229,9 +239,14 @@ async function runHeaderCorpus(rawOptions = {}, dependencies = {}) {
     }
   }, async task => {
     const key = cacheKey(task.mrf_url);
-    if (!refresh && cache.has(key)) {
-      cacheHits++;
-      return cache.get(key);
+    if (cache.has(key)) {
+      const cached = cache.get(key);
+      const cachedUsable = Number(cached?.rangeStatus || 0) >= 200
+        && Number(cached?.rangeStatus || 0) < 300 && Number(cached?.bytesRead || 0) > 0;
+      if (!refresh && (!retryErrors || cachedUsable)) {
+        cacheHits++;
+        return cached;
+      }
     }
     let result;
     try {
@@ -257,14 +272,27 @@ async function runHeaderCorpus(rawOptions = {}, dependencies = {}) {
     const matched = matchMrfHeader(task, probe, hospitals);
     return rowForResult(task, probe, matched, now);
   });
-  await writeAtomic(outputFile, toRFC4180(rows, CSV_COLUMNS));
+  let outputRows = rows;
+  // A host filter is a partial refresh by definition. Preserve all non-target
+  // rows automatically so an omitted CLI flag cannot replace the nationwide
+  // derived inventory with a host-only projection.
+  if ((rawOptions['merge-existing'] || requestedHosts.length) && fs.existsSync(outputFile)) {
+    const refreshedUrls = new Set(rows.map(row => normalizeUrl(row.mrf_url)));
+    const retainedRows = csvToObjects(await fsp.readFile(outputFile, 'utf8'))
+      .filter(row => !refreshedUrls.has(normalizeUrl(row.mrf_url)));
+    outputRows = [...retainedRows, ...rows].sort((a, b) => normalizeUrl(a.mrf_url).localeCompare(normalizeUrl(b.mrf_url)));
+  }
+  await writeAtomic(outputFile, toRFC4180(outputRows, CSV_COLUMNS));
   const parsed = csvToObjects(await fsp.readFile(outputFile, 'utf8'));
-  if (parsed.length !== rows.length) throw new Error(`CSV verification failed: wrote ${rows.length}, parsed ${parsed.length}`);
+  if (parsed.length !== outputRows.length) throw new Error(`CSV verification failed: wrote ${outputRows.length}, parsed ${parsed.length}`);
   const summary = {
     generatedAt: new Date().toISOString(),
     inputRows: corpusRows.length,
     uniqueMrfUrls: allTasks.length,
+    requestedHosts,
+    hostFilteredMrfUrls: hostFilteredTasks.length,
     probedRows: rows.length,
+    outputRows: outputRows.length,
     completed,
     cacheHits,
     concurrency,

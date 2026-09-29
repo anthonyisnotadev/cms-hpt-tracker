@@ -1,0 +1,15 @@
+{
+  "ccn": "190241",
+  "observed_at": "2026-09-19T17:15:00Z",
+  "method": "current-first-party-page-web-reader-and-bounded-file-recheck",
+  "official_pricing_page": "https://www.tghealthsystem.com/surgery-centers/physicians-medical-center/patient-pricing-information/",
+  "pricing_page_http_status": 200,
+  "page_scope_observation": "The page explicitly labels a Physicians Medical Center current standard-charges machine-readable-format link.",
+  "page_file_url": "https://www.tghealthsystem.com/images/721275428_physicians-medical-center_standardcharges.1).xlsx",
+  "page_file_content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "page_file_result": "The file route was not byte-readable to the web reader/direct client (unsupported workbook fetch / HTTP 403); no workbook bytes, CMS header or parsed metadata were recovered.",
+  "facility_identity": "Physicians Medical Center, 218 Corporate Drive, Houma, LA 70360",
+  "interpretation": "This strengthens current page-to-facility scope and confirms the page-link role changed from the historical 2023 CSV to an XLSX workbook. It does not establish pointer linkage, file usability or compliance.",
+  "disposition": "retain-unresolved-current-page-xlsx-access-and-pointer-linkage",
+  "next_action": "Obtain content-bearing bytes for the exact current XLSX and a current root pointer through an authorized route; verify identity, Louisiana state, declared date/version and parsed CMS usability before promotion."
+}

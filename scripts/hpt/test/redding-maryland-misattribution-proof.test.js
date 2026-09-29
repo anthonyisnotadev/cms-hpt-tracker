@@ -1,0 +1,65 @@
+'use strict';
+
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const crypto = require('node:crypto');
+const { csvToObjects } = require('../lib/util');
+const { extractDeclared } = require('../lib/probe');
+const { loadReviewedView } = require('../lib/reviewed-resolutions');
+
+const root = path.resolve(__dirname, '../../..');
+const audit = path.join(root, 'data/hpt-audit');
+const read = relative => JSON.parse(fs.readFileSync(path.join(root, relative), 'utf8'));
+const sha = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
+
+test('Redding replaces the Maryland misattribution with current California pointer evidence', () => {
+  const proof = read('data/hpt-audit/reconciliation-redding-maryland-misattribution-proof.json');
+  const resolution = read('data/hpt-audit/reviewed-resolutions.json').find(row => row.ccn === proof.ccn);
+  const roster = read('cms_data/hpt/roster.json').find(row => row.ccn === proof.ccn);
+  assert.equal(resolution.action, 'replace');
+  assert.equal(resolution.reviewed_at, proof.reviewed_at);
+  assert.equal(resolution.official.domain, proof.current_publisher_domain);
+  assert.equal(resolution.proof.wrong_file_sample_sha256, proof.wrong_file_sample_sha256);
+  assert.equal(roster.name, proof.roster_name);
+  assert.equal(`${roster.address}, ${roster.city}, ${roster.state} ${roster.zip}`, proof.roster_address);
+  const wrongPointer = fs.readFileSync(path.join(root, proof.wrong_pointer_file));
+  const currentPointer = fs.readFileSync(path.join(root, proof.current_pointer_file));
+  const wrongSample = fs.readFileSync(path.join(root, proof.wrong_file_sample));
+  assert.equal(sha(wrongPointer), proof.wrong_pointer_sha256);
+  assert.equal(sha(currentPointer), proof.current_pointer_sha256);
+  assert.equal(sha(wrongSample), proof.wrong_file_sample_sha256);
+  assert.equal(wrongSample.length, proof.wrong_file_sample_bytes);
+  assert.ok(wrongPointer.toString().includes(proof.wrong_file_url));
+  assert.ok(currentPointer.toString().includes(`location-name:${proof.current_pointer_location_name}`));
+  assert.ok(currentPointer.toString().includes(proof.current_pointer_mrf_url));
+  const declared = extractDeclared(wrongSample, 'csv');
+  assert.equal(declared.hospitalName, proof.wrong_file_declared_name);
+  assert.equal(declared.address, proof.wrong_file_declared_address);
+  assert.equal(declared.licenseState, proof.wrong_file_declared_state);
+  const headers = csvToObjects(fs.readFileSync(path.join(root, 'cms_data/hpt/nationwide-verification/mrf-headers.csv'), 'utf8'));
+  const wrongHeader = headers.find(row => row.mrf_url === proof.wrong_file_url);
+  assert.equal(wrongHeader.header_matched_ccns, proof.wrong_file_matched_ccn);
+  const candidate = headers.find(row => row.mrf_url === proof.current_pointer_mrf_url);
+  assert.equal(candidate.review_ccns, proof.ccn);
+  assert.equal(candidate.mrf_location_name, proof.current_file_header_location);
+  assert.equal(candidate.mrf_address, proof.current_file_header_address);
+  assert.equal(candidate.mrf_license_state, proof.current_file_header_state);
+  assert.equal(candidate.mrf_last_updated, proof.current_file_header_date);
+  assert.equal(candidate.mrf_cms_version, proof.current_file_header_version);
+  const effective = loadReviewedView(audit).compliance.find(row => row.ccn === proof.ccn);
+  assert.equal(effective.finding, 'compliant-observed');
+  assert.equal(effective.domain.replace(/^www\./, ''), proof.current_publisher_domain.replace(/^www\./, ''));
+  assert.equal(effective.mrf_url, proof.current_pointer_mrf_url);
+  const maryland = loadReviewedView(audit).compliance.find(row => row.ccn === proof.wrong_file_matched_ccn);
+  assert.equal(maryland.mrf_url, proof.wrong_file_url);
+  assert.equal(maryland.finding, 'compliant-observed');
+  const latest = read('data/hpt-audit/nationwide-verification.json').records.find(row => row.ccn === proof.ccn);
+  assert.equal(latest.pointer_corpus_sha256, proof.current_pointer_sha256);
+  assert.equal(latest.mrf_url, proof.current_pointer_mrf_url);
+  assert.equal(latest.facility_identity, 'review-required');
+  assert.equal(latest.standing_finding, 'compliant-observed');
+  assert.equal(read('data/hpt-audit/nationwide-reconciliation.json').records.find(row => row.ccn === proof.ccn).workstream,
+    'consistent');
+});

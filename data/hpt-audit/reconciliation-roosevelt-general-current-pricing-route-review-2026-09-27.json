@@ -1,0 +1,28 @@
+{
+  "ccn": "320084",
+  "hospital_name": "ROOSEVELT GENERAL HOSPITAL",
+  "observed_at": "2026-09-27T22:46:55Z",
+  "official_site": "https://www.myrgh.org/",
+  "official_identity_observation": "Current first-party homepage identifies Roosevelt General Hospital as an operating 22-bed hospital in Portales; footer address is 42121 US Highway 70, Portales, NM 88130.",
+  "official_departments_page": "https://www.myrgh.org/departments-and-services/",
+  "official_departments_page_observation": "The current first-party Business Office navigation lists Price Transparency.",
+  "current_hospital_charges_route": "https://www.myrgh.org/patient-visitor-information/patient-satisfaction/hospital-charges/",
+  "current_hospital_charges_route_web_reader_result": "404 Not Found",
+  "root_pointer_url": "https://www.myrgh.org/cms-hpt.txt",
+  "root_pointer_web_reader_result": "not accessible via this tool",
+  "bounded_client_checks": [
+    {"url": "https://www.myrgh.org/cms-hpt.txt", "result": "HTTP 403"},
+    {"url": "https://www.myrgh.org/robots.txt", "result": "HTTP 403"},
+    {"url": "https://www.myrgh.org/sitemap.xml", "result": "HTTP 403"},
+    {"url": "https://www.myrgh.org/patient-visitor-information/patient-satisfaction/hospital-charges/", "result": "HTTP 403"},
+    {"url": "https://www.myrgh.org/images/CDM-Price-Update-eff-07-01-2025-Website.pdf", "result": "HTTP 403"}
+  ],
+  "current_price_transparency_label_route": "The first-party departments page lists Price Transparency as Business Office navigation text; the observed Hospital Charges destination is 404 in the web reader. No alternate file URL was exposed in the accessible page text.",
+  "content_retrieved": false,
+  "mrf_bytes_retrieved": false,
+  "cms_metadata_verified": false,
+  "classification": "current-first-party-price-route-listed-target-not-found-and-root-client-blocked; no-current-cms-mrf-content",
+  "interpretation": "This is a dated route and access observation. The current publisher site identifies the hospital and retains a Price Transparency navigation label, while its observed Hospital Charges target returns 404 to the web reader and bounded requests are denied to this client. These observations do not prove that no CMS MRF exists elsewhere, do not establish legal compliance or noncompliance, and do not upgrade the separate July 2025 charge-master PDF to CMS MRF evidence.",
+  "disposition": "file-custom-workbook-review",
+  "next_action": "Locate a changed/current first-party price-transparency destination or an authorized publisher-provided CMS CSV/JSON/ZIP; preserve the July 2025 PDF only as a charge-master lead and verify exact MRF bytes, identity, New Mexico metadata, date/version and usable rows before promotion. Do not repeat these same blocked URLs unless the route or access conditions change."
+}

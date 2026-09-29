@@ -1,0 +1,31 @@
+{
+  "ccn": "131314",
+  "observed_at": "2026-09-27T13:02:04Z",
+  "official_domain": "shoshonehealth.com",
+  "official_pricing_page": "https://www.shoshonehealth.com/patients/registrationbilling/",
+  "browser_observation": {
+    "page_title": "Registration/Billing – Shoshone Medical Center",
+    "visible_price_transparency_link": "https://search.hospitalpriceindex.com/hpi2/hospital/shoshonemedicalcenter/7852or",
+    "browser_final_url": "https://search.hospitalpriceindex.com/facility-not-found",
+    "rendered_result": "The linked Hospital Price Index route initially displayed Loading and 0 of 0 results, then redirected to the vendor application page headed 404 - Page Not Found. The HTTP response status was not exposed by browser automation.",
+    "http_status_observed": false,
+    "mrf_bytes_observed": 0,
+    "metadata_observed": false
+  },
+  "related_candidate_route": {
+    "url": "https://search.hospitalpriceindex.com/hpi2/machineReadable/ShoshoneMedicalCenter/7852or",
+    "browser_final_url": "https://search.hospitalpriceindex.com/facility-not-found",
+    "rendered_page": "404 - Page Not Found",
+    "http_status_observed": false,
+    "route_status": "candidate route; not the exact pointer-declared MRF URL"
+  },
+  "current_pointer_context": {
+    "pointer_url": "https://www.shoshonehealth.com/cms-hpt.txt",
+    "pointer_declared_mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7852/826003924_west-shoshone-hospital-district-#1_standardcharges.csv",
+    "previous_exact_target_status": 404,
+    "previous_exact_target_proof": "reconciliation-shoshone-minidoka-current-pointer-recheck-2026-09-26.json"
+  },
+  "interpretation": "The current official billing page links an HPI price page distinct from the CMS pointer's blob URL. The browser ended at the vendor facility-not-found page and supplied no MRF content, identity metadata, CMS version/date, or usable price rows. This neither proves MRF absence nor changes the prior 404 observation for the exact pointer-declared target.",
+  "classification": "dated browser recheck; no new MRF recovery; no disposition change",
+  "next_action": "Do not retry these unchanged HPI routes or the known blob 404 absent a source change. Request restored pointer-declared bytes or a publisher-provided current CSV/JSON with exact source URL/hash; verify facility identity, Idaho location/state, declared CMS date/version, and usability. Keep the 2020 page-linked chargemaster as historical evidence."
+}

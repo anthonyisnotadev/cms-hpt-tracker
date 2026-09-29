@@ -1,0 +1,22 @@
+{
+  "ccn": "294000",
+  "observed_at": "2026-09-21T18:15:00Z",
+  "official_domain": "dpbh.nv.gov",
+  "official_pricing_page": "https://www.dpbh.nv.gov/programs/behavioral-health---inpatient-and-outpatient-services/clinical-behavioral-services-inpatient-snamhs-nnamhs-lakes-crossings/",
+  "facility_file_url": "https://www.dpbh.nv.gov/contentassets/d10eb649ee6948a69b31cc00f63d82e9/886000022_northern-nevada-adult-mental-health-services_standard-charges-1-2.xlsx",
+  "retrieval_method": "official-page link inspection plus complete bounded HTTPS workbook retrieval",
+  "file_http_status": 200,
+  "file_bytes": 17496,
+  "file_sha256": "5a9bbf2aefb8b60218e9ac7195e20acb4675542e36cea80abb3ed1159118665d",
+  "file_format": "XLSX",
+  "declared_hospital_name": "State_of_Nevada - Department_of Health and Human Services - Division of Public and Behavioral Health",
+  "declared_location_name": "Northern Nevada Adult Mental Health Services",
+  "declared_address": "480 Galletti Way Bldg 25 Sparks, NV 89431",
+  "declared_license_state": "NV",
+  "declared_last_updated": "2026-03-30",
+  "cms_template_version": "3.0.0",
+  "attestation": true,
+  "disposition": "file-custom-workbook-review",
+  "detail": "The official DPBH page links a state-hosted XLSX workbook labeled as NNAMHS standard charges. The workbook contains 3.0.0-style fields, a 2026-03-30 date, Nevada license and the NNAMHS campus address, but its entity/location metadata is broader than Dini-Townsend Hospital and the object is an XLSX workbook rather than the required CMS CSV/JSON MRF form. Root cms-hpt.txt linkage was not recovered; no exact Dini-Townsend file identity or compliance conclusion is inferred.",
+  "next_action": "Obtain an exact Dini-Townsend CSV/JSON MRF or publisher clarification linking the workbook to CCN 294000 and the facility identity; retain the NNAMHS workbook as dated source evidence without assigning it to sibling facilities."
+}

@@ -1,0 +1,53 @@
+'use strict';
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('fs');
+const path = require('path');
+const crypto = require('crypto');
+const { parsePayload } = require('../lib/recovery-transport');
+const { loadReviewedView, applyResolutions } = require('../lib/reviewed-resolutions');
+const root = path.resolve(__dirname, '../../..');
+const audit = path.join(root, 'data/hpt-audit');
+const sha = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
+
+test('former Edward W Sparrow stays tied to Lansing pointer despite a second declared location', async () => {
+  const proof = require(path.join(audit, 'reconciliation-sparrow-lansing-proof.json'));
+  const pointer = fs.readFileSync(path.join(root, 'cms_data/hpt/pointer-corpus/raw/uofmhealthsparrow.org-2e87ccdc4596.txt'));
+  const sample = fs.readFileSync(path.join(root, proof.retained_sample));
+  const parsed = (await parsePayload(sample, 'text/csv')).parsed.find(row => row.innerKind === 'csv');
+  const resolution = require(path.join(audit, 'reviewed-resolutions.json')).find(row => row.ccn === proof.ccn);
+  const view = loadReviewedView(audit);
+  const standing = view.compliance.find(row => row.ccn === proof.ccn);
+  const nationwide = require(path.join(audit, 'nationwide-verification.json')).records.find(row => row.ccn === proof.ccn);
+  const worklist = require(path.join(audit, 'unresolved-investigation-worklist.json')).records;
+  assert.equal(proof.ccn, '230230');
+  assert.equal(sha(pointer), proof.pointer_sha256);
+  assert.equal(sha(sample), proof.retained_sha256);
+  assert.equal(sample.length, 262144);
+  const blocks = pointer.toString('utf8').split(/\r?\n\s*\r?\n/);
+  assert.ok(blocks.find(block => block.includes('location-name: University of Michigan Health-Sparrow Lansing'))
+    .includes(`mrf-url: ${proof.mrf_url}`));
+  assert.ok(blocks.find(block => block.includes('location-name: University of Michigan Health-Sparrow St. Lawrence'))
+    .includes(`mrf-url: ${proof.separate_st_lawrence_pointer_mrf_url}`));
+  assert.notEqual(proof.mrf_url, proof.separate_st_lawrence_pointer_mrf_url);
+  assert.equal(parsed.mrfHospitalName, 'University of Michigan Health-Sparrow Lansing');
+  assert.equal(parsed.mrfLocationName, proof.declared_location_name);
+  assert.equal(parsed.mrfAddress, proof.declared_address);
+  assert.equal(parsed.mrfLicenseState, 'CA');
+  assert.equal(proof.facility_state, 'MI');
+  assert.equal(parsed.cmsVersion, '4.2');
+  assert.equal(standing.finding, 'mrf-license-state-field-conflicts-facility');
+  assert.equal(standing.mrf_url, proof.mrf_url);
+  assert.equal(nationwide.observation_role, 'superseded-retry');
+  assert.equal(worklist.some(row => row.ccn === proof.ccn), false);
+  const html = fs.readFileSync(path.join(root, 'tracker.html'), 'utf8');
+  const open = '<script id="tracker-data" type="application/json">';
+  const start = html.indexOf(open), end = html.indexOf('</script>', start);
+  const data = JSON.parse(html.slice(start + open.length, end));
+  const row = data.rows.find(item => item[0] === proof.ccn);
+  assert.equal(row[8], proof.mrf_url);
+  assert.equal(data.dict.findings[row[5]], standing.finding);
+  const altered = structuredClone(resolution);
+  altered.evidence.facility_state = 'CA';
+  assert.throws(() => applyResolutions([altered.base], [], [], [altered]), /lacks current, pointer-linked identity/);
+});

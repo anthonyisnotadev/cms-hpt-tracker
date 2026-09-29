@@ -1,0 +1,33 @@
+{
+  "ccn": "130073",
+  "observed_at": "2026-09-25T15:00:00Z",
+  "official_portal_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Grove_Creek_V2.aspx",
+  "portal_status": 200,
+  "portal_title": "PARA Price Transparency Tool",
+  "portal_facility_name": "Grove Creek Medical Center",
+  "portal_facility_phone": "hpt-obf:v1:wfeMsPChzu6hZIPF.7QEQhbwpkUtvmko7Qe9j8Q.KsqbL5gUdR-COEzE",
+  "standard_charges_label": "Grove Creek Medical Center Standard Charges",
+  "standard_charges_date": "2025-07-01",
+  "download_control_observed": true,
+  "download_url_or_bytes": "not exposed by permitted browser/web parser",
+  "prior_shared_file": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbBMHECBlackfootID&type=CDMWithoutLabel&fileType=CSV",
+  "prior_shared_file_status": "excluded; header is Bingham Memorial Hospital at 98 Poplar St",
+  "disposition": "official-grove-creek-portal-current-download-endpoint-unresolved",
+  "interpretation": "The current official-linked Grove Creek PARA portal renders a Grove Creek-specific standard-charges section dated 2025-07-01, but the download control did not expose a stable file URL or bytes in this client. The previously retrieved Bingham Memorial shared CSV remains excluded from Grove Creek.",
+  "next_action": "Capture the portal's actual standard-charge download endpoint or bytes through a download-capable permitted client; verify Grove Creek name, 350 N Meridian St address, Idaho state, CMS date/version and usable rows before promotion."
+  ,"latest_download_capable_recheck_2026_09_26": {
+    "observed_at": "2026-09-26T00:00:00Z",
+    "attempted_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbBMHECBlackfootID&type=CDMWithoutLabel&fileType=CSV",
+    "http_status": 200,
+    "content_type": "application/octet-stream",
+    "bytes": 23598385,
+    "sha256": "4ae194836a0fb8b66a762a9bdf6f91eef22c736e7b97273ea35f799c6499514a",
+    "declared_hospital_name": "BINGHAM MEMORIAL HOSPITAL",
+    "declared_address": "98 Poplar St Blackfoot ID 83221",
+    "declared_license_state": "ID",
+    "declared_last_updated": "2026-02-02",
+    "cms_template_version": "3.0.0",
+    "result": "The download-capable retry returned the same Bingham Memorial file, not a Grove Creek file. This confirms the shared target is a distinct facility and remains excluded; no Grove Creek promotion is made.",
+    "next_action": "Capture the Grove Creek portal's actual download endpoint or obtain a publisher-confirmed Grove Creek CMS CSV/JSON."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "audit_id": "reconciliation-hereford-live-browser-route-recheck-2026-09-28",
+  "ccn": "450155",
+  "observed_at": "2026-09-28T13:48:14Z",
+  "hospital_name": "HEREFORD REGIONAL MEDICAL CENTER",
+  "browser_route": {
+    "url": "https://dschd.org/price-transparency/",
+    "observation_method": "Codex in-app browser accessibility tree",
+    "result": "Page rendered and exposed the same two distinct CSV links as the retained 2026-09-28 two-file proof.",
+    "patient_pricing_tool_url": "https://dschd.org/wp-content/uploads/2026/03/2026_HRMC_Standard_Charges_Validated_20260331.csv",
+    "list_of_standard_charges_url": "https://dschd.org/wp-content/uploads/2026/01/2026_HRMC_Standard_Charges_Validated_20260101.csv",
+    "evidence_role": "Current first-party page-to-file link observation only; no CSV bytes retrieved or re-hashed in this review."
+  },
+  "pointer_route": {
+    "url": "https://dschd.org/cms-hpt.txt",
+    "browser_result": "net::ERR_BLOCKED_BY_CLIENT",
+    "evidence_role": "Client-side transport observation only; does not establish publisher denial, pointer contents, or file absence."
+  },
+  "disposition_effect": "none",
+  "count_effect": "none",
+  "unresolved_gates": [
+    "The root pointer still has no confirmed explicit mrf-url declaration for the newer March 31 page-linked CSV; the January pointer-field CSV and March 31 page-linked CSV remain distinct objects.",
+    "CMS Provider Data Catalog's exact-CCN address field remains 801 East Third while first-party and Texas state evidence support 540 W. 15th; no authoritative field-role explanation or correction was found."
+  ],
+  "next_action": "Do not retry unchanged browser, pointer, or CSV routes absent a source or access change. Continue to require a publisher-corrected root pointer or authoritative file-mapping clarification, and an authoritative explanation/correction for the CMS address-field conflict."
+}

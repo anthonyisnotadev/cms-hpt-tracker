@@ -1,0 +1,13 @@
+{
+  "ccn": "301304",
+  "observed_at": "2026-09-21T19:55:00Z",
+  "official_domain": "www.newlondonhospital.org",
+  "official_site": "https://www.newlondonhospital.org/patients-visitors/charges-services",
+  "candidate_file_url": "https://www.newlondonhospital.org/02-0222171_New%20London%20Hospital_standardcharges.zip",
+  "candidate_file_format": "ZIP",
+  "retrieval_method": "official pricing-page inspection and bounded direct-file probe",
+  "transport_result": "The official New London Hospital page identifies 273 County Road, New London, NH 03257, states that the Hospital List of Standard Charges is a ZIP, and links the exact facility-specific URL. The bounded direct-file fetch could not retrieve ZIP bytes; no hash, declared date, CMS template or usable rows were asserted.",
+  "disposition": "official-page-file-linkage-byte-retrieval-pending",
+  "interpretation": "This is first-party page-linked evidence only. The ZIP is not promoted until bytes and declared identity/metadata are independently checked, and the root pointer is separately retried.",
+  "next_action": "Retrieve the exact ZIP through a permitted download-capable route, inspect its contents and CMS metadata, and retry the exact New London Hospital root cms-hpt.txt pointer."
+}

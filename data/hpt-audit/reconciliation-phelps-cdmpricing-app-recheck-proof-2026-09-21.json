@@ -1,0 +1,16 @@
+{
+  "ccn": "260017",
+  "observed_at": "2026-09-21T14:35:00Z",
+  "official_domain": "cdmpricing.com",
+  "retrieval_method": "bounded HTTPS requests plus in-app browser",
+  "checked_urls": [
+    "https://cdmpricing.com/cms-hpt.txt",
+    "https://cdmpricing.com/",
+    "https://www.cdmpricing.com/cms-hpt.txt",
+    "https://www.cdmpricing.com/"
+  ],
+  "transport_result": "The naked host failed TLS negotiation. The www host returned a 165387-byte Angular Pricing Transparency application; browser text exposed payer, setting, and search controls but no Phelps County facility identity, cms-hpt.txt pointer, or directly attributable CMS CSV/JSON bytes.",
+  "disposition": "generic-pricing-application-facility-linkage-unresolved",
+  "interpretation": "This is a discovery and facility-linkage observation for Phelps County Regional Medical Center only. A generic pricing application and a TLS failure on the alternate host do not establish a facility MRF, file absence, closure, or compliance status.",
+  "next_action": "Obtain the publisher's facility-specific route or pointer and verify exact Phelps County identity, Missouri address/state, and usable CMS CSV/JSON metadata before promotion."
+}

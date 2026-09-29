@@ -1,0 +1,13 @@
+{
+  "ccn":"140043","observed_at":"2026-09-23T03:10:00Z",
+  "official_site":"https://www.cghmc.com/",
+  "official_pricing_page":"https://pricetransparency.accureg.net/cgh",
+  "official_page_observation":"The first-party CGH Medical Center site identifies its Price Transparency link, which loads the CGH-specific AccuReg listing and links both CSV and JSON machine-readable files.",
+  "pointer_url":"https://www.cghmc.com/cms-hpt.txt","pointer_status":"HTTP 404 Not Found (also 404 at https://cghmc.com/cms-hpt.txt)",
+  "mrf_url":"https://cdn.accureg.net/trans/cgh/363479824_CGH-Medical-Center_standardcharges.csv","mrf_status":200,"mrf_response_bytes":42300753,"mrf_content_range":"server ignored requested bytes=0-131071 and returned full file; Content-Length 42300753","mrf_response_sha256":"e97a85064f3cfb1485f8422be1205b0e71c340b75374b0ededb2c9bcae87f379","mrf_last_modified":"2026-06-04T15:31:38Z",
+  "declared_last_updated":"2026-06-04","cms_template_version":"3.0.0","declared_hospital_name":"CGH Medical Center","declared_location_name":"CGH Medical Center","declared_address":"100 E LeFevre Road, Sterling, IL 61081","declared_license_state":"IL","declared_license_number":"0000364","declared_npi":"1902854623",
+  "cms_api_url":"https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=140043&conditions%5B0%5D%5Boperator%5D=%3D","cms_api_status":200,"cms_api_response_bytes":6576,"cms_api_response_sha256":"C09FA53733F561584A3089039558E62514AB5D3CDAC528B68DE6AA15D964B849","cms_record":{"facility_id":"140043","facility_name":"CGH MEDICAL CENTER","address":"100 EAST LEFEVRE ROAD","citytown":"STERLING","state":"IL","zip_code":"61081"},
+  "pointer_http_status":404,"pointer_sha256":"08d41126fd0c5ed2eee6228406fb32385b47259bbe7d6e0bba2d6fa5070d11c6","pointer_response_content_type":"text/html","disposition":"verified-current-page-file-root-pointer-unavailable",
+  "interpretation":"The first-party pricing link leads to a CGH-specific AccuReg listing and CSV whose CMS 3.0.0 header matches the facility name, address, Illinois state, NPI, license and 2026-06-04 date. The root pointer returned 404, so this is page-linked observed evidence with pointer follow-up and no legal compliance conclusion.",
+  "next_action":"Retry the root pointer and confirm whether the current AccuReg target is intentionally the hospital's declared pointer target before any promotion."
+}

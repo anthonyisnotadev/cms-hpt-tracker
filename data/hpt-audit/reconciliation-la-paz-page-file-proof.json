@@ -1,0 +1,29 @@
+{
+  "ccn": "031317",
+  "observed_at": "2026-09-18T12:02:18Z",
+  "official_site": "https://www.lapazhospital.org/",
+  "pricing_page": "https://www.lapazhospital.org/getpage.php?name=Hospital_Pricing_Information",
+  "identity_observation": "The official pricing page identifies La Paz Regional Hospital and lists 1200 West Mohave Road, Parker, Arizona 85344, matching the roster city/state and facility.",
+  "candidate_mrf_url": "https://www.lapazhospital.org/docs/LaPaz-standardcharges.csv",
+  "candidate_observation": "A materially different bounded curl route returned HTTP 206 text/csv with a 262,144-byte prefix from a 6,102,022-byte file. The CMS header identifies La Paz Regional Hospital at 1200 W. Mohave Rd, Parker, AZ 85344, dated 2025-05-05 with literal CMS version 2.0.0.",
+  "response": {
+    "http_status": 206,
+    "content_range": "bytes 0-262143/6102022",
+    "content_type": "text/csv",
+    "last_modified": "2025-07-17T16:02:13Z",
+    "prefix_sha256": "33f018c3ec03017237ff41149a5d07cbb73048d1a32bbcad491211d45009c136"
+  },
+  "pointer_observation": {
+    "url": "https://www.lapazhospital.org/cms-hpt.txt",
+    "http_status": 404,
+    "response_sha256": "80c3fe2ae1062abf56456f52518bd670f9ec3917b7f85e152b347ac6b6faf880",
+    "role": "root-pointer-unavailable"
+  },
+  "declared_hospital_name": "La Paz Regional Hospital",
+  "declared_address": "1200 W. MOHAVE RD, PARKER, AZ 85344",
+  "declared_license_state": "AZ",
+  "declared_last_updated": "2025-05-05",
+  "cms_template_version": "2.0.0",
+  "disposition": "page-linked-file-identity-corroborated-pointer-missing-template-review",
+  "next_action": "Publisher should restore a current root pointer and update the file to the current CMS template; then validate the complete file and recheck current metadata. Do not call the page-linked file pointer-linked or fully compliant."
+}

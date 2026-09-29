@@ -1,0 +1,26 @@
+{
+  "ccn": "320091",
+  "observed_at": "2026-09-25T13:00:00Z",
+  "official_domain": "threecrossesregional.com",
+  "official_pricing_page": "https://www.threecrossesregional.com/price_transparency.html",
+  "file_url": "https://www.threecrossesregional.com/assets/pdf/TCRH-Standard%20Charges-MRF-05.05.25.csv",
+  "http_status": 200,
+  "content_type": "text/csv",
+  "bytes": 1110687,
+  "sha256": "6c7d3669f333b62fb86852f9f38232e2d0e033b0b5114eef559eccc1504fa657",
+  "last_modified": "2026-07-14T22:46:17Z",
+  "header": {
+    "hospital_name": "Three Crosses Regional Hospital LLC",
+    "last_updated_on": "2024-11-07",
+    "version": "2.0.0",
+    "location_name": "Three Crosses Regional Hospital",
+    "hospital_address": "2560 Samaritan Drive, Las Cruces, NM 88001",
+    "license_header": "license_number|CA",
+    "license_value": "3699|NM",
+    "attestation": true
+  },
+  "disposition": "complete-page-file-retrieved-but-license-state-and-version-conflict-retained",
+  "interpretation": "The complete current page-linked CSV replaces the prior 65,536-byte sample as byte-backed evidence. It identifies the New Mexico facility and address, but declares a CA license-number column with an NM value, uses CMS 2.0.0, and remains linked from an HTML pointer target rather than a plain-text root MRF URL. No current clean-MRF promotion is made.",
+  "promotion": "none",
+  "next_action": "Obtain publisher clarification or a corrected CMS 3.0.0 file/header and identify the intended machine-readable root-pointer target before changing the unresolved disposition."
+}

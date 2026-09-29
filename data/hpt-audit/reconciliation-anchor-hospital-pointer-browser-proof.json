@@ -1,0 +1,25 @@
+{
+  "ccn": "114032",
+  "observed_at": "2026-09-19T11:05:00Z",
+  "official_site": "https://anchorhospital.com/",
+  "roster_identity": "Anchor Hospital, 5454 Yorktowne Drive, Atlanta, GA 30349",
+  "official_domain_browser_status": "Cloudflare Just a moment challenge",
+  "pointer_urls_checked": [
+    "https://anchorhospital.com/cms-hpt.txt",
+    "https://www.anchorhospital.com/cms-hpt.txt"
+  ],
+  "pointer_statuses": [403, 403],
+  "pricing_route_urls_checked": [
+    "https://anchorhospital.com/price-transparency/",
+    "https://anchorhospital.com/patients-visitors/price-transparency/"
+  ],
+  "pricing_route_statuses": [403, 403],
+  "third_party_mrf_lead": {
+    "url": "https://medrates.fyi/hospital/anchor-hospital",
+    "observed_mrf_date": "2026-04-01",
+    "npi": "1023095429",
+    "use": "lead-only; direct publisher URL and bytes not established"
+  },
+  "disposition": "official-domain-cloudflare-blocked-pointer-and-pricing-route-mrf-unresolved-third-party-lead-retained",
+  "next_action": "Retry the exact official pricing and root-pointer routes through a materially different authorized route; independently recover a publisher-hosted current CMS CSV/JSON and verify facility identity, address, Georgia state, date/version and bounded usability before promotion."
+}

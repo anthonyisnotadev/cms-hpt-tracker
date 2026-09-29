@@ -1,0 +1,17 @@
+{
+  "ccn": "371303",
+  "observed_at": "2026-09-21T20:00:00Z",
+  "official_pricing_page": "https://rmmhonline.com/",
+  "official_pricing_page_status": 403,
+  "official_page_observation": "Interactive browser access to the first-party Roger Mills Memorial Hospital domain rendered a Cloudflare security-verification page rather than hospital pricing content. The direct cms-hpt.txt route likewise rendered the first-party security challenge; no pointer or MRF was assigned from this transport observation.",
+  "cms_pointer_url": "https://rmmhonline.com/cms-hpt.txt",
+  "cms_pointer_result": "First-party browser access rendered a Cloudflare challenge; no pointer content was available in this recheck.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=371303&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6684,
+  "cms_api_response_sha256": "5D3976389F24AB2B0743FB1C24ED42094CD63047B68E1EE791EF2AC13EBF64B6",
+  "cms_record": { "facility_id": "371303", "facility_name": "ROGER MILLS MEMORIAL HOSPITAL", "address": "501 SOUTH L L MALES AVENUE", "citytown": "CHEYENNE", "state": "OK", "zip_code": "73628", "hospital_type": "Critical Access Hospitals", "hospital_ownership": "Voluntary non-profit - Private", "emergency_services": "Yes" },
+  "disposition": "official-domain-pointer-browser-access-challenge-no-mrf-observed",
+  "interpretation": "The CMS record confirms the facility identity and address. The official-domain and pointer observations are transport/access results only; they do not establish file absence, noncompliance, or a facility closure.",
+  "next_action": "Retry the exact first-party pointer through a permitted publisher route, then verify declared name, Oklahoma address/state, date, version and usability before changing the tracker disposition."
+}

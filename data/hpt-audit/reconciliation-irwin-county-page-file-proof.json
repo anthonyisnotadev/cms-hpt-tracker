@@ -1,0 +1,45 @@
+{
+  "ccn": "110779",
+  "hospital_name": "Irwin County Hospital",
+  "observed_at": "2026-09-19T05:40:00Z",
+  "official_site": "https://www.irwincntyhospital.com/",
+  "official_pricing_page": "https://www.irwincntyhospital.com/about/price-transparency",
+  "official_identity": "Irwin County Hospital, 710 N Irwin Ave, Ocilla, GA 31774",
+  "page_file_url": "https://www.irwincntyhospital.com/fileadmin/Files/2026_CMS_Transparency/CHARGEMASTER_NEW_2026.csv",
+  "page_file_http_status": 200,
+  "page_file_bytes": 76157,
+  "page_file_sha256": "387F2B0BEA14101212175E4DC6FEDB2C05E9BECEA26D714C8DE917C640027A67",
+  "page_file_header": "DESCRIPTION,CODE CHG NUMBER,CPT CODE,MODIFIERS,REV CODE,TYPE OF MEASUREMENT,UNIT OF MEASUREMENT, STANDARD CHARGE",
+  "file_format_observation": "legacy chargemaster CSV with no CMS 3.0.0 facility identity, declared date/version or payer-rate metadata in the observed header",
+  "pointer_urls_checked": [
+    "https://www.irwincntyhospital.com/cms-hpt.txt",
+    "https://irwincntyhospital.com/cms-hpt.txt"
+  ],
+  "pointer_statuses": [404, 404],
+  "disposition": "official-page-linked-legacy-chargemaster-file-found-cms-mrf-and-pointer-unresolved",
+  "next_action": "Retain the page-linked legacy charge evidence, recover a current facility-specific CMS CSV/JSON and root pointer through an authorized route, then verify Georgia identity, declared date/version and usable rate fields before promotion.",
+  "schema_review_2026_09_28": {
+    "observed_at": "2026-09-28T15:33:47Z",
+    "retrieval_status": 206,
+    "content_type": "text/csv",
+    "retrieved_bytes": 76157,
+    "sha256": "387F2B0BEA14101212175E4DC6FEDB2C05E9BECEA26D714C8DE917C640027A67",
+    "same_bytes_as_2026_09_19_record": true,
+    "parser": "scripts/hpt/lib/util.js csvToObjects and parseCSV (RFC4180-aware)",
+    "header_count": 8,
+    "data_rows": 1309,
+    "row_width_counts": {"8": 1309},
+    "headers": ["DESCRIPTION", "CODE CHG NUMBER", "CPT CODE", "MODIFIERS", "REV CODE", "TYPE OF MEASUREMENT", "UNIT OF MEASUREMENT", "STANDARD CHARGE"],
+    "nonempty_cells_by_header": {
+      "DESCRIPTION": 1309,
+      "CODE CHG NUMBER": 1309,
+      "CPT CODE": 1309,
+      "MODIFIERS": 73,
+      "REV CODE": 1309,
+      "TYPE OF MEASUREMENT": 1308,
+      "UNIT OF MEASUREMENT": 10,
+      "STANDARD CHARGE": 1309
+    },
+    "interpretation": "All 1,309 rows parse at the same 8-column width. The file contains code/description, revenue-code, measurement, and standard-charge fields only; it has no facility identity, location, NPI/license, declared update date/version, payer, negotiated-rate, or CMS MRF metadata columns. This is a complete structural/schema characterization of the already-known file, not new file content, a CMS MRF recovery, or compliance evidence."
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-09-15T20:58:00.000Z",
+  "method": "complete-object-capture-and-read-only-office-or-zip-member-inspection",
+  "records": [
+    {
+      "ccn": "010126",
+      "disposition": "custom-shoppable-workbook-template-unresolved",
+      "identity": "Troy Regional Medical Center named in workbook title",
+      "date": "2024-06-30",
+      "schema": "1220-row, 24-column consumer shoppable-services workbook; no CMS template version or facility address/state metadata",
+      "sha256": "e808d309c7dc2630605ecb6eca2fd455a3dabfa8df2ab3ab6dd8f3c4bad9297c",
+      "next_action": "Retain this workbook as historical custom-format evidence only. A separate current CMS 3.0.0 CSV is now verified from the official pricing page; reconcile the root pointer, which still links the older 2024 CSV, rather than searching for another file."
+    },
+    {
+      "ccn": "171357",
+      "disposition": "chargemaster-workbook-identity-unresolved",
+      "identity": "No facility name in workbook body",
+      "date": "",
+      "schema": "5079-row, 7-column item/description/revenue-code/procedure-code/price chargemaster; no payer-specific schema, date, address, state, or CMS version",
+      "sha256": "96334bc67da83a6fdddb5000210bed137a20f5740625c0bd84a85eecff0374f8",
+      "next_action": "Do not infer facility identity from the pointer label alone. Locate a current facility-identifying CSV or JSON, or publisher metadata that binds this workbook to the CCN and explains its format."
+    },
+    {
+      "ccn": "261327",
+      "disposition": "custom-workbook-facility-identity-unresolved",
+      "identity": "No facility name in workbook body",
+      "date": "",
+      "schema": "8320-row, 24-column custom price-transparency workbook with payer columns; no facility name, date, address, state, or CMS version",
+      "sha256": "a40cc664f8610ee8d8658d57fcdb9eecaa12717ae477554da261b731cb66b831",
+      "next_action": "Retain the workbook as pointer-linked content but require facility-identifying root metadata or a current publisher replacement before assigning it to this CCN."
+    },
+    {
+      "ccn": "281322",
+      "disposition": "sibling-or-unrelated-state-file-rejected",
+      "identity": "Archive declares St Mary Rehabilitation Hospital, Langhorne Pennsylvania",
+      "date": "2026-03-16",
+      "schema": "CMS 3.0.0 CSV member",
+      "sha256": "8f0a9cce3682bb39766a82aaacbc6cfc65b6847c2f4b0e79a09901a1bcd8e090",
+      "next_action": "Reject for CCN 281322, which is St Francis Memorial Hospital in West Point Nebraska. Locate an exact Nebraska facility pointer/file; do not use the valid Pennsylvania file."
+    },
+    {
+      "ccn": "450465",
+      "disposition": "fresh-complete-archive-corroboration-of-existing-reviewed-resolution",
+      "identity": "Matagorda County Hospital District at 104 Seventh Street, Bay City Texas",
+      "date": "2026-01-23",
+      "version": "3.0.0",
+      "schema": "CMS CSV wide member",
+      "sha256": "7c2c47961f93bb3df91f67af69691b0e543f0c68fc5d49e70033ab111b6994bc",
+      "member": "746025069_Matagorda-Regional-Medical-Center_standardcharges.csv",
+      "member_bytes": 52270186,
+      "member_sha256": "b7381ba9a3767586e5a658151b48c02907b7561ba3bc2be9490d2e758197eb87",
+      "next_action": "No tracker relabeling: the existing reviewed resolution already establishes the same current CMS 3.0.0 outcome. Retain this complete archive and decompressed-member digest as fresh corroboration; recheck only if the exact pointer or archive changes."
+    },
+    {
+      "ccn": "450489",
+      "disposition": "stale-custom-workbook-template-unresolved",
+      "identity": "Medical Arts Hospital named on four workbook sheets",
+      "date": "2023-12-07",
+      "schema": "Custom payer-separated workbook; no CMS template version or facility address/state metadata",
+      "sha256": "09f5ca22d6bd643d0dfa09fc3d8a6d636c626f8ae76652d60d2a79bac6f6f8c9",
+      "next_action": "Retain as stale identity evidence only. Locate a current pointer-linked CSV or JSON with address/state and declared CMS template metadata before promotion."
+    },
+    {
+      "ccn": "490075",
+      "disposition": "sibling-campus-file-rejected",
+      "identity": "Archive declares Sovah Health - Martinsville at 320 Hospital Drive, Martinsville Virginia",
+      "date": "2026-07-10",
+      "schema": "CMS 3.0.0 CSV member",
+      "sha256": "51ca71f87b260055822b1859b82ad021d4f07188a4344263c575e68344c0b455",
+      "next_action": "Reject this Martinsville sibling archive for CCN 490075. No corrective follow-up is required because the separately named Danville pointer entry and current CMS 3.0.0 archive are already independently verified with retained byte proof."
+    }
+  ]
+}

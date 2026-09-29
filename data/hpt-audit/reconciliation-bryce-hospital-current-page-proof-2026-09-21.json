@@ -1,0 +1,32 @@
+{
+  "ccn": "014007",
+  "observed_at": "2026-09-21T04:46:33Z",
+  "proof_file": "reconciliation-bryce-hospital-current-page-proof-2026-09-21.json",
+  "official_site": "https://mh.alabama.gov/",
+  "official_identity_page": "https://mh.alabama.gov/bryce-hospital/",
+  "official_facility_name": "Bryce Hospital",
+  "official_facility_address": "1651 Ruby Tyler Parkway, Tuscaloosa, AL 35404",
+  "browser_observation": "Browser automation loaded the current Alabama Department of Mental Health Bryce Hospital page. It identifies the current facility at 1651 Ruby Tyler Parkway, Tuscaloosa, and lists facility-specific documents, but no pricing or machine-readable-file link is exposed.",
+  "pointer_url": "https://mh.alabama.gov/cms-hpt.txt",
+  "pointer_status": 404,
+  "pointer_content_type": "text/html; charset=UTF-8",
+  "pointer_response_bytes": 162799,
+  "pointer_observation": "The root cms-hpt.txt route returns a WordPress HTML not-found page, not a plain-text pointer. This is an access/site observation only and does not establish file absence or compliance.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=014007&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6810,
+  "cms_api_response_sha256": "C5BBA5BB13F511911EDBDEE21BC9BCF8ED5B1CFC37513B80BF29E7383E630FE3",
+  "cms_record": {
+    "facility_id": "014007",
+    "facility_name": "BRYCE HOSPITAL",
+    "address": "1651 RUBY TYLER PKWY",
+    "citytown": "TUSCALOOSA",
+    "state": "AL",
+    "zip_code": "35404",
+    "hospital_type": "Psychiatric",
+    "hospital_ownership": "Government - State"
+  },
+  "disposition": "official-identity-confirmed-html-pointer-404-no-mrf-observed",
+  "interpretation": "Current first-party identity and CMS identity agree, but no facility-specific CMS CSV/JSON or plain-text pointer was recovered. The HTML 404 is not treated as a legal compliance conclusion.",
+  "next_action": "Locate a current Bryce Hospital/Tuscaloosa CMS CSV or JSON through an authorized state route or corrected pointer; verify declared name, address, Alabama metadata, date/version and usability before promotion."
+}

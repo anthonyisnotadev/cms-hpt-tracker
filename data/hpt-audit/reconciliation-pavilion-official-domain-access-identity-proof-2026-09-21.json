@@ -1,0 +1,24 @@
+{
+  "ccn": "144029",
+  "observed_at": "2026-09-22T00:15:00Z",
+  "source": "official Pavilion Behavioral Health System domain and first-party charity-care PDF",
+  "official_domain": "pavilionhospital.com",
+  "official_identity_document": "https://pavilionhospital.com/wp-content/uploads/2024/10/charityapp-1.pdf",
+  "identity_observed": "The Pavilion Behavioral Health System, 809 W. Church Street, Champaign, IL 61820",
+  "retrieval": {
+    "homepage_status": 403,
+    "cms_hpt_status": 403,
+    "pricing_route_status": 403,
+    "note": "The bounded client received access-denied responses from the official domain; no machine-readable file bytes were asserted."
+  },
+  "manual_identity_gate": "official-illinois-facility-identity-confirmed-file-access-denied",
+  "disposition": "official-domain-access-denied-facility-identity-confirmed",
+  "interpretation": "First-party Pavilion material confirms the Illinois facility identity and address, while bounded requests to the official domain and cms-hpt.txt returned 403. The unrelated Virginia Pavilion file remains quarantined and is not assigned to this CCN.",
+  "next_action": "Retry the official Illinois domain through an authorized browser/content-bearing route; require a Pavilion-Champaign-specific pointer and MRF header before promotion. Separately reconcile the Illinois closure record against CMS enrollment before any scope change.",
+  "latest_illinois_scope_recheck_2026_09_27": {
+    "observed_at": "2026-09-27T01:45:00Z",
+    "source_url": "https://healthcarereportcard.illinois.gov/hospital/105655/services/inpatient",
+    "source_type": "official Illinois hospital report card search result",
+    "result": "The Illinois report card currently labels The Pavilion Foundation as permanently closed. This is current state-scope evidence, not proof of CMS CCN termination or historical MRF absence; the live first-party pavilionhospital.com identity/access record remains separate. No closure exemption or file promotion made."
+  }
+}

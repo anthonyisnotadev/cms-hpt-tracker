@@ -1,0 +1,19 @@
+{
+  "ccn": "060020",
+  "observed_at": "2026-09-17T18:30:00.000Z",
+  "official_pricing_page": "https://www.uchealth.org/billing-and-pricing/shoppable-services-and-all-services-price-lists/",
+  "browser_route": "in-app-browser",
+  "page_http_status": 200,
+  "page_labels": {
+    "Parkview Medical Center": "https://sthpiprd.blob.core.windows.net/machine-readable-files/11554/840935136-1821720681_parkview-medical-center,-inc_standardcharges.csv",
+    "Parkview Pueblo West Hospital": "https://sthpiprd.blob.core.windows.net/machine-readable-files/11554/840935136-1821720681_parkview-medical-center,-inc_standardcharges.csv"
+  },
+  "bounded_file_retrieval": {
+    "url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/11554/840935136-1821720681_parkview-medical-center,-inc_standardcharges.csv",
+    "http_status": 200,
+    "prefix_metadata": "Parkview Medical Center, Inc; 2025-11-01; version 3.0.0; location_name UCHealth Parkview Pueblo West Hospital; 899 E. Industrial Boulevard, Pueblo West, CO 81007"
+  },
+  "disposition": "recheck-confirms-medical-center-label-still-points-to-pueblo-west-file",
+  "notes": "The current page labels the same blob for both facilities. The file metadata identifies Pueblo West, while CCN 060020's official facility address is 400 W. 16th Street, Pueblo, CO 81003. The distinct root-pointer Medical Center target remains a separate 404 observation; no absence or compliance conclusion is inferred.",
+  "next_action": "Wait for a publisher-corrected Medical Center URL or pointer/page change, then retrieve and validate that exact file independently."
+}

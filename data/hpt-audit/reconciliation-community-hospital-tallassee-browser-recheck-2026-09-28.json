@@ -1,0 +1,33 @@
+{
+  "audit_id": "reconciliation-community-hospital-tallassee-browser-recheck-2026-09-28",
+  "observed_at": "2026-09-28T08:19:00Z",
+  "ccn": "010034",
+  "facility": "Community Hospital, Inc., 805 Friendship Road, Tallassee, Alabama 36078",
+  "browser_automation": {
+    "method": "Visible in-app browser; accessibility tree inspected on the live first-party page.",
+    "page_url": "https://www.chal.org/about/resources",
+    "page_title": "Community Hospital - Excellence in Community Healthcare",
+    "page_loaded": true,
+    "page_text": "Patient Resources & Price Transparency; the page says choose a format to download a list of standard charges.",
+    "visible_standard_charge_links": [
+      "https://www.chal.org/Community_Hospital_Machine_Readable_Standard_Charges_12_2020.csv",
+      "https://www.chal.org/Community_Hospital_Machine_Readable_Standard_Charges_12_2020.pdf"
+    ],
+    "other_visible_downloads": [
+      "https://www.chal.org/Community_Hospital_Avg_Cost_Per_DRG_12_2018.csv",
+      "https://www.chal.org/Community_Hospital_Avg_Cost_Per_DRG_12_2018.pdf",
+      "https://www.chal.org/Community_Hospital_Shoppable_Services_12_2020.csv",
+      "https://www.chal.org/Community_Hospital_Shoppable_Services_12_2020_Adjusted.pdf"
+    ]
+  },
+  "comparison_to_prior": {
+    "prior_first_party_review": "reconciliation-community-hospital-tallassee-page-recheck-proof-2026-09-21.json",
+    "same_standard_charge_csv_url": true,
+    "newer_cms_template_file_found": false,
+    "bytes_downloaded_or_rechecked": false,
+    "interpretation": "This is a live browser recheck of page links, not new MRF bytes. The only standard-charge CSV remains explicitly dated 12_2020; no content or metadata claim is extended beyond the previously hash-bound 434,296-byte file."
+  },
+  "disposition": "official-page-links-historical-2020-file-current-mrf-unresolved",
+  "count_effect": 0,
+  "next_action": "Do not repeat the unchanged page/file routes without a page or access change. Obtain a current facility-specific CMS CSV or JSON from Community Hospital or its authorized publisher, then verify bytes/hash, Tallassee identity, Alabama metadata, date/version, payer structure, attestation and parsed usability."
+}

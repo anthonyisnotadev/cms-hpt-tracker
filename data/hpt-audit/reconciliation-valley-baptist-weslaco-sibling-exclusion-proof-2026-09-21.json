@@ -1,0 +1,20 @@
+{
+  "observed_at": "2026-09-21T01:10:00Z",
+  "official_pricing_page": "https://www.valleybaptist.net/patients/pricing-info-estimates/hospital-pricing-information",
+  "page_status": 200,
+  "page_last_updated": "2026-04-01",
+  "listed_file": "https://mrfs.hyvehealthcare.com/TenetHealth/452662980-1457994188_vhs-harlingen-hospital-company-llc_standardcharges.json",
+  "listed_location": "Valley Baptist Medical Center Weslaco",
+  "listed_file_role": "sibling-campus-file",
+  "matched_tracker_record": {
+    "ccn": "450128",
+    "hospital_name": "KNAPP MEDICAL CENTER",
+    "city": "WESLACO",
+    "state": "TX",
+    "official_domain": "knappmed.org",
+    "current_finding": "compliant-observed"
+  },
+  "disposition": "shared-page-sibling-excluded-from-unresolved-import",
+  "interpretation": "The Valley Baptist system pricing page lists a Weslaco campus file, but the tracker independently identifies the Weslaco CCN as Knapp Medical Center with its own compliant first-party pointer/file. The sibling listing is retained as attribution context and is not assigned to any Valley Baptist unresolved CCN.",
+  "next_action": "Keep the Weslaco file attached to CCN 450128 only; do not import it into the Valley Baptist Brownsville or Harlingen rows."
+}

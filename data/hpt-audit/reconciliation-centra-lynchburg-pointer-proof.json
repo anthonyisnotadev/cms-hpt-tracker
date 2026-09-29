@@ -1,0 +1,38 @@
+{
+  "ccn": "490021",
+  "observed_at": "2026-09-17T13:39:00.000Z",
+  "retained_pointer_file": "cms_data/hpt/pointer-corpus/raw/centrahealth.com-79245a39b7ff.txt",
+  "retained_pointer_sha256": "507974579b6fbd4136a7afefa96241cfa0c15f498a8095dd6cea35736b1cdd6c",
+  "retained_pointer_observed_at": "2026-09-15T09:15:25.409Z",
+  "retained_pointer_checked_url": "https://centrahealth.com/cms-hpt.txt",
+  "retained_pointer_final_url": "https://www.centrahealth.com/sites/default/files/2024-09/cms-hpt.txt",
+  "pointer_location_name": "Lynchburg General Hospital",
+  "pointer_file_url": "https://www.centrahealth.com/sites/default/files/2023-12/540715569_LynchburgGeneralHospital_standardcharges.csv",
+  "first_party_identity_url": "https://providers.centrahealth.com/search?page=1",
+  "first_party_name_address": "Centra Lynchburg General Hospital, 1901 Tate Springs Road, Lynchburg, VA 24501",
+  "roster_name": "CENTRA HEALTH -  LYNCHBURG GEN HOSPITAL",
+  "roster_address": "1901 TATE SPRINGS ROAD, LYNCHBURG, VA 24501",
+  "pointer_target_head_status": 403,
+  "pointer_target_head_content_type": "text/html",
+  "pointer_target_head_date": "2026-09-17T13:39:00.000Z",
+  "latest_bounded_recheck": {
+    "observed_at": "2026-09-19T07:03:18Z",
+    "get_status": 403,
+    "content_type": "text/html",
+    "response_bytes": 486,
+    "browser_status": "ERR_BLOCKED_BY_CLIENT",
+    "result": "The exact pointer-declared CSV remained access-gated through direct GET and the in-app browser; no file bytes or metadata were promoted."
+  },
+  "latest_discovery_lead": {
+    "observed_at": "2026-09-19T12:55:00Z",
+    "source_url": "https://showthebill.com/hospitals/centra-health-inc/",
+    "source_role": "third-party discovery lead, not facility evidence",
+    "source_claim": "ShowTheBill reports a Centra file captured 2026-08-30 and exposes the same hospital-hosted CSV URL, described as 66.6 MB.",
+    "resolved_url": "https://www.centrahealth.com/sites/default/files/2023-12/540715569_LynchburgGeneralHospital_standardcharges.csv",
+    "direct_recheck_status": 403,
+    "bytes_observed": 0,
+    "interpretation": "This corroborates the exact publisher URL and a recent third-party capture claim, but supplies no byte-backed metadata and does not change the unresolved file-access gate."
+  },
+  "disposition": "first-party-pointer-alias-identity-corroborated-file-client-denied",
+  "next_action": "The retained current pointer explicitly names Lynchburg General Hospital and links a campus-labeled CSV; Centra's facility listing agrees with the roster address. The exact pointer target returned HTTP 403 to this client on HEAD, so obtain permitted file bytes or a publisher copy and verify declared hospital/location/address/state/date/version before a current-file claim. Do not infer file absence or compliance from this access result."
+}

@@ -1,0 +1,91 @@
+{
+  "audit_id": "reconciliation-athens-limestone-current-full-mrf-proof-2026-09-28",
+  "observed_at": "2026-09-28T08:00:52Z",
+  "ccn": "010079",
+  "facility": "Athens-Limestone Hospital",
+  "official_page": {
+    "url": "https://www.huntsvillehospital.org/price-transparency",
+    "http_status": 200,
+    "retrieval": "Direct HTTPS GET to the page's official host; pinned to the same A record returned by Google Public DNS because the machine resolver timed out.",
+    "dns_a_record": "199.116.77.34",
+    "page_bytes": 35139,
+    "page_sha256": "91144289E1CA24CD9DD95776DC8293545CF2FC84682A2253CDDAF596D7D31678",
+    "athens_file_link": "https://www.huntsvillehospital.org/images/pricetransparency/475531420_Athens-Limestone-Hospital_standardcharges.csv",
+    "visible_page_updated_label": "4/1/2026",
+    "interpretation": "The live first-party HH Health page identifies Athens-Limestone as a separate hospital row and directly links this exact file. This is page-to-file provenance, not root-pointer linkage."
+  },
+  "full_file_retrieval": {
+    "url": "https://www.huntsvillehospital.org/images/pricetransparency/475531420_Athens-Limestone-Hospital_standardcharges.csv",
+    "http_status": 200,
+    "content_type": "text/csv",
+    "content_length": 40443636,
+    "last_modified": "2026-04-20T15:37:25Z",
+    "retrieved_all_bytes": true,
+    "sha256": "FDBFC862A544B51E5C72B75803EBDDC9DCE18441524FCA105DEFD6481370B437",
+    "prefix_observation": {
+      "bytes": 16384,
+      "sha256": "D28BC3D1BED6BDEE5C37484A13F8C54A26EA161408E77034835B357839D4FBA9"
+    },
+    "csv_validation": {
+      "parser": "Microsoft.VisualBasic.FileIO.TextFieldParser with comma delimiter and quoted-field support",
+      "metadata_rows": 2,
+      "header_fields": 28,
+      "parsed_data_rows": 122191,
+      "rows_with_wrong_field_count": 0,
+      "first_metadata_values": {
+        "hospital_name": "HH HEALTH SYSTEM ATHENS LIMESTONE",
+        "last_updated_on": "3/25/2026",
+        "version": "3.0.0",
+        "location_name": "HH HEALTH SYSTEM ATHENS LIMESTONE (ACU)",
+        "hospital_address": "700 W MARKET ST, ATHENS, AL 356112457",
+        "type_2_npi": "1144695081",
+        "license_number|AL": "H4201",
+        "attestation": true
+      },
+      "required_charge_columns_present": [
+        "description",
+        "setting",
+        "standard_charge|gross",
+        "standard_charge|discounted_cash",
+        "payer_name",
+        "plan_name",
+        "standard_charge|negotiated_dollar",
+        "standard_charge|negotiated_percentage",
+        "standard_charge|negotiated_algorithm",
+        "standard_charge|min",
+        "standard_charge|max"
+      ]
+    }
+  },
+  "cms_identity_crosscheck": {
+    "source_file": "cms_data/Hospital_General_Information.csv",
+    "source_sha256": "23C5019EE51E11442D6D64CD153CEDD78C51AB6435F621E4CB9351E3E972D9E3",
+    "facility_id": "010079",
+    "facility_name": "ATHENS LIMESTONE HOSPITAL",
+    "address": "700 WEST MARKET STREET",
+    "city": "ATHENS",
+    "state": "AL",
+    "zip": "35611",
+    "hospital_type": "Acute Care Hospitals",
+    "identity_result": "Exact CCN roster name, street, city, state and ZIP agree with the full-file metadata after ordinary abbreviation/ZIP+4 normalization."
+  },
+  "pointer_review": {
+    "www_system_root_pointer_url": "https://www.huntsvillehospital.org/cms-hpt.txt",
+    "www_system_root_pointer_status": 200,
+    "www_system_root_pointer_observed_target": "https://www.huntsvillehospital.org/images/pricetransparency/630845288_Huntsville-Hospital_standardcharges.csv",
+    "www_system_root_pointer_observed_location": "Huntsville Hospital",
+    "interpretation": "This shared system host's current root pointer identifies the Huntsville Hospital file, not the separately page-linked Athens-Limestone file. Do not attribute the pointer declaration to CCN 010079."
+  },
+  "separate_route_and_pointer_gaps": {
+    "newer_system_page_candidate": "https://hh.health/wp-content/uploads/475531420_Athens-Limestone-Hospital_standardcharges.csv",
+    "newer_candidate_bytes": 0,
+    "newer_host_transport": "Direct TLS/browser access to hh.health failed in the previous dated investigation; the current web reader exposes the link but not CSV bytes.",
+    "facility_root_pointer_candidate": "https://athenslimestonehospital.com/cms-hpt.txt",
+    "facility_root_pointer_result": "TLS handshake failed after independent DNS-over-HTTPS lookup; no HTTP status or pointer bytes obtained.",
+    "archived_system_page_alternative": "On 2026-08-09 Common Crawl captured a different Athens link target, /wp-content/uploads/Athens-Limestone_standardcharges.csv; see reconciliation-athens-limestone-system-file-link-divergence-2026-09-28.json."
+  },
+  "interpretation": "New primary-source evidence closes the previously missing file-byte, current first-party page-link, facility identity and CMS CSV usability gates for the live www.huntsvillehospital.org Athens-Limestone URL. The file is a full, parseable CMS v3.0.0 CSV with a 2026-03-25 file date and matching Alabama facility metadata. The shared system root pointer does not declare this file, the hospital-domain root pointer could not be retrieved, and the newer hh.health page/archive route discrepancy remains. Record the Athens file as verified current and page-linked while keeping root-pointer and alternate-route findings separate; do not claim the pointer is compliant or that every competing URL is byte-identical.",
+  "disposition": "verified-current-page-linked-mrf-root-pointer-unresolved-alternate-route-review-pending",
+  "unresolved_count_change": "Review through the evidence-bound nationwide overlay and exact 891 crosswalk; do not assume a count until regenerated artifacts are checked.",
+  "next_action": "After HTTPS access to athenslimestonehospital.com or hh.health works, retrieve its exact cms-hpt.txt and any alternate page-linked CSV with bounded/full-file hashes. Compare bytes and metadata to this proven file, then reconcile the pointer and route discrepancy. Do not replace this verified page-linked evidence with a pointer/DNS transport failure."
+}

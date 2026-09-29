@@ -1,0 +1,43 @@
+{
+  "ccn": "050455",
+  "facility": "Adventist Health Bakersfield",
+  "observed_at": "2026-09-27T18:24:00Z",
+  "disposition": "unresolved-current-pointer-file-address-conflict",
+  "sources": [
+    {
+      "kind": "California HCAI hospital profile for Specialty Bakersfield",
+      "url": "https://hcai.ca.gov/equity-measures/hospital/adventist-health-specialty-bakersfield/",
+      "observation": "HCAI identifies Adventist Health Specialty Bakersfield at 3001 Sillect Avenue, Bakersfield, CA 93308; HCAI ID 106154101; report type General Acute Care Hospital; licensee San Joaquin Community Hospital Corp. This independently corroborates the exact campus identity that the MRF header lists, distinct from the main Adventist Health Bakersfield at 2615 Chester."
+    },
+    {
+      "kind": "Adventist Health corporate financial assistance policy facility appendix",
+      "url": "https://api.hdc.hcai.ca.gov/Public/Extract/Attachment?id=f2c0114b-6c3d-4782-91ee-99876497609e",
+      "observation": "The first-party policy appendix separately lists Adventist Health Bakersfield at 2615 Chester Avenue and Adventist Health Specialty Bakersfield at 3001 Sillect Avenue. Its policy revision is 2025-04-24; this supports distinct operator facility identities but does not explain which CCN or facilities the shared MRF covers."
+    },
+    {
+      "kind": "CMS facility listing for CCN 050455",
+      "url": "https://www.cms.gov/medicare/medicare-general-information/medicareapprovedfacilitie/carotid-artery-stenting-facilities-items/san-joaquin-community-hospital",
+      "observation": "CMS identifies San Joaquin Community Hospital as provider number 050455 and lists its address as 2615 Eye Street, Bakersfield, CA 93303-2615 (CMS source effective 2005-12-28). This is a historical CMS source and not a current address override; it confirms the CCN/name association only."
+    },
+    {
+      "kind": "California state hospital profile",
+      "url": "https://hcai.ca.gov/facility/adventist-health-bakersfield/",
+      "observation": "California HCAI currently identifies Adventist Health Bakersfield at 2615 Chester Avenue, Bakersfield, CA 93301; HCAI ID 106150788; General Acute Care Hospital; facility status Open."
+    },
+    {
+      "kind": "California state community-benefit facility record",
+      "url": "https://hcai.ca.gov/community-benefit-plans/adventist-health-bakersfield/",
+      "observation": "HCAI's record for report period 2025 lists Adventist Health Bakersfield at 2615 Chester Avenue, HCAI ID 106150788, license 120000187, licensee San Joaquin Community Hospital Corp."
+    },
+    {
+      "kind": "current first-party root pointer and linked file",
+      "pointer_url": "https://www.adventisthealth.org/bakersfield/cms-hpt.txt",
+      "pointer_target": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHBBAKERSFIELDCA&type=CDMWithoutLabel&fileType=CSV",
+      "proof_file": "reconciliation-adventist-bakersfield-current-portal-header-proof-2026-09-27.json",
+      "observation": "The exact pointer-declared route returned HTTP 200 with sample SHA-256 5236c5b68fe2267745de0f0236b0401903bc860e4b06cfbd7984eae6279b3167. Its CMS 3.0.0 header identifies SAN JOAQUIN COMMUNITY HOSPITAL and Adventist Health Specialty Bakersfield but declares both locations at 3001 Sillect Avenue. The current first-party portal exposes the same underlying route for the main and Specialty labels."
+    }
+  ],
+  "interpretation": "Current HCAI identifies Adventist Health Bakersfield at 2615 Chester (HCAI ID 106150788) and separately identifies Adventist Health Specialty Bakersfield at 3001 Sillect (HCAI ID 106154101); the first-party operator appendix also lists them separately. CMS identifies San Joaquin Community Hospital as CCN 050455 but its cited record is historical and uses an older Eye Street address. The current first-party portal routes both Bakersfield labels to the same database, and the pointer-linked file header at 3001 Sillect identifies San Joaquin Community Hospital plus the Specialty facility. Thus the file has independently corroborated Specialty-campus identity, but remains mismatched to the main 050455 roster facility; distinct facility identity evidence does not establish shared Medicare CCN scope. The earlier unbound partial header cannot override URL-bound bytes. No corrected main-campus MRF or authoritative scope statement was found, so 050455 remains unresolved.",
+  "next_action": "Request a publisher-corrected pointer-linked MRF or authoritative explanation tying the exact current file's 3001 Sillect Avenue locations to CCN 050455 at 2615 Chester Avenue; if replaced, capture the exact final URL, response bytes/hash, facility address/state, CMS version/date and usability. Preserve the current file hash and do not treat the lost-URL partial as evidence.",
+  "no_change": "No disposition change or new MRF recovery; CCN 050455 remains unresolved with the file/address conflict visible. New evidence is independent facility identity/address corroboration (main versus Specialty), not new MRF bytes and not resolution credit."
+}

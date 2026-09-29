@@ -1,8 +1,8 @@
 # curl-style evidence for https://andalusiahealth.com/cms-hpt.txt
-# fetched 2026-09-07T01:31:50.957Z with the tracker's BROWSER_HEADERS (production client)
+# fetched 2026-09-16T08:38:41.628Z with the tracker's BROWSER_HEADERS (production client)
 # record: 010036 | ANDALUSIA HEALTH | AL | finding: not-assessed-site-unreachable
 
-* DNS andalusiahealth.com: 151.101.67.10, 151.101.131.10, 151.101.195.10, 151.101.3.10
+* DNS andalusiahealth.com: 151.101.195.10, 151.101.3.10, 151.101.67.10, 151.101.131.10
 
 > GET /cms-hpt.txt  (request headers sent on every hop)
 > User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36
@@ -22,12 +22,12 @@
 < accept-ranges: bytes
 < connection: close
 < content-length: 293
-< date: Mon, 07 Sep 2026 01:31:52 GMT
+< date: Wed, 16 Sep 2026 08:38:52 GMT
 < retry-after: 0
 < strict-transport-security: max-age=31557600
 < x-cache: MISS
-< x-served-by: cache-iad-kcgs7200115-IAD
-< x-timer: S1788744713.700200,VS0,VE3
+< x-served-by: cache-iad-khef600045-IAD
+< x-timer: S1789547933.609632,VS0,VE1
 < --- body (293 bytes read) ---
 < <!DOCTYPE html>
 <       <html>
@@ -37,9 +37,9 @@
 <         <body>
 <           <h1>Error 406 Not Acceptable</h1>
 <           <p>Not Acceptable</p>
-<           <p>Trace-id: 8d131d57-0cc2-4c5e-9e69-931c054aa100</p>
+<           <p>Trace-id: 5fff7e79-8d89-4c71-bb12-cae17d7c1899</p>
 <         </body>
 <       </html>
 <     
 
-* total time: 22226 ms
+* total time: 11258 ms

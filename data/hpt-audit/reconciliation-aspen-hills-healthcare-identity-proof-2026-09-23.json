@@ -1,0 +1,30 @@
+{
+  "ccn": "314023",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "roster_identity": {
+    "name": "ASPEN HILLS HEALTHCARE CENTER",
+    "address": "600 PEMBERTON-BROWNS MILLS ROAD",
+    "city": "PEMBERTON",
+    "state": "NJ",
+    "zip": "08068"
+  },
+  "current_operator_domain": "https://aspenhillshealthcare.com/",
+  "identity_sources": [
+    {
+      "url": "https://healthapps.nj.gov/facilities/fsFacilityDetails.aspx?item=NJ60302",
+      "observation": "New Jersey's official facility registry lists Aspen Hills Healthcare Center at 600 Pemberton Brown Mills Rd, Pemberton, NJ 08068, with licensed owner Aspen Hills Healthcare Center, LLC."
+    },
+    {
+      "url": "https://aspenhillshealthcare.com/",
+      "observation": "The current first-party site names Aspen Hills Healthcare Center and describes the Pemberton skilled-nursing and rehabilitative-care campus."
+    },
+    {
+      "url": "https://njccn.org/team/aspen-hills-healthcare-center/",
+      "observation": "The New Jersey Collaborating Center for Nursing independently matches the facility name, address, 204-bed campus and website."
+    }
+  ],
+  "browser_observation": "Bounded requests to the first-party root and disclosures page returned HTML 200; /cms-hpt.txt, /.well-known/cms-hpt.txt, /price-transparency and /standard-charges returned 404. The accessible site describes long-term/skilled nursing rather than a psychiatric hospital, so CMS scope/type remains unresolved and no MRF was promoted.",
+  "disposition": "official-domain-identified-scope-review-required",
+  "interpretation": "Facility name and address are corroborated, but the current publisher description and New Jersey license classify the campus as long-term care while the tracker roster classifies CCN 314023 as psychiatric. This is a supported scope uncertainty, not a closure or compliance conclusion.",
+  "next_action": "Reconcile the CMS enrollment/type record and any successor or co-located psychiatric entity; obtain a facility-specific CMS pointer/MRF before changing the tracker finding."
+}

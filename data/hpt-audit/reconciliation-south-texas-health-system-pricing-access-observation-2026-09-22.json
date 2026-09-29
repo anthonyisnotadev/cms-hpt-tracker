@@ -1,0 +1,28 @@
+{
+  "ccn": "450119",
+  "observed_at": "2026-09-22T06:00:00Z",
+  "official_site": "https://www.southtexashealthsystem.com/",
+  "official_pricing_page": "https://www.southtexashealthsystem.com/patients-visitors/price-transparency",
+  "official_page_status": 403,
+  "official_page_observation": "The current South Texas Health System site is the official system domain for the CMS 450119 identity at 1102 W Trenton Road, Edinburg, TX. The direct price-transparency route rendered a Cloudflare access-denied page in the browser client; no machine-readable file or facility-specific pointer was recovered.",
+  "pointer_url": "https://www.southtexashealthsystem.com/cms-hpt.txt",
+  "pointer_status": 403,
+  "pointer_content_type": "text/html; charset=UTF-8",
+  "pointer_response_bytes": 8204,
+  "pointer_sha256": "6d216cca5dbd1a3668eb32f692f9189ce9248481b2f62dce71007203a62e30fd",
+  "file_kind": null,
+  "disposition": "official-pricing-page-access-denied",
+  "cms_hospital_general_record": {
+    "source_file": "cms_data/Hospital_General_Information.csv",
+    "source_sha256": "23c5019ee51e11442d6d64cd153cedd78c51ab6435f621e4cb9351e3e972d9e3",
+    "facility_id": "450119",
+    "facility_name": "SOUTH TEXAS HEALTH SYSTEM",
+    "address": "1102 W TRENTON ROAD",
+    "citytown": "EDINBURG",
+    "state": "TX",
+    "zip_code": "78539",
+    "hospital_type": "Acute Care Hospitals"
+  },
+  "interpretation": "This is a transport/access observation only. Cloudflare denial does not establish file absence, noncompliance, or an exemption; the CCN remains unresolved.",
+  "next_action": "Retry the exact official pricing route and root pointer through an authorized alternate client, then independently verify any recovered file's facility identity, address/state, date, version and complete-file usability."
+}

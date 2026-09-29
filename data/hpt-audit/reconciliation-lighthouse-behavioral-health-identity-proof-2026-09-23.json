@@ -1,0 +1,26 @@
+{
+  "ccn": "424002",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "roster_identity": {
+    "name": "LIGHTHOUSE BEHAVIORAL HEALTH HOSPITAL",
+    "address": "152 WACCAMAW MEDICAL PARK DRIVE",
+    "city": "CONWAY",
+    "state": "SC",
+    "zip": "29526"
+  },
+  "current_operator_domain": "https://lighthousebehavioral.com/",
+  "identity_sources": [
+    {
+      "url": "https://apps.sceis.sc.gov/SCContractWeb/contractDetail.do?contractNumber=4400027156&hideReturnButton=false",
+      "observation": "South Carolina's official contract record identifies Lighthouse Behavioral Health Hospital at 152 Waccamaw Medical Park Drive, Conway, SC 29526 and links lighthousebehavioral.com."
+    },
+    {
+      "url": "https://www.scdhhs.gov/sites/default/files/managedcare/MCO%20Reports%20Companion%20Guide_2022_07.pdf",
+      "observation": "South Carolina DHHS lists Lighthouse Behavioral Health Hospital at 152 Waccamaw Medical Park Drive, Conway, SC."
+    }
+  ],
+  "browser_observation": "Bounded HTTPS requests to lighthousebehavioral.com root, cms-hpt.txt, .well-known/cms-hpt.txt and likely pricing paths returned HTTP 403 responses; no MRF bytes or pointer content were exposed.",
+  "disposition": "official-domain-identified-access-blocked",
+  "interpretation": "The current official domain and exact roster identity are corroborated by South Carolina government records. HTTP 403 is a transport observation only; no file absence, closure, compliance or current pricing conclusion is inferred.",
+  "next_action": "Retry the identified official domain through a permitted browser route or obtain a publisher-provided current CMS pointer/MRF URL; validate facility identity and metadata before promotion."
+}

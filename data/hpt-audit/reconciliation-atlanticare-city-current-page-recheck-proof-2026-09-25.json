@@ -1,0 +1,25 @@
+{
+  "ccn": "310064",
+  "observed_at": "2026-09-25T06:00:00Z",
+  "official_page": "https://www.atlanticare.org/patients-and-visitors/for-patients/billing-and-insurance/hospital-charge-list",
+  "page_observation": "The current first-party page says AtlantiCare Regional Medical Center charges are the same at all hospital-based locations and links one current machine-readable file URL for the system. The page also labels the linked resource as a comprehensive MRF.",
+  "pointer_url": "https://atlanticare.org/cms-hpt.txt",
+  "mrf_url": "https://atlanticare.pt.panaceainc.com/MRFDownload/atlanticare/atlanticare",
+  "head_response": {
+    "status": 200,
+    "content_type": "application/octet-stream",
+    "content_length": 1054023199,
+    "content_disposition": "attachment; filename=210634549-1013919315_atlanticare-regional-medical-center_standardcharges.csv",
+    "redirect": "https://mrf.panaceainc.com/Download.aspx?org=atlanticare&loc=atlanticare&ref="
+  },
+  "bounded_retrieval": {
+    "requested_range": "bytes=0-262143",
+    "server_behavior": "The endpoint ignored the range and began a full stream from byte zero.",
+    "aborted_prefix_bytes": 260431872,
+    "aborted_prefix_sha256": "8524D3C74FA17B1927EA8F18CF4C43B07400BA19102D7934F46D4B8F628755F1",
+    "header_recovered": false
+  },
+  "disposition": "city-pointer-shared-system-file-current-page-recheck-scope-unresolved",
+  "interpretation": "The current page and response headers confirm a current facility-system MRF endpoint and an AtlantiCare Regional Medical Center filename, but the server does not honor bounded range requests and the recovered prefix did not establish whether the Atlantic City campus is represented in the file. The City CCN remains unresolved; no assignment or compliance conclusion is inferred.",
+  "next_action": "Obtain a publisher-provided City-campus scope statement or a permitted bounded/full-file inspection route that can establish the file's location metadata. Do not promote CCN 310064 from the shared URL alone."
+}

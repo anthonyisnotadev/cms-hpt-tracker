@@ -1,0 +1,25 @@
+{
+  "ccn": "224023",
+  "sibling_ccn": "224013",
+  "observed_at": "2026-09-28T07:06:00Z",
+  "source": {
+    "publisher": "Massachusetts Center for Health Information and Analysis (CHIA)",
+    "current_index_page": "https://www.chiamass.gov/massachusetts-non-acute-hospital-profiles/?viewfullsize=0",
+    "current_index_page_observation": "The page labels its report materials January 2026 and lists Westwood Lodge Pembroke Hospital in the behavioral-health hospital profiles.",
+    "report_url": "https://www.chiamass.gov/wp-content/uploads/docs/r/hospital-profiles/2024/non-acutes/Behavioral-Health-Hospital-HFY2024-Non-Acute-Profile.pdf",
+    "report_http_status": 200,
+    "report_content_type": "application/pdf",
+    "report_bytes": 302942,
+    "report_sha256": "606032b97cb76b5ddbc8394bb0ce8a06fdb6159e221947084d9677cc21c525f"
+  },
+  "observations": {
+    "combined_report_name": "Westwood Lodge Pembroke Hospital",
+    "reported_period": "hospital fiscal years 2020 through 2024",
+    "hfy2024_inpatient_days": 36138,
+    "hfy2024_outpatient_visits": 6628,
+    "scope_limit": "CHIA presents one combined behavioral-health profile. It does not identify which campus or CCN accounts for these figures, nor does it establish 45 Clapboardtree Street operations after HFY2024."
+  },
+  "interpretation": "This is new official state reporting evidence that Westwood Lodge and Pembroke Hospital were reported together through HFY2024; it narrows the operator/reporting relationship but does not establish current CCN 224023 enrollment, campus-specific activity, a CMS price-transparency pointer, or MRF coverage. Do not assign combined metrics or any Pembroke Hospital file to CCN 224023.",
+  "disposition_effect": "none; retain 224023 unresolved and preserve separate CCN 224013",
+  "next_action": "Obtain effective-dated CMS enrollment/termination or current Massachusetts DMH licensing evidence for CCN 224023 at 45 Clapboardtree Street. If the operator publishes a combined MRF, require explicit location/CCN scope separating Westwood Lodge from Pembroke Hospital CCN 224013 before assignment."
+}

@@ -1,0 +1,17 @@
+{
+  "ccn": "451358",
+  "observed_at": "2026-09-22T10:00:00Z",
+  "official_pricing_page": "https://www.texashealthhuguley.org/",
+  "official_pricing_page_status": 403,
+  "official_page_observation": "Interactive browser access to the recorded domain rendered an Access Denied page. A permitted browser check of the exact cms-hpt.txt route rendered plain Permission denied. Prior first-party page content for this same domain identifies Texas Health Huguley Hospital Fort Worth South in Burleson, TX, not the CMS Memorial Hospital in Seminole; no current facility-specific MRF was exposed.",
+  "cms_pointer_url": "https://www.texashealthhuguley.org/cms-hpt.txt",
+  "cms_pointer_result": "Browser route rendered plain text Permission denied; no pointer content or MRF URL was available.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=451358&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6851,
+  "cms_api_response_sha256": "10D220DFB9B37AE06A079243EA059EBB098E1F97CC019860CC220997A4DBE6DC",
+  "cms_record": { "facility_id": "451358", "facility_name": "MEMORIAL HOSPITAL", "address": "209 NORTHWEST 8TH STREET", "citytown": "SEMINOLE", "state": "TX", "zip_code": "79360", "hospital_type": "Critical Access Hospitals", "hospital_ownership": "Government - Hospital District or Authority", "emergency_services": "Yes" },
+  "disposition": "official-domain-operator-mismatch-pointer-permission-denied-no-mrf-observed",
+  "interpretation": "The CMS record identifies Memorial Hospital in Seminole, while the recorded domain is a Texas Health Huguley site in Burleson. The mismatch and pointer denial are documented as identity/access observations; neither establishes file absence, noncompliance, closure, or that the Huguley site applies to the Seminole CCN.",
+  "next_action": "Resolve the current Seminole Memorial Hospital operator/domain and obtain a facility-specific CMS CSV/JSON or corrected pointer; do not assign the Huguley site or files to CCN 451358."
+}

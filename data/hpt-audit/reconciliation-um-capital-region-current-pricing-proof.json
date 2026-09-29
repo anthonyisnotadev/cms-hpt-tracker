@@ -1,0 +1,11 @@
+{
+  "ccn": "210003",
+  "observed_at": "2026-09-19T18:05:00Z",
+  "official_facility_url": "https://www.umms.org/capital/locations/um-capital-region-medical-center",
+  "official_pricing_url": "https://www.umms.org/patients-visitors/price-transparency",
+  "page_linked_file_url": "https://www.umms.org/standard-charges/521289729_UM-Capital-Region-Medical-Center_standardcharges.csv",
+  "facility_observation": "UMMS identifies UM Capital Region Medical Center at 901 Harry S. Truman Drive North, Largo, MD 20774. The tracker roster names the CCN in Upper Marlboro; the official page and CMS city labels should remain separately preserved until an authoritative address reconciliation is established.",
+  "pricing_observation": "The current UMMS pricing page lists a dedicated UM Capital Region Medical Center Standard Charges download. The exact CSV returned HTTP 403 with a Cloudflare block page; no file bytes, header, date, or CMS template metadata were retrieved.",
+  "pointer_observation": "The UMMS root cms-hpt.txt was not retrieved through this route, so the page-linked file cannot be promoted as pointer-verified.",
+  "conclusion": "Facility identity and a dedicated current pricing-page target are corroborated, but address/city reconciliation, pointer linkage and file usability remain unresolved. Do not borrow the file for other UMMS CCNs."
+}

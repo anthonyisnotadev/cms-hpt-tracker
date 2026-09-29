@@ -1,0 +1,63 @@
+{
+  "observed_at": "2026-09-26T08:00:00Z",
+  "records": [
+    {
+      "ccn": "131314",
+      "hospital_name": "SHOSHONE MEDICAL CENTER",
+      "official_domain": "shoshonehealth.com",
+      "pointer_url": "https://www.shoshonehealth.com/cms-hpt.txt",
+      "pointer_http_status": 200,
+      "pointer_observation": "The current first-party cms-hpt.txt is content-bearing and names Shoshone Medical Center, with a Hospital Price Index source page and a blob MRF URL containing a literal #1 filename segment.",
+      "source_page_url": "https://search.hospitalpriceindex.com/hpi2/machineReadable/ShoshoneMedicalCenter/7852",
+      "source_page_http_status": 200,
+      "source_page_browser_result": "The rendered Hospital Price Index route redirected to facility-not-found; no file download or facility metadata was exposed.",
+      "legacy_page_file_url": "https://www.shoshonehealth.com/wp-content/uploads/2019/12/2020-Charge-Master.csv",
+      "legacy_page_file_http_status": 200,
+      "legacy_page_file_content_type": "text/csv; charset=utf-8",
+      "legacy_page_file_bytes": 194646,
+      "legacy_page_file_sha256": "255541b660748f0a50bf62cd4b91d8b444caedf96de5a4fcc0bbee891a2f0d6b",
+      "legacy_page_file_last_modified": "2022-03-01T16:03:58Z",
+      "legacy_page_file_observation": "The official pricing page currently exposes this older four-column chargemaster (DESCRIPTION, CPT, REV, PRICE); it has no CMS 3.0.0 root metadata or negotiated-rate structure and is not promoted as the current MRF.",
+      "mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7852/826003924_west-shoshone-hospital-district-#1_standardcharges.csv",
+      "mrf_http_status": 404,
+      "mrf_observation": "The exact pointer-declared URL returned HTTP 404; no CSV bytes or header metadata were retained. The URL was also tested with the # character percent-encoded, with the same 404 result.",
+      "latest_official_page_search_recheck_2026_09_26": {
+        "observed_at": "2026-09-26T23:35:00Z",
+        "source_url": "https://www.shoshonehealth.com/patients/registrationbilling/",
+        "visible_statement": "SMC provides the ability to download our chargemaster in a machine-readable format.",
+        "visible_file_url": "https://www.shoshonehealth.com/wp-content/uploads/2019/12/2020-Charge-Master.csv",
+        "result": "The current official page still exposes only the older 2020 chargemaster link; the current cms-hpt.txt target remains the separate unavailable blob URL. No replacement CMS CSV/JSON MRF was found."
+      },
+      "disposition": "current-pointer-retrieved-target-unavailable",
+      "interpretation": "This is a stronger current pointer/linkage observation, but it does not establish file absence, noncompliance, or a current MRF promotion.",
+      "next_action": "Obtain a publisher-provided replacement URL or copy for Shoshone Medical Center, then verify facility name, Idaho address/state, declared date, CMS version and usable rows."
+    },
+    {
+      "ccn": "131319",
+      "hospital_name": "MINIDOKA MEMORIAL HOSPITAL",
+      "official_domain": "minidokamemorial.org",
+      "pointer_url": "https://minidokamemorial.org/cms-hpt.txt",
+      "pointer_http_status": 200,
+      "pointer_observation": "The current first-party cms-hpt.txt is content-bearing and names Minidoka Memorial Hospital with a facility-specific CSV URL dated in the 2024 upload path.",
+      "source_page_url": "https://minidokamemorial.org/",
+      "source_page_http_status": 200,
+      "mrf_url": "https://minidokamemorial.org/wp-content/uploads/2024/09/820291854_minidoka-memorial-hospital_standardcharges.csv",
+      "mrf_http_status": 404,
+      "mrf_observation": "The exact pointer-declared CSV returned HTTP 404; no CSV bytes or header metadata were retained. The current homepage was reachable, but bounded page inspection did not expose a replacement CMS CSV/JSON URL.",
+      "latest_third_party_search_lead": {
+        "source_url": "https://www.procedureradar.com/hospitals/minidoka-memorial-hospital",
+        "file_url": "https://minidokamemorial.org/wp-content/uploads/2020/12/Chargemaster-.xls",
+        "file_http_status": 200,
+        "file_content_type": "application/vnd.ms-excel",
+        "file_bytes": 507392,
+        "file_sha256": "637642e6ad48d7731dd8d3bc7f04d9d0b50848387bca9442501f17fe2dd3205f",
+        "file_last_modified": "2025-06-03T21:53:53Z",
+        "file_format_observation": "OLE compound document with .xls extension; CMS 3.0.0 fields and facility header were not parsed in this bounded lead check.",
+        "disposition": "stage-third-party-lead-do-not-promote"
+      },
+      "disposition": "current-pointer-retrieved-target-unavailable",
+      "interpretation": "This confirms a current pointer and a currently unavailable target, without inferring file absence, noncompliance, or a current MRF promotion.",
+      "next_action": "Obtain a publisher-provided replacement URL or copy for Minidoka Memorial Hospital, then verify facility name, Idaho address/state, declared date, CMS version and usable rows."
+    }
+  ]
+}

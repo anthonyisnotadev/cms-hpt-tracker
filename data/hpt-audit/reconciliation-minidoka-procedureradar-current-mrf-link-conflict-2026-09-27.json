@@ -1,0 +1,43 @@
+{
+  "ccn": "131319",
+  "hospital_name": "Minidoka Memorial Hospital",
+  "observed_at": "2026-09-27T23:53:20Z",
+  "third_party_source_page": "https://www.procedureradar.com/sleep-study/boise",
+  "third_party_claims": {
+    "provider_row": "Minidoka Memorial Hospital",
+    "current_listing_label": "Minidoka Memorial Hospital MRF (September 1, 2026)",
+    "page_methodology": "The page says its prices come from hospital-published source files and were updated monthly; page footer says last updated September 1, 2026."
+  },
+  "linked_file_observation": {
+    "link_text": "View File",
+    "url": "https://minidokamemorial.org/wp-content/uploads/2020/12/Chargemaster-.xls",
+    "host_is_facility_domain": true,
+    "path_implies_2020_upload": true,
+    "web_reader_result": "The link resolves to an Excel object; this web reader cannot parse application/vnd.ms-excel and returned Unsupported content-type.",
+    "prior_exact_url_observation": {
+      "proof_file": "reconciliation-shoshone-minidoka-current-pointer-recheck-2026-09-26.json",
+      "http_status": 200,
+      "content_type": "application/vnd.ms-excel",
+      "bytes": 507392,
+      "sha256": "637642e6ad48d7731dd8d3bc7f04d9d0b50848387bca9442501f17fe2dd3205f",
+      "last_modified": "2025-06-03T21:53:53Z",
+      "observed_format": "OLE compound document with .xls extension; no CMS 3.0.0 metadata or facility header was established."
+    }
+  },
+  "independent_current_hospital_evidence": {
+    "cms_pointer_proof": "reconciliation-shoshone-minidoka-current-pointer-recheck-2026-09-26.json",
+    "pointer_url": "https://minidokamemorial.org/cms-hpt.txt",
+    "pointer_declared_mrf_url": "https://minidokamemorial.org/wp-content/uploads/2024/09/820291854_minidoka-memorial-hospital_standardcharges.csv",
+    "last_observed_target_status": 404,
+    "status_not_rechecked": true,
+    "reason_not_rechecked": "No source change was indicated; the third-party page points to the already-evidenced 2020 Excel object, not a new CMS MRF target."
+  },
+  "assessment": {
+    "evidence_gain": "A current third-party price page calls the Minidoka row a September 2026 MRF but its raw-file link resolves to the already documented first-party-domain 2020/12 Excel chargemaster, whose retained exact-URL observation is an OLE .xls without CMS-template metadata. This is a new source-claim/file-link discrepancy, not new MRF bytes.",
+    "mrf_recovered": false,
+    "ccn_attribution_from_third_party_claim": false,
+    "prices_imported": false,
+    "disposition_effect": "none; retain CCN 131319 as unresolved because the pointer-declared 2024 CMS CSV remains at its prior 404 observation and no current CMS MRF bytes were found.",
+    "next_action": "Obtain a restored pointer-declared target or publisher-provided current CMS CSV/JSON/ZIP; validate exact Minidoka identity, Idaho address/state, declared date/version and usable rows. Do not treat the 2020 Excel chargemaster or third-party price summary as the current MRF."
+  }
+}

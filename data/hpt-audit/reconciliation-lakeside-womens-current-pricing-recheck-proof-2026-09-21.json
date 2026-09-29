@@ -1,0 +1,19 @@
+{
+  "ccn": "370199",
+  "observed_at": "2026-09-21T13:10:00Z",
+  "official_pricing_page": "https://lakeside-wh.com/about/pricing-information",
+  "official_pricing_page_status": 200,
+  "official_page_observation": "The current first-party Lakeside Women's Hospital pricing page identifies the facility at 11200 N. Portland Ave, Oklahoma City, OK 73120 and exposes a Lakeside Women's Hospital Chargemaster Report link.",
+  "page_file_url": "https://lakeside-wh.com/-/media/pricing/2021/lakeside-chargemaster.xlsx?revision=48ce138d-8488-4cee-8d01-a71dbe6abde8",
+  "page_file_result": "The linked object returned a 4,551-byte HTML security challenge rather than an XLSX workbook; no machine-readable CMS CSV/JSON bytes or declared metadata were recovered.",
+  "page_file_response_bytes": 4551,
+  "page_file_response_sha256": "5dd43a9ec64e9f74aeb4857dfb262df2f255c4e6e9be8b0e98dc18c8b4e93af9",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=370199&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6697,
+  "cms_api_response_sha256": "805a4c9a4295fceab7fc981877d7ccffb81cebfa5fcdc45b4d98ee76ebb89eb2",
+  "cms_record": { "facility_id": "370199", "facility_name": "LAKESIDE WOMEN'S HOSPITAL, A MEMBER OF INTEGRIS HE", "address": "11200 NORTH PORTLAND AVENUE", "citytown": "OKLAHOMA CITY", "state": "OK", "zip_code": "73120", "hospital_type": "Acute Care Hospitals", "hospital_ownership": "Voluntary non-profit - Private", "emergency_services": "Yes" },
+  "disposition": "current-official-pricing-page-identity-confirmed-legacy-file-access-challenge",
+  "interpretation": "The current first-party page and CMS API independently confirm the Lakeside facility identity and address. The page-linked object is an older 2021 XLSX path and currently returns HTML challenge bytes, not a current CMS MRF. No file promotion or compliance inference is made.",
+  "next_action": "Obtain a current facility-specific CMS CSV/JSON through the INTEGRIS publisher route or an authorized download-capable browser, then verify declared name, address, Oklahoma state, date, version and usability."
+}

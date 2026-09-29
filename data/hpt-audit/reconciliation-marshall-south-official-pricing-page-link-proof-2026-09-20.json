@@ -1,0 +1,23 @@
+{
+  "observed_at": "2026-09-20T20:35:00Z",
+  "ccn": "010005",
+  "source_page": "https://mmcenters.com/charges",
+  "source_observation": "The official Marshall Medical Centers Hospital Charges page states that standard charges are posted and links a Standard Card File for Marshall Medical Center South.",
+  "page_scope": {
+    "facility_name": "Marshall Medical Center South",
+    "address": "2505 US Highway 431, Boaz, AL 35957",
+    "official_file_url": "https://mmcenters.com/83-1651180_Marshall-Medical-Center-South_standardcharges.csv"
+  },
+  "source_lines": "260-275",
+  "source_retrieval": "web-opened official page; direct page and file were not resolvable by the local/browser client at observation time",
+  "direct_file_status": "DNS resolution failed",
+  "existing_vendor_file": {
+    "url": "https://cdn.accureg.net/trans/mmc/83-1651180_Marshall-Medical-Center-South_standardcharges.csv",
+    "status": 200,
+    "bytes": 15724902,
+    "sha256": "7e80d1d043c047e4cbebef8fd02cde565a6912238699a6027af168117d008b58",
+    "last_modified": "2026-03-31T15:04:56Z"
+  },
+  "disposition": "official-page-links-same-named-file-vendor-copy-current-pointer-linkage-pending",
+  "next_action": "Retry the official page and exact official file through an alternate client after DNS is restored; compare bounded bytes before treating the vendor copy as pointer-linked."
+}

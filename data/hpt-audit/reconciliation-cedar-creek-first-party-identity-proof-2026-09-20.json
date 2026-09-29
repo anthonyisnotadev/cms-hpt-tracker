@@ -1,0 +1,18 @@
+{
+  "ccn": "234043",
+  "observed_at": "2026-09-19T22:31:36Z",
+  "source_url": "https://cedarcreekhospital.com/wp-content/uploads/2024/05/CCH-Expansion-Open-House-Flyer.pdf",
+  "source_role": "first-party facility identity evidence",
+  "source_status": "200",
+  "source_content_type": "application/pdf",
+  "source_observed_pages": 1,
+  "declared_facility_name": "Cedar Creek Hospital of Michigan",
+  "declared_address": "101 W. Townsend Road, St. Johns, MI 48879",
+  "roster_address": "101 WEST TOWNSEND ROAD, SAINT JOHNS, MI 48879",
+  "identity_result": "first-party-name-and-address-match",
+  "pointer_status": "not-retrieved-by-web-client",
+  "mrf_status": "not-retrieved",
+  "disposition": "identity-corroborated-pointer-access-still-pending",
+  "detail": "The first-party Cedar Creek Hospital PDF explicitly names the facility and exact roster address. It does not establish a current cms-hpt.txt response or MRF bytes; no pointer, file metadata or compliance conclusion is inferred.",
+  "next_action": "Retry the exact root pointer and facility pricing route through an authorized content-bearing client, then verify the MRF header, Michigan state, declared date, CMS version and complete-file usability."
+}

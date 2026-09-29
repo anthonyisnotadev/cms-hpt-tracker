@@ -1,0 +1,46 @@
+{
+  "ccn": "440161",
+  "observed_at": "2026-09-25T09:04:00Z",
+  "official_pricing_page": "https://www.tristarhealth.com/locations/tristar-centennial-medical-center/for-patients/pricing-transparency-cms-required-file-of-standard-charges",
+  "page_mrf_url": "https://hcadam.com/api/public/content/0947329859ac44d4aee0f06e1cda2eb9?download=true",
+  "retrieval": {
+    "http_status": 206,
+    "content_type": "application/json",
+    "content_length": 863708525,
+    "last_modified": "2025-05-19T16:43:37Z",
+    "sample_bytes": 4096,
+    "sample_sha256": "not-retained",
+    "bounded_header": {
+      "hospital_name": "CENTENNIAL MEDICAL CENTER",
+      "last_updated_on": "2024-10-01",
+      "version": "2.2.0",
+      "license_state": "TN",
+      "license_number": "136",
+      "main_address": "2300 PATTERSON ST., NASHVILLE, TN, 37203",
+      "locations": [
+        "CENTENNIAL MEDICAL CENTER",
+        "TRISTAR SPRING HILL ER",
+        "TRISTAR CENTENNIAL PARTHENON PAVILION",
+        "TRISTAR CENTENNIAL WOMEN'S HOSPITAL",
+        "TRISTAR CENTENNIAL CHILDREN'S HOSPITAL"
+      ]
+    }
+  },
+  "comparison": {
+    "pointer_signed_target": "https://www.tristarhealth.com/pt-final-posting-files/62-1113737_TRISTAR-CENTENNIAL-MEDICAL-CENTER_standardcharges.json",
+    "pointer_signed_target_status": 403,
+    "prior_page_file_declared_date": "2026-03-01",
+    "prior_page_file_declared_version": "3.0.0"
+  },
+  "pointer_retry": {
+    "observed_at": "2026-09-25T09:06:00Z",
+    "browser_status": "404 page-not-found",
+    "bounded_status": 404,
+    "content_type": "text/html; charset=utf-8",
+    "content_length": 3904,
+    "interpretation": "The exact pointer target is currently a first-party 404 page, not a retrievable JSON MRF. This supersedes the older 403 transport observation only as a newer access result; it does not prove file absence."
+  },
+  "finding": "The page download route is reachable again and yields a complete identity-matching but stale CMS 2.2.0 artifact. It does not replace the inaccessible pointer target or the separately observed 2026-03-01 CMS 3.0.0 lead.",
+  "disposition": "stale-page-download-recovered-current-pointer-still-unresolved",
+  "next_action": "Obtain a publisher-issued replacement token or corrected pointer route, then compare the complete current CMS 3.0.0 file before any promotion."
+}

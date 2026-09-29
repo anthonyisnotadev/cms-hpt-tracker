@@ -1,0 +1,15 @@
+{
+  "ccn": "454107",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://www.bhbhospital.com/",
+  "official_identity_sources": [
+    "https://jobs.uhs.com/behavioral-hospital-of-bellaire",
+    "https://turquoise.health/providers/ubh-bellaire-hospital/information"
+  ],
+  "official_identity": "Provider records identify Behavioral Hospital of Bellaire as a UHS-affiliated psychiatric hospital at 5314 Dashwood Drive, Houston, TX 77081, CCN 454107, NPI 1093021719.",
+  "browser_observation": "Browser automation reached the first-party Bellaire domain but showed a Cloudflare security-verification interstitial. Direct requests to cms-hpt.txt and likely pricing paths returned HTTP 403.",
+  "pricing_observation": "No usable facility-specific CMS pointer or MRF bytes were retrieved. This is an access observation, not evidence that a file is absent, that the facility is closed, or that it is exempt.",
+  "disposition": "current-operator-identity-confirmed-pricing-route-client-denied",
+  "interpretation": "This replaces the stale domain-unknown label with a supported first-party domain lead and exact Bellaire identity while preserving the unresolved pricing route.",
+  "next_action": "Retry the first-party CMS pointer and pricing route through a materially different permitted browser/download route; require bounded bytes, Bellaire identity, Texas metadata, date/version and parsed usability before promotion."
+}

@@ -1,0 +1,34 @@
+{
+  "ccn": "670093",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "roster_identity": {
+    "name": "ASPIRE HOSPITAL",
+    "address": "2006 S LOOP 336 W STE 500",
+    "city": "CONROE",
+    "state": "TX",
+    "zip": "77304"
+  },
+  "official_domain": "https://www.aspirehealthcorp.com/",
+  "official_identity_sources": "https://www.aspirehealthcorp.com/|https://www.aspirehealthcorp.com/our-services/behavioral-health-inpatient/|https://secure.claraprice.net/price-transparency/aspire-behavioral-health|https://npiregistry.cms.hhs.gov/provider-view/1093955296|https://pfd.hhs.texas.gov/sites/default/files/documents/hospital-svcs/2025/2025-ffy-sda-verif.pdf",
+  "official_page_observation": "The first-party Aspire Hospital site identifies Aspire Hospital at 2006 S Loop 336 W, Conroe, TX 77304 and links Price Transparency to the ClaraPrice Aspire Behavioral Health Hospital page. The NPI and Texas state sources corroborate the same facility identity and address.",
+  "browser_observation": "Browser/web inspection opened the official site, its Price Transparency link and the ClaraPrice page. The page exposed a machine-readable JSON file published 2026-04-27.",
+  "mrf_url": "https://secure.claraprice.net/price-transparency/TDCQ-1707436189518/machine-readable",
+  "mrf_observation": {
+    "http_status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "bytes": 4410676,
+    "sha256": "4f6544944cf5acf595786aab4acb9e99b9d5e2f6532cea180721554f2c4fd04b",
+    "hospital_name": "Aspire Behavioral Health Hospital",
+    "location_name": "Aspire Behavioral Health Hospital",
+    "hospital_address": "2006 South Loop 336 West Suite 500, Conroe, TX 77304",
+    "npi": "1093955296",
+    "license_state": "TX",
+    "cms_template_version": "3.0.0",
+    "last_updated_on": "2026-04-27",
+    "standard_charge_information_rows": 4025,
+    "attestation_confirmed": true
+  },
+  "disposition": "verified-current-mrf",
+  "interpretation": "First-party Aspire identity, linked ClaraPrice page, file address, NPI and Texas identity sources converge; Aspire Behavioral Health Hospital is the current facility naming used by the publisher. This is supported observed MRF evidence, not a legal compliance determination.",
+  "next_action": "Retain exact page and file provenance and recheck on the normal freshness cycle."
+}

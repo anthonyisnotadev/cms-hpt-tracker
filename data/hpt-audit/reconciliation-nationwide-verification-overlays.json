@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "purpose": "Evidence-bound overlays for verified current page-linked files when the raw nationwide observation is older or incomplete. Raw crawl/verification inputs remain unchanged.",
+  "records": [
+    {
+      "ccn": "440161",
+      "source_proof_file": "reconciliation-tristar-centennial-current-page-file-promotion-proof-2026-09-26.json",
+      "page_linked_mrf_url": "https://stctrprodsnsvc00455826e6.blob.core.windows.net/pt-final-posting-files/62-1113737_TRISTAR-CENTENNIAL-MEDICAL-CENTER_standardcharges.json?si=dpx-pt-json-access-policy&spr=https&sv=2026-02-06&sr=c&sig=ks%2BgfAjyEHlZmeP2PYJ%2F9NpMuCoRStjTb2bhIy9Y6LM%3D",
+      "tracker_link_url": "https://www.tristarhealth.com/patient-resources/patient-financial-resources/pricing-transparency-cms-required-file-of-standard-charges",
+      "base": {
+        "disposition": "mrf-request-unsuccessful",
+        "observed_at": "2026-09-15T04:37:38.167Z",
+        "mrf_http_status": "403",
+        "mrf_url_sha256": "b41b8c700e2d49dad9159ba9f056daf14ef605bf638bde12b6c0bda3e2c19985",
+        "facility_identity": "not-corroborated",
+        "declared_hospital_name": "",
+        "declared_location_name": "",
+        "declared_address": "",
+        "declared_license_state": "",
+        "declared_last_updated": "",
+        "cms_template_version": ""
+      },
+      "root_pointer_observation": {
+        "http_status": 404,
+        "observed_at": "2026-09-26T00:00:00Z",
+        "interpretation": "Current root pointer was not found; retain the earlier hash-corroborated pointer bytes as historical provenance. This does not negate the separately verified first-party page-linked MRF."
+      },
+      "current_file_next_action": "The current first-party page-linked CMS 3.0.0 file is verified from a bounded, hash-retained sample. Keep the root-pointer 404 separate; recheck the pointer only after its route changes and refresh the page-linked file on the next scheduled cycle. This is not full-file or line-item validation."
+    }
+  ]
+}

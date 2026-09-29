@@ -1,0 +1,10 @@
+'use strict';
+const fs=require('fs'),path=require('path');
+const {csvToObjects}=require('./lib/util');
+const root=path.resolve(__dirname,'../..'),audit=path.join(root,'data/hpt-audit');
+const proof=JSON.parse(fs.readFileSync(path.join(audit,'reconciliation-iu-health-bloomington-current-proof.json'),'utf8'));
+const base=csvToObjects(fs.readFileSync(path.join(audit,'compliance.csv'),'utf8')).find(r=>r.ccn===proof.ccn);
+if(!base) throw Error('Missing IU Health Bloomington base');
+const evidence={identity:'corroborated',identity_basis:proof.identity_basis,pointerUrl:proof.pointer_url,pointerSha256:proof.pointer_sha256,url:proof.mrf_url,http_status:proof.mrf_http_status,checked_at:proof.observed_at,date:proof.declared_date,version:proof.version,expected_version:proof.expected_version,officialDomain:proof.official_domain,location_name:proof.declared_location_name,declared_hospital_name:proof.declared_hospital_name,declared_address:proof.declared_address,declared_license_state:proof.declared_license_state,file_kind:'zip',sourcePageUrl:proof.pricing_page_url,identityPageUrl:proof.identity_page_url,observedFinding:proof.observed_finding};
+const entry={ccn:proof.ccn,base,action:'replace-observation',evidence,evidence_run:'iu-health-bloomington-template-review-2026-09-17',reviewed_at:proof.observed_at,note:proof.note};
+const lp=path.join(audit,'reviewed-resolutions.json'),ledger=JSON.parse(fs.readFileSync(lp,'utf8')); const i=ledger.findIndex(r=>r.ccn===proof.ccn); if(i>=0) ledger[i]=entry; else ledger.push(entry); ledger.sort((a,b)=>a.ccn.localeCompare(b.ccn)); fs.writeFileSync(lp,JSON.stringify(ledger,null,2)+'\n'); console.log(JSON.stringify({applied:proof.ccn, finding:proof.observed_finding},null,2));

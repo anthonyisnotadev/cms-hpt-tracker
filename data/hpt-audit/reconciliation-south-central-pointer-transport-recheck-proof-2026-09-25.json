@@ -1,0 +1,20 @@
+{
+  "ccn": "351321",
+  "observed_at": "2026-09-25T13:10:00Z",
+  "official_site": "https://schealthnd.com/",
+  "pointer_url": "https://schealthnd.com/cms-hpt.txt",
+  "node_fetch_status": 200,
+  "node_fetch_bytes": 333,
+  "node_fetch_sha256": "487af3f57686a10ca35dec05ca64b7b436220ccbbc1ce6df36a789f0ce611dd3",
+  "node_pointer_fields": {
+    "location_name": "South Central Health",
+    "source_page_url": "https://secure.claraprice.net/price-transparency/south-central-health-nd",
+    "mrf_url": "https://secure.claraprice.net/price-transparency/PRXC-1787598939915/machine-readable/450358986_south-central-health_standardcharges.json"
+  },
+  "powershell_fetch_result": "HTTP 403 HTML forbidden page; no plain-text pointer bytes",
+  "browser_fetch_result": "ERR_BLOCKED_BY_CLIENT",
+  "declared_mrf_fetch_result": "Node fetch timed out resolving secure.claraprice.net before any bytes",
+  "disposition": "pointer-content-transport-disagreement-mrf-unretrieved",
+  "interpretation": "A runtime-specific fetch currently observes a complete pointer with an explicit mrf-url, but the permitted browser and PowerShell route do not expose the same content and the declared MRF remains unreachable. This is transport/provenance evidence only; the older page-linked Wishek file remains separate and no current CMS claim is promoted.",
+  "next_action": "Recheck through a materially different authorized content-bearing route or obtain publisher-provided bytes; verify the declared MRF identity, North Dakota address, date, version and usability before promotion."
+}

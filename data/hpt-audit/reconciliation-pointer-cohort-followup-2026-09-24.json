@@ -1,0 +1,56 @@
+{
+  "observed_at": "2026-09-24T23:20:00Z",
+  "scope": "official pointers reached during the next unresolved cohort pass",
+  "records": [
+    {
+      "ccn": "261336",
+      "hospital_name": "IRON COUNTY MEDICAL CENTER",
+      "pointer_url": "https://icmedcenter.org/cms-hpt.txt",
+      "pointer_status": 200,
+      "pointer_location_name": "Iron County Hospital District Doing Business As: Iron County Medical Center",
+      "mrf_url": "https://icmedcenter.slicedhealth.io/pricer/200889615_iron-county-hospital-district-doing-business-as:-iron-county-medical-center_standardcharges.csv",
+      "mrf_status": 200,
+      "mrf_content_type": "text/html",
+      "mrf_bytes": 1129,
+      "finding": "Sliced Health application shell, not CSV bytes; no file metadata inferred"
+    },
+    {
+      "ccn": "271348",
+      "hospital_name": "NORTHERN MONTANA HOSPITAL",
+      "pointer_url": "https://nmhcare.org/cms-hpt.txt",
+      "pointer_status": 200,
+      "pointer_location_name": "Northern Montana Hospital",
+      "mrf_url": "https://nmhcare.slicedhealth.io/pricer/810231787_northern-montana-hospital_standardcharges.csv",
+      "mrf_status": 200,
+      "mrf_content_type": "text/html",
+      "mrf_bytes": 1129,
+      "finding": "Sliced Health application shell, not CSV bytes; no file metadata inferred"
+    },
+    {
+      "ccn": "300003",
+      "hospital_name": "MARY HITCHCOCK MEMORIAL HOSPITAL",
+      "pointer_url": "https://dartmouth-hitchcock.org/cms-hpt.txt",
+      "pointer_status": 200,
+      "pointer_location_name": "MARY HITCHCOCK MEMORIAL HOSPITAL",
+      "mrf_url": "https://www.dartmouth-hitchcock.org/02-0222140_Mary%20Hitchcock%20Memorial%20Hospital_standardcharges.zip",
+      "mrf_status": 404,
+      "mrf_content_type": "text/html",
+      "mrf_bytes": 41179,
+      "finding": "exact pointer target currently returns HTML 404; no file absence or compliance conclusion inferred"
+    },
+    {
+      "ccn": "330799",
+      "hospital_name": "CLIFTON-FINE HOSPITAL",
+      "pointer_url": "https://cliftonfinehospital.org/cms-hpt.txt",
+      "pointer_status": 200,
+      "pointer_location_name": "Clifton-Fine Hospital",
+      "mrf_url": "http://cliftonfinehospital.org/wp-content/uploads/2024/10/900909506_CLIFTONFINEHOSPITAL_STANDARD_CHARGES1.csv",
+      "mrf_status": 404,
+      "mrf_content_type": "text/html",
+      "mrf_bytes": 0,
+      "finding": "exact historical CSV target redirects to HTTPS and returns HTML 404; no file absence or compliance conclusion inferred"
+    }
+  ],
+  "disposition": "transport-and-access-observation-only",
+  "next_action": "Retry after a material publisher change or through an authorized content-bearing route; require complete facility-specific bytes and metadata before promotion."
+}

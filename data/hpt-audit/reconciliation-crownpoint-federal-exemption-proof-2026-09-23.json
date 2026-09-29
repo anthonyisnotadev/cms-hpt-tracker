@@ -1,0 +1,23 @@
+{
+  "ccn": "320062",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://www.ihs.gov/Navajo/healthcarefacilities/crownpoint/",
+  "official_identity": "The current Indian Health Service Crownpoint page identifies Crownpoint Health Care Facility at Hwy Junction 57, Route 9, Crownpoint, New Mexico 87313 and describes its 20-bed hospital services.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=320062&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_record": {
+    "facility_id": "320062",
+    "facility_name": "CROWNPOINT HEALTHCARE FACILITY",
+    "address": "JUNCTION OF HWY 371",
+    "citytown": "CROWNPOINT",
+    "state": "NM",
+    "zip_code": "87313",
+    "hospital_type": "Acute Care Hospitals",
+    "hospital_ownership": "Government - Federal"
+  },
+  "regulatory_source": "https://www.law.cornell.edu/cfr/text/45/180.30",
+  "regulatory_observation": "45 CFR 180.30 deems federally owned or operated hospitals, including hospitals operated by an Indian Health Program, in compliance with Part 180.",
+  "disposition": "scope-exempt-federal",
+  "interpretation": "CMS ownership and city/state/ZIP agreement with the current IHS hospital page support the federal scope disposition. The pages use different highway naming detail for the same Crownpoint site; this is retained as an address variant, not treated as a mismatch. This is not a claim about MRF availability or file quality.",
+  "next_action": "Retain the federal scope exclusion unless CMS ownership or regulatory scope changes."
+}

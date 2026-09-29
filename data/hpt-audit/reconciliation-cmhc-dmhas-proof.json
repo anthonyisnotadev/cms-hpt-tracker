@@ -1,0 +1,23 @@
+{
+  "ccn": "074011",
+  "hospital_name": "Connecticut Mental Health Center",
+  "observed_at": "2026-09-19T13:00:00Z",
+  "official_site": "https://portal.ct.gov/dmhas/",
+  "official_facility_page": "https://portal.ct.gov/dmhas/cmhc/agency-files/cmhc-home-page",
+  "official_pricing_page": "https://portal.ct.gov/dmhas/divisions/fiscal-division/dmhas-facilities-standard-charges",
+  "pointer_url": "https://portal.ct.gov/cms-hpt.txt",
+  "pointer_browser_status": "official-removed-resource-page",
+  "official_identity": "Connecticut Mental Health Center, 34 Park Street, New Haven, CT 06519",
+  "shared_page_file_url": "https://portal.ct.gov/-/media/dmhas/publications/standardchargesxlsx.xlsx?rev=0211652e580c468d94eaf5a8542607ec&hash=B3ABC507CFBA33D13456A120CCE0757B",
+  "shared_page_file_bytes": 11740,
+  "shared_page_file_sha256": "773778208CC26B3C405D9CBC0910E323561C08A64C6F672A81EA6D98E35CA33D",
+  "shared_page_file_last_modified": "2020-06-03",
+  "shared_file_reused_reason": "The official DMHAS page publishes one shared workbook for all DMHAS facilities; bytes and hash were independently captured in the immediately preceding CCN 074003 review and are referenced here without a new retrieval.",
+  "search_observations": [
+    "The official CMHC page corroborates the facility name and New Haven address.",
+    "The DMHAS standard-charges page links the same shared 2020 workbook; it does not expose a facility-specific CMS-template CSV/JSON MRF.",
+    "The exact portal.ct.gov/cms-hpt.txt route renders an official removed-resource message in the browser."
+  ],
+  "disposition": "official-state-page-linked-2020-shared-workbook-pointer-removed-mrf-unresolved",
+  "next_action": "Obtain a current Connecticut Mental Health Center CMS-template CSV or JSON MRF, or publisher-confirmed current facility file, then verify complete bytes, identity, metadata and usability before promotion."
+}

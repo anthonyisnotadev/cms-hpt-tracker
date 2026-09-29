@@ -1,0 +1,23 @@
+HTTP/1.1 200 OK
+Connection: keep-alive
+Content-Length: 36541
+x-vhost: andalusiahealth
+x-frame-options: SAMEORIGIN, SAMEORIGIN
+reporting-endpoints: csp-endpoint="/csp-violation-report"
+content-security-policy-report-only: default-src 'self';   script-src 'self' 'unsafe-inline' 'unsafe-eval'     https://*.adobe.com     https://*.adobedtm.com     https://*.omtrdc.net     https://www.googletagmanager.com     https://www.google-analytics.com;   style-src 'self' 'unsafe-inline'     https://fonts.googleapis.com     https://use.typekit.net;   font-src 'self' data:     https://fonts.gstatic.com     https://use.typekit.net     https://p.typekit.net;   img-src 'self' data: blob:     https://*.adobe.com     https://*.omtrdc.net     https://www.google-analytics.com     https://www.googletagmanager.com;   connect-src 'self'     https://*.adobe.com     https://*.adobedtm.com     https://*.omtrdc.net     https://*.google-analytics.com     https://*.analytics.google.com;   frame-src 'self'     https://www.youtube.com     https://player.vimeo.com;   object-src 'none';   base-uri 'self';   frame-ancestors 'self';   form-action 'self';   upgrade-insecure-requests;   report-uri /csp-violation-report;   report-to csp-endpoint
+last-modified: Fri, 18 Sep 2026 10:04:31 GMT
+etag: "8ebd-65bbf06ceb535"
+cache-control: max-age=7200
+expires: Fri, 18 Sep 2026 12:05:13 GMT
+content-type: text/html;charset=utf-8
+X-Content-Type-Options: nosniff
+Accept-Ranges: bytes
+Age: 0
+Date: Fri, 18 Sep 2026 10:05:13 GMT
+Strict-Transport-Security: max-age=31557600
+set-cookie: affinity="d36d144787cbfc33"; Path=/; HttpOnly; secure
+X-Served-By: cache-iad-khef600046-IAD
+X-Cache: MISS
+X-Timer: S1789725913.327814,VS0,VS0,VE21
+Vary: Accept-Encoding
+

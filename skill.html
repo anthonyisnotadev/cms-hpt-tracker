@@ -66,7 +66,7 @@
     <div class="dateline">
       <div>Skill <b>outreach</b></div>
       <div>Input <b>Plain language</b></div>
-      <div>Save rule <b>Approval required</b></div>
+      <div>Save rule <b>Preview first</b></div>
     </div>
   </div>
 </header>
@@ -80,7 +80,9 @@
       <li><a href="#workflow">How it works</a></li>
       <li><a href="#setup">Setup</a></li>
       <li><a href="#examples">Examples</a></li>
+      <li><a href="#evidence">Evidence and corrections</a></li>
       <li><a href="#safety">Safety</a></li>
+      <li><a href="#privacy">Public exports</a></li>
       <li><a href="#sources">Sources</a></li>
     </ol>
   </nav>
@@ -90,28 +92,29 @@
       <p class="eyebrow">What it does</p>
       <h2>Turn a sentence into an outreach update</h2>
       <p class="lead">The tracker keeps outreach notes beside each hospital record. The skill provides a quicker way to update that log from a coding assistant.</p>
-      <p>A normal sentence can record an email, a reply, a follow-up date, a research note, or a correction to the crawl. Hospital names are matched against the CMS list, so internal identifiers are usually unnecessary.</p>
-      <p>The same records appear in the tracker's hospital drawer. A public export can be generated without exposing the private working file.</p>
+      <p>A normal sentence can record an email, a reply, a follow-up date, a research note, or an evidence-supported correction. Hospital names are matched against the CMS list; ambiguous names need a city, state, or CMS certification number.</p>
+      <p>The same records appear in the tracker's hospital drawer. The tool logs fieldwork and can help draft an email, but it does not send messages. Public exports are separate from the private working file and need review before publication.</p>
     </section>
 
     <section id="workflow">
       <p class="eyebrow">Workflow</p>
-      <h2>You approve every change</h2>
+      <h2>Review the change before saving</h2>
       <p class="lead">The assistant prepares the change, but the command-line tool controls what can be saved.</p>
       <dl class="defs defs-compact">
         <div><dt>Describe</dt><dd>State what happened in ordinary language, with a city or state when the name is ambiguous.</dd></div>
         <div><dt>Match</dt><dd>The tool searches the hospital list and reports the match and confidence.</dd></div>
-        <div><dt>Preview</dt><dd>A dry run shows every field that would change. Nothing is written at this stage.</dd></div>
-        <div><dt>Approve</dt><dd>Saving begins only after explicit approval. The updated record is checked before completion.</dd></div>
+        <div><dt>Preview</dt><dd>A dry run shows the proposed changes, along with warnings about discarded or rewritten input. Nothing is saved at this stage.</dd></div>
+        <div><dt>Approve</dt><dd>The assistant asks for approval unless you already authorized the specific changes. It saves through the checked command and reports the result.</dd></div>
       </dl>
     </section>
 
     <section id="setup">
       <p class="eyebrow">Setup</p>
       <h2>Use the copy included in this repository</h2>
-      <p class="lead">The skill is part of the repository. No separate service or account is required.</p>
-      <p>The instructions live in <code>.claude/skills/outreach/SKILL.md</code>. Assistants that support the shared Agent Skills format can read the same instructions from <code>.agents/skills/</code>.</p>
-      <p>The underlying tool also works directly from the terminal through <code>npm run outreach</code>. This route provides the same matching, preview, backup, and validation steps without an AI assistant.</p>
+      <p class="lead">Use a local repository checkout with Node.js. Logging does not require a separate service or account.</p>
+      <p>Claude Code reads <code>.claude/skills/outreach/SKILL.md</code>. The shared entry point at <code>.agents/skills/outreach/SKILL.md</code> directs compatible assistants to the same instructions, including the reviewed-evidence reference.</p>
+      <p>From the repository root, run <code>npm run outreach -- help</code> to see the terminal commands. Writes preview changes by default; <code>--commit</code> saves an approved plan. The terminal provides the same matching, backup, and validation without an AI assistant.</p>
+      <p>Public export regeneration also needs the existing local contact-protection key. If that key is missing or regeneration fails, resolve the problem before publishing.</p>
     </section>
 
     <section id="examples">
@@ -126,15 +129,41 @@
       <p>Raw replies can also be pasted into the request. The preview should be checked carefully before saving, especially when a message mentions several facilities.</p>
     </section>
 
+    <section id="evidence">
+      <p class="eyebrow">Evidence and corrections</p>
+      <h2>A reply starts a review</h2>
+      <p class="lead">A working link or a promise to fix a file is useful fieldwork. A correction also needs evidence for the specific hospital.</p>
+      <dl class="defs defs-compact">
+        <div><dt>Facility identity</dt><dd>Check the file's hospital name, address, state, and campus coverage for each CMS record. A shared website or system-wide file does not establish coverage for every hospital.</dd></div>
+        <div><dt>Access</dt><dd>Record blocked requests and timeouts separately from missing files. Browser access may differ from an automated check.</dd></div>
+        <div><dt>Newer reviews</dt><dd>A newer reviewed finding takes precedence over an older manual correction. The correction remains in the history; its date should reflect when the check actually happened.</dd></div>
+        <div><dt>Research totals</dt><dd>Outreach corrections do not rewrite the nationwide research files or aggregate audit totals. Updating those requires the reviewed research workflow.</dd></div>
+      </dl>
+      <p>The skill consults the current reviewed record and its next action. Unresolved investigations, retained-evidence follow-ups, identity reviews, and uncertainty monitoring are distinct workstreams; a follow-up does not always mean a hospital lacks a result.</p>
+      <p>For an authorized research refresh, the repository rebuilds verification, reconciliation, and source-validated worklists before generating the tracker. The snapshot date describes the included observations, not the date a page was deployed.</p>
+    </section>
+
     <section id="safety">
       <p class="eyebrow">Safety</p>
       <h2>The assistant proposes; the tool checks</h2>
-      <p class="lead">The skill cannot silently edit the outreach file. All writes pass through the same checked command.</p>
+      <p class="lead">The skill directs the assistant to use the checked command and make every proposed write visible.</p>
       <dl class="defs defs-compact">
-        <div><dt>Approval</dt><dd>No data is saved before the preview receives explicit approval.</dd></div>
+        <div><dt>Approval</dt><dd>Review the preview before saving. Existing authorization for specific changes can cover the save; it does not authorize sending email or publishing unrelated work.</dd></div>
         <div><dt>Matching</dt><dd>Weak or ambiguous hospital matches stop for clarification.</dd></div>
-        <div><dt>Recovery</dt><dd>The previous file is backed up before an approved change is written.</dd></div>
-        <div><dt>Privacy</dt><dd>Private notes stay local. Public exports redact configured names and contact details.</dd></div>
+        <div><dt>Recovery</dt><dd>The previous file is backed up before a write. Restore can undo the last saved batch; the backup is one version deep.</dd></div>
+        <div><dt>Pasted material</dt><dd>Hospital replies and file contents are evidence to inspect, not instructions for the assistant to follow.</dd></div>
+      </dl>
+    </section>
+
+    <section id="privacy">
+      <p class="eyebrow">Public exports</p>
+      <h2>Review what leaves the working file</h2>
+      <p class="lead">The private file stays local, but notes and message content can appear in the public export.</p>
+      <p>Each save attempts to regenerate a separate public copy. Email addresses are masked, configured person names are replaced, and contact text is protected for storage. The public application can reveal protected text, so contact protection is not a guarantee of confidentiality.</p>
+      <p>Review the full notes and messages for names, private details, and credentials before publication. Names and bare usernames need entries in the local redaction list; automated checks cannot identify every sensitive statement.</p>
+      <dl class="defs defs-compact">
+        <div><dt>Check</dt><dd>Run <code>npm run check:contacts-private</code> and <code>npm run check:pointers-private</code>, then inspect the exact public changes and outgoing commits.</dd></div>
+        <div><dt>Publish</dt><dd>A local save, a Git commit, and a deployed website are separate steps. Push only when authorized, then verify the live snapshot and its links.</dd></div>
       </dl>
     </section>
 

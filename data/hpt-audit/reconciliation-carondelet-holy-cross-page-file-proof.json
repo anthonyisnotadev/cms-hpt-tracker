@@ -1,0 +1,62 @@
+{
+  "ccn": "031313",
+  "observed_at": "2026-09-18T22:11:11Z",
+  "official_site": "https://www.carondelet.org/",
+  "official_identity_page": "https://www.carondelet.org/locations/detail/holy-cross-hospital?c=MSNFS",
+  "official_identity": "Carondelet Holy Cross Hospital, 1171 W Target Range Rd, Nogales, AZ 85621",
+  "official_pricing_page": "https://www.carondelet.org/patients/pricing-info-estimates/hospital-pricing-information",
+  "page_file_url": "https://mrfs.hyvehealthcare.com/TenetHealth/474132507_hch-tucson-holdings-llc_standardcharges.json",
+  "page_file_http_status": 200,
+  "page_file_bytes": 2852645,
+  "page_file_sha256": "e5c471431933463df9de67d8e13ce9d3f64d97c4b419ef170b8c2638591ad6e2",
+  "publisher_inventory_url": "https://mrfs.hyvehealthcare.com/TenetHealth/",
+  "publisher_inventory_observed_at": "2026-09-19T02:34:00Z",
+  "publisher_inventory_matches": [
+    "474132507_hch-tucson-holdings-llc_standardcharges.json",
+    "474132507_carondelet-holy-cross-hospital_standardcharges.csv",
+    "474132507_carondelet-holy-cross-hospital_standardcharges.json"
+  ],
+  "publisher_inventory_alternate_file": {
+    "url": "https://mrfs.hyvehealthcare.com/TenetHealth/474132507_carondelet-holy-cross-hospital_standardcharges.json",
+    "http_status": 200,
+    "bytes": 2852652,
+    "sha256": "8212814FFC693BAA2DB003B95EA46FCB0EE5CCC0E635D17BB1048C48F9AA1C08",
+    "declared_hospital_name": "Carondelet Holy Cross Hospital",
+    "declared_location_name": "Carondelet Holy Cross Hospital",
+    "declared_address": "1171 W Target Range Rd, Nogales, AZ 85621",
+    "declared_npi": "1639555865",
+    "declared_license_number": "H7306",
+    "declared_date": "2026-04-06",
+    "declared_version": "3.0.0",
+    "service_rows": 9336
+  },
+  "browser_page_recheck": {
+    "observed_at": "2026-09-18T22:11:11Z",
+    "page_rendered": true,
+    "page_last_updated_label": "4/1/2026",
+    "exact_link_exposed": true,
+    "link_target_unchanged": true
+  },
+  "declared_hospital_name": "HCH Tucson Holdings LLC",
+  "declared_location_name": "Carondelet Holy Cross Hospital",
+  "declared_address": "1171 W Target Range Rd, Nogales, AZ 85621",
+  "declared_license_state": "AZ",
+  "declared_date": "2026-04-06",
+  "declared_version": "3.0.0",
+  "latest_web_recheck": {
+    "observed_at": "2026-09-19T03:07:00Z",
+    "pricing_page_status": 200,
+    "pricing_page_last_updated": "2026-04-01",
+    "page_standard_charges_link_present": true,
+    "web_link_fetch_result": "application/force-download; no parsed body returned by web tool",
+    "direct_head_status": 200,
+    "direct_content_length": 2852645,
+    "direct_last_modified": "2026-07-09T19:58:28Z",
+    "facility_identity_observed": "Carondelet Holy Cross Hospital, 1171 W Target Range Rd, Nogales, AZ 85621",
+    "result": "Current official pricing page still links the identity-matched CMS 3.0.0 JSON; transport remains content-bearing, while root-pointer linkage is still unverified."
+  },
+  "retrieval_scope": "Complete 2,852,645-byte JSON page-linked file retrieved and parsed; no rate-level validation performed.",
+  "wrong_domain_exclusion": "The prior holycrosshealth.org lead is Holy Cross Health in Silver Spring, Maryland and is not the Arizona CCN 031313. Carondelet.org is the first-party Arizona publisher.",
+  "disposition": "first-party-page-and-publisher-inventory-identity-metadata-confirmed-pointer-root-pending",
+  "next_action": "Recover the current Carondelet cms-hpt.txt content through an authorized route and reconcile the page-linked and inventory-listed file variants; then validate rate-level usability before any verified-current-MRF promotion."
+}

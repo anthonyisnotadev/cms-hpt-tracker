@@ -1,0 +1,22 @@
+{
+  "ccn": "281302",
+  "observed_at": "2026-09-18T03:53:09Z",
+  "official_pricing_page": "https://pawneehospital.socs.net/vnews/display.v/SEC/Financial%20Services%7CPrice%20Transparency",
+  "official_page_observation": "The current first-party page identifies Pawnee County Memorial Hospital and lists 600 I Street, Pawnee City, NE 68420; it links the Claraprice price-transparency page.",
+  "pointer_url": "https://pawneehospital.socs.net/cms-hpt.txt",
+  "pointer_http_status": 200,
+  "pointer_sha256": "4d042bbc73914a0a9a999c4102bd2af7547c935d292881943babccefb5918f15",
+  "pointer_last_modified": "2026-03-05T18:13:47Z",
+  "mrf_url": "https://secure.claraprice.net/price-transparency/VVKZ-1769396935421/machine-readable/363169688_pawnee-county-memorial-hospital_standardcharges.json",
+  "mrf_http_status": 200,
+  "mrf_content_length_bytes": 4747240,
+  "mrf_sha256": "052a64d2761c961554718c9d63baff1a096ddc4d14a1b651b774dcffb4cc757a",
+  "declared_hospital_name": "Pawnee County Memorial Hospital",
+  "declared_address": "600 Street, Pawnee City, NE 68420",
+  "official_address": "600 I Street, Pawnee City, NE 68420",
+  "declared_date": "2026-03-12",
+  "version": "3.0.0",
+  "observed_finding": "mrf-address-field-incomplete",
+  "recheck_reason": "The worklist next action was to recheck whether the exact current pointer-linked JSON had expanded the missing I Street component.",
+  "result": "The pointer and complete JSON are unchanged and the file still says 600 Street, omitting I. The literal publisher field remains explicit and unresolved; no normalization or compliance inference was applied."
+}

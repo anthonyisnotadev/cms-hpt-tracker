@@ -1,0 +1,20 @@
+{
+  "ccn": "464012",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://themariancenter.net/",
+  "official_pricing_page": "https://themariancenter.net/charge-master-2020/",
+  "official_identity_sources": [
+    "https://themariancenter.net/",
+    "https://themariancenter.net/charge-master-2020/",
+    "https://www.velarionrecords.com/hospital/464012"
+  ],
+  "official_identity": "The Marian Center at St. Joseph Villa identifies the Salt Lake City psychiatric hospital at 451 Bishop Federal Lane (1960 South 500 East), Salt Lake City, UT 84115; CMS cost-report records associate CCN 464012 with Marian Center.",
+  "browser_observation": "Browser automation loaded the official charge-master page. It embeds a published Google Sheet containing the facility charge table.",
+  "file_url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vRlr02vLflKgagVJ0BrCPqQTK42-uvfkK2N80ijiaZFh6D1C6waAvvKaK5epC600f1bEbX1fLmkrD-m/pub?gid=1815775390&single=true&output=csv",
+  "file_observation": "The published sheet exported as bounded 13,415-byte CSV with SHA-256 85274664ffa92b8f817a22edac0d8c10b230d07571ef71a1b131d092baa0dade. It contains HCPCS/revenue code, short description, standard charge and payer columns, but no CMS 3.0 metadata, attestation, declared update date or explicit CCN in the CSV.",
+  "pricing_observation": "No cms-hpt.txt pointer was published (404), and no CMS-standard CSV/JSON/ZIP MRF was retrieved. The page-linked Google Sheet is retained as official page evidence only and is not promoted as a verified CMS MRF.",
+  "disposition": "official-page-mrf-root-pointer-unavailable",
+  "interpretation": "This replaces the stale domain-unknown label with supported official identity and page-linked charge evidence while preserving the unresolved CMS MRF metadata/linkage gap.",
+  "next_action": "Obtain a publisher-issued CMS pointer or CMS 3.0 CSV/JSON/ZIP with explicit Marian Center identity, Utah address, declared date/version and attestation before promotion.",
+  "source_note": "The Google Sheet export is a bounded reproduction of the official page embed, not a complete CMS MRF claim."
+}

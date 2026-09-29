@@ -1,0 +1,71 @@
+{
+  "ccn": "250042",
+  "roster_name": "NORTHWEST MISSISSISSIPPI REGIONAL MEDICAL CENTER",
+  "roster_address": "1970 HOSPITAL DRIVE",
+  "roster_city": "CLARKSDALE",
+  "roster_state": "MS",
+  "roster_zip": "38614",
+  "former_assigned_domain": "deltahealthsystem.org",
+  "former_pointer_artifact": "cms_data/hpt/pointer-corpus/raw/deltahealthsystem.org-bf8e5dadc594.txt",
+  "former_pointer_sha256": "f36c473a42bf27e6dd9e0c61360ef958c16942d3803b14046756de77a15de31b",
+  "former_pointer_names_northwest": false,
+  "former_operator_transition_url": "https://www.deltahealthsystem.org/news/2023/may/delta-health-system-announcement/",
+  "former_operator_web_reader_observation": "Delta Health System stated that Northwest Regional operations transferred to the Northwest Regional Medical Center Board of Trustees beginning May 1, 2023.",
+  "official_domain": "nwmrmc.org",
+  "identity_page_url": "https://nwmrmc.org/nw-contact.php",
+  "identity_web_reader_observation": "Current Northwest Mississippi Regional Medical Center contact page lists 1970 Hospital Dr., Clarksdale, MS 38614.",
+  "pricing_page_url": "https://nwmrmc.org/price.html",
+  "pricing_page_web_reader_observation": "First-party price page links the underscored Northwest CSV and a separate TXT file.",
+  "price_page_file_url": "https://nwmrmc.org/646001574_NORTHWEST-MISS-REGIONAL-MEDICAL-CENTER_standardcharges.csv",
+  "linked_txt_url": "https://nwmrmc.org/price_3_1389799598.txt",
+  "linked_txt_declared_file_url": "https://nwmrmc.org/646001574%20northwest-miss-regional-medical-center_standardcharges.csv",
+  "web_reader_observed_on": "2026-09-17",
+  "current_site_requests": [
+    {
+      "url": "https://nwmrmc.org/nw-contact.php",
+      "http_status": 202,
+      "response_kind": "html-security-challenge",
+      "response_sha256": "22d45da23e69bdb4407a8d620845a5e8b1f1ec53df6766271157c2cc7c98baf8",
+      "observed_at": "2026-09-17T06:57:45.527Z"
+    },
+    {
+      "url": "https://nwmrmc.org/price.html",
+      "http_status": 202,
+      "response_kind": "html-security-challenge",
+      "response_sha256": "ecc687cfe8bdbabe082e5076cf3a64712d47e57a50159d6043b8c9c17a355282",
+      "observed_at": "2026-09-17T06:57:45.488Z"
+    },
+    {
+      "url": "https://nwmrmc.org/cms-hpt.txt",
+      "http_status": 202,
+      "response_kind": "html-security-challenge",
+      "response_sha256": "d970a0cfb831d6bc74f0d66b2953bbf6cc93a013c087149367576f4413cd3039",
+      "observed_at": "2026-09-17T06:57:45.479Z"
+    },
+    {
+      "url": "https://nwmrmc.org/646001574_NORTHWEST-MISS-REGIONAL-MEDICAL-CENTER_standardcharges.csv",
+      "http_status": 202,
+      "response_kind": "html-security-challenge",
+      "response_sha256": "2ddf40c6e5e3c75db5b43c6bbafe672a5cf94ff57acd8db957c12fbf8bec53b1",
+      "observed_at": "2026-09-17T06:57:45.500Z"
+    },
+    {
+      "url": "https://nwmrmc.org/price_3_1389799598.txt",
+      "http_status": 202,
+      "response_kind": "html-security-challenge",
+      "response_sha256": "544030429bdc3eb052b68ea9bb7f334eea321ef211989866c2ef9597f62860e7",
+      "observed_at": "2026-09-17T06:57:45.539Z"
+    },
+    {
+      "url": "https://nwmrmc.org/646001574%20northwest-miss-regional-medical-center_standardcharges.csv",
+      "http_status": 202,
+      "response_kind": "html-security-challenge",
+      "response_sha256": "9411e159e9d16136d1f70460f00df974028d5c78f9a3e35d79544eba1d2d425f",
+      "observed_at": "2026-09-17T06:57:45.490Z"
+    }
+  ],
+  "browser_price_page_result": "Robot Challenge Screen at /.well-known/sgcaptcha/",
+  "pointer_and_file_bytes_verified": false,
+  "observed_at": "2026-09-17T06:57:45.479Z",
+  "next_action": "Recover the current Northwest Mississippi Regional Medical Center root cms-hpt.txt after authorized access changes. Compare its exact MRF URL with the first-party price-page CSV and separately linked TXT candidate; then read bounded bytes from the selected file to verify the Clarksdale hospital name, 1970 Hospital Drive address, MS state field, declared date and CMS version. Do not reuse the former Delta pointer or infer file absence from security challenges."
+}

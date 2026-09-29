@@ -1,0 +1,17 @@
+{
+  "ccn": "314001",
+  "observed_at": "2026-09-21T19:00:00Z",
+  "official_domain": "https://summitoakshospital.com/",
+  "official_domain_browser_result": "Interactive browser navigation to the official homepage and exact cms-hpt.txt route rendered a first-party Cloudflare security-verification page; no pricing page, pointer bytes or MRF bytes were exposed.",
+  "official_domain_browser_status": 403,
+  "cms_pointer_url": "https://summitoakshospital.com/cms-hpt.txt",
+  "cms_pointer_result": "Cloudflare challenge page; no usable plain-text pointer bytes recovered.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=314001&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6811,
+  "cms_api_response_sha256": "a1786fef7462ae1b26dd33adb2efcd9af2c10692af89296f18e2f61bdc439000",
+  "cms_record": { "facility_id": "314001", "facility_name": "SUMMIT OAKS HOSPITAL", "address": "19 PROSPECT ST", "citytown": "SUMMIT", "state": "NJ", "zip_code": "07901", "hospital_type": "Psychiatric", "hospital_ownership": "Voluntary non-profit - Other", "emergency_services": "No" },
+  "disposition": "official-domain-and-pointer-browser-access-denied",
+  "interpretation": "The CMS record confirms the Summit Oaks identity and address. The official homepage and pointer remain browser-blocked by a first-party Cloudflare challenge; this is an access observation only and does not establish file absence or compliance.",
+  "next_action": "Use an authorized browser/download route or publisher-provided copy to recover a current Summit Oaks MRF, then verify name, New Jersey address/state, declared date/version and usability."
+}

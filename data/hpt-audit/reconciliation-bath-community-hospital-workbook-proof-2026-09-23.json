@@ -1,0 +1,26 @@
+{
+  "ccn": "491300",
+  "observed_at": "2026-09-23T15:38:00Z",
+  "official_site": "https://bathhospital.org/",
+  "official_pricing_page": "https://bathhospital.org/patient-resources/financial-services/understanding-pricing/",
+  "official_identity": "Bath Community Hospital, 106 Park Drive, Hot Springs, VA 24445 (current first-party page and footer confirm identity and address).",
+  "browser_observation": "The current official homepage exposes a labeled Price Transparency link to the pricing page. The pricing page content identifies a March 2026 Charge Master XLSX and a patient liability estimator, but not a CMS CSV, JSON or ZIP MRF.",
+  "workbook_url": "https://bathhospital.org/wp-content/uploads/2026/03/Bath-Community-Hospital-Standard-Charges-March2026.xlsx",
+  "workbook_status": 200,
+  "workbook_content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "workbook_total_bytes": 251276,
+  "workbook_sha256": "66d1a66d8e94f2c747535a78b8b36714e8b393b4d10944a1332be4ed95b067a1",
+  "workbook_last_modified": "2026-08-27T12:45:11Z",
+  "workbook_sheets": ["sheet1.xml"],
+  "cms_record": {
+    "ccn": "491300",
+    "name": "BATH COMMUNITY HOSPITAL",
+    "address": "106 PARK DRIVE",
+    "city": "HOT SPRINGS",
+    "state": "VA",
+    "zip": "24445"
+  },
+  "disposition": "file-custom-workbook-review",
+  "interpretation": "The official Bath Community Hospital pricing page links a current first-party XLSX Charge Master, not a directly importable CMS CSV/JSON/ZIP MRF. The workbook is retained as dated source evidence with exact bytes and hash; no CMS MRF promotion or compliance conclusion is made.",
+  "next_action": "Obtain a current CMS-format CSV/JSON/ZIP or publisher-confirmed CMS route, then verify complete bytes, facility identity, Virginia metadata, declared date/version and usable rate fields before promotion."
+}

@@ -1,0 +1,30 @@
+{
+  "audit_id": "reconciliation-unc-southeastern-current-central-price-page-linkage-recheck-2026-09-28",
+  "observed_at": "2026-09-28T12:36:51Z",
+  "ccn": "340050",
+  "facility": "UNC Health Southeastern, Lumberton, North Carolina",
+  "scope": "Exact acute-care CCN 340050; official pricing-page linkage is corroborated, but exact file content remains inaccessible to checked clients.",
+  "official_current_price_page": {
+    "url": "https://www.unchealth.org/records-insurance/standard-charges",
+    "browser_observation": "Connected in-app browser rendered the current UNC Health Standard Charges page and exposed a hospital-by-hospital list. The UNC Health Southeastern row linked its standard charges CSV.",
+    "page_statement": "UNC Health states its Standard Charges & Shoppable Services data is listed by hospital.",
+    "exact_file_url": "https://www.unchealthcare.org/app/files/public/58f43b86-9180-4feb-9ce3-b141419a01c9/southeastern-regional-medical-center_standardcharges.csv",
+    "same_as_retained_unc_southeastern_page_file_url": true
+  },
+  "file_access_recheck": {
+    "route": "Bounded HTTP Range bytes=0-4095 to the exact URL linked from the current central UNC Health page",
+    "http_status": 403,
+    "content_type": "text/html",
+    "content_length": 537,
+    "range_requested": "bytes=0-4095",
+    "file_bytes_received": false,
+    "interpretation": "The file remains inaccessible to this client through the second current first-party page route. This is a transport observation, not proof that the publisher file is absent or invalid. No challenge was bypassed."
+  },
+  "interpretation": "This is a dated corroboration that the current UNC Health parent Standard Charges page still lists the exact Southeastern CSV as a hospital-specific file. It strengthens page-to-file provenance but does not provide CSV bytes, header identity, NC license metadata, declared date/version, or parsed usability. It is not a file recovery and does not resolve CCN 340050.",
+  "evidence_gain": "Current first-party parent-page listing and exact file-link confirmation through a distinct publisher-page route.",
+  "new_file_bytes": false,
+  "header_identity_confirmed": false,
+  "disposition_changed": false,
+  "unresolved_count_change": 0,
+  "next_action": "Retain the confirmed current UNC parent-page-to-Southeastern file link and the earlier 403. Obtain file bytes through a publisher-enabled route or publisher-provided copy; then verify exact Southeastern identity, physical Lumberton address/NC state, declared date/version, CMS MRF structure and usable rows. Do not interpret 403 as file absence or make a compliance finding."
+}

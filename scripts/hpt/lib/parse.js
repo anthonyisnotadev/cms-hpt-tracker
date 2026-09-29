@@ -54,7 +54,12 @@ function finishEntry(entry) {
  * emit several mrf-url lines under a single location. All three are handled.
  */
 function parsePointer(body) {
-  const text = String(body || '').replace(/^﻿/, '').trim();
+  // Some publishers collapse adjacent fields onto one physical line. Split only
+  // before a recognized key so trailing contact fields cannot become part of an
+  // otherwise valid URL.
+  const text = String(body || '').replace(/^﻿/, '').replace(/\r\n?|\n/g, '\n')
+    .replace(/[ \t]+(?=(?:location[-_]?name|source[-_]?page[-_]?url|mrf[-_]?url|contact[-_]?name|contact[-_]?email)\s*:)/gi, '\n')
+    .trim();
   if (!text) return { entries: [], format: 'empty' };
 
   // JSON variant

@@ -1,0 +1,31 @@
+{
+  "ccn": "250043",
+  "sibling_ccn": "251340",
+  "observed_at": "2026-09-26T00:00:00Z",
+  "recheck_reason": "Resolve the same-campus file-assignment gate with a fresh CMS facility-status lookup for both Neshoba records.",
+  "cms_dataset": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0",
+  "primary_query": {
+    "facility_id": "250043",
+    "response_status": 200,
+    "facility_name": "NESHOBA COUNTY GENERAL HOSPITAL",
+    "address": "1001 HOLLAND AVENUE",
+    "citytown": "PHILADELPHIA",
+    "state": "MS",
+    "hospital_type": "Acute Care Hospitals",
+    "hospital_ownership": "Government - Local"
+  },
+  "sibling_query": {
+    "facility_id": "251340",
+    "response_status": 200,
+    "facility_name": "NESHOBA COUNTY GENERAL HOSPITAL",
+    "address": "1001 HOLLAND AVENUE",
+    "citytown": "PHILADELPHIA",
+    "state": "MS",
+    "hospital_type": "Critical Access Hospitals",
+    "hospital_ownership": "Government - Local"
+  },
+  "interpretation": "The current CMS facility dataset still lists both CCNs at the same address, with 250043 classified as Acute Care Hospitals and 251340 classified as Critical Access Hospitals. This confirms a live same-campus dual-record condition but supplies no effective conversion date, pointer scope, or file-to-CCN assignment. The current 2026-06-04 alternate file remains retained as shared-campus evidence and is not assigned to either CCN.",
+  "disposition": "same-campus-dual-ccn-current-status-confirmed-file-linkage-unresolved",
+  "promotion": false,
+  "next_action": "Obtain effective-dated CMS enrollment/status history or publisher confirmation that scopes the current MRF to one or both CCNs, then adjudicate the file assignment without cross-applying evidence."
+}

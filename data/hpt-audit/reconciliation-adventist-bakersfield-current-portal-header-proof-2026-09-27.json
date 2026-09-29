@@ -1,0 +1,53 @@
+{
+  "ccn": "050455",
+  "observed_at": "2026-09-27T00:45:00Z",
+  "official_site": "https://www.adventisthealth.org/bakersfield",
+  "facility_pointer_url": "https://www.adventisthealth.org/bakersfield/cms-hpt.txt",
+  "facility_pointer_status": 200,
+  "facility_pointer_observation": "The facility-specific pointer names Adventist Health Bakersfield and points to https://apps.para-hcfs.com/PTT/FinalLinks/Adventist_Bakersfield_V3.aspx.",
+  "portal_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Adventist_Bakersfield_V3.aspx",
+  "portal_observation": "The portal identifies Adventist Health Bakersfield, lists a July 29, 2026 machine-readable standard-charges download, and separately lists an Adventist Health-Specialty Bakersfield standard-charges download.",
+  "browser_download_observation": "A permitted browser download began but stalled at 2,506,362 bytes and did not yield a complete file artifact. The retained partial CSV header is content-bearing.",
+  "partial_bytes": 2506362,
+  "partial_header": {
+    "hospital_name": "SAN JOAQUIN COMMUNITY HOSPITAL",
+    "last_updated_on": "2026-07-29",
+    "version": "3.0.0",
+    "location_name": "SAN JOAQUIN COMMUNITY HOSPITAL|Adventist Health Specialty Bakersfield",
+    "hospital_address": "2615 Sillect Avenue Bakersfield CA 93308|3001 Sillect Avenue Bakersfield CA 93308",
+    "license_state": "CA",
+    "type_2_npi": "1538157508|1609856947",
+    "attestation": true,
+    "attester_name": "Heidar Thordarson"
+  },
+  "current_portal_route_recheck": {
+    "observed_at": "2026-09-27T08:32:20Z",
+    "portal_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Adventist_Bakersfield_V3.aspx",
+    "http_status": 200,
+    "utf8_body_characters": 208448,
+    "utf8_body_sha256": "b32285f623d7c2329a879484ffeeddc974cd0fdf435a00603fa74fbe7bc453ff",
+    "rendered_page": "The portal presents main Bakersfield and Specialty Bakersfield as separate headings/download labels.",
+    "download_controls": [
+      {"label": "Adventist Health Bakersfield standard charges", "javascript_call": "DownloadReport('hospital', 'CDMWithoutLabel')"},
+      {"label": "Adventist Health-Specialty Bakersfield standard charges", "javascript_call": "DownloadReport('mainDBName', 'CDMWithoutLabel')"}
+    ],
+    "route_logic": "Both calls enter the same DownloadReport function; only secondaryHospital maps to dbAHBBAKERSFIELDHEARTCA. All other values, including hospital and mainDBName, map to dbAHBBAKERSFIELDCA. The page therefore exposes duplicate links to one underlying main database, not distinct main-campus and specialty-campus MRFs.",
+    "pointer_declared_target": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHBBAKERSFIELDCA&type=CDMWithoutLabel&fileType=CSV",
+    "direct_target_recheck": {
+      "http_status": 200,
+      "sample_bytes": 262144,
+      "sample_sha256": "5236c5b68fe2267745de0f0236b0401903bc860e4b06cfbd7984eae6279b3167",
+      "content_disposition": "952294234_san-joaquin-community-hospital_standardcharges.csv",
+      "declared_hospital_name": "SAN JOAQUIN COMMUNITY HOSPITAL",
+      "declared_locations": "SAN JOAQUIN COMMUNITY HOSPITAL|Adventist Health Specialty Bakersfield",
+      "declared_addresses": "3001 Sillect Avenue Bakersfield CA 93308|3001 Sillect Avenue Bakersfield CA 93308",
+      "declared_date": "2026-07-29",
+      "cms_template_version": "3.0.0",
+      "sample_matches_retained_2026_09_25_sample": true
+    }
+  },
+  "unbound_partial_header_disposition": "The earlier 2,506,362-byte partial observation reported a different first address (2615 Sillect Avenue), but its exact final URL and sample hash were not retained. It is not source-bound to the exact pointer target; do not use it to replace the current hash-matched pointer-target header without recovering its URL and hash.",
+  "disposition": "current-facility-portal-collapses-main-and-specialty-labels-to-shared-file-address-conflict-remains",
+  "interpretation": "The current rendered portal exposes main and Specialty labels but its current download code routes both to the same dbAHBBAKERSFIELDCA dataset. The exact first-party pointer target currently reproduces the previously retained full-file sample hash and header, listing both locations at 3001 Sillect Avenue. This does not identify a distinct main-campus file for the 2615 Chester Avenue roster location. The unbound partial-header discrepancy is retained as a lead, not promoted evidence.",
+  "next_action": "Seek a publisher correction or effective-CCN scope explanation for the exact shared-file location/address fields and request the source URL/hash for the 2,506,362-byte partial with the differing address. Do not assign the shared file to CCN 050455 as a clean main-campus match."
+}

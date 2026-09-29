@@ -1,0 +1,27 @@
+{
+  "audit_id": "reconciliation-helen-keller-current-route-timeout-2026-09-28",
+  "observed_at": "2026-09-28T20:19:15Z",
+  "ccn": "010019",
+  "facility": "Helen Keller Hospital, Sheffield, Alabama",
+  "source_page": "https://hh2026.cloudaccess.host/patients-visitors/price-transparency/",
+  "source_page_link_claim": "The current HH Health system price page has a distinct Helen Keller Hospital Standard Charge File link to the URL tested below.",
+  "exact_file_url": "https://hh2026.cloudaccess.host/wp-content/uploads/472323163_hellen-keller-hospital_standardcharges.csv",
+  "request": {
+    "method": "curl GET with Range bytes=0-262143",
+    "max_time_seconds": 20,
+    "result": "Client timed out after 20 seconds before receiving response headers or body bytes.",
+    "response_headers_obtained": false,
+    "response_bytes_obtained": false,
+    "file_hash_obtained": false
+  },
+  "relationship_to_prior_evidence": {
+    "prior_browser": "reconciliation-helen-keller-current-file-browser-route-2026-09-28.json records ordinary browser ERR_CONNECTION_CLOSED for the same exact host and file URL.",
+    "prior_direct_clients": "Previously recorded GET and HEAD ended with unexpected EOF before response bytes.",
+    "prior_legacy_route": "The old huntsvillehospital.org route returns 404 and is not a replacement for this current system URL.",
+    "new_evidence": "A fresh bounded range GET adds a dated 20-second timeout result, but does not change the transport-only classification."
+  },
+  "evidence_role": "new route/time-specific transport observation only; not file absence, invalidity, identity, metadata, or a compliance conclusion",
+  "disposition": "official-page-linked-facility-file-transport-unavailable",
+  "count_effect": 0,
+  "next_action": "Do not repeat the same host, route and client absent a material endpoint or access change. Obtain a publisher-provided copy or publisher-confirmed alternate content-bearing route for the exact Helen Keller file; then verify full bytes/hash, declared name, Sheffield address, Alabama license state, CMS date/version, attestation and usable rows. Do not use a third-party mirror as the facility's source file or substitute a sibling file."
+}

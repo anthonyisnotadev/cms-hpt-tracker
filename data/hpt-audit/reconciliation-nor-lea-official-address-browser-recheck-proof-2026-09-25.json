@@ -1,0 +1,26 @@
+{
+  "ccn": "321305",
+  "observed_at": "2026-09-25T12:00:00Z",
+  "official_domain": "nor-lea.org",
+  "official_facility_page": "https://nor-lea.org/contact-us",
+  "browser_observation": {
+    "route": "https://nor-lea.org/contact-us",
+    "result": "rendered-200",
+    "facility_label": "Nor-Lea Hospital District - Main Campus",
+    "address_text": "1600 North Main Avenue, Lovington, NM 88260",
+    "campus_text": "Nor-Lea Main Campus; 1600 N. Main Street; Lovington, NM 88260"
+  },
+  "current_mrf": {
+    "url": "https://hospitalpricetransparencyfiles.com/nor-lea-district-hospital/850278235_Nor-Lea-Hospital-District_standardcharges.csv",
+    "status": 200,
+    "bytes": 11230287,
+    "sha256": "549aeebd73a2ec8cb6ba28c75e1af7b31380db81b6597d042c8b0a821dcc151e",
+    "declared_address": "1900 North Main Avenue, Lovington, NM 88260-2813",
+    "declared_last_updated": "2026-07-17",
+    "cms_template_version": "3.0.0"
+  },
+  "interpretation": "The current first-party operator page explicitly identifies the main campus at 1600 North Main Avenue. The current CMS 3.0.0 MRF independently declares 1900 North Main Avenue. This browser observation strengthens the documented address conflict; it does not establish that 1900 is invalid or prove a second campus/mailing address.",
+  "disposition": "mrf-address-field-conflicts-facility",
+  "promotion": "none",
+  "next_action": "Obtain publisher or authoritative facility clarification of whether 1900 North Main is a valid hospital mailing/location address, then reconcile the canonical facility address before promotion."
+}

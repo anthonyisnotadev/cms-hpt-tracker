@@ -1,0 +1,19 @@
+{
+  "ccn": "104071",
+  "hospital_name": "The Vines Hospital",
+  "observed_at": "2026-09-19T00:20:00Z",
+  "official_site": "https://thevineshospital.com/",
+  "official_identity_source": "https://thevineshospital.com/about-us/partnerships/",
+  "roster_identity": "The Vines Hospital, 3130 SW 27th Ave, Ocala, FL 34471",
+  "identity_observation": "The first-party partnerships route is the reviewed official-domain lead, but the current browser challenge prevented confirming the roster street address from page bytes.",
+  "pointer_urls_checked": [
+    "https://www.thevineshospital.com/cms-hpt.txt",
+    "https://thevineshospital.com/cms-hpt.txt"
+  ],
+  "direct_pointer_statuses": [403, 403],
+  "direct_pointer_result": "Both exact root-pointer URLs returned HTTP 403 before pointer bytes.",
+  "browser_status": "Cloudflare security-verification page",
+  "browser_result": "A fresh official browser render stopped at the provider security-verification page; no pointer text, pricing page or MRF link was exposed.",
+  "disposition": "official-domain-pointer-access-blocked-address-and-mrf-unresolved",
+  "next_action": "Retry the exact official identity/pricing/pointer routes through a materially different authorized route; verify the 3130 SW 27th Ave facility identity, Florida state, bounded pointer/MRF bytes, declared date/version and CMS-template usability."
+}

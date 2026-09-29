@@ -1,0 +1,14 @@
+{
+  "ccn": "191325",
+  "observed_at": "2026-09-22T01:00:00Z",
+  "official_pricing_page": "https://www.losgh.org/patients_financial.php",
+  "official_page_status": 200,
+  "official_page_observation": "The current Lady of the Sea General Hospital financial-information page says hospital charges are available under CMS requirements and labels the comprehensive charges file as last updated 06/01/2026.",
+  "candidate_file_url": "https://www.losgh.org/financial%20policies/chargemaster-20260619.csv",
+  "candidate_file_observation": "The exact first-party CSV target was reached through the official page; web retrieval returned unsupported content-type text/csv, so no parsed bytes or metadata were available in this pass.",
+  "roster_identity": "LADY OF THE SEA GENERAL HOSPITAL",
+  "roster_address": "200 West 134th Place, Cut Off, LA 70345",
+  "disposition": "official-page-current-facility-csv-linkage-file-parse-unresolved",
+  "interpretation": "New official pricing-page/exact current CSV linkage with matching facility identity and address; file parse and CMS metadata remain unresolved, so no verification claim is promoted.",
+  "next_action": "Retrieve the exact CSV through a permitted download-capable route; verify bounded bytes, declared facility/address/Louisiana state, update date, CMS version and parsed usability."
+}

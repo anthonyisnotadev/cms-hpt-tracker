@@ -1,0 +1,22 @@
+{
+  "ccn": "101307",
+  "observed_at": "2026-09-21T20:15:00Z",
+  "official_page_url": "https://doctorsmemorial.org/price-transparency/",
+  "official_page_status": 200,
+  "official_facility_name": "Doctors Memorial Hospital",
+  "official_facility_address": "2600 Hospital Drive, Bonifay, FL 32425",
+  "linked_file_url": "https://doctorsmemorial.org/596031176_holmes-county-hospital-corporation_standardcharges.csv",
+  "linked_file_observation": "The official price-transparency page labels the link as a machine-readable standard-charges CSV. The bounded web client rejected the CSV content type and the browser reported ERR_BLOCKED_BY_CLIENT, so file bytes and header metadata were not independently retrieved.",
+  "disposition": "official-page-file-linkage-retrieval-unresolved",
+  "next_action": "Retry the exact linked CSV and root cms-hpt.txt through a permitted client; verify header facility identity, Florida address/state, CMS template/date and usable rows before any promotion.",
+  "latest_transport_recheck_2026_09_27": {
+    "observed_at": "2026-09-27T00:50:00Z",
+    "source_page": "https://doctorsmemorial.org/price-transparency/",
+    "page_last_crawled": "2026-09-24",
+    "visible_file_url": "https://doctorsmemorial.org/596031176_holmes-county-hospital-corporation_standardcharges.csv",
+    "file_http_status": 202,
+    "file_content_type": "text/html",
+    "file_headers": {"SG-Captcha": "challenge", "X-Robots-Tag": "noindex"},
+    "result": "The current first-party page still links the Bonifay-specific CSV, but the exact file request now returns a dated captcha challenge rather than CSV bytes. This is a transport/access observation only; the prior Perry cross-facility file remains excluded and no MRF promotion or absence finding was made."
+  }
+}

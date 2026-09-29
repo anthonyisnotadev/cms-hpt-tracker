@@ -1,0 +1,33 @@
+{
+  "observed_at": "2026-09-27T00:00:00Z",
+  "federal_rule_source": "https://www.govinfo.gov/content/pkg/CFR-2025-title45-vol2/pdf/CFR-2025-title45-vol2-part180.pdf",
+  "federal_rule_section": "45 CFR §180.30(b)",
+  "federal_rule_observation": "The rule states Federal and State hospitals are deemed by CMS to be in compliance with Part 180, including but not limited to the listed examples. This state-hospital scope basis is separate from the narrower state-forensic-hospital example, which applies only to exclusively penal-custody facilities.",
+  "texas_operator_authority": "Texas HSC §552.001 and 26 TAC Chapter 910; HHSC operates Texas state hospitals.",
+  "texas_operator_source": "https://www.sos.texas.gov/texreg/archive/August142026/Adopted%20Rules/26.HEALTH%20AND%20HUMAN%20SERVICES.html",
+  "texas_hospital_statute_source": "https://tcss.legis.texas.gov/resources/HS/htm/HS.552.htm",
+  "north_texas_transition_source": "https://capitol.texas.gov/tlodocs/89R/billtext/html/HB00913F.HTM",
+  "north_texas_transition_analysis_source": "https://capitol.texas.gov/tlodocs/89R/analysis/html/HB00913E.htm",
+  "system_scope_source": "https://resources.hhs.texas.gov/open-enrollment/hhs0017341",
+  "rio_grande_rate_schedule_source": "https://pfd.hhs.texas.gov/sites/default/files/documents/hospital-svcs/2025/2025-ffy-psych-hosp-perdiem.pdf",
+  "rio_grande_state_facilities_source": "https://resources.hhs.texas.gov/sites/default/files/documents/hhs0015313-10-exhibit-j-list-of-state-facilities-updated-05-09-24.pdf",
+  "rio_grande_address_discrepancy": "CMS-side record and HHSC's 2025 psychiatric-hospital rate schedule identify Rio Grande State Center / NPI 1821161167 at 1401 S Rangerville Rd, Harlingen TX 78552. A separate HHSC Exhibit J state-facilities list identifies Rio Grande State Center at 1407 Rangerville, Harlingen TX 78550. Preserve this street/ZIP variation; it does not negate state-hospital identity but pricing and address metadata remain unverified.",
+  "corpus_check": {
+    "source_file": "cms_data/hpt/pointer-corpus/cms_hpt_entries.csv",
+    "result": "No matched or related corpus rows for any of the eight reviewed CCNs.",
+    "ccns": ["454000", "454006", "454008", "454009", "454011", "454084", "454088", "454100"]
+  },
+  "facility_dispositions": [
+    {"ccn":"454000","facility_name":"BIG SPRING STATE HOSPITAL","facility_url":"https://hhs.texas.gov/services/mental-health-substance-use/state-hospitals/big-spring-state-hospital","basis":"Named in HSC §552.002; HHSC page confirms current inpatient adult psychiatric facility operated by state."},
+    {"ccn":"454006","facility_name":"TERRELL STATE HOSPITAL","facility_url":"https://hhs.texas.gov/services/mental-health-substance-use/state-hospitals/terrell-state-hospital","basis":"Named in HSC §552.002; HHSC page confirms current inpatient adult, child/adolescent, geriatric psychiatric services and forensic competency restoration."},
+    {"ccn":"454009","facility_name":"RUSK STATE HOSPITAL","facility_url":"https://hhs.texas.gov/services/mental-health-substance-use/state-hospitals/rusk-state-hospital","basis":"Named in HSC §552.002; current HHSC facility identity and CMS CCN/address agree."},
+    {"ccn":"454011","facility_name":"SAN ANTONIO STATE HOSPITAL","facility_url":"https://hhs.texas.gov/services/mental-health-substance-use/state-hospitals/san-antonio-state-hospital","basis":"Named in HSC §552.002; current HHSC state-hospital system materials and exact roster CCN identity support state-operated facility."},
+    {"ccn":"454084","facility_name":"AUSTIN STATE HOSPITAL","facility_url":"https://hhs.texas.gov/services/mental-health-substance-use/state-hospitals/austin-state-hospital","basis":"Named in HSC §552.002; current HHSC page confirms adult, child/adolescent and specialty psychiatric services alongside forensic competency restoration."},
+    {"ccn":"454100","facility_name":"EL PASO PSYCHIATRIC CENTER","facility_url":"https://hhs.texas.gov/services/mental-health-substance-use/state-hospitals/el-paso-psychiatric-center","basis":"Named in HSC §552.002; current HHSC facility identity and exact roster CCN support state-operated facility."},
+    {"ccn":"454008","facility_name":"NORTH TEXAS STATE HOSPITAL","facility_url":"https://hhs.texas.gov/services/mental-health-substance-use/state-hospitals/north-texas-state-hospital","basis":"HB 913's enrolled text effective 2025-09-01 separately names Vernon State Hospital and Wichita Falls State Hospital as state hospitals; legislative analysis confirms these were the two campuses of North Texas State Hospital. The legacy CMS CCN still covers both locations, but both successors are state hospitals under the same state operator, so the CCN-level federal deemed-compliant scope conclusion does not depend on splitting the CCN. Preserve the historical name/campus transition; this is not an MRF claim."},
+    {"ccn":"454088","facility_name":"RIO GRANDE STATE CENTER","facility_url":"https://hhs.texas.gov/services/mental-health-substance-use/state-hospitals/rio-grande-state-center","basis":"Named in HSC §552.002; Texas HHSC 2025 psychiatric-hospital rate schedule ties the exact Rio Grande State Center name, NPI 1821161167, 1401 S Rangerville Rd and Harlingen to ZIP 78552, matching CMS-side identity. HHSC's separate state-facilities Exhibit J lists the site as 1407 Rangerville, Harlingen TX 78550; retain the street/ZIP variation as a metadata discrepancy. Exact state-hospital identity is sufficient for 45 CFR §180.30(b) deemed-compliant scope; no MRF or pricing metadata is established."}
+  ],
+  "no_pricing_claim": "No pointer URL, MRF URL, bytes, pricing metadata, or rate rows are asserted by this scope review.",
+  "disposition": "eight-supported-state-hospital-scope; Rio-Grande-address-variation-retained",
+  "next_action": "Apply eight exact state-hospital federal scope classifications with no MRF attribution; retain Rio Grande's street/ZIP variation as a metadata follow-up without blocking the independent scope determination."
+}

@@ -1,0 +1,22 @@
+{
+  "ccn": "160153",
+  "observed_at": "2026-09-25T00:50:00Z",
+  "cms_dataset": "Hospital General Information",
+  "cms_dataset_url": "https://data.cms.gov/provider-data/dataset/xubh-q36u",
+  "cms_query_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=160153&conditions%5B0%5D%5Boperator%5D=%3D",
+  "http_status": 200,
+  "response_bytes": 6591,
+  "response_sha256": "c9573ccc7b92efebdf96182a59929911987ecb1c5c506ffb43203e9f37c36bb2",
+  "cms_record": {
+    "facility_id": "160153",
+    "facility_name": "MERCYONE SIOUXLAND MEDICAL CENTER",
+    "address": "801 5TH ST",
+    "citytown": "SIOUX CITY",
+    "state": "IA",
+    "zip_code": "51101",
+    "hospital_type": "Acute Care Hospitals"
+  },
+  "disposition": "current-cms-identity-recheck-transition-unresolved",
+  "interpretation": "The current CMS Hospital General Information API still lists CCN 160153 as MercyOne Siouxland Medical Center at 801 5th Street, Sioux City, Iowa. The record strengthens current identity and address corroboration but does not supply an effective termination/merge date or establish price-file scope; the shared 801 15th Street MRF discrepancy remains separate.",
+  "next_action": "Obtain effective-dated CMS enrollment/certification history and publisher clarification of the 801 15th versus 801 5th address before changing the CCN disposition."
+}

@@ -1,0 +1,18 @@
+{
+  "ccn": "310058",
+  "observed_at": "2026-09-21T21:10:00Z",
+  "official_domain": "newbridgehealth.org",
+  "official_site": "https://newbridgehealth.org/",
+  "checked_urls": [
+    "https://newbridgehealth.org/",
+    "https://newbridgehealth.org/cms-hpt.txt",
+    "https://www.newbridgehealth.org/",
+    "https://www.newbridgehealth.org/cms-hpt.txt"
+  ],
+  "retrieval_method": "bounded official-domain checks plus facility identity corroboration",
+  "transport_result": "The current and www New Bridge domains, including root cms-hpt.txt paths, returned HTTP 403 to the current client. No pointer contents or facility-specific MRF bytes were recovered.",
+  "facility_identity_observation": "Bergen New Bridge Medical Center, 230 East Ridgewood Avenue, Paramus, NJ 07652, CCN 310058; the transport response does not establish file absence or compliance status.",
+  "disposition": "official-domain-access-denied-pointer-discovery-incomplete",
+  "interpretation": "This is a facility-specific access observation only. Third-party prices and historical compliance reports were not promoted as current MRF evidence.",
+  "next_action": "Retry the exact New Bridge pricing page and root pointer through an authorized browser/content-bearing route; require exact facility bytes, identity, New Jersey address/state, date, CMS version and usable rows before promotion."
+}

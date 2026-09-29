@@ -1,0 +1,310 @@
+{
+  "records": [
+    {
+      "ccn": "444001",
+      "state": "TN",
+      "reviewed_on": "2026-09-26",
+      "roster_address": "951 COURT AVENUE",
+      "file_address": "951 Court Ave Memphis, TN 38103",
+      "mrf_url": "https://www.tn.gov/content/dam/tn/mentalhealth/documents/MMHI_Price_Transparency-2025-2026_MR.csv",
+      "browser_observed_at": "2026-09-22T01:24:00Z",
+      "source_url": "https://www.tn.gov/behavioral-health/hospitals/memphis.html",
+      "additional_source_url": "cms_data/Hospital_General_Information.csv",
+      "basis": "The first-party Tennessee MMHI page and CMS hospital-general record identify Memphis Mental Health Institute at 951 Court Avenue, Memphis TN 38103. The page-linked file uses the standard Ave abbreviation for the same street, city, state and ZIP. This reconciles a narrow address transcription variant for CCN 444001 only; it does not add CMS template metadata or imply whole-file validity."
+    },
+    {
+      "ccn": "444008",
+      "state": "TN",
+      "reviewed_on": "2026-09-26",
+      "roster_address": "11100 OLD HWY 64 WEST",
+      "file_address": "11100 Old Highway 64, Bolivar, TN 38008",
+      "mrf_url": "https://www.tn.gov/content/dam/tn/mentalhealth/documents/WMHI__Price_Transparency-2025-2026_MR.csv",
+      "browser_observed_at": "2026-09-22T02:00:00Z",
+      "source_url": "https://www.tn.gov/behavioral-health/hospitals/western.html",
+      "additional_source_url": "cms_data/Hospital_General_Information.csv",
+      "basis": "The first-party Tennessee WMHI page and CMS hospital-general record identify Western Mental Health Institute at 11100 Old Highway 64 West, Bolivar TN 38008. The page-linked file uses Highway for Hwy and omits the directional suffix while preserving the exact street number, route, city, state and ZIP. This reconciles a narrow address transcription variant for CCN 444008 only; it does not add CMS template metadata or imply whole-file validity."
+    },
+    {
+      "ccn": "390307",
+      "state": "PA",
+      "reviewed_on": "2026-09-26",
+      "roster_address": "239 EDGEWOOD DRIVE EXTENSION",
+      "file_address": "239 Edgewood Drive Ext, Transfer, PA, 16154",
+      "mrf_url": "https://drive.google.com/file/d/1oINGlpvPtLAz7RScXHi9DSSvMY__R8YZ/view?usp=sharing",
+      "browser_observed_at": "2026-09-22T01:35:00Z",
+      "source_url": "https://edgewoodsurgical.com/insurance/",
+      "basis": "The first-party Edgewood Surgical Hospital page and complete file agree on the exact Transfer Pennsylvania campus, address, state, NPI and CMS 3.0.0 metadata. The file's declared hospital_name contains the documented one-word typo Hopsital, while its location_name and independent first-party identity correctly say Edgewood Surgical Hospital. This is a source-typo equivalence for CCN 390307 only; the literal typo remains in provenance and no whole-file inference is made."
+    },
+    {
+      "ccn": "234011",
+      "state": "MI",
+      "reviewed_on": "2026-09-26",
+      "roster_address": "10300 W EIGHT MILE ROAD",
+      "file_address": "7100 Berryhill, West Bloomfield, MI 48322",
+      "mrf_url": "https://www.henryfordbhh.com/wp-content/uploads/pricing/2026/580/87-2121325_HFHS-Acadia-Joint-Venture-LLC_standardcharges.csv",
+      "browser_observed_at": "2026-09-25T15:00:00Z",
+      "source_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=234011&size=10",
+      "basis": "The CMS Hospital Enrollments public Data API record for exact CCN 234011 names HFHS-Acadia Joint Venture LLC / Henry Ford Health Behavioral Health Hospital, NPI 1073359717, at 7100 Berryhill St, West Bloomfield MI, psychiatric hospital. The current first-party MRF declares the same campus and NPI, while the CMS roster's 10300 W Eight Mile Road is retained as historical Ferndale provenance. This reconciles a documented CCN campus transition for 234011 only and does not erase the prior record or imply legal compliance."
+    },
+    {
+      "ccn": "281352",
+      "state": "NE",
+      "reviewed_on": "2026-09-26",
+      "roster_address": "P O BOX 399, 3307 BILL SCHOCK BOULEVARD",
+      "file_address": "3307 Barada Street, Falls City, NE 68355",
+      "mrf_url": "https://secure.claraprice.net/price-transparency/NTWZ-1713817372531/machine-readable/470421272_community-medical-center_standardcharges.json",
+      "browser_observed_at": "2026-09-25T10:46:39Z",
+      "source_url": "https://www.cmcfc.org/medical-center-and-clinics-in-falls-city/",
+      "additional_source_url": "https://dhhs.ne.gov/licensure/Documents/Hospital%20Roster.pdf",
+      "basis": "Community Medical Center's current first-party site identifies the hospital at 3307 Bill Schock Boulevard, while the Nebraska hospital roster and CMC's own historical/provider materials identify 3307 Barada Street in Falls City for the same CCN 281352. The page-linked JSON declares the Barada Street address, exact name, Nebraska state, NPI and CMS 3.0.0 metadata. This documents a facility-specific address variant for CCN 281352 only; it does not authorize cross-facility matching or erase the unresolved root-pointer linkage."
+    },
+    {
+      "ccn": "490060",
+      "state": "VA",
+      "reviewed_on": "2026-09-26",
+      "roster_address": "6801 Governor GC Perry Highway",
+      "file_address": "6801 Gov George C. Peery Highway, Richlands, VA 24641",
+      "mrf_url": "https://www.clinchvalleyhealth.com/docs/clinchvalleyhealthlibraries/hcl/mrf3q26/541058953_clinch-valley-medical-center_standardcharges.csv.zip",
+      "browser_observed_at": "2026-09-23T00:00:00Z",
+      "source_url": "https://www.clinchvalleyhealth.com/locations/clinch-valley-medical-center",
+      "basis": "The first-party Clinch Valley Health site explicitly identifies Clinch Valley Medical Center as the hospital at 6801 Gov. G. C. Peery Highway, Richlands VA 24641, while describing Clinch Valley Health as the network/brand. The exact pointer-linked ZIP declares Clinch Valley Health at the same address, Virginia state, NPI and CMS 3.0.0 metadata. This is a facility-brand alias review for CCN 490060 only; it does not broaden the file to other Clinch Valley entities."
+    },
+    {
+      "ccn": "521347",
+      "state": "WI",
+      "reviewed_on": "2026-09-26",
+      "roster_address": "730 10TH AVE",
+      "file_address": "1100 BERGSLIEN STREET, BALDWIN, WI, 54002",
+      "mrf_url": "https://www.wwhealth.org/wp-content/uploads/2026/07/360808526_baldwin-area-medical-center-inc_standardcharges.csv",
+      "browser_observed_at": "2026-09-23T00:00:00Z",
+      "source_url": "https://www.wwhealth.org/western-wisconsin-health-opening-july-21-25/",
+      "additional_source_url": "https://www.wwhealth.org/locations/",
+      "basis": "Western Wisconsin Health's first-party relocation notice documents that the birth center, inpatient, surgery, lab and imaging departments moved from the former 730 10th Avenue Baldwin campus to 1100 Bergslien Street. The current locations page and Wisconsin DHS hospital directory confirm 1100 Bergslien as the current hospital campus, matching the page-linked MRF. This reconciles a documented facility relocation for CCN 521347 only and does not authorize other Baldwin facilities."
+    },
+    {
+      "ccn": "400022",
+      "state": "PR",
+      "reviewed_on": "2026-09-26",
+      "roster_address": "PONCE BY PASS #2213",
+      "file_address": "2213 Ponce ByPass, Ponce, Puerto Rico 00717",
+      "mrf_url": "https://hpt.inmediata.com/?d=105CE5E7-9A34-405E-B612-E1037793BF02&handler=DF",
+      "browser_observed_at": "2026-09-22T09:30:00Z",
+      "source_url": "https://www.hospitaldamas.com/p/price-transparency",
+      "basis": "The first-party Hospital Damas pricing page links the exact current MRF, whose Hospital Damas identity and 2213 Ponce ByPass, Ponce PR 00717 address match the CMS roster's PONCE BY PASS #2213. This reconciles ordering, punctuation and legal-name suffix differences for CCN 400022 only; it does not broaden the file to other Puerto Rico facilities."
+    },
+    {
+      "ccn": "400117",
+      "state": "PR",
+      "reviewed_on": "2026-09-26",
+      "roster_address": "CALLE  PALMA  NUM 55",
+      "file_address": "Calle Palma #55, Arecibo, PR 00612",
+      "mrf_url": "https://hpt.inmediata.com/?d=EED40A19-47C4-44EA-AD28-AA3698D28525&handler=DF",
+      "browser_observed_at": "2026-09-22T15:00:00Z",
+      "source_url": "https://hospitaldrsusoni.com/mensaje-de-la-administracion/",
+      "basis": "The first-party Hospital Metropolitano Dr. Susoni page and linked MRF identify the same Arecibo facility at Calle Palma 55, Puerto Rico 00612 as the CMS roster's CALLE PALMA NUM 55. This reconciles punctuation and Spanish address-label variants for CCN 400117 only."
+    },
+    {
+      "ccn": "400130",
+      "state": "PR",
+      "reviewed_on": "2026-09-26",
+      "roster_address": "CALLE ISAAC GONZALEZ ESQUINA LEDESMA",
+      "file_address": "Calle Isaac González Martínez, Esquina Ledesma, Utuado, PR 00641",
+      "mrf_url": "https://hpt.inmediata.com/?d=5B3139A8-A1D2-47D0-AE06-40D37F471EF7&handler=DF",
+      "browser_observed_at": "2026-09-22T17:30:00Z",
+      "source_url": "https://hospitalmetroutuado.com/",
+      "basis": "The first-party Hospital Metropolitano de la Montaña page and linked MRF identify the Utuado campus at Calle Isaac González Martínez, Esquina Ledesma, matching the CMS roster's CALLE ISAAC GONZALEZ ESQUINA LEDESMA. This reconciles the expanded personal-name and locality fields for CCN 400130 only."
+    },
+    {
+      "ccn": "400128",
+      "state": "PR",
+      "reviewed_on": "2026-09-26",
+      "roster_address": "AVE PONCE DE LEON 435",
+      "file_address": "Ave. Ponce de León #435, Hato Rey, PR 00917",
+      "mrf_url": "https://hpt.inmediata.com/?d=BED8B559-377F-4432-9F6C-8560F9466367&handler=DF",
+      "browser_observed_at": "2026-09-22T17:00:00Z",
+      "source_url": "https://hospitalpaviahr.com/",
+      "basis": "The first-party Hospital Pavia Hato Rey page and linked MRF identify the same facility at Ave. Ponce de León 435, Hato Rey PR 00917 as the CMS roster's AVE PONCE DE LEON 435. This reconciles punctuation, ordinal and locality fields for CCN 400128 only."
+    },
+    {
+      "ccn": "400019",
+      "state": "PR",
+      "reviewed_on": "2026-09-26",
+      "roster_address": "STREET PROFESOR AUGUSTO RODRIGUEZ #1462",
+      "file_address": "Calle Profesor Augusto Rodriguez 1462, Santurce, San Juan, PR 00910",
+      "mrf_url": "https://hpt.inmediata.com/?d=0C7D0EB4-7AFE-4319-B440-FF3C21B8684D&handler=DF",
+      "browser_observed_at": "2026-09-22T09:00:00Z",
+      "source_url": "https://hospitalpaviapr.com/sala-de-emergencias/",
+      "basis": "The first-party Hospital Pavia Santurce page and linked MRF identify the same San Juan facility at Calle Profesor Augusto Rodriguez 1462, matching the CMS roster's STREET PROFESOR AUGUSTO RODRIGUEZ #1462. This reconciles street-language, ordering and punctuation variants for CCN 400019 only."
+    },
+    {
+      "ccn": "400110",
+      "state": "PR",
+      "reviewed_on": "2026-09-26",
+      "roster_address": "ROAD 128 KM 1.0",
+      "file_address": "Carr. 128 KM 1.0 Bo. Susúa Baja, Yauco, PR",
+      "mrf_url": "https://hpt.inmediata.com/?d=E272FB7E-516B-4F3D-80FC-B3C8F204CB20&handler=DF",
+      "browser_observed_at": "2026-09-22T13:30:00Z",
+      "source_url": "https://hospitalpaviayauco.com/",
+      "basis": "The first-party Hospital Pavia Yauco page and linked MRF identify the Yauco facility at Carr. 128 KM 1.0, matching the CMS roster's ROAD 128 KM 1.0. This reconciles route-language and locality fields for CCN 400110 only."
+    },
+    {
+      "ccn": "400087",
+      "state": "PR",
+      "reviewed_on": "2026-09-26",
+      "roster_address": "CARRETERA 129 KM.1 AVENIDA SAN LUIS",
+      "file_address": "Carretera 129 KM 1.0 Ave. San Luis, Arecibo, PR",
+      "mrf_url": "https://hpt.inmediata.com/?d=C10CEC49-8309-4C99-8C68-70E76D4762E3&handler=DF",
+      "browser_observed_at": "2026-09-22T11:00:00Z",
+      "source_url": "https://hospitalpaviaarecibo.com/aviso-facturacion-sorpresa/",
+      "basis": "The first-party Hospital Pavia Arecibo page and linked MRF identify the same Arecibo facility at Carretera 129 KM 1.0 Ave. San Luis, matching the CMS roster's CARRETERA 129 KM.1 AVENIDA SAN LUIS. This reconciles route punctuation, decimal formatting and street-label variants for CCN 400087 only."
+    },
+    {
+      "ccn": "400098",
+      "state": "PR",
+      "reviewed_on": "2026-09-26",
+      "roster_address": "371 DE DIEGO AVE",
+      "file_address": "Calle José de Diego #371, Río Piedras/San Juan, PR 00923",
+      "mrf_url": "https://hpt.inmediata.com/?d=F2BB6A0B-8C30-481F-B1D2-DA63B3577635&handler=DF",
+      "browser_observed_at": "2026-09-22T11:30:00Z",
+      "source_url": "https://hospitalsanfranciscopr.com/contacto/",
+      "basis": "The first-party Hospital San Francisco contact page and linked MRF identify the same Río Piedras/San Juan facility at Calle José de Diego 371, matching the CMS roster's 371 DE DIEGO AVE. This reconciles Spanish street-label, punctuation and locality variants for CCN 400098 only."
+    },
+    {
+      "ccn": "400106",
+      "state": "PR",
+      "reviewed_on": "2026-09-26",
+      "roster_address": "CARRETERA 21 1785 URB LAS LOMAS",
+      "file_address": "Carr. 21 #1785 Las Lomas, Río Piedras/San Juan, PR",
+      "mrf_url": "https://hpt.inmediata.com/?d=FFD27DC6-E54F-4ECF-805F-692FCCAB629C&handler=DF",
+      "browser_observed_at": "2026-09-22T12:30:00Z",
+      "source_url": "https://hospitalmetropolitanopr.com/",
+      "basis": "The first-party Hospital Metropolitano page and linked MRF identify the same Río Piedras/San Juan facility at Carr. 21 1785 Las Lomas, matching the CMS roster's CARRETERA 21 1785 URB LAS LOMAS. This reconciles route abbreviation, number-sign and locality variants for CCN 400106 only."
+    },
+    {
+      "ccn": "400010",
+      "state": "PR",
+      "reviewed_on": "2026-09-26",
+      "roster_address": "CARR 135 KM 64 2",
+      "file_address": "CARR 135 KM 64.2, CASTAÑER, PR 00631-2100",
+      "mrf_url": "https://hgcastaner.com/pdf/660352014_Hospital-General-de-Castaner-Inc_standardcharges.csv",
+      "browser_observed_at": "2026-09-22T08:10:00Z",
+      "source_url": "https://hgcastaner.com/ley-de-transparencia.html",
+      "basis": "The first-party Hospital General de Castañer pricing route and linked MRF identify the same Castañer facility at CARR 135 KM 64.2, matching the CMS roster's CARR 135 KM 64 2. This reconciles decimal and punctuation variants for CCN 400010 only; the file remains explicitly stale and is not promoted to current."
+    },
+    {
+      "ccn": "400124",
+      "state": "PR",
+      "reviewed_on": "2026-09-26",
+      "roster_address": "AVENIDA AMERICO MIRANDA, ENTRADA PRINCIPAL C M",
+      "file_address": "Ave. Américo Miranda, Entrada Principal Centro Médico, San Juan, PR 00935",
+      "mrf_url": "https://hpt.inmediata.com/?d=69BCA845-DFF2-4C05-9642-19096BA9ABFF&handler=DF",
+      "browser_observed_at": "2026-09-22T16:00:00Z",
+      "source_url": "https://www.pr.gov/directorio-de-agencias/corporacion-del-centro-cardiovascular-de-puerto-rico-y-el-caribe-cccprc-b",
+      "basis": "The Puerto Rico government agency directory and first-party Centro Cardiovascular pages distinguish the physical hospital address at Ave. Américo Miranda, Entrada Principal Centro Médico, San Juan 00935 from the postal address PO Box 366528, San Juan 00936-6528. The CMS roster's 00936 is therefore consistent with the postal ZIP while the current MRF declares the physical ZIP 00935. This CCN-specific physical-versus-postal distinction reconciles the ZIP discrepancy without treating either address as a different facility."
+    },
+    {
+      "ccn": "501321",
+      "state": "WA",
+      "reviewed_on": "2026-09-23",
+      "roster_address": "203 SOUTH WESTERN",
+      "file_address": "126 S Whitcomb Ave, Tonasket, WA 98855",
+      "mrf_url": "https://apim.services.craneware.com/api-pricing-transparency/api/public/bfe46f369e2a6c95ba3ca8faaf1e0c32/charges/mrf",
+      "browser_observed_at": "2026-09-23T00:00:00Z",
+      "source_url": "https://www.nvhospital.org/cms-hpt-txt",
+      "basis": "The first-party North Valley Hospital site distinguishes its physical campus at 126 S. Whitcomb Ave. from its mailing address at 203 S. Western Ave.; the Washington DOH hospital directory associates CCN 501321 with the 203 S. Western Ave. mailing address. The current page-linked MRF identifies the same hospital at the 126 S. Whitcomb Ave. physical campus. This reconciles a documented mailing-versus-physical address variant for this exact CCN and file; it does not authorize a different facility or imply whole-file validity."
+    },
+    {
+      "ccn": "100067", "state": "FL", "reviewed_on": "2026-09-16",
+      "roster_address": "1200 SEVENTH AVE N, SAINT PETERSBURG FL 33705",
+      "file_address": "1200 7th Avenue St. Petersburg FL 33705",
+      "mrf_url": "https://baycare.org/-/media/project/baycare/consumer-portal/billing-and-insurance/pricing-files-compressed/592043026stanthonyshospitalstandardcharges.zip",
+      "browser_observed_at": "2026-09-16T13:06:48.010Z",
+      "source_url": "https://baycare.org/locations/hospitals/st-anthonys-hospital/patients-and-visitors",
+      "basis": "The first-party St. Anthony's facility page identifies 1200 Seventh Ave. N., St. Petersburg FL 33705, agreeing with the CMS roster. The current page-linked CSV header identifies the same named hospital, street number, Seventh/7th Avenue, city, state and ZIP but omits the N direction; this limited equivalence does not authorize a different facility or imply whole-file validity."
+    },
+    {
+      "ccn": "070022", "state": "CT", "reviewed_on": "2026-09-16",
+      "roster_address": "20 YORK ST, NEW HAVEN CT 06504",
+      "file_address": "20 York St, New Haven CT, 06510",
+      "mrf_url": "https://www.ynhh.org/-/media/Files/YNHHS/sc/06-0646652-Yale_New_Haven_Hospital_Standard_Charges011025-1.ashx",
+      "browser_observed_at": "2026-09-16T13:01:32.578Z",
+      "source_url": "https://www.ynhh.org/patients-visitors/billing-insurance/Pricing",
+      "basis": "The hospital's current first-party pricing page footer identifies Yale New Haven Hospital at 20 York Street, New Haven CT 06510, matching the page-linked file's Yale New Haven location. The CMS roster has the same hospital, street, city and state but ZIP 06504; this is a facility-specific roster ZIP exception, not permission to match other facilities."
+    },
+    {
+      "ccn": "053302", "state": "CA", "reviewed_on": "2026-09-15",
+      "roster_address": "4650 SUNSET BLVD, MS 108",
+      "file_address": "4650 Sunset Blvd Los Angeles CA 90027",
+      "mrf_url": "https://www.chla.org/hpt/1",
+      "browser_observed_at": "2026-09-15T08:55:52.707Z",
+      "source_url": "https://www.chla.org/location-details/main-campus",
+      "basis": "Official main-campus page locates the hospital at 4650 Sunset Blvd, Los Angeles CA 90027. The roster appends a mailstop to the same street address. This reconciles the facility address, not the contents of the full file."
+    },
+    {
+      "ccn": "054009", "state": "CA", "reviewed_on": "2026-09-15",
+      "roster_address": "150 MEDICAL PLAZA-RM-4230C",
+      "file_address": "150 UCLA Medical Plaza Los Angeles CA 90095",
+      "mrf_url": "https://www.uclahealth.org/sites/default/files/cms-hpt/953701255_resnick-neuropsychiatric-hospital-at-ucla_standardcharges.json",
+      "browser_observed_at": "2026-09-15T08:59:56.809Z",
+      "source_url": "https://www.uclahealth.org/hospitals/resnick/about-us/maps-and-directions",
+      "additional_source_url": "https://hcai.ca.gov/equity-measures/hospital/resnick-neuropsychiatric-hospital-at-ucla/",
+      "basis": "Official Resnick directions give 150 UCLA Medical Plaza, Los Angeles CA 90095. The state HCAI facility page gives 150 Medical Plaza. The roster adds room 4230C; the shared facility address is corroborated."
+    },
+    {
+      "ccn": "330100", "state": "NY", "reviewed_on": "2026-09-15",
+      "roster_address": "230 SECOND AVE",
+      "file_address": "310_East_14th_Street_New_York_NY_10003",
+      "mrf_url": "https://www.mountsinai.org/files/mrf/135562304_new-york-eye-and-ear-infirmary-of-mount-sinai_standardcharges.json",
+      "browser_observed_at": "2026-09-15T09:23:57.653Z",
+      "source_url": "https://www.nyee.edu/about/contact",
+      "basis": "The same official NYEE contact page lists the institution's mailing address as 310 East 14th Street, New York NY 10003 and lists its 230 Second Avenue Lobby in the departmental directory. This explicitly connects both addresses to NYEE; it does not authorize another hospital to share the file."
+    },
+    {
+      "ccn": "361330", "state": "OH", "reviewed_on": "2026-09-15",
+      "roster_address": "601 STATE ROUTE 664N",
+      "file_address": "601 OH-664 N, Logan, OH 43138",
+      "mrf_url": "https://www.hvch.org/wp-content/uploads/2026/08/310733259_hocking_valley_standardcharges.csv",
+      "browser_observed_at": "2026-09-15T09:26:29.459Z",
+      "source_url": "https://www.hvch.org/",
+      "basis": "Official hospital homepage gives 601 State Route 664 N, Logan OH 43138. The file uses OH-664 N for the same Ohio route number and direction, with matching street number, city and ZIP."
+    },
+    {
+      "ccn": "010045", "state": "AL", "reviewed_on": "2026-09-15",
+      "roster_address": "1653 TEMPLE AVENUE NORTH",
+      "file_address": "1653 Temple Avenue, Fayette, AL 35555",
+      "mrf_url": "https://dch.pt.panaceainc.com/MRFDownload/dch/fayette",
+      "browser_observed_at": "2026-09-15T14:31:25.802Z",
+      "source_url": "https://www.dchsystem.com/locations/fayette-medical-center/",
+      "basis": "DCH's official Fayette Medical Center page gives 1653 Temple Ave, Fayette AL 35555. The roster appends North to the same street number and name, while the MRF matches the official page, city, state and ZIP."
+    },
+    {
+      "ccn": "210064", "state": "MD", "reviewed_on": "2026-09-15",
+      "roster_address": "2434 WEST BELVEDERE AVENUE",
+      "file_address": "2434 West Belvedere Avenue Baltimore MD 21215",
+      "mrf_url": "https://www.lifebridgehealth.org/sites/default/files/2026-04/52-0607913_Levindale-Hebrew-Geriatric-Center-Hospital_standardcharges_0.csv",
+      "browser_observed_at": "2026-09-15T09:11:43.242Z",
+      "source_url": "https://www.lifebridgehealth.org/locations/levindale-hebrew-geriatric-center-and-hospital",
+      "basis": "LifeBridge Health's current official facility page gives 2434 W. Belvedere Ave., Baltimore MD 21215, exactly agreeing with the file. The CMS roster has the same street, city and state but ZIP 21209; this review records a roster ZIP exception for this facility only."
+    },
+    {
+      "ccn": "400001", "state": "PR", "reviewed_on": "2026-09-15",
+      "roster_address": "1451 ASHFORD AVENUE, EL CONDADO",
+      "file_address": "1451, AVENIDA ASHFORD, SAN JUAN, PR 00907",
+      "mrf_url": "https://hpt.inmediata.com/?handler=DF&d=06E635CC-A020-4C15-80ED-931CA6EFCC3A",
+      "browser_observed_at": "2026-09-15T20:01:53.092Z",
+      "source_url": "https://www.presbypr.com/",
+      "additional_source_url": "https://www.presbypr.com/about/",
+      "basis": "Ashford Hospital's current homepage gives 1451 Ashford Avenue, San Juan PR 00907, and its history identifies the institution as Ashford Presbyterian Community Hospital. The roster's English Avenue and El Condado wording and the file's Spanish Avenida and San Juan wording describe the same numbered street and facility."
+    },
+    {
+      "ccn": "021310", "state": "AK", "reviewed_on": "2026-09-17",
+      "roster_address": "PO BOX 43",
+      "file_address": "436 5th Ave Kotzebue AK 99752",
+      "mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbMHCKOTZEBUEAK&type=CDMWithoutLabel&fileType=CSV",
+      "browser_observed_at": "2026-09-17T00:00:00.000Z",
+      "source_url": "https://www.maniilaq.org/contact/",
+      "additional_source_url": "https://www.maniilaq.org/health-services/",
+      "basis": "The CMS roster carries the facility's PO Box 43 mailing address. Maniilaq Association's official contact page lists Maniilaq Health Center at 436 5th Avenue, Kotzebue AK 99752, and its Health Services page describes the Health Center as operated through Maniilaq Association. The file's operating-name header therefore reconciles to the CMS facility through the first-party operator relationship and the exact physical address, while preserving the roster mailing-address distinction."
+    }
+  ]
+}

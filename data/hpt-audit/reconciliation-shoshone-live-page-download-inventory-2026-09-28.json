@@ -1,0 +1,59 @@
+{
+  "ccn": "131314",
+  "facility": "Shoshone Medical Center",
+  "observed_on": "2026-09-28",
+  "sources": {
+    "official_pricing_page": "https://www.shoshonehealth.com/patients/registrationbilling/",
+    "official_pointer": "https://www.shoshonehealth.com/cms-hpt.txt",
+    "third_party_price_page": "https://showthebill.com/hospitals/shoshone-medical-center/",
+    "publisher_hpi_page": "https://search.hospitalpriceindex.com/hpi2/hospital/shoshonemedicalcenter/7852or"
+  },
+  "live_browser_observation": {
+    "page_title": "Registration/Billing – Shoshone Medical Center",
+    "machine_readable_link_text": "chargemaster",
+    "machine_readable_link_url": "https://www.shoshonehealth.com/wp-content/uploads/2019/12/2020-Charge-Master.csv",
+    "other_pricing_link_url": "https://search.hospitalpriceindex.com/hpi2/hospital/shoshonemedicalcenter/7852or",
+    "separate_current_cms_csv_json_zip_link_exposed": false,
+    "interpretation": "The live first-party page exposes the same legacy 2020 chargemaster URL already retained in the evidence ledger and a separate consumer-facing HPI price page; browser inspection exposed no distinct current CMS-format CSV, JSON or ZIP download."
+  },
+  "independent_web_search": {
+    "queries": [
+      "site:shoshonehealth.com \"2020-Charge-Master.csv\"",
+      "site:shoshonehealth.com \"cms-hpt.txt\" \"Shoshone Medical Center\"",
+      "\"826003924-1043215437_west-shoshone-hospital-district-1_standardcharges.csv\""
+    ],
+    "result": "No indexed results returned for these exact-route queries.",
+    "limitation": "Search-engine silence is not proof that no other file exists."
+  },
+  "followup_official_and_exact_ccn_search_2026_09_28": {
+    "observed_at": "2026-09-28T19:04:34Z",
+    "queries": [
+      "site:cms.gov 131314 Shoshone Medical Center price transparency machine readable file 2026",
+      "CMS hospital price transparency data 131314 Shoshone Medical Center MRF",
+      "site:shoshonehealth.com 131314 price transparency"
+    ],
+    "result": "Search surfaced the CMS general Hospital Price Transparency guidance and a third-party PayerPrice profile for CCN 131314, but no CMS-hosted or other distinct publisher-linked MRF object. PayerPrice displays derived contract summaries, not source MRF bytes or a publisher file URL.",
+    "source_links": [
+      "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency",
+      "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/hospitals",
+      "https://payerprice.com/hospitals/-131314"
+    ],
+    "interpretation": "This bounded search adds no importable file lead. The third-party rate summary is excluded from MRF evidence and must not be imported. CMS guidance is a validation reference only; it does not establish Shoshone file availability or compliance.",
+    "disposition_effect": "none",
+    "count_effect": "none"
+  },
+  "previously_retained_file_facts": {
+    "legacy_page_file_url": "https://www.shoshonehealth.com/wp-content/uploads/2019/12/2020-Charge-Master.csv",
+    "legacy_page_file_bytes": 194646,
+    "legacy_page_file_sha256": "255541b660748f0a50bf62cd4b91d8b444caedf96de5a4fcc0bbee891a2f0d6b",
+    "legacy_page_file_last_modified": "2022-03-01T16:03:58Z",
+    "pointer_target_status": 404,
+    "alternate_third_party_blob_status": 404,
+    "new_file_bytes_recovered": false
+  },
+  "finding": "The current first-party page's exposed machine-readable download remains the already-retained legacy 2020 chargemaster; no distinct current CMS-format MRF route or bytes were found in this bounded review. A follow-up official/exact-CCN search found only CMS general guidance and a third-party derived-rate profile, not a new publisher-linked MRF object.",
+  "interpretation": "This live page inventory improves freshness of the route evidence but does not prove that no MRF is available through another publisher or vendor route. The old chargemaster is not a current CMS MRF. The current pointer target and alternate third-party blob remain distinct unavailable URLs; neither result proves noncompliance or file absence.",
+  "disposition_effect": "none",
+  "count_effect": "none",
+  "next_action": "Keep CCN 131314 unresolved. Seek a materially new publisher-managed route or a publisher-provided current CMS-template CSV/JSON/ZIP with exact source URL and hash; validate Shoshone identity, 25 Jacobs Gulch address, Idaho state/license metadata, update date, CMS version and usable rows. Do not repeat the unchanged 2020 link, known pointer-target 404 or alternate-blob 404 absent a source/access change."
+}

@@ -1,0 +1,63 @@
+{
+  "audit_id": "reconciliation-athens-limestone-system-file-link-divergence-2026-09-28",
+  "observed_at": "2026-09-28T07:48:36Z",
+  "ccn": "010079",
+  "facility": "Athens-Limestone Hospital, 700 West Market Street, Athens, Alabama 35611",
+  "prior_exact_ccn_evidence": {
+    "proof_file": "reconciliation-athens-limestone-current-page-file-link-proof-2026-09-25.json",
+    "first_party_page": "https://www.athenslimestonehospital.com/patients-visitors/price-transparency",
+    "file_url": "https://www.athenslimestonehospital.com/images/price-transparency/475531420_Athens-Limestone-Hospital_standardcharges.csv",
+    "page_updated_on": "2026-04-01",
+    "facility_address": "700 West Market Street, Athens, AL 35611",
+    "previous_transport_result": "DNS unresolved"
+  },
+  "current_system_page_evidence": {
+    "page_url": "https://hh.health/patients-visitors/price-transparency/",
+    "page_last_updated_as_rendered": "2026-08-20",
+    "facility_row": "Athens-Limestone Hospital",
+    "link_target_as_resolved_by_web_reader": "https://hh.health/wp-content/uploads/475531420_Athens-Limestone-Hospital_standardcharges.csv",
+    "web_reader_result": "CSV content-type unsupported; no CSV bytes or headers exposed."
+  },
+  "dated_archive_capture": {
+    "index": "CC-MAIN-2026-34",
+    "captured_at": "2026-08-09T11:07:09Z",
+    "page_url": "https://hh.health/patients-visitors/price-transparency/",
+    "status": 200,
+    "index_digest": "27ZUCA774U4VPKQNQ35DWWECZOS7B6CM",
+    "record_id": "019fe634-8429-75d7-b6ec-32622e436631",
+    "warc_range": "bytes 265968706-265996413",
+    "range_bytes": 27708,
+    "range_sha256": "90BAD005313AF28733F5B18074905B80D67E152322223176F9C96605D5681992",
+    "captured_page_date_modified_metadata": "2026-07-29T15:07:36-05:00",
+    "captured_page_description": "Last Updated: 4-1-2026",
+    "captured_athens_link_target": "https://hh.health/wp-content/uploads/Athens-Limestone_standardcharges.csv"
+  },
+  "targeted_archive_index_checks": [
+    {
+      "url": "https://hh.health/cms-hpt.txt",
+      "collection": "CC-MAIN-2026-34",
+      "result": "HTTP 504 from index; no conclusion."
+    },
+    {
+      "url": "https://hh.health/wp-content/uploads/Athens-Limestone_standardcharges.csv",
+      "collection": "CC-MAIN-2026-34",
+      "result": "HTTP 502 from index on repeat query; earlier request returned 404. Index results inconsistent; do not treat as proof of no capture."
+    },
+    {
+      "url": "https://hh.health/wp-content/uploads/475531420_Athens-Limestone-Hospital_standardcharges.csv",
+      "collection": "CC-MAIN-2026-34",
+      "result": "HTTP 404 no-capture response."
+    }
+  ],
+  "live_transport_observations": {
+    "system_host_dns_over_https_a_record": "199.116.78.34",
+    "ordinary_browser_result": "ERR_NAME_NOT_RESOLVED was observed for hh.health in the preceding check.",
+    "direct_https_with_current_dns_answer": "TLS handshake failed when using the DNS-over-HTTPS A record via curl --resolve; no HTTP response or file bytes.",
+    "pointer_bytes": 0,
+    "csv_bytes": 0
+  },
+  "interpretation": "This adds a hash-bound dated archive of the official system transparency page. The Aug. 9 capture linked the Athens row to a short slug with no EIN; current web-rendered page content resolves its current link to a different EIN/facility-named URL, while the individual hospital page separately links a similar 475531420 filename on the hospital domain. This is a real route/version discrepancy to reconcile, not proof of a missing or invalid MRF. No pointer body, CSV bytes, CMS metadata or usable rows were recovered. DNS transport errors are not file status. Keep 010079 unresolved and do not import pricing or promote a file based on page links alone.",
+  "disposition": "current-system-file-route-differs-from-archived-link-target-bytes-unverified",
+  "unresolved_count_change": 0,
+  "next_action": "When direct HTTPS access to hh.health or the publisher-hosted alternative works, retrieve the current root cms-hpt.txt and both page-linked CSV candidates with bounded bytes. Compare exact content hashes, last-updated/version and facility metadata, test parseability, and determine which target the current official pointer declares; retain archived slug as historical evidence only."
+}

@@ -1,0 +1,32 @@
+{
+  "ccn": "021309",
+  "observed_at": "2026-09-21T04:50:47Z",
+  "proof_file": "reconciliation-kanakanak-official-portal-retired-proof-2026-09-21.json",
+  "official_site": "https://bbahc.org/",
+  "official_pricing_page": "https://bbahc.org/Transparency",
+  "official_facility_relationship": "The first-party Bristol Bay Area Health Corporation page states that BBAHC manages Kanakanak Hospital and links a resource for Patient Price Estimator, Standard Charges and Price lists.",
+  "browser_observation": "Browser automation loaded the current first-party transparency page and followed its linked Kanakanak pricing route. The linked PARA page now renders 'The page you requested is no longer in service' with an ASP.NET application error; no pricing data or downloadable MRF URL was exposed.",
+  "pricing_resource_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Kanakanak_V3.aspx",
+  "pricing_resource_status": 200,
+  "pricing_resource_result": "HTML application error: page no longer in service",
+  "pointer_url": "https://bbahc.org/cms-hpt.txt",
+  "pointer_status": 404,
+  "pointer_content_type": "text/html",
+  "pointer_observation": "The current root pointer route returns a first-party HTML 404 page rather than plain-text pointer content.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=021309&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6675,
+  "cms_api_response_sha256": "062B00ECBA9AA9E3F19DF59CDE77C524044694E67D2EE62978A62190B769B947",
+  "cms_record": {
+    "facility_id": "021309",
+    "facility_name": "BRISTOL BAY DBA KANAKANAK HOSPITAL",
+    "address": "P O BOX 130",
+    "citytown": "DILLINGHAM",
+    "state": "AK",
+    "zip_code": "99576",
+    "hospital_type": "Critical Access Hospitals"
+  },
+  "disposition": "official-page-linked-para-portal-retired-pointer-404-mrf-unresolved",
+  "interpretation": "The current first-party page and CMS independently identify the Kanakanak facility, but the linked pricing application is retired and the root pointer is an HTML 404. These are transport/publication observations only; no file-absence or compliance conclusion is inferred.",
+  "next_action": "Obtain a replacement Kanakanak CSV/JSON MRF or corrected pointer from BBAHC/its authorized publisher, then verify Dillingham/Alaska identity, date/version and parsed usability before promotion."
+}

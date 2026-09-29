@@ -1,0 +1,23 @@
+{
+  "ccn": "431300",
+  "observed_at": "2026-09-25T01:05:00Z",
+  "official_domain": "madisonregionalhealth.org",
+  "official_pricing_page": "https://madisonregionalhealth.org/patient-visitor-guide/",
+  "cms_pointer_url": "https://madisonregionalhealth.org/wp-content/uploads/cms-hpt-4.txt",
+  "facility_file_url": "https://madisonregionalhealth.org/wp-content/uploads/2026-Machine-Readable-File-from-OCHIN.xlsx",
+  "file_status": 200,
+  "file_content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "file_bytes": 518621,
+  "file_sha256": "d194bc0ce4f34d97326d21962af3b8d4ff88227e725707b01ce5d6f66f871d6f",
+  "workbook_sheet_count": 1,
+  "workbook_row_count": 6404,
+  "workbook_headers": ["billing_class", "location_internal", "description", "code|1", "code|1|type", "code|2", "code|2|type", "code|3", "code|3|type", "code|4", "code|4|type", "modifiers", "setting", "drug_unit_of_measurement", "drug_type_of_measurement", "standard_charge|gross", "standard_charge|discounted_cash", "payer_name", "plan_name", "contract_internal"],
+  "workbook_core_created": "2026-02-06T16:27:50Z",
+  "workbook_core_modified": "2026-02-06T16:27:51Z",
+  "declared_effective_date": "2025-07-01",
+  "schema_status": "cms-template-not-declared-custom-workbook",
+  "identity_evidence": "official-page-pointer-name-address-state-agree",
+  "disposition": "mrf-custom-workbook-metadata-unverified",
+  "interpretation": "The exact official pointer-declared XLSX is now retrievable and structurally readable with 6,404 rows, but it uses a custom OCHIN workbook schema and does not declare CMS 3.0.0 metadata or last_updated_on. It is retained as facility-linked custom-workbook evidence, not promoted as a verified current CMS MRF or compliance finding.",
+  "next_action": "Obtain publisher CMS-template metadata or a CMS CSV/JSON replacement, then validate declared date, version, identity and usable rows before any current-MRF promotion."
+}

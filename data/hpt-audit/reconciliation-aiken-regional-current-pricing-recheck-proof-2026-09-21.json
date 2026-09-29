@@ -1,0 +1,17 @@
+{
+  "ccn": "420082",
+  "observed_at": "2026-09-21T14:00:00Z",
+  "official_domain": "https://aikenregional.com",
+  "official_homepage_observation": "The first-party Aiken Regional site identifies Aiken Regional Medical Centers at 302 University Parkway, Aiken, SC 29801.",
+  "cms_pointer_url": "https://aikenregional.com/cms-hpt.txt",
+  "cms_pointer_browser_result": "Interactive browser navigation reached a first-party Cloudflare Access denied page for aikenregional.com; no cms-hpt.txt pointer bytes were exposed.",
+  "cms_pointer_browser_status": 403,
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=420082&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6573,
+  "cms_api_response_sha256": "cc716ffab7907db00ac25ba1da2e0b75413d1c6304c6ce9562311a30b941b6f9",
+  "cms_record": { "facility_id": "420082", "facility_name": "AIKEN REGIONAL MEDICAL CENTER", "address": "302 UNIVERSITY PARKWAY", "citytown": "AIKEN", "state": "SC", "zip_code": "29801", "hospital_type": "Acute Care Hospitals", "hospital_ownership": "Proprietary", "emergency_services": "Yes" },
+  "disposition": "current-official-identity-confirmed-pointer-browser-access-denied",
+  "interpretation": "The first-party site and CMS API independently confirm the facility identity and address. The exact CMS pointer remains inaccessible even in the interactive browser, so this is an access/identity recheck only. No MRF usability or compliance conclusion is made and no promotion is applied.",
+  "next_action": "Locate a current facility-specific MRF through a first-party pricing page or authorized download-capable browser, then verify declared name, address, South Carolina state, date, version and usability."
+}

@@ -1,0 +1,125 @@
+{
+  "audit_id": "reconciliation-neshoba-historical-standard-charges-route-2026-09-28",
+  "ccn": "250043",
+  "sibling_ccn": "251340",
+  "observed_at": "2026-09-28T14:11:00Z",
+  "archive_page_source": {
+    "proof_file": "reconciliation-neshoba-wayback-pretransition-pricing-route-2026-09-28.json",
+    "original_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Neshoba_V3.aspx",
+    "capture_timestamp": "20250519135926",
+    "cdx_digest": "BYOII5K2J6P4ACMQQDNXTPXQ2MURQEBW",
+    "cdx_length": 28651,
+    "page_sha256": "e7874e94fedc29056a1960427ad55a5bcacc9570258bdfdba5312f2e5d699a3a",
+    "historical_controls": [
+      {
+        "label": "STANDARD CHARGES (CHARGEMASTER PRICING)",
+        "displayed_date": "2025-03-29",
+        "report_type": "CDMWithoutLabel"
+      },
+      {
+        "label": "Download Hospital Charge Description Master/Price Listing",
+        "displayed_date": "2025-03-29",
+        "report_type": "CDMWithoutLabel"
+      },
+      {
+        "label": "Download Hospital CMS Shoppable Services Listing",
+        "displayed_date": "2025-03-29",
+        "report_type": "Shoppable"
+      },
+      {
+        "label": "Download Hospital CMS Unavailable Shoppable Services Listing",
+        "displayed_date": "2025-03-29",
+        "report_type": "UnShoppable"
+      }
+    ],
+    "download_handler_observed_in_page_source": "Ext.net.DirectMethod.request('DownloadReport', {isUpload: true, url: 'Reports.aspx?dbName=' + App.hdnDB.getValue() + '&type=' + type})",
+    "historical_database_key": {
+      "value_observed": false,
+      "reason": "The archived HTML contains an empty App.hdnDB_Container and references App.hdnDB.getValue(), but does not expose the server-initialized key in the captured source."
+    },
+    "interpretation": "This is specific historical evidence that the vendor portal offered a dated Standard Charges download control; the download action's existence and filename label do not prove retrieval, CMS schema version, usable bytes, or CCN-specific scope."
+  },
+  "contemporary_route_context": {
+    "source_proof": "reconciliation-neshoba-para-download-proof.json",
+    "observed_at": "2026-09-18T14:44:26Z",
+    "current_page_download_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbNCGHPHILADELPHIAMS%20&type=CDMWithoutLabel",
+    "current_file_bytes": 46235873,
+    "current_file_sha256": "f70004d1303ba437413c0b95763b398a3c53e80a552b6f4f2f69d4dabd06c06f",
+    "declared_last_updated_on": "2026-06-04",
+    "use_limit": "This current database key/file is not proof of the hidden key or contents of the 2025 archived report. It was used only as a candidate route for archive-index searches."
+  },
+  "archive_index_checks": [
+    {
+      "archive": "Common Crawl",
+      "collection": "CC-MAIN-2025-26",
+      "candidate_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbNCGHPHILADELPHIAMS&type=CDMWithoutLabel",
+      "http_status": 404,
+      "response_bytes": 141,
+      "result": "No capture for this unspaced candidate URL in this index."
+    },
+    {
+      "archive": "Common Crawl",
+      "collection": "CC-MAIN-2025-30",
+      "candidate_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbNCGHPHILADELPHIAMS&type=CDMWithoutLabel",
+      "http_status": 404,
+      "response_bytes": 141,
+      "result": "No capture for this unspaced candidate URL in this index."
+    },
+    {
+      "archive": "Common Crawl",
+      "collection": "CC-MAIN-2025-30",
+      "candidate_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbNCGHPHILADELPHIAMS%20&type=CDMWithoutLabel",
+      "http_status": 404,
+      "response_bytes": 144,
+      "result": "No capture for the exact contemporary trailing-space candidate URL in this index. The archive page does not establish that this was its 2025 key."
+    },
+    {
+      "archive": "Common Crawl",
+      "collection": "CC-MAIN-2025-21",
+      "candidate_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbNCGHPHILADELPHIAMS&type=CDMWithoutLabel",
+      "result": "Request failed at the client before an HTTP status or index response was obtained; inconclusive."
+    },
+    {
+      "archive": "Common Crawl",
+      "collection": "CC-MAIN-2025-33",
+      "candidate_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbNCGHPHILADELPHIAMS&type=CDMWithoutLabel",
+      "http_status": 502,
+      "response_bytes": 157,
+      "result": "Index gateway failure; inconclusive."
+    },
+    {
+      "archive": "Common Crawl",
+      "collection": "CC-MAIN-2025-38",
+      "candidate_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbNCGHPHILADELPHIAMS&type=CDMWithoutLabel",
+      "http_status": 504,
+      "response_bytes": 167,
+      "result": "Index gateway timeout; inconclusive."
+    },
+    {
+      "archive": "Internet Archive CDX",
+      "candidate_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbNCGHPHILADELPHIAMS&type=CDMWithoutLabel",
+      "http_status": 503,
+      "response_bytes": 11832,
+      "result": "Internet Archive temporarily offline page; no CDX result could be read."
+    }
+  ],
+  "search_check": {
+    "queries": [
+      "\"646000892_neshoba-county-general-hospital_standardcharges.csv\"",
+      "\"Neshoba County General Hospital\" \"3/29/2025\" standard charges",
+      "\"dbNCGHPHILADELPHIAMS\" CSV"
+    ],
+    "result": "No search results were returned."
+  },
+  "outcome": {
+    "evidence_gain": "The archived 2025 vendor page exposes a concrete Standard Charges download action and the report handler/type, narrowing historical research from a portal page to a dynamic file endpoint.",
+    "historical_pointer_bytes_recovered": false,
+    "historical_report_bytes_recovered": false,
+    "cms_schema_or_usable_rows_verified": false,
+    "historical_db_key_confirmed": false,
+    "disposition_changed": false,
+    "cohort_count_effect": 0,
+    "current_unresolved_cohort_count": 547,
+    "next_action": "Seek a separately retained or newly available archive copy of the historical PARA standard-charges report using the exact historical database key; the archived page does not expose that key, and the current 2026 key must not be assumed to be identical. Otherwise seek a publisher-provided dated pre-2025-12-31 CMS-format file through authorized means. Do not import the 2026 report as historical evidence or treat the 2025 download control as proof that a file was recovered."
+  }
+}

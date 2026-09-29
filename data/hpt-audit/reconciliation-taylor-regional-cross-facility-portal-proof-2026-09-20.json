@@ -1,0 +1,21 @@
+{
+  "ccn": "110256",
+  "observed_at": "2026-09-20T01:35:00Z",
+  "target_facility": "Taylor Regional Hospital, 222 Perry Hwy, Hawkinsville, GA 31036",
+  "official_georgia_pricing_page": "https://www.taylorregional.org/transparency.php",
+  "official_georgia_pricing_link_observed": "https://ezcost.info/taylor-regional-hospital",
+  "portal_route_checked": "https://apps.para-hcfs.com/PTT/FinalLinks/Taylor_V3.aspx",
+  "portal_browser_observation": {
+    "http_status": 200,
+    "displayed_facility_name": "Taylor Regional Hospital",
+    "displayed_current_standard_charges_date": "8/11/2026",
+    "displayed_contact_phone_area_code": "270",
+    "displayed_contact_domain": "trhosp.org",
+    "download_control": "DownloadReport('CDMWithoutLabel')",
+    "download_activation": "browser_click_attempted",
+    "file_bytes_retrieved": false
+  },
+  "identity_conflict": "The portal contact domain and 270 area code identify a different Taylor Regional Hospital than the Georgia facility at 222 Perry Hwy, Hawkinsville, GA; the Georgia first-party page does not link this PARA route.",
+  "disposition": "cross-facility-portal-excluded-no-georgia-mrf-promotion",
+  "next_action": "Do not associate the current EZCOST download with Taylor Regional or the cross-facility PARA route. Use the Georgia hospital's current EZCOST route or a publisher-restored Georgia pointer/file; verify Hawkinsville identity, Georgia state, metadata and usability before promotion."
+}

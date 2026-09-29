@@ -1,0 +1,29 @@
+{
+  "ccn": "474004",
+  "observed_at": "2026-09-23T15:35:00Z",
+  "official_site": "https://mentalhealth.vermont.gov/services/psychiatric-hospitalization/vermont-psychiatric-care-hospital",
+  "official_identity": "Vermont Psychiatric Care Hospital, 350 Fisher Road, Berlin, VT 05602 (CMS provider record corroborates the facility and address).",
+  "state_report_card": "https://www.healthvermont.gov/systems/hospitals-health-systems/hospital-report-cards",
+  "browser_observation": "The legacy state facility URL currently renders the Vermont Department of Mental Health Page not found page. The current Vermont Department of Health report-card page lists Vermont Psychiatric Care Hospital among psychiatric hospitals but exposes no facility-specific CMS machine-readable pricing URL in the accessible content.",
+  "pointer_urls": [
+    "https://mentalhealth.vermont.gov/cms-hpt.txt",
+    "https://vermontbusinessregistry.com/cms-hpt.txt"
+  ],
+  "pointer_status": "No usable facility-specific pointer or MRF route recovered; legacy state facility URL is a current HTML 404 page.",
+  "mrf_observation": "No MRF bytes recovered; no file-absence, exemption or compliance conclusion inferred.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=474004&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6820,
+  "cms_api_response_sha256": "",
+  "cms_record": {
+    "facility_id": "474004",
+    "facility_name": "VERMONT PSYCHIATRIC CARE HOSPITAL",
+    "address": "350 FISHER ROAD",
+    "citytown": "BERLIN",
+    "state": "VT",
+    "zip_code": "05602"
+  },
+  "disposition": "official-state-route-recheck-no-pricing-route",
+  "interpretation": "The CMS record confirms the Vermont psychiatric facility identity and address. The known state facility URL now returns a Page not found page, and the Vermont Department of Health report-card page does not expose a facility-specific CMS MRF link in the accessible content. This narrows discovery but does not establish file absence or a compliance result.",
+  "next_action": "Search the current Vermont Department of Mental Health site map or obtain a publisher-provided current CSV/JSON, then verify exact facility identity, Vermont metadata, declared date/version and usable bytes before promotion."
+}

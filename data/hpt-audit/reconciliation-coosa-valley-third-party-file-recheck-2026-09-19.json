@@ -1,0 +1,25 @@
+{
+  "ccn": "010164",
+  "observed_at": "2026-09-20T00:15:00Z",
+  "source_page_url": "https://secure.claraprice.net/price-transparency/coosa-valley-medical-center-al",
+  "file_url": "https://secure.claraprice.net/price-transparency/IXIY-1769634466888/machine-readable",
+  "source_role": "third-party publisher page and file; not a first-party pointer",
+  "source_page_observation": {
+    "published_for_compliance": "2026-04-01",
+    "last_modified": "2026-07-23",
+    "machine_readable_link_present": true
+  },
+  "file_observation": {
+    "http_status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "bytes": 18773456,
+    "prefix_range": "UTF-8 response prefix, first 262144 bytes",
+    "prefix_sha256": "06b1e8e3c1fb51350c38f995d62444f4bb78e1fe6bb655b25df36616d8d6fdcc",
+    "declared_hospital_name": "Sylacauga Health Care Authority DBA Coosa Valley Medical Center dba Coosa Valley Medical Center",
+    "root_metadata_fields_observed": ["hospital_name", "standard_charge_information"],
+    "missing_root_metadata": ["address", "state", "last_updated_on", "version", "npi", "license_number"]
+  },
+  "disposition": "third-party-file-identity-corroborated-metadata-incomplete-no-promotion",
+  "identity_scope": "The file's hospital_name matches Coosa Valley Medical Center, but the third-party JSON does not independently establish address, Alabama state, date, version, NPI, CMS pointer linkage, or complete-file usability for this CCN.",
+  "next_action": "Obtain the first-party root pointer or publisher-declared CMS metadata/address for CCN 010164, then verify exact facility identity, Alabama state, date/version and parsed usability before promotion."
+}

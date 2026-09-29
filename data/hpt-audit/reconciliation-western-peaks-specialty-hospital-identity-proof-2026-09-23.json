@@ -1,0 +1,17 @@
+{
+  "ccn": "460063",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://sdch.com/western-peaks/",
+  "official_identity_sources": [
+    "https://sdch.com/",
+    "https://sdch.com/western-peaks/",
+    "https://velarionrecords.com/hospital/462003"
+  ],
+  "official_identity": "South Davis Community Hospital identifies Western Peaks Specialty Hospital as its Bountiful, Utah long-term acute-care hospital at 485 E 500 S, Bountiful, UT 84010; the CMS-linked provider record uses CCN 462003 for this facility.",
+  "browser_observation": "Browser automation loaded the first-party South Davis site and Western Peaks page. The page exposes the facility name, LTAC services, address and phone, but no CMS price-transparency link or machine-readable-file link.",
+  "pricing_observation": "Direct requests to https://sdch.com/cms-hpt.txt, /price-transparency/ and /pricing/ returned HTTP 404; no usable facility-specific pointer or MRF bytes were retrieved. This is an access/discovery observation, not evidence of file absence, closure, exemption or noncompliance.",
+  "disposition": "current-operator-identity-confirmed-pricing-route-not-exposed",
+  "interpretation": "This replaces the stale domain-unknown label with a supported first-party domain and exact Bountiful identity while preserving the unresolved pricing route.",
+  "next_action": "Search the current operator/publisher route for a facility-specific CMS pointer or CSV/JSON/ZIP; require bounded bytes, Western Peaks identity, Utah metadata, declared date/version and parsed usability before promotion. Resolve the CCN alias used by the provider record before assigning any file.",
+  "source_note": "The official page and provider record use different CCN representations (460063 worklist versus 462003 provider record); no file was assigned across that discrepancy."
+}

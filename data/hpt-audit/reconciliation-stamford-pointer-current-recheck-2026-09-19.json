@@ -1,0 +1,21 @@
+{
+  "ccn": "070006",
+  "observed_at": "2026-09-19T20:15:00Z",
+  "official_site": "https://www.stamfordhealth.org/locations/ct/stamford/stamford-hospital/11142646/",
+  "official_pricing_page": "https://www.stamfordhealth.org/patients/hospital-charges/",
+  "pointer_url": "https://www.stamfordhealth.org/cms-hpt.txt",
+  "pointer_http_status": 200,
+  "pointer_bytes": 314,
+  "pointer_sha256": "f5ea2af2c5db3cf45c22d7301e03cceaf4473ddee8b118ec633c52d2e5847043",
+  "pointer_declared_location_name": "Stamford Hospital",
+  "pointer_declared_source_page_url": "https://www.stamfordhealth.org/patients/hospital-charges/",
+  "pointer_declared_mrf_url": "https://www.stamfordhealth.org/-/media/project/healthcare-websites/stamfordhealth/documents/20260331_machine-readable-file.csv",
+  "pointer_linkage": "exact current pointer, source page and MRF URL confirmed",
+  "mrf_exact_pointer_route_status": 403,
+  "mrf_alias_route_status": 206,
+  "mrf_alias_route": "https://sth-sc-p-stamfordhealth.dataweavers.io/-/media/project/healthcare-websites/stamfordhealth/documents/20260331_machine-readable-file.csv/?rev=1aba70bbbab74b47bfbbb74b40e9720b",
+  "mrf_header_observation": "Retained bounded CSV header identifies Stamford Hospital, One Hospital Plaza, Stamford, CT 06904, NPI 1356331425, license 0059, declared date 2026-04-01, CMS template 3.0.0; exact public pointer route remains transport-blocked.",
+  "disposition": "official-pointer-linked-file-transport-unresolved",
+  "interpretation": "This recheck resolves pointer retrieval and exact pointer-to-page/file attribution. It does not promote the file to fully verified because the exact declared MRF route returned 403 and only a first-party content-host alias yielded bounded bytes.",
+  "next_action": "Obtain an authorized download-capable route for the exact declared MRF URL, then validate complete-file usability; retain the pointer-linked facility identity and metadata meanwhile."
+}

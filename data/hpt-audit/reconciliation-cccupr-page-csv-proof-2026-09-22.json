@@ -1,0 +1,22 @@
+{
+  "ccn": "400135",
+  "observed_at": "2026-09-22T18:00:00Z",
+  "proof_file": "reconciliation-cccupr-page-csv-proof-2026-09-22.json",
+  "official_domain": "cccupr.org",
+  "official_pricing_page": "https://www.cccupr.org/hospital/informacion-de-precios-del-hospital/",
+  "official_page_status": 200,
+  "official_facility_name": "Hospital del Centro Comprensivo de Cáncer de la Universidad de Puerto Rico",
+  "official_facility_address": "9WPG+QHX, Av. Jose Kiko Custodio, San Juan, PR 00921",
+  "facility_file_url": "https://www.cccupr.org/wp-content/uploads/2026/09/Pricing-Tabla-Oficial-REVISADA-09042026-web.csv",
+  "file_status": 200,
+  "file_content_type": "text/csv",
+  "file_bytes": 140656,
+  "file_sha256": "B164B6E58550922324FA9762D763B6699309879C40033E9167A0D07E59E2FF43",
+  "file_declared_date_from_name": "2026-09-04",
+  "observed_row_count": 803,
+  "csv_header_observation": "The page-linked CSV contains charge, cash and payer columns with 803 data rows, but does not expose CMS 3.0.0 metadata, facility address, license or attestation fields in the file itself.",
+  "manual_identity_gate": "official-first-party-pricing-page-name-address-state-agree",
+  "disposition": "verified-template-review",
+  "interpretation": "The official CCCUPR pricing page links a current-looking facility pricing CSV with usable charge rows. Facility identity and San Juan/Puerto Rico location are confirmed by the official page, while CMS template metadata and file-level identity fields remain unverified; no current CMS MRF claim is promoted.",
+  "next_action": "Recover a CMS 3.0.0 CSV/JSON/ZIP with file-level name, address, state, update date, license and attestation metadata, or obtain a root cms-hpt.txt pointer before promoting beyond template review."
+}

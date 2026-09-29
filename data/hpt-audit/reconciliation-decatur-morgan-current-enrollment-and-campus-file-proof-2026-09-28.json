@@ -1,0 +1,153 @@
+{
+  "audit_id": "reconciliation-decatur-morgan-current-enrollment-and-campus-file-proof-2026-09-28",
+  "observed_at": "2026-09-28T11:16:18Z",
+  "ccn": "010085",
+  "facility": "Decatur Morgan Hospital - Decatur Campus",
+  "question": "Does the full first-party Decatur CSV have independently corroborated identity for current CCN 010085 despite also listing Parkway, and are the separately listed Parkway bytes a different price dataset?",
+  "official_publisher_page": {
+    "url": "https://www.huntsvillehospital.org/price-transparency",
+    "http_status": 200,
+    "updated_label": "2026-04-01",
+    "retrieved_by": "web page reader; exact Standard Charge File links followed from publisher page",
+    "decatur_label": "Decatur Morgan Hospital",
+    "decatur_file_url": "https://www.huntsvillehospital.org/images/pricetransparency/460928982_decatur-morgan-hospital_standardcharges.csv",
+    "parkway_label": "Decatur Morgan Hospital Parkway Campus",
+    "parkway_file_url": "https://www.huntsvillehospital.org/images/pricetransparency/460928982_decatur-morgan-hospital-parkway-campus_standardcharges.csv",
+    "page_lists_decatur_west_and_parkway_separately": true
+  },
+  "complete_file_retrievals": [
+    {
+      "label": "Decatur Morgan Hospital",
+      "url": "https://www.huntsvillehospital.org/images/pricetransparency/460928982_decatur-morgan-hospital_standardcharges.csv",
+      "http_status": 200,
+      "content_type": "text/csv",
+      "last_modified": "2026-04-20T15:52:11Z",
+      "bytes": 23746132,
+      "sha256": "618922e927d70b329765a00421fcc9fa25abf46522e1a1adddcf05de8a2f86d2",
+      "full_body_retrieved": true,
+      "parsed_total_rows": 73574,
+      "metadata_rows": 2,
+      "header_fields": 28,
+      "service_rows": 73571,
+      "distinct_row_widths": [28],
+      "service_rows_canonical_sha256": "67f13961649bec1978700f73c20a664b210c31af5b69298229d094cfa339edf0",
+      "metadata": {
+        "hospital_name": "DECATUR MORGAN HOSPITAL",
+        "last_updated_on": "3/23/2026",
+        "cms_template_version": "3.0.0",
+        "location_name": "DECATUR MORGAN HOSPITAL (ACU)|PARKWAY CAMPUS",
+        "hospital_address": "1201 7TH STREET, SE, DECATUR, AL 35601|1874 BELTLINE ROAD, SW, Decatur, AL",
+        "type_2_npi": "1356692297|1356692297",
+        "license_number_al": "H5202",
+        "attestation": true
+      }
+    },
+    {
+      "label": "Decatur Morgan Hospital Parkway Campus",
+      "url": "https://www.huntsvillehospital.org/images/pricetransparency/460928982_decatur-morgan-hospital-parkway-campus_standardcharges.csv",
+      "http_status": 200,
+      "content_type": "text/csv",
+      "last_modified": "2026-05-15T14:37:08Z",
+      "bytes": 23746051,
+      "sha256": "e9c6bdc5b590dccd95d6cbafd7c3f859f587ef8d138ef418e229004f37dff567",
+      "full_body_retrieved": true,
+      "parsed_total_rows": 73574,
+      "metadata_rows": 2,
+      "header_fields": 28,
+      "service_rows": 73571,
+      "distinct_row_widths": [28],
+      "service_rows_canonical_sha256": "67f13961649bec1978700f73c20a664b210c31af5b69298229d094cfa339edf0",
+      "metadata": {
+        "hospital_name": "DECATUR MORGAN HOSPITAL",
+        "last_updated_on": "3/23/2026",
+        "cms_template_version": "3.0.0",
+        "location_name": "PARKWAY CAMPUS",
+        "hospital_address": "1874 BELTLINE RD SW DECATUR AL 35601",
+        "type_2_npi": "1285904276",
+        "license_number_al": "H5201",
+        "attestation": true
+      }
+    }
+  ],
+  "comparison": {
+    "method": "Parse both complete files with scripts/hpt/lib/util.js parseCSV; compare every parsed service row array at the same ordinal position after two metadata rows and the column header.",
+    "service_row_count_each": 73571,
+    "equal_service_rows_at_same_ordinal": 73571,
+    "different_service_rows": 0,
+    "canonical_service_row_sha256_each": "67f13961649bec1978700f73c20a664b210c31af5b69298229d094cfa339edf0",
+    "interpretation": "The two publisher-linked campus files carry identical service/charge rows; their distinct scope labels, addresses, NPIs, and Alabama license values are metadata-only differences. This does not establish that the two NPIs share a Medicare CCN."
+  },
+  "cms_current_enrollment": {
+    "dataset": "CMS Hospital Enrollments, latest available August 2026 snapshot",
+    "dataset_page": "https://data.cms.gov/provider-characteristics/hospitals-and-other-facilities/hospital-enrollments",
+    "dataset_resource_list": "https://data.cms.gov/data-api/v1/dataset-resources/f6f6505c-e8b0-4d57-b258-e2b94133aaf2",
+    "enrollments_csv": {
+      "url": "https://data.cms.gov/sites/default/files/2026-08/bcf5ccda-1482-4c43-8198-de1efa2f83c8/Hospital_Enrollments_2026.07.31.csv",
+      "bytes": 2516958,
+      "rows": 9161,
+      "sha256": "b62b961e03f90c5513b8b6a3e597fb871e42afb62960c757b82899539017000c"
+    },
+    "primary_enrollment_row": {
+      "enrollment_id": "O20121221000387",
+      "ccn_unpadded_in_source": "10085",
+      "npi": "1356692297",
+      "multiple_npi_flag": "N",
+      "organization_name": "HH HEALTH SYSTEM - MORGAN, LLC",
+      "doing_business_as_name": "DECATUR MORGAN HOSPITAL - DECATUR CAMPUS",
+      "primary_address": "1201 7TH AVENUE SE, DECATUR, AL 35601-3337",
+      "practice_location_type": "OTHER HOSPITAL PRACTICE LOCATION"
+    },
+    "additional_npis_csv": {
+      "url": "https://data.cms.gov/sites/default/files/2026-08/Hospital_Additional_NPIs_2026.07.31.csv",
+      "bytes": 76435,
+      "rows": 2729,
+      "sha256": "dee5d9ac07c4bb35b8552ffce6d116c0e239095e85255647004d45c728729ea7",
+      "rows_for_enrollment_id": 0
+    },
+    "additional_addresses_csv": {
+      "url": "https://data.cms.gov/sites/default/files/2026-08/Hospital_Additional_Addresses_2026.07.31.csv",
+      "bytes": 2097942,
+      "rows": 30375,
+      "sha256": "4b5bceb05afd93bf52759086ceb8a86301f20a3fbcf88882dd13510fd4759856",
+      "addresses_for_enrollment_id": [
+        "1874 BELTLINE ROAD SW, DECATUR, AL 35601-5514",
+        "2205 BELTLINE ROAD SW, DECATUR, AL 35601-3337 (HOSPITAL PSYCHIATRIC UNIT)",
+        "2349 DANVILLE ROAD SW, DECATUR, AL 35603-3337"
+      ]
+    },
+    "identity_interpretation": "The exact primary NPI in the full Decatur file is the current CMS-enrolled NPI for CCN 010085. The full file's main street address also agrees with the CMS Hospital General Information and NPPES location (1201 7TH ST SE), while the August Hospital Enrollments row spells the same street type as AVENUE; preserve that source-field discrepancy. CMS's current additional-address file associates the Parkway street address with this same enrollment ID. The separate Parkway NPI does not appear as an additional NPI for this enrollment."
+  },
+  "nppes_crosscheck": {
+    "official_api": "https://npiregistry.cms.hhs.gov/api/?version=2.1&number=1356692297",
+    "npi_1356692297": {
+      "organization_name": "H H HEALTH SYSTEM-MORGAN LLC",
+      "status": "A",
+      "last_updated": "2015-07-22",
+      "location": "1201 7TH ST SE, DECATUR, AL 35601-3337",
+      "taxonomy_license": "H5202",
+      "taxonomy_state": "AL"
+    },
+    "npi_1285904276": {
+      "official_api": "https://npiregistry.cms.hhs.gov/api/?version=2.1&number=1285904276",
+      "organization_name": "HH HEALTH SYSTEM - MORGAN, INC.",
+      "status": "A",
+      "last_updated": "2013-10-14",
+      "location": "1874 BELTLINE RD SW, DECATUR, AL 35601-5514",
+      "taxonomy_license": "10401",
+      "taxonomy_state": "AL",
+      "limitation": "This older NPPES record identifies an organization and location but does not link NPI 1285904276 to current CCN 010085. Its taxonomy license value differs from Parkway MRF metadata H5201; do not treat the identifier alone as a CCN crosswalk."
+    }
+  },
+  "transport_and_alternate_route": {
+    "legacy_host": "The local DNS resolver failed, so full retrieves used Google Public DNS A answers with ordinary HTTPS certificate and hostname validation; no TLS verification was disabled.",
+    "newer_official_price_page": "https://hh.health/patients-visitors/price-transparency/",
+    "newer_page_updated_label": "2026-08-20",
+    "newer_page_lists_separate_decatur_and_parkway_targets": true,
+    "newer_targets_retrieved": false,
+    "newer_host_transport": "Local DNS returned no-such-host; Google DNS returned 199.116.78.34, but direct TLS connections were disconnected before handshake. No alternate-route body, hash, or equivalence is inferred."
+  },
+  "disposition": "verified-current-mrf",
+  "count_effect": "CCN 010085 moves from genuinely unresolved to current page-linked MRF verified; recompute historical cohort crosswalk. No assignment or count effect is applied to any Parkway-only identifier.",
+  "interpretation": "The Decatur campus file is now independently attributable to current CCN 010085: official publisher page and exact file link; full current CMS 3.0.0 CSV; main facility name, address, state, NPI and license corroboration; and current CMS enrollment NPI/identity match. The file also lists Parkway, whose address is an additional location on the same current CMS enrollment. A separately published Parkway file has the same 73,571 charge rows but distinct Parkway metadata and NPI. Therefore verify the Decatur-linked file for 010085, retain the Parkway-specific NPI/CCN relationship as a separate question, and do not assign it to any CCN without a CMS or publisher crosswalk. The raw root-pointer DNS failure and byte-identity of newer hh.health targets remain separate evidence gaps; neither invalidates this verified first-party page-linked file.",
+  "next_action": "Preserve the verified Decatur file for 010085 and keep Parkway-only NPI 1285904276 out of CCN attribution. When the hh.health host supports ordinary HTTPS access, compare both current target bodies/hashes with the verified legacy files and inspect whether CMS publishes any current CCN crosswalk for 1285904276; do not repeat unchanged legacy downloads."
+}

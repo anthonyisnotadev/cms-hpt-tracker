@@ -1,0 +1,18 @@
+{
+  "ccn": "371321",
+  "observed_at": "2026-09-21T19:30:00Z",
+  "official_pricing_page": "https://holdenvillehospital.com/price-transparency",
+  "official_pricing_page_status": 200,
+  "official_page_observation": "The current first-party Holdenville General Hospital price-transparency page identifies a standard-charge disclaimer and links only to a third-party YourCareEverywhere/MedHost shoppable-services estimator; no CMS CSV/JSON MRF or cms-hpt.txt pointer is exposed in the browser-rendered page.",
+  "estimator_url": "https://yourcareeverywhere.com/content/medhost/your-care-everywhere/pricing-estimator-page.html?facility_id=f25a1e6a-ed78-4641-a1c6-fcebfa80bf1b",
+  "cms_pointer_url": "https://holdenvillehospital.com/cms-hpt.txt",
+  "cms_pointer_result": "No current pointer was exposed by the official page; this recheck did not assign estimator data as an MRF.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=371321&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6686,
+  "cms_api_response_sha256": "a9b957df2ac9429bda7a2fe31745230135cb979372b9ab3102622d3b50664437",
+  "cms_record": { "facility_id": "371321", "facility_name": "HOLDENVILLE GENERAL HOSPITAL", "address": "100 MCDOUGAL DRIVE", "citytown": "HOLDENVILLE", "state": "OK", "zip_code": "74848", "hospital_type": "Critical Access Hospitals", "hospital_ownership": "Government - Hospital District or Authority", "emergency_services": "Yes" },
+  "disposition": "official-pricing-page-estimator-only-no-cms-mrf-observed",
+  "interpretation": "The current first-party page and CMS independently confirm the facility identity and address. The page exposes a patient estimator rather than a CMS machine-readable file; no estimator or file-absence/compliance claim is inferred.",
+  "next_action": "Obtain a current facility-specific CMS CSV/JSON through a permitted publisher route, then verify declared name, Oklahoma address/state, date, version and usability."
+}

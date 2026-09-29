@@ -1,0 +1,31 @@
+{
+  "ccn": "454009",
+  "observed_at": "2026-09-23T04:54:00Z",
+  "official_site": "https://www.hhs.texas.gov/services/mental-health-substance-use/state-hospitals/rusk-state-hospital",
+  "official_identity": "Rusk State Hospital, 805 North Dickinson Drive, Rusk, TX 75785 (interactive official page confirms the facility and address).",
+  "browser_observation": "Interactive browser navigation rendered the current Texas HHS facility page. The page describes the inpatient psychiatric hospital and exposes no CMS price-transparency page, cms-hpt.txt pointer, CSV, JSON or ZIP MRF link.",
+  "pointer_urls": [
+    "https://www.hhs.texas.gov/cms-hpt.txt",
+    "https://hhs.texas.gov/cms-hpt.txt"
+  ],
+  "pointer_status": "HTTP 404 HTML on current bounded request; prior discovery checks recorded access failure; no pointer text recovered",
+  "pointer_response_bytes": 194,
+  "pointer_sha256": "1A227DCEBF377490F3143518904DE1C77B3661A3EBB278E61385CCDD349DB6CF",
+  "pointer_observation": "The current official facility page was available in the browser, but no facility-specific pointer route or machine-readable pricing route was exposed. The root route response is retained as transport/discovery evidence only.",
+  "mrf_observation": "No MRF bytes recovered; no file-absence, exemption or compliance conclusion inferred.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=454009&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6801,
+  "cms_api_response_sha256": "CC9ED31F8D9D894CB8ABAB9A955289E392A97043F0D1D343310FEBAB92F708A5",
+  "cms_record": {
+    "facility_id": "454009",
+    "facility_name": "RUSK STATE HOSP",
+    "address": "805 N DICKINSON DR",
+    "citytown": "RUSK",
+    "state": "TX",
+    "zip_code": "75785"
+  },
+  "disposition": "browser-official-identity-confirmed-no-pricing-route",
+  "interpretation": "The official HHS page and CMS identity record agree on Rusk State Hospital and its address, but neither exposes a current facility-specific CMS MRF route. This narrows discovery without establishing file absence or a compliance result.",
+  "next_action": "Search the Texas HHS statewide pricing/publisher route or obtain a publisher-provided current CSV/JSON, then verify exact facility identity, Texas metadata, declared date/version and usable bytes before promotion."
+}

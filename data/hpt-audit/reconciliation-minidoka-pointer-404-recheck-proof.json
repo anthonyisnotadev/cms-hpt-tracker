@@ -1,0 +1,28 @@
+{
+  "ccn": "131319",
+  "hospital_name": "MINIDOKA MEMORIAL HOSPITAL",
+  "official_site": "https://minidokamemorial.org/",
+  "pointer_url": "https://minidokamemorial.org/cms-hpt.txt",
+  "pointer_http_status": 200,
+  "pointer_bytes": 281,
+  "pointer_retrieval_method": "fresh-bounded-curl-http1.1-2026-09-19",
+  "pointer_sha256": "58f6274eb8dd1ac051c53251b06c460d6dd910e1b18a1070d52bcb86564bb081",
+  "pointer_target": "https://minidokamemorial.org/wp-content/uploads/2024/09/820291854_minidoka-memorial-hospital_standardcharges.csv",
+  "pointer_target_http_status": 404,
+  "pointer_target_content_type": "text/html; charset=UTF-8",
+  "pointer_target_page_title": "Page not found - Minidoka Memorial Hospital",
+  "checked_at": "2026-09-19T06:55:42Z",
+  "latest_web_recheck": {
+    "observed_at": "2026-09-19T06:55:42Z",
+    "billing_page_status": 200,
+    "service_price_search_page_status": 200,
+    "official_identity_observed": "Minidoka Memorial Hospital, 1224 8th Street, Rupert, ID 83350",
+    "replacement_mrf_link_observed": false,
+    "pointer_target_head_status": 404,
+    "pointer_target_content_type": "text/html; charset=UTF-8",
+    "result": "Current first-party pages remain reachable and identify the facility, but expose no replacement CMS MRF; the exact pointer target remains a publisher 404. A fresh bounded curl retrieved the root pointer as 281 bytes (same SHA-256) and the exact target returned HTTP 404 HTML."
+  },
+  "prior_observation": "The same pointer target was recorded as HTTP 404 on 2026-09-15.",
+  "disposition": "reproducible-pointer-target-404",
+  "next_action": "Recheck the exact target after publisher repair or obtain a new first-party CMS MRF; do not infer absence or compliance from the broken link."
+}

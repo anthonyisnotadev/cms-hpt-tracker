@@ -388,10 +388,16 @@ function findingFor(manifest, probe, type) {
       evidence: `last_updated_on ${manifest.mrf_last_updated} is ${manifest.mrf_days_since_update} days old; 45 CFR 180.50 requires annual updates`
     };
   }
-  if (manifest.mrf_cms_version && !/^3\./.test(manifest.mrf_cms_version)) {
+  if (manifest.mrf_cms_version && /^[12](?:\.|$)/.test(manifest.mrf_cms_version)) {
     return {
       finding: 'old-template-version', assessable: 'yes',
       evidence: `file declares CMS template version ${manifest.mrf_cms_version}`
+    };
+  }
+  if (manifest.mrf_cms_version && manifest.mrf_cms_version !== '3.0.0') {
+    return {
+      finding: 'mrf-template-version-noncanonical', assessable: 'yes',
+      evidence: `file declares version ${manifest.mrf_cms_version}; compare the literal field with the current CMS 3.0.0 identifier`
     };
   }
   if (!manifest.mrf_last_updated) {

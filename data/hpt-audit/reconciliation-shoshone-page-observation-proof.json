@@ -1,0 +1,12 @@
+{
+  "ccn": "131314",
+  "observed_at": "2026-09-17T19:15:00.000Z",
+  "official_identity_url": "https://www.shoshonehealth.com/patients/registrationbilling/",
+  "official_page_http_status": 200,
+  "official_page_sha256": "785fda8ec2a69ba049f031983b2dbbbf4bf43401d7b47e4ce5cf28c1660db1b3",
+  "official_page_claim": "Shoshone Medical Center states that it provides a machine-readable chargemaster and links a legacy 2020 CSV.",
+  "legacy_file_url": "https://www.shoshonehealth.com/wp-content/uploads/2019/12/2020-Charge-Master.csv",
+  "legacy_file_role": "historical chargemaster; not treated as a current CMS template MRF",
+  "disposition": "official-page-legacy-chargemaster-with-current-mrf-unresolved",
+  "next_action": "Locate a current first-party cms-hpt.txt pointer or current standard-charges MRF, then verify bounded bytes, CMS header and Shoshone facility identity. Do not infer a current MRF from the 2020 chargemaster."
+}

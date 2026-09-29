@@ -1,0 +1,22 @@
+{
+  "ccn": "251324",
+  "observed_at": "2026-09-26T19:20:00Z",
+  "official_domain": "https://www.forresthealth.org/",
+  "official_facility_page": "https://www.forresthealth.org/our-locations/locations-profile/walthall-county-general-hospital/",
+  "official_pricing_page": "https://www.forresthealth.org/patients-visitors/billing-financial-information/price-transparency/",
+  "route_observation": {
+    "root_pointer_url": "https://www.forresthealth.org/cms-hpt.txt",
+    "root_pointer_status": 403,
+    "pricing_page_status": 403,
+    "note": "The bounded client received access-denied responses from Forrest Health routes. No pointer or MRF bytes were asserted."
+  },
+  "independent_current_lead": {
+    "source": "third-party search results",
+    "result": "Current third-party pages identify Walthall General Hospital/CCN 251324 at 100 Hospital Drive, Tylertown, MS and report downloaded MRF-derived rates, but do not provide first-party pointer or file evidence.",
+    "role": "lead-only; not imported or promoted"
+  },
+  "manual_identity_gate": "official-facility-route-access-denied-current-mrf-unverified",
+  "disposition": "official-domain-access-denied-facility-identity-retained",
+  "interpretation": "Forrest Health remains the current first-party operator/domain lead for Walthall. The old Baptist Booneville file remains excluded. Access-denied transport is not treated as file absence, noncompliance, or a CMS termination finding.",
+  "next_action": "Retry the Forrest root pointer and Walthall pricing/file route through an authorized browser or download-capable client; require a Walthall-specific pointer and bounded MRF header before promotion."
+}

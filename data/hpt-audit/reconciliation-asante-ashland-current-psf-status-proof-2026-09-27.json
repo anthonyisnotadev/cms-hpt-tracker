@@ -1,0 +1,40 @@
+{
+  "ccn": "380005",
+  "observed_at": "2026-09-27T12:42:58Z",
+  "source": "CMS Provider Data Service, current inpatient Provider Specific File",
+  "url": "https://pds.mps.cms.gov/fiss/v2/inpatient/export?format=csv&oscarNumber=380005",
+  "http_status": 200,
+  "content_type": "text/csv",
+  "export_date": "2026-09-27",
+  "response_bytes": 21357,
+  "response_sha256": "65d412fda23a6b08473e40e3b4299f55205f3f3c7b2a44432e5206e0dafd8972",
+  "parsed_rows": 65,
+  "columns_relevant_to_status": ["providerCcn", "effectiveDate", "exportDate", "terminationDate", "providerType", "nationalProviderIdentifier", "lastUpdated"],
+  "parsed_result": {
+    "provider_ccn": "380005",
+    "npi": "1730628827",
+    "provider_type": "00",
+    "export_date_for_all_rows": "2026-09-27",
+    "latest_effective_date": "2026-04-15",
+    "latest_record_last_updated": "2026-04-14",
+    "nonblank_termination_date_rows": 0
+  },
+  "other_current_primary_sources": {
+    "operator_transition": {
+      "url": "https://impact.asante.org/community-connections-asante-presents-at-ashland-rotary-meeting/",
+      "published": "2026-07-24",
+      "observation": "Asante states that it closed the Ashland hospital license and transitioned the site to a satellite of Rogue Regional effective 2026-05-22, while continuing emergency, imaging, lab and outpatient services."
+    },
+    "oregon_satellite_license": {
+      "proof_file": "reconciliation-asante-ashland-state-license-proof.json",
+      "observation": "Oregon's July 30, 2026 license lists omit a separate Ashland hospital license and list the Ashland site under Rogue Regional as satellite license 14-0451-8."
+    },
+    "cms_enrollment_snapshot": {
+      "proof_file": "reconciliation-asante-ashland-cms-enrollment-recheck-proof-2026-09-25.json",
+      "observation": "The current CMS enrollment dataset still returns CCN 380005 as a Part A hospital provider at 280 Maple Street but exposes no termination/effective date."
+    }
+  },
+  "interpretation": "The current CMS PSF export is dated after the reported transition but its newest effective record and last update predate May 22, 2026; no row contains a termination date. Therefore the file proves that CMS's current payment file still contains the legacy CCN record, but it does not establish that the Medicare agreement remained active after the transition or when/if it terminated. This new CMS source narrows the status question without resolving it.",
+  "disposition": "unresolved-ccn-status-and-successor-file-coverage",
+  "next_action": "Obtain an effective-dated Medicare certification/termination status for CCN 380005, and separately verify whether the current CCN 380018 pointer-declared MRF explicitly covers the Ashland satellite. Do not infer continued active participation, termination, or MRF coverage from the stale-effective PSF row or state-license transition alone."
+}

@@ -1,0 +1,44 @@
+{
+  "ccn": "521335",
+  "reviewed_at": "2026-09-17T01:05:06.000Z",
+  "roster": {
+    "name": "HUDSON HOSPITAL",
+    "address": "405 STAGELINE ROAD, HUDSON, WI 54016",
+    "state": "WI"
+  },
+  "first_party_identity": {
+    "url": "https://www.healthpartners.com/care/find/location/hospitals/hudson-hospital-and-clinics/",
+    "http_status": 200,
+    "page_bytes": 224574,
+    "page_sha256": "cf020d885ecfcbbe6eecace43549acbea728687bfc9d74a87f922e63fe86156d",
+    "observed_name": "Hudson Hospital & Clinic",
+    "observed_address": "405 Stageline Rd, Hudson, WI 54016",
+    "licensing_statement": "The publisher page says Hudson Hospital is licensed by the state of Wisconsin as a critical access hospital."
+  },
+  "current_pointer": {
+    "url": "https://www.healthpartners.com/cms-hpt.txt",
+    "http_status": 200,
+    "bytes": 2980,
+    "sha256": "00bfadc0bc8d01fc00c894a60271a5f34b23db06fdaee6fe750801714d4c32a4",
+    "cached_file": "cms_data/hpt/pointer-corpus/raw/healthpartners.com-02cef7388d09.txt",
+    "location_name": "Hudson Hospital",
+    "source_page_url": "https://www.healthpartners.com/care/hospitals/hudson/patient-guest/patient-information/financial-support/",
+    "mrf_url": "https://www.healthpartners.com/content/dam/brand-identity/pdfs/care/390804125_hudsonhospital_standardcharges.csv"
+  },
+  "pointer_linked_file": {
+    "http_status": 206,
+    "range": "bytes=0-262143",
+    "sample_bytes": 262144,
+    "sample_sha256": "dc3d48e8543355780acd5c960d6e6acb1bc34485898267a7bfb57bb8e94710b3",
+    "declared_hospital_name": "Hudson Hospital",
+    "declared_location_name": "Hudson Hospital",
+    "declared_address": "405 Stageline Rd, Hudson, WI 54016",
+    "declared_license_state_field": "MN",
+    "declared_license_number": "351039",
+    "declared_last_updated_on": "3/31/2026",
+    "normalized_last_updated_on": "2026-03-31",
+    "declared_version": "3.0.0",
+    "scope": "Only a retained 262,144-byte prefix of the 16,604,777-byte CSV was inspected; the license-state field conflicts with the Wisconsin campus and publisher licensing statement. No full-file or legal-compliance conclusion follows."
+  },
+  "disposition": "Exact first-party pointer and sampled file identify Hudson Hospital at the Wisconsin roster address, but the license_number|MN column conflicts with the Wisconsin facility state. Retain the file and conflict together; request publisher clarification or correction before any clean-MRF claim."
+}

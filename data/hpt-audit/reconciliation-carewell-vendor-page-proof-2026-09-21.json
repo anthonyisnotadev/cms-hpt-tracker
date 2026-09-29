@@ -1,0 +1,13 @@
+{
+  "ccn": "310083",
+  "observed_at": "2026-09-21T21:15:00Z",
+  "official_domain": "carewellhealth.org",
+  "official_site": "https://carewellhealth.org/pages/pricing-and-transparency",
+  "candidate_file_url": "https://search.hospitalpriceindex.com/hpi2/machineReadable/carewellhealthmedicalcenter/11331",
+  "retrieval_method": "official pricing-page and linked vendor portal inspection",
+  "transport_result": "The official CareWell page returned HTTP 200 and links a Hospital Price Index vendor portal for CareWell Health Medical Center. The vendor portal returned HTTP 200 HTML but exposed no direct CSV/JSON/ZIP bytes in the bounded response.",
+  "facility_identity_observation": "The official page identifies CareWell Health Medical Center and the page footer identifies 300 Central Avenue, East Orange, NJ 07018; exact MRF bytes and declared metadata were not recovered.",
+  "disposition": "official-page-linked-vendor-portal-file-retrieval-pending",
+  "interpretation": "The linked vendor portal is retained as a discovery route, not treated as a verified MRF. No third-party aggregate or portal inference was promoted.",
+  "next_action": "Use the linked vendor portal or current CareWell root pointer through a permitted download-capable route to recover exact CSV/JSON/ZIP bytes, then verify facility identity, address/state, date, CMS version and usable rows."
+}

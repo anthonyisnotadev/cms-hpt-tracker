@@ -1,0 +1,14 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
+const {csvToObjects}=require('./lib/util');
+const root=path.resolve(__dirname,'../..'),audit=path.join(root,'data/hpt-audit');
+const proofName='reconciliation-westerly-current-page-file-proof-2026-09-22.json';
+const p=JSON.parse(fs.readFileSync(path.join(audit,proofName),'utf8'));
+const retained=path.join(root,p.retained_file); if(!fs.existsSync(retained)) throw new Error('retained Westerly file missing');
+const stat=fs.statSync(retained); const sha=crypto.createHash('sha256').update(fs.readFileSync(retained)).digest('hex');
+if(stat.size!==p.full_file_bytes||sha!==p.full_file_sha256) throw new Error('Westerly retained file hash/size mismatch');
+const ledgerPath=path.join(audit,'reviewed-resolutions.json'); const ledger=JSON.parse(fs.readFileSync(ledgerPath,'utf8'));
+const base=csvToObjects(fs.readFileSync(path.join(audit,'compliance.csv'),'utf8')).find(r=>r.ccn===p.ccn)||{};
+const evidence={identity:'corroborated',identity_basis:'official-westerly-pricing-page-complete-file-exact-address-license-state',officialDomain:p.official_domain,sourcePageUrl:p.source_page_url,sourcePageSha256:p.source_page_sha256,sourcePageStatus:p.source_page_status,pointerUrl:p.source_page_url,pointerSha256:p.source_page_sha256,url:p.mrf_url,finalUrl:p.mrf_url,http_status:p.mrf_status,checked_at:p.observed_at,date:p.declared_last_updated,version:p.cms_template_version,officialPage:p.source_page_url,declared_hospital_name:p.declared_hospital_name,declared_location_name:p.declared_location_name,declared_address:p.declared_address,facility_address:'25 Wells Street, Westerly, RI 02891',declared_license_number:p.declared_license_number,declared_license_state:'RI',facility_state:'RI',file_kind:'csv',fullFileBytes:p.full_file_bytes,full_file_sha256:p.full_file_sha256,retained_file:p.retained_file,observedFinding:p.observed_finding,next_action:p.next_action};
+const next={ccn:p.ccn,base,action:'replace',finding:'verified-current-mrf',evidence,evidence_run:'westerly-current-page-file-2026-09-22',reviewed_at:p.observed_at,note:'The current first-party Westerly Hospital pricing page links the complete 92,222,146-byte CSV. Its header declares Westerly Hospital, 25 Wells Street Westerly RI 02891, 1/1/2026, CMS 3.0.0 and license 06-0543230; CMS independently confirms the same CCN identity and address. Promotion is observed-file evidence only.'};
+const i=ledger.findIndex(r=>r.ccn===p.ccn); if(i>=0) ledger[i]=next; else ledger.push(next); ledger.sort((a,b)=>a.ccn.localeCompare(b.ccn)); fs.writeFileSync(ledgerPath,JSON.stringify(ledger,null,2)+'\n'); console.log(JSON.stringify({applied:p.ccn,file_sha256:p.full_file_sha256,full_file_bytes:p.full_file_bytes},null,2));

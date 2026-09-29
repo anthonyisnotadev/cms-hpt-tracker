@@ -1,0 +1,14 @@
+{
+  "ccn": "131314",
+  "observed_at": "2026-09-21T12:00:00Z",
+  "official_pricing_page": "https://www.shoshonehealth.com/patients/registrationbilling/",
+  "official_page_status": 200,
+  "official_page_observation": "The current Shoshone Medical Center registration and billing page states that the hospital provides a machine-readable chargemaster and links an exact CSV target.",
+  "candidate_file_url": "https://www.shoshonehealth.com/wp-content/uploads/2019/12/2020-Charge-Master.csv",
+  "candidate_file_observation": "The linked target is explicitly named 2020-Charge-Master.csv. Web retrieval identified content type text/csv but did not return file bytes because CSV content is unsupported by the fetch tool.",
+  "roster_identity": "SHOSHONE MEDICAL CENTER",
+  "roster_address": "25 Jacobs Gulch Road, Kellogg, ID 83837",
+  "disposition": "official-page-file-linkage-historical-file-bytes-unresolved",
+  "interpretation": "This adds current official-page linkage but the linked artifact is visibly historical (2020) and cannot be promoted as a current MRF. No file bytes, declared facility metadata, CMS version or parsed usability were observed; no compliance conclusion is inferred.",
+  "next_action": "Obtain a current facility-specific CMS CSV/JSON through the publisher or an authorized route, then verify declared name, address, Idaho state, date, version and usability before promotion."
+}

@@ -1,0 +1,18 @@
+{
+  "ccn": "670109",
+  "observed_at": "2026-09-23T07:45:00Z",
+  "official_site": "https://altushospitals.org/",
+  "official_pricing_page": "https://altusemergency.com/price-transparency",
+  "official_identity": "Baytown Medical Center LP, 1626 W Baker Road, Baytown, TX 77521 per CMS roster and Texas official facility records. The roster's official domain is altushospitals.org; that host redirected to an HTML 403 response during bounded retrieval.",
+  "browser_observation": "The official Altus Emergency price-transparency page was retrievable by bounded HTTP and describes standard charge files, but its current published links covered Altus Emergency Centers Lake Jackson, Waxahachie and Altus Lumberton Hospital; no Baytown or CCN 670109 file/link was present. Browser navigation to the related page timed out, so no additional interactive evidence was inferred.",
+  "pointer_urls": [
+    "https://altushospitals.org/cms-hpt.txt",
+    "https://altushospitals.org/.well-known/cms-hpt.txt"
+  ],
+  "pointer_status": "The official-domain root pointer variants returned HTML/empty 404 responses. The site root redirected and then returned HTTP 403 HTML. This is an access/discovery observation, not evidence of pointer absence or noncompliance.",
+  "mrf_observation": "No Baytown-specific machine-readable file was recovered from the official domain or the related Altus Emergency pricing page. Other Altus facility files were not assigned to Baytown.",
+  "cms_record": {"ccn": "670109", "name": "BAYTOWN MEDICAL CENTER LP", "address": "1626 W BAKER ROAD", "city": "BAYTOWN", "state": "TX", "zip": "77521"},
+  "disposition": "official-domain-access-denied-related-page-no-baytown-file",
+  "interpretation": "The current evidence narrows discovery: the named Altus domain is access-denied and its root pointers are not available, while a related official Altus pricing page exposes files for other facilities only. No cross-facility assignment is made; CCN 670109 remains unresolved.",
+  "next_action": "Obtain a Baytown-specific publisher URL or current Altus hospitals pricing page, then verify exact facility identity, declared date/version and usable CSV/JSON/ZIP bytes before promotion."
+}

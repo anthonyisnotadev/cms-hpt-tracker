@@ -1,0 +1,92 @@
+'use strict';
+
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('fs');
+const path = require('path');
+const crypto = require('crypto');
+
+const root = path.resolve(__dirname, '../../..');
+const audit = path.join(root, 'data/hpt-audit');
+const proof = require(path.join(audit, 'reconciliation-adventist-campus-proof.json'));
+const routeProof = require(path.join(audit, 'reconciliation-adventist-bakersfield-current-portal-header-proof-2026-09-27.json'));
+const stateCrosscheck = require(path.join(audit, 'reconciliation-adventist-bakersfield-state-address-crosscheck-2026-09-27.json'));
+const npiCrosscheck = require(path.join(audit, 'reconciliation-adventist-bakersfield-npi-header-crosscheck-2026-09-28.json'));
+const currentEnrollmentCrosscheck = require(path.join(audit, 'reconciliation-adventist-bakersfield-cms-current-enrollment-crosscheck-2026-09-28.json'));
+const hcaiSiteCrosscheck = require(path.join(audit, 'reconciliation-adventist-bakersfield-hcai-distinct-site-crosscheck-2026-09-28.json'));
+const hcaiConsolidationContext = require(path.join(audit, 'reconciliation-adventist-bakersfield-hcai-consolidated-facility-context-2026-09-28.json'));
+const ledger = require(path.join(audit, 'reviewed-resolutions.json'));
+const observations = require(path.join(audit, 'reconciliation-manual-access-observations.json')).records;
+
+test('Simi Valley alias and exact campus file are reviewed independently of Bakersfield', () => {
+  assert.match(proof.first_party_legal_alias_source, /adventisthealth\.org/);
+  assert.equal(proof.records['050236'].declared_address, '2975 Sycamore Dr Simi Valley CA 93065');
+  assert.equal(proof.records['050236'].roster_address, '2975 N SYCAMORE DR');
+  assert.equal(proof.records['050455'].declared_address, '3001 Sillect Avenue Bakersfield CA 93308|3001 Sillect Avenue Bakersfield CA 93308');
+  assert.equal(proof.records['050455'].roster_address, '2615 CHESTER AVENUE');
+  assert.equal(routeProof.current_portal_route_recheck.direct_target_recheck.sample_sha256,
+    proof.records['050455'].sample_sha256);
+  assert.equal(routeProof.current_portal_route_recheck.direct_target_recheck.sample_matches_retained_2026_09_25_sample, true);
+  assert.match(routeProof.current_portal_route_recheck.route_logic, /hospital and mainDBName, map to dbAHBBAKERSFIELDCA/);
+  assert.match(routeProof.unbound_partial_header_disposition, /exact final URL and sample hash were not retained/i);
+  assert.match(routeProof.next_action, /request the source URL\/hash/);
+  for (const record of Object.values(proof.records)) {
+    const bytes = fs.readFileSync(path.join(root, record.retained_sample));
+    assert.equal(bytes.length, record.retained_bytes);
+    assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'), record.sample_sha256);
+  }
+  const simi = ledger.find(row => row.ccn === '050236');
+  assert.equal(simi.action, 'replace');
+  assert.equal(simi.evidence.url, proof.records['050236'].file_url);
+  assert.equal(simi.evidence.pointerSha256, proof.pointer_sha256);
+  assert.equal(ledger.some(row => row.ccn === '050455'), false);
+  const bakersfield = observations.find(row => row.ccn === '050455');
+  const npiBakersfield = observations.find(row => row.ccn === '050455' && row.latest_cms_npi_header_crosscheck_2026_09_28);
+  assert.equal(bakersfield.disposition, 'shared-pointer-entry-file-header-identifies-specialty-campus-not-main-roster-address');
+  assert.equal(bakersfield.mrf_sample_sha256, proof.records['050455'].sample_sha256);
+  assert.equal(stateCrosscheck.observed_at, '2026-09-27T18:24:00Z');
+  assert.match(stateCrosscheck.sources.find(source => source.kind.includes('Specialty')).observation, /HCAI ID 106154101/);
+  assert.match(stateCrosscheck.sources.find(source => source.kind.includes('corporate')).observation,
+    /2615 Chester Avenue.*3001 Sillect Avenue/);
+  assert.equal(stateCrosscheck.disposition, 'unresolved-current-pointer-file-address-conflict');
+  assert.match(stateCrosscheck.no_change, /not new MRF bytes and not resolution credit/);
+  assert.equal(npiCrosscheck.cms_provider_number_crosscheck.cms_provider_number, '050724');
+  assert.equal(npiCrosscheck.cms_provider_number_crosscheck.cms_effective_date, '2005-05-25');
+  assert.equal(npiCrosscheck.cms_provider_number_crosscheck.cms_address, '3001 Sillect Avenue, Bakersfield, CA 93308');
+  assert.match(npiCrosscheck.cms_provider_number_crosscheck.interpretation, /does not alone establish current enrollment status/);
+  assert.match(npiCrosscheck.finding, /Keep 050455 and 050724 separate/);
+  const providerNumberReview = npiBakersfield.latest_cms_provider_number_crosscheck_2026_09_28;
+  assert.equal(providerNumberReview.cms_provider_number, '050724');
+  assert.match(providerNumberReview.result, /not proof of current enrollment or the 2026 shared MRF's exact CCN coverage/);
+  assert.equal(providerNumberReview.disposition, 'unresolved-main-and-specialty-ccn-file-scope-conflict');
+  assert.equal(currentEnrollmentCrosscheck.matches[0].normalized_ccn, '050455');
+  assert.equal(currentEnrollmentCrosscheck.matches[0].npi, '1538157508');
+  assert.match(currentEnrollmentCrosscheck.matches[0].address, /2615 CHESTER AVE/);
+  assert.equal(currentEnrollmentCrosscheck.comparison.cohort_count_effect, 0);
+  assert.equal(currentEnrollmentCrosscheck.comparison.disposition, 'unresolved-current-pointer-file-address-and-npi-mapping-conflict');
+  assert.match(currentEnrollmentCrosscheck.comparison.interpretation, /does not explain why the file has that address/);
+  const currentEnrollmentReview = npiBakersfield.latest_cms_current_enrollment_crosscheck_2026_09_28;
+  assert.equal(currentEnrollmentReview.proof_file, 'reconciliation-adventist-bakersfield-cms-current-enrollment-crosscheck-2026-09-28.json');
+  assert.match(currentEnrollmentReview.result, /active main-campus CCN 050455 at 2615 Chester/);
+  assert.equal(hcaiSiteCrosscheck.official_state_records[0].hcai_id, '106150788');
+  assert.equal(hcaiSiteCrosscheck.official_state_records[1].hcai_id, '106154101');
+  assert.equal(hcaiSiteCrosscheck.official_state_records[0].license_number, hcaiSiteCrosscheck.official_state_records[1].license_number);
+  assert.equal(hcaiSiteCrosscheck.cohort_count_effect, 0);
+  assert.match(hcaiSiteCrosscheck.finding, /do not establish which CCN or locations the file actually covers/);
+  const hcaiReview = npiBakersfield.latest_hcai_distinct_site_crosscheck_2026_09_28;
+  assert.equal(hcaiReview.proof_file, 'reconciliation-adventist-bakersfield-hcai-distinct-site-crosscheck-2026-09-28.json');
+  assert.match(hcaiReview.result, /distinct hospitals sharing license 120000187/);
+  const consolidationReview = npiBakersfield.latest_hcai_consolidation_classification_recheck_2026_09_28;
+  assert.equal(consolidationReview.proof_file, 'reconciliation-adventist-bakersfield-hcai-consolidated-facility-context-2026-09-28.json');
+  assert.equal(consolidationReview.facility_level_description, 'Consolidated Facility');
+  assert.equal(consolidationReview.disposition, 'unresolved-current-shared-file-campus-and-ccn-scope-conflict');
+  assert.equal(consolidationReview.cohort_count_effect, 0);
+  assert.match(hcaiConsolidationContext.sources[1].relevant_scope, /ED\/AS reporting requirements, not CMS Hospital Price Transparency/);
+  assert.match(hcaiConsolidationContext.sources[1].limitation, /does not identify Medicare CCNs/);
+  assert.match(hcaiConsolidationContext.search_recheck.duplicate_result, /recheck, not new evidence/);
+  assert.equal(hcaiConsolidationContext.new_mrf_bytes, false);
+  const nationwide = require(path.join(audit, 'nationwide-verification.json')).records.find(row => row.ccn === '050455');
+  assert.equal(nationwide.disposition, 'linked-mrf-header-unmatched');
+  assert.equal(bakersfield.latest_directory_lead.evidence_role, 'third-party lead only; not first-party pointer or file identity evidence');
+  assert.match(bakersfield.latest_directory_lead.transport_observation, /timed out/);
+});

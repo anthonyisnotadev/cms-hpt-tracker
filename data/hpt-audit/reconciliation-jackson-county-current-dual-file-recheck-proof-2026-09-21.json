@@ -1,0 +1,35 @@
+{
+  "ccn": "161329",
+  "observed_at": "2026-09-21T06:12:20Z",
+  "official_pricing_page": "https://jcrhc.org/price-transparency/",
+  "browser_observation": "The current first-party page loaded and exposed separate Shoppable Services Pricing and CMS Machine-Readable File links. The MRF link is the XLSX at 426037868_jackson-county-public-hospital_standardcharges.xlsx; the page identifies Jackson County Regional Health Center at 601 Hospital Drive, Maquoketa, Iowa.",
+  "root_pointer": "https://jcrhc.org/cms-hpt.txt",
+  "root_pointer_status": 200,
+  "root_pointer_bytes": 293,
+  "root_pointer_observation": "The pointer remains plain text but labels its target field mfr-url and names the older CSV 426037868_jackson-county-regional-health-center_standardcharges.csv.",
+  "pointer_csv": {
+    "status": 200,
+    "bytes": 89636511,
+    "sha256": "3882EA80782532E13E64CC33D9652F9472ADBCF38F2ED6844BC68E461924A7EB",
+    "last_modified": "2025-08-26T17:04:59Z",
+    "declared_name": "JACKSON COUNTY REGIONAL HEALTH CENTER",
+    "declared_date": "2025-07-29",
+    "declared_version": "2.0.0",
+    "declared_address": "601 HOSPITAL DRIVE, MAQUOKETA, IA 52060",
+    "declared_license_state": "IA",
+    "declared_ccn": "161329"
+  },
+  "page_xlsx": {
+    "status": 200,
+    "bytes": 31387788,
+    "sha256": "EB659C716B523E3319FE21998B68FF9D777087558FA3AB23A51189CAB0237097",
+    "last_modified": "2026-09-02T20:49:00Z",
+    "declared_name": "JACKSON COUNTY REGIONAL HEALTH CENTER",
+    "declared_date": "2026-08-11",
+    "declared_version": "3.0.0",
+    "declared_address": "601 HOSPITAL DRIVE, MAQUOKETA, IA 52060"
+  },
+  "disposition": "current-dual-file-identity-agreement-pointer-label-and-version-discrepancy-retained",
+  "interpretation": "Both current page and pointer files identify the same Iowa facility and address, but the root pointer is malformed (mfr-url), older v2.0.0 and CSV while the page exposes a newer v3.0.0 XLSX. This is new corroborating evidence, not a clean pointer-linked current claim; no unsupported promotion is made.",
+  "next_action": "Obtain publisher correction of mfr-url to mrf-url and reconcile the older pointer CSV with the newer page-linked XLSX before treating the current file as a single clean pointer-linked claim."
+}

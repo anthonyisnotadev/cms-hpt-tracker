@@ -1,0 +1,69 @@
+{
+  "audit_id": "reconciliation-freedom-ferriday-leesville-page-pointer-recheck-2026-09-28",
+  "observed_at": "2026-09-28T09:58:33Z",
+  "ccns": ["194119", "194121"],
+  "purpose": "Recheck the shared first-party price page and root pointer after the prior page observation had an older response hash; this is not a new MRF retrieval.",
+  "official_location_pages": [
+    {
+      "ccn": "194119",
+      "url": "https://freedombehavioral.com/freedom-ferriday/",
+      "http_status": 200,
+      "response_bytes": 142774,
+      "sha256": "0959567f3d4a477e44e6da4df4b8f73ddf843bd9c66c34a2ef585359ced3592b",
+      "observed_facility": "Freedom Ferriday",
+      "observed_address": "1700 E.E. Wallace Blvd N, Ferriday, LA 71334"
+    },
+    {
+      "ccn": "194121",
+      "url": "https://freedombehavioral.com/freedom-leesville/",
+      "http_status": 200,
+      "response_bytes": 142811,
+      "sha256": "fa9f6d9b3f817e55854b715025fdc060b895931400e6d41ff0ff551c3c4b0081",
+      "observed_facility": "Freedom Leesville",
+      "observed_address": "1103 Port Arthur Terrace, Leesville, LA 71446"
+    }
+  ],
+  "current_program_locations_page": {
+    "url": "https://freedombehavioral.com/program-locations/",
+    "http_status": 200,
+    "response_bytes": 140539,
+    "sha256": "dc27cc5332b46efc0fa8171e319d68f04799322a9590d39b0df6b64088ef9aec",
+    "observed_scope": "Lists Ferriday and Leesville as separate Freedom Behavioral Hospital legal entities at their distinct Louisiana addresses."
+  },
+  "current_price_page": {
+    "url": "https://freedombehavioral.com/price-transparency/",
+    "http_status": 200,
+    "response_bytes": 155144,
+    "sha256": "9737d9b44ce9e1d6de9115fc9763ca82f61ef7af3ca1d4f744691d7dbe399892",
+    "listed_facilities": ["Freedom Magnolia", "Freedom Monroe", "Freedom Plainview"],
+    "listed_standard_charge_links": [
+      "https://freedombehavioral.com/wp-content/uploads/2025/03/811097331_beacham_memorial_hospital_standardcharges28.csv",
+      "https://freedombehavioral.com/wp-content/uploads/2024/01/383731163_freedom-behavioral-hospital-of-monroe_standardcharges.csv",
+      "https://freedombehavioral.com/wp-content/uploads/2026/07/201871394_allegiance-behavioral-health-center-of-plainview_standardchargesupdated.csv"
+    ],
+    "omitted_facility_specific_files": ["Freedom Behavioral Hospital of Ferriday", "Freedom Behavioral Hospital of Leesville"]
+  },
+  "current_root_pointer": {
+    "url": "https://freedombehavioral.com/cms-hpt.txt",
+    "http_status": 200,
+    "response_bytes": 966,
+    "sha256": "5a9737ce13c87cb65d36225387ed1d926ffc8801489fac1aa4c4602974a60b85",
+    "location_names": ["Beacham Memorial Hospital", "Freedom Behavioral Hospital Of Monroe", "Freedom Behavioral Hospital Of Plainview"],
+    "interpretation": "The pointer bytes/hash are unchanged from the previous reviewed observation and contain no Ferriday or Leesville entry."
+  },
+  "comparison": {
+    "previous_price_page_sha256": "77b44a68707e8d8c3e5570a0f3d606bd5211a10ac4d0629ad0c0084d9775acd7",
+    "previous_price_page_bytes": 155213,
+    "price_page_response_changed": true,
+    "facility_link_set_changed": false,
+    "pointer_bytes_changed": false,
+    "new_mrf_bytes": false
+  },
+  "outcome": {
+    "evidence_gain": "Fresh hash-bound current publisher-page and pointer observations; page markup bytes differ but the facility/file link set is unchanged.",
+    "disposition_changed": false,
+    "unresolved_count_change": 0,
+    "interpretation": "Current first-party sources still expose no Ferriday- or Leesville-specific CMS-template file. Do not infer file absence or compliance, and do not assign Magnolia, Monroe, or Plainview files to either CCN.",
+    "next_action": "Obtain a Ferriday- or Leesville-specific pointer entry or publisher-provided CMS-format file, then verify exact facility identity, address, Louisiana state, declared date/version, and usable contents."
+  }
+}

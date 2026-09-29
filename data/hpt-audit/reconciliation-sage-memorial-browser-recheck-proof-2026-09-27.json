@@ -1,0 +1,16 @@
+{
+  "ccn": "031309",
+  "observed_at": "2026-09-27T11:17:46Z",
+  "browser": "codex-in-app-browser",
+  "official_site": "https://sagememorial.com/",
+  "official_identity": "Navajo Health Foundation - Sage Memorial Hospital, US 191 & SR 264, Ganado, AZ 86505",
+  "official_pricing_page": "https://sagememorial.com/insurance-billing-information/",
+  "pricing_page_observation": "The rendered first-party billing page names Sage Memorial Hospital, shows its Ganado address, and links a Patient Pricing PDF at the exact URL below.",
+  "pricing_file_url": "https://sagememorial.com/wp-content/uploads/2021/05/PricingTransparency.pdf",
+  "pricing_file_observation": "The official link resolves to a 135-page PDF headed with charge code, facility name, standard price, and professional fee portion. This is a patient-pricing/CDM document, not a structured CMS CSV/JSON MRF; no current MRF metadata was observed.",
+  "pointer_url": "https://sagememorial.com/cms-hpt.txt",
+  "pointer_browser_observation": "Browser rendered the publisher's WordPress Page not found page at the exact root-pointer path. No pointer body or MRF target was exposed; no HTTP status is asserted from the browser observation.",
+  "disposition": "current-official-page-still-links-historical-consumer-pdf-root-pointer-unresolved",
+  "interpretation": "This is a current-route recheck and corroborates the existing official identity and old consumer-pricing PDF observations. It provides no new CMS MRF bytes or metadata, does not prove that no MRF exists elsewhere, and does not support a compliance conclusion or disposition change.",
+  "next_action": "Obtain a publisher-provided current Sage Memorial-specific structured CMS MRF and valid root pointer; verify current bytes, facility name/address/state, declared date, CMS version and parsed usability before promotion."
+}

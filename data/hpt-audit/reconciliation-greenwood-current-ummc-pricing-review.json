@@ -1,0 +1,26 @@
+{
+  "ccn": "250099",
+  "hospital_name": "GREENWOOD LEFLORE HOSPITAL",
+  "observed_at": "2026-09-18T16:20:00Z",
+  "latest_recheck": {
+    "observed_at": "2026-09-19T09:40:00Z",
+    "acquisition_page_http_status": 200,
+    "acquisition_page_bytes": 29076,
+    "acquisition_page_sha256": "748df0d6e05c27df069dd5e2848761f0f03e262e0c5a293b30a58721625b0f5b",
+    "still_states_effective_date": "2026-08-01",
+    "still_omits_greenwood_from_standard_charge_list": true,
+    "result": "current UMMC transition and pricing scope corroborated; no Greenwood-specific MRF or pointer entry recovered"
+  },
+  "acquisition_source": "https://umc.edu/Greenwood/Patients-Visitors/Bill-Pay.html",
+  "acquisition_source_finding": "UMMC states Greenwood Leflore Hospital transitioned to UMMC Greenwood on 2026-08-01.",
+  "current_ummc_pricing_page": "https://umc.edu/Healthcare/Patients-and-Visitors/Bill%20Pay/UMMC%20Pricing.html",
+  "current_ummc_pricing_page_http_status": 200,
+  "current_ummc_pricing_page_sha256": "f9b0244794084f3e5d9915db9d324e4810ef89f471bd3dee5611771ba52b2596",
+  "current_ummc_pricing_page_bytes": 42786,
+  "listed_standard_charge_facilities": ["UMMC Jackson Hospital", "UMMC Madison Hospital", "UMMC Grenada Hospital", "UMMC Holmes County Hospital"],
+  "greenwood_file_listed": false,
+  "pointer_recheck": {"url": "https://umc.edu/cms-hpt.txt", "result": "web-tool-inaccessible", "interpretation": "transport observation only; no absence or compliance inference"},
+  "former_publisher_files_retained_as_leads": ["https://cdn.accureg.net/trans/greenwoodleflore/64-6000400_Greenwood-Leflore-Hospital_standardcharges.csv", "https://cdn.accureg.net/trans/greenwoodleflore/64-6000400_Greenwood-Leflore-Hospital_standardcharges.json"],
+  "disposition": "current-ummc-pricing-page-omits-greenwood-file-pointer-linkage-unresolved",
+  "next_action": "Obtain the current UMMC Greenwood-specific cms-hpt.txt entry or a first-party Greenwood MRF, then verify exact file bytes, 1401 River Road Greenwood MS 38930 identity, Mississippi license state, date and CMS version. Do not promote Jackson, Madison, Grenada or Holmes files to CCN 250099."
+}

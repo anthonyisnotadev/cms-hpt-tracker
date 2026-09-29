@@ -1,0 +1,20 @@
+{
+  "ccn": "024001",
+  "observed_at": "2026-09-19T22:37:26Z",
+  "candidate_domain": "northstarbh.com",
+  "candidate_url": "https://northstarbh.com/billing/",
+  "source_role": "candidate-domain identity disambiguation",
+  "source_status": "200",
+  "declared_operator": "North Star Behavioral Health",
+  "declared_addresses": [
+    "601 Skokie Blvd, Suite 1-A, Northbrook, IL 60062",
+    "401 N. Michigan Ave, 12th Floor, Chicago, IL 60611"
+  ],
+  "roster_facility": "NORTH STAR HOSPITAL, 2530 DeBarr Road, Anchorage, AK 99508",
+  "identity_result": "candidate-domain-different-facility-cross-state",
+  "pointer_status": "excluded",
+  "mrf_status": "not-retrieved",
+  "disposition": "wrong-domain-excluded-preserve-alaska-identity-lead",
+  "detail": "The candidate domain's current billing page identifies a private-pay North Star Behavioral Health practice in Illinois, not the Alaska North Star Hospital. The candidate is excluded from pointer/MRF attribution; this is not evidence that the Alaska facility lacks a file.",
+  "next_action": "Use the Alaska Department of Health facility-specific pricing lead and an authorized route for the Alaska publisher domain; do not reuse northstarbh.com evidence."
+}

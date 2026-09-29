@@ -1,0 +1,15 @@
+{
+  "ccn": "194089",
+  "observed_at": "2026-09-21T20:00:00Z",
+  "official_pricing_page": "https://www.genesisbh.com/program-costs",
+  "official_page_status": 200,
+  "official_page_observation": "The current Genesis Behavioral Hospital program-costs page states that its displayed pricing data is current as posted and links facility-specific charge sheets for Breaux Bridge inpatient, Crowley outpatient, Lafayette outpatient and New Iberia outpatient. The Breaux Bridge sheet is the facility-relevant link for CCN 194089.",
+  "candidate_file_url": "https://www.genesisbh.com/_files/ugd/b56b0c_25d34f84c2594f069cfa89d56971881e.csv?dn=BBPRICE.csv",
+  "candidate_file_observation": "The exact Breaux Bridge CSV target was reached by the official page, but the web retrieval returned a cache miss and no bytes or metadata.",
+  "roster_identity": "GENESIS BEHAVIORAL HOSPITAL",
+  "roster_address": "606 Latiolais Road, Breaux Bridge, LA 70517",
+  "sibling_excluded_targets": ["CroPrice.csv", "LafPrice.csv", "New Iberia outpatient charge sheet"],
+  "disposition": "official-page-current-facility-csv-linkage-file-bytes-unresolved",
+  "interpretation": "This is new facility-specific official-page and exact-file linkage. Sibling outpatient charge sheets are excluded from the Breaux Bridge CCN. No bytes, declared facility metadata, CMS version or parsed usability were observed, so no current verification claim is promoted.",
+  "next_action": "Retrieve the Breaux Bridge CSV through a permitted download-capable route, then verify bytes, declared facility/address/Louisiana state, update date, CMS version and parsed usability before promotion."
+}

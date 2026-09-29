@@ -1,0 +1,18 @@
+{
+  "ccn": "670121",
+  "observed_at": "2026-09-23T08:25:00Z",
+  "official_site": "https://saintcamillusmedicalcenter.com/",
+  "official_pricing_page": "https://saintcamillusmedicalcenter.com/patients-visitors/pricing-transparency/",
+  "official_identity": "Saint Camillus Medical Center, 1612 Hurst Town Center Drive, Hurst, TX 76054 per CMS roster and the hospital's indexed pricing page.",
+  "browser_observation": "The current official domain loaded an nginx default welcome page rather than hospital content. The indexed official pricing-transparency route returned HTTP 404 in bounded retrieval. Search evidence describes a former Saint Camillus pricing page and a 2021 pricing spreadsheet, but no current file URL or bytes were recovered, so the historical search result was not promoted.",
+  "pointer_urls": [
+    "https://saintcamillusmedicalcenter.com/cms-hpt.txt",
+    "https://saintcamillusmedicalcenter.com/.well-known/cms-hpt.txt"
+  ],
+  "pointer_status": "Both root pointer variants were checked against the current host; no usable plain-text pointer was recovered. The current domain's default nginx content and the pricing-route 404 indicate a stale or repurposed site, not a compliance or file-absence finding.",
+  "mrf_observation": "No current CSV/JSON/ZIP MRF was recovered. The search-indexed 2021 spreadsheet was treated as historical and not imported without bytes, current metadata, or format/identity verification.",
+  "cms_record": {"ccn": "670121", "name": "SAINT CAMILLUS MEDICAL CENTER", "address": "1612 HURST TOWN CENTER DRIVE", "city": "HURST", "state": "TX", "zip": "76054"},
+  "disposition": "official-domain-nginx-default-pricing-route-404",
+  "interpretation": "The current official-domain state is independently documented, while the indexed former pricing page is preserved only as a historical lead. CCN 670121 remains unresolved without a current publisher file and identity/metadata proof.",
+  "next_action": "Locate Saint Camillus's current operator or first-party domain and request a current pricing/MRF URL; verify exact facility identity, declared date/version and usable CSV/JSON/ZIP bytes before promotion."
+}

@@ -1,0 +1,40 @@
+{
+  "ccn": "050455",
+  "observed_at": "2026-09-28T09:28:00Z",
+  "purpose": "Cross-check the exact pointer-file NPI and the separate Sillect-campus NPI/CCN lead against CMS's current Hospital Enrollments public-use file.",
+  "source": {
+    "dataset_page": "https://data.cms.gov/provider-characteristics/hospitals-and-other-facilities/hospital-enrollments",
+    "dataset_description": "CMS describes Hospital Enrollments as information on hospitals currently enrolled in Medicare; it is gathered from PECOS and includes additional NPIs and addresses when present.",
+    "dataset_latest_release_title": "Hospital Enrollments : 2026-08-01",
+    "dataset_release_temporal": "2026-08-01/2026-08-31",
+    "dataset_release_modified": "2026-08-17",
+    "dataset_csv_url": "https://data.cms.gov/sites/default/files/2026-08/bcf5ccda-1482-4c43-8198-de1efa2f83c8/Hospital_Enrollments_2026.07.31.csv",
+    "dataset_csv_http_status": 200,
+    "dataset_csv_bytes": 2516958,
+    "dataset_csv_sha256": "b62b961e03f90c5513b8b6a3e597fb871e42afb62960c757b82899539017000c",
+    "dataset_csv_rows_including_header": 9163,
+    "retrieval": "Bounded direct read of the official CMS public-use CSV; only the matching row and required comparison fields are retained here."
+  },
+  "matches": [
+    {
+      "npi": "1538157508",
+      "ccn_as_published": "50455",
+      "normalized_ccn": "050455",
+      "organization_name": "SAN JOAQUIN COMMUNITY HOSPITAL",
+      "doing_business_as_name": "ADVENTIST HEALTH BAKERSFIELD",
+      "address": "2615 CHESTER AVE, BAKERSFIELD, CA 93301-2014",
+      "practice_location_type": "MAIN/PRIMARY HOSPITAL LOCATION",
+      "interpretation": "The current CMS enrollment row independently ties the first NPI appearing in the pointer-linked MRF header to active CCN 050455 and the roster/main-campus 2615 Chester address."
+    }
+  ],
+  "comparison": {
+    "pointer_linked_file_proof": "reconciliation-adventist-bakersfield-npi-header-crosscheck-2026-09-28.json",
+    "pointer_linked_header_npi_1538157508_address": "3001 Sillect Avenue Bakersfield CA 93308",
+    "pointer_linked_header_second_npi": "1609856947",
+    "cms_enrollment_search_results": "The exact current CMS CSV contains the 1538157508 / CCN 50455 / 2615 Chester row. No row was found for NPI 1609856947, CCN 50724/050724, or 3001 Sillect Avenue in this release.",
+    "interpretation": "New current-CMS evidence strengthens the mapping of NPI 1538157508 to active main-campus CCN 050455 and confirms that the pointer-linked header pairs that same NPI with a conflicting 3001 Sillect address. It does not explain why the file has that address, establish the second NPI's current CCN, or determine whether the shared file covers one or both campuses. Dataset nonappearance for the second NPI/CCN/address is recorded only as absence from this release, not as proof of termination or a facility status change.",
+    "disposition": "unresolved-current-pointer-file-address-and-npi-mapping-conflict",
+    "cohort_count_effect": 0,
+    "next_action": "Keep 050455 and 050724 distinct. Obtain a corrected pointer-linked file or authoritative publisher documentation mapping both NPIs, location rows, licenses, and covered CCNs; do not promote the Sillect-address file for 050455 without resolving the contradiction."
+  }
+}

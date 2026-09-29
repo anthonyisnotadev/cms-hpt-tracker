@@ -1,0 +1,56 @@
+{
+  "ccn": "370244",
+  "observed_at": "2026-09-28T22:53:18Z",
+  "cms_provider_record": {
+    "url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=370244&conditions%5B0%5D%5Boperator%5D=%3D",
+    "http_status": 200,
+    "response_bytes": 6628,
+    "response_sha256": "fe262a6646b903da77299524c1e8ddeab4535cf4f9b613204fc80084a904c48b",
+    "retained_response": "../../cms_data/hpt/nationwide-verification/cms-provider-api/370244-2026-09-28.json",
+    "record": {
+      "facility_id": "370244",
+      "facility_name": "COUNCIL OAK COMPREHENSIVE HEALTHCARE",
+      "address": "10109 E 79TH ST",
+      "citytown": "TULSA",
+      "state": "OK",
+      "zip_code": "74133",
+      "hospital_type": "Acute Care Hospitals",
+      "hospital_ownership": "Tribal"
+    },
+    "interpretation": "The exact-CCN CMS record binds CCN, hospital name, Tulsa address/state and Tribal ownership. Ownership alone is not treated as the scope basis."
+  },
+  "tribal_operator_and_facility": {
+    "operator": "Muscogee Nation Department of Health (MCN Health)",
+    "operator_source_url": "https://www.creekhealth.org/community-hospitals/",
+    "operator_observation": "The Nation's current hospital list says MCN Health operates three community hospitals and lists Council Oak Comprehensive Healthcare among them; it notes the hospitals serve tribal citizens and the general public and accept Medicare, Medicaid and private insurance.",
+    "facility_page_url": "https://www.creekhealth.org/council-oak-comprehensive-healthcare/",
+    "facility_page_observation": "The current first-party Council Oak page names the facility, describes inpatient and outpatient hospital services, and gives 10109 E 79th St, Tulsa, OK 74133, matching the exact CMS record and roster. In-app browser rendering exposed a Price Transparency link, but this review did not retrieve or assign a CMS-format MRF.",
+    "official_about_url": "https://www.creekhealth.org/about/",
+    "official_about_observation": "The Nation's Department of Health says the Muscogee Nation entered an Indian Self-Determination compact with IHS in 2002 to provide healthcare for its people; it says the health system is under the Nation's Executive Branch.",
+    "ihs_current_participation_url": "https://www.ihs.gov/selfgovernance/tribes/",
+    "ihs_current_participation_observation": "IHS's current Self-Governance Tribes list identifies Muscogee (Creek) Nation as an Oklahoma City Area participant, fiscal year 2003. IHS defines Title V self-governance as tribal assumption of IHS program funds and control/accountability for health programs the Tribe chooses to assume.",
+    "ihs_program_explanation_url": "https://www.ihs.gov/selfgovernance/aboutus/",
+    "ihs_program_explanation_observation": "IHS describes Title V self-governance compacts as a way for Tribes to assume control over IHS health care programs.",
+    "current_program_funding_url": "https://taggs.hhs.gov/Detail/RecipDetail?arg_EntityId=8RkO4GaOkK11WhS9HQxfWA%3D%3D",
+    "current_program_funding_observation": "HHS TAGGS recipient data lists FY2026 IHS SELF-GOVERNANCE awards to MUSCOGEE (CREEK) NATION, including action dates through July 21, 2026. This is program-level recipient evidence and does not allocate a particular award to Council Oak."
+  },
+  "legal_basis": {
+    "regulation": "45 CFR 180.30(b)(2)",
+    "regulation_url": "https://www.govinfo.gov/content/pkg/CFR-2025-title45-vol2/pdf/CFR-2025-title45-vol2-sec180-40.pdf",
+    "regulation_observation": "CMS deems hospitals operated by an Indian Health Program, as defined in section 4(12) of the Indian Health Care Improvement Act, to be in compliance with Part 180.",
+    "statute": "25 USC 1603(12)(B),(25)",
+    "statute_url": "https://uscode.house.gov/view.xhtml?edition=prelim&num=0&req=granuleid%3AUSC-prelim-title25-section1603",
+    "statute_observation": "An Indian Health Program includes a tribal health program. A tribal health program is a Tribe or tribal organization that operates a health program, service, activity or facility funded in whole or part by IHS through an ISDEAA contract or compact.",
+    "basis_application": "CMS ties exact CCN 370244 to Council Oak at the exact Tulsa campus and records Tribal ownership. The Nation's current operator/facility pages identify MCN Health as the operator of Council Oak; the Nation and IHS document MCN's current self-governance compact/program, and HHS TAGGS shows current IHS Self-Governance awards to the Nation. Together these identify Council Oak as operated by MCN Health within the Nation's IHS self-governance health system; no facility-specific TAGGS allocation is claimed."
+  },
+  "prior_pricing_pointer_evidence": {
+    "proof_file": "reconciliation-creekhealth-okmulgee-full-file-proof-2026-09-19.json",
+    "interpretation": "Retain the existing exact-pointer finding that its machine-readable CSV identifies the separate Okmulgee campus, not Council Oak. The May 2026 first-party XLSX remains only a format/file lead and is not promoted to a current CSV/JSON MRF. This scope classification neither erases that provenance nor asserts MRF availability, absence, linkage or quality."
+  },
+  "disposition": "scope-exempt-indian-health-program",
+  "disposition_change_reason": "New exact-CCN CMS ownership/address evidence plus current first-party evidence identifying Council Oak as operated by MCN Health, independently corroborated by current IHS self-governance participation and current HHS IHS Self-Governance awards, supports the specific 45 CFR 180.30(b)(2) Indian Health Program scope category. The basis is documented program operation, not tribal name or ownership alone.",
+  "interpretation": "This is a scope classification, not a pricing-data recovery or MRF quality/compliance claim. Preserve the prior sibling-file exclusion and XLSX lead as historical source evidence. No file was imported or assigned. The 891-cohort unresolved count effect is -1.",
+  "mrf_recovered": false,
+  "count_effect": -1,
+  "next_action": "Retain the scope classification and prior pointer/file exclusion history. Revisit if CMS CCN-to-facility identity, MCN Health operation, the Nation's IHS compact/self-governance program, or the legal scope changes. Do not infer whether a current CMS-format MRF exists. Assess MCN's other exact-CCN hospitals independently; do not bulk-apply this conclusion by ownership or vendor."
+}

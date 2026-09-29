@@ -1,0 +1,15 @@
+{
+  "ccn": "300023",
+  "observed_at": "2026-09-21T19:40:00Z",
+  "official_domain": "exeterhospital.org",
+  "official_site": "https://exeterhospital.org/patients-visitors/billing-financial-services/price-transparency",
+  "candidate_file_url": "https://exeterhospital.org/222674014_exeter-hospital-standardcharges.json",
+  "candidate_file_format": "JSON",
+  "retrieval_method": "official pricing-page inspection and bounded direct-file probe",
+  "transport_result": "The official Exeter Hospital price-transparency page links Hospital Charge Data and the direct JSON route is facility-specific; the bounded fetch reported content too large before yielding bytes, and the interactive browser returned ERR_CONNECTION_CLOSED. No file hash, declared date, CMS template or usable rows were asserted.",
+  "browser_status": "ERR_CONNECTION_CLOSED",
+  "facility_identity_observation": "The official page identifies Exeter Hospital and lists 5 Alumni Drive, Exeter, New Hampshire 03833; the candidate filename carries Exeter Hospital. Exact file metadata is not yet independently verified.",
+  "disposition": "official-page-file-linkage-byte-retrieval-pending",
+  "interpretation": "This is a first-party page-linked file observation, not a verified MRF claim. The JSON is not promoted until bounded bytes and declared identity/metadata are independently checked.",
+  "next_action": "Retrieve the exact JSON through a permitted streaming or download-capable route, inspect its identity/date/version and usable structure, and separately retry the root cms-hpt.txt pointer for the current Exeter domain."
+}

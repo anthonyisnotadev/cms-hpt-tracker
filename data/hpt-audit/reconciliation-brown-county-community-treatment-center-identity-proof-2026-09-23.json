@@ -1,0 +1,17 @@
+{
+  "ccn": "524014",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://www.browncountywi.gov/",
+  "official_identity_sources": [
+    "https://www.browncountywi.gov/departments/community-treatment-center/general-information/about/",
+    "https://www.browncountywi.gov/contacts/community-treatment-center/",
+    "https://www.bchumanservices.com/about/current-standard-charges/",
+    "https://turquoise.health/providers/brown-cnty-community-treatment-ctr/information"
+  ],
+  "official_identity": "Brown County Community Treatment Center is the county-operated, state-licensed inpatient psychiatric hospital associated with CCN 524014. Brown County identifies its Nicolet Psychiatric Center hospital unit at 3150 Gershwin Drive, Green Bay, WI 54311; provider records identify NPI 1801908975.",
+  "browser_observation": "Browser automation opened the official Brown County Community Treatment Center pages and the Health & Human Services Current Standard Charges page. The county page identifies a 2026 Standard Charges document, but the exposed resource is a PDF/rate document rather than a facility-specific CMS CSV or JSON MRF.",
+  "pricing_observation": "No usable facility-specific CMS pointer or machine-readable MRF bytes were retrieved. The official page-linked 2026 rates document was retained as a pricing lead only; no third-party file was promoted.",
+  "disposition": "current-operator-identity-confirmed-pricing-route-not-exposed",
+  "interpretation": "Current operator identity, facility address and hospital role are supported by official county sources; the available 2026 document does not establish a CMS MRF, so pricing remains unresolved. This is not a compliance determination.",
+  "next_action": "Retry the Brown County/Nicolet Psychiatric Center standard-charge route through a materially different permitted browser/download route or obtain a publisher-issued current CMS CSV/JSON/ZIP; require exact Green Bay identity and parsed CMS metadata before promotion."
+}

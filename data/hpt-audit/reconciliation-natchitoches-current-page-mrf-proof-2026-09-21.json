@@ -1,0 +1,17 @@
+{
+  "ccn": "190007",
+  "observed_at": "2026-09-21T20:30:00Z",
+  "official_pricing_page": "https://www.nrmchospital.org/patients-visitors/price-transparency/",
+  "official_page_status": 200,
+  "official_page_observation": "The current Natchitoches Regional Medical Center price-transparency page lists an NRMC Cost of Services File and a separate Louisiana Extended Care file.",
+  "candidate_file_url": "https://mrfs.hyvehealthcare.com/NatchitochesRegionalMedical/726013916_natchitoches-parish-hospital-service-district_standardcharges.json",
+  "candidate_file_observation": "The NRMC Cost of Services File target was reached through the official page; web retrieval returned cache miss and no file bytes or metadata.",
+  "roster_identity": "NATCHITOCHES REGIONAL MEDICAL CENTER",
+  "roster_address": "501 Keyser Avenue, Natchitoches, LA 71457",
+  "sibling_excluded_targets": [
+    "https://mrfs.hyvehealthcare.com/NatchitochesRegionalMedical/726013916_louisiana-extended-care_standardcharges.json"
+  ],
+  "disposition": "official-page-current-facility-json-linkage-file-bytes-unresolved",
+  "interpretation": "New facility-specific official-page/exact-file linkage; the sibling Louisiana Extended Care file is excluded from CCN 190007, and no current verification claim is promoted without bytes and metadata.",
+  "next_action": "Retrieve the NRMC JSON through a permitted download-capable route; verify bounded bytes, facility/address/Louisiana state, declared date, CMS version and parsed usability."
+}

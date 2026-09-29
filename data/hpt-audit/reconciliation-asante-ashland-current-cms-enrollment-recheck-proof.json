@@ -1,0 +1,20 @@
+{
+  "ccn": "380005",
+  "query_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=380005&size=100",
+  "observed_at": "2026-09-19T00:30:00Z",
+  "rows": 1,
+  "record": {
+    "enrollment_id": "O20170710003004",
+    "enrollment_state": "OR",
+    "provider_type": "PART A PROVIDER - HOSPITAL",
+    "npi": "1730628827",
+    "ccn": "380005",
+    "organization_name": "ASANTE ASHLAND COMMUNITY HOSPITAL LLC",
+    "address": "280 MAPLE ST, ASHLAND, OR 975201552",
+    "practice_location_type": "OTHER HOSPITAL PRACTICE LOCATION"
+  },
+  "disposition": "current-cms-enrollment-row-reconfirms-identity-without-effective-date",
+  "official_transition_source": "https://impact.asante.org/community-connections-asante-presents-at-ashland-rotary-meeting/",
+  "official_transition_observation": "Asante's current community update states that the Ashland hospital license was closed and the campus transitioned to a Rogue Regional satellite effective May 22, 2026, while emergency, imaging and other outpatient services remain open.",
+  "note": "The current CMS data API still returns the exact CCN 380005 Part A hospital row at 280 Maple Street. The endpoint exposes no effective termination/start date in this response, so it does not resolve the state-license transition's Medicare scope or prove current enrollment after the transition; the official Asante transition statement is retained separately."
+}

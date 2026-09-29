@@ -1,0 +1,24 @@
+{
+  "ccn": "190015",
+  "observed_at": "2026-09-19T00:50:34Z",
+  "hospital_name": "NORTH OAKS MEDICAL CENTER",
+  "official_domain": "northoaks.org",
+  "official_pricing_page": "https://www.northoaks.org/price-transparency/",
+  "pricing_page_status": 200,
+  "page_linked_mrf_url": "https://www.northoaks.org/documents/2026/451834769_north-oaks-medical-center_standardcharges.csv",
+  "page_linked_mrf_status": 403,
+  "page_linked_mrf_result": "Cloudflare challenge",
+  "latest_browser_recheck": {
+    "observed_at": "2026-09-19T05:10:00Z",
+    "url": "https://www.northoaks.org/documents/2026/451834769_north-oaks-medical-center_standardcharges.csv",
+    "result": "ERR_BLOCKED_BY_CLIENT before CSV bytes; no content-bearing response observed.",
+    "same_file_denial_preserved": true
+  },
+  "pointer_url": "https://www.northoaks.org/cms-hpt.txt",
+  "pointer_result": "not retrieved in this pass",
+  "declared_page_facility": "North Oaks Medical Center",
+  "declared_address_on_page": "15790 Paul Vega, MD, Drive, Hammond, LA 70403",
+  "declared_state": "LA",
+  "disposition": "official-pricing-page-linked-mrf-client-blocked-unresolved",
+  "next_action": "Recover the exact page-linked CSV through a permitted browser/download route, then verify complete bytes, facility identity/address/state, declared date/version and rate usability; separately retry the root pointer."
+}

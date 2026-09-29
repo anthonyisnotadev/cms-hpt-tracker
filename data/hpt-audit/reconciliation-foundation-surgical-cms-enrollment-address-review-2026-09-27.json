@@ -1,0 +1,50 @@
+{
+  "ccn": "670054",
+  "observed_at": "2026-09-27T06:05:54Z",
+  "cms_hospital_enrollments_dataset_id": "f6f6505c-e8b0-4d57-b258-e2b94133aaf2",
+  "cms_dataset_catalog_url": "https://data.cms.gov/data.json",
+  "cms_enrollment_query_url": "https://data.cms.gov/data-api/v1/dataset/f6f6505c-e8b0-4d57-b258-e2b94133aaf2/data?filter%5BCCN%5D=670054&size=10",
+  "cms_enrollment_query_status": 200,
+  "cms_enrollment_response_sha256": "e8c2068564a0e1a0afc04b68bd5bbc42aefbd6deae7e5d7b735ccbb6b01c8bc2",
+  "cms_enrollment_row": {
+    "enrollment_id": "O20070417000600",
+    "ccn": "670054",
+    "provider_type": "PART A PROVIDER – HOSPITAL",
+    "legal_business_name": "FOUNDATION BARIATRIC HOSPITAL OF SAN ANTONIO LLC",
+    "doing_business_as": "FOUNDATION SURGICAL HOSPITAL OF SAN ANTONIO",
+    "npi": "1932284411",
+    "practice_location_type": "OTHER HOSPITAL PRACTICE LOCATION",
+    "address": "9522 HUEBNER RD, SAN ANTONIO, TX 78240-1548"
+  },
+  "cms_additional_addresses_url": "https://data.cms.gov/sites/default/files/2026-08/Hospital_Additional_Addresses_2026.07.31.csv",
+  "cms_additional_addresses_status": 200,
+  "cms_additional_addresses_bytes": 2097942,
+  "cms_additional_addresses_sha256": "4b5bceb05afd93bf52759086ceb8a86301f20a3fbcf88882dd13510fd4759856",
+  "cms_additional_addresses_enrollment_id_matches": 0,
+  "cms_additional_addresses_interpretation": "The August 2026 supplemental file contained no row for this enrollment ID. This does not establish that either address is wrong or resolve the first-party page discrepancy.",
+  "cms_guidance_url": "https://data.cms.gov/sites/default/files/2024-10/Hospital_Data_Guidance.pdf",
+  "cms_guidance_interpretation": "CMS guidance directs users to join the Additional Addresses file to the enrollment record by enrollment ID when reviewing multiple practice locations.",
+  "first_party_sources": [
+    {
+      "url": "https://fshsanantonio.com/",
+      "observation": "Current first-party home/location detail displays 5330 N Loop 1604 W, San Antonio, TX 78249."
+    },
+    {
+      "url": "https://fshsanantonio.com/Contact-Us",
+      "observation": "Current first-party contact page displays 5330 N Loop 1604 W."
+    },
+    {
+      "url": "https://fshsanantonio.com/Maps-Directions-Parking",
+      "observation": "First-party directions page describes the hospital building and driveway at 9522 Huebner Rd, San Antonio, TX 78240."
+    },
+    {
+      "url": "https://fshsanantonio.com/Hospital-Pricing-Information",
+      "observation": "Pricing page previously displayed 5330 N Loop 1604 W and links the facility-named JSON. A 2026-09-26 request returned a Cloudflare challenge; retain the prior content-bearing observation rather than infer absence."
+    }
+  ],
+  "retained_full_mrf_proof_file": "reconciliation-foundation-surgical-full-file-recheck-proof-2026-09-25.json",
+  "retained_full_mrf_sha256": "1CFD045881733B5127C102E63426C117B5BE54DF4D3F374F77EDE7A7A94B38A2",
+  "disposition": "address-classification-conflict-unresolved-no-promotion",
+  "interpretation": "New exact-CCN CMS enrollment evidence classifies 9522 Huebner as an other hospital practice location, not the main location. CMS supplemental addresses has no matching row. First-party pages currently disagree: home/contact/pricing show 5330 N Loop while directions identifies the hospital building at 9522 Huebner. Together these sources sharpen, but do not resolve, the address and campus interpretation. The complete page-linked JSON remains retained; no address reassignment, sibling-file assignment, or promotion is supported.",
+  "next_action": "Request publisher clarification of the current main/practice location and pricing-file hospital_address; retain the discrepancy and full-file provenance until reconciled. Do not assign the separate South Texas Specialty Hospital CSV."
+}

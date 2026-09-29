@@ -1,0 +1,76 @@
+{
+  "audit_id": "reconciliation-bullock-historical-archive-index-check-2026-09-28",
+  "observed_at": "2026-09-28T01:53:01Z",
+  "ccn": "010110",
+  "facility": "BULLOCK COUNTY HOSPITAL",
+  "historical_scope": "Acute-care period ending 2024-04-30; do not assign the successor REH pointer or file to this CCN.",
+  "search_target": "Exact historical root URL https://bullockcountyhospital.com/cms-hpt.txt only; this did not query every historic page or MRF URL on the domain.",
+  "internet_archive_cdx": {
+    "request_url": "https://web.archive.org/cdx/search/cdx?url=bullockcountyhospital.com%2Fcms-hpt.txt&output=json&filter=statuscode%3A200&collapse=urlkey",
+    "http_status": 429,
+    "result": "Rate limited; no capture result obtained."
+  },
+  "common_crawl_index_queries": [
+    {
+      "collection": "CC-MAIN-2024-26",
+      "request_url": "https://index.commoncrawl.org/CC-MAIN-2024-26-index?url=bullockcountyhospital.com%2Fcms-hpt.txt&output=json",
+      "http_status": 404,
+      "result": "No Captures found for exact root URL."
+    },
+    {
+      "collection": "CC-MAIN-2024-18",
+      "request_url": "https://index.commoncrawl.org/CC-MAIN-2024-18-index?url=bullockcountyhospital.com%2Fcms-hpt.txt&output=json",
+      "http_status": 404,
+      "result": "No Captures found for exact root URL."
+    },
+    {
+      "collection": "CC-MAIN-2024-14",
+      "request_url": "https://index.commoncrawl.org/CC-MAIN-2024-14-index?url=bullockcountyhospital.com%2Fcms-hpt.txt&output=json",
+      "http_status": 404,
+      "result": "No index found for collection."
+    },
+    {
+      "collection": "CC-MAIN-2024-10",
+      "request_url": "https://index.commoncrawl.org/CC-MAIN-2024-10-index?url=bullockcountyhospital.com%2Fcms-hpt.txt&output=json",
+      "http_status": 404,
+      "result": "No Captures found for exact root URL."
+    },
+    {
+      "collection": "CC-MAIN-2023-50",
+      "request_url": "https://index.commoncrawl.org/CC-MAIN-2023-50-index?url=bullockcountyhospital.com%2Fcms-hpt.txt&output=json",
+      "http_status": 404,
+      "result": "No Captures found for exact root URL."
+    }
+  ],
+  "interpretation": "This closes only the queried exact-URL/index avenue. A missing capture for the exact root pointer is not evidence that a historical pointer or MRF did not exist; the Internet Archive query was rate-limited, and Common Crawl was queried for only the listed collections and exact URL.",
+  "disposition": "historical-acute-care-mrf-unresolved",
+  "unresolved_count_change": 0,
+  "follow_up_route_checks_2026_09_28_1539_utc": {
+    "observed_at": "2026-09-28T15:39:27Z",
+    "internet_archive_availability_api": {
+      "request_url": "https://archive.org/wayback/available?url=www.bullockcountyhospital.com%2Fhospital-charges&timestamp=20240430",
+      "result": "Node fetch failed before an HTTP response with UND_ERR_CONNECT_TIMEOUT to archive.org:443; no capture result obtained."
+    },
+    "internet_archive_cdx_browser_attempt": {
+      "request_url": "https://web.archive.org/cdx/search/cdx?url=*.bullockcountyhospital.com%2F*&output=json&filter=statuscode%3A200&filter=timestamp%3A202[3-4]&collapse=urlkey&fl=timestamp,original,statuscode,mimetype,digest,length",
+      "result": "In-app browser returned net::ERR_BLOCKED_BY_CLIENT; no CDX content obtained and no access barrier was bypassed."
+    },
+    "internet_archive_cdx_web_reader_attempt": {
+      "result": "Web reader reported the CDX URL was not accessible via that tool; no archive content obtained."
+    },
+    "exact_filename_search": {
+      "queries": [
+        "\\\"466000400_redfield-community-memorial_standardcharges.csv\\\"",
+        "\\\"redfield-community-memorial_standardcharges.csv\\\"",
+        "\\\"466000400\\\" \\\"Redfield\\\" \\\"standardcharges\\\""
+      ],
+      "result": "No search results; no independently served exact-filename copy located."
+    },
+    "interpretation": "These are bounded route/search failures, not evidence that an acute-care historical CMS MRF never existed. No historical CMS pointer or MRF bytes were obtained; the pre-conversion page/workbook and successor REH evidence remain separately scoped.",
+    "disposition_changed": false,
+    "unresolved_count_change": 0
+  },
+  "disposition": "historical-acute-care-mrf-unresolved",
+  "unresolved_count_change": 0,
+  "next_action": "Keep current REH evidence excluded from CCN 010110; do not repeat the current pointer/page-label or these exact archive/API/browser/search routes absent a material access/source change. Seek publisher-confirmed historical CMS-format MRF/pointer evidence or a genuinely new dated archive source."
+}

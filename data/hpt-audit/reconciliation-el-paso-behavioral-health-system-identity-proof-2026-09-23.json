@@ -1,0 +1,15 @@
+{
+  "ccn": "454109",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://elpasobh.com/",
+  "official_identity_sources": [
+    "https://jobs.uhs.com/el-paso-behavioral-health-system",
+    "https://turquoise.health/providers/ubh-el-paso-hospital/information"
+  ],
+  "official_identity": "Provider records identify El Paso Behavioral Health System as a UHS-affiliated psychiatric hospital at 1900 Denver Avenue, El Paso, TX 79902, CCN 454109 and NPI 1386779304.",
+  "browser_observation": "Browser automation reached the first-party El Paso Behavioral Health domain but showed a Cloudflare security-verification interstitial. Direct requests to cms-hpt.txt and likely pricing paths returned HTTP 403.",
+  "pricing_observation": "No usable facility-specific CMS pointer or MRF bytes were retrieved. This is an access observation, not evidence that a file is absent, that the facility is closed, or that it is exempt.",
+  "disposition": "current-operator-identity-confirmed-pricing-route-client-denied",
+  "interpretation": "This replaces the stale domain-unknown label with a supported first-party domain and exact El Paso identity while preserving the unresolved pricing route.",
+  "next_action": "Retry the first-party CMS pointer and pricing route through a materially different permitted browser/download route; require bounded bytes, El Paso Behavioral Health identity, Texas metadata, date/version and parsed usability before promotion."
+}

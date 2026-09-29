@@ -1,0 +1,47 @@
+{
+  "ccn": "090003",
+  "observed_at": "2026-09-27T23:41:38Z",
+  "source_route": {
+    "discovery_page": "https://getpricecheck.com/cost/washington-dc/office-visit-new/howard/",
+    "link_text": "source file",
+    "linked_url": "https://huhealthcare.com/app/files/public/2468f97e-c2b9-47d0-bc38-6237cb34b215/87-3454381_HowardUniversityHospital_StandardCharges.csv",
+    "browser_download_url": "https://www.huhealthcare.com/app/files/public/2468f97e-c2b9-47d0-bc38-6237cb34b215/87-3454381_HowardUniversityHospital_StandardCharges.csv",
+    "retrieval": "The third-party page's direct link was opened in the browser; the browser downloaded the complete CSV. The prior bounded request to the non-www URL returned 403 HTML."
+  },
+  "file_integrity": {
+    "complete_file_downloaded": true,
+    "bytes": 18190345,
+    "sha256": "7c68cb46b442363fdb3fb9928b51fac4dce8998ae03b701cd3347483c16471fe",
+    "csv_records_including_headers": 109785,
+    "pricing_rows": 109782,
+    "pricing_header_columns": 22,
+    "data_rows_with_wrong_column_count": 0,
+    "pricing_rows_with_at_least_one_negotiated_dollar_or_min_max_value": 109782,
+    "pricing_rows_with_gross_and_discounted_cash_values": 51008,
+    "unique_descriptions": 13843,
+    "unique_code_type_pairs": 12614
+  },
+  "observed_metadata": {
+    "hospital_name": "Howard University Hospital Corp",
+    "location_name": "Howard University Hospital",
+    "address": "2041 Georgia Avenue NW, Washington, DC 20060",
+    "last_updated_on": "12/31/2025",
+    "template_version": "3.0.0",
+    "license_header": "license_number|MD",
+    "license_number_present": true,
+    "type_2_npi": "1487740957",
+    "attestation_present_and_true": true,
+    "attester_name_recorded": false,
+    "maryland_rate_setting_narrative_present": true
+  },
+  "validation": {
+    "csv_parsed_with_repository_rfc4180_parser": true,
+    "all_pricing_rows_match_22_column_header": true,
+    "complete_file_integrity_verified_by_sha256": true,
+    "facility_identity_conflict": "The declared address is in Washington, DC, but the CMS license header declares MD and the file narrative describes Maryland HSCRC rate setting. This conflicts with attribution to the DC facility and is not treated as a minor metadata typo.",
+    "official_cms_pointer_mapping_obtained": false,
+    "publisher_scope_confirmation_obtained": false
+  },
+  "disposition_effect": "New complete publisher-hosted CSV bytes and structural/price-row validation are recorded, but no CCN attribution or tracker verification promotion: keep 090003 pointer-not-retrieved pending official pointer or publisher scope confirmation and resolution of the MD/DC conflict. Do not import prices into the tracker.",
+  "next_action": "Seek an official CMS pointer mapping or publisher confirmation that this exact file belongs to the DC hospital and explanation/correction of the MD license and HSCRC narrative; do not repeat unchanged blocked pointer/file requests."
+}

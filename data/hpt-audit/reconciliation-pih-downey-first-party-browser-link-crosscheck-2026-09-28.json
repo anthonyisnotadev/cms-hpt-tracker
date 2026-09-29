@@ -1,0 +1,42 @@
+{
+  "ccn": "050393",
+  "facility": "PIH Health Downey Hospital",
+  "observed_at": "2026-09-28T08:34:10Z",
+  "purpose": "Reconcile the earlier third-party file lead against the current first-party PIH pricing page using normal browser navigation; separately record bounded file/pointer access results.",
+  "official_pricing_page": {
+    "url": "https://www.pihhealth.org/patients-visitors/billing-financial-assistance/cms-hospital-pricing/",
+    "browser": "Codex in-app browser",
+    "status": "rendered",
+    "title": "Price Estimation Tools | PIH Health",
+    "observation": "The page identifies a PIH Health Downey Hospital section and lists three separate files: Charge Description Master, DRG Average Billed, and Hospital Payer Payments. The Hospital Payer Payments link is the exact previously discovered file URL. The page introduces these links as the complete, computer-readable list of charges."
+  },
+  "official_file_link": {
+    "label": "Hospital Payer Payments",
+    "url": "https://www.pihhealth.org/app/files/public/fd7abbe3-6682-49bd-a123-56540116af71/951903935_pih-health-downey-hospital_standardcharges.csv",
+    "first_party_link_confirmed": true,
+    "source": "Current PIH Health pricing page rendered in the in-app browser"
+  },
+  "bounded_direct_file_request": {
+    "observed_at": "2026-09-28T08:34:10Z",
+    "method": "Node fetch with Range: bytes=0-65535; response body canceled unless HTTP 206",
+    "http_status": 403,
+    "content_type": "text/html",
+    "content_length": 535,
+    "content_range": null,
+    "response_sha256": "3e2c89b56f2deec72c4d4512ff70648c95bca667d0ef58f1e3b91e9facf36a17",
+    "result": "Access-denied HTML; no CSV bytes or header metadata retrieved. Response hash matches the earlier 2026-09-19 denial."
+  },
+  "root_pointer_request": {
+    "url": "https://pihhealth.org/cms-hpt.txt",
+    "observed_at": "2026-09-28T08:34:10Z",
+    "result": "Node fetch failed before an HTTP response; this is a client transport observation only. No browser or web-reader pointer bytes were retrieved in this check."
+  },
+  "identity_context": {
+    "official_facility_address": "11500 Brookshire Avenue, Downey, CA 90241",
+    "facility_address_source": "reconciliation-pih-downey-page-file-access-proof-2026-09-19.json",
+    "note": "The current page's named section and link establish first-party page-to-file attribution, but no CSV header, file identity fields, date/version, or usable data rows were observed."
+  },
+  "finding": "New provenance gain: PIH's current first-party browser-rendered pricing page independently confirms that the prior third-party-discovered exact URL is PIH Health Downey Hospital's Hospital Payer Payments CSV. File access remains blocked to the bounded direct client, and the root pointer remains unverified. This is not MRF-byte, metadata, usability, pointer-linkage, or resolution evidence.",
+  "disposition": "first-party-page-file-link-confirmed-file-bytes-and-pointer-unresolved",
+  "next_action": "Obtain an ordinary permitted content-bearing response or publisher-provided copy for this exact page-linked CSV and a structured root pointer. Require bounded bytes plus facility name/address/state, CMS version/date, attestation, and usable rows before changing the unresolved disposition. Do not repeat the same direct request without a source or access change, and do not bypass the access denial."
+}

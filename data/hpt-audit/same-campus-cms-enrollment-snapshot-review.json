@@ -1,0 +1,27 @@
+{
+  "reviewed_at": "2026-09-17T01:23:17.000Z",
+  "source": "CMS Hospital Enrollments public Data API",
+  "dataset_page": "https://data.cms.gov/provider-characteristics/hospitals-and-other-facilities/hospital-enrollments",
+  "dataset_version_id": "3b5eae55-981c-4358-b3f8-7032d053d893",
+  "query_template": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D={CCN}&size=10",
+  "method": "Queried each exact CCN sequentially and parsed the returned JSON; retried transport failures. A zero-row response is not evidence of termination or a transition effective date.",
+  "records": [
+    { "ccn": "010062", "rows": 0 },
+    { "ccn": "011309", "rows": 0 },
+    { "ccn": "040153", "rows": 0 },
+    { "ccn": "041335", "rows": 0 },
+    { "ccn": "330166", "rows": 0 },
+    { "ccn": "330801", "rows": 1, "provider_type_text": "PART A PROVIDER - RURAL EMERGENCY HOSPITAL (REH)", "organization_name": "WESTFIELD MEMORIAL HOSPITAL INC", "address_line_1": "189 E MAIN ST", "enrollment_id": "O20250717002067" },
+    { "ccn": "010110", "rows": 0 },
+    { "ccn": "010779", "rows": 0 },
+    { "ccn": "010125", "rows": 0 },
+    { "ccn": "011311", "rows": 0 },
+    { "ccn": "250017", "rows": 0 },
+    { "ccn": "250785", "rows": 1, "provider_type_text": "PART A PROVIDER - RURAL EMERGENCY HOSPITAL (REH)", "organization_name": "PROGRESSIVE HEALTH OF HOUSTON LLC", "address_line_1": "1002 E MADISON ST", "enrollment_id": "O20240610003520" },
+    { "ccn": "250043", "rows": 0 },
+    { "ccn": "251340", "rows": 1, "provider_type_text": "PART A PROVIDER - CRITICAL ACCESS HOSPITAL", "organization_name": "NESHOBA COUNTY GENERAL HOSPITAL", "address_line_1": "1001 HOLLAND AVE", "enrollment_id": "O20250609001118" },
+    { "ccn": "370245", "rows": 0 },
+    { "ccn": "370784", "rows": 1, "provider_type_text": "PART A PROVIDER - RURAL EMERGENCY HOSPITAL (REH)", "organization_name": "CLINTON HOSPITAL AUTHORITY", "address_line_1": "100 NORTH 30TH STREET", "enrollment_id": "O20250908003979" }
+  ],
+  "interpretation": "Four newer CCNs have exact CMS enrollment rows in this dataset version. Their paired older CCNs returned no rows, but the dataset does not establish the older CCNs' historical status, any termination dates, or the effective date of a CCN transition. Neither a CMS enrollment row nor a same-campus address proves a particular MRF covers the CCN."
+}

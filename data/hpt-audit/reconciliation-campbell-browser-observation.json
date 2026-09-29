@@ -1,0 +1,21 @@
+{
+  "ccn": "530002",
+  "observed_at": "2026-09-17T00:00:00Z",
+  "official_page": "https://www.cchwyo.org/resources/as-our-patient/paying-for-care/",
+  "page_observation": "The first-party page visibly labels a machine-readable file updated December 8, 2025 and exposes the exact pointer target with location-name and mrf-url metadata.",
+  "official_identity": "The same page identifies Campbell County Health; its current site navigation/contact evidence identifies the main campus at 501 South Burma Avenue, Gillette WY 82716.",
+  "exact_file_url": "https://www.cchwyo.org/documents/830234097-1487638417_campbell-county-memorial-hospital_standardcharges.1).csv",
+  "browser_result": "ERR_BLOCKED_BY_CLIENT",
+  "interpretation": "The page and exact target are current first-party evidence, but browser transport did not expose file bytes. This does not establish file absence, invalidity, metadata, or compliance.",
+  "disposition": "unresolved-current-pointer-file-access",
+  "next_action": "Use a permitted download-capable route after an access or publisher change, then retain bounded bytes and independently verify header identity, address, state, date and template version.",
+  "latest_recheck": {
+    "observed_at": "2026-09-17T22:10:00Z",
+    "current_page_url": "https://www.cchwyo.org/resources/as-our-patient/paying-for-care/",
+    "current_page_search_observation": "The current page still labels Campbell County Health Standard Charges as a machine-readable file updated December 8, 2025 and exposes the exact CSV URL.",
+    "direct_file_result": "HTTP 403 Cloudflare challenge; no bytes exposed",
+    "browser_file_result": "ERR_BLOCKED_BY_CLIENT; no bytes exposed",
+    "root_pointer_result": "HTTP 403 Cloudflare challenge; no structured pointer bytes exposed",
+    "result": "transport-recheck-no-file-identity-change"
+  }
+}

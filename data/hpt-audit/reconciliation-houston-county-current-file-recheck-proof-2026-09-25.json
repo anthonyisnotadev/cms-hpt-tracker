@@ -1,0 +1,28 @@
+{
+  "ccn": "441322",
+  "observed_at": "2026-09-25T05:12:00Z",
+  "official_pricing_page": "https://shamrock.health/billing/",
+  "official_identity": "Houston County Community Hospital, 5001 East Main Street, Erin, TN 37061",
+  "page_mrf_url": "https://shamrock.health/downloads/862345211_Houston-County-Community-Hospital_standardcharges.csv",
+  "browser_observation": "The current first-party billing page rendered in the permitted browser, labels the linked download as the standard-charges CSV, identifies Houston County Community Hospital and displays the Erin, Tennessee address.",
+  "retrieval": {
+    "status": 200,
+    "content_type": "text/csv",
+    "bytes": 292942,
+    "sha256": "c422f4efd91e3626ccef4137785964539725d85476ab9c5f1fc9f712ea4bf374",
+    "header": {
+      "hospital_name": "Houston County Community Hospital",
+      "last_updated_on": "2026-06-30",
+      "version": "3.0.0",
+      "location_name": "Houston County Community Hopsital",
+      "hospital_address": "200 West Church St, Lexington, TN 38351",
+      "license_state": "TN",
+      "license_value": "441322",
+      "npi": "1811566540",
+      "attestation": true
+    }
+  },
+  "disposition": "current-page-file-recheck-address-conflict-retained",
+  "interpretation": "The current first-party page and complete CSV remain available, but the page identity/address (Erin) conflicts with the file's declared Lexington address and misspelled location name. This recheck confirms the existing conflict; it is not a clean MRF promotion or a compliance conclusion.",
+  "next_action": "Obtain a corrected publisher file or authoritative facility-specific explanation for the Lexington address and misspelled location name before any promotion; keep the complete-file conflict visible."
+}

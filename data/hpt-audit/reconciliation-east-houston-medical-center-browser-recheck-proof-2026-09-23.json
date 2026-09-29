@@ -1,0 +1,19 @@
+{
+  "ccn": "670320",
+  "observed_at": "2026-09-23T10:20:00Z",
+  "official_site": "https://ehmct.com/",
+  "official_pricing_page": "https://ehmct.com/",
+  "official_identity": "East Houston Medical Center, 15149 Wallisville Road, Houston, TX 77049; the current official homepage title, schema and contact block agree with the CMS roster.",
+  "browser_observation": "The current first-party homepage was retrievable with a normal no-user-agent request and identifies East Houston Medical Center at the roster address. Browser navigation and user-agent-shaped requests encountered a 406 challenge, while the official pricing candidate routes were 404. No first-party pricing link was exposed in the current homepage navigation.",
+  "pointer_urls": [
+    "https://ehmct.com/cms-hpt.txt",
+    "https://ehmct.com/.well-known/cms-hpt.txt"
+  ],
+  "pointer_status": "The official root-pointer variants returned HTTP 406 for browser-shaped requests and no plain-text pointer was recovered; the www variants returned 404 HTML. These are access/discovery observations, not pointer absence or compliance findings.",
+  "mrf_observation": "A third-party index linked a candidate CSV at hospitalpricetransparencyfiles.com, but the file header identifies AD Hospital East LLC / East Houston Hospital and Clinics at 12950 East Freeway, Houston TX 77015, NPI 1669732178, not this CCN's 15149 Wallisville Road facility. The 1,909,760-byte candidate was therefore explicitly excluded rather than imported.",
+  "candidate_file": {"url": "https://hospitalpricetransparencyfiles.com/ad-hospital-east-llc/475587037_AD-Hospital-East-LLC_standardcharges.csv", "http_status": 200, "bytes": 1909760, "sha256": "b3760c102786bd7236f02b7c888ae2269284ca60d6441465201ca8302b051dff", "declared_name": "AD Hospital East LLC", "declared_location": "East Houston Hospital and Clinics", "declared_address": "12950 East FWY STE 100, Houston, TX 77015-2801", "declared_npi": "1669732178", "declared_date": "2026-07-20", "version": "3.0.0"},
+  "cms_record": {"ccn": "670320", "name": "EAST HOUSTON MEDICAL CENTER", "address": "15149 WALLISVILLE ROAD", "city": "HOUSTON", "state": "TX", "zip": "77049"},
+  "disposition": "third-party-candidate-different-facility-excluded",
+  "interpretation": "The official site identity is corroborated, but the only recoverable third-party candidate is a different East Houston facility. Keep CCN 670320 unresolved and preserve the exclusion to prevent cross-facility misattribution.",
+  "next_action": "Obtain a first-party East Houston Medical Center MRF URL or a pointer that names the Wallisville Road facility; verify exact identity, declared date/version and usable bytes before promotion."
+}

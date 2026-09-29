@@ -1,0 +1,17 @@
+{
+  "ccn": "254010",
+  "observed_at": "2026-09-21T14:15:00Z",
+  "official_domain": "msh.state.ms.us",
+  "retrieval_method": "bounded HTTPS requests plus in-app browser",
+  "checked_urls": [
+    "https://msh.state.ms.us/cms-hpt.txt",
+    "https://www.msh.state.ms.us/cms-hpt.txt",
+    "https://msh.state.ms.us/price-transparency",
+    "https://msh.state.ms.us/pricing",
+    "https://msh.state.ms.us/"
+  ],
+  "transport_result": "Bounded requests failed TLS negotiation; the in-app browser reported net::ERR_CERT_COMMON_NAME_INVALID for the root cms-hpt.txt URL. No pointer or CMS CSV/JSON bytes were recovered.",
+  "disposition": "official-domain-tls-certificate-error-pointer-discovery-incomplete",
+  "interpretation": "This is a transport observation for Mississippi State Hospital at Whitfield only. A certificate-name error does not establish file absence, closure, or compliance status.",
+  "next_action": "Retry the exact first-party domain through an authorized route after certificate/site repair or obtain a publisher-enabled copy; require exact facility identity and usable CMS CSV/JSON bytes before promotion."
+}

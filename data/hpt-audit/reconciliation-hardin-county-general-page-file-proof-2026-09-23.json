@@ -1,0 +1,14 @@
+{
+  "ccn":"141328","observed_at":"2026-09-21T23:22:00Z",
+  "official_site":"https://ilhcgh.org/",
+  "official_pricing_page":"https://ilhcgh.org/price-transparency",
+  "official_page_observation":"The first-party Hardin County General Hospital site loads its Price Transparency page and links a facility-named CSV machine-readable file.",
+  "pointer_url":"https://ilhcgh.org/cms-hpt.txt","pointer_status":404,"pointer_sha256":"57b8c5ccefea1af730843ed6c934b441de63718fd3b9c1e3ea4a88a0de16998d",
+  "mrf_url":"https://img1.wsimg.com/blobby/go/236f7919-963e-4efb-96f3-f57d384f3683/downloads/f0401a94-83cc-46d3-999a-ddefddfd638b/HCGH%20Price%20Transparency%202026.csv?ver=1789150263619",
+  "mrf_status":200,"mrf_response_bytes":131072,"mrf_content_range":"full-response-sampled-bytes-0-131071/10074586","mrf_response_sha256":"6defdbbc9df9f6feadcc319d546582a7467a09d9a1e9a8f1fe1db669bb436951","mrf_total_bytes":10074586,"mrf_sha256":"cd4ca270c6ba5d7d0746858a8a0c85dd76ffdd93304ee51ffece61ae8daa784f","mrf_etag":"\"25710f345439653b1730d665b4a01f89\"","mrf_last_modified":"Fri, 11 Sep 2026 17:52:32 GMT",
+  "declared_last_updated":"2026-08-31","cms_template_version":"3.0.0","declared_hospital_name":"Hardin County General Hospital","declared_location_name":"Hardin County General Hospital|Hardin County General Hospital Outpatient","declared_address":"6 Ferrell Road, Rosiclare, IL 62982","declared_license_state":"IL","declared_license_number":"91","declared_npi":"1538165600|1770666893|1346323615|1679220149",
+  "cms_api_url":"https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=141328&conditions%5B0%5D%5Boperator%5D=%3D","cms_api_status":200,"cms_api_response_bytes":6667,"cms_api_response_sha256":"F76E4C7007943A529B8E0873F255C1B3877309450A8577B9DF51116B22101AB8","cms_record":{"facility_id":"141328","facility_name":"HARDIN COUNTY GENERAL HOSPITAL & CLINIC","address":"FERRELL ROAD","citytown":"ROSICLARE","state":"IL","zip_code":"62982"},
+  "disposition":"official-page-file-corroborated-root-pointer-unavailable",
+  "interpretation":"The current first-party pricing page links a facility-named CMS 3.0.0 CSV whose full 10,074,586-byte response and header match the hospital name, Rosiclare Illinois address, license/NPI metadata and 2026-08-31 date. The root pointer returned HTTP 404 with a recorded response hash, so this is page-linked observed evidence with pointer follow-up and no legal compliance conclusion.",
+  "next_action":"Retry the root pointer after publisher recovery; retain the complete page-linked CSV."
+}

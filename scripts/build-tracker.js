@@ -13,6 +13,7 @@ const fs = require('fs');
 const path = require('path');
 const os = require('os');
 const crypto = require('crypto');
+const { buildReviewedWorkQueue } = require('./hpt/lib/tracker-work-queue');
 
 /* ---------- csv ---------- */
 
@@ -47,6 +48,14 @@ function readTable(file) {
 // Every CMS finding rolls up into one of five tiers. The tier is what the page
 // colours by; the finding is what it explains with.
 const FINDINGS = [
+  ...Object.entries(require('./hpt/lib/nationwide-verification-view').LABELS).map(([key, label]) => ({
+    key: require('./hpt/lib/nationwide-verification-view').finding(key), tier: 'unknown', label,
+    blurb: 'A dated nationwide retrieval observation, not a compliance determination. See the separate checks and next action.'
+  })),
+  ...Object.entries(require('./hpt/lib/discovery-review').LABELS).map(([key, label]) => ({
+    key: require('./hpt/lib/discovery-review').finding(key), tier: 'unknown', label,
+    blurb: 'A dated discovery observation, not a compliance determination. See the record evidence and next action.'
+  })),
   { key: 'not-assessed-identity-conflict', tier: 'unknown', label: 'File assignment quarantined',
     blurb: 'The previous file assignment conflicts with hospital identity. Its links and metadata are excluded pending verification.' },
   { key: 'compliant-observed', tier: 'compliant', label: 'Machine-readable file located',
@@ -55,6 +64,44 @@ const FINDINGS = [
     blurb: 'The bounded probe did not recover a declared update date; file validity is unverified.' },
   { key: 'pointer-lists-no-mrf-url', tier: 'failing', label: 'MRF link not extracted',
     blurb: 'Our parser extracted no MRF URL for the matched pointer entry.' },
+  { key: 'pointer-links-older-mrf-than-source-page', tier: 'unknown', label: 'Pointer and pricing-page files differ',
+    blurb: 'The official pricing page links a newer identity-matched file, while the current pointer still links an older file.' },
+  { key: 'pointer-links-different-facility-mrf-source-page-file', tier: 'unknown', label: 'Pointer names another facility’s file',
+    blurb: 'The root pointer links a readable file declaring another facility, while the official pricing page separately links an identity-matched file. The page file is not treated as pointer-linked.' },
+  { key: 'pricing-page-links-older-mrf-than-pointer', tier: 'unknown', label: 'Pricing page links an older file',
+    blurb: 'The current root pointer links a newer identity-matched file, while the hospital pricing page still links an older file. Complete-file validity and legal compliance are unverified.' },
+  { key: 'pointer-links-unavailable-mrf-source-page-current-file', tier: 'unknown', label: 'Pointer file unavailable; pricing-page file found',
+    blurb: 'The official pricing page links an identity-matched current file, while the exact file URL declared by the root pointer is unavailable.' },
+  { key: 'pointer-target-dns-unresolved-page-file-found', tier: 'unknown', label: 'Pointer host unresolved to clients; pricing-page file found',
+    blurb: 'The pointer names a different host that did not resolve in our bounded client or browser. The current official pricing page links a separate identity-matched file; the DNS failures do not prove the pointer file is absent.' },
+  { key: 'pointer-http-client-error-page-file-found', tier: 'unknown', label: 'Pointer HTTP URL failed to this client; HTTPS file found',
+    blurb: 'The official pointer uses HTTP for the exact file that the pricing page links over HTTPS. Our bounded client received an empty reply from HTTP but read identity-matched CSV bytes over HTTPS. Browser blocking is a client observation, not proof that the pointer target is absent.' },
+  { key: 'pointer-links-html-download-page-with-file', tier: 'unknown', label: 'Pointer links a download page instead of the file',
+    blurb: 'The root pointer links an HTML portal that exposes an identity-matched file. The file date and version are reported separately without treating the portal as the MRF.' },
+  { key: 'pointer-html-portal-not-found-source-page-current-file', tier: 'unknown', label: 'Pointer portal rendered not found; pricing-page file found',
+    blurb: 'The root pointer targets an HTML portal that rendered a not-found page in this browser review. The official pricing page separately links a current identity-matched file; that file is not treated as pointer-linked.' },
+  { key: 'pointer-file-url-renders-not-found-source-page-current-file', tier: 'unknown', label: 'Pointer file URL rendered not found; pricing-page file found',
+    blurb: 'The root pointer labels a file URL that rendered a not-found HTML page in this browser review. The official pricing page separately links an identity-matched current file; that file is not treated as pointer-linked.' },
+  { key: 'official-page-mrf-root-pointer-unavailable', tier: 'unknown', label: 'Official-page file found; root pointer unavailable',
+    blurb: 'The official pricing page links an identity-matched file, but the root cms-hpt.txt request did not return a usable pointer. File date and version are reported separately.' },
+  { key: 'root-pointer-omits-facility-page-file-found', tier: 'unknown', label: 'Root pointer omits facility; page file found',
+    blurb: 'The root cms-hpt.txt lists other facilities but no entry for this hospital. Its first-party page links an identity-matched file; that file is not treated as pointer-linked.' },
+  { key: 'root-pointer-omits-facility-official-storage-file-found', tier: 'unknown', label: 'Root pointer omits facility; official storage file found',
+    blurb: 'The root cms-hpt.txt omits this hospital, but the publisher\'s official storage namespace contains a bounded, identity-matched file observation. The file is not treated as pointer-linked or fully validated.' },
+  { key: 'pointer-target-google-sheet-page-file-found', tier: 'unknown', label: 'Pointer targets Google Sheet; page file found',
+    blurb: 'The root pointer names the facility but targets a Google Sheets edit page rather than a direct MRF. The official pricing page separately links a complete identity-matched CSV; the two source roles remain distinct.' },
+  { key: 'root-pointer-html-page-with-official-page-file', tier: 'unknown', label: 'Root pointer path serves HTML; pricing-page file found',
+    blurb: 'The root cms-hpt.txt path served an HTML page containing pointer-style text, not a plain-text pointer document. The official pricing page links an identity-matched file, which is not treated as pointer-linked.' },
+  { key: 'mrf-license-state-field-conflicts-facility', tier: 'unknown', label: 'File license-state field conflicts with facility',
+    blurb: 'The pointer and file identify the facility, but the state encoded in the file license-number column conflicts with the facility state. The discrepancy remains unresolved.' },
+  { key: 'mrf-address-field-conflicts-facility', tier: 'unknown', label: 'File address field differs from hospital address',
+    blurb: 'The pointer-linked file identifies the facility, but a declared address field differs from the independently verified hospital address. The difference may be a spelling error or a different location; review the literal field before drawing a conclusion.' },
+  { key: 'mrf-address-field-incomplete', tier: 'unknown', label: 'File address field incomplete',
+    blurb: 'The pointer and file identify the facility, but the declared address omits a component of the independently verified hospital street.' },
+  { key: 'mrf-template-version-noncanonical', tier: 'unknown', label: 'File template version needs review',
+    blurb: 'The pointer-linked file identifies the facility and has a current declared date, but its version field differs from the CMS schema identifier. This observation does not validate the complete file.' },
+  { key: 'mrf-custom-workbook-metadata-unverified', tier: 'unknown', label: 'Pointer links custom workbook; CMS file metadata unverified',
+    blurb: 'The pointer-linked object identifies the facility but is an XLSX workbook served from a CSV-labeled URL. Its generation date is not a verified MRF update date, and no CMS template version was declared.' },
   { key: 'mrf-url-unreachable', tier: 'failing', label: 'MRF request failed',
     blurb: 'Our request to the recorded charge-file URL failed; the cause and current link need verification.' },
   { key: 'mrf-stale-over-365-days', tier: 'failing', label: 'Recorded date over 365 days old',
@@ -69,6 +116,20 @@ const FINDINGS = [
     blurb: 'The charge file refused the automated request.' },
   { key: 'not-assessed-domain-unknown', tier: 'unknown', label: 'Official domain not verified',
     blurb: 'No official domain is assigned in this audit; a working website may exist.' },
+  { key: 'not-assessed-site-observed', tier: 'unknown', label: 'Hospital website candidate observed',
+    blurb: 'A candidate homepage matched hospital name and location text, but official pointer and MRF linkage remain unverified.' },
+  { key: 'not-assessed-site-corrected', tier: 'unknown', label: 'Official website corrected; file review pending',
+    blurb: 'A reviewed first-party page corrected the hospital domain; current pointer and charge-file linkage remain unverified.' },
+  { key: 'not-assessed-pointer-review', tier: 'unknown', label: 'Pointer and facility match under review',
+    blurb: 'A candidate website returned a pointer file, but the hospital, pointer, and charge-file evidence did not fully agree.' },
+  { key: 'not-assessed-domain-candidate', tier: 'unknown', label: 'Candidate website found',
+    blurb: 'Search returned candidate websites, but none passed official-domain and pointer/MRF verification.' },
+  { key: 'not-assessed-domain-search-pending', tier: 'unknown', label: 'Website search not completed',
+    blurb: 'No search request is recorded for this hospital in the preserved search batch.' },
+  { key: 'not-assessed-domain-search-error', tier: 'unknown', label: 'Website search request failed',
+    blurb: 'The recorded search request failed before returning usable candidate results and needs a retry.' },
+  { key: 'not-assessed-no-domain-candidate', tier: 'unknown', label: 'No candidate website identified',
+    blurb: 'The recorded search returned no usable website candidate; the official domain remains unidentified.' },
   { key: 'not-assessed-site-unreachable', tier: 'unknown', label: 'Website request failed',
     blurb: 'Our request to the recorded website failed during the check.' },
   // This row DOES carry a pointer file, which is why the page can offer a PTR
@@ -78,6 +139,12 @@ const FINDINGS = [
     blurb: 'The health system’s pointer worked, but this hospital could not be matched to an entry.' },
   { key: 'not-applicable-federal', tier: 'exempt', label: 'Federally owned',
     blurb: 'VA and Department of Defense hospitals sit outside the rule.' },
+  { key: 'not-applicable-indian-health-program', tier: 'exempt', label: 'Indian Health Program exception',
+    blurb: '45 CFR 180.30(b)(2) covers hospitals operated by an Indian Health Program; this is not an MRF availability or file-quality finding.' },
+  { key: 'not-applicable-state-hospital', tier: 'exempt', label: 'State hospital scope exception',
+    blurb: '45 CFR 180.30(b) deems Federal and State hospitals compliant with Part 180. This scope classification is not an MRF availability or file-quality finding.' },
+  { key: 'not-applicable-closed', tier: 'exempt', label: 'Hospital closed',
+    blurb: 'Dated first-party evidence says this facility ceased hospital operations; its retained roster record is historical or stale.' },
 ];
 
 const TIERS = [
@@ -90,7 +157,7 @@ const TIERS = [
   { key: 'unknown', label: 'Not assessed', short: 'Not assessed',
     note: 'Domain, access, or hospital identity remains unresolved in this audit.' },
   { key: 'exempt', label: 'Exempt', short: 'Exempt',
-    note: 'Federally owned hospitals are outside the rule.' },
+    note: 'Facilities are outside the active review scope for a documented reason, such as federal ownership or confirmed closure.' },
 ];
 
 const TIER_OF = Object.fromEntries(FINDINGS.map(f => [f.key, f.tier]));
@@ -118,12 +185,21 @@ const QUEUE = [
   { key: 'name-match-review', label: 'Review the name match',
     action: 'Match each hospital to the right entry by hand.',
     why: 'The pointer was retrieved, but hospital identity remains unresolved.' },
+  { key: 'corrected-site-follow-up', label: 'Review the corrected site',
+    action: 'Follow the source-specific next step before assigning a current file.',
+    why: 'The earlier site attribution was corrected, but current pointer or file evidence still needs a separate review.' },
   { key: 'unblocker', label: 'Route around the block',
     action: 'Open the site in a browser or ask the hospital for access.',
     why: 'Our automated request was denied; browser access has not necessarily been checked.' },
   { key: 'exempt-federal', label: 'Close as exempt',
     action: 'No work required. Record the exemption and move on.',
     why: 'Federally owned hospitals are outside the rule and will never publish under it.' },
+  { key: 'exempt-ihs-program', label: 'Indian Health Program exception',
+    action: 'Retain the sourced operator/program evidence and revisit if the operator or program status changes.',
+    why: '45 CFR 180.30(b)(2) covers hospitals operated by an Indian Health Program.' },
+  { key: 'exempt-closed', label: 'Closed facility',
+    action: 'No current HPT retrieval work. Retain the dated closure evidence and recheck only if the facility reopens or the roster changes.',
+    why: 'First-party evidence says the facility ceased hospital operations.' },
 ];
 
 /* ---------- coordinates ---------- */
@@ -171,6 +247,8 @@ function main() {
 
   const reviewed = require('./hpt/lib/reviewed-resolutions').loadReviewedView(srcDir);
   const { compliance, manifest, gaps } = reviewed;
+  const reviewedResolutionByCcn = new Map(JSON.parse(fs.readFileSync(path.join(srcDir, 'reviewed-resolutions.json'), 'utf8'))
+    .map(row => [row.ccn, row]));
   // Operational overlay: why each hospital is unresolved and what to do about
   // it. Generated from compliance + curl-evidence by scripts/hpt/build-interventions.js.
   const { INTERVENTIONS } = require('./hpt/build-interventions');
@@ -183,6 +261,138 @@ function main() {
   }
   const interventions = readTable(interventionsFile);
   const interventionByCcn = new Map(interventions.map(r => [r.ccn, r]));
+  const reconciliationQueueFile = path.join(srcDir, 'nationwide-reconciliation-queue.json');
+  if (!fs.existsSync(reconciliationQueueFile)) {
+    throw new Error('nationwide-reconciliation-queue.json is missing; rebuild reconciliation before the tracker');
+  }
+  const reconciliationQueue = JSON.parse(fs.readFileSync(reconciliationQueueFile, 'utf8'));
+  const investigationWorklistFile = path.join(srcDir, 'unresolved-investigation-worklist.json');
+  let investigationNextSteps = {};
+  const standingWorklistFile = path.join(srcDir, 'standing-evidence-followup-worklist.json');
+  if (fs.existsSync(standingWorklistFile)) {
+    const worklist = JSON.parse(fs.readFileSync(standingWorklistFile, 'utf8'));
+    for (const name of ['nationwide-reconciliation.json', 'nationwide-verification.json']) {
+      const sourceFile = path.join(srcDir, name);
+      if (!fs.existsSync(sourceFile) || worklist.source_sha256?.[name] !== crypto.createHash('sha256')
+        .update(fs.readFileSync(sourceFile)).digest('hex'))
+        throw new Error(`Standing evidence follow-up worklist is stale against ${name}`);
+    }
+    investigationNextSteps = Object.fromEntries(worklist.records.map(row => [row.ccn, {
+      stream: 'standing-evidence-follow-up', gate: row.current_disposition,
+      nextAction: row.next_action, latestObservedAt: row.latest_observed_at,
+      standingCheckedAt: row.standing_checked_at,
+      browserFileStatus: row.browser_file_status, browserFileObservedAt: row.browser_file_observed_at,
+    }]));
+  }
+  if (fs.existsSync(investigationWorklistFile)) {
+    const worklist = JSON.parse(fs.readFileSync(investigationWorklistFile, 'utf8'));
+    for (const name of ['nationwide-reconciliation.json', 'nationwide-verification.json']) {
+      const sourceFile = path.join(srcDir, name);
+      if (!fs.existsSync(sourceFile) || worklist.source_sha256?.[name] !== crypto.createHash('sha256')
+        .update(fs.readFileSync(sourceFile)).digest('hex'))
+        throw new Error(`Unresolved investigation worklist is stale against ${name}`);
+    }
+    Object.assign(investigationNextSteps, Object.fromEntries(worklist.records.map(row => [row.ccn, {
+      stream: 'genuinely-unresolved-investigation',
+      gate: row.evidence_gate, nextAction: row.next_action,
+      browserFileStatus: row.last_browser_file_status,
+      browserFileObservedAt: row.last_browser_file_observed_at,
+    }])));
+  }
+  const supportedWorklistFile = path.join(srcDir, 'supported-uncertainty-followup-worklist.json');
+  if (!fs.existsSync(supportedWorklistFile))
+    throw new Error('supported-uncertainty-followup-worklist.json is missing; rebuild the supported uncertainty worklist before the tracker');
+  const supportedWorklist = JSON.parse(fs.readFileSync(supportedWorklistFile, 'utf8'));
+  for (const name of ['nationwide-reconciliation.json', 'reviewed-resolutions.json',
+    'reconciliation-browser-file-address-conflicts.json']) {
+    const sourceFile = path.join(srcDir, name);
+    if (!fs.existsSync(sourceFile) || supportedWorklist.source_sha256?.[name] !== crypto.createHash('sha256')
+      .update(fs.readFileSync(sourceFile)).digest('hex'))
+      throw new Error(`Supported uncertainty worklist is stale against ${name}`);
+  }
+  for (const row of supportedWorklist.records) {
+    if (investigationNextSteps[row.ccn]) throw new Error(`Duplicate investigation next step ${row.ccn}`);
+    investigationNextSteps[row.ccn] = {
+      stream: 'supported-uncertainty-monitor', gate: row.evidence_gate,
+      nextAction: row.next_action, latestObservedAt: row.latest_observed_at,
+      standingCheckedAt: row.reviewed_at,
+    };
+  }
+  // Identity quarantines are intentionally excluded from the generic
+  // unresolved worklist, but they still require an explicit, source-bound
+  // operational next step. Keep them visible as their own queue stream so a
+  // quarantine cannot disappear merely because the rejected assignment was
+  // removed from the presentation view.
+  const identityWorklistFile = path.join(srcDir, 'identity-quarantine-worklist.json');
+  if (!fs.existsSync(identityWorklistFile))
+    throw new Error('identity-quarantine-worklist.json is missing; build it from nationwide-reconciliation.json first');
+  const identityWorklist = JSON.parse(fs.readFileSync(identityWorklistFile, 'utf8'));
+  const reconciliationPath = path.join(srcDir, 'nationwide-reconciliation.json');
+  if (identityWorklist.source_sha256?.['nationwide-reconciliation.json'] !== crypto.createHash('sha256')
+    .update(fs.readFileSync(reconciliationPath)).digest('hex'))
+    throw new Error('Identity quarantine worklist is stale against nationwide-reconciliation.json');
+  for (const row of identityWorklist.records) {
+    if (investigationNextSteps[row.ccn]) throw new Error(`Duplicate investigation next step ${row.ccn}`);
+    investigationNextSteps[row.ccn] = {
+      stream: 'identity-quarantine', gate: row.proposed_disposition,
+      nextAction: row.next_action, latestObservedAt: row.latest_observed_at,
+      standingCheckedAt: row.standing_checked_at,
+    };
+  }
+  const sameCampusWorklistFile = path.join(srcDir, 'same-campus-ccn-transition-worklist.json');
+  if (!fs.existsSync(sameCampusWorklistFile))
+    throw new Error('same-campus-ccn-transition-worklist.json is missing; rebuild the same-campus worklist before the tracker');
+  const sameCampusWorklist = JSON.parse(fs.readFileSync(sameCampusWorklistFile, 'utf8'));
+  for (const [name, sourceFile] of [
+    ['cms_data/hpt/roster.json', path.join(__dirname, '..', 'cms_data/hpt/roster.json')],
+    ['data/hpt-audit/nationwide-reconciliation.json', path.join(srcDir, 'nationwide-reconciliation.json')],
+    ['data/hpt-audit/same-campus-cms-enrollment-snapshot-review.json', path.join(srcDir, 'same-campus-cms-enrollment-snapshot-review.json')],
+  ]) {
+    if (sameCampusWorklist.source_sha256?.[name] !== crypto.createHash('sha256')
+      .update(fs.readFileSync(sourceFile)).digest('hex'))
+      throw new Error(`Same-campus CCN worklist is stale against ${name}`);
+  }
+  for (const group of sameCampusWorklist.groups) {
+    for (const ccn of group.ccns) {
+      const existing = investigationNextSteps[ccn];
+      if (existing) {
+        if (!existing.nextAction.includes('CMS enrollment/status'))
+          existing.nextAction += ' Same-campus CCN scope: ' + group.next_action;
+        existing.sameCampusCcns = group.ccns;
+      } else {
+        investigationNextSteps[ccn] = {
+          stream: 'same-campus-ccn-review', gate: 'enrollment-scope',
+          nextAction: group.next_action, sameCampusCcns: group.ccns,
+        };
+      }
+    }
+  }
+  // Reconciliation workstreams not represented by a dedicated generated
+  // queue still need an explicit tracker next step. In particular, standing
+  // discrepancies and metadata-only follow-ups must not disappear between
+  // the reconciliation report and the presentation queues.
+  const reconciliationRecords = JSON.parse(fs.readFileSync(reconciliationPath, 'utf8')).records || [];
+  for (const row of reconciliationRecords.filter(r => r.workstream !== 'consistent'
+    && r.workstream !== 'verification-proof-gap')) {
+    if (investigationNextSteps[row.ccn]) continue;
+    investigationNextSteps[row.ccn] = {
+      stream: row.workstream,
+      gate: row.proposed_disposition || row.standing_finding || '',
+      nextAction: row.next_action || 'Reconcile the newer observation against the retained standing finding.',
+      latestObservedAt: row.latest_observed_at || '',
+      standingCheckedAt: row.standing_checked_at || '',
+    };
+  }
+  const reviewedFollowups = Object.fromEntries(reconciliationQueue
+    .filter(r => r.workstream === 'genuinely-unresolved-investigation'
+      && r.manual_access_observation?.next_action
+      && r.manual_access_observation?.observed_at
+      && Date.parse(r.manual_access_observation.observed_at) >= Date.parse(r.standing_checked_at || '1970-01-01'))
+    .map(r => [r.ccn, {
+      observedAt: r.manual_access_observation.observed_at,
+      disposition: r.manual_access_observation.disposition || '',
+      nextAction: r.manual_access_observation.next_action,
+    }]));
   // Raw HTTP evidence per CCN, from the curl-evidence index: [url, status, edge, transcript].
   const evidenceFile = path.join(srcDir, 'curl-evidence', 'index.csv');
   const evidenceByCcn = new Map();
@@ -199,6 +409,24 @@ function main() {
     : {};
 
   const byCcn = new Map(manifest.map(r => [r.ccn, r]));
+  // Page-linked file proofs may be newer than the pointer manifest and need
+  // not be represented as root-pointer rows. Preserve their official source
+  // page in the tracker only when the exact page-file URL matches the MRF
+  // selected for that CCN; this prevents borrowing a sibling or stale page.
+  const manualAccessPath = path.join(srcDir, 'reconciliation-manual-access-observations.json');
+  const manualAccessRecords = fs.existsSync(manualAccessPath)
+    ? (JSON.parse(fs.readFileSync(manualAccessPath, 'utf8')).records || []) : [];
+  const manualPageFileByCcn = new Map();
+  for (const observation of manualAccessRecords) {
+    const fileUrl = observation.facility_file_url || observation.page_file_url
+      || observation.publisher_file_url || '';
+    const pageUrl = observation.official_pricing_page || observation.official_page_url || '';
+    if (!fileUrl || !pageUrl || !observation.ccn) continue;
+    const prior = manualPageFileByCcn.get(observation.ccn);
+    if (!prior || String(observation.observed_at || '') > String(prior.observed_at || '')) {
+      manualPageFileByCcn.set(observation.ccn, { fileUrl, pageUrl, observed_at: observation.observed_at || '' });
+    }
+  }
   const coords = readCoords();
 
   const types = [...new Set(compliance.map(r => r.type))].sort();
@@ -210,6 +438,9 @@ function main() {
   // One row per hospital, positional to keep the payload small.
   const rows = compliance.map(r => {
     const m = byCcn.get(r.ccn) || {};
+    const manualPageFile = manualPageFileByCcn.get(r.ccn);
+    const sourcePageUrl = m.source_page_url
+      || (manualPageFile?.fileUrl === r.mrf_url ? manualPageFile.pageUrl : '');
     const iv = interventionByCcn.get(r.ccn) || {};
     return [
       r.ccn,
@@ -235,11 +466,23 @@ function main() {
       (r.checked_at || '').slice(0, 10),
       // Human-facing transparency/discovery page. This matters for direct-MRF
       // evidence where there is intentionally no cms-hpt.txt pointer URL.
-      m.source_page_url || '',
+      sourcePageUrl,
       // Why this hospital is unresolved and what a human should do, when it is.
       interventionKeys.indexOf(iv.intervention),
     ];
   });
+  const additionalFiles = Object.fromEntries(compliance.flatMap(row => {
+    const resolution = reviewedResolutionByCcn.get(row.ccn);
+    const files = resolution?.evidence?.additionalFiles;
+    if (!reviewed.applied.includes(row.ccn) || row.mrf_url !== resolution?.evidence?.url
+        || !Array.isArray(files) || !files.length) return [];
+    return [[row.ccn, files.map(file => [file.location_name, file.url])]];
+  }));
+  const primaryFileLabels = Object.fromEntries(compliance.flatMap(row => {
+    if (!additionalFiles[row.ccn]) return [];
+    const label = reviewedResolutionByCcn.get(row.ccn)?.evidence?.primaryCampusLabel;
+    return label ? [[row.ccn, label]] : [];
+  }));
 
   const tally = (list, pick) => {
     const map = new Map();
@@ -311,7 +554,8 @@ function main() {
   }).sort((a, b) => b.total - a.total);
 
   // Freshness, measured only on files we actually read.
-  const ages = manifest.map(r => Number(r.mrf_days_since_update))
+  const ages = manifest.filter(r => r.mrf_last_updated && String(r.mrf_days_since_update ?? '').trim() !== '')
+    .map(r => Number(r.mrf_days_since_update))
     .filter(n => Number.isFinite(n) && n >= 0)
     .sort((a, b) => a - b);
   const at = q => ages[Math.min(ages.length - 1, Math.floor(ages.length * q))];
@@ -322,8 +566,7 @@ function main() {
     { label: 'Over a year', short: '365d+', lo: 366, hi: null },
   ].map(b => ({ ...b, n: ages.filter(d => d >= b.lo && d <= (b.hi === null ? 1e9 : b.hi)).length }));
 
-  const queue = QUEUE.map(q => ({ ...q, n: gaps.filter(g => g.remediation === q.key).length }))
-    .sort((a, b) => b.n - a.n);
+  const queue = buildReviewedWorkQueue(investigationNextSteps, reviewed.nationwide.records);
 
   const gapRows = gaps.map(g => [
     g.ccn, g.hospital_name, g.city,
@@ -357,11 +600,21 @@ function main() {
   const interventionCounts = tally(interventions, r => r.intervention);
 
   const data = {
+    additionalFiles,
+    primaryFileLabels,
+    reviewedFollowups,
+    investigationNextSteps,
     auditHistory: reviewed.history,
     reviewedCcns: reviewed.applied,
-    reviewedAt: Object.fromEntries(compliance.filter(r => reviewed.applied.includes(r.ccn)).map(r => [r.ccn, r.checked_at])),
-    assessments: Object.fromEntries(['rechecks/2026-09-09/resolution/assessments.csv', 'rechecks/2026-09-09/recovery-856/assessments.csv']
-      .flatMap(file => fs.existsSync(path.join(srcDir, file)) ? readTable(path.join(srcDir, file)) : []).map(r => [r.ccn, r])),
+    reviewedAt: require('./hpt/lib/manual-reconciliation').authoritativeDates(compliance),
+    ...require('./hpt/lib/assessment-history').buildAssessmentHistory(
+      ['rechecks/2026-09-09/resolution/assessments.csv', 'rechecks/2026-09-09/recovery-856/assessments.csv']
+        .flatMap(file => fs.existsSync(path.join(srcDir, file)) ? readTable(path.join(srcDir, file)) : []),
+      (reviewed.nationwide && reviewed.nationwide.records) || [],
+      JSON.parse(fs.readFileSync(path.join(srcDir, 'reviewed-resolutions.json'), 'utf8')),
+      reviewed.applied,
+      reviewed.parserCorrections
+    ),
     // The dateline is the snapshot's latest observation. The full first/last
     // crawl interval remains available in `window` for provenance.
     generated: (checked[checked.length - 1] || '').slice(0, 10),
@@ -400,11 +653,20 @@ function main() {
   };
 
   // Keep em dashes out of the public page without altering the source CSVs.
-  const json = JSON.stringify(data).replace(/\u2014/g, '-');
+  const json = JSON.stringify(require('./hpt/lib/public-url-safety').protectPublicUrls(data)).replace(/\u2014/g, '-');
   const html = fs.readFileSync(outFile, 'utf8');
   const re = /(<script id="tracker-data" type="application\/json">)[\s\S]*?(<\/script>)/;
   if (!re.test(html)) throw new Error('no <script id="tracker-data"> block in ' + outFile);
   let built = html.replace(re, (_, open, close) => open + json + close);
+
+  // Keep the social-preview summary tied to the same reconciled tier counts
+  // embedded above. A hand-written snapshot here silently drifted from the
+  // tracker data after nationwide overlays changed the effective view.
+  const summaryAlt = `Observed results for ${(tierCounts.compliant + tierCounts.failing + tierCounts.blocked + tierCounts.unknown + tierCounts.exempt).toLocaleString('en-US')} US hospitals: ${tierCounts.compliant.toLocaleString('en-US')} categorized as file located; file contents were not verified. ${tierCounts.failing.toLocaleString('en-US')} have observed file problems, ${tierCounts.unknown.toLocaleString('en-US')} are unresolved, and ${tierCounts.exempt.toLocaleString('en-US')} are exempt or closed.`;
+  built = built.replace(
+    /(<meta property="og:image:alt" content=")[^"]*("\s*\/>)/,
+    (_, open, close) => open + summaryAlt + close
+  );
 
   // Inline the stylesheets. The explainer pages <link> css/docs.css, but this
   // file ships as one self-contained artifact, so its CSS has to travel inside
@@ -440,10 +702,35 @@ function main() {
       return `<script src="js/${name}?v=${hash}" defer></script>`;
     }
   );
-  fs.writeFileSync(outFile, built);
+  // Write through a sibling temporary file first. On Windows, a transient
+  // reader/antivirus handle can make direct replacement of the large tracker
+  // fail with an opaque UNKNOWN error; the completed temp write keeps the
+  // existing artifact intact until the final copy succeeds.
+  const tempOut = outFile + `.tmp-${process.pid}`;
+  try {
+    fs.writeFileSync(tempOut, built);
+    try {
+      fs.copyFileSync(tempOut, outFile);
+    } catch (copyError) {
+      // Some Windows file providers reject CopyFile while permitting a
+      // remove-and-rename replacement. Keep the completed temp output while
+      // trying that path before the direct-write fallback.
+      try {
+        fs.rmSync(outFile, { force: true });
+        fs.renameSync(tempOut, outFile);
+      } catch (replaceError) {
+        // Preserve the completed temp output and retry a normal write as the
+        // final fallback for providers that reject rename as well.
+        fs.writeFileSync(outFile, built);
+      }
+    }
+  } finally {
+    try { fs.unlinkSync(tempOut); } catch {}
+  }
 
   console.log(path.basename(outFile) + ': ' + data.rows.length + ' hospitals, '
-    + data.gapRows.length + ' queued, ' + (json.length / 1e6).toFixed(2) + ' MB of data');
+    + data.queue.reduce((sum, row) => sum + row.n, 0) + ' reviewed follow-ups, '
+    + (json.length / 1e6).toFixed(2) + ' MB of data');
   console.log('tiers: ' + data.tiers.map(t => t.key + ' ' + t.n).join('  '));
 
   // Optional single-file copy with js/tracker.js folded in, for sharing or

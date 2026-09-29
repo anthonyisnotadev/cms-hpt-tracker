@@ -1,0 +1,16 @@
+{
+  "ccn": "390278",
+  "observed_at": "2026-09-22T01:05:00Z",
+  "official_facility_page": "https://eagleville.org/price-transparency/",
+  "official_page_status": 200,
+  "official_facility_name": "Eagleville Hospital",
+  "official_facility_address": "100 Eagleville Road, Eagleville, PA 19403",
+  "candidate_file_url": "https://storage.googleapis.com/ihg-dart-edw-mrf-prod-public/ia/2024-03-01_357846_index.json",
+  "file_range_status": 404,
+  "file_content_type": "application/xml",
+  "file_content_length": 222,
+  "candidate_file_observation": "The current official page links an Independence Administrators/Independence Blue Cross MRF index, but the exact linked object returned HTTP 404 Not Found. No file bytes or facility metadata were inferred.",
+  "manual_identity_gate": "official-page-and-address-confirmed",
+  "disposition": "pointer-discovery-incomplete",
+  "next_action": "Retry the publisher's current MRF index or obtain a direct facility-specific CMS CSV/JSON; do not infer compliance or exemption from the stale/404 link."
+}

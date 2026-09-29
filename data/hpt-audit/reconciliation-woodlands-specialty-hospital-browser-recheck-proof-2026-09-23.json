@@ -1,0 +1,18 @@
+{
+  "ccn": "670267",
+  "observed_at": "2026-09-23T09:15:00Z",
+  "official_site": "https://woodlandsspecialtyhospital.com/",
+  "official_pricing_page": "https://woodlandsspecialtyhospital.com/price-transparency/",
+  "official_identity": "The Woodlands Specialty Hospital, 25440 Interstate 45 North, Spring, TX 77386 per CMS roster and Texas official provider-finance records; NPI 1184042822 is independently indexed for this CCN and address.",
+  "browser_observation": "The current official-domain hostname did not resolve in bounded retrieval, including root, cms-hpt.txt, .well-known/cms-hpt.txt and the candidate pricing route. Search results identify the hospital and a third-party protected-link lead, but no first-party bytes or directly inspectable MRF URL were recovered. The protected-link service rejected a non-browser API request, so no file was inferred from the aggregator.",
+  "pointer_urls": [
+    "https://woodlandsspecialtyhospital.com/cms-hpt.txt",
+    "https://woodlandsspecialtyhospital.com/.well-known/cms-hpt.txt"
+  ],
+  "pointer_status": "Both official-domain pointer variants failed DNS resolution. This is a transport/discovery observation, not evidence of pointer absence or noncompliance.",
+  "mrf_observation": "No current facility-specific CSV/JSON/ZIP bytes were recovered. A MyCareCost page shows protected links for a file and transparency page, but the underlying URLs are intentionally hidden and the service denied direct link-generation requests; no third-party lead was promoted.",
+  "cms_record": {"ccn": "670267", "name": "THE WOODLANDS SPECIALTY HOSPITAL", "address": "25440 INTERSTATE 45 NORTH", "city": "SPRING", "state": "TX", "zip": "77386"},
+  "disposition": "official-domain-dns-failure-protected-third-party-lead",
+  "interpretation": "The facility identity is corroborated, but current official access is unavailable and the third-party lead does not expose inspectable file bytes. Keep CCN 670267 unresolved and do not assign Woodlands Oaks or another sibling facility's file.",
+  "next_action": "Obtain a current first-party Woodlands Specialty Hospital domain or publisher-provided direct MRF URL; then verify exact name/address/state, declared date/version and usable bytes before promotion."
+}

@@ -1,0 +1,16 @@
+{
+  "ccn": "030138",
+  "observed_at": "2026-09-19T23:59:00Z",
+  "official_site": "https://www.cityofhope.org/",
+  "official_pricing_page": "https://www.cityofhope.org/patients/our-value-and-pricing/pricing-information",
+  "official_identity": "City of Hope Phoenix, 14200 W. Celebrate Life Way, Goodyear, AZ 85338",
+  "pricing_file_url": "https://www.cityofhope.org/320197974_western-regional-medical-center-_standardcharges.json",
+  "pricing_page_observation": "The official City of Hope pricing page lists a CMS-format machine-readable download for Western Regional Medical Center. The page states pricing data is refreshed at least annually and identifies the Phoenix facility separately in its patient-rights page.",
+  "pricing_file_http_status": 403,
+  "pricing_file_content_type": "text/html; charset=UTF-8",
+  "pricing_file_observation": "The exact first-party JSON URL is exposed by the official pricing page and was confirmed by the current page link; direct curl and browser navigation both reached a Cloudflare 403 before JSON bytes were available.",
+  "pointer_url": "https://www.cancercenter.com/cms-hpt.txt",
+  "pointer_observation": "The recorded cancercenter.com pointer route rendered a technical-difficulties page in the prior browser observation; no pointer bytes were promoted.",
+  "disposition": "official-pricing-page-file-access-blocked",
+  "next_action": "Retry the exact Western Regional Medical Center JSON through an authorized download route and verify bounded bytes, facility identity, Arizona state, declared date and CMS version before promotion. Do not infer file absence or compliance from the 403."
+}

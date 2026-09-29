@@ -1,0 +1,32 @@
+{
+  "ccn": "320091",
+  "observed_at": "2026-09-24T00:00:00Z",
+  "official_site": "https://www.threecrossesregional.com/",
+  "official_pricing_page": "https://www.threecrossesregional.com/price_transparency.html",
+  "pointer_url": "https://threecrossesregional.com/cms-hpt.txt",
+  "pointer_http_status": 200,
+  "pointer_bytes": 239,
+  "pointer_sha256": "06430d3a68e2e52b29b02513742676c739e110bad16507486c428b2dd713b508",
+  "pointer_target_role": "HTML price-transparency page",
+  "page_file_url": "https://www.threecrossesregional.com/assets/pdf/TCRH-Standard%20Charges-MRF-05.05.25.csv",
+  "page_file_http_status": 206,
+  "page_file_sample_bytes": 65536,
+  "page_file_sample_sha256": "C64631BDE5A4F69493CD1093B705971B6354C03E87612DB0D097DEDC6C8307E7",
+  "page_file_content_type": "text/csv",
+  "page_file_content_range": "bytes 0-65535/1110687",
+  "page_file_last_modified": "2026-07-14T22:46:17Z",
+  "page_file_etag": "4e20285-10f29f-65699f99aaa3c",
+  "metadata": {
+    "hospital_name": "Three Crosses Regional Hospital LLC",
+    "last_updated_on": "11/7/2024",
+    "version": "2.0.0",
+    "hospital_location": "Three Crosses Regional Hospital",
+    "hospital_address": "2560 Samaritan Drive, Las Cruces, NM 88001",
+    "header_license_state": "CA",
+    "license_value": "3699|NM",
+    "attestation": true
+  },
+  "disposition": "official-page-file-current-recheck-nm-header-state-conflict-and-stale-version-retained",
+  "interpretation": "The current pointer and official page expose a facility-specific CSV whose identity, address and license value support New Mexico. The header labels the license field CA and the file is CMS template 2.0.0 dated 2024-11-07; no clean current-MRF promotion was made.",
+  "next_action": "Publisher should correct or explain the CA header, publish a current CMS 3.0.0 file, and preserve the explicit page/pointer provenance."
+}

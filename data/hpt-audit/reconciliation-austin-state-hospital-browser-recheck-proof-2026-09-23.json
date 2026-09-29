@@ -1,0 +1,31 @@
+{
+  "ccn": "454084",
+  "observed_at": "2026-09-23T05:00:00Z",
+  "official_site": "https://www.hhs.texas.gov/services/mental-health-substance-use/state-hospitals/austin-state-hospital",
+  "official_identity": "Austin State Hospital, 4110 Guadalupe, Austin, TX 78751 (interactive official page confirms the facility and address).",
+  "browser_observation": "Interactive browser navigation rendered the current Texas HHS facility page. The page describes Austin State Hospital's psychiatric services and exposes no CMS price-transparency page, cms-hpt.txt pointer, CSV, JSON or ZIP MRF link.",
+  "pointer_urls": [
+    "https://www.hhs.texas.gov/cms-hpt.txt",
+    "https://hhs.texas.gov/cms-hpt.txt"
+  ],
+  "pointer_status": "HTTP 404 HTML on current bounded request; no pointer text recovered",
+  "pointer_response_bytes": 194,
+  "pointer_sha256": "1A227DCEBF377490F3143518904DE1C77B3661A3EBB278E61385CCDD349DB6CF",
+  "pointer_observation": "The current official facility page was available in the browser, but no facility-specific pointer route or machine-readable pricing route was exposed. The root route response is retained as transport/discovery evidence only.",
+  "mrf_observation": "No MRF bytes recovered; no file-absence, exemption or compliance conclusion inferred.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=454084&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6803,
+  "cms_api_response_sha256": "5AF93B3B009F228E428DE37F3D5C5272010B2320211AFF05F86D31EA6DE932BD",
+  "cms_record": {
+    "facility_id": "454084",
+    "facility_name": "AUSTIN STATE HOSPITAL",
+    "address": "4110 GUADALUPE",
+    "citytown": "AUSTIN",
+    "state": "TX",
+    "zip_code": "78751"
+  },
+  "disposition": "browser-official-identity-confirmed-no-pricing-route",
+  "interpretation": "The official HHS page and CMS identity record agree on Austin State Hospital and its address, but neither exposes a current facility-specific CMS MRF route. This narrows discovery without establishing file absence or a compliance result.",
+  "next_action": "Search the Texas HHS statewide pricing/publisher route or obtain a publisher-provided current CSV/JSON, then verify exact facility identity, Texas metadata, declared date/version and usable bytes before promotion."
+}

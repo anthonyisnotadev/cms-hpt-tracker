@@ -1,0 +1,14 @@
+{
+  "ccn": "271332",
+  "observed_at": "2026-09-26T14:00:00Z",
+  "official_site": "https://www.gmc.org/",
+  "official_pricing_page": "https://www.gmc.org/patients-families/gmc-price-transparency/",
+  "official_page_observation": "The current first-party GMC page identifies Glendive Medical Center at 202 Prospect Dr, Glendive, MT 59330 and labels the FY-27 CSV as a machine-readable list of GMC services.",
+  "page_file_url": "https://www.gmc.org/documents/Chargemaster-complete-by-Price-Schedule-FY-27.csv",
+  "page_file_web_observation": "The permitted web reader resolved the exact page-linked target but rejected its application/octet-stream response; no content-bearing bytes were exposed.",
+  "page_file_direct_observation": "A bounded direct request with a byte range and browser user agent returned HTTP 403 before any CSV bytes were exposed.",
+  "identity_scope": "The page-level facility identity and Montana address are current and facility-specific, but no CMS hospital_name, declared date, version, NPI, or usable CSV header was recovered in this pass.",
+  "disposition": "official-page-file-current-but-transport-blocked",
+  "interpretation": "This adds a precise current URL and transport observation, not a new CMS MRF byte proof. The earlier browser-recovered custom chargemaster and the unresolved pointer-linked MRF remain separate evidence.",
+  "next_action": "Obtain a permitted content-bearing copy of the exact page-linked file or publisher-confirmed CMS CSV/JSON MRF, then verify Glendive identity, Montana state, declared date/version and usability before promotion."
+}

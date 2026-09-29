@@ -1,0 +1,42 @@
+{
+  "observed_at": "2026-09-22T18:30:00Z",
+  "records": [
+    {
+      "ccn": "250093",
+      "official_domain": "bolivarmedical.com",
+      "pointer_url": "https://bolivarmedical.com/cms-hpt.txt",
+      "pointer_http_status": 200,
+      "pointer_entry": "location-name: Bolivar Medical Center; mrf-url: https://hospitalpricedisclosure.com/Download.aspx?pi=eoROtF*_*Ds07dFfOoe4qILQ*-*",
+      "mrf_url": "https://hospitalpricedisclosure.com/Download.aspx?pi=eoROtF*_*Ds07dFfOoe4qILQ*-*",
+      "mrf_http_status": 200,
+      "mrf_bytes": 15219937,
+      "mrf_sha256": "3fbcbc735add10631fe62ace86e47838cd9a532e5aebf9a5e6c7aa5e99be80c6",
+      "declared_hospital_name": "Bolivar Medical Center",
+      "declared_address": "901 E Sunflower Rd, Cleveland, MS 38732",
+      "declared_license_state": "MS",
+      "declared_date": "2026-04-01",
+      "version": "3.0.0",
+      "identity_basis": "exact-pointer-entry-complete-file-header-name-address-state-date-and-cms-version",
+      "disposition": "verified-current-mrf"
+    },
+    {
+      "ccn": "250152",
+      "official_domain": "methodistrehab.org",
+      "pointer_url": "https://methodistrehab.org/cms-hpt.txt",
+      "pointer_http_status": 200,
+      "pointer_entry": "location-name: MISSISSIPPI METHODIST HOSPITAL & REHABILITATION CENTER INC; mrf-url: https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbMMRCJACKSONMS&type=CDMWithoutLabel&fileType=CSV",
+      "mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbMMRCJACKSONMS&type=CDMWithoutLabel&fileType=CSV",
+      "mrf_http_status": 200,
+      "mrf_bytes": 56353468,
+      "mrf_bounded_sha256": "ccea7ea56e10263a222317472e83dc70d7baede65798140d56d964278170ea33",
+      "declared_hospital_name": "MISSISSIPPI METHODIST HOSPITAL & REHABILITATION CENTER INC",
+      "declared_address": "1350 E Woodrow Wilson Ave Jackson MS 39216",
+      "declared_license_state": "MS",
+      "declared_date": "2025-03-14",
+      "version": "3.0.0",
+      "identity_basis": "exact-pointer-entry-complete-file-header-name-address-state-and-cms-version",
+      "disposition": "verified-stale-mrf",
+      "note": "Pointer and facility identity are supported, but the declared date is more than 365 days old at review time; no currentness promotion is made."
+    }
+  ]
+}

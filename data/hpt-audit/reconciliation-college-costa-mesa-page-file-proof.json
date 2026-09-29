@@ -1,0 +1,19 @@
+{
+  "ccn": "050543",
+  "hospital_name": "COLLEGE HOSPITAL COSTA MESA",
+  "observed_at": "2026-09-18T22:00:00Z",
+  "official_site": "https://chcm.us/",
+  "official_identity_source": "https://hcai.ca.gov/affordability/hospital-billing-policies/college-hospital-costa-mesa/",
+  "official_identity": "College Hospital Costa Mesa, 301 Victoria Street, Costa Mesa, CA 92627; California license 060000100.",
+  "official_pricing_page": "https://chcm.us/price-transparency/",
+  "official_pricing_observation": "The official price-transparency page declares standard hospital charges and links a downloadable standard-charge file, but direct requests to the page and exact file are intercepted by the site's security challenge.",
+  "pointer_url": "https://chc.la/cms-hpt.txt",
+  "pointer_browser_status": "security-challenge",
+  "pointer_browser_observation": "Interactive browser redirected to the site's .well-known security challenge before pointer bytes.",
+  "page_file_url": "https://chcm.us/954124770_college-hospital-costa-mesa_standardcharges.csv",
+  "page_file_http_status": 202,
+  "page_file_observation": "Direct request returned the site's security-challenge HTML instead of CSV bytes; no bounded file hash or metadata was claimed.",
+  "page_file_discovery_source": "https://showthebill.com/hospitals/college-hospital-costa-mesa/",
+  "disposition": "official-pricing-page-linked-file-security-challenge-mrf-unresolved",
+  "next_action": "Retry the official pricing page and exact CSV through an authorized download-capable route; verify bounded bytes, facility name/address, California state, declared date, CMS version and rate usability before promotion. Do not infer file absence or compliance from the challenge."
+}

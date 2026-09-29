@@ -1,0 +1,112 @@
+{
+  "audit_id": "reconciliation-decatur-morgan-main-file-full-retrieval-scope-review-2026-09-28",
+  "observed_at": "2026-09-28T10:54:17Z",
+  "ccn": "010085",
+  "facility": "Decatur Morgan Hospital - Decatur Campus",
+  "official_sources": {
+    "legacy_price_transparency_page": {
+      "url": "https://www.huntsvillehospital.org/price-transparency",
+      "page_updated_label": "2026-04-01",
+      "current_page_label": "Decatur Morgan Hospital",
+      "exact_linked_file_url": "https://www.huntsvillehospital.org/images/pricetransparency/460928982_decatur-morgan-hospital_standardcharges.csv",
+      "browser_result": "The live official page links the exact CSV; the web reader reports unsupported text/csv content type and does not expose the body."
+    },
+    "newer_system_price_transparency_page": {
+      "url": "https://hh.health/patients-visitors/price-transparency/",
+      "page_updated_label": "2026-08-20",
+      "decatur_file_candidate": "https://hh.health/wp-content/uploads/460928982_decatur-morgan-hospital_standardcharges.csv",
+      "parkway_file_candidate": "https://hh.health/wp-content/uploads/460928982_decatur-morgan-hospital-parkway-campus_standardcharges.csv",
+      "browser_result": "The page lists Decatur Morgan Hospital and Decatur Morgan Hospital Parkway Campus separately. The web reader exposed the exact links but not CSV bodies. Normal direct resolution for hh.health returned EAI_AGAIN; no body/status is inferred from that transport error."
+    }
+  },
+  "retrieval": {
+    "url": "https://www.huntsvillehospital.org/images/pricetransparency/460928982_decatur-morgan-hospital_standardcharges.csv",
+    "method": "complete HTTPS GET with ordinary TLS certificate and hostname validation; DNS was independently resolved through Google Public DNS after the local resolver returned ENOTFOUND",
+    "dns_answer": {
+      "queried_name": "www.huntsvillehospital.org",
+      "cname": "huntsvillehospital.org",
+      "a_record": "199.116.77.34",
+      "source": "https://dns.google/resolve?name=www.huntsvillehospital.org&type=A"
+    },
+    "http_status": 200,
+    "content_type": "text/csv",
+    "content_length": 23746132,
+    "last_modified": "2026-04-20T15:52:11Z",
+    "retrieved_all_bytes": true,
+    "sha256": "618922e927d70b329765a00421fcc9fa25abf46522e1a1adddcf05de8a2f86d2",
+    "bounded_prefix": {
+      "range": "bytes=0-65535",
+      "bytes": 65536,
+      "sha256": "61da4186fd1f9855fea01dc065b85466b320f5178f07a11f95d26bd2281522d2"
+    },
+    "csv_validation": {
+      "parser": "scripts/hpt/lib/util.js parseCSV",
+      "metadata_rows": 2,
+      "header_fields": 28,
+      "total_csv_rows": 73574,
+      "service_rows_after_metadata_and_header": 73571,
+      "distinct_row_widths": [28],
+      "required_charge_columns_present": [
+        "description",
+        "setting",
+        "standard_charge|gross",
+        "standard_charge|discounted_cash",
+        "payer_name",
+        "plan_name",
+        "standard_charge|negotiated_dollar",
+        "standard_charge|negotiated_percentage",
+        "standard_charge|negotiated_algorithm",
+        "standard_charge|min",
+        "standard_charge|max"
+      ]
+    },
+    "declared_metadata": {
+      "hospital_name": "DECATUR MORGAN HOSPITAL",
+      "last_updated_on": "3/23/2026",
+      "cms_template_version": "3.0.0",
+      "location_name": "DECATUR MORGAN HOSPITAL (ACU)|PARKWAY CAMPUS",
+      "hospital_address": "1201 7TH STREET, SE, DECATUR, AL 35601|1874 BELTLINE ROAD, SW, Decatur, AL",
+      "type_2_npi": "1356692297|1356692297",
+      "license_number_state": "AL",
+      "attestation_field_present": true
+    }
+  },
+  "cms_roster_crosscheck": {
+    "source_file": "cms_data/Hospital_General_Information.csv",
+    "source_sha256": "23C5019EE51E11442D6D64CD153CEDD78C51AB6435F621E4CB9351E3E972D9E3",
+    "facility_id": "010085",
+    "facility_name": "DECATUR MORGAN HOSPITAL - DECATUR CAMPUS",
+    "address": "1201 7TH STREET SE",
+    "city": "DECATUR",
+    "state": "AL",
+    "zip": "35601",
+    "hospital_type": "Acute Care Hospitals",
+    "identity_result": "The main-campus name, address, city and state agree with one location in the complete file metadata. The CMS roster crosscheck does not establish the scope of the separate Parkway location or the alternate current hh.health URL."
+  },
+  "separate_parkway_file_header_sample": {
+    "official_page_label": "Decatur Morgan Hospital Parkway Campus",
+    "url": "https://hh.health/wp-content/uploads/460928982_decatur-morgan-hospital-parkway-campus_standardcharges.csv",
+    "legacy_equivalent_url_candidate": "https://www.huntsvillehospital.org/images/pricetransparency/460928982_decatur-morgan-hospital-parkway-campus_standardcharges.csv",
+    "status": 206,
+    "content_type": "text/csv",
+    "content_range": "bytes 0-65535/23746051",
+    "last_modified": "2026-05-15T14:37:08Z",
+    "sample_bytes": 65536,
+    "sample_sha256": "3f6f53cd3c6bb917f5e0408a8ae7f2b2b2e4a0bb7f7f90cc8e3547d6c697b125",
+    "metadata": {
+      "hospital_name": "DECATUR MORGAN HOSPITAL",
+      "last_updated_on": "3/23/2026",
+      "cms_template_version": "3.0.0",
+      "location_name": "PARKWAY CAMPUS",
+      "hospital_address": "1874 BELTLINE RD SW DECATUR AL 35601",
+      "type_2_npi": "1285904276",
+      "license_number_state": "AL",
+      "attestation_field_present": true
+    },
+    "completeness": "Bounded header sample only; the full Parkway file was not retrieved or hashed."
+  },
+  "interpretation": "This is a genuine source-evidence gain for 891-cohort member 010085: a complete, usable CMS 3.0.0 CSV is linked from the official legacy price page and its metadata includes the CMS roster main-campus name/address/state. Do not promote it yet. Its metadata also lists Parkway Campus and a second address, while the newer official HH Health page exposes a separate Parkway file whose bounded header carries a different NPI and license value. Neither the newer Decatur URL nor the Parkway file has full-byte hash equivalence established against the retrieved legacy Decatur file. Preserve the exact files and route scopes separately; do not assign Parkway metadata or rates to a sibling CCN or infer that the main file covers only 010085.",
+  "disposition": "mrf-facility-identity-unresolved",
+  "count_change": 0,
+  "next_action": "Obtain the May 2026 CMS Hospital Enrollments primary records and its additional-NPI/additional-address resources for the exact Decatur/said Parkway provider identities; compare the 1356692297/H5202 main-file metadata with the 1285904276/H5201 Parkway header. Retrieve the newer hh.health Decatur and Parkway targets after that host resolves through a permitted route, compare full hashes/metadata, and request publisher clarification of which locations and CCN(s) each file covers."
+}

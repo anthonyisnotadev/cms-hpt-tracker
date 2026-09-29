@@ -1,0 +1,90 @@
+{
+  "records": [
+    {
+      "ccn": "010045",
+      "source_url": "https://dch.pt.panaceainc.com/MRFDownload/dch/fayette",
+      "final_url": "https://mrf.panaceainc.com/Download.aspx?org=dch&loc=fayette&ref=",
+      "observed_at": "2026-09-15T14:31:25.802Z",
+      "http_status": 200,
+      "bytes": 1048576,
+      "sha256": "32ef049a1fc5fae10a0c356f8e28adcae93123a663f4e6a7e10f9f8c80b56b22",
+      "payload_sha256": "32ef049a1fc5fae10a0c356f8e28adcae93123a663f4e6a7e10f9f8c80b56b22",
+      "file_kind": "csv",
+      "payload_kind": "csv",
+      "metadata": {
+        "hospital_name": "Fayette Medical Center",
+        "location_name": "Fayette Medical Center",
+        "address": "1653 Temple Avenue, Fayette, AL 35555",
+        "license_state": "AL",
+        "date": "2026-03-26",
+        "version": "3.0.0"
+      },
+      "address_agrees": false,
+      "license_state_agrees": true,
+      "status": "identity-review-required",
+      "error": "",
+      "next_action": "Inspect the retained payload or use official page and browser evidence; retrieval failure is not evidence of absent metadata."
+    },
+    {
+      "ccn": "110129",
+      "source_url": "https://hospitalpricedisclosure.com/download.aspx?pi=01WinMDoS5BLgyO*__*cluecg*-*",
+      "final_url": "https://hospitalpricedisclosure.com/download.aspx?pi=01WinMDoS5BLgyO*__*cluecg*-*",
+      "observed_at": "2026-09-15T14:33:36.095Z",
+      "http_status": null,
+      "bytes": 0,
+      "sha256": null,
+      "payload_sha256": null,
+      "file_kind": "",
+      "payload_kind": "",
+      "metadata": null,
+      "address_agrees": false,
+      "license_state_agrees": false,
+      "status": "address-not-observed-in-this-read",
+      "error": "request deadline exceeded",
+      "next_action": "Inspect the retained payload or use official page and browser evidence; retrieval failure is not evidence of absent metadata."
+    },
+    {
+      "ccn": "210065",
+      "source_url": "https://hpt.trinity-health.org/520738041-1245655638_holy-cross-germantown-hospital_standardcharges.zip",
+      "final_url": "https://hpt.trinity-health.org/520738041-1245655638_holy-cross-germantown-hospital_standardcharges.zip",
+      "observed_at": "2026-09-15T14:37:29.669Z",
+      "http_status": 206,
+      "bytes": 1048576,
+      "sha256": "c435a8491792df77d1750bba4cbe9eb5a7e156d1f72c4ad1084175711e080f44",
+      "payload_sha256": "a7f513c9b7d604544b61aeca640e9a6cf30cf78b14ed7a6bc8228e046a7bdda6",
+      "file_kind": "zip",
+      "payload_kind": "csv",
+      "metadata": {
+        "hospital_name": "Holy Cross Germantown Hospital",
+        "location_name": "Holy Cross Germantown Hospital",
+        "address": "19801 Observation Dr, Germantown, MD 20876",
+        "license_state": "MD",
+        "date": "2026-03-31",
+        "version": "3.0.0"
+      },
+      "address_agrees": true,
+      "license_state_agrees": true,
+      "status": "file-address-corroborated-pointer-review-required",
+      "error": "",
+      "next_action": "Review facility name and exact cached pointer linkage before applying a finding."
+    },
+    {
+      "ccn": "640001",
+      "source_url": "http://rca.elevatepfs.com/ptapp/api/cdm/export/oneclick?recno=8bd0a45af1f0f9b2a7d56f47dc7f9363623b9324d22929343acea9cf6fac83b9",
+      "final_url": "http://rca.elevatepfs.com/ptapp/api/cdm/export/oneclick?recno=8bd0a45af1f0f9b2a7d56f47dc7f9363623b9324d22929343acea9cf6fac83b9",
+      "observed_at": "2026-09-15T14:31:25.786Z",
+      "http_status": null,
+      "bytes": 0,
+      "sha256": null,
+      "payload_sha256": null,
+      "file_kind": "",
+      "payload_kind": "",
+      "metadata": null,
+      "address_agrees": false,
+      "license_state_agrees": false,
+      "status": "address-not-observed-in-this-read",
+      "error": "socket hang up",
+      "next_action": "Inspect the retained payload or use official page and browser evidence; retrieval failure is not evidence of absent metadata."
+    }
+  ]
+}

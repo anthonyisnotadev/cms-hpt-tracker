@@ -1,0 +1,29 @@
+{
+  "ccn": "044021",
+  "observed_at": "2026-09-24T00:00:00Z",
+  "official_site": "https://www.perimeterhealthcare.com/",
+  "official_pricing_page": "https://www.perimeterhealthcare.com/west-memphis",
+  "pointer_url": "https://www.perimeterhealthcare.com/cms-hpt.txt",
+  "pointer_http_status": 200,
+  "pointer_bytes": 2133,
+  "pointer_sha256": "ee339fa3be5664792d2aae80ab360711cdb1f4556df0c5511401e28ce42f2656",
+  "mrf_url": "https://assets.speakcdn.com/assets/2789/461030276_woodridge-of-west-memphis-llc_standardcharges-2026071303224462.csv",
+  "mrf_http_status": 200,
+  "mrf_content_type": "application/octet-stream",
+  "mrf_bytes": 4056,
+  "mrf_sha256": "fb4e40e36ea752d6e20ef07802772fce31633b0ee2c6fae6ea5917866a7fa0ff",
+  "metadata": {
+    "hospital_name": "Woodridge of West Memphis LLC",
+    "last_updated_on": "3/30/2026",
+    "version": "3.0.0",
+    "location_name": "Perimeter Behavioral Hospital of West Memphis",
+    "hospital_address": "600 North 7th Street, West Memphis 72301",
+    "header_license_field": "license_number | TX",
+    "license_value": "license_AR5628 | AR",
+    "npi": "1134521685",
+    "attestation": true
+  },
+  "disposition": "facility-identity-supported-license-header-label-conflict-retained",
+  "interpretation": "The official pointer, page linkage, facility name, West Memphis Arkansas address, NPI and license value support the facility identity. The schema header labels the license field TX while the row value identifies AR; this malformed/conflicting field remains unresolved and is not treated as a clean current-MRF promotion.",
+  "next_action": "Obtain publisher correction or explanation for the header label; retain the exact file and Arkansas identity."
+}

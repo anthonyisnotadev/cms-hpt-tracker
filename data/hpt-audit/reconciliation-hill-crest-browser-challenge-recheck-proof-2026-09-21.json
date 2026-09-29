@@ -1,0 +1,29 @@
+{
+  "ccn": "014000",
+  "observed_at": "2026-09-21T04:44:00Z",
+  "proof_file": "reconciliation-hill-crest-browser-challenge-recheck-proof-2026-09-21.json",
+  "official_site": "https://hillcrestbhs.com/",
+  "official_pricing_page_attempted": "https://hillcrestbhs.com/",
+  "browser_status": "Cloudflare challenge",
+  "browser_observation": "A fresh permitted browser navigation to the recorded first-party Hill Crest domain rendered a Cloudflare 'Just a moment...' challenge rather than hospital content. No pricing link, pointer text or MRF bytes were exposed. This recheck was performed because the prior direct observation was an HTTP 403 and the current transport state could have changed.",
+  "pointer_url": "https://hillcrestbhs.com/cms-hpt.txt",
+  "pointer_result": "Not retrievable through the challenged browser route; no pointer content observed.",
+  "official_identity_source": "https://mh.alabama.gov/at_biz_dir/aids-alabama-3-2/",
+  "official_identity": "Hill Crest Behavioral Health Services, 6869 Fifth Avenue South, Birmingham, AL 35212",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=014000&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6828,
+  "cms_api_response_sha256": "871EECB2B8B5ACE79DF1778D75949CF725250FFFCFC9FB2D09003513AFC964DE",
+  "cms_record": {
+    "facility_id": "014000",
+    "facility_name": "HILL CREST BEHAVIORAL HEALTH SERVICES",
+    "address": "6869 FIFTH AVENUE SOUTH",
+    "citytown": "BIRMINGHAM",
+    "state": "AL",
+    "zip_code": "35212",
+    "hospital_type": "Psychiatric"
+  },
+  "disposition": "official-domain-browser-challenge-pointer-unresolved",
+  "interpretation": "The current browser result is a transport/access observation only. CMS and an independent Alabama identity source confirm the facility and address; the challenge does not establish file absence, noncompliance or closure.",
+  "next_action": "Retry the exact root pointer or pricing page through a permitted authorized download route after a publisher/transport change; require facility-specific CSV/JSON bytes and declared Alabama identity, date, version and usability before promotion."
+}

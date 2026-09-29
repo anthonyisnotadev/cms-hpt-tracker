@@ -1,0 +1,20 @@
+{
+  "ccn": "291300",
+  "observed_at": "2026-09-21T15:30:00Z",
+  "official_pricing_page": "https://mgghnv.org/information-center/price-transparency/",
+  "official_pricing_page_status": 200,
+  "official_page_observation": "The current first-party Mount Grant price-transparency page identifies a Pricing Summary last updated September 10, 2025 and links a raw GitHub machine-readable JSON target; it also links a March 2026 shoppable-services PDF.",
+  "page_mrf_url": "https://raw.githubusercontent.com/Mt-Grant-General-Hospital/Pricing-Transparency/refs/heads/main/820299396_MtGrantGeneralHospital_standardcharges.JSON",
+  "page_mrf_status": 404,
+  "page_mrf_result": "The exact first-party page-linked raw GitHub object returned HTTP 404 and no JSON bytes.",
+  "shoppable_file_url": "https://mgghnv.org/wp-content/uploads/2026/03/mggh-shoppable-services-report-table-ii-March-2026.pdf",
+  "shoppable_file_observation": "The page links a current shoppable-services PDF, which is not a CMS machine-readable standard-charges MRF.",
+  "cms_api_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=291300&conditions%5B0%5D%5Boperator%5D=%3D",
+  "cms_api_status": 200,
+  "cms_api_response_bytes": 6681,
+  "cms_api_response_sha256": "608dab4d65cbe31c17c7874ab9190a484989815220ecc07066f983cdb8b7c937",
+  "cms_record": { "facility_id": "291300", "facility_name": "MOUNT GRANT GENERAL HOSPITAL", "address": "200 SOUTH A ST", "citytown": "HAWTHORNE", "state": "NV", "zip_code": "89415", "hospital_type": "Critical Access Hospitals", "hospital_ownership": "Government - Hospital District or Authority", "emergency_services": "Yes" },
+  "disposition": "current-official-page-mrf-target-404-shoppable-file-separate",
+  "interpretation": "The first-party page and CMS API independently confirm the Mount Grant identity and address. The page-linked MRF target is currently 404; the separate shoppable PDF is not a CMS MRF. No file-absence, compliance, or promotion conclusion is made.",
+  "next_action": "Publisher should restore the exact JSON or publish a replacement MRF and update the pricing page; then verify bounded bytes, Mount Grant identity, Nevada state, declared date/version and usability."
+}

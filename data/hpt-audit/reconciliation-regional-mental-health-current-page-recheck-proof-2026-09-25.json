@@ -1,0 +1,33 @@
+{
+  "ccn": "154020",
+  "observed_at": "2026-09-25T09:18:00Z",
+  "official_pricing_page": "https://www.rhs.care/quotes-charges/",
+  "page_file_url": "https://www.rhs.care/wp-content/uploads/2025/09/351375696_strawhun_standardcharges.csv",
+  "retrieval": {
+    "status": 206,
+    "content_type": "text/csv",
+    "content_length": 3293169,
+    "last_modified": "2026-03-26T16:26:21Z",
+    "sample_bytes": 262144,
+    "sample_sha256": "3e26e66a7db88f74040034093c3fdf915700af13fca9a96e475073d737601e47"
+  },
+  "header": {
+    "hospital_name": "Regional Mental Health Center",
+    "location_name": "Strawhun",
+    "address": "8555 Taft Street Merrillville, IN 46410",
+    "last_updated_on": "1/26/2026",
+    "version": "3.0.0",
+    "license_header": "license_number|CA",
+    "license_value": "424PIP IN",
+    "npi": "1548407216",
+    "attestation": true
+  },
+  "pointer_recheck": {
+    "url": "https://rhs.care/cms-hpt.txt",
+    "status": 404,
+    "interpretation": "The current page-linked file is retrievable, but the canonical root pointer target remains unavailable."
+  },
+  "finding": "Fresh bounded retrieval corroborates the exact facility identity and current CMS metadata while reproducing the publisher's explicit license-state header conflict.",
+  "disposition": "page-file-corroborated-license-state-conflict-retained",
+  "next_action": "Obtain publisher correction or explanation for the license_number|CA field/value conflict and restore a current pointer entry before promotion."
+}

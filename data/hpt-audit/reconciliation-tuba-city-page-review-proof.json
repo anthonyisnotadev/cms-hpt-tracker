@@ -1,0 +1,18 @@
+{
+  "ccn": "030073",
+  "observed_at": "2026-09-17T00:00:00.000Z",
+  "official_site": "https://tchealth.org/",
+  "identity_observation": "The current first-party homepage identifies Tuba City Regional Health Care Corporation and lists 167 North Main St, Tuba City, Arizona 86045; this agrees with the roster city/state and PO Box 600.",
+  "page_url": "https://tchealth.org/",
+  "pricing_url": "https://tchealth.org/wp-content/uploads/2025/01/Pricing-Transparency-at-TCRHCC-2025.pdf",
+  "pricing_http_status": 200,
+  "pricing_content_type": "application/pdf",
+  "pricing_bytes": 1885137,
+  "pricing_sha256": "30BEF2C2D99DB135ED242C3A6F7D68A71DAAD294CE7F227A2F3CB28DF5F0952E",
+  "pricing_observation": "The current first-party pricing link is a 2025 PDF consumer price list, not a CMS 3.0.0 machine-readable standard-charge MRF.",
+  "pointer_url": "https://tchealth.org/cms-hpt.txt",
+  "pointer_http_status": 200,
+  "pointer_observation": "The CMS pointer URL serves the site's HTML homepage rather than cms-hpt.txt pointer content; no declared MRF URL was exposed.",
+  "disposition": "official-page-consumer-price-list-pointer-html-unusable",
+  "next_action": "Recover a current structured CMS MRF and valid root pointer before assigning current file evidence."
+}

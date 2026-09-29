@@ -1,0 +1,50 @@
+{
+  "observed_at": "2026-09-17T12:36:28Z",
+  "scope": "Three unresolved South Dakota critical-access hospital CCNs with Avera price-page leads",
+  "retained_pointer_path": "data/hpt-audit/pointers/avera.org.txt",
+  "retained_pointer_sha256": "c03ea0025ff6efa9145a4b528d25d9f09010fe9ad607668c2d9bfccb660229ba",
+  "official_price_page": "https://www.avera.org/patients-visitors/price-transparency/",
+  "official_price_page_observation": "The South Dakota Standard Charges section currently displays distinct Bowdle, Eureka hospital, and Freeman CSV links.",
+  "cases": [
+    {
+      "ccn": "431308",
+      "roster_name": "EUREKA COMMUNITY HEALTH SERVICES - CAH",
+      "roster_address": "200 J AVE, EUREKA, SD 57437",
+      "official_hospital_page": "https://locations.avera.org/eureka-community-health-services-avera",
+      "official_hospital_page_observation": "Avera describes Eureka Community Health Services Avera at 200 J Ave as a six-bed Critical Access Hospital.",
+      "distinct_nearby_site_page": "https://locations.avera.org/avera-eureka-health-care-center",
+      "distinct_nearby_site_observation": "Avera Eureka Health Care Center is described as a nursing and assisted-living site at 202 J Ave; its name must not alone identify the 200 J Ave hospital.",
+      "pointer_location_name": "Avera Eureka Health Care Center",
+      "price_page_link_label": "460246437 eureka-hospital standard charges",
+      "pointer_mrf_url": "https://www.avera.org/app/files/public/11a2dd03-9af9-4627-8834-6553f37a9ec8/460246437_eureka-hospital_standardcharges.csv",
+      "browser_result": "Access Denied; no CSV bytes obtained",
+      "identity_decision": "Potential hospital file lead, but pointer location label conflicts with first-party hospital-versus-nursing-site names; file metadata remains unverified."
+    },
+    {
+      "ccn": "431313",
+      "roster_name": "FREEMAN MEDICAL CENTER - CAH",
+      "roster_address": "510 E 8TH ST, FREEMAN, SD 57029",
+      "official_system_page": "https://locations.avera.org/freeman-regional-health-services",
+      "official_system_page_observation": "Avera places Freeman Regional Health Services at 510 E 8th St and lists Freeman Medical Center as its 25-bed Critical Access Hospital, alongside a nursing home, clinic and assisted-living facility.",
+      "pointer_location_name": "Freeman Regional Health Services",
+      "price_page_link_label": "460232450 freeman-regional-health-svcs standard charges",
+      "pointer_mrf_url": "https://www.avera.org/app/files/public/7a544094-291c-4c7d-a209-6e8af23e8290/460232450_freeman-regional-health-services_standardcharges.csv",
+      "browser_result": "Access Denied after navigation; no CSV bytes obtained",
+      "identity_decision": "Shared-system address and label are a lead, not file-level proof of the hospital campus or scope."
+    },
+    {
+      "ccn": "431318",
+      "roster_name": "BOWDLE HOSPITAL - CAH",
+      "roster_address": "8001 W 5TH ST, BOWDLE, SD 57428",
+      "official_hospital_page": "https://bowdlehc.com/facilities/hospital/",
+      "official_hospital_page_observation": "Bowdle Healthcare Center's first-party site has a Bowdle Hospital page; the parent organization also includes non-hospital services.",
+      "pointer_location_name": "Bowdle Healthcare Center Avera",
+      "price_page_link_label": "460369929 bowdle-healthcare-center standard charges",
+      "pointer_mrf_url": "https://www.avera.org/app/files/public/e19f17eb-f168-4bb3-9c7f-d8503919d4c3/460369929_bowdle-healthcare-center_standardcharges.csv",
+      "browser_result": "Access Denied; no CSV bytes obtained",
+      "identity_decision": "Organization-level page and link are a lead, not file-level proof of Bowdle Hospital's declared location."
+    }
+  ],
+  "disposition": "All three remain unresolved. Preserve the current page links as leads and the 403/browser denials as access observations. Do not promote any CCN or infer file absence, complete-file validity, or legal compliance without exact-file bytes and identity metadata.",
+  "next_action": "Obtain authorized exact-file bytes through a materially different access path or a publisher-provided copy; compare declared hospital/location/address, date, and template version for each CCN before reviewed resolution."
+}

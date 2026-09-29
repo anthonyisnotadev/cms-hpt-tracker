@@ -1,0 +1,25 @@
+{
+  "ccn": "424011",
+  "observed_at": "2026-09-22T01:20:00Z",
+  "official_site": "https://www.scdmh.org/",
+  "official_pricing_page": "https://www.scdmh.org/office-of-public-information/reports-and-publications/inpatient-hospital-standard-charges/",
+  "official_page_status": 200,
+  "official_page_observation": "The South Carolina Department of Mental Health Office of Mental Health page publishes an inpatient standard-charge table that includes a distinct PATRICK B HARRIS line, but does not expose a facility-specific CMS CSV/JSON MRF or cms-hpt.txt pointer.",
+  "declared_hospital_name": "PATRICK B HARRIS",
+  "declared_last_updated": "2024",
+  "cms_hospital_general_record": {
+    "source_file": "cms_data/Hospital_General_Information.csv",
+    "source_sha256": "23c5019ee51e11442d6d64cd153cedd78c51ab6435f621e4cb9351e3e972d9e3",
+    "facility_id": "424011",
+    "facility_name": "PATRICK B HARRIS PSYCHIATRIC HOSPITAL",
+    "address": "130 HIGHWAY 252",
+    "citytown": "ANDERSON",
+    "state": "SC",
+    "zip_code": "29621",
+    "hospital_type": "Acute Care Hospitals"
+  },
+  "file_kind": "html-table",
+  "disposition": "official-state-standard-charge-table-no-cms-mrf",
+  "interpretation": "The state page provides dated public standard-charge information for Patrick B Harris, narrowing the discovery gate, but it is a shared HTML fee table rather than a facility-specific CMS CSV/JSON MRF. No MRF identity, address metadata, or usable cms-hpt.txt pointer was promoted.",
+  "next_action": "Search South Carolina DMH publisher routes for a facility-specific CMS CSV/JSON MRF and root pointer; retain the 2024 state-table observation as historical/source evidence only."
+}

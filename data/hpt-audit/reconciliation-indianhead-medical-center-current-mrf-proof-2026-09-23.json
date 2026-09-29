@@ -1,0 +1,18 @@
+{
+  "ccn": "521342",
+  "observed_at": "2026-09-23T00:00:00Z",
+  "official_site": "https://indianheadmedicalcenter.com/",
+  "official_identity_sources": [
+    "https://indianheadmedicalcenter.com/",
+    "https://indianheadmedicalcenter.com/price-transparency/",
+    "https://indianheadmedicalcenter.com/wp-content/uploads/2026/04/521651949_indianhead-medical-center-shell-lake-inc._standardcharges.csv",
+    "https://turquoise.health/providers/indianhead-medical-center/information"
+  ],
+  "official_identity": "Indianhead Medical Center is the Shell Lake, Wisconsin critical access hospital associated with CCN 521342. The first-party site identifies Indianhead Medical Center and its Shell Lake hospital; its pricing page links the facility-specific MRF.",
+  "browser_observation": "Browser automation opened the official Indianhead Medical Center pricing page. The page states that its machine-readable standard-charge list is available and exposes the facility-specific CSV.",
+  "pricing_url": "https://indianheadmedicalcenter.com/wp-content/uploads/2026/04/521651949_indianhead-medical-center-shell-lake-inc._standardcharges.csv",
+  "pricing_observation": "The linked CSV returned HTTP 200 text/csv, 2,809,461 bytes, SHA-256 ca95bbb39cd7e9adae70eb5802d364202e6a80dc15e00eea7b8414c905d2a681. Its metadata declares Indianhead Medical Center Shell Lake Inc., Shell lake Hospital, 113 Fourth Ave West, P.O. Box 300, Shell Lake, WI 54871-0300, NPI 1568438125, license 1047, CMS 3.0.0, update date 2026-04-01, attester Jessica Benzer, attestation TRUE, and 1,475 data rows.",
+  "disposition": "verified-current-mrf",
+  "interpretation": "Current first-party identity, pricing page, exact Shell Lake address/state and MRF metadata converge; this is supported observed MRF evidence, not a legal compliance determination.",
+  "next_action": "Retain exact official-page and file provenance and recheck on the normal freshness cycle."
+}

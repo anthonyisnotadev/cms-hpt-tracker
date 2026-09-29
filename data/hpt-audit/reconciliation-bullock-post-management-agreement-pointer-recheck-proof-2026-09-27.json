@@ -1,0 +1,32 @@
+{
+  "observed_at": "2026-09-27T18:59:14Z",
+  "change_trigger": "East Alabama Health announced its management agreement for Bullock County REH effective 2026-06-01; prior live pointer/file observation was 2026-09-25, before this operator-change announcement was incorporated into the case review.",
+  "operator_change_source": {
+    "url": "https://www.eastalabamahealth.org/news-and-media/east-alabama-health-operate-and-manage-bullock-county-rural-emergency-hospital",
+    "published": "2026-06-01",
+    "statement": "East Alabama Health announced it would operate and manage Bullock County Rural Emergency Hospital under a management agreement effective immediately, at the request of the Bullock County Health Care Authority."
+  },
+  "pointer": {
+    "requested_url": "https://www.bullockcountyhospital.com/cms-hpt.txt",
+    "http_status": 200,
+    "content_type": "text/plain",
+    "bytes": 310,
+    "sha256": "99ba142a8f47be71885163a8f22f0b3bc666b6b2b34e6b3fa6aada1aa4c39096",
+    "declared_location": "Bullock County Rural Emergency Hospital",
+    "source_page_url": "https://www.bullockcountyhospital.com/general-4",
+    "declared_mrf_url": "https://ce2ea91a-ba41-4498-ab16-2bae48bc8556.usrfiles.com/ugd/ce2ea9_229d2d077ea74cf6a45992ffbb655715.csv"
+  },
+  "bounded_mrf_check": {
+    "http_status": 206,
+    "content_type": "text/csv",
+    "range": "bytes 0-262143/953559",
+    "sample_bytes": 262144,
+    "sample_sha256": "33669a00c5d3331929c09384a7c26edbd2721dcf7b1d88caea1581958221facb",
+    "sampled_header": "hospital_name,last_updated_on,version,hospital_location,hospital_address,license_number|CA",
+    "sha256_matches_2026_09_25_sample": true,
+    "total_bytes_matches_prior_observation": true
+  },
+  "interpretation": "The post-management-announcement recheck found the exact same first-party pointer bytes, MRF URL, total file length and bounded-file sample hash as the 2026-09-25 observation. The declared file remains dated 2024-11-24, CMS template 2.0.0, and has the previously documented license_number|CA state conflict. It remains identity/address evidence for current REH CCN 010779 only, not historical acute-care CCN 010110. The unchanged pointer indicates no observed publisher transition to East Alabama Health's separate Opelika file; no new MRF content or historical file was recovered.",
+  "disposition_change": false,
+  "next_action": "Keep current REH CCN 010779 separate from historical acute-care CCN 010110; retain the Alabama-address/California-license-header conflict. Recheck only after an observable pointer, pricing-page, operator, file, or CMS-version change; a current CMS 3.0.0 file or publisher correction remains required for the REH, and a separately dated pre-conversion file remains required for 010110."
+}

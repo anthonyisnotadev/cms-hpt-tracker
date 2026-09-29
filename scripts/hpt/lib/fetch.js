@@ -16,7 +16,10 @@ const BROWSER_HEADERS = {
 /** True when the body actually looks like a CMS HPT pointer file rather than an error page. */
 function looksLikePointer(body) {
   if (!body) return false;
-  const s = String(body);
+  const s = String(body).replace(/^\uFEFF/, '');
+  // Publisher HTML can repeat pointer keys in SEO metadata or rendered text.
+  // Those labels do not make the HTML response a cms-hpt.txt document.
+  if (/^\s*(?:<!doctype\s+html\b|<html\b|<head\b|<body\b)/i.test(s)) return false;
   if (/^\s*[[{]/.test(s.trim())) {
     try {
       const j = JSON.parse(s);
@@ -36,8 +39,8 @@ function classify(status, body) {
   if (status === 404 || status === 410) return 'notfound';
   if (status >= 500) return 'server';
   if (status >= 200 && status < 300) {
-    if (looksLikePointer(body)) return 'ok';
     if (/<html|<!doctype/i.test(String(body || '').slice(0, 500))) return 'html';
+    if (looksLikePointer(body)) return 'ok';
     return 'empty';
   }
   return 'http' + status;
@@ -55,11 +58,17 @@ async function readTextCapped(res, maxBytes) {
   for (;;) {
     const { done, value } = await reader.read();
     if (done) break;
-    total += value.byteLength;
-    if (total > maxBytes) {
+    const remaining = maxBytes - total;
+    if (value.byteLength > remaining) {
+      if (remaining > 0) chunks.push(Buffer.from(value).subarray(0, remaining));
+      total += value.byteLength;
       try { await reader.cancel(); } catch (_e) {}
-      return { body: '', tooLarge: true, bytesRead: total };
+      // Retain only the bounded prefix.  A capped response is still useful for
+      // format and facility-header corroboration, but is never represented as
+      // a complete download.
+      return { body: Buffer.concat(chunks).toString('utf8'), tooLarge: true, bytesRead: total };
     }
+    total += value.byteLength;
     chunks.push(Buffer.from(value));
   }
   return { body: Buffer.concat(chunks).toString('utf8'), tooLarge: false, bytesRead: total };

@@ -8,6 +8,12 @@ test('only an explicitly labeled update date is accepted from CSV', () => {
   const preamble = '\nExported hospital data\nhospital_name,last_updated_on,version\nExample,2026-09-01,3.0.0';
   assert.equal(extractDeclared(Buffer.from(preamble), 'csv').raw, '2026-09-01');
 });
+test('version prefix normalization preserves spelled-out noncanonical values', () => {
+  const csv = value => `hospital_name,last_updated_on,version\nExample,2026-02-25,${value}`;
+  assert.equal(extractDeclared(Buffer.from(csv('V3.0.0')), 'csv').version, '3.0.0');
+  assert.equal(extractDeclared(Buffer.from(csv('v3.0')), 'csv').version, '3.0');
+  assert.equal(extractDeclared(Buffer.from(csv('VERSION 4.0')), 'csv').version, 'VERSION 4.0');
+});
 test('HTML overrides a misleading MIME type and unrelated state is not a license', () => {
   assert.equal(sniffKind(Buffer.from('<!doctype html><html>Error</html>'), 'application/json'), 'html');
   assert.equal(extractDeclared(Buffer.from('{"state":"CA","hospital_name":"Example"}'), 'json').licenseState, null);

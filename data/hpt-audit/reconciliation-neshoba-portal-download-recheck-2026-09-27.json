@@ -1,0 +1,12 @@
+{
+  "ccn": "250043",
+  "observed_at": "2026-09-27T02:35:00Z",
+  "official_site": "https://www.neshobageneral.com/",
+  "portal_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Neshoba_V3.aspx",
+  "portal_observation": "The current first-party site links the PARA transparency portal. The portal identifies Neshoba County General Hospital and exposes a Standard Charges (Chargemaster Pricing) control dated 3/17/2026.",
+  "browser_download_observation": "Activating the Standard Charges control in the permitted browser did not complete a downloadable file within the bounded wait; no new bytes or direct URL were asserted.",
+  "identity_scope": "The portal is facility-specific by displayed hospital name, but it does not expose an effective CCN scope mapping distinguishing acute-care CCN 250043 from critical-access CCN 251340.",
+  "disposition": "current-facility-specific-portal-reconfirmed-download-transport-unresolved-shared-ccn-scope",
+  "interpretation": "This is a current route/transport recheck, not a new MRF byte proof. The previously recovered complete alternate file remains retained but unassigned pending effective-dated CCN scope evidence or publisher confirmation.",
+  "next_action": "Recover the dynamic Standard Charges download through a permitted download-capable route and obtain effective-dated scope confirmation for CCNs 250043 and 251340 before assignment."
+}

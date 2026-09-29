@@ -1,0 +1,13 @@
+{
+  "ccn": "290001",
+  "observed_at": "2026-09-19T13:00:00Z",
+  "official_pricing_page": "https://www.renown.org/Patients-and-Visitors/Billing/Pricing-Transparency",
+  "official_page_observation": "The current first-party Renown pricing page lists Renown Regional Medical Center as a separate CSV link and states charges and payer rates are current as of March 27, 2026.",
+  "page_file_url": "https://renown.pt.panaceainc.com/MRFDownload/renown/regional-medical-center",
+  "redirect_target_observed": "https://mrf.panaceainc.com/Download.aspx?org=renown&loc=regional-medical-center&ref=",
+  "page_file_transport_observation": "The web tool exposed the redirect target, while the in-app browser returned ERR_BLOCKED_BY_CLIENT before CSV bytes. No header or rate rows were obtained.",
+  "facility_identity_context": "The first-party page names Renown Regional Medical Center and separately lists South Meadows and Rehabilitation files; this record is limited to the Regional link.",
+  "pointer_url": "https://www.renown.org/cms-hpt.txt",
+  "disposition": "official-page-current-file-client-access-unresolved",
+  "next_action": "Use an authorized download-capable route for the exact Regional CSV, then verify bounded bytes, declared facility/address/state/date/version and usability before promotion. Do not infer file absence or compliance from the client block."
+}

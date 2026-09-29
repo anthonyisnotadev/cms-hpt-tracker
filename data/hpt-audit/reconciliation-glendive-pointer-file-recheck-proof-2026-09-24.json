@@ -1,0 +1,27 @@
+{
+  "ccn": "271332",
+  "observed_at": "2026-09-24T00:00:00Z",
+  "official_site": "https://www.gmc.org/",
+  "official_pricing_page": "https://www.gmc.org/patients-families/gmc-price-transparency/",
+  "pointer_url": "https://gmc.org/cms-hpt.txt",
+  "pointer_http_status": 403,
+  "pointer_content_type": "text/html; charset=UTF-8",
+  "pointer_bytes": 4548,
+  "pointer_observation": "The root pointer now returns a Cloudflare attention/security page rather than structured text.",
+  "standing_mrf_url": "https://pricetransparency.blob.core.windows.net/glendive/81-6016016_Glendive-Medical-Center_standardcharges.csv?sv=2022-11-02&ss=bfqt&srt=sco&sp=rwdlacupiytfx&se=2099-04-26T22:40:35Z&st=2024-04-11T14:40:35Z&spr=https&sig=V53UDZpYxrVMzk1BKj4Dvm45q%2FAztzKKQCADbpBONqo%3D",
+  "mrf_range_status": 403,
+  "mrf_content_type": "application/xml",
+  "mrf_bytes": 246,
+  "mrf_error": "Azure AuthorizationFailure",
+  "official_page_linked_file_recheck": {
+    "url": "https://www.gmc.org/documents/Chargemaster-complete-by-Price-Schedule-FY-27.csv",
+    "status": 403,
+    "content_type": "text/html; charset=UTF-8",
+    "response_bytes": 4548,
+    "response_kind": "Cloudflare security challenge",
+    "retrieval_method": "bounded HTTP range request after official page link discovery"
+  },
+  "disposition": "current-pointer-and-sas-file-access-denied-recheck",
+  "interpretation": "This confirms current transport/access denial for the root pointer, the previously recorded SAS file and the official page-linked FY-27 CSV. It does not establish file absence or compliance failure.",
+  "next_action": "Use an authorized download-capable route or publisher-provided copy for the exact current file, then verify bounded bytes and metadata."
+}

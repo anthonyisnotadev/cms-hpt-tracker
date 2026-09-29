@@ -1,0 +1,60 @@
+{
+  "observed_on": "2026-09-15",
+  "records": [
+    {
+      "ccn": "010023",
+      "url": "https://www.baptistfirst.org/patients-visitors/before-your-visit/get-a-price-estimate",
+      "outcome": "page-read",
+      "method": "codex-in-app-browser-accessibility",
+      "file_link": "https://baptistfirst.pt.panaceainc.com/MRFDownload/baptistfirst/bmc-south",
+      "note": "Official Montgomery operator pricing page exposes the South standard-charges download. A subsequent browser navigation to https://www.baptistfirst.org/cms-hpt.txt returned ERR_BLOCKED_BY_CLIENT. Bounded direct retrieval of the apex root pointer succeeded and linked the same South file."
+    },
+    {
+      "ccn": "051300",
+      "url": "https://www.ephc.org/price-transparency.php",
+      "outcome": "page-read",
+      "method": "codex-in-app-browser-accessibility",
+      "file_link": "https://www.ephc.org/V3.0TallEPHC.csv",
+      "note": "Official Eastern Plumas Health Care page exposes VIEW STANDARD CHARGES at the recorded file URL. Footer gives 500 1st Ave, Portola CA 96122. This corroborates the file street, state and ZIP and supports reconciling its city typo Porola."
+    },
+    {
+      "ccn": "271332",
+      "url": "https://www.gmc.org/patients-families/gmc-price-transparency/",
+      "outcome": "page-read-file-transport-blocked",
+      "method": "web-reader-and-codex-in-app-browser",
+      "file_link": "https://www.gmc.org/documents/Chargemaster-complete-by-Price-Schedule-FY-27.csv",
+      "note": "The current first-party Glendive Medical Center pricing page identifies the hospital at 202 Prospect Dr, Glendive MT 59330 and exposes a FY27 machine-readable CSV. The web reader reached the exact target but rejected application/octet-stream, and the in-app browser returned ERR_BLOCKED_BY_CLIENT; no bytes, header identity, date, version or parsed usability were inferred. Keep the older pointer-declared SAS CSV separate."
+    },
+    {
+      "ccn": "340147",
+      "url": "https://www.unchealth.org/records-insurance/standard-charges",
+      "outcome": "page-read-file-access-denied",
+      "method": "codex-in-app-browser-rendered-page",
+      "file_link": "https://unchealthcare.org/app/files/public/2e2c4957-e364-4afe-b81f-cf5bfd97907b/nash-hospitals_standardcharges.csv",
+      "note": "The rendered UNC Health Standard Charges page lists UNC Health Nash and its exact CSV target, separate from the retained root-pointer entry labeled UNC Health Southeastern. Opening the Nash CSV in the in-app browser returned an Akamai Access Denied page; no bytes, header identity, address, state, date, version or parsed usability were inferred. Do not substitute the Southeastern file."
+    },
+    {
+      "ccn": "431316",
+      "url": "https://www.avera.org/patients-visitors/price-transparency/",
+      "outcome": "page-read-file-transport-denied",
+      "method": "web-reader-and-bounded-http",
+      "file_link": "https://www.avera.org/app/files/public/ab83b4b4-beb0-4a03-897d-6ce6983a71c5/466000400_redfield-community-memorial_standardcharges.csv",
+      "note": "The current Avera Price Transparency page lists Redfield Community Memorial under the exact 466000400 standard-charges CSV URL, matching the retained pointer target. The web reader reached the link but did not expose its body, and a bounded HTTP retrieval returned 403; no bytes, header identity, date, version or parsed usability were inferred."
+    },
+    {
+      "ccn": "261327",
+      "url": "https://rayhealthcare.org/patients-and-visitors/price-transparency/",
+      "outcome": "page-read-historical-workbook",
+      "method": "web-reader",
+      "file_link": "https://rayhealthcare.org/wp-content/uploads/2022/09/PRICE_TRANSPARENCY.xlsx",
+      "note": "The current first-party Ray County price page identifies the roster campus at 904 Wollard Boulevard, Richmond MO 64085, but explicitly dates the linked XLSX estimates to January 2019 and FY November 2017–October 2018. The web reader reached the exact workbook but did not expose bytes; retain it as historical/pointer-linked content, not a current CMS MRF or current metadata proof."
+    },
+    {
+      "ccn": "494023",
+      "url": "https://www.hcavirginia.com/patient-resources/patient-financial-resources/pricing-transparency-cms-required-file-of-standard-charges",
+      "outcome": "page-read-facility-not-listed",
+      "method": "codex-in-app-browser-accessibility",
+      "note": "The current HCA Virginia CMS Standard Charges page rendered in the browser and lists downloadable JSON files for 13 HCA Virginia facility groups, but Dominion Hospital is not among the listed locations. The Dominion-specific pricing URL returned a current 404 page. Search results still surface both URLs, so this is a dated first-party page/URL mismatch observation only; no sibling HCA file was substituted and no current Dominion MRF was inferred."
+    }
+  ]
+}

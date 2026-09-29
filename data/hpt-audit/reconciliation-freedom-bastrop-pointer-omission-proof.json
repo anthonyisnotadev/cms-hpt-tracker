@@ -1,0 +1,33 @@
+{
+  "ccn": "194083",
+  "hospital_name": "FREEDOM BEHAVIORAL HOSPITAL OF BASTROP",
+  "official_domain": "freedombehavioral.com",
+  "identity_page_url": "https://freedombehavioral.com/freedom-bastrop/",
+  "pointer_url": "https://freedombehavioral.com/cms-hpt.txt",
+  "pointer_http_status": 200,
+  "pointer_last_modified": "2026-05-21T15:31:12Z",
+  "pointer_location_names": ["Beacham Memorial Hospital", "Freedom Behavioral Hospital Of Monroe", "Freedom Behavioral Hospital Of Plainview"],
+  "pricing_page_url": "https://freedombehavioral.com/price-transparency/",
+  "pricing_page_http_status": 200,
+  "pricing_page_sha256_utf8": "ee22275e9df39c9c68f176934ea89a81f062d7a2f3a077663b2869271416aca2",
+  "pricing_page_linked_mrf_scope": ["Freedom Magnolia", "Freedom Monroe", "Freedom Plainview"],
+  "pricing_page_bastrop_mrf_link_observed": false,
+  "bastrop_identity_page_http_status": 200,
+  "bastrop_identity_address_observed": "4673 Eugene Ware, Bastrop, LA 71220",
+  "bastrop_entry_observed": false,
+  "checked_at": "2026-09-18T23:58:00Z",
+  "latest_recheck": {
+    "observed_at": "2026-09-19T08:14:34Z",
+    "pointer_http_status": 200,
+    "pointer_content_length": 966,
+    "pointer_last_modified": "2026-05-21T15:31:12Z",
+    "pointer_location_names": ["Beacham Memorial Hospital", "Freedom Behavioral Hospital Of Monroe", "Freedom Behavioral Hospital Of Plainview"],
+    "program_locations_url": "https://freedombehavioral.com/program-locations/",
+    "program_locations_status": 200,
+    "current_bastrop_address": "4673 Eugene Ware Blvd, Bastrop, LA 71220",
+    "pricing_page_status": 200,
+    "pricing_page_facilities": ["Freedom Magnolia", "Freedom Monroe", "Freedom Plainview"],
+    "result": "The current root pointer and pricing page still omit Bastrop from MRF links, while the current program-location page confirms the Bastrop facility and corrects the street suffix from the older Eugene Ware Road observation to Eugene Ware Blvd. No Bastrop MRF bytes or metadata were recovered."
+  },
+  "disposition": "facility omitted from current pointer; do not assign other-campus files"
+}

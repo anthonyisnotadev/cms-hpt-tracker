@@ -1,0 +1,12 @@
+{
+  "ccn":"144037","observed_at":"2026-09-23T05:30:00Z",
+  "official_site":"https://dhsforensics.illinois.gov/",
+  "official_identity":"The recorded domain loads the Illinois Department of Human Services Forensics Handbook, not a facility-specific Elgin Mental Health Center page. CMS independently identifies Elgin Mental Health Center at 750 S State St, Elgin, IL 60123.",
+  "browser_observation":"Interactive browser navigation loaded the IDHS Forensics Handbook. The accessibility tree exposed generic forensic-system content and no facility-specific pricing or MRF link.",
+  "pointer_url":"https://dhsforensics.illinois.gov/cms-hpt.txt","pointer_status":"HTTP 404 Not Found",
+  "mrf_observation":"No facility-specific MRF bytes recovered; no file-absence or compliance conclusion inferred.",
+  "cms_api_url":"https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=144037&conditions%5B0%5D%5Boperator%5D=%3D","cms_api_status":200,"cms_api_response_bytes":6673,"cms_api_response_sha256":"194AE6A0C4368CABD8DD3C789B51BF088DDCCEB1A5F027AEB4BE7D598CB03A01","cms_record":{"facility_id":"144037","facility_name":"ELGIN MENTAL HEALTH CENTER","address":"750 S STATE ST","citytown":"ELGIN","state":"IL","zip_code":"60123"},
+  "disposition":"official-domain-generic-state-content-pointer-404",
+  "interpretation":"The recorded state domain is reachable but serves generic IDHS Forensics Handbook content and its root pointer is 404. This is a facility-attribution/discovery observation only; no MRF or compliance conclusion is inferred.",
+  "next_action":"Locate a current facility-specific IDHS or hospital pricing route and root pointer through an alternate state directory/client; verify facility identity and MRF metadata before promotion."
+}
