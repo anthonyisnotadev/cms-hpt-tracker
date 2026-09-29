@@ -39,6 +39,9 @@ cms_data/hpt/external_link_checks.json
 # Raw cms-hpt.txt corpus, resumable crawl state, and normalized CSV export.
 cms_data/hpt/pointer-corpus/
 cms_data/hpt/external-pointer-corpus/
+# Private nationwide retrieval cache: raw pointers can contain contact fields,
+# and MRF byte samples must remain unchanged for their recorded SHA-256 proofs.
+cms_data/hpt/nationwide-verification/
 # Resumable direct-MRF header cache. Reviewable CSV evidence stays outside it.
 cms_data/hpt/direct-mrf/
 # Working copies regenerated from the public snapshot by import-corpus.js /
@@ -77,3 +80,18 @@ data/hpt-audit/rechecks/2026-09-09/investigation/retrieval-results.json
 data/hpt-audit/rechecks/2026-09-09/investigation/targeted-retrievals.json
 # Publisher replies may contain personal signatures and contact details.
 data/hpt-audit/rechecks/2026-09-09/investigation/publisher-responses.json
+
+# Full publisher MRF byte captures are local evidence caches. Their hashes,
+# headers, and bounded proofs are the auditable public artifacts; do not feed
+# multi-hundred-megabyte CSVs into the publication contact scanner.
+data/hpt-audit/curl-evidence/banner-tucson-030064.csv
+data/hpt-audit/curl-evidence/little-colorado-031311-prefix.csv
+
+# Transient retrieval bytes and interrupted audit writes are local working files.
+# Keep the dated, reviewed proof JSONs instead of these partial captures.
+data/hpt-audit/*.part
+data/hpt-audit/*.headers
+data/hpt-audit/*.tail
+data/hpt-audit/file-byte-proof-*
+data/hpt-audit/interventions.csv.tmp-*
+data/hpt-audit/tmp-*

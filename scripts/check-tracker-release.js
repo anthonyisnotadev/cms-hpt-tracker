@@ -18,7 +18,8 @@ function inputFiles() {
     .filter(file => file && file !== MANIFEST && (
       /^(?:scripts\/.*\.js|css\/.*\.css|js\/.*\.js)$/.test(file)
       || /^(?:data\/hpt-audit\/|cms_data\/).*\.(?:json|csv|md|txt)$/.test(file)
-      || file === 'data/hpt-audit/.pointer-obfuscation-key'))
+      || ['package.json', 'package-lock.json', '.gitignore', '.github/workflows/pages.yml',
+        'data/hpt-audit/.pointer-obfuscation-key'].includes(file)))
     .sort();
 }
 
