@@ -208,9 +208,11 @@
   }).join('');
 
   /* ---------- findings ---------- */
-  var maxF = Math.max.apply(null, D.findings.map(function (f) { return f.n; }));
-  $('finding-list').innerHTML = D.findings.slice().sort(function (a, b) { return b.n - a.n; })
-    .map(function (f) {
+  var visibleFindings = D.findings.filter(function (f) { return f.n > 0; })
+    .sort(function (a, b) { return b.n - a.n; });
+  var maxF = visibleFindings.length ? visibleFindings[0].n : 1;
+  function findingRows(findings) {
+    return findings.map(function (f) {
       return '<div class="finding">'
         + '<span class="f-stripe" data-tier="' + f.tier + '"></span>'
         + '<span class="f-name">' + f.label + '<span class="f-blurb">' + f.blurb + '</span></span>'
@@ -219,6 +221,14 @@
         + '<span class="f-n">' + fmt.format(f.n) + '</span>'
         + '</div>';
     }).join('');
+  }
+  var moreFindings = visibleFindings.length - 5;
+  $('finding-list').innerHTML = findingRows(visibleFindings.slice(0, 5))
+    + (moreFindings > 0
+      ? '<details class="finding-more"><summary><span class="finding-more-open">Show ' + fmt.format(moreFindings)
+        + ' more findings</span><span class="finding-more-close">Show fewer findings</span></summary>'
+        + '<div class="findings">' + findingRows(visibleFindings.slice(5)) + '</div></details>'
+      : '');
 
   /* ---------- freshness ---------- */
   var maxBin = Math.max.apply(null, D.freshness.map(function (b) { return b.n; }));
@@ -302,7 +312,7 @@
   renderStates();
 
   /* ---------- queue ---------- */
-  $('queue-cards').innerHTML = D.queue.map(function (q) {
+  $('queue-cards').innerHTML = D.queue.filter(function (q) { return q.n > 0; }).map(function (q) {
     return '<div class="q-card">'
       + '<div class="q-n">' + fmt.format(q.n) + '</div>'
       + '<div class="q-label">' + q.label + '</div>'
@@ -336,6 +346,7 @@
     $('intervention-detail-why').textContent = v.plain;
     $('intervention-detail-action').textContent = v.action;
     $('intervention-view').textContent = 'View ' + fmt.format(v.n) + ' hospitals →';
+    if (window.HptMotion) window.HptMotion.enter($('intervention-detail'));
   }
   interventionList.addEventListener('click', function (event) {
     var btn = event.target.closest('button[data-key]');
@@ -957,7 +968,7 @@
     navQ.addEventListener('keydown', function (ev) {
       if (ev.key !== 'Enter') return;
       ev.preventDefault();
-      $('register').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      $('register').scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
     });
   }
 
@@ -993,7 +1004,7 @@
         b.setAttribute('aria-pressed', b.dataset.key === k ? 'true' : 'false');
       });
       applyFilters();
-      $('register').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      $('register').scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
     });
   });
 
@@ -1693,8 +1704,11 @@
     renderDrawer(true);
     drawer.hidden = false;
     scrim.hidden = false;
+    // Establish the closed position after display:none before transitioning.
+    void drawer.offsetWidth;
     // Next frame so the transform transition actually runs.
     requestAnimationFrame(function () {
+      if (openCcn !== ccn) return;
       drawer.classList.add('on');
       scrim.classList.add('on');
       $('oc-close').focus();
@@ -1717,7 +1731,7 @@
     document.removeEventListener('keydown', onDrawerKey);
     window.setTimeout(function () {
       if (!openCcn) { drawer.hidden = true; scrim.hidden = true; }
-    }, 220);
+    }, reduceMotion.matches ? 0 : 220);
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
 
@@ -2058,6 +2072,7 @@
     $('oc-preview-open').hidden = !rec;
     $('oc-preview-clear').hidden = !rec || !rec.followUpOn;
     $('oc-preview-clear').dataset.clear = ccn || '';
+    if (window.HptMotion) window.HptMotion.enter($('oc-preview'));
   }
   function updateOutreachList() {
     var active = outreachListMode === 'follow' ? 'oc-followups' : 'oc-recent';
@@ -2232,6 +2247,7 @@
   var fieldGeom = { pitch: 0, gap: 0, cols: 0, rows: 0, w: 0, h: 0 };
   var fieldDrawn = 0;          // how many marks have been laid down so far
   var fieldTimer = null;
+  var fieldFrame = null;
   var hoverIdx = -1;
 
   function cssVar(name) {
@@ -2334,6 +2350,7 @@
   // The one orchestrated moment: the registry feeds in, like paper off a printer.
   // A timeout backstop guarantees the complete field even where rAF never runs.
   function runField(animate) {
+    if (fieldFrame !== null) { cancelAnimationFrame(fieldFrame); fieldFrame = null; }
     sizeField();
     if (fieldTimer) { clearTimeout(fieldTimer); fieldTimer = null; }
     if (!animate) { fieldDrawn = D.rows.length; drawField(); return; }
@@ -2346,9 +2363,9 @@
       var t = Math.min(1, (ts - startedAt) / DURATION);
       fieldDrawn = Math.round(D.rows.length * t);
       drawField(fieldDrawn);
-      if (t < 1) requestAnimationFrame(step);
+      fieldFrame = t < 1 ? requestAnimationFrame(step) : null;
     };
-    requestAnimationFrame(step);
+    fieldFrame = requestAnimationFrame(step);
     fieldTimer = setTimeout(function () {
       if (fieldDrawn < D.rows.length) { fieldDrawn = D.rows.length; drawField(); }
     }, DURATION + 250);
@@ -2391,6 +2408,9 @@
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   runField(!reduceMotion.matches);
+  if (reduceMotion.addEventListener) reduceMotion.addEventListener('change', function () {
+    if (reduceMotion.matches) runField(false);
+  });
 
   var fieldResize;
   window.addEventListener('resize', function () {

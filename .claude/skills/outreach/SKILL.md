@@ -24,8 +24,8 @@ write after confirmation**.
    those report input the store threw away, and they do **not** appear in the
    diff. Wait for a clear yes.
 6. **Commit** - re-run the same command with `--commit`.
-7. **Git commit** the regenerated public copy - see "Committing the public
-   copy" below.
+7. **Review the public copy** using the privacy checks below. Commit only the
+   scoped public changes when repository changes are part of the user's request.
 
 Step 5 is the point of the whole design. An LLM reading "they said they'd fix it
 next quarter" into a status change is exactly where a silent wrong write
@@ -54,7 +54,8 @@ Act on `confidence`:
 | `weak`, `none` | **ask** - say you couldn't match it; don't fall back to the top hit |
 
 Anything that resolves to a CCN not in the roster is a mistake - say so rather
-than creating a record for it. If the user gives a CCN directly, use it as-is.
+than creating a record for it. If the user gives a CCN directly, preserve leading
+zeros and verify it with `find <ccn> --json` before using it.
 
 ## Building the plan
 
@@ -315,8 +316,14 @@ both are correct.
 with different ids and nothing complains. That is the real reason to run `show`
 before proposing a write on an existing record.
 
-Of the stored fields, `correction.verdict` matters most - it overrides the row's
-tier badge, the filter chips and the sort order in the tracker. `mrfUrl`,
+Of the stored fields, `correction.verdict` matters most - an applicable correction
+overrides the row's tier badge, filter chips, and sort order in the tracker.
+`correctionOf()` in `js/tracker.js` ignores a manual correction when its
+`checkedOn` (or record `updatedAt` fallback) is older by calendar date than
+`D.reviewedAt[ccn]`. The correction remains stored as history. Do not change its
+date merely to override a newer review; record a genuinely newer check with its
+evidence. Manual corrections do not rewrite the nationwide research files or
+aggregate audit totals. `mrfUrl`,
 `pointerUrl`, `lastUpdatedOn` and `note` drive the row buttons, the age cell and
 the "why" text. `correction.domain` and `templateVersion` round-trip through the
 UI but render nowhere, and nothing reads `createdAt` - don't spend the user's time
@@ -331,13 +338,18 @@ is dropped silently:
 - no contact or person records - a name and address live in the email `to` and `body`
 - no phone-call entry kind - **a call is a `note`**
 - no priority, assignee, or CMS complaint ID
-- no health-system grouping. One MRF covering forty hospitals is forty
-  `correction` ops sharing the same `mrfUrl`; there is no shared-file entity.
+- no health-system grouping. One MRF can produce separate `correction` ops
+  sharing a URL only after its coverage is verified for each CCN; a shared domain,
+  system name, or roster of hospitals is not sufficient. There is no shared-file entity.
 - **an entry's `kind` cannot change.** Content is editable with `edit-entry`, but
   a note cannot become an email. That one really is `delete-entry` plus a new
   entry - say so out loud, because it is destructive and it moves the timestamp.
 
 ## Reading the current state
+
+For a file finding, verdict change, or research follow-up, also read
+[the reviewed evidence workflow](references/reviewed-evidence.md). Outreach
+entries record fieldwork; they do not replace the reviewed nationwide pipeline.
 
 ```bash
 node scripts/outreach-cli.js show <ccn|name>     # one record, with entry ids
@@ -384,13 +396,10 @@ Adapt the middle paragraph to the actual finding (outdated file, broken link,
 wrong facility, pointer mismatch, etc.) - the opening line, the 30-day
 follow-up framing, and the closing are the reusable parts.
 
-On the 30-day mention: CMS's own enforcement timeline runs far longer (a
-90-day warning period, then a corrective action plan with another 90-day
-compliance window) - filing a CMS complaint doesn't require contacting the
-hospital first at all. So "I'll follow up in 30 days" reads as the user's own
-research cadence, not a threat, and there's no need to attach "for CMS
-compliance purposes" or similar language to it - "so I can continue my
-research" is enough and keeps the tone low-key.
+The 30-day mention is the user's research cadence, not a regulatory deadline.
+Use it only when the user wants that follow-up schedule. If asked to discuss
+CMS enforcement or complaint requirements, verify current official guidance
+before making claims; the outreach store does not establish legal compliance.
 
 ## Common phrasings
 
@@ -402,12 +411,12 @@ research" is enough and keeps the tone low-key.
 | "I got a bounce, no record yet" | `email` with `outcome: "bounced"` + a `note` with the SMTP error; the record stays at `none` |
 | "they never answered that one" | `outcome` = `no-response` on that entry |
 | "no response from X" | `status` = `no-response` on the record |
-| "turns out it wasn't blocked" / "it's actually up" | `correction` with `verdict` and `mrfUrl` |
-| "this MRF covers these hospitals: …" | one `correction` per hospital, same `mrfUrl` |
+| "turns out it wasn't blocked" / "it's actually up" | Record the access observation; set a correction only to the extent supported by facility and file evidence |
+| "this MRF covers these hospitals: …" | Verify coverage per CCN, then one supported `correction` per hospital; shared URL alone is insufficient |
 | "found their pointer file at <url>" | `correction` with `pointerUrl` (+ `domain`) |
 | "that MRF link was wrong, drop it" | `correction` with `"mrfUrl": ""` |
-| "this one's a VA/military hospital" | `correction` with `verdict` = `exempt` |
-| "they fixed it" | `correction` `verdict` = `compliant` + `status` = `resolved` |
+| "this one's a VA/military hospital" | Verify facility identity and scope evidence before an `exempt` correction |
+| "they fixed it" | Log the reply as a note; independently check the claimed fix before changing a verdict or marking the issue resolved |
 | "check back on X" | `status` with `followUpOn` |
 | "I called them" | `note` - there is no call kind |
 | "I logged that twice" | `delete-entry` with the duplicate's `id` (confirm first) |
@@ -451,11 +460,21 @@ automatically regenerates `cms_data/outreach.public.json` (via
 redacted copy is committed, published, and deployed to
 `mrf.anthonyisnota.dev`.
 
-Redaction masks **every email address automatically** (`jdoe@examplehospital.org`
+Redaction first masks **every email address automatically** (`jdoe@examplehospital.org`
 → `j***@examplehospital.org`), but **person names are a manual list** -
 `cms_data/redact-names.json` (private, gitignored; see
-`redact-names.example.json` for the format). This is the one maintenance duty
-the split creates:
+`redact-names.example.json` for the format). The redactor then calls
+`protectDocument()` from `scripts/protect-public-contacts.js`, using the existing
+local pointer-obfuscation key, to protect contact values with authenticated
+encryption. Public files can therefore contain `hpt-obf:v1:` tokens rather than
+visible masked addresses. This is obfuscation, not a guarantee of confidentiality:
+the public application can reveal protected contact text. Remove sensitive
+content and redact names before publication; do not rely on encryption to make
+private material safe to publish. Never print, stage, or replace the key in
+`data/hpt-audit/.pointer-obfuscation-key`. A missing key or redaction failure is
+a blocker to publication, not a reason to publish the private file.
+
+The name list and private-content review remain necessary:
 
 - Whenever a plan's `to`, `body`, or `note` text contains a **named person**
   at a hospital, check `redact-names.json` covers that name. If not, propose
@@ -507,9 +526,15 @@ yourself - the user shouldn't have to. The rules:
    gitignored and stays local. Never stage anything else the user has in
    flight, and never `git add -A` - the private `cms_data/outreach.json` is
    gitignored but force-adding or a broad stage is still on you to avoid.
-2. Sanity-check the staged diff (`git diff --cached`) for unmasked person
-   names before committing. Emails render as `x***@domain` - if you see a
-   full address, redaction failed; stop and say so instead of committing.
+2. Run `npm run check:contacts-private` and `npm run check:pointers-private`
+   before publication. If contact protection reports changes needed, run
+   `npm run protect:contacts` and inspect its changes; stage only authorized files.
+   Sanity-check the exact staged diff (`git diff --cached`) for person names,
+   private message content, credentials, phone numbers, and local paths. Masked
+   emails can be represented by protected tokens; token presence alone is not
+   proof that the content is safe. The automated checks do not recognize every
+   person's name or sensitive statement. A store save can succeed while public
+   regeneration reports a warning; fix that warning before committing a stale copy.
 3. Commit with a short message describing the fieldwork, e.g.
    `outreach: log MRF fix confirmation from Springfield` or
    `outreach: flag stale last_updated_on for two hospitals`. Match the
@@ -517,6 +542,12 @@ yourself - the user shouldn't have to. The rules:
    `outreach:`.
 4. Do **not** push unless the user asks. A push deploys to mrf.anthonyisnota.dev,
    so it stays the user's call.
+
+For an authorized push, inspect all outgoing commits as well as the staged
+diff. Distinguish local writes, Git commits, pushes, and successful deployment
+in the result. The Pages workflow publishes a selected artifact, not every
+repository file; a tracked research file or new local snapshot is not necessarily
+available at the public domain. Verify published links and dates after deployment.
 
 If `outreach.public.json` shows no changes after a write (a pure `status` op,
 say), skip the commit - don't mint empty ones.

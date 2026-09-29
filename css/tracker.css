@@ -36,12 +36,13 @@
    `padding: X 0` shorthand here silently zeroes the page gutter that .wrap sets
   , which left every section flush to the edge on a phone and pushed the
    freshness histogram past the viewport. Set only the axis this rule owns. */
-section.wrap { padding-top: var(--s-8); padding-bottom: var(--s-8); border-bottom: 1px solid var(--rule); }
+section.wrap { padding-top: var(--s-8); padding-bottom: var(--s-8); border-bottom: 1px solid var(--rule); scroll-margin-top: var(--s-8); }
 section:last-of-type { border-bottom: none; }
 
 .sec-head { margin-bottom: var(--s-6); max-width: 62ch; }
 .sec-head h2 { font-size: var(--fs-h2); line-height: 1.15; margin: var(--s-2) 0 0; }
-.sec-head p { margin: var(--s-3) 0 0; color: var(--ink-2); font-size: var(--fs-body); line-height: 1.55; }
+.sec-head p { margin: var(--s-3) 0 0; color: var(--ink-2); font-size: var(--fs-body); line-height: 1.6; }
+.sec-head .eyebrow { font-size: var(--fs-label); color: var(--ink-3); }
 
 /* ============================================================
    Section bar, the tracker's in-page navigation.
@@ -60,29 +61,30 @@ section:last-of-type { border-bottom: none; }
   background: var(--surface);
   border-bottom: 1px solid var(--rule);
 }
-.secnav-inner { display: flex; align-items: center; gap: var(--s-4); min-height: 56px; }
+.secnav-inner { display: flex; flex-wrap: wrap; align-items: center; gap: 0 var(--s-4); min-height: 60px; padding-top: var(--s-2); padding-bottom: var(--s-2); }
 
 .secnav-links {
   display: flex; align-items: center; gap: var(--s-1);
   flex: 1 1 auto; min-width: 0;
-  overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none;
+  overflow-x: auto; scrollbar-width: thin; scrollbar-color: var(--rule-strong) transparent;
 }
-.secnav-links::-webkit-scrollbar { display: none; }
+.secnav-links::-webkit-scrollbar { height: 3px; }
+.secnav-links::-webkit-scrollbar-thumb { background: var(--rule-strong); border-radius: var(--r-pill); }
 .secnav-links a {
   display: inline-flex; align-items: center;
-  min-height: 34px; padding: 0 var(--s-3);
-  border-radius: var(--r-md);
+  min-height: var(--ctl-h); padding: 0 var(--s-3);
+  border-radius: var(--r-pill);
   font-size: var(--fs-xs); color: var(--ink-3); white-space: nowrap;
 }
 .secnav-links a:hover { color: var(--ink); background: var(--surface-sunk); }
-.secnav-links a.on { color: var(--ink); font-weight: 600; background: var(--surface-sunk); }
+.secnav-links a.on { color: var(--ink); font-weight: 500; background: var(--paper); }
 
 /* The lookup, reachable from anywhere on the page rather than only at
    74% depth. Mirrors the register's own search both ways. */
-.secnav-search { flex: none; position: relative; width: 260px; }
+.secnav-search { flex: none; position: relative; width: 220px; }
 .secnav-search input {
   width: 100%; font: inherit; font-size: var(--fs-xs);
-  height: 36px; padding: 0 var(--s-3) 0 var(--s-6);
+  height: var(--ctl-h); padding: 0 var(--s-3) 0 var(--s-6);
   background: var(--paper); color: var(--ink);
   border: 1px solid var(--rule-strong); border-radius: var(--r-md);
 }
@@ -99,7 +101,7 @@ section:last-of-type { border-bottom: none; }
   min-height: var(--ctl-h); padding: 0 var(--s-5);
   border-radius: var(--r-pill);
   background: var(--ink); color: var(--paper);
-  font-size: var(--fs-sm); font-weight: 600;
+  font-size: var(--fs-sm); font-weight: 500;
 }
 .hero-jump:hover { opacity: .88; }
 
@@ -123,8 +125,9 @@ section:last-of-type { border-bottom: none; }
 #field {
   display: block; width: 100%; height: auto;
   background: var(--surface);
-  border: 1px solid var(--rule);
-  border-radius: var(--r-lg);
+  /* Marks reach the edges: rounding this canvas clips real hospitals. */
+  border: 0;
+  border-radius: 0;
   cursor: default;
 }
 #field.pickable { cursor: pointer; }
@@ -140,17 +143,20 @@ section:last-of-type { border-bottom: none; }
    Counts are injected from the current audit data, not hard-coded here. ---- */
 .coverage {
   display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1px; background: var(--rule);
-  border: 1px solid var(--rule); border-radius: var(--r-lg);
+  gap: var(--s-6); background: transparent;
+  border: 0; border-radius: 0;
   overflow: hidden; margin-top: var(--s-6);
 }
-.cov { background: var(--surface); padding: var(--s-5); }
-.cov .cov-k { font-size: var(--fs-label); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
+.cov { padding: var(--s-2) 0; }
+.cov .cov-k { font-size: var(--fs-sm); font-weight: 500; color: var(--ink-2); }
 .cov .cov-n { font-size: 40px; font-weight: 600; line-height: 1.05; margin-top: var(--s-2); font-variant-numeric: tabular-nums; letter-spacing: -0.03em; }
 .cov .cov-note { margin-top: var(--s-2); font-size: var(--fs-sm); color: var(--ink-2); line-height: 1.5; }
 /* The unreached half is the finding, so it is the one that carries a mark. */
-.cov[data-role="unreached"] { border-left: 3px solid var(--field-hollow); }
-@media (max-width: 700px) { .coverage { grid-template-columns: minmax(0, 1fr); } }
+.cov[data-role="unreached"] { border-left: 1px solid var(--rule); padding-left: var(--s-6); }
+@media (max-width: 700px) {
+  .coverage { grid-template-columns: minmax(0, 1fr); gap: var(--s-5); }
+  .cov[data-role="unreached"] { border-left: 0; border-top: 1px solid var(--rule); padding: var(--s-5) 0 0; }
+}
 
 /* ---- Readout: the printout summary block under the field ---- */
 .readout {
@@ -209,9 +215,9 @@ section:last-of-type { border-bottom: none; }
 /* ============================================================
    Stat tiles
    ============================================================ */
-.tiles { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: var(--r-lg); overflow: hidden; }
-.tile { background: var(--surface); padding: var(--s-5); }
-.tile .t-label { font-size: var(--fs-label); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
+.tiles { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: var(--s-6); }
+.tile { padding: var(--s-5) 0; border-top: 1px solid var(--rule); }
+.tile .t-label { font-size: var(--fs-xs); font-weight: 500; color: var(--ink-2); }
 .tile .t-value { font-weight: 600; font-size: 34px; line-height: 1.1; margin-top: var(--s-2); font-variant-numeric: tabular-nums; letter-spacing: -0.03em; }
 .tile .t-note { margin-top: var(--s-2); font-size: var(--fs-xs); color: var(--ink-2); line-height: 1.5; }
 
@@ -225,6 +231,12 @@ section:last-of-type { border-bottom: none; }
   padding: var(--s-4) 0; border-top: 1px solid var(--rule);
 }
 .finding:last-child { border-bottom: 1px solid var(--rule); }
+.finding-more { border-top: 1px solid var(--rule); }
+.finding-more summary { width: fit-content; padding: var(--s-4) 0; color: var(--ink-2); font-size: var(--fs-sm); font-weight: 600; cursor: pointer; }
+.finding-more summary:hover { text-decoration: underline; }
+.finding-more summary:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+.finding-more-close, .finding-more[open] .finding-more-open { display: none; }
+.finding-more[open] .finding-more-close { display: inline; }
 .f-stripe { align-self: stretch; border-radius: var(--r-sm); }
 .f-stripe[data-tier="compliant"] { background: var(--st-compliant); }
 .f-stripe[data-tier="failing"]   { background: var(--st-failing); }
@@ -268,12 +280,12 @@ section:last-of-type { border-bottom: none; }
 /* ============================================================
    Work queue
    ============================================================ */
-.queue { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: var(--r-lg); overflow: hidden; }
-.q-card { background: var(--surface); padding: var(--s-5); display: flex; flex-direction: column; gap: var(--s-3); }
+.queue { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: var(--s-6); }
+.q-card { padding: var(--s-5) 0 0; border-top: 1px solid var(--rule); display: flex; flex-direction: column; gap: var(--s-3); }
 .q-n { font-weight: 600; font-size: 40px; line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: -0.03em; }
 .q-label { font-weight: 600; font-size: var(--fs-body); }
 .q-why { font-size: var(--fs-sm); color: var(--ink-2); line-height: 1.55; }
-.q-action { margin-top: auto; padding-top: var(--s-3); border-top: 1px dashed var(--rule-strong); font-size: var(--fs-xs); color: var(--ink-3); line-height: 1.5; }
+.q-action { margin-top: auto; padding-top: var(--s-3); font-size: var(--fs-xs); color: var(--ink-3); line-height: 1.5; }
 
 /* Intervention cards are the same layout, but they act: one click filters the
    register to that reason. A button needs the reset the browser gives divs
@@ -295,11 +307,13 @@ section:last-of-type { border-bottom: none; }
 .intervention-option[aria-pressed="true"] { background: var(--surface-sunk); border-left-color: var(--ink); color: var(--ink); font-weight: 600; }
 .intervention-more { min-height: 44px; padding: var(--s-3) var(--s-4); font-size: var(--fs-xs); text-decoration: underline; text-underline-offset: 3px; color: var(--ink-2); }
 .intervention-detail { border-left: 1px solid var(--rule); padding: var(--s-5); background: var(--surface); align-self: stretch; }
-.intervention-detail h3 { font-size: 22px; line-height: 1.25; letter-spacing: -.03em; margin: 0 0 var(--s-3); }
+.intervention-detail h3 { font-size: var(--fs-h3); line-height: 1.3; letter-spacing: -.021em; margin: 0 0 var(--s-3); }
 .intervention-detail p { font-size: var(--fs-sm); line-height: 1.55; color: var(--ink-2); margin: 0 0 var(--s-4); }
 .intervention-detail h4 { font-size: var(--fs-xs); margin: var(--s-5) 0 var(--s-2); color: var(--ink); }
 .intervention-detail .oc-action { margin-top: var(--s-2); }
-.intervention-footnote { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s-2) var(--s-4); font-size: var(--fs-xs); line-height: 1.5; color: var(--ink-3); margin: var(--s-3) 0 0; }
+.intervention-footnote { font-size: var(--fs-xs); line-height: 1.8; color: var(--ink-3); margin: var(--s-3) 0 0; }
+.intervention-footnote > span { display: block; margin-bottom: var(--s-1); }
+.intervention-footnote a { text-decoration: underline; text-decoration-color: var(--rule-strong); text-underline-offset: 3px; }
 .intervention-option:focus-visible, .intervention-more:focus-visible { outline: 2px solid var(--focus); outline-offset: -3px; }
 @media (max-width: 700px) {
   .intervention-browser { grid-template-columns: minmax(0, 1fr); }
@@ -331,6 +345,13 @@ a.linkbtn.evid { font-weight: 400; }
 .tbl thead th.sortable { cursor: pointer; }
 .tbl thead th.sortable:hover { color: var(--ink); }
 .tbl thead th[aria-sort]:not([aria-sort="none"]) { color: var(--ink); }
+.sort-control { display: inline-flex; align-items: center; gap: var(--s-2); min-height: var(--ctl-h); font: inherit; }
+.sort-control:focus-visible { outline-offset: -2px; }
+#state-table thead th { vertical-align: middle; }
+.sort-control span { display: inline-block; opacity: 0; }
+th[aria-sort="descending"] .sort-control span { opacity: 1; }
+th[aria-sort="ascending"] .sort-control span { opacity: 1; transform: rotate(180deg); }
+.sort-control:hover span, .sort-control:focus-visible span { opacity: 1; }
 .tbl thead th .arrow { opacity: .45; margin-left: 3px; }
 .tbl tbody td { vertical-align: middle; }
 .tbl tbody tr:hover, .tbl tbody tr:nth-child(even):hover { background: var(--surface-sunk); }
@@ -446,7 +467,7 @@ select {
   grid-template-columns: 124px minmax(0,2fr) minmax(0,1.6fr) 76px 220px 148px;
   gap: var(--s-4); padding: 0 var(--s-4) var(--s-3);
   border-bottom: 1px solid var(--rule-strong);
-  font-size: var(--fs-label); font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3);
+  font-size: var(--fs-xs); font-weight: 500; color: var(--ink-3);
 }
 /* Every column sorts. The header is the control, so it has to read as one:
    a hover state, an arrow that only appears on the column actually sorting,
@@ -549,7 +570,7 @@ select {
   background: var(--surface-sunk); color: var(--ink-3); border-color: var(--rule);
 }
 .oc-stage[data-stage="contacted"] { background: var(--surface-2); color: var(--ink); border-color: var(--rule-strong); }
-.oc-stage[data-stage="awaiting-reply"] { background: var(--surface-2); color: var(--ink); border-color: var(--rule-strong); font-weight: 700; }
+.oc-stage[data-stage="awaiting-reply"] { background: var(--surface-2); color: var(--ink); border-color: var(--rule); font-weight: 500; }
 .oc-stage[data-stage="replied"] { background: var(--st-exempt-bg); color: var(--st-exempt-fg); border-color: transparent; }
 .oc-stage[data-stage="resolved"] { background: var(--st-compliant-bg); color: var(--st-compliant-fg); border-color: transparent; }
 .oc-stage[data-stage="no-response"] { background: var(--st-failing-bg); color: var(--st-failing-fg); border-color: transparent; }
@@ -559,8 +580,8 @@ select {
 #outreach .oc-summary { display: flex; flex-wrap: wrap; gap: var(--s-4) var(--s-6); border: 0; border-radius: 0; background: none; margin-bottom: var(--s-5); }
 #outreach .oc-summary .tile { padding: 0; border: 0; background: none; flex: 1 1 150px; }
 #outreach .oc-summary .t-value { font-size: 25px; line-height: 1.2; margin: var(--s-1) 0; }
-#outreach .oc-summary .t-label { font-size: 11px; }
-#outreach .oc-summary .t-note { font-size: 11px; line-height: 1.4; }
+#outreach .oc-summary .t-label { font-size: var(--fs-xs); }
+#outreach .oc-summary .t-note { font-size: var(--fs-xs); line-height: 1.5; }
 .outreach-switch { display: flex; gap: var(--s-4); padding: 0 var(--s-4); border-bottom: 1px solid var(--rule); }
 .outreach-switch button { min-height: 46px; color: var(--ink-3); font-size: var(--fs-sm); border-bottom: 2px solid transparent; }
 .outreach-switch [aria-pressed="true"] { border-bottom-color: var(--ink); color: var(--ink); font-weight: 600; }
@@ -571,7 +592,7 @@ select {
 .outreach-list .oc-meta { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .outreach-menu { min-width: 0; }
 #oc-preview-text { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 180px; overflow-y: auto; }
-.outreach-clear { display: block; margin: var(--s-3) 0 0; padding: 0; width: auto; border: 0; font-size: var(--fs-xs); text-decoration: underline; }
+.oc-item-x.outreach-clear { display: block; margin: var(--s-3) 0 0; padding: 0; width: auto; border: 0; border-radius: 0; font-size: var(--fs-xs); text-decoration: underline; text-underline-offset: 3px; }
 .outreach-switch button:focus-visible, .outreach-list .oc-item:focus-visible { outline: 2px solid var(--focus); outline-offset: -3px; }
 @media (max-width: 700px) {
   #outreach .oc-summary { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-4); }
@@ -585,7 +606,7 @@ select {
 .linkbtn[data-edited="1"] { border-style: dashed; border-color: var(--ink-3); color: var(--ink); }
 .cell-age.edited { border-bottom: 1px dashed var(--ink-3); }
 .cell-age sup { font-size: 9px; }
-.oc-empty { padding: var(--s-7) var(--s-5); text-align: center; color: var(--ink-3); font-size: var(--fs-sm); border: 1px dashed var(--rule-strong); border-radius: var(--r-lg); }
+.oc-empty { padding: var(--s-7) var(--s-5); text-align: center; color: var(--ink-3); font-size: var(--fs-sm); background: var(--paper); border-radius: var(--r-lg); line-height: 1.6; }
 
 .oc-cols { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: var(--s-8); }
 .oc-list { display: grid; }
@@ -611,10 +632,11 @@ select {
 .oc-item-row .oc-item:hover { background: none; }
 .oc-item-x {
   margin-left: var(--s-3); padding: 6px 12px; border: 1px solid var(--rule-strong); border-radius: var(--r-pill);
-  font-size: var(--fs-label); letter-spacing: .06em; text-transform: uppercase;
+  font-size: var(--fs-xs); min-height: var(--ctl-sm);
   color: var(--ink-3); white-space: nowrap;
 }
 .oc-item-x:hover { color: var(--st-failing-fg); border-color: var(--st-failing-fg); }
+#oc-preview-clear { margin-left: 0; }
 
 .oc-mode {
   display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3) var(--s-4);
@@ -637,7 +659,7 @@ select {
 /* ---- Drawer ---- */
 .oc-scrim {
   position: fixed; inset: 0; z-index: 60; background: rgba(0, 0, 0, .35);
-  opacity: 0; pointer-events: none; transition: opacity .18s ease;
+  opacity: 0; pointer-events: none; transition: opacity var(--duration-panel) var(--ease);
   /* The drawer is modal, so a drag on the scrim must not scroll the page
      behind it. On a phone the drawer covers the screen, and a page that has
      silently moved on underneath is disorienting when the drawer closes. */
@@ -648,10 +670,10 @@ select {
 .oc-drawer {
   position: fixed; top: 0; right: 0; bottom: 0; z-index: 61;
   width: min(520px, 100%); display: flex; flex-direction: column;
-  background: var(--surface); border-left: 1px solid var(--rule-strong);
+  background: var(--surface); border-left: 1px solid var(--rule);
   border-radius: var(--r-xl) 0 0 var(--r-xl);
-  box-shadow: -12px 0 40px rgba(0,0,0,.14);
-  transform: translateX(100%); transition: transform .22s cubic-bezier(.22,1,.36,1);
+  box-shadow: var(--shadow-drawer);
+  transform: translateX(100%); transition: transform var(--duration-panel) var(--ease);
 }
 .oc-drawer.on { transform: none; }
 .oc-drawer[hidden], .oc-view[hidden] { display: none; }
@@ -660,8 +682,14 @@ select {
 .oc-views [aria-selected="true"] { border-bottom-color: var(--ink); color: var(--ink); }
 .oc-views [role="tab"]:hover { color: var(--ink); }
 .oc-view { padding: 0; border: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  .oc-view:not([hidden]), .oc-panel:not([hidden]), .filters-extra:not([hidden]),
+  .oc-io:not([hidden]), .finding-more[open] > .findings {
+    animation: enter-softly var(--duration-panel) var(--ease);
+  }
+}
 .oc-overview-lead { padding: var(--s-5) 0; border-bottom: 1px solid var(--rule); }
-.oc-eyebrow { font: 11px var(--f-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 var(--s-2); }
+.oc-eyebrow { font-size: var(--fs-xs); color: var(--ink-3); margin: 0 0 var(--s-2); }
 .oc-overview-lead h4 { font-family: var(--f-display); font-size: 24px; line-height: 1.2; letter-spacing: -.035em; font-weight: 600; margin: 0; }
 .oc-overview-lead > p:not(.oc-eyebrow) { color: var(--ink-2); font-size: var(--fs-sm); line-height: 1.5; overflow-wrap: anywhere; margin: var(--s-3) 0 var(--s-4); }
 .oc-overview-lead .oc-action { display: inline-flex; gap: var(--s-4); align-items: center; }
@@ -687,6 +715,7 @@ select {
   width: 36px; height: 36px; flex: none;
   font-size: 20px; line-height: 1; color: var(--ink-3); border-radius: var(--r-md);
 }
+.oc-close { background: var(--paper); border-radius: var(--r-pill); }
 .oc-close:hover { background: var(--surface-sunk); color: var(--ink); }
 .oc-head-tags { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-3); }
 
@@ -825,10 +854,10 @@ select {
 }
 .oc-task-row::-webkit-scrollbar { display: none; }
 .oc-task {
-  flex: 1 1 auto; min-width: 0; min-height: 36px; padding: 0 var(--s-3);
+  flex: 1 0 auto; min-height: var(--ctl-h); padding: 0 var(--s-3);
   display: inline-flex; align-items: center; justify-content: center; gap: var(--s-2);
   border-radius: var(--r-pill); white-space: nowrap;
-  font-size: var(--fs-label); font-weight: 600; color: var(--ink-3);
+  font-size: var(--fs-xs); font-weight: 500; color: var(--ink-3);
 }
 .oc-task:hover { color: var(--ink); }
 /* An inset ring rather than a shadow, the selected segment should read as
@@ -865,7 +894,7 @@ select {
   font-family: var(--f-body); font-size: var(--fs-sm); padding: var(--s-3);
   background: var(--surface); color: var(--ink);
   border: 1px solid var(--rule-strong); border-radius: var(--r-md); width: 100%;
-  max-width: none; height: auto;
+  max-width: none; height: auto; min-height: var(--ctl-h);
   /* min-width: 0, not the auto default. These are grid items (.oc-field is a
      grid), and an auto minimum refuses to shrink below the control's
      min-content width. input[type=date] measures ~172px because of its
@@ -889,13 +918,13 @@ select {
    that panel, because the option and the buttons it changes do belong together. */
 .oc-actions { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-3); }
 .oc-action {
-  font-size: var(--fs-xs); font-weight: 600; min-height: 40px; padding: 0 var(--s-4); border-radius: var(--r-md);
+  font-size: var(--fs-sm); font-weight: 500; min-height: var(--ctl-h); padding: var(--s-2) var(--s-4); border-radius: var(--r-md);
   border: 1px solid var(--ink); background: var(--ink); color: var(--paper);
   display: inline-flex; align-items: center;
 }
 .oc-action:hover { opacity: .88; }
-.oc-action.ghost { background: transparent; color: var(--ink); border-color: var(--rule-strong); }
-.oc-action.ghost:hover { border-color: var(--ink); opacity: 1; }
+.oc-action.ghost { background: var(--paper); color: var(--ink); border-color: transparent; }
+.oc-action.ghost:hover { background: var(--surface-sunk); opacity: 1; }
 .oc-action[disabled] { opacity: .45; cursor: not-allowed; }
 
 .oc-hint { font-size: var(--fs-xs); color: var(--ink-3); margin: var(--s-2) 0 0; line-height: 1.5; }
@@ -956,7 +985,7 @@ select {
   transition: opacity .12s ease;
   background: var(--ink); color: var(--paper);
   padding: var(--s-3) var(--s-3); border-radius: var(--r-md); font-size: var(--fs-xs); line-height: 1.45;
-  max-width: 260px; box-shadow: 0 6px 22px rgba(0,0,0,.22);
+  max-width: 260px; box-shadow: var(--shadow-float);
 }
 #tip b { font-weight: 700; display: block; margin-bottom: 2px; }
 #tip .tn { font-variant-numeric: tabular-nums; }
@@ -971,13 +1000,13 @@ select {
    the data is old enough that a reader should stop trusting it.
    ============================================================ */
 .notice {
-  max-width: 74ch;
+  max-width: 88ch;
   margin: var(--s-5) 0 0;
   padding: var(--s-4) var(--s-5);
   border: none;
   border-radius: var(--r-lg);
-  background: var(--surface-sunk);
-  font-size: var(--fs-sm);
+  background: var(--paper);
+  font-size: var(--fs-xs);
   line-height: 1.6;
   color: var(--ink-2);
 }
@@ -1030,7 +1059,7 @@ select {
   .tiles { grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
 @media (max-width: 760px) {
-  .wrap { padding: 0 var(--s-4); }
+  .wrap { padding-left: var(--gutter); padding-right: var(--gutter); }
   /* The qualifier wraps into the nav below this width; the wordmark alone
      still indicates the current position. */
   .wordmark span { display: none; }
@@ -1077,7 +1106,19 @@ select {
   .oc-drawer { width: 100%; border-radius: 0; }
 }
 @media (max-width: 520px) {
+  .masthead-body { padding-top: var(--s-7); padding-bottom: var(--s-6); }
+  .masthead-body h1 { font-size: clamp(32px, 8vw, 38px); line-height: 1.1; }
+  .standfirst { font-size: var(--fs-body); line-height: 1.55; }
+  .standfirst code { white-space: nowrap; }
+  .dateline { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-3) var(--s-4); }
+  .notice { margin-top: var(--s-6); padding: var(--s-4); }
+}
+@media (max-width: 520px) {
   .tiles { grid-template-columns: 1fr; }
+  .oc-row2 { grid-template-columns: minmax(0, 1fr); }
+  .oc-task { flex: 1 1 0; min-width: 0; white-space: normal; line-height: 1.3; padding: var(--s-2); }
+  .oc-task-row { border-radius: var(--r-lg); }
+  .oc-task { border-radius: var(--r-lg); }
 }
 
 /* ============================================================
@@ -1126,11 +1167,11 @@ select {
 #register .search { flex-basis: 100%; min-width: 0; }
 #register .search input { height: 54px; font-size: 18px; }
 #register .filters { gap: var(--s-3); }
-#register .filters-extra { padding: var(--s-4); border: 1px solid var(--rule); border-radius: var(--r-md); }
+#register .filters-extra { padding: var(--s-4); background: var(--surface); border-radius: var(--r-lg); }
 #register .filters-extra .chips { width: 100%; margin: var(--s-2) 0; }
 .active-filter-chips { display: flex; flex-wrap: wrap; gap: var(--s-2); margin-top: var(--s-3); }
 .active-filter-chips:empty { display: none; }
-.active-filter-chips button { padding: 6px 10px; border: 1px solid var(--rule-strong); border-radius: var(--r-pill); color: var(--ink-2); font-size: var(--fs-xs); }
+.active-filter-chips button { min-height: var(--ctl-sm); padding: var(--s-2) var(--s-3); border: 1px solid var(--rule); background: var(--surface); border-radius: var(--r-pill); color: var(--ink-2); font-size: var(--fs-xs); }
 .active-filter-chips button:hover { background: var(--surface-sunk); color: var(--ink); }
 .active-filter-chips button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 @media (min-width: 761px) {

@@ -13,6 +13,7 @@ const fs = require('fs');
 const path = require('path');
 const os = require('os');
 const crypto = require('crypto');
+const { buildReviewedWorkQueue } = require('./hpt/lib/tracker-work-queue');
 
 /* ---------- csv ---------- */
 
@@ -544,8 +545,7 @@ function main() {
     { label: 'Over a year', short: '365d+', lo: 366, hi: null },
   ].map(b => ({ ...b, n: ages.filter(d => d >= b.lo && d <= (b.hi === null ? 1e9 : b.hi)).length }));
 
-  const queue = QUEUE.map(q => ({ ...q, n: gaps.filter(g => g.remediation === q.key).length }))
-    .sort((a, b) => b.n - a.n);
+  const queue = buildReviewedWorkQueue(investigationNextSteps, reviewed.nationwide.records);
 
   const gapRows = gaps.map(g => [
     g.ccn, g.hospital_name, g.city,
@@ -641,7 +641,7 @@ function main() {
   // Keep the social-preview summary tied to the same reconciled tier counts
   // embedded above. A hand-written snapshot here silently drifted from the
   // tracker data after nationwide overlays changed the effective view.
-  const summaryAlt = `Observed results for ${(tierCounts.compliant + tierCounts.failing + tierCounts.blocked + tierCounts.unknown + tierCounts.exempt).toLocaleString('en-US')} US hospitals: ${tierCounts.compliant.toLocaleString('en-US')} categorized as observed-compliant, ${tierCounts.failing.toLocaleString('en-US')} with observed file problems, ${tierCounts.unknown.toLocaleString('en-US')} unresolved, and ${tierCounts.exempt.toLocaleString('en-US')} exempt or closed.`;
+  const summaryAlt = `Observed results for ${(tierCounts.compliant + tierCounts.failing + tierCounts.blocked + tierCounts.unknown + tierCounts.exempt).toLocaleString('en-US')} US hospitals: ${tierCounts.compliant.toLocaleString('en-US')} categorized as file located; file contents were not verified. ${tierCounts.failing.toLocaleString('en-US')} have observed file problems, ${tierCounts.unknown.toLocaleString('en-US')} are unresolved, and ${tierCounts.exempt.toLocaleString('en-US')} are exempt or closed.`;
   built = built.replace(
     /(<meta property="og:image:alt" content=")[^"]*("\s*\/>)/,
     (_, open, close) => open + summaryAlt + close
@@ -708,13 +708,14 @@ function main() {
   }
 
   console.log(path.basename(outFile) + ': ' + data.rows.length + ' hospitals, '
-    + data.gapRows.length + ' queued, ' + (json.length / 1e6).toFixed(2) + ' MB of data');
+    + data.queue.reduce((sum, row) => sum + row.n, 0) + ' reviewed follow-ups, '
+    + (json.length / 1e6).toFixed(2) + ' MB of data');
   console.log('tiers: ' + data.tiers.map(t => t.key + ' ' + t.n).join('  '));
 
   // Optional single-file copy with js/tracker.js folded in, for sharing or
   // hosting somewhere without the rest of the repo.
   // Fold every page script into the document, in the order the page lists them.
-  const PAGE_SCRIPTS = ['outreach.js', 'tracker.js'];
+  const PAGE_SCRIPTS = ['motion.js', 'outreach.js', 'tracker.js'];
   const inlineScript = () => {
     let out = built;
     for (const name of PAGE_SCRIPTS) {
