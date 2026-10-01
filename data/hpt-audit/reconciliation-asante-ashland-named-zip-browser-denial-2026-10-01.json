@@ -1,0 +1,46 @@
+{
+  "audit_id": "reconciliation-asante-ashland-named-zip-browser-denial-2026-10-01",
+  "observed_at": "2026-10-01T03:38:07.758Z",
+  "ccn": "380005",
+  "facility": "Asante Ashland Community Hospital",
+  "targets_probed": [
+    {
+      "url": "https://www.asante.org/patients-visitors/bill-pay/standard-charges/",
+      "client": "headless browser (Playwright Chromium)",
+      "http_status": 403,
+      "page_title": "Access Denied"
+    },
+    {
+      "url": "https://www.asante.org/patients-visitors/bill-pay/standard-charges",
+      "client": "headless browser (Playwright Chromium)",
+      "http_status": 403,
+      "page_title": "Access Denied"
+    },
+    {
+      "url": "https://www.asante.org/app/files/public/6ced7477-8c3f-45bc-b59e-cbc0ca8270f4/AsanteAshlandCommunityHospital_StandardCharges.zip",
+      "client": "curl HEAD, browser-like User-Agent",
+      "http_status": 403,
+      "server_evidence": "Server-Timing ak_p (Akamai); 510-byte HTML denial"
+    },
+    {
+      "url": "https://www.asante.org/app/files/public/6ced7477-8c3f-45bc-b59e-cbc0ca8270f4/AsanteAshlandCommunityHospital_StandardCharges.zip",
+      "client": "headless browser (Playwright Chromium)",
+      "http_status": 403,
+      "page_title": "Access Denied"
+    }
+  ],
+  "archive_route": {
+    "cdx_query": "web.archive.org CDX for www.asante.org/app/files/public/361f9b00-187a-4091-ba37-1c3308bed5eb/AsanteRogueRegionalMedicalCenter_StandardCharges.zip",
+    "result": "zero captures returned (empty response)",
+    "note": "No archived copy of the publisher-linked ZIP exists to serve as a materially different route."
+  },
+  "interpretation": "Observed: both the Asante pricing page and an Ashland-named Standard Charges ZIP (a distinct target from the previously denied Rogue Regional combined ZIP) return HTTP 403 to plain clients and to the headless browser, with Akamai denial markers. The Wayback Machine holds no captures of the publisher-linked ZIP. Inferred: this is a publisher/client access denial, not evidence of file absence or noncompliance; no authorized route to file bytes was available to automation in this session.",
+  "newness_accounting": {
+    "new_hospital_mrf_bytes": 0,
+    "new_source_route_observations": 1,
+    "disposition_change": false,
+    "unresolved_count_change": 0
+  },
+  "disposition": "mrf-request-unsuccessful",
+  "next_action": "Keep CCN 380005 unresolved for HPT file coverage only. Do not re-probe asante.org paths absent a material access-condition change. A human/interactive authorized download of the Ashland-named ZIP or the combined Asante ZIP, or a publisher-provided copy, is required; then validate Ashland identity, 280 Maple Street address, OR state, CMS date/version and usable rows before assigning coverage. Do not infer HPT compliance or coverage from QIES or 340B records."
+}

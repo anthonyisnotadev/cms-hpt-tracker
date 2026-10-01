@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "ccn": "050055",
+  "observed_at": "2026-10-01T04:11:55.635Z",
+  "purpose": "Resolve the pointer-facility-match gate by comparing every root-pointer location entry against this CCN and the first-party campus name/address, without assigning a shared-system sibling file.",
+  "official_domain": "https://www.sutterhealth.org/",
+  "roster_name": "CALIFORNIA PACIFIC MEDICAL CENTER - MISSION BERNAL",
+  "roster_address": "3555 CESAR CHAVEZ, SAN FRANCISCO, CA 94110",
+  "pointer_evidence": {
+    "url": "https://www.sutterhealth.org/cms-hpt.txt",
+    "http_status": 200,
+    "bytes": 25914,
+    "content_type": "text/plain; charset=UTF-8",
+    "encoding": "UTF-16LE with BOM",
+    "sha256": "76cf5ee42d726154cfadf3b5d2fdd6605eea5599b8751fc24707dba424a6b2ca",
+    "observed_at": "2026-10-01T04:11:55.635Z",
+    "location_entries_total": 26,
+    "mission_bernal_entries": 1,
+    "matched_entry": {
+      "location_name": "CALIFORNIA PACIFIC MEDICAL CENTER MISSION BERNAL CAMPUS",
+      "source_page_url": "https://www.sutterhealth.org/billing-insurance/costs-and-charges/cost-transparency/",
+      "mrf_url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/940562680-1730238007_california-pacific-medical-center-mission-bernal-campus_standardcharges.csv"
+    },
+    "sibling_check": "Exactly one Mission Bernal entry exists; its MRF URL is the facility-specific mission-bernal-campus CSV, not a shared-system or sibling-campus file. (Side observation, not this CCN: the VAN NESS CAMPUS entry in the same pointer mispoints at a sutter-roseville CSV; left untouched as out of scope.)"
+  },
+  "mrf_evidence": {
+    "url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/940562680-1730238007_california-pacific-medical-center-mission-bernal-campus_standardcharges.csv",
+    "http_status": 200,
+    "total_bytes": 16311846,
+    "sha256": "83b78871d4329f0a5a814bca890775e83b5c923d8107d5c1a4f93b4c4290d6b5",
+    "file_kind": "csv",
+    "observed_at": "2026-10-01T04:11:55.635Z",
+    "declared_hospital_name": "California Pacific Medical Center - Mission Bernal",
+    "declared_location_name": "California Pacific Medical Center - Mission Bernal",
+    "declared_address": "3555 Cesar Chavez, San Francisco, CA 94110",
+    "declared_license_state": "CA",
+    "declared_license_number": "220000070",
+    "declared_type2_npis": "1134247281|1730238007|1881712933",
+    "declared_last_updated": "2026-04-01",
+    "cms_template_version": "3.0.0",
+    "attestation": true
+  },
+  "identity_basis": "The single root-pointer entry for this campus and the facility CSV data-row header agree on facility name, exact street address, California license state, 2026-04-01 update date, CMS template 3.0.0, and attestation; the pointer is byte-identical (same SHA-256) to the pointer used for the 2026-09-26 verification.",
+  "not_established": "No change to the publisher-side update since 2026-04-01 is claimed; identity is re-confirmed, not a new content date.",
+  "disposition_effect": "promote",
+  "next_action": "Retain as verified current MRF and recheck on the next pointer or file change."
+}

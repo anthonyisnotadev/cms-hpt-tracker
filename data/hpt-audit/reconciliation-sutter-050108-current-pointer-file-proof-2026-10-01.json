@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "ccn": "050108",
+  "observed_at": "2026-10-01T04:18:17.472Z",
+  "purpose": "Resolve the pointer-facility-match gate by comparing every root-pointer location entry against this CCN and the first-party name/address, without assigning a shared-system sibling file.",
+  "official_domain": "https://www.sutterhealth.org/",
+  "roster_name": "SUTTER MEDICAL CENTER, SACRAMENTO",
+  "roster_address": "2825 CAPITOL AVENUE, SACRAMENTO, CA 95816",
+  "pointer_evidence": {
+    "url": "https://www.sutterhealth.org/cms-hpt.txt",
+    "http_status": 200,
+    "bytes": 25914,
+    "content_type": "text/plain; charset=UTF-8",
+    "encoding": "UTF-16LE with BOM",
+    "sha256": "76cf5ee42d726154cfadf3b5d2fdd6605eea5599b8751fc24707dba424a6b2ca",
+    "observed_at": "2026-10-01T04:18:17.472Z",
+    "location_entries_total": 27,
+    "sacramento_entries": 1,
+    "matched_entry": {
+      "location_name": "SUTTER MEDICAL CENTER SACRAMENTO",
+      "source_page_url": "https://www.sutterhealth.org/billing-insurance/costs-and-charges/cost-transparency/",
+      "mrf_url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/941156621-1811946734_sutter-medical-center-sacramento_standardcharges.csv"
+    },
+    "sibling_check": "Exactly one pointer entry exists for Sutter Medical Center Sacramento and it targets the facility-specific sutter-medical-center-sacramento CSV, not a shared-system or sibling file. No other entry shares this NPI 1811946734 file."
+  },
+  "source_page_evidence": {
+    "url": "https://www.sutterhealth.org/billing-insurance/costs-and-charges/cost-transparency/",
+    "http_status": 200,
+    "observed_at": "2026-10-01T04:18:17.472Z",
+    "facility_csv_links_on_page": 1,
+    "link_matches_pointer_mrf_url": true
+  },
+  "mrf_evidence": {
+    "url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/941156621-1811946734_sutter-medical-center-sacramento_standardcharges.csv",
+    "http_status": 200,
+    "total_bytes": 16401921,
+    "sha256": "abdfa61e67fd9ebdc85df3a0c73cf3b4d12a0d8f0502ad73472b9ec180c7db94",
+    "file_kind": "csv",
+    "observed_at": "2026-10-01T04:18:17.472Z",
+    "declared_hospital_name": "Sutter Medical Center, Sacramento",
+    "declared_location_name": "Sutter Medical Center, Sacramento",
+    "declared_address": "2825 Capitol Avenue, Sacramento, CA 95816",
+    "declared_license_state": "CA",
+    "declared_license_number": "30000102",
+    "declared_type2_npis": "1811946734",
+    "declared_last_updated": "2026-04-01",
+    "cms_template_version": "3.0.0",
+    "attestation": true
+  },
+  "identity_basis": "The single root-pointer entry, the sole first-party cost-transparency page link for this facility, and the facility CSV data-row header agree on facility name, exact street address, California license state, type-2 NPI 1811946734, 2026-04-01 update date, CMS template 3.0.0, and attestation; the pointer is byte-identical (same SHA-256) to the pointer used for the 2026-09-26 verification.",
+  "not_established": "No change to the publisher-side update since 2026-04-01 is claimed; identity is re-confirmed, not a new content date.",
+  "disposition_effect": "promote",
+  "next_action": "Retain as verified current MRF and recheck on the next pointer or file change."
+}

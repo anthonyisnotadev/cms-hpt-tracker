@@ -1,18 +1,18 @@
 {
-  "generated_at": "2026-09-30T23:57:30.073Z",
+  "generated_at": "2026-10-01T13:00:38.562Z",
   "purpose": "Exact-CCN reconciliation of raw observations, validated reviewed verification overlays, nationwide reconciliation issues, prioritized investigation actions, and the frozen 2026-09-25 891-membership cohort.",
   "inputs": {
     "nationwide_verification": {
       "file": "nationwide-verification.json",
-      "sha256": "f0f56a98982ce013d42d894928cb252c1dc03373752c202b6127dc8ddda336b3"
+      "sha256": "71f9b51dac6d86904269a1fcd7b23aec4f8a3467e26a39f5c280e6a593971c79"
     },
     "nationwide_reconciliation": {
       "file": "nationwide-reconciliation.json",
-      "sha256": "d77a330c36861cbe3081e7948c26f884991ab599183d07f8af021ae59b5320f9"
+      "sha256": "fbc7deea86a3c10be8ca7cdba9c3198d4e9eca9d83f30cd796f170c81d1a0a68"
     },
     "historical_891_roster": {
       "file": "reconciliation-891-baseline-member-roster-2026-09-27.json",
-      "sha256": "d48f59c13678d12bc71652788a7f8cfdaaca10e1bef7e18fc1a4662d7c91581d"
+      "sha256": "7c932aab302cbdf0a03844f27190bef7126c09d371b80824b7b492ead47d4e58"
     },
     "verification_overlays": {
       "file": "reconciliation-nationwide-verification-overlays.json",
@@ -20,7 +20,7 @@
     },
     "unresolved_investigation_worklist": {
       "file": "unresolved-investigation-worklist.json",
-      "sha256": "7d2139831f798f35d0d860daa8c4ccc554e0228937316049f0f0629f6a98c888"
+      "sha256": "1b12f4d9e97ee3e9fce7eb0ca0c009a0868c5c9392534b5bca19ecbd5897b6bd"
     }
   },
   "coverage": {
@@ -29,14 +29,14 @@
     "historical_891_memberships": 891,
     "historical_891_unique_ccns": 720,
     "historical_891_overlap_memberships": 171,
-    "investigation_worklist_ccns": 581,
+    "investigation_worklist_ccns": 571,
     "investigation_worklist_exact_reconciliation_join": true,
     "historical_891_unresolved_in_worklist": 541
   },
   "investigation_worklist": {
     "source_file": "unresolved-investigation-worklist.json",
-    "source_sha256": "7d2139831f798f35d0d860daa8c4ccc554e0228937316049f0f0629f6a98c888",
-    "actionable_items": 581,
+    "source_sha256": "1b12f4d9e97ee3e9fce7eb0ca0c009a0868c5c9392534b5bca19ecbd5897b6bd",
+    "actionable_items": 571,
     "historical_891_unresolved_items": 541,
     "next_action_differences_from_reconciliation": 1,
     "next_action_difference_ccns": [
@@ -49,10 +49,10 @@
   },
   "counts": {
     "effective_category": {
-      "active-verification-claim": 3301,
+      "active-verification-claim": 3311,
       "standing-evidence-retained": 847,
       "superseded-by-reviewed-resolution": 488,
-      "genuinely-unresolved": 582,
+      "genuinely-unresolved": 572,
       "scope-exempt": 200,
       "supported-identity-uncertainty": 1
     },
@@ -66,8 +66,8 @@
     "workstream": {
       "consistent": 3762,
       "standing-evidence-follow-up": 1033,
-      "genuinely-unresolved-investigation": 581,
-      "verification-proof-gap": 15,
+      "genuinely-unresolved-investigation": 571,
+      "verification-proof-gap": 25,
       "identity-quarantine": 10,
       "supported-uncertainty-monitor": 14,
       "other-reconciliation": 2,
@@ -9680,7 +9680,7 @@
       "historical_891_member": false,
       "historical_891_current_category": "",
       "raw_observation": {
-        "disposition": "verified-template-review",
+        "disposition": "verified-stale-mrf",
         "observed_at": "2026-09-15T04:35:23.699Z",
         "mrf_http_status": "200",
         "mrf_url": "https://g5-assets-cld-res.cloudinary.com/raw/upload/v1759418416/g5/g5-c-5hk8rftzt-avenir-senior-living-single-domain/g5-cl-1ivmlhcajg-avenir-center-for-behavioral-health-at-surprise/uploads/400629305_avenir_behavioral_center_standardcharges_wrurw3.csv",
@@ -9689,10 +9689,10 @@
         "pointer_state": "retrieved-facility-linked",
         "pointer_result": "ok",
         "pointer_observed_at": "2026-09-15T09:17:23.658Z",
-        "next_action": "Inspect the declared CMS template version and recheck after publisher update."
+        "next_action": "Recheck this exact pointer-linked file after a publisher update or material source change; do not infer a legal violation from the stale date alone."
       },
       "effective_reviewed_observation": {
-        "disposition": "verified-template-review",
+        "disposition": "verified-stale-mrf",
         "observed_at": "2026-09-15T04:35:23.699Z",
         "mrf_http_status": "200",
         "mrf_url": "https://g5-assets-cld-res.cloudinary.com/raw/upload/v1759418416/g5/g5-c-5hk8rftzt-avenir-senior-living-single-domain/g5-cl-1ivmlhcajg-avenir-center-for-behavioral-health-at-surprise/uploads/400629305_avenir_behavioral_center_standardcharges_wrurw3.csv",
@@ -9708,7 +9708,7 @@
         "status": "consistent-proof-audited",
         "issues": [],
         "latest_observed_at": "2026-09-15T04:35:23.699Z",
-        "next_action": "Inspect the declared CMS template version and recheck after publisher update.",
+        "next_action": "Recheck this exact pointer-linked file after a publisher update or material source change; do not infer a legal violation from the stale date alone.",
         "actionable": false
       },
       "investigation_worklist": null
@@ -13881,23 +13881,23 @@
       "historical_891_member": false,
       "historical_891_current_category": "",
       "raw_observation": {
-        "disposition": "pointer-facility-match-unresolved",
-        "observed_at": "2026-09-26T16:00:00.9Z",
-        "mrf_http_status": "",
+        "disposition": "verified-current-mrf",
+        "observed_at": "2026-10-01T03:47:57.704Z",
+        "mrf_http_status": "206",
         "mrf_url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/941156621-1447494323_sutter-amador-hospital_standardcharges.csv",
-        "browser_mrf_status": "",
-        "browser_mrf_observed_at": "",
-        "pointer_state": "retrieved-facility-match-unresolved",
-        "pointer_result": "retrieved",
-        "pointer_observed_at": "2026-09-26T16:00:00.9Z",
-        "next_action": "Retain as verified current MRF and recheck on the next pointer update."
+        "browser_mrf_status": "retrieved",
+        "browser_mrf_observed_at": "2026-10-01T03:47:57.704Z",
+        "pointer_state": "retrieved-facility-linked-manual-review",
+        "pointer_result": "200",
+        "pointer_observed_at": "2026-10-01T03:47:57.704Z",
+        "next_action": "Retain the exact pointer/page/file chain and recheck on the next publisher pointer or file change; keep separately named Sutter campuses and CCNs distinct."
       },
       "effective_reviewed_observation": {
-        "disposition": "pointer-facility-match-unresolved",
-        "observed_at": "2026-09-26T16:00:00.9Z",
-        "mrf_http_status": "",
+        "disposition": "verified-current-mrf",
+        "observed_at": "2026-10-01T03:47:57.704Z",
+        "mrf_http_status": "206",
         "mrf_url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/941156621-1447494323_sutter-amador-hospital_standardcharges.csv",
-        "standing_evidence_retained": true,
+        "standing_evidence_retained": false,
         "latest_observation_superseded": false,
         "latest_retry_observation": null,
         "reviewed_page_file_overlay": "",
@@ -13905,29 +13905,17 @@
         "overlay_source_proof_file": ""
       },
       "reconciliation": {
-        "workstream": "genuinely-unresolved-investigation",
+        "workstream": "verification-proof-gap",
         "status": "review-required",
         "issues": [
-          "standing-evidence-retained-review-new-observation",
-          "latest-check-unresolved"
+          "verification-file-byte-proof-audit-pending",
+          "browser-file-identity-proof-insufficient"
         ],
-        "latest_observed_at": "2026-09-26T23:45:00Z",
-        "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file.",
+        "latest_observed_at": "2026-10-01T03:47:57.704Z",
+        "next_action": "Retain and hash a bounded byte sample from the exact browser-observed file, bound to its URL and observation time; verify the recorded root identity fields against those bytes.",
         "actionable": true
       },
-      "investigation_worklist": {
-        "source_file": "unresolved-investigation-worklist.json",
-        "current_disposition": "pointer-facility-match-unresolved",
-        "investigation_tier": 2,
-        "evidence_gate": "pointer-facility-match",
-        "reviewed_follow_up": true,
-        "reviewed_sources": [
-          "manual-access"
-        ],
-        "latest_review_at": "2026-09-26T23:45:00Z",
-        "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file.",
-        "action_matches_reconciliation": true
-      }
+      "investigation_worklist": null
     },
     {
       "ccn": "050017",
@@ -14511,23 +14499,23 @@
       "historical_891_member": false,
       "historical_891_current_category": "",
       "raw_observation": {
-        "disposition": "pointer-facility-match-unresolved",
-        "observed_at": "2026-09-26T16:00:00.9Z",
-        "mrf_http_status": "",
+        "disposition": "verified-current-mrf",
+        "observed_at": "2026-10-01T03:47:57.704Z",
+        "mrf_http_status": "206",
         "mrf_url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/940562680-1740348929_california-pacific-medical-center-van-ness-campus_standardcharges.csv",
-        "browser_mrf_status": "",
-        "browser_mrf_observed_at": "",
-        "pointer_state": "retrieved-facility-match-unresolved",
-        "pointer_result": "retrieved",
-        "pointer_observed_at": "2026-09-26T16:00:00.9Z",
-        "next_action": "Retain as verified current MRF and recheck on the next pointer update."
+        "browser_mrf_status": "retrieved",
+        "browser_mrf_observed_at": "2026-10-01T03:47:57.704Z",
+        "pointer_state": "retrieved-facility-linked-manual-review",
+        "pointer_result": "200",
+        "pointer_observed_at": "2026-10-01T03:47:57.704Z",
+        "next_action": "Retain the exact pointer/page/file chain and recheck on the next publisher pointer or file change; keep separately named Sutter campuses and CCNs distinct."
       },
       "effective_reviewed_observation": {
-        "disposition": "pointer-facility-match-unresolved",
-        "observed_at": "2026-09-26T16:00:00.9Z",
-        "mrf_http_status": "",
+        "disposition": "verified-current-mrf",
+        "observed_at": "2026-10-01T03:47:57.704Z",
+        "mrf_http_status": "206",
         "mrf_url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/940562680-1740348929_california-pacific-medical-center-van-ness-campus_standardcharges.csv",
-        "standing_evidence_retained": true,
+        "standing_evidence_retained": false,
         "latest_observation_superseded": false,
         "latest_retry_observation": null,
         "reviewed_page_file_overlay": "",
@@ -14535,29 +14523,17 @@
         "overlay_source_proof_file": ""
       },
       "reconciliation": {
-        "workstream": "genuinely-unresolved-investigation",
+        "workstream": "verification-proof-gap",
         "status": "review-required",
         "issues": [
-          "standing-evidence-retained-review-new-observation",
-          "latest-check-unresolved"
+          "verification-file-byte-proof-audit-pending",
+          "browser-file-identity-proof-insufficient"
         ],
-        "latest_observed_at": "2026-09-26T23:45:00Z",
-        "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file.",
+        "latest_observed_at": "2026-10-01T03:47:57.704Z",
+        "next_action": "Retain and hash a bounded byte sample from the exact browser-observed file, bound to its URL and observation time; verify the recorded root identity fields against those bytes.",
         "actionable": true
       },
-      "investigation_worklist": {
-        "source_file": "unresolved-investigation-worklist.json",
-        "current_disposition": "pointer-facility-match-unresolved",
-        "investigation_tier": 2,
-        "evidence_gate": "pointer-facility-match",
-        "reviewed_follow_up": true,
-        "reviewed_sources": [
-          "manual-access"
-        ],
-        "latest_review_at": "2026-09-26T23:45:00Z",
-        "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file.",
-        "action_matches_reconciliation": true
-      }
+      "investigation_worklist": null
     },
     {
       "ccn": "050054",
@@ -14606,23 +14582,23 @@
       "historical_891_member": false,
       "historical_891_current_category": "",
       "raw_observation": {
-        "disposition": "pointer-facility-match-unresolved",
-        "observed_at": "2026-09-26T16:00:00.9Z",
+        "disposition": "verified-current-mrf",
+        "observed_at": "2026-10-01T04:11:55.635Z",
         "mrf_http_status": "",
         "mrf_url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/940562680-1730238007_california-pacific-medical-center-mission-bernal-campus_standardcharges.csv",
-        "browser_mrf_status": "",
-        "browser_mrf_observed_at": "",
-        "pointer_state": "retrieved-facility-match-unresolved",
-        "pointer_result": "retrieved",
-        "pointer_observed_at": "2026-09-26T16:00:00.9Z",
-        "next_action": "Retain as verified current MRF and recheck on the next pointer update."
+        "browser_mrf_status": "retrieved",
+        "browser_mrf_observed_at": "2026-10-01T04:11:55.635Z",
+        "pointer_state": "retrieved-facility-linked-manual-review",
+        "pointer_result": "200",
+        "pointer_observed_at": "2026-10-01T04:11:55.635Z",
+        "next_action": "Retain the exact pointer/file chain and recheck on the next publisher pointer or file change; keep separately named Sutter campuses and CCNs distinct."
       },
       "effective_reviewed_observation": {
-        "disposition": "pointer-facility-match-unresolved",
-        "observed_at": "2026-09-26T16:00:00.9Z",
+        "disposition": "verified-current-mrf",
+        "observed_at": "2026-10-01T04:11:55.635Z",
         "mrf_http_status": "",
         "mrf_url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/940562680-1730238007_california-pacific-medical-center-mission-bernal-campus_standardcharges.csv",
-        "standing_evidence_retained": true,
+        "standing_evidence_retained": false,
         "latest_observation_superseded": false,
         "latest_retry_observation": null,
         "reviewed_page_file_overlay": "",
@@ -14630,29 +14606,17 @@
         "overlay_source_proof_file": ""
       },
       "reconciliation": {
-        "workstream": "genuinely-unresolved-investigation",
+        "workstream": "verification-proof-gap",
         "status": "review-required",
         "issues": [
-          "standing-evidence-retained-review-new-observation",
-          "latest-check-unresolved"
+          "verification-file-byte-proof-audit-pending",
+          "browser-file-identity-proof-insufficient"
         ],
-        "latest_observed_at": "2026-09-26T23:45:00Z",
-        "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file.",
+        "latest_observed_at": "2026-10-01T04:11:55.635Z",
+        "next_action": "Retain and hash a bounded byte sample from the exact browser-observed file, bound to its URL and observation time; verify the recorded root identity fields against those bytes.",
         "actionable": true
       },
-      "investigation_worklist": {
-        "source_file": "unresolved-investigation-worklist.json",
-        "current_disposition": "pointer-facility-match-unresolved",
-        "investigation_tier": 2,
-        "evidence_gate": "pointer-facility-match",
-        "reviewed_follow_up": true,
-        "reviewed_sources": [
-          "manual-access"
-        ],
-        "latest_review_at": "2026-09-26T23:45:00Z",
-        "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file.",
-        "action_matches_reconciliation": true
-      }
+      "investigation_worklist": null
     },
     {
       "ccn": "050056",
@@ -15596,23 +15560,23 @@
       "historical_891_member": false,
       "historical_891_current_category": "",
       "raw_observation": {
-        "disposition": "pointer-facility-match-unresolved",
-        "observed_at": "2026-09-26T16:00:00.9Z",
+        "disposition": "verified-current-mrf",
+        "observed_at": "2026-10-01T04:11:55.635Z",
         "mrf_http_status": "",
         "mrf_url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/941156621-1366686248_sutter-solano-medical-center_standardcharges.csv",
-        "browser_mrf_status": "",
-        "browser_mrf_observed_at": "",
-        "pointer_state": "retrieved-facility-match-unresolved",
-        "pointer_result": "retrieved",
-        "pointer_observed_at": "2026-09-26T16:00:00.9Z",
-        "next_action": "Retain as verified current MRF and recheck on the next pointer update."
+        "browser_mrf_status": "retrieved",
+        "browser_mrf_observed_at": "2026-10-01T04:11:55.635Z",
+        "pointer_state": "retrieved-facility-linked-manual-review",
+        "pointer_result": "200",
+        "pointer_observed_at": "2026-10-01T04:11:55.635Z",
+        "next_action": "Retain the exact pointer/file chain and recheck on the next publisher pointer or file change; keep separately named Sutter campuses and CCNs distinct."
       },
       "effective_reviewed_observation": {
-        "disposition": "pointer-facility-match-unresolved",
-        "observed_at": "2026-09-26T16:00:00.9Z",
+        "disposition": "verified-current-mrf",
+        "observed_at": "2026-10-01T04:11:55.635Z",
         "mrf_http_status": "",
         "mrf_url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/941156621-1366686248_sutter-solano-medical-center_standardcharges.csv",
-        "standing_evidence_retained": true,
+        "standing_evidence_retained": false,
         "latest_observation_superseded": false,
         "latest_retry_observation": null,
         "reviewed_page_file_overlay": "",
@@ -15620,29 +15584,17 @@
         "overlay_source_proof_file": ""
       },
       "reconciliation": {
-        "workstream": "genuinely-unresolved-investigation",
+        "workstream": "verification-proof-gap",
         "status": "review-required",
         "issues": [
-          "standing-evidence-retained-review-new-observation",
-          "latest-check-unresolved"
+          "verification-file-byte-proof-audit-pending",
+          "browser-file-identity-proof-insufficient"
         ],
-        "latest_observed_at": "2026-09-26T23:45:00Z",
-        "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file.",
+        "latest_observed_at": "2026-10-01T04:11:55.635Z",
+        "next_action": "Retain and hash a bounded byte sample from the exact browser-observed file, bound to its URL and observation time; verify the recorded root identity fields against those bytes.",
         "actionable": true
       },
-      "investigation_worklist": {
-        "source_file": "unresolved-investigation-worklist.json",
-        "current_disposition": "pointer-facility-match-unresolved",
-        "investigation_tier": 2,
-        "evidence_gate": "pointer-facility-match",
-        "reviewed_follow_up": true,
-        "reviewed_sources": [
-          "manual-access"
-        ],
-        "latest_review_at": "2026-09-26T23:45:00Z",
-        "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file.",
-        "action_matches_reconciliation": true
-      }
+      "investigation_worklist": null
     },
     {
       "ccn": "050102",
@@ -15811,23 +15763,23 @@
       "historical_891_member": false,
       "historical_891_current_category": "",
       "raw_observation": {
-        "disposition": "pointer-facility-match-unresolved",
-        "observed_at": "2026-09-26T16:00:00.9Z",
+        "disposition": "verified-current-mrf",
+        "observed_at": "2026-10-01T04:18:17.472Z",
         "mrf_http_status": "",
         "mrf_url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/941156621-1811946734_sutter-medical-center-sacramento_standardcharges.csv",
-        "browser_mrf_status": "",
-        "browser_mrf_observed_at": "",
-        "pointer_state": "retrieved-facility-match-unresolved",
-        "pointer_result": "retrieved",
-        "pointer_observed_at": "2026-09-26T16:00:00.9Z",
-        "next_action": "Retain as verified current MRF and recheck on the next pointer update."
+        "browser_mrf_status": "retrieved",
+        "browser_mrf_observed_at": "2026-10-01T04:18:17.472Z",
+        "pointer_state": "retrieved-facility-linked-manual-review",
+        "pointer_result": "200",
+        "pointer_observed_at": "2026-10-01T04:18:17.472Z",
+        "next_action": "Retain the exact pointer/file chain and recheck on the next publisher pointer or file change; keep separately named Sutter campuses and CCNs distinct."
       },
       "effective_reviewed_observation": {
-        "disposition": "pointer-facility-match-unresolved",
-        "observed_at": "2026-09-26T16:00:00.9Z",
+        "disposition": "verified-current-mrf",
+        "observed_at": "2026-10-01T04:18:17.472Z",
         "mrf_http_status": "",
         "mrf_url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/941156621-1811946734_sutter-medical-center-sacramento_standardcharges.csv",
-        "standing_evidence_retained": true,
+        "standing_evidence_retained": false,
         "latest_observation_superseded": false,
         "latest_retry_observation": null,
         "reviewed_page_file_overlay": "",
@@ -15835,29 +15787,17 @@
         "overlay_source_proof_file": ""
       },
       "reconciliation": {
-        "workstream": "genuinely-unresolved-investigation",
+        "workstream": "verification-proof-gap",
         "status": "review-required",
         "issues": [
-          "standing-evidence-retained-review-new-observation",
-          "latest-check-unresolved"
+          "verification-file-byte-proof-audit-pending",
+          "browser-file-identity-proof-insufficient"
         ],
-        "latest_observed_at": "2026-09-26T23:45:00Z",
-        "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file.",
+        "latest_observed_at": "2026-10-01T04:18:17.472Z",
+        "next_action": "Retain and hash a bounded byte sample from the exact browser-observed file, bound to its URL and observation time; verify the recorded root identity fields against those bytes.",
         "actionable": true
       },
-      "investigation_worklist": {
-        "source_file": "unresolved-investigation-worklist.json",
-        "current_disposition": "pointer-facility-match-unresolved",
-        "investigation_tier": 2,
-        "evidence_gate": "pointer-facility-match",
-        "reviewed_follow_up": true,
-        "reviewed_sources": [
-          "manual-access"
-        ],
-        "latest_review_at": "2026-09-26T23:45:00Z",
-        "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file.",
-        "action_matches_reconciliation": true
-      }
+      "investigation_worklist": null
     },
     {
       "ccn": "050110",
@@ -16389,23 +16329,23 @@
       "historical_891_member": false,
       "historical_891_current_category": "",
       "raw_observation": {
-        "disposition": "pointer-facility-match-unresolved",
-        "observed_at": "2026-09-26T16:00:00.9Z",
+        "disposition": "verified-current-mrf",
+        "observed_at": "2026-10-01T04:18:17.472Z",
         "mrf_http_status": "",
         "mrf_url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/940562680-1104059153_novato-community-hospital_standardcharges.csv",
-        "browser_mrf_status": "",
-        "browser_mrf_observed_at": "",
-        "pointer_state": "retrieved-facility-match-unresolved",
-        "pointer_result": "retrieved",
-        "pointer_observed_at": "2026-09-26T16:00:00.9Z",
-        "next_action": "Retain as verified current MRF and recheck on the next pointer update."
+        "browser_mrf_status": "retrieved",
+        "browser_mrf_observed_at": "2026-10-01T04:18:17.472Z",
+        "pointer_state": "retrieved-facility-linked-manual-review",
+        "pointer_result": "200",
+        "pointer_observed_at": "2026-10-01T04:18:17.472Z",
+        "next_action": "Retain the exact pointer/file chain and recheck on the next publisher pointer or file change; keep separately named Sutter campuses and CCNs distinct."
       },
       "effective_reviewed_observation": {
-        "disposition": "pointer-facility-match-unresolved",
-        "observed_at": "2026-09-26T16:00:00.9Z",
+        "disposition": "verified-current-mrf",
+        "observed_at": "2026-10-01T04:18:17.472Z",
         "mrf_http_status": "",
         "mrf_url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/940562680-1104059153_novato-community-hospital_standardcharges.csv",
-        "standing_evidence_retained": true,
+        "standing_evidence_retained": false,
         "latest_observation_superseded": false,
         "latest_retry_observation": null,
         "reviewed_page_file_overlay": "",
@@ -16413,29 +16353,17 @@
         "overlay_source_proof_file": ""
       },
       "reconciliation": {
-        "workstream": "genuinely-unresolved-investigation",
+        "workstream": "verification-proof-gap",
         "status": "review-required",
         "issues": [
-          "standing-evidence-retained-review-new-observation",
-          "latest-check-unresolved"
+          "verification-file-byte-proof-audit-pending",
+          "browser-file-identity-proof-insufficient"
         ],
-        "latest_observed_at": "2026-09-26T23:45:00Z",
-        "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file.",
+        "latest_observed_at": "2026-10-01T04:18:17.472Z",
+        "next_action": "Retain and hash a bounded byte sample from the exact browser-observed file, bound to its URL and observation time; verify the recorded root identity fields against those bytes.",
         "actionable": true
       },
-      "investigation_worklist": {
-        "source_file": "unresolved-investigation-worklist.json",
-        "current_disposition": "pointer-facility-match-unresolved",
-        "investigation_tier": 2,
-        "evidence_gate": "pointer-facility-match",
-        "reviewed_follow_up": true,
-        "reviewed_sources": [
-          "manual-access"
-        ],
-        "latest_review_at": "2026-09-26T23:45:00Z",
-        "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file.",
-        "action_matches_reconciliation": true
-      }
+      "investigation_worklist": null
     },
     {
       "ccn": "050132",
@@ -18929,23 +18857,23 @@
       "historical_891_member": false,
       "historical_891_current_category": "",
       "raw_observation": {
-        "disposition": "pointer-facility-match-unresolved",
-        "observed_at": "2026-09-26T16:00:00.9Z",
+        "disposition": "verified-current-mrf",
+        "observed_at": "2026-10-01T04:18:17.472Z",
         "mrf_http_status": "",
         "mrf_url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/940562680-1740413798_sutter-santa-rosa-regional-hospital_standardcharges.csv",
-        "browser_mrf_status": "",
-        "browser_mrf_observed_at": "",
-        "pointer_state": "retrieved-facility-match-unresolved",
-        "pointer_result": "retrieved",
-        "pointer_observed_at": "2026-09-26T16:00:00.9Z",
-        "next_action": "Retain as verified current MRF and recheck on the next pointer update."
+        "browser_mrf_status": "retrieved",
+        "browser_mrf_observed_at": "2026-10-01T04:18:17.472Z",
+        "pointer_state": "retrieved-facility-linked-manual-review",
+        "pointer_result": "200",
+        "pointer_observed_at": "2026-10-01T04:18:17.472Z",
+        "next_action": "Retain the exact pointer/file chain and recheck on the next publisher pointer or file change; keep separately named Sutter campuses and CCNs distinct."
       },
       "effective_reviewed_observation": {
-        "disposition": "pointer-facility-match-unresolved",
-        "observed_at": "2026-09-26T16:00:00.9Z",
+        "disposition": "verified-current-mrf",
+        "observed_at": "2026-10-01T04:18:17.472Z",
         "mrf_http_status": "",
         "mrf_url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/940562680-1740413798_sutter-santa-rosa-regional-hospital_standardcharges.csv",
-        "standing_evidence_retained": true,
+        "standing_evidence_retained": false,
         "latest_observation_superseded": false,
         "latest_retry_observation": null,
         "reviewed_page_file_overlay": "",
@@ -18953,29 +18881,17 @@
         "overlay_source_proof_file": ""
       },
       "reconciliation": {
-        "workstream": "genuinely-unresolved-investigation",
+        "workstream": "verification-proof-gap",
         "status": "review-required",
         "issues": [
-          "standing-evidence-retained-review-new-observation",
-          "latest-check-unresolved"
+          "verification-file-byte-proof-audit-pending",
+          "browser-file-identity-proof-insufficient"
         ],
-        "latest_observed_at": "2026-09-26T23:45:00Z",
-        "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file.",
+        "latest_observed_at": "2026-10-01T04:18:17.472Z",
+        "next_action": "Retain and hash a bounded byte sample from the exact browser-observed file, bound to its URL and observation time; verify the recorded root identity fields against those bytes.",
         "actionable": true
       },
-      "investigation_worklist": {
-        "source_file": "unresolved-investigation-worklist.json",
-        "current_disposition": "pointer-facility-match-unresolved",
-        "investigation_tier": 2,
-        "evidence_gate": "pointer-facility-match",
-        "reviewed_follow_up": true,
-        "reviewed_sources": [
-          "manual-access"
-        ],
-        "latest_review_at": "2026-09-26T23:45:00Z",
-        "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file.",
-        "action_matches_reconciliation": true
-      }
+      "investigation_worklist": null
     },
     {
       "ccn": "050292",
@@ -19266,23 +19182,23 @@
       "historical_891_member": false,
       "historical_891_current_category": "",
       "raw_observation": {
-        "disposition": "pointer-facility-match-unresolved",
-        "observed_at": "2026-09-26T16:00:00.9Z",
+        "disposition": "verified-current-mrf",
+        "observed_at": "2026-10-01T12:58:45.653Z",
         "mrf_http_status": "",
         "mrf_url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/941156621-1356390264_sutter-roseville-medical-center_standardcharges.csv",
-        "browser_mrf_status": "",
-        "browser_mrf_observed_at": "",
-        "pointer_state": "retrieved-facility-match-unresolved",
-        "pointer_result": "retrieved",
-        "pointer_observed_at": "2026-09-26T16:00:00.9Z",
-        "next_action": "Retain as verified current MRF and recheck on the next pointer update."
+        "browser_mrf_status": "retrieved",
+        "browser_mrf_observed_at": "2026-10-01T12:58:45.653Z",
+        "pointer_state": "retrieved-facility-linked-manual-review",
+        "pointer_result": "200",
+        "pointer_observed_at": "2026-10-01T12:58:45.653Z",
+        "next_action": "Retain the unique pointer entry and facility file chain; recheck on the next publisher pointer or file change. Full-file hash remains unestablished (bounded header sample only)."
       },
       "effective_reviewed_observation": {
-        "disposition": "pointer-facility-match-unresolved",
-        "observed_at": "2026-09-26T16:00:00.9Z",
+        "disposition": "verified-current-mrf",
+        "observed_at": "2026-10-01T12:58:45.653Z",
         "mrf_http_status": "",
         "mrf_url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/941156621-1356390264_sutter-roseville-medical-center_standardcharges.csv",
-        "standing_evidence_retained": true,
+        "standing_evidence_retained": false,
         "latest_observation_superseded": false,
         "latest_retry_observation": null,
         "reviewed_page_file_overlay": "",
@@ -19290,29 +19206,17 @@
         "overlay_source_proof_file": ""
       },
       "reconciliation": {
-        "workstream": "genuinely-unresolved-investigation",
+        "workstream": "verification-proof-gap",
         "status": "review-required",
         "issues": [
-          "standing-evidence-retained-review-new-observation",
-          "latest-check-unresolved"
+          "verification-file-byte-proof-audit-pending",
+          "browser-file-identity-proof-insufficient"
         ],
-        "latest_observed_at": "2026-09-26T23:45:00Z",
-        "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file.",
+        "latest_observed_at": "2026-10-01T12:58:45.653Z",
+        "next_action": "Retain and hash a bounded byte sample from the exact browser-observed file, bound to its URL and observation time; verify the recorded root identity fields against those bytes.",
         "actionable": true
       },
-      "investigation_worklist": {
-        "source_file": "unresolved-investigation-worklist.json",
-        "current_disposition": "pointer-facility-match-unresolved",
-        "investigation_tier": 2,
-        "evidence_gate": "pointer-facility-match",
-        "reviewed_follow_up": true,
-        "reviewed_sources": [
-          "manual-access"
-        ],
-        "latest_review_at": "2026-09-26T23:45:00Z",
-        "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file.",
-        "action_matches_reconciliation": true
-      }
+      "investigation_worklist": null
     },
     {
       "ccn": "05030F",
@@ -19361,23 +19265,23 @@
       "historical_891_member": false,
       "historical_891_current_category": "",
       "raw_observation": {
-        "disposition": "pointer-facility-match-unresolved",
-        "observed_at": "2026-09-26T16:00:00.9Z",
+        "disposition": "verified-current-mrf",
+        "observed_at": "2026-10-01T12:58:45.653Z",
         "mrf_http_status": "",
         "mrf_url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/941156621-1821442864_sutter-tracy-community-hospital_standardcharges.csv",
-        "browser_mrf_status": "",
-        "browser_mrf_observed_at": "",
-        "pointer_state": "retrieved-facility-match-unresolved",
-        "pointer_result": "retrieved",
-        "pointer_observed_at": "2026-09-26T16:00:00.9Z",
-        "next_action": "Retain as verified current MRF and recheck on the next pointer update."
+        "browser_mrf_status": "retrieved",
+        "browser_mrf_observed_at": "2026-10-01T12:58:45.653Z",
+        "pointer_state": "retrieved-facility-linked-manual-review",
+        "pointer_result": "200",
+        "pointer_observed_at": "2026-10-01T12:58:45.653Z",
+        "next_action": "Retain the unique pointer entry and facility file chain; recheck on the next publisher pointer or file change. Full-file hash remains unestablished (bounded header sample only)."
       },
       "effective_reviewed_observation": {
-        "disposition": "pointer-facility-match-unresolved",
-        "observed_at": "2026-09-26T16:00:00.9Z",
+        "disposition": "verified-current-mrf",
+        "observed_at": "2026-10-01T12:58:45.653Z",
         "mrf_http_status": "",
         "mrf_url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/941156621-1821442864_sutter-tracy-community-hospital_standardcharges.csv",
-        "standing_evidence_retained": true,
+        "standing_evidence_retained": false,
         "latest_observation_superseded": false,
         "latest_retry_observation": null,
         "reviewed_page_file_overlay": "",
@@ -19385,29 +19289,17 @@
         "overlay_source_proof_file": ""
       },
       "reconciliation": {
-        "workstream": "genuinely-unresolved-investigation",
+        "workstream": "verification-proof-gap",
         "status": "review-required",
         "issues": [
-          "standing-evidence-retained-review-new-observation",
-          "latest-check-unresolved"
+          "verification-file-byte-proof-audit-pending",
+          "browser-file-identity-proof-insufficient"
         ],
-        "latest_observed_at": "2026-09-26T23:45:00Z",
-        "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file.",
+        "latest_observed_at": "2026-10-01T12:58:45.653Z",
+        "next_action": "Retain and hash a bounded byte sample from the exact browser-observed file, bound to its URL and observation time; verify the recorded root identity fields against those bytes.",
         "actionable": true
       },
-      "investigation_worklist": {
-        "source_file": "unresolved-investigation-worklist.json",
-        "current_disposition": "pointer-facility-match-unresolved",
-        "investigation_tier": 2,
-        "evidence_gate": "pointer-facility-match",
-        "reviewed_follow_up": true,
-        "reviewed_sources": [
-          "manual-access"
-        ],
-        "latest_review_at": "2026-09-26T23:45:00Z",
-        "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file.",
-        "action_matches_reconciliation": true
-      }
+      "investigation_worklist": null
     },
     {
       "ccn": "050315",
@@ -20688,23 +20580,23 @@
       "historical_891_member": false,
       "historical_891_current_category": "",
       "raw_observation": {
-        "disposition": "pointer-facility-match-unresolved",
-        "observed_at": "2026-09-26T16:00:00.9Z",
+        "disposition": "verified-current-mrf",
+        "observed_at": "2026-10-01T12:58:45.653Z",
         "mrf_http_status": "",
         "mrf_url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/942988520-1457367062_sutter-coast-hospital_standardcharges.csv",
-        "browser_mrf_status": "",
-        "browser_mrf_observed_at": "",
-        "pointer_state": "retrieved-facility-match-unresolved",
-        "pointer_result": "retrieved",
-        "pointer_observed_at": "2026-09-26T16:00:00.9Z",
-        "next_action": "Retain as verified current MRF and recheck on the next pointer update."
+        "browser_mrf_status": "retrieved",
+        "browser_mrf_observed_at": "2026-10-01T12:58:45.653Z",
+        "pointer_state": "retrieved-facility-linked-manual-review",
+        "pointer_result": "200",
+        "pointer_observed_at": "2026-10-01T12:58:45.653Z",
+        "next_action": "Retain the unique pointer entry and facility file chain; recheck on the next publisher pointer or file change. Full-file hash remains unestablished (bounded header sample only)."
       },
       "effective_reviewed_observation": {
-        "disposition": "pointer-facility-match-unresolved",
-        "observed_at": "2026-09-26T16:00:00.9Z",
+        "disposition": "verified-current-mrf",
+        "observed_at": "2026-10-01T12:58:45.653Z",
         "mrf_http_status": "",
         "mrf_url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/942988520-1457367062_sutter-coast-hospital_standardcharges.csv",
-        "standing_evidence_retained": true,
+        "standing_evidence_retained": false,
         "latest_observation_superseded": false,
         "latest_retry_observation": null,
         "reviewed_page_file_overlay": "",
@@ -20712,29 +20604,17 @@
         "overlay_source_proof_file": ""
       },
       "reconciliation": {
-        "workstream": "genuinely-unresolved-investigation",
+        "workstream": "verification-proof-gap",
         "status": "review-required",
         "issues": [
-          "standing-evidence-retained-review-new-observation",
-          "latest-check-unresolved"
+          "verification-file-byte-proof-audit-pending",
+          "browser-file-identity-proof-insufficient"
         ],
-        "latest_observed_at": "2026-09-26T23:45:00Z",
-        "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file.",
+        "latest_observed_at": "2026-10-01T12:58:45.653Z",
+        "next_action": "Retain and hash a bounded byte sample from the exact browser-observed file, bound to its URL and observation time; verify the recorded root identity fields against those bytes.",
         "actionable": true
       },
-      "investigation_worklist": {
-        "source_file": "unresolved-investigation-worklist.json",
-        "current_disposition": "pointer-facility-match-unresolved",
-        "investigation_tier": 2,
-        "evidence_gate": "pointer-facility-match",
-        "reviewed_follow_up": true,
-        "reviewed_sources": [
-          "manual-access"
-        ],
-        "latest_review_at": "2026-09-26T23:45:00Z",
-        "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file.",
-        "action_matches_reconciliation": true
-      }
+      "investigation_worklist": null
     },
     {
       "ccn": "05041F",
@@ -57238,7 +57118,7 @@
       "historical_891_member": false,
       "historical_891_current_category": "",
       "raw_observation": {
-        "disposition": "verified-current-mrf",
+        "disposition": "verified-template-review",
         "observed_at": "2026-09-15T04:39:28.976Z",
         "mrf_http_status": "200",
         "mrf_url": "https://www.mercyhealthsystem.org/clientfiles/getfile/362181997_fhn-memorial-hospital_standardcharges.csv",
@@ -57247,10 +57127,10 @@
         "pointer_state": "retrieved-facility-linked",
         "pointer_result": "ok",
         "pointer_observed_at": "2026-09-15T09:17:38.738Z",
-        "next_action": "No discovery follow-up; recheck on the next scheduled crawl."
+        "next_action": "Inspect the declared CMS template version and recheck after publisher update."
       },
       "effective_reviewed_observation": {
-        "disposition": "verified-current-mrf",
+        "disposition": "verified-template-review",
         "observed_at": "2026-09-15T04:39:28.976Z",
         "mrf_http_status": "200",
         "mrf_url": "https://www.mercyhealthsystem.org/clientfiles/getfile/362181997_fhn-memorial-hospital_standardcharges.csv",
@@ -57266,7 +57146,7 @@
         "status": "consistent-proof-audited",
         "issues": [],
         "latest_observed_at": "2026-09-15T04:39:28.976Z",
-        "next_action": "No discovery follow-up; recheck on the next scheduled crawl.",
+        "next_action": "Inspect the declared CMS template version and recheck after publisher update.",
         "actionable": false
       },
       "investigation_worklist": null
@@ -87757,7 +87637,7 @@
       "historical_891_member": false,
       "historical_891_current_category": "",
       "raw_observation": {
-        "disposition": "verified-current-mrf",
+        "disposition": "verified-stale-mrf",
         "observed_at": "2026-09-15T04:35:56.984Z",
         "mrf_http_status": "206",
         "mrf_url": "https://hospitalpricetransparencyfiles.com/jackson-parish-hospital/720549907_Jackson-Parish-Hospital_standardcharges.csv",
@@ -87766,10 +87646,10 @@
         "pointer_state": "retrieved-facility-linked",
         "pointer_result": "ok",
         "pointer_observed_at": "2026-09-15T09:15:54.353Z",
-        "next_action": "No discovery follow-up; recheck on the next scheduled crawl."
+        "next_action": "Recheck this exact pointer-linked file after a publisher update or material source change; do not infer a legal violation from the stale date alone."
       },
       "effective_reviewed_observation": {
-        "disposition": "verified-current-mrf",
+        "disposition": "verified-stale-mrf",
         "observed_at": "2026-09-15T04:35:56.984Z",
         "mrf_http_status": "206",
         "mrf_url": "https://hospitalpricetransparencyfiles.com/jackson-parish-hospital/720549907_Jackson-Parish-Hospital_standardcharges.csv",
@@ -87785,7 +87665,7 @@
         "status": "consistent-proof-audited",
         "issues": [],
         "latest_observed_at": "2026-09-15T04:35:56.984Z",
-        "next_action": "No discovery follow-up; recheck on the next scheduled crawl.",
+        "next_action": "Recheck this exact pointer-linked file after a publisher update or material source change; do not infer a legal violation from the stale date alone.",
         "actionable": false
       },
       "investigation_worklist": null
@@ -89919,7 +89799,7 @@
       "historical_891_member": false,
       "historical_891_current_category": "",
       "raw_observation": {
-        "disposition": "verified-current-mrf",
+        "disposition": "verified-template-review",
         "observed_at": "2026-09-15T04:39:44.247Z",
         "mrf_http_status": "206",
         "mrf_url": "https://www.regionsbh.com/wp-content/uploads/2025/12/Regoins-Behavioral-Hospital-Price-Transparency-List-Info.csv",
@@ -89928,10 +89808,10 @@
         "pointer_state": "retrieved-facility-linked",
         "pointer_result": "ok",
         "pointer_observed_at": "2026-09-15T09:16:43.370Z",
-        "next_action": "No discovery follow-up; recheck on the next scheduled crawl."
+        "next_action": "Inspect the declared CMS template version and recheck after publisher update."
       },
       "effective_reviewed_observation": {
-        "disposition": "verified-current-mrf",
+        "disposition": "verified-template-review",
         "observed_at": "2026-09-15T04:39:44.247Z",
         "mrf_http_status": "206",
         "mrf_url": "https://www.regionsbh.com/wp-content/uploads/2025/12/Regoins-Behavioral-Hospital-Price-Transparency-List-Info.csv",
@@ -89947,7 +89827,7 @@
         "status": "consistent-proof-audited",
         "issues": [],
         "latest_observed_at": "2026-09-15T04:39:44.247Z",
-        "next_action": "No discovery follow-up; recheck on the next scheduled crawl.",
+        "next_action": "Inspect the declared CMS template version and recheck after publisher update.",
         "actionable": false
       },
       "investigation_worklist": null
@@ -121291,7 +121171,7 @@
       "historical_891_member": false,
       "historical_891_current_category": "",
       "raw_observation": {
-        "disposition": "verified-current-mrf",
+        "disposition": "verified-template-review",
         "observed_at": "2026-09-15T04:38:40.086Z",
         "mrf_http_status": "200",
         "mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbSCHCOLUMBUSMT&type=CDMWithoutLabel&fileType=CSV",
@@ -121300,10 +121180,10 @@
         "pointer_state": "retrieved-facility-linked",
         "pointer_result": "ok",
         "pointer_observed_at": "2026-09-15T09:17:04.303Z",
-        "next_action": "No discovery follow-up; recheck on the next scheduled crawl."
+        "next_action": "Inspect the declared CMS template version and recheck after publisher update."
       },
       "effective_reviewed_observation": {
-        "disposition": "verified-current-mrf",
+        "disposition": "verified-template-review",
         "observed_at": "2026-09-15T04:38:40.086Z",
         "mrf_http_status": "200",
         "mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbSCHCOLUMBUSMT&type=CDMWithoutLabel&fileType=CSV",
@@ -121319,7 +121199,7 @@
         "status": "consistent-proof-audited",
         "issues": [],
         "latest_observed_at": "2026-09-15T04:38:40.086Z",
-        "next_action": "No discovery follow-up; recheck on the next scheduled crawl.",
+        "next_action": "Inspect the declared CMS template version and recheck after publisher update.",
         "actionable": false
       },
       "investigation_worklist": null
@@ -121428,7 +121308,7 @@
       "historical_891_member": false,
       "historical_891_current_category": "",
       "raw_observation": {
-        "disposition": "verified-current-mrf",
+        "disposition": "verified-template-review",
         "observed_at": "2026-09-15T04:35:03.689Z",
         "mrf_http_status": "200",
         "mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbBHCTOWNSENDMT&type=CDMWithoutLabel&fileType=CSV",
@@ -121437,10 +121317,10 @@
         "pointer_state": "retrieved-facility-linked",
         "pointer_result": "ok",
         "pointer_observed_at": "2026-09-15T09:17:04.303Z",
-        "next_action": "No discovery follow-up; recheck on the next scheduled crawl."
+        "next_action": "Inspect the declared CMS template version and recheck after publisher update."
       },
       "effective_reviewed_observation": {
-        "disposition": "verified-current-mrf",
+        "disposition": "verified-template-review",
         "observed_at": "2026-09-15T04:35:03.689Z",
         "mrf_http_status": "200",
         "mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbBHCTOWNSENDMT&type=CDMWithoutLabel&fileType=CSV",
@@ -121456,7 +121336,7 @@
         "status": "consistent-proof-audited",
         "issues": [],
         "latest_observed_at": "2026-09-15T04:35:03.689Z",
-        "next_action": "No discovery follow-up; recheck on the next scheduled crawl.",
+        "next_action": "Inspect the declared CMS template version and recheck after publisher update.",
         "actionable": false
       },
       "investigation_worklist": null
@@ -127439,7 +127319,7 @@
       "historical_891_member": false,
       "historical_891_current_category": "",
       "raw_observation": {
-        "disposition": "verified-template-review",
+        "disposition": "verified-stale-mrf",
         "observed_at": "2026-09-15T04:34:35.204Z",
         "mrf_http_status": "206",
         "mrf_url": "https://bchcares.org/880065829_boulder-city-hospital_standard-charges.csv",
@@ -127448,10 +127328,10 @@
         "pointer_state": "retrieved-facility-linked",
         "pointer_result": "ok",
         "pointer_observed_at": "2026-09-15T09:15:10.005Z",
-        "next_action": "Inspect the declared CMS template version and recheck after publisher update."
+        "next_action": "Recheck this exact pointer-linked file after a publisher update or material source change; do not infer a legal violation from the stale date alone."
       },
       "effective_reviewed_observation": {
-        "disposition": "verified-template-review",
+        "disposition": "verified-stale-mrf",
         "observed_at": "2026-09-15T04:34:35.204Z",
         "mrf_http_status": "206",
         "mrf_url": "https://bchcares.org/880065829_boulder-city-hospital_standard-charges.csv",
@@ -127467,7 +127347,7 @@
         "status": "consistent-proof-audited",
         "issues": [],
         "latest_observed_at": "2026-09-15T04:34:35.204Z",
-        "next_action": "Inspect the declared CMS template version and recheck after publisher update.",
+        "next_action": "Recheck this exact pointer-linked file after a publisher update or material source change; do not infer a legal violation from the stale date alone.",
         "actionable": false
       },
       "investigation_worklist": null
@@ -149631,7 +149511,7 @@
       "historical_891_member": false,
       "historical_891_current_category": "",
       "raw_observation": {
-        "disposition": "verified-current-mrf",
+        "disposition": "verified-template-review",
         "observed_at": "2026-09-15T04:34:06.248Z",
         "mrf_http_status": "206",
         "mrf_url": "https://8589329.fs1.hubspotusercontent-na1.net/hubfs/8589329/344427944_shelby-county-memorial-hospital-association_standardcharges.csv",
@@ -149640,10 +149520,10 @@
         "pointer_state": "retrieved-facility-linked",
         "pointer_result": "ok",
         "pointer_observed_at": "2026-09-15T09:17:42.361Z",
-        "next_action": "No discovery follow-up; recheck on the next scheduled crawl."
+        "next_action": "Inspect the declared CMS template version and recheck after publisher update."
       },
       "effective_reviewed_observation": {
-        "disposition": "verified-current-mrf",
+        "disposition": "verified-template-review",
         "observed_at": "2026-09-15T04:34:06.248Z",
         "mrf_http_status": "206",
         "mrf_url": "https://8589329.fs1.hubspotusercontent-na1.net/hubfs/8589329/344427944_shelby-county-memorial-hospital-association_standardcharges.csv",
@@ -149659,7 +149539,7 @@
         "status": "consistent-proof-audited",
         "issues": [],
         "latest_observed_at": "2026-09-15T04:34:06.248Z",
-        "next_action": "No discovery follow-up; recheck on the next scheduled crawl.",
+        "next_action": "Inspect the declared CMS template version and recheck after publisher update.",
         "actionable": false
       },
       "investigation_worklist": null
@@ -154688,7 +154568,7 @@
       "historical_891_member": false,
       "historical_891_current_category": "",
       "raw_observation": {
-        "disposition": "verified-current-mrf",
+        "disposition": "verified-template-review",
         "observed_at": "2026-09-15T04:39:42.462Z",
         "mrf_http_status": "206",
         "mrf_url": "https://www.ohiohealth.com/siteassets/patients-and-visitors/preparing-for-your-visit/out-of-pocket-estimates/316402699_morrow-county-hospital-_standardcharges.csv",
@@ -154697,10 +154577,10 @@
         "pointer_state": "retrieved-facility-linked",
         "pointer_result": "ok",
         "pointer_observed_at": "2026-09-15T09:17:39.603Z",
-        "next_action": "No discovery follow-up; recheck on the next scheduled crawl."
+        "next_action": "Inspect the declared CMS template version and recheck after publisher update."
       },
       "effective_reviewed_observation": {
-        "disposition": "verified-current-mrf",
+        "disposition": "verified-template-review",
         "observed_at": "2026-09-15T04:39:42.462Z",
         "mrf_http_status": "206",
         "mrf_url": "https://www.ohiohealth.com/siteassets/patients-and-visitors/preparing-for-your-visit/out-of-pocket-estimates/316402699_morrow-county-hospital-_standardcharges.csv",
@@ -154716,7 +154596,7 @@
         "status": "consistent-proof-audited",
         "issues": [],
         "latest_observed_at": "2026-09-15T04:39:42.462Z",
-        "next_action": "No discovery follow-up; recheck on the next scheduled crawl.",
+        "next_action": "Inspect the declared CMS template version and recheck after publisher update.",
         "actionable": false
       },
       "investigation_worklist": null
@@ -158212,7 +158092,7 @@
       "historical_891_member": false,
       "historical_891_current_category": "",
       "raw_observation": {
-        "disposition": "verified-current-mrf",
+        "disposition": "verified-template-review",
         "observed_at": "2026-09-15T04:37:05.067Z",
         "mrf_http_status": "200",
         "mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbMCNMOKMULGEEOK&type=CDMWithoutLabel&fileType=CSV",
@@ -158221,10 +158101,10 @@
         "pointer_state": "retrieved-facility-linked",
         "pointer_result": "ok",
         "pointer_observed_at": "2026-09-15T09:15:40.300Z",
-        "next_action": "No discovery follow-up; recheck on the next scheduled crawl."
+        "next_action": "Inspect the declared CMS template version and recheck after publisher update."
       },
       "effective_reviewed_observation": {
-        "disposition": "verified-current-mrf",
+        "disposition": "verified-template-review",
         "observed_at": "2026-09-15T04:37:05.067Z",
         "mrf_http_status": "200",
         "mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbMCNMOKMULGEEOK&type=CDMWithoutLabel&fileType=CSV",
@@ -158240,7 +158120,7 @@
         "status": "consistent-proof-audited",
         "issues": [],
         "latest_observed_at": "2026-09-15T04:37:05.067Z",
-        "next_action": "No discovery follow-up; recheck on the next scheduled crawl.",
+        "next_action": "Inspect the declared CMS template version and recheck after publisher update.",
         "actionable": false
       },
       "investigation_worklist": null

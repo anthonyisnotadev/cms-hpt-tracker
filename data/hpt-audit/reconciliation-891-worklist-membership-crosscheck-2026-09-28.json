@@ -1,17 +1,17 @@
 {
   "audit_id": "reconciliation-891-worklist-membership-crosscheck-2026-09-28",
-  "observed_at": "2026-09-30T23:57:30.073Z",
+  "observed_at": "2026-10-01T13:00:38.562Z",
   "purpose": "Reconcile the historical 891-membership cohort's genuinely unresolved CCNs against the active nationwide unresolved investigation worklist, so cohort progress is not confused with the larger nationwide queue.",
   "inputs": {
     "cohort_roster": {
       "path": "data/hpt-audit/reconciliation-891-baseline-member-roster-2026-09-27.json",
-      "sha256": "d48f59c13678d12bc71652788a7f8cfdaaca10e1bef7e18fc1a4662d7c91581d",
-      "current_snapshot_sha256": "f0f56a98982ce013d42d894928cb252c1dc03373752c202b6127dc8ddda336b3"
+      "sha256": "7c932aab302cbdf0a03844f27190bef7126c09d371b80824b7b492ead47d4e58",
+      "current_snapshot_sha256": "71f9b51dac6d86904269a1fcd7b23aec4f8a3467e26a39f5c280e6a593971c79"
     },
     "nationwide_worklist": {
       "path": "data/hpt-audit/unresolved-investigation-worklist.json",
-      "sha256": "7d2139831f798f35d0d860daa8c4ccc554e0228937316049f0f0629f6a98c888",
-      "source_nationwide_reconciliation_sha256": "d77a330c36861cbe3081e7948c26f884991ab599183d07f8af021ae59b5320f9"
+      "sha256": "1b12f4d9e97ee3e9fce7eb0ca0c009a0868c5c9392534b5bca19ecbd5897b6bd",
+      "source_nationwide_reconciliation_sha256": "fbc7deea86a3c10be8ca7cdba9c3198d4e9eca9d83f30cd796f170c81d1a0a68"
     }
   },
   "comparison": {
@@ -19,20 +19,10 @@
     "historical_cohort_unique_ccns": 720,
     "historical_cohort_overlap_memberships": 171,
     "cohort_genuinely_unresolved_ccns": 541,
-    "nationwide_unresolved_worklist_ccns": 581,
+    "nationwide_unresolved_worklist_ccns": 571,
     "cohort_unresolved_missing_from_worklist": [],
     "worklist_ccns_outside_historical_cohort": [
-      "050014",
-      "050047",
-      "050055",
       "050056",
-      "050101",
-      "050108",
-      "050131",
-      "050291",
-      "050309",
-      "050313",
-      "050417",
       "050488",
       "050498",
       "050523",
@@ -72,7 +62,7 @@
       "supported-identity-uncertainty": 0
     }
   },
-  "result": "All 541 genuinely unresolved historical-cohort CCNs are present in the 581-record nationwide worklist; remaining records reflect wider nationwide worklist membership.",
+  "result": "All 541 genuinely unresolved historical-cohort CCNs are present in the 571-record nationwide worklist; remaining records reflect wider nationwide worklist membership.",
   "validation": {
     "exact_ccn_set_membership_comparison": true,
     "snapshot_ccn_count": 5419,

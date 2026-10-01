@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "ccn": "050291",
+  "observed_at": "2026-10-01T04:18:17.472Z",
+  "purpose": "Resolve the pointer-facility-match gate by comparing every root-pointer location entry against this CCN and the first-party name/address, without assigning a shared-system sibling file.",
+  "official_domain": "https://www.sutterhealth.org/",
+  "roster_name": "SUTTER SANTA ROSA REGIONAL HOSPITAL",
+  "roster_address": "30 MARK WEST SPRINGS ROAD, SANTA ROSA, CA 95403",
+  "pointer_evidence": {
+    "url": "https://www.sutterhealth.org/cms-hpt.txt",
+    "http_status": 200,
+    "bytes": 25914,
+    "content_type": "text/plain; charset=UTF-8",
+    "encoding": "UTF-16LE with BOM",
+    "sha256": "76cf5ee42d726154cfadf3b5d2fdd6605eea5599b8751fc24707dba424a6b2ca",
+    "observed_at": "2026-10-01T04:18:17.472Z",
+    "location_entries_total": 27,
+    "santa_rosa_regional_entries": 1,
+    "matched_entry": {
+      "location_name": "SUTTER SANTA ROSA REGIONAL HOSPITAL",
+      "source_page_url": "https://www.sutterhealth.org/billing-insurance/costs-and-charges/cost-transparency/",
+      "mrf_url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/940562680-1740413798_sutter-santa-rosa-regional-hospital_standardcharges.csv"
+    },
+    "sibling_check": "Exactly one Sutter Santa Rosa Regional Hospital entry exists in the root pointer and it targets the facility-specific sutter-santa-rosa-regional-hospital CSV, not a shared-system or sibling file."
+  },
+  "source_page_evidence": {
+    "url": "https://www.sutterhealth.org/billing-insurance/costs-and-charges/cost-transparency/",
+    "http_status": 200,
+    "observed_at": "2026-10-01T04:18:17.472Z",
+    "facility_csv_links_on_page": 1,
+    "link_matches_pointer_mrf_url": true
+  },
+  "mrf_evidence": {
+    "url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/940562680-1740413798_sutter-santa-rosa-regional-hospital_standardcharges.csv",
+    "http_status": 200,
+    "total_bytes": 14631528,
+    "sha256": "ebc3dc239ec6ab9fede0153f241f21a67eb7016fab4da64a8b7bd6eaa208bf7a",
+    "file_kind": "csv",
+    "observed_at": "2026-10-01T04:18:17.472Z",
+    "declared_hospital_name": "Sutter Santa Rosa Regional Hospital",
+    "declared_location_name": "Sutter Santa Rosa Regional Hospital",
+    "declared_address": "30 Mark West Springs Road, Santa Rosa, CA 95403",
+    "declared_license_state": "CA",
+    "declared_license_number": "110000005",
+    "declared_type2_npis": "1740413798",
+    "declared_last_updated": "2026-04-01",
+    "cms_template_version": "3.0.0",
+    "attestation": true
+  },
+  "identity_basis": "The single root-pointer entry, the sole first-party cost-transparency page link for this facility, and the facility CSV data-row header agree on facility name, exact street address, California license state, type-2 NPI 1740413798, 2026-04-01 update date, CMS template 3.0.0, and attestation; the pointer is byte-identical (same SHA-256) to the pointer used for the 2026-09-26 verification.",
+  "not_established": "No change to the publisher-side update since 2026-04-01 is claimed; identity is re-confirmed, not a new content date.",
+  "disposition_effect": "promote",
+  "next_action": "Retain as verified current MRF and recheck on the next pointer or file change."
+}

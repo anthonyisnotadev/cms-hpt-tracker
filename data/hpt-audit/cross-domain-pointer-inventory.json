@@ -1,19 +1,20 @@
 {
   "summary": {
-    "generated_at": "2026-09-30T23:59:25.249Z",
+    "generated_at": "2026-10-01T13:01:34.309Z",
     "source": "data/hpt-audit/nationwide-verification.json",
     "total": 225,
     "by_review_class": {
-      "cross-domain-unresolved-review": 24,
-      "cross-domain-verified-or-superseded-review": 201
+      "cross-domain-unresolved-review": 25,
+      "cross-domain-verified-or-superseded-review": 200
     },
     "by_disposition": {
       "linked-mrf-header-unmatched": 13,
       "pointer-facility-match-unresolved": 5,
+      "verified-template-review": 1,
       "mrf-facility-identity-unresolved": 9,
       "verified-stale-mrf": 1,
       "pointer-discovery-incomplete": 17,
-      "verified-current-mrf": 177,
+      "verified-current-mrf": 176,
       "pointer-access-denied-to-client": 1,
       "mrf-request-unsuccessful": 2
     },
@@ -56,6 +57,19 @@
       "standing_mrf_url": "",
       "disposition": "pointer-facility-match-unresolved",
       "standing_finding": "not-assessed-not-named-in-file",
+      "latest_observation_superseded": false,
+      "review_class": "cross-domain-unresolved-review"
+    },
+    {
+      "ccn": "140160",
+      "hospital_name": "FHN MEMORIAL HOSPITAL",
+      "state": "IL",
+      "official_domain": "res.cloudinary.com",
+      "pointer_domain": "mercyhealthsystem.org",
+      "standing_pointer_url": "https://www.mercyhealthsystem.org/cms-hpt.txt",
+      "standing_mrf_url": "https://www.mercyhealthsystem.org/clientfiles/getfile/362181997_fhn-memorial-hospital_standardcharges.csv",
+      "disposition": "verified-template-review",
+      "standing_finding": "mrf-template-version-noncanonical",
       "latest_observation_superseded": false,
       "review_class": "cross-domain-unresolved-review"
     },
@@ -1133,19 +1147,6 @@
       "pointer_domain": "oceanshealthcare.com",
       "standing_pointer_url": "https://oceanshealthcare.com/cms-hpt.txt",
       "standing_mrf_url": "https://oceanshealthcare.com/wp-content/uploads/2026/07/371881359_Cottonwood-Creek-Behavioral-Hospital_standardcharges.csv",
-      "disposition": "verified-current-mrf",
-      "standing_finding": "compliant-observed",
-      "latest_observation_superseded": false,
-      "review_class": "cross-domain-verified-or-superseded-review"
-    },
-    {
-      "ccn": "140160",
-      "hospital_name": "FHN MEMORIAL HOSPITAL",
-      "state": "IL",
-      "official_domain": "res.cloudinary.com",
-      "pointer_domain": "mercyhealthsystem.org",
-      "standing_pointer_url": "https://www.mercyhealthsystem.org/cms-hpt.txt",
-      "standing_mrf_url": "https://www.mercyhealthsystem.org/clientfiles/getfile/362181997_fhn-memorial-hospital_standardcharges.csv",
       "disposition": "verified-current-mrf",
       "standing_finding": "compliant-observed",
       "latest_observation_superseded": false,

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "ccn": "050101",
+  "observed_at": "2026-10-01T04:11:55.635Z",
+  "purpose": "Resolve the pointer-facility-match gate by comparing every root-pointer location entry against this CCN and the first-party name/address, without assigning a shared-system sibling file.",
+  "official_domain": "https://www.sutterhealth.org/",
+  "roster_name": "SUTTER SOLANO MEDICAL CENTER",
+  "roster_address": "300 HOSPITAL DR, VALLEJO, CA 94589",
+  "pointer_evidence": {
+    "url": "https://www.sutterhealth.org/cms-hpt.txt",
+    "http_status": 200,
+    "bytes": 25914,
+    "content_type": "text/plain; charset=UTF-8",
+    "encoding": "UTF-16LE with BOM",
+    "sha256": "76cf5ee42d726154cfadf3b5d2fdd6605eea5599b8751fc24707dba424a6b2ca",
+    "observed_at": "2026-10-01T04:11:55.635Z",
+    "location_entries_total": 26,
+    "solano_entries": 1,
+    "matched_entry": {
+      "location_name": "SUTTER SOLANO MEDICAL CENTER",
+      "source_page_url": "https://www.sutterhealth.org/billing-insurance/costs-and-charges/cost-transparency/",
+      "mrf_url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/941156621-1366686248_sutter-solano-medical-center_standardcharges.csv"
+    },
+    "sibling_check": "Exactly one Sutter Solano entry exists in the root pointer and it targets the facility-specific sutter-solano-medical-center CSV, not a shared-system or sibling file."
+  },
+  "mrf_evidence": {
+    "url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/941156621-1366686248_sutter-solano-medical-center_standardcharges.csv",
+    "http_status": 200,
+    "total_bytes": 11201093,
+    "sha256": "08bd9648577a9c51bf138aa117ac74036fff740b6b495655684d36e580df9f50",
+    "file_kind": "csv",
+    "observed_at": "2026-10-01T04:11:55.635Z",
+    "declared_hospital_name": "Sutter Solano Medical Center",
+    "declared_location_name": "Sutter Solano Medical Center",
+    "declared_address": "300 Hospital Dr, Vallejo, CA 94589",
+    "declared_license_state": "CA",
+    "declared_license_number": "110000082",
+    "declared_type2_npis": "1366686248",
+    "declared_last_updated": "2026-04-01",
+    "cms_template_version": "3.0.0",
+    "attestation": true
+  },
+  "identity_basis": "The single root-pointer entry and the facility CSV data-row header agree on facility name, exact street address, California license state, 2026-04-01 update date, CMS template 3.0.0, and attestation; the pointer is byte-identical (same SHA-256) to the pointer used for the 2026-09-26 verification.",
+  "not_established": "No change to the publisher-side update since 2026-04-01 is claimed; identity is re-confirmed, not a new content date.",
+  "disposition_effect": "promote",
+  "next_action": "Retain as verified current MRF and recheck on the next pointer or file change."
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "ccn": "050056",
+  "observed_at": "2026-10-01T04:14:30.000Z",
+  "purpose": "Single cheap probe of the documented blocked route for Antelope Valley Hospital; no retry of the full check while the condition is unchanged.",
+  "hospital_name": "ANTELOPE VALLEY HOSPITAL",
+  "official_domain": "avmc.org",
+  "probe": {
+    "url": "https://www.avmc.org/cms-hpt.txt",
+    "observed_at": "2026-10-01T04:14:30.000Z",
+    "method": "direct unauthenticated GET (curl)",
+    "http_status": 403,
+    "content_type": "text/html; charset=UTF-8",
+    "content_length": 4549,
+    "server": "cloudflare",
+    "response_class": "Cloudflare access challenge; not structured pointer bytes"
+  },
+  "established": "The client/security-layer block on the root pointer is unchanged from the 2026-09-30 observation; the cheap-probe condition for no-change is met.",
+  "not_established": "Nothing about pointer presence, pointer content, or facility compliance; a client-side 403 is not evidence of file absence.",
+  "standing_evidence_preserved": [
+    "2026-09-06 standing compliant-observed finding",
+    "2026-09-26 browser MRF capture (reconciliation-antelope-valley-pointer-page-crosswalk-proof-2026-09-30.json)"
+  ],
+  "disposition_effect": "none",
+  "next_step": "Recheck the unchanged root pointer only after a first-party route or materially different permitted access path changes; do not infer pointer absence or a facility failure, and do not perform outreach without authorization."
+}

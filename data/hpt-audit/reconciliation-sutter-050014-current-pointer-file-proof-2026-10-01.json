@@ -1,0 +1,60 @@
+{
+  "audit_id": "sutter-050014-current-pointer-file-proof-2026-10-01",
+  "ccn": "050014",
+  "observed_at": "2026-10-01T03:47:57.704Z",
+  "official_domain": "https://www.sutterhealth.org/",
+  "official_pricing_page": "https://www.sutterhealth.org/billing-insurance/costs-and-charges/cost-transparency",
+  "official_pricing_page_status": 200,
+  "official_pricing_page_bytes": 295743,
+  "official_pricing_page_sha256": "eb2334c20ab9232674d038fbdc2b8191f8450db287c756cb3cc55d19f6f4f71b",
+  "official_facility_name": "SUTTER AMADOR HOSPITAL",
+  "official_facility_address": "200 MISSION BLVD, JACKSON, CA",
+  "current_cms_roster_identity": {
+    "facility_id": "050014",
+    "facility_name": "SUTTER AMADOR HOSPITAL",
+    "address": "200 MISSION BLVD",
+    "city": "JACKSON",
+    "state": "CA",
+    "source": "cms_data/Hospital_General_Information.csv"
+  },
+  "pointer": {
+    "url": "https://www.sutterhealth.org/cms-hpt.txt",
+    "http_status": 200,
+    "content_type": "application/octet-stream",
+    "bytes": 25914,
+    "sha256": "76cf5ee42d726154cfadf3b5d2fdd6605eea5599b8751fc24707dba424a6b2ca",
+    "raw_artifact": "cms_data/hpt/nationwide-verification/pointer-provenance-rechecks/76cf5ee42d726154cfadf3b5d2fdd6605eea5599b8751fc24707dba424a6b2ca.bin",
+    "raw_encoding": "UTF-16LE",
+    "historical_sha256_match": "76cf5ee42d726154cfadf3b5d2fdd6605eea5599b8751fc24707dba424a6b2ca",
+    "exact_entries": [
+      {
+        "location_name": "SUTTER AMADOR HOSPITAL",
+        "mrf_url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/941156621-1447494323_sutter-amador-hospital_standardcharges.csv"
+      }
+    ]
+  },
+  "primary_mrf": {
+    "role": "primary-sutter-amador",
+    "page_location_label": "Sutter Amador Hospital",
+    "url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/941156621-1447494323_sutter-amador-hospital_standardcharges.csv",
+    "http_status": 206,
+    "content_type": "text/csv",
+    "content_range": "bytes 0-65535/7330878",
+    "total_bytes": 7330878,
+    "sample_bytes": 65536,
+    "sample_sha256": "827d76dbe7f90f6214926620269d0473f7b9c0f2a36cca2d2faab958df6a47ce",
+    "declared_hospital_name": "Sutter Amador Hospital",
+    "declared_location_name": "Sutter Amador Hospital",
+    "declared_address": "200 Mission Blvd, Jackson, CA 95642",
+    "declared_license_number": "30000008",
+    "declared_license_state": "CA",
+    "declared_type2_npis": "1447494323",
+    "declared_last_updated": "2026-04-01",
+    "cms_template_version": "3.0.0",
+    "attestation": true,
+    "usable_rows_observed": true
+  },
+  "interpretation": "Current first-party pricing page and hash-retained root pointer declare the exact facility file. A bounded sample identifies the CMS roster CCN by facility name, street address, California license state, type-2 NPI matching the pointer filename, CMS 3.0.0 template, and attestation effective for the 2026 requirements. This supports observed current pointer-linked MRF evidence; it is not full-file or line-item validation.",
+  "disposition": "verified-current-mrf",
+  "next_action": "Retain the exact pointer/page/file chain and recheck on the next publisher pointer or file change; keep separately named Sutter campuses and CCNs distinct."
+}

@@ -1,0 +1,28 @@
+{
+  "audit_id": "reconciliation-helen-keller-dns-access-condition-recheck-2026-09-30",
+  "ccn": "010019",
+  "facility": "Helen Keller Hospital, Sheffield, Alabama",
+  "observed_at": "2026-09-30T17:55:00Z",
+  "reason": "The CCN's standing next_action conditions retrieval of the exact hh.health CSV on DNS/access recovery, so this session rechecked that condition (stated reason) across three clients before any file attempt.",
+  "condition_recheck": {
+    "target_file_url_unchanged": "https://hh.health/wp-content/uploads/472323163_hellen-keller-hospital_standardcharges.csv",
+    "os_resolver_lookup_hh_health": "ENOTFOUND",
+    "public_resolver_queries_from_this_host": "ESERVFAIL/ETIMEOUT for hh.health AND for www.huntsvillehospital.org; local DNS egress to 8.8.8.8/1.1.1.1 appears blocked, so these failures are not attributable to the hh.health domain itself",
+    "bounded_curl_get_exact_url": {
+      "http_status": 0,
+      "bytes": 0,
+      "error": "curl: (6) Could not resolve host: hh.health",
+      "sha256_of_returned_body": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "web_reader_pointer_page_hh_health": "Transport error (GET https://hh.health/patients-visitors/price-transparency/) — degraded vs 2026-09-30 16:43Z, when the reader still retrieved this page and recognized text/csv on the file link",
+    "web_reader_parent_pointer_page": "Transport error (GET https://www.huntsvillehospital.org/price-transparency) — no publisher-confirmed alternate could be obtained",
+    "browser_direct_navigation_exact_url": "net::ERR_NAME_NOT_RESOLVED (same as prior observations)"
+  },
+  "interpretation": "No DNS/access recovery is observable from any client used; the web reader route has degraded further since the 2026-09-30 16:43Z session. These are client-side/transport limitations, not evidence of file absence, facility mismatch, or metadata failure. No page, pointer, or file bytes were retrieved this session, so this is a recheck, not an evidence gain.",
+  "outcome": {
+    "new_file_bytes": false,
+    "disposition_changed": false,
+    "current_disposition": "pointer-discovery-incomplete",
+    "next_action": "Keep the exact-file gate unchanged. Retry only when DNS/access recovers or a publisher-confirmed alternate appears; then retain exact bytes/hash and verify Helen Keller identity, Sheffield address, Alabama state, CMS 3.0-family literal/date, attestation and usable rows. Do not use the legacy Huntsville parent-domain 404 URL, sibling files, or third-party mirrors."
+  }
+}

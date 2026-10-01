@@ -1,6 +1,6 @@
 {
   "audit_id": "reconciliation-891-baseline-source-recoverability-audit-2026-09-27",
-  "observed_at": "2026-09-30T23:57:30.073Z",
+  "observed_at": "2026-10-01T13:00:38.562Z",
   "question": "Can the exact CCN membership behind the 2026-09-25 category totals (593 effectively unresolved plus 298 raw pointer-access-denied observations) be recovered, and are the categories disjoint?",
   "search_scope": [
     "Git history of data/hpt-audit/nationwide-verification.json",
@@ -41,13 +41,13 @@
     },
     {
       "ref": "working-tree-current",
-      "generated_at": "2026-09-30T23:57:30.073Z",
-      "sha256": "f0f56a98982ce013d42d894928cb252c1dc03373752c202b6127dc8ddda336b3",
+      "generated_at": "2026-10-01T13:00:38.562Z",
+      "sha256": "71f9b51dac6d86904269a1fcd7b23aec4f8a3467e26a39f5c280e6a593971c79",
       "ccns": 5419,
       "effective_counts": {
         "scope-exempt": 200,
-        "active-verification-claim": 3301,
-        "genuinely-unresolved": 582,
+        "active-verification-claim": 3311,
+        "genuinely-unresolved": 572,
         "standing-evidence-retained": 847,
         "superseded-by-reviewed-resolution": 488,
         "supported-identity-uncertainty": 1
@@ -102,7 +102,7 @@
       "scope-exempt": 16,
       "supported-identity-uncertainty": 0
     },
-    "conclusion": "The exact Sep. 25 snapshot and both exact category member sets are recovered and stable across 28 matching snapshots. The user-facing 891 total double-counted 171 CCNs present in both categories; the deduplicated baseline is 720 hospitals. Keep the 593 and 298 category memberships separately auditable, reconcile all 720 against current evidence, and do not substitute the overall current 582 serialized unresolved count or infer closure from aggregate deltas. Current state-operated hospitals without the CMS deemed-compliant exception evidence remain unresolved, not noncompliant; 16 individually supported exemptions remain."
+    "conclusion": "The exact Sep. 25 snapshot and both exact category member sets are recovered and stable across 28 matching snapshots. The user-facing 891 total double-counted 171 CCNs present in both categories; the deduplicated baseline is 720 hospitals. Keep the 593 and 298 category memberships separately auditable, reconcile all 720 against current evidence, and do not substitute the overall current 572 serialized unresolved count or infer closure from aggregate deltas. Current state-operated hospitals without the CMS deemed-compliant exception evidence remain unresolved, not noncompliant; 16 individually supported exemptions remain."
   },
   "latest_crosswalk_checkpoint": {
     "observed_at": "2026-09-28T05:34:03.113Z",

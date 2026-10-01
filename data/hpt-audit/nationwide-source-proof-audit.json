@@ -2,10 +2,10 @@
   "summary": {
     "hospitals": 5419,
     "superseded_observations": 492,
-    "verification_claims": 3297,
+    "verification_claims": 3307,
     "issues": {
       "street-evidence-review": 5,
-      "browser-byte-proof-audit-required": 15,
+      "browser-byte-proof-audit-required": 25,
       "claimed-identity-source-not-found": 5,
       "original-pointer-hash-not-reproduced": 13,
       "identity-source-metadata-conflict": 2,
@@ -6507,7 +6507,7 @@
     },
     {
       "ccn": "034035",
-      "disposition": "verified-template-review",
+      "disposition": "verified-stale-mrf",
       "identity_source": "header",
       "status": "proof-audit-complete",
       "issues": [],
@@ -11296,13 +11296,63 @@
     },
     {
       "ccn": "050055",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "disposition": "verified-current-mrf",
+      "identity_source": "browser",
+      "status": "proof-audit-required",
+      "issues": [
+        "browser-byte-proof-audit-required"
+      ],
+      "pointer_proof": [
+        {
+          "file": "manual-pointer:https://www.sutterhealth.org/cms-hpt.txt",
+          "url": "https://www.sutterhealth.org/cms-hpt.txt",
+          "sha256": "76cf5ee42d726154cfadf3b5d2fdd6605eea5599b8751fc24707dba424a6b2ca",
+          "bytes": 0,
+          "status": "hash-corroborated",
+          "raw_withheld": true,
+          "observed_at": "2026-10-01T04:11:55.635Z"
+        }
+      ],
+      "file_byte_proof": null,
+      "archive_content_proof": null,
+      "state_evidence": {
+        "status": "corroborated",
+        "basis": "license-state-field"
+      },
+      "address_equivalence_review": null,
+      "observed_at": "2026-10-01T04:11:55.635Z",
+      "source_observed_at": "2026-10-01T04:11:55.635Z",
+      "header_cache_found": false
     },
     {
       "ccn": "050047",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "disposition": "verified-current-mrf",
+      "identity_source": "browser",
+      "status": "proof-audit-required",
+      "issues": [
+        "browser-byte-proof-audit-required"
+      ],
+      "pointer_proof": [
+        {
+          "file": "manual-pointer:https://www.sutterhealth.org/cms-hpt.txt",
+          "url": "https://www.sutterhealth.org/cms-hpt.txt",
+          "sha256": "76cf5ee42d726154cfadf3b5d2fdd6605eea5599b8751fc24707dba424a6b2ca",
+          "bytes": 0,
+          "status": "hash-corroborated",
+          "raw_withheld": true,
+          "observed_at": "2026-10-01T03:47:57.704Z"
+        }
+      ],
+      "file_byte_proof": null,
+      "archive_content_proof": null,
+      "state_evidence": {
+        "status": "corroborated",
+        "basis": "license-state-field"
+      },
+      "address_equivalence_review": null,
+      "observed_at": "2026-10-01T03:47:57.704Z",
+      "source_observed_at": "2026-10-01T03:47:57.704Z",
+      "header_cache_found": false
     },
     {
       "ccn": "050008",
@@ -17368,8 +17418,33 @@
     },
     {
       "ccn": "050131",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "disposition": "verified-current-mrf",
+      "identity_source": "browser",
+      "status": "proof-audit-required",
+      "issues": [
+        "browser-byte-proof-audit-required"
+      ],
+      "pointer_proof": [
+        {
+          "file": "manual-pointer:https://www.sutterhealth.org/cms-hpt.txt",
+          "url": "https://www.sutterhealth.org/cms-hpt.txt",
+          "sha256": "76cf5ee42d726154cfadf3b5d2fdd6605eea5599b8751fc24707dba424a6b2ca",
+          "bytes": 0,
+          "status": "hash-corroborated",
+          "raw_withheld": true,
+          "observed_at": "2026-10-01T04:18:17.472Z"
+        }
+      ],
+      "file_byte_proof": null,
+      "archive_content_proof": null,
+      "state_evidence": {
+        "status": "corroborated",
+        "basis": "license-state-field"
+      },
+      "address_equivalence_review": null,
+      "observed_at": "2026-10-01T04:18:17.472Z",
+      "source_observed_at": "2026-10-01T04:18:17.472Z",
+      "header_cache_found": false
     },
     {
       "ccn": "050067",
@@ -20836,8 +20911,33 @@
     },
     {
       "ccn": "050014",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "disposition": "verified-current-mrf",
+      "identity_source": "browser",
+      "status": "proof-audit-required",
+      "issues": [
+        "browser-byte-proof-audit-required"
+      ],
+      "pointer_proof": [
+        {
+          "file": "manual-pointer:https://www.sutterhealth.org/cms-hpt.txt",
+          "url": "https://www.sutterhealth.org/cms-hpt.txt",
+          "sha256": "76cf5ee42d726154cfadf3b5d2fdd6605eea5599b8751fc24707dba424a6b2ca",
+          "bytes": 0,
+          "status": "hash-corroborated",
+          "raw_withheld": true,
+          "observed_at": "2026-10-01T03:47:57.704Z"
+        }
+      ],
+      "file_byte_proof": null,
+      "archive_content_proof": null,
+      "state_evidence": {
+        "status": "corroborated",
+        "basis": "license-state-field"
+      },
+      "address_equivalence_review": null,
+      "observed_at": "2026-10-01T03:47:57.704Z",
+      "source_observed_at": "2026-10-01T03:47:57.704Z",
+      "header_cache_found": false
     },
     {
       "ccn": "050498",
@@ -20851,8 +20951,33 @@
     },
     {
       "ccn": "050417",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "disposition": "verified-current-mrf",
+      "identity_source": "browser",
+      "status": "proof-audit-required",
+      "issues": [
+        "browser-byte-proof-audit-required"
+      ],
+      "pointer_proof": [
+        {
+          "file": "manual-pointer:https://www.sutterhealth.org/cms-hpt.txt",
+          "url": "https://www.sutterhealth.org/cms-hpt.txt",
+          "sha256": "76cf5ee42d726154cfadf3b5d2fdd6605eea5599b8751fc24707dba424a6b2ca",
+          "bytes": 0,
+          "status": "hash-corroborated",
+          "raw_withheld": true,
+          "observed_at": "2026-10-01T12:58:45.653Z"
+        }
+      ],
+      "file_byte_proof": null,
+      "archive_content_proof": null,
+      "state_evidence": {
+        "status": "corroborated",
+        "basis": "license-state-field"
+      },
+      "address_equivalence_review": null,
+      "observed_at": "2026-10-01T12:58:45.653Z",
+      "source_observed_at": "2026-10-01T12:58:45.653Z",
+      "header_cache_found": false
     },
     {
       "ccn": "050537",
@@ -20876,23 +21001,123 @@
     },
     {
       "ccn": "050108",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "disposition": "verified-current-mrf",
+      "identity_source": "browser",
+      "status": "proof-audit-required",
+      "issues": [
+        "browser-byte-proof-audit-required"
+      ],
+      "pointer_proof": [
+        {
+          "file": "manual-pointer:https://www.sutterhealth.org/cms-hpt.txt",
+          "url": "https://www.sutterhealth.org/cms-hpt.txt",
+          "sha256": "76cf5ee42d726154cfadf3b5d2fdd6605eea5599b8751fc24707dba424a6b2ca",
+          "bytes": 0,
+          "status": "hash-corroborated",
+          "raw_withheld": true,
+          "observed_at": "2026-10-01T04:18:17.472Z"
+        }
+      ],
+      "file_byte_proof": null,
+      "archive_content_proof": null,
+      "state_evidence": {
+        "status": "corroborated",
+        "basis": "license-state-field"
+      },
+      "address_equivalence_review": null,
+      "observed_at": "2026-10-01T04:18:17.472Z",
+      "source_observed_at": "2026-10-01T04:18:17.472Z",
+      "header_cache_found": false
     },
     {
       "ccn": "050309",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "disposition": "verified-current-mrf",
+      "identity_source": "browser",
+      "status": "proof-audit-required",
+      "issues": [
+        "browser-byte-proof-audit-required"
+      ],
+      "pointer_proof": [
+        {
+          "file": "manual-pointer:https://www.sutterhealth.org/cms-hpt.txt",
+          "url": "https://www.sutterhealth.org/cms-hpt.txt",
+          "sha256": "76cf5ee42d726154cfadf3b5d2fdd6605eea5599b8751fc24707dba424a6b2ca",
+          "bytes": 0,
+          "status": "hash-corroborated",
+          "raw_withheld": true,
+          "observed_at": "2026-10-01T12:58:45.653Z"
+        }
+      ],
+      "file_byte_proof": null,
+      "archive_content_proof": null,
+      "state_evidence": {
+        "status": "corroborated",
+        "basis": "license-state-field"
+      },
+      "address_equivalence_review": null,
+      "observed_at": "2026-10-01T12:58:45.653Z",
+      "source_observed_at": "2026-10-01T12:58:45.653Z",
+      "header_cache_found": false
     },
     {
       "ccn": "050291",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "disposition": "verified-current-mrf",
+      "identity_source": "browser",
+      "status": "proof-audit-required",
+      "issues": [
+        "browser-byte-proof-audit-required"
+      ],
+      "pointer_proof": [
+        {
+          "file": "manual-pointer:https://www.sutterhealth.org/cms-hpt.txt",
+          "url": "https://www.sutterhealth.org/cms-hpt.txt",
+          "sha256": "76cf5ee42d726154cfadf3b5d2fdd6605eea5599b8751fc24707dba424a6b2ca",
+          "bytes": 0,
+          "status": "hash-corroborated",
+          "raw_withheld": true,
+          "observed_at": "2026-10-01T04:18:17.472Z"
+        }
+      ],
+      "file_byte_proof": null,
+      "archive_content_proof": null,
+      "state_evidence": {
+        "status": "corroborated",
+        "basis": "license-state-field"
+      },
+      "address_equivalence_review": null,
+      "observed_at": "2026-10-01T04:18:17.472Z",
+      "source_observed_at": "2026-10-01T04:18:17.472Z",
+      "header_cache_found": false
     },
     {
       "ccn": "050101",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "disposition": "verified-current-mrf",
+      "identity_source": "browser",
+      "status": "proof-audit-required",
+      "issues": [
+        "browser-byte-proof-audit-required"
+      ],
+      "pointer_proof": [
+        {
+          "file": "manual-pointer:https://www.sutterhealth.org/cms-hpt.txt",
+          "url": "https://www.sutterhealth.org/cms-hpt.txt",
+          "sha256": "76cf5ee42d726154cfadf3b5d2fdd6605eea5599b8751fc24707dba424a6b2ca",
+          "bytes": 0,
+          "status": "hash-corroborated",
+          "raw_withheld": true,
+          "observed_at": "2026-10-01T04:11:55.635Z"
+        }
+      ],
+      "file_byte_proof": null,
+      "archive_content_proof": null,
+      "state_evidence": {
+        "status": "corroborated",
+        "basis": "license-state-field"
+      },
+      "address_equivalence_review": null,
+      "observed_at": "2026-10-01T04:11:55.635Z",
+      "source_observed_at": "2026-10-01T04:11:55.635Z",
+      "header_cache_found": false
     },
     {
       "ccn": "050766",
@@ -20901,8 +21126,33 @@
     },
     {
       "ccn": "050313",
-      "status": "not-a-verification-claim",
-      "issues": []
+      "disposition": "verified-current-mrf",
+      "identity_source": "browser",
+      "status": "proof-audit-required",
+      "issues": [
+        "browser-byte-proof-audit-required"
+      ],
+      "pointer_proof": [
+        {
+          "file": "manual-pointer:https://www.sutterhealth.org/cms-hpt.txt",
+          "url": "https://www.sutterhealth.org/cms-hpt.txt",
+          "sha256": "76cf5ee42d726154cfadf3b5d2fdd6605eea5599b8751fc24707dba424a6b2ca",
+          "bytes": 0,
+          "status": "hash-corroborated",
+          "raw_withheld": true,
+          "observed_at": "2026-10-01T12:58:45.653Z"
+        }
+      ],
+      "file_byte_proof": null,
+      "archive_content_proof": null,
+      "state_evidence": {
+        "status": "corroborated",
+        "basis": "license-state-field"
+      },
+      "address_equivalence_review": null,
+      "observed_at": "2026-10-01T12:58:45.653Z",
+      "source_observed_at": "2026-10-01T12:58:45.653Z",
+      "header_cache_found": false
     },
     {
       "ccn": "051328",
@@ -47698,7 +47948,7 @@
     },
     {
       "ccn": "140160",
-      "disposition": "verified-current-mrf",
+      "disposition": "verified-template-review",
       "identity_source": "header",
       "status": "proof-audit-complete",
       "issues": [],
@@ -67963,7 +68213,7 @@
     },
     {
       "ccn": "191317",
-      "disposition": "verified-current-mrf",
+      "disposition": "verified-stale-mrf",
       "identity_source": "header",
       "status": "proof-audit-complete",
       "issues": [],
@@ -69997,7 +70247,7 @@
     },
     {
       "ccn": "194115",
-      "disposition": "verified-current-mrf",
+      "disposition": "verified-template-review",
       "identity_source": "header",
       "status": "proof-audit-complete",
       "issues": [],
@@ -92207,7 +92457,7 @@
     },
     {
       "ccn": "271333",
-      "disposition": "verified-current-mrf",
+      "disposition": "verified-template-review",
       "identity_source": "header",
       "status": "proof-audit-complete",
       "issues": [],
@@ -93567,7 +93817,7 @@
     },
     {
       "ccn": "271330",
-      "disposition": "verified-current-mrf",
+      "disposition": "verified-template-review",
       "identity_source": "header",
       "status": "proof-audit-complete",
       "issues": [],
@@ -104738,7 +104988,7 @@
     },
     {
       "ccn": "291309",
-      "disposition": "verified-template-review",
+      "disposition": "verified-stale-mrf",
       "identity_source": "header",
       "status": "proof-audit-complete",
       "issues": [],
@@ -116740,7 +116990,7 @@
     },
     {
       "ccn": "361313",
-      "disposition": "verified-current-mrf",
+      "disposition": "verified-template-review",
       "identity_source": "header",
       "status": "proof-audit-complete",
       "issues": [],
@@ -118335,7 +118585,7 @@
     },
     {
       "ccn": "360013",
-      "disposition": "verified-current-mrf",
+      "disposition": "verified-template-review",
       "identity_source": "header",
       "status": "proof-audit-complete",
       "issues": [],
@@ -120887,7 +121137,7 @@
     },
     {
       "ccn": "370057",
-      "disposition": "verified-current-mrf",
+      "disposition": "verified-template-review",
       "identity_source": "header",
       "status": "proof-audit-complete",
       "issues": [],

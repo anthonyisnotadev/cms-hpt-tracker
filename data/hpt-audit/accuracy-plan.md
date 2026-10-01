@@ -1,5 +1,15 @@
 # Tracker accuracy goal
 
+<!-- autonomy-checkpoint:begin -->
+## Autonomous loop checkpoint (auto-generated 2026-10-01T13:02:09.067Z; do not hand-edit this block)
+
+- **Scope/progress:** 5419 CCNs in nationwide-verification; investigation queue 571 items (tiers {"1":15,"2":99,"3":328,"4":127,"5":2}); model-run batches have handled 28 CCNs (`data/hpt-audit/autonomy/ledger.jsonl`). Raw verified-current-mrf: 3201.
+- **Evidence gains (new retrieved evidence): 11** — 321305, 050014, 050047, 050055, 050101, 050108, 050131, 050291, 050309, 050313, 050417. **Rechecks (no new evidence): 2. No-change single probes: 15. Blocked with a next step: 0.** These categories are not interchangeable.
+- **Agent status changes, each backed by a proof file (human review pending):** 050014 promote (`data/hpt-audit/reconciliation-sutter-050014-current-pointer-file-proof-2026-10-01.json`); 050047 promote (`data/hpt-audit/reconciliation-sutter-050047-current-pointer-file-proof-2026-10-01.json`); 050055 promote (`data/hpt-audit/reconciliation-sutter-050055-current-pointer-file-proof-2026-10-01.json`); 050101 promote (`data/hpt-audit/reconciliation-sutter-050101-current-pointer-file-proof-2026-10-01.json`); 050108 promote (`data/hpt-audit/reconciliation-sutter-050108-current-pointer-file-proof-2026-10-01.json`); 050131 promote (`data/hpt-audit/reconciliation-sutter-050131-current-pointer-file-proof-2026-10-01.json`); 050291 promote (`data/hpt-audit/reconciliation-sutter-050291-current-pointer-file-proof-2026-10-01.json`); 050309 promote (`data/hpt-audit/reconciliation-sutter-050309-pointer-entry-enumeration-proof-2026-10-01.json`); 050313 promote (`data/hpt-audit/reconciliation-sutter-050313-pointer-entry-enumeration-proof-2026-10-01.json`); 050417 promote (`data/hpt-audit/reconciliation-sutter-050417-pointer-entry-enumeration-proof-2026-10-01.json`).
+- **Derived changes, not evidence (clock/classifier drift recorded by the loop):** 11, of which 8 are downgrades awaiting a human policy decision (140160, 191317, 194115, 271333, 271330, 361313, 360013, 370057). See `derived-changes.jsonl`.
+- **Guardrails in force:** one loop-run rebuild per batch; contact and pointer privacy checks and the state-change guard passed before this block was written; no commit, push, outreach or publication.
+<!-- autonomy-checkpoint:end -->
+
 ## Current goal checkpoint (2026-09-30 — CMS v3 count refreshed; Hoboken crosswalk documented)
 
 - **CMS v3 counting rule and current counts:** CMS calls the applicable requirements Data Dictionary **v3.0**; its published v3 schema notes say requirements effective **2026-01-01** and enforcement beginning **2026-04-01** ([Data Dictionary](https://github.com/CMSgov/hospital-price-transparency/blob/master/documentation/JSON/README.md), [schema notes](https://github.com/CMSgov/hospital-price-transparency/blob/master/documentation/JSON/schemas/README.md)). Preserve each MRF's exact version literal. For the v3-family subtotal, count exact `3.0` and `3.0.0` separately; this remains a declared-version count, not full-file validation or legal compliance.

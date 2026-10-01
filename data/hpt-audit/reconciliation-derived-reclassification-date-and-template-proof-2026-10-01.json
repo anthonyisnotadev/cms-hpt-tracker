@@ -1,0 +1,23 @@
+{
+  "audit_id": "derived-reclassification-date-and-template-2026-10-01",
+  "observed_at": "2026-10-01T03:47:57.704Z",
+  "kind": "derived-reclassification-proof",
+  "scope": "11 CCNs whose disposition/standing_finding changed during the 2026-10-01 reconcile-all rebuild without a facility-specific investigation this session",
+  "observation_basis": "Retained per-CCN header metadata in data/hpt-audit/nationwide-verification.json (declared_last_updated, cms_template_version) and the freshness/template classifier in scripts/hpt/build-nationwide-verification.js (metadataState, lines 80-97). No new network retrieval was performed for these CCNs.",
+  "inference_basis": "Labelled as inference: the rebuild recomputed metadata age against the current build time (2026-10-01). Declared dates of 2025-09-30 exceed the >365-day stale threshold (366 days elapsed). Noncanonical template spellings ('3.00', '3', empty) are classified mrf-template-version-noncanonical; this is the known v3-classification divergence documented in AGENTS.md and is recorded here as a relabel only, not a compliance conclusion.",
+  "per_ccn": [
+    {"ccn": "034035", "declared_last_updated": "2025-09-30", "basis": "date-aging", "from": "verified-template-review|old-template-version", "to": "verified-stale-mrf|old-template-version"},
+    {"ccn": "140160", "declared_last_updated": "2026-01-22", "cms_template_version": "3.00", "basis": "template-spelling-relabel", "from": "verified-current-mrf|compliant-observed", "to": "verified-template-review|mrf-template-version-noncanonical"},
+    {"ccn": "171364", "declared_last_updated": "", "cms_template_version": "", "basis": "template-version-unresolved-relabel", "from": "pointer-discovery-incomplete|compliant-observed", "to": "pointer-discovery-incomplete|mrf-template-version-noncanonical"},
+    {"ccn": "191317", "declared_last_updated": "2025-09-30", "basis": "date-aging", "from": "verified-current-mrf|compliant-observed", "to": "verified-stale-mrf|compliant-observed"},
+    {"ccn": "194115", "declared_last_updated": "2025-12-10", "cms_template_version": "3", "basis": "template-spelling-relabel", "from": "verified-current-mrf|compliant-observed", "to": "verified-template-review|mrf-template-version-noncanonical"},
+    {"ccn": "271330", "declared_last_updated": "2025-12-19", "cms_template_version": "3.00", "basis": "template-spelling-relabel", "from": "verified-current-mrf|compliant-observed", "to": "verified-template-review|mrf-template-version-noncanonical"},
+    {"ccn": "271333", "declared_last_updated": "2025-12-11", "cms_template_version": "3.00", "basis": "template-spelling-relabel", "from": "verified-current-mrf|compliant-observed", "to": "verified-template-review|mrf-template-version-noncanonical"},
+    {"ccn": "291309", "declared_last_updated": "2025-09-30", "basis": "date-aging", "from": "verified-template-review|old-template-version", "to": "verified-stale-mrf|old-template-version"},
+    {"ccn": "360013", "declared_last_updated": "2026-03-26", "cms_template_version": "3", "basis": "template-spelling-relabel", "from": "verified-current-mrf|compliant-observed", "to": "verified-template-review|mrf-template-version-noncanonical"},
+    {"ccn": "361313", "declared_last_updated": "2025-10-22", "cms_template_version": "3.00", "basis": "template-spelling-relabel", "from": "verified-current-mrf|compliant-observed", "to": "verified-template-review|mrf-template-version-noncanonical"},
+    {"ccn": "370057", "declared_last_updated": "2026-01-24", "cms_template_version": "3.00", "basis": "template-spelling-relabel", "from": "verified-current-mrf|compliant-observed", "to": "verified-template-review|mrf-template-version-noncanonical"}
+  ],
+  "what_was_not_established": "No new facility-specific evidence was retrieved for these 11 CCNs; no MRF bytes, pointer bytes, or pages were fetched. The noncanonical-template relabels do not assert non-compliance; they record the classifier's current output against the retained header strings.",
+  "next_action": "For the date-aging CCNs, recheck the publisher file for a newer declared_last_updated. For the noncanonical-template CCNs, recheck whether the publisher has corrected the version spelling to 3.0.0; otherwise they remain flagged by the existing classifier behavior."
+}

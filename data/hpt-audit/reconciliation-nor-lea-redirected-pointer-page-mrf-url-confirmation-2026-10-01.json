@@ -1,0 +1,40 @@
+{
+  "audit_id": "reconciliation-nor-lea-redirected-pointer-page-mrf-url-confirmation-2026-10-01",
+  "observed_at": "2026-10-01T03:38:07.758Z",
+  "ccn": "321305",
+  "facility": "Nor-Lea Hospital District",
+  "route_observation": {
+    "requested_url": "https://nor-lea.org/cms-hpt.txt",
+    "http_status": 301,
+    "redirect_chain": [
+      "https://nor-lea.org/cms-hpt.txt -> https://nlmktg.org/cms-hpttxt (301, Squarespace)",
+      "https://nlmktg.org/cms-hpttxt -> https://www.nlmktg.org/cms-hpttxt (301, Squarespace)",
+      "https://www.nlmktg.org/cms-hpttxt -> HTTP 200"
+    ],
+    "final_url": "https://www.nlmktg.org/cms-hpttxt",
+    "final_http_status": 200,
+    "final_content_type": "text/html;charset=utf-8",
+    "final_bytes": 146041,
+    "final_sha256": "74c857c984f4ebe05f97b3fcc68e84ec99fb00f87e81fb3529f1b0f289df2dbc",
+    "final_page_title": "CMS Price Transparency — NLHD Marketing"
+  },
+  "mrf_url_confirmation": {
+    "explicit_mrf_url_on_pointer_page": "https://hospitalpricetransparencyfiles.com/nor-lea-district-hospital/850278235_Nor-Lea-Hospital-District_standardcharges.csv",
+    "mrf_probe_http_status": 200,
+    "mrf_content_length": 11230287,
+    "mrf_last_modified": "Tue, 28 Jul 2026 18:51:13 GMT",
+    "mrf_accept_ranges": "bytes",
+    "mrf_content_type": "text/csv",
+    "matches_retained_complete_file_byte_count": true,
+    "matches_previously_recorded_page_linked_current_file": true
+  },
+  "interpretation": "Observed: the root cms-hpt.txt route now 301-redirects through Squarespace to a dedicated publisher page (NLHD Marketing) that explicitly links the exact current CMS 3.0.0 CSV previously sampled; the CSV endpoint returns HTTP 200 with the same byte count (11,230,287) and a Last-Modified consistent with the declared 2026-07-17 update. Inferred: this satisfies the record's requirement to verify an explicit current mrf-url for CCN 321305 from a publisher-controlled route. It does NOT resolve the 1900-vs-1600 North Main address conflict and no publisher correction for that value was obtained.",
+  "newness_accounting": {
+    "new_hospital_mrf_bytes": 0,
+    "new_source_route_observations": 2,
+    "disposition_change": false,
+    "unresolved_count_change": 0
+  },
+  "disposition": "linked-mrf-header-unmatched",
+  "next_action": "Keep the 2026 v3 file and the 2025 v2 legacy file separate with their existing hashes. The explicit current mrf-url condition is now met; promotion additionally requires a dated publisher correction or authoritative facility-specific evidence explaining the 1900 North Main value versus the 1600 address on Nor-Lea's own pages, NPPES, and the CMS enrollment row. Do not use the 2025 v2 file as current 2026 coverage."
+}
