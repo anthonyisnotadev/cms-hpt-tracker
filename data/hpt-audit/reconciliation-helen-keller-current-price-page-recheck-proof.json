@@ -9,7 +9,7 @@
   "linked_mrf_fetch_status": "transport-unverified",
   "linked_mrf_fetch_observation": "Web retrieval recognized the CSV target but could not return bytes; bounded Node retrieval timed out before a response.",
   "disposition": "facility-specific-page-and-file-lead-retained",
-  "next_action": "Retry this exact Helen Keller CSV through a permitted download-capable route; verify declared name, Sheffield address, Alabama state, date and CMS version before promotion.",
+  "next_action": "A newly published first-party route now points to https://hh.health/wp-content/uploads/472323163_hellen-keller-hospital_standardcharges.csv; after network/DNS access is available, retrieve that exact file and retain bytes/hash, then verify Helen Keller identity, Sheffield address, Alabama metadata, CMS v3 literal/date, attestation and parsed usable rows. Do not repeat the old hh2026.cloudaccess.host or legacy Huntsville URLs absent another source/access change. Do not substitute sibling files or third-party derived prices.",
   "latest_web_recheck": {
     "observed_at": "2026-09-19T12:45:00Z",
     "source_url": "https://www.helenkeller.com/11-patients-visitors",
@@ -29,5 +29,88 @@
     "evidence_role": "current first-party page/link recheck and transport observation; no file bytes, metadata, pointer linkage, MRF promotion, or compliance conclusion",
     "disposition": "retain-unresolved-exact-facility-file-link-transport-unavailable",
     "next_action": "After the publisher endpoint changes or a content-bearing alternate route becomes available, retrieve the exact Helen Keller file (or publisher-confirmed replacement), then verify full bytes/hash, declared name, Sheffield address, Alabama license state, CMS version/date, attestation and parsed usable rows. Do not substitute the 404 legacy URL, Huntsville/Red Bay files, third-party mirrors, or search-result snippets."
+  },
+  "latest_connected_browser_recheck_2026_09_29": {
+    "observed_at": "2026-09-29",
+    "original_recorded_observed_at": "2026-09-29T15:02:00Z",
+    "timestamp_integrity": "The exact UTC time is unverified and the original 15:02Z value is future-dated relative to the task-host clock check at 2026-09-29T14:48:26Z. Preserve it only as invalid original history; the review date is corroborated as 2026-09-29.",
+    "browser_route": "Ordinary visible Codex in-app browser navigation to the exact first-party CSV URL linked from HH Health's current price-transparency page.",
+    "exact_file_url": "https://hh2026.cloudaccess.host/wp-content/uploads/472323163_hellen-keller-hospital_standardcharges.csv",
+    "result": "Browser navigation timed out after 20 seconds while opening the exact CSV target. No page body or file bytes were returned. This is a transport observation, not evidence about file content or validity.",
+    "new_bytes_or_hash": false,
+    "disposition_effect": "none",
+    "count_effect": 0,
+    "next_action": "Do not repeat unchanged browser/GET/HEAD routes absent a source or access change. Seek a materially different authorized content-bearing route or publisher-provided exact copy; retain bytes/hash and validate Helen Keller identity, Sheffield address, Alabama, declared CMS date/version, attestation and usable rows. Do not substitute sibling files or third-party derived data."
+  },
+  "latest_web_search_recheck_2026_09_29": {
+    "observed_at": "2026-09-29T14:45:00Z",
+    "searches": ["472323163_hellen-keller-hospital_standardcharges.csv", "472323163 Helen Keller standard charge csv mirror"],
+    "result": "Search surfaced MRF Data Solutions' public hospital index, which independently lists the same Helen Keller filename but links to the existing Huntsville Hospital host and exposes no mirror bytes or hash. Its target is the legacy URL already observed returning HTTP 404, so it is not a usable alternate retrieval route.",
+    "current_first_party_page_recheck": {
+      "url": "https://hh2026.cloudaccess.host/patients-visitors/price-transparency/",
+      "page_content_updated": "2026-08-20",
+      "page_link_label": "Helen Keller Hospital — Standard Charge File",
+      "exact_linked_url": "https://hh2026.cloudaccess.host/wp-content/uploads/472323163_hellen-keller-hospital_standardcharges.csv",
+      "observed_by": "web page open; exact CSV click recognized text/csv but content fetch failed as unsupported content-type",
+      "bounded_http_range_get": "Range bytes=0-262143; client timed out after 20 seconds before response headers or bytes"
+    },
+    "classification": "third-party listing of a stale publisher URL plus recheck of current first-party link; no MRF bytes",
+    "disposition_effect": "none",
+    "count_effect": 0,
+    "next_action": "Do not repeat either unchanged URL absent a material route/access change. Seek a publisher-posted alternate byte-serving URL or publisher-provided copy; hash and validate exact bytes, facility identity/address/state, CMS date/version, attestation and parsed usable fields before changing disposition."
+  },
+  "latest_official_domain_migration_route_discovery_2026_09_30": {
+    "observed_at": "2026-09-30T09:01:39Z",
+    "source_chain": [
+      "https://www.helenkeller.com/ redirected to https://hh.health/helen-keller-hospital/",
+      "The first-party hospital page footer Price Transparency link opened https://hh.health/patients-visitors/price-transparency/",
+      "That page, labeled Last Updated 8-20-2026, lists Helen Keller Hospital separately and exposes a Standard Charge File link to https://hh.health/wp-content/uploads/472323163_hellen-keller-hospital_standardcharges.csv"
+    ],
+    "retrieval_observations": {
+      "web_reader_page": "Rendered page content and source link were available.",
+      "web_reader_file_click": "Recognized text/csv but returned unsupported content-type before file content; no bytes or metadata captured.",
+      "ordinary_browser_navigation": "Attempt to open the official current pricing page timed out; the resulting browser error page showed ERR_NAME_NOT_RESOLVED for hh.health.",
+      "local_head_request": "curl DNS resolution failed before an HTTP request reached the origin."
+    },
+    "interpretation": "New first-party domain-migration and alternate file-URL lead, materially different from the previously checked hh2026.cloudaccess.host URL. These are client/tool transport outcomes only; they do not establish origin failure, file absence, file identity, declared version, or file validity.",
+    "new_file_bytes_or_hash": false,
+    "disposition_effect": "none",
+    "count_effect": 0,
+    "next_action": "A newly published first-party route now points to https://hh.health/wp-content/uploads/472323163_hellen-keller-hospital_standardcharges.csv; after network/DNS access is available, retrieve that exact file and retain bytes/hash, then verify Helen Keller identity, Sheffield address, Alabama metadata, CMS v3 literal/date, attestation and parsed usable rows. Do not repeat the old hh2026.cloudaccess.host or legacy Huntsville URLs absent another source/access change. Do not substitute sibling files or third-party derived prices."
+  },
+  "latest_page_file_recheck_2026_09_30": {
+    "observed_at": "2026-09-30T16:43:04Z",
+    "source_chain": [
+      "Official HH Health homepage links to its Price Transparency page.",
+      "Official https://hh.health/patients-visitors/price-transparency/ page says Last Updated 8-20-2026 and separately lists Helen Keller Hospital with a Standard Charge File link.",
+      "The exact link resolves in the web reader to https://hh.health/wp-content/uploads/472323163_hellen-keller-hospital_standardcharges.csv; the reader rejects the text/csv response before exposing body bytes."
+    ],
+    "browser_observation": "Chrome page navigation to the same official price page failed with ERR_NAME_NOT_RESOLVED; no origin HTTP response or file bytes.",
+    "bounded_file_request": {
+      "url": "https://hh.health/wp-content/uploads/472323163_hellen-keller-hospital_standardcharges.csv",
+      "method": "GET",
+      "range": "bytes=0-262143",
+      "client_result": "EAI_AGAIN",
+      "http_status": null,
+      "body_bytes": 0,
+      "sha256": null
+    },
+    "cms_identity_crosscheck": "Current CMS Hospital General Information identifies CCN 010019 as HELEN KELLER HOSPITAL at 1300 South Montgomery Avenue, Sheffield, AL 35660; no CMS identity or address discrepancy was found.",
+    "interpretation": "This is a materially changed first-party host and URL compared with the September 29 hh2026.cloudaccess.host route. Current official page/file linkage is corroborated, but DNS/client transport produced no HTTP response and no file content; version 3.0, declared date, header identity and usable rows remain unverified.",
+    "disposition_effect": "none; retain pointer-discovery-incomplete and the exact-file access gate",
+    "count_effect": 0,
+    "next_action": "Do not retry the unchanged hh.health route until DNS/access changes. After recovery, retrieve https://hh.health/wp-content/uploads/472323163_hellen-keller-hospital_standardcharges.csv or a publisher-confirmed alternate and retain bytes/hash; independently verify Helen Keller name, Sheffield address, Alabama state, CMS 3.0-family literal/date, attestation and usable rows. Do not use the legacy Huntsville parent-domain URL, which returned 404, or substitute sibling files or third-party mirrors."
+  },
+  "latest_ordinary_browser_recheck_2026_09_30_1743_utc": {
+    "observed_at": "2026-09-30T17:43:25Z",
+    "requested_url": "https://hh.health/patients-visitors/price-transparency/",
+    "browser_result": "ERR_NAME_NOT_RESOLVED",
+    "origin_http_response": false,
+    "page_or_file_bytes": 0,
+    "interpretation": "An ordinary browser again could not resolve the first-party host. This is a client-side DNS observation only; it does not show origin availability, file absence, or file content. The route and result do not justify another unchanged retry.",
+    "new_evidence_gain": false,
+    "disposition_effect": "none",
+    "count_effect": 0,
+    "next_action": "Wait for DNS/access recovery or a publisher-confirmed alternate content-bearing route; then retrieve and hash the exact file and validate CMS v3-family metadata and usable rows. Do not substitute sibling files or third-party mirrors."
   }
 }

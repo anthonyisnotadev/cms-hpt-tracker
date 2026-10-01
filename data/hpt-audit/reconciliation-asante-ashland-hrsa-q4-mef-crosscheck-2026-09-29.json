@@ -1,0 +1,75 @@
+{
+  "audit_id": "reconciliation-asante-ashland-hrsa-q4-mef-crosscheck-2026-09-29",
+  "ccn": "380005",
+  "observed_at": "2026-09-29T12:42:37Z",
+  "sources": {
+    "hrsa_fy26_program_integrity_audit": {
+      "url": "https://www.hrsa.gov/opa/program-integrity/fy-26-audit-results",
+      "page_updated": "2026-07-29",
+      "entity_name": "Ashland Community Hospital",
+      "hrsa_340b_id": "DSH380005",
+      "state": "OR",
+      "finding": "Incorrect 340B OPAIS record: incorrect Employer Identification Number entry",
+      "sanction": "None",
+      "corrective_action_status": "Pending",
+      "interpretation_limit": "This is a 340B program-integrity finding, not a Medicare enrollment, hospital licensure, CMS certification/termination, or hospital MRF coverage record."
+    },
+    "hrsa_q4_2026_medicaid_exclusion_file": {
+      "download_page_url": "https://340bopais.hrsa.gov/ReportsMedicaidExclusionFile",
+      "effective_period": "2026-10-01 through 2026-12-31",
+      "exported_at_local": "2026-09-16T00:01:03.612",
+      "filename": "340B_Medicaid_Exclusion_File_for_20261001-20261231.xlsx",
+      "bytes": 4412798,
+      "sha256": "8907e56071cba1c2a932819b06ddf57fa82a3e13427af7b73e3e10d6a16df6ea",
+      "worksheet": "MedicaidExclusion_09_16_2026",
+      "header_row": 4,
+      "data_rows": 144044,
+      "columns": [
+        "Program Code",
+        "340BID",
+        "CE ID",
+        "Medicaid Number",
+        "State",
+        "NPI Number",
+        "Entity Name",
+        "Entity SubDivision Name",
+        "Street Address",
+        "City",
+        "St",
+        "Zip",
+        "Start Date",
+        "Termination Date"
+      ],
+      "exact_match_checks": {
+        "340BID_DSH380005": 0,
+        "NPI_1730628827_token": 0,
+        "any_exact_cell_380005": 0,
+        "unrelated_medicaid_number_substring_rows": 2
+      },
+      "result": "No exact DSH380005 340BID or NPI 1730628827 token appears in the Q4 2026 Medicaid Exclusion File. Two unrelated Kansas Medicaid-number values contain the digit sequence 380005; these were not treated as CCN/340B-ID/NPI matches."
+    },
+    "hrsa_public_ccn_search_ui": {
+      "url": "https://340bopais.hrsa.gov/SearchCe",
+      "query_attempts": [
+        "Grant/CMS Certification Number 380005",
+        "Keyword 380005"
+      ],
+      "result": "The visible grid remained at 94,386 unfiltered records after both queries; no entity-specific result was retrieved.",
+      "interpretation_limit": "A non-filtering search UI is an access limitation, not evidence that the entity is absent."
+    }
+  },
+  "hrsa_mef_scope": {
+    "definition_source": "https://www.hrsa.gov/opa/program-requirements/medicaid-exclusion",
+    "meaning": "The HRSA Medicaid Exclusion File lists covered-entity sites that chose to bill Medicaid fee-for-service for drugs purchased at 340B prices; the reported 340B start and termination dates describe participation in the 340B program.",
+    "limit": "No MEF row does not establish no 340B participation, no Medicare enrollment, Medicare termination, or HPT scope."
+  },
+  "evidence_accounting": {
+    "new_primary_source_instances": 2,
+    "new_mef_file_bytes": 4412798,
+    "new_hospital_mrf_bytes": 0,
+    "hpt_disposition_effect": "none",
+    "cohort_count_effect": 0
+  },
+  "disposition": "unresolved-ccn-status-and-successor-file-coverage",
+  "next_action": "Keep CCN 380005 unresolved. Obtain effective-dated Medicare certification or termination status on or after 2026-05-22, and retrieve the already-documented publisher-linked combined Asante ZIP through a materially different authorized byte-serving route. Validate exact archive bytes, Ashland identity/address/state, CMS date/version and usable rows; do not infer Medicare status from 340B program records or assign the parent file from operator relationship alone."
+}

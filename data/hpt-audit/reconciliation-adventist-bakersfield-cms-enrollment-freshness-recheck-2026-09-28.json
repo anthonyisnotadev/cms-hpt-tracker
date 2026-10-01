@@ -1,0 +1,40 @@
+{
+  "audit_id": "reconciliation-adventist-bakersfield-cms-enrollment-freshness-recheck-2026-09-28",
+  "observed_at": "2026-09-28T22:40:00Z",
+  "ccns": ["050455", "050724"],
+  "purpose": "Revalidate CMS Hospital Enrollments catalog freshness and exact NPI/CCN rows used in the current shared-file attribution review.",
+  "catalog": {
+    "cms_dataset_page": "https://data.cms.gov/provider-characteristics/hospitals-and-other-facilities/hospital-enrollments",
+    "data_gov_catalog_page": "https://catalog.data.gov/dataset/hospital-enrollments",
+    "current_latest_resource_title": "Hospital Enrollments : 2026-08-01",
+    "catalog_last_checked": "2026-09-10T20:33:00Z",
+    "dataset_last_updated": "2026-08-17",
+    "temporal_coverage": "2022-11-01/2026-08-31",
+    "latest_csv_url": "https://data.cms.gov/sites/default/files/2026-08/bcf5ccda-1482-4c43-8198-de1efa2f83c8/Hospital_Enrollments_2026.07.31.csv",
+    "latest_resource_retrieved_again": true,
+    "retrieval_result": "HTTP 200; PowerShell text decoding yielded 2,516,964 bytes, which is not byte-for-byte comparable with the earlier raw-byte retrieval due to newline/encoding normalization. Do not substitute this decoded-text hash/length for the existing complete raw-byte proof.",
+    "catalog_observation": "The rendered catalog lists releases through 2026-08-01 and no later resource. This is a catalog freshness observation, not proof that CMS has not prepared an unlisted file."
+  },
+  "exact_rows": {
+    "npi_1538157508": {
+      "ccn_as_published": "50455",
+      "normalized_ccn": "050455",
+      "organization_name": "SAN JOAQUIN COMMUNITY HOSPITAL",
+      "doing_business_as_name": "ADVENTIST HEALTH BAKERSFIELD",
+      "address": "2615 CHESTER AVE, BAKERSFIELD, CA 93301-2014",
+      "practice_location_type": "MAIN/PRIMARY HOSPITAL LOCATION"
+    },
+    "npi_1609856947": "No matching row in the latest listed release.",
+    "ccn_050724": "No matching row in the latest listed release."
+  },
+  "comparison": {
+    "pointer_file_proof": "reconciliation-adventist-bakersfield-npi-header-crosscheck-2026-09-28.json",
+    "pointer_linked_file": "The complete current pointer-target file header uses NPIs 1538157508 and 1609856947 and gives 3001 Sillect Avenue for both location rows.",
+    "state_source_proof": "reconciliation-adventist-bakersfield-hcai-distinct-site-crosscheck-2026-09-28.json",
+    "interpretation": "The latest listed CMS enrollment row reinforces that NPI 1538157508 belongs to main/primary CCN 050455 at 2615 Chester, conflicting with the pointer-file header's 3001 Sillect address. The absence of NPI 1609856947 and CCN 050724 in this release does not prove termination, resolve Specialty-campus enrollment, or identify exact CCN scope of the shared pricing file.",
+    "disposition_changed": false,
+    "cohort_count_effect": 0
+  },
+  "evidence_classification": "freshness confirmation plus repeated exact-row evidence; no new MRF bytes and no disposition resolution",
+  "next_action": "Do not repeat the same CMS enrollment retrieval until a newer catalog resource is listed. Obtain a corrected publisher pointer/file or public authoritative documentation mapping the file's NPIs and campus locations to the exact Medicare CCN scope. Keep CCNs 050455 and 050724 distinct; do not promote from shared license or NPI alone."
+}

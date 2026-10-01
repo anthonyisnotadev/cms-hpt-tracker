@@ -18,6 +18,7 @@ const SUPPORTED_UNCERTAINTY_OBSERVATIONS = new Set([
   'official-page-file-corroborated-root-pointer-pending',
   'quarantine-wrong-domain-and-state-retain-first-party-page-file-candidate'
 ]);
+const SCOPE_EXEMPTION_OBSERVATIONS = new Set(['scope-exempt-indian-health-program']);
 function authoritativeDates(rows) {
   return Object.fromEntries(rows.filter(r => (VERIFIED.has(r.finding) || r.finding === 'pointer-lists-no-mrf-url')
     && r.mrf_url && r.mrf_last_updated
@@ -50,6 +51,11 @@ function reconcileManual(rows, outreach, accessObservations = [], appliedResolut
     const explicitUncertaintySupported = SUPPORTED_UNCERTAINTY_OBSERVATIONS.has(access?.disposition)
       && Number.isFinite(Date.parse(access.observed_at)) && Number.isFinite(Date.parse(checked))
       && Date.parse(access.observed_at) > Date.parse(checked);
+    const scopeExemptionSupported = standing?.finding === 'not-applicable-indian-health-program'
+      && SCOPE_EXEMPTION_OBSERVATIONS.has(access?.disposition)
+      && !!access.proof_file
+      && Number.isFinite(Date.parse(access.observed_at)) && Number.isFinite(Date.parse(checked))
+      && Date.parse(access.observed_at) > Date.parse(checked);
     const sourcePageRoleResolved = SOURCE_PAGE_ROLE_OBSERVATIONS.has(access?.disposition)
       && differences.length === 1 && differences[0] === 'pointer-url'
       && access.pricing_resource_url === standing?.mrf_url
@@ -64,7 +70,8 @@ function reconcileManual(rows, outreach, accessObservations = [], appliedResolut
       && reviewed.evidence.url === standing.mrf_url
       && reviewed.evidence.pointerUrl === standing.pointer_url
       && reviewed.evidence.pointerMrfSha256 && reviewed.evidence.fileSha256
-      && reviewed.evidence.pointerMrfDeclaredAddress !== reviewed.evidence.declared_address
+      && (reviewed.evidence.pointerMrfDeclaredAddress !== reviewed.evidence.declared_address
+        || reviewed.evidence.pointerMrfDeclaredLocationName !== reviewed.evidence.location_name)
       && Number.isFinite(Date.parse(reviewed.reviewed_at)) && Number.isFinite(Date.parse(checked))
       && Date.parse(reviewed.reviewed_at) > Date.parse(checked);
     const laterFileDateSupersedes = access?.disposition === 'same-url-later-hash-bound-file-date-supersedes-manual-date'
@@ -86,6 +93,7 @@ function reconcileManual(rows, outreach, accessObservations = [], appliedResolut
         : sourcePageRoleResolved ? 'source-page-field-role-reconciled'
         : factualAccessCorroborated ? 'later-observation-corroborates-factual-access-issue'
         : explicitUncertaintySupported ? 'later-observation-supports-explicit-uncertainty'
+        : scopeExemptionSupported ? 'later-observation-supports-scope-exemption'
         : differences.length ? 'evidence-review-required' : 'agrees-with-standing-fields',
       next_action: laterFileDateSupersedes ? access.next_action
         : superseded ? 'Retain manual history; display the later dated file finding.'
@@ -93,8 +101,10 @@ function reconcileManual(rows, outreach, accessObservations = [], appliedResolut
         : sourcePageRoleResolved ? access.next_action
         : factualAccessCorroborated ? access.next_action
         : explicitUncertaintySupported ? access.next_action
+        : scopeExemptionSupported ? access.next_action
         : differences.length ? 'Verify manual source links and reconcile identity and metadata with the standing evidence.'
           : 'Retain manual provenance; include supporting retrieval proof in the overall evidence audit.' };
   });
 }
-module.exports = { FACTUAL_ACCESS_OBSERVATIONS, SOURCE_PAGE_ROLE_OBSERVATIONS, SUPPORTED_UNCERTAINTY_OBSERVATIONS, authoritativeDates, reconcileManual };
+module.exports = { FACTUAL_ACCESS_OBSERVATIONS, SOURCE_PAGE_ROLE_OBSERVATIONS, SUPPORTED_UNCERTAINTY_OBSERVATIONS,
+  SCOPE_EXEMPTION_OBSERVATIONS, authoritativeDates, reconcileManual };

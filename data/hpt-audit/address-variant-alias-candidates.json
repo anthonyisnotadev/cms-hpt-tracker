@@ -1,21 +1,55 @@
 {
   "summary": {
-    "unresolved_pointer_match_ccns": 36,
-    "candidate_pairs": 0,
-    "candidate_ccns": 0,
+    "unresolved_pointer_match_ccns": 78,
+    "candidate_pairs": 1,
+    "candidate_ccns": 1,
     "by_priority": {
       "1": 0,
-      "2": 0,
+      "2": 1,
       "3": 0
     },
     "sibling_review_pairs": 0,
     "multi_campus_pairs": 0
   },
-  "candidates": [],
+  "candidates": [
+    {
+      "ccn": "520033",
+      "roster_name": "ASPIRUS RIVERVIEW HOSPITAL & CLINICS INC",
+      "roster_street": "410 DEWEY ST",
+      "roster_city": "WISCONSIN RAPIDS",
+      "roster_state": "WI",
+      "roster_zip": "54494",
+      "pointer_location_names": "Aspirus Wisconsin Rapids Hospital",
+      "declared_hospital_name": "Aspirus Wisconsin Rapids Hospital",
+      "declared_location_name": "Aspirus Wisconsin Rapids Hospital",
+      "matched_declared_address": "410 Dewey St, Wisconsin Rapids, WI 54495",
+      "declared_zip": [
+        "54495"
+      ],
+      "declared_license_state": "WI",
+      "declared_date": "2026-04-01",
+      "declared_version": "3.0.0",
+      "source_header_status": "unmatched",
+      "source_header_matched_ccns": [],
+      "requires_sibling_review": false,
+      "requires_multi_campus_review": false,
+      "mrf_url_sha256": "89ff6595e47df4051b1d18dca5efa8e6781790f089bcdd2adde39892b6c294ac",
+      "mrf_host": "www.aspirus.org",
+      "mrf_path": "/Uploads/Public/Documents/PriceEstimate/TransparencyFY27/390868982_1295754844_aspirus-wisconsin-rapids-hospital_standardcharges.json",
+      "mrf_query_values_withheld": false,
+      "pointer_sha256s": [
+        "0e35da5d85ec40fe7596f10b6099b6a5840406fc7c36b9f56c10530d261f6787"
+      ],
+      "reviewed_follow_up": true,
+      "latest_review_at": "2026-09-26T01:20:00Z",
+      "priority": 2,
+      "next_action": "Check the current first-party facility page and authoritative alias/roster ZIP history; then recheck the exact root pointer, pricing-page link and bounded file bytes. Resolve sibling and multi-campus attribution separately. Do not promote on street/city/state agreement alone."
+    }
+  ],
   "source_sha256": {
     "cms_data/Hospital_General_Information.csv": "23c5019ee51e11442d6d64cd153cedd78c51ab6435f621e4cb9351e3e972d9e3",
-    "data/hpt-audit/unresolved-investigation-worklist.json": "fa3d6d05a59924383a05f452288a94187be715646ac3395197825c761afcd59f",
-    "cms_data/hpt/nationwide-verification/mrf-headers.csv": "7cc9a7889695de6e33ae4ff2aa3ef0acee8f593e4742c74b62062f4a8f6cee6b"
+    "data/hpt-audit/unresolved-investigation-worklist.json": "7d2139831f798f35d0d860daa8c4ccc554e0228937316049f0f0629f6a98c888",
+    "cms_data/hpt/nationwide-verification/mrf-headers.csv": "e92f5bfb939e6b14e85fa735bcf4e5ee5349288d6640ad3ee7132cfaac32e0ab"
   },
   "limitation": "These are investigation leads, not CCN-to-file assignments or compliance findings. A different roster ZIP may be a mailing address, stale roster value, or a different campus; verify independently. Query values are withheld."
 }

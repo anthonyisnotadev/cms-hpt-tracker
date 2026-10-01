@@ -1,0 +1,43 @@
+{
+  "audit_id": "reconciliation-uw-health-belvidere-current-price-page-pointer-url-crosscheck-2026-09-29",
+  "observed_at": "2026-09-29T10:46:29Z",
+  "ccn_under_review": "140228",
+  "related_campus": "UW Health Belvidere Hospital",
+  "source": {
+    "url": "https://www.uwhealth.org/billing-insurance/cms-price-transparency",
+    "source_type": "current first-party rendered browser page",
+    "browser_tab_id": "138",
+    "rendered_title": "CMS price transparency | UW Health",
+    "observed_page_heading": "CMS Price Transparency",
+    "observed_scope_heading": "University of Wisconsin Hospitals and Clinics – SwedishAmerican Hospital",
+    "observed_direct_links": [
+      {
+        "label": "SwedishAmerican Hospital",
+        "url": "https://bynder.uwhealth.org/m/1d39d4b3bd3ce8bb/original/UW-Health-SwedishAmerican-Hospital-Standard-Charges.csv"
+      },
+      {
+        "label": "Belvidere Hospital",
+        "url": "https://bynder.uwhealth.org/m/1d39d4b3bd3ce8bb/original/362222696_SwedishAmerican-Hospital_standardcharges.csv"
+      },
+      {
+        "label": "SwedishAmerican Medical Group",
+        "url": "https://bynder.uwhealth.org/m/1d39d4b3bd3ce8bb/original/362222696_SwedishAmerican-Hospital_standardcharges.csv"
+      }
+    ]
+  },
+  "crosscheck": {
+    "cached_first_party_pointer_url": "https://uwhealth.org/cms-hpt.txt",
+    "cached_pointer_sha256": "b1024eaebfa285feb003c15fdf092ea881601f8e0a984925cf3da9b3e3b16363",
+    "cached_pointer_location_name": "SwedishAmerican Hospital",
+    "cached_pointer_file_url": "https://bynder.uwhealth.org/m/1d39d4b3bd3ce8bb/original/362222696_SwedishAmerican-Hospital_standardcharges.csv",
+    "exact_url_matches_current_belvidere_page_link": true,
+    "exact_url_matches_current_swedishamerican_medical_group_page_link": true,
+    "exact_url_byte_identity_between_file_aliases_established": false,
+    "direct_browser_request_result": "net::ERR_BLOCKED_BY_CLIENT"
+  },
+  "file_bytes_retrieved_this_review": false,
+  "interpretation": "The live first-party page now directly links the exact URL retained in the cached cms-hpt.txt entry under the visible label Belvidere Hospital (and also SwedishAmerican Medical Group), while the cached pointer's location_name says SwedishAmerican Hospital. This narrows the discrepancy to the pointer's location label versus the current price-page labels and shows that the publisher links Belvidere to the same Bynder asset path. It does not establish the file's bytes through this URL, whether the differently named SwedishAmerican URL is byte-identical, a CMS CCN for Belvidere, or whether the file's Belvidere location is covered by CCN 140228.",
+  "evidence_classification": "new-current-first-party-page-to-cached-pointer-target crosswalk; no file-byte retrieval",
+  "disposition_effect": "none; retain CCN 140228 unresolved",
+  "next_action": "Obtain exact bytes for the Belvidere-labeled URL through a permitted authorized route and compare them with the retained SwedishAmerican file sample; inspect the complete file and current root pointer; then obtain authoritative CMS/state/publisher evidence mapping Belvidere to a CCN or explaining non-CCN location scope. Do not assign Belvidere to CCN 140228 from common ownership or a shared file URL alone."
+}

@@ -1,0 +1,74 @@
+{
+  "ccn": "370784",
+  "observed_at": "2026-09-29T04:17:09.323Z",
+  "current_scope": "Current rural emergency hospital CCN 370784 only; not historical acute-care CCN 370245.",
+  "official_site_url": "https://www.crhaok.com/",
+  "official_site_sha256": "bde7d3a390e7f59bfc9e5c2461d4e1893d9459001fbb04bf361ae601782345fb",
+  "cms_enrollment_url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=370784&size=10",
+  "cms_enrollment_sha256": "3ebfbc05a15eaac4f91a33eccdb9f59e0805ba7cc3d0799109b7ec020aa9805b",
+  "cms_current_enrollment": {
+    "ccn": "370784",
+    "npi": "1942921929",
+    "provider_type": "PART A PROVIDER - RURAL EMERGENCY HOSPITAL (REH)",
+    "legal_name": "CLINTON HOSPITAL AUTHORITY",
+    "doing_business_as": "CLINTON REGIONAL HOSPITAL",
+    "address": "100 NORTH 30TH STREET",
+    "city": "CLINTON",
+    "state": "OK",
+    "zip": "736013117",
+    "reh_conversion_flag": "Y",
+    "reh_conversion_date": "2025-12-02",
+    "former_hospital_ccn": "370245"
+  },
+  "root_pointer_url": "https://crhaok.com/cms-hpt.txt",
+  "root_pointer_sha256": "f37a577b89897d980f9bf775a5e710579f13275891c42a3ad26fa463864ae835",
+  "root_pointer_entry_without_contacts": [
+    "location-name: Clinton Regional Hospital",
+    "source-page-url: https://secure.claraprice.net/price-transparency/clinton-regional-hospital-ok",
+    "mrf-url: https://secure.claraprice.net/price-transparency/OGFL-1782507604288/machine-readable/884062444_clinton-regional-hospital_standardcharges.json"
+  ],
+  "pricing_page_url": "https://secure.claraprice.net/price-transparency/clinton-regional-hospital-ok",
+  "pricing_page_sha256": "90aa9d28f1972116da07e80aab157e21b417fb51ec01dfeb40ed562a8195deb5",
+  "mrf_url": "https://secure.claraprice.net/price-transparency/OGFL-1782507604288/machine-readable/884062444_clinton-regional-hospital_standardcharges.json",
+  "mrf_status": 200,
+  "mrf_content_type": "application/json; charset=utf-8",
+  "mrf_content_disposition": "inline; filename=\"884062444_clinton-regional-hospital_standardcharges.json\"",
+  "previous_revision": {
+    "proof_file": "reconciliation-clinton-reh-transition-proof.json",
+    "observed_at": "2026-09-17T10:53:30.532Z",
+    "bytes": 3871397,
+    "sha256": "d00b4865ffb24203334c32a55f25742d25a67e06f93d686d8876d8d12209ff06",
+    "declared_date": "2026-07-28",
+    "version": "3.0.0",
+    "charge_entries": 4761
+  },
+  "current_revision": {
+    "bytes": 5496900,
+    "sha256": "d254c5499608cc6da36079958c1364845c817d480fa62a35b88f8c6a82e8b404",
+    "raw_artifact": "cms_data/hpt/nationwide-verification/file-byte-proof/d254c5499608cc6da36079958c1364845c817d480fa62a35b88f8c6a82e8b404.bin",
+    "declared_date": "2026-07-28",
+    "version": "3.0.0",
+    "hospital_name": "Clinton Regional Hospital",
+    "location_name": [
+      "Clinton Regional Hospital"
+    ],
+    "address": [
+      "100 North 30th Street, Clinton, OK 73601"
+    ],
+    "license_state": "OK",
+    "type_2_npi": [
+      "1942921929"
+    ],
+    "charge_entries": 5089,
+    "attestation_field_present": true,
+    "attester_name_field_present": false
+  },
+  "comparison": {
+    "sha256_changed": true,
+    "bytes_delta": 1625503,
+    "charge_entry_delta": 328,
+    "declared_date_changed": false,
+    "interpretation": "The publisher served different complete JSON bytes and 328 additional standard-charge entries at the same official pointer target while leaving last_updated_on at 2026-07-28. Record this as a file-content revision; do not infer when or why the publisher changed it."
+  },
+  "conclusion": "Current pointer-linked complete MRF identity and metadata continue to match CMS REH CCN 370784. The separate current CMS enrollment confirms former acute-care CCN 370245 conversion on 2025-12-02. This updated current REH file does not establish historical MRF coverage for CCN 370245; no legal-compliance or line-item correctness conclusion is made."
+}

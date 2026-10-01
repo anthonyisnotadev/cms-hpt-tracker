@@ -29,6 +29,13 @@ test('Stamford pointer attribution binds only the exact retained pointer row', (
   assert.equal(reviewed[1].matched_ccns, '');
   assert.equal(rows[0].matched_ccns, '');
   assert.throws(() => applyReviewedStamfordPointerAttribution(rows, { ...proof, mrf_url: 'https://example.test/other.csv' }));
+  reviewed[0].mrf_url = 'https://first-party-alias.example/stamford.csv';
+  assert.equal(reviewed[0].matched_ccns, '070006',
+    'verified pointer attribution survives a later reviewed retrieval-route correction');
+  const redirectedAlias = [{ ...rows[0], pointer_url: 'https://www.stamfordhealth.org/-/media/cms-hpt.txt',
+    observed_pointer_urls: proof.pointer_url }];
+  assert.equal(applyReviewedStamfordPointerAttribution(redirectedAlias, proof)[0].matched_ccns, '070006',
+    'exact observed source pointer remains attributable through a redirect alias');
 });
 
 test('UVM shared root assigns Alice and Champlain only to their own files', () => {
@@ -179,6 +186,21 @@ test('pointer parser separates collapsed adjacent fields from an MRF URL', () =>
     'mrf-url: https://assets.example.test/pennock_standardcharges.csv     contact-name: HPT Team');
   assert.equal(parsed.entries[0].mrfUrl, 'https://assets.example.test/pennock_standardcharges.csv');
   assert.equal(parsed.entries[0].contactName, 'HPT Team');
+});
+
+test('pointer parser resolves only Cisco Link Protection HTTPS destinations', () => {
+  const wrapped = 'https://linkprotect.cudasvc.com/url?a=https%253A%252F%252Fapp.box.com%252Fshared%252Fstatic%252Fexample.csv&c=tracking-token&typo=1';
+  const parsed = parsePointer(`location-name: El Campo Memorial Hospital\nmrf-url: ${wrapped}`);
+  assert.equal(parsed.entries[0].mrfUrl, 'https://app.box.com/shared/static/example.csv');
+  for (const unsafe of [
+    'https://linkprotect.cudasvc.com.evil.test/url?a=https%253A%252F%252Fapp.box.com%252Ffile.csv',
+    'https://linkprotect.cudasvc.com.evil.test/url?a=https%3A%2F%2Fapp.box.com%2Ffile.csv',
+    'https://linkprotect.cudasvc.com/url?a=http%253A%252F%252Fapp.box.com%252Ffile.csv',
+    'https://linkprotect.cudasvc.com/url?c=https%253A%252F%252Fapp.box.com%252Ffile.csv',
+    'https://linkprotect.cudasvc.com/url?a=%E0%A4%A'
+  ]) {
+    assert.equal(parsePointer(`location-name: Example\nmrf-url: ${unsafe}`).entries[0].mrfUrl, unsafe);
+  }
 });
 
 test('pointer parser accepts CR-only publisher line endings without merging fields', () => {

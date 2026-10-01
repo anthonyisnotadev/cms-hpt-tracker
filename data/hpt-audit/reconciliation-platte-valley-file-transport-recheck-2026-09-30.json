@@ -1,0 +1,54 @@
+{
+  "ccn": "060004",
+  "observed_at": "2026-09-30T22:49:19Z",
+  "reason_for_recheck": "The exact first-party Colorado archive was previously readable only as a bounded 126,976-byte ZIP prefix from a 3,185,272-byte object; retry once through a complete bounded request and independent permitted clients to extract its CSV header and CMS metadata.",
+  "official_page_linkage_basis": {
+    "proof_file": "reconciliation-platte-valley-current-page-recheck-proof-2026-09-25.json",
+    "page_url": "https://wwww.intermountainhealth.org/locations/intermountain-health-platte-valley-hospital/about/hospital-pricing",
+    "page_observed_status": 200,
+    "page_named_facility": "Platte Valley Medical Center",
+    "page_linked_file_url": "https://wwww.intermountainhealth.org/-/media/files/intermountain-health/locations/hospital-prices/840482695_platte-valley-medical-center_standardcharges.ashx",
+    "page_linkage_observed_at": "2026-09-25T13:00:00Z"
+  },
+  "previous_partial_archive_evidence": {
+    "proof_file": "reconciliation-platte-valley-current-page-recheck-proof-2026-09-25.json",
+    "observed_at": "2026-09-27T00:45:00Z",
+    "status": 206,
+    "content_range": "bytes 0-131071/3185272",
+    "retained_bytes": 126976,
+    "sample_sha256": "e0d09c974047df4f2ef9b9651057bacc3b2a336ca21a5c7ecb281f4357053b05",
+    "zip_member_hint": "840482695_platte-valley-medical-center_standardcharges.csv"
+  },
+  "current_retrieval_attempts": [
+    {
+      "url": "https://wwww.intermountainhealth.org/-/media/files/intermountain-health/locations/hospital-prices/840482695_platte-valley-medical-center_standardcharges.ashx",
+      "client": "bounded Node fetch; Range bytes=0-3300000",
+      "result": "TypeError: fetch failed",
+      "bytes_returned": 0
+    },
+    {
+      "url": "https://intermountainhealthcare.org/sc10media/files/intermountain-health/locations/hospital-prices/840482695_platte-valley-medical-center_standardcharges.ashx",
+      "client": "web content reader",
+      "result": "timeout fetching; no body",
+      "bytes_returned": 0
+    },
+    {
+      "url": "https://intermountainhealthcare.org/sc10media/files/intermountain-health/locations/hospital-prices/840482695_platte-valley-medical-center_standardcharges.ashx",
+      "client": "Chrome browser automation",
+      "result": "net::ERR_BLOCKED_BY_CLIENT",
+      "bytes_returned": 0
+    }
+  ],
+  "new_archive_bytes_retained": 0,
+  "csv_header_parsed": false,
+  "declared_hospital_name": null,
+  "declared_address": null,
+  "declared_license_state": null,
+  "declared_last_updated": null,
+  "cms_template_version": null,
+  "validator_result": null,
+  "usable_rows_reviewed": false,
+  "disposition": "official-page-file-linkage-current-transport-unresolved",
+  "interpretation": "This is a transport-only recheck of the known Platte Valley archive. The previous bounded prefix remains the only retrieved file evidence and identifies a ZIP member name, but the CSV header, current metadata, validation and usable rows remain unobserved. Do not assign the unrelated Utah Heber Valley MRF to Colorado CCN 060004; no promotion, downgrade or file-absence inference is supported.",
+  "next_action": "Do not retry the unchanged wwww.intermountainhealth.org or intermountainhealthcare.org archive routes absent a publisher link/route change or a materially different permitted content-bearing client. When such a change occurs, retrieve the bounded complete 3,185,272-byte archive, verify its full hash and ZIP integrity, parse the exact CSV member, and assess Platte Valley name/address/Colorado identity, CMS date/version, validator errors and alerts, and usable charge rows before any disposition change."
+}

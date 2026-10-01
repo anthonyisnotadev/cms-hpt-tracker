@@ -1,10 +1,10 @@
 {
   "summary": {
-    "total": 11,
+    "total": 10,
     "workstream": "identity-quarantine"
   },
   "source_sha256": {
-    "nationwide-reconciliation.json": "2e196a9cff87a34657dfd0216d124d4cb093b18fa5d872b5cf5f76e3765a9984"
+    "nationwide-reconciliation.json": "d77a330c36861cbe3081e7948c26f884991ab599183d07f8af021ae59b5320f9"
   },
   "records": [
     {
@@ -13,10 +13,10 @@
       "state": "AL",
       "priority": 1,
       "standing_finding": "not-assessed-identity-conflict",
-      "proposed_disposition": "pointer-facility-match-unresolved",
-      "latest_observed_at": "2026-09-26T23:58:00Z",
+      "proposed_disposition": "pointer-discovery-incomplete",
+      "latest_observed_at": "2026-09-30T22:30:32Z",
       "standing_checked_at": "2026-09-17T15:18:00.000Z",
-      "next_action": "Retry the exact current page-linked CSV and root cms-hpt.txt through a permitted client; verify bounded bytes, header identity, CMS version/date and usable rows before promotion."
+      "next_action": "Retry only after an observable DNS/route change or through a materially different permitted content-bearing client; retrieve the exact current hh.health root cms-hpt.txt and linked CSV with bounded bytes, then verify linkage, facility identity, CMS metadata, validation and usable rows. Do not retry the historical cloudaccess or 404 huntsvillehospital URLs absent a route change, and do not substitute sibling files or mirrors."
     },
     {
       "ccn": "060004",
@@ -25,9 +25,9 @@
       "priority": 1,
       "standing_finding": "not-assessed-identity-conflict",
       "proposed_disposition": "linked-mrf-header-unmatched",
-      "latest_observed_at": "2026-09-25T13:00:00Z",
+      "latest_observed_at": "2026-09-30T22:49:19Z",
       "standing_checked_at": "2026-09-16T20:34:10.000Z",
-      "next_action": "Retry the exact Colorado archive after first-party route or client recovery; require bounded bytes, Platte Valley identity, Colorado state, CMS date/version and usable rows before promotion."
+      "next_action": "Do not retry the unchanged wwww.intermountainhealth.org or intermountainhealthcare.org archive routes absent a publisher link/route change or a materially different permitted content-bearing client. When such a change occurs, retrieve the bounded complete 3,185,272-byte archive, verify its full hash and ZIP integrity, parse the exact CSV member, and assess Platte Valley name/address/Colorado identity, CMS date/version, validator errors and alerts, and usable charge rows before any disposition change."
     },
     {
       "ccn": "101307",
@@ -74,17 +74,6 @@
       "next_action": "Retry the official Illinois domain through an authorized browser/content-bearing route; require a Pavilion-Champaign-specific pointer and MRF header before promotion. Separately reconcile the Illinois closure record against CMS enrollment before any scope change."
     },
     {
-      "ccn": "244015",
-      "hospital_name": "COMMUNITY BEHAVIORAL HEALTH HOSPITAL - BAXTER",
-      "state": "MN",
-      "priority": 1,
-      "standing_finding": "not-assessed-identity-conflict",
-      "proposed_disposition": "pointer-not-retrieved",
-      "latest_observed_at": "2026-09-26T13:03:30.002Z",
-      "standing_checked_at": "2026-09-17T06:28:41.000Z",
-      "next_action": "Locate a Baxter-specific first-party cms-hpt.txt or pricing/file route and independently verify the file header, Minnesota address, date, CMS version and usable rows."
-    },
-    {
       "ccn": "251324",
       "hospital_name": "WALTHALL COUNTY GENERAL HOSPITAL CAH",
       "state": "MS",
@@ -104,7 +93,7 @@
       "proposed_disposition": "verified-current-mrf",
       "latest_observed_at": "2026-09-26T01:44:00Z",
       "standing_checked_at": "2026-09-16T21:34:53.800Z",
-      "next_action": "Reconcile recorded browser file name, street and state for this CCN. Gate: harris-campus-file-does-not-match-callicoon-ccn-roster-address. Preserve stronger standing evidence while this check remains pending."
+      "next_action": "Recover a Callicoon-specific pointer/file and reconcile the 8081 State Route 97 identity before promotion."
     },
     {
       "ccn": "370779",

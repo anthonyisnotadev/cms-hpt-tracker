@@ -1,0 +1,58 @@
+{
+  "audit_id": "adventist-bakersfield-qies-dual-ccn-crosscheck-2026-09-29",
+  "observed_at": "2026-09-29T05:30:14Z",
+  "original_recorded_observed_at": "2026-09-29T13:15:00Z",
+  "timestamp_integrity_review": {
+    "checked_at_utc": "2026-09-29T05:30:14Z",
+    "prior_live_clock_utc": "2026-09-29T05:28:31Z",
+    "original_recorded_timestamp_status": "future-dated relative to the live clock; not accepted as evidence of an observation at that time",
+    "current_source_retrieval_status": "requeried both exact CMS QIES filters between 2026-09-29T05:30:03Z and 2026-09-29T05:30:14Z; both responses matched the retained UTF-8 byte counts and SHA-256 hashes exactly",
+    "interpretation": "The facility fields below are validated against the current read-only CMS responses. The original future timestamp is retained only as provenance history and is not used as the observation time."
+  },
+  "dataset": {
+    "publisher": "Centers for Medicare & Medicaid Services",
+    "name": "Provider of Services File - Quality Improvement and Evaluation System (QIES)",
+    "resource_date": "2026-04-01",
+    "dataset_id": "03cca0cc-13a0-4b8d-82c4-57185b6bbfbd"
+  },
+  "records": [
+    {
+      "ccn": "050455",
+      "query_url": "https://data.cms.gov/data-api/v1/dataset/03cca0cc-13a0-4b8d-82c4-57185b6bbfbd/data?filter%5BPRVDR_NUM%5D=050455&size=10",
+      "http_status": 200,
+      "result_count": 1,
+      "response_utf8_bytes": 11754,
+      "response_sha256": "d1a22ca46b8062f8109523613d95766f35c0012c687ae53d1915158dd6ca09f4",
+      "facility_name": "ADVENTIST HEALTH BAKERSFIELD",
+      "address": "2615 CHESTER AVENUE, BAKERSFIELD, CA 93301",
+      "original_participation_date": "1966-07-01",
+      "certification_date": "2019-06-14",
+      "termination_date": "",
+      "termination_code": "00",
+      "certified_beds": 247,
+      "phone": "hpt-obf:v1:zriWzQ4lilC-hi-2.6-KM7ObcpAfJqQ10DXGzlQ.vNeSOY1rebsEXA"
+    },
+    {
+      "ccn": "050724",
+      "query_url": "https://data.cms.gov/data-api/v1/dataset/03cca0cc-13a0-4b8d-82c4-57185b6bbfbd/data?filter%5BPRVDR_NUM%5D=050724&size=10",
+      "http_status": 200,
+      "result_count": 1,
+      "response_utf8_bytes": 11765,
+      "response_sha256": "d334ee847c593b3787e8dea7711609af669bbd1e1f42fc200c4b80716a88cf90",
+      "facility_name": "BAKERSFIELD HEART HOSPITAL",
+      "address": "3001 SILLECT AVENUE, BAKERSFIELD, CA 93308",
+      "original_participation_date": "1999-10-06",
+      "certification_date": "2019-05-30",
+      "termination_date": "",
+      "termination_code": "00",
+      "certified_beds": 47,
+      "phone": "hpt-obf:v1:Z5DcAv6eDsiBgmCx.6aX4WEdWxiKepEHPxTeUfg.org5WaJpwJ1QVA"
+    }
+  ],
+  "interpretation": "The same 2026-04-01 official CMS QIES resource returns one active record for each exact CCN and distinguishes the facilities, addresses, certification dates, and bed counts: 050455 Adventist Health Bakersfield at 2615 Chester; 050724 Bakersfield Heart Hospital at 3001 Sillect. This strengthens the exact CCN/campus boundary and establishes both were represented as non-terminated in this resource. It does not explain the current first-party portal's collapsed download labels or establish which Medicare CCN(s) the shared pointer-linked 2026 MRF covers; no file attribution or promotion follows.",
+  "evidence_class": "official_current_cms_exact_ccn_dual_facility_boundary",
+  "new_mrf_bytes": false,
+  "disposition_changed": false,
+  "count_effect": "none; retain the unresolved shared-file scope/NPI/address conflict for 050455 and preserve 050724 as a distinct active CCN",
+  "next_action": "Do not repeat these exact QIES queries until a newer resource appears. Require a corrected first-party pointer/file or authoritative publisher documentation naming the covered Medicare CCN(s), NPIs and campus locations. Preserve 050455 and 050724 separately; do not attribute the shared file from a shared license, shared organization, or address alone."
+}

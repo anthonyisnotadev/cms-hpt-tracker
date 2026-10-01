@@ -1,0 +1,62 @@
+{
+  "ccn": "334027",
+  "observed_at": "2026-09-28T06:12:48Z",
+  "official_facility_site": {
+    "url": "https://southoaks.northwell.edu/",
+    "browser_title": "South Oaks Hospital | Northwell Health",
+    "observed_identity": "South Oaks Hospital, 400 Sunrise Highway, Amityville, NY 11701",
+    "price_transparency_link": "https://www.northwell.edu/billing-and-insurance/price-estimator-tools#machine-readable-files"
+  },
+  "official_price_transparency_page": {
+    "url": "https://www.northwell.edu/billing-and-insurance/price-estimator-tools#machine-readable-files",
+    "browser": "codex-in-app-browser-accessibility-tree",
+    "http_status": null,
+    "observation": "The rendered Northwell page says its hospital machine-readable files are current as of March 30, 2026, and explicitly states: The machine-readable file for South Oaks is in development.",
+    "visible_hospital_file_labels": [
+      "Cohen Children's Medical Center",
+      "Danbury Hospital",
+      "Glen Cove Hospital",
+      "Huntington Hospital",
+      "Lenox Hill Hospital",
+      "Long Island Jewish Forest Hills",
+      "Long Island Jewish Medical Center",
+      "Long Island Jewish Valley Stream",
+      "Mather Hospital",
+      "New Milford Hospital",
+      "North Shore University Hospital",
+      "Northern Dutchess Hospital",
+      "Northern Westchester Hospital",
+      "Norwalk Hospital",
+      "Peconic Bay Medical Center",
+      "Phelps Hospital",
+      "Plainview Hospital",
+      "Putnam Hospital",
+      "Sharon Hospital",
+      "South Shore University Hospital",
+      "Staten Island University Hospital",
+      "Syosset Hospital",
+      "Vassar Brothers Medical Center",
+      "Zucker Hillside Hospital"
+    ],
+    "interpretation": "Current publisher page states a South Oaks file is still in development and exposes no South Oaks download in its list. This explains why the third-party Zucker Hillside archive is not an attributable South Oaks file; it does not establish the status of every possible external source or make a compliance determination."
+  },
+  "official_campus_root_pointer_recheck": {
+    "url": "https://southoaks.northwell.edu/cms-hpt.txt",
+    "observed_at": "2026-09-28T06:10:19Z",
+    "http_status": 200,
+    "content_type": "text/plain",
+    "response_bytes": 8331,
+    "location_entry_count": 24,
+    "south_oaks_entry_observed": false,
+    "retained_prior_pointer_sha256": "7d569107a2998280e1f62c3a31cec39c44661a16ac09d2c82675a8b64c991299",
+    "prior_pointer_proof": "reconciliation-south-oaks-root-pointer-proof.json"
+  },
+  "third_party_conflict_context": {
+    "page_url": "https://www.procedureradar.com/hospitals/south-oaks-hosp",
+    "linked_zip_url": "https://www.northwell.edu/sites/northwell.edu/files/machine-readable-files/Zucker_Hillside_Hospital_Hospital_StandardCharges.zip",
+    "decision": "Do not attribute or retrieve this sibling facility ZIP as South Oaks evidence based solely on the third-party label."
+  },
+  "disposition": "publisher-confirms-south-oaks-mrf-in-development-current-file-unresolved",
+  "count_effect": "none; retain CCN 334027 in the unresolved 891-member historical cohort",
+  "next_action": "Keep South Oaks unresolved. Do not repeat the unchanged generic pointer or inspect/assign the Zucker Hillside sibling ZIP. Recheck the first-party price-transparency page and campus root pointer only after a publisher source or page-content change; when a South Oaks entry appears, retrieve that exact publisher-declared file and validate identity, address, NY metadata, CMS version/date, attestation and usable rows before promotion."
+}

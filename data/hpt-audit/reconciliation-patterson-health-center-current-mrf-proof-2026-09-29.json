@@ -1,0 +1,91 @@
+{
+  "audit_id": "reconciliation-patterson-health-center-current-mrf-proof-2026-09-29",
+  "observed_at": "2026-09-29T03:46:10.284Z",
+  "ccn": "171346",
+  "official_domain": "pattersonhc.org",
+  "official_source_page": {
+    "url": "https://pattersonhc.org/price-transparency",
+    "status": 403,
+    "note": "The CMS pointer names this source-page URL. Direct page fetch was blocked to this client; the publisher-associated PARA page rendered the current pricing information and controls, and the exact pointer/file routes below were independently retrieved."
+  },
+  "official_root_pointer": {
+    "url": "https://pattersonhc.org/cms-hpt.txt",
+    "status": 200,
+    "content_type": "text/plain",
+    "response_bytes": 283,
+    "response_sha256": "94dc18cad8c7669b98388d407b4ea5b010c298ad88f8edb100c8d7ae1cab31df",
+    "parsed_location_name": "Patterson Health Center",
+    "parsed_source_page_url": "https://pattersonhc.org/price-transparency",
+    "parsed_mrf_url": "https://apps.para-hcfs.com/PTT//FinalLinks/Reports.aspx?dbName=dbAMCANTHONYKS&type=CDMWithoutLabel&fileType=CSV",
+    "contact_fields": "Present in the publisher response but deliberately omitted from this retained extract."
+  },
+  "publisher_pricing_page": {
+    "url": "https://apps.para-hcfs.com/PTT/FinalLinks/Patterson_V2.aspx",
+    "browser_title": "PARA Price Transparency Tool",
+    "browser_observation": "The rendered page identifies Patterson Health Center and provides standard charges and other pricing lists dated February 10, 2026. The standard-charges control calls DownloadReport('hospital','CDMWithoutLabel'); the served page JavaScript maps that control to dbAMCANTHONYKS. The earlier HTTP 500 used dbName=hospital and therefore did not test the actual report key."
+  },
+  "mrf": {
+    "url": "https://apps.para-hcfs.com/PTT//FinalLinks/Reports.aspx?dbName=dbAMCANTHONYKS&type=CDMWithoutLabel&fileType=CSV",
+    "status": 200,
+    "final_url": "https://apps.para-hcfs.com/PTT//FinalLinks/Reports.aspx?dbName=dbAMCANTHONYKS&type=CDMWithoutLabel&fileType=CSV",
+    "content_type": "application/octet-stream",
+    "content_disposition": "attachment; filename=480993940_hospital-district-no-6-of-harper-county-kansas_standardcharges.csv",
+    "bytes": 8536635,
+    "sha256": "0c5091ecfb5d8b505f38cee638f554ade512af1a2fa2dbdc1e826ba775068cbc",
+    "retained_file": "retained-source-documents/patterson-health-center-171346-standard-charges-2026-02-10.csv",
+    "file_kind": "csv",
+    "declared_hospital_name": "HOSPITAL DISTRICT NO 6 OF HARPER COUNTY KANSAS",
+    "declared_location_name": "HOSPITAL DISTRICT NO 6 OF HARPER COUNTY KANSAS",
+    "declared_address": "485 KS-2 Hwy 2 Anthony KS 67003",
+    "declared_license_number": "H039001",
+    "declared_license_state": "KS",
+    "declared_npi": "1467427674",
+    "declared_last_updated": "2026-02-10",
+    "cms_template_version": "3.0.0",
+    "declared_attestation": true,
+    "attester_name_present": true,
+    "parsed_data_rows": 26408,
+    "header_columns": 28,
+    "data_row_widths": [28],
+    "data_rows_with_gross_charge": 26408,
+    "data_rows_with_negotiated_dollar_charge": 26408,
+    "data_rows_with_payer": 26408
+  },
+  "cms_provider_record": {
+    "url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=171346&conditions%5B0%5D%5Boperator%5D=%3D",
+    "status": 200,
+    "response_bytes": 6695,
+    "response_sha256": "a95aa70070789bcc7cc173cc11d89a852d5158a5663221b964c6bbfbd5bfecb9",
+    "record": {
+      "facility_id": "171346",
+      "facility_name": "HOSPITAL DISTRICT #6 PATTERSON HEALTH CENTER",
+      "address": "485 N. KS HWY 2",
+      "city": "ANTHONY",
+      "state": "KS",
+      "zip_code": "67003",
+      "hospital_type": "Critical Access Hospitals",
+      "hospital_ownership": "Government - Hospital District or Authority"
+    },
+    "interpretation": "The live CMS exact-CCN row identifies the same Hospital District #6 Patterson Health Center at 485 N. KS Hwy 2 in Anthony, Kansas."
+  },
+  "cms_npi_registry_record": {
+    "url": "https://npiregistry.cms.hhs.gov/api/?number=1467427674&version=2.1",
+    "status": 200,
+    "response_bytes": 1477,
+    "response_sha256": "31260e6d10c34f72f6a5ac60484a43c2175dffe2fca72a02333abbd2adcd2566",
+    "record": {
+      "npi": "1467427674",
+      "organization_name": "HOSPITAL DISTRICT NO 6 OF HARPER COUNTY KANSAS",
+      "doing_business_as": "PATTERSON HEALTH CENTER",
+      "status": "A",
+      "location_address": "485 N KS HWY 2, ANTHONY, KS 67003-2122",
+      "taxonomy": "282NC0060X - General Acute Care Hospital, Critical Access",
+      "state_license_field": "KS",
+      "last_updated": "2019-07-31"
+    },
+    "interpretation": "This exact NPI record matches the MRF legal name, DBA and Kansas campus address; its 2019 registry-update date is retained as a freshness limitation, not represented as a current NPI update."
+  },
+  "disposition": "verified-current-mrf",
+  "interpretation": "The current first-party CMS pointer names the publisher-associated report URL. Using the report key specified by the live pricing page's JavaScript (rather than the incorrect dbName=hospital used in the prior failed attempt) retrieves the complete 8,536,635-byte CSV. The file is current by its 2026-02-10 declared update date, declares CMS version 3.0.0, an attestation, Kansas license state, the exact legal entity/campus address and NPI, and contains 26,408 consistent-width pricing rows. The current exact-CCN CMS Provider Data row confirms CCN 171346 at the same Anthony address; the CMS NPI Registry independently matches the file's NPI to the legal name/DBA/address. This verifies current MRF evidence for the CCN. It is not a legal compliance determination.",
+  "next_action": "Keep the full hash-bound file and current pointer linkage as observed evidence. Recheck on the next scheduled crawl or sooner only if the publisher changes the pointer/file; do not repeat the earlier malformed endpoint query."
+}

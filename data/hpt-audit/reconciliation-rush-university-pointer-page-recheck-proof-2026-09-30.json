@@ -1,0 +1,50 @@
+{
+  "ccn": "140119",
+  "hospital_name": "RUSH UNIVERSITY MEDICAL CENTER",
+  "observed_at": "2026-09-30T13:53:36Z",
+  "proof_type": "current-pointer-and-first-party-page-link-recheck; target-file-unavailable",
+  "pointer": {
+    "url": "https://www.rush.edu/cms-hpt.txt",
+    "request": "GET Range bytes=0-262143",
+    "http_status": 206,
+    "response_bytes": 854,
+    "content_range": "bytes 0-853/854",
+    "sha256": "baad739cfb87eb6de1667c634f880f8be55f92bd6c6028d05639e17ecf17691b",
+    "matched_retained_pointer_hash": true,
+    "matching_entry": {
+      "location_name": "Rush University Medical Center",
+      "source_page_url": "www.rush.edu/patients-visitors/billing/cost-care",
+      "mrf_url": "apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbRUMCCHICAGOIL&type=CDMWithoutLabel&fileType=CSV"
+    },
+    "contact_fields_retained": false
+  },
+  "first_party_page": {
+    "url": "https://www.rush.edu/patients-visitors/billing/cost-care",
+    "browser_observation": "Live page lists Rush University Medical Center separately and links a CSV. The extracted absolute CSV URL exactly matches the root-pointer target above.",
+    "scope_note": "The page lists Rush University Medical Center, Rush Copley Medical Center and Rush Oak Park Hospital as separate facilities."
+  },
+  "file_retrieval": {
+    "exact_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbRUMCCHICAGOIL&type=CDMWithoutLabel&fileType=CSV",
+    "bounded_node_fetch": "fetch failed; no response bytes",
+    "browser_navigation": "net::ERR_BLOCKED_BY_CLIENT",
+    "bytes_retrieved": 0,
+    "sha256": null,
+    "metadata_or_schema_reviewed": false
+  },
+  "identity_and_address": {
+    "cms_ccn_name_address": "Rush University Medical Center, 1653 West Congress Parkway, Chicago, IL 60612",
+    "cms_source": "https://data.cms.gov/tools/medicare-inpatient-hospital-look-up-tool/provider/140119",
+    "rush_current_location_page_address": "1620 W Harrison St, Chicago, IL 60612",
+    "rush_source": "https://www.rush.edu/locations/rush-university-medical-center",
+    "interpretation": "Name, Chicago/Illinois and ZIP agree, but the current Rush location-page street address differs from the CMS CCN address. Without target bytes or authoritative address crosswalk, this remains an identity/address follow-up and not an MRF verification."
+  },
+  "evidence_accounting": {
+    "new_pointer_content": false,
+    "new_mrf_content": false,
+    "current_page_to_pointer_target_link_reconfirmed": true,
+    "disposition_change": false,
+    "count_change": false
+  },
+  "disposition_effect": "none; retain CCN 140119 unresolved",
+  "next_action": "Do not retry the unchanged PARA Reports.aspx URL through the same blocked clients. Obtain the current file bytes through a materially different permitted publisher route, or await a source/access change. Then validate parsed CMS v3.0 structure, declared date/version/attestation and file identity independently; resolve the 1653 W Congress versus 1620 W Harrison address difference using authoritative facility-specific evidence before any promotion."
+}

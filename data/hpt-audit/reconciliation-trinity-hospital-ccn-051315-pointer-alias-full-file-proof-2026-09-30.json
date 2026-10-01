@@ -1,0 +1,140 @@
+{
+  "audit_id": "reconciliation-trinity-hospital-ccn-051315-pointer-alias-full-file-proof-2026-09-30",
+  "ccn": "051315",
+  "hospital": "TRINITY HOSPITAL",
+  "observed_at": "2026-09-30T11:57:26Z",
+  "classification": "new complete MRF byte retrieval and supported pointer/operator alias reconciliation; not a new URL or newly discovered file",
+  "sources": {
+    "cms_roster": {
+      "file": "cms_data/hpt/roster.json",
+      "ccn": "051315",
+      "name": "TRINITY HOSPITAL",
+      "address": "60 EASTER AVENUE",
+      "city": "WEAVERVILLE",
+      "state": "CA",
+      "zip": "96093"
+    },
+    "cms_hospital_general_information": {
+      "file": "cms_data/Hospital_General_Information.csv",
+      "sha256": "23c5019ee51e11442d6d64cd153cedd78c51ab6435f621e4cb9351e3e972d9e3",
+      "record": "051315,TRINITY HOSPITAL,60 EASTER AVENUE,WEAVERVILLE,CA,96093"
+    },
+    "official_current_trinity_contact_page": {
+      "url": "https://www.mcmedical.org/contact-us",
+      "observed_date": "2026-09-30",
+      "department": "Trinity Hospital",
+      "street": "60 Easter Ave",
+      "mailing_address": "PO Box 1229",
+      "city_state_zip": "Weaverville, CA 96093"
+    },
+    "official_current_trinity_facility_page": {
+      "url": "https://www.mcmedical.org/trinity-hospital",
+      "observed_date": "2026-09-30",
+      "facts": "MCHD's facility page is titled Trinity Hospital and describes inpatient hospital care and a 24-hour emergency room."
+    },
+    "official_current_pricing_page": {
+      "url": "https://www.mcmedical.org/price-transparency",
+      "http_status": 200,
+      "observed_date": "2026-09-30",
+      "html_bytes": 208968,
+      "html_sha256": "ba04e9d06aaf9cd082593049cbffe83cf589ff04980635b1540065778d9e807c",
+      "source_html_observation": "Current rendered page says Machine Readable File; its download control names 208236808_trinity-hospital_standardcharges.csv; the price page's hospital section is titled Trinity Hospital and Clinics. The button is dynamically served; its exact underlying direct URL is independently reproduced by the current root pointer below."
+    },
+    "official_current_root_pointer": {
+      "url": "https://mcmedical.org/cms-hpt.txt",
+      "http_status": 200,
+      "observed_at": "2026-09-30T11:56:27Z",
+      "bytes": 264,
+      "sha256": "6fa49e3e717e91a132a7de9b6e0a72b4272c1ade68f33a143c568f0588a65e46",
+      "last_modified": "2026-04-01T03:26:55Z",
+      "retained_raw_file": "cms_data/hpt/pointer-corpus/raw/mcmedical.org-23d3a7639b52.txt",
+      "location_name": "MOUNTAIN COMMUNITIES HEALTHCARE DISTRICT",
+      "source_page_url": "https://www.mcmedical.org/price-transparency/",
+      "mrf_url": "https://www.mcmedical.org/208236808_trinity-hospital_standardcharges.csv",
+      "entry_count": 1,
+      "identity_interpretation": "The pointer publisher is the District operator, not a second hospital. Its one current entry's filename is the same exact hospital-named file exposed as the Machine Readable File on the District's official pricing page."
+    }
+  },
+  "mrf": {
+    "url": "https://www.mcmedical.org/208236808_trinity-hospital_standardcharges.csv",
+    "http_status": 200,
+    "content_type": "text/csv;charset=utf-8",
+    "last_modified": "2026-03-31T16:18:13Z",
+    "complete_bytes": 15970278,
+    "complete_sha256": "6d1873f43092d6a035416c09de854c59422a89882d10946cffe4dafa18ea2b9e",
+    "retained_file": "cms_data/hpt/nationwide-verification/file-byte-proof/6d1873f43092d6a035416c09de854c59422a89882d10946cffe4dafa18ea2b9e.bin",
+    "declared_hospital_name": "MOUNTAIN COMMUNTIES HEALTHCARE DISTRICT",
+    "declared_location_name": "MOUNTAIN COMMUNITIES HEALTHCARE DISTRICT",
+    "declared_address": "60 EASTER AVENUE, PO BOX 1229, WEAVERVILLE, CA, 96093-1229",
+    "declared_license_state": "CA",
+    "declared_license_number": "230000038",
+    "declared_npi": "1750462271|1407027568",
+    "declared_date": "2026-03-30",
+    "cms_template_version": "3.0.0",
+    "attestation": true,
+    "metadata_columns": 95,
+    "charge_columns": 95,
+    "parsed_data_rows": 8701,
+    "rows_with_unexpected_column_count": 0,
+    "rows_with_gross_or_discounted_cash_values": 8673,
+    "first_data_row_description": "INPATIENT OVERNIGHT STAY1",
+    "last_data_row_description": "PREGABALIN (LYRICA) 300 MG CAP",
+    "payer_field_groups": [
+      "Aetna",
+      "Blue Cross of CA Anthem",
+      "Blue Shield of CA",
+      "Cigna",
+      "Medicare A CA JE",
+      "Medicare B CA JE Northern CA",
+      "Partnership Health Plan of California MCD Rep",
+      "TriWest",
+      "United Healthcare"
+    ]
+  },
+  "identity_reconciliation": {
+    "operator_name": "MOUNTAIN COMMUNITIES HEALTHCARE DISTRICT",
+    "header_name_literal": "MOUNTAIN COMMUNTIES HEALTHCARE DISTRICT",
+    "name_variance": "The hospital_name value in the file omits one 'I' in COMMUNITIES; the pointer location-name, location_name field, first-party operator/site pages and the CMS facility chain identify the correctly spelled District. This transcription variance is recorded, not silently normalized.",
+    "hospital_alias_chain": "CMS CCN 051315 Trinity Hospital at 60 Easter Avenue -> current MCHD contact page's Trinity Hospital at 60 Easter Ave -> current MCHD official pricing page's Machine Readable File download with Trinity Hospital and Clinics section -> MCHD root-pointer single entry at the exact same filename and URL -> complete file location/address/license-state metadata.",
+    "address_match": "The exact street, city and California state agree. File/official contact also share PO Box 1229; roster and CMS General Information list the physical street address only.",
+    "npi_limitation": "Two NPIs are declared by the MRF; this proof does not assign either NPI to the CMS CCN or use NPI as the identity gate."
+  },
+  "disposition": "verified-current-mrf",
+  "latest_live_recheck_2026_09_30": {
+    "observed_at": "2026-09-30T13:15:40Z",
+    "official_price_page_browser_observation": {
+      "url": "https://www.mcmedical.org/price-transparency",
+      "title": "Mountain Communities Healthcare District",
+      "section": "Machine Readable File",
+      "hospital_section": "Trinity Hospital and Clinics",
+      "download_filename": "208236808_trinity-hospital_standardcharges.csv",
+      "method": "In-app browser accessibility tree plus rendered DOM inspection; the current same-origin download control has no direct href in the rendered HTML."
+    },
+    "pointer_recheck": {
+      "url": "https://mcmedical.org/cms-hpt.txt",
+      "browser_result": "net::ERR_BLOCKED_BY_CLIENT",
+      "bounded_fetch_result": "fetch failed",
+      "interpretation": "This later access failure did not return pointer bytes and does not supersede the hash-matched HTTP 200 pointer body retained from 2026-09-30T11:56:27Z."
+    },
+    "mrf_bounded_recheck": {
+      "url": "https://www.mcmedical.org/208236808_trinity-hospital_standardcharges.csv",
+      "http_status": 206,
+      "content_range": "bytes 0-131071/15970278",
+      "sample_bytes": 131072,
+      "sample_sha256": "17ef63a28bf3ccb219c6cf695b7bd2875912a244fc45b56a376f692241e1333f",
+      "matches_retained_complete_file_prefix": true,
+      "last_modified": "2026-03-31T16:18:13Z",
+      "parsed_metadata": {
+        "hospital_name": "MOUNTAIN COMMUNTIES HEALTHCARE DISTRICT",
+        "last_updated_on": "3/30/2026",
+        "version": "3.0.0",
+        "location_name": "MOUNTAIN COMMUNITIES HEALTHCARE DISTRICT",
+        "hospital_address": "60 EASTER AVENUE, PO BOX 1229, WEAVERVILLE, CA, 96093-1229",
+        "license_state": "CA",
+        "attestation": "TRUE"
+      }
+    },
+    "effect": "Current official page and live file prefix recheck support the same file and metadata. No new file object was discovered; the newly retained complete-file evidence and exact operator-alias chain support resolving the existing CCN-specific pointer attribution uncertainty."
+  },
+  "effect": "The exact-CCN pointer-alias uncertainty is closed by a current first-party page/pointer chain and complete hash-bound CMS v3 file with matching physical campus address and California license-state metadata. The earlier September 15 parser result remains in raw history as a superseded incomplete observation. No legal compliance or CMS-validator conclusion is claimed."
+}

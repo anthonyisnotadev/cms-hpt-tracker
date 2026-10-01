@@ -21,6 +21,78 @@ test('browser-confirmed pointer not-found resolutions remain explicit page-linke
     assert.equal(result.compliance[0].mrf_url, r.evidence.url);
   }
 });
+test('UCSD Hillcrest page-linked bounded proof stays distinct from root-pointer and complete-file validation', () => {
+  const r = reviewedLedger.find(entry => entry.ccn === '050025');
+  assert.ok(r);
+  assert.equal(r.action, 'replace-page-file-observation');
+  const byteProof = require('../../../data/hpt-audit/nationwide-file-byte-proof.json').records
+    .find(record => record.ccns.includes('050025'));
+  assert.ok(byteProof);
+  assert.equal(byteProof.bytes_retained, r.evidence.sampleBytes);
+  assert.equal(byteProof.sha256, r.evidence.fileSha256);
+  assert.equal(byteProof.url, r.evidence.url);
+  assert.equal(r.evidence.pointerLinked, false);
+  assert.equal(r.evidence.completeFileValidated, false);
+  const result = applyResolutions([r.base], [], [], [r]);
+  assert.equal(result.compliance[0].finding, 'mrf-v3-file-validation-pending');
+  assert.equal(result.compliance[0].pointer_url, '');
+  assert.equal(result.compliance[0].mrf_url, r.evidence.url);
+  assert.match(result.compliance[0].evidence, /no root-pointer linkage or full-file validation/);
+  assert.equal(result.history[r.ccn].finding, 'not-assessed-site-unreachable');
+  assert.equal(result.manifest[0].pointer_via, '');
+  assert.equal(result.manifest[0].match_method, 'official-page-file-bounded-header-review');
+  const invalid = structuredClone(r);
+  invalid.evidence.pointerLinked = true;
+  assert.throws(() => applyResolutions([r.base], [], [], [invalid]), /lacks current, pointer-linked identity/);
+});
+test('complete CSV v3 validator evidence accepts only the documented 3.0 literal warning, not validation errors or arbitrary alerts', () => {
+  const baseRow = { ...base };
+  const evidence = {
+    identity: 'corroborated',
+    identityBasis: 'current-first-party-pricing-page-and-complete-root-pointer-link-exact-file-full-csv-cms-v3-validation',
+    pointerIssue: 'current-root-pointer-and-page-link-exact-mrf',
+    pointerUrl: 'https://hospital.test/cms-hpt.txt', pointerHttpStatus: 206,
+    pointerSha256: 'a'.repeat(64), pointerMrfUrl: 'https://hospital.test/current.csv',
+    url: 'https://hospital.test/current.csv', finalUrl: 'https://hospital.test/current.csv',
+    http_status: 200, checked_at: '2026-09-09T00:00:00Z', date: '2026-09-01', version: '3.0',
+    fileSha256: 'b'.repeat(64), fullFileSha256: 'b'.repeat(64), fullFileBytes: 1000,
+    completeFileValidated: true, csvDataRows: 1, csvHeaderColumns: 29,
+    csvMalformedRowWidths: 0, csvUsableChargeRows: 1,
+    cmsValidator: { package: '@cmsgov/hpt-validator-cli', requirements: 'v3.0', format: 'csv',
+      valid: true, errors: 0, alerts: 1,
+      alert: 'The value in this MRF\'s version data element "3.0" does not match expected "3.0.0".' },
+    observedFinding: 'verified-current-mrf'
+  };
+  const record = { ccn: baseRow.ccn, base: baseRow, action: 'replace-observation', finding: 'verified-current-mrf', evidence };
+  assert.equal(applyResolutions([baseRow], [], [], [record]).compliance[0].finding, 'verified-current-mrf');
+  for (const mutate of [
+    value => { value.cmsValidator.errors = 1; },
+    value => { value.cmsValidator.alert = 'unrelated content warning'; },
+    value => { value.cmsValidator.alert = 'version data element "3.0" should be "3.0.1"'; },
+    value => { value.version = '3.0.0'; }
+  ]) {
+    const invalid = structuredClone(record);
+    mutate(invalid.evidence);
+    assert.throws(() => applyResolutions([baseRow], [], [], [invalid]), /lacks current, pointer-linked identity and metadata evidence/);
+  }
+});
+test('Palomar Escondido current-pointer evidence resolves CCN 050115 and corrects only its effective name', () => {
+  const r = reviewedLedger.find(entry => entry.ccn === '050115');
+  assert.ok(r);
+  assert.equal(r.base.hospital_name, 'PALOMAR HEALTH DOWNTOWN CAMPUS');
+  assert.equal(r.evidence.declared_hospital_name, 'Palomar Medical Center Escondido');
+  assert.equal(r.evidence.fullFileBytes, 39888675);
+  assert.match(r.evidence.fileSha256, /^[a-f0-9]{64}$/);
+  const result = applyResolutions([r.base], [], [], [r]);
+  assert.equal(result.compliance[0].hospital_name, 'PALOMAR MEDICAL CENTER ESCONDIDO');
+  assert.equal(result.compliance[0].finding, 'compliant-observed');
+  assert.equal(result.compliance[0].domain, 'palomarucsdhealth.org');
+  assert.equal(result.compliance[0].mrf_url, r.evidence.url);
+  assert.equal(result.history[r.ccn].finding, 'no-cms-hpt-txt-published');
+  const invalid = structuredClone(r);
+  invalid.evidence.currentNameCorrection.cmsRecordSha256 = 'bad';
+  assert.throws(() => applyResolutions([r.base], [], [], [invalid]), /unsupported current hospital-name correction/);
+});
 test('Tillamook legal-name alias resolves only the exact pointer target without claiming full-file validation', () => {
   const r = reviewedLedger.find(entry => entry.ccn === '381317');
   assert.ok(r);
@@ -252,20 +324,88 @@ test('dated official closure evidence removes a closed facility from active revi
   assert.equal(result.manifest.length, 0);
   assert.equal(result.gaps.length, 0);
 });
-test('exact state-hospital scope resolution clears pricing pointers without asserting an MRF', () => {
+test('state operation alone does not establish a CMS deemed-compliant exception', () => {
   const evidence = { facilityName: 'Austin State Hospital', checked_at: '2026-09-27T00:00:00Z',
     facilityUrl: 'https://hhs.texas.gov/state-hospitals/austin', stateOperatorAuthority: 'Texas HSC §552.001',
     stateOperatorSource: 'https://tcss.legis.texas.gov/resources/HS/htm/HS.552.htm',
     federalRuleSource: 'https://www.govinfo.gov/content/pkg/CFR-2025-title45-vol2/pdf/CFR-2025-title45-vol2-part180.pdf',
     federalRuleSection: '45 CFR §180.30(b)', stateHospitalStatuteFacilities: ['Austin State Hospital'] };
-  const result = applyResolutions([base], [base], [base], [{ ccn: base.ccn, base, action: 'exempt-state-hospital', evidence,
-    official: { domain: 'hhs.texas.gov', page: evidence.facilityUrl }, reviewed_at: evidence.checked_at, note: 'Federal scope classification.' }]);
-  assert.equal(result.compliance[0].finding, 'not-applicable-state-hospital');
-  assert.equal(result.compliance[0].assessable, 'no');
-  assert.equal(result.compliance[0].pointer_url, '');
-  assert.equal(result.compliance[0].mrf_url, '');
-  assert.equal(result.manifest.length, 0);
+  assert.throws(() => applyResolutions([base], [base], [base], [{ ccn: base.ccn, base,
+    action: 'exempt-state-hospital', evidence, official: { domain: 'hhs.texas.gov', page: evidence.facilityUrl },
+    reviewed_at: evidence.checked_at, note: 'State operation alone.' }]), /lacks exact state-hospital and federal-scope evidence/);
+  const record = { ccn: base.ccn, base, action: 'scope-review-pending', evidence,
+    scope_review: { previous_action: 'exempt-state-hospital', status: 'state-hospital-exception-not-established',
+      cms_guidance_url: 'https://www.cms.gov/files/document/hospital-price-transparency-frequently-asked-questions.pdf',
+      reviewed_at: evidence.checked_at },
+    official: { domain: 'hhs.texas.gov', page: evidence.facilityUrl }, reviewed_at: evidence.checked_at,
+    note: 'Not a noncompliance finding; state operation alone does not establish a CMS deemed-compliant exception.' };
+  const result = applyResolutions([base], [base], [base], [record]);
+  assert.deepEqual(result.compliance[0], base);
+  assert.equal(result.manifest.length, 1);
   assert.equal(result.gaps.length, 0);
+  assert.throws(() => applyResolutions([base], [base], [base], [{ ...record,
+    scope_review: { ...record.scope_review, cms_guidance_url: '' } }]), /lacks a dated CMS state-hospital scope review/);
+});
+test('Maryland identity and enrollment proof do not by themselves establish a deemed-compliant exception', () => {
+  const marylandBase = { ...base, ccn: '214004', hospital_name: 'SPRINGFIELD HOSPITAL CENTER',
+    city: 'SYKESVILLE', state: 'MD', type: 'Psychiatric' };
+  const evidence = {
+    facilityName: 'SPRINGFIELD HOSPITAL CENTER', checked_at: '2026-09-27T21:30:00Z',
+    facilityUrl: 'https://health.maryland.gov/springfield/pages/about-shc.aspx',
+    mdhFacilityRoster: 'https://health.maryland.gov/ocpbes/Pages/real-property-listing.aspx',
+    mdhOperatorPage: 'https://health.maryland.gov/springfield/pages/about-shc.aspx',
+    cmsEnrollmentDataset: 'https://data.cms.gov/provider-characteristics/hospitals-and-other-facilities/hospital-enrollments',
+    cmsEnrollmentDatasetVersion: '3b5eae55-981c-4358-b3f8-7032d053d893',
+    cmsEnrollmentQuery: 'https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=214004&size=10',
+    cmsEnrollmentResponseSha256: 'd78cc94f3d68808fc60ade79c36c648304bcbb412c4a8656cae75429c0ddefc4',
+    cmsEnrollmentResponseBytes: 1202, cmsEnrollmentId: 'O20060105000525',
+    cmsEnrollmentOrganization: 'COMPTROLLER OF MARYLAND CENTRAL PAYROLL BUREAU',
+    cmsEnrollmentDoingBusinessAs: 'SPRINGFIELD HOSPITAL CENTER',
+    cmsEnrollmentAddress: '6655 SYKESVILLE RD, SYKESVILLE, MD 21784',
+    cmsProviderType: 'PART A PROVIDER - HOSPITAL',
+    federalRuleSource: 'https://www.govinfo.gov/content/pkg/CFR-2025-title45-vol2/pdf/CFR-2025-title45-vol2-part180.pdf',
+    federalRuleSection: '45 CFR §180.30(b)',
+    cmsGuidanceSource: 'https://www.cms.gov/files/document/hospital-price-transparency-frequently-asked-questions.pdf'
+  };
+  const record = { ccn: marylandBase.ccn, base: marylandBase, action: 'scope-review-pending', evidence,
+    scope_review: { previous_action: 'exempt-state-hospital', status: 'state-hospital-exception-not-established',
+      cms_guidance_url: evidence.cmsGuidanceSource, reviewed_at: evidence.checked_at },
+    official: { domain: 'health.maryland.gov', page: evidence.facilityUrl },
+    reviewed_at: evidence.checked_at, note: 'Not a noncompliance finding; federal scope classification only, no MRF claim.' };
+  const result = applyResolutions([marylandBase], [marylandBase], [marylandBase], [record]);
+  assert.deepEqual(result.compliance[0], marylandBase);
+  assert.equal(result.manifest.length, 1);
+});
+test('Minnesota Baxter state operation remains reviewable rather than exempt without a CMS exception basis', () => {
+  const baxter = { ...base, ccn: '244015', hospital_name: 'COMMUNITY BEHAVIORAL HEALTH HOSPITAL - BAXTER',
+    city: 'BAXTER', state: 'MN', type: 'Psychiatric' };
+  const facilityUrl = 'https://mn.gov/dct/adult-services/inpatient-care/community-behavioral-health-hospitals/';
+  const evidence = {
+    facilityName: baxter.hospital_name, facilityUrl, checked_at: '2026-09-28T00:55:19Z',
+    minnesotaStateOperatorStatute: 'Minn. Stat. §246.54, subd. 10',
+    minnesotaStateOperatorSource: 'https://www.revisor.mn.gov/statutes/cite/246/full',
+    dctFacilityNetworkPage: facilityUrl,
+    cmsEnrollmentDataset: 'https://data.cms.gov/provider-characteristics/hospitals-and-other-facilities/hospital-enrollments',
+    cmsEnrollmentDatasetVersion: '3b5eae55-981c-4358-b3f8-7032d053d893',
+    cmsEnrollmentQuery: 'https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=244015&size=10',
+    cmsEnrollmentResponseSha256: '6b8d69581684e9ceba38d3fec2867b4b38c1b6b04d64873e5451c8cfe1cfd020',
+    cmsEnrollmentResponseBytes: 1174, cmsEnrollmentId: 'O20070612000384',
+    cmsEnrollmentOrganization: 'COMMUNITY BEHAVIORAL HEALTH HOSPITAL-BAXTER',
+    cmsEnrollmentDoingBusinessAs: 'CBHH BAXTER',
+    cmsEnrollmentAddress: '14241 GRAND OAKS DR, BAXTER, MN 56425',
+    cmsEnrollmentNpi: '1487715033', cmsProviderType: 'PART A PROVIDER - HOSPITAL',
+    federalRuleSource: 'https://www.govinfo.gov/content/pkg/CFR-2025-title45-vol2/pdf/CFR-2025-title45-vol2-part180.pdf',
+    federalRuleSection: '45 CFR §180.30(b)',
+    cmsGuidanceSource: 'https://www.cms.gov/files/document/hospital-price-transparency-frequently-asked-questions.pdf'
+  };
+  const record = { ccn: baxter.ccn, base: baxter, action: 'scope-review-pending', evidence,
+    scope_review: { previous_action: 'exempt-state-hospital', status: 'state-hospital-exception-not-established',
+      cms_guidance_url: evidence.cmsGuidanceSource, reviewed_at: evidence.checked_at },
+    official: { domain: 'mn.gov', page: facilityUrl }, reviewed_at: evidence.checked_at,
+    note: 'Not a noncompliance finding; federal scope only, no MRF claim.' };
+  const result = applyResolutions([baxter], [baxter], [baxter], [record]);
+  assert.deepEqual(result.compliance[0], baxter);
+  assert.equal(result.manifest.length, 1);
 });
 test('closed-facility exemption requires dated official evidence', () => {
   assert.throws(() => applyResolutions([base], [base], [], [{ ccn: base.ccn, base, action: 'exempt-closed',
@@ -625,7 +765,7 @@ test('exact-pointer changed-file overlays retain the displaced standing row in h
   for (const replacement of replacements) {
     const current = byCcn.get(replacement.ccn);
     const prior = view.history[replacement.ccn];
-    assert.equal(current.finding, 'mrf-template-version-noncanonical');
+    assert.equal(current.finding, 'compliant-observed');
     assert.equal(current.mrf_url, replacement.observed_mrf_url);
     assert.equal(prior.mrf_url, replacement.standing_mrf_url);
     assert.equal(prior.history_source, 'nationwide-overlay');

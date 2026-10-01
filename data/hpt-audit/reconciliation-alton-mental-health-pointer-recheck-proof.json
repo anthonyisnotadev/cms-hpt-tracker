@@ -1,7 +1,7 @@
 {
   "ccn": "144016",
   "hospital_name": "Alton Mental Health Center",
-  "observed_at": "2026-09-19T00:17:54Z",
+  "observed_at": "2026-09-29T21:18:00Z",
   "official_site": "https://www.dhs.state.il.us/",
   "official_identity_source": "https://www.dhs.state.il.us/onenetlibrary/12/documents/Forms/IL444-4740.pdf",
   "official_identity": "Alton Mental Health Center, 4500 College Ave., Alton, IL 62002",
@@ -10,6 +10,19 @@
   "pointer_http_status": 404,
   "pointer_server": "Microsoft-IIS/10.0",
   "pointer_content_type": "text/html",
+  "live_recheck": {
+    "observed_at": "2026-09-29T21:18:00Z",
+    "pointer_http_status": 404,
+    "pointer_server": "Microsoft-IIS/10.0",
+    "pointer_content_type": "text/html",
+    "search_result": "Current Illinois DHS search results continue to identify Alton Mental Health Center at 4500 College Avenue; no pricing or CMS MRF route was found.",
+    "search_source_urls": [
+      "https://www.dhs.state.il.us/OneNetLibrary/27896/documents/By_Division/MentalHealth/ProviderManual/FY18/Forensic-Hndbk-FY18.pdf",
+      "https://www.dhs.state.il.us/OneNetLibrary/27897/documents/HumanResources/MHTTFacilitiesMap.pdf"
+    ],
+    "mrf_bytes_retrieved": false,
+    "interpretation": "A repeat 404 is transport/route evidence only; it does not establish that no MRF exists or support compliance/noncompliance. No disposition change."
+  },
   "pricing_route": "not identified on the checked first-party domain",
   "disposition": "official-identity-reconfirmed-pointer-still-not-published-unresolved",
   "next_action": "Recheck the current Illinois DHS facility/pricing route and recover a publisher-hosted CMS CSV or JSON MRF, or obtain publisher confirmation. Verify complete bytes, exact facility identity/address/Illinois state, declared date/version and rate-level usability before promotion; retain the 404 as an access observation, not a compliance conclusion."

@@ -37,7 +37,9 @@ test('Bellville replaces the wrong-state assignment with the current page file w
   assert.equal(latest.standing_finding, 'compliant-observed');
   const standing = reconciliation.find(row => row.ccn === '450253');
   assert.equal(standing.standing_finding, 'compliant-observed');
-  assert.equal(standing.workstream, 'standing-evidence-follow-up');
+  assert.equal(standing.workstream, 'genuinely-unresolved-investigation');
+  assert.equal(standing.latest_observation_superseded, false);
+  assert.match(standing.next_action, /complete-file access/);
   assert.equal(observations.find(row => row.ccn === '450253').proof_file,
     'reconciliation-bellville-site-correction-proof.json');
   const gap = loadReviewedView(path.join(root, 'data/hpt-audit')).gaps.find(row => row.ccn === '450253');

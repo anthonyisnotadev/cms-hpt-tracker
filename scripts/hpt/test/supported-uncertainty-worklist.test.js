@@ -23,7 +23,7 @@ test('every supported uncertainty has a source-bound, distinct follow-up', () =>
       'mrf-address-field-incomplete'].includes(row.standing_finding)).length;
   assert.equal(saved.summary.total, supportedCount + reviewedConflictCount);
   assert.equal(saved.summary.by_gate['reviewed-file-address-conflict'], 8);
-  assert.equal(saved.summary.by_gate['reviewed-file-license-state-conflict'], 39);
+  assert.equal(saved.summary.by_gate['reviewed-file-license-state-conflict'], 37);
   assert.equal(saved.summary.by_gate['reviewed-file-address-incomplete'], 3);
   assert.equal(saved.summary.total, Object.values(saved.summary.by_gate).reduce((sum, count) => sum + count, 0));
   assert.equal(new Set(saved.records.map(row => row.ccn)).size, saved.records.length);

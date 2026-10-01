@@ -24,12 +24,17 @@ test('Maryland psychiatric follow-ups retain exact cached sibling-pointer bounda
     .records.map(row => [row.ccn, row]));
   const queue = new Map(JSON.parse(fs.readFileSync(path.join(audit, 'unresolved-investigation-worklist.json')))
     .records.map(row => [row.ccn, row]));
+  const snapshot = JSON.parse(fs.readFileSync(path.join(audit, 'nationwide-verification.json')));
+  const snapshotByCcn = new Map(snapshot.records.map(row => [row.ccn, row]));
   for (const ccn of ccns) {
     assert.equal(manual.get(ccn)?.proof_file, 'reconciliation-maryland-psychiatric-pointer-coverage-proof.json');
     assert.equal(manual.get(ccn)?.pointer_cached_sha256, proof.pointer.sha256);
-    assert.equal(queue.get(ccn)?.current_disposition, 'pointer-facility-match-unresolved');
-    assert.deepEqual(queue.get(ccn)?.reviewed_sources, ['manual-access']);
-    assert.equal(queue.get(ccn)?.candidate_file_recorded, false);
-    assert.match(queue.get(ccn)?.next_action, /Do not assign the Western Maryland or Deers Head files/);
+    assert.equal(manual.get(ccn)?.latest_scope_review?.proof_file,
+      'reconciliation-maryland-state-hospital-scope-proof-2026-09-27.json');
+    assert.equal(manual.get(ccn)?.latest_scope_review?.pointer_mrf_status,
+      'unresolved-not-asserted-by-this-scope-classification');
+    assert.equal(queue.has(ccn), true, 'state operation alone does not establish the CMS exception');
+    assert.notEqual(snapshotByCcn.get(ccn)?.disposition, 'scope-exempt-state-hospital');
+    assert.equal(snapshotByCcn.get(ccn)?.mrf_url, '');
   }
 });

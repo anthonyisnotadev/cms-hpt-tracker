@@ -1,6 +1,6 @@
 {
   "ccn": "090004",
-  "observed_at": "2026-09-27T07:18:00Z",
+  "observed_at": "2026-09-28T23:57:31Z",
   "existing_current_file_proof": "reconciliation-medstar-georgetown-complete-file-proof-2026-09-26.json",
   "file_url": "https://www.medstarhealth.org/-/media/project/mho/medstar/billing-and-insurance/2026/522218584_medstar_georgetown_university_hospital_standardcharges.csv",
   "file_bytes": 130616328,
@@ -15,6 +15,28 @@
     "last_updated_on": "2026-04-01"
   },
   "sources": [
+    {
+      "kind": "current-cms-csv-data-dictionary-v3",
+      "observed_at": "2026-09-28T23:57:31Z",
+      "dictionary_version": "3.0",
+      "dictionary_url": "https://github.com/CMSgov/hospital-price-transparency/blob/master/documentation/CSV/README.md",
+      "dictionary_raw_url": "https://raw.githubusercontent.com/CMSgov/hospital-price-transparency/master/documentation/CSV/README.md",
+      "dictionary_http_status": 200,
+      "dictionary_bytes": 37031,
+      "dictionary_sha256": "5129da0141428d689f79110a10a95607581ee3bef81fb0d937a6d39a6bf39dcc",
+      "state_codes_url": "https://github.com/CMSgov/hospital-price-transparency/blob/master/documentation/CSV/state_codes.md",
+      "state_codes_raw_url": "https://raw.githubusercontent.com/CMSgov/hospital-price-transparency/master/documentation/CSV/state_codes.md",
+      "state_codes_http_status": 200,
+      "state_codes_bytes": 4086,
+      "state_codes_sha256": "54fc6f0dd75bc67118f47b536a2ba11a23225cb09fd3969d2b0cd4409840541e",
+      "field_definition": "Hospital license number and the licensing state or territory's two-letter abbreviation for the hospital location(s) represented by the file.",
+      "valid_codes": {
+        "District of Columbia": "DC",
+        "Maryland": "MD"
+      },
+      "interpretation": "CMS's current v3.0 instructions establish that the suffix identifies licensing jurisdiction, not merely hospital location. The current MRF declares a DC hospital address and uses a DC-associated license identifier but encodes MD; the state-code table distinguishes DC from MD. This confirms the metadata conflict is substantive under the published schema, but does not explain publisher intent or establish current license status.",
+      "limitation": "CMS dictionary guidance does not identify this hospital's licensing jurisdiction; facility-specific DC sources are separately retained above. The current conflict still requires publisher correction or explanation."
+    },
     {
       "kind": "current-dc-health-hospital-directory",
       "url": "https://dchealth.dc.gov/sites/default/files/dc/sites/doh/service_content/attachments/Hospital%20Directory_3.pdf",
@@ -32,6 +54,25 @@
       "limitation": "Confirms current DC hospital identity and jurisdiction; does not publish license number HFD01-0188 or explain the MRF's MD column suffix."
     },
     {
+      "kind": "current-dc-health-2026-licensure-survey-report",
+      "url": "https://dchealth.dc.gov/sites/default/files/dc/sites/doh/publication/attachments/Georgetown%20University%20survey%2012-18-25%20PoC.pdf",
+      "source_page": "https://dchealth.dc.gov/node/1830186",
+      "source_page_title": "MedStar Georgetown University Hospital - Licensure Inspection Reports 2026",
+      "source_page_posted_date": "2026-05-08",
+      "report_printed_date": "2026-05-07",
+      "survey_completed_date": "2025-12-18",
+      "http_status": 206,
+      "content_range": "bytes 0-65535/403855",
+      "sample_bytes": 65536,
+      "sample_sha256": "b83be733ce8688134fa0256428175df8048eb07d0907d83aa9df8e7e0b2e0ca0",
+      "department": "DC Department of Health, Health Regulation & Licensing Administration",
+      "report_provider_supplier_clia_id": "HFD01-0188",
+      "report_facility": "MEDSTAR GEORGETOWN UNIVERSITY, 3800 RESERVOIR RD, WASHINGTON, DC 20007",
+      "observation": "The official 2026 licensure inspection report uses HFD01-0188 as the provider/supplier/CLIA identification number for MedStar Georgetown University Hospital at its Washington DC address. This is current regulatory-identifier evidence; the report does not explicitly label the ID a current state license number and does not explain the MRF's license_number|MD suffix.",
+      "browser_observation": "Codex in-app browser opened the exact PDF URL but timed out and exposed only the PDF URL in its accessibility tree; the report text was independently extracted by the web reader and a bounded HTTP range request succeeded. Browser rendering failure is not attributed to the facility.",
+      "limitation": "Corroborates the current DC Health association of HFD01-0188 with this DC facility, but does not resolve the MRF field's literal MD state suffix."
+    },
+    {
       "kind": "historical-license-certificate",
       "url": "https://www.kff.org/wp-content/uploads/sites/2/2013/05/georgetown-proton-therapy-application.pdf",
       "source_host": "KFF document mirror",
@@ -45,18 +86,51 @@
     {
       "kind": "2024-form-990-schedule-h-filed-with-irs",
       "canonical_filing_index": "https://projects.propublica.org/nonprofits/organizations/522218584",
+      "irs_filing_index": "https://apps.irs.gov/pub/epostcard/990/xml/2026/index_2026.csv",
+      "irs_index_http_status": 200,
+      "irs_index_bytes": 54053964,
+      "irs_index_rows": 436239,
+      "irs_index_record": {
+        "RETURN_ID": "24675593",
+        "FILING_TYPE": "EFILE",
+        "EIN": "522218584",
+        "TAX_PERIOD": "202506",
+        "SUB_DATE": "2026",
+        "TAXPAYER_NAME": "THE MEDSTAR-GEORGETOWN MEDICAL CENTER INC",
+        "RETURN_TYPE": "990",
+        "DLN": "93493131004066",
+        "OBJECT_ID": "202611319349300406",
+        "XML_BATCH_ID": "2026_TEOS_XML_05A"
+      },
+      "irs_batch_url": "https://apps.irs.gov/pub/epostcard/990/xml/2026/2026_TEOS_XML_05A.zip",
+      "irs_batch_http_status": 200,
+      "irs_batch_bytes": 521158638,
+      "irs_batch_last_modified": "2026-06-17T13:13:47Z",
+      "irs_batch_etag": "\"1f103fee-65472d4793c80\"",
+      "irs_batch_member": "202611319349300406_public.xml",
+      "irs_batch_member_compression": "Deflate64 (ZIP method 9)",
+      "irs_batch_member_compressed_bytes": 30609,
+      "irs_batch_member_uncompressed_bytes": 191603,
+      "irs_batch_member_range": "bytes 296730677-296761345/521158638",
+      "irs_batch_central_directory_range": "bytes 514845640-521158637/521158638",
+      "irs_batch_central_directory_sha256": "74f163c4df6b410d1ee7259871d783e2c7a26e2669260866ba5799179d44886d",
+      "irs_xml_sha256": "e4c2dd66427b6f359af20e4bc8d2b5c8c799097e58a08b2af1c22dcb6b2f6474",
+      "irs_xml_bytes": 191603,
       "filing_submission_date": "2026-05-11",
       "organization": "THE MEDSTAR-GEORGETOWN MEDICAL CENTER INC",
       "ein": "52-2218584",
+      "tax_year": 2024,
+      "tax_period_end": "2025-06-30",
       "schedule_h_facility": "DBA GEORGETOWN UNIVERSITY HOSPITAL",
       "schedule_h_address": "3800 RESERVOIR ROAD NW, WASHINGTON, DC 20007",
       "schedule_h_state_license_number": "HFD01-0188",
-      "retrieved_rendered_excerpt_url": "search result for 2024 IRS Schedule H rendered filing; temporary signed source URL omitted",
-      "limitation": "The extracted 2024 Schedule H is a public filing rendition, not a live first-party MedStar license record. The raw IRS-hosted PDF was fetched (2,759,788 bytes; SHA-256 07AC1F99BAF943DF77907A380755C5D5660680BF5469FE1F65C4E94C1ACA9560) but is a scanned TIFF wrapper with no extractable text; this exact Schedule H field was not independently OCR-verified from that copy."
+      "retrieval_method": "The IRS index row identifies the exact XML object and batch. Used ordinary HTTP byte ranges to retrieve only the batch central directory and the exact ZIP member; the member was extracted and hashed. No full 521 MB archive download was made.",
+      "interpretation": "The IRS-filed Schedule H XML explicitly labels HFD01-0188 as STATE LICENSE NUMBER for DBA Georgetown University Hospital at 3800 Reservoir Road NW, Washington, DC 20007. This primary filing resolves the identifier's facility and DC-jurisdiction association; it does not validate the license beyond the 2024 tax-period report or explain the MRF's literal license_number|MD suffix.",
+      "limitation": "This is a 2024 tax-year organization filing, not a current license-status certificate and not publisher clarification of the MRF field suffix."
     }
   ],
-  "finding": "Current DC Health directory evidence independently identifies MedStar-Georgetown University Hospital as an acute-care facility at 3800 Reservoir Road NW, Washington, DC 20007. The exact license number HFD01-0188 has historical DC-issued provenance and is repeated as the state license number in a 2024 Schedule H public filing rendition, but neither establishes current validity. The current MRF's literal license_number|MD suffix remains unexplained and conflicts with the facility's DC jurisdiction; the number itself is not evidence of a Maryland facility.",
+  "finding": "Current DC Health directory evidence identifies MedStar-Georgetown University Hospital as an acute-care facility at 3800 Reservoir Road NW, Washington, DC 20007. The exact IRS-hosted 2024 Schedule H XML for the MedStar Georgetown organization names DBA Georgetown University Hospital at that exact DC address and labels HFD01-0188 as STATE LICENSE NUMBER; a 2026 DC Health licensure inspection report separately associates HFD01-0188 with the same DC facility. This resolves the identifier's facility and DC-jurisdiction association and shows the current MRF's literal license_number|MD suffix is a source-field metadata conflict, not evidence that the MRF belongs to a Maryland hospital. The filing is tax-year 2024 and does not establish license validity beyond that reporting period or explain/correct the MRF suffix.",
   "disposition": "narrowed-license-metadata-suffix-conflict-retained",
   "count_effect": "none; retain CCN 090004 as unresolved pending publisher correction or explanation of the literal MD suffix",
-  "next_action": "Ask MedStar to confirm whether license_number|MD is an erroneous header suffix or how it applies to the DC facility; preserve the current file bytes/hash and do not infer a current license from the historical certificate."
+  "next_action": "Keep CCN 090004 unresolved only for the MRF's literal license_number|MD state suffix. Preserve the complete current MRF bytes/hash and the IRS/DC Health source proofs. If publisher clarification becomes authorized or is otherwise published, ask whether the suffix is a mapping error and require a corrected header or documented schema explanation before resolving the source-field conflict; do not infer license validity beyond the dated 2024 filing."
 }

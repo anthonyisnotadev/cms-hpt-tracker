@@ -28,8 +28,8 @@ test('Saint Mary current operator proof retains exact campus and version uncerta
   const view = loadReviewedView(audit);
   const row = view.compliance.find(item => item.ccn === '140180');
   assert.equal(row.domain, 'saintmaryofnazarethhospital.com');
-  assert.equal(row.finding, 'mrf-template-version-noncanonical');
+  assert.equal(row.finding, 'compliant-observed');
   assert.equal(row.cms_template_version, '3.0');
   assert.equal(view.history['140180'].domain, 'healthcare.ascension.org');
-  assert.equal(classifyRow(row, null).intervention, 'file-template-version-review');
+  assert.equal(classifyRow(row, null).intervention, 'none');
 });

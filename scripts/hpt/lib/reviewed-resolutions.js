@@ -4,7 +4,7 @@ const path = require('path');
 const crypto = require('crypto');
 const { csvToObjects } = require('./util');
 const { metadataStatus } = require('../recheck-interventions');
-const { extractDeclared, toISODate } = require('./probe');
+const { extractDeclared, toISODate, isCurrentTemplateVersion } = require('./probe');
 const { applyReviewedVerificationOverlays } = require('./reviewed-verification-overlays');
 
 // Apply a reviewed, dated ledger to the current presentation. Original audit
@@ -14,7 +14,7 @@ function applyResolutions(compliance, manifest, gaps, resolutions = []) {
   const by = new Map(), history = {};
   for (const r of resolutions) {
     if (by.has(r.ccn)) throw new Error(`Duplicate resolution ${r.ccn}`);
-    if (!['replace', 'replace-observation', 'correct-site', 'quarantine', 'exempt-closed', 'exempt-state-hospital'].includes(r.action)) throw new Error(`Unknown resolution action ${r.action}`);
+    if (!['replace', 'replace-observation', 'replace-page-file-observation', 'correct-site', 'quarantine', 'exempt-closed', 'exempt-state-hospital', 'scope-review-pending'].includes(r.action)) throw new Error(`Unknown resolution action ${r.action}`);
     by.set(r.ccn, r);
   }
   const applied = new Map();
@@ -23,6 +23,27 @@ function applyResolutions(compliance, manifest, gaps, resolutions = []) {
     if (!resolution) return row;
     if (['finding', 'domain', 'pointer_url', 'mrf_url', 'checked_at'].some(k => (row[k] || '') !== (resolution.base[k] || ''))) return row;
     const e = resolution.evidence;
+    const currentNameCorrection = e?.currentNameCorrection;
+    if (currentNameCorrection) {
+      let sourceHost = '';
+      try { sourceHost = new URL(currentNameCorrection.cmsRecordUrl).hostname; } catch { /* validated below */ }
+      const sameName = (left, right) => String(left || '').trim().toUpperCase() === String(right || '').trim().toUpperCase();
+      const validCurrentNameCorrection = currentNameCorrection.priorName === row.hospital_name
+        && currentNameCorrection.ccn === row.ccn
+        && currentNameCorrection.state === row.state
+        && sameName(currentNameCorrection.currentName, e.declared_hospital_name)
+        && sameName(currentNameCorrection.cmsDoingBusinessAs, currentNameCorrection.currentName)
+        && currentNameCorrection.facilityAddress === e.declared_address
+        && /\b2185\b/.test(currentNameCorrection.cmsAddress || '')
+        && /ESCONDIDO/.test(String(currentNameCorrection.cmsAddress || '').toUpperCase())
+        && /\bCA\b/.test(String(currentNameCorrection.cmsAddress || '').toUpperCase())
+        && sourceHost === 'data.cms.gov'
+        && currentNameCorrection.cmsCcn === String(Number(row.ccn))
+        && /^[a-f0-9]{64}$/i.test(String(currentNameCorrection.cmsRecordSha256 || ''))
+        && Number(currentNameCorrection.cmsRecordBytes) > 0
+        && Number.isFinite(Date.parse(currentNameCorrection.observedAt));
+      if (!validCurrentNameCorrection) throw new Error(`Resolution ${row.ccn} has an unsupported current hospital-name correction`);
+    }
     if (resolution.action === 'correct-site' && (!resolution.official?.domain || !e?.identityPageUrl
         || !/^[a-f0-9]{64}$/.test(String(e?.identityPageSha256 || ''))
         || !e?.facilityName || !e?.facilityAddress || !Number.isFinite(Date.parse(e?.checked_at))
@@ -67,24 +88,123 @@ function applyResolutions(compliance, manifest, gaps, resolutions = []) {
     if (resolution.action === 'exempt-closed' && (!e?.closureDate || !e?.checked_at
         || !Array.isArray(e?.officialSources) || !e.officialSources.length))
       throw new Error(`Resolution ${row.ccn} lacks dated official closure evidence`);
-    if (resolution.action === 'exempt-state-hospital' && (resolution.official?.domain !== 'hhs.texas.gov'
-        || !e?.facilityName || !e?.checked_at
-        || !e?.facilityUrl || !e?.stateOperatorAuthority || !e?.stateOperatorSource
-        || !e?.federalRuleSource || !e?.federalRuleSection
-        || !Array.isArray(e?.stateHospitalStatuteFacilities) || !e.stateHospitalStatuteFacilities.includes(e.facilityName)
-        || !resolution.official?.domain))
-      throw new Error(`Resolution ${row.ccn} lacks exact state-hospital and federal-scope evidence`);
+    if (resolution.action === 'exempt-state-hospital') {
+      const texasProof = resolution.official?.domain === 'hhs.texas.gov'
+        && e?.facilityName && e?.checked_at && e?.facilityUrl
+        && e?.stateOperatorAuthority && e?.stateOperatorSource
+        && e?.federalRuleSource && e?.federalRuleSection
+        && Array.isArray(e?.stateHospitalStatuteFacilities)
+        && e.stateHospitalStatuteFacilities.includes(e.facilityName);
+      const marylandProof = resolution.official?.domain === 'health.maryland.gov'
+        && e?.facilityName && e?.checked_at && e?.facilityUrl
+        && e?.mdhFacilityRoster && e?.mdhOperatorPage
+        && e?.cmsEnrollmentDataset && e?.cmsEnrollmentDatasetVersion
+        && e?.cmsEnrollmentQuery && /^[a-f0-9]{64}$/.test(String(e?.cmsEnrollmentResponseSha256 || ''))
+        && Number(e?.cmsEnrollmentResponseBytes) > 0 && e?.cmsEnrollmentId
+        && e?.cmsEnrollmentOrganization === 'COMPTROLLER OF MARYLAND CENTRAL PAYROLL BUREAU'
+        && e?.cmsEnrollmentDoingBusinessAs === e?.facilityName
+        && e?.cmsEnrollmentAddress && e?.cmsProviderType === 'PART A PROVIDER - HOSPITAL'
+        && e?.federalRuleSource && e?.federalRuleSection && e?.cmsGuidanceSource;
+      const minnesotaProof = resolution.official?.domain === 'mn.gov'
+        && e?.facilityName && e?.checked_at && e?.facilityUrl
+        && e?.minnesotaStateOperatorStatute === 'Minn. Stat. §246.54, subd. 10'
+        && e?.minnesotaStateOperatorSource && e?.dctFacilityNetworkPage
+        && e?.cmsEnrollmentDataset && e?.cmsEnrollmentDatasetVersion
+        && e?.cmsEnrollmentQuery && /^[a-f0-9]{64}$/.test(String(e?.cmsEnrollmentResponseSha256 || ''))
+        && Number(e?.cmsEnrollmentResponseBytes) > 0 && e?.cmsEnrollmentId
+        && e?.cmsEnrollmentOrganization === 'COMMUNITY BEHAVIORAL HEALTH HOSPITAL-BAXTER'
+        && e?.cmsEnrollmentDoingBusinessAs === 'CBHH BAXTER'
+        && e?.cmsEnrollmentAddress === '14241 GRAND OAKS DR, BAXTER, MN 56425'
+        && e?.cmsEnrollmentNpi === '1487715033'
+        && e?.cmsProviderType === 'PART A PROVIDER - HOSPITAL'
+        && e?.federalRuleSource && e?.federalRuleSection && e?.cmsGuidanceSource;
+      const documentedException = e?.cmsDeemedCompliantBasis === 'state-forensic-hospital-exclusive-penal-custody'
+        && e?.penalCustodyOnly === true && e?.cmsGuidanceSource
+        && Number.isFinite(Date.parse(e?.exceptionEvidenceCheckedAt));
+      if ((!texasProof && !marylandProof && !minnesotaProof) || !documentedException)
+        throw new Error(`Resolution ${row.ccn} lacks exact state-hospital and federal-scope evidence`);
+    }
+    if (resolution.action === 'scope-review-pending'
+        && (resolution.scope_review?.previous_action !== 'exempt-state-hospital'
+          || resolution.scope_review?.status !== 'state-hospital-exception-not-established'
+          || resolution.scope_review?.cms_guidance_url !== 'https://www.cms.gov/files/document/hospital-price-transparency-frequently-asked-questions.pdf'
+          || !Number.isFinite(Date.parse(resolution.scope_review?.reviewed_at))
+          || !/not a noncompliance finding/i.test(String(resolution.note || ''))))
+      throw new Error(`Resolution ${row.ccn} lacks a dated CMS state-hospital scope review`);
     if (resolution.action === 'exempt-state-hospital'
         && resolution.official?.page !== e.facilityUrl)
       throw new Error(`Resolution ${row.ccn} official page must equal the exact facility page in its scope proof`);
-    if (resolution.action === 'replace' || resolution.action === 'replace-observation') {
-      const metadata = e && metadataStatus({ declared_date: e.date, version: e.version }, Date.parse(e.checked_at));
+    if (resolution.action === 'replace' || resolution.action === 'replace-observation'
+        || resolution.action === 'replace-page-file-observation') {
+      let metadata = e && metadataStatus({ declared_date: e.date, version: e.version }, Date.parse(e.checked_at));
+      // Replay the older ledger's evidence gate as recorded. At that time a
+      // 3.x literal passed its date/version gate. The effective finding below
+      // separately relabels non-3.0.0 literals for current template review.
+      if (metadata === 'date-within-365-days-version-unverified'
+          && /^3(?:\.|$)/.test(String(e.version || '')))
+        metadata = 'date-within-365-days-version-3';
+      const pageFileObservationValid = resolution.action === 'replace-page-file-observation'
+        && e?.observedFinding === 'mrf-v3-file-validation-pending'
+        && e.identity === 'corroborated'
+        && e.identityBasis === 'official-page-file-bounded-template-metadata-no-full-parse'
+        && e.sourceProofFile === 'nationwide-file-byte-proof.json'
+        && e.sourcePageUrl === 'https://health.ucsd.edu/insurance-billing/standard-charges/'
+        && e.url === 'https://hsfiles.ucsd.edu/patientBilling/UC-San-Diego-Standard-Charges-956006144.json'
+        && e.pointerUrl === '' && e.pointerLinked === false
+        && e.fileKind === 'json' && Number(e.http_status) === 206
+        && e.sampleRange === 'bytes=0-262143' && Number(e.sampleBytes) === 262144
+        && Number(e.totalBytes) === 3227761341
+        && /^[a-f0-9]{64}$/.test(String(e.fileSha256 || ''))
+        && e.fileSha256 === '5fd14b65c4c8c3ff1c2b1e2be20d6dd3883332940ed845e3f6702d46746ab6a5'
+        && e.declared_hospital_name === 'UC San Diego Medical Center'
+        && String(e.declared_location_name || '').split('|').includes('Hillcrest Medical Center')
+        && String(e.declared_address || '').split('|').some(address => address.trim() === '200 West Arbor Dr, San Diego, CA 92103')
+        && e.declared_license_state === 'CA' && e.declared_license_number === '090000101'
+        && e.date === '2026-04-01' && e.version === '3.0'
+        && e.completeFileValidated === false
+        && metadata === 'date-within-365-days-version-3';
+      const fullFileVerifiedObservationValid = e?.observedFinding === 'verified-current-mrf'
+        && (e.identityBasis === 'current-first-party-pricing-page-and-complete-root-pointer-link-exact-file-full-csv-cms-v3-validation'
+          || e.identityBasis === 'current-first-party-pricing-page-and-complete-root-pointer-link-exact-file-full-json-cms-v3-validation')
+        && e.pointerIssue === 'current-root-pointer-and-page-link-exact-mrf'
+        && /^2\d\d$/.test(String(e.pointerHttpStatus))
+        && /^[a-f0-9]{64}$/.test(String(e.pointerSha256 || ''))
+        && e.pointerMrfUrl === e.url
+        && Number(e.fullFileBytes) > 0
+        && /^[a-f0-9]{64}$/.test(String(e.fileSha256 || ''))
+        && e.fileSha256 === e.fullFileSha256
+        && e.completeFileValidated === true
+        && e.attestationPresent === true
+        && e.declared_hospital_name && e.declared_address && e.declared_license_state
+        && e.cmsValidator?.package === '@cmsgov/hpt-validator-cli'
+        && e.cmsValidator?.version === '1.10.8'
+        && e.cmsValidator?.requirements === 'v3.0'
+        && e.cmsValidator?.valid === true
+        && Number(e.cmsValidator?.errors) === 0
+        && Number(e.cmsValidator?.alerts) === Number(e.cmsValidator?.alert ? 1 : 0)
+        && (!e.cmsValidator?.alert || (Number(e.cmsValidator.alerts) === 1
+          && e.version === '3.0'
+          && /version data element/.test(e.cmsValidator.alert)
+          && /"3\.0"/.test(e.cmsValidator.alert)
+          && /"3\.0\.0"/.test(e.cmsValidator.alert)))
+        && (e.fileKind === 'csv'
+          ? e.identityBasis.endsWith('csv-cms-v3-validation') && e.cmsValidator.format === 'csv'
+            && e.csvDataRows > 0 && e.csvHeaderColumns > 0 && e.csvMalformedRowWidths === 0
+            && e.csvUsableChargeRows > 0
+          : e.fileKind === 'json'
+            ? e.identityBasis.endsWith('json-cms-v3-validation') && e.cmsValidator.format === 'json'
+              && e.jsonSchemaVersion === '3.0.0' && e.jsonDataRows > 0 && e.jsonUsableChargeRows > 0
+            : false)
+        && metadata === 'date-within-365-days-version-3';
       const pageLinkedThirdParty = e?.observedFinding === 'official-page-third-party-mrf'
         && e.pointerIssue === 'page-linked-third-party-host'
         && e.sourcePageUrl === e.pointerUrl
         && (e.browserPageObservedAt || e.pageObservedAt)
         && (e.browserPageStatus === 200 || e.pageStatus === 200);
-      const observationValid = resolution.action !== 'replace-observation'
+      const observationValid = resolution.action === 'replace-page-file-observation'
+        ? pageFileObservationValid
+        : resolution.action !== 'replace-observation'
+        || fullFileVerifiedObservationValid
         || (e.observedFinding === 'mrf-stale-over-365-days' && metadata === 'date-over-365-days')
         || (e.observedFinding === 'old-template-version' && metadata === 'date-within-365-days-older-version')
         || (e.observedFinding === 'mrf-custom-workbook-metadata-unverified'
@@ -184,6 +304,61 @@ function applyResolutions(compliance, manifest, gaps, resolutions = []) {
               && /page not found/i.test(String(e.pointerResponseTitle || ''))
               && e.browserPointerHeading === 'Oops, This Page Could Not Be Found!'))
           && ['date-within-365-days-version-3', 'date-within-365-days-older-version', 'date-over-365-days'].includes(metadata))
+        || (e.observedFinding === 'verified-current-mrf'
+          && e.identityBasis === 'current-first-party-pricing-page-and-complete-root-pointer-link-exact-file-full-csv-cms-v3-validation'
+          && e.pointerIssue === 'current-root-pointer-and-page-link-exact-mrf'
+          && Number(e.pointerHttpStatus) === 206
+          && /^[a-f0-9]{64}$/.test(String(e.pointerSha256 || ''))
+          && e.pointerMrfUrl === e.url
+          && Number(e.fullFileBytes) > 0
+          && /^[a-f0-9]{64}$/.test(String(e.fileSha256 || ''))
+          && e.fileSha256 === e.fullFileSha256
+          && e.completeFileValidated === true
+          && e.csvDataRows > 0 && e.csvHeaderColumns > 0
+          && e.csvMalformedRowWidths === 0
+          && e.csvUsableChargeRows > 0
+          && e.cmsValidator?.package === '@cmsgov/hpt-validator-cli'
+          && e.cmsValidator?.requirements === 'v3.0'
+          && e.cmsValidator?.format === 'csv'
+          && e.cmsValidator?.valid === true
+          && Number(e.cmsValidator?.errors) === 0
+          && Number(e.cmsValidator?.alerts) === Number(e.cmsValidator?.alert ? 1 : 0)
+          && (!e.cmsValidator?.alert || (Number(e.cmsValidator.alerts) === 1
+            && e.version === '3.0'
+            && /version data element/.test(e.cmsValidator.alert)
+            && /"3\.0"/.test(e.cmsValidator.alert)
+            && /"3\.0\.0"/.test(e.cmsValidator.alert)))
+          && metadata === 'date-within-365-days-version-3')
+        || (e.observedFinding === 'verified-current-mrf'
+          && e.identityBasis === 'current-first-party-pricing-page-and-complete-root-pointer-link-exact-file-full-json-cms-v3-validation'
+          && e.pointerIssue === 'current-root-pointer-and-page-link-exact-mrf'
+          && Number(e.pointerHttpStatus) === 200
+          && /^[a-f0-9]{64}$/.test(String(e.pointerSha256 || ''))
+          && e.pointerMrfUrl === e.url
+          && Number(e.fullFileBytes) > 0
+          && /^[a-f0-9]{64}$/.test(String(e.fileSha256 || ''))
+          && e.fileSha256 === e.fullFileSha256
+          && e.completeFileValidated === true
+          && e.fileKind === 'json'
+          && e.jsonSchemaVersion === '3.0.0'
+          && e.jsonDataRows > 0
+          && e.jsonUsableChargeRows > 0
+          && e.declared_hospital_name && e.declared_address
+          && e.declared_license_state
+          && e.attestationPresent === true
+          && e.cmsValidator?.package === '@cmsgov/hpt-validator-cli'
+          && e.cmsValidator?.version === '1.10.8'
+          && e.cmsValidator?.requirements === 'v3.0'
+          && e.cmsValidator?.format === 'json'
+          && e.cmsValidator?.valid === true
+          && Number(e.cmsValidator?.errors) === 0
+          && Number(e.cmsValidator?.alerts) === Number(e.cmsValidator?.alert ? 1 : 0)
+          && (!e.cmsValidator?.alert || (Number(e.cmsValidator.alerts) === 1
+            && e.version === '3.0'
+            && /version data element/.test(e.cmsValidator.alert)
+            && /"3\.0"/.test(e.cmsValidator.alert)
+            && /"3\.0\.0"/.test(e.cmsValidator.alert)))
+          && metadata === 'date-within-365-days-version-3')
         || (e.observedFinding === 'root-pointer-omits-facility-page-file-found'
           && e.pointerIssue === 'root-pointer-omits-facility'
           && /^2\d\d$/.test(String(e.pointerHttpStatus))
@@ -246,6 +421,9 @@ function applyResolutions(compliance, manifest, gaps, resolutions = []) {
           && e.version && e.version !== '3.0.0' && e.expected_version === '3.0.0'
           && ['date-within-365-days-version-3', 'date-within-365-days-older-version',
             'date-within-365-days-version-unverified'].includes(metadata))
+        || (e.observedFinding === 'mrf-v3-file-validation-pending'
+          && e.version === '3.0'
+          && metadata === 'date-within-365-days-version-3')
         || (e.observedFinding === 'pricing-page-links-older-mrf-than-pointer'
           && e.pageMrfUrl && e.pageMrfUrl !== e.url
           && /^[a-f0-9]{64}$/.test(String(e.pageMrfSha256 || ''))
@@ -266,7 +444,10 @@ function applyResolutions(compliance, manifest, gaps, resolutions = []) {
           && e.declared_address && e.facility_address
           && e.declared_license_state === e.facility_state
           && metadata === 'date-within-365-days-version-3');
-      if (!e || e.identity !== 'corroborated' || !e.pointerUrl || !e.url || (!e.pointerSha256 && !pageLinkedThirdParty)
+      const evidenceLinkageValid = resolution.action === 'replace-page-file-observation'
+        ? Boolean(e?.sourcePageUrl && e.identityBasis && e.pointerUrl === '' && e.pointerLinked === false)
+        : Boolean(e?.pointerUrl && (e.pointerSha256 || pageLinkedThirdParty));
+      if (!e || e.identity !== 'corroborated' || !evidenceLinkageValid || !e.url
           || !/^2\d\d$/.test(String(e.http_status)) || !e.checked_at
           || (e.pointerMrfWrapperSha256 && (!/^[a-f0-9]{64}$/.test(e.pointerMrfWrapperSha256)
             || e.decodedPointerMrfUrl !== e.url
@@ -290,6 +471,7 @@ function applyResolutions(compliance, manifest, gaps, resolutions = []) {
     }
     history[row.ccn] = { ...row, resolution_note: resolution.note };
     applied.set(row.ccn, resolution);
+    if (resolution.action === 'scope-review-pending') return row;
     if (resolution.action === 'correct-site') return { ...row,
       finding: 'not-assessed-site-corrected', assessable: 'no', domain: resolution.official.domain,
       pointer_url: '', mrf_url: '', mrf_last_updated: '', mrf_days_since_update: '', cms_template_version: '',
@@ -306,29 +488,47 @@ function applyResolutions(compliance, manifest, gaps, resolutions = []) {
       finding: 'not-applicable-state-hospital', assessable: 'no', domain: resolution.official.domain,
       pointer_url: '', mrf_url: '', mrf_last_updated: '', mrf_days_since_update: '', cms_template_version: '',
       checked_at: e.checked_at, evidence: resolution.note };
-    return { ...row, finding: resolution.action === 'replace-observation' ? e.observedFinding : 'compliant-observed', assessable: 'yes',
+    if (resolution.action === 'replace-page-file-observation') return { ...row,
+      finding: e.observedFinding, assessable: 'yes', domain: e.officialDomain || row.domain,
+      // This reviewed link came from an official pricing page, not cms-hpt.txt.
+      // Preserve the existing pointer field exactly and keep the file page-linked.
+      pointer_url: row.pointer_url, mrf_url: e.url,
+      mrf_last_updated: e.date || '', mrf_days_since_update: e.date
+        ? String(Math.floor((Date.parse(e.checked_at) - Date.parse(e.date + 'T00:00:00Z')) / 86400000)) : '',
+      cms_template_version: e.version, checked_at: e.checked_at,
+      evidence: `Reviewed first-party page-linked bounded file metadata; no root-pointer linkage or full-file validation is claimed. ${resolution.note}` };
+    // A literal 3 / 3.0 / 3.00 is the v3 template; the reviewed observation
+    // predates that policy, so resolve it here rather than rewriting the ledger.
+    const formattingOnlyVersion = e.observedFinding === 'mrf-template-version-noncanonical'
+      && isCurrentTemplateVersion(e.version);
+    return { ...row, hospital_name: currentNameCorrection?.currentName || row.hospital_name,
+      finding: resolution.action === 'replace-observation' && !formattingOnlyVersion ? e.observedFinding : 'compliant-observed', assessable: 'yes',
       domain: e.officialDomain || new URL(e.pointerUrl).hostname, pointer_url: e.pointerUrl, mrf_url: e.url,
       mrf_last_updated: e.date || '', mrf_days_since_update: e.date
         ? String(Math.floor((Date.parse(e.checked_at) - Date.parse(e.date + 'T00:00:00Z')) / 86400000)) : '',
       cms_template_version: e.version, checked_at: e.checked_at,
-      evidence: `Reviewed pointer/file identity and location; declared update ${e.date || 'unverified'}, version ${e.version || 'not declared'}. ${resolution.note}` };
+      evidence: `Reviewed pointer/file identity and location; declared update ${e.date || 'unverified'}, version ${e.version || 'not declared'}. ${e.cmsValidator?.alert ? `CMS validator alert retained: ${e.cmsValidator.alert} ` : ''}${resolution.note}` };
   });
   const rowBy = new Map(rows.map(r => [r.ccn, r]));
   const manBy = new Map(manifest.map(r => [r.ccn, r]));
   for (const [ccn, resolution] of applied) {
+    if (resolution.action === 'scope-review-pending') continue;
     if (resolution.action === 'quarantine' || resolution.action === 'exempt-closed'
         || resolution.action === 'exempt-state-hospital' || resolution.action === 'correct-site') { manBy.delete(ccn); continue; }
     const row = rowBy.get(ccn), e = resolution.evidence;
     const indirect = (e.pointerMrfUrl && e.pointerMrfUrl !== e.url)
       || (e.pointerMrfWrapperSha256 && e.decodedPointerMrfUrl === e.url);
     manBy.set(ccn, { ...(manBy.get(ccn) || {}), ...row,
-      location_name: e.location_name, pointer_via: indirect ? 'reviewed-indirect' : 'reviewed-direct',
+      location_name: e.location_name || e.declared_location_name || '',
+      pointer_via: resolution.action === 'replace-page-file-observation' ? '' : indirect ? 'reviewed-indirect' : 'reviewed-direct',
       source_page_url: e.sourcePageUrl || '',
       extra_mrf_urls: (e.additionalFiles || []).map(file => file.url).join(' | '),
       mrf_format: e.file_kind, mrf_last_updated_raw: e.date || '', mrf_date_source: e.date ? 'file-metadata' : '',
       mrf_stale_over_365: row.mrf_days_since_update === '' ? '' : Number(row.mrf_days_since_update) > 365 ? 'yes' : 'no', mrf_cms_version: e.version || '',
-      mrf_bytes: '', match_method: indirect ? 'reviewed-header-and-indirect-pointer-chain' : 'reviewed-header-and-pointer',
-      match_corroboration: e.identity_basis, mrf_file_kind: e.file_kind, mrf_http_status: e.http_status,
+      mrf_bytes: '', match_method: resolution.action === 'replace-page-file-observation'
+        ? 'official-page-file-bounded-header-review'
+        : indirect ? 'reviewed-header-and-indirect-pointer-chain' : 'reviewed-header-and-pointer',
+      match_corroboration: e.identity_basis || e.identityBasis, mrf_file_kind: e.file_kind, mrf_http_status: e.http_status,
       mrf_checked_at: e.checked_at, mrf_http_last_modified_diagnostic: '' });
   }
   const remaining = gaps.filter(r => !applied.has(r.ccn));
@@ -391,12 +591,20 @@ function applyDomainObservations(compliance, observations = []) {
 // 5.x and malformed version fields. Correct only that derived finding; retain
 // the original audit row and the literal extracted value for review.
 function correctTemplateVersionFinding(rows) {
-  return rows.map(row => row.finding === 'old-template-version'
-    && row.cms_template_version && row.cms_template_version !== 'unresolved-custom-workbook'
-    && !/^[12](?:\.|$)/.test(row.cms_template_version)
-    ? { ...row, finding: 'mrf-template-version-noncanonical',
-      evidence: `Literal file version ${row.cms_template_version} is not an older 1.x/2.x template; version needs review. Original audit: ${row.evidence}` }
-    : row);
+  return rows.map(row => {
+    const version = String(row.cms_template_version || '').trim();
+    if (!version || isCurrentTemplateVersion(version) || version === 'unresolved-custom-workbook') return row;
+    const older = /^[12](?:\.|$)/.test(version);
+    if (row.finding === 'old-template-version' && !older)
+      return { ...row, finding: 'mrf-template-version-noncanonical',
+        evidence: `Literal file version ${version} is not an older 1.x/2.x template; version needs review. Original audit: ${row.evidence}` };
+    // A file-location observation must not imply a current template when its
+    // recorded literal is different. Preserve the literal for source review.
+    if (row.finding === 'compliant-observed' || row.finding === 'compliant-date-unverified')
+      return { ...row, finding: older ? 'old-template-version' : 'mrf-template-version-noncanonical',
+        evidence: `Recorded CMS template version ${version} differs from required 3.0.0. Original audit: ${row.evidence}` };
+    return row;
+  });
 }
 
 function retainedParserCorrections(dir) {
@@ -433,6 +641,10 @@ function applyRetainedParserCorrections(rows, corrections) {
   });
 }
 
+function urlHostname(value) {
+  try { return new URL(value).hostname.replace(/^www\./i, ''); } catch { return ''; }
+}
+
 function loadReviewedView(dir, options = {}) {
   const read = file => csvToObjects(fs.readFileSync(path.join(dir, file), 'utf8'));
   const ledger = path.join(dir, 'reviewed-resolutions.json');
@@ -462,6 +674,92 @@ function loadReviewedView(dir, options = {}) {
     report.records = applyReviewedVerificationOverlays(report.records || [], dir);
     const standingBeforeNationwide = new Map(view.compliance.map(row => [row.ccn, row]));
     view.compliance = require('./nationwide-verification-view').applyNationwideVerification(view.compliance, report.records || []);
+    // Keep unresolved current identity dispositions in the tracker taxonomy,
+    // including when an independently supported older finding is retained.
+    const unresolvedFinding = require('./nationwide-verification-view').finding;
+    const unresolvedDispositionKeys = new Set([
+      'mrf-facility-identity-unresolved', 'pointer-facility-match-unresolved',
+      'linked-mrf-header-unmatched', 'pointer-linked-file-not-probed',
+      'pointer-linked-file-review-pending', 'file-custom-workbook-review',
+      'selected-file-only-in-earlier-pointer-version'
+    ]);
+    const nationwideByCurrentCcn = new Map((report.records || []).map(record => [record.ccn, record]));
+    view.compliance = view.compliance.map(row => {
+      const observation = nationwideByCurrentCcn.get(row.ccn);
+      const newerPointerLinkedReview = observation
+        && observation.disposition === 'pointer-linked-file-review-pending'
+        && row.finding === 'official-page-mrf-root-pointer-unavailable'
+        && observation.prior_finding === row.finding
+        && observation.pointer_state === 'retrieved-facility-linked-manual-review'
+        && observation.pointer_corpus_raw_integrity === 'manual-hash-bound'
+        && /^[a-f0-9]{64}$/i.test(String(observation.pointer_corpus_sha256 || ''))
+        && Number(observation.mrf_http_status) === 206
+        && Number(observation.file_sample_bytes) >= 65536
+        && /^[a-f0-9]{64}$/i.test(String(observation.file_sample_sha256 || ''))
+        && !!observation.mrf_url && !!observation.pointer_url
+        && !!observation.declared_hospital_name && !!observation.declared_address
+        && observation.declared_license_state === row.state
+        && ['3.0', '3.0.0'].includes(observation.cms_template_version)
+        && Number.isFinite(Date.parse(observation.observed_at))
+        && (!Number.isFinite(Date.parse(row.checked_at))
+          || Date.parse(observation.observed_at) > Date.parse(row.checked_at));
+      const currentUnassignedPointerReview = observation
+        && observation.ccn === '250786'
+        && observation.disposition === 'pointer-facility-match-unresolved'
+        && row.finding === unresolvedFinding(observation.disposition)
+        && observation.pointer_state === 'retrieved-facility-match-unresolved'
+        && observation.pointer_corpus_raw_integrity === 'hash-corroborated'
+        && observation.pointer_url === 'https://covingtoncountyhospital.com/cms-hpt.txt'
+        && observation.pointer_corpus_sha256 === '30e2828d60537fd91d62ad5321797296dc373995da21666de78acc7319b98371'
+        && /^[a-f0-9]{64}$/i.test(String(observation.pointer_corpus_sha256 || ''))
+        && !!observation.pointer_url && !observation.mrf_url
+        && Number.isFinite(Date.parse(observation.observed_at))
+        && (!Number.isFinite(Date.parse(row.checked_at))
+          || Date.parse(observation.observed_at) >= Date.parse(row.checked_at));
+      if (currentUnassignedPointerReview) {
+        return { ...row, assessable: 'no',
+          domain: observation.official_domain || urlHostname(observation.pointer_url) || row.domain,
+          // The parent-domain pointer is deliberately not assigned as a
+          // facility pointer while its only entry belongs to a different CCN.
+          pointer_url: '', mrf_url: '', mrf_last_updated: '', mrf_days_since_update: '',
+          cms_template_version: '', checked_at: observation.observed_at,
+          evidence: `The shared-domain pointer was rechecked and its hash is unchanged; its only entry and the sampled CMS v3 file identify Covington County Hospital in Collins (CCN 251325), not Smith County Emergency Hospital in Raleigh (CCN 250786). No file is attributed to this CCN. ${observation.next_action || ''}`.trim()
+        };
+      }
+      if (newerPointerLinkedReview) {
+        const declaredDate = Date.parse(observation.declared_last_updated || '');
+        return { ...row,
+          finding: unresolvedFinding(observation.disposition), assessable: 'no',
+          domain: observation.official_domain || row.domain,
+          pointer_url: observation.pointer_url, mrf_url: observation.mrf_url,
+          mrf_last_updated: Number.isFinite(declaredDate) ? new Date(declaredDate).toISOString().slice(0, 10) : '',
+          mrf_days_since_update: Number.isFinite(Number(observation.declared_file_age_days))
+            ? String(observation.declared_file_age_days) : '',
+          cms_template_version: observation.cms_template_version,
+          checked_at: observation.observed_at,
+          evidence: `A later hash-bound retrieval of the complete first-party CMS pointer now links this exact file; a bounded header agrees on facility name, address, state and CMS v3 version. This replaces the earlier pointer-unavailable route finding, but the 206 file response is only a prefix and full-file/schema/usable-charge review remains pending. ${observation.next_action || ''}`.trim()
+        };
+      }
+      return observation && unresolvedDispositionKeys.has(observation.disposition)
+        && !observation.latest_observation_superseded
+        && (row.finding === observation.disposition || row.finding === unresolvedFinding(observation.disposition))
+        ? { ...row, finding: unresolvedFinding(observation.disposition), assessable: 'no' }
+        : row;
+    });
+    // A manually reviewed, hash-bound file/facility address conflict is
+    // contrary evidence, not an incomplete retry. Remove the old positive
+    // finding from the effective tracker while retaining the source row and
+    // resolution history for auditability.
+    const disputedCurrentFiles = new Set((report.records || []).filter(record =>
+      record.reviewed_facility_mismatch === true
+      && record.disposition === 'linked-mrf-header-unmatched'
+      && record.observation_role === 'current-observation'
+      && record.prior_finding === 'compliant-observed').map(record => record.ccn));
+    view.compliance = view.compliance.map(row => disputedCurrentFiles.has(row.ccn)
+      && ['compliant-observed', 'compliant-date-unverified', 'mrf-stale-over-365-days', 'old-template-version'].includes(row.finding)
+      ? { ...row, finding: 'not-assessed-nationwide-linked-mrf-header-unmatched', assessable: 'no',
+        evidence: 'A current hash-bound file sample conflicts with the independently confirmed facility address. The prior positive finding remains in the underlying audit history; current facility attribution is unresolved.' }
+      : row);
     const nationwideByCcn = new Map((report.records || []).map(row => [row.ccn, row]));
     for (const row of view.compliance) {
       const prior = standingBeforeNationwide.get(row.ccn);

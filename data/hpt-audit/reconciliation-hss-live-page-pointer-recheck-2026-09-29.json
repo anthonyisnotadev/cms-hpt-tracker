@@ -1,0 +1,34 @@
+{
+  "ccn": "330270",
+  "observed_at": "2026-09-29T09:27:15.760Z",
+  "hospital_name": "HOSPITAL FOR SPECIAL SURGERY",
+  "official_price_page": {
+    "url": "https://www.hss.edu/patient-care/paying-for-care/price-transparency",
+    "http_status": 200,
+    "response_bytes": 49132,
+    "response_sha256": "06f19ecee35a4cfa2b0da3cb32bb678403d11b3117a987b753ce8e8a3e89b6a5",
+    "browser_observed_cms_json_files_over_500mb": true,
+    "main_hospital_file_url": "https://d2cg6hcwj0g0z0.cloudfront.net/131624135-1598703019_ny-society-for-the-relief-of-ruptured-and-crippled-maintaing-the-hospital-for-special-surgery_standardcharges.json",
+    "same_main_hospital_url_as_prior_proof": true
+  },
+  "official_pointer": {
+    "url": "https://www.hss.edu/cms-hpt.txt",
+    "http_status": 200,
+    "response_bytes": 5460,
+    "response_sha256": "50bc16f049f7606c91d38625f32508869d871bf9fa726ce4098cab8215dc30ce",
+    "last_modified": "Tue, 22 Sep 2026 17:06:44 GMT",
+    "etag": "W/\"1dd4ab4be677f54\"",
+    "mrf_url_field_present": true,
+    "url_entries": 13,
+    "main_hospital_target_present": true,
+    "matches_retained_pointer_corpus_copy": "hss.edu-7db864155fa3.txt"
+  },
+  "access_retry_policy": {
+    "main_hospital_file_retried": false,
+    "reason": "The exact official page/pointer target was already observed to return CloudFront 403 on 2026-09-27. The current pointer is byte-identical to the retained pointer and the page still links the identical file URL; no source or access-condition change was observed."
+  },
+  "evidence_classification": "fresh official page and exact pointer response hashes confirm unchanged route; no new MRF bytes",
+  "disposition_changed": false,
+  "count_effect": 0,
+  "next_action": "Keep CCN 330270 unresolved. Seek an authorized publisher-provided copy or a materially different publisher-authorized route. Do not retry the unchanged CloudFront URL unless the pointer bytes or target URL change, or observable access conditions change. If bytes become available, compare complete SHA-256 and size with the third-party claimed fingerprint, then independently validate the JSON root metadata, HSS Main Hospital identity/address/state, date/version and usable rows."
+}

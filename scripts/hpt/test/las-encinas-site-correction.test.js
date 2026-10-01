@@ -23,8 +23,10 @@ test('Las Encinas correction removes the sibling site and stale file without pro
   const record = JSON.parse(fs.readFileSync(path.join(audit, 'nationwide-verification.json'), 'utf8'))
     .records.find(item => item.ccn === '054078');
   assert.equal(record.official_domain, 'lasencinashospital.com');
-  assert.equal(record.pointer_result, '404');
-  assert.equal(record.mrf_url, '');
+  assert.equal(record.pointer_result, '200');
+  assert.equal(record.mrf_url, 'https://www.lasencinashospital.com/wp-content/uploads/2026/07/32-0039155_Aurora-Las-Encinas-LLC_standardcharges_1.csv');
+  assert.equal(record.disposition, 'pointer-linked-file-review-pending');
+  assert.equal(record.mrf_state, 'linked-file-retrieved-metadata-limited');
   assert.equal(record.evidence.linked_mrf_candidates, 0);
   assert.equal(reviewedResolutionSupersedes({ action: 'correct-site',
     reviewed_at: '2026-09-16T12:35:42.000Z' }, record.observed_at), false);

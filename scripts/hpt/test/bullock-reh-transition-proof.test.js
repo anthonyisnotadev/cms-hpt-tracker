@@ -32,7 +32,8 @@ test('Bullock current REH proof does not silently migrate to historical acute-ca
       assert.equal(observation.facility_role, role);
       assert.equal(reconciliation.manual_access_observation.proof_file, latest.proof_file);
       assert.equal(reconciliation.next_action, latest.next_action);
-      assert.match(latest.next_action, /through 2024-04-30/);
+      assert.match(latest.next_action, /historical CMS-format MRF\/pointer evidence/);
+      assert.match(latest.next_action, /do not repeat the current pointer/);
     } else {
       assert.equal(reconciliation.workstream, 'consistent');
       assert.equal(reconciliation.manual_access_observation.disposition, 'verified-stale-mrf');

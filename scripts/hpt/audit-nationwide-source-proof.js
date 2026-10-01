@@ -14,6 +14,11 @@ const root = path.resolve(__dirname, '../..');
 const split = value => String(value || '').split('|').map(s => s.trim()).filter(Boolean);
 const normalizedText = value => String(value || '').replace(/[\u00a0\ufffd]+/g, ' ').replace(/\s+/g, ' ').trim();
 const normalizedName = value => normalizeName(value).replace(/\b([a-z]+) s\b/g, '$1s');
+function addressFieldMatches(claimed, observed) {
+  return split(claimed).some(claimedAddress => split(observed).some(observedAddress =>
+    normalizedText(observedAddress) === normalizedText(claimedAddress)
+      || strongAddressAgreement(claimedAddress, observedAddress)));
+}
 const normalizedDate = value => {
   const text = String(value || '').trim();
   if (!text) return '';
@@ -81,6 +86,7 @@ function main() {
   // byte proof for the same URL.
   const byteProof = new Map();
   const byteProofByCcn = new Map();
+  const privateArtifactPaths = new Map();
   for (const record of (fs.existsSync(byteProofFile) ? JSON.parse(fs.readFileSync(byteProofFile, 'utf8')).records : [])) {
     const key = record.url ? normalizeUrl(record.url) : `sha256:${record.url_sha256}`;
     if (!byteProof.has(key)) byteProof.set(key, []);
@@ -89,6 +95,80 @@ function main() {
       if (!byteProofByCcn.has(ccn)) byteProofByCcn.set(ccn, []);
       byteProofByCcn.get(ccn).push(record);
     }
+  }
+  // Detailed CCN-specific reconciliation proofs can retain the same exact
+  // bounded file samples outside the central retry ledger. Import only the
+  // primary MRF whose CCN, active nationwide URL, raw artifact, length and
+  // SHA-256 are independently verified below; sibling files remain excluded.
+  for (const name of fs.readdirSync(path.join(root, 'data/hpt-audit'))
+    .filter(file => /^reconciliation-.*current-pointer-file-proof.*\.json$/i.test(file))) {
+    const proof = JSON.parse(fs.readFileSync(path.join(root, 'data/hpt-audit', name), 'utf8'));
+    const full = proof.current_mrf_full_file_review;
+    const fullFileCcn = proof.ccn || (proof.ccn_dispositions?.['251325'] ? '251325' : '');
+    if (fullFileCcn === '251325' && full?.retained_private_file === 'Z:/hpt-covington-proof-2026-09-30/covington-county-hospital_standardcharges.csv'
+      && full.url === 'https://covingtoncountyhospital.com/646001549_covington-county-hospital_standardcharges.csv'
+      && full.http_status === 200 && full.bytes_received === 93493711
+      && full.sha256 === '962080aef2ea163adfe3c9b9005cb35dcea20e801ab031b9495e3bcea8c74886'
+      && full.cms_validator?.package === '@cmsgov/hpt-validator-cli'
+      && full.cms_validator.version === '1.10.8' && full.cms_validator.requirements === 'v3.0'
+      && full.cms_validator.valid === true && full.cms_validator.error_count === 0
+      && full.cms_validator.alert_count === 0) {
+      const artifact = full.retained_private_file.replace(/\//g, path.sep);
+      const bytes = fs.existsSync(artifact) ? fs.readFileSync(artifact) : null;
+      if (bytes && bytes.length === full.bytes_received && hash(bytes) === full.sha256) {
+        const rawArtifact = 'private-proof-cache:covington-county-hospital-2026-09-30.csv';
+        const parsed = full.declared_metadata || {};
+        const proofRecord = {
+          url: full.url, ccns: [fullFileCcn], checked_at: full.observed_at || '',
+          http_status: full.http_status, bytes_retained: bytes.length, sha256: full.sha256,
+          raw_artifact: rawArtifact, final_url: full.final_url, final_host: 'covingtoncountyhospital.com',
+          parsed_root_candidates: [{ mrfHospitalName: parsed.hospital_name, mrfLocationName: parsed.location_name,
+            mrfAddress: parsed.hospital_address, mrfLicenseState: parsed.license_state,
+            declaredLastUpdated: '2026-07-21', cmsVersion: parsed.version }],
+          reconciliation_proof_file: name
+        };
+        privateArtifactPaths.set(rawArtifact, artifact);
+        const key = normalizeUrl(full.url);
+        if (!byteProof.has(key)) byteProof.set(key, []);
+        byteProof.get(key).push(proofRecord);
+        if (!byteProofByCcn.has(fullFileCcn)) byteProofByCcn.set(fullFileCcn, []);
+        byteProofByCcn.get(fullFileCcn).push(proofRecord);
+      }
+    }
+    const primary = proof.primary_mrf;
+    if (!proof.ccn || !primary?.url || !primary.raw_artifact || !primary.sample_bytes || !primary.sample_sha256) continue;
+    const normalizedUrl = normalizeUrl(primary.url);
+    const artifact = path.resolve(root, primary.raw_artifact);
+    if (!normalizedUrl || !artifact.startsWith(root + path.sep) || !fs.existsSync(artifact)) continue;
+    const bytes = fs.readFileSync(artifact);
+    if (bytes.length !== primary.sample_bytes || hash(bytes) !== String(primary.sample_sha256).toLowerCase()) continue;
+    const parsedUrl = new URL(primary.url);
+    const proofRecord = {
+      url: primary.url,
+      ccns: [proof.ccn],
+      checked_at: proof.observed_at || '',
+      http_status: Number(primary.http_status) || 0,
+      requested_range: primary.content_range?.split('/')[0]?.replace(/^bytes /, 'bytes=') || '',
+      bytes_retained: Number(primary.sample_bytes),
+      sha256: String(primary.sample_sha256).toLowerCase(),
+      raw_artifact: primary.raw_artifact,
+      final_url: primary.url,
+      final_host: parsedUrl.hostname,
+      parsed_root_candidates: [{
+        mrfHospitalName: primary.declared_hospital_name || '',
+        mrfLocationName: primary.declared_location_name || '',
+        mrfAddress: primary.declared_address || '',
+        mrfLicenseState: primary.declared_license_state || '',
+        declaredLastUpdated: primary.declared_last_updated || '',
+        cmsVersion: primary.cms_template_version || '',
+      }],
+      reconciliation_proof_file: name,
+    };
+    const key = normalizedUrl;
+    if (!byteProof.has(key)) byteProof.set(key, []);
+    byteProof.get(key).push(proofRecord);
+    if (!byteProofByCcn.has(proof.ccn)) byteProofByCcn.set(proof.ccn, []);
+    byteProofByCcn.get(proof.ccn).push(proofRecord);
   }
   const index = (rows, field) => {
     const out = new Map();
@@ -121,9 +201,11 @@ function main() {
       declared_location_name: item.declared_location_name || item.page_file_declared_name || item.facility_file_declared_name || item.official_facility_name || '',
       declared_address: item.declared_address || item.page_file_declared_address || item.facility_file_declared_address || item.official_facility_address || '',
       declared_license_state: item.declared_license_state || item.page_file_license_state || item.facility_file_license_state || '',
-      declared_last_updated: item.declared_last_updated || item.page_file_declared_last_updated || item.facility_file_declared_last_updated || item.page_file_declared_update || '',
-      cms_template_version: item.cms_template_version || item.page_file_cms_template_version || item.facility_file_cms_template_version || '',
-      identity_gate: item.manual_identity_gate || item.identity_gate || 'official-page-file-header-name-address-state-agree'
+      declared_last_updated: item.declared_last_updated || item.declared_date || item.page_file_declared_last_updated || item.facility_file_declared_last_updated || item.page_file_declared_update || '',
+      cms_template_version: item.cms_template_version || item.declared_version || item.page_file_cms_template_version || item.facility_file_cms_template_version || '',
+      identity_gate: item.manual_identity_gate || item.identity_gate || 'official-page-file-header-name-address-state-agree',
+      byte_proof_sha256: String(sampleSha).toLowerCase(),
+      byte_proof_bytes: Number(sampleBytes) || 0
     });
   }
   const raw = new Map();
@@ -156,8 +238,9 @@ function main() {
     };
     for (const proof of proofs) {
       if (!(proof.http_status >= 200 && proof.http_status < 300) || !proof.bytes_retained || !proof.sha256 || !proof.raw_artifact) continue;
-      const absolute = path.resolve(root, proof.raw_artifact);
-      if (!absolute.startsWith(root + path.sep) || !fs.existsSync(absolute)) continue;
+      const absolute = privateArtifactPaths.get(proof.raw_artifact) || path.resolve(root, proof.raw_artifact);
+      if ((!privateArtifactPaths.has(proof.raw_artifact) && !absolute.startsWith(root + path.sep))
+        || !fs.existsSync(absolute)) continue;
       const bytes = fs.readFileSync(absolute);
       if (bytes.length !== proof.bytes_retained || hash(bytes) !== proof.sha256) continue;
       const candidates = proof.parsed_root_candidates || [];
@@ -165,7 +248,9 @@ function main() {
         const candidate = candidates.find(candidate => retainedRootMatches(record, candidate) && candidateMatchesFacility(candidate));
         return { checked_at: proof.checked_at, bytes: proof.bytes_retained, sha256: proof.sha256,
           requested_range: proof.requested_range, final_url: proof.final_url, final_host: proof.final_host,
-          final_url_withheld: proof.final_url_withheld || '', candidate };
+          final_url_withheld: proof.final_url_withheld || '',
+          reconciliation_proof_file: proof.reconciliation_proof_file || '',
+          raw_artifact: proof.raw_artifact, candidate };
       }
     }
     return null;
@@ -189,8 +274,14 @@ function main() {
     return headers.find(candidate => {
       const urls = split(candidate.pointer_urls).map(normalizeUrl);
       const hashes = split(candidate.pointer_sha256s);
-      return urls.some(url => recordPointerUrls.includes(url))
+      const pointerMatches = urls.some(url => recordPointerUrls.includes(url))
         && hashes.some(digest => recordPointerHashes.includes(digest));
+      // A shared root pointer can be hash-corroborated for several CCNs, but
+      // that does not establish that an ambiguously matched MRF covers each
+      // enrollment. Keep the pointer observation while requiring an explicit
+      // per-CCN header match before treating it as identity evidence.
+      const headerMatchesCcn = split(candidate.existing_matched_ccns).includes(record.ccn);
+      return pointerMatches && headerMatchesCcn;
     });
   }
   function pointerProof(header, record) {
@@ -271,7 +362,9 @@ function main() {
       declared_license_state: byteCandidate.mrfLicenseState || '',
       declared_last_updated: byteCandidate.declaredLastUpdated || '',
       cms_template_version: byteCandidate.cmsVersion || '',
-      identity_gate: 'retained-byte-proof-name-address-state-agree'
+      identity_gate: (record.browser_identity_gate || '').includes('current-root-pointer-exact-file-full-bytes-header-name-address-state-date-attestation-agree')
+        ? 'current-root-pointer-exact-file-full-bytes-header-name-address-state-date-attestation-agree'
+        : 'retained-byte-proof-name-address-state-agree'
     } : null;
     // A few older nationwide claims are intentionally retained only as
     // excluded shared-campus files. They have explicit, facility-specific
@@ -310,9 +403,8 @@ function main() {
       if (!source) continue;
       const claimed = String(record[target] || '');
       const observed = String(source[field] || '');
-      const matchesMultivalueMember = target === 'declared_address' && split(observed).some(address =>
-        normalizedText(address) === normalizedText(claimed));
-      if (claimed !== observed && !matchesMultivalueMember) issues.push('source-field-disagreement:' + target);
+      const addressesAgree = target === 'declared_address' && addressFieldMatches(claimed, observed);
+      if (claimed !== observed && !addressesAgree) issues.push('source-field-disagreement:' + target);
     }
     const browserIdentity = source && source !== header ? source : null;
     // A reviewed address equivalence is evidence-bound, not label-bound. The
@@ -385,4 +477,4 @@ function main() {
   console.log(JSON.stringify(summary, null, 2));
 }
 if (require.main === module) main();
-module.exports = { retainedRootMatches };
+module.exports = { retainedRootMatches, addressFieldMatches };

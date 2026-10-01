@@ -1,0 +1,71 @@
+{
+  "audit_id": "uci-lakewood-california-license-transition-2026-09-29",
+  "ccn": "050581",
+  "observed_at": "2026-09-29T05:49:36Z",
+  "original_recorded_observed_at": "2026-09-29T12:00:00Z",
+  "timestamp_integrity_review": {
+    "checked_at_utc": "2026-09-29T05:49:36Z",
+    "prior_live_clock_utc": "2026-09-29T05:48:00Z",
+    "original_recorded_timestamp_status": "future-dated relative to the live clock; not accepted as evidence of an observation at that time",
+    "current_source_retrieval_status": "requeried both exact HCAI LFIS license-history URLs; HTTP 200 responses matched the retained 22,834-byte and 45,261-byte SHA-256 hashes exactly",
+    "interpretation": "The license-history response bodies are validated against current read-only retrievals. The original future timestamp is retained only as provenance history and is not used as the observation time."
+  },
+  "sources": [
+    {
+      "publisher": "California Department of Health Care Access and Information (HCAI), Licensed Facility Information System",
+      "url": "https://lfis.hcai.ca.gov/License/History/930000046",
+      "http_status": 200,
+      "response_utf8_bytes": 22834,
+      "response_sha256": "d02bd2605f3d12343aa6fb352762c95d2a86da2cac55ba77a4b77e356d52a137",
+      "facility": "Lakewood Regional Medical Center / UCI Health-Lakewood",
+      "license_number": "930000046",
+      "current_licensee": "UNIVERSITY OF CALIFORNIA IRVINE",
+      "recent_history": [
+        {"effective": "2025-05-31", "expires": "2026-03-06", "licensee": "UNIVERSITY OF CALIFORNIA IRVINE", "license": "930000046"},
+        {"effective": "2024-05-31", "expires": "2025-05-30", "licensee": "UNIVERSITY OF CALIFORNIA IRVINE", "license": "930000046"},
+        {"effective": "2024-03-27", "expires": "2024-05-30", "licensee": "UNIVERSITY OF CALIFORNIA IRVINE", "license": "930000046"},
+        {"effective": "2022-05-31", "expires": "2024-03-26", "licensee": "LAKEWOOD REGIONAL MEDICAL CENTER, INC", "license": "930000046"}
+      ]
+    },
+    {
+      "publisher": "California Department of Health Care Access and Information (HCAI), Licensed Facility Information System",
+      "url": "https://lfis.hcai.ca.gov/License/History/060000148",
+      "http_status": 200,
+      "response_utf8_bytes": 45261,
+      "response_sha256": "3dfcd259aef3579cbbe52aa3eca08a9a91d66a37d23a6697d3cb78e45373037a",
+      "facility": "UCI Health-Lakewood",
+      "license_number": "060000148",
+      "current_licensee": "UNIVERSITY OF CALIFORNIA IRVINE",
+      "recent_history": [
+        {"effective": "2026-03-07", "expires": "2026-10-31", "licensee": "UNIVERSITY OF CALIFORNIA IRVINE", "license": "060000148"},
+        {"effective": "2026-02-11", "expires": "2026-03-06", "licensee": "UNIVERSITY OF CALIFORNIA IRVINE", "license": "060000148"},
+        {"effective": "2026-01-15", "expires": "2026-02-10", "licensee": "UNIVERSITY OF CALIFORNIA IRVINE", "license": "060000148"},
+        {"effective": "2025-12-09", "expires": "2026-01-14", "licensee": "UNIVERSITY OF CALIFORNIA IRVINE", "license": "060000148"},
+        {"effective": "2025-11-01", "expires": "2025-12-08", "licensee": "UNIVERSITY OF CALIFORNIA IRVINE", "license": "060000148"}
+      ]
+    },
+    {
+      "publisher": "California HCAI Hospital Fair Pricing Policy Lookup",
+      "url": "https://hcai.ca.gov/affordability/hospital-billing-policies/lakewood-regional-medical-center/",
+      "observed_claim": "UCI HEALTH-LAKEWOOD, 3700 South Street, Lakewood, CA 90712, License #060000148, HCAI ID 106190240"
+    },
+    {
+      "publisher": "UCI Health",
+      "url": "https://www.ucihealth.org/pricetransparency/952226406_uci-health-lakewood_standardcharges.json",
+      "observed_mrf_metadata": {
+        "last_updated_on": "2026-04-01",
+        "version": "3.0.0",
+        "location_name": "UCI Health - Lakewood",
+        "hospital_address": "101 City Drive South, Orange, CA 92868",
+        "license_number": "060000148",
+        "license_state": "CA",
+        "npi": "1184655581"
+      }
+    }
+  ],
+  "interpretation": "HCAI LFIS records license 930000046 for the Lakewood hospital through 2026-03-06, then license 060000148 for UCI Health-Lakewood beginning 2026-03-07. The current HCAI Lakewood billing-policy lookup also pairs license 060000148 with the Lakewood HCAI ID/address. The April 2026 Lakewood MRF suffix license_number|CA is therefore consistent with the effective-dated current Lakewood license and must not be treated as an Orange-only identifier. The MRF hospital_address still says 101 City Drive South, Orange, unlike the Lakewood facility address; the address conflict remains unresolved. The available LFIS page reports license history and does not itself expose its effective-dated address, so it does not independently settle the address field.",
+  "evidence_class": "official_state_effective_dated_license_identity_reconciliation",
+  "disposition_changed": false,
+  "count_effect": "none; CCN 050581 remains unresolved for the MRF hospital_address conflict; historical 891 cohort remains 543 unresolved among 720 unique CCNs",
+  "next_action": "Do not repeat unchanged license-history retrievals. Obtain a publisher correction or explanation specifically for the Lakewood JSON hospital_address field, with date-specific location/license context; retain the current license suffix as supported by the March 2026 transition."
+}

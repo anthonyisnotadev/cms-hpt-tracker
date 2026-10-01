@@ -1,6 +1,20 @@
 {
   "ccn": "190008",
   "observed_at": "2026-09-19T00:48:49Z",
+  "live_recheck": {
+    "observed_at": "2026-09-29T21:52:00Z",
+    "official_pricing_page_url": "https://www.tghealthsystem.com/price-transparency/",
+    "official_pricing_page_http_status": 200,
+    "official_page_findings": "Page labels the Terrebonne General Health System CSV link as a Price Transparency Machine Readable File, says CSV format, CMS-layout file size, annual update, and applicable facility location is identified within the file; page separately lists Physicians Medical Center.",
+    "facility_mrf_url": "https://www.tghealthsystem.com/documents/price%20transparency/720880258_terrebonne-general-health-system_standardcharges.csv",
+    "browser_reader_result": "application/octet-stream rejected by web reader; no bytes returned",
+    "bounded_client_result": "HTTP 403 on HEAD and Range GET",
+    "third_party_public_observation": "ShowTheBill page captured this same publisher-hosted file on 2026-08-26 and reports 147.2 MB; not used as MRF bytes, hash, metadata or validation.",
+    "mrf_bytes_retrieved_this_pass": false,
+    "pointer_url": "https://www.tghealthsystem.com/cms-hpt.txt",
+    "pointer_status": "not retried because the current official page already declares the exact facility MRF URL; no pointer-byte evidence was obtained",
+    "interpretation": "Newly revalidated exact official page-to-file linkage and explicit MRF labeling, but access controls prevented retrieval and exact CMS header/metadata validation. Do not promote from secondary summaries."
+  },
   "hospital_name": "TERREBONNE GENERAL MEDICAL CENTER - PARISH",
   "official_domain": "tghealthsystem.com",
   "official_pricing_page": "https://www.tghealthsystem.com/price-transparency/",

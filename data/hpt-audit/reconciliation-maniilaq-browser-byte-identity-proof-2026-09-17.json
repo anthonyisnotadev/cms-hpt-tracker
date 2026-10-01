@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "audit_id": "reconciliation-maniilaq-browser-byte-identity-proof-2026-09-17",
+  "ccn": "021310",
+  "reviewed_observed_at": "2026-09-17T22:46:18.139Z",
+  "prior_complete_pointer_file_review": {
+    "proof_file": "reconciliation-maniilaq-proof.json",
+    "observed_at": "2026-09-15T15:35:00.000Z",
+    "pointer_url": "https://www.maniilaq.org/cms-hpt.txt",
+    "pointer_http_status": 200,
+    "pointer_bytes": 307,
+    "pointer_sha256": "06f7773410bf4050e78b438c42cf60d277428f069ad341d6b633b3129577ff05",
+    "pointer_location_name": "MANIILAQ HEALTH CENTER",
+    "mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbMHCKOTZEBUEAK&type=CDMWithoutLabel&fileType=CSV",
+    "mrf_http_status": 200,
+    "mrf_bytes": 3705850,
+    "mrf_sha256": "6ee15e3f6d0f761e36bfd41f9b256cb6ece229007e7dfe3317d53644e3cd7702"
+  },
+  "later_exact_url_browser_byte_proof": {
+    "proof_file": "nationwide-file-byte-proof.json",
+    "url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbMHCKOTZEBUEAK&type=CDMWithoutLabel&fileType=CSV",
+    "http_status": 200,
+    "checked_at": "2026-09-17T22:46:18.139Z",
+    "requested_range": "browser-download:bytes=0-262143",
+    "bytes_retained": 262144,
+    "sha256": "7abd738fb5264df4a2b97836050b5fb60d567bee0eefeb9f5f04bcdd09b960f7",
+    "raw_artifact": "cms_data/hpt/nationwide-verification/file-byte-proof/7abd738fb5264df4a2b97836050b5fb60d567bee0eefeb9f5f04bcdd09b960f7.bin",
+    "declared_hospital_name": "MANIILAQ ASSOCIATION",
+    "declared_location_name": "MANIILAQ ASSOCIATION",
+    "declared_address": "436 5th Ave Kotzebue AK 99752",
+    "declared_state": "AK",
+    "declared_date": "2026-07-16",
+    "cms_template_version": "3.0.0",
+    "file_kind": "csv"
+  },
+  "browser_review": {
+    "proof_file": "nationwide-browser-reviews.json",
+    "observed_at": "2026-09-17T00:00:00Z",
+    "status": "retrieved",
+    "identity": "corroborated",
+    "detail": "Official Maniilaq pages identify Maniilaq Health Center as the facility at this address and the file header uses the operating name Maniilaq Association."
+  },
+  "facility_identity_reconciliation": {
+    "official_domain": "maniilaq.org",
+    "official_contact_page": "https://www.maniilaq.org/contact/",
+    "official_health_services_page": "https://www.maniilaq.org/health-services/",
+    "roster_address": "PO BOX 43",
+    "official_physical_address": "436 5th Avenue, Kotzebue, AK 99752",
+    "pointer_location_name": "MANIILAQ HEALTH CENTER",
+    "file_operating_name": "MANIILAQ ASSOCIATION",
+    "basis": "The CMS roster address is the Maniilaq Health Center mailing box. Maniilaq Association's first-party contact page distinguishes its corporate-office address from Maniilaq Health Center at 436 5th Avenue, Kotzebue; its Health Services page describes Maniilaq Health Center as the association's health-services facility. The exact first-party pointer names Maniilaq Health Center and declares this exact PARA CSV, whose parsed header matches the physical street/city/state and current CMS v3 metadata."
+  },
+  "current_official_source_recheck": {
+    "observed_at": "2026-09-30T11:22:14Z",
+    "method": "official-page-read",
+    "contact_page": "https://www.maniilaq.org/contact/",
+    "contact_page_facts": "The page separates the Maniilaq corporate office at 733 2nd Avenue from Maniilaq Health Center at P.O. Box 43 / 436 5th Avenue, Kotzebue, AK 99752.",
+    "health_services_page": "https://www.maniilaq.org/health-services/",
+    "health_services_page_facts": "The page says Maniilaq Association's Health Services division delivers care through Maniilaq Health Center in Kotzebue and the association's village health clinics.",
+    "effect": "Current first-party corroboration only; no new file bytes, date, version, or MRF recovery."
+  },
+  "disposition": "verified-current-mrf",
+  "supersedes_incomplete_observation": {
+    "disposition": "mrf-verification-pending",
+    "observed_at": "2026-09-15T19:59:31.293Z",
+    "reason": "The incomplete observation predates the exact-URL browser byte proof and its reviewed identity reconciliation; it did not provide contrary facility or file evidence. Preserve it in latest_retry_observation history."
+  },
+  "limitations": [
+    "The 2026-09-17 sample rechecks the exact file URL and parsed header; the separately retained 2026-09-15 full-file retrieval and hash provide the full-file byte and usable-row evidence.",
+    "The declared file version/date are source metadata, not an independent legal compliance determination."
+  ]
+}

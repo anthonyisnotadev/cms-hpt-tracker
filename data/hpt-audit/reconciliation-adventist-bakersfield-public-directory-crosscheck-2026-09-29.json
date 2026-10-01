@@ -1,0 +1,57 @@
+{
+  "audit_id": "reconciliation-adventist-bakersfield-public-directory-crosscheck-2026-09-29",
+  "ccns": ["050455", "050724"],
+  "observed_at": "2026-09-29T10:16:55Z",
+  "original_recorded_observed_at": "2026-09-29T11:06:00Z",
+  "timestamp_integrity_review": {
+    "checked_at_utc": "2026-09-29T10:16:55Z",
+    "prior_live_clock_utc": "2026-09-29T10:14:55Z",
+    "original_recorded_timestamp_status": "future-dated relative to the live clock; not accepted as the observation time",
+    "current_recheck": "The 2025 Health Net directory was fetched again (HTTP 200, 5,371,295 bytes, SHA-256 02a4aef3f1ef737406be0a8848ab5aec0ec8d5e06fcf2ad2ef379774aee08588); current HCAI facility page was fetched again (HTTP 200, 147,616 bytes, SHA-256 a886b366194c66c15486c9a9ccb7c61e2878f77e74452cdf72103d807032fe54). Current web search still returns the Turquoise campus/provider-ID listing, while a direct request returned HTTP 403 and is treated only as transport.",
+    "interpretation": "The third-party directory facts remain corroborative only and do not resolve shared-MRF scope. This corrected recheck adds no MRF bytes or disposition change."
+  },
+  "purpose": "Check for newly indexed public facility directories that independently identify the two Bakersfield campuses and any Medicare provider-number crosswalk relevant to the shared pointer-linked MRF.",
+  "search": {
+    "queries": [
+      "site:cms.gov Adventist Health Specialty Bakersfield 050455",
+      "site:data.cms.gov 3001 Sillect Avenue 050455",
+      "site:hcai.ca.gov 3001 Sillect 050455",
+      "Adventist Health Specialty Bakersfield Medicare provider number"
+    ],
+    "result": "No new CMS primary-source CCN-to-MRF mapping was located. Current index results surfaced payer directories and a commercial provider profile that independently distinguish the campuses, plus the already-retained HCAI profile."
+  },
+  "corroborating_sources": [
+    {
+      "publisher": "Health Net",
+      "url": "https://www.healthnet.com/content/dam/centene/healthnet/pdfs/medicare/groups/2025/hn-medicare-hmo-provider-directory-fresno.pdf",
+      "document": "2025 Medicare HMO provider directory",
+      "observation": "Lists Adventist Health Bakersfield at 2615 Chester and Adventist Health Specialty Bakersfield at 3001 Sillect as separate hospital entries.",
+      "evidence_role": "payer directory corroboration of separate public facility identities and addresses; not CMS CCN enrollment or MRF-scope proof"
+    },
+    {
+      "publisher": "Turquoise Health",
+      "url": "https://turquoise.health/providers/heart-hospital-of-bakersfield/information",
+      "observation": "Current indexed provider profile lists Adventist Health Specialty Bakersfield at 3001 Sillect, Medicare provider ID 050724 and NPI 1609856947. A separate profile lists Adventist Health Bakersfield at 2615 Chester, Medicare provider ID 050455 and NPI 1538157508.",
+      "evidence_role": "third-party directory corroboration only; provider page explicitly calls rates unverified and does not authoritatively determine file scope"
+    },
+    {
+      "publisher": "California HCAI",
+      "url": "https://hcai.ca.gov/facility/bakersfield-heart-hospital/",
+      "observation": "Current state profile identifies Adventist Health Specialty Bakersfield at 3001 Sillect as open and a consolidated facility; HCAI reporting classification does not determine CMS CCN or hospital-price-file scope.",
+      "evidence_role": "state facility identity and classification; previously retained and rechecked, not new evidence in this pass"
+    }
+  ],
+  "comparison_to_retained_mrf": {
+    "pointer_file": "reconciliation-adventist-bakersfield-npi-header-crosscheck-2026-09-28.json",
+    "complete_file_sha256": "69A1DF6EF767B0EFD945B05E6DDEB762AC42012C61E6A6A9729C3A195E2C9AF9",
+    "declared_np_is": ["1538157508", "1609856947"],
+    "declared_locations": ["SAN JOAQUIN COMMUNITY HOSPITAL", "Adventist Health Specialty Bakersfield"],
+    "declared_addresses": ["3001 Sillect Avenue, Bakersfield, CA 93308", "3001 Sillect Avenue, Bakersfield, CA 93308"],
+    "interpretation": "The external directory crosswalk corroborates that the two NPIs and Medicare provider numbers point to separate main and Specialty campuses, strengthening the concern that the current shared MRF pairs the main-campus NPI 1538157508 / CCN 050455 with the Specialty address. It does not prove whether the shared MRF is intended to cover one or both CCNs, nor whether the publisher's NPI/address row is erroneous or reflects a permitted reporting arrangement."
+  },
+  "evidence_classification": "newly located independent third-party directory corroboration; no new CMS primary-source mapping and no new MRF bytes",
+  "disposition": "unresolved-current-shared-file-campus-and-ccn-scope-conflict",
+  "disposition_changed": false,
+  "count_effect": 0,
+  "next_action": "Keep CCNs 050455 and 050724 separate. The decisive remaining evidence must come from a corrected current MRF/pointer or authoritative written publisher documentation identifying the Medicare CCN(s), NPI(s), location rows, and campuses covered by dbAHBBAKERSFIELDCA. Do not use shared HCAI license, payer directories, or third-party price profiles to promote the file."
+}

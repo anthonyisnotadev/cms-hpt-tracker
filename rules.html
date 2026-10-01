@@ -52,7 +52,7 @@
       <a href="mrf.html">Price files</a>
       <a href="rules.html" aria-current="page">CMS rules</a>
       <a href="pointer.html">Pointer files</a>
-      <a href="skill.html">Outreach tool</a>
+      <a href="skill.html">Outreach skill</a>
       <a href="https://github.com/anthonyisnotadev" target="_blank" rel="noopener noreferrer">GitHub</a>
     </nav>
     <div class="masthead-util">
@@ -62,7 +62,7 @@
   <div class="wrap masthead-body">
     <p class="eyebrow">Explainer &middot; 2 of 3</p>
     <h1>The CMS rules</h1>
-    <p class="standfirst">Most hospitals must publish both a comprehensive data file and a consumer-friendly way to view common prices. The two requirements serve different purposes.</p>
+    <p class="standfirst">Most hospitals must post two things: one big price file for researchers and programs, and an easy way for patients to look up common prices. They serve different people.</p>
     <div class="dateline">
       <div>Rule <b>45 CFR Part 180</b></div>
       <div>In force <b>Since 2021</b></div>
@@ -75,141 +75,160 @@
   <nav class="toc" aria-label="On this page">
     <p class="eyebrow">On this page</p>
     <ol>
-      <li><a href="#who">Who is covered</a></li>
-      <li><a href="#publish">The two publication duties</a></li>
-      <li><a href="#access">Where and how data is published</a></li>
+      <li><a href="#who">Who has to follow it</a></li>
+      <li><a href="#publish">The two things to post</a></li>
+      <li><a href="#access">How the file must be posted</a></li>
       <li><a href="#timeline">How the rule changed</a></li>
       <li><a href="#enforcement">How enforcement works</a></li>
       <li><a href="#audit">What this tracker checks</a></li>
-      <li><a href="#labels">How to read the labels</a></li>
+      <li><a href="#labels">What the labels mean</a></li>
       <li><a href="#sources">Sources</a></li>
     </ol>
   </nav>
 
   <main class="prose" id="main" tabindex="-1">
     <section id="who">
-      <p class="eyebrow">Who is covered</p>
+      <p class="eyebrow">Who has to follow it</p>
       <h2>The rule follows hospital licensing</h2>
-      <p class="lead">For this rule, a hospital is an institution licensed as a hospital under state or applicable local law, or approved as meeting those licensing standards.</p>
-      <p>That definition is broader than Medicare participation. A facility does not enter or leave the rule simply because it accepts Medicare. The relevant question is how the institution is licensed or approved in its jurisdiction.</p>
-      <p>CMS deems certain government and tribal facilities compliant with Part 180. The regulation names federally owned hospitals, including Department of Veterans Affairs and Department of Defense facilities; hospitals operated by an Indian Health Program; and state forensic hospitals that exclusively treat people in the custody of penal authorities.</p>
+      <p class="lead">For this rule, a hospital is a place licensed as a hospital under state or local law, or approved as meeting those licensing standards.</p>
+      <p>That is wider than Medicare. Taking Medicare doesn’t put a facility in the rule or take it out. What counts is how the place is licensed or approved where it operates.</p>
+      <p>CMS treats some government and tribal hospitals as already compliant. The rule names three groups: federally owned hospitals (including Veterans Affairs and Department of Defense hospitals), hospitals run by an Indian Health Program, and state hospitals that only treat people held by prison authorities.</p>
       <aside class="callout">
-        <h4>Why a registry does not settle every case</h4>
-        <p>This tracker begins with a federal hospital roster because it provides stable identifiers and locations. Licensing, closures, mergers, new campuses, ownership changes, and public websites can change on different schedules, so some records need review.</p>
+        <h4>Why a hospital list doesn’t settle every case</h4>
+        <p>This tracker starts from a federal hospital list because it gives each hospital a stable ID and a location. But licenses, closures, mergers, new campuses, new owners and websites all change on their own schedules, so some records need a human to look.</p>
       </aside>
     </section>
 
     <section id="publish">
-      <p class="eyebrow">What hospitals publish</p>
-      <h2>Two duties, two audiences</h2>
-      <p class="lead">Part 180 requires a comprehensive machine-readable file and a consumer-friendly presentation of a smaller group of shoppable services.</p>
+      <p class="eyebrow">What hospitals post</p>
+      <h2>Two things, for two audiences</h2>
+      <p class="lead">Part 180 asks for a full price file, plus an easy patient view of a smaller set of services you can plan ahead for.</p>
       <div class="cards">
         <div class="card">
           <span class="k">45 CFR 180.50</span>
-          <h4>Comprehensive machine-readable file</h4>
-          <p>A CSV or JSON file containing all standard charges for all hospital items and services. It includes gross, cash, payer-specific negotiated, and de-identified minimum and maximum charges.</p>
+          <h4>The full price file</h4>
+          <p>A CSV or JSON file with every standard price for every item and service. That covers the list price, the cash price, each insurer’s negotiated price, and the lowest and highest negotiated prices.</p>
         </div>
         <div class="card">
           <span class="k">45 CFR 180.60</span>
-          <h4>Consumer-friendly shoppable services</h4>
-          <p>A searchable display, or a qualifying price estimator, for services that can usually be scheduled in advance. The requirement covers as many of 70 CMS-specified services as the hospital offers, plus hospital-selected services for a combined total of at least 300 when available.</p>
+          <h4>The patient view of common services</h4>
+          <p>A searchable list, or a qualifying price estimator, for services you can usually schedule ahead. It covers as many of 70 services picked by CMS as the hospital offers, plus more the hospital chooses, for at least 300 in total when available.</p>
         </div>
       </div>
-      <p>The consumer-friendly side must help people search by description, billing code, and payer, unless the hospital uses a qualifying estimator. An estimator can satisfy this part if it covers the required services, provides an estimate of the amount owed to the hospital, is prominent, and works without a charge or account.</p>
-      <p>The comprehensive MRF is a different product. It is intended for direct download and computer processing, and can contain millions of records. A hospital can publish a strong patient estimator while its MRF has a problem, or publish a working MRF while the patient-facing display has a problem.</p>
+      <p>The patient view must let people search by description, billing code and insurer, unless the hospital uses an estimator. An estimator counts if it covers the required services, gives an estimate of what you would owe the hospital, is easy to find, and works without a fee or an account.</p>
+      <p>The price file is a different thing. It is meant to be downloaded and processed by a computer, and it can hold millions of rows. A hospital can have a good patient estimator and a broken price file, or the other way round.</p>
     </section>
 
     <section id="access">
-      <p class="eyebrow">Publication and access</p>
-      <h2>The file has to be public in a practical sense</h2>
-      <p class="lead">A technically public URL is not enough if a person or automated system must pass through barriers to reach the data.</p>
+      <p class="eyebrow">Posting and access</p>
+      <h2>The file has to be easy to reach in practice</h2>
+      <p class="lead">A public web address isn’t enough if a person or a program has to get past barriers to reach the data.</p>
       <dl class="defs">
         <div>
           <dt>No payment or account</dt>
-          <dd>The MRF must be available free of charge and without creating a user account or entering a password.</dd>
+          <dd>The file must be free, with no sign-up and no password.</dd>
         </div>
         <div>
-          <dt>No personal information</dt>
-          <dd>Access cannot depend on submitting personally identifying information.</dd>
+          <dt>No personal details</dt>
+          <dd>Getting the file can’t depend on giving your name, email or other personal information.</dd>
         </div>
         <div>
-          <dt>Direct and automated access</dt>
-          <dd>The file must be available to automated searches and direct downloads through a link on a public website.</dd>
+          <dt>Direct, automated access</dt>
+          <dd>Programs must be able to find and download the file from a link on a public website.</dd>
         </div>
         <div>
           <dt>Searchable data</dt>
-          <dd>The MRF and the standard charge information inside it must be digitally searchable.</dd>
+          <dd>The file and the prices inside it must be searchable by a computer.</dd>
         </div>
         <div>
-          <dt>Standard filename</dt>
-          <dd>The filename follows the CMS convention: <code>&lt;ein&gt;_&lt;hospital-name&gt;_standardcharges.csv</code> or <code>.json</code>.</dd>
+          <dt>Standard file name</dt>
+          <dd>The name follows a CMS pattern: <code>&lt;ein&gt;_&lt;hospital-name&gt;_standardcharges.csv</code> or <code>.json</code>.</dd>
         </div>
         <div>
-          <dt>Website signposts</dt>
-          <dd>The hosting site maintains a root <code>/cms-hpt.txt</code> pointer and a footer link labeled “Price Transparency” that leads to the source page.</dd>
+          <dt>Signposts on the website</dt>
+          <dd>The site keeps a pointer file at <code>/cms-hpt.txt</code> and a footer link labeled “Price Transparency” that leads to the page hosting the price file.</dd>
         </div>
       </dl>
-      <p>The hospital also has to identify the location associated with the charges. If locations under one license use different standard charges, each location must separately publish the charges that apply there.</p>
-      <p>Both the comprehensive file and the consumer-friendly information must be updated at least once each year. The MRF records its most recent update date, and the consumer-facing publication must clearly display its update date.</p>
+      <p>The hospital also has to say which location the prices belong to. If sites under one license have different prices, each site must post its own.</p>
+      <p>Both the price file and the patient view must be updated at least once a year. The price file records its last update date. The patient view must show its update date clearly.</p>
     </section>
 
     <section id="timeline">
       <p class="eyebrow">Timeline</p>
-      <h2>The rule has become more specific over time</h2>
-      <p class="lead">The main obligation began in 2021. Later changes standardized how hospitals publish and describe the data.</p>
+      <h2>The rule has gotten more specific</h2>
+      <p class="lead">The main duty began in 2021. Later changes standardized how hospitals post and describe the data.</p>
       <ol class="timeline">
-        <li data-live="1"><span class="when">Jan. 2021</span><div class="what"><b>Publication requirements took effect</b>Hospitals began publishing comprehensive standard-charge files and consumer-friendly information for shoppable services.</div></li>
-        <li data-live="1"><span class="when">Jan. 2024</span><div class="what"><b>Websites gained standard signposts</b>The hosting website became responsible for a root <code>/cms-hpt.txt</code> pointer and a footer link labeled “Price Transparency.”</div></li>
-        <li data-live="1"><span class="when">July 2024</span><div class="what"><b>CMS templates became required</b>MRFs had to conform to a CMS template layout, data specification, and data dictionary.</div></li>
-        <li data-live="1"><span class="when">Jan. 2025</span><div class="what"><b>Additional detail became required</b>The template added remaining data elements for contract methods, allowed amounts, drug units, and code modifiers.</div></li>
-        <li data-live="1"><span class="when">Jan. 2026</span><div class="what"><b>The current requirements took effect</b>The file moved to an attestation, added a responsible senior official and organizational NPIs, and replaced the estimated allowed amount with 10th percentile, median, and 90th percentile allowed amounts plus a count.</div></li>
-        <li data-live="1"><span class="when">Apr. 2026</span><div class="what"><b>CMS enforcement of the 2026 elements began</b>The CMS technical guide identifies April 1, 2026 as the enforcement date for the new template elements.</div></li>
+        <li data-live="1"><span class="when">Jan. 2021</span><div class="what"><b>The posting rules took effect</b>Hospitals began posting a full price file and a patient view of common services.</div></li>
+        <li data-live="1"><span class="when">Jan. 2024</span><div class="what"><b>Websites needed standard signposts</b>The hospital’s website had to carry a <code>/cms-hpt.txt</code> pointer file and a footer link labeled “Price Transparency.”</div></li>
+        <li data-live="1"><span class="when">July 2024</span><div class="what"><b>CMS templates became required</b>Price files had to follow a CMS template, its data rules and its data dictionary.</div></li>
+        <li data-live="1"><span class="when">Jan. 2025</span><div class="what"><b>More detail became required</b>The template added the remaining fields for contract methods, allowed amounts, drug units and code modifiers.</div></li>
+        <li data-live="1"><span class="when">Jan. 2026</span><div class="what"><b>The current rules took effect</b>Files now include a signed accuracy statement, a responsible senior official and organization ID numbers (NPIs). The single estimated allowed amount was replaced by 10th percentile, median and 90th percentile amounts plus a count.</div></li>
+        <li data-live="1"><span class="when">Apr. 2026</span><div class="what"><b>CMS began enforcing the 2026 fields</b>The CMS technical guide gives April 1, 2026 as the date enforcement of the new template fields starts.</div></li>
       </ol>
-      <p>This timeline is about federal requirements. A file created under an older template may still open normally, but being readable is different from using the current required format.</p>
+      <p>This timeline covers federal requirements only. A file made with an older template can still open fine, but a file that opens isn’t the same as a file in the current required format.</p>
     </section>
 
     <section id="enforcement">
       <p class="eyebrow">Enforcement</p>
-      <h2>CMS makes the compliance determination</h2>
-      <p class="lead">CMS can evaluate complaints, review outside analyses, conduct audits, request certification or documents, and perform a comprehensive review.</p>
-      <p>If CMS concludes that a hospital is not complying, the agency may issue a written warning. A material violation can lead to a requested corrective action plan that identifies the changes and timeline needed. If a hospital does not respond to that request or does not complete the approved plan, CMS may impose and publicize a civil monetary penalty.</p>
-      <p>The regulation says those actions generally, but not necessarily, occur in that order. CMS may also publicize assessments and enforcement outcomes, and it may work with health-system leadership when similar problems affect hospitals across a system.</p>
+      <h2>CMS decides who is compliant</h2>
+      <p class="lead">CMS can look into complaints, review outside analyses, run audits, ask for documents or certifications, and do a full review.</p>
+      <p>If CMS decides a hospital isn’t following the rule, it can send a written warning. For a serious violation it can ask the hospital for a corrective action plan that lists the fixes and a timeline. If the hospital doesn’t respond, or doesn’t finish the approved plan, CMS can fine it and make the fine public.</p>
+      <p>The rule says these steps usually, but not always, happen in that order. CMS can also publish its findings and outcomes. When the same problem shows up across a health system, it can work with the system’s leaders.</p>
+      <figure class="dg">
+        <div class="dg-scroll">
+          <svg viewBox="0 0 600 200" role="img" aria-labelledby="dg-ladder-t">
+            <title id="dg-ladder-t">Four steps CMS can take, from looking into a problem to a public fine, shown as a rising staircase.</title>
+            <g>
+              <rect class="step-rect rise" style="--i:0" x="0" y="96" width="144" height="64" rx="10"/>
+              <rect class="step-rect rise" style="--i:1" x="152" y="72" width="144" height="88" rx="10"/>
+              <rect class="step-rect rise" style="--i:2" x="304" y="48" width="144" height="112" rx="10"/>
+              <rect class="step-rect end rise" style="--i:3" x="456" y="24" width="144" height="136" rx="10"/>
+            </g>
+            <g class="step" style="--i:2"><text class="t" x="14" y="122" font-size="12.5">CMS looks into it</text><text class="s" x="14" y="140">Complaint or audit</text></g>
+            <g class="step" style="--i:3"><text class="t" x="166" y="98" font-size="12.5">Written warning</text><text class="s" x="166" y="116">A formal notice</text></g>
+            <g class="step" style="--i:4"><text class="t" x="318" y="74" font-size="12.5">Corrective plan</text><text class="s" x="318" y="92">The fixes and a timeline</text></g>
+            <g class="step" style="--i:5"><text class="t end-t" x="470" y="50" font-size="12.5">Fine, made public</text><text class="s end-s" x="470" y="68">A civil monetary penalty</text></g>
+            <g class="step" style="--i:6"><text class="s" x="0" y="188">Usually in this order, but not always. A fine only follows if a hospital doesn’t answer or doesn’t finish its plan.</text></g>
+          </svg>
+        </div>
+        <figcaption>What CMS can do if it decides a hospital isn’t following the rule. This project can’t take any of these steps.</figcaption>
+      </figure>
       <aside class="callout">
         <h4>An outside audit is evidence, not enforcement</h4>
-        <p>This project can record that a public file was missing, blocked, stale, or formatted with an older template at a particular time. It cannot determine legal liability, order a correction, or impose a penalty.</p>
+        <p>This project can note that a public file was missing, blocked, out of date or on an old template at a certain time. It can’t decide who is legally at fault, order a fix, or issue a penalty.</p>
       </aside>
     </section>
 
     <section id="audit">
       <p class="eyebrow">This tracker</p>
-      <h2>The audit checks a defined slice of the rule</h2>
-      <p class="lead">The automated check focuses on whether a comprehensive MRF can be discovered and read from outside the hospital's website.</p>
-      <p>It starts with a known hospital domain, requests the standard pointer location, matches a pointer entry to the hospital, follows the listed MRF URL, and reads enough of the file to inspect basic metadata. The check considers access, declared template version, and the date of the latest update.</p>
-      <p>It does not validate every record in the MRF. It does not confirm that all negotiated rates are present, evaluate whether the values are accurate, compare the file with contracts, or test the separate shoppable-services display or estimator.</p>
-      <p>Some hospitals are matched to a file through reviewed evidence even when a usable pointer is unavailable. Those findings retain the source and review context rather than pretending the path was discovered in the standard way.</p>
+      <h2>The tracker checks one slice of the rule</h2>
+      <p class="lead">The automated check asks one thing: can an outsider find and read the hospital’s price file?</p>
+      <p>It starts with a hospital’s known website and asks for the standard pointer file. It matches an entry in that file to the hospital, follows the price file link, and reads enough of the file to check basic details. It looks at whether the file can be reached, which template version it names, and when it was last updated.</p>
+      <p>It doesn’t check every row. It doesn’t confirm that all negotiated prices are there, judge whether they are accurate, compare them with contracts, or test the patient lookup tool.</p>
+      <p>Some hospitals are matched to a file through reviewed evidence even when no usable pointer file exists. Those results keep their source and review notes. They aren’t presented as if the file had been found the standard way.</p>
     </section>
 
     <section id="labels">
       <p class="eyebrow">Reading results</p>
-      <h2>The labels describe what the audit observed</h2>
+      <h2>Each label says what was observed</h2>
       <dl class="defs defs-compact">
-        <div><dt>Compliant</dt><dd>A charge file opened and passed the tracker's current access, template, and freshness checks. The prices inside were not verified.</dd></div>
-        <div><dt>Not compliant</dt><dd>The observed publication had a specific issue such as a missing pointer, dead MRF link, update date older than one year, or outdated template.</dd></div>
-        <div><dt>Blocked</dt><dd>The website or file refused the automated request. That prevents a result and is kept separate from an observed content failure.</dd></div>
-        <div><dt>Not assessed</dt><dd>No usable domain was available, the site was unreachable, or a system pointer could not be matched confidently to the hospital.</dd></div>
-        <div><dt>Exempt</dt><dd>The roster record falls into a category the project treats as outside the ordinary publication check under 45 CFR 180.30(b).</dd></div>
+        <div><dt>File located</dt><dd>A price file opened and passed the tracker’s checks for access, template version and freshness. The prices inside it were not verified.</dd></div>
+        <div><dt>Issue observed</dt><dd>A specific problem was observed, such as no pointer file, a dead link to the price file, an update date over a year old, or an outdated template. This is a note for review, not a legal finding.</dd></div>
+        <div><dt>Request denied</dt><dd>The website or file refused the tracker’s automated request. That prevents a result, so it is kept apart from problems seen in the file itself.</dd></div>
+        <div><dt>Not assessed</dt><dd>There was no usable website, the site didn’t respond, or a health-system pointer file couldn’t be confidently matched to this hospital.</dd></div>
+        <div><dt>Exempt</dt><dd>The project treats this hospital as outside the normal check. Most are covered by 45 CFR 180.30(b): federal hospitals, Indian Health Program hospitals and some state hospitals. Facilities with dated evidence that they have closed are listed here too.</dd></div>
       </dl>
-      <p>Results are a dated snapshot. Hospitals can replace files, repair links, change domains, or reorganize systems after a crawl. The tracker keeps blocked and unassessed records visible so the coverage limits remain part of the result.</p>
+      <p>Results are a snapshot on a date. Hospitals can swap files, fix links, change websites or reorganize after the check. The tracker keeps denied and not-assessed hospitals in view so you can see where the check couldn’t reach.</p>
     </section>
 
     <section id="sources">
       <p class="eyebrow">Sources</p>
       <h2>Official references</h2>
       <ul>
-        <li><a href="https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-E/part-180">45 CFR Part 180, current hospital price transparency regulation</a></li>
+        <li><a href="https://www.ecfr.gov/current/title-45/subtitle-A/subchapter-E/part-180">45 CFR Part 180, the current hospital price transparency rule</a></li>
         <li><a href="https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency">CMS Hospital Price Transparency overview</a></li>
-        <li><a href="https://github.com/CMSgov/hospital-price-transparency">CMS templates, data dictionaries, and implementation timeline</a></li>
-        <li><a href="https://cmsgov.github.io/hpt-tool/">CMS compliance and file-validation tools</a></li>
+        <li><a href="https://github.com/CMSgov/hospital-price-transparency">CMS templates, data dictionaries and timeline</a></li>
+        <li><a href="https://cmsgov.github.io/hpt-tool/">CMS compliance and file-checking tools</a></li>
       </ul>
     </section>
   </main>
@@ -220,19 +239,19 @@
     <a href="mrf.html">
       <span class="k">Previous</span>
       <b>Price files</b>
-      <span>What the downloadable file contains and what its prices mean.</span>
+      <span>What is in the price file and what its prices mean.</span>
     </a>
     <a href="pointer.html">
       <span class="k">Next</span>
       <b>Pointer files</b>
-      <span>How the standard text file makes hospital price data findable.</span>
+      <span>How a small text file makes a hospital’s price file easy to find.</span>
     </a>
   </div>
 </div>
 
 <footer class="wrap">
-  <p><b>Sources.</b> Regulatory claims link to the current eCFR and CMS documentation.</p>
-  <p>This guide is not legal advice. The regulation governs where a summary differs.</p>
+  <p><b>Sources.</b> Claims about the rule link to the current eCFR and CMS documentation.</p>
+  <p>This guide is not legal advice. If a summary here differs from the rule, the rule wins.</p>
 </footer>
 
 </body>

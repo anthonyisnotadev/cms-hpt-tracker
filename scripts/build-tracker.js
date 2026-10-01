@@ -50,8 +50,13 @@ function readTable(file) {
 const FINDINGS = [
   ...Object.entries(require('./hpt/lib/nationwide-verification-view').LABELS).map(([key, label]) => ({
     key: require('./hpt/lib/nationwide-verification-view').finding(key), tier: 'unknown', label,
-    blurb: 'A dated nationwide retrieval observation, not a compliance determination. See the separate checks and next action.'
+    blurb: 'The required link could not be retrieved from the locations checked. The hospital record shows what was tried and what needs checking next.'
   })),
+  // The raw compliance ledger predates the namespaced display key. Keep this
+  // legacy alias renderable; current nationwide observations use the
+  // `not-assessed-nationwide-*` key and retain the same unresolved semantics.
+  { key: 'mrf-facility-identity-unresolved', tier: 'unknown', label: 'MRF hospital identity unresolved',
+    blurb: 'A possible machine-readable file could not be safely matched to this facility. The identity question remains unresolved.' },
   ...Object.entries(require('./hpt/lib/discovery-review').LABELS).map(([key, label]) => ({
     key: require('./hpt/lib/discovery-review').finding(key), tier: 'unknown', label,
     blurb: 'A dated discovery observation, not a compliance determination. See the record evidence and next action.'
@@ -63,7 +68,7 @@ const FINDINGS = [
   { key: 'compliant-date-unverified', tier: 'compliant', label: 'File located, date unread',
     blurb: 'The bounded probe did not recover a declared update date; file validity is unverified.' },
   { key: 'pointer-lists-no-mrf-url', tier: 'failing', label: 'MRF link not extracted',
-    blurb: 'Our parser extracted no MRF URL for the matched pointer entry.' },
+    blurb: 'The parser extracted no MRF URL for the matched pointer entry.' },
   { key: 'pointer-links-older-mrf-than-source-page', tier: 'unknown', label: 'Pointer and pricing-page files differ',
     blurb: 'The official pricing page links a newer identity-matched file, while the current pointer still links an older file.' },
   { key: 'pointer-links-different-facility-mrf-source-page-file', tier: 'unknown', label: 'Pointer names another facility’s file',
@@ -72,10 +77,10 @@ const FINDINGS = [
     blurb: 'The current root pointer links a newer identity-matched file, while the hospital pricing page still links an older file. Complete-file validity and legal compliance are unverified.' },
   { key: 'pointer-links-unavailable-mrf-source-page-current-file', tier: 'unknown', label: 'Pointer file unavailable; pricing-page file found',
     blurb: 'The official pricing page links an identity-matched current file, while the exact file URL declared by the root pointer is unavailable.' },
-  { key: 'pointer-target-dns-unresolved-page-file-found', tier: 'unknown', label: 'Pointer host unresolved to clients; pricing-page file found',
-    blurb: 'The pointer names a different host that did not resolve in our bounded client or browser. The current official pricing page links a separate identity-matched file; the DNS failures do not prove the pointer file is absent.' },
+  { key: 'pointer-target-dns-unresolved-page-file-found', tier: 'unknown', label: 'Charge file found; link needs review',
+    blurb: 'A charge file opened from the hospital pricing page. The file address listed in its separate file list did not work during the check.' },
   { key: 'pointer-http-client-error-page-file-found', tier: 'unknown', label: 'Pointer HTTP URL failed to this client; HTTPS file found',
-    blurb: 'The official pointer uses HTTP for the exact file that the pricing page links over HTTPS. Our bounded client received an empty reply from HTTP but read identity-matched CSV bytes over HTTPS. Browser blocking is a client observation, not proof that the pointer target is absent.' },
+    blurb: 'The official pointer uses HTTP for the exact file that the pricing page links over HTTPS. The bounded client received an empty reply from HTTP but read identity-matched CSV bytes over HTTPS. Browser blocking is a client observation, not proof that the pointer target is absent.' },
   { key: 'pointer-links-html-download-page-with-file', tier: 'unknown', label: 'Pointer links a download page instead of the file',
     blurb: 'The root pointer links an HTML portal that exposes an identity-matched file. The file date and version are reported separately without treating the portal as the MRF.' },
   { key: 'pointer-html-portal-not-found-source-page-current-file', tier: 'unknown', label: 'Pointer portal rendered not found; pricing-page file found',
@@ -99,17 +104,19 @@ const FINDINGS = [
   { key: 'mrf-address-field-incomplete', tier: 'unknown', label: 'File address field incomplete',
     blurb: 'The pointer and file identify the facility, but the declared address omits a component of the independently verified hospital street.' },
   { key: 'mrf-template-version-noncanonical', tier: 'unknown', label: 'File template version needs review',
-    blurb: 'The pointer-linked file identifies the facility and has a current declared date, but its version field differs from the CMS schema identifier. This observation does not validate the complete file.' },
+    blurb: 'The recorded version differs from the required CMS 3.0.0 identifier. Confirm the literal against the current facility file before determining whether its template meets the rule; complete-file validity is unverified.' },
+  { key: 'mrf-v3-file-validation-pending', tier: 'unknown', label: 'CMS v3 metadata observed; full validation pending',
+    blurb: 'The first-party page-linked file declares CMS version 3.0 and bounded metadata supports facility identity and update date. The complete file and usable MRF rows have not been validated, and root-pointer linkage remains separate.' },
   { key: 'mrf-custom-workbook-metadata-unverified', tier: 'unknown', label: 'Pointer links custom workbook; CMS file metadata unverified',
     blurb: 'The pointer-linked object identifies the facility but is an XLSX workbook served from a CSV-labeled URL. Its generation date is not a verified MRF update date, and no CMS template version was declared.' },
   { key: 'mrf-url-unreachable', tier: 'failing', label: 'MRF request failed',
-    blurb: 'Our request to the recorded charge-file URL failed; the cause and current link need verification.' },
+    blurb: 'The request to the recorded charge-file URL failed; the cause and current link need verification.' },
   { key: 'mrf-stale-over-365-days', tier: 'failing', label: 'Recorded date over 365 days old',
     blurb: 'The extracted update date was over 365 days old at assessment time.' },
   { key: 'old-template-version', tier: 'failing', label: 'Older template version recorded',
-    blurb: 'The extracted version was below the version expected by this audit.' },
+    blurb: 'The verified file declares a 1.x or 2.x CMS template version. CMS 3.0.0 is required; this recorded template does not meet the current version requirement.' },
   { key: 'no-cms-hpt-txt-published', tier: 'failing', label: 'Pointer not retrieved',
-    blurb: 'Our checks did not retrieve a usable pointer from the tested locations.' },
+    blurb: 'The checks did not retrieve a usable pointer from the tested locations.' },
   { key: 'pointer-blocked-to-automation', tier: 'blocked', label: 'Pointer blocked to automation',
     blurb: 'The website refused the automated request for cms-hpt.txt.' },
   { key: 'mrf-blocked-to-automation', tier: 'blocked', label: 'File blocked to automation',
@@ -131,7 +138,7 @@ const FINDINGS = [
   { key: 'not-assessed-no-domain-candidate', tier: 'unknown', label: 'No candidate website identified',
     blurb: 'The recorded search returned no usable website candidate; the official domain remains unidentified.' },
   { key: 'not-assessed-site-unreachable', tier: 'unknown', label: 'Website request failed',
-    blurb: 'Our request to the recorded website failed during the check.' },
+    blurb: 'The request to the recorded website failed during the check.' },
   // This row DOES carry a pointer file, which is why the page can offer a PTR
   // button next to it. The label has to say so, otherwise the badge appears to
   // contradict the button sitting beside it.
@@ -153,7 +160,7 @@ const TIERS = [
   { key: 'failing', label: 'Issue observed', short: 'Issue observed',
     note: 'A discovery, request, date, or template check needs verification; this is not a legal determination.' },
   { key: 'blocked', label: 'Request denied', short: 'Request denied',
-    note: 'Our automated request was denied or rate-limited; browser access may differ.' },
+    note: 'The automated request was denied or rate-limited; browser access may differ.' },
   { key: 'unknown', label: 'Not assessed', short: 'Not assessed',
     note: 'Domain, access, or hospital identity remains unresolved in this audit.' },
   { key: 'exempt', label: 'Exempt', short: 'Exempt',
@@ -190,7 +197,7 @@ const QUEUE = [
     why: 'The earlier site attribution was corrected, but current pointer or file evidence still needs a separate review.' },
   { key: 'unblocker', label: 'Route around the block',
     action: 'Open the site in a browser or ask the hospital for access.',
-    why: 'Our automated request was denied; browser access has not necessarily been checked.' },
+    why: 'The automated request was denied; browser access has not necessarily been checked.' },
   { key: 'exempt-federal', label: 'Close as exempt',
     action: 'No work required. Record the exemption and move on.',
     why: 'Federally owned hospitals are outside the rule and will never publish under it.' },
@@ -278,7 +285,8 @@ function main() {
         throw new Error(`Standing evidence follow-up worklist is stale against ${name}`);
     }
     investigationNextSteps = Object.fromEntries(worklist.records.map(row => [row.ccn, {
-      stream: 'standing-evidence-follow-up', gate: row.current_disposition,
+      stream: row.followup_kind === 'access-retry' ? 'standing-evidence-access-retry' : 'standing-evidence-follow-up',
+      gate: row.current_disposition,
       nextAction: row.next_action, latestObservedAt: row.latest_observed_at,
       standingCheckedAt: row.standing_checked_at,
       browserFileStatus: row.browser_file_status, browserFileObservedAt: row.browser_file_observed_at,
@@ -372,11 +380,11 @@ function main() {
   // discrepancies and metadata-only follow-ups must not disappear between
   // the reconciliation report and the presentation queues.
   const reconciliationRecords = JSON.parse(fs.readFileSync(reconciliationPath, 'utf8')).records || [];
-  for (const row of reconciliationRecords.filter(r => r.workstream !== 'consistent'
-    && r.workstream !== 'verification-proof-gap')) {
+  const reconciliationByCcn = new Map(reconciliationRecords.map(row => [row.ccn, row]));
+  for (const row of reconciliationRecords.filter(r => r.workstream !== 'consistent')) {
     if (investigationNextSteps[row.ccn]) continue;
     investigationNextSteps[row.ccn] = {
-      stream: row.workstream,
+      stream: row.workstream === 'verification-proof-gap' ? 'other-reconciliation' : row.workstream,
       gate: row.proposed_disposition || row.standing_finding || '',
       nextAction: row.next_action || 'Reconcile the newer observation against the retained standing finding.',
       latestObservedAt: row.latest_observed_at || '',
@@ -384,14 +392,53 @@ function main() {
     };
   }
   const reviewedFollowups = Object.fromEntries(reconciliationQueue
-    .filter(r => r.workstream === 'genuinely-unresolved-investigation'
-      && r.manual_access_observation?.next_action
-      && r.manual_access_observation?.observed_at
-      && Date.parse(r.manual_access_observation.observed_at) >= Date.parse(r.standing_checked_at || '1970-01-01'))
+    .filter(r => {
+      const campusScope = r.manual_access_observation?.first_party_campus_scope_recheck_2026_09_29;
+      const observedAt = campusScope?.observed_at || r.manual_access_observation?.observed_at;
+      return r.workstream === 'genuinely-unresolved-investigation'
+        && r.manual_access_observation?.next_action
+        && observedAt
+        && Date.parse(observedAt) >= Date.parse(r.standing_checked_at || '1970-01-01');
+    })
     .map(r => [r.ccn, {
-      observedAt: r.manual_access_observation.observed_at,
-      disposition: r.manual_access_observation.disposition || '',
+      observedAt: r.manual_access_observation.first_party_campus_scope_recheck_2026_09_29?.observed_at
+        || r.manual_access_observation.observed_at,
+      disposition: r.manual_access_observation.disposition || 'first-party-campus-scope-recheck',
       nextAction: r.manual_access_observation.next_action,
+      // Keep newly recovered, hash-bound manual file evidence visible without
+      // replacing the independent raw nationwide observation. Never expose a
+      // source URL here: some publisher links can contain access tokens.
+      fileEvidence: /^[a-f0-9]{64}$/i.test(String(r.manual_access_observation.mrf_sha256 || ''))
+        && Number(r.manual_access_observation.mrf_bytes) > 0 ? {
+          bytes: Number(r.manual_access_observation.mrf_bytes),
+          sha256: String(r.manual_access_observation.mrf_sha256).toLowerCase(),
+          version: r.manual_access_observation.mrf_version || '',
+          declaredDate: r.manual_access_observation.mrf_last_updated_on || '',
+          facilityName: r.manual_access_observation.mrf_hospital_name || '',
+          address: r.manual_access_observation.mrf_address || '',
+          state: r.manual_access_observation.mrf_address?.match(/\b([A-Z]{2})\s+\d{5}(?:-\d{4})?\b/)?.[1] || '',
+          structuralDefect: r.manual_access_observation.structural_defect || '',
+        } : null,
+      crossFacilityEvidence: r.manual_access_observation.current_state_crosswalk ? {
+        retrievedAt: r.manual_access_observation.current_state_crosswalk.retrieved_at || '',
+        proofFile: r.manual_access_observation.current_state_crosswalk.proof_file || '',
+        sourceSha256: r.manual_access_observation.current_state_crosswalk.report_sha256 || '',
+        facilityA: {
+          license: r.manual_access_observation.current_state_crosswalk.houston_license || '',
+          address: r.manual_access_observation.current_state_crosswalk.houston_state_address || '',
+        },
+        facilityB: {
+          license: r.manual_access_observation.current_state_crosswalk.henderson_license || '',
+          address: r.manual_access_observation.current_state_crosswalk.henderson_state_address || '',
+        },
+        interpretation: r.manual_access_observation.current_state_crosswalk.interpretation || '',
+      } : null,
+      campusScopeEvidence: r.manual_access_observation.first_party_campus_scope_recheck_2026_09_29 ? {
+        proofFile: r.manual_access_observation.first_party_campus_scope_recheck_2026_09_29.proof_file || '',
+        hospitalCampus: 'San Carlos Apache Healthcare · 103 Medicine Way Road, Peridot, AZ 85542',
+        relatedCampus: 'Clarence Wesley Health Center · 9 A Clarence Wesley Health Center Loop, Bylas, AZ 85530',
+        interpretation: 'First-party campus scope only; does not establish a CCN mapping or MRF coverage.',
+      } : null,
     }]));
   // Raw HTTP evidence per CCN, from the curl-evidence index: [url, status, edge, transcript].
   const evidenceFile = path.join(srcDir, 'curl-evidence', 'index.csv');
@@ -409,6 +456,24 @@ function main() {
     : {};
 
   const byCcn = new Map(manifest.map(r => [r.ccn, r]));
+  // Page-linked file proofs may be newer than the pointer manifest and need
+  // not be represented as root-pointer rows. Preserve their official source
+  // page in the tracker only when the exact page-file URL matches the MRF
+  // selected for that CCN; this prevents borrowing a sibling or stale page.
+  const manualAccessPath = path.join(srcDir, 'reconciliation-manual-access-observations.json');
+  const manualAccessRecords = fs.existsSync(manualAccessPath)
+    ? (JSON.parse(fs.readFileSync(manualAccessPath, 'utf8')).records || []) : [];
+  const manualPageFileByCcn = new Map();
+  for (const observation of manualAccessRecords) {
+    const fileUrl = observation.facility_file_url || observation.page_file_url
+      || observation.publisher_file_url || '';
+    const pageUrl = observation.official_pricing_page || observation.official_page_url || '';
+    if (!fileUrl || !pageUrl || !observation.ccn) continue;
+    const prior = manualPageFileByCcn.get(observation.ccn);
+    if (!prior || String(observation.observed_at || '') > String(prior.observed_at || '')) {
+      manualPageFileByCcn.set(observation.ccn, { fileUrl, pageUrl, observed_at: observation.observed_at || '' });
+    }
+  }
   const coords = readCoords();
 
   const types = [...new Set(compliance.map(r => r.type))].sort();
@@ -420,6 +485,9 @@ function main() {
   // One row per hospital, positional to keep the payload small.
   const rows = compliance.map(r => {
     const m = byCcn.get(r.ccn) || {};
+    const manualPageFile = manualPageFileByCcn.get(r.ccn);
+    const sourcePageUrl = m.source_page_url
+      || (manualPageFile?.fileUrl === r.mrf_url ? manualPageFile.pageUrl : '');
     const iv = interventionByCcn.get(r.ccn) || {};
     return [
       r.ccn,
@@ -445,7 +513,7 @@ function main() {
       (r.checked_at || '').slice(0, 10),
       // Human-facing transparency/discovery page. This matters for direct-MRF
       // evidence where there is intentionally no cms-hpt.txt pointer URL.
-      m.source_page_url || '',
+      sourcePageUrl,
       // Why this hospital is unresolved and what a human should do, when it is.
       interventionKeys.indexOf(iv.intervention),
     ];
@@ -532,20 +600,34 @@ function main() {
     return { name, total: subset.length, verifiable, rate: verifiable ? counts.compliant / verifiable : null, ...counts };
   }).sort((a, b) => b.total - a.total);
 
-  // Freshness, measured only on files we actually read.
-  const ages = manifest.filter(r => r.mrf_last_updated && String(r.mrf_days_since_update ?? '').trim() !== '')
-    .map(r => Number(r.mrf_days_since_update))
-    .filter(n => Number.isFinite(n) && n >= 0)
-    .sort((a, b) => a - b);
-  const at = q => ages[Math.min(ages.length - 1, Math.floor(ages.length * q))];
+  // Freshness bins. The counts and age quantiles are filled in after the data
+  // block is assembled, by the same summary the page runs (see below).
   const FRESH_BINS = [
     { label: 'Under 90 days', short: '0-90d', lo: 0, hi: 90 },
     { label: '90 days to 6 months', short: '90-180d', lo: 91, hi: 180 },
     { label: '6 months to a year', short: '180-365d', lo: 181, hi: 365 },
     { label: 'Over a year', short: '365d+', lo: 366, hi: null },
-  ].map(b => ({ ...b, n: ages.filter(d => d >= b.lo && d <= (b.hi === null ? 1e9 : b.hi)).length }));
+  ].map(b => ({ ...b, n: 0 }));
 
-  const queue = buildReviewedWorkQueue(investigationNextSteps, reviewed.nationwide.records);
+  // The reconciliation is the canonical decision about whether a newer
+  // observation superseded the reviewed finding. The source verification row
+  // can still carry an older/retry-level classification, so project these
+  // exact-CCN flags into the queue check before deciding whether an unresolved
+  // next step is required.
+  const queueRecords = reviewed.nationwide.records.map(row => {
+    const reconciliation = reconciliationByCcn.get(row.ccn);
+    return reconciliation ? {
+      ...row,
+      latest_observation_superseded: reconciliation.latest_observation_superseded,
+      standing_evidence_retained: reconciliation.standing_evidence_retained,
+      reconciliation_workstream: reconciliation.workstream,
+      supported_identity_uncertainty: reconciliation.workstream === 'supported-uncertainty-monitor'
+        || reconciliation.proposed_disposition === 'supported-identity-uncertainty',
+    } : row;
+  });
+  const queue = buildReviewedWorkQueue(investigationNextSteps, queueRecords);
+  const auditDocuments = require('./hpt/lib/audit-document-history')
+    .buildAuditDocumentHistory(srcDir, compliance.map(row => row.ccn));
 
   const gapRows = gaps.map(g => [
     g.ccn, g.hospital_name, g.city,
@@ -564,25 +646,33 @@ function main() {
   const bytes = manifest.map(r => Number(r.mrf_bytes)).filter(n => Number.isFinite(n) && n > 0);
   const checked = compliance.map(r => r.checked_at).filter(Boolean).sort();
 
-  // CMS template versions come in as free text; fold the obvious spellings.
-  const normVersion = v => {
-    const m = String(v).match(/(\d+)(?:[.,](\d+))?/);
-    if (!m) return null;
-    return m[1] + '.' + (m[2] === undefined ? 'x' : Number(m[2]));
-  };
+  // Preserve the source literal in the version tally. Collapsing 3.0.0,
+  // 3.0.1, 3.00 or malformed values into one display label obscures whether
+  // the exact CMS v3 identifiers (3.0 and 3.0.0) were actually recorded.
+  const versionLiteral = v => String(v || '').trim();
   const versions = new Map();
   for (const r of manifest) {
-    const v = normVersion(r.mrf_cms_version);
+    const v = versionLiteral(r.mrf_cms_version);
     if (v) versions.set(v, (versions.get(v) || 0) + 1);
   }
 
   const interventionCounts = tally(interventions, r => r.intervention);
 
   const data = {
+    readableHistory: JSON.parse(fs.readFileSync(path.join(srcDir, 'readable-history-rewrites.json'), 'utf8')),
+    auditDocuments: auditDocuments.byCcn,
     additionalFiles,
     primaryFileLabels,
     reviewedFollowups,
     investigationNextSteps,
+    // Keep the interactive rollup on the same exact-CCN reconciliation
+    // semantics used to generate the queue. The browser summary recomputes
+    // counts from rows, so it needs the supersession/retention flags too.
+    reconciliationByCcn: Object.fromEntries(reconciliationRecords.map(row => [row.ccn, {
+      latest_observation_superseded: row.latest_observation_superseded === true,
+      standing_evidence_retained: row.standing_evidence_retained === true,
+      workstream: row.workstream,
+    }])),
     auditHistory: reviewed.history,
     reviewedCcns: reviewed.applied,
     reviewedAt: require('./hpt/lib/manual-reconciliation').authoritativeDates(compliance),
@@ -608,10 +698,10 @@ function main() {
       states: states.length,
       filesRead: manifest.length,
       terabytes: bytes.reduce((a, b) => a + b, 0) / 1e12,
-      medianAge: at(0.5),
-      p90Age: at(0.9),
-      maxAge: ages[ages.length - 1],
-      agesCounted: ages.length,
+      medianAge: null,
+      p90Age: null,
+      maxAge: null,
+      agesCounted: 0,
     },
     freshness: FRESH_BINS,
     states: stateRows,
@@ -630,6 +720,26 @@ function main() {
       [ccn, list.slice().sort((a, b) => String(b[1]).localeCompare(String(a[1])))])),
     outreach,
   };
+
+
+  // File ages were once read from the manifest's mrf_days_since_update, which
+  // is each file's age on the day it was crawled and covers every manifest row.
+  // The page counts from each hospital's current file date to today. Two
+  // methods gave two different "over a year" counts for the same snapshot, so
+  // the build now runs the page's own summary, as of the snapshot date, with
+  // the published corrections a first-time reader is seeded with (the same
+  // mapping as calculateSummary in js/tracker.js). The embedded and displayed
+  // figures can then differ only by elapsed days or a reader's local edits.
+  {
+    const corrections = {};
+    for (const [ccn, rec] of Object.entries(outreach || {})) {
+      if (rec && rec.correction) corrections[ccn] = { ...rec.correction,
+        checkedOn: rec.correction.checkedOn || String(rec.updatedAt || '').slice(0, 10) };
+    }
+    const asOfSnapshot = require('../js/tracker-summary.js').summarize(data, corrections, data.generated);
+    data.freshness = asOfSnapshot.freshness;
+    for (const key of ['medianAge', 'p90Age', 'maxAge', 'agesCounted']) data.totals[key] = asOfSnapshot.totals[key];
+  }
 
   // Keep em dashes out of the public page without altering the source CSVs.
   const json = JSON.stringify(require('./hpt/lib/public-url-safety').protectPublicUrls(data)).replace(/\u2014/g, '-');
@@ -715,7 +825,7 @@ function main() {
   // Optional single-file copy with js/tracker.js folded in, for sharing or
   // hosting somewhere without the rest of the repo.
   // Fold every page script into the document, in the order the page lists them.
-  const PAGE_SCRIPTS = ['motion.js', 'outreach.js', 'tracker.js'];
+  const PAGE_SCRIPTS = ['motion.js', 'outreach.js', 'tracker-summary.js', 'tracker.js'];
   const inlineScript = () => {
     let out = built;
     for (const name of PAGE_SCRIPTS) {

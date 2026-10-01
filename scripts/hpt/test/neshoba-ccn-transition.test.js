@@ -19,6 +19,39 @@ test('Neshoba shared campus retains separate acute and critical-access CCN work'
   assert.equal(proof.current_file.declared_license_state_field, 'MS');
   assert.deepEqual(proof.ccns, ['250043', '251340']);
   const observations = JSON.parse(fs.readFileSync(path.join(audit, 'reconciliation-manual-access-observations.json'))).records;
+  const latestObservation = observations.find(row => row.ccn === '250043'
+    && row.proof_file === 'reconciliation-neshoba-historical-report-endpoint-prefix-index-review-2026-09-28.json');
+  const archiveReview = JSON.parse(fs.readFileSync(path.join(audit,
+    'reconciliation-neshoba-pretransition-commoncrawl-index-review-2026-09-28.json')));
+  const historicalReportRoute = JSON.parse(fs.readFileSync(path.join(audit,
+    'reconciliation-neshoba-historical-standard-charges-route-2026-09-28.json')));
+  assert.equal(latestObservation.latest_pretransition_archive_review_2026_09_28.proof_file,
+    'reconciliation-neshoba-pretransition-commoncrawl-index-review-2026-09-28.json');
+  assert.equal(latestObservation.latest_historical_standard_charges_route_review_2026_09_28.proof_file,
+    'reconciliation-neshoba-historical-standard-charges-route-2026-09-28.json');
+  assert.equal(latestObservation.latest_historical_report_endpoint_prefix_index_review_2026_09_28.http_status, 200);
+  assert.equal(latestObservation.latest_historical_report_endpoint_prefix_index_review_2026_09_28.response_bytes, 3);
+  const stateBracket = JSON.parse(fs.readFileSync(path.join(audit,
+    'reconciliation-neshoba-state-license-transition-bracket-2026-09-28.json')));
+  assert.equal(stateBracket.state_sources[0].edition, 'May 05, 2025');
+  assert.match(stateBracket.state_sources[0].web_reader_evidence, /type Acute/);
+  assert.equal(stateBracket.state_sources[1].edition, 'September 18, 2026');
+  assert.match(stateBracket.state_sources[1].observed_row, /type CAH/);
+  assert.equal(stateBracket.historical_mrf_bytes_recovered, false);
+  assert.equal(stateBracket.disposition_changed, false);
+  assert.equal(stateBracket.cohort_count_effect, 0);
+  assert.match(stateBracket.interpretation, /bracket is not the effective date/i);
+  assert.equal(latestObservation.latest_state_license_transition_bracket_2026_09_28.proof_file,
+    'reconciliation-neshoba-state-license-transition-bracket-2026-09-28.json');
+  assert.match(latestObservation.next_action, /Do not repeat .*Wayback Reports\.aspx prefix query/);
+  assert.equal(historicalReportRoute.archive_page_source.historical_controls[0].displayed_date, '2025-03-29');
+  assert.equal(historicalReportRoute.archive_page_source.historical_controls[0].report_type, 'CDMWithoutLabel');
+  assert.equal(historicalReportRoute.archive_page_source.historical_database_key.value_observed, false);
+  assert.equal(historicalReportRoute.outcome.historical_report_bytes_recovered, false);
+  assert.equal(historicalReportRoute.outcome.disposition_changed, false);
+  assert.equal(archiveReview.outcome.historical_mrf_bytes_recovered, false);
+  assert.equal(archiveReview.outcome.ccn_disposition_changed, false);
+  assert.match(archiveReview.outcome.next_action, /materially different archive\/source collection/);
   const unresolved = JSON.parse(fs.readFileSync(path.join(audit, 'unresolved-investigation-worklist.json'))).records;
   const standing = JSON.parse(fs.readFileSync(path.join(audit, 'standing-evidence-followup-worklist.json'))).records;
   for (const ccn of proof.ccns) {
@@ -52,7 +85,7 @@ test('Neshoba secondary September label does not replace the retained June 4 pub
   assert.equal(secondary.bounded_raw_file_retrieval.declared_last_updated_on, '2026-06-04');
   assert.equal(secondary.disposition_effect, 'none; retain both CCN records and the existing shared-campus uncertainty');
   const manual = JSON.parse(fs.readFileSync(path.join(audit, 'reconciliation-manual-access-observations.json'))).records;
-  const qies = manual.find(row => row.ccn === '250043' && row.proof_file === 'reconciliation-neshoba-cms-pos-transition-proof-2026-09-27.json');
+  const qies = manual.find(row => row.ccn === '250043' && row.proof_file === 'reconciliation-neshoba-historical-report-endpoint-prefix-index-review-2026-09-28.json');
   assert.equal(qies.latest_secondary_raw_file_recheck_2026_09_27.raw_download_sha256, proof.current_file.complete_sha256);
   assert.equal(qies.latest_secondary_raw_file_recheck_2026_09_27.disposition_effect, 'none');
 });
@@ -100,7 +133,15 @@ test('Neshoba current transition actions separate retired acute CCN from active 
   assert.equal(workItem.current_disposition, oldCcn.disposition);
   assert.equal(workItem.nationwide_disposition, 'mrf-facility-identity-unresolved');
   assert.equal(workItem.evidence_gate, 'historical-hpt-coverage-through-2025-12-31');
-  assert.equal(workItem.next_action, oldCcn.next_action);
+  assert.match(workItem.next_action, /materially different archive\/source collection/);
+  assert.match(workItem.next_action, /historical database key/);
+  assert.match(workItem.next_action, /CDMWithoutLabel/);
+  assert.equal(workItem.latest_review_at, '2026-09-28T22:43:17Z');
+  assert.match(workItem.next_action, /publisher-provided historical CMS-format file/);
+  assert.doesNotMatch(workItem.next_action, /inspect only dated pre-2025-12-31 pointer\/MRF evidence/);
+  const reconciled = JSON.parse(fs.readFileSync(path.join(audit, 'nationwide-reconciliation.json')))
+    .records.find(row => row.ccn === '250043');
+  assert.equal(reconciled.next_action, workItem.next_action);
   assert.equal(activeCcn.disposition, 'current-cah-shared-campus-mrf-ccn-scope-unresolved');
   assert.match(activeCcn.next_action, /251340/);
   assert.equal(review.official_operator_sources.critical_access_accreditation_certificate.facility,

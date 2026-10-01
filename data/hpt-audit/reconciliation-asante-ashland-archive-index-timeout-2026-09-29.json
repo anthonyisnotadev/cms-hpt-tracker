@@ -1,0 +1,27 @@
+{
+  "audit_id": "reconciliation-asante-ashland-archive-index-timeout-2026-09-29",
+  "observed_at": "2026-09-29T14:30:00Z",
+  "ccn": "380005",
+  "facility": "Asante Ashland Community Hospital",
+  "question": "Does the Internet Archive CDX index expose an independently retrievable capture of the exact publisher-linked combined Asante Rogue Regional/Asante Ashland ZIP?",
+  "query": {
+    "service": "Internet Archive CDX API",
+    "url": "https://web.archive.org/cdx/search/cdx?url=www.asante.org%2Fapp%2Ffiles%2Fpublic%2F361f9b00-187a-4091-ba37-1c3308bed5eb%2FAsanteRogueRegionalMedicalCenter_StandardCharges.zip&output=json&filter=statuscode%3A200&filter=mimetype%3Aapplication%2Fzip&collapse=digest",
+    "timeout_seconds": 15
+  },
+  "result": "Request timed out after 15 seconds; no CDX response or capture metadata was received.",
+  "search_crosscheck": {
+    "queries": [
+      "exact publisher ZIP filename",
+      "exact publisher ZIP blob UUID",
+      "Asante Rogue Regional standard charges ZIP mirror"
+    ],
+    "result": "Search surfaced the previously documented ShowTheBill page, which reports a 2026-09-04 capture and 273.1 MB ZIP but links to the same Asante-hosted URL. It exposes neither archive bytes nor a file hash and is not an independent byte-serving source.",
+    "classification": "repeat-source-discovery; no new MRF evidence"
+  },
+  "prior_route_context": "The exact publisher ZIP already returned HTTP 403 to a bounded GET, ERR_BLOCKED_BY_CLIENT in the browser, and unsupported application/zip in the web reader. Those unchanged routes were not retried.",
+  "evidence_gained": "None. No archive bytes, capture metadata, or Ashland-specific MRF content were recovered.",
+  "disposition_effect": "none; keep CCN 380005 unresolved for file coverage",
+  "count_effect": 0,
+  "next_action": "Do not repeat the unchanged CDX query or exact publisher URL without a source/access change. Seek an independently byte-serving archive or a publisher-provided copy/dated correction, then hash and inspect the exact archive for Ashland identity, 280 Maple Street, Oregon, CMS date/version, and usable rows. Preserve the Q2 2026 CMS QIES status evidence separately; it does not prove file coverage."
+}

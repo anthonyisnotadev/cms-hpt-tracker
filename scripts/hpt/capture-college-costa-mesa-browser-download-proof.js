@@ -1,12 +1,13 @@
 'use strict';
 const fs = require('node:fs');
 const path = require('node:path');
+const os = require('node:os');
 const crypto = require('node:crypto');
 const { csvToObjects } = require('./lib/util');
 
 const root = path.resolve(__dirname, '../..');
 const audit = path.join(root, 'data/hpt-audit');
-const download = path.join(process.env.USERPROFILE || 'C:/Users/vboxuser', 'Downloads',
+const download = path.join(os.homedir(), 'Downloads',
   '954124770_college-hospital-costa-mesa_standardcharges.csv');
 const bytes = fs.readFileSync(download);
 const text = bytes.toString('utf8');

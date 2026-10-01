@@ -1,0 +1,42 @@
+{
+  "audit_id": "reconciliation-sun-columbus-interactive-browser-recheck-2026-09-29",
+  "observed_at": "2026-09-29T13:52:16Z",
+  "ccn": "364058",
+  "facility": "SUN Behavioral Columbus",
+  "official_identity": {
+    "name": "SUN Behavioral Columbus",
+    "address": "900 E Dublin Granville Rd, Columbus, OH 43229",
+    "source": "https://suncolumbus.com/price-transparency/"
+  },
+  "browser_observations": {
+    "browser": "Codex in-app browser",
+    "pricing_page_url": "https://suncolumbus.com/price-transparency/",
+    "pricing_page_rendered": true,
+    "pricing_page_exact_machine_readable_link": "https://suncolumbus.com/files/sun-columbus-standardcharges.csv",
+    "pricing_page_link_label": "machine-readable version",
+    "csv_navigation_url": "https://suncolumbus.com/files/sun-columbus-standardcharges.csv",
+    "csv_rendered_result": "Branded SUN Behavioral WordPress 404 Not Found page",
+    "cms_pointer_url": "https://suncolumbus.com/cms-hpt.txt",
+    "cms_pointer_rendered_result": "Branded SUN Behavioral WordPress 404 Not Found page",
+    "browser_http_status_exposed": false,
+    "csv_bytes_received": false,
+    "pointer_text_received": false
+  },
+  "prior_transport_observation": {
+    "observed_at": "2026-09-21T21:38:00Z",
+    "exact_csv_url": "https://suncolumbus.com/files/sun-columbus-standardcharges.csv",
+    "automated_http_result": 202,
+    "result": "SG-Captcha challenge",
+    "interpretation": "Transport/client result only; no CSV metadata or rows were obtained."
+  },
+  "assessment": {
+    "interpretation": "The official page still links the exact CSV, but this distinct browser route renders a branded 404 page for both that file URL and the root pointer. Since the browser did not expose HTTP status and the official page still advertises the file, this does not prove file absence or noncompliance. No MRF contents are known.",
+    "disposition": "pointer-discovery-incomplete",
+    "disposition_changed": false,
+    "new_mrf_bytes": 0,
+    "new_publisher_linked_file": 0,
+    "new_distinct_client_route_observations": 2,
+    "891_unresolved_count_change": 0,
+    "next_action": "Do not repeat the unchanged CSV or cms-hpt.txt URLs. Wait for a publisher route/file change or use a materially different authorized publisher-provided copy; then verify exact Columbus identity/address, Ohio state, declared date/version and usable CSV rows before promotion."
+  }
+}

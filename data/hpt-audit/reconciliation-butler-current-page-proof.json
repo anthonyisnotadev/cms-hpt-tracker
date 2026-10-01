@@ -10,6 +10,19 @@
   "page_linked_file_http_status": 403,
   "page_linked_file_content_type": "text/html challenge response",
   "page_linked_file_transport": "Cloudflare challenge; no CSV bytes exposed",
+  "browser_access_recheck_2026_09_29": {
+    "observed_at": "2026-09-29T05:16:34Z",
+    "browser_surface": "Codex in-app browser",
+    "official_pricing_page_rendered": true,
+    "official_page_link_label": "Download Pricing",
+    "official_page_link_url": "https://www.independence.health/documents/content/250965274_Butler-Memorial_standardcharges.csv",
+    "browser_attempt_url": "https://www.independence.health/documents/content/250965274_Butler-Memorial_standardcharges.csv",
+    "browser_result": "net::ERR_BLOCKED_BY_CLIENT",
+    "csv_bytes_received": false,
+    "interpretation": "A distinct in-app browser client could render the official pricing page and verify its exact Butler download link, but could not retrieve the CSV. This is an access/client observation only; it does not establish file absence, content, identity metadata, usability or compliance.",
+    "disposition_changed": false,
+    "next_action": "Do not retry the unchanged direct request or in-app browser URL. Obtain the exact bytes through a publisher-provided copy or a materially different authorized byte-serving route; then verify Butler identity/address, Pennsylvania license state, declared date/version and usable rows."
+  },
   "disposition": "official-butler-page-and-exact-file-link-confirmed-bytes-blocked",
-  "next_action": "Obtain permitted bytes for the exact Butler Memorial CSV, then verify header name/address, PA license state, update date and CMS version. Do not infer file absence or promote from page labels alone."
+  "next_action": "Do not retry the unchanged direct request or in-app browser URL. Obtain the exact bytes through a publisher-provided copy or a materially different authorized byte-serving route; then verify Butler identity/address, Pennsylvania license state, declared date/version and usable rows."
 }

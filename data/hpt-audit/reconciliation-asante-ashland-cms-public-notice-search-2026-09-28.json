@@ -1,0 +1,37 @@
+{
+  "ccn": "380005",
+  "facility": "Asante Ashland Community Hospital",
+  "observed_on": "2026-09-28",
+  "source": {
+    "title": "CMS Public Notices",
+    "url": "https://www.cms.gov/medicare/health-safety-standards/certification-compliance/public-notices",
+    "scope_observed": "CMS says current legal notices are retained for 14 months and Medicare terminations are publicly announced before their effective dates.",
+    "dynamic_table_entries_before_filter": 321,
+    "newest_displayed_notice_date": "2026-09-25"
+  },
+  "browser_searches": [
+    {
+      "query": "380005",
+      "result_count": 0,
+      "result_text": "Showing 0 to 0 of 0 entries (filtered from 321 total entries); No matching records found."
+    },
+    {
+      "query": "Asante Ashland",
+      "result_count": 0,
+      "result_text": "Showing 0 to 0 of 0 entries (filtered from 321 total entries); No matching records found."
+    }
+  ],
+  "static_html_capture": {
+    "http_status": 200,
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 697989,
+    "sha256": "64b26ab05b86b7c9ce0f2895dbaf0e8a7454c0a5cf72b388e6cd689c661c721a",
+    "limitation": "The static HTML did not contain the dynamic notice table or either search term; the zero-result observations come from filtering the rendered browser table."
+  },
+  "finding": "No CMS public notice matching CCN 380005 or the name Asante Ashland was located in the current table during this search.",
+  "interpretation": "This is a bounded negative search result only. Absence from the public-notice table does not establish continued active Medicare enrollment, termination, or transfer of the CCN. It does not supersede the unresolved need for effective-dated post-2026-05-22 status evidence.",
+  "mrf_bytes_recovered": false,
+  "disposition_effect": "none",
+  "count_effect": "none",
+  "next_action": "Obtain a direct effective-dated CMS/MAC certification or termination status record on or after 2026-05-22. Separately obtain and hash the actual current Asante ZIP bytes, then inspect the complete archive for Ashland identity/address, required metadata and usable rows. Do not infer enrollment status from the absence of a public notice."
+}

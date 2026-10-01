@@ -1,0 +1,37 @@
+{
+  "ccn": "370170",
+  "observed_at": "2026-09-28T09:11:15Z",
+  "cms_provider_record": {
+    "url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=370170&conditions%5B0%5D%5Boperator%5D=%3D",
+    "observation": "The previously retrieved exact-CCN CMS provider record identifies LAWTON INDIAN HOSPITAL at 1515 Lawrie Tatum Road, Lawton, Oklahoma, CCN 370170, and reports hospital_ownership as Tribal.",
+    "ownership_field_interpretation": "Retain the CMS ownership value as reported; CMS describes its hospital-ownership dataset as self-reported. Ownership is distinct from the current program operator evidence below."
+  },
+  "cms_service_locator": {
+    "url": "https://www.cms.gov/training-education/partner-outreach-resources/american-indian/alaska-native/behavioral-health/service-locator",
+    "observation": "CMS lists Lawton Indian Hospital at 1515 Northeast Lawrie Tatum Road, Lawton, OK 73507, facility type Hospital, with affiliation IHS. Live browser review 2026-09-28."
+  },
+  "cms_tribal_hospital_crosswalk": {
+    "url": "https://www.cms.gov/files/document/indian-healt-service-cms-all-final.pdf",
+    "observation": "CMS's IHS-CMS tribal-facility crosswalk lists Lawton Indian Hospital as a Hospital, CCN 370170, Lawton, Oklahoma; its stated methodology cross-references the IHS facility list with CMS QCOR. The listing is retained as corroborating identity evidence, not current ownership evidence."
+  },
+  "current_ihs_operator_evidence": {
+    "facility_page_url": "https://www.ihs.gov/oklahomacity/healthcarefacilities/lawton/",
+    "facility_page_observation": "The current official IHS Lawton Service Unit page identifies Lawton Indian Hospital at 1515 NE Lawrie Tatum Road, describes hospital inpatient and outpatient services, and lists IHS leadership and the Lawton Service Unit.",
+    "federally_operated_facilities_url": "https://www.ihs.gov/quality/national-accountability-dashboard-for-quality/health-care-accreditation-status-of-federally-operated-ihs-facilities/",
+    "federally_operated_facilities_observation": "IHS's current dashboard is expressly for federally operated IHS facilities and lists Oklahoma City Area, Lawton Service Unit, Lawton, Hospital, with full accreditation; live web review 2026-09-28.",
+    "eligibility_url": "https://www.ihs.gov/aboutihs/eligibility/",
+    "eligibility_observation": "IHS describes itself as the health-care system for federally recognized American Indian and Alaska Native people; eligibility details are governed by the Indian Health Manual."
+  },
+  "legal_basis": {
+    "regulation": "45 CFR 180.30(b)(2)",
+    "regulation_url": "https://www.govinfo.gov/content/pkg/CFR-2025-title45-vol2/pdf/CFR-2025-title45-vol2-part180.pdf",
+    "regulation_observation": "CMS deems hospitals operated by an Indian Health Program, as defined by section 4(12) of the Indian Health Care Improvement Act, to be in compliance with Part 180.",
+    "statute": "25 USC 1603(12)(A)",
+    "statute_url": "https://uscode.house.gov/view.xhtml?edition=prelim&path=%2Fprelim%40title25%2Fchapter18",
+    "statute_observation": "Indian Health Program includes any health program administered directly by the Indian Health Service."
+  },
+  "disposition": "scope-exempt-indian-health-program",
+  "interpretation": "The exact-CCN CMS record's self-reported Tribal ownership value is retained and is not overwritten by operator evidence. CMS's current locator identifies the exact Lawton hospital as IHS-affiliated, and IHS's current official facility page and federally-operated-facilities dashboard identify Lawton as an IHS-operated hospital. Because 25 USC 1603(12)(A) includes health programs administered directly by IHS and 45 CFR 180.30(b)(2) deems hospitals operated by an Indian Health Program in compliance with Part 180, these facility-specific sources support the Indian Health Program scope category. This is a scope classification only and makes no pointer-linkage, current MRF availability, file-quality, or rate-level claim.",
+  "disposition_change_reason": "New CMS locator and IHS dashboard evidence resolves the prior operator-versus-CMS-ownership ambiguity by directly documenting IHS operation; no change is made to the ownership field itself.",
+  "next_action": "Retain the Tribal ownership observation and dated IHS-operator proof separately. Revisit if the exact CCN identity, CMS locator affiliation, IHS operation, or program status changes. Do not infer the presence or absence of a current CMS-template MRF."
+}

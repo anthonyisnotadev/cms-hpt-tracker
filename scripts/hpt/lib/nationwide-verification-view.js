@@ -1,5 +1,7 @@
 'use strict';
 
+const { isCurrentTemplateVersion } = require('./probe');
+
 const LABELS = {
   'linked-mrf-header-unmatched': 'Linked file returned; hospital identity unresolved',
   'pointer-discovery-incomplete': 'Pointer discovery incomplete',
@@ -13,12 +15,22 @@ const LABELS = {
   'mrf-verification-pending': 'MRF verification pending',
   'pointer-linked-file-not-probed': 'Pointer linked; file not yet probed',
   'pointer-linked-file-review-pending': 'Pointer and file header reviewed; current file finding pending',
+  'mrf-facility-identity-unresolved': 'MRF hospital identity unresolved',
+  'pointer-facility-match-unresolved': 'Pointer found; hospital match unresolved',
+  'file-custom-workbook-review': 'Custom workbook reviewed; CMS MRF identity or format unresolved',
+  'selected-file-only-in-earlier-pointer-version': 'Selected file linked by earlier pointer version',
   'file-custom-workbook-review': 'Custom workbook reviewed; CMS MRF identity or format unresolved',
   'selected-file-only-in-earlier-pointer-version': 'Selected file linked by earlier pointer version',
   'official-website-search-pending': 'Official website search pending'
 };
 
 const finding = disposition => 'not-assessed-nationwide-' + disposition;
+const EFFECTIVE_UNRESOLVED_LABELS = Object.fromEntries([
+  'mrf-facility-identity-unresolved', 'pointer-facility-match-unresolved',
+  'linked-mrf-header-unmatched', 'pointer-linked-file-not-probed',
+  'pointer-linked-file-review-pending', 'file-custom-workbook-review',
+  'selected-file-only-in-earlier-pointer-version'
+].map(key => [key, finding(key)]));
 const VERIFIED_FINDINGS = {
   'verified-current-mrf': 'compliant-observed',
   'verified-stale-mrf': 'mrf-stale-over-365-days',
@@ -32,9 +44,14 @@ const VERIFIED_FINDINGS = {
 
 function effectiveVerifiedFinding(record) {
   const mapped = VERIFIED_FINDINGS[record?.disposition];
-  if (record?.disposition === 'verified-template-review'
-      && record.cms_template_version && !/^[12](?:\.|$)/.test(String(record.cms_template_version)))
+  if (record?.disposition === 'verified-template-review') {
+    // A template-review observation without a literal version is unknown,
+    // not evidence that the hospital uses an old template.
+    if (!String(record.cms_template_version || '').trim()) return null;
+    if (isCurrentTemplateVersion(record.cms_template_version)) return 'compliant-observed';
+    if (/^[12](?:\.|$)/.test(String(record.cms_template_version))) return 'old-template-version';
     return 'mrf-template-version-noncanonical';
+  }
   return mapped;
 }
 
@@ -57,10 +74,25 @@ function applyNationwideVerification(rows, records = []) {
   }
   return rows.map(row => {
     const record = by.get(row.ccn);
-    const canOverlayUnassessedStanding = /^not-assessed-/.test(String(row.finding || ''))
+    const reviewedAddressConflict = record?.reviewed_facility_mismatch === true
+      && record.disposition === 'linked-mrf-header-unmatched'
+      && record.observation_role === 'current-observation';
+    const canOverlayUnassessedStanding = reviewedAddressConflict
+      || /^not-assessed-/.test(String(row.finding || ''))
       && row.finding !== 'not-assessed-identity-conflict';
-    if (!record || record.latest_observation_superseded || record.standing_evidence_retained
-        || (!canOverlayUnassessedStanding && record.prior_finding !== row.finding)
+    if (!record) return row;
+    if (record.standing_evidence_retained) {
+      // Some historical inputs store the disposition itself in the finding
+      // column. Normalize that current unresolved presentation key without
+      // replacing its separately retained historical evidence.
+      const currentFinding = EFFECTIVE_UNRESOLVED_LABELS[record.disposition];
+      if (!record.latest_observation_superseded && currentFinding && row.finding === record.disposition)
+        return { ...row, finding: currentFinding, assessable: 'no' };
+      return row;
+    }
+    const verifiedTemplateReview = record.disposition === 'verified-template-review';
+    if (record.latest_observation_superseded
+        || (!canOverlayUnassessedStanding && !verifiedTemplateReview && record.prior_finding !== row.finding)
         || record.hospital_name !== row.hospital_name || record.city !== row.city || record.state !== row.state)
       return row;
     const mapped = VERIFIED_FINDINGS[record.disposition];
@@ -75,11 +107,25 @@ function applyNationwideVerification(rows, records = []) {
         && ['compliant-observed', 'compliant-date-unverified', 'mrf-stale-over-365-days', 'old-template-version',
           'mrf-license-state-field-conflicts-facility', 'mrf-address-field-conflicts-facility',
           'mrf-template-version-noncanonical', 'mrf-custom-workbook-metadata-unverified',
-          'pricing-page-links-older-mrf-than-pointer'].includes(row.finding)) return row;
+          'pricing-page-links-older-mrf-than-pointer',
+          'root-pointer-html-page-with-official-page-file'].includes(row.finding)) return row;
+    if (reviewedAddressConflict) return {
+      ...row,
+      finding: finding(record.disposition),
+      assessable: 'no',
+      evidence: `Reviewed current file address conflicts with the official facility address. ${record.next_action || ''}`.trim(),
+      checked_at: checkedAt,
+      domain: record.official_domain || row.domain,
+      pointer_url: firstUrl(record.pointer_url) || row.pointer_url,
+      mrf_url: record.mrf_url || row.mrf_url,
+      mrf_last_updated: record.declared_last_updated || '',
+      mrf_days_since_update: '',
+      cms_template_version: record.cms_template_version || ''
+    };
     // A new file cannot replace a standing claim on a version string alone.
     // For the *same* file, a newer matched header repeating the standing
     // literal is enough to correct the label on that observed metadata.
-    if (record.disposition === 'verified-template-review'
+    if (verifiedTemplateReview
         && !/^[12](?:\.|$)/.test(String(record.cms_template_version || ''))) {
       const sameFileVersionProof = row.finding === 'compliant-observed'
         && !!record.cms_template_version && record.cms_template_version !== '3.0.0'
@@ -91,7 +137,7 @@ function applyNationwideVerification(rows, records = []) {
         finding: effectiveVerifiedFinding(record), checked_at: checkedAt,
         evidence: `Matched header rechecked the same file and repeated literal CMS template version ${record.cms_template_version}; current-template label requires review. Prior finding: ${row.finding}.`
       };
-      const exactReplacementProof = row.finding === 'compliant-observed'
+      const exactReplacementProof = ['compliant-observed', 'mrf-template-version-noncanonical'].includes(row.finding)
         && !!record.cms_template_version && record.cms_template_version !== '3.0.0'
         && row.mrf_url !== record.mrf_url && !!record.mrf_url
         && record.metadata_source === 'header-observation'
@@ -111,12 +157,16 @@ function applyNationwideVerification(rows, records = []) {
       && row.finding === 'compliant-observed' && row.mrf_url !== record.mrf_url
       && record.pointer_state === 'retrieved-facility-linked'
       ? ` Exact-CCN pointer bytes (${record.pointer_corpus_sha256}) and matched file header support this replacement; the file declares literal CMS template version ${record.cms_template_version}. Earlier file retained in history.` : '';
-    const evidence = `${mapped ? 'Nationwide verification' : LABELS[record.disposition]}. ${record.pointer_reason || ''}`.trim()
-      + exactReplacementNote
-      + (record.next_action ? ` Next: ${record.next_action}` : '');
+    const reviewedPointerFileIdentity = record.reviewed_pointer_file_identity_overlay;
+    const evidence = reviewedPointerFileIdentity
+      ? `Reviewed pointer/file identity restored from ${reviewedPointerFileIdentity}; browser sample and prior complete-file proof match the current CMS v3 file. The later incomplete retry remains separately recorded.`
+      : `${mapped ? 'Nationwide verification' : LABELS[record.disposition]}. ${record.pointer_reason || ''}`.trim()
+        + (record.cms_validator?.alert ? ` CMS validator alert retained: ${record.cms_validator.alert}` : '')
+        + exactReplacementNote
+        + (record.next_action ? ` Next: ${record.next_action}` : '');
     if (!mapped || record.disposition.startsWith('scope-exempt-')) return {
       ...row,
-      finding: mapped || finding(record.disposition),
+      finding: mapped || EFFECTIVE_UNRESOLVED_LABELS[record.disposition] || finding(record.disposition),
       assessable: 'no',
       evidence,
       checked_at: checkedAt,
@@ -133,7 +183,12 @@ function applyNationwideVerification(rows, records = []) {
       assessable: 'yes',
       evidence,
       domain: record.official_domain || row.domain,
-      pointer_url: firstUrl(record.pointer_url) || row.pointer_url,
+      // For a reviewed page-file-only check, keep its first-party source-page
+      // location in the legacy presentation pointer field. The nationwide
+      // pointer candidates are separate observations and must not overwrite
+      // this reviewed source link (or be implied to declare the page file).
+      pointer_url: record.metadata_source === 'manual-page-file-recheck'
+        ? row.pointer_url : firstUrl(record.pointer_url) || row.pointer_url,
       mrf_url: record.mrf_url || row.mrf_url,
       mrf_last_updated: date,
       mrf_days_since_update: days,

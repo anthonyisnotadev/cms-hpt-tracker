@@ -814,3 +814,81 @@ footer b { color: var(--ink-2); font-weight: 600; }
 footer a { border-bottom: 1px solid var(--rule-strong); }
 footer a:hover { color: var(--ink-2); }
 footer code { font-family: var(--f-mono); }
+
+/* ======================================================================
+   Explainer pages, brought in line with the tracker banner: a large tight
+   headline on the left, the page's key facts as a card on the right, and
+   white cards on the grey ground for anything that is a fact. ============ */
+@media (min-width: 900px) {
+  .masthead-body:not(.hero) {
+    display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(260px, .85fr);
+    column-gap: clamp(32px, 5vw, 72px); align-items: end;
+  }
+  .masthead-body:not(.hero) > .eyebrow, .masthead-body:not(.hero) > h1, .masthead-body:not(.hero) > .standfirst { grid-column: 1; }
+  .masthead-body:not(.hero) > .dateline { grid-column: 2; grid-row: 1 / span 3; align-self: end; margin-top: 0; }
+}
+.masthead-body:not(.hero) > h1 { font-size: clamp(40px, 5.4vw, 68px); line-height: 1.02; letter-spacing: -.05em; max-width: 14ch; text-wrap: balance; }
+.masthead-body:not(.hero) > .dateline {
+  display: block; padding: var(--s-2) var(--s-5); background: var(--paper); border: 0; border-radius: var(--r-lg); color: var(--ink-3);
+}
+.masthead-body:not(.hero) > .dateline > div { display: flex; justify-content: space-between; align-items: baseline; gap: var(--s-4); padding: var(--s-3) 0; }
+.masthead-body:not(.hero) > .dateline > div + div { border-top: 1px solid var(--rule); }
+.masthead-body:not(.hero) > .dateline b { color: var(--ink); font-weight: 600; text-align: right; }
+
+/* Groups of facts are cards with room between them, not one cell-divided slab. */
+.cards, .nextprev { gap: var(--s-3); background: none; border: 0; border-radius: 0; overflow: visible; }
+.card, .nextprev a { border-radius: var(--r-lg); }
+.nextprev a { transition: box-shadow .15s var(--ease); }
+.nextprev a:hover { background: var(--surface); box-shadow: 0 0 0 1px var(--ink-3) inset; }
+.nextprev a:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.prose .scroll-x { padding: var(--s-2) var(--s-5) var(--s-4); background: var(--surface); border-radius: var(--r-lg); }
+.tbl tbody tr:nth-child(even) { background: none; }
+.tbl tbody tr:last-child th, .tbl tbody tr:last-child td { border-bottom: 0; }
+.defs, .fact-list { padding: 0 var(--s-5); background: var(--surface); border-top: 0; border-radius: var(--r-lg); }
+.defs > div:last-child, .fact-list > .fact-row:last-child { border-bottom: 0; }
+.prose > section { border-bottom-color: var(--rule); }
+.prose h2 { letter-spacing: -.035em; text-wrap: balance; }
+
+/* ======================================================================
+   Diagrams. Inline SVG that draws itself in when it scrolls into view.
+   Everything is visible by default; js/motion.js adds .dg-ready (hide) and
+   then .in (play) only when motion is allowed, so no-JS and reduced-motion
+   readers get the finished picture. Colour is neutral ink; the one filled
+   node marks the destination. ============================================ */
+.dg { margin: var(--s-6) 0 0; padding: var(--s-5); background: var(--surface); border-radius: var(--r-lg); }
+.dg-scroll { overflow-x: auto; }
+.dg svg { display: block; width: 100%; min-width: 520px; height: auto; font-family: var(--f-body); }
+.dg figcaption { margin-top: var(--s-4); color: var(--ink-3); font-size: var(--fs-xs); line-height: 1.5; max-width: 64ch; }
+.dg .n { fill: var(--surface); stroke: var(--rule-strong); stroke-width: 1.5; }
+.dg .n.end, .dg .n.on { fill: var(--ink); stroke: var(--ink); }
+.dg .t { fill: var(--ink); font-size: 13px; font-weight: 600; }
+.dg .s { fill: var(--ink-3); font-size: 11px; }
+.dg .m { font-family: var(--f-mono); }
+.dg .end-t { fill: var(--paper); }
+.dg .end-s { fill: var(--paper); opacity: .72; }
+.dg .ln { fill: none; stroke: var(--rule-strong); stroke-width: 1.5; }
+.dg .ln.strong { stroke: var(--ink-3); }
+.dg .ar { fill: var(--ink-3); }
+.dg .pill { fill: var(--surface-sunk); }
+.dg .dot { fill: var(--ink-2); }
+.dg .dot.hollow { fill: var(--surface); stroke: var(--ink-2); stroke-width: 2; }
+.dg .bar { fill: var(--rule-strong); }
+.dg .band { stroke: var(--surface-sunk); stroke-width: 12; stroke-linecap: round; }
+.dg .step-rect { fill: var(--surface-sunk); }
+.dg .step-rect.end { fill: var(--ink); }
+.dg .gate { stroke: var(--ink-3); stroke-width: 1.5; stroke-dasharray: 4 4; fill: none; }
+
+@keyframes dg-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes dg-draw { to { stroke-dashoffset: 0; } }
+@keyframes dg-grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes dg-rise { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@media (prefers-reduced-motion: no-preference) {
+  .dg.dg-ready .step { opacity: 0; }
+  .dg.dg-ready .draw { stroke-dasharray: var(--len, 200); stroke-dashoffset: var(--len, 200); }
+  .dg.dg-ready .grow { transform-box: fill-box; transform-origin: left center; transform: scaleX(0); }
+  .dg.dg-ready .rise { transform-box: fill-box; transform-origin: center bottom; transform: scaleY(0); }
+  .dg.in .step { animation: dg-in .5s var(--ease) forwards; animation-delay: calc(var(--i, 0) * 120ms); }
+  .dg.in .draw { animation: dg-draw .6s var(--ease) forwards; animation-delay: calc(var(--i, 0) * 120ms + 80ms); }
+  .dg.in .grow { animation: dg-grow .7s var(--ease) forwards; animation-delay: calc(var(--i, 0) * 70ms); }
+  .dg.in .rise { animation: dg-rise .6s var(--ease) forwards; animation-delay: calc(var(--i, 0) * 140ms); }
+}

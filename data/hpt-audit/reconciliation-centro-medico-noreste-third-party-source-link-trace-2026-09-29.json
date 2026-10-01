@@ -1,0 +1,42 @@
+{
+  "ccn": "400141",
+  "observed_date": "2026-09-29",
+  "source_type": "third-party-page-source-link-trace",
+  "third_party_page": "https://hospitalpricefinder.com/hospital/centro-medico-del-noreste-fajardo-pr/",
+  "third_party_claim": "Page presents 340 procedures as prices for Centro Medico Del Noreste at 404 Ave General Valero, Fajardo, PR 00738, and states the prices come from its machine-readable file.",
+  "methodology_page": "https://hospitalpricefinder.com/methodology/",
+  "methodology_claim": "The publisher states it locates each hospital MRF from the hospital price-transparency page and parses CSV, JSON and ZIP/extension-less endpoints.",
+  "browser_observation": {
+    "browser": "codex-in-app-browser",
+    "action": "Opened the third-party page's 'View this hospital’s source price file' link.",
+    "observed_destination": "https://caribbeanmedicalcenter.com/wp-content/uploads/2026/01/660559417_Caribbean_Medical_Center_standarcharges1.csv"
+  },
+  "known_file_proof": "reconciliation-centro-medico-noreste-full-file-sibling-proof-2026-09-26.json",
+  "known_file_sha256": "1e6cc38a1a32e634bdde757fd018f920a2cf1cfc1d74bbde58588e3a09a5c9ba",
+  "known_file_identity": {
+    "declared_hospital_name": "Caribbean Medical Center",
+    "declared_address": "AVE. OSVALDO MOLINA 151 FAJARDO PR",
+    "declared_license_number": "400131|PR",
+    "declared_npi": "1215051404",
+    "cms_template_version": "2.2.0",
+    "last_updated_on": "2025-11-28"
+  },
+  "cms_target_identity": {
+    "facility_id": "400141",
+    "facility_name": "CENTRO MEDICO DEL NORESTE",
+    "address": "404 AVE GENERAL VALERO",
+    "citytown": "FAJARDO",
+    "state": "PR",
+    "zip_code": "00738"
+  },
+  "interpretation": "The third-party page claims prices for the target facility/address, but its visible source-file link resolves to the exact first-party Caribbean Medical Center CSV already fully retrieved and proven as sibling CCN 400131. This identifies a source-link/attribution discrepancy in the third-party listing. It does not independently prove the third party derived all displayed prices from that URL, and it provides no target-specific 400141 MRF, CMS metadata, or usable target-file bytes.",
+  "newness_accounting": {
+    "new_observation": true,
+    "new_mrf_bytes": false,
+    "new_target_file_evidence": false,
+    "disposition_changed": false,
+    "cohort_count_effect": 0
+  },
+  "disposition": "third-party-target-price-claim-source-link-resolves-to-known-sibling-file; target-mrf-unresolved",
+  "next_action": "Keep CCN 400141 unresolved. Do not import the third-party prices or the linked Caribbean file. Seek a Centro Médico del Noreste-specific CMS CSV/JSON MRF or publisher explanation identifying its source and current-CCN coverage; verify exact 404 Ave General Valero identity, Puerto Rico state, CMS date/version, and usable bytes before any promotion."
+}

@@ -1,0 +1,65 @@
+{
+  "audit_id": "taylor-regional-live-route-regression-proof-2026-09-29",
+  "ccn": "110256",
+  "observed_at": "2026-09-29T06:00:42Z",
+  "official_transparency_page": {
+    "url": "https://taylorregional.org/transparency.php",
+    "http_status": 200,
+    "response_utf8_bytes": 39387,
+    "response_sha256": "16dab09df15a527c83fa6b53b78c16139c2ea2549941e75d63ccccd835b30727",
+    "contains_ezcost_taylor_link": true,
+    "contains_root_pointer_link": false
+  },
+  "official_pointer": {
+    "url": "https://taylorregional.org/cms-hpt.txt",
+    "http_status": 206,
+    "content_range": "bytes 0-299/300",
+    "response_bytes": 300,
+    "response_sha256": "e25427f0810ef3d41a982e7be2f8b0fd4a2e3e518500e5332be798c5cae94e99",
+    "location_name": "Taylor Regional Hospital",
+    "mrf_url": "https://machine-readable-files.com/taylor-regional-hospital/580655369_TaylorRegionalHospital_standardcharges.json",
+    "contact_fields": "omitted from retained proof"
+  },
+  "first_party_price_route": {
+    "publisher_page": "https://ezcost.info/taylor-regional-hospital",
+    "current_download_label": "Download Machine-Readable File updated 04/29/26",
+    "download_url": "https://hospitalpricetransparencyfiles.com/self-regional-healthcare-partners/830893719_Self-Regional-Healthcare-Partners_standardcharges.csv",
+    "page_access": "live page opened; page text presents the download link"
+  },
+  "current_download_bounded_observation": {
+    "http_status": 206,
+    "requested_range": "bytes=0-65535",
+    "content_range": "bytes 0-65535/170926043",
+    "response_bytes": 65536,
+    "response_sample_sha256": "51df6202dba2cbe1145300c699c020948e5169f92bc3cf34363338684f84e31d",
+    "declared_hospital_name": "Self Regional Healthcare Partners",
+    "declared_location_name": "Edgefield County Healthcare",
+    "declared_address": "300 Ridge Medical Plaza Rd, Edgefield, SC 29824",
+    "declared_license_state": "SC",
+    "declared_last_updated": "2026-03-30",
+    "cms_template_version": "3.0.0",
+    "interpretation": "The current page-labeled Taylor download is a file for a different South Carolina facility. Its declared update date is over 365 days before this observation; do not apply that file or date to Georgia CCN 110256."
+  },
+  "standing_taylor_specific_file": {
+    "proof_file": "reconciliation-taylor-regional-current-page-file-proof-2026-09-20.json",
+    "url": "https://machine-readable-files.com/taylor-regional-hospital/580655369_Taylor-Regional-Hospital_standardcharges.csv",
+    "http_status": 200,
+    "complete_bytes": 1839660,
+    "sha256": "CD5547CCF39A33F572B90FB0961A21AAB708A0146D26136320868299BA932B20",
+    "declared_hospital_name": "Taylor Regional Hospital",
+    "declared_location_name": "Taylor Regional Hospital",
+    "declared_address": "222 Perry Highway, Hawkinsville, GA 31036",
+    "declared_license_state": "GA",
+    "declared_last_updated": "2026-01-01",
+    "cms_template_version": "3.0.0",
+    "attestation": true,
+    "status": "retain as prior complete facility-specific page-linked evidence; do not erase with the newer cross-facility link"
+  },
+  "interpretation": "Current-source route regression, not MRF recovery for Taylor and not proof the publisher lacks a current file. The new current link resolves to unrelated South Carolina bytes; the exact root pointer still names its distinct Taylor JSON target, previously observed 404, and the complete 2026-01-01 Taylor CSV remains retained as standing facility-specific evidence. Keep CCN 110256 unresolved for current pointer/page/file linkage and currentness; never apply the Self Regional file to Taylor.",
+  "evidence_class": "current_official_page_link_and_pointer_vs_bounded_wrong_facility_file_regression",
+  "new_taylor_mrf_bytes": false,
+  "prior_taylor_file_erased": false,
+  "disposition_changed": false,
+  "cohort_count_effect": 0,
+  "next_action": "Obtain a restored/corrected Taylor-specific official pointer and current CSV/JSON/ZIP, or publisher correction binding the exact current file to CCN 110256; independently verify complete bytes, Hawkinsville facility identity, Georgia address/state, declared date/version and usable rows. Do not repeat the current cross-facility CSV request or the unchanged JSON 404 absent a source/access change."
+}

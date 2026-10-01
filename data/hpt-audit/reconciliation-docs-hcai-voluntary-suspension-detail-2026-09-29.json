@@ -1,0 +1,49 @@
+{
+  "audit_id": "docs-hcai-voluntary-suspension-detail-2026-09-29",
+  "ccn": "050785",
+  "observed_at": "2026-09-29T02:02:39Z",
+  "source": {
+    "publisher": "California Department of Health Care Access and Information (HCAI), Licensed Facility Information System",
+    "url": "https://lfis.hcai.ca.gov/License/Detail/164283",
+    "license_history_url": "https://lfis.hcai.ca.gov/License/History/930000143",
+    "http_status": 200,
+    "detail_response_utf8_bytes": 12203,
+    "detail_response_sha256": "c80ada76b5d0afb84065c70ef4927f29cbbe4f08fc6bc828479ad367f21b81d6",
+    "history_response_utf8_bytes": 23794,
+    "history_response_sha256": "b82c858bcdd3774a2b24a69ff05dd8dfe5ed449a9558e743bcde6109094de368"
+  },
+  "license_record": {
+    "license_id": 164283,
+    "license_number": "930000143",
+    "license_effective_date": "2025-04-01",
+    "license_expiration_date": "2026-03-31",
+    "license_category": "General Acute Care Hospital",
+    "first_licensed_date": "1987-12-17",
+    "licensee": "DOCS SURGICAL HOSPITAL, LLC",
+    "license_remark": "Voluntary suspension 1/1/2025 - 12/31/2026.",
+    "facility_name": "DOCS SURGICAL HOSPITAL",
+    "facility_address": "6000 SAN VICENTE BOULEVARD, LOS ANGELES, CA 90036",
+    "hcai_id": "106190681",
+    "hcai_permanent_id": "12024",
+    "reported_beds": 17
+  },
+  "history_observation": {
+    "latest_history_row_effective": "2025-04-01",
+    "latest_history_row_expiration": "2026-03-31",
+    "history_contains_later_license_row": false
+  },
+  "cross_source_context": {
+    "cms_qies_proof": "reconciliation-qies-unresolved-status-audit-2026-09-27.json",
+    "cms_qies_termination_code": "01",
+    "cms_qies_termination_date": "2025-01-01",
+    "cms_current_enrollment_proof": "reconciliation-docs-surgical-hospital-current-enrollment-and-state-status-proof-2026-09-27.json",
+    "cms_august_2026_hospital_enrollments_exact_ccn_rows": 0,
+    "operator_page": "https://www.docshealth.com/docs-surgical-hospital/",
+    "operator_page_claim": "The replacement hospital is under construction and projected to open in 2026; no opening date or replacement CCN is provided."
+  },
+  "interpretation": "HCAI's exact license detail states a voluntary state-license suspension from 2025-01-01 through 2026-12-31. Its record is tied to DOCS Surgical Hospital, HCAI ID 106190681, at 6000 San Vicente Boulevard. This independently corroborates that the historical 050785 hospital entered a state suspension period on the same date CMS records its CCN termination. It does not prove permanent closure, current post-2026-12-31 license status, the replacement building's opening date, a replacement Medicare CCN, or historical HPT file coverage. The HCAI billing-policy page's 2026 policy date is not evidence that the suspended facility resumed operation.",
+  "evidence_class": "official_state_license_suspension_detail_crosswalked_to_terminated_ccn",
+  "disposition_changed": false,
+  "cohort_count_effect": 0,
+  "next_action": "Keep 050785 in the historical accountability baseline. At or after the stated suspension end, seek an effective-dated HCAI license/status record and exact CMS certification/enrollment record for the replacement hospital; then verify a facility-specific current CMS-template MRF and separately retain the historical 050785 HPT coverage question. Do not treat the HCAI policy page, construction listing, or absence from current enrollment alone as proof of operating status, replacement CCN, or price-file assignment."
+}

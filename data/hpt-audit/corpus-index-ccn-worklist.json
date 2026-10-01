@@ -1,50 +1,14 @@
 {
   "summary": {
-    "ccns": 204,
+    "ccns": 190,
     "by_priority": {
       "1": 0,
-      "2": 1,
-      "3": 190,
-      "4": 13
+      "2": 0,
+      "3": 181,
+      "4": 9
     }
   },
   "records": [
-    {
-      "ccn": "030011",
-      "hospital_name": "ST JOSEPH'S HOSPITAL",
-      "state": "AZ",
-      "standing_finding": "compliant-observed",
-      "nationwide_disposition": "verified-current-mrf",
-      "selected_mrf_url": "https://mrfs.hyvehealthcare.com/TenetHealth/474131755-1538535158_smsj-tucson-holdings-llc_standardcharges.json",
-      "observation_role": "superseded-retry",
-      "selected_file_observed_at": "2026-09-17T00:00:00.000Z",
-      "selected_file_version": "3.0.0",
-      "pointer_state": "retrieved-facility-linked",
-      "pointer_checked_url": "https://www.commonspirit.org/cms-hpt.txt",
-      "pointer_sha256": "385a5f374bb39ccdd5be2df699183bea76528f3dface47743372b8d4824a335f",
-      "pointer_observed_at": "2026-09-15T09:17:24.494Z",
-      "stale_index_documents": [
-        {
-          "pointer_url": "https://commonspirit.org/cms-hpt.txt",
-          "final_url": "https://commonspirit.org/cms-hpt.txt",
-          "sha256": "daf9dbde35bf26d8f77903880cb207d0baa80d93a83024dfb2c21cd2134c10d7",
-          "fetched_at": "2026-09-07T00:27:04.517Z",
-          "issue": "index-version-without-successful-target"
-        }
-      ],
-      "active_successful_pointer_links": [
-        {
-          "mrf_url": "https://www.commonspirit.org/content/dam/commonspiritorg/en/dharz/ceaz/finance/price-transparency/941196203-1982733655_dignity-health-st-josephs-westgate-medical-center_standardcharges.json",
-          "pointer_url": "https://www.commonspirit.org/cms-hpt.txt",
-          "pointer_sha256": "385a5f374bb39ccdd5be2df699183bea76528f3dface47743372b8d4824a335f",
-          "fetched_at": "2026-09-15T09:17:24.494Z"
-        }
-      ],
-      "selected_file_in_active_links": false,
-      "reviewed_current_proof": null,
-      "priority": 2,
-      "next_step": "Reconcile the selected file against the active pointer-linked alternatives and their facility-specific headers before changing the standing finding."
-    },
     {
       "ccn": "030012",
       "hospital_name": "YAVAPAI REGIONAL MEDICAL CENTER",
@@ -4378,294 +4342,6 @@
       "next_step": "Confirm the active same-file link and separate any older indexed pointer version from current provenance."
     },
     {
-      "ccn": "360002",
-      "hospital_name": "UNIVERSITY HOSPITALS SAMARITAN MEDICAL CENTER",
-      "state": "OH",
-      "standing_finding": "compliant-observed",
-      "nationwide_disposition": "verified-current-mrf",
-      "selected_mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7892/340714535-1902882939_university-hospitals-health-system_standardcharges.csv",
-      "observation_role": "current-observation",
-      "selected_file_observed_at": "2026-09-15T04:39:22.967Z",
-      "selected_file_version": "3.0.0",
-      "pointer_state": "retrieved-facility-linked",
-      "pointer_checked_url": "https://uhhospitals.org/cms-hpt.txt",
-      "pointer_sha256": "e00ec17ae15593a8098056576d6a73b3c451a5cf1e76603a7707ec82a901bb52",
-      "pointer_observed_at": "2026-09-15T09:17:08.004Z",
-      "stale_index_documents": [
-        {
-          "pointer_url": "https://lakehealth.org/cms-hpt.txt",
-          "final_url": "https://lakehealth.org/cms-hpt.txt",
-          "sha256": "af5e2b9bb87ee0bd114f307bf97b2b05d131e74895586a487d1bf9bf5a42a113",
-          "fetched_at": "2026-09-07T00:17:04.323Z",
-          "issue": "index-hash-differs-from-successful-state"
-        }
-      ],
-      "active_successful_pointer_links": [
-        {
-          "mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7892/340714535-1902882939_university-hospitals-health-system_standardcharges.csv",
-          "pointer_url": "https://uhhospitals.org/cms-hpt.txt",
-          "pointer_sha256": "e00ec17ae15593a8098056576d6a73b3c451a5cf1e76603a7707ec82a901bb52",
-          "fetched_at": "2026-09-15T09:17:08.004Z"
-        }
-      ],
-      "selected_file_in_active_links": true,
-      "reviewed_current_proof": null,
-      "priority": 3,
-      "next_step": "Confirm the active same-file link and separate any older indexed pointer version from current provenance."
-    },
-    {
-      "ccn": "360078",
-      "hospital_name": "UNIVERSITY HOSPITALS PORTAGE MEDICAL CENTER",
-      "state": "OH",
-      "standing_finding": "compliant-observed",
-      "nationwide_disposition": "verified-current-mrf",
-      "selected_mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7891/461382538-1043641897_university-hospitals-health-system_standardcharges.csv",
-      "observation_role": "current-observation",
-      "selected_file_observed_at": "2026-09-15T04:39:32.035Z",
-      "selected_file_version": "3.0.0",
-      "pointer_state": "retrieved-facility-linked",
-      "pointer_checked_url": "https://uhhospitals.org/cms-hpt.txt",
-      "pointer_sha256": "e00ec17ae15593a8098056576d6a73b3c451a5cf1e76603a7707ec82a901bb52",
-      "pointer_observed_at": "2026-09-15T09:17:08.004Z",
-      "stale_index_documents": [
-        {
-          "pointer_url": "https://lakehealth.org/cms-hpt.txt",
-          "final_url": "https://lakehealth.org/cms-hpt.txt",
-          "sha256": "af5e2b9bb87ee0bd114f307bf97b2b05d131e74895586a487d1bf9bf5a42a113",
-          "fetched_at": "2026-09-07T00:17:04.323Z",
-          "issue": "index-hash-differs-from-successful-state"
-        }
-      ],
-      "active_successful_pointer_links": [
-        {
-          "mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7891/461382538-1043641897_university-hospitals-health-system_standardcharges.csv",
-          "pointer_url": "https://uhhospitals.org/cms-hpt.txt",
-          "pointer_sha256": "e00ec17ae15593a8098056576d6a73b3c451a5cf1e76603a7707ec82a901bb52",
-          "fetched_at": "2026-09-15T09:17:08.004Z"
-        }
-      ],
-      "selected_file_in_active_links": true,
-      "reviewed_current_proof": null,
-      "priority": 3,
-      "next_step": "Confirm the active same-file link and separate any older indexed pointer version from current provenance."
-    },
-    {
-      "ccn": "360123",
-      "hospital_name": "UH ST JOHN MEDICAL CENTER",
-      "state": "OH",
-      "standing_finding": "compliant-observed",
-      "nationwide_disposition": "verified-current-mrf",
-      "selected_mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7893/341260978-1841264868_university-hospitals-health-system_standardcharges.csv",
-      "observation_role": "current-observation",
-      "selected_file_observed_at": "2026-09-15T04:39:23.905Z",
-      "selected_file_version": "3.0.0",
-      "pointer_state": "retrieved-facility-linked",
-      "pointer_checked_url": "https://uhhospitals.org/cms-hpt.txt",
-      "pointer_sha256": "e00ec17ae15593a8098056576d6a73b3c451a5cf1e76603a7707ec82a901bb52",
-      "pointer_observed_at": "2026-09-15T09:17:08.004Z",
-      "stale_index_documents": [
-        {
-          "pointer_url": "https://lakehealth.org/cms-hpt.txt",
-          "final_url": "https://lakehealth.org/cms-hpt.txt",
-          "sha256": "af5e2b9bb87ee0bd114f307bf97b2b05d131e74895586a487d1bf9bf5a42a113",
-          "fetched_at": "2026-09-07T00:17:04.323Z",
-          "issue": "index-hash-differs-from-successful-state"
-        }
-      ],
-      "active_successful_pointer_links": [
-        {
-          "mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7893/341260978-1841264868_university-hospitals-health-system_standardcharges.csv",
-          "pointer_url": "https://uhhospitals.org/cms-hpt.txt",
-          "pointer_sha256": "e00ec17ae15593a8098056576d6a73b3c451a5cf1e76603a7707ec82a901bb52",
-          "fetched_at": "2026-09-15T09:17:08.004Z"
-        }
-      ],
-      "selected_file_in_active_links": true,
-      "reviewed_current_proof": null,
-      "priority": 3,
-      "next_step": "Confirm the active same-file link and separate any older indexed pointer version from current provenance."
-    },
-    {
-      "ccn": "360145",
-      "hospital_name": "UNIVERSITY HOSPITALS - ELYRIA MEDICAL CENTER",
-      "state": "OH",
-      "standing_finding": "compliant-observed",
-      "nationwide_disposition": "verified-current-mrf",
-      "selected_mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7903/340714612-1841299039_university-hospitals-health-system_standardcharges.csv",
-      "observation_role": "current-observation",
-      "selected_file_observed_at": "2026-09-15T04:39:41.431Z",
-      "selected_file_version": "3.0.0",
-      "pointer_state": "retrieved-facility-linked",
-      "pointer_checked_url": "https://uhhospitals.org/cms-hpt.txt",
-      "pointer_sha256": "e00ec17ae15593a8098056576d6a73b3c451a5cf1e76603a7707ec82a901bb52",
-      "pointer_observed_at": "2026-09-15T09:17:08.004Z",
-      "stale_index_documents": [
-        {
-          "pointer_url": "https://lakehealth.org/cms-hpt.txt",
-          "final_url": "https://lakehealth.org/cms-hpt.txt",
-          "sha256": "af5e2b9bb87ee0bd114f307bf97b2b05d131e74895586a487d1bf9bf5a42a113",
-          "fetched_at": "2026-09-07T00:17:04.323Z",
-          "issue": "index-hash-differs-from-successful-state"
-        }
-      ],
-      "active_successful_pointer_links": [
-        {
-          "mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7903/340714612-1841299039_university-hospitals-health-system_standardcharges.csv",
-          "pointer_url": "https://uhhospitals.org/cms-hpt.txt",
-          "pointer_sha256": "e00ec17ae15593a8098056576d6a73b3c451a5cf1e76603a7707ec82a901bb52",
-          "fetched_at": "2026-09-15T09:17:08.004Z"
-        }
-      ],
-      "selected_file_in_active_links": true,
-      "reviewed_current_proof": null,
-      "priority": 3,
-      "next_step": "Confirm the active same-file link and separate any older indexed pointer version from current provenance."
-    },
-    {
-      "ccn": "360359",
-      "hospital_name": "UNIVERSITY HOSPITALS AHUJA MEDICAL CENTER",
-      "state": "OH",
-      "standing_finding": "compliant-observed",
-      "nationwide_disposition": "verified-current-mrf",
-      "selected_mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7890/264827222-1609189604_university-hospitals-health-system_standardcharges.csv",
-      "observation_role": "current-observation",
-      "selected_file_observed_at": "2026-09-15T04:39:27.638Z",
-      "selected_file_version": "3.0.0",
-      "pointer_state": "retrieved-facility-linked",
-      "pointer_checked_url": "https://uhhospitals.org/cms-hpt.txt",
-      "pointer_sha256": "e00ec17ae15593a8098056576d6a73b3c451a5cf1e76603a7707ec82a901bb52",
-      "pointer_observed_at": "2026-09-15T09:17:08.004Z",
-      "stale_index_documents": [
-        {
-          "pointer_url": "https://lakehealth.org/cms-hpt.txt",
-          "final_url": "https://lakehealth.org/cms-hpt.txt",
-          "sha256": "af5e2b9bb87ee0bd114f307bf97b2b05d131e74895586a487d1bf9bf5a42a113",
-          "fetched_at": "2026-09-07T00:17:04.323Z",
-          "issue": "index-hash-differs-from-successful-state"
-        }
-      ],
-      "active_successful_pointer_links": [
-        {
-          "mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7890/264827222-1609189604_university-hospitals-health-system_standardcharges.csv",
-          "pointer_url": "https://uhhospitals.org/cms-hpt.txt",
-          "pointer_sha256": "e00ec17ae15593a8098056576d6a73b3c451a5cf1e76603a7707ec82a901bb52",
-          "fetched_at": "2026-09-15T09:17:08.004Z"
-        }
-      ],
-      "selected_file_in_active_links": true,
-      "reviewed_current_proof": null,
-      "priority": 3,
-      "next_step": "Confirm the active same-file link and separate any older indexed pointer version from current provenance."
-    },
-    {
-      "ccn": "360367",
-      "hospital_name": "LAKE HEALTH BEACHWOOD MEDICAL CENTER",
-      "state": "OH",
-      "standing_finding": "compliant-observed",
-      "nationwide_disposition": "verified-current-mrf",
-      "selected_mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/11434/371848577-1841789427_university-hospitals-health-system_standardcharges.csv",
-      "observation_role": "current-observation",
-      "selected_file_observed_at": "2026-09-15T04:39:06.168Z",
-      "selected_file_version": "3.0.0",
-      "pointer_state": "retrieved-facility-linked",
-      "pointer_checked_url": "https://uhhospitals.org/cms-hpt.txt",
-      "pointer_sha256": "e00ec17ae15593a8098056576d6a73b3c451a5cf1e76603a7707ec82a901bb52",
-      "pointer_observed_at": "2026-09-15T09:17:08.004Z",
-      "stale_index_documents": [
-        {
-          "pointer_url": "https://lakehealth.org/cms-hpt.txt",
-          "final_url": "https://lakehealth.org/cms-hpt.txt",
-          "sha256": "af5e2b9bb87ee0bd114f307bf97b2b05d131e74895586a487d1bf9bf5a42a113",
-          "fetched_at": "2026-09-07T00:17:04.323Z",
-          "issue": "index-hash-differs-from-successful-state"
-        }
-      ],
-      "active_successful_pointer_links": [
-        {
-          "mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/11434/371848577-1841789427_university-hospitals-health-system_standardcharges.csv",
-          "pointer_url": "https://uhhospitals.org/cms-hpt.txt",
-          "pointer_sha256": "e00ec17ae15593a8098056576d6a73b3c451a5cf1e76603a7707ec82a901bb52",
-          "fetched_at": "2026-09-15T09:17:08.004Z"
-        }
-      ],
-      "selected_file_in_active_links": true,
-      "reviewed_current_proof": null,
-      "priority": 3,
-      "next_step": "Confirm the active same-file link and separate any older indexed pointer version from current provenance."
-    },
-    {
-      "ccn": "361308",
-      "hospital_name": "UNIVERSITY HOSPITALS CONNEAUT MEDICAL CENTER",
-      "state": "OH",
-      "standing_finding": "compliant-observed",
-      "nationwide_disposition": "verified-current-mrf",
-      "selected_mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7900/340714550-1902996119_university-hospitals-health-system_standardcharges.csv",
-      "observation_role": "current-observation",
-      "selected_file_observed_at": "2026-09-15T04:39:29.010Z",
-      "selected_file_version": "3.0.0",
-      "pointer_state": "retrieved-facility-linked",
-      "pointer_checked_url": "https://uhhospitals.org/cms-hpt.txt",
-      "pointer_sha256": "e00ec17ae15593a8098056576d6a73b3c451a5cf1e76603a7707ec82a901bb52",
-      "pointer_observed_at": "2026-09-15T09:17:08.004Z",
-      "stale_index_documents": [
-        {
-          "pointer_url": "https://lakehealth.org/cms-hpt.txt",
-          "final_url": "https://lakehealth.org/cms-hpt.txt",
-          "sha256": "af5e2b9bb87ee0bd114f307bf97b2b05d131e74895586a487d1bf9bf5a42a113",
-          "fetched_at": "2026-09-07T00:17:04.323Z",
-          "issue": "index-hash-differs-from-successful-state"
-        }
-      ],
-      "active_successful_pointer_links": [
-        {
-          "mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7900/340714550-1902996119_university-hospitals-health-system_standardcharges.csv",
-          "pointer_url": "https://uhhospitals.org/cms-hpt.txt",
-          "pointer_sha256": "e00ec17ae15593a8098056576d6a73b3c451a5cf1e76603a7707ec82a901bb52",
-          "fetched_at": "2026-09-15T09:17:08.004Z"
-        }
-      ],
-      "selected_file_in_active_links": true,
-      "reviewed_current_proof": null,
-      "priority": 3,
-      "next_step": "Confirm the active same-file link and separate any older indexed pointer version from current provenance."
-    },
-    {
-      "ccn": "363302",
-      "hospital_name": "RAINBOW BABIES AND CHILDRENS HOSPITAL",
-      "state": "OH",
-      "standing_finding": "compliant-observed",
-      "nationwide_disposition": "verified-current-mrf",
-      "selected_mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/12952/341567805-1518042175_university-hospitals-health-system_standardcharges.csv",
-      "observation_role": "current-observation",
-      "selected_file_observed_at": "2026-09-15T04:39:11.343Z",
-      "selected_file_version": "3.0.0",
-      "pointer_state": "retrieved-facility-linked",
-      "pointer_checked_url": "https://uhhospitals.org/cms-hpt.txt",
-      "pointer_sha256": "e00ec17ae15593a8098056576d6a73b3c451a5cf1e76603a7707ec82a901bb52",
-      "pointer_observed_at": "2026-09-15T09:17:08.004Z",
-      "stale_index_documents": [
-        {
-          "pointer_url": "https://lakehealth.org/cms-hpt.txt",
-          "final_url": "https://lakehealth.org/cms-hpt.txt",
-          "sha256": "af5e2b9bb87ee0bd114f307bf97b2b05d131e74895586a487d1bf9bf5a42a113",
-          "fetched_at": "2026-09-07T00:17:04.323Z",
-          "issue": "index-hash-differs-from-successful-state"
-        }
-      ],
-      "active_successful_pointer_links": [
-        {
-          "mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/12952/341567805-1518042175_university-hospitals-health-system_standardcharges.csv",
-          "pointer_url": "https://uhhospitals.org/cms-hpt.txt",
-          "pointer_sha256": "e00ec17ae15593a8098056576d6a73b3c451a5cf1e76603a7707ec82a901bb52",
-          "fetched_at": "2026-09-15T09:17:08.004Z"
-        }
-      ],
-      "selected_file_in_active_links": true,
-      "reviewed_current_proof": null,
-      "priority": 3,
-      "next_step": "Confirm the active same-file link and separate any older indexed pointer version from current provenance."
-    },
-    {
       "ccn": "370013",
       "hospital_name": "MERCY HOSPITAL OKLAHOMA CITY, INC",
       "state": "OK",
@@ -6200,9 +5876,9 @@
       "hospital_name": "MULTICARE AUBURN MEDICAL CENTER",
       "state": "WA",
       "standing_finding": "compliant-observed",
-      "nationwide_disposition": "verified-current-mrf",
+      "nationwide_disposition": "mrf-facility-identity-unresolved",
       "selected_mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8059/911352172-1255327201_multicare-auburn-medical-center_standardcharges.csv",
-      "observation_role": "current-observation",
+      "observation_role": "incomplete-retry-standing-retained",
       "selected_file_observed_at": "2026-09-15T04:39:39.780Z",
       "selected_file_version": "3.0.0",
       "pointer_state": "retrieved-facility-linked",
@@ -6380,9 +6056,9 @@
       "hospital_name": "TACOMA GENERAL ALLENMORE HOSPITAL",
       "state": "WA",
       "standing_finding": "compliant-observed",
-      "nationwide_disposition": "verified-current-mrf",
+      "nationwide_disposition": "mrf-facility-identity-unresolved",
       "selected_mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8058/911352172-1366556227_tacoma-general-allenmore-hospital_standardcharges.csv",
-      "observation_role": "current-observation",
+      "observation_role": "incomplete-retry-standing-retained",
       "selected_file_observed_at": "2026-09-15T04:39:39.044Z",
       "selected_file_version": "3.0.0",
       "pointer_state": "retrieved-facility-linked",
@@ -6494,9 +6170,9 @@
       "hospital_name": "MARY BRIDGE CHILDREN'S HOSPITAL",
       "state": "WA",
       "standing_finding": "compliant-observed",
-      "nationwide_disposition": "verified-current-mrf",
+      "nationwide_disposition": "mrf-facility-identity-unresolved",
       "selected_mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8057/911352172-1306952726_mary-bridge-childrens-hospital_standardcharges.csv",
-      "observation_role": "current-observation",
+      "observation_role": "incomplete-retry-standing-retained",
       "selected_file_observed_at": "2026-09-15T04:39:44.005Z",
       "selected_file_version": "3.0.0",
       "pointer_state": "retrieved-facility-linked",
@@ -6587,42 +6263,6 @@
       "active_successful_pointer_links": [
         {
           "mrf_url": "https://app.box.com/shared/static/sbpdvwskj3p5v03pymtbh1rk1xx1hx27.csv",
-          "pointer_url": "https://camc.org/cms-hpt.txt",
-          "pointer_sha256": "656577bf66c3065222ccbd554364230331ab8fdee18d3db86da51cfefeb4adc4",
-          "fetched_at": "2026-09-15T09:15:23.753Z"
-        }
-      ],
-      "selected_file_in_active_links": true,
-      "reviewed_current_proof": null,
-      "priority": 3,
-      "next_step": "Confirm the active same-file link and separate any older indexed pointer version from current provenance."
-    },
-    {
-      "ccn": "510091",
-      "hospital_name": "CAMC CHARLESTON SURGICAL HOSPITAL",
-      "state": "WV",
-      "standing_finding": "compliant-observed",
-      "nationwide_disposition": "mrf-request-unsuccessful",
-      "selected_mrf_url": "https://www.camc.org/sites/default/files/CSH/550526191_Charleston-Surgical-Hospital%2C-LLC_standardcharges.csv",
-      "observation_role": "superseded-retry",
-      "selected_file_observed_at": "2026-09-15T04:38:49.769Z",
-      "selected_file_version": "",
-      "pointer_state": "retrieved-facility-linked",
-      "pointer_checked_url": "https://camc.org/cms-hpt.txt",
-      "pointer_sha256": "656577bf66c3065222ccbd554364230331ab8fdee18d3db86da51cfefeb4adc4",
-      "pointer_observed_at": "2026-09-15T09:15:23.753Z",
-      "stale_index_documents": [
-        {
-          "pointer_url": "https://camc.org/cms-hpt.txt",
-          "final_url": "https://camc.org/cms-hpt.txt",
-          "sha256": "592442aa3e4c35322a14ed34b284b1bdd2b40ff8d2c8ed016466db124dac48b6",
-          "fetched_at": "2026-09-07T00:15:06.127Z",
-          "issue": "index-hash-differs-from-successful-state"
-        }
-      ],
-      "active_successful_pointer_links": [
-        {
-          "mrf_url": "https://www.camc.org/sites/default/files/CSH/550526191_Charleston-Surgical-Hospital%2C-LLC_standardcharges.csv",
           "pointer_url": "https://camc.org/cms-hpt.txt",
           "pointer_sha256": "656577bf66c3065222ccbd554364230331ab8fdee18d3db86da51cfefeb4adc4",
           "fetched_at": "2026-09-15T09:15:23.753Z"
@@ -7274,194 +6914,57 @@
       "next_step": "Reviewed current pointer/file proof supersedes this stale index link; retain the specific finding and recheck the publisher/index on a later crawl."
     },
     {
-      "ccn": "310025",
-      "hospital_name": "CAREPOINT HEALTH - BAYONNE MEDICAL CENTER",
-      "state": "NJ",
-      "standing_finding": "mrf-address-field-incomplete",
-      "nationwide_disposition": "pointer-linked-file-not-probed",
-      "selected_mrf_url": "https://images.pricetransparency.healthcare/hudson_regional_health_bayonne/261442063_bayonne-university-hospital_standardcharges.csv",
-      "observation_role": "superseded-retry",
-      "selected_file_observed_at": "2026-09-07T00:15:59.789Z",
-      "selected_file_version": "",
+      "ccn": "260110",
+      "hospital_name": "MERCY HOSPITAL SOUTHEAST",
+      "state": "MO",
+      "standing_finding": "mrf-license-state-field-conflicts-facility",
+      "nationwide_disposition": "mrf-facility-identity-unresolved",
+      "selected_mrf_url": "https://www.mercy.net/content/dam/mercy/en/web-assets/charge-files/431912860_mercy-hospital-southeast-Pediatrics_RHC_standardcharges.zip",
+      "observation_role": "incomplete-retry-standing-retained",
+      "selected_file_observed_at": "2026-09-15T04:39:31.049Z",
+      "selected_file_version": "3.0.0",
       "pointer_state": "retrieved-facility-linked",
-      "pointer_checked_url": "https://hudsonregionalhospital.com/cms-hpt.txt",
-      "pointer_sha256": "3b4e3e2a8edfa3b13b56b8f56fc09b620154f31af78e7ce92ace4d82e0d84900",
-      "pointer_observed_at": "2026-09-07T00:15:59.789Z",
+      "pointer_checked_url": "https://mercy.net/cms-hpt.txt",
+      "pointer_sha256": "c403be0732bbae1950143a79bc083bcca97b638d007cab82b9c7d4bc47f9b3eb",
+      "pointer_observed_at": "2026-09-15T09:16:17.643Z",
       "stale_index_documents": [
         {
-          "pointer_url": "https://hudsonregionalhospital.com/cms-hpt.txt",
-          "final_url": "https://hudsonregionalhospital.com/cms-hpt.txt",
-          "sha256": "995e7c4957d37be6fa8031bfce2456c6de8dd79cd134a041c6a6c41ec9d5fb4c",
-          "fetched_at": "2026-09-07T00:15:59.789Z",
+          "pointer_url": "https://mercy.net/cms-hpt.txt",
+          "final_url": "https://mercy.net/cms-hpt.txt",
+          "sha256": "d1c888725387d9e88d9e236f0632535d0cf73abe91593b52ff9d22a3a5136280",
+          "fetched_at": "2026-09-07T00:22:58.568Z",
           "issue": "index-hash-differs-from-successful-state"
         }
       ],
-      "active_successful_pointer_links": [],
-      "selected_file_in_active_links": false,
-      "reviewed_current_proof": {
-        "source": "reviewed-ledger-and-corpus-byte-match",
-        "observed_finding": "mrf-address-field-incomplete",
-        "pointer_url": "https://hudsonregionalhospital.com/cms-hpt.txt",
-        "pointer_sha256": "cd2b4c6b89e158910c192bd561da0c6b2d0d21b411d8907b6cf0eb02d5d1887b",
-        "file_url": "https://images.pricetransparency.healthcare/hudson_regional_health_bayonne/261442063_bayonne-university-hospital_standardcharges.csv",
-        "checked_at": "2026-09-17T07:52:15.483Z",
-        "evidence_run": "bayonne-successor-pointer-intersection-address-2026-09-17"
-      },
-      "priority": 4,
-      "next_step": "Reviewed current pointer/file proof supersedes this stale index link; retain the specific finding and recheck the publisher/index on a later crawl."
-    },
-    {
-      "ccn": "310118",
-      "hospital_name": "HUDSON REGIONAL HOSPITAL",
-      "state": "NJ",
-      "standing_finding": "compliant-observed",
-      "nationwide_disposition": "verified-current-mrf",
-      "selected_mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbLHCSECAUCUSNJ&type=CDMWithoutLabel&fileType=CSV",
-      "observation_role": "superseded-retry",
-      "selected_file_observed_at": "2026-09-15T04:37:00.831Z",
-      "selected_file_version": "3.0.0",
-      "pointer_state": "retrieved-facility-match-unresolved",
-      "pointer_checked_url": "https://hudsonregionalhospital.com/cms-hpt.txt",
-      "pointer_sha256": "3b4e3e2a8edfa3b13b56b8f56fc09b620154f31af78e7ce92ace4d82e0d84900",
-      "pointer_observed_at": "2026-09-07T00:15:59.789Z",
-      "stale_index_documents": [
+      "active_successful_pointer_links": [
         {
-          "pointer_url": "https://hudsonregionalhospital.com/cms-hpt.txt",
-          "final_url": "https://hudsonregionalhospital.com/cms-hpt.txt",
-          "sha256": "995e7c4957d37be6fa8031bfce2456c6de8dd79cd134a041c6a6c41ec9d5fb4c",
-          "fetched_at": "2026-09-07T00:15:59.789Z",
-          "issue": "index-hash-differs-from-successful-state"
+          "mrf_url": "https://www.mercy.net/content/dam/mercy/en/web-assets/charge-files/430654874_mercy-hospital-southeast_standardcharges.zip",
+          "pointer_url": "https://mercy.net/cms-hpt.txt",
+          "pointer_sha256": "c403be0732bbae1950143a79bc083bcca97b638d007cab82b9c7d4bc47f9b3eb",
+          "fetched_at": "2026-09-15T09:16:17.643Z"
         }
       ],
-      "active_successful_pointer_links": [],
-      "selected_file_in_active_links": false,
-      "reviewed_current_proof": {
-        "source": "bounded-current-root-recheck",
-        "pointer_url": "https://hudsonregionalhospital.com/cms-hpt.txt",
-        "pointer_sha256": "cd2b4c6b89e158910c192bd561da0c6b2d0d21b411d8907b6cf0eb02d5d1887b",
-        "file_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbLHCSECAUCUSNJ&type=CDMWithoutLabel&fileType=CSV",
-        "checked_at": "2026-09-17T05:20:47.752Z",
-        "reviewed_hash_matches": true
-      },
-      "priority": 4,
-      "next_step": "Dated current root bytes list the selected file; keep the older index version historical and recheck file bytes/metadata on the next crawl."
-    },
-    {
-      "ccn": "320001",
-      "hospital_name": "UNM HOSPITAL",
-      "state": "NM",
-      "standing_finding": "compliant-observed",
-      "nationwide_disposition": "verified-current-mrf",
-      "selected_mrf_url": "https://unmhealth.org/patients-visitors/_files/856003005_university-of-new-mexico-hospital_standardcharges.csv",
-      "observation_role": "superseded-retry",
-      "selected_file_observed_at": "2026-09-15T04:37:50.471Z",
-      "selected_file_version": "3.0.0",
-      "pointer_state": "retrieved-facility-match-unresolved",
-      "pointer_checked_url": "https://unmhealth.org/cms-hpt.txt",
-      "pointer_sha256": "452f9f3a3af42db6ec2fc7c8df1199deadfac2a422b6549383a99cdc7a768c1a",
-      "pointer_observed_at": "2026-09-07T00:25:14.698Z",
-      "stale_index_documents": [
-        {
-          "pointer_url": "https://unmhealth.org/cms-hpt.txt",
-          "final_url": "https://unmhealth.org/cms-hpt.txt",
-          "sha256": "d923e9d0d7aeb35f580f7f1cf83388faf17a5ce786fce303c299043f542be2f0",
-          "fetched_at": "2026-09-07T00:25:14.698Z",
-          "issue": "index-hash-differs-from-successful-state"
-        }
-      ],
-      "active_successful_pointer_links": [],
-      "selected_file_in_active_links": false,
-      "reviewed_current_proof": {
-        "source": "bounded-current-root-recheck",
-        "pointer_url": "https://unmhealth.org/cms-hpt.txt",
-        "pointer_sha256": "452f9f3a3af42db6ec2fc7c8df1199deadfac2a422b6549383a99cdc7a768c1a",
-        "file_url": "https://unmhealth.org/patients-visitors/_files/856003005_university-of-new-mexico-hospital_standardcharges.csv",
-        "checked_at": "2026-09-17T05:20:47.899Z",
-        "reviewed_hash_matches": false
-      },
-      "priority": 4,
-      "next_step": "Dated current root bytes list the selected file; keep the older index version historical and recheck file bytes/metadata on the next crawl."
-    },
-    {
-      "ccn": "360098",
-      "hospital_name": "LAKE HEALTH",
-      "state": "OH",
-      "standing_finding": "compliant-observed",
-      "nationwide_disposition": "verified-current-mrf",
-      "selected_mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/11435/341425870-1972689172_university-hospitals-health-system_standardcharges.csv",
-      "observation_role": "superseded-retry",
-      "selected_file_observed_at": "2026-09-15T04:39:06.942Z",
-      "selected_file_version": "3.0.0",
-      "pointer_state": "retrieved-facility-match-unresolved",
-      "pointer_checked_url": "https://lakehealth.org/cms-hpt.txt",
-      "pointer_sha256": "e00ec17ae15593a8098056576d6a73b3c451a5cf1e76603a7707ec82a901bb52",
-      "pointer_observed_at": "2026-09-07T00:17:04.323Z",
-      "stale_index_documents": [
-        {
-          "pointer_url": "https://lakehealth.org/cms-hpt.txt",
-          "final_url": "https://lakehealth.org/cms-hpt.txt",
-          "sha256": "af5e2b9bb87ee0bd114f307bf97b2b05d131e74895586a487d1bf9bf5a42a113",
-          "fetched_at": "2026-09-07T00:17:04.323Z",
-          "issue": "index-hash-differs-from-successful-state"
-        }
-      ],
-      "active_successful_pointer_links": [],
-      "selected_file_in_active_links": false,
-      "reviewed_current_proof": {
-        "source": "bounded-current-root-recheck",
-        "pointer_url": "https://lakehealth.org/cms-hpt.txt",
-        "pointer_sha256": "e00ec17ae15593a8098056576d6a73b3c451a5cf1e76603a7707ec82a901bb52",
-        "file_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/11435/341425870-1972689172_university-hospitals-health-system_standardcharges.csv",
-        "checked_at": "2026-09-17T05:20:48.138Z",
-        "reviewed_hash_matches": true
-      },
-      "priority": 4,
-      "next_step": "Dated current root bytes list the selected file; keep the older index version historical and recheck file bytes/metadata on the next crawl."
-    },
-    {
-      "ccn": "390116",
-      "hospital_name": "SUBURBAN COMMUNITY HOSPITAL",
-      "state": "PA",
-      "standing_finding": "mrf-template-version-noncanonical",
-      "nationwide_disposition": "linked-mrf-header-unmatched",
-      "selected_mrf_url": "https://suburbanbhc.org/wp-content/uploads/2026/09/910401_RoxboroughMemorialHospital_standardcharges.json",
-      "observation_role": "superseded-retry",
-      "selected_file_observed_at": "2026-09-15T04:37:36.351Z",
-      "selected_file_version": "3.0",
-      "pointer_state": "retrieved-facility-linked",
-      "pointer_checked_url": "https://suburbanhosp.org/cms-hpt.txt",
-      "pointer_sha256": "2928b296654a271ca8ed60a4d219769dd35cfb07ce4e7feb32415aa8591fc4f3",
-      "pointer_observed_at": "2026-09-07T00:24:45.807Z",
-      "stale_index_documents": [
-        {
-          "pointer_url": "https://suburbanhosp.org/cms-hpt.txt",
-          "final_url": "https://suburbanhosp.org/cms-hpt.txt",
-          "sha256": "7107bd981a0a523c52a00330b75e8f6411cde03c3dbddde0aaac5742b22a9ccd",
-          "fetched_at": "2026-09-07T00:24:45.807Z",
-          "issue": "index-hash-differs-from-successful-state"
-        }
-      ],
-      "active_successful_pointer_links": [],
       "selected_file_in_active_links": false,
       "reviewed_current_proof": {
         "source": "reviewed-ledger-and-successful-state",
-        "observed_finding": "mrf-template-version-noncanonical",
-        "pointer_url": "https://suburbanhosp.org/cms-hpt.txt",
-        "pointer_sha256": "2928b296654a271ca8ed60a4d219769dd35cfb07ce4e7feb32415aa8591fc4f3",
-        "file_url": "https://suburbanbhc.org/wp-content/uploads/2026/09/910401_RoxboroughMemorialHospital_standardcharges.json",
-        "checked_at": "2026-09-16T18:37:39.206Z",
-        "evidence_run": "suburban-behavioral-former-name-shared-json-2026-09-16"
+        "observed_finding": "mrf-license-state-field-conflicts-facility",
+        "pointer_url": "https://mercy.net/cms-hpt.txt",
+        "pointer_sha256": "c403be0732bbae1950143a79bc083bcca97b638d007cab82b9c7d4bc47f9b3eb",
+        "file_url": "https://www.mercy.net/content/dam/mercy/en/web-assets/charge-files/430654874_mercy-hospital-southeast_standardcharges.zip",
+        "checked_at": "2026-09-09T02:30:35.804Z",
+        "evidence_run": "mercy-southeast-license-state-conflict-2026-09-17"
       },
       "priority": 4,
       "next_step": "Reviewed current pointer/file proof supersedes this stale index link; retain the specific finding and recheck the publisher/index on a later crawl."
     }
   ],
   "source_sha256": {
-    "corpus-state-index-discrepancies.json": "28b315a9a7f5206ce1031a50939fc212f89e6afa69172f61ea95e5c2dbb76a7b",
-    "nationwide-verification.json": "d844e58d334250550d2f109e3acc406454401bc32825df18d081e3843d5a5b5b",
-    "crawl-state.json": "c0173e9237536482f33f8daeb6619fdac7a4b2b4ca29859492954633daa5b460",
-    "cms_hpt_entries.csv": "0e547ea7593a56681e2f434592bb9cb08bee45d43c90a5f174914ecd8b9584e7",
-    "reviewed-resolutions.json": "0d88ead8be860de7912a43e44cf298c827031e0dbe22f939987bfdd6c615877d",
-    "corpus-index-priority-one-rechecks.json": "36dd7c78939f12c846f940af5708e80fde145d70d0a46edf90f335726448bebf"
+    "corpus-state-index-discrepancies.json": "4cf9bad0b030e48a9f4dff08f28fb17b7973f38011c7fc5e15ab75ff0dbb48ef",
+    "nationwide-verification.json": "f0f56a98982ce013d42d894928cb252c1dc03373752c202b6127dc8ddda336b3",
+    "crawl-state.json": "a00e149429baf1aab703f58b5e22ed9b0311bce361556633633e945f4fc9eccb",
+    "cms_hpt_entries.csv": "159347116ee2eabd33b97e2e7cc20ddb0ff9c4838400a74d34c5b927cea305d7",
+    "reviewed-resolutions.json": "2f6cc5d6378636f545fcd9c3d2339c625a21da4d2b8790cc644cbdd8c3d315e8",
+    "corpus-index-priority-one-rechecks.json": "36dd7c78939f12c846f940af5708e80fde145d70d0a46edf90f335726448bebf",
+    "pointer-provenance-discrepancy-rechecks.json": "f91ee852f3146581fa9e111e58ae60b5a6599bc354c1cb3c276817bf8060992f"
   }
 }

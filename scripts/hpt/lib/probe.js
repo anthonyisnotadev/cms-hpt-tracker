@@ -437,5 +437,14 @@ async function probeMrf(url, { timeoutMs = 45000, useUnblocker = true, headerByt
   return out;
 }
 
+// CMS validator 1.10.8 raises only an alert (no error) for 3.0, and 3 / 3.00 are
+// the same number with different formatting, so all four read as the v3 template.
+// 3.0.1, 3.0.2 and non-CMS versions such as 4.0.0 still need source review.
+const CURRENT_TEMPLATE_VERSIONS = new Set(['3', '3.0', '3.00', '3.0.0']);
+function isCurrentTemplateVersion(value) {
+  return CURRENT_TEMPLATE_VERSIONS.has(String(value || '').trim());
+}
+
 module.exports = { probeMrf, toISODate, sniffKind, extractDeclared, normalizeVersion,
-  decompressHead, licenseStateFromHeaders, requestCapped };
+  decompressHead, licenseStateFromHeaders, requestCapped,
+  isCurrentTemplateVersion };

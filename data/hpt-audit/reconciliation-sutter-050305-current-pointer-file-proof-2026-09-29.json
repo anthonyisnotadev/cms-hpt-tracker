@@ -1,0 +1,61 @@
+{
+  "audit_id": "sutter-050305-current-pointer-file-proof-2026-09-29",
+  "ccn": "050305",
+  "observed_at": "2026-09-30T00:47:39.099Z",
+  "official_domain": "https://www.sutterhealth.org/",
+  "official_pricing_page": "https://www.sutterhealth.org/billing-insurance/costs-and-charges/cost-transparency/",
+  "official_pricing_page_status": 206,
+  "official_pricing_page_bytes": 296247,
+  "official_pricing_page_sha256": "6838be14c0525e3a51aebf4f306fb971f306cf3e434e48fd9a532650d4402274",
+  "official_pricing_page_raw_artifact": "cms_data/hpt/nationwide-verification/page-byte-proof/6838be14c0525e3a51aebf4f306fb971f306cf3e434e48fd9a532650d4402274.bin",
+  "current_cms_roster_identity": {
+    "facility_id": "050305",
+    "facility_name": "ALTA BATES SUMMIT MEDICAL CENTER - ALTA BATES CAMP",
+    "address": "2450 ASHBY AVENUE",
+    "city": "BERKELEY",
+    "state": "CA",
+    "source": "cms_data/Hospital_General_Information.csv"
+  },
+  "pointer": {
+    "url": "https://www.sutterhealth.org/cms-hpt.txt",
+    "http_status": 206,
+    "content_type": "text/plain; charset=UTF-8",
+    "bytes": 25914,
+    "sha256": "76cf5ee42d726154cfadf3b5d2fdd6605eea5599b8751fc24707dba424a6b2ca",
+    "raw_artifact": "cms_data/hpt/nationwide-verification/pointer-provenance-rechecks/76cf5ee42d726154cfadf3b5d2fdd6605eea5599b8751fc24707dba424a6b2ca.bin",
+    "raw_encoding": "UTF-16LE",
+    "historical_sha256_match": "76cf5ee42d726154cfadf3b5d2fdd6605eea5599b8751fc24707dba424a6b2ca",
+    "exact_entries": [
+      {
+        "location_name": "ALTA BATES SUMMIT MEDICAL CENTER ALTA BATES CAMPUS",
+        "mrf_url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/940562680-1639523004_alta-bates-summit-medical-center-alta-bates-campus_standardcharges.csv"
+      }
+    ]
+  },
+  "primary_mrf": {
+    "role": "alta-bates-campus",
+    "page_location_label": "Alta Bates Summit Medical Center - Alta Bates Campus",
+    "url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/940562680-1639523004_alta-bates-summit-medical-center-alta-bates-campus_standardcharges.csv",
+    "http_status": 206,
+    "content_type": "text/csv",
+    "content_range": "bytes 0-65535/20347333",
+    "total_bytes": 20347333,
+    "sample_bytes": 65536,
+    "sample_sha256": "207d3c4aba5c6dfc60d48ba50ba4d44f97e3fe2d5be9e481d83a43d46c13100c",
+    "raw_artifact": "cms_data/hpt/nationwide-verification/file-byte-proof/207d3c4aba5c6dfc60d48ba50ba4d44f97e3fe2d5be9e481d83a43d46c13100c.bin",
+    "declared_hospital_name": "Alta Bates Summit Medical Center - Alta Bates Camp",
+    "declared_location_name": "Alta Bates Summit Medical Center - Alta Bates Camp",
+    "declared_address": "2450 Ashby Avenue, Berkeley, CA 94705",
+    "declared_license_number": "140000284",
+    "declared_license_state": "CA",
+    "declared_type2_npis": "",
+    "declared_last_updated": "2026-04-01",
+    "cms_template_version": "3.0.0",
+    "attestation": false,
+    "usable_rows_observed": false
+  },
+  "related_mrf_entries": [],
+  "interpretation": "Current first-party pricing page and hash-retained root pointer both declare the exact facility file. A bounded sample identifies the distinct CMS roster CCN by facility name/address/state and CMS 3.0.0 metadata effective for the 2026 requirements. This supports observed current pointer-linked MRF evidence; it is not full-file or line-item validation.",
+  "disposition": "verified-current-mrf",
+  "next_action": "Retain the exact pointer/page/file chain and recheck on the next publisher pointer or file change; keep separately named Sutter campuses and CCNs distinct."
+}

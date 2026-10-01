@@ -1,13 +1,31 @@
 {
   "summary": {
-    "source_nationwide_sha256": "d844e58d334250550d2f109e3acc406454401bc32825df18d081e3843d5a5b5b",
-    "source_generated_at": "2026-09-27T19:16:08.411Z",
+    "source_nationwide_sha256": "f0f56a98982ce013d42d894928cb252c1dc03373752c202b6127dc8ddda336b3",
+    "source_generated_at": "2026-09-30T23:57:30.073Z",
     "hospitals": 5419,
-    "discrepancies": 7,
+    "discrepancies": 12,
     "active_verification_claims": 1,
     "note": "Different hashes are a version/provenance review, not by themselves a facility or file failure."
   },
   "records": [
+    {
+      "ccn": "110100",
+      "hospital_name": "JEFFERSON HOSPITAL",
+      "state": "GA",
+      "disposition": "verified-stale-mrf",
+      "observation_role": "current-observation",
+      "standing_pointer_url": "",
+      "selected_mrf_url": "https://jeffersonhosp.com/wp-content/uploads/2025/01/581309961_JeffersonHospital_StandardCharges.csv",
+      "selected_header_pointer_sha256s": [
+        "461e33ede57f081c554633b823d780f7ced9a2369f5a644fc77341cf0ab3d2a0",
+        "a419518c8ac4d7bc514e70c60ee0f74694ff4ded22dfc1abbf7ed65ffdc93859"
+      ],
+      "attributed_pointer_checked_url": "https://jeffersonhosp.com/cms-hpt.txt",
+      "attributed_pointer_sha256": "985054e562a2e42c2c4f95ee77bb17f4148ed6fbfaa75f2ce6a54ba6d7dfa2c8",
+      "attributed_pointer_observed_at": "2026-09-29T18:09:03.032Z",
+      "attributed_pointer_raw_integrity": "hash-corroborated",
+      "next_action": "Compare the selected file header’s source pointer version with the attributed current pointer bytes and exact CCN entry; preserve both dates and do not infer current file linkage from a differing hash."
+    },
     {
       "ccn": "140011",
       "hospital_name": "HERRIN HOSPITAL",
@@ -60,6 +78,24 @@
       "next_action": "Compare the selected file header’s source pointer version with the attributed current pointer bytes and exact CCN entry; preserve both dates and do not infer current file linkage from a differing hash."
     },
     {
+      "ccn": "141305",
+      "hospital_name": "MEMORIAL HOSPITAL",
+      "state": "IL",
+      "disposition": "linked-mrf-header-unmatched",
+      "observation_role": "superseded-retry",
+      "standing_pointer_url": "https://www.mhtlc.org/cms-hpt.txt",
+      "selected_mrf_url": "https://www.bjc.org/hpt/26/370635502_MemorialHospital_standardcharges.json",
+      "selected_header_pointer_sha256s": [
+        "9b900988dab0b0ecd00ea93e7419e56bb12981ec009a2f96c6d2e899cdbe6216",
+        "f4328367e970e42fa7c9fd2c2cb645ff3190904961b4ae0a4d3eabd9bcf70466"
+      ],
+      "attributed_pointer_checked_url": "https://www.mhtlc.org/cms-hpt.txt",
+      "attributed_pointer_sha256": "6b3931445718331562e3dcfc0a9568569b009f18b75cba5cb80fa0259baed09b",
+      "attributed_pointer_observed_at": "2026-09-29T18:07:47.570Z",
+      "attributed_pointer_raw_integrity": "hash-corroborated",
+      "next_action": "Compare the selected file header’s source pointer version with the attributed current pointer bytes and exact CCN entry; preserve both dates and do not infer current file linkage from a differing hash."
+    },
+    {
       "ccn": "141334",
       "hospital_name": "ST JOSEPH MEMORIAL HOSPITAL",
       "state": "IL",
@@ -77,11 +113,47 @@
       "next_action": "Compare the selected file header’s source pointer version with the attributed current pointer bytes and exact CCN entry; preserve both dates and do not infer current file linkage from a differing hash."
     },
     {
+      "ccn": "161310",
+      "hospital_name": "ADAIR COUNTY MEMORIAL HOSPITAL",
+      "state": "IA",
+      "disposition": "linked-mrf-header-unmatched",
+      "observation_role": "superseded-retry",
+      "standing_pointer_url": "https://www.achsiowa.org/cms-hpt.txt",
+      "selected_mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHLMLODICA&type=CDMWithoutLabel&fileType=CSV",
+      "selected_header_pointer_sha256s": [
+        "c6d8fb5a104c88f16439950764213f118d0c883d4e71f285d7021627392917e5",
+        "cbf9ff10b031a65a0926a09edea3a7baeb085fab7821eb8d5606ccbea22c7913"
+      ],
+      "attributed_pointer_checked_url": "https://www.achsiowa.org/cms-hpt.txt",
+      "attributed_pointer_sha256": "42ece29e25ddb3bfe12bca97fe9ff4b3f9273d1e9f1b359c7215bf06e6613207",
+      "attributed_pointer_observed_at": "2026-09-29T18:07:38.447Z",
+      "attributed_pointer_raw_integrity": "hash-corroborated",
+      "next_action": "Compare the selected file header’s source pointer version with the attributed current pointer bytes and exact CCN entry; preserve both dates and do not infer current file linkage from a differing hash."
+    },
+    {
+      "ccn": "170780",
+      "hospital_name": "MERCY HOSPITAL, INC",
+      "state": "KS",
+      "disposition": "linked-mrf-header-unmatched",
+      "observation_role": "superseded-retry",
+      "standing_pointer_url": "https://www.mercyh.org/cms-hpt.txt",
+      "selected_mrf_url": "https://hpt.trinity-health.org/043398280_the-mercy-hospital-inc_standardcharges.zip",
+      "selected_header_pointer_sha256s": [
+        "07f3b803abac48494aba93ec5adfed3a498600341d6ba15d808bf88ad69c405c",
+        "eb84837f6ef177626b7d8678505ccc9a0a631c95b26bb3c44e3fcc2dad8ac14e"
+      ],
+      "attributed_pointer_checked_url": "https://www.mercyh.org/cms-hpt.txt",
+      "attributed_pointer_sha256": "64e4a9c0a60f35f95e8b0dcb908d79dba2c8699f8656002126fe3dc623a2c2c9",
+      "attributed_pointer_observed_at": "2026-09-29T18:07:47.468Z",
+      "attributed_pointer_raw_integrity": "hash-corroborated",
+      "next_action": "Compare the selected file header’s source pointer version with the attributed current pointer bytes and exact CCN entry; preserve both dates and do not infer current file linkage from a differing hash."
+    },
+    {
       "ccn": "231333",
       "hospital_name": "ASPIRUS IRONWOOD HOSPITAL",
       "state": "MI",
-      "disposition": "verified-current-mrf",
-      "observation_role": "current-observation",
+      "disposition": "mrf-facility-identity-unresolved",
+      "observation_role": "incomplete-retry-standing-retained",
       "standing_pointer_url": "https://www.aspirus.org/cms-hpt.txt",
       "selected_mrf_url": "https://www.aspirus.org/Uploads/Public/Documents/PriceEstimate/TransparencyFY26/382908586_aspirus-ironwood-hospital_standardcharges.json",
       "selected_header_pointer_sha256s": [
@@ -94,21 +166,39 @@
       "next_action": "Compare the selected file header’s source pointer version with the attributed current pointer bytes and exact CCN entry; preserve both dates and do not infer current file linkage from a differing hash."
     },
     {
-      "ccn": "310118",
-      "hospital_name": "HUDSON REGIONAL HOSPITAL",
-      "state": "NJ",
-      "disposition": "verified-current-mrf",
+      "ccn": "241377",
+      "hospital_name": "ST FRANCIS MEDICAL CENTER",
+      "state": "MN",
+      "disposition": "mrf-request-unsuccessful",
       "observation_role": "superseded-retry",
-      "standing_pointer_url": "https://hudsonregionalhospital.com/cms-hpt.txt",
-      "selected_mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbLHCSECAUCUSNJ&type=CDMWithoutLabel&fileType=CSV",
+      "standing_pointer_url": "https://www.chistfrancishealth.org/cms-hpt.txt",
+      "selected_mrf_url": "https://www.allinahealth.org/-/media/allina-health/files/customer-service/billing-and-insurance/price-transparency/363261413_st-francis-regional-medical-center_standardcharges.csv",
       "selected_header_pointer_sha256s": [
-        "995e7c4957d37be6fa8031bfce2456c6de8dd79cd134a041c6a6c41ec9d5fb4c",
-        "cd2b4c6b89e158910c192bd561da0c6b2d0d21b411d8907b6cf0eb02d5d1887b"
+        "1417da1f10bd11ff7a0636029c6d756a6f810ed4ea65d8ce1cfd976abcf4c506",
+        "cef9ee6590fc5fb8e71c36df1d44db6980e115c40d215ad36654b0a9398a6beb"
       ],
-      "attributed_pointer_checked_url": "https://hudsonregionalhospital.com/cms-hpt.txt",
-      "attributed_pointer_sha256": "3b4e3e2a8edfa3b13b56b8f56fc09b620154f31af78e7ce92ace4d82e0d84900",
-      "attributed_pointer_observed_at": "2026-09-07T00:15:59.789Z",
-      "attributed_pointer_raw_integrity": "hash-conflict",
+      "attributed_pointer_checked_url": "https://www.chistfrancishealth.org/cms-hpt.txt",
+      "attributed_pointer_sha256": "357c34a294f53705ce4eb6ce3ccdc57085c5ddc5723e2eacff84de948fae3063",
+      "attributed_pointer_observed_at": "2026-09-29T18:07:44.026Z",
+      "attributed_pointer_raw_integrity": "hash-corroborated",
+      "next_action": "Compare the selected file header’s source pointer version with the attributed current pointer bytes and exact CCN entry; preserve both dates and do not infer current file linkage from a differing hash."
+    },
+    {
+      "ccn": "270003",
+      "hospital_name": "ST PETERS HEALTH",
+      "state": "MT",
+      "disposition": "linked-mrf-header-unmatched",
+      "observation_role": "superseded-retry",
+      "standing_pointer_url": "https://www.sphealth.org/cms-hpt.txt",
+      "selected_mrf_url": "https://hpt.trinity-health.org/141348692_st-peters-hospital_standardcharges.zip",
+      "selected_header_pointer_sha256s": [
+        "4c684e0df7b309243b8ef515a583a6715bc7afc54601872128d9e2cabd8116db",
+        "abac15bebf08ef1106d843a0542883000a31b755ca6b1ffa9d99dab877dc5179"
+      ],
+      "attributed_pointer_checked_url": "https://www.sphealth.org/cms-hpt.txt",
+      "attributed_pointer_sha256": "01cae671383f264673e15ad50ebcbeb7a7a2f6afad4d2a3924b93c25a8fcb981",
+      "attributed_pointer_observed_at": "2026-09-29T18:08:01.727Z",
+      "attributed_pointer_raw_integrity": "hash-corroborated",
       "next_action": "Compare the selected file header’s source pointer version with the attributed current pointer bytes and exact CCN entry; preserve both dates and do not infer current file linkage from a differing hash."
     },
     {
@@ -124,8 +214,8 @@
       ],
       "attributed_pointer_checked_url": "https://unmhealth.org/cms-hpt.txt",
       "attributed_pointer_sha256": "452f9f3a3af42db6ec2fc7c8df1199deadfac2a422b6549383a99cdc7a768c1a",
-      "attributed_pointer_observed_at": "2026-09-07T00:25:14.698Z",
-      "attributed_pointer_raw_integrity": "hash-conflict",
+      "attributed_pointer_observed_at": "2026-09-29T18:09:18.405Z",
+      "attributed_pointer_raw_integrity": "hash-corroborated",
       "next_action": "Compare the selected file header’s source pointer version with the attributed current pointer bytes and exact CCN entry; preserve both dates and do not infer current file linkage from a differing hash."
     }
   ]

@@ -1,0 +1,53 @@
+{
+  "ccn": "370171",
+  "observed_at": "2026-09-28T20:40:23Z",
+  "cms_provider_record": {
+    "url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=370171&conditions%5B0%5D%5Boperator%5D=%3D",
+    "http_status": 200,
+    "response_bytes": 6608,
+    "response_sha256": "d3ac7de2a9dc20b932c825b0e5dbdac51075f2e8cc57951ea4af3319f1c2e346",
+    "record": {
+      "facility_id": "370171",
+      "facility_name": "CHEROKEE NATION W W HASTINGS INDIAN HOSPITAL",
+      "address": "100 S BLISS AVENUE",
+      "citytown": "TAHLEQUAH",
+      "state": "OK",
+      "zip_code": "74464",
+      "hospital_type": "Acute Care Hospitals",
+      "hospital_ownership": "Voluntary non-profit - Other"
+    },
+    "interpretation": "This exact-CCN CMS record corroborates the legacy 100 S Bliss identity. Its address is retained as the CMS-recorded value and is not silently updated to the replacement campus."
+  },
+  "cms_tribal_hospital_crosswalk": {
+    "url": "https://www.cms.gov/files/document/indian-healt-service-cms-all-final.pdf",
+    "observation": "CMS's IHS-CMS All Tribal Facilities Listing identifies WW HASTINGS INDIAN HOSPITAL as a Hospital, CCN 370171, Tahlequah, Oklahoma. CMS says its listing cross-referenced an IHS facility list with QCOR; created 2020-01-26."
+  },
+  "cherokee_nation_hospital_operator": {
+    "url": "https://health.cherokee.gov/health-center-and-hospital-locations/inpatient-care/",
+    "observation": "Cherokee Nation's official W.W. Hastings page says the Nation assumed hospital operations and management on 2008-10-01. The Nation's current Health Services page describes CNHS as a tribally operated health system including one tribal hospital.",
+    "health_services_url": "https://health.cherokee.gov/",
+    "replacement_campus_history": {
+      "proof_file": "reconciliation-cherokee-hastings-campus-transition-proof-2026-09-27.json",
+      "observation": "A separate 2026-09-27 review retained Cherokee Nation's announcement that the replacement W.W. Hastings Hospital at 19780 E. Ross Street opened to patients on 2026-07-11. Preserve the prior 100 S Bliss address as historical and the replacement-campus address as current operator evidence; this scope review does not resolve CMS CCN continuity or price-file attribution."
+    }
+  },
+  "indian_health_service_self_governance_evidence": {
+    "tribes_list_url": "https://www.ihs.gov/selfgovernance/tribes/",
+    "tribes_list_observation": "IHS's Office of Tribal Self-Governance lists Cherokee Nation among tribes participating in its self-governance program and reports 120 compacts and 147 funding agreements as of 2025-07-01.",
+    "current_funding_record_url": "https://taggs.hhs.gov/Detail/AwardDetail?arg_AwardNum=60G930002&arg_ProgOfficeCode=234",
+    "current_funding_record_observation": "HHS TAGGS identifies award 60G930002 as IHS Office of Tribal Self-Governance, activity type Health Services, with period ending 2026-09-30; FY2026 entries name CHEROKEE NATION under 'Tribal Self-Governance Program: IHS Compacts/Funding Agreements', including a 2026-09-04 continuation.",
+    "scope_note": "These sources document the operator Nation's self-governance compact/funding-agreement status at the health-system level; they do not purport to allocate a specific TAGGS award line to this hospital."
+  },
+  "legal_basis": {
+    "regulation": "45 CFR 180.30(b)(2)",
+    "regulation_url": "https://www.govinfo.gov/content/pkg/CFR-2025-title45-vol2/pdf/CFR-2025-title45-vol2-part180.pdf",
+    "regulation_observation": "CMS deems hospitals operated by an Indian Health Program, as defined by section 4(12) of the Indian Health Care Improvement Act, to be in compliance with Part 180.",
+    "statute": "25 USC 1603(12),(25)",
+    "statute_url": "https://uscode.house.gov/view.xhtml?req=%28title%3A25+section%3A1603%29%29+edition%3Aprelim%29",
+    "statute_observation": "An Indian Health Program includes a tribal health program; a tribal health program includes an Indian tribe that operates a health facility funded in whole or part by IHS through an ISDEAA contract or compact."
+  },
+  "disposition": "scope-exempt-indian-health-program",
+  "interpretation": "CMS's exact-CCN provider record and IHS-CMS tribal-hospital crosswalk identify CCN 370171 as W.W. Hastings Indian Hospital. Cherokee Nation's official page identifies the Nation as operator; IHS identifies Cherokee Nation as a self-governance tribe and HHS TAGGS records current IHS Tribal Self-Governance Program compact/funding-agreement awards to the Nation through FY2026. Read with 45 CFR 180.30(b)(2) and 25 USC 1603(12),(25), this supports classifying the hospital as operated by an Indian Health Program. The CMS/legacy 100 S Bliss address and the 2026 replacement campus at 19780 E Ross remain distinct historical/current address observations. This is a scope classification only; it does not assert current CCN continuity, pointer linkage, current MRF availability, absence, or file quality.",
+  "disposition_change_reason": "New current HHS/IHS self-governance funding evidence and the exact CMS tribal-hospital crosswalk strengthen the documented Cherokee Nation operator evidence enough to apply the specific 45 CFR 180.30(b)(2) scope exception; this is not an inference from the word 'Indian' or from tribal ownership alone.",
+  "next_action": "Retain the scope classification and the separate 100 S Bliss / 19780 E Ross campus-transition history. Revisit if operator, IHS self-governance compact/funding status, the exact CCN-to-hospital relationship, or program status changes. Do not infer MRF availability or assign an MRF from the scope classification."
+}

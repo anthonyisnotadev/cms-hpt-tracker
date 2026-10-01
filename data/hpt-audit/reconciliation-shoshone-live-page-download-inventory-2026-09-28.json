@@ -1,0 +1,94 @@
+{
+  "ccn": "131314",
+  "facility": "Shoshone Medical Center",
+  "observed_on": "2026-09-29",
+  "browser_recheck_2026_09_29": {
+    "observed_at": "2026-09-29T10:14:00Z",
+    "browser_tab_id": 132,
+    "official_pricing_page": "https://www.shoshonehealth.com/patients/registrationbilling/",
+    "page_title": "Registration/Billing – Shoshone Medical Center",
+    "visible_machine_readable_link": "https://www.shoshonehealth.com/wp-content/uploads/2019/12/2020-Charge-Master.csv",
+    "consumer_price_link": "https://search.hospitalpriceindex.com/hpi2/hospital/shoshonemedicalcenter/7852or",
+    "separate_current_cms_csv_json_zip_link_exposed": false,
+    "result": "The browser showed the same first-party page links, including the old chargemaster and separate consumer price route. No new current CMS-format file route was exposed.",
+    "root_pointer_browser_attempt": {
+      "url": "https://www.shoshonehealth.com/cms-hpt.txt",
+      "browser_result": "net::ERR_BLOCKED_BY_CLIENT",
+      "interpretation": "Client transport failure only; not a source response and not evidence that the pointer changed or is absent. Prior direct HTTP 200 pointer capture remains authoritative."
+    },
+    "classification": "no-new-mrf-evidence; dated-browser-recheck-only"
+  },
+  "sources": {
+    "official_pricing_page": "https://www.shoshonehealth.com/patients/registrationbilling/",
+    "official_pointer": "https://www.shoshonehealth.com/cms-hpt.txt",
+    "third_party_price_page": "https://showthebill.com/hospitals/shoshone-medical-center/",
+    "publisher_hpi_page": "https://search.hospitalpriceindex.com/hpi2/hospital/shoshonemedicalcenter/7852or"
+  },
+  "live_browser_observation": {
+    "page_title": "Registration/Billing – Shoshone Medical Center",
+    "machine_readable_link_text": "chargemaster",
+    "machine_readable_link_url": "https://www.shoshonehealth.com/wp-content/uploads/2019/12/2020-Charge-Master.csv",
+    "other_pricing_link_url": "https://search.hospitalpriceindex.com/hpi2/hospital/shoshonemedicalcenter/7852or",
+    "separate_current_cms_csv_json_zip_link_exposed": false,
+    "interpretation": "The live first-party page exposes the same legacy 2020 chargemaster URL already retained in the evidence ledger and a separate consumer-facing HPI price page; browser inspection exposed no distinct current CMS-format CSV, JSON or ZIP download."
+  },
+  "independent_web_search": {
+    "queries": [
+      "site:shoshonehealth.com \"2020-Charge-Master.csv\"",
+      "site:shoshonehealth.com \"cms-hpt.txt\" \"Shoshone Medical Center\"",
+      "\"826003924-1043215437_west-shoshone-hospital-district-1_standardcharges.csv\""
+    ],
+    "result": "No indexed results returned for these exact-route queries.",
+    "limitation": "Search-engine silence is not proof that no other file exists."
+  },
+  "followup_official_and_exact_ccn_search_2026_09_28": {
+    "observed_at": "2026-09-28T19:04:34Z",
+    "queries": [
+      "site:cms.gov 131314 Shoshone Medical Center price transparency machine readable file 2026",
+      "CMS hospital price transparency data 131314 Shoshone Medical Center MRF",
+      "site:shoshonehealth.com 131314 price transparency"
+    ],
+    "result": "Search surfaced the CMS general Hospital Price Transparency guidance and a third-party PayerPrice profile for CCN 131314, but no CMS-hosted or other distinct publisher-linked MRF object. PayerPrice displays derived contract summaries, not source MRF bytes or a publisher file URL.",
+    "source_links": [
+      "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency",
+      "https://www.cms.gov/priorities/key-initiatives/hospital-price-transparency/hospitals",
+      "https://payerprice.com/hospitals/-131314"
+    ],
+    "interpretation": "This bounded search adds no importable file lead. The third-party rate summary is excluded from MRF evidence and must not be imported. CMS guidance is a validation reference only; it does not establish Shoshone file availability or compliance.",
+    "disposition_effect": "none",
+    "count_effect": "none"
+  },
+  "latest_third_party_raw_file_and_hpi_fallback_check_2026_09_30": {
+    "observed_at": "2026-09-30T02:02:42Z",
+    "third_party_source_page": "https://showthebill.com/hospitals/shoshone-medical-center/",
+    "third_party_claim": "The page labels a 46.8 MB CSV as Shoshone's machine-readable file and says it was captured 2026-08-28.",
+    "linked_raw_file_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7852/826003924-1043215437_west-shoshone-hospital-district-1_standardcharges.csv",
+    "linked_raw_file_method": "HTTP HEAD via curl.exe; no body downloaded",
+    "linked_raw_file_http_status": 404,
+    "linked_raw_file_response": "Azure Blob returned 404 The specified blob does not exist; no file bytes or metadata were received.",
+    "publisher_hpi_fallback_url": "https://search.hospitalpriceindex.com/hpi2/machineReadable/ShoshoneMedicalCenter/7852",
+    "publisher_hpi_fallback_browser_final_url": "https://search.hospitalpriceindex.com/facility-not-found",
+    "publisher_hpi_fallback_rendered_result": "The browser displayed 404 - Page Not Found and said the page was no longer there; no file or facility metadata was exposed.",
+    "current_official_page_link_context": "The Shoshone registration/billing page links the already-known 2019/12/2020-Charge-Master.csv as 'chargemaster'; it does not expose the third-party blob URL on the rendered page.",
+    "classification": "new-third-party-capture-link-and-alternate-route-recheck; no-current-mrf-bytes",
+    "interpretation": "This is a newly identified alternate third-party raw-file URL and fallback route, but both are currently unavailable. The third-party capture/date/size claim is not independent byte proof; the HTTP 404 and HPI application 404 do not prove that Shoshone has no current MRF. The known first-party 2020 CSV remains historical chargemaster evidence, not a CMS 3.0.0 verification.",
+    "mrf_bytes_recovered": false,
+    "disposition_effect": "none; retain CCN 131314 unresolved",
+    "count_effect": 0,
+    "next_action": "Do not retry the unchanged HPI routes absent a source/link or access change, including https://search.hospitalpriceindex.com/hpi2/machineReadable/ShoshoneMedicalCenter/7852; do not repeat the exact ShowTheBill raw blob URL https://sthpiprd.blob.core.windows.net/machine-readable-files/7852/826003924-1043215437_west-shoshone-hospital-district-1_standardcharges.csv. The HPI route rendered facility-not-found and the blob returned 404. Seek a restored publisher/HPI object or publisher-provided copy of the cited 2026-08-28 file with exact source URL and hash; then verify exact Shoshone identity, Idaho address/state, CMS 3.0.0 metadata, declared update date, attestation and usable rows. Keep the older 2020 chargemaster separate."
+  },
+  "previously_retained_file_facts": {
+    "legacy_page_file_url": "https://www.shoshonehealth.com/wp-content/uploads/2019/12/2020-Charge-Master.csv",
+    "legacy_page_file_bytes": 194646,
+    "legacy_page_file_sha256": "255541b660748f0a50bf62cd4b91d8b444caedf96de5a4fcc0bbee891a2f0d6b",
+    "legacy_page_file_last_modified": "2022-03-01T16:03:58Z",
+    "pointer_target_status": 404,
+    "alternate_third_party_blob_status": 404,
+    "new_file_bytes_recovered": false
+  },
+  "finding": "The current first-party page's exposed machine-readable download remains the already-retained legacy 2020 chargemaster. A ShowTheBill page now exposes a separate claimed 2026-08-28, 46.8 MB raw-file link and a Hospital Price Index fallback; the exact blob URL returned 404 and the fallback rendered an application 404 on 2026-09-30. No current MRF bytes or metadata were obtained. The earlier 2026-09-29 browser recheck showed the same first-party links, and the prior direct HTTP 200 pointer capture remains authoritative.",
+  "interpretation": "This adds a new third-party file-link/access observation, not MRF content or proof that no MRF is available. The third-party capture date/size is a claim until bytes are obtained; the old first-party chargemaster is not a current CMS 3.0.0 MRF. The pointer target, new blob URL and HPI fallback are distinct routes, and their 404s do not prove noncompliance or file absence.",
+  "disposition_effect": "none",
+  "count_effect": "none",
+  "next_action": "Keep CCN 131314 unresolved. Do not retry the unchanged HPI routes absent a source/link or access change; do not repeat the exact ShowTheBill blob URL or HPI machineReadable route. Seek a restored publisher/HPI object or publisher-provided copy of the cited 2026-08-28 file with exact source URL and hash; validate Shoshone identity, 25 Jacobs Gulch address, Idaho state/license metadata, declared update date, CMS 3.0.0 and usable rows. Preserve the 2020 chargemaster separately."
+}

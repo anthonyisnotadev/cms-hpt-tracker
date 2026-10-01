@@ -1,12 +1,12 @@
 {
   "summary": {
-    "corpus_documents": 2640,
-    "corpus_rows": 9335,
-    "documents_without_successful_target": 29,
-    "rows_without_successful_target": 422,
-    "matched_ccns_to_review": 204,
+    "corpus_documents": 2707,
+    "corpus_rows": 9449,
+    "documents_without_successful_target": 19,
+    "rows_without_successful_target": 348,
+    "matched_ccns_to_review": 190,
     "by_issue": {
-      "index-hash-differs-from-successful-state": 18,
+      "index-hash-differs-from-successful-state": 8,
       "index-version-without-successful-target": 11
     }
   },
@@ -19,7 +19,6 @@
       "fetched_at": "2026-09-07T00:27:04.517Z",
       "entry_rows": 72,
       "matched_ccns": [
-        "030011",
         "030012",
         "030024",
         "030036",
@@ -291,6 +290,7 @@
         "260059",
         "260065",
         "260077",
+        "260110",
         "260160",
         "261311",
         "261316",
@@ -472,48 +472,6 @@
       "retained_raw_status": "hash-corroborated"
     },
     {
-      "pointer_url": "https://lakehealth.org/cms-hpt.txt",
-      "final_url": "https://lakehealth.org/cms-hpt.txt",
-      "pointer_sha256": "af5e2b9bb87ee0bd114f307bf97b2b05d131e74895586a487d1bf9bf5a42a113",
-      "raw_file": "cms_data\\hpt\\pointer-corpus\\raw\\lakehealth.org-4ff4fea16549.txt",
-      "fetched_at": "2026-09-07T00:17:04.323Z",
-      "entry_rows": 14,
-      "matched_ccns": [
-        "360002",
-        "360078",
-        "360098",
-        "360123",
-        "360145",
-        "360359",
-        "360367",
-        "361308",
-        "363302"
-      ],
-      "related_ccns": [
-        "360002",
-        "360078",
-        "360098",
-        "360123",
-        "360145",
-        "360359",
-        "360367",
-        "361308",
-        "363302"
-      ],
-      "target_statuses": [],
-      "successful_state_versions_for_final_url": [
-        {
-          "sha256": "e00ec17ae15593a8098056576d6a73b3c451a5cf1e76603a7707ec82a901bb52",
-          "fetched_at": "2026-09-07T00:17:04.323Z"
-        }
-      ],
-      "issue": "index-hash-differs-from-successful-state",
-      "priority": 1,
-      "next_step": "Reconcile each linked CCN against current pointer and file identity; retain older evidence as historical until independently corroborated.",
-      "retained_raw_sha256": "af5e2b9bb87ee0bd114f307bf97b2b05d131e74895586a487d1bf9bf5a42a113",
-      "retained_raw_status": "hash-corroborated"
-    },
-    {
       "pointer_url": "https://uofmhealthsparrow.org/cms-hpt.txt",
       "final_url": "https://uofmhealthsparrow.org/cms-hpt.txt",
       "pointer_sha256": "6fe0166ce6a17e4b78a4db1ef0cff5a5f977c264a46e4030432df76650e19058",
@@ -610,41 +568,6 @@
       "retained_raw_status": "hash-corroborated"
     },
     {
-      "pointer_url": "https://camc.org/cms-hpt.txt",
-      "final_url": "https://camc.org/cms-hpt.txt",
-      "pointer_sha256": "592442aa3e4c35322a14ed34b284b1bdd2b40ff8d2c8ed016466db124dac48b6",
-      "raw_file": "cms_data\\hpt\\pointer-corpus\\raw\\camc.org-81a309bf10fb.txt",
-      "fetched_at": "2026-09-07T00:15:06.127Z",
-      "entry_rows": 7,
-      "matched_ccns": [
-        "510022",
-        "510091",
-        "511317"
-      ],
-      "related_ccns": [
-        "510002",
-        "510022",
-        "510091",
-        "511317"
-      ],
-      "target_statuses": [],
-      "successful_state_versions_for_final_url": [
-        {
-          "sha256": "61b0d6f780c2ec6d12c96513c73c3e041279ec43a6248e365104c0e78a516a69",
-          "fetched_at": "2026-09-07T00:02:20.093Z"
-        },
-        {
-          "sha256": "912cbc9c790ec2c5c4bcc8b49583eb76f722e4a7490835c9b7a0b2249ed09211",
-          "fetched_at": "2026-09-07T00:02:20.093Z"
-        }
-      ],
-      "issue": "index-hash-differs-from-successful-state",
-      "priority": 1,
-      "next_step": "Reconcile each linked CCN against current pointer and file identity; retain older evidence as historical until independently corroborated.",
-      "retained_raw_sha256": "592442aa3e4c35322a14ed34b284b1bdd2b40ff8d2c8ed016466db124dac48b6",
-      "retained_raw_status": "hash-corroborated"
-    },
-    {
       "pointer_url": "https://benefis.org/cms-hpt.txt",
       "final_url": "https://benefis.org/cms-hpt.txt",
       "pointer_sha256": "0010ff9918a5097de86b2e2dac928b7863ffb7cb07faed2ca22287970bc9b03b",
@@ -697,31 +620,37 @@
       "retained_raw_status": "hash-corroborated"
     },
     {
-      "pointer_url": "https://hudsonregionalhospital.com/cms-hpt.txt",
-      "final_url": "https://hudsonregionalhospital.com/cms-hpt.txt",
-      "pointer_sha256": "995e7c4957d37be6fa8031bfce2456c6de8dd79cd134a041c6a6c41ec9d5fb4c",
-      "raw_file": "cms_data\\hpt\\pointer-corpus\\raw\\hudsonregionalhospital.com-3a853af203a0.txt",
-      "fetched_at": "2026-09-07T00:15:59.789Z",
-      "entry_rows": 3,
+      "pointer_url": "https://camc.org/cms-hpt.txt",
+      "final_url": "https://camc.org/cms-hpt.txt",
+      "pointer_sha256": "592442aa3e4c35322a14ed34b284b1bdd2b40ff8d2c8ed016466db124dac48b6",
+      "raw_file": "cms_data\\hpt\\pointer-corpus\\raw\\camc.org-81a309bf10fb.txt",
+      "fetched_at": "2026-09-07T00:15:06.127Z",
+      "entry_rows": 7,
       "matched_ccns": [
-        "310025",
-        "310118"
+        "510022",
+        "511317"
       ],
       "related_ccns": [
-        "310025",
-        "310118"
+        "510002",
+        "510022",
+        "510091",
+        "511317"
       ],
       "target_statuses": [],
       "successful_state_versions_for_final_url": [
         {
-          "sha256": "3b4e3e2a8edfa3b13b56b8f56fc09b620154f31af78e7ce92ace4d82e0d84900",
-          "fetched_at": "2026-09-07T00:15:59.789Z"
+          "sha256": "61b0d6f780c2ec6d12c96513c73c3e041279ec43a6248e365104c0e78a516a69",
+          "fetched_at": "2026-09-07T00:02:20.093Z"
+        },
+        {
+          "sha256": "912cbc9c790ec2c5c4bcc8b49583eb76f722e4a7490835c9b7a0b2249ed09211",
+          "fetched_at": "2026-09-07T00:02:20.093Z"
         }
       ],
       "issue": "index-hash-differs-from-successful-state",
       "priority": 1,
       "next_step": "Reconcile each linked CCN against current pointer and file identity; retain older evidence as historical until independently corroborated.",
-      "retained_raw_sha256": "995e7c4957d37be6fa8031bfce2456c6de8dd79cd134a041c6a6c41ec9d5fb4c",
+      "retained_raw_sha256": "592442aa3e4c35322a14ed34b284b1bdd2b40ff8d2c8ed016466db124dac48b6",
       "retained_raw_status": "hash-corroborated"
     },
     {
@@ -809,58 +738,6 @@
       "retained_raw_status": "hash-corroborated"
     },
     {
-      "pointer_url": "https://suburbanhosp.org/cms-hpt.txt",
-      "final_url": "https://suburbanhosp.org/cms-hpt.txt",
-      "pointer_sha256": "7107bd981a0a523c52a00330b75e8f6411cde03c3dbddde0aaac5742b22a9ccd",
-      "raw_file": "cms_data\\hpt\\pointer-corpus\\raw\\suburbanhosp.org-f36b9aaa37cc.txt",
-      "fetched_at": "2026-09-07T00:24:45.807Z",
-      "entry_rows": 2,
-      "matched_ccns": [
-        "390116"
-      ],
-      "related_ccns": [
-        "390116"
-      ],
-      "target_statuses": [],
-      "successful_state_versions_for_final_url": [
-        {
-          "sha256": "2928b296654a271ca8ed60a4d219769dd35cfb07ce4e7feb32415aa8591fc4f3",
-          "fetched_at": "2026-09-07T00:24:45.807Z"
-        }
-      ],
-      "issue": "index-hash-differs-from-successful-state",
-      "priority": 1,
-      "next_step": "Reconcile each linked CCN against current pointer and file identity; retain older evidence as historical until independently corroborated.",
-      "retained_raw_sha256": "7107bd981a0a523c52a00330b75e8f6411cde03c3dbddde0aaac5742b22a9ccd",
-      "retained_raw_status": "hash-corroborated"
-    },
-    {
-      "pointer_url": "https://unmhealth.org/cms-hpt.txt",
-      "final_url": "https://unmhealth.org/cms-hpt.txt",
-      "pointer_sha256": "d923e9d0d7aeb35f580f7f1cf83388faf17a5ce786fce303c299043f542be2f0",
-      "raw_file": "cms_data\\hpt\\pointer-corpus\\raw\\unmhealth.org-7aa0256b90e2.txt",
-      "fetched_at": "2026-09-07T00:25:14.698Z",
-      "entry_rows": 2,
-      "matched_ccns": [
-        "320001"
-      ],
-      "related_ccns": [
-        "320001"
-      ],
-      "target_statuses": [],
-      "successful_state_versions_for_final_url": [
-        {
-          "sha256": "452f9f3a3af42db6ec2fc7c8df1199deadfac2a422b6549383a99cdc7a768c1a",
-          "fetched_at": "2026-09-07T00:25:14.698Z"
-        }
-      ],
-      "issue": "index-hash-differs-from-successful-state",
-      "priority": 1,
-      "next_step": "Reconcile each linked CCN against current pointer and file identity; retain older evidence as historical until independently corroborated.",
-      "retained_raw_sha256": "d923e9d0d7aeb35f580f7f1cf83388faf17a5ce786fce303c299043f542be2f0",
-      "retained_raw_status": "hash-corroborated"
-    },
-    {
       "pointer_url": "https://atlanticare.org/cms-hpt.txt",
       "final_url": "https://atlanticare.org/cms-hpt.txt",
       "pointer_sha256": "28d111346f902d96a2074a5949e926b4e85c13537d3465670559b818d57dd8c9",
@@ -899,54 +776,6 @@
       "retained_raw_status": "hash-corroborated"
     },
     {
-      "pointer_url": "https://dekalbregional.com/cms-hpt.txt",
-      "final_url": "https://dekalbregional.com/cms-hpt.txt",
-      "pointer_sha256": "1250387ac0f7afdcf1c6bdc7cb175ecdfcbeac3fe4ab7043c42e80038e6f90a9",
-      "raw_file": "cms_data\\hpt\\pointer-corpus\\raw\\dekalbregional.com-2bf80b02e6ab.txt",
-      "fetched_at": "2026-09-07T00:12:41.770Z",
-      "entry_rows": 1,
-      "matched_ccns": [],
-      "related_ccns": [
-        "010012"
-      ],
-      "target_statuses": [],
-      "successful_state_versions_for_final_url": [
-        {
-          "sha256": "c7530acbdf1ba9d9ad435d77bc2a06fd501e0fcfc40eb43285c8ef52d44c8298",
-          "fetched_at": "2026-09-07T00:12:41.770Z"
-        }
-      ],
-      "issue": "index-hash-differs-from-successful-state",
-      "priority": 2,
-      "next_step": "Reconcile the indexed version with crawl history and current first-party pointer before any facility assignment.",
-      "retained_raw_sha256": "1250387ac0f7afdcf1c6bdc7cb175ecdfcbeac3fe4ab7043c42e80038e6f90a9",
-      "retained_raw_status": "hash-corroborated"
-    },
-    {
-      "pointer_url": "https://lincolnhealthsystem.com/cms-hpt.txt",
-      "final_url": "https://lincolnhealthsystem.com/cms-hpt.txt",
-      "pointer_sha256": "1ad0d16633366173053550ca5be0ac74df5386c61a1a3c4daab573888b2b670c",
-      "raw_file": "cms_data\\hpt\\pointer-corpus\\raw\\lincolnhealthsystem.com-52d6523cb940.txt",
-      "fetched_at": "2026-09-07T00:18:09.884Z",
-      "entry_rows": 1,
-      "matched_ccns": [],
-      "related_ccns": [
-        "440102"
-      ],
-      "target_statuses": [],
-      "successful_state_versions_for_final_url": [
-        {
-          "sha256": "5997acca08b78a5a537a7d58c6d443c47f7f59c56369de0381bee0f380c2fe9c",
-          "fetched_at": "2026-09-07T00:18:09.884Z"
-        }
-      ],
-      "issue": "index-hash-differs-from-successful-state",
-      "priority": 2,
-      "next_step": "Reconcile the indexed version with crawl history and current first-party pointer before any facility assignment.",
-      "retained_raw_sha256": "1ad0d16633366173053550ca5be0ac74df5386c61a1a3c4daab573888b2b670c",
-      "retained_raw_status": "hash-corroborated"
-    },
-    {
       "pointer_url": "https://physicianshouma.com/cms-hpt.txt",
       "final_url": "https://physicianshouma.com/cms-hpt.txt",
       "pointer_sha256": "3fbe0a3505618fd2005efa64b5a57edf084a90b514501c627903d5c14ce16ca0",
@@ -963,103 +792,6 @@
       "priority": 2,
       "next_step": "Reconcile the indexed version with crawl history and current first-party pointer before any facility assignment.",
       "retained_raw_sha256": "3fbe0a3505618fd2005efa64b5a57edf084a90b514501c627903d5c14ce16ca0",
-      "retained_raw_status": "hash-corroborated"
-    },
-    {
-      "pointer_url": "https://renobehavioral.com/cms-hpt.txt",
-      "final_url": "https://renobehavioral.com/cms-hpt.txt",
-      "pointer_sha256": "8f49f85bde0f82f8ae6afeb2fe4bf026718df21cf43551c3381b6b5b662c8f24",
-      "raw_file": "cms_data\\hpt\\pointer-corpus\\raw\\renobehavioral.com-f40c1916396b.txt",
-      "fetched_at": "2026-09-07T00:21:27.834Z",
-      "entry_rows": 10,
-      "matched_ccns": [],
-      "related_ccns": [
-        "294015"
-      ],
-      "target_statuses": [],
-      "successful_state_versions_for_final_url": [
-        {
-          "sha256": "2f5c55cbcecddd9cfa0623bb6c7f97c7ffce7e14584aa3c2f0b0e2d7c4c6caf3",
-          "fetched_at": "2026-09-07T00:21:27.834Z"
-        }
-      ],
-      "issue": "index-hash-differs-from-successful-state",
-      "priority": 2,
-      "next_step": "Reconcile the indexed version with crawl history and current first-party pointer before any facility assignment.",
-      "retained_raw_sha256": "8f49f85bde0f82f8ae6afeb2fe4bf026718df21cf43551c3381b6b5b662c8f24",
-      "retained_raw_status": "hash-corroborated"
-    },
-    {
-      "pointer_url": "https://shamrock.health/cms-hpt.txt",
-      "final_url": "https://shamrock.health/cms-hpt.txt",
-      "pointer_sha256": "ec0ef8c10bfea3877dea470bed770eea4751feb6088971bd0804600b61240838",
-      "raw_file": "cms_data\\hpt\\pointer-corpus\\raw\\shamrock.health-8f8443d5652a.txt",
-      "fetched_at": "2026-09-07T00:23:01.046Z",
-      "entry_rows": 1,
-      "matched_ccns": [],
-      "related_ccns": [
-        "441322"
-      ],
-      "target_statuses": [],
-      "successful_state_versions_for_final_url": [
-        {
-          "sha256": "781e46ea257f175438abfcf8acb658b30a1c8fb5aa6c1762ddbe4de48ff84ab0",
-          "fetched_at": "2026-09-07T00:23:01.046Z"
-        }
-      ],
-      "issue": "index-hash-differs-from-successful-state",
-      "priority": 2,
-      "next_step": "Reconcile the indexed version with crawl history and current first-party pointer before any facility assignment.",
-      "retained_raw_sha256": "ec0ef8c10bfea3877dea470bed770eea4751feb6088971bd0804600b61240838",
-      "retained_raw_status": "hash-corroborated"
-    },
-    {
-      "pointer_url": "https://surgicalhospitalok.net/cms-hpt.txt",
-      "final_url": "https://surgicalhospitalok.net/cms-hpt.txt",
-      "pointer_sha256": "0d622a1e3175a78c94a74a17bb8058dce9ff4241e8f793b31b9beed89a49afd6",
-      "raw_file": "cms_data\\hpt\\pointer-corpus\\raw\\surgicalhospitalok.net-1013b96d127b.txt",
-      "fetched_at": "2026-09-07T00:24:48.324Z",
-      "entry_rows": 1,
-      "matched_ccns": [],
-      "related_ccns": [
-        "370201"
-      ],
-      "target_statuses": [],
-      "successful_state_versions_for_final_url": [
-        {
-          "sha256": "7cfd2db9015234963b2598a30c64e16740cdc8e2cf2538c60a378ab4a05b1fc3",
-          "fetched_at": "2026-09-07T00:24:48.324Z"
-        }
-      ],
-      "issue": "index-hash-differs-from-successful-state",
-      "priority": 2,
-      "next_step": "Reconcile the indexed version with crawl history and current first-party pointer before any facility assignment.",
-      "retained_raw_sha256": "0d622a1e3175a78c94a74a17bb8058dce9ff4241e8f793b31b9beed89a49afd6",
-      "retained_raw_status": "hash-corroborated"
-    },
-    {
-      "pointer_url": "https://whs.org/cms-hpt.txt",
-      "final_url": "https://whs.org/cms-hpt.txt",
-      "pointer_sha256": "d6221db9e1e1ee6edc89a0d3d54d497ae2194567c630c9e4f62bf8f9d68db118",
-      "raw_file": "cms_data\\hpt\\pointer-corpus\\raw\\whs.org-6195da0d192e.txt",
-      "fetched_at": "2026-09-07T00:25:56.637Z",
-      "entry_rows": 39,
-      "matched_ccns": [],
-      "related_ccns": [
-        "390042",
-        "390150"
-      ],
-      "target_statuses": [],
-      "successful_state_versions_for_final_url": [
-        {
-          "sha256": "974bd259415f990736c3335d1638374b16b35a209e38a5b94264861d7f3526fe",
-          "fetched_at": "2026-09-07T00:25:56.637Z"
-        }
-      ],
-      "issue": "index-hash-differs-from-successful-state",
-      "priority": 2,
-      "next_step": "Reconcile the indexed version with crawl history and current first-party pointer before any facility assignment.",
-      "retained_raw_sha256": "d6221db9e1e1ee6edc89a0d3d54d497ae2194567c630c9e4f62bf8f9d68db118",
       "retained_raw_status": "hash-corroborated"
     },
     {
@@ -1089,7 +821,7 @@
     }
   ],
   "source_sha256": {
-    "crawl-state.json": "c0173e9237536482f33f8daeb6619fdac7a4b2b4ca29859492954633daa5b460",
-    "cms_hpt_entries.csv": "0e547ea7593a56681e2f434592bb9cb08bee45d43c90a5f174914ecd8b9584e7"
+    "crawl-state.json": "a00e149429baf1aab703f58b5e22ed9b0311bce361556633633e945f4fc9eccb",
+    "cms_hpt_entries.csv": "159347116ee2eabd33b97e2e7cc20ddb0ff9c4838400a74d34c5b927cea305d7"
   }
 }

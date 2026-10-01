@@ -1,0 +1,34 @@
+{
+  "ccn": "061328",
+  "hospital_name": "Pagosa Springs Medical Center",
+  "observed_at": "2026-09-30T00:00:00Z",
+  "mrf_url": "https://pagosaspringsmedicalcenter.pg.revenuemasters.com/cdm-files/PAGOSA%20CDM%20FILE%20%283%29-updated.csv",
+  "request_method": "GET",
+  "http_status": 404,
+  "bytes_retrieved": 0,
+  "official_portal_recheck": {
+    "observed_at": "2026-09-30T00:00:00Z",
+    "requested_url": "https://www.pagosaspringsmedicalcenter.org/patients-visitors/patient-and-visitor-guide/financial-transparency/",
+    "final_url": "https://pagosaspringsmedicalcenter.pg.revenuemasters.com/",
+    "browser_status": "official-portal-rendered",
+    "observed_content": "Revenue Masters payer transparency service for Pagosa Springs Medical Center at 95 S Pagosa Blvd; service-estimate flow and scheduling phone shown.",
+    "hospital_charge_csv_link_exposed": false,
+    "interpretation": "The official page still routes to the official Revenue Masters portal, but the current rendered portal surface does not expose the prior hospital-charge CSV link. This does not prove no downloadable MRF exists elsewhere on the portal."
+  },
+  "expected_prior_bytes": 15142488,
+  "expected_prior_sha256": "10D9E335BCB68F738E1616517CA2C4205ACCDF9D54089622C081832CECCF835C",
+  "cms_validator": "CMSgov/hpt-validator-cli",
+  "cms_validator_version": "not-run",
+  "cms_data_dictionary_target": "v3.0",
+  "current_mrf_validation": "not-performed-no-file-bytes",
+  "pointer_observation": {
+    "pointer_url": "https://www.pagosaspringsmedicalcenter.org/cms-hpt.txt",
+    "status": "official-404-page",
+    "observed_at": "2026-09-19T08:00:00Z",
+    "kept_separate": true
+  },
+  "interpretation": "The exact page-linked CSV URL that returned HTTP 200 with a complete-file hash on 2026-09-19 returned HTTP 404 on 2026-09-30. No bytes were available for current CMS v3.0 schema validation. This is a route-access change, not proof that no current MRF exists; the earlier dated full-file observation is retained. The separate root-pointer 404 remains unchanged.",
+  "disposition_effect": "none",
+  "count_effect": "none",
+  "next_action": "Seek a materially new official portal URL or publisher-provided current file bytes; then hash the complete file, verify exact-facility metadata and declared CMS 3.0.0, run the CMS validator against v3.0, and assess parsed-row usability. Do not repeat the unchanged broken exact URL absent a source change."
+}

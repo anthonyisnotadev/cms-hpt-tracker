@@ -1,0 +1,83 @@
+{
+  "ccn": "050455",
+  "observed_at": "2026-09-28T01:11:12Z",
+  "purpose": "Cross-check both NPIs in the exact pointer-linked CMS 3.0.0 header against current CMS NPI Registry records and California facility/license records.",
+  "pointer_file_basis": {
+    "pointer_url": "https://www.adventisthealth.org/bakersfield/cms-hpt.txt",
+    "pointer_target": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHBBAKERSFIELDCA&type=CDMWithoutLabel&fileType=CSV",
+    "current_pointer_portal_proof": "reconciliation-adventist-bakersfield-current-portal-header-proof-2026-09-27.json",
+    "latest_bounded_sample_sha256": "5236c5b68fe2267745de0f0236b0401903bc860e4b06cfbd7984eae6279b3167",
+    "latest_bounded_sample_bytes": 262144,
+    "complete_file_proof": "reconciliation-adventist-bakersfield-specialty-file-recheck-proof-2026-09-21.json",
+    "complete_file_sha256": "69A1DF6EF767B0EFD945B05E6DDEB762AC42012C61E6A6A9729C3A195E2C9AF9",
+    "complete_file_bytes": 135704576,
+    "header_license_number": "120000187",
+    "header_npis_ordered": ["1538157508", "1609856947"],
+    "header_locations_ordered": ["SAN JOAQUIN COMMUNITY HOSPITAL", "Adventist Health Specialty Bakersfield"],
+    "header_addresses_ordered": ["3001 Sillect Avenue Bakersfield CA 93308", "3001 Sillect Avenue Bakersfield CA 93308"],
+    "header_declared_date": "2026-07-29",
+    "header_template_version": "3.0.0"
+  },
+  "cms_npi_registry": [
+    {
+      "npi": "1538157508",
+      "query_url": "https://npiregistry.cms.hhs.gov/api/?number=1538157508&version=2.1",
+      "http_status": 200,
+      "response_sha256": "46d85638c05c2773ba4f9b3d229d0cc0c1b4ab0cdc92141a8f89e79ff98043ff",
+      "response_bytes": 2068,
+      "result_count": 1,
+      "organization_name": "SAN JOAQUIN COMMUNITY HOSPITAL",
+      "status": "A",
+      "last_updated": "2025-12-17",
+      "location_address": "2615 CHESTER AVE, BAKERSFIELD, CA 93301-2006",
+      "taxonomy": "282N00000X — General Acute Care Hospital",
+      "license": "120000187",
+      "interpretation": "The first NPI in the MRF header is currently registered to the main San Joaquin Community Hospital organization at the 2615 Chester address and under the header's license number."
+    },
+    {
+      "npi": "1609856947",
+      "query_url": "https://npiregistry.cms.hhs.gov/api/?number=1609856947&version=2.1",
+      "http_status": 200,
+      "response_sha256": "516eac52243331055e064a91a50222bc9d82007b506bc663abbfe6fca3426ed4",
+      "response_bytes": 1481,
+      "result_count": 1,
+      "organization_name": "HEART HOSPITAL OF BK, LLC",
+      "doing_business_as": "BAKERSFIELD HEART HOSPITAL",
+      "status": "A",
+      "last_updated": "2023-02-24",
+      "location_address": "3001 SILLECT AVENUE, BAKERSFIELD, CA 93308",
+      "taxonomy": "282N00000X — General Acute Care Hospital",
+      "license": "050000526",
+      "interpretation": "The second NPI in the MRF header is registered to a different organization/DBA and license at 3001 Sillect; this record alone does not establish its CMS CCN or price-file relationship to the Specialty Bakersfield location."
+    }
+  ],
+  "california_hcai": {
+    "main_facility_url": "https://hcai.ca.gov/facility/adventist-health-bakersfield/",
+    "main_facility_id": "106150788",
+    "main_facility_name": "ADVENTIST HEALTH BAKERSFIELD",
+    "main_facility_address": "2615 CHESTER AVENUE, BAKERSFIELD, CA 93301",
+    "main_license_number": "120000187",
+    "main_facility_status": "Open",
+    "specialty_facility_url": "https://hcai.ca.gov/equity-measures/hospital/adventist-health-specialty-bakersfield/",
+    "specialty_facility_id": "106154101",
+    "specialty_facility_name": "ADVENTIST HEALTH SPECIALTY BAKERSFIELD",
+    "specialty_facility_address": "3001 SILLECT AVENUE, BAKERSFIELD, CA 93308",
+    "specialty_license_number": "120000187",
+    "specialty_licensee": "SAN JOAQUIN COMMUNITY HOSPITAL CORP",
+    "specialty_page_statement": "Adventist Health Specialty Bakersfield shares a license with Adventist Health Bakersfield."
+  },
+  "cms_provider_number_crosscheck": {
+    "observed_at": "2026-09-28T03:00:54Z",
+    "cms_facility_page": "https://www.cms.gov/medicare/medicare-general-information/medicareapprovedfacilitie/carotid-artery-stenting-facilities-items/bakersfield-heart-hospital",
+    "cms_provider_number": "050724",
+    "cms_effective_date": "2005-05-25",
+    "cms_address": "3001 Sillect Avenue, Bakersfield, CA 93308",
+    "browser_observation": "The live CMS page identifies Bakersfield Heart Hospital, Provider Number 050724, effective date 2005-05-25, at 3001 Sillect Avenue, Bakersfield CA 93308.",
+    "hcaI_facility_page": "https://hcai.ca.gov/facility/bakersfield-heart-hospital/",
+    "hcaI_current_name_and_address": "Adventist Health Specialty Bakersfield, 3001 Sillect Avenue, Bakersfield CA 93308; facility is open and a consolidated general acute-care hospital.",
+    "interpretation": "A separate CMS provider number is documented for the 3001 Sillect site whose current HCAI identity is Adventist Health Specialty Bakersfield. This strengthens the CCN boundary against treating 3001 Sillect data as automatically covering main-campus CCN 050455 at 2615 Chester. The CMS page's effective date is historical; it does not alone establish current enrollment status or prove exactly which CCN(s) the shared 2026 file covers."
+  },
+  "finding": "New cross-source evidence sharpens, but does not resolve, the header identity discrepancy. NPI 1538157508 is the main 2615 Chester hospital and matches California license 120000187, while the current pointer-linked MRF header pairs that NPI with 3001 Sillect. Its second NPI, 1609856947, is registered as Heart Hospital of BK LLC / Bakersfield Heart Hospital at 3001 Sillect under license 050000526. Separately, current HCAI identifies the Specialty campus at 3001 Sillect as sharing license 120000187 with the main hospital, and a live CMS page documents distinct provider number 050724 for Bakersfield Heart Hospital at that exact Sillect address (effective 2005-05-25). The CMS page is historical and does not settle current enrollment or file scope. Keep 050455 and 050724 separate; do not automatically attribute the Sillect file to main-campus CCN 050455.",
+  "disposition": "unresolved-current-pointer-file-address-and-npi-mapping-conflict",
+  "next_action": "Ask Adventist/PARA to correct the NPI-to-location/address mapping in the pointer-linked file or provide authoritative documentation identifying which CCN/license and campuses its two NPI/location rows cover. Preserve the current pointer/sample and complete-file proofs; do not promote until the exact file-scope explanation resolves the main 2615 Chester versus Sillect mapping."
+}

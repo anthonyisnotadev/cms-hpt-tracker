@@ -23,6 +23,6 @@ test('Ozark HTML root is not promoted to a pointer-linked verification', () => {
   const resolution = ledger.find(item => item.ccn === row.ccn);
   assert.equal(resolution.action, 'replace-observation');
   assert.equal(resolution.evidence.observedFinding, 'root-pointer-html-page-with-official-page-file');
-  assert.equal(standing.finding, 'compliant-observed');
+  assert.equal(standing.finding, 'root-pointer-html-page-with-official-page-file');
   assert.equal(standing.mrf_url, row.current_mrf_url);
 });

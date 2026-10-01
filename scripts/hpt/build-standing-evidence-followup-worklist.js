@@ -3,6 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const { standingFollowUpKind } = require('./lib/reconciliation-precedence');
 
 const root = path.resolve(__dirname, '../..');
 const audit = path.join(root, 'data/hpt-audit');
@@ -35,7 +36,8 @@ function build(reconciliation, verification) {
         current_disposition: row.proposed_disposition,
         standing_checked_at: row.standing_checked_at,
         latest_observed_at: row.issues?.includes('later-manual-observation-follow-up')
-          ? row.manual_access_observation.observed_at : row.latest_observed_at || row.standing_checked_at,
+          ? row.manual_access_observation?.observed_at || row.manual_correction_reconciliation?.manual_checked_at
+          : row.latest_observed_at || row.standing_checked_at,
         latest_observation_source: row.issues?.includes('later-manual-observation-follow-up')
           ? 'later-manual' : row.latest_observed_at ? 'nationwide' : 'reviewed-standing',
         ...(row.issues?.includes('later-manual-observation-follow-up')
@@ -43,6 +45,7 @@ function build(reconciliation, verification) {
         browser_file_status: current.browser_mrf_status || '',
         browser_file_observed_at: current.browser_mrf_observed_at || '',
         reviewed_follow_up: reviewedFollowUp,
+        followup_kind: standingFollowUpKind(row),
         next_action: nextAction,
       };
     }).sort((a, b) => a.priority - b.priority
@@ -51,6 +54,7 @@ function build(reconciliation, verification) {
   if (new Set(records.map(row => row.ccn)).size !== records.length)
     throw new Error('Duplicate standing follow-up CCN');
   return { summary: { total: records.length,
+    access_retry: records.filter(row => row.followup_kind === 'access-retry').length,
     browser_retry_replaced: records.filter(row => row.next_action.startsWith('The exact file already had a browser result')).length },
   records };
 }

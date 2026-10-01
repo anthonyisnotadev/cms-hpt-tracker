@@ -1,0 +1,25 @@
+{
+  "ccn": "230100",
+  "hospital_name": "TAWAS ST JOSEPH HOSPITAL",
+  "observed_at": "2026-09-28T06:32:47Z",
+  "third_party_report_url": "https://careranks.com/transparency/mi/",
+  "third_party_observation": "CareRanks' Michigan report labels Tawas St Joseph Hospital as having an MRF and links its 'Hospital site' to https://www.sjhsys.org/.",
+  "linked_domain_browser_observation": {
+    "url": "https://www.sjhsys.org/",
+    "http_status": 200,
+    "page_title": "Care & Everyday Wellness | sjhsys.org",
+    "visible_site_identity": "An independent care and everyday wellness editorial publication; page disclaims affiliation with former organizations associated with the domain.",
+    "facility_or_hospital_content_found": false
+  },
+  "interpretation": "The third-party 'Hospital site' link is stale and currently resolves to an unrelated site. CareRanks' MRF-present label is not primary evidence and the linked domain must not be treated as a current hospital publisher or used to attribute a file to CCN 230100.",
+  "separate_first_party_lead": {
+    "facility_page": "https://www.mymichigan.org/locations/profile/medical-center-tawas/",
+    "pricing_page": "https://www.mymichigan.org/patients-visitors/billing-insurance/cost-estimates/",
+    "pricing_page_lists": "Standard Charges for MyMichigan Medical Center Tawas",
+    "page_linked_csv": "https://www.mymichigan.org/app/files/public/fb45cd90-7a45-40a1-b7eb-8e2e315d2dfd/381443395_mymichigan-medical-center-tawas_standardcharges.csv",
+    "root_pointer": "https://www.mymichigan.org/cms-hpt.txt",
+    "latest_direct_fetch_observation": "Both the exact page-linked CSV and root pointer returned HTTP 403 HTML to the direct client; the CMS page reader does not render CSV bytes. This is transport evidence only."
+  },
+  "disposition": "unresolved-first-party-file-lead-but-no-pointer-or-file-bytes; third-party-linked-domain-stale",
+  "next_action": "Ignore the stale CareRanks sjhsys.org destination. Continue from MyMichigan's first-party Tawas pricing page and obtain publisher pointer/file bytes through a genuinely content-bearing permitted route or publisher-provided copy; validate file identity, address/ZIP, MI metadata, date/version and usable rows before disposition change."
+}

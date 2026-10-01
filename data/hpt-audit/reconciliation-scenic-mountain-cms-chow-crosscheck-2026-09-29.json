@@ -1,0 +1,65 @@
+{
+  "ccn": "450653",
+  "observed_at": "2026-09-29T04:42:54.481Z",
+  "purpose": "Check the current CMS Hospital Change of Ownership feed for effective-dated continuity between Scenic Mountain CCN 450653 and Shannon NPI 1497606438 after the reported 2026 operating transition.",
+  "source": {
+    "publisher": "Centers for Medicare & Medicaid Services",
+    "dataset": "Hospital Change of Ownership",
+    "dataset_id": "c04031db-54ce-461c-85d1-d2613d71f167",
+    "dataset_release": "2026-06-01",
+    "dataset_temporal_end": "2026-06-30",
+    "catalog_last_updated": "2026-08-19",
+    "catalog_url": "https://catalog.data.gov/dataset/hospital-change-of-ownership",
+    "dataset_url": "https://data.cms.gov/provider-characteristics/hospitals-and-other-facilities/hospital-change-of-ownership",
+    "api_url": "https://data.cms.gov/data-api/v1/dataset/c04031db-54ce-461c-85d1-d2613d71f167/data",
+    "http_status": 200,
+    "content_type": "application/json",
+    "last_modified": "Mon, 28 Sep 2026 20:53:36 GMT",
+    "response_bytes": 718332,
+    "response_sha256": "76f2a3fdfa7f69b78363e59189e0ec4f10e602c8c8b95b8e0d44bf7c496ae33f"
+  },
+  "query": {
+    "method": "Fetch complete current public dataset (bounded to 2 MiB), parse in memory, select every row whose buyer/seller CCN is 450653 or buyer/seller NPI is 1497606438.",
+    "response_rows": 772,
+    "exact_ccn_or_npi_match_rows": 1,
+    "full_dataset_retained": false,
+    "retention_reason": "Full response includes unrelated personal-owner fields; this proof retains the exact relevant organization transaction row only."
+  },
+  "relevant_transaction_rows": [
+    {
+      "ENROLLMENT ID - BUYER": "O20250114002778",
+      "ENROLLMENT STATE - BUYER": "TX",
+      "PROVIDER TYPE CODE - BUYER": "00-09",
+      "PROVIDER TYPE TEXT - BUYER": "PART A PROVIDER - HOSPITAL",
+      "NPI - BUYER": "1336976034",
+      "MULTIPLE NPI FLAG - BUYER": "N",
+      "CCN - BUYER": "450653",
+      "ASSOCIATE ID - BUYER": "2163950429",
+      "ORGANIZATION NAME - BUYER": "BIG SPRING TEXAS HOSPITAL COMPANY LLC",
+      "DOING BUSINESS AS NAME - BUYER": "SCENIC MOUNTAIN MEDICAL CENTER",
+      "CHOW TYPE CODE": "CH",
+      "CHOW TYPE TEXT": "CHANGE OF OWNERSHIP",
+      "EFFECTIVE DATE": "2024-10-17",
+      "ENROLLMENT ID - SELLER": "O20190624000542",
+      "ENROLLMENT STATE - SELLER": "TX",
+      "PROVIDER TYPE CODE - SELLER": "00-09",
+      "PROVIDER TYPE TEXT - SELLER": "PART A PROVIDER - HOSPITAL",
+      "NPI - SELLER": "1285191452",
+      "MULTIPLE NPI FLAG - SELLER": "N",
+      "CCN - SELLER": "450653",
+      "ASSOCIATE ID - SELLER": "8224371984",
+      "ORGANIZATION NAME - SELLER": "STEWARD TEXAS HOSPITAL HOLDINGS LLC",
+      "DOING BUSINESS AS NAME - SELLER": "SCENIC MOUNTAIN MEDICAL CENTER, A STEWARD FAMILY HOSPITAL"
+    }
+  ],
+  "comparison": {
+    "enrollment_proof_file": "reconciliation-scenic-mountain-cms-enrollment-recheck-proof-2026-09-25.json",
+    "current_cms_ccn_npi_at_last_enrollment_snapshot": "1336976034",
+    "shannon_big_spring_file_npi": "1497606438",
+    "shannon_npi_match_in_this_chow_response": false,
+    "scope_interpretation": "The current published CMS CHOW response contains only the 2024-10-17 change to Big Spring Texas Hospital Company LLC / Scenic Mountain for CCN 450653; it contains no buyer/seller match for Shannon NPI 1497606438. CMS describes this dataset as ownership changes reported through PECOS and self-reported by entities. This absence does not establish that no operational transition, enrollment update, or CCN continuity occurred after the dataset temporal end."
+  },
+  "disposition": "current-operator-same-campus-pointer-file-ccn-continuity-unresolved",
+  "cohort_count_effect": 0,
+  "next_action": "Do not repeat those unchanged snapshots or this unchanged CMS CHOW snapshot. Keep CCN 450653 and the Shannon file scope separate. Seek a post-transition CMS certification/enrollment record, later CHOW release, or published authoritative Shannon/CMS record explicitly mapping NPI 1497606438 to CCN 450653; do not infer the mapping from name, address, or operational ownership alone."
+}

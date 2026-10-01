@@ -1,0 +1,39 @@
+{
+  "audit_id": "reconciliation-neshoba-state-license-transition-bracket-2026-09-28",
+  "observed_at": "2026-09-28T22:43:17Z",
+  "ccn_investigated": "250043",
+  "related_ccn": "251340",
+  "purpose": "Compare independent Mississippi state hospital-directory editions to bound the Neshoba Acute-to-CAH classification transition without treating state type as Medicare CCN-effective evidence.",
+  "state_sources": [
+    {
+      "agency": "Mississippi State Department of Health, Health Facilities Licensure and Certification",
+      "edition": "May 05, 2025",
+      "url": "https://msdh.ms.gov/msdhsite/index.cfm/30,7660,83,pdf/March_2025_Directory.pdf",
+      "web_reader_evidence": "Search-indexed official PDF row: Neshoba County General Hospital; type Acute; 1001 Holland Avenue; Philadelphia, MS 39350; license 11-227; 48 beds.",
+      "direct_retrieval": "Earlier published PDF edition; not newly downloaded in this review."
+    },
+    {
+      "agency": "Mississippi State Department of Health, Health Facilities Licensure and Certification",
+      "edition": "September 18, 2026",
+      "url": "https://msdh.ms.gov/msdhsite/index.cfm/29,7660,83,pdf/HealthFacilitiesDirectory.pdf",
+      "http_status": 200,
+      "content_type": "application/pdf; charset=utf-8",
+      "response_bytes_reported": 990841,
+      "raw_pdf_sha256": "c5bc475cefb4bb12dcd3d72a58531fdce546faf9b306f697d8c5f1fa69587e9b",
+      "web_reader_lines": "PDF page 33, lines 1639-1642",
+      "observed_row": "Neshoba County General Hospital; type CAH; 1001 Holland Avenue; Philadelphia, MS 39350; license 11-227; Neshoba County; 48 licensed beds; 48 acute beds; 10 geriatric-psychiatric beds; DNV; acute-bed note; former name Northwest Regional.",
+      "retrieval_retention": "The complete PDF was downloaded to a temporary file and hash-calculated; the temporary copy was not retained in the project. Re-fetch/re-hash is required for byte-level reproducibility."
+    }
+  ],
+  "correlated_evidence": {
+    "cms_pos_transition_proof": "reconciliation-neshoba-cms-pos-transition-proof-2026-09-27.json",
+    "cms_pos_observation": "Q1 2026 POS lists CCN 250043 with termination/expiration 2025-12-31 and CCN 251340 with original participation date 2026-01-01.",
+    "first_party_transition_statement": "reconciliation-neshoba-cah-transition-page-recheck-proof-2026-09-25.json records the hospital's planned CAH conversion date of 2025-10-01; that page describes intent/planning, not a completed CMS effective date.",
+    "cms_successor_row": "Current CMS records identify 251340 as the active CAH at the same 1001 Holland Avenue campus."
+  },
+  "interpretation": "The independent state directory editions bracket a state hospital-type change: Acute by May 05, 2025 and CAH by September 18, 2026, at the same licensed facility/address. CMS POS separately records a Medicare CCN 250043 termination/expiration boundary of 2025-12-31 and CCN 251340 original participation date 2026-01-01. The state-directory bracket is not the effective date, does not prove which historic CMS MRF was published before 2025-12-31, and does not link any MRF to either CCN.",
+  "historical_mrf_bytes_recovered": false,
+  "disposition_changed": false,
+  "cohort_count_effect": 0,
+  "next_action": "Preserve 250043 in the historical accountability baseline. Seek dated pre-2025-12-31 CMS pointer/MRF bytes from a materially new archive/source or a separately retained publisher file. Keep the complete June 2026 current-campus CMS 3.0.0 file unassigned between the historical 250043 and successor 251340 until exact file scope is documented. Do not repeat prior Common Crawl/Wayback routes or Q1 2026 POS queries absent source/index/version change."
+}

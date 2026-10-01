@@ -1,0 +1,68 @@
+{
+  "ccn": "050546",
+  "observed_at": "2026-09-29T07:18:35Z",
+  "source_type": "cms-provider-of-services-qies-current-certification-and-scope-crosscheck",
+  "dataset": "Provider of Services File - Quality Improvement and Evaluation System (QIES)",
+  "dataset_release": "Q1 2026",
+  "dataset_page": "https://data.cms.gov/provider-characteristics/hospitals-and-other-facilities/provider-of-services-file-quality-improvement-and-evaluation-system",
+  "api_url": "https://data.cms.gov/data-api/v1/dataset/bb342fae-b551-40fd-a738-e2e5878f3bbb/data?filter%5BPRVDR_NUM%5D=050546&size=20&offset=0",
+  "api_dataset_id": "bb342fae-b551-40fd-a738-e2e5878f3bbb",
+  "http_status": 200,
+  "content_type": "application/json",
+  "response_bytes": 11720,
+  "response_sha256": "ac97edc5596f4c7b4369ab2944da1873680da08cfaa3719754ce07f9c2763edc",
+  "row_count": 1,
+  "selected_fields": {
+    "PRVDR_NUM": "050546",
+    "FAC_NAME": "PORTERVILLE DEVELOPMENTAL CENTER",
+    "ST_ADR": "26501 AVENUE 140",
+    "CITY_NAME": "PORTERVILLE",
+    "STATE_CD": "CA",
+    "ZIP_CD": "93257",
+    "PRVDR_CTGRY_CD": "01",
+    "PRVDR_CTGRY_SBTYP_CD": "01",
+    "CMPLNC_STUS_CD": "A",
+    "ELGBLTY_SW": "Y",
+    "CRTFCTN_DT": "20221221",
+    "ACPTBL_POC_SW": "Y",
+    "PGM_TRMNTN_CD": "00",
+    "TRMNTN_EXPRTN_DT": "",
+    "CRTFCTN_ACTN_TYPE_CD": "2",
+    "CROSS_REF_PROVIDER_NUMBER": "",
+    "GNRL_FAC_TYPE_CD": "01",
+    "CRTFD_BED_CNT": "44",
+    "BED_CNT": "1226",
+    "PSYCH_UNIT_SW": "N",
+    "PSYCH_UNIT_BED_CNT": "0",
+    "MDCD_MDCR_PRTCPTG_PRVDR_SW": "Y"
+  },
+  "official_state_sources": {
+    "dds_facility_page": "https://www.dds.ca.gov/services/state-facilities/porterville-dc/",
+    "dds_page_last_modified": "2026-08-25",
+    "dds_current_residential_programs": "The page describes a secure treatment program including people committed under Penal Code 1370.1 and individuals on Welfare & Institutions Code 6500/danger-to-self status. It states the General Treatment Area closed in December 2019.",
+    "hcai_profile": "https://hcai.ca.gov/facility/porterville-developmental-center/",
+    "hcai_current_address": "26501 Avenue 140, Porterville, CA 93257",
+    "hcai_license_type": "General Acute Care Hospital",
+    "hcai_facility_status": "Open",
+    "hcai_id": "106541123"
+  },
+  "scope_reference": {
+    "regulation": "45 CFR 180.30(b)(3)",
+    "current_cfr_pdf": "https://www.govinfo.gov/content/pkg/CFR-2024-title45-vol2/pdf/CFR-2024-title45-vol2-part180.pdf",
+    "cms_guidance": "https://www.cms.gov/files/document/hospital-price-transparency-frequently-asked-questions.pdf",
+    "relevant_rule_text_summary": "The deemed-compliance exception is for state forensic hospitals that provide treatment exclusively to individuals in custody of penal authorities. CMS describes state forensic hospitals as public psychiatric hospitals. The evidence here identifies PDC as currently licensed General Acute Care Hospital, and DDS describes more than one resident/legal pathway; this does not establish the exception's predicates. This is a cautious scope screen, not a legal determination.",
+    "regulatory_disposition": "no-supported-exemption-on-current-evidence"
+  },
+  "interpretation": "This is new exact-CCN current certification and state-license/scope evidence, not a price-transparency file discovery. The QIES record identifies active CCN 050546 at the roster-matching Porterville address, with termination code 00 and 44 certified beds; the current California HCAI profile lists an open General Acute Care Hospital license, and DDS describes the remaining secure program as including both penal-commitment and non-penal statutory pathways. The narrow state-forensic deemed-compliance exception is not supported by these facts. No CMS HPT MRF or pointer was recovered; do not infer absence or a legal compliance verdict. Keep CCN 050546 unresolved pending a current PDC-specific CMS MRF/pointer or authoritative scope documentation.",
+  "new_evidence": [
+    "Current Q1 2026 exact-CCN CMS QIES record with active status, certification date and no termination date.",
+    "Current state HCAI profile identifies an open General Acute Care Hospital license at the roster address.",
+    "Current DDS program description distinguishes penal commitments from other statutory admission pathways; general treatment area is stated closed in December 2019."
+  ],
+  "rechecks_or_relabeling": [
+    "Reconfirms the 2026-09-23 CMS General Information API identity/address result; it is not a new MRF observation.",
+    "Does not change the unresolved disposition or reduce the frozen 891 unresolved count."
+  ],
+  "cohort_unresolved_change": 0,
+  "next_action": "Keep 050546 unresolved in the frozen 891 cohort. Obtain a current Porterville Developmental Center-specific CMS CSV/JSON MRF and valid facility pointer, or authoritative pricing/scope documentation; independently verify file identity, California metadata, date/version, attestation and usability. Do not treat the stale statewide DDS root 404, general hospital rates page evidence, or QIES certification record as an MRF."
+}

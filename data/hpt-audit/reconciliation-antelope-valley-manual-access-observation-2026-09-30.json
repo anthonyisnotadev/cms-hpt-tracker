@@ -1,0 +1,25 @@
+{
+  "records": [
+    {
+      "ccn": "050056",
+      "observed_at": "2026-09-30T07:06:10Z",
+      "proof_file": "reconciliation-antelope-valley-pointer-page-crosswalk-proof-2026-09-30.json",
+      "official_site": "https://www.avmc.org/",
+      "official_pricing_page": "https://www.avmc.org/patients/billing-insurance-pricing/",
+      "pointer_url": "https://www.avmc.org/cms-hpt.txt",
+      "pointer_sha256": "6a041e61267e123d311c801396e1defd342a6d6110e49f6776ec6c6449442d70",
+      "pointer_location_name": "Antelope Valley Medical Center",
+      "pointer_mrf_url": "https://www.cdmpricing.com/f961a5b495c6b41f2fca90c83cc92dcf",
+      "page_file_url": "https://apim.services.craneware.com/api-pricing-transparency/api/public/f961a5b495c6b41f2fca90c83cc92dcf/charges/mrf",
+      "disposition": "historical-pointer-facility-match-corroborated-current-access-client-denied",
+      "current_pointer_recheck": {
+        "observed_at": "2026-09-30T07:06:10Z",
+        "http_status": 403,
+        "content_type": "text/html; charset=UTF-8",
+        "response_class": "Cloudflare access challenge",
+        "browser_result": "ERR_BLOCKED_BY_CLIENT"
+      },
+      "next_action": "Preserve the 2026-09-06 standing compliant-observed finding and the 2026-09-26 browser MRF capture separately from the latest unresolved root-pointer match/access observation. Do not upgrade or discard the standing finding based on the Cloudflare/client blocks. Recheck the unchanged root pointer only after a first-party route or materially different permitted access path changes; do not infer pointer absence or a facility failure, and do not perform outreach without authorization."
+    }
+  ]
+}

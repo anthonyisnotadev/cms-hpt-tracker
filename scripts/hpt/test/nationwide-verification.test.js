@@ -4,10 +4,447 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
+const crypto = require('node:crypto');
+const { csvToObjects } = require('../lib/util');
 const {
-  metadataState, effectiveDispositionCategory, selectedFileEvidence, headerEvidenceForSelection, qualifyBrowserIdentity, choose, buildTargetIndexes, indexedPointerObservation, pointerRetainedBytesStatus, pointerCorpusProvenance, applyBrowserPointerObservation, disposition
+  metadataState, effectiveDispositionCategory, completeFullFileObservation, selectedFileEvidence, headerEvidenceForSelection, qualifyBrowserIdentity, choose, buildTargetIndexes, indexedPointerObservation, pointerRetainedBytesStatus, pointerCorpusProvenance, applyBrowserPointerObservation, manualPageFileRecheck, disposition
 } = require('../build-nationwide-verification');
 const { applyNationwideVerification } = require('../lib/nationwide-verification-view');
+
+test('a fully captured hash-matched 206 is complete only when Content-Range covers the entire object', () => {
+  const proof = { full_file_validated: true, file_range_status: 206, file_bytes: 20553, full_file_bytes: 20553,
+    file_sha256: 'a'.repeat(64), full_file_sha256: 'a'.repeat(64), file_content_range: 'bytes 0-20552/20553',
+    parsed_data_rows: 94, data_rows_with_description: 94, data_rows_with_gross_charge: 94,
+    data_rows_with_payer: 94, data_rows_with_usable_negotiated_charge: 94, csv_data_row_widths: [23], csv_header_columns: 23 };
+  assert.equal(completeFullFileObservation(proof), true);
+  assert.equal(completeFullFileObservation({ ...proof, file_content_range: 'bytes 0-65535/20553' }), false);
+  assert.equal(completeFullFileObservation({ ...proof, file_bytes: 65536 }), false);
+  assert.equal(completeFullFileObservation({ ...proof, file_sha256: 'b'.repeat(64) }), false);
+  assert.equal(completeFullFileObservation({ ...proof, data_rows_with_usable_negotiated_charge: 93 }), false);
+});
+
+test('a complete hash-matched CSV accepted by CMS v3 validator is complete even when sparse rows omit optional charge fields', () => {
+  const proof = { full_file_validated: true, file_range_status: 200, file_bytes: 93493711,
+    full_file_bytes: 93493711, file_sha256: 'c'.repeat(64), full_file_sha256: 'c'.repeat(64),
+    parsed_data_rows: 266930, csv_header_columns: 29, csv_data_row_widths: [29],
+    cms_validator: { package: '@cmsgov/hpt-validator-cli', version: '1.10.8',
+      requirements: 'v3.0', format: 'csv', valid: true, error_count: 0, alert_count: 0 } };
+  assert.equal(completeFullFileObservation(proof), true);
+  assert.equal(completeFullFileObservation({ ...proof,
+    cms_validator: { ...proof.cms_validator, error_count: 1 } }), false);
+  assert.equal(completeFullFileObservation({ ...proof, file_bytes: 93493710 }), false);
+});
+
+test('a complete JSON v3 file accepts only zero validator errors and the documented 3.0 literal alert', () => {
+  const proof = { full_file_validated: true, file_kind: 'application/json', file_range_status: 200,
+    file_bytes: 45927333, full_file_bytes: 45927333, file_sha256: 'd'.repeat(64),
+    full_file_sha256: 'd'.repeat(64), cms_template_version: '3.0', json_schema_version: '3.0.0',
+    json_data_rows: 5189, json_usable_charge_rows: 5189,
+    cms_validator: { package: '@cmsgov/hpt-validator-cli', version: '1.10.8',
+      requirements: 'v3.0', format: 'json', valid: true, error_count: 0, alert_count: 1,
+      alert: "The value in this MRF's version data element \"3.0\" does not match expected \"3.0.0\"." } };
+  assert.equal(completeFullFileObservation(proof), true);
+  assert.equal(completeFullFileObservation({ ...proof,
+    cms_validator: { ...proof.cms_validator, error_count: 1 } }), false);
+  assert.equal(completeFullFileObservation({ ...proof,
+    cms_validator: { ...proof.cms_validator, alert: 'unrelated warning' } }), false);
+  assert.equal(completeFullFileObservation({ ...proof, cms_template_version: '3.0.0' }), false);
+});
+
+test('Covington full-file v3 validation resolves only CCN 251325 and preserves Smith County as unresolved', () => {
+  const root = path.resolve(__dirname, '../../..');
+  const proof = JSON.parse(fs.readFileSync(path.join(root,
+    'data/hpt-audit/reconciliation-covington-smith-current-pointer-file-proof-2026-09-30.json'), 'utf8'));
+  const snapshot = JSON.parse(fs.readFileSync(path.join(root, 'data/hpt-audit/nationwide-verification.json'), 'utf8'));
+  const byteAudit = JSON.parse(fs.readFileSync(path.join(root, 'data/hpt-audit/nationwide-source-proof-audit.json'), 'utf8'))
+    .records.find(row => row.ccn === '251325');
+  const covington = snapshot.records.find(row => row.ccn === '251325');
+  const smith = snapshot.records.find(row => row.ccn === '250786');
+  const elCampo = snapshot.records.find(row => row.ccn === '450694');
+  assert.equal(proof.current_mrf_full_file_review.sha256,
+    '962080aef2ea163adfe3c9b9005cb35dcea20e801ab031b9495e3bcea8c74886');
+  assert.equal(proof.current_mrf_full_file_review.cms_validator.requirements, 'v3.0');
+  assert.equal(proof.current_mrf_full_file_review.cms_validator.valid, true);
+  assert.equal(proof.current_mrf_full_file_review.cms_validator.error_count, 0);
+  assert.equal(proof.current_mrf_full_file_review.cms_validator.alert_count, 0);
+  assert.equal(byteAudit.status, 'proof-audit-complete');
+  assert.equal(byteAudit.file_byte_proof.sha256, proof.current_mrf_full_file_review.sha256);
+  assert.match(byteAudit.file_byte_proof.raw_artifact, /^private-proof-cache:/);
+  assert.equal(covington.disposition, 'verified-current-mrf');
+  assert.equal(covington.cms_template_version, '3.0.0');
+  assert.equal(covington.declared_location_name, 'covington_county_hospital_.1');
+  assert.equal(smith.disposition, 'pointer-facility-match-unresolved');
+  assert.equal(smith.mrf_url, '');
+  assert.equal(elCampo.pointer_state, 'retrieved-facility-linked');
+  assert.equal(elCampo.pointer_corpus_sha256, 'fcf800c84155c508f7a41663a3480a4d728d75295b5e75cf9f571b90b35e14c8');
+  assert.equal(elCampo.mrf_url, 'https://app.box.com/shared/static/vucltv6rqwl6olqb1bdktazi7mep60wa.csv');
+  assert.equal(elCampo.disposition, 'pointer-linked-file-not-probed');
+  assert.equal(elCampo.standing_evidence_retained, true);
+  assert.equal(snapshot.summary.reviewed_view_unresolved, 582);
+});
+
+test('Harsha CMS v3 proof is bound to retained bytes, exact identity and parsed rows', () => {
+  const root = path.resolve(__dirname, '../../..');
+  const proof = JSON.parse(fs.readFileSync(path.join(root,
+    'data/hpt-audit/reconciliation-harsha-v3-current-pointer-proof-2026-09-30.json'), 'utf8'));
+  const bytes = fs.readFileSync(path.join(root, proof.retained_file));
+  const digest = crypto.createHash('sha256').update(bytes).digest('hex');
+  const rows = require('../lib/util').parseCSV(bytes.toString('utf8'));
+  assert.equal(proof.ccn, '154054');
+  assert.equal(proof.cms_template_version, '3.0.0');
+  assert.equal(proof.declared_license_state, 'IN');
+  assert.equal(proof.attestation, true);
+  assert.equal(proof.full_file_bytes, 20553);
+  assert.equal(proof.file_content_range, 'bytes 0-20552/20553');
+  assert.equal(proof.pointer_declared_file_url.endsWith('/261091197_harsha-behavioral-center_standardcharges.csv'), true);
+  assert.equal(proof.alias_check.same_bytes, true);
+  assert.equal(digest, proof.full_file_sha256);
+  assert.equal(rows[1][0], 'Harsha Behavioral Center');
+  assert.equal(rows[1][2], '3.0.0');
+  assert.equal(rows[1][7], '1891966065');
+  assert.equal(rows.slice(3).filter(row => row.some(Boolean)).length, 94);
+  assert.equal(new Set(rows.slice(3).filter(row => row.some(Boolean)).map(row => row.length)).size, 1);
+  const algorithmRows = rows.slice(3).filter(row => row[13] || row[14]);
+  assert.equal(algorithmRows.length, 4);
+  assert.equal(algorithmRows.filter(row => row[15] && row[16] && row[17] && row[18]).length, 4);
+  assert.deepEqual(proof.cms_v3_allowed_amount_check, {
+    columns: ['median_amount', '10th_percentile', '90th_percentile', 'count'], applicable_rows: 4, complete_rows: 4
+  });
+  assert.equal(proof.raw_pointer_contact_fields_omitted, true);
+});
+
+test('incomplete retries preserve stronger findings while newer pointer evidence corrects a stale route finding', () => {
+  const root = path.resolve(__dirname, '../../..');
+  const audit = path.join(root, 'data/hpt-audit');
+  const { loadReviewedView } = require('../lib/reviewed-resolutions');
+  const withoutNationwide = loadReviewedView(audit, { nationwide: false }).compliance;
+  const effective = loadReviewedView(audit).compliance;
+  const report = JSON.parse(fs.readFileSync(path.join(audit, 'nationwide-verification.json'), 'utf8'));
+  assert.equal(withoutNationwide.length, 5419);
+  assert.equal(effective.length, 5419);
+  assert.equal(report.records.length, 5419);
+  const before = new Map(withoutNationwide.map(row => [row.ccn, row]));
+  const after = new Map(effective.map(row => [row.ccn, row]));
+  const retained = report.records.filter(row => row.standing_evidence_retained);
+  // Incomplete retries remain queued alongside retained evidence; exact
+  // byte-identical retries no longer reopen reviewed source chains.
+  // Formerly incomplete pointer retries with newer complete hash-bound
+  // first-party pointer/file evidence are no longer retained as unresolved
+  // retries. Additional exact-CCN reviewed resolutions supersede
+  // stale cache-derived observations; a retry timestamp must not be reconstructed
+  // from the derived index.
+  assert.equal(retained.length, 889);
+  const pennHup = report.records.find(row => row.ccn === '390111');
+  assert.equal(pennHup.disposition, 'verified-template-review');
+  assert.equal(pennHup.mrf_state, 'page-linked-file-retrieved');
+  assert.equal(pennHup.pointer_state, 'not-assessed-page-file-only');
+  assert.equal(pennHup.pointer_result, '');
+  assert.equal(pennHup.metadata_source, 'manual-page-file-recheck');
+  assert.equal(pennHup.cms_template_version, '3.0.0');
+  assert.equal(pennHup.file_sample_bytes, 65536);
+  const harsha = report.records.find(row => row.ccn === '154054');
+  assert.equal(harsha.disposition, 'verified-current-mrf');
+  assert.equal(harsha.mrf_state, 'verified-current-v3');
+  assert.equal(harsha.cms_template_version, '3.0.0');
+  assert.equal(harsha.mrf_http_status, '206');
+  assert.equal(harsha.pointer_corpus_sha256, '222dcb74372039e9547d1eb6ffd1878dba4ab3b7844538a14c15abdc945a33e4');
+  assert.equal(after.get('154054').finding, 'compliant-observed');
+  assert.equal(after.get('154054').checked_at, '2026-09-30T17:58:31.495Z');
+  const smith = report.records.find(row => row.ccn === '250786');
+  assert.equal(smith.disposition, 'pointer-facility-match-unresolved');
+  assert.equal(smith.mrf_url, '');
+  assert.match(smith.next_action, /Do not assign the Covington County Hospital pointer entry or Collins CSV/);
+  assert.equal(after.get('250786').finding, 'not-assessed-nationwide-pointer-facility-match-unresolved');
+  assert.equal(after.get('250786').domain, 'covingtoncountyhospital.com');
+  assert.equal(after.get('250786').pointer_url, '', 'the sibling pointer is not presented as facility-linked');
+  assert.equal(after.get('250786').checked_at, smith.observed_at);
+  assert.match(after.get('250786').evidence, /its hash is unchanged/);
+  const covington = report.records.find(row => row.ccn === '251325');
+  assert.equal(covington.disposition, 'verified-current-mrf');
+  assert.equal(covington.cms_template_version, '3.0.0');
+  assert.equal(covington.file_sample_bytes, 262144);
+  assert.equal(covington.complete_file_validated, true);
+  assert.equal(covington.full_file_bytes, 93493711);
+  assert.equal(covington.full_file_sha256, '962080aef2ea163adfe3c9b9005cb35dcea20e801ab031b9495e3bcea8c74886');
+  assert.equal(covington.cms_validator.requirements, 'v3.0');
+  assert.equal(covington.cms_validator.valid, true);
+  assert.equal(before.get('251325').finding, 'compliant-observed',
+    'the full-file reviewed resolution applies independently of the nationwide overlay');
+  assert.equal(after.get('251325').finding, 'compliant-observed');
+  assert.equal(after.get('251325').assessable, 'yes');
+  assert.equal(after.get('251325').mrf_url, covington.mrf_url);
+  assert.equal(after.get('251325').cms_template_version, '3.0.0');
+  assert.equal(after.get('251325').checked_at, covington.observed_at);
+  assert.match(after.get('251325').evidence, /completely retrieved and structurally validated MRF/);
+  assert.equal(covington.cms_validator.version, '1.10.8');
+  const retainedCovington = retained.find(row => row.ccn === '251325');
+  assert.equal(retainedCovington, undefined, 'the newly hash-bound complete-file evidence is the active observation');
+  const unm = report.records.find(row => row.ccn === '320001');
+  assert.equal(unm.disposition, 'verified-current-mrf');
+  assert.equal(unm.observed_at, '2026-09-15T04:37:50.471Z');
+  assert.equal(unm.standing_evidence_retained, false);
+  for (const observation of retained) {
+    if (observation.ccn === '251325') {
+      assert.equal(after.get(observation.ccn).finding, 'compliant-observed');
+      assert.equal(after.get(observation.ccn).assessable, 'yes');
+      assert.equal(after.get(observation.ccn).mrf_url, observation.mrf_url);
+      assert.equal(after.get(observation.ccn).cms_template_version, '3.0.0');
+      assert.notDeepEqual(after.get(observation.ccn), before.get(observation.ccn),
+        'new hash-bound full-file evidence corrects the stale pointer-unavailable label and supports current MRF verification');
+      continue;
+    }
+    if (observation.ccn === '021310') {
+      const restored = after.get(observation.ccn);
+      assert.equal(restored.finding, 'compliant-observed');
+      assert.equal(restored.checked_at, '2026-09-17T22:46:18.139Z');
+      assert.equal(restored.mrf_url, observation.mrf_url);
+      assert.equal(restored.cms_template_version, '3.0.0');
+      assert.match(restored.evidence, /reconciliation-maniilaq-browser-byte-identity-proof-2026-09-17/);
+      assert.notDeepEqual(restored, before.get(observation.ccn),
+        'validated reviewed pointer/file proof must restore the newer effective observation');
+      const auditRecord = JSON.parse(fs.readFileSync(path.join(audit, 'nationwide-effective-audit.json'), 'utf8'))
+        .records.find(row => row.ccn === observation.ccn);
+      assert.equal(auditRecord.effective_reviewed_observation.latest_retry_observation
+        ?.superseded_by_reviewed_pointer_file_identity, true);
+      continue;
+    }
+    if (observation.ccn === '050007') {
+      const restored = after.get(observation.ccn);
+      assert.equal(restored.finding, 'compliant-observed');
+      assert.equal(restored.checked_at, '2026-09-30T12:18:27Z');
+      assert.equal(restored.mrf_url, observation.mrf_url);
+      assert.equal(restored.cms_template_version, '3.0.0');
+      assert.notDeepEqual(restored, before.get(observation.ccn),
+        'fresh hash-matched pointer bytes and the exact bounded file header resolve the misattributed retry');
+      const auditRecord = JSON.parse(fs.readFileSync(path.join(audit, 'nationwide-effective-audit.json'), 'utf8'))
+        .records.find(row => row.ccn === observation.ccn);
+      assert.equal(auditRecord.effective_reviewed_observation.disposition, 'verified-current-mrf');
+      assert.equal(auditRecord.effective_reviewed_observation.overlay_source_proof_file,
+        'reconciliation-sutter-050007-current-pointer-proof-2026-09-26.json');
+      assert.equal(auditRecord.effective_reviewed_observation.latest_retry_observation
+        ?.superseded_by_reviewed_current_pointer_file_identity, true);
+      continue;
+    }
+    if (observation.ccn === '050008') {
+      const restored = after.get(observation.ccn);
+      assert.equal(restored.finding, 'compliant-observed');
+      assert.equal(restored.checked_at, '2026-09-30T19:18:24.836Z');
+      assert.equal(restored.mrf_url, observation.mrf_url);
+      assert.equal(restored.cms_template_version, '3.0.0');
+      assert.notDeepEqual(restored, before.get(observation.ccn),
+        'the current full-file CMS v3 proof resolves the retained pointer/facility mismatch');
+      const current = report.records.find(row => row.ccn === observation.ccn);
+      assert.equal(current.disposition, 'verified-current-mrf');
+      assert.equal(current.pointer_state, 'retrieved-facility-linked-manual-review');
+      assert.equal(current.mrf_state, 'linked-file-retrieved-metadata-limited');
+      assert.equal(current.file_sample_bytes, 18701332);
+      assert.equal(current.file_sample_sha256,
+        '9bd05245c6f66cb578e611e0ffa0a898c612fbe69d7ea422595448f685f33001');
+      assert.equal(current.cms_template_version, '3.0.0');
+      assert.match(current.next_action, /does not establish pricing-row usability or compliance/);
+      continue;
+    }
+    if (observation.ccn === '051315') {
+      const restored = after.get(observation.ccn);
+      assert.equal(restored.finding, 'compliant-observed');
+      assert.equal(restored.checked_at, '2026-09-30T13:15:40Z');
+      assert.equal(restored.mrf_url, observation.mrf_url);
+      assert.equal(restored.cms_template_version, '3.0.0');
+      assert.notDeepEqual(restored, before.get(observation.ccn),
+        'the complete hash-bound operator-alias pointer/file proof resolves the older incomplete retry');
+      const auditRecord = JSON.parse(fs.readFileSync(path.join(audit, 'nationwide-effective-audit.json'), 'utf8'))
+        .records.find(row => row.ccn === observation.ccn);
+      assert.equal(auditRecord.effective_reviewed_observation.disposition, 'verified-current-mrf');
+      assert.equal(auditRecord.effective_reviewed_observation.overlay_source_proof_file,
+        'reconciliation-trinity-hospital-ccn-051315-pointer-alias-full-file-proof-2026-09-30.json');
+      assert.equal(auditRecord.effective_reviewed_observation.latest_retry_observation
+        ?.superseded_by_reviewed_operator_alias_pointer_file_identity, true);
+      assert.equal(auditRecord.reconciliation.workstream, 'consistent');
+      continue;
+    }
+    assert.deepEqual(after.get(observation.ccn), before.get(observation.ccn),
+      `incomplete ${observation.disposition} observation must not alter retained tracker row ${observation.ccn}`);
+    assert.equal(after.get(observation.ccn).finding, observation.prior_finding,
+      `retained finding must remain visible for ${observation.ccn}`);
+  }
+});
+
+test('Mary Greeley exact pointer linkage and failed range remain separate from file identity', () => {
+  const root = path.resolve(__dirname, '../../..');
+  const audit = path.join(root, 'data/hpt-audit');
+  const corpus = csvToObjects(fs.readFileSync(path.join(root,
+    'cms_data/hpt/pointer-corpus/cms_hpt_entries.csv'), 'utf8'));
+  const proof = JSON.parse(fs.readFileSync(path.join(audit,
+    'reconciliation-mary-greeley-current-pointer-recheck-2026-09-30.json'), 'utf8'));
+  const row = corpus.find(item => item.pointer_sha256 === proof.root_pointer_observation.sha256
+    && item.mrf_url === proof.root_pointer_observation.normalized_entry.mrf_url
+    && item.matched_ccns.split('|').includes('160030'));
+  assert.ok(row);
+  assert.equal(row.location_name, 'Mary Greeley Medical Center');
+  assert.equal(row.source_page_url,
+    'https://www.mgmc.org/patients-visitors/billing-financial/estimates-charges/');
+  const report = JSON.parse(fs.readFileSync(path.join(audit, 'nationwide-verification.json'), 'utf8'));
+  const current = report.records.find(item => item.ccn === '160030');
+  assert.equal(current.disposition, 'mrf-request-unsuccessful');
+  assert.equal(current.mrf_http_status, '200');
+  assert.equal(current.mrf_range_status ?? '', '');
+  assert.equal(current.standing_evidence_retained, true);
+  assert.notEqual(current.disposition, 'linked-mrf-header-unmatched');
+  const priorFile = JSON.parse(fs.readFileSync(path.join(audit,
+    'reconciliation-mary-greeley-current-file-proof.json'), 'utf8'));
+  assert.equal(priorFile.page_file_sha256, proof.prior_complete_file_proof.sha256);
+  assert.equal(priorFile.page_file_url, row.mrf_url);
+  assert.equal(proof.bounded_mrf_recheck.body_bytes_read, 0);
+});
+
+test('UCSD Hillcrest page-linked proof keeps its exact bounded file evidence in nationwide review', () => {
+  const manual = JSON.parse(fs.readFileSync(path.resolve(__dirname,
+    '../../../data/hpt-audit/reconciliation-manual-access-observations.json'), 'utf8'));
+  const proof = manual.records.find(row => row.ccn === '050025');
+  const review = manualPageFileRecheck(proof);
+  assert.ok(review);
+  assert.equal(review.pointer_declared_mrf_url, proof.publisher_file_url);
+  assert.equal(review.file_bytes, proof.publisher_file_sample_bytes);
+  assert.equal(review.file_sha256, proof.publisher_file_sample_sha256);
+  assert.equal(review.pointer_url, '');
+  assert.equal(review.source_page_url, proof.official_pricing_page);
+  assert.equal(review.manual_file_only, true);
+  assert.equal(review.declared_address.split('|')[0], '200 West Arbor Dr, San Diego, CA 92103');
+  assert.equal(review.declared_license_state, 'CA');
+  assert.equal(review.declared_last_updated, '2026-04-01');
+  assert.equal(review.cms_template_version, '3.0');
+  assert.equal(review.manual_file_only, true);
+  assert.equal(manualPageFileRecheck({ ...proof, publisher_file_sample_sha256: '' }), null);
+  assert.equal(manualPageFileRecheck({ ...proof, publisher_file_sample_bytes: 0 }), null);
+});
+
+test('UHS page-file proofs preserve declared_version/date aliases for the CMS v3 currentness gate', () => {
+  const root = path.resolve(__dirname, '../../..');
+  const manual = JSON.parse(fs.readFileSync(path.join(root,
+    'data/hpt-audit/reconciliation-manual-access-observations.json'), 'utf8'));
+  const snapshot = JSON.parse(fs.readFileSync(path.join(root,
+    'data/hpt-audit/nationwide-verification.json'), 'utf8'));
+  for (const [ccn, expectedName] of [['154024', 'Valle Vista Health System'],
+    ['154041', 'Bloomington Meadows Hospital']]) {
+    const proof = manual.records.find(row => row.ccn === ccn && row.disposition === 'verified-current-mrf');
+    const review = manualPageFileRecheck(proof);
+    assert.ok(review);
+    assert.equal(review.cms_template_version, '3.0.0');
+    assert.equal(review.declared_last_updated, '2026-05-12');
+    assert.equal(review.declared_hospital_name, expectedName);
+    assert.equal(review.manual_file_only, true);
+    const row = snapshot.records.find(item => item.ccn === ccn);
+    assert.equal(row.disposition, 'verified-current-mrf');
+    assert.equal(row.cms_template_version, '3.0.0');
+    assert.equal(row.declared_last_updated, '2026-05-12');
+  }
+});
+
+test('complete hash-bound 206 Sutter pointer evidence reconciles both distinct Alta Bates CCNs', () => {
+  const root = path.resolve(__dirname, '../../..');
+  const audit = path.join(root, 'data/hpt-audit');
+  const manual = JSON.parse(fs.readFileSync(path.join(audit,
+    'reconciliation-manual-access-observations.json'), 'utf8'));
+  const snapshot = JSON.parse(fs.readFileSync(path.join(audit, 'nationwide-verification.json'), 'utf8'));
+  for (const [ccn, address, city] of [['050043', '350 Hawthorne Avenue, Oakland, CA 94609', 'OAKLAND'],
+    ['050305', '2450 Ashby Avenue, Berkeley, CA 94705', 'BERKELEY']]) {
+    const proofFile = `reconciliation-sutter-${ccn}-current-pointer-file-proof-2026-09-29.json`;
+    const proof = JSON.parse(fs.readFileSync(path.join(audit, proofFile), 'utf8'));
+    const observation = manual.records.find(row => row.ccn === ccn && row.proof_file === proofFile);
+    assert.ok(observation);
+    assert.equal(observation.latest_pointer_recheck.pointer_http_status, 206);
+    assert.equal(observation.latest_pointer_recheck.pointer_bytes,
+      observation.latest_pointer_recheck.pointer_content_range.split('/')[1] * 1);
+    assert.match(observation.latest_pointer_recheck.pointer_sha256, /^[a-f0-9]{64}$/);
+    assert.equal(proof.primary_mrf.cms_template_version, '3.0.0');
+    assert.equal(proof.primary_mrf.declared_address, address);
+    assert.equal(proof.primary_mrf.declared_license_state, 'CA');
+    assert.equal(proof.primary_mrf.declared_last_updated, '2026-04-01');
+    const row = snapshot.records.find(item => item.ccn === ccn);
+    assert.equal(row.disposition, 'verified-current-mrf');
+    assert.equal(row.pointer_state, 'retrieved-facility-linked-manual-review');
+    assert.equal(row.pointer_corpus_sha256, proof.pointer.sha256);
+    assert.equal(row.cms_template_version, '3.0.0');
+    assert.equal(row.declared_address, address);
+    assert.equal(row.city, city);
+  }
+  const oakland = snapshot.records.find(item => item.ccn === '050043');
+  const berkeley = snapshot.records.find(item => item.ccn === '050305');
+  assert.notEqual(oakland.mrf_url, berkeley.mrf_url);
+});
+
+test('Athens-Limestone full page-linked MRF remains separate from its unresolved root-pointer link', () => {
+  const root = path.resolve(__dirname, '../../..');
+  const manual = JSON.parse(fs.readFileSync(path.join(root,
+    'data/hpt-audit/reconciliation-manual-access-observations.json'), 'utf8'));
+  const proof = manual.records.find(row => row.proof_file
+    === 'reconciliation-athens-limestone-current-full-mrf-proof-2026-09-28.json');
+  const review = manualPageFileRecheck(proof);
+  assert.ok(review);
+  assert.equal(review.manual_file_only, true);
+  assert.equal(review.pointer_declared_mrf_url, proof.facility_file_url);
+  assert.equal(review.file_bytes, 40443636);
+  assert.equal(review.file_sha256, 'fdbfc862a544b51e5c72b75803ebddc9dce18441524fca105defd6481370b437');
+  assert.equal(review.declared_hospital_name, 'HH HEALTH SYSTEM ATHENS LIMESTONE');
+  assert.equal(review.declared_license_state, 'AL');
+  assert.equal(review.cms_template_version, '3.0.0');
+  assert.equal(review.attestation, true);
+
+  const snapshot = JSON.parse(fs.readFileSync(path.join(root, 'data/hpt-audit/nationwide-verification.json'), 'utf8'));
+  const row = snapshot.records.find(item => item.ccn === '010079');
+  assert.equal(row.disposition, 'verified-current-mrf');
+  assert.equal(row.mrf_state, 'page-linked-file-retrieved');
+  assert.equal(row.mrf_url, proof.facility_file_url);
+  assert.equal(row.pointer_state, 'request-or-tool-failure');
+  assert.notEqual(row.pointer_state, 'retrieved-facility-linked');
+  assert.match(row.next_action, /root pointer and alternate current CSV/);
+
+  const crosswalk = JSON.parse(fs.readFileSync(path.join(root,
+    'data/hpt-audit/reconciliation-891-baseline-member-roster-2026-09-27.json'), 'utf8'));
+  assert.ok(crosswalk.current_crosswalk_ccns['active-verification-claim'].includes('010079'));
+  assert.ok(!crosswalk.current_crosswalk_ccns['genuinely-unresolved'].includes('010079'));
+});
+
+test('Decatur Morgan current enrollment and full campus-file comparison corroborate only the Decatur CCN file', () => {
+  const root = path.resolve(__dirname, '../../..');
+  const manual = JSON.parse(fs.readFileSync(path.join(root,
+    'data/hpt-audit/reconciliation-manual-access-observations.json'), 'utf8'));
+  const proof = manual.records.find(row => row.ccn === '010085'
+    && row.proof_file === 'reconciliation-decatur-morgan-current-enrollment-and-campus-file-proof-2026-09-28.json');
+  const review = manualPageFileRecheck(proof);
+  assert.ok(review);
+  assert.equal(review.manual_file_only, true);
+  assert.equal(review.manual_identity, 'corroborated');
+  assert.equal(review.manual_disposition, 'verified-current-mrf');
+  assert.equal(review.pointer_declared_mrf_url, proof.facility_file_url);
+  assert.equal(review.file_bytes, 23746132);
+  assert.equal(review.file_sha256, '618922e927d70b329765a00421fcc9fa25abf46522e1a1adddcf05de8a2f86d2');
+  assert.equal(review.declared_location_name, 'DECATUR MORGAN HOSPITAL (ACU)|PARKWAY CAMPUS');
+  assert.equal(review.declared_license_state, 'AL');
+  assert.equal(review.cms_template_version, '3.0.0');
+
+  const priorProof = manual.records.find(row => row.ccn === '010085'
+    && row.proof_file === 'reconciliation-decatur-morgan-main-file-full-retrieval-scope-review-2026-09-28.json');
+  assert.equal(manualPageFileRecheck(priorProof).manual_disposition, 'mrf-facility-identity-unresolved');
+  assert.ok(Date.parse(proof.observed_at) > Date.parse(priorProof.observed_at));
+
+  const snapshot = JSON.parse(fs.readFileSync(path.join(root, 'data/hpt-audit/nationwide-verification.json'), 'utf8'));
+  const row = snapshot.records.find(item => item.ccn === '010085');
+  assert.equal(row.disposition, 'verified-current-mrf');
+  assert.equal(row.mrf_state, 'page-linked-file-retrieved');
+  assert.equal(row.mrf_url, proof.facility_file_url);
+  assert.equal(row.file_sample_bytes, 23746132);
+  assert.equal(row.file_sample_sha256, '618922e927d70b329765a00421fcc9fa25abf46522e1a1adddcf05de8a2f86d2');
+  assert.equal(row.facility_identity, 'corroborated-by-reviewed-browser-read');
+  assert.equal(row.pointer_state, 'request-or-tool-failure');
+  assert.match(row.next_action, /Parkway/);
+  assert.ok(!snapshot.records.find(item => item.ccn === '010054'));
+
+  const crosswalk = JSON.parse(fs.readFileSync(path.join(root,
+    'data/hpt-audit/reconciliation-891-baseline-member-roster-2026-09-27.json'), 'utf8'));
+  assert.ok(!crosswalk.current_crosswalk_ccns['genuinely-unresolved'].includes('010085'));
+  assert.ok(crosswalk.current_crosswalk_ccns['active-verification-claim'].includes('010085'));
+});
 
 test('generic not-assessed crawl rows receive exact-CCN nationwide observations', () => {
   const row = { ccn: '370244', hospital_name: 'COUNCIL OAK COMPREHENSIVE HEALTHCARE', city: 'TULSA', state: 'OK', finding: 'not-assessed-domain-unknown', checked_at: '' };
@@ -92,6 +529,49 @@ test('a dated manual pointer recheck is displayed without promoting exact-file u
   assert.equal(row.disposition, 'pointer-linked-file-review-pending');
   assert.equal(row.declared_location_name, 'Stamford Hospital');
   assert.equal(row.declared_last_updated, '2026-04-01');
+});
+
+test('Las Encinas pointer-linked legacy CSV is imported without inventing missing CMS metadata', () => {
+  const report = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../../data/hpt-audit/nationwide-verification.json')));
+  const manual = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../../../data/hpt-audit/reconciliation-manual-access-observations.json')))
+    .records.find(item => item.ccn === '054078');
+  const browserProof = JSON.parse(fs.readFileSync(path.resolve(__dirname,
+    '../../../data/hpt-audit/reconciliation-aurora-las-encinas-current-price-page-browser-recheck-2026-09-30.json')));
+  const row = report.records.find(item => item.ccn === '054078');
+  assert.equal(row.pointer_state, 'retrieved-facility-linked-manual-review');
+  assert.equal(row.pointer_url, 'https://www.lasencinashospital.com/cms-hpt.txt');
+  assert.equal(row.pointer_result, '200');
+  assert.equal(row.pointer_corpus_sha256, 'b32a0008f89c85d83ffde3a547392b2fd0a83701fc8ce96302ac167a4fcd268c');
+  assert.equal(row.mrf_url, 'https://www.lasencinashospital.com/wp-content/uploads/2026/07/32-0039155_Aurora-Las-Encinas-LLC_standardcharges_1.csv');
+  assert.equal(row.mrf_state, 'linked-file-retrieved-metadata-limited');
+  assert.equal(row.mrf_http_status, '200');
+  assert.equal(row.file_sample_bytes, 8394);
+  assert.equal(row.file_sample_sha256, 'f83776cf9bb279af34c8e820fe1a5e10b6a5c4192b2521f02bdc02793f8e3402');
+  assert.equal(row.disposition, 'pointer-linked-file-review-pending');
+  assert.equal(row.declared_hospital_name, 'Aurora Las Encinas, LLC; dba Aurora Las Encinas Hospital');
+  assert.equal(row.declared_address, '');
+  assert.equal(row.declared_license_state, '');
+  assert.equal(row.cms_template_version, '');
+  assert.equal(browserProof.official_price_page.browser_result, 'rendered');
+  assert.equal(browserProof.official_price_page.standard_charges_target, row.mrf_url);
+  assert.equal(browserProof.linked_file_browser_attempt.browser_result, 'net::ERR_BLOCKED_BY_CLIENT');
+  assert.equal(browserProof.linked_file_browser_attempt.new_bytes_recovered, false);
+  assert.equal(browserProof.disposition_effect, 'none');
+  assert.equal(manual.latest_official_page_browser_recheck_2026_09_30.observed_at, browserProof.observed_at);
+  assert.match(manual.next_action, /Do not repeat the same current price page or linked CSV browser route/);
+  assert.match(manual.next_action, /CMS 3\.0\.0/);
+
+  const schemaReview = JSON.parse(fs.readFileSync(path.resolve(__dirname,
+    '../../../data/hpt-audit/reconciliation-las-encinas-schema-review-access-2026-09-28.json')));
+  assert.equal(schemaReview.alternate_route_retrieval.matches_prior_successful_full_file, true);
+  assert.equal(schemaReview.alternate_route_retrieval.bytes, 8394);
+  assert.equal(schemaReview.alternate_route_retrieval.sha256, row.file_sample_sha256);
+  assert.equal(schemaReview.alternate_route_retrieval.csv_review.header_columns, 23);
+  assert.equal(schemaReview.alternate_route_retrieval.csv_review.data_rows, 57);
+  assert.equal(schemaReview.alternate_route_retrieval.csv_review.rows_with_price_values, 51);
+  assert.equal(schemaReview.alternate_route_retrieval.csv_review.cms_3_0_metadata_present, false);
+  assert.equal(schemaReview.disposition, row.disposition);
+  assert.equal(schemaReview.unresolved_count_change, 0);
 });
 
 test('browser identity claims require per-facility file evidence rather than archive filenames', () => {
@@ -264,9 +744,11 @@ test('verified metadata states remain distinct from access and identity states',
   assert.equal(disposition({}, newerPointer, selected)[0], 'selected-file-only-in-earlier-pointer-version');
   assert.equal(disposition({}, newerPointer, selected, null, true)[0], 'verified-current-mrf');
   assert.equal(metadataState({ mrf_last_updated: '2026-01-01', mrf_days_since_update: '20', mrf_cms_version: '3.0.0' }), 'verified-current-v3');
-  for (const version of ['3', '3.0', '3.0,0', '3.0.1', '3.00', '3.0.2']) {
+  assert.equal(metadataState({ mrf_last_updated: '2026-01-01', mrf_days_since_update: '20', mrf_cms_version: '3.0' }), 'verified-current-v3');
+  for (const version of ['3.0,0', '3.0.1', '3.0.2', '4.0.0']) {
     assert.equal(metadataState({ mrf_last_updated: '2026-01-01', mrf_days_since_update: '20', mrf_cms_version: version }), 'verified-older-or-unresolved-template');
   }
+  for (const version of ['3', '3.00']) assert.equal(metadataState({ mrf_last_updated: '2026-01-01', mrf_days_since_update: '20', mrf_cms_version: version }), 'verified-current-v3');
   assert.equal(metadataState({ mrf_last_updated: '2024-01-01', mrf_days_since_update: '600', mrf_cms_version: '3.0' }), 'verified-stale-date');
   assert.equal(metadataState({ mrf_last_updated: '2026-01-01', mrf_days_since_update: '20', mrf_cms_version: '2.0' }), 'verified-older-or-unresolved-template');
   assert.equal(metadataState({ mrf_last_updated: '', mrf_days_since_update: '', mrf_cms_version: '2' }), 'verified-older-or-unresolved-template');
@@ -289,6 +771,11 @@ test('verified metadata states remain distinct from access and identity states',
   assert.equal(disposition({}, { state: 'retrieved-facility-linked' }, {
     best: null, review: [], linked: [{ mrf_range_status: '' }]
   }, { status: 'navigation-failed', identity: 'conflicting' })[0], 'mrf-facility-identity-unresolved');
+  assert.equal(disposition({}, { state: 'retrieved-facility-linked' }, {
+    best: null, review: [], linked: [{ mrf_http_status: '200', mrf_range_status: '',
+      match_reason: 'mrf-header-unreachable', range_error: 'socket hang up' }]
+  })[0], 'mrf-request-unsuccessful',
+  'a successful HEAD without bounded body bytes cannot be called a header identity mismatch');
 });
 
 test('dated closed-facility status remains a distinct scope exemption', () => {
@@ -305,10 +792,10 @@ test('Indian Health Program scope exception maps separately from federal ownersh
   ]);
 });
 
-test('Texas state-hospital scope maps to a distinct non-MRF exemption', () => {
+test('state-hospital scope maps to a distinct non-MRF exemption', () => {
   assert.deepEqual(disposition({ finding: 'not-applicable-state-hospital' }, {}, { best: null, review: [], linked: [] }), [
     'scope-exempt-state-hospital',
-    'Current exact-facility Texas state-hospital evidence supports the federal deemed-compliant scope classification under 45 CFR 180.30(b); revisit if the CCN, operator, or legal status changes.'
+    'Current exact-facility state-hospital evidence supports the federal deemed-compliant scope classification under 45 CFR 180.30(b); revisit if the CCN, operator, or legal status changes.'
   ]);
 });
 

@@ -32,14 +32,20 @@ test('Grand Lake page-linked file is retained without promoting HTML root to poi
     'root-pointer-html-page-with-official-page-file');
   assert.equal(view.history[proof.ccn].finding, 'not-assessed-domain-unknown');
   const followUps = JSON.parse(fs.readFileSync(path.join(audit, 'standing-evidence-followup-worklist.json'))).records;
+  const investigations = JSON.parse(fs.readFileSync(path.join(audit, 'unresolved-investigation-worklist.json'))).records;
   for (const ccn of ['141338', '360032']) {
-    const queued = followUps.find(row => row.ccn === ccn);
-    assert.ok(queued, `HTML root pointer follow-up missing for ${ccn}`);
-    assert.equal(queued.reviewed_follow_up, true);
+    const standing = followUps.find(row => row.ccn === ccn);
+    const unresolved = investigations.find(row => row.ccn === ccn);
+    const queued = standing || unresolved;
+    assert.ok(queued, `HTML root pointer follow-up missing from both queues for ${ccn}`);
+    if (standing) assert.equal(standing.reviewed_follow_up, true);
+    else assert.equal(ccn, '360032', 'the changed current pointer bytes keep Grand Lake in the unresolved queue');
     assert.match(queued.next_action, /pointer|cms-hpt/i);
   }
   const proofGap = JSON.parse(fs.readFileSync(path.join(audit, 'nationwide-reconciliation.json'))).records
     .find(row => row.ccn === '041313');
-  assert.equal(proofGap.workstream, 'verification-proof-gap');
+  assert.equal(proofGap.workstream, 'standing-evidence-follow-up');
+  assert.equal(proofGap.standing_evidence_retained, true);
   assert.ok(proofGap.issues.includes('browser-file-identity-proof-insufficient'));
+  assert.ok(proofGap.issues.includes('reviewed-html-root-pointer-follow-up'));
 });

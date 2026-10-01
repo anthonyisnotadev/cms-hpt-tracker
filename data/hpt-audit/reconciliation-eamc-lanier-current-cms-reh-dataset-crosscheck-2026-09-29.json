@@ -1,0 +1,72 @@
+{
+  "audit_id": "reconciliation-eamc-lanier-current-cms-reh-dataset-crosscheck-2026-09-29",
+  "ccn": "010780",
+  "observed_at": "2026-09-29T10:16:55Z",
+  "original_recorded_observed_at": "2026-09-29T11:44:00Z",
+  "timestamp_integrity_review": {
+    "checked_at_utc": "2026-09-29T10:16:55Z",
+    "prior_live_clock_utc": "2026-09-29T10:14:55Z",
+    "original_recorded_timestamp_status": "future-dated relative to the live clock; not accepted as the observation time",
+    "current_recheck": "Reopened both first-party East Alabama pages; the facility page still names EAMC-Lanier REH at 4800 48th Street, Valley, and the pricing page still describes one East Alabama Health-wide Patient Pricing List. The CMS REH identity rows duplicate the existing 2026-09-20 official REH identity proof and are not credited as a new source instance in this correction.",
+    "interpretation": "Use the corrected time for the repeated operator-page observations only. Preserve the earlier CMS REH facts as already-retained source evidence; this correction adds no new MRF evidence or disposition change."
+  },
+  "purpose": "Check current CMS REH quality reporting datasets and live operator pages for a current exact-CCN identity/scope change or a Lanier-specific price-transparency source.",
+  "cms_sources": [
+    {
+      "dataset": "Rural Emergency Hospital Outpatient Imaging Efficiency - Hospital",
+      "url": "https://data.cms.gov/provider-data/dataset/7peb-i4pi",
+      "release_date": "2026-05-13",
+      "last_modified": "2026-04-21",
+      "record": {
+        "facility_id": "010780",
+        "facility_name": "EAMC - LANIER",
+        "address": "4800 48TH STREET",
+        "city": "VALLEY",
+        "state": "AL",
+        "zip": "36854",
+        "county": "CHAMBERS"
+      },
+      "web_search_ref": "turn7713search1"
+    },
+    {
+      "dataset": "Rural Emergency Hospital Timely and Effective Care - Hospital",
+      "url": "https://data.cms.gov/provider-data/dataset/97xg-v3wv",
+      "release_date": "2026-04-21 (listed modified); search-indexed results include FY 2025 measures",
+      "record": {
+        "facility_id": "010780",
+        "facility_name": "EAMC - LANIER",
+        "address": "4800 48TH STREET",
+        "city": "VALLEY",
+        "state": "AL",
+        "zip": "36854",
+        "county": "CHAMBERS"
+      },
+      "web_search_ref": "turn7711search1"
+    }
+  ],
+  "primary_operator_sources": [
+    {
+      "url": "https://www.eastalabamahealth.org/location/eamc-lanier-rural-emergency-hospital",
+      "observation": "Current page names EAMC-Lanier Rural Emergency Hospital at 4800 48th Street, Valley, AL 36854; says it provides 24/7 emergency/outpatient services and that the campus also contains separate nursing-home and ASC services.",
+      "web_open_ref": "turn7712view3",
+      "evidence_role": "current campus identity and service context, not MRF scope"
+    },
+    {
+      "url": "https://www.eastalabamahealth.org/patient-and-guests/billing-and-financial-information/estimate-my-cost",
+      "observation": "Current page links one Patient Pricing List described as covering services provided by East Alabama Health; no Lanier-specific label or location discriminator is rendered in the readable page content.",
+      "web_open_ref": "turn7712view4",
+      "evidence_role": "current first-party pricing route inventory; it does not identify exact CCN/campus coverage"
+    }
+  ],
+  "comparison_to_prior_evidence": {
+    "current_cms_hospital_general_information_proof": "reconciliation-eamc-lanier-current-cms-general-proof-2026-09-25.json",
+    "prior_pointer_and_opelika_file_scope_proof": "reconciliation-eamc-lanier-current-reh-scope-proof-2026-09-27.json",
+    "complete_opelika_file_proof": "reconciliation-eamc-lanier-official-price-list-retained-source-2026-09-29.json",
+    "finding": "The CMS REH datasets independently corroborate the existing exact 010780 identity and Valley address. This is a new source instance, not a change to the known identity/status. The operator still presents one shared-system Patient Pricing List while its root pointer and complete CSV/ZIP identify only East Alabama Medical Center in Opelika. There remains no observed Lanier/Valley pointer entry or facility-specific file."
+  },
+  "evidence_classification": "new current CMS REH quality-source corroboration plus official-page recheck; no new pricing/MRF bytes",
+  "disposition": "current-reh-identity-corroborated-lanier-price-file-scope-unresolved",
+  "disposition_changed": false,
+  "count_effect": 0,
+  "next_action": "Keep CCN 010780 unresolved for HPT file attribution. Obtain a Lanier/Valley-specific CMS CSV/JSON/ZIP or explicit publisher documentation mapping the shared Patient Pricing List to CCN 010780 and the 4800 48th Street campus. Keep the complete Opelika MRF separate; do not repeat its retrieval unless its URL, validator, or publisher scope changes."
+}

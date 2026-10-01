@@ -1,0 +1,39 @@
+{
+  "audit_id": "valley-community-hospital-august-enrollment-recheck-2026-09-29",
+  "ccn": "370243",
+  "observed_at": "2026-09-29T05:37:48Z",
+  "purpose": "Check the exact Valley CCN against the latest CMS Hospital Enrollments CSV, newer than the May 2026 exact-CCN API result already attached to the closure-scope review.",
+  "source": {
+    "publisher": "Centers for Medicare & Medicaid Services",
+    "dataset": "Hospital Enrollments",
+    "dataset_page_url": "https://data.cms.gov/provider-characteristics/hospitals-and-other-facilities/hospital-enrollments",
+    "release_title": "Hospital Enrollments : 2026-08-01",
+    "release_temporal": "2026-08-01/2026-08-31",
+    "release_modified": "2026-08-17",
+    "csv_url": "https://data.cms.gov/sites/default/files/2026-08/bcf5ccda-1482-4c43-8198-de1efa2f83c8/Hospital_Enrollments_2026.07.31.csv",
+    "csv_retrieval_window_utc": ["2026-09-29T05:37:31Z", "2026-09-29T05:37:48Z"],
+    "http_status": 200,
+    "content_type": "text/csv",
+    "bytes": 2516958,
+    "sha256": "b62b961e03f90c5513b8b6a3e597fb871e42afb62960c757b82899539017000c",
+    "rows_including_header": 9163
+  },
+  "match": {
+    "exact_ccn": "370243",
+    "row_count": 1,
+    "npi": "1053997338",
+    "organization_name": "SOUTHERN PLAINS MEDICAL CENTER OF GARVIN COUNTY LLC",
+    "doing_business_as_name": "VALLEY COMMUNITY HOSPITAL",
+    "address": "100 VALLEY DR, PAULS VALLEY, OK 730756613",
+    "enrollment_state": "OK",
+    "provider_type": "PART A PROVIDER - HOSPITAL",
+    "acute_care": "Y",
+    "short_term": "Y",
+    "swing_bed_approved": "Y"
+  },
+  "interpretation": "This latest published CMS Hospital Enrollments CSV includes exactly one row for CCN 370243 matching the legal organization, DBA, NPI, Oklahoma location, and hospital subgroups recorded in the May 2026 exact-filter API result. It narrows the enrollment/closure uncertainty beyond May, through the July 31 file snapshot. It does not establish that hospital services were operating on every date, a state license status beyond the separate April 6 directory, the current official web domain, or any HPT pointer/MRF publication.",
+  "disposition_changed": false,
+  "cohort_count_effect": 0,
+  "new_mrf_bytes": false,
+  "next_action": "Keep CCN 370243 unresolved for HPT publication. Obtain a publisher-confirmed current official domain and price-transparency route, or a corrected CMS pointer; then validate complete file bytes, facility/CCN identity, Oklahoma location/state, declared metadata, and usable rows. Do not treat the January 2025 closure report as current termination or this enrollment row as proof of an HPT file."
+}

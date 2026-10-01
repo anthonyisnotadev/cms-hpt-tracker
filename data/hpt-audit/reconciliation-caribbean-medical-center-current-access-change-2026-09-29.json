@@ -1,0 +1,26 @@
+{
+  "ccn": "400131",
+  "observed_at": "2026-09-29T18:08:00Z",
+  "official_site": "https://caribbeanmedicalcenter.com/",
+  "official_pricing_page": "https://caribbeanmedicalcenter.com/price-transparency/",
+  "official_page_observation": "The current official English pricing page still links the same January 2026 standard-charges CSV recorded in the September 26 recovery proof. The official page labels the hospital and Fajardo address; the linked CSV is not a new candidate URL.",
+  "file_url": "https://caribbeanmedicalcenter.com/wp-content/uploads/2026/01/660559417_Caribbean_Medical_Center_standarcharges1.csv",
+  "prior_successful_sample": {
+    "proof_file": "reconciliation-caribbean-medical-center-historical-file-recovery-proof-2026-09-26.json",
+    "http_status": 206,
+    "content_range": "bytes 0-65535/9146795",
+    "bytes": 65536,
+    "sha256": "24959c4367ad6870326d0a38fc21630e80d14832f2880fba1641904951303dd0",
+    "declared_last_updated": "2025-11-28",
+    "cms_template_version": "2.2.0"
+  },
+  "recheck_reason": "The exact file previously returned a bounded 206 sample on 2026-09-26. A fresh access check was warranted to see whether the publisher challenge had changed before a planned retry.",
+  "current_access_checks": {
+    "head": {"http_status": 403, "content_obtained": false},
+    "range_get": {"requested_range": "bytes=0-65535", "http_status": 403, "content_obtained": false},
+    "browser": {"result": "ERR_BLOCKED_BY_CLIENT", "content_obtained": false},
+    "search_browser_file_open": {"result": "unsupported text/csv content type", "content_obtained": false}
+  },
+  "interpretation": "Publisher page and file URL are unchanged. The prior successful sample remains valid historical file evidence, while fresh direct and browser checks now show access failures. This is an access-state change only: no new MRF bytes, no new file metadata, no file-absence conclusion, and no HPT disposition change.",
+  "next_action": "Keep CCN 400131 unresolved. Do not repeat the unchanged URL while both HEAD and bounded GET return 403 and the browser is client-blocked. Retry only after a material publisher route or access-condition change; require a fresh bounded or complete sample and verify current CMS version/date before any promotion."
+}

@@ -23,7 +23,8 @@ function identityName(value) {
   // CMS and publisher systems sometimes split a registered joined brand in
   // the roster, or join the brand to its campus name. This is orthographic
   // equivalence only; the address and state gates below still apply.
-  return normalizeName(value).replace(/\badvent health\b/g, 'adventhealth')
+  return normalizeName(value).replace(/\buniv\b/g, 'university')
+    .replace(/\badvent health\b/g, 'adventhealth')
     .replace(/^adventhealth(?=[a-z])/, 'adventhealth ');
 }
 

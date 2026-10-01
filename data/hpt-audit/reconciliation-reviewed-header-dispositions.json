@@ -26,12 +26,38 @@
     },
     {
       "ccn": "250043",
-      "observed_at": "2026-09-27T18:38:12Z",
+      "observed_at": "2026-09-28T14:11:00Z",
       "proof_file": "reconciliation-neshoba-qies-query-discrepancy-and-operator-page-recheck-2026-09-27.json",
       "disposition": "historical-acute-ccn-hpt-coverage-unresolved",
       "candidate": "Neshoba County General Hospital, 1001 Holland Ave, Philadelphia MS 39350",
-      "observation": "The prior identical-name/address comparison treated both roster rows as active. Fresh Q1 2026 CMS QIES exact-CCN requests return 250043 with termination code 07 and date 2025-12-31, cross-referenced to 251340, and 251340 as a non-terminated same-campus record. Both exact-response hashes are retained. The same-version 6,500-row bulk response hash matches the prior response and still omits both CCNs. The QIES query asymmetry is now reproducible but its cause remains unexplained. The hospital's 2025 first-party notice described October 1 as a planned CAH conversion date. The 2026 current file cannot be contemporaneous active-acute CCN 250043 evidence, but historical HPT coverage remains unresolved.",
-      "next_action": "Retain 250043 in the historical accountability baseline and inspect only dated pre-2025-12-31 pointer/MRF evidence for its acute-care period. Do not search for a current file under 250043 or assign the June 2026 campus MRF to it. The exact-filter/bulk QIES asymmetry has been reproduced and hashed; do not repeat unchanged queries unless the CMS data version changes."
+      "observation": "The prior identical-name/address comparison treated both roster rows as active. Fresh Q1 2026 CMS QIES exact-CCN requests return 250043 with termination code 07 and date 2025-12-31, cross-referenced to 251340, and 251340 as a non-terminated same-campus record. Both exact-response hashes are retained. The same-version 6,500-row bulk response hash matches the prior response and still omits both CCNs. The QIES query asymmetry is now reproducible but its cause remains unexplained. The hospital's 2025 first-party notice described October 1 as a planned CAH conversion date. A subsequent bounded Common Crawl/Internet Archive review recovered no pre-transition pointer/MRF bytes (with one inconclusive index-service 502 and Wayback rate limit); this does not prove that none existed. The 2026 current file cannot be contemporaneous active-acute CCN 250043 evidence, but historical HPT coverage remains unresolved.",
+      "prior_qies_review": {
+        "observed_at": "2026-09-27T18:38:12Z",
+        "proof_file": "reconciliation-neshoba-qies-query-discrepancy-and-operator-page-recheck-2026-09-27.json"
+      },
+      "latest_archive_review": {
+        "observed_at": "2026-09-28T05:23:35Z",
+        "proof_file": "reconciliation-neshoba-pretransition-commoncrawl-index-review-2026-09-28.json",
+        "historical_pointer_or_mrf_recovered": false
+      },
+      "latest_wayback_pretransition_pricing_route_review": {
+        "observed_at": "2026-09-28T13:59:03Z",
+        "proof_file": "reconciliation-neshoba-wayback-pretransition-pricing-route-2026-09-28.json",
+        "historical_page_route_recovered": true,
+        "historical_pointer_or_mrf_bytes_recovered": false,
+        "disposition_changed": false,
+        "count_effect": 0
+      },
+      "latest_historical_standard_charges_route_review": {
+        "observed_at": "2026-09-28T14:11:00Z",
+        "proof_file": "reconciliation-neshoba-historical-standard-charges-route-2026-09-28.json",
+        "historical_download_control_found": true,
+        "historical_pointer_or_report_bytes_recovered": false,
+        "historical_database_key_confirmed": false,
+        "disposition_changed": false,
+        "count_effect": 0
+      },
+      "next_action": "Retain 250043 in the historical accountability baseline. Seek a separately retained or newly available archive copy of the pre-2025-12-31 PARA Standard Charges report using its exact historical database key; the archived page shows the CDMWithoutLabel report type but does not expose the key, and the current 2026 key must not be assumed identical. If no direct object is recoverable, seek pre-2025-12-31 pointer/MRF evidence or a publisher-provided historical CMS-format file through authorized means and a materially different archive/source collection. Do not treat a download control as retrieved MRF bytes, repeat failed index routes absent source/access change, or assign the June 2026 campus file to historical acute-care CCN 250043."
     },
     {
       "ccn": "251340",

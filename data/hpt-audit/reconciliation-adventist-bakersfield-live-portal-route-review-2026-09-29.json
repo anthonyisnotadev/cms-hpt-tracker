@@ -1,0 +1,41 @@
+{
+  "audit_id": "adventist-bakersfield-live-portal-route-review-2026-09-29",
+  "ccn": "050455",
+  "related_ccn": "050724",
+  "observed_at": "2026-09-29T05:53:36Z",
+  "source": {
+    "publisher": "Adventist Health / CorroHealth PARA price transparency portal",
+    "url": "https://apps.para-hcfs.com/PTT/FinalLinks/Adventist_Bakersfield_V3.aspx",
+    "http_status": 200,
+    "response_utf8_bytes": 208448,
+    "response_sha256": "2048efbdc859e5835632a7eed7304246a7d4eb54fdfebae949d51f27c69ea1a8",
+    "method": "bounded read-only HTTP GET; page text and inline route logic inspected"
+  },
+  "portal_controls": {
+    "main_labeled_standard_charges": "DownloadReport('hospital', 'CDMWithoutLabel')",
+    "specialty_labeled_standard_charges": "DownloadReport('mainDBName', 'CDMWithoutLabel')",
+    "secondary_hospital_standard_charges": "DownloadReport('secondaryHospital', 'CDMWithoutLabel')",
+    "route_logic": "DownloadReport maps only secondaryHospital to dbAHBBAKERSFIELDHEARTCA; all other values, including hospital and mainDBName, map to dbAHBBAKERSFIELDCA.",
+    "result": "The main and Specialty Bakersfield page labels currently route to the same dbAHBBAKERSFIELDCA standard-charge dataset. The separate secondary-hospital key is not selected by either of those two labels."
+  },
+  "pointer_and_file_context": {
+    "official_pointer_url": "https://www.adventisthealth.org/bakersfield/cms-hpt.txt",
+    "pointer_target_recorded": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHBBAKERSFIELDCA&type=CDMWithoutLabel&fileType=CSV",
+    "existing_exact_target_header_sample_sha256": "5236c5b68fe2267745de0f0236b0401903bc860e4b06cfbd7984eae6279b3167",
+    "existing_complete_file_sha256": "69A1DF6EF767B0EFD945B05E6DDEB762AC42012C61E6A6A9729C3A195E2C9AF9",
+    "existing_exact_target_header": "SAN JOAQUIN COMMUNITY HOSPITAL; locations SAN JOAQUIN COMMUNITY HOSPITAL|Adventist Health Specialty Bakersfield; both addresses 3001 Sillect Avenue, Bakersfield, CA 93308; updated 2026-07-29; CMS template 3.0.0"
+  },
+  "separate_live_bounded_file_retry": {
+    "attempted": true,
+    "url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHBBAKERSFIELDCA&type=CDMWithoutLabel&fileType=CSV",
+    "requested_range": "bytes=0-262143",
+    "result": "client request exceeded 20 seconds with no response; stopped",
+    "interpretation": "Transport observation only. Do not infer file absence or failure; the retained exact-target sample and complete-file evidence remain controlling. Do not retry this unchanged route absent a source/access change."
+  },
+  "interpretation": "This is a current portal/source-code route observation, not new MRF bytes. It confirms that the visible main and Specialty standard-charge controls share one underlying database, while the exact pointer-target file proof declares 3001 Sillect for both location rows. It does not map the file to Medicare CCN 050455 or establish that 3001 Sillect is the main 2615 Chester hospital location. CMS QIES separately distinguishes CCN 050455 at 2615 Chester from CCN 050724 at 3001 Sillect; the conflicting file/NPI mapping remains unexplained.",
+  "evidence_class": "current_official_portal_route_logic_recheck",
+  "new_mrf_bytes": false,
+  "disposition_changed": false,
+  "cohort_count_effect": 0,
+  "next_action": "Obtain a publisher-corrected MRF or authoritative written scope mapping that identifies the Medicare CCN(s), campus(es), NPIs and addresses covered by the shared dbAHBBAKERSFIELDCA file. Until then preserve 050455 and 050724 as separate CCNs and do not assign or promote the shared file."
+}

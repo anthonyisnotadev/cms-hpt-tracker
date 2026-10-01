@@ -37,7 +37,7 @@ test('Roxborough correction binds the exact first-party pointer and file metadat
   assert.equal(resolution.evidence.observedFinding, 'mrf-template-version-noncanonical');
   const view = loadReviewedView(audit);
   const row = view.compliance.find(item => item.ccn === proof.ccn);
-  assert.equal(row.finding, 'mrf-template-version-noncanonical');
+  assert.equal(row.finding, 'compliant-observed');
   assert.equal(row.mrf_url, proof.file_url);
   assert.equal(view.history[proof.ccn].finding, 'compliant-observed');
 });

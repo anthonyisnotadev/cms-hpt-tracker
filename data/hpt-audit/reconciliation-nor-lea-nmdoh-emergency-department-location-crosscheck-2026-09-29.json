@@ -1,0 +1,24 @@
+{
+  "audit_id": "reconciliation-nor-lea-nmdoh-emergency-department-location-crosscheck-2026-09-29",
+  "observed_at": "2026-09-29T03:05:00Z",
+  "ccn": "321305",
+  "purpose": "Additional official state public-health source for the 1600-versus-1900 North Main address discrepancy.",
+  "source": {
+    "agency": "New Mexico Department of Health",
+    "title": "First New Mexico measles case of 2025 confirmed in Lea County",
+    "publication_date": "2025-02-11",
+    "url": "https://www.nmhealth.org/news/alert/2025/2/?view=2177",
+    "observation": "The state alert identifies Nor-Lea Hospital Emergency Department at 1600 Main Street, Lovington, New Mexico, as an exposure location on February 9, 2025.",
+    "scope_limit": "This is an official public-health exposure notice identifying the emergency-department address on a dated occasion; it is not a hospital licensing record, CMS CCN mapping, or explanation of the current MRF's 1900 North Main field."
+  },
+  "comparison": {
+    "current_hospital_and_nppes_address": "1600 North Main, Lovington, NM 88260",
+    "pointer_linked_mrf_address_literal": "1900 North Main Avenue, Lovington, NM 88260-2813",
+    "pointer_linked_mrf_sha256": "549aeebd73a2ec8cb6ba28c75e1af7b31380db81b6597d042c8b0a821dcc151e"
+  },
+  "finding": "Newly retained official state source-instance corroboration places Nor-Lea Hospital's emergency department at 1600 Main Street in 2025. It adds dated public-health evidence for the hospital's 1600 address, but neither establishes whether a distinct hospital site at 1900 exists nor explains the MRF address field.",
+  "disposition": "address-conflict-reinforced-still-unresolved",
+  "count_effect": 0,
+  "new_mrf_bytes_retrieved": false,
+  "next_action": "Keep CCN 321305 unresolved. Obtain a publisher correction or an authoritative current facility/licensure record tying the hospital and exact MRF location to 1900 North Main; retain the MRF literal/hash and do not normalize it to 1600."
+}

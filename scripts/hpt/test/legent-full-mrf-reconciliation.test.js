@@ -29,6 +29,11 @@ test('Legent current full MRF is hash-bound, reconciled to CCN 670265, and super
   assert.equal(proof.current_cms_enrollment.npi, '1316505043');
   assert.equal(resolution.evidence.fileSha256, proof.retrieval.sha256);
   assert.equal(resolution.evidence.pointerSha256, proof.root_pointer_sha256);
+  const verification = read('nationwide-verification.json').records.find(row => row.ccn === '670265');
+  assert.equal(verification.pointer_corpus_sha256, proof.root_pointer_sha256);
+  assert.equal(verification.mrf_url, resolution.evidence.url);
+  assert.equal(verification.disposition, 'pointer-linked-file-not-probed',
+    'the later parser retry did not return file bytes; exact unchanged pointer bytes must not erase the reviewed file proof');
   assert.equal(resolution.base.city, 'GRAPEVINE');
   assert.match(resolution.note, /older CMS provider-roster Grapevine address is retained/i);
   assert.equal(reconciliation.summary.source_sha256[proofName], hash);

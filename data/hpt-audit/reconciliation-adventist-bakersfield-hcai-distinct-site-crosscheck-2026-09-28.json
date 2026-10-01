@@ -1,0 +1,47 @@
+{
+  "audit_id": "reconciliation-adventist-bakersfield-hcai-distinct-site-crosscheck-2026-09-28",
+  "observed_at": "2026-09-28T10:18:00Z",
+  "ccn_investigated": "050455",
+  "related_ccn": "050724",
+  "purpose": "Cross-check whether official California facility records independently distinguish the two Bakersfield addresses in the shared Adventist price-file header.",
+  "official_state_records": [
+    {
+      "agency": "California Department of Health Care Access and Information",
+      "url": "https://hcai.ca.gov/affordability/hospital-billing-policies/adventist-health-bakersfield/",
+      "facility_name": "ADVENTIST HEALTH BAKERSFIELD",
+      "address": "2615 CHESTER AVENUE, BAKERSFIELD, CA 93301",
+      "license_number": "120000187",
+      "hcai_id": "106150788",
+      "facility_type": "Hospital"
+    },
+    {
+      "agency": "California Department of Health Care Access and Information",
+      "url": "https://hcai.ca.gov/affordability/hospital-billing-policies/bakersfield-heart-hospital/",
+      "facility_name": "ADVENTIST HEALTH SPECIALTY BAKERSFIELD",
+      "address": "3001 SILLECT AVENUE, BAKERSFIELD, CA 93308",
+      "license_number": "120000187",
+      "hcai_id": "106154101",
+      "facility_type": "Hospital"
+    }
+  ],
+  "existing_source_comparison": {
+    "cms_current_enrollment_proof": "reconciliation-adventist-bakersfield-cms-current-enrollment-crosscheck-2026-09-28.json",
+    "pointer_file_header_proof": "reconciliation-adventist-bakersfield-npi-header-crosscheck-2026-09-28.json",
+    "current_portal_scope_proof": "reconciliation-adventist-bakersfield-current-portal-header-proof-2026-09-27.json",
+    "shared_pointer_file_header_address": "3001 Sillect Avenue, Bakersfield, CA 93308",
+    "shared_pointer_file_header_npis": ["1538157508", "1609856947"],
+    "portal_labels": ["Adventist Health Bakersfield", "Adventist Health-Specialty Bakersfield"],
+    "portal_route_finding": "Both rendered download labels route to the same dbAHBBAKERSFIELDCA dataset; no separately routed main-campus file was identified."
+  },
+  "finding": "Current HCAI records independently name the 2615 Chester site Adventist Health Bakersfield and the 3001 Sillect site Adventist Health Specialty Bakersfield. They share license 120000187 but have distinct HCAI IDs and addresses. The CMS current-enrollment row independently ties NPI 1538157508 to CCN 050455 at 2615 Chester, while the shared file header pairs that NPI with the 3001 Sillect address and includes NPI 1609856947. The portal's duplicate labels do not establish which CCN or locations the file actually covers.",
+  "disposition": "unresolved-current-shared-file-campus-and-ccn-scope-conflict",
+  "cohort_count_effect": 0,
+  "evidence_gain": "Adds current state-regulator name/address/HCAI-ID corroboration for both campus identities, alongside the independently retrieved CMS enrollment row; this is new identity-boundary evidence, not new price-file evidence.",
+  "not_established": [
+    "The exact CMS CCN coverage of the shared 2026 file",
+    "Whether the second NPI is currently enrolled under CCN 050724",
+    "Whether a separate main-campus file exists outside the observed shared portal route",
+    "Compliance or noncompliance"
+  ],
+  "next_action": "Require a corrected first-party pointer/file mapping or authoritative publisher documentation identifying the CCN(s), campus locations, and NPIs covered by the dbAHBBAKERSFIELDCA file; preserve 050455 and 050724 as distinct until resolved."
+}

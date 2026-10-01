@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "ccn": "050348",
+  "observed_at": "2026-09-29T00:46:37.978Z",
+  "scope": "nationwide-5419; outside frozen-891-membership cohort",
+  "finding": "pointer-linked-current-cms-v3-mrf-identity-metadata-attestation-and-usable-rows-verified",
+  "sources": {
+    "official_pricing_page": "https://www.ucihealth.org/patients-and-visitors/financial-resources/price-transparency",
+    "official_root_pointer": {
+      "url": "https://www.ucihealth.org/cms-hpt.txt",
+      "http_status": 200,
+      "response_bytes": 1814,
+      "sha256": "ca19e3b7cc53c0f29796ce4586fe91b11ae7a816d5b3b02b6ce17e3fb2ce7c8c",
+      "location_name": "Regents of the California at Irvine Hospital",
+      "declared_mrf_url": "https://www.ucihealth.org/pricetransparency/952226406_regents-of-the-university-of-california-at-irvine-hospital_standardcharges.json",
+      "note": "Contact-bearing pointer content was not retained in this proof. The publisher page and pointer expose distinct files for UCI Medical Center/Orange and Lakewood."
+    },
+    "browser_observation": {
+      "method": "Codex in-app browser accessibility-tree inspection of the current first-party pricing page",
+      "observed_at": "2026-09-29T00:39:00Z",
+      "result": "The page describes the machine-readable file and lists separate facility links, including UCI Medical Center and Lakewood. The UCI Medical Center link resolves to the pointer-declared Regents/Orange file URL above."
+    },
+    "cms_facility_roster": {
+      "ccn": "050348",
+      "name": "UCI HEALTH-ORANGE",
+      "address": "101 CITY DRIVE SOUTH",
+      "state": "CA"
+    },
+    "hcai_facility_record": {
+      "url": "https://hcai.ca.gov/equity-measures/hospital/uci-health-orange/",
+      "name": "UCI HEALTH-ORANGE",
+      "address": "101 CITY DRIVE SOUTH, ORANGE CA 92868",
+      "license_number": "060000148",
+      "licensee": "UNIVERSITY OF CALIFORNIA BOARD OF REGENTS"
+    },
+    "cms_type_2_npi": {
+      "number": "1689608150",
+      "role": "shared organization corroboration only; not standalone CCN attribution"
+    }
+  },
+  "mrf": {
+    "url": "https://www.ucihealth.org/pricetransparency/952226406_regents-of-the-university-of-california-at-irvine-hospital_standardcharges.json",
+    "http_status": 200,
+    "content_type": "application/json",
+    "content_length": 68974005,
+    "last_modified": "2026-03-31T18:33:38Z",
+    "etag": "\"d65c34e43cc1dc1:0\"",
+    "sha256": "e6c1f35f85842031817c2a941e04590e3a3c0238cd87180c6bdd0f69bcb07d95",
+    "retained_artifact": "cms_data/hpt/nationwide-verification/file-byte-proof/e6c1f35f85842031817c2a941e04590e3a3c0238cd87180c6bdd0f69bcb07d95.bin",
+    "json_utf8_bom": true,
+    "bom_removed_for_native_parse": true,
+    "root": {
+      "hospital_name": "Regents of the University of California at Irvine Hospital",
+      "location_name": "Regents of the University of California at Irvine Hospital",
+      "hospital_address": "101 City Drive South, Orange, CA 92868",
+      "license_information": {
+        "license_number": "060000148",
+        "state": "CA"
+      },
+      "type_2_npi": "1689608150",
+      "last_updated_on": "2026-04-01",
+      "version": "3.0.0",
+      "attestation": {
+        "confirm_attestation": true,
+        "attester_name": "Randolph Siwabessy"
+      }
+    },
+    "counts": {
+      "standard_charge_information_rows": 35399,
+      "standard_charge_objects": 51811,
+      "payer_information_records": 224462,
+      "dollar_price_entries": 157712,
+      "algorithm_entries": 65318,
+      "percentage_entries": 1432
+    },
+    "checks": {
+      "parseable_complete_json": true,
+      "every_charge_row_has_required_description_codes_and_standard_charges": true,
+      "every_payer_record_has_at_least_one_pricing_expression": true,
+      "cms_v3_schema_derived_structural_and_conditional_checks": "passed; zero errors",
+      "official_cms_validator_run": false,
+      "legal_compliance_conclusion": false
+    }
+  },
+  "attribution_basis": "Exact CMS CCN/name/street/state agrees with the complete first-party file's Orange address, matching California license number and state, and current HCAI license-holder record; current first-party page and root pointer identify the exact Regents/Orange MRF separately from Lakewood. Shared system NPI is corroborative only.",
+  "disposition_effect": {
+    "previous_effective_issue": "CCN 050348 pointed at the distinct Lakewood file despite the Orange-specific file URL being known.",
+    "effective_action": "replace the mismatched prior assignment with the pointer-linked complete Orange file",
+    "nationwide_unresolved_change": -1,
+    "frozen_891_membership_unresolved_change": 0,
+    "lakewood_ccn_050581_address_conflict": "unchanged"
+  },
+  "limitations": [
+    "Schema-derived local checks are not a run of CMS's official validator.",
+    "This record supports identity, declared metadata, attestation presence, file completeness, and usable pricing structures; it is not a legal compliance determination.",
+    "The frozen historic 891-membership cohort is not affected because CCN 050348 is outside it."
+  ]
+}

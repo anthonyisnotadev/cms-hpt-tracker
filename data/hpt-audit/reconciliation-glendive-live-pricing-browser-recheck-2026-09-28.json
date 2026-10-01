@@ -1,0 +1,45 @@
+{
+  "audit_id": "reconciliation-glendive-live-pricing-browser-recheck-2026-09-28",
+  "ccn": "271332",
+  "observed_at": "2026-09-28T14:33:00Z",
+  "recheck_reason": "Check whether the current first-party page exposes a new CMS-format route after the September 26 bound page/file review; avoid repeating the already-complete custom-file download or the unchanged blocked pointer/SAS URL.",
+  "browser": "Codex in-app browser",
+  "official_pricing_page": "https://www.gmc.org/patients-families/gmc-price-transparency/",
+  "browser_result": "The live first-party page rendered as Price Transparency | Glendive Medical Center.",
+  "current_page_observations": {
+    "facility_identity": "Glendive Medical Center",
+    "pricing_page_statement": "To find a list of GMC services in a machine-readable format, download here.",
+    "sole_machine_readable_link_label": "here",
+    "sole_machine_readable_link_target": "https://www.gmc.org/documents/Chargemaster-complete-by-Price-Schedule-FY-27.csv",
+    "other_current_price_link": "https://patientsimple.com/gmc/estimates",
+    "new_pointer_declared_cms_format_target_exposed": false
+  },
+  "prior_source_bound_file": {
+    "proof_file": "reconciliation-glendive-current-fy27-browser-download-proof-2026-09-25.json",
+    "url": "https://www.gmc.org/documents/Chargemaster-complete-by-Price-Schedule-FY-27.csv",
+    "complete_bytes": 1414938,
+    "sha256": "191ffde6e68a4fbb7b489cf6da361b0990b381b9a8f98de7a143cea39437b4f2",
+    "classification": "custom-chargemaster-no-CMS-name-address-date-version-fields"
+  },
+  "retrieval_limits": {
+    "custom_file_download_repeated": false,
+    "pointer_or_sas_target_repeated": true,
+    "new_file_bytes_retrieved": false,
+    "pointer_and_sas_transport_recheck": {
+      "observed_at": "2026-09-28T14:33:00Z",
+      "pointer_url": "https://gmc.org/cms-hpt.txt",
+      "pointer_status": 403,
+      "pointer_content_type": "text/html; charset=UTF-8",
+      "pointer_body_kind": "Cloudflare challenge HTML",
+      "sas_target_url_without_query": "https://pricetransparency.blob.core.windows.net/glendive/81-6016016_Glendive-Medical-Center_standardcharges.csv",
+      "sas_query_sha256": "15f2eb00be3888bd6e54e108569ddc9f808438c0eaf01e99dfcffeb7010d8f8d",
+      "sas_target_status": 403,
+      "comparison": "Same failure classes as the 2026-09-24 observations: Cloudflare HTML for the root pointer and Azure authorization failure for the SAS target. No structured pointer or file bytes returned."
+    },
+    "basis": "The page still exposes the already-retrieved exact custom CSV. The exact pointer and Azure SAS routes were deliberately rechecked for a possible access change after the September 24 observation; they returned the same 403 classes, so the retry produced no new facility/file evidence."
+  },
+  "result": "Unchanged first-party link and transport observations. The live page does not reveal a new CMS-format file or a separate file for the pointer-declared Azure MRF. The exact pointer/SAS recheck produced no new bytes and is transport evidence only, not MRF or metadata evidence.",
+  "disposition_changed": false,
+  "cohort_count_effect": 0,
+  "next_action": "Do not redownload the unchanged custom CSV or repeat the unchanged pointer/SAS routes absent source/access change. Obtain a publisher-confirmed CMS-template CSV/JSON or a materially different authorized copy of the exact pointer-declared MRF; then verify Glendive identity, Montana state, date/version and usable rows."
+}

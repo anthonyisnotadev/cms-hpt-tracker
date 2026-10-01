@@ -1,0 +1,23 @@
+{
+  "ccn": "670054",
+  "hospital_name": "FOUNDATION SURGICAL HOSPITAL OF SAN ANTONIO",
+  "observed_at": "2026-09-27T21:44:32Z",
+  "source_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=670054&conditions%5B0%5D%5Boperator%5D=%3D",
+  "http_status": 200,
+  "response_bytes": 6601,
+  "response_sha256": "6db330b4be1538fdd8c3494a848e940da5f42bd372d7f39378413a1d973719e5",
+  "result_count": 1,
+  "cms_record": {
+    "facility_id": "670054",
+    "facility_name": "FOUNDATION SURGICAL HOSPITAL OF SAN ANTONIO",
+    "address": "9522 HUEBNER ROAD",
+    "citytown": "SAN ANTONIO",
+    "state": "TX",
+    "zip_code": "78240",
+    "hospital_type": "Acute Care Hospitals",
+    "hospital_ownership": "Proprietary"
+  },
+  "interpretation": "Current CMS identity response corroborates the retained full MRF and August 2026 enrollment address at 9522 Huebner Road. It does not explain the first-party Foundation page heading at 5330 N Loop 1604 W, establish whether that is a separate practice location, or resolve the file/page mismatch.",
+  "disposition": "unresolved-address-role-recheck-no-change",
+  "next_action": "Obtain publisher clarification of Foundation's main/practice location and the JSON hospital_address field; preserve the separate 670112 identity, NPI, and file chain."
+}

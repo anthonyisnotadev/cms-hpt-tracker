@@ -1,0 +1,94 @@
+{
+  "audit_id": "reconciliation-uw-swedishamerican-campus-scope-crosscheck-2026-09-29",
+  "ccn": "140228",
+  "observed_at": "2026-09-29T10:16:55Z",
+  "original_recorded_observed_at": "2026-09-29T10:34:00Z",
+  "timestamp_integrity_review": {
+    "checked_at_utc": "2026-09-29T10:16:55Z",
+    "prior_live_clock_utc": "2026-09-29T10:14:55Z",
+    "original_recorded_timestamp_status": "future-dated relative to the live clock; not accepted as the observation time",
+    "current_source_retrieval_status": "Re-fetched the exact CMS CCN API response, Illinois report-card entity API, and HFSRB planning PDF. All returned HTTP 200 and their bytes/SHA-256 matched the values recorded in this proof. Reopened the current UW Health About page; its source is current but the browser text extraction exposed no body lines on this pass.",
+    "interpretation": "The corrected source evidence continues to support separate Rockford/Belvidere descriptions but still supplies no current Belvidere CCN or MRF-scope attribution. No disposition/count change."
+  },
+  "purpose": "Resolve the current evidence gate around the SwedishAmerican CSV's Rockford and Belvidere locations using exact-CCN CMS data and separate Illinois facility-status records; determine whether the existing single-campus disposition can be safely changed.",
+  "current_cms_hospital_general_information": {
+    "url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=140228&conditions%5B0%5D%5Boperator%5D=%3D&size=10",
+    "http_status": 200,
+    "content_type": "application/json",
+    "bytes": 6592,
+    "last_modified": "2026-09-29T09:54:48Z",
+    "sha256": "b7c9af54b731741e3971fad7b74f1c3f561b7122d0d4dcfc0bff9a25ae22d975",
+    "result_rows": 1,
+    "row": {
+      "facility_id": "140228",
+      "facility_name": "UW HEALTH",
+      "address": "1401 EAST STATE STREET",
+      "citytown": "ROCKFORD",
+      "state": "IL",
+      "zip_code": "61104",
+      "countyparish": "WINNEBAGO",
+      "hospital_type": "Acute Care Hospitals",
+      "hospital_ownership": "Voluntary non-profit - Private",
+      "emergency_services": "Yes"
+    },
+    "interpretation": "Current CMS exact-CCN data identifies 140228 with the Rockford address only. This does not determine whether another same-operator state facility's prices may be included in the same publication."
+  },
+  "illinois_hospital_report_card_legacy_entity": {
+    "url": "https://healthcarereportcard.illinois.gov/api/hospitals/106832",
+    "api_docs_url": "https://healthcarereportcard.illinois.gov/api/docs/hospitals",
+    "http_status": 200,
+    "content_type": "application/json",
+    "bytes": 384,
+    "sha256": "555a3f3fa40e4f835deceb297f6b5e2c9827da221f8b5813376a5620e5c55206",
+    "row": {
+      "entity_id": 106832,
+      "name": "Swedish American Medical Center Belvidere",
+      "local_id": "5504",
+      "mpn_id": null,
+      "address": "1625 S State St",
+      "city": "Belvidere",
+      "zipcode": "61008",
+      "closed_date": "2023-04-20"
+    },
+    "limitation": "This is a state report-card entity with a closure date, not a CMS provider number. It cannot by itself establish the status or CCN scope of a later/renamed Belvidere facility."
+  },
+  "illinois_hfsrb_2026_facility_inventory": {
+    "url": "https://hfsrb.illinois.gov/content/dam/soi/en/web/hfsrb/events/documents/2026/february-26-2026-state-board-meeting/25-044%20JAVON%20BEA%20HOSPITAL.pdf",
+    "document_title": "Illinois Health Facilities and Services Review Board, Project 25-044, Javon Bea Hospital, board packet",
+    "board_meeting_date": "2026-02-26",
+    "inventory_generated_date": "2026-02-10",
+    "source_data_period": "2024 Annual Hospital Survey",
+    "http_status": 200,
+    "content_type": "application/pdf",
+    "bytes": 2186584,
+    "sha256": "08cc5cf23b188e8aa4250ffeba5faec4eaaaa6e83bfff391f5b67089d78b9512",
+    "relevant_pages": [5, 19],
+    "facility_rows": [
+      {
+        "name": "UW Health SwedishAmerican Hospital",
+        "city": "Rockford",
+        "authorized_beds": 347
+      },
+      {
+        "name": "SwedishAmerican Hospital - DBA UW Health Belvidere Hospital",
+        "city": "Belvidere",
+        "authorized_beds": 34
+      }
+    ],
+    "interpretation": "The state board's facility inventory separately lists the Rockford SwedishAmerican hospital and a Belvidere hospital under the same SwedishAmerican operator/DBA. The inventory is based on the 2024 state annual survey and is not a CMS CCN crosswalk."
+  },
+  "current_uw_health_official_page": {
+    "url": "https://www.uwhealth.org/about-us",
+    "http_status": 200,
+    "bytes": 107874,
+    "sha256": "72a07799a6ff5cabf8e16d86182b2dcbc5f9672d27e1648f52f9aa963e58c612",
+    "browser_tab_id": 134,
+    "browser_observation": "The rendered current UW Health About page separately lists SwedishAmerican Hospital and Belvidere Hospital under its health system hospitals. It does not state a CCN for Belvidere.",
+    "interpretation": "Current operator evidence supports continued separate Belvidere Hospital branding but does not identify its current Medicare CCN or price-file billing scope."
+  },
+  "combined_finding": "Current CMS exact-CCN data binds CCN 140228 to Rockford; Illinois's 2026 planning inventory (based on 2024 state survey) lists Belvidere separately under the SwedishAmerican operator, while the state report-card API marks the older Belvidere entity closed 2023-04-20 with no MPN and UW's current page separately lists Belvidere Hospital. These are compatible with a renamed/successor state facility, but no source here links Belvidere to CCN 140228 or explains why the 2026-04-01 MRF metadata includes Belvidere Hospital.",
+  "evidence_classification": "new-primary-source-campus-and-identifier crosswalk; no new MRF bytes",
+  "disposition": "verified-current-page-file-pointer-linkage-pending; multi-campus-scope-unresolved",
+  "count_effect": 0,
+  "next_action": "Keep CCN 140228 unresolved. Request/locate a current CMS enrollment or certification crosswalk for UW Health Belvidere Hospital and publisher documentation stating whether the 2026-04-01 SwedishAmerican MRF includes Belvidere under CCN 140228, a distinct CCN, or non-CCN site scope. Do not assign Belvidere to 140228 from shared ownership, address, NPI association, or state planning inventory alone. Separately complete full-file/schema/usability validation before any promotion."
+}

@@ -1,0 +1,59 @@
+{
+  "audit_id": "reconciliation-adventist-bakersfield-first-party-pointer-recheck-2026-09-29",
+  "observed_at": "2026-09-29T17:30:00Z",
+  "ccn": "050455",
+  "facility": {
+    "cms_name": "ADVENTIST HEALTH BAKERSFIELD",
+    "cms_address": "2615 CHESTER AVENUE, BAKERSFIELD, CA 93301-2014",
+    "neighboring_ccn_to_keep_distinct": "050724",
+    "known_competing_address": "3001 Sillect Avenue, Bakersfield, CA"
+  },
+  "first_party_root_pointer": {
+    "url": "https://adventisthealth.org/cms-hpt.txt",
+    "http_status": 200,
+    "response_bytes": 7978,
+    "sha256": "c6d8fb5a104c88f16439950764213f118d0c883d4e71f285d7021627392917e5",
+    "retained_raw": false,
+    "privacy_note": "The live pointer contains contact details. Only a parsed facility entry, response size and hash are retained; contact fields and raw response are omitted."
+  },
+  "matching_pointer_entry": {
+    "location_name": "SAN JOAQUIN COMMUNITY HOSPITAL",
+    "source_page_url": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
+    "mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHBBAKERSFIELDCA&type=CDMWithoutLabel&fileType=CSV"
+  },
+  "first_party_pricing_page": {
+    "url": "https://www.adventisthealth.org/patients-and-visitors/price-transparency/",
+    "http_status": 200,
+    "response_bytes": 48467,
+    "legacy_name_matches_in_returned_html": 0,
+    "interpretation": "The response was retrieved, but its HTML did not contain the legacy pointer label; this is not evidence that the declared route or file is absent."
+  },
+  "exact_mrf_recheck": {
+    "url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHBBAKERSFIELDCA&type=CDMWithoutLabel&fileType=CSV",
+    "method": "bounded direct HTTP request with 60-second timeout",
+    "result": "request did not return within approximately 60 seconds and was stopped",
+    "http_status": null,
+    "bytes_received": null,
+    "sha256": null,
+    "interpretation": "Transport observation only; no file absence, metadata, identity, or compliance conclusion."
+  },
+  "comparison_to_prior_observation": {
+    "pointer_sha256_unchanged": true,
+    "pointer_sha256": "c6d8fb5a104c88f16439950764213f118d0c883d4e71f285d7021627392917e5",
+    "new_pointer_contents": false,
+    "new_mrf_bytes": false,
+    "new_mrf_discovery": false,
+    "disposition_changed": false,
+    "891_cohort_unresolved_reduction": 0
+  },
+  "prior_conflict_reaffirmed": {
+    "npi": "1538157508",
+    "cms_ccn": "050455",
+    "cms_main_location": "2615 Chester Avenue, Bakersfield, CA",
+    "pointer_file_observed_address": "3001 Sillect Avenue, Bakersfield, CA",
+    "associated_neighboring_ccn": "050724",
+    "interpretation": "Existing byte-backed header and CMS location evidence remain in conflict. This pointer recheck does not authorize assigning the Sillect-address file to main-campus CCN 050455 or collapsing the two CCNs."
+  },
+  "disposition": "current-first-party-pointer-confirms-exact-file-route-but-existing-campus-identity-conflict-remains",
+  "next_action": "Obtain a corrected first-party pointer/file or authoritative publisher documentation mapping dbAHBBAKERSFIELDCA coverage, location rows, NPIs, addresses, licenses and Medicare CCNs; then retrieve and hash the exact current file and independently verify the 2615 Chester campus before revising either CCN."
+}

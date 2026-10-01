@@ -1,0 +1,55 @@
+{
+  "ccn": "031308",
+  "observed_at": "2026-09-28T04:35:00Z",
+  "cms_provider_record": {
+    "url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=031308&conditions%5B0%5D%5Boperator%5D=%3D",
+    "http_status": 200,
+    "response_bytes": 6759,
+    "response_sha256": "439d42c0389015e89107b2738da97aed6b03ae9a1cfe02c3e7c90e85e11ee099",
+    "record": {
+      "facility_id": "031308",
+      "facility_name": "HUHU KAM MEMORIAL HOSPITAL",
+      "address": "483 WEST SEED FARM ROAD",
+      "citytown": "SACATON",
+      "state": "AZ",
+      "zip_code": "85147",
+      "hospital_type": "Critical Access Hospitals",
+      "hospital_ownership": "Government - Federal"
+    },
+    "interpretation": "Exact CCN identity and historical CMS federal-ownership field are preserved; federal ownership alone does not resolve who operates the program for the separate 45 CFR 180.30(b)(2) category."
+  },
+  "cms_indian_health_service_locator": {
+    "url": "https://www.cms.gov/training-education/partner-outreach-resources/american-indian/alaska-native/behavioral-health/service-locator",
+    "http_status": 200,
+    "response_bytes": 1223169,
+    "response_sha256": "cc90c97346ba48474654516a198df7a0937025cedae7d4261a651e4d66f1337c",
+    "facility_entry_observation": "CMS lists Hu-Hu-Kam Memorial Hospital at 483 West Seed Farm Road, Sacaton, AZ 85247, classifies it as a Hospital, and identifies its affiliation as Title 5 (638); the locator lists inpatient and outpatient services. The locator ZIP differs from the exact-CCN CMS Provider Data Catalog ZIP (85147); both records agree on facility, street, city and state, and the ZIP discrepancy is retained rather than normalized.",
+    "browser_source": "CMS Service Locator, live web review 2026-09-28, facility entry lines 3885-3894."
+  },
+  "current_operator_evidence": {
+    "official_location_page": "https://grhc.org/locations/",
+    "http_status": 200,
+    "response_bytes": 101153,
+    "response_sha256": "335d6ad03b46a1ecffa42ed2e13d862cd5df6f8ca5f946d7cf38c0764084d4a6",
+    "observation": "Gila River Health Care identifies Hu Hu Kam Memorial Hospital as one of its three health-system locations.",
+    "operator_638_source": "https://grhc.org/wp-content/uploads/2024/09/RFP9-FY-PRM-02.pdf?x49542=",
+    "operator_638_http_status": 200,
+    "operator_638_bytes": 926797,
+    "operator_638_sha256": "a82b8690eadc46ad05d1518d8015765b4e01b1823607b2022dcc88479278240f",
+    "operator_638_observation": "Gila River Health Care states it is a federally recognized 638 non-profit entity of the Gila River Indian Community and identifies the Hu Hu Kam Memorial Hospital campus among the locations where it offers healthcare service."
+  },
+  "legal_basis": {
+    "regulation": "45 CFR 180.30(b)(2)",
+    "regulation_url": "https://www.govinfo.gov/content/pkg/CFR-2025-title45-vol2/pdf/CFR-2025-title45-vol2-part180.pdf",
+    "regulation_observation": "CMS deems hospitals operated by an Indian Health Program, as defined by section 4(12) of the Indian Health Care Improvement Act, to be in compliance with Part 180.",
+    "statute": "25 USC 1603(12),(25)",
+    "statute_url": "https://uscode.house.gov/view.xhtml?edition=prelim&num=0&req=granuleid%3AUSC-prelim-title25-section1603",
+    "statute_http_status": 200,
+    "statute_bytes": 177716,
+    "statute_sha256": "5ca72af13bcbd4bfa5a4f74ac00ff1a9dc72cf50a7136b248e9b08e7c9fd5eb4",
+    "statute_observation": "The definition of Indian Health Program includes a tribal health program; a tribal health program is a tribe or tribal organization operating a health facility funded in whole or part by the Indian Health Service through an ISDEAA contract or compact."
+  },
+  "disposition": "scope-exempt-indian-health-program",
+  "interpretation": "The exact-CCN CMS record identifies Hu Hu Kam Memorial Hospital at 483 West Seed Farm Road in Sacaton, Arizona. CMS's own service locator independently identifies that hospital/address as Title 5 (638), and the current operator identifies the same hospital as a GRHC location while GRHC identifies itself as a federally recognized 638 entity. Read together with 45 CFR 180.30(b)(2) and the 25 USC 1603 definitions, the evidence supports classifying this hospital under the Indian Health Program scope category. CMS's Government - Federal ownership field is retained as a separate fact. This scope classification does not assert pointer linkage, MRF availability, file quality, or legal compliance beyond the regulation's deemed-compliance classification.",
+  "next_action": "Retain the supported Indian Health Program scope classification and the prior 404/historical-PDF observations as provenance only. Revisit if the exact CCN identity, operator, CMS service-locator affiliation, or tribal/IHS program status changes. Do not infer the presence or absence of a current MRF."
+}

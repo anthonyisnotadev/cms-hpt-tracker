@@ -1,0 +1,54 @@
+{
+  "ccn": "390111",
+  "facility": "Hospital of the University of Pennsylvania",
+  "observed_at": "2026-09-30T18:24:00Z",
+  "official_pricing_page": "https://www.pennmedicine.org/patient-resources/policies/pricing-transparency",
+  "official_page_observation": {
+    "method": "connected-browser-rendered-page",
+    "status": "rendered",
+    "visible_file_label": "Hospital of the University of Pennsylvania",
+    "linked_file_url": "https://tupa-q-001.sitecorecontenthub.cloud/api/public/content/231352685_the-trustees-of-the-university-of-pennsylvania-dba-the-hospital-of-the-univer_standardcharges.csv",
+    "co-listed_locations_on_same_target": [
+      "Hospital of the University of Pennsylvania Pavilion",
+      "Hospital of the University of Pennsylvania - Cedar Avenue",
+      "Penn Medicine - Rittenhouse"
+    ],
+    "other_named_hospital_files_are_separate": true
+  },
+  "facility_identity": {
+    "cms_ccn": "390111",
+    "roster_name": "HOSPITAL OF UNIV OF PENNSYLVANIA",
+    "cms_npi": "1851370910",
+    "address": "3400 Spruce St, Philadelphia, PA 19104",
+    "corroborating_sources": [
+      "https://www.cms.gov/Medicare/Medicare-General-Information/MedicareApprovedFacilitie/VAD-Destination-Therapy-Facilities-Aug2007-Items/-Hospital-of-the-University-of-Pennsylvania",
+      "https://www.pennmedicine.org/locations/hospital-of-the-university-of-pennsylvania"
+    ]
+  },
+  "file": {
+    "url": "https://tupa-q-001.sitecorecontenthub.cloud/api/public/content/231352685_the-trustees-of-the-university-of-pennsylvania-dba-the-hospital-of-the-univer_standardcharges.csv",
+    "http_status": 206,
+    "content_type": "text/csv",
+    "content_range": "bytes 0-65535/2346343903",
+    "sample_bytes": 65536,
+    "sample_sha256": "b3afb9414ffaf5ee7f50bec9763c77c32ddcb82e52267bd5e6a0f758f5921587",
+    "declared_hospital_name": "The Trustees of the University of Pennsylvania D/B/A The Hospital of the University of Pennsylvania",
+    "declared_location_name": "Hospital of the University of Pennsylvania|Hospital of the University of Pennsylvania Pavilion|Hospital of the University of Pennsylvania - Cedar Avenue|Penn Medicine - Rittenhouse",
+    "declared_addresses": "3400 Spruce St Philadelphia PA 19104|1 Convention Ave Philadelphia PA 19104|501 South 54th St Philadelphia PA 19143|1800 Lombard St Philadelphia PA 19146",
+    "declared_license_state": "PA",
+    "declared_license_number": "341101",
+    "declared_npi": "1851370910|1851370910|1851370910|1851370910",
+    "declared_last_updated": "2026-02-10",
+    "cms_template_version": "3.0.0",
+    "attestation": true,
+    "complete_file_retrieved": false,
+    "usable_pricing_rows_validated": false
+  },
+  "root_pointer": {
+    "url": "https://pennmedicine.org/cms-hpt.txt",
+    "current_status": 200,
+    "interpretation": "The current response was not parsed as a structured pointer and does not establish pointer-to-file linkage. Historical pointer-corpus records remain separate."
+  },
+  "classification": "new current official-page-linked bounded file metadata; not a full-file validation, pointer-linked success, or compliance conclusion",
+  "next_action": "Obtain a safe complete or independently parsed CMS v3 copy and validate all location-specific schema and usable rows; separately verify whether the current CMS pointer can be reliably retrieved and linked."
+}

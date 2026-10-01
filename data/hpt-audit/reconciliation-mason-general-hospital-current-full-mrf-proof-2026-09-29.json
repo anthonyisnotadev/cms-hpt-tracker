@@ -1,0 +1,144 @@
+{
+  "audit_id": "reconciliation-mason-general-hospital-current-full-mrf-proof-2026-09-29",
+  "observed_at": "2026-09-29T17:11:55Z",
+  "ccn": "501336",
+  "hospital_name": "MASON GENERAL HOSPITAL & FAMILY OF CLINICS",
+  "historical_891_cohort_member": true,
+  "official_domain": "masonhealth.com",
+  "official_source_page": {
+    "url": "https://www.masonhealth.com/patients/disclosure-of-healthcare-charges",
+    "status": 200,
+    "response_body_utf8_bytes": 41443,
+    "response_body_utf8_sha256": "91dfde681edf6dc260db7173e88285114a2212de46125f94deea18818dace04a",
+    "observed_link": "The current first-party disclosure page says users can view or download the full list of charges and links to the Mason General Hospital pricing page."
+  },
+  "publisher_pricing_page": {
+    "url": "https://hospitalpricelists.org/MasonGeneralHospital",
+    "status": 200,
+    "response_body_utf8_bytes": 546568,
+    "response_body_utf8_sha256": "64d29590ff887058cdcc9eb81d4731397d094160481a59f376b397d21aa2cf22",
+    "file_link": "https://hospitalpricetransparencyfiles.com/public-hospital-district-no-1-of-mason-county/911529293_Public-Hospital-District-No-1-of-Mason-County_standardcharges.csv",
+    "file_link_label": "911529293_Public-Hospital-District-No-1-of-Mason-County_standardcharges.csv",
+    "page_update_label": "Updated 07/08/26",
+    "interpretation": "This is a publisher pricing page linked by Mason Health. The page label is retained separately from the MRF's own last_updated_on value and the storage server's Last-Modified header."
+  },
+  "official_root_pointer": {
+    "url": "https://www.masonhealth.com/cms-hpt.txt",
+    "status": 200,
+    "content_type": "text/plain",
+    "response_bytes": 356,
+    "response_sha256": "315e1494be3a1059f06d11bde43169cb14f6c23b51c742c4ea2a8d32b66ec203",
+    "parsed_location_name": "Mason General Hospital",
+    "parsed_source_page_url": "https://hospitalpricelists.org/MasonGeneralHospital",
+    "parsed_mrf_url": "https://hospitalpricetransparencyfiles.com/public-hospital-district-no-1-of-mason-county/911529293_Public-Hospital-District-No-1-of-Mason-County_standardcharges.csv",
+    "contact_fields": "Present in publisher response; omitted from retained proof."
+  },
+  "mrf": {
+    "url": "https://hospitalpricetransparencyfiles.com/public-hospital-district-no-1-of-mason-county/911529293_Public-Hospital-District-No-1-of-Mason-County_standardcharges.csv",
+    "status": 200,
+    "content_type": "text/csv",
+    "content_length": 122818701,
+    "complete_file_bytes_streamed": 122818701,
+    "complete_file_sha256": "b0a16a970c272aa7f0c1718812fd9da67f1138ca1187768ad36fc216a5812191",
+    "etag": "\"9dbdbec8efc82376ed0726e58af037ce-12\"",
+    "http_last_modified": "Tue, 28 Jul 2026 18:26:18 GMT",
+    "retained_complete_file": false,
+    "complete_file_retention_note": "The complete 122,818,701-byte public CSV was streamed and parsed without saving a local copy because the system drive had limited free space. A hash-bound 262,144-byte initial range is retained for reproducibility.",
+    "retained_sample": {
+      "path": "data/hpt-audit/retained-source-documents/mason-general-hospital-501336-standardcharges-range-0-262143.csv.sample",
+      "status": 206,
+      "content_range": "bytes 0-262143/122818701",
+      "bytes": 262144,
+      "sha256": "45ce8408081b3ea6ff60b4702c9985f74949ca1ee027796f8840abccc7c7baff"
+    },
+    "declared_metadata": {
+      "hospital_name": "Public Hospital District No 1 of Mason County",
+      "last_updated_on_raw": "3/10/2026",
+      "last_updated_on_normalized": "2026-03-10",
+      "version": "3.0.0",
+      "location_name": "Mason General Hospital",
+      "hospital_address": "901 Mountain View Drive, Shelton, WA  98584",
+      "type_2_npi": ["1760568752", "1639778202", "1366609489"],
+      "license_state": "WA",
+      "license_number": "PH60008883",
+      "attester_name_present": true,
+      "attestation": true
+    },
+    "csv_structure_and_usability": {
+      "format": "CSV Tall, CMS v3.0.0 headers",
+      "header_columns": 33,
+      "total_csv_records_including_two_metadata_rows_and_header": 623784,
+      "parsed_pricing_data_rows": 623781,
+      "data_row_widths": [33],
+      "all_quotes_closed": true,
+      "data_rows_with_description": 623781,
+      "data_rows_with_gross_charge": 623781,
+      "data_rows_with_payer": 623781,
+      "data_rows_with_negotiated_dollar": 623781,
+      "sample_range_pricing_rows_with_description_gross_payer_and_negotiated_dollar": 1440,
+      "sample_range_note": "The bounded range ends mid-file; the 1,440 reported sample rows are complete parsed rows before the range boundary."
+    },
+    "date_interpretation": "CMS CSV Data Dictionary v3.0 permits M/D/YYYY or MM/DD/YYYY as alternatives to ISO 8601 for CSV Tall/Wide MRF dates; 3/10/2026 is interpreted as March 10, 2026. The separate pricing-page label 07/08/26 and HTTP Last-Modified 2026-07-28 are not substituted for the file-declared date.",
+    "metadata_freshness_days_at_observation": 203
+  },
+  "cms_provider_record": {
+    "url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=501336&conditions%5B0%5D%5Boperator%5D=%3D",
+    "status": 200,
+    "response_bytes": 6624,
+    "response_sha256": "eb063882a7cb819351148f6d0a994684e81e7ac642da2412e9a3641307061051",
+    "record": {
+      "facility_id": "501336",
+      "facility_name": "MASON GENERAL HOSPITAL & FAMILY OF CLINICS",
+      "address": "901 MT VIEW DRIVE",
+      "city": "SHELTON",
+      "state": "WA",
+      "zip_code": "98584",
+      "hospital_type": "Critical Access Hospitals",
+      "hospital_ownership": "Government - Hospital District or Authority"
+    }
+  },
+  "cms_npi_registry_records": [
+    {
+      "url": "https://npiregistry.cms.hhs.gov/api/?version=2.1&number=1760568752",
+      "status": 200,
+      "response_bytes": 1531,
+      "response_sha256": "04ffb655b5a7a8a7efc025f6522f7a247908ef1c1bcf5bd4244b965a7ef5c15b",
+      "npi": "1760568752",
+      "organization_name": "PUBLIC HOSPITAL DISTRICT NO 1 OF MASON COUNTY",
+      "doing_business_as": "MASON HEALTH-MASON GENERAL HOSPITAL",
+      "status_value": "A",
+      "last_updated": "2025-08-06",
+      "primary_location": "901 MT VIEW DR, SHELTON, WA 98584-4401",
+      "primary_taxonomy": "General Acute Care Hospital, Critical Access"
+    },
+    {
+      "url": "https://npiregistry.cms.hhs.gov/api/?version=2.1&number=1639778202",
+      "status": 200,
+      "response_bytes": 1303,
+      "response_sha256": "72cffc0d2c845042302148ea3f6b3f8405589e4be9af047a34a7ff9aa3271dd1",
+      "npi": "1639778202",
+      "organization_name": "PUBLIC HOSPITAL DISTRICT NO 1 OF MASON COUNTY",
+      "doing_business_as": "",
+      "status_value": "A",
+      "last_updated": "2021-01-07",
+      "primary_location": "901 MOUNTAIN VIEW DR, SHELTON, WA 98584-4401",
+      "primary_taxonomy": "Medicare Defined Swing Bed Unit"
+    },
+    {
+      "url": "https://npiregistry.cms.hhs.gov/api/?version=2.1&number=1366609489",
+      "status": 200,
+      "response_bytes": 1483,
+      "response_sha256": "61345a1cbb950d90889e3f3cd608c98927dc965a9693479b0384a62cf677eef3",
+      "npi": "1366609489",
+      "organization_name": "PUBLIC HOSPITAL DISTRICT NO 1 OF MASON COUNTY",
+      "doing_business_as": "MASON GENERAL HOSPITAL",
+      "status_value": "A",
+      "last_updated": "2008-05-16",
+      "primary_location": "901 MT VIEW DR BLDG 1, SHELTON, WA 98584-4401",
+      "primary_taxonomy": "General Acute Care Hospital, Critical Access"
+    }
+  ],
+  "disposition": "verified-current-mrf",
+  "interpretation": "The currently accessible first-party root pointer declares this exact third-party-hosted file and links the current price page; the hospital's disclosure page independently routes to the same publisher pricing page. The file's legal owner, Mason General location/address, Washington license fields, and NPI list agree with CMS CCN 501336 and the current NPI registry records. The full file stream hash matches across complete retrievals; every CSV record has the 33-column layout, and all 623,781 pricing rows contain description, gross charge, payer and negotiated-dollar values. The CMS-accepted CSV date format parses to March 10, 2026. The portal update label and HTTP modification time remain separately recorded rather than treated as the MRF's declared date. This verifies current MRF source evidence; it is not a legal compliance determination.",
+  "next_action": "Retain the pointer/file provenance and recheck on the next scheduled crawl or on a source/validator change. Preserve the distinction between the MRF-declared March 10 date, the pricing-page 07/08/26 label and the July 28 server Last-Modified value. Do not infer a later MRF update from the page/server stamps or make a legal-compliance claim."
+}

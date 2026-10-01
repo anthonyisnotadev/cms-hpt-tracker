@@ -1,0 +1,45 @@
+{
+  "audit_id": "reconciliation-san-carlos-apache-campus-scope-recheck-2026-09-29",
+  "observed_at": "2026-09-29T16:43:18Z",
+  "ccn": "031320",
+  "facility": "San Carlos Apache Healthcare Corporation",
+  "purpose": "Recheck current first-party site scope and distinguish hospital campus from a related outpatient campus without inferring CCN or MRF coverage.",
+  "sources": [
+    {
+      "url": "https://www.scahealth.org/",
+      "source_type": "first-party current site",
+      "web_observation": "https://www.scahealth.org/",
+      "observation": "The current homepage separately lists San Carlos Apache Healthcare at 103 Medicine Way Road, Peridot, AZ 85542 and Clarence Wesley Health Center at 9 A Clarence Wesley Health Center Loop, Bylas, AZ 85530. It describes distinct services and campuses."
+    },
+    {
+      "url": "https://www.scahealth.org/about/scahc-location/",
+      "source_type": "first-party hospital campus page",
+      "web_observation": "https://www.scahealth.org/about/scahc-location/",
+      "observation": "The page identifies San Carlos Apache Healthcare and gives 103 Medicine Way Road, Peridot, AZ 85542."
+    },
+    {
+      "url": "https://www.scahealth.org/about/cwhc-location/",
+      "source_type": "first-party related-campus page",
+      "web_observation": "https://www.scahealth.org/about/cwhc-location/",
+      "observation": "The page identifies Clarence Wesley Health Center as an outpatient and specialty-clinic campus at 9 A Clarence Wesley Health Center Loop, Bylas, AZ 85530."
+    },
+    {
+      "url": "https://www.scahealth.org/cms-hpt.txt",
+      "source_type": "first-party CMS pointer route",
+      "web_observation": "https://www.scahealth.org/cms-hpt.txt",
+      "observation": "The web retrieval route could not access pointer content. This is not evidence that the publisher lacks a pointer or MRF."
+    }
+  ],
+  "evidence_gained": {
+    "new_first_party_campus_scope": true,
+    "hospital_address_confirmed": "103 Medicine Way Road, Peridot, AZ 85542",
+    "related_outpatient_campus_confirmed": "Clarence Wesley Health Center, 9 A Clarence Wesley Health Center Loop, Bylas, AZ 85530",
+    "mrf_bytes": 0,
+    "pointer_content_retrieved": false,
+    "ccn_mapping_established_for_related_campus": false,
+    "disposition_changed": false,
+    "cohort_resolution": false
+  },
+  "decision": "Retain CCN 031320 as unresolved for current facility-specific pointer/MRF evidence. Use the Peridot hospital campus as the identity anchor. Do not attribute a file to the Bylas outpatient campus or another San Carlos Apache CCN based on shared organization branding. The newly observed campus distinction is first-party identity/scope evidence only, not MRF coverage or proof of absence.",
+  "next_action": "Locate a current publisher pointer or structured CMS MRF for the Peridot hospital campus through a content-bearing authorized route; verify pointer linkage, exact file bytes, declared identity/address/state/date/version and usable rows. Independently map other San Carlos Apache CCNs and the Bylas campus rather than borrowing this facility's attribution."
+}

@@ -4,6 +4,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
+const { loadReviewedView } = require('../lib/reviewed-resolutions');
 
 const root = path.resolve(__dirname, '../../..');
 const read = file => JSON.parse(fs.readFileSync(path.join(root, file), 'utf8'));
@@ -20,5 +21,21 @@ test('UCSD Hillcrest retains bounded current page/file metadata without overclai
   assert.equal(proof.cms_template_version, '3.0');
   assert.equal(proof.disposition, 'verified-template-review');
   assert.equal(manual.proof_file, 'reconciliation-ucsd-hillcrest-current-page-file-proof-2026-09-26.json');
-  assert.match(manual.next_action, /literal version 3\.0/);
+  assert.match(manual.identity_result, /3\.0 is a current v3 value/);
+  assert.match(manual.next_action, /Separately verify the root cms-hpt\.txt linkage/);
+  const resolution = read('data/hpt-audit/reviewed-resolutions.json').find(row => row.ccn === '050025');
+  assert.equal(resolution.evidence.observedFinding, 'mrf-v3-file-validation-pending');
+  assert.equal(resolution.evidence.completeFileValidated, false);
+  const effectiveRow = loadReviewedView(path.join(root, 'data/hpt-audit')).compliance
+    .find(row => row.ccn === '050025');
+  assert.equal(effectiveRow.finding, 'mrf-v3-file-validation-pending');
+  assert.equal(effectiveRow.assessable, 'yes');
+  assert.equal(effectiveRow.cms_template_version, '3.0');
+  const reconciliation = read('data/hpt-audit/nationwide-reconciliation.json').records
+    .find(row => row.ccn === '050025');
+  assert.ok(reconciliation.issues.includes('page-file-complete-parse-pending'));
+  assert.ok(!reconciliation.issues.includes('proposed-finding-differs-from-standing'));
+  assert.equal(reconciliation.standing_finding, 'mrf-v3-file-validation-pending');
+  assert.equal(reconciliation.actionable, true);
+  assert.match(reconciliation.next_action, /complete or independently parsed copy/);
 });

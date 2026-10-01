@@ -1,0 +1,31 @@
+{
+  "ccn": "250043",
+  "sibling_ccn": "251340",
+  "observed_at": "2026-09-28T19:26:52Z",
+  "archive": "Internet Archive CDX API",
+  "query_url": "https://web.archive.org/cdx/search/cdx?url=apps.para-hcfs.com%2FPTT%2FFinalLinks%2FReports.aspx%2A&matchType=prefix&output=json&filter=original%3A.%2A(Neshoba%7CNCGHPHILADELPHIAMS).%2A&filter=statuscode%3A200&collapse=urlkey",
+  "query_scope": {
+    "url_prefix": "apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx*",
+    "matching_original_url_filter": ".*(Neshoba|NCGHPHILADELPHIAMS).*",
+    "http_status_filter": "200",
+    "match_type": "prefix",
+    "collapse": "urlkey"
+  },
+  "response": {
+    "http_status": 200,
+    "bytes": 3,
+    "body": "[]",
+    "curl_exit_code": 0
+  },
+  "result": "The Wayback index returned an empty result set for the bounded Reports.aspx URL-prefix query with Neshoba/current-key matching. This checks a broader archived report-endpoint family than the previously tested exact current-key variants, but yields no historical database key, report URL, or file bytes.",
+  "limits": [
+    "An index no-match is not proof that a report or MRF never existed.",
+    "The query does not cover unindexed captures, other hostnames/endpoints, unknown URLs that do not include Neshoba or the current database-key string, or other archive sources.",
+    "No CMS format, report contents, declared metadata, or acute-care CCN 250043 scope was established."
+  ],
+  "historical_mrf_bytes_recovered": false,
+  "historical_database_key_confirmed": false,
+  "disposition_effect": "none",
+  "count_effect": 0,
+  "next_action": "Keep 250043 in the historical accountability baseline. Do not repeat this Wayback Reports.aspx prefix query or the already logged exact-key/index queries absent a new archive collection or source/index change. Seek a materially different archive source or publisher-provided pre-2025-12-31 CMS-format file, and keep the June 2026 file separate from historical 250043 evidence."
+}

@@ -1,0 +1,83 @@
+{
+  "audit_id": "reconciliation-asante-ashland-cms-termination-notice-triage-2026-09-29",
+  "ccn": "380005",
+  "observed_at": "2026-09-29T13:25:00Z",
+  "trigger": {
+    "source_url": "https://www.velarionrecords.com/340b/DSH380005",
+    "source_type": "third-party mirror of HRSA 340B OPAIS daily export",
+    "claimed_340b_termination_date": "2026-07-01",
+    "claimed_termination_reason": "Site closure",
+    "limitation": "This is a 340B participation record, not a CMS Medicare hospital certification or agreement-termination record. The source says its fields come from an HRSA 340B Covered Entity Daily Report dated 2026-09-12; the underlying HRSA workbook was not retrieved during this check."
+  },
+  "cms_hospital_enrollment_exact_ccn_recheck": {
+    "url": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D=380005&size=10",
+    "http_status": 200,
+    "response_bytes": 1163,
+    "response_sha256": "4e39e5eb60ac3e3f168518ce7a5f7298dec645606db8b00e75e3b12fca639a57",
+    "exact_ccn_rows": 1,
+    "record": {
+      "ccn": "380005",
+      "npi": "1730628827",
+      "organization_name": "ASANTE ASHLAND COMMUNITY HOSPITAL LLC",
+      "address": "280 MAPLE ST, ASHLAND, OR 975201552",
+      "provider_type": "PART A PROVIDER - HOSPITAL",
+      "practice_location_type": "OTHER HOSPITAL PRACTICE LOCATION"
+    },
+    "comparison": "Byte length, SHA-256 and row content are identical to the CMS live API capture already retained in reconciliation-asante-ashland-state-license-proof.json. This is an unchanged-source recheck prompted by a new, conflicting third-party 340B date; it is not a new CMS data release or effective-dated Medicare status."
+  },
+  "cms_qies_q2_2026_exact_ccn_record": {
+    "dataset_landing_page": "https://data.cms.gov/provider-characteristics/hospitals-and-other-facilities/provider-of-services-file-quality-improvement-and-evaluation-system",
+    "dataset_catalog": "https://catalog.data.gov/dataset/provider-of-services-file-quality-improvement-and-evaluation-system",
+    "dataset_version_title": "Provider of Services File - Quality Improvement and Evaluation System : 2026-04-01",
+    "dataset_temporal_coverage_end": "2026-06-30",
+    "dataset_catalog_distribution_api_id": "bb342fae-b551-40fd-a738-e2e5878f3bbb",
+    "dataset_csv_distribution": "https://data.cms.gov/sites/default/files/2026-07/7780b4e3-4c4b-4811-8884-65ca23b7a4e8/Hospital_and_other.DATA.Q2_2026.csv",
+    "query_url": "https://data.cms.gov/data-api/v1/dataset/bb342fae-b551-40fd-a738-e2e5878f3bbb/data?filter%5BPRVDR_NUM%5D=380005&size=10",
+    "http_status": 200,
+    "response_bytes": 11754,
+    "response_sha256": "a949faf1f95f0adcd2cb35e79c66fe2b5def7428449cf30f16e25222fe435f1f",
+    "exact_provider_rows": 1,
+    "record": {
+      "provider_number": "380005",
+      "facility_name": "ASANTE ASHLAND COMMUNITY HOSPITAL",
+      "address": "280 MAPLE STREET, ASHLAND, OR 97520",
+      "provider_category": "01",
+      "provider_category_subtype": "01",
+      "compliance_status_code": "A",
+      "eligibility_switch": "Y",
+      "program_termination_code": "00",
+      "termination_or_expiration_date": "",
+      "certification_date": "20100413",
+      "original_participation_date": "19660701",
+      "chow_date": "19960701",
+      "cross_reference_provider_number": ""
+    },
+    "code_interpretation_source": "https://data.cms.gov/sites/default/files/2023-07/0ca58d5d-7914-4532-b22d-41741d3e6151/P.QWB.POSQ.OTHER.LAYOUT.MAR23.pdf",
+    "code_interpretation": "CMS POS record layout defines PGM_TRMNTN_CD 00 as ACTIVE PROVIDER and TRMNTN_EXPRTN_DT as the date the provider was terminated. The Q2 2026 QIES record therefore supports active CMS provider status through the Q2 dataset period ending 2026-06-30, after the 2026-05-22 transition. It supersedes the prior open CMS-status gate for this review. It does not establish HPT file coverage or compliance.",
+    "catalog_landing_page_caveat": "The CMS QIES landing page still displayed Q1 2026 as latest when inspected; Data.gov's CMS distribution catalog independently lists the Q2 2026 API and CSV distributions and temporal coverage through 2026-06-30. The version-specific Q2 API response and catalog record are retained to make this catalog discrepancy explicit."
+  },
+  "cms_public_termination_notices": {
+    "url": "https://www.cms.gov/medicare/health-safety-standards/certification-compliance/public-notices",
+    "page_current_as_observed": "2026-09-29",
+    "page_description": "CMS says it posts public notices of facility terminations before they take effect and keeps current notices online for 14 months.",
+    "exact_search_terms": ["380005", "Asante", "Ashland"],
+    "exact_matches": 0,
+    "interpretation_limit": "No exact entry was found on the current public-notice page. This bounded page search is not a CMS certification-history query and does not establish that Medicare participation remains active or terminated."
+  },
+  "other_cms_crosscheck": {
+    "url": "https://www.cms.gov/files/document/pac-snf-fy2026-apu-non-compliant.pdf",
+    "exact_row": "380005 | Swing Bed | ASANTE ASHLAND COMMUNITY HOSPITAL | ASHLAND | OR",
+    "source_status": "This row was already retained in the 2026-09-19 crosscheck in reconciliation-asante-ashland-state-license-proof.json; it is cited here only to prevent misreading its program scope, not counted as new evidence.",
+    "interpretation_limit": "A swing-bed APU roster row is not an effective-dated acute hospital certification/termination record and does not establish current MRF coverage."
+  },
+  "disposition": "unresolved-ccn-status-and-successor-file-coverage",
+  "evidence_accounting": {
+    "new_official_cms_data_rows": 1,
+    "new_official_cms_document_instances": 2,
+    "unchanged_cms_api_rechecks": 1,
+    "new_primary_mrf_bytes": 0,
+    "hpt_disposition_effect": "none",
+    "cohort_count_effect": 0
+  },
+  "next_action": "Keep CCN 380005 unresolved for HPT coverage. The Q2 2026 CMS QIES row supports active provider status through 2026-06-30, after the 2026-05-22 transition; do not infer HPT compliance or file coverage from it. Obtain actual bytes of the publisher-linked combined Asante ZIP through a materially different authorized route and validate Ashland identity, address, state, declared CMS date/version and usable rows before assigning coverage."
+}

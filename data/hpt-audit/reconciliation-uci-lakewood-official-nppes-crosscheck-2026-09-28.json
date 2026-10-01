@@ -1,0 +1,36 @@
+{
+  "ccn": "050581",
+  "hospital_name": "UCI HEALTH-LAKEWOOD",
+  "observed_at": "2026-09-28T01:30:45Z",
+  "source": {
+    "name": "CMS National Plan and Provider Enumeration System (NPPES) API",
+    "url": "https://npiregistry.cms.hhs.gov/api/?number=1184655581&version=2.1",
+    "http_status": 200,
+    "response_bytes": 2924,
+    "response_sha256": "3449f398cd27cdc8ee7ec7beb4fabe139e087f1e04e747e9503d3e20a9749de2",
+    "retrieved_at": "2026-09-28T01:30:45Z"
+  },
+  "npi": {
+    "number": "1184655581",
+    "status": "A",
+    "enumeration_type": "NPI-2",
+    "organization_name": "UNIVERSITY OF CALIFORNIA IRVINE",
+    "location_address": "3700 SOUTH ST, LAKEWOOD, CA 90712-1419",
+    "taxonomy": "282N00000X — General Acute Care Hospital",
+    "taxonomy_license_number": "930000046",
+    "taxonomy_license_state": "CA",
+    "last_updated": "2024-07-18"
+  },
+  "crosscheck": {
+    "pointer_declared_file_npi": "1184655581",
+    "pointer_declared_file_npi_matches_registry_record": true,
+    "registry_location_matches_current_uci_lakewood_facility_page": true,
+    "registry_license_state": "CA",
+    "registry_license_number": "930000046",
+    "file_header_address": "101 City Drive South, Orange, CA 92868",
+    "facility_page_address": "3700 E. South St., Lakewood, CA 90712",
+    "remaining_conflict": "The file is named for UCI Health - Lakewood and its declared NPI resolves to the Lakewood hospital, but the file's hospital_address field is the Orange UCI Medical Center address, not the Lakewood location. NPPES corroborates the facility identity and CA license metadata but does not reconcile or authorize the conflicting hospital_address value.",
+    "disposition_effect": "none; preserve 050581 as unresolved for the facility-address metadata conflict"
+  },
+  "privacy": "Only facility and registry metadata are retained. The API response also contained authorized-official contact fields; they were not copied into this proof."
+}

@@ -20,10 +20,19 @@ function build(roster, reconciliation, cmsEnrollmentReview, manualObservations =
   const byCcn = new Map(reconciliation.records.map(row => [row.ccn, row]));
   const enrollmentByCcn = new Map((cmsEnrollmentReview?.records || []).map(row => [row.ccn, row]));
   const historicalProofsByCcn = new Map();
+  const collectProofFiles = (value, proofs = new Set()) => {
+    if (!value || typeof value !== 'object') return proofs;
+    if (Array.isArray(value)) {
+      for (const item of value) collectProofFiles(item, proofs);
+      return proofs;
+    }
+    if (typeof value.proof_file === 'string') proofs.add(value.proof_file);
+    for (const item of Object.values(value)) collectProofFiles(item, proofs);
+    return proofs;
+  };
   for (const record of manualObservations?.records || []) {
-    if (!record.proof_file) continue;
     const proofs = historicalProofsByCcn.get(record.ccn) || new Set();
-    proofs.add(record.proof_file);
+    collectProofFiles(record, proofs);
     historicalProofsByCcn.set(record.ccn, proofs);
   }
   const byIdentity = new Map();
@@ -67,6 +76,8 @@ function build(roster, reconciliation, cmsEnrollmentReview, manualObservations =
           .includes('reconciliation-qies-unresolved-status-audit-2026-09-27.json'));
       const neshobaTransitionReviewed = ccns.join(',') === '250043,251340'
         && records.every(record => record.historical_manual_proof_files
+          .includes('reconciliation-neshoba-ccn-transition-proof.json'))
+        && records.some(record => record.historical_manual_proof_files
           .includes('reconciliation-neshoba-cms-pos-transition-proof-2026-09-27.json'));
       const neshobaTransitionAction = 'CMS QIES Q1 2026 records acute-care CCN 250043 with a 2025-12-31 termination date and active CAH CCN 251340 from 2026-01-01. Preserve 250043 as historical and inspect only its pre-termination HPT evidence; do not seek a current 250043 file or assign the June 2026 campus MRF to it. Keep the active CAH file-to-CCN assignment unresolved until a current root pointer or publisher statement binds the exact MRF to 251340. The bulk-vs-exact QIES query discrepancy also needs a raw-body refresh when CMS access permits.';
       const qiesTransitionAction = ccns.join(',') === '010110,010779'

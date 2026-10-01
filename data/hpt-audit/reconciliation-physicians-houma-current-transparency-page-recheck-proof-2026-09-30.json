@@ -1,0 +1,61 @@
+{
+  "audit_id": "physicians-houma-current-transparency-page-recheck-2026-09-30",
+  "observed_at": "2026-09-30T20:07:04Z",
+  "ccn": "190241",
+  "facility_name": "PHYSICIANS MEDICAL CENTER",
+  "state": "LA",
+  "source_snapshot_before": "2026-09-30T19:22:32.914Z",
+  "official_page_observations": [
+    {
+      "url": "https://www.tghealthsystem.com/price-transparency/",
+      "browser_title": "Price Transparency | Healthcare Services in Houma, LA",
+      "browser_rendered": true,
+      "page_role": "system-wide price-transparency page",
+      "visible_content": "The page says its files are provided in CSV format, describes annual updates, and lists Physicians Medical Center with a Price Transparency Machine Readable File link.",
+      "linked_file_url": "https://www.tghealthsystem.com/documents/price%20transparency/721275428_physicians-medical-center_standardcharges.1).csv",
+      "access_method": "live in-app browser accessibility tree; current page also retrieved by web reader"
+    },
+    {
+      "url": "https://www.tghealthsystem.com/surgery-centers/physicians-medical-center/patient-pricing-information/",
+      "browser_title": "Patient Pricing Information | Healthcare Services in Houma, LA",
+      "page_role": "facility-level patient pricing page",
+      "visible_content": "The page labels its link as Physicians Medical Center current standard charges in a machine-readable format.",
+      "linked_file_url": "https://www.tghealthsystem.com/images/721275428_physicians-medical-center_standardcharges.1%29.xlsx",
+      "access_method": "current web-reader page retrieval"
+    }
+  ],
+  "current_page_file_retrieval": {
+    "url": "https://www.tghealthsystem.com/documents/price%20transparency/721275428_physicians-medical-center_standardcharges.1).csv",
+    "request": "GET with Range: bytes=0-262143",
+    "http_status": 403,
+    "content_type": "text/html; charset=UTF-8",
+    "content_range": null,
+    "response_bytes": 4549,
+    "response_sha256": "c072c3d2b597a86b1c4bdd4494b18e2ccdb12611bc938129c959cd19056722b6",
+    "browser_navigation": "net::ERR_BLOCKED_BY_CLIENT",
+    "interpretation": "Only a security-challenge HTML response was received; no CSV bytes, CMS metadata, or pricing rows were obtained."
+  },
+  "current_root_pointer_retrieval": {
+    "requested_url": "https://physicianshouma.com/cms-hpt.txt",
+    "redirected_url": "https://www.physicianshouma.com/cms-hpt.txt",
+    "http_status": 403,
+    "content_type": "text/html; charset=UTF-8",
+    "response_bytes": 4549,
+    "response_sha256": "bd11a657dd6c1c64b5b85f02a549e07a93395989f305952efbc6c144fa5c79e7",
+    "interpretation": "The exact recorded hospital-domain pointer route is currently blocked to this client; no current pointer bytes were recovered. The response is transport/security-challenge evidence, not evidence that the pointer is absent or the publisher has failed."
+  },
+  "evidence_delta": {
+    "new": [
+      "A live first-party system-wide price-transparency page now exposes a distinct Physicians Medical Center CSV URL ending in standardcharges.1).csv.",
+      "The current facility-level pricing page still exposes a different XLSX URL and labels it current, creating a first-party page-to-page file-route discrepancy that must be reconciled."
+    ],
+    "rechecked": [
+      "The current exact physicianshouma.com cms-hpt.txt endpoint remains inaccessible to this client; a fresh 403 challenge was observed."
+    ],
+    "not_acquired": [
+      "No bytes from the newly linked CSV or the XLSX were obtained; no CMS version/date, attestation, file structure, or usable charge rows were verified."
+    ]
+  },
+  "disposition_impact": "No promotion or downgrade. CCN 190241 remains unresolved in the frozen 891 cohort; this is a current-source route discovery plus access recheck, not a recovered MRF or compliance determination.",
+  "next_action": "Do not repeat the unchanged challenged URLs until access conditions or publisher links change. Through a permitted public route, retrieve and hash-bind the exact current CSV shown on the system-wide price-transparency page; inspect its identity, Louisiana address, date, literal CMS version, attestation, structure, and usable charges. Compare it with the different XLSX still linked by the facility-level page. Separately obtain content-bearing bytes from the exact physicianshouma.com/cms-hpt.txt pointer or a publisher-confirmed explanation of the current pointer scope. Keep the 2023 CSV historical and make no compliance inference."
+}

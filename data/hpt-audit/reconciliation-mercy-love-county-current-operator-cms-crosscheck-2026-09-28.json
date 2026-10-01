@@ -1,0 +1,81 @@
+{
+  "audit_id": "reconciliation-mercy-love-county-current-operator-cms-crosscheck-2026-09-28",
+  "ccn": "371306",
+  "observed_at": "2026-09-28T17:04:00Z",
+  "purpose": "Reconcile the 2024 tornado-era vacant-building observation with current CMS enrollment and dated first-party operator updates, while independently rechecking the exact HPT pointer after the operator site changed materially.",
+  "cms_enrollment_snapshot": {
+    "dataset_title": "Hospital Enrollments : 2026-08-01",
+    "dataset_id": "aa2e3ead-bbaa-4e71-b59d-a07ac7ed9ba5",
+    "query_url": "https://data.cms.gov/data-api/v1/dataset/aa2e3ead-bbaa-4e71-b59d-a07ac7ed9ba5/data?filter%5BCCN%5D=371306&size=10",
+    "http_status": 200,
+    "response_bytes": 1187,
+    "response_sha256": "2d3b4bbc459b04ff679204c9f04b445a5c48369f7e4d4912750b1564e8485bf3",
+    "record": {
+      "enrollment_id": "O20080530000188",
+      "enrollment_state_field": "OK",
+      "enrollment_state_field_semantics": "State code (Oklahoma), not an active/terminated status value.",
+      "provider_type": "PART A PROVIDER - CRITICAL ACCESS HOSPITAL",
+      "ccn": "371306",
+      "npi": "1649221557",
+      "organization_name": "LOVE COUNTY HEALTH CENTER",
+      "doing_business_as": "MERCY HEALTH LOVE COUNTY",
+      "address": "300 WANDA ST, MARIETTA, OK 73448-1200",
+      "organization_type": "GOVERNMENT",
+      "reh_conversion_flag": "N"
+    },
+    "scope_limit": "The 2026-08-01 enrollment snapshot contains this CCN/NPI/location row. It has no termination date/status field in the returned row and does not establish occupancy of the original tornado-damaged structure."
+  },
+  "first_party_operator_updates": [
+    {
+      "url": "https://www.mercyhealthlovecounty.com/news/view/740",
+      "page_title": "T+2: Where We Stand Two Years After Destructive Tornado",
+      "published": "2026-05-28",
+      "http_status": 200,
+      "bytes": 17505,
+      "sha256": "2b65ae885e4986a554d1b1a16a0326d7b925449ef8d550329d7d1957374795b5",
+      "operator_reported_status": "All pre-tornado medical and social services had been restored except inpatient care; a temporary 2,500-square-foot emergency room had opened in September 2025 with 24-hour service, and replacement-hospital funding/design remained pending."
+    },
+    {
+      "url": "https://www.mercyhealthlovecounty.com/news/view/742",
+      "page_title": "Evening and Weekend x-rays, CT Start August 1, 2026",
+      "published": "2026-07-31",
+      "http_status": 200,
+      "bytes": 5580,
+      "sha256": "60be0cfa45f3330faa7967f87a7926d1abffb258a115f4cf32bd37c0bec611ee",
+      "operator_reported_status": "Starting August 1, 2026, outpatient x-ray and CT hours expand to 7 a.m.–9 p.m. daily; the article describes services at Mercy Health Love County Hospital and its emergency room."
+    }
+  ],
+  "current_official_site_routes": {
+    "homepage": {
+      "url": "https://www.mercyhealthlovecounty.com/",
+      "http_status": 200,
+      "bytes": 101585,
+      "sha256": "5116d2683bf4661c5d20c8f81522bf0027e851b27a2eab1be17990526788fcf3",
+      "content_integrity_note": "The live response is clean HTML and did not contain the SEO-spam text present in a cached web-search rendering.",
+      "price_transparency_or_cms_pointer_text_found": false
+    },
+    "site_directory": {
+      "url": "https://www.mercyhealthlovecounty.com/site_directory",
+      "http_status": 200,
+      "bytes": 7944,
+      "sha256": "0f07a22aee6c29d63a6cbe068840d9145903b78dbffa7083db2700a8ee9882f1",
+      "price_transparency_or_cms_pointer_entry_found": false
+    },
+    "cms_hpt_pointer": {
+      "url": "https://www.mercyhealthlovecounty.com/cms-hpt.txt",
+      "observed_at": "2026-09-28T17:03:23Z",
+      "http_status": 404,
+      "content_type": "text/html",
+      "response_title": "Mercy Health Love County - Errors",
+      "result": "Not Found for /cms-hpt.txt; no pointer body or MRF URL returned."
+    }
+  },
+  "reconciliation": {
+    "historical_observation": "On 2026-09-18, the operator homepage described the original 300 Wanda hospital building as vacant/unusable following the April 27, 2024 tornado and contemplated repair or replacement.",
+    "current_interpretation": "The damaged original inpatient building's status must not be conflated with current hospital/CCN status: current CMS enrollment data retains CCN 371306 at 300 Wanda, and 2026 first-party updates report emergency and outpatient services operating, but inpatient care was still suspended in the May 2026 article. No current HPT pointer or price file was located.",
+    "evidence_gain": "Adds exact-CCN CMS enrollment/NPI/address corroboration and later first-party service-restoration timeline; clarifies the historic vacant-building statement does not establish facility closure.",
+    "hpt_disposition_effect": "none; retain pointer-not-retrieved/unresolved because the exact root pointer is still 404 and no facility MRF was found",
+    "count_effect": "none",
+    "next_action": "Keep CCN 371306 separate from sibling Mercy facilities. Seek a publisher-provided current pricing-page URL, corrected root cms-hpt.txt, or authorized current CSV/JSON; then verify exact CCN/campus scope, address/state, metadata and usable bytes. Do not infer closure, file absence or compliance from the missing pointer, and do not assign a sibling Mercy MRF."
+  }
+}

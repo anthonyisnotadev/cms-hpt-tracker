@@ -9,6 +9,7 @@ const crypto = require('node:crypto');
 const root = path.resolve(__dirname, '../../..');
 const audit = path.join(root, 'data/hpt-audit');
 const proof = require(path.join(audit, 'reconciliation-grover-dils-source-review.json'));
+const currentPortalProof = require(path.join(audit, 'reconciliation-grover-dils-current-pricing-portal-route-audit-2026-09-27.json'));
 
 test('Grover Dils keeps the current ZIP, legacy CSV and portal distinct', () => {
   const pointer = fs.readFileSync(path.join(root, proof.retained_pointer_artifact));
@@ -23,10 +24,18 @@ test('Grover Dils keeps the current ZIP, legacy CSV and portal distinct', () => 
   assert.equal(proof.pointer_file_browser_error_code, 'ERR_NAME_NOT_RESOLVED');
   assert.equal(proof.home_portal_export_http_status, 204);
   assert.equal(proof.current_pointer_file_bytes_verified, false);
+  assert.equal(currentPortalProof.pointer_sha256, proof.pointer_sha256);
+  assert.match(currentPortalProof.official_homepage_price_transparency_link, /^https:\/\/rca\.elevatepfs\.com\/ptapp\//);
+  assert.equal(currentPortalProof.disposition, 'unresolved-current-portal-found-pointer-mrf-not-recovered');
+  assert.match(currentPortalProof.portal_browser_observation, /Selecting Grover C Dils Medical Center in the Facility selector exposes an Export > All data menu item/);
+  assert.match(currentPortalProof.portal_browser_observation, /did not produce a browser download, a navigable file URL, or file bytes/);
+  assert.equal(currentPortalProof.third_party_lead.classification, 'unverified-third-party-route-lead');
+  assert.match(currentPortalProof.next_action, /permitted publisher-supported path/);
   const row = require(path.join(audit, 'unresolved-investigation-worklist.json')).records
     .find(item => item.ccn === '291312');
   assert.equal(row.reviewed_follow_up, true);
   assert.equal(row.current_disposition, 'pointer-facility-match-unresolved');
   assert.equal(row.candidate_file_recorded, true);
-  assert.equal(row.next_action, proof.next_action);
+  assert.equal(row.latest_review_at, '2026-09-27T22:16:00Z');
+  assert.equal(row.next_action, currentPortalProof.next_action);
 });

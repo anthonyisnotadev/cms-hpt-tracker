@@ -1,0 +1,47 @@
+{
+  "audit_id": "reconciliation-highlands-system-page-route-proof-2026-09-28",
+  "observed_at": "2026-09-28T07:42:30Z",
+  "ccn": "010061",
+  "facility": "Highlands Medical Center, Scottsboro, Alabama",
+  "prior_route": "https://highlandsmedcenter.com/",
+  "new_first_party_system_route": "https://hh.health/",
+  "first_party_sources": [
+    {
+      "url": "https://hh.health/highlands-medical-center/",
+      "source_kind": "official HH Health facility page, search indexed",
+      "observed_content": "Identifies Highlands Medical Center and address 380 Woods Cove Road, Scottsboro, AL 35768.",
+      "retrieval_limitation": "Search reader returned the indexed official page text; live browser navigation to hh.health failed DNS."
+    },
+    {
+      "url": "https://hh.health/patients-visitors/price-transparency/",
+      "source_kind": "official HH Health price-transparency page, opened via official Highlands page's Price Transparency link",
+      "observed_content": "States files are available by hospital; names Highlands Medical Center; its Standard Charge File link resolves to https://hh.health/wp-content/uploads/872027148_Highlands-Medical-Center_standardcharges.csv.",
+      "observed_page_last_updated": "2026-08-20",
+      "retrieval_limitation": "Web search reader rendered page content; direct browser and HTTP navigation during this observation failed DNS for hh.health. No CSV bytes obtained."
+    }
+  ],
+  "current_host_checks": {
+    "old_site_root_pointer": {
+      "url": "https://highlandsmedcenter.com/cms-hpt.txt",
+      "direct_http_result": "DNS resolution failure",
+      "browser_result": "Earlier 2026-09-26 record reports ERR_NAME_NOT_RESOLVED; not repeated here."
+    },
+    "new_system_root_pointer": {
+      "url": "https://hh.health/cms-hpt.txt",
+      "web_reader_result": "Not accessible to reader",
+      "direct_http_result": "DNS resolution failure for hh.health during this observation"
+    },
+    "linked_csv": {
+      "url": "https://hh.health/wp-content/uploads/872027148_Highlands-Medical-Center_standardcharges.csv",
+      "web_reader_result": "Not accessible to reader; browser reported ERR_NAME_NOT_RESOLVED",
+      "direct_http_result": "DNS resolution failure for hh.health",
+      "http_status": null,
+      "bytes_retrieved": 0,
+      "metadata_verified": false
+    }
+  },
+  "interpretation": "This is new primary-publisher route evidence surfaced from the HH Health system's official Highlands Medical Center and price-transparency pages: the system now lists a Highlands-specific standard-charge CSV under the new hh.health host. It corrects the next investigative lead from the former highlandsmedcenter.com host to the system's new host. The returned page text does not establish the CSV's bytes, CMS template, identity metadata, pointer linkage, or current accessibility. DNS errors are transport failures and not evidence that the file is absent. Do not promote CCN 010061 or import pricing without direct pointer/file retrieval and identity/metadata review.",
+  "disposition": "official-system-page-links-facility-specific-csv-new-host-transport-unresolved",
+  "unresolved_count_change": 0,
+  "next_action": "After ordinary DNS/browser access to hh.health recovers, retrieve https://hh.health/cms-hpt.txt and the exact linked CSV with bounded bytes; verify pointer declaration, response and file signature, Highlands name, 380 Woods Cove Road/Scottsboro/AL identity, date/version, required CMS data fields, and usable parse. Do not repeat requests until DNS or source state changes."
+}

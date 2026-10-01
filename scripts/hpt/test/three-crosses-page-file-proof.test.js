@@ -40,9 +40,9 @@ test('Three Crosses page-linked CSV remains unresolved with license-state confli
   assert.equal(fullProof.header.license_header, 'license_number|CA');
   assert.equal(fullProof.header.license_value, '3699|NM');
   const row = loadReviewedView(audit).compliance.find(item => item.ccn === '320091');
-  assert.equal(row.finding, 'pointer-links-html-download-page-with-file');
+  assert.equal(row.finding, 'not-assessed-nationwide-pointer-facility-match-unresolved');
   assert.equal(row.mrf_url, proof.pricing_page_file_url);
-  const worklist = require(path.join(audit, 'standing-evidence-followup-worklist.json')).records
+  const worklist = require(path.join(audit, 'unresolved-investigation-worklist.json')).records
     .find(item => item.ccn === '320091');
   assert.equal(worklist.reviewed_follow_up, true);
   assert.match(worklist.next_action, /reconcile the CSV license state CA/);

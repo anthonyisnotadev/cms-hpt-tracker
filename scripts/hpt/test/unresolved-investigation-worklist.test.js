@@ -17,13 +17,31 @@ test('unresolved investigation worklist covers each live CCN with a specific evi
   const fresh = build(reconciliation, verification);
   assert.deepEqual(saved.summary, fresh.summary);
   assert.deepEqual(saved.records, fresh.records);
+  assert.ok(fresh.records.every(row => row.next_action !== 'Retain as verified current MRF and recheck on the next pointer update.'),
+    'an unresolved current disposition must not inherit the stale generic verified-MRF instruction');
+  assert.notEqual(saved.records.find(row => row.ccn === '010019')?.latest_review_at,
+    '2026-09-29T15:02:00Z', 'invalid original future time must not be reactivated by nested-date discovery');
   assert.equal(saved.records.length, reconciliation.records.filter(row =>
-    row.workstream === 'genuinely-unresolved-investigation').length);
+    row.workstream === 'genuinely-unresolved-investigation'
+      && !String(verification.records.find(item => item.ccn === row.ccn)?.disposition || '').startsWith('scope-exempt')).length);
+  assert.ok(!saved.records.some(row => row.ccn === '021309'), 'reviewed scope-exempt CCNs are excluded from the unresolved action queue');
+  assert.ok(!saved.records.some(row => row.ccn === '370171'), 'reviewed scope-exempt CCNs are excluded from the unresolved action queue');
   assert.equal(new Set(saved.records.map(row => row.ccn)).size, saved.records.length);
   assert.equal(Object.values(saved.summary.by_tier).reduce((sum, count) => sum + count, 0), saved.records.length);
   assert.ok(saved.records.every(row => row.evidence_gate && row.next_action && row.next_action.length > 20));
   assert.ok(saved.records.every(row => typeof row.candidate_file_recorded === 'boolean'));
+  const helenKeller = saved.records.find(row => row.ccn === '010019');
+  assert.ok(helenKeller, 'Helen Keller remains in the unresolved worklist until file bytes are validated');
+  assert.equal(helenKeller.investigation_tier, 1);
+  assert.equal(helenKeller.evidence_gate, 'exact-file-access');
+  assert.match(helenKeller.next_action, /Do not retry the unchanged hh\.health route until DNS\/access changes/);
+  assert.match(helenKeller.next_action, /After recovery, retrieve https:\/\/hh\.health\/wp-content\/uploads\/472323163_hellen-keller-hospital_standardcharges\.csv/);
+  assert.match(helenKeller.next_action, /hh\.health\/wp-content\/uploads\/472323163_hellen-keller-hospital_standardcharges\.csv/);
+  assert.match(helenKeller.next_action, /Do not use the legacy Huntsville parent-domain URL, which returned 404/);
   assert.equal(saved.records.find(row => row.ccn === '190241').candidate_file_recorded, true);
+  const butler = saved.records.find(row => row.ccn === '390168');
+  assert.match(butler.next_action, /Do not retry the unchanged direct request or in-app browser URL/);
+  assert.match(butler.next_action, /publisher-provided copy or a materially different authorized byte-serving route/);
   const parkCenter = saved.records.find(row => row.ccn === '154060');
   const parkCenterEvidence = JSON.parse(read('reconciliation-manual-access-observations.json'))
     .records.find(row => row.ccn === '154060');
@@ -33,16 +51,61 @@ test('unresolved investigation worklist covers each live CCN with a specific evi
   assert.equal(parkCenterEvidence.pointer_location_names.length, 11);
   assert.ok(parkCenterEvidence.pointer_location_names.every(name => !/Park Center/i.test(name)));
   assert.match(parkCenter.next_action, /do not borrow any of the 11 other Parkview location files/);
-  assert.ok(!/https?:\/\//i.test(JSON.stringify(saved.records)));
+  const antelopeValley = saved.records.find(row => row.ccn === '050056');
+  const antelopeValleyProof = JSON.parse(read('reconciliation-antelope-valley-pointer-page-crosswalk-proof-2026-09-30.json'));
+  assert.equal(antelopeValley.current_disposition, 'pointer-facility-match-unresolved');
+  assert.deepEqual(antelopeValley.reviewed_sources, ['manual-access']);
+  assert.equal(antelopeValley.latest_review_at, antelopeValleyProof.observed_at);
+  assert.match(antelopeValley.next_action, /Preserve the 2026-09-06 standing compliant-observed finding/);
+  assert.match(antelopeValley.next_action, /Do not upgrade or discard the standing finding/);
+  const lifebrite = saved.records.find(row => row.ccn === '111314');
+  const lifebriteEvidence = JSON.parse(read('reconciliation-manual-access-observations.json'))
+    .records.find(row => row.ccn === '111314');
+  const lifebritePageReview = JSON.parse(read('reconciliation-lifebrite-early-live-pricing-page-review-2026-09-28.json'));
+  assert.equal(lifebrite.current_disposition, 'pointer-facility-match-unresolved');
+  assert.equal(lifebrite.latest_review_at, lifebritePageReview.observed_at);
+  assert.match(lifebriteEvidence.latest_live_pricing_page_review_2026_09_28.pricing_scope, /does not account for insurance-negotiated rates/);
+  assert.equal(lifebriteEvidence.latest_live_pricing_page_review_2026_09_28.link_target, lifebritePageReview.live_page_observations.download_link_target);
+  assert.match(lifebrite.next_action, /Do not repeat retrieval or format analysis of the same unchanged XLSX/);
+  assert.match(lifebrite.next_action, /corrected current pointer\/file or publisher-provided CMS-format MRF/);
+  const griffin = saved.records.find(row => row.ccn === '070031');
+  const griffinEvidence = JSON.parse(read('reconciliation-manual-access-observations.json'))
+    .records.find(row => row.ccn === '070031');
+  const griffinPortalReview = JSON.parse(read('reconciliation-griffin-negotiated-rates-portal-terms-review-2026-09-28.json'));
+  assert.equal(griffin.current_disposition, 'file-custom-workbook-review');
+  assert.equal(griffin.latest_review_at, griffinPortalReview.observed_at);
+  assert.equal(griffinEvidence.latest_negotiated_rates_portal_terms_review_2026_09_28.proof_file,
+    'reconciliation-griffin-negotiated-rates-portal-terms-review-2026-09-28.json');
+  assert.match(griffin.next_action, /Only after user authorization to accept the vendor terms/);
+  assert.match(griffin.next_action, /inspect whether the portal exposes a direct machine-readable negotiated-rates file/);
+  const arbour = saved.records.find(row => row.ccn === '224013');
+  const arbourCandidate = JSON.parse(read('reconciliation-arbour-third-party-mrf-candidate-2026-09-30.json'));
+  assert.ok(arbour.next_action.includes(arbourCandidate.discovery_source.exact_file_url));
+  assert.match(arbour.next_action, /first-party Arbour\/UHS confirmation/);
+  const recordsWithoutRouteEvidence = saved.records.filter(row => !['010019', '131314', '224013'].includes(row.ccn));
+  assert.ok(!/https?:\/\//i.test(JSON.stringify(recordsWithoutRouteEvidence)),
+    'exact URLs are allowed only for current facility-specific route actions');
   for (const name of ['nationwide-reconciliation.json', 'nationwide-verification.json',
     'reconciliation-independence-health-access-proof.json',
+    'reconciliation-antelope-valley-pointer-page-crosswalk-proof-2026-09-30.json',
+    'reconciliation-antelope-valley-manual-access-observation-2026-09-30.json',
     'reconciliation-coal-county-page-file-proof.json',
     'reconciliation-reedsburg-pointer-case-proof.json',
     'reconciliation-houston-county-address-conflict-proof.json',
     'reconciliation-creekhealth-sibling-exclusion-proof.json',
     'reconciliation-grand-view-page-file-lead-proof.json',
     'reconciliation-avera-three-site-access-proof.json',
-    'reconciliation-summit-casper-site-proof.json']) {
+    'reconciliation-summit-casper-site-proof.json',
+    'reconciliation-roosevelt-general-current-pricing-route-review-2026-09-27.json',
+    'reconciliation-carrus-lakeside-successor-pricing-scope-review-2026-09-27.json',
+    'reconciliation-alaska-psychiatric-institute-state-scope-review-2026-09-27.json',
+    'reconciliation-howard-university-third-party-exact-file-lead-2026-09-27.json',
+    'reconciliation-howard-university-downloaded-file-review-2026-09-27.json',
+    'reconciliation-minidoka-procedureradar-current-mrf-link-conflict-2026-09-27.json',
+    'reconciliation-centro-medico-del-noreste-publisher-pricing-page-scope-2026-09-29.json',
+    'reconciliation-lifebrite-early-live-pricing-page-review-2026-09-28.json',
+    'reconciliation-griffin-negotiated-rates-portal-terms-review-2026-09-28.json',
+    'reconciliation-rolling-hills-tennessee-domain-lead-2026-09-28.json']) {
     assert.equal(saved.source_sha256[name], crypto.createHash('sha256').update(read(name)).digest('hex'));
   }
 });
@@ -59,6 +122,7 @@ test('manual rechecks cannot hide behind an older top-level observation timestam
       return out;
     }
     for (const [key, nested] of Object.entries(value)) {
+      if (/^original_recorded_(?:observed_at|timestamp)$/i.test(key)) continue;
       if (typeof nested === 'string' && /(observed|reviewed|checked|updated|retrieved|recheck|at$)/i.test(key)
         && /^\d{4}-\d\d-\d\dT/.test(nested)) out.push(nested);
       else if (nested && typeof nested === 'object') collectDates(nested, out);
@@ -78,8 +142,118 @@ test('manual rechecks cannot hide behind an older top-level observation timestam
   assert.deepEqual(violations, []);
 });
 
+test('newest nested manual recheck controls action without erasing older pointer evidence', () => {
+  const reconciliation = JSON.parse(read('nationwide-reconciliation.json'));
+  const row = reconciliation.records.find(record => record.ccn === '360025');
+  assert.equal(row.latest_observed_at, '2026-09-27T22:42:00Z');
+  assert.equal(row.manual_access_observation.latest_recheck_2026_09_27.page_file_status, 403);
+  assert.equal(row.manual_access_observation.latest_recheck_action_observed_at, '2026-09-27T22:42:00Z');
+  assert.match(row.manual_access_observation.next_action, /Do not repeat the same blocked clients/);
+  assert.equal(row.manual_access_observation.latest_recheck_2026_09_25.direct_response_sha256,
+    '774303f06088855d3d2f15be04c82d01f84714157e85c33849277d30c6eb0d71');
+});
+
+test('Roosevelt current broken price route stays distinct from its historical charge-master PDF', () => {
+  const reconciliation = JSON.parse(read('nationwide-reconciliation.json'));
+  const record = reconciliation.records.find(item => item.ccn === '320084');
+  const route = JSON.parse(read('reconciliation-roosevelt-general-current-pricing-route-review-2026-09-27.json'));
+  const queued = build(reconciliation, JSON.parse(read('nationwide-verification.json'))).records
+    .find(item => item.ccn === '320084');
+  assert.equal(route.ccn, '320084');
+  assert.equal(route.current_hospital_charges_route_web_reader_result, '404 Not Found');
+  assert.equal(route.mrf_bytes_retrieved, false);
+  assert.equal(record.latest_observed_at, route.observed_at);
+  assert.equal(record.manual_access_observation.facility_file_url,
+    'https://www.myrgh.org/images/CDM-Price-Update-eff-07-01-2025-Website.pdf');
+  assert.match(record.next_action, /preserve the July 2025 PDF only as a charge-master lead/);
+  assert.equal(queued.current_disposition, 'file-custom-workbook-review');
+  assert.equal(queued.latest_review_at, route.observed_at);
+  assert.match(queued.next_action, /Do not repeat these same blocked URLs/);
+});
+
+test('Carrus Lakeside successor pricing links do not establish a Bristow CCN mapping', () => {
+  const reconciliation = JSON.parse(read('nationwide-reconciliation.json'));
+  const verification = JSON.parse(read('nationwide-verification.json'));
+  const proof = JSON.parse(read('reconciliation-carrus-lakeside-successor-pricing-scope-review-2026-09-27.json'));
+  const record = reconciliation.records.find(item => item.ccn === '370246');
+  const queued = build(reconciliation, verification).records.find(item => item.ccn === '370246');
+  assert.equal(proof.pricing_page_file_links.length, 5);
+  assert.ok(proof.pricing_page_file_links.every(file => file.head_status === 200 && file.content_type === 'application/json'));
+  assert.ok(proof.pricing_page_file_links.every(file => !file.linked_filename.startsWith('370246_')));
+  assert.equal(proof.file_bodies_retrieved, false);
+  assert.equal(record.latest_observed_at, proof.observed_at);
+  assert.equal(record.manual_access_observation.latest_pricing_scope_review_2026_09_27.ccn_370246_mapping_found, false);
+  assert.equal(queued.current_disposition, 'pointer-facility-match-unresolved');
+  assert.match(queued.next_action, /Do not infer coverage from shared ownership/);
+});
+
+test('Alaska Psychiatric Institute state ownership alone does not create a scope exemption', () => {
+  const reconciliation = JSON.parse(read('nationwide-reconciliation.json'));
+  const verification = JSON.parse(read('nationwide-verification.json'));
+  const proof = JSON.parse(read('reconciliation-alaska-psychiatric-institute-state-scope-review-2026-09-27.json'));
+  const record = reconciliation.records.find(item => item.ccn === '024002');
+  const queued = build(reconciliation, verification).records.find(item => item.ccn === '024002');
+  assert.match(proof.cms_guidance_observation, /state-owned\/operated facilities/);
+  assert.match(proof.cms_guidance_observation, /exclusively to individuals in the custody of penal authorities/);
+  assert.match(proof.official_admission_scope, /voluntarily or involuntarily/);
+  assert.equal(proof.mrf_bytes_retrieved, false);
+  assert.equal(proof.disposition, 'pointer-not-retrieved');
+  assert.equal(record.latest_observed_at, proof.observed_at);
+  assert.equal(queued.current_disposition, 'pointer-not-retrieved');
+  assert.match(queued.next_action, /Keep API in the ordinary in-scope MRF assessment/);
+  assert.match(queued.next_action, /do not treat the 2025 Facility Rates PDF as an MRF/);
+});
+
+test('South Oaks third-party raw-file link conflicts with Zucker Hillside filename and stays unresolved', () => {
+  const reconciliation = JSON.parse(read('nationwide-reconciliation.json'));
+  const verification = JSON.parse(read('nationwide-verification.json'));
+  const proof = JSON.parse(read('reconciliation-south-oaks-third-party-file-conflict-review-2026-09-27.json'));
+  const publisherProof = JSON.parse(read('reconciliation-south-oaks-publisher-mrf-development-status-2026-09-28.json'));
+  const record = reconciliation.records.find(item => item.ccn === '334027');
+  const queued = build(reconciliation, verification).records.find(item => item.ccn === '334027');
+  assert.match(proof.third_party_lead.linked_file_url, /Zucker_Hillside_Hospital_Hospital_StandardCharges\.zip$/);
+  assert.equal(proof.official_identity.finding.includes('no South Oaks-specific entry'), true);
+  assert.equal(proof.third_party_lead.limitation.includes('No archive bytes'), true);
+  assert.equal(proof.disposition, 'pointer-facility-match-unresolved');
+  assert.equal(publisherProof.official_price_transparency_page.observation.includes('file for South Oaks is in development'), true);
+  assert.equal(publisherProof.official_campus_root_pointer_recheck.south_oaks_entry_observed, false);
+  assert.equal(record.latest_observed_at, publisherProof.observed_at);
+  assert.equal(record.manual_access_observation.publisher_status_recheck_2026_09_28.proof_file,
+    'reconciliation-south-oaks-publisher-mrf-development-status-2026-09-28.json');
+  assert.equal(queued.current_disposition, 'pointer-facility-match-unresolved');
+  assert.match(queued.next_action, /Do not repeat the unchanged generic pointer/);
+  assert.match(queued.next_action, /only after a publisher source or page-content change/);
+});
+
+test('Howard University complete publisher-hosted file stays unattributed due MD/DC scope conflict', () => {
+  const reconciliation = JSON.parse(read('nationwide-reconciliation.json'));
+  const verification = JSON.parse(read('nationwide-verification.json'));
+  const proof = JSON.parse(read('reconciliation-howard-university-third-party-exact-file-lead-2026-09-27.json'));
+  const fileReview = JSON.parse(read('reconciliation-howard-university-downloaded-file-review-2026-09-27.json'));
+  const record = reconciliation.records.find(item => item.ccn === '090003');
+  const queued = build(reconciliation, verification).records.find(item => item.ccn === '090003');
+  assert.match(proof.third_party_page.raw_file_url, /^https:\/\/huhealthcare\.com\/app\/files\/public\//);
+  assert.equal(proof.bounded_requests[0].http_status, 403);
+  assert.equal(proof.bounded_requests[1].http_status, 403);
+  assert.equal(proof.bounded_requests[1].response_bytes, 529);
+  assert.equal(proof.complete_browser_download_review.complete_file_downloaded, true);
+  assert.equal(fileReview.file_integrity.bytes, 18190345);
+  assert.equal(fileReview.file_integrity.pricing_rows, 109782);
+  assert.equal(fileReview.file_integrity.data_rows_with_wrong_column_count, 0);
+  assert.equal(fileReview.observed_metadata.license_header, 'license_number|MD');
+  assert.equal(fileReview.observed_metadata.maryland_rate_setting_narrative_present, true);
+  assert.equal(fileReview.validation.official_cms_pointer_mapping_obtained, false);
+  assert.match(proof.disposition_effect, /No CCN attribution or verification promotion/);
+  assert.equal(record.latest_observed_at, proof.observed_at);
+  assert.equal(record.manual_access_observation.latest_exact_third_party_file_lead_2026_09_27.file_bytes_retrieved, true);
+  assert.match(record.manual_access_observation.latest_exact_third_party_file_lead_2026_09_27.result, /material scope conflict/);
+  assert.equal(queued.current_disposition, 'pointer-not-retrieved');
+  assert.match(queued.next_action, /Do not retry unchanged blocked routes/);
+});
+
 test('Grand View and Avera source reviews narrow four gates without overstating file verification', () => {
   const reconciliation = JSON.parse(read('nationwide-reconciliation.json'));
+  const reconciliationByCcn = new Map(reconciliation.records.map(row => [row.ccn, row]));
   const verification = JSON.parse(read('nationwide-verification.json'));
   const rows = new Map(build(reconciliation, verification).records.map(row => [row.ccn, row]));
   const grandView = rows.get('390057');
@@ -97,9 +271,15 @@ test('Grand View and Avera source reviews narrow four gates without overstating 
     assert.equal(row.evidence_gate, 'exact-file-access-and-campus-attribution');
     assert.deepEqual(row.reviewed_sources, ['manual-access', 'avera-access-proof']);
     assert.equal(row.candidate_file_recorded, true);
-    assert.match(row.next_action, /Do not repeat the denied browser request/);
+    assert.match(row.next_action, /Do not (?:repeat|retry)/i);
+    assert.equal(reconciliationByCcn.get(ccn).next_action, row.next_action);
   }
-  assert.match(rows.get('431308').next_action, /202 J Ave nursing site against the 200 J Ave hospital/);
+  assert.match(rows.get('431308').next_action, /200 J Ave hospital/);
+  assert.match(rows.get('431308').next_action, /202 J Ave nursing-site label/);
+  assert.match(rows.get('431313').next_action, /355-byte HTML 404/);
+  assert.match(rows.get('431313').next_action, /Do not inherit Avera or sibling facility evidence/);
+  assert.match(rows.get('431318').next_action, /Bowdle-specific standard-charges file/);
+  assert.match(rows.get('431318').next_action, /Do not treat the estimator or a shared Avera file as the MRF/);
   const changed = structuredClone(verification);
   changed.records.find(row => row.ccn === '390057').pointer_corpus_sha256 = 'changed';
   changed.records.find(row => row.ccn === '431308').pointer_corpus_sha256 = 'changed';
@@ -122,7 +302,13 @@ test('Independence Health access review narrows remaining unresolved gates witho
     assert.equal(row.nationwide_disposition, 'pointer-facility-match-unresolved');
     assert.deepEqual(row.reviewed_sources, ['manual-access', 'independence-access-proof']);
     assert.equal(row.candidate_file_recorded, true);
-    assert.match(row.next_action, /byte-backed header/);
+    if (ccn === '390168') {
+      assert.match(row.next_action, /publisher-provided copy or a materially different authorized byte-serving route/);
+      assert.match(row.next_action, /verify Butler identity\/address, Pennsylvania license state, declared date\/version and usable rows/);
+      assert.match(row.next_action, /Do not retry the unchanged direct request/i);
+    } else {
+      assert.match(row.next_action, /byte-backed header/);
+    }
   }
   assert.equal(rows.get('390168').evidence_gate, 'file-access-and-url-equivalence');
   const tampered = structuredClone(verification);

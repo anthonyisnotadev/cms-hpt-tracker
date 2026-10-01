@@ -30,7 +30,7 @@ test('Lake Huron later exact root and file recheck corrects only the standing te
   assert.equal(parsed.mrfLicenseState, 'MI');
   assert.equal(parsed.declaredLastUpdated, '2026-09-01');
   assert.equal(parsed.cmsVersion, '3.0');
-  assert.equal(row.finding, 'mrf-template-version-noncanonical');
+  assert.equal(row.finding, 'compliant-observed');
   assert.equal(row.mrf_url, proof.mrf_url);
   assert.equal(nationwide.observation_role, 'superseded-retry');
   assert.equal(reconciliation.workstream, 'consistent');
@@ -41,7 +41,7 @@ test('Lake Huron later exact root and file recheck corrects only the standing te
   const data = JSON.parse(html.slice(start + open.length, end));
   const trackerRow = data.rows.find(item => item[0] === proof.ccn);
   assert.equal(trackerRow[8], proof.mrf_url);
-  assert.equal(data.dict.findings[trackerRow[5]], 'mrf-template-version-noncanonical');
+  assert.equal(data.dict.findings[trackerRow[5]], 'compliant-observed');
   const altered = structuredClone(resolution);
   altered.evidence.expected_version = '3.0';
   assert.throws(() => applyResolutions([altered.base], [], [], [altered]), /lacks current, pointer-linked identity/);

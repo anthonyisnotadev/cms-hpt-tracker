@@ -32,7 +32,7 @@ test('same-campus queue is complete, source-bound and does not infer CCN scope',
   assert.ok(bullockQies, 'earlier effective-dated transition proof remains in history');
   const wiregrass = saved.groups.find(group => group.ccns.includes('010062'));
   assert.deepEqual(wiregrass.ccns, ['010062', '011309']);
-  assert.equal(wiregrass.records.find(row => row.ccn === '010062').workstream, 'verification-proof-gap');
+  assert.equal(wiregrass.records.find(row => row.ccn === '010062').workstream, 'consistent');
   assert.equal(wiregrass.priority, 1);
   assert.match(wiregrass.next_action, /Confirm primary CMS enrollment\/status/);
   const neshoba = saved.groups.find(group => group.ccns.includes('250043'));

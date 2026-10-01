@@ -7,7 +7,7 @@ function resolutionObservedAt(resolution) {
 function reviewedResolutionSupersedes(resolution, nationwideObservedAt, applied = true) {
   if (!applied || !resolution) return false;
   // A domain-only correction does not resolve the current pointer or file.
-  if (resolution.action === 'correct-site') return false;
+  if (resolution.action === 'correct-site' || resolution.action === 'scope-review-pending') return false;
   const reviewed = Date.parse(resolutionObservedAt(resolution));
   // An undated generated coverage gap cannot outrank an applied, dated review.
   // This commonly occurs immediately after a resolution changes the standing
@@ -17,9 +17,54 @@ function reviewedResolutionSupersedes(resolution, nationwideObservedAt, applied 
   return Number.isFinite(reviewed) && Number.isFinite(observed) && reviewed >= observed;
 }
 
+// A resolution that cites the exact pointer bytes, file URL/hash, identity
+// review and observation timestamp adjudicates that observation; it does not
+// supersede itself merely because timestamps have second-level precision.
+function reviewedResolutionIsSameObservation(resolution, observation, manualObservation, applied = true) {
+  const evidence = resolution?.evidence;
+  return Boolean(applied
+    && ['replace', 'replace-observation'].includes(resolution?.action)
+    && evidence?.identity === 'corroborated'
+    && evidence.checked_at
+    && evidence.checked_at === observation?.observed_at
+    && evidence.pointerSha256 === observation?.pointer_corpus_sha256
+    && evidence.url === observation?.mrf_url
+    && /^[a-f0-9]{64}$/i.test(String(evidence.fileSha256 || ''))
+    && evidence.fileSha256 === manualObservation?.file_sha256
+    && manualObservation?.manual_identity_gate === 'current-root-pointer-exact-file-full-bytes-header-name-address-state-date-attestation-agree');
+}
+
+// A later pointer fetch can be a real refresh yet still contain no new
+// evidence. If an applied, identity-correlated review already binds the same
+// pointer bytes to the same MRF URL and a file hash, an incomplete parser retry
+// of that exact pair must not reopen or erase the reviewed disposition.
+function sameResolvedPointerRetry(resolution, observation, applied = true) {
+  const evidence = resolution?.evidence;
+  const nonContradictoryRetry = new Set([
+    'pointer-facility-match-unresolved',
+    'pointer-linked-file-not-probed',
+    'pointer-linked-file-review-pending',
+    'pointer-discovery-incomplete',
+    'pointer-not-retrieved',
+    'mrf-request-unsuccessful'
+  ]).has(String(observation?.disposition || ''));
+  return Boolean(applied && ['replace', 'replace-observation'].includes(resolution?.action)
+    && nonContradictoryRetry
+    && evidence?.identity === 'corroborated'
+    && /^[a-f0-9]{64}$/i.test(String(evidence.fileSha256 || ''))
+    && /^[a-f0-9]{64}$/i.test(String(evidence.pointerSha256 || ''))
+    && evidence.pointerSha256 === observation?.pointer_corpus_sha256
+    && evidence.pointerUrl === observation?.pointer_url
+    && evidence.url === observation?.mrf_url);
+}
+
 function laterManualObservationRequiresFollowUp(observation, nationwideObservedAt, resolution, applied = true) {
   if (!observation?.disposition || !observation.next_action) return false;
-  const manualTime = Date.parse(observation.observed_at);
+  // latestManualObservation() preserves the source row's original timestamp
+  // while surfacing a newer nested recheck action. Compare the nested event
+  // timestamp when present, or reconciliation can incorrectly prefer a
+  // generic older action over the actual current follow-up.
+  const manualTime = Date.parse(observation.latest_recheck_action_observed_at || observation.observed_at);
   const nationwideTime = Date.parse(nationwideObservedAt);
   const resolutionTime = applied && resolution ? Date.parse(resolutionObservedAt(resolution)) : NaN;
   return Number.isFinite(manualTime)
@@ -29,12 +74,18 @@ function laterManualObservationRequiresFollowUp(observation, nationwideObservedA
 
 const STRONG_STANDING_FINDINGS = new Set([
   'compliant-observed', 'compliant-date-unverified', 'mrf-stale-over-365-days',
-  'old-template-version', 'mrf-license-state-field-conflicts-facility',
+  'old-template-version', 'mrf-facility-identity-unresolved',
+  'linked-mrf-header-unmatched', 'pointer-facility-match-unresolved',
+  'pointer-linked-file-not-probed', 'pointer-linked-file-review-pending',
+  'file-custom-workbook-review', 'selected-file-only-in-earlier-pointer-version',
+  'mrf-license-state-field-conflicts-facility',
   'mrf-address-field-conflicts-facility', 'mrf-template-version-noncanonical',
+  'mrf-v3-file-validation-pending',
   'mrf-custom-workbook-metadata-unverified',
   'pricing-page-links-older-mrf-than-pointer',
   'pointer-http-client-error-page-file-found',
   'official-page-mrf-root-pointer-unavailable',
+  'root-pointer-html-page-with-official-page-file',
   'root-pointer-omits-facility-page-file-found',
   'pointer-links-older-mrf-than-source-page',
   'pointer-links-different-facility-mrf-source-page-file',
@@ -52,6 +103,24 @@ const STRONG_STANDING_FINDINGS = new Set([
 function standingEvidenceRetained(priorFinding, disposition) {
   return STRONG_STANDING_FINDINGS.has(String(priorFinding || ''))
     && !/^verified-|^scope-exempt/.test(String(disposition || ''));
+}
+
+// Dispositions where the newer observation says nothing about the facility or
+// file itself: the client could not reach or finish reading the source.
+const ACCESS_ONLY_DISPOSITIONS = new Set([
+  'mrf-request-unsuccessful', 'pointer-access-denied-to-client', 'pointer-discovery-incomplete'
+]);
+
+// A retained finding is an "access retry" only when the newer observation is
+// transport-only and nothing else (identity, reviewed follow-up, manual
+// recheck) keeps the row open. Every other retained row needs a person to
+// weigh contrary or ambiguous evidence.
+function standingFollowUpKind(row) {
+  const issues = row?.issues || [];
+  return issues.length === 1
+    && issues[0] === 'standing-evidence-retained-review-new-observation'
+    && ACCESS_ONLY_DISPOSITIONS.has(String(row.proposed_disposition || ''))
+    ? 'access-retry' : 'evidence-review';
 }
 
 function isSupportedIdentityUncertainty(resolution) {
@@ -103,6 +172,7 @@ function historicalChanges(current, prior) {
 }
 
 function reconciliationWorkstream(issues, supportedIdentityUncertainty = false, supportedBrowserAddressConflict = false) {
+  if (issues.includes('publisher-template-version-correction-pending')) return 'genuinely-unresolved-investigation';
   if (supportedIdentityUncertainty || supportedBrowserAddressConflict) return 'supported-uncertainty-monitor';
   if (issues.includes('quarantined-identity')) return 'identity-quarantine';
   if (issues.includes('latest-check-unresolved')) return 'genuinely-unresolved-investigation';
@@ -127,6 +197,7 @@ function reconciliationWorkstream(issues, supportedIdentityUncertainty = false, 
   // actionable instead of allowing it to fall into an untracked discrepancy
   // stream when byte proof is later backfilled.
   if (issues.includes('verified-summary-license-state-conflict')) return 'standing-evidence-follow-up';
+  if (issues.includes('verified-template-version-unobserved-follow-up')) return 'standing-evidence-follow-up';
   if (issues.some(issue => /^verified-summary-missing-(file-address|state-evidence)$/.test(issue))) return 'standing-evidence-follow-up';
   if (issues.includes('proposed-finding-differs-from-standing')) return 'standing-finding-discrepancy';
   return issues.length ? 'other-reconciliation' : 'consistent';
@@ -148,5 +219,5 @@ function reconciliationStatus(issues, proofAudit, supportedIdentityUncertainty =
 
 module.exports = { addressObservationRequiresAction, dispositionNextAction, historicalChanges, isSupportedBrowserAddressConflict,
   isSupportedAutomatedChallenge, isSupportedIdentityUncertainty, laterManualObservationRequiresFollowUp,
-  reconciliationStatus, reconciliationWorkstream, resolutionObservedAt, reviewedResolutionSupersedes,
-  standingEvidenceRetained };
+  reconciliationStatus, reconciliationWorkstream, resolutionObservedAt, reviewedResolutionIsSameObservation, reviewedResolutionSupersedes,
+  sameResolvedPointerRetry, standingEvidenceRetained, standingFollowUpKind };

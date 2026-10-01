@@ -44,7 +44,7 @@ test('exact-CCN CMS snapshot covers the priority-one cohort without treating abs
   if (byCcn.has('250043')) assert.equal(byCcn.get('250043').rows.length, 0);
   const retained380005 = reconciliation.records.find(row => row.ccn === '380005');
   if (retained380005) assert.match(retained380005.next_action,
-    /do not infer active or terminated Medicare enrollment from the snapshot alone/);
+    /prior CMS Hospital Enrollments snapshot alone does not establish active or terminated Medicare status/);
 });
 
 test('CMS snapshot parser refuses another CCN and binds raw response bytes', () => {

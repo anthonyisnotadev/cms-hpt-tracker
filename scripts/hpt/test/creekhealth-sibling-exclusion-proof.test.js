@@ -39,11 +39,18 @@ test('Creekhealth Okmulgee pointer file is not assigned to Tulsa or Okemah CCNs'
     assert.notEqual(page.address, proof.file_declared_address);
     assert.equal(observation.official_facility_address, page.address);
     assert.equal(observation.pointer_file_sample_sha256, proof.sample_sha256);
-    assert.equal(queued.current_disposition, observation.disposition);
-    assert.equal(queued.nationwide_disposition, nationwide.disposition);
-    assert.equal(queued.evidence_gate, 'facility-specific-pointer-and-file');
-    assert.match(queued.next_action, /do not assign the Okmulgee file/);
-    assert.equal(row.finding, 'not-assessed-nationwide-pointer-facility-match-unresolved');
+    if (ccn === '370244') {
+      assert.equal(queued, undefined, 'scope-exempt CCN is no longer in the unresolved MRF worklist');
+      assert.equal(nationwide.disposition, 'scope-exempt-indian-health-program');
+      assert.equal(row.finding, 'not-applicable-indian-health-program');
+      assert.equal(observation.latest_indian_health_program_scope_2026_09_28.mrf_recovered, false);
+    } else {
+      assert.equal(queued.current_disposition, observation.disposition);
+      assert.equal(queued.nationwide_disposition, nationwide.disposition);
+      assert.equal(queued.evidence_gate, 'facility-specific-pointer-and-file');
+      assert.match(queued.next_action, /do not assign the Okmulgee file/);
+      assert.equal(row.finding, 'not-assessed-nationwide-pointer-facility-match-unresolved');
+    }
     assert.notEqual(row.mrf_url, proof.pointer_file_url);
   }
 });

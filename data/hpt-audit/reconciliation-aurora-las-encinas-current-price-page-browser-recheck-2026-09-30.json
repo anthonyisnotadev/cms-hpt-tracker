@@ -1,0 +1,33 @@
+{
+  "ccn": "054078",
+  "facility": "Aurora Las Encinas Hospital",
+  "observed_at": "2026-09-30T02:38:22Z",
+  "purpose": "Recheck the current first-party price-transparency route in a normal browser and follow its explicitly labeled standard-charges target; this does not repeat the prior pointer discovery or claim new file bytes.",
+  "official_price_page": {
+    "url": "https://www.lasencinashospital.com/price-transparency/",
+    "browser_result": "rendered",
+    "title": "Price Transparency | Las Encinas Hospital",
+    "browser_observation": "The rendered first-party page displays the Price Transparency heading, explanatory text, a Standard Charges link, a Shoppable Services link, and a Price Transparency Documentation - TXT link.",
+    "standard_charges_target": "https://www.lasencinashospital.com/wp-content/uploads/2026/07/32-0039155_Aurora-Las-Encinas-LLC_standardcharges_1.csv",
+    "pointer_target": "https://www.lasencinashospital.com/cms-hpt.txt",
+    "observation_scope": "Confirms the live official page-to-link relationship only; it does not establish file contents, recency of the file, or current CMS-template validity."
+  },
+  "linked_file_browser_attempt": {
+    "url": "https://www.lasencinashospital.com/wp-content/uploads/2026/07/32-0039155_Aurora-Las-Encinas-LLC_standardcharges_1.csv",
+    "browser_result": "net::ERR_BLOCKED_BY_CLIENT",
+    "interpretation": "The current browser client did not retrieve CSV bytes. This is an access/client result, not evidence that the target is absent or invalid.",
+    "new_bytes_recovered": false
+  },
+  "prior_file_evidence_retained": {
+    "observed_at": "2026-09-25T07:05:00Z",
+    "bytes": 8394,
+    "sha256": "f83776cf9bb279af34c8e820fe1a5e10b6a5c4192b2521f02bdc02793f8e3402",
+    "declared_report_date": "2025-03-21",
+    "declared_cms_template_version": "not observed",
+    "address_and_license_state_metadata": "not observed",
+    "interpretation": "Prior successful bytes remain historical content evidence; they are not upgraded by the live link observation."
+  },
+  "disposition_effect": "none",
+  "count_effect": "none",
+  "next_action": "Do not repeat the same current page or linked CSV browser route without a material access/source change. If an alternate publisher route or exact publisher-provided copy becomes available, hash-bind the bytes and inspect schema, physical address/license-state metadata, CMS 3.0.0, declared update date, attestation and usable rows before changing CCN 054078."
+}

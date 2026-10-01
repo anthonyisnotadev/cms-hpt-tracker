@@ -1,0 +1,123 @@
+{
+  "audit_id": "reconciliation-uci-shared-orange-address-current-rule-crosscheck-2026-09-29",
+  "observed_at": "2026-09-29T08:53:34Z",
+  "timestamp_correction": {
+    "prior_value": "2026-09-29T14:00:00Z",
+    "corrected_value": "2026-09-29T08:53:34Z",
+    "reason": "The prior value was later than the live UTC clock when audited. The source claims were rechecked on 2026-09-29 and the observation timestamp was corrected; the earlier value is retained here only as correction history."
+  },
+  "live_source_recheck": {
+    "observed_at": "2026-09-29T08:53:34Z",
+    "method": "Direct HTTP GET of the first-party UCI price-transparency page, the UCI Lakewood facility page, and CMSgov's raw JSON v3 data dictionary; separately crosschecked with current web-rendered official pages.",
+    "sources": [
+      {
+        "url": "https://www.ucihealth.org/patients-and-visitors/financial-resources/price-transparency",
+        "http_status": 200,
+        "decoded_response_characters": 145236,
+        "decoded_content_utf8_sha256": "a8dd98e23d9156f71e4f83da49a27f57a82e15d23e3f1b6b4d3b0bf65783ce63",
+        "verified_text": "The page lists 952226406_UCI-Health-Lakewood_standardcharges.json as UCI Health - Lakewood's MRF."
+      },
+      {
+        "url": "https://www.ucihealth.org/locations/lakewood/uci-health-lakewood",
+        "http_status": 200,
+        "decoded_response_characters": 140897,
+        "decoded_content_utf8_sha256": "77aed5deac082a422510ca56e82ca595f9f073b32980af89aef334d4b1b7f7",
+        "verified_text": "The first-party location page identifies UCI Health - Lakewood at 3700 E. South St., Lakewood, CA 90712."
+      },
+      {
+        "url": "https://raw.githubusercontent.com/CMSgov/hospital-price-transparency/master/documentation/JSON/README.md",
+        "http_status": 200,
+        "decoded_response_characters": 31442,
+        "decoded_content_utf8_sha256": "7bcd9fa270e29efd8d9dc4049724923ec04365980cb773759dd403478e928a14",
+        "verified_text": "CMS JSON v3 defines hospital_address as physical addresses corresponding to the hospital location_name attribute."
+      }
+    ],
+    "hash_scope": "The recorded page digests are SHA-256 of UTF-8 re-encoded decoded response text, not hashes of retained raw HTTP response bytes."
+  },
+  "scope": {
+    "ccns": ["050570", "050551", "050581"],
+    "purpose": "Verify the CMS meaning of location/address metadata and current official UCI file association after finding the same Orange physical address in three campus-named MRF headers."
+  },
+  "sources": [
+    {
+      "kind": "UCI Health current price-transparency page",
+      "url": "https://www.ucihealth.org/patients-and-visitors/financial-resources/price-transparency",
+      "observation": "The page currently names separate machine-readable files for Fountain Valley, Lakewood, and Los Alamitos, including 952226406_UCI-Health-Lakewood_standardcharges.json."
+    },
+    {
+      "kind": "UCI Health Lakewood location page",
+      "url": "https://www.ucihealth.org/locations/lakewood/uci-health-lakewood",
+      "observation": "Identifies UCI Health - Lakewood at 3700 E. South St., Lakewood, CA 90712."
+    },
+    {
+      "kind": "California HCAI Lakewood profile",
+      "url": "https://hcai.ca.gov/facility/lakewood-regional-medical-center/",
+      "observation": "Identifies UCI Health-Lakewood as an open general acute-care hospital at 3700 South Street, Lakewood, CA 90712."
+    },
+    {
+      "kind": "45 CFR 180.50 current regulation",
+      "url": "https://www.law.cornell.edu/cfr/text/45/180.50",
+      "source_role": "Current e-CFR reproduction; cited for rule text, not as evidence about UCI's intent or legal compliance.",
+      "observation": "Section 180.50(b)(2)(i)(A) requires the location name and address(es) for the location(s) to which the standard-charge list applies. Section 180.50(d)(2) requires the information to be clearly identified with the hospital location with which it is associated. Section 180.50(d)(6)(i) describes the root text file's location name corresponding to the MRF and direct MRF URL."
+    },
+    {
+      "kind": "CMSgov current JSON v3 data dictionary",
+      "url": "https://github.com/CMSgov/hospital-price-transparency/blob/master/documentation/JSON/README.md",
+      "observation": "Defines hospital_address as physical address(es) of the corresponding hospital location attribute."
+    }
+  ],
+  "retained_file_evidence": {
+    "proof_file": "reconciliation-uci-shared-orange-address-metadata-cohort-2026-09-27.json",
+    "ccns": ["050570", "050551", "050581"],
+    "files": [
+      {
+        "ccn": "050570",
+        "url": "https://www.ucihealth.org/pricetransparency/952226406_uci-health-fountain-valley_standardcharges.json",
+        "sha256": "9d3672d29ccb5f802491c0b2c861c37a6a8d00c8ed749341bb00ee4973abd9cc",
+        "http_status": 206,
+        "sample_bytes": 131072,
+        "declared_hospital_name": "UCI Health - Fountain Valley",
+        "declared_location_name": "UCI Health - Fountain Valley",
+        "declared_hospital_address": "101 City Drive South, Orange, CA 92868",
+        "declared_date": "2026-04-01",
+        "version": "3.0.0"
+      },
+      {
+        "ccn": "050551",
+        "url": "https://www.ucihealth.org/pricetransparency/952226406_uci-health-los-alamitos_standardcharges.json",
+        "sha256": "5ee05fc27b872bc5b9781676d0738e132a965561951a7a3172bc193e2cf975bc",
+        "http_status": 206,
+        "sample_bytes": 131072,
+        "declared_hospital_name": "UCI Health - Los Alamitos",
+        "declared_location_name": "UCI Health - Los Alamitos",
+        "declared_hospital_address": "101 City Drive South, Orange, CA 92868",
+        "declared_date": "2026-04-01",
+        "version": "3.0.0"
+      },
+      {
+        "ccn": "050581",
+        "url": "https://www.ucihealth.org/pricetransparency/952226406_uci-health-lakewood_standardcharges.json",
+        "sha256": "f72094c02eb615ba454f472c96f065981e46fd34634051a4815d3cf4c71aeada",
+        "http_status": 206,
+        "sample_bytes": 131072,
+        "declared_hospital_name": "UCI Health - Lakewood",
+        "declared_location_name": "UCI Health - Lakewood",
+        "declared_hospital_address": "101 City Drive South, Orange, CA 92868",
+        "declared_date": "2026-04-01",
+        "version": "3.0.0"
+      }
+    ],
+    "limitations": "These are retained bounded prefixes, not complete JSON files. CMS location/address schema semantics plus current official campus pages establish a documented metadata discrepancy, not full-file usability or a compliance verdict."
+  },
+  "finding": "Timestamp correction: the prior 14:00Z observation value was future-dated relative to the live clock and has been replaced after direct source rechecks at 08:53:34Z. The Fountain Valley bounded-sample SHA-256 transcription is also corrected from the shortened value to the exact 64-character digest in the hash-bound 2026-09-27 source proof. Current first-party pages still separately name each of the three campus MRFs and identify distinct locations; CMS defines hospital_address as the physical address corresponding to location_name. The three retained bounded CMS v3 file prefixes repeat the Orange address under campus-specific location names; this documents a publisher metadata discrepancy, not evidence that the files belong to Orange.",
+  "evidence_classification": {
+    "new_mrf_bytes": false,
+    "new_current_official_page_search_or_open": true,
+    "new_rule_or_schema_semantics_checked": true,
+    "prior_bounded_mrf_bytes_reused": true,
+    "recheck_or_clarification_not_recovery": true,
+    "compliance_determination": false
+  },
+  "count_effect": 0,
+  "next_action": "Await a dated publisher correction or explanation covering the repeated hospital_address value in the Fountain Valley, Los Alamitos, and Lakewood files. Keep each exact page/pointer/file association and CCN-specific address conflict separate; if any file changes, retrieve and hash a new bounded or complete sample and verify all declared locations before changing that CCN's unresolved disposition."
+}

@@ -3,12 +3,18 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const { requiresDispositionAction, stages } = require('./lib/unresolved-investigation-stages');
 
 const root = path.resolve(__dirname, '../..');
 const audit = path.join(root, 'data/hpt-audit');
 const reconciliationPath = path.join(audit, 'nationwide-reconciliation.json');
 const verificationPath = path.join(audit, 'nationwide-verification.json');
 const outputPath = path.join(audit, 'unresolved-investigation-worklist.json');
+const reviewedResolutionsPath = path.join(audit, 'reviewed-resolutions.json');
+const reviewedResolutions = JSON.parse(fs.readFileSync(reviewedResolutionsPath, 'utf8'));
+const stateScopeReviews = new Map(reviewedResolutions
+  .filter(record => record.action === 'scope-review-pending')
+  .map(record => [record.ccn, record]));
 const parkviewProof = JSON.parse(fs.readFileSync(path.join(audit, 'reconciliation-parkview-medical-center-pointer-page-proof.json'), 'utf8'));
 const surgicalOklahomaProof = JSON.parse(fs.readFileSync(path.join(audit, 'reconciliation-surgical-oklahoma-pointer-file-proof.json'), 'utf8'));
 const groverDilsProof = JSON.parse(fs.readFileSync(path.join(audit, 'reconciliation-grover-dils-source-review.json'), 'utf8'));
@@ -52,6 +58,9 @@ function latestNestedManualReviewAt(manual) {
       return;
     }
     for (const [key, nested] of Object.entries(value)) {
+      // Preserve corrected timestamps for audit, but never let an explicitly
+      // invalid original timestamp become the effective review time again.
+      if (/^original_recorded_(?:observed_at|timestamp)$/i.test(key)) continue;
       if (typeof nested === 'string'
         && /(observed|reviewed|checked|updated|retrieved|recheck|at$)/i.test(key)
         && isoReviewDate(nested)) dates.push(nested);
@@ -62,74 +71,29 @@ function latestNestedManualReviewAt(manual) {
   return dates.sort().at(-1) || '';
 }
 
-const stages = {
-  'mrf-facility-identity-unresolved': {
-    tier: 1, gate: 'file-identity',
-    action: 'Compare the exact pointer-linked file header with the roster and current first-party facility page; quarantine a sibling or conflicting file.',
-  },
-  'linked-mrf-header-unmatched': {
-    tier: 1, gate: 'file-header',
-    action: 'Retain bounded bytes from the exact pointer-declared file and adjudicate its declared hospital, location, address, state, date and version.',
-  },
-  'pointer-linked-file-not-probed': {
-    tier: 1, gate: 'file-header',
-    action: 'Retrieve bounded bytes from the exact pointer-declared file, then check facility identity and declared metadata before any verification claim.',
-  },
-  'pointer-linked-file-review-pending': {
-    tier: 2, gate: 'pointer-file-page-reconciliation',
-    action: 'Reconcile the reviewed pointer-linked file and current pricing-page download leads, including complete access and declared metadata, before a current-file finding.',
-  },
-  'file-custom-workbook-review': {
-    tier: 2, gate: 'custom-workbook-identity-and-format',
-    action: 'Determine whether the official workbook is an exact facility MRF and whether a CMS CSV/JSON replacement exists; do not assign a broader system workbook to this CCN.',
-  },
-  'mrf-request-unsuccessful': {
-    tier: 1, gate: 'file-access',
-    action: 'Retry the exact pointer-declared file using a materially different permitted client; preserve transport failure separately from file validity.',
-  },
-  'pointer-facility-match-unresolved': {
-    tier: 2, gate: 'pointer-facility-match',
-    action: 'Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file.',
-  },
-  'pointer-access-denied-to-client': {
-    tier: 3, gate: 'pointer-access',
-    action: 'Open the exact official-domain root pointer in a materially different browser/client and record bytes, status and final URL; do not infer absence from access denial.',
-  },
-  'pointer-not-retrieved': {
-    tier: 3, gate: 'pointer-retrieval',
-    action: 'Inspect the first-party pricing page and its linked host, then retrieve that host’s root pointer with a bounded client.',
-  },
-  'pointer-discovery-incomplete': {
-    tier: 4, gate: 'pointer-discovery',
-    action: 'Confirm the hospital-owned site and pricing page, then test the exact root pointer and any page-linked file; preserve request failures as observations.',
-  },
-  'official-website-not-identified-completed-search': {
-    tier: 5, gate: 'official-site-identity',
-    action: 'Resolve the current legal/operator name and first-party site for the roster address before testing any pointer or file.',
-  },
-  'candidate-website-identity-unverified': {
-    tier: 4, gate: 'official-site-identity',
-    action: 'Verify the candidate against first-party hospital name and address evidence; only then test its pricing page, root pointer and facility-linked MRF.',
-  },
-};
-
 function shaFile(file) {
   return crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
 }
 
 function build(reconciliation, verification) {
   const byCcn = new Map(verification.records.map(row => [row.ccn, row]));
-  const unresolved = reconciliation.records.filter(row => row.workstream === 'genuinely-unresolved-investigation');
+  // Reconciliation retains source-observation issues even after an exact-CCN
+  // reviewed scope disposition. Do not keep scope-exempt facilities in the
+  // actionable unresolved queue merely because the raw observation is older.
+  const unresolved = reconciliation.records.filter(row => row.workstream === 'genuinely-unresolved-investigation'
+    && !String(byCcn.get(row.ccn)?.disposition || '').startsWith('scope-exempt'));
   const records = unresolved.map(row => {
     const current = byCcn.get(row.ccn);
     const stage = stages[row.proposed_disposition];
     if (!current || !stage) throw new Error(`No verification record or stage for ${row.ccn}`);
     const manual = row.manual_access_observation;
+    const stateScopeReview = stateScopeReviews.get(row.ccn);
     const scenicTransitionReviewed = row.ccn === scenicProof.ccn
       && row.proposed_disposition === 'pointer-facility-match-unresolved'
-      && manual?.proof_file === 'reconciliation-scenic-mountain-operator-transition-proof.json'
+      && (manual?.proof_file === 'reconciliation-scenic-mountain-operator-transition-proof.json'
+        || manual?.proof_file === 'reconciliation-scenic-mountain-nppes-npi-1497606438-recheck-2026-09-28.json')
       && manual.disposition === scenicProof.disposition
-      && manual.observed_at === scenicProof.observed_at
+      && Date.parse(manual.observed_at) >= Date.parse(scenicProof.observed_at)
       && manual.pointer_sha256 === scenicProof.current_pointer_sha256
       && manual.pointer_mrf_url === scenicProof.current_pointer_file_url
       && current.pointer_corpus_sha256 === scenicProof.current_pointer_sha256
@@ -317,6 +281,13 @@ function build(reconciliation, verification) {
         ...manual,
         fresh_reviewed_at: latestNestedManualReviewAt(manual),
       }],
+      ['state-hospital-scope-review', stateScopeReview && {
+        observed_at: stateScopeReview.scope_review.reviewed_at,
+        status: stateScopeReview.scope_review.status,
+        previous_action: stateScopeReview.previous_action,
+        cms_guidance_url: stateScopeReview.scope_review.cms_guidance_url,
+        note: stateScopeReview.note,
+      }],
       ['reviewed-header', row.reviewed_header_disposition],
       ['cms-enrollment-snapshot', row.cms_enrollment_snapshot],
       ['address-reconciliation', row.address_reconciliation],
@@ -337,7 +308,46 @@ function build(reconciliation, verification) {
     const identityRouteReviewed = identityRouteProofs.get(row.ccn) === manual?.proof_file
       && manual?.official_site
       && manual?.disposition?.includes('identity-confirmed');
+    const helenKellerCurrentRoute = manual?.latest_official_domain_migration_route_discovery_2026_09_30
+      || manual?.latest_official_route_recheck_2026_09_30;
+    const helenKellerCurrentFileRouteReviewed = row.ccn === '010019'
+      && (helenKellerCurrentRoute?.exact_file_url || helenKellerCurrentRoute?.pricing_resource_url)
+        === 'https://hh.health/wp-content/uploads/472323163_hellen-keller-hospital_standardcharges.csv'
+      && (helenKellerCurrentRoute.disposition_effect === 'none'
+        || helenKellerCurrentRoute.disposition_effect === undefined);
     let nextAction = row.manual_access_observation?.next_action || row.next_action || stage.action;
+    // A generic old “retain as verified” instruction is contradictory when a
+    // later exact-CCN observation has reopened identity or pointer matching.
+    // Keep the manual finding/evidence intact, but route the open case using
+    // the current disposition's evidence gate instead of carrying stale work.
+    if (requiresDispositionAction(row.manual_access_observation, row.proposed_disposition)
+        && stage) {
+      nextAction = stage.action;
+    }
+    const resurrectionCurrentFileReviewed = row.ccn === '140117'
+      && manual?.proof_file === 'reconciliation-resurrection-medical-center-current-pointer-file-proof-2026-09-30.json'
+      && manual.disposition === 'verified-template-review'
+      && manual.pointer_sha256 === current.pointer_corpus_sha256
+      && manual.facility_file_url === current.mrf_url
+      && manual.file_sha256
+      && manual.cms_template_version === '3.0';
+    if (resurrectionCurrentFileReviewed) nextAction = manual.next_action;
+    if (row.ccn === '061328') {
+      const recheckPath = path.join(audit, 'reconciliation-pagosa-mrf-retrieval-recheck-2026-09-30.json');
+      if (fs.existsSync(recheckPath)) {
+        const recheck = JSON.parse(fs.readFileSync(recheckPath, 'utf8'));
+        if (recheck.ccn === row.ccn && recheck.http_status === 404 && recheck.bytes_retrieved === 0) {
+          nextAction = recheck.next_action;
+        }
+      }
+    }
+    if (helenKellerCurrentFileRouteReviewed) nextAction = manual.next_action;
+    const staleScopeExemptionAction = /(?:scope[- ]exempt|deemed-compliant)/i.test(String(manual?.previous_scope_review_assessment?.next_action || ''));
+    if (stateScopeReview && staleScopeExemptionAction) {
+      nextAction = String(stateScopeReview.scope_review.next_action || '')
+        .replace(/^Keep this CCN in the unresolved investigation queue\.\s*Find a current/i, 'Keep the facility unresolved. Locate and verify a current')
+        || 'Keep the facility unresolved. Locate and verify a current facility-specific CMS MRF or obtain authoritative evidence that this exact hospital qualifies for a CMS exception; do not infer noncompliance from missing files or transport failures.';
+    }
     if (houstonCrossFacilityReview) nextAction = manual.latest_cross_facility_address_review_2026_09_27.next_action;
     const neshobaHistoricalCcnReview = row.ccn === '250043'
       && row.reviewed_header_disposition?.proof_file === 'reconciliation-neshoba-qies-query-discrepancy-and-operator-page-recheck-2026-09-27.json'
@@ -352,12 +362,15 @@ function build(reconciliation, verification) {
       nextAction = 'A browser already observed HTTP denial for the exact pointer-declared file. Confirm the first-party pricing-page link and seek a publisher-corrected pointer or accessible file route before another bounded header check; do not infer the file is absent from this client denial.';
     }
     if (independenceAccessReviewed) nextAction = row.ccn === '390168'
-      ? 'Obtain a permitted byte-backed header for the Butler page-linked file, resolve its case-sensitive URL difference from the retained pointer target, then compare declared facility/address/state/date/version before changing status.'
+      ? row.next_action || independence.next_action || 'Obtain a permitted byte-backed header for the Butler page-linked file, resolve its case-sensitive URL difference from the retained pointer target, then compare declared facility/address/state/date/version before changing status.'
       : 'Obtain a permitted byte-backed header from the exact page-and-pointer-linked file, then compare declared facility/address/state/date/version before changing status; the current client 403 is not file absence.';
     if (grandViewPageLead) nextAction = 'Preserve the first-party Grand View page-linked CSV and its exact-campus bounded header; review the 438 MB file with bounded streaming if needed, and recheck the root pointer for a Grand View entry after publisher change. Do not treat the page file as pointer-linked or fully validated.';
-    if (averaAccessReviewed) nextAction = row.ccn === '431308'
-      ? 'Seek authorized exact-file bytes through a materially different route or publisher copy; resolve the pointer label for the 202 J Ave nursing site against the 200 J Ave hospital before assigning file identity. Do not repeat the denied browser request or infer file absence.'
-      : 'Seek authorized exact-file bytes through a materially different route or publisher copy; check declared hospital/location/address/state/date/version for this CCN before assigning the shared-system file. Do not repeat the denied browser request or infer file absence.';
+    if (averaAccessReviewed) {
+      const facilitySpecificAction = row.next_action || '';
+      const retryGuard = /do not (?:retry|repeat)/i.test(facilitySpecificAction)
+        ? '' : 'Do not repeat the denied browser request or infer file absence. ';
+      nextAction = `${retryGuard}${facilitySpecificAction || 'Obtain permitted exact-file bytes for this facility and verify identity, address, state, date and CMS version before assigning any shared-system file.'}`;
+    }
     if (!nextAction) throw new Error(`No next action for ${row.ccn}`);
     return {
       ccn: row.ccn,
@@ -376,8 +389,11 @@ function build(reconciliation, verification) {
       ...(neshobaHistoricalCcnReview || pointerIdentityReviewed || centraLynchburgReviewed || southOaksRootReviewed || parkviewFileAccessReviewed || surgicalOklahomaHeaderReviewed || groverDilsAliasReviewed || atlanticareCityHeaderReviewed || independenceAccessReviewed || grandViewPageLead || averaAccessReviewed || summitSiteReviewed || coalCountyPageFileReviewed || reedsburgPointerCaseReviewed || houstonCountyConflictReviewed || creekhealthSiblingExcluded || scenicTransitionReviewed || southeasternAliasReviewed ? { nationwide_disposition: row.proposed_disposition } : {}),
       standing_finding: row.standing_finding,
       prior_finding: row.prior_finding,
-      investigation_tier: stage.tier,
-      evidence_gate: neshobaHistoricalCcnReview ? 'historical-hpt-coverage-through-2025-12-31'
+      investigation_tier: helenKellerCurrentFileRouteReviewed ? 1 : resurrectionCurrentFileReviewed ? 2 : stage.tier,
+      evidence_gate: resurrectionCurrentFileReviewed ? 'publisher-corrected-cms-version-3.0.0'
+        : helenKellerCurrentFileRouteReviewed ? 'exact-file-access'
+        : stateScopeReview ? 'facility-specific-mrf-or-authoritative-exception-basis'
+        : neshobaHistoricalCcnReview ? 'historical-hpt-coverage-through-2025-12-31'
         : summitSiteReviewed ? 'pointer-bytes-and-complete-file-review'
         : grandViewPageLead ? 'pointer-entry-and-complete-file-review'
         : averaAccessReviewed ? 'exact-file-access-and-campus-attribution'
@@ -425,6 +441,11 @@ function main() {
   result.source_sha256 = {
     'nationwide-reconciliation.json': shaFile(reconciliationPath),
     'nationwide-verification.json': shaFile(verificationPath),
+    'reviewed-resolutions.json': shaFile(reviewedResolutionsPath),
+    'reconciliation-antelope-valley-pointer-page-crosswalk-proof-2026-09-30.json': shaFile(path.join(audit,
+      'reconciliation-antelope-valley-pointer-page-crosswalk-proof-2026-09-30.json')),
+    'reconciliation-antelope-valley-manual-access-observation-2026-09-30.json': shaFile(path.join(audit,
+      'reconciliation-antelope-valley-manual-access-observation-2026-09-30.json')),
     'reconciliation-independence-health-access-proof.json': shaFile(independenceProofPath),
     'reconciliation-coal-county-page-file-proof.json': shaFile(path.join(audit, 'reconciliation-coal-county-page-file-proof.json')),
     'reconciliation-reedsburg-pointer-case-proof.json': shaFile(path.join(audit, 'reconciliation-reedsburg-pointer-case-proof.json')),
@@ -433,6 +454,26 @@ function main() {
     'reconciliation-grand-view-page-file-lead-proof.json': shaFile(grandViewProofPath),
     'reconciliation-avera-three-site-access-proof.json': shaFile(averaProofPath),
     'reconciliation-summit-casper-site-proof.json': shaFile(summitProofPath),
+    'reconciliation-roosevelt-general-current-pricing-route-review-2026-09-27.json': shaFile(path.join(audit,
+      'reconciliation-roosevelt-general-current-pricing-route-review-2026-09-27.json')),
+    'reconciliation-carrus-lakeside-successor-pricing-scope-review-2026-09-27.json': shaFile(path.join(audit,
+      'reconciliation-carrus-lakeside-successor-pricing-scope-review-2026-09-27.json')),
+    'reconciliation-alaska-psychiatric-institute-state-scope-review-2026-09-27.json': shaFile(path.join(audit,
+      'reconciliation-alaska-psychiatric-institute-state-scope-review-2026-09-27.json')),
+    'reconciliation-howard-university-third-party-exact-file-lead-2026-09-27.json': shaFile(path.join(audit,
+      'reconciliation-howard-university-third-party-exact-file-lead-2026-09-27.json')),
+    'reconciliation-howard-university-downloaded-file-review-2026-09-27.json': shaFile(path.join(audit,
+      'reconciliation-howard-university-downloaded-file-review-2026-09-27.json')),
+    'reconciliation-minidoka-procedureradar-current-mrf-link-conflict-2026-09-27.json': shaFile(path.join(audit,
+      'reconciliation-minidoka-procedureradar-current-mrf-link-conflict-2026-09-27.json')),
+    'reconciliation-centro-medico-del-noreste-publisher-pricing-page-scope-2026-09-29.json': shaFile(path.join(audit,
+      'reconciliation-centro-medico-del-noreste-publisher-pricing-page-scope-2026-09-29.json')),
+    'reconciliation-lifebrite-early-live-pricing-page-review-2026-09-28.json': shaFile(path.join(audit,
+      'reconciliation-lifebrite-early-live-pricing-page-review-2026-09-28.json')),
+    'reconciliation-griffin-negotiated-rates-portal-terms-review-2026-09-28.json': shaFile(path.join(audit,
+      'reconciliation-griffin-negotiated-rates-portal-terms-review-2026-09-28.json')),
+    'reconciliation-rolling-hills-tennessee-domain-lead-2026-09-28.json': shaFile(path.join(audit,
+      'reconciliation-rolling-hills-tennessee-domain-lead-2026-09-28.json')),
   };
   fs.writeFileSync(outputPath, `${JSON.stringify(result, null, 2)}\n`);
   console.log(JSON.stringify(result.summary));

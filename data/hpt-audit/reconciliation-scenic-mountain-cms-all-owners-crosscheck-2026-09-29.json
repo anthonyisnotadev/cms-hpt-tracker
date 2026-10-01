@@ -1,0 +1,51 @@
+{
+  "ccn": "450653",
+  "observed_at": "2026-09-29T02:43:35Z",
+  "purpose": "Cross-check the CMS owner associations attached to the exact Medicare enrollment currently mapped to CCN 450653 against the independently evidenced Shannon NPI/operator transition.",
+  "source": {
+    "publisher": "Centers for Medicare & Medicaid Services",
+    "dataset": "Hospital All Owners",
+    "dataset_id": "029c119f-f79c-49be-9100-344d31d10344",
+    "dataset_release": "2026-08-01",
+    "catalog_last_updated": "2026-08-19",
+    "dataset_temporal_end": "2026-08-31",
+    "catalog_url": "https://catalog.data.gov/dataset/hospital-all-owners",
+    "api_url": "https://data.cms.gov/data-api/v1/dataset/029c119f-f79c-49be-9100-344d31d10344/data?filter%5BENROLLMENT%20ID%5D=O20250114002778&size=100",
+    "http_status": 200,
+    "content_type": "application/json",
+    "response_bytes": 21726,
+    "response_sha256": "2da965d6f136130a5b64e70f8e5fbe925b6d0ca613493280d80cf8a4f48f57de"
+  },
+  "exact_join": {
+    "ccn": "450653",
+    "enrollment_id": "O20250114002778",
+    "enrollment_proof_file": "reconciliation-scenic-mountain-cms-enrollment-recheck-proof-2026-09-25.json",
+    "enrollment_legal_name": "BIG SPRING TEXAS HOSPITAL COMPANY LLC",
+    "enrollment_dba": "SCENIC MOUNTAIN MEDICAL CENTER",
+    "enrollment_npi": "1336976034",
+    "join_method": "Exact CMS enrollment ID from the separately hash-bound CMS Hospital Enrollments row for CCN 450653; the All Owners response itself has no CCN field."
+  },
+  "response_review": {
+    "total_association_rows": 18,
+    "organization_owner_rows_retained": 8,
+    "individual_owner_rows_omitted_from_local_proof": 10,
+    "owner_association_date": "2024-09-06",
+    "retained_organization_owner_rows": [
+      {"role_code": "35", "role": "5% OR GREATER INDIRECT OWNERSHIP INTEREST", "owner_organization": "QUORUM HEALTH CORPORATION", "percentage": "100", "created_for_acquisition": "N"},
+      {"role_code": "35", "role": "5% OR GREATER INDIRECT OWNERSHIP INTEREST", "owner_organization": "GTAM ONSHORE BLOCKER 2 LLC", "percentage": "26.72", "created_for_acquisition": "N"},
+      {"role_code": "35", "role": "5% OR GREATER INDIRECT OWNERSHIP INTEREST", "owner_organization": "GOLDENTREE DISTRESSED FUND III (CAYMAN) CARRY LP", "percentage": "5.13", "created_for_acquisition": "N"},
+      {"role_code": "35", "role": "5% OR GREATER INDIRECT OWNERSHIP INTEREST", "owner_organization": "GOLDENTREE DISTRESSED ONSHORE MASTER FUND III LP", "percentage": "15.81", "created_for_acquisition": "N"},
+      {"role_code": "35", "role": "5% OR GREATER INDIRECT OWNERSHIP INTEREST", "owner_organization": "GOLDENTREE SELECT OFFSHORE INTERMEDIATE FUND LP", "percentage": "10.33", "created_for_acquisition": "N"},
+      {"role_code": "34", "role": "5% OR GREATER DIRECT OWNERSHIP INTEREST", "owner_organization": "QUORUM HEALTH INVESTMENT COMPANY LLC", "percentage": "100", "created_for_acquisition": "N"},
+      {"role_code": "35", "role": "5% OR GREATER INDIRECT OWNERSHIP INTEREST", "owner_organization": "GOLDENTREE DISTRESSED MASTER FUND III LTD", "percentage": "21.48", "created_for_acquisition": "N"},
+      {"role_code": "35", "role": "5% OR GREATER INDIRECT OWNERSHIP INTEREST", "owner_organization": "QUINCY HEALTH LLC", "percentage": "100", "created_for_acquisition": "N"}
+    ],
+    "no_shannon_organization_owner_entry": true,
+    "raw_response_retained": false,
+    "raw_response_limitation": "The complete public CMS response includes individual-owner names and related fields. To minimize retention of personal data, the raw response was reviewed in memory and not saved; this proof retains its exact query, UTF-8 response length/hash, row counts, and organization-owner rows only."
+  },
+  "interpretation": "New official CMS evidence: in the 2026-08-01 Hospital All Owners release, the exact enrollment ID CMS maps to CCN 450653 has 18 owner-association rows; its eight organization-owner entries list Quorum/GoldenTree/Quincy entities with association date 2024-09-06 and no Shannon organization. This does not prove the current legal owner after the reported April 2026 transaction, because the retained associations may be stale or incomplete. It does not associate Shannon NPI 1497606438 with CCN 450653; the latest Hospital Enrollments snapshot predates the 2026-09-21 NPPES update. Retain the CCN/file continuity discrepancy and do not promote the Shannon MRF on same-campus/name evidence alone.",
+  "disposition": "current-operator-same-campus-pointer-file-ccn-continuity-unresolved",
+  "cohort_count_effect": 0,
+  "next_action": "Keep CCN 450653 unresolved. Do not repeat the same 2026-08-01 CMS ownership/enrollment query until a later CMS release appears. Seek a post-transition CMS certification/enrollment record or published Shannon/publisher scope statement that explicitly links NPI 1497606438 to CCN 450653; do not infer that mapping from the same address or from CMS's older Quorum owner associations."
+}

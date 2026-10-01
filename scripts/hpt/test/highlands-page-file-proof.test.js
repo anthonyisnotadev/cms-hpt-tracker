@@ -21,7 +21,12 @@ test('Highlands complete page-linked file is identity-matched while pointer link
   assert.equal(row.evidence.fileSha256, proof.sha256);
   const reconciliation = JSON.parse(fs.readFileSync(path.join(root, 'data/hpt-audit/nationwide-reconciliation.json'), 'utf8'))
     .records.find((entry) => entry.ccn === '010061');
-  assert.match(reconciliation.latest_observed_at, /^2026-09-26T/);
-  assert.equal(reconciliation.manual_access_observation.latest_browser_access_recheck.pointer_browser_status, 'dns-resolution-failure');
-  assert.match(reconciliation.next_action, /Retry the exact Highlands root pointer/);
+  assert.match(reconciliation.latest_observed_at, /^2026-09-28T/);
+  const latest = reconciliation.manual_access_observation;
+  assert.equal(latest.disposition, 'official-system-page-links-facility-specific-csv-new-host-transport-unresolved');
+  assert.match(latest.live_host_transport, /no pointer or CSV bytes were obtained/);
+  assert.match(latest.next_action, /After DNS\/source state changes/);
+  assert.equal(reconciliation.next_action, latest.next_action,
+    'newer blocked-route review must guide follow-up without erasing the older complete page-linked file evidence');
+  assert.equal(reconciliation.official_page_file_review.file_sha256, proof.sha256);
 });

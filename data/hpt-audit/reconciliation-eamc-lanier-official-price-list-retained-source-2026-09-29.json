@@ -1,0 +1,51 @@
+{
+  "audit_id": "reconciliation-eamc-lanier-official-price-list-retained-source-2026-09-29",
+  "ccn_under_review": "010780",
+  "observed_at": "2026-09-29T08:00:16Z",
+  "official_sources": {
+    "publisher_page": "https://www.eastalabamahealth.org/patient-and-guests/billing-and-financial-information/estimate-my-cost",
+    "page_title": "Estimate My Cost",
+    "page_description": "The publisher describes a Patient Pricing List as a machine-readable document covering services provided by East Alabama Health and linking to a downloadable file.",
+    "file_url": "https://www.eastalabamahealth.org/sites/default/files/financial-service/636000526_EastAlabama_standardcharges.csv.zip",
+    "facility_location_page": "https://www.eastalabamahealth.org/location/eamc-lanier-rural-emergency-hospital",
+    "facility_location_page_description": "EAMC-Lanier Rural Emergency Hospital, 4800 48th Street, Valley, AL 36854."
+  },
+  "retrieval": {
+    "http_status": 200,
+    "content_type": "application/zip",
+    "content_length": 6851692,
+    "last_modified": "2026-01-06T20:47:51Z",
+    "etag": "\"695d74f7-688c6c\"",
+    "retained_file": "retained-source-documents/east-alabama-health-636000526-standardcharges-2026-01-01.zip",
+    "sha256": "1775d096b9c422eef40235f124c335e9f8a9531b38bc89d98833498a1dced833",
+    "same_sha256_as_existing_complete_file_proof": true
+  },
+  "archive_review": {
+    "member": "636000526_EastAlabama_standardcharges.csv",
+    "uncompressed_bytes": 212460800,
+    "uncompressed_sha256": "11b2222c25f4f47046f66cb58bf9e03c84a0c8d6be4efa8880c520e280eabb67",
+    "csv_rows_including_header_and_metadata": 139164,
+    "metadata": {
+      "hospital_name": "East Alabama Medical Center",
+      "last_updated_on": "2026-01-01",
+      "version": "3.0.0",
+      "location_name": "East Alabama Medical Center",
+      "hospital_address": "2000 PEPPERELL PKWY OPELIKA, AL 36801",
+      "license_number_state": "AL",
+      "type_2_npi": "1154386431",
+      "attester_name": "Samuel Price, Jr."
+    },
+    "metadata_record_count": 1,
+    "scope_result": "The complete archive's sole facility metadata record identifies the Opelika East Alabama Medical Center location. It does not identify the separate EAMC-Lanier Rural Emergency Hospital campus in Valley or CCN 010780."
+  },
+  "comparison_to_prior_evidence": {
+    "prior_complete_file_proof": "reconciliation-eamc-lanier-current-page-file-proof-2026-09-20.json",
+    "prior_zip_sha256": "1775d096b9c422eef40235f124c335e9f8a9531b38bc89d98833498a1dced833",
+    "new_mrf_content": false,
+    "evidence_gain": "The exact complete publisher-linked ZIP and uncompressed CSV bytes are now retained in the audit's retained-source-documents directory and independently streamed for row count and full-content hash, making the already-known Opelika-only exclusion reproducible from this checkout. The live publisher page and file link were independently re-opened; byte identity with the previous proof confirms no source-file change.",
+    "disposition_changed": false,
+    "ccn_010780_remains_unresolved": true,
+    "frozen_891_unresolved_count_effect": 0
+  },
+  "next_action": "Obtain a Valley-specific CMS CSV/JSON/ZIP or publisher confirmation explicitly naming the 4800 48th Street campus and exact CCN coverage. Keep the Opelika pointer and file separate; do not assign this file to CCN 010780 or repeat its unchanged retrieval absent a source or access change."
+}

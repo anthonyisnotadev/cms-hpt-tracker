@@ -5,7 +5,7 @@
  * WHY a human is needed and WHAT to do, in operational terms the findings
  * vocabulary deliberately does not express.
  *
- *   finding        = what we observed about compliance (regulatory view)
+ *   finding        = what was observed about compliance (regulatory view)
  *   intervention   = why it is unresolved and who has to act (operational view)
  *
  * "They block automated tools", "the data comes back unusable", "the page does
@@ -65,32 +65,32 @@ const INTERVENTIONS = {
   },
   'waf-blocked': {
     label: 'Access denied through an edge service',
-    plain: 'Our request was denied or rate-limited by a response associated with an edge service.',
+    plain: 'The request was denied or rate-limited by a response associated with an edge service.',
     action: 'Compare a fresh request with a browser check; edge branding alone does not identify the blocking rule.'
   },
   'server-blocked': {
     label: 'Access denied to this client',
-    plain: 'Our request was denied or rate-limited; the responsible server layer is unverified.',
+    plain: 'The request was denied or rate-limited; the responsible server layer is unverified.',
     action: 'Retry and compare with a browser check before diagnosing the cause.'
   },
   'client-rejected': {
     label: 'Request not accepted (406)',
-    plain: 'The checked URL returned HTTP 406 to our client.',
+    plain: 'The checked URL returned HTTP 406 to the client.',
     action: 'Compare browser and automated responses; the status alone does not prove bot filtering.'
   },
   'dns-dead': {
     label: 'DNS lookup failed',
-    plain: 'Our DNS lookup failed during the check; this does not establish that the site or hospital closed.',
+    plain: 'The DNS lookup failed during the check; this does not establish that the site or hospital closed.',
     action: 'Retry DNS and verify the official hostname before investigating a move or closure.'
   },
   'connection-dead': {
     label: 'Connection check failed',
-    plain: 'Our connection to the checked host failed or timed out, possibly during TLS negotiation.',
+    plain: 'The connection to the checked host failed or timed out, possibly during TLS negotiation.',
     action: 'Retry the exact URL and compare with a browser; verify the domain if failures persist.'
   },
   'site-server-error': {
     label: 'HTTP server error at checked URL',
-    plain: 'The checked URL returned a 5xx response during our request.',
+    plain: 'The checked URL returned a 5xx response during the request.',
     action: 'Recheck later; if it persists, verify in a browser.'
   },
   'file-404': {
@@ -100,7 +100,7 @@ const INTERVENTIONS = {
   },
   'html-soft-block': {
     label: 'HTML returned at pointer URL',
-    plain: 'Our request received a web page at the checked pointer URL; the cause is unresolved.',
+    plain: 'The request received a web page at the checked pointer URL; the cause is unresolved.',
     action: 'Inspect the page and browser response for a challenge, redirect, error page, or alternate link.'
   },
   'file-at-pointer-path': {
@@ -110,7 +110,7 @@ const INTERVENTIONS = {
   },
   'mrf-gone': {
     label: 'MRF URL returned 404/410',
-    plain: 'The previously recorded MRF URL returned not found or gone during our check.',
+    plain: 'The previously recorded MRF URL returned not found or gone during the check.',
     action: 'Refetch the official pointer for a replacement URL before contacting the hospital.'
   },
   'mrf-server-error': {
@@ -120,12 +120,12 @@ const INTERVENTIONS = {
   },
   'format-unusable': {
     label: 'Date not verified',
-    plain: 'Our bounded file probe did not recover a readable last_updated_on. File validity is unverified.',
+    plain: 'The bounded file probe did not recover a readable last_updated_on. File validity is unverified.',
     action: 'Inspect the response, compression, and metadata before concluding that a required field is missing.'
   },
   'pointer-mrf-unverified': {
     label: 'MRF link not extracted',
-    plain: 'The matched pointer entry yielded no MRF URL in our parser.',
+    plain: 'The matched pointer entry yielded no MRF URL in the parser.',
     action: 'Inspect the raw pointer entry and parser output before contacting the hospital about a missing link.'
   },
   'pointer-file-mismatch': {
@@ -150,7 +150,7 @@ const INTERVENTIONS = {
   },
   'pointer-target-dns-unresolved': {
     label: 'Pointer target host unresolved to clients',
-    plain: 'Our bounded client and browser could not resolve the host named by the root pointer, while the official pricing page links an identity-matched file on the current host.',
+    plain: 'The bounded client and browser could not resolve the host named by the root pointer, while the official pricing page links an identity-matched file on the current host.',
     action: 'Retain both exact URLs and the current page-file evidence; recheck the pointer target after DNS or publisher changes without inferring file absence.'
   },
   'pointer-html-intermediary': {
@@ -205,7 +205,7 @@ const INTERVENTIONS = {
   },
   'name-ambiguous': {
     label: 'Hospital match unresolved',
-    plain: 'Our matching process did not establish which pointer entry represents this hospital.',
+    plain: 'The matching process did not establish which pointer entry represents this hospital.',
     action: 'Manually adjudicate the pointer entries against the CMS roster.'
   },
   'domain-unknown': {
@@ -335,9 +335,9 @@ function classifyRow(row, evidence) {
   if (String(row.finding).startsWith('not-assessed-discovery-')) return pick('discovery-review', row.evidence);
 
   function blockReason() {
-    if (status === 406) return pick('client-rejected', `checked URL returned HTTP 406 to our client at ${evidence.url}`);
+    if (status === 406) return pick('client-rejected', `checked URL returned HTTP 406 to the client at ${evidence.url}`);
     if (edgeBlock) return pick('waf-blocked', `HTTP ${status} with edge attribution ${edge || 'mitigation header'}; blocking rule unverified`);
-    return pick('server-blocked', `checked URL returned HTTP ${status} to our client; responsible server layer unverified`);
+    return pick('server-blocked', `checked URL returned HTTP ${status} to the client; responsible server layer unverified`);
   }
 
   switch (row.finding) {
@@ -377,7 +377,7 @@ function classifyRow(row, evidence) {
     case 'pointer-links-unavailable-mrf-source-page-current-file':
       return pick('pointer-target-unavailable-page-file', 'the current pointer target returned an HTTP error while the official pricing page links a separate identity-matched file');
     case 'pointer-target-dns-unresolved-page-file-found':
-      return pick('pointer-target-dns-unresolved', 'the pointer target host did not resolve in our bounded client or browser, while the official pricing page links a separate identity-matched file');
+      return pick('pointer-target-dns-unresolved', 'the pointer target host did not resolve in the bounded client or browser, while the official pricing page links a separate identity-matched file');
     case 'pointer-links-html-download-page-with-file':
       return pick('pointer-html-intermediary', 'the root pointer mrf-url resolves to an HTML page that links the identity-matched file');
     case 'pointer-html-portal-not-found-source-page-current-file':

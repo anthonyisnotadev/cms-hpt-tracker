@@ -13,18 +13,21 @@ const source = JSON.parse(sourceBytes);
 const report = JSON.parse(read('unresolved-support-audit.json'));
 const investigation = JSON.parse(read('unresolved-investigation-worklist.json'));
 const quarantine = JSON.parse(read('identity-quarantine-worklist.json'));
+const uncertainty = JSON.parse(read('supported-uncertainty-followup-worklist.json'));
 
-test('current unresolved set is completely and disjointly covered by investigation and identity-quarantine queues', () => {
+test('current unresolved set is completely and disjointly covered by investigation, quarantine, and supported-uncertainty queues', () => {
   const latestUnresolved = source.records.filter(row => (row.issues || []).includes('latest-check-unresolved'));
   const investigationIds = new Set(investigation.records.map(row => row.ccn));
   const quarantineIds = new Set(quarantine.records.map(row => row.ccn));
-  const union = new Set([...investigationIds, ...quarantineIds]);
-  const unresolvedInQuarantine = latestUnresolved.filter(row => quarantineIds.has(row.ccn));
+  const uncertaintyIds = new Set(uncertainty.records.map(row => row.ccn));
+  const union = new Set([...investigationIds, ...quarantineIds, ...uncertaintyIds]);
+  const separatelyRouted = latestUnresolved.filter(row => quarantineIds.has(row.ccn) || uncertaintyIds.has(row.ccn));
 
   assert.equal(report.source_sha256, crypto.createHash('sha256').update(sourceBytes).digest('hex'));
   assert.equal(report.workstream_coverage.latest_check_unresolved_ccns, latestUnresolved.length);
   assert.equal(report.workstream_coverage.investigation_worklist_ccns, investigationIds.size);
   assert.equal(report.workstream_coverage.identity_quarantine_worklist_ccns, quarantineIds.size);
+  assert.equal(report.workstream_coverage.supported_uncertainty_worklist_ccns, uncertaintyIds.size);
   assert.equal(report.workstream_coverage.covered_latest_check_unresolved_ccns, latestUnresolved.length);
   assert.equal(report.workstream_coverage.missing_queue_coverage_count, 0);
   assert.deepEqual(report.workstream_coverage.missing_queue_coverage_ccns, []);
@@ -33,13 +36,29 @@ test('current unresolved set is completely and disjointly covered by investigati
   assert.ok(latestUnresolved.every(row => union.has(row.ccn)), 'every unresolved CCN belongs to at least one actionable queue');
   assert.deepEqual(
     report.workstream_coverage.separately_routed_latest_check_unresolved.map(row => row.ccn),
-    unresolvedInQuarantine.map(row => row.ccn)
+    separatelyRouted.map(row => row.ccn)
   );
+  assert.ok(uncertaintyIds.has('241319'), 'supported identity uncertainty has its own dated follow-up route');
 
-  const baxter = latestUnresolved.find(row => row.ccn === '244015');
-  assert.ok(baxter, 'Baxter remains in the unresolved snapshot');
-  assert.equal(baxter.workstream, 'identity-quarantine');
-  assert.ok(quarantineIds.has('244015'), 'Baxter is routed to the identity-quarantine queue');
-  assert.match(quarantine.records.find(row => row.ccn === '244015').next_action,
-    /Baxter-specific first-party cms-hpt\.txt or pricing\/file route/);
+  assert.equal(latestUnresolved.some(row => row.ccn === '244015'), true,
+    'Baxter remains unresolved until a CMS deemed-compliant exception is established');
+  assert.equal(quarantineIds.has('244015'), false, 'Baxter is no longer in identity quarantine');
+
+  const scopePending = JSON.parse(fs.readFileSync(path.join(auditDir, 'reviewed-resolutions.json')))
+    .filter(row => row.action === 'scope-review-pending');
+  assert.equal(scopePending.length, 13);
+  for (const resolution of scopePending) {
+    const queued = investigation.records.find(row => row.ccn === resolution.ccn);
+    assert.ok(queued, `${resolution.ccn} remains in the investigation queue`);
+    assert.equal(queued.evidence_gate, 'facility-specific-mrf-or-authoritative-exception-basis');
+    assert.ok(queued.reviewed_sources.includes('state-hospital-scope-review'));
+    if (['214002', '214004', '214012', '214018'].includes(resolution.ccn)) {
+      assert.match(queued.next_action, /Keep the facility unresolved.*Locate and verify a current facility-specific CMS MRF/s);
+    } else if (resolution.ccn === '244015') {
+      assert.match(queued.next_action, /Baxter-specific.*pricing\/file/i);
+    } else {
+      assert.ok(queued.next_action, `${resolution.ccn} retains its facility-specific next action`);
+    }
+    assert.doesNotMatch(queued.next_action, /keep.*exempt|scope-exempt/i);
+  }
 });

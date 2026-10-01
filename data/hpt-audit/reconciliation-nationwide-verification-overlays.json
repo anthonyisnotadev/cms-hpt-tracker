@@ -3,11 +3,56 @@
   "purpose": "Evidence-bound overlays for verified current page-linked files when the raw nationwide observation is older or incomplete. Raw crawl/verification inputs remain unchanged.",
   "records": [
     {
+      "ccn": "021310",
+      "type": "reviewed-pointer-file-identity",
+      "source_proof_file": "reconciliation-maniilaq-browser-byte-identity-proof-2026-09-17.json",
+      "base": {
+        "disposition": "mrf-verification-pending",
+        "observed_at": "2026-09-15T19:59:31.293Z",
+        "mrf_http_status": "200",
+        "mrf_url_sha256": "7a37ccfd213af12103be943611fbfc6ea6e828165159f0f411db736cb19eaa16",
+        "facility_identity": "not-corroborated",
+        "declared_hospital_name": "MANIILAQ ASSOCIATION",
+        "declared_location_name": "MANIILAQ ASSOCIATION",
+        "declared_address": "436 5th Ave Kotzebue AK 99752",
+        "declared_license_state": "AK",
+        "declared_last_updated": "2026-07-16",
+        "cms_template_version": "3.0.0"
+      }
+    },
+    {
+      "ccn": "050007",
+      "type": "reviewed-current-pointer-file-identity",
+      "source_proof_file": "reconciliation-sutter-050007-current-pointer-proof-2026-09-26.json",
+      "base": {
+        "disposition": "pointer-facility-match-unresolved",
+        "observed_at": "2026-09-26T16:00:00.9Z",
+        "mrf_http_status": "",
+        "mrf_url_sha256": "fa16768be2fe35fc275356a28dbd108536081a21e748cf9a432023af56acdbf2",
+        "pointer_state": "retrieved-facility-match-unresolved",
+        "pointer_result": "retrieved"
+      }
+    },
+    {
+      "ccn": "051315",
+      "type": "reviewed-trinity-operator-alias-pointer-file",
+      "source_proof_file": "reconciliation-trinity-hospital-ccn-051315-pointer-alias-full-file-proof-2026-09-30.json",
+      "base": {
+        "disposition": "pointer-facility-match-unresolved",
+        "observed_at": "2026-09-15T09:16:10.948Z",
+        "mrf_http_status": "",
+        "mrf_url_sha256": "21e6ee79f0af740b91e9dcb06d3c27f12ae6458aa101e53e35aaabfa76d09b5c",
+        "pointer_state": "retrieved-facility-match-unresolved",
+        "pointer_result": "ok"
+      }
+    },
+    {
       "ccn": "440161",
       "source_proof_file": "reconciliation-tristar-centennial-current-page-file-promotion-proof-2026-09-26.json",
-      "page_linked_mrf_url": "https://hcadam.com/api/public/content/0947329859ac44d4aee0f06e1cda2eb9?download=true",
+      "page_linked_mrf_url": "https://stctrprodsnsvc00455826e6.blob.core.windows.net/pt-final-posting-files/62-1113737_TRISTAR-CENTENNIAL-MEDICAL-CENTER_standardcharges.json?si=dpx-pt-json-access-policy&spr=https&sv=2026-02-06&sr=c&sig=ks%2BgfAjyEHlZmeP2PYJ%2F9NpMuCoRStjTb2bhIy9Y6LM%3D",
+      "tracker_link_url": "https://www.tristarhealth.com/patient-resources/patient-financial-resources/pricing-transparency-cms-required-file-of-standard-charges",
       "base": {
-        "disposition": "verified-current-mrf",
+        "disposition": "mrf-request-unsuccessful",
         "observed_at": "2026-09-15T04:37:38.167Z",
         "mrf_http_status": "403",
         "mrf_url_sha256": "b41b8c700e2d49dad9159ba9f056daf14ef605bf638bde12b6c0bda3e2c19985",

@@ -75,8 +75,11 @@ jobs:
       # glossary. build-tracker.js fills tracker.html: the data block from
       # data/hpt-audit/*.csv, the <style> block from css/*.css, and cache-busting
       # hashes on the js tags.
-      - name: Build the site
-        run: npm run build
+      # Reviewed overlays validate retained raw proof samples locally. Those
+      # ignored samples are not publication artifacts. Check the committed
+      # build against every public input instead of bypassing proof validation.
+      - name: Verify the reviewed site build
+        run: node scripts/check-tracker-release.js
 
       # Only what the site actually serves. The pipeline inputs (scripts/, data/,
       # and the rest of cms_data/) were publicly reachable under the branch
@@ -90,6 +93,15 @@ jobs:
           cp -r css js img _site/
           # Seeds a fresh browser's outreach log; fetched at runtime by js/outreach.js.
           cp cms_data/outreach.public.json _site/cms_data/
+          # Publish only reviewed downloads linked by the tracker, not raw caches.
+          mkdir -p _site/data/hpt-audit/rechecks/2026-09-09/resolution
+          for f in nationwide-verification-report.md nationwide-verification.csv \
+                   nationwide-browser-reviews.json nationwide-search-reviews.json \
+                   nationwide-verification.json nationwide-snapshot-bridge.json accuracy-plan.md; do
+            cp "data/hpt-audit/$f" "_site/data/hpt-audit/$f"
+          done
+          cp data/hpt-audit/rechecks/2026-09-09/resolution/assessments.csv \
+             _site/data/hpt-audit/rechecks/2026-09-09/resolution/
           cp CNAME robots.txt LICENSE .nojekyll _site/
 
       # Fail loudly here rather than publishing a site with a hole in it.
@@ -101,6 +113,11 @@ jobs:
                    cms_data/outreach.public.json CNAME; do
             test -s "_site/$f" || { echo "missing or empty: $f"; exit 1; }
           done
+          for f in nationwide-verification-report.md nationwide-verification.csv \
+                   nationwide-browser-reviews.json nationwide-search-reviews.json; do
+            test -s "_site/data/hpt-audit/$f" || exit 1
+          done
+          test -s _site/data/hpt-audit/rechecks/2026-09-09/resolution/assessments.csv
           # The build must have filled the tracker's injected blocks.
           grep -q '<script id="tracker-data" type="application/json">{' _site/tracker.html \
             || { echo 'tracker-data block was not populated'; exit 1; }

@@ -1,0 +1,47 @@
+{
+  "audit_id": "reconciliation-greenwood-ummc-current-root-pointer-crosscheck-2026-09-29",
+  "ccn": "250099",
+  "hospital_name": "GREENWOOD LEFLORE HOSPITAL",
+  "observed_at": "2026-09-29T11:54:47Z",
+  "official_transition_page": "https://umc.edu/Greenwood/Patients-Visitors/Bill-Pay.html",
+  "transition_scope_reference": "reconciliation-greenwood-post-transition-pricing-recheck-proof-2026-09-26.json",
+  "official_root_pointer": {
+    "url": "https://umc.edu/cms-hpt.txt",
+    "status": 200,
+    "content_type": "text/plain",
+    "bytes": 1275,
+    "sha256": "4e90bcdcd7db39a11b03a5b05c699373d9b3c54fa49af5ffeb841b0cd5aa5b6f",
+    "etag": "\"1dd4ffa75566bfb\"",
+    "last_modified": "2026-09-29T10:08:22Z",
+    "parsed_locations": [
+      "UMMC Jackson Hospital",
+      "UMMC Grenada Hospital",
+      "UMMC Holmes County Hospital",
+      "UMMC Madison Hospital"
+    ],
+    "parsed_mrf_urls": [
+      "https://www.umc.edu/Healthcare/Patients-and-Visitors/Bill%20Pay/Pricing%20Files/646008520-1154317527_university-of-mississippi-medical-center_standardcharges.csv",
+      "https://www.umc.edu/Healthcare/Patients-and-Visitors/Bill%20Pay/Pricing%20Files/646008520-1558798603_university-of-mississippi-medical-center_standcharges.csv",
+      "https://www.umc.edu/Healthcare/Patients-and-Visitors/Bill%20Pay/Pricing%20Files/646008520-1386630705_university-of-mississippi-medical-center_standardcharges.csv",
+      "https://www.umc.edu/Healthcare/Patients-and-Visitors/Bill%20Pay/Pricing%20Files/646008520-1194770404_university-of-mississippi-medical-center_standardcharges.csv"
+    ],
+    "greenwood_entry_present": false,
+    "retained_extract_note": "Only location names, source-page URLs, MRF URLs, response metadata and the response hash are retained; pointer contact fields are deliberately omitted."
+  },
+  "official_pricing_page": {
+    "url": "https://umc.edu/Healthcare/Patients-and-Visitors/Bill%20Pay/UMMC%20Pricing.html",
+    "browser_title": "UMMC Pricing - University of Mississippi Medical Center",
+    "browser_observation": "Current rendered page lists standard-charge files for UMMC Jackson, Madison, Grenada and Holmes County; no Greenwood or Greenwood Leflore file is listed. It describes its detailed pricing files as applying to the Jackson main campus and says prices vary at Madison, Grenada and Holmes County facilities.",
+    "http_status": "rendered-live-in-browser"
+  },
+  "comparison_to_2026_09_26": {
+    "previous_pointer_observation": "web-tool-inaccessible",
+    "current_pointer_observation": "HTTP 200; 1,275 bytes; content-bearing; full SHA-256 retained",
+    "pointer_content_changed_since_previous_hash_bound_capture": "unknown; no previous complete pointer response was retained",
+    "evidence_gain": "first complete, content-bearing current UMMC root pointer retrieval and exact four-entry parse"
+  },
+  "disposition": "current-ummc-pointer-and-pricing-page-omit-greenwood-specific-mrf",
+  "count_effect": "none; CCN 250099 remains unresolved",
+  "interpretation": "This is a new first-party pointer observation that corroborates the current UMMC pricing page's four listed facilities and confirms that the current root pointer contains no Greenwood entry. The four listed MRF URLs are not assigned to CCN 250099. No file-absence, successor-CCN, scope-exemption, or compliance determination is made.",
+  "next_action": "Obtain a publisher-confirmed Greenwood-specific current MRF or a publisher explanation mapping CCN 250099 to the covered file/location, then retrieve and validate exact bytes, facility identity, Mississippi metadata, date, version and usable pricing rows. Keep the four current UMMC campus files excluded unless publisher/CMS evidence maps one to Greenwood."
+}

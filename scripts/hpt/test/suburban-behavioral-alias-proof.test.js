@@ -10,7 +10,7 @@ const { loadReviewedView } = require('../lib/reviewed-resolutions');
 const root = path.resolve(__dirname, '../../..');
 const audit = path.join(root, 'data/hpt-audit');
 
-test('Suburban former-name campus remains distinct from Roxborough and flags noncanonical version', () => {
+test('Suburban former-name campus remains distinct from Roxborough and records a formatting-only 3.0 version as current', () => {
   const proof = require(path.join(audit, 'reconciliation-suburban-behavioral-alias-proof.json'));
   const resolution = require(path.join(audit, 'reviewed-resolutions.json'))
     .find(row => row.ccn === '390116');
@@ -29,6 +29,6 @@ test('Suburban former-name campus remains distinct from Roxborough and flags non
   assert.equal(resolution.action, 'replace-observation');
   assert.equal(resolution.evidence.observedFinding, 'mrf-template-version-noncanonical');
   const view = loadReviewedView(audit);
-  assert.equal(view.compliance.find(row => row.ccn === '390116').finding, resolution.evidence.observedFinding);
+  assert.equal(view.compliance.find(row => row.ccn === '390116').finding, 'compliant-observed');
   assert.equal(view.history['390116'].finding, 'not-assessed-not-named-in-file');
 });

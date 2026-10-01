@@ -21,7 +21,18 @@ test('Red Bay quarantines unrelated Kaiser pointer without promoting unverified 
   assert.equal(resolution.official.domain, 'hh.health');
   assert.equal(resolution.evidence.first_party_page_file_url,
     'https://hh.health/wp-content/uploads/472323163_red-bay-hospital_standardcharges.csv');
-  assert.equal(resolution.evidence.page_file_byte_status, 'not retrieved in this client; DNS resolution failed');
+  assert.equal(resolution.evidence.latest_current_page_file_recheck.proof_file,
+    'reconciliation-red-bay-current-hh-health-link-recheck-proof-2026-09-30.json');
+  assert.equal(resolution.evidence.latest_current_page_file_recheck.file_bytes_retained, 0);
+  assert.equal(resolution.evidence.latest_current_page_file_recheck.cms_template_version, null);
+  assert.match(resolution.evidence.page_file_byte_status, /no bytes/);
+  const manual = require(path.join(audit, 'reconciliation-manual-access-observations.json')).records
+    .find(row => row.ccn === proof.ccn);
+  assert.equal(manual.latest_browser_access_recheck.page_file_url,
+    'https://hh.health/wp-content/uploads/472323163_red-bay-hospital_standardcharges.csv');
+  assert.equal(manual.latest_browser_access_recheck.disposition,
+    'official-page-file-retained-root-pointer-transport-unresolved');
+  assert.equal(manual.disposition, 'official-page-file-linkage-current-transport-unresolved');
   const view = loadReviewedView(audit);
   const standing = view.compliance.find(row => row.ccn === proof.ccn);
   assert.equal(standing.domain, 'hh.health');

@@ -1,0 +1,27 @@
+{
+  "audit_id": "reconciliation-nor-lea-new-mexico-doh-provider-directory-crosscheck-2026-09-28",
+  "observed_at": "2026-09-28T14:43:57Z",
+  "ccn": "321305",
+  "purpose": "Independent government-directory cross-check of the 1600-versus-1900 North Main address conflict in the current Nor-Lea CMS v3 file.",
+  "source": {
+    "agency": "New Mexico Department of Health",
+    "publication_url": "https://prod.nmhealth.org/publication/view/general/9213/",
+    "document_type": "Provider ID Description directory (PDF, 84 pages)",
+    "observed_match": "The directory lists NOR LEA HOSPITAL DISTRICT with address 1600 NORTH MAIN twice in its provider/address listings.",
+    "page": 31,
+    "scope_limit": "This is a state government provider-directory listing, not a hospital licensure record or a CMS MRF; the visible publication has no confirmed issue date in the retained web rendering."
+  },
+  "comparison": {
+    "current_hospital_page": "https://nor-lea.org/contact-us",
+    "current_hospital_page_label": "Nor-Lea Main Campus",
+    "current_hospital_page_address": "1600 N. Main Street, Lovington, NM 88260",
+    "cms_current_enrollment_address": "1600 N MAIN AVE, Lovington, NM 88260-2813",
+    "nppes_current_location_address": "1600 NORTH MAIN, Lovington, NM 88260-2813",
+    "pointer_page_linked_file_address": "1900 North Main Avenue, Lovington, NM 88260-2813",
+    "pointer_page_linked_file_sha256": "549aeebd73a2ec8cb6ba28c75e1af7b31380db81b6597d042c8b0a821dcc151e"
+  },
+  "finding": "New independent government-directory corroboration repeats 1600 North Main for Nor-Lea Hospital District. It reinforces the existing address discrepancy but does not prove the MRF's 1900 value is invalid, establish whether a secondary physical location exists, or resolve the file's hospital_address field.",
+  "disposition": "address-conflict-reinforced-still-unresolved",
+  "count_effect": 0,
+  "next_action": "Keep CCN 321305 unresolved. Seek publisher correction or an authoritative current New Mexico facility/licensure record expressly tying this hospital and MRF location to 1900 North Main. Preserve the file's literal 1900 value and hash; do not normalize it to 1600 or infer compliance/noncompliance."
+}

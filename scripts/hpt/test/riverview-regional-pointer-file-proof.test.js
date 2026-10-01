@@ -32,7 +32,7 @@ test('Riverview proof binds official campus, exact pointer and bounded September
   assert.equal(resolution.evidence.url, proof.file_url);
   const view = loadReviewedView(audit);
   const row = view.compliance.find(item => item.ccn === proof.ccn);
-  assert.equal(row.finding, 'mrf-template-version-noncanonical');
+  assert.equal(row.finding, 'compliant-observed');
   assert.equal(row.mrf_url, proof.file_url);
   assert.equal(view.history[proof.ccn].mrf_url, proof.displaced_file_url);
 });

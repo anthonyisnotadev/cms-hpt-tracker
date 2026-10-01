@@ -1,0 +1,44 @@
+{
+  "audit_id": "reconciliation-upmc-greene-current-address-conflict-proof-2026-09-29",
+  "observed_at": "2026-09-29T13:26:15.313Z",
+  "ccn": "390150",
+  "facility": "UPMC Greene",
+  "official_facility_address": "350 Bonar Ave, Waynesburg, PA 15370",
+  "cms_general_information": {
+    "path": "cms_data/Hospital_General_Information.csv",
+    "sha256": "23c5019ee51e11442d6d64cd153cedd78c51ab6435f621e4cb9351e3e972d9e3",
+    "ccn": "390150",
+    "address": "350 BONAR AVENUE, WAYNESBURG, PA 15370"
+  },
+  "first_party_facility_page": "https://whs.org/locations-practices/greene/",
+  "first_party_price_transparency_page": "https://whs.org/patient-guests/#_tab-985f3f5e473efded214",
+  "root_pointer": {
+    "url": "https://whs.org/cms-hpt.txt",
+    "sha256": "d6221db9e1e1ee6edc89a0d3d54d497ae2194567c630c9e4f62bf8f9d68db118",
+    "path": "cms_data/hpt/pointer-corpus/raw/whs.org-6195da0d192e.txt",
+    "declares_exact_mrf_url": true
+  },
+  "mrf": {
+    "url": "https://whs.org/wp-content/uploads/2026/03/437884840_upmc-greene_standardcharges.csv",
+    "http_status": 206,
+    "requested_range": "bytes=0-262143",
+    "sample_bytes": 262144,
+    "sample_sha256": "2a48942de527961d4e75b01101e07a4fc7e4f53136708e0eac8a385368c0c83b",
+    "sample_path": "cms_data/hpt/nationwide-verification/file-byte-proof/2a48942de527961d4e75b01101e07a4fc7e4f53136708e0eac8a385368c0c83b.bin",
+    "declared_name": "UPMC Greene",
+    "declared_location": "UPMC Greene",
+    "declared_address": "250 Bonor Avenue  Waynesburg, PA",
+    "declared_state": "PA",
+    "declared_date": "2026-03-06",
+    "cms_template_version": "3.0.0"
+  },
+  "conflict": {
+    "field": "facility street address",
+    "file_value": "250 Bonor Avenue, Waynesburg, PA",
+    "official_value": "350 Bonar Avenue, Waynesburg, PA 15370",
+    "material_difference": "Both street number and street-name spelling differ; this is not punctuation normalization."
+  },
+  "disposition": "linked-mrf-header-unmatched",
+  "next_action": "Keep unresolved pending publisher-corrected file metadata or authoritative publisher explanation that explicitly reconciles the exact file's declared address to UPMC Greene at 350 Bonar Avenue.",
+  "scope_note": "CCN 390150 is outside the frozen 891-membership historical cohort; this correction must not alter that cohort's denominator or unresolved count."
+}

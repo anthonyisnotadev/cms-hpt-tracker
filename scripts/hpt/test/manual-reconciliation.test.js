@@ -30,6 +30,26 @@ test('manual closed-facility exemption agrees with the dedicated standing scope 
   const input = { '1': { correction: { checkedOn: '2026-09-10', verdict: 'exempt' } } };
   assert.equal(reconcileManual([closed], input)[0].disposition, 'agrees-with-standing-fields');
 });
+test('later exact-CCN Indian Health Program proof reconciles an older failing manual verdict without claiming an MRF', () => {
+  const fs = require('node:fs');
+  const path = require('node:path');
+  const root = path.resolve(__dirname, '../../..');
+  const read = file => JSON.parse(fs.readFileSync(path.join(root, file), 'utf8'));
+  const proof = { ...read('data/hpt-audit/reconciliation-kanakanak-indian-health-program-scope-proof-2026-09-28.json'),
+    proof_file: 'reconciliation-kanakanak-indian-health-program-scope-proof-2026-09-28.json' };
+  const standing = require('../lib/reviewed-resolutions').loadReviewedView(path.join(root, 'data/hpt-audit'))
+    .compliance.find(row => row.ccn === '021309');
+  const correction = read('cms_data/outreach.public.json')['021309'].correction;
+  const result = reconcileManual([standing], { '021309': { correction } }, [proof])[0];
+  assert.equal(proof.ccn, '021309');
+  assert.equal(standing.finding, 'not-applicable-indian-health-program');
+  assert.equal(result.disposition, 'later-observation-supports-scope-exemption');
+  assert.deepEqual(result.differences, ['verdict']);
+  assert.equal(result.manual_mrf_url, '');
+  assert.match(result.next_action, /prior route-level 404 observations/i);
+  const generated = read('data/hpt-audit/manual-correction-reconciliation.json').records.find(row => row.ccn === '021309');
+  assert.equal(generated.disposition, 'later-observation-supports-scope-exemption');
+});
 test('a later official-page observation corroborates a factual dead-link report without adopting its legal verdict', () => {
   const standing = { ccn: '021309', hospital_name: 'KANAKANAK', finding: 'not-assessed-nationwide-pointer-not-retrieved', checked_at: '2026-09-15' };
   const input = { '021309': { correction: { verdict: 'failing', checkedOn: '2026-09-01' } } };
@@ -144,5 +164,6 @@ test('a later applied Royal Oak review reconciles the manual pointer URL without
   const reconciliation = read('data/hpt-audit/nationwide-reconciliation.json');
   assert.equal(generated.disposition, 'reviewed-pointer-file-role-reconciled');
   assert.equal(reconciliation.records.find(row => row.ccn === '230130').workstream, 'standing-evidence-follow-up');
-  assert.equal(reconciliation.summary.workstreams['other-reconciliation'] || 0, 0);
+  assert.equal(reconciliation.summary.workstreams['other-reconciliation'] || 0,
+    reconciliation.records.filter(row => row.workstream === 'other-reconciliation').length);
 });

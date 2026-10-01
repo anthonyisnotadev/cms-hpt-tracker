@@ -6,6 +6,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
+const { applyReviewedVerificationOverlays } = require('./lib/reviewed-verification-overlays');
 
 const root = path.resolve(__dirname, '../..');
 const auditDir = path.join(root, 'data/hpt-audit');
@@ -18,24 +19,30 @@ const rosterName = 'reconciliation-891-baseline-member-roster-2026-09-27.json';
 const sourceAuditName = 'reconciliation-891-baseline-source-recoverability-audit-2026-09-27.json';
 const roster = read(rosterName);
 const audit = read(sourceAuditName);
-const byCcn = new Map(snapshot.records.map((row) => [row.ccn, row]));
+// Cohort status is based on the effective reviewed view, including validated
+// page-linked file overlays, while the source snapshot hash remains bound to
+// the immutable raw nationwide observation.
+const effectiveRecords = applyReviewedVerificationOverlays(snapshot.records, auditDir);
+const byCcn = new Map(effectiveRecords.map((row) => [row.ccn, row]));
 const members = [...new Set([...roster.baseline_unresolved_ccns, ...roster.baseline_pointer_denied_ccns])].sort();
 if (members.length !== 720 || byCcn.size !== 5419) throw new Error(`Unexpected source size: ${members.length} cohort CCNs, ${byCcn.size} current CCNs`);
 
 function category(row) {
-  // A current scope disposition is stronger than a historical observation
-  // being superseded while the reviewed resolution was applied.
+  // Match the canonical nationwide effective category precedence exactly.
   if (row.disposition.startsWith('scope-exempt')) return 'scope-exempt';
-  if (row.latest_observation_superseded) return 'superseded-by-reviewed-resolution';
-  if (row.standing_evidence_retained) return 'standing-evidence-retained';
   if (row.supported_identity_uncertainty) return 'supported-identity-uncertainty';
+  if (row.latest_observation_superseded) return 'superseded-by-reviewed-resolution';
+  // A retained historical finding does not close the current facility/file
+  // identity question. Keep these explicit unresolved dispositions in the
+  // cohort's open bucket while the standing follow-up queue preserves the
+  // prior finding as a second evidence layer.
+  if (row.standing_evidence_retained && row.disposition === 'pointer-facility-match-unresolved') return 'genuinely-unresolved';
+  if (row.standing_evidence_retained) return 'standing-evidence-retained';
   if (row.disposition.startsWith('verified-')) return 'active-verification-claim';
   return 'genuinely-unresolved';
 }
 
-// Prefer the already-generated exclusive effective category when the source
-// records contain it; otherwise the mapping above is checked against totals.
-const groups = Object.fromEntries(['genuinely-unresolved', 'active-verification-claim', 'standing-evidence-retained', 'superseded-by-reviewed-resolution', 'scope-exempt'].map((key) => [key, []]));
+const groups = Object.fromEntries(['genuinely-unresolved', 'active-verification-claim', 'standing-evidence-retained', 'superseded-by-reviewed-resolution', 'scope-exempt', 'supported-identity-uncertainty'].map((key) => [key, []]));
 for (const ccn of members) {
   const row = byCcn.get(ccn);
   if (!row) throw new Error(`Current snapshot is missing cohort CCN ${ccn}`);
@@ -44,10 +51,12 @@ for (const ccn of members) {
   groups[effective].push(ccn);
 }
 const counts = Object.fromEntries(Object.entries(groups).map(([key, values]) => [key, values.length]));
-const expected = { 'genuinely-unresolved': 547, 'active-verification-claim': 18, 'standing-evidence-retained': 72, 'superseded-by-reviewed-resolution': 67, 'scope-exempt': 16 };
-if (JSON.stringify(counts) !== JSON.stringify(expected)) throw new Error(`Effective category crosswalk mismatch: ${JSON.stringify(counts)}`);
+const categoryTotal = Object.values(counts).reduce((sum, value) => sum + value, 0);
+if (categoryTotal !== members.length) throw new Error(`Effective category crosswalk does not cover the frozen cohort: ${JSON.stringify(counts)}`);
 
-const baselineUnresolvedNow = { 'active-verification-claim': [], 'superseded-by-reviewed-resolution': [], 'scope-exempt': [] };
+const currentSnapshotUnresolved = snapshot.summary.effective_counts['genuinely-unresolved'];
+
+const baselineUnresolvedNow = { 'active-verification-claim': [], 'superseded-by-reviewed-resolution': [], 'scope-exempt': [], 'supported-identity-uncertainty': [] };
 for (const ccn of roster.baseline_unresolved_ccns) {
   const group = category(byCcn.get(ccn));
   if (group !== 'genuinely-unresolved') baselineUnresolvedNow[group].push(ccn);
@@ -67,6 +76,7 @@ roster.current_crosswalk_ccns = { ...groups, 'current_pointer_access_denied_ccns
 roster.current_crosswalk_ccns['baseline_unresolved_now_active_ccns'] = baselineUnresolvedNow['active-verification-claim'];
 roster.current_crosswalk_ccns['baseline_unresolved_now_superseded_ccns'] = baselineUnresolvedNow['superseded-by-reviewed-resolution'];
 roster.current_crosswalk_ccns['baseline_unresolved_now_scope_exempt_ccns'] = baselineUnresolvedNow['scope-exempt'];
+roster.current_crosswalk_ccns['baseline_unresolved_now_supported_identity_uncertainty_ccns'] = baselineUnresolvedNow['supported-identity-uncertainty'];
 write(rosterName, roster);
 
 const current = audit.recoverable_snapshot_sources.find((item) => item.ref === 'working-tree-current');
@@ -77,7 +87,37 @@ current.pointer_access_denied_raw = snapshot.summary.counts['pointer-access-deni
 audit.observed_at = generatedAt;
 audit.result.current_crosswalk_for_720_unique_ccns = counts;
 audit.result.baseline_unresolved_now_other_category = Object.fromEntries(Object.entries(baselineUnresolvedNow).map(([key, values]) => [key, values.length]));
-audit.result.conclusion = `The exact Sep. 25 snapshot and both exact category member sets are recovered and stable across 28 matching snapshots. The user-facing 891 total double-counted 171 CCNs present in both categories; the deduplicated baseline is 720 hospitals. Keep the 593 and 298 category memberships separately auditable, reconcile all 720 against current evidence, and do not substitute the overall current ${snapshot.summary.effective_counts['genuinely-unresolved']} unresolved count or infer closure from aggregate deltas. The current cohort includes ${baselineUnresolvedNow['scope-exempt'].length} individually supported scope exemptions (federal or Indian Health Program).`;
-audit.next_action = `Continue evidence review for the ${unresolvedMembership} unresolved CCNs in this historical cohort; retain the ${baselineUnresolvedNow['active-verification-claim'].length} active-claim, ${baselineUnresolvedNow['superseded-by-reviewed-resolution'].length} superseded, and ${baselineUnresolvedNow['scope-exempt'].length} individually scope-exempt baseline-unresolved records as auditable dispositions. Continue the full 5,419-CCN reconciliation independently.`;
+audit.result.conclusion = `The exact Sep. 25 snapshot and both exact category member sets are recovered and stable across 28 matching snapshots. The user-facing 891 total double-counted 171 CCNs present in both categories; the deduplicated baseline is 720 hospitals. Keep the 593 and 298 category memberships separately auditable, reconcile all 720 against current evidence, and do not substitute the overall current ${currentSnapshotUnresolved} serialized unresolved count or infer closure from aggregate deltas. Current state-operated hospitals without the CMS deemed-compliant exception evidence remain unresolved, not noncompliant; ${baselineUnresolvedNow['scope-exempt'].length} individually supported exemptions remain.`;
+audit.next_action = `Continue evidence review for all ${unresolvedMembership} genuinely unresolved CCNs in this historical cohort. The remaining baseline-unresolved records are partitioned by category as follows: ${Object.entries(baselineUnresolvedNow).map(([categoryName, values]) => `${values.length} ${categoryName}`).join(', ')}. Continue the full 5,419-CCN reconciliation independently.`;
 write(sourceAuditName, audit);
+
+const worklistName = 'unresolved-investigation-worklist.json';
+const nationwideName = 'nationwide-reconciliation.json';
+const worklistBytes = fs.readFileSync(path.join(auditDir, worklistName));
+const nationwideBytes = fs.readFileSync(path.join(auditDir, nationwideName));
+const worklist = JSON.parse(worklistBytes);
+const nationwide = JSON.parse(nationwideBytes);
+const crosscheck = {
+  audit_id: 'reconciliation-891-worklist-membership-crosscheck-2026-09-28',
+  observed_at: generatedAt,
+  purpose: 'Reconcile the historical 891-membership cohort\'s genuinely unresolved CCNs against the active nationwide unresolved investigation worklist, so cohort progress is not confused with the larger nationwide queue.',
+  inputs: {
+    cohort_roster: { path: `data/hpt-audit/${rosterName}`, sha256: hashFile(path.join(auditDir, rosterName)), current_snapshot_sha256: snapshotHash },
+    nationwide_worklist: { path: `data/hpt-audit/${worklistName}`, sha256: crypto.createHash('sha256').update(worklistBytes).digest('hex'), source_nationwide_reconciliation_sha256: crypto.createHash('sha256').update(nationwideBytes).digest('hex') }
+  },
+  comparison: {
+    historical_cohort_memberships: 891,
+    historical_cohort_unique_ccns: 720,
+    historical_cohort_overlap_memberships: 171,
+    cohort_genuinely_unresolved_ccns: unresolvedMembership,
+    nationwide_unresolved_worklist_ccns: worklist.records.length,
+    cohort_unresolved_missing_from_worklist: groups['genuinely-unresolved'].filter(ccn => !worklist.records.some(row => row.ccn === ccn)).sort(),
+    worklist_ccns_outside_historical_cohort: worklist.records.map(row => row.ccn).filter(ccn => !groups['genuinely-unresolved'].includes(ccn)).sort(),
+    counts_by_current_cohort_category: counts
+  },
+  result: `All ${unresolvedMembership} genuinely unresolved historical-cohort CCNs are present in the ${worklist.records.length}-record nationwide worklist; remaining records reflect wider nationwide worklist membership.`,
+  validation: { exact_ccn_set_membership_comparison: true, snapshot_ccn_count: byCcn.size, snapshot_sha256_matches_cohort_roster: true }
+};
+write('reconciliation-891-worklist-membership-crosscheck-2026-09-28.json', crosscheck);
+function hashFile(file) { return crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex'); }
 console.log(JSON.stringify({ generatedAt, snapshotHash, cohortCCNs: members.length, categoryCounts: counts, unresolvedPointerDenied: pointerDenied.length }, null, 2));

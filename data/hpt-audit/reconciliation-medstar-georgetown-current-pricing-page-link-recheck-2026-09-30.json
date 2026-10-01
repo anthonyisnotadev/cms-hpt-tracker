@@ -1,0 +1,33 @@
+{
+  "ccn": "090004",
+  "observed_at": "2026-09-30T14:48:51Z",
+  "source_page_url": "https://www.medstarhealth.org/price-transparency-disclosures",
+  "browser": "Codex in-app browser accessibility review; public page, no login",
+  "page_rendered": true,
+  "page_description": "Current MedStar Health CMS price-transparency page describes a comprehensive machine-readable file for hospital standard charges.",
+  "facility_link_label": "Click here to view standard charges for MedStar Georgetown University Hospital",
+  "current_file_url": "https://www.medstarhealth.org/-/media/project/mho/medstar/billing-and-insurance/2026/522218584_medstar_georgetown_university_hospital_standardcharges.csv",
+  "matches_retained_complete_file_url": true,
+  "file_navigation_result": "Browser reader refused CSV response as unsupported content type; no response bytes or metadata were newly observed.",
+  "retained_file_sha256": "216bf4e59243abae3daef7843f910ebdb1e1226bc1fc181c4226e4fb07ee09d3",
+  "retained_file_bytes": 130616328,
+  "retained_file_metadata": {
+    "cms_version": "3.0.0",
+    "last_updated_on": "2026-04-01",
+    "hospital_name": "MedStar Georgetown Hospital",
+    "hospital_address": "3800 Reservoir Rd. NorthWest Washington, DC, 20007",
+    "license_number_column": "license_number|MD",
+    "license_number_value": "HFD01-0188",
+    "type_2_npi": "1427145176",
+    "attestation": true
+  },
+  "evidence_gain": "Current official-page rendering and facility-specific link were reobserved; the page still points to the same exact file URL. This is a source-route recheck, not a new MRF or new file bytes.",
+  "interpretation": "The current pricing page continues to link the same complete, hash-bound Georgetown MRF. Its known literal license_number|MD suffix remains inconsistent with the independently supported DC facility/licensing-jurisdiction evidence and CMS CSV v3.0 field definition. Keep CCN 090004 unresolved only for publisher correction or explanation of that metadata field; do not relabel or promote based on the page link.",
+  "disposition": "current-official-page-link-confirmed-same-file-license-suffix-conflict-open",
+  "count_effect": "none",
+  "next_action": "Wait for a changed MRF, published correction, or publisher clarification. On such a change, retrieve/hash the new file and compare the literal license field; do not repeat this unchanged page/file check absent a material source change.",
+  "related_proofs": [
+    "reconciliation-medstar-georgetown-complete-file-proof-2026-09-26.json",
+    "reconciliation-medstar-georgetown-license-number-jurisdiction-audit-2026-09-27.json"
+  ]
+}

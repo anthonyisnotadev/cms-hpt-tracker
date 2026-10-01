@@ -1,0 +1,31 @@
+{
+  "audit_id": "reconciliation-asante-ashland-payerprice-corroboration-2026-09-29",
+  "observed_at": "2026-09-29T14:36:00Z",
+  "ccn": "380005",
+  "facility": "Ashland Community Hospital / Asante Ashland Community Hospital",
+  "question": "Does a separately surfaced price-transparency index expose exact-CCN identity or a distinct retrievable MRF that resolves the Asante Ashland campus coverage gate?",
+  "source": {
+    "url": "https://payerprice.com/hospitals/ashland%20community%20hospital-380005",
+    "source_type": "third-party price-transparency index",
+    "observed_via": "web search and page open",
+    "exact_page_fields": {
+      "ccn": "380005",
+      "npi": "1730628827",
+      "facility_type": "Short Term Acute Care Hospital",
+      "address": "280 Maple Street, Ashland, OR 97520"
+    },
+    "pricing_claim": "The page says its displayed contract data comes from CMS-mandated price transparency data and shows an interactive rate view.",
+    "independent_source_bytes": false,
+    "downloadable_file_or_hash_exposed": false,
+    "rate_view_route": "The page's View this hospital's rates link navigates to a sign-up page, not a raw MRF or public file endpoint."
+  },
+  "comparison": {
+    "official_asante_page": "Already documented separately as explicitly labeling the Rogue Regional and Ashland standard-charges file as shared and Ashland as a Rogue Regional satellite.",
+    "official_archive": "The exact combined Asante ZIP still has no retrieved bytes in retained first-party or alternate-source checks.",
+    "meaning": "The third-party index corroborates the exact CCN/NPI/facility/address identity association and indicates derivative prices may exist, but it does not expose the underlying file, hash, declared metadata, or proof that its input is the current shared Asante ZIP. It cannot resolve file coverage or replace first-party evidence."
+  },
+  "evidence_gained": "New dated third-party exact-CCN identity/address/NPI corroboration; no new publisher evidence, MRF bytes, file metadata, or file-coverage proof.",
+  "disposition_effect": "none; retain CCN 380005 as unresolved for current HPT MRF coverage",
+  "count_effect": 0,
+  "next_action": "Do not import third-party-derived prices or infer the source-file scope. Seek actual bytes from an independent public archive or a publisher-provided file/correction; validate archive hash, facility/location coverage, Oregon metadata, CMS date/version and usable rows. Revisit this index only if it publishes a raw source-file link, hash, or attributable source-version disclosure."
+}

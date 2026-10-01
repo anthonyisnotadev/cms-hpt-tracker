@@ -45,6 +45,19 @@
       "next_action": "Retain manual history; display the later dated file finding."
     },
     {
+      "ccn": "130003",
+      "hospital_name": "ST JOSEPH REGIONAL MEDICAL CENTER",
+      "manual_checked_at": "2026-09-28",
+      "standing_checked_at": "2026-09-23T01:00:00Z",
+      "manual_mrf_url": "https://hospitalpricedisclosure.com/Download.aspx?pi=HEe7rvjeIIxdn6QxdPT9Hg*-*",
+      "standing_mrf_url": "https://hospitalpricedisclosure.com/Download.aspx?pi=HEe7rvjeIIxdn6QxdPT9Hg*-*",
+      "manual_date": "2026-04-01",
+      "standing_date": "2026-04-01",
+      "differences": [],
+      "disposition": "agrees-with-standing-fields",
+      "next_action": "Retain manual provenance; include supporting retrieval proof in the overall evidence audit."
+    },
+    {
       "ccn": "130063",
       "hospital_name": "TREASURE VALLEY HOSPITAL",
       "manual_checked_at": "2026-08-30",
@@ -378,6 +391,19 @@
       "next_action": "Retain manual history; display the later dated file finding."
     },
     {
+      "ccn": "250093",
+      "hospital_name": "BOLIVAR MEDICAL CENTER",
+      "manual_checked_at": "2026-09-29",
+      "standing_checked_at": "2026-09-22T18:30:00Z",
+      "manual_mrf_url": "https://hospitalpricedisclosure.com/Download.aspx?pi=eoROtF*_*Ds07dFfOoe4qILQ*-*",
+      "standing_mrf_url": "https://hospitalpricedisclosure.com/Download.aspx?pi=eoROtF*_*Ds07dFfOoe4qILQ*-*",
+      "manual_date": "2026-04-01",
+      "standing_date": "2026-04-01",
+      "differences": [],
+      "disposition": "agrees-with-standing-fields",
+      "next_action": "Retain manual provenance; include supporting retrieval proof in the overall evidence audit."
+    },
+    {
       "ccn": "330405",
       "hospital_name": "HELEN HAYES HOSPITAL",
       "manual_checked_at": "2026-08-30",
@@ -523,6 +549,21 @@
       "next_action": "Retain manual history; display the later dated file finding."
     },
     {
+      "ccn": "420010",
+      "hospital_name": "CAROLINA PINES REGIONAL MEDICAL CENTER",
+      "manual_checked_at": "2026-09-28",
+      "standing_checked_at": "2026-09-22T19:30:00Z",
+      "manual_mrf_url": "https://hospitalpricedisclosure.com/download.aspx?pi=iQ*__*xBZskGDGvutD7kLWDDg*-*",
+      "standing_mrf_url": "https://hospitalpricedisclosure.com/Download.aspx?pi=iQ%2A__%2AxBZskGDGvutD7kLWDDg%2A-%2A",
+      "manual_date": "2026-04-01",
+      "standing_date": "2026-04-01",
+      "differences": [
+        "mrf-url"
+      ],
+      "disposition": "evidence-review-required",
+      "next_action": "Verify manual source links and reconcile identity and metadata with the standing evidence."
+    },
+    {
       "ccn": "431319",
       "hospital_name": "HANS P PETERSON MEMORIAL HOSPITAL - CAH",
       "manual_checked_at": "2026-08-30",
@@ -551,6 +592,53 @@
       ],
       "disposition": "superseded-by-later-file-evidence",
       "next_action": "Retain manual history; display the later dated file finding."
+    },
+    {
+      "ccn": "440187",
+      "hospital_name": "LIVINGSTON REGIONAL HOSPITAL",
+      "manual_checked_at": "2026-09-29",
+      "standing_checked_at": "2026-09-22T01:14:00Z",
+      "manual_mrf_url": "https://hospitalpricedisclosure.com/Download.aspx?pi=H9YBLIdJLmIpMHghfMTl5w*-*",
+      "standing_mrf_url": "https://cleverleypteusstatic.blob.core.windows.net/readable/621762419_livingston-regional-hospital_standardcharges.json",
+      "manual_date": "2026-04-01",
+      "standing_date": "2026-04-01",
+      "differences": [
+        "mrf-url",
+        "pointer-url",
+        "verdict"
+      ],
+      "disposition": "evidence-review-required",
+      "next_action": "Verify manual source links and reconcile identity and metadata with the standing evidence."
+    },
+    {
+      "ccn": "450155",
+      "hospital_name": "HEREFORD REGIONAL MEDICAL CENTER",
+      "manual_checked_at": "2026-09-29",
+      "standing_checked_at": "2026-09-28T07:21:36Z",
+      "manual_mrf_url": "",
+      "standing_mrf_url": "",
+      "manual_date": "2026-01-01",
+      "standing_date": "",
+      "differences": [
+        "declared-date",
+        "template-version",
+        "verdict"
+      ],
+      "disposition": "evidence-review-required",
+      "next_action": "Verify manual source links and reconcile identity and metadata with the standing evidence."
+    },
+    {
+      "ccn": "450833",
+      "hospital_name": "ENNIS REGIONAL MEDICAL CENTER",
+      "manual_checked_at": "2026-09-29",
+      "standing_checked_at": "2026-09-22T00:00:00Z",
+      "manual_mrf_url": "https://hospitalpricedisclosure.com/Download.aspx?pi=7VLBZJKslFck7*_*nYB4PQFw*-*",
+      "standing_mrf_url": "https://hospitalpricedisclosure.com/Download.aspx?pi=7VLBZJKslFck7*_*nYB4PQFw*-*",
+      "manual_date": "2026-04-01",
+      "standing_date": "2026-04-01",
+      "differences": [],
+      "disposition": "agrees-with-standing-fields",
+      "next_action": "Retain manual provenance; include supporting retrieval proof in the overall evidence audit."
     },
     {
       "ccn": "451350",
@@ -1087,13 +1175,13 @@
         "verdict"
       ],
       "disposition": "later-observation-corroborates-factual-access-issue",
-      "next_action": "Recheck the exact official facility page and canonical DFCS root pointer after a material page change or publisher response. Preserve the PDF and 404 observations without inferring that no machine-readable file exists elsewhere or adopting a legal verdict."
+      "next_action": "Keep API in the ordinary in-scope MRF assessment. Obtain a current first-party CMS pointer or CMS-template CSV/JSON through a changed official route or publisher-provided copy; verify exact bytes, hospital identity/address, Alaska state, date, version and usable rows. Do not repeat the same pointer paths that returned 404 unless route/access conditions change, and do not treat the 2025 Facility Rates PDF as an MRF."
     },
     {
       "ccn": "021309",
       "hospital_name": "BRISTOL BAY DBA KANAKANAK HOSPITAL",
       "manual_checked_at": "2026-08-27",
-      "standing_checked_at": "2026-09-26T16:29:30.181Z",
+      "standing_checked_at": "2026-09-28T20:29:22Z",
       "manual_mrf_url": "",
       "standing_mrf_url": "",
       "manual_date": "",
@@ -1101,8 +1189,8 @@
       "differences": [
         "verdict"
       ],
-      "disposition": "evidence-review-required",
-      "next_action": "Verify manual source links and reconcile identity and metadata with the standing evidence."
+      "disposition": "later-observation-supports-scope-exemption",
+      "next_action": "Retain the supported scope classification and prior route-level 404 observations as provenance. Revisit if exact CCN identity, operator, contract/compact, or program status changes. Do not infer whether a current MRF is or is not posted."
     },
     {
       "ccn": "021307",
@@ -1535,7 +1623,7 @@
       "ccn": "021310",
       "hospital_name": "MANIILAQ HEALTH CENTER",
       "manual_checked_at": "2026-09-09",
-      "standing_checked_at": "2026-09-17T00:00:00.000Z",
+      "standing_checked_at": "2026-09-17T22:46:18.139Z",
       "manual_mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbMHCKOTZEBUEAK&type=CDMWithoutLabel&fileType=CSV",
       "standing_mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbMHCKOTZEBUEAK&type=CDMWithoutLabel&fileType=CSV",
       "manual_date": "2026-07-16",

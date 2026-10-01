@@ -1,0 +1,24 @@
+{
+  "ccn": "400141",
+  "observed_at": "2026-09-29",
+  "source_type": "first-party-web-page-cross-link-review",
+  "sources": {
+    "facility_page": "https://caribbeanmedicalcenter.com/centro-medico-del-noreste/",
+    "pricing_page": "https://caribbeanmedicalcenter.com/price-transparency/",
+    "spanish_pricing_page": "https://caribbeanmedicalcenter.com/transparencia-de-precios/"
+  },
+  "observations": {
+    "facility_page_identity": "The publisher page is specifically titled Centro Médico del Noreste and describes that facility in Fajardo, Puerto Rico.",
+    "facility_page_pricing_link": "The Centro Médico del Noreste page links to the publisher's shared Price Transparency page.",
+    "shared_pricing_page_claim": "The Price Transparency page identifies its disclosure as Caribbean Medical Center's Charge Master and Shoppable Services files.",
+    "listed_files": [
+      "660559417_Caribbean-Medical-Center_Standard-and-Negotiated.csv",
+      "660559417_Caribbean-Medical-Center_Shoppable.csv"
+    ],
+    "file_fetch": "Web click on the listed charge-master CSV recognized text/csv but did not return content (unsupported content type). No bytes or file hash were obtained."
+  },
+  "interpretation": "This is new first-party page-to-page linkage evidence: the Noreste facility page routes to a shared pricing page whose visible file labels are explicitly for Caribbean Medical Center. It does not map either file to current CCN 400141, establish that the page lists all operator files, prove file absence, or establish CMS metadata. Do not assign the Caribbean Medical Center CSV to 400141 without publisher scope clarification or exact facility/CCN evidence.",
+  "disposition_effect": "none",
+  "count_effect": 0,
+  "next_action": "Keep CCN 400141 unresolved. Seek a Centro Médico del Noreste-specific CMS CSV/JSON MRF or pointer, or authoritative publisher documentation mapping a file to current CCN 400141. Verify exact 404 Ave General Valero identity, Puerto Rico location/state, declared CMS date/version, and usable bytes before any promotion."
+}

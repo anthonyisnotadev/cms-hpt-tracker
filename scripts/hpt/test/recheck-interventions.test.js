@@ -10,6 +10,8 @@ test('recheck reports observed metadata without promoting missing, future, or in
   assert.equal(status('2027-01-01', '3.0.0'), 'future-date-review');
   assert.equal(status('2025-09-08', '3.0.0'), 'date-over-365-days');
   assert.equal(status('2025-09-09', '3.0.0'), 'date-within-365-days-version-3');
+  assert.equal(status('2026-09-08', '3.0'), 'date-within-365-days-version-3');
+  assert.equal(status('2026-09-08', '3.0.1'), 'date-within-365-days-version-unverified');
   assert.equal(status('2026-09-08', '2.2.0'), 'date-within-365-days-older-version');
   assert.equal(status('2026-09-08', ''), 'date-within-365-days-version-unverified');
 });

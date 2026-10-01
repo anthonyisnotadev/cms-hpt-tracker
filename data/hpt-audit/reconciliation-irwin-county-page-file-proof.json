@@ -17,5 +17,29 @@
   ],
   "pointer_statuses": [404, 404],
   "disposition": "official-page-linked-legacy-chargemaster-file-found-cms-mrf-and-pointer-unresolved",
-  "next_action": "Retain the page-linked legacy charge evidence, recover a current facility-specific CMS CSV/JSON and root pointer through an authorized route, then verify Georgia identity, declared date/version and usable rate fields before promotion."
+  "next_action": "Retain the page-linked legacy charge evidence, recover a current facility-specific CMS CSV/JSON and root pointer through an authorized route, then verify Georgia identity, declared date/version and usable rate fields before promotion.",
+  "schema_review_2026_09_28": {
+    "observed_at": "2026-09-28T15:33:47Z",
+    "retrieval_status": 206,
+    "content_type": "text/csv",
+    "retrieved_bytes": 76157,
+    "sha256": "387F2B0BEA14101212175E4DC6FEDB2C05E9BECEA26D714C8DE917C640027A67",
+    "same_bytes_as_2026_09_19_record": true,
+    "parser": "scripts/hpt/lib/util.js csvToObjects and parseCSV (RFC4180-aware)",
+    "header_count": 8,
+    "data_rows": 1309,
+    "row_width_counts": {"8": 1309},
+    "headers": ["DESCRIPTION", "CODE CHG NUMBER", "CPT CODE", "MODIFIERS", "REV CODE", "TYPE OF MEASUREMENT", "UNIT OF MEASUREMENT", "STANDARD CHARGE"],
+    "nonempty_cells_by_header": {
+      "DESCRIPTION": 1309,
+      "CODE CHG NUMBER": 1309,
+      "CPT CODE": 1309,
+      "MODIFIERS": 73,
+      "REV CODE": 1309,
+      "TYPE OF MEASUREMENT": 1308,
+      "UNIT OF MEASUREMENT": 10,
+      "STANDARD CHARGE": 1309
+    },
+    "interpretation": "All 1,309 rows parse at the same 8-column width. The file contains code/description, revenue-code, measurement, and standard-charge fields only; it has no facility identity, location, NPI/license, declared update date/version, payer, negotiated-rate, or CMS MRF metadata columns. This is a complete structural/schema characterization of the already-known file, not new file content, a CMS MRF recovery, or compliance evidence."
+  }
 }

@@ -23,7 +23,8 @@ test('reviewed pointer and page gaps retain actionable standing follow-ups', () 
       || JSON.parse(fs.readFileSync(path.join(audit, 'unresolved-investigation-worklist.json'), 'utf8'))
         .records.find(item => item.ccn === row.ccn);
     assert.ok(followUp, row.ccn);
-    assert.equal(followUp.reviewed_follow_up, true, row.ccn);
+    if (row.workstream === 'standing-evidence-follow-up')
+      assert.equal(followUp.reviewed_follow_up, true, row.ccn);
     assert.ok(followUp.next_action && !followUp.next_action.startsWith('No further action'), row.ccn);
   }
   for (const ccn of ['450860', '440200', '010058']) assert.ok(queued.has(ccn), ccn);

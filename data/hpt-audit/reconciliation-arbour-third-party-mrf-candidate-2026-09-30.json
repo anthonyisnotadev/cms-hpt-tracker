@@ -1,0 +1,48 @@
+{
+  "ccn": "224013",
+  "hospital_name": "Arbour Hospital",
+  "observed_at": "2026-09-30T02:56:49Z",
+  "discovery_source": {
+    "url": "https://clearprice-health.com/ma/hospitals/arbour-hospital-ma/",
+    "source_type": "third-party-price-index",
+    "page_claim": "Page says it is based on Arbour Hospital's own published machine-readable file and links a direct CSV.",
+    "exact_file_url": "https://uhsfilecdn.eskycity.net/bh/232238962_arbour_standardcharges.csv"
+  },
+  "official_site": "https://arbourhospital.com/",
+  "official_site_browser_status": "cloudflare-challenge-no-content-reviewed",
+  "official_pointer_corpus_matches": 0,
+  "file_retrieval": {
+    "http_status": 200,
+    "content_length_bytes": 39834,
+    "content_type": "application/octet-stream",
+    "last_modified": "2026-05-12T23:56:08Z",
+    "sha256": "5B9ED02B016DB67B82E668643DD09B6EA6193C491958AC26E5AC33E1EC8E794A",
+    "retained_file": "cms_data/hpt/nationwide-verification/file-byte-proof/candidate-224013-arbour-csv-2026-09-30.csv"
+  },
+  "declared_metadata": {
+    "hospital_name": "Arbour Hospital",
+    "location_name": "Arbour Hospital",
+    "address": "49 ROBINWOOD AVE, BOSTON, MA 02130",
+    "state": "MA",
+    "license_number": "1314",
+    "type_2_npi": "1821068818",
+    "last_updated_on": "2026-05-12",
+    "version": "3.0.0",
+    "attestation": true
+  },
+  "structural_review": {
+    "csv_lines": 256,
+    "rate_rows_after_two_metadata_rows": 254,
+    "cms_validator_package": "@cmsgov/hpt-validator-cli@1.10.8",
+    "cms_data_dictionary_target": "v3.0",
+    "cms_validator_report_version": "3.0.0",
+    "valid": true,
+    "error_count": 0,
+    "alert_count": 0,
+    "full_file_usability_review": "A 254-row parsed CSV with standard-charge columns; CMS validator returned valid with no errors or alerts."
+  },
+  "source_chain_assessment": "Candidate only. The direct file was linked by a third-party index and is hosted on a shared vendor CDN used for multiple providers. The exact URL is absent from the retained CMS pointer corpus, and the first-party Arbour website browser visit showed a Cloudflare challenge without revealing a pricing-page or pointer link. Hospital identity and CMS schema validity are supported by the file contents, but official publisher linkage/current publication is not established.",
+  "disposition_effect": "none",
+  "count_effect": "none",
+  "next_action": "Obtain first-party Arbour/UHS confirmation or accessible official pricing-page/pointer bytes linking this exact CDN URL; independently verify that the file is the hospital's current CMS MRF and that license 1314 is the relevant Massachusetts license. Keep the candidate excluded from verified-current-MRF status until that source-chain gate is met."
+}

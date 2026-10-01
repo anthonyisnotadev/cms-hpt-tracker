@@ -372,6 +372,11 @@ deadline - see below), and don't editorialize about why the hospital might be
 behind ("since it's been a while, might be worth…") - just state the finding
 and the ask.
 
+**A file is "stale" only when its declared last-updated date is more than 365
+days old.** A file that is a few months old is within the normal annual update
+cycle and does not warrant staleness outreach on its own - check the age
+against 365 days before drafting anything.
+
 A good template for "the file is stale" outreach, confirmed working well in
 practice:
 

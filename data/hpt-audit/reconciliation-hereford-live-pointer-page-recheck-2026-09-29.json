@@ -1,0 +1,52 @@
+{
+  "ccn": "450155",
+  "observed_at": "2026-09-29T09:16:45.507Z",
+  "hospital_name": "HEREFORD REGIONAL MEDICAL CENTER",
+  "official_domain": "dschd.org",
+  "official_pricing_page": {
+    "url": "https://dschd.org/price-transparency/",
+    "http_status": 200,
+    "decoded_response_bytes": 229265,
+    "decoded_response_sha256": "ab4dc211c8d87c57762470cab7546ad9c05cec8632b0200f9a9f6ebade863de6",
+    "last_modified": "Fri, 25 Sep 2026 19:13:46 GMT",
+    "page_identifies_patient_pricing_file_as_machine_readable": true,
+    "page_links_january_standard_charges_csv": "https://dschd.org/wp-content/uploads/2026/01/2026_HRMC_Standard_Charges_Validated_20260101.csv",
+    "page_links_april_patient_pricing_csv": "https://dschd.org/wp-content/uploads/2026/03/2026_HRMC_Standard_Charges_Validated_20260331.csv",
+    "browser_observation": "Current first-party price page exposes the March patient-pricing CSV and January List of Standard Charges CSV as distinct labeled links. This confirms the current rendered link roles; it does not retrieve CSV bytes."
+  },
+  "official_root_pointer": {
+    "url": "https://dschd.org/cms-hpt.txt",
+    "http_status": 200,
+    "response_bytes": 240,
+    "response_sha256": "df3cf98d8874d8fba751e7c16b91a7e19b0045e4edb6b110ac6db4af6ff42174",
+    "last_modified": "Tue, 06 Jan 2026 23:47:52 GMT",
+    "etag": "W/\"695d9f28-f0\"",
+    "declares_january_url_field_file": true,
+    "declares_april_page_file": false,
+    "contains_explicit_mrf_url_field": false,
+    "interpretation": "The current root response is byte-identical to the previously retained root-pointer proof and continues to expose only the January url field, not an explicit mrf-url for the newer April page-linked file."
+  },
+  "file_head_checks": {
+    "january_standard_charges": {
+      "url": "https://dschd.org/wp-content/uploads/2026/01/2026_HRMC_Standard_Charges_Validated_20260101.csv",
+      "http_status": 200,
+      "content_type": "text/csv",
+      "last_modified": "Tue, 06 Jan 2026 22:39:26 GMT",
+      "etag": "W/\"695d8f1e-4f05f4\"",
+      "matches_prior_complete_retrieval_metadata": true
+    },
+    "april_patient_pricing": {
+      "url": "https://dschd.org/wp-content/uploads/2026/03/2026_HRMC_Standard_Charges_Validated_20260331.csv",
+      "http_status": 200,
+      "content_type": "text/csv",
+      "last_modified": "Tue, 31 Mar 2026 21:54:27 GMT",
+      "etag": "W/\"69cc4293-f048c\"",
+      "matches_prior_complete_retrieval_metadata": true
+    },
+    "bytes_retrieved": false
+  },
+  "evidence_classification": "current first-party page/pointer recheck; page snapshot is newly hash-recorded, but link URLs, root pointer, and both file validators match the prior proof; no new MRF bytes",
+  "disposition_changed": false,
+  "count_effect": 0,
+  "next_action": "Keep CCN 450155 unresolved. Do not repeat unchanged CSV retrievals. Reopen the pointer gate only after a root-pointer change, new page/file URL or validator, corrected publisher file, or authoritative publisher explanation that explicitly links the April patient-pricing file as the intended CMS MRF. Preserve the independent CMS Provider Data Catalog 801 East Third versus physical-site 540 W. 15th discrepancy pending an authoritative field-role correction or explanation."
+}

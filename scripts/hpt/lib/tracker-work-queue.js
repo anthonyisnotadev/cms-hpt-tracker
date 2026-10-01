@@ -2,27 +2,32 @@
 
 const { effectiveDispositionCategory } = require('../build-nationwide-verification');
 
+// Labels are read by the public tracker, so they name the situation a reader
+// sees, not the internal workstream. The keys stay the workstream names.
 const STREAMS = [
-  { key: 'genuinely-unresolved-investigation', label: 'Unresolved investigations',
-    why: 'The reviewed evidence does not yet support a settled result.',
-    action: 'Follow each hospital’s evidence gate and facility-specific next step.' },
-  { key: 'standing-evidence-follow-up', label: 'Standing evidence follow-ups',
-    why: 'An existing finding is retained while newer access or identity evidence needs review.',
-    action: 'Reconcile the newer observation without discarding stronger standing evidence.' },
-  { key: 'supported-uncertainty-monitor', label: 'Uncertainty monitoring',
-    why: 'The current uncertainty is supported by evidence; these are monitoring cases.',
-    action: 'Revisit the documented trigger when new evidence becomes available.' },
-  { key: 'identity-quarantine', label: 'Facility identity review',
-    why: 'A proposed file assignment requires more facility-specific identity evidence.',
+  { key: 'genuinely-unresolved-investigation', label: 'Still unresolved',
+    why: 'The evidence so far does not support a result either way.',
+    action: 'Follow each hospital’s recorded next step until the evidence settles it.' },
+  { key: 'standing-evidence-follow-up', label: 'Newer evidence to weigh',
+    why: 'The current result stands, but a later check found a file, name, or address that may contradict it.',
+    action: 'Decide whether the newer evidence replaces the result, belongs to a different facility, or can be set aside.' },
+  { key: 'standing-evidence-access-retry', label: 'Recheck could not finish',
+    why: 'The current result stands. A later check could not reach or fully read the file, which is not evidence against it.',
+    action: 'Retry through a permitted route. The result stays until a check reads the file.' },
+  { key: 'supported-uncertainty-monitor', label: 'Watching for a change',
+    why: 'The evidence supports leaving these unresolved for now.',
+    action: 'Revisit when the recorded trigger occurs, such as the hospital publishing a new file.' },
+  { key: 'identity-quarantine', label: 'Facility match unproven',
+    why: 'A file may belong to this hospital, but the facility match is not yet proven.',
     action: 'Verify the hospital, campus, and file before accepting the assignment.' },
-  { key: 'standing-finding-discrepancy', label: 'Finding reconciliation',
-    why: 'A newer observation differs from the standing finding.',
-    action: 'Review the conflicting evidence and preserve the audit trail.' },
-  { key: 'same-campus-ccn-review', label: 'Same-campus scope review',
-    why: 'Shared campuses or identifier transitions need an enrollment scope check.',
-    action: 'Confirm which CMS record and reporting scope the evidence supports.' },
-  { key: 'other-reconciliation', label: 'Other evidence review',
-    why: 'A documented reconciliation step remains outside the main workstreams.',
+  { key: 'standing-finding-discrepancy', label: 'Conflicting observations',
+    why: 'A newer observation differs from the current result.',
+    action: 'Review the conflicting evidence and keep the audit trail.' },
+  { key: 'same-campus-ccn-review', label: 'Shared-campus check',
+    why: 'Hospitals sharing a campus or a changed CMS number need their records separated.',
+    action: 'Confirm which CMS record the evidence belongs to.' },
+  { key: 'other-reconciliation', label: 'Other follow-up',
+    why: 'A recorded next step sits outside the main groups.',
     action: 'Complete the recorded next step before changing the result.' },
 ];
 
@@ -36,8 +41,11 @@ function buildReviewedWorkQueue(nextSteps, records) {
     if (!counts.has(step.stream)) throw new Error(`Unknown reviewed work queue stream: ${step.stream}`);
     // An effective overlay can resolve an investigation before the base
     // worklist is regenerated. Do not present that case as still unresolved.
+    const category = effectiveDispositionCategory(row);
+    const retainedButUnresolved = category === 'standing-evidence-retained'
+      && row.reconciliation_workstream === 'genuinely-unresolved-investigation';
     if (step.stream === 'genuinely-unresolved-investigation'
-      && effectiveDispositionCategory(row) !== 'genuinely-unresolved') continue;
+      && category !== 'genuinely-unresolved' && !retainedButUnresolved) continue;
     counts.set(step.stream, counts.get(step.stream) + 1);
   }
   for (const row of records) {

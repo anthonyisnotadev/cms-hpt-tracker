@@ -20,4 +20,14 @@ test('Colorado Platte Valley does not retain Utah Heber file or promote inaccess
   assert.match(proof.pointer_mrf_url, /platte-valley-medical-center/);
   assert.notEqual(proof.rejected_mrf_url, proof.pointer_mrf_url);
   assert.match(proof.pointer_mrf_transport_error, /without file bytes/);
+  const manual = require(path.join(audit, 'reconciliation-manual-access-observations.json'))
+    .records.find(item => item.ccn === '060004');
+  assert.equal(manual.latest_bounded_transport_recheck_2026_09_30.new_bytes_retained, 0);
+  assert.equal(manual.latest_bounded_transport_recheck_2026_09_30.csv_header_parsed, false);
+  assert.match(manual.next_action, /Do not retry the unchanged/);
+  assert.equal(manual.disposition, 'official-page-file-linkage-current-transport-unresolved');
+  const retryProof = require(path.join(audit, 'reconciliation-platte-valley-file-transport-recheck-2026-09-30.json'));
+  assert.equal(retryProof.current_retrieval_attempts.length, 3);
+  assert.equal(retryProof.new_archive_bytes_retained, 0);
+  assert.equal(retryProof.cms_template_version, null);
 });

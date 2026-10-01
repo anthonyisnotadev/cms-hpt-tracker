@@ -1,0 +1,76 @@
+{
+  "ccn": "160153",
+  "observed_at": "2026-09-29T06:56:05.026Z",
+  "proof_file": "reconciliation-siouxland-cms-hospital-enrollments-2026-08-crosscheck.json",
+  "source_type": "current-cms-hospital-enrollment-snapshot",
+  "dataset": "CMS Hospital Enrollments",
+  "dataset_landing_page": "https://data.cms.gov/provider-characteristics/hospitals-and-other-facilities/hospital-enrollments",
+  "catalog_page": "https://catalog.data.gov/dataset/hospital-enrollments",
+  "catalog_latest_release_title": "Hospital Enrollments : 2026-08-01",
+  "catalog_latest_api_resource": "https://data.cms.gov/data-api/v1/dataset/f6f6505c-e8b0-4d57-b258-e2b94133aaf2/data",
+  "cms_landing_page_displayed_latest_release_when_checked": "May 2026",
+  "release_metadata_discrepancy": "The CMS landing page still displays May 2026 as latest, while the HHS catalog lists an August 1, 2026 CMS Hospital Enrollments resource as latest and links the directly retrieved July 31 CSV. This proof binds the exact catalog-listed CSV and matching versioned CMS API rather than treating the landing-page summary as current release metadata.",
+  "catalog_temporal_coverage": "2022-11-01/2026-08-31",
+  "dataset_description": "CMS describes this as enrollment information for hospitals currently enrolled in Medicare.",
+  "csv": {
+    "url": "https://data.cms.gov/sites/default/files/2026-08/bcf5ccda-1482-4c43-8198-de1efa2f83c8/Hospital_Enrollments_2026.07.31.csv",
+    "observed_at": "2026-09-29T06:56:05.026Z",
+    "http_status": 200,
+    "content_type": "text/csv",
+    "bytes": 2516964,
+    "sha256": "a53aaccfccd7122a4e78763b62e44661bf3b0e71cc8b8b5e946a86e3ea67321b",
+    "parsed_data_rows": 9161,
+    "target_ccns_checked": ["160153", "160146"],
+    "matching_rows": 1,
+    "matching_row": {
+      "CCN": "160146",
+      "NPI": "1962594622",
+      "ORGANIZATION NAME": "NORTHWEST IOWA HOSPITAL CORPORATION",
+      "DOING BUSINESS AS NAME": "ST LUKE'S REGIONAL MEDICAL CENTER",
+      "ADDRESS LINE 1": "2720 STONE PARK BLVD",
+      "CITY": "SIOUX CITY",
+      "STATE": "IA",
+      "ZIP CODE": "511043734",
+      "PROVIDER TYPE TEXT": "PART A PROVIDER - HOSPITAL",
+      "SUBGROUP - ACUTE CARE": "Y"
+    },
+    "ccn_160153_row_present": false,
+    "ccn_160146_row_present": true
+  },
+  "exact_api_queries": [
+    {
+      "ccn": "160153",
+      "url": "https://data.cms.gov/data-api/v1/dataset/f6f6505c-e8b0-4d57-b258-e2b94133aaf2/data?filter%5BCCN%5D=160153&size=20&offset=0",
+      "observed_at": "2026-09-29T06:54:47.025Z",
+      "http_status": 200,
+      "content_type": "application/json",
+      "response_bytes": 2,
+      "response_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "response_body": "[]"
+    },
+    {
+      "ccn": "160146",
+      "url": "https://data.cms.gov/data-api/v1/dataset/f6f6505c-e8b0-4d57-b258-e2b94133aaf2/data?filter%5BCCN%5D=160146&size=20&offset=0",
+      "observed_at": "2026-09-29T06:54:47.230Z",
+      "http_status": 200,
+      "content_type": "application/json",
+      "response_bytes": 1204,
+      "response_sha256": "e2eda91f011862e72fe7c7f20a638a61e79a94235c0ec2d24ffe4f0e250d9699",
+      "selected_row": {
+        "CCN": "160146",
+        "NPI": "1962594622",
+        "ORGANIZATION NAME": "NORTHWEST IOWA HOSPITAL CORPORATION",
+        "DOING BUSINESS AS NAME": "ST LUKE'S REGIONAL MEDICAL CENTER",
+        "ADDRESS LINE 1": "2720 STONE PARK BLVD",
+        "CITY": "SIOUX CITY",
+        "STATE": "IA",
+        "ZIP CODE": "511043734",
+        "PROVIDER TYPE TEXT": "PART A PROVIDER - HOSPITAL",
+        "SUBGROUP - ACUTE CARE": "Y"
+      }
+    }
+  ],
+  "interpretation": "This is a new later CMS enrollment snapshot than the previously retained 2026-07-31 publication. The August edition's full CSV and its current API both contain the acute-care 160146 enrollment at 2720 Stone Park Boulevard and no 160153 row. This narrows the current enrollment transition question through the dataset's stated 2026-08-31 temporal end, but does not provide a termination/effective date for 160153, establish historical HPT file scope, or authorize merging or reassigning the two CCNs. The separate pointer-linked multi-campus MRF's 801 15th Street entry remains in conflict with current first-party/state evidence for the Downtown campus at 801 5th Street.",
+  "disposition_changed": false,
+  "next_action": "Keep CCN 160153 unresolved in the historical HPT accountability cohort. Seek an effective-dated CMS certification/enrollment history or authoritative Iowa/UnityPoint transition record that establishes the legacy CCN's end date and campus scope; keep 160146 and 160153 separate and do not assign the shared MRF's Downtown location to either CCN without that link. Do not repeat this unchanged August dataset; recheck after a new CMS enrollment release or materially new official transition record."
+}

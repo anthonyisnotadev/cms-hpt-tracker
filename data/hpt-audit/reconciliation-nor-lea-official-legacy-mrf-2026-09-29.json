@@ -1,0 +1,59 @@
+{
+  "audit_id": "reconciliation-nor-lea-official-legacy-mrf-2026-09-29",
+  "ccn": "321305",
+  "facility": "Nor-Lea Hospital District",
+  "observed_at": "2026-09-29T20:50:53.834Z",
+  "purpose": "Recover the separate Standard Charges download directly linked from Nor-Lea Hospital District’s own public-information page and compare its declared facility/address/version with the already-retained 2026 CSV hosted by hospitalpricetransparencyfiles.com.",
+  "first_party_source_page": {
+    "url": "https://nor-lea.org/resources",
+    "observed_via": "public web page open and direct link inspection",
+    "link_label": "CMS - Nor-Lea Hospital District Downloadable Standard Charges",
+    "source_link": "https://nor-lea.org/s/Standard-Charges",
+    "redirect_target": "https://static1.squarespace.com/static/55ca3cd9e4b0618a8b6783bb/t/685d78a71ef900576f87e461/1755009750199/Standard+Charges"
+  },
+  "retrieval": {
+    "status": 206,
+    "requested_range": "bytes=0-5999999",
+    "content_range": "bytes 0-5543872/5543873",
+    "total_bytes": 5543873,
+    "sha256": "2fc6f2a1e17ea971031701dd2293450308426f022261a7ebbe7c789c9fc557fc",
+    "content_type": "text/csv",
+    "complete_response": true,
+    "redirects": [
+      {
+        "url": "https://nor-lea.org/s/Standard-Charges",
+        "status": 302,
+        "location": "https://static1.squarespace.com/static/55ca3cd9e4b0618a8b6783bb/t/685d78a71ef900576f87e461/1755009750199/Standard+Charges"
+      }
+    ]
+  },
+  "retained_artifact": "data/hpt-audit/retained-source-documents/nor-lea-official-standard-charges-2025-v2.csv",
+  "declared_metadata": {
+    "hospital_name": "Nor-Lea District Hospital",
+    "location_name": "Nor-Lea District Hospital",
+    "address": "1600 North Main Avenue, Lovington, NM 88260",
+    "license_state": "NM",
+    "last_updated_on": "2025-01-01",
+    "cms_template_version": "2.0.0",
+    "parsed_rows": 24307,
+    "row_schema": [
+      "hospital_name",
+      "last_updated_on",
+      "version",
+      "hospital_location",
+      "hospital_address",
+      "license_number | NM",
+      "To the best of its knowledge and belief, the hospital has included all applicable standard charge information in accordance with the requirements of 45 CFR 180.50, and the information encoded is true, accurate, and complete as of the date indicated.",
+      ""
+    ]
+  },
+  "comparison": {
+    "newer_2026_page_linked_file": "reconciliation-nor-lea-address-conflict-proof-2026-09-25.json",
+    "newer_file_url": "https://hospitalpricetransparencyfiles.com/nor-lea-district-hospital/850278235_Nor-Lea-Hospital-District_standardcharges.csv",
+    "newer_file_sha256": "549aeebd73a2ec8cb6ba28c75e1af7b31380db81b6597d042c8b0a821dcc151e",
+    "newer_declared_address": "1900 North Main Avenue, Lovington, NM 88260-2813",
+    "interpretation": "The first-party downloadable file is a complete historical CMS v2 CSV that names Nor-Lea and declares the official 1600 North Main address. It is dated 2025-01-01 and does not establish a current 2026 MRF. Its distinct metadata conflicts with the newer 2026 file’s 1900 value; this supports preserving the address discrepancy, not treating the 2025 file as a correction or reassigning the 2026 file."
+  },
+  "disposition_effect": "none; retain CCN 321305 unresolved for the current 2026 MRF address conflict and pointer linkage; add this older first-party file as dated historical evidence only.",
+  "next_action": "Keep the two files and their hashes separate. Obtain a dated publisher correction or authoritative facility-specific evidence explaining the 1900 North Main value and verify an explicit current cms-hpt.txt mrf-url before any promotion. Do not use the 2025 v2 file as current 2026 coverage."
+}

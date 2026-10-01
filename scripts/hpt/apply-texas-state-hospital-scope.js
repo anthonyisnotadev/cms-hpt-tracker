@@ -6,6 +6,16 @@ const root = path.resolve(__dirname, '../..');
 const audit = path.join(root, 'data/hpt-audit');
 const proof = JSON.parse(fs.readFileSync(path.join(audit,
   'reconciliation-texas-state-hospital-scope-proof-2026-09-27.json'), 'utf8'));
+// This historical proof establishes Texas state operation and facility identity,
+// not CMS's narrower deemed-compliant exception. CMS's FAQ says state-owned or
+// operated facilities are in scope except those separately deemed compliant;
+// it names state forensic hospitals treating exclusively people in penal custody.
+// Refuse to replay the superseded broad state-hospital interpretation.
+const cmsDeemedCompliantBasis = proof.facility_dispositions.every(item =>
+  item.state_forensic_exclusive_penal_custody === true)
+  ? 'state-forensic-hospital-exclusive-penal-custody' : null;
+if (cmsDeemedCompliantBasis !== 'state-forensic-hospital-exclusive-penal-custody')
+  throw new Error('Refusing Texas scope promotion: the retained proof establishes state-hospital identity only, not exclusive penal-custody operation required by CMS guidance. Keep scope-review-pending until an exact CMS exception is evidenced.');
 const ledgerPath = path.join(audit, 'reviewed-resolutions.json');
 const compliancePath = path.join(audit, 'compliance.csv');
 const { csvToObjects } = require('./lib/util');
@@ -28,6 +38,9 @@ const records = targetCCNs.map(ccn => {
       stateHospitalStatuteSource: proof.texas_hospital_statute_source,
       federalRuleSource: proof.federal_rule_source,
       federalRuleSection: proof.federal_rule_section,
+      cmsDeemedCompliantBasis,
+      penalCustodyOnly: true,
+      cmsGuidanceSource: 'https://www.cms.gov/files/document/hospital-price-transparency-frequently-asked-questions.pdf',
       stateHospitalStatuteFacilities: proof.facility_dispositions.filter(item =>
         !item.basis.startsWith('Not dispositioned')).map(item => item.facility_name)
     },

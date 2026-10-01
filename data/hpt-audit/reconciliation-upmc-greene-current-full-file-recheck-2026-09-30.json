@@ -1,0 +1,51 @@
+{
+  "audit_id": "reconciliation-upmc-greene-current-full-file-recheck-2026-09-30",
+  "observed_at": "2026-09-30T11:42:22Z",
+  "ccn": "390150",
+  "facility": "UPMC Greene",
+  "source_page": {
+    "url": "https://whs.org/patient-guests/",
+    "browser_observed_date": "2026-09-30",
+    "visible_file_link_label": "Download the UPMC Greene Machine Readable File of Items & Services as of 03/06/2026",
+    "linked_file_url": "https://whs.org/wp-content/uploads/2026/03/437884840_upmc-greene_standardcharges.csv",
+    "linkage": "exactly matches the retained root-pointer target in reconciliation-upmc-greene-current-pointer-header-proof-2026-09-26.json"
+  },
+  "official_facility_identity": {
+    "facility_page": "https://whs.org/locations-practices/greene/",
+    "address": "350 Bonar Ave, Waynesburg, PA 15370",
+    "cms_general_information_file": "cms_data/Hospital_General_Information.csv",
+    "cms_general_information_sha256": "23c5019ee51e11442d6d64cd153cedd78c51ab6435f621e4cb9351e3e972d9e3",
+    "cms_address": "350 BONAR AVENUE, WAYNESBURG, PA 15370"
+  },
+  "mrf": {
+    "url": "https://whs.org/wp-content/uploads/2026/03/437884840_upmc-greene_standardcharges.csv",
+    "http_status": 200,
+    "content_type": "text/plain",
+    "last_modified": "2026-06-28T13:33:48Z",
+    "complete_bytes": 69322161,
+    "complete_sha256": "640ae1d398b080736e83000a78d814c8d03d91a6a01ff8e39faf63449c9b09ab",
+    "retained_file": "cms_data/hpt/nationwide-verification/file-byte-proof/640ae1d398b080736e83000a78d814c8d03d91a6a01ff8e39faf63449c9b09ab.bin",
+    "declared_hospital_name": "UPMC Greene",
+    "declared_location_name": "UPMC Greene",
+    "declared_address": "250 Bonor Avenue  Waynesburg, PA",
+    "declared_license_state": "PA",
+    "declared_license_number": "852101",
+    "declared_npi": "1225417421|1972982882",
+    "declared_date": "2026-03-06",
+    "cms_template_version": "3.0.0",
+    "attestation": true,
+    "parsed_columns": 29,
+    "parsed_data_rows": 334726,
+    "rows_with_unexpected_column_count": 0,
+    "rows_with_negotiated_dollar_percentage_or_algorithm": 318230,
+    "first_data_row_description": "ATROPINE 1MG INJ I/F-100",
+    "last_data_row_description": "TICAGRELOR 90MG TABLET",
+    "full_file_retrieval": "Fresh HTTP 200 with Content-Length 69322161; local byte count and SHA-256 retained above. The server also honored a separate initial Range request; the complete response is independently hashed."
+  },
+  "finding": {
+    "status": "linked-mrf-header-unmatched",
+    "conflict": "The complete current pointer-linked CSV still declares 250 Bonor Avenue, while the official UPMC facility page and CMS General Information both identify 350 Bonar Avenue. Both the street number and spelling differ; PA, name, license number and NPIs alone do not resolve the physical address discrepancy.",
+    "effect": "Confirms the mismatch survives the current complete 69,322,161-byte file and is not a bounded-header or truncation artifact. No promotion, demotion, or compliance conclusion; retain unresolved until the publisher corrects/explains the exact field.",
+    "new_data_classification": "new complete retrieval of a first-party current-version file; strengthens existing unresolved address-conflict evidence; not a newly recovered attributable MRF for this CCN"
+  }
+}

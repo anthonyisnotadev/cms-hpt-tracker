@@ -1,0 +1,43 @@
+{
+  "ccn": "171341",
+  "hospital_name": "HIAWATHA COMMUNITY HOSPITAL",
+  "official_facility_name": "Amberwell Hiawatha / Hiawatha Hospital Association Inc",
+  "observed_date": "2026-09-29",
+  "publisher_domain": "amberwellhealth.org",
+  "root_pointer_url": "https://amberwellhealth.org/cms-hpt.txt",
+  "root_pointer_status": 200,
+  "root_pointer_sha256": "",
+  "pointer_location_name": "Amberwell Hiawatha Association",
+  "pointer_source_page_url": "https://amberwellhealth.org/price-transparency/",
+  "pointer_mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbHiawathaCommunity&type=CDMWithoutLabel&fileType=CSV",
+  "retrieval": {
+    "http_status": 200,
+    "content_type": "application/octet-stream",
+    "content_length": 53411343,
+    "sha256": "5B7FA1D8D1AB8CEFC7298C7C6E36FD00D652EC69BB6946BA889746ECDECA26D7",
+    "full_bytes_received": true,
+    "retained_source_path": "cms_data/hpt/nationwide-verification/file-byte-proof/5b7fa1d8d1ab8cefc7298c7c6e36fd00d652ec69bb6946ba889746cdeca26d7.bin"
+  },
+  "mrf_header": {
+    "hospital_name": "HIAWATHA HOSPITAL ASSOCIATION INC",
+    "last_updated_on": "2026-08-18",
+    "version": "3.0.0",
+    "location_name": "HIAWATHA HOSPITAL ASSOCIATION INC",
+    "hospital_address": "300 UTAH HIAWATHA KS 66434",
+    "license_number": "H007001",
+    "type_2_npi": "1255421210",
+    "attested": true,
+    "attester_name": "Erica Norris"
+  },
+  "review": {
+    "cms_mrf_format": "CMS 3.0.0; three-row header and data header observed",
+    "facility_identity": "header names Hiawatha Hospital Association Inc; pointer labels Hiawatha Association",
+    "roster_crosscheck": "CCN 171341 roster address 300 Utah Street, Hiawatha KS 66434; NPI corroborates 1255421210",
+    "usability": "full 53,411,343-byte CSV; header and initial pricing rows include gross, discounted cash, negotiated dollar/percentage/algorithm, min/max and methodology fields",
+    "validation_limits": "Proper quoted-field parse completed. 88,689 charge rows; 88,683 rows have 28 fields; six rows have malformed widths (44, 124, 300, 447, 5,196 and 52,262 fields) caused by unescaped commas in description/note text. Do not treat this as a clean structured file or validated line-item dataset. Street number/road/city/state/ZIP align despite compact published formatting."
+  },
+  "disposition": "official-pointer-linked-current-cms-3.0.0-file-recovered-identity-crosschecked-structural-defects-open",
+  "count_effect": "none; retain unresolved pending adjudication of malformed CSV rows and whether the file is safely importable",
+  "source_hash": "5B7FA1D8D1AB8CEFC7298C7C6E36FD00D652EC69BB6946BA889746ECDECA26D7",
+  "retained_source_path": "cms_data/hpt/nationwide-verification/file-byte-proof/5b7fa1d8d1ab8cefc7298c7c6e36fd00d652ec69bb6946ba889746cdeca26d7.bin"
+}

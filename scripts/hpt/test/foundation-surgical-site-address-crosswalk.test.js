@@ -11,9 +11,20 @@ const proof = readJson('reconciliation-foundation-surgical-site-address-crosswal
 const manual = readJson('reconciliation-manual-access-observations.json');
 const verification = readJson('nationwide-verification.json');
 const fullFile = readJson('reconciliation-foundation-surgical-full-file-recheck-proof-2026-09-25.json');
+const qies = readJson('reconciliation-foundation-surgical-qies-current-2026-09-29.json');
 
 test('Foundation site address is cross-attributed to the distinct CCN 670112 without reassigning either file', () => {
   assert.equal(proof.ccn, '670054');
+  assert.equal(qies.ccn, proof.ccn);
+  assert.equal(qies.source.dataset_id, '03cca0cc-13a0-4b8d-82c4-57185b6bbfbd');
+  assert.equal(qies.source.result_count, 1);
+  assert.match(qies.source.response_sha256, /^[a-f0-9]{64}$/);
+  assert.equal(qies.cms_record.PRVDR_NUM, '670054');
+  assert.equal(qies.cms_record.ST_ADR, '9522 HUEBNER ROAD');
+  assert.equal(qies.cms_record.PGM_TRMNTN_CD, '00');
+  assert.equal(qies.new_mrf_bytes, false);
+  assert.equal(qies.disposition_changed, false);
+  assert.match(qies.next_action, /Do not repeat this exact QIES query/);
   assert.equal(proof.ccn_670054.cms_hospital_enrollments_dataset_id, proof.ccn_670112.cms_hospital_enrollments_dataset_id);
   assert.equal(proof.ccn_670054.npi, '1932284411');
   assert.equal(proof.ccn_670054.full_mrf_metadata.address, '9522 Huebner Rd, San Antonio, TX 78240');

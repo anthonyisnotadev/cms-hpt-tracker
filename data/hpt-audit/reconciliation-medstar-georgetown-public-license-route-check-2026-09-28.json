@@ -1,0 +1,23 @@
+{
+  "ccn": "090004",
+  "observed_at": "2026-09-28T03:13:46Z",
+  "question": "Can public primary-source evidence close the current Maryland suffix versus District of Columbia hospital-license metadata conflict?",
+  "sources": [
+    {
+      "kind": "dc-health-health-facilities-licensing-portal",
+      "url": "https://dchealth-migrate.dc.gov/page/office-health-facilities-licensing-portal",
+      "observation": "DC Health says current health-facility licensees access their licenses through its healthcare facilities portal and must create an account to access license information.",
+      "limitation": "No public, facility-specific current license record or license number for MedStar Georgetown was obtained."
+    },
+    {
+      "kind": "dc-health-public-hospital-directory",
+      "url": "https://dchealth.dc.gov/sites/default/files/dc/sites/doh/service_content/attachments/Hospital%20Directory_3.pdf",
+      "observation": "The previously retrieved 2026-09-03 directory identifies MedStar-Georgetown University Hospital (Acute Care) at 3800 Reservoir Road NW, Washington, DC 20007.",
+      "limitation": "The directory does not publish the hospital license number or explain the MRF's literal license_number|MD suffix."
+    }
+  ],
+  "finding": "This check found no publicly accessible primary-source current license number that resolves the MRF suffix. The credentialed DC Health licensing portal is a lead, not evidence that HFD01-0188 is current. Existing exact MRF/file evidence and DC identity evidence remain unchanged.",
+  "disposition": "public-license-route-checked-conflict-unresolved",
+  "count_effect": "none; retain CCN 090004 as unresolved",
+  "next_action": "Do not infer current licensure from the expired 2012-2013 certificate or the 2024 public filing rendition. A closure requires a public authoritative current license record or user-authorized publisher clarification/correction."
+}

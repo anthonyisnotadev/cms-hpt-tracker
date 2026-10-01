@@ -1,23 +1,21 @@
 {
   "summary": {
-    "generated_at": "2026-09-27T19:16:34.897Z",
+    "generated_at": "2026-09-30T23:59:25.249Z",
     "source": "data/hpt-audit/nationwide-verification.json",
     "total": 225,
     "by_review_class": {
-      "cross-domain-unresolved-review": 35,
-      "cross-domain-verified-or-superseded-review": 190
+      "cross-domain-unresolved-review": 24,
+      "cross-domain-verified-or-superseded-review": 201
     },
     "by_disposition": {
-      "linked-mrf-header-unmatched": 14,
-      "pointer-facility-match-unresolved": 6,
-      "verified-template-review": 10,
+      "linked-mrf-header-unmatched": 13,
+      "pointer-facility-match-unresolved": 5,
       "mrf-facility-identity-unresolved": 9,
       "verified-stale-mrf": 1,
-      "pointer-discovery-incomplete": 4,
-      "verified-current-mrf": 167,
-      "pointer-access-denied-to-client": 11,
-      "pointer-not-retrieved": 2,
-      "mrf-request-unsuccessful": 1
+      "pointer-discovery-incomplete": 17,
+      "verified-current-mrf": 177,
+      "pointer-access-denied-to-client": 1,
+      "mrf-request-unsuccessful": 2
     },
     "note": "A different pointer and recorded official domain is not itself an attribution failure: parent systems and legacy domains can legitimately publish a hospital MRF. The unresolved-review class requires facility-specific pointer/file/identity evidence before promotion or exclusion."
   },
@@ -62,19 +60,6 @@
       "review_class": "cross-domain-unresolved-review"
     },
     {
-      "ccn": "140160",
-      "hospital_name": "FHN MEMORIAL HOSPITAL",
-      "state": "IL",
-      "official_domain": "res.cloudinary.com",
-      "pointer_domain": "mercyhealthsystem.org",
-      "standing_pointer_url": "https://www.mercyhealthsystem.org/cms-hpt.txt",
-      "standing_mrf_url": "https://www.mercyhealthsystem.org/clientfiles/getfile/362181997_fhn-memorial-hospital_standardcharges.csv",
-      "disposition": "verified-template-review",
-      "standing_finding": "compliant-observed",
-      "latest_observation_superseded": false,
-      "review_class": "cross-domain-unresolved-review"
-    },
-    {
       "ccn": "140210",
       "hospital_name": "HARRISBURG MEDICAL CENTER",
       "state": "IL",
@@ -96,123 +81,6 @@
       "standing_pointer_url": "https://gshvin.org/cms-hpt.txt",
       "standing_mrf_url": "https://www.gshvin.org/clientfiles/getfile/356001532_GoodSamaritan_standardcharges.csv",
       "disposition": "linked-mrf-header-unmatched",
-      "standing_finding": "compliant-observed",
-      "latest_observation_superseded": false,
-      "review_class": "cross-domain-unresolved-review"
-    },
-    {
-      "ccn": "150089",
-      "hospital_name": "INDIANA UNIVERSITY HEALTH BALL MEMORIAL HOSPITAL",
-      "state": "IN",
-      "official_domain": "iuhealth.org",
-      "pointer_domain": "cdn.iuhealth.org",
-      "standing_pointer_url": "https://cdn.iuhealth.org/global/cms-hpt.txt",
-      "standing_mrf_url": "https://cdn.iuhealth.org/resources/350867958_indiana-university-health-ball-memorial-hospital-inc._standardcharges.zip",
-      "disposition": "verified-template-review",
-      "standing_finding": "compliant-observed",
-      "latest_observation_superseded": false,
-      "review_class": "cross-domain-unresolved-review"
-    },
-    {
-      "ccn": "150161",
-      "hospital_name": "INDIANA UNIVERSITY HEALTH NORTH HOSPITAL",
-      "state": "IN",
-      "official_domain": "iuhealth.org",
-      "pointer_domain": "cdn.iuhealth.org",
-      "standing_pointer_url": "https://cdn.iuhealth.org/global/cms-hpt.txt",
-      "standing_mrf_url": "https://cdn.iuhealth.org/resources/351932442_indiana-university-health-north-hospital-inc._standardcharges.zip",
-      "disposition": "verified-template-review",
-      "standing_finding": "compliant-observed",
-      "latest_observation_superseded": false,
-      "review_class": "cross-domain-unresolved-review"
-    },
-    {
-      "ccn": "150173",
-      "hospital_name": "INDIANA UNIVERSITY HEALTH ARNETT HOSPITAL",
-      "state": "IN",
-      "official_domain": "iuhealth.org",
-      "pointer_domain": "cdn.iuhealth.org",
-      "standing_pointer_url": "https://cdn.iuhealth.org/global/cms-hpt.txt",
-      "standing_mrf_url": "https://cdn.iuhealth.org/resources/263162145_indiana-university-health-arnett-inc._standardcharges.zip",
-      "disposition": "verified-template-review",
-      "standing_finding": "compliant-observed",
-      "latest_observation_superseded": false,
-      "review_class": "cross-domain-unresolved-review"
-    },
-    {
-      "ccn": "151306",
-      "hospital_name": "INDIANA UNIVERSITY HEALTH PAOLI HOSPITAL",
-      "state": "IN",
-      "official_domain": "iuhealth.org",
-      "pointer_domain": "cdn.iuhealth.org",
-      "standing_pointer_url": "https://cdn.iuhealth.org/global/cms-hpt.txt",
-      "standing_mrf_url": "https://cdn.iuhealth.org/resources/352090919_indiana-university-health-paoli-inc._standardcharges.zip",
-      "disposition": "verified-template-review",
-      "standing_finding": "compliant-observed",
-      "latest_observation_superseded": false,
-      "review_class": "cross-domain-unresolved-review"
-    },
-    {
-      "ccn": "151311",
-      "hospital_name": "INDIANA UNIVERSITY HEALTH TIPTON HOSPITAL INC",
-      "state": "IN",
-      "official_domain": "iuhealth.org",
-      "pointer_domain": "cdn.iuhealth.org",
-      "standing_pointer_url": "https://cdn.iuhealth.org/global/cms-hpt.txt",
-      "standing_mrf_url": "https://cdn.iuhealth.org/resources/262772226_indiana-university-health-tipton-hospital-inc._standardcharges.zip",
-      "disposition": "verified-template-review",
-      "standing_finding": "compliant-observed",
-      "latest_observation_superseded": false,
-      "review_class": "cross-domain-unresolved-review"
-    },
-    {
-      "ccn": "151312",
-      "hospital_name": "INDIANA UNIVERSITY HEALTH WHITE MEMORIAL HOSPITAL",
-      "state": "IN",
-      "official_domain": "iuhealth.org",
-      "pointer_domain": "cdn.iuhealth.org",
-      "standing_pointer_url": "https://cdn.iuhealth.org/global/cms-hpt.txt",
-      "standing_mrf_url": "https://cdn.iuhealth.org/resources/273532963_indiana-university-health-white-memorial-hospital-inc._standardcharges.zip",
-      "disposition": "verified-template-review",
-      "standing_finding": "compliant-observed",
-      "latest_observation_superseded": false,
-      "review_class": "cross-domain-unresolved-review"
-    },
-    {
-      "ccn": "151316",
-      "hospital_name": "INDIANA UNIVERSITY HEALTH FRANKFORT INC",
-      "state": "IN",
-      "official_domain": "iuhealth.org",
-      "pointer_domain": "cdn.iuhealth.org",
-      "standing_pointer_url": "https://cdn.iuhealth.org/global/cms-hpt.txt",
-      "standing_mrf_url": "https://cdn.iuhealth.org/resources/815174295_indiana-university-health-frankfort-inc._standardcharges.zip",
-      "disposition": "verified-template-review",
-      "standing_finding": "compliant-observed",
-      "latest_observation_superseded": false,
-      "review_class": "cross-domain-unresolved-review"
-    },
-    {
-      "ccn": "151320",
-      "hospital_name": "INDIANA UNIVERSITY HEALTH JAY, INC.",
-      "state": "IN",
-      "official_domain": "iuhealth.org",
-      "pointer_domain": "cdn.iuhealth.org",
-      "standing_pointer_url": "https://cdn.iuhealth.org/global/cms-hpt.txt",
-      "standing_mrf_url": "https://cdn.iuhealth.org/resources/822736786_indiana-university-health-jay-inc._standardcharges.zip",
-      "disposition": "verified-template-review",
-      "standing_finding": "compliant-observed",
-      "latest_observation_superseded": false,
-      "review_class": "cross-domain-unresolved-review"
-    },
-    {
-      "ccn": "151328",
-      "hospital_name": "INDIANA UNIVERSITY HEALTH BEDFORD HOSPITAL",
-      "state": "IN",
-      "official_domain": "iuhealth.org",
-      "pointer_domain": "cdn.iuhealth.org",
-      "standing_pointer_url": "https://cdn.iuhealth.org/global/cms-hpt.txt",
-      "standing_mrf_url": "https://cdn.iuhealth.org/resources/237042323_indiana-university-health-bedford-inc._standardcharges.zip",
-      "disposition": "verified-template-review",
       "standing_finding": "compliant-observed",
       "latest_observation_superseded": false,
       "review_class": "cross-domain-unresolved-review"
@@ -277,19 +145,6 @@
       "pointer_domain": "trinityhealthmichigan.org",
       "standing_pointer_url": "https://trinityhealthmichigan.org/cms-hpt.txt",
       "standing_mrf_url": "https://hpt.trinity-health.org/383175878_st-joseph-mercy-ann-arbor_standardcharges.zip",
-      "disposition": "linked-mrf-header-unmatched",
-      "standing_finding": "compliant-observed",
-      "latest_observation_superseded": false,
-      "review_class": "cross-domain-unresolved-review"
-    },
-    {
-      "ccn": "250007",
-      "hospital_name": "Memorial Hospital Biloxi",
-      "state": "MS",
-      "official_domain": "merithealthbiloxi.com",
-      "pointer_domain": "wearememorial.com",
-      "standing_pointer_url": "https://wearememorial.com/cms-hpt.txt",
-      "standing_mrf_url": "https://memorialhealthsystem.pt.panaceainc.com/MRFDownload/memorialhealthsystem/memorialbiloxi",
       "disposition": "linked-mrf-header-unmatched",
       "standing_finding": "compliant-observed",
       "latest_observation_superseded": false,
@@ -708,7 +563,7 @@
       "standing_mrf_url": "https://stgenhospital.blob.core.windows.net/services/pricefile/946000533_santa-clara-valley-medical-center_standardcharges.csv",
       "disposition": "pointer-access-denied-to-client",
       "standing_finding": "official-page-mrf-root-pointer-unavailable",
-      "latest_observation_superseded": true,
+      "latest_observation_superseded": false,
       "review_class": "cross-domain-verified-or-superseded-review"
     },
     {
@@ -1284,6 +1139,19 @@
       "review_class": "cross-domain-verified-or-superseded-review"
     },
     {
+      "ccn": "140160",
+      "hospital_name": "FHN MEMORIAL HOSPITAL",
+      "state": "IL",
+      "official_domain": "res.cloudinary.com",
+      "pointer_domain": "mercyhealthsystem.org",
+      "standing_pointer_url": "https://www.mercyhealthsystem.org/cms-hpt.txt",
+      "standing_mrf_url": "https://www.mercyhealthsystem.org/clientfiles/getfile/362181997_fhn-memorial-hospital_standardcharges.csv",
+      "disposition": "verified-current-mrf",
+      "standing_finding": "compliant-observed",
+      "latest_observation_superseded": false,
+      "review_class": "cross-domain-verified-or-superseded-review"
+    },
+    {
       "ccn": "140294",
       "hospital_name": "DEACONESS ILLINOIS CROSSROADS",
       "state": "IL",
@@ -1304,9 +1172,9 @@
       "pointer_domain": "horizonhealth.slicedhealth.io",
       "standing_pointer_url": "https://horizonhealth.slicedhealth.io/home/cms-hpt.txt",
       "standing_mrf_url": "https://horizonhealth.slicedhealth.io/pricer/00-0000000-1629280367_HorizonHealth_standardcharges.CSV",
-      "disposition": "pointer-access-denied-to-client",
+      "disposition": "pointer-discovery-incomplete",
       "standing_finding": "root-pointer-html-page-with-official-page-file",
-      "latest_observation_superseded": true,
+      "latest_observation_superseded": false,
       "review_class": "cross-domain-verified-or-superseded-review"
     },
     {
@@ -1349,6 +1217,19 @@
       "review_class": "cross-domain-verified-or-superseded-review"
     },
     {
+      "ccn": "150089",
+      "hospital_name": "INDIANA UNIVERSITY HEALTH BALL MEMORIAL HOSPITAL",
+      "state": "IN",
+      "official_domain": "iuhealth.org",
+      "pointer_domain": "cdn.iuhealth.org",
+      "standing_pointer_url": "https://cdn.iuhealth.org/global/cms-hpt.txt",
+      "standing_mrf_url": "https://cdn.iuhealth.org/resources/350867958_indiana-university-health-ball-memorial-hospital-inc._standardcharges.zip",
+      "disposition": "verified-current-mrf",
+      "standing_finding": "compliant-observed",
+      "latest_observation_superseded": false,
+      "review_class": "cross-domain-verified-or-superseded-review"
+    },
+    {
       "ccn": "150149",
       "hospital_name": "THE WOMEN'S HOSPITAL",
       "state": "IN",
@@ -1356,6 +1237,110 @@
       "pointer_domain": "deaconess.com",
       "standing_pointer_url": "https://deaconess.com/cms-hpt.txt",
       "standing_mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8113/350593390-1780535427_deaconess-hospital,-inc_standardcharges.csv",
+      "disposition": "verified-current-mrf",
+      "standing_finding": "compliant-observed",
+      "latest_observation_superseded": false,
+      "review_class": "cross-domain-verified-or-superseded-review"
+    },
+    {
+      "ccn": "150161",
+      "hospital_name": "INDIANA UNIVERSITY HEALTH NORTH HOSPITAL",
+      "state": "IN",
+      "official_domain": "iuhealth.org",
+      "pointer_domain": "cdn.iuhealth.org",
+      "standing_pointer_url": "https://cdn.iuhealth.org/global/cms-hpt.txt",
+      "standing_mrf_url": "https://cdn.iuhealth.org/resources/351932442_indiana-university-health-north-hospital-inc._standardcharges.zip",
+      "disposition": "verified-current-mrf",
+      "standing_finding": "compliant-observed",
+      "latest_observation_superseded": false,
+      "review_class": "cross-domain-verified-or-superseded-review"
+    },
+    {
+      "ccn": "150173",
+      "hospital_name": "INDIANA UNIVERSITY HEALTH ARNETT HOSPITAL",
+      "state": "IN",
+      "official_domain": "iuhealth.org",
+      "pointer_domain": "cdn.iuhealth.org",
+      "standing_pointer_url": "https://cdn.iuhealth.org/global/cms-hpt.txt",
+      "standing_mrf_url": "https://cdn.iuhealth.org/resources/263162145_indiana-university-health-arnett-inc._standardcharges.zip",
+      "disposition": "verified-current-mrf",
+      "standing_finding": "compliant-observed",
+      "latest_observation_superseded": false,
+      "review_class": "cross-domain-verified-or-superseded-review"
+    },
+    {
+      "ccn": "151306",
+      "hospital_name": "INDIANA UNIVERSITY HEALTH PAOLI HOSPITAL",
+      "state": "IN",
+      "official_domain": "iuhealth.org",
+      "pointer_domain": "cdn.iuhealth.org",
+      "standing_pointer_url": "https://cdn.iuhealth.org/global/cms-hpt.txt",
+      "standing_mrf_url": "https://cdn.iuhealth.org/resources/352090919_indiana-university-health-paoli-inc._standardcharges.zip",
+      "disposition": "verified-current-mrf",
+      "standing_finding": "compliant-observed",
+      "latest_observation_superseded": false,
+      "review_class": "cross-domain-verified-or-superseded-review"
+    },
+    {
+      "ccn": "151311",
+      "hospital_name": "INDIANA UNIVERSITY HEALTH TIPTON HOSPITAL INC",
+      "state": "IN",
+      "official_domain": "iuhealth.org",
+      "pointer_domain": "cdn.iuhealth.org",
+      "standing_pointer_url": "https://cdn.iuhealth.org/global/cms-hpt.txt",
+      "standing_mrf_url": "https://cdn.iuhealth.org/resources/262772226_indiana-university-health-tipton-hospital-inc._standardcharges.zip",
+      "disposition": "verified-current-mrf",
+      "standing_finding": "compliant-observed",
+      "latest_observation_superseded": false,
+      "review_class": "cross-domain-verified-or-superseded-review"
+    },
+    {
+      "ccn": "151312",
+      "hospital_name": "INDIANA UNIVERSITY HEALTH WHITE MEMORIAL HOSPITAL",
+      "state": "IN",
+      "official_domain": "iuhealth.org",
+      "pointer_domain": "cdn.iuhealth.org",
+      "standing_pointer_url": "https://cdn.iuhealth.org/global/cms-hpt.txt",
+      "standing_mrf_url": "https://cdn.iuhealth.org/resources/273532963_indiana-university-health-white-memorial-hospital-inc._standardcharges.zip",
+      "disposition": "verified-current-mrf",
+      "standing_finding": "compliant-observed",
+      "latest_observation_superseded": false,
+      "review_class": "cross-domain-verified-or-superseded-review"
+    },
+    {
+      "ccn": "151316",
+      "hospital_name": "INDIANA UNIVERSITY HEALTH FRANKFORT INC",
+      "state": "IN",
+      "official_domain": "iuhealth.org",
+      "pointer_domain": "cdn.iuhealth.org",
+      "standing_pointer_url": "https://cdn.iuhealth.org/global/cms-hpt.txt",
+      "standing_mrf_url": "https://cdn.iuhealth.org/resources/815174295_indiana-university-health-frankfort-inc._standardcharges.zip",
+      "disposition": "verified-current-mrf",
+      "standing_finding": "compliant-observed",
+      "latest_observation_superseded": false,
+      "review_class": "cross-domain-verified-or-superseded-review"
+    },
+    {
+      "ccn": "151320",
+      "hospital_name": "INDIANA UNIVERSITY HEALTH JAY, INC.",
+      "state": "IN",
+      "official_domain": "iuhealth.org",
+      "pointer_domain": "cdn.iuhealth.org",
+      "standing_pointer_url": "https://cdn.iuhealth.org/global/cms-hpt.txt",
+      "standing_mrf_url": "https://cdn.iuhealth.org/resources/822736786_indiana-university-health-jay-inc._standardcharges.zip",
+      "disposition": "verified-current-mrf",
+      "standing_finding": "compliant-observed",
+      "latest_observation_superseded": false,
+      "review_class": "cross-domain-verified-or-superseded-review"
+    },
+    {
+      "ccn": "151328",
+      "hospital_name": "INDIANA UNIVERSITY HEALTH BEDFORD HOSPITAL",
+      "state": "IN",
+      "official_domain": "iuhealth.org",
+      "pointer_domain": "cdn.iuhealth.org",
+      "standing_pointer_url": "https://cdn.iuhealth.org/global/cms-hpt.txt",
+      "standing_mrf_url": "https://cdn.iuhealth.org/resources/237042323_indiana-university-health-bedford-inc._standardcharges.zip",
       "disposition": "verified-current-mrf",
       "standing_finding": "compliant-observed",
       "latest_observation_superseded": false,
@@ -1603,9 +1588,9 @@
       "pointer_domain": "holyfamilyhospital.org",
       "standing_pointer_url": "https://holyfamilyhospital.org/cms-hpt.txt",
       "standing_mrf_url": "https://www.mhlawrencehospital.org/getmedia/e6c34e8a-4f60-484a-a120-519d4d00f386/042103586_LawerenceGeneralHospital_standardcharges.csv",
-      "disposition": "pointer-not-retrieved",
+      "disposition": "pointer-discovery-incomplete",
       "standing_finding": "official-page-mrf-root-pointer-unavailable",
-      "latest_observation_superseded": true,
+      "latest_observation_superseded": false,
       "review_class": "cross-domain-verified-or-superseded-review"
     },
     {
@@ -1788,6 +1773,19 @@
       "disposition": "verified-current-mrf",
       "standing_finding": "mrf-url-unreachable",
       "latest_observation_superseded": false,
+      "review_class": "cross-domain-verified-or-superseded-review"
+    },
+    {
+      "ccn": "250007",
+      "hospital_name": "Memorial Hospital Biloxi",
+      "state": "MS",
+      "official_domain": "merithealthbiloxi.com",
+      "pointer_domain": "wearememorial.com",
+      "standing_pointer_url": "https://wearememorial.com/cms-hpt.txt",
+      "standing_mrf_url": "https://memorialhealthsystem.pt.panaceainc.com/MRFDownload/memorialhealthsystem/memorialbiloxi",
+      "disposition": "mrf-request-unsuccessful",
+      "standing_finding": "compliant-observed",
+      "latest_observation_superseded": true,
       "review_class": "cross-domain-verified-or-superseded-review"
     },
     {
@@ -2019,9 +2017,9 @@
       "pointer_domain": "search.hospitalpriceindex.com",
       "standing_pointer_url": "https://search.hospitalpriceindex.com/hpi2/machineReadable/HowardCountyMedicalCenter/8107",
       "standing_mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8107/470681056_howard-county-medical-center_standardcharges.csv",
-      "disposition": "pointer-facility-match-unresolved",
+      "disposition": "pointer-discovery-incomplete",
       "standing_finding": "compliant-observed",
-      "latest_observation_superseded": true,
+      "latest_observation_superseded": false,
       "review_class": "cross-domain-verified-or-superseded-review"
     },
     {
@@ -2136,9 +2134,9 @@
       "pointer_domain": "hospitalpricedisclosure.com",
       "standing_pointer_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=pVP5UiW3I*__*Y*_*TJMcttiiiA*-*",
       "standing_mrf_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=pVP5UiW3I*__*Y*_*TJMcttiiiA*-*",
-      "disposition": "pointer-access-denied-to-client",
+      "disposition": "pointer-discovery-incomplete",
       "standing_finding": "compliant-observed",
-      "latest_observation_superseded": true,
+      "latest_observation_superseded": false,
       "review_class": "cross-domain-verified-or-superseded-review"
     },
     {
@@ -2149,9 +2147,9 @@
       "pointer_domain": "hospitalpricedisclosure.com",
       "standing_pointer_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=xO*_*y3fOOMLGcE*__*jd2jdm*_*A*-*",
       "standing_mrf_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=xO*_*y3fOOMLGcE*__*jd2jdm*_*A*-*",
-      "disposition": "pointer-access-denied-to-client",
+      "disposition": "pointer-discovery-incomplete",
       "standing_finding": "compliant-observed",
-      "latest_observation_superseded": true,
+      "latest_observation_superseded": false,
       "review_class": "cross-domain-verified-or-superseded-review"
     },
     {
@@ -2162,9 +2160,9 @@
       "pointer_domain": "hospitalpricedisclosure.com",
       "standing_pointer_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=DGoqeRgxZD8421GymxBLnQ*-*",
       "standing_mrf_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=DGoqeRgxZD8421GymxBLnQ*-*",
-      "disposition": "pointer-access-denied-to-client",
+      "disposition": "pointer-discovery-incomplete",
       "standing_finding": "compliant-observed",
-      "latest_observation_superseded": true,
+      "latest_observation_superseded": false,
       "review_class": "cross-domain-verified-or-superseded-review"
     },
     {
@@ -2175,9 +2173,9 @@
       "pointer_domain": "hospitalpricedisclosure.com",
       "standing_pointer_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=BjroEz8c5o*_*7mZ2xptt3iw*-*",
       "standing_mrf_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=BjroEz8c5o*_*7mZ2xptt3iw*-*",
-      "disposition": "pointer-access-denied-to-client",
+      "disposition": "pointer-discovery-incomplete",
       "standing_finding": "compliant-observed",
-      "latest_observation_superseded": true,
+      "latest_observation_superseded": false,
       "review_class": "cross-domain-verified-or-superseded-review"
     },
     {
@@ -2188,9 +2186,9 @@
       "pointer_domain": "hospitalpricedisclosure.com",
       "standing_pointer_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=5WT9HTDTVJjg8fpR4CruzQ*-*",
       "standing_mrf_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=5WT9HTDTVJjg8fpR4CruzQ*-*",
-      "disposition": "pointer-access-denied-to-client",
+      "disposition": "pointer-discovery-incomplete",
       "standing_finding": "compliant-observed",
-      "latest_observation_superseded": true,
+      "latest_observation_superseded": false,
       "review_class": "cross-domain-verified-or-superseded-review"
     },
     {
@@ -2201,9 +2199,9 @@
       "pointer_domain": "hospitalpricedisclosure.com",
       "standing_pointer_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=pOyz38FZVoI0HoHi*__*7e*_*VQ*-*",
       "standing_mrf_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=pOyz38FZVoI0HoHi*__*7e*_*VQ*-*",
-      "disposition": "pointer-access-denied-to-client",
+      "disposition": "pointer-discovery-incomplete",
       "standing_finding": "compliant-observed",
-      "latest_observation_superseded": true,
+      "latest_observation_superseded": false,
       "review_class": "cross-domain-verified-or-superseded-review"
     },
     {
@@ -2214,9 +2212,9 @@
       "pointer_domain": "hospitalpricedisclosure.com",
       "standing_pointer_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=PnMmi0OJplyABzmiE7PkYQ*-*",
       "standing_mrf_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=PnMmi0OJplyABzmiE7PkYQ*-*",
-      "disposition": "pointer-access-denied-to-client",
+      "disposition": "pointer-discovery-incomplete",
       "standing_finding": "compliant-observed",
-      "latest_observation_superseded": true,
+      "latest_observation_superseded": false,
       "review_class": "cross-domain-verified-or-superseded-review"
     },
     {
@@ -2227,9 +2225,9 @@
       "pointer_domain": "mrfs.hyvehealthcare.com",
       "standing_pointer_url": "https://mrfs.hyvehealthcare.com/USPI/731623669_oklahoma-center-for-orthopaedic-%26-multi-specialty-surgery%2C-llc_standardcharges.json",
       "standing_mrf_url": "https://mrfs.hyvehealthcare.com/USPI/731623669_oklahoma-center-for-orthopaedic-%26-multi-specialty-surgery%2C-llc_standardcharges.json",
-      "disposition": "pointer-access-denied-to-client",
+      "disposition": "pointer-discovery-incomplete",
       "standing_finding": "compliant-observed",
-      "latest_observation_superseded": true,
+      "latest_observation_superseded": false,
       "review_class": "cross-domain-verified-or-superseded-review"
     },
     {
@@ -2240,9 +2238,9 @@
       "pointer_domain": "hospitalpricedisclosure.com",
       "standing_pointer_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=Ltb8cqfMm9D6g79o7zvF0A*-*",
       "standing_mrf_url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=Ltb8cqfMm9D6g79o7zvF0A*-*",
-      "disposition": "pointer-access-denied-to-client",
+      "disposition": "pointer-discovery-incomplete",
       "standing_finding": "compliant-observed",
-      "latest_observation_superseded": true,
+      "latest_observation_superseded": false,
       "review_class": "cross-domain-verified-or-superseded-review"
     },
     {
@@ -2370,9 +2368,9 @@
       "pointer_domain": "search.hospitalpriceindex.com",
       "standing_pointer_url": "https://search.hospitalpriceindex.com/hpi2/machineReadable/OurLadyofFatimaHospital/7916or",
       "standing_mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7916/464661337_prospect-chartercare-sjhsri%2C-llc_standardcharges.csv",
-      "disposition": "pointer-not-retrieved",
+      "disposition": "pointer-discovery-incomplete",
       "standing_finding": "compliant-observed",
-      "latest_observation_superseded": true,
+      "latest_observation_superseded": false,
       "review_class": "cross-domain-verified-or-superseded-review"
     },
     {

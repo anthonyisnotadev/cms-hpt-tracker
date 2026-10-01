@@ -1,0 +1,65 @@
+{
+  "ccn": "154054",
+  "observed_at": "2026-09-30T17:58:31.495Z",
+  "evidence_role": "current first-party pointer-linked MRF; exact CMS v3 metadata and full bytes",
+  "official_page_url": "https://www.harshacenter.com/price-transparency/",
+  "pointer_url": "https://www.harshacenter.com/s/cms-hpt.txt",
+  "pointer_status": 206,
+  "pointer_final_url": "https://static1.squarespace.com/static/5eb1fd4c4ff16a36a9d64fb4/t/6a50a461fdd00516464d9a64/1783669857604/cms-hpt.txt",
+  "pointer_bytes": 251,
+  "pointer_content_range": "bytes 0-250/251",
+  "pointer_sha256": "222dcb74372039e9547d1eb6ffd1878dba4ab3b7844538a14c15abdc945a33e4",
+  "pointer_declared_mrf_url": "www.harshacenter.com/s/261091197_harsha-behavioral-center_standardcharges.csv",
+  "page_linked_file_url": "https://www.harshacenter.com/s/261091197_harsha-behavioral-center_standardcharges-t8tx.csv",
+  "pointer_declared_file_url": "https://www.harshacenter.com/s/261091197_harsha-behavioral-center_standardcharges.csv",
+  "page_linked_file_status": 206,
+  "pointer_file_status": 206,
+  "page_linked_final_url": "https://static1.squarespace.com/static/5eb1fd4c4ff16a36a9d64fb4/t/6a96ccfb729b46424175b679/1788267771738/261091197_harsha-behavioral-center_standardcharges.csv",
+  "pointer_file_final_url": "https://static1.squarespace.com/static/5eb1fd4c4ff16a36a9d64fb4/t/6a96ccfb729b46424175b679/1788267771738/261091197_harsha-behavioral-center_standardcharges.csv",
+  "content_type": "text/csv",
+  "file_content_range": "bytes 0-20552/20553",
+  "full_file_bytes": 20553,
+  "full_file_sha256": "7570da8a79bcd431978fed37a0a1aafa00472f9fe01dc4ba05648b6117d8620c",
+  "retained_file": "cms_data/hpt/nationwide-verification/file-byte-proof/7570da8a79bcd431978fed37a0a1aafa00472f9fe01dc4ba05648b6117d8620c.bin",
+  "declared_hospital_name": "Harsha Behavioral Center",
+  "declared_location_name": "Harsha Behavioral Center",
+  "declared_address": "1980 E Woodsmall Drive Terre Haute, IN 47802",
+  "declared_license_state": "IN",
+  "declared_license_number": "1594-003",
+  "declared_npi": "1891966065",
+  "declared_last_updated": "2026-07-01",
+  "cms_template_version": "3.0.0",
+  "attestation": true,
+  "csv_header_columns": 23,
+  "parsed_data_rows": 94,
+  "csv_data_row_widths": [
+    23
+  ],
+  "row_checks": {
+    "description": 94,
+    "gross_charge": 94,
+    "payer": 94,
+    "negotiated_dollar": 90,
+    "usable_negotiated_charge": 94,
+    "percentage_or_algorithm_charge": 4,
+    "percentage_or_algorithm_with_median_percentiles_and_count": 4
+  },
+  "cms_v3_allowed_amount_check": {
+    "columns": [
+      "median_amount",
+      "10th_percentile",
+      "90th_percentile",
+      "count"
+    ],
+    "applicable_rows": 4,
+    "complete_rows": 4
+  },
+  "alias_check": {
+    "same_final_url": true,
+    "same_status": true,
+    "same_bytes": true,
+    "same_sha256": true
+  },
+  "identity_gate": "official-current-page-and-cms-pointer-link-the-exact-file; roster name/address/city/state agree; CSV facility/address/state/license/NPI agree",
+  "raw_pointer_contact_fields_omitted": true
+}

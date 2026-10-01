@@ -1,0 +1,26 @@
+{
+  "ccn": "014007",
+  "observed_at": "2026-09-28T23:33:00Z",
+  "official_site": "https://mh.alabama.gov/",
+  "official_page": "https://mh.alabama.gov/bryce-hospital/",
+  "method": "browser-accessibility-tree-current-page-recheck-after-third-party-lead",
+  "page_result": "Current ADMH Bryce Hospital page identifies the facility at 1651 Ruby Tyler Parkway, Tuscaloosa, Alabama 35404. Its Documents for Download section lists the Bryce Hospital brochure, Bryce Hospital handbook, and patient-rights material; no price-transparency page or machine-readable file link is exposed in the rendered page.",
+  "pointer_url": "https://mh.alabama.gov/cms-hpt.txt",
+  "pointer_recheck": "Not repeated: the exact route returned a 162,799-byte WordPress HTML not-found response on 2026-09-21; this page recheck did not indicate a route change.",
+  "third_party_lead_context": "Turquoise Health's 2026-09-28 provider page claims its unverified Bryce rates were downloaded from the provider website but exposes no source URL, file metadata, or retrievable source file. This official-page recheck tests that lead against the current first-party page; it does not verify or refute the third-party rates.",
+  "search_recheck": {
+    "observed_at": "2026-09-28",
+    "queries": [
+      "site:mh.alabama.gov/wp-content Bryce standardcharges",
+      "site:mh.alabama.gov machine readable file Bryce Hospital",
+      "site:mh.alabama.gov machine-readable hospital price transparency Alabama ADMH"
+    ],
+    "result": "No results found"
+  },
+  "identity": "Facility name and address match the retained CMS exact-CCN record for CCN 014007; this is not MRF identity evidence.",
+  "file_bytes_recovered": false,
+  "pointer_linkage_established": false,
+  "count_effect": 0,
+  "disposition": "current-first-party-page-rechecked-no-mrf-link-exposed-third-party-lead-unresolved",
+  "next_action": "Continue only with a public, source-bearing lead for the exact Bryce MRF URL or pointer entry; do not contact ADMH without authorization. If a URL is found, verify first-party linkage, exact identity/address/state, declared date/version, bounded complete bytes and usable CMS-format rows before promotion. Do not treat third-party rates or the HTML pointer 404 as proof of presence, absence, or compliance."
+}

@@ -23,7 +23,16 @@
   "file_kind": "json",
   "scope_note": "The current first-party file is a multi-location UC San Diego Medical Center MRF; Hillcrest is explicitly listed with the CCN-matching San Diego address. Sibling campuses are not assigned to CCN 050025.",
   "manual_identity_gate": "official-page-file-header-name-hillcrest-address-state-date-version-agree",
+  "assessment_history": [
+    {
+      "finding": "mrf-template-version-noncanonical",
+      "recorded_at": "2026-09-26T06:30:00Z",
+      "basis_at_time": "Literal 3.0 was compared against the then-configured exact expected string 3.0.0.",
+      "superseded_at": "2026-09-30T14:08:22Z",
+      "superseded_reason": "Current policy counts exact literal 3.0 as CMS version 3. Preserve the raw literal; remaining blocker is full-file validation and root-pointer linkage."
+    }
+  ],
   "disposition": "verified-template-review",
-  "interpretation": "Bounded bytes from the exact current official pricing-page file expose facility metadata, Hillcrest address, California license state, current date and literal version 3.0. The complete 3.2GB object was not downloaded; parsed usability beyond the bounded metadata is therefore retained as a bounded observation.",
-  "next_action": "Retain exact page/file provenance and obtain a complete or independently parsed copy on the normal recheck cycle; preserve literal version 3.0 rather than normalizing it to 3.0.0."
+  "interpretation": "The literal CMS template version 3.0 is a current v3 value and is preserved exactly. Bounded bytes from the exact current official pricing-page file expose facility metadata, Hillcrest address, California license state, update date and attestation. The complete 3.2GB object was not downloaded; full-file syntax/usability and root-pointer linkage remain unverified. This is not a verified-current-MRF or legal-compliance conclusion.",
+  "next_action": "Obtain a complete or independently parsed copy of the exact page-linked JSON through a permitted route, then verify CMS v3.0 structure and usable rows. Separately verify the root cms-hpt.txt linkage. Until those checks pass, retain verified-template-review and do not count this as verified-current MRF."
 }

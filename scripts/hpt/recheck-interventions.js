@@ -197,7 +197,7 @@ function metadataStatus(file, now = Date.now()) {
   const days = Math.floor((now - timestamp) / 86400000);
   if (days < 0) return 'future-date-review';
   if (days > 365) return 'date-over-365-days';
-  if (/^3(?:\.|$)/.test(file.version || '')) return 'date-within-365-days-version-3';
+  if (['3.0', '3.0.0'].includes(String(file.version || '').trim())) return 'date-within-365-days-version-3';
   if (/^[12](?:\.|$)/.test(file.version || '')) return 'date-within-365-days-older-version';
   return 'date-within-365-days-version-unverified';
 }

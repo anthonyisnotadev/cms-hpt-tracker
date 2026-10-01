@@ -46,7 +46,7 @@ test('seven formerly unassigned Prime pointers have distinct, retained page/poin
     assert.equal(resolution.evidence.url, row.pointer_mrf_url);
     assert.equal(resolution.evidence.observedFinding, 'mrf-template-version-noncanonical');
     assert.equal(byCcn.get(row.ccn).mrf_url, row.pointer_mrf_url);
-    assert.equal(byCcn.get(row.ccn).finding, 'mrf-template-version-noncanonical');
+    assert.equal(byCcn.get(row.ccn).finding, 'compliant-observed');
     assert.equal(view.history[row.ccn].mrf_url, row.displaced_file_url);
   }
 });

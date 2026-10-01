@@ -49,5 +49,5 @@ test('Llano current hospital replaces unrelated BSW assignment with complete exa
   assert.equal(publicRow[8], proof.decoded_file_url);
   assert.equal(publicRow[9], proof.pointer_url);
   assert.equal(tracker.auditHistory['451396'].domain, 'bswhealth.com');
-  assert.match(tracker.assessmentHistory['451396'][0].blocker, /not line-item validation/);
+  assert.match(tracker.assessmentHistory['451396'][0].blocker, /Probe the pointer-linked file and reconcile its facility header/);
 });

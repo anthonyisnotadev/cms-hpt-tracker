@@ -22,9 +22,14 @@ const steps = [
   'scripts/hpt/build-supported-uncertainty-worklist.js',
   'scripts/hpt/build-corpus-index-ccn-worklist.js',
   'scripts/hpt/audit-selected-pointer-attribution.js',
+  'scripts/hpt/update-891-cohort-crosswalk.js',
+  'scripts/hpt/build-nationwide-snapshot-bridge.js',
   'scripts/hpt/build-interventions.js',
   'scripts/hpt/build-cross-domain-pointer-inventory.js',
   'scripts/hpt/audit-unresolved-support.js',
+  // Human-readable History text is derived from the current reviewed view and
+  // per-CCN resolutions; refresh it before embedding that history in tracker.html.
+  'scripts/hpt/rewrite-readable-history.js',
   'scripts/build-tracker.js',
 ];
 

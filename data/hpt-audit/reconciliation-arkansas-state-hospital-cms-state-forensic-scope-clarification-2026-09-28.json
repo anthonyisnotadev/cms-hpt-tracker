@@ -1,0 +1,37 @@
+{
+  "audit_id": "reconciliation-arkansas-state-hospital-cms-state-forensic-scope-clarification-2026-09-28",
+  "ccn": "044011",
+  "observed_at": "2026-09-28T19:41:58Z",
+  "sources": {
+    "cms_hospital_price_transparency_faq": {
+      "url": "https://www.cms.gov/files/document/hospital-price-transparency-frequently-asked-questions.pdf",
+      "source_text": "CMS FAQ states the rule applies to qualifying state-owned or operated hospitals other than those deemed compliant. The specified state forensic hospital deeming provision applies to hospitals that provide treatment exclusively to people in penal custody.",
+      "source_pages": [17, 18]
+    },
+    "arkansas_dhs_state_hospital_statistical_report_sfy_2023": {
+      "url": "https://humanservices.arkansas.gov/wp-content/uploads/Annual-Statistical-Report-2023.pdf",
+      "source_text": "DHS describes Arkansas State Hospital as having adult acute-care, forensic, and adolescent beds; acute-care admission is through CMHC referral, while forensic admission is by circuit-court order.",
+      "publication_period": "SFY 2023"
+    },
+    "arkansas_dhs_community_mental_health_centers_report": {
+      "url": "https://humanservices.arkansas.gov/wp-content/uploads/CMHC-Report-final-04_26_2024.pdf",
+      "source_text": "DHS describes the hospital's shift toward accepting forensic patients almost exclusively, while describing other units as psychiatric hospital units. The report does not say exclusively.",
+      "report_date": "2024-04-26"
+    },
+    "current_dhs_hospital_directory_page": {
+      "url": "https://humanservices.arkansas.gov/offices/pulaski-arkansas-state-hospital/",
+      "browser_observation": "The current official DHS page rendered with the title Pulaski – Arkansas State Hospital and lists 305 South Palm Street, Little Rock, AR 72205. It exposes no pricing or MRF link in its accessible content.",
+      "http_status": null
+    }
+  },
+  "interpretation": "Do not infer a Hospital Price Transparency scope exemption from state ownership or the presence of forensic beds. CMS's state-forensic deeming provision is limited to treatment exclusively for people in penal custody; the available DHS reports describe acute-care/adolescent services in addition to forensic services and do not establish exclusive penal-custody treatment. This is a scope-applicability clarification, not a compliance verdict or an MRF recovery.",
+  "existing_evidence_preserved": {
+    "root_pointer_url": "https://humanservices.arkansas.gov/cms-hpt.txt",
+    "root_pointer_status": 404,
+    "current_official_workbook": "https://humanservices.arkansas.gov/wp-content/uploads/ASH-Most-Frequent-Client-Services-10.14.24.xlsx",
+    "workbook_is_cms_template_mrf": false
+  },
+  "disposition_effect": "none; retain unresolved pointer/MRF evidence gate and do not apply a state-forensic deemed-compliant classification",
+  "count_effect": 0,
+  "next_action": "Locate a current Arkansas State Hospital CMS-template CSV/JSON MRF or an authorized DHS pricing route. Keep the October 2024 Most Frequent Client Services workbook separate; do not promote XLSX to the CMS-template MRF or infer file absence/compliance from the root-pointer 404. Reassess scope only if current authoritative material establishes treatment exclusively for people in penal custody."
+}

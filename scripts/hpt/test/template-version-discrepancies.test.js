@@ -14,7 +14,7 @@ test('version discrepancy inventory distinguishes same-file label correction fro
   const records = [{ ...observed, ccn: '000001', mrf_url: base.mrf_url },
     { ...observed, ccn: '000002', mrf_url: 'https://example.org/b.csv' }];
   const rows = collect(records, standing);
-  assert.equal(rows.find(row => row.ccn === '000001').displayed_finding, 'mrf-template-version-noncanonical');
+  assert.equal(rows.find(row => row.ccn === '000001').displayed_finding, 'compliant-observed');
   assert.equal(rows.find(row => row.ccn === '000002').displayed_finding, 'compliant-observed');
   assert.equal(rows.find(row => row.ccn === '000002').review_priority, '1-different-file-pointer-match-unresolved');
   assert.equal(collect([{ ...records[1], pointer_state: 'retrieved-facility-linked' }], standing)[0].review_priority,
@@ -25,5 +25,5 @@ test('version discrepancy inventory distinguishes same-file label correction fro
     pointer_corpus_observed_at: '2026-09-15',
     evidence: { pointer_sha256s: ['a'.repeat(64)], matched_mrf_candidates: 1 } };
   assert.equal(collect([proven], standing)[0].review_priority,
-    '2-different-file-replaced-with-exact-pointer-proof');
+    '1-different-file-pointer-match-unresolved');
 });

@@ -665,7 +665,8 @@ function applyReviewedStamfordPointerAttribution(rows, proof) {
       || !Number.isFinite(Date.parse(proof.observed_at))) throw new Error('Stamford pointer attribution proof changed; manual review required');
   const corrected = rows.map(row => ({ ...row }));
   const matches = corrected.filter(row => row.record_status === 'ok'
-    && row.pointer_url === proof.pointer_url && row.pointer_sha256 === proof.pointer_sha256
+    && [row.pointer_url, ...String(row.observed_pointer_urls || '').split('|')].includes(proof.pointer_url)
+    && row.pointer_sha256 === proof.pointer_sha256
     && row.location_name === proof.pointer_location_name && row.source_page_url === proof.source_page_url
     && row.mrf_url === proof.mrf_url);
   if (matches.length !== 1) throw new Error(`Expected one retained Stamford pointer/file row, got ${matches.length}`);
@@ -969,8 +970,10 @@ async function runCorpus(rawOptions = {}, dependencies = {}) {
   const uvmCenterProof = await readJsonIfPresent(path.join(root, 'data/hpt-audit/reconciliation-uvm-medical-center-alias-proof.json'), null);
   const multicareProof = await readJsonIfPresent(path.join(root, 'data/hpt-audit/reconciliation-multicare-tacoma-allenmore-dual-file-proof.json'), null);
   const stamfordProof = await readJsonIfPresent(path.join(root, 'data/hpt-audit/reconciliation-stamford-pointer-attribution-proof.json'), null);
-  const rows = applyMulticareDualFileAttribution(applyReviewedStamfordPointerAttribution(applyReviewedUvmSharedPointerAttribution(applyReviewedPrimeLinks(
-    applyReviewedLinkCorrections(rowsForDocuments(currentDocuments, root), resolutions), primeReview), uvmProof, uvmCenterProof), stamfordProof), multicareProof);
+  const pointerRows = applyReviewedStamfordPointerAttribution(
+    rowsForDocuments(currentDocuments, root), stamfordProof);
+  const rows = applyMulticareDualFileAttribution(applyReviewedUvmSharedPointerAttribution(applyReviewedPrimeLinks(
+    applyReviewedLinkCorrections(pointerRows, resolutions), primeReview), uvmProof, uvmCenterProof), multicareProof);
   await writeAtomic(csvFile, toRFC4180(rows));
   const verification = await verifyCorpusOutput(csvFile, rows, currentDocuments);
   const uniqueMrfs = new Set(rows.map(row => normalizeUrl(row.mrf_url)).filter(Boolean));

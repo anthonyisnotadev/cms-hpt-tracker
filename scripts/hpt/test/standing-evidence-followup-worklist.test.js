@@ -21,10 +21,21 @@ test('standing follow-up worklist is complete, distinct and hash-bound', () => {
   assert.equal(new Set(saved.records.map(row => row.ccn)).size, saved.records.length);
   assert.ok(saved.records.every(row => row.standing_finding && row.next_action && row.latest_observed_at));
   assert.ok(!/https?:\/\//i.test(JSON.stringify(saved.records)));
+  const lourdesReview = reconciliation.records.find(row => row.ccn === '330011');
   const lourdes = saved.records.find(row => row.ccn === '330011');
-  assert.equal(lourdes.standing_finding, 'pointer-http-client-error-page-file-found');
-  assert.equal(lourdes.reviewed_follow_up, true);
-  assert.match(lourdes.next_action, /tested HTTPS mrf-url/);
+  if (lourdesReview.workstream === 'standing-evidence-follow-up') {
+    assert.equal(lourdes.standing_finding, 'pointer-http-client-error-page-file-found');
+    assert.equal(lourdes.reviewed_follow_up, true);
+    assert.match(lourdes.next_action, /tested HTTPS mrf-url/);
+  } else {
+    // Its current exact pointer-match uncertainty belongs in the active
+    // unresolved queue; the retained finding remains on the reconciliation row.
+    assert.equal(lourdesReview.workstream, 'genuinely-unresolved-investigation');
+    assert.equal(lourdesReview.standing_finding, 'pointer-http-client-error-page-file-found');
+    const active = JSON.parse(read('unresolved-investigation-worklist.json'))
+      .records.find(row => row.ccn === '330011');
+    assert.match(active.next_action, /publisher|pointer|file/i);
+  }
   for (const name of ['nationwide-reconciliation.json', 'nationwide-verification.json'])
     assert.equal(saved.source_sha256[name], crypto.createHash('sha256').update(read(name)).digest('hex'));
 });

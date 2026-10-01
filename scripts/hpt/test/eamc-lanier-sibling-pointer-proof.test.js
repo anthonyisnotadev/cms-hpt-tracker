@@ -27,6 +27,6 @@ test('Lanier cannot inherit the Opelika pointer entry or archive header', () => 
   assert.ok(manual.records.some(record => record.ccn === proof.ccn
     && record.proof_file === 'reconciliation-eamc-lanier-current-cms-general-proof-2026-09-25.json'
     && record.disposition === 'current-cms-reh-identity-corroborated-pointer-file-still-unresolved'));
-  assert.match(row.next_action, /Valley-specific CMS CSV\/JSON\/ZIP/);
+  assert.match(row.next_action, /Valley-specific CMS (?:CSV\/JSON\/ZIP|file)/);
   assert.match(row.next_action, /keep the Opelika pointer and file separate/i);
 });

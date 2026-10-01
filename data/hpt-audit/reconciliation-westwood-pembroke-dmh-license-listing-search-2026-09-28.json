@@ -1,0 +1,27 @@
+{
+  "audit_id": "reconciliation-westwood-pembroke-dmh-license-listing-search-2026-09-28",
+  "ccn": "224023",
+  "observed_at": "2026-09-28T16:23:00Z",
+  "official_source": "https://www.mass.gov/doc/all-hospitals-0/download",
+  "source_title": "DMH Licensed Hospitals",
+  "retrieval_method": "Built-in web search indexed result text; direct open returned HTTP 403, so the PDF itself was not downloaded or hash-verified.",
+  "indexed_source_metadata": "Search index labels the document published five months ago.",
+  "recorded_facility": {
+    "facility_name": "Westwood Lodge",
+    "address": "45 Clapboardtree Street, Westwood, MA 02090-2903",
+    "dmh_area": "Northeast Area",
+    "main_phone": "hpt-obf:v1:eVsisD0u9voyH8cf.SzFhqZ59bMW5eaYwzFjaKA.3ARQYePElsbZOzSe",
+    "license_number": "1039",
+    "license_relationship": "Shared license; same number also appears in adjacent Pembroke Hospital and Lowell Treatment Center listing blocks.",
+    "displayed_license_expiration": "2017-06-19"
+  },
+  "interpretation": "Newly located official-source listing corroborates the historical Westwood Lodge identity/address and reveals a shared-license relationship, but its displayed 2017 expiration makes it unusable as evidence of current licensure. Its current search-index date does not establish that the underlying license fields are current. The search result does not mention CCN 224023.",
+  "limits": [
+    "Direct PDF retrieval was blocked (403); no file bytes or content hash were retained.",
+    "No current license verification, effective date, closure date, CMS enrollment/termination date, or CCN mapping was established.",
+    "No HPT pointer or MRF evidence was found by this review."
+  ],
+  "evidence_gain": "Official indexed state source adds a historical state license number and confirms that the license record was shared across the named UHS facilities; it does not resolve present status.",
+  "disposition_effect": "none; CCN 224023 remains unresolved and distinct from Pembroke Hospital CCN 224013",
+  "next_action": "Obtain an effective-dated current or termination record from Massachusetts DMH/CMS that ties license 1039 and the 45 Clapboardtree Street Westwood Lodge campus to CCN 224023; if current or successor MRF evidence is found, require exact facility/CCN scope before any cross-campus assignment."
+}

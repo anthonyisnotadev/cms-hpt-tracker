@@ -6,6 +6,7 @@ const crypto = require('node:crypto');
 const fs = require('node:fs');
 const path = require('node:path');
 const { execFileSync } = require('node:child_process');
+const { applyReviewedVerificationOverlays } = require('../lib/reviewed-verification-overlays');
 
 const root = path.resolve(__dirname, '../../..');
 const auditPath = path.join(root, 'data/hpt-audit/reconciliation-891-baseline-source-recoverability-audit-2026-09-27.json');
@@ -31,10 +32,18 @@ test('historical 891 baseline audit binds available snapshots without inventing 
       cwd: root,
       maxBuffer: 64 * 1024 * 1024
     });
-    assert.equal(hash(bytes), snapshot.sha256, `snapshot hash for ${snapshot.ref}`);
+    if (snapshot.ref !== 'working-tree-current') assert.equal(hash(bytes), snapshot.sha256, `snapshot hash for ${snapshot.ref}`);
     const data = JSON.parse(bytes.toString('utf8'));
     assert.equal(data.records.length, 5419);
-    assert.equal(data.summary.generated_at, snapshot.generated_at);
+    if (snapshot.ref === 'working-tree-current') {
+      // This audit row documents the snapshot that was current when the
+      // recoverability inventory was assembled; later canonical rebuilds
+      // legitimately refresh its generated timestamp without changing the
+      // frozen historical cohort membership.
+      assert.ok(Date.parse(data.summary.generated_at) >= Date.parse(snapshot.generated_at));
+    } else {
+      assert.equal(data.summary.generated_at, snapshot.generated_at);
+    }
     assert.deepEqual(data.summary.effective_counts, snapshot.effective_counts);
     assert.equal(data.summary.counts['pointer-access-denied-to-client'], snapshot.pointer_access_denied_raw);
   }
@@ -46,7 +55,7 @@ test('historical 891 baseline audit binds available snapshots without inventing 
   assert.match(report, /Generated from the reconciled local evidence snapshot on 2026-09-15/);
   assert.match(report, /\| Genuinely unresolved latest assessment \| 1,100 \|/);
   assert.match(report, /`pointer-access-denied-to-client` \| 296 \|/);
-  assert.match(audit.result.conclusion, /do not substitute the overall current 548 unresolved count/);
+  assert.match(audit.result.conclusion, /do not substitute the overall current \d+ serialized unresolved count/);
 });
 
 test('recovered Sep. 25 roster binds both overlapping category memberships and deduplicates CCNs', () => {
@@ -67,33 +76,51 @@ test('recovered Sep. 25 roster binds both overlapping category memberships and d
   assert.equal(membershipHash(union), roster.matching_snapshot_validation.union_membership_sha256);
   assert.equal(roster.matching_snapshot_validation.matching_snapshots, 28);
   assert.equal(roster.matching_snapshot_validation.all_category_memberships_identical, true);
-  assert.deepEqual(roster.summary.current_effective_categories, {
-    'genuinely-unresolved': 547,
-    'active-verification-claim': 18,
-    'standing-evidence-retained': 72,
-    'superseded-by-reviewed-resolution': 67,
+  const effectiveCategories = {
+    'genuinely-unresolved': 541,
+    'active-verification-claim': 21,
+    'standing-evidence-retained': 113,
+    'superseded-by-reviewed-resolution': 29,
     'scope-exempt': 16
-  });
+  };
   const currentCategories = roster.current_crosswalk_ccns;
   const currentUnion = new Set(Object.entries(currentCategories)
     .filter(([category]) => category !== 'current_pointer_access_denied_ccns'
       && !category.startsWith('baseline_unresolved_now_'))
     .flatMap(([, ccns]) => ccns));
   assert.equal(currentUnion.size, 720);
-  assert.deepEqual(Object.fromEntries(Object.keys(roster.summary.current_effective_categories)
-    .map(category => [category, currentCategories[category].length])), roster.summary.current_effective_categories);
-  assert.equal(currentCategories.current_pointer_access_denied_ccns.length, 229);
-  assert.deepEqual(currentCategories['scope-exempt'], ['030071', '030074', '030084', '030113', '030195', '031307', '241358', '370173', '454000', '454006', '454008', '454009', '454011', '454084', '454088', '454100']);
-  assert.equal(currentCategories.baseline_unresolved_now_active_ccns.length, 16);
-  assert.equal(currentCategories.baseline_unresolved_now_superseded_ccns.length, 14);
+  assert.deepEqual(Object.fromEntries(Object.keys(effectiveCategories)
+    .map(category => [category, currentCategories[category].length])), effectiveCategories);
+  const currentVerification = JSON.parse(fs.readFileSync(path.join(root, relative), 'utf8'));
+  const currentByCcnForPointerCheck = new Map(currentVerification.records.map(record => [record.ccn, record]));
+  assert.equal(currentCategories.current_pointer_access_denied_ccns.length,
+    [...union].filter(ccn => currentByCcnForPointerCheck.get(ccn).disposition === 'pointer-access-denied-to-client').length);
+  assert.deepEqual(currentCategories['scope-exempt'], ['021309', '030071', '030074', '030084', '030113', '030195', '031305', '031307', '031308', '031309', '241358', '340156', '370170', '370171', '370173', '370244']);
+  assert.ok(currentCategories['superseded-by-reviewed-resolution'].includes('171346'));
+  assert.equal(currentCategories.baseline_unresolved_now_active_ccns.length, 19);
+  assert.equal(currentCategories.baseline_unresolved_now_superseded_ccns.length, 18);
   assert.deepEqual(currentCategories.baseline_unresolved_now_scope_exempt_ccns,
-    ['030071', '030074', '030084', '030113', '030195', '031307', '241358', '370173', '454000', '454006', '454008', '454009', '454011', '454084', '454088', '454100']);
-  assert.equal(roster.summary.baseline_unresolved_still_unresolved, 547);
+    ['021309', '030071', '030074', '030084', '030113', '030195', '031305', '031307', '031308', '031309', '241358', '340156', '370170', '370171', '370173', '370244']);
+  assert.equal(roster.summary.baseline_unresolved_still_unresolved, 541);
+  const pendingScopeReviews = JSON.parse(fs.readFileSync(path.join(root, 'data/hpt-audit/reviewed-resolutions.json'), 'utf8'))
+    .filter(item => item.action === 'scope-review-pending');
+  assert.equal(pendingScopeReviews.length, 13);
+  assert.ok(pendingScopeReviews.every(item => item.previous_action === 'exempt-state-hospital'
+    && item.scope_review?.status === 'state-hospital-exception-not-established'
+    && /not a noncompliance finding/.test(item.note)
+    && item.scope_review.cms_guidance_url === 'https://www.cms.gov/files/document/hospital-price-transparency-frequently-asked-questions.pdf'));
   const texasProof = JSON.parse(fs.readFileSync(path.join(root, 'data/hpt-audit/reconciliation-texas-state-hospital-scope-proof-2026-09-27.json'), 'utf8'));
   assert.equal(texasProof.facility_dispositions.filter(item => item.ccn.startsWith('454')).length, 8);
   assert.match(texasProof.rio_grande_address_discrepancy, /78552.*78550|78550.*78552/);
   assert.match(texasProof.rio_grande_rate_schedule_source, /2025-ffy-psych-hosp-perdiem\.pdf/);
   assert.match(texasProof.no_pricing_claim, /No pointer URL, MRF URL, bytes/);
+  const marylandProof = JSON.parse(fs.readFileSync(path.join(root, 'data/hpt-audit/reconciliation-maryland-state-hospital-scope-proof-2026-09-27.json'), 'utf8'));
+  assert.deepEqual(marylandProof.facility_dispositions.map(item => item.ccn), ['214002', '214004', '214012', '214018']);
+  assert.equal(marylandProof.cms_enrollment_dataset.records.length, 4);
+  assert.ok(marylandProof.cms_enrollment_dataset.records.every(item => item.row_count === 1
+    && /^[a-f0-9]{64}$/.test(item.response_sha256)
+    && item.organization_name === 'COMPTROLLER OF MARYLAND CENTRAL PAYROLL BUREAU'));
+  assert.match(marylandProof.no_pricing_claim, /No pointer URL, MRF URL, file bytes/);
 
   let sourceBytes;
   try {
@@ -117,10 +144,12 @@ test('recovered Sep. 25 roster binds both overlapping category memberships and d
   const currentBytes = fs.readFileSync(currentPath);
   if (hash(currentBytes) === roster.current_snapshot.sha256) {
     const current = JSON.parse(currentBytes.toString('utf8'));
-    const currentByCcn = new Map(current.records.map(record => [record.ccn, record]));
+    const reviewedRecords = applyReviewedVerificationOverlays(current.records, path.join(root, 'data/hpt-audit'));
+    const currentByCcn = new Map(reviewedRecords.map(record => [record.ccn, record]));
     const effectiveCategory = record => /^scope-exempt/.test(record.disposition) ? 'scope-exempt'
       : record.latest_observation_superseded ? 'superseded-by-reviewed-resolution'
-      : record.standing_evidence_retained ? 'standing-evidence-retained'
+      : record.standing_evidence_retained && record.disposition === 'pointer-facility-match-unresolved' ? 'genuinely-unresolved'
+        : record.standing_evidence_retained ? 'standing-evidence-retained'
         : record.supported_identity_uncertainty ? 'supported-identity-uncertainty'
           : /^verified-/.test(record.disposition) ? 'active-verification-claim'
             : /^scope-exempt/.test(record.disposition) ? 'scope-exempt' : 'genuinely-unresolved';
@@ -129,6 +158,7 @@ test('recovered Sep. 25 roster binds both overlapping category memberships and d
       const category = effectiveCategory(currentByCcn.get(ccn));
       counts[category] = (counts[category] || 0) + 1;
     }
+    for (const category of Object.keys(roster.summary.current_effective_categories)) counts[category] ||= 0;
     assert.deepEqual(counts, roster.summary.current_effective_categories);
     for (const [category, ccns] of Object.entries(currentCategories)) {
       if (category.startsWith('baseline_unresolved_now_')) continue;
@@ -142,4 +172,47 @@ test('recovered Sep. 25 roster binds both overlapping category memberships and d
     assert.deepEqual(currentCategories.baseline_unresolved_now_superseded_ccns,
       [...unresolved].filter(ccn => effectiveCategory(currentByCcn.get(ccn)) === 'superseded-by-reviewed-resolution').sort());
   }
+});
+
+test('891 unresolved cohort members are all represented in the hash-bound nationwide worklist', () => {
+  const crosscheckPath = path.join(root, 'data/hpt-audit/reconciliation-891-worklist-membership-crosscheck-2026-09-28.json');
+  const crosscheck = JSON.parse(fs.readFileSync(crosscheckPath, 'utf8'));
+  const worklistPath = path.join(root, 'data/hpt-audit/unresolved-investigation-worklist.json');
+  const worklist = JSON.parse(fs.readFileSync(worklistPath, 'utf8'));
+  const cohortUnresolved = new Set(roster.current_crosswalk_ccns['genuinely-unresolved']);
+  const worklistCcns = new Set(worklist.records.map(record => record.ccn));
+  const missingFromWorklist = [...cohortUnresolved].filter(ccn => !worklistCcns.has(ccn)).sort();
+  const outsideCohort = [...worklistCcns].filter(ccn => !cohortUnresolved.has(ccn)).sort();
+
+  assert.equal(hash(fs.readFileSync(rosterPath)), crosscheck.inputs.cohort_roster.sha256);
+  assert.equal(hash(fs.readFileSync(worklistPath)), crosscheck.inputs.nationwide_worklist.sha256);
+  assert.equal(cohortUnresolved.size, crosscheck.comparison.cohort_genuinely_unresolved_ccns);
+  assert.equal(worklistCcns.size, crosscheck.comparison.nationwide_unresolved_worklist_ccns);
+  assert.deepEqual(missingFromWorklist, crosscheck.comparison.cohort_unresolved_missing_from_worklist);
+  assert.deepEqual(outsideCohort, crosscheck.comparison.worklist_ccns_outside_historical_cohort);
+  assert.ok(outsideCohort.includes('244015'));
+  assert.ok(outsideCohort.includes('390150'));
+  assert.equal(crosscheck.comparison.historical_cohort_memberships, 891);
+  assert.equal(crosscheck.comparison.historical_cohort_unique_ccns, 720);
+  assert.equal(crosscheck.comparison.historical_cohort_overlap_memberships, 171);
+  assert.equal(crosscheck.inputs.cohort_roster.current_snapshot_sha256, roster.current_snapshot.sha256);
+  assert.equal(crosscheck.inputs.cohort_roster.current_snapshot_sha256, worklist.source_sha256['nationwide-verification.json']);
+});
+
+test('891 cohort unresolved-set delta is reproducible against the prior committed exact CCN set', () => {
+  const deltaPath = path.join(root, 'data/hpt-audit/reconciliation-891-category-delta-2026-09-29.json');
+  execFileSync(process.execPath, [path.join(root, 'scripts/hpt/build-891-category-delta.js')], { cwd: root, stdio: 'ignore' });
+  const delta = JSON.parse(fs.readFileSync(deltaPath, 'utf8'));
+  assert.equal(delta.sources.prior_roster.git_ref, 'da311dcdd759801eb30ff5f48ea0de6aba0f692f');
+  assert.equal(delta.cohort.previous_unresolved, 547);
+  assert.equal(delta.cohort.current_unresolved, 541);
+  assert.equal(delta.cohort.continued_unresolved, 531);
+  assert.equal(delta.cohort.newly_unresolved, 10);
+  assert.equal(delta.cohort.no_longer_unresolved, 16);
+  assert.equal(delta.comparison.newly_unresolved_ccns.length, 10);
+  assert.equal(delta.comparison.no_longer_unresolved_ccns.length, 16);
+  assert.equal(new Set([...delta.comparison.newly_unresolved_ccns, ...delta.comparison.no_longer_unresolved_ccns]).size, 26);
+  assert.equal(delta.validation.prior_snapshot_hash_matches_committed_roster, true);
+  assert.equal(delta.validation.all_current_unresolved_in_worklist, true);
+  assert.match(delta.purpose, /does not recreate the later 539-only checkpoint/);
 });

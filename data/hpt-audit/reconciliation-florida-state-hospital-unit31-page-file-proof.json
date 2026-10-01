@@ -1,6 +1,32 @@
 {
   "ccn": "100298",
   "observed_at": "2026-09-19T00:45:00Z",
+  "live_recheck": {
+    "observed_at": "2026-09-29T21:34:00Z",
+    "official_page_url": "https://www.myflfamilies.com/services/samh/samh-treatment-services-and-facilities",
+    "official_page_http_status": 200,
+    "page_scope": "Florida DCF page lists a general Mental Health Services Charge Master section with separate Florida State Hospital PDF and Excel links; it does not identify Unit 31 or label either file as a CMS-template MRF.",
+    "indexed_current_pdf": {
+      "url": "https://www.myflfamilies.com/document/2761",
+      "indexed_title": "FLORIDA STATE HOSPITAL",
+      "declared_effective_date": "2026-01-01",
+      "indexed_content": "Official indexed result exposes a Florida State Hospital standard-charges PDF dated January 1, 2026, superseding the previously retained January 2025 schedule as the newest located general charge-schedule lead.",
+      "direct_retrieval_status": 404,
+      "mrf_bytes_retrieved": false
+    },
+    "cross_check": "The same general Florida State Hospital charge-master area is associated with Florida State Hospital Unit 14 Psych CCN 104000; do not assume its generic schedule uniquely covers Unit 31 CCN 100298.",
+    "disposition_changed": false,
+    "interpretation": "New current official charge-schedule lead, but not a retrieved CMS-format MRF and not explicit Unit 31 scope. Preserve unresolved disposition."
+  },
+  "cross_ccn_scope_reconciliation": {
+    "related_ccn": "104000",
+    "related_facility": "Florida State Hospital Unit 14 Psych",
+    "related_proof_file": "reconciliation-fsh-unit14-state-file-proof.json",
+    "same_general_charge_master_collection": true,
+    "independent_unit31_scope_proven": false,
+    "independent_unit14_scope_proven": false,
+    "interpretation": "The shared state charge-master listing is one general source, not two facility-specific MRFs. Do not duplicate evidence or infer the schedule's scope for either unit CCN."
+  },
   "official_site": "https://www.myflfamilies.com/",
   "official_identity": "Florida State Hospital Unit 31 Med, 100 N Main St, Chattahoochee, FL 32324",
   "page_file_url": "https://www.myflfamilies.com/sites/default/files/2025-06/Florida%20State%20Hospital%20-%20Standard%20Charges%20for%20Provided%20Services%20%28January%202025%29.pdf",

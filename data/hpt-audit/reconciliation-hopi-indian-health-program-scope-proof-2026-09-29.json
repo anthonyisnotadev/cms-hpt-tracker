@@ -1,0 +1,67 @@
+{
+  "audit_id": "reconciliation-hopi-indian-health-program-scope-proof-2026-09-29",
+  "observed_at": "2026-09-29T03:17:19Z",
+  "ccn": "031305",
+  "cms_provider_record": {
+    "url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=031305&conditions%5B0%5D%5Boperator%5D=%3D",
+    "status": 200,
+    "response_bytes": 6708,
+    "response_sha256": "e547eb30186cd6dd5a444f6cf0d8ee684cf42dcbe00f8b2a53ac066cfb40e9bc",
+    "record": {
+      "facility_id": "031305",
+      "facility_name": "HOPI HEALTH CARE CENTER",
+      "address": "HIGHWAY 264, MILEPOST 388",
+      "citytown": "POLACCA",
+      "state": "AZ",
+      "zip_code": "86042",
+      "countyparish": "NAVAJO",
+      "hospital_type": "Critical Access Hospitals",
+      "hospital_ownership": "Tribal"
+    },
+      "interpretation": "The live CMS record binds CCN 031305 to the exact Hopi hospital name and Polacca, Arizona address. Its reported Tribal ownership value is retained as a distinct CMS data point and is not overwritten by the IHS operator evidence."
+    },
+  "cms_ihs_service_locator": {
+    "url": "https://www.cms.gov/training-education/partner-outreach-resources/american-indian/alaska-native/behavioral-health/service-locator",
+    "status": 200,
+    "response_bytes": 1223169,
+    "response_sha256": "8a157a3275f79cbd6d0550a8110120811b8f17dc0c18a8c1aa9da2578fbf4993",
+    "observation": "The current CMS Service Locator lists Hopi Health Care Center (Keams Canyon), Highway 264, Mile Marker 388, Polacca AZ 86042, with IHS affiliation. This is separate from the CMS Hospital General Information ownership field, which reports Tribal."
+  },
+  "ihs_current_facility_page": {
+    "url": "https://www.ihs.gov/phoenix/healthcarefacilities/hopi/",
+    "status": 200,
+    "response_bytes": 70739,
+    "response_sha256": "cb2ebae3790df711034481d387307a7a26579d001ed95a1266aa1ceb67dbf926",
+    "observation": "The current IHS Phoenix Area facility page identifies Hopi Health Care Center, PHS Indian Health Services, at Highway 264, Mile Marker 388, Polacca, Arizona 86042. Its current service-unit leadership section lists IHS leadership roles and ihs.gov addresses."
+  },
+  "ihs_federally_operated_facility_dashboard": {
+    "url": "https://www.ihs.gov/quality/national-accountability-dashboard-for-quality/health-care-accreditation-status-of-federally-operated-ihs-facilities/",
+    "status": 200,
+    "response_bytes": 83543,
+    "response_sha256": "4262c660c87d0785899909b5422fca0d8ef8107ba8c310614676538ff2f5d1b8",
+    "data_as_of": "2025-08-08",
+    "observation": "The IHS dashboard for federally operated facilities lists PHOENIX / KEAMS CANYON / Hopi / Critical Access Hospital / Hospital. This is operator-program evidence; it does not replace or reinterpret the CMS ownership field."
+  },
+  "ihs_critical_access_hospital_factsheet": {
+    "url": "https://www.ihs.gov/newsroom/factsheets/critical-access-hospitals/",
+    "status": 200,
+    "response_bytes": 70687,
+    "response_sha256": "d87da6008e5a70420334bb6d139838cbdf27fb52427079a0261dd3fe6b940a32",
+    "observation": "IHS's Critical Access Hospitals fact sheet lists Hopi Health Center, Arizona, as Federal."
+  },
+  "cms_ihs_ccn_crosswalk": {
+    "url": "https://www.cms.gov/files/document/indian-healt-service-cms-all-final.pdf",
+    "observation": "The CMS IHS-CMS All Tribal Facilities Listing created 2020-01-26 identifies HOPI HEALTH CARE CENTER as a Hospital with CCN 031305 in Polacca, Arizona. This older crosswalk supports facility/CCN identity only and is not used as current operator or ownership evidence."
+  },
+  "legal_basis": {
+    "regulation": "45 CFR 180.30(b)(2)",
+    "regulation_url": "https://www.govinfo.gov/content/pkg/CFR-2025-title45-vol2/pdf/CFR-2025-title45-vol2-part180.pdf",
+    "regulation_observation": "CMS deems hospitals operated by an Indian Health Program to be in compliance with Part 180.",
+    "statute": "25 USC 1603(12)(A)",
+    "statute_url": "https://uscode.house.gov/view.xhtml?req=granuleid%3AUSC-prelim-title25-section1603&num=0&edition=prelim",
+    "statute_observation": "An Indian Health Program includes any health program administered directly by the Indian Health Service."
+  },
+  "disposition": "scope-exempt-indian-health-program",
+  "interpretation": "The exact live CMS CCN record and current CMS Service Locator and IHS facility page agree on the Hopi Health Care Center identity and Polacca location; the CMS Service Locator lists IHS affiliation. Current IHS service-unit evidence and its federally-operated-facility dashboard support direct IHS program operation, which is within the Indian Health Program exception in 45 CFR 180.30(b)(2), read with 25 USC 1603(12)(A). CMS's separate Tribal ownership value is preserved rather than silently reconciled. This is a scope classification only; it does not establish pointer linkage, current MRF availability, absence, or file quality. The prior 2026-09-21 pointer-discovery uncertainty remains as historical provenance, not an active HPT requirement under this scope classification.",
+  "next_action": "Retain the scope classification and CMS-reported ownership value separately. Revisit only if exact CCN identity, IHS operation/program status, CMS source fields, or regulatory scope changes. Do not infer the presence or absence of a current CMS-template MRF."
+}

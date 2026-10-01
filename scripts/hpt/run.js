@@ -1576,7 +1576,7 @@ async function cmdCompliance(opt) {
       } else if (row.mrf_stale_over_365 === 'yes') {
         finding = FINDING.STALE;
         evidence = `last_updated_on ${row.mrf_last_updated} is ${row.mrf_days_since_update} days old; 45 CFR 180.50 requires annual updates`;
-      } else if (row.mrf_cms_version && !/^3\./.test(row.mrf_cms_version)) {
+      } else if (row.mrf_cms_version && String(row.mrf_cms_version).trim() !== '3.0.0') {
         finding = FINDING.OLD_TEMPLATE;
         evidence = `file declares CMS template version ${row.mrf_cms_version}`;
       } else if (!row.mrf_last_updated) {

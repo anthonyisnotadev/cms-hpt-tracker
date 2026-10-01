@@ -1,0 +1,31 @@
+{
+  "audit_id": "reconciliation-asante-ashland-city-affiliation-termination-crosscheck-2026-09-29",
+  "ccn": "380005",
+  "observed_at": "2026-09-29T12:17:24Z",
+  "source": {
+    "publisher": "City of Ashland, Oregon",
+    "title": "Archived - City and Asante mutually end Hospital Affiliation Agreement",
+    "url": "https://ashlandoregon.gov/m/newsflash/Archive/Item/512?arcId=1677",
+    "published_at": "2026-06-24",
+    "archived_publication_window": "2026-06-24 through 2026-07-05",
+    "observed_content": "The City says its affiliation agreement with Asante regarding Ashland Community Hospital terminated effective 2026-06-12, following the hospital's transition from a general hospital to a Rogue Regional satellite campus.",
+    "access_method": "official municipal page opened and read in web browser"
+  },
+  "transition_timeline": {
+    "operator_reported_satellite_effective_date": "2026-05-22",
+    "municipal_affiliation_agreement_termination_effective_date": "2026-06-12",
+    "city_notice_publication_date": "2026-06-24"
+  },
+  "comparison_to_retained_evidence": {
+    "asante_operator_transition_proof": "reconciliation-asante-ashland-transition-recheck-proof-2026-09-21.json",
+    "existing_current_publisher_scope_proof": "reconciliation-asante-ashland-current-psf-status-proof-2026-09-27.json",
+    "current_publisher_page_already_in_manual_observation": "reconciliation-asante-ashland-current-psf-status-proof-2026-09-27.json",
+    "current_publisher_page_observation": "Asante's standard-charges page links one Rogue Regional and Asante Ashland ZIP and footnotes that Ashland is a Rogue Regional satellite. This was already recorded on 2026-09-27; the 2026-09-29 browser/search reread found the same link and wording, so it is not counted as new source evidence."
+  },
+  "evidence_classification": "new-independent-municipal-source-instance-corroborates-transition-and-local-affiliation-agreement-termination",
+  "interpretation": "The City notice independently corroborates the post-transition relationship and adds a dated local-government event: the City-Asante affiliation agreement ended on 2026-06-12. It is not a Medicare certification or termination record, does not establish the effective status of CCN 380005, and does not identify which CCNs are covered by the current Asante MRF. The publisher's combined Rogue Regional/Ashland pricing-page scope was already retained separately; the 2026-09-29 reread is unchanged. Do not infer CCN closure, current enrollment, MRF completeness, or compliance from this notice.",
+  "new_mrf_bytes": false,
+  "disposition_effect": "none",
+  "count_effect": 0,
+  "next_action": "Keep CCN 380005 unresolved. Obtain an effective-dated post-2026-05-22 CMS/MAC status record, and retrieve the already-documented publisher-linked combined ZIP through a materially different authorized byte-serving route. Validate exact archive bytes, Ashland location/address/state, CMS date/version and usable rows; do not infer active or terminated Medicare enrollment from the snapshot alone or assign the parent file from operator relationship alone."
+}

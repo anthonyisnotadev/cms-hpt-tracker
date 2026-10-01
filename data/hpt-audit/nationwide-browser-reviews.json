@@ -1,7 +1,207 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-27T13:02:04Z",
+  "updated_at": "2026-09-29T17:11:55Z",
   "records": [
+    {
+      "kind": "current-cms-reh-quality-dataset-crosscheck",
+      "ccn": "010780",
+      "target": "https://data.cms.gov/provider-data/dataset/7peb-i4pi",
+      "final_url": "https://data.cms.gov/provider-data/dataset/7peb-i4pi",
+      "status": "current-cms-reh-identity-corroborated-no-lanier-mrf-scope-change",
+      "title": "EAMC-Lanier current CMS REH datasets and price-route inventory",
+      "detail": "CMS's current REH Outpatient Imaging Efficiency and Timely and Effective Care datasets independently list facility ID 010780, EAMC - LANIER, 4800 48th Street, Valley, AL 36854. These are new source instances that corroborate the existing CMS Hospital General Information identity/status, not a status change. The live East Alabama facility page confirms the campus and its pricing page still renders a single system Patient Pricing List; the root pointer and complete file identify only East Alabama Medical Center in Opelika. No Lanier-specific MRF or explicit campus/CCN coverage was located; do not assign the Opelika file.",
+      "browser": "web-search-current-CMS-datasets-and-official-pages",
+      "http_status": null,
+      "bytes_read": 0,
+      "identity": "new-CMS-REH-quality-source-instance-corroborates-existing-010780-record",
+      "declared_hospital_name": "EAMC - LANIER",
+      "declared_location_name": "EAMC-Lanier Rural Emergency Hospital",
+      "declared_address": "4800 48th Street, Valley, AL 36854",
+      "declared_license_state": "AL",
+      "declared_last_updated": "CMS REH dataset releases dated 2026-04/05; operator pages observed current",
+      "cms_template_version": "",
+      "observed_at": "2026-09-29T10:16:55Z",
+      "proof_file": "reconciliation-eamc-lanier-current-cms-reh-dataset-crosscheck-2026-09-29.json",
+      "source_page_url": "https://www.eastalabamahealth.org/location/eamc-lanier-rural-emergency-hospital",
+      "pointer_url": "https://www.eastalabamahealth.org/cms-hpt.txt",
+      "mrf_url": "https://www.eastalabamahealth.org/sites/default/files/financial-service/636000526_EastAlabama_standardcharges.csv.zip",
+      "file_sha256": "1775d096b9c422eef40235f124c335e9f8a9531b38bc89d98833498a1dced833",
+      "next_action": "Keep 010780 unresolved for HPT attribution. Obtain a Valley-specific CMS CSV/JSON/ZIP or explicit publisher scope mapping. Keep the Opelika pointer and file separate and do not repeat its retrieval absent a changed URL, validator, or publisher scope."
+    },
+    {
+      "kind": "public-directory-ccn-campus-crosscheck",
+      "ccn": "050455",
+      "related_ccn": "050724",
+      "target": "https://turquoise.health/providers/heart-hospital-of-bakersfield/information",
+      "final_url": "https://turquoise.health/providers/heart-hospital-of-bakersfield/information",
+      "status": "third-party-directory-corrobates-separate-campus-provider-ids",
+      "title": "Bakersfield main and Specialty campus Medicare directory crosscheck",
+      "detail": "A web search located a 2025 Health Net Medicare directory that separately lists Adventist Health Bakersfield at 2615 Chester and Adventist Health Specialty Bakersfield at 3001 Sillect. A current Turquoise profile separately lists Specialty as provider ID 050724 / NPI 1609856947 and main campus as 050455 / NPI 1538157508. This is new independent third-party identity corroboration, not authoritative CMS MRF-scope evidence. The current pointer-linked MRF still pairs the main NPI with a Sillect address. Do not promote or assign the shared MRF from directory evidence.",
+      "browser": "web-search-primary-and-independent-directory-crosscheck",
+      "http_status": null,
+      "bytes_read": 0,
+      "identity": "third-party-campus-and-medicare-id-corroboration-only",
+      "declared_hospital_name": "Adventist Health Specialty Bakersfield",
+      "declared_location_name": "Adventist Health Specialty Bakersfield; Adventist Health Bakersfield",
+      "declared_address": "3001 Sillect Avenue; 2615 Chester Avenue",
+      "declared_license_state": "CA",
+      "declared_last_updated": "2025 directory; current profile search result",
+      "cms_template_version": "",
+      "observed_at": "2026-09-29T10:16:55Z",
+      "proof_file": "reconciliation-adventist-bakersfield-public-directory-crosscheck-2026-09-29.json",
+      "source_page_url": "https://www.healthnet.com/content/dam/centene/healthnet/pdfs/medicare/groups/2025/hn-medicare-hmo-provider-directory-fresno.pdf",
+      "pointer_url": "https://www.adventisthealth.org/bakersfield/cms-hpt.txt",
+      "mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbAHBBAKERSFIELDCA&type=CDMWithoutLabel&fileType=CSV",
+      "file_sha256": "69A1DF6EF767B0EFD945B05E6DDEB762AC42012C61E6A6A9729C3A195E2C9AF9",
+      "next_action": "Keep CCNs 050455 and 050724 separate. Require a corrected first-party pointer/file or authoritative publisher documentation identifying covered CCNs, NPIs, and location rows before attributing the shared MRF. Do not attribute it from third-party directories."
+    },
+    {
+      "kind": "official-file-range-get-timeout",
+      "ccn": "010019",
+      "target": "https://hh2026.cloudaccess.host/wp-content/uploads/472323163_hellen-keller-hospital_standardcharges.csv",
+      "final_url": "https://hh2026.cloudaccess.host/wp-content/uploads/472323163_hellen-keller-hospital_standardcharges.csv",
+      "status": "transport-timeout-before-response",
+      "title": "Helen Keller Hospital linked standard-charge file",
+      "detail": "A fresh bounded GET with Range bytes=0-262143 and a 20-second cap timed out before response headers or body bytes. This is a route/time-specific transport observation; it does not establish file absence, invalidity, identity or metadata. The same current URL already had browser ERR_CONNECTION_CLOSED and direct GET/HEAD EOF observations, so do not repeat absent a material endpoint/access change.",
+      "browser": "bounded-curl-range-get",
+      "http_status": "no-response",
+      "bytes_read": 0,
+      "content_range": "range-request-timed-out-before-response",
+      "identity": "first-party-page-linked-file-transport-only",
+      "declared_hospital_name": "",
+      "declared_location_name": "",
+      "declared_address": "",
+      "declared_license_state": "",
+      "declared_last_updated": "",
+      "cms_template_version": "",
+      "observed_at": "2026-09-28T20:19:15Z",
+      "source_page_url": "https://hh2026.cloudaccess.host/patients-visitors/price-transparency/",
+      "pointer_url": "",
+      "mrf_url": "https://hh2026.cloudaccess.host/wp-content/uploads/472323163_hellen-keller-hospital_standardcharges.csv",
+      "file_sha256": "",
+      "next_action": "Do not repeat the unchanged endpoint/client route. Obtain a publisher-provided copy or publisher-confirmed content-bearing alternate route, then verify bytes/hash, exact hospital identity/address/state, CMS date/version, attestation and usable rows; do not substitute a sibling file or third-party mirror."
+    },
+    {
+      "kind": "official-price-estimate-and-root-pointer-recheck",
+      "ccn": "431313",
+      "target": "https://freemanregional.com/estimate/",
+      "final_url": "https://freemanregional.com/estimate/",
+      "status": "browser-rendered; official-root-pointer-http-404",
+      "title": "Get an Estimate – Freeman Regional Health Services",
+      "detail": "The official page identifies the facility location as 510 E. 8th Street, PO Box 370, Freeman, SD 57029 and describes an insurance-specific consumer estimate tool that redirects externally; no CMS MRF link appears in accessible page content. Independently fetched the exact first-party root pointer https://freemanregional.com/cms-hpt.txt: HTTP 404, text/html; charset=iso-8859-1, 355 response bytes, SHA-256 cc0b4e42510d49c6decd464123ecf3b14ae9b47f9b4ed2ee64893e2d6520a264. The 404 is route/time-specific, not proof of facility-wide file absence. Prior Avera shared-pointer 403 remains separate. No MRF bytes or disposition/count change.",
+      "browser": "Codex In-app Browser",
+      "http_status": 404,
+      "bytes_read": 355,
+      "identity": "official-page-location-matches-freeman-medical-center-ccn-431313-roster",
+      "declared_hospital_name": "Freeman Medical Center",
+      "declared_location_name": "Freeman Regional Health Services",
+      "declared_address": "510 E. 8th Street, PO Box 370, Freeman, SD 57029",
+      "declared_license_state": "SD",
+      "declared_last_updated": "",
+      "cms_template_version": "",
+      "proof_file": "reconciliation-freeman-medical-center-official-estimate-and-root-pointer-recheck-2026-09-28.json",
+      "observed_at": "2026-09-28T19:52:56Z",
+      "next_action": "Keep unresolved; seek publisher-provided CMS-template CSV/JSON or a materially new first-party page/pointer route explicitly identifying Freeman Medical Center. Verify exact bytes and metadata before promotion; do not inherit Avera/sibling evidence or retry unchanged routes absent a source/access change."
+    },
+    {
+      "kind": "official-campus-identity-and-scope-recheck",
+      "ccn": "044011",
+      "target": "https://humanservices.arkansas.gov/offices/pulaski-arkansas-state-hospital/",
+      "final_url": "https://humanservices.arkansas.gov/offices/pulaski-arkansas-state-hospital/",
+      "status": "browser-rendered",
+      "title": "Pulaski - Arkansas State Hospital - Arkansas Department of Human Services",
+      "detail": "Current official DHS page identifies Arkansas State Hospital at 305 South Palm Street, Little Rock AR 72205; no pricing or MRF link appears in accessible page content. Cross-checked against CMS HPT FAQ and DHS reports: state ownership/forensic services alone do not establish the narrow state-forensic deemed-compliant condition, which requires treatment exclusively for people in penal custody.",
+      "browser": "codex-in-app-browser",
+      "http_status": "",
+      "bytes_read": "",
+      "content_range": "",
+      "identity": "corroborated",
+      "declared_hospital_name": "Arkansas State Hospital",
+      "declared_location_name": "",
+      "declared_address": "305 South Palm Street, Little Rock, AR 72205",
+      "declared_last_updated": "",
+      "cms_template_version": "",
+      "proof_file": "reconciliation-arkansas-state-hospital-cms-state-forensic-scope-clarification-2026-09-28.json",
+      "observed_at": "2026-09-28T19:41:58Z"
+    },
+    {
+      "kind": "current-dc-health-licensure-survey-identifier-crosscheck",
+      "target": "https://dchealth.dc.gov/sites/default/files/dc/sites/doh/publication/attachments/Georgetown%20University%20survey%2012-18-25%20PoC.pdf",
+      "final_url": "https://dchealth.dc.gov/sites/default/files/dc/sites/doh/publication/attachments/Georgetown%20University%20survey%2012-18-25%20PoC.pdf",
+      "status": "official-report-bounded-access-success-browser-pdf-render-timeout",
+      "title": "DC Health 2026 licensure inspection report — MedStar Georgetown University Hospital",
+      "detail": "DC Health's 2026 licensure survey report (survey completed 2025-12-18; printed 2026-05-07) identifies MedStar Georgetown University at 3800 Reservoir Road, Washington, DC, with provider/supplier/CLIA identification number HFD01-0188. A 65,536-byte HTTP 206 sample was hash-bound. The Codex in-app browser tab timed out and exposed only the PDF URL; the report text was independently read through the web reader. This supports current DC regulatory identifier provenance but does not explicitly designate the number a state license or explain the MRF's license_number|MD suffix. No new MRF or price data was observed.",
+      "browser": "Codex in-app browser attempted; bounded HTTP retrieval plus official DC Health page and web PDF reader",
+      "browser_status": "navigation-timeout; PDF accessibility tree contained only target URL",
+      "http_status": 206,
+      "bytes_read": 65536,
+      "content_range": "bytes 0-65535/403855",
+      "identity": "official-DC-health-survey-identifies-HFD01-0188-and-Georgetown-at-3800-Reservoir-Road-DC",
+      "declared_hospital_name": "MEDSTAR GEORGETOWN UNIVERSITY",
+      "declared_location_name": "",
+      "declared_address": "3800 RESERVOIR RD, WASHINGTON, DC 20007",
+      "declared_license_state": "",
+      "declared_last_updated": "",
+      "cms_template_version": "",
+      "observed_at": "2026-09-28T09:28:00Z",
+      "ccn": "090004",
+      "proof_file": "reconciliation-medstar-georgetown-2026-dc-health-survey-identifier-crosscheck.json",
+      "source_page_url": "https://dchealth.dc.gov/node/1830186",
+      "next_action": "Keep CCN 090004 unresolved until MedStar corrects or explains the MRF's literal MD suffix; this regulatory identifier observation does not decide that suffix."
+    },
+    {
+      "kind": "current-official-cms-and-ihs-evidence-confirms-lawton-indian-health-program-operator",
+      "target": "https://www.cms.gov/training-education/partner-outreach-resources/american-indian/alaska-native/behavioral-health/service-locator",
+      "final_url": "https://www.cms.gov/training-education/partner-outreach-resources/american-indian/alaska-native/behavioral-health/service-locator",
+      "status": "exact-ccn-ihs-operator-and-program-scope-supported; CMS-reported-ownership-retained",
+      "title": "CMS Service Locator and IHS federally operated facilities dashboard — Lawton Indian Hospital",
+      "detail": "Live browser review of CMS's Service Locator identifies Lawton Indian Hospital at 1515 Northeast Lawrie Tatum Road, Lawton, OK 73507, as a Hospital affiliated with IHS. IHS's official dashboard for federally operated IHS facilities lists Lawton Service Unit, Lawton, Hospital. This supports IHS program operation while preserving the separate CMS provider-record ownership value Tribal. Read with 25 USC 1603(12)(A) and 45 CFR 180.30(b)(2), this supports scope classification only; no current MRF was observed or inferred.",
+      "browser": "Codex in-app browser; official CMS and IHS pages",
+      "http_status": 200,
+      "bytes_read": 0,
+      "content_range": "not applicable; rendered official web pages",
+      "identity": "CMS locator exact hospital name, address, state and IHS affiliation; IHS federal-operations dashboard lists Lawton Hospital",
+      "declared_hospital_name": "Lawton Indian Hospital",
+      "declared_location_name": "Lawton Service Unit",
+      "declared_address": "1515 Northeast Lawrie Tatum Road, Lawton, OK 73507",
+      "declared_license_state": "OK",
+      "declared_last_updated": "",
+      "cms_template_version": "",
+      "proof_file": "reconciliation-lawton-indian-health-program-scope-proof-2026-09-28.json",
+      "recheck_reason": "A new official CMS Service Locator and current IHS federally operated facilities dashboard review directly resolves the former ownership-versus-operator uncertainty; these are distinct roles and do not establish an MRF.",
+      "next_action": "Retain the ownership field separately from operator evidence; revisit only on a status/source change. Do not infer a current CMS-template MRF.",
+      "observed_at": "2026-09-28T09:11:15Z",
+      "ccn": "370170"
+    },
+    {
+      "kind": "current-first-party-pricing-page-confirms-exact-hospital-payer-file-link",
+      "target": "https://www.pihhealth.org/app/files/public/fd7abbe3-6682-49bd-a123-56540116af71/951903935_pih-health-downey-hospital_standardcharges.csv",
+      "final_url": "https://www.pihhealth.org/app/files/public/fd7abbe3-6682-49bd-a123-56540116af71/951903935_pih-health-downey-hospital_standardcharges.csv",
+      "status": "first-party-page-file-link-confirmed-file-and-pointer-unresolved",
+      "title": "PIH Health Downey Hospital Hospital Payer Payments link",
+      "detail": "The current PIH Health CMS Hospital Pricing page rendered in the Codex in-app browser and lists this exact URL under PIH Health Downey Hospital with the label Hospital Payer Payments, separately from Charge Description Master and DRG Average Billed files. A bounded direct Range request returned the same 535-byte access-denied HTML and SHA-256 recorded on 2026-09-19; no CSV bytes/header were read. The root pointer request failed before an HTTP response. This independently confirms first-party page-to-file attribution but not file contents, CMS metadata, usability, or pointer linkage.",
+      "browser": "Codex in-app browser plus bounded Node Range request",
+      "http_status": 403,
+      "bytes_read": 535,
+      "content_range": "none; access-denied HTML",
+      "identity": "first-party-page-names-Downey-and-explicitly-links-exact-file; file-header-not-observed",
+      "declared_hospital_name": "",
+      "declared_location_name": "PIH Health Downey Hospital (page section only)",
+      "declared_address": "",
+      "declared_license_state": "",
+      "declared_last_updated": "",
+      "cms_template_version": "",
+      "observed_at": "2026-09-28T08:34:10Z",
+      "ccn": "050393",
+      "source_page_url": "https://www.pihhealth.org/patients-visitors/billing-financial-assistance/cms-hospital-pricing/",
+      "official_page_url": "https://www.pihhealth.org/patients-visitors/billing-financial-assistance/cms-hospital-pricing/",
+      "pointer_url": "https://pihhealth.org/cms-hpt.txt",
+      "mrf_url": "https://www.pihhealth.org/app/files/public/fd7abbe3-6682-49bd-a123-56540116af71/951903935_pih-health-downey-hospital_standardcharges.csv",
+      "file_sha256": "",
+      "next_action": "Obtain an ordinary permitted content-bearing response or publisher-provided copy for this exact page-linked CSV and a structured root pointer; verify bytes, exact facility identity/address/state, CMS metadata and usable rows before promotion. Do not bypass the access denial.",
+      "proof_file": "reconciliation-pih-downey-first-party-browser-link-crosscheck-2026-09-28.json",
+      "recheck_reason": "The prior exact URL came from a third-party search lead and its first-party pricing page had returned 403 to the web client. Normal in-app browser navigation now rendered the official page and confirmed the URL in PIH's own Downey Hospital section, upgrading page-to-file provenance only."
+    },
     {
       "kind": "current-official-pricing-page-and-pointer-file-link-observation",
       "target": "https://www.avera.org/app/files/public/ab83b4b4-beb0-4a03-897d-6ce6983a71c5/466000400_redfield-community-memorial_standardcharges.csv",
@@ -195,7 +395,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T09:18:40.260Z"
+      "observed_at": "2026-09-15T09:18:40.26Z"
     },
     {
       "kind": "mrf",
@@ -604,7 +804,7 @@
       "declared_address": "436 5th Ave Kotzebue AK 99752",
       "declared_last_updated": "2026-07-16",
       "cms_template_version": "3.0.0",
-      "observed_at": "2026-09-17T00:00:00.000Z"
+      "observed_at": "2026-09-17T00:00:00Z"
     },
     {
       "kind": "mrf",
@@ -1256,7 +1456,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-17T00:00:00.000Z"
+      "observed_at": "2026-09-17T00:00:00Z"
     },
     {
       "kind": "mrf",
@@ -1929,7 +2129,7 @@
       "declared_address": "601 HOSPITAL DRIVE, MAQUOKETA, IA 52060",
       "declared_last_updated": "2026-08-11",
       "cms_template_version": "3.0.0",
-      "observed_at": "2026-09-26T16:08:04.220Z",
+      "observed_at": "2026-09-26T16:08:04.22Z",
       "history": [
         {
           "kind": "mrf",
@@ -2380,7 +2580,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-18T05:45:00.000Z",
+      "observed_at": "2026-09-18T05:45:00Z",
       "ccn": "131319",
       "next_action": "Obtain a publisher-corrected pointer target or current CMS CSV/JSON through an authorized route, then validate bounded bytes and Minidoka facility metadata."
     },
@@ -2498,7 +2698,7 @@
       "declared_address": "425 Robinson St, Binghamton, NY 13904",
       "declared_last_updated": "2026-05-28",
       "cms_template_version": "3.0.0",
-      "observed_at": "2026-09-26T15:19:46.280Z",
+      "observed_at": "2026-09-26T15:19:46.28Z",
       "superseded_interpretation_by": "reconciliation-omh-multisection-file-audit-2026-09-27.json",
       "scope_limit": "bounded-prefix-only; the first Greater Binghamton metadata section was not the entire multi-section file"
     },
@@ -2741,7 +2941,7 @@
       "http_status": "",
       "bytes_read": "",
       "identity": "",
-      "observed_at": "2026-09-17T00:00:00.000Z",
+      "observed_at": "2026-09-17T00:00:00Z",
       "ccn": "360008"
     },
     {
@@ -2780,7 +2980,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T09:41:26.060Z"
+      "observed_at": "2026-09-15T09:41:26.06Z"
     },
     {
       "kind": "mrf",
@@ -2818,7 +3018,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T09:34:10.370Z"
+      "observed_at": "2026-09-15T09:34:10.37Z"
     },
     {
       "kind": "mrf",
@@ -3143,7 +3343,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T13:23:10.870Z"
+      "observed_at": "2026-09-26T13:23:10.87Z"
     },
     {
       "kind": "mrf",
@@ -4369,7 +4569,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T09:37:12.540Z"
+      "observed_at": "2026-09-15T09:37:12.54Z"
     },
     {
       "kind": "mrf",
@@ -4547,7 +4747,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T09:14:18.330Z"
+      "observed_at": "2026-09-15T09:14:18.33Z"
     },
     {
       "kind": "mrf",
@@ -4794,7 +4994,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T09:33:17.840Z"
+      "observed_at": "2026-09-15T09:33:17.84Z"
     },
     {
       "kind": "mrf",
@@ -4946,7 +5146,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T09:33:22.380Z"
+      "observed_at": "2026-09-15T09:33:22.38Z"
     },
     {
       "kind": "mrf",
@@ -5176,7 +5376,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T09:33:12.230Z"
+      "observed_at": "2026-09-15T09:33:12.23Z"
     },
     {
       "kind": "mrf",
@@ -5290,7 +5490,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T09:17:26.720Z"
+      "observed_at": "2026-09-15T09:17:26.72Z"
     },
     {
       "kind": "mrf",
@@ -5562,11 +5762,18 @@
       "declared_location_name": "Community Hospital",
       "declared_address": "805 Friendship Road, Tallassee, AL 36078",
       "declared_license_state": "AL",
-      "observed_at": "2026-09-18T15:15:00Z",
+      "observed_at": "2026-09-28T08:19:00Z",
       "ccn": "010034",
       "source_page_url": "https://www.chal.org/about/resources",
       "file_sha256": "",
-      "next_action": "Keep this legacy 2020/2021 file as historical evidence. Seek a current CMS-template CSV or JSON MRF and a valid root cms-hpt.txt pointer; require bounded bytes, identity, address/state, date/version and parsed usability before promotion."
+      "next_action": "Keep this legacy 2020/2021 file as historical evidence. Seek a current CMS-template CSV or JSON MRF and a valid root cms-hpt.txt pointer; require bounded bytes, identity, address/state, date/version and parsed usability before promotion.",
+      "latest_live_browser_recheck": {
+        "observed_at": "2026-09-28T08:19:00Z",
+        "proof_file": "reconciliation-community-hospital-tallassee-browser-recheck-2026-09-28.json",
+        "page_url": "https://www.chal.org/about/resources",
+        "result": "Live first-party page still links the same explicit 12_2020 standard-charge CSV/PDF; no newer MRF route found. No new file bytes were obtained.",
+        "count_effect": 0
+      }
     },
     {
       "kind": "mrf",
@@ -5604,7 +5811,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T13:42:53.390Z"
+      "observed_at": "2026-09-26T13:42:53.39Z"
     },
     {
       "kind": "mrf",
@@ -5872,7 +6079,7 @@
       "title": "Access Denied",
       "detail": "Interactive browser navigation reached an Akamai Access Denied page and exposed no XML bytes; this is a transport observation only.",
       "browser": "codex-in-app-browser",
-      "observed_at": "2026-09-17T00:00:00.000Z",
+      "observed_at": "2026-09-17T00:00:00Z",
       "ccn": "443303"
     },
     {
@@ -5886,7 +6093,7 @@
       "http_status": "",
       "bytes_read": "",
       "identity": "",
-      "observed_at": "2026-09-17T00:00:00.000Z",
+      "observed_at": "2026-09-17T00:00:00Z",
       "ccn": "360025"
     },
     {
@@ -7016,7 +7223,7 @@
       "declared_address": "1050 Division St, Mauston, WI 53948",
       "declared_last_updated": "2026-04-01",
       "cms_template_version": "3.0.0",
-      "observed_at": "2026-09-15T09:41:30.150Z"
+      "observed_at": "2026-09-15T09:41:30.15Z"
     },
     {
       "kind": "mrf",
@@ -7560,7 +7767,7 @@
       "declared_address": "100 NE Saint Luke's Boulevard Lees Summit MO 64086",
       "declared_last_updated": "2025-12-31",
       "cms_template_version": "3.0.0",
-      "observed_at": "2026-09-15T09:16:05.060Z"
+      "observed_at": "2026-09-15T09:16:05.06Z"
     },
     {
       "kind": "mrf",
@@ -7598,7 +7805,7 @@
       "declared_address": "5830 NW Barry Road Kansas City MO 64154",
       "declared_last_updated": "2025-12-31",
       "cms_template_version": "3.0.0",
-      "observed_at": "2026-09-15T09:16:05.160Z"
+      "observed_at": "2026-09-15T09:16:05.16Z"
     },
     {
       "kind": "mrf",
@@ -7636,7 +7843,7 @@
       "declared_address": "1200 Metcalf Avenue, Overland Park, KS 66213-1324",
       "declared_last_updated": "2025-12-31",
       "cms_template_version": "3.0.0",
-      "observed_at": "2026-09-18T05:05:49.000Z"
+      "observed_at": "2026-09-18T05:05:49Z"
     },
     {
       "kind": "mrf",
@@ -7674,7 +7881,7 @@
       "declared_address": "721 South Maple Street Garnett KS 66032",
       "declared_last_updated": "2025-12-31",
       "cms_template_version": "3.0.0",
-      "observed_at": "2026-09-15T09:07:51.410Z"
+      "observed_at": "2026-09-15T09:07:51.41Z"
     },
     {
       "kind": "mrf",
@@ -7731,7 +7938,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T14:48:39.270Z"
+      "observed_at": "2026-09-26T14:48:39.27Z"
     },
     {
       "kind": "mrf",
@@ -7749,7 +7956,7 @@
       "declared_location_name": "St Luke's Hospital - Grand View Campus",
       "declared_address": "700 Lawn Avenue, Sellersville, PA 18960",
       "cms_template_version": "3.0.0",
-      "observed_at": "2026-09-18T10:30:00.000Z",
+      "observed_at": "2026-09-18T10:30:00Z",
       "ccn": "390057",
       "file_sha256": "15684580c032f3a9ab7685b219a3989e8888e26c5a21e33113f8fa08d940f758",
       "next_action": "Add or correct the Grand View facility entry in the root cms-hpt.txt pointer, then recheck pointer linkage and complete-file usability."
@@ -7790,7 +7997,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T17:57:32.140Z"
+      "observed_at": "2026-09-26T17:57:32.14Z"
     },
     {
       "kind": "mrf",
@@ -7828,7 +8035,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T18:30:57.180Z"
+      "observed_at": "2026-09-26T18:30:57.18Z"
     },
     {
       "kind": "mrf",
@@ -8148,7 +8355,7 @@
       "declared_address": "757 Westwood Plaza Los Angeles CA 90095",
       "declared_last_updated": "2026-03-29",
       "cms_template_version": "3.0.0",
-      "observed_at": "2026-09-15T09:00:45.270Z"
+      "observed_at": "2026-09-15T09:00:45.27Z"
     },
     {
       "kind": "mrf",
@@ -8167,7 +8374,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T09:18:40.440Z"
+      "observed_at": "2026-09-15T09:18:40.44Z"
     },
     {
       "kind": "mrf",
@@ -8205,7 +8412,7 @@
       "declared_address": "1959 NE Pacific St Box 356151, Seattle, WA 98195",
       "declared_last_updated": "2026-04-01",
       "cms_template_version": "3.0.0",
-      "observed_at": "2026-09-15T09:37:11.900Z"
+      "observed_at": "2026-09-15T09:37:11.9Z"
     },
     {
       "kind": "mrf",
@@ -8281,7 +8488,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T09:37:07.940Z"
+      "observed_at": "2026-09-15T09:37:07.94Z"
     },
     {
       "kind": "mrf",
@@ -8319,7 +8526,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T09:37:05.820Z"
+      "observed_at": "2026-09-15T09:37:05.82Z"
     },
     {
       "kind": "mrf",
@@ -8526,7 +8733,7 @@
       "declared_license_state": "AZ",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-18T13:20:00.000Z",
+      "observed_at": "2026-09-18T13:20:00Z",
       "ccn": "031307",
       "source_page_url": "https://www.ihs.gov/Phoenix/healthcarefacilities/coloradoriver/",
       "official_page_url": "https://www.ihs.gov/Phoenix/healthcarefacilities/coloradoriver/",
@@ -8734,7 +8941,7 @@
       "declared_license_state": "ID",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-18T14:25:00.000Z",
+      "observed_at": "2026-09-18T14:25:00Z",
       "ccn": "131314",
       "source_page_url": "https://www.shoshonehealth.com/patients/registrationbilling/",
       "official_page_url": "https://www.shoshonehealth.com/patients/registrationbilling/",
@@ -8760,7 +8967,7 @@
       "declared_license_state": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-18T13:10:00.000Z",
+      "observed_at": "2026-09-18T13:10:00Z",
       "ccn": "030138",
       "source_page_url": "https://www.cityofhope.org/patients/our-value-and-pricing/pricing-information",
       "official_page_url": "https://www.cityofhope.org/patients/our-value-and-pricing/pricing-information",
@@ -8794,6 +9001,25 @@
       "mrf_url": "https://bynder.uwhealth.org/m/1d39d4b3bd3ce8bb/original/362222696_SwedishAmerican-Hospital_standardcharges.csv",
       "file_sha256": "",
       "next_action": "Reconcile the explicit Belvidere campus in this current shared file against its separate CCN and retain the exact Rockford metadata; perform full-file or publisher validation before converting the current record to a clean single-campus verification."
+    },
+    {
+      "kind": "official-current-operator-and-state-campus-scope-crosscheck",
+      "ccn": "140228",
+      "target": "https://www.uwhealth.org/about-us",
+      "final_url": "https://www.uwhealth.org/about-us",
+      "status": "cms-exact-ccn-rockford-only; state-board-lists-separate-belvidere-facility; successor-scope-unresolved",
+      "title": "UW Health SwedishAmerican and Belvidere campus scope crosscheck",
+      "detail": "Live in-app browser inspection of the current UW Health About page separately lists SwedishAmerican Hospital and Belvidere Hospital under its health system. Current CMS exact-CCN API data returns one row for 140228 at 1401 East State Street, Rockford. Illinois HFSRB's 2026 planning inventory based on the 2024 annual survey lists SwedishAmerican Hospital in Rockford and 'SwedishAmerican Hospital - DBA UW Health Belvidere Hospital' separately with 34 authorized beds. The Illinois Report Card API marks legacy Belvidere entity 106832/local license 5504 closed 2023-04-20 with no MPN. These sources do not identify a current Belvidere CCN or explain whether Belvidere is within 140228's price publication. No new MRF bytes; no attribution is assigned.",
+      "browser": "Codex in-app browser plus exact CMS and Illinois state API/PDF source retrieval",
+      "http_status": 200,
+      "bytes_read": 107874,
+      "identity": "current-cms-exact-ccn-rockford-and-separately-described-state-campus",
+      "declared_hospital_name": "UW Health SwedishAmerican Hospital; UW Health Belvidere Hospital",
+      "declared_address": "1401 East State Street, Rockford, IL 61104; 1625 S State St, Belvidere, IL 61008",
+      "observed_at": "2026-09-29T10:16:55Z",
+      "proof_file": "reconciliation-uw-swedishamerican-campus-scope-crosscheck-2026-09-29.json",
+      "source_page_url": "https://www.uwhealth.org/about-us",
+      "next_action": "Keep CCN 140228 unresolved pending a current Belvidere CMS certification/CCN crosswalk and publisher explanation of the 2026-04-01 file's Belvidere scope. Do not assign Belvidere based on operator, address, NPI, or state inventory alone."
     },
     {
       "kind": "official-page-file-header-recheck",
@@ -8926,6 +9152,51 @@
       "next_action": "Reconcile 19780 East Ross against 100 S. Bliss with publisher/CMS enrollment evidence and recover a facility-specific MRF; do not infer exemption from tribal operation."
     },
     {
+      "kind": "exact-ccn-indian-health-program-operator-review",
+      "ccn": "370244",
+      "target": "https://www.creekhealth.org/council-oak-comprehensive-healthcare/",
+      "final_url": "https://www.creekhealth.org/council-oak-comprehensive-healthcare/",
+      "status": "first-party-facility-page-rendered; http-status-not-exposed",
+      "observed_at": "2026-09-28T22:53:18Z",
+      "title": "Council Oak Comprehensive Healthcare current facility/operator review",
+      "detail": "The in-app browser rendered the MCN Health first-party facility page. It names Council Oak Comprehensive Healthcare, describes inpatient and outpatient services, and lists 10109 E 79th St, Tulsa, OK 74133. A separate current MCN Health hospitals page says the system operates three community hospitals and lists Council Oak. This verifies facility/operator evidence only; browser UI did not expose an HTTP status or CMS MRF bytes.",
+      "browser": "Codex in-app browser",
+      "http_status": null,
+      "bytes_read": 0,
+      "identity": "first-party-name-address-and-hospital-operator-page-correlated-with-exact-CCN-CMS-record",
+      "declared_hospital_name": "COUNCIL OAK COMPREHENSIVE HEALTHCARE",
+      "declared_address": "10109 E 79th St, Tulsa, OK 74133",
+      "declared_license_state": "OK",
+      "proof_file": "reconciliation-council-oak-indian-health-program-scope-proof-2026-09-28.json",
+      "next_action": "Retain the scope classification and separate prior pricing-pointer/file evidence; do not infer current MRF availability."
+    },
+    {
+      "kind": "indian-health-program-scope-review",
+      "target": "https://www.cms.gov/files/document/indian-healt-service-cms-all-final.pdf",
+      "final_url": "https://www.cms.gov/files/document/indian-healt-service-cms-all-final.pdf",
+      "status": "scope-exempt-indian-health-program",
+      "title": "W.W. Hastings Hospital exact-CCN Indian Health Program review",
+      "detail": "CMS's crosswalk maps W.W. Hastings Indian Hospital to CCN 370171 in Tahlequah. Cherokee Nation identifies itself as operator; IHS lists Cherokee Nation as a self-governance tribe and HHS TAGGS shows current IHS Tribal Self-Governance compact/funding-agreement awards. Supports 45 CFR 180.30(b)(2) scope classification. The 100 S Bliss legacy and 19780 E Ross replacement-campus observations remain separate; no current CCN continuity or MRF claim is made.",
+      "browser": "official-cms-ihs-cherokee-and-hhs-source-review",
+      "http_status": 200,
+      "bytes_read": 0,
+      "content_range": "federal-crosswalk-and-current-operator/program-sources",
+      "identity": "cms-exact-ccn-plus-tribal-operator-and-current-ihs-self-governance-evidence",
+      "declared_hospital_name": "Cherokee Nation W.W. Hastings Indian Hospital",
+      "declared_address": "100 S Bliss Avenue, Tahlequah, OK 74464 (CMS legacy record); 19780 East Ross Street (replacement campus opened 2026-07-11)",
+      "declared_license_state": "OK",
+      "declared_last_updated": "",
+      "cms_template_version": "",
+      "observed_at": "2026-09-28T20:40:23Z",
+      "ccn": "370171",
+      "proof_file": "reconciliation-cherokee-hastings-indian-health-program-scope-proof-2026-09-28.json",
+      "source_page_url": "https://health.cherokee.gov/health-center-and-hospital-locations/inpatient-care/",
+      "pointer_url": "",
+      "mrf_url": "",
+      "file_sha256": "",
+      "next_action": "Retain scope classification and campus-transition provenance; do not infer current MRF availability or pointer linkage."
+    },
+    {
       "kind": "official-page-sibling-scope-recheck",
       "target": "https://freedombehavioral.com/price-transparency/",
       "final_url": "https://freedombehavioral.com/price-transparency/",
@@ -8968,7 +9239,7 @@
       "declared_license_state": "NV",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-18T13:31:00.000Z",
+      "observed_at": "2026-09-18T13:31:00Z",
       "ccn": "291300",
       "source_page_url": "https://mgghnv.org/information-center/summary-of-charges-draft/",
       "official_page_url": "https://mgghnv.org/information-center/summary-of-charges-draft/",
@@ -8994,7 +9265,7 @@
       "declared_license_state": "ID",
       "declared_last_updated": "2024-09",
       "cms_template_version": "",
-      "observed_at": "2026-09-18T13:16:00.000Z",
+      "observed_at": "2026-09-18T13:16:00Z",
       "ccn": "131319",
       "source_page_url": "https://minidokamemorial.org/",
       "official_page_url": "https://minidokamemorial.org/",
@@ -9020,7 +9291,7 @@
       "declared_license_state": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-18T13:45:00.000Z",
+      "observed_at": "2026-09-18T13:45:00Z",
       "ccn": "431316",
       "source_page_url": "https://www.avera.org/health-services/hospitals/community-memorial-hospital/",
       "official_page_url": "https://www.avera.org/health-services/hospitals/community-memorial-hospital/",
@@ -9047,7 +9318,7 @@
       "declared_license_state": "NC",
       "declared_last_updated": "2026-04-01",
       "cms_template_version": "3.0.0",
-      "observed_at": "2026-09-18T13:34:00.000Z",
+      "observed_at": "2026-09-18T13:34:00Z",
       "ccn": "340147",
       "source_page_url": "https://www.unchealth.org/records-insurance/standard-charges",
       "official_page_url": "https://www.unchealth.org/records-insurance/standard-charges",
@@ -9075,7 +9346,7 @@
       "declared_license_state": "WY",
       "declared_last_updated": "2025-12-08",
       "cms_template_version": "3.0.0",
-      "observed_at": "2026-09-18T14:10:00.000Z",
+      "observed_at": "2026-09-18T14:10:00Z",
       "ccn": "530002",
       "source_page_url": "https://search.hospitalpriceindex.com/hpi2/machineReadable/CampbellCountyMemorialHospital/13739",
       "official_page_url": "https://www.cchwyo.org/locations/campbell-county-health-main-campus/",
@@ -9103,7 +9374,7 @@
       "declared_license_state": "MT",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-18T13:27:00.000Z",
+      "observed_at": "2026-09-18T13:27:00Z",
       "ccn": "271332",
       "source_page_url": "https://www.gmc.org/patients-families/gmc-price-transparency/",
       "official_page_url": "https://www.gmc.org/patients-families/gmc-price-transparency/",
@@ -9129,7 +9400,7 @@
       "declared_license_state": "MT",
       "declared_last_updated": "FY-27 filename only",
       "cms_template_version": "",
-      "observed_at": "2026-09-18T15:05:00.000Z",
+      "observed_at": "2026-09-18T15:05:00Z",
       "ccn": "271332",
       "source_page_url": "https://www.gmc.org/patients-families/gmc-price-transparency/",
       "official_page_url": "https://www.gmc.org/patients-families/gmc-price-transparency/",
@@ -9155,7 +9426,7 @@
       "declared_license_state": "NY",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-18T13:30:00.000Z",
+      "observed_at": "2026-09-18T13:30:00Z",
       "ccn": "330270",
       "source_page_url": "https://www.hss.edu/patient-care/paying-for-care/price-transparency",
       "official_page_url": "https://www.hss.edu/patient-care/paying-for-care/price-transparency",
@@ -9181,7 +9452,7 @@
       "declared_license_state": "CT",
       "declared_last_updated": "2026-03-31",
       "cms_template_version": "",
-      "observed_at": "2026-09-18T13:09:00.000Z",
+      "observed_at": "2026-09-18T13:09:00Z",
       "ccn": "070006",
       "source_page_url": "https://www.stamfordhealth.org/patients/hospital-charges/",
       "official_page_url": "https://www.stamfordhealth.org/patients/hospital-charges/",
@@ -9207,7 +9478,7 @@
       "declared_license_state": "CO",
       "declared_last_updated": "2025-11-01",
       "cms_template_version": "3.0.0",
-      "observed_at": "2026-09-18T13:05:00.000Z",
+      "observed_at": "2026-09-18T13:05:00Z",
       "ccn": "060020",
       "source_page_url": "https://www.uchealth.org/billing-and-pricing/shoppable-services-and-all-services-price-lists/",
       "official_page_url": "https://www.uchealth.org/billing-and-pricing/shoppable-services-and-all-services-price-lists/",
@@ -9234,7 +9505,7 @@
       "declared_license_state": "ID",
       "declared_last_updated": "2020",
       "cms_template_version": "",
-      "observed_at": "2026-09-18T13:12:00.000Z",
+      "observed_at": "2026-09-18T13:12:00Z",
       "ccn": "131314",
       "source_page_url": "https://www.shoshonehealth.com/patients/registrationbilling/",
       "official_page_url": "https://www.shoshonehealth.com/patients/registrationbilling/",
@@ -9261,7 +9532,7 @@
       "declared_license_state": "AZ",
       "declared_last_updated": "2025-01-01",
       "cms_template_version": "",
-      "observed_at": "2026-09-18T13:00:00.000Z",
+      "observed_at": "2026-09-18T13:00:00Z",
       "ccn": "030073",
       "source_page_url": "https://tchealth.org/patients/",
       "official_page_url": "https://tchealth.org/patients/",
@@ -9288,7 +9559,7 @@
       "declared_license_state": "MS",
       "declared_last_updated": "2026-03-17",
       "cms_template_version": "",
-      "observed_at": "2026-09-18T13:20:00.000Z",
+      "observed_at": "2026-09-18T13:20:00Z",
       "ccn": "250043",
       "source_page_url": "https://www.neshobageneral.com/site-map/",
       "official_page_url": "https://www.neshobageneral.com/site-map/",
@@ -9887,7 +10158,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T14:11:42.400Z"
+      "observed_at": "2026-09-26T14:11:42.4Z"
     },
     {
       "kind": "pointer",
@@ -9944,7 +10215,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T19:22:54.030Z"
+      "observed_at": "2026-09-15T19:22:54.03Z"
     },
     {
       "kind": "pointer",
@@ -10108,7 +10379,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T12:44:02.690Z"
+      "observed_at": "2026-09-26T12:44:02.69Z"
     },
     {
       "kind": "pointer",
@@ -10146,7 +10417,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T12:54:14.310Z"
+      "observed_at": "2026-09-15T12:54:14.31Z"
     },
     {
       "kind": "pointer",
@@ -10408,7 +10679,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T14:13:23.720Z"
+      "observed_at": "2026-09-26T14:13:23.72Z"
     },
     {
       "kind": "pointer",
@@ -10785,7 +11056,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T14:25:19.760Z"
+      "observed_at": "2026-09-26T14:25:19.76Z"
     },
     {
       "kind": "pointer",
@@ -10909,7 +11180,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T12:53:09.540Z"
+      "observed_at": "2026-09-26T12:53:09.54Z"
     },
     {
       "kind": "pointer",
@@ -11569,7 +11840,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T12:49:26.660Z"
+      "observed_at": "2026-09-15T12:49:26.66Z"
     },
     {
       "kind": "pointer",
@@ -11771,7 +12042,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T12:49:26.740Z"
+      "observed_at": "2026-09-15T12:49:26.74Z"
     },
     {
       "kind": "pointer",
@@ -12301,7 +12572,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T14:04:37.150Z"
+      "observed_at": "2026-09-26T14:04:37.15Z"
     },
     {
       "kind": "pointer",
@@ -12463,7 +12734,7 @@
       "title": "Just a moment...",
       "detail": "Interactive browser rendered Performing security verification and exposed no pointer bytes.",
       "browser": "codex-in-app-browser",
-      "observed_at": "2026-09-17T00:00:00.000Z",
+      "observed_at": "2026-09-17T00:00:00Z",
       "ccn": "114019"
     },
     {
@@ -12493,7 +12764,7 @@
       "title": "Just a moment...",
       "detail": "In-app browser navigation redirected to a Cloudflare challenge page; no pointer bytes were obtained.",
       "browser": "codex-in-app-browser",
-      "observed_at": "2026-09-17T00:00:00.000Z",
+      "observed_at": "2026-09-17T00:00:00Z",
       "ccn": "114028"
     },
     {
@@ -12763,7 +13034,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T13:10:25.500Z"
+      "observed_at": "2026-09-26T13:10:25.5Z"
     },
     {
       "kind": "pointer",
@@ -13089,7 +13360,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T12:42:45.070Z"
+      "observed_at": "2026-09-15T12:42:45.07Z"
     },
     {
       "kind": "pointer",
@@ -13281,7 +13552,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T13:54:11.620Z"
+      "observed_at": "2026-09-26T13:54:11.62Z"
     },
     {
       "kind": "pointer",
@@ -13438,7 +13709,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T12:42:45.190Z"
+      "observed_at": "2026-09-15T12:42:45.19Z"
     },
     {
       "kind": "pointer",
@@ -13602,7 +13873,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T14:15:51.390Z"
+      "observed_at": "2026-09-26T14:15:51.39Z"
     },
     {
       "kind": "pointer",
@@ -13832,7 +14103,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T12:52:34.420Z"
+      "observed_at": "2026-09-15T12:52:34.42Z"
     },
     {
       "kind": "pointer",
@@ -13851,7 +14122,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T19:17:57.850Z"
+      "observed_at": "2026-09-15T19:17:57.85Z"
     },
     {
       "kind": "pointer",
@@ -14267,7 +14538,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T14:17:06.750Z"
+      "observed_at": "2026-09-26T14:17:06.75Z"
     },
     {
       "kind": "pointer",
@@ -14391,7 +14662,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T12:44:49.710Z"
+      "observed_at": "2026-09-26T12:44:49.71Z"
     },
     {
       "kind": "pointer",
@@ -14410,7 +14681,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T14:10:32.440Z"
+      "observed_at": "2026-09-26T14:10:32.44Z"
     },
     {
       "kind": "pointer",
@@ -14752,7 +15023,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T12:49:27.080Z"
+      "observed_at": "2026-09-15T12:49:27.08Z"
     },
     {
       "kind": "pointer",
@@ -14854,7 +15125,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T12:44:03.240Z"
+      "observed_at": "2026-09-15T12:44:03.24Z"
     },
     {
       "kind": "pointer",
@@ -14873,7 +15144,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T17:25:45.570Z",
+      "observed_at": "2026-09-26T17:25:45.57Z",
       "history": [
         {
           "kind": "pointer",
@@ -14902,7 +15173,7 @@
           "declared_address": "",
           "declared_last_updated": "",
           "cms_template_version": "",
-          "observed_at": "2026-09-26T16:54:35.790Z"
+          "observed_at": "2026-09-26T16:54:35.79Z"
         },
         {
           "kind": "pointer",
@@ -14921,7 +15192,7 @@
           "declared_address": "",
           "declared_last_updated": "",
           "cms_template_version": "",
-          "observed_at": "2026-09-26T16:55:50.800Z"
+          "observed_at": "2026-09-26T16:55:50.8Z"
         },
         {
           "kind": "pointer",
@@ -15392,7 +15663,7 @@
       "title": "",
       "detail": "The exact URL ended at a blank browser document; no pointer body or captured download was available.",
       "browser": "brave",
-      "observed_at": "2026-09-15T08:47:06.220Z"
+      "observed_at": "2026-09-15T08:47:06.22Z"
     },
     {
       "kind": "pointer",
@@ -15430,7 +15701,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T13:11:00.960Z"
+      "observed_at": "2026-09-15T13:11:00.96Z"
     },
     {
       "kind": "pointer",
@@ -15563,7 +15834,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T12:25:10.180Z"
+      "observed_at": "2026-09-15T12:25:10.18Z"
     },
     {
       "kind": "pointer",
@@ -15829,7 +16100,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T18:08:02.000Z",
+      "observed_at": "2026-09-26T18:08:02Z",
       "history": [
         {
           "kind": "pointer",
@@ -16286,7 +16557,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T12:45:04.620Z"
+      "observed_at": "2026-09-15T12:45:04.62Z"
     },
     {
       "kind": "pointer",
@@ -16324,7 +16595,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T12:45:04.520Z"
+      "observed_at": "2026-09-15T12:45:04.52Z"
     },
     {
       "kind": "pointer",
@@ -16353,7 +16624,7 @@
           "title": "",
           "detail": "Browser navigation timed out without reaching this target.",
           "browser": "brave",
-          "observed_at": "2026-09-15T08:47:06.320Z"
+          "observed_at": "2026-09-15T08:47:06.32Z"
         }
       ]
     },
@@ -16585,7 +16856,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T15:01:16.800Z"
+      "observed_at": "2026-09-26T15:01:16.8Z"
     },
     {
       "kind": "pointer",
@@ -16756,7 +17027,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T12:45:04.710Z"
+      "observed_at": "2026-09-15T12:45:04.71Z"
     },
     {
       "kind": "pointer",
@@ -16853,7 +17124,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T13:58:51.110Z"
+      "observed_at": "2026-09-26T13:58:51.11Z"
     },
     {
       "kind": "pointer",
@@ -16872,7 +17143,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T13:11:01.160Z"
+      "observed_at": "2026-09-15T13:11:01.16Z"
     },
     {
       "kind": "pointer",
@@ -17093,7 +17364,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T13:18:04.720Z"
+      "observed_at": "2026-09-26T13:18:04.72Z"
     },
     {
       "kind": "pointer",
@@ -17289,7 +17560,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T13:07:12.670Z"
+      "observed_at": "2026-09-26T13:07:12.67Z"
     },
     {
       "kind": "pointer",
@@ -17327,7 +17598,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T12:49:27.180Z"
+      "observed_at": "2026-09-15T12:49:27.18Z"
     },
     {
       "kind": "pointer",
@@ -17584,7 +17855,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T14:06:27.230Z"
+      "observed_at": "2026-09-26T14:06:27.23Z"
     },
     {
       "kind": "pointer",
@@ -17660,7 +17931,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T17:07:22.340Z",
+      "observed_at": "2026-09-26T17:07:22.34Z",
       "history": [
         {
           "kind": "pointer",
@@ -17712,7 +17983,7 @@
       "declared_address": "350 Poplar Drive, Petersburg, VA 23805",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T15:22:45.560Z"
+      "observed_at": "2026-09-26T15:22:45.56Z"
     },
     {
       "kind": "pointer",
@@ -17921,7 +18192,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T13:07:12.950Z"
+      "observed_at": "2026-09-26T13:07:12.95Z"
     },
     {
       "kind": "pointer",
@@ -17959,7 +18230,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T12:46:16.510Z"
+      "observed_at": "2026-09-26T12:46:16.51Z"
     },
     {
       "kind": "pointer",
@@ -17997,7 +18268,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T13:18:04.920Z"
+      "observed_at": "2026-09-26T13:18:04.92Z"
     },
     {
       "kind": "pointer",
@@ -18206,7 +18477,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T13:58:51.540Z"
+      "observed_at": "2026-09-26T13:58:51.54Z"
     },
     {
       "kind": "pointer",
@@ -18263,7 +18534,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T14:07:33.860Z"
+      "observed_at": "2026-09-26T14:07:33.86Z"
     },
     {
       "kind": "pointer",
@@ -18282,7 +18553,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T12:47:00.800Z"
+      "observed_at": "2026-09-15T12:47:00.8Z"
     },
     {
       "kind": "pointer",
@@ -18871,7 +19142,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T12:47:01.970Z"
+      "observed_at": "2026-09-15T12:47:01.97Z"
     },
     {
       "kind": "pointer",
@@ -19177,7 +19448,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T12:53:11.350Z"
+      "observed_at": "2026-09-15T12:53:11.35Z"
     },
     {
       "kind": "pointer",
@@ -19310,7 +19581,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T12:47:02.610Z"
+      "observed_at": "2026-09-15T12:47:02.61Z"
     },
     {
       "kind": "pointer",
@@ -19504,7 +19775,7 @@
           "declared_address": "",
           "declared_last_updated": "",
           "cms_template_version": "",
-          "observed_at": "2026-09-15T12:26:42.100Z"
+          "observed_at": "2026-09-15T12:26:42.1Z"
         }
       ]
     },
@@ -19603,7 +19874,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T14:11:42.580Z"
+      "observed_at": "2026-09-26T14:11:42.58Z"
     },
     {
       "kind": "pointer",
@@ -19698,7 +19969,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T19:37:20.330Z"
+      "observed_at": "2026-09-15T19:37:20.33Z"
     },
     {
       "kind": "pointer",
@@ -19736,7 +20007,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T13:13:19.980Z"
+      "observed_at": "2026-09-26T13:13:19.98Z"
     },
     {
       "kind": "pointer",
@@ -19812,7 +20083,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T13:11:39.660Z"
+      "observed_at": "2026-09-26T13:11:39.66Z"
     },
     {
       "kind": "pointer",
@@ -19888,7 +20159,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T12:51:16.530Z"
+      "observed_at": "2026-09-15T12:51:16.53Z"
     },
     {
       "kind": "pointer",
@@ -20021,7 +20292,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T12:52:35.270Z"
+      "observed_at": "2026-09-15T12:52:35.27Z"
     },
     {
       "kind": "pointer",
@@ -20097,7 +20368,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T17:33:18.390Z"
+      "observed_at": "2026-09-26T17:33:18.39Z"
     },
     {
       "kind": "pointer",
@@ -20294,7 +20565,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T12:51:16.630Z"
+      "observed_at": "2026-09-15T12:51:16.63Z"
     },
     {
       "kind": "pointer",
@@ -20389,7 +20660,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T13:26:10.960Z"
+      "observed_at": "2026-09-26T13:26:10.96Z"
     },
     {
       "kind": "pointer",
@@ -20408,7 +20679,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T13:07:13.090Z"
+      "observed_at": "2026-09-26T13:07:13.09Z"
     },
     {
       "kind": "pointer",
@@ -20655,7 +20926,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T13:00:16.250Z"
+      "observed_at": "2026-09-26T13:00:16.25Z"
     },
     {
       "kind": "pointer",
@@ -20750,7 +21021,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T14:25:19.440Z"
+      "observed_at": "2026-09-26T14:25:19.44Z"
     },
     {
       "kind": "pointer",
@@ -20826,7 +21097,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T15:06:50.870Z"
+      "observed_at": "2026-09-26T15:06:50.87Z"
     },
     {
       "kind": "pointer",
@@ -20947,7 +21218,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T17:47:30.430Z"
+      "observed_at": "2026-09-26T17:47:30.43Z"
     },
     {
       "kind": "pointer",
@@ -21025,7 +21296,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T14:14:56.430Z"
+      "observed_at": "2026-09-26T14:14:56.43Z"
     },
     {
       "kind": "pointer",
@@ -21141,7 +21412,7 @@
           "declared_address": "",
           "declared_last_updated": "",
           "cms_template_version": "",
-          "observed_at": "2026-09-15T19:30:15.020Z"
+          "observed_at": "2026-09-15T19:30:15.02Z"
         }
       ]
     },
@@ -21620,7 +21891,7 @@
           "declared_address": "",
           "declared_last_updated": "",
           "cms_template_version": "",
-          "observed_at": "2026-09-26T14:51:15.460Z"
+          "observed_at": "2026-09-26T14:51:15.46Z"
         }
       ]
     },
@@ -21780,7 +22051,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T12:39:45.450Z"
+      "observed_at": "2026-09-26T12:39:45.45Z"
     },
     {
       "kind": "pointer",
@@ -21837,7 +22108,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T12:39:45.830Z"
+      "observed_at": "2026-09-26T12:39:45.83Z"
     },
     {
       "kind": "pointer",
@@ -22567,7 +22838,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-15T19:27:52.610Z"
+      "observed_at": "2026-09-15T19:27:52.61Z"
     },
     {
       "kind": "pointer",
@@ -22835,7 +23106,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T13:49:11.050Z"
+      "observed_at": "2026-09-26T13:49:11.05Z"
     },
     {
       "kind": "pointer",
@@ -22951,7 +23222,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T13:56:46.810Z"
+      "observed_at": "2026-09-26T13:56:46.81Z"
     },
     {
       "kind": "pointer",
@@ -23148,7 +23419,7 @@
       "declared_address": "350 Hawthorne Avenue, Oakland CA 94609; 2450 Ashby Avenue, Berkeley CA 94705",
       "declared_last_updated": "2026-04-01",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T16:00:00.900Z",
+      "observed_at": "2026-09-26T16:00:00.9Z",
       "history": [
         {
           "kind": "pointer",
@@ -23359,7 +23630,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-26T12:56:34.090Z",
+      "observed_at": "2026-09-26T12:56:34.09Z",
       "history": [
         {
           "kind": "pointer",
@@ -23418,7 +23689,7 @@
       "declared_address": "",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-18T05:27:47.000Z",
+      "observed_at": "2026-09-18T05:27:47Z",
       "ccn": "340147",
       "pointer_sha256": "9f31eb3ca1d080b7cbe9dee3e4540bf1070156d2dfe7b1b6fa68a099dfec1e27",
       "pointer_mrf_url": "http://rca.elevatepfs.com/ptapp/api/cdm/export/oneclick?recno=6864cd865dc9126d1ceb5dba82cccac976f64b50ff09491ea3ef6d72ac9bcffd",
@@ -23700,7 +23971,7 @@
       "declared_license_state": "AL",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-18T12:41:30.000Z",
+      "observed_at": "2026-09-18T12:41:30Z",
       "ccn": "014000",
       "source_page_url": "https://hillcrestbhs.com/",
       "official_page_url": "https://hillcrestbhs.com/",
@@ -23776,7 +24047,7 @@
       "declared_license_state": "AZ",
       "declared_last_updated": "",
       "cms_template_version": "",
-      "observed_at": "2026-09-18T12:50:00.000Z",
+      "observed_at": "2026-09-18T12:50:00Z",
       "ccn": "030071",
       "source_page_url": "https://www.fdihb.org/",
       "official_page_url": "https://www.fdihb.org/",
@@ -24323,7 +24594,7 @@
       "declared_license_state": "AK",
       "declared_last_updated": "2026-07-16",
       "cms_template_version": "3.0.0",
-      "observed_at": "2026-09-18T12:45:00.000Z",
+      "observed_at": "2026-09-18T12:45:00Z",
       "ccn": "021312",
       "source_page_url": "https://www.maniilaq.org/cms-hpt.txt",
       "official_page_url": "https://www.maniilaq.org/",
@@ -24444,6 +24715,370 @@
       "detail": "OMH identifies 80-45 Winchester Boulevard, Building 73 as the Queens Village Jamaica Wellness and Recovery Center outpatient site. It separately lists Creedmoor's Family Outreach Program at 79-25 Winchester Boulevard, Building 40. This establishes that the 80-45 address is a related outpatient service site and not evidence that the 79-25 main-campus address belongs to another hospital.",
       "browser": "codex-in-app-browser-accessibility-document-text",
       "proof_file": "reconciliation-creedmoor-current-enrollment-address-proof-2026-09-27.json"
+    },
+    {
+      "kind": "official-system-price-page-archive-capture-and-current-link-comparison",
+      "ccn": "010079",
+      "target": "https://hh.health/patients-visitors/price-transparency/",
+      "final_url": "https://hh.health/patients-visitors/price-transparency/",
+      "status": "archived-official-page-capture-and-current-page-reader-show-different-facility-file-targets",
+      "observed_at": "2026-09-28T07:48:36Z",
+      "title": "HH Health system Price Transparency page, Athens-Limestone file link",
+      "detail": "Common Crawl CC-MAIN-2026-34 captured the official page on 2026-08-09 and the bounded WARC range was independently retrieved/hash-bound; the Athens-Limestone row then linked /wp-content/uploads/Athens-Limestone_standardcharges.csv. The current official page reader now resolves the row's link to /wp-content/uploads/475531420_Athens-Limestone-Hospital_standardcharges.csv. The separate Athens-Limestone hospital page links a similarly named CSV on its own host and identifies 700 West Market Street, Athens, AL 35611. hh.health CSV content is unsupported by the page reader and direct HTTPS produced no response because local DNS/TLS transport failed. No file bytes, pointer, or metadata were verified; do not infer absence or invalidity.",
+      "browser": "common-crawl-warc-bounded-range-and-official-web-reader-link-resolution",
+      "http_status": 200,
+      "bytes_read": 27708,
+      "identity": "system page names Athens-Limestone; exact CCN/site context is supported by the separately retained 010079 official hospital page and address evidence",
+      "declared_hospital_name": "",
+      "declared_location_name": "",
+      "declared_address": "",
+      "declared_license_state": "",
+      "declared_last_updated": "",
+      "cms_template_version": "",
+      "proof_file": "reconciliation-athens-limestone-system-file-link-divergence-2026-09-28.json",
+      "recheck_reason": "A new dated official system-page archive capture exposed a candidate link path that differs from current official page link resolution and the facility page's link. This was a route discrepancy audit; no exact CSV retry or status inference was made.",
+      "next_action": "When HTTPS transport is restored, retrieve the current root cms-hpt.txt and both official-page file candidates with bounded bytes; compare hashes and metadata before considering any disposition change."
+    },
+    {
+      "kind": "current-first-party-page-linked-full-mrf-retrieval-and-parse",
+      "ccn": "010079",
+      "target": "https://www.huntsvillehospital.org/images/pricetransparency/475531420_Athens-Limestone-Hospital_standardcharges.csv",
+      "final_url": "https://www.huntsvillehospital.org/images/pricetransparency/475531420_Athens-Limestone-Hospital_standardcharges.csv",
+      "status": "full-file-retrieved-cms-v3-identity-and-parse-verified-pointer-not-listed-for-athens",
+      "observed_at": "2026-09-28T08:00:52Z",
+      "title": "Athens-Limestone Hospital full CMS CSV from live official system page link",
+      "detail": "Live first-party HH Health price-transparency page returned HTTP 200 and its HTML names Athens-Limestone as a separate facility row linking this exact URL (page Updated 4/1/2026, page SHA-256 91144289E1CA24CD9DD95776DC8293545CF2FC84682A2253CDDAF596D7D31678). DNS-over-HTTPS supplied the current www.huntsvillehospital.org A record used for standard HTTPS retrieval. The full 40,443,636-byte CSV was downloaded and SHA-256 hashed; CSV parser read two metadata rows, 28 header fields and 122,191 data rows with no wrong-width rows. Metadata identifies HH HEALTH SYSTEM ATHENS LIMESTONE, the Athens address, Alabama license, 2026-03-25, CMS 3.0.0 and attestation true. CMS General Information exact CCN 010079 row matches hospital name, 700 West Market Street, Athens, AL 35611. Separately, the checked shared root pointer currently lists only Huntsville Hospital's own file, not this Athens URL; the facility-specific pointer and new hh.health alternate route remain unresolved. Do not conflate file verification with pointer verification or claim alternate URL byte identity.",
+      "browser": "direct-first-party-page-http-plus-full-file-download-and-streaming-csv-parse",
+      "http_status": 200,
+      "bytes_read": 40443636,
+      "identity": "full-file hospital name, street, city, state, license and CMS CCN 010079 roster match",
+      "declared_hospital_name": "HH HEALTH SYSTEM ATHENS LIMESTONE",
+      "declared_location_name": "HH HEALTH SYSTEM ATHENS LIMESTONE (ACU)",
+      "declared_address": "700 W MARKET ST, ATHENS, AL 356112457",
+      "declared_license_state": "AL",
+      "declared_last_updated": "3/25/2026",
+      "cms_template_version": "3.0.0",
+      "proof_file": "reconciliation-athens-limestone-current-full-mrf-proof-2026-09-28.json",
+      "file_sha256": "fdbfc862a544b51e5c72b75803ebddc9dce18441524fca105defd6481370b437",
+      "recheck_reason": "A previous official-page link discovery was unresolved because DNS timed out and text readers could not expose CSV content. This continuation used the DNS-over-HTTPS A record and ordinary HTTPS to fetch the page and exact link target, then verified the complete file; it is new file-byte and parse evidence, not only a route recheck.",
+      "next_action": "Retain the proven page-linked MRF. Separately retrieve the facility-host root pointer and current hh.health candidate after ordinary HTTPS works, compare full bytes and metadata, and keep the shared system pointer scope distinct."
+    },
+    {
+      "kind": "current-cms-nppes-organization-record-crosscheck",
+      "ccn": "450653",
+      "target": "https://npiregistry.cms.hhs.gov/api/?version=2.1&number=1497606438",
+      "final_url": "https://npiregistry.cms.hhs.gov/api/?version=2.1&number=1497606438",
+      "status": "official-nppes-record-retrieved-and-hash-bound",
+      "observed_at": "2026-09-28T13:08:03Z",
+      "title": "CMS NPPES current organization record for Shannon Medical Center Big Spring",
+      "detail": "The exact NPI 1497606438 CMS NPPES API query returned one active NPI-2 organization record (HTTP 200; 1,456 bytes; SHA-256 8b7a25562466805cbbd1e7e546ff898d86b9b44e3ce76ad3ef3d1bb13090b986). The record names SHANNON MEDICAL CENTER, lists SHANNON MEDICAL CENTER BIG SPRING as DBA, classifies it as General Acute Care Hospital, and gives the Big Spring location 1601 W 11TH PL, TX 79720-4114. NPPES last-updated and certification dates are 2026-09-21. The separate CMS Hospital Enrollments release (2026-08-01) predates that NPPES update: it returned no row for NPI 1497606438 and lists exact CCN 450653 under NPI 1336976034 / BIG SPRING TEXAS HOSPITAL COMPANY LLC / SCENIC MOUNTAIN MEDICAL CENTER at the same address as of that snapshot. This corroborates the file's hospital-organization identity and location but cannot resolve post-update Medicare CCN continuity or justify file promotion.",
+      "browser": "direct-bounded-CMS-NPPES-and-Hospital-Enrollments-API-queries",
+      "http_status": 200,
+      "bytes_read": 1456,
+      "identity": "CMS NPPES active hospital organization and Big Spring DBA/address corroborated; Medicare CCN linkage not established",
+      "declared_hospital_name": "SHANNON MEDICAL CENTER",
+      "declared_location_name": "SHANNON MEDICAL CENTER BIG SPRING",
+      "declared_address": "1601 W 11TH PL, BIG SPRING, TX 79720-4114",
+      "declared_license_state": "TX",
+      "proof_file": "reconciliation-scenic-mountain-nppes-npi-1497606438-recheck-2026-09-28.json",
+      "recheck_reason": "NPPES NPI 1497606438 showed a 2026-09-21 record update/certification after the prior Sept. 25 CMS enrollment and file-scope audit; recheck whether the official organization record now explains the file NPI/name while preserving the independent CMS CCN mapping gate.",
+      "next_action": "Check for a CMS Hospital Enrollments/certification release later than 2026-09-21 or obtain effective-dated CMS certification evidence or authoritative Shannon/publisher scope documentation linking NPI 1497606438 to CCN 450653 before assigning the current file to that CCN."
+    },
+    {
+      "kind": "park-center-independent-domain-and-state-hospital-review",
+      "ccn": "154060",
+      "target": "https://www.parkcenter.org/",
+      "final_url": "https://www.parkview.com/",
+      "status": "listed-domain-redirected-to-parkview-homepage; no-independent-pricing-route-exposed",
+      "observed_at": "2026-09-28T19:12:24Z",
+      "title": "Park Center independent-domain route and Indiana hospital classification review",
+      "detail": "In-app browser navigation from the Park Center domain listed in the Joint Commission profile ended at Parkview Health's homepage; browser tooling did not expose the HTTP redirect status. A separate current Parkview Request an Estimate page rendered 11 comprehensive hospital MRF links and no Park Center/1909 Carew link, while separately describing its consumer estimate tool. The official Indiana State Department of Health 2025 Hospital Consumer Report identifies PARK CENTER, INC. at 1909 CAREW STREET, FORT WAYNE, IN 46805 as state licensed and Medicare certified, license 41-9-10-P-IP, 16 beds, and lists other services/sites under the hospital license. That state record is not a CMS CCN-site crosswalk and yields no MRF bytes. Do not borrow Parkview sibling files or infer pricing-file coverage from the domain redirect or shared license listing.",
+      "browser": "Codex in-app browser; Parkview pricing-page accessibility tree",
+      "identity": "Indiana state source corroborates licensed/Medicare-certified hospital at exact Park Center roster address; no exact CCN-to-MRF mapping established",
+      "declared_hospital_name": "PARK CENTER, INC.",
+      "declared_address": "1909 CAREW STREET, FORT WAYNE, IN 46805",
+      "declared_license_state": "IN",
+      "proof_file": "reconciliation-park-center-independent-domain-route-review-2026-09-28.json",
+      "recheck_reason": "Tier-2 unresolved Park Center requires a distinct Park Center-specific pricing route; checked the separate domain listed by a public provider profile and reviewed current state hospital classification before inferring any Parkview file relationship.",
+      "next_action": "Keep CCN 154060 unresolved. Obtain a Park Center-specific publisher pointer/file or authoritative statement mapping CCN 154060 to its pricing publication; do not borrow any of the 11 other Parkview location files. Do not infer coverage from the shared state-license listing or the domain redirect. Verify exact facility/CCN attribution, Indiana metadata, CMS date/version and usable MRF bytes before assignment."
+    },
+    {
+      "kind": "indian-health-program-scope-review",
+      "ccn": "021309",
+      "target": "https://www.cms.gov/files/document/indian-healt-service-cms-all-final.pdf",
+      "final_url": "https://www.cms.gov/files/document/indian-healt-service-cms-all-final.pdf",
+      "status": "scope-exempt-indian-health-program",
+      "title": "Kanakanak Hospital federal scope evidence",
+      "detail": "CMS crosswalk identifies Kanakanak Hospital as CCN 021309 in Dillingham AK. Current IHS material lists it as Tribal; IHS 2025 report names BBAHC as manager and IHS service-area profile documents operation under P.L. 93-638, Title V. Supports 45 CFR 180.30(b)(2) scope classification only. No current MRF availability/absence claim.",
+      "browser": "official-cms-ihs-web-review",
+      "http_status": 200,
+      "bytes_read": 0,
+      "content_range": "",
+      "identity": "exact-ccn-cms-crosswalk-plus-ihs-operator-program-evidence",
+      "declared_hospital_name": "Kanakanak Hospital",
+      "declared_address": "6000 Kanakanak Road, Dillingham, AK 99576",
+      "declared_license_state": "AK",
+      "observed_at": "2026-09-28T20:29:22Z",
+      "proof_file": "reconciliation-kanakanak-indian-health-program-scope-proof-2026-09-28.json",
+      "next_action": "Retain scope classification; retain earlier 404 as route observations; do not infer MRF availability."
+    },
+    {
+      "kind": "indian-health-program-scope-review",
+      "ccn": "031305",
+      "target": "https://www.cms.gov/training-education/partner-outreach-resources/american-indian/alaska-native/behavioral-health/service-locator",
+      "final_url": "https://www.cms.gov/training-education/partner-outreach-resources/american-indian/alaska-native/behavioral-health/service-locator",
+      "status": "scope-exempt-indian-health-program; CMS-reported-Tribal-ownership-retained",
+      "title": "Hopi Health Care Center exact-CCN identity and IHS operation",
+      "detail": "Live CMS exact-CCN record identifies HOPI HEALTH CARE CENTER at Highway 264 Milepost 388, Polacca AZ, CCN 031305; CMS reports ownership Tribal. CMS's current Service Locator separately lists Hopi Health Care Center (Keams Canyon) at the same Polacca address with IHS affiliation. The current IHS facility page identifies the site as PHS Indian Health Services, and IHS's federally-operated-facility dashboard lists the Hopi Critical Access Hospital. The ownership value remains separate and unchanged. Direct IHS program operation supports 45 CFR 180.30(b)(2) and 25 USC 1603(12)(A), scope classification only. No MRF availability, pointer linkage or file quality is inferred; prior pointer uncertainty remains historical provenance.",
+      "browser": "official-cms-api-and-ihs-web-review",
+      "http_status": 200,
+      "bytes_read": 0,
+      "content_range": "not applicable; rendered current official records",
+      "identity": "exact-CCN CMS name/location plus matching current IHS site and federally-operated-facility record",
+      "declared_hospital_name": "HOPI HEALTH CARE CENTER",
+      "declared_address": "Highway 264, Milepost 388, Polacca, AZ 86042",
+      "declared_license_state": "AZ",
+      "observed_at": "2026-09-29T03:17:19Z",
+      "proof_file": "reconciliation-hopi-indian-health-program-scope-proof-2026-09-29.json",
+      "next_action": "Retain the scope classification and CMS-reported ownership separately; revisit only on an exact-CCN, operator/program, CMS source, or regulatory change. Do not infer current MRF presence or absence."
+    },
+    {
+      "kind": "third-party-source-audit-trail",
+      "ccn": "330270",
+      "target": "https://ppman.hank.ai/api/v1/price-transparency/hospitals/330270/provenance?download=1",
+      "final_url": "https://ppman.hank.ai/api/v1/price-transparency/hospitals/330270/provenance?download=1",
+      "status": "third-party-full-object-fingerprint-parser-reported-not-retrieved-locally",
+      "title": "HSS exact-file third-party provenance audit trail",
+      "detail": "The public HANK provenance JSON identifies the exact CloudFront URL also linked by the HSS source page and reports a prior fetch as not_modified, a full-object SHA-256, 4,869,712,272 bytes, and parse_status parsed. Those are third-party assertions about a prior object, not locally retrieved source bytes or CMS root metadata. No derived rates were imported; no disposition or unresolved count changed.",
+      "browser": "web-search-and-browser-inspected-public-provenance-endpoint",
+      "http_status": 200,
+      "bytes_read": 888,
+      "identity": "exact-source-url-matched-third-party-fingerprint-only",
+      "declared_hospital_name": "HOSPITAL FOR SPECIAL SURGERY",
+      "source_page_url": "https://www.hss.edu/price-transparency.asp",
+      "mrf_url": "https://d2cg6hcwj0g0z0.cloudfront.net/131624135-1598703019_ny-society-for-the-relief-of-ruptured-and-crippled-maintaing-the-hospital-for-special-surgery_standardcharges.json",
+      "file_sha256": "4651f43af8951420cb76cf1fe47f3e05cf02f461d1048eb106704731b7e6c2ee",
+      "full_file_bytes": 4869712272,
+      "observed_at": "2026-09-28T21:41:00Z",
+      "proof_file": "reconciliation-hss-third-party-exact-file-audit-trail-lead-2026-09-28.json",
+      "next_action": "Keep unresolved; compare this fingerprint only if actual bytes arrive via a materially different authorized route, then independently validate CMS metadata and usable rows. Do not repeat unchanged CloudFront requests."
+    },
+    {
+      "kind": "official-pointer-full-mrf-retrieval",
+      "ccn": "171346",
+      "target": "https://pattersonhc.org/cms-hpt.txt",
+      "final_url": "https://pattersonhc.org/cms-hpt.txt",
+      "status": "current-pointer-and-exact-declared-file-retrieved",
+      "title": "Patterson Health Center current price transparency file",
+      "detail": "Browser inspection confirmed the Patterson-named PARA pricing page and its February 10, 2026 file label. The first-party CMS pointer was then fetched directly (200; 283 bytes; hash-bound) and names this exact PARA CSV. Earlier report-endpoint 500 used dbName=hospital; the current page JavaScript maps its control to dbAMCANTHONYKS. The correctly keyed URL returned and the complete 8,536,635-byte CSV was retained and parsed: CMS 3.0.0 / 2026-02-10, 26,408 pricing rows, exact Patterson legal name, 485 KS-2 Hwy 2 Anthony KS 67003, Kansas license field, NPI and attestation. Current CMS exact-CCN and NPI Registry records corroborate the address/name/NPI. No legal compliance determination is made.",
+      "browser": "Codex In-app Browser plus bounded direct HTTP retrieval",
+      "http_status": 200,
+      "bytes_read": 283,
+      "identity": "exact-current-ccn-pointer-npi-and-full-file-identity-corroborated",
+      "declared_hospital_name": "HOSPITAL DISTRICT NO 6 OF HARPER COUNTY KANSAS",
+      "declared_location_name": "HOSPITAL DISTRICT NO 6 OF HARPER COUNTY KANSAS",
+      "declared_address": "485 KS-2 Hwy 2 Anthony KS 67003",
+      "declared_license_state": "KS",
+      "declared_last_updated": "2026-02-10",
+      "cms_template_version": "3.0.0",
+      "observed_at": "2026-09-29T03:46:10.284Z",
+      "source_page_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Patterson_V2.aspx",
+      "pointer_url": "https://pattersonhc.org/cms-hpt.txt",
+      "mrf_url": "https://apps.para-hcfs.com/PTT//FinalLinks/Reports.aspx?dbName=dbAMCANTHONYKS&type=CDMWithoutLabel&fileType=CSV",
+      "file_sha256": "0c5091ecfb5d8b505f38cee638f554ade512af1a2fa2dbdc1e826ba775068cbc",
+      "proof_file": "reconciliation-patterson-health-center-current-mrf-proof-2026-09-29.json",
+      "next_action": "Keep the full hash-bound file and current pointer linkage as observed evidence. Recheck on the next scheduled crawl or sooner only if the publisher changes the pointer/file; do not repeat the earlier malformed endpoint query."
+    },
+    {
+      "kind": "official-price-page-browser-recheck",
+      "ccn": "131314",
+      "target": "https://www.shoshonehealth.com/patients/registrationbilling/",
+      "final_url": "https://www.shoshonehealth.com/patients/registrationbilling/",
+      "status": "same-legacy-chargemaster-and-vendor-route; no-current-mrf-link-exposed",
+      "title": "Shoshone Medical Center Registration/Billing page recheck",
+      "detail": "The live first-party page still links the previously retained 2020-Charge-Master.csv and a separate Hospital Price Index consumer route; it exposes no separate current CMS CSV/JSON/ZIP. A separate in-app browser attempt to open cms-hpt.txt returned net::ERR_BLOCKED_BY_CLIENT, which is not a source response and does not alter the earlier direct HTTP 200 pointer capture. No new MRF bytes or metadata were obtained; CCN 131314 remains unresolved.",
+      "browser": "Codex in-app browser accessibility tree and rendered screenshot",
+      "http_status": null,
+      "bytes_read": 0,
+      "identity": "first-party-facility-page-route-recheck-only",
+      "declared_hospital_name": "Shoshone Medical Center",
+      "observed_at": "2026-09-29T10:14:00Z",
+      "proof_file": "reconciliation-shoshone-live-page-download-inventory-2026-09-28.json",
+      "source_page_url": "https://www.shoshonehealth.com/patients/registrationbilling/",
+      "pointer_url": "https://www.shoshonehealth.com/cms-hpt.txt",
+      "next_action": "Keep unresolved. Obtain a materially new publisher-managed current MRF route or publisher-provided file; do not interpret this unchanged page or browser client block as MRF verification or absence."
+    },
+    {
+      "kind": "state-designated-organizational-transparency-route-classification",
+      "ccn": "110256",
+      "target": "https://dch.georgia.gov/hospital-transparency-information",
+      "final_url": "https://dch.georgia.gov/hospital-transparency-information",
+      "status": "state-sb505-disclosure-route-distinguished-from-cms-mrf-route",
+      "title": "Georgia DCH listing and current Taylor transparency-page scope",
+      "detail": "Georgia DCH lists Taylor Regional Hospital and links its /transparency.php page from the SB505 organizational/financial disclosures directory. The current page lists 2025 disclosure documents and was last updated 07/08/2026; its footer separately links the EZCOST Price Transparency route. This state listing does not validate a CMS MRF or CCN/file scope. The same-day route regression proof records the EZCOST download declaring an unrelated South Carolina facility; the prior complete Taylor-specific Georgia CSV remains retained separately.",
+      "browser": "Codex in-app browser accessibility tree",
+      "http_status": null,
+      "bytes_read": 0,
+      "identity": "official-state-sb505-route-classification-only",
+      "declared_hospital_name": "Taylor Regional Hospital",
+      "declared_address": "222 Perry Hwy, Hawkinsville, GA 31036",
+      "observed_at": "2026-09-29T10:23:25Z",
+      "proof_file": "reconciliation-taylor-georgia-dch-transparency-route-scope-2026-09-29.json",
+      "source_page_url": "https://taylorregional.org/transparency.php",
+      "next_action": "Do not associate the current EZCOST download with Taylor Regional or the SB505 disclosure page. Require a corrected Taylor-specific CMS pointer/current file or authoritative publisher mapping."
+    },
+    {
+      "kind": "official-page-file-full-mrf-retrieval",
+      "ccn": "351330",
+      "target": "https://hospitalpricetransparencyfiles.com/west-river-health-services/450340688_West-River-Health-Services_standardcharges.csv",
+      "final_url": "https://hospitalpricetransparencyfiles.com/west-river-health-services/450340688_West-River-Health-Services_standardcharges.csv",
+      "status": "current-page-file-full-bytes-retrieved",
+      "title": "West River Regional Medical Center current price transparency CSV",
+      "detail": "The current official WRHS pricing page links this exact CSV. Full 10251599-byte retrieval parses as 43960 consistent-width rows with gross, cash, payer and negotiated-dollar values. Exact CCN CMS enrollment matches the facility legal name, DBA, campus address and primary NPI. The current cms-hpt.txt is separately retrieved and hash-bound but names a different target returning 404.",
+      "browser": "Codex in-app browser plus bounded direct HTTP retrieval",
+      "http_status": 200,
+      "bytes_read": 10251599,
+      "identity": "exact-current-ccn-enrollment-page-file-and-full-file-identity-corroborated",
+      "declared_hospital_name": "West River Health Services",
+      "declared_address": "1000 Highway 12, Hetting, ND 58639",
+      "declared_license_state": "ND",
+      "declared_last_updated": "2026-02-18",
+      "cms_template_version": "3.0.0",
+      "observed_at": "2026-09-29T11:34:00Z",
+      "source_page_url": "https://www.wrhs.com/index.php",
+      "pointer_url": "https://www.wrhs.com/cms-hpt.txt",
+      "mrf_url": "https://hospitalpricetransparencyfiles.com/west-river-health-services/450340688_West-River-Health-Services_standardcharges.csv",
+      "file_sha256": "42194caeb94291a56f9a79442f39542715498ed554e2893aeb30d8e8c11b2668",
+      "proof_file": "reconciliation-west-river-regional-current-mrf-proof-2026-09-29.json",
+      "next_action": "Ask the publisher to correct cms-hpt.txt to the current page-linked file, and separately verify additional NPIs if needed; retain this exact page-file evidence and recheck only on a publisher change or scheduled crawl."
+    },
+    {
+      "kind": "official-root-pointer-current-full-retrieval",
+      "ccn": "250099",
+      "target": "https://umc.edu/cms-hpt.txt",
+      "final_url": "https://umc.edu/cms-hpt.txt",
+      "status": "content-bearing-current-pointer-retrieved-greenwood-entry-omitted",
+      "title": "UMMC current root pointer and Greenwood pricing scope",
+      "detail": "Direct HTTP retrieval of the current UMMC root pointer returned 200 text/plain; 1,275 bytes; full response SHA-256 bound. A sanitized parse found exactly four current locations and MRF URLs (Jackson, Grenada, Holmes County and Madison) and no Greenwood entry. The rendered current UMMC pricing page likewise lists those four hospitals and no Greenwood file. No MRF is assigned to Greenwood; the pointer response includes contact fields that were deliberately omitted from retained evidence.",
+      "browser": "Codex in-app browser plus bounded direct HTTP retrieval",
+      "http_status": 200,
+      "bytes_read": 1275,
+      "identity": "exact-ummc-source-pointer-and-page-scope-checked-no-greenwood-mrf-linkage",
+      "observed_at": "2026-09-29T11:54:47Z",
+      "source_page_url": "https://umc.edu/Healthcare/Patients-and-Visitors/Bill%20Pay/UMMC%20Pricing.html",
+      "pointer_url": "https://umc.edu/cms-hpt.txt",
+      "mrf_url": "",
+      "file_sha256": "",
+      "proof_file": "reconciliation-greenwood-ummc-current-root-pointer-crosscheck-2026-09-29.json",
+      "next_action": "Obtain a publisher-confirmed Greenwood-specific current MRF or a publisher explanation mapping CCN 250099 to the covered file/location, then retrieve and validate exact bytes, facility identity, Mississippi metadata, date, version and usable pricing rows. Keep the four current UMMC campus files excluded unless publisher/CMS evidence maps one to Greenwood."
+    },
+    {
+      "kind": "official-municipal-transition-crosscheck",
+      "ccn": "380005",
+      "target": "https://ashlandoregon.gov/m/newsflash/Archive/Item/512?arcId=1677",
+      "final_url": "https://ashlandoregon.gov/m/newsflash/Archive/Item/512?arcId=1677",
+      "status": "city-confirms-satellite-transition-and-ends-affiliation-agreement",
+      "title": "Archived - City and Asante mutually end Hospital Affiliation Agreement",
+      "detail": "The City notice independently corroborates the post-transition relationship and adds a dated local-government event: the City-Asante affiliation agreement ended on 2026-06-12. It is not a Medicare certification or termination record, does not establish the effective status of CCN 380005, and does not identify which CCNs are covered by the current Asante MRF. The publisher's combined Rogue Regional/Ashland pricing-page scope was already retained separately; the 2026-09-29 reread is unchanged. Do not infer CCN closure, current enrollment, MRF completeness, or compliance from this notice.",
+      "browser": "web-browser-official-municipal-archive",
+      "http_status": 200,
+      "bytes_read": 0,
+      "identity": "new-independent-municipal-source-instance-corroborates-transition-and-local-affiliation-agreement-termination",
+      "declared_hospital_name": "Ashland Community Hospital",
+      "declared_location_name": "Ashland Community Hospital / Rogue Regional satellite campus",
+      "declared_address": "",
+      "declared_license_state": "OR",
+      "declared_last_updated": "2026-06-24",
+      "cms_template_version": "",
+      "observed_at": "2026-09-29T12:17:24Z",
+      "proof_file": "reconciliation-asante-ashland-city-affiliation-termination-crosscheck-2026-09-29.json",
+      "source_page_url": "https://ashlandoregon.gov/m/newsflash/Archive/Item/512?arcId=1677",
+      "pointer_url": "https://www.asante.org/cms-hpt.txt",
+      "mrf_url": "https://www.asante.org/app/files/public/361f9b00-187a-4091-ba37-1c3308bed5eb/AsanteRogueRegionalMedicalCenter_StandardCharges.zip",
+      "file_sha256": "",
+      "next_action": "Keep CCN 380005 unresolved. Obtain an effective-dated post-2026-05-22 CMS/MAC status record, and retrieve the already-documented publisher-linked combined ZIP through a materially different authorized byte-serving route. Validate exact archive bytes, Ashland location/address/state, CMS date/version and usable rows; do not infer active or terminated Medicare enrollment from the snapshot alone or assign the parent file from operator relationship alone."
+    },
+    {
+      "kind": "official-340b-quarterly-medicaid-exclusion-crosscheck",
+      "ccn": "380005",
+      "target": "https://340bopais.hrsa.gov/ReportsMedicaidExclusionFile",
+      "final_url": "https://340bopais.hrsa.gov/ReportsMedicaidExclusionFile",
+      "status": "q4-2026-export-retrieved-no-exact-ccn-id-or-npi-match",
+      "title": "340B OPAIS Medicaid Exclusion Files",
+      "detail": "The official Q4 2026 Medicaid Exclusion File was generated and inspected. Its 144,044 data rows contain no exact 340BID DSH380005 or NPI 1730628827 token. HRSA FY26 audit results separately list Ashland Community Hospital / DSH380005 with an incorrect EIN record, no sanction, and corrective action pending. HRSA's MEF is for Medicaid fee-for-service 340B carve-in identifiers; neither source establishes Medicare status or hospital MRF coverage.",
+      "browser": "Codex in-app browser; official HRSA report export",
+      "bytes_read": 4412798,
+      "identity": "new-official-340b-program-record-and-q4-mef-crosscheck-not-medicare-or-hpt-file-evidence",
+      "declared_hospital_name": "Ashland Community Hospital",
+      "declared_location_name": "HRSA FY26 audit entity DSH380005; no exact Q4 MEF DSH380005 or NPI 1730628827 match",
+      "declared_address": "",
+      "declared_license_state": "OR",
+      "declared_last_updated": "2026-07-29",
+      "cms_template_version": "",
+      "observed_at": "2026-09-29T12:42:37Z",
+      "proof_file": "reconciliation-asante-ashland-hrsa-q4-mef-crosscheck-2026-09-29.json",
+      "source_page_url": "https://340bopais.hrsa.gov/ReportsMedicaidExclusionFile",
+      "pointer_url": "",
+      "mrf_url": "",
+      "file_sha256": "",
+      "source_document_bytes": 4412798,
+      "source_document_sha256": "8907e56071cba1c2a932819b06ddf57fa82a3e13427af7b73e3e10d6a16df6ea",
+      "next_action": "Keep CCN 380005 unresolved. Obtain effective-dated Medicare certification or termination status on or after 2026-05-22, and retrieve the already-documented publisher-linked combined Asante ZIP through a materially different authorized byte-serving route. Validate exact archive bytes, Ashland identity/address/state, CMS date/version and usable rows; do not infer Medicare status from 340B program records or assign the parent file from operator relationship alone."
+    },
+    {
+      "kind": "official-pointer-full-mrf-retrieval",
+      "ccn": "501336",
+      "target": "https://www.masonhealth.com/cms-hpt.txt",
+      "final_url": "https://hospitalpricetransparencyfiles.com/public-hospital-district-no-1-of-mason-county/911529293_Public-Hospital-District-No-1-of-Mason-County_standardcharges.csv",
+      "status": "current-root-pointer-and-exact-declared-mrf-retrieved",
+      "title": "Mason Health disclosure and Mason General Hospital machine-readable file",
+      "detail": "The first-party Mason Health disclosure page returned HTTP 200 and linked the Mason General pricing page; the current root pointer returned HTTP 200 and declared the exact CSV URL below. The complete 122818701-byte CSV was streamed and hash-bound, with 623781 pricing rows, all with 33 columns and non-empty description, gross charge, payer and negotiated-dollar values. Its header names Public Hospital District No 1 of Mason County / Mason General Hospital, Shelton WA, license PH60008883, CMS 3.0.0, March 10 2026 and an affirmative attestation. CMS CCN 501336 and three active NPI records match the legal entity and address. The full file was not retained locally; a 262144-byte sample is retained. The pricing-page 07/08/26 label and HTTP Last-Modified July 28 2026 remain distinct from the declared MRF date. No legal compliance conclusion is made.",
+      "browser": "web page open, in-app browser attempt, and bounded direct HTTP retrieval",
+      "http_status": 200,
+      "bytes_read": 122818701,
+      "identity": "exact-current-root-pointer-cms-ccn-npi-and-full-file-identity-corroborated",
+      "declared_hospital_name": "Public Hospital District No 1 of Mason County",
+      "declared_location_name": "Mason General Hospital",
+      "declared_address": "901 Mountain View Drive, Shelton, WA  98584",
+      "declared_license_state": "WA",
+      "declared_last_updated": "3/10/2026",
+      "cms_template_version": "3.0.0",
+      "observed_at": "2026-09-29T17:11:55Z",
+      "source_page_url": "https://www.masonhealth.com/patients/disclosure-of-healthcare-charges",
+      "pricing_tool_url": "https://hospitalpricelists.org/MasonGeneralHospital",
+      "pointer_url": "https://www.masonhealth.com/cms-hpt.txt",
+      "mrf_url": "https://hospitalpricetransparencyfiles.com/public-hospital-district-no-1-of-mason-county/911529293_Public-Hospital-District-No-1-of-Mason-County_standardcharges.csv",
+      "file_sha256": "b0a16a970c272aa7f0c1718812fd9da67f1138ca1187768ad36fc216a5812191",
+      "file_sample_sha256": "45ce8408081b3ea6ff60b4702c9985f74949ca1ee027796f8840abccc7c7baff",
+      "proof_file": "reconciliation-mason-general-hospital-current-full-mrf-proof-2026-09-29.json",
+      "next_action": "Retain the pointer/file provenance and recheck on the next scheduled crawl or on a source/validator change. Preserve the distinction between the MRF-declared March 10 date, the pricing-page 07/08/26 label and the July 28 server Last-Modified value. Do not infer a later MRF update from the page/server stamps or make a legal-compliance claim."
+    },
+    {
+      "kind": "official-pricing-page-link-recheck",
+      "ccn": "090004",
+      "target": "https://www.medstarhealth.org/price-transparency-disclosures",
+      "final_url": "https://www.medstarhealth.org/price-transparency-disclosures",
+      "status": "current-page-links-same-known-file-csv-bytes-not-retrieved",
+      "title": "Price Transparency Healthcare | MedStar Health",
+      "detail": "Codex in-app browser rendered the current official page and exposed a dedicated standard-charges link labeled for MedStar Georgetown University Hospital. Its exact target is the same 2026 Georgetown CSV URL in the retained complete-file proof. Navigating the CSV through the browser reader failed on unsupported text/csv content type, yielding no new bytes or metadata. This confirms current page-to-file linkage only; the literal license_number|MD conflict remains open.",
+      "browser": "Codex in-app browser accessibility review",
+      "http_status": "page-rendered; CSV reader unsupported content-type",
+      "bytes_read": 0,
+      "content_range": "",
+      "identity": "official-page facility-specific Georgetown standard-charges link matches retained complete-file URL exactly",
+      "declared_hospital_name": "MedStar Georgetown University Hospital",
+      "declared_location_name": "MedStar Georgetown Hospital",
+      "declared_address": "",
+      "declared_license_state": "",
+      "declared_last_updated": "",
+      "cms_template_version": "",
+      "observed_at": "2026-09-30T14:48:51Z",
+      "proof_file": "reconciliation-medstar-georgetown-current-pricing-page-link-recheck-2026-09-30.json",
+      "source_page_url": "https://www.medstarhealth.org/price-transparency-disclosures",
+      "pointer_url": "https://medstarhealth.org/cms-hpt.txt",
+      "mrf_url": "https://www.medstarhealth.org/-/media/project/mho/medstar/billing-and-insurance/2026/522218584_medstar_georgetown_university_hospital_standardcharges.csv",
+      "file_sha256": "216bf4e59243abae3daef7843f910ebdb1e1226bc1fc181c4226e4fb07ee09d3",
+      "next_action": "Wait for a changed MRF, published correction or publisher clarification; do not repeat this unchanged page/file check absent a material source change."
     }
   ]
 }

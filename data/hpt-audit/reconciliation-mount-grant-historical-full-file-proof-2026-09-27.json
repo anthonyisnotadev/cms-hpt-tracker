@@ -1,0 +1,69 @@
+{
+  "ccn": "291300",
+  "observed_at": "2026-09-27T22:16:00Z",
+  "official_site": "https://mgghnv.org/",
+  "official_pricing_page": "https://mgghnv.org/information-center/price-transparency/",
+  "official_pricing_page_observation": "The current first-party page labels the Pricing Summary last updated September 10, 2025 and links the exact raw GitHub path recorded below as its Machine Readable File.",
+  "official_page_last_updated": "2025-09-10",
+  "root_pointer_url": "https://mgghnv.org/cms-hpt.txt",
+  "root_pointer_status": 200,
+  "root_pointer_sha256": "e8a4d5f58658a2e5897d2f8d6f3ab838c43b8c450ae000e1439f3cd520fcdf1b",
+  "pointer_declared_mrf_url": "https://raw.githubusercontent.com/Mt-Grant-General-Hospital/Pricing-Transparency/refs/heads/main/820299396_MtGrantGeneralHospital_standardcharges.JSON",
+  "current_pointer_target_status": 404,
+  "current_pointer_target_sha256": "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed",
+  "publisher_repository_url": "https://github.com/Mt-Grant-General-Hospital/Pricing-Transparency",
+  "historical_file_commit": {
+    "commit": "d445dd438ccc61bbd7c6b0ede71edbdeddf92a72",
+    "commit_url": "https://github.com/Mt-Grant-General-Hospital/Pricing-Transparency/commit/d445dd438ccc61bbd7c6b0ede71edbdeddf92a72",
+    "commit_date": "2025-09-12T20:45:02Z",
+    "author": "Mt-Grant-General-Hospital",
+    "signature_verified_by_github": true,
+    "commit_message": "Create 820299396_MtGrantGeneralHospital_standardcharges.JSON"
+  },
+  "historical_file_url": "https://raw.githubusercontent.com/Mt-Grant-General-Hospital/Pricing-Transparency/d445dd438ccc61bbd7c6b0ede71edbdeddf92a72/820299396_MtGrantGeneralHospital_standardcharges.JSON",
+  "historical_file_http_status": 200,
+  "historical_file_content_type": "text/plain; charset=utf-8",
+  "historical_file_bytes": 40941755,
+  "historical_file_sha256": "7c28d9c0057b7a0458c5e009785e7a4ec895ed4cbd9ea253e61adb82037035e7",
+  "content_validation": {
+    "full_response_downloaded_and_json_parsed": true,
+    "hospital_name": "Mt. Grant General Hospital",
+    "location_name": ["Mt Grant General Hospital"],
+    "hospital_address": ["200 S. A St., Hawthorne, NV 89415"],
+    "license_state": "NV",
+    "license_number": "RVH-651",
+    "last_updated_on": "2025-09-10",
+    "cms_template_version": "2.0.0",
+    "attestation_confirm_affirmation": true,
+    "standard_charge_information_entries": 3415,
+    "entries_with_standard_charges": 3415,
+    "entries_with_numeric_min_or_max": 3415,
+    "distinct_named_payers": 10,
+    "complete_current_schema_validation": false
+  },
+  "facility_identity_corroboration": {
+    "cms_provider_data_url": "https://data.cms.gov/provider-data/api/1/datastore/query/xubh-q36u/0?conditions%5B0%5D%5Bproperty%5D=facility_id&conditions%5B0%5D%5Bvalue%5D=291300&conditions%5B0%5D%5Boperator%5D=%3D",
+    "cms_provider_data_status": 200,
+    "cms_provider_data_response_bytes": 6681,
+    "cms_provider_data_response_sha256": "608dab4d65cbe31c17c7874ab9190a484989815220ecc07066f983cdb8b7c937",
+    "cms_record": {
+      "facility_id": "291300",
+      "facility_name": "MOUNT GRANT GENERAL HOSPITAL",
+      "address": "200 SOUTH A ST",
+      "citytown": "HAWTHORNE",
+      "state": "NV",
+      "zip_code": "89415"
+    },
+    "official_page_address_variant": "200 S A St., Hawthorne, NV 89451",
+    "interpretation": "The exact CMS record and archived MRF agree on facility name, 200 South A Street, Hawthorne, Nevada, and ZIP 89415. The current official page displays ZIP 89451; retain that source-specific ZIP variant rather than silently normalizing it."
+  },
+  "deletion_event": {
+    "commit": "c60d9c9b5edcae7eb58595a37439c03d9597f3b9",
+    "commit_url": "https://github.com/Mt-Grant-General-Hospital/Pricing-Transparency/commit/c60d9c9b5edcae7eb58595a37439c03d9597f3b9",
+    "commit_date": "2026-03-31T19:52:45Z",
+    "commit_message": "Delete 820299396_MtGrantGeneralHospital_standardcharges.JSON"
+  },
+  "classification": "publisher-linked historical CMS MRF recovered from the publisher's immutable Git commit; current branch target remains 404; file is over 365 days old and retained only as stale historical evidence",
+  "disposition": "verified-stale-mrf",
+  "next_action": "Obtain a current replacement CMS MRF and verify its live pointer/page linkage, exact bytes, identity, Nevada address/state, declared date/version and usable rows. Keep the recovered 2025 file labeled stale and historical; do not imply the current branch URL is accessible or that current compliance is established."
+}

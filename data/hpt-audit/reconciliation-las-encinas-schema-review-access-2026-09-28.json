@@ -1,0 +1,53 @@
+{
+  "audit_id": "reconciliation-las-encinas-schema-review-access-2026-09-28",
+  "ccn": "054078",
+  "hospital_name": "AURORA LAS ENCINAS",
+  "observed_at": "2026-09-28T02:01:02Z",
+  "purpose": "Attempt the previously queued CSV schema/usability review using the exact already-reviewed first-party pointer target; this was not a pointer-presence retry.",
+  "prior_successful_file_evidence": {
+    "proof_file": "reconciliation-aurora-las-encinas-pointer-repaired-proof-2026-09-25.json",
+    "observed_at": "2026-09-25T07:05:00Z",
+    "http_status": 200,
+    "bytes": 8394,
+    "sha256": "f83776cf9bb279af34c8e820fe1a5e10b6a5c4192b2521f02bdc02793f8e3402",
+    "bounded_header_observation": "Aurora Las Encinas, LLC; dba Aurora Las Encinas Hospital; report date 2025-03-21."
+  },
+  "current_schema_review_attempt": {
+    "url": "https://www.lasencinashospital.com/wp-content/uploads/2026/07/32-0039155_Aurora-Las-Encinas-LLC_standardcharges_1.csv",
+    "direct_http_status": 403,
+    "direct_response_content_type": "text/html; charset=UTF-8",
+    "direct_response_bytes": 5726,
+    "direct_response_sha256": "1a359797114ed099b7052772b4311f43a170797d98b512c3f2d66815d59d0ff7",
+    "direct_response_interpretation": "Cloudflare managed challenge HTML; not CSV bytes.",
+    "browser_navigation_result": "ERR_BLOCKED_BY_CLIENT",
+    "browser_method": "Normal in-app browser navigation to the exact known URL; no challenge or access control was bypassed."
+  },
+  "alternate_route_retrieval": {
+    "observed_at": "2026-09-28T04:41:00Z",
+    "method": "PowerShell Invoke-WebRequest against the exact official page/pointer-linked URL; no challenge or access control was bypassed",
+    "http_status": 200,
+    "content_type": "text/csv; charset=utf-8",
+    "last_modified": "2026-08-17T19:53:09Z",
+    "bytes": 8394,
+    "sha256": "f83776cf9bb279af34c8e820fe1a5e10b6a5c4192b2521f02bdc02793f8e3402",
+    "matches_prior_successful_full_file": true,
+    "csv_review": {
+      "parser": "scripts/hpt/lib/util.js parseCSV RFC4180 parser; legacy preamble skipped to Service table header",
+      "header_columns": 23,
+      "data_rows": 57,
+      "rows_with_price_values": 51,
+      "width_consistent": true,
+      "declared_facility": "Aurora Las Encinas, LLC; dba Aurora Las Encinas Hospital",
+      "report_date": "2025-03-21",
+      "declared_address": "",
+      "declared_license_state": "",
+      "cms_template_version": "",
+      "cms_3_0_metadata_present": false
+    }
+  },
+  "interpretation": "The alternate ordinary HTTP route returned the exact same 8,394-byte hash-bound CSV as the prior successful file. Its legacy-style layout contains 57 data rows across 23 columns, with price values in 51 rows, but lacks facility address, license state, CMS template version, and other CMS 3.0 root metadata. This completes the queued structural/usability review without changing the unresolved CMS metadata limitation; do not infer compliance.",
+  "schema_review_complete": true,
+  "disposition": "pointer-linked-file-review-pending",
+  "unresolved_count_change": 0,
+  "next_action": "Do not retry this same URL through the same blocked clients absent a material route/access change. Obtain a publisher-provided copy or a permitted route that returns the exact file bytes, then review its full schema and rows against the retained hash and official facility identity/address."
+}

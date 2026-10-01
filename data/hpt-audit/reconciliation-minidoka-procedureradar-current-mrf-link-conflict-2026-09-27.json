@@ -1,0 +1,55 @@
+{
+  "ccn": "131319",
+  "hospital_name": "Minidoka Memorial Hospital",
+  "observed_at": "2026-09-27T23:53:20Z",
+  "third_party_source_page": "https://www.procedureradar.com/sleep-study/boise",
+  "third_party_claims": {
+    "provider_row": "Minidoka Memorial Hospital",
+    "current_listing_label": "Minidoka Memorial Hospital MRF (September 1, 2026)",
+    "page_methodology": "The page says its prices come from hospital-published source files and were updated monthly; page footer says last updated September 1, 2026."
+  },
+  "linked_file_observation": {
+    "link_text": "View File",
+    "url": "https://minidokamemorial.org/wp-content/uploads/2020/12/Chargemaster-.xls",
+    "host_is_facility_domain": true,
+    "path_implies_2020_upload": true,
+    "web_reader_result": "The link resolves to an Excel object; this web reader cannot parse application/vnd.ms-excel and returned Unsupported content-type.",
+    "prior_exact_url_observation": {
+      "proof_file": "reconciliation-shoshone-minidoka-current-pointer-recheck-2026-09-26.json",
+      "http_status": 200,
+      "content_type": "application/vnd.ms-excel",
+      "bytes": 507392,
+      "sha256": "637642e6ad48d7731dd8d3bc7f04d9d0b50848387bca9442501f17fe2dd3205f",
+      "last_modified": "2025-06-03T21:53:53Z",
+      "observed_format": "OLE compound document with .xls extension; no CMS 3.0.0 metadata or facility header was established."
+    }
+  },
+  "independent_current_hospital_evidence": {
+    "cms_pointer_proof": "reconciliation-shoshone-minidoka-current-pointer-recheck-2026-09-26.json",
+    "pointer_url": "https://minidokamemorial.org/cms-hpt.txt",
+    "pointer_declared_mrf_url": "https://minidokamemorial.org/wp-content/uploads/2024/09/820291854_minidoka-memorial-hospital_standardcharges.csv",
+    "last_observed_target_status": 404,
+    "status_not_rechecked": true,
+    "reason_not_rechecked": "No source change was indicated; the third-party page points to the already-evidenced 2020 Excel object, not a new CMS MRF target."
+  },
+  "assessment": {
+    "evidence_gain": "A current third-party price page calls the Minidoka row a September 2026 MRF but its raw-file link resolves to the already documented first-party-domain 2020/12 Excel chargemaster, whose retained exact-URL observation is an OLE .xls without CMS-template metadata. This is a new source-claim/file-link discrepancy, not new MRF bytes.",
+    "mrf_recovered": false,
+    "ccn_attribution_from_third_party_claim": false,
+    "prices_imported": false,
+    "disposition_effect": "none; retain CCN 131319 as unresolved because the pointer-declared 2024 CMS CSV remains at its prior 404 observation and no current CMS MRF bytes were found.",
+    "next_action": "Obtain a restored pointer-declared target or publisher-provided current CMS CSV/JSON/ZIP; validate exact Minidoka identity, Idaho address/state, declared date/version and usable rows. Do not treat the 2020 Excel chargemaster or third-party price summary as the current MRF."
+  },
+  "latest_live_browser_recheck_2026_09_29": {
+    "observed_at": "2026-09-29T14:39:26Z",
+    "source_page": "https://www.procedureradar.com/hospitals/minidoka-memorial-hospital",
+    "browser_observation": "Connected in-app browser rendered the current Minidoka profile. It labels the source Minidoka Memorial Hospital MRF (September 1, 2026), reports 2026/09 last MRF update, says 101 procedures, and says No address on file.",
+    "raw_file_link_observation": "Clicking Download Raw MRF File opened a new tab/download target at https://minidokamemorial.org/wp-content/uploads/2020/12/Chargemaster-.xls, the exact 2020/12 Excel object whose 507,392-byte OLE .xls signature, SHA-256 637642e6ad48d7731dd8d3bc7f04d9d0b50848387bca9442501f17fe2dd3205f and Last-Modified 2025-06-03 are already retained. No new bytes were downloaded in this recheck.",
+    "source_claim_vs_target": "The page's September 2026 label is not supported by a new raw-file URL: the live download control still targets the retained legacy 2020 Excel chargemaster. ProcedureRadar also supplies no facility address on the page.",
+    "first_party_pointer_status": "Unchanged last verified evidence: the official root pointer declares the 2024/09 CSV target; that exact URL returned 404 in the retained 2026-09-26 recheck. Not retried because no pointer/source change was observed.",
+    "evidence_classification": "new dated connected-browser observation of third-party claim and exact link target; recheck of already known URL, not new MRF bytes",
+    "disposition_effect": "none; retain CCN 131319 unresolved for current CMS-format MRF access/metadata",
+    "count_effect": 0,
+    "next_action": "Do not repeat the unchanged ProcedureRadar download click or current pointer target absent a material source/access change. Seek a restored pointer-declared CMS CSV/JSON/ZIP or publisher-provided exact copy; retain and inspect new bytes for Minidoka identity, Rupert Idaho location, declared date/version, attestation and usable rows. Do not credit the 2020 XLS or third-party prices as a current MRF."
+  }
+}

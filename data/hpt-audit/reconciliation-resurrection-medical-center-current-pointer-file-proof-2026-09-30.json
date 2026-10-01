@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "ccn": "140117",
+  "hospital_name": "AMITA HEALTH RESURRECTION MEDICAL CENTER",
+  "observed_at": "2026-09-30T04:10:00Z",
+  "official_site": "https://resurrectionmedicalcenter.com/",
+  "official_pricing_page": "https://resurrectionmedicalcenter.com/price-transparency/",
+  "official_page_observation": {
+    "browser_rendered": true,
+    "page_heading": "Price Transparency",
+    "section": "Standard Charges",
+    "linked_file_url": "https://resurrectionmedicalcenter.com/wp-content/uploads/2026/09/0006454_ResurrectionMedicalCenter_StandardCharges.json",
+    "footer_address": "7435 W. Talcott Avenue, Chicago, IL 60631"
+  },
+  "current_pointer": {
+    "url": "https://resurrectionmedicalcenter.com/cms-hpt.txt",
+    "http_status": 200,
+    "content_type": "text/plain",
+    "bytes": 320,
+    "sha256": "f1b3b421782da911284df4497b84148e2b982ec7d3cee52f3cc32a6c39259394",
+    "text_redacted": "location-name: Resurrection Medical Center\nsource-page-url: https://resurrectionmedicalcenter.com/price-transparency/\nmrf-url: https://resurrectionmedicalcenter.com/wp-content/uploads/2026/09/0006454_ResurrectionMedicalCenter_StandardCharges.json\ncontact-name: hpt-obf:v1:6GPqOVWS_KqFc99B.OpiFQFpKsseD8-Sjhr-Sgg.GyY5e9QGVuWP7g\ncontact-email: hpt-obf:v1:vvJN9liFXcr161lU.uGIM3ZDHcuBq7KmraPhUgw.7bRiyEYvZIk2ZA"
+  },
+  "prior_file": {
+    "url": "https://resurrectionmedicalcenter.com/wp-content/uploads/2026/04/992392397_ResurrectionMedicalCenter_StandardCharges.JSON",
+    "source_snapshot": "2026-04 manifest entry",
+    "observed_http_status": 200,
+    "bytes": 45927335,
+    "sha256": "157179a1f01644de02c3b617c547e9a0d74c76a6eb1e98d453f477dceb82e25",
+    "declared_version": "3.0",
+    "declared_last_updated": "2026-03-17"
+  },
+  "current_mrf": {
+    "url": "https://resurrectionmedicalcenter.com/wp-content/uploads/2026/09/0006454_ResurrectionMedicalCenter_StandardCharges.json",
+    "http_status": 200,
+    "content_type": "application/json",
+    "bytes": 45927333,
+    "sha256": "9ba0e0ce3923d8c6af10041b35783f41ee3ce2715b44e55b5d47158915324947",
+    "raw_artifact": "cms_data/hpt/nationwide-verification/file-byte-proof/9BA0E0CE3923D8C6AF10041B35783F41EE3CE2715B44E55B5D47158915324947.json",
+    "declared_hospital_name": "Ressurection Medical Center",
+    "declared_location_name": "Ressurection Medical Center",
+    "declared_address": "7435 West Talcott Ave., Chicago, Illinois 60631",
+    "declared_license_number": "0006454",
+    "declared_license_state": "IL",
+    "declared_npi": [
+      "1811735228",
+      "1700695566"
+    ],
+    "declared_last_updated": "2026-09-01",
+    "declared_version": "3.0",
+    "attestation_present": true,
+    "attestation_confirmed": true,
+    "parsed_charge_rows": 5189,
+    "first_record_has_description": true,
+    "first_record_has_gross_charge": true,
+    "first_record_has_payer_and_negotiated_dollar": true,
+    "cms_validator": {
+      "cli_package": "@cmsgov/hpt-validator-cli@1.10.8",
+      "dictionary_version": "3.0.0",
+      "result": "no errors, 1 alert",
+      "alert": "The value in this MRF's version data element \"3.0\" does not match the expected template version \"3.0.0\" for the data dictionary requirements selected for validation."
+    }
+  },
+  "identity_review": {
+    "cms_roster_ccn": "140117",
+    "cms_roster_name": "AMITA HEALTH RESURRECTION MEDICAL CENTER",
+    "cms_roster_address": "7435 W TALCOTT AVENUE, CHICAGO, IL 60631",
+    "official_current_name": "Resurrection Medical Center",
+    "official_current_address": "7435 W. Talcott Avenue, Chicago, IL 60631",
+    "file_street_city_state_zip_agree": true,
+    "npi_crosswalk_verified": false
+  },
+  "evidence_gain": "New current first-party page, root-pointer, and full MRF evidence replaces the April-linked object and resolves the specific pointer-to-facility ambiguity. Compared with the previously captured April MRF, current JSON is 2 bytes smaller and SHA-256 differs. The old date/version could not be treated as the current publication; the current linked object declares 2026-09-01 but still has noncanonical version 3.0.",
+  "disposition_effect": "The exact current pointer-linked file is verified-current-mrf under the tracker's CMS v3-family rule (literal 3.0 or 3.0.0). The CMS validator returned no errors and one preferred-literal alert (3.0 vs 3.0.0); preserve that alert as a warning and the exact literal as evidence, not as an automatic tracker downgrade. This is a version-evidence finding, not a legal compliance certification.",
+  "next_action": "Recheck the official page and root pointer only on a source change; request corrected CMS template metadata/file from the publisher or capture a new exact linked file that declares 3.0.0, then rerun v3.0 validation."
+}

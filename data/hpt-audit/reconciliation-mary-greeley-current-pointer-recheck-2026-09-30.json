@@ -1,0 +1,58 @@
+{
+  "ccn": "160030",
+  "hospital_name": "Mary Greeley Medical Center",
+  "observed_at": "2026-09-30T15:58:55.486Z",
+  "purpose": "Reconcile the newly materialized exact root-pointer row and perform one bounded current-file retry; preserve file identity evidence separately from transport outcome.",
+  "official_facility_page": "https://www.mgmc.org/",
+  "official_pricing_page": "https://www.mgmc.org/patients-visitors/billing-financial/price-transparency/",
+  "official_pricing_page_current_observation": {
+    "observed_at": "2026-09-30",
+    "page_states_cms_standard_charges_are_published": true,
+    "page_file_url": "https://mgmc.pt.panaceainc.com/MRFDownload/marygreeley/marygreeley",
+    "web_reader_download_result": "HTTP 500 redirected to the third-party Download.aspx endpoint; that endpoint is inaccessible to the reader.",
+    "browser_file_navigation_result": "ERR_BLOCKED_BY_CLIENT"
+  },
+  "root_pointer_observation": {
+    "pointer_url": "https://www.mgmc.org/cms-hpt.txt",
+    "observed_at": "2026-09-29T18:07:47.472Z",
+    "http_status": 200,
+    "bytes": 279,
+    "sha256": "e62111ea561a53741eea0e27f31fbd6b2ba5fe982bd21ed0d7e31c6620dd06f9",
+    "raw_pointer_retained_in_private_corpus": true,
+    "normalized_entry": {
+      "location_name": "Mary Greeley Medical Center",
+      "source_page_url": "https://www.mgmc.org/patients-visitors/billing-financial/estimates-charges/",
+      "mrf_url": "https://mgmc.pt.panaceainc.com/MRFDownload/marygreeley/marygreeley",
+      "matched_ccns": ["160030"]
+    },
+    "index_note": "The successful pointer bytes and exact link were already in crawl-state, but the prior derived cms_hpt_entries.csv omitted their current hash/link. The 2026-09-30 reindex exposed the cached entry; this is a local index repair, not a new pointer retrieval."
+  },
+  "bounded_mrf_recheck": {
+    "url": "https://mgmc.pt.panaceainc.com/MRFDownload/marygreeley/marygreeley",
+    "checked_at": "2026-09-30T15:58:55.486Z",
+    "method": "HEAD plus bounded Range GET; no full download",
+    "head_http_status": 200,
+    "range_http_status": null,
+    "body_bytes_read": 0,
+    "content_type": "application/octet-stream",
+    "range_error": "socket hang up",
+    "disposition_effect": "none; transport-only; no current file header was received"
+  },
+  "prior_complete_file_proof": {
+    "proof_file": "reconciliation-mary-greeley-current-file-proof.json",
+    "observed_at": "2026-09-19",
+    "url": "https://mgmc.pt.panaceainc.com/MRFDownload/marygreeley/marygreeley",
+    "bytes": 122097133,
+    "sha256": "871027561434C859B8957F990288B70419092E5343EDDE10BF4675237034BA46",
+    "declared_name": "Mary Greeley Medical Center",
+    "declared_address": "1111 Duff Ave, Ames Iowa 50010",
+    "declared_license_state": "IA",
+    "declared_file_date": "12/31/2025",
+    "declared_as_of_date": "9/30/2025",
+    "declared_cms_version": "3.0.0",
+    "evidence_status": "dated complete-file evidence; not revalidated by the 2026-09-30 failed range request"
+  },
+  "interpretation": "The current first-party page and hash-corroborated root pointer now independently name the exact same facility-specific MRF URL. The most recent bounded file attempt returned no body bytes, so it establishes neither current header identity nor current file content. Retain the earlier complete-file proof as dated evidence and keep current file usability unresolved.",
+  "next_action": "Do not repeat the unchanged failed client route. On a material access or publisher change, retrieve exact pointer-linked bytes through an authorized route, verify the header against Mary Greeley's name/address/Iowa state and CMS date/version, then assess complete-file schema and usability separately.",
+  "disposition_effect": "none; no verified-current-MRF promotion, no downgrade of dated complete-file evidence, and no unresolved-count credit"
+}

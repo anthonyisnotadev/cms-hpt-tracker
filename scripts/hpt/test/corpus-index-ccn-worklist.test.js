@@ -56,6 +56,28 @@ test('later bounded root recheck moves a superseded historical link to follow-up
     { targets: {} }, [], [], [recheck]).records[0].priority, 1);
 });
 
+test('hash-bound provenance recheck recognizes the exact current UNM root and selected file', () => {
+  const audit = { discrepancies: [{ pointer_url: 'https://unmhealth.org/cms-hpt.txt',
+    final_url: 'https://unmhealth.org/cms-hpt.txt', pointer_sha256: 'old', fetched_at: '2026-09-07',
+    issue: 'index-hash-differs-from-successful-state', matched_ccns: ['320001'] }] };
+  const file = 'https://unmhealth.org/patients-visitors/_files/unm.csv';
+  const verification = { records: [{ ccn: '320001', hospital_name: 'UNM Hospital',
+    pointer_corpus_checked_url: 'https://unmhealth.org/cms-hpt.txt',
+    observation_role: 'incomplete-retry-standing-retained', mrf_url: file }] };
+  const recheck = { ccn: '320001', checked_url: 'https://unmhealth.org/cms-hpt.txt',
+    selected_mrf_url: file, complete_pointer_bytes: true, http_status: 200,
+    observed_at: '2026-09-25T10:18:42.725Z', response_sha256: 'a'.repeat(64),
+    retained_file: 'cms_data/hpt/pointer-corpus/raw/unmhealth.org.bin' };
+  const record = build(audit, verification, { targets: {} }, [], [], [], [recheck]).records[0];
+  assert.equal(record.priority, 4);
+  assert.equal(record.reviewed_current_proof.source, 'later-hash-bound-provenance-recheck');
+  assert.equal(record.reviewed_current_proof.reviewed_hash_matches_current_pointer, true);
+  assert.equal(build(audit, verification, { targets: {} }, [], [], [], [{ ...recheck,
+    checked_url: 'https://other.test/cms-hpt.txt' }]).records[0].priority, 1);
+  assert.equal(build(audit, verification, { targets: {} }, [], [], [], [{ ...recheck,
+    observed_at: '2026-09-01T00:00:00Z' }]).records[0].priority, 1);
+});
+
 test('generated per-CCN queue is source-bound and covers all indexed links', () => {
   const root = path.resolve(__dirname, '../../..');
   const report = JSON.parse(fs.readFileSync(path.join(root, 'data/hpt-audit/corpus-index-ccn-worklist.json')));
@@ -64,9 +86,8 @@ test('generated per-CCN queue is source-bound and covers all indexed links', () 
     new Set(source.discrepancies.flatMap(item => item.matched_ccns)).size);
   assert.equal(Object.values(report.summary.by_priority).reduce((sum, count) => sum + count, 0), report.summary.ccns);
   assert.equal(report.summary.by_priority['1'], 0);
-  const bayonne = report.records.find(row => row.ccn === '310025');
-  assert.equal(bayonne.priority, 4);
-  assert.equal(bayonne.reviewed_current_proof.source, 'reviewed-ledger-and-corpus-byte-match');
+  assert.equal(report.records.some(row => row.ccn === '310025'), false,
+    'Bayonne current corpus entry is no longer stale after the hash-verified reindex');
   assert.equal(new Set(report.records.map(row => row.ccn)).size, report.records.length);
   for (const [name, file] of Object.entries({
     'corpus-state-index-discrepancies.json': 'data/hpt-audit/corpus-state-index-discrepancies.json',
@@ -74,7 +95,10 @@ test('generated per-CCN queue is source-bound and covers all indexed links', () 
     'crawl-state.json': 'cms_data/hpt/pointer-corpus/crawl-state.json',
     'cms_hpt_entries.csv': 'cms_data/hpt/pointer-corpus/cms_hpt_entries.csv',
     'reviewed-resolutions.json': 'data/hpt-audit/reviewed-resolutions.json',
-    'corpus-index-priority-one-rechecks.json': 'data/hpt-audit/corpus-index-priority-one-rechecks.json'
+    'corpus-index-priority-one-rechecks.json': 'data/hpt-audit/corpus-index-priority-one-rechecks.json',
+    'pointer-provenance-discrepancy-rechecks.json': 'data/hpt-audit/pointer-provenance-discrepancy-rechecks.json'
   })) assert.equal(report.source_sha256[name], crypto.createHash('sha256')
     .update(fs.readFileSync(path.join(root, file))).digest('hex'));
+  assert.equal(report.records.some(row => row.ccn === '320001'), false,
+    'UNM current corpus entry is no longer stale after the hash-verified reindex');
 });

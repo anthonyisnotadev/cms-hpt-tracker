@@ -1,0 +1,30 @@
+{
+  "ccn": "011302",
+  "observed_at": "2026-09-30T22:30:32Z",
+  "official_page_url": "https://hh.health/patients-visitors/price-transparency/",
+  "official_page_status": 200,
+  "official_page_updated": "2026-08-20",
+  "official_page_claim": "The current HH Health page lists Red Bay Hospital under Standard Charges by Hospital and exposes a Standard Charge File link.",
+  "linked_file_url": "https://hh.health/wp-content/uploads/472323163_red-bay-hospital_standardcharges.csv",
+  "linked_file_content_type": "text/csv",
+  "linked_file_fetch_status": 400,
+  "linked_file_fetch_result": "Unsupported content-type: text/csv; no file bytes returned",
+  "browser_check": { "browser": "Chrome", "result": "ERR_NAME_NOT_RESOLVED", "meaning": "client DNS/access failure only; not evidence of file absence" },
+  "bounded_direct_fetch": { "client": "Node fetch", "result": "TypeError: fetch failed", "meaning": "no file bytes returned; no absence or metadata inference" },
+  "prior_route_history": [
+    { "url": "https://hh2026.cloudaccess.host/patients-visitors/price-transparency/", "status": 200, "observed_at": "2026-09-25", "meaning": "previous first-party page route; retained as historical route" },
+    { "url": "https://hh2026.cloudaccess.host/wp-content/uploads/472323163_red-bay-hospital_standardcharges.csv", "result": "web text/csv fetch returned no bytes; browser ERR_CONNECTION_CLOSED", "observed_at": "2026-09-25", "meaning": "previous exact file route; superseded as current destination, not proof of absence" },
+    { "url": "https://www.huntsvillehospital.org/images/pricetransparency/472323163_red-bay-hospital_standardcharges.csv", "result": "404", "meaning": "older indexed candidate; not treated as current" }
+  ],
+  "facility_identity": { "name": "Red Bay Hospital", "address": "211 Hospital Road, Red Bay, AL 35582", "basis": "existing separately retained identity evidence; current HH Health price page corroborates the hospital-specific listing but does not itself display the street address" },
+  "file_bytes_retained": 0,
+  "declared_file_name": null,
+  "declared_address": null,
+  "declared_license_state": null,
+  "cms_template_version": null,
+  "validator_result": null,
+  "usable_rows_reviewed": false,
+  "disposition": "official-page-file-linkage-current-transport-unresolved",
+  "interpretation": "This is a refreshed first-party page-to-file linkage and current destination, not an MRF-content discovery. The current HH Health page links a Red Bay-named CSV, but available retrieval returned no bytes and the browser client could not resolve the host. No file identity, CMS version, validation, usability, or compliance claim is made. Keep CCN 011302 unresolved and retain the former cloudaccess and huntsvillehospital routes as history.",
+  "next_action": "Retry only after an observable DNS/route change or through a materially different permitted content-bearing client. Retrieve the exact current hh.health root cms-hpt.txt and linked CSV with bounded bytes; then verify exact pointer linkage, Red Bay name/address/Alabama identity, CMS date/version, validator errors and alerts, and usable charge rows. Do not substitute the historical cloudaccess or 404 URL, sibling files, or third-party mirrors."
+}

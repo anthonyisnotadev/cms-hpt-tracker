@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "ccn": "490127",
+  "hospital_name": "BUCHANAN GENERAL HOSPITAL",
+  "observed_at": "2026-09-30T03:23:05.398Z",
+  "sources": {
+    "pointer": {
+      "url": "https://www.bgh.org/cms-hpt.txt",
+      "final_url": "https://www.bgh.org/cms-hpt.txt",
+      "http_status": 200,
+      "bytes": 300,
+      "sha256": "0bcb0173d123d6f1c42c2463372e8371d065ddd6ca38dd274f226fba3bcfc747",
+      "raw_artifact": "cms_data\\hpt\\nationwide-verification\\buchanan-general-cms-hpt.txt",
+      "text": "location-name: Buchanan General Hospital\nsource-page-url: https://www.bgh.org/getpage.php?name=Pricing_Transparency&sub=Patients%20and%20Visitors\nmrf-url: https://www.bgh.org/docs/540895648_buchanan-general-hospital-_standardcharges.csv\n"
+    },
+    "official_pricing_page": {
+      "url": "https://www.bgh.org/getpage.php?name=Pricing_Transparency&sub=Patients%20and%20Visitors",
+      "linked_from_pointer": true
+    },
+    "prior_target": {
+      "url": "https://www.bgh.org/docs/540895648_buchanan-general-hospital_standardcharges.csv",
+      "observed_http_status": 404,
+      "response_bytes": 196,
+      "response_sha256": "80c3fe2ae1062abf56456f52518bd670f9ec3917b7f85e152b347ac6b6faeff880",
+      "reason": "The exact prior manifest URL returned 404; the current pointer declares a different URL containing an underscore before standardcharges."
+    },
+    "current_mrf": {
+      "url": "https://www.bgh.org/docs/540895648_buchanan-general-hospital-_standardcharges.csv",
+      "final_url": "https://www.bgh.org/docs/540895648_buchanan-general-hospital-_standardcharges.csv",
+      "http_status": 200,
+      "content_type": "text/csv",
+      "bytes": 18653811,
+      "sha256": "3378ea4ef51c5a751dfed5c982d07e34134c47c6e754d831d8655e19e42cc742",
+      "raw_artifact": "cms_data\\hpt\\nationwide-verification\\buchanan-general-current-standardcharges.csv",
+      "hospital_name": "Buchanan General Hospital",
+      "last_updated_on": "9/2/2026",
+      "version": "3.0.0",
+      "location_name": "Buchanan General Hospital",
+      "hospital_address": "1535 Slate Creek Road, Grundy, VA, 24614",
+      "type_2_npi": "1225036346",
+      "license_number|VA": "H 1835",
+      "attester_name": "Timothy Matney",
+      "attestation": "TRUE"
+    }
+  },
+  "structure": {
+    "csv_header_columns": 59,
+    "charge_header_columns": 59,
+    "data_rows": 6435,
+    "row_widths": [
+      59
+    ],
+    "rows_with_description": 6435,
+    "rows_with_gross_charge": 6435,
+    "rows_with_payer": 6435,
+    "rows_with_negotiated_dollar": 6384,
+    "payer_charge_column_present": true,
+    "full_file_retrieved": true,
+    "cms_validator_run": true,
+    "cms_validator": {
+      "cli_package": "@cmsgov/hpt-validator-cli@1.10.8",
+      "dictionary_version": "3.0.0",
+      "command": "cms-hpt-validator <retained CSV> v3.0",
+      "result": "valid",
+      "errors": 0,
+      "alerts": 0,
+      "validator_core_version_reported": "unknown",
+      "checked_at": "2026-09-30T03:24:35Z",
+      "stdout_summary": "No errors found; 0 alerts found."
+    }
+  },
+  "identity_review": {
+    "pointer_location_name": "Buchanan General Hospital",
+    "roster_ccn": "490127",
+    "official_facility_name": "Buchanan General Hospital",
+    "state": "VA",
+    "official_address": "1535 Slate Creek Road, Grundy, VA 24614",
+    "file_name_agrees": true,
+    "file_location_agrees": true,
+    "file_address_agrees": true,
+    "file_state_agrees": true,
+    "file_npi": "1225036346"
+  },
+  "evidence_gain": "Current first-party pointer bytes now link the exact current full CMS 3.0.0 CSV at the URL with an underscore before standardcharges; the prior corpus target returns 404. Full current file bytes, SHA-256, parsed structure and CMS v3 validator result are retained. This is newly retrieved evidence, not a broader legal compliance determination.",
+  "disposition_effect": "The current structured pointer, exact target URL, file identity and address/state metadata, complete usable CSV, and successful CMS v3.0 validation support verified-current-mrf for CCN 490127. The former unresolved pointer-to-facility linkage is corrected.",
+  "next_action": "Recheck through the next scheduled crawl; investigate again only if the first-party pointer or file changes."
+}

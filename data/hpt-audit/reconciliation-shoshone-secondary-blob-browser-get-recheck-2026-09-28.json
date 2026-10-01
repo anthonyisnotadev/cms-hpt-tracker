@@ -1,0 +1,34 @@
+{
+  "ccn": "131314",
+  "observed_at": "2026-09-28T06:05:07Z",
+  "first_party_pointer_url": "https://www.shoshonehealth.com/cms-hpt.txt",
+  "first_party_page_url": "https://www.shoshonehealth.com/patients/registrationbilling/",
+  "vendor_route_from_secondary_page": "https://search.hospitalpriceindex.com/hpi2/machineReadable/ShoshoneMedicalCenter/7852",
+  "vendor_route_observation": {
+    "browser": "codex-in-app-browser",
+    "final_url": "https://search.hospitalpriceindex.com/facility-not-found",
+    "result": "The HPI machine-readable listing route linked as the secondary page's fallback redirected to the vendor facility-not-found page; no file URL or metadata was exposed there."
+  },
+  "secondary_discovery_page": "https://showthebill.com/hospitals/shoshone-medical-center/",
+  "secondary_page_claim": "The page reports a 46.8 MB CSV captured 2026-08-28 and links the candidate blob below. This duplicates the alternate lead already retained on 2026-09-27; third-party-derived prices were not used.",
+  "candidate_blob_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7852/826003924-1043215437_west-shoshone-hospital-district-1_standardcharges.csv",
+  "browser_blob_navigation": {
+    "observed_at": "2026-09-28",
+    "result": "ERR_BLOCKED_BY_CLIENT",
+    "interpretation": "Browser transport limitation only; not a hospital or file-content finding."
+  },
+  "bounded_get_recheck": {
+    "observed_at": "2026-09-28T06:05:07Z",
+    "method": "GET",
+    "range_requested": "bytes=0-65535",
+    "http_status": 404,
+    "bytes_received": 215,
+    "response": "Azure blob not found response; no CSV bytes received.",
+    "effective_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7852/826003924-1043215437_west-shoshone-hospital-district-1_standardcharges.csv"
+  },
+  "comparison_to_prior": "The exact candidate URL previously returned HEAD 404 on 2026-09-27. Today's bounded GET independently confirms the object is not currently retrievable; the separate malformed pointer-declared #1 URL remains a distinct target.",
+  "interpretation": "Dated access recheck only. The third-party capture claim remains an unverified historical lead: no MRF bytes, CMS header, publisher confirmation, or new facility evidence were recovered.",
+  "disposition": "third-party-captured-alternate-mrf-lead-origin-404-reconfirmed-no-bytes",
+  "count_effect": "none; retain CCN 131314 unresolved and keep the 2020 chargemaster as separate historical evidence",
+  "next_action": "Do not repeat the unchanged vendor route or candidate blob without a source/access change. Ask Shoshone or its HPI publisher to restore the object or provide the 2026-08-28 captured bytes with source URL, capture hash, and publisher linkage; then verify Shoshone identity, Idaho address/state, CMS version/date, and usable rows before any promotion."
+}

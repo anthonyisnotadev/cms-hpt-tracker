@@ -1,0 +1,167 @@
+{
+  "audit_id": "covington-county-and-smith-county-current-pointer-file-review-2026-09-30",
+  "observed_at": "2026-09-30T21:18:16.967Z",
+  "source_domain": "covingtoncountyhospital.com",
+  "first_party_pricing_page": {
+    "url": "https://covingtoncountyhospital.com/pricing-transparency/",
+    "browser_title": "Price Transparency - Covington County Hosptial",
+    "live_browser_rendered": true,
+    "live_browser_page_scope": "Covington County Hospital",
+    "live_browser_file_link_label": "CCH Pricing Transparency",
+    "linked_file_url": "https://covingtoncountyhospital.com/646001549_covington-county-hospital_standardcharges.csv",
+    "live_browser_page_text_summary": "The rendered page describes its linked charge list as items provided by Covington County Hospital and calls it the chargemaster; it does not name Smith County Emergency Hospital in that text.",
+    "web_reader_snapshot_conflict": "A separately retrieved web-reader page, marked crawled about two weeks earlier, described the price list as covering Covington County Hospital and Smith County Emergency Hospital. This differs from the live browser rendering and is retained only as a stale/extraction discrepancy, not current facility-file attribution."
+  },
+  "latest_live_browser_recheck": {
+    "observed_at": "2026-09-30T20:56:04Z",
+    "url": "https://covingtoncountyhospital.com/pricing-transparency/",
+    "browser_title": "Price Transparency - Covington County Hosptial",
+    "page_rendered": true,
+    "page_scope_text": "The page describes its linked list as comprehensive charges for inpatient and outpatient services and items provided by Covington County Hospital, also known as its Chargemaster.",
+    "price_file_link_label": "CCH Pricing Transparency",
+    "price_file_link_url": "https://covingtoncountyhospital.com/646001549_covington-county-hospital_standardcharges.csv",
+    "footer_location_text": "701 South Holly Avenue, Collins, Mississippi 39428",
+    "comparison_with_2026_09_30_20_28_observation": "Same CCH-only page scope, label, CSV target and Collins location; recheck only, no newly linked file or changed attribution.",
+    "classification": "first-party browser recheck only; not new file or pointer content"
+  },
+  "smith_county_facility_identity": {
+    "ccn": "250786",
+    "name": "SMITH COUNTY EMERGENCY HOSPITAL",
+    "address": "347 Magnolia Drive, Raleigh, MS 39153",
+    "first_party_location_page": "https://covingtoncountyhospital.com/locations/smith-county-emergency-hospital/",
+    "current_cms_dataset_source": "https://data.cms.gov/provider-data/dataset/7peb-i4pi",
+    "current_cms_dataset_observation": "Search result for CMS Provider Data Catalog listed CCN 250786 as SMITH COUNTY EMERGENCY HOSPITAL at 347 Magnolia Drive, Raleigh, MS 39153."
+  },
+  "pointer_observation": {
+    "url": "https://covingtoncountyhospital.com/cms-hpt.txt",
+    "http_status": 206,
+    "content_type": "text/plain",
+    "content_range": "bytes 0-295/296",
+    "bytes": 296,
+    "sha256": "30e2828d60537fd91d62ad5321797296dc373995da21666de78acc7319b98371",
+    "retained_raw_file": "cms_data/hpt/nationwide-verification/file-byte-proof/smith-250786-cms-hpt-pointer-2026-09-30.bin",
+    "pointer_entries_observed": 1,
+    "location_name": "Covington County Hospital",
+    "mrf_url": "https://covingtoncountyhospital.com/646001549_covington-county-hospital_standardcharges.csv",
+    "corpus_observation": {
+      "observed_at": "2026-09-29T18:06:40.047Z",
+      "sha256": "30e2828d60537fd91d62ad5321797296dc373995da21666de78acc7319b98371",
+      "matched_ccns_for_this_entry": [
+        "251325"
+      ]
+    },
+    "classification": "The 2026-09-30 bounded pointer response is a recheck of the hash-corroborated 2026-09-29 pointer bytes, not new pointer content. Its only parsed location entry is Covington County Hospital; the current corpus exact-entry attribution is CCN 251325, not CCN 250786.",
+    "privacy_note": "The raw pointer is retained only in the ignored local proof cache. Contact fields are omitted from this public proof record."
+  },
+  "current_mrf_header_sample": {
+    "url": "https://covingtoncountyhospital.com/646001549_covington-county-hospital_standardcharges.csv",
+    "requested_range": "bytes=0-262143",
+    "http_status": 206,
+    "content_type": "text/csv",
+    "content_range": "bytes 0-262143/93493711",
+    "sample_bytes": 262144,
+    "full_object_bytes": 93493711,
+    "last_modified": "Wed, 23 Sep 2026 20:13:14 GMT",
+    "sample_sha256": "afc3b55f0d1d2cbc1b25f4a287d87c05307ada8831d293987967627d7b83a412",
+    "retained_sample_file": "cms_data/hpt/nationwide-verification/file-byte-proof/smith-250786-covington-current-2026-09-30-range.bin",
+    "parsed_metadata": {
+      "hospital_name": "covington_county_hospital",
+      "location_name": "covington_county_hospital_.1",
+      "last_updated_on": "7/21/2026",
+      "version": "3.0.0",
+      "hospital_address": "701_south_holly_avenue_collins_ms_39428",
+      "license_number": "11181",
+      "license_state": "MS",
+      "type_2_npi": "1215965249",
+      "attestation": true
+    },
+    "sample_parse": {
+      "csv_objects_parsed_from_bounded_prefix": 857,
+      "complete_file_parsed": false,
+      "schema_validation": false,
+      "negotiated_charge_usability_validation": false
+    },
+    "classification": "The bounded file metadata identifies Covington County Hospital at 701 South Holly Avenue, Collins, Mississippi. It is not a Smith County Emergency Hospital / Raleigh header and is not assigned to CCN 250786. Only a prefix was inspected; no full-file, schema, or usable-charge conclusion is made."
+  },
+  "ccn_dispositions": {
+    "250786": {
+      "disposition": "pointer-facility-match-unresolved",
+      "reason": "The current shared-domain CMS pointer names only Covington County Hospital and links the Covington County CSV. The exact pointer entry is assigned to CCN 251325 in the pointer corpus. Smith County Emergency Hospital is separately identified by its first-party location page and CMS dataset at 347 Magnolia Drive, Raleigh, MS.",
+      "next_action": "Do not assign the Covington County Hospital pointer entry or Collins CSV to CCN 250786. Seek a Smith County Emergency Hospital-specific CMS pointer/file or an authoritative publisher/CMS mapping for the Raleigh facility. Keep unresolved until exact facility linkage and usable current CMS MRF evidence are established; do not infer file absence or compliance."
+    },
+    "251325": {
+      "disposition": "verified-current-mrf",
+      "reason": "The current Covington County Hospital pricing page links the exact file named by its complete current pointer. Complete retrieval (93,493,711 bytes; SHA-256 962080ae...) matches the Collins campus/header and CMS v3.0 validator reports zero errors and zero alerts. Full CSV structure and usable-charge presence are confirmed; the raw publisher location_name literal covington_county_hospital_.1 is preserved. This is current MRF verification, not a legal compliance or line-item accuracy determination.",
+      "next_action": "Retain the raw location_name suffix in the tracker and monitor for a publisher correction/current file update; do not normalize the source value or transfer this file to CCN 250786."
+    }
+  },
+  "evidence_delta": {
+    "new_evidence": [
+      "A new retained bounded sample of the exact current pointer-linked CSV provides a hash-bound CMS 3.0.0 header for the Covington County Hospital Collins campus.",
+      "Live browser review of the current publisher price page distinguishes its CCH-only label from a stale web-reader extraction that also mentioned Smith County Emergency Hospital.",
+      "Complete current pointer-linked CSV retrieval, full-file structural and charge-presence review, and official CMS v3.0 validation (1.10.8): 93,493,711 bytes, 266,930 rows, zero malformed widths, zero CMS errors and zero alerts."
+    ],
+    "recheck_only": [
+      "The exact root pointer returned the same 296-byte, hash-corroborated content already captured by the pointer corpus on 2026-09-29."
+    ],
+    "not_established": [
+      "No Smith County Emergency Hospital-specific CMS pointer entry or MRF was found in this root pointer.",
+      "No Smith County Emergency Hospital-specific CMS pointer entry or MRF was found in the root pointer; Covington County Hospital MRF is not attributed to CCN 250786. No line-item truth or legal compliance determination is made."
+    ]
+  },
+  "no_publication_or_outreach": true,
+  "current_mrf_full_file_review": {
+    "url": "https://covingtoncountyhospital.com/646001549_covington-county-hospital_standardcharges.csv",
+    "observed_at": "2026-09-30T21:18:16.967Z",
+    "http_status": 200,
+    "final_url": "https://covingtoncountyhospital.com/646001549_covington-county-hospital_standardcharges.csv",
+    "content_type": "text/csv",
+    "content_length": 93493711,
+    "bytes_received": 93493711,
+    "last_modified": "Wed, 23 Sep 2026 20:13:14 GMT",
+    "sha256": "962080aef2ea163adfe3c9b9005cb35dcea20e801ab031b9495e3bcea8c74886",
+    "retained_private_file": "Z:/hpt-covington-proof-2026-09-30/covington-county-hospital_standardcharges.csv",
+    "declared_metadata": {
+      "hospital_name": "covington_county_hospital",
+      "location_name": "covington_county_hospital_.1",
+      "last_updated_on": "7/21/2026",
+      "version": "3.0.0",
+      "hospital_address": "701_south_holly_avenue_collins_ms_39428",
+      "license_number": "11181",
+      "license_state": "MS",
+      "type_2_npi": "1215965249",
+      "attestation": true,
+      "attester_name": "[withheld from audit record]"
+    },
+    "csv_validation": {
+      "parser": "scripts/hpt/lib/util.js parseCSV (quote-aware RFC4180 parser)",
+      "metadata_rows": 2,
+      "header_columns": 29,
+      "data_rows": 266930,
+      "rows_with_gross_charge": 266397,
+      "rows_with_payer": 266929,
+      "rows_with_negotiated_charge": 266929,
+      "all_data_rows_width_29": true,
+      "malformed_row_widths": 0,
+      "nonempty_description_rows": 266930,
+      "rows_with_any_standard_charge_value": 266930,
+      "nonempty_standard_charge_cells": 1870853,
+      "code_columns": 4,
+      "code_type_columns": 4,
+      "rows_with_code_type_pair": 266930,
+      "validation_scope": "Whole-file structural/usability summary only; not a line-item truth review."
+    },
+    "cms_validator": {
+      "package": "@cmsgov/hpt-validator-cli",
+      "version": "1.10.8",
+      "requirements": "v3.0",
+      "format": "csv",
+      "valid": true,
+      "error_count": 0,
+      "alert_count": 0,
+      "run_at": "2026-09-30T21:18:16.967Z"
+    },
+    "attribution": "Complete pointer-declared file; current rendered first-party pricing page labels CCH Pricing Transparency; facility identity/header/location/address/state agree with CCN 251325 in Collins. Do not attribute to CCN 250786 in Raleigh.",
+    "disposition_effect": "CCN 251325 full-file/current CMS v3.0 validation supports replacing pending-review finding with verified-current-mrf in nationwide evidence; exact publisher location_name suffix remains preserved as literal."
+  }
+}

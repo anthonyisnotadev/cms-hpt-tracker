@@ -1,0 +1,31 @@
+{
+  "audit_id": "reconciliation-taylor-georgia-dch-transparency-route-scope-2026-09-29",
+  "ccn": "110256",
+  "observed_at": "2026-09-29T10:23:25Z",
+  "state_source": {
+    "publisher": "Georgia Department of Community Health",
+    "url": "https://dch.georgia.gov/hospital-transparency-information",
+    "browser_observation": "The official state page includes Taylor Regional Hospital and links https://taylorregional.org/transparency.php in the SB505 Hospital Transparency Facility Links table.",
+    "scope_limitation": "This is the state's link for organizational and financial disclosures under Georgia SB505; it is not a CMS hospital-price-transparency MRF endorsement or CCN/file mapping."
+  },
+  "current_first_party_page": {
+    "url": "https://taylorregional.org/transparency.php",
+    "browser_title": "Taylor Regional Hospital | Transparency",
+    "last_updated": "07/08/2026",
+    "visible_content": "The page presents 2025 Federal Related Disclosures and 2025 Georgia Supplemental Disclosures. Its footer separately links Price Transparency to https://ezcost.info/taylor-regional-hospital.",
+    "facility_address": "222 Perry Hwy, Hawkinsville, GA 31036"
+  },
+  "comparison_to_current_hpt_evidence": {
+    "route_regression_proof": "reconciliation-taylor-regional-live-route-regression-proof-2026-09-29.json",
+    "root_pointer_url": "https://taylorregional.org/cms-hpt.txt",
+    "pointer_declared_json_target": "https://machine-readable-files.com/taylor-regional-hospital/580655369_TaylorRegionalHospital_standardcharges.json",
+    "pointer_target_result": "Previously bounded request returned 404; no successful retrieval established on this pass.",
+    "current_ezcost_labeled_file": "The same-day route regression proof records that the page-labeled download resolved to a Self Regional Healthcare Partners file declaring Edgefield County Healthcare, Edgefield, South Carolina; this pass did not redownload it.",
+    "retained_taylor_specific_file": "The complete 2026-01-01 Taylor Regional CSV remains a distinct retained source with Hawkinsville, Georgia identity and matching roster information."
+  },
+  "evidence_classification": "new-official-state-route-designation-and-current-page-route-classification; no-new-mrf-bytes",
+  "disposition": "unresolved-current-hpt-pointer-and-page-download-linkage; retain-prior-taylor-specific-file",
+  "disposition_changed": false,
+  "count_effect": 0,
+  "next_action": "Do not associate the current EZCOST download with Taylor Regional or the SB505 disclosure page. Treat the DCH transparency link as a state organizational/financial disclosure route, not proof of CMS MRF scope. Obtain a restored/corrected Taylor-specific pointer and current CSV/JSON/ZIP or authoritative publisher mapping; validate complete bytes, Hawkinsville identity, Georgia state, declared date/version and usable rows before any disposition change."
+}

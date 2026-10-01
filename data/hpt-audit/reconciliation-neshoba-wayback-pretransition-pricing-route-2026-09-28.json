@@ -1,0 +1,72 @@
+{
+  "audit_id": "reconciliation-neshoba-wayback-pretransition-pricing-route-2026-09-28",
+  "ccn": "250043",
+  "sibling_ccn": "251340",
+  "observed_at": "2026-09-28T13:59:03Z",
+  "historical_scope": "Pre-transition page-route research only; no historical CMS pointer or MRF bytes were recovered.",
+  "internet_archive_cdx": {
+    "operator_domain_query": "https://web.archive.org/cdx/search/cdx?url=www.neshobageneral.com%2F*&output=json&filter=statuscode%3A200&filter=timestamp%3A2025&collapse=urlkey",
+    "http_status": 200,
+    "response_bytes": 68865,
+    "unique_url_records": 315,
+    "relevant_official_page_capture": {
+      "timestamp": "20250322083156",
+      "original_url": "https://www.neshobageneral.com/patient-visitors/financial-services/",
+      "mimetype": "text/html",
+      "statuscode": "200",
+      "cdx_digest": "6JPW66FI4FIJK544FHY5KEKDXAFJ6LHU",
+      "cdx_length": 14031
+    }
+  },
+  "archived_official_financial_services_page": {
+    "url": "https://web.archive.org/web/20250322083156id_/https://www.neshobageneral.com/patient-visitors/financial-services/",
+    "http_status": 200,
+    "retrieved_response_bytes": 49648,
+    "retrieved_response_sha256": "cd829921eea55e2702c90a90027b2976a57c1e0a002edef0aa5252f43cfcf3f1",
+    "links_observed": [
+      {
+        "label": "Price Transparency/Price Estimator",
+        "url": "https://apps.para-hcfs.com/PTT/FinalLinks/Neshoba_V2.aspx"
+      },
+      {
+        "label": "Price Transparency",
+        "url": "https://apps.para-hcfs.com/PTT/FinalLinks/Neshoba_V3.aspx",
+        "context": "Footer link"
+      }
+    ],
+    "interpretation": "This is archived first-party page-to-vendor-route evidence for March 2025; it does not establish that either vendor page was a CMS-format MRF or pointer-declared."
+  },
+  "archived_vendor_v3_page": {
+    "original_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Neshoba_V3.aspx",
+    "cdx_capture": {
+      "timestamp": "20250519135926",
+      "mimetype": "text/html",
+      "statuscode": "200",
+      "cdx_digest": "BYOII5K2J6P4ACMQQDNXTPXQ2MURQEBW",
+      "cdx_length": 28651
+    },
+    "wayback_replay_url": "https://web.archive.org/web/20250519135926id_/https://apps.para-hcfs.com/PTT/FinalLinks/Neshoba_V3.aspx",
+    "replay_http_status": 200,
+    "replay_response_bytes": 225799,
+    "replay_response_sha256": "e7874e94fedc29056a1960427ad55a5bcacc9570258bdfdba5312f2e5d699a3a",
+    "replay_hash_note": "Hash is of the retrieved Wayback replay response, which includes replay-layer content; the CDX digest/length separately identify the archived capture.",
+    "page_statement": "Price information last updated on 3/29/2025.",
+    "page_role": "Interactive consumer price-estimator/price-transparency portal page. The recovered page source did not expose a direct CMS MRF URL or static CSV/JSON download link.",
+    "limitation": "A displayed price-update date is not a CMS MRF declared last_updated_on field; the page does not prove CCN scope, CMS template version, pointer linkage, or complete machine-readable contents."
+  },
+  "exact_vendor_v2_archive_index_query": {
+    "original_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Neshoba_V2.aspx",
+    "http_status": 503,
+    "response_bytes": 11832,
+    "result": "No CDX rows could be parsed; this is an archive-index service failure, not a no-capture finding."
+  },
+  "outcome": {
+    "evidence_gain": "Recovered dated pre-transition first-party page-to-PARA-route evidence and a dated PARA consumer-estimator page statement for Neshoba pricing information.",
+    "historical_pointer_bytes_recovered": false,
+    "historical_mrf_bytes_recovered": false,
+    "disposition_changed": false,
+    "cohort_count_effect": 0,
+    "current_unresolved_cohort_count": 547,
+    "next_action": "Investigate whether a separately archived runtime data resource from the historical PARA route exposes an actual CMS-format standard-charges file; if no direct data object is recoverable, seek publisher-provided dated historical pointer/MRF evidence. Do not import consumer-estimator data or assign the June 2026 campus file to historical acute-care CCN 250043."
+  }
+}

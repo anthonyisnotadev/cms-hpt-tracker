@@ -32,11 +32,32 @@ function addExtra(entry, key, value) {
   else entry.extraFields[key] = Array.isArray(prior) ? [...prior, value] : [prior, value];
 }
 
+// Cisco Email Security wraps destinations in /url?a=<encoded destination>.
+// Resolve only that exact HTTPS host/path and only its `a` parameter; never
+// follow tracking parameters or arbitrary redirectors. The raw pointer bytes
+// and their hash remain the provenance record for this normalized target.
+function unwrapCiscoLinkProtection(value) {
+  const raw = String(value || '').trim();
+  try {
+    const wrapper = new URL(raw);
+    if (wrapper.protocol !== 'https:' || wrapper.hostname.toLowerCase() !== 'linkprotect.cudasvc.com'
+        || wrapper.pathname !== '/url' || wrapper.username || wrapper.password) return raw;
+    const encoded = wrapper.searchParams.get('a');
+    if (!encoded) return raw;
+    let destination;
+    try { destination = decodeURIComponent(encoded); } catch { return raw; }
+    const target = new URL(destination);
+    if (target.protocol !== 'https:' || !target.hostname || target.username || target.password
+        || target.hostname.toLowerCase() === 'linkprotect.cudasvc.com') return raw;
+    return target.toString();
+  } catch { return raw; }
+}
+
 function finishEntry(entry) {
   if (!entry) return null;
   const urls = valuesOf(entry.mrfUrls && entry.mrfUrls.length ? entry.mrfUrls : entry.mrfUrl);
   if (urls.length) {
-    entry.mrfUrls = [...new Set(urls.map(String))];
+    entry.mrfUrls = [...new Set(urls.map(unwrapCiscoLinkProtection))];
     entry.mrfUrl = entry.mrfUrls[0];
   } else {
     delete entry.mrfUrls;

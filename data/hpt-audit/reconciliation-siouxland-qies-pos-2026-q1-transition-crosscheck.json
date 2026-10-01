@@ -1,0 +1,78 @@
+{
+  "ccn": "160153",
+  "observed_at": "2026-09-29T07:07:37.072Z",
+  "source_type": "cms-provider-of-services-qies-current-certification-record",
+  "dataset": "Provider of Services File - Quality Improvement and Evaluation System (QIES)",
+  "dataset_page": "https://data.cms.gov/provider-characteristics/hospitals-and-other-facilities/provider-of-services-file-quality-improvement-and-evaluation-system",
+  "dataset_release": "Q1 2026",
+  "dataset_api": "https://data.cms.gov/data-api/v1/dataset/bb342fae-b551-40fd-a738-e2e5878f3bbb/data",
+  "dictionary_url": "https://data.cms.gov/sites/default/files/2023-07/0ca58d5d-7914-4532-b22d-41741d3e6151/P.QWB.POSQ.OTHER.LAYOUT.MAR23.pdf",
+  "dictionary_field_meanings": {
+    "PGM_TRMNTN_CD": "01 = VOLUNTARY-MERGER, CLOSURE; field indicates current termination status",
+    "TRMNTN_EXPRTN_DT": "Date the provider was terminated",
+    "CROSS_REF_PROVIDER_NUMBER": "Cross reference provider number"
+  },
+  "queries": [
+    {
+      "ccn": "160153",
+      "url": "https://data.cms.gov/data-api/v1/dataset/bb342fae-b551-40fd-a738-e2e5878f3bbb/data?filter%5BPRVDR_NUM%5D=160153&size=20&offset=0",
+      "http_status": 200,
+      "content_type": "application/json",
+      "response_bytes": 11816,
+      "response_sha256": "a2fbff5ad696d66fb6a4be4ab835e1764867d755040a9763e31b94499f1ef769",
+      "row_count": 1,
+      "selected_row": {
+        "PRVDR_NUM": "160153",
+        "FAC_NAME": "MERCYONE SIOUXLAND MEDICAL CENTER",
+        "ST_ADR": "801 5TH ST",
+        "CITY_NAME": "SIOUX CITY",
+        "STATE_CD": "IA",
+        "PRVDR_CTGRY_CD": "01",
+        "PRVDR_CTGRY_SBTYP_CD": "01",
+        "CMPLNC_STUS_CD": "A",
+        "ELGBLTY_SW": "Y",
+        "CRTFCTN_DT": "20160325",
+        "ACPTBL_POC_SW": "N",
+        "PGM_TRMNTN_CD": "01",
+        "TRMNTN_EXPRTN_DT": "20250831",
+        "CHOW_DT": "",
+        "CHOW_PRIOR_DT": "",
+        "CRTFCTN_ACTN_TYPE_CD": "2",
+        "CROSS_REF_PROVIDER_NUMBER": "160146"
+      }
+    },
+    {
+      "ccn": "160146",
+      "url": "https://data.cms.gov/data-api/v1/dataset/bb342fae-b551-40fd-a738-e2e5878f3bbb/data?filter%5BPRVDR_NUM%5D=160146&size=20&offset=0",
+      "observed_at": "2026-09-29T07:07:37.623Z",
+      "http_status": 200,
+      "content_type": "application/json",
+      "response_bytes": 11818,
+      "response_sha256": "a083ed4046ab5cebf38e78316e2832d613fd847182d5ed0c1959c79d75e54e76",
+      "row_count": 1,
+      "selected_row": {
+        "PRVDR_NUM": "160146",
+        "FAC_NAME": "ST LUKES REGIONAL MEDICAL CENTER",
+        "ST_ADR": "2720 STONE PARK BOULEVARD",
+        "CITY_NAME": "SIOUX CITY",
+        "STATE_CD": "IA",
+        "PRVDR_CTGRY_CD": "01",
+        "PRVDR_CTGRY_SBTYP_CD": "01",
+        "CMPLNC_STUS_CD": "A",
+        "ELGBLTY_SW": "Y",
+        "CRTFCTN_DT": "20151113",
+        "ACPTBL_POC_SW": "N",
+        "PGM_TRMNTN_CD": "00",
+        "TRMNTN_EXPRTN_DT": "",
+        "CHOW_DT": "20250901",
+        "CHOW_PRIOR_DT": "",
+        "CRTFCTN_ACTN_TYPE_CD": "2",
+        "CROSS_REF_PROVIDER_NUMBER": ""
+      }
+    }
+  ],
+  "interpretation": "The current Q1 2026 CMS QIES POS dataset returns one row for each distinct CCN. For 160153 it supplies a CMS-defined termination date of 2025-08-31, termination-status code 01 (voluntary merger/closure), and cross-reference provider number 160146. The separate current 160146 row is active with CHOW_DT 2025-09-01. This newly resolves the previously missing dated CMS certification transition and confirms a provider-number bridge, but does not establish which historical price-transparency MRF covered 160153, prove the shared post-transition file's campus-to-CCN mapping, or reconcile the 801 15th vs 801 5th address conflict. Preserve the CCNs separately and leave the historical HPT accountability case unresolved pending file-scope/address evidence.",
+  "disposition_changed": false,
+  "cohort_unresolved_change": 0,
+  "next_action": "Keep 160153 in the frozen 891 unresolved cohort until historical HPT source/file scope and Downtown address mapping are resolved. Do not repeat the unchanged Q1 2026 QIES queries; next obtain a dated pre-2025-08-31 160153 price-transparency pointer/MRF or publisher/state documentation that ties the post-transition Downtown campus and 160146 to the shared file and explains the 801 15th vs 801 5th discrepancy."
+}

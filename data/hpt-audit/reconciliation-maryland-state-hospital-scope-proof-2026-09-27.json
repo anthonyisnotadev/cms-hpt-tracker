@@ -1,0 +1,94 @@
+{
+  "observed_at": "2026-09-27T21:30:00Z",
+  "purpose": "Determine whether four Maryland psychiatric hospital CCNs can be classified under the Federal/State hospital deemed-compliant provision without attributing a sibling MRF.",
+  "federal_rule": {
+    "source": "https://www.govinfo.gov/content/pkg/CFR-2025-title45-vol2/pdf/CFR-2025-title45-vol2-part180.pdf",
+    "section": "45 CFR 180.30(b)",
+    "text_summary": "Federal and State hospitals are deemed by CMS to be in compliance with Part 180, including but not limited to the listed examples. State forensic hospitals exclusively treating individuals in penal custody are a separately listed example, not a condition imposed on all State hospitals.",
+    "cms_guidance": "https://www.cms.gov/files/document/hospital-price-transparency-frequently-asked-questions.pdf",
+    "cms_guidance_summary": "CMS states the HPT definition includes state-owned or operated facilities other than those deemed compliant; its description of state forensic hospitals says the specific category is exclusively penal-custody treatment."
+  },
+  "state_operator_sources": {
+    "mdh_facility_roster": "https://health.maryland.gov/ocpbes/Pages/real-property-listing.aspx",
+    "mdh_facility_roster_observation": "Maryland Department of Health's official facilities page categorizes Eastern Shore Hospital Center, Thomas B. Finan Center, Spring Grove Hospital Center and Springfield Hospital Center as Inpatient Psychiatric Hospital Centers.",
+    "springfield_operator_page": "https://health.maryland.gov/springfield/pages/about-shc.aspx",
+    "springfield_operator_observation": "MDH describes Springfield Hospital Center as a regional psychiatric hospital operated by the Maryland Department of Health.",
+    "department_context": "The remaining facility pages are under the official health.maryland.gov MDH site and the MDH facilities roster identifies the facilities as MDH inpatient psychiatric hospital centers."
+  },
+  "cms_enrollment_dataset": {
+    "dataset_page": "https://data.cms.gov/provider-characteristics/hospitals-and-other-facilities/hospital-enrollments",
+    "dataset_version_id": "3b5eae55-981c-4358-b3f8-7032d053d893",
+    "dataset_label": "CMS Hospital Enrollments, July 2026 snapshot",
+    "query_template": "https://data.cms.gov/data-api/v1/dataset/3b5eae55-981c-4358-b3f8-7032d053d893/data?filter%5BCCN%5D={CCN}&size=10",
+    "query_method": "Exact CCN API request; HTTP 200 JSON response; SHA-256 and response byte count recorded before extracting identity fields.",
+    "records": [
+      {
+        "ccn": "214002",
+        "response_sha256": "9d13c7f234e06c2f9b4df22c95fb6c0831bb78d15d69d4deaf7c4d4a5b5c3030",
+        "response_bytes": 1201,
+        "row_count": 1,
+        "enrollment_id": "O20060105000569",
+        "organization_name": "COMPTROLLER OF MARYLAND CENTRAL PAYROLL BUREAU",
+        "doing_business_as": "EASTERN SHORE HOSPITAL CENTER",
+        "address": "5262 WOODS ROAD, CAMBRIDGE, MD 21613",
+        "provider_type": "PART A PROVIDER - HOSPITAL",
+        "source_url": "https://health.maryland.gov/ESHC/Pages/Home.aspx"
+      },
+      {
+        "ccn": "214004",
+        "response_sha256": "d78cc94f3d68808fc60ade79c36c648304bcbb412c4a8656cae75429c0ddefc4",
+        "response_bytes": 1202,
+        "row_count": 1,
+        "enrollment_id": "O20060105000525",
+        "organization_name": "COMPTROLLER OF MARYLAND CENTRAL PAYROLL BUREAU",
+        "doing_business_as": "SPRINGFIELD HOSPITAL CENTER",
+        "address": "6655 SYKESVILLE RD, SYKESVILLE, MD 21784",
+        "provider_type": "PART A PROVIDER - HOSPITAL",
+        "psychiatric_subgroup": "Y",
+        "source_url": "https://health.maryland.gov/springfield/pages/about-shc.aspx"
+      },
+      {
+        "ccn": "214012",
+        "response_sha256": "46c32ad394b2664f071a88ecac64c391d74f1eea87355f02ab7171a66b225c8f",
+        "response_bytes": 1197,
+        "row_count": 1,
+        "enrollment_id": "O20060105000354",
+        "organization_name": "COMPTROLLER OF MARYLAND CENTRAL PAYROLL BUREAU",
+        "doing_business_as": "THOMAS B. FINAN CENTER",
+        "address": "10102 COUNTRY CLUB RD SE, CUMBERLAND, MD 21502",
+        "provider_type": "PART A PROVIDER - HOSPITAL",
+        "source_url": "https://health.maryland.gov/finan/Pages/home.aspx"
+      },
+      {
+        "ccn": "214018",
+        "response_sha256": "b20a5a442773d7c6cdbe3da18c0499fe69e658a5d7d12c1a282711c055c4ace8",
+        "response_bytes": 1207,
+        "row_count": 1,
+        "enrollment_id": "O20060105000488",
+        "organization_name": "COMPTROLLER OF MARYLAND CENTRAL PAYROLL BUREAU",
+        "doing_business_as": "SPRING GROVE HOSPITAL CENTER",
+        "address": "55 WADE AVE, CATONSVILLE, MD 21228",
+        "provider_type": "PART A PROVIDER - HOSPITAL",
+        "source_url": "https://health.maryland.gov/springgrove/Pages/home.aspx"
+      }
+    ]
+  },
+  "scope_disposition": "Historical first assessment only: four exact CMS enrollment CCNs, organization DBA names and primary practice addresses match distinct MDH-listed inpatient psychiatric hospital centers; CMS organization is the Comptroller of Maryland. The broad state-hospital exception interpretation from that assessment was later challenged by the CMS FAQ review dated 2026-09-28 and is not an effective scope disposition. The current interpretation is recorded below and in reviewed-resolutions.json.",
+  "no_pricing_claim": "No pointer URL, MRF URL, file bytes, price metadata, or rates are asserted. The cached Maryland root pointer remains separately limited to Western Maryland and Deers Head; neither sibling file is assigned to these four CCNs.",
+  "facility_dispositions": [
+    {"ccn":"214002","facility_name":"EASTERN SHORE HOSPITAL CENTER","facility_url":"https://health.maryland.gov/ESHC/Pages/Home.aspx","cms_row_index":0},
+    {"ccn":"214004","facility_name":"SPRINGFIELD HOSPITAL CENTER","facility_url":"https://health.maryland.gov/springfield/pages/about-shc.aspx","cms_row_index":1},
+    {"ccn":"214012","facility_name":"THOMAS B. FINAN CENTER","facility_url":"https://health.maryland.gov/finan/Pages/home.aspx","cms_row_index":2},
+    {"ccn":"214018","facility_name":"SPRING GROVE HOSPITAL CENTER","facility_url":"https://health.maryland.gov/springgrove/Pages/home.aspx","cms_row_index":3}
+  ],
+  "latest_cms_faq_recheck_2026_09_30": {
+    "observed_at": "2026-09-30T02:31:04Z",
+    "source_url": "https://www.cms.gov/files/document/hospital-price-transparency-frequently-asked-questions.pdf",
+    "method": "Live web retrieval and text inspection of CMS FAQ PDF, Definitions section, PDF pages 17-18 (printed FAQ pages 18-19), lines 629-656 in the retrieved text view.",
+    "cms_text_observed": "CMS says the rule applies to state-owned or operated facilities other than those deemed compliant. It then identifies federally owned/operated hospitals meeting its described conditions and, separately, state forensic hospitals that treat exclusively individuals in penal custody as deemed compliant.",
+    "interpretation": "This current CMS guidance does not support deeming all state-operated hospitals compliant solely because of state operation. The four MDH facilities are identified in the retained MDH roster as inpatient psychiatric hospital centers; the retained evidence does not establish that any of the four treats exclusively people in penal custody or another deemed-compliant basis.",
+    "disposition_effect": "none; keep the four unresolved for facility-specific MRF coverage or exact-facility exception proof",
+    "evidence_class": "new live retrieval corroborating the 2026-09-28 CMS FAQ review; no MRF or price data"
+  },
+  "next_action": "Keep all four CCNs unresolved unless a facility-specific CMS MRF is verified or authoritative evidence establishes that the exact hospital qualifies for a CMS deemed-compliant exception. Do not restore the superseded blanket state-hospital exemption; do not assign sibling pointer/MRF files."
+}

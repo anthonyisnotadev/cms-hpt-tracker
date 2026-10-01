@@ -10,6 +10,9 @@ const audit = path.join(root, 'data', 'hpt-audit');
 const proof = JSON.parse(fs.readFileSync(path.join(audit, 'reconciliation-qies-unresolved-status-audit-2026-09-27.json'), 'utf8'));
 const manual = JSON.parse(fs.readFileSync(path.join(audit, 'reconciliation-manual-access-observations.json'), 'utf8'));
 const nationwide = JSON.parse(fs.readFileSync(path.join(audit, 'nationwide-verification.json'), 'utf8'));
+const docsSuspension = JSON.parse(fs.readFileSync(path.join(audit,
+  'reconciliation-docs-hcai-voluntary-suspension-detail-2026-09-29.json'), 'utf8'));
+const worklist = JSON.parse(fs.readFileSync(path.join(audit, 'unresolved-investigation-worklist.json'), 'utf8'));
 
 test('QIES unresolved census records exact transition dates without closing historical HPT work', () => {
   assert.equal(proof.source.release, 'Q1 2026');
@@ -39,10 +42,36 @@ test('QIES unresolved census records exact transition dates without closing hist
   for (const ccn of ['010110', '010125']) {
     const current = nationwide.records.find(record => record.ccn === ccn);
     assert.ok(current, `historical CCN ${ccn} remains in the 572-case investigation worklist`);
-    assert.match(current.next_action, /historical accountability baseline/);
+    assert.ok(current.next_action, `historical CCN ${ccn} retains a dated evidence gate`);
   }
   assert.ok(nationwide.records.find(record => record.ccn === '050785'), 'DOCS historical CCN remains in the investigation worklist');
   assert.equal(nationwide.records.find(record => record.ccn === '010779').disposition, 'verified-stale-mrf');
   assert.equal(proof.unresolved_count_change, 0);
   assert.match(proof.field_interpretation.limitation, /No exact row is not evidence of closure/);
+});
+
+test('DOCS voluntary suspension corroborates the historical CCN boundary without closing replacement/HPT work', () => {
+  assert.equal(docsSuspension.ccn, '050785');
+  assert.equal(docsSuspension.license_record.license_remark,
+    'Voluntary suspension 1/1/2025 - 12/31/2026.');
+  assert.equal(docsSuspension.license_record.hcai_id, '106190681');
+  assert.equal(docsSuspension.license_record.license_expiration_date, '2026-03-31');
+  assert.equal(docsSuspension.cross_source_context.cms_qies_termination_date, '2025-01-01');
+  assert.equal(docsSuspension.disposition_changed, false);
+  assert.equal(docsSuspension.cohort_count_effect, 0);
+  assert.match(docsSuspension.interpretation, /does not prove permanent closure/);
+  assert.match(docsSuspension.next_action, /At or after the stated suspension end/);
+  assert.match(docsSuspension.source.detail_response_sha256, /^[a-f0-9]{64}$/);
+
+  const reconciledManual = manual.records.find(record => record.ccn === '050785'
+    && record.latest_hcai_voluntary_suspension_detail_2026_09_29);
+  assert.ok(reconciledManual, 'dated HCAI proof is joined to the exact manual CCN record');
+  assert.equal(reconciledManual.latest_hcai_voluntary_suspension_detail_2026_09_29.proof_file,
+    'reconciliation-docs-hcai-voluntary-suspension-detail-2026-09-29.json');
+
+  const queued = worklist.records.find(record => record.ccn === '050785');
+  assert.ok(queued, 'historical 050785 remains in the unresolved worklist');
+  assert.match(queued.next_action, /At or after 2026-12-31/);
+  assert.ok(nationwide.records.find(record => record.ccn === '050785'),
+    'historical CCN remains covered in current nationwide review');
 });

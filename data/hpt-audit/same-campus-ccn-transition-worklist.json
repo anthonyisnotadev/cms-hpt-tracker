@@ -22,7 +22,7 @@
           "roster_type": "Acute Care Hospitals",
           "standing_finding": "compliant-observed",
           "current_disposition": "verified-current-mrf",
-          "workstream": "verification-proof-gap",
+          "workstream": "consistent",
           "standing_mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbWMCGENEVAAL&type=CDMWithoutLabel&fileType=CSV",
           "candidate_mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbWMCGENEVAAL&type=CDMWithoutLabel&fileType=CSV",
           "reviewed_at": "2026-09-26T20:20:00Z",
@@ -73,7 +73,7 @@
         {
           "ccn": "040153",
           "roster_type": "Acute Care Hospitals",
-          "standing_finding": "compliant-observed",
+          "standing_finding": "mrf-template-version-noncanonical",
           "current_disposition": "mrf-facility-identity-unresolved",
           "workstream": "consistent",
           "standing_mrf_url": "https://www.swarmc.org/wp-content/uploads/2026/05/994554436_southwest-arkansas-regional-medical-center_standardcharges.csv",
@@ -90,7 +90,7 @@
         {
           "ccn": "041335",
           "roster_type": "Critical Access Hospitals",
-          "standing_finding": "compliant-observed",
+          "standing_finding": "mrf-template-version-noncanonical",
           "current_disposition": "mrf-facility-identity-unresolved",
           "workstream": "standing-evidence-follow-up",
           "standing_mrf_url": "https://www.swarmc.org/wp-content/uploads/2026/05/994554436_southwest-arkansas-regional-medical-center_standardcharges.csv",
@@ -188,15 +188,24 @@
           "workstream": "genuinely-unresolved-investigation",
           "standing_mrf_url": "",
           "candidate_mrf_url": "",
-          "reviewed_at": "2026-09-27T18:59:14Z",
-          "manual_proof_file": "reconciliation-bullock-post-management-agreement-pointer-recheck-proof-2026-09-27.json",
+          "reviewed_at": "2026-09-28T15:39:27Z",
+          "manual_proof_file": "reconciliation-bullock-historical-archive-index-check-2026-09-28.json",
           "historical_manual_proof_files": [
+            "reconciliation-bullock-cms-reh-quality-period-proof-2026-09-27.json",
+            "reconciliation-bullock-cms-reh-transition-recheck-2026-09-20.json",
+            "reconciliation-bullock-county-hospital-reh-current-pointer-proof-2026-09-24.json",
+            "reconciliation-bullock-current-cms-hospital-general-proof-2026-09-20.json",
             "reconciliation-bullock-current-csv-index-review-proof-2026-09-27.json",
+            "reconciliation-bullock-current-pointer-file-recheck-proof-2026-09-25.json",
+            "reconciliation-bullock-current-reh-search-recheck-proof-2026-09-26.json",
+            "reconciliation-bullock-current-workbook-retrieval-proof-2026-09-28.json",
+            "reconciliation-bullock-historical-archive-index-check-2026-09-28.json",
             "reconciliation-bullock-post-management-agreement-pointer-recheck-proof-2026-09-27.json",
+            "reconciliation-bullock-preconversion-commoncrawl-page-file-review-2026-09-28.json",
             "reconciliation-bullock-reh-transition-proof.json",
             "reconciliation-qies-unresolved-status-audit-2026-09-27.json"
           ],
-          "existing_next_action": "Retain 010110 in the historical accountability baseline. Inspect only dated pre-conversion pointer/MRF evidence for the acute-care period through 2024-04-30; do not assign the current REH pointer/file to 010110.",
+          "existing_next_action": "Keep current REH evidence excluded from CCN 010110; do not repeat the current pointer/page-label or these exact archive/API/browser/search routes absent a material access/source change. Seek publisher-confirmed historical CMS-format MRF/pointer evidence or a genuinely new dated archive source.",
           "cms_enrollment_snapshot": {
             "ccn": "010110",
             "rows": 0
@@ -363,13 +372,25 @@
           "workstream": "genuinely-unresolved-investigation",
           "standing_mrf_url": "",
           "candidate_mrf_url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbNCGHPHILADELPHIAMS&type=CDMWithoutLabel&fileType=CSV",
-          "reviewed_at": "2026-09-27T06:32:57Z",
-          "manual_proof_file": "reconciliation-neshoba-cms-pos-transition-proof-2026-09-27.json",
+          "reviewed_at": "2026-09-28T19:26:52Z",
+          "manual_proof_file": "reconciliation-neshoba-historical-report-endpoint-prefix-index-review-2026-09-28.json",
           "historical_manual_proof_files": [
-            "reconciliation-neshoba-cms-pos-transition-proof-2026-09-27.json",
-            "reconciliation-neshoba-current-domain-recheck-proof-2026-09-21.json"
+            "reconciliation-neshoba-cah-transition-page-recheck-proof-2026-09-25.json",
+            "reconciliation-neshoba-ccn-transition-proof.json",
+            "reconciliation-neshoba-current-alternate-file-recheck-proof-2026-09-24.json",
+            "reconciliation-neshoba-current-domain-recheck-proof-2026-09-21.json",
+            "reconciliation-neshoba-historical-report-endpoint-prefix-index-review-2026-09-28.json",
+            "reconciliation-neshoba-historical-standard-charges-route-2026-09-28.json",
+            "reconciliation-neshoba-official-price-page-proof-2026-09-26.json",
+            "reconciliation-neshoba-portal-download-recheck-2026-09-27.json",
+            "reconciliation-neshoba-pretransition-commoncrawl-index-review-2026-09-28.json",
+            "reconciliation-neshoba-qies-hashed-query-recheck-2026-09-27.json",
+            "reconciliation-neshoba-sibling-cms-status-recheck-proof-2026-09-26.json",
+            "reconciliation-neshoba-state-license-transition-bracket-2026-09-28.json",
+            "reconciliation-neshoba-third-party-date-raw-link-recheck-2026-09-27.json",
+            "reconciliation-neshoba-wayback-pretransition-pricing-route-2026-09-28.json"
           ],
-          "existing_next_action": "Retain 250043 in the historical accountability baseline and inspect only dated pre-2025-12-31 pointer/MRF evidence for its acute-care period. Do not search for a current file under 250043 or assign the June 2026 campus MRF to it. The exact-filter/bulk QIES asymmetry has been reproduced and hashed; do not repeat unchanged queries unless the CMS data version changes.",
+          "existing_next_action": "Keep 250043 in the historical baseline. Seek pre-2025-12-31 pointer/MRF bytes from a materially new archive/source or retained publisher file. Keep the June 2026 file unassigned until exact CCN scope is documented; do not repeat previously exhausted archive/POS routes absent source/index/version change.",
           "cms_enrollment_snapshot": {
             "ccn": "250043",
             "rows": 0
@@ -386,6 +407,7 @@
           "reviewed_at": "2026-09-27T06:32:57Z",
           "manual_proof_file": "reconciliation-neshoba-cms-pos-transition-proof-2026-09-27.json",
           "historical_manual_proof_files": [
+            "reconciliation-neshoba-cah-cms-status-recheck-proof-2026-09-25.json",
             "reconciliation-neshoba-ccn-transition-proof.json",
             "reconciliation-neshoba-cms-pos-transition-proof-2026-09-27.json"
           ],
@@ -443,12 +465,13 @@
           "workstream": "consistent",
           "standing_mrf_url": "https://secure.claraprice.net/price-transparency/OGFL-1782507604288/machine-readable/884062444_clinton-regional-hospital_standardcharges.json",
           "candidate_mrf_url": "https://secure.claraprice.net/price-transparency/OGFL-1782507604288/machine-readable/884062444_clinton-regional-hospital_standardcharges.json",
-          "reviewed_at": "2026-09-17T10:53:30.532Z",
+          "reviewed_at": "2026-09-29T04:17:09.323Z",
           "manual_proof_file": "reconciliation-clinton-reh-transition-proof.json",
           "historical_manual_proof_files": [
+            "reconciliation-clinton-reh-current-mrf-revision-proof-2026-09-29.json",
             "reconciliation-clinton-reh-transition-proof.json"
           ],
-          "existing_next_action": "The exact current REH pointer/file was promoted for CCN 370784 through the reviewed-resolution ledger. Monitor publisher changes and retain the distinct former CCN; this is not line-item or legal compliance validation.",
+          "existing_next_action": "Current pointer-linked REH file remains promoted for CCN 370784; its bytes and metadata were rechecked on 2026-09-29 with a changed full-file hash/count. Keep former acute-care CCN 370245 separate pending historical-file evidence.",
           "cms_enrollment_snapshot": {
             "ccn": "370784",
             "rows": 1,
@@ -468,8 +491,8 @@
   "limitation": "Exact same-name, street, city, state and ZIP roster rows with different facility types are an enrollment-scope lead, not evidence that either CCN is currently active or that a shared MRF covers both. Confirm effective dates from a primary enrollment source before changing a CCN-specific verification claim.",
   "source_sha256": {
     "cms_data/hpt/roster.json": "feb936c65252106022d234e4b0fe858ef9ab0a050229ddd852aa7257966db7cf",
-    "data/hpt-audit/nationwide-reconciliation.json": "2e196a9cff87a34657dfd0216d124d4cb093b18fa5d872b5cf5f76e3765a9984",
+    "data/hpt-audit/nationwide-reconciliation.json": "d77a330c36861cbe3081e7948c26f884991ab599183d07f8af021ae59b5320f9",
     "data/hpt-audit/same-campus-cms-enrollment-snapshot-review.json": "fc093762ab992eaaebc126d08d231d688591f27bfe095f43441bbe7d7acc5f49",
-    "data/hpt-audit/reconciliation-manual-access-observations.json": "0db0736adfed2fc47365c10f7bed59b20ce0fa6e0b0c68bb1ef0f7ed76baea74"
+    "data/hpt-audit/reconciliation-manual-access-observations.json": "7e3b70a116b513d5c9b21ab469b04570ddc0d26284bce6084578436af0da5e03"
   }
 }

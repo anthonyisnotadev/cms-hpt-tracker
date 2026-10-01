@@ -27,6 +27,22 @@ test('reviewed queue excludes resolved base investigations and preserves explici
   assert.ok(queue.every(row => !row.label.includes('Close as exempt')));
 });
 
+test('retained findings with unresolved metadata conflicts stay in the investigation count', () => {
+  const records = [
+    { ccn: '1', disposition: 'linked-mrf-header-unmatched', standing_evidence_retained: true,
+      reconciliation_workstream: 'genuinely-unresolved-investigation' },
+    { ccn: '2', disposition: 'linked-mrf-header-unmatched', standing_evidence_retained: true,
+      reconciliation_workstream: 'standing-evidence-follow-up' },
+  ];
+  const steps = {
+    '1': { stream: 'genuinely-unresolved-investigation' },
+    '2': { stream: 'standing-evidence-follow-up' },
+  };
+  const queue = buildReviewedWorkQueue(steps, records);
+  assert.equal(queue.find(row => row.key === 'genuinely-unresolved-investigation').n, 1);
+  assert.equal(queue.find(row => row.key === 'standing-evidence-follow-up').n, 1);
+});
+
 test('queue fails visibly when unresolved coverage, stream definitions, or CCN identity drift', () => {
   assert.throws(() => buildReviewedWorkQueue({}, [{ ccn: '1' }]), /no reviewed next step/);
   assert.throws(() => buildReviewedWorkQueue({ '1': { stream: 'unknown' } }, [{ ccn: '1' }]), /Unknown/);

@@ -1,0 +1,37 @@
+{
+  "ccn": "291312",
+  "hospital_name": "GROVER C. DILS MEDICAL CENTER",
+  "observed_at": "2026-09-27T21:50:34Z",
+  "official_homepage_url": "https://gcdmc.org/",
+  "official_homepage_browser_title": "Grover C. Dils – Bringing Quality Healthcare to the High Desert",
+  "official_homepage_facility_identity": "Grover C. Dils Medical Center; contact section lists 700 Spring St, Caliente, NV 89008.",
+  "official_homepage_price_transparency_link": "https://rca.elevatepfs.com/ptapp/#137db597daba65e49980212b8de4297e038c1b814e1a92fe58c0f1c7a0bc78c3",
+  "portal_browser_title": "Elevate - PTApp",
+  "portal_browser_observation": "The publisher-homepage-linked portal loads and provides Home, Standard Charges, and Shoppable Services tabs. The public Standard Charges view exposes Facility/Payer/Plan selectors and an Export menu. Selecting Grover C Dils Medical Center in the Facility selector exposes an Export > All data menu item. Invoking All data in the public browser session did not produce a browser download, a navigable file URL, or file bytes; the accessible view still exposed no charge rows. This is a current interactive-portal/export-control observation only, not MRF retrieval or validation.",
+  "portal_export_test": {
+    "observed_at": "2026-09-27T22:08:00Z",
+    "selected_facility": "Grover C Dils Medical Center",
+    "export_menu_item": "All data",
+    "result": "No browser download, file URL, file bytes, or accessible table rows observed after invoking the public export menu item.",
+    "evidence_classification": "new-portal-ui-observation-no-mrf-bytes"
+  },
+  "pointer_url": "https://gcdmc.org/cms-hpt.txt",
+  "pointer_status": 200,
+  "pointer_bytes": 309,
+  "pointer_sha256": "a169679cee15b2b0100ed8cb3985785bf6677c6e601e922a5bc7a16362b757c5",
+  "pointer_source_page_url": "https://services.gcdmc.org/pt-machinereadable.html",
+  "pointer_declared_mrf_url": "https://assets.changehealthcare.com/Shop/PROD/static/LincolnCountyHospital/ein_LincolnCountyHospital_standardcharges.csv.zip",
+  "pointer_declaration": "Lincoln County Hospital District; Change Healthcare ZIP target remains the declared pointer MRF.",
+  "pointer_result": "Pointer bytes and hash are unchanged from the retained 2026-09-18 recheck; it has not been replaced by the current homepage-linked Elevate portal.",
+  "legacy_source_page_browser_result": "Direct navigation to the pointer-declared services.gcdmc.org source page ended with ERR_CONNECTION_CLOSED; no content or file link was observed in this browser session.",
+  "third_party_lead": {
+    "source_url": "https://docs.payerset.com/hospital-transparency/mrf-links-by-state",
+    "source_observation": "Its Nevada list identifies Grover C Dils Medical Center and lists https://rca.centaurihs.com/ptapp/ with a normalized record-count estimate of 51,976.",
+    "classification": "unverified-third-party-route-lead",
+    "browser_result": "Navigation timed out before page content could be inspected.",
+    "not_used_as": "Not treated as publisher confirmation, MRF bytes, current metadata, or proof of the 291312 file identity."
+  },
+  "disposition": "unresolved-current-portal-found-pointer-mrf-not-recovered",
+  "interpretation": "New current first-party portal-route evidence creates a concrete route to investigate, but neither the interactive portal nor the third-party Centauri listing yielded byte-backed CMS MRF evidence. Keep the 2023 homepage CSV as historical evidence and the current Change Healthcare ZIP as an unresolved pointer target; do not merge or substitute their evidence.",
+  "next_action": "Determine through a permitted publisher-supported path why the public All data export action yields no download/file URL in this browser; if a facility-specific CMS MRF can be obtained, preserve exact URL and bytes/hash, then independently validate Grover C. Dils/Lincoln County Hospital District identity, 700 Spring/North Spring Street Caliente NV address, NV metadata, declared CMS date/template version, and usable rows. Separately investigate the third-party-listed Centauri portal only as a route lead. Compare any recovered file to the pointer-declared Change Healthcare ZIP and November 2023 legacy CSV; preserve each chain and do not promote displayed prices alone."
+}

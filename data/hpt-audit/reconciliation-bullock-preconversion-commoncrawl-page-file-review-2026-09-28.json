@@ -1,0 +1,121 @@
+{
+  "audit_id": "reconciliation-bullock-preconversion-commoncrawl-page-file-review-2026-09-28",
+  "observed_at": "2026-09-28T04:48:09Z",
+  "ccn": "010110",
+  "facility": "Bullock County Hospital, Union Springs, Alabama",
+  "historical_scope": "Acute-care accountability through 2024-04-30; current REH evidence for CCN 010779 is excluded.",
+  "purpose": "Recover dated first-party pre-conversion price-page evidence using a domain-wide Common Crawl index and exact WARC byte ranges, after the prior search queried only the exact cms-hpt.txt root URL.",
+  "archive_index_search": {
+    "provider": "Common Crawl Index API",
+    "queries": [
+      {
+        "collection": "CC-MAIN-2023-50",
+        "match_type": "domain",
+        "http_status": 200,
+        "response_bytes": 11153,
+        "indexed_url_count": 24,
+        "hospital_charges_capture": "2023-12-06T21:17:19Z"
+      },
+      {
+        "collection": "CC-MAIN-2024-10",
+        "match_type": "domain",
+        "http_status": 200,
+        "response_bytes": 4028,
+        "indexed_url_count": 9,
+        "hospital_charges_capture": null
+      },
+      {
+        "collection": "CC-MAIN-2024-18",
+        "match_type": "www-subdomain-wildcard",
+        "http_status": 200,
+        "response_bytes": 3242,
+        "indexed_url_count": 7,
+        "hospital_charges_capture": "2024-04-23T11:37:28Z"
+      },
+      {
+        "collection": "CC-MAIN-2023-40",
+        "match_type": "domain",
+        "http_status": 200,
+        "response_bytes": 1767,
+        "indexed_url_count": 4,
+        "hospital_charges_capture": null
+      }
+    ],
+    "exact_linked_workbook_search": {
+      "target": "https://www.bullockcountyhospital.com/_files/ugd/ce2ea9_a454a15a1df3499abc80ba579a084bfc.xlsx?dn=BCH%20CDM%20for%20Webpage%20upload.xlsx",
+      "collections": [
+        "CC-MAIN-2024-18",
+        "CC-MAIN-2024-10",
+        "CC-MAIN-2023-50",
+        "CC-MAIN-2023-23"
+      ],
+      "results": "No indexed HTTP-200 capture in those four queried collections; CC-MAIN-2023-40 returned HTTP 502 and is not counted as a negative result."
+    },
+    "limitation": "Index results are bounded to the listed Common Crawl collections and requested host/URL patterns. A missing capture is not evidence that a pointer or MRF did not exist."
+  },
+  "preconversion_publisher_page_captures": [
+    {
+      "captured_at": "2023-12-06T21:17:19Z",
+      "url": "https://www.bullockcountyhospital.com/hospital-charges",
+      "http_status": 200,
+      "index_payload_digest": "INEB2MCYRCBTBRHLR73NUMVLKIZ2SKON",
+      "warc_record_id": "urn:uuid:4d250536-efac-40cf-beee-d2f447ab6471",
+      "warc_range": "bytes 773609831-773696082/1217881504",
+      "warc_range_bytes": 86252,
+      "warc_range_sha256": "c9b057bcc67b1eb7ce41b6efd558f8a5cce8d0baa815a82fe2be7d6da2025e40",
+      "page_title": "Hospital Charges | bch.com",
+      "linked_file": "https://www.bullockcountyhospital.com/_files/ugd/ce2ea9_a454a15a1df3499abc80ba579a084bfc.xlsx?dn=BCH%20CDM%20for%20Webpage%20upload.xlsx",
+      "link_label": "Click Here for Charges"
+    },
+    {
+      "captured_at": "2024-04-23T11:37:28Z",
+      "url": "https://www.bullockcountyhospital.com/hospital-charges",
+      "http_status": 200,
+      "index_payload_digest": "VUDBPYUVTDWW3Z5Q3MFZ3XJ76KNQXY3L",
+      "warc_record_id": "urn:uuid:7376bf1a-6d22-417f-9953-c7cd02f28215",
+      "warc_range": "bytes 609433210-609516466/973834119",
+      "warc_range_bytes": 83257,
+      "warc_range_sha256": "6b5244c8daca92dbb84cc29cb198360803b5a7858a5624125a195b0d527ee1f8",
+      "page_title": "Hospital Charges | bch.com",
+      "page_description": "The page describes the posted list as standard charges commonly known as the chargemaster.",
+      "linked_file": "https://www.bullockcountyhospital.com/_files/ugd/ce2ea9_a454a15a1df3499abc80ba579a084bfc.xlsx?dn=BCH%20CDM%20for%20Webpage%20upload.xlsx",
+      "link_label": "Click Here for Charges"
+    }
+  ],
+  "interpretation": "The archived first-party Hospital Charges page existed on 2023-12-06 and again on 2024-04-23, before the 2024-05-01 REH transition, and linked the same publisher-hosted Excel workbook explicitly named as a CDM/chargemaster. This is new, dated source evidence for what the hospital's public pricing page linked during the acute-care period. It is not a CMS pointer, not a CMS-template MRF, and not proof that no separate MRF existed. No workbook bytes or historical CCN-specific pricing rows were recovered; do not import this workbook or the current REH CSV into 010110.",
+  "outcome": {
+    "evidence_gain": "Two hash-bound Common Crawl WARC captures of the exact pre-conversion first-party hospital-charges page and its workbook link.",
+    "new_mrf_bytes": false,
+    "pointer_linkage_established": false,
+    "ccn_disposition_changed": false,
+    "unresolved_count_change": 0,
+    "disposition": "historical-acute-care-mrf-unresolved",
+    "next_action": "Do not repeat these same archive-index queries or the exact root-pointer query absent a new archive collection/source change. Continue seeking an exact dated pre-2024-05-01 CMS pointer/MRF capture or publisher-provided historical CMS-format file. Keep the recovered chargemaster-page evidence and any workbook separate from the CMS MRF evidence and current REH CCN 010779."
+  },
+  "follow_up_2026_09_28": {
+    "observed_at": "2026-09-28T12:25:00Z",
+    "official_current_pointer": {
+      "source_page": "https://www.bullockcountyhospital.com/",
+      "pointer_link": "https://www.bullockcountyhospital.com/cms-hpt.txt",
+      "pointer_declares_location": "Bullock County Rural Emergency Hospital",
+      "pointer_file_url": "https://ce2ea91a-ba41-4498-ab16-2bae48bc8556.usrfiles.com/ugd/ce2ea9_229d2d077ea74cf6a45992ffbb655715.csv",
+      "interpretation": "Current pointer is expressly for the successor REH route; do not transfer its file to historical acute-care CCN 010110."
+    },
+    "current_pricing_page_file_route": {
+      "source_page": "https://www.bullockcountyhospital.com/general-4",
+      "displayed_standard_charge_filename": "631070858_Bullock_Hospital_StandardCharges.CSV",
+      "exact_standard_charge_file_link_exposed": false,
+      "separate_shoppable_services_csv": true,
+      "interpretation": "Filename display is not a retrievable file URL or proof of pre-conversion scope."
+    },
+    "cms_reh_quality_dataset": {
+      "source": "https://data.cms.gov/provider-data/dataset/97xg-v3wv",
+      "provider_id": "010779",
+      "period": "2024-07-01 through 2025-06-30",
+      "interpretation": "Primary CMS REH program data corroborates successor REH-period reporting under 010779; it does not establish historical 010110 MRF status."
+    },
+    "count_effect": 0,
+    "disposition_changed": false,
+    "next_action": "Keep 010110 unresolved and distinct from REH CCN 010779. Existing dated evidence now shows the pre-conversion public page linked a CDM workbook, not a proven CMS MRF. Seek publisher-confirmed historical CMS-format file/pointer evidence or a genuinely new dated archive source; do not repeat the unchanged current pointer, page filename inspection, or queried Common Crawl collections."
+  }
+}

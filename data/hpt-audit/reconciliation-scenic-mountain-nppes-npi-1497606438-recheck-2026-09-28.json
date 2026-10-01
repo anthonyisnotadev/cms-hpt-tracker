@@ -1,0 +1,49 @@
+{
+  "ccn_under_review": "450653",
+  "observed_at": "2026-09-28T13:08:03Z",
+  "source": {
+    "publisher": "CMS National Plan and Provider Enumeration System (NPPES)",
+    "api_url": "https://npiregistry.cms.hhs.gov/api/?version=2.1&number=1497606438",
+    "http_status": 200,
+    "response_bytes": 1456,
+    "response_sha256": "8b7a25562466805cbbd1e7e546ff898d86b9b44e3ce76ad3ef3d1bb13090b986",
+    "result_count": 1
+  },
+  "nppes_record": {
+    "npi": "1497606438",
+    "entity_type": "NPI-2",
+    "organization_name": "SHANNON MEDICAL CENTER",
+    "dba": "SHANNON MEDICAL CENTER BIG SPRING",
+    "status": "A",
+    "enumeration_date": "2026-02-05",
+    "last_updated": "2026-09-21",
+    "certification_date": "2026-09-21",
+    "location_address": "1601 W 11TH PL, BIG SPRING, TX 79720-4114",
+    "mailing_address": "PO BOX 1879, ATTN: ADMINISTRATION, SAN ANGELO, TX 76902",
+    "taxonomy": "282N00000X — General Acute Care Hospital"
+  },
+  "cms_hospital_enrollments_recheck": {
+    "observed_at": "2026-09-28T13:08:13Z",
+    "dataset_release": "2026-08-01",
+    "dataset_id": "f6f6505c-e8b0-4d57-b258-e2b94133aaf2",
+    "exact_npi_query_url": "https://data.cms.gov/data-api/v1/dataset/f6f6505c-e8b0-4d57-b258-e2b94133aaf2/data?filter%5BNPI%5D=1497606438",
+    "exact_npi_http_status": 200,
+    "exact_npi_response_bytes": 2,
+    "exact_npi_response_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "exact_npi_rows": 0,
+    "exact_ccn_query_url": "https://data.cms.gov/data-api/v1/dataset/f6f6505c-e8b0-4d57-b258-e2b94133aaf2/data?filter%5BCCN%5D=450653",
+    "exact_ccn_http_status": 200,
+    "exact_ccn_response_bytes": 1185,
+    "exact_ccn_response_sha256": "8fcd9550b85dae126d40ff9fed300427e9dc2bbbe947e38f93725ea057656faf",
+    "exact_ccn_record": {
+      "ccn": "450653",
+      "npi": "1336976034",
+      "organization_name": "BIG SPRING TEXAS HOSPITAL COMPANY LLC",
+      "doing_business_as_name": "SCENIC MOUNTAIN MEDICAL CENTER",
+      "address": "1601 W 11TH PL, BIG SPRING, TX 79720-4114"
+    }
+  },
+  "interpretation": "New official NPPES evidence shows NPI 1497606438 was certified and its organizational record updated on 2026-09-21, with Shannon Medical Center Big Spring as its DBA and the same physical address as CCN 450653. This resolves the narrower question of whether the NPI/name/address combination in the file corresponds to a currently recognized hospital organization at Big Spring; it does not establish that NPI 1497606438 is assigned to Medicare CCN 450653. The latest available CMS Hospital Enrollments release is dated 2026-08-01, before the NPPES update; it contains no row for that NPI and reports CCN 450653 under NPI 1336976034 / Scenic Mountain as of that older snapshot. Its absence cannot determine whether the September NPPES update was followed by a Medicare CCN assignment. Do not promote or assign the file to 450653 absent post-update, effective-dated CCN continuity or authoritative publisher/CMS scope evidence.",
+  "result": "identity corroboration strengthened; Medicare CCN continuity unresolved; no current-MRF verification promotion",
+  "next_action": "Check for a CMS Hospital Enrollments/certification release later than 2026-09-21 or obtain effective-dated CMS certification evidence or an authoritative Shannon/publisher explanation linking NPI 1497606438 to CCN 450653 before using the file for the tracker."
+}

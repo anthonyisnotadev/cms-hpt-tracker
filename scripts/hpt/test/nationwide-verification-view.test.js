@@ -1,7 +1,7 @@
 'use strict';
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { applyNationwideVerification, toAssessment, synchronizeManifest } = require('../lib/nationwide-verification-view');
+const { applyNationwideVerification, effectiveVerifiedFinding, toAssessment, synchronizeManifest } = require('../lib/nationwide-verification-view');
 const fs = require('node:fs');
 const path = require('node:path');
 
@@ -13,6 +13,13 @@ const record = { ccn: base.ccn, hospital_name: base.hospital_name, city: base.ci
   pointer_url: 'https://new.test/cms-hpt.txt|https://www.new.test/cms-hpt.txt', mrf_url: 'https://new.test/current.csv',
   declared_last_updated: '2026-08-01', cms_template_version: '3.0.0', observed_at: '2026-09-15T00:00:00Z',
   next_action: 'Recheck next crawl.' };
+
+test('template-review finding distinguishes current v3 literals from an unobserved version', () => {
+  assert.equal(effectiveVerifiedFinding({ disposition: 'verified-template-review', cms_template_version: '3.0' }), 'compliant-observed');
+  assert.equal(effectiveVerifiedFinding({ disposition: 'verified-template-review', cms_template_version: '3.0.0' }), 'compliant-observed');
+  assert.equal(effectiveVerifiedFinding({ disposition: 'verified-template-review', cms_template_version: '' }), null);
+  assert.equal(effectiveVerifiedFinding({ disposition: 'verified-template-review' }), null);
+});
 
 test('nationwide verified evidence updates the presentation row without pipe-joining links', () => {
   const row = applyNationwideVerification([base], [record])[0];
@@ -29,7 +36,7 @@ test('an unprobed pointer-linked file cannot erase newer reviewed standing evide
   assert.deepEqual(applyNationwideVerification([prior], [observed]), [prior]);
 });
 
-test('noncanonical version corrects only a newer identity-matched observation of the same standing file', () => {
+test('CMS 3.0 counts as version 3 and corrects only a newer identity-matched observation of the same standing file', () => {
   const prior = { ...base, finding: 'compliant-observed', cms_template_version: '3.0',
     mrf_url: 'https://old.test/old.csv' };
   const observed = { ...record, prior_finding: prior.finding, disposition: 'verified-template-review',
@@ -37,16 +44,18 @@ test('noncanonical version corrects only a newer identity-matched observation of
     facility_identity: 'corroborated-by-pointer-and-header', header_identity_gate: 'file-name-and-address',
     mrf_http_status: '206' };
   const corrected = applyNationwideVerification([prior], [observed])[0];
-  assert.equal(corrected.finding, 'mrf-template-version-noncanonical');
+  assert.equal(corrected.finding, 'compliant-observed');
   assert.equal(corrected.mrf_url, prior.mrf_url);
-  assert.match(corrected.evidence, /literal CMS template version 3\.0/);
+  assert.match(corrected.evidence, /CMS template version 3\.0/);
   for (const change of [{ mrf_url: 'https://new.test/other.csv' }, { header_identity_gate: '' },
     { cms_template_version: '3.0.1' }, { mrf_http_status: '403' }]) {
     assert.deepEqual(applyNationwideVerification([prior], [{ ...observed, ...change }]), [prior]);
   }
+  const older = { ...observed, cms_template_version: '2.0' };
+  assert.equal(applyNationwideVerification([prior], [older])[0].finding, 'old-template-version');
 });
 
-test('changed-file noncanonical version replaces a standing file only with exact pointer and header proof', () => {
+test('changed-file CMS 3.0 replaces a standing file only with exact pointer and header proof', () => {
   const prior = { ...base, finding: 'compliant-observed', cms_template_version: '3.0.0',
     mrf_url: 'https://old.test/old.json' };
   const next = { ...record, prior_finding: prior.finding, disposition: 'verified-template-review',
@@ -58,7 +67,7 @@ test('changed-file noncanonical version replaces a standing file only with exact
     pointer_corpus_observed_at: '2026-09-15T01:00:00Z',
     evidence: { pointer_sha256s: ['a'.repeat(64)], matched_mrf_candidates: 1 } };
   const updated = applyNationwideVerification([prior], [next])[0];
-  assert.equal(updated.finding, 'mrf-template-version-noncanonical');
+  assert.equal(updated.finding, 'compliant-observed');
   assert.equal(updated.mrf_url, next.mrf_url);
   for (const change of [{ pointer_corpus_raw_integrity: 'hash-conflict' },
     { pointer_corpus_sha256: 'b'.repeat(64) }, { pointer_state: 'retrieved-facility-match-unresolved' },
@@ -145,6 +154,28 @@ test('failed retry preserves a dated successful finding and its metadata', () =>
   for (const disposition of ['pointer-discovery-incomplete', 'linked-mrf-header-unmatched', 'verified-facility-metadata-unresolved']) {
     assert.deepEqual(applyNationwideVerification([prior], [{ ...record, prior_finding: prior.finding, disposition }]), [prior]);
   }
+});
+
+test('incomplete root-pointer retry preserves a reviewed page-file finding', () => {
+  const prior = { ...base, finding: 'root-pointer-html-page-with-official-page-file',
+    mrf_url: 'https://hospital.test/current.csv', mrf_last_updated: '2026-04-01',
+    cms_template_version: '3.0.0', checked_at: '2026-09-16T09:41:54Z' };
+  const retry = { ...record, prior_finding: prior.finding, disposition: 'pointer-not-retrieved',
+    observed_at: '2026-09-17T00:00:00Z' };
+  assert.deepEqual(applyNationwideVerification([prior], [retry]), [prior]);
+});
+
+test('page-file-only recheck does not replace the reviewed source-page link with pointer candidates', () => {
+  const prior = { ...base, finding: 'compliant-observed',
+    pointer_url: 'https://hospital.test/pricing', mrf_url: 'https://files.test/current.json' };
+  const pageFile = { ...record, prior_finding: prior.finding, disposition: 'verified-current-mrf',
+    metadata_source: 'manual-page-file-recheck',
+    pointer_url: 'https://hospital.test/cms-hpt.txt|https://www.hospital.test/cms-hpt.txt',
+    mrf_url: prior.mrf_url, source_page_url: prior.pointer_url,
+    observed_at: '2026-09-17T00:00:00Z' };
+  const result = applyNationwideVerification([prior], [pageFile])[0];
+  assert.equal(result.pointer_url, prior.pointer_url);
+  assert.equal(result.mrf_url, prior.mrf_url);
 });
 
 test('a superseded undated coverage gap cannot erase a newer reviewed page-linked file', () => {

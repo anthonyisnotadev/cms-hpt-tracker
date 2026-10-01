@@ -1,26 +1,37 @@
 {
-  "generated_at": "2026-09-27T19:16:35.059Z",
-  "source_sha256": "2e196a9cff87a34657dfd0216d124d4cb093b18fa5d872b5cf5f76e3765a9984",
-  "unresolved_ccns": 547,
-  "supported_ccns": 547,
+  "generated_at": "2026-09-30T23:59:26.352Z",
+  "source_sha256": "d77a330c36861cbe3081e7948c26f884991ab599183d07f8af021ae59b5320f9",
+  "unresolved_ccns": 581,
+  "supported_ccns": 581,
   "missing_support_count": 0,
   "missing": [],
   "workstream_coverage": {
-    "latest_check_unresolved_ccns": 548,
+    "latest_check_unresolved_ccns": 583,
     "investigation_worklist_file": "unresolved-investigation-worklist.json",
-    "investigation_worklist_ccns": 547,
+    "investigation_worklist_ccns": 581,
     "identity_quarantine_worklist_file": "identity-quarantine-worklist.json",
-    "identity_quarantine_worklist_ccns": 11,
+    "identity_quarantine_worklist_ccns": 10,
+    "supported_uncertainty_worklist_file": "supported-uncertainty-followup-worklist.json",
+    "supported_uncertainty_worklist_ccns": 62,
     "separately_routed_latest_check_unresolved": [
       {
-        "ccn": "244015",
-        "hospital_name": "COMMUNITY BEHAVIORAL HEALTH HOSPITAL - BAXTER",
+        "ccn": "011302",
+        "hospital_name": "RED BAY HOSPITAL",
         "workstream": "identity-quarantine",
-        "latest_observed_at": "2026-09-26T13:03:30.002Z",
-        "next_action": "Locate a Baxter-specific first-party cms-hpt.txt or pricing/file route and independently verify the file header, Minnesota address, date, CMS version and usable rows."
+        "reconciliation_status": "review-required",
+        "latest_observed_at": "2026-09-30T22:30:32Z",
+        "next_action": "Retry only after an observable DNS/route change or through a materially different permitted content-bearing client; retrieve the exact current hh.health root cms-hpt.txt and linked CSV with bounded bytes, then verify linkage, facility identity, CMS metadata, validation and usable rows. Do not retry the historical cloudaccess or 404 huntsvillehospital URLs absent a route change, and do not substitute sibling files or mirrors."
+      },
+      {
+        "ccn": "241319",
+        "hospital_name": "MURRAY COUNTY MEMORIAL HOSPITAL",
+        "workstream": "supported-uncertainty-monitor",
+        "reconciliation_status": "supported-identity-uncertainty",
+        "latest_observed_at": "2026-09-29T18:09:06.182Z",
+        "next_action": "Recover a current plain-text murraycountymed.org root pointer through a permitted client or publisher route and compare its exact mrf-url with the page-linked County-of-Murray CSV. Confirm the hospital CCN/legal-name relationship and assess full CSV structure before any current-MRF or compliance claim; do not repeat the failed direct/browser routes without a material change."
       }
     ],
-    "covered_latest_check_unresolved_ccns": 548,
+    "covered_latest_check_unresolved_ccns": 583,
     "missing_queue_coverage_count": 0,
     "missing_queue_coverage_ccns": [],
     "cross_queue_overlap_count": 0,

@@ -1,0 +1,56 @@
+{
+  "ccn": "370246",
+  "observed_at": "2026-09-27T22:53:59Z",
+  "publisher": "Saint Francis Health System",
+  "official_pricing_page": "https://www.saintfrancis.com/patients-and-guests/billing-and-insurance/standard-hospital-charges",
+  "official_facility_page": "https://www.saintfrancis.com/location/saint-francis-bristow",
+  "pricing_page_observation": "The current first-party Standard Hospital Charges page says its comprehensive machine-readable JSON files are organized by hospital location and lists five linked files: Saint Francis Hospital; Saint Francis Hospital Muskogee; Saint Francis Hospital South; Saint Francis Hospital Vinita; and Laureate Psychiatric Clinic and Hospital. Saint Francis Bristow is not among the five named links.",
+  "pricing_page_file_links": [
+    {
+      "hospital_label": "Saint Francis Hospital",
+      "publisher_route": "https://www.saintfrancis.com/finance/sfh-cms-hpt",
+      "linked_filename": "730700090_saint-francis-hospital,-inc_standardcharges.json",
+      "head_status": 200,
+      "content_type": "application/json",
+      "content_length_bytes": 34889316
+    },
+    {
+      "hospital_label": "Saint Francis Hospital Muskogee",
+      "publisher_route": "https://www.saintfrancis.com/finance/sfhm-cms-hpt",
+      "linked_filename": "814322087_saint-francis-hospital-muskogee_standardcharges.json",
+      "head_status": 200,
+      "content_type": "application/json",
+      "content_length_bytes": 29342445
+    },
+    {
+      "hospital_label": "Saint Francis Hospital South",
+      "publisher_route": "https://www.saintfrancis.com/finance/sfhs-cms-hpt",
+      "linked_filename": "010603214_saint-francis-hospital-south_standardcharges.json",
+      "head_status": 200,
+      "content_type": "application/json",
+      "content_length_bytes": 31534271
+    },
+    {
+      "hospital_label": "Saint Francis Hospital Vinita",
+      "publisher_route": "https://www.saintfrancis.com/finance/sfhv-cms-hpt",
+      "linked_filename": "813747248_saint-francis-hospital-vinita_standardcharges.json",
+      "head_status": 200,
+      "content_type": "application/json",
+      "content_length_bytes": 25193186
+    },
+    {
+      "hospital_label": "Laureate Psychiatric Clinic and Hospital",
+      "publisher_route": "https://www.saintfrancis.com/finance/laureate-cms-hpt",
+      "linked_filename": "731308273_laureate-psychiatric-clinic-and-hospital-inc_standardcharges.json",
+      "head_status": 200,
+      "content_type": "application/json",
+      "content_length_bytes": 10830671
+    }
+  ],
+  "file_bodies_retrieved": false,
+  "mrf_content_or_metadata_verified": false,
+  "ccn_370246_mapping_found": false,
+  "disposition": "successor-site-confirmed-mrf-unresolved",
+  "interpretation": "This is a current first-party pricing-scope and linked-route review. The page-level list and the five linked filenames do not identify a Bristow/370246 file. HEAD checks confirm the linked routes serve JSON-sized objects, but no body bytes were retrieved or parsed; absence of a Bristow link on this page is not proof that no separate Bristow file exists, and no sibling file is assigned to CCN 370246.",
+  "next_action": "Obtain a first-party Bristow-specific CMS pointer/file or a publisher-confirmed mapping from CCN 370246 to a linked file; then verify file bytes, facility identity/address, declared metadata and usable rows. Do not infer coverage from shared ownership or the five sibling hospital files."
+}

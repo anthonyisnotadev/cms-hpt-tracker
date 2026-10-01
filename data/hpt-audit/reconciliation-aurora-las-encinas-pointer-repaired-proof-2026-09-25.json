@@ -17,5 +17,20 @@
   "identity_observation": "The file name and header agree with the current Aurora Las Encinas page; the previously recorded identity is 2900 East Del Mar Blvd, Pasadena, CA 91107.",
   "evidence_role": "current first-party root-pointer and target-file evidence; not a CMS compliance verdict",
   "disposition": "official-pointer-and-page-link-current-legacy-style-csv-metadata-limited",
-  "next_action": "Retain the pointer-linked file as current facility evidence. Separately review its schema and address/state metadata before assigning a stronger CMS usability finding; do not infer compliance from the pointer or legacy header alone."
+  "next_action": "Retain the pointer-linked file as current facility evidence. Separately review its schema and address/state metadata before assigning a stronger CMS usability finding; do not infer compliance from the pointer or legacy header alone.",
+  "latest_exact_file_recheck": {
+    "observed_at": "2026-09-28T04:41:00Z",
+    "method": "PowerShell Invoke-WebRequest; exact official pointer/page URL; no challenge bypass",
+    "http_status": 200,
+    "content_type": [
+      "text/csv; charset=utf-8"
+    ],
+    "last_modified": [
+      "Mon, 17 Aug 2026 19:53:09 GMT"
+    ],
+    "bytes": 8394,
+    "sha256": "f83776cf9bb279af34c8e820fe1a5e10b6a5c4192b2521f02bdc02793f8e3402",
+    "matches_prior_full_file_hash": true,
+    "interpretation": "Exact bytes match the complete 8,394-byte file previously hash-recorded on 2026-09-25. Recheck supplies no new file-content evidence; access route differed. Full schema/usability review follows in the 2026-09-28 access proof."
+  }
 }

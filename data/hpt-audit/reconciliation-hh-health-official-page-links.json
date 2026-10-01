@@ -14,13 +14,28 @@
     {
       "ccn": "010019",
       "observed_at": "2026-09-15T21:27:00.000Z",
+      "prior_system_page": "https://hh2026.cloudaccess.host/patients-visitors/price-transparency/",
       "official_system_page": "https://hh2026.cloudaccess.host/patients-visitors/price-transparency/",
       "official_page_relationship": "The current HH Health-branded price-transparency page separately labels this exact URL as the Standard Charge File for Helen Keller Hospital.",
       "pricing_resource_url": "https://hh2026.cloudaccess.host/wp-content/uploads/472323163_hellen-keller-hospital_standardcharges.csv",
       "direct_result": "connect-timeout",
       "browser_result": "ERR_CONNECTION_CLOSED",
       "disposition": "current-system-page-file-link-transport-uncertainty",
-      "next_action": "Retry this exact Helen Keller file through a materially different download-capable route or after the HH Health site moves off its temporary host. Require file-declared facility identity, address/state and metadata before any promotion; do not substitute the Huntsville Hospital system file and do not infer absence or invalidity from the connection failures."
+      "next_action": "Retry exact current hh.health CSV only after DNS/access changes or a materially different authorized byte-serving route. No file bytes or metadata were obtained; keep unresolved. Do not repeat the old Huntsville parent-domain route, which returned 404; do not substitute a sibling file.",
+      "latest_official_route_recheck_2026_09_30": {
+        "observed_at": "2026-09-30T12:39:39Z",
+        "official_system_page": "https://hh.health/patients-visitors/price-transparency/",
+        "page_last_updated": "2026-08-20",
+        "official_page_relationship": "The live page lists Helen Keller Hospital separately and links its Standard Charge File.",
+        "pricing_resource_url": "https://hh.health/wp-content/uploads/472323163_hellen-keller-hospital_standardcharges.csv",
+        "web_reader_file_result": "text/csv recognized; body not exposed because content type is unsupported by the reader",
+        "browser_page_result": "ERR_NAME_NOT_RESOLVED",
+        "direct_bounded_get_result": "DNS EAI_AGAIN before HTTP response; 0 bytes retained",
+        "legacy_parent_file_url": "https://www.huntsvillehospital.org/images/pricetransparency/472323163_hellen-keller-hospital_standardcharges.csv",
+        "legacy_parent_file_result": "HTTP 404",
+        "disposition_effect": "none",
+        "next_action": "Retry exact current https://hh.health/wp-content/uploads/472323163_hellen-keller-hospital_standardcharges.csv only after DNS/access changes or a materially different authorized byte-serving route. No file bytes or metadata were obtained; keep unresolved. Do not repeat the old Huntsville parent-domain route, which returned 404; do not substitute a sibling file."
+      }
     },
     {
       "ccn": "010061",

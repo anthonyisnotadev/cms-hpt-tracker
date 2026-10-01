@@ -12,10 +12,19 @@ test('public social-preview summaries do not retain superseded nationwide counts
     const html = fs.readFileSync(path.join(root, file), 'utf8');
     assert.match(html, /Observed results for 5,419 US hospitals/);
     assert.doesNotMatch(html, /2,908 publish|1,626 have no working website/);
+    if (file === 'tracker.html') {
+      assert.match(html, /categorized as file located; file contents were not verified/);
+      assert.doesNotMatch(html, /categorized as observed-compliant/);
+    }
   }
   const readme = fs.readFileSync(path.join(root, 'README.md'), 'utf8');
-  assert.match(readme, /regenerated on September 18, 2026/);
-  assert.match(readme, /Observed-compliant \| 3,837/);
-  assert.match(readme, /Observed file problem \| 215/);
-  assert.match(readme, /Unresolved \| 1,201/);
+  assert.match(readme, /LOCAL SNAPSHOT\s+2026-09-29 02:46 UTC/);
+  assert.match(readme, /local reviewed snapshot from September 29,\s*2026, 02:46 UTC/);
+  assert.match(readme, /Roster represented\s+\[#+\]\s+5,419\s+100\.0%/);
+  assert.match(readme, /Unresolved investigation\s+\[#+\.+\]\s+544\s+10\.0%/);
+  assert.match(readme, /\| Unresolved \| 544 \| Resolve discovery, access, pointer linkage, or facility identity/);
+  assert.match(readme, /\*\*1,592 hospitals\*\*/);
+  assert.match(readme, /\| Standing evidence follow-ups \| 961 \|/);
+  assert.doesNotMatch(readme, /\*\*1,593 hospitals\*\*|\| Standing evidence follow-ups \| 962 \|/);
+  assert.doesNotMatch(readme, /regenerated on September 18, 2026|Observed-compliant \| 3,837|Observed file problem \| 215|Unresolved \| 1,201/);
 });

@@ -1,0 +1,35 @@
+{
+  "ccn": "494022",
+  "observed_at": "2026-09-28T04:23:00Z",
+  "question": "Do current operator and Virginia-government sources clarify the Petersburg-versus-Chester identity conflict for Poplar Springs Hospital?",
+  "sources": [
+    {
+      "kind": "virginia-department-of-health-ems-communication-centers",
+      "url": "https://vdhems.vdh.virginia.gov/emsapps/f?p=200:10:5113199327555:::10:P10_RPT_FLAG:3",
+      "observation": "The VDH EMS Communication Centers table lists Poplar Springs Hospital at 350 Poplar Drive, Petersburg, VA 23805. The live page was opened on 2026-09-28 and its hospital table gives the name, street, city, state and ZIP.",
+      "limitation": "This is an EMS communications reference, not a facility-license record or a CCN crosswalk; the page does not state its data-effective date or establish the facility's current MRF."
+    },
+    {
+      "kind": "virginia-department-of-health-regional-resource-directory",
+      "url": "https://www.vdh.virginia.gov/content/uploads/sites/119/2024/09/SUD-Resource-Directory-Sept-2024-Archived.pdf",
+      "observation": "The archived September 2024 VDH resource guide lists Poplar Springs Hospital, poplarsprings.com, and 350 Poplar Drive, Petersburg, VA 23805 (PDF page 120).",
+      "limitation": "The document is explicitly archived and is not current licensure or pricing-file evidence."
+    },
+    {
+      "kind": "universal-health-services-current-careers-page",
+      "url": "https://jobs.uhs.com/poplar-springs-hospital",
+      "observation": "The current UHS employer search result crawled 2026-09-28 describes Poplar Springs Hospital as located in Petersburg, Virginia.",
+      "limitation": "The direct page returned HTTP 403 in the web reader, and the indexed excerpt supplies city-level identity only, not a street address, CCN or pricing file."
+    },
+    {
+      "kind": "joint-commission-current-provider-locator-address-role-review",
+      "url": "https://www.jointcommission.org/en/accreditation/behavioral-health-care-and-human-services/provider-locator/1909",
+      "observation": "A live page review on 2026-09-28 identifies HHC Poplar Springs, LLC at 350 Poplar Drive, Petersburg, VA 23805, then lists two program sites: Poplar West at 272 Medical Park Blvd., Petersburg, VA 23805 for high-intensity outpatient PHP, and Poplar Springs Hospital at 214 W Hundred Road, Chester, VA 23836 for medically managed intensive outpatient SUD care. The same address-role observations were already recorded in nationwide-browser-reviews.json on 2026-09-25; this is a live corroborating recheck, not a newly discovered site mapping.",
+      "limitation": "The page is a Joint Commission behavioral-health/SUD provider locator, not a CMS CCN roster or pricing disclosure. It clarifies organizational versus program-site address roles but does not establish the current CMS cms-hpt.txt pointer or MRF coverage for CCN 494022."
+    }
+  ],
+  "finding": "New independent Virginia-government sources reinforce the 350 Poplar Drive, Petersburg location, and the current operator places Poplar Springs Hospital in Petersburg. The live Joint Commission locator identifies HHC Poplar Springs, LLC at 350 Poplar Drive and separately lists Poplar West (Petersburg) and a Poplar Springs Hospital SUD-program site at 214 W Hundred Road, Chester. This reconciles the apparent hospital-address conflict as different organization/program-site roles, not evidence that the CCN hospital campus moved. The directory does not establish CCN coverage, and no current CMS pointer/MRF linkage or bytes were obtained.",
+  "disposition": "facility-address-role-reconciled-current-mrf-unverified",
+  "count_effect": "none; retain CCN 494022 unresolved and do not assign a pointer or MRF",
+  "next_action": "Obtain the exact current CMS cms-hpt.txt pointer and declared MRF from UHS/Poplar Springs, then verify the pointer entry, exact CCN/NPI and 350 Poplar Drive identity, Virginia metadata, declared date/version and usable rows. Do not infer current MRF coverage from address evidence."
+}

@@ -16,14 +16,16 @@ const stateFile = path.join(root, 'cms_data/hpt/pointer-corpus/crawl-state.json'
 const indexFile = path.join(root, 'cms_data/hpt/pointer-corpus/cms_hpt_entries.csv');
 const resolutionsFile = path.join(root, 'data/hpt-audit/reviewed-resolutions.json');
 const rechecksFile = path.join(root, 'data/hpt-audit/corpus-index-priority-one-rechecks.json');
+const provenanceRechecksFile = path.join(root, 'data/hpt-audit/pointer-provenance-discrepancy-rechecks.json');
 const outputFile = path.join(root, 'data/hpt-audit/corpus-index-ccn-worklist.json');
 const sha = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
 const split = value => String(value || '').split('|').map(item => item.trim()).filter(Boolean);
 
-function build(audit, verification, state, indexRows, resolutions = [], rechecks = []) {
+function build(audit, verification, state, indexRows, resolutions = [], rechecks = [], provenanceRechecks = []) {
   const byCcn = new Map(verification.records.map(row => [row.ccn, row]));
   const reviewedByCcn = new Map(resolutions.map(row => [row.ccn, row]));
   const recheckByCcn = new Map(rechecks.map(row => [row.ccn, row]));
+  const provenanceRecheckByCcn = new Map(provenanceRechecks.map(row => [row.ccn, row]));
   const successful = new Set(Object.values(state.targets || {})
     .filter(target => target.status === 'ok' && target.finalUrl && target.sha256)
     .map(target => `${target.finalUrl}\0${target.sha256}`));
@@ -82,11 +84,20 @@ function build(audit, verification, state, indexRows, resolutions = [], rechecks
       && Number.isFinite(Date.parse(reviewed.evidence.checked_at))
       && row.stale_index_documents.every(item => Date.parse(reviewed.evidence.checked_at) > Date.parse(item.fetched_at));
     const recheck = recheckByCcn.get(row.ccn);
+    const provenanceRecheck = provenanceRecheckByCcn.get(row.ccn);
+    const currentProvenanceRecheck = ['superseded-retry', 'incomplete-retry-standing-retained'].includes(row.observation_role)
+      && !!provenanceRecheck?.retained_file
+      && provenanceRecheck?.checked_url === row.pointer_checked_url
+      && byCcn.get(row.ccn)?.mrf_url === row.selected_mrf_url
+      && provenanceRecheck.complete_pointer_bytes === true
+      && Number(provenanceRecheck.http_status) >= 200 && Number(provenanceRecheck.http_status) < 300
+      && /^[a-f0-9]{64}$/.test(String(provenanceRecheck.response_sha256 || ''))
+      && row.stale_index_documents.every(item => Date.parse(provenanceRecheck.observed_at) > Date.parse(item.fetched_at));
     const currentRootRecheck = row.observation_role === 'superseded-retry'
       && recheck?.selected_file_in_pointer && recheck.selected_mrf_url === row.selected_mrf_url
       && Number(recheck.http_status) >= 200 && Number(recheck.http_status) < 300
       && row.stale_index_documents.every(item => Date.parse(recheck.checked_at) > Date.parse(item.fetched_at));
-    const priority = reviewedCurrentProof || currentRootRecheck ? 4 : !activeLinks.length ? 1 : !selectedFileInActiveLinks ? 2 : 3;
+    const priority = reviewedCurrentProof || currentRootRecheck || currentProvenanceRecheck ? 4 : !activeLinks.length ? 1 : !selectedFileInActiveLinks ? 2 : 3;
     return { ...row, active_successful_pointer_links: activeLinks,
       selected_file_in_active_links: selectedFileInActiveLinks,
       reviewed_current_proof: reviewedCurrentProof ? {
@@ -95,12 +106,16 @@ function build(audit, verification, state, indexRows, resolutions = [], rechecks
         pointer_sha256: reviewed.evidence.pointerSha256,
         file_url: reviewed.evidence.url, checked_at: reviewed.evidence.checked_at,
         evidence_run: reviewed.evidence_run
+      } : currentProvenanceRecheck ? {
+        source: 'later-hash-bound-provenance-recheck', pointer_url: provenanceRecheck.checked_url,
+        pointer_sha256: provenanceRecheck.response_sha256, file_url: provenanceRecheck.selected_mrf_url,
+        checked_at: provenanceRecheck.observed_at, reviewed_hash_matches_current_pointer: true
       } : currentRootRecheck ? {
         source: 'bounded-current-root-recheck', pointer_url: recheck.pointer_url,
         pointer_sha256: recheck.sha256, file_url: recheck.selected_mrf_url,
         checked_at: recheck.checked_at, reviewed_hash_matches: recheck.reviewed_hash_matches
       } : null,
-      priority, next_step: currentRootRecheck
+      priority, next_step: currentRootRecheck || currentProvenanceRecheck
         ? 'Dated current root bytes list the selected file; keep the older index version historical and recheck file bytes/metadata on the next crawl.'
         : priority === 4
         ? 'Reviewed current pointer/file proof supersedes this stale index link; retain the specific finding and recheck the publisher/index on a later crawl.'
@@ -116,7 +131,9 @@ function build(audit, verification, state, indexRows, resolutions = [], rechecks
 
 function main() {
   const recheckBytes = fs.existsSync(rechecksFile) ? fs.readFileSync(rechecksFile) : Buffer.from('{"records":[]}');
+  const provenanceRecheckBytes = fs.existsSync(provenanceRechecksFile) ? fs.readFileSync(provenanceRechecksFile) : Buffer.from('{"records":[]}');
   const recheckReport = JSON.parse(recheckBytes);
+  const provenanceRecheckReport = JSON.parse(provenanceRecheckBytes);
   const verifiedRechecks = (recheckReport.records || []).filter(record => {
     const raw = path.resolve(root, record.raw_artifact || '');
     if (!record.raw_artifact || !raw.startsWith(root + path.sep) || !fs.existsSync(raw)) return false;
@@ -124,16 +141,27 @@ function main() {
     return bytes.length === record.bytes_retained && sha(bytes) === record.sha256
       && parsePointer(bytes.toString('utf8')).entries.some(entry => entry.mrfUrls?.includes(record.selected_mrf_url));
   });
+  const verifiedProvenanceRechecks = (provenanceRecheckReport.records || []).filter(record => {
+    if (record.http_status < 200 || record.http_status >= 300 || record.complete_pointer_bytes !== true
+      || !/^[a-f0-9]{64}$/.test(String(record.response_sha256 || '')) || !record.retained_file) return false;
+    const raw = path.resolve(root, record.retained_file);
+    if (!raw.startsWith(root + path.sep) || !fs.existsSync(raw)) return false;
+    const bytes = fs.readFileSync(raw);
+    return bytes.length === record.response_bytes && sha(bytes) === record.response_sha256
+      && parsePointer(bytes.toString('utf8')).entries.some(entry => entry.mrfUrls?.includes(
+        (JSON.parse(fs.readFileSync(verificationFile, 'utf8')).records.find(item => item.ccn === record.ccn)?.mrf_url || '')));
+  });
   const inputs = { 'corpus-state-index-discrepancies.json': fs.readFileSync(auditFile),
     'nationwide-verification.json': fs.readFileSync(verificationFile),
     'crawl-state.json': fs.readFileSync(stateFile),
     'cms_hpt_entries.csv': fs.readFileSync(indexFile),
     'reviewed-resolutions.json': fs.readFileSync(resolutionsFile),
-    'corpus-index-priority-one-rechecks.json': recheckBytes };
+    'corpus-index-priority-one-rechecks.json': recheckBytes,
+    'pointer-provenance-discrepancy-rechecks.json': provenanceRecheckBytes };
   const report = build(JSON.parse(inputs['corpus-state-index-discrepancies.json']),
     JSON.parse(inputs['nationwide-verification.json']), JSON.parse(inputs['crawl-state.json']),
     csvToObjects(inputs['cms_hpt_entries.csv'].toString('utf8')),
-    JSON.parse(inputs['reviewed-resolutions.json']), verifiedRechecks);
+    JSON.parse(inputs['reviewed-resolutions.json']), verifiedRechecks, verifiedProvenanceRechecks);
   report.source_sha256 = Object.fromEntries(Object.entries(inputs).map(([name, bytes]) => [name, sha(bytes)]));
   fs.writeFileSync(outputFile, `${JSON.stringify(report, null, 2)}\n`);
   console.log(JSON.stringify(report.summary));

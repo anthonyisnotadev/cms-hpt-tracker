@@ -1,0 +1,25 @@
+{
+  "ccn": "070031",
+  "observed_at": "2026-09-28T03:29:49Z",
+  "official_pricing_page": "https://www.griffinhealth.org/griffin-hospital/billing-insurance/cms-hospital-price-transparency/",
+  "browser_route": "Live in-app browser, normal navigation; no login or challenge bypass",
+  "official_page_observations": {
+    "facility": "Griffin Hospital, Derby, Connecticut",
+    "chargemaster_link": "https://www.griffinhealth.org/wp-content/uploads/2025/12/GRF_CDM_2025.xlsx",
+    "negotiated_rates_link_label": "Griffin Hospital Negotiated Rates",
+    "negotiated_rates_link_domain": "griffinhealth.pt.panaceainc.com",
+    "publisher_page_relationship": "The hospital's first-party CMS Hospital Price Transparency page explicitly labels the vendor link as its negotiated rates resource and separately links its chargemaster workbook."
+  },
+  "vendor_route_observation": {
+    "entry_route": "https://griffinhealth.pt.panaceainc.com/",
+    "observed_title": "Griffin Health - Shoppable Consumer",
+    "observed_path": "/terms",
+    "posted_as_of": "2025-11-26",
+    "page_gate": "The vendor presents Terms of Use with I Do Not Accept and I Do Accept buttons before access to the tool.",
+    "action_taken": "Stopped at the terms page; did not accept terms or continue into the tool."
+  },
+  "finding": "This is a new first-party discovery of a specific vendor-hosted negotiated-rates portal and its displayed posted-as-of date. The portal landing/terms page is not a machine-readable file, provides no inspectable MRF bytes or file metadata, and does not establish the missing CMS root-pointer linkage. The previously reviewed 2025 XLSX chargemaster remains a separate file. No terms were accepted and no data were imported.",
+  "disposition": "first-party-negotiated-rates-portal-discovered-terms-gated-file-uninspected",
+  "count_effect": "none; retain CCN 070031 as genuinely unresolved",
+  "next_action": "Only after user authorization to accept the vendor terms, inspect whether the portal exposes a direct machine-readable negotiated-rates file; preserve the portal output separately and verify exact facility identity, Connecticut location, update metadata, CMS template/required content and parsed usability. Alternatively use a publicly accessible publisher-provided file route. Do not equate the consumer tool, portal date or chargemaster with a verified CMS MRF."
+}

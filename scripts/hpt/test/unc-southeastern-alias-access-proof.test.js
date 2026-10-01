@@ -24,10 +24,10 @@ test('UNC Southeastern alias is supported without promoting either inaccessible 
   assert.equal(review.workstream, 'genuinely-unresolved-investigation');
   assert.equal(proof.official_pricing_page_file_bounded_range_status, 403);
   assert.equal(proof.file_metadata_verified, false);
-  assert.equal(queued.current_disposition, proof.disposition);
-  assert.equal(queued.nationwide_disposition, 'pointer-facility-match-unresolved');
-  assert.equal(queued.evidence_gate, 'pointer-and-page-file-access-and-header');
-  assert.equal(queued.next_action, proof.next_action);
+  assert.equal(queued.current_disposition, 'pointer-facility-match-unresolved');
+  assert.equal(current.disposition, 'pointer-facility-match-unresolved');
+  assert.equal(queued.evidence_gate, 'pointer-facility-match');
+  assert.match(queued.next_action, /publisher-enabled route or publisher-provided copy/);
   assert.equal(queued.candidate_file_recorded, true);
   assert.ok(!JSON.stringify(proof).includes('recno='));
   const changed = structuredClone(verification);

@@ -1,0 +1,41 @@
+{
+  "audit_id": "reconciliation-asante-ashland-third-party-mrf-index-recheck-2026-09-28",
+  "observed_at": "2026-09-28T05:46:51Z",
+  "ccn": "380005",
+  "facility": "Asante Ashland Community Hospital",
+  "question": "Can a newly surfaced public MRF indexer provide a materially different retrieval path or byte-backed facility evidence for the shared Asante Rogue Regional/Ashland ZIP?",
+  "third_party_index_observation": {
+    "url": "https://showthebill.com/hospitals/asante-rogue-regional-medical-center/",
+    "page_observed_by_web_search_and_open": true,
+    "claim": "The page reports a 273.1 MB ZIP captured 2026-09-04 and derived prices from the hospital's machine-readable file.",
+    "raw_file_link_target": "https://www.asante.org/app/files/public/361f9b00-187a-4091-ba37-1c3308bed5eb/AsanteRogueRegionalMedicalCenter_StandardCharges.zip",
+    "link_target_is_publisher_hosted": true,
+    "facility_label_on_indexer": "Asante Rogue Regional Medical Center",
+    "limitations": [
+      "No raw ZIP bytes, archive members, file hash, or file metadata were exposed by the indexer page.",
+      "The indexer's file link resolves to the same publisher URL already reviewed; this is not an alternate byte source.",
+      "Third-party derived price rows do not establish Ashland-specific identity, address, metadata, or CCN scope."
+    ]
+  },
+  "retrieval_attempts": [
+    {
+      "route": "web search/open on the indexer page",
+      "result": "page readable; exact publisher ZIP link exposed",
+      "content_type_limitation": "The web fetch could not return application/zip content (unsupported content-type)."
+    },
+    {
+      "route": "in-app browser direct navigation to the exact publisher ZIP URL",
+      "result": "net::ERR_BLOCKED_BY_CLIENT",
+      "interpretation": "Browser/client access failure only; not a publisher 403, not file-absence evidence, and not successful byte retrieval."
+    }
+  ],
+  "prior_evidence_crosswalk": {
+    "prior_proof_file": "reconciliation-asante-ashland-current-psf-status-proof-2026-09-27.json",
+    "official_publisher_page_and_same_zip_link": "Already retained in the Sep. 27 manual observation; the page says the shared Rogue Regional/Ashland standard-charges file covers both and identifies Ashland as a Rogue Regional satellite.",
+    "prior_direct_access": "HTTP 403; no bytes",
+    "prior_browser_access": "ERR_BLOCKED_BY_CLIENT",
+    "prior_CMS_status_limit": "Q1 2026 POS and the 2026-09-27 PSF export predate the May 22 transition and do not establish later effective CCN termination."
+  },
+  "disposition_effect": "none; preserve CCN 380005 as unresolved for post-transition CMS status and shared-file content/scope; do not import third-party prices or infer closure, compliance, or MRF identity.",
+  "next_action": "Do not retry the unchanged publisher ZIP URL or CMS datasets without a material source/access change. Obtain actual archive bytes from the publisher or a genuinely separate byte-serving source, then hash and inspect every contained MRF for Ashland identity, 280 Maple Street, Oregon metadata, declared CMS date/version and usable rows. Separately require an effective-dated CMS/MAC record for CCN 380005 after 2026-05-22 before changing status; do not infer active or terminated Medicare enrollment from the snapshot alone."
+}

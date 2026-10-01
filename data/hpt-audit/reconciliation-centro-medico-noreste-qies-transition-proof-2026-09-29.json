@@ -1,0 +1,52 @@
+{
+  "title": "Centro Medico del Noreste current and predecessor CCN transition evidence",
+  "observed_at": "2026-09-29T08:27:18Z",
+  "source": {
+    "publisher": "Centers for Medicare & Medicaid Services",
+    "dataset": "Provider of Services File - Quality Improvement and Evaluation System (QIES), Hospital & Non-Hospital Data",
+    "release": "Q1 2026",
+    "dataset_version_id": "bb342fae-b551-40fd-a738-e2e5878f3bbb",
+    "dataset_page": "https://data.cms.gov/provider-characteristics/hospitals-and-other-facilities/provider-of-services-file-quality-improvement-and-evaluation-system",
+    "api_base": "https://data.cms.gov/data-api/v1/dataset/bb342fae-b551-40fd-a738-e2e5878f3bbb/data"
+  },
+  "records": [
+    {
+      "ccn": "400140",
+      "query_url": "https://data.cms.gov/data-api/v1/dataset/bb342fae-b551-40fd-a738-e2e5878f3bbb/data?filter%5BPRVDR_NUM%5D=400140&size=20&offset=0",
+      "http_status": 200,
+      "response_file": "retained-source-documents/qies-pos-q1-2026-400140.json",
+      "response_bytes": 11712,
+      "response_sha256": "321389bb1030a65858937482fda52683e6a768c01217ced68b565797a37bf20e",
+      "result_count": 1,
+      "provider_name": "CENTRO MEDICO DEL NORESTE",
+      "address": "404 AVE GENERAL VALERO",
+      "city": "FAJARDO",
+      "state": "PR",
+      "termination_code": "05",
+      "termination_date": "20250313",
+      "certification_date": "20250312",
+      "cross_reference_provider_number": ""
+    },
+    {
+      "ccn": "400141",
+      "query_url": "https://data.cms.gov/data-api/v1/dataset/bb342fae-b551-40fd-a738-e2e5878f3bbb/data?filter%5BPRVDR_NUM%5D=400141&size=20&offset=0",
+      "http_status": 200,
+      "response_file": "retained-source-documents/qies-pos-q1-2026-400141.json",
+      "response_bytes": 11697,
+      "response_sha256": "7594e256b56df0af39a283b58c4664de68a7da7bc5d9e2828abded091674847a",
+      "result_count": 1,
+      "provider_name": "CENTRO MEDICO DEL NORESTE",
+      "address": "404 AVE GENERAL VALERO",
+      "city": "FAJARDO",
+      "state": "PR",
+      "termination_code": "00",
+      "termination_date": "",
+      "certification_date": "20250717",
+      "original_participation_date": "20250807",
+      "cross_reference_provider_number": ""
+    }
+  ],
+  "interpretation": "The current CMS QIES extract independently distinguishes a terminated 400140 record and a later-certified 400141 record at the same name and address; neither row supplies a cross-reference number. This is new official identity/status-transition evidence and supports using 400141 for the current target. It does not identify or validate a 400141 price-transparency MRF, and does not authorize assigning the sibling Caribbean Medical Center file (CCN 400131) to this facility.",
+  "remaining_gate": "Find a Centro Medico del Noreste-specific CMS CSV/JSON MRF or pointer linked to CCN 400141, or obtain an authoritative publisher explanation; verify exact 404 Ave General Valero facility identity, Puerto Rico location/state, declared CMS date/version, and usable file bytes before promotion.",
+  "count_effect": "none; CCN 400141 remains unresolved in the frozen 891-member cohort"
+}

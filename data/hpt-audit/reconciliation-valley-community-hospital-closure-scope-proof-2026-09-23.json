@@ -25,8 +25,8 @@
   ],
   "browser_observation": "The historical publisher domain valleycommunityhospital.com did not resolve in bounded HTTPS checks; root, pointer and pricing paths could not be retrieved. No current first-party pricing page or MRF bytes were exposed.",
   "disposition": "official-website-not-identified-closure-scope-conflict",
-  "interpretation": "Facility identity and address are corroborated, but public closure reporting conflicts with the current Oklahoma directory and CMS swing-bed listing. This is a dated scope/enrollment uncertainty only; no closure, termination, exemption or compliance conclusion is assigned.",
-  "next_action": "Obtain authoritative CMS enrollment/termination or Oklahoma licensure status and any successor operator/publisher pointer before changing the tracker finding.",
+  "interpretation": "The 2025 closure report conflicts with the April 2026 Oklahoma licensed-hospital directory, the CMS FY 2026 swing-bed list, and now the CMS Hospital Enrollments May 2026 exact-CCN record. The newer official state/CMS records support that CCN 370243 remained licensed/enrolled through their stated dates; post-May CMS status and the current HPT pointer/MRF remain unresolved.",
+  "next_action": "Obtain a publisher-confirmed current official domain and price-transparency route, or a corrected CMS pointer, then verify complete current file bytes, CCN/facility identity, Oklahoma location/state, declared metadata and usability. Do not treat the January 2025 closure report as current termination without effective-dated CMS or state evidence.",
   "current_status_recheck_2026_09_27": {
     "observed_at": "2026-09-27T12:26:48Z",
     "cms_public_notices_url": "https://www.cms.gov/medicare/health-safety-standards/certification-compliance/public-notices",
@@ -38,5 +38,35 @@
     "browser_interpretation": "The browser could not resolve the candidate host; this is a current route/tool observation, not proof of closure or facility nonexistence. No official page or pointer bytes were obtained.",
     "disposition_changed": false,
     "next_action": "Obtain effective-dated CMS enrollment/termination or Oklahoma licensure evidence and any publisher-confirmed successor domain; do not promote third-party directory leads or infer current operation from the CMS 14-month notice page's lack of an entry."
+  },
+  "cms_current_enrollment_recheck_2026_09_29": {
+    "observed_at": "2026-09-29T05:03:01.610Z",
+    "dataset_release": "May 2026",
+    "dataset_page_url": "https://data.cms.gov/provider-characteristics/hospitals-and-other-facilities/hospital-enrollments",
+    "dataset_description": "CMS says this monthly PECOS-derived dataset contains hospitals currently enrolled in Medicare; latest release shown on the source page is May 2026.",
+    "query_url": "https://data.cms.gov/data-api/v1/dataset/f6f6505c-e8b0-4d57-b258-e2b94133aaf2/data?filter%5BCCN%5D=370243&size=20&offset=0",
+    "http_status": 200,
+    "content_type": "application/json",
+    "response_bytes": 1230,
+    "response_sha256": "d8409fb8cfd8284563c57bf47e9a0ddad4d4634e949609d940ac054b1fa15246",
+    "exact_result_count": 1,
+    "selected_fields": {
+      "CCN": "370243",
+      "NPI": "1053997338",
+      "ENROLLMENT STATE": "OK",
+      "PROVIDER TYPE TEXT": "PART A PROVIDER - HOSPITAL",
+      "ORGANIZATION NAME": "SOUTHERN PLAINS MEDICAL CENTER OF GARVIN COUNTY LLC",
+      "DOING BUSINESS AS NAME": "VALLEY COMMUNITY HOSPITAL",
+      "ADDRESS LINE 1": "100 VALLEY DR",
+      "CITY": "PAULS VALLEY",
+      "STATE": "OK",
+      "ZIP CODE": "730756613",
+      "SUBGROUP - ACUTE CARE": "Y",
+      "SUBGROUP - SHORT-TERM": "Y",
+      "SUBGROUP - SWING-BED APPROVED": "Y"
+    },
+    "interpretation": "New primary CMS enrollment evidence supports active CCN 370243 through the May 2026 release and corroborates the state-listed facility identity/address. It does not establish status after the release cutoff, recover a CMS price-transparency pointer/MRF, or resolve HPT publication. The January 2025 closure report is not evidence of current termination by itself.",
+    "disposition_changed": false,
+    "next_action": "Obtain a publisher-confirmed current official domain and price-transparency route, or a corrected CMS pointer, then verify complete current file bytes, CCN/facility identity, Oklahoma location/state, declared metadata and usability. Do not treat the January 2025 closure report as current termination without effective-dated CMS or state evidence."
   }
 }

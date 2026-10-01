@@ -26,5 +26,5 @@ test('Minidoka price-search route is an estimate tool, not a promoted MRF or abs
   assert.equal(record.latest_service_price_search_scope_review_2026_09_27.proof_file,
     'reconciliation-minidoka-current-price-estimator-scope-proof-2026-09-27.json');
   const queued = worklist.records.find(row => row.ccn === '131319');
-  assert.match(queued.next_action, /Do not treat the estimate tool or 2020 legacy XLS/);
+  assert.match(queued.next_action, /Do not treat the 2020 Excel chargemaster or third-party price summary as the current MRF/);
 });

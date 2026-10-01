@@ -1,0 +1,77 @@
+{
+  "audit_id": "reconciliation-helen-keller-current-file-recheck-2026-09-29",
+  "ccn": "010019",
+  "facility": "Helen Keller Hospital, Sheffield, Alabama",
+  "observed_at": "2026-09-29T20:43:48.191Z",
+  "reason": "The current first-party HH Health pricing page was discovered to expose the exact Helen Keller CSV at a new hh.health URL, distinct from the previously timed-out cloudaccess.host URL and the legacy Huntsville 404.",
+  "first_party_page": {
+    "url": "https://hh.health/patients-visitors/price-transparency/",
+    "observation_source": "linked from the first-party Helen Keller Hospital page",
+    "page_observed_date": "2026-09-29",
+    "linked_label": "Standard Charge File",
+    "linked_url": "https://hh.health/wp-content/uploads/472323163_hellen-keller-hospital_standardcharges.csv"
+  },
+  "file_attempt": {
+    "url": "https://hh.health/wp-content/uploads/472323163_hellen-keller-hospital_standardcharges.csv",
+    "http_status": 0,
+    "final_url": "https://hh.health/wp-content/uploads/472323163_hellen-keller-hospital_standardcharges.csv",
+    "content_type": "",
+    "bounded_bytes_retained": 0,
+    "sha256_of_returned_body": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "transport_error": "curl: (28) Resolving timed out after 8012 milliseconds\r\n",
+    "attempts": [
+      {
+        "method": "GET",
+        "via": "native",
+        "url": "https://hh.health/wp-content/uploads/472323163_hellen-keller-hospital_standardcharges.csv",
+        "finalUrl": "https://hh.health/wp-content/uploads/472323163_hellen-keller-hospital_standardcharges.csv",
+        "status": 0,
+        "error": "EAI_AGAIN",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "redirects": [],
+        "checkedAt": "2026-09-29T20:43:29.051Z"
+      },
+      {
+        "method": "GET",
+        "via": "curl",
+        "url": "https://hh.health/wp-content/uploads/472323163_hellen-keller-hospital_standardcharges.csv",
+        "finalUrl": "https://hh.health/wp-content/uploads/472323163_hellen-keller-hospital_standardcharges.csv",
+        "status": 0,
+        "error": "curl: (28) Resolving timed out after 8012 milliseconds\r\n",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "redirects": [],
+        "checkedAt": "2026-09-29T20:43:48.191Z"
+      }
+    ]
+  },
+  "interpretation": "The newly observed first-party URL did not return file bytes in this environment. This is a dated transport observation, not evidence of file absence, facility mismatch, metadata failure, or compliance.",
+  "outcome": {
+    "new_file_bytes": false,
+    "disposition_changed": false,
+    "current_disposition": "pointer-discovery-incomplete",
+    "next_action": "Retry only after DNS/route/access changes or through a materially different authorized content-bearing route; then retain exact bytes/hash and verify Helen Keller identity, Sheffield address, Alabama metadata, CMS date/version and usable rows. Do not substitute Huntsville, Red Bay, or third-party derived prices."
+  },
+  "latest_official_route_recheck_2026_09_30": {
+    "observed_at": "2026-09-30T12:39:39Z",
+    "current_system_pricing_page": "https://hh.health/patients-visitors/price-transparency/",
+    "page_last_updated": "2026-08-20",
+    "page_observation": "Live web reader retrieved the current HH Health page and separately listed Helen Keller Hospital with a Standard Charge File link.",
+    "current_page_linked_file_url": "https://hh.health/wp-content/uploads/472323163_hellen-keller-hospital_standardcharges.csv",
+    "web_reader_file_click": "Fetch recognized text/csv but returned unsupported content-type; no bytes or metadata were exposed.",
+    "direct_browser_page_navigation": "net::ERR_NAME_NOT_RESOLVED for hh.health",
+    "direct_bounded_range_attempt": {
+      "requested_range": "bytes=0-262143",
+      "result": "DNS EAI_AGAIN before HTTP response",
+      "bytes": 0,
+      "sha256_of_returned_body": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "legacy_parent_site_file_url": "https://www.huntsvillehospital.org/images/pricetransparency/472323163_hellen-keller-hospital_standardcharges.csv",
+    "legacy_parent_site_result": "Web reader fetch returned HTTP 404; this is distinct from the current hh.health page-linked URL.",
+    "interpretation": "Current official page and exact alternate file route are corroborated, but no file bytes, hash, header, date/version, attestation or usable rows were obtained. DNS and reader content-type behavior are transport limitations, not file absence or identity evidence.",
+    "new_file_bytes": false,
+    "disposition_changed": false,
+    "next_action": "Keep CCN 010019 unresolved. Retry the exact current hh.health file only when DNS/access changes or a materially different authorized byte-serving route appears; then hash bytes and verify facility identity, address/state, CMS version/date, attestation and parsed usability. Do not repeat the confirmed legacy 404 or substitute sibling/third-party data."
+  }
+}

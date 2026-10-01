@@ -13,6 +13,6 @@ test('Lake Huron browser access error remains historical after later exact-sourc
   assert.equal(observation.pointer_browser_result, 'net::ERR_BLOCKED_BY_CLIENT');
   assert.equal(observation.disposition, 'access-observation-only');
   assert.equal(row.mrf_url, 'https://mylakehuron.com/wp-content/uploads/2026/09/1060000015_LakeHuronMedicalCenter_standardcharges.json');
-  assert.equal(row.finding, 'mrf-template-version-noncanonical');
+  assert.equal(row.finding, 'compliant-observed');
   assert.match(observation.next_action, /exact current root-pointer body/);
 });

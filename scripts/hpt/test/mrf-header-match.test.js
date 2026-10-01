@@ -225,6 +225,27 @@ test('one system MRF header can recover multiple independently located facilitie
   assert.deepEqual(matched.matches.map(row => row.hospital.ccn).sort(), ['010010', '010011']);
 });
 
+test('Penn HUP CMS v3 multi-location file matches only the exact HUP CCN and location address', () => {
+  const task = {
+    mrf_url: 'https://tupa-q-001.sitecorecontenthub.cloud/api/public/content/231352685_hup_standardcharges.csv',
+    refs: [{ domain: 'pennmedicine.org', state: 'PA', location_name: 'The Hospital of the University of Pennsylvania' }]
+  };
+  const hospitals = [
+    { ccn: '390111', name: 'HOSPITAL OF UNIV OF PENNSYLVANIA', address: '3400 SPRUCE ST', city: 'PHILADELPHIA', state: 'PA', zip: '19104' },
+    { ccn: '390223', name: 'PENN PRESBYTERIAN MEDICAL CENTER', address: '51 NORTH 39TH STREET', city: 'PHILADELPHIA', state: 'PA', zip: '19104' },
+    { ccn: '390226', name: 'PENNSYLVANIA HOSPITAL', address: '800 SPRUCE STREET', city: 'PHILADELPHIA', state: 'PA', zip: '19107' }
+  ];
+  const result = matchMrfHeader(task, {
+    rangeStatus: 206, mrfLicenseState: 'PA',
+    mrfHospitalName: 'The Trustees of the University of Pennsylvania D/B/A The Hospital of the University of Pennsylvania',
+    mrfLocationName: 'Hospital of the University of Pennsylvania|Hospital of the University of Pennsylvania Pavilion|Hospital of the University of Pennsylvania - Cedar Avenue|Penn Medicine - Rittenhouse',
+    mrfAddress: '3400 Spruce St, Philadelphia, PA 19104|1 Convention Ave., Philadelphia, PA 19104|501 South 54th St., Philadelphia, PA 19143|1800 Lombard St., Philadelphia, PA 19146'
+  }, hospitals);
+  assert.deepEqual(result.matches.map(row => row.hospital.ccn), ['390111']);
+  assert.equal(result.matches[0].identityBasis, 'file-name-and-address');
+  assert.equal(result.reviews.length, 0);
+});
+
 test('MRF header recovery refuses conflicting VA and rehabilitation identities', () => {
   const task = {
     mrf_url: 'https://files.test/wrong.csv',

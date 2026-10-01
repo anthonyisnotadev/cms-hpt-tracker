@@ -22,9 +22,10 @@ test('South Oaks campus root shares a pointer with no South Oaks entry, not a si
   const reconciliation = read('data/hpt-audit/nationwide-reconciliation.json');
   const queue = read('data/hpt-audit/unresolved-investigation-worklist.json').records.find(row => row.ccn === proof.ccn);
   assert.equal(reconciliation.records.find(row => row.ccn === proof.ccn).workstream, 'genuinely-unresolved-investigation');
-  assert.equal(queue.current_disposition, proof.disposition);
-  assert.equal(queue.nationwide_disposition, 'pointer-facility-match-unresolved');
-  assert.equal(queue.evidence_gate, 'facility-specific-pointer-entry-or-page-file');
+  assert.equal(proof.disposition, 'first-party-campus-root-shares-system-pointer-without-facility-entry');
+  assert.equal(queue.current_disposition, 'pointer-facility-match-unresolved');
+  assert.equal(queue.standing_finding, 'not-assessed-nationwide-pointer-facility-match-unresolved');
+  assert.equal(queue.evidence_gate, 'pointer-facility-match');
   assert.equal(queue.candidate_file_recorded, false);
   const tampered = structuredClone(reconciliation);
   tampered.records.find(row => row.ccn === proof.ccn).manual_access_observation.pointer_sha256 = '0'.repeat(64);
