@@ -437,10 +437,11 @@ async function probeMrf(url, { timeoutMs = 45000, useUnblocker = true, headerByt
   return out;
 }
 
-// CMS validator 1.10.8 raises only an alert (no error) for 3.0, and 3 / 3.00 are
-// the same number with different formatting, so all four read as the v3 template.
-// 3.0.1, 3.0.2 and non-CMS versions such as 4.0.0 still need source review.
-const CURRENT_TEMPLATE_VERSIONS = new Set(['3', '3.0', '3.00', '3.0.0']);
+// CMS publishes the current Data Dictionary as v3.0 and its JSON schema as
+// v3.0.0. Treat only exact MRF literals documented by this project as current;
+// the validator may emit a version-literal alert for 3.0, but that is distinct
+// from a validation error. Do not normalize 3 or 3.00 into a CMS version.
+const CURRENT_TEMPLATE_VERSIONS = new Set(['3.0', '3.0.0']);
 function isCurrentTemplateVersion(value) {
   return CURRENT_TEMPLATE_VERSIONS.has(String(value || '').trim());
 }

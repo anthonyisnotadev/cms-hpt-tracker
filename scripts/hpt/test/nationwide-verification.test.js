@@ -748,7 +748,7 @@ test('verified metadata states remain distinct from access and identity states',
   for (const version of ['3.0,0', '3.0.1', '3.0.2', '4.0.0']) {
     assert.equal(metadataState({ mrf_last_updated: '2026-01-01', mrf_days_since_update: '20', mrf_cms_version: version }), 'verified-older-or-unresolved-template');
   }
-  for (const version of ['3', '3.00']) assert.equal(metadataState({ mrf_last_updated: '2026-01-01', mrf_days_since_update: '20', mrf_cms_version: version }), 'verified-current-v3');
+  for (const version of ['3', '3.00']) assert.equal(metadataState({ mrf_last_updated: '2026-01-01', mrf_days_since_update: '20', mrf_cms_version: version }), 'verified-older-or-unresolved-template');
   assert.equal(metadataState({ mrf_last_updated: '2024-01-01', mrf_days_since_update: '600', mrf_cms_version: '3.0' }), 'verified-stale-date');
   assert.equal(metadataState({ mrf_last_updated: '2026-01-01', mrf_days_since_update: '20', mrf_cms_version: '2.0' }), 'verified-older-or-unresolved-template');
   assert.equal(metadataState({ mrf_last_updated: '', mrf_days_since_update: '', mrf_cms_version: '2' }), 'verified-older-or-unresolved-template');

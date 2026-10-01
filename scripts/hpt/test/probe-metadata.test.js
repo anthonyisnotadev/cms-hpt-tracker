@@ -1,7 +1,7 @@
 'use strict';
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { extractDeclared, sniffKind, toISODate } = require('../lib/probe');
+const { extractDeclared, sniffKind, toISODate, isCurrentTemplateVersion } = require('../lib/probe');
 test('only an explicitly labeled update date is accepted from CSV', () => {
   const file = 'hospital_name,version,service_date\nExample,3.0.0,2024-01-01';
   assert.equal(extractDeclared(Buffer.from(file), 'csv').raw, null);
@@ -13,6 +13,12 @@ test('version prefix normalization preserves spelled-out noncanonical values', (
   assert.equal(extractDeclared(Buffer.from(csv('V3.0.0')), 'csv').version, '3.0.0');
   assert.equal(extractDeclared(Buffer.from(csv('v3.0')), 'csv').version, '3.0');
   assert.equal(extractDeclared(Buffer.from(csv('VERSION 4.0')), 'csv').version, 'VERSION 4.0');
+});
+test('only the exact CMS v3-family literals are current template versions', () => {
+  assert.equal(isCurrentTemplateVersion('3.0'), true);
+  assert.equal(isCurrentTemplateVersion('3.0.0'), true);
+  for (const version of ['3', '3.00', '3.0.1', '3.0.2', '4.0.0'])
+    assert.equal(isCurrentTemplateVersion(version), false, version);
 });
 test('HTML overrides a misleading MIME type and unrelated state is not a license', () => {
   assert.equal(sniffKind(Buffer.from('<!doctype html><html>Error</html>'), 'application/json'), 'html');
