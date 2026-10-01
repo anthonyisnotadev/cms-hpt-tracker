@@ -113,7 +113,8 @@ const day = () => new Date().toISOString().slice(0, 10);
       state.baseline_day = day(); save();
     }
     g('snapshot');
-    const a = g('assign', String(BATCH));
+    const only = opt('ccns', '');
+    const a = only ? g('assign', String(BATCH), '--ccns', only) : g('assign', String(BATCH));
     const ccns = JSON.parse(a.stdout).map((r) => r.ccn);
     const ledgerBefore = ledgerCount();
     const prompt = `Follow AGENTS.md. Your assigned CCNs are in tmp/autonomy/batch.json (${ccns.join(', ')}). Process exactly those, log each with goal.js, do not run any rebuild, run goal.js guard, then stop.`;
@@ -122,7 +123,16 @@ const day = () => new Date().toISOString().slice(0, 10);
     const res = await runAgent(prompt, logFile);
     log(`agent exit=${res.code}${res.timedOut ? ' (TIMED OUT, killed)' : ''}`);
 
-    const newEntries = fs.readFileSync(ledgerPath, 'utf8').split('\n').filter(Boolean).slice(ledgerBefore).map((l) => JSON.parse(l));
+    // Independent evidence the agent really searched first (the ledger's domain_search is self-reported).
+    const agentLog = fs.existsSync(logFile) ? fs.readFileSync(logFile, 'utf8') : '';
+    const searches = (agentLog.match(/web[-_]search[-_]prime/gi) || []).length;
+    if (searches < ccns.length) {
+      state.search_skips = (state.search_skips || 0) + 1;
+      log(`WARNING: ${searches} web_search_prime mentions for ${ccns.length} CCNs (search-first rule skipped; ${state.search_skips} in a row)`);
+      if (state.search_skips >= 2) { save(); halt(5, 'agent repeatedly skipped the search-first step', `Last two iterations had fewer web_search_prime calls than assigned CCNs.\nLog: ${logFile}\nTighten AGENTS.md or switch model/variant before resuming.`); }
+    } else state.search_skips = 0;
+
+    const newEntries =fs.readFileSync(ledgerPath, 'utf8').split('\n').filter(Boolean).slice(ledgerBefore).map((l) => JSON.parse(l));
     if (newEntries.some((e) => e.outcome !== 'no-change')) {
       const e = rebuild(); if (e) halt(3, 'rebuild after agent changes failed', e);
       const p = privacy(); if (p) halt(3, 'privacy check failed after agent changes', p);

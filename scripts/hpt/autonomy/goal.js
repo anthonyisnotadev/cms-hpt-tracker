@@ -50,6 +50,8 @@ const queue = () => readJson(path.join(audit, 'unresolved-investigation-worklist
 const nationwide = () => readJson(path.join(audit, 'nationwide-verification.json')).records;
 const stateKey = (r) => `${r.disposition}|${r.standing_finding}|${r.mrf_state}`;
 function stateMap(records) { const o = {}; for (const r of records) o[r.ccn] = stateKey(r); return o; }
+const domainMap = (records) => { const o = {}; for (const r of records) o[r.ccn] = r.official_domain || ''; return o; };
+const domainsPath = path.join(tmpDir, 'accepted-domains.json');
 function remaining() { const done = new Set(ledger().map((e) => e.ccn)); return queue().filter((r) => !done.has(r.ccn)); }
 const rank = (key) => RANK[(key || '').split('|')[0]];
 
@@ -87,6 +89,21 @@ function validateEntry(e, batch) {
   if (!OUTCOMES.includes(e.outcome)) errs.push('outcome must be ' + OUTCOMES.join('|'));
   if (!CHANGES.includes(e.disposition_change || 'none')) errs.push('disposition_change must be ' + CHANGES.join('|'));
   if (!e.reason) errs.push('reason required');
+  // Search-first: every CCN records the independent official-site search, because recorded domains have proven wrong.
+  const ds = e.domain_search;
+  if (!ds || typeof ds !== 'object') errs.push('domain_search required: {"query","recorded_domain","found_domain","agrees":true|false,"basis"}');
+  else {
+    if (!ds.query || !ds.found_domain || !ds.basis) errs.push('domain_search needs query, found_domain (or "none-found") and basis');
+    if (typeof ds.agrees !== 'boolean') errs.push('domain_search.agrees must be true or false');
+    if (ds.agrees === false && ds.found_domain !== 'none-found') {
+      if (e.outcome !== 'evidence-gain') errs.push('a recorded-domain discrepancy is new evidence: outcome must be evidence-gain with a proof file');
+      else if (e.proof && fs.existsSync(path.join(root, e.proof))) {
+        const txt = fs.readFileSync(path.join(root, e.proof), 'utf8');
+        if (!txt.includes(ds.found_domain)) errs.push(`proof file must mention the found domain ${ds.found_domain}`);
+        if (ds.recorded_domain && !txt.includes(ds.recorded_domain)) errs.push(`proof file must mention the recorded domain ${ds.recorded_domain}`);
+      }
+    }
+  }
   if (e.outcome === 'blocked' && !e.next_step) errs.push('blocked requires next_step');
   if (e.outcome === 'relabel') errs.push('agents may not log relabel: derived rebuild changes are recorded by the loop, not by you');
   if (e.proof && !fs.existsSync(path.join(root, e.proof))) errs.push('proof file not found: ' + e.proof);
@@ -121,7 +138,8 @@ if (cmd === 'status') {
   console.log(JSON.stringify({ queue: q.length, handled: q.length - rem.length, remaining: rem.length, ledger_total: l.length, ledger_by_outcome: by }));
   process.exit(rem.length ? 1 : 0);
 } else if (cmd === 'assign' || cmd === 'next') {
-  const items = remaining().slice(0, Number(arg) || 3);
+  const only = argv.includes('--ccns') ? new Set(argv[argv.indexOf('--ccns') + 1].split(',')) : null;
+  const items = remaining().filter((r) => !only || only.has(r.ccn)).slice(0, only ? only.size : Number(arg) || 3);
   if (cmd === 'assign') {
     fs.mkdirSync(tmpDir, { recursive: true });
     fs.writeFileSync(batchPath, JSON.stringify({ assigned_at: new Date().toISOString(), ccns: items.map((r) => r.ccn), records: items }, null, 2));
@@ -141,6 +159,7 @@ if (cmd === 'status') {
 } else if (cmd === 'accept') {
   fs.mkdirSync(tmpDir, { recursive: true });
   fs.writeFileSync(acceptedPath, JSON.stringify(stateMap(nationwide())));
+  fs.writeFileSync(domainsPath, JSON.stringify(domainMap(nationwide())));
   console.log('accepted baseline updated');
 } else if (cmd === 'derive') {
   // State changes that no ledger line with a promote/downgrade explains: record as derived, never as agent work.
@@ -163,6 +182,7 @@ if (cmd === 'status') {
   console.log(`derived changes recorded: ${n}`);
   fs.mkdirSync(tmpDir, { recursive: true });
   fs.writeFileSync(acceptedPath, JSON.stringify(stateMap(nationwide())));
+  fs.writeFileSync(domainsPath, JSON.stringify(domainMap(nationwide())));
 } else if (cmd === 'guard') {
   const problems = [], warnings = [];
   const records = nationwide();
@@ -186,6 +206,15 @@ if (cmd === 'status') {
       const a = rank(pre[ccn]), b = rank(now[ccn]);
       if (e.disposition_change === 'promote' && !(b > a)) problems.push(`${ccn}: ledger says promote but ${pre[ccn].split('|')[0]} -> ${now[ccn].split('|')[0]} is not a promotion`);
       if (e.disposition_change === 'downgrade' && !(b < a)) problems.push(`${ccn}: ledger says downgrade but ${pre[ccn].split('|')[0]} -> ${now[ccn].split('|')[0]} is not a downgrade`);
+    }
+    // A changed official_domain must be explained by a ledger line that found a discrepancy via search.
+    if (fs.existsSync(domainsPath)) {
+      const dpre = readJson(domainsPath), dnow = domainMap(records);
+      for (const ccn of Object.keys(dnow)) {
+        if (dpre[ccn] === undefined || dpre[ccn] === dnow[ccn]) continue;
+        const e = last.get(ccn);
+        if (!e || !e.domain_search || e.domain_search.agrees !== false) problems.push(`${ccn}: official_domain changed (${dpre[ccn] || 'blank'} -> ${dnow[ccn] || 'blank'}) with no ledger line recording a search-found discrepancy`);
+      }
     }
     for (const e of entries) {
       for (const p of proofProblems(e)) problems.push(`${e.ccn}: ${p}`);
@@ -230,6 +259,7 @@ if (cmd === 'status') {
     `- **Scope/progress:** ${recs.length} CCNs in nationwide-verification; investigation queue ${q.summary.total} items (tiers ${JSON.stringify(q.summary.by_tier)}); model-run batches have handled ${l.length} CCNs (\`data/hpt-audit/autonomy/ledger.jsonl\`). Raw verified-current-mrf: ${verified}.`,
     `- **Evidence gains (new retrieved evidence): ${by('evidence-gain').length}** — ${ids(by('evidence-gain'))}. **Rechecks (no new evidence): ${by('recheck').length}. No-change single probes: ${by('no-change').length}. Blocked with a next step: ${by('blocked').length}.** These categories are not interchangeable.`,
     `- **Agent status changes, each backed by a proof file (human review pending):** ${changeText}.`,
+    `- **Official-domain search (run first for every CCN):** ${l.filter((e) => e.domain_search).length} CCNs searched; **${l.filter((e) => e.domain_search && e.domain_search.agrees === false).length} recorded-domain discrepancies found** (${ids(l.filter((e) => e.domain_search && e.domain_search.agrees === false))}).`,
     `- **Derived changes, not evidence (clock/classifier drift recorded by the loop):** ${d.length}, of which ${down.length} are downgrades awaiting a human policy decision (${down.map((x) => x.ccn).join(', ') || 'none'}). See \`derived-changes.jsonl\`.`,
     '- **Guardrails in force:** one loop-run rebuild per batch; contact and pointer privacy checks and the state-change guard passed before this block was written; no commit, push, outreach or publication.',
     END,
