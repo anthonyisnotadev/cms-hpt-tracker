@@ -1,0 +1,32 @@
+{
+  "audit_id": "reconciliation-westwood-pembroke-operator-price-page-scope-2026-10-01",
+  "ccn": "224023",
+  "observed_at": "2026-10-01T13:16:01.713Z",
+  "search": {
+    "tool": "web-search-prime (Z.ai MCP)",
+    "query": "\"Westwood Pembroke Health Systems\" hospital Westwood MA price transparency standard charges",
+    "result": "No official first-party website for the Westwood (45 Clapboardtree Street) campus was found. Results were third-party aggregators (medibillsaver, payerprice, carecarta, find-that-hospital), Medicare.gov Care Compare, and the sibling first-party site pembrokehospital.com."
+  },
+  "first_party_page_observed": {
+    "url": "https://pembrokehospital.com/standard-services",
+    "title": "Standard Services | Pembroke Hospital | Pembroke, MA",
+    "page_modified": "2025-04-30T13:45:20+00:00",
+    "facility_address_on_page": "199 Oak St, Pembroke, MA 02359 (Pembroke Hospital; sibling campus associated in prior evidence with CCN 224013)",
+    "price_controls": ["View Price Guide", "View Shoppable Services"],
+    "westwood_mention_in_rendered_text": "none observed",
+    "retrieval_route": "web-reader MCP (rendered text + wp-json wp/v2/pages/1027 head/content)"
+  },
+  "client_blocks": [
+    "curl to https://pembrokehospital.com/standard-services/ returned HTTP 403 (2026-10-01, automation denial)",
+    "playwright headless browser hit Cloudflare 'Just a moment...' interstitial, HTTP 403, unresolved after 20s wait",
+    "curl to wp-json endpoint returned HTTP 403",
+    "Price-guide file hrefs are injected by shortcode and were not exposed in the wp-json content retrieved via web-reader; the exact MRF/price-guide file URL was NOT recovered"
+  ],
+  "interpretation": "The shared operator publishes a first-party price page scoped to Pembroke Hospital at 199 Oak Street, Pembroke MA, with no Westwood/Westwood Lodge mention in the observed rendered text. This is consistent with the standing requirement that any combined MRF carry explicit location/CCN scope separating Westwood Lodge from Pembroke Hospital CCN 224013. It does NOT identify an official website for CCN 224023's Westwood campus, does NOT provide the effective-dated CMS enrollment/termination or Massachusetts DMH licensing record required by the evidence gate, and provides no MRF bytes for CCN 224023.",
+  "not_established": [
+    "Whether the operator's price guide file (href unrecovered due to client-side 403/Cloudflare) covers Westwood Lodge or CCN 224023",
+    "Any current official domain for the 45 Clapboardtree Street campus",
+    "Current CMS enrollment/termination status of CCN 224023"
+  ],
+  "disposition_effect": "none; keep CCN 224023 unresolved at official-website-not-identified / official-site-identity gate"
+}
