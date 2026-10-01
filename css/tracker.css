@@ -716,6 +716,37 @@ select {
   .oc-head .oc-close { width: 44px; height: 44px; }
 }
 
+/* Hospital identity reads as a record; status and sources have separate jobs. */
+.oc-head { padding: 28px var(--s-5) 0; background: var(--surface-2); }
+.oc-head-top > div { min-width: 0; flex: 1; }
+.oc-record-label { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; margin: 0 0 14px; color: var(--ink-3); font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+.oc-record-label span { font-family: var(--f-mono); font-weight: 400; letter-spacing: .025em; padding-left: 14px; border-left: 1px solid var(--rule-strong); }
+.oc-head h3 { font-size: clamp(24px, 3vw, 30px); font-weight: 650; line-height: 1.12; letter-spacing: -.045em; text-wrap: balance; overflow-wrap: anywhere; }
+.oc-head .oc-sub { display: flex; flex-wrap: wrap; gap: 5px 14px; margin-top: 12px; line-height: 1.5; }
+.oc-record-place { color: var(--ink-2); }
+.oc-record-date { font-size: 11px; align-self: center; }
+.oc-head .oc-close { width: 36px; height: 36px; margin-top: -4px; background: transparent; border: 1px solid var(--rule); }
+.oc-head .oc-close:hover { background: var(--surface-sunk); }
+.oc-head-tags { display: block; margin-top: 20px; }
+.oc-record-status { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; padding-bottom: 20px; }
+.oc-record-status .badge { font-size: 12px; padding: 7px 12px; }
+.oc-record-status .oc-stage { font-size: 11px; min-height: 28px; }
+.oc-record-status .oc-stage[data-stage="none"] { border-color: transparent; background: transparent; padding-left: 0; color: var(--ink-3); }
+.oc-record-sources { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-top: 1px solid var(--rule); }
+.oc-source-label { font-size: 10px; color: var(--ink-3); flex: none; }
+.oc-source-links { display: flex; flex-wrap: wrap; gap: 6px; min-width: 0; }
+.oc-source-links .linkbtn { display: inline-flex; align-items: center; gap: 8px; min-height: 32px; padding: 5px 10px; background: var(--surface); border-color: var(--rule); border-radius: 8px; font-family: var(--f-body); font-size: 11px; letter-spacing: 0; text-transform: none; white-space: normal; }
+.oc-source-links .linkbtn span { color: var(--ink-3); }
+.oc-source-links .linkbtn:hover { border-color: var(--ink-3); background: var(--surface-sunk); }
+@media (max-width: 380px) {
+  .oc-head { padding-top: 20px; }
+  .oc-record-label { gap: 6px 8px; font-size: 9px; }
+  .oc-record-label span { padding-left: 8px; }
+  .oc-record-sources { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .oc-source-label { padding-top: 0; }
+  .oc-head .oc-close { width: 44px; height: 44px; }
+}
+
 /* overscroll-behavior: contain stops a flick that reaches the end of the
    drawer from carrying on into the page underneath. */
 .oc-body { flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 0 var(--s-5) var(--s-6); }

@@ -109,7 +109,7 @@ jobs:
         run: |
           set -euo pipefail
           for f in index.html tracker.html mrf.html rules.html pointer.html skill.html \
-                   css/docs.css css/tracker.css js/docs.js js/tracker.js js/outreach.js \
+                   css/docs.css css/tracker.css js/docs.js js/tracker.js js/tracker-summary.js js/outreach.js \
                    cms_data/outreach.public.json CNAME; do
             test -s "_site/$f" || { echo "missing or empty: $f"; exit 1; }
           done

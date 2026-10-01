@@ -104,6 +104,27 @@
       "readableSourceHash": "26daea2b"
     }
   },
+  "130003": {
+    "ccn": "130003",
+    "name": "St Joseph Regional Medical Center",
+    "city": "Lewiston",
+    "state": "ID",
+    "status": "none",
+    "followUpOn": "",
+    "createdAt": "2026-09-29T03:44:44.549Z",
+    "updatedAt": "2026-09-29T03:44:44.550Z",
+    "entries": [],
+    "correction": {
+      "domain": "hospitalpricedisclosure.com",
+      "pointerUrl": "",
+      "mrfUrl": "https://hospitalpricedisclosure.com/Download.aspx?pi=HEe7rvjeIIxdn6QxdPT9Hg*-*",
+      "lastUpdatedOn": "2026-04-01",
+      "templateVersion": "3.0.0",
+      "verdict": "compliant",
+      "checkedOn": "2026-09-28",
+      "note": "Reviewed crawl September 9, 2026 via source page https://hospitalpricedisclosure.com/Default.aspx?pi=HEe7rvjeIIxdn6QxdPT9Hg*-* : CMS 3.0.0 JSON header matches facility - St Joseph Regional Medical Center, 415 Sixth Street, Lewiston, ID 83501; license 9 (ID); NPI 1225090954; declared last_updated_on 2026-04-01; attested by R*** with confirm_attestation true. Financial aid policy noted: 45% off facility standard gross charges. Pricing contact: hpt-obf:v1:5N0ryxKZsDZhGfZG.p26KHMKOctEp8YAKnJdmjQ.8BHIkbSVJgTWR_1ASg (T***). Root pointer https://www.sjrmc.org/cms-hpt.txt was blocked to browser tooling; this is page-linked observed evidence, not a legal compliance conclusion. Consistent with nationwide compliant-observed finding checked 2026-09-23."
+    }
+  },
   "130063": {
     "ccn": "130063",
     "name": "Treasure Valley Hospital",
@@ -929,6 +950,34 @@
       "readableSourceHash": "bd56180c"
     }
   },
+  "250093": {
+    "ccn": "250093",
+    "name": "Bolivar Medical Center",
+    "city": "Cleveland",
+    "state": "MS",
+    "status": "none",
+    "followUpOn": "",
+    "createdAt": "2026-09-29T03:45:51.299Z",
+    "updatedAt": "2026-09-29T03:48:17.938Z",
+    "entries": [
+      {
+        "id": "mum4w2wy-aaxziw",
+        "kind": "note",
+        "at": "2026-09-29T03:45:51.298Z",
+        "text": "Reviewed MRF (hospitalpricedisclosure.com, last_updated_on 2026-04-01, template v3.0.0, license MS 16-224, TIN/NPI 1306142062). Found leftover test item 'DUMMY DELETE' (CDM code 1, RC 630) in standard_charge_information. Decided not to send outreach about the dummy data."
+      }
+    ],
+    "correction": {
+      "domain": "hospitalpricedisclosure.com",
+      "pointerUrl": "",
+      "mrfUrl": "https://hospitalpricedisclosure.com/Download.aspx?pi=eoROtF*_*Ds07dFfOoe4qILQ*-*",
+      "lastUpdatedOn": "2026-04-01",
+      "templateVersion": "3.0.0",
+      "verdict": "compliant",
+      "checkedOn": "2026-09-29",
+      "note": "Reviewed crawl September 9, 2026 (source page on hospitalpricedisclosure.com): CMS 3.0.0 JSON header matches facility (Bolivar Medical Center, 901 E Sunflower Rd, Cleveland, MS 38732; license 16-224 MS; NPI 1306142062), declared last_updated_on 2026-04-01, attestation confirmed. One leftover test item 'DUMMY DELETE' (CDM 1 / RC 630) in standard_charge_information; judged cosmetic and not a compliance failure. Reviewer chose not to send outreach."
+    }
+  },
   "330405": {
     "ccn": "330405",
     "name": "Helen Hayes Hospital",
@@ -1270,6 +1319,34 @@
       "note": "Reviewed MRF confirms compliant finding: file declares Carolina Pines Regional Medical Center, 1304 W Bobo Newsom Hwy, Hartsville, SC 29550 (exact roster match), SC license HTL-0904, Type 2 NPI 1174500458, attestation confirmed true, template 3.0.0. File hosted on hospitalpricedisclosure.com (ScionHealth vendor host), consistent with existing nationwide record checked 2026-09-22.",
       "readableSummary": "Reviewed MRF confirms compliant finding: file declares Carolina Pines Regional Medical Center, 1304 W Bobo Newsom Hwy, Hartsville, SC 29550 (exact roster match), SC license HTL-0904, Type 2 NPI 1174500458, attestation confirmed true,…",
       "readableSourceHash": "2b930ec4"
+    }
+  },
+  "420010": {
+    "ccn": "420010",
+    "name": "Carolina Pines Regional Medical Center",
+    "city": "Hartsville",
+    "state": "SC",
+    "status": "none",
+    "followUpOn": "",
+    "createdAt": "2026-09-29T03:55:58.464Z",
+    "updatedAt": "2026-09-29T03:55:58.466Z",
+    "entries": [
+      {
+        "id": "mum593eq-nl7vom",
+        "kind": "note",
+        "at": "2026-09-29T03:55:58.466Z",
+        "text": "Reviewed MRF (crawled 2026-09-09): last_updated_on 2026-04-01, version 3.0.0. Facility identity verified against roster (name, address, state). License HTL-0904 (SC). Type 2 NPI 1174500458. Attestation section present and confirmed; financial aid policy noted as 65% off facility standard gross charges. Sample CDM/RC/HCPCS codes present. No outreach needed at this time."
+      }
+    ],
+    "correction": {
+      "domain": "",
+      "pointerUrl": "",
+      "mrfUrl": "https://hospitalpricedisclosure.com/download.aspx?pi=iQ*__*xBZskGDGvutD7kLWDDg*-*",
+      "lastUpdatedOn": "2026-04-01",
+      "templateVersion": "3.0.0",
+      "verdict": "compliant",
+      "checkedOn": "2026-09-28",
+      "note": "Reviewed MRF confirms compliant finding: file declares Carolina Pines Regional Medical Center, 1304 W Bobo Newsom Hwy, Hartsville, SC 29550 (exact roster match), SC license HTL-0904, Type 2 NPI 1174500458, attestation confirmed true, template 3.0.0. File hosted on hospitalpricedisclosure.com (ScionHealth vendor host), consistent with existing nationwide record checked 2026-09-22."
     }
   },
   "431319": {
