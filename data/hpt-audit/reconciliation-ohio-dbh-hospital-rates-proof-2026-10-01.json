@@ -1,0 +1,30 @@
+{
+  "ccns": ["364007", "364011", "364014", "364015"],
+  "observed_at": "2026-10-01T20:35:57.069Z",
+  "official_domain_found": "https://dbh.ohio.gov/",
+  "recorded_domain": "https://mha.ohio.gov/",
+  "domain_note": "mha.ohio.gov now redirects to dbh.ohio.gov (Ohio Department of Mental Health and Addiction Services rebranded to Department of Behavioral Health); browser observation: navigating https://mha.ohio.gov/ lands on https://dbh.ohio.gov/. First-party identity confirmed: DBH operates the six regional psychiatric hospitals.",
+  "pricing_page_url": "https://dbh.ohio.gov/about-us/regional-psychiatric-hospitals/resources/hospital-rates",
+  "pricing_page_status": 200,
+  "pricing_page_observation": "Hospital Rates page: 'Hospital Rates are updated annually in compliance with CMS and the Hospital Price Transparency requirements. Click the links below to access current hospital rates.' Links: Hospital Standard Charges (Inpatient) [all-payor, medicare, ancillary daily-rate subpages] and Hospital Standard Charges (Professional Fees).",
+  "file_url": "https://dam.assets.ohio.gov/raw/upload/mha.ohio.gov/AboutUs/RPH/resources/FY26-Daily-Rates.csv",
+  "file_status": 200,
+  "file_bytes_total": 2089,
+  "file_complete": true,
+  "file_last_modified": "Thu, 13 Aug 2026 12:01:40 GMT",
+  "file_sha256": "bc340eb2f3c47520bdd24e91c091f33854ef630e3149e4dc2c7376e3c48b3cfb",
+  "file_kind": "summary daily-rate CSV (CY2026), not CMS Technical Conventions template",
+  "file_facilities": ["Appalachian Behavioral Healthcare", "Central Ohio Behavioral Healthcare", "Heartland Behavioral Healthcare", "Northcoast Behavioral Healthcare", "Northwest Ohio Behavioral Healthcare", "Summit Behavioral Helathcare"],
+  "file_columns": ["Hospital", "Gross charge", "de-identified minimum negotiated charge", "de-identified maximum negotiated charge", "Discounted cash price"],
+  "ccn_facility_mapping_observed": {
+    "364007": "TWIN VALLEY BEHAVIORAL HEALTHCARE - no exact name match in file; plausibly renamed 'Central Ohio Behavioral Healthcare' under the 2024 DBH rebranding, UNVERIFIED",
+    "364011": "NORTHCOAST BEHAVIORAL HEALTHCARE NORTHFIELD CAMPUS - 'Northcoast Behavioral Healthcare' present (campus not distinguished)",
+    "364014": "NORTHWEST OHIO PSYCHIATRIC HOSPITAL - 'Northwest Ohio Behavioral Healthcare' present",
+    "364015": "APPALACHIAN BEHAVIORAL HEALTH CARE - 'Appalachian Behavioral Healthcare' present"
+  },
+  "changed_vs_prior": "Prior state: pointer-not-retrieved, prior finding site-observed/discovery-pointer-not-retrieved on mha.ohio.gov with no pricing page located. This check located the current DBH Hospital Rates page and its linked complete CY2026 standard-charges daily-rate CSV (Last-Modified 2026-08-13) naming all four facilities, and documented the mha.ohio.gov -> dbh.ohio.gov domain rename.",
+  "what_was_established": "First-party agency pricing page and a current publisher CSV covering the regional psychiatric hospitals, retrieved via authorized public routes.",
+  "what_was_not_established": "The CSV is not in the CMS template (no attestation, no version literal, no per-facility address/NPI, no payer-specific rows - only de-identified min/max daily rates); exact CCN-to-renamed-hospital mapping (especially Twin Valley -> Central Ohio) is unverified; no root cms-hpt.txt pointer was found on dbh.ohio.gov.",
+  "interpretation": "Evidence gain only; insufficient for a verified-current-mrf promotion because the file is a non-template summary sheet and facility identity mapping is incomplete.",
+  "next_action": "Verify the 2024 DBH hospital renames (Twin Valley -> Central Ohio Behavioral Healthcare; Northwest Ohio Psychiatric -> Northwest Ohio Behavioral Healthcare; Appalachian naming; Northcoast campus scope) against DBH's own rename announcement, then decide whether the daily-rate CSV satisfies the tracker's current-MRF classification or remains pointer-not-retrieved pending a template-format file."
+}

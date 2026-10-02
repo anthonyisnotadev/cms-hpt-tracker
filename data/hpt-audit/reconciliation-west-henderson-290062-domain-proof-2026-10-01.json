@@ -1,0 +1,33 @@
+{
+  "ccn": "290062",
+  "observed_at": "2026-10-01T23:22:14.035Z",
+  "domain_search": {
+    "tool": "web-search-prime_web_search_prime",
+    "query": "\"West Henderson Hospital\" Henderson Nevada price transparency standard charges",
+    "recorded_domain": "uhs.com",
+    "found_domain": "westhendersonhospital.com",
+    "basis": "Search results include https://westhendersonhospital.com ('West Henderson Hospital, Henderson, Las Vegas, Nevada', ZIP 89052) and https://westhendersonhospital.com/pricing-guide ('The file provided below displays the standard charges...'). Note: West Henderson Hospital is part of The Valley Health System (UHS), but the first-party facility domain is westhendersonhospital.com, not corporate uhs.com. Aggregator results (procedureradar) ignored."
+  },
+  "what_changed_vs_prior_state": "First facility-specific first-party domain identified; recorded uhs.com is the corporate UHS site, not the facility domain.",
+  "access_checks": [
+    {
+      "url": "https://westhendersonhospital.com/pricing-guide",
+      "method": "Invoke-WebRequest GET",
+      "observed_at": "2026-10-01T23:20:00Z",
+      "status": 403,
+      "note": "Cloudflare automation block to CLI client; client-side failure, not evidence about file availability."
+    },
+    {
+      "url": "https://westhendersonhospital.com/cms-hpt.txt",
+      "method": "playwright headless browser",
+      "observed_at": "2026-10-01T23:21:30Z",
+      "status": 403,
+      "page_title": "Access denied | westhendersonhospital.com used Cloudflare to restrict access",
+      "note": "Cloudflare access restriction; not evidence of file absence."
+    }
+  ],
+  "established": "First-party facility domain is westhendersonhospital.com with a Pricing Guide page describing a standard-charges file; recorded uhs.com is corporate.",
+  "not_established": "Pointer file existence/content, MRF identity, declared name/address (West Henderson Hospital, Henderson, NV 89052), CMS version, or any compliance conclusion.",
+  "disposition": "official-domain-corrected-pointer-access-blocked-to-client",
+  "next_action": "Retry https://westhendersonhospital.com/cms-hpt.txt and the pricing-guide page through a route that passes the Cloudflare restriction or a publisher-enabled copy; then require exact CCN 290062 identity (Henderson, Nevada address/state), date, CMS version and usable CMS CSV/JSON bytes before promotion."
+}

@@ -1,0 +1,46 @@
+{
+  "ccn": "390168",
+  "observed_at": "2026-10-01T16:13:35.885Z",
+  "domain_search": {
+    "recorded_domain": "butlerhealthsystem.org",
+    "found_domain": "wvumedicine.org",
+    "query": "Butler Memorial Hospital WVU Medicine takeover Independence Health System 2026 price transparency",
+    "results": [
+      "https://wvumedicine.org/news/article/wvu-medicine/front-page/wvu-health-system-welcomes-five-new-hospitals",
+      "https://www.butlereagle.com/20261001/independence-health-system-officially-joins-wvu-health-system",
+      "https://butlerradio.com/wvu-health-system-officially-takes-over-operations-at-bmh"
+    ],
+    "established": "News reports dated 2026-10-01 state Independence Health System's five Western PA hospitals (including Butler Memorial) officially joined WVU Health System; WVU Medicine identifies Butler Memorial Hospital at 1 Hospital Way, Butler, PA 16001."
+  },
+  "new_route": {
+    "pricing_page_url": "https://wvumedicine.org/billing-and-insurance/costs-and-charges/",
+    "pricing_page_status": 200,
+    "pricing_page_bytes": 159857,
+    "butler_file_url": "https://wvumedicine.org/wp-content/uploads/2026/09/250965274_Butler-Memorial_standardcharges.csv",
+    "http_status": 206,
+    "content_range": "bytes 0-262143/198017333",
+    "total_bytes": 198017333,
+    "sample_bytes": 262144,
+    "sample_sha256": "8b3a5445edc49c93e23d603fdb4a013c750c6ef9f2c62409e10127dba4da1397",
+    "sample_retained": "tmp/autonomy/butler-wvu-sample-0-262143.bin"
+  },
+  "header_observation": {
+    "hospital_name": "Butler Healthcare Providers_ DBA Butler Memorial Hospital",
+    "location_name": "Butler Memorial Hospital",
+    "hospital_address": "1 Hospital Way, Butler PA 16001",
+    "type_2_npi": "1447317896|1811054166",
+    "license_number_pa": "23701",
+    "last_updated_on": "1/1/2026",
+    "version": "3.0.0",
+    "attestation": "TRUE"
+  },
+  "pointer_observation": {
+    "pointer_url": "https://wvumedicine.org/cms-hpt.txt",
+    "pointer_status": 200,
+    "pointer_bytes": 6702,
+    "observation": "The WVU Medicine root pointer lists entries for WVU Hospitals, United Hospital Center, Camden Clark, Berkeley, Barnesville, Uniontown and others but contains no Butler Memorial, Clarion, Frick, Latrobe, or Westmoreland entry; the Butler CSV is page-linked only."
+  },
+  "established": "A materially different authorized byte-serving route (new operator WVU Medicine) serves a CMS 3.0.0 standard-charges CSV whose header names Butler Memorial Hospital at 1 Hospital Way, Butler PA 16001, with a PA license value, two type-2 NPIs, declared date 1/1/2026, and a TRUE attestation.",
+  "not_established": "Usable data rows beyond the 262,144-byte header sample; complete-file hash; pointer linkage (no Butler entry in the WVU cms-hpt.txt); no disposition change was applied.",
+  "next_step": "Retrieve or hash-validate enough of the 198,017,333-byte file to demonstrate usable rows, then decide the promotion route (page-linked file evidence without a pointer entry) via an apply script."
+}

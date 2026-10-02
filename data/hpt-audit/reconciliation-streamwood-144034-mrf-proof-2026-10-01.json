@@ -1,0 +1,47 @@
+{
+  "ccn": "144034",
+  "hospital_name": "BHC STREAMWOOD HOSPITAL INC (STREAMWOOD BEHAVIORAL HEALTHCARE SYSTEM)",
+  "state": "IL",
+  "observed_at": "2026-10-01T23:15:20.380Z",
+  "domain_search": {
+    "query": "Streamwood Hospital behavioral Illinois price transparency standard charges",
+    "recorded_domain": "streamwoodhospital.com",
+    "found_domain": "streamwoodhospital.com",
+    "agrees": true,
+    "basis": "https://streamwoodhospital.com/standard-services 'Standard Services | Streamwood Hospital' — first-party site of Streamwood Behavioral Healthcare System."
+  },
+  "route": [
+    "Direct fetch of https://streamwoodhospital.com/standard-services from this client: HTTP 403 (consistent with 2026-09-19 Cloudflare observations).",
+    "r.jina.ai reader render (x-no-cache) of the same first-party page: retrieved; includes link https://uhsfilecdn.eskycity.net/bh/621658515_streamwood_standardcharges.csv"
+  ],
+  "file": {
+    "url": "https://uhsfilecdn.eskycity.net/bh/621658515_streamwood_standardcharges.csv",
+    "byte_count_full": 57603,
+    "sha256_full": "17b313eb05c6e91c8fbd212d07b95cdcc18fe5e589bdd1d1fcbd2667876561bf",
+    "kind": "csv"
+  },
+  "declared_metadata_from_file": {
+    "hospital_name": "Streamwood Behavioral Healthcare System",
+    "location_name": "Streamwood Behavioral Healthcare System",
+    "hospital_address": "1400 EAST IRVING PARK ROAD, STREAMWOOD, IL 60107",
+    "license_number_IL": "4762",
+    "type_2_npi": "1619916822",
+    "last_updated_on": "2026-06-03",
+    "version": "3.0.0",
+    "attestation_value": true,
+    "sample_rate_row": "Inpatient - ALL per-diem rates with payer-specific negotiated dollars present"
+  },
+  "identity_crosscheck": {
+    "basis": "CCN 144034 Streamwood Behavioral Healthcare System / BHC Streamwood Hospital, Streamwood IL; the file's IL license column, Streamwood IL address, and name match.",
+    "result": "agree"
+  },
+  "established": [
+    "The hospital's own standard-services page (retrieved via materially different route after 403) links a facility-specific CMS-format standard-charges CSV on the UHS CDN.",
+    "Complete file (57,603 bytes) downloaded and SHA-256 hashed; version 3.0.0, updated 2026-06-03, attestation true, IL license 4762, NPI 1619916822, and Streamwood IL identity matching CCN 144034, with usable rate rows."
+  ],
+  "not_established": [
+    "No /cms-hpt.txt pointer exists (prior root attempts Cloudflare-blocked), so no CMS pointer linkage is claimed — first-party-page-to-file chain.",
+    "The unrelated Report Card 'permanently closed' flag is not adjudicated here; the current first-party site, current form, and current dated MRF are consistent with an operating facility, but no closure ruling is made either way."
+  ],
+  "changed_vs_prior": "Prior proofs recorded only Cloudflare challenges with no publisher URL or bytes. This session recovered the exact first-party-linked MRF URL and complete file bytes with hash — materially new evidence supporting promotion."
+}

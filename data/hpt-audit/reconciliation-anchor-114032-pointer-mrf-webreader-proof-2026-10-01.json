@@ -1,0 +1,44 @@
+{
+  "ccn": "114032",
+  "hospital_name": "SO CRESCENT BEH HLTH SYS - ANCHOR HOSPITAL CAMPUS",
+  "state": "GA",
+  "observed_at": "2026-10-01T17:29:06.731Z",
+  "route": "Z.ai web-reader MCP (server-side fetch); direct client routes to anchorhospital.com returned 403 Cloudflare challenges (Invoke-WebRequest, Playwright)",
+  "domain_search": {
+    "query": "\"Anchor Hospital\" Atlanta Georgia behavioral health price transparency standard charges",
+    "recorded_domain": "anchorhospital.com",
+    "found_domain": "anchorhospital.com",
+    "agrees": true,
+    "basis": "anchorhospital.com/cms-hpt.txt (fetched live) declares location-name Anchor Hospital with source page anchorhospital.com/standard-services; prior browser proof already tied anchorhospital.com to the facility"
+  },
+  "pointer": {
+    "url": "https://anchorhospital.com/cms-hpt.txt",
+    "content_as_returned": "location-name: Anchor Hospital | source-page-url: https://anchorhospital.com/standard-services/ | mrf-url: https://uhsfilecdn.eskycity.net/bh/233044975_anchor_standardcharges.csv | contact-name: UHS Corp Price Transparency Team | contact-email: hpt-obf:v1:ZuxcoFNu6p4mPVG3.jXCsfxL1ZAxhByL1RqO_UQ.7WO4tXiNJoqWrbpQMuyYONBL6m55aNs-4IckOHgNbgiWJxlm5F98",
+    "sha256_of_reader_extracted_text": "cb9d7bcd2ec35532daf243f8756109d3a93da12ff6e9aed7eb90e674d3f2c83f",
+    "hash_caveat": "Hash is of reader-extracted plain text; exact wire bytes unestablished (no permitted client can fetch the raw file past Cloudflare).",
+    "entry_count": 1,
+    "entries_matching_facility": 1,
+    "location_name": "Anchor Hospital"
+  },
+  "file": {
+    "url": "https://uhsfilecdn.eskycity.net/bh/233044975_anchor_standardcharges.csv",
+    "status": 200,
+    "bytes": 38019,
+    "download_complete": true,
+    "sha256": "1F1B87E5F9D12C35F35BACB23C750C005DF2A97827DC0BD1320EF997627263D6",
+    "retained_copy": "data/hpt-audit/reconciliation-114032-anchor-mrf-full-bytes-2026-10-01.csv",
+    "declared_hospital_name": "Anchor Hospital",
+    "declared_location_name": "Anchor Hospital",
+    "declared_address": "5454 YORKTOWNE DRIVE, ATLANTA, GA 30349",
+    "roster_address": "5454 YORKTOWNE DRIVE, COLLEGE PARK, GA 30349 (CMS provider-data API, checked 2026-10-01); street address and ZIP identical, city differs only as postal (Atlanta) versus municipal (College Park, Fulton County)",
+    "license_number_field": "license_number | GA = 031-595",
+    "type_2_npi": "1023095429",
+    "last_updated_on": "2026-08-26",
+    "cms_template_version_literal": "3.0.0",
+    "attestation": true,
+    "attester_name": "Quinn, Frederick"
+  },
+  "what_changed_vs_prior": "Prior anchor-hospital pointer-browser-proof established the pointer route but not retrievable pointer bytes or MRF bytes (client 403s). This session retrieved the live pointer entry and the complete CMS v3.0.0 CSV (38,019 bytes, SHA-256) whose declared street address, ZIP, state and NPI match the CCN 114032 roster identity, with date 2026-08-26 and attestation true.",
+  "established": "Publisher pointer at anchorhospital.com names Anchor Hospital; declared MRF is current (2026-08-26, v3.0.0) and matches the CCN 114032 campus identity (5454 Yorktowne Drive, GA 30349).",
+  "not_established": "Exact pointer wire bytes; municipal-versus-postal city label difference (College Park vs Atlanta) is recorded, not resolved."
+}

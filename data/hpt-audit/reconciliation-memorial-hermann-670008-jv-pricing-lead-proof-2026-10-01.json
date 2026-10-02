@@ -1,0 +1,31 @@
+{
+  "ccn": "670008",
+  "hospital_name": "MEMORIAL HERMANN HOUSTON PHYSICIANS HOSPITAL",
+  "state": "TX",
+  "observed_at": "2026-10-01T17:03:52.126Z",
+  "domain_search": {
+    "query": "\"Memorial Hermann Houston Physicians Hospital\" Webster price transparency standard charges",
+    "recorded_domain": "memorialhermann.org",
+    "found_domain": "houstonphysicianshospital.com",
+    "agrees": false,
+    "basis": "Web search surfaced the first-party joint-venture partner site https://houstonphysicianshospital.com/Hospital-Pricing-Information ('Houston Physicians' Hospital', the Webster facility at 333 N Texas Ave co-branded as Memorial Hermann Houston Physicians' Hospital per the retained 2026-09-23 identity proof); memorialhermann.org remains a valid operator route but its pricing pages expose only the generic community charge master. The JV site is a new, potentially facility-specific pricing lead."
+  },
+  "observations": [
+    {
+      "what": "Search hit: houstonphysicianshospital.com/Hospital-Pricing-Information",
+      "search_snippet": "Please click here to access Houston Physicians' Hospital Standard Charges. For any assistance regarding this information, please call hpt-obf:v1:L0E2mG-m-Q9R59Bj.i2UB2kj0fQAJ2NnbT1_z1w.9WT5vtku2QU8-g7Aytc.",
+      "established": "A first-party JV pricing page exists and advertises a Standard Charges download; the exact file URL is not visible in the snippet."
+    },
+    {
+      "what": "Retrieval attempts of the pricing page",
+      "attempts": [
+        "curl GET: HTTP 403 (5,674 bytes)",
+        "Playwright headless browser: HTTP 403, 'Just a moment...' Cloudflare challenge"
+      ],
+      "established": "Nothing about the file. Client-side access denial only; not evidence of file absence or noncompliance."
+    }
+  ],
+  "established": "A new first-party JV pricing-page lead for the Webster campus is documented with a dated search snippet; operator route (memorialhermann.org) remains unchanged and generic.",
+  "not_established": "File URL, bytes, facility identity, address, Texas metadata, declared date/version, usability.",
+  "next_step": "Retrieve the Standard Charges link from houstonphysicianshospital.com/Hospital-Pricing-Information through a permitted route (different egress, non-challenged client) or via web-reader; then verify facility-specific CMS CSV/JSON identity, Webster address, Texas metadata, declared date/version and parsed usability before promotion."
+}

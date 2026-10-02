@@ -1,0 +1,49 @@
+{
+  "ccn": "114016",
+  "hospital_name": "ST SIMONS-BY-THE-SEA",
+  "state": "GA",
+  "observed_at": "2026-10-01T23:06:02.570Z",
+  "domain_search": {
+    "query": "St. Simons by the Sea hospital price transparency standard charges",
+    "recorded_domain": "ssbythesea.com",
+    "found_domain": "ssbythesea.com",
+    "agrees": true,
+    "basis": "https://ssbythesea.com/standard-services 'Standard Services | St. Simons By-The-Sea | Georgia'; medical-records page shows 2927 Demere Road, St. Simons Island, GA 31522."
+  },
+  "route": [
+    "Direct fetch of https://ssbythesea.com/standard-services from this client: HTTP 403 (consistent with 2026-09-19 Cloudflare observations).",
+    "r.jina.ai reader render of the same first-party page: retrieved, includes link https://uhsfilecdn.eskycity.net/bh/203854107_st-simons_standardcharges.csv"
+  ],
+  "file": {
+    "url": "https://uhsfilecdn.eskycity.net/bh/203854107_st-simons_standardcharges.csv",
+    "http_status_head": 200,
+    "content_length": 45624,
+    "last_modified": "2026-06-10T19:40:46Z",
+    "byte_count_full": 45624,
+    "sha256_full": "3bd35392d519be17b2ab8522ecbd08b39fe74bde73ef463a890b6583a3bff2eb",
+    "kind": "csv"
+  },
+  "declared_metadata_from_file": {
+    "hospital_name": "Saint Simons By-The-Sea",
+    "location_name": "Saint Simons By-The-Sea",
+    "hospital_address": "2927 DEMERE ROAD, ST SIMONS ISLAND, GA 31522",
+    "license_number_GA": "063625",
+    "type_2_npi": "1972557916",
+    "last_updated_on": "2026-06-10",
+    "version": "3.0.0",
+    "attestation_value": true
+  },
+  "identity_crosscheck": {
+    "basis": "CCN 114016 ST SIMONS-BY-THE-SEA, Saint Simons Island GA; site's own pages show 2927 Demere Road, St. Simons Island, GA 31522; file address matches.",
+    "result": "agree"
+  },
+  "established": [
+    "The hospital's own standard-services page (retrieved via materially different route after 403 to this client) links a facility-specific CMS-format standard-charges CSV on the UHS CDN.",
+    "Complete file (45,624 bytes) downloaded and SHA-256 hashed; metadata row shows version 3.0.0, updated 2026-06-10, attestation true, GA license 063625, NPI 1972557916, and address matching CCN 114016."
+  ],
+  "not_established": [
+    "No /cms-hpt.txt pointer was found (prior 403s; root pointer still challenge-blocked), so no CMS pointer linkage is claimed — first-party-page-to-file chain.",
+    "Row-level rate completeness beyond the header/metadata/sample inspection was not exhaustively audited (small file; structure verified)."
+  ],
+  "changed_vs_prior": "Prior 2026-09-19 proof recorded only Cloudflare challenge and 403s with no publisher URL or MRF bytes. This session recovered the exact MRF URL from the first-party page and complete file bytes with hash — materially new evidence supporting promotion."
+}

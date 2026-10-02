@@ -1,0 +1,43 @@
+{
+  "ccn": "364036",
+  "hospital_name": "ARROWHEAD BEHAVIORAL HEALTH",
+  "state": "OH",
+  "observed_at": "2026-10-01T17:40:36.024Z",
+  "route": "Z.ai web-reader MCP (server-side fetch); two direct-client attempts at arrowheadbehavioral.com/cms-hpt.txt returned 403 Cloudflare challenges (Invoke-WebRequest, Playwright), and web-reader itself timed out twice before succeeding on the third try.",
+  "domain_search": {
+    "query": "\"Arrowhead Behavioral Health\" Ohio hospital price transparency standard charges",
+    "recorded_domain": "arrowheadbehavioral.com",
+    "found_domain": "arrowheadbehavioral.com",
+    "agrees": true,
+    "basis": "Search results and the live pointer both identify arrowheadbehavioral.com as the official Arrowhead Behavioral Health site (1725 Timber Line Road, Maumee, OH 43537)"
+  },
+  "pointer": {
+    "url": "https://arrowheadbehavioral.com/cms-hpt.txt",
+    "content_as_returned": "location-name: Arrowhead Behavioral Health | source-page-url: https://arrowheadbehavioral.com/standard-services/ | mrf-url: https://uhsfilecdn.eskycity.net/bh/270608044_arrowhead_standardcharges.csv | contact-name: UHS Corp Price Transparency Team | contact-email: hpt-obf:v1:xO64H2eUHPNnzWdV.T57W3COileXAV93pMgeC9g.KbOD6pDpxf4-mv4TQXf1_uZHgMEqiljExsubYDGMap7wI7XtQSym",
+    "sha256_of_reader_extracted_text": "e6096d9010f521a6684011c1ef2a72065c60b480ea773619fa5a42ed00a1b759",
+    "hash_caveat": "Hash is of reader-extracted plain text; exact wire bytes unestablished.",
+    "entry_count": 1,
+    "entries_matching_facility": 1,
+    "location_name": "Arrowhead Behavioral Health"
+  },
+  "file": {
+    "url": "https://uhsfilecdn.eskycity.net/bh/270608044_arrowhead_standardcharges.csv",
+    "status": 200,
+    "bytes": 65118,
+    "download_complete": true,
+    "sha256": "4EA271CE3681F71CCF7B818C14830400335892EE9952AD30FC9C2368520017F5",
+    "retained_copy": "data/hpt-audit/reconciliation-364036-arrowhead-mrf-full-bytes-2026-10-01.csv",
+    "declared_hospital_name": "Arrowhead Behavioral Health",
+    "declared_address": "1725 TIMBERLINE ROAD, MAUMEE, OH 43537",
+    "roster_address": "1725 TIMBER LINE ROAD, MAUMEE, OH 43537 (CMS provider-data API, checked 2026-10-01; 'Timberline' vs 'Timber Line' is a publisher spacing variant)",
+    "license_number_field": "license_number | OH = 072440",
+    "type_2_npi": "1336370196",
+    "last_updated_on": "2026-06-11",
+    "cms_template_version_literal": "3.0.0",
+    "attestation": true,
+    "attester_name": "Longacre, Cathy"
+  },
+  "what_changed_vs_prior": "The 2026-09-21 Cloudflare proof recorded only access denial. This session retrieved the live first-party pointer and the complete CMS v3.0.0 CSV (65,118 bytes, SHA-256) with matching name/address/state/NPI, current date 2026-06-11, attestation true.",
+  "established": "Publisher pointer at the official domain names Arrowhead Behavioral Health; declared MRF is current (2026-06-11, v3.0.0) and matches the CCN 364036 roster identity.",
+  "not_established": "Exact pointer wire bytes (reader-text hash only)."
+}

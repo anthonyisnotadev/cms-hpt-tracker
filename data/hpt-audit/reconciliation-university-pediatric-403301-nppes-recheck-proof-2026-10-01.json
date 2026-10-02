@@ -1,0 +1,49 @@
+{
+  "ccn": "403301",
+  "hospital_name": "UNIVERSITY PEDIATRIC HOSPITAL (HOSPITAL PEDIATRICO UNIVERSITARIO)",
+  "state": "PR",
+  "observed_at": "2026-10-01T20:13:30.000Z",
+  "domain_search": {
+    "query": "Hospital Pediatrico Universitario San Juan Puerto Rico price transparency standard charges",
+    "recorded_domain": "hopu.pr.gov",
+    "found_domain": "hopu.pr.gov",
+    "agrees": true,
+    "basis": "Search corroborates the facility is the University Pediatric Hospital, San Juan PR; no competing first-party domain surfaced. The recorded official PR government site https://hopu.pr.gov/ with pricing page https://hopu.pr.gov/transparencia-de-precios remains the official publisher route (retained from the 2026-09-23 proof)."
+  },
+  "publisher_file_reprobe": {
+    "url": "https://hospital-pediatrico.vercel.app/machine.json",
+    "http_status": 200,
+    "bytes": 11199333,
+    "sha256": "6e2625a3683d544dc2cfd3305dec45ce4900088cbd358a99c69a41a5549ffe6e",
+    "prior_sha256_2026_09_23": "6e2625a3683d544dc2cfd3305dec45ce4900088cbd358a99c69a41a5549ffe6e",
+    "json_parse": "FAIL — 'Expected double-quoted property name in JSON at position 1610 (line 26 column 6)', same failure point as the 2026-09-23 proof; line 26 is a bare '{' where the standard_charge_information object is malformed."
+  },
+  "nppes_reconciliation": {
+    "source": "https://npiregistry.cms.hhs.gov/api/?number=1174678460&version=2.1",
+    "npi": "1174678460",
+    "enumeration_type": "NPI-2",
+    "organization_name": "DEPARTAMENTO DE SALUD OFICIAL",
+    "other_names": "DBA HOSPITAL PEDIATRICO UNIVERSITARIO",
+    "location_address": "PUERTO RICO MEDICAL CENTER, RIO PIEDRAS, PR",
+    "license": "40 CNC NUM 93-060 (declared license_number|PR 40 matches the leading license number)",
+    "taxonomy": "282NC2000X General Acute Care Hospital, Children, PR",
+    "authorized_official": "GISSELLE KARINA VAN DERDYS, Executive Director — same surname as file attester Gisselle Van Derdys Rivera",
+    "status": "A",
+    "last_updated": "2026-04-14"
+  },
+  "address_reconciliation": {
+    "declared_in_file": "Centro Médico, Carr. Num 22; Rio Piedras, PR 00921",
+    "cms_roster": "PUERTO RICO MEDICAL CENTER IN RIO PIEDRAS, SAN JUAN, PR 00935",
+    "nppes_location": "PUERTO RICO MEDICAL CENTER, RIO PIEDRAS, PR (postal 00919-1079 mailing)",
+    "observation": "All three name the same Centro Médico / Puerto Rico Medical Center campus in Rio Piedras; the ZIP representations differ across sources (00921 / 00935 / 00919). Kept as an unresolved representation difference, not a contradiction."
+  },
+  "what_was_established": [
+    "NPI 1174678460 is registered to the Puerto Rico Department of Health DBA Hospital Pediátrico Universitario at the Puerto Rico Medical Center, Rio Piedras campus, with children's-hospital taxonomy and license 40 — the file's declared NPI and license now reconcile against NPPES.",
+    "The publisher file at hospital-pediatrico.vercel.app/machine.json is byte-identical to the 2026-09-23 observation (same SHA-256, same size) and still fails JSON parsing at the same documented position, so it remains not a verified usable MRF."
+  ],
+  "what_was_not_established": [
+    "A corrected/valid publisher file.",
+    "An exact-address match to the CMS roster ZIP 00935."
+  ],
+  "what_changed_versus_prior": "New fact: NPPES enrollment now corroborates the file's declared NPI, license number, DBA name and Rio Piedras campus (prior proof had no enrollment reconciliation). The file itself is unchanged and still invalid JSON, so the 2026-09-23 disposition stands."
+}

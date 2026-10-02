@@ -1,6 +1,6 @@
 {
   "audit_id": "reconciliation-891-baseline-source-recoverability-audit-2026-09-27",
-  "observed_at": "2026-10-01T13:17:30.849Z",
+  "observed_at": "2026-10-02T00:41:08.677Z",
   "question": "Can the exact CCN membership behind the 2026-09-25 category totals (593 effectively unresolved plus 298 raw pointer-access-denied observations) be recovered, and are the categories disjoint?",
   "search_scope": [
     "Git history of data/hpt-audit/nationwide-verification.json",
@@ -41,18 +41,18 @@
     },
     {
       "ref": "working-tree-current",
-      "generated_at": "2026-10-01T13:17:30.849Z",
-      "sha256": "07b0e349762131075eaf277be13efd2548b38fa573db23b863062e9b26808c8f",
+      "generated_at": "2026-10-02T00:41:08.677Z",
+      "sha256": "62e4651568f02d7f11c23a1d4fc3cd2e9ce64ed37a2b92f4b03eb234e8d6c63e",
       "ccns": 5419,
       "effective_counts": {
         "scope-exempt": 200,
-        "active-verification-claim": 3311,
-        "genuinely-unresolved": 572,
+        "active-verification-claim": 3369,
+        "genuinely-unresolved": 512,
         "standing-evidence-retained": 847,
-        "superseded-by-reviewed-resolution": 488,
+        "superseded-by-reviewed-resolution": 490,
         "supported-identity-uncertainty": 1
       },
-      "pointer_access_denied_raw": 268
+      "pointer_access_denied_raw": 239
     }
   ],
   "other_dated_report": {
@@ -89,20 +89,20 @@
     "reconstructable_from_sep_18_or_sep_20_counts_alone": false,
     "closure_credit_awarded": 0,
     "current_crosswalk_for_720_unique_ccns": {
-      "genuinely-unresolved": 541,
-      "active-verification-claim": 21,
+      "genuinely-unresolved": 497,
+      "active-verification-claim": 63,
       "standing-evidence-retained": 113,
-      "superseded-by-reviewed-resolution": 29,
+      "superseded-by-reviewed-resolution": 31,
       "scope-exempt": 16,
       "supported-identity-uncertainty": 0
     },
     "baseline_unresolved_now_other_category": {
-      "active-verification-claim": 19,
-      "superseded-by-reviewed-resolution": 18,
+      "active-verification-claim": 61,
+      "superseded-by-reviewed-resolution": 20,
       "scope-exempt": 16,
       "supported-identity-uncertainty": 0
     },
-    "conclusion": "The exact Sep. 25 snapshot and both exact category member sets are recovered and stable across 28 matching snapshots. The user-facing 891 total double-counted 171 CCNs present in both categories; the deduplicated baseline is 720 hospitals. Keep the 593 and 298 category memberships separately auditable, reconcile all 720 against current evidence, and do not substitute the overall current 572 serialized unresolved count or infer closure from aggregate deltas. Current state-operated hospitals without the CMS deemed-compliant exception evidence remain unresolved, not noncompliant; 16 individually supported exemptions remain."
+    "conclusion": "The exact Sep. 25 snapshot and both exact category member sets are recovered and stable across 28 matching snapshots. The user-facing 891 total double-counted 171 CCNs present in both categories; the deduplicated baseline is 720 hospitals. Keep the 593 and 298 category memberships separately auditable, reconcile all 720 against current evidence, and do not substitute the overall current 512 serialized unresolved count or infer closure from aggregate deltas. Current state-operated hospitals without the CMS deemed-compliant exception evidence remain unresolved, not noncompliant; 16 individually supported exemptions remain."
   },
   "latest_crosswalk_checkpoint": {
     "observed_at": "2026-09-28T05:34:03.113Z",
@@ -120,5 +120,5 @@
     },
     "interpretation": "No cohort member was dropped. Continue all 552 unresolved cohort records; the Neshoba archive-index review provided no recovery or closure credit."
   },
-  "next_action": "Continue evidence review for all 541 genuinely unresolved CCNs in this historical cohort. The remaining baseline-unresolved records are partitioned by category as follows: 19 active-verification-claim, 18 superseded-by-reviewed-resolution, 16 scope-exempt, 0 supported-identity-uncertainty. Continue the full 5,419-CCN reconciliation independently."
+  "next_action": "Continue evidence review for all 497 genuinely unresolved CCNs in this historical cohort. The remaining baseline-unresolved records are partitioned by category as follows: 61 active-verification-claim, 20 superseded-by-reviewed-resolution, 16 scope-exempt, 0 supported-identity-uncertainty. Continue the full 5,419-CCN reconciliation independently."
 }

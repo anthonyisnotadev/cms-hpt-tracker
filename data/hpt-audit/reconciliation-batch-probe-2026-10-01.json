@@ -1,0 +1,59 @@
+{
+  "observed_at": "2026-10-01T13:50:30Z",
+  "session_ccns": ["061328", "070031", "110256"],
+  "domain_search": {
+    "method": "web-search-prime per CCN before probing",
+    "061328": {
+      "query": "\"Pagosa Springs Medical Center\" price transparency standard charges machine readable file",
+      "recorded_domain": "pagosaspringsmedicalcenter.org",
+      "found_domain": "pagosaspringsmedicalcenter.org",
+      "agrees": true,
+      "basis": "https://www.pagosaspringsmedicalcenter.org/patients-visitors/patient-and-visitor-guide/insurance-and-billing (HTTP 200) — first-party site for Pagosa Springs Medical Center, Pagosa Springs CO"
+    },
+    "070031": {
+      "query": "\"Griffin Hospital\" Derby CT price transparency standard charges machine readable file negotiated rates",
+      "recorded_domain": "www.griffinhealth.org",
+      "found_domain": "www.griffinhealth.org",
+      "agrees": true,
+      "basis": "https://www.griffinhealth.org/griffin-hospital/billing-insurance/cms-hospital-price-transparency (HTTP 200) — first-party Griffin Hospital pricing page, Derby CT"
+    },
+    "110256": {
+      "query": "\"Taylor Regional Hospital\" Hawkinsville GA price transparency standard charges machine readable file",
+      "recorded_domain": "www.taylorregional.org",
+      "found_domain": "www.taylorregional.org",
+      "agrees": true,
+      "basis": "https://taylorregional.org (search result) — first-party site showing 222 Perry Hwy, Hawkinsville, GA 31036"
+    }
+  },
+  "probes": [
+    {
+      "ccn": "061328",
+      "what": "Official billing/financial-transparency pages and Revenue Masters portal route",
+      "urls": [
+        "https://www.pagosaspringsmedicalcenter.org/patients-visitors/patient-and-visitor-guide/insurance-and-billing",
+        "https://www.pagosaspringsmedicalcenter.org/patients-visitors/patient-and-visitor-guide/financial-transparency/",
+        "https://pagosaspringsmedicalcenter.pg.revenuemasters.com/login"
+      ],
+      "observed": "Both official pages HTTP 200; financial-transparency page links only https://pagosaspringsmedicalcenter.pg.revenuemasters.com/login. Headless browser visit of the portal (Playwright, 2026-10-01T13:50:30Z) renders 'Revenue Masters Payer Glass' e-mail/password login only — no public hospital-charge CSV link. Established: no materially new public portal file route as of this date. Not established: whether any MRF exists behind the login (login not attempted, per rules)."
+    },
+    {
+      "ccn": "070031",
+      "what": "Root pointer and official pricing page links",
+      "urls": [
+        "https://www.griffinhealth.org/cms-hpt.txt",
+        "https://www.griffinhealth.org/griffin-hospital/billing-insurance/cms-hospital-price-transparency"
+      ],
+      "observed": "Root cms-hpt.txt returns HTTP 404 (bounded GET, 2026-10-01). Pricing page HTTP 200 exposes only custom chargemaster workbooks (wp-content/uploads/2025/12/GRF_CDM_2025.xlsx and 2023/06/01142023_CDM-min-max-Master-File.xlsx) and no direct machine-readable negotiated-rates file link. Established: unchanged route condition; the vendor-terms authorization gate stands. Not established: whether the negotiated-rates portal exposes a direct file behind its own terms."
+    },
+    {
+      "ccn": "110256",
+      "what": "First-party pointer and its declared JSON target",
+      "urls": [
+        "https://www.taylorregional.org/cms-hpt.txt",
+        "https://machine-readable-files.com/taylor-regional-hospital/580655369_TaylorRegionalHospital_standardcharges.json"
+      ],
+      "observed": "Pointer HTTP 206 (range sample, 300 bytes shown) still names Taylor Regional Hospital, source page ezcost.info/taylor-regional-hospital, mrf-url the machine-readable-files.com JSON, contact Tiffany Jolly. The declared JSON target returns HTTP 404. Established: pointer unchanged, target still unavailable — no publisher correction since 2026-09-25. Not established: any current Georgia MRF for 222 Perry Highway, Hawkinsville GA."
+    }
+  ],
+  "inference_note": "All three probes are access-condition observations only. No file absence, compliance, promotion or downgrade conclusion is drawn. Client-side fetch tooling was functional (HTTP 200/206/404 responses returned), so these are not automation-blocked results."
+}

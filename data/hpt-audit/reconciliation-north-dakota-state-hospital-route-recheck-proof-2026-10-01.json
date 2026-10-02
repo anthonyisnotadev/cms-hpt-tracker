@@ -1,0 +1,21 @@
+{
+  "observed_at": "2026-10-01T19:37:36.256Z",
+  "ccn": "354003",
+  "recheck_reason": "next_action required locating a facility-specific ND HHS pricing route; prior proof 2026-09-21; ND Hospital Association page newly surfaced in search names the facility page as the price-transparency link",
+  "search_query": "\"North Dakota State Hospital\" Jamestown price transparency standard charges",
+  "domain_search": {
+    "recorded_domain": "hhs.nd.gov",
+    "found_domain": "www.hhs.nd.gov",
+    "agrees": true,
+    "basis": "https://ndha.org/resources/pricetransparency lists 'North Dakota State Hospital – Jamestown Price transparency link: https://www.hhs.nd.gov/north-dakota-state-hospital'; the page itself names the North Dakota State Hospital, Jamestown."
+  },
+  "page_observation": {
+    "url": "https://www.hhs.nd.gov/north-dakota-state-hospital",
+    "http_status": 200,
+    "bytes": 456168,
+    "result": "No cms-hpt, standard charge, or machine-readable pricing links found in page content; page still describes a daily-rate cost model with sliding fee scale, same as the 2026-09-21 proof."
+  },
+  "what_changed_vs_prior_proof": "Nothing: same official facility page, still no pricing route or pointer; third-party NDHA confirmation is consistent with the recorded domain.",
+  "what_was_not_established": "No exemption and no file-absence conclusion; only that no pricing route is published on the identified official route.",
+  "disposition_effect": 0
+}

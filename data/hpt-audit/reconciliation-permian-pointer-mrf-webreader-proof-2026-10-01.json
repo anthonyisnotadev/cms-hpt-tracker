@@ -1,0 +1,41 @@
+{
+  "ccn": "450144",
+  "hospital_name": "PERMIAN REGIONAL MEDICAL CENTER ANDREWS COUNTY HO",
+  "state": "TX",
+  "observed_at": "2026-10-01T21:00:01.707Z",
+  "route_note": "Retrieved through the web-reader MCP route, which is materially different from the previously app-shell-only HPI route observation (2026-09-21).",
+  "domain_search": {
+    "query": "\"Permian Regional Medical Center\" Andrews TX price transparency standard charges",
+    "recorded_domain": "www.permianregional.com",
+    "found_domain": "www.permianregional.com",
+    "agrees": true,
+    "basis": "Search results (Yelp/Nursa/Texas HHS) consistently place Permian Regional Medical Center at 720 Hospital Drive, Andrews, TX 79714; the first-party domain was already established by the 2026-09-21 first-party page proof."
+  },
+  "official_domain": "https://www.permianregional.com/",
+  "pointer_url": "https://www.permianregional.com/cms-hpt.txt",
+  "pointer_route": "web-reader MCP (materially different authorized route)",
+  "pointer_content": "location-name: Permian Regional Medical Center; source-page-url: https://search.hospitalpriceindex.com/hpi2/machineReadable/PermianRegionalMedicalCenter/7829; mrf-url: https://sthpiprd.blob.core.windows.net/machine-readable-files/7829/751997880_andrews-county-hospital-district_standardcharges.csv; contact-name: April Guynes; contact-email: hpt-obf:v1:Vf54gDY0_FheEMAc.j3AnMx8hhdX5MRBVFcuisg.JMPSHx2X1x-OpeOsDjV0RT-Whl5K91c46zn0",
+  "pointer_entry_count": 1,
+  "pointer_entries_matching_facility": 1,
+  "mrf_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/7829/751997880_andrews-county-hospital-district_standardcharges.csv",
+  "mrf_http_status": 206,
+  "mrf_bytes_retrieved": 262144,
+  "mrf_total_bytes": 156266295,
+  "mrf_complete": false,
+  "mrf_sha256_sample": "3C8DCD87B3877B5450C004187AACB4952E57C3D766E9F7793A49A62FC2BE4000",
+  "mrf_last_modified": "2026-06-16T18:13:16Z (GMT header)",
+  "declared": {
+    "hospital_name": "Andrews County Hospital District",
+    "location_name": "Permian Regional Medical Center",
+    "hospital_address": "720 Hospital Drive, Andrews, TX 79714",
+    "license_number_TX": "000187",
+    "type_2_npi": "1174563779",
+    "last_updated_on": "2025-12-03",
+    "version": "3.0.0",
+    "attestation": true,
+    "attester_name": "Susan Fournier, CFO"
+  },
+  "changed_vs_prior": "Prior proof (2026-09-21) had first-party identity and the HPI route returning only an application shell with zero MRF bytes. This proof gains: the first-party root cms-hpt.txt pointer text naming the facility and the blob MRF, plus a 262,144-byte sample of the 156,266,295-byte CMS 3.0.0 CSV declaring location name, exact roster address, TX license, NPI, date, version and attestation with usable rows.",
+  "established": "First-party root pointer names the facility and its current CMS 3.0.0 MRF; the MRF header declares Permian Regional Medical Center at 720 Hospital Drive, Andrews, TX 79714 (exact CMS roster match), 2025-12-03, version 3.0.0, attestation TRUE, and usable negotiated-charge rows.",
+  "not_established": "Content beyond the 262,144-byte sample of the 156 MB file; exact pointer wire bytes (hash is of reader-extracted text); no legal compliance verdict."
+}

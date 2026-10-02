@@ -1,0 +1,33 @@
+{
+  "ccn": "400004",
+  "hospital_name": "ASOCIACION HOSPITAL DEL MAESTRO, INC",
+  "state": "PR",
+  "observed_at": "2026-10-01T20:19:10.000Z",
+  "domain_search": {
+    "query": "\"Hospital del Maestro\" Hato Rey Puerto Rico price transparency standard charges; follow-up \"Asociación Hospital del Maestro\" sitio oficial hospital Puerto Rico",
+    "recorded_domain": "hospitalelmaestro.org",
+    "found_domain": "none-found",
+    "agrees": false,
+    "basis": "hospitalelmaestro.org returned HTTP 200 on 2026-10-01 but its content is an unrelated Indonesian gambling/betting site (links to agam99.com, agam99-bisa.com, Indonesian Wikipedia 'Permainan', TikTok/Instagram accounts of 'agam99'); it no longer represents Hospital del Maestro. No successor first-party hospital site appeared in either search; directories (revistahospitales, ahd) still list the stale hospitalelmaestro.org URL."
+  },
+  "domain_probe": [
+    { "url": "https://hospitalelmaestro.org/cms-hpt.txt", "status": 404 },
+    { "url": "https://hospitalelmaestro.org/", "status": 200, "note": "content is the unrelated agam99 gambling site, not the hospital" },
+    { "url": "https://hospitalelmaestro.org/price-transparency", "status": 404 },
+    { "url": "https://hospitalelmaestro.org/transparencia-de-precios", "status": 404 }
+  ],
+  "context_only_not_publisher_evidence": [
+    "WJournal PR: 'El Maestro Hospital begins the process of its sale' — filed Chapter 11 bankruptcy August 2025, $39.6M liabilities.",
+    "hospitalespr.org: hospital discards sale and seeks an operator.",
+    "These news items are context for the operator transition; they are not publisher/price-transparency evidence."
+  ],
+  "what_was_established": [
+    "The recorded official domain hospitalelmaestro.org no longer hosts the hospital's site; its root now serves unrelated third-party gambling content and /cms-hpt.txt is 404.",
+    "No replacement first-party hospital domain was found in this session's searches."
+  ],
+  "what_was_not_established": [
+    "The hospital's current operational/operator status beyond news context.",
+    "Any official successor website or publisher MRF route."
+  ],
+  "what_changed_versus_prior": "New fact versus the prior pointer-not-retrieved state: the recorded official domain is demonstrably lost/repurposed, so domain-level checks against hospitalelmaestro.org are no longer meaningful and a successor domain must be found before any pointer/file work."
+}

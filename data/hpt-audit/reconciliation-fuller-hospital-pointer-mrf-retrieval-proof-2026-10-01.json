@@ -1,0 +1,64 @@
+{
+  "ccn": "224021",
+  "observed_at": "2026-10-01T19:45:31.538Z",
+  "what_changed_versus_prior_state": "Prior state (pointer-access-denied-to-client) had no pointer or MRF bytes retrieved. In this check the first-party root pointer was retrieved through a materially different authorized route (web-reader) and the complete declared MRF (124,762 bytes, SHA-256 e0e3e97827f5d0ea04d3944cf2ef0f80c7006c5d8b134417461b0acf9da1f48a, CMS v3.0.0, last_updated_on 2026-05-13, attestation true) was retrieved for the first time, with name/address/MA matching the CMS record. New pointer-content, MRF-bytes and metadata evidence.",
+  "domain_search": {
+    "query": "\"Arbour-Fuller Hospital\" OR \"Fuller Hospital\" Attleboro Massachusetts price transparency standard charges",
+    "recorded_domain": "fullerhospital.com",
+    "found_domain": "fullerhospital.com",
+    "agrees": true,
+    "basis": "Search results fullerhospital.com/about-us/our-team ('Fuller Hospital', behavioral health, Attleboro MA) and Yelp listing 200 May St, South Attleboro MA with website fullerhospital.com; same first-party domain as recorded (Arbour-Fuller's public brand is Fuller Hospital)."
+  },
+  "cms_record_identity": {
+    "ccn": "224021",
+    "facility_name": "ARBOUR-FULLER HOSPITAL",
+    "citytown": "SOUTH ATTLEBORO",
+    "state": "MA",
+    "address": "200 MAY ST"
+  },
+  "pointer_retrieval": {
+    "route": "web-reader MCP (materially different authorized route)",
+    "url": "https://fullerhospital.com/cms-hpt.txt",
+    "content": "location-name: Fuller Hospital; source-page-url: https://fullerhospital.com/standard-services/; mrf-url: https://uhsfilecdn.eskycity.net/bh/232801395_fuller_standardcharges.csv; contact-name: UHS Corp Price Transparency Team; contact-email: hpt-obf:v1:tlu_KuuObRcESSFA.oJpcIj8K2MLTFJJrQ7IYow.bfZ1GwRBOU45o33OiabTlzYgvxBPjW5wm3u8JSKxtwAMsXTQwTss",
+    "location_name": "Fuller Hospital",
+    "sha256_of_reader_extracted_text": "56b44b761fcade7955d68fa3abb3c260c09cdd759cbfde345a6cddf7324ffa6c"
+  },
+  "mrf_file": {
+    "url": "https://uhsfilecdn.eskycity.net/bh/232801395_fuller_standardcharges.csv",
+    "http_status": 200,
+    "content_type": "text/csv",
+    "byte_count": 124762,
+    "sha256": "e0e3e97827f5d0ea04d3944cf2ef0f80c7006c5d8b134417461b0acf9da1f48a",
+    "last_modified": "Wed, 13 May 2026 20:26:38 GMT",
+    "full_file_retrieved": true
+  },
+  "mrf_metadata_declared": {
+    "hospital_name": "Fuller Hospital",
+    "location_name": "Fuller Hospital",
+    "hospital_address": "200 MAY STREET, SO ATTLEBORO, MA 02703",
+    "license_number": "1298 (license_number|MA)",
+    "type_2_npi": "1316917222",
+    "attester_name": "Cahill, Eugenia",
+    "attestation": "true",
+    "last_updated_on": "2026-05-13",
+    "version": "3.0.0"
+  },
+  "identity_check": {
+    "facility_name_matches": true,
+    "note": "CMS name 'ARBOUR-FULLER HOSPITAL'; declared 'Fuller Hospital' is the facility's operating brand on the same first-party domain; mass.gov ACPP listing pairs 'Fuller Hospital' with the Arbour system.",
+    "address_matches": true,
+    "state_matches": true,
+    "state": "MA"
+  },
+  "established": [
+    "First-party pointer https://fullerhospital.com/cms-hpt.txt exists and was retrieved through the web-reader route.",
+    "Declared MRF URL serves the complete 124,762-byte CMS v3.0.0 CSV (HTTP 200).",
+    "Declared name (Fuller Hospital), 200 May Street South Attleboro MA address, and state match the CMS record for CCN 224021.",
+    "Declared last_updated_on 2026-05-13 and attestation true are present."
+  ],
+  "not_established": [
+    "Pointer wire bytes (reader-extracted text hashed only).",
+    "Whether the mrf-url is stable across publisher rotations."
+  ],
+  "disposition_recommended": "verified-current-mrf"
+}

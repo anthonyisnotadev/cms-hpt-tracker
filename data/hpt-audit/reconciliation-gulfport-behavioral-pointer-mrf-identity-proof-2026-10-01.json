@@ -1,0 +1,67 @@
+{
+  "ccn": "254011",
+  "observed_at": "2026-10-01T19:57:31.742Z",
+  "what_changed_versus_prior_state": "Prior state (pointer-access-denied-to-client, prior finding candidate-identity-unverified) had no pointer or MRF bytes and the candidate file's identity was unconfirmed. In this check the first-party pointer was retrieved through the web-reader route and the complete declared MRF (197,552 bytes, SHA-256 7e092e13b32d98745f1f351089809565be96184e76e8ad8ecc43c410003ad06b, CMS v3.0.0, last_updated_on 2026-05-12, attestation true) was retrieved, and identity was independently corroborated (address match with the CMS record plus NPPES address match for the declared NPI). New pointer-content, MRF-bytes and identity evidence.",
+  "domain_search": {
+    "query": "\"Gulfport Behavioral Health\" Mississippi hospital price transparency standard charges",
+    "recorded_domain": "gulfportbehavioral.com",
+    "found_domain": "gulfportbehavioral.com",
+    "agrees": true,
+    "basis": "Search top results gulfportbehavioral.com/standard-services ('Standard Services - Gulfport Behavioral Health System') and homepage 'Behavioral Health Hospital | Gulfport, MS'; same first-party domain as recorded (UHS facility)."
+  },
+  "cms_record_identity": {
+    "ccn": "254011",
+    "facility_name": "GULFPORT BEHAVIORAL HEALTH  SYSTEM",
+    "address": "11150 US HIGHWAY 49 NORTH",
+    "citytown": "GPT",
+    "state": "MS",
+    "zip_code": "39503"
+  },
+  "pointer_retrieval": {
+    "route": "web-reader MCP",
+    "url": "https://gulfportbehavioral.com/cms-hpt.txt",
+    "content": "location-name: Gulfport Behavioral; source-page-url: https://gulfportbehavioral.com/standard-services/; mrf-url: https://uhsfilecdn.eskycity.net/bh/822306092_gulfport_standardcharges.csv; contact-name: UHS Corp Price Transparency Team; contact-email: hpt-obf:v1:RHDgW7fo19KQ7FqX.d5GOf9QOWd5p9XZjtJk0bg.ZEw4BitmvoMOO21qyuDuX7aEF_jAWsoDE5sHY5X-25g7zUDLcUov",
+    "location_name": "Gulfport Behavioral",
+    "sha256_of_reader_extracted_text": "b6e016db7ee6c31bab58d3be069f85ce0041bac58c5a1df5427774a5ea7b924b"
+  },
+  "mrf_file": {
+    "url": "https://uhsfilecdn.eskycity.net/bh/822306092_gulfport_standardcharges.csv",
+    "http_status": 200,
+    "content_type": "text/csv",
+    "byte_count": 197552,
+    "sha256": "7e092e13b32d98745f1f351089809565be96184e76e8ad8ecc43c410003ad06b",
+    "last_modified": "Tue, 12 May 2026 23:55:55 GMT",
+    "full_file_retrieved": true
+  },
+  "mrf_metadata_declared": {
+    "hospital_name": "Gulfport",
+    "location_name": "Gulfport",
+    "hospital_address": "11150 HIGHWAY 49 NORTH, GULFPORT, MS 39503",
+    "license_number": "32-351 (license_number|MS)",
+    "type_2_npi": "1750891792",
+    "attester_name": "McCauley, Bryan",
+    "attestation": "true",
+    "last_updated_on": "2026-05-12",
+    "version": "3.0.0"
+  },
+  "identity_check": {
+    "facility_name_matches": true,
+    "note": "Declared name 'Gulfport' is abbreviated; pointer location-name 'Gulfport Behavioral' and the hosting first-party domain gulfportbehavioral.com (Gulfport Behavioral Health System) tie it to CCN 254011.",
+    "address_matches": true,
+    "note_address": "Declared 11150 Highway 49 North, Gulfport, MS 39503 matches CMS '11150 US HIGHWAY 49 NORTH', GPT, MS 39503.",
+    "nppes_check": "NPI 1750891792 (NPI-2) is registered to TBD ACQUISITION II LLC at 11150 HIGHWAY 49, GULFPORT, MS 395034110 - same street address as the hospital.",
+    "state_matches": true,
+    "state": "MS"
+  },
+  "established": [
+    "First-party pointer https://gulfportbehavioral.com/cms-hpt.txt exists and was retrieved through the web-reader route.",
+    "Declared MRF URL serves the complete 197,552-byte CMS v3.0.0 CSV (HTTP 200).",
+    "Declared address matches the CMS record; declared NPI's NPPES-registered address matches the same street address.",
+    "Declared last_updated_on 2026-05-12 and attestation true are present."
+  ],
+  "not_established": [
+    "Pointer wire bytes (reader-extracted text hashed only).",
+    "Whether the mrf-url is stable across publisher rotations."
+  ],
+  "disposition_recommended": "verified-current-mrf"
+}

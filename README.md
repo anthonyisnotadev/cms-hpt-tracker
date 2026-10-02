@@ -1,188 +1,117 @@
 # CMS Hospital Price Transparency Tracker
 
-> **Can you actually find what a hospital charges?**
-> The law says hospitals must post their prices online. This project checks
-> whether they did, and shows you what we found.
+A hospital-by-hospital check of whether US hospitals have published the price
+files that federal rules require, and whether those files can be found and
+opened.
 
-**[>> Open the live tracker <<](https://mrf.anthonyisnota.dev)**
+**[Open the live tracker](https://mrf.anthonyisnota.dev)**
 
-```text
-+------------------------------------------------------------------------+
-| H O S P I T A L   P R O G R E S S                                      |
-| COVERAGE / every CMS roster record is represented                      |
-| Roster represented         [########################] 5,419  100.0%    |
-+------------------------------------------------------------------------+
-| REVIEW STATUS / one category per hospital                              |
-|                                                                        |
-| Active verification claim  [###############.........] 3,297   60.8%    |
-| Standing evidence retained [###.....................]   762   14.1%    |
-| Reviewed resolution        [###.....................]   622   11.5%    |
-| Scope exception            [#.......................]   194    3.6%    |
-| Unresolved investigation   [##......................]   544   10.0%    |
-|                                                                        |
-| Total                                                 5,419  100.0%    |
-+------------------------------------------------------------------------+
-| LOCAL SNAPSHOT  2026-09-29 02:46 UTC                                   |
-| # = share of roster   . = remainder                                    |
-| Review categories total 100%; they are not compliance scores.          |
-+------------------------------------------------------------------------+
-```
+## Current status
 
-Local research snapshot; the live site may show an older published version.
-The five review categories are mutually exclusive and account for all hospitals.
-[Jump to the full progress report](#research-progress)
+Local research snapshot from 2026-10-02 00:41 UTC. The live site may show an
+older published version.
 
----
+| Review category | Hospitals |
+| --- | ---: |
+| Active verification claim | 3,369 |
+| Standing evidence retained | 847 |
+| Superseded by reviewed resolution | 490 |
+| Scope exception | 200 |
+| Unresolved investigation | 512 |
+| Supported identity uncertainty | 1 |
+| **Total (full CMS roster)** | **5,419** |
 
-## The 30-second version
+Each hospital is in exactly one category. The categories describe the state of
+the research, not compliance scores. See [Research progress](#research-progress)
+for what each one means.
 
-```text
-      .-------------------.
-      |  YOU, wondering   |
-      |  "what will this  |
-      |   MRI cost?"      |
-      '---------+---------'
-                |
-                v
-   .--------------------------.        .---------------------------.
-   |  The law: hospitals must |  --->  |  Hospitals post a giant   |
-   |  publish their prices    |        |  spreadsheet (an "MRF")   |
-   '--------------------------'        '------------+--------------'
-                                                     |
-              but there are ~5,400 hospitals...      |
-              and each hides it somewhere different  v
-                                        .---------------------------.
-                                        |   THIS PROJECT: go look,  |
-                                        |   and write down what     |
-                                        |   we find. (o_o)          |
-                                        '---------------------------'
-```
+## What this project does
 
-Most US hospitals must publish their prices in a computer-readable file. Those
-files are public, but they are scattered across thousands of hospital websites
-and are not always easy to locate.
+Federal rules require most US hospitals to publish their prices in a
+machine-readable file (an MRF). The files are public, but they are spread across
+thousands of hospital websites and are hard to locate.
 
-This project walks through the **entire national list of hospitals**, one by
-one, and records:
+The tracker goes through the entire CMS hospital list, one hospital at a time,
+and records:
 
-- **Where** the hospital's price file lives
-- **Whether** it opens
-- **When** it was last updated
+- where the hospital's price file lives
+- whether the file opens
+- when it was last updated
+- whether the file identifies the same hospital
 
-Everything is available as a searchable website and as spreadsheets (CSV
-files) for anyone who wants to dig in.
+The results are available as a searchable website and as CSV files.
 
-### What this project does NOT do
+### What it does not do
 
-```text
-   [x] Tell you whether a particular price is fair
-   [x] Check every single price inside every file
-   [x] Prove that a hospital broke the law
-```
+- It does not judge whether a price is fair.
+- It does not check every price inside every file.
+- It does not determine that a hospital broke the law.
 
-If a hospital shows up as "unresolved," that means **we could not confirm it
-yet**, not that the hospital did something wrong. Websites move, block
-automated visitors, or go down.
+An "unresolved" hospital means the research has not confirmed a file yet. It is
+not a finding of wrongdoing. Websites move, block automated visitors, or go
+down.
 
----
+## Glossary
 
-## Plain-English glossary
-
-No healthcare background needed. Here are the only words you will meet:
-
-| Word | What it really means |
+| Term | Meaning |
 | --- | --- |
-| **CMS** | The federal agency (Centers for Medicare & Medicaid Services) that keeps the official hospital list and makes the rules |
-| **MRF** | "Machine-readable file." The big spreadsheet where a hospital lists its prices |
-| **`cms-hpt.txt`** | A tiny text file on a hospital's website that works like a **signpost**: "our prices are over there" |
-| **CCN** | A hospital's official ID number, like a Social Security number for buildings |
-| **Manifest** | Our table of "this hospital goes with this file," plus the proof |
-| **Gap** | A hospital we still cannot account for |
+| **CMS** | Centers for Medicare & Medicaid Services, the federal agency that maintains the official hospital list and sets the rules |
+| **MRF** | Machine-readable file: the large file in which a hospital lists its prices |
+| **`cms-hpt.txt`** | A small text file on a hospital's website that points to the hospital's MRF |
+| **CCN** | CMS Certification Number, the identifier for each hospital |
+| **Manifest** | The table pairing each hospital with its file, plus the supporting evidence |
+| **Gap** | A hospital whose file has not been accounted for |
 
----
+## How a hospital is matched to a file
 
-## How we match a hospital to its price file
+A file turning up is not enough. Many hospitals share a name, health systems
+share websites, and buildings change names after acquisitions. Each match has to
+be supported by evidence:
 
-Finding a file is not enough. Many hospitals share the same name, health
-systems share websites, and buildings change names when they get bought. So
-every match has to **earn** its place:
+1. Start from the official CMS hospital list.
+2. Find the hospital's website.
+3. Find the site's `cms-hpt.txt` pointer file.
+4. Follow the pointer to the price file.
+5. Read the start of the price file and compare address, ZIP, state, and license
+   number with the CMS record.
 
-```text
-   [ Official CMS hospital list ]
-                |
-                v
-   [ Find the hospital's website ]
-                |
-                v
-   [ Find its signpost file (cms-hpt.txt) ]
-                |
-                v
-   [ Follow the signpost to the price file ]
-                |
-                v
-   [ Open the first few lines of the file and check:  ]
-   [   "Is this really THE SAME hospital?"            ]
-   [    address + ZIP + state + license number        ]
-                |
-        +-------+-------+
-        |               |
-        v               v
-   MATCH CONFIRMED    STAYS IN REVIEW
-      \(^o^)/            (-_-)?
-```
-
-A name alone never counts as proof. If anything looks ambiguous, the hospital
-stays in review. The files are huge, so we peek at only the top of each one
-instead of downloading the whole thing.
-
----
+If these agree, the match is confirmed. If anything is ambiguous, the hospital
+stays in review. A name alone is never treated as proof. The files are very
+large, so only the first part of each is read.
 
 ## Research progress
 
-The dashboard above describes the local reviewed snapshot from September 29,
-2026, 02:46 UTC (September 28 in US Eastern time). Finding and opening a file
-does not check every price or establish legal compliance.
+The snapshot above was rebuilt on 2026-10-02, 00:41 UTC. Finding and opening a file does not check every price or
+establish legal compliance.
 
 ### Where all 5,419 hospitals stand
 
-Each hospital sits in exactly one bucket. These buckets are **not** report
-cards.
-
 | Review category | Hospitals | What remains |
 | --- | ---: | --- |
-| Active verification claim | 3,297 | Keep dated file and identity evidence; stale dates or template concerns may still require follow-up |
-| Standing evidence retained | 762 | Reconcile the newer observation without discarding stronger earlier evidence |
-| Superseded by reviewed resolution | 622 | Preserve the earlier observation as history and use the reviewed resolution |
-| Scope exception | 194 | Retain the documented reason for excluding the record from ordinary verification |
-| Unresolved | 544 | Resolve discovery, access, pointer linkage, or facility identity using the per-CCN next action |
-
-**In plain words:**
-
-```text
-   Evidence on file ........ 3,297  (the bulk of the list)
-   Keeping the older proof ..  762
-   Newer review replaced ....  622
-   Special cases ............  194
-   Still a mystery ..........  544  <-- the detective work is here
-```
+| Active verification claim | 3,369 | Keep dated file and identity evidence; stale dates or template concerns may still require follow-up |
+| Standing evidence retained | 847 | Reconcile the newer observation without discarding stronger earlier evidence |
+| Superseded by reviewed resolution | 490 | Preserve the earlier observation as history and use the reviewed resolution |
+| Scope exception | 200 | Retain the documented reason for excluding the record from ordinary verification |
+| Unresolved | 512 | Resolve discovery, access, pointer linkage, or facility identity using the per-CCN next action |
+| Supported identity uncertainty | 1 | Resolve the documented facility identity question before assigning a result |
 
 ### What still needs work
 
-The to-do list uses reviewed, hospital-by-hospital next steps. Right now,
-**1,592 hospitals** have a recorded investigation, follow-up, or monitoring
-step. Each hospital appears once below. These to-do groups overlap the buckets
-above, so please do not add the two tables together. Only 544 are truly
+1,708 hospitals have a recorded investigation, follow-up, or monitoring step.
+Each hospital appears once below. These workstreams overlap the categories
+above, so the two tables should not be added together. Only 512 hospitals are
 unresolved.
 
 | Next-step workstream | Hospitals |
 | --- | ---: |
-| Standing evidence follow-ups | 961 |
-| Unresolved investigations | 544 |
-| Uncertainty monitoring | 64 |
+| Newer evidence to weigh | 639 |
+| Still unresolved | 511 |
+| Recheck could not finish | 394 |
+| Other follow-up | 85 |
+| Watching for a change | 62 |
 | Facility identity review | 10 |
-| Finding reconciliation | 7 |
 | Same-campus scope review | 5 |
-| Other evidence review | 1 |
+| Conflicting observations | 2 |
 
 Completed scope exceptions do not automatically become "close as exempt"
 tasks. A documented scope or identity follow-up can still remain for a record
@@ -193,9 +122,9 @@ investigations already resolved by overlays.
 
 ### Checklist
 
-- [x] Put every hospital in the 5,419-record CMS list on the map
+- [x] Represent every hospital in the 5,419-record CMS list
 - [x] Give every hospital a review category
-- [ ] Resolve the remaining 544 mystery cases
+- [ ] Resolve the remaining 512 unresolved cases
 - [ ] Finish follow-up on retained evidence and outstanding file findings
 - [ ] Review and publish the latest snapshot with privacy checks
 
@@ -213,26 +142,22 @@ then `node scripts/check-tracker-release.js --write`. Commit the reviewed pages,
 source inputs, and release manifest together. GitHub Pages checks their hashes
 before deployment; it does not bypass proof validation or publish raw caches.
 
----
-
-## The rules behind it (short version)
+## The rules
 
 CMS Data Dictionary **3.0.0** is the current required MRF template. Its CY 2026
 requirements took effect January 1, 2026, with CMS enforcement beginning April
 1, 2026.
 
-For each hospital the tracker asks five simple questions:
+For each hospital the tracker asks:
 
-```text
-   1. Did we find the hospital's website?              [ ]
-   2. Does the site have the signpost file?            [ ]
-   3. Does the signpost lead to a price file?          [ ]
-   4. Does the file open, and name the right hospital? [ ]
-   5. Was it updated within the last year?             [ ]
-```
+1. Was the hospital's website found?
+2. Does the site have a `cms-hpt.txt` pointer file?
+3. Does the pointer lead to a price file?
+4. Does the file open, and does it name the right hospital?
+5. Was it updated within the last year?
 
 <details>
-<summary>Fine print on template versions (for the curious)</summary>
+<summary>Template version details</summary>
 
 An identity-matched file that clearly declares a 1.x or 2.x template does not
 meet the current version requirement. A file declaring `3`, `3.0` or `3.00` is
@@ -245,35 +170,27 @@ does not establish full-file compliance.
 
 </details>
 
----
-
 ## Limitations
 
-```text
-   (!)  Some hospital websites block automated visitors.
-   (!)  The official hospital list can lag behind closures,
-        buyouts and name changes.
-   (!)  One health-system file may not name every campus it covers.
-   (!)  A file that opens can still contain incomplete or wrong prices.
-   (!)  When a building's identity is unclear, a human has to decide.
-```
+- Some hospital websites block automated visitors.
+- The official hospital list can lag behind closures, buyouts and name changes.
+- One health-system file may not name every campus it covers.
+- A file that opens can still contain incomplete or wrong prices.
+- When a building's identity is unclear, a person has to decide.
 
-## Explore the site
+## Site pages
 
-| Page | What you will find |
+| Page | Contents |
 | --- | --- |
-| [Tracker](tracker.html) | The main searchable table of hospitals |
-| [Hospital price files](mrf.html) | What an MRF is, explained |
+| [Tracker](tracker.html) | The searchable table of hospitals |
+| [Hospital price files](mrf.html) | What an MRF is |
 | [CMS rules](rules.html) | The rules hospitals must follow |
-| [Pointer files](pointer.html) | The "signpost" file explained |
-| [Outreach skill](skill.html) | How we log emails and fieldwork |
+| [Pointer files](pointer.html) | What `cms-hpt.txt` is |
+| [Outreach skill](skill.html) | How emails and fieldwork are logged |
 
 ---
 
 # For developers
-
-Everything below is the technical manual. If you only wanted the story, you can
-stop here. Thanks for reading! (^_^)/
 
 ## Published data
 

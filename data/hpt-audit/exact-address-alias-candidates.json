@@ -1,45 +1,19 @@
 {
   "summary": {
-    "unresolved_pointer_match_ccns": 68,
-    "candidate_pairs": 7,
-    "candidate_ccns": 7,
+    "unresolved_pointer_match_ccns": 51,
+    "candidate_pairs": 3,
+    "candidate_ccns": 3,
     "new_address_lead_pairs": 0,
-    "already_reviewed_follow_up_pairs": 7,
-    "multi_campus_pairs": 2,
+    "already_reviewed_follow_up_pairs": 3,
+    "multi_campus_pairs": 1,
     "sibling_review_pairs": 1,
     "by_header_status": {
-      "unmatched": 6,
+      "unmatched": 2,
       "review": 0,
       "matched": 1
     }
   },
   "candidates": [
-    {
-      "ccn": "220001",
-      "roster_name": "UMASS MEMORIAL HEALTHALLIANCE HOSPITALS",
-      "roster_address": "60 HOSPITAL ROAD",
-      "roster_city": "LEOMINSTER",
-      "roster_state": "MA",
-      "roster_zip": "01453",
-      "pointer_location_names": "HealthAlliance-Clinton, Clinton Campus|HealthAlliance-Clinton, Leominster Campus",
-      "declared_hospital_name": "HealthAlliance - Clinton Hospital",
-      "declared_address": "60 Hospital Rd. Leominster, MA 01453|201 Highland St Clinton, MA 01510",
-      "matched_declared_address": "60 Hospital Rd. Leominster, MA 01453",
-      "declared_state": "MA",
-      "declared_date": "2026-03-26",
-      "declared_version": "3.0.0",
-      "mrf_url": "https://d1477x5i4cdpk9.cloudfront.net/042103555_umass-memorial-healthalliance-clinton-hospital-inc._standardcharges.csv",
-      "source_header_status": "unmatched",
-      "source_header_matched_ccns": [],
-      "requires_sibling_review": false,
-      "requires_multi_campus_review": true,
-      "candidate_kind": "already-reviewed-follow-up",
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-26T03:45:00Z",
-      "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file. Do not promote on address and ZIP alone."
-    },
     {
       "ccn": "220049",
       "roster_name": "MARLBOROUGH HOSPITAL",
@@ -65,7 +39,7 @@
       "reviewed_sources": [
         "manual-access"
       ],
-      "latest_review_at": "2026-09-26T03:45:00Z",
+      "latest_review_at": "2026-10-01T14:24:34Z",
       "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file. Do not promote on address and ZIP alone."
     },
     {
@@ -91,7 +65,7 @@
       "reviewed_sources": [
         "manual-access"
       ],
-      "latest_review_at": "2026-09-26T03:45:00Z",
+      "latest_review_at": "2026-10-01T14:24:34Z",
       "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file. Do not promote on address and ZIP alone."
     },
     {
@@ -117,91 +91,13 @@
       "reviewed_sources": [
         "manual-access"
       ],
-      "latest_review_at": "2026-09-26T01:20:00Z",
-      "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file. Do not promote on address and ZIP alone."
-    },
-    {
-      "ccn": "310040",
-      "roster_name": "CAREPOINT HEALTH-HOBOKEN UNIVERSITY MEDICAL CENTER",
-      "roster_address": "308 WILLOW AVE",
-      "roster_city": "HOBOKEN",
-      "roster_state": "NJ",
-      "roster_zip": "07030",
-      "pointer_location_names": "Hoboken University Hospital",
-      "declared_hospital_name": "Hoboken University Hospital",
-      "declared_address": "308 Willow Avenue, Hoboken, NJ 07030",
-      "matched_declared_address": "308 Willow Avenue, Hoboken, NJ 07030",
-      "declared_state": "NJ",
-      "declared_date": "2026-08-17",
-      "declared_version": "3.0.0",
-      "mrf_url": "https://images.pricetransparency.healthcare/hudson_regional_health_hoboken/452147328_hoboken-university-hospital_standardcharges.csv",
-      "source_header_status": "unmatched",
-      "source_header_matched_ccns": [],
-      "requires_sibling_review": false,
-      "requires_multi_campus_review": false,
-      "candidate_kind": "already-reviewed-follow-up",
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-30T23:30:00Z",
-      "next_action": "Keep CCN 310040 unresolved until the publisher confirms whether the pointer CDN URL and first-party page CSV are the same complete file, or a permitted complete retrieval establishes byte equality; then review the full file and usable charge rows. The matching 262,144-byte prefixes and shared filename are not complete-file identity proof. Do not promote on address and ZIP alone."
-    },
-    {
-      "ccn": "521324",
-      "roster_name": "ASPIRUS MEDFORD HOSPITAL & CLINICS, INC",
-      "roster_address": "135 S GIBSON ST",
-      "roster_city": "MEDFORD",
-      "roster_state": "WI",
-      "roster_zip": "54451",
-      "pointer_location_names": "Aspirus Medford Hospital",
-      "declared_hospital_name": "Aspirus Medford Hospital ",
-      "declared_address": "135 S Gibson St, Medford, WI 54451",
-      "matched_declared_address": "135 S Gibson St, Medford, WI 54451",
-      "declared_state": "WI",
-      "declared_date": "2026-04-01",
-      "declared_version": "3.0.0",
-      "mrf_url": "https://www.aspirus.org/Uploads/Public/Documents/PriceEstimate/TransparencyFY27/390964813_1619079597_aspirus-medford-hospital_standardcharges.json",
-      "source_header_status": "unmatched",
-      "source_header_matched_ccns": [],
-      "requires_sibling_review": false,
-      "requires_multi_campus_review": false,
-      "candidate_kind": "already-reviewed-follow-up",
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-26T01:20:00Z",
-      "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file. Do not promote on address and ZIP alone."
-    },
-    {
-      "ccn": "521350",
-      "roster_name": "LANGLADE HOSPITAL",
-      "roster_address": "112 E FIFTH AVE",
-      "roster_city": "ANTIGO",
-      "roster_state": "WI",
-      "roster_zip": "54409",
-      "pointer_location_names": "Aspirus Langlade Hospital",
-      "declared_hospital_name": "Aspirus Langlade Hospital",
-      "declared_address": "112 E Fifth Ave, Antigo, WI 54409",
-      "matched_declared_address": "112 E Fifth Ave, Antigo, WI 54409",
-      "declared_state": "WI",
-      "declared_date": "2026-04-01",
-      "declared_version": "3.0.0",
-      "mrf_url": "https://www.aspirus.org/Uploads/Public/Documents/PriceEstimate/TransparencyFY27/390806429_1639187412_aspirus-langlade-hospital_standardcharges.json",
-      "source_header_status": "unmatched",
-      "source_header_matched_ccns": [],
-      "requires_sibling_review": false,
-      "requires_multi_campus_review": false,
-      "candidate_kind": "already-reviewed-follow-up",
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-26T01:20:00Z",
+      "latest_review_at": "2026-10-01T14:32:59.260Z",
       "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file. Do not promote on address and ZIP alone."
     }
   ],
   "source_sha256": {
     "cms_data/Hospital_General_Information.csv": "23c5019ee51e11442d6d64cd153cedd78c51ab6435f621e4cb9351e3e972d9e3",
-    "data/hpt-audit/unresolved-investigation-worklist.json": "c73f22efc6a3e9086e2f192dc72a134e883eb7b2afac606bab1d057d1dc2284e",
+    "data/hpt-audit/unresolved-investigation-worklist.json": "dd98724d3af79ca5ca35308e2c639f9670ad58962b00caed976eb0762131fa35",
     "cms_data/hpt/nationwide-verification/mrf-headers.csv": "e92f5bfb939e6b14e85fa735bcf4e5ee5349288d6640ad3ee7132cfaac32e0ab"
   },
   "limitation": "A normalized base street and exact five-digit ZIP match, including a ZIP+4 address or an omitted suite, is a lead, not a facility identity adjudication or verified MRF assignment. A header already matched to a sibling CCN or reviewed for conflict requires explicit campus and enrollment adjudication."

@@ -1,0 +1,24 @@
+{
+  "ccn": "220083",
+  "observed_at": "2026-10-02T00:19:48Z",
+  "domain_search": {
+    "query": "\"Beth Israel Deaconess Hospital\" Needham price transparency standard charges",
+    "recorded_domain": "bidneedham.org",
+    "found_domain": "bidneedham.org",
+    "agrees": true,
+    "basis": "https://bidneedham.org/patients-visitors/billing-financial-services/price-transparency titles itself 'Beth Israel Deaconess Hospital–Needham'; the facility is BID Needham at 148 Chestnut Street, Needham, MA."
+  },
+  "pointer_url": "https://bidneedham.org/.well-known/cms-hpt.txt",
+  "pointer_observation": "Pointer file exists and reads: location-name: Beth Israel Deaconess Hospital–Needham; source-page-url: https://bidneedham.org/patients-visitors/billing-financial-services/price-transparency; mrf-url: https://bidneedham.org/043229679_beth-israel-deaconess-hospital---needham_standardcharges.json; contact-name: BILH Pricing Transparency Office; contact-email: hpt-obf:v1:aQCK_xDaEILv6rYq.TVxg5XTB9fC55cKlexW5Kg.LvL68VFz3DP1sZhMoG_cqRqI7l7_RfVLVBuZVjgDfy24.",
+  "official_pricing_page": "https://bidneedham.org/patients-visitors/billing-financial-services/price-transparency",
+  "official_page_observation": "Page re-confirmed live via remote reader; describes the CMS-required hospital charge data file and links Hospital Charge Data.",
+  "mrf_url": "https://bidneedham.org/043229679_beth-israel-deaconess-hospital---needham_standardcharges.json",
+  "mrf_observation": "JSON retrieved through the remote reader (route-only; full raw bytes not retained in this environment). Declared header: hospital_name 'Beth Israel Deaconess Hospital - Needham'; last_updated_on 2025-01-01; version 2.2.0; hospital_address '148 Chestnut Street, Needham, MA 02494'; license_information {license_number 2054, state MA}; affirmation confirm_affirmation true; standard_charge_information array present with item descriptions, code_information, and standard_charges carrying gross_charge and discounted_cash.",
+  "roster_identity": "BETH ISRAEL DEACONESS HOSPITAL - NEEDHAM",
+  "roster_address": "148 CHESTNUT STREET, NEEDHAM, MA 02492",
+  "what_changed_vs_prior_proof": "The 2026-09-22 proof established the page linkage but could not parse any file bytes. This run additionally (1) confirmed a live /.well-known/cms-hpt.txt pointer naming this exact facility and MRF URL, and (2) parsed the declared MRF header: facility name, street address, Massachusetts license state, version 2.2.0, last_updated 2025-01-01, and affirmation, with usable charge rows visible.",
+  "not_established": "No SHA-256 of the raw pointer or MRF bytes could be computed: local DNS/TLS to bidneedham.org fails from this environment (client-side), so only reader-mediated content was available. File completeness and byte-level identity remain unproven.",
+  "disposition": "pointer-live-mrf-metadata-verified-sha256-pending",
+  "interpretation": "New pointer and MRF-metadata evidence. No current-verification promotion applied because promotion requires pointer/MRF SHA-256 captured from raw bytes, which was not obtainable here.",
+  "next_action": "Capture raw bytes of https://bidneedham.org/.well-known/cms-hpt.txt and the standardcharges JSON (any authorized raw route), compute SHA-256 and entry counts, then promote."
+}

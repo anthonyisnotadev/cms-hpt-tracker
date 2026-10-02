@@ -1,0 +1,55 @@
+{
+  "ccn": "431318",
+  "observed_at": "2026-10-01T16:23:01.675Z",
+  "hospital_name": "BOWDLE HOSPITAL - CAH",
+  "state": "SD",
+  "search": {
+    "query": "\"Bowdle Hospital\" OR \"Bowdle Healthcare Center\" SD hospital price transparency standard charges",
+    "recorded_official_domain": "avera.org",
+    "found_domain": "bowdlehc.com",
+    "agrees_note": "avera.org remains the system publisher domain; the facility's own first-party site bowdlehc.com exposes a footer link labeled 'Bowdle Healthcare Center Pricing' to a standard-charges CSV. bowdlehc.com was already carried in reconciliation-avera-three-site-access-proof.json as the first-party hospital page."
+  },
+  "access_path": {
+    "browser": "https://bowdlehc.com homepage footer link 'Price Transparency' / 'Bowdle Healthcare Center Pricing' (search snippet + page HTML href extraction via Invoke-WebRequest)",
+    "page_note": "The bowdlehc.com footer 'Price Transparency' label links to the Recondo estimator (avera-community.msph.recondohealth.net), while the separate footer link 'Bowdle Healthcare Center Pricing' links directly to the CSV. A direct https://bowdlehc.com/price-transparency/ URL returns 404; the CSV link was extracted from the site HTML.",
+    "mrf_url": "https://bowdlehc.com/wp-content/uploads/bowdle-healthcare-center_standardcharges.csv"
+  },
+  "file_observation": {
+    "http_status": 200,
+    "total_bytes": 2191699,
+    "sha256_complete_file": "7df62f64abb0c926511381b355cc7d727f61087410441d0843920fd0facc3372",
+    "sample_0_262143_sha256": "dc33b162a1a3d2ada72a298133aeab61e52c0e8dbae0e2fc7549760c95826a98",
+    "last_modified_header": "Mon, 30 Mar 2026 13:21:49 GMT",
+    "rows_including_header": 2089,
+    "declared_hospital_name": "Bowdle Healthcare Center",
+    "declared_location_name": "Bowdle Healthcare Center",
+    "declared_address": "8001 W 5th St, Bowdle, SD, 57428",
+    "declared_license_number": "10527|SD",
+    "declared_type_2_npis": "1669418877|1003999152",
+    "declared_last_updated": "4/1/2026",
+    "cms_template_version": "4.0.0",
+    "attester_name": "Brooke Heilman",
+    "attestation": "TRUE",
+    "file_kind": "csv",
+    "retained_copy": "retained-source-documents/bowdle-healthcare-center-standardcharges-2026-10-01.csv"
+  },
+  "nppes_crosscheck": {
+    "1669418877": "BOWDLE HOSPITAL, General Acute Care Hospital / Critical Access, PO BOX 556, BOWDLE, SD",
+    "1003999152": "BOWDLE HOSPITAL, Medicare Defined Swing Bed Unit, PO BOX 556, BOWDLE, SD"
+  },
+  "cms_record": { "facility_id": "431318", "facility_name": "BOWDLE HOSPITAL - CAH", "address": "8001 W 5TH ST", "citytown": "BOWDLE", "state": "SD", "zip_code": "57428" },
+  "established": [
+    "bowdlehc.com (the facility's own first-party site) serves a complete CMS-template standard-charges CSV directly.",
+    "The file header declares Bowdle Healthcare Center at 8001 W 5th St, Bowdle, SD 57428, matching the CMS roster address for CCN 431318 exactly (street, city, state, ZIP).",
+    "Both declared type-2 NPIs resolve in NPPES to BOWDLE HOSPITAL, the Critical Access Hospital for CCN 431318.",
+    "Declared last-updated 4/1/2026, CMS template version 4.0.0, attester Brooke Heilman, attestation TRUE.",
+    "Complete 2,191,699-byte file retrieved with full SHA-256; 2,088 data rows."
+  ],
+  "not_established": [
+    "No cms-hpt.txt pointer on bowdlehc.com was located; linkage evidence is the first-party footer link, not a CMS pointer file.",
+    "The avera.org pointer CSV (460246437/460369929-named route) remains access-denied; no claim is made about that file.",
+    "Whether the header organization name 'Bowdle Healthcare Center' vs CMS 'BOWDLE HOSPITAL - CAH' difference matters beyond the NPPES-corroborated hospital identity is a classification judgement, recorded here as evidence only."
+  ],
+  "interpretation": "New first-party complete-file evidence satisfying the exact-file-access-and-campus-attribution gate: permitted full bytes, exact hospital address/state match, NPPES-corroborated hospital NPIs, declared date and CMS version, and attestation. This supports a reviewed promotion of CCN 431318 to verified-current-mrf.",
+  "count_effect": "candidate promotion for CCN 431318 ( Bowdle Hospital - CAH) from first-party-labeled-file-client-access-denied to verified-current-mrf"
+}

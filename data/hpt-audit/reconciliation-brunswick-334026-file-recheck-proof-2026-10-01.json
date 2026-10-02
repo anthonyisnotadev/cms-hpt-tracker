@@ -1,0 +1,62 @@
+{
+  "ccn": "334026",
+  "hospital_name": "BRUNSWICK HOSPITAL CENTER, INC.",
+  "state": "NY",
+  "observed_at": "2026-10-01T17:56:23.490Z",
+  "checked_by": "autonomy session batch 2026-10-01",
+  "official_domain_search": {
+    "query": "\"Brunswick Hospital Center\" Amityville NY standard charges price transparency",
+    "recorded_domain": "www.brunswickhospitalcenter.org",
+    "found_domain": "www.brunswickhospitalcenter.org",
+    "agrees": true,
+    "basis": "Search result https://www.brunswickhospitalcenter.org/ identifies Brunswick Hospital Center (BHC), 124-bed acute inpatient psychiatric hospital in Amityville, NY; pricing page https://www.brunswickhospitalcenter.org/pricing-transparency carries the facility pricing files."
+  },
+  "observations": [
+    {
+      "url": "https://www.brunswickhospitalcenter.org/pricing-transparency",
+      "http_status": 200,
+      "bytes": 499153,
+      "method": "Invoke-WebRequest GET (PowerShell 7)",
+      "note": "First-party Wix pricing page reachable without any bot challenge. Page links exactly two data files (see below)."
+    },
+    {
+      "url": "https://www.brunswickhospitalcenter.org/_files/ugd/742343_ac2e689232804c798b4d076b589558a4.csv?dn=110589550_BrunswickHospital_Shoppableservicesworking.csv",
+      "http_status": 200,
+      "bytes": 53269,
+      "sha256": "52CEE0022F16D8BE342BE76A54E762EBC5EF700FA9542D3BDA6E5DC0C1D8B00A",
+      "head": "ItemID,Items,,Rate,Notes | 1,\" Psychotherapy, 30 minutes \",90832,NA,Hospital does not offer this service seperately"
+    },
+    {
+      "url": "https://www.brunswickhospitalcenter.org/_files/ugd/742343_ac2e689232804c798b4d076b589558a4.csv?dn=110589550_Standard_Charges.csv",
+      "http_status": 200,
+      "bytes": 53269,
+      "note": "The previously recorded candidate URL (dn=110589550_Standard_Charges.csv) still resolves to the identical underlying Wix file ID (ac2e6892...) and the same 53,269-byte content, but the page now labels this same file 'Shoppable services', not standard charges."
+    },
+    {
+      "url": "https://www.brunswickhospitalcenter.org/_files/ugd/742343_0d63d23019ba40caaaab356c4f3ddb3a.xlsx?dn=110589550_BrunswickHospital_ChargeMaster_Standardchargesworking.xlsx",
+      "http_status": 200,
+      "bytes": 178611,
+      "sha256": "4F4E7FA70937247EA85E0651E0C92C4E5DA5035D4550DFB03475A6E744B2E763",
+      "format": "XLSX (binary workbook)",
+      "sheet_strings_head": "ITEMID | Description | CPTCD | Unit | Gross charges | Discounted cash price | AETNA COMMERCIAL | BLUE CROSS | ... | Maximum negotiated charge | Minimum negotiated charge | Notes"
+    }
+  ],
+  "what_changed_versus_prior_proof": {
+    "prior": "reconciliation-brunswick-hospital-center-page-file-proof-2026-09-23.json recorded the page-linked file as 110589550_Standard_Charges.csv (candidate_file_recorded=true, not validated).",
+    "changed": [
+      "The pricing page now labels the same underlying file (ID ac2e6892...) as 'Shoppable services' instead of 'Standard Charges'; a separate chargemaster XLSX is now also linked.",
+      "Both files were retrieved with byte counts and SHA-256 for the first time.",
+      "Neither file is a CMS-template machine-readable file: the CSV uses a custom 5-column schema (ItemID, Items, CPT, Rate, Notes) with no hospital_name, last_updated, license, affirm/attestation, gross/discounted-cash/payer-specific columns; the XLSX has gross/cash/payer columns but is a custom-schema binary XLSX, not a permitted CMS MRF format, and shows no declared hospital name, license state, or last-updated field in the header strings."
+    ]
+  },
+  "established": [
+    "Official first-party domain www.brunswickhospitalcenter.org serves the pricing page (HTTP 200) without bot blocking.",
+    "Two page-linked data files were retrieved with hashes; both are custom-schema, non-CMS-template files."
+  ],
+  "not_established": [
+    "No /cms-hpt.txt publisher pointer exists (https://www.brunswickhospitalcenter.org/cms-hpt.txt returned HTTP 400 in this session).",
+    "No declared CMS template version, facility name, address, license state, or last-updated date was found in either file header.",
+    "The pointer-retrieval evidence gate for this CCN is NOT cleared; no promotion is warranted."
+  ],
+  "disposition_change": "none"
+}

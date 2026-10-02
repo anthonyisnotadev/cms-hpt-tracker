@@ -1,0 +1,40 @@
+{
+  "audit_id": "reconciliation-maryland-pointer-recheck-2026-10-01",
+  "observed_at": "2026-10-01T14:12:30Z",
+  "ccns": ["214002", "214004"],
+  "purpose": "Cheap session probe of the shared publisher condition: does the Maryland root pointer now include an Eastern Shore (214002) or Springfield (214004) entry? This is a recheck of the 2026-09-25/2026-09-28 scope reviews, not a new MRF retrieval.",
+  "domain_searches": [
+    {
+      "ccn": "214002",
+      "query": "Eastern Shore Hospital Center Cambridge Maryland official website",
+      "recorded_domain": "health.maryland.gov",
+      "found_domain": "health.maryland.gov",
+      "agrees": true,
+      "basis": "First hit https://health.maryland.gov/ESHC/Pages/Home.aspx — official State of Maryland site, 'Address 5262 Woods Rd Cambridge, MD 21613', matching the roster name and address."
+    },
+    {
+      "ccn": "214004",
+      "query": "\"Springfield Hospital Center\" Sykesville Maryland price transparency standard charges",
+      "recorded_domain": "health.maryland.gov",
+      "found_domain": "health.maryland.gov",
+      "agrees": true,
+      "basis": "No first-party pricing route surfaced in search; only aggregators (payerprice, claraprice, ahd) plus the state facility identity (health.maryland.gov/springfiel...; 6655 Sykesville Road, Sykesville, MD 21784 via medicare.gov Care Compare). No non-state official site exists."
+    }
+  ],
+  "current_root_pointer": {
+    "url": "https://www.health.maryland.gov/cms-hpt.txt",
+    "final_url_after_redirect": "https://health.maryland.gov/wmhc/Pages/cms-hpt.txt",
+    "http_status": 200,
+    "response_bytes": 608,
+    "sha256": "459258c8920912eff1380ca2b337fe705a22dcb40095e995dc75a3d97c5e2e50",
+    "location_names": ["Western Maryland Hospital Center", "Deers Head Hospital Center"],
+    "interpretation": "Pointer bytes and SHA-256 are identical to the cached 2026-09-15/2026-09-26 observation; identical bytes suggest unchanged content but do not independently prove a content review. No Eastern Shore or Springfield entry. The same root redirect behavior observed previously persists."
+  },
+  "outcome": {
+    "evidence_gain": "Fresh hash-bound retrieval confirming the pointer condition is unchanged for both CCNs.",
+    "disposition_changed": false,
+    "unresolved_count_change": 0,
+    "interpretation": "Both facilities remain unresolved: the publisher's root pointer still names only Western Maryland and Deers Head, and no facility-specific MRF or authoritative deemed-compliant exception basis for these exact hospitals is present. Sibling files are not assigned to either CCN; no file-absence or compliance conclusion is inferred.",
+    "next_action": "Repeat this cheap pointer probe only after a material publisher change; otherwise locate an Eastern Shore or Springfield first-party price page or an authorized facility-specific pointer, or obtain authoritative evidence that the exact hospital qualifies for a CMS deemed-compliant exception."
+  }
+}

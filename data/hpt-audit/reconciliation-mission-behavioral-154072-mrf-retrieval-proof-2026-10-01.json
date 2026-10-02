@@ -1,0 +1,38 @@
+{
+  "ccn": "154072",
+  "observed_at": "2026-10-01T20:25:31Z",
+  "official_domain_search": {
+    "query": "\"Mission Behavioral Health\" OR \"mbhcares\" hospital Indiana price transparency standard charges",
+    "recorded_domain": "www.mbhcares.com",
+    "found_domain": "www.mbhcares.com",
+    "agrees": true,
+    "basis": "https://www.mbhcares.com/price-transparency is the first-party page naming Mission Behavioral Health, 1880 Medical Arts Drive, Huntingburg, IN 47542."
+  },
+  "official_page_url": "https://www.mbhcares.com/price-transparency",
+  "official_page_status": 200,
+  "facility_file_url": "https://www.mbhcares.com/getmedia/d7051a21-546f-4305-8234-02e82ef59667/MissionBehavioralHealth_MRF.csv",
+  "facility_file_status": 200,
+  "facility_file_bytes": 2125,
+  "facility_file_sha256": "58ab45ae784bf12a6500b310d70462e47511ee716af89bb2342096e9afcf6a1b",
+  "consumer_file_url": "https://www.mbhcares.com/getmedia/41b90c8c-8593-474b-b903-83cd35ea572e/Mission-Behavioral-Health-Huntingburg-shoppable-services-2026.csv",
+  "declared_metadata": {
+    "hospital_name": "Mission Behavioral Health",
+    "location_name": "Mission Behavioral Health",
+    "hospital_address": "1880 Medical Arts Drive Huntingburg IN, 47542",
+    "license_number": "154072",
+    "license_column_header": "license_number|MI (header artifact; value 154072)",
+    "type_2_npi": "1528803004",
+    "last_updated_on": "4/15/2026",
+    "version": "1.0.0",
+    "confirm_attestation": "TRUE",
+    "attester_name": "Morris D Long"
+  },
+  "pointer_url_probes": ["https://www.mbhcares.com/cms-hpt.txt (404)", "https://mbhcares.com/cms-hpt.txt (404)"],
+  "roster_identity": "MISSION BEHAVIORAL HEALTH HOSPITAL",
+  "roster_state": "IN",
+  "what_changed_vs_prior_evidence": "Prior state recorded pointer-not-retrieved / site-observed with no candidate file. This pass the first-party price-transparency page was located and both linked files were identified; the standard-charges MRF was retrieved in full (200, 2,125 bytes) with a CMS-template header.",
+  "established": "A current (2026-04-15) CMS-template CSV naming Mission Behavioral Health at the roster Huntingburg IN address, with NPI, license, confirmed attestation and parseable charge rows.",
+  "not_established": "Any cms-hpt.txt root pointer (404 on both hosts); template version is 1.0.0 rather than 3.0.0; the file is unusually small (one charge row beyond header), which may be complete for a small psychiatric hospital but was not independently corroborated.",
+  "tool_vs_inference": "Statuses, byte counts, SHA-256 and file content are direct tool observations. The characterization of the license header artifact and completeness concern are inferences.",
+  "next_action": "Determine whether official-page file linkage qualifies for the tracker's linked category absent a root pointer, or seek a publisher pointer addition; note the v1.0.0 template version is not the v3 template."
+}

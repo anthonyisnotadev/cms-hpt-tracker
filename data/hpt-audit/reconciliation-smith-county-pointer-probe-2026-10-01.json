@@ -1,0 +1,26 @@
+{
+  "ccn": "250786",
+  "hospital_name": "SMITH COUNTY  EMERGENCY HOSPITAL",
+  "state": "MS",
+  "observed_at": "2026-10-01T14:37:45.045Z",
+  "probe_type": "cheap-condition-probe",
+  "condition_probed": "Has the covingtoncountyhospital.com root pointer changed since the 2026-09-30 capture, and does any Smith County-specific pointer/file now exist?",
+  "domain_search": {
+    "search_query": "\"Smith County Emergency Hospital\" Raleigh Mississippi price transparency standard charges",
+    "found_domain": "covingtoncountyhospital.com",
+    "agrees": true,
+    "basis": "https://covingtoncountyhospital.com/locations/smith-county-emergency-hospital (347 Magnolia Dr, Raleigh MS 39153) remains the only first-party page for the facility; no separate Smith County official site was found in search results. Aggregators (FastHealth, Privenox) and news sites were ignored."
+  },
+  "observation": {
+    "url": "https://covingtoncountyhospital.com/cms-hpt.txt",
+    "http_status": 200,
+    "bytes": 296,
+    "sha256": "30e2828d60537fd91d62ad5321797296dc373995da21666de78acc7319b98371",
+    "matches_prior_capture_hash": true,
+    "sole_entry": "Covington County Hospital (Collins) -> 646001549_covington-county-hospital_standardcharges.csv"
+  },
+  "established": "The pointer bytes are identical to the 2026-09-29/09-30 captures; the sole entry remains Covington County Hospital and is not attributed to CCN 250786.",
+  "not_established": "No Smith County-specific pointer/file or authoritative CMS mapping was found; no file-absence or compliance conclusion.",
+  "classification": "no-change",
+  "next_action": "Seek a Smith County Emergency Hospital-specific CMS pointer/file or an authoritative publisher/CMS mapping for the Raleigh facility; do not repeat unchanged sources absent material change."
+}

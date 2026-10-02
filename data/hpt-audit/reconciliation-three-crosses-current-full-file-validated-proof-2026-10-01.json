@@ -1,0 +1,92 @@
+{
+  "ccn": "320091",
+  "hospital_name": "THREE CROSSES REGIONAL HOSPITAL LLC",
+  "observed_at": "2026-10-01T15:27:16.741Z",
+  "official_domain": "threecrossesregional.com",
+  "domain_search": {
+    "query": "\"Three Crosses Regional Hospital\" Las Cruces NM price transparency standard charges",
+    "recorded_domain": "threecrossesregional.com",
+    "found_domain": "threecrossesregional.com",
+    "agrees": true,
+    "basis": "Search result for https://www.threecrossesregional.com shows '2560 Samaritan Drive, Las Cruces, NM 88001' and the hospital name."
+  },
+  "pointer_observation": {
+    "url": "https://www.threecrossesregional.com/cms-hpt.txt",
+    "http_status": 200,
+    "bytes": 316,
+    "sha256": "57E6D622C5971878D51BE47E1BAF13BF82C6C7A0BA86734E044F172CEA282FDE",
+    "content": {
+      "location-name": "Three Crosses Regional Hospital LLC",
+      "source-page-url": "https://threecrossesregional.com/price_transparency.html",
+      "mrf-url": "https://mrfs.hyvehealthcare.com/ThreeCrossesRegional/852388743_three-crosses-regional-hospital-llc_standardcharges.csv",
+      "contact-name": "hpt-obf:v1:sp5Va_ZCMWB-G0NN.RjnDsRi9ztbWW-APPBmOag.utrP2F6jKRUP4sLz",
+      "contact-email": "hpt-obf:v1:W9SpAdBruzSuT9k0.vm3po2cpLDoDcGlzZdyN8g.uk4mAv0cp9l2WGWQNlzmNTWUQUyb"
+    }
+  },
+  "mrf_header_sample": {
+    "url": "https://mrfs.hyvehealthcare.com/ThreeCrossesRegional/852388743_three-crosses-regional-hospital-llc_standardcharges.csv",
+    "http_status": 206,
+    "content_range": "bytes 0-262143/62260653",
+    "last_modified": "Mon, 21 Sep 2026 16:26:31 GMT",
+    "sample_bytes": 262144,
+    "sample_sha256": "9bffa588e612fc6b71de95b5aca6e361a69631110f7901b88e7f922b8f158707",
+    "note": "Identical sample SHA-256 to the 2026-09-26 bounded sample in accuracy-plan, confirming the same file is currently served."
+  },
+  "current_mrf_full_file_review": {
+    "url": "https://mrfs.hyvehealthcare.com/ThreeCrossesRegional/852388743_three-crosses-regional-hospital-llc_standardcharges.csv",
+    "http_status": 200,
+    "bytes_received": 62260653,
+    "sha256": "EBD45B1704EC1C1D38ECEA1D59D3320BED6DF3441E2086381932D6DB14095989",
+    "retrieval_window": "2026-10-01T15:21:58Z–2026-10-01T15:26:43Z (bounded by the preceding sample request and the CMS validator run timestamp)",
+    "file_kind": "text/csv",
+    "required_header": {
+      "hospital_name": "THREE CROSSES REGIONAL HOSPITAL LLC",
+      "last_updated_on": "09/21/2026",
+      "version": "3.0.0",
+      "location_name": "Three Crosses Regional Hospital",
+      "hospital_address": "2560 Samaritan Dr, Las Cruces, NM 88001",
+      "type_2_npi": "1760020044",
+      "license_column_label": "license_number|NM",
+      "license_number_value": "3699",
+      "attester_name": "Denten Park",
+      "attestation": "TRUE"
+    },
+    "csv_validation": {
+      "structure": "CMS v3 two-tier CSV: 11-column required header + hospital row, then 32-column extended header + data rows",
+      "header_columns": 32,
+      "data_rows": 372722,
+      "malformed_row_widths": 0,
+      "nonempty_description_rows": 372722,
+      "rows_with_payer": 366400,
+      "rows_with_gross_charge": 100303,
+      "rows_with_discounted_cash": 100303,
+      "rows_with_negotiated_dollar": 301457,
+      "no_pipe_CA_tokens_found": true
+    },
+    "cms_validator": {
+      "package": "@cmsgov/hpt-validator-cli",
+      "version": "1.10.8",
+      "requirements": "v3.0",
+      "format": "csv",
+      "data_dictionary_version": "3.0.0",
+      "valid": true,
+      "error_count": 0,
+      "alert_count": 0,
+      "output_archived_at": "data/hpt-audit/curl-evidence/threecrosses-320091-validator-v3-2026-10-01.json",
+      "timestamp": "2026-10-01T15:26:43.245Z"
+    }
+  },
+  "identity_gate": "current-root-pointer-exact-file-full-bytes-header-name-address-state-license-date-version-npi-attestation-agree",
+  "license_state_reconciliation": "The next_action's open question — the CSV header license column literal `license_number|CA` from the older 2024-11-07 page-file observation — is reconciled: the current pointer-resolved 2026-09-21 file labels the column `license_number|NM` with value 3699, and the string '|CA' does not occur anywhere in the complete file. The older CA-labeled file observation remains retained as dated provenance.",
+  "established": [
+    "First-party root pointer currently names the exact MRF and the source page; page and pointer agree.",
+    "Complete current file retrieved, hashed, structurally validated, and passed the official CMS v3.0 validator with zero errors and zero alerts.",
+    "Header identity, address, state, license state/number, NPI, attestation, date (2026-09-21), and canonical version 3.0.0 all agree with the facility."
+  ],
+  "not_established": [
+    "No legal compliance or line-item price-accuracy determination is made."
+  ],
+  "proposed_disposition": "verified-current-mrf",
+  "proposed_observed_finding": "compliant-observed",
+  "interpretation": "This is a current-MRF verification based on complete bytes and official validation. The 2024-11-07 dated file observation and the 2026-09-26 bounded-sample observation remain preserved as historical evidence."
+}

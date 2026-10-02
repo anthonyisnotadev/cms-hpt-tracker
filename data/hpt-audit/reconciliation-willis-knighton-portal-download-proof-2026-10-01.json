@@ -1,0 +1,47 @@
+{
+  "ccn": "190111",
+  "hospital_name": "WILLIS KNIGHTON MEDICAL CENTER",
+  "observed_at": "2026-10-01T23:31:20.473Z",
+  "domain_search": {
+    "query": "\"Willis Knighton Medical Center\" Shreveport hospital price transparency standard charges",
+    "recorded_domain": "wkhs.com",
+    "found_domain": "wkhs.com (newbuild.wkhs.com pricing page previously observed 2026-09-21)",
+    "agrees": true,
+    "basis": "Search returned only third parties (CMS reports, Fitch, PMC); first-party wkhs.com confirmed by prior proof reconciliation-willis-knighton-current-mrf-portal-proof-2026-09-21.json showing newbuild.wkhs.com/patients-and-visitors/billing-insurance-and-financial-assistance/pricing-transparency"
+  },
+  "retrieval": {
+    "url": "https://hospitalpricedisclosure.com/Download.aspx?f=iFd%2A_%2AcEPwhQHJy3lVvHy9uQ%2A-%2A&pxi=EQGzpo%2A__%2AZt8w%2A__%2AtMoFmXcTzQ%2A-%2A",
+    "http_status": 200,
+    "content_type": "application/octet-stream",
+    "byte_count": 29254833,
+    "sha256": "DE6B1D3647D8E173611E1B6A39DF0E15D4AE75C366C633418B08733874C17169",
+    "method": "direct HTTP GET of the portal download link recorded on 2026-09-21; no form submitted, no interactive download required"
+  },
+  "file_facts": {
+    "format": "JSON (Turf repository format)",
+    "hospital_name_field": "Willis-Knighton Health System",
+    "last_updated_on": "2026-04-01",
+    "version": "3.0.0",
+    "location_name": ["Willis-Knighton Health System", "Willis Knighton Bossier", "Willis Knighton North", "Willis Knighton Pierremont", "Willis Knighton Rehabilitation Institute", "Willis Knighton South"],
+    "hospital_address_includes": "2600 Greenwood Road, Shreveport, LA 71103",
+    "license_state": "LA",
+    "type_2_npi_first": ["1912059932", "1003968579", "1568461572", "1275685539", "1710039896", "1124170691"],
+    "attestation_confirm": true,
+    "attester": "Mary Jane Ward"
+  },
+  "established": [
+    "The Willis Knighton MRF portal serves a downloadable 29.2 MB JSON MRF at the recorded candidate URL without an interactive browser session.",
+    "The file declares CMS template version 3.0.0, last_updated_on 2026-04-01, an LA license, six type-2 NPIs, and a confirm_attestation true.",
+    "The Willis-Knighton Health System location entry declares the exact address recorded for CCN 190111 (2600 Greenwood Road, Shreveport, LA 71103)."
+  ],
+  "not_established": [
+    "The literal name 'Willis Knighton Medical Center' appears nowhere in the file (case-insensitive search of the full text: -1 matches); the location list uses 'Willis-Knighton Health System' plus campus names, so the mapping of the health-system entry to CCN 190111 is an inference, not an observed fact.",
+    "No cms-hpt.txt pointer for this facility was retrieved; the pointer-retrieval evidence gate remains unmet.",
+    "Whether Willis Knighton Medical Center's charges are separately identifiable within this combined system file."
+  ],
+  "changed_vs_prior_proof": "Prior proof (2026-09-21) recorded only the portal link and candidate URL with no file bytes. This proof retrieves the file bytes, SHA-256, declared version 3.0.0, attestation, and reveals that the download is a combined health-system file that never names Willis Knighton Medical Center literally.",
+  "inferences": [
+    "The Willis-Knighton Health System entry at 2600 Greenwood Road, Shreveport, LA 71103 is plausibly the main campus = Willis Knighton Medical Center, but this is not proven by file text."
+  ],
+  "next_step": "Determine from licensing/NPI data or a Willis-Knighton source whether 'Willis-Knighton Health System' in this combined file is CCN 190111, or obtain a facility-specific selection from the portal; only then consider promotion."
+}

@@ -1,0 +1,51 @@
+{
+  "ccn": "450653",
+  "observed_at": "2026-10-01T16:35:40.109Z",
+  "hospital_name": "SCENIC MOUNTAIN MEDICAL CENTER",
+  "state": "TX",
+  "search": {
+    "query": "data.cms.gov QIES POS exact-CCN query PRVDR_NUM=450653 (dataset bb342fae-b551-40fd-a738-e2e5878f3bbb); NPPES 1497606438",
+    "recorded_official_domain": "scenicmountainmedical.org",
+    "found_domain": "scenicmountainmedical.org",
+    "agrees": true,
+    "basis": "No new first-party domain evidence sought or found this session; the check targeted the CMS certification record per the queued next_action (post-transition CMS certification/enrollment record)."
+  },
+  "qies_observation": {
+    "query_url": "https://data.cms.gov/data-api/v1/dataset/bb342fae-b551-40fd-a738-e2e5878f3bbb/data?filter%5BPRVDR_NUM%5D=450653&size=10",
+    "http_status": 200,
+    "row": {
+      "PRVDR_NUM": "450653",
+      "FAC_NAME": "SHANNON MEDICAL CENTER",
+      "ST_ADR": "1601 W 11TH PLACE",
+      "CITY_NAME": "BIG SPRING",
+      "STATE_CD": "TX",
+      "ZIP_CD": "79720",
+      "CRTFCTN_DT": "20200915",
+      "ORGNL_PRTCPTN_DT": "19750322",
+      "CHOW_CNT": "4",
+      "CHOW_DT": "20241017",
+      "CHOW_PRIOR_DT": "19950101",
+      "PGM_TRMNTN_CD": "00",
+      "TRMNTN_EXPRTN_DT": "",
+      "CROSS_REF_PROVIDER_NUMBER": "",
+      "CRTFCTN_ACTN_TYPE_CD": "2",
+      "CMPLNC_STUS_CD": "A"
+    },
+    "prior_attempt_context": "The 2026-09-29 nationwide QIES Q2 crosscheck attempt for this CCN failed with HTTP 429 and retrieved no rows; this is the first successful exact-CCN QIES POS retrieval for 450653."
+  },
+  "nppes_observation": {
+    "npi": "1497606438",
+    "result": "SHANNON MEDICAL CENTER, Clinic/Center Ambulatory Surgical taxonomy, PO BOX 1879, SAN ANGELO, TX (unchanged from the 2026-09-28 recheck)."
+  },
+  "established": [
+    "The current CMS QIES POS certification record for CCN 450653 carries the facility name SHANNON MEDICAL CENTER at the CCN's Big Spring address (1601 W 11th Place, Big Spring, TX 79720), with certification date 2020-09-15, no termination, and the latest recorded CHOW still 2024-10-17.",
+    "This is post-transition official naming: the CCN continues, active, now named under the Shannon operator, without a replacement certification event or cross-reference number."
+  ],
+  "not_established": [
+    "The QIES POS dataset carries no NPI field, so this row does not map NPI 1497606438 to CCN 450653.",
+    "The exact NPI/CCN mapping (file declares 1497606438; the 2026-08-01 Hospital Enrollments snapshot retains 1336976034) remains unresolved; no effective-dated enrollment or CHOW release later than 2026-09-21 was found.",
+    "No disposition or count change is asserted; the Shannon file's scope for CCN 450653 stays unresolved."
+  ],
+  "interpretation": "New official certification-record evidence strengthens CCN continuity under the Shannon name after the reported April 2026 transition, but the explicit NPI-to-CCN mapping required by the gate is still absent. Do not promote the Shannon file on this basis alone.",
+  "count_effect": "none; CCN 450653 remains unresolved"
+}

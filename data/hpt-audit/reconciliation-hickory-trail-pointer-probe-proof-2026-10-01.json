@@ -1,0 +1,21 @@
+{
+  "observed_at": "2026-10-01T19:37:36.256Z",
+  "ccn": "454065",
+  "recheck_reason": "next_action required a cheap probe of whether the first-party pointer access denial (Cloudflare) had changed since the 2026-09-22 browser recheck",
+  "search_query": "\"Hickory Trail Hospital\" DeSoto Texas price transparency standard charges",
+  "domain_search": {
+    "recorded_domain": "hickorytrail.com",
+    "found_domain": "hickorytrail.com",
+    "agrees": true,
+    "basis": "UHS investor/SEC materials identify Hickory Trail Hospital, DeSoto, Texas as a UHS facility; hickorytrail.com is the facility's first-party domain."
+  },
+  "probe": {
+    "url": "https://hickorytrail.com/cms-hpt.txt",
+    "method": "direct HTTPS GET",
+    "http_status": 403,
+    "response_first_bytes": "Cloudflare 'Just a moment...' challenge page (title element observed), consistent with the 2026-09-22 browser observation"
+  },
+  "what_changed_vs_prior_proof": "Nothing: the pointer remains blocked by a Cloudflare challenge to automated clients; no pointer content retrieved.",
+  "what_was_not_established": "The 403 to automation is a client-side failure and is not evidence that the pointer or MRF is absent or that the facility is noncompliant.",
+  "disposition_effect": 0
+}

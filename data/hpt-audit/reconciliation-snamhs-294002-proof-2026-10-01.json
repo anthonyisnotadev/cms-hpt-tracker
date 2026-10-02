@@ -1,0 +1,33 @@
+{
+  "ccn": "294002",
+  "hospital_name": "SOUTHERN NEVADA ADULT MENTAL HEALTH SERVICES",
+  "state": "NV",
+  "observed_at": "2026-10-01T19:06:30Z",
+  "recorded_official_domain": "dpbh.nv.gov",
+  "domain_search": {
+    "query": "\"Southern Nevada Adult Mental Health Services\" OR \"SNAMHS\" standard charges price transparency machine readable",
+    "found_domain": "dpbh.nv.gov",
+    "agrees": true,
+    "basis": "First-party DPBH pages on dpbh.nv.gov are the publisher; no other first-party SNAMHS site found in search results."
+  },
+  "observations": [
+    {
+      "url": "https://www.dpbh.nv.gov/about/dpbh-overview/snamhs-overview",
+      "observed_at": "2026-10-01T19:06:00Z",
+      "http_status": 200,
+      "established": "SNAMHS overview page (last updated 05/04/2026) lists no standard-charges CSV/JSON or MRF link, unlike the sibling NNAMHS overview page which links 886000022_northern-nevada-adult-mental-health-services_standard-charges.csv.",
+      "not_established": "Whether SNAMHS publishes an MRF elsewhere on dpbh.nv.gov or on request."
+    },
+    {
+      "url": "https://www.dpbh.nv.gov/about/dpbh-overview/nnamhs-overview",
+      "observed_at": "2026-10-01T19:05:30Z",
+      "http_status": 200,
+      "established": "NNAMHS overview links an NNAMHS Standard Charges CSV and an SFY23 'NNAMHS & SNAMHS Hospital Charges' PDF pointing to an FY2021 rates PDF (not a CMS-template MRF and not SNAMHS-specific current standard charges).",
+      "not_established": "Whether the FY21 rates PDF satisfies CMS format for SNAMHS; it was not downloaded."
+    }
+  ],
+  "what_changed_vs_prior": "Prior state was discovery-pointer-not-retrieved; this fetch establishes the current SNAMHS overview page (updated 2026-05-04) still carries no SNAMHS standard-charges file link while NNAMHS has one.",
+  "tool_observations": "Web search (Z.ai) plus two web-reader page fetches, 2026-10-01.",
+  "inferences": "No facility-specific SNAMHS/Rawson-Neal CMS MRF is presently reachable on the publisher site.",
+  "next_step": "Request an SNAMHS standard-charges CSV/JSON from DPBH or monitor dpbh.nv.gov SNAMHS pages for a new file link; do not reuse the NNAMHS workbook."
+}

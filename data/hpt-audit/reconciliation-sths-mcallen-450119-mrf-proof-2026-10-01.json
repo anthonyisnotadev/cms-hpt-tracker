@@ -1,0 +1,52 @@
+{
+  "ccn": "450119",
+  "hospital_name": "SOUTH TEXAS HEALTH SYSTEM (McALLEN)",
+  "state": "TX",
+  "observed_at": "2026-10-01T23:03:40.428Z",
+  "domain_search": {
+    "query": "South Texas Health System McAllen price transparency standard charges machine readable file",
+    "recorded_domain": "www.southtexashealthsystem.com",
+    "found_domain": "southtexashealthsystem.com",
+    "agrees": true,
+    "basis": "https://southtexashealthsystem.com/patients-visitors/pricing-guide titled 'Pricing Guide | South Texas Health System, Edinburg, Texas' — same system site as recorded (www and apex serve the same WordPress site)."
+  },
+  "route": [
+    "Direct fetch of pricing page from this client: HTTP 403 (Cloudflare, consistent with 2026-09-22 observation).",
+    "r.jina.ai reader render of https://southtexashealthsystem.com/patients-visitors/pricing-guide: retrieved full page text including four 'View Standard Charges' links on the hospital's own UHS CDN.",
+    "McAllen link: https://uhsfilecdn.eskycity.net/ac/233069260_south-texas-health-system-mcallen_standardcharges.csv"
+  ],
+  "file": {
+    "url": "https://uhsfilecdn.eskycity.net/ac/233069260_south-texas-health-system-mcallen_standardcharges.csv",
+    "http_status_head": 200,
+    "content_length": 159214570,
+    "last_modified": "2026-09-17T22:27:40Z",
+    "byte_count_full_download": 159214570,
+    "sha256_full": "893cb69bda559ec4e3db85dc34aa282e3f3c5b1f68e061ce743bc1ed0b003080",
+    "sha256_first_262144_bytes": "45e5dffc3dbfc2e1f1162127e00fd36d6c1305c5f0aa5de0db44ede27449c553",
+    "kind": "csv"
+  },
+  "declared_metadata_from_file": {
+    "hospital_name": "McAllen Hospitals, LP",
+    "location_name": "South Texas Health System McAllen",
+    "last_updated_on": "9/1/2026",
+    "version": "3.0.0",
+    "hospital_address": "301 West Expressway 83, McAllen, TX, 78503-3045",
+    "license_number_TX": "140",
+    "type_2_npi": "1770573586",
+    "attestation_value": "TRUE",
+    "sample_row_rate_columns": "standard_charge|gross, discounted_cash, min, max, payer-specific negotiated columns present (e.g. AETNA|HMO)"
+  },
+  "identity_crosscheck": {
+    "basis": "CCN 450119 SOUTH TEXAS HEALTH SYSTEM is the McAllen campus (301 W Expressway 83, McAllen TX 78503); the file's location_name and address match.",
+    "result": "agree"
+  },
+  "established": [
+    "First-party pricing page (retrieved via materially different route after Cloudflare 403 to this client) links a facility-specific CMS-format standard-charges CSV for STHS McAllen on the system's UHS CDN.",
+    "Complete file (159,214,570 bytes) downloaded and SHA-256 hashed; header + metadata row parsed showing version 3.0.0, updated 9/1/2026, attestation TRUE, TX license, NPI 1770573586, and McAllen identity matching CCN 450119."
+  ],
+  "not_established": [
+    "No /cms-hpt.txt pointer exists on southtexashealthsystem.com (prior 2026-09-22 observation: HTML 403 root), so no CMS pointer linkage is claimed; this is a first-party-page-to-file chain.",
+    "Rate-level usability of every one of the ~159 MB of rows was not exhaustively audited; header, metadata row, and rate column structure were inspected."
+  ],
+  "changed_vs_prior": "Prior proof recorded only access denials (Cloudflare browser block, 403 pointer). This session recovered the pricing page content, the exact McAllen MRF URL, and complete-file bytes with hash — materially new evidence supporting promotion."
+}

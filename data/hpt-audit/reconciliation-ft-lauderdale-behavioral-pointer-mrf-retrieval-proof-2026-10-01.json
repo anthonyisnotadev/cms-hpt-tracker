@@ -1,0 +1,61 @@
+{
+  "ccn": "104026",
+  "observed_at": "2026-10-01T19:44:13.985Z",
+  "what_changed_versus_prior_state": "Prior state (pointer-access-denied-to-client) had no pointer or MRF bytes retrieved. In this check the first-party pointer was retrieved through the web-reader route and the complete declared MRF (160,650 bytes, SHA-256 b89df32652bf6ea8cc177d557bbbd58aac641059dd8f8fc93c8c66dff82d280b, CMS v3.0.0, last_updated_on 2026-05-12, attestation true) was retrieved for the first time, with name/address/FL matching the CMS record. New pointer-content, MRF-bytes and metadata evidence.",
+  "domain_search": {
+    "query": "\"Fort Lauderdale Behavioral Health Center\" hospital price transparency standard charges",
+    "recorded_domain": "www.ftlauderdalebehavioral.com",
+    "found_domain": "ftlauderdalebehavioral.com",
+    "agrees": true,
+    "basis": "Search top results ftlauderdalebehavioral.com/standard-services ('Standard Services | Fort Lauderdale Behavioral Health Center') and ftlauderdalebehavioral.com homepage naming the facility and Fort Lauderdale/Oakland Park FL; same first-party host as recorded (apex vs www alias)."
+  },
+  "cms_record_identity": {
+    "ccn": "104026",
+    "facility_name": "FORT LAUDERDALE BEHAVIORAL HEALTH CENTER",
+    "state": "FL"
+  },
+  "pointer_retrieval": {
+    "route": "web-reader MCP (materially different authorized route)",
+    "url": "https://ftlauderdalebehavioral.com/cms-hpt.txt",
+    "content": "location-name: Fort Lauderdale Behavioral Health Center; source-page-url: https://ftlauderdalebehavioral.com/standard-services/; mrf-url: https://uhsfilecdn.eskycity.net/bh/201021229_ft-lauderdale_standardcharges.csv; contact-name: UHS Corp Price Transparency Team; contact-email: hpt-obf:v1:pRqek4Lz-H6Nnqas.wyOHMn4rhvyvBe9PEe_s3g.lvbUHgOzaM8pAdDQlJn2bdNfb25AdhyfTx_QkC4VSyUWKcBzEaIf",
+    "location_name": "Fort Lauderdale Behavioral Health Center",
+    "sha256_of_reader_extracted_text": "755bd08004cc0f78388d12b0992baab3b662666454e795ebe0e2fd71fa2e0dd1"
+  },
+  "mrf_file": {
+    "url": "https://uhsfilecdn.eskycity.net/bh/201021229_ft-lauderdale_standardcharges.csv",
+    "http_status": 200,
+    "content_type": "text/csv",
+    "byte_count": 160650,
+    "sha256": "b89df32652bf6ea8cc177d557bbbd58aac641059dd8f8fc93c8c66dff82d280b",
+    "last_modified": "Tue, 12 May 2026 23:56:14 GMT",
+    "full_file_retrieved": true
+  },
+  "mrf_metadata_declared": {
+    "hospital_name": "Fort Lauderdale Behavioral Health Center",
+    "location_name": "Fort Lauderdale Behavioral Health Center",
+    "hospital_address": "5757 N DIXIE HWY, OAKLAND PARK, FL 33334",
+    "license_number": "4047 (license_number|FL)",
+    "type_2_npi": "1649224320",
+    "attester_name": "Aleman, Jackeline",
+    "attestation": "true",
+    "last_updated_on": "2026-05-12",
+    "version": "3.0.0"
+  },
+  "identity_check": {
+    "facility_name_matches": true,
+    "address_matches": true,
+    "state_matches": true,
+    "state": "FL"
+  },
+  "established": [
+    "First-party pointer https://ftlauderdalebehavioral.com/cms-hpt.txt exists and was retrieved through the web-reader route.",
+    "Declared MRF URL serves the complete 160,650-byte CMS v3.0.0 CSV (HTTP 200).",
+    "Declared name, 5757 N Dixie Hwy Oakland Park FL address, and state match the CMS record for CCN 104026.",
+    "Declared last_updated_on 2026-05-12 and attestation true are present."
+  ],
+  "not_established": [
+    "Pointer wire bytes (reader-extracted text hashed only).",
+    "Whether the mrf-url is stable across publisher rotations."
+  ],
+  "disposition_recommended": "verified-current-mrf"
+}

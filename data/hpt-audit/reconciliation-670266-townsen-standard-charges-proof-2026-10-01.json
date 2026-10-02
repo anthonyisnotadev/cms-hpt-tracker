@@ -1,0 +1,49 @@
+{
+  "ccn": "670266",
+  "hospital_name": "TOWNSEN MEMORIAL HOSPITAL",
+  "state": "TX",
+  "observed_at": "2026-10-01T23:26:44.065Z",
+  "domain_search": {
+    "query": "townsenmemorial.com price transparency standard charges",
+    "recorded_official_domain": "www.townsenmemorial.com",
+    "found_official_domain": "www.townsenmemorial.com",
+    "agrees": true,
+    "basis": "https://www.townsenmemorial.com/pricing-transparency titled 'Pricing Transparency - Townsen Memorial Health System' with standard hospital charges content; homepage self-identifies as Townsen Memorial Healthcare System, Houston/Humble TX."
+  },
+  "checks": [
+    {
+      "check": "root CMS pointer",
+      "url": "https://www.townsenmemorial.com/cms-hpt.txt",
+      "status": 404,
+      "observed_at": "2026-10-01T23:26:44.065Z",
+      "note": "HEAD/GET returned HTTP 404; no root pointer published."
+    },
+    {
+      "check": "pricing transparency page",
+      "url": "https://www.townsenmemorial.com/pricing-transparency",
+      "status": 200,
+      "bytes": 91049,
+      "observed_at": "2026-10-01T23:26:44.065Z",
+      "note": "Page links (repeated) to /images/Files/2025-08-19-Townsen-Memorial-Hospital-Shoppable-Services.csv and /images/Files/364867804_TownsenMemorialHospital_StandardCharges.csv."
+    },
+    {
+      "check": "standard charges file bounded sample",
+      "url": "https://www.townsenmemorial.com/images/Files/364867804_TownsenMemorialHospital_StandardCharges.csv",
+      "status": 200,
+      "bytes": 2853592,
+      "observed_at": "2026-10-01T23:26:44.065Z",
+      "note": "Full Content-Length 2,853,592; first 4,096 bytes read. Header row: 'Charge Master & Cash Price' with columns Charge #, Description, Dept, Rev Code, CPT/HCPCS, SNOMED, MOD1-3, Cost, Charge Amt, Markup, Greatest Reimbursment Inst, Greatest Reimbursment Pro, Status. No payer-specific negotiated-rate columns and no hospital_name/address/licence/metadata header block in the sampled bytes. Filename embeds TIN 364867804."
+    }
+  ],
+  "established": [
+    "www.townsenmemorial.com is the first-party domain and hosts a pricing-transparency page with a downloadable standard charges CSV (HTTP 200, 2,853,592 bytes) plus a shoppable-services CSV dated 2025-08-19.",
+    "No /cms-hpt.txt root pointer exists on the domain (HTTP 404)."
+  ],
+  "not_established": [
+    "That the CSV is a CMS-template-compliant MRF: sampled header lacks payer-specific negotiated charges and the required metadata header block; only a bounded 4,096-byte sample was read, not the full file.",
+    "That the CSV covers exactly CCN 670266 Townsen Memorial Hospital (Humble) as distinct from other Townsen Memorial Health System facilities: no hospital_name/address block in the sample, TIN 364867804 not yet tied to this CCN.",
+    "Last-updated date of the StandardCharges file (only the shoppable CSV carries 2025-08-19 in its filename)."
+  ],
+  "change_vs_prior": "First retrieval of a live standard-charges CSV from the official domain for this CCN; prior record had no candidate file at all (pointer-not-retrieved). Root pointer 404 is unchanged.",
+  "tools": "web-search-prime MCP (search), PowerShell Invoke-WebRequest / HttpWebRequest (bounded GETs)"
+}

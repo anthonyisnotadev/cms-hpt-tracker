@@ -1,0 +1,27 @@
+{
+  "ccn": "250781",
+  "hospital_name": "PANOLA MEDICAL CENTER",
+  "state": "MS",
+  "observed_at": "2026-10-01T21:04:19.789Z",
+  "domain_search": {
+    "query": "\"Panola Medical Center\" Batesville MS hospital price transparency standard charges",
+    "recorded_domain": "panolamed.com",
+    "found_domain": "panolamed.com",
+    "agrees": true,
+    "basis": "https://www.panolamed.com renders titled 'Progressive Health of Batesville | Rural Emergency Hospital | Batesville Mississippi' and describes itself as 'formerly known as Panola Medical Center'; footer/address context matches Batesville, MS."
+  },
+  "click_path": "panolamed.com homepage footer link 'PRICING' -> https://www.yourcareeverywhere.com/content/medhost/your-care-everywhere/pricing-estimator-page.html?facility_id=2fad22c3-5672-4324-a2c7-84df7a355f88 (MEDHOST YourCareEverywhere pricing estimator page rendered in permitted browser)",
+  "pricing_page_url": "https://www.yourcareeverywhere.com/content/medhost/your-care-everywhere/pricing-estimator-page.html?facility_id=2fad22c3-5672-4324-a2c7-84df7a355f88",
+  "pricing_page_location_heading": "Panola Medical Center, 303 Medical Center Drive, Batesville, MS 38606",
+  "page_linked_file_url": "https://s3.amazonaws.com/ycubaa-production-marlin-1-charge-management-public/facilities/2fad22c3-5672-4324-a2c7-84df7a355f88/832451967_PANOLA-MEDICAL-CENTER_standardcharges.zip",
+  "page_linked_file_http_status": 200,
+  "page_linked_file_bytes": 53963149,
+  "page_linked_file_last_modified": "2024-06-27T22:22:54Z",
+  "page_linked_file_content_type": "application/octet-stream",
+  "root_pointer_url": "https://www.panolamed.com/cms-hpt.txt",
+  "root_pointer_result": "HTTP 400 Wix 'Bad Request' error page via web-reader route (no pointer published at the root)",
+  "established": "The hospital's own site links, through its MEDHOST vendor pricing page, a named facility standard-charges ZIP for Panola Medical Center at 303 Medical Center Drive, Batesville, MS 38606. The file is named with NPI prefix 832451967.",
+  "not_established": "No root cms-hpt.txt pointer exists on panolamed.com (HTTP 400). The ZIP was not downloaded (Last-Modified 2024-06-27, over two years old, so it cannot support a current-MRF promotion); content, declared metadata, and usability remain unchecked. This is a page-linked vendor file, not a root-pointer-linked file.",
+  "changed_vs_prior": "Prior state (plan line 6379) only had the first-party contact page with insurer TiC links and no hospital MRF. New: an official PRICING link on panolamed.com leading to a MEDHOST-hosted pricing page that names Panola Medical Center and links a dated standard-charges ZIP.",
+  "next_action": "Determine from the publisher/vendor whether a current (post-2024) standard-charges file exists for Panola Medical Center; if recovered, verify identity, declared date/version and usability. Substitution with insurer TiC files remains prohibited."
+}

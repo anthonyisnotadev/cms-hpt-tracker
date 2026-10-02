@@ -1,0 +1,35 @@
+{
+  "ccn": "390180",
+  "observed_at": "2026-10-01T18:52:10.000Z",
+  "type": "facility-closure-evidence-and-pointer-route-check",
+  "changed_versus_prior_proof": [
+    "The 2026-09-21 proof recorded the official price-transparency page and an HPI application lead with no closure context. This check adds dated first-party/official closure evidence: the Delaware County Prospect Medical update page states 'April 30, 2025: Crozer Chester Medical Center closed'.",
+    "New route fact: https://crozerhealth.org/cms-hpt.txt returns HTTP 404 (2852 B), confirming no root pointer on the (still-served) legacy site."
+  ],
+  "probes": [
+    { "url": "https://crozerhealth.org/cms-hpt.txt", "status": 404, "bytes": 2852 },
+    { "url": "https://crozerhealth.org/financial-resources/hospital-price-transparency", "status": 200, "bytes": 115799, "note": "legacy pricing page still served; not re-parsed beyond status - the HPI application lead from 2026-09-21 stands" }
+  ],
+  "closure_evidence": {
+    "official_source": "https://www.delcopa.gov/health/prospect-medical-bankruptcy-update",
+    "quote": "Crozer-Chester Medical Center (Upland Borough): ... April 30, 2025: Crozer Chester Medical Center closed.",
+    "corroboration": [
+      "WHYY and CBS News Philadelphia (January 2026): hospital closed May 2025 after Prospect Medical bankruptcy; Chariot Equities and Allaire Health Services bought the shuttered campus and announced plans to revive services; not reopened as of those January 2026 reports."
+    ]
+  },
+  "domain_search": {
+    "query": "Crozer-Chester Medical Center Upland PA closed status 2026",
+    "recorded_domain": "crozerhealth.org",
+    "found_domain": "crozerhealth.org",
+    "agrees": true,
+    "basis": "crozerhealth.org remains the official (legacy) Crozer Health site serving the price-transparency page"
+  },
+  "established": [
+    "Crozer-Chester Medical Center closed to patients on April 30, 2025, per the official Delaware County update page, corroborated by January 2026 news coverage of the planned revival under new ownership.",
+    "No CMS root pointer exists on crozerhealth.org (404)."
+  ],
+  "not_established": [
+    "Whether the CMS certification/CCN 390180 has been formally terminated, and how the tracker should classify a closed-then-maybe-revived facility.",
+    "No MRF presence, absence, or compliance conclusion is drawn from the closure."
+  ]
+}

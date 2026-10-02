@@ -1,0 +1,52 @@
+{
+  "observed_at": "2026-10-01T20:50:10Z",
+  "ccns": ["100298", "104000", "104001"],
+  "kind": "dcf-charge-master-retrieval-via-browser",
+  "domain_search": {
+    "recorded_domain": "myflfamilies.com / www.myflfamilies.com",
+    "found_domain": "www.myflfamilies.com",
+    "agrees": true,
+    "basis": "https://www.myflfamilies.com/services/samh/samh-treatment-services-and-facilities (published 2026-04-08, og:updated_time 2026-04-08) is the Florida DCF first-party page listing 'Mental Health Services Charge Master' for Florida State Hospital, Northeast Florida State Hospital and South Florida State Hospital."
+  },
+  "click_path": [
+    "Browser (Playwright) -> https://www.myflfamilies.com/services/samh/samh-treatment-services-and-facilities",
+    "FSH links: PDF https://www.myflfamilies.com/documents/2761.pdf | Excel https://www.myflfamilies.com/documents/2776.xlsx",
+    "SFSH links: PDF https://www.myflfamilies.com/documents/2771.pdf | Excel https://www.myflfamilies.com/documents/2786.xlsx"
+  ],
+  "retrievals": [
+    {
+      "url": "https://www.myflfamilies.com/documents/2776.xlsx",
+      "route_note": "Prior session recorded HTTP 404 for this document via direct client fetch; browser navigation retrieved it (downloading file 2776.xlsx) on 2026-10-01.",
+      "file_status": "HTTP 200 via browser download",
+      "bytes": 26177,
+      "sha256": "56DA64EE5604FF8FE17AE72603D8186A142B7FF1DB560202E30441006E61DA3E",
+      "title_rows": "FLORIDA STATE HOSPITAL / STANDARD CHARGES FOR PROVIDED SERVICES / EFFECTIVE DATE: 07/01/2026",
+      "format": "Legacy state charge schedule (REF#, PROCEDURE, STANDARD FEE, DISCOUNTED CASH FEE, UB04/revenue codes). No CMS-template header columns (no hospital_name/last_updated_on/version/type_2_npi/attestation), not unit-specific."
+    },
+    {
+      "url": "https://www.myflfamilies.com/documents/2786.xlsx",
+      "file_status": "HTTP 200 via browser download",
+      "bytes": 41590,
+      "sha256": "23D4DA3CEE17937403DB0464D16C8826073921C3072891DE40686870877F4703",
+      "title_rows": "SOUTH FLORIDA STATE HOSPITAL / STANDARD CHARGES FOR PROVIDED SERVICES / EFFECTIVE DATE: 07/01/2023",
+      "format": "Same legacy state charge-schedule layout; not a CMS CSV/JSON MRF.",
+      "comparison_to_prior": "SHA-256 identical to the workbook hashed in reconciliation-south-florida-state-file-proof.json (2026-09-19): unchanged."
+    }
+  ],
+  "established": [
+    "The current FSH charge-master Excel (2776.xlsx) is now retrievable through the browser route and declares effective date 2026-07-01, newer than the January 2025 PDF lead recorded earlier.",
+    "The DCF page continues to expose one general charge master per state hospital campus; no Unit 31 or Unit 14-specific schedule, no CMS-template CSV/JSON, and no /cms-hpt.txt pointer is offered.",
+    "The SFSH workbook is byte-identical to the prior 2026-09-19 evidence (still effective 2023-07-01)."
+  ],
+  "not_established": [
+    "Any Unit 31 (CCN 100298) or Unit 14 (CCN 104000) specific scope declaration within the FSH schedule.",
+    "CMS-format compliance: neither workbook is a CMS-specified machine-readable file.",
+    "Rate-level usability under the CMS template."
+  ],
+  "changed_vs_prior": "For 100298/104000: 2776.xlsx bytes retrieved for the first time (prior direct fetches 404'd) with a newer declared effective date (2026-07-01 vs January 2025). For 104001: no change (identical SHA-256).",
+  "basis_urls": [
+    "https://www.myflfamilies.com/services/samh/samh-treatment-services-and-facilities",
+    "https://www.myflfamilies.com/documents/2776.xlsx",
+    "https://www.myflfamilies.com/documents/2786.xlsx"
+  ]
+}

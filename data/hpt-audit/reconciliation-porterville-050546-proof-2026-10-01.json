@@ -1,0 +1,44 @@
+{
+  "ccn": "050546",
+  "hospital_name": "PORTERVILLE DEVELOPMENTAL CENTER",
+  "state": "CA",
+  "observed_at": "2026-10-01T19:17:00Z",
+  "domain_search": {
+    "query": "\"Porterville Developmental Center\" hospital standard charges price transparency CMS; site:dds.ca.gov Porterville hospital rates charges",
+    "recorded_domain": "www.dds.ca.gov",
+    "found_domain": "www.dds.ca.gov",
+    "agrees": true,
+    "basis": "www.dds.ca.gov/services/state-facilities/porterville-dc/ is the department's own Porterville Developmental Center facility page; no other first-party candidate surfaced in search."
+  },
+  "observations": [
+    {
+      "what": "DDS facility page for Porterville DC retrieved",
+      "url": "https://www.dds.ca.gov/services/state-facilities/porterville-dc/",
+      "http_status": 200,
+      "content_length": 62984,
+      "pricing_content": "None. No standard-charges, hospital pricing, or MRF links; the only 'transparency' links are the generic DDS budget/laws Transparency & Data menu (https://www.dds.ca.gov/transparency/)."
+    },
+    {
+      "what": "Site search for Porterville on dds.ca.gov",
+      "url": "https://www.dds.ca.gov/?s=Porterville",
+      "http_status": 200,
+      "result": "Only newsletter and program pages; no pricing page."
+    },
+    {
+      "what": "Root pointer probe",
+      "url": "https://www.dds.ca.gov/cms-hpt.txt",
+      "http_status": 404,
+      "result": "No pointer file at root (consistent with prior generic DDS root 404 observation; this probe was of the pointer path, not a repeat of the generic root 404)."
+    }
+  ],
+  "established": [
+    "DDS's own Porterville DC facility page carries no standard-charges or pricing content (scope documentation only).",
+    "No /cms-hpt.txt pointer at dds.ca.gov.",
+    "Web search surfaced no Porterville-specific CMS MRF anywhere on a first-party site."
+  ],
+  "not_established": [
+    "Whether Porterville Developmental Center (an intermediate care facility / secure treatment state facility) currently holds an active hospital-level CMS certification obligating HPT publication.",
+    "Whether any pricing exists in a non-web route (e.g., published rate literature)."
+  ],
+  "changed_vs_prior": "Prior state was discovery-search-completed-no-official with a note not to repeat the generic DDS root 404; this session documented the PDC-specific facility page itself (200) as containing no pricing content, a page-level scope fact not previously on file."
+}

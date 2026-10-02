@@ -1,0 +1,25 @@
+{
+  "observed_at": "2026-10-01T19:37:36.256Z",
+  "ccns": ["454000", "454006", "454008", "454009", "454011", "454084", "454088", "454100"],
+  "recheck_reason": "next_action required a fresh search of Texas HHSC billing and state-hospital resources for a facility-specific pricing pointer or MRF; last shared review was 2026-09-28/2026-09-29",
+  "search_query": "\"Texas Health and Human Services\" state hospital \"standard charges\" OR \"price transparency\" hhs.texas.gov",
+  "search_findings": [
+    {"url": "https://www.hhs.texas.gov/services/mental-health-substance-use/state-hospitals", "basis": "Official Texas HHS State Hospitals page; names state hospitals with a 'State Hospitals Fee Assessment' daily-rate table; no standard-charges file."},
+    {"url": "https://pfd.hhs.texas.gov/sites/default/files/documents/hospital-svcs/2025/2025-ffy-psychiatric-hosp-per-diem-rates.pdf", "basis": "HHSC Provider Finance psychiatric per-diem Medicaid rate schedule naming NORTH TEXAS STATE HOSPITAL and other state facilities; a Medicaid reimbursement rate table, not a CMS machine-readable standard-charges file."},
+    {"url": "https://pfd.hhs.texas.gov/hospitals-clinic/hospital-services/inpatient-services", "basis": "Provider Finance inpatient methodology page; cost-report/rate methodology only, no facility MRF."}
+  ],
+  "browser_observation": {
+    "url": "https://www.hhs.texas.gov/services/mental-health-substance-use/state-hospitals",
+    "method": "playwright headless browser render",
+    "result": "Page rendered (title 'State Hospitals | Texas Health and Human Services'); snapshot contains no cms-hpt, standard charge, machine-readable, .csv or .json pricing links.",
+    "direct_http_status": 403
+  },
+  "domain_search": {
+    "recorded_domain": "hhs.texas.gov / www.hhs.texas.gov",
+    "found_domain": "hhs.texas.gov / www.hhs.texas.gov",
+    "agrees": true
+  },
+  "what_changed_vs_prior_proof": "Nothing: no facility-specific pricing pointer, MRF, or CSV/JSON route was found; same conditions as reconciliation-texas-state-hospital-scope-interpretation-recheck-2026-09-29.json.",
+  "what_was_not_established": "No absence-of-file or noncompliance conclusion; the hhs.texas.gov 403 to direct automation is a client-side failure and is not evidence of file absence.",
+  "disposition_effect": 0
+}

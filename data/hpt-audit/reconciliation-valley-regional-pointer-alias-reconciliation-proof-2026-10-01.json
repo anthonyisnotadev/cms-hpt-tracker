@@ -1,0 +1,57 @@
+{
+  "ccn": "450662",
+  "observed_at": "2026-10-01T16:37:18.133Z",
+  "hospital_name": "VALLEY REGIONAL MEDICAL CENTER",
+  "state": "TX",
+  "cms_record": { "facility_id": "450662", "facility_name": "VALLEY REGIONAL MEDICAL CENTER", "citytown": "BROWNSVILLE", "state": "TX" },
+  "search": {
+    "query": "direct re-fetch of https://valleyregionalmedicalcenter.com/cms-hpt.txt and its declared MRF (no new domain search needed; domain unchanged)",
+    "recorded_official_domain": "valleyregionalmedicalcenter.com",
+    "found_domain": "valleyregionalmedicalcenter.com",
+    "agrees": true,
+    "basis": "The first-party pointer and its pricing page (valleyregionalmedicalcenter.com/about/legal/pricing-transparency-cms-required-file-of-standard-charges.dot) are on the recorded official domain; the pointer's contact is the VALLEY REGIONAL MEDICAL CENTER MRF Team (HCA Healthcare)."
+  },
+  "pointer_observation": {
+    "url": "https://valleyregionalmedicalcenter.com/cms-hpt.txt",
+    "http_status": 200,
+    "bytes": 1682,
+    "sha256": "e26fdf2b66293a518b44954e4a1f0f6d95c522ad091bb1982554037b5045f946",
+    "changed_since_prior_retrieval": "Prior corpus sha256 2b483afba144ec08daca06a0c6749009104a36f2235ee9128576c10cde320d48; the pointer has been updated.",
+    "entry_count": 3,
+    "entries_matching_facility": 3,
+    "pointer_location_names": ["VALLEY REGIONAL MEDICAL CENTER", "ER 24/7 BROWNSVILLE", "ER 24/7 HARLINGEN"],
+    "alias_reconciliation": "All three entries declare the same source pricing page and the same MRF URL. The two ER 24/7 entries are hospital department aliases, consistent with the file header's location_name array; every pointer entry resolves to the same facility file.",
+    "pointer_declared_mrf_url": "https://stctrprodsnsvc00455826e6.blob.core.windows.net/pt-final-posting-files/62-1669572_VALLEY-REGIONAL-MEDICAL-CENTER_standardcharges.json?si=dpx-pt-json-access-policy&spr=https&sv=2026-02-06&sr=c&sig=ks%2BgfAjyEHlZmeP2PYJ%2f9NpMuCoRStjTb2bhIy9Y6LM%3D"
+  },
+  "file_observation": {
+    "http_status": 206,
+    "sample_bytes": 262144,
+    "total_bytes": 391910079,
+    "sample_sha256": "ed59e3e3623c7ad469fbde768b19e0cc24d6b995919186bead318b947563e7a0",
+    "declared_hospital_name": "VALLEY REGIONAL MEDICAL CENTER",
+    "declared_location_names": ["ER 24/7 BROWNSVILLE", "ER 24/7 HARLINGEN", "VALLEY REGIONAL MEDICAL CENTER"],
+    "declared_addresses": ["449 E Alton GLOOR Blvd, BROWNSVILLE, TX, 78526", "6902 W Expy 83, HARLINGEN, TX, 78552", "100 A ALTON GLOOR, BROWNSVILLE, TX, 78526"],
+    "declared_license": "19|TX",
+    "declared_type_2_npis": "1043267701",
+    "declared_last_updated": "2026-09-01",
+    "cms_template_version": "3.0.0",
+    "attestation": true,
+    "attester_name": "Jose Hernandez",
+    "file_kind": "json",
+    "full_file_note": "The complete file is 391,910,079 bytes and was not downloaded; only the 262,144-byte header sample was retrieved and hashed. Full-file hash remains unestablished."
+  },
+  "nppes_crosscheck": {
+    "1043267701": "COLUMBIA VALLEY HEALTHCARE SYSTEM, L.P., 100A E ALTON GLOOR BLVD, BROWNSVILLE, TX - the hospital's address, matching the file's main declared location."
+  },
+  "established": [
+    "The updated first-party pointer has three entries (hospital plus two ER department aliases) all declaring the same MRF, reconciling every pointer entry per the queued action.",
+    "The MRF header declares VALLEY REGIONAL MEDICAL CENTER with the Brownsville addresses matching the roster city/state and the NPPES-corroborated NPI at 100A E Alton Gloor Blvd.",
+    "Declared last-updated 2026-09-01, CMS template 3.0.0, attestation TRUE (Jose Hernandez)."
+  ],
+  "not_established": [
+    "Complete-file bytes and full-file SHA-256 are not established (391.9 MB file; bounded sample only).",
+    "No legal compliance verdict is claimed."
+  ],
+  "interpretation": "New pointer and header evidence reconciles every pointer entry to the same facility file with matching name, Brownsville TX addresses, NPPES-corroborated NPI, current date and CMS template version and attestation. This clears the pointer-facility-match gate on the same bounded-sample basis as prior reviewed promotions; supports promoting the disposition to verified-current-mrf with the full-file-hash caveat retained.",
+  "count_effect": "candidate promotion for CCN 450662 (Valley Regional Medical Center, TX) from pointer-facility-match-unresolved to verified-current-mrf"
+}

@@ -1,0 +1,43 @@
+{
+  "ccn": "254005",
+  "hospital_name": "PARKWOOD BEHAVIORAL HEALTH SYSTEM",
+  "state": "MS",
+  "observed_at": "2026-10-01T21:00:01.707Z",
+  "route_note": "Retrieved through the web-reader MCP route, which is materially different from the previously challenge-blocked interactive browser and direct clients (2026-09-20).",
+  "domain_search": {
+    "query": "\"Parkwood Behavioral Health System\" Olive Branch MS price transparency standard charges",
+    "recorded_domain": "parkwoodbhs.com",
+    "found_domain": "parkwoodbhs.com",
+    "agrees": true,
+    "basis": "Search returned https://parkwoodbhs.com/ with the facility name and Olive Branch MS 38654 address; standard-services page footer gives 8135 Goodman Road, Olive Branch, MS 38654."
+  },
+  "official_domain": "https://parkwoodbhs.com/",
+  "pointer_url": "https://parkwoodbhs.com/cms-hpt.txt",
+  "pointer_route": "web-reader MCP (materially different authorized route)",
+  "pointer_content": "location-name: Parkwood Behavioral Health; source-page-url: https://parkwoodbhs.com/standard-services/; mrf-url: https://uhsfilecdn.eskycity.net/bh/233044435_parkwood_standardcharges.csv; contact-name: UHS Corp Price Transparency Team; contact-email: hpt-obf:v1:bnoKqiO1mKXqxNtR.LLYoiTx_SbO20mX52SThTQ.NINBlemlCZZilhULSnsp9M3X0Go5jk45Vs73bjgo_LNt4iM_a_Rf",
+  "pointer_entry_count": 1,
+  "pointer_entries_matching_facility": 1,
+  "source_page_url": "https://parkwoodbhs.com/standard-services/",
+  "source_page_observation": "Rendered page footer identifies Parkwood Behavioral Health System at 8135 Goodman Road, Olive Branch, MS 38654; matches the MRF header address exactly.",
+  "mrf_url": "https://uhsfilecdn.eskycity.net/bh/233044435_parkwood_standardcharges.csv",
+  "mrf_http_status": 206,
+  "mrf_bytes_retrieved": 262144,
+  "mrf_total_bytes": 265918,
+  "mrf_complete": false,
+  "mrf_sha256_sample": "4107A9AA1AC041123461E8D6193EBEB37E17659E56485E82BE799B62986302DE",
+  "mrf_last_modified": "2026-05-12T23:56:03Z (GMT header)",
+  "declared": {
+    "hospital_name": "Parkwood Behavioral Health System",
+    "location_name": "Parkwood Behavioral Health System",
+    "hospital_address": "8135 GOODMAN ROAD, OLIVE BRANCH, MS 38654",
+    "license_number_MS": "32-316",
+    "type_2_npi": "1093785859",
+    "last_updated_on": "2026-05-12",
+    "version": "3.0.0",
+    "attestation": true,
+    "attester_name": "Denegri, David"
+  },
+  "changed_vs_prior": "Prior proofs (2026-09-15, 2026-09-20) only had official identity plus an interactive browser security challenge with zero pointer or file bytes. This proof gains: full pointer text, 262,144-byte sample of the CMS 3.0.0 CSV header with attestation and usable rows, and exact name/address agreement.",
+  "established": "First-party root pointer names the facility and a current CMS 3.0.0 MRF; the MRF header (of 265,918 total bytes) declares the exact facility name, Olive Branch MS address, MS license, type-2 NPI, 2026-05-12 date, attestation, and usable negotiated-charge rows.",
+  "not_established": "Content beyond the 262,144-byte sample; exact pointer wire bytes (hash is of reader-extracted text); no legal compliance verdict."
+}

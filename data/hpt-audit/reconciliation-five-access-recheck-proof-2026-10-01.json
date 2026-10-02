@@ -1,0 +1,106 @@
+{
+  "note": "Combined access/discovery recheck for five non-UHS CCNs assigned 2026-10-01. Domain search was performed for every CCN before probing. All results are access/edge observations; none establishes file absence, closure, exemption, or noncompliance. No file bytes were promoted.",
+  "observed_at": "2026-10-01T19:33:37.684Z",
+  "records": [
+    {
+      "ccn": "251333",
+      "hospital_name": "PEARL RIVER COUNTY HOSPITAL",
+      "state": "MS",
+      "recorded_domain": "forresthealth.org",
+      "found_domain": "forresthealth.org",
+      "agrees": true,
+      "domain_basis": "Search result https://www.forresthealth.org/our-locations/locations-profile/pearl-river-county-hospital--nursing-home ('305 West Moody Street Poplarville, MS 39470'); the domain is the recorded parent/operator site.",
+      "pointer_url": "https://www.forresthealth.org/cms-hpt.txt",
+      "pointer_http_route": "web-reader MCP (server-side fetch), status 200, full 7-entry pointer text returned",
+      "pointer_entry_count": 7,
+      "pointer_entries_matching_facility": 0,
+      "pointer_relevant_entry": "location-name: Pearl River County General Hospital | mrf-url: https://www.forresthealth.org/app/files/public/8d2f7a3e-0fc7-4c8d-8d7b-beea29bd321d/646001587_Perry-County-Hospital_standardcharges.csv",
+      "pointer_mismatch": "The pointer has no entry named 'Pearl River County Hospital' or '& Nursing Home'. Its 'Pearl River County General Hospital' entry points to the SAME mrf-url as the separate 'Perry County General Hospital' entry (646001587_Perry-County-Hospital_standardcharges.csv). The linked filename declares Perry County, a different facility/county; this is not a facility-specific file for CCN 251333.",
+      "file_url": "https://www.forresthealth.org/app/files/public/8d2f7a3e-0fc7-4c8d-8d7b-beea29bd321d/646001587_Perry-County-Hospital_standardcharges.csv",
+      "file_status": "403 (Akamai edgesuite) via both direct client and web-reader",
+      "file_observation": "The linked file host returns 'Access Denied' (errors.edgesuite.net) to server-side fetch; no bytes retrieved, so declared identity could not be read directly.",
+      "prior_finding": "not-assessed-discovery-search-completed-no-official",
+      "what_changed_vs_prior": "The first-party pointer was retrieved for the first time (prior proofs had no pointer). It shows the only matching-named entry shares the Perry County file URL, i.e. no distinct machine-readable file for CCN 251333 is identified.",
+      "interpretation": "First-party pointer retrieved; no facility-specific MRF established for this CCN. Not a closure or compliance conclusion.",
+      "not_established": "Facility-specific file bytes/declared identity; whether a dedicated Pearl River file exists."
+    },
+    {
+      "ccn": "360080",
+      "hospital_name": "EAST OHIO REGIONAL HOSPITAL",
+      "state": "OH",
+      "recorded_domain": "www.eohospital.com",
+      "found_domain": "eohospital.com",
+      "agrees": true,
+      "domain_basis": "Search title and https://www.eohospital.com/ homepage ('East Ohio Regional Hospital, YOUR community, YOUR hospital', hpt-obf:v1:mZ1fhvsckkOm8-zj.PzWDeeCHXcp2cq9C8AiwBQ.Wmo06EA6-fjHela4) fetched via web-reader; matches the Martins Ferry, OH facility.",
+      "pointer_url": "https://www.eohospital.com/cms-hpt.txt",
+      "probes": [
+        "Direct https GET to www.eohospital.com/cms-hpt.txt and eohospital.com/cms-hpt.txt: 'The SSL connection could not be established' (TLS/cipher mismatch) - unchanged from the 2026-09-20 proof.",
+        "web-reader https://www.eohospital.com/cms-hpt.txt: timed out (transport failure, client-side).",
+        "web-reader http://www.eohospital.com/cms-hpt.txt: CloudFront 403 ERROR page ('Bad request. We can't connect to the server for this app or website'), an edge/client failure, not evidence the file is absent.",
+        "web-reader https://www.eohospital.com/ homepage: 200, site is a Nuxt SPA; no price-transparency/standard-charges link surfaced in the rendered content or via web search."
+      ],
+      "prior_finding": "not-assessed-discovery-request-tool-failure",
+      "what_changed_vs_prior": "Confirmed the strike is a TLS/edge block: the exact pointer route fails both directly (SSL) and at the CloudFront edge (403), while the homepage itself is reachable via server-side fetch. No first-party pricing route was found to substitute.",
+      "interpretation": "Blocked at the TLS/edge layer; not file absence or noncompliance.",
+      "not_established": "Pointer bytes, file bytes, declared metadata."
+    },
+    {
+      "ccn": "314020",
+      "hospital_name": "ESSEX COUNTY HOSPITAL CENTER",
+      "state": "NJ",
+      "recorded_domain": "essexcountynjhospital.org",
+      "found_domain": "www.essexcountynjhospital.org",
+      "agrees": true,
+      "domain_basis": "Search result https://www.essexcountynjhospital.org and /visitation ('204 Grove Ave. Cedar Grove, NJ 07009', hpt-obf:v1:lDkMRvKty4rpPcdA.5Batn1jYx3qwHjUaarSR9w.rQYiigQMbDQuIZMW).",
+      "pointer_url": "https://www.essexcountynjhospital.org/cms-hpt.txt",
+      "probes": [
+        "web-reader https://www.essexcountynjhospital.org/ homepage: 200; footer contains <a href=\"/price-transparency\">Price Transparency</a>.",
+        "web-reader https://www.essexcountynjhospital.org/price-transparency: 404 Not Found (WordPress/Divi 'No Results Found' page) - unchanged from the 2026-09-21 observation.",
+        "Prior observation (2026-09-21): /cms-hpt.txt and /price-transparency both HTTP 404; homepage 200."
+      ],
+      "prior_finding": "not-assessed-discovery-pointer-not-retrieved",
+      "what_changed_vs_prior": "Re-confirmed the same broken official route on a new date: the footer still links /price-transparency but the page returns 404. No correction by the publisher; no file bytes.",
+      "interpretation": "Official route is broken; retained as an access observation, not file absence or noncompliance.",
+      "not_established": "Pointer bytes, file bytes, declared metadata."
+    },
+    {
+      "ccn": "054124",
+      "hospital_name": "SEMPERVIRENS",
+      "state": "CA",
+      "recorded_domain": "www.flyacv.com",
+      "found_domain": "flyacv.com / humboldtgov.org",
+      "agrees": true,
+      "domain_basis": "Search results https://humboldtgov.org/437/Sempervirens-Psychiatric-Health-Facility and https://flyacv.com/1066/Behavioral-Health-Services, both naming Sempervirens, 720 Wood St, Eureka, CA 95501.",
+      "pointer_url": "https://flyacv.com/cms-hpt.txt",
+      "probes": [
+        "web-reader https://flyacv.com/cms-hpt.txt: 404 (Humboldt County CivicEngage 'Bigfoot' 404 page).",
+        "web-reader https://humboldtgov.org/437/Sempervirens-Psychiatric-Health-Facility: 200; page describes the 16-bed Medi-Cal/Medicare PHF at 720 Wood St, Eureka, but exposes no price-transparency/standard-charges/pointer link and no MRF URL.",
+        "Prior 2026-09-21 identity proof: 720 Wood St, Eureka, CA 95501 confirmed; no CMS pointer or facility-specific MRF route recovered."
+      ],
+      "prior_finding": "not-assessed-discovery-request-tool-failure",
+      "what_changed_vs_prior": "Re-verified the county facility page on a new date: it carries no pricing/pointer link, and /cms-hpt.txt is a 404 on the county domain. No sibling/statewide file assigned.",
+      "interpretation": "No first-party pointer/MRF route published on the county site; retained as unresolved scope/access, not file absence or noncompliance.",
+      "not_established": "Pointer bytes, facility-specific file bytes, declared metadata."
+    },
+    {
+      "ccn": "360025",
+      "hospital_name": "FIRELANDS REGIONAL MEDICAL CENTER",
+      "state": "OH",
+      "recorded_domain": "firelands.com",
+      "found_domain": "www.firelands.com",
+      "agrees": true,
+      "domain_basis": "Search result https://www.firelands.com ('Firelands Health | Serving Sandusky...', 1111 Hayes Ave, Sandusky, OH 44870).",
+      "official_pricing_page": "https://www.firelands.com/patients-guests/billing-insurance/price-transparency/",
+      "page_mrf_url": "https://www.firelands.com/app/files/public/f431cc81-07d8-4f2b-a027-dab8621d088d/341401659%20_firelands-regional-medical-center_standardcharges.csv",
+      "probes": [
+        "web-reader official pricing page: 200, still labels the Firelands Regional Medical Center price-transparency CSV (page text unchanged in substance).",
+        "Direct client GET of the exact page-linked CSV (with browser User-Agent): HTTP 403 Forbidden - unchanged from the 2026-09-25 proof.",
+        "Direct webfetch of the pricing page: 403."
+      ],
+      "prior_finding": "mrf-blocked-to-automation",
+      "what_changed_vs_prior": "None: the exact CSV is still 403 to the permitted client and the page still links it. This is a no-change probe; the blocked client was not repeated beyond the single documented probe.",
+      "interpretation": "Access-blocked and unchanged; not file absence or noncompliance.",
+      "not_established": "File bytes, declared metadata."
+    }
+  ]
+}

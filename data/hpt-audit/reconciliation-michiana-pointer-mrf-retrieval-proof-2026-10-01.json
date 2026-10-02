@@ -1,0 +1,70 @@
+{
+  "ccn": "154047",
+  "hospital_name": "MICHIANA BEHAVIORAL HEALTH CENTER",
+  "state": "IN",
+  "observed_at": "2026-10-01T20:23:50.000Z",
+  "proof_kind": "pointer-and-mrf-retrieval-via-web-reader-and-cdn",
+  "domain_search": {
+    "query": "\"Michiana Behavioral Health Center\" Plymouth Indiana price transparency standard charges; Michiana Behavioral Health Plymouth Indiana official website uhs standard charges",
+    "recorded_domain": "michianabehavioralhealthcenter.com",
+    "found_domain": "michianabehavioralhealth.com",
+    "agrees": false,
+    "basis": "https://michianabehavioralhealth.com/standard-services footer names 'Michiana Behavioral Health, 1800 North Oak Drive, Plymouth, IN 46563'; the recorded michianabehavioralhealthcenter.com was not found by search and returned 403 to direct fetch"
+  },
+  "observations": [
+    {
+      "what": "Direct Invoke-WebRequest GET of https://michianabehavioralhealth.com/cms-hpt.txt and /pricing returned HTTP 403 (Cloudflare) in this client; headless browser showed 'Just a moment...' interstitial and did not clear after ~23s.",
+      "source": "tool observation (bash Invoke-WebRequest; playwright)",
+      "inference": "client-side block only; not evidence of file absence or noncompliance"
+    },
+    {
+      "what": "web-reader retrieved https://michianabehavioralhealth.com/cms-hpt.txt with content: location-name: Michiana Behavioral Health Center; source-page-url: https://michianabehavioralhealth.com/standard-services/; mrf-url: https://uhsfilecdn.eskycity.net/bh/200768028_michiana_standardcharges.csv; contact hpt-obf:v1:M6VtbPeejXhHFPys.LauG7vTIld8riSzvK0oCEQ.t32LsPFiDWC3D-uwPA1QhdILXK3NIUfmYwuWEQ_w1a0mZCekv9jy",
+      "source": "web-reader (reader-extracted text; exact wire bytes of the pointer remain unestablished)"
+    },
+    {
+      "what": "Official pricing page https://michianabehavioralhealth.com/standard-services (web-reader) titled 'Standard Services Price Guide', footer 'Michiana Behavioral Health, 1800 North Oak Drive, Plymouth, IN 46563'.",
+      "source": "web-reader"
+    },
+    {
+      "what": "MRF https://uhsfilecdn.eskycity.net/bh/200768028_michiana_standardcharges.csv fetched in full via Invoke-WebRequest: HTTP 200, 72,018 bytes, Last-Modified Wed, 03 Jun 2026 18:26:28 GMT, SHA-256 f14128af4639783fe83bb2ff308e5ba9987bc54ca39f6b94f81c0f8a1a9dc5ab. Local retained copy: data/hpt-audit/file-byte-samples/michiana-behavioral-154047-2026-10-01.csv",
+      "source": "bash Invoke-WebRequest; Get-FileHash"
+    }
+  ],
+  "mrf_identity": {
+    "declared_hospital_name": "Michiana Behavioral Health Center",
+    "declared_location_name": "Michiana Behavioral Health",
+    "declared_address": "1800 NORTH OAK DRIVE, PLYMOUTH, IN 46563",
+    "roster_address_prior_proof": "1800 North Oak Road, Plymouth, IN 46563",
+    "declared_license_number": "1506-001 (state IN)",
+    "declared_type_2_npi": "1801822440",
+    "declared_last_updated_on": "2026-06-03",
+    "declared_version": "3.0.0",
+    "attestation_column_true": true,
+    "csv_headers_v3_present": [
+      "description",
+      "setting",
+      "standard_charge|gross",
+      "standard_charge|discounted_cash",
+      "standard_charge|negotiated_dollar",
+      "standard_charge|negotiated_algorithm",
+      "standard_charge|min",
+      "standard_charge|max"
+    ]
+  },
+  "nppes_corroboration": {
+    "checked_at": "2026-10-01T20:29:00.000Z",
+    "npi": "1801822440",
+    "result": "HHC INDIANA INC., DBA 'MICHIANA BEHAVIORAL HEALTH CENTER', 1800 N OAK DR, PLYMOUTH, IN 46563; primary taxonomy 283Q00000X Psychiatric Hospital, license 1506-1-pip"
+  },
+  "established": [
+    "Official first-party domain is michianabehavioralhealth.com (recorded michianabehavioralhealthcenter.com is outdated/incorrect)",
+    "First-party CMS pointer exists at https://michianabehavioralhealth.com/cms-hpt.txt naming exactly this facility and one MRF URL",
+    "The declared MRF was retrieved in full (HTTP 200, 72,018 bytes) and parses as a CMS v3.0.0 CSV with attestation true, updated 2026-06-03",
+    "Facility identity (name, address, Indiana license, type-2 NPI 1801822440) agrees with the CMS roster and NPPES"
+  ],
+  "not_established": [
+    "Exact wire bytes/SHA-256 of the pointer file (retrieved as reader-extracted text only; direct fetch is Cloudflare-403 in this client)",
+    "That the MRF row-level content is fully compliant beyond header/attestation/identity checks"
+  ],
+  "changed_vs_prior": "Prior proof (reconciliation-michiana-pointer-browser-proof.json, 2026-09-19) recorded only 403/Cloudflare blocks and no pointer or MRF bytes. This session recovered the pointer (new domain michianabehavioralhealth.com) and the full MRF file with identity and metadata."
+}

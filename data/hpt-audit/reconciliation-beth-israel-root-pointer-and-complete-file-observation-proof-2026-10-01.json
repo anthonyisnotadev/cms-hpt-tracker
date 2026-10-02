@@ -1,0 +1,104 @@
+{
+  "ccn": "330169",
+  "hospital_name": "MOUNT SINAI BETH ISRAEL",
+  "observed_at": "2026-10-01T15:33:17.883Z",
+  "official_domain": "mountsinai.org",
+  "domain_search": {
+    "query": "\"Mount Sinai Brooklyn\" hospital price transparency standard charges mountsinai.org",
+    "recorded_domain": "mountsinai.org",
+    "found_domain": "mountsinai.org",
+    "agrees": true,
+    "basis": "Search returned mountsinai.org price-transparency pages naming Mount Sinai Brooklyn; the MSB page (https://www.mountsinai.org/about/insurance/msb) identifies Mount Sinai Brooklyn at 3201 Kings Highway, Brooklyn, NY 11234, matching the current CCN crosswalk."
+  },
+  "condition_change": "The 2026-09-27 capture recorded the 9-entry root pointer as NOT naming Beth Israel/Brooklyn, and the page-linked Brooklyn JSON as 403 to bounded retrieval and ERR_BLOCKED_BY_CLIENT in-browser. On 2026-10-01 the current root pointer's FIRST entry names Mount Sinai Brooklyn with exactly the page-linked JSON as its mrf-url, and the JSON rendered fully in the permitted headless-browser session (same-origin fetch, HTTP 200).",
+  "root_pointer_observation": {
+    "url": "https://www.mountsinai.org/cms-hpt.txt",
+    "method": "playwright headless browser; direct curl returned HTTP 403 (Akamai Access Denied) — client-side denial only",
+    "http_status": 200,
+    "bytes": 2706,
+    "sha256": "717c83d7e7d73db5138765423ce4755f8864749860a64a818f0295450e86b6af",
+    "entry_count": 9,
+    "first_entry": {
+      "location-name": "Mount Sinai Brooklyn",
+      "source-page-url": "https://www.mountsinai.org/about/insurance/price-transparency",
+      "mrf-url": "https://www.mountsinai.org/files/mrf/135564934_mount-sinai-brooklyn_standardcharges.json",
+      "contact-name": "hpt-obf:v1:8o34TwLjUww6R4hu.7xFqVsW0J9mZBTbytVi6lw.oEdA9TBWhq-oU6-Z-A",
+      "contact-email": "hpt-obf:v1:1xRIL31XQYRe8Yi4.m5c9lvEcRd-y9fLwtrwXKA.ia9GVz1sSMFW0NWkZvIG0U06e8zV7KnCWlFd"
+    },
+    "all_entries": [
+      "Mount Sinai Brooklyn",
+      "Mount Sinai Hospital",
+      "Mount Sinai Queens",
+      "Mount Sinai Morningside",
+      "Mount Sinai West",
+      "Mount Sinai South Nassau",
+      "South Nassau Communities Hospital Off-Campus Emergency Department",
+      "New York Eye and Ear Infirmary of Mount Sinai",
+      "Mount Sinai Behavioral Health Center"
+    ]
+  },
+  "mrf_full_file_observation": {
+    "url": "https://www.mountsinai.org/files/mrf/135564934_mount-sinai-brooklyn_standardcharges.json",
+    "method": "in-page fetch in the permitted browser session (same-origin, credentials included); direct curl remained HTTP 403 (Akamai) — no bytes were obtainable through bounded direct retrieval, and the complete bytes were not written to local disk, so no independent local hash or CMS validator run was performed",
+    "http_status": 200,
+    "bytes": 82151350,
+    "sha256_in_browser": "4c66af60f8f6006c41ef2f9770f0a2ea142f1e3202683b13f161e9c1545c45ca",
+    "header": {
+      "hospital_name": "Mount Sinai Brooklyn",
+      "last_updated_on": "2026-04-01",
+      "version": "3.0.0",
+      "location_name": [
+        "Mount Sinai Brooklyn"
+      ],
+      "hospital_address": [
+        "3201 Kings Highway, Brooklyn, NY 11234"
+      ],
+      "license_information": {
+        "license_number": "7002024H",
+        "state": "NY"
+      },
+      "type_2_npi": [
+        "1780111484"
+      ],
+      "attestation_confirm": true,
+      "attester_name": "Brent Estes",
+      "financial_aid_policy_present": true,
+      "modifier_information_entries": 37
+    },
+    "structure": {
+      "standard_charge_information_rows": 217957,
+      "charge_object_shapes": {
+        "gross+discounted_cash+setting+billing_class+notes": 215956,
+        "gross+discounted_cash+setting+billing_class+notes+modifier_code": 2025
+      },
+      "rows_with_gross_charge": 217957,
+      "rows_with_discounted_cash_numeric": 217957,
+      "rows_with_payer_specific_negotiated_rate": 0
+    }
+  },
+  "identity_crosswalk": {
+    "cms_hospital_enrollments_ccn": "330169 = BETH ISRAEL MEDICAL CENTER (Kings Highway Division), 3201 Kings Hwy, Brooklyn NY 11234, NPI 1174768071, MULTIPLE NPI FLAG Y",
+    "file_header": "Mount Sinai Brooklyn, 3201 Kings Highway, Brooklyn, NY 11234, NPI 1780111484, license 7002024H NY",
+    "ny_profile": "Mount Sinai Brooklyn, PFI 1324, MPN 330169, operating certificate 7002002H",
+    "observations": [
+      "Facility name, address, and campus agree with the current CCN crosswalk.",
+      "File NPI 1780111484 differs from the primary enrollment NPI 1174768071; enrollment carries MULTIPLE NPI FLAG Y, so a second NPI is plausible but not reconciled to the enrollment record.",
+      "File license_number 7002024H differs by one character from the NY profile operating certificate 7002002H; unreconciled."
+    ]
+  },
+  "established": [
+    "The current first-party root pointer (cms-hpt.txt) now names Mount Sinai Brooklyn as its first entry with the exact page-linked JSON as mrf-url — pointer/linkage evidence that the 2026-09-27 capture lacked.",
+    "The complete 82,151,350-byte JSON was retrieved in the permitted browser session, SHA-256 computed in-page, root CMS 3.0.0 metadata validated: name, address, license state, NPI, attestation, date 2026-04-01 (current).",
+    "All 217,957 standard-charge rows carry gross and discounted-cash amounts."
+  ],
+  "not_established": [
+    "The file contains ZERO payer-specific negotiated rates in any of its 217,981 charge objects despite a full 45 CFR 180.50 attestation; payer-specific completeness/usability is not established and is a material open question.",
+    "No independent local hash or official CMS validator run was performed (bytes were not transferable to local disk through any permitted route).",
+    "File NPI vs enrollment NPI and file license number vs NY operating certificate remain unreconciled.",
+    "No promotion and no legal-compliance conclusion."
+  ],
+  "classification": "root-pointer-exact-match-and-complete-file-observed-payer-specific-completeness-unresolved",
+  "disposition": "pointer-facility-match-unresolved (unchanged; proposed keeping unresolved pending payer-specific usability determination and NPI/license reconciliation)",
+  "next_action": "Determine the repo's usability rule for a current, identity-matched, root-pointer-exact CMS 3.0.0 JSON whose 217,957 rows carry gross and discounted-cash charges but zero payer-specific negotiated rates; separately reconcile file NPI 1780111484 to the enrollment's multiple-NPI record and license 7002024H to certificate 7002002H; if a local CMS validator run is required for promotion, obtain the bytes through a permitted publisher-provided copy.",
+  "interpretation": "This is a major evidence gain (root-pointer exact match plus complete-file header/structure observation) but promotion is withheld because the payer-specific completeness question and the NPI/license reconciliation explicitly required by the next_action remain open."
+}

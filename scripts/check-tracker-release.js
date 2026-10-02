@@ -13,7 +13,9 @@ const OUTPUTS = ['tracker.html', 'index.html', 'mrf.html', 'rules.html', 'pointe
 const digest = bytes => crypto.createHash('sha256').update(String(bytes).replace(/\r\n/g, '\n')).digest('hex');
 
 function inputFiles() {
-  return [...new Set(execFileSync('git', ['ls-files', '-z', '--cached', '--others', '--exclude-standard'],
+  // A release manifest must be reproducible from committed inputs. Untracked
+  // local proof captures and downloads are not part of the published source.
+  return [...new Set(execFileSync('git', ['ls-files', '-z', '--cached'],
     { cwd: ROOT, encoding: 'utf8', maxBuffer: 100e6 }).split('\0'))]
     .filter(file => file && file !== MANIFEST && (
       /^(?:scripts\/.*\.js|css\/.*\.css|js\/.*\.js)$/.test(file)

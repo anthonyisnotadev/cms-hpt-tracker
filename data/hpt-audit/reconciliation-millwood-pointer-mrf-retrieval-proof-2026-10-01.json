@@ -1,0 +1,59 @@
+{
+  "ccn": "454012",
+  "hospital_name": "MILLWOOD HOSPITAL",
+  "state": "TX",
+  "observed_at": "2026-10-01T20:32:19.929Z",
+  "proof_kind": "pointer-and-mrf-retrieval-via-web-reader-and-cdn",
+  "domain_search": {
+    "query": "\"Millwood Hospital\" Arlington Texas price transparency standard charges",
+    "recorded_domain": "millwoodhospital.com",
+    "found_domain": "millwoodhospital.com",
+    "agrees": true,
+    "basis": "https://millwoodhospital.com homepage: 'Millwood Hospital | Behavioral Health Center | Arlington, TX'; /standard-services page titled 'Standard Services | Millwood Hospital | Arlington, TX'"
+  },
+  "observations": [
+    {
+      "what": "web-reader retrieved https://millwoodhospital.com/cms-hpt.txt with content: location-name: Millwood Hospital; source-page-url: https://millwoodhospital.com/standard-services-2/; mrf-url: https://uhsfilecdn.eskycity.net/bh/201021264_millwood_standardcharges.csv; contact hpt-obf:v1:ZsL82iLpYjoJ3pSj.u5uMJqXCKATfczt2jqfPPQ.VfmANExjLjfvzgLlRt5Env3ytT3PfgJYf204PYZRbX6yOdSrTe6z",
+      "source": "web-reader (reader-extracted text; exact pointer wire bytes remain unestablished; direct fetch route previously 403/anti-bot in this client)"
+    },
+    {
+      "what": "MRF https://uhsfilecdn.eskycity.net/bh/201021264_millwood_standardcharges.csv fetched via Invoke-WebRequest: HTTP 200, total 658,816 bytes, Last-Modified Tue, 01 Sep 2026 22:35:10 GMT. Bounded 262,144-byte sample retained, SHA-256 5a176020fb97742c3e6e5391528cd67dda9068ece12e84c8fecb92918a9e17e4. Local sample copy: data/hpt-audit/file-byte-samples/millwood-hospital-454012-2026-10-01.csv",
+      "source": "bash Invoke-WebRequest; Get-FileHash"
+    }
+  ],
+  "mrf_identity": {
+    "declared_hospital_name": "Millwood Hospital",
+    "declared_location_name": "Millwood Hospital",
+    "declared_address": "1011 N COOPER ST, ARLINGTON, TX 76011",
+    "declared_license_number": "000765 (state TX)",
+    "declared_type_2_npi": "1023015120",
+    "declared_last_updated_on": "2026-08-31",
+    "declared_version": "3.0.0",
+    "attestation_column_true": true,
+    "csv_headers_v3_present": [
+      "description",
+      "setting",
+      "standard_charge|gross",
+      "standard_charge|discounted_cash",
+      "standard_charge|negotiated_dollar",
+      "standard_charge|negotiated_algorithm",
+      "standard_charge|min",
+      "standard_charge|max"
+    ]
+  },
+  "nppes_corroboration": {
+    "checked_at": "2026-10-01T20:32:19.929Z",
+    "npi": "1023015120",
+    "result": "MILLWOOD HOSPITAL LP, 1011 N COOPER ST, ARLINGTON, TX 76011"
+  },
+  "established": [
+    "First-party CMS pointer exists at https://millwoodhospital.com/cms-hpt.txt naming exactly this facility and one MRF URL",
+    "The declared MRF is retrievable (HTTP 200, 658,816 bytes total) and its bounded sample parses as a CMS v3.0.0 CSV with attestation true, updated 2026-08-31",
+    "Facility identity (name, Arlington TX address, license state TX, type-2 NPI 1023015120) agrees with the CMS roster and NPPES"
+  ],
+  "not_established": [
+    "Exact wire bytes/SHA-256 of the pointer file (reader-extracted text only)",
+    "SHA-256 and row-level content of the full 658,816-byte MRF (bounded 262,144-byte sample hashed and retained)"
+  ],
+  "changed_vs_prior": "Prior proof (reconciliation-millwood-hospital-identity-proof-2026-09-23.json) recorded only anti-bot interstitial/403 to browser automation on millwoodhospital.com with no pointer fields or MRF bytes. This session the web-reader route succeeded, recovering the pointer and the live UHS CDN MRF with full identity and current (2026-08-31) metadata."
+}

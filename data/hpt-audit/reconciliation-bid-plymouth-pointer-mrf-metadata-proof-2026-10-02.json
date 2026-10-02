@@ -1,0 +1,22 @@
+{
+  "ccn": "220060",
+  "observed_at": "2026-10-02T00:19:48Z",
+  "domain_search": {
+    "query": "\"Beth Israel Deaconess Hospital\" Plymouth price transparency standard charges",
+    "recorded_domain": "bidplymouth.org",
+    "found_domain": "bidplymouth.org",
+    "agrees": true,
+    "basis": "https://bidplymouth.org/.well-known/cms-hpt.txt declares location-name 'Beth Israel Deaconess Hospital–Plymouth' and the pricing page identifies BID Plymouth at 275 Sandwich Street, Plymouth, MA."
+  },
+  "pointer_url": "https://bidplymouth.org/.well-known/cms-hpt.txt",
+  "pointer_observation": "Pointer file exists and reads: location-name: Beth Israel Deaconess Hospital–Plymouth; source-page-url: https://bidplymouth.org/patients-visitors/billing-financial-services/price-transparency; mrf-url: https://bidplymouth.org/222667354_beth-israel-deaconess-hospital---plymouth_standardcharges.json; contact-name: BILH Pricing Transparency Office; contact-email: hpt-obf:v1:kZtkmEpPP4AY1hnf.US_GzHFLV7qlYGn3uMQJRg.KwXmTYe8IZgegrX1iMTW272MeWExfJ0yHcVPGvsBntrK.",
+  "mrf_url": "https://bidplymouth.org/222667354_beth-israel-deaconess-hospital---plymouth_standardcharges.json",
+  "mrf_observation": "JSON retrieved through the remote reader (route-only; full raw bytes not retained in this environment). Declared header: hospital_name 'Beth Israel Deaconess Hospital - Plymouth'; last_updated_on 2025-01-01; version 2.2.0; hospital_address '275 Sandwich Street, Plymouth, MA 02360'; license_information {license_number 2082, state MA}; affirmation confirm_affirmation true; standard_charge_information array present with item descriptions, code_information, and standard_charges carrying gross_charge and discounted_cash.",
+  "roster_identity": "BETH ISRAEL DEACONESS HOSPITAL PLYMOUTH",
+  "roster_address": "275 SANDWICH STREET, PLYMOUTH, MA 02360",
+  "what_changed_vs_prior_proof": "The 2026-09-22 proof established the page linkage but could not parse any file bytes. This run additionally (1) confirmed a live /.well-known/cms-hpt.txt pointer naming this exact facility and MRF URL, and (2) parsed the declared MRF header: facility name, street address, Massachusetts license state, version 2.2.0, last_updated 2025-01-01, and affirmation, with usable charge rows visible.",
+  "not_established": "No SHA-256 of the raw pointer or MRF bytes could be computed: local DNS/TLS to bidplymouth.org fails from this environment (client-side), so only reader-mediated content was available. File completeness and byte-level identity remain unproven.",
+  "disposition": "pointer-live-mrf-metadata-verified-sha256-pending",
+  "interpretation": "New pointer and MRF-metadata evidence. No current-verification promotion applied because promotion requires pointer/MRF SHA-256 captured from raw bytes, which was not obtainable here.",
+  "next_action": "Capture raw bytes of https://bidplymouth.org/.well-known/cms-hpt.txt and the standardcharges JSON (any authorized raw route), compute SHA-256 and entry counts, then promote."
+}

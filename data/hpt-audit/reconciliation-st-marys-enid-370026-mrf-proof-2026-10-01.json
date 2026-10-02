@@ -1,0 +1,47 @@
+{
+  "ccn": "370026",
+  "hospital_name": "ST MARY'S REGIONAL MEDICAL CENTER",
+  "state": "OK",
+  "observed_at": "2026-10-01T23:10:13.839Z",
+  "domain_search": {
+    "query": "St. Mary's Regional Medical Center Enid Oklahoma price transparency standard charges",
+    "recorded_domain": "stmarysregional.com",
+    "found_domain": "stmarysregional.com",
+    "agrees": true,
+    "basis": "https://stmarysregional.com/patients-visitors/pricing-guide titled 'Pricing Guide | St. Mary's Regional Medical Center, Enid, OK'."
+  },
+  "route": [
+    "Direct fetch of the pricing page from this client: HTTP 403 (Cloudflare, consistent with 2026-09-20/21 observations).",
+    "r.jina.ai reader render (x-no-cache, html) of https://stmarysregional.com/patients-visitors/pricing-guide: retrieved; includes link https://uhsfilecdn.eskycity.net/ac/233041933_st-marys-regional-medical-center_standardcharges.csv"
+  ],
+  "file": {
+    "url": "https://uhsfilecdn.eskycity.net/ac/233041933_st-marys-regional-medical-center_standardcharges.csv",
+    "byte_count_full": 23502506,
+    "sha256_full": "2d1481e9fdad13dea3b63ea48edf0760a5133b474407671d421c1dc8fb5b8628",
+    "line_count": 59892,
+    "kind": "csv"
+  },
+  "declared_metadata_from_file": {
+    "hospital_name": "UHS of Oklahoma LLC",
+    "location_name": "St. Marys Regional Medical Center",
+    "hospital_address": "305 South 5th Street, Enid, OK 73701",
+    "license_number_OK": "2246",
+    "type_2_npis": "1417947466|1518510296|1659361475",
+    "last_updated_on": "9/1/2026",
+    "version": "3.0.0",
+    "attestation_value": "TRUE"
+  },
+  "identity_crosscheck": {
+    "basis": "Prior evidence (2026-09-21, official hospital guide) confirms 305 South Fifth Street, Enid, OK 73701 for CCN 370026; the file's location_name and address match.",
+    "result": "agree"
+  },
+  "established": [
+    "First-party pricing page (retrieved via materially different route after Cloudflare 403) links a facility-specific CMS-format standard-charges CSV on the operator's UHS CDN.",
+    "Complete file (23,502,506 bytes, 59,892 lines) downloaded and SHA-256 hashed; version 3.0.0, updated 9/1/2026, attestation TRUE, OK license 2246, three NPIs, and St. Marys Enid OK identity matching CCN 370026."
+  ],
+  "not_established": [
+    "No /cms-hpt.txt pointer exists on stmarysregional.com (prior root attempts blocked), so no CMS pointer linkage is claimed — first-party-page-to-file chain.",
+    "Row-level rate completeness was not exhaustively audited beyond header/metadata/sample-row inspection."
+  ],
+  "changed_vs_prior": "Prior passes recorded only Cloudflare access denials and an unverified third-party file lead. This session recovered the exact first-party-linked MRF URL and complete file bytes with hash — materially new evidence supporting promotion."
+}

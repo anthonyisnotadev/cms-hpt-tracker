@@ -1,14 +1,14 @@
 {
   "summary": {
-    "total": 571,
+    "total": 511,
     "by_tier": {
-      "1": 15,
-      "2": 99,
-      "3": 328,
-      "4": 127,
+      "1": 16,
+      "2": 83,
+      "3": 284,
+      "4": 126,
       "5": 2
     },
-    "already_reviewed_follow_ups": 568
+    "already_reviewed_follow_ups": 510
   },
   "records": [
     {
@@ -173,6 +173,27 @@
       "last_browser_file_status": "browser-client-blocked",
       "last_browser_file_observed_at": "2026-09-15T09:17:26.821Z",
       "next_action": "Do not repeat the same page-file request: its complete 1,414,938-byte custom chargemaster and hash are already retained. Seek a publisher-confirmed CMS-template CSV/JSON or a materially different authorized copy of the distinct pointer-declared Azure MRF; validate hospital identity, Montana state, declared date, CMS version and usable rows. Keep the custom chargemaster and pointer-MRF evidence separate, and do not infer file absence or compliance."
+    },
+    {
+      "ccn": "310040",
+      "hospital_name": "CAREPOINT HEALTH-HOBOKEN UNIVERSITY MEDICAL CENTER",
+      "state": "NJ",
+      "official_domain": "carepointhealth.org",
+      "publisher_domain_lead": "",
+      "current_disposition": "linked-mrf-header-unmatched",
+      "standing_finding": "compliant-observed",
+      "prior_finding": "compliant-observed",
+      "investigation_tier": 1,
+      "evidence_gate": "file-header",
+      "reviewed_follow_up": true,
+      "reviewed_sources": [
+        "manual-access"
+      ],
+      "latest_review_at": "2026-10-01T14:56:04.261Z",
+      "candidate_file_recorded": true,
+      "last_browser_file_status": "retrieved",
+      "last_browser_file_observed_at": "2026-09-30T23:30:00Z",
+      "next_action": "Run the CMS official HPT validator CLI (csv, requirements v3.0) over the identical complete file (sha256 031eee20b78e7f61a7eb1581245b238e9c3958faae3b42950ec116e58f15aef8), record structured full-file review fields (uniform row widths, description/gross/payer/negotiated counts), then promote CCN 310040 through the manual-observation mechanism."
     },
     {
       "ccn": "321305",
@@ -350,44 +371,6 @@
       "next_action": "Obtain publisher clarification or corrected page/file metadata explaining the Foundation-branded 5330 North Loop address versus Foundation's CMS enrollment and linked JSON at 9522 Huebner Road. Preserve distinct 670054 and 670112 identities and MRF chains; do not reassign either file."
     },
     {
-      "ccn": "440183",
-      "hospital_name": "ST FRANCIS HOSPITAL",
-      "state": "TN",
-      "official_domain": "saintfrancisevanston.org",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-facility-match-unresolved",
-      "standing_finding": "compliant-observed",
-      "prior_finding": "compliant-observed",
-      "investigation_tier": 2,
-      "evidence_gate": "pointer-facility-match",
-      "reviewed_follow_up": false,
-      "reviewed_sources": [],
-      "latest_review_at": "",
-      "candidate_file_recorded": true,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Reconcile every pointer entry using facility aliases and address evidence."
-    },
-    {
-      "ccn": "450662",
-      "hospital_name": "VALLEY REGIONAL MEDICAL CENTER",
-      "state": "TX",
-      "official_domain": "valleyregionalmedicalcenter.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-facility-match-unresolved",
-      "standing_finding": "compliant-observed",
-      "prior_finding": "compliant-observed",
-      "investigation_tier": 2,
-      "evidence_gate": "pointer-facility-match",
-      "reviewed_follow_up": false,
-      "reviewed_sources": [],
-      "latest_review_at": "",
-      "candidate_file_recorded": true,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Reconcile every pointer entry using facility aliases and address evidence."
-    },
-    {
       "ccn": "451310",
       "hospital_name": "BALLINGER MEMORIAL HOSPITAL",
       "state": "TX",
@@ -449,6 +432,27 @@
       "next_action": "Keep 010780 unresolved for HPT attribution. Obtain a Valley-specific CMS CSV/JSON/ZIP or explicit publisher scope statement. Keep the Opelika pointer and file separate and do not redownload absent a changed URL, validator, or publisher scope."
     },
     {
+      "ccn": "044017",
+      "hospital_name": "UNITED METHODIST BEHAVIORAL HOSPITAL",
+      "state": "AR",
+      "official_domain": "www.methodistfamily.org",
+      "publisher_domain_lead": "",
+      "current_disposition": "pointer-linked-file-review-pending",
+      "standing_finding": "not-assessed-nationwide-pointer-linked-file-review-pending",
+      "prior_finding": "not-assessed-site-observed",
+      "investigation_tier": 2,
+      "evidence_gate": "pointer-file-page-reconciliation",
+      "reviewed_follow_up": true,
+      "reviewed_sources": [
+        "manual-access"
+      ],
+      "latest_review_at": "2026-10-01T20:29:40.000Z",
+      "candidate_file_recorded": true,
+      "last_browser_file_status": "retrieved",
+      "last_browser_file_observed_at": "2026-10-01T20:29:40.000Z",
+      "next_action": "Retain the page-file chain and recheck if the publisher corrects the pointer mrf-url or replaces the CSV."
+    },
+    {
       "ccn": "050056",
       "hospital_name": "ANTELOPE VALLEY HOSPITAL",
       "state": "CA",
@@ -491,174 +495,6 @@
       "next_action": "Obtain a corrected first-party pointer/file or authoritative publisher documentation mapping dbAHBBAKERSFIELDCA coverage, location rows, NPIs, addresses, licenses and Medicare CCNs; then retrieve and hash the exact current file and independently verify the 2615 Chester campus before revising either CCN."
     },
     {
-      "ccn": "050488",
-      "hospital_name": "EDEN MEDICAL CENTER",
-      "state": "CA",
-      "official_domain": "sutterhealth.org",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-facility-match-unresolved",
-      "standing_finding": "compliant-observed",
-      "prior_finding": "compliant-observed",
-      "investigation_tier": 2,
-      "evidence_gate": "pointer-facility-match",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-26T23:45:00Z",
-      "candidate_file_recorded": true,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file."
-    },
-    {
-      "ccn": "050498",
-      "hospital_name": "SUTTER AUBURN FAITH HOSPITAL",
-      "state": "CA",
-      "official_domain": "sutterhealth.org",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-facility-match-unresolved",
-      "standing_finding": "compliant-observed",
-      "prior_finding": "compliant-observed",
-      "investigation_tier": 2,
-      "evidence_gate": "pointer-facility-match",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-26T23:45:00Z",
-      "candidate_file_recorded": true,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file."
-    },
-    {
-      "ccn": "050523",
-      "hospital_name": "SUTTER DELTA MEDICAL CENTER",
-      "state": "CA",
-      "official_domain": "sutterhealth.org",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-facility-match-unresolved",
-      "standing_finding": "compliant-observed",
-      "prior_finding": "compliant-observed",
-      "investigation_tier": 2,
-      "evidence_gate": "pointer-facility-match",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-26T23:45:00Z",
-      "candidate_file_recorded": true,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file."
-    },
-    {
-      "ccn": "050528",
-      "hospital_name": "MEMORIAL HOSPITAL LOS BANOS",
-      "state": "CA",
-      "official_domain": "sutterhealth.org",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-facility-match-unresolved",
-      "standing_finding": "compliant-observed",
-      "prior_finding": "compliant-observed",
-      "investigation_tier": 2,
-      "evidence_gate": "pointer-facility-match",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-26T23:45:00Z",
-      "candidate_file_recorded": true,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file."
-    },
-    {
-      "ccn": "050537",
-      "hospital_name": "SUTTER DAVIS HOSPITAL",
-      "state": "CA",
-      "official_domain": "sutterhealth.org",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-facility-match-unresolved",
-      "standing_finding": "compliant-observed",
-      "prior_finding": "compliant-observed",
-      "investigation_tier": 2,
-      "evidence_gate": "pointer-facility-match",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-26T23:45:00Z",
-      "candidate_file_recorded": true,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file."
-    },
-    {
-      "ccn": "050557",
-      "hospital_name": "MEMORIAL MEDICAL CENTER",
-      "state": "CA",
-      "official_domain": "sutterhealth.org",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-facility-match-unresolved",
-      "standing_finding": "compliant-observed",
-      "prior_finding": "compliant-observed",
-      "investigation_tier": 2,
-      "evidence_gate": "pointer-facility-match",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-26T23:45:00Z",
-      "candidate_file_recorded": true,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file."
-    },
-    {
-      "ccn": "050714",
-      "hospital_name": "SUTTER MATERNITY & SURGERY CENTER OF SANTA CRUZ",
-      "state": "CA",
-      "official_domain": "sutterhealth.org",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-facility-match-unresolved",
-      "standing_finding": "compliant-observed",
-      "prior_finding": "compliant-observed",
-      "investigation_tier": 2,
-      "evidence_gate": "pointer-facility-match",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-26T23:45:00Z",
-      "candidate_file_recorded": true,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file."
-    },
-    {
-      "ccn": "050766",
-      "hospital_name": "SUTTER SURGICAL HOSPITAL - NORTH VALLEY",
-      "state": "CA",
-      "official_domain": "sutterhealth.org",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-facility-match-unresolved",
-      "standing_finding": "compliant-observed",
-      "prior_finding": "compliant-observed",
-      "investigation_tier": 2,
-      "evidence_gate": "pointer-facility-match",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-26T23:45:00Z",
-      "candidate_file_recorded": true,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file."
-    },
-    {
       "ccn": "050785",
       "hospital_name": "DOCS SURGICAL HOSPITAL",
       "state": "CA",
@@ -680,27 +516,6 @@
       "next_action": "At or after 2026-12-31, seek effective-dated HCAI license/status and exact CMS CCN evidence for the replacement facility; then verify its current CMS-template MRF. Preserve the historical 050785 HPT coverage question separately."
     },
     {
-      "ccn": "051329",
-      "hospital_name": "SUTTER LAKESIDE HOSPITAL",
-      "state": "CA",
-      "official_domain": "sutterhealth.org",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-facility-match-unresolved",
-      "standing_finding": "compliant-observed",
-      "prior_finding": "compliant-observed",
-      "investigation_tier": 2,
-      "evidence_gate": "pointer-facility-match",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-26T23:45:00Z",
-      "candidate_file_recorded": true,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file."
-    },
-    {
       "ccn": "054078",
       "hospital_name": "AURORA LAS ENCINAS",
       "state": "CA",
@@ -720,27 +535,6 @@
       "last_browser_file_status": "retrieved",
       "last_browser_file_observed_at": "2026-09-25T07:05:00Z",
       "next_action": "Do not repeat the same current page or linked CSV browser route without a material access/source change. If an alternate publisher route or exact publisher-provided copy becomes available, hash-bind the bytes and inspect schema, physical address/license-state metadata, CMS 3.0.0, declared update date, attestation and usable rows before changing CCN 054078."
-    },
-    {
-      "ccn": "054096",
-      "hospital_name": "SUTTER CENTER FOR PSYCHIATRY",
-      "state": "CA",
-      "official_domain": "sutterhealth.org",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-facility-match-unresolved",
-      "standing_finding": "compliant-observed",
-      "prior_finding": "compliant-observed",
-      "investigation_tier": 2,
-      "evidence_gate": "pointer-facility-match",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-26T23:45:00Z",
-      "candidate_file_recorded": true,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file."
     },
     {
       "ccn": "061328",
@@ -1106,27 +900,6 @@
       "next_action": "Keep the facility unresolved. Locate and verify a current facility-specific CMS MRF and verify its identity, linkage and metadata, or obtain authoritative evidence that this exact hospital qualifies for a CMS deemed-compliant exception."
     },
     {
-      "ccn": "220001",
-      "hospital_name": "UMASS MEMORIAL HEALTHALLIANCE HOSPITALS",
-      "state": "MA",
-      "official_domain": "ummhealth.org",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-facility-match-unresolved",
-      "standing_finding": "compliant-observed",
-      "prior_finding": "compliant-observed",
-      "investigation_tier": 2,
-      "evidence_gate": "pointer-facility-match",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-26T03:45:00Z",
-      "candidate_file_recorded": true,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file."
-    },
-    {
       "ccn": "220049",
       "hospital_name": "MARLBOROUGH HOSPITAL",
       "state": "MA",
@@ -1141,7 +914,7 @@
       "reviewed_sources": [
         "manual-access"
       ],
-      "latest_review_at": "2026-09-26T03:45:00Z",
+      "latest_review_at": "2026-10-01T14:24:34Z",
       "candidate_file_recorded": true,
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
@@ -1162,7 +935,7 @@
       "reviewed_sources": [
         "manual-access"
       ],
-      "latest_review_at": "2026-09-26T03:45:00Z",
+      "latest_review_at": "2026-10-01T14:24:34Z",
       "candidate_file_recorded": true,
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
@@ -1288,7 +1061,7 @@
       "reviewed_sources": [
         "manual-access"
       ],
-      "latest_review_at": "2026-09-26T01:20:00Z",
+      "latest_review_at": "2026-10-01T14:32:59.260Z",
       "candidate_file_recorded": true,
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
@@ -1466,27 +1239,6 @@
       "next_action": "Obtain an exact Dini-Townsend CSV/JSON MRF or publisher clarification linking the workbook to CCN 294000 and the facility identity; retain the NNAMHS workbook as dated source evidence without assigning it to sibling facilities."
     },
     {
-      "ccn": "310040",
-      "hospital_name": "CAREPOINT HEALTH-HOBOKEN UNIVERSITY MEDICAL CENTER",
-      "state": "NJ",
-      "official_domain": "carepointhealth.org",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-facility-match-unresolved",
-      "standing_finding": "compliant-observed",
-      "prior_finding": "compliant-observed",
-      "investigation_tier": 2,
-      "evidence_gate": "pointer-facility-match",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-30T23:30:00Z",
-      "candidate_file_recorded": true,
-      "last_browser_file_status": "retrieved",
-      "last_browser_file_observed_at": "2026-09-30T23:30:00Z",
-      "next_action": "Keep CCN 310040 unresolved until the publisher confirms whether the pointer CDN URL and first-party page CSV are the same complete file, or a permitted complete retrieval establishes byte equality; then review the full file and usable charge rows. The matching 262,144-byte prefixes and shared filename are not complete-file identity proof."
-    },
-    {
       "ccn": "310064",
       "hospital_name": "ATLANTICARE REGIONAL MEDICAL CENTER - CITY CAMPUS",
       "state": "NJ",
@@ -1530,27 +1282,6 @@
       "next_action": "Locate a changed/current first-party price-transparency destination or an authorized publisher-provided CMS CSV/JSON/ZIP; preserve the July 2025 PDF only as a charge-master lead and verify exact MRF bytes, identity, New Mexico metadata, date/version and usable rows before promotion. Do not repeat these same blocked URLs unless the route or access conditions change."
     },
     {
-      "ccn": "320091",
-      "hospital_name": "THREE CROSSES REGIONAL HOSPITAL LLC",
-      "state": "NM",
-      "official_domain": "threecrossesregional.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-facility-match-unresolved",
-      "standing_finding": "not-assessed-nationwide-pointer-facility-match-unresolved",
-      "prior_finding": "pointer-links-html-download-page-with-file",
-      "investigation_tier": 2,
-      "evidence_gate": "pointer-facility-match",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-26T08:25:00Z",
-      "candidate_file_recorded": true,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "reconcile the CSV license state CA and older page-file metadata against the current pointer/file record; preserve both source roles and do not infer legal compliance from the evidence alone."
-    },
-    {
       "ccn": "330169",
       "hospital_name": "MOUNT SINAI BETH ISRAEL",
       "state": "NY",
@@ -1570,6 +1301,28 @@
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
       "next_action": "Retrieve the exact page-linked Mount Sinai Brooklyn JSON through a permitted browser download or publisher-provided copy; preserve/hash bytes, validate root CMS 3.0 metadata and current facility identity, then reconcile the distinct Mount Sinai CMS pointer and the file's named NPI/CCN scope. Keep the HPT finding unresolved until file usability and pointer/linkage rules are satisfied; do not assign sibling-campus files."
+    },
+    {
+      "ccn": "331324",
+      "hospital_name": "CARTHAGE AREA HOSPITAL, INC",
+      "state": "NY",
+      "official_domain": "www.carthagehospital.com",
+      "publisher_domain_lead": "",
+      "current_disposition": "pointer-facility-match-unresolved",
+      "standing_finding": "not-assessed-nationwide-pointer-facility-match-unresolved",
+      "prior_finding": "not-assessed-pointer-review",
+      "investigation_tier": 2,
+      "evidence_gate": "pointer-facility-match",
+      "reviewed_follow_up": true,
+      "reviewed_sources": [
+        "manual-access",
+        "reviewed-header"
+      ],
+      "latest_review_at": "2026-10-01T18:36:09.481Z",
+      "candidate_file_recorded": false,
+      "last_browser_file_status": "",
+      "last_browser_file_observed_at": "",
+      "next_action": "The corrected first-party domain carries a live pointer and current 2026 CSV for the Carthage campus only (matches CCN 331318 at 1001 West Street). CCN 331324 (214 Kings Street, Ogdensburg) still needs an Ogdensburg-specific pointer/MRF or authoritative facility transition evidence; do not infer coverage from the shared hospital name or the Carthage file."
     },
     {
       "ccn": "334027",
@@ -2079,11 +1832,32 @@
         "manual-access",
         "avera-access-proof"
       ],
-      "latest_review_at": "2026-09-18T18:40:00Z",
+      "latest_review_at": "2026-10-01T16:23:01.675Z",
       "candidate_file_recorded": true,
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
-      "next_action": "Do not repeat the denied browser request or infer file absence. Obtain a Bowdle-specific standard-charges file or exact pointer entry with permitted bytes, then verify header name/address/state/date/version. Do not treat the estimator or a shared Avera file as the MRF."
+      "next_action": "Do not repeat the denied browser request or infer file absence. Retain the first-party footer-linked complete file chain; recheck on the next publisher file change. No bowdlehc.com cms-hpt.txt pointer was found; the avera.org pointer CSV remains access-denied and unclaimed."
+    },
+    {
+      "ccn": "440183",
+      "hospital_name": "ST FRANCIS HOSPITAL",
+      "state": "TN",
+      "official_domain": "saintfrancisevanston.org",
+      "publisher_domain_lead": "",
+      "current_disposition": "pointer-facility-match-unresolved",
+      "standing_finding": "compliant-observed",
+      "prior_finding": "compliant-observed",
+      "investigation_tier": 2,
+      "evidence_gate": "pointer-facility-match",
+      "reviewed_follow_up": true,
+      "reviewed_sources": [
+        "manual-access"
+      ],
+      "latest_review_at": "2026-10-01T16:23:01.675Z",
+      "candidate_file_recorded": true,
+      "last_browser_file_status": "",
+      "last_browser_file_observed_at": "",
+      "next_action": "When the saintfrancishealthsystem.com Cloudflare challenge is ordinarily passable, inspect the Memphis pricing page and any cms-hpt.txt, then verify a Memphis 5959 Park Ave identity, TN state, declared date/version and usable bytes. Do not use the saintfrancisevanston.org (Illinois) pointer or its 992441755-named file as CCN 440183 evidence."
     },
     {
       "ccn": "444007",
@@ -2100,32 +1874,11 @@
       "reviewed_sources": [
         "manual-access"
       ],
-      "latest_review_at": "2026-09-28T06:46:30Z",
+      "latest_review_at": "2026-10-01T16:23:01.675Z",
       "candidate_file_recorded": false,
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
-      "next_action": "The Joint Commission now corroborates rollinghillshospital.org as a domain associated with the Franklin, TN facility, but the site served a Cloudflare challenge. When ordinarily accessible, inspect its current facility/pricing pages and exact cms-hpt.txt, then verify any linked MRF's Franklin identity, TN metadata, date/version and usability. Do not bypass the challenge or assign the Oklahoma .com file."
-    },
-    {
-      "ccn": "450253",
-      "hospital_name": "BELLVILLE MEDICAL CENTER",
-      "state": "TX",
-      "official_domain": "midcoasthealthsystem.org",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-facility-match-unresolved",
-      "standing_finding": "compliant-observed",
-      "prior_finding": "compliant-observed",
-      "investigation_tier": 2,
-      "evidence_gate": "pointer-facility-match",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-17T11:09:03.635Z",
-      "candidate_file_recorded": true,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "The Texas hospital domain and Bellville-specific root pointer are now identified. Reconcile the dated v2.0.0 pointer CSV against the pricing page’s distinct BoxCloud leads and obtain complete-file access before a current file finding. Do not reuse the unrelated New York St Josephs pointer; preserve its assignment as history."
+      "next_action": "When rollinghillshospital.org is ordinarily accessible, inspect /standard-services and any cms-hpt.txt; verify any linked MRF for Franklin TN identity, declared date/version and usable bytes. Never assign the Oklahoma rollinghillshospital.com file."
     },
     {
       "ccn": "450653",
@@ -2337,69 +2090,6 @@
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
       "next_action": "Obtain a current CMS-format CSV/JSON/ZIP or publisher-confirmed CMS route, then verify complete bytes, facility identity, Washington metadata, declared date/version and usable rate fields before promotion."
-    },
-    {
-      "ccn": "520033",
-      "hospital_name": "ASPIRUS RIVERVIEW HOSPITAL & CLINICS INC",
-      "state": "WI",
-      "official_domain": "aspirus.org",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-facility-match-unresolved",
-      "standing_finding": "mrf-stale-over-365-days",
-      "prior_finding": "mrf-stale-over-365-days",
-      "investigation_tier": 2,
-      "evidence_gate": "pointer-facility-match",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-26T01:20:00Z",
-      "candidate_file_recorded": true,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file."
-    },
-    {
-      "ccn": "521324",
-      "hospital_name": "ASPIRUS MEDFORD HOSPITAL & CLINICS, INC",
-      "state": "WI",
-      "official_domain": "aspirus.org",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-facility-match-unresolved",
-      "standing_finding": "mrf-stale-over-365-days",
-      "prior_finding": "mrf-stale-over-365-days",
-      "investigation_tier": 2,
-      "evidence_gate": "pointer-facility-match",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-26T01:20:00Z",
-      "candidate_file_recorded": true,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file."
-    },
-    {
-      "ccn": "521350",
-      "hospital_name": "LANGLADE HOSPITAL",
-      "state": "WI",
-      "official_domain": "aspirus.org",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-facility-match-unresolved",
-      "standing_finding": "mrf-stale-over-365-days",
-      "prior_finding": "mrf-stale-over-365-days",
-      "investigation_tier": 2,
-      "evidence_gate": "pointer-facility-match",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-26T01:20:00Z",
-      "candidate_file_recorded": true,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Compare every root-pointer location entry against this CCN and first-party campus name/address; do not assign a shared-system sibling file."
     },
     {
       "ccn": "670008",
@@ -2823,27 +2513,6 @@
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
       "next_action": "Locate a current Arkansas State Hospital CMS-template CSV/JSON MRF or an authorized DHS pricing route. Keep the October 2024 Most Frequent Client Services workbook separate; do not promote XLSX to the CMS-template MRF or infer file absence/compliance from the root-pointer 404. Reassess scope only if current authoritative material establishes treatment exclusively for people in penal custody."
-    },
-    {
-      "ccn": "044017",
-      "hospital_name": "UNITED METHODIST BEHAVIORAL HOSPITAL",
-      "state": "AR",
-      "official_domain": "methodistfamily.org",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-not-retrieved",
-      "standing_finding": "not-assessed-nationwide-pointer-not-retrieved",
-      "prior_finding": "not-assessed-site-observed",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-retrieval",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-25T00:00:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Recheck the renamed Maumelle hospital's official page and root pointer after a material publisher change. Retain the dated 2022 workbook as a current page-linked resource but do not promote it to a current CMS MRF or infer a legal verdict."
     },
     {
       "ccn": "050169",
@@ -3437,27 +3106,6 @@
       "next_action": "Retry the exact official root, pricing route and cms-hpt.txt through a materially different authorized route; obtain a facility-specific CMS-template CSV or JSON MRF, then verify complete bytes, Dover identity/address, Delaware state, declared date/version and usability before promotion."
     },
     {
-      "ccn": "090001",
-      "hospital_name": "GEORGE WASHINGTON UNIV HOSPITAL",
-      "state": "DC",
-      "official_domain": "www.gwhospital.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "not-assessed-site-observed",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-18T20:45:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Retry the exact official root, pricing route and cms-hpt.txt through a materially different authorized route; obtain a facility-specific CMS-template CSV or JSON MRF, then verify complete bytes, GW Hospital identity/address, District of Columbia state, declared date/version and usability before promotion."
-    },
-    {
       "ccn": "090003",
       "hospital_name": "HOWARD UNIVERSITY HOSPITAL CORP",
       "state": "DC",
@@ -3561,27 +3209,6 @@
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
       "next_action": "Retry the exact official pricing route and cms-hpt.txt only through a materially different authorized browser/download route or after a publisher change; verify facility identity, current MRF bytes, Florida address, declared date/version and usability before promotion."
-    },
-    {
-      "ccn": "100277",
-      "hospital_name": "DOUGLAS GARDENS HOSPITAL",
-      "state": "FL",
-      "official_domain": "miamijewishhealth.org",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "no-cms-hpt-txt-published",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-18T20:58:00Z",
-      "candidate_file_recorded": true,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Obtain an authorized download of the exact CSV, then verify complete bytes, Douglas Gardens identity/address, Florida state, declared date/version and rate-level usability; independently recover the root pointer."
     },
     {
       "ccn": "100298",
@@ -3752,27 +3379,6 @@
       "next_action": "Retry through a materially different authorized route; obtain bounded pointer/MRF bytes and independently verify facility identity, Florida state, declared date/version and CMS-template usability."
     },
     {
-      "ccn": "104026",
-      "hospital_name": "FORT LAUDERDALE BEHAVIORAL HEALTH CENTER",
-      "state": "FL",
-      "official_domain": "www.ftlauderdalebehavioral.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "not-assessed-discovery-pointer-not-retrieved",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-18T22:24:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Retry through a materially different authorized route; obtain bounded pointer/MRF bytes and independently verify facility identity, Florida state, declared date/version and CMS-template usability."
-    },
-    {
       "ccn": "104063",
       "hospital_name": "AXIOM BEHAVIORAL HEALTH AT NAPLES",
       "state": "FL",
@@ -3857,27 +3463,6 @@
       "next_action": "Retry the exact official pricing/pointer routes through a materially different authorized route; obtain bounded pointer/MRF bytes and independently verify the Central Florida Behavioral Hospital identity, Florida state, declared date/version and CMS-template usability."
     },
     {
-      "ccn": "104073",
-      "hospital_name": "EMERALD COAST BEHAVIORAL HOSPITAL",
-      "state": "FL",
-      "official_domain": "emeraldcoastbehavioral.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "not-assessed-discovery-pointer-not-retrieved",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-19T01:00:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Retry the exact official pricing/pointer routes through a materially different authorized route; obtain bounded pointer/MRF bytes and independently verify the Emerald Coast Behavioral Hospital identity, Florida state, declared date/version and CMS-template usability."
-    },
-    {
       "ccn": "104076",
       "hospital_name": "UNIVERSITY BEHAVIORAL CENTER",
       "state": "FL",
@@ -3920,48 +3505,6 @@
       "next_action": "Retry the exact official pricing/pointer routes through a materially different authorized route; obtain bounded pointer/MRF bytes and independently verify the Suncoast Behavioral Health Center identity, Florida state, declared date/version and CMS-template usability."
     },
     {
-      "ccn": "104080",
-      "hospital_name": "CORAL SHORES BEHAVIORAL HEALTH",
-      "state": "FL",
-      "official_domain": "coralshoresbehavioral.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "not-assessed-discovery-pointer-not-retrieved",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-19T02:00:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Retry the exact official pricing/pointer routes through a materially different authorized route; obtain bounded pointer/MRF bytes and independently verify the Coral Shores Behavioral Health identity, Florida state, declared date/version and CMS-template usability."
-    },
-    {
-      "ccn": "104082",
-      "hospital_name": "PALM POINT BEHAVIORAL HEALTH",
-      "state": "FL",
-      "official_domain": "palmpointbehavioral.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "not-assessed-discovery-search-completed-no-official",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-19T02:20:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Retry the exact official pricing/pointer routes through a materially different authorized route; obtain bounded pointer/MRF bytes and independently verify the Palm Point Behavioral Health identity, Florida state, declared date/version and CMS-template usability."
-    },
-    {
       "ccn": "110002",
       "hospital_name": "UPSON REGIONAL MEDICAL CENTER",
       "state": "GA",
@@ -3981,27 +3524,6 @@
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
       "next_action": "Find a current first-party pricing-page or repaired root-pointer link to this exact file, then recheck the linkage and full-file validity. Do not promote a nine-month-old indexed pointer or a third-party file link to current pointer evidence."
-    },
-    {
-      "ccn": "110113",
-      "hospital_name": "BURKE MEDICAL CENTER",
-      "state": "GA",
-      "official_domain": "burkehealth.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "not-assessed-site-observed",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-19T03:40:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Retry the exact pointer and official pricing routes through a materially different authorized route; verify whether the current Burke Health publisher exposes a facility-specific CMS CSV/JSON and independently verify Georgia identity, date/version and usability."
     },
     {
       "ccn": "110194",
@@ -4144,32 +3666,11 @@
       "reviewed_sources": [
         "manual-access"
       ],
-      "latest_review_at": "2026-09-19T10:05:00Z",
+      "latest_review_at": "2026-10-01T23:06:02.570Z",
       "candidate_file_recorded": false,
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
-      "next_action": "Retry the exact official pricing and root-pointer routes through a materially different authorized route; independently recover a publisher-hosted current CMS CSV/JSON and verify facility identity, address, Georgia state, date/version and bounded usability before promotion."
-    },
-    {
-      "ccn": "114032",
-      "hospital_name": "SO CRESCENT BEH HLTH SYS - ANCHOR HOSPITAL CAMPUS",
-      "state": "GA",
-      "official_domain": "anchorhospital.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "not-assessed-discovery-pointer-not-retrieved",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-19T11:05:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Retry the exact official pricing and root-pointer routes through a materially different authorized route; independently recover a publisher-hosted current CMS CSV/JSON and verify facility identity, address, Georgia state, date/version and bounded usability before promotion."
+      "next_action": "Retain the first-party standard-services-page-to-UHS-CDN-file chain (pointer_sha256 here is the full-file hash; no cms-hpt.txt exists); recheck on next publisher change."
     },
     {
       "ccn": "134002",
@@ -4249,11 +3750,11 @@
       "reviewed_sources": [
         "manual-access"
       ],
-      "latest_review_at": "2026-09-23T03:30:00Z",
+      "latest_review_at": "2026-10-01T23:00:03.777Z",
       "candidate_file_recorded": false,
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
-      "next_action": "Retry the interactive pricing portal with browser interaction and inspect any generated download/network target; verify facility identity and CMS metadata before promotion."
+      "next_action": "Retain the first-party-linked PARA portal download chain (POST Reports.aspx?dbName=dbSSHCHICAGOIL&type=CDMWithoutLabel); recheck on next publisher change. www.southshorehospital.com/cms-hpt.txt remains absent, so no CMS pointer linkage is claimed."
     },
     {
       "ccn": "140213",
@@ -4417,11 +3918,11 @@
       "reviewed_sources": [
         "manual-access"
       ],
-      "latest_review_at": "2026-09-19T12:45:00Z",
+      "latest_review_at": "2026-10-01T23:15:20.380Z",
       "candidate_file_recorded": false,
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
-      "next_action": "Retry the official pricing and pointer routes through a materially different authorized route; recover a publisher-hosted current CMS CSV/JSON and verify identity, Illinois state, date/version and bounded rate usability before promotion."
+      "next_action": "Retain the first-party standard-services-page-to-UHS-CDN-file chain (pointer_sha256 here is the full-file hash; no cms-hpt.txt exists); recheck on next publisher change. The Report Card closed-flag adjudication remains a separate open question."
     },
     {
       "ccn": "144037",
@@ -4464,27 +3965,6 @@
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
       "next_action": "Locate a current facility-specific IDHS or hospital pricing route and root pointer through an alternate state directory/client; verify facility identity and MRF metadata before promotion."
-    },
-    {
-      "ccn": "154047",
-      "hospital_name": "MICHIANA BEHAVIORAL HEALTH CENTER",
-      "state": "IN",
-      "official_domain": "michianabehavioralhealthcenter.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-not-retrieved",
-      "standing_finding": "not-assessed-nationwide-pointer-not-retrieved",
-      "prior_finding": "not-assessed-pointer-review",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-retrieval",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-19T14:10:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Retry the official pricing and pointer routes through a materially different authorized route; recover a publisher-hosted current CMS CSV/JSON and verify identity, Indiana state, date/version and bounded rate usability before promotion."
     },
     {
       "ccn": "154051",
@@ -4595,7 +4075,7 @@
       "ccn": "164007",
       "hospital_name": "CLIVE BEHAVIORAL HEALTH",
       "state": "IA",
-      "official_domain": "uhs.com",
+      "official_domain": "clivebehavioral.com",
       "publisher_domain_lead": "",
       "current_disposition": "pointer-not-retrieved",
       "standing_finding": "not-assessed-nationwide-pointer-not-retrieved",
@@ -4606,11 +4086,11 @@
       "reviewed_sources": [
         "manual-access"
       ],
-      "latest_review_at": "2026-09-23T12:10:00Z",
+      "latest_review_at": "2026-10-01T23:22:14.035Z",
       "candidate_file_recorded": false,
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
-      "next_action": "Locate the current Clive Behavioral Health facility domain or pricing route through UHS locations; recover a facility-specific pointer/MRF and verify identity before promotion."
+      "next_action": "Retry https://clivebehavioral.com/cms-hpt.txt and the Standard Services page through a route that passes the Cloudflare challenge or a publisher-enabled copy; verify declared name (1450 NW 114th Street, Clive, IA 50325), date, CMS version and usability before any promotion."
     },
     {
       "ccn": "170781",
@@ -4669,11 +4149,11 @@
       "reviewed_sources": [
         "manual-access"
       ],
-      "latest_review_at": "2026-09-21T13:30:00Z",
+      "latest_review_at": "2026-10-01T19:51:03.262Z",
       "candidate_file_recorded": false,
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
-      "next_action": "Obtain a current replacement CSV/JSON with CMS 3.0.0 metadata through the official site or authorized publisher route; retain this exact historical file hash and identity evidence."
+      "next_action": "Retain the first-party SlicedHealth portal download chain; recheck on the next publisher file change. The generated download has no stable direct file URL (POST to minced-pricer-api.slicedhealth.com), and greeley.health cms-hpt.txt remains unpublished (404 re-probed 2026-10-01), so no CMS pointer linkage is claimed."
     },
     {
       "ccn": "174026",
@@ -4844,27 +4324,6 @@
       "next_action": "Recover the same file through the official site or a publisher-provided route, then independently confirm pointer linkage and rate usability before promotion."
     },
     {
-      "ccn": "184014",
-      "hospital_name": "CUMBERLAND HALL HOSPITAL",
-      "state": "KY",
-      "official_domain": "cumberlandhallhospital.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "not-assessed-discovery-pointer-not-retrieved",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-19T01:20:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Recover a publisher-confirmed current CMS CSV/JSON through a permitted route; verify identity, metadata and usability before promotion."
-    },
-    {
       "ccn": "184015",
       "hospital_name": "CENTRAL STATE HOSPITAL",
       "state": "KY",
@@ -4907,27 +4366,6 @@
       "next_action": "Retry the exact root pointer through a materially different authorized route; verify pointer-declared MRF URL, bounded file bytes, facility identity, Kentucky state, declared date/version and usability before promotion."
     },
     {
-      "ccn": "190034",
-      "hospital_name": "ABBEVILLE GENERAL HOSPITAL",
-      "state": "LA",
-      "official_domain": "carepricer.nthrive.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-not-retrieved",
-      "standing_finding": "not-assessed-nationwide-pointer-not-retrieved",
-      "prior_finding": "not-assessed-site-unreachable",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-retrieval",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-21T21:00:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Inspect the current site's root cms-hpt.txt and any download-capable page source or authorized publisher route, then recover and verify a facility-specific CSV/JSON before promotion."
-    },
-    {
       "ccn": "190111",
       "hospital_name": "WILLIS KNIGHTON MEDICAL CENTER",
       "state": "LA",
@@ -4947,48 +4385,6 @@
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
       "next_action": "Use an authorized interactive browser/download route to select Willis Knighton Medical Center in the MRF portal, then verify the exact CSV/JSON before promotion."
-    },
-    {
-      "ccn": "190116",
-      "hospital_name": "MOREHOUSE GENERAL HOSPITAL",
-      "state": "LA",
-      "official_domain": "mghospital.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "not-assessed-discovery-pointer-not-retrieved",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-21T23:00:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Use an authorized interactive browser/download route to recover and inspect the portal's Excel price list before promotion."
-    },
-    {
-      "ccn": "191304",
-      "hospital_name": "NORTH CADDO MEDICAL CENTER",
-      "state": "LA",
-      "official_domain": "ncmcla.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "no-cms-hpt-txt-published",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-22T00:00:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Retry the exact facility portal through an authorized interactive browser/download route, then verify the returned JSON/CSV before promotion."
     },
     {
       "ccn": "191308",
@@ -5031,27 +4427,6 @@
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
       "next_action": "Recover the exact page-linked CSV through a permitted browser/download route, then verify complete bytes, facility identity/address/state, declared date/version and rate usability; separately retry the root pointer."
-    },
-    {
-      "ccn": "191325",
-      "hospital_name": "LADY OF THE SEA GENERAL HOSPITAL",
-      "state": "LA",
-      "official_domain": "losgh.org",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-not-retrieved",
-      "standing_finding": "not-assessed-nationwide-pointer-not-retrieved",
-      "prior_finding": "not-assessed-site-observed",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-retrieval",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-22T01:00:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Retrieve the exact first-party CSV through a permitted route, then verify bytes, facility/address/Louisiana metadata, date, version and usability before promotion."
     },
     {
       "ccn": "192010",
@@ -5136,27 +4511,6 @@
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
       "next_action": "Use an authorized interactive browser or publisher-enabled route to retrieve riveroakshospital.com/cms-hpt.txt and its exact MRF target; verify bounded bytes, facility name, 1525 River Oaks Road West address, Louisiana state, date and CMS version before promotion."
-    },
-    {
-      "ccn": "194089",
-      "hospital_name": "GENESIS BEHAVIORAL HOSPITAL",
-      "state": "LA",
-      "official_domain": "genesisbh.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-not-retrieved",
-      "standing_finding": "not-assessed-nationwide-pointer-not-retrieved",
-      "prior_finding": "not-assessed-discovery-pointer-not-retrieved",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-retrieval",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-21T20:00:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Retrieve the Breaux Bridge CSV through a permitted download-capable route, then verify bytes, declared facility/address/Louisiana state, update date, CMS version and parsed usability before promotion."
     },
     {
       "ccn": "194120",
@@ -5495,70 +4849,6 @@
       "next_action": "Retrieve the exact Behavioral Health Pavilion CSV and UMMS cms-hpt.txt through an authorized route; verify facility name, 660 McHenry Road address, Maryland state, date, CMS version and usability. Keep Bel Air and Aberdeen acute-care files separate."
     },
     {
-      "ccn": "224013",
-      "hospital_name": "ARBOUR HOSPITAL",
-      "state": "MA",
-      "official_domain": "arbourhospital.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "not-assessed-discovery-candidate-identity-unverified",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access",
-        "official-page-file"
-      ],
-      "latest_review_at": "2026-09-30T02:56:49Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Obtain first-party Arbour/UHS confirmation or accessible official pricing-page/pointer bytes linking https://uhsfilecdn.eskycity.net/bh/232238962_arbour_standardcharges.csv; verify that license 1314 is the relevant Massachusetts license. Keep this candidate out of verified-current-MRF status until publisher linkage/currentness is established."
-    },
-    {
-      "ccn": "224018",
-      "hospital_name": "ARBOUR HUMAN RESOURCE INSTITUTE",
-      "state": "MA",
-      "official_domain": "www.arbourhealth.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-not-retrieved",
-      "standing_finding": "not-assessed-nationwide-pointer-not-retrieved",
-      "prior_finding": "not-assessed-discovery-search-completed-no-official",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-retrieval",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-23T00:00:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Retry arbourhealth.com after the access challenge clears or obtain a publisher-provided current pointer/MRF URL; independently validate 227 Babcock Street, Brookline, MA and CMS metadata before promotion."
-    },
-    {
-      "ccn": "224021",
-      "hospital_name": "ARBOUR-FULLER HOSPITAL",
-      "state": "MA",
-      "official_domain": "fullerhospital.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "not-assessed-discovery-pointer-not-retrieved",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-20T00:45:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Retry the exact root pointer only after a materially different authorized route or publisher change; then verify pointer text, facility identity, target bytes, Massachusetts state, date, version and usability."
-    },
-    {
       "ccn": "230030",
       "hospital_name": "MYMICHIGAN MEDICAL CENTER ALMA",
       "state": "MI",
@@ -5750,27 +5040,6 @@
       "next_action": "Inspect the official Michigan pricing route and recheck permitted pointer locations; do not infer a current MRF from roster identity alone."
     },
     {
-      "ccn": "234030",
-      "hospital_name": "FOREST VIEW PSYCHIATRIC HOSPITAL",
-      "state": "MI",
-      "official_domain": "www.forestviewhospital.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-not-retrieved",
-      "standing_finding": "not-assessed-nationwide-pointer-not-retrieved",
-      "prior_finding": "not-assessed-discovery-search-completed-no-official",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-retrieval",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-23T00:00:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Retry the identified official domain after the Cloudflare challenge clears or obtain a publisher-provided current CMS pointer/MRF URL; validate facility identity and metadata before promotion."
-    },
-    {
       "ccn": "234035",
       "hospital_name": "WALTER P REUTHER PSYCHIATRIC HOSPITAL",
       "state": "MI",
@@ -5832,27 +5101,6 @@
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
       "next_action": "Retry the exact root pointer and facility pricing route through an authorized content-bearing client, then verify MRF identity and metadata before promotion."
-    },
-    {
-      "ccn": "234045",
-      "hospital_name": "METROPOLITAN BEHAVIORAL HEALTH",
-      "state": "MI",
-      "official_domain": "metropolitanbh.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-not-retrieved",
-      "standing_finding": "not-assessed-nationwide-pointer-not-retrieved",
-      "prior_finding": "not-assessed-discovery-search-completed-no-official",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-retrieval",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-23T00:00:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Retry the identified official domain after the Cloudflare challenge clears or obtain a publisher-provided current CMS pointer/MRF URL; validate facility identity and metadata before promotion."
     },
     {
       "ccn": "244002",
@@ -6037,11 +5285,11 @@
       "reviewed_sources": [
         "manual-access"
       ],
-      "latest_review_at": "2026-09-22T19:30:00Z",
+      "latest_review_at": "2026-10-01T23:26:44.065Z",
       "candidate_file_recorded": false,
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
-      "next_action": "Recover a current facility-specific CMS pointer and CSV/JSON; do not treat the redirect shell as a pointer."
+      "next_action": "Search phghouston.com exhaustively (Wix site, sitemap, filesusr.com document host) for a Progressive Health of Houston-specific CMS-template MRF or pricing page; as a Rural Emergency Hospital it is not categorically exempt from the standard-charges file requirement. Do not infer compliance or file absence from the root-pointer 400 alone."
     },
     {
       "ccn": "250057",
@@ -6063,27 +5311,6 @@
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
       "next_action": "Use an authorized download-capable route for the exact Brookhaven CSV, then verify bounded bytes, declared facility/address/state/date/version and usability before promotion. Do not infer file absence or compliance from the client 403."
-    },
-    {
-      "ccn": "250151",
-      "hospital_name": "ALLIANCE HEALTH CENTER",
-      "state": "MS",
-      "official_domain": "alliancehealthcenter.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "not-assessed-discovery-search-completed-no-official",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-19T22:33:30Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Recover the publisher's current root pointer and MRF through an authorized content-bearing route, then verify MRF identity and metadata before promotion."
     },
     {
       "ccn": "250780",
@@ -6191,27 +5418,6 @@
       "next_action": "Recover a current CMS 3.0.0 CSV or JSON and verify exact Choctaw Regional identity, Mississippi metadata, declared date, version and usability."
     },
     {
-      "ccn": "254005",
-      "hospital_name": "PARKWOOD BEHAVIORAL HEALTH SYSTEM",
-      "state": "MS",
-      "official_domain": "parkwoodbhs.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "not-assessed-discovery-candidate-identity-unverified",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-20T22:35:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Use an authorized browser or publisher-provided route to inspect Parkwood's current pricing page and root pointer; do not infer MRF absence or noncompliance from the challenge."
-    },
-    {
       "ccn": "254007",
       "hospital_name": "BRENTWOOD BEHAVIORAL HEALTHCARE OF MS",
       "state": "MS",
@@ -6275,27 +5481,6 @@
       "next_action": "Locate a facility-specific DMH/state pricing route or publisher-provided current CSV/JSON; do not infer exemption from state operation."
     },
     {
-      "ccn": "254011",
-      "hospital_name": "GULFPORT BEHAVIORAL HEALTH  SYSTEM",
-      "state": "MS",
-      "official_domain": "gulfportbehavioral.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "not-assessed-discovery-candidate-identity-unverified",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-20T23:05:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Use an authorized browser or publisher-provided route to inspect Gulfport's current pricing page and root pointer; do not infer MRF absence or noncompliance from the challenge."
-    },
-    {
       "ccn": "261308",
       "hospital_name": "WASHINGTON COUNTY MEMORIAL HOSPITAL",
       "state": "MO",
@@ -6341,7 +5526,7 @@
       "ccn": "264034",
       "hospital_name": "SOUTHEAST BEHAVIORAL HOSPITAL",
       "state": "MO",
-      "official_domain": "uhs.com",
+      "official_domain": "southeastbehavioral.com",
       "publisher_domain_lead": "",
       "current_disposition": "pointer-not-retrieved",
       "standing_finding": "not-assessed-nationwide-pointer-not-retrieved",
@@ -6352,11 +5537,11 @@
       "reviewed_sources": [
         "manual-access"
       ],
-      "latest_review_at": "2026-09-22T23:30:00Z",
+      "latest_review_at": "2026-10-01T23:22:14.035Z",
       "candidate_file_recorded": false,
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
-      "next_action": "Retry through an authorized browser/download route or obtain a publisher-provided current CSV/JSON, then verify exact identity and metadata."
+      "next_action": "Retry https://southeastbehavioral.com/cms-hpt.txt and the Standard Services page through a route that passes the Cloudflare challenge or a publisher-enabled copy; verify exact identity (Cape Girardeau, MO), date, CMS version and usability before any promotion."
     },
     {
       "ccn": "271321",
@@ -6464,27 +5649,6 @@
       "next_action": "Search the DHHS billing/pricing subsections and retry the exact facility route through an authorized browser or publisher-enabled copy; require a facility-specific pointer and usable CMS CSV/JSON bytes before promotion."
     },
     {
-      "ccn": "290001",
-      "hospital_name": "RENOWN REGIONAL MEDICAL CENTER",
-      "state": "NV",
-      "official_domain": "renown.org",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "pointer-blocked-to-automation",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-19T13:00:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Use an authorized download-capable route for the exact Regional CSV, then verify bounded bytes, declared facility/address/state/date/version and usability before promotion. Do not infer file absence or compliance from the client block."
-    },
-    {
       "ccn": "290042",
       "hospital_name": "HARMON HOSPITAL",
       "state": "NV",
@@ -6509,7 +5673,7 @@
       "ccn": "290062",
       "hospital_name": "WEST HENDERSON HOSPITAL",
       "state": "NV",
-      "official_domain": "uhs.com",
+      "official_domain": "westhendersonhospital.com",
       "publisher_domain_lead": "",
       "current_disposition": "pointer-not-retrieved",
       "standing_finding": "not-assessed-nationwide-pointer-not-retrieved",
@@ -6520,11 +5684,11 @@
       "reviewed_sources": [
         "manual-access"
       ],
-      "latest_review_at": "2026-09-21T17:30:00Z",
+      "latest_review_at": "2026-10-01T23:22:14.035Z",
       "candidate_file_recorded": false,
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
-      "next_action": "Retry the exact West Henderson pointer and pricing page through an authorized route after a material access change, or obtain a publisher-enabled copy; require exact CCN 290062 identity, Henderson Nevada address/state and usable CMS CSV/JSON bytes before promotion."
+      "next_action": "Retry https://westhendersonhospital.com/cms-hpt.txt and the pricing-guide page through a route that passes the Cloudflare restriction or a publisher-enabled copy; require exact CCN 290062 identity (Henderson, NV), date, CMS version and usable CMS CSV/JSON bytes before promotion."
     },
     {
       "ccn": "291311",
@@ -6761,7 +5925,7 @@
       "ccn": "314024",
       "hospital_name": "HUDSON COUNTY MEADOWVIEW PSYCHIATRIC H",
       "state": "NJ",
-      "official_domain": "hudsoncountynj.org",
+      "official_domain": "www.hcnj.us",
       "publisher_domain_lead": "",
       "current_disposition": "pointer-not-retrieved",
       "standing_finding": "not-assessed-nationwide-pointer-not-retrieved",
@@ -6772,11 +5936,11 @@
       "reviewed_sources": [
         "manual-access"
       ],
-      "latest_review_at": "2026-09-21T14:40:00Z",
+      "latest_review_at": "2026-10-01T20:03:27.831Z",
       "candidate_file_recorded": false,
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
-      "next_action": "Reconcile current CMS ownership/scope and recover a Meadowview-specific CMS CSV/JSON or root pointer through a permitted route before assigning any exemption or compliance label."
+      "next_action": "Search hcnj.us (site sections, sitemap, Hudson County budget/resolution documents) for a Meadowview-specific CMS-template MRF or pricing page; reconcile current CMS ownership/scope before assigning any exemption or compliance label. Do not infer compliance or file absence from the root-pointer 404 alone."
     },
     {
       "ccn": "324010",
@@ -6798,28 +5962,6 @@
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
       "next_action": "Retry the exact pricing route and root pointer only after a material publisher/access change; require facility-specific MRF bytes and metadata before promotion."
-    },
-    {
-      "ccn": "331324",
-      "hospital_name": "CARTHAGE AREA HOSPITAL, INC",
-      "state": "NY",
-      "official_domain": "claxtonhepburn.org",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "not-assessed-pointer-review",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access",
-        "reviewed-header"
-      ],
-      "latest_review_at": "2026-09-25T14:30:00Z",
-      "candidate_file_recorded": true,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Keep the current Carthage MRF assigned only to the Carthage campus/CCN 331318. Obtain an Ogdensburg-specific pointer and MRF or authoritative facility transition evidence for CCN 331324; do not infer coverage from the shared hospital name."
     },
     {
       "ccn": "334009",
@@ -7221,27 +6363,6 @@
       "next_action": "Locate the current Ohio state-operated facility pricing route or a repaired publisher pointer; then verify a facility-specific CMS CSV/JSON and declared address, state, date, version, and usability before promotion."
     },
     {
-      "ccn": "364036",
-      "hospital_name": "ARROWHEAD BEHAVIORAL HEALTH",
-      "state": "OH",
-      "official_domain": "arrowheadbehavioral.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-not-retrieved",
-      "standing_finding": "not-assessed-nationwide-pointer-not-retrieved",
-      "prior_finding": "not-assessed-discovery-pointer-not-retrieved",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-retrieval",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-21T21:31:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Retry the facility domain and pricing route with an interactive browser/download fallback or obtain a publisher-provided current CSV/JSON MRF; do not infer file contents or compliance from the Cloudflare challenge."
-    },
-    {
       "ccn": "370026",
       "hospital_name": "ST MARY'S REGIONAL MEDICAL CENTER",
       "state": "OK",
@@ -7256,11 +6377,11 @@
       "reviewed_sources": [
         "manual-access"
       ],
-      "latest_review_at": "2026-09-21T20:10:00Z",
+      "latest_review_at": "2026-10-01T23:10:13.839Z",
       "candidate_file_recorded": false,
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
-      "next_action": "Use an authorized browser download/click route or obtain the exact first-party MRF URL from the hospital; verify bytes, facility identity, Oklahoma state, date/version and usability before promotion."
+      "next_action": "Retain the first-party pricing-page-to-UHS-CDN-file chain (pointer_sha256 here is the full-file hash; no cms-hpt.txt exists); recheck on next publisher change."
     },
     {
       "ccn": "370172",
@@ -7345,27 +6466,6 @@
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
       "next_action": "Maintain the time-qualified current CMS enrollment and operator-service finding; seek a publisher-provided current pricing-page URL, corrected root cms-hpt.txt, or authorized current CSV/JSON. Then verify exact CCN/campus scope, address/state, metadata and usable bytes. Do not infer closure, file absence or compliance from the 404, and do not assign a sibling Mercy MRF."
-    },
-    {
-      "ccn": "371321",
-      "hospital_name": "HOLDENVILLE GENERAL HOSPITAL",
-      "state": "OK",
-      "official_domain": "holdenvillehospital.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-not-retrieved",
-      "standing_finding": "not-assessed-nationwide-pointer-not-retrieved",
-      "prior_finding": "not-assessed-discovery-pointer-not-retrieved",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-retrieval",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-21T19:30:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Obtain a current facility-specific CMS CSV/JSON through a permitted publisher route, then verify declared name, Oklahoma address/state, date, version and usability."
     },
     {
       "ccn": "374000",
@@ -7599,27 +6699,6 @@
       "next_action": "Search state/publisher resources for a facility-specific current CSV/JSON MRF."
     },
     {
-      "ccn": "394008",
-      "hospital_name": "FRIENDS HOSPITAL",
-      "state": "PA",
-      "official_domain": "friendshospital.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "not-assessed-discovery-candidate-identity-unverified",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-21T23:30:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Retry the exact first-party pointer through a permitted publisher route and verify declared name, Philadelphia address/state, date, version and usability before changing the tracker disposition."
-    },
-    {
       "ccn": "394012",
       "hospital_name": "CLARKS SUMMIT STATE HOSPITAL",
       "state": "PA",
@@ -7704,27 +6783,6 @@
       "next_action": "Search state/publisher resources for a facility-specific current CSV/JSON MRF."
     },
     {
-      "ccn": "394027",
-      "hospital_name": "FAIRMOUNT BEHAVIORAL HEALTH SYSTEM",
-      "state": "PA",
-      "official_domain": "fairmountbhs.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "pointer-blocked-to-automation",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-22T00:00:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Retry the exact first-party pointer through a permitted publisher route and verify declared name, Philadelphia address/state, date, version and usability before changing the tracker disposition."
-    },
-    {
       "ccn": "394033",
       "hospital_name": "MONTGOMERY COUNTY EMERGENCY SERVICE",
       "state": "PA",
@@ -7802,11 +6860,11 @@
       "reviewed_sources": [
         "manual-access"
       ],
-      "latest_review_at": "2026-09-22T06:10:00Z",
+      "latest_review_at": "2026-10-01T20:19:10.000Z",
       "candidate_file_recorded": false,
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
-      "next_action": "Search additional first-party billing pages and Puerto Rico publisher/state resources for a facility-specific current CSV/JSON/ZIP MRF."
+      "next_action": "Find the successor/official Hospital del Maestro website or operator contact route (hospital is in Chapter 11 and seeking an operator); once a genuine first-party domain exists, re-run domain search and pointer/file checks from it. Do not reuse hospitalelmaestro.org results."
     },
     {
       "ccn": "400005",
@@ -8187,31 +7245,10 @@
       "next_action": "Use a permitted interactive browser or publisher-provided copy to inspect the exact Lakeside pricing route and retrieve a current facility-specific CMS CSV/JSON/ZIP; verify name, address, Tennessee state, date, version and usability before promotion."
     },
     {
-      "ccn": "450092",
-      "hospital_name": "FORT DUNCAN MEDICAL CENTER",
-      "state": "TX",
-      "official_domain": "fortduncanmedicalcenter.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "not-assessed-discovery-pointer-not-retrieved",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-22T06:30:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Retry the exact first-party pointer through a permitted publisher route, then verify declared name, Texas address/state, date, version and usability before changing the tracker disposition."
-    },
-    {
       "ccn": "450119",
       "hospital_name": "SOUTH TEXAS HEALTH SYSTEM",
       "state": "TX",
-      "official_domain": "www.southtexashealthsystem.com",
+      "official_domain": "southtexashealthsystem.com",
       "publisher_domain_lead": "",
       "current_disposition": "pointer-not-retrieved",
       "standing_finding": "not-assessed-nationwide-pointer-not-retrieved",
@@ -8222,53 +7259,11 @@
       "reviewed_sources": [
         "manual-access"
       ],
-      "latest_review_at": "2026-09-22T06:00:00Z",
+      "latest_review_at": "2026-10-01T23:03:40.428Z",
       "candidate_file_recorded": false,
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
-      "next_action": "Retry the exact official pricing route and root pointer through an authorized alternate client, then independently verify any recovered file's facility identity, address/state, date, version and complete-file usability."
-    },
-    {
-      "ccn": "450144",
-      "hospital_name": "PERMIAN REGIONAL MEDICAL CENTER ANDREWS COUNTY HO",
-      "state": "TX",
-      "official_domain": "www.permianregional.com",
-      "publisher_domain_lead": "www.permianregional.com",
-      "current_disposition": "pointer-not-retrieved",
-      "standing_finding": "not-assessed-nationwide-pointer-not-retrieved",
-      "prior_finding": "not-assessed-discovery-search-completed-no-official",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-retrieval",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-21T00:50:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Use a browser/download-capable HPI route or publisher-provided copy to recover the exact current Permian CSV/JSON, then verify facility/address/state/date/version and usability before promotion."
-    },
-    {
-      "ccn": "450235",
-      "hospital_name": "MEMORIAL HOSPITAL",
-      "state": "TX",
-      "official_domain": "texashealthhuguley.org",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "pointer-blocked-to-automation",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-22T07:30:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Resolve the current Gonzales Memorial Hospital operator/domain and obtain a facility-specific CMS CSV/JSON or corrected pointer; do not assign the Huguley site or estimator to CCN 450235."
+      "next_action": "Retain the first-party pricing-page-to-UHS-CDN-file chain (pointer_sha256 here is the full-file hash; the page has no cms-hpt.txt); recheck on next publisher change."
     },
     {
       "ccn": "450643",
@@ -8292,48 +7287,6 @@
       "next_action": "Retry the exact official pricing route and root pointer through an authorized alternate client, then independently verify any recovered file's facility identity, address/state, date, version and complete-file usability."
     },
     {
-      "ccn": "450825",
-      "hospital_name": "CORNERSTONE REGIONAL HOSPITAL",
-      "state": "TX",
-      "official_domain": "cornerstoneregional.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "not-assessed-domain-unknown",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-23T00:00:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Use a permitted interactive browser or publisher-provided copy to inspect the Cornerstone pricing route and retrieve a current facility-specific CMS CSV/JSON/ZIP; verify name, address, Texas state, date, version and usability before promotion."
-    },
-    {
-      "ccn": "451358",
-      "hospital_name": "MEMORIAL HOSPITAL",
-      "state": "TX",
-      "official_domain": "texashealthhuguley.org",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "pointer-blocked-to-automation",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-22T10:00:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Resolve the current Seminole Memorial Hospital operator/domain and obtain a facility-specific CMS CSV/JSON or corrected pointer; do not assign the Huguley site or files to CCN 451358."
-    },
-    {
       "ccn": "451370",
       "hospital_name": "TMC- BONHAM HOSPITAL",
       "state": "TX",
@@ -8353,27 +7306,6 @@
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
       "next_action": "Retry the exact first-party pointer through a permitted publisher route, then verify declared name, Bonham address/state, date, version and usability before changing the tracker disposition."
-    },
-    {
-      "ccn": "451386",
-      "hospital_name": "MEMORIAL HOSPITAL",
-      "state": "TX",
-      "official_domain": "texashealthhuguley.org",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "pointer-blocked-to-automation",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-22T11:00:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Resolve the current Dumas Memorial Hospital operator/domain and obtain a facility-specific CMS CSV/JSON or corrected pointer; do not assign the Huguley site or files to CCN 451386."
     },
     {
       "ccn": "454000",
@@ -8484,27 +7416,6 @@
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
       "next_action": "Search Texas HHSC billing and state-hospital resources for a facility-specific pricing pointer or MRF."
-    },
-    {
-      "ccn": "454012",
-      "hospital_name": "MILLWOOD HOSPITAL",
-      "state": "TX",
-      "official_domain": "millwoodhospital.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "no-cms-hpt-txt-published",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-23T00:00:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Retry through a materially different permitted browser/download route and verify bounded bytes, Millwood identity, Texas metadata, declared date/version and parsed usability before promotion."
     },
     {
       "ccn": "454026",
@@ -8741,48 +7652,6 @@
       "next_action": "Retry through a materially different permitted browser/download route and verify bounded bytes, Cypress Creek identity, Texas metadata, declared date/version and parsed usability before promotion."
     },
     {
-      "ccn": "454109",
-      "hospital_name": "EL PASO BEHAVIORAL HEALTH SYSTEM",
-      "state": "TX",
-      "official_domain": "elpasobh.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "no-cms-hpt-txt-published",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-23T00:00:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Retry through a materially different permitted browser/download route and verify bounded bytes, El Paso Behavioral Health identity, Texas metadata, declared date/version and parsed usability before promotion."
-    },
-    {
-      "ccn": "454121",
-      "hospital_name": "AUSTIN OAKS HOSPITAL",
-      "state": "TX",
-      "official_domain": "austinoakshospital.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "not-assessed-discovery-pointer-not-retrieved",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-22T13:30:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Retry the exact first-party pointer through a permitted publisher route, then verify declared name, Austin address/state, date, version and usability before changing the tracker disposition."
-    },
-    {
       "ccn": "454152",
       "hospital_name": "CANYON CREEK BEHAVIORAL HEALTH",
       "state": "TX",
@@ -8802,27 +7671,6 @@
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
       "next_action": "Retry through a materially different permitted browser/download route and verify bounded bytes, Canyon Creek identity, Texas metadata, declared date/version and parsed usability before promotion."
-    },
-    {
-      "ccn": "464014",
-      "hospital_name": "ASPEN GROVE BEHAVIORAL HOSPITAL",
-      "state": "UT",
-      "official_domain": "aspengrovehospital.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-23T00:00:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Retry through a materially different permitted browser/download route or obtain a publisher-issued current CMS CSV/JSON/ZIP, then verify exact identity, Utah metadata, declared date/version and parsed usability."
     },
     {
       "ccn": "474004",
@@ -8888,27 +7736,6 @@
       "next_action": "Retry through a materially different permitted browser/download route or obtain a publisher-issued current CMS CSV/JSON/ZIP, then verify exact identity, Virginia metadata, declared date/version and parsed usability."
     },
     {
-      "ccn": "494022",
-      "hospital_name": "POPLAR SPRINGS HOSPITAL",
-      "state": "VA",
-      "official_domain": " so identity/address remains unresolved",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-not-retrieved",
-      "standing_finding": "not-assessed-nationwide-pointer-not-retrieved",
-      "prior_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-retrieval",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-28T04:23:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Obtain the exact current CMS cms-hpt.txt pointer and declared MRF from UHS/Poplar Springs, then verify the pointer entry, exact CCN/NPI and 350 Poplar Drive identity, Virginia metadata, declared date/version and usable rows. Do not infer current MRF coverage from address evidence."
-    },
-    {
       "ccn": "494025",
       "hospital_name": "VIRGINIA BEACH PSYCHIATRIC CENTER",
       "state": "VA",
@@ -8949,27 +7776,6 @@
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
       "next_action": "Obtain a current CMS-format CSV/JSON/ZIP or publisher-confirmed route, then verify complete bytes, Washington metadata, declared date/version and usable rate fields before promotion."
-    },
-    {
-      "ccn": "504002",
-      "hospital_name": "BHC FAIRFAX HOSPITAL",
-      "state": "WA",
-      "official_domain": "fairfaxhospital.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-access-denied-to-client",
-      "standing_finding": "not-assessed-nationwide-pointer-access-denied-to-client",
-      "prior_finding": "pointer-blocked-to-automation",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-access",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-22T15:30:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Retry the exact first-party pointer through a permitted publisher route, then verify declared name, Kirkland address/state, date, version and usability before changing the tracker disposition."
     },
     {
       "ccn": "504014",
@@ -9117,27 +7923,6 @@
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
       "next_action": "Obtain a publisher-provided current CSV/JSON/ZIP or a county/state-confirmed MRF route, then verify exact facility identity, Wisconsin metadata, declared date/version and usable bytes before promotion."
-    },
-    {
-      "ccn": "524043",
-      "hospital_name": "GRANITE HILLS HOSPITAL",
-      "state": "WI",
-      "official_domain": "granitehillshospital.com",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-not-retrieved",
-      "standing_finding": "not-assessed-nationwide-pointer-not-retrieved",
-      "prior_finding": "not-assessed-discovery-search-completed-no-official",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-retrieval",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-23T00:00:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Retry the current official site and UHS/publisher pricing route through a materially different permitted browser/download route or obtain a publisher-issued current CMS CSV/JSON/ZIP with exact West Allis identity and parsed metadata before promotion."
     },
     {
       "ccn": "531317",
@@ -9322,32 +8107,11 @@
       "reviewed_sources": [
         "manual-access"
       ],
-      "latest_review_at": "2026-09-23T00:00:00Z",
+      "latest_review_at": "2026-10-01T17:39:13.026Z",
       "candidate_file_recorded": false,
       "last_browser_file_status": "",
       "last_browser_file_observed_at": "",
-      "next_action": "Capture the Box download bytes or a stable direct file URL through an interactive browser/download-capable client, then validate facility name, address, state, NPI/license, CMS version, last_updated_on and attestation before promotion."
-    },
-    {
-      "ccn": "671301",
-      "hospital_name": "HEMPHILL COUNTY HOSPITAL",
-      "state": "TX",
-      "official_domain": "hchdst.org",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-not-retrieved",
-      "standing_finding": "not-assessed-nationwide-pointer-not-retrieved",
-      "prior_finding": "not-assessed-discovery-request-tool-failure",
-      "investigation_tier": 3,
-      "evidence_gate": "pointer-retrieval",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-23T00:00:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Capture the portal's Standard Charges export endpoint or downloaded bytes using a download-capable browser/client, then validate facility name, address, state, NPI/license, CMS version, last_updated_on and attestation before promotion."
+      "next_action": "Retain the first-party Boomi portal download chain; recheck on the next publisher file change. The generated download has no stable direct file URL, and ansongeneralhospital.com cms-hpt.txt remains challenge-blocked, so no CMS pointer linkage is claimed."
     },
     {
       "ccn": "010061",
@@ -11225,27 +9989,6 @@
       "next_action": "Locate a facility-specific CMS hospital standard-charges CSV/JSON or cms-hpt.txt pointer."
     },
     {
-      "ccn": "391309",
-      "hospital_name": "BARNES-KASSON COUNTY HOSPITAL",
-      "state": "PA",
-      "official_domain": "barnes-kasson.org",
-      "publisher_domain_lead": "",
-      "current_disposition": "pointer-discovery-incomplete",
-      "standing_finding": "not-assessed-nationwide-pointer-discovery-incomplete",
-      "prior_finding": "not-assessed-site-unreachable",
-      "investigation_tier": 4,
-      "evidence_gate": "pointer-discovery",
-      "reviewed_follow_up": true,
-      "reviewed_sources": [
-        "manual-access"
-      ],
-      "latest_review_at": "2026-09-22T02:00:00Z",
-      "candidate_file_recorded": false,
-      "last_browser_file_status": "",
-      "last_browser_file_observed_at": "",
-      "next_action": "Retry the first-party domain interactively or obtain a direct facility-specific CMS CSV/JSON MRF."
-    },
-    {
       "ccn": "394034",
       "hospital_name": "HORSHAM CLINIC",
       "state": "PA",
@@ -12066,9 +10809,9 @@
     }
   ],
   "source_sha256": {
-    "nationwide-reconciliation.json": "713b3eabc15f4698a1251228ef17489f99311770291a2f5fb21ca37efc0b0514",
-    "nationwide-verification.json": "07b0e349762131075eaf277be13efd2548b38fa573db23b863062e9b26808c8f",
-    "reviewed-resolutions.json": "2f6cc5d6378636f545fcd9c3d2339c625a21da4d2b8790cc644cbdd8c3d315e8",
+    "nationwide-reconciliation.json": "1ac1b62f35b484ecfca23ceb5dec378a51a14e44eb0373b44825b1e1c6e6828b",
+    "nationwide-verification.json": "62e4651568f02d7f11c23a1d4fc3cd2e9ce64ed37a2b92f4b03eb234e8d6c63e",
+    "reviewed-resolutions.json": "531361566a18d63743f025339253e06a0c45458a218ff4492b488cf0c726553d",
     "reconciliation-antelope-valley-pointer-page-crosswalk-proof-2026-09-30.json": "60b667e51fa3f42218bbd9b1336315c2f3a498e78266638f745c43d7a5fdda40",
     "reconciliation-antelope-valley-manual-access-observation-2026-09-30.json": "bc92d58e837b452d781ef41da0a473caee2907f34b86452a57fb9b2e9dd0d3d5",
     "reconciliation-independence-health-access-proof.json": "9464ace47f3d94e84a259666ed585685f3357b080efe335a46b6c9f6200340ca",

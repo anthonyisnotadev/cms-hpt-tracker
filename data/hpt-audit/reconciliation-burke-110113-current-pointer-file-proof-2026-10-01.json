@@ -1,0 +1,55 @@
+{
+  "ccn": "110113",
+  "hospital_name": "BURKE MEDICAL CENTER",
+  "observed_at": "2026-10-01T18:12:21.007Z",
+  "route": "Playwright headless Chromium (browser navigation + in-page fetch), materially different from the 2026-09-19 direct-client 403/202 attempts",
+  "what_changed_versus_prior_proof": "Prior proof (reconciliation-burke-medical-rebrand-pointer-recheck-proof.json) recorded the pointer as HTTP 403 (apex) / 202 challenge HTML (www) with no pointer text or MRF exposed. On 2026-10-01 the headless browser retrieved the pointer content (HTTP 200, 254 bytes) declaring a SlicedHealth facility MRF, and the MRF was retrieved in full for the first time.",
+  "pointer": {
+    "url": "https://burkehealth.com/cms-hpt.txt",
+    "http_status": 200,
+    "bytes": 254,
+    "sha256": "d871c58af0f5890c93e5cb97b308fcff05ee636fad8346e4514e86d74ddc6904",
+    "entry_count": 1,
+    "entries_matching_facility": 1,
+    "location_name": "Burke Health",
+    "source_page_url": "https://burkehealth.slicedhealth.io/home",
+    "declared_mrf_url": "https://burkehealth.slicedhealth.io/pricer/85-3939331-1730761065_BurkeHealth_standardcharges.CSV",
+    "transport_note": "Direct client still receives HTTP 202 sgcaptcha challenge HTML (180-179 bytes); the same URL returns pointer text through the browser client. Both observations retained."
+  },
+  "file": {
+    "url": "https://burkehealth.slicedhealth.io/pricer/85-3939331-1730761065_BurkeHealth_standardcharges.CSV",
+    "http_status": 200,
+    "full_file_bytes": 12041907,
+    "full_file_sha256": "2945482acda49232d9d9d856cd77256511e4bb045664cc69bada98f25622136e",
+    "last_modified_header": "Thu, 30 Jul 2026 14:53:28 GMT",
+    "content_type": "text/csv",
+    "retrieval_scope": "complete file downloaded twice (header inspection run and hash run), identical byte counts"
+  },
+  "declared_metadata": {
+    "hospital_name": "Burke Health",
+    "location_name": "Burke Health",
+    "address": "351 S Liberty St, Waynesboro, GEORGIA 30830",
+    "license_number_ga": "017680",
+    "type_2_npi": "1730761065",
+    "last_updated_on": "2026-03-24",
+    "cms_template_version": "3.0.0",
+    "attestation": true,
+    "attester_name": "Al Allred"
+  },
+  "roster_identity": {
+    "name": "BURKE MEDICAL CENTER",
+    "address": "351 SOUTH LIBERTY STREET",
+    "city": "WAYNESBORO",
+    "state": "GA",
+    "zip": "30830"
+  },
+  "domain_search": {
+    "query": "\"Burke Health\" Waynesboro Georgia hospital price transparency standard charges",
+    "recorded_domain": "burkehealth.com",
+    "found_domain": "burkehealth.com",
+    "agrees": true,
+    "basis": "Search results show burkehealth.com as the first-party site (homepage/footer '351 South Liberty Street Waynesboro, GA 30830' with a Price Transparency link; billing page https://burkehealth.com/patients-visitors/billing-and-insurance), matching the recorded official_domain and the 2026-09-19 rebrand proof."
+  },
+  "established": "Official first-party CMS pointer (HTTP 200 via browser route) uniquely links Burke Health; the complete current CMS 3.0.0 CSV was retrieved with matching name (official rebrand of Burke Medical Center per 2026-09-19 About-page proof), exact roster address, GA license, NPI, attestation; full-file SHA-256 computed.",
+  "not_established": "No legal compliance conclusion is inferred; rate-column completeness beyond the parsed header/first rows was not audited."
+}

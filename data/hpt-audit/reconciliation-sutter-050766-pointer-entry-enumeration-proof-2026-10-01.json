@@ -1,0 +1,43 @@
+{
+  "ccn": "050766",
+  "observed_at": "2026-10-01T13:37:35.407Z",
+  "what_was_established": "The official Sutter Health root pointer (https://www.sutterhealth.org/cms-hpt.txt, HTTP 200, SHA-256 76cf5ee42d726154cfadf3b5d2fdd6605eea5599b8751fc24707dba424a6b2ca, 25914 bytes) contains exactly 27 location entries; exactly one entry matches this CCN's facility: 'SUTTER NORTH VALLEY SURGICAL HOSPITAL' pointing to the facility-specific CSV. A bounded 262,144-byte sample of that CSV (HTTP 200, SHA-256 2e014cb79c0eb8d105fb1676f4b0edfe1ea4c5900b2692f0c80aa77dbad7a5cd) declares hospital_name 'Sutter Surgical Hospital - North Valley', address '455 Plumas Blvd, Yuba City, CA 95991', type_2_npi '1336333954', license_number|CA '550000989', last_updated_on '2026-04-01', version '3.0.0', attestation 'true'. No shared-system sibling file is assigned to this CCN.",
+  "what_was_not_established": "The full-file SHA-256 beyond the bounded sample was not established. Domain search this session (query: '\"Sutter Surgical Hospital - North Valley\" Yuba City price transparency standard charges') returned the first-party page https://www.sutterhealth.org/find-location/facility/sutter-surgical-hospital-north-valley-1043246956, agreeing with the recorded official_domain sutterhealth.org.",
+  "tool_observations": {
+    "pointer_url": "https://www.sutterhealth.org/cms-hpt.txt",
+    "pointer_http_status": 200,
+    "pointer_bytes": 25914,
+    "pointer_sha256": "76cf5ee42d726154cfadf3b5d2fdd6605eea5599b8751fc24707dba424a6b2ca",
+    "pointer_entry_count": 27,
+    "pointer_entries_matching_facility": 1,
+    "pointer_location_name": "SUTTER NORTH VALLEY SURGICAL HOSPITAL",
+    "mrf_url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/352182617-1336333954_sutter-north-valley-surgical-hospital_standardcharges.csv",
+    "mrf_http_status": 200,
+    "mrf_sample_bytes": 262144,
+    "mrf_sample_sha256": "2e014cb79c0eb8d105fb1676f4b0edfe1ea4c5900b2692f0c80aa77dbad7a5cd",
+    "declared_hospital_name": "Sutter Surgical Hospital - North Valley",
+    "declared_address": "455 Plumas Blvd, Yuba City, CA 95991",
+    "declared_type_2_npis": "1336333954",
+    "declared_license_number": "550000989",
+    "declared_license_state": "CA",
+    "declared_last_updated": "2026-04-01",
+    "cms_template_version": "3.0.0",
+    "attestation": true
+  },
+  "inferences": [
+    "The single matching pointer entry plus the facility-specific CSV header agreeing on exact name, street address, state, NPI, license number, CMS v3 template, date, and attestation resolves the pointer-facility-match gate for this CCN.",
+    "No other pointer entry names this facility or a near-alias, so no sibling file is attributable to CCN 050766."
+  ],
+  "search_basis": {
+    "query": "\"Sutter Surgical Hospital - North Valley\" Yuba City price transparency standard charges",
+    "found_domain": "https://www.sutterhealth.org/",
+    "recorded_domain": "https://www.sutterhealth.org/",
+    "agrees": true,
+    "corroborating_pages": [
+      "https://www.sutterhealth.org/billing-insurance/costs-and-charges",
+      "https://www.sutterhealth.org/billing-insurance/costs-and-charges/cost-transparency",
+      "https://www.sutterhealth.org/find-location/facility/sutter-surgical-hospital-north-valley-1043246956"
+    ],
+    "third_party_address_corroboration": "HCAI facility page (hcai.ca.gov) lists 455 Plumas Boulevard Yuba City, CA 95991, General Acute Care Hospital, matching the MRF header address."
+  }
+}

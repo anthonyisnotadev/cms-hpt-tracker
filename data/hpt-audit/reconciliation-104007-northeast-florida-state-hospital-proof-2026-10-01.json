@@ -1,0 +1,43 @@
+{
+  "ccn": "104007",
+  "hospital_name": "NORTHEAST FLORIDA STATE HOSPITAL",
+  "state": "FL",
+  "observed_at": "2026-10-01T20:42:41.838Z",
+  "domain_search": {
+    "query": "\"Northeast Florida State Hospital\" Macclenny price transparency standard charges",
+    "recorded_official_domain": "myflfamilies.com",
+    "found_official_domain": "myflfamilies.com",
+    "agrees": true,
+    "basis": "NEFSH is operated by Florida DCF; search surfaced https://www.myflfamilies.com/documents/2766.pdf titled 'NORTH EAST FLORIDA STATE HOSPITAL STANDARD CHARGES FOR PROVIDED SERVICES EFFECTIVE DATE: 07/01/2026' on the recorded operator domain. Facility address 7487 S State Road 121, Macclenny, FL 32063 corroborated by third-party listings (not first-party)."
+  },
+  "checks": [
+    {
+      "check": "root CMS pointer",
+      "url": "https://www.myflfamilies.com/cms-hpt.txt",
+      "status": 404,
+      "observed_at": "2026-10-01T20:42:41.838Z",
+      "note": "GET returned HTTP 404 (both www and apex). Consistent with prior finding no-cms-hpt-txt-published."
+    },
+    {
+      "check": "standard charges PDF (bounded sample, first 262,144 of 236,634+ bytes)",
+      "url": "https://www.myflfamilies.com/documents/2766.pdf",
+      "status": 206,
+      "sha256_sample_prefix": "236634f5fa3ea947f1822a3ea78936b47e634e78069213bc6261d959ce140e8e6bcd (sample, not full file)",
+      "bytes_sampled": 236634,
+      "observed_at": "2026-10-01T20:42:41.838Z",
+      "note": "Sample is a PDF whose extracted text shows a standard charges table: PROCEDURE CODE, PROCEDURE DESCRIPTION, STANDARD FEE, DISCOUNTED CASH FEE, CLAIM TYPE, TYPE 2, DEPARTMENT CODE, REVENUE CODE; rows include room and board certified/non-certified psychiatric wards, venipuncture 36415, X-ray 70100/70140, with dollar amounts (e.g. $377.31, $503.75, $10.27, $96.86). Header per search snippet: EFFECTIVE DATE 07/01/2026."
+    }
+  ],
+  "established": [
+    "Recorded official domain myflfamilies.com is the operator (Florida DCF) site hosting a standard charges document for Northeast Florida State Hospital, effective 07/01/2026 per document title.",
+    "The published format is PDF, not a CMS machine-readable CSV/JSON; the sample table shows standard/discounted-cash fee columns but no payer-specific negotiated rates were observed in the sampled bytes.",
+    "No /cms-hpt.txt pointer at the operator domain root (404)."
+  ],
+  "not_established": [
+    "Whether the full PDF (beyond the bounded sample) contains payer-specific negotiated charges.",
+    "Whether any CMS CSV/JSON exists elsewhere on myflfamilies.com or a NEFSH-specific subdomain.",
+    "Whether the effective date 07/01/2026 constitutes a declared date in a CMS-compliant format; no CMS template version literal observed.",
+    "Any compliance status."
+  ],
+  "change_vs_prior": "New evidence versus prior 'no-cms-hpt-txt-published': a standard charges document for NEFSH (effective 07/01/2026) now exists on the operator domain as a PDF; /cms-hpt.txt remains absent (404). No machine-readable CMS file was located."
+}

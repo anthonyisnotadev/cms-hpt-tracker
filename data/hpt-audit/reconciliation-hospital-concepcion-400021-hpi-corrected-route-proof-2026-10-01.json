@@ -1,0 +1,53 @@
+{
+  "ccn": "400021",
+  "hospital_name": "HOSPITAL DE LA CONCEPCION",
+  "state": "PR",
+  "observed_at": "2026-10-01T20:16:40.000Z",
+  "domain_search": {
+    "query": "(search-first rule) official-linked HPI route retained; hospital first-party domain hospitaldelaconcepcion.com unchanged in this session",
+    "recorded_domain": "hospitaldelaconcepcion.com",
+    "found_domain": "hospitaldelaconcepcion.com",
+    "agrees": true,
+    "basis": "Retained from the 2026-09-20 proof: official site https://hospitaldelaconcepcion.com/ with the HPI publisher route search.hospitalpriceindex.com as the official-linked pricing page. No new domain discrepancy surfaced."
+  },
+  "chain": [
+    {
+      "step": "official-linked HPI machine-readable route",
+      "url": "https://search.hospitalpriceindex.com/hpi2/machineReadable/hospitaldelaconcepcion/8494",
+      "http_status": 200,
+      "note": "Angular SPA; rendered in headless browser on 2026-10-01. Its Download File link now points to a CORRECTED filename."
+    },
+    {
+      "step": "live Download File link (browser, https://search.hospitalpriceindex.com/hpi2/hospital/hospitaldelaconcepcion/8494or redirected to the machineReadable SPA)",
+      "url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8494/660227304_hospital-de-la-concepcion-inc_standardcharges.csv",
+      "note": "Prior proof's recorded target was .../8494/660227304_hospital-de-concepcion-inc_standardcharges.csv (HTTP 404). The live link inserts 'la': hospital-de-la-concepcion-inc."
+    },
+    {
+      "step": "facility file (corrected URL)",
+      "url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/8494/660227304_hospital-de-la-concepcion-inc_standardcharges.csv",
+      "http_status": 200,
+      "content_length": 44973202,
+      "last_modified": "Fri, 27 Jun 2025 21:18:36 GMT",
+      "sample_bytes": 262144,
+      "sample_sha256": "4a4e452e77fa680b4a3611f78b89455bc02071f5f9302852ea79c46f833d5120"
+    }
+  ],
+  "declared_metadata_from_sample": {
+    "hospital_name": "Hospital de la Concepcion Inc",
+    "last_updated_on": "2024-12-26",
+    "cms_template_version": "2.0.0",
+    "location_name": "Hospital de la Concepcion",
+    "address": "Carr #2 KM 173.4 Bo Cain Alto, San German, PR 00683",
+    "license_number_pr": "57",
+    "attestation": true
+  },
+  "what_was_established": [
+    "The official-linked HPI publisher route now serves a corrected file URL (hospital-de-la-concepcion-inc) that returns HTTP 200 with 44,973,202 bytes, resolving the prior 404 gate.",
+    "The file is a usable CMS CSV (header and data rows parsed) declaring Hospital de la Concepcion Inc, San German PR, license 57, attestation TRUE."
+  ],
+  "what_was_not_established": [
+    "The file is CMS template version 2.0.0 dated 2024-12-26 — stale, not a current file, so it cannot support a promotion.",
+    "Roster-level identity match was not re-derived this session beyond the declared name matching the CCN's facility name."
+  ],
+  "what_changed_versus_prior": "Prior proof: official-linked target 404 (file unavailable). Now: corrected live link found in the rendered HPI page, HTTP 200 with real bytes at the de-la-concepcion URL; the file itself (2024-12-26, v2.0.0) matches the metadata previously recorded, so this is route recovery, not a newer file."
+}

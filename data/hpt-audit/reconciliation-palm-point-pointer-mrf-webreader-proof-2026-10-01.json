@@ -1,0 +1,43 @@
+{
+  "ccn": "104082",
+  "hospital_name": "PALM POINT BEHAVIORAL HEALTH",
+  "state": "FL",
+  "observed_at": "2026-10-01T21:00:01.707Z",
+  "route_note": "Retrieved through the web-reader MCP route, which is materially different from the previously blocked direct/bounded client and Cloudflare-challenged interactive browser (2026-09-19/21).",
+  "domain_search": {
+    "query": "\"Palm Point Behavioral Health\" Titusville FL hospital price transparency standard charges",
+    "recorded_domain": "palmpointbehavioral.com",
+    "found_domain": "palmpointbehavioral.com",
+    "agrees": true,
+    "basis": "Search returned https://palmpointbehavioral.com/ with footer address 2355 Truman Scarborough Way, Titusville, Florida 32796 and a Standard Services price page."
+  },
+  "official_domain": "https://palmpointbehavioral.com/",
+  "pointer_url": "https://palmpointbehavioral.com/cms-hpt.txt",
+  "pointer_route": "web-reader MCP (materially different authorized route)",
+  "pointer_content": "location-name: Palm Point Behavioral Health; source-page-url: https://palmpointbehavioral.com/standard-services/; mrf-url: https://uhsfilecdn.eskycity.net/bh/471584533_palm-point_standardcharges.csv; contact-name: UHS Corp Price Transparency Team; contact-email: hpt-obf:v1:W-pxhE3y3Prv2v7c.deGxxpfkIjEsgbZ3T-J9gw.4_LmF-ySzPt_rnrisSaXMKW2KFWD3Zygrg1H_SbmFm0GiU32U_Z9",
+  "pointer_entry_count": 1,
+  "pointer_entries_matching_facility": 1,
+  "source_page_url": "https://palmpointbehavioral.com/standard-services/",
+  "source_page_observation": "Rendered page footer identifies Palm Point Behavioral Health at 2355 Truman Scarborough Way, Titusville, Florida 32796; matches the MRF header address exactly.",
+  "mrf_url": "https://uhsfilecdn.eskycity.net/bh/471584533_palm-point_standardcharges.csv",
+  "mrf_http_status": 206,
+  "mrf_bytes_retrieved": 214247,
+  "mrf_total_bytes": 214247,
+  "mrf_complete": true,
+  "mrf_sha256": "7BE440BC6B4E6E9A9974311F9E787FB4B9469E4F561C34C1902425D214D26CD1",
+  "mrf_last_modified": "2026-06-03T18:26:25Z (GMT header)",
+  "declared": {
+    "hospital_name": "Palm Point Behavioral Health",
+    "location_name": "Palm Point Behavioral Health",
+    "hospital_address": "2355 TRUMAN SCARBOROUGH WAY, TITUSVILLE, FL 32796",
+    "license_number_FL": "4528",
+    "type_2_npi": "1235635533",
+    "last_updated_on": "2026-06-03",
+    "version": "3.0.0",
+    "attestation": true,
+    "attester_name": "Jones, Dustin"
+  },
+  "changed_vs_prior": "Prior proofs (2026-09-15, 2026-09-19) only had official identity plus Cloudflare-challenged/403 pointer transport with zero pointer or file bytes. This proof gains: full pointer text, complete 214,247-byte CMS 3.0.0 CSV with attestation, and exact name/address agreement.",
+  "established": "First-party root pointer names the facility and a current CMS 3.0.0 MRF; the MRF was fully retrieved and declares the exact facility name, Titusville FL address, FL license, type-2 NPI, 2026-06-03 date, attestation, and usable negotiated-charge rows.",
+  "not_established": "Exact pointer wire bytes (hash is of reader-extracted text); no legal compliance verdict."
+}

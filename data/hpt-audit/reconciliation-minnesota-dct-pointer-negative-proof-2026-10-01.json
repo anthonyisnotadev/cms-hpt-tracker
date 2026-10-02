@@ -1,0 +1,46 @@
+{
+  "ccns": ["244002", "244005", "244011"],
+  "state": "MN",
+  "observed_at": "2026-10-01T20:36:40.000Z",
+  "proof_kind": "operator-pointer-negative-and-identity-page-retrieval",
+  "domain_search": {
+    "query": "\"Anoka Metro Regional Treatment Center\" / \"Child and Adolescent Behavioral Health Hospital\" / \"Community Behavioral Health Hospital\" Annandale Minnesota DHS standard charges price transparency",
+    "recorded_domain": "mn.gov",
+    "found_domain": "mn.gov",
+    "agrees": true,
+    "basis": "All three are operated by Minnesota DHS Direct Care and Treatment (DCT) on mn.gov; AMRTC page at mn.gov/dct confirms 'Anoka Metro Regional Treatment Center, 3301 North 7th Avenue, Anoka, MN, 55303' (roster match). No separate first-party facility sites exist."
+  },
+  "observations": [
+    {
+      "what": "Direct GET https://mn.gov/cms-hpt.txt returned HTTP 404 (server response reached this client; not a client-side block).",
+      "source": "bash Invoke-WebRequest (tool observation)"
+    },
+    {
+      "what": "Direct GET https://mn.gov/dct/cms-hpt.txt returned HTTP 404.",
+      "source": "bash Invoke-WebRequest (tool observation)"
+    },
+    {
+      "what": "web-reader retrieved https://mn.gov/dct/adult-services/inpatient-care/anoka-metro-regional-treatment-center/index.jsp ('Anoka Metro Regional Treatment Center'): identity confirmed at 3301 North 7th Avenue, Anoka, MN 55303; page content (admission, visiting, location) contains no charge/pricing/transparency link.",
+      "source": "web-reader (tool observation)"
+    },
+    {
+      "what": "Deep DCT pages for CBHH Annandale and CABHH redirect to Radware Bot Manager captcha (validate.perfdrive.com) in direct curl, web-reader, and headless Chromium in this client — a client-side block, not evidence of page absence.",
+      "source": "bash curl.exe; web-reader; playwright (tool observations)"
+    },
+    {
+      "what": "Web searches for CABHH and CBHH Annandale pricing/standard-charges returned statutes, budget PDFs, union contracts, and third-party pages; no first-party pricing page or machine-readable file on mn.gov.",
+      "source": "web-search-prime (tool observation)"
+    }
+  ],
+  "established": [
+    "The operator first-party domain is mn.gov (DCT section), agreeing with the record",
+    "The mn.gov root pointer /cms-hpt.txt and the DCT-scoped pointer /dct/cms-hpt.txt are definitively 404 via a working route",
+    "The AMRTC identity page exposes no pricing/pointer link",
+    "No facility-specific pricing page or publisher CSV/JSON was found by search for any of the three facilities"
+  ],
+  "not_established": [
+    "Content of the captcha-blocked deep DCT pages for CABHH and CBHH Annandale (client-side block only)",
+    "That any of the three facilities is exempt from the CMS price-transparency requirement"
+  ],
+  "changed_vs_prior": "Prior sessions recorded 'pointer-not-retrieved' ambiguity. This session the pointer routes returned definitive server 404s through a route that works in this client, and the AMRTC identity page was retrieved and shown to expose no pricing link."
+}

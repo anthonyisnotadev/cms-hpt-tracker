@@ -1,0 +1,63 @@
+{
+  "ccn": "194089",
+  "observed_at": "2026-10-01T19:46:59.286Z",
+  "what_changed_versus_prior_state": "Prior state (pointer-not-retrieved) had neither pointer nor MRF bytes. In this check the first-party pointer was retrieved through the web-reader route and the complete declared MRF (19,386 bytes, SHA-256 32bb52e72f9a1ca1c4af7f6889e137f9f540f88d951a6516f3b19967aa0f5588, CMS v3.0.0, last_updated_on 9/17/2026, attestation TRUE, Last-Modified Fri, 18 Sep 2026) was retrieved for the first time, with the Breaux Bridge LA identity matching the CMS record. New pointer-content, MRF-bytes and metadata evidence.",
+  "domain_search": {
+    "query": "performed implicitly via direct pointer probe; prior session searches established genesisbh.com as first-party",
+    "recorded_domain": "genesisbh.com",
+    "found_domain": "genesisbh.com",
+    "agrees": true,
+    "basis": "Pointer https://genesisbh.com/cms-hpt.txt names location 'Genesis Behavioral Hospital' and its source-page-url https://www.genesisbh.com/price-transparency plus a first-party-hosted MRF (www.genesisbh.com/_files/ugd/...) on the same domain; contact hpt-obf:v1:zZwLT_7GEmVecAWI.3kNfYxQ7URVx9roqouWUJA.8_ETUfFqAKKuWbuAVJqGt1Bzkiwvjg."
+  },
+  "cms_record_identity": {
+    "ccn": "194089",
+    "facility_name": "GENESIS BEHAVIORAL HOSPITAL",
+    "state": "LA"
+  },
+  "pointer_retrieval": {
+    "route": "web-reader MCP",
+    "url": "https://genesisbh.com/cms-hpt.txt",
+    "content": "location-name: Genesis Behavioral Hospital; source-page-url: https://www.genesisbh.com/price-transparency; mrf-url: https://www.genesisbh.com/_files/ugd/b56b0c_36f806c57ce2413bb5e9e85640fc2954.csv?dn=421650702_genesis-behavioral-hospital_standardcharges.csv; contact-name: Will Arledge; contact-email: hpt-obf:v1:4EkXa75H3M5IWuxy.l_ZsNn1h27MkDMfyY3MqDA.PR203_-YfX8DUbObgQFCk7Zub-ibYQ",
+    "location_name": "Genesis Behavioral Hospital",
+    "sha256_of_reader_extracted_text": "dc3a3ca4ca16d718a5442f6e649669fdb62f55b6b57b62af1d84e0b944d9f221"
+  },
+  "mrf_file": {
+    "url": "https://www.genesisbh.com/_files/ugd/b56b0c_36f806c57ce2413bb5e9e85640fc2954.csv?dn=421650702_genesis-behavioral-hospital_standardcharges.csv",
+    "http_status": 200,
+    "content_type": "text/csv",
+    "byte_count": 19386,
+    "sha256": "32bb52e72f9a1ca1c4af7f6889e137f9f540f88d951a6516f3b19967aa0f5588",
+    "last_modified": "Fri, 18 Sep 2026 16:03:17 GMT",
+    "full_file_retrieved": true,
+    "first_party_hosted": true
+  },
+  "mrf_metadata_declared": {
+    "hospital_name": "Genesis Behavioral Hospital Inc",
+    "location_name": "Genesis Behavioral Hospital - Breaux Bridge",
+    "hospital_address": "606 Latiolais Dr, Breaux Bridge, LA 70517",
+    "license_number": "612 (license_number|LA)",
+    "type_2_npi": "1023119989 (field carries a trailing apostrophe character in the file: 1023119989')",
+    "attester_name": "Will Arledge",
+    "attestation": "TRUE",
+    "last_updated_on": "9/17/2026",
+    "version": "3.0.0"
+  },
+  "identity_check": {
+    "facility_name_matches": true,
+    "address_matches": true,
+    "note": "Breaux Bridge location matches the next_action's expected 'Breaux Bridge CSV'.",
+    "state_matches": true,
+    "state": "LA"
+  },
+  "established": [
+    "First-party pointer https://genesisbh.com/cms-hpt.txt exists and was retrieved through the web-reader route.",
+    "Declared MRF URL (first-party Wix-hosted CSV) serves the complete 19,386-byte CMS v3.0.0 file (HTTP 200).",
+    "Declared name, 606 Latiolais Dr Breaux Bridge LA address, and state match the CMS record for CCN 194089.",
+    "Declared last_updated_on 9/17/2026 and attestation TRUE are present; file Last-Modified 18 Sep 2026 is consistent."
+  ],
+  "not_established": [
+    "Pointer wire bytes (reader-extracted text hashed only).",
+    "The trailing apostrophe in the type_2_npi field value (declared as 1023119989') is a minor data-quality quirk; NPI numeric part 1023119989 was not independently checked against NPPES in this session."
+  ],
+  "disposition_recommended": "verified-current-mrf"
+}

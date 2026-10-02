@@ -1,0 +1,61 @@
+{
+  "ccn": "104080",
+  "observed_at": "2026-10-01T18:41:17.182Z",
+  "type": "pointer-and-complete-mrf-recovery-promotion-evidence",
+  "changed_versus_prior_proof": [
+    "Prior proofs (2026-09-19 browser recheck) recorded only HTTP 403 / Cloudflare verification for the pointer routes with no pointer bytes and no MRF. This check recovered the full pointer content and the complete declared MRF for the first time.",
+    "The pointer names an MRF host (uhsfilecdn.eskycity.net) that is directly fetchable and was not present in any prior proof.",
+    "The complete 161,764-byte CSV declares a current facility header (last updated 2026-05-19, CMS template 3.0.0, attestation true) that was never previously observed."
+  ],
+  "pointer": {
+    "url": "https://coralshoresbehavioral.com/cms-hpt.txt",
+    "transport": "web-reader MCP (curl and headless browser remain Cloudflare-blocked at HTTP 403; web-reader is the permitted materially-different authorized route requested by the record's next_action)",
+    "status_via_reader": 200,
+    "sha256_reader_extracted_text": "C0533104576592864FA057C73236BB13D4437C4E8D38115700A7955C7DF2D37D",
+    "caveat": "Hash is of reader-extracted text; exact wire bytes remain unestablished (curl 403). Established separately from wire-byte proof per prior precedent.",
+    "location_name": "Coral Shores Behavioral Health",
+    "source_page_url": "https://coralshoresbehavioral.com/standard-services/",
+    "declared_mrf_url": "https://uhsfilecdn.eskycity.net/bh/463794548_coral-shores_standardcharges.csv",
+    "entry_count": 1,
+    "entries_matching_facility": 1
+  },
+  "mrf": {
+    "url": "https://uhsfilecdn.eskycity.net/bh/463794548_coral-shores_standardcharges.csv",
+    "status": 200,
+    "bytes": 161764,
+    "sha256_complete": "845C639FF18C9FAAA87E5D0C5B40AE8A37C535EE26767F0C392612B6986F5788",
+    "download_extent": "complete file (161,764 bytes, no range limit)",
+    "declared_hospital_name": "Coral Shores Behavioral Health",
+    "declared_location_name": "Coral Shores Behavioral Health",
+    "declared_address": "5995 SE COMMUNITY DRIVE, STUART, FL 34997",
+    "declared_license_number": "4524",
+    "declared_license_state": "FL",
+    "declared_type_2_npi": "1366895096",
+    "declared_last_updated": "2026-05-19",
+    "cms_template_version": "3.0.0",
+    "attestation": true,
+    "attester": "Sankey, Saundra",
+    "usable_rows_observed": "54-line CSV; sample row 'Inpatient - ALL' code 124 RC with gross 2200.00, discounted cash 2200.00, UNITED BEHAVIORAL HEALTH negotiated_dollar 1090.000, methodology Per diem"
+  },
+  "identity_crosscheck": {
+    "roster_name": "CORAL SHORES BEHAVIORAL HEALTH",
+    "roster_state": "FL",
+    "roster_address_basis": "5995 SE Community Drive, Stuart FL (prior 2026-09-19 proof corroborated exact name and address via Florida facility profile and a first-party records form)",
+    "match": "exact name, exact address, exact state"
+  },
+  "domain_search": {
+    "query": "\"Coral Shores Behavioral Health\" price transparency standard charges",
+    "recorded_domain": "coralshoresbehavioral.com",
+    "found_domain": "coralshoresbehavioral.com",
+    "agrees": true
+  },
+  "established": [
+    "First-party root pointer at coralshoresbehavioral.com/cms-hpt.txt retrieved through a permitted route; it names exactly one MRF.",
+    "The declared MRF was downloaded in full and its header exactly matches the CCN 104080 facility name, street address, and Florida state, with declared date, CMS v3.0.0 template and a true attestation.",
+    "Usable standard-charge data rows are present."
+  ],
+  "not_established": [
+    "Exact pointer wire bytes (transport-blocked; reader text hashed instead).",
+    "No claim about compliance history or the June 2026 federal warning notice is made."
+  ]
+}

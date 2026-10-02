@@ -1,0 +1,27 @@
+{
+  "ccn": "474004",
+  "observed_at": "2026-10-01T20:25:31Z",
+  "official_domain_search": {
+    "query": "\"Vermont Psychiatric Care Hospital\" Berlin VT standard charges price transparency",
+    "recorded_domain": "mentalhealth.vermont.gov",
+    "found_domain": "mentalhealth.vermont.gov",
+    "agrees": true,
+    "basis": "https://mentalhealth.vermont.gov/programs-services/vermont-psychiatric-care-hospital is the first-party DMH page for the state-operated Vermont Psychiatric Care Hospital (25-bed acute care hospital)."
+  },
+  "site_map_walk": [
+    "https://mentalhealth.vermont.gov/ (nav: no price/charges link anywhere)",
+    "https://mentalhealth.vermont.gov/programs-services/vermont-psychiatric-care-hospital (VPCH page: mission/vision/contact/careers/advisory only; no pricing or standard-charges link)",
+    "https://mentalhealth.vermont.gov/policy-resources/financial-transparency (points to spotlight.vermont.gov state finances; no hospital MRF)"
+  ],
+  "pointer_url_probes": ["https://mentalhealth.vermont.gov/cms-hpt.txt (404)"],
+  "other_official_routes_checked": [
+    "https://auditor.vermont.gov/content/hospital-price-transparency-pages (200) lists hospital price-transparency pages but does not include Vermont Psychiatric Care Hospital"
+  ],
+  "roster_identity": "VERMONT PSYCHIATIC CARE HOSPITAL",
+  "roster_state": "VT",
+  "what_changed_vs_prior_evidence": "Prior state (2026-09-23) was discovery-pointer-not-retrieved. This pass the current DMH site (redesigned Drupal with new URL structure) was walked per the recorded next_action and confirmed to contain no VPCH standard-charges page, no hospital MRF link, and no root pointer (cms-hpt.txt 404); the State Auditor's hospital transparency index also omits VPCH.",
+  "established": "The current first-party Vermont DMH site exposes no facility-identified MRF or standard-charges page for VPCH as of this observation.",
+  "not_established": "Whether a current MRF exists off-site or behind a publisher-provided file; the file's absence on the site map is not proof of noncompliance.",
+  "tool_vs_inference": "Page contents and the 404 are direct tool observations. The absence conclusion is an inference bounded by the three pages and one index walked.",
+  "next_action": "Obtain a publisher-provided current CSV/JSON (e.g., via the DMH contact/public-records channel listed on the site) or await a published transparency page; then verify exact facility identity, Vermont metadata, declared date/version and usable bytes before promotion."
+}

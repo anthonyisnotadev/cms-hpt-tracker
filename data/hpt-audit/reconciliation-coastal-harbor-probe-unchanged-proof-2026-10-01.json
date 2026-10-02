@@ -1,0 +1,20 @@
+{
+  "ccn": "114008",
+  "observed_at": "2026-10-01T18:43:00.000Z",
+  "type": "blocked-condition-cheap-probe-unchanged",
+  "probe": [
+    { "url": "https://coastalharbor.com/cms-hpt.txt", "status": 403, "bytes": 5381 },
+    { "url": "https://www.coastalharbor.com/cms-hpt.txt", "status": 403, "bytes": 5385 },
+    { "url": "https://coastalharbor.com/standard-services", "status": 403, "bytes": 5399 }
+  ],
+  "unchanged_since": "2026-09-19 (reconciliation-coastal-harbor-pointer-browser-proof.json: Cloudflare verification page, pointer and pricing routes HTTP 403)",
+  "domain_search": {
+    "query": "\"Coastal Harbor Treatment Center\" Savannah Georgia hospital price transparency standard charges",
+    "recorded_domain": "coastalharbor.com",
+    "found_domain": "coastalharbor.com",
+    "agrees": true,
+    "basis": "coastalharbor.com pages show Coastal Harbor Health System / Treatment Center, 1150 Cornell Street, Savannah GA; the AHD free profile for CCN 114008 lists coastalharbor.com as the hospital website"
+  },
+  "established": ["The documented access block on the official domain is unchanged as of this probe."],
+  "not_established": ["No MRF presence, absence, or compliance conclusion is drawn from the 403 responses."]
+}

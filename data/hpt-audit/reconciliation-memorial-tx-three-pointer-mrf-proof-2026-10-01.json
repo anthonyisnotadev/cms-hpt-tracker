@@ -1,0 +1,141 @@
+{
+  "ccns": [
+    "450235",
+    "451358",
+    "451386"
+  ],
+  "observed_at": "2026-10-01T23:06:23.071Z",
+  "summary": "Search-first domain verification found that the recorded official_domain texashealthhuguley.org is wrong for all three CCNs. Each facility's true operator publishes a valid first-party cms-hpt.txt pointer and a facility-specific CMS v3.0.0-template standard-charges CSV whose declared location name, address, state and attestation match the CMS identity record. Complete files were downloaded and hashed.",
+  "cms_identity_records": {
+    "450235": {
+      "facility_name": "MEMORIAL HOSPITAL",
+      "address": "1110 NORTH SARAH DEWITT DRIVE",
+      "citytown": "GONZALES",
+      "state": "TX",
+      "zip_code": "78629"
+    },
+    "451358": {
+      "facility_name": "MEMORIAL HOSPITAL",
+      "address": "209 NORTHWEST 8TH STREET",
+      "citytown": "SEMINOLE",
+      "state": "TX",
+      "zip_code": "79360"
+    },
+    "451386": {
+      "facility_name": "MEMORIAL HOSPITAL",
+      "address": "224 E SECOND STREET",
+      "citytown": "DUMAS",
+      "state": "TX",
+      "zip_code": "79029"
+    }
+  },
+  "domain_searches": [
+    {
+      "ccn": "450235",
+      "query": "\"Memorial Hospital\" Gonzales Texas hospital official website price transparency",
+      "recorded_domain": "texashealthhuguley.org",
+      "found_domain": "gonzaleshealthcare.com",
+      "agrees": false,
+      "basis": "https://www.gonzaleshealthcare.com homepage shows Gonzales Healthcare Systems, Gonzales, Texas 78629; /services/memorial-hospital page names Memorial Hospital; recorded Huguley domain is a different Burleson hospital"
+    },
+    {
+      "ccn": "451358",
+      "query": "\"Memorial Hospital\" Seminole Texas hospital official website price transparency standard charges",
+      "recorded_domain": "texashealthhuguley.org",
+      "found_domain": "seminolehospitaldistrict.com",
+      "agrees": false,
+      "basis": "https://seminolehospitaldistrict.com homepage shows Seminole Hospital District, 209 NW 8th St, Seminole, TX; payerprice lists Memorial Hospital-Seminole CCN 451358 at this district"
+    },
+    {
+      "ccn": "451386",
+      "query": "\"Memorial Hospital\" Dumas Texas Moore County hospital official website price transparency",
+      "recorded_domain": "texashealthhuguley.org",
+      "found_domain": "mchd.net",
+      "agrees": false,
+      "basis": "https://mchd.net homepage shows Moore County Hospital District, Dumas, TX 79029; Memorial Home Health & Hospice pages confirm the Memorial naming under MCHD"
+    }
+  ],
+  "chains": [
+    {
+      "ccn": "450235",
+      "official_domain": "https://www.gonzaleshealthcare.com/",
+      "pointer_url": "https://www.gonzaleshealthcare.com/cms-hpt.txt",
+      "pointer_http_status": 200,
+      "pointer_bytes": 324,
+      "pointer_sha256": "46534ba50e78425f6d810c65621a2e7104de585a3e9ec36f8415cb80ba4e32c1",
+      "pointer_text": "location-name: Gonzales Healthcare Systems; source-page-url: https://www.ezcost.info/Gonzales-Memorial-Hospital; mrf-url: https://hospitalpricetransparencyfiles.com/gonzales-healthcare-systems/741625013_Gonzales-Healthcare-Systems_standardcharges.csv; contact William Bailey hpt-obf:v1:fXqu_vUwtNCiwVek.WMrhTKPeHuJtYjvkvbf6-g.h5xG_7OGj9UttY4qOwXDsg6h3DghRso-v69katN5DA",
+      "pointer_entry_count": 1,
+      "pointer_entries_matching_facility": 1,
+      "facility_file_url": "https://hospitalpricetransparencyfiles.com/gonzales-healthcare-systems/741625013_Gonzales-Healthcare-Systems_standardcharges.csv",
+      "file_http_status": 200,
+      "file_total_bytes": 1630128,
+      "file_sha256_complete": "497a29608d16e7a805683931a721257dbc7603a1e34ae9ea7621db00278df061",
+      "declared_hospital_name": "Gonzales Healthcare Systems",
+      "declared_location_name": "Gonzales Memorial Hospital",
+      "declared_address": "1110 Sarah DeWitt Drive, Gonzales, TX  78629",
+      "declared_type_2_npis": "1932108214|1508859612|1699768705|1881687994|1114711306",
+      "declared_license_state": "TX",
+      "declared_last_updated_on": "1/7/2026",
+      "declared_version": "3.0.0",
+      "attestation": true,
+      "attester": "William Bailey",
+      "identity_match": "MRF location_name 'Gonzales Memorial Hospital' and address 1110 Sarah DeWitt Drive, Gonzales, TX 78629 match CMS 1110 NORTH SARAH DEWITT DRIVE, GONZALES, TX 78629"
+    },
+    {
+      "ccn": "451358",
+      "official_domain": "https://seminolehospitaldistrict.com/",
+      "pointer_url": "https://seminolehospitaldistrict.com/wp-content/uploads/2024/07/cms-hpt.txt",
+      "pointer_route_note": "The exact /cms-hpt.txt route serves the first-party HTML page 'Price Transparency .TXT file' (HTTP 200, ~102,992 bytes) which links the pointer file below; the plain-text pointer is served at the uploads path",
+      "pointer_http_status": 200,
+      "pointer_bytes": 321,
+      "pointer_sha256": "9616d94fd2fd93c746ed8ea0d3fc0296cdea443803ff5a71eb5fb515cbe88631",
+      "pointer_text": "location-name: Seminole Hospital District; source-page-url: https://www.ezcost.info/seminole-hospital-district; mrf-url: https://machine-readable-files.com/seminole-hospital-district/751362671_Seminole-Hospital-District_standardcharges.csv; contact John Everett hpt-obf:v1:elf64E8O1Ied8gK6.YfhwK32l_GFL7NArTUVLhw.noi-YRWszfgm2g5Xf2I_9RBECiUu4u4cDLWXQYDfyQP9qLF8VA",
+      "pointer_entry_count": 1,
+      "pointer_entries_matching_facility": 1,
+      "facility_file_url": "https://machine-readable-files.com/seminole-hospital-district/751362671_Seminole-Hospital-District_standardcharges.csv",
+      "file_http_status": 200,
+      "file_total_bytes": 2413314,
+      "file_sha256_complete": "0b20e2c6b28745378c09574c81b68a55438870c4dae86eaf6c244568a5c05b70",
+      "declared_hospital_name": "Seminole Hospital District",
+      "declared_location_name": "Seminole Hospital District",
+      "declared_address": "209 NW 8TH St., Seminole, TX 79360",
+      "declared_type_2_npis": "1821025990",
+      "declared_license_state": "TX",
+      "declared_last_updated_on": "2026-01-01",
+      "declared_version": "3.0.0",
+      "attestation": true,
+      "attester": "Maegan Garner",
+      "identity_match": "MRF address 209 NW 8TH St., Seminole, TX 79360 matches CMS 209 NORTHWEST 8TH STREET, SEMINOLE, TX 79360; CMS name MEMORIAL HOSPITAL is the district's hospital (Memorial Hospital-Seminole)"
+    },
+    {
+      "ccn": "451386",
+      "official_domain": "https://mchd.net/",
+      "pointer_url": "https://mchd.net/cms-hpt.txt",
+      "pointer_http_status": 200,
+      "pointer_bytes": 351,
+      "pointer_sha256": "ef7d253aa80f8a777352d9ceb9f7afb12f4125da3b85fc43531316dcb8083f0d",
+      "pointer_text": "location-name: Moore County Hospital District; source-page-url: https://moorecountyhospitaldistrict.pg.quadax.revenuemasters.com/disclaimer; mrf-url: https://moorecountyhospitaldistrict.pg.quadax.revenuemasters.com/cdm-files/751302152_moore-county-hospital-district_standardcharges.csv; contact Kimberly Corriveau hpt-obf:v1:OGEbB6LWAFyyYo5G.fIgwZkgh0QOIQQT-uXjqWw.WnuJMuy7fXb3iyWEDUBbqW8-6Q",
+      "pointer_entry_count": 1,
+      "pointer_entries_matching_facility": 1,
+      "facility_file_url": "https://moorecountyhospitaldistrict.pg.quadax.revenuemasters.com/cdm-files/751302152_moore-county-hospital-district_standardcharges.csv",
+      "file_http_status": 200,
+      "file_total_bytes": 44081140,
+      "file_sha256_complete": "76f38cd0a99bb49d8b72942f0aa9a07b54d9d1667ee1cdc89ecc9f0e432e706c",
+      "declared_hospital_name": "Moore County Hospital District",
+      "declared_location_name": "Moore County Hospital District",
+      "declared_address": "224 E 2nd St, Dumas, TX 79029",
+      "declared_type_2_npis": "751302152",
+      "declared_license_state": "TX",
+      "declared_last_updated_on": "2026-03-30",
+      "declared_version": "3.0.0",
+      "attestation": true,
+      "attester": "John Sharp",
+      "identity_match": "MRF address 224 E 2nd St, Dumas, TX 79029 matches CMS 224 E SECOND STREET, DUMAS, TX 79029 exactly"
+    }
+  ],
+  "method": "Z.ai web search (domain discovery), curl/Invoke-WebRequest GETs, complete-file downloads hashed with SHA-256; CMS identity from data/hpt-audit/nationwide-reconciliation.json facility records",
+  "changed_versus_prior": "Prior proofs (2026-09-22 browser rechecks) recorded only the wrong Huguley domain with pointer 'Permission denied'. New: correct first-party operator domains identified; valid pointer files retrieved and hashed on each; facility-specific CMS v3.0.0 MRFs retrieved in full, hashed, with declared identity, TX state, dates, versions and TRUE attestations matching the CMS records.",
+  "not_established": "Nothing about the Huguley facility itself (that is a different hospital, Burleson TX); parser-level validation of every row was not performed beyond header/metadata structure inspection.",
+  "disposition": "verified-current-mrf",
+  "next_action": "Retain the pointer-to-file chains; recheck on next publisher pointer or file change."
+}

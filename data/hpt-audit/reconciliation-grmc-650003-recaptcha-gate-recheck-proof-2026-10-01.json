@@ -1,0 +1,44 @@
+{
+  "ccn": "650003",
+  "observed_at": "2026-10-01T19:55:18.171Z",
+  "outcome": "no-change (challenge condition unchanged)",
+  "what_changed_versus_prior_state": "Nothing material changed: cms-hpt.txt still absent (404), the GRMC CDM Machine Readable download (Effective January 6, 2025, unchanged) is still gated by Simple Download Monitor reCAPTCHA, and the direct sdm endpoint does not bypass the gate. Observations below are tool results; no MRF bytes were obtained.",
+  "domain_search": {
+    "query": "\"Guam Regional Medical City\" price transparency standard charges machine readable",
+    "recorded_domain": "www.grmc.gu",
+    "found_domain": "www.grmc.gu",
+    "agrees": true,
+    "basis": "grmc.gu 404 page and homepage both title 'Guam Regional Medical City | GRMC', Dededo, Guam; site metadata keywords confirm first-party domain."
+  },
+  "cms_record_identity": { "ccn": "650003", "facility_name": "GUAM REGIONAL MEDICAL CITY", "state": "GU" },
+  "observations": [
+    {
+      "check": "pointer probe https://www.grmc.gu/cms-hpt.txt via web-reader",
+      "result": "404 'Page Not Found' page on the first-party WordPress site."
+    },
+    {
+      "check": "site navigation (browser) homepage -> footer 'Billing & Insurance' -> https://www.grmc.gu/fee-schedule/",
+      "result": "Fee Schedule page offers 'GRMC CDM Machine Readable' (caption: Effective January 6, 2025; 518 Downloads) plus a second price list (881 Downloads). Each download is wrapped in a Simple Download Monitor (sdm) reCAPTCHA form."
+    },
+    {
+      "check": "interactive reCAPTCHA attempt on the CDM download (clicking 'I'm not a robot')",
+      "result": "Google presented an image-recognition challenge dialog; an autonomous agent cannot complete it and must not circumvent the challenge. Download not obtained."
+    },
+    {
+      "check": "page source probe of https://www.grmc.gu/fee-schedule/ (200, 103,137 bytes)",
+      "result": "Download endpoint identified: sdm_process_download=1&download_id=9299. Direct GET https://www.grmc.gu/?sdm_process_download=1&download_id=9299 returned the site homepage HTML (200, text/html) - the gate is enforced server-side; no stable direct file URL exists without solving reCAPTCHA."
+    },
+    {
+      "check": "https://www.grmc.gu/download-center/",
+      "result": "No machine-readable/CDM/standard-charge listing found on the page."
+    }
+  ],
+  "established": [
+    "The reCAPTCHA-gated condition is unchanged; the declared MRF effective date remains January 6, 2025.",
+    "No cms-hpt.txt pointer is published on www.grmc.gu."
+  ],
+  "not_established": [
+    "No MRF bytes retrieved; no statement about file content, compliance, or absence of the file behind the challenge."
+  ],
+  "next_step": "A human or an authorized publisher route must complete the reCAPTCHA download at https://www.grmc.gu/fee-schedule/ (GRMC CDM Machine Readable, download_id=9299) or GRMC must publish a direct CSV/JSON/ZIP URL; then verify Guam facility identity, declared date/version and usable bytes before any promotion."
+}

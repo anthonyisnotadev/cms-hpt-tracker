@@ -1,0 +1,34 @@
+{
+  "ccn": "254008",
+  "hospital_name": "SOUTH MISSISSIPPI STATE HOSPITAL",
+  "state": "MS",
+  "observed_at": "2026-10-01T20:36:20.000Z",
+  "proof_kind": "operator-domain-narrowing-and-pointer-negative",
+  "domain_search": {
+    "query": "\"South Mississippi State Hospital\" Purvis price transparency standard charges; dmh.ms.gov \"South Mississippi State Hospital\" site page standard charges machine readable",
+    "recorded_domain": "mississippi.gov",
+    "found_domain": "dmh.ms.gov",
+    "agrees": false,
+    "basis": "No first-party facility site exists for this state-operated hospital; its operator, the Mississippi Department of Mental Health, publishes at dmh.ms.gov. The recorded mississippi.gov is the generic state portal, not the operator site. Search returned only budget PDFs (lbo.ms.gov, dmh.ms.gov FY budget requests) and third-party listings; no pricing route."
+  },
+  "observations": [
+    {
+      "what": "web-reader GET of https://www.dmh.ms.gov/cms-hpt.txt returned the site's first-party 'Page not found' WordPress page (generator WordPress 7.1.2, dmh.ms.gov chrome) — a definitive 404 on the operator domain.",
+      "source": "web-reader (tool observation)"
+    },
+    {
+      "what": "Web search found no South Mississippi State Hospital pricing/standard-charges page or machine-readable file on any first-party domain; results were budget-request PDFs naming 'South Mississippi State Hospital, 823 Highway 589, Purvis, Mississippi 39475' and third-party pages.",
+      "source": "web-search-prime (tool observation)"
+    }
+  ],
+  "established": [
+    "The operator first-party domain is dmh.ms.gov (recorded mississippi.gov is not the operator site)",
+    "The DMH root CMS pointer /cms-hpt.txt is definitively 404 via a working route",
+    "No SMSH-specific pricing page or publisher CSV/JSON was found by search"
+  ],
+  "not_established": [
+    "That SMSH is exempt from the CMS price-transparency requirement",
+    "That no MRF exists anywhere on dmh.ms.gov (only the tested pointer path and linked pages were checked)"
+  ],
+  "changed_vs_prior": "Prior session recorded 404s on 'tested state/DMH root pointer routes' with ambiguity about which domain hosts the operator. This session narrowed the operator domain to dmh.ms.gov (recorded mississippi.gov does not agree) and obtained a definitive first-party 404 at its root pointer via a route that worked."
+}

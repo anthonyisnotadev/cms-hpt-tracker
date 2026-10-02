@@ -1,0 +1,25 @@
+{
+  "ccn": "371333",
+  "observed_at": "2026-10-01T16:13:35.885Z",
+  "domain_search": {
+    "query": "\"Creek Nation Community Hospital\" Okemah Oklahoma creekhealth price transparency",
+    "recorded_domain": "creekhealth.org",
+    "found_domain": "creekhealth.org",
+    "agrees": true,
+    "basis": "https://www.creekhealth.org/community-hospitals/creek-nation-community-hospital (MCN Health) and https://www.creekhealth.org/price-transparency are first-party Muscogee Nation Department of Health pages naming Creek Nation Community Hospital."
+  },
+  "probe": {
+    "url": "https://creekhealth.org/cms-hpt.txt",
+    "http_status": 200,
+    "bytes": 328,
+    "sole_entry": {
+      "location-name": "Muscogee Creek Nation Hospital & Clinics",
+      "source-page-url": "https://apps.para-hcfs.com/PTT/FinalLinks/Muscogee_V2.aspx",
+      "mrf-url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbMCNMOKMULGEEOK&type=CDMWithoutLabel&fileType=CSV",
+      "contact": "hpt-obf:v1:_0JAHGhdGoontnKa.W_1QYSiLQTeXhNeG8xJ1xA.OwaDsN3x99QYD8S2o4KQq89Ty2m3i0N9xCZhxcFY"
+    }
+  },
+  "established": "The current root pointer still declares a single entry whose para-hcfs target database name is dbMCNMOKMULGEEOK (Okmulgee), previously full-file-validated as declaring only the Okmulgee facility at 1401 Morris Dr; no Okemah/Creek Nation Community Hospital entry exists.",
+  "not_established": "No first-party pointer entry or MRF for Creek Nation Community Hospital, 1800 E Coplin Rd, Okemah OK 74859; the page-linked XLSX still does not resolve this CCN.",
+  "next_step": "Obtain a first-party root-pointer entry and CSV/JSON MRF specific to the Okemah facility (publisher request); re-probe the pointer only after a stated change."
+}

@@ -1,0 +1,19 @@
+{
+  "ccn": "054125",
+  "observed_at": "2026-10-01T18:49:30.000Z",
+  "type": "blocked-condition-cheap-probe-unchanged",
+  "probe": [
+    { "url": "https://www.countyofsb.org/cms-hpt.txt", "status": 404, "bytes": 143673, "note": "county's official 404 page" },
+    { "url": "https://countyofsb.org/cms-hpt.txt", "status": 301 }
+  ],
+  "unchanged_since": "2026-09-19 (reconciliation-santa-barbara-county-phf-current-page-proof.json: exact countyofsb.org/cms-hpt.txt route rendered the county's official 404 page; searches found no attributable current CMS MRF)",
+  "domain_search": {
+    "query": "\"Santa Barbara County\" \"Psychiatric Health Facility\" standard charges price transparency billing",
+    "recorded_domain": "www.countyofsb.org",
+    "found_domain": "www.countyofsb.org",
+    "agrees": true,
+    "basis": "Search results show the facility only on countyofsb.org Behavioral Wellness pages and state/federal listings (315 Camino del Remedio, Santa Barbara, CA 93110); no other first-party pricing host surfaced"
+  },
+  "established": ["The county root pointer remains absent (404) and no first-party pricing page has appeared in current search results."],
+  "not_established": ["No MRF presence, absence, or compliance conclusion is drawn."]
+}

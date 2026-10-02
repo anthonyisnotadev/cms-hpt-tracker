@@ -1,0 +1,46 @@
+{
+  "ccn": "670320",
+  "hospital_name": "EAST HOUSTON MEDICAL CENTER",
+  "state": "TX",
+  "observed_at": "2026-10-01T19:14:49Z",
+  "recorded_official_domain": "ehmct.com",
+  "domain_search": {
+    "query": "\"East Houston Medical Center\" Houston Wallisville price transparency standard charges",
+    "found_domain": "ehmct.com",
+    "agrees": true,
+    "basis": "First-party ehmct.com footer shows East Houston Medical Center, 15149 Wallisville Rd, Houston TX 77049 (the Wallisville Road facility named in next_action)."
+  },
+  "observations": [
+    {
+      "url": "https://ehmct.com/insurance/",
+      "observed_at": "2026-10-01T19:13:00Z",
+      "http_status": 200,
+      "established": "Insurance/Billing page links two first-party pricing documents: 'Charge Master (Shoppable List)' -> /wp-content/uploads/2025/08/Excellence-ER-Shoppable-Services-pages-deleted.pdf and 'View our Standard Charge File' -> /wp-content/uploads/2025/08/CPTR-Listing-Report-2-14-25.pdf.",
+      "not_established": "No pricing page in nav; /price-transparency and /standard-charges return 404; https://ehmct.com/cms-hpt.txt returns 404 (probed 2026-10-01T19:14:30Z)."
+    },
+    {
+      "url": "https://ehmct.com/wp-content/uploads/2025/08/CPTR-Listing-Report-2-14-25.pdf",
+      "observed_at": "2026-10-01T19:14:40Z",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "byte_count": 5613601,
+      "sha256": "82bda408164f78550a5ffb96f0108d04b2b6df36aaf118882c26c6b9f66e019b",
+      "established": "First-party 'Standard Charge File' exists but is a PDF (filename date 2-14-25), not a CMS-template CSV/JSON machine-readable format.",
+      "not_established": "In-document facility naming, declared date/version, and full charge coverage were not parsed from the PDF."
+    },
+    {
+      "url": "https://ehmct.com/wp-content/uploads/2025/08/Excellence-ER-Shoppable-Services-pages-deleted.pdf",
+      "observed_at": "2026-10-01T19:14:40Z",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "byte_count": 75910,
+      "sha256": "4f9523e15ea1460f3a62f78bc731780d44cc64008f15be42423f59b571ce1d1e",
+      "established": "First-party shoppable-services charge master PDF exists; also not a machine-readable CSV/JSON MRF.",
+      "not_established": "Same parsing caveats as above."
+    }
+  ],
+  "what_changed_vs_prior": "Prior state discovery-pointer-not-retrieved with no candidate file; this session newly identifies two first-party pricing documents (with bytes and hashes) and confirms no cms-hpt.txt (404) and no dedicated pricing page (404s).",
+  "tool_observations": "Z.ai web search, playwright homepage/route probes, web-reader page fetch, curl downloads 2026-10-01.",
+  "inferences": "The hospital posts pricing only as PDFs; CMS requires a machine-readable CSV/JSON/XML file, so this does not satisfy the MRF gate and is not promoted.",
+  "next_step": "Parse the two PDFs for facility identity and declared date to document what they cover, and request a CMS-format CSV/JSON MRF (plus cms-hpt.txt) from East Houston Medical Center."
+}

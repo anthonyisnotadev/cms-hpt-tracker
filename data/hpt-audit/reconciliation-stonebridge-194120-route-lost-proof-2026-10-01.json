@@ -1,0 +1,47 @@
+{
+  "ccn": "194120",
+  "hospital_name": "STONEBRIDGE BEHAVIORAL HOSPITAL",
+  "state": "LA",
+  "observed_at": "2026-10-01T23:13:42.745Z",
+  "domain_search": {
+    "query": "Stonebridge Behavioral hospital Louisiana price transparency standard charges",
+    "recorded_domain": "stonebridgebehavioral.com",
+    "found_domain": "stonebridgebehavioral.com",
+    "agrees": true,
+    "basis": "www.stonebridgebehavioral.com is the hospital's own Squarespace site (Stonebridge Behavioral Hospital, Lake Charles, Louisiana)."
+  },
+  "checks": [
+    {
+      "what": "Prior candidate workbook (from 2026-09-22 proof)",
+      "url": "https://www.stonebridgebehavioral.com/s/Charge-Master.xlsx",
+      "http_status": 404,
+      "clients": "Invoke-WebRequest HEAD"
+    },
+    {
+      "what": "Billing/pricing page",
+      "url": "https://www.stonebridgebehavioral.com/billing-insurance",
+      "http_status": 404,
+      "page_title": "Squarespace - Website Expired",
+      "clients": "headless browser navigation (also 404 via Invoke-WebRequest)"
+    },
+    {
+      "what": "Homepage in headless browser",
+      "url": "https://www.stonebridgebehavioral.com/",
+      "http_status": 404,
+      "note": "DNS still resolves to Squarespace IPs (198.185.159.145, 198.49.23.144/5); the subscription appears lapsed."
+    },
+    {
+      "what": "Reader-rendered cache of the billing page (Z.ai web-reader)",
+      "observation": "Cached content still shows the text 'A machine readable copy of our chargemaster is available here' with facility context Lake Charles, Louisiana; the link target resolves to the 404 workbook route above."
+    }
+  ],
+  "established": [
+    "As of this session the exact first-party chargemaster route (/s/Charge-Master.xlsx) returns HTTP 404 and the first-party site returns 'Squarespace - Website Expired' (404) to two independent clients.",
+    "The prior 'official-page-current-facility-workbook-linkage' route is no longer retrievable."
+  ],
+  "not_established": [
+    "A lapsed website is not evidence of regulatory noncompliance, file absence elsewhere, or facility closure; no disposition change is made.",
+    "Whether the hospital publishes a current MRF at any other location was not established."
+  ],
+  "changed_vs_prior": "2026-09-22 proof recorded a live official page linking Charge-Master.xlsx (parse unresolved); this session finds the page expired and the workbook 404 — the documented route is lost."
+}

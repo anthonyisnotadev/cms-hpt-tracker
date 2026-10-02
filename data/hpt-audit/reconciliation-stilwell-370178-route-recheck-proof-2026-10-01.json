@@ -1,0 +1,27 @@
+{
+  "ccn": "370178",
+  "hospital_name": "MEMORIAL HOSPITAL (STILWELL MEMORIAL HOSPITAL)",
+  "state": "OK",
+  "observed_at": "2026-10-01T23:08:18.564Z",
+  "domain_search": {
+    "query": "Stilwell Memorial hospital Oklahoma price transparency standard charges",
+    "recorded_domain": "stilwellmemorial.com",
+    "found_domain": "stilwellmemorial.com",
+    "agrees": true,
+    "basis": "https://stilwellmemorial.com is the hospital's own site (Memorial Hospital, Stilwell OK)."
+  },
+  "route_enumeration_2026_10_01": [
+    "https://stilwellmemorial.com/ — HTTP 200; full anchor inventory contains no pricing/standard-charges/MRF link (menu items: about, billing, careers, contact, financial-assistance, patients-visitors, services, ...).",
+    "https://stilwellmemorial.com/billing/ — HTTP 200; links only CMS No-Surprises-Act fact sheets and medical-records PDFs; no standard-charges file.",
+    "https://stilwellmemorial.com/financial-assistance/ — HTTP 200; no pricing/MRF links.",
+    "https://stilwellmemorial.com/patients-visitors/ — HTTP 200; no pricing/MRF links.",
+    "https://stilwellmemorial.com/sitemap/ — HTTP 200; page inventory shows no pricing/transparency page (only billing/ and financial-assistance/)."
+  ],
+  "established": [
+    "As of this session the first-party site exposes no CMS machine-readable standard-charges file, no pricing page beyond billing/financial-assistance, and no /cms-hpt.txt pointer link."
+  ],
+  "not_established": [
+    "This does not establish file absence outside the site, an exemption, or noncompliance."
+  ],
+  "changed_vs_prior": "Confirms and extends the 2026-09-21 'official-identity-confirmed-no-pricing-route' finding with a full anchor/sitemap enumeration including /billing/ and /financial-assistance/; nothing new recovered."
+}

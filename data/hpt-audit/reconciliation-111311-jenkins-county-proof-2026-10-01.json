@@ -1,0 +1,44 @@
+{
+  "ccn": "111311",
+  "hospital_name": "JENKINS COUNTY MEDICAL CENTER",
+  "state": "GA",
+  "observed_at": "2026-10-01T20:03:27.831Z",
+  "domain_search": {
+    "query": "\"Jenkins County Medical Center\" Millen Georgia price transparency standard charges",
+    "recorded_official_domain": "jenkinsmedicalcenter.com",
+    "found_official_domain": "jenkinsmedicalcenter.com",
+    "agrees": true,
+    "basis": "jenkinsmedicalcenter.com homepage and Pricing Transparency page show Jenkins County Medical Center, 931 East Winthrope Ave. Millen, GA 30442, hpt-obf:v1:U_CG9vwRpCNOcasA.ediSU-09IeqfvrV_BR2vLQ.6iMQYq1rRPVJEX3ueNY."
+  },
+  "route": {
+    "click_path": "Playwright browser -> https://jenkinsmedicalcenter.com/pricing-transparency/ (HTTP 200). Page text describes 'The standard charges machine-readable file ... in compliance with 45 CFR 180.20' and presents two buttons: 'Hospital Shopables' and 'Standard Charges'. Both are <button> elements with no href and no onclick; clicking each (Playwright .click()) produced no network request for any CSV/JSON/ZIP and no modal with file links. Page HTML contains no *.csv/*.json/*.zip URLs and no Google Drive/Dropbox links.",
+    "pricing_page_url": "https://jenkinsmedicalcenter.com/pricing-transparency/"
+  },
+  "checks": [
+    {
+      "check": "root CMS pointer",
+      "url": "https://jenkinsmedicalcenter.com/cms-hpt.txt",
+      "status": 404,
+      "observed_at": "2026-10-01T20:03:27.831Z",
+      "note": "GET returned HTTP 404. Not evidence of noncompliance by itself."
+    },
+    {
+      "check": "pricing page file buttons",
+      "url": "https://jenkinsmedicalcenter.com/pricing-transparency/",
+      "status": 200,
+      "observed_at": "2026-10-01T20:03:27.831Z",
+      "note": "Both 'Hospital Shopables' and 'Standard Charges' buttons are inert in the headless browser (no file request fired). The only cross-host asset observed is jenkinsmedicalcenter.tempurl.host (a staging-temp URL used for hero images), not a pricing file."
+    }
+  ],
+  "established": [
+    "Official domain agrees with the record (jenkinsmedicalcenter.com; Millen GA identity on the pricing page).",
+    "As of 2026-10-01 the pricing-transparency page advertises a standard charges machine-readable file but exposes no retrievable file link: buttons are inert and page HTML contains no file URLs; /cms-hpt.txt is 404.",
+    "No current CMS CSV/JSON was retrieved."
+  ],
+  "not_established": [
+    "Whether the buttons work in an interactive (non-headless) browser session.",
+    "Whether a MRF exists at a URL not exposed by the page.",
+    "Any compliance status."
+  ],
+  "change_vs_prior": "First observation of the actual page interaction: the 'Standard Charges'/'Hospital Shopables' buttons have no href/handler and trigger no file download in the browser, and /cms-hpt.txt is 404 on the correct domain. Prior record was 'site-observed' with no candidate file recorded."
+}

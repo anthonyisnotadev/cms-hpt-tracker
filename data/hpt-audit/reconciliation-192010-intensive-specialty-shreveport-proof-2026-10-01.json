@@ -1,0 +1,54 @@
+{
+  "ccn": "192010",
+  "hospital_name": "INTENSIVE SPECIALTY HOSPITAL (Shreveport Campus)",
+  "state": "LA",
+  "observed_at": "2026-10-01T20:09:27.869Z",
+  "domain_search": {
+    "query": "\"Intensive Specialty Hospital\" Shreveport Louisiana price transparency standard charges",
+    "recorded_official_domain": "intensivespecialty.com",
+    "found_official_domain": "intensivespecialty.com",
+    "agrees": true,
+    "basis": "intensivespecialty.com homepage: 'Intensive Specialty Hospital is a long-term acute care hospital in Northwest Louisiana with locations in Shreveport and Bossier City'; AHD lists Intensive Specialty Hospital - Shreveport Campus (192010), Shreveport, LA."
+  },
+  "route": {
+    "click_path": "Direct GET routes (https://intensivespecialty.com/cms-hpt.txt, /price-transparency, and the CSV URL) each returned HTTP 202 with a SiteGround sgcaptcha meta-refresh challenge to plain fetch; Playwright headless browser loaded https://intensivespecialty.com/price-transparency/ successfully (title 'Price Transparency - Intensive Specialty Hospital'); the CSV was then fetched from within the page context via in-page fetch().",
+    "pricing_page_url": "https://intensivespecialty.com/price-transparency/",
+    "links_found": [
+      "https://intensivespecialty.com/wp-content/uploads/2026/04/83-4071258_ShreveportCampus_IntensiveSpecialtyHospital_Standardcharges.csv",
+      "https://intensivespecialty.com/wp-content/uploads/2025/08/IntensiveSpecialtyHospital_ShoppableServices_Aug2025.csv",
+      "https://intensivespecialty.com/wp-content/uploads/2026/04/83-4071258_BossierCityCampus_IntensiveSpecialtyHospital_Standardcharges.csv",
+      "https://intensivespecialty.com/wp-content/uploads/2026/04/83-4071258_PirremontCampus_IntensiveSpecialtyHospital_Standardcharges.csv",
+      "https://intensivespecialty.com/wp-content/uploads/2021/12/PDF-Price-Master-Intensive-Specialty-Hospital-2021-05-10.pdf"
+    ]
+  },
+  "file_observation": {
+    "url": "https://intensivespecialty.com/wp-content/uploads/2026/04/83-4071258_ShreveportCampus_IntensiveSpecialtyHospital_Standardcharges.csv",
+    "http_status": 200,
+    "bytes": 1946545,
+    "sha256": "8bae2eebd737e262575c85bfbbecd25669121057dc3fbce971b80b2472eabc1c",
+    "observed_at": "2026-10-01T20:09:27.869Z",
+    "declared_metadata": {
+      "hospital_name": "Intensive Specialty Hospital ",
+      "last_updated_on": "3/26/2026",
+      "version": "3.0.0",
+      "location_name": "Shreveport Campus",
+      "hospital_address": "1800 Irving Pl Shreveport LA 71101",
+      "license_number": "50056|LA",
+      "type_2_npis": ["1528622065", "1316522774", "1770365009"],
+      "attestation": "TRUE (45 CFR 180.50 affirmations present)",
+      "attester_name": "Yaakov Septimus"
+    },
+    "header_note": "CMS-template CSV header columns observed (hospital_name, last_updated_on, version, location_name, hospital_address, license_number[|state], type_2_npi, affirmation text, attester_name, ... standard_charge columns). Tool observation: text as returned by in-page fetch; hash computed over the UTF-8 bytes of that text in-browser."
+  },
+  "established": [
+    "Official domain agrees with the record (intensivespecialty.com).",
+    "A current Shreveport-Campus-specific CMS-template standard-charges CSV exists on the official site, declares last_updated_on 3/26/2026, version 3.0.0, location_name 'Shreveport Campus', Shreveport LA 71101 address, LA license 50056, and a 45 CFR 180.50 attestation.",
+    "The file was retrieved through an ordinarily-permitted browser route (site's own price-transparency page -> file link)."
+  ],
+  "not_established": [
+    "No /cms-hpt.txt pointer was observed (direct request returned a captcha challenge, not the file); pointer linkage for this facility is not established.",
+    "Whether the Bossier City campus file relates to a different CCN (not in scope).",
+    "Complete validation of every rate row (only the header/metadata section was inspected in detail)."
+  ],
+  "change_vs_prior": "Prior state was pointer-access-denied-to-client with no candidate file recorded. New: full 1,946,545-byte Shreveport Campus CSV (2026-04 path, declared 3/26/2026, version 3.0.0) retrieved with SHA-256 8bae2eebd737e262575c85bfbbecd25669121057dc3fbce971b80b2472eabc1c and Shreveport LA identity — first file-level evidence for this CCN."
+}

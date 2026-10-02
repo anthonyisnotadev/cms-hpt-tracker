@@ -1,0 +1,77 @@
+{
+  "ccn": "450092",
+  "observed_at": "2026-10-01T19:36:40.651Z",
+  "what_changed_versus_prior_proof": "Prior proof (reconciliation-fort-duncan-browser-recheck-proof-2026-09-22.json) could not retrieve the pointer or any MRF bytes: the first-party domain returned a Cloudflare access-denied page to the browser. In this check, the pointer was retrieved through the web-reader route and the full declared MRF (60,594,287 bytes, SHA-256 8A92221E021BCAD0E38CC489391997469B64CD25C344A51E216EE76AD7C82A89, version 3.0.0, last_updated_on 9/1/2026) was retrieved for the first time, with facility identity matching the CMS record. This is new pointer-content, MRF-bytes and metadata evidence.",
+  "domain_search": {
+    "query": "\"Fort Duncan Medical Center\" Eagle Pass Texas hospital price transparency standard charges",
+    "recorded_domain": "fortduncanmedicalcenter.com",
+    "found_domain": "fortduncanmedicalcenter.com",
+    "agrees": true,
+    "basis": "Search top result https://fortduncanmedicalcenter.com/patients-visitors/pricing-guide titled 'Pricing Guide | Fort Duncan Regional Medical Center, Texas'; same first-party domain as recorded."
+  },
+  "cms_record": {
+    "facility_id": "450092",
+    "facility_name": "FORT DUNCAN MEDICAL CENTER",
+    "address": "3333 N FOSTER MALDONADO BLVD",
+    "citytown": "EAGLE PASS",
+    "state": "TX",
+    "zip_code": "78852"
+  },
+  "direct_fetch_observation": {
+    "url": "https://fortduncanmedicalcenter.com/cms-hpt.txt",
+    "result": "HTTP 403 Cloudflare 'Access denied ... used Cloudflare to restrict access' page (8,194 bytes) returned to a plain Node fetch with a browser user-agent."
+  },
+  "pointer_retrieval": {
+    "route": "web-reader MCP (materially different authorized route)",
+    "url": "https://fortduncanmedicalcenter.com/cms-hpt.txt",
+    "retrieved_at": "2026-10-01",
+    "content": "location-name: Fort Duncan Regional Medical Center; source-page-url: https://www.fortduncanmedicalcenter.com/patients-visitors/pricing-guide; mrf-url: https://uhsfilecdn.eskycity.net/ac/233044530_fort-duncan-regional-medical-center_standardcharges.csv; contact-name: UHS Corp Price Transparency Team; contact-email: hpt-obf:v1:GgmIGzSEWrnDnUBj.mhil8XaxMnpQfKpFd_Jg-A.FFWKFBkhB064JgNaL_61mLQhXjftX2pWd9Ynjr3OaEJSuTdJa0cj",
+    "location_name": "Fort Duncan Regional Medical Center"
+  },
+  "mrf_file": {
+    "url": "https://uhsfilecdn.eskycity.net/ac/233044530_fort-duncan-regional-medical-center_standardcharges.csv",
+    "http_status": 200,
+    "content_type": "text/csv",
+    "content_length": 60594287,
+    "byte_count": 60594287,
+    "sha256": "8A92221E021BCAD0E38CC489391997469B64CD25C344A51E216EE76AD7C82A89",
+    "last_modified": "Thu, 10 Sep 2026 21:32:45 GMT",
+    "full_file_retrieved": true,
+    "local_sample_copy": "Retained privately outside repository (not committed)"
+  },
+  "mrf_metadata_declared": {
+    "hospital_name": "Fort Duncan Medical Center LP",
+    "location_name": "Fort Duncan Regional Medical Center",
+    "hospital_address": "3333 N. Foster Maldonado Boulevard, Eagle Pass, TX 78852",
+    "license_number": "547 (license_number|TX)",
+    "type_2_npi": "1770579591|1083799514",
+    "attester_name": "Mark Cannon",
+    "attestation": "TRUE (45 CFR 180.50 attestation text present in header, value TRUE on data row)",
+    "last_updated_on": "9/1/2026",
+    "version": "3.0.0"
+  },
+  "identity_check": {
+    "facility_name_matches": true,
+    "note": "CMS name 'FORT DUNCAN MEDICAL CENTER' matches declared hospital_name 'Fort Duncan Medical Center LP'; declared location_name uses the facility's current public brand 'Fort Duncan Regional Medical Center'.",
+    "address_matches": true,
+    "note_address": "Declared street address and Eagle Pass, TX 78852 match the CMS record.",
+    "state_matches": true,
+    "state": "TX"
+  },
+  "usability_check": {
+    "cms_template_version": "3.0.0 (exact canonical spelling)",
+    "csv_structure": "Standard CMS Template v3.0.0 layout: header rows with hospital_name, last_updated_on, version, location_name, hospital_address, license, type_2_npi, attester, attestation, then itemized rows with description, codes, setting, gross/discounted-cash/min/max and payer-specific negotiated charges (AETNA, MEDICARE, AMBETTER, BCBS TX, CIGNA, DRISCOLL... observed in header sample).",
+    "parsed_usable": true
+  },
+  "established": [
+    "First-party pointer https://fortduncanmedicalcenter.com/cms-hpt.txt exists and was retrieved through the web-reader route.",
+    "Pointer's declared MRF URL serves a complete 60,594,287-byte CMS v3.0.0 CSV (HTTP 200).",
+    "Declared facility name, address, and Texas state match the CMS record for CCN 450092.",
+    "Declared last_updated_on 9/1/2026 and attestation TRUE are present."
+  ],
+  "not_established": [
+    "Direct first-party HTTP access remains blocked to automation clients (403 Cloudflare); the block is a client-side transport result, not evidence of noncompliance.",
+    "Whether the mrf-url is stable across publisher rotations."
+  ],
+  "disposition_recommended": "linked-verified-mrf"
+}

@@ -1,0 +1,43 @@
+{
+  "ccn": "050714",
+  "observed_at": "2026-10-01T13:37:35.407Z",
+  "what_was_established": "The official Sutter Health root pointer (https://www.sutterhealth.org/cms-hpt.txt, HTTP 200, SHA-256 76cf5ee42d726154cfadf3b5d2fdd6605eea5599b8751fc24707dba424a6b2ca, 25914 bytes) contains exactly 27 location entries; exactly one entry matches this CCN's facility: 'SUTTER MATERNITY & SURGERY CENTER OF SANTA CRUZ' pointing to the facility-specific CSV. A bounded 262,144-byte sample of that CSV (HTTP 200, SHA-256 08bcb9867e9b7e7e789240ba5e561454ba35539ff8c9fe151fd6db3a7bac3728) declares hospital_name 'Sutter Maternity & Surgery Center of Santa Cruz', address '2900 Chanticleer Avenue, Santa Cruz, CA 95065', type_2_npi '1689035628|1972749893', license_number|CA '70000399', last_updated_on '2026-04-01', version '3.0.0', attestation 'true'. No shared-system sibling file is assigned to this CCN.",
+  "what_was_not_established": "The full-file SHA-256 beyond the bounded sample was not established. Domain search this session (query: '\"Sutter Maternity & Surgery Center of Santa Cruz\" hospital price transparency standard charges') returned sutterhealth.org pages (billing-insurance/costs-and-charges, cost-transparency, find-location facility page), agreeing with the recorded official_domain sutterhealth.org.",
+  "tool_observations": {
+    "pointer_url": "https://www.sutterhealth.org/cms-hpt.txt",
+    "pointer_http_status": 200,
+    "pointer_bytes": 25914,
+    "pointer_sha256": "76cf5ee42d726154cfadf3b5d2fdd6605eea5599b8751fc24707dba424a6b2ca",
+    "pointer_entry_count": 27,
+    "pointer_entries_matching_facility": 1,
+    "pointer_location_name": "SUTTER MATERNITY & SURGERY CENTER OF SANTA CRUZ",
+    "mrf_url": "https://edge.sitecorecloud.io/sutterhealt962c-sutterhealt8fce-production57cc-4860/media/Project/SutterHealth/SutterHealth/Files/billing-insurance/costs-and-charges/940562680-1689035628_sutter-maternity-surgery-center-of-santa-cruz_standardcharges.csv",
+    "mrf_http_status": 200,
+    "mrf_sample_bytes": 262144,
+    "mrf_sample_sha256": "08bcb9867e9b7e7e789240ba5e561454ba35539ff8c9fe151fd6db3a7bac3728",
+    "declared_hospital_name": "Sutter Maternity & Surgery Center of Santa Cruz",
+    "declared_address": "2900 Chanticleer Avenue, Santa Cruz, CA 95065",
+    "declared_type_2_npis": "1689035628|1972749893",
+    "declared_license_number": "70000399",
+    "declared_license_state": "CA",
+    "declared_last_updated": "2026-04-01",
+    "cms_template_version": "3.0.0",
+    "attestation": true
+  },
+  "inferences": [
+    "The single matching pointer entry plus the facility-specific CSV header agreeing on exact name, street address, state, NPIs, license number, CMS v3 template, date, and attestation resolves the pointer-facility-match gate for this CCN.",
+    "No other pointer entry names this facility or a near-alias, so no sibling file is attributable to CCN 050714."
+  ],
+  "search_basis": {
+    "query": "\"Sutter Maternity & Surgery Center of Santa Cruz\" hospital price transparency standard charges",
+    "found_domain": "https://www.sutterhealth.org/",
+    "recorded_domain": "https://www.sutterhealth.org/",
+    "agrees": true,
+    "corroborating_pages": [
+      "https://www.sutterhealth.org/billing-insurance/costs-and-charges",
+      "https://www.sutterhealth.org/billing-insurance/costs-and-charges/cost-transparency",
+      "https://www.sutterhealth.org/health-plan/hospital/sutter-maternity-surgery-center-of-santa-cruz-1047115785"
+    ],
+    "third_party_address_corroboration": "HCAI facility page (hcai.ca.gov) lists 2900 Chanticleer Avenue Santa Cruz, CA 95065, HCAI ID 106444012, matching the MRF header address."
+  }
+}

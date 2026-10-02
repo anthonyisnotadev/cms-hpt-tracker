@@ -1,0 +1,31 @@
+{
+  "ccn": "054078",
+  "observed_at": "2026-10-01T13:44:58.024Z",
+  "check_kind": "same-origin-bounded-file-hash-recheck",
+  "official_domain": "https://www.lasencinashospital.com/",
+  "domain_search": {
+    "query": "\"Aurora Las Encinas\" hospital Pasadena price transparency standard charges",
+    "recorded_domain": "lasencinashospital.com",
+    "found_domain": "lasencinashospital.com",
+    "agrees": true,
+    "basis": "https://www.lasencinashospital.com/price-transparency/ renders the first-party price-transparency page for Las Encinas Hospital, Pasadena CA."
+  },
+  "pointer_url": "https://www.lasencinashospital.com/cms-hpt.txt",
+  "pointer_status": 200,
+  "pointer_declared_mrf_url": "https://www.lasencinashospital.com/wp-content/uploads/2026/07/32-0039155_Aurora-Las-Encinas-LLC_standardcharges_1.csv",
+  "mrf_url": "https://www.lasencinashospital.com/wp-content/uploads/2026/07/32-0039155_Aurora-Las-Encinas-LLC_standardcharges_1.csv",
+  "mrf_status": 200,
+  "mrf_bytes": 8394,
+  "mrf_sample_bytes": 8394,
+  "mrf_sha256": "f83776cf9bb279af34c8e820fe1a5e10b6a5c4192b2521f02bdc02793f8e3402",
+  "mrf_last_modified": "Mon, 17 Aug 2026 19:53:09 GMT",
+  "declared_hospital_name": "Aurora Las Encinas, LLC (dba Aurora Las Encinas Hospital)",
+  "declared_report_date": "2025-03-21",
+  "cms_template_version": "not declared",
+  "declared_address": "not declared in file root",
+  "route_note": "Direct HTTP fetch from a non-browser client returned 403 (bot blocking); the file was retrieved same-origin from the rendered /price-transparency/ page in the headless browser instead. The 403 is a client-side failure, not evidence the file is gone.",
+  "established": "The pointer-declared CSV is byte-identical to the retained 2026-09-25 corpus (same length 8,394 and SHA-256 f83776cf...), still carries a 2025-03-21 report date, and still lacks CMS v3 root address/state/version metadata.",
+  "not_established": "No alternate publisher route or publisher-provided current copy was found; no CMS 3.0.0 / address / license-state metadata; no attestation; full schema/currency review remains pending.",
+  "reason_unchanged": "File content unchanged, so the recorded 'pointer-linked-file-review-pending' disposition and known schema deficits still stand.",
+  "next_action": "Pursue a publisher-provided current-file copy or a materially different authorized route before changing CCN 054078."
+}

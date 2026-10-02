@@ -46,7 +46,10 @@ const fail = (code, msg) => { console.error(msg); process.exit(code); };
 
 const ledger = () => readLines(ledgerPath);
 const queue = () => readJson(path.join(audit, 'unresolved-investigation-worklist.json')).records
-  .slice().sort((a, b) => a.investigation_tier - b.investigation_tier || a.ccn.localeCompare(b.ccn));
+  .slice().sort((a, b) => a.investigation_tier - b.investigation_tier
+    || queueDomain(a).localeCompare(queueDomain(b)) || a.ccn.localeCompare(b.ccn));
+// Same-system CCNs share one pointer file, so group them within a tier: one fetch can serve a whole batch.
+function queueDomain(r) { return String(r.official_domain || '~none').toLowerCase().replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/.*$/, ''); }
 const nationwide = () => readJson(path.join(audit, 'nationwide-verification.json')).records;
 const stateKey = (r) => `${r.disposition}|${r.standing_finding}|${r.mrf_state}`;
 function stateMap(records) { const o = {}; for (const r of records) o[r.ccn] = stateKey(r); return o; }
@@ -142,12 +145,25 @@ if (cmd === 'status') {
   const items = remaining().filter((r) => !only || only.has(r.ccn)).slice(0, only ? only.size : Number(arg) || 3);
   if (cmd === 'assign') {
     fs.mkdirSync(tmpDir, { recursive: true });
-    fs.writeFileSync(batchPath, JSON.stringify({ assigned_at: new Date().toISOString(), ccns: items.map((r) => r.ccn), records: items }, null, 2));
+    const stamp = new Date().toISOString();
+    // --slots S: split the items into S contiguous chunks (same-system CCNs stay together), one batch-<k>.json per
+    // parallel agent. An agent started with HPT_SLOT=k can log only its own chunk. batch.json keeps the union.
+    const slots = argv.includes('--slots') ? Number(argv[argv.indexOf('--slots') + 1]) : 0;
+    for (const f of fs.readdirSync(tmpDir)) if (/^batch-\d+\.json$/.test(f)) fs.unlinkSync(path.join(tmpDir, f));
+    if (slots > 0) {
+      const per = Math.ceil(items.length / slots);
+      for (let k = 0; k < slots; k++) {
+        const chunk = items.slice(k * per, (k + 1) * per);
+        if (chunk.length) fs.writeFileSync(path.join(tmpDir, `batch-${k + 1}.json`), JSON.stringify({ assigned_at: stamp, slot: k + 1, ccns: chunk.map((r) => r.ccn), records: chunk }, null, 2));
+      }
+    }
+    fs.writeFileSync(batchPath, JSON.stringify({ assigned_at: stamp, ccns: items.map((r) => r.ccn), records: items }, null, 2));
   }
   console.log(JSON.stringify(items, null, 2));
 } else if (cmd === 'log' || cmd === 'log-file') {
   const e = cmd === 'log' ? JSON.parse(arg) : readJson(path.resolve(arg));
-  const batch = fs.existsSync(batchPath) ? readJson(batchPath).ccns : null;
+  const slotPath = process.env.HPT_SLOT ? path.join(tmpDir, `batch-${process.env.HPT_SLOT}.json`) : batchPath;
+  const batch = fs.existsSync(slotPath) ? readJson(slotPath).ccns : null;
   const errs = validateEntry(e, batch);
   if (errs.length) fail(2, 'LEDGER REJECTED: ' + errs.join('; '));
   append(ledgerPath, { at: new Date().toISOString(), disposition_change: 'none', ...e });
@@ -156,6 +172,23 @@ if (cmd === 'status') {
   fs.mkdirSync(tmpDir, { recursive: true });
   fs.writeFileSync(protectedPath, JSON.stringify(protectedHashes()));
   console.log('protected-file hashes saved');
+} else if (cmd === 'fix-unlanded') {
+  // After the loop's rebuild: a promote/downgrade line whose CCN did not change state was never applied by the build.
+  // Withdraw the claim (quarantine the original, keep the evidence as evidence-gain/none) instead of halting the run.
+  const sinceIdx = Number(argv[argv.indexOf('--since') + 1]) || 0;
+  const pre = readJson(acceptedPath), now = stateMap(nationwide());
+  const all = readLines(ledgerPath);
+  const keep = [], withdrawn = [];
+  all.forEach((e, i) => {
+    if (i >= sinceIdx && (e.disposition_change === 'promote' || e.disposition_change === 'downgrade') && pre[e.ccn] !== undefined && pre[e.ccn] === now[e.ccn]) withdrawn.push(e);
+    else keep.push(e);
+  });
+  for (const e of withdrawn) {
+    append(path.join(audit, 'autonomy/ledger-quarantined-unlanded-claims.jsonl'), { ...e, quarantined_at: new Date().toISOString(), quarantine_reason: `ledger claimed ${e.disposition_change} but the rebuilt state is unchanged (no supported pointer linkage or the build did not apply it); withdrawn automatically, evidence retained as evidence-gain/none` });
+    keep.push({ ...e, at: new Date().toISOString(), outcome: 'evidence-gain', disposition_change: 'none', reason: `[claim withdrawn: the build did not apply the ${e.disposition_change}, so the state is unchanged] ${e.reason}`, next_step: `Needs a supported pointer-linked verification before any ${e.disposition_change}: the earlier apply script did not take effect in the rebuild. Re-attempt only with a published pointer entry that names this facility and the flat pointer_* observation fields.` });
+  }
+  if (withdrawn.length) fs.writeFileSync(ledgerPath, keep.map((e) => JSON.stringify(e)).join('\n') + '\n');
+  console.log(`withdrew ${withdrawn.length} unlanded claim(s): ${withdrawn.map((e) => e.ccn).join(', ') || '-'}`);
 } else if (cmd === 'accept') {
   fs.mkdirSync(tmpDir, { recursive: true });
   fs.writeFileSync(acceptedPath, JSON.stringify(stateMap(nationwide())));
@@ -202,8 +235,25 @@ if (cmd === 'status') {
       if (pre[ccn] === undefined || pre[ccn] === now[ccn]) continue;
       const e = last.get(ccn);
       if (!e) { problems.push(`${ccn}: COLLATERAL state change (${pre[ccn]} -> ${now[ccn]}) with no ledger line this iteration`); continue; }
-      if (e.disposition_change === 'none') { problems.push(`${ccn}: state changed but ledger says disposition_change=none`); continue; }
       const a = rank(pre[ccn]), b = rank(now[ccn]);
+      if (e.disposition_change === 'none') {
+        // A search-found domain correction re-targets pointer retrieval, which can legitimately lift a pointer-level state
+        // (e.g. access-denied -> retrieved-but-unmatched). Allow only that: pointer-level ranks (<=2), never down. Anything
+        // reaching a verification-level state must carry an explicit promote line.
+        let retarget = false;
+        if (fs.existsSync(domainsPath) && e.domain_search && e.domain_search.agrees === false) {
+          const dpre = readJson(domainsPath);
+          retarget = dpre[ccn] !== undefined && dpre[ccn] !== (records.find((r) => r.ccn === ccn).official_domain || '');
+        }
+        if (retarget && a !== undefined && b !== undefined && b >= a && b <= 2) { warnings.push(`${ccn}: pointer-level state moved ${pre[ccn].split('|')[0]} -> ${now[ccn].split('|')[0]} as a consequence of the domain correction (accepted; not a verification)`); continue; }
+        // A complete, header-matching file can lift the file-level standing finding to compliant-observed while the disposition
+        // (pointer verification) stays put. Allow only that, backed by an evidence-gain line with a proof; anything else halts.
+        const [dPre, sPre] = pre[ccn].split('|'), [dNow, sNow] = now[ccn].split('|');
+        if (dPre === dNow && sNow === 'compliant-observed' && !/fail|non-?compl/i.test(sPre) && e.outcome === 'evidence-gain' && e.proof) {
+          warnings.push(`${ccn}: standing finding ${sPre} -> compliant-observed from file evidence; disposition unchanged at ${dNow} (not a verification)`); continue;
+        }
+        problems.push(`${ccn}: state changed but ledger says disposition_change=none`); continue;
+      }
       if (e.disposition_change === 'promote' && !(b > a)) problems.push(`${ccn}: ledger says promote but ${pre[ccn].split('|')[0]} -> ${now[ccn].split('|')[0]} is not a promotion`);
       if (e.disposition_change === 'downgrade' && !(b < a)) problems.push(`${ccn}: ledger says downgrade but ${pre[ccn].split('|')[0]} -> ${now[ccn].split('|')[0]} is not a downgrade`);
     }
@@ -211,14 +261,16 @@ if (cmd === 'status') {
     if (fs.existsSync(domainsPath)) {
       const dpre = readJson(domainsPath), dnow = domainMap(records);
       for (const ccn of Object.keys(dnow)) {
-        if (dpre[ccn] === undefined || dpre[ccn] === dnow[ccn]) continue;
+        // Ignore cosmetic differences (scheme, www., trailing slash, case): only a different host is a domain change.
+        const normHost = (d) => String(d || '').toLowerCase().replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/.*$/, '');
+        if (dpre[ccn] === undefined || dpre[ccn] === dnow[ccn] || normHost(dpre[ccn]) === normHost(dnow[ccn])) continue;
         const e = last.get(ccn);
         if (!e || !e.domain_search || e.domain_search.agrees !== false) problems.push(`${ccn}: official_domain changed (${dpre[ccn] || 'blank'} -> ${dnow[ccn] || 'blank'}) with no ledger line recording a search-found discrepancy`);
       }
     }
     for (const e of entries) {
       for (const p of proofProblems(e)) problems.push(`${e.ccn}: ${p}`);
-      if (argv.includes('--since') && e.disposition_change !== 'none' && pre[e.ccn] === now[e.ccn]) warnings.push(`${e.ccn}: ledger says ${e.disposition_change} but tracked state is unchanged (rebuild missing?)`);
+      if (argv.includes('--since') && e.disposition_change !== 'none' && pre[e.ccn] === now[e.ccn]) problems.push(`${e.ccn}: ledger says ${e.disposition_change} but the rebuilt tracked state is unchanged (the build did not apply it: missing pointer_* fields or no supported pointer linkage); log it as evidence-gain/none or blocked instead`);
     }
   } else warnings.push('no accepted baseline yet; state-change checks skipped');
   for (const w of warnings) console.error('warn: ' + w);

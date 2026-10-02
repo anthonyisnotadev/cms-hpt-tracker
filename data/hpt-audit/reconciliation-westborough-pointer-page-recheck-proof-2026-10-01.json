@@ -1,0 +1,30 @@
+{
+  "ccn": "224044",
+  "observed_at": "2026-10-01T14:24:34Z",
+  "official_domain": "https://www.westboroughbehavioral.com/",
+  "domain_search": {
+    "query": "\"Westborough Behavioral Healthcare Hospital\" Westborough MA price transparency standard charges",
+    "recorded_domain": "www.westboroughbehavioral.com",
+    "found_domain": "www.westboroughbehavioral.com",
+    "agrees": true,
+    "basis": "Search returns the first-party site (westboroughbehavioral.com) identifying Westborough Behavioral Healthcare Hospital; aggregators ignored."
+  },
+  "pointer_url": "https://www.westboroughbehavioral.com/cms-hpt.txt",
+  "pointer_status": 200,
+  "pointer_bytes": 3192,
+  "pointer_sha256": "2f5c55cbcecddd9cfa0623bb6c7f97c7ffce7e14584aa3c2f0b0e2d7c4c6caf3",
+  "pointer_last_modified": "2026-06-04T19:25:31Z",
+  "price_page_url": "https://www.westboroughbehavioral.com/node/2141",
+  "price_page_title": "Price Transparency | Westborough Behavioral Healthcare Hospital",
+  "price_page_file_links": [
+    {
+      "href": "https://www.westboroughbehavioral.com/sites/default/files/attachments/Price%20Transparence%202026%20PDF.pdf",
+      "type": "application/pdf",
+      "length_bytes": 90202
+    }
+  ],
+  "established": "Root pointer is byte-identical to the 2026-09-15/2026-09-19 rechecks (same SHA-256, 10 out-of-state sibling entries, no Westborough or Massachusetts entry). The first-party price page still links only the same 90,202-byte 2026 PDF; no CSV/JSON machine-readable file is exposed.",
+  "not_established": "No Westborough-specific CMS CSV/JSON MRF was found through a permitted route; no conclusion about file absence beyond this domain is drawn.",
+  "evidence_role": "dated recheck of a documented unchanged condition; no promotion or downgrade supported",
+  "next_action": "Continue to await a Westborough-specific pointer entry or CSV/JSON MRF on the first-party site; recheck the pointer hash and price page on the next scheduled pass."
+}

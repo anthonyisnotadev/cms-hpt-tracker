@@ -1,0 +1,33 @@
+{
+  "ccn": "164007",
+  "observed_at": "2026-10-01T23:22:14.035Z",
+  "domain_search": {
+    "tool": "web-search-prime_web_search_prime",
+    "query": "\"Clive Behavioral Health\" Clive Iowa hospital price transparency standard charges",
+    "recorded_domain": "uhs.com",
+    "found_domain": "clivebehavioral.com",
+    "basis": "Search result titled 'Standard Services - Clive Behavioral Health' at https://clivebehavioral.com/standard-services describes hospital charges for Clive Behavioral Health; the site homepage (search snippet ref_6 of psychologytoday listing and the site itself) names Clive Behavioral Health hospital, Clive, Iowa."
+  },
+  "what_changed_vs_prior_proof": "Prior proof (reconciliation-clive-behavioral-uhs-browser-recheck-proof-2026-09-23.json) recorded only the corporate uhs.com domain with a 404 root pointer. This proof establishes a first-party facility domain, clivebehavioral.com, distinct from the recorded uhs.com.",
+  "access_checks": [
+    {
+      "url": "https://clivebehavioral.com/standard-services",
+      "method": "Invoke-WebRequest GET",
+      "observed_at": "2026-10-01T23:20:00Z",
+      "status": 403,
+      "note": "Cloudflare automation block to CLI client; client-side failure, not evidence about file availability."
+    },
+    {
+      "url": "https://clivebehavioral.com/cms-hpt.txt",
+      "method": "playwright headless browser",
+      "observed_at": "2026-10-01T23:21:18Z",
+      "status": 403,
+      "page_title": "Just a moment...",
+      "note": "Cloudflare JS challenge unresolved after 8s wait on sibling page; not evidence of file absence."
+    }
+  ],
+  "established": "First-party facility domain is clivebehavioral.com with a Standard Services pricing page; recorded uhs.com is corporate, not the facility domain.",
+  "not_established": "Pointer file existence/content, MRF identity, facility name/address in a declared MRF, CMS version, or any compliance conclusion.",
+  "disposition": "official-domain-corrected-pointer-access-blocked-to-client",
+  "next_action": "Retry https://clivebehavioral.com/cms-hpt.txt and the Standard Services page through a route that passes the Cloudflare challenge or a publisher-enabled copy; then verify declared name (Clive Behavioral Health, 1450 NW 114th Street, Clive, IA 50325), date, CMS version and usability before any promotion."
+}

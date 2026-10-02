@@ -1,0 +1,36 @@
+{
+  "ccn": "451310",
+  "hospital_name": "BALLINGER MEMORIAL HOSPITAL",
+  "state": "TX",
+  "observed_at": "2026-10-01T16:48:34.355Z",
+  "domain_search": {
+    "query": "\"Ballinger Memorial Hospital\" Ballinger Texas hospital price transparency standard charges",
+    "recorded_domain": "ballingerhospital.org",
+    "found_domain": "www.ballingerhospital.org",
+    "agrees": true,
+    "basis": "https://www.ballingerhospital.org (homepage) lists 'List of Standard Charges – Texas Health and Safety Code (HSC) §327.003'; same first-party domain as recorded."
+  },
+  "observations": [
+    {
+      "what": "Live root pointer retrieved from https://www.ballingerhospital.org/cms-hpt.txt",
+      "http_status": 200,
+      "bytes": 314,
+      "content": "location-name: Ballinger Memorial Hospital\nsource-page-url: https://www.ballingerhospital.org/public-notices#Price-Transparency\nmrf-url: https://files.bmhd.org/compliance/75-2312009_BALLINGER%20MEMORIAL%20HOSPITAL%20DISTRICT_STANDARD%20CHARGES.csv\ncontact-name: hpt-obf:v1:SrC9WWAdoRwSLZpA.CZkGvrPhVMrklmlTFWRwow.ms6HFNnyu3_-3WPCtKy61A\ncontact-email: hpt-obf:v1:7YQzjz0d5FarerO_.YXFA7B3Ph4KfK8HWnIc83g.ovhL987bC7orMLWh0ov6U4d720o",
+      "established": "A current, first-party CMS-HPT root pointer exists and names the exact facility (location-name matches the CCN's hospital name)."
+    },
+    {
+      "what": "Declared MRF at files.bmhd.org unreachable from this client",
+      "attempts": [
+        "PowerShell Invoke-WebRequest Range GET: connection failure (status 0)",
+        "curl.exe https Range GET: curl error 35 (schannel TLS handshake failed), even with -k",
+        "curl.exe http Range GET: curl error 52 (empty reply from server)",
+        "Playwright browser https GET: net::ERR_CONNECTION_CLOSED"
+      ],
+      "dns": "files.bmhd.org -> A 97.75.65.162 (resolves)",
+      "established": "Nothing about the file. Client-side transport failure only; not evidence of file absence or noncompliance."
+    }
+  ],
+  "established": "Pointer-facility name match is now supported by live pointer bytes; MRF bytes, facility address, CMS version/date remain unverified because the declared file host is connection-refused/closed from this client.",
+  "not_established": "File existence, content, identity header, address, license state, declared date/version, attestation, row usability.",
+  "next_step": "Retry the files.bmhd.org CSV via an alternate TLS route (e.g. --tlsv1.2/tls1.3 forced, different network egress) or obtain publisher confirmation of the file; then verify complete bytes, identity, address, Texas license state, declared date and CMS 3.0 version before promotion."
+}

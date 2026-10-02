@@ -1,0 +1,54 @@
+{
+  "ccn": "104076",
+  "hospital_name": "University Behavioral Center",
+  "observed_at": "2026-10-01T23:25:13.965Z",
+  "official_domain_search": {
+    "query": "\"University Behavioral Center\" Orlando Florida hospital price transparency standard charges",
+    "recorded_domain": "universitybehavioral.com",
+    "found_domain": "universitybehavioral.com",
+    "agrees": true,
+    "basis": "Search top results are first-party pages on universitybehavioral.com including https://universitybehavioral.com/standard-services (Standard Services Price Guide) and https://universitybehavioral.com (University Behavioral Center, Orlando, Florida)."
+  },
+  "route_probes": [
+    {
+      "url": "https://universitybehavioral.com/cms-hpt.txt",
+      "method": "curl bounded range GET (0-1023)",
+      "http_status": 403,
+      "body_bytes": 5302,
+      "observation": "Cloudflare-style challenge/interstitial returned before pointer bytes; unchanged versus the 2026-09-19 direct statuses [403, 403]."
+    },
+    {
+      "url": "https://universitybehavioral.com/standard-services/",
+      "method": "curl GET (default and browser user-agent)",
+      "http_status": 403,
+      "body_bytes": 5601,
+      "body_sha256": "921C9191AE6E45F96C0FCAEA458AE78AF122E1F2BF096E672CE6AD33B4E8029F",
+      "observation": "Both direct fetches returned the Cloudflare challenge HTML, not page content."
+    },
+    {
+      "url": "https://universitybehavioral.com/standard-services/",
+      "method": "Playwright headless browser",
+      "http_status": 403,
+      "page_title": "Just a moment...",
+      "observation": "Browser still stopped at the Cloudflare security-verification wall, same as the 2026-09-19 browser recheck."
+    },
+    {
+      "url": "https://universitybehavioral.com/standard-services/",
+      "method": "web-reader (reader service route)",
+      "result": "success",
+      "observation": "The reader route retrieved the real page content where curl and the headless browser were blocked. Page title 'Standard Services Price Guide'; body confirms standard-charges framing; 'Access our price guide' section exposes two links, 'View Pricing Guide' and 'View Shoppable Services'."
+    },
+    {
+      "url": "https://universitybehavioral.com/wp-json/wp/v2/pages/1027",
+      "method": "web-reader (WordPress REST route for page 1027)",
+      "result": "success",
+      "observation": "The REST payload confirms page id 1027, slug 'standard-services', status publish, modified 2026-04-05T07:09:27+00:00. The rendered content shows the two price-guide anchors, but the reader output strips href attributes, so the exact file/landing URLs behind 'View Pricing Guide' and 'View Shoppable Services' were NOT captured."
+    }
+  ],
+  "what_changed_versus_prior_proof": "Prior proof (reconciliation-university-behavioral-pointer-browser-recheck-proof.json, observed 2026-09-19) recorded only 403s and a browser security wall with no pricing-page content. This recheck obtained the pricing page's real content and its WordPress REST payload through the reader route - a materially different authorized route - establishing that the official Standard Services Price Guide page exists with two price-guide links, while the exact /cms-hpt.txt pointer and both direct routes remain Cloudflare-blocked with identical 403 behavior.",
+  "what_was_established": "universitybehavioral.com is the official first-party domain; an official Standard Services Price Guide page exists and is readable via the reader route; the exact root pointer /cms-hpt.txt remains 403-blocked to automation.",
+  "what_was_not_established": "The pointer body, the target URLs of 'View Pricing Guide'/'View Shoppable Services', any MRF bytes, the declared date/version, and CMS-template usability were not obtained. No compliance conclusion is drawn.",
+  "disposition": "official-pricing-page-readable-via-reader-route-pointer-still-blocked",
+  "promotion": "none",
+  "next_action": "Use the reader route or a publisher-provided copy to resolve the 'View Pricing Guide' and 'View Shoppable Services' link targets, then retrieve bounded MRF bytes and verify identity (2500 Discovery Dr, Orlando FL), Florida state, declared date/version and CMS-template usability before any promotion."
+}

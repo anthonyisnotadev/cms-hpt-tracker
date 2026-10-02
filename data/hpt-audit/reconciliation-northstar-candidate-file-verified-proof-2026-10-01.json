@@ -1,0 +1,45 @@
+{
+  "ccn": "024001",
+  "observed_at": "2026-10-01T17:16:33.990Z",
+  "domain_search": {
+    "query": "\"North Star Hospital\" Anchorage Alaska behavioral hospital price transparency standard charges",
+    "recorded_domain": "northstarbehavioral.com",
+    "found_domain": "northstarbehavioral.com",
+    "agrees": true,
+    "basis": "https://northstarbehavioral.com/standard-services (Standard Services Price Guide, North Star Behavioral Health, Anchorage AK) and https://www.ahd.com/free_profile/024001/North-Star-Behavioral-Health/Anchorage/Alaska (2530 DeBarr Road, Anchorage, AK 99508)"
+  },
+  "official_site": "https://northstarbehavioral.com/",
+  "pointer_url": "https://northstarbehavioral.com/cms-hpt.txt",
+  "pointer_status": "403-forbidden",
+  "pointer_observed_at": "2026-10-01T17:13:00Z",
+  "pointer_note": "Direct GET with browser User-Agent returned 403 Forbidden; client-side challenge state unchanged from prior session. This is an access observation, not evidence about file existence.",
+  "facility_file_url": "https://uhsfilecdn.eskycity.net/bh/721539530_northstar_standardcharges.csv",
+  "facility_file_status": "200",
+  "facility_file_content_type": "application/octet-stream",
+  "facility_file_last_modified": "Thu, 03 Sep 2026 19:30:50 GMT",
+  "facility_file_bytes": 8786,
+  "facility_file_sha256": "6362C68C1E8AB4AC91ACB9D0DEC625E64F13A622ECA1BD96523BFB99F5B2F3BB",
+  "facility_file_complete": true,
+  "declared_hospital_name": "NorthStar Hospital",
+  "declared_location_name": "NorthStar Hospital",
+  "declared_address": "2530 DEBARR ROAD, ANCHORAGE, AK 99508",
+  "declared_license_state": "AK",
+  "declared_license_number": "SPH-002",
+  "declared_last_updated": "2026-09-03",
+  "cms_template_version": "3.0.0",
+  "type_2_npi": "1487629333",
+  "attester_name": "Bingham, Marie",
+  "attestation_confirmed": true,
+  "usable_rate_rows": true,
+  "row_count_total": 65,
+  "established": [
+    "The exact North Star Hospital CMS-template CSV (all 8,786 bytes) was retrieved directly from the publisher CDN with HTTP 200.",
+    "The file declares NorthStar Hospital at 2530 DeBarr Road, Anchorage, AK 99508, license state AK (SPH-002), NPI 1487629333, last updated 2026-09-03, CMS template version 3.0.0, attestation true, with usable payer-specific rate rows."
+  ],
+  "not_established": [
+    "No first-party pointer linkage: northstarbehavioral.com/cms-hpt.txt returned 403, so no official /cms-hpt.txt entry declares this exact CDN URL.",
+    "No promotion: the pointer-access gate remains unsatisfied."
+  ],
+  "disposition": "candidate-file-identity-confirmed-pointer-linkage-pending",
+  "next_action": "Obtain a first-party northstarbehavioral.com/cms-hpt.txt pointer entry or publisher confirmation declaring the exact CDN URL https://uhsfilecdn.eskycity.net/bh/721539530_northstar_standardcharges.csv, then promote with pointer linkage."
+}

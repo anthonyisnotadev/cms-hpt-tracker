@@ -1,0 +1,28 @@
+{
+  "ccn": "314023",
+  "hospital_name": "ASPEN HILLS HEALTHCARE CENTER",
+  "state": "NJ",
+  "observed_at": "2026-10-01T17:41:55.275Z",
+  "domain_search": {
+    "query": "Aspen Hills Healthcare Center Pemberton NJ hospital nursing home official website",
+    "recorded_domain": "aspenhillshealthcare.com",
+    "found_domain": "aspenhillshealthcare.com",
+    "agrees": true,
+    "basis": "aspenhillshealthcare.com and NJ DOH facility listing (healthapps.nj.gov NJ60302) both show Aspen Hills Healthcare Center, 600 Pemberton Browns Mills Rd, Pemberton, NJ 08068"
+  },
+  "pointer_probes": {
+    "https://aspenhillshealthcare.com/cms-hpt.txt": "HTTP 404 (server reachable; genuine not-found, not a client challenge — plain Invoke-WebRequest without challenge interception)",
+    "https://aspenhillshealthcare.com/.well-known/cms-hpt.txt": "HTTP 404 (same)"
+  },
+  "identity_and_scope": {
+    "cms_roster": "ASPEN HILLS HEALTHCARE CENTER, 600 PEMBERTON-BROWNS MILLS ROAD, PEMBERTON, NJ 08068, hospital_type Psychiatric, Proprietary (CMS provider-data API, checked 2026-10-01)",
+    "operator_self_description": "aspenhillshealthcare.com describes the campus as a comprehensive nursing home: skilled nursing, rehabilitative therapy, post-surgical and long-term care; site footer notes '[formerly Buttonwood Hospital]'",
+    "nj_licensing": "NJ DOH facility NJ60302 lists Facility Type: Long Term Care at the same address",
+    "prior_proof": "reconciliation-aspen-hills-healthcare-identity-proof-2026-09-23.json already recorded the long-term-care-versus-psychiatric scope uncertainty"
+  },
+  "what_changed_vs_prior": "New facts this session: (1) the official domain is directly reachable and both canonical CMS pointer paths return genuine 404s, so no pointer exists at the operator's site; (2) the operator site confirms the LTC self-description and the Buttonwood Hospital predecessor naming; (3) NJ DOH licensing independently lists the campus as Long Term Care.",
+  "established": "No first-party CMS pointer exists on the official domain, and the current operator/licensing description of the campus is long-term care, in unresolved tension with the CMS roster's Psychiatric hospital type for CCN 314023.",
+  "not_established": "The effective-dated CMS enrollment/classification history for CCN 314023; whether any successor or co-located psychiatric hospital entity holds the CCN today; no facility-specific CMS pointer/MRF exists to retrieve.",
+  "disposition_effect": "none; retain CCN 314023 unresolved",
+  "next_step": "Obtain effective-dated CMS enrollment/classification data (e.g., CCS/OSCAR enrollment history or CMS Certification records) for CCN 314023, or a New Jersey certificate-of-need/licensing record showing the psychiatric-hospital-to-LTC conversion and its effective date; only then can the tracker finding be changed."
+}

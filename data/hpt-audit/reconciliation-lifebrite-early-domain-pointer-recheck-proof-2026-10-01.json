@@ -1,0 +1,42 @@
+{
+  "ccn": "111314",
+  "hospital_name": "LIFEBRITE COMMUNITY HOSPITAL OF EARLY",
+  "observed_at": "2026-10-01T13:55:39.849Z",
+  "proof_type": "domain-discrepancy-and-unchanged-pointer-page-recheck",
+  "domain_search": {
+    "query": "\"Early Medical Center\" Blakely Georgia price transparency standard charges",
+    "recorded_domain": "lifebriteearly.com",
+    "found_domain": "www.earlymc.com",
+    "agrees": false,
+    "basis": "Web search returns https://www.earlymc.com/price-transparency as the first-party Price Transparency page of Early Medical Center; that page and its footer show Early Medical Center / LifeBrite Medical Group LLC d/b/a Early Medical Center, 11740 Columbia Street, Blakely, Georgia 39823, matching the CMS roster identity for CCN 111314. The recorded lifebriteearly.com domain redirects to an unrelated sibling (per 2026-09-19 and 2026-09-20 proofs). The successor-domain evidence was already documented 2026-09-21; this line records that the recorded official_domain field still carries the stale domain while every working first-party route is on earlymc.com."
+  },
+  "recheck_observations": {
+    "root_pointer": {
+      "url": "https://www.earlymc.com/cms-hpt.txt",
+      "http_status": 200,
+      "bytes": 262,
+      "sha256": "7284cd01f4367d6c0d9d647f1639a57346108480bd744df4e9b3cf6b6bd0de69",
+      "last_modified_header": "Tue, 22 Sep 2026 16:29:20 GMT",
+      "content_summary": "location-name: Lifebrite Community Hospital of Early; source-page-url: https://www.earlymc.com/price-transparency/; mrf-url: https://www.earlymc.com/wp-content/uploads/2026/06/CHARGEMASTER-1.xlsx (contact fields present but not reproduced here)",
+      "matches_retained_pointer_hash": true,
+      "retained_evidence": "reconciliation-lifebrite-early-current-pointer-xlsx-review-2026-09-28.json (pointer SHA-256 7284cd01...)"
+    },
+    "pricing_page": {
+      "url": "https://www.earlymc.com/price-transparency/",
+      "http_status": 200,
+      "bytes": 64519,
+      "sha256": "4a9541f06348d99ebb173335f1d08684d905dc90d7ed2b80689d466bbb30ff72",
+      "note": "Same 64,519-byte length as the 2026-09-26 capture (SHA-256 cc81220d...); hash differs, consistent with dynamic page content, and the CHARGEMASTER-1.xlsx link is still present. No CMS-format CSV/JSON link observed."
+    }
+  },
+  "what_was_established": [
+    "The working first-party domain for this facility is earlymc.com; the recorded official_domain lifebriteearly.com is stale (agrees:false).",
+    "The first-party root pointer and the page-linked XLSX target are unchanged from the hash-bound 2026-09-28 evidence."
+  ],
+  "what_was_not_established": [
+    "No CMS-format MRF (facility identity, Georgia metadata, date/version, payer-specific rates) was recovered.",
+    "No compliance conclusion; no disposition or count change."
+  ],
+  "disposition_effect": "none; retain CCN 111314 as pointer-facility-match-unresolved",
+  "next_action": "Do not repeat retrieval or format analysis of the same unchanged XLSX. Continue to require a corrected current pointer/file or publisher-provided CMS-format MRF with declared facility identity, Georgia metadata, date/version and required charge fields; keep the gross-charge workbook as separately hash-bound page-linked evidence."
+}

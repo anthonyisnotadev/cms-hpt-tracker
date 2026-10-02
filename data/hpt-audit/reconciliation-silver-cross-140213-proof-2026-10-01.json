@@ -1,0 +1,49 @@
+{
+  "ccn": "140213",
+  "hospital_name": "SILVER CROSS HOSPITAL AND MEDICAL CENTERS",
+  "state": "IL",
+  "observed_at": "2026-10-01T22:57:29.564Z",
+  "domain_search": {
+    "query": "Silver Cross Hospital New Lenox Illinois price transparency standard charges machine readable",
+    "recorded_domain": "www.silvercross.org",
+    "found_domain": "www.silvercross.org",
+    "agrees": true,
+    "basis": "https://www.silvercross.org/patient-family/before/price-transparency titled 'Price Transparency | New Lenox, IL | Silver Cross Hospital' (New Lenox, IL matches CCN 140213 facility)."
+  },
+  "checks": [
+    {
+      "what": "First-party pricing page via materially different route (Z.ai web-reader), after direct fetch and local headless browser both returned Akamai Access Denied 403",
+      "url": "https://www.silvercross.org/patient-family/before/price-transparency",
+      "status": "retrieved via web-reader",
+      "observed": "Page text includes links 'View the CMS Price Transparency Machine Readable File.' and 'View the CMS Shoppable Services File.'"
+    },
+    {
+      "what": "Anchor href recovery via r.jina.ai rendering of the same first-party page",
+      "recovered_mrf_url": "https://www.silvercross.org/app/files/public/7826a82a-6eb9-413a-bdc4-45692fb49edc/36-2174832_Silver-Cross-Hospital_standardcharges%20033026.csv",
+      "recovered_shoppable_url": "https://www.silvercross.org/app/files/public/f3c64078-8c3a-43fa-a895-4472ea31eff3/Silver%20Cross%20Hospital%202026%20Shoppable%20Services.xlsx",
+      "basis": "Filename embeds EIN 36-2174832 and 'Silver-Cross-Hospital_standardcharges' with date-like token 033026."
+    },
+    {
+      "what": "Bounded fetch of the recovered MRF (direct Invoke-WebRequest with browser UA)",
+      "url": "recovered_mrf_url",
+      "http_status": 403,
+      "note": "Akamai (edgesuite) Access Denied; same 403 through r.jina.ai relay"
+    },
+    {
+      "what": "Local headless browser on pricing page",
+      "url": "https://www.silvercross.org/patient-family/before/price-transparency",
+      "http_status": 403,
+      "note": "Akamai Access Denied to local browser IP as in prior 2026-09-19 review"
+    }
+  ],
+  "established": [
+    "The first-party pricing page is recoverable through a materially different route (server-side reader), and it links an exact, facility-specific CMS standard-charges CSV hosted on the hospital's own domain (EIN-prefixed filename, date-like token 033026).",
+    "This is new versus the 2026-09-19 evidence, which recorded only the Akamai denial and 403s without a recovered MRF URL."
+  ],
+  "not_established": [
+    "The MRF file bytes could not be retrieved (HTTP 403 from this client and from the reader relay), so SHA-256, CMS template-version literal, declared date, Illinois facility identity inside the file, and rate-level usability are NOT verified.",
+    "No promotion is supported by this evidence."
+  ],
+  "changed_vs_prior": "Prior proof had no MRF URL; this session recovered the exact first-party standard-changes CSV URL from the pricing page HTML. File bytes remain unverified (403).",
+  "tool_observations_only": true
+}

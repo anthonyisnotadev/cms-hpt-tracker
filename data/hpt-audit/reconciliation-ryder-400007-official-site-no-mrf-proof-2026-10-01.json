@@ -1,0 +1,52 @@
+{
+  "ccn": "400007",
+  "hospital_name": "RYDER MEMORIAL HOSPITAL INC",
+  "state": "PR",
+  "observed_at": "2026-10-01T20:22:30.000Z",
+  "domain_search": {
+    "query": "\"Ryder Memorial Hospital\" Humacao Puerto Rico price transparency standard charges",
+    "recorded_domain": "hospitalryder.org",
+    "found_domain": "hospitalryder.org",
+    "agrees": true,
+    "basis": "First-party Wix site https://www.hospitalryder.org/ (externalBaseUrl in page payload) for Ryder Memorial, Humacao PR, phone hpt-obf:v1:p9Z01WvpYxrrp-QP.33TDoEtqZZlFkAxfUqQNJw.TUFGENYUUUr-cDSeh-E matching the Medicare Care Compare listing for CCN 400007 at 355 Ave Font Martelo, Humacao PR 00791."
+  },
+  "probes": [
+    {
+      "url": "https://hospitalryder.org/cms-hpt.txt",
+      "status": 400
+    },
+    {
+      "url": "https://www.hospitalryder.org/cms-hpt.txt",
+      "status": 400
+    },
+    {
+      "url": "https://hospitalryder.org/",
+      "status": 200
+    },
+    {
+      "url": "https://www.hospitalryder.org/otros-servicios",
+      "status": 200,
+      "note": "no pricing/transparency links; site assets are images and social links only"
+    }
+  ],
+  "site_crawl": {
+    "reachable_nav_links": [
+      "https://www.hospitalryder.org/about-1",
+      "https://www.hospitalryder.org/copia-de-salud-en-el-hogar",
+      "https://www.hospitalryder.org/otros-servicios",
+      "https://www.hospitalryder.org/services-7",
+      "https://www.hospitalryder.org/services-8"
+    ],
+    "pricing_or_transparency_links_found": []
+  },
+  "what_was_established": [
+    "hospitalryder.org is confirmed as the hospital's first-party domain (matching name, Humacao identity and phone).",
+    "The root CMS pointer is HTTP 400 on both the apex and www host forms.",
+    "The site's reachable navigation contains no price-transparency page or MRF/document link; the site is a small Wix brochure site."
+  ],
+  "what_was_not_established": [
+    "Any facility MRF: none exists on the official site, so name/address/date/version could not be checked.",
+    "The meaning of the 400 on /cms-hpt.txt (publisher host behavior vs absence of a published pointer) beyond the observable status."
+  ],
+  "what_changed_versus_prior": "New facts versus pointer-not-retrieved: first-party domain identity corroborated, pointer 400 reproduced on both host forms, and a full crawl of the site's reachable pages shows no transparency page or MRF anywhere — establishing absence on the official site rather than mere retrieval failure."
+}

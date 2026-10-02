@@ -1,0 +1,15 @@
+{
+  "ccn": "050785",
+  "observed_at": "2026-10-01T13:37:35.407Z",
+  "check_kind": "single-cheap-probe-of-documented-blocked-condition",
+  "what_was_established": "The queue's next_action is explicitly date-gated: 'At or after 2026-12-31, seek effective-dated HCAI license/status and exact CMS CCN evidence for the replacement facility'. Today is 2026-10-01T13:37:35.407Z, so the gate has not arrived; the blocked condition is unchanged and no full recheck was performed this session.",
+  "what_was_not_established": "No new HCAI, CMS enrollment, or operator evidence was gathered. A cheap probe of https://hcai.ca.gov/facility/docs-surgical-hospital returned HTTP 404 to this automation client; per audit rules a client-side failure is not evidence about the facility's status or that the record moved. The prior detail proof (reconciliation-docs-hcai-voluntary-suspension-detail-2026-09-29.json, suspension 2025-01-01 through 2026-12-31, HCAI ID 106190681) remains the governing historical evidence.",
+  "tool_observations": {
+    "probed_url": "https://hcai.ca.gov/facility/docs-surgical-hospital",
+    "probed_http_status_client": 404,
+    "interpretation": "client-side 404 to automation; not evidence of a record change"
+  },
+  "inferences": [
+    "The date-gated condition (before 2026-12-31) is unchanged; retrying the full replacement-facility investigation now would duplicate work scheduled for a later batch."
+  ]
+}

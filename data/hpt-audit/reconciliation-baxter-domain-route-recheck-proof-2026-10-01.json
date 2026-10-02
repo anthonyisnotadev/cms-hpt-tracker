@@ -1,0 +1,19 @@
+{
+  "ccn": "244015",
+  "observed_at": "2026-10-01T14:32:59.260Z",
+  "check_kind": "domain-search-and-route-recheck-2026-10-01",
+  "domain_search": {
+    "query": "\"Community Behavioral Health Hospital\" Baxter Minnesota price transparency standard charges",
+    "recorded_official_domain": "ecommunity.com",
+    "found_domain": "none-found",
+    "agrees": false,
+    "search_observation": "Results contained only third-party aggregators (ahd.com, payerprice.com, turquoise.health, medibillsaver.com) and Minnesota state pages (mn.gov/dhs, mn.gov/adresources naming 14241 Grand Oaks Dr, Baxter, MN 56425). No first-party Baxter-specific cms-hpt.txt or machine-readable pricing file route surfaced.",
+    "known_first_party": "mn.gov/dct (Minnesota Direct Care and Treatment) is the confirmed official state first-party site per reconciliation-baxter-dct-identity-no-mrf-proof-2026-09-22.json; the retained ecommunity.com pointer remains a false name match per reconciliation-baxter-wrong-site-proof.json."
+  },
+  "probe_urls": [
+    { "url": "https://mn.gov/cms-hpt.txt", "http_status": 404 }
+  ],
+  "what_was_established": "On 2026-10-01 the search again found no Baxter-specific first-party pointer or MRF, and a direct GET of https://mn.gov/cms-hpt.txt returned HTTP 404, consistent with the 2026-09-20 recheck (404) and the 2026-09-27 not-accessible observation. Identity remains bound to the mn.gov/dct CBHH page (14241 Grand Oaks Drive, Baxter, MN 56425).",
+  "what_was_not_established": "No facility-specific pointer or MRF was found, and no absence or compliance conclusion is drawn; the identity-quarantine routing of the unrelated Indiana pointer stands.",
+  "next_action": "Locate a Baxter-specific first-party cms-hpt.txt or pricing/file route and independently verify the file header, Minnesota address, date, CMS version and usable rows."
+}

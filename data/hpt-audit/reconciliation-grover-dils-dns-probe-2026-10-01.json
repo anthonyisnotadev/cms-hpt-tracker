@@ -1,0 +1,28 @@
+{
+  "ccn": "291312",
+  "check_type": "blocked-condition-probe",
+  "observed_at": "2026-10-01T14:47:00.000Z",
+  "probe_reason": "Batch next_action called for a cheap probe of whether the Change Healthcare ZIP host access condition changed since the 2026-09-17 ERR_NAME_NOT_RESOLVED observation.",
+  "dns_observations": [
+    {
+      "name": "assets.changehealthcare.com",
+      "tool": "Resolve-DnsName (PowerShell)",
+      "result": "CNAME assets.prod.engagement-solutions.changehealthcare.com (TTL 300 and 171 on two queries)",
+      "a_record_for_cname_target": "none returned; Resolve-DnsName on assets.prod.engagement-solutions.changehealthcare.com produced no answer record",
+      "curl_result": "Could not resolve host",
+      "interpretation": "Host still does not resolve to an IP address; effectively unreachable from this client."
+    },
+    {
+      "name": "services.gcdmc.org",
+      "tool": "Resolve-DnsName",
+      "result": "A 52.167.12.7",
+      "https_probe": "curl schannel TLS handshake failed; curl plain HTTP returned 000; playwright reported net::ERR_CONNECTION_CLOSED",
+      "interpretation": "Connection-level failure; per rules this is a client/transport observation, not evidence about the file or publisher."
+    }
+  ],
+  "established": "The pointer-declared ZIP route remains unreachable from this client; DNS CNAME now resolves but has no A record, so no bytes or headers were obtainable.",
+  "not_established": "Whether the Change Healthcare ZIP exists, its contents, metadata, or any compliance conclusion.",
+  "pointer_mrf_url": "https://assets.changehealthcare.com/Shop/PROD/static/LincolnCountyHospital/ein_LincolnCountyHospital_standardcharges.csv.zip",
+  "pointer_source_page_url": "https://services.gcdmc.org/pt-machinereadable.html",
+  "disposition_change": "none"
+}

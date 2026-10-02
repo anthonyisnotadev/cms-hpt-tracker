@@ -1,0 +1,69 @@
+{
+  "ccns": ["364031", "364035"],
+  "hospitals": {
+    "364031": "HEARTLAND BEHAVIORAL HEALTHCARE (Massillon, OH)",
+    "364035": "SUMMIT BEHAVIORAL HEALTHCARE (Cincinnati, OH)"
+  },
+  "state": "OH",
+  "observed_at": "2026-10-01T19:13:00Z",
+  "domain_search": {
+    "query": "\"Heartland Behavioral Healthcare\" Ohio standard charges price transparency; \"Summit Behavioral Healthcare\" standard charges price transparency file",
+    "recorded_domain": "dbh.ohio.gov",
+    "found_domain": "dbh.ohio.gov",
+    "agrees": true,
+    "basis": "dbh.ohio.gov Hospital Rates page (retrieved 200) states rates are 'updated annually in compliance with CMS and the Hospital Price Transparency requirements' and links standard-charges files covering all six Ohio regional psychiatric hospitals, including dbh.ohio.gov facility pages for Heartland (Massillon) and Summit (Cincinnati)."
+  },
+  "observations": [
+    {
+      "what": "Hospital Rates index page",
+      "url": "https://dbh.ohio.gov/about-us/regional-psychiatric-hospitals/resources/hospital-rates",
+      "http_status": 200,
+      "links_found": [
+        "https://dbh.ohio.gov/wps/portal/gov/dbh/about-us/regional-psychiatric-hospitals/resources/hospital-rates-site-area/hospital-standard-charges-medicare-daily-rate",
+        "https://dbh.ohio.gov/wps/portal/gov/dbh/about-us/regional-psychiatric-hospitals/resources/hospital-rates-site-area/hospital-standard-charges-all-payor-daily-rate",
+        "https://dbh.ohio.gov/wps/portal/gov/dbh/about-us/regional-psychiatric-hospitals/resources/hospital-rates-site-area/hospital-standard-charges-professional-fees"
+      ],
+      "note": "The same URLs returned 404 in the Playwright headless browser but 200 to Invoke-WebRequest and web-reader; client-side discrepancy, not evidence of absence."
+    },
+    {
+      "what": "Hospital Standard Charges (Inpatient / Medicare & All-Payor & Ancillary daily rates) CSV retrieved complete",
+      "url": "https://dam.assets.ohio.gov/raw/upload/mha.ohio.gov/AboutUs/RPH/resources/FY26-Daily-Rates.csv",
+      "http_status": 200,
+      "byte_count": 2089,
+      "sha256": "bc340eb2f3c47520bdd24e91c091f33854ef630e3149e4dc2c7376e3c48b3cfb",
+      "local_copy": "TEMP/opencode/fy26-daily.csv",
+      "facility_rows": {
+        "364031": "Heartland Behavioral Healthcare: Medicare daily gross 925.68 / min 312.16; All-Payor gross 926.60 / min 312.16; Ancillary 38.63 (all with N/A max and N/A discounted cash)",
+        "364035": "Summit Behavioral Helahcare [sic, spelling on file]: Medicare daily gross 821.16 / min 202.39; All-Payor gross 821.91 / min 202.39; Ancillary 34.78"
+      },
+      "declared_metadata": "'Ohio Department of Behavioral Health / Hopsital Inpatient Professional Service Rate [sic] / Calendar Year 2026'; no per-facility address, license number, or CMS template headers."
+    },
+    {
+      "what": "Hospital Standard Charges (Professional Fees) CSV retrieved complete",
+      "url": "https://dam.assets.ohio.gov/raw/upload/mha.ohio.gov/AboutUs/RPH/resources/FY26-Profession-Service-Fees.csv",
+      "http_status": 200,
+      "byte_count": 3078,
+      "sha256": "8ccd7d62a69392e631a3a92820693c2c5e1cfa3f9c8194744a541bd01cf7bfa7",
+      "local_copy": "TEMP/opencode/fy26-prof.csv",
+      "content_summary": "CPT-coded professional fee schedule, Calendar Year 2026; statewide (not per-facility); footer states the agency is not contracted with any third-party payor."
+    },
+    {
+      "what": "Root pointer probe",
+      "url": "https://dbh.ohio.gov/cms-hpt.txt",
+      "http_status": 200,
+      "result": "Soft-404: portal returns an HTML page, not a pointer text file; no /cms-hpt.txt pointer published."
+    }
+  ],
+  "established": [
+    "A current (Calendar Year 2026) CMS-compliance-referenced standard-charges route exists on dbh.ohio.gov covering both facilities by name, with gross, de-identified min negotiated, and (unavailable/N/A) max and cash fields.",
+    "Both files were retrieved complete with byte counts and SHA-256.",
+    "No /cms-hpt.txt pointer exists (soft-404 HTML)."
+  ],
+  "not_established": [
+    "Facility addresses are absent from the files; identity is by hospital name rows only (Summit is misspelled 'Summit Behavioral Helahcare' on file).",
+    "Files do not follow the CMS template layout (no required template headers/affirmation).",
+    "Whether payer-specific negotiated charges required by the rule are 'N/A' legitimately (agency claims no third-party contracts).",
+    "Whether the FY26 files constitute a 'facility-specific' file as the record's gate demands."
+  ],
+  "changed_vs_prior": "Prior state 'pointer-not-retrieved / discovery-search-completed-no-official'; this session located and fully retrieved the official statewide standard-charges CSVs naming both facilities, with hashes and declared CY2026 metadata."
+}

@@ -1,0 +1,20 @@
+{
+  "ccn": "134010",
+  "observed_at": "2026-10-01T19:48:33.575Z",
+  "official_domain": "healthandwelfare.idaho.gov",
+  "official_facility_page": "https://healthandwelfare.idaho.gov/dhw/state-hospital-south",
+  "official_facility_identity": "State Hospital South, 700 East Alice, Blackfoot, Idaho 83221 (per 2026-09-21 proof and current Idaho DHW pages).",
+  "charge_artifact_page": "https://publicdocuments.dhw.idaho.gov/WebLink/DocView.aspx?dbid=0&id=35793&repo=PUBLIC-DOCUMENTS",
+  "charge_artifact_label": "FY2026 SHS Hospital Charges",
+  "charge_artifact_download_route": "Laserfiche WebLink direct document route https://publicdocuments.dhw.idaho.gov/WebLink/0/edoc/35793/FY2026%20SHS%20Hospital%20Charges.pdf (permitted plain GET with redirect follow; no forms, no login).",
+  "charge_artifact_http_status": 200,
+  "charge_artifact_bytes": 40883,
+  "charge_artifact_sha256": "823fc52aa9412c6424e6bbb60d50dc3aa2df503a0b8430a1ca7c06e04aeb9dd5",
+  "charge_artifact_format": "XLSX (ZIP container, PK header despite .pdf name): Excel workbook, one worksheet, columns include DESCRIPTION, 2025 CPT/HCPCS CODE, GROSS CHARGE, DISCOUNTED CASH PRICE, and per-payer minimum/maximum negotiated charges (e.g. Molina, United).",
+  "charge_artifact_doc_metadata": "creator 'Fisher, Abbe - SHS', lastModifiedBy 'Divine, Jessica - Reg7', created 2018-12-03, modified 2026-02-05T23:03:23Z.",
+  "what_was_established": "The FY2026 SHS Hospital Charges artifact is now fully retrieved and characterized: a first-party Excel chargemaster with gross/cash/payer-negotiated columns, last modified 2026-02-05.",
+  "what_was_not_established": "The artifact is not a CMS-template MRF: no hospital_name/location/address header row, no license/NPI, no declared last_updated_on, no CMS template version, no attestation. No State Hospital South CMS CSV/JSON MRF or facility cms-hpt.txt pointer was located; the healthandwelfare.idaho.gov root pointer remains 404 per 2026-09-26 evidence.",
+  "changed_versus_prior_proof": "Prior proof (reconciliation-state-hospital-south-idaho-page-charge-proof-2026-09-21.json) could not open the artifact ('No preview available'). New: complete bytes retrieved via direct download, format identified (XLSX chargemaster), SHA-256 and doc metadata recorded.",
+  "disposition": "fy2026-charge-artifact-retrieved-cms-mrf-unresolved",
+  "next_action": "Separately locate or obtain a CMS CSV/JSON MRF for State Hospital South (e.g. via Idaho DHW publisher or outreach) before changing the tracker claim."
+}

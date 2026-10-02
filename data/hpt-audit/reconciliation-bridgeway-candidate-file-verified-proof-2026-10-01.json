@@ -1,0 +1,44 @@
+{
+  "ccn": "044005",
+  "observed_at": "2026-10-01T17:16:33.990Z",
+  "domain_search": {
+    "query": "\"Bridgeway Hospital\" Arkansas psychiatric price transparency standard charges thebridgeway",
+    "recorded_domain": "thebridgeway.com",
+    "found_domain": "thebridgeway.com",
+    "agrees": true,
+    "basis": "https://thebridgeway.com/standard-services (Standard Services price guide, The BridgeWay, North Little Rock, AR)"
+  },
+  "official_site": "https://thebridgeway.com/",
+  "pointer_url": "https://thebridgeway.com/cms-hpt.txt",
+  "pointer_status": "403-forbidden",
+  "pointer_observed_at": "2026-10-01T17:14:30Z",
+  "pointer_note": "Direct GET with browser User-Agent returned 403 Forbidden; challenge state unchanged. Access observation only.",
+  "facility_file_url": "https://uhsfilecdn.eskycity.net/bh/232238973_bridgeway_standardcharges.csv",
+  "facility_file_status": "200",
+  "facility_file_content_type": "application/octet-stream",
+  "facility_file_bytes": 48919,
+  "facility_file_sha256": "C9B9232E74B0E3CC452822AC4D6D49D8F5073FC3889BA2DE1FF89D572B566BF5",
+  "facility_file_complete": true,
+  "declared_hospital_name": "The Bridgeway",
+  "declared_location_name": "The Bridgeway",
+  "declared_address": "21 BRIDGEWAY ROAD, NORTH LITTLE ROCK, AR 72113",
+  "declared_license_state": "AR",
+  "declared_license_number": "5164",
+  "declared_last_updated": "2026-05-12",
+  "cms_template_version": "3.0.0",
+  "type_2_npi": "1962473306",
+  "attester_name": "Uhiren, Wendy",
+  "attestation_confirmed": true,
+  "usable_rate_rows": true,
+  "row_count_total": 337,
+  "established": [
+    "The exact Bridgeway CMS-template CSV (all 48,919 bytes) was retrieved directly from the publisher CDN with HTTP 200.",
+    "The file declares The Bridgeway at 21 Bridgeway Road, North Little Rock, AR 72113, license state AR (5164), NPI 1962473306, last updated 2026-05-12, CMS template version 3.0.0, attestation true, with usable payer-specific rate rows."
+  ],
+  "not_established": [
+    "No first-party pointer linkage: thebridgeway.com/cms-hpt.txt returned 403, so no official /cms-hpt.txt entry declares this exact CDN URL.",
+    "No promotion: publisher-level linkage (next_action requirement) remains unmet."
+  ],
+  "disposition": "candidate-file-identity-confirmed-publisher-linkage-pending",
+  "next_action": "Obtain first-party thebridgeway.com/cms-hpt.txt pointer evidence or another authorized publisher-level confirmation declaring the exact CDN URL https://uhsfilecdn.eskycity.net/bh/232238973_bridgeway_standardcharges.csv."
+}

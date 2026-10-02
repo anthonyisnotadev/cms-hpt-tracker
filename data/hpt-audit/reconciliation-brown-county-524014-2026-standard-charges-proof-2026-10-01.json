@@ -1,0 +1,46 @@
+{
+  "ccn": "524014",
+  "hospital_name": "BROWN COUNTY COMMUNITY TREATMENT CTR",
+  "state": "WI",
+  "observed_at": "2026-10-01T17:56:23.490Z",
+  "checked_by": "autonomy session batch 2026-10-01",
+  "official_domain_search": {
+    "query": "\"Brown County\" \"Community Treatment Center\" Green Bay standard charges price transparency",
+    "recorded_domain": "www.browncountywi.gov",
+    "found_domain": "www.browncountywi.gov",
+    "agrees": true,
+    "basis": "Search returns https://www.browncountywi.gov/departments/community-treatment-center/general-information/about stating the CTC 'is required to make available a list of current standard charges via the Internet in a machine readable format'; companion site https://www.bchumanservices.com/about/current-standard-charges/ is the same Brown County government publisher (Copyright 2026 Brown County Government - Wisconsin)."
+  },
+  "observations": [
+    {
+      "url": "https://www.browncountywi.gov/departments/community-treatment-center/general-information/about/",
+      "method": "web-reader MCP (direct TLS from this host fails: SSL connection could not be established; browser: ERR_CONNECTION_CLOSED - client-side transport issue, not site evidence)",
+      "page_text": "Current Standard Charges ... Based on a federal requirement, the Nicolet Psychiatric Center (NPC) hospital unit at the Brown County Community Treatment Center (CTC) is required to make available a list of current standard charges via the Internet in a machine readable format. To view the 2026 Standard Charges, please click this link: 2026 Standard Charges.",
+      "note": "The anchor href was stripped by the reader conversion; the exact file URL was not captured."
+    },
+    {
+      "url": "https://www.bchumanservices.com/about/current-standard-charges/",
+      "method": "web-reader MCP",
+      "page_text": "For current rate information, please click to view the 2026 Standard Charges. ... Website Update: The Health & Human Services Community Services Division is updating its website to comply with the Americans with Disabilities Act (ADA). Links to some documents have been deactivated until such time the documents can be made compliant.",
+      "note": "County warns some document links are deactivated pending ADA remediation; the 2026 Standard Charges target may be one of them."
+    }
+  ],
+  "what_changed_versus_prior_proof": {
+    "prior": "Prior observation (2026-09-23) recorded the county sites as identity evidence only ('site-observed'); no current standard-charges document was named.",
+    "changed": [
+      "Both county pages now reference a named '2026 Standard Charges' document (a 2026-dated publication year not previously recorded).",
+      "The county discloses an ADA remediation effort that has deactivated some document links, which may explain why no direct file URL has been retrievable.",
+      "Exact file URL still not captured; no file bytes retrieved."
+    ]
+  },
+  "established": [
+    "Official domains www.browncountywi.gov and www.bchumanservices.com both currently publish pages naming a 2026 Standard Charges document for the CTC/Nicolet Psychiatric Center hospital unit."
+  ],
+  "not_established": [
+    "The URL of the 2026 Standard Charges file (reader conversion stripped the anchor).",
+    "File bytes, format (CSV/JSON vs other), CMS-template compliance, or any declared metadata.",
+    "The pointer-retrieval evidence gate for this CCN is NOT cleared; no promotion is warranted."
+  ],
+  "next_step": "Capture the exact href of the '2026 Standard Charges' anchor (e.g. via a permitted fetch that preserves HTML, or a search-engine cache of the About page), then bounded-retrieve the file and validate Green Bay identity, CMS template and metadata before any promotion.",
+  "disposition_change": "none"
+}

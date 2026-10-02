@@ -1,0 +1,54 @@
+{
+  "ccn": "190034",
+  "hospital_name": "ABBEVILLE GENERAL HOSPITAL",
+  "observed_at": "2026-10-01T18:12:21.007Z",
+  "route": "direct authorized HTTP client (Invoke-WebRequest/.NET, materially different from the 2026-09-21 retrieval attempts)",
+  "what_changed_versus_prior_proof": "Prior proof (reconciliation-abbeville-current-page-no-mrf-proof-2026-09-21.json) recorded the pricing page identity but NO retrievable pointer or MRF. On 2026-10-01 the root pointer https://abbevillegeneral.com/cms-hpt.txt returned HTTP 200 with a valid CMS pointer file declaring a facility-wide MRF, and the declared MRF was retrieved in full for the first time.",
+  "pointer": {
+    "url": "https://abbevillegeneral.com/cms-hpt.txt",
+    "http_status": 200,
+    "bytes": 341,
+    "sha256": "3771f7a6a14003b06e03d994eff28d055dc41cbdf6925479aa23d697db31605f",
+    "entry_count": 1,
+    "entries_matching_facility": 1,
+    "location_name": "Abbeville General Hospital",
+    "source_page_url": "https://abbevillegeneral.com/patients-visitors/for-patients/charges-billing-and-insurance/",
+    "declared_mrf_url": "https://www.abbevillegeneral.com/wp-content/uploads/720574846_abbeville-general-hospital_standardcharges.csv"
+  },
+  "file": {
+    "url": "https://www.abbevillegeneral.com/wp-content/uploads/720574846_abbeville-general-hospital_standardcharges.csv",
+    "http_status": 200,
+    "full_file_bytes": 99946453,
+    "full_file_sha256": "bdb189cdd7bfe0c459e543d36dc5027e66f062ef0cf1b396e45facac468c5d3b",
+    "last_modified_header": "Thu, 12 Feb 2026 18:14:35 GMT",
+    "content_type": "text/csv",
+    "retrieval_scope": "complete file downloaded twice (header inspection run and hash run), identical byte counts"
+  },
+  "declared_metadata": {
+    "hospital_name": "Abbeville General Hospital",
+    "location_name": "Abbeville General Hospital",
+    "address": "118 North Hospital Drive   Abbeville, LA. 70510",
+    "license_number_la": "160",
+    "type_2_npi": "1255300414",
+    "last_updated_on": "2026-02-09",
+    "cms_template_version": "3.0.0",
+    "attestation": true,
+    "attester_name": "Kelli Smith"
+  },
+  "roster_identity": {
+    "name": "ABBEVILLE GENERAL HOSPITAL",
+    "address": "118 NORTH HOSPITAL DRIVE",
+    "city": "ABBEVILLE",
+    "state": "LA",
+    "zip": "70510"
+  },
+  "domain_search": {
+    "query": "\"Abbeville General\" hospital Abbeville Louisiana price transparency standard charges",
+    "recorded_domain": "carepricer.nthrive.com",
+    "found_domain": "abbevillegeneral.com",
+    "agrees": false,
+    "basis": "The first-party pointer at https://abbevillegeneral.com/cms-hpt.txt (HTTP 200) names Abbeville General Hospital and the facility CSV carries the roster address 118 North Hospital Drive, Abbeville, LA 70510; the recorded carepricer.nthrive.com lead is a vendor host, superseded by the hospital's own domain (also seen in reconciliation-abbeville-current-page-no-mrf-proof-2026-09-21.json)."
+  },
+  "established": "Official first-party CMS pointer (HTTP 200) uniquely links this facility; the complete current CMS 3.0.0 wide CSV was retrieved with exact roster name/address/LA license/NPI/attestation; full-file SHA-256 computed.",
+  "not_established": "No legal compliance conclusion is inferred; rate-column completeness beyond the parsed header/first rows was not audited."
+}

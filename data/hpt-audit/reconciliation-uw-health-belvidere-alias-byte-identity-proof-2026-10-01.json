@@ -1,0 +1,62 @@
+{
+  "audit_id": "reconciliation-uw-health-belvidere-alias-byte-identity-proof-2026-10-01",
+  "observed_at": "2026-10-01T14:03:56.584Z",
+  "ccn_under_review": "140228",
+  "hospital_name": "UW HEALTH (UW Health SwedishAmerican Hospital)",
+  "state": "IL",
+  "search": {
+    "query": "\"UW Health SwedishAmerican Hospital\" Rockford Illinois hospital price transparency standard charges",
+    "recorded_domain": "uwhealth.org",
+    "found_domain": "uwhealth.org",
+    "agrees": true,
+    "basis": "https://www.uwhealth.org/billing-insurance/cms-price-transparency is the first-party CMS price transparency page of the same system; https://www.uwhealth.org/locations/swedishamerican names UW Health SwedishAmerican Hospital, Rockford IL; aggregators (payerprice, ahd.com, hospitalcostcompare) ignored."
+  },
+  "blocked_route_probe": {
+    "purpose": "Single cheap probe of the documented Bynder DNS/socket block before deciding whether the full check is due",
+    "tool": "PowerShell Resolve-DnsName + Invoke-WebRequest HEAD",
+    "result": "bynder.uwhealth.org now resolves (CNAME rr-bynder-uwhealth-org.getbynder.com, A/AAAA records present); HEAD of the Belvidere-labeled CSV returned HTTP 200 with Content-Length 264,424,259, matching the retained sample's declared total size.",
+    "conclusion": "The previously documented blocked-route condition has changed; the full check was therefore performed."
+  },
+  "full_check": [
+    {
+      "url": "https://bynder.uwhealth.org/m/1d39d4b3bd3ce8bb/original/362222696_SwedishAmerican-Hospital_standardcharges.csv",
+      "page_label": "Belvidere Hospital (and SwedishAmerican Medical Group) on https://www.uwhealth.org/billing-insurance/cms-price-transparency",
+      "method": "bounded ranged GET bytes=0-262143",
+      "http_status": 206,
+      "content_range_total_bytes": 264424259,
+      "sample_bytes": 262144,
+      "sample_sha256": "9f73e9122d74d511c180380aeb6bb6a6b9dce93884b814630e443f504468d9b5"
+    },
+    {
+      "url": "https://bynder.uwhealth.org/m/1d39d4b3bd3ce8bb/original/UW-Health-SwedishAmerican-Hospital-Standard-Charges.csv",
+      "page_label": "SwedishAmerican Hospital on https://www.uwhealth.org/billing-insurance/cms-price-transparency",
+      "method": "bounded ranged GET bytes=0-262143",
+      "http_status": 206,
+      "content_range_total_bytes": 264424259,
+      "sample_bytes": 262144,
+      "sample_sha256": "9f73e9122d74d511c180380aeb6bb6a6b9dce93884b814630e443f504468d9b5"
+    },
+    {
+      "url": "https://www.uwhealth.org/cms-hpt.txt",
+      "method": "curl.exe GET, full file (2,231 bytes)",
+      "http_status": 200,
+      "bytes": 2231,
+      "sha256": "21c07508a1980323814b0721569bc5ce1e3fbb7a9cd822bc997808de38821b68",
+      "matches_retained_pointer_hash": true,
+      "pointer_entries_for_this_system": "Three entries under 'SwedishAmerican Hospital' with location-name SwedishAmerican Medical Group, SwedishAmerican Hospital, and Belvidere Hospital, all sharing mrf-url .../362222696_SwedishAmerican-Hospital_standardcharges.csv; source-page-url https://www.uwhealth.org/billing-insurance/cms-price-transparency"
+    }
+  ],
+  "established": [
+    "The 2026-09-29 direct_browser_request_result 'net::ERR_BLOCKED_BY_CLIENT' condition no longer holds: the Bynder host resolves and serves bytes from this client.",
+    "The Belvidere-labeled URL and the SwedishAmerican-labeled URL serve byte-identical 262,144-byte prefixes (same SHA-256 9f73e912...) and identical declared totals (264,424,259 bytes). Byte identity is proven for the prefix and size only, not for the complete file.",
+    "Current root-pointer bytes were retrieved and are hash-identical to the retained 2026-09-09 pointer (21c07508a1980323814b0721569bc5ce1e3fbb7a9cd822bc997808de38821b68): no pointer change.",
+    "File header row declares: hospital_name SwedishAmerican Hospital, last_updated_on 4/1/2026, version 3.0.0, location_name 'SwedishAmerican Hospital|SwedishAmerican Medical Group|Belvidere Hospital', addresses '1401 E State St Rockford, IL 61104|1625 S State St Belvidere, IL 61008', license_number|IL 0002725, NPI 1760542732. This matches the retained 2026-09-25 bounded header observation."
+  ],
+  "not_established": [
+    "Full-file/schema/usability validation: only a bounded 262,144-byte prefix of the 264,424,259-byte file was sampled; the complete file was not downloaded.",
+    "Authoritative CMS/state/publisher evidence mapping UW Health Belvidere Hospital to CCN 140228, a distinct CCN, or non-CCN site scope. Current CMS exact-CCN data still binds 140228 to Rockford only (per reconciliation-uw-swedishamerican-campus-scope-crosscheck-2026-09-29.json).",
+    "Complete-file byte identity between the two alias URLs (prefix and total size agree; full equality not computed)."
+  ],
+  "disposition_effect": "none; CCN 140228 remains unresolved (pointer-facility-match-unresolved); no promotion claimed",
+  "next_action": "Complete full-file/schema/usability validation (requires downloading the complete 264,424,259-byte CSV, now reachable) and obtain authoritative CMS/state/publisher attribution for the Belvidere location before any single-campus or multi-campus promotion. Do not assign Belvidere to CCN 140228 from shared file URL or ownership alone."
+}

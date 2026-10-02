@@ -1,0 +1,26 @@
+{
+  "ccn": "370246",
+  "observed_at": "2026-10-01T16:13:35.885Z",
+  "domain_search": {
+    "query": "\"Saint Francis\" Bristow Oklahoma hospital price transparency standard charges saintfrancis.com (and \"Carrus Lakeside Hospital\" Bristow Oklahoma)",
+    "recorded_domain": "www.saintfrancis.com",
+    "found_domain": "www.saintfrancis.com",
+    "agrees": true,
+    "basis": "Successor-operator evidence previously bound in reconciliation-carrus-lakeside-successor-proof.json (Saint Francis Bristow page, 700 West 7th Avenue, Bristow OK 74010); today's Carrus-name search returned only third-party aggregators."
+  },
+  "probe": {
+    "url": "https://www.saintfrancis.com/cms-hpt.txt",
+    "http_status": 200,
+    "bytes": 1470,
+    "entries": [
+      "Saint Francis Hospital",
+      "Saint Francis Hospital South",
+      "Saint Francis Hospital Muskogee",
+      "Saint Francis Hospital Vinita",
+      "Laureate Psychiatric Clinic and Hospital"
+    ]
+  },
+  "established": "The successor publisher's root pointer currently carries five entries, none of which names Saint Francis Bristow, Carrus Lakeside, or any Bristow facility; the pointer-facility-match gate for CCN 370246 remains unmet.",
+  "not_established": "No Bristow-specific MRF or publisher mapping from CCN 370246 to a linked file; shared ownership still establishes nothing.",
+  "next_step": "Request or await a Bristow-specific pointer entry or publisher-confirmed CCN-to-file mapping from Saint Francis; re-probe the root pointer only after a stated change."
+}

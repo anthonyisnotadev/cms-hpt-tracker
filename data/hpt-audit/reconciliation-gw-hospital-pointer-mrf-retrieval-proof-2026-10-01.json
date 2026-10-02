@@ -1,0 +1,65 @@
+{
+  "ccn": "090001",
+  "observed_at": "2026-10-01T19:59:16.436Z",
+  "what_changed_versus_prior_state": "Prior state (pointer-access-denied-to-client, prior finding not-assessed-site-observed) had no pointer or MRF bytes. In this check the first-party pointer was retrieved through the web-reader route and the complete declared MRF (60,449,072 bytes, SHA-256 3b91591089b0fadf72905607b261ce34dc2f53bc606b60a2cb841c6bc5a66cff, CMS v3.0.0, last_updated_on 9/1/2026, attestation TRUE, Last-Modified Thu, 10 Sep 2026) was retrieved for the first time, with identity/address/DC matching the CMS record. New pointer-content, MRF-bytes and metadata evidence.",
+  "domain_search": {
+    "query": "\"George Washington University Hospital\" price transparency standard charges machine readable",
+    "recorded_domain": "www.gwhospital.com",
+    "found_domain": "gwhospital.com",
+    "agrees": true,
+    "basis": "gwhospital.com pages (about/awards-accreditations, services) brand as 'GW Hospital / The George Washington University Hospital' with a Price Transparency footer link; same first-party domain as recorded (www alias)."
+  },
+  "cms_record_identity": {
+    "ccn": "090001",
+    "facility_name": "GEORGE WASHINGTON UNIV HOSPITAL",
+    "address": "900 23RD ST NW",
+    "citytown": "WASHINGTON",
+    "state": "DC",
+    "zip_code": "20037"
+  },
+  "pointer_retrieval": {
+    "route": "web-reader MCP (materially different authorized route)",
+    "url": "https://www.gwhospital.com/cms-hpt.txt",
+    "content": "location-name: George Washington University Hospital; source-page-url: https://www.gwhospital.com/patients-visitors/pricing-guide; mrf-url: https://uhsfilecdn.eskycity.net/ac/232896725_george-washington-university-hospital_standardcharges.csv; contact-name: UHS Corp Price Transparency Team; contact-email: hpt-obf:v1:_-tv2u6fdltAb2Mf.4Z__8puduRcY1WWo46RtHA.KC5d3gOH-0SbYUDWt7xFNloAKxHiD2j5CPRGXGWxUv2ZhPzJ-MPw",
+    "location_name": "George Washington University Hospital",
+    "sha256_of_reader_extracted_text": "e7e94d86fedee6252718271424b81dea63055223bf8d608b210623eba6863fde"
+  },
+  "mrf_file": {
+    "url": "https://uhsfilecdn.eskycity.net/ac/232896725_george-washington-university-hospital_standardcharges.csv",
+    "http_status": 200,
+    "content_type": "text/csv",
+    "byte_count": 60449072,
+    "sha256": "3b91591089b0fadf72905607b261ce34dc2f53bc606b60a2cb841c6bc5a66cff",
+    "last_modified": "Thu, 10 Sep 2026 21:34:04 GMT",
+    "full_file_retrieved": true
+  },
+  "mrf_metadata_declared": {
+    "hospital_name": "The George Washington University Hospital",
+    "location_name": "The George Washington University Hospital",
+    "hospital_address": "900 23rd Street, NW, Washington, DC 20037",
+    "license_number": "HFD01-0223",
+    "type_2_npi": "1487640207",
+    "attester_name": "Mark Cannon",
+    "attestation": "TRUE",
+    "last_updated_on": "9/1/2026",
+    "version": "3.0.0"
+  },
+  "identity_check": {
+    "facility_name_matches": true,
+    "address_matches": true,
+    "note_address": "Declared 900 23rd Street NW, Washington DC 20037 matches the CMS record 900 23RD ST NW, WASHINGTON, DC 20037.",
+    "state_matches": true,
+    "state": "DC"
+  },
+  "established": [
+    "First-party pointer https://www.gwhospital.com/cms-hpt.txt exists and was retrieved through the web-reader route.",
+    "Declared MRF URL serves the complete 60,449,072-byte CMS v3.0.0 CSV (HTTP 200).",
+    "Declared name, 900 23rd Street NW Washington DC address, and District of Columbia state match the CMS record for CCN 090001.",
+    "Declared last_updated_on 9/1/2026 and attestation TRUE are present."
+  ],
+  "not_established": [
+    "Pointer wire bytes (reader-extracted text hashed only); prior direct/browser access to gwhospital.com was challenge-blocked and was not re-probed this session since the pointer and file were obtained through the reader route.",
+    "Whether the mrf-url is stable across publisher rotations."
+  ],
+  "disposition_recommended": "verified-current-mrf"
+}

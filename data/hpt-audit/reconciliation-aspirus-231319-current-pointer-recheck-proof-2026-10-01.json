@@ -1,0 +1,33 @@
+{
+  "ccn": "231319",
+  "observed_at": "2026-10-01T14:32:59.260Z",
+  "check_kind": "pointer-and-bounded-header-recheck-2026-10-01",
+  "official_domain": "https://www.aspirus.org/",
+  "domain_search": {
+    "query": "\"Aspirus Keweenaw Hospital\" Laurium Michigan price transparency standard charges",
+    "recorded_domain": "aspirus.org",
+    "found_domain": "aspirus.org",
+    "agrees": true,
+    "basis": "aspirus.org is the health system's own site; the FY27 pointer entry it serves names Aspirus Keweenaw Hospital (Laurium, MI) exactly, and prior proof reconciliation-aspirus-231319-current-pointer-proof-2026-09-26.json binds the same first-party route."
+  },
+  "pointer_url": "https://www.aspirus.org/cms-hpt.txt",
+  "pointer_status": 200,
+  "pointer_byte_count": 5768,
+  "pointer_observation": "GET returned HTTP 200 with 5,768 bytes / 107 lines. The location entry for this facility reads 'location-name: Aspirus Keweenaw Hospital' with 'mrf-url: https://www.aspirus.org/Uploads/Public/Documents/PriceEstimate/TransparencyFY27/381443361_1326115569_aspirus-keweenaw-hospital_standardcharges.json'.",
+  "mrf_url": "https://www.aspirus.org/Uploads/Public/Documents/PriceEstimate/TransparencyFY27/381443361_1326115569_aspirus-keweenaw-hospital_standardcharges.json",
+  "mrf_status": 206,
+  "mrf_sample_bytes": 8192,
+  "mrf_sample_sha256_prefix_0_8191": "aec47f6f79665b50634f43f54537be026ad738b7cba6b4dbedf3d601463b5f80",
+  "sample_note": "SHA-256 is of the bounded 0-8191 byte sample only, not the complete file.",
+  "declared_hospital_name": "Aspirus Keweenaw Hospital",
+  "declared_location_name": "Aspirus Keweenaw Hospital",
+  "declared_address": "205 Osceola, Laurium, MI 49913",
+  "declared_license_state": "MI",
+  "declared_last_updated": "2026-04-01",
+  "cms_template_version": "3.0.0",
+  "attestation": true,
+  "attester_name": "Lori Peck",
+  "what_was_established": "The current FY27 root pointer still lists exactly this facility (not a shared-system sibling) and the bounded JSON header still declares the same hospital name, location name, exact address '205 Osceola, Laurium, MI 49913', license state MI, last_updated_on 2026-04-01, CMS version 3.0.0, NPI 1326115569, and confirm_attestation true. The 2026-04-01 date is within 365 days of the 2026-10-01 observation.",
+  "what_was_not_established": "The complete file was not downloaded or validated row-by-row; the hash covers only the bounded sample. No compliance conclusion beyond the verified-current-mrf identity/metadata gate is claimed.",
+  "prior_proof": "reconciliation-aspirus-231319-current-pointer-proof-2026-09-26.json"
+}

@@ -1,0 +1,38 @@
+{
+  "ccn": "170781",
+  "observed_at": "2026-10-01T22:59:40.347Z",
+  "check_type": "first-party-pricing-page-browser-render (pointer probe + domain search + pricing page render)",
+  "pointer_probe": {
+    "url": "https://rushcountymemorialhospital.com/cms-hpt.txt",
+    "http_status": 404,
+    "response": "XHTML 404 error page (site template), no pointer file"
+  },
+  "domain_search": {
+    "query": "\"Rush County Memorial Hospital\" La Crosse Kansas price transparency standard charges",
+    "recorded_domain": "rushcountymemorialhospital.com",
+    "found_domain": "rushcountymemorialhospital.com",
+    "agrees": true,
+    "basis": "Search returned https://rushcountymemorialhospital.com/ (homepage footer '801 Locust St LaCrosse, KS 67548 phone: hpt-obf:v1:NnlfHmWCg-QMGrny.7kPsKhkS7991IMn9GgZS8A.hMA-VYTLenvlu_UN') and https://rushcountymemorialhospital.com/payments-billing ('This list of charges reflects the standard charges for inpatient and outpatient services provided at Rush County Memorial Hospital'), matching roster name and address."
+  },
+  "pricing_page": {
+    "url": "https://rushcountymemorialhospital.com/payments-billing",
+    "http_status": 200,
+    "rendered_bytes": 26917,
+    "browser_click_path": "Direct navigation to /payments-billing via headless browser (page found by web search); page is a JS-rendered Homestead template so raw HTML had no visible text and the rendered accessibility snapshot was read instead.",
+    "page_title": "Payments & Billing"
+  },
+  "page_facts": [
+    "Page section 'PRICING TRANSPARENCY' names Rush County Memorial Hospital and quotes ACA Section 2718 standard-charge language.",
+    "'Price Listing' block offers exactly two facility links: (1) 'Price Transparency Tool' -> https://apps.para-hcfs.com/PTT/FinalLinks/RushCounty_V2.aspx (the known PARA route, chargemaster labeled 11/1/2020), and (2) 'Charge Master 2020' -> https://storage.googleapis.com/wzukusers/user-35203654/documents/90ebdb25dee4402fb0ebb42124923a19/Charge%20Master%202020.xlsx with text '(This list of charges is current as of 01/01/2020)'.",
+    "No cms-hpt.txt link, no CMS-format CSV/JSON MRF, and no declared CMS template version appears anywhere on the page."
+  ],
+  "what_changed_versus_prior_proof": "Prior proof (2026-09-21) covered only the PARA publisher route (browser navigation-timeout there). This is new first-party evidence: the hospital's own pricing page was rendered for the first time, its complete link inventory was recovered, and it confirms the first-party route offers only the same PARA V2 tool and a 2020-01-01 charge master. Nothing on the page establishes a current CMS-format MRF.",
+  "not_established": [
+    "No current CMS-template CSV/JSON MRF exists in machine-retrievable form for CCN 170781.",
+    "The xlsx charge master was not downloaded or parsed (historical 2020 file; bounded retrieval rule and no promotion intent).",
+    "No compliance conclusion is drawn either way."
+  ],
+  "disposition": "publisher-route-historical-file-official-domain-linkage-unresolved (unchanged)",
+  "interpretation": "First-party evidence corroborates the prior finding: only historical (2020) charge data is published on the official site. Not promotable; the pointer-retrieval gate remains open.",
+  "next_action": "The only remaining route is an authorized/outreach request to the hospital for a current CMS 3.0.0 CSV/JSON MRF URL; alternatively recheck the PARA RushCounty_V2.aspx page only if PARA refreshes it past the 11/1/2020 chargemaster date."
+}

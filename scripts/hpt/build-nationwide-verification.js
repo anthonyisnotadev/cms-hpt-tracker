@@ -941,15 +941,25 @@ function main(outputDir = AUDIT) {
         && /unresolved|not[- ]treated|not[- ]a[- ]current/i.test(String(manualObservation?.disposition || ''))
         ? 'file-custom-workbook-review' : '')
       || (unresolvedManualDispositions.includes(manualObservation?.disposition) ? manualObservation.disposition : '');
+    // A dated manual "current" finding is historical once its declared date
+    // crosses the 365-day boundary. Keep its identity and file proof, while
+    // deriving freshness at the time of this snapshot.
+    const manualCurrentAgedOut = manualDisposition === 'verified-current-mrf'
+      && metadataState({
+        mrf_last_updated: manualPointerRecheck?.declared_last_updated || manualObservation?.declared_last_updated || '',
+        mrf_cms_version: manualPointerRecheck?.cms_template_version || manualObservation?.cms_template_version || ''
+      }, snapshotTime) === 'verified-stale-date';
     const reviewedFacilityMismatch = manualObservation?.reviewed_facility_mismatch === true
       && manualObservation.ccn === row.ccn && manualObservation.disposition === 'linked-mrf-header-unmatched';
     const label = reviewedFacilityMismatch || manualConflictObservations.has(row.ccn) ? 'linked-mrf-header-unmatched'
+      : manualCurrentAgedOut ? 'verified-stale-mrf'
       : ['verified-template-review', 'verified-stale-mrf', 'verified-current-mrf',
       'verified-facility-metadata-unresolved', 'pointer-linked-file-review-pending',
       'pointer-linked-file-not-probed', 'mrf-verification-pending', 'mrf-facility-identity-unresolved',
       'file-custom-workbook-review'].includes(manualDisposition)
         ? manualDisposition : computedLabel;
     const next_action = exclusion ? exclusion.next_action
+      : manualCurrentAgedOut ? 'Recheck this exact pointer-linked file after a publisher update or material source change; retain the dated file and facility identity proof.'
       : manualPointerRecheck?.next_action || (siteCorrection
         ? (siteCorrection.evidence.next_action || 'Verify the repaired hospital-domain root pointer and exact MRF target; separately review the current page-linked CSV template and date.')
       : reviewedFacilityMismatch ? manualObservation.next_action

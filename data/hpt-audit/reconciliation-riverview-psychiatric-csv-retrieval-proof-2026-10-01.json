@@ -1,0 +1,25 @@
+{
+  "ccn": "204008",
+  "observed_at": "2026-10-01T20:25:31Z",
+  "official_domain_search": {
+    "query": "\"Riverview Psychiatric Center\" Augusta Maine standard charges price transparency",
+    "recorded_domain": "maine.gov",
+    "found_domain": "maine.gov",
+    "agrees": true,
+    "basis": "https://www.maine.gov/dhhs/riverview/patient-information/hospital-price-transparency is the first-party Riverview Psychiatric Center (Maine DHHS) price-transparency page."
+  },
+  "official_page_url": "https://www.maine.gov/dhhs/riverview/patient-information/hospital-price-transparency",
+  "official_page_status": 200,
+  "facility_file_url": "https://www.maine.gov/dhhs/sites/maine.gov.dhhs/files/inline-files/016000001_riverviewpsychiatriccenter_standardcharges_0.csv",
+  "facility_file_status": 200,
+  "facility_file_bytes": 10967,
+  "facility_file_last_modified": "Mon, 21 Dec 2020 20:57:15 GMT",
+  "file_header_observation": "Header row: MNEMONIC (CPT),DESCRIPTION,Price,Self Pay Rate,Payer Specific Negotiated Rate,Minimum Negotiated Rate,Highest Negotiated Rate,See Note. Rows include CPT/HCPCS codes (D0120 dental through Y8038 lab, R1000 room & board) and a note stating the psychiatric facility does not render 300 services.",
+  "roster_identity": "RIVERVIEW PSYCHIATRIC CENTER",
+  "roster_address": "250 Arsenal St, Augusta, ME 04330",
+  "what_changed_vs_prior_proof": "Prior evidence (2026-09-26) recorded https://maine.gov/cms-hpt.txt as http-not-found and no file retrieved. This pass the first-party DHHS page was located and its linked CSV retrieved in full (HTTP 200, 10,967 bytes).",
+  "established": "A first-party state-published standard-charges CSV for Riverview Psychiatric Center (filename carries 016000001_riverviewpsychiatriccenter) is retrievable from the official DHHS page.",
+  "not_established": "The CSV carries no CMS template header: no hospital_name, hospital_address, last_updated_on, version, license or attestation fields; it does not name the facility in-band, and the server Last-Modified (2020-12-21) indicates a stale file with no declared currentness.",
+  "tool_vs_inference": "Status, byte count, Last-Modified and file content are direct tool observations. The stale/non-compliant characterization is an inference from those observations against CMS template requirements.",
+  "next_action": "Do not promote: the file lacks declared date/version/identity metadata. Seek a current CMS-template MRF from the publisher or state, or publisher confirmation that the 2020 CSV remains current."
+}

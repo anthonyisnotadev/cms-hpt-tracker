@@ -1,0 +1,25 @@
+{
+  "ccn": "370201",
+  "observed_at": "2026-10-01T16:13:35.885Z",
+  "domain_search": {
+    "query": "\"Surgical Hospital of Oklahoma\" Oklahoma City price transparency standard charges",
+    "recorded_domain": "surgicalhospitalok.net",
+    "found_domain": "surgicalhospitalok.net",
+    "agrees": true,
+    "basis": "https://surgicalhospitalok.net/patients/faq identifies Surgical Hospital of Oklahoma, 100 South East 59th Street, Oklahoma City, OK 73129."
+  },
+  "probe": {
+    "url": "https://surgicalhospitalok.net/price-transparency/",
+    "http_status": 200,
+    "bytes": 163782,
+    "sha256_of_text_response": "a3c7b74ae2b015d2e06e7a693a236af2f00299185ad650808ac0efa4367df4b4",
+    "note": "Page bytes differ from the 2026-09-25 capture (163804 bytes, sha 62a05a7c...), so the page was re-parsed rather than assuming unchanged content."
+  },
+  "file_links_observed": [
+    "/wp-content/uploads/2019/08/SHO-Charge-Master-1.xlsx",
+    "https://surgicalhospitalok.net/sho__2026_standard_charges__v1_0_0_tall__2026-08-17T16_41_17.728462979Z.csv"
+  ],
+  "established": "The current pricing page still exposes no separate CMS MRF beyond the pointer-target CSV (already fully validated 2026-09-19 with the blank license_number|KS header) and a legacy 2019 XLSX charge master; the publisher has not reconciled the header label or published a corrected file.",
+  "not_established": "No publisher correction; the KS header conflict and page-linkage discrepancy remain unresolved.",
+  "next_step": "Publisher clarification/correction of the blank license_number|KS header remains the gate; re-probe only after a stated access change."
+}

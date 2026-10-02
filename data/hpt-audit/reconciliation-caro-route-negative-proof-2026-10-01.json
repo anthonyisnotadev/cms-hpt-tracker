@@ -1,0 +1,39 @@
+{
+  "ccn": "234025",
+  "hospital_name": "CARO PSYCHIATRIC HOSPITAL",
+  "state": "MI",
+  "observed_at": "2026-10-01T20:35:30.000Z",
+  "proof_kind": "materially-different-route-pointer-and-page-negative",
+  "domain_search": {
+    "query": "\"Caro Psychiatric Hospital\" price transparency standard charges michigan.gov",
+    "recorded_domain": "michigan.gov",
+    "found_domain": "michigan.gov",
+    "agrees": true,
+    "basis": "https://www.michigan.gov/mdhhs/keep-mi-healthy/mentalhealth/mentalhealth/mentalillness lists 'Caro Psychiatric Hospital, 2040 Chambers Road, Caro, Michigan 48723' matching the CMS roster; no third-party official site exists (state-operated)"
+  },
+  "observations": [
+    {
+      "what": "web-reader GET of https://www.michigan.gov/cms-hpt.txt returned the site's 404 page (canonical https://www.michigan.gov/som/404). Unlike prior sessions where michigan.gov returned access-denied in this client, this route succeeded and returned a definitive first-party 404.",
+      "source": "web-reader (tool observation)"
+    },
+    {
+      "what": "web-reader GET of https://www.michigan.gov/mdhhs/keep-mi-healthy/mentalhealth/mentalhealth/mentalillness ('State Operated Inpatient Psychiatric Hospitals') succeeded; content lists Caro Psychiatric Hospital, 2040 Chambers Road, Caro, Michigan 48723 (roster match) and contains no occurrences of 'charge', 'pricing', 'transparency', or 'cost' — the page offers only contacts.",
+      "source": "web-reader (tool observation)"
+    },
+    {
+      "what": "Web search for a Caro-specific pricing page and a michigan.gov machine-readable standard-charges file returned only Medicaid fee-schedule/rate pages and third-party listings; no Caro standard-charges CSV/JSON and no facility pointer.",
+      "source": "web-search-prime (tool observation)"
+    }
+  ],
+  "established": [
+    "michigan.gov is reachable via web-reader in this client (prior access-denied observations superseded for page retrieval)",
+    "The michigan.gov root CMS pointer /cms-hpt.txt is definitively 404 on the first-party site",
+    "The MDHHS state-hospitals page carrying the Caro identity exposes no pricing or pointer link",
+    "No Caro-specific state pricing page or publisher pointer was found by search"
+  ],
+  "not_established": [
+    "That Caro is exempt from the CMS price-transparency requirement",
+    "That no MRF exists anywhere on michigan.gov (only tested paths and linked pages were checked)"
+  ],
+  "changed_vs_prior": "Prior session (2026-09-19/22) recorded access-denied client responses on the Michigan page and pointer. This session a materially different route (web-reader) succeeded, converting the ambiguous denial into a definitive first-party 404 at the root pointer and a negative pricing-link observation on the identity page."
+}

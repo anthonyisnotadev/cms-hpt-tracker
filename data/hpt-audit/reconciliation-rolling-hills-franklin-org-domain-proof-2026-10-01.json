@@ -1,0 +1,31 @@
+{
+  "ccn": "444007",
+  "observed_at": "2026-10-01T16:23:01.675Z",
+  "hospital_name": "ROLLING HILLS PSYCHIATRIC HOSPITAL",
+  "state": "TN",
+  "search": {
+    "query": "\"Rolling Hills\" psychiatric hospital Franklin Tennessee price transparency standard charges rollinghillshospital",
+    "recorded_official_domain": "rollinghillshospital.com",
+    "found_domain": "rollinghillshospital.org",
+    "agrees": false,
+    "basis": "Search results show rollinghillshospital.org is the Franklin, Tennessee Rolling Hills Hospital first-party site (homepage: 'located in Franklin, Tennessee'; /standard-services 'Standard Services Price Guide'), corroborating the prior Joint Commission association. rollinghillshospital.com hosts the Oklahoma facility's price-transparency page and must not be assigned to CCN 444007. The record's official_domain field currently reads rollinghillshospital.com, which corresponds to the wrong facility."
+  },
+  "access_observation": {
+    "routes_tried": [
+      "https://rollinghillshospital.org/ via plain HTTP GET: 403, 5312 bytes, Cloudflare challenge markup present",
+      "https://rollinghillshospital.org/cms-hpt.txt: 403, 5366 bytes, Cloudflare challenge markup present",
+      "https://rollinghillshospital.org/price-transparency: 403, 5384 bytes, Cloudflare challenge markup present",
+      "https://rollinghillshospital.org/standard-services: 403, 5384 bytes, Cloudflare challenge markup present"
+    ],
+    "note": "The blocked condition recorded in the queue (Cloudflare challenge) is unchanged. A challenge is a client-side block, not evidence of file absence or noncompliance."
+  },
+  "established": [
+    "rollinghillshospital.org is the Franklin TN facility first-party domain and exposes a Standard Services Price Guide page (per search snippet); it remains Cloudflare-challenged to automated access.",
+    "rollinghillshospital.com (the recorded official_domain) is the Oklahoma facility."
+  ],
+  "not_established": [
+    "No .org page body, pointer, or MRF bytes were obtained; no Oklahoma-file misassignment or compliance conclusion is drawn."
+  ],
+  "interpretation": "Domain-level evidence gain: the recorded official_domain names the Oklahoma site while the Franklin TN facility's first-party domain is rollinghillshospital.org. The access-block condition is unchanged. No disposition change; CCN 444007 remains unresolved.",
+  "count_effect": "none; CCN 444007 remains unresolved"
+}

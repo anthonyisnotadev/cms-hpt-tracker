@@ -1,0 +1,60 @@
+{
+  "ccn": "391309",
+  "observed_at": "2026-10-01T23:32:37Z",
+  "roster_facility_name": "BARNES-KASSON COUNTY HOSPITAL",
+  "roster_address": "2872 Turnpike Street, Susquehanna, PA 18847",
+  "domain_search": {
+    "tool": "web-search-prime_web_search_prime",
+    "query": "\"Barnes-Kasson\" hospital Susquehanna PA price transparency standard charges",
+    "recorded_domain": "barnes-kasson.org",
+    "found_domain": "www.barnes-kasson.org",
+    "agrees": true,
+    "basis": "http://www.barnes-kasson.org/index.php/resources/insurance-and-payment names 'Barnes-Kasson County Hospital', Susquehanna Depot, PA; footer shows 2872 Turnpike St Susquehanna, PA 18847."
+  },
+  "pointer": {
+    "url_https": "https://www.barnes-kasson.org/cms-hpt.txt",
+    "url_http": "http://www.barnes-kasson.org/cms-hpt.txt",
+    "status": 200,
+    "route_note": "HTTPS TLS handshake failed from this client (schannel); HTTP route returned 200. Client-side TLS failure is not evidence of pointer absence over HTTPS.",
+    "bytes": 305,
+    "sha256": "0ea253e34585db290adeacf36c34b7ffb8a0d811a85b0c0f00a13bdf25b0dc93",
+    "entry_count": 1,
+    "entries_matching_facility": 1,
+    "location_name": "Barnes-Kasson County Hospital",
+    "declared_mrf_url": "http://www.barnes-kasson.org/images/docs/240798681_barnes-kasson-county-hospital_standardcharges.csv",
+    "source_page_url": "http://www.barnes-kasson.org/index.php/resources/insurance-and-payment"
+  },
+  "source_page": {
+    "url": "http://www.barnes-kasson.org/index.php/resources/insurance-and-payment",
+    "status": 200,
+    "observed_bytes_sampled": 8192,
+    "evidence": "Page heading 'Barnes-Kasson County Hospital'; 'About Barnes-Kasson Hospital ... Susquehanna Depot, Pennsylvania'; link text '2026 Charges (Machine Readable File)' -> /images/docs/240798681_barnes-kasson-county-hospital_standardcharges.csv; nav item 'Price Transparency' -> same page."
+  },
+  "mrf": {
+    "url": "http://www.barnes-kasson.org/images/docs/240798681_barnes-kasson-county-hospital_standardcharges.csv",
+    "status": 200,
+    "bytes": 16177999,
+    "sha256_full_file": "fbabf14fdb7a23502cd866d052204b68b491627666bf7676e75ed0a222023c72",
+    "sha256_first_262144_bytes": "6cccf3dbdf31e560207da488a1b2d8d51f1f7caf9b46a60f3717f73d33302dcc",
+    "last_modified": "Mon, 27 Apr 2026 17:07:59 GMT",
+    "content_type": "application/octet-stream",
+    "retrieval": "complete file downloaded via curl (200, 16177999 bytes)"
+  },
+  "declared_metadata": {
+    "hospital_name": "Barnes-Kasson County Hospital",
+    "location_name": "Barnes-Kasson County Hospital",
+    "address": "2872 Turnpike St, Susquehanna, PA, 18847",
+    "license_number": "02050101",
+    "license_state_column": "PA",
+    "type_2_npis": "1932138161|1639355456|1497996037|1962680256|1366683831|1821239385|1720573918",
+    "last_updated_on": "2026-04-23",
+    "version": "3.0.0",
+    "attestation": true,
+    "attester_name": "Sara Adornato"
+  },
+  "identity_check": "Declared hospital name and address match the roster facility (Barnes-Kasson County Hospital, 2872 Turnpike Street, Susquehanna, PA 18847). State PA agrees.",
+  "changed_versus_prior": "Prior proof (reconciliation-barnes-kasson-domain-unavailable-proof-2026-09-22.json) recorded the domain as timing out with no pointer or MRF. This observation retrieved a live 200 pointer (over HTTP), the pricing page, and a complete 16,177,999-byte CMS v3.0.0 CSV MRF dated 2026-04-23 with matching name/address/attestation.",
+  "established": "First-party pointer and facility-specific CMS-format MRF are live and identity-consistent for CCN 391309.",
+  "not_established": "HTTPS pointer availability from non-blocked clients; whether every standard charge row is complete (content spot-checked on header rows only).",
+  "disposition": "verified-current-mrf"
+}

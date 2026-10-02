@@ -1,0 +1,43 @@
+{
+  "ccn": "344029",
+  "hospital_name": "GOOD HOPE HOSPITAL, INC",
+  "state": "NC",
+  "observed_at": "2026-10-01T19:06:43Z",
+  "domain_search": {
+    "query": "\"Good Hope Hospital\" North Carolina price transparency standard charges + site:daymarkrecovery.org \"Good Hope\"",
+    "recorded_domain": "daymarkrecovery.org",
+    "found_domain": "daymarkrecovery.org",
+    "agrees": true,
+    "basis": "https://daymarkrecovery.org/good-hope-psychiatric-hospital is the operator's first-party page for the facility; Daymark press release confirms it assumed operations of Good Hope Hospital's psychiatric unit on January 1, 2025."
+  },
+  "observations": [
+    {
+      "what": "Facility page retrieved in headless browser",
+      "url": "https://daymarkrecovery.org/good-hope-psychiatric-hospital/",
+      "http_status": 200,
+      "facility_identity_evidence": "Page title 'Good Hope Psychiatric Hospital - Daymark Recovery Services'; 16 adult psychiatric beds; referral instructions referencing Good Hope Hospital; operator admin address 2129 Statesville Blvd, Salisbury, NC 28147.",
+      "pricing_content": "None. No standard-charges, pricing, or MRF links anywhere on the page."
+    },
+    {
+      "what": "Root pointer file probe",
+      "url": "https://daymarkrecovery.org/cms-hpt.txt",
+      "http_status": 404,
+      "result": "Page not found; no CMS HPT pointer file at root."
+    },
+    {
+      "what": "Operator transition press page (search result)",
+      "url": "https://daymarkrecovery.org/news-press/daymark-recovery-services-assumes-operations-at-good-hope-hospital",
+      "result": "Confirms Daymark Recovery Services assumed operations at Good Hope Hospital effective January 1, 2025."
+    }
+  ],
+  "established": [
+    "daymarkrecovery.org is the current operator's first-party site hosting the facility page (agrees with recorded domain).",
+    "Operator transition to Daymark Recovery Services effective 2025-01-01 is confirmed on the operator's own site.",
+    "No pricing/standard-charges content on the facility page and no /cms-hpt.txt pointer (HTTP 404)."
+  ],
+  "not_established": [
+    "Whether Good Hope Hospital, Inc. retains current CMS hospital participation/CCN 344029 certification status (no CMS source checked this session).",
+    "Whether any CMS-format standard-charges file exists on another route."
+  ],
+  "changed_vs_prior": "Prior state 'pointer-not-retrieved / not-assessed-site-observed'; this session proved the operator transition from the operator's own press release, confirmed the live facility page has no pricing content, and proved the pointer 404s."
+}

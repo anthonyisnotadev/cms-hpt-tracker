@@ -1,0 +1,60 @@
+{
+  "ccn": "450825",
+  "observed_at": "2026-10-01T18:45:09.847Z",
+  "type": "pointer-and-complete-mrf-recovery-promotion-evidence",
+  "changed_versus_prior_proof": [
+    "Prior proof (2026-09-23, reconciliation-cornerstone-regional-access-proof-2026-09-23.json) recorded only HTTP 403 responses and Cloudflare Error 1005 in the browser for the pointer routes, with no pointer content and no MRF bytes. This check recovered the full pointer content and the complete declared MRF for the first time.",
+    "New declared header fact: last updated 9/1/2026, CMS template 3.0.0, attestation TRUE - never previously observed for this CCN."
+  ],
+  "pointer": {
+    "url": "https://cornerstoneregional.com/cms-hpt.txt",
+    "transport": "web-reader MCP (curl returned HTTP 403 with 17-byte body; web-reader is the permitted interactive materially-different route the record's next_action requested)",
+    "status_via_reader": 200,
+    "sha256_reader_extracted_text": "54B6F6F242DEA6184C03CBBDAA8F202817E798452428FB698D75C7A35A4DEAA1",
+    "caveat": "Hash is of reader-extracted text; exact wire bytes remain unestablished (curl 403).",
+    "location_name": "Cornerstone Regional Hospital",
+    "source_page_url": "https://cornerstoneregional.com/pricing-guide/",
+    "declared_mrf_url": "https://uhsfilecdn.eskycity.net/ac/742829611_cornerstone-regional-hospital_standardcharges.csv",
+    "entry_count": 1,
+    "entries_matching_facility": 1
+  },
+  "mrf": {
+    "url": "https://uhsfilecdn.eskycity.net/ac/742829611_cornerstone-regional-hospital_standardcharges.csv",
+    "status": 200,
+    "bytes": 171856,
+    "sha256_complete": "2FF5EE61DE8DA77339E1DA28E99369BB2EBB9D5C9F98ABCB74C97B74B01E9240",
+    "download_extent": "complete file (171,856 bytes, 253 lines, no range limit)",
+    "declared_hospital_name": "Cornerstone Regional Hospital",
+    "declared_location_name": "Cornerstone Regional Hospital",
+    "declared_address": "2302 Cornerstone Boulevard, Edinburg, TX 78539",
+    "declared_license_number": "830",
+    "declared_license_state": "TX",
+    "declared_type_2_npi": "1386652527",
+    "declared_last_updated": "2026-09-01",
+    "cms_template_version": "3.0.0",
+    "attestation": true,
+    "attester": "Mark Cannon",
+    "usable_rows_observed": "Sample data row 'Sho arthrs srg rt8tr cuf rpr' HCPCS 29827 with gross 4845.01 and per-payer negotiated_dollar values (e.g. 7413.38 AETNA, fee schedule methodology)"
+  },
+  "identity_crosscheck": {
+    "roster_name": "CORNERSTONE REGIONAL HOSPITAL",
+    "roster_state": "TX",
+    "roster_address_basis": "2302 Cornerstone Blvd, Edinburg, TX 78539 (established by the 2026-09-23 STHS patient-guide check and corroborated by the 2026 Medicare Advantage provider directory listing 'CORNERSTONE REGIONAL HOSPITAL, 2302 CORNERSTONE BLVD, EDINBURG, TX 78539')",
+    "match": "exact name, exact address, exact state"
+  },
+  "domain_search": {
+    "query": "\"Cornerstone Regional Hospital\" Edinburg Texas price transparency standard charges",
+    "recorded_domain": "cornerstoneregional.com",
+    "found_domain": "cornerstoneregional.com",
+    "agrees": true,
+    "basis": "cornerstoneregional.com/pricing-guide is Cornerstone Regional Hospital's own pricing page ('standard charges for items and services that may be offered by Cornerstone Regional Hospital')"
+  },
+  "established": [
+    "First-party root pointer at cornerstoneregional.com/cms-hpt.txt retrieved through a permitted route; it names exactly one MRF.",
+    "The declared MRF was downloaded in full and its header exactly matches the CCN 450825 facility name, 2302 Cornerstone Boulevard address, and Texas state, with a September 2026 declared date, CMS v3.0.0 template and TRUE attestation.",
+    "Usable standard-charge data rows are present."
+  ],
+  "not_established": [
+    "Exact pointer wire bytes (transport-blocked; reader text hashed instead)."
+  ]
+}

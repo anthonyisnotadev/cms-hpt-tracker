@@ -1,0 +1,33 @@
+{
+  "ccn": "450895",
+  "observed_at": "2026-10-01T16:38:56.999Z",
+  "hospital_name": "BAYLOR SCOTT WHITE THE HEART HOSPITAL CORINTH",
+  "state": "TX",
+  "search": {
+    "query": "\"Baylor Scott & White\" heart hospital Corinth Texas price transparency standard charges bswhealth",
+    "recorded_official_domain": "bswhealth.com",
+    "found_domain": "bswhealth.com",
+    "agrees": true,
+    "basis": "bswhealth.com remains the operator's first-party domain (cost-of-care estimate and consumer price guide pages). No Corinth-specific Heart Hospital pricing page or MRF surfaced; third-party listings show only the Denton Heart Hospital (CCN 450893)."
+  },
+  "qies_observation": {
+    "query_url": "https://data.cms.gov/data-api/v1/dataset/bb342fae-b551-40fd-a738-e2e5878f3bbb/data?filter%5BPRVDR_NUM%5D=450895&size=10",
+    "http_status": 200,
+    "result": "zero rows returned for PRVDR_NUM=450895",
+    "prior_attempt_context": "The 2026-09-29 nationwide QIES Q2 crosscheck attempt for this CCN failed with HTTP 429 and retrieved no rows; this is the first successful exact-CCN QIES POS retrieval for 450895.",
+    "interpretation_care": "The same extract retains terminated providers as rows (e.g., terminated CCN 400140 appears with termination fields), so a completely absent row is stronger than a terminated-status row. It is consistent with the CCN having been removed from the current CMS POS extract, but the dataset absence alone is not treated as proof of facility closure."
+  },
+  "web_observation": {
+    "result": "No publisher-confirmed Corinth MRF or pointer found. bswhealth.com exposes system-level cost-estimate tooling only; no Corinth campus file. The separately listed Denton Heart Hospital file (CCN 450893) remains unassigned to 450895."
+  },
+  "established": [
+    "The current CMS QIES POS extract returns no row for CCN 450895 (successful query, zero rows).",
+    "No first-party Corinth Heart Hospital pricing page, pointer, or MRF was found on bswhealth.com or via search."
+  ],
+  "not_established": [
+    "Facility closure or CCN termination is not independently proven; no CMS termination record or BSW closure notice was retrieved.",
+    "No successor-scope or enrollment evidence mapping any file to CCN 450895 was found."
+  ],
+  "interpretation": "New official-dataset evidence (absent QIES row) plus absence of any first-party Corinth pricing artifact. This does not by itself support a disposition change; a closure/termination confirmation would be required before any downgrade.",
+  "count_effect": "none; CCN 450895 remains unresolved"
+}

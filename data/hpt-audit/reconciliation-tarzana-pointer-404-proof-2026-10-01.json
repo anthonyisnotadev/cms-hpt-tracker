@@ -1,0 +1,40 @@
+{
+  "ccn": "054148",
+  "observed_at": "2026-10-01T23:03:00Z",
+  "official_domain": "https://www.tarzanatc.org/",
+  "domain_search": {
+    "query": "\"Tarzana Treatment Center\" hospital price transparency standard charges machine readable",
+    "recorded_domain": "www.tarzanatc.org",
+    "agrees": true,
+    "basis": "https://www.tarzanatc.org/ homepage titled 'Tarzana Treatment Centers' (Tarzana, CA); web search surfaced no other first-party pricing site and no Providence Tarzana substitution"
+  },
+  "observations": [
+    {
+      "url": "https://www.tarzanatc.org/",
+      "http_status": 200,
+      "bytes": 435280,
+      "title": "Home - Tarzana Treatment Centers",
+      "established": "Official site reachable via plain HTTP GET this session (prior proof recorded timeouts)"
+    },
+    {
+      "url": "https://www.tarzanatc.org/cms-hpt.txt",
+      "http_status": 404,
+      "established": "Pointer route returns a definitive 404, replacing the prior 'bounded request timed out / browser navigation timed out' status"
+    },
+    {
+      "urls": ["https://www.tarzanatc.org/price-transparency/", "https://www.tarzanatc.org/standard-charges", "https://www.tarzanatc.org/pricing", "https://www.tarzanatc.org/transparency", "https://www.tarzanatc.org/hospital-price-transparency", "https://www.tarzanatc.org/cms-price-transparency"],
+      "http_status": 404,
+      "established": "No pricing page at common routes"
+    },
+    {
+      "url": "https://www.tarzanatc.org/?s=price+transparency",
+      "browser_status": 200,
+      "result": "Site search: 'Sorry, but nothing matched your search terms.' Second query 'charges' returned only unrelated blog posts; homepage contains no href containing price/charge/transparen/cost/pricing",
+      "established": "No price-transparency content discoverable through the site's own search or footer links"
+    }
+  ],
+  "changed_versus_prior": "Prior proof (2026-09-21) could not determine pointer status (timeouts on both curl and browser). This session the pointer and six candidate pricing routes resolve definitively to 404 and site search exposes no pricing content, while the homepage itself now serves 200 in a plain GET.",
+  "not_established": "No MRF exists elsewhere on the site or off-site; no compliance conclusion; no promotion or downgrade basis on 404s alone.",
+  "disposition": "pointer-404-no-pricing-page-discoverable",
+  "next_action": "Contact-routed publisher inquiry or a facility-specific CMS CSV/JSON from another authorized source; do not substitute Providence Tarzana Medical Center."
+}

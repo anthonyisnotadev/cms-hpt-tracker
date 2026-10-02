@@ -1,0 +1,38 @@
+{
+  "ccn": "250780",
+  "hospital_name": "JEFFERSON COUNTY HOSPITAL",
+  "state": "MS",
+  "observed_at": "2026-10-01T20:03:27.831Z",
+  "domain_search": {
+    "query": "\"Jefferson County Hospital\" Fayette Mississippi price transparency standard charges; follow-up 'Jefferson County Hospital Fayette MS official website'",
+    "recorded_official_domain": "jeffhospital.com",
+    "found_official_domain": "none-found",
+    "agrees": false,
+    "basis": "jeffhospital.com is still the domain third parties list (Network of Care lists it as the hospital site; AHD/US News confirm Jefferson County Hospital, 870 Main Street/South Main Street, Fayette, MS 39069, phone hpt-obf:v1:4u-GfXwGnoN0oSQ0.k8W_cJsqsxZxBgtAsymcWw.46-xYNLtRMHspORd), but the domain itself now serves only a redirect shell and no alternative first-party hospital site was found in search results."
+  },
+  "checks": [
+    {
+      "check": "recorded domain root and pointer",
+      "url": "https://jeffhospital.com/ and https://jeffhospital.com/cms-hpt.txt",
+      "status": 200,
+      "observed_at": "2026-10-01T20:03:27.831Z",
+      "note": "Both return the same 114-byte page: <!DOCTYPE html><html><head><script>window.onload=function(){window.location.href=\"/lander\"}</script></head></html> - a redirect shell to /lander, i.e. a parked/lander page, not a hospital website and not a CMS pointer. This matches the record's warning not to treat the redirect shell as a pointer."
+    },
+    {
+      "check": "search for alternative official site",
+      "observed_at": "2026-10-01T20:03:27.831Z",
+      "note": "Search results for the hospital in Fayette MS returned only third parties (AHD, US News, Nursa, Castle Connolly, Network of Care) and unrelated Jefferson entities in other states (Jefferson Healthcare WA, Jefferson Health PA, Jefferson County Health Center IA, Jefferson Comprehensive Health Center - a different FQHC at 405 Main St Fayette). No operating first-party hospital website was found."
+    }
+  ],
+  "established": [
+    "As of 2026-10-01, jeffhospital.com serves only a 114-byte JavaScript redirect shell to /lander on both / and /cms-hpt.txt; it publishes no pointer and no pricing content.",
+    "No alternative official first-party domain for Jefferson County Hospital (Fayette, MS) was found by search.",
+    "Facility identity corroborated by third parties: 870 S Main St, Fayette, MS 39069, phone hpt-obf:v1:9llfwjBy6r7tdpeM.JAWfIawjPx436bSf8KRqmw.tRjcgJT-DGdEKhvP."
+  ],
+  "not_established": [
+    "Whether jeffhospital.com is temporarily misconfigured versus permanently lapsed.",
+    "Whether a Jefferson County Hospital MRF exists anywhere (no candidate file).",
+    "Any compliance or exemption status."
+  ],
+  "change_vs_prior": "First byte-level proof that both the recorded domain root and the /cms-hpt.txt path now serve the identical redirect-shell HTML (114 bytes) rather than a hospital site or pointer; prior record only noted a 'redirect shell' without the served bytes, and search confirms no replacement official domain."
+}

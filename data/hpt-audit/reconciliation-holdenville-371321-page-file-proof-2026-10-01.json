@@ -1,0 +1,63 @@
+{
+  "ccn": "371321",
+  "hospital_name": "HOLDENVILLE GENERAL HOSPITAL",
+  "state": "OK",
+  "observed_at": "2026-10-01T20:07:28.872Z",
+  "domain_search": {
+    "query": "\"Holdenville General Hospital\" Holdenville Oklahoma price transparency standard charges machine readable",
+    "recorded_domain": "holdenvillehospital.com",
+    "found_domain": "holdenvillehospital.com",
+    "agrees": true,
+    "basis": "https://holdenvillehospital.com/price-transparency first-party Price Transparency Statement page (HTTP 200 via webfetch), site name Holdenville General Hospital"
+  },
+  "chain": [
+    {
+      "step": "official pricing page",
+      "url": "https://holdenvillehospital.com/price-transparency",
+      "http_status": 200,
+      "note": "First-party Price Transparency Statement page (GoDaddy Website Builder, canonical holdenvillehospital.com/price-transparency, og:site_name Holdenville General Hospital). Links: 'Pricelist' and 'Shoppable Services'."
+    },
+    {
+      "step": "linked pricing estimator page",
+      "url": "https://www.yourcareeverywhere.com/content/medhost/your-care-everywhere/pricing-estimator-page.html?facility_id=f25a1e6a-ed78-4641-a1c6-fcebfa80bf1b",
+      "http_status": 200,
+      "note": "MEDHOST YourCareEverywhere estimator reached by following the ordinary 'Pricelist' link from the first-party page. Rendered heading: 'Holdenville General Hospital, 100 McDougal Drive, Holdenville, OK 74848' with a 'Download Standard Charges' link."
+    },
+    {
+      "step": "facility machine-readable file",
+      "url": "https://s3.amazonaws.com/ycubaa-production-marlin-1-charge-management-public/facilities/f25a1e6a-ed78-4641-a1c6-fcebfa80bf1b/731538589_HOLDENVILLE-GENERAL-HOSPITAL_standardcharges.zip",
+      "http_status": 200,
+      "content_length": 43400388,
+      "bytes": 43400388,
+      "sha256": "3df8a0003211f792eb0ed87f5ba68ef9a5519d950718519e9a66779959ca332d",
+      "last_modified": "Tue, 07 Apr 2026 15:19:28 GMT",
+      "downloaded_to": "tmp/autonomy/holdenville-standardcharges.zip"
+    }
+  ],
+  "file_contents": {
+    "zip_entries": ["731538589_HOLDENVILLE-GENERAL-HOSPITAL_standardcharges.csv (641168567 bytes uncompressed)"],
+    "declared_hospital_name": "HOLDENVILLE GENERAL HOSPITAL",
+    "declared_last_updated_on": "2026-04-07",
+    "cms_template_version": "3.0.0",
+    "declared_location_name": "HOLDENVILLE GENERAL HOSPITAL",
+    "declared_address": "100 MCDOUGAL DRIVE,HOLDENVILLE,OK,74848-0000",
+    "declared_license_number": "2195 (license_number|OK)",
+    "declared_type_2_npi": "1265851455",
+    "attestation": true,
+    "attester": "CHRYSTAL LANDERS, ASST CFO",
+    "roster_name": "HOLDENVILLE GENERAL HOSPITAL",
+    "roster_address_basis": "100 McDougal Dr, Holdenville, OK 74848 (estimator heading; Providence directory corroborates 100 McDougal Dr, Holdenville, OK 74848)"
+  },
+  "what_was_established": [
+    "Official first-party domain holdenvillehospital.com confirmed by search and direct fetch (agrees with recorded official_domain).",
+    "Root pointer https://holdenvillehospital.com/cms-hpt.txt returns HTTP 404.",
+    "Ordinary-link click path from the official pricing page to the MEDHOST estimator and its 'Download Standard Charges' ZIP.",
+    "Complete 43,400,388-byte ZIP (SHA-256 above) containing a 641,168,567-byte CMS 3.0.0 CSV with declared name, Holdenville OK address, Oklahoma license, Type 2 NPI 1265851455, last_updated 2026-04-07 and attestation TRUE.",
+    "CSV header and first data row were read from the fully extracted file; usability of the exact file was not exhaustively row-validated beyond the sampled header/row and column layout."
+  ],
+  "what_was_not_established": [
+    "No cms-hpt.txt root pointer exists on the domain (404); linkage is via the official pricing page, not a CMS pointer file.",
+    "Full per-row content validation of the 641 MB CSV was not performed."
+  ],
+  "what_changed_versus_prior": "Prior state was pointer-not-retrieved with no candidate file recorded. This session first established the page-linked complete current CMS 3.0.0 ZIP with matching Holdenville OK identity, a new fact."
+}

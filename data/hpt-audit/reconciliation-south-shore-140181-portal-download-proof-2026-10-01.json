@@ -1,0 +1,51 @@
+{
+  "ccn": "140181",
+  "hospital_name": "SOUTH SHORE HOSPITAL (SOUTH SHORE HOSPITAL CORPORATION)",
+  "state": "IL",
+  "observed_at": "2026-10-01T23:00:03.777Z",
+  "domain_search": {
+    "query": "South Shore Hospital Chicago Illinois hospital price transparency standard charges",
+    "recorded_domain": "www.southshorehospital.com",
+    "found_domain": "www.southshorehospital.com",
+    "agrees": true,
+    "basis": "https://www.southshorehospital.com homepage shows 'South Shore Hospital, hpt-obf:v1:xVvei3Bej51KVuim.iDUZTAV5sfuMgVYq6agfbQ.zWd0EpfbIeZAExwB-XY, 8012 South Crandon Ave, Chicago' and links the PARA Price Transparency Tool for this facility."
+  },
+  "click_path": [
+    "https://www.southshorehospital.com/ (loaded in headless browser, 200)",
+    "Footer link 'Price Transparency' -> https://apps.para-hcfs.com/PTT/FinalLinks/South_Shore_V2.aspx (loaded, 200, heading 'South Shore Hospital's Standard Charges')",
+    "Clicked link 'STANDARD CHARGES (CHARGEMASTER PRICING) February 04, 2026'",
+    "Browser download generated via POST https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbSSHCHICAGOIL&type=CDMWithoutLabel (HTTP 200)",
+    "Saved as 361799520_south-shore-hospital-corporation_standardcharges.csv"
+  ],
+  "file": {
+    "url": "https://apps.para-hcfs.com/PTT/FinalLinks/Reports.aspx?dbName=dbSSHCHICAGOIL&type=CDMWithoutLabel",
+    "http_status": 200,
+    "byte_count": 16615006,
+    "sha256": "e95601e026ee6507ea8dbd8641d76b928951232be1f626dca0a5b2754f8dade0",
+    "kind": "csv"
+  },
+  "declared_metadata_from_file_header_rows": {
+    "hospital_name": "SOUTH SHORE HOSPITAL CORPORATION",
+    "last_updated_on": "2026-02-04",
+    "version": "3.0.0",
+    "location_name": "SOUTH SHORE HOSPITAL CORPORATION",
+    "hospital_address": "8012 S Crandon Ave Chicago IL 60617",
+    "license_number": "3459 (license header column is IL)",
+    "type_2_npi": "1053391359",
+    "attestation_text_present": true,
+    "attestation_value": true
+  },
+  "identity_crosscheck": {
+    "cms_record": "facility_id 140181 SOUTH SHORE HOSPITAL, 8012 SOUTH CRANDON AVENUE, CHICAGO, IL 60617 (per prior 2026-09-23 proof CMS API observation)",
+    "result": "facility name, street address, city, IL state and zip all agree"
+  },
+  "established": [
+    "Complete CMS-format machine-readable CSV (16,615,006 bytes) downloaded through the facility's own linked price-transparency portal (POST network target captured).",
+    "Declared metadata: CMS template version 3.0.0, last updated 2026-02-04, attestation true, NPI 1053391359, IL license column, and address 8012 S Crandon Ave Chicago IL 60617 matching the CCN 140181 CMS record."
+  ],
+  "not_established": [
+    "Root pointer https://www.southshorehospital.com/cms-hpt.txt remains absent (404 in prior check; not re-probed this session), so no CMS pointer linkage is claimed — this is a first-party-portal download chain.",
+    "Rate-level usability of every row was not exhaustively audited; header and a representative rate row were inspected."
+  ],
+  "changed_vs_prior": "Prior 2026-09-23 proof: portal rendered but no MRF URL exposed and no bytes recovered. This session: interactive click produced a complete 16.6 MB CMS-format CSV with full agreeing metadata — materially new evidence supporting promotion."
+}

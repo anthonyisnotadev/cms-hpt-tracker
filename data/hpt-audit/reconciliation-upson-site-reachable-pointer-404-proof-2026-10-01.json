@@ -1,0 +1,61 @@
+{
+  "ccn": "110002",
+  "hospital_name": "Upson Regional Medical Center",
+  "observed_at": "2026-10-01T23:25:13.965Z",
+  "official_domain_search": {
+    "query": "\"Upson Regional Medical Center\" Thomaston Georgia price transparency standard charges",
+    "recorded_domain": "urmc.org",
+    "found_domain": "urmc.org",
+    "agrees": true,
+    "basis": "Search returned first-party pages https://urmc.org/hospital-transparency-information and https://urmc.org/patients-visitors/billing-insurance for Upson Regional Medical Center, Thomaston, GA."
+  },
+  "route_probes": [
+    {
+      "url": "https://www.urmc.org/cms-hpt.txt",
+      "http_status": 301,
+      "redirect_target": "https://urmc.org/cms-hpt.txt"
+    },
+    {
+      "url": "https://urmc.org/cms-hpt.txt",
+      "http_status": 404,
+      "body_bytes": 327538,
+      "observation": "The apex root pointer returns the site's WordPress 404 HTML page; no pointer text."
+    },
+    {
+      "url": "https://urmc.org/hospital-transparency-information",
+      "http_status": 404,
+      "body_bytes": 327546,
+      "observation": "The search-indexed URL 404s; its 404-page navigation exposed the current section at /transparency-compliance."
+    },
+    {
+      "url": "https://urmc.org/transparency-compliance/",
+      "http_status": 200,
+      "body_bytes": 290698,
+      "body_sha256": "DB1DCFF9539495566033C7851C6AD20206BEA63BC7147BB0C1CEC3442614A634",
+      "observation": "Live section lists compliance-statement, current-organizational-financial-information, notices, and a /transparency/ page."
+    },
+    {
+      "url": "https://urmc.org/transparency-compliance/transparency/",
+      "http_status": 200,
+      "body_bytes": 300425,
+      "body_sha256": "2140B464F27FF5CD73D08854CF22E616612A20F5B612EEC420E96CB0755706F2",
+      "observation": "Page titled 'Hospital Transparency Info' links only year-by-year 'Hospital Financial Transparency Documents' (2019-2025, e.g. https://urmc.org/transparency-7/). No standard-charges MRF, no CSV/JSON/ZIP, no cms-hpt.txt link anywhere on the page. Mentions of 'Upson' present (14 matches); no 'standard charge', 'machine-readable' or 'price transparency' text matches."
+    },
+    {
+      "url": "https://urmc.org/wp-json/wp/v2/search?search=standard+charges and ?search=price+transparency",
+      "http_status": 200,
+      "observation": "WordPress site search returns only 'Current Organizational & Financial Information' for 'standard charges' and nothing for 'price transparency'."
+    },
+    {
+      "url": "https://urmc.org/wp-sitemap.xml",
+      "http_status": 200,
+      "observation": "Sitemap index has page, doctors, health-services, locations, patient-story, press-releases, events, category sitemaps; no media/uploads sitemap listed."
+    }
+  ],
+  "what_changed_versus_prior_proof": "The prior proof (reconciliation-upson-current-page-search-recheck-2026-09-25.json) found the site previously unreachable and only a search-rendered view of the organizational/financial transparency page with no MRF link. This recheck establishes the site is now reachable and serves content directly; the exact root pointer is now testable and returns 404; the live first-party transparency section is confirmed to contain only year-by-year financial-transparency documents, with no standard-charge MRF route surfaced by page links, WordPress search, or the sitemap index.",
+  "what_was_established": "urmc.org is the official first-party domain and is reachable; the exact root pointer /cms-hpt.txt returns 404; the current first-party transparency pages expose no CMS standard-charge MRF link.",
+  "what_was_not_established": "File absence site-wide is not proven (deep uploads paths were not enumerated); no MRF bytes, declared metadata, or usability were obtained; no compliance conclusion is drawn.",
+  "disposition": "site-reachable-pointer-404-no-first-party-mrf-route",
+  "promotion": "none",
+  "next_step": "Check the page-sitemap or the hospital's posted financial-transparency documents for a standard-charges file, or obtain a publisher-provided CSV/JSON/ZIP route, then verify linkage and complete-file validity before promotion."
+}

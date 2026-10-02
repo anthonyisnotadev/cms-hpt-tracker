@@ -1,0 +1,48 @@
+{
+  "ccn": "191304",
+  "hospital_name": "NORTH CADDO MEDICAL CENTER",
+  "state": "LA",
+  "observed_at": "2026-10-01T20:50:19.280Z",
+  "domain_search": {
+    "query": "\"North Caddo Medical Center\" Vivian Louisiana price transparency standard charges",
+    "recorded_official_domain": "ncmcla.com",
+    "found_official_domain": "ncmcla.com",
+    "agrees": true,
+    "basis": "ncmcla.com is the hospital's own site (homepage 'North Caddo Medical Center', address 815 S. Pine St, Vivian, LA 71082 shown in site footer); its Price Transparency page links the charges listing."
+  },
+  "route": {
+    "click_path": "Direct curl GET of ncmcla.com returned HTTP 202 SiteGround robot challenge (sgcaptcha). Playwright Chromium navigated to https://ncmcla.com/price-transparency, the challenge auto-passed after ~6s without form submission, page loaded (title 'Price Transparency | North Caddo Medical Center'). Page contains one link: 'Click here to access our consumer shopping tool or download a machine readable copy' -> https://hospitalpricedisclosure.com/Default.aspx?ci=BJjMDMD*__*bCMJX36XzypOfA*-*. Then navigated to https://ncmcla.com/cms-hpt.txt in the same session, which rendered plain-text pointer content; same-origin fetch returned the exact bytes."
+  },
+  "checks": [
+    {
+      "check": "canonical plain-text pointer",
+      "url": "https://ncmcla.com/cms-hpt.txt",
+      "status": 200,
+      "bytes": 315,
+      "sha256": "596f159fdcb1c64b3565d312e5b4ece47a1240b5bab765849e3f9053f55c73df",
+      "observed_at": "2026-10-01T20:50:19.280Z",
+      "note": "Pointer text: 'location-name: North Caddo Medical Center / source-page-url: https://hospitalpricedisclosure.com/Default.aspx?ci=BJjMDMD*__*bCMJX36XzypOfA*-* / mrf-url: https://hospitalpricedisclosure.com/Download.aspx?pxi=S06VWBoQGGb99RkSb0P*_*8w*-*&f=iFd*_*cEPwhQHJy3lVvHy9uQ*-* / contact-name: Ross Hansen / contact-email: hpt-obf:v1:dNQY4ARd-ECuPWY1.ZyxjFIoV0MdBzs02-DrWfg.9CPzsHMNf3MVZkaEJw'. 1 entry, matches the facility."
+    },
+    {
+      "check": "machine-readable file declared by pointer",
+      "url": "https://hospitalpricedisclosure.com/Download.aspx?pxi=S06VWBoQGGb99RkSb0P*_*8w*-*&f=iFd*_*cEPwhQHJy3lVvHy9uQ*-*",
+      "status": 200,
+      "content_type": "application/octet-stream",
+      "bytes": 10655540,
+      "sha256": "f2d4b6399267924d999896b36827c9a5067647d828837c5feecee3d0d0548e6b",
+      "observed_at": "2026-10-01T20:50:19.280Z",
+      "note": "CMS v3 JSON: hospital_name 'North Caddo Hospital Service District', location_name ['North Caddo Hospital Service District'], hospital_address ['815 South Pine Street, Vivian, LA 71082'], license_information {license_number 2203783599, state LA}, type_2_npi ['1326016684'], last_updated_on '2026-04-01', version '3.0.0', attestation with confirm_attestation true (attester David Jones), financial_aid_policy, standard_charge_information array of 21,946 items with payer-specific standard_charge_dollar values (e.g. CPT 81275: BCBS Commercial $524.85, United Healthcare Commercial $82.94)."
+    }
+  ],
+  "established": [
+    "Official domain agrees (ncmcla.com); the pointer file exists as plain text at the canonical URL and names exactly the MRF retrieved.",
+    "MRF identity agrees: North Caddo Hospital Service District (the public hospital service district that operates North Caddo Medical Center), 815 South Pine Street, Vivian, LA 71082, LA license, declared 2026-04-01, CMS template version 3.0.0, attestation confirmed true.",
+    "File is usable: 21,946 standard charge items with payer-specific negotiated dollar amounts, gross/min/max."
+  ],
+  "not_established": [
+    "Whether type_2_npi 1326016684 is the CCN 191304 facility NPI (third-party listings show another NPI for the hospital); the value is recorded as declared, not independently verified.",
+    "Whether hospitalpricedisclosure.com (vendor portal) hosting satisfies any first-party-hosting preference; the pointer is first-party and the link is the publisher's own declared mrf-url.",
+    "Any compliance status beyond the observed metadata."
+  ],
+  "change_vs_prior": "Prior finding 'no-cms-hpt-txt-published' / disposition 'pointer-access-denied-to-client'. New: a plain-text pointer now exists at https://ncmcla.com/cms-hpt.txt (315 bytes, sha256 596f159f...) and its declared MRF was retrieved for the first time (10,655,540 bytes, sha256 f2d4b639..., v3.0.0 JSON dated 2026-04-01)."
+}

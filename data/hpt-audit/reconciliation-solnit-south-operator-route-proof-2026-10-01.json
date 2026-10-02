@@ -1,0 +1,36 @@
+{
+  "ccn": "074015",
+  "state": "CT",
+  "hospital_name": "ALBERT J SOLNIT CHILDREN'S CENTER - SOUTH CAMPUS",
+  "official_domain": "portal.ct.gov",
+  "operator_pricing_page_url": "https://www.uconnhealth.org/patients-visitors/patient-resources/billing-costs-insurance/price-transparency",
+  "operator_pricing_page_status": 200,
+  "operator_pricing_page_observed_at": "2026-10-01T21:02:44Z",
+  "operator_pricing_page_note": "UConn Health (operator of the Solnit South hospital units per the 2026-09-19 DCF observation) exposes exactly one machine-readable price list link on its price-transparency page: 'UConn John Dempsey Hospital Price List' -> https://uconnhealth.pt.panaceainc.com/MRFDownload/uconnhealth/uconnhealth",
+  "retrieved_file_url": "https://mrf.panaceainc.com/Download.aspx?org=uconnhealth&loc=uconnhealth&ref=",
+  "retrieved_file_http_status": 200,
+  "retrieved_file_bytes": 146267085,
+  "retrieved_file_sha256": "BA1DD54A0EDFC8A1241E682C30AD4D984F265ECA0E97D0BB2EEF7F5D36F1C38F",
+  "declared_hospital_name": "State of Connecticut",
+  "declared_location_name": "John Dempsey Hospital",
+  "declared_address": "263 Farmington Avenue, Farmington CT 06030",
+  "declared_license_number": "0002714|CT",
+  "declared_npi": "1669466561",
+  "declared_last_updated": "2026-07-01",
+  "declared_as_of_date": "2026-05-15",
+  "cms_template_version": "3.0.0",
+  "attestation": true,
+  "established": [
+    "The operator's current first-party pricing page exposes a single publisher-hosted CMS-template v3.0.0 MRF",
+    "That MRF's header declares John Dempsey Hospital at 263 Farmington Avenue, Farmington CT only — it contains no Solnit South Campus location entry (no separate location row for Middletown in the declared header)",
+    "This rules out the operator's current published MRF as a facility-specific file for Solnit South Campus"
+  ],
+  "not_established": [
+    "No facility-specific CMS-template MRF for Solnit South Campus was found or retrieved",
+    "No Solnit-specific pricing page exists on the operator's site; the state roster domain portal.ct.gov remains the official domain"
+  ],
+  "changed_versus_prior": "The 2026-09-19 review found 'no facility-specific pricing page or current CMS-template MRF was exposed'; this session the operator's pricing page was found to expose a current panacea-hosted v3.0.0 MRF, retrieved and shown to cover John Dempsey Hospital only, so the publisher route is now known and explicitly scoped away from this facility.",
+  "disposition_change": "none",
+  "next_step": "Solnit South Campus publishes no facility-specific MRF on the operator route; any promotion would require a publisher confirmation that Solnit South's charges are covered by a named file, or a new Solnit-specific MRF location.",
+  "observed_at": "2026-10-01T21:06:48.021Z"
+}

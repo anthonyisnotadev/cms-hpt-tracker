@@ -1,0 +1,53 @@
+{
+  "ccn": "110779",
+  "hospital_name": "IRWIN COUNTY HOSPITAL",
+  "observed_at": "2026-10-01T13:55:39.849Z",
+  "proof_type": "official-page-link-recovery-and-file-bytes-recheck; still-not-CMS-format",
+  "domain_search": {
+    "query": "\"Irwin County Hospital\" Ocilla Georgia hospital price transparency standard charges",
+    "recorded_domain": "www.irwincntyhospital.com",
+    "found_domain": "www.irwincntyhospital.com",
+    "agrees": true,
+    "basis": "https://www.irwincntyhospital.com/about/price-transparency footer/sidebar shows Irwin County Hospital, 710 N Irwin Ave, Ocilla, GA 31774"
+  },
+  "official_page": {
+    "url": "https://www.irwincntyhospital.com/about/price-transparency",
+    "method": "web-reader fetch, HTTP 200",
+    "facility_identity_on_page": "Irwin County Hospital, 710 N Irwin Ave, Ocilla, GA. 31774",
+    "download_link_text": "To download a copy of our charges, please CLICK HERE.",
+    "download_link_target": "/fileadmin/Files/2026_CMS_Transparency/CHARGEMASTER_NEW_2026.csv"
+  },
+  "linked_file": {
+    "url": "https://www.irwincntyhospital.com/fileadmin/Files/2026_CMS_Transparency/CHARGEMASTER_NEW_2026.csv",
+    "request": "GET Range bytes=0-262143",
+    "http_status": 206,
+    "content_range": "bytes 0-76156/76157",
+    "total_bytes": 76157,
+    "last_modified_header": "Thu, 03 Sep 2026 17:56:58 GMT",
+    "sha256": "387F2B0BEA14101212175E4DC6FEDB2C05E9BECEA26D714C8DE917C640027A67",
+    "sample_sha256_note": "The bounded 262,144-byte request covered the complete 76,157-byte file; the sample SHA-256 is the whole-file SHA-256.",
+    "header_line": "DESCRIPTION,CODE CHG NUMBER,CPT CODE,MODIFIERS,REV CODE,TYPE OF MEASUREMENT,UNIT OF MEASUREMENT, STANDARD CHARGE",
+    "content_observation": "Gross-charge-only legacy chargemaster columns; no hospital name/address, no CMS version literal, no last_updated_on date, no payer-specific negotiated rates observed in the sampled header and first rows.",
+    "identical_to_prior_evidence": {
+      "prior_file_sha256": "387F2B0BEA14101212175E4DC6FEDB2C05E9BECEA26D714C8DE917C640027A67",
+      "prior_evidence": "accuracy-plan 2026-09-19 entry: 76,157-byte legacy chargemaster CSV at the hospital domain, same SHA-256",
+      "interpretation": "The page now links the same bytes under a new path/parent folder named 2026_CMS_Transparency. The filename and folder are publisher labels only; the content is unchanged and remains the legacy gross-charge workbook, not a CMS-format MRF."
+    }
+  },
+  "pointer_probe": {
+    "url": "https://www.irwincntyhospital.com/cms-hpt.txt",
+    "http_status": 404,
+    "result": "root pointer still absent"
+  },
+  "what_was_established": [
+    "The recorded first-party domain agrees with search results and the page shows matching facility name and address.",
+    "The current page-linked CSV is byte-identical (SHA-256) to the previously reviewed legacy chargemaster, now under a 2026_CMS_Transparency path.",
+    "No first-party root pointer exists (HTTP 404)."
+  ],
+  "what_was_not_established": [
+    "No CMS-format CSV/JSON MRF with declared facility identity, date/version or payer-specific rates was recovered.",
+    "No compliance conclusion; no disposition change."
+  ],
+  "disposition_effect": "none; retain CCN 110779 as file-custom-workbook-review",
+  "next_action": "The gate remains a current facility-specific CMS-format CSV/JSON and a root pointer. The new 2026_CMS_Transparency path is a publisher relabel of the same legacy bytes; continue to require actual CMS-format content (facility identity, declared date/version, payer-specific rates) via an authorized route before any promotion."
+}

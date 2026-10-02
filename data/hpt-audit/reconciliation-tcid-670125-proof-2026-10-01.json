@@ -1,0 +1,37 @@
+{
+  "ccn": "670125",
+  "hospital_name": "TEXAS CENTER FOR INFECTIOUS DISEASE",
+  "state": "TX",
+  "observed_at": "2026-10-01T19:07:56Z",
+  "recorded_official_domain": "www.dshs.texas.gov",
+  "domain_search": {
+    "query": "\"Texas Center for Infectious Disease\" standard charges price transparency dshs",
+    "found_domain": "www.dshs.texas.gov",
+    "agrees": true,
+    "basis": "First-party DSHS page https://www.dshs.texas.gov/regional-local-health-operations/texas-center-infectious-disease/healthcare-professionals-referrers/admission-tcid names Texas Center for Infectious Disease and hosts its standard charges."
+  },
+  "file_check": {
+    "url": "https://www.dshs.texas.gov/sites/default/files/tcid/Documents/320113643_TexasCenterforInfectiousDisease_standardcharges.csv",
+    "http_status": 200,
+    "content_type": "text/csv",
+    "byte_count": 1011,
+    "sha256": "93a76fa8910ab0cb05deb2e461e439df7a08ec3b36417161219fa0306d5a9aaa",
+    "complete_file": true,
+    "observed_at": "2026-10-01T19:07:30Z",
+    "note": "First request to dshs.texas.gov (non-www) returned 301 to www.dshs.texas.gov; final fetch 200."
+  },
+  "established": [
+    "Publisher-issued CMS price-transparency CSV exists at the DSHS TCID path; filename carries TCID identity (320113643 TexasCenterforInfectiousDisease_standardcharges).",
+    "Hosting page names TCID and a 'TCID CMS Price Transparency (updated Nov. 12, 2023)' table with one shoppable service (Inpatient treatment of Tuberculosis) matching the file rows (gross $1395/day, cash/negotiated $800/day).",
+    "File is complete at 1011 bytes; rows are gross charge, discounted cash price, payer-specific negotiated, de-identified min/max."
+  ],
+  "not_established": [
+    "Facility street address is not stated in the file or on the fetched page text.",
+    "No CMS template version literal (e.g. version 3.0) or declared date inside the CSV; 'updated Nov. 12, 2023' appears only on the page.",
+    "Whether this flat 5-row CSV satisfies the full CMS template requirements."
+  ],
+  "what_changed_vs_prior": "Prior disposition pointer-not-retrieved with no candidate file recorded; this session newly located and retrieved the publisher CSV (sha256 above) and its hosting page.",
+  "tool_observations": "Z.ai web search, web-reader page fetch, curl download of full file 2026-10-01.",
+  "inferences": "This looks like the publisher-issued current CMS CSV the record asked for, but promotion needs address and metadata verification plus a full-check (identity, date, version, usability).",
+  "next_step": "Verify TCID street address from a DSHS source, assess template compliance of the 1011-byte CSV, then promote via an apply script if it clears."
+}

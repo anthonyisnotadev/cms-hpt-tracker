@@ -1,0 +1,47 @@
+{
+  "ccn": "044011",
+  "hospital_name": "ARKANSAS STATE HOSPITAL",
+  "state": "AR",
+  "observed_at": "2026-10-01T20:06:21.972Z",
+  "domain_search": {
+    "query": "Arkansas State Hospital Little Rock standard charges machine readable file price transparency",
+    "recorded_official_domain": "humanservices.arkansas.gov",
+    "found_official_domain": "humanservices.arkansas.gov",
+    "agrees": true,
+    "basis": "Search result 'Arkansas State Hospital - Arkansas Department of Human Services' at humanservices.arkansas.gov/divisions-shared-services/shared-services/office-of-substance-abuse-and-mental-health/arkansas-state-hospital; page shows Arkansas State Hospital patient-care phone hpt-obf:v1:tRMdRVFvit4HWD9b.tZXNiE-tiK1nSBnp9Zkp5A.PVwE6WpzVA7A3usL and ASH standard-charges statement."
+  },
+  "checks": [
+    {
+      "check": "root CMS pointer",
+      "url": "https://humanservices.arkansas.gov/cms-hpt.txt",
+      "status": 404,
+      "observed_at": "2026-10-01T20:06:21.972Z",
+      "note": "GET returned HTTP 404. Not evidence of noncompliance by itself."
+    },
+    {
+      "check": "ASH page via plain fetch",
+      "url": "https://humanservices.arkansas.gov/divisions-shared-services/shared-services/office-of-substance-abuse-and-mental-health/arkansas-state-hospital",
+      "status": 403,
+      "observed_at": "2026-10-01T20:06:21.972Z",
+      "note": "Plain Invoke-WebRequest blocked (client-side); succeeded via Playwright headless browser."
+    },
+    {
+      "check": "ASH page content via Playwright",
+      "url": "https://humanservices.arkansas.gov/divisions-shared-services/shared-services/office-of-substance-abuse-and-mental-health/arkansas-state-hospital/",
+      "status": 200,
+      "observed_at": "2026-10-01T20:06:21.972Z",
+      "note": "Page text: 'These prices represent ASH's standard charges... If you would like to obtain an estimate of patient financial responsibility for a service, please contact Tyron Tatum at hpt-obf:v1:CwPe0IOHNungA4Kv.2NFz6qVuBTIQHcFyOD6mQg.tpfupjCpTnyfdlBc.' The only pricing-related artifact linked is 'Click here to view/download the Most Frequent Client Services File' -> https://humanservices.arkansas.gov/wp-content/uploads/ASH-Most-Frequent-Client-Services-10.14.24.xlsx (XLSX workbook, not a CMS-template CSV/JSON). No CMS-template MRF link found among the page's hrefs matching price|charge|transparen|standard|.csv|.json|.zip|.xlsx|.pdf."
+    }
+  ],
+  "established": [
+    "The recorded official domain humanservices.arkansas.gov is correct for Arkansas State Hospital.",
+    "As of 2026-10-01 the ASH page publishes only the Most Frequent Client Services XLSX (dated 10.14.24) and a phone-contact route for estimates; no CMS-template CSV/JSON MRF link appears on that page.",
+    "No /cms-hpt.txt pointer exists at the domain root (404)."
+  ],
+  "not_established": [
+    "Whether a CMS-template MRF exists elsewhere on humanservices.arkansas.gov or another DHS route.",
+    "The facility's scope question (penal custody) was not reassessed; no authoritative scope material was retrieved.",
+    "Compliance or exemption status."
+  ],
+  "change_vs_prior": "First observation of the current ASH page content: confirms the XLSX is still the only published pricing artifact and adds the page's own 'standard charges' disclaimer text and estimate contact; prior record had no page-content proof. XLSX remains un-promoted per plan."
+}

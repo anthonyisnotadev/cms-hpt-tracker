@@ -1,0 +1,62 @@
+{
+  "ccn": "394008",
+  "observed_at": "2026-10-01T19:42:05.147Z",
+  "what_changed_versus_prior_state": "Prior state (pointer-access-denied-to-client) had no pointer or MRF bytes retrieved. In this check the first-party pointer was retrieved through the web-reader route and the complete declared MRF (60,377 bytes, SHA-256 0d36a6c633c08b7d43a90556ab27a367f9a9b58a70aed4d531d9bb986c9cf109, CMS v3.0.0, last_updated_on 2026-05-12, attestation true) was retrieved for the first time, with name/address/PA matching the CMS record. New pointer-content, MRF-bytes and metadata evidence.",
+  "domain_search": {
+    "query": "\"Friends Hospital\" Philadelphia Pennsylvania hospital price transparency standard charges",
+    "recorded_domain": "friendshospital.com",
+    "found_domain": "friendshospital.com",
+    "agrees": true,
+    "basis": "Friends Hospital's own site friendshospital.com is the first-party domain (UHS behavioral facility at 4641 Roosevelt Blvd, Philadelphia); the pointer source-page-url https://friendshospital.com/standard-services/ is on that domain and names Friends Hospital."
+  },
+  "cms_record_identity": {
+    "ccn": "394008",
+    "facility_name": "FRIENDS HOSPITAL",
+    "citytown": "PHILADELPHIA",
+    "state": "PA"
+  },
+  "pointer_retrieval": {
+    "route": "web-reader MCP (materially different authorized route)",
+    "url": "https://friendshospital.com/cms-hpt.txt",
+    "content": "location-name: Friends Hospital; source-page-url: https://friendshospital.com/standard-services/; mrf-url: https://uhsfilecdn.eskycity.net/bh/202523648_friends_standardcharges.csv; contact-name: UHS Corp Price Transparency Team; contact-email: hpt-obf:v1:3hwfjksHwblvQufr.75iiO1JTpcQcMh8fASwQNQ.kFncHkQa4iaaNVFYVvDetgH9kPP8TgOKu-mDdV9gJrmOd_aGjCew",
+    "location_name": "Friends Hospital",
+    "sha256_of_reader_extracted_text": "9c7143fe528a35ed312c05de97fd12daae890fd866589d7f991edc2b4b1b205c"
+  },
+  "mrf_file": {
+    "url": "https://uhsfilecdn.eskycity.net/bh/202523648_friends_standardcharges.csv",
+    "http_status": 200,
+    "content_type": "text/csv",
+    "byte_count": 60377,
+    "sha256": "0d36a6c633c08b7d43a90556ab27a367f9a9b58a70aed4d531d9bb986c9cf109",
+    "last_modified": "Tue, 12 May 2026 23:56:13 GMT",
+    "full_file_retrieved": true
+  },
+  "mrf_metadata_declared": {
+    "hospital_name": "Friends Hospital",
+    "location_name": "Friends Hospital",
+    "hospital_address": "4641 ROOSEVELT BLVD, PHILADELPHIA, PA 19124",
+    "license_number": "104380 (license_number|PA)",
+    "type_2_npi": "1023099405",
+    "attester_name": "Saltz, Catherine",
+    "attestation": "true",
+    "last_updated_on": "2026-05-12",
+    "version": "3.0.0"
+  },
+  "identity_check": {
+    "facility_name_matches": true,
+    "address_matches": true,
+    "state_matches": true,
+    "state": "PA"
+  },
+  "established": [
+    "First-party pointer https://friendshospital.com/cms-hpt.txt exists and was retrieved through the web-reader route.",
+    "Declared MRF URL serves the complete 60,377-byte CMS v3.0.0 CSV (HTTP 200).",
+    "Declared name, 4641 Roosevelt Blvd Philadelphia PA address, and state match the CMS record for CCN 394008.",
+    "Declared last_updated_on 2026-05-12 and attestation true are present."
+  ],
+  "not_established": [
+    "Pointer wire bytes (reader-extracted text hashed only).",
+    "Whether the mrf-url is stable across publisher rotations."
+  ],
+  "disposition_recommended": "verified-current-mrf"
+}

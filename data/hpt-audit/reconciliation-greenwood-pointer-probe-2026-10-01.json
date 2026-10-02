@@ -1,0 +1,30 @@
+{
+  "ccn": "250099",
+  "hospital_name": "GREENWOOD LEFLORE HOSPITAL",
+  "state": "MS",
+  "observed_at": "2026-10-01T14:37:45.045Z",
+  "probe_type": "cheap-condition-probe",
+  "condition_probed": "Does the current umc.edu root pointer now include a Greenwood entry?",
+  "observation": {
+    "url": "https://umc.edu/cms-hpt.txt",
+    "http_status": 206,
+    "bytes": 1275,
+    "entries": [
+      "UMMC Jackson Hospital",
+      "UMMC Grenada Hospital",
+      "UMMC Holmes County Hospital",
+      "UMMC Madison Hospital"
+    ],
+    "greenwood_entry_present": false
+  },
+  "domain_search": {
+    "recorded_official_domain": "glh.org",
+    "search_query": "\"Greenwood Leflore Hospital\" Greenwood Mississippi price transparency standard charges",
+    "found_current_publisher_domain": "umc.edu",
+    "basis": "https://umc.edu/Greenwood/Patients-Visitors/Bill-Pay.html and the umc.edu root pointer are the current first-party publisher routes after the 2026-08-01 UMMC acquisition; glh.org routes redirect to UMMC Greenwood paths. This transition is already documented in reconciliation-greenwood-current-route-recheck-2026-09-20.json and reconciliation-greenwood-ummc-current-root-pointer-crosscheck-2026-09-29.json; no data correction was applied this session."
+  },
+  "established": "As of 2026-10-01 the current UMMC root pointer still names only Jackson, Grenada, Holmes County and Madison; no Greenwood entry and no Greenwood-specific MRF link.",
+  "not_established": "No file-absence, compliance, or successor-CCN conclusion. The four listed MRFs remain excluded from CCN 250099.",
+  "classification": "recheck",
+  "next_action": "Obtain a publisher-confirmed Greenwood-specific current MRF or a publisher explanation mapping CCN 250099 to the covered file/location, then retrieve and validate exact bytes, facility identity, Mississippi metadata, date, version and usable pricing rows."
+}

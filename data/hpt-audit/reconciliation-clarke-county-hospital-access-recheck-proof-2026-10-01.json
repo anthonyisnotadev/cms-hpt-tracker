@@ -1,0 +1,34 @@
+{
+  "ccn": "161348",
+  "hospital_name": "CLARKE COUNTY HOSPITAL",
+  "state": "IA",
+  "observed_at": "2026-10-01T18:29:30Z",
+  "what_was_done": "Retried the recorded first-party domain after the 2026-09-23 DNS-unresolvable state.",
+  "observations": [
+    {
+      "url": "https://www.clarkehosp.org/",
+      "http_status": 403,
+      "transport": "Invoke-WebRequest, Chrome UA",
+      "notes": "DNS now resolves (condition changed versus ERR_NAME_NOT_RESOLVED on 2026-09-23); server returns 403 Forbidden to this client."
+    },
+    {
+      "url": "https://www.clarkehosp.org/cms-hpt.txt",
+      "http_status": 403,
+      "transport": "Invoke-WebRequest, Chrome UA",
+      "notes": "Exact pointer route returns 403 Forbidden; no bytes retrieved."
+    },
+    {
+      "url": "https://www.clarkehosp.org/cms-hpt.txt (headless browser)",
+      "http_status": 403,
+      "notes": "Playwright headless browser also rendered a plain '403 Forbidden' page (not a Cloudflare challenge)."
+    },
+    {
+      "url": "https://www.clarkehosp.org/patients (headless browser)",
+      "http_status": 403,
+      "notes": "Whole-site 403 to the headless client; web-reader MCP additionally returned a transport error (client-side, not publisher evidence)."
+    }
+  ],
+  "what_was_established": "DNS for clarkehosp.org is remediated; the site is online and indexed (search results show current 2026 content and the roster address 800 S. Fillmore St, Osceola, IA 50213 on first-party pages); all tested routes return HTTP 403 to the automation and headless clients.",
+  "what_was_not_established": "No pointer or MRF bytes were recovered; no file-absence or compliance conclusion is drawn from the 403s.",
+  "basis_for_change_versus_prior_proof": "reconciliation-clarke-county-hospital-browser-recheck-proof-2026-09-23.json recorded net::ERR_NAME_NOT_RESOLVED for both the site root and the pointer; this check resolves DNS and observes HTTP 403 instead, a materially different access state."
+}

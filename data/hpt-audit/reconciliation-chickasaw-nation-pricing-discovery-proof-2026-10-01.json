@@ -1,0 +1,32 @@
+{
+  "ccn": "370180",
+  "hospital_name": "CHICKASAW NATION MEDICAL CENTER",
+  "state": "OK",
+  "observed_at": "2026-10-01T18:31:00Z",
+  "what_was_done": "Pricing-route discovery on first-party Chickasaw Nation properties after the prior third-party-misattribution rejection.",
+  "observations": [
+    {
+      "url": "https://chickasaw.net/",
+      "http_status": 200,
+      "bytes": 57736,
+      "transport": "Invoke-WebRequest, Chrome UA",
+      "notes": "Official Chickasaw Nation homepage reachable; single health-related link points to https://chickasawnationhealth.net/."
+    },
+    {
+      "url": "https://chickasawnationhealth.net/",
+      "http_status": 200,
+      "bytes": 48564,
+      "transport": "Invoke-WebRequest, Chrome UA",
+      "notes": "First-party Chickasaw Nation health-system site. Navigation: Locations, Pharmacy, Public Health, Nutrition Programs, Office of Health Policy. No standard-charges / price-transparency link on the homepage."
+    },
+    {
+      "url": "https://chickasawnationhealth.net/Office-of-Health-Policy",
+      "http_status": 200,
+      "bytes": 29184,
+      "notes": "No charge/transparency/pricing content found in the page HTML."
+    }
+  ],
+  "what_was_established": "First-party health-system site identified and reachable; no facility pricing or pointer route exposed on the checked pages.",
+  "what_was_not_established": "No facility-specific MRF or pointer file recovered; the misattributed third-party file remains rejected; no compliance conclusion drawn.",
+  "basis_for_change_versus_prior_proof": "reconciliation-chickasaw-misattributed-file-proof-2026-09-21.json covered the rejected third-party file; this check adds the reachable first-party chickasawnationhealth.net routes with no pricing route found."
+}

@@ -1,0 +1,35 @@
+{
+  "ccn": "084001",
+  "observed_at": "2026-10-01T19:05:39Z",
+  "official_site": "https://dhss.delaware.gov/",
+  "pointer_url": "https://dhss.delaware.gov/dsamh/wp-content/uploads/sites/10/dsamh/csv/516000279_DelawarePsychiatricCenter_standardcharges.csv",
+  "retrieval_method": "bounded direct HTTPS GET with browser User-Agent (curl)",
+  "what_changed_vs_prior_proof": "The 2026-09-25 proof recorded HTTP 999 request-blocked for this exact CSV URL and no file bytes. On 2026-10-01 the same URL returned HTTP 200 with the complete 58,079-byte file, matching the Content-Length header.",
+  "http_status": 200,
+  "content_type": "application/octet-stream",
+  "content_length_bytes": 58079,
+  "total_bytes": 58079,
+  "sha256": "6f637a93808d756d5f0170bb2257b88664137e24e6b1a68ec5ff09f8957c9647",
+  "last_modified": "2025-12-02T06:40:47Z",
+  "etag": "\"692e89ef-e2df\"",
+  "file_observation": "CMS-style CSV. Row 1 header: hospital_name,last_updated_on,version,hospital_location,hospital_address,license_number | DE plus a 45 CFR 180.50 attestation sentence. Row 2: 'Delaware Psychiatric Center', last_updated_on '2024-04-16', version '2.0.0', location 'New Castle', address '1901 N. Dupont Highway, New Castle DE 19802', license 'HSPTL-009'. Item rows include description, CPT code/type, setting, and gross/discounted-cash/standard_charge|min/max column headers, but every observed row leaves payer-specific negotiated columns empty and carries the note that the State of Delaware covers client treatment costs with General Funds.",
+  "facility_identity": "Delaware Psychiatric Center, 1901 N. Dupont Highway, New Castle, DE 19802 - name matches CMS record (NEW CASTLE DE); ZIP 19802 differs from the CMS-record 19720 (Herman M. Holloway campus address); not treated as an identity failure but noted.",
+  "metadata": {
+    "declared_date": "2024-04-16",
+    "declared_version": "2.0.0",
+    "attestation_present": true
+  },
+  "established": [
+    "The access gate is cleared: the exact facility-specific first-party CSV is now retrievable by a bounded direct client (HTTP 200, complete 58,079 bytes).",
+    "Facility name, city, state and street address in the file match the official DPC identity.",
+    "Declared date 2024-04-16 and version 2.0.0 with a 45 CFR 180.50 attestation sentence are present."
+  ],
+  "not_established": [
+    "Not a current CMS 3.0.0-format file (declared version literal is 2.0.0; declared date is 2024-04-16, roughly 18 months before observation).",
+    "No usable payer-specific negotiated rates were observed in any item row; payer/plan columns are empty.",
+    "No compliance conclusion is drawn either way."
+  ],
+  "disposition": "pointer-access-restored-file-retrieved-not-promotable",
+  "interpretation": "This is an access/bytes gain over the prior proof, but the file does not meet the promotion gate (version 2.0.0, declared date 2024-04-16, no payer-specific rate fields). No disposition change applied.",
+  "next_action": "Watch for a current CMS-format replacement on the same first-party route, or obtain a publisher-confirmed current route; only a file with a current CMS version/date and usable payer-specific rates can be promoted."
+}

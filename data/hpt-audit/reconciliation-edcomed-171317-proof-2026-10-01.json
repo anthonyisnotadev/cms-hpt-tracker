@@ -1,0 +1,35 @@
+{
+  "ccn": "171317",
+  "hospital_name": "EDWARDS COUNTY MEDICAL CENTER",
+  "state": "KS",
+  "observed_at": "2026-10-01T19:11:30Z",
+  "recorded_official_domain": "www.edcomed.com",
+  "domain_search": {
+    "query": "\"Edwards County Medical Center\" Kinsley Kansas price transparency standard charges",
+    "found_domain": "edcomed.com",
+    "agrees": true,
+    "basis": "First-party edcomed.com pages name Edwards County Medical Center, 620 W 8th St, Kinsley KS; pricing page https://edcomed.com/patients-and-visitors/standard-charges."
+  },
+  "observations": [
+    {
+      "url": "https://edcomed.com/patients-and-visitors/standard-charges",
+      "observed_at": "2026-10-01T19:11:00Z",
+      "route": "web-reader (direct TLS from this client fails)",
+      "http_status": 200,
+      "established": "Page is live and headed 'Edwards County Medical Center • Updated 3.26.2026' with a 'Spreadsheets (For Download)' section listing 'Hospital & Clinic Standard Charges'; the anchor href was not preserved in the reader output.",
+      "not_established": "Exact CSV URL, byte content, hash, facility columns, CMS version/date metadata."
+    },
+    {
+      "url": "https://edcomed.com/patients-and-visitors/standard-charges",
+      "observed_at": "2026-10-01T19:10:00Z",
+      "route": "curl (schannel) and headless browser",
+      "http_status": null,
+      "established": "Direct TLS handshake fails (curl error 35) and browser gets ERR_CONNECTION_CLOSED / ERR_EMPTY_RESPONSE from this client; client-side network block, not evidence the site or file is gone.",
+      "not_established": "Whether /cms-hpt.txt exists; both fetch attempts to it also failed at the TLS layer."
+    }
+  ],
+  "what_changed_vs_prior": "Prior state pointer-access-denied-to-client with the exact CSV described as needing restoration; this session observes the pricing page reachable via reader and showing an updated 3.26.2026 standard-charges listing, i.e. the publisher has (re)posted a file, but its bytes remain unverifiable from this client.",
+  "tool_observations": "Z.ai web search, two web-reader fetches, curl and playwright attempts 2026-10-01.",
+  "inferences": "A standard-charges spreadsheet appears restored, but promotion requires byte-level verification which this route cannot provide.",
+  "next_step": "Retrieve the 'Hospital & Clinic Standard Charges' href and full file bytes (status, size, SHA-256) plus /cms-hpt.txt via a non-blocked authorized route; verify identity, Kansas, metadata, then promote."
+}

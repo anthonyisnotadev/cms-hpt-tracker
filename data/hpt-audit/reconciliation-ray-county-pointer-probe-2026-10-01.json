@@ -1,0 +1,26 @@
+{
+  "ccn": "261327",
+  "hospital_name": "RAY COUNTY MEMORIAL HOSPITAL",
+  "state": "MO",
+  "observed_at": "2026-10-01T14:37:45.045Z",
+  "probe_type": "cheap-condition-probe",
+  "condition_probed": "Has the rayhealthcare.org root pointer changed since the 2026-09-25 recheck, i.e. does it now declare a current CMS CSV/JSON MRF?",
+  "domain_search": {
+    "search_query": "\"Ray County Memorial Hospital\" Richmond Missouri price transparency standard charges",
+    "found_domain": "rayhealthcare.org",
+    "agrees": true,
+    "basis": "https://rayhealthcare.org/patients-and-visitors/price-transparency and https://rayhealthcare.org (Richmond, MO 64085) are first-party pages of Ray County Hospital and Healthcare, matching the recorded official_domain rayhealthcare.org."
+  },
+  "observation": {
+    "url": "https://rayhealthcare.org/cms-hpt.txt",
+    "http_status": 200,
+    "bytes": 301,
+    "sha256": "4af07443f3718d105ac6ba5d6e7ec4d0e745765cd214cbb5acc6a24e3fe9a0eb",
+    "matches_prior_capture_hash": true,
+    "sole_entry": "Ray County Hospital and Healthcare -> PRICE_TRANSPARENCY.xlsx (historical workbook, page-dated January 2019 data)"
+  },
+  "established": "The pointer is byte-identical to the 2026-09-25 capture and still declares only the historical PRICE_TRANSPARENCY.xlsx workbook; no current facility-identifying CMS CSV/JSON MRF or root metadata is exposed.",
+  "not_established": "No current-publication or compliance conclusion; the workbook remains dated first-party content only.",
+  "classification": "no-change",
+  "next_action": "Require a current facility-identifying CMS CSV/JSON MRF or root metadata before assigning any current verified claim for CCN 261327; do not repeat unchanged sources absent material change."
+}

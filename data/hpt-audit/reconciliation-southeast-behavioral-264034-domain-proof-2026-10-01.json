@@ -1,0 +1,33 @@
+{
+  "ccn": "264034",
+  "observed_at": "2026-10-01T23:22:14.035Z",
+  "domain_search": {
+    "tool": "web-search-prime_web_search_prime",
+    "query": "Southeast Behavioral Hospital Cape Girardeau MO standard charges pricing",
+    "recorded_domain": "uhs.com",
+    "found_domain": "southeastbehavioral.com",
+    "basis": "Search results include https://southeastbehavioral.com ('Southeast Behavioral Hospital | Cape Girardeau, Missouri' — 'provides adolescent, adult and geriatric mental health treatment') and https://southeastbehavioral.com/standard-services ('Hospital charges are based on the type of care provided...'). Third-party results (carecarta, medibillsaver) were ignored."
+  },
+  "what_changed_vs_prior_state": "First facility-specific first-party domain identified; recorded uhs.com is the corporate UHS site, not the facility domain.",
+  "access_checks": [
+    {
+      "url": "https://southeastbehavioral.com/standard-services",
+      "method": "Invoke-WebRequest GET",
+      "observed_at": "2026-10-01T23:20:00Z",
+      "status": 403,
+      "note": "Cloudflare automation block to CLI client; client-side failure, not evidence about file availability."
+    },
+    {
+      "url": "https://southeastbehavioral.com/cms-hpt.txt",
+      "method": "playwright headless browser",
+      "observed_at": "2026-10-01T23:21:24Z",
+      "status": 403,
+      "page_title": "Just a moment...",
+      "note": "Cloudflare JS challenge; not evidence of file absence."
+    }
+  ],
+  "established": "First-party facility domain is southeastbehavioral.com with a Standard Services pricing page; site footer (search snippet) includes a Price Transparency link.",
+  "not_established": "Pointer file existence/content, MRF identity, declared name/address (CMS roster: Southeast Behavioral Hospital, Cape Girardeau, MO), CMS version, or any compliance conclusion.",
+  "disposition": "official-domain-corrected-pointer-access-blocked-to-client",
+  "next_action": "Retry https://southeastbehavioral.com/cms-hpt.txt and the Standard Services page through a route that passes the Cloudflare challenge or a publisher-enabled copy; then verify exact identity (Cape Girardeau, MO), date, CMS version and usability before any promotion."
+}

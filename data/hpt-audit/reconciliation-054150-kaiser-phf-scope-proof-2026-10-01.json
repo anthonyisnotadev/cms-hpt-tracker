@@ -1,0 +1,38 @@
+{
+  "ccn": "054150",
+  "hospital_name": "KAISER PERMANENTE PSYCHIATRIC HEALTH FACILITY-SANTA CLARA",
+  "state": "CA",
+  "observed_at": "2026-10-01T20:16:38.780Z",
+  "domain_search": {
+    "query": "\"Kaiser Permanente Psychiatric\" Santa Clara price transparency standard charges CCN 054150 NPI",
+    "recorded_official_domain": "kaiserpermanente.org",
+    "found_official_domain": "healthy.kaiserpermanente.org",
+    "agrees": true,
+    "basis": "healthy.kaiserpermanente.org is Kaiser Permanente's own health site hosting the price-transparency hub and cms-hpt.txt pointer (kaiserpermanente.org is the same first-party registrant family); AHD confirms CCN 054150 = Kaiser Permanente Behavioral Health Center in Santa Clara / PHF, 3840 Homestead Rd, Santa Clara CA, NPI 1356663488."
+  },
+  "checks": [
+    {
+      "check": "Kaiser cms-hpt.txt pointer full scan",
+      "url": "https://healthy.kaiserpermanente.org/content/dam/kporg/final/documents/price-transparency/cms-hpt.txt",
+      "status": 200,
+      "bytes": 18958,
+      "observed_at": "2026-10-01T20:16:38.780Z",
+      "note": "Pointer retrieved in full (246 lines). It declares exactly one Santa Clara entry: location-name 'Santa Clara Medical Center', source-page-url https://healthy.kaiserpermanente.org/northern-california/doctors-locations/price-transparency, mrf-url .../941105628-santa-clara-medical-center-standard-charges-ncal-en.csv, contact Brad Tinnermon, SVP Finance Shared Services, hpt-obf:v1:RfxjLjlXnv9iWusf.6CPRbJqRNas1ReQGl6is5Q.CzXTy53k1Ij4HQboLPrR__7cIvneloQ. No entry names the Psychiatric Health Facility, the Behavioral Health Center, 3840 Homestead Rd, or NPI 1356663488; the only Santa Rosa and Santa Clara entries are Medical Center files."
+    },
+    {
+      "check": "price transparency hub",
+      "url": "https://healthy.kaiserpermanente.org/doctors-locations/price-transparency",
+      "status": 200,
+      "observed_at": "2026-10-01T20:16:38.780Z",
+      "note": "Region-selection hub; loads region links via JS dialog. The Northern California pointer above is the operative CMS pointer."
+    }
+  ],
+  "established": [
+    "The publisher's CMS pointer (retrieved in full on 2026-10-01) declares no file for the 3840 Homestead Rd psychiatric facility or NPI 1356663488; the only Santa Clara entry is the main Medical Center file whose header names KAISER FOUNDATION HOSPITAL - SANTA CLARA at 700 Lawrence Expy (per the 2026-09-27 proof).",
+    "This narrows the scope question: the shared main-campus file is the only Santa Clara standard-charges file the publisher declares, and it does not cover the PHF by its own header identity."
+  ],
+  "not_established": [
+    "Publisher confirmation of whether the PHF (CCN 054150) is intended to be covered by the Santa Clara Medical Center file or is out of scope / separately unpublished. Only Kaiser (contact in pointer: hpt-obf:v1:55-TTDaObfKokQ1B.iS19UUtyAL7w1DYRpNFhDQ.Cp0UV_srFFRvnkb-9vwgjEuVbxbm_4w) can confirm scope; absence from the pointer is not proof of exemption or noncompliance."
+  ],
+  "change_vs_prior": "New full-pointer evidence: prior proofs recorded the pointer status and the single Santa Clara header; this check scans all 246 lines and establishes that no PHF/Behavioral-Health/3840-Homestead/NPI-1356663488 entry exists anywhere in the pointer, strengthening (but not completing) the scope-uncertainty record."
+}

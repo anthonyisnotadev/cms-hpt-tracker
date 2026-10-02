@@ -1,0 +1,68 @@
+{
+  "ccn": "450253",
+  "observed_at": "2026-10-01T16:33:08.251Z",
+  "hospital_name": "BELLVILLE MEDICAL CENTER",
+  "state": "TX",
+  "cms_record": { "facility_id": "450253", "facility_name": "BELLVILLE MEDICAL CENTER", "address": "44 N CUMMINGS ST", "citytown": "BELLVILLE", "state": "TX", "zip_code": "77418" },
+  "search": {
+    "query": "(continued from prior session's Bellville identification; this session re-fetched the official pointer and pricing page directly)",
+    "recorded_official_domain": "midcoasthealthsystem.org",
+    "found_domain": "midcoasthealthsystem.org",
+    "agrees": true,
+    "basis": "midcoasthealthsystem.org/pricing-transparency/ heading 'Mid Coast Medical Center - Bellville Pricing Transparency' and cms-hpt.txt entry 'location-name: Bellville Medical Center' on the same first-party domain."
+  },
+  "pointer_observation": {
+    "url": "https://midcoasthealthsystem.org/cms-hpt.txt",
+    "http_status": 200,
+    "bytes": 7876,
+    "sha256": "fcf800c84155c508f7a41663a3480a4d728d75295b5e75cf9f571b90b35e14c8",
+    "note": "Pointer changed since the 2026-09-17 retrieval (was sha256 44c86cec..., dated v2.0.0 chain). Current pointer lists 10 location entries including exactly one 'Bellville Medical Center' entry.",
+    "entry_count": 10,
+    "entries_matching_facility": 1,
+    "pointer_location_name": "Bellville Medical Center",
+    "pointer_declared_mrf_url_decoded": "https://app.box.com/shared/static/npiri08mm5198d43ohoejdugqp66mibf.csv",
+    "wrapper_note": "The pointer's mrf-url uses a URL-protection wrapper; the decoded app.box.com shared-static URL is recorded here. Wrapper URLs are not copied further."
+  },
+  "file_observation": {
+    "mrf_url": "https://app.box.com/shared/static/npiri08mm5198d43ohoejdugqp66mibf.csv",
+    "http_status": 200,
+    "total_bytes": 4610440,
+    "sha256_complete_file": "2bdbade0349d67890031f51c2507e1781f1706f896f030f57d6bffbfe9ee7fa0",
+    "sample_0_262143_sha256": "f660e6056e2b0b6033a4b44b04151c4d4a120ae6118d8f56099753c5996559d7",
+    "prefix_matches_earlier_session_sample": true,
+    "rows_including_header": 6260,
+    "declared_hospital_name": "Bellville Medical Center",
+    "declared_location_name": "Bellville Medical Center",
+    "declared_address": "44 North Cummings St , Bellville, TX 77418",
+    "declared_license_number": "100120|TX",
+    "declared_type_2_npis": "1477857332",
+    "declared_last_updated": "2026-06-01",
+    "cms_template_version": "3.0.0",
+    "attester_name": "Carrie Cornett",
+    "attestation": "TRUE",
+    "file_kind": "csv",
+    "retained_copy": "retained-source-documents/bellville-wide-standardcharges-2026-10-01.csv"
+  },
+  "additional_page_lead": {
+    "tall_csv_url": "https://app.box.com/shared/static/ekqzfqpdsu4v3ma27u1kti5yqdr0qw5b.csv",
+    "tall_csv_total_bytes": 15602756,
+    "tall_csv_sha256_complete_file": "dc80c189f37443a0193ef33af668e766ad0b831b3bcfc8930a831a976c132bea",
+    "tall_csv_header": "Bellville Medical Center,2026-06-01,3.0.0,Bellville Medical Center,\"44 North Cummings St , Bellville, TX 77418\",=\"100120\",1477857332,TRUE,Carrie Cornett",
+    "role": "The pricing page's Bellville section lists this TallCSV alongside the pointer-declared WideCSV; both declare identical Bellville identity, date 2026-06-01, and v3.0.0."
+  },
+  "nppes_crosscheck": {
+    "1477857332": "BELLVILLE MEDICAL CENTER, 44 N. CUMMINGS ST., BELLVILLE, TX"
+  },
+  "reconciliation_of_prior_gate": "The prior gate asked to reconcile the dated v2.0.0 pointer CSV against the pricing page's BoxCloud leads and obtain complete-file access. Established: the publisher replaced the pointer (now 10 entries); the pointer's Bellville entry declares the WideCSV, which was retrieved complete (4,610,440 bytes) and declares Bellville identity with current date 2026-06-01 and CMS template 3.0.0, superseding the 2025-06-01 v2.0.0 file; the page's TallCSV is complete and consistent (same identity/date/version).",
+  "established": [
+    "First-party pointer on midcoasthealthsystem.org names exactly one Bellville Medical Center entry whose decoded MRF is the retrieved WideCSV.",
+    "Complete pointer-declared file bytes with full SHA-256; header identity, exact CMS address match, TX license, NPPES-corroborated NPI, declared date 2026-06-01, CMS template 3.0.0, attestation TRUE.",
+    "The 2025-06-01 v2.0.0 pointer file is superseded by the publisher's own updated pointer and current v3.0.0 file."
+  ],
+  "not_established": [
+    "No legal compliance verdict is claimed; a v3.0.0-declared file with a 2026-06-01 date is observed current at retrieval time.",
+    "The unrelated New York St Josephs pointer history remains preserved as history and unused."
+  ],
+  "interpretation": "New complete-file evidence satisfying the pointer-facility-match gate: pointer entry, facility name/address/state, NPPES NPI, declared date/version, attestation, and complete usable bytes all agree. Supports reviewed promotion of CCN 450253 to verified-current-mrf.",
+  "count_effect": "candidate promotion for CCN 450253 (Bellville Medical Center, TX) from pointer-facility-match-unresolved to verified-current-mrf"
+}

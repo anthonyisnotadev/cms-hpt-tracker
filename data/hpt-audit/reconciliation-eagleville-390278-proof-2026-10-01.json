@@ -1,0 +1,35 @@
+{
+  "ccn": "390278",
+  "hospital_name": "EAGLEVILLE HOSPITAL",
+  "state": "PA",
+  "observed_at": "2026-10-01T19:09:00Z",
+  "recorded_official_domain": "eagleville.org",
+  "domain_search": {
+    "query": "\"Eagleville Hospital\" price transparency standard charges machine readable",
+    "found_domain": "eagleville.org",
+    "agrees": true,
+    "basis": "First-party https://eagleville.org/price-transparency titled 'Price Transparency - Eagleville Hospital'; footer address 100 Eagleville Road, Eagleville PA 19403."
+  },
+  "observations": [
+    {
+      "url": "https://eagleville.org/price-transparency/",
+      "observed_at": "2026-10-01T19:08:30Z",
+      "http_status": 200,
+      "established": "Pricing page offers no hospital-published CMS CSV/JSON MRF; its sole machine-readable link is payer-published: 'Independence Administrators / Independence Blue Cross publishes machine-readable files on behalf of Eagleville Hospital' -> https://storage.googleapis.com/ihg-dart-edw-mrf-prod-public/ia/2024-03-01_357846_index.json",
+      "not_established": "No /cms-hpt.txt pointer observed on eagleville.org."
+    },
+    {
+      "url": "https://storage.googleapis.com/ihg-dart-edw-mrf-prod-public/ia/2024-03-01_357846_index.json",
+      "observed_at": "2026-10-01T19:08:50Z",
+      "http_status": 404,
+      "byte_count": 222,
+      "sha256_of_error_body": "b6074fc9b294b481c687025bc85e7cfcb39d47d2045ef92e4140ea9418fe8a7f",
+      "established": "The GCS key no longer exists: NoSuchKey for ihg-dart-edw-mrf-prod-public/ia/2024-03-01_357846_index.json (stale 2024-03-01 payer index).",
+      "not_established": "Whether Independence Administrators hosts a replacement index at another URL; only this exact link was probed."
+    }
+  ],
+  "what_changed_vs_prior": "Prior finding was no-cms-hpt-txt-published with no candidate file; this session documents that the pricing page's only MRF link now returns 404 (file removed), strengthening the missing-MRF picture with a dated observation.",
+  "tool_observations": "Z.ai web search, web-reader page fetch, curl fetch of the linked index 2026-10-01.",
+  "inferences": "Eagleville Hospital currently has no reachable machine-readable standard-charges file from its own pricing page.",
+  "next_step": "Request a working facility-specific CMS CSV/JSON MRF link from Eagleville Hospital (100 Eagleville Road, Eagleville PA 19403) or check Independence Administrators for a replacement index."
+}

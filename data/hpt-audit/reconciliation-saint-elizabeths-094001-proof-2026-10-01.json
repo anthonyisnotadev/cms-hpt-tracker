@@ -1,0 +1,53 @@
+{
+  "ccn": "094001",
+  "hospital_name": "SAINT ELIZABETHS HOSPITAL",
+  "state": "DC",
+  "observed_at": "2026-10-01T19:09:00.315Z",
+  "domain_search": {
+    "query": "No new domain search this session; recorded domain dbh.dc.gov re-confirmed by direct retrieval",
+    "recorded_domain": "dbh.dc.gov",
+    "found_domain": "dbh.dc.gov",
+    "agrees": true,
+    "basis": "https://dbh.dc.gov/page/saint-elizabeths-hospital retrieved 200 with title 'Saint Elizabeths Hospital | dbh' and Hospital Standard Charges section."
+  },
+  "observations": [
+    {
+      "what": "Root pointer file probe",
+      "url": "https://dbh.dc.gov/cms-hpt.txt",
+      "http_status": 404,
+      "observed_at": "2026-10-01T19:07:46Z",
+      "result": "404 Not Found; still no pointer file."
+    },
+    {
+      "what": "Pricing page recheck",
+      "url": "https://dbh.dc.gov/page/saint-elizabeths-hospital",
+      "http_status": 200,
+      "observed_at": "2026-10-01T19:07:58Z",
+      "result": "Same Box CSV link as prior proof, page states 'Updated on 2/20/2025'; 'Hospital Standard Charges' section with all-inclusive daily-rate chart."
+    },
+    {
+      "what": "Full standard-charges CSV retrieved (complete bytes)",
+      "url": "https://app.box.com/shared/static/e52j6m8nhmrvg0v5b8ansfrjyk1k34zz.csv",
+      "http_status": 206,
+      "http_status_note": "Range request; Content-Range bytes 0-429/430, so the full 430-byte file was received",
+      "content_type": "text/csv",
+      "content_disposition": "attachment; filename=\"536001131_saint-elizabeths-hospital_standardcharges.csv\"",
+      "byte_count": 430,
+      "sha256": "01bc3d8dbc6a5e66fdc00b3f8256d306f39d848a86e1db81ab595ad67c5aaf64",
+      "local_sample": "TEMP/opencode/stelizabeths-sample.csv",
+      "content_summary": "Row 1: 'Saint Elizabeths Hospital'; Row 2: 'State Psychiatric Hospital'; Row 3: '1100 Alabama Avenue SE Washington DC 2032'; Row 4: 'Effective 09/07/2023'. Header: Code, Description, Gross Charge, US Marshal Service, US VI, Discounted Cash Charge, De-Identified Minimum Rate, De-Identified Maximum Rate. One item: 100 / All Inclusive Adult Inpatient Per Diem / $1,545 gross / $1,545 US Marshal / $1,236 US VI / NA discounted cash / $1,236 min / $1,545 max."
+    }
+  ],
+  "established": [
+    "The previously 403/404 Box CSV route is now fully retrievable: 430 complete bytes, CMS-style filename 536001131_saint-elizabeths-hospital_standardcharges.csv (EIN 536001131).",
+    "Facility identity on file: Saint Elizabeths Hospital, 1100 Alabama Avenue SE, Washington DC (file has a digit transposition '2032' vs page 20032), matching the recorded official identity.",
+    "File carries declared effective date 09/07/2023 (older than the page's 2/20/2025 update stamp).",
+    "No /cms-hpt.txt pointer exists at dbh.dc.gov (404)."
+  ],
+  "not_established": [
+    "Whether this 430-byte one-item custom CSV satisfies the CMS template-required headers/data elements (it is not the standard CMS layout).",
+    "Any discrepancy between the file's Effective 09/07/2023 date and the page's Updated 2/20/2025 stamp.",
+    "Whether 'US VI' is a mis-typed payer column (file content question)."
+  ],
+  "changed_vs_prior": "Prior proof recorded page_file_http_status 404 and browser_file_status 403 with no bytes; this session retrieved the complete CSV (430 bytes, sha256 01bc3d8d...), a materially different outcome."
+}

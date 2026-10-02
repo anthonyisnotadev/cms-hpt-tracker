@@ -1,0 +1,39 @@
+{
+  "ccn": "480002",
+  "hospital_name": "GOV JUAN F LUIS HOSPITAL & MEDICAL CTR",
+  "state": "VI",
+  "observed_at": "2026-10-01T20:03:27.831Z",
+  "domain_search": {
+    "query": "\"Juan F. Luis\" hospital St. Croix price transparency standard charges machine readable; follow-up USVI Government Hospitals and Health Facilities Corporation search",
+    "recorded_official_domain": "jflusvi.org",
+    "found_official_domain": "jflusvi.org",
+    "agrees": true,
+    "basis": "https://jflusvi.org/ homepage title 'Home - Gov. Juan F. Luis Hospital'; contact hpt-obf:v1:9mqWTKv69gPFN7u4.RtIQVyWMXoFkHnJhBZNAVA.1j0oZlh9fy9HXW3Joa89sA, 1-hpt-obf:v1:LHeZp0uwUsDwtp-3.2T4eEg_SFFXHLm3mUpqOrA.arIiy1bSvwZWPOyD, St. Croix USVI. No separate USVI GHHFC publisher MRF route was found in search."
+  },
+  "checks": [
+    {
+      "check": "root CMS pointer",
+      "url": "https://jflusvi.org/cms-hpt.txt",
+      "status": 404,
+      "observed_at": "2026-10-01T20:03:27.831Z",
+      "note": "GET returned HTTP 404. Not evidence of noncompliance by itself."
+    },
+    {
+      "check": "patient pricing page",
+      "url": "https://jflusvi.org/patient-pricing/",
+      "status": 200,
+      "observed_at": "2026-10-01T20:03:27.831Z",
+      "note": "HTML page 'PATIENT PRICE INFORMATION LIST': 'In compliance with state law, Gov. Juan F. Luis Hospital is providing this price list ... These prices are correct as of January 1, 2021.' Consumer HTML price list (room/board, ED, etc.); zero hrefs matching price|charge|transparen|standard|.csv|.json|.zip|.xlsx|.pdf|cms. No CMS-template MRF link on the page."
+    }
+  ],
+  "established": [
+    "Official domain jflusvi.org agrees with the record and serves the hospital's own site.",
+    "As of 2026-10-01 the only published pricing material found is a state-law HTML consumer price list stated correct as of January 1, 2021; no CMS-template CSV/JSON MRF link exists on that page.",
+    "/cms-hpt.txt is 404; no USVI GHHFC publisher route surfaced in search."
+  ],
+  "not_established": [
+    "Whether a CMS-template MRF exists elsewhere on jflusvi.org or a GHHFC property.",
+    "Any compliance or exemption status."
+  ],
+  "change_vs_prior": "First page-content proof for this CCN: identifies the sole pricing artifact (HTML price list dated 2021-01-01, explicitly state-law, not CMS-template) and confirms no MRF links and a 404 root pointer on the correct domain."
+}

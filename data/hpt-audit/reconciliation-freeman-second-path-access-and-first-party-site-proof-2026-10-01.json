@@ -1,0 +1,36 @@
+{
+  "ccn": "431313",
+  "observed_at": "2026-10-01T16:23:01.675Z",
+  "hospital_name": "FREEMAN MEDICAL CENTER - CAH",
+  "state": "SD",
+  "search": {
+    "query": "\"Freeman Medical Center\" Freeman SD Avera hospital price transparency standard charges",
+    "recorded_official_domain": "avera.org",
+    "found_domain": "freemanregional.com",
+    "basis": "freemanregional.com is the first-party site of Freeman Regional Health Services (510 E 8th St, Freeman, SD 57029), the parent of Freeman Medical Center per locations.avera.org/freeman-regional-health-services. avera.org remains the system publisher domain hosting the price-transparency page and CSVs."
+  },
+  "access_recheck": {
+    "reason": "Prior denial was via headless browser; probed a materially different access path (plain HTTP GET with browser User-Agent, Range 0-262143).",
+    "mrf_url": "https://www.avera.org/app/files/public/7a544094-291c-4c7d-a209-6e8af23e8290/460232450_freeman-regional-health-services_standardcharges.csv",
+    "http_status": 403,
+    "response_bytes": 537,
+    "sha256_of_403_body": "8430e0d53264cbc57f575e38b68d2deb004fcf4ef346256b3f7e8970874a55d5",
+    "note": "A 403 to automated access is not evidence of file absence or noncompliance."
+  },
+  "first_party_site_links": {
+    "pages_fetched": ["https://freemanregional.com/price-transparency (404)", "https://freemanregional.com/estimate (200)"],
+    "observed_links": [
+      "https://mychartconnectsites.org/MyChartConnect/GuestEstimates/SelectLocation?... | Price Transparency"
+    ],
+    "result": "The first-party site's only price-transparency lead is the MyChart guest estimator; no CSV/JSON MRF link is exposed."
+  },
+  "established": [
+    "freemanregional.com exists as a first-party facility site and exposes no machine-readable standard-charges file, only the estimator.",
+    "The exact avera.org Freeman CSV remains access-denied (HTTP 403) across a second, different access path."
+  ],
+  "not_established": [
+    "No file bytes or metadata of the Freeman MRF were obtained; no absence or compliance conclusion is drawn."
+  ],
+  "interpretation": "Domain-level evidence gain (freemanregional.com first-party site carries no MRF) plus a second-path access denial. Gate exact-file-access-and-campus-attribution remains unsatisfied; no disposition change.",
+  "count_effect": "none; CCN 431313 remains unresolved"
+}

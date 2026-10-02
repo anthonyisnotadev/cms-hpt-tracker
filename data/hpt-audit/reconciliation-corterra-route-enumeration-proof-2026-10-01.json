@@ -1,0 +1,57 @@
+{
+  "ccn": "174026",
+  "observed_at": "2026-10-01T18:47:21.523Z",
+  "type": "official-site-route-enumeration-complete-no-pointer",
+  "changed_versus_prior_proof": [
+    "The 2026-09-21 proof observed no pricing link in a rendered browser snapshot; this check completed the route search with full sitemap.xml enumeration of both first-party domains and explicit root-pointer probes, including the second domain corterrahealth.com which prior proofs had not covered.",
+    "New fact: corterrahealth.com/cms-hpt.txt returns HTTP 200 but its body is the site's SPA index.html shell (924 bytes, sha256 F08FA37F573EFE7A44860A380FC43EB54BB9D6DB4A75FA942ADD06325128B707), not a CMS pointer - a false positive ruled out."
+  ],
+  "domain_search": {
+    "query": "\"Corterra of Wichita\" hospital",
+    "recorded_domain": "corterra-wichita.com",
+    "found_domain": "corterra-wichita.com (plus first-party parent site corterrahealth.com, which the AHD free profile lists as the hospital website)",
+    "agrees": true,
+    "basis": "Both domains are first-party Corterra Healthcare properties identifying Corterra of Wichita at 7447 W Village Circle, Wichita, KS 67205, phone hpt-obf:v1:Ct9qIbyMvpzUwdUv.uqrwgmWTXp1B1nCU8dlU9w.RCX0DMs4rP4HXpZU"
+  },
+  "probes": [
+    {
+      "url": "https://corterra-wichita.com/cms-hpt.txt",
+      "status": 404,
+      "bytes": 3449
+    },
+    {
+      "url": "https://www.corterra-wichita.com/cms-hpt.txt",
+      "status": 301
+    },
+    {
+      "url": "https://corterrahealth.com/cms-hpt.txt",
+      "status": 200,
+      "bytes": 924,
+      "note": "SPA index.html shell, not a pointer"
+    },
+    {
+      "url": "https://corterra-wichita.com/pricing|pricing-guide|standard-charges|price-transparency",
+      "status": 404
+    },
+    {
+      "url": "https://corterra-wichita.com/sitemap.xml",
+      "status": 200,
+      "bytes": 1101,
+      "note": "7 URLs: home, about, contact, inpatient-psychiatric-care, medication-management, therapeutic-programming, privacy-policy - no pricing page"
+    },
+    {
+      "url": "https://corterrahealth.com/sitemap.xml",
+      "status": 200,
+      "bytes": 2433,
+      "note": "16 URLs: home, locations, locations/wichita, our-solutions variants, about variants, contact, privacy - no pricing page"
+    }
+  ],
+  "established": [
+    "Both first-party domains carry no pricing/price-transparency page and no CMS root pointer; the on-site route search requested by the record's next_action is exhausted as of this date.",
+    "The apparent 200 on corterrahealth.com/cms-hpt.txt is an SPA fallback, not pointer content."
+  ],
+  "not_established": [
+    "No MRF presence or absence elsewhere (vendor-hosted, parent-organization, or off-site hosting) is established.",
+    "No compliance conclusion is drawn."
+  ]
+}

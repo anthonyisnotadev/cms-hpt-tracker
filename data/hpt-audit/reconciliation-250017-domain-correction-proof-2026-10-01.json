@@ -1,0 +1,59 @@
+{
+  "ccn": "250017",
+  "hospital_name": "PROGRESSIVE HEALTH GROUP OF HOUSTON",
+  "state": "MS",
+  "observed_at": "2026-10-01T23:26:44.065Z",
+  "domain_search": {
+    "query": "\"Progressive Health Group of Houston\" Mississippi hospital official website",
+    "recorded_official_domain": "traceregional.com",
+    "found_official_domain": "www.phghouston.com",
+    "agrees": false,
+    "basis": "https://www.phghouston.com/contact shows 'Progressive Health of Houston', 1002 E Madison St Ste 1, Houston, MS 38851; https://www.ahd.com/free_profile/250017/Progressive_Health_of_Houston/Houston/Mississippi lists CCN 250017 with Hospital Website www.phghouston.com; US News (Trace Regional successor entry, same address) also lists www.phghouston.com. traceregional.com is a parked JS-redirect shell."
+  },
+  "checks": [
+    {
+      "check": "recorded domain root",
+      "url": "https://traceregional.com/",
+      "status": 200,
+      "bytes": 114,
+      "observed_at": "2026-10-01T23:26:44.065Z",
+      "note": "Body is exactly '<!DOCTYPE html><html><head><script>window.onload=function(){window.location.href=\"/lander\"}</script></head></html>' — a parked redirect shell, not a hospital website."
+    },
+    {
+      "check": "recorded domain root pointer",
+      "url": "https://traceregional.com/cms-hpt.txt",
+      "status": 200,
+      "bytes": 114,
+      "observed_at": "2026-10-01T23:26:44.065Z",
+      "note": "Same 114-byte JS-redirect shell with text/html content type; not a CMS pointer."
+    },
+    {
+      "check": "found domain root pointer",
+      "url": "https://www.phghouston.com/cms-hpt.txt",
+      "status": 400,
+      "observed_at": "2026-10-01T23:26:44.065Z",
+      "note": "GET returned HTTP 400 text/html; no root pointer published on the real domain."
+    },
+    {
+      "check": "found domain billing page pricing links",
+      "url": "https://www.phghouston.com/billing-registration",
+      "status": 200,
+      "bytes": 595410,
+      "observed_at": "2026-10-01T23:26:44.065Z",
+      "note": "Wix page. Only prose heading 'What are Standard Charges?'; regex over hrefs for price|charge|transparen|standard|.csv|.json|.zip and for wixstatic/documents links found no MRF or downloadable standard-charges file. Homepage link inventory likewise contains no pricing route."
+    }
+  ],
+  "established": [
+    "The recorded official_domain traceregional.com is a parked JS redirect shell (114-byte window.location body on every path, including /cms-hpt.txt); it is not the hospital's first-party site.",
+    "The first-party official domain for Progressive Health of Houston (CCN 250017, successor of Trace Regional Hospital, 1002 E Madison St, Houston, MS 38851) is www.phghouston.com.",
+    "No /cms-hpt.txt pointer at https://www.phghouston.com/cms-hpt.txt (HTTP 400).",
+    "No standard-charges MRF link found on www.phghouston.com/billing-registration on 2026-10-01."
+  ],
+  "not_established": [
+    "Whether a facility-specific MRF exists elsewhere on phghouston.com (Wix site; search not exhaustive).",
+    "Compliance or exemption status of the facility.",
+    "Identity of any MRF file: none was retrieved."
+  ],
+  "change_vs_prior": "Prior finding was 'no-cms-hpt-txt-published' judged against the redirect shell. This proof establishes for the first time that the recorded domain itself is wrong (parked shell) and identifies the correct first-party domain phghouston.com; root pointer on the correct domain is 400.",
+  "tools": "web-search-prime MCP (search), PowerShell Invoke-WebRequest (bounded GETs, header/regex inspection only)"
+}

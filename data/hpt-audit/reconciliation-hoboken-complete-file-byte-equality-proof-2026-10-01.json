@@ -1,0 +1,63 @@
+{
+  "ccn": "310040",
+  "observed_at": "2026-10-01T14:56:04.261Z",
+  "established": "Permitted complete retrieval of both exact MRF URLs establishes complete-file byte equality: identical length and SHA-256. The pointer-CDN URL previously failed retrieval and now returns HTTP 200.",
+  "not_established": "CMS validator-grade full-file review (uniform row widths, per-column charge counts, official validator run) was not performed; the earlier naive scan is indicative only. No legal compliance or line-item accuracy determination is made.",
+  "url_page_file": "https://www.hudsonregionalhospital.com/wp-content/uploads/2026/08/452147328_hoboken-university-hospital_standardcharges-2026.csv",
+  "url_pointer_cdn_file": "https://images.pricetransparency.healthcare/hudson_regional_health_hoboken/452147328_hoboken-university-hospital_standardcharges.csv",
+  "pointer_url": "https://www.hudsonregionalhospital.com/cms-hpt.txt",
+  "legacy_pointer_url": "https://carepointhealth.org/cms-hpt.txt",
+  "head_observations": {
+    "page_file": {
+      "http_status": 200,
+      "server": "Apache/2.4.48 (Ubuntu)",
+      "etag": "\"b62ba27-6598ee86d6ae7\"",
+      "last_modified": "Fri, 21 Aug 2026 13:49:39 GMT",
+      "content_length": 191019559,
+      "content_type": "text/csv"
+    },
+    "pointer_cdn_file": {
+      "http_status": 200,
+      "server": "cloudflare",
+      "etag": "\"a27e0ef1411ad2839b6900b4cda76e7e-12\"",
+      "last_modified": "Thu, 20 Aug 2026 16:27:44 GMT",
+      "content_length": 191019559,
+      "content_type": "text/csv",
+      "note": "ETag differs (S3 multipart vs Apache inode etag); ETag inequality is not evidence of content inequality."
+    }
+  },
+  "complete_file_equality": {
+    "page_file_bytes": 191019559,
+    "pointer_cdn_file_bytes": 191019559,
+    "page_file_sha256": "031eee20b78e7f61a7eb1581245b238e9c3958faae3b42950ec116e58f15aef8",
+    "pointer_cdn_file_sha256": "031eee20b78e7f61a7eb1581245b238e9c3958faae3b42950ec116e58f15aef8",
+    "identical": true,
+    "method": "curl.exe full GET of each URL, byte counts via Get-Item, SHA-256 via Get-FileHash"
+  },
+  "naive_full_file_scan": {
+    "tool": "Node.js readline over the page copy",
+    "data_rows": 752166,
+    "header_prefix": "hospital_name,last_updated_on,version,location_name,hospital_address,type_2_npi,license_number|NJ,attester_name,...",
+    "attestation_text_present": true,
+    "caveat": "Naive comma split is unreliable inside quoted attestation text; per-column non-empty counts are indicative only and were not used for promotion."
+  },
+  "facility_identity_basis": {
+    "source": "reconciliation-hoboken-current-page-pointer-crosswalk-proof-2026-09-30.json (retained header sample of the same bytes, prefix sha256 697d0be79c937d86b18fc55e95acd816d0b8deccaab1e5058fc4fa680f84e2da, which is a prefix of 031eee20b78e7f61a7eb1581245b238e9c3958faae3b42950ec116e58f15aef8 by construction of the identical complete file)",
+    "roster_name": "CAREPOINT HEALTH-HOBOKEN UNIVERSITY MEDICAL CENTER",
+    "roster_address": "308 WILLOW AVE, HOBOKEN, NJ 07030",
+    "declared_hospital_name": "Hoboken University Hospital",
+    "declared_location_name": "Hoboken University Hospital",
+    "declared_address": "308 Willow Avenue, Hoboken, NJ 07030",
+    "declared_license_state": "NJ",
+    "declared_date": "2026-08-17",
+    "version": "3.0.0"
+  },
+  "domain_search": {
+    "query": "CarePoint Health Hoboken University Medical Center price transparency standard charges",
+    "recorded_domain": "carepointhealth.org",
+    "found_domain": "hudsonregionalhospital.com",
+    "agrees": false,
+    "basis": "https://www.hudsonregionalhospital.com/hospital-charges (Hudson Regional Health hospital charges page for Hoboken University Hospital) and the 2026-09-30 crosswalk proof; carepointhealth.org remains live as the legacy CarePoint Health site, and its cms-hpt.txt is byte-identical to the Hudson Regional pointer."
+  },
+  "next_step": "Run the CMS official HPT validator CLI (csv, requirements v3.0) over the identical complete file (sha256 031eee20b78e7f61a7eb1581245b238e9c3958faae3b42950ec116e58f15aef8), record structured full-file review fields (uniform row widths, description/gross/payer/negotiated counts), then promote CCN 310040 through the manual-observation mechanism."
+}

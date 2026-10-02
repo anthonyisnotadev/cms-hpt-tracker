@@ -1,0 +1,51 @@
+{
+  "proof_id": "reconciliation-batch-190241-194083-194119-probes-proof-2026-10-01",
+  "observed_at": "2026-10-01T14:07:47.022Z",
+  "session_ccns": ["190241", "194083", "194119"],
+  "purpose": "Cheap probes of previously documented blocked/waiting conditions; no full recheck, no disposition change.",
+  "observations": [
+    {
+      "ccn": "190241",
+      "url": "https://www.tghealthsystem.com/price-transparency/",
+      "method": "Invoke-WebRequest GET, browser User-Agent, bounded (no body retained beyond headers)",
+      "result": "HTTP 403 Forbidden to this client",
+      "interpretation": "Documented blocked access condition (cf. reconciliation-physicians-houma-current-transparency-page-recheck-proof-2026-09-30.json) is unchanged. Client-side block is not evidence about the file.",
+      "established": "Access condition unchanged as of observed_at.",
+      "not_established": "Nothing about file existence, identity, metadata, or compliance."
+    },
+    {
+      "ccn": "190241",
+      "url": "https://physicianshouma.com/cms-hpt.txt",
+      "method": "Invoke-WebRequest GET, browser User-Agent",
+      "result": "HTTP 403 Forbidden to this client",
+      "interpretation": "Documented blocked pointer route unchanged; no content-bearing pointer bytes obtained.",
+      "established": "Access condition unchanged as of observed_at.",
+      "not_established": "Current pointer scope or content."
+    },
+    {
+      "ccn": "194083",
+      "url": "https://freedombehavioral.com/cms-hpt.txt",
+      "method": "Invoke-WebRequest GET, browser User-Agent; full 966-byte response retained",
+      "result": "HTTP 200, 966 bytes, SHA-256 5A9737CE13C87CB65D36225387ED1D926FFC8801489FAC1AA4C4602974A60B85",
+      "pointer_entries": ["Beacham Memorial Hospital", "Freedom Behavioral Hospital Of Monroe", "Freedom Behavioral Hospital Of Plainview"],
+      "interpretation": "Hash identical to the recorded pointer hash; no Bastrop entry published. Waiting condition unchanged.",
+      "established": "Pointer content unchanged; Bastrop still omitted.",
+      "not_established": "Whether Bastrop has a pricing file published elsewhere."
+    },
+    {
+      "ccn": "194119",
+      "url": "https://freedombehavioral.com/cms-hpt.txt",
+      "method": "Shared observation with CCN 194083 (same fetch)",
+      "result": "HTTP 200, 966 bytes, SHA-256 5A9737CE13C87CB65D36225387ED1D926FFC8801489FAC1AA4C4602974A60B85",
+      "pointer_entries": ["Beacham Memorial Hospital", "Freedom Behavioral Hospital Of Monroe", "Freedom Behavioral Hospital Of Plainview"],
+      "interpretation": "No Ferriday (or Leesville) entry published. Waiting condition unchanged.",
+      "established": "Pointer content unchanged; Ferriday still omitted.",
+      "not_established": "Whether Ferriday has a pricing file published elsewhere."
+    }
+  ],
+  "domain_search_agreement": {
+    "190241": "recorded physicianshouma.com; search shows system site tghealthsystem.com hosts the facility pricing pages (already documented in accuracy-plan.md line 95); pointer domain agrees with recorded",
+    "194083": "freedombehavioral.com agrees (search result: freedombehavioral.com/price-transparency, /freedom-bastrop)",
+    "194119": "freedombehavioral.com agrees (search result: /freedom-ferriday shows 1700 E.E. Wallace Blvd N, Ferriday, LA 71334)"
+  }
+}

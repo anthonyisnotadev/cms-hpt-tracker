@@ -1,0 +1,44 @@
+{
+  "ccn": "184006",
+  "observed_at": "2026-10-01T22:56:00Z",
+  "official_domain": "https://sunkentucky.com/",
+  "domain_search": {
+    "query": "\"Sun Behavioral Health\" Erlanger Kentucky hospital price transparency standard charges",
+    "recorded_domain": "sunkentucky.com",
+    "agrees": true,
+    "basis": "https://sunkentucky.com/price-transparency and /telehealth-consultation show SUN Behavioral Kentucky, 820 Dolwick Drive, Erlanger, Kentucky 41018"
+  },
+  "cms_record_facility": "SUN BEHAVIORAL HEALTH, Erlanger, KY (CCN 184006)",
+  "observations": [
+    {
+      "url": "https://sunkentucky.com/cms-hpt.txt",
+      "route": "curl GET returned HTTP 202 sgcaptcha interstitial (client-side challenge, not file evidence); Playwright browser GET returned HTTP 404 page titled '404 Not Found | SUN Behavioral Kentucky'",
+      "browser_status": 404,
+      "established": "No /cms-hpt.txt pointer file is served on the browser route"
+    },
+    {
+      "url": "https://sunkentucky.com/price-transparency/",
+      "browser_status": 200,
+      "established": "Official price-transparency page live in browser; Erlanger links: shoppable https://sunkentucky.com/wp-content/uploads/2026/03/KY-Shoppable-Services-01012026.csv and MRF 'machine-readable version' https://sunkentucky.com/files/sun-kentucky-standardcharges.csv"
+    },
+    {
+      "url": "https://sunkentucky.com/files/sun-kentucky-standardcharges.csv",
+      "browser_status": 404,
+      "retries": 2,
+      "established": "The machine-readable standard-charges file linked from the live official price-transparency page returns HTTP 404 in the browser; not retrieved"
+    },
+    {
+      "url": "https://sunkentucky.com/wp-content/uploads/2026/03/KY-Shoppable-Services-01012026.csv",
+      "browser_status": 200,
+      "downloaded_bytes": 75504,
+      "sha256": "7c7788c3dad2b5f69771589f5bfe3bbfd01f045aa155b3035b405638f7ef79a3",
+      "header_line_1": "SUN Behavioral Health,1/1/2026",
+      "header_line_2": "Service Description,Billing Code ,Code Type,Setting,Standard charge | gross,Discounted cash,Payer Name,Plan Name,Negotiated Price (dollar),Charge Methodology,Standard charge|min,Standard charge|max",
+      "established": "Erlanger shoppable-services CSV downloads and names SUN Behavioral Health with declared date 1/1/2026; this is the shoppable-services disclosure, not the full CMS-template machine-readable file"
+    }
+  ],
+  "changed_versus_prior": "Prior disposition was pointer-not-retrieved with no candidate file. New facts: (1) /cms-hpt.txt returns 404 on the browser route; (2) the official price-transparency page names a specific MRF URL (sun-kentucky-standardcharges.csv) that itself returns 404; (3) a dated Erlanger shoppable CSV (1/1/2026) was retrieved and hashed.",
+  "not_established": "No full CMS-template machine-readable file was retrieved; no promotion basis. The 404 is a live-route observation as of observed_at and does not by itself establish noncompliance.",
+  "disposition": "pointer-and-linked-mrf-not-retrieved-mrf-url-404",
+  "next_action": "Obtain the sun-kentucky-standardcharges.csv through a permitted route or await publisher republish; verify full CMS-template metadata before any promotion."
+}

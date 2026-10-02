@@ -1,0 +1,162 @@
+{
+  "ccns": [
+    "061313",
+    "250057",
+    "390025",
+    "454103",
+    "444004",
+    "100299",
+    "454060",
+    "194008",
+    "194025",
+    "424002"
+  ],
+  "observed_at": "2026-10-01T20:07:57.551Z",
+  "type": "batch-probe",
+  "domain_searches": [
+    {
+      "ccn": "061313",
+      "query": "Kit Carson County Memorial Hospital Burlington CO kcchsd.org",
+      "recorded_domain": "www.kcchsd.org",
+      "found_domain": "www.kcchsd.org",
+      "agrees": true,
+      "basis": "https://www.kcchsd.org shows 'Kit Carson County Memorial Hospital 286 16th Street Burlington, CO 80807'"
+    },
+    {
+      "ccn": "250057",
+      "query": "King's Daughters Medical Center Brookhaven MS hospital price transparency standard charges",
+      "recorded_domain": "kdmc.org",
+      "found_domain": "kdmc.org",
+      "agrees": true,
+      "basis": "https://www.kdmc.org/patients-visitors/billing/pricing-transparency titled 'Pricing Transparency | King's Daughters Medical Center'"
+    },
+    {
+      "ccn": "390025",
+      "query": "Kensington Hospital Philadelphia PA price transparency standard charges",
+      "recorded_domain": "kensingtonhospital.org",
+      "found_domain": "kensingtonhospital.org",
+      "agrees": true,
+      "basis": "https://www.kensingtonhospital.org shows 'Kensington Hospital ... 136 Diamond Street, Philadelphia, PA 19122'"
+    },
+    {
+      "ccn": "454103",
+      "query": "Kingwood Pines Hospital Kingwood TX price transparency standard charges",
+      "recorded_domain": "kingwoodpines.com",
+      "found_domain": "kingwoodpines.com",
+      "agrees": true,
+      "basis": "https://kingwoodpines.com/standard-services 'Standard Services Price Guide - Kingwood Pines Hospital'"
+    },
+    {
+      "ccn": "444004",
+      "query": "Lakeside Behavioral Health System Memphis Tennessee official website standard charges",
+      "recorded_domain": "lakesidebhs.com",
+      "found_domain": "lakesidebhs.com",
+      "agrees": true,
+      "basis": "https://lakesidebhs.com/standard-services 'Standard Services | Lakeside Behavioral Health System', hpt-obf:v1:53aIJoy3Cz_XVvgE.69DR_7za3uxM2vy37BmuWQ.-ww6Rk6UM92xMHwq, Memphis TN"
+    },
+    {
+      "ccn": "100299",
+      "query": "Lakewood Ranch Medical Center pricing transparency standard charges official",
+      "recorded_domain": "lakewoodranchmedicalcenter.com",
+      "found_domain": "lakewoodranchmedicalcenter.com",
+      "agrees": true,
+      "basis": "https://lakewoodranchmedicalcenter.com/patients-visitors/pricing-guide 'Pricing Guide | Lakewood Ranch Medical Center'"
+    },
+    {
+      "ccn": "454060",
+      "query": "Laurel Ridge Treatment Center San Antonio price transparency standard charges",
+      "recorded_domain": "laurelridgetc.com",
+      "found_domain": "laurelridgetc.com",
+      "agrees": true,
+      "basis": "https://laurelridgetc.com/standard-services 'Standard Services Price Guide - Laurel Ridge Treatment Center', 17720 Corporate Woods Dr, San Antonio TX 78259"
+    },
+    {
+      "ccn": "194008",
+      "query": "Louisiana Department of Health hospital standard charges price transparency Eastern Louisiana Mental Health System",
+      "recorded_domain": "ldh.la.gov",
+      "found_domain": "ldh.la.gov",
+      "agrees": true,
+      "basis": "No facility-specific official site found; LDH (ldh.la.gov) remains the state operator surface; third-party results only otherwise"
+    },
+    {
+      "ccn": "194025",
+      "query": "Louisiana Department of Health hospital standard charges price transparency Central Louisiana State Hospital",
+      "recorded_domain": "ldh.la.gov",
+      "found_domain": "ldh.la.gov",
+      "agrees": true,
+      "basis": "Same LDH surface; no facility-specific official site found in search"
+    },
+    {
+      "ccn": "424002",
+      "query": "Lighthouse Behavioral Health Hospital Conway South Carolina price transparency standard charges",
+      "recorded_domain": "lighthousebehavioral.com",
+      "found_domain": "lighthousebehavioral.com",
+      "agrees": true,
+      "basis": "https://lighthousebehavioral.com 'Behavioral Health Center | Conway, SC'; https://lighthousebehavioral.com/standard-services; 152 Waccamaw Medical Park Drive, Conway SC 29526 (ahd.com listing confirms CCN 424002 website)"
+    }
+  ],
+  "pointer_probes_2026-10-01T20:05Z_to_20:08Z": [
+    {
+      "ccn": "061313",
+      "url": "https://www.kcchsd.org/cms-hpt.txt",
+      "method": "curl GET (Invoke-WebRequest, Chrome UA)",
+      "result": "HTTP 404"
+    },
+    {
+      "ccn": "250057",
+      "url": "https://www.kdmc.org/cms-hpt.txt",
+      "method": "curl GET",
+      "result": "HTTP 403; headless Chromium (Playwright) also HTTP 403, title 'Attention Required! | Cloudflare'"
+    },
+    {
+      "ccn": "390025",
+      "url": "https://kensingtonhospital.org/cms-hpt.txt",
+      "method": "curl GET",
+      "result": "HTTP 200 but body is the SPA shell HTML (Kensington Hospital fonts/branding), not a CMS pointer file; soft-404 behaviour, no pointer entry"
+    },
+    {
+      "ccn": "454103",
+      "url": "https://kingwoodpines.com/cms-hpt.txt",
+      "method": "curl GET",
+      "result": "HTTP 403; headless Chromium (Playwright) also HTTP 403, title 'Just a moment...' (Cloudflare challenge)"
+    },
+    {
+      "ccn": "444004",
+      "url": "https://lakesidebhs.com/cms-hpt.txt",
+      "method": "curl GET",
+      "result": "HTTP 403"
+    },
+    {
+      "ccn": "100299",
+      "url": "https://www.lakewoodranchmedicalcenter.com/cms-hpt.txt",
+      "method": "curl GET",
+      "result": "HTTP 403"
+    },
+    {
+      "ccn": "454060",
+      "url": "https://laurelridgetc.com/cms-hpt.txt",
+      "method": "curl GET",
+      "result": "HTTP 403"
+    },
+    {
+      "ccn": "194008",
+      "url": "https://ldh.la.gov/cms-hpt.txt",
+      "method": "curl GET",
+      "result": "HTTP 404"
+    },
+    {
+      "ccn": "194025",
+      "url": "https://ldh.la.gov/cms-hpt.txt",
+      "method": "curl GET",
+      "result": "HTTP 404"
+    },
+    {
+      "ccn": "424002",
+      "url": "https://lighthousebehavioral.com/cms-hpt.txt",
+      "method": "curl GET",
+      "result": "HTTP 403"
+    }
+  ],
+  "established": "All recorded official domains agree with fresh web search (name/city/state/address match). Every blocked condition is unchanged as of this probe: 403 anti-bot blocks (kdmc.org Cloudflare, five UHS-platform domains Cloudflare), 404 for kcchsd.org and ldh.la.gov pointers, and kensingtonhospital.org still serves SPA-shell HTML with no pointer entry.",
+  "not_established": "No pointer content or MRF bytes were retrieved for any CCN; no compliance conclusion is drawn for any facility. Client-side 403s are not evidence of file absence or noncompliance."
+}

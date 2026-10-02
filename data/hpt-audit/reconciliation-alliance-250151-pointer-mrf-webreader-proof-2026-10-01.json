@@ -1,0 +1,44 @@
+{
+  "ccn": "250151",
+  "hospital_name": "ALLIANCE HEALTH CENTER",
+  "state": "MS",
+  "observed_at": "2026-10-01T17:29:06.731Z",
+  "route": "Z.ai web-reader MCP (server-side fetch); direct client routes to alliancehealthcenter.com returned 403 Cloudflare challenges (Invoke-WebRequest, Playwright)",
+  "domain_search": {
+    "query": "\"Alliance Health Center\" Meridian Mississippi hospital price transparency standard charges",
+    "recorded_domain": "alliancehealthcenter.com",
+    "found_domain": "alliancehealthcenter.com",
+    "agrees": true,
+    "basis": "Search and the fetched site show Alliance Health Center, Meridian, MS at alliancehealthcenter.com/standard-services (official first-party UHS/eSkyCity-built site)"
+  },
+  "pointer": {
+    "url": "https://alliancehealthcenter.com/cms-hpt.txt",
+    "content_as_returned": "location-name: Alliance Health Center | source-page-url: https://alliancehealthcenter.com/standard-services/ | mrf-url: https://uhsfilecdn.eskycity.net/bh/640777521_alliance_standardcharges.csv | contact-name: UHS Corp Price Transparency Team | contact-email: hpt-obf:v1:bj99ipJrgf88sQmZ.-IQbKqhjCBUgcU7BrYVeIg.1cN_sArgjJA3Id5kIHp0lDMWkBJgQKz3JFoP4cnJJqxy7iVuG3Uh",
+    "sha256_of_reader_extracted_text": "4b953f5de2b467c685f9d8a34f8a3cfe701aed03d0f411d2b8d575cb625af663",
+    "hash_caveat": "Hash is of reader-extracted plain text; exact wire bytes unestablished (no permitted client can fetch the raw file past Cloudflare).",
+    "entry_count": 1,
+    "entries_matching_facility": 1,
+    "location_name": "Alliance Health Center"
+  },
+  "file": {
+    "url": "https://uhsfilecdn.eskycity.net/bh/640777521_alliance_standardcharges.csv",
+    "status": 200,
+    "bytes": 40002,
+    "download_complete": true,
+    "sha256": "77F626E66A339707BC24EFC300602B02BD055A31E7829AF809978F3EED083F60",
+    "retained_copy": "data/hpt-audit/reconciliation-250151-alliance-mrf-full-bytes-2026-10-01.csv",
+    "declared_hospital_name": "Alliance Health Center",
+    "declared_location_name": "Alliance Health Center",
+    "declared_address": "5000 HIGHWAY 39 N, MERIDIAN, MS 39301",
+    "roster_address": "5000 HIGHWAY 39 NORTH, MERIDIAN, MS 39301 (CMS provider-data API, checked 2026-10-01)",
+    "license_number_field": "license_number | MS = 32357",
+    "type_2_npi": "1811156326",
+    "last_updated_on": "2026-06-16",
+    "cms_template_version_literal": "3.0.0",
+    "attestation": true,
+    "attester_name": "Smith, Bradley"
+  },
+  "what_changed_vs_prior": "Prior state-identity proof (2026-09-19) established identity only; no pointer or MRF bytes had ever been retrieved (all client routes 403). This session retrieved the live pointer entry and the complete CMS v3.0.0 CSV with matching name/address/state/NPI, current date, attestation true.",
+  "established": "Publisher pointer at the official domain names Alliance Health Center; declared MRF is current (2026-06-16, v3.0.0) and matches the CCN 250151 roster identity.",
+  "not_established": "Exact pointer wire bytes (reader-text hash only)."
+}

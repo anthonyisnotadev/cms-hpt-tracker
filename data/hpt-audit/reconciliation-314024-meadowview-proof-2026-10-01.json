@@ -1,0 +1,42 @@
+{
+  "ccn": "314024",
+  "hospital_name": "HUDSON COUNTY MEADOWVIEW PSYCHIATRIC H",
+  "state": "NJ",
+  "observed_at": "2026-10-01T20:03:27.831Z",
+  "domain_search": {
+    "query": "\"Hudson County Meadowview\" psychiatric hospital Secaucus NJ price transparency standard charges",
+    "recorded_official_domain": "hudsoncountynj.org",
+    "found_official_domain": "www.hcnj.us",
+    "agrees": false,
+    "basis": "https://www.hcnj.us/health-and-human-services/psychiatric-hospital shows 'Meadowview Psychiatric Hospital', 595 County Avenue Secaucus, NJ 07094, phone hpt-obf:v1:G-jq2LSmmMOHcxDY.X8_08X0s7XmZVK98ga7dsw.SSPyOkYEAQDlxNBh; US News and AHD (provider 314024) also list website www.hcnj.us. hudsoncountynj.org is not the first-party domain."
+  },
+  "checks": [
+    {
+      "check": "root CMS pointer",
+      "url": "https://www.hcnj.us/cms-hpt.txt",
+      "status": 404,
+      "observed_at": "2026-10-01T20:03:27.831Z",
+      "note": "GET returned HTTP 404 (Not Found). Per AGENTS.md this does not by itself establish noncompliance, only absence of a root pointer."
+    },
+    {
+      "check": "facility page pricing links",
+      "url": "https://www.hcnj.us/health-and-human-services/psychiatric-hospital",
+      "status": 200,
+      "bytes": 340339,
+      "observed_at": "2026-10-01T20:03:27.831Z",
+      "note": "Regex for href attributes containing price|charge|transparen|standard|cms returned zero matches on the 340,339-byte page. No pricing/standard-charges route found on the page."
+    }
+  ],
+  "established": [
+    "The first-party official domain for Meadowview Psychiatric Hospital (CCN 314024) is www.hcnj.us (Hudson County), not hudsoncountynj.org.",
+    "No /cms-hpt.txt pointer at https://www.hcnj.us/cms-hpt.txt (HTTP 404).",
+    "No price-transparency / standard-charges link found on the facility's own page on 2026-10-01."
+  ],
+  "not_established": [
+    "Whether a Meadowview-specific MRF exists elsewhere on hcnj.us or a subpath (site search not exhaustive).",
+    "Compliance or exemption status of the facility.",
+    "Identity of any MRF file: none was retrieved."
+  ],
+  "change_vs_prior": "First proof recording that the recorded official_domain hudsoncountynj.org is wrong and hcnj.us is correct; also first 404 of /cms-hpt.txt on the correct domain.",
+  "tools": "web-search-prime MCP (search), PowerShell Invoke-WebRequest (bounded GETs, headers only observed)"
+}

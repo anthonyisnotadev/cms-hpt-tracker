@@ -1,0 +1,43 @@
+{
+  "ccn": "404007",
+  "hospital_name": "HOSPITAL METROPOLITANO PSIQUIATRICO DE CABO ROJO",
+  "state": "PR",
+  "observed_at": "2026-10-01T20:17:50.000Z",
+  "domain_search": {
+    "query": "Hospital Metropolitano Cabo Rojo psiquiatrico Oasis de Vida price transparency standard charges / sitio oficial transparencia",
+    "recorded_domain": "hospitalmetrocaborojo.com",
+    "found_domain": "hospitalmetrocaborojo.com",
+    "agrees": true,
+    "basis": "The official site hospitalmetrocaborojo.com now serves a live CMS pointer naming 'Hospital Metropolitano Cabo Rojo' with contact hpt-obf:v1:w7Ipt9081dKVLTuA.zG0jqx0nwuHNSJGDXJRONw.nWjPAnFKWOfxyQQD8UFAXPpOso6e5UaJFx86BPVBl7HT, confirming it is the facility's first-party domain."
+  },
+  "pointer_observation": {
+    "url": "https://hospitalmetrocaborojo.com/cms-hpt.txt",
+    "http_status_via_client": 202,
+    "client_note": "SiteGround captcha challenge (sgcaptcha) for non-browser clients; in the headless browser the challenge auto-cleared and the pointer text loaded.",
+    "pointer_text": "location-name: Hospital Metropolitano Cabo Rojo\nsource-page-url: https://hpt.inmediata.com/index?h=C587CA2D-0E01-4426-9078-F32F5D8B37FA\nmrf-url: https://hpt.inmediata.com/?handler=DF&d=C587CA2D-0E01-4426-9078-F32F5D8B37FA\ncontact-name: hpt-obf:v1:7AzAnNWX8mzszKhD.QSwUDe00vuviEPOJvwCofQ.7DSajqNVxhqNzUlx\ncontact-email: hpt-obf:v1:eeHBPQ939CQNyGM-.9C0nSLo-H2hnvTjoauZGtw.ORtVKMOncSsho49CtK3OFSZoGt1vUJ30iaP5bmMbl18H",
+    "pointer_text_length": 297,
+    "pointer_entry_count": 1,
+    "pointer_entries_matching_facility": 1
+  },
+  "source_page_observation": {
+    "url": "https://hpt.inmediata.com/index?h=C587CA2D-0E01-4426-9078-F32F5D8B37FA",
+    "http_status": 200,
+    "rendered_text": "Service Not Available / PLEASE CONTACT / THE HOSPITAL ADMINISTRATION"
+  },
+  "declared_mrf_observation": {
+    "url": "https://hpt.inmediata.com/?handler=DF&d=C587CA2D-0E01-4426-9078-F32F5D8B37FA",
+    "head_status": 200,
+    "content_length": 0,
+    "content_type": "application/json",
+    "note": "The publisher handler answers 200 but with zero bytes: no MRF content is currently served at the declared URL."
+  },
+  "what_was_established": [
+    "The domain hospitalmetrocaborojo.com now publishes a live cms-hpt.txt pointer (previously recorded as no-cms-hpt-txt-published / access denied), with exactly one entry naming this facility and an Inmediata publisher route.",
+    "The pointer's declared source page renders 'Service Not Available' and the declared MRF URL returns HTTP 200 with Content-Length 0, so no file bytes exist to verify."
+  ],
+  "what_was_not_established": [
+    "Any MRF content: the file is empty at the source, so name/address/date/version/attestation could not be checked.",
+    "A SHA-256 for the pointer was not computed in-browser; the full pointer text is recorded verbatim above."
+  ],
+  "what_changed_versus_prior": "Prior state: no cms-hpt.txt published and client access denied. Now: the pointer is published and readable (auto-cleared challenge) with a facility-matching entry, but its declared MRF endpoint serves zero bytes — a new, different blocker (publisher-side empty file)."
+}

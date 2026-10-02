@@ -1,0 +1,63 @@
+{
+  "ccn": "171359",
+  "observed_at": "2026-10-01T19:51:03.262Z",
+  "what_changed_versus_prior_state": "Prior state: no cms-hpt.txt pointer published (prior finding no-cms-hpt-txt-published), pointer-not-retrieved, no current CMS 3.0.0 file held. In this check the pointer route was re-probed (still a 'Page not found' response) AND a current replacement MRF was obtained through the hospital's own contracted pricing portal: CMS v3.0.0, last_updated_on 2026-03-27, attestation true, complete 11,900,445 bytes, SHA-256 b99a3aef284c9e4f97f32fd7a5a5b1b9167e2de80c97d6c0c3d026e33b9f2e31, identity matching the CMS record. New MRF-bytes and metadata evidence.",
+  "domain_search": {
+    "query": "\"Greeley County Health Services\" Tribune Kansas hospital price transparency standard charges",
+    "recorded_domain": "greeley.health",
+    "found_domain": "greeley.health",
+    "agrees": true,
+    "basis": "greeley.health homepage names 'Greeley County Health Services', Greeley County Hospital, 506 3rd Street - PO Box 338 Tribune, KS 67879; footer carries the Price Transparency link."
+  },
+  "cms_record_identity": { "ccn": "171359", "facility_name": "GREELEY COUNTY HEALTH SERVICES", "citytown": "TRIBUNE", "state": "KS", "address": "506 3RD STREET" },
+  "pointer_probe": {
+    "url": "https://greeley.health/cms-hpt.txt",
+    "route": "web-reader MCP",
+    "result": "'Page not found | Greeley County Health Services' WordPress 404 page; cms-hpt.txt remains unpublished. Also /pricing returned the same 404.",
+    "conclusion": "No first-party CMS pointer linkage exists; condition unchanged from prior finding."
+  },
+  "click_path": [
+    "https://greeley.health/ homepage (browser)",
+    "footer link 'Price Transparency' -> https://greeleycounty.slicedhealth.io/home",
+    "portal button 'Standard Charges Export Machine Readable File' clicked (ordinary link/button, no form submitted, no login/consent wall)",
+    "download event: 300078435_greeley-county-health-services_standardcharges.csv",
+    "network: POST https://minced-pricer-api.slicedhealth.com/api/v2/pricer/report => 200 (generated download; no stable direct GET URL)",
+    "local copy at tmp/autonomy/browser/300078435-greeley-county-health-services-standardcharges.csv (session temp, not committed)"
+  ],
+  "mrf_file": {
+    "download_api": "POST https://minced-pricer-api.slicedhealth.com/api/v2/pricer/report",
+    "portal_page": "https://greeleycounty.slicedhealth.io/home",
+    "http_status": 200,
+    "byte_count": 11900445,
+    "sha256": "b99a3aef284c9e4f97f32fd7a5a5b1b9167e2de80c97d6c0c3d026e33b9f2e31",
+    "full_file_retrieved": true,
+    "stable_direct_url": false
+  },
+  "mrf_metadata_declared": {
+    "hospital_name": "Greeley County Health Services",
+    "location_name": "Greeley County Health Services",
+    "hospital_address": "506 3rd St, Tribune, KS 67879",
+    "license_number": "H-036-001 (license_number|KS)",
+    "type_2_npi": "1285742536",
+    "attester_name": "Trice Watts",
+    "attestation": "true",
+    "last_updated_on": "2026-03-27",
+    "version": "3.0.0"
+  },
+  "identity_check": {
+    "facility_name_matches": true,
+    "address_matches": true,
+    "state_matches": true,
+    "state": "KS"
+  },
+  "established": [
+    "cms-hpt.txt remains unpublished on greeley.health (re-probe, 404).",
+    "The hospital's own site footer links its SlicedHealth pricing portal, which exported a complete CMS v3.0.0 CSV with name/address/state matching CCN 171359.",
+    "Declared last_updated_on 2026-03-27 and attestation true are present; replaces the historical pre-3.0.0 file as current evidence."
+  ],
+  "not_established": [
+    "No cms-hpt.txt pointer exists, so no CMS pointer linkage is claimed.",
+    "The export has no stable direct file URL (POST-generated); hash applies to this observed export."
+  ],
+  "disposition_recommended": "verified-current-mrf"
+}

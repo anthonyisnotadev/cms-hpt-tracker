@@ -1,0 +1,48 @@
+{
+  "ccn": "434003",
+  "hospital_name": "SOUTH DAKOTA HUMAN SERVICES CENTER",
+  "state": "SD",
+  "observed_at": "2026-10-01T22:51:59.783Z",
+  "domain_search": {
+    "query": "\"South Dakota Human Services Center\" Yankton hospital price transparency standard charges",
+    "recorded_domain": "sdbehavioralhealth.gov",
+    "found_domain": "dss.sd.gov (SD Dept. of Social Services HSC pages; sdbehavioralhealth.gov is linked as the state behavioral-health brand site)",
+    "agrees": true,
+    "basis": "https://dss.sd.gov/behavioralhealth/hsc/ shows 'Human Services Center', '3515 Broadway Ave, PO Box 7600, Yankton, SD 57078-7600' and links https://sdbehavioralhealth.gov/ — official first-party state site consistent with the recorded domain."
+  },
+  "checks": [
+    {
+      "what": "Pricing-route accessibility (evidence gate: pointer-access, prior disposition pointer-access-denied-to-client)",
+      "url": "https://dss.sd.gov/behavioralhealth/hsc/",
+      "method": "web-reader fetch",
+      "status": "retrieved",
+      "observed": "Resources section contains a 'Charge Data' link to /docs/behavioralhealth/HSC/Charge_Data.pdf"
+    },
+    {
+      "what": "HEAD probe of charge-data file",
+      "url": "https://dss.sd.gov/docs/behavioralhealth/HSC/Charge_Data.pdf",
+      "method": "Invoke-WebRequest HEAD",
+      "http_status": 200,
+      "content_type": "application/pdf",
+      "content_length": 94085,
+      "last_modified": "2025-09-30T19:14:00Z"
+    },
+    {
+      "what": "Full file download and SHA-256 (94,085 bytes, under bounded-sample limit)",
+      "url": "https://dss.sd.gov/docs/behavioralhealth/HSC/Charge_Data.pdf",
+      "http_status": 200,
+      "byte_count": 94085,
+      "sha256": "b62d54b56e50e49f90608f79fa820dec5064f278759e3d2800251176bcbf4e3b"
+    }
+  ],
+  "established": [
+    "The first-party pricing route on dss.sd.gov is accessible from this client (HTTP 200), so the prior 'pointer-access-denied-to-client' condition does not reproduce on this route today.",
+    "The hospital's published charge information is a 94 KB PDF dated (Last-Modified) 2025-09-30, served by the state DSS site."
+  ],
+  "not_established": [
+    "The Charge_Data.pdf is not a CMS CSV/JSON machine-readable format per its content type; it was not parsed for CMS template-version literal, itemized standard-charge fields, or facility NPI, so no compliance determination or promotion is supported.",
+    "No /cms-hpt.txt pointer entry was found for this facility on dss.sd.gov or sdbehavioralhealth.gov in this session."
+  ],
+  "changed_vs_prior": "Prior evidence recorded a client-side access denial on this route; this session retrieved HTTP 200 page and file bytes with a new SHA-256 (b62d54b5…), a content-type (application/pdf) and a Last-Modified date not previously recorded.",
+  "tool_observations_only": true
+}

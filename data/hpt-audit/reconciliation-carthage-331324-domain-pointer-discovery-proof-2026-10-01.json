@@ -1,0 +1,58 @@
+{
+  "ccn": "331324",
+  "observed_at": "2026-10-01T18:36:09.481Z",
+  "type": "domain-discrepancy-and-live-pointer-discovery",
+  "recorded_official_domain": "claxtonhepburn.org",
+  "found_official_domain": "https://www.carthagehospital.com/",
+  "domain_search_query": "\"Carthage Area Hospital\" Carthage NY hospital price transparency standard charges",
+  "domain_search_basis": "Z.ai web search returned https://carthageareahospital.com/patients-visitors/pricing titled 'Hospital Pricing - Carthage Area Hospital'; the page canonicalizes to https://www.carthagehospital.com/patients-visitors/pricing/ and its branding assets load from www.carthagehospital.com, establishing carthagehospital.com as Carthage Area Hospital's own first-party site. claxtonhepburn.org is the separate Claxton-Hepburn Medical Center site (Ogdensburg).",
+  "changed_versus_prior_proof": [
+    "Prior sibling-file-rejection proof (2026-09-20) examined the Carthage file without a first-party Carthage root pointer; this check found a live first-party CMS pointer at carthageareahospital.com/cms-hpt.txt and www.carthagehospital.com/cms-hpt.txt (both HTTP 200), which did not exist in any prior proof.",
+    "The pointer now declares a 2026-vintage MRF (156022079_Carthage-Area-Hospital-Inc_standardcharges_2026.csv, 830360 bytes, Last-Modified 2026-09-28) instead of the previously reviewed older CSV.",
+    "Domain fact: recorded official_domain claxtonhepburn.org is not Carthage Area Hospital's own site; www.carthagehospital.com is."
+  ],
+  "pointer": {
+    "urls_probed": [
+      "https://carthageareahospital.com/cms-hpt.txt",
+      "https://www.carthagehospital.com/cms-hpt.txt"
+    ],
+    "status": 200,
+    "content_sha256_text": "B18A1FBB00440BCE325B8E91249A469D09C738E6053EB6D8AF90440441290E17",
+    "content": "location-name: Carthage Area Hospital / source-page-url: https://www.carthagehospital.com/pricing/ / mrf-url: https://www.carthagehospital.com/156022079_Carthage-Area-Hospital-Inc_standardcharges_2026.csv / contact-name: Carthage Area Hospital MRF Team / contact-email: hpt-obf:v1:kxaqhYyttU0GrcN7._wV_xTLEnQZ0Y26cCunOSQ.XQ9XDjQpgR0MPwxTDJ05WnkeKmWdTIoJdg",
+    "note": "The raw bytes of the first fetch were gzip-encoded (sha256 D0E30A5D7593CC0093CFA6C058E650BCBC90AF435FDD3A6AC4FD10A469F59AEC); a --compressed refetch of the www URL yielded the plain-text pointer above. Both hosts serve the same pointer."
+  },
+  "mrf_head": {
+    "url": "https://www.carthagehospital.com/156022079_Carthage-Area-Hospital-Inc_standardcharges_2026.csv",
+    "status": 200,
+    "content_length": 830360,
+    "last_modified": "Mon, 28 Sep 2026 14:30:39 GMT"
+  },
+  "mrf_bounded_sample": {
+    "bytes_fetched": 262144,
+    "sha256_partial": "66D28F547375D6D2F421D534CA931E877592CDE031E52045262FECB699D68066",
+    "declared_hospital_name": "Carthage Area Hospital",
+    "declared_location_name": "Carthage Area hospital",
+    "declared_address": "1001 WEST ST CARTHAGE, NY 13619-9703",
+    "declared_license": "2238700C (NY)",
+    "declared_npi": "1104234376",
+    "declared_last_updated": "7/2/2026",
+    "cms_template_version": "3.0.0",
+    "attestation": "TRUE",
+    "ogdensburg_rows_in_sample": 0
+  },
+  "established": [
+    "Carthage Area Hospital's own first-party domain is www.carthagehospital.com (canonical of carthageareahospital.com), and it publishes a live CMS root pointer naming a current 2026 standard-charges CSV for the Carthage campus at 1001 West Street, Carthage NY 13619-9703.",
+    "The current pointer-linked file identifies only the Carthage campus; the bounded sample contains no Ogdensburg rows."
+  ],
+  "not_established": [
+    "No facility-specific MRF, pointer, or authoritative transition evidence for CCN 331324 (214 Kings Street, Ogdensburg, NY) was found; the sibling-file rejection for 331324 stands.",
+    "The complete 830,360-byte file was not downloaded; only a bounded 262,144-byte sample was inspected.",
+    "No promotion or downgrade of any record was made by this session."
+  ],
+  "claxton_hepburn_334068_side_probe": {
+    "url": "https://www.claxtonhepburn.org/cms-hpt.txt",
+    "status": 403,
+    "bytes": 4549,
+    "note": "Cloudflare challenge HTML; unchanged from the 2026-09-21 browser recheck. Pricing page https://www.claxtonhepburn.org/patient-visitors/pricing-transparency still lists standard-charge CSV/XLSX links; no cms-hpt.txt link on page."
+  }
+}

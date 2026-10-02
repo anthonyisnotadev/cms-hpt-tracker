@@ -1,0 +1,43 @@
+{
+  "ccn": "351306",
+  "hospital_name": "COOPERSTOWN MEDICAL CENTER",
+  "state": "ND",
+  "observed_at": "2026-10-01T19:05:15.892Z",
+  "domain_search": {
+    "query": "\"Cooperstown Medical Center\" North Dakota hospital price transparency standard charges",
+    "recorded_domain": "www.dakotaregional.com",
+    "found_domain": "www.dakotaregional.com",
+    "agrees": true,
+    "basis": "dakotaregional.com/payment-policy page shows 107 12th St S, Cooperstown, ND 58425 and brands the facility Dakota Regional Medical Center (merged CMC); Cooperstown Medical Center identity confirmed on page."
+  },
+  "observations": [
+    {
+      "what": "Payment/pricing page retrieved in headless browser",
+      "url": "https://www.dakotaregional.com/payment-policy",
+      "http_status": 200,
+      "facility_identity_evidence": "Page footer/statement: '107 12th St S, Cooperstown, ND 58425 | hpt-obf:v1:GDcpR8nT2BHgpCIf.h_ylnfpu-IqTnuCKdO6ZSQ.bHErPoztYKeF3IsDn-0'; text: 'As per CMS-1694-F this is a charge master list for CMC.'",
+      "pricing_links_found": [
+        "https://www.dakotaregional.com/_files/ugd/f0a0c4_c95c9d33d7104bc580a536b8956f7189.xlsx?dn=HB%20Machine%20Readable%20Starter%20File%20SA%20235%20(1).xlsx (Hospital Charges)",
+        "https://www.dakotaregional.com/_files/ugd/f0a0c4_fbc25e842a814647b6adb1878cb21f61.xlsx?dn=PB_CDM_Machine_Readable_File_235_Self%20pay%20(2).xlsx (Professional Charges)",
+        "https://www.dakotaregional.com/_files/ugd/f0a0c4_db8023d3c31f43ee9eaa72948d23fe13.xls?dn=Fee%20Schedule%20for%20CMS%202%20(1).xls (Fee Scale)"
+      ]
+    },
+    {
+      "what": "Root pointer file probe",
+      "url": "https://www.dakotaregional.com/cms-hpt.txt",
+      "http_status": 400,
+      "result": "400 Bad Request; no CMS HPT pointer file at root."
+    }
+  ],
+  "established": [
+    "Official first-party domain www.dakotaregional.com serves the Cooperstown, ND facility and agrees with the recorded domain.",
+    "Facility address 107 12th St S, Cooperstown, ND 58425 is stated on the site (supports the 107 12th Street side of the prior address question).",
+    "Pricing is published only as XLSX/XLS charge-master 'Machine Readable Starter File' downloads; no CMS-template CSV/JSON and no /cms-hpt.txt pointer file."
+  ],
+  "not_established": [
+    "Whether the XLSX files parse as a CMS-compliant standard-charges file (not downloaded).",
+    "Any declared CMS template version or date metadata.",
+    "Relationship of 1200 Roberts Avenue campus reference to this record."
+  ],
+  "changed_vs_prior": "Prior state was 'pointer-not-retrieved / not-assessed-site-observed'; this session retrieved the actual pricing page content, confirmed facility identity/address on-page, enumerated the exact pricing file URLs, and proved no root pointer (HTTP 400)."
+}

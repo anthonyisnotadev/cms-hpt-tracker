@@ -1,21 +1,21 @@
 {
   "summary": {
-    "generated_at": "2026-10-01T13:18:24.062Z",
+    "generated_at": "2026-10-02T00:41:59.503Z",
     "source": "data/hpt-audit/nationwide-verification.json",
-    "total": 225,
+    "total": 226,
     "by_review_class": {
-      "cross-domain-unresolved-review": 25,
-      "cross-domain-verified-or-superseded-review": 200
+      "cross-domain-unresolved-review": 28,
+      "cross-domain-verified-or-superseded-review": 198
     },
     "by_disposition": {
       "linked-mrf-header-unmatched": 13,
       "pointer-facility-match-unresolved": 5,
       "verified-template-review": 1,
       "mrf-facility-identity-unresolved": 9,
-      "verified-stale-mrf": 1,
+      "verified-stale-mrf": 4,
       "pointer-discovery-incomplete": 17,
-      "verified-current-mrf": 176,
-      "pointer-access-denied-to-client": 1,
+      "verified-current-mrf": 173,
+      "pointer-access-denied-to-client": 2,
       "mrf-request-unsuccessful": 2
     },
     "note": "A different pointer and recorded official domain is not itself an attribution failure: parent systems and legacy domains can legitimately publish a hospital MRF. The unresolved-review class requires facility-specific pointer/file/identity evidence before promotion or exclusion."
@@ -225,6 +225,45 @@
       "standing_pointer_url": "https://cdn.prod.website-files.com/62c6ed29952ea4d1578a5968/68378d96e3d5747e9451f98b_cms-hpt.txt",
       "standing_mrf_url": "https://hpt.inmediata.com/?handler=DF&d=AFBBF4FF-7A9F-48C4-90E6-EF406125A085",
       "disposition": "mrf-facility-identity-unresolved",
+      "standing_finding": "compliant-observed",
+      "latest_observation_superseded": false,
+      "review_class": "cross-domain-unresolved-review"
+    },
+    {
+      "ccn": "440039",
+      "hospital_name": "VANDERBILT UNIVERSITY MEDICAL CENTER",
+      "state": "TN",
+      "official_domain": "finance.vumc.org",
+      "pointer_domain": "vumc.org",
+      "standing_pointer_url": "https://vumc.org/cms-hpt.txt",
+      "standing_mrf_url": "https://finance.vumc.org/assets/pub/pt/352528741_vanderbilt-university-medical-center_standardcharges.json",
+      "disposition": "verified-stale-mrf",
+      "standing_finding": "compliant-observed",
+      "latest_observation_superseded": false,
+      "review_class": "cross-domain-unresolved-review"
+    },
+    {
+      "ccn": "440137",
+      "hospital_name": "VANDERBILT BEDFORD HOSPITAL",
+      "state": "TN",
+      "official_domain": "finance.vumc.org",
+      "pointer_domain": "vumc.org",
+      "standing_pointer_url": "https://vumc.org/cms-hpt.txt",
+      "standing_mrf_url": "https://finance.vumc.org/assets/pub/pt/853419620_vanderbilt-bedford-hospital_standardcharges.json",
+      "disposition": "verified-stale-mrf",
+      "standing_finding": "compliant-observed",
+      "latest_observation_superseded": false,
+      "review_class": "cross-domain-unresolved-review"
+    },
+    {
+      "ccn": "440193",
+      "hospital_name": "VANDERBILT WILSON COUNTY HOSPITAL",
+      "state": "TN",
+      "official_domain": "finance.vumc.org",
+      "pointer_domain": "vumc.org",
+      "standing_pointer_url": "https://vumc.org/cms-hpt.txt",
+      "standing_mrf_url": "https://finance.vumc.org/assets/pub/pt/352528741_vanderbilt-wilson-county-hospital_standardcharges.json",
+      "disposition": "verified-stale-mrf",
       "standing_finding": "compliant-observed",
       "latest_observation_superseded": false,
       "review_class": "cross-domain-unresolved-review"
@@ -2037,6 +2076,19 @@
       "review_class": "cross-domain-verified-or-superseded-review"
     },
     {
+      "ccn": "290001",
+      "hospital_name": "RENOWN REGIONAL MEDICAL CENTER",
+      "state": "NV",
+      "official_domain": "renown.org",
+      "pointer_domain": "mrf.panaceainc.com",
+      "standing_pointer_url": "https://mrf.panaceainc.com/Download.aspx?org=renown&loc=regional-medical-center&ref=",
+      "standing_mrf_url": "https://mrf.panaceainc.com/Download.aspx?org=renown&loc=regional-medical-center&ref=",
+      "disposition": "pointer-access-denied-to-client",
+      "standing_finding": "compliant-observed",
+      "latest_observation_superseded": true,
+      "review_class": "cross-domain-verified-or-superseded-review"
+    },
+    {
       "ccn": "290012",
       "hospital_name": "SAINT ROSE DOMINICAN HOSPITALS - ROSE DE LIMA",
       "state": "NV",
@@ -2427,32 +2479,6 @@
       "review_class": "cross-domain-verified-or-superseded-review"
     },
     {
-      "ccn": "440039",
-      "hospital_name": "VANDERBILT UNIVERSITY MEDICAL CENTER",
-      "state": "TN",
-      "official_domain": "finance.vumc.org",
-      "pointer_domain": "vumc.org",
-      "standing_pointer_url": "https://vumc.org/cms-hpt.txt",
-      "standing_mrf_url": "https://finance.vumc.org/assets/pub/pt/352528741_vanderbilt-university-medical-center_standardcharges.json",
-      "disposition": "verified-current-mrf",
-      "standing_finding": "compliant-observed",
-      "latest_observation_superseded": false,
-      "review_class": "cross-domain-verified-or-superseded-review"
-    },
-    {
-      "ccn": "440137",
-      "hospital_name": "VANDERBILT BEDFORD HOSPITAL",
-      "state": "TN",
-      "official_domain": "finance.vumc.org",
-      "pointer_domain": "vumc.org",
-      "standing_pointer_url": "https://vumc.org/cms-hpt.txt",
-      "standing_mrf_url": "https://finance.vumc.org/assets/pub/pt/853419620_vanderbilt-bedford-hospital_standardcharges.json",
-      "disposition": "verified-current-mrf",
-      "standing_finding": "compliant-observed",
-      "latest_observation_superseded": false,
-      "review_class": "cross-domain-verified-or-superseded-review"
-    },
-    {
       "ccn": "440144",
       "hospital_name": "VANDERBILT TULLAHOMA-HARTON HOSPITAL",
       "state": "TN",
@@ -2463,19 +2489,6 @@
       "disposition": "mrf-facility-identity-unresolved",
       "standing_finding": "compliant-observed",
       "latest_observation_superseded": true,
-      "review_class": "cross-domain-verified-or-superseded-review"
-    },
-    {
-      "ccn": "440193",
-      "hospital_name": "VANDERBILT WILSON COUNTY HOSPITAL",
-      "state": "TN",
-      "official_domain": "finance.vumc.org",
-      "pointer_domain": "vumc.org",
-      "standing_pointer_url": "https://vumc.org/cms-hpt.txt",
-      "standing_mrf_url": "https://finance.vumc.org/assets/pub/pt/352528741_vanderbilt-wilson-county-hospital_standardcharges.json",
-      "disposition": "verified-current-mrf",
-      "standing_finding": "compliant-observed",
-      "latest_observation_superseded": false,
       "review_class": "cross-domain-verified-or-superseded-review"
     },
     {

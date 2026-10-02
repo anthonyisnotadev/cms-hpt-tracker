@@ -1,0 +1,41 @@
+{
+  "ccn": "180066",
+  "observed_at": "2026-10-01T20:25:31Z",
+  "official_domain_search": {
+    "query": "\"The Medical Center at Russellville\" Russellville KY hospital price transparency standard charges",
+    "recorded_domain": "loganmemorial.com",
+    "found_domain": "medcenterhealth.org",
+    "agrees": false,
+    "basis": "https://medcenterhealth.org/price-transparency and https://medcenterhealth.org/hospitals/russellville are the first-party Med Center Health pages naming The Medical Center at Russellville; loganmemorial.com remains 403 to automation (prior evidence)."
+  },
+  "official_page_url": "https://medcenterhealth.org/price-transparency",
+  "facility_file_url": "https://medcenterhealth.org/download/42770/",
+  "facility_file_status": 200,
+  "facility_file_bytes": 22638132,
+  "facility_file_sha256": "344f8d4117eb0c05247e60f52f3f4b9aaf471e6d7a6bda10b07c82dc926447df",
+  "facility_file_entry": "610920842_The-Medical-Center-at-Russellville_standardcharges.json (639075967 bytes uncompressed)",
+  "declared_metadata": {
+    "hospital_name": "610920842 - The Medical Center at Russellville",
+    "location_name": ["The Medical Center at Russellville"],
+    "hospital_address": ["1625 Nashville St. Russellville, KY 42276"],
+    "license_number": "100298",
+    "license_state": "KY",
+    "last_updated_on": "2026-04-01",
+    "version": "3.0.0",
+    "type_2_npi": ["1124868963, 1922848548"],
+    "attestation_confirm": true,
+    "attester_name": "Michele Lawless"
+  },
+  "pointer_url": "https://medcenterhealth.org/cms-hpt.txt",
+  "pointer_status": 200,
+  "pointer_bytes": 1348,
+  "pointer_sha256": "a753f92586c31eb01a3422d8c8a51543ca3c23399dfc942d4719f3164ca3b9e2",
+  "pointer_entry_count": 6,
+  "pointer_entries_matching_facility": 0,
+  "pointer_location_names": ["The Medical Center", "The Medical Center at Albany", "The Medical Center at Caverna", "The Medical Center at Franklin", "The Medical Center at Scottsville", "Commonwealth Regional Specialty Hospital"],
+  "what_changed_vs_prior_proof": "Prior proof (reconciliation-russellville-official-page-file-recheck-proof.json, 2026-09-19) recorded browser navigation to the file target as ERR_BLOCKED_BY_CLIENT with zero bytes. This pass the same URL returned HTTP 200 with 22,638,132 bytes (SHA-256 above) and the full CMS-template JSON header was parsed. New fact: the root pointer file at medcenterhealth.org/cms-hpt.txt (sha a753f925..., unchanged from 2026-09-09 evidence) contains six entries and none names The Medical Center at Russellville; the file is linked from the official price-transparency page instead.",
+  "established": "Official first-party page links the facility-specific MRF; file bytes retrieved and header verified for facility name, Russellville KY address, license state KY, date 2026-04-01 (within 365 days), version 3.0.0, type-2 NPIs and confirmed attestation.",
+  "not_established": "A cms-hpt.txt pointer entry naming this facility (pointer has no Russellville entry); parsed usability of the full 639 MB JSON payload beyond the header sample.",
+  "tool_vs_inference": "URLs, statuses, byte counts, SHA-256 values, header fields and pointer entries are direct tool observations. The conclusion that pointer linkage via cms-hpt.txt is unsatisfied for this facility is an inference from the observed entry list.",
+  "next_action": "Determine whether official-page file linkage qualifies for the tracker's linked category given the pointer omits Russellville, or seek a publisher pointer addition; if linked-category criteria are met, apply promotion through an apply script with the flat fields above."
+}

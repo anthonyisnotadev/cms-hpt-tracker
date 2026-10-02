@@ -1,0 +1,44 @@
+{
+  "ccn": "204004",
+  "hospital_name": "DOROTHEA DIX PSYCHIATRIC CENTER",
+  "observed_at": "2026-10-01T23:31:20.473Z",
+  "domain_search": {
+    "query": "\"Dorothea Dix Psychiatric Center\" Bangor hospital price transparency standard charges",
+    "recorded_domain": "www11.maine.gov",
+    "found_domain": "www.maine.gov/dhhs (state DHHS first-party site)",
+    "agrees": true,
+    "basis": "Search result #1 is https://www.maine.gov/dhhs/ddpc/patient-information/hospital-price-transparency titled 'Hospital Price Transparency - Maine.gov', the state's own page for Dorothea Dix; same maine.gov domain family as recorded. Third parties (payerprice, goodbill, turquoise) ignored."
+  },
+  "retrievals": [
+    {
+      "url": "https://www.maine.gov/dhhs/ddpc/ddpc/patient-information/hospital-price-transparency",
+      "url_used": "https://www.maine.gov/dhhs/ddpc/patient-information/hospital-price-transparency",
+      "http_status": 200,
+      "finding": "Page links Machine Readable File at /dhhs/sites/maine.gov.dhhs/files/inline-files/016000001_dorotheadixpsychiatriccenter_standardcharges.csv"
+    },
+    {
+      "url": "https://www.maine.gov/dhhs/sites/maine.gov.dhhs/files/inline-files/016000001_dorotheadixpsychiatriccenter_standardcharges.csv",
+      "http_status": 200,
+      "content_type": "text/csv",
+      "byte_count": 4756,
+      "last_modified": "2023-04-19T20:43:37Z",
+      "sha256": "EB6BC7ACCBBD8DF324A11F2F4E5917B43B24947D2F936281140EBBDCA1D6C97D"
+    }
+  ],
+  "file_facts": {
+    "format": "Legacy custom CSV: first row is 'MNEMONIC (CPT),DESCRIPTION,Price,Self Pay Rate,Payer Specific Negotiated Rate,Minimum Negotiated Rate,Highest Negotiated Rate,See Note'",
+    "cms_template_version_declared": "none",
+    "hospital_name_field": "none in file; facility identified only by the filename token 'dorotheadixpsychiatriccenter' and the linking page",
+    "attestation": "none"
+  },
+  "established": [
+    "The state's first-party Dorothea Dix price-transparency page currently links exactly the candidate CSV.",
+    "The CSV is served HTTP 200, 4,756 bytes, Last-Modified 2023-04-19, and is not in a CMS template format (no hospital_name, version, or attestation header)."
+  ],
+  "not_established": [
+    "No facility name, address, or version is declared inside the file itself.",
+    "Whether a compliant current MRF exists elsewhere for this state-operated psychiatric hospital."
+  ],
+  "changed_vs_prior_proof": "Prior proof (2026-09-22) recorded the page and the CSV link but 'file-parse-unresolved' - no bytes. This proof adds the file bytes, hash, 2023 Last-Modified, and shows the file is legacy non-template format, resolving the parse question negatively.",
+  "next_step": "Policy decision: whether a state-operated hospital whose first-party page links only a stale 2023 legacy-format CSV is downgraded as noncompliant-current-file, or held open pending a compliant MRF; do not promote on this evidence."
+}

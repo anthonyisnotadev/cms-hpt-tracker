@@ -1,0 +1,73 @@
+{
+  "ccn": "320084",
+  "hospital_name": "ROOSEVELT GENERAL HOSPITAL",
+  "observed_at": "2026-10-01T15:20:00.785Z",
+  "official_site": "https://www.myrgh.org/",
+  "domain_search": {
+    "query": "\"Roosevelt General Hospital\" Portales NM hospital price transparency standard charges",
+    "recorded_domain": "myrgh.org",
+    "found_domain": "myrgh.org",
+    "agrees": true,
+    "basis": "Search returned https://www.myrgh.org/patients-visitors/billing-insurance/hospital-charges titled 'Hospital Charges | Roosevelt General Hospital', Portales, New Mexico; departments page shows 42121 Us Highway 70, Portales, NM 88130."
+  },
+  "condition_change": "The 2026-09-27 route review (reconciliation-roosevelt-general-current-pricing-route-review-2026-09-27.json) recorded the Hospital Charges destination as 404 at https://www.myrgh.org/patient-visitor-information/patient-satisfaction/hospital-charges/. Web search on 2026-10-01 returned a different, currently live route at https://www.myrgh.org/patients-visitors/billing-insurance/hospital-charges satisfying the next_action's 'route or access conditions change' trigger.",
+  "page_evidence": {
+    "url": "https://www.myrgh.org/patients-visitors/billing-insurance/hospital-charges/",
+    "method": "web-reader (Z.ai) retrieved page text; r.jina.ai text extraction recovered the anchor URLs; direct curl and playwright browser both returned HTTP 403 (Cloudflare).",
+    "page_title": "Hospital Charges | Roosevelt General Hospital",
+    "facility_identity_on_page": "Roosevelt General Hospital, Portales, New Mexico; metadata telephone hpt-obf:v1:tknALtf2Q3O3juxm.gKq-u8x83IU2vT43NVIAfg.3O4V1u-5cNbRB78-WbY",
+    "sections": [
+      "RGH Charge Master (Updated July 2025) -> https://www.myrgh.org/images/CDM-Price-Update-eff-07-01-2025-Website.pdf",
+      "2026 Price Transparency – Machine Readable Files -> https://www.myrgh.org/images/PricingTransparency-Roosevelt-General-Hospital-3161-20260302140656.2).csv"
+    ],
+    "mrf_link_declared": "https://www.myrgh.org/images/PricingTransparency-Roosevelt-General-Hospital-3161-20260302140656.2).csv",
+    "mrf_link_note": "Anchor URL as rendered by the text extractor includes a literal ')' before '.csv'; this may be a publisher filename quirk or an extraction artifact. Not byte-verified."
+  },
+  "retrieval_attempts": [
+    {
+      "tool": "curl (plain)",
+      "url": "page",
+      "result": "HTTP 403"
+    },
+    {
+      "tool": "curl with browser UA",
+      "url": "page",
+      "result": "HTTP 403"
+    },
+    {
+      "tool": "playwright browser",
+      "url": "page and MRF CSV",
+      "result": "HTTP 403 Cloudflare 'Attention Required!'"
+    },
+    {
+      "tool": "webfetch",
+      "url": "page",
+      "result": "HTTP 403"
+    },
+    {
+      "tool": "r.jina.ai (server-side)",
+      "url": "MRF CSV",
+      "result": "HTTP 422 'Download is starting' — the remote server began serving a file download to the proxy's browser; no bytes obtained through this route and none claimed"
+    }
+  ],
+  "established": [
+    "The first-party price-transparency route is currently live and names the hospital.",
+    "The page exposes a new '2026 Price Transparency – Machine Readable Files' section linking a first-party CSV path under myrgh.org/images/ dated in its filename 2026-03-02 (20260302140656).",
+    "The prior July 2025 charge-master PDF remains linked on the same page as a separate charge-master item."
+  ],
+  "not_established": [
+    "No MRF bytes, SHA-256, or HTTP success for the CSV were obtained from any permitted direct route.",
+    "No CMS template version, header metadata, facility/address/state fields, or usable rows were verified.",
+    "No legal-compliance conclusion and no promotion."
+  ],
+  "bounded_client_403_note": "The 403s to curl/playwright are client-side Cloudflare denials, not evidence the file is absent or noncompliant.",
+  "classification": "changed-first-party-route-with-declared-2026-mrf-link-bytes-not-retrieved",
+  "disposition": "file-custom-workbook-review (unchanged)",
+  "next_action": "Retrieve the declared CSV (https://www.myrgh.org/images/PricingTransparency-Roosevelt-General-Hospital-3161-20260302140656.2).csv) through a permitted route (browser download without bypassing Cloudflare, or publisher-provided copy), then hash bytes and verify facility identity, NM metadata, CMS version, date, and usable rows before any promotion.",
+  "extractor_capture_reference": {
+    "file": "data/hpt-audit is repo-local; the text-extraction capture used for anchor recovery is reproduced verbatim in this proof's page_evidence.sections",
+    "sha256_of_extractor_output": "A80D03E4C8A2828B1A78C186D1C3AA34A5C2F87EFA2CFEA203C22373EA0853E3",
+    "bytes": 1925
+  },
+  "interpretation": "This is a dated route/linkage observation. It changes the retrieval target for the assigned next_action but does not by itself verify the MRF or reduce the unresolved count."
+}

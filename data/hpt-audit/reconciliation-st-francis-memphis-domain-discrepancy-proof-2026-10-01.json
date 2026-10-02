@@ -1,0 +1,38 @@
+{
+  "ccn": "440183",
+  "observed_at": "2026-10-01T16:23:01.675Z",
+  "hospital_name": "ST FRANCIS HOSPITAL",
+  "cms_record": { "facility_id": "440183", "facility_name": "ST FRANCIS HOSPITAL", "address": "5959 PARK AVE", "citytown": "MEMPHIS", "state": "TN", "zip_code": "38119" },
+  "search": {
+    "query": "\"St Francis Hospital\" Tennessee 440183 CMS hospital profile",
+    "recorded_official_domain": "saintfrancisevanston.org",
+    "found_domain": "saintfrancishealthsystem.com",
+    "agrees": false,
+    "basis": "CMS/medicare.gov/AHD all place CCN 440183 at Saint Francis Hospital-Memphis, 5959 Park Ave, Memphis, TN 38119. The first-party Saint Francis Health System site (saintfrancishealthsystem.com) lists 'Saint Francis Hospital - Memphis ... 5959 Park Avenue' at https://www.saintfrancishealthsystem.com/locations/detail/saint-francis-hospital---memphis. The recorded domain saintfrancisevanston.org is Saint Francis Hospital, Evanston, Illinois - a different facility in a different state; its recorded pointer and 992441755-named MRF cannot be the Memphis facility's file on name/city/state evidence."
+  },
+  "access_observation": {
+    "routes_tried": [
+      "https://saintfrancishealthsystem.com/cms-hpt.txt via plain HTTP GET (403, 5473 bytes)",
+      "https://www.saintfrancishealthsystem.com/cms-hpt.txt via plain HTTP GET (403, 5498 bytes)",
+      "https://saintfrancishealthsystem.com/cms-hpt.txt via Playwright browser (403, Cloudflare 'Just a moment...' challenge)",
+      "https://saintfrancishealthsystem.com/locations/detail/saint-francis-hospital---memphis via Playwright browser (403, Cloudflare challenge)"
+    ],
+    "note": "The correct first-party domain is entirely behind a Cloudflare challenge to automated access. This is a client-side block and is not evidence of a missing pointer, missing MRF, or noncompliance."
+  },
+  "nppes_observation": {
+    "npi": "992441755",
+    "result": "no NPPES result for the NPI named in the recorded saintfrancisevanston.org MRF filename; no attribution of that file to either facility is claimed here"
+  },
+  "established": [
+    "CCN 440183 is Saint Francis Hospital-Memphis, 5959 Park Ave, Memphis, TN (CMS, medicare.gov, AHD).",
+    "The correct first-party health-system domain is saintfrancishealthsystem.com, which names the facility and address on its Memphis location page (per search snippet; page body blocked by Cloudflare).",
+    "The recorded official_domain saintfrancisevanston.org corresponds to an Evanston, Illinois hospital, not the Memphis CCN 440183 facility.",
+    "Every automated route to saintfrancishealthsystem.com (pointer and location page) is currently Cloudflare-challenged."
+  ],
+  "not_established": [
+    "No Memphis pointer or MRF bytes were obtained; the Evanston pointer/MRF contents were not re-retrieved and no claim is made about what facility they declare.",
+    "No disposition or count change is asserted; the record's existing disposition is already pointer-facility-match-unresolved."
+  ],
+  "interpretation": "New domain-level evidence: the recorded official domain belongs to a different hospital in a different state. The official domain for CCN 440183 should be corrected to saintfrancishealthsystem.com. The standing compliant-observed finding derived from the Evanston-domain chain is not Memphis evidence, but the current disposition already carries pointer-facility-match-unresolved, so no count change follows from this correction alone.",
+  "count_effect": "none; CCN 440183 remains unresolved pending Memphis-domain evidence"
+}

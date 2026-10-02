@@ -1,0 +1,52 @@
+{
+  "ccn": "521318",
+  "hospital_name": "LADD MEMORIAL HOSPITAL",
+  "state": "WI",
+  "observed_at": "2026-10-01T20:42:41.838Z",
+  "domain_search": {
+    "query": "\"Ladd Memorial Hospital\" Osceola Wisconsin price transparency standard charges myomc.org",
+    "recorded_official_domain": "www.myomc.org",
+    "found_official_domain": "www.myomc.org",
+    "agrees": true,
+    "basis": "myomc.org Price Transparency page (https://www.myomc.org/price-transparency) is Osceola Medical Center's own site; Ladd Memorial Hospital is OMC's hospital (dba shown in the MRF itself)."
+  },
+  "checks": [
+    {
+      "check": "canonical plain-text pointer",
+      "url": "https://www.myomc.org/cms-hpt.txt",
+      "status": 301,
+      "observed_at": "2026-10-01T20:42:41.838Z",
+      "note": "301 redirects to https://www.myomc.org/cms-hpt-txt (HTTP 200, 881,815 bytes, text/html Wix page). NOT plain text at the canonical well-known URL."
+    },
+    {
+      "check": "pointer content (HTML page)",
+      "url": "https://www.myomc.org/cms-hpt-txt",
+      "status": 200,
+      "sha256": "5692b88f4d34fdba82aa132cf87cd8f35424c2410ae83690a5705907871677bb",
+      "bytes": 881815,
+      "observed_at": "2026-10-01T20:42:41.838Z",
+      "note": "Wix page styled as monospace pointer text. Extracted fields: hospital '...Medical Center' (Ladd Memorial Hospital dba Osceola Medical Center); source-page-url https://www.myomc.org/policies-terms-bylaws/price-transparency; mrf-url https://377c038e-580e-4efd-ab60-76fd5ec27089.usrfiles.com/ugd/377c03_b1f19309e3cc45c0aee42a0c3d711024.csv?dn=390773970_Osceola-Medical-Center_standardcharges.csv; contact-name Madison Johnson; contact-email hpt-obf:v1:AbnqcGEwzkjrSryb.ruvhkn2Cbv6R9XBMbXL_nA.ovR7aNZhJOZnSMbH_rLdBCYVA_kU97SMUw."
+    },
+    {
+      "check": "machine-readable file declared by pointer",
+      "url": "https://377c038e-580e-4efd-ab60-76fd5ec27089.usrfiles.com/ugd/377c03_b1f19309e3cc45c0aee42a0c3d711024.csv?dn=390773970_Osceola-Medical-Center_standardcharges.csv",
+      "status": 200,
+      "sha256": "2898a138ff94f8516243be9da8f54d2eeb87047540644fb18c4c8ed50c7fafcf",
+      "bytes": 3221288,
+      "observed_at": "2026-10-01T20:42:41.838Z",
+      "note": "CMS CSV. Header row: hospital_name,last_updated_on,version,hospital_location,hospital_address,license_number|CA,45 CFR 180.50 attestation. Identity row: 'Ladd Memorial Hospital dba Osceola Medical Center', last_updated_on 1/1/2025, version '2.0.0', '2600 65th Ave, Osceola, WI 54020-0218', license 1021, attestation TRUE. Body columns include standard_charge|gross, discounted_cash, min, max, and payer-specific negotiated_dollar/percentage (Aetna, BCBS MN/WI, HealthPartners, Humana, Medica, TriWest, UnitedHealthcare). Usable rate rows observed."
+    }
+  ],
+  "established": [
+    "Official domain agrees (www.myomc.org).",
+    "Full evidence chain: pointer page on the official domain names exactly the MRF URL retrieved; the MRF carries Ladd Memorial Hospital dba Osceola Medical Center, 2600 65th Ave, Osceola, WI 54020-0218, declared last_updated_on 1/1/2025, declared version 2.0.0, 45 CFR 180.50 attestation TRUE, and usable payer-specific rate rows.",
+    "Byte-level hashes recorded for both pointer page and MRF."
+  ],
+  "not_established": [
+    "Whether a pointer served as an HTML page via 301 from /cms-hpt.txt (not plain text at the canonical URL) satisfies the tracker's pointer-linkage requirement.",
+    "Whether declared version 2.0.0 (not 3.x) is acceptable for the current classification.",
+    "Whether the file covers Ladd Memorial Hospital's CCN 521318 scope exclusively (single hospital_name value observed, but no NPI/CCN in the file).",
+    "Any compliance status."
+  ],
+  "change_vs_prior": "Prior disposition 'current-operator-identity-confirmed-html-pointer-route-unresolved' with no candidate file. New: pointer page's mrf-url retrieved for the first time (3,221,288 bytes, sha256 2898a138...) with exact Ladd identity, Wisconsin address, declared date/version and attestation; the pointer route itself is unchanged (still HTML via 301)."
+}

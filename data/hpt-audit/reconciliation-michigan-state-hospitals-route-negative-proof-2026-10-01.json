@@ -1,0 +1,42 @@
+{
+  "ccns": ["234026", "234035", "234041"],
+  "hospitals": {
+    "234026": { "name": "KALAMAZOO REGIONAL PSYCHIATRIC HOSPITAL", "roster_address": "1312 Oakland Dr, Kalamazoo MI 49008", "identity_proof": "reconciliation-kalamazoo-regional-current-cms-hospital-general-proof-2026-09-20.json" },
+    "234035": { "name": "WALTER P REUTHER PSYCHIATRIC HOSPITAL", "roster_address": "30901 Palmer Road, Westland, MI 48186", "identity_proof": "reconciliation-reuther-current-state-directory-proof-2026-09-20.json" },
+    "234041": { "name": "THE CENTER FOR FORENSIC PSYCHIATRY", "roster_address": "8303 Platt Road, Saline, MI 48176", "identity_proof": "reconciliation-cfp-current-state-identity-proof-2026-09-20.json" }
+  },
+  "state": "MI",
+  "observed_at": "2026-10-01T20:35:30.000Z",
+  "proof_kind": "shared-materially-different-route-pointer-and-page-negative",
+  "domain_search": {
+    "query": "\"Kalamazoo Regional Psychiatric Hospital\" standard charges price transparency file; (Reuther/CFP equivalents not re-searched this session — same single state operator)",
+    "recorded_domain": "www.michigan.gov",
+    "found_domain": "www.michigan.gov",
+    "agrees": true,
+    "basis": "All three are MDHHS state-operated hospitals listed on https://www.michigan.gov/mdhhs/keep-mi-healthy/mentalhealth/mentalhealth/mentalillness; no separate first-party facility sites exist"
+  },
+  "observations": [
+    {
+      "what": "web-reader GET of https://www.michigan.gov/cms-hpt.txt returned the site's first-party 404 page. Unlike prior access-denied client responses, this route succeeded and is definitive.",
+      "source": "web-reader (tool observation), shared with reconciliation-caro-route-negative-proof-2026-10-01.json"
+    },
+    {
+      "what": "web-reader GET of the MDHHS 'State Operated Inpatient Psychiatric Hospitals' page succeeded; it lists the state hospitals with contacts only and contains no 'charge', 'pricing', 'transparency', or 'cost' links — no facility pricing route is exposed on the page carrying all three identities.",
+      "source": "web-reader (tool observation)"
+    },
+    {
+      "what": "Web search for a Kalamazoo-specific standard-charges file returned only third-party aggregators (payerprice, goodbill) and unrelated Kalamazoo health systems (Beacon, Bronson, Pine Rest) — no first-party state MRF for CCN 234026.",
+      "source": "web-search-prime (tool observation)"
+    }
+  ],
+  "established": [
+    "michigan.gov pages are retrievable in this client via web-reader (supersedes prior access-denied transport observations for page retrieval)",
+    "The michigan.gov root CMS pointer /cms-hpt.txt is definitively 404 on the first-party site",
+    "No pricing/pointer link exists on the MDHHS state-hospitals page that carries all three facilities' identities"
+  ],
+  "not_established": [
+    "That any of the three facilities is exempt from the CMS price-transparency requirement",
+    "That no MRF exists anywhere on michigan.gov (only tested paths and linked pages were checked)"
+  ],
+  "changed_vs_prior": "Prior sessions recorded 404s from tested paths in a client that also hit access-denials, and identity-only corroboration. This session the materially different route succeeded, converting ambiguity into definitive first-party 404 at the root pointer plus a negative pricing-link observation on the identity page, for all three CCNs."
+}

@@ -1,0 +1,36 @@
+{
+  "ccn": "184002",
+  "hospital_name": "WESTERN STATE HOSPITAL",
+  "state": "KY",
+  "observed_at": "2026-10-01T18:24:00Z",
+  "what_was_done": "Rechecked CHFS routes after the prior pointer-not-retrieved state. Direct bounded fetches with a desktop-browser User-Agent succeeded where the prior check had not retrieved the pages; the headless browser alone returned 403 'Service unavailable' on /agencies/dbhdid/wsh.",
+  "observations": [
+    {
+      "url": "https://www.chfs.ky.gov/agencies/dbhdid/wsh",
+      "http_status": 200,
+      "bytes": 47525,
+      "transport": "Invoke-WebRequest, Chrome/126 User-Agent",
+      "notes": "Page identifies Western State Hospital, 2400 Russellville Road, Hopkinsville, KY 42241. No standard-charges / price-transparency / machine-readable file links found in page HTML."
+    },
+    {
+      "url": "https://www.chfs.ky.gov/agencies/dbhdid/Pages/facilities.aspx",
+      "http_status": 200,
+      "bytes": 59857,
+      "transport": "Invoke-WebRequest, Chrome/126 User-Agent",
+      "notes": "Facilities directory links Western State Hospital to http://westernstatehospital.ky.gov/ and Central State Hospital to /agencies/dbhdid/csh/Pages/default-archive.aspx. No standard-charges links on the directory."
+    },
+    {
+      "url": "http://westernstatehospital.ky.gov/",
+      "http_status": "DNS NXDOMAIN (client-side resolver)",
+      "notes": "DNS returned 'No such host is known'. This is a client-side DNS observation and is not evidence the site or any MRF is gone."
+    },
+    {
+      "url": "https://www.chfs.ky.gov/agencies/dbhdid/wsh (headless browser)",
+      "http_status": 403,
+      "notes": "Playwright-only access rendered 'Service unavailable' 403; direct fetch with browser UA returned 200, so the block is client-fingerprint based, not a publisher block of all clients."
+    }
+  ],
+  "what_was_established": "CHFS first-party pages are directly retrievable now (changed versus the prior pointer-not-retrieved state); identity for Western State Hospital confirmed at the roster facility with Kentucky address; no facility-specific standard-charges route is exposed on the CHFS DBHDID pages.",
+  "what_was_not_established": "No pointer file or MRF bytes were recovered; no cms-hpt.txt route was found; no compliance conclusion is drawn.",
+  "basis_for_change_versus_prior_proof": "reconciliation-western-state-kentucky-pricing-discovery-proof-2026-09-21.json recorded no successful page retrieval; this check retrieved the WSH page (HTTP 200, 47,525 bytes) and facilities directory (HTTP 200, 59,857 bytes)."
+}

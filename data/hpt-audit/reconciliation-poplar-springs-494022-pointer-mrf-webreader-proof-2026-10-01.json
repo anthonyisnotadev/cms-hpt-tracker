@@ -1,0 +1,46 @@
+{
+  "ccn": "494022",
+  "hospital_name": "POPLAR SPRINGS HOSPITAL",
+  "state": "VA",
+  "observed_at": "2026-10-01T17:25:44.217Z",
+  "route": "Z.ai web-reader MCP (server-side fetch), which is not subject to the Cloudflare client challenge that blocks direct PowerShell and headless-browser fetches of poplarsprings.com",
+  "domain_search": {
+    "query": "\"Poplar Springs Hospital\" Petersburg Virginia hospital price transparency standard charges",
+    "recorded_domain_note": "batch record official_domain field contained corrupted prose, not a domain",
+    "found_domain": "https://poplarsprings.com/",
+    "basis": "Google-indexed official site pages (poplarsprings.com/standard-services, /resources) show Poplar Springs Hospital, 350 Poplar Drive, Petersburg, VA 23805, matching the CMS roster identity"
+  },
+  "pointer": {
+    "url": "https://poplarsprings.com/cms-hpt.txt",
+    "observed_via": "web-reader text; direct client GET returned 403 Cloudflare 'Just a moment...' challenge (Playwright and Invoke-WebRequest), and a headless-browser visit to /standard-services also stayed on the challenge",
+    "content_as_returned": "location-name: Poplar Springs Hospital | source-page-url: https://poplarsprings.com/standard-services/ | mrf-url: https://uhsfilecdn.eskycity.net/bh/200959684_poplar-springs_standardcharges.csv | contact-name: UHS Corp Price Transparency Team | contact-email: hpt-obf:v1:A7KEg2OhJj-KTvOh.dLp9UI5wrQePm4AiiY6EDw.It-TaGKn4jsv6iw_AmMwx3FITvmDOv2ZN4m1cjNi-JeaxRW670BS",
+    "sha256_of_reader_extracted_text": "6dfcd7f2b54f6ddbfe1476ed78ecaf66e5f8f7c0d62f330699cd90b76539d58a",
+    "hash_caveat": "Hash is of the reader-extracted plain text (fences and pipe separators removed, LF line endings); exact wire bytes were not obtainable by any permitted client, so byte-exact identity of the pointer is unestablished.",
+    "entry_count": 1,
+    "entries_matching_facility": 1,
+    "location_name": "Poplar Springs Hospital"
+  },
+  "file": {
+    "url": "https://uhsfilecdn.eskycity.net/bh/200959684_poplar-springs_standardcharges.csv",
+    "status": 200,
+    "bytes": 12130,
+    "download_complete": true,
+    "sha256": "7102E075FA3EAD1D9F637D0586D499E32A2CF3ED466810F7DF60D8C35E3784DF",
+    "etag": "300d057621f36b05fe07ddda23ec0aeb",
+    "last_modified": "Fri, 25 Sep 2026 17:49:33 GMT",
+    "retained_copy": "data/hpt-audit/reconciliation-494022-poplar-springs-mrf-full-bytes-2026-10-01.csv",
+    "declared_hospital_name": "Poplar Springs Hospital",
+    "declared_location_name": "Poplar Springs Hospital",
+    "declared_address": "350 POPLAR DRIVE, PETERSBURG, VA 23805",
+    "license_number_field": "license_number | VA = 494022",
+    "type_2_npi": "1124051701",
+    "last_updated_on": "2026-09-25",
+    "cms_template_version_literal": "3.0.0",
+    "attestation": true,
+    "attester_name": "Berryman, Wendy",
+    "rows": "payer-specific negotiated dollar rows present (e.g., Inpatient - ALL, RC 124, CIGNA/AETNA/ANTHEM plans); file is small (12,130 bytes) and was downloaded in full"
+  },
+  "what_changed_vs_prior": "Prior proofs (2026-09-23 identity conflict, 2026-09-25 recheck, 2026-09-26 browser recheck, 2026-09-28 corroboration) never retrieved the CMS pointer or any MRF bytes; every prior client route hit 403/Cloudflare. This session retrieved the live pointer file content and the complete declared MRF with SHA-256, declared name/address/license/NPI, version 3.0.0, date 2026-09-25, attestation true.",
+  "established": "Publisher pointer exists at the official domain naming Poplar Springs Hospital and a current CMS v3.0.0 CSV at UHS/eSkyCity CDN whose header matches the roster identity (Poplar Springs Hospital, 350 Poplar Drive, Petersburg, VA 23805; NPI 1124051701; VA license field 494022).",
+  "not_established": "Exact pointer wire bytes (reader-text hash only); whether the VA license value 494022 is the state license or a CCN-derived value (recorded as declared, identity corroborated independently by name+address+NPI)."
+}

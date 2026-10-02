@@ -1,0 +1,23 @@
+{
+  "ccn": "231305",
+  "observed_at": "2026-10-01T14:32:59.260Z",
+  "check_kind": "domain-search-and-blocked-route-probe-2026-10-01",
+  "domain_search": {
+    "query": "\"MyMichigan Medical Center Standish\" Standish Michigan hospital price transparency standard charges",
+    "recorded_official_domain": "healthcare.ascension.org",
+    "found_domain": "mymichigan.org",
+    "agrees": false,
+    "first_party_evidence": "https://www.mymichigan.org/patients-visitors/billing-insurance/cost-estimates is the first-party MyMichigan Health cost-estimates page; search snippets confirm it is the health system's own page linking standard charges. The retained healthcare.ascension.org pointer does not name this facility; the 2024 Ascension-to-MyMichigan transition is already documented in accuracy-plan line 2407 and reconciliation-manual-access-observations.json (2026-09-16 observation)."
+  },
+  "probe_urls": [
+    "https://www.mymichigan.org/cms-hpt.txt",
+    "https://www.mymichigan.org/app/files/public/bec484d2-1281-4b72-875f-b322b91bde7d/381671120_mymichigan-medical-center-standish_standardcharges.csv"
+  ],
+  "probe_results": [
+    { "url": "https://www.mymichigan.org/cms-hpt.txt", "http_status": 403, "response_kind": "access-denied to client" },
+    { "url": "https://www.mymichigan.org/app/files/public/bec484d2-1281-4b72-875f-b322b91bde7d/381671120_mymichigan-medical-center-standish_standardcharges.csv", "http_status": 403, "note": "probed with a bounded Range GET (bytes 0-4095); access denied to client" }
+  ],
+  "what_was_established": "On 2026-10-01 the first-party MyMichigan root pointer and the exact Standish standard-charges CSV both returned HTTP 403 to this client, matching the documented 2026-09-16/2026-09-19 access observations; mymichigan.org remains the correct current-publisher first-party domain lead and the Ascension pointer remains non-authoritative for this facility.",
+  "what_was_not_established": "File content, pointer linkage, facility identity fields, and declared metadata were not verified; the 403 is a client-access observation and is not evidence that the file is absent or the hospital is noncompliant. No disposition change is claimed.",
+  "next_action": "Use an authorized content-bearing route or publisher-provided copy to inspect the MyMichigan root pointer and exact Standish CSV."
+}

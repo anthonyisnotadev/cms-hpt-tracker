@@ -1,0 +1,30 @@
+{
+  "ccn": "184015",
+  "hospital_name": "CENTRAL STATE HOSPITAL",
+  "state": "KY",
+  "observed_at": "2026-10-01T18:24:00Z",
+  "what_was_done": "Rechecked CHFS routes for Central State Hospital. Direct bounded fetches with a desktop-browser User-Agent retrieved CHFS pages that the prior check had not.",
+  "observations": [
+    {
+      "url": "https://www.chfs.ky.gov/agencies/dbhdid/Pages/facilities.aspx",
+      "http_status": 200,
+      "bytes": 59857,
+      "transport": "Invoke-WebRequest, Chrome/126 User-Agent",
+      "notes": "Directory lists Central State Hospital with a link to /agencies/dbhdid/csh/Pages/default-archive.aspx. No standard-charges links on the directory."
+    },
+    {
+      "url": "https://www.chfs.ky.gov/agencies/dbhdid/csh/Pages/default-archive.aspx",
+      "http_status": 401,
+      "transport": "Invoke-WebRequest, Chrome/126 User-Agent",
+      "notes": "Access-denied to this client. This is a client-side access observation, not evidence of file absence or noncompliance."
+    },
+    {
+      "url": "https://www.chfs.ky.gov/agencies/dbhdid/wsh (context probe)",
+      "http_status": 200,
+      "notes": "Sibling CHFS DBHDID page returns 200 to the same client, so the 401 is page-scoped, not domain-wide."
+    }
+  ],
+  "what_was_established": "CHFS is directly reachable to this client now; the Central State Hospital facility page is access-restricted (HTTP 401); no facility-specific standard-charges route is exposed on reachable CHFS pages.",
+  "what_was_not_established": "No pointer file or Central State-specific CMS CSV/JSON MRF was recovered; no compliance conclusion is drawn.",
+  "basis_for_change_versus_prior_proof": "reconciliation-central-state-kentucky-pricing-discovery-proof-2026-09-21.json recorded no successful page retrieval; this check retrieved the facilities directory (HTTP 200, 59,857 bytes) and observed a page-scoped 401 on the CSH archive page."
+}

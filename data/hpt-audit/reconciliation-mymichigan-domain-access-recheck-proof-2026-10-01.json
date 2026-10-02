@@ -1,0 +1,26 @@
+{
+  "ccns": ["230036", "230077", "230100"],
+  "observed_at": "2026-10-01T14:29:32.403Z",
+  "search_query": "MyMichigan Health price transparency standard charges file",
+  "search_result": "Top organic result was the first-party cost-estimates page (mymichigan.org); no new non-MyMichigan official publisher domain surfaced for any of the three facilities.",
+  "domain_search": {
+    "recorded_domain_lead": "mymichigan.org",
+    "found_domain": "mymichigan.org",
+    "agrees": true,
+    "basis": "Search returned https://www.mymichigan.org/patients-visitors/billing-insurance/cost-estimates as the first-party pricing page for the MyMichigan system; facility pages previously recorded name Alpena (1501 W Chisholm St), Saginaw (800 S Washington Ave) and Tawas (200 Hemlock Rd) campuses."
+  },
+  "recheck": {
+    "routes": [
+      { "url": "https://www.mymichigan.org/patients-visitors/billing-insurance/cost-estimates", "web_reader": "Access Denied (Akamai edgesuite reference 18.49951eb8.1790865000.17a5bd27)", "browser_status": 403, "browser_title": "Access Denied" },
+      { "url": "https://www.mymichigan.org/", "browser_status": 403, "browser_title": "Access Denied" },
+      { "url": "https://www.mymichigan.org/cms-hpt.txt", "browser_status": 403, "browser_title": "Access Denied", "head_status": 403 },
+      { "url": "https://www.mymichigan.org/app/files/public/245b4261-c608-4a1e-a9b9-9bc0ff04d48a/386000029_mymichigan-medical-center-alpena_standardcharges.csv", "head_status": 403 },
+      { "url": "https://www.mymichigan.org/app/files/public/b0dd1ec4-599d-4f07-9c95-c487fe4ef23f/380997730_mymichigan-medical-center-saginaw_standardcharges.csv", "head_status": 403 },
+      { "url": "https://www.mymichigan.org/app/files/public/fb45cd90-7a45-40a1-b7eb-8e2e315d2dfd/381443395_mymichigan-medical-center-tawas_standardcharges.csv", "head_status": 403 }
+    ],
+    "tools": "Z.ai web search + web-reader; Playwright headless browser; PowerShell Invoke-WebRequest HEAD (HTTP/1.1)"
+  },
+  "established": "The publisher domain lead mymichigan.org is corroborated as the first-party domain via fresh web search. The root pointer, homepage, pricing page, and all three exact page-linked CSVs returned HTTP 403 to every client route tried today (browser, web-reader, direct HEAD). This repeats the 2026-09-25 transport boundary.",
+  "not_established": "No pointer or CSV bytes retrieved; no file-absence, compliance, or disposition conclusion. HEAD responses carry no content, so no size/Last-Modified comparison was possible.",
+  "disposition": "shared-mymichigan-domain-and-access-recheck-unchanged"
+}

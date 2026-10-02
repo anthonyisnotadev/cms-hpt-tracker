@@ -1,0 +1,60 @@
+{
+  "observed_at": "2026-10-01T20:46:22Z",
+  "ccn": "281301",
+  "hospital_name": "Fillmore County Hospital",
+  "state": "NE",
+  "kind": "pricing-page-recovery-and-mrf-sample",
+  "domain_search": {
+    "query": "\"Fillmore County Hospital\" Geneva Nebraska price transparency standard charges",
+    "recorded_domain": "myfch.org",
+    "found_domain": "myfch.org",
+    "agrees": true,
+    "basis": "https://www.myfch.org/ homepage title and footer 'Price Transparency' link; services page shows F Street Geneva, NE 68361"
+  },
+  "click_path": [
+    "https://www.myfch.org/ (Playwright) -> footer link 'Price Transparency'",
+    "https://search.hospitalpriceindex.com/hpi2/machineReadable/FillmoreCountyHospital/12701 (hospital-designated price transparency destination, heading 'Fillmore County Hospital', 'Last Update: 2026-04-23') -> 'Download File' link"
+  ],
+  "pointer_check": {
+    "pointer_url": "https://www.myfch.org/cms-hpt.txt",
+    "pointer_status": "301 -> follows to https://www.myfch.org/ (HTTP 200 HTML homepage, 232392 bytes, sha256 7D87697BB78F0760D28375C208E6228C6894F57377B84D5BC3C9755A490D8EF8)",
+    "conclusion": "No /cms-hpt.txt pointer published at the hospital domain; not retrieved as a pointer file."
+  },
+  "facility_file": {
+    "facility_file_url": "https://sthpiprd.blob.core.windows.net/machine-readable-files/12701/470529089_fillmore-county-hospital_standardcharges.csv",
+    "file_status": "HTTP 206 Partial Content (range 0-262143 of 47226178 total bytes)",
+    "content_type": "application/octet-stream",
+    "last_modified": "Thu, 23 Apr 2026 14:44:15 GMT",
+    "x-ms-meta-LastPublished": "2026-04-23 14:44:05Z",
+    "x-ms-meta-LastUpdated": "2026-04-23",
+    "sample_sha256": "FC6BAFC15DCC96B6EABEE91B43D77B2132EAB6B8DE3BC84D94F7AAC1F407176F",
+    "sample_bytes": 262144,
+    "full_file_bytes": 47226178,
+    "declared_type_2_npis": "1689769382|1508956467|1689756561",
+    "attestation": "TRUE (45 CFR 180.50 attestation column, attester_name Chris Nichols)",
+    "hospital_name": "Fillmore County Hospital",
+    "location_name": "Fillmore County Hospital",
+    "hospital_address": "1900 F Street, Geneva, NE 68361",
+    "license_number": "H000121 (NE)",
+    "last_updated_on": "2026-04-23",
+    "version": "3.0.0",
+    "file_sha256": null,
+    "file_sha256_note": "Only a bounded 262144-byte sample was fetched per rules; full-file SHA-256 not computed."
+  },
+  "established": [
+    "The hospital's own site designates search.hospitalpriceindex.com/hpi2/machineReadable/FillmoreCountyHospital/12701 as its price transparency page and links this exact MRF.",
+    "The MRF is a CMS-template CSV with version 3.0.0, declared date 2026-04-23 (metadata LastPublished 2026-04-23), attestation TRUE, and identity matching the roster facility name, Geneva NE address, and Nebraska license."
+  ],
+  "not_established": [
+    "Full-file hash (sample only).",
+    "That the three declared type-2 NPIs match the roster's NPI list (not cross-checked).",
+    "Any /cms-hpt.txt pointer linkage: myfch.org has no such file.",
+    "Rate-level usability beyond the header row."
+  ],
+  "changed_vs_prior": "Prior state was not-assessed-site-observed / pointer-not-retrieved with candidate_file_recorded=true but no verified file; this is the first byte-level retrieval of the current CMS-format MRF with identity, version and attestation evidence, obtained through the hospital's own linked page.",
+  "basis_urls": [
+    "https://www.myfch.org/",
+    "https://search.hospitalpriceindex.com/hpi2/machineReadable/FillmoreCountyHospital/12701",
+    "https://sthpiprd.blob.core.windows.net/machine-readable-files/12701/470529089_fillmore-county-hospital_standardcharges.csv"
+  ]
+}
